@@ -91,7 +91,7 @@ To compute resolution of (X - mirror forced masturbation):
 	let K be a random worn top level protection clothing;
 	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][ShortDesc of K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering herself gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
 	if the player is not a bit horny:
-		say "[if the player is male]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
+		say "[if the player is possessing a penis]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
 		now the arousal of the player is 5000;
 		update arousal;
 	say "Your own face [one of][or]once again [stopping]turns into a lewd grin in front of you, seemingly controlling not only your actions but your thoughts.";

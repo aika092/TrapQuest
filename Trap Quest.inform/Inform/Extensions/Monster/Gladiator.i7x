@@ -424,7 +424,7 @@ To compute appearance assessment of (M - a gladiator):
 			say "[speech style of M]'It is good to see you again. [one of]How goes your pursuit of womanhood?'[or]I hope that one day you decide to further improve the size of your chest, I think you would not regret it.'[or]It would be even nicer to see you again if you breathed in some more pink smoke, haha! Just kidding, you are free to follow your own path.'[or]I hope you are staying safe.'[or]These halls grow more dangerous by the day.'[or]My sword is yours if you need it, but I cannot leave this region with you.'[in random order][roman type][line break]";
 		otherwise if the player is live fucked:
 			if M is buddy, say "[speech style of M]'I'll come back later. Don't let me catch you like this again, lest I am forced to decide that you need... therapy.'[roman type][line break]";
-			otherwise say "[speech style of M]'Real [if the player is male and the largeness of breasts < 3]men[otherwise]women[end if] do not allow themselves to be degraded in public like this! I cannot help but judge you negatively.'[roman type][line break]";
+			otherwise say "[speech style of M]'Real [if the player is gendered male and the largeness of breasts < 3]men[otherwise]women[end if] do not allow themselves to be degraded in public like this! I cannot help but judge you negatively.'[roman type][line break]";
 			distract M;
 			FavourDown M by 2;
 		otherwise if the appearance of the player > the outrage tolerance of M:
@@ -690,7 +690,7 @@ This is the gladiator sex conversion rule:
 		let player-moved be 0;
 		now the target-room of M is Dungeon33;
 		if the location of the player is Dungeon33:
-			say "[speech style of M]'At last, we can complete your transformation. Your downstairs transformation, at least...'[roman type][line break][BigNameDesc of M] pushes you into the middle of the circle and whispers a few words in a language you don't understand. At first it seems like whatever [he of M] just tried to do didn't work, but then you feel your insides, behind your crotch, twisting and turning and rearranging themselves[if the size of penis > 0], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! You reach down to feel yourself and discover that a brand new [variable custom style][vagina][roman type] has taken its place. ";
+			say "[speech style of M]'At last, we can complete your transformation. Your downstairs transformation, at least...'[roman type][line break][BigNameDesc of M] pushes you into the middle of the circle and whispers a few words in a language you don't understand. At first it seems like whatever [he of M] just tried to do didn't work, but then you feel your insides, behind your crotch, twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! You reach down to feel yourself and discover that a brand new [variable custom style][vagina][roman type] has taken its place. ";
 			SexChange the player;
 			satisfy M;
 		otherwise:
@@ -853,7 +853,7 @@ To say CondomAcceptFlav of (M - a gladiator):
 	say "[BigNameDesc of M] [one of]smiles disgustedly[or]laughs humourlessly[or]scoffs[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [DickDesc of M]. You stare[one of] [if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly, curling your upper lip[end if].[or], unable to [if the sex addiction of the player < 13 and the sex addiction of the player > 6]bring yourself to [end if]look away[or], your mouth opening unconsciously[or] [if the sex addiction of the player < 7]unexcitedly[otherwise]enviously[end if] as the rubber makes intimate contact with every inch of the massive tool[or] as the gleaming latex makes every bump and vein glisten [if the sex addiction of the player < 7]unappealingly[otherwise]temptingly[end if][at random].".
 
 To decide which number is the condom resistance of (M - a gladiator):
-	if the player is male or pregnancy fetish is 0, decide on 3;[she'd rather not impregnate a whore, but if there's no risk she's more interested in degrading you as much as possible.]
+	if the player is not possessing a vagina or pregnancy fetish is 0, decide on 3;[she'd rather not impregnate a whore, but if there's no risk she's more interested in degrading you as much as possible.]
 	if M is mating, decide on -2;
 	decide on 0.
 
@@ -940,7 +940,7 @@ To say TwosomePrep of (M - a gladiator) in (F - asshole):
 	say "[one of][BigNameDesc of M] shoves you down, smacking your [AssDesc] and tweaking your nipples as [he of M] grabs hold of your waist.[or][BigNameDesc of M] tosses [his of M] sword aside and pulls your hips up against [his of M] body, rubbing [his of M] cock between your cheeks as [he of M] grabs hold of your waist.[or][BigNameDesc of M] locks [his of M] hands around your waist, rubbing [his of M] cock between your [AssDesc] as [his of M] nipples dig into your back.[or][BigNameDesc of M] kneels over you, grazing your neck with [his of M] [ChestDesc of M] as [he of M] spreads your [AssDesc] apart and grabs hold of your waist.[at random]";
 
 To say PrepTaunt of (M - a gladiator) in (F - asshole):
-	say "[speech style of M]'[one of]This is supposed to be a punishment, so I[']ll make sure that it hurts.'[or]You should not have angered me. You will feel why.'[or]Your most delicate hole is mine for the taking.'[or]This will hurt.'[or][if the player is female]You don[']t deserve to be called a woman. I will not fuck you like one.'[otherwise]Since you did not want womanhood, perhaps you will like manhood'[end if][or]I will make sure you don[']t enjoy this, whore.'[or]I think I will enjoy punishing you.'[or]It[']s over. You won[']t have dignity to speak of when I am through with you.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]This is supposed to be a punishment, so I[']ll make sure that it hurts.'[or]You should not have angered me. You will feel why.'[or]Your most delicate hole is mine for the taking.'[or]This will hurt.'[or][if the player is gendered female]You don[']t deserve to be called a woman. I will not fuck you like one.'[otherwise]Since you did not want womanhood, perhaps you will like manhood'[end if][or]I will make sure you don[']t enjoy this, whore.'[or]I think I will enjoy punishing you.'[or]It[']s over. You won[']t have dignity to speak of when I am through with you.'[in random order][roman type][line break]".
 
 
 To get failed facial dodge image for (M - a gladiator):
@@ -1239,7 +1239,7 @@ To compute failed dominance punishment of (M - a gladiator):
 		if face is actually occupied or the player is not bimbo consenting:
 			say "[if the number of things penetrating face > 0][line break][speech style of M]'Oh. Right. You can't.'[roman type][line break][end if] [BigNameDesc of M] smiles gravely, and without any further warning [he of M] slams you into the ground, overwhelming you with a series of concentrated blows using the hilt of [his of M] sword.";
 			now the body soreness of the player is 10;
-			if the player is female:
+			if the player is gendered female:
 				say "[speech style of M]'You have no chance of defeating me until you have attained the honour of a true woman.'[roman type][line break]";
 				DifficultyUp M by 1;
 			bore M;
@@ -1329,20 +1329,20 @@ To say DominanceSuccess of (M - a gladiator):
 To compute unique dominance reward of (M - a gladiator):
 	if player-fuckchoice is FUCK-RIDE, compute power bottom reward of M;
 	otherwise:[meaning that you used a strapon/penis]
-		if the player is male, PenisUp 1;
+		if the player is possessing a penis, PenisUp 1;
 		otherwise DelicateDown 1;
 	DelicateDown 1.
 
 To bottom dominate (M - a gladiator):
 	let F be vagina;
-	if the player is male, now F is asshole;
+	if the player is possessing a vagina, now F is asshole;
 	let G be the openness of F - the girth of M;
 	say "[BigNameDesc of M] watches with baited breath as you line [his of M] drooling tip up with your hole. Your eyes meet as you drop your hips, and you share a wince as [his of M] [LongDickDesc of M] [if G > 2]slips[otherwise if G > -1]slides[otherwise]slooowly slides[end if] into your [variable F].";
 	now M is penetrating F;
 	now refactoryperiod is 3;
 	ruin F;
 	let C be a random worn chastity cage;
-	say "[line break][big he of M] tries to harden [his of M] expression, but from the way [he of M]'s twitching inside you, it's clear [he of M]'s actually desperate to see where you take things next. [if the relevant sex addiction of the player > 6]Luckily, you've been desperate to have this [DickDesc of M] inside of you from the moment you laid eyes on it, and you aren't about to back out now[otherwise if the times-submitted of M > 0]The thought of punishing [him of M] for all [he of M]'s done to you is enticing, but the exaggerated look of scorn on [his of M] face is too cute to ignore[otherwise]The thought of torturing [him of M] a little bit is enticing, but you're really horny, and [his of M] [DickDesc of M] is BIG![end if]. You [if the relevant sex addiction of the player > 10]enthusiastically[otherwise if the relevant sex addiction of the player > 5]confidently[otherwise]hesitantly[end if] begin to move your hips, [if C is clothing]cage jiggling uselessly[otherwise if the size of penis > 4][player-penis] tapping [his of M] belly[otherwise if the size of penis > 0][sissy-penis] jiggling happily[otherwise]breasts [BreastBouncingDesc][end if] as your bouncing hips drive [him of M] into your [if the player is male]prostate[otherwise]g-spot[end if] over and over again. [big he of M] accepts [his of M] punishment without flinching or looking away, panting quietly as you treat [him of M] like your own personal dildo. Your wild pace eventually takes its toll, and you find yourself shutting your eyes and speeding up as you race toward your peak.[line break]";
+	say "[line break][big he of M] tries to harden [his of M] expression, but from the way [he of M]'s twitching inside you, it's clear [he of M]'s actually desperate to see where you take things next. [if the relevant sex addiction of the player > 6]Luckily, you've been desperate to have this [DickDesc of M] inside of you from the moment you laid eyes on it, and you aren't about to back out now[otherwise if the times-submitted of M > 0]The thought of punishing [him of M] for all [he of M]'s done to you is enticing, but the exaggerated look of scorn on [his of M] face is too cute to ignore[otherwise]The thought of torturing [him of M] a little bit is enticing, but you're really horny, and [his of M] [DickDesc of M] is BIG![end if]. You [if the relevant sex addiction of the player > 10]enthusiastically[otherwise if the relevant sex addiction of the player > 5]confidently[otherwise]hesitantly[end if] begin to move your hips, [if C is clothing]cage jiggling uselessly[otherwise if the size of penis > 4][player-penis] tapping [his of M] belly[otherwise if the player is possessing a penis][sissy-penis] jiggling happily[otherwise]breasts [BreastBouncingDesc][end if] as your bouncing hips drive [him of M] into your [if the player is male]prostate[otherwise]g-spot[end if] over and over again. [big he of M] accepts [his of M] punishment without flinching or looking away, panting quietly as you treat [him of M] like your own personal dildo. Your wild pace eventually takes its toll, and you find yourself shutting your eyes and speeding up as you race toward your peak.[line break]";
 	now refactoryperiod is 0;
 	let R be the times-dominated of M;
 	if the player is female, increase R by 1;
@@ -1350,7 +1350,7 @@ To bottom dominate (M - a gladiator):
 	if debugmode > 0, say "[input style]Gladiator warning check: Is [R] (gladiator respect) > [T] (Respect threshold)?[roman type][line break]";
 	if M is wrapped:
 		if debugmode > 0, say "[bold type]SKIPPED[roman type][line break]";
-		say "An orgasm crashes over your body, temporarily robbing you of muscle control as you collapse onto [him of M] and [if the size of penis > 0]paint [his of M] belly with your load[otherwise if the player is female]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if]. A surge of warmth inside you lets you know that [he of M] came too, and you glance up at [him of M] as the condom slowly fills with [semen].";
+		say "An orgasm crashes over your body, temporarily robbing you of muscle control as you collapse onto [him of M] and [if the player is possessing a penis]paint [his of M] belly with your load[otherwise if the player is possessing a vagina]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if]. A surge of warmth inside you lets you know that [he of M] came too, and you glance up at [him of M] as the condom slowly fills with [semen].";
 		moderateDignify;
 		orgasm;
 		orgasm M;
@@ -1359,7 +1359,7 @@ To bottom dominate (M - a gladiator):
 		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 		say "[line break][speech style of M]'WAIT!'[roman type][line break][NameDesc of M] yelps. [line break][speech style of M]'If you keep going, I won't be able to hold back. [big please], I have no right to seed you.'[roman type][line break]Keep going anyway?";
 		if the player is bimbo consenting:
-			say "You don't even slow down, and pound yourself to orgasm within moments. Moans bubble out of your mouth as you [if the size of penis > 0]paint [his of M] belly with your load[otherwise if the player is female]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if], relishing [his of M] hiss of pleasure as [he of M] fills your [variable F] with several spurts of fresh [semen].";
+			say "You don't even slow down, and pound yourself to orgasm within moments. Moans bubble out of your mouth as you [if the player is possessing a penis]paint [his of M] belly with your load[otherwise if the player is female]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if], relishing [his of M] hiss of pleasure as [he of M] fills your [variable F] with several spurts of fresh [semen].";
 			strongDignify;
 			orgasm;
 			compute M finishing in F;
@@ -1373,7 +1373,7 @@ To bottom dominate (M - a gladiator):
 			say AfterDominationComment 4 of M;
 	otherwise:
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-		say "Orgasm crashes over your body, temporarily robbing you of muscle control as you collapse into [him of M] and [if the size of penis > 0]paint [his of M] belly with your load[otherwise if the player is female]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if]. Just when you start to get up, you feel [his of M] arms lock around your waist, forcing you to stay in place as [his of M] [DickDesc of M] rapidly begins to spasm. The satisfaction of victory is immediately replaced by the feeling of [his of M] [semen] flooding your [variable F].";
+		say "Orgasm crashes over your body, temporarily robbing you of muscle control as you collapse into [him of M] and [if the player is possessing a penis]paint [his of M] belly with your load[otherwise if the player is female]douse [him of M] with feminine juices[otherwise]bury your face in [his of M] [ChestDesc of M][end if]. Just when you start to get up, you feel [his of M] arms lock around your waist, forcing you to stay in place as [his of M] [DickDesc of M] rapidly begins to spasm. The satisfaction of victory is immediately replaced by the feeling of [his of M] [semen] flooding your [variable F].";
 		slightDignify;
 		now player-fucking is DOMINANT-NEUTRAL;
 		orgasm;
@@ -1562,7 +1562,7 @@ To vaginal dominate (M - a gladiator):
 		slightDignify;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise:
-		say "You force [NameDesc of M] onto [his of M] hands and knees, making sure to grind your [unless the player is a bit horny]'growing' [end if]erection between [his of M] asscheeks as you unclip [his of M] loincloth. [line break][speech style of M]'You have bested me, so you may use my body, but I refuse to bear the seed of an inferior [if the player is male]man[otherwise]phallus[end if].'[roman type][line break][big his of M] words sting, and so does [his of M] disdainful glance at your [sexual-player-penis], but the thought of cumming inside such a sexy [man of M] already has you pretty hard. You decide to let it go, unclipping [his of M] loincloth and immediately bury your [SexDesc of penis] into [his of M] [HoleDesc of M]. The scowl never leaves [his of M] face the whole time you're fucking [him of M], and [he of M] occasionally glances over [his of M] shoulder as if to urge you to finish sooner. You[']re too psyched to do [him of M] to feel bothered by it, so it's not long at all before you have to pull out and shoot your [load] on the floor. [big he of M] gives you an ominous look.";
+		say "You force [NameDesc of M] onto [his of M] hands and knees, making sure to grind your [unless the player is a bit horny]'growing' [end if]erection between [his of M] asscheeks as you unclip [his of M] loincloth. [line break][speech style of M]'You have bested me, so you may use my body, but I refuse to bear the seed of an inferior [if the player is gendered male]man[otherwise]phallus[end if].'[roman type][line break][big his of M] words sting, and so does [his of M] disdainful glance at your [sexual-player-penis], but the thought of cumming inside such a sexy [man of M] already has you pretty hard. You decide to let it go, unclipping [his of M] loincloth and immediately bury your [SexDesc of penis] into [his of M] [HoleDesc of M]. The scowl never leaves [his of M] face the whole time you're fucking [him of M], and [he of M] occasionally glances over [his of M] shoulder as if to urge you to finish sooner. You[']re too psyched to do [him of M] to feel bothered by it, so it's not long at all before you have to pull out and shoot your [load] on the floor. [big he of M] gives you an ominous look.";
 		now player-fucking is DOMINANT-SHAMEFUL;
 		say AfterDominationComment 1 of M;
 	if M is male, AnalGet;
@@ -1715,7 +1715,7 @@ To say InvitationAccepted of (M - a gladiator) with (N - a monster):
 		say "[speech style of M]'How dare you speak that way. You shame yourself, sister!'[roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]".[this should lead nicely into the watersports scene]
 
 To say InvitationRejected of (M - a gladiator) with (N - a monster):
-	if M is male:
+	if M is gendered male:
 		say "[speech style of M]'[one of]Spoken like the whore you are.'[or]The only thing worse than being a whore is enjoying it.'[or]If I join in, it will be for my own pleasure, whore.'[at random][roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]";
 	otherwise:
 		say "[speech style of M]'[one of]You disgust me.'[or]I'm embarrassed I actually thought you could ever be a true woman.'[or]A dignified woman does not say such things.'[or]It is clear you are no different from a common slut if you say such things.'[at random][roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]".

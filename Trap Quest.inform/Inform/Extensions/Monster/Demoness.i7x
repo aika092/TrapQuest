@@ -1033,7 +1033,7 @@ To compute happy reward of (M - a demoness):
 		say "[speech style of M]'So obedient. I like that about you, but you don't have to be so rigid. Why don't I loosen you up a little?[roman type][line break] [BigNameDesc of M] lifts your chin, locking lips with you as thick, acrid smoke rushes into your mouth. A tingle moves up your spine as it fills your lungs, and you feel more flexible.";
 		DexUp A - 1;
 	otherwise if R is 5:
-		say "[speech style of M]Good [if the player is male and the size of penis > 3]boy[otherwise]girl[end if]. Now, as promised...[roman type][line break]";
+		say "[speech style of M]Good [if the player is gendered male and the size of penis > 3]boy[otherwise]girl[end if]. Now, as promised...[roman type][line break]";
 		let N be a random number between 1 and 9;
 		if N > 7, now J is pure diamond;
 		otherwise now J is pink diamond;
@@ -1045,7 +1045,7 @@ To compute happy reward of (M - a demoness):
 			say "[BigNameDesc of M] snaps [his of M] fingers, and a [printed name of J] materialises in front of you.";
 			now J is in the location of the player;
 	otherwise:
-		say "[speech style of M]Good [if the player is male and the size of penis > 3]boy[otherwise]girl[end if]. You always do as you[']re told. Come find me when you're ready to be my cumdu-... I mean business partner again.'[roman type] [if M is penetrating vagina][BigNameDesc of M] scoops a bit of cum out of your [vagina] and sensually licks it off [his of M] fingers[otherwise if bukkake fetish is 1][BigNameDesc of M] uses a finger to wipe a bit of cum from your lower lip and sensually licks it off[otherwise][BigNameDesc of M] readjusts [his of M] skirt[end if] as [he of M] disappears in a burst of flames.";
+		say "[speech style of M]Good [if the player is gendered male and the size of penis > 3]boy[otherwise]girl[end if]. You always do as you[']re told. Come find me when you're ready to be my cumdu-... I mean business partner again.'[roman type] [if M is penetrating vagina][BigNameDesc of M] scoops a bit of cum out of your [vagina] and sensually licks it off [his of M] fingers[otherwise if bukkake fetish is 1][BigNameDesc of M] uses a finger to wipe a bit of cum from your lower lip and sensually licks it off[otherwise][BigNameDesc of M] readjusts [his of M] skirt[end if] as [he of M] disappears in a burst of flames.";
 		if M is penetrating vagina:
 			decrease the semen volume of vagina by 1;
 		otherwise if the semen coating of face > 0:

@@ -99,7 +99,7 @@ Carry out rocking:
 		say "The magic binding on the saddle seems to disappear! You are able to climb off successfully. [one of]As you lift yourself off, you magically feel fully healed! Wow![or]Once again, you feel fully healed![stopping]";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
-		if the player is female:
+		if the player is possessing a vagina:
 			now the soreness of vagina is 0;
 			now the tolerated of vagina is 0;
 		now the body soreness of the player is 0;

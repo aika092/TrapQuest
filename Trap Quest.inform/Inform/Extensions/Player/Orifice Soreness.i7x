@@ -154,7 +154,7 @@ To passively stimulate (F - a body part) from (T - an object):
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
 		if F is vagina or F is penis: [We use vagina as a shortcut to mean penis sometimes]
-			if the player is female, increase A by the square root of the vaginal sex addiction of the player;
+			if the player is possessing a vagina, increase A by the square root of the vaginal sex addiction of the player;
 			otherwise increase A by the sex addiction of the player / 2;
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
 		let ST be stimulation of T on F * 6;
@@ -220,7 +220,7 @@ To RuinRoll (F - a fuckhole):
 		if debuginfo > 0, say "[input-style]Soreness increase roll: d10 ([R]) | ([X].5) [F] tolerance[roman type][line break]";
 		decrease X by R;
 		if X < 0 and the soreness of F < 10, increase the soreness of F by 1; [Increase soreness if RNG dictates]
-		if the virgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is female and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
+		if the virgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is possessing a vagina and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
 			gape F times 1;
 		otherwise if the analvirgin of the player is 1 and there is a live virginity taking thing penetrating F and F is asshole:
 			gape F times 1;

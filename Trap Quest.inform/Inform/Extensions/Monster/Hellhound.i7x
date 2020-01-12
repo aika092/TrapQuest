@@ -450,10 +450,10 @@ To compute punishment of (P - hellhound-facesit):
 			if C is clothing:
 				compute current-monster attacking C;
 				unless there is worn top level protection clothing:
-					say "[big he of M] immediately dives in, [if the player is male]taking your [player-penis] into [his of M] mouth and whining happy as [he of M] begins to suck[otherwise]tongue at the ready, and begins to happily and messily lick at your [vagina][end if]!";
+					say "[big he of M] immediately dives in, [if the player is possessing a penis]taking your [player-penis] into [his of M] mouth and whining happy as [he of M] begins to suck[otherwise if the player is possessing a vagina]tongue at the ready, and begins to happily and messily lick at your [vagina][end if]!";
 					ruin vagina;
 			otherwise:
-				if the player is male, say "";
+				if the player is not possessing a vagina, say "";
 				otherwise say "[BigNameDesc of M] [one of]licks away at your [vagina] but never stops grinding on your face![or]messily tongues your inner folds whilst pleasuring [himself of M] on the tip of your nose![or]gently nibbles on your clit as [he of M] drives [his of M] diapered crotch across your face.[in random order]";
 			decrease the sex-length of M by 1;
 		otherwise if the sex-length of M is 1:
@@ -471,7 +471,7 @@ To compute punishment of (P - hellhound-facesit):
 		say "[BigNameDesc of M] rolls you onto your back before turning 180 degrees and promptly sitting on your face. Your eyes, mouth and nose are all completely blocked under [his of M] thick padding. That is, until [he of M] begins to grind back and forth, giving you very brief chances to breathe in between each thrust of [his of M] hips!";
 		now M is penetrating face;
 		unless there is worn top level protection clothing:
-			say "[big he of M] also moves [his of M] face down to your crotch and [if the player is male]takes your [player-penis] into [his of M] mouth[otherwise]begins to explore your [vagina] with [his of M] tongue[end if]!";
+			say "[big he of M] also moves [his of M] face down to your crotch and [if the player is possessing a penis]takes your [player-penis] into [his of M] mouth[otherwise if the player is possessing a vagina]begins to explore your [vagina] with [his of M] tongue[end if]!";
 			if there is a worn perceived messed diaper:
 				cutshow figure of puppy cutscene 6 for M;
 			otherwise if there is a worn perceived wet diaper:

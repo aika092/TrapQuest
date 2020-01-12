@@ -163,7 +163,7 @@ To compute thirdLakeArm of (L - a lake monster):
 		otherwise:
 			increase Z by 1;
 	if Z is 3:
-		if the player is male or vagina is actually occupied:
+		if the player is not possessing a vagina or vagina is actually occupied:
 			increase Z by 1;
 		otherwise if the player is a butt slut and a random number between 1 and 2 is 1:
 			increase Z by 1;

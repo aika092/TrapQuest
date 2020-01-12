@@ -114,7 +114,7 @@ To say MediumDesc of (C - a Gender Bender T-shirt):
 Definition: a Gender Bender T-shirt is white themed: decide yes.
 
 Report wearing gender bender T-shirt:
-	if the player is male and the bimbo of the player < 5:
+	if the player is gendered male and the bimbo of the player < 5:
 		say "You feel slightly calmer about the feminine nature of the game. Something feels a bit different but you're not sure what...";
 		if the flesh volume of breasts is 0, now the flesh volume of breasts is 1;
 		if the raw heel skill of the player < 2, now the raw heel skill of the player is 2;

@@ -50,7 +50,7 @@ Definition: a clothing (called C) is too cringeworthy:
 Definition: a clothing (called C) is able to cover crotch: [Either C is the only thing covering crotch, or crotch is uncovered and this could help.]
 	let X be 0;
 	if C is worn, increase X by 1;
-	if the player is male:
+	if the player is possessing a penis:
 		if C is actually at least partially penis covering and C is potentially asshole covering:
 			if the number of worn actually at least partially penis covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
 	otherwise:
@@ -108,7 +108,7 @@ The assfilled players can't wear ass plugging clothes rule is listed in the glob
 
 This is the vaginafilled players can't wear vagina plugging clothes rule:
 	if wearing-target is vagina plugging:
-		if (the player is female and vagina is actually occupied) or (the player is male and asshole is actually occupied):
+		if (the player is possessing a vagina and vagina is actually occupied) or (the player is male and asshole is actually occupied):
 			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [vagina]!";
 			rule fails.
 The vaginafilled players can't wear vagina plugging clothes rule is listed in the global wearability rules.
@@ -181,7 +181,7 @@ This is the ass protected players can't wear ass plugging clothes rule:
 The ass protected players can't wear ass plugging clothes rule is listed in the global wearability rules.
 
 This is the pussy protected players can't wear vagina plugging clothes rule:
-	if the player is pussy protected and wearing-target is vagina plugging and the player is female:
+	if the player is pussy protected and wearing-target is vagina plugging and the player is possessing a vagina:
 		if wearing-target is embodied:
 			if summoning is 0 and autowear is false, say "You can't wear this with something covering your [vagina]!";
 			rule fails;

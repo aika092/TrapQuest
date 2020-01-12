@@ -336,7 +336,7 @@ Definition: icarus-belly is IcarusScienceAppropriate if pregnancy fetish + infla
 Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
-	if pregnancy fetish > 0 and the player is female:
+	if pregnancy fetish > 0 and the player is possessing a vagina:
 		now the pregnancy of the player is 1;
 		cancel father material of vagina;
 		now forcedFertility is true;

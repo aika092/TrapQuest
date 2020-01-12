@@ -85,7 +85,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 					say "The tentacles wriggle, prod and push at your [ShortDesc of C], weakening the [clothing-material of C]!";
 					damage C;
 			otherwise:
-				if the player is female:
+				if the player is possessing a vagina:
 					if M is penetrating vagina:
 						say "The metal tentacle in your [vagina] is still [one of]thrusting vigorously[or]plowing away[or]fucking you deep and hard[or]smashing against your cervix as it violates you[in random order]!";
 						ruin vagina;
@@ -96,7 +96,7 @@ A time based rule (this is the iron-maiden-punishment rule):
 						FuckCount;
 					otherwise:
 						say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [vagina]!";
-				otherwise if the size of penis > 0:
+				otherwise if the player is possessing a penis:
 					say "The metal tentacles [one of]wrap around your [ShortDesc of penis], massaging you in a fast rhythm and greatly increasing your arousal[or]continue to stroke your [player-penis][stopping]!";
 					stimulate penis from M;
 			unless there is worn top level ass protection clothing:

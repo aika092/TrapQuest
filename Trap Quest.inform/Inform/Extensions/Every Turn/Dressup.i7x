@@ -58,7 +58,7 @@ A time based rule (this is the dressup rule):
 					humiliate 15;
 					arouse 50 + the vaginal sex addiction of the player * 5;
 					now molested is 1;
-			otherwise if the player is male:
+			otherwise if the player is possessing a penis:
 				if the size of penis > a random number between 3 and 12:
 					say "You yelp as a [one of]rough, manly[or]soft, feminine[or][if mythical creature fetish is 1]bestial, clawed[otherwise]cold, warmth-less[end if][at random] hand wraps itself around your [ShortDesc of penis], unnaturally distorting your [ShortDesc of H] as it casts an ominous glow over your inner thighs. Shivers run up your spine as the clammy fingers firmly pump you from tip to shaft, as if trying to literally feed your junk back into your body. You can only claw helplessly at the possessed [clothing-material of H] until it stops, pleasure, humiliation, and raw [if the bimbo of the player < 14]terror[otherwise]exhilaration[end if] bubbling up from your loins at having your clothes treat you [one of]like nothing but a toy to be used[or]like their personal sex guinea pig[or]like nothing but a simple plaything[at random].";
 					PenisDown 1;

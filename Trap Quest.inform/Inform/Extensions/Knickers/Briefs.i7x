@@ -115,7 +115,7 @@ To uniquely set up (T - a white-diagram briefs):
 Report wearing a white-diagram briefs:
 	if the pregnancy rate of the player is 1:
 		now the pregnancy rate of the player is 2;
-		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
+		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
 	otherwise if the size of penis > min penis size:
 		say "You watch your [ShortDesc of penis] ";
@@ -306,7 +306,7 @@ To compute periodic effect of (G - pale blue-briefs):
 	increase the charge of G by 1;
 	if the charge of G > 53:
 		now the charge of G is 0;
-		if the player is male:
+		if the player is not possessing a vagina:
 			if the openness of asshole < 8:
 				say "[bold type]You feel your [G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
 				gape asshole times 1;

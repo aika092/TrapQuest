@@ -610,7 +610,7 @@ To compute (M - domesticated wasp) protecting against (X - a monster):
 
 To compute SelectionFailure of (M - domesticated wasp):
 	say "[BigNameDesc of M] finds itself unable to use you how it planned, but the rider seems to have an idea! ";
-	if the player is male and the size of penis > min penis size:
+	if the player is possessing a penis and the size of penis > min penis size:
 		let P be the size of penis;
 		PenisDown 1;
 		say "She fires several bolts of pink magic toward your crotch, [if P > the size of penis]causing your penis to shrink into a [ShortDesc of penis][otherwise]which doesn't seem to have any visible effect[end if].";

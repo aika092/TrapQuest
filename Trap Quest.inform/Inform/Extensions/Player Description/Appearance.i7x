@@ -47,11 +47,11 @@ To say PerceivedAdultDesc:
 		if C < 5:
 			say "You look like an adult who [if there is a lewdly exposed body part]is not wearing enough clothing[otherwise if the bimbo of the player > 10]is enjoying wearing youthful clothing[otherwise]has been forced to wear youthful clothing[end if].";
 		otherwise if C < 8:
-			say "You look like a [if the player is male]man[otherwise]woman[end if] who ";
+			say "You look like a [man of the player] who ";
 			if there is worn currently visible bondage, say "has been forced to [if there is a lewdly exposed body part]wear exposing 'babygirl' style clothing[otherwise]dress in a 'babygirl' manner[end if].";
 			otherwise say "[if there is a lewdly exposed body part]is purposefully wearing provocative 'babygirl' style clothing[otherwise]is purposefully dressed in a 'babygirl' manner[end if].";
 		otherwise if C < 11:
-			say "You look like an embarrassing excuse of a [if the player is male]man[otherwise]woman[end if], who [if there is a lewdly exposed body part]can't be trusted to dress themselves properly[otherwise]is desperate to be treated like a child[end if].";
+			say "You look like an embarrassing excuse of a [man of the player], who [if there is a lewdly exposed body part]can't be trusted to dress themselves properly[otherwise]is desperate to be treated like a child[end if].";
 		otherwise if C < 14:
 			say "You look like a [if there is a lewdly exposed body part]perverted adult baby[otherwise]fully fledged adult baby[end if] who needs looking after.";
 		otherwise if C < 17:

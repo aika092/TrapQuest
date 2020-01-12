@@ -26,14 +26,14 @@ To compute latex transformation:
 		if the latex-transformation of the player is 2:
 			say "Some of the detail in your skin is [one of]definitely[or]once again[stopping] fading. You could also swear that you feel yourself getting slowly less and less heavy...";
 		if the latex-transformation of the player is 3:
-			say "Your skin becomes more and more smooth and featureless by the minute. You suddenly realise your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] more... relaxed. Putting a hand back there, you realise [if the player is male]it is[otherwise]they are both[end if] extremely gaped and hanging open, almost like a sex doll. Even weirder, it doesn't feel uncomfortable at all. It's almost as if your [if the player is male]entrance is[otherwise]entrances are[end if] now completely numb...";
+			say "Your skin becomes more and more smooth and featureless by the minute. You suddenly realise your [if the player is not possessing a vagina][asshole] feels[otherwise][vagina] and [asshole] feel[end if] more... relaxed. Putting a hand back there, you realise [if the player is not possessing a vagina]it is[otherwise]they are both[end if] extremely gaped and hanging open, almost like a sex doll. Even weirder, it doesn't feel uncomfortable at all. It's almost as if your [if the player is not possessing a vagina]entrance is[otherwise]entrances are[end if] now completely numb...";
 			appropriate-cutscene-display figure of latex curse 7;
 			now the openness of asshole is 10;
-			if the player is female, now the openness of vagina is 10;
+			if the player is possessing a vagina, now the openness of vagina is 10;
 		if the latex-transformation of the player is 4:
 			say "Your skin is now completely smooth and featureless - it doesn't look real but more like something made out of plastic or in a cartoon. ";
 			appropriate-cutscene-display figure of latex curse 1;
-			say "Your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
+			say "Your [if the player is not possessing a vagina][asshole] feels[otherwise][vagina] and [asshole] feel[end if] completely rubber all the way inside - whilst you can still feel things, you probably can no longer get sore.";
 			now the soreness of asshole is 0;
 			now the soreness of vagina is 0;
 			now the tolerated of asshole is 0;

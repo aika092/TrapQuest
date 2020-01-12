@@ -26,13 +26,13 @@ To compute periodic effect of (C - an expansion anal beads):
 			say "Your [ShortDesc of C] grows, and another bead forces itself into your [asshole]";
 			increase the notches of C by 1;
 			increase the notch-taken of C by 1;
-			if the player is male, PenisUp 1;
+			if the player is possessing a penis, PenisUp 1;
 		otherwise if the size of C < 10:
 			say "Your [ShortDesc of C] drastically increases in size!";
 			increase the size of C by 1;
 			let F be a random fuckhole penetrated by C;
 			if the size of C > the openness of F, Ruin F;
-			if the player is male, PenisUp 1.
+			if the player is possessing a penis, PenisUp 1.
 
 Figure of anal beads is the file "Items/Accessories/Toys/analbeads1.png".
 

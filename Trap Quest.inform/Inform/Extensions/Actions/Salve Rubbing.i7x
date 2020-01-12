@@ -12,7 +12,7 @@ Check SalveRubbing:
 		if the second noun is not breasts and the second noun is not hips and the second noun is not belly, say "You can only apply a salve to your [bold type]breasts[roman type], your [bold type]belly[roman type] or your [bold type]ass[roman type] at the moment." instead;
 	if the noun is salve of concealment:
 		if the second noun is hips, now the second noun is asshole;
-		if the player is male and second noun is not asshole, say "You can only apply this salve to your [bold type][asshole][roman type]!" instead;
+		if the player is not possessing a vagina and second noun is not asshole, say "You can only apply this salve to your [bold type][asshole][roman type]!" instead;
 		if the second noun is not asshole and the second noun is not vagina, say "You can only apply this salve to your [bold type][asshole] or [vagina][roman type]!" instead;
 	if the second noun is breasts:
 		if there is a worn true salve covering breasts:

@@ -46,13 +46,13 @@ To Recover the Player:
 			decrease the large egg count of belly by 1;
 			let E be a random off-stage large egg;
 			if E is a thing, now E is in the location of the player;
-	if the player is female and the number of things penetrating vagina is 0:
+	if the player is possessing a vagina and the number of things penetrating vagina is 0:
 		now the soreness of vagina is 0;
 		now the tolerated of vagina is 0;
 		now the openness of vagina is the real openness of vagina;
 	if the pregnancy of the player is 0:
 		cancel father material;
-		if the player is female and the number of things penetrating vagina is 0:
+		if the player is possessing a vagina and the number of things penetrating vagina is 0:
 			WombEmpty the womb volume of vagina;
 			SemenPuddleUp the semen volume of vagina / 2;
 			now the semen volume of vagina is 0;

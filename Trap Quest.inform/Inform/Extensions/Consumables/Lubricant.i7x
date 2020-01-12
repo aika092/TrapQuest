@@ -37,7 +37,7 @@ Lubing is an action applying to one thing.
 Check lubing:
 	if the noun is make up kit, try brushing the noun with face instead;
 	if the noun is not lubricant, try drinking the noun instead;
-	if the player is male, try orilubing the noun with asshole instead.
+	if the player is not possessing a vagina, try orilubing the noun with asshole instead.
 
 To decide which number is the heaviness of (C - a lubricant):
 	decide on 1.

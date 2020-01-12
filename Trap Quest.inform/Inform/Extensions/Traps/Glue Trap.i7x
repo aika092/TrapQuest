@@ -406,7 +406,7 @@ To compute glue escaping:
 		[I think max strength is 30]
 		if the strength of the player < bond-grip:
 			if the strength of the player < 6:
-				say "Your [if the player is male and transGender is 0]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
+				say "Your [if the player is gendered male]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
 			otherwise:
 				say "Your [if the strength of the player < 10]weak little [end if]muscles simply aren't strong enough to pull free of this glue as things stand!";
 			say "Unless you have clothes to [bold type]rub[roman type] in the glue and scrape it away or soak it up, looks like you might have to wait for the glue to weaken, or for someone to rescue you!";

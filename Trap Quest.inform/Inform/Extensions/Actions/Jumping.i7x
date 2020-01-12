@@ -38,8 +38,8 @@ Check jumping:
 		otherwise now the charge of P is 2;
 		repeat with M running through intelligent monsters in the location of the player:
 			if A is 0:
-				if the player is female and vagina is lewdly exposed, now B is 16;
-				if the player is male and penis is lewdly exposed, now B is 16;
+				if the player is possessing a vagina and vagina is lewdly exposed, now B is 16;
+				if the player is possessing a penis and penis is lewdly exposed, now B is 16;
 			if B >= 16 and M is interested:
 				say "[BigNameDesc of M] [one of]seems actively turned on by your cheer[or]seems to [i]really like[/i] your cheer[at random].";
 				if the refactory-period of M > 4:

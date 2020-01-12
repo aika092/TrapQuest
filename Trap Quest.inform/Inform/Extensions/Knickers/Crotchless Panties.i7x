@@ -38,13 +38,13 @@ To decide which figure-name is clothing-image of (C - sheer-black crotchless-pan
 	decide on figure of crotchless-panties 5.
 
 To say ClothingDesc of (K - pearl crotchless-panties):
-	say "This crotchless g-string has a line of pearls down the middle[if the player is female and K is worn] that stimulate your [vagina] as you walk[end if]. It hides absolutely nothing.".
+	say "This crotchless g-string has a line of pearls down the middle[if the player is possessing a vagina and K is worn] that stimulate your [vagina] as you walk[end if]. It hides absolutely nothing.".
 
 To say ClothingDesc of (K - buckled crotchless-panties):
 	say "This black crotchless g-string has a frill and stylish buckle at the waist. It hides absolutely nothing.".
 
 To say ClothingDesc of (K - crotch chain):
-	say "This underwear is literally just a chain attached to a belt. [if the player is female and K is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk. [end if]It hides absolutely nothing.".
+	say "This underwear is literally just a chain attached to a belt. [if the player is possessing a vagina and K is worn]The chain sits inside the entrance to your [vagina] and stimulates you as you walk. [end if]It hides absolutely nothing.".
 
 To say ClothingDesc of (K - black-and-red lace crotchless-panties):
 	say "This pair of lace knickers is already sexy, but the crotchless parting makes it downright slutty. It hides absolutely nothing.".
@@ -83,7 +83,7 @@ Definition: crotch chain is walking-stimulating: decide yes.
 Definition: pearl crotchless-panties is walking-stimulating: decide yes.
 
 
-Report going when the player is female and the player is upright and there is worn walking-stimulating crotchless-panties:
+Report going when the player is possessing a vagina and the player is upright and there is worn walking-stimulating crotchless-panties:
 	let C be a random worn walking-stimulating crotchless-panties;
 	increase the walkCharge of C by 1;
 	if the walkCharge of C > 10:

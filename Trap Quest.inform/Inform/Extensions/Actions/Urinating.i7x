@@ -284,7 +284,7 @@ REQUIRES COMMENTING
 To compute urinal use:
 	if there is displacable pee covering clothing, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and release your hold on your bladder.";
+	say "[if the player is possessing a penis]walk up to[otherwise]squat in front of[end if] the urinal and release your hold on your bladder.";
 	now the bladder of the player is 0;
 	repeat with M running through reactive monsters:
 		compute toilet reaction of M;
@@ -349,7 +349,7 @@ To start urination:
 			compute urinal use;
 			say "[PeeReaction 0]";
 		otherwise if the player is able to use a body of water and delayed urination is 0:
-			say "You [if the size of penis > 0 and the player is upright]walk up to the edge and [urinate] into the water[otherwise]walk past the edge, wading into the water until you can discreetly [urinate][end if]. ";
+			say "You [if the player is possessing a penis and the player is upright]walk up to the edge and [urinate] into the water[otherwise]walk past the edge, wading into the water until you can discreetly [urinate][end if]. ";
 			if incontinence > 0:
 				decrease incontinence by 1;
 				say "You feel as if you've regained some control over your bladder!";
@@ -366,7 +366,7 @@ To start urination:
 		otherwise if gloryhole is grabbing the player and gloryhole is normal glory hole:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. You are [one of][or]UN[stopping]surprised to find that your new anonymous oral servant doesn't pull away!";
 		otherwise:
-			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is female and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
+			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is possessing a vagina and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			say "[PeeReaction 1]";
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
@@ -425,7 +425,7 @@ To compute pee protected urination:
 	if there is a worn WC plug panties:
 		say "Your plug panties [one of]seem to somehow absorb the [urine], and also vibrate powerfully in response! [or]absorb the [urine], vibrating powerfully as they do. [stopping]";
 		say "[one of][WCPantiesVibeFlav][or][or][cycling]";
-		if the player is female, stimulate vagina;
+		if the player is possessing a vagina, stimulate vagina;
 		otherwise stimulate asshole;
 	otherwise if quiz-partner is worn:
 		compute quiz partner messing;
@@ -504,7 +504,7 @@ To compute urination:
 		otherwise if gloryhole is grabbing the player and gloryhole is normal glory hole:
 			do nothing;
 		otherwise:
-			say "Your [urine] continues to [if the player is female and the player is dildo stuck]trickle around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flow to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
+			say "Your [urine] continues to [if the player is possessing a vagina and the player is dildo stuck]trickle around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flow to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
 			otherwise:

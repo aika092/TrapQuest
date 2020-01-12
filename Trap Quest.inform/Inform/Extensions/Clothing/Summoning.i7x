@@ -13,8 +13,8 @@ To summon (C - a clothing):
 	now C is identified;
 	now C is sure;
 	compute unique summoning of C;
-	if C is ass plugging or (C is vagina plugging and the player is male), now C is penetrating asshole;
-	if C is vagina plugging and the player is female, now C is penetrating vagina;
+	if C is ass plugging or (C is vagina plugging and the player is not possessing a vagina), now C is penetrating asshole;
+	if C is vagina plugging and the player is possessing a vagina, now C is penetrating vagina;
 	if C is ballgag, now C is penetrating face.[a ballgag is any gag that occupies the player's face. I.e. most gags]
 
 To compute unique summoning of (C - a thing):

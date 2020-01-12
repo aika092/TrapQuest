@@ -114,7 +114,7 @@ To compute class outfit of (H - a maid headdress):
 		now the raw-magic-modifier of S is -1;
 		increase the raw-magic-modifier of S by the crawl count of the player / 7;
 	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
-		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]![roman type] [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
+		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if]![roman type] [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
 		summon C locked;
 		say "[variable custom style]I'm a hornymaid locked in chastity! But I need to cum so badly...[roman type][line break]";
 	otherwise if the class of the player is magical girl:

@@ -131,7 +131,7 @@ The virginbonus pussy slut rule is listed in the pussy slut eligibility rules.
 Part - Virgin Punish (Sissification)
 
 Definition: yourself is a sissy:
-	if the player is male and transGender is 0 and the number of worn sissifying clothing > 1, decide yes;
+	if the player is gendered male and the number of worn sissifying clothing > 1, decide yes;
 	decide no.
 
 [!<VirginPunish>+
@@ -152,7 +152,7 @@ To virginpunish:
 			say "[VirginFlav]";
 			PenisDown 1;
 			say "Your penis [Shrink]s into a [ShortDesc of penis].";
-		otherwise if the size of penis > 0:
+		otherwise if the player is possessing a penis:
 			say "[VirginFlav]";
 			let C be a random off-stage chastity cage;
 			if C is actually summonable:

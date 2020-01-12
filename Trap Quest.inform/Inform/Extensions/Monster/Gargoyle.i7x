@@ -38,7 +38,7 @@ To decide which figure-name is the friendly-monster-image of (M - gargoyle):
 
 To decide which figure-name is the sex-profile of (M - gargoyle):
 	if diaper quest is 0 and M is grabbing the player:
-		if the size of penis > 0, decide on figure of gargoyle BJ 2;
+		if the player is possessing a penis, decide on figure of gargoyle BJ 2;
 		[decide on figure of gargoyle cunnilingus 1;]
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
@@ -157,7 +157,7 @@ To compute MasturbationReaction of (M - gargoyle):
 			now M is unleashed.
 
 To compute delay of (M - gargoyle):
-	if the size of penis is 0 and M is not airborne:
+	if the player is not possessing a penis and M is not airborne:
 		follow the gargoyle flight rule;
 	otherwise:
 		say "[BigNameDesc of M] simply stares at you silently, as if waiting to see what you do next.".

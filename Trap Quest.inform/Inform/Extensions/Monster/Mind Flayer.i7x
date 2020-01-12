@@ -109,7 +109,7 @@ To compute facial sex of (M - mind flayer):
 		Intdown 2;
 		cutshow figure of mindflayer cutscene 4 for M;
 		if the player is able to get horny:
-			if the player is female:
+			if the player is possessing a vagina:
 				vaginally orgasm shamefully;
 			otherwise:
 				orgasm;

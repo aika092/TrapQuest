@@ -312,7 +312,7 @@ To AltarPray (P - a person):
 			say "About half the length of your hair is magically chopped off!";
 			now the raw largeness of hair is the raw largeness of hair / 2;
 			break;
-		if R is 8 and the size of penis < 10 and the player is male:
+		if R is 8 and the size of penis < 10 and the player is possessing a penis:
 			say "You feel more virile!";
 			PenisUp 1;
 			if the size of penis is previous penis length, SexAddictDown 2;
@@ -464,7 +464,7 @@ To reset elder altar:
 
 []
 To ElderEmpower (T - a headgear):[default]
-	if the player is female:
+	if the player is possessing a vagina:
 		ElderBreed vagina;
 	otherwise:
 		ElderBreed asshole;
@@ -513,7 +513,7 @@ To ElderOffer:
 		ElderEmpower a random worn headgear;
 	if the charge of elder altar < 1:[if nothing happened with your headgear, it's time to breed]
 		if diaper quest is 0:
-			if the player is female, ElderBreed vagina;
+			if the player is possessing a vagina, ElderBreed vagina;
 			otherwise ElderBreed asshole;
 		otherwise:
 			ElderConnect;
@@ -794,13 +794,13 @@ To compute DevilPayment (N - a number):
 		say "into the skin of your chest. A[if N < 3] dull[otherwise if N < 5] deep, heavy[otherwise]n incredibly deep, penetrating[end if] ache settles into your joints as the symbol slowly fades.";
 		bodyruin N;
 	otherwise if R is 2 and diaper quest is 0:
-		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is female]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
-		if the player is female:
+		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is possessing a vagina]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
+		if the player is possessing a vagina:
 			ruin asshole times N;
 			ruin vagina times N;
 		otherwise:
 			ruin asshole times N;
-	otherwise if R is 3 and the player is female and diaper quest is 0:
+	otherwise if R is 3 and the player is possessing a vagina and diaper quest is 0:
 		say "into the skin of your abdomen. A [if N < 3]barely noticeable[otherwise if N < 5]noticeable[otherwise]heavily noticeable[end if] feeling of fullness settles into your belly as the symbol slowly fades.";
 		let M be a random imp;
 		now M is penetrating vagina;

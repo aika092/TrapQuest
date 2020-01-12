@@ -263,7 +263,7 @@ Check entering summoning-circle:
 	if R is 1:
 		say "Submissive fantasies assault your mind!";
 		if a random number between 1 and 2 is 1 and diaper quest is 1:
-			if a random number between 1 and 2 is 1 and the player is female, VaginalSexAddictUp 1;
+			if a random number between 1 and 2 is 1 and the player is possessing a vagina, VaginalSexAddictUp 1;
 			otherwise AnalSexAddictUp 1;
 		otherwise:
 			SexAddictUp 1;
@@ -418,10 +418,10 @@ Check entering giant-statue:
 	if vine boss is alive or doomed is 5, now V is 1;
 	let R be a random number between 1 and 5;
 	if R is 1 and pregnancy fetish is 1:
-		if diaper quest is 0 and the player is female:
+		if diaper quest is 0 and the player is possessing a vagina:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
 			increase the pregnancy rate of the player by 1 + V;
-		otherwise if diaper quest is 0 and the size of penis > 0:
+		otherwise if diaper quest is 0 and the player is possessing a penis:
 			PenisDown 1 + V;
 			say "A wave of energy washes over you as your penis shrinks into a [ShortDesc of penis].";
 		otherwise:
@@ -903,10 +903,10 @@ Check entering mysterious-mummy:
 			if the body soreness of the player < 10, increase the body soreness of the player by 1;
 		otherwise if R is 3:
 			say "Your crotch feels strange...";
-			if the size of penis > 0:
+			if the player is possessing a penis:
 				PenisDown 1;
 			otherwise:
-				if the player is female, PussyClose 1;
+				if the player is possessing a vagina, PussyClose 1;
 				otherwise AssClose 1;
 		otherwise if R is 4:
 			say "A shiver runs up your spine.";

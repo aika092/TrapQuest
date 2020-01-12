@@ -39,7 +39,7 @@ To decide which figure-name is clothing-image of (C - a purple strap monokini):
 
 To say ClothingDesc of (C - a purple strap monokini):
 	say "This piece of elasticated purple fabric is really quite thin.";
-	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
+	if C is worn, say "It only just covers your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
 
 To say ShortDesc of (C - a purple strap monokini):
 	say "purple strap swimsuit".
@@ -59,7 +59,7 @@ To decide which figure-name is clothing-image of (C - a grey string monokini):
 
 To say ClothingDesc of (C - a grey string monokini):
 	say "This piece of elasticated fabric connected to a pair of grey swimming briefs is so thin it is almost non-existent.";
-	if C is worn, say "It covers literally none of your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers literally none of your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a grey string monokini):
 	say "string swimsuit".
@@ -82,7 +82,7 @@ To decide which figure-name is clothing-image of (C - a black string monokini):
 
 To say ClothingDesc of (C - a black string monokini):
 	say "This piece of elasticated black fabric is ridiculously thin.";
-	if C is worn, say "It fails to cover your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It fails to cover your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a black string monokini):
 	say "black string swimsuit".
@@ -105,7 +105,7 @@ To decide which figure-name is clothing-image of (C - a blue slut monokini):
 
 To say ClothingDesc of (C - a blue slut monokini):
 	say "This bizarre swimsuit consists of just a collar that connects to your crotch via a long strip of fabric that goes in between your cleavage and up your back.";
-	if C is worn, say "It covers absolutely no part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers absolutely no part of your [ShortDesc of breasts] and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a blue slut monokini):
 	say "slutty blue monokini".
@@ -134,7 +134,7 @@ To decide which figure-name is clothing-image of (C - a pink minimalist monokini
 
 To say ClothingDesc of (C - a pink minimalist monokini):
 	say "This sexy pink swimsuit has very small sections of fabric to leave as much skin as possible exposed.";
-	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a pink minimalist monokini):
 	say "pink skimpy swimsuit".
@@ -157,7 +157,7 @@ To decide which figure-name is clothing-image of (C - a blue minimalist monokini
 
 To say ClothingDesc of (C - a blue minimalist monokini):
 	say "This sexy blue swimsuit has very small sections of fabric to leave as much skin as possible exposed.";
-	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a blue minimalist monokini):
 	say "super skimpy blue swimsuit".
@@ -179,7 +179,7 @@ To decide which figure-name is clothing-image of (C - a pink strap monokini):
 
 To say ClothingDesc of (C - a pink strap monokini):
 	say "This piece of elasticated pink fabric is really quite thin.";
-	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
+	if C is worn, say "It only just covers your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
 
 To say ShortDesc of (C - a pink strap monokini):
 	say "pink strap swimsuit".
@@ -199,7 +199,7 @@ To decide which figure-name is clothing-image of (C - a purple minimalist monoki
 
 To say ClothingDesc of (C - a purple minimalist monokini):
 	say "This shiny purple swimsuit has very small sections of fabric to leave as much skin as possible exposed.";
-	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers a small part of your [ShortDesc of breasts] and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a purple minimalist monokini):
 	say "purple skimpy swimsuit".
@@ -222,7 +222,7 @@ To decide which figure-name is clothing-image of (C - a white slut monokini):
 
 To say ClothingDesc of (C - a white slut monokini):
 	say "This bizarre swimsuit consists of just a couple of white straps that connect to your crotch by going up between your cleavage. The crotch section says the word 'FLIRT' in red letters on the front.";
-	if C is worn, say "It covers absolutely no part of your [ShortDesc of breasts] and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It covers absolutely no part of your [ShortDesc of breasts] and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a white slut monokini):
 	say "white 'FLIRT' monokini".
@@ -246,7 +246,7 @@ To decide which figure-name is clothing-image of (C - a black mesh monokini):
 
 To say ClothingDesc of (C - a black mesh monokini):
 	say "This swimsuit is a tight V of mesh material that meets at your crotch. It's mesh. ";
-	if C is worn, say "It fails to cover your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if].".
+	if C is worn, say "It fails to cover your nipples and [if the player is possessing a vagina]hardly manages to cover your [vagina][otherwise][genitals][end if].".
 
 To say ShortDesc of (C - a black mesh monokini):
 	say "black mesh swimsuit".
@@ -267,7 +267,7 @@ To decide which figure-name is clothing-image of (C - a white string cameltoe mo
 	decide on figure of white string cameltoe monokini.
 
 To say ClothingDesc of (C - a white string cameltoe monokini):
-	say "This practically non-existent swimsuit consists of just a couple of thin white shoulder straps that connect to a tiny crotch section[if the player is female] that is so small there's no way to stop it riding up into your [vagina], leaving it completely exposed[end if].";
+	say "This practically non-existent swimsuit consists of just a couple of thin white shoulder straps that connect to a tiny crotch section[if the player is possessing a vagina] that is so small there's no way to stop it riding up into your [vagina], leaving it completely exposed[end if].";
 	if C is worn, say "It covers absolutely no part of you.".
 
 To say ShortDesc of (C - a white string cameltoe monokini):

@@ -222,11 +222,11 @@ To compute punishment of (P - hole-wank):
 		let wank-attempts be 0;
 		while refactoryperiod <= 0 and wank-attempts < 3 and delayed fainting is 0 and the player is in HoleInWall:
 			if wank-attempts is 0:
-				say "The hand skilfully [if the player is male]strokes your [player-penis][otherwise]rubs your [vagina][end if] through your padding.";
+				say "The hand skilfully [if the player is possessing a penis]strokes your [player-penis][otherwise]rubs your [vagina][end if] through your padding.";
 			otherwise if wank-attempts is 1:
-				say "The hand finds [if the player is barbie]the doll-like flatness of your [sissy-penis] and pauses as if in surprise, then presses and strokes[otherwise if the player is male]the tip of your[player-penis] and tweaks[otherwise]your clit and rubs[end if] it carefully through your diaper.";
+				say "The hand finds [if the player is barbie]the doll-like flatness of your [sissy-penis] and pauses as if in surprise, then presses and strokes[otherwise if the player is possessing a penis]the tip of your[player-penis] and tweaks[otherwise if the player is possessing a vagina]your clit and rubs[end if] it carefully through your diaper.";
 			otherwise:
-				say "Your new tormentor goes all out, using both hands to rub circles in opposite directions all over your [if the player is male][player-penis][otherwise][vagina] and clit[end if]!";
+				say "Your new tormentor goes all out, using both hands to rub circles in opposite directions all over your [if the player is possessing a penis][player-penis][otherwise if the player is possessing a vagina][vagina] and clit[end if]!";
 			stimulate vagina from hole-in-wall;
 			let D be a random worn perceived messed diaper;
 			if D is diaper:
@@ -357,7 +357,7 @@ To compute punishment of (P - hole-gatling-fuck):
 	let F be asshole;
 	choose a sex method;
 	if targeted-body-part is vagina, now F is vagina;
-	if F is asshole and the player is female and pregnancy fetish is 1 and a random number between 1 and 2 is 1, now F is vagina; [more chance to be vaginal if you like pregnancy]
+	if F is asshole and the player is possessing a vagina and pregnancy fetish is 1 and a random number between 1 and 2 is 1, now F is vagina; [more chance to be vaginal if you like pregnancy]
 	say "A large amount of noise begins to grow from behind you, and soon you can hear the indistinct chatter of a huge group of men. Then out of nowhere, you feel someone gripping you by the hips!  [line break][variable custom style]Are they going to help pull me out?[roman type][line break]";
 	let C be a random worn top level protection clothing;
 	if F is asshole, now C is a random worn top level ass protection clothing;

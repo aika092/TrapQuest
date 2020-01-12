@@ -28,21 +28,21 @@ To Compute Compulsions:
 		now another-turn is 1;
 	otherwise if there is a carried throbbing-tentacle:
 		let P be a random carried throbbing-tentacle;
-		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
+		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:
 			if D is penetrating a fuckhole:
 				destroy D;
 		now P is worn by the player;
-		if the player is male:
+		if the player is not possessing a vagina:
 			now P is penetrating asshole;
 		otherwise:
 			now P is penetrating vagina;
 		now another-turn is 1;
 	otherwise if there is a throbbing-tentacle in the location of the player and the number of interested unfriendly monsters in the location of the player is 0:
 		let P be a random throbbing-tentacle in the location of the player;
-		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
+		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:

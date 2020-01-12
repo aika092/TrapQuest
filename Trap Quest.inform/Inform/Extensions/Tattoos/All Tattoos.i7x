@@ -421,7 +421,7 @@ Definition: black hole tattoo is drawable:
 	decide no.
 Definition: black hole tattoo is eligible:
 	if interracial fetish is 1 and the player is possessing a vagina and (the noun is interracial themed or the noun is vagina themed), decide yes;
-	if (interracial fetish is 0 or the player is male) and the noun is food themed, decide yes;
+	if (interracial fetish is 0 or the player is not possessing a vagina) and the noun is food themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - black hole tattoo):
 	say "[if the player is possessing a vagina and interracial fetish is 1]The words [i]black hole[/i] are tattooed above your belly button, with a large arrow pointing toward your crotch. You feel like it's making the point that your [vagina] should be used exclusively for black cock![otherwise]The words [i]black hole[/i] are tattooed on your belly, with small arrows pointing to your belly button, indicating that you[']re a very enthusiastic eater.[end if]".
@@ -2959,7 +2959,7 @@ womb diagram tattoo is a crotch tattoo. The tattoo-title of womb diagram tattoo 
 Definition: womb diagram tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if the player is female and pregnancy fetish is 1, decide yes;
+	if the player is possessing a vagina and pregnancy fetish is 1, decide yes;
 	decide no.
 Definition: womb diagram tattoo is eligible:
 	if the noun is pregnancy related or the noun is vagina themed, decide yes;

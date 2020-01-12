@@ -101,7 +101,7 @@ To compute periodic effect of (C - size does matter crop top):
 		if the largeness of breasts <= the size of penis and the player is not top heavy:
 			say "You sense some magic flow through your [ShortDesc of C] into your chest. Your [BreastDesc] noticeably grow!";
 			BustUp 3;
-		otherwise if the largeness of breasts >= the size of penis and the size of penis < 10 and the player is male:
+		otherwise if the largeness of breasts >= the size of penis and the size of penis < 10 and the player is possessing a penis:
 			say "You sense some magic flow through your [ShortDesc of C] into your body. ";
 			PenisUp 1.
 

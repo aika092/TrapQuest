@@ -22,7 +22,7 @@ To say PlayerDescription:
 	otherwise say "[TotalDesc of hair]";
 	say "[TotalDesc of face][TotalDesc of breasts][TotalDesc of arms]";
 	say "Below this [TotalDesc of Belly][TotalDesc of hips][TotalDesc of thighs]";
-	say "[if the player is male][TotalDesc of penis][otherwise][TotalDesc of vagina][end if][TotalDesc of asshole]".
+	say "[if the player is possessing a penis][TotalDesc of penis][otherwise][TotalDesc of vagina][end if][TotalDesc of asshole]".
 
 To say ClothesDescription:
 	if the player is naked:
@@ -77,7 +77,7 @@ To say OptionalDescription:
 		say "You are currently [if the latex-transformation of the player < 4]in significant pain, [end if]stuck on a wooden horse torture device!  ";
 	if the player is vine stuck:
 		if the player is vine fucked:
-			say "Vines are holding you still and fucking your [if the player is male][asshole]!  [otherwise][vagina]!  [end if]";
+			say "Vines are holding you still and fucking your [if the player is not possessing a vagina][asshole]! [otherwise][vagina]! [end if]";
 		otherwise:
 			if the player is upright, say "Vines are holding your ankles still!  ";
 			otherwise say "Vines are holding your wrists and ankles down, keeping you on your knees. ";

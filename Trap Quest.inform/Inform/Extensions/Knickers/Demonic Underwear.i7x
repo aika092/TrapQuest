@@ -63,7 +63,7 @@ To say selfexamineuniquetitle of (K - demon codpiece):
 	say "leather codpiece".
 
 To say ClothingDesc of (K - demon codpiece):
-	say "A leather belt with a red pouch designed to keep [if the size of penis > 0]your[otherwise]the wearer's[end if] genitals in place. It doesn[']t do anything to protect [if K is not worn]the wearer's[otherwise]your[end if] [asshole], but a large pentagonal gem on the front prevents anything else from being worn on top of it. [if the number of wenchy monsters in the location of the player > 0 or the dominance of the player < -1]It catches the light strangely, and when you look at it for too long you almost feel like it's taunting you.[otherwise]It appears to be inert, but a weird feeling in your gut tells you that isn't true.[end if]".
+	say "A leather belt with a red pouch designed to keep [if the player is possessing a penis]your[otherwise]the wearer's[end if] genitals in place. It doesn[']t do anything to protect [if K is not worn]the wearer's[otherwise]your[end if] [asshole], but a large pentagonal gem on the front prevents anything else from being worn on top of it. [if the number of wenchy monsters in the location of the player > 0 or the dominance of the player < -1]It catches the light strangely, and when you look at it for too long you almost feel like it's taunting you.[otherwise]It appears to be inert, but a weird feeling in your gut tells you that isn't true.[end if]".
 
 To say CodTightenFlav of (K - demon codpiece):
 	say "The [printed name of demon codpiece] seems to sense the possibility of sex, and the leather tightens as its gem transforms into a [PenisFlavour of demon codpiece].[line break]".
@@ -110,7 +110,7 @@ To SexChange (J - demon codpiece):
 	if the player is female:
 		say "The [ShortDesc of J] disappears in a flash of scarlet flames!";
 		destroy J;
-	otherwise if the size of penis is 0 and cumlust tattoo is actually summonable and there is a worn tattoo:
+	otherwise if the player is not possessing a penis and cumlust tattoo is actually summonable and there is a worn tattoo:
 		say "The [ShortDesc of J] disappears in a flash of scarlet flames, leaving behind a red symbol that lights up as it draws a pair of puckered lips where your penis used to be!"; [###Selkie: ooh, nice! I'd *love* to see an Icarus cut scene for *that*!]
 		summon cumlust tattoo;
 		destroy J;
@@ -152,7 +152,7 @@ This is the demon junk punishment rule:
 			SexChange the player;
 		otherwise:
 			SexChange J;
-		if the player is female:
+		if the player is possessing a vagina:
 			if the number of worn crotch tattoos is 0 and there is a worn tattoo:
 				say "You feel a piercing pain above your [vagina], and look down to see the words 'Xavier's Cunt' burned into your skin.";
 				summon xavier's cunt tattoo;
@@ -178,7 +178,7 @@ To say ShortDesc of (B - acolyte-undergarment):
 	say "acolyte's undegarment".
 
 To say ClothingDesc of (C - acolyte-undergarment):
-	say "A pair of crotchless golden 'underwear,' with [if the player is male]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is female and C is worn] that stimulate your [vagina] as you walk[otherwise if C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";
+	say "A pair of crotchless golden 'underwear,' with [if the player is possessing a penis]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is possessing a vagina and C is worn] that stimulate your [vagina] as you walk[otherwise if the player is possessing a penis and C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";
 
 Definition: acolyte-undergarment is blessable: decide no.
 Definition: acolyte-undergarment is demonic: decide yes.

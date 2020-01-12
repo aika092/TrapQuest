@@ -349,7 +349,7 @@ To compute xavier reward of (M - mechanic):
 	otherwise if R is 2:
 		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your body. Instead of pain, though, you just feel your joints tingling, as if being massaged by a thousand tiny fingers. After a few moments, the lightning stops. You feel FLEXIBLE!";
 		DexUp 4;
-	otherwise if R is 3 and J is actually summonable and the player is male:
+	otherwise if R is 3 and J is actually summonable and the player is possessing a penis:
 		say "[BigNameDesc of M] points at you with [his of M] hands, and lightning fires from [his of M] fingertips, enveloping your crotch. Light converges around your [ShortDesc of penis] and a [printed name of J] materializes around your waist! You feel dominant!";
 		summon J;
 		bless J;

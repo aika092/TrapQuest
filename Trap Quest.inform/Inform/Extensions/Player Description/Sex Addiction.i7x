@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 +!]
 To say SexAddictionDesc:
 	if the sex addiction of the player < 4:
-		if the bimbo of the player < 4, say "[if the player is male]You're the type of guy who likes fucking sluts, not getting fucked like a slut.[otherwise]You are not very comfortable sexually, and many would call you a prude.[end if]";
+		if the bimbo of the player < 4, say "[if the player is gendered male]You're the type of guy who likes fucking sluts, not getting fucked like a slut.[otherwise]You are not very comfortable sexually, and many would call you a prude.[end if]";
 		otherwise say "You are very dominant in the bedroom.";
 	otherwise if the sex addiction of the player < 7:
 		say "The game is affecting your body and making you enjoy submissive sexual encounters against your will. Your mind still much prefers being the dominant!";
@@ -25,7 +25,7 @@ To say SexAddictionDesc:
 	otherwise:
 		say "Your one track mind thinks of nothing but how much better you'd feel if you had more [manly-penis]s inside you right now. ";
 	if the latex-transformation of the player > 3 and the player is horny:
-		say "You are desperate to orgasm but since your [if the player is male and the size of penis > 0][asshole] and [ShortDesc of penis] are[otherwise if the player is male][asshole] is[otherwise]holes are[end if] numb you know deep down that there's no way it can happen. [if the bimbo of the player > 10]But that's not going to stop you from getting fucked by anything that moves, just in case.[end if]";
+		say "You are desperate to orgasm but since your [if the player is possessing a penis][asshole] and [ShortDesc of penis] are[otherwise if the player is not possessing a vagina][asshole] is[otherwise]holes are[end if] numb you know deep down that there's no way it can happen. [if the bimbo of the player > 10]But that's not going to stop you from getting fucked by anything that moves, just in case.[end if]";
 	otherwise if the player is very horny:
 		say "You are currently so horny that your mind is foggy. It's [if the player is extremely horny]impossible[otherwise]difficult[end if] to think straight about anything non-sexual.";
 	otherwise if the player is horny:

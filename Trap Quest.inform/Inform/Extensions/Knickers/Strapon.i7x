@@ -127,7 +127,7 @@ To say ShortDesc of (H - equine-strapon):
 	say "[if mythical creature fetish is 1]equine[otherwise]industrial[end if] strap-on".
 
 To say UniqueClothingDesc of (K - equine-strapon):
-	say "A [PenisFlavour of K] mounted onto a sturdy leather harness.  [if K is worn and the size of penis > 0]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the size of penis > 0]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
+	say "A [PenisFlavour of K] mounted onto a sturdy leather harness.  [if K is worn and the player is possessing a penis]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the player is possessing a penis]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
 
 [
 Only needed if the player's penis can ever go beyond 10
@@ -237,7 +237,7 @@ To say ShortDesc of (H - ghost-strapon):
 
 To say PenisFlavour of (K - ghost-strapon):
 	let N be the strap-length of K;
-	if the player is male and the size of penis >= the strap-length of K:
+	if the player is possessing a penis and the size of penis >= the strap-length of K:
 		say "glowing [ShortDesc of penis]";
 	otherwise if the player is female and futanari fetish is 0:
 		say "[PenisSizeFlav N] spectral strap-on [PenisShaftFlav N]";
@@ -247,7 +247,7 @@ To say PenisFlavour of (K - ghost-strapon):
 To say UniqueClothingDesc of (K - ghost-strapon):
 	if K is not worn:
 		say "A gossamer piece of cloth with a soft [PenisFlavour of K] poking out of it. The fabric seems to become invisible when exposed to your touch.";
-	otherwise if the size of penis is 0:
+	otherwise if the player is not possessing a penis:
 		say "An invisible pair of panties with holes for your ass and genitals. A rock hard [PenisFlavour of K] is attached to it, actively sapping your strength.";
 	otherwise:
 		say "An invisible pair of panties with holes for your ass and genitals. [if the size of penis >= the strap-length of K]Your shaft is glowing faintly, and

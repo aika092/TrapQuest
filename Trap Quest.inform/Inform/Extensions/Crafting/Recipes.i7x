@@ -55,7 +55,7 @@ To say ExamineDesc of (B - a recipe for condom of kings):
 	say "The recipe just says: 'Rubber'.".
 Definition: a recipe for condom of kings (called R) is appropriate:
 	decide no; [Removed from the game for now]
-	if the player is female, decide no;
+	if the player is not possessing a penis, decide no;
 	if diaper lover >= 1 or watersports fetish is 1, decide no; [To avoid the headache of handling urination with this condom]
 	decide yes.
 

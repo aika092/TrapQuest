@@ -24,7 +24,7 @@ A time based rule (this is the compute cum movements rule):
 			CumThighsDown 1;
 			SemenPuddleUp 1;
 		if the total fill of belly > 0:
-			if the player is male and the largeness of belly > 6 and pregnancy fetish is 1:
+			if the player is not possessing a vagina and the largeness of belly > 6 and pregnancy fetish is 1:
 				let M be a random off-stage maternity bra;
 				if a random number between 1 and (150 - (the largeness of belly * 5)) is 1:
 					if the bimbo of the player < 12, say "[first custom style][one of]There is no way that I should look this pregnant...[or]I can't get pregnant without a womb, can I?![or]Looking like I'm pregnant is so humiliating...[or]How am I supposed to remain dignified with this belly that makes me look pregnant?![at random][roman type][line break]";

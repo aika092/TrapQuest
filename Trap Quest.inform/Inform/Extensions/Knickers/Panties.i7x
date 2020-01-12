@@ -93,7 +93,7 @@ To uniquely set up (T - white-breed-panties):
 Report wearing white-breed-panties:
 	if the pregnancy rate of the player is 1:
 		now the pregnancy rate of the player is 2;
-		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
+		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
 	otherwise if the size of penis > min penis size:
 		say "You watch your [ShortDesc of penis] ";
@@ -182,7 +182,7 @@ To uniquely set up (T - black-diagram-panties):
 Report wearing black-diagram-panties:
 	if the pregnancy rate of the player is 1:
 		now the pregnancy rate of the player is 2;
-		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
+		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
 	otherwise if the size of penis > min penis size:
 		say "You watch your [ShortDesc of penis] ";

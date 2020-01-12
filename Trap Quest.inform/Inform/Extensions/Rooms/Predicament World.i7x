@@ -790,7 +790,7 @@ To execute (P - serving-tray-predicament):
 	otherwise:
 		now skirt-tray-vibrator is in Predicament02;
 	now the stance of the player is 0;
-	say "Suddenly you find yourself standing outside, in an alleyway. Round the corner, the noise of a road and the distant sound of voices can be heard. A robotic voice speaks from a speaker in the wall behind you.[line break][first custom style]'WELCOME TO THE [']EXTRA CREDIT['] CLASS. [PredicamentRewardExplanation]THE SKIRT YOU HAVE BEEN PROVIDED COMES WITH A SERVING TRAY. WHENEVER A CAKE IS REMOVED FROM ITS PRESSURE PAD, THE VIBRATOR WILL TURN ON FOR 15 SECONDS. THE INTENSITY OF THE VIBRATION DEPENDS ON HOW MANY CAKES HAVE BEEN TAKEN. IF ALL CAKES ARE REMOVED FROM THEIR PRESSURE PADS, THE VIBRATOR WILL TURN PERMANENTLY ON, STUCK AT MAXIMUM POWER.[paragraph break]'GO.'[PredicamentRewardExplanationReaction][roman type][paragraph break]Looking down at yourself, you begin to realise the challenge. You're wearing a tight pink tube top which shows your nipples straight through it, with the phrase 'FREE SAMPLES' on the front. Your feet are stuck in black court heels. And [if diaper quest is 1 and the player is female]the only other thing on your body is a large white diaper with a subtle hole under your [vagina]. Attached to it and currently in your hands[otherwise if diaper quest is 1]the only other thing on your body is a large white diaper. Attached to it and currently in your hands[otherwise]your bottom half is currently completely naked. On the ground in front of you[end if] is a [skirt-tray-vibrator][paragraph break][ClothingDesc of skirt-tray-vibrator][variable custom style]Holy crap...[roman type][line break]".
+	say "Suddenly you find yourself standing outside, in an alleyway. Round the corner, the noise of a road and the distant sound of voices can be heard. A robotic voice speaks from a speaker in the wall behind you.[line break][first custom style]'WELCOME TO THE [']EXTRA CREDIT['] CLASS. [PredicamentRewardExplanation]THE SKIRT YOU HAVE BEEN PROVIDED COMES WITH A SERVING TRAY. WHENEVER A CAKE IS REMOVED FROM ITS PRESSURE PAD, THE VIBRATOR WILL TURN ON FOR 15 SECONDS. THE INTENSITY OF THE VIBRATION DEPENDS ON HOW MANY CAKES HAVE BEEN TAKEN. IF ALL CAKES ARE REMOVED FROM THEIR PRESSURE PADS, THE VIBRATOR WILL TURN PERMANENTLY ON, STUCK AT MAXIMUM POWER.[paragraph break]'GO.'[PredicamentRewardExplanationReaction][roman type][paragraph break]Looking down at yourself, you begin to realise the challenge. You're wearing a tight pink tube top which shows your nipples straight through it, with the phrase 'FREE SAMPLES' on the front. Your feet are stuck in black court heels. And [if diaper quest is 1 and the player is possessing a vagina]the only other thing on your body is a large white diaper with a subtle hole under your [vagina]. Attached to it and currently in your hands[otherwise if diaper quest is 1]the only other thing on your body is a large white diaper. Attached to it and currently in your hands[otherwise]your bottom half is currently completely naked. On the ground in front of you[end if] is a [skirt-tray-vibrator][paragraph break][ClothingDesc of skirt-tray-vibrator][variable custom style]Holy crap...[roman type][line break]".
 
 
 
@@ -857,7 +857,7 @@ To maths-execute (M - bareback-anal):
 	compute maths-sex.
 
 condom-vaginal is a maths-sex-predicament-punishment.
-Definition: condom-vaginal is appropriate if the player is female.
+Definition: condom-vaginal is appropriate if the player is possessing a vagina.
 To decide which text is the maths-punishment-description of (M - condom-vaginal):
 	decide on "Fuck me in the pussy with a condom, then tie it to my belt".
 To maths-execute (M - condom-vaginal):
@@ -868,7 +868,7 @@ To maths-execute (M - condom-vaginal):
 	compute maths-sex.
 
 bareback-vaginal is a maths-sex-predicament-punishment.
-Definition: bareback-vaginal is appropriate if the player is female.
+Definition: bareback-vaginal is appropriate if the player is possessing a vagina.
 To decide which text is the maths-punishment-description of (M - bareback-vaginal):
 	decide on "Fuck me in the pussy bareback and cum inside".
 To maths-execute (M - bareback-vaginal):
@@ -1032,7 +1032,7 @@ To execute (MSP - maths-sex-predicament):
 			if M is leave-me-alone, increase D by 1;
 		otherwise:
 			let M be condom-anal;
-			if the player is female and pregnancy fetish is 1, now M is bareback-vaginal;
+			if the player is possessing a vagina and pregnancy fetish is 1, now M is bareback-vaginal;
 			maths-execute M;
 	let PMM be a random pink minimalist monokini;
 	now the raw-magic-modifier of PMM is 0;
@@ -1188,7 +1188,7 @@ team-quiz-predicament has a number called questionExpelled. [has the player let 
 Definition: team-quiz-predicament is appropriate:
 	if the rank of the player < 3, decide no;
 	if diaper quest is 1 and the incontinence of the player >= the max-incontinence of the player, decide no;
-	if diaper quest is 0 and the player is male and the size of penis is 0, decide no;
+	if diaper quest is 0 and the player is sexed male and the player is not possessing a penis, decide no;
 	decide yes.
 
 
@@ -1213,10 +1213,10 @@ To execute (L - team-quiz-predicament):
 		now the bottom-layer of quiz-partner is 2;
 		say "You are squatting above [NameDesc of ST][']s face, the seat your new large white diaper resting on [his of ST] nose and forehead. You would get up but you are both stuck in bondage - ankle spreaders keep your feet a fixed distance apart and large metal cuffs around your thighs are connected to [NameDesc of ST][']s wristcuffs, so that each of [his of ST] hands is stuck right next to your thighs, with nothing to hold onto except the rear of your diaper.[paragraph break]Your [if rectum >= 30 and asshole is not actually occupied]bowels are[otherwise]bladder has[end if] somehow filled to the point where it's actually painful![line break][variable custom style]'Ow ow ow[one of]! What the hell is going on?!'[or]!'[stopping][roman type][line break]";
 	otherwise:
-		if the player is female and the number of worn clitoris piercing is 0:
+		if the player is possessing a vagina and the number of worn clitoris piercing is 0:
 			say "You realise you now have a cold metal clitoris piercing. ";
 			summon normal clit piercing;
-		otherwise if the player is male:
+		otherwise if the player is possessing a penis:
 			say "You realise you have a metal ring clamped around the top of your scrotum. It feels weird, and you certainly won't be able to get it off past your balls any time soon. ";
 		say "It is somehow stuck attached to a tongue piercing, which in turn is... pierced in [ST][']s mouth.[line break][variable custom style]Uh-oh.[roman type][line break]Yes, that's right, you're on all fours, with [NameDesc of ST] stuck behind you and [his of ST] tongue forced to stretch out as if waiting for a serving from your [asshole]. Your belly gurgles again, and you realise that your innards are indeed completely, painfully full of something goopy and nasty...";
 		if watersports fetish is 1, increase the urine volume of belly by 25; [We don't use the AssFull function because we don't want to allow the overflow function]

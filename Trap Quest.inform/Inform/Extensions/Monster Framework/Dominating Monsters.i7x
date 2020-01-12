@@ -11,13 +11,13 @@ Determines whether or not the player can successfully fuck a monster or not.
 [Definition: a person is domlicious:
 	if there is a cursed ass covering clothing, decide no;
 	if there is a cursed pussy covering clothing, decide no;
-	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
-	if the player is female and vagina is actually occupied, decide no;
+	if the player is not possessing a penis and the player is sexed male and asshole is actually occupied, decide no;
+	if the player is possessing a vagina and vagina is actually occupied, decide no;
 	if the player is feeling submissive, decide no;
 	if let it die tattoo is worn and a random number between 1 and 2 is 1, decide no;
 	if the latex-transformation of the player >= 6, decide no;
 	if there is a dangerous monster in the location of the player, decide no;
-	if the size of penis > 0 and penis is not sex available, decide no;
+	if the player is possessing a penis and penis is not sex available, decide no;
 	decide yes.]
 
 [!<Player>@<dominatedCount:Integer>*
@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
+	say "[if the player is possessing a penis]You use [NameDesc of M] as your own personal cocksleeve!  Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -186,7 +186,7 @@ Check dominating:
 	if sexual-penis-length > 0:
 		suggestFucker penis for the noun;
 	if player-fucker is face:
-		if the player is female, suggestFucker vagina for the noun;
+		if the player is possessing a vagina, suggestFucker vagina for the noun;
 		otherwise suggestFucker asshole for the noun;
 		[if player-fucker is a fuckhole and S is demon codpiece, say "The [printed name of S] seems to be preventing you from doing that!" instead;]
 	if player-fucker is face:
@@ -322,7 +322,7 @@ To decide which number is the dominance of the player:
 		if sexual-penis-length >= 10, increase D by 2;
 		if sexual-penis-length <= 3, decrease D by 2;
 	if fuckskill is 0:[note that default openness is 1, so all players can gain something from having the skill.]
-		if the player is male, decrease D by the openness of asshole / 2;
+		if the player is not possessing a vagina, decrease D by the openness of asshole / 2;
 		otherwise decrease D by (the openness of vagina + the openness of asshole) / 4;
 		decrease D by the sex addiction of the player / 4;
 	decide on D.
@@ -426,7 +426,7 @@ This function determines what happens when a monster fails its "submissiveness" 
 
 +!]
 To say DominanceSuccess of (M - a monster):
-	say "You successfully force [NameDesc of M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
+	say "You successfully force [NameDesc of M] to [his of M] knees and [if the player is possessing a penis]use [him of M] as your own personal cocksleeve!  [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
 
 [!<ComputeSuccessfulDominanceOfMonster>+
 
@@ -441,7 +441,7 @@ To compute successful dominance of (M - a monster):
 	if player-fucking is not DOMINANT-SHAMEFUL:
 		DominateUp M;
 		DifficultyUp M by 2;
-		say "[line break][BigNameDesc of M] slinks away as soon as [he of M] has the strength.[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is male]manly[otherwise]dominant[end if]!";
+		say "[line break][BigNameDesc of M] slinks away as soon as [he of M] has the strength.[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is gendered male]manly[otherwise]dominant[end if]!";
 	otherwise:
 		TimesSubmittedUp M by 1;
 		say "[line break][BigNameDesc of M] slinks away as soon as [he of M] has the strength.[line break]You feel so humiliated...".
@@ -461,7 +461,7 @@ To compute unique dominance reward of (M - a monster):
 To compute default dominance reward of (M - a monster):
 	let S be the raw sex addiction of the player;
 	if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER, SexAddictDown 2;
-	if the player is male:
+	if the player is possessing a penis:
 		PenisUp 1;
 	otherwise:[female players don't have penis length to gain, so better delicate decrease]
 		DelicateDown 1.
@@ -595,7 +595,7 @@ computeSissification is called whenever the monster doesn't have another punishm
 +!]
 To compute sissification:
 	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-	if the player is male and transGender is 0 and pink sissy bow is off-stage and pink sissy bow is actually summonable:
+	if the player is gendered male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
 		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if pink sissy bow is worn and S is clothing:
@@ -603,7 +603,7 @@ To compute sissification:
 		summon S cursed;
 		announce sissification;
 	otherwise:
-		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
+		say "The [if the player is gendered male]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
 
 

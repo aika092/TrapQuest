@@ -104,7 +104,7 @@ To say UniqueClothingDesc of (G - purple-thong):
 	say "This small purple thong has the phrase 'BIG COCK LOVER' in capital letters on the front.".
 Understand "big", "cock", "lover", "purple" as purple-thong.
 To decide which number is the vaginal-sex-addiction-influence of (C - purple-thong):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	if C is blessed, decide on 1;
 	decide on 2.
 To decide which number is the anal-sex-addiction-influence of (C - purple-thong):

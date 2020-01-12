@@ -6,7 +6,7 @@ Definition: a bloomers is displacable: decide yes.
 
 Definition: a bloomers is sissifying: decide yes.
 Definition: a bloomers is pink themed: decide yes.
-Definition: a bloomers is fetish appropriate if the player is male and transGender is 0.
+Definition: a bloomers is fetish appropriate if the player is gendered male.
 
 To set up influence of (C - a bloomers):
 	set up submissiveness-based influence of C.

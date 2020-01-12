@@ -253,7 +253,7 @@ Check drinking time-bomb:
 		increase the stomach-semen of the player by 20;
 		now the soreness of asshole is 10;
 		now the semen volume of belly is 30;
-		if the player is female:
+		if the player is possessing a vagina:
 			now the semen volume of vagina is 30;
 			now the womb volume of vagina is 5;
 			now a random creampie pole trap is inseminating vagina;

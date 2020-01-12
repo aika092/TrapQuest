@@ -13,7 +13,7 @@ To compute SelfExamineDesc of (K - a hotpants):
 	say "A pair of tiny tiny hotpants covers a small amount of your [ShortDesc of hips]. ".
 
 To say ClothingDesc of (K - a hotpants):
-	say "These [UniqueTitle of K] [if K is not worn]hardly look like they would fit.[otherwise if the size of penis > 3]look even more comical due to the huge bulge your [ShortDesc of penis] makes in the front.[otherwise if the size of penis > 0]look very comical thanks to the bump your [ShortDesc of penis] makes in the front.[otherwise if the player is male]cling tightly to your [ShortDesc of hips].[otherwise]cling tightly to your [ShortDesc of hips] and [vagina], giving you a very visible camel-toe.[end if]".
+	say "These [UniqueTitle of K] [if K is not worn]hardly look like they would fit.[otherwise if the size of penis > 3]look even more comical due to the huge bulge your [ShortDesc of penis] makes in the front.[otherwise if the player is possessing a penis]look very comical thanks to the bump your [ShortDesc of penis] makes in the front.[otherwise if the player is male]cling tightly to your [ShortDesc of hips].[otherwise]cling tightly to your [ShortDesc of hips] and [vagina], giving you a very visible camel-toe.[end if]".
 
 leopard-hotpants is a hotpants.
 

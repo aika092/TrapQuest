@@ -219,7 +219,7 @@ To compute title of (P - an upskirt poster):
 		otherwise now the title of P is "I only cum from my butthole!";
 	otherwise if the old-knickers-mess of P > 0:
 		if P is in the hotel, now the title of P is "PATHETIC POOPYPANTS";
-		otherwise now the title of P is "This big baby is so pathetic that [if the player is male and the bimbo of the player < 8]he went number two in his[otherwise]she went number two in her[end if] own pants!";
+		otherwise now the title of P is "This big baby is so pathetic that [if the player is gendered male and the bimbo of the player < 8]he went number two in his[otherwise]she went number two in her[end if] own pants!";
 	otherwise if the old-knickers-urine of P > 0:
 		if diaper lover >= 0:
 			if P is in the hotel, now the title of P is "CAN'T STAY DRY";

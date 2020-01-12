@@ -115,7 +115,7 @@ To decide which figure-name is clothing-image of (C - a polo shirt):
 	decide on figure of polo shirt.
 
 To say ClothingDesc of (C - a polo shirt):
-	say "This short sleeved pink ladies tennis shirt is very modest[if the player is male and the bimbo of the player < 5]. The only problem with it is, of course, its feminine style[end if].".
+	say "This short sleeved pink ladies tennis shirt is very modest[if the player is gendered male and the bimbo of the player < 5]. The only problem with it is, of course, its feminine style[end if].".
 
 To say ShortDesc of (C - a polo shirt):
 	say "tennis shirt".

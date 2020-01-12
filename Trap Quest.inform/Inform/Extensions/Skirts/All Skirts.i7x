@@ -643,7 +643,7 @@ To say skirtTrayVibratorPower:
 To say ClothingDesc of (C - skirt-tray-vibrator):
 	let CR be the max-cakes of C - the cakes-taken of C;
 	if diaper quest is 0, say "This purple skirt is connected to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. A rigid metal pole at the rear of the serving tray goes through a discreet hole at the front of the skirt and to a vibrator. To wear the skirt, you [if C is not worn]would [end if]have to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
-	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is female]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is female]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
+	otherwise say "A red vibrator is connected via a small rigid pole to a serving tray with [if CR is 1]one small cupcake remaining[otherwise if CR < the max-cakes of C][CR] small cupcakes remaining[otherwise][CR] small cupcakes[end if] on it. [if the player is possessing a vagina]The pole goes through the hole in your diaper, so the vibrator is on the inside[otherwise]The tip of the pole is made of soft sex toy material and is attached to the front of your diaper[end if]. To wear the diaper, you have to continue to hold the serving tray in front of you and [if C is worn]keep[otherwise]put[end if] the [if the player is possessing a vagina]rabbit vibrator inside your [vagina][otherwise]vibrating tip up against your [ShortDesc of penis][end if][run paragraph on]";
 	say "[if the cakes-taken of C >= the max-cakes of C or the charge of C > 0]. It is currently vibrating[skirtTrayVibratorPower]![otherwise].[end if]".
 
 To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a body part):
@@ -657,7 +657,7 @@ Report wearing skirt-tray-vibrator:
 		now the raw-magic-modifier of plain-largish-diaper is 0;
 		now plain-largish-diaper is sure;
 		now plain-largish-diaper is identified;
-	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is female]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
+	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is possessing a vagina]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
 
 Report taking off skirt-tray-vibrator when diaper quest is 1:
 	only destroy plain-largish-diaper.

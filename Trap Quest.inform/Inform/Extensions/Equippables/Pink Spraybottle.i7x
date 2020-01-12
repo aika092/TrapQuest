@@ -103,10 +103,10 @@ To compute spraybottle punishment:
 		let P be a random off-stage plug;
 		if there is a worn plug, now P is a random worn plug;
 		say "[bold type]Your [ShortDesc of a random worn maid headdress] causes you to feel deep shame at your awful work ethic![roman type][line break]";
-		if V is vaginally summonable and the player is female:
+		if V is vaginally summonable and the player is possessing a vagina:
 			say "You feel a stiff, hard object burrowing into your [vagina]. It starts vibrating. ";
 			summon V cursed vaginally with quest;
-		otherwise if V is actually summonable and the player is male:
+		otherwise if V is actually summonable and the player is possessing a penis:
 			say "You feel a stiff, hard object pushing itself into your [asshole]. It settles right up against your prostate and immediately begins to vibrate! ";
 			summon V cursed with quest;
 		otherwise if P is worn and the size of P < 10 and the size of P < the openness of asshole + 3:

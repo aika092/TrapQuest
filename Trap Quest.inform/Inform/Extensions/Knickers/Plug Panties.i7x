@@ -26,7 +26,7 @@ To say selfexamineuniquetitle of (K - a plug panties):
 Chapter 1 Vibrating Plug Panties
 
 vibrating plug panties is a kind of plug panties.
-There are 2 unique ass plugging vagina plugging latex vibrating plug panties. The armour of vibrating plug panties is 12. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp".  A vibrating plug panties has a number called charge.
+There are 2 unique ass plugging vagina plugging latex vibrating plug panties. The armour of vibrating plug panties is 12. The printed name of vibrating plug panties is usually "[clothing-title-before]pair of [clothing-material of item described] plug panties[clothing-title-after]". The printed plural name of vibrating plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] plug panties[clothing-title-after]". The text-shortcut of vibrating plug panties is "lpp". A vibrating plug panties has a number called charge.
 
 Definition: a vibrating plug panties is black themed: decide yes.
 
@@ -35,11 +35,11 @@ To decide which figure-name is clothing-image of (C - a vibrating plug panties):
 	otherwise decide on figure of female latex plug panties.
 
 To say ClothingDesc of (P - a vibrating plug panties):
-	say "[if the player is possessing a vagina]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if]. [if P is cursed and P is sure and P is worn]The ass plug is vibrating!  [end if]The latex material looks very tough.".
+	say "[if the player is possessing a vagina]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if]. [if P is cursed and P is sure and P is worn]The ass plug is vibrating! [end if]The latex material looks very tough.".
 
 To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips]. ";
-	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating!  This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
+	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
 
 Figure of female latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties1.png".
 Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".
@@ -73,7 +73,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 
 Chapter 2 Pump Plug Panties
 
-pump plug panties is a kind of plug panties. The printed name of  pump plug panties is "[clothing-title-before]pair of [clothing-material of item described] pump plug panties[clothing-title-after]". The printed plural name of pump plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There are 2 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
+pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [clothing-material of item described] pump plug panties[clothing-title-after]". The printed plural name of pump plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There are 2 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
 
 Definition: a pump plug panties is black themed: decide yes.
 Definition: a pump plug panties is inflation themed: decide yes.

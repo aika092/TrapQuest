@@ -57,7 +57,7 @@ To decide which number is the penis-capacity of (K - pink bikini bottoms):
 	decide on 0.
 
 To compute SelfExamineDesc of (K - pink bikini bottoms):
-	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is female] and rides up into your [vagina][end if]. ";
+	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is possessing a vagina] and rides up into your [vagina][end if]. ";
 
 To say selfexamineuniquetitle of (K - pink bikini bottoms):
 	say "pair of pink bikini microbottoms".
@@ -66,7 +66,7 @@ To decide which figure-name is clothing-image of (C - pink bikini bottoms):
 	decide on figure of bikini bottoms 2.
 
 To say ClothingDesc of (K - pink bikini bottoms):
-	say "These metallic pink bikini bottoms are so ridiculously tiny that they ride up into your [if the player is female][vagina][otherwise]butt cheeks[end if], exposing everything.".
+	say "These metallic pink bikini bottoms are so ridiculously tiny that they ride up into your [if the player is possessing a vagina][vagina][otherwise]butt cheeks[end if], exposing everything.".
 Figure of bikini bottoms 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms2.png".
 
 Definition: pink bikini bottoms is pink themed: decide yes.

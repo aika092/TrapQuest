@@ -507,10 +507,10 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 
 To decide which text is ReputationAttire:
 	let C be the at least partial concealer of vagina;
-	if the player is male, now C is the at least partial concealer of penis;
+	if the player is possessing a penis, now C is the at least partial concealer of penis;
 	if breasts is exposed:
-		if (the player is male and penis is exposed) or (the player is female and vagina is exposed):
-			decide on "with your chest and [if the player is male][ShortDesc of penis][otherwise][vagina][end if] on full display";
+		if (the player is possessing a penis and penis is exposed) or (the player is possessing a vagina and vagina is exposed):
+			decide on "with your chest and [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if] on full display";
 		otherwise:
 			decide on "topless, with a [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if]";
 	otherwise:

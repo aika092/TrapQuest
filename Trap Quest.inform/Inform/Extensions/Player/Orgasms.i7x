@@ -35,7 +35,7 @@ REQUIRES COMMENTING
 +!]
 To anally orgasm shamefully:
 	if the player is not able to orgasm:
-		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is male]prostate[otherwise]asshole[end if], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
+		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is sexed male]prostate[otherwise]asshole[end if], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
 		otherwise say "[if refactoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
@@ -96,7 +96,7 @@ REQUIRES COMMENTING
 
 +!]
 To breasts orgasm shamefully:
-	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked!  [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is not possessing a vagina]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked!  [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
 	[severeHumiliate;]
@@ -121,7 +121,7 @@ To punish shameful male orgasm:
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
 	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	if the player is male and transGender is 0 and the virgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+	if the player is gendered male and the virgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
@@ -140,7 +140,7 @@ REQUIRES COMMENTING
 
 +!]
 To say shameful tip:
-	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction and humiliation[if the player is male] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
+	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction and humiliation[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
 
 [!<orgasmFatigueEffectsRules:Rulebook>*
 
@@ -183,7 +183,7 @@ REQUIRES COMMENTING
 To orgasm:
 	increase orgasm-count by 1;
 	increase refactoryperiod by 3;
-	[if the player is male, now the rawness of penis is 0;]
+	[if the player is possessing a penis, now the rawness of penis is 0;]
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
 	follow the orgasm resolution rules;
@@ -237,7 +237,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the girls don't jizz semen rule:
-	if the player is female, rule succeeds.
+	if the player is not possessing a penis, rule succeeds.
 The girls don't jizz semen rule is listed last in the ejaculation rules.
 
 [!<TheLackOfPenisForEjaculationRule>+
@@ -246,8 +246,8 @@ REQUIRES COMMENTING
 
 +!]
 This is the lack of penis for ejaculation rule:
-	if the size of penis <= 0:
-		if the player is male, say "You would have ejaculated, but you no longer have a penis.";
+	if the player is not possessing a penis:
+		if the player is sexed male, say "You would have ejaculated, but you no longer have a penis.";
 		rule fails.
 The lack of penis for ejaculation rule is listed last in the ejaculation rules.
 
@@ -395,7 +395,7 @@ REQUIRES COMMENTING
 This is the living belt of sturdiness orgasm resolution rule:
 	if the living belt of sturdiness is thrusting and the buildup of the living belt of sturdiness > 0:
 		if the living belt of sturdiness is not penetrating vagina: [must be penetrating something if it's thrusting, so it must be in the butt!]
-			say "The metallic tentacle in your [asshole] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it [if the player is male]kneading your prostate, milking you for every last drop of cum[otherwise]twisting around inside you, eking out every last bit of pleasure[end if] as the tendril begins to bulge, and the loop around your waist grows progressively tighter and hotter against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a big fat load right up my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna cum insi-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [asshole] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [asshole][otherwise]torrents an obscene amount of alien [semen] directly into your [asshole][end if]!";
+			say "The metallic tentacle in your [asshole] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it [if the player is possessing a penis]kneading your prostate, milking you for every last drop of cum[otherwise]twisting around inside you, eking out every last bit of pleasure[end if] as the tendril begins to bulge, and the loop around your waist grows progressively tighter and hotter against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a big fat load right up my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna cum insi-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [asshole] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [asshole][otherwise]torrents an obscene amount of alien [semen] directly into your [asshole][end if]!";
 		otherwise if the living belt of sturdiness is not penetrating asshole:
 			say "The metallic tentacle in your [vagina] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it twisting around inside you, massaging your g-spot and jostling your clit as the tentacle begins to bulge, and the loop around your waist grows progressively tighter, and hotter, against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a fat wad in my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna creampie-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [vagina] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [vagina][otherwise]torrents an obscene amount of alien [semen] directly into your [vagina][end if]!";[could probably be differentiated a bit more.]
 		otherwise:
@@ -487,7 +487,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the girls pee when they orgasm rule:
-	if the player is female and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
+	if the player is possessing a vagina and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
 		if the bladder of the player is 0, now the bladder of the player is 2;
 		now delayed urination is 1;
 		say "As you cum, you [if the player is bursting]can't help but let go of your bladder too[otherwise]find yourself peeing at the same time[end if]!";

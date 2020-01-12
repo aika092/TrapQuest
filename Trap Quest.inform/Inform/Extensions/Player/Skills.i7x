@@ -386,7 +386,7 @@ To teach relaxing:
 			say "[bold type]**You have learned how to relax!**[line break]When submitting during sex you'll have a bonus chance to avoid soreness increases.[roman type][line break]";
 			now the relaxskill of the player is 1;
 		otherwise:
-			say "You hate the idea of anal [if the player is female]and vaginal [end if]sex so much that you just can't bring yourself you pay attention to her tips.";
+			say "You hate the idea of anal [if the player is possessing a vagina]and vaginal [end if]sex so much that you just can't bring yourself you pay attention to her tips.";
 	otherwise:
 		say "[bold type]You already know how to relax![roman type][line break]".
 
@@ -396,7 +396,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the relaxskill list rule:
-	if the relaxskill of the player is 1, say "You know how to relax your [if the player is female]vaginal muscles and [end if]sphincter during sex.".
+	if the relaxskill of the player is 1, say "You know how to relax your [if the player is possessing a vagina]vaginal muscles and [end if]sphincter during sex.".
 The relaxskill list rule is listed in the skill listing rules.
 
 [!<TheRelaxSkillLearnRule>+
@@ -405,7 +405,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the relaxskill learn rule:
-	if the relaxskill of the player is 0, say "You now know how to relax your [if the player is female]vaginal muscles and [end if]sphincter during sex.";
+	if the relaxskill of the player is 0, say "You now know how to relax your [if the player is possessing a vagina]vaginal muscles and [end if]sphincter during sex.";
 	now the relaxskill of the player is 1.
 The relaxskill learn rule is listed in the skill cheating rules.
 

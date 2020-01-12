@@ -154,7 +154,7 @@ To compute BadWishing:
 			say "The [clothing-material of C] of the [ShortDesc of C] suddenly tightens painfully to your skin. It must be cursed!";
 		otherwise:
 			say "Nothing happens. How lame.";
-	otherwise if the player is female:
+	otherwise if the player is possessing a vagina:
 		say "You feel yourself being spread wide as [semen] suddenly starts dribbling out of your [vagina]";
 		increase the semen volume of vagina by 2;
 		leak vagina semen a random number between 4 and 6;
