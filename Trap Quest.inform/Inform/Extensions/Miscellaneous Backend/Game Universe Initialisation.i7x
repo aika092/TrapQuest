@@ -240,7 +240,7 @@ Used at the start of the game to encase the player in latex items, if that optio
 To initialise latex prisoner:
 	let R be a random number between 1 and 2;
 	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. ";
-	if diaper quest is 0, say "Suddenly you feel your [if the player is female][vagina] and [end if][asshole] invaded by [if the player is male]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is female]rear [end if]plug starts vibrating!";
+	if diaper quest is 0, say "Suddenly you feel your [if the player is possessing a vagina][vagina] and [end if][asshole] invaded by [if the player is not possessing a vagina]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is possessing a vagina]rear [end if]plug starts vibrating!";
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
 	if L is actually summonable clothing, summon L;
@@ -283,7 +283,7 @@ To initialise latex prisoner:
 		now the outfit-charge of rubber-baby-bonnet is -500;
 	if there is worn vibrating plug panties:
 		ruin asshole;
-		if the player is female, ruin vagina.
+		if the player is possessing a vagina, ruin vagina.
 
 [!<InitialiseBondagePrisoner>+
 

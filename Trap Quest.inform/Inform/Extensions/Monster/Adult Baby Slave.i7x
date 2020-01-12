@@ -45,7 +45,7 @@ To say MonsterDesc of (M - an adult baby slave):
 
 
 To say MonsterComment of (M - an adult baby slave):
-	say "[variable custom style][if the bimbo of the player < 5 and the player is male]She'd be really hot if she wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style]She's so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get her to take her diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel her diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if she wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
+	say "[variable custom style][if the bimbo of the player < 5 and the player is gendered male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
 
 To set up (M - an adult baby slave):
 	reset M;
@@ -279,7 +279,7 @@ This is the adult baby slave shows you to mommy rule:
 			drag to the target-room of M by M;
 		if N is in the location of M:
 			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet Mommy! She's the best.'[line break]";
-			otherwise say "[second custom style]'Mommy! [NameBimbo] had an accident so [if player is male]he[end if][if player is female]she[end if] needs diapers! That's the rule, right?!'[line break]";
+			otherwise say "[second custom style]'Mommy! [NameBimbo] had an accident so [he of the player] needs diapers! That's the rule, right?!'[line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]Let me go!'[otherwise]Umm...'[end if]";
 			say "[roman type][line break]";
 			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, humming to herself merrily, seemingly happy with herself for her 'good deed'.";
@@ -306,7 +306,7 @@ The adult baby slave priority attack rules is a rulebook. The priority attack ru
 
 To compute kneeling reaction of (M - an adult baby slave):
 	say "[BigNameDesc of M] walks over to you, rubbing the front of her diaper and staring down luridly into your eyes. She stops rubbing long enough to push her diaper closer to your face, forcing you to inhale the sweet scent of baby powder.";
-	if the ToMatron of M < 1 and diaper quest is 0, say "[one of][line break][speech style of M]'Looking forward to having my diaper on your face little [if player is male]brother[else if player is female]sister[end if]?'[roman type][line break][or]'Just the thought of your nose in my diaper makes me super wet... and not with pee. Not yet anyway.'[roman type][or]'I kinda have to use my diaper... I hope you don't mind if I do it on your face.'[roman type][or]'Would you forgive me if I wet my diaper on your face?... Might you even like it a little?'[roman type][or][if diaper messing >= 4]'Would you hate me forever if I messed my diaper on your face, because I really want to! Maybe you'll even like it.'[end if][line break][in random order]";
+	if the ToMatron of M < 1 and diaper quest is 0, say "[one of][line break][speech style of M]'Looking forward to having my diaper on your face little [if player is gendered male]brother[otherwise if player is female]sister[end if]?'[roman type][line break][or]'Just the thought of your nose in my diaper makes me super wet... and not with pee. Not yet anyway.'[roman type][or]'I kinda have to use my diaper... I hope you don't mind if I do it on your face.'[roman type][or]'Would you forgive me if I wet my diaper on your face?... Might you even like it a little?'[roman type][or][if diaper messing >= 4]'Would you hate me forever if I messed my diaper on your face, because I really want to! Maybe you'll even like it.'[end if][line break][in random order]";
 
 To say waitingflav of (M - an adult baby slave):
 	if the player is not able to speak:
@@ -384,7 +384,7 @@ To compute facial sex of (M - an adult baby slave):
 			stimulate vagina from M;
 			DiaperAddictUp 1;
 		otherwise:
-			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [if player is male]brother[end if][if player is female]sister[end if].'[stopping][roman type][line break]";
+			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping]. [line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [if player is gendered male]brother[otherwise if player is gendered female]sister[end if].'[stopping][roman type][line break]";
 			humiliate 200;
 			stimulate vagina from M;
 			if a random number between 1 and 3 is 1, DiaperAddictUp 1;

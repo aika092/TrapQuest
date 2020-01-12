@@ -153,7 +153,7 @@ knickers removability rules is a rulebook. The removability rules of knickers is
 
 Report wearing knickers:
 	if the noun is plug panties:
-		if the player is male or the noun is pump plug panties:
+		if the player is not possessing a vagina or the noun is pump plug panties:
 			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plug into your [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
 		otherwise:
 			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plugs into your [if the soreness of vagina > 4]open [otherwise]tight [end if][vagina] and [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";

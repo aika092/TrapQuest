@@ -115,14 +115,14 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
-	otherwise if virgin of the player is 1 and the player is female:
+	otherwise if virgin of the player is 1 and the player is gendered female:
 		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH GIRL!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, GIRL! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
-		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
+		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
 	otherwise if the player-class is succubus and M is mating and pentagram tattoo is not worn:
 		say "[first custom style]'CONCUBINE! I HAVE PREPARED A GIFT FITTING YOUR STATUS!'[roman type]";
 	otherwise:
-		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
+		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT [if pregnancy fetish is 1 and the player is possessing a vagina and the pregnancy of the player is 0]YOUR [caps cunt] TO CONCEIVE AND CARRY MY HEIR[otherwise]YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER[end if].'[roman type][line break]";
 		if the class of the player is succubus or the class of the player is worshipper and the player is upright:
 			say "Your master's voice is too commanding for you to even consider resistance!";
 			try kneeling.
@@ -241,7 +241,7 @@ To compute fuckhole sex of (M - demon lord):
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
-		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]YES! YES!'[or][if the player is gendered male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is gendered male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
 	if the reaction of the player > 0:
 		compute sexSubmit of M in F;
 		if the reaction of the player is 2:

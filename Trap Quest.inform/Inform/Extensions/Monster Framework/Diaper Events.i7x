@@ -131,7 +131,7 @@ To compute DiaperCheckWetReveal of (M - a monster) to (D - a diaper):
 
 To say DiaperCheckResultsWetFlav of (M - a monster):
 	let D be a random worn knickers;
-	say "[speech style of M]'[one of]As suspected[or]Unsurprisingly[or]What a surprise,[or]How predictable,[or]As per usual[in random order] [one of]your [if the player is male]little willy[otherwise]weak bladder[end if] hasn't been able to hold on for very long at all[or]you've gone pee-pee in your [if D is diaper]diaper[otherwise]panties[end if][or]you've wet yourself like a little baby[or]it's totally wet[or]you've completely soaked it[or]you've peed in your pants like a little girl rather than make it to the toilet like a grown-up[or]you didn't make it to the big girl potty[or]pissed yourself like a pathetic child[in random order]! [one of]This is too soggy for you to keep walking around in, you're going to need a change.'[or]I guess it's up to me to change you.'[or]Were you trying to avoid letting me know that you need a change?'[or]I think we're going to need [if D is diaper]a brand new diaper, this one's padding is all used up[otherwise]diapers here[end if].'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]As suspected[or]Unsurprisingly[or]What a surprise,[or]How predictable,[or]As per usual[in random order] [one of]your [if the player is possessing a penis]little willy[otherwise]weak bladder[end if] hasn't been able to hold on for very long at all[or]you've gone pee-pee in your [if D is diaper]diaper[otherwise]panties[end if][or]you've wet yourself like a little baby[or]it's totally wet[or]you've completely soaked it[or]you've peed in your pants like a little girl rather than make it to the toilet like a grown-up[or]you didn't make it to the big girl potty[or]pissed yourself like a pathetic child[in random order]! [one of]This is too soggy for you to keep walking around in, you're going to need a change.'[or]I guess it's up to me to change you.'[or]Were you trying to avoid letting me know that you need a change?'[or]I think we're going to need [if D is diaper]a brand new diaper, this one's padding is all used up[otherwise]diapers here[end if].'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsWetReactionFlav of (M - a monster):
 	if the player is able to speak, say "[variable custom style]'[if the humiliation of the player >= 40000]Yes [daddy of M].'[otherwise if the diaper addiction of the player < 6][one of]You are kidding me...'[or]This can't be actually happening...'[or]You're not serious, are you?!'[in random order][otherwise if the delicateness of the player > 13][one of]I'm sorry, please forgive me!'[or]I'll do whatever you say, just please don't hurt me...'[or]I'm sorry, I couldn't hold it in...'[in random order][otherwise if the diaper addiction of the player < 11][one of]Go on then, if you must.'[or]You caught me, I guess.'[in random order][otherwise][one of]Ooh yay, I can't wait to get into a new comfy diaper!'[or]Oh, thank you so much!'[or]This diaper feels good, but I guess a new one will feel even better.'[in random order][end if][roman type][line break]";
@@ -372,7 +372,7 @@ To say DoubleDiaperAnnounceFlav of (M - a monster):
 
 To say DoubleDiaperAfterFlav of (M - a monster):
 	if M is intelligent:
-		say "[speech style of M]'[one of]Hahaha, that's perfect[or]Oh my, it fits even better than I imagined[or]I'm afraid you may be left with a bit of a waddle, haha[or]haha, I wonder if you'll even be able to walk now[in random order]!'[roman type][line break]".
+		say "[speech style of M]'[one of]Hahaha, that's perfect[or]Oh my, it fits even better than I imagined[or]I'm afraid you may be left with a bit of a waddle, haha[or]Haha, I wonder if you'll even be able to walk now[in random order]!'[roman type][line break]".
 
 To say DiaperChangeComment of (M - a monster):
 	if M is intelligent:
@@ -572,12 +572,12 @@ To say MasturbationDeclarationFlav of (M - a monster):
 		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy? Let [daddy of M] help with that...'[at random][roman type][line break]".
 
 To say MasturbationStartFlav of (M - a monster):
-	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is female]your [vagina][otherwise]your [ShortDesc of penis][end if]!".
+	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is possessing a vagina]your [vagina][otherwise if the player is possessing a penis]your [ShortDesc of penis][end if]!".
 
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;
 	stimulate vagina from M;
-	if the player is male, RawUp penis;
+	if the player is possessing a penis, RawUp penis;
 	if refactoryperiod > 0, now the sex-length of M is 0;[If player came, the monster is done]
 	compute unique masturbation effect of M.
 
@@ -599,7 +599,7 @@ To say MasturbationFlav of (M - a monster):
 	otherwise say VanillaMasturbationFlav of M.
 
 To say VanillaMasturbationFlav of (M - a monster):
-	say "[if the player is female][BigNameDesc of M] rubs your [vagina] fervently![otherwise][BigNameDesc of M] strokes your [ShortDesc of penis] fervently![end if]".
+	say "[if the player is possessing a vagina][BigNameDesc of M] rubs your [vagina] fervently![otherwise][BigNameDesc of M] strokes your [ShortDesc of penis] fervently![end if]".
 
 To say DiaperMasturbationFlav of (M - a monster):
 	let D be a random worn diaper;

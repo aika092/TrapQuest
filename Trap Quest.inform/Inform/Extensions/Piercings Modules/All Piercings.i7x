@@ -186,7 +186,7 @@ Check taking off clitoris lead:
 Section 1 Wearability
 
 Definition: clitoris lead (called P) is eligible:
-	if the player is male or clitoris lead is worn or the player is pussy protected, decide no;
+	if the player is not possessing a vagina or clitoris lead is worn or the player is pussy protected, decide no;
 	if clitoris piercing is worn, decide yes;
 	decide no.
 
@@ -252,7 +252,7 @@ To decide which object is the potential-upgrade-target of (C - normal clit pierc
 Section - Wearability
 
 Definition: a clitoris piercing (called P) is eligible:
-	if the player is male or P is worn or the player is pussy protected or there is a worn clitoris piercing, decide no;
+	if the player is not possessing a vagina or P is worn or the player is pussy protected or there is a worn clitoris piercing, decide no;
 	decide yes.
 
 This is the cursed clitoris piercing stops you wearing underwear rule:

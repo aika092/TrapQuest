@@ -200,7 +200,7 @@ To say PartnerGreeting to (M - a monster):
 	otherwise:
 		let F be a random fuckhole penetrated by M;
 		if the player is feeling dominant and the player is not a pervert:
-			if the player is female, say "[first custom style]'[one of]You'll hear from my lawyer!'[or]Stop it! This is SO unacceptable'[or]Stop fucking me, you jerk!'[at random][roman type][line break]";
+			if the player is gendered female, say "[first custom style]'[one of]You'll hear from my lawyer!'[or]Stop it! This is SO unacceptable'[or]Stop fucking me, you jerk!'[at random][roman type][line break]";
 			otherwise say "[first custom style]'[one of]Get off me!'[or]This isn't cool at all!'[or]Stop! This is way uncool!'[or]Dude!'[as decreasingly likely outcomes][roman type][line break]";
 		otherwise if the player is not a pervert:
 			say "[first custom style]'[one of][or]My [F] can't take much more!'[or]Please! There must be someone else you can do this to!'[or]Not my [F]!'[at random][roman type][line break]";
@@ -364,10 +364,10 @@ To say UnfriendlyGreeting to (M - a monster):
 		otherwise if the player is feeling submissive:
 			say "[variable custom style]'[one of]Don[']t hit me!'[or]Don[']t hurt me!'[or]Please, you don[']t have to hit me!'[or]Please, I bruise easily!'[or]I'm sorry! Don't hit me!'[at random][roman type][line break]";
 		otherwise if the player is feeling dominant:
-			if the player is male, say "[first custom style]'[one of]Are you sure you want this fight, man?'[or]I'll kick your ass, man!'[or]I don[']t think you want to fight me dude.'[at random][roman type][line break]";
+			if the player is gendered male, say "[first custom style]'[one of]Are you sure you want this fight, man?'[or]I'll kick your ass, man!'[or]I don[']t think you want to fight me dude.'[at random][roman type][line break]";
 			otherwise say "[first custom style]'[one of]Leave me alone, I have my rights!'[or][if M is not male]Fucking bitch,[otherwise]Fucking ape,[end if] leave me alone!'[or]Hit me again and you[']ll hear from my lawyer.'[at random][roman type][line break]";
 		otherwise:
-			if the player is male, say "[first custom style]'[one of]Damn, what the fuck did I do to piss you off?'[or]Come on man, we don't have to fight!'[or]Fighting is so uncool!'[at random][roman type][line break]";
+			if the player is gendered male, say "[first custom style]'[one of]Damn, what the fuck did I do to piss you off?'[or]Come on man, we don't have to fight!'[or]Fighting is so uncool!'[at random][roman type][line break]";
 			otherwise say "[first custom style]'[one of]Stop hitting me, jerk!'[or]If you hit me again I[']m going to hit back.[or]We don't have to fight! Think about this!'[or]Why do we have to fight? This is ridiculous!'[at random][roman type][line break]";
 		say PleadingResponse of M.
 
@@ -528,7 +528,7 @@ To say DominantGreeting to (M - a monster):
 		say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of][big royal-subject of M]. I am aroused. Get on your knees, NOW.'[or][big royal-subject of M]. Your services are required. On your knees.'[or]Greetings, [royal-subject of M]. I have need of your body. On your knees, chop chop.'[at random][roman type][line break]";
 		moderateDignify;
 	otherwise:
-		say "[first custom style]'[one of]Yo, bitch! Stay there, I want to fuck you again.'[or][if the player is male]Hey bitch, how did it feel taking my BIG DICK[otherwise]Yo bitch! You might as well just get on your knees now[end if].'[or][if the player is male]Hey bitch, how'd you like to suck my [manly-penis][otherwise]Hey bitch. Ready to go again[end if]?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random][roman type][line break]";
+		say "[first custom style]'[one of]Yo, bitch! Stay there, I want to fuck you again.'[or][if the player is possessing a penis]Hey bitch, how did it feel taking my BIG DICK[otherwise]Yo bitch! You might as well just get on your knees now[end if].'[or][if the player is possessing a penis]Hey bitch, how'd you like to suck my [manly-penis][otherwise]Hey bitch. Ready to go again[end if]?'[or]What's up bitch? Ready for round [the times-dominated of M + 1]?'[or]Hey bitch. Up for another round?'[at random][roman type][line break]";
 	say DominantResponse of M.
 
 To say DominantResponse of (M - a monster):
@@ -641,7 +641,7 @@ To say RepeatGreeting to (M - a monster):
 
 To say DefaultGreeting to (M - a monster):
 	if bimbo of the player < 4:
-		if the player is female:
+		if the player is gendered female:
 			if M is neuter or M is male:
 				say "[first custom style]'[one of]Hello. Again.'[or]Oh. You again.'[or]Hello.'[at random][roman type][line break]";
 			otherwise:
@@ -650,7 +650,7 @@ To say DefaultGreeting to (M - a monster):
 			if M is neuter:
 				say "[first custom style]'Hi there.'[roman type][line break]";
 			otherwise if M is male:
-				say "[first custom style]'[one of]Hey dude.'[or]Sup Dude.'[or]Hey man.'[at random][roman type][line break]";
+				say "[first custom style]'[one of]Hey dude.'[or]Sup dude.'[or]Hey man.'[at random][roman type][line break]";
 			otherwise:
 				say "[first custom style]'[one of]Hey baby! What's going on?'[or]Yo yo! Feeling lonely, baby?'[or]Hey, what's up baby?'[at random][roman type][line break]";
 	otherwise if bimbo of the player < 7:
@@ -1167,7 +1167,7 @@ To compute talk option (N - 5) to (M - a monster):
 
 Definition: yourself is thinking of relieving themselves:
 	if the location of the player is use-the-floor, decide no;
-	if watersports mechanics is 1 and (the player is male or the location of the player is not urinals), decide yes;
+	if watersports mechanics is 1 and (the player is possessing a penis or the location of the player is not urinals), decide yes;
 	if the total squirtable fill of belly > 0 and the location of the player is toilets, decide yes;
 	decide no.
 

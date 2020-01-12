@@ -86,7 +86,7 @@ Check resisting:
 	otherwise if there is a wrong race fucking monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
-		say "Your gaping [if the player is male][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
+		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if the player is subdued:
@@ -304,7 +304,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is male and transGender is 0]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
 
 [!<SayOralAddResRefusalFlavOfMonster>+
 

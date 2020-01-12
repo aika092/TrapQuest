@@ -263,7 +263,7 @@ bag-feeding-toy is a bag-feeding-effect.
 To execute (E - bag-feeding-toy) on (C - a thing):
 	if C is a sex toy:
 		let F be asshole;
-		if the player is female and C is not plug, now F is vagina;
+		if the player is possessing a vagina and C is not plug, now F is vagina;
 		say "Your bag reacts to the toy by making your [variable F] tingle with delight!";
 		ruin F times 1.
 
@@ -288,7 +288,7 @@ To execute (E - bag-feeding-sex-themes) on (C - a thing):
 			otherwise:
 				say "You feel a bit more [if the player is a pervert]perverted[otherwise]willing to consider deviant ideas[end if]...";
 				SexAddictUp 1;
-		if B is vagina themed and C is vagina themed and the player is female:
+		if B is vagina themed and C is vagina themed and the player is possessing a vagina:
 			say "Your [MediumDesc of B][']s vagina theme synergises with the theme of the [MediumDesc of C]! Your [pussy] twitches with... anticipation?";
 			VaginalSexAddictUp 1;
 		if B is anal sex themed and C is anal sex themed:

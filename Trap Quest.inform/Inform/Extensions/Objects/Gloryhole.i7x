@@ -60,7 +60,7 @@ Check entering gloryhole:
 		say "[bold type]In a moment of weakness, you drop to your knees,[roman type] deciding you'd rather taste [manly-penis] [if the semen taste addiction of the player > 12]and get some [semen] to swallow [end if]right now rather than get your own rocks off.";
 		now the stance of the player is 1;
 	if the player is upright:
-		say "[if the player is male]You stick your [ShortDesc of penis] into the hole[otherwise]You press your [vagina] against the hole[end if]. ";
+		say "[if the player is possessing a penis]You stick your [ShortDesc of penis] into the hole[otherwise if the player is possessing a vagina]You press your [vagina] against the hole[end if]. ";
 	otherwise:
 		if there is a held condom-providing thing and face is not actually occupied:
 			say "Use a condom?";
@@ -160,14 +160,14 @@ To compute gloryhole genital modification:
 		say "You feel a sharp hot pain in your clit! You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [normal clit piercing]!";
 	otherwise if C is chastity cage:
 		summon C locked;
-		say "[if the player is male]Before you can react, someone on the other end of the hole has forced something hard and plastic around your [ShortDesc of penis]! The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]! [line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
+		say "[if the player is possessing a penis]Before you can react, someone on the other end of the hole has forced something hard and plastic around your [ShortDesc of penis]! The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]! [line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
 	otherwise:
-		if the player is male:
+		if the player is possessing a penis:
 			say "Somebody slaps your [ShortDesc of penis] painfully!";
 			PainUp 1;
 			PenisDown 1;
 			say "You pull it back out, but the experience has made you more submissive. You now have a [ShortDesc of Penis]";
-		otherwise:
+		otherwise if the player is possessing a vagina:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
 			PainUp 2;
 	dislodge gloryhole.
@@ -285,7 +285,7 @@ A time based rule (this is the compute gloryhole rule):
 					get oral creampie image for gloryhole;
 					BlowCount;
 					StomachSemenUp 4;
-					say "Finally, the [manly-penis] slowly pulls itself out of your mouth and recedes back into the painting. The magical force keeping you pressed to the wall disappears, allowing you to leave[if the size of penis > 0]. You slowly pull your [player-penis] out of the hole[end if].";
+					say "Finally, the [manly-penis] slowly pulls itself out of your mouth and recedes back into the painting. The magical force keeping you pressed to the wall disappears, allowing you to leave[if the player is possessing a penis]. You slowly pull your [player-penis] out of the hole[end if].";
 					now gloryhole is not grabbing the player;
 					now gloryhole is not penetrating face;
 					now busy is 0;

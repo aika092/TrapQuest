@@ -53,7 +53,7 @@ To say TitleBimbo:
 		otherwise if the thickness of hips > 8:
 			say " [one of][if the flesh volume of hips > 8]huge assed[otherwise]super curvy[end if][or]voluptuous[sticky random]";
 		if there is a worn cursed chastity cage or there is a worn locked chastity cage:
-			if T is not virgin warrior, say " [if the player is male and the size of penis > 6]emasculated[otherwise][one of]locked away[or]chastised[sticky random][end if]";
+			if T is not virgin warrior, say " [if the player is gendered male and the size of penis > 6]emasculated[otherwise][one of]locked away[or]chastised[sticky random][end if]";
 		if the pregnancy of the player > 0:
 			if the pregnancy of the player is 2:
 				say " permanently";

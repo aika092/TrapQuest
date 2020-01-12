@@ -792,7 +792,7 @@ To say FriendlyAnalRequest of (M - a monster):
 		say "[TakeMyAnalVirginity of M]";
 	otherwise if M is male:
 		let preg-nope be 0;
-		if the player is female and the pregnancy of the player is 0 and pregnancy fetish is 1 and M is father material and the player is afraid of a creampie, now preg-nope is 1;
+		if the player is possessing a vagina and the pregnancy of the player is 0 and pregnancy fetish is 1 and M is father material and the player is afraid of a creampie, now preg-nope is 1;
 		if the player is a nympho:
 			if the anal sex addiction of the player < 6:
 				if the player is feeling dominant:

@@ -92,7 +92,7 @@ To trigger lactation:
 		increase the lactation-count of the player by 1;
 		if lactation-count of the player is 1:
 			say "You feel a strange tingle in your chest... a feeling like... something weird is going on. Your nipples perk up and feel strangely sensitive. The feeling intensifies, and then with a shock you stare at your chest as you work out what's happening.[line break]";
-			if the player is male:
+			if the player is sexed male:
 				say "[variable custom style]This is not possible! What the hell is this crazy game doing to me?![roman type][line break]";
 				humiliate 200;
 		let N be bottom level lactation cover;
