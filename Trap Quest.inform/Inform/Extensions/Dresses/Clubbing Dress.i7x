@@ -156,7 +156,7 @@ To say MediumDesc of (C - a black slut clubbing dress):
 	say "slutty black clubbing dress".
 
 To decide which number is the initial outrage of (C - a black slut clubbing dress):
-	decide on 5.
+	decide on 6.
 
 
 Part 6 - Tiny Black Clubbing Dress
@@ -177,7 +177,7 @@ To say MediumDesc of (C - a supertiny navy clubbing dress):
 	say "whorish navy clubbing dress".
 
 To decide which number is the initial outrage of (C - a supertiny navy clubbing dress):
-	decide on 4.
+	decide on 5.
 
 Definition: a supertiny navy clubbing dress is gem themed: decide yes.
 Definition: a supertiny navy clubbing dress is blue themed: decide yes.
@@ -225,7 +225,7 @@ To say MediumDesc of (C - an exposing black clubbing dress):
 	say "whorish black clubbing dress with a cut-out chest".
 
 To decide which number is the initial outrage of (C - an exposing clubbing dress):
-	decide on 4. [It's not that bad unless the body parts are actually exposed]
+	decide on 5. [It's not that bad unless the body parts are actually exposed]
 
 Definition: an exposing clubbing dress is black themed: decide yes.
 Definition: an exposing clubbing dress is end of transformation chain: decide yes. [It's the end of the transformation chain. This will make some things avoid bothering to attempt to transform it.]
@@ -236,7 +236,7 @@ To say TransformReaction of (C - an exposing clubbing dress):
 	otherwise if C is almost too much:
 		say "[variable custom style][if breasts is lewdly exposed]Exposing my tits like this[otherwise]Wearing slutty outfits like this[end if] is scary but exhilarating![roman type][line break]";
 	otherwise if the humiliation of the player < 40000:
-		say "[variable custom style]Ooh, nice!  This way I can show off all my assets all the time![roman type][line break]".
+		say "[variable custom style]Ooh, nice! This way I can show off all my assets all the time![roman type][line break]".
 
 Part 9 - Exposing Pink Clubbing Dress
 
@@ -278,7 +278,7 @@ To say MediumDesc of (C - a blue slut clubbing dress):
 Definition: a blue slut clubbing dress is blue themed: decide yes.
 
 To decide which number is the initial outrage of (C - a blue slut clubbing dress):
-	decide on 5.
+	decide on 6.
 
 
 

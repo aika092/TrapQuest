@@ -161,7 +161,7 @@ A time based rule (this is the sticky decay rule):
 		if the player is glue stuck:
 			[They're supposed to pull free. But let's be kind and say the glue does eventually weaken for some reason. Just much slower than ghost jizz. Maybe allow them to pee on it to weaken it faster?]
 			now WasGlued is 1;
-			[###Selkie: Aika set this to 1, not 5; and may be right. But I want to try instead having a slower decay of stickiness for rounds in which nothing happens, so they get more fetishy rounds of struggling and squirming trying to get free. The stickiness now reduces more readily each round that something happens. And if a monster encounters them, the stickiness also reduces by 1, then.]
+			[Selkie: Aika set this to 1, not 5; and may be right. But I want to try instead having a slower decay of stickiness for rounds in which nothing happens, so they get more fetishy rounds of struggling and squirming trying to get free. The stickiness now reduces more readily each round that something happens. And if a monster encounters them, the stickiness also reduces by 1, then.]
 			if a random number between 1 and [1]5 is 1:
 				decrease the stickiness of the player by 1;
 		otherwise:

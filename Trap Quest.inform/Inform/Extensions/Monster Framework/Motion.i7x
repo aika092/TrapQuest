@@ -47,7 +47,7 @@ To say AttractionWorry of (N - a monster):
 	otherwise:
 		let M be a random monster in the location of the player;
 		if M is a monster:
-			[If there's a monster right here, the player probably isn't going to worry about a nearby monster? Or would they.? Hmm.]
+			[If there's a monster right here, the player probably isn't going to worry about a nearby monster?  Or would they.?  Hmm.]
 			do nothing;[We do nothing instead of explicitly "compute correct kneeling reaction of M" because that's automatically done by the "Report kneeling when the player is in danger and seconds > 1" rule. If we did it here too, we'd get two messages in a row.]
 		otherwise:
 			if the player is glue stuck:
@@ -89,13 +89,14 @@ Check someone going:
 	if there is a barrier in the location of the player, stop the action.
 
 To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified for the monster.]
-	now neighbour finder is the location of M;
-	let A be a random N-viable direction;
-	let P be the room A from the location of M;
-	if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-		try M going A;
-	otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-		try M going A;
+	if M is scarable:
+		now neighbour finder is the location of M;
+		let A be a random N-viable direction;
+		let P be the room A from the location of M;
+		if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			try M going A;
+		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			try M going A.
 
 The motion reaction rules is a rulebook.
 
@@ -188,7 +189,7 @@ To compute periodic recovery of (M - a monster):
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
 
 To say SuddenMessFlav of (M - a monster):
-	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophany of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".
+	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophony of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".
 
 To compute unique periodic effect of (M - a monster):
 	do nothing.

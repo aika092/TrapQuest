@@ -295,7 +295,7 @@ To check glue tripping:
 					if the times-stuck of G is 1, increase the stickiness of the player by 2; [If they just triggered it, because they were on their knees they get stuck a little worse than they'd crawled up to it or knelt deliberately (the MoreStick, below).]
 					now the smell-duration of G is 4;
 					if debugmode is 1, say "###debug: the stickiness of the player is now [the stickiness of the player].";
-				let MoreStick be a random number between 1 and 3; [###Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
+				let MoreStick be a random number between 1 and 3; [Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
 				if the strength of the player  > the stickiness of the player + MoreStick:
 					increase the stickiness of the player by a random number between 1 and MoreStick;
 					[They were already glued: now they're glued more!]
@@ -331,7 +331,7 @@ To check glue tripping:
 				otherwise:
 					say "Good thing you weren't kneeling down, then!";
 			otherwise:
-				say "You dextrously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
+				say "You dexterously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
 
 
 [See if the glue trap gets the player. If so, it knocks them off their feet.
@@ -341,7 +341,7 @@ A time based rule (this is the glue-stuck-mutation rule):
 		[if the player is flying:
 			let M be a random monster in the location of the player;
 			if M is a monster:
-				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again!  Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
+				say "[one of]The [printed name of M] gets a wicked look as you float up in the air, looking down at the glue puddle then back up at you. Uh oh. You try to scrabble away, but you can't get much traction, and [NameDesc of M] grabs you by one ankle. With no effort, despite your mad flailing and squealing, they push you down into the glue[or]Fuck no, not again! Again you wriggle and flail, but once again you're hauled down off the ceiling and unceremoniously plunged into the glue[stopping]";
 			otherwise:
 				say "[one of]You bob blissfully above the puddle of glue[or]You feel a bit worried about the glue puddle below you[or][line break][first custom style]I hope I don't land in the glue when I finally descend![roman type][line break][or]The glue puddle seems to draw your eye[or]The glue puddle beckons to you.[stopping]";
 				stop;]
@@ -578,7 +578,7 @@ To compute the mutation effects of (G - a glue):
 			if X is 1:
 				if weight gain fetish is 1:
 					say "[one of]The glue smells delicious, and you suddenly have the genius idea of eating your way free - if you can just bite the right parts away[or][stopping]";
-					say "[one of]You manage to stretch some of the glue binding you, up as high as your mouth, and bite through it... it's chewy and delicious![or]Once again you nibble at the yummy glue.[or]You bite off some  more of the tasty glue[or]The glue stretches like taffy - and tastes even better![at random]";
+					say "[one of]You manage to stretch some of the glue binding you, up as high as your mouth, and bite through it... it's chewy and delicious![or]Once again you nibble at the yummy glue.[or]You bite off some more of the tasty glue[or]The glue stretches like taffy - and tastes even better![at random]";
 					decrease the stickiness of the player by 1;
 					FatUp 1;
 					compute glue escaping;
@@ -785,8 +785,8 @@ Check GlueRubbing:
 	otherwise if the noun is a body part:
 		[say "You gingerly rub the [printed name of S] [if the noun is fuckhole]around[otherwise]onto[end if] your [ShortDesc of the noun] and wait to see what will happen.[line break]";]
 		if the noun is penis and there is no worn crotch covering clothing:
-			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly!  You shriek and start trying to pull it free immediately, before it gets any more stuck!";
-			say "It hurts!  And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick!  You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
+			say "You touch just the tip of your finger to your [ShortDesc of penis] and find it bonds almost instantly! You shriek and start trying to pull it free immediately, before it gets any more stuck!";
+			say "It hurts! And the tugging is making your [ShortDesc of penis] stiffen, despite the pain. But you can't walk around here with one hand glued to your dick! You keep pulling, despite the pain, and eventually tug your hand free, your [ShortDesc of penis] now throbbing and burning in pain while tears stream from your eyes.";
 			PainUp 1;
 			bodyruin 1;
 		otherwise if the noun is vagina or the noun is hips:
@@ -857,7 +857,7 @@ To compute glued reaction of (M - a monster):
 		otherwise:
 			anger M;
 			now the sex-length of M is 3;[probably something to avoid if at all possible]
-			say "[BigNameDesc of M] seems to realise your predicament!  Oh, no...";
+			say "[BigNameDesc of M] seems to realise your predicament! Oh, no...";
 			now M is interested;
 	otherwise:
 		compute correct kneeling reaction of M.
@@ -873,7 +873,7 @@ A time based rule (this is the glue pain threshold rule):
 
 [!<CheckTearingOffWornClothing>+
 
-Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dextrous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
+Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dexterous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
 ###Later, we should allow monsters to tear worn clothing off too, if they want.
 
 +!]

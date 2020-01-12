@@ -43,7 +43,7 @@ Carry out TQeating creme egg:
 				say "taste something bitter. Moments later, you feel a slight twinge in your bladder as your control over it weakens.";
 				increase incontinence by 1;
 		otherwise:
-			say "are [if the semen taste addiction of the player > 12]thrilled[otherwise if the semen taste addiction of the player > 8]surprised[otherwise if the semen taste addiction of the player > 4]dismayed[otherwise]disgusted[end if] to find that it is filled with [semen]!  You [if the semen taste addiction of the player > 10]happily swallow it[otherwise]reluctantly force it[end if] down.";
+			say "are [if the semen taste addiction of the player > 12]thrilled[otherwise if the semen taste addiction of the player > 8]surprised[otherwise if the semen taste addiction of the player > 4]dismayed[otherwise]disgusted[end if] to find that it is filled with [semen]! You [if the semen taste addiction of the player > 10]happily swallow it[otherwise]reluctantly force it[end if] down.";
 			StomachSemenUp 2;
 	otherwise:
 		say "find that the tasty tangy liquid sends a tingle down your legs. You feel yourself getting [if the noun is golden creme egg]much [otherwise if creme-egg-timer > 0]even [end if]faster!";

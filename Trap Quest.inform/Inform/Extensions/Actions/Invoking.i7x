@@ -46,7 +46,7 @@ Carry out invoking:
 				decrease the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its hateful blessing[otherwise]becomes cursed[end if]!";
 				curse T.
-
+			
 Understand "invoke" as invoking.
 
 

@@ -132,7 +132,7 @@ To compute furniture resting on (M - a milking bench):
 	now resting is 0.
 
 To say RestingDesc of (F - a milking bench):
-	say "You [one of][or]continue to [stopping]kneel on the bench.";
+	say  "You [one of][or]continue to [stopping]kneel on the bench.";
 
 Milking Bench ends here.
 

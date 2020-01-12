@@ -191,7 +191,7 @@ To compute ghostGrowth of (M - a monster):
 		say "Your [ShortDesc of G] seems to grow stronger[if the strap-length of G > the size of penis], and a shiver moves up your spine as it grows into a [PenisFlavour of G][end if].".
 
 To say sleeping tip:
-	if tutorial is 0, say "[one of][newbie style]Newbie tip: The enemy has fallen asleep!  However in this game you can't just kill sleeping enemies, you have to attack them like normal. Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
+	if tutorial is 0, say "[one of][newbie style]Newbie tip: The enemy has fallen asleep! However in this game you can't just kill sleeping enemies, you have to attack them like normal. Usually, this results in them waking back up again, so you'll still have a fight on your hands![roman type][line break][or][stopping]".
 
 To compute replacement of (T - a thing) in (O - an orifice):
 	unless O is actually occupied or current-monster is not intelligent:
@@ -309,6 +309,17 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 		otherwise dislodge M.
 
 
+[!<ComputePostClimaxEffectOfMonsterInBodypart>+
+
+Handles anything that needs to happen after a monster "M" climaxes in a bodypart"F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of one of the respective wrapper functions like compute climax of M in F. No functionality in this function by default
+
+@param <Monster>:<M> The monster that had the climax
+@param <Bodypart>:<F> The bodypart the monster had the climax with
+
++!]
+To compute post climax effect of (M - a monster) in (F - a body part):
+	do nothing.
+
 This is the default anal climax rule:
 	if current-monster is penetrating asshole:
 		compute anal climax of current-monster;
@@ -358,12 +369,6 @@ This is the default cleavage climax rule:
 		progress quest of titfuck-quest.
 The default cleavage climax rule is listed in the default end-of-sex rules.
 
-This is the suggestion satisfied rule:
-	if current-monster is penetrating face and suggestion-type is 1, now suggestion-tracking is 1;
-	if current-monster is penetrating asshole and suggestion-type is 2, now suggestion-tracking is 1;
-	if current-monster is penetrating vagina and suggestion-type is 3, now suggestion-tracking is 1;
-	if current-monster is penetrating breasts and suggestion-type is 4, now suggestion-tracking is 1.
-The suggestion satisfied rule is listed in the default end-of-sex rules.
 
 To compute cleavage climax of (M - a monster):
 	TitfuckAddictUp 1;
@@ -373,6 +378,19 @@ To compute cleavage climax of (M - a monster):
 		CumTitsUp the semen load of M;
 	if M is interested, satisfy M;
 	otherwise dislodge M.
+
+This is the default erection climax rule:
+	if current-monster is penetrating penis:
+		compute erection climax of current-monster.
+The default erection climax rule is listed in the default end-of-sex rules.
+
+To compute erection climax of (M - a monster):
+	PenisObedienceUp 1;
+	TimesSubmittedUp M by 1;
+	say ErectionClimaxFlav of M;
+	compute post climax effect of M in penis;
+	if M is interested and the rounds of sex left of M <= 0:
+		satisfy M.
 
 [Similarly, these are BLAND EXAMPLES of what progress sex might look like for your monster.]
 
@@ -475,6 +493,27 @@ To compute titfuck of (M - a monster):
 		say TitfuckReceiveFlav of M;
 		decrease the sex-length of M by 1;
 	stimulate breasts.
+
+This is the default erection sex rule:
+	if current-monster is penetrating penis, compute erection sex of current-monster.
+The default erection sex rule is listed in the default progress sex rules.
+
+To compute erection sex of (M - a monster):
+	if penis is not penis-erect:[which implies that the player came]
+		say ErectionLostFlav of M;
+	otherwise if the sex-length of M is 1 and M is anticipating-climax:
+		say ErectionNearingClimaxFlav of M;
+	otherwise if the reaction of the player is 0:
+		say ErectionForceFlav of M;
+	otherwise:
+		say ErectionUseFlav of M;
+	if M is not penetrating penis:
+		compute post climax effect of M in penis;
+	otherwise:
+		RawUp penis;
+		decrease the sex-length of M by 1;
+		stimulate penis from M;
+		say "[one of][M sex reaction][or][cycling]".
 
 Chapter 2 Priority Attack
 
@@ -585,7 +624,7 @@ The monster pulls collar rule is listed last in the monster punishment rules.
 This is the default pullstring rule:
 	if current-monster is intelligent and the collar-pulled of current-monster is 0:
 		let P be a random worn pullstring collar;
-		say "[BigNameDesc of current-monster] notices your [ShortDesc of P]!  After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
+		say "[BigNameDesc of current-monster] notices your [ShortDesc of P]! After a brief moment of consideration, [he of current-monster] takes hold of the string and pulls it!";
 		now monster-puller is current-monster;
 		now auto is 1;
 		try pulling P;
@@ -662,6 +701,10 @@ Definition: belly (called B) is a potential target: [Belly is used to target for
 
 Definition: breasts (called B) is a potential target:
 	if B is breasts and current-monster is willing to do titfucks and (presented-orifice is breasts or the largeness of breasts > 6), decide yes;
+	decide no.
+
+Definition: penis (called B) is a potential target:
+	if B is penis and the size of penis > 0 and current-monster is willing to charm snakes, decide yes;
 	decide no.
 
 Definition: an object is an actual target: decide no.
@@ -844,7 +887,7 @@ To compute (M - a monster) destroying (C - a clothing):
 	destroy C.
 
 To compute (M - a monster) ripping (C - a clothing):
-	say "[BigNameDesc of M] manages to create a tear in the fabric!  Your [ShortDesc of C] is now permanently ripped.";
+	say "[BigNameDesc of M] manages to create a tear in the fabric! Your [ShortDesc of C] is now permanently ripped.";
 	now C is crotch-ripped.
 
 To compute (M - a monster) displacing (C - a clothing):
@@ -947,7 +990,7 @@ To compute (M - a monster) entering (F - asshole):
 	if F is not actually occupied:
 		set up sex length of M in F;
 		if (M is friendly-fucking or presented-orifice is F) and M is intelligent, say FriendlyAssholePenetrationFlav of M;[You can't really have "friendly" sex with unintelligent monsters anyway]
-		otherwise say AssholePenetrationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+		otherwise say AssholePenetrationFlav of M;[If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 		now M is penetrating F;
 		compute unique penetration effect of M in F;
 		ruin F;
@@ -1056,8 +1099,57 @@ To compute (M - a monster) entering breasts:
 	get breasts penetration image for M.
 
 To say BreastsPenetrationFlav of (M - a monster):
-	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster!  It's boring and might not even be accurate if the monster isn't male.]
+	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster! It's boring and might not even be accurate if the monster isn't male.]
 
+
+This is the monster penis insertion rule:
+	if the chosen-orifice of current-monster is penis, follow the monster penis insertion rules.
+The monster penis insertion rule is listed in the default monster insertion rules.
+
+The monster penis insertion rules is a rulebook.
+
+This is the monster attacking penis covering clothing rule:
+	let C be a random worn potentially penis covering clothing;
+	if C is clothing:
+		compute current-monster attacking C;
+		rule succeeds.
+The monster attacking penis covering clothing rule is listed last in the monster penis insertion rules.
+
+This is the monster unlocks annoying cages rule:
+	let C be a random worn chastity cage;
+	if C is clothing:
+		compute current-monster removing C;
+		rule succeeds.
+The monster unlocks annoying cages rule is listed last in the monster penis insertion rules.
+
+This is the monster penetrating penis rule:
+	compute current-monster demanding erection;
+	rule succeeds.
+The monster penetrating penis rule is listed last in the monster penis insertion rules.
+
+To get penis penetration image for (M - a monster):
+	do nothing.
+
+To compute (M - a monster) demanding erection:
+	if penis is not penis-erect, say ErectionDemand of M;
+	if penis is erect-on-request or penis is penis-erect:
+		if penis is not penis-erect, now penis is penis-erect;
+		compute M mounting erection;
+	otherwise:
+		compute unerect taunting of M.
+
+To compute (M - a monster) mounting erection:
+	if penis is not actually occupied:
+		set up sex length of M in penis;
+		if (M is friendly-fucking or presented-orifice is penis) and M is intelligent, say FriendlyErectionPenetrationFlav of M;
+		otherwise say ErectionPenetrationFlav of M;
+		now M is penetrating penis;
+		compute unique penetration effect of M in penis;
+		get penis penetration image for M;
+		say GangAnnounce;
+	otherwise:
+		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
+		distract M.
 
 This is the monster begin urination rule:
 	if the chosen-orifice of current-monster is belly, follow the monster begin urination rules.
@@ -1165,7 +1257,7 @@ Definition: a monster is a tripper if it is intelligent.
 
 To say TripChanceFlav of (M - a monster):
 	if the last-tripped of M > 4:
-		say "[BigNameDesc of M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]!  [big he of M] is clearly going to try and trip you soon.";
+		say "[BigNameDesc of M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]! [big he of M] is clearly going to try and trip you soon.";
 	otherwise if the last-tripped of M > 2:
 		say "[BigNameDesc of M] [one of]glances at your [feet][or]seems to be almost purposefully not looking at your [feet][or]eyes your knees[in random order]. There's a chance [he of M] is planning to trip you up.[if newbie tips is 1 and tutorial is 0][one of][newbie style]This would be a good time to stick to slapping until the NPC makes [his of M] trip attack.[roman type][line break][or][stopping][end if]".
 
@@ -1216,14 +1308,19 @@ To compute striking attack of (M - a monster):
 	if the accuracy roll of M >= the dexterity of the player:
 		say "[StrikingSuccessFlav of M on B]";
 		compute M striking B;
+		compute striking success effect of M on B;
 	otherwise:
 		say "[StrikingFailureFlav of M on B]";
 		if the blind-status of M > 0:
 			decrease the blind-status of M by 1;
 			if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
 
+
+To compute striking success effect of (M - a monster) on (B - a body part):
+	do nothing.
+
 To say StrikingSuccessFlav of (M - a monster) on (B - a body part):
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - a monster) on (B - a body part):
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
@@ -1358,7 +1455,7 @@ To compute (P - a clothing) protecting (B - belly):
 			AssSquirt.
 
 To say MonsterAttackError:
-	say "[one of][bold type]ERROR - this monster doesn't know how to attack. Some stupid slut forgot to code this right!  Oh dear. I guess it just stands there and does nothing.[roman type][line break][or][stopping]".
+	say "[one of][bold type]ERROR - this monster doesn't know how to attack. Some stupid slut forgot to code this right! Oh dear. I guess it just stands there and does nothing.[roman type][line break][or][stopping]".
 
 To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
 	say "[AllyDamageFlav of X on M]";

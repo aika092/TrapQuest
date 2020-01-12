@@ -45,10 +45,13 @@ To update saved stats:
 	now backgroundCombatCalculation is true;
 	now saved-slap-damage is the slap damage of the player;
 	now saved-printed-slap-damage is saved-slap-damage - combat bonus remainder;
+	if saved-printed-slap-damage < 0, now saved-printed-slap-damage is 0;
 	now saved-knee-damage is the knee damage of the player;
 	now saved-printed-knee-damage is saved-knee-damage - combat bonus remainder;
+	if saved-printed-knee-damage < 0, now saved-printed-knee-damage is 0;
 	now saved-kick-damage is the kick damage of the player;
 	now saved-printed-kick-damage is saved-kick-damage - combat bonus remainder;
+	if saved-printed-kick-damage < 0, now saved-printed-kick-damage is 0;
 	now backgroundCombatCalculation is false.
 
 

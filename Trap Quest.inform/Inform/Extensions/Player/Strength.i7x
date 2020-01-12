@@ -127,6 +127,13 @@ REQUIRES COMMENTING
 *@!]
 The player has a number called old strength. The old strength of the player is usually 0.
 
+Definition: yourself is deserving of more strength:
+	let R be a random number between -3 and 56;
+	let S be the flat strength of the player;
+	if debuginfo > 0, say "[input-style]Strength buff check: d60-4([R]) | ([S].5) player strength[roman type][line break]";
+	if R > S, decide yes;
+	decide no.
+
 
 [!<StrengthUpX>+
 

@@ -103,7 +103,7 @@ To FatArmsUp (X - a number):
 	while X > 0 and weight gain fetish is 1:
 		if the flesh volume of arms < 10, increase the flesh volume of arms by 1;
 		decrease X by 1;
-		if newbie tips is 1 and the flesh volume of arms > 2, say "[one of][newbie style]Newbie tip: Your arms are getting a bit chubby!  That's making you heavier and therefore you'll tire out faster. However, it is fully reversible!  Every time you slap an NPC, you'll exercise your arm muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
+		if newbie tips is 1 and the flesh volume of arms > 2, say "[one of][newbie style]Newbie tip: Your arms are getting a bit chubby! That's making you heavier and therefore you'll tire out faster. However, it is fully reversible! Every time you slap an NPC, you'll exercise your arm muscles a bit, and help you lose that fat.[roman type][line break][or][stopping]".
 
 [!<FatArmsDownX>+
 

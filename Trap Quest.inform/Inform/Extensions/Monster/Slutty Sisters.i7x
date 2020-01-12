@@ -3,9 +3,7 @@ Slutty Sisters by Monster begins here.
 A slutty sister is a kind of monster. A slutty sister is usually intelligent.
 
 Definition: a slutty sister is raunchy: decide yes.
-Definition: a slutty sister is presenting as male:
-	if lady fetish is 2, decide yes;
-	decide no.
+Definition: a slutty sister is presenting as male if lady fetish is 2.
 
 A bulging slutty sister is a kind of slutty sister. There is 1 bulging slutty sister. [The leftover-type of a bulging slutty sister is usually 123.]
 The printed name of bulging slutty sister is usually "[if item described is in the location of the player][TQlink of item described][end if][input-style][ShortDesc of item described][if item described is asleep] (exhausted)[end if][shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". Understand "bloated", "cumfilled", "cum", "filled", "empty" as bulging slutty sister. The text-shortcut of bulging slutty sister is "bu".
@@ -55,7 +53,7 @@ To say MonsterDesc of (M - a slutty sister):
 		say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging belly[otherwise if the belly contents of M > 7]large, bloated belly[otherwise if the belly contents of M > 0]visibly distended belly[otherwise]flat, empty belly[end if].".
 
 To say MonsterComment of (M - a futanari slutty sister):
-	say "[line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh!  So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]".
+	say "[line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh! So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]".
 
 To say MonsterComment of (M - a bulging slutty sister):
 	if the belly contents of item described > 0, say "[line break][variable custom style][if item described is penetrating face][']Mmmmmmmmph!['][otherwise if the semen addiction of the player < 10]I'm so glad that's inside [him of M] and not inside me![otherwise if the semen taste addiction of the player < 15 and the belly contents of item described > 7]I think my stomach would explode if I had to drink all of that...[otherwise]I bet [his of M] sister's cum tastes soooo good!![end if][roman type][line break]";
@@ -77,15 +75,15 @@ To decide which number is the girth of (M - a futanari slutty sister):
 To decide which number is the semen-load of (M - a futanari slutty sister):
 	decide on 18.
 
-Definition: a slutty sister (called M) is too intimidating: [The player never refuses to fight the final boss.]
-	decide no.
+Definition: a slutty sister is too intimidating: decide no. [The player never refuses to fight the final boss.]
+
 
 Definition: a slutty sister is able to remove cursed plugs: decide yes.
 
 Definition: a slutty sister is concealment immune: decide yes.
 
-Definition: a slutty sister (called M) is butt slut immune: [Special case where they are immune to concealment but obey butt slut.]
-	decide no.
+Definition: a slutty sister is butt slut immune: decide no. [Special case where they are immune to concealment but obey butt slut.]
+
 
 This is the spawn initial slutty sisters rule:
 	if diaper quest is 0:
@@ -139,13 +137,15 @@ To compute friendly boredom of (M - a slutty sister):
 Part 2 - Motion
 
 To compute monstermotion of (M - a slutty sister):
-	do nothing.
+	if M is not in Hotel36 and M is alive:
+		say "BUG: slutty sister appeared outside of boss room. Please report this to Aika with the following information:[line break]Current monster's turn: [current-monster][line break]Player's location: [location of the player][line break]NPC state: in [location of M]; [unless M is interested]not [end if]interested; [unless M is asleep]not [end if]asleep[paragraph break]";
+		now M is in Hotel36.
+
 
 To compute (M - a slutty sister) seeking (D - a direction):
 	do nothing.
 
-To compute fleeing of (M - a slutty sister):
-	do nothing.
+Definition: a slutty sister is scarable: decide no.
 
 To compute room leaving of (M - a slutty sister): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
 	if M is in Hotel36:
@@ -159,10 +159,18 @@ To compute sleep reduction of (M - a slutty sister):
 		decrease the sleep of M by seconds;
 		if the M is awake:
 			now the sleep of M is 0;
-			if M is in the location of the player, say "[BigNameDesc of M] perks up, [he of M] looks ready for another round!  Uh-oh...".
+			if M is in the location of the player, say "[BigNameDesc of M] perks up, [he of M] looks ready for another round! Uh-oh...".
 
 To compute labour to (M - a slutty sister):
 	say DefaultBirthScene.
+
+To compute diaper mess reaction of (M - a slutty sister):
+	do nothing.
+To compute diaper mess reaction of (M - futanari slutty sister): [Need to make sure she doesn't leave the room and also that she can still fuck the player]
+	say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'This is NOT the time.'[roman type][line break][big he of M] waves [his of M] hands and suddenly you're not wearing and underwear at all, and you're completely clean!";
+	let D be a random worn knickers;
+	if D is knickers, destroy D.
+
 
 Part 3 - Combat
 
@@ -202,7 +210,7 @@ This is the futanari lets bulging go first rule:
 The futanari lets bulging go first rule is listed first in the futanari unique punish rules.
 
 To say PresentAcceptanceFlav of (M - a futanari slutty sister):
-	say "[second custom style]'Oh, the little slut thinks [if the player is presenting as female]she[otherwise]he[end if] can choose where I stuff my giant [DickDesc of M]?  Well, go on, just this once, I guess, I'll let you have it your way. Aren't I so kind?'[roman type][line break]".
+	say "[second custom style]'Oh, the little slut thinks [if the player is presenting as female]she[otherwise]he[end if] can choose where I stuff my giant [DickDesc of M]? Well, go on, just this once, I guess, I'll let you have it your way. Aren't I so kind?'[roman type][line break]".
 
 To say PresentRejectionFlav of (M - a futanari slutty sister):
 	say "[second custom style]'I'll put this where I want, not where you want, bitch.'[roman type][line break]".
@@ -254,9 +262,9 @@ To compute (M - a bulging slutty sister) entering mouth:
 	otherwise say "[BigNameDesc of M] rolls you over onto your back!";
 	if presented-orifice is face, say "You let [him of M], and [he of M] immediately sits on your face. ";
 	otherwise say "[big he of M] succeeds, and immediately sits on your face. ";
-	say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breath.[otherwise]Facing your forehead, she covers your nose with the top of her vagina, and your mouth with her taint, giving you access to both her creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, she covers your nose with the top of her vagina, and your mouth with her taint, giving you access to both her creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
 	if bukkake fetish is 1:
-		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2]his hole[otherwise]both her holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell!  Yuck.[roman type][line break][end if][line break]";
+		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2]his hole[otherwise]both her holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
 		if the semen coating of face < 10, CumFaceUp 1;
 	now the sex-length of M is 4;
 	now the suffocation of M is 0;
@@ -264,7 +272,7 @@ To compute (M - a bulging slutty sister) entering mouth:
 	now M is filling face.
 
 To decide which number is the suffocation limit of the player:
-	if the class of the player is trained hooker, decide on 14;
+	if the player is a trained hooker, decide on 14;
 	decide on 12;[rebalanced]
 	if the fatigue of the player is 0, decide on 10;
 	if the fatigue of the player < 200, decide on 8;
@@ -314,7 +322,7 @@ To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 			say "[one of]You lick the [boy of M]'s [HoleDesc of M] with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You move your tongue downwards and dig it into the slutty sister's asshole, which immediately rewards you with a thick glob of salty [semen].[or]Digging further into [his of M] asshole, you let your tongue explore its texture and taste, felching all the [semen] you can into your mouth.[or]You keep up rhythmic pumping motions with your tongue, allowing a steady supply of [semen] to ooze its way down your throat.[or]You use your neck muscles to pump your tongue even faster and deeper into [his of M]butthole. You are rewarded with another several gulps full of [semen].[cycling]";
 			StomachSemenUp 2;
 		otherwise if the stomach of the player - 10 <= the semen taste addiction of the player:
-			say "[if the stomach of the player + 10 <= the semen taste addiction of the player]Your stomach is so full of [semen] that you have to put extra effort in to keep swallowing. But you love [semen] so much, you know you can find room![otherwise if the stomach of the player + 6 <= the semen taste addiction of the player]You are so full of [semen] you feel like you could explode!  But you keep on obediently swallowing all the same.[otherwise if the stomach of the player + 2 <= the semen taste addiction of the player]Your bloated stomach screams at you - there's no more room for more [semen]!  But it keeps coming, so you have to keep swallowing.[otherwise if the stomach of the player - 2 <= the semen taste addiction of the player]There's so much [semen] inside if you that you are really struggling to gulp any more down at all. Your bloated belly hurts badly. You feel like you could pass out any second.[otherwise]Thick streams of [semen] run out your nose as you begin to choke on your [semen] filled airpipe. Your eyes roll into the back of your head.[end if]";
+			say "[if the stomach of the player + 10 <= the semen taste addiction of the player]Your stomach is so full of [semen] that you have to put extra effort in to keep swallowing. But you love [semen] so much, you know you can find room![otherwise if the stomach of the player + 6 <= the semen taste addiction of the player]You are so full of [semen] you feel like you could explode! But you keep on obediently swallowing all the same.[otherwise if the stomach of the player + 2 <= the semen taste addiction of the player]Your bloated stomach screams at you - there's no more room for more [semen]! But it keeps coming, so you have to keep swallowing.[otherwise if the stomach of the player - 2 <= the semen taste addiction of the player]There's so much [semen] inside if you that you are really struggling to gulp any more down at all. Your bloated belly hurts badly. You feel like you could pass out any second.[otherwise]Thick streams of [semen] run out your nose as you begin to choke on your [semen] filled airpipe. Your eyes roll into the back of your head.[end if]";
 			increase the stomach-semen of the player by 4;
 			SemenTasteAddictUp 1;
 		otherwise:
@@ -353,7 +361,7 @@ To say AssholePenetrationFlav of (M - a futanari slutty sister):
 
 To say VaginaPenetrationFlav of (M - a futanari slutty sister):
 	now the sex-length of M is 5 + (the health of M / 5);
-	say "[BigNameDesc of M] [if there is a bulging slutty sister penetrating face]spreads your legs[otherwise]spreads your legs, grabs your hips[end if] and drives [his of M] [LongDickDesc of M] into your [vagina]!  [line break][second custom style]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of vagina > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] member.[otherwise if the openness of vagina > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick member.[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy member slowly forces its way inside. You can't believe it's even physically possible for it to fit![end if]".
+	say "[BigNameDesc of M] [if there is a bulging slutty sister penetrating face]spreads your legs[otherwise]spreads your legs, grabs your hips[end if] and drives [his of M] [LongDickDesc of M] into your [vagina]! [line break][second custom style]'[one of]Hold on tight honey, I'm taking you for a ride!'[or]I hope you're comfortable, this might take a while.'[at random][roman type][line break][if the openness of vagina > 8]Your gaping hole still has to stretch a bit further to take the girth of [his of M] member.[otherwise if the openness of vagina > 5]Your loose hole still has to stretch painfully wide to accept [his of M] thick member.[otherwise]Your eyes almost fly out of their sockets as your poor tight hole is forced wide, wider and then wider still as [his of M] girthy member slowly forces its way inside. You can't believe it's even physically possible for it to fit![end if]".
 
 To compute fuckhole sex of (M - a futanari slutty sister):[the sister is facing you so we can do some fun stuff we couldn't do normally]
 	let F be a random fuckhole penetrated by M;
@@ -361,27 +369,27 @@ To compute fuckhole sex of (M - a futanari slutty sister):[the sister is facing 
 	decrease the sex-length of M by 1.
 
 To compute anal sex of (M - a futanari slutty sister):
-	say "[one of][or][or][line break][second custom style]'Girl, your butthole is FINE!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there?  Unf, you really are an ass bandit, huh?'  [roman type][line break][or][stopping]";
+	say "[one of][or][or][line break][second custom style]'Girl, your butthole is FINE!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are an ass bandit, huh?' [roman type][line break][or][stopping]";
 	compute fuckhole sex of M;
 	ruin asshole.
 
 To compute vaginal sex of (M - a futanari slutty sister):
-	say "[one of][or][or][line break][second custom style]'Girl, your pussay is TOP CLASS SHIT!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there?  Unf, you really are a naughty fuckslut, huh?'  [roman type][line break][or][stopping]";
+	say "[one of][or][or][line break][second custom style]'Girl, your pussay is TOP CLASS SHIT!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are a naughty fuckslut, huh?' [roman type][line break][or][stopping]";
 	compute fuckhole sex of M;
 	ruin vagina.
 
 To compute unique climax of (M - a futanari slutty sister) in (F - asshole):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done. Phew...'[roman type]  [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done. Phew...'[roman type] [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To compute unique climax of (M - a futanari slutty sister) in (F - vagina):
 	compute creampie of M in F;
 	now the sleep of M is 300;
-	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done. Phew...'[roman type]  [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
+	if delayed fainting is 0, say "[second custom style]'Ugh, you win... I'm done. Phew...'[roman type] [BigNameDesc of M] collapses onto [his of M] ass, [his of M] [DickDesc of M] quickly going limp as [he of M] pulls out.".
 
 To say CreampieFlav of (M - a futanari slutty sister) in (F - a fuckhole):
-	say "[second custom style]'Unf... So [if the openness of F < 8]tight, so [end if]good!  Aaah!'[roman type][line break][BigNameDesc of M][if futanari fetish is 0][']s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]!  It feels like there's a powerful hosepipe shoved inside your belly!";
+	say "[second custom style]'Unf... So [if the openness of F < 8]tight, so [end if]good! Aaah!'[roman type][line break][BigNameDesc of M][if futanari fetish is 0][']s strapon starts pumping synthetic [semen][otherwise] starts to ejaculate[end if] deep inside your [variable F]! It feels like there's a powerful hosepipe shoved inside your belly!";
 
 Section 2 - Damage
 
@@ -472,7 +480,7 @@ To say RepeatGreeting to (M - a slutty sister):
 	otherwise if the bimbo of the player < 10 and the player is female:
 		say "'[one of]Ugh, haven[']t we been through this already? You had your fun, now let me out!'[or]You[']re not going to turn me into a slut. Not if I can beat you first.'[or]I really don[']t want to keep fighting you. I just want to leave!'[or]This isn[']t fair! If you[']re going to turn me into a slut at least play by your own rules!'[at random]";
 	otherwise if the bimbo of the player < 10:
-		say "'[one of]OK, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
+		say "'[one of]Ok, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
 	otherwise if the bimbo of the player < 15:
 		say "[second custom style]'[one of]This time I[']ll satisfy you for sure!'[or]I[']ll make you both cum eventually, then I[']ll be free!'[or]I[']m pretty sure you[']re gonna get tired of fucking with me soon, then I[']ll be free to get out of here and suck some... freedom.'[at random]";
 	otherwise:

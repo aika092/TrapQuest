@@ -50,7 +50,7 @@ To decide which figure-name is clothing-image of (C - a pink baby romper):
 	decide on figure of pink baby romper.
 
 To say ClothingDesc of (C - a pink baby romper):
-	say "This soft pink romper suit clearly looks like it's made for a baby girl. But it's in your size!  It has a large zip down the middle.".
+	say "This soft pink romper suit clearly looks like it's made for a baby girl. But it's in your size! It has a large zip down the middle.".
 
 To say ShortDesc of (C - a pink baby romper):
 	say "pink romper".

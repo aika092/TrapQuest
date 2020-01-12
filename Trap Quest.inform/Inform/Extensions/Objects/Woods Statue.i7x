@@ -18,22 +18,27 @@ To say ExamineDesc of (C - WoodsScenery02):
 A time based rule (this is the woods statue charge decay rule):
 	if the charge of WoodsScenery02 > 0, decrease the charge of WoodsScenery02 by time-seconds.
 
+woodsMagicHunger is initially false.
+
 Check touching WoodsScenery02:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	if the charge of the noun > 0:
 		allocate 2 seconds;
 		say "Nothing happens. Maybe the magic needs to recharge." instead;
 	if the player's command includes "hand":
-		if a random number between 1 and 4 > 1:
+		if the player is deserving of more strength:
 			say "As your hand touches the statue's, magic energy ripples through your fingers. You feel stronger!";
 			StrengthUp 1;
+		otherwise if woodsMagicHunger is false and the magic-power of the player > 0:
+			now woodsMagicHunger is true;
+			say "As your hand touches the statue's, a jolt of dark magic mixes with the magic running through your veins. You can feel that from now on, [bold type]whenever you use magic, you'll become more hungry.[line break][variable custom style]Uh-oh. It's going to be more difficult to use magic from now on...[roman type][line break]";
 		otherwise:
 			say "As your hand touches the statue's, a jolt of electricity shocks your fingers! You recoil in pain. ";
 			PainUp 1;
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "head":
-		if a random number between 1 and 4 > 1:
+		if the player is deserving of more intelligence:
 			say "As your hand touches the statue's head, magic energy ripples through your fingers. You feel smarter!";
 			IntUp 1;
 		otherwise if diaper quest is 1:
@@ -53,7 +58,7 @@ Check touching WoodsScenery02:
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "foot":
-		if a random number between 1 and 4 > 1 or timeBombTime > 0:
+		if timeBombTime > 0 or the player is deserving of more dexterity:
 			say "[if the player is upright]You get down on the ground to touch the statue's foot. [bold type]You are now on your knees. [roman type][end if]As your hand touches the statue's foot, magic energy ripples through your fingers. You feel faster!";
 			now the stance of the player is 1;
 			DexUp 1;
@@ -70,6 +75,12 @@ Check touching WoodsScenery02:
 		allocate 2 seconds instead;
 	otherwise:
 		say "You should specify if you're touching the statue's [bold type]hand[roman type], [bold type]foot[roman type], or [bold type]head[roman type]." instead.
+
+A magic consequences rule (this is the woods statue magic consequence rule):
+	if woodsMagicHunger is true:
+		say "[bold type]The magic ripples through your arms, activating the curse you got from the statue in the Woods.[roman type][line break]";
+		if diaper quest is 1 and diaper messing >= 3, compute DQ hunger;
+		otherwise compute food.
 
 
 Woods Statue ends here.

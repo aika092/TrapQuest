@@ -83,9 +83,9 @@ To say MonsterDesc of (M - a wrestler):
 		say "An unconscious latex clad wrestler on the ground here has a bulging belly and still has [semen] slowly flowing out of [if lady fetish is 2]his gaped asshole[otherwise]her gaped cunt[end if].";
 	otherwise:
 		if diaper quest is 1:
-			say "This [man of M] is covered head to toe in a shiny black latex catsuit. It conceals every inch of [his of M] skin except the lower half of [his of M] face and [his of M] eyes. Other than that it completely seals [him of M] in, although a zip at the crotch suggests that may be under [his of M] control. [if lady fetish < 2]And just as well - the figure-hugging rubber outfit does nothing to conceal her generous curves, including the large diaper bulge around her crotch. 'Voluptuous' is the word to describe her body, from her two perfectly round G-cup breasts down to her alluringly wide hips and shapely thighs.[otherwise]And just as well - the figure-hugging rubber outfit does nothing to conceal the large diaper bulge around his crotch. 'Powerful' is the word to describe his body, from his rippling pecs, down to his chiseled abs and bulging biceps[end if]. [big his of M] well-muscled legs are balanced surely on a pair ofblack platform fetish heels. The outfit sports a pair of cat ears on top of [his of M] head and has purple accents on the inner thighs, armpits and the back of [his of M] head, all of it working together to give the impression of some kind of wrestling outfit.";
+			say "This [man of M] is covered head to toe in a shiny black latex catsuit. It conceals every inch of [his of M] skin except the lower half of [his of M] face and [his of M] eyes. Other than that it completely seals [him of M] in, although a zip at the crotch suggests that may be under [his of M] control. [if lady fetish < 2]And just as well - the figure-hugging rubber outfit does nothing to conceal her generous curves, including the large diaper bulge around her crotch. 'Voluptuous' is the word to describe her body, from her two perfectly round G-cup breasts down to her alluringly wide hips and shapely thighs.[otherwise]And just as well - the figure-hugging rubber outfit does nothing to conceal the large diaper bulge around his crotch. 'Powerful' is the word to describe his body, from his rippling pecs, down to his chiselled abs and bulging biceps[end if]. [big his of M] well-muscled legs are balanced surely on a pair of black platform fetish heels. The outfit sports a pair of cat ears on top of [his of M] head and has purple accents on the inner thighs, armpits and the back of [his of M] head, all of it working together to give the impression of some kind of wrestling outfit.";
 		otherwise:[the male wrestler is jacked]
-			say "This [man of M] is covered head to toe in a shiny black latex catsuit. It conceals every inch of [his of M] skin except the lower half of [his of M] face and [his of M] eyes. Other than that it completely seals [him of M] in, although a zip at the crotch suggests that may be under [his of M] control. [if lady fetish < 2]The figure-hugging rubber outfit does nothing to conceal her generous curves. The word 'Voluptous' perfectly describes her body, from her two perfectly round G-cup breasts down to her alluringly wide hips and shapely thighs.[otherwise]The figure-hugging rubber outfit perfectly accentuates his muscular body. The word 'Powerful' perfectly describes him, from his rippling pecs down to his chiseled abs and huge, bulging biceps[end if]. [big his of M] well-muscled legs are surely balanced on two high black platform fetish heels. The outfit sports a pair of cat ears on top of [his of M] head and has purple accents on the inner thighs, armpits and the back of [his of M] head, all of it working together to give the impression of some kind of wrestling outfit.".
+			say "This [man of M] is covered head to toe in a shiny black latex catsuit. It conceals every inch of [his of M] skin except the lower half of [his of M] face and [his of M] eyes. Other than that it completely seals [him of M] in, although a zip at the crotch suggests that may be under [his of M] control. [if lady fetish < 2]The figure-hugging rubber outfit does nothing to conceal her generous curves. The word 'Voluptuous' perfectly describes her body, from her two perfectly round G-cup breasts down to her alluringly wide hips and shapely thighs.[otherwise]The figure-hugging rubber outfit perfectly accentuates his muscular body. The word 'Powerful' perfectly describes him, from his rippling pecs down to his chiselled abs and huge, bulging biceps[end if]. [big his of M] well-muscled legs are surely balanced on two high black platform fetish heels. The outfit sports a pair of cat ears on top of [his of M] head and has purple accents on the inner thighs, armpits and the back of [his of M] head, all of it working together to give the impression of some kind of wrestling outfit.".
 
 To say MonsterComment of (M - a wrestler):
 	if diaper quest is 0, say "[variable custom style][if the bimbo of the player < 5 and the player is male][one of]Man, that's a pretty hot outfit. I wouldn't mind a poster of [him of M] on my wall.[or][big he of M]'s definitely my type.[stopping][otherwise if the bimbo of the player < 5]How can [he of M] look so happy when [he of M]'s wearing something so constricting?[otherwise if the bimbo of the player < 8][one of]I wonder if [he of M] actually knows how to wrestle.[or][big he of M] looks pretty darn strong. I should be careful.[stopping][otherwise if the bimbo of the player < 11][one of][big he of M] looks like [he of M] could teach me a thing or two...[or]I wonder what it feels like in there.[or]I wish I was as happy as [he of M] looks.[in random order][otherwise if watersports fetish is 1][big he of M] seems kinky. I wonder if I'll be able to keep up?[otherwise if the bimbo of the player < 14]Fuck, [he of M] is hot. I wish I was that hot.[otherwise]Pff, I bet I can fuck better than [him of M], no matter how flexible [he of M] looks.[end if][roman type][line break]".
@@ -327,7 +327,7 @@ This is the wrestler feeds you to master rule:
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]No I don[']t!'[otherwise]Who are you?'[end if]";
 			otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell [him of N] it's all a big mistake!![otherwise]Who is [he of N]?[end if]";
 			say "[roman type][line break]";
-			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, merrily humming to [him of M]rself.";
+			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, merrily humming to [him of M]self.";
 			if N is friendly or N is uninterested:
 				now the boredom of N is 0;
 				compute correct perception of N;
@@ -350,7 +350,7 @@ To compute unique piss drink effect of (M - a wrestler):
 
 To compute (M - a wrestler) urinating:
 	if lady fetish is 2:
-		say "[BigNameDesc of M] reaches down to his crotch and slowly unzips [his of M] catsuit, revealing a bright purple chastity cage.[one of] A strand of vicious precum slowly drips out of the open end of the cage.[or][stopping] [one of]He[or]Once again, he[stopping] starts to casually urinate all over your face and hair. [if the humiliation of the player >= 40000]You feel strangely comforted, once again in your place as an object to be used and then discarded.[otherwise if the humiliation of the player > 30000]Deep down, you feel that you deserve this degradation.[otherwise]You can't tell if most of the warmth is coming from the heat of the [urine] or your cheeks burning red with humiliation.[end if]";
+		say "[BigNameDesc of M] reaches down to his crotch and slowly unzips [his of M] catsuit, revealing a bright purple chastity cage.[one of] A strand of vicious precum slowly drips out of the open end of the cage.[or][stopping] [one of]He[or]Once again, he[stopping] starts to casually urinate all over your face and hair. [if the humiliation of the player >= 40000]You feel strangely comforted, once again put in your place as an object to be used and then discarded.[otherwise if the humiliation of the player > 30000]Deep down, you feel you deserve this degradation.[otherwise]You can't tell if most of the warmth is coming from the heat of the [urine] or your cheeks burning red with humiliation.[end if]";
 	otherwise:
 		say "[BigNameDesc of M] reaches down to her crotch and slowly unzips [his of M] catsuit, revealing her rosy, engorged vulva.[one of] She is clearly very aroused.[or][stopping] [one of]She[or]Once again she[stopping] casually starts urinating over your hair and face. [if the humiliation of the player >= 40000]You feel strangely comforted, once again in your place as an object to be used and then discarded.[otherwise if the humiliation of the player > 30000]Deep down, you feel that you deserve this degradation.[otherwise]You can't tell if most of the warmth is coming from the heat of the [urine] or your cheeks burning red with humiliation.[end if]";
 	now wrestler-piss-drunk is 0;
@@ -527,6 +527,7 @@ To compute (M - a wrestler) entering mouth:
 	say FriendlyMouthPenetrationFlav of M;
 	now M is penetrating face;
 	if the player is female, now M is penetrating vagina;
+	otherwise now M is penetrating penis;
 
 To say FriendlyMouthPenetrationFlav of (M - a wrestler):
 	let C be a random worn top level protection clothing;
@@ -598,20 +599,27 @@ To say OralSubmissionResponse of (M - a wrestler):[This is only called if the pl
 		say "[one of][BigNameDesc of M] teases your clit with the tip of [his of M] tongue, driving you insane with expert stimulation[or][BigNameDesc of M] pushes [his of M] tongue in and out of your [vagina], hugging your clit with [his of M] lower lip.[or][BigNameDesc of M] stimulates your labia and clit with [his of M] tongue, pistoning [his of M] fingers in and out of your pussy[or][BigNameDesc of M] slurps away at your pussy, practically torturing you with [his of M] expert tongue.[at random]";
 	if the player is male:
 		RawUp penis;
-		if penis is pushed over the edge:
-			say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], [if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4]your [sissy-penis] dribbles a pitifully tiny load into [NameDesc of M]'s mouth[otherwise if the size of penis < 7]you shoot your load straight into [NameDesc of M]'s mouth[otherwise]shoot a massive load straight down [NameDesc of M]'s throat[end if]. [big he of M] [if the size of penis > 6]releases your [manly-penis] from [his of M] mouth, swallowing[otherwise]swallows it [end if] with a self-satisfied giggle and crawls out from underneath you.";
-			cutshow figure of wrestler cutscene 12 for M;
-			if the sex-length of M is 0, now the sex-length of M is 1;[this way we know the player is the one having the orgasm.]
+		stimulate penis from M;
 	otherwise:
-		increase the buildup of vagina by 1;[we have to check for vaginal orgasms the long way]
-		if vagina is pushed over the edge:
-			say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], moaning with pleasure as you squirt all over [NameDesc of M]'s face. [big he of M] giggles, slowly crawling out from underneath you.";
-			if the sex-length of M is 0, now the sex-length of M is 1;[this way we know the player is the one having the orgasm.]
-		otherwise:
-			decrease the buildup of vagina by 1;
-			ruin vagina;
-	if refactoryperiod > 0, compute facial climax of M;
+		stimulate vagina from M;
+	if refactoryperiod > 0:
+		now the sex-length of M is 1;[this way we know the player is the one who had the orgasm.]
+		compute facial climax of M;
 	say "[line break]".
+
+To compute erection orgasm of (M - a wrestler):
+	if M is penetrating penis:
+		say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], [if the size of penis > 4]groaning[otherwise]moaning[end if] with pleasure as [if the size of penis < 4]your [sissy-penis] dribbles a pitifully tiny load into [NameDesc of M]'s mouth[otherwise if the size of penis < 7]you shoot your load straight into [NameDesc of M]'s mouth[otherwise]shoot a massive load straight down [NameDesc of M]'s throat[end if]. [big he of M] [if the size of penis > 6]releases your [manly-penis] from [his of M] mouth, swallowing[otherwise]swallows it [end if] with a self-satisfied giggle and crawls out from underneath you.";
+		cutshow figure of wrestler cutscene 12 for M;
+	otherwise:
+		follow the default ejaculation rule;
+	now penis is not penis-erect.
+
+To compute vaginal orgasm hijack of (M - wrestler):
+	if M is penetrating face:
+		say "[line break][one of]It's just too much for you, and you cum[or]You try to hold back, but it's too good! Your eyes roll back as you cum[or]It feels way too good to hold back, and you cum[at random], moaning with pleasure as you squirt all over [NameDesc of M]'s face. [big he of M] giggles, slowly crawling out from underneath you.";
+	otherwise:
+		say DefaultVaginalOrgasmFlav.
 
 To say OralResistingResponse of (M - a wrestler):
 	let P be a random patron in the location of the player;
@@ -645,6 +653,7 @@ To compute facial climax of (M - a wrestler):
 		SemenPuddleUp the semen load of P;
 	now M is not penetrating face;
 	now M is not penetrating vagina;
+	now M is not penetrating penis;
 	increase the blue-balls of M by 2;
 	if P is patron, destroy P;
 	calm M;
@@ -736,7 +745,7 @@ To say MasturbationTeaseFlav of (M - a wrestler):
 	say "[big he of M] giggles.[line break][speech style of M]'[one of]It's way more fun to be left on the brink of orgasm, don't you think? It's so deliciously frustrating!'[or]Oops! Maybe it ran out of batteries? Nope, I just thought it would be funny to leave you like this, haha! It gets me hot just thinking about how much you must need to cum right now...'[in random order][roman type][line break]".
 
 To say DQMasturbationResistReactionFlav of (M - a wrestler):
-	say "[BigNameDesc of M] narrates [his of M] own performance.[line break][speech style of M]'[one of]What's this folks? The challenger is squirming like a child under the champ's rump... does [he of the player] need to breathe? Hope [he of the player] likes diaper pail flavoured air!'[or]Champ is just going to town on the challenger's diaper! [big he of the player] bucks and kicks but those moans tells me there'll be a honeymoon after this!'[or]Cmon tinkles I need SOME sort of work out... want me to lift up a bit?'[or]Oh what's this? Just when the champ was on a roll [he of M] pulls the challenger's legs up in the dreaded changing hold! Oh how humiliating!'[or]I'm barely at a tingle and you're bucking like this? I feel you owe me after this one!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] narrates [his of M] own performance.[line break][speech style of M]'[one of]What's this folks? The challenger is squirming like a child under the champ's rump... does [he of the player] need to breathe? Hope [he of the player] likes diaper pail flavoured air!'[or]Champ is just going to town on the challenger's diaper! [big he of the player] bucks and kicks but those moans tells me there'll be a honeymoon after this!'[or]C'mon tinkles I need SOME sort of work out... want me to lift up a bit?'[or]Oh what's this? Just when the champ was on a roll [he of M] pulls the challenger's legs up in the dreaded changing hold! Oh how humiliating!'[or]I'm barely at a tingle and you're bucking like this? I feel you owe me after this one!'[in random order][roman type][line break]".
 
 Definition: a wrestler is willing to confiscate: decide yes.
 
@@ -819,7 +828,7 @@ To compute damage of (M - a wrestler):
 			now M is interested;
 			anger M;
 		otherwise if the health of M < the maxhealth of M / 2 and the excitement of M is -1 and the times-dominated of M > 0:
-			say "[speech style of M]Haha, is that really all you've got? Looks like its my turn to be on top![roman type] [BigNameDesc of M] seems to change [his of M] stance! Looks like this will be harder than you thought!";
+			say "[speech style of M]Haha, is that really all you've got? Looks like it's my turn to be on top![roman type] [BigNameDesc of M] seems to change [his of M] stance! Looks like this will be harder than you thought!";
 			DifficultyUp M by 5 + the times-dominated of M;
 			increase the health of M by 15;
 			now the excitement of M is 1;
@@ -986,7 +995,7 @@ To compute failed dominance punishment of (M - a wrestler):
 		otherwise:
 			compute sissification;
 	otherwise if the size of penis < 4 and the size of penis > 0 and asshole is not actually occupied:
-		say "[big he of M] giggles as [he of M] [if there is bottom level protection clothing]pulls aside your [ShortDesc of a random bottom level protection clothing][otherwise]pinches your [sissy-penis] between [his of M] thumb and forefinger[end if].[line break][speech style of M]'OK, time for a little game. I'm going to kiss your little clitty, and if you can't cum from that, I'm going to teach you a lesson. Fun, right?'[roman type][line break]";
+		say "[big he of M] giggles as [he of M] [if there is bottom level protection clothing]pulls aside your [ShortDesc of a random bottom level protection clothing][otherwise]pinches your [sissy-penis] between [his of M] thumb and forefinger[end if].[line break][speech style of M]'Ok, time for a little game. I'm going to kiss your little clitty, and if you can't cum from that, I'm going to teach you a lesson. Fun, right?'[roman type][line break]";
 		let R be a random number between 1 and 3;
 		while R > 0 and M is interested:
 			RawUp penis;
@@ -1000,6 +1009,7 @@ To compute failed dominance punishment of (M - a wrestler):
 			otherwise:
 				say "You gasp and shiver [one of]unprepared[or]still unprepared[stopping] for the surprisingly intense sensation. Your [sissy-penis] spasms a couple times, leaking precum, but an orgasm doesn't arrive. [line break][speech style of M][if R is 0]'Hehe, I know a way I can still make this fun'[otherwise]'[one of]You look so excited! Aren't you close?'[or]Look at it twitching! SO CUTE!'[or]Come on, cum for me!'[at random][end if][roman type][line break]";
 				slightHumiliate;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		if M is interested, now another-turn is 1;
 	otherwise if lady fetish < 2 and the excitement of M > a random number between 1 and 3:
 		let P be a random worn bottom level protection clothing;
@@ -1016,6 +1026,7 @@ To compute failed dominance punishment of (M - a wrestler):
 		Bore M;
 	otherwise:
 		say "[speech style of M]'Hehe, this will be fun!'[roman type][line break]";
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 		now another-turn is 1.
 
 Part 4 - Friendly Sex

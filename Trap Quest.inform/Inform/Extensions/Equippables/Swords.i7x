@@ -40,14 +40,14 @@ Definition: which-sword is immune to change: decide yes.
 Check taking which-sword:
 	if there is a worn hand ready equippable, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
 
-Definition: a sword is destiny-appropriate: decide no.
-Definition: a sword is destiny-prioritised: decide no.
+Definition: an equippable is destiny-appropriate: decide no.
+Definition: an equippable is destiny-prioritised: decide no.
 
 Report taking which-sword:
 	let S be dildo sword;
 	if diaper quest is 1, now S is rattle;
-	let R be a random fetish appropriate destiny-prioritised sword;
-	if R is nothing, now R is a random fetish appropriate destiny-appropriate sword;
+	let R be a random fetish appropriate destiny-prioritised equippable;
+	if R is nothing, now R is a random fetish appropriate destiny-appropriate equippable;
 	if R is not nothing, now S is R;
 	say "You're surprised by how easily the [ShortDesc of which-sword] slips out of the stone! ";
 	now S is worn by the player;
@@ -56,7 +56,7 @@ Report taking which-sword:
 	destroy which-sword;
 	compute sword destiny of S.
 
-To compute sword destiny of (S - a sword):
+To compute sword destiny of (S - an equippable):
 	try examining S.
 
 
@@ -78,6 +78,7 @@ To decide which figure-name is clothing-image of (C - sword-of-purity):
 To decide which number is the initial outrage of (C - sword-of-purity):
 	decide on 0.
 Definition: sword-of-purity is grey themed: decide yes.
+Definition: sword-of-purity is fetish appropriate if diaper quest is 0.
 
 Definition: sword-of-purity is destiny-appropriate if the class of the player is not succubus and ((the player is female and the virgin of the player is 1) or (the player is male and fast tg >= 3)).
 Definition: sword-of-purity is destiny-prioritised if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the virgin of the player is 1 and the class of the player is not succubus.
@@ -162,6 +163,7 @@ dildo sword is a sword. dildo sword is unique. dildo sword is plastic. dildo swo
 The printed name of dildo sword is "[clothing-title-before]dildo sword[clothing-title-after]".
 
 Definition: dildo sword is penis themed: decide yes.
+Definition: dildo sword is fetish appropriate if diaper quest is 0.
 
 Figure of dildo sword is the file "Items/Accessories/Equippables/sword2.png".
 
@@ -251,7 +253,7 @@ gladiator-sword is a sword. gladiator-sword is unique. gladiator-sword has a num
 
 The printed name of gladiator-sword is "[clothing-title-before]blade of womanhood[clothing-title-after]". The text-shortcut of gladiator-sword is "blw". Understand "blade", "of womanhood", "womanhood" as gladiator-sword.
 
-Definition: gladiator-sword is fetish appropriate if max breast size > 9 and the largeness of breasts > 5.
+Definition: gladiator-sword is fetish appropriate if max breast size > 9 and the largeness of breasts > 4.
 
 Definition: gladiator-sword is destiny-appropriate if breasts is lewdly exposed.
 Definition: gladiator-sword is destiny-prioritised if gladiatorcurse < 0.
@@ -267,7 +269,7 @@ To decide which number is the heaviness of (S - gladiator-sword):
 	if S is worn, decide on the burden of S * 5;
 	otherwise decide on the burden of S * 3.
 
-To say SwordDesc of (S - gladiator-sword):
+To say ClothingDesc of (S - gladiator-sword):
 	say "A giant, dull-edged sword made of pure iron. Just swinging its weight around [if the burden of S < the strength of the player / 2]should take an enormous amount of strength, but somehow you have no trouble lifting it[otherwise if the burden of S > the strength of the player * 2]feels impossible[otherwise]takes a massive amount of strength[end if]. [if S is worn and S is unremovable]A magical chain is attached to the hilt, securely tethering it to your arm. There is a glowing message engraved on the hilt[otherwise]The hilt is engraved with a short message[end if]: 'Wield with honour.'[line break][variable custom style]A sword that punishes the wielder for running from a fight. [if the player is feeling dominant]Fine by me![otherwise if the player is feeling submissive]Uh-oh... Well at least getting on my knees and submitting doesn't count as running away, I think.[otherwise]That rather reduces my number of options...[end if][roman type][line break]".
 
 To say ShortDesc of (S - gladiator-sword):
@@ -290,11 +292,10 @@ To decide which number is the damage improvement of (W - gladiator-sword):
 	decide on X.
 
 Check taking gladiator-sword:
-	let R be 1;
-	if there is worn breast covering nipple covering clothing, now R is 0;
-	if the player is male and the largeness of breasts < max breast size, now R is 0;
-	if gladiatorcurse < 0, now R is 1;[finishing the gladiator quest makes you worthy]
-	if R is 0, say "The sword resists your touch. Maybe you're not worthy?" instead.
+	if gladiatorcurse >= 0:[finishing the gladiator quest makes you worthy]
+		if the player is male and the largeness of breasts < max breast size and the largeness of breasts < 10, say "The sword resists your touch. Maybe it doesn't consider your [ShortDesc of breasts] womanly enough." instead;
+		let C be the concealer of breasts;
+		if C is clothing, say "The sword resists your touch. Maybe you're not worthy with your breasts hidden behind your [ShortDesc of C]?" instead.
 
 To compute sword destiny of (C - gladiator-sword):
 	try examining C;
@@ -326,6 +327,7 @@ The printed name of demon broadsword is "[clothing-title-before][if the item des
 Definition: demon broadsword is destiny-appropriate if the player is feeling dominant.
 Definition: demon broadsword is destiny-prioritised if demon lord is alive or demon lord is bossdefeated.
 Definition: demon broadsword is live: decide yes.
+Definition: demon broadsword is fetish appropriate if diaper quest is 0.
 
 Figure of demon broadsword is the file "Items/Accessories/Equippables/sword5.png".
 
@@ -471,7 +473,7 @@ rattle is an equippable. rattle is slap ready. rattle is plastic.
 
 Definition: rattle is immune to change: decide yes.
 Definition: rattle is fetish appropriate if diaper lover > 0.
-Definition: rattle is destiny-prioritised if diaper quest is 1 or the player is diaper focused.
+Definition: rattle is destiny-prioritised if the incontinence of the player > 3.
 Definition: rattle is destiny-appropriate if the player is diapered.
 
 Definition: rattle is baby themed: decide yes.
@@ -582,7 +584,7 @@ To compute periodical effect of (S - sissy-sword):
 		if the charge of S > 0, say "[one of]Your [ShortDesc of S] grows slightly cooler[or][or][or][or][cycling]";
 		otherwise say "The [ShortDesc of S] cools off completely.".
 
-To say SwordDesc of (S - a sissy-sword):[I always use pink, so I described it as blue. It can always be changed]
+To say ClothingDesc of (S - a sissy-sword):[I always use pink, so I described it as blue. It can always be changed]
 	let C be the number of worn chastity cages + the number of worn clothing penetrating asshole;
 	say "A sword that's really more of a dagger. The blade is four inches long, with [if the charge of S > 50]a powder blue[otherwise if the charge of S > 25]a light blue[otherwise if C <= 0]an angry red[otherwise]a dark, crystalline blue[end if] gemstone set into the hilt, which is [if the charge of S > 50]rather warm[otherwise if the charge of S > 0]slightly warm[otherwise]strangely cool[end if] to the touch. [unless C > 0]For some reason, it seems like it doesn't accept you.[line break][variable custom style]For some reason, I can sense that it wants me to either wear a chastity cage or... *gulp*... something in my butt...[roman type][line break][end if]".
 

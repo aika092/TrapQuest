@@ -26,10 +26,10 @@ Carry out quaffing potion of balance:
 	say "You pull out the stopper and down the smoky liquid.";
 	let flav-said be 0;
 	if the noun is not cursed and the heel skill of the player < 10:
-		say "You feel [unless there are worn heels]like you'll be [end if]more steady standing in heels!  ";
+		say "You feel [unless there are worn heels]like you'll be [end if]more steady standing in heels! ";
 		increase the raw heel skill of the player by 1;
 	otherwise if the noun is cursed:
-		if there are worn heels and the player is upright, say "You feel [unless there are worn heels]like you'll be [end if]less steady walking in heels!  This must have been cursed!  ";
+		if there are worn heels and the player is upright, say "You feel [unless there are worn heels]like you'll be [end if]less steady walking in heels! This must have been cursed! ";
 		decrease the raw heel skill of the player by 2;
 	if diaper quest is 0:
 		while the largeness of breasts > the flesh volume of hips + 1 and the player is not bottom heavy:
@@ -84,7 +84,7 @@ Carry out quaffing potion of the womb:
 			check sudden pregnancy;
 		otherwise if the pregnancy of the player is 1:
 			[Pause the pregnancy]
-			say "Your [BellyDesc] seems suddenly... inactive.[if the largeness of belly > 6]  But you still feel kicking coming from inside your womb.[end if]";
+			say "Your [BellyDesc] seems suddenly... inactive.[if the largeness of belly > 6] But you still feel kicking coming from inside your womb.[end if]";
 			now the pregnancy of the player is 2;
 		otherwise if the pregnancy of the player is 2:
 			[Unpause the pregnancy]
@@ -160,7 +160,7 @@ To compute recipe specific cursing of (T - a potion of bull strength):
 Carry out quaffing potion of bull strength:
 	say "You pull out the stopper and down the murky white liquid.";
 	if the noun is not cursed:
-		say "You feel incredibly strong!  Wow!";
+		say "You feel incredibly strong! Wow!";
 		StrengthUp 10;
 	unless the flesh volume of thighs > 6 and the flesh volume of arms > 6 and the flesh volume of belly > 6 and the flesh volume of hips > 6:
 		say "Your body instantly spills out as you instantly put on huge amounts of weight!";
@@ -186,6 +186,12 @@ Carry out quaffing potion of bull strength:
 Section 5 Space Mead
 
 A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". There are 3 space meads. Understand "carafe" as space mead. The text-shortcut of space mead is "smd".
+
+A game universe initialisation rule:
+	let K be 1;
+	repeat with W running through space mead:
+		now the text-shortcut of W is the substituted form of "smd[K]";
+		increase K by 1.
 
 To say ExamineDesc of (B - a space mead):
 	say "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.".

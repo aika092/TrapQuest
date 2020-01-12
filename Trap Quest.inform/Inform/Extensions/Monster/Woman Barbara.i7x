@@ -37,6 +37,8 @@ Figure of Barbara Cutscene 4 is the file "Special/Cutscene/cutscene-barbara-toil
 Figure of Barbara Cutscene 5 is the file "Special/Cutscene/cutscene-barbara-anal-contraption1.jpg".
 Figure of Barbara Cutscene 6 is the file "Special/Cutscene/cutscene-barbara-crafting1.jpg".
 Figure of Barbara Cutscene 7 is the file "Special/Cutscene/cutscene-barbara-crafting2.jpg".
+Figure of Barbara Cutscene 8 is the file "Special/Cutscene/cutscene-barbara-vines1.jpg".
+Figure of Barbara Cutscene 9 is the file "Special/Cutscene/cutscene-barbara-vines2.jpg".
 
 Understand "mysterious", "woman" as woman-barbara.
 The text-shortcut of woman is "wo".
@@ -68,6 +70,7 @@ To decide which figure-name is the monster-image of (M - woman-barbara):
 		decide on figure of barbara cutscene 1;
 	if the woman-status of M is 93 and the number of interested unfriendly dominatrix in the location of the player is 0, decide on figure of barbara cutscene 5;
 	if the woman-status of M is 80, decide on figure of woman stool;
+	if the vine-scene of M > 0 and the vine-scene of M < 5, decide on figure of barbara cutscene 8;
 	if M is tentacle-pregnant, decide on figure of woman pregnant;
 	if the woman-bimbo of M < 3, decide on figure of woman 1;
 	if the woman-bimbo of M is 3, decide on figure of woman 2;
@@ -86,8 +89,8 @@ To say MonsterDesc of (M - woman-barbara):
 		if the woman-bimbo of M is 1, say "A man with ear-length brown hair and a soft cast to his facial features that makes him look very feminine. He is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of his nose are slightly askew, and he is carrying a modern-looking pistol.";[Barry]
 		if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, he's wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
 		if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that his [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
-		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on his top half but a sheer lace bra that leaves his nipples very visible. He is wearing black suspenders and stockings but no underwear, leaving his [manly-penis], which is locked into chastity, fully exposed. He is wearing heavily done make up. You can tell by his facial expressions that he's having more trouble than usual thinking straight.";
-		if the woman-bimbo of M is 5, say "A man is wearing nothing on his top half at all except a tight black latex choker around his neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose his chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. He is wearing a very heavy amount of make up. You can tell by his facial expressions that he's having huge amounts of trouble thinking straight.";
+		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on his top half but a sheer lace bra that leaves his nipples very visible. He is wearing black suspenders and stockings but no underwear, leaving his [manly-penis], which is locked in chastity, fully exposed. He is wearing heavily done make up. You can tell by his facial expressions that he's having more trouble than usual thinking straight.";
+		if the woman-bimbo of M is 5, say "A man wearing nothing on his top half at all except a tight black latex choker around his neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose his chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. He is wearing a very heavy amount of make up. You can tell by his facial expressions he's having huge amounts of trouble thinking straight.";
 		if the woman-bimbo of M is 6:
 			say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if] and a matching white chastity cage around his [sissy-penis]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] fuckhole. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
 	otherwise:
@@ -176,8 +179,7 @@ To vanish (M - a monster):
 	if the woman-status of M is 90 and the vine-scene of M is 5:
 		FavourDown M;
 		WomanSluttify;
-		if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2:
-			now M is tentacle-pregnant.
+		if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2, now M is tentacle-pregnant.
 
 This is the spawn initial barbara rule:
 	if diaper quest is 0, summon woman-barbara in the woods.
@@ -243,6 +245,13 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
+
+
+29: Just rescued from the vine boss hole
+==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
+
+
+
 ==Anything 80 or above prevents protection==
 80: Anal only stool
 
@@ -290,7 +299,7 @@ A time based rule (this is the woman spawning rule):
 			ImmediateWomanUnsluttify;
 			increase the delayed sluttification of woman-barbara by 1;
 	otherwise:
-		if woman-barbara is not regional:
+		if woman-barbara is not regional and (woman-barbara is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-barbara;
 		otherwise if a random number between 1 and 40 is 1:
 			unless woman-barbara is in the location of the player or woman-barbara is nearby or woman-barbara is stranger or the woman-status of woman-barbara >= 80, vanish woman-barbara.
@@ -433,6 +442,87 @@ To WomanVinePull:
 			compute autotaking J;
 			increase the delayed sluttification of W by 1;
 		now the vine-scene of W is 6.
+
+
+
+Chapter - Vine Hole Scene
+
+woman-barbara has a number called vine-hole-scene.
+
+Report going when the vine-hole-scene of woman-barbara is 0 and the woman-bimbo of woman-barbara is 2 and the player is the donator and the location is Woods16:
+	if debugmode is 1, say "Checking if barbara can appear.";
+	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and woman-barbara is not permanently dead and another-turn is 0 and vine boss is in WoodsBoss01 and the vine-scene of woman-barbara is 6:
+		deploy woman-barbara with woman-status 29;
+		now the vine-hole-scene of woman-barbara is 1;
+		now woman-barbara is in the location of the player;
+		now woman-barbara is interested;
+		say "As you arrive here you see that [NameDesc of woman-barbara] is here, completely naked and trying to climb out of the pit, with a strong green vine wrapped around one of [his of woman-barbara] wrists, trying to pull [him of woman-barbara] back down into the underground cavern. [big his of woman-barbara] pistol has fallen out of [his of woman-barbara] hand, lying just inches away out of [his of woman-barbara] reach. [if the player is upright][bold type]As you are distracted by the gun, you stumble on a rock and fall to your knees.[roman type][line break][line break][BigNameDesc of woman-barbara] spots you and [his of woman-barbara] eyes widen with a look of urgency.[line break][speech style of woman-barbara]'[NameBimbo]! Thank the stars! Quick, my gun!'[roman type][line break]What do you do?";
+		now the stance of the player is 1; [Important to avoid the clumsy fall-in-the-hole cutscene happening in the same turn]
+		cutshow figure of barbara cutscene 9 for woman-barbara;
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "hand [his of woman-barbara] pistol to [him of woman-barbara]";
+		if magic pistol is actually summonable, set numerical response 2 to "try to use [his of woman-barbara] pistol yourself to save [him of woman-barbara]";
+		set numerical response 3 to "take [his of woman-barbara] gun for yourself";
+		set numerical response 0 to "ignore [him of woman-barbara] entirely";
+		compute multiple choice question;
+		let CNR be player-numerical-response;
+		if CNR is 1:
+			say "[BigNameDesc of woman-barbara] snatches the pistol out of your hand as soon as it is in [his of woman-barbara] reach and points it down below [his of woman-barbara] feet, outside of your vision. You hear a weird sort of wet 'phut phut' sound as [he of woman-barbara] squeezes the trigger and you swear you can see [his of woman-barbara] belly slightly deflate as [he of woman-barbara] does. A loud roar comes from the pit, and you see the vine around [NameDesc of woman-barbara][']s wrist loosen slightly - enough for [him of woman-barbara] to quickly wriggle free and scramble further out of the pit! You take [his of woman-barbara] hand and help [him of woman-barbara] to [his of woman-barbara] feet, out of harm's way.[line break][speech style of woman-barbara]'Thanks, you really saved my bacon there. I owe you one.'[roman type][line break][BigNameDesc of woman-barbara] hugs you closely, [his of woman-barbara] warm, soft, naked body pressing against you for a few precious moments.[line break][speech style of woman-barbara]'If I were you, I wouldn't try to fight the vine monster down there. It's just too strong. And as I just learned, it seems immune to being blinded...'[roman type][line break]";
+			FavourUp woman-barbara;
+		otherwise if CNR is 2:
+			say "[BigNameDesc of woman-barbara] looks concerned as you pick up the pistol and point it towards the vine gripping [his of woman-barbara] hand.[line break][speech style of woman-barbara]'No, wait-'[roman type][line break][big he of woman-barbara] tries to stop you but you've already pulled the trigger. ";
+			if the stomach-semen of the player > 0:
+				say "[PistolStomachSemen]Huge numbers of ropes of [semen] fly out of the tip, painting not only the vine but [NameDesc of woman-barbara] in massive amounts of the sticky stuff. [big he of woman-barbara] coughs and splutters and loses [his of woman-barbara] grip. ";
+			otherwise:
+				say "The trigger clicks but nothing comes out.[line break][speech style of woman-barbara]'It's not a normal gun, you idiot, you need to have swallowed som-'[roman type][line break][big his of woman-barbara] speech turns into a yelp as [he of woman-barbara] loses [his of woman-barbara] grip with [his of woman-barbara] free hand. ";
+			say "You watch awkwardly and helplessly as [he of woman-barbara] is pulled back down into the hole!";
+			summon magic pistol;
+			FavourDown woman-barbara;
+			now woman-barbara is in WoodsBoss01;
+			now the vine-scene of woman-barbara is 5;
+			now the sleep of woman-barbara is 9999;
+			increase the woman-bimbo of woman-barbara by 1;
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			set numerical response 1 to "throw the pistol down after [him of woman-barbara]. Maybe it's not too late for it to be of some use.";
+			set numerical response 2 to "go down the pit to try and rescue [him of woman-barbara]";
+			set numerical response 3 to "just leave...";
+			compute multiple choice question;
+			let CNR be player-numerical-response;
+			if CNR is 1:
+				say "You feel too guilty to hold onto the pistol, and throw it down into the pit. Hopefully that way [he of woman-barbara] will know that you didn't mean to fail [him of woman-barbara]...";
+				only destroy magic pistol;
+			otherwise if CNR is 2:
+				now the stance of the player is 0;
+				try going down;
+				say "When you get to the bottom you discover that it's already too late.";
+				try examining woman-barbara;
+				say "Also, there's another problem. The vine boss is here. And it's clearly already very angry.";
+				now the health of vine boss is (the maxhealth of vine boss * 2) / 3;
+			otherwise:
+				say "You slowly back away from the hole, racked with guilt, but too scared to stay close!";
+				if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2, now woman-barbara is tentacle-pregnant;
+		otherwise:
+			say "[BigNameDesc of woman-barbara] looks [if CNR is 3]concerned as you pick up the pistol, and [end if]horrified when [he of woman-barbara] sees you turning to walk away.[line break][speech style of woman-barbara]'WHAT?! No, [NameBimbo], don't leave me like this! You bastard! I'll never forgive you!'[roman type][line break][if CNR is not 3]With an impressive display of agility, [NameDesc of woman-barbara] manages to grab the pistol and point it at you. A huge jet of [semen] blasts from the nozzle, coating you in the sticky stuff. [end if]At this moment, [he of woman-barbara] loses [his of woman-barbara] grip with [his of woman-barbara] free hand, and is pulled back down into the hole.";
+			if CNR is 3:
+				now magic pistol is carried by the player;
+				now woman-barbara is angered;
+			otherwise:
+				if bukkake fetish is 1, CumFaceUp 60;
+				otherwise PuddleUp semen by 60;
+				FavourDown woman-barbara by 10;
+			now woman-barbara is in WoodsBoss01;
+			now the vine-scene of woman-barbara is 5;
+			now the sleep of woman-barbara is 9999;
+			increase the delayed sluttification of woman-barbara by 1;
+			if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2:
+				now woman-barbara is tentacle-pregnant;
+				increase the delayed sluttification of woman-barbara by 1;
+			otherwise:
+				increase the woman-bimbo of woman-barbara by 1.
+
+
+
+
 
 Chapter - Mechanic Sex Scene
 
@@ -1234,6 +1324,7 @@ This is the barbara unique punishment rule:
 		drag to Woods16 by woman-barbara;
 		say "[second custom style]'Have fun, [if the woman-bimbo of woman-barbara < 5]bitch.'[otherwise]*giggle*'[end if][roman type][line break][big he of woman-barbara] pushes you down the hole.";
 		now the player is in WoodsBoss01;
+		if another-turn-flavour is "", now another-turn-flavour is the substituted form of "It takes you a moment to recover from the fall.";
 		now another-turn is 1;
 	otherwise if playerRegion is Dungeon and G is glue:
 		say "[second custom style]'[if the woman-bimbo of woman-barbara < 5]Do you regret making an enemy of me yet?'[otherwise]This is my favourite spot down here! Enjoy!'[end if][roman type][line break][big he of woman-barbara] pushes you into the glue.";
@@ -1288,6 +1379,7 @@ To say StrikingSuccessFlav of (M - woman-barbara) on (B - a body part):
 		say "[BigNameDesc of M] growls and takes a step back. Aiming with a steady hand, [he of M] points [his of M] gun at your head.[line break][second custom style]'This load wasn't meant for you.'[roman type][line break]";
 		say "A single moment of dread turns to surprise and [horror semen addiction of the player] as a powerful burst of [semen] jets out of the nozzle and drenches your face, blinding you!";
 		CumFaceUp 20;
+		now another-turn-flavour is the substituted form of "You are still recoiling from being blinded with [semen].";
 		now another-turn is 1;
 	otherwise if the woman-bimbo of M < 5:
 		say "[BigNameDesc of M] [one of]winds up a big punch and smacks you[or]lands a karate chop[or]kicks you[at random] [TargetName of B]! Ouch!!";
@@ -1300,7 +1392,7 @@ To compute damage of (M - woman-barbara):
 	if the health of M > 0:
 		if M is awake:
 			if M is uninterested or M is not angered:
-				say "[BigNameDesc of M] looks shocked. [line break][speech style of M]'[one of]Fucking bitch! Come on then![or]What the fuck is your problem? You're going down!'[or]Oh you are going to wish you never messed with me!'[at random][roman type][line break]";
+				say "[BigNameDesc of M] looks shocked.[line break][speech style of M]'[one of]Fucking bitch! Come on then![or]What the fuck is your problem? You're going down!'[or]Oh you are going to wish you never messed with me!'[at random][roman type][line break]";
 				now M is interested;
 				now M is angered;
 			otherwise:

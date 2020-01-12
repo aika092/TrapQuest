@@ -188,6 +188,9 @@ Clothing can be normally-nipple-covering or normally-nipple-exposing. Clothing i
 Definition: a clothing (called C) is nipple exposing rather than nipple covering:
 	if C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is chestless or C is fully exposing or C is uniquely nipple exposing, decide yes;
 	decide no.
+Definition: a clothing (called C) is at least partially nipple covering: [ripped isn't fully exposing]
+	if C is normally-nipple-exposing or C is top-displaced or C is chestless or C is fully exposing or C is uniquely nipple exposing, decide no;
+	decide yes.
 Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to create unique rules for when nipples are exposed]
 	decide no.
 Clothing can be milking flappable or milking unflappable. Clothing is usually milking unflappable. [Are there flaps that allow for breast feeding / milking?]

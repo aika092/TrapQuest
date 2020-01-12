@@ -102,12 +102,16 @@ Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg"
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
+Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
 Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg".
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
+
+Figure of throne is the file "Env/Dungeon/throne1a.jpg".
+Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".
 
 
 Figure of Witch Cutscene 1 is the file "Special/Cutscene/cutscene-witch-satisfied1.png".
@@ -256,6 +260,11 @@ Figure of Throne Cutscene 3 is the file "Special/Cutscene/cutscene-throne3.png".
 Figure of Throne Cutscene 4 is the file "Special/Cutscene/cutscene-throne4.png".
 Figure of Throne Cutscene 5 is the file "Special/Cutscene/cutscene-throne5.png".
 Figure of Throne Cutscene 6 is the file "Special/Cutscene/cutscene-throne6.png".
+
+Figure of urinal is the file "Env/MultiFloor/urinal1.png".
+
+Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose1.jpg".
+Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-pose2.jpg".
 
 Figure of Vines Cutscene 1 is the file "Special/Cutscene/cutscene-vines1.png".
 Figure of Vines Cutscene 5 is the file "Special/Cutscene/cutscene-vines5.png".
@@ -575,8 +584,10 @@ Figure of VIP pussy tattoo is the file "Items/Tats/tattoo97.jpg".
 To decide which figure-name is the examine-image of (T - VIP pussy tattoo):
     decide on figure of VIP pussy tattoo.
 
-Figure of virgin void tattoo is the file "Items/Tats/tattoo40.jpg".
+Figure of virgin tattoo is the file "Items/Tats/tattoo40a.jpg".
+Figure of virgin void tattoo is the file "Items/Tats/tattoo40b.jpg".
 To decide which figure-name is the examine-image of (T - virgin void tattoo):
+	if the virgin of the player is 1, decide on figure of virgin tattoo;
     decide on figure of virgin void tattoo.
 
 Figure of weakness tattoo is the file "Items/Tats/tattoo128.jpg".

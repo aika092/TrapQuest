@@ -84,7 +84,10 @@ REQUIRES COMMENTING
 
 +!]
 This is the cowgirl class rule:
-	if cow-ears is worn and the number of worn cow themed wearthings > 1:
+	if cow-horns is worn:
+		now player-class is "breeding cow";
+		rule succeeds;
+	otherwise if cow-ears is worn and the number of worn cow themed wearthings > 1:
 		now player-class is "cowgirl";
 		rule succeeds.
 The cowgirl class rule is listed in the player class rules.
@@ -95,7 +98,7 @@ Thanks to the cow slave multi-class, we have multiple different texts that need 
 
 +!]
 Definition: a text (called T) is cowgirl:
-	if T is "cowgirl" or T is "cow slave", decide yes;
+	if T is "cowgirl" or T is "cow slave" or T is "breeding cow", decide yes;
 	decide no.
 
 [!<TheCowSlutRule>+
@@ -199,11 +202,11 @@ The fertility goddess class rule is listed in the player class rules.
 
 [!<TextIsFertilityGoddess>+
 
-Thanks to the fertile bunny multi-class, we have multiple different texts that need to be able to return true for the class of the player being fertility goddess.
+There are multiple different texts that need to be able to return true for the class of the player being fertility goddess.
 
 +!]
 Definition: a text (called T) is fertility goddess:
-	if T is "fertility goddess" or T is "fertile bunny" or T is "fairy godmother", decide yes;
+	if T is "fertility goddess" or T is "fertile bunny" or T is "fairy godmother" or T is "breeding cow", decide yes;
 	decide no.
 
 [!<TheFertilityGoddessPussySlutRule>+
@@ -360,12 +363,14 @@ REQUIRES COMMENTING
 +!]
 This is the santa class rule:
 	if there is a worn christmas headgear and christmas content is 1:
-		if there is a worn christmas dress, now player-class is "christmas tree";
+		if there is a worn christmas dress and naughty-or-nice outfit is not worn, now player-class is "christmas tree";
 		otherwise now player-class is "santa's little helper";
+		if present outfit is worn or christmas strap monokini is worn, now player-class is "christmas present";
+		if candy cane outfit is worn, now player-class is "candy cane";
 		rule succeeds.
 The santa class rule is listed in the player class rules.
 Definition: a text (called T) is santa's little helper:
-	if T is "santa's little helper" or T is "christmas tree", decide yes;
+	if T is "santa's little helper" or T is "candy cane" or T matches the text "christmas", decide yes;
 	decide no.
 
 [!<TheWenchedClassRule>+
@@ -671,40 +676,6 @@ A time based rule (this is the bunny reminder rule):
 	otherwise:
 		now bunny-reminder is 0.
 
-[!<TheHookerInTrainingClassRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the hooker in training class rule:
-	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs:
-		now the player-class is "hooker in training";
-		rule succeeds.
-The hooker in training class rule is listed in the player class rules.
-
-Definition: a text (called T) is hooker in training:[catch-all]
-	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
-
-This is the trained hooker class rule:
-	if the training-progress of senior robobellboy is -1:
-		if there is a worn royalty themed wearthing:
-			now the player-class is "trained fuck princess";
-		otherwise if there is a worn maid headdress:
-			now the player-class is "fully trained maid";
-		otherwise if the latex-transformation of the player is 8:
-			now the player-class is "rentable doll";
-		otherwise:
-			now the player-class is "trained hooker".
-The trained hooker class rule is listed in the player class rules.
-
-Definition: a text (called T) is hotel employment:
-	if T is hooker in training, decide yes;
-	if T is trained hooker, decide yes;
-	decide no.
-
-Definition: a text (called T) is trained hooker:
-	if the training-progress of senior robobellboy is -1, decide yes.
-
 [!<TheCumdumpsterClassRule>+
 
 The cumdumpster class (revolving around condoms pinned on clothes) only requires the cumdumpster hat.
@@ -916,7 +887,8 @@ REQUIRES COMMENTING
 +!]
 This is the living sex doll class rule:
 	if the latex-transformation of the player is 8:
-		now player-class is "living sex doll";
+		if the player is a trained hooker, now player-class is "rentable doll";
+		otherwise now player-class is "living sex doll";
 		rule succeeds.
 The living sex doll class rule is listed first in the player class rules. [Overrides all other rules]
 living sex doll is a text that varies. living sex doll is "living sex doll".
@@ -931,6 +903,38 @@ This is the adult baby class rule:
 	if adult-baby-class is 1, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
 
+[!<TheHookerInTrainingClassRule>+
+
+Hooker in training is not a class, so if another title is suitable, it will be overriden
+
++!]
+This is the hooker in training class rule:
+	if the player is a hooker in training:
+		if the player is a trained hooker, now the player-class is "professional prostitute";
+		otherwise now the player-class is "prostitute in training".
+The hooker in training class rule is listed first in the player class rules.
+
+Definition: yourself is a hooker in training:
+	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
+
+[!<TheTrainedHookerClassRule>+
+
+Trained hooker is not a class, so if another title is suitable, it will be overridden
+
++!]
+This is the trained hooker class rule:
+	if the player is a trained hooker, now player-class is "prostitute".
+The trained hooker class rule is listed first in the player class rules.
+
+Definition: yourself is a trained hooker:
+	if the training-progress of senior robobellboy is -1, decide yes.
+
+Definition: yourself is hotel employed:
+	if the player is a hooker in training, decide yes;
+	if the player is a trained hooker, decide yes;
+	if the class of the player is succubus, decide yes;
+	if the class of the player is maid, decide yes;
+	decide no.
 
 [!<TheAdventurerClassRule>+
 

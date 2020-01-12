@@ -145,7 +145,7 @@ To say TitleBimbo:
 		otherwise if armband is worn:
 			say " [armband-print of armband]";
 		otherwise if there is a worn ballet related dress and there is a worn ballet related shoes:
-			say " [if the player is male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
+			say " [if the player is presenting as male and the bimbo of the player < 9]ballet dancer[otherwise]ballerina[end if]";
 		otherwise if whip-of-domination is worn and the player is feeling dominant:
 			say " dominatrix";
 		otherwise if newborn-wasp is an alive giant wasp:
@@ -162,16 +162,16 @@ To say TitleBimbo:
 				say " delicate flower";
 			otherwise if the player is female and the virgin of the player is 0 and the analvirgin of the player is 1:
 				say " anal virgin";
-			otherwise if the size of penis > 7:
+			otherwise if the size of penis > 7 and transGender is 0:
 				say " [one of]shemale[or]dickgirl[sticky random]";
 			otherwise:
 				if the delicateness of the player > 11 and diaper lover >= 1:
 					say " babygirl";
-				otherwise if the size of penis > 4 or the player is a flatchested trap:
+				otherwise if transGender is 0 and (the size of penis > 4 or the player is a flatchested trap):
 					if the number of worn clothing > 4, say " cross-dressing";
 					say " trap";
 				otherwise:
-					say " girl[if the player is male]yboy[end if]";
+					say " girl[if the player is presenting as male]yboy[end if]";
 		if the player is a piss slut and T is not "toilet":
 			say " urinal".
 

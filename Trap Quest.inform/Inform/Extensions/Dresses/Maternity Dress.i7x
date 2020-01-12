@@ -1,6 +1,6 @@
 Maternity Dress by Dresses begins here.
 
-A maternity dress is a kind of overdress. A maternity dress is usually unique. A maternity dress is usually absorption. A maternity dress is usually fully covering. A maternity dress is usually vaginal-sex-addiction-influencing. Figure of Maternity Dress is the file "Items/Clothes/Upper/Special/maternitydress1.png".  A maternity dress has a number called charge.
+A maternity dress is a kind of overdress. A maternity dress is usually unique. A maternity dress is usually absorption. A maternity dress is usually fully covering. A maternity dress is usually vaginal-sex-addiction-influencing. Figure of Maternity Dress is the file "Items/Clothes/Upper/Special/maternitydress1.png". A maternity dress has a number called charge.
 
 The printed name of maternity dress is usually "[clothing-title-before]maternity dress[clothing-title-after]". The text-shortcut of maternity dress is "md".
 

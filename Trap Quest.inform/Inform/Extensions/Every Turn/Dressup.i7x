@@ -23,11 +23,11 @@ A time based rule (this is the dressup rule):
 				now S is a random off-stage woven stockings;
 			if P is actually summonable and R is 1:
 				if diaper quest is 1, say "[bold type]Suddenly, a big diaper appears on you![roman type][line break]";
-				otherwise say "[bold type]A pair of crotchless panties appear on you!  How useless![roman type][line break]";
+				otherwise say "[bold type]A pair of crotchless panties appear on you! How useless![roman type][line break]";
 				now C is P;
 			otherwise if B is actually summonable and R is 2:
 				if diaper quest is 1, say "[bold type]A pair of baby booties appear on your feet![roman type][line break]";
-				otherwise say "[bold type]A cupless bra appears on you!  How pointless![roman type][line break]";
+				otherwise say "[bold type]A cupless bra appears on you! How pointless![roman type][line break]";
 				now C is B;
 				now C is absorption;
 			otherwise if E is actually summonable and R is 3:
@@ -36,7 +36,7 @@ A time based rule (this is the dressup rule):
 				now C is E;
 			otherwise if S is actually summonable and R is 4:
 				if diaper quest is 1, say "[bold type]A pair of woolly, frilly stockings suddenly appear on you![roman type][line break]";
-				otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you!  That doesn't seem very useful.[roman type][line break]";
+				otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you! That doesn't seem very useful.[roman type][line break]";
 				now C is S;
 			unless C is nothing:
 				summon C cursed with quest;
@@ -79,7 +79,7 @@ A time based rule (this is the dressup rule):
 			if H is not chestless and R is 2, let P be breasts;
 			otherwise increase R by 1;
 			unless H is no-crotch and R is 3, let P be hips;
-			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling exposed knowing your own clothes can mess with you any time![at random]";
+			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling exposed knowing your own clothes can mess with you any time![at random]";
 			Humiliate 5;
 			if P is breasts, arouse the raw sensitivity of breasts * 5.
 

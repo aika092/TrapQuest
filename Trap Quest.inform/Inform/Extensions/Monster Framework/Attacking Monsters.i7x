@@ -408,7 +408,7 @@ Definition: a monster (called M) is too intimidating:
 	if the class of the player is worshipper:
 		if M is infernal:
 			let G be gold-tiara;
-			if M is interested, say "As soon as the thought of harming [NameDesc of M] enters your mind, your [printed name of G] sends a horrible shiver down your spine.";
+			if M is interested, say "[one of]As soon as the thought of harming [NameDesc of M] enters your mind, your [printed name of G] sends a horrible shiver down your spine[or]At the mere thought of harming [NameDesc of M], your spine spasms in painful fear[or]You start to imagine harming [NameDesc of M] but instantly squash the thought as your [printed name of G] sends a painful shudder pricks at your spine[then at random].";
 			otherwise say "[BigNameDesc of M] turns toward you as soon as the thought of harming [him of M] enters your mind, and your [printed name of G] sends a horrible shiver down your spine.";
 			decide yes;
 	if the player is not feeling submissive, decide no;

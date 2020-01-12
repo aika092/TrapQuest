@@ -3,7 +3,7 @@ Master Bed by Furniture begins here.
 A master bed is a kind of furniture. There is 1 master bed. The printed name of master bed is "[TQlink of item described]master bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "master", "bed" as master bed. The text-shortcut of master bed is "vmb". A master bed has a number called charge.
 
 To say ExamineDesc of (C - a master bed):
-	say "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerising pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.".
+	say "A huge bed with black sheets and a heavy scarlet comforter, which is stencilled with a strangely mesmerizing pattern. The pillows are large, embroidered with the same pattern on the blankets, and purposefully arranged around the headboard. It looks impossibly comfortable, and a weird twinge in the back of your mind tells you it's just as sturdy.".
 
 To decide which figure-name is the examine-image of (C - a master bed):
 	decide on figure of hotel bed.
@@ -72,7 +72,7 @@ To compute chain rest of (F - a master bed):
 	let N be 5;
 	while V is not in the location of the player and N > 0:
 		if diaper quest is 0, say "[one of]Images of being face-fucked by [line break][second custom style]your mistress[roman type][line break]force their way into your mind.[or][line break][second custom style]I want to feel my mistress cum.[roman type][line break][or]An image of a pale [manly-penis] flashes in your vision, covered in [line break][second custom style]your spit[roman type][line break][or]Your thoughts swirl around an image of yourself on all fours[or][line break][second custom style]My mistress needs a warm hole.[roman type][line break][or]You hear your own voice echoing inside your head, moaning breathlessly as [line break][second custom style]your mistress[roman type][line break]takes you.[or][line break][second custom style]My mistress makes me so horny.[roman type][line break][then at random]";
-		otherwise say "[one of]Images of being pampered by [line break][second custom style]your mistress[roman type][line break]force their way into your mind.[or][line break][second custom style]I want to feel my mistress's hand on my padding.[roman type][line break][or]An image of two pale round breasts flashes in your vision, dripping with [line break][second custom style]delicious [milk][roman type][line break][or]Your thoughts swirl around an image of yourself on all fours[or][line break][second custom style]My mistress needs a new slave.[roman type][line break][or]You hear your own voice echoing inside your head, moaning breathlessly as [line break][second custom style]your mistress[roman type][line break]cuddles you.[or][line break][second custom style]My mistress makes me so horny.[roman type][line break][then at random]";
+		otherwise say "[one of]Images of being pampered by [line break][second custom style]your mistress[roman type][line break]force their way into your mind.[or][line break][second custom style]I want to feel my mistress's hand on my padding.[roman type][line break][or]An image of two pale round breasts flashes in your vision, dripping with [line break][second custom style]delicious [milk][roman type][line break][or]Your thoughts swirl around an image of yourself on all fours[or][line break][second custom style]My mistress needs a new slave.[roman type][line break][or]You hear your own voice echoing inside your head, moaning breathlessly as [i]your mistress[/i]cuddles you.[or][line break][second custom style]My mistress makes me so horny.[roman type][line break][then at random]";
 		decrease N by 1;
 		compute extra turn;
 	unless V is in the location of the player:
@@ -132,7 +132,7 @@ To compute rest completion of (F - a master bed):
 			[otherwise if R is 2:
 				say "It's too hard to resist, and you fall straight into a dream. ";
 			otherwise:
-				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the centre of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
+				say "A quick shake of your head is enough to get rid of the lingering lethargy, but your body is still too sleepy to make any progress getting rid of the blankets. They feel a lot heavier than they did when you got into the bed, and the faint shifting feeling is now far too pronounced to ignore. You can feel your [ShortDesc of breasts] being groped as a hard spot grows in the center of the mattress, pushing up against your [AssDesc] in a way that's far too lifelike.
 
 
 				The blankets tighten around your body, pinning you to the mattress. ";]

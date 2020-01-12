@@ -22,16 +22,6 @@ To decide which number is the dexterity-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhatNumberIsTheDexterityInfluenceOfSpeedClothing>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide what number is the dexterity-influence of (C - a speed clothing):
-	let D be 1;
-	increase D by the magic-modifier of C;
-	decide on D.
-
 [!<DecideWhatNumberIsTheDexterityInfluenceOfPostureTrainingClothing>+
 
 REQUIRES COMMENTING
@@ -87,6 +77,7 @@ To decide which number is the flat dexterity of the player:
 	increase D by ((creme-egg-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	increase D by ((magic-speed-timer + default-candy-duration - 1) / default-candy-duration) * 6;
 	if the the boost-cooldown of nurse > 0, increase D by 2;
+	if the size of penis > 3 and penis is penis-erect, decrease D by the size of penis / 3;
 	increase D by adult-baby-dex * 3;
 	if the silicone volume of breasts > 10 and the class of the player is silicone queen:
 		increase D by 1;
@@ -127,6 +118,14 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called old dexterity. The old dexterity of the player is usually 0.
+
+
+Definition: yourself is deserving of more dexterity:
+	let R be a random number between -3 and 56;
+	let D be the flat dexterity of the player;
+	if debuginfo > 0, say "[input-style]Dexterity buff check: d60-4([R]) | ([D].5) player dexterity[roman type][line break]";
+	if R > D, decide yes;
+	decide no.
 
 [!<DexUpX>+
 

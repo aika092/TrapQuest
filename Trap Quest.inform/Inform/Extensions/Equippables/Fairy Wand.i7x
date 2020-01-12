@@ -2,6 +2,7 @@ Fairy Wand by Equippables begins here.
 
 A fairy wand is a kind of vibe-wand. A fairy wand is usually unique. A fairy wand is womanly. There is 1 fairy wand. The printed name of fairy wand is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]fairy wand[clothing-title-after]". The text-shortcut of fairy wand is "fw".
 
+Definition: a fairy wand is destiny-appropriate if diaper quest is 1.
 
 Figure of fairy wand is the file "Items/Accessories/Equippables/fairywand1.png".
 To decide which figure-name is the clothing-image of (W - a fairy wand):

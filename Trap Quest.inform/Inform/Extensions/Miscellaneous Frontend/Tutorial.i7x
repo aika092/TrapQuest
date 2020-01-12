@@ -87,9 +87,7 @@ The TutorialArea is a region. Tutorial01, Tutorial02, Tutorial03, Tutorial04, Tu
 To compute tutorial treasure to (X - a container):
 	if X is in Tutorial01:
 		let C be a random grey monokini;
-		now the raw-magic-modifier of C is 0;
-		now C is bland;
-		now C is blandness;
+		blandify C;
 		now C is unowned;
 		now C is not-influencing;
 		now C is in X;

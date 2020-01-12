@@ -25,12 +25,12 @@ Definition: a nipple ring bikini top is end of transformation chain: decide yes.
 
 To say TransformReaction of (C - a nipple ring bikini top):
 	if the outrage of C is too humiliating:
-		if C is cursed, say "[variable custom style]Am I really stuck wearing this?  It's worse than just being topless![roman type][line break]";
+		if C is cursed, say "[variable custom style]Am I really stuck wearing this? It's worse than just being topless![roman type][line break]";
 		otherwise say "[variable custom style]I think I'd genuinely rather be topless than have attention drawn to my nipples like this...[roman type][line break]";
 	otherwise if C is almost too much:
-		say "[variable custom style]This is pretty extreme!  But also kind of thrilling to be wearing...[roman type][line break]";
+		say "[variable custom style]This is pretty extreme! But also kind of thrilling to be wearing...[roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:[why not just a generic otherwise: statement here?]
-		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear!  This way, everyone can check out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
+		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone can check out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Nipple Ring Bikini Top ends here.
 

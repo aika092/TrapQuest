@@ -131,9 +131,12 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	if D is glued, now C is glued;
 	otherwise now C is unglued;
 	if (C is ass plugging and D is ass plugging) or (C is vagina plugging and D is vagina plugging), now the plug size of C is the plug size of D;
-	repeat with B running through body parts penetrated by D:
-		now C is penetrating B;
-		now D is not penetrating B;
+	repeat with B running through body parts:
+		if D is penetrating B:
+			now C is penetrating B;
+			now D is not penetrating B;
+		otherwise:
+			now C is not penetrating B;
 	[if D is crotch-displaced and C is crotch covering, now C is crotch-displaced;] [not sure about this one]
 	if D is crotch-unzipped and C is crotch-zipped, ZipDown C;
 	if D is crotch-ripped and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted), now C is crotch-ripped;
@@ -202,7 +205,7 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 		if the unworn cringe of C is too humiliating:
 			say "[variable custom style][one of]Holy cow! Thank goodness it's covered up.[or]Oh my god, I'm so glad this is covered up at the moment![or]There's no way I could feel comfortable wearing something so childish if it wasn't covered up![in random order][roman type][line break]";
 		otherwise if C is not gloves and C is equippable or C is bag of holding:
-			say "[variable custom style][one of]I guess this will be OK for now. But only until I find something a bit more appropriate for my age.[or]Hmm, this will have to do for now, I guess![in random order][roman type][line break]";
+			say "[variable custom style][one of]I guess this will be ok for now. But only until I find something a bit more appropriate for my age.[or]Hmm, this will have to do for now, I guess![in random order][roman type][line break]";
 		otherwise:
 			say "[variable custom style][one of]I guess this will do for now.[or]This isn't that grown up, but I'll be fine wearing it.[or]I don't feel too uncomfortable wearing this.[or]Probably not my first choice, but not as babyish as it could be.[or]Fair enough, I'll wear this for now.[or]Hmm, this will have to do, I guess![or]I'll be fine wearing this for now.[in random order][roman type][line break]";
 	otherwise if C is almost too much or the unworn outrage of C is too humiliating:

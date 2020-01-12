@@ -20,7 +20,8 @@ To compute mass collectible reward of (T - a defiance token):
 	say "You place [if number of held defiance tokens is 1]the metal token[otherwise if number of held defiance tokens is 2]both metal tokens[otherwise]all [number of held defiance tokens] metal tokens[end if] into the bowl and there [if number of held defiance tokens is 1]it instantly turns[otherwise]they instantly turn[end if] into a silvery gas. ";
 	if NM > 0: [Any tokens that would reduce delicateness below 5 are redirected to a different effect]
 		decrease N by NM;
-		let NMSR be the square root of NM;
+		let NMSR be (the square root of (NM - 1)) - 2;
+		if whip-of-domination is unsure, now the raw-magic-modifier of whip-of-domination is NMSR; [the first time we spawn it]
 		now whip-of-domination is sure;
 		now whip-of-domination is identified;
 		if whip-of-domination is not held and whip-of-domination is not in the location of the player:

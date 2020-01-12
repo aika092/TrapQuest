@@ -39,7 +39,7 @@ To reset alchemy charge of (C - a crafting-table):
 
 
 
-the alchemist's table is a crafting-table. alchemist's table is in Dungeon37.  The text-shortcut of alchemist's table is "at".  The indefinite article of alchemist's table is "an". Understand "alchemy", "alchemists" as alchemist's table. Figure of alchemist's table is the file "Env/Dungeon/bowl1.png".
+the alchemist's table is a crafting-table. alchemist's table is in Dungeon37.  The text-shortcut of alchemist's table is "at". The indefinite article of alchemist's table is "an". Understand "alchemy", "alchemists" as alchemist's table. Figure of alchemist's table is the file "Env/Dungeon/bowl1.png".
 
 To decide which figure-name is the examine-image of (C - a crafting-table):
 	decide on figure of alchemist's table.

@@ -38,7 +38,7 @@ To say speech style of (M - a robomaid):
 	say second custom style.
 
 To say robogreeting of (M - a robomaid):
-	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
+	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is presenting as female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
 
 This is the spawn initial robomaid rule:
 	if the number of alive robomaids is 0:
@@ -119,14 +119,14 @@ To compute perception of (M - a robomaid):
 	otherwise if M is friendly:
 		say "It glides towards you, striking a provocative pose as it addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
 		if the player is consenting and the player is able to speak and the refactory-period of M < 0:
-			if the class of the player is not hotel employment:
+			if the player is not hotel employed:
 				say "Its eyes turn green, and it points unsubtly toward a slot between its breasts, labeled [']PAYMENT['].";
 				FavourDown M;
 			otherwise:
 				say "Its eyes turn green. [line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
 			now the refactory-period of M is the refactory-time of M;
 		otherwise:
-			if the class of the player is not hotel employment:
+			if the player is not hotel employed:
 				say "[if the player is not able to speak or the refactory-period of M >= 0]It seems to [']think['] for a moment, and i[otherwise]I[end if]ts eyes turn yellow. [line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M]'[roman type][line break]";
 				increase the difficulty of M by 1;
 			otherwise:
@@ -134,10 +134,10 @@ To compute perception of (M - a robomaid):
 				FavourDown M;
 				decrease the employee-record of senior robobellboy by 1;[she spreads bad rumours about you!]
 	otherwise:
-		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'[if the class of the player is hotel employment]COWORKER[otherwise]FREELANCER[end if] DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]".
+		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'[if the player is hotel employed]COWORKER[otherwise]FREELANCER[end if] DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]".
 
 To compute perception of (M - a milkmaid):
-	if the class of the player is hotel employment:
+	if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
 			say "It glides towards you, addressing you in a monotone. [line break][speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE HEE. TEE HEE.[roman type][line break]It seems to abruptly lose interest.";
 			calm M;
@@ -253,7 +253,7 @@ This is the milkmaid punishment rule:
 		say "[one of][BigNameDesc of current-monster] waits beside you patiently.[or][cycling]";
 		[compute maidFluff of M;]
 		rule succeeds;
-	if the class of the player is hotel employment:
+	if the player is hotel employed:
 		let C be a random worn top-placed breast covering clothing;
 		if C is clothing and C is not trainee bra:
 			if C is not-top-displacable:

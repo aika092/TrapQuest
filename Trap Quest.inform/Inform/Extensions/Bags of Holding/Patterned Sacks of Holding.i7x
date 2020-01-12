@@ -59,7 +59,7 @@ To decide which figure-name is clothing-image of (C - a dirty little whore sack 
 	decide on figure of dirty little whore sack of holding.
 
 To say ClothingDesc of (C - a dirty little whore sack of holding):
-	say "A magic cloth shopping bag that holds all your spare items and negates their weight. Pink writing on the side says 'I'm a dirty little whore!'  A warning on the label says '[BagHoldingWarning] bag'.".
+	say "A magic cloth shopping bag that holds all your spare items and negates their weight. Pink writing on the side says 'I'm a dirty little whore!' A warning on the label says '[BagHoldingWarning] bag'.".
 
 To say ShortDesc of (C - a dirty little whore sack of holding):
 	say "dirty little whore shopping bag".

@@ -169,7 +169,7 @@ To decide which number is the initial outrage of (C - black-fetish-cheerleader-o
 	decide on 8.
 
 To say ClothingDesc of (C - black-fetish-cheerleader-outfit):
-	say "This black latex 'cheerleader outfit' is held together by black ribbon which zig-zags across [if C is worn]your[otherwise]the wearer's[end if] sides, leaving them mostly bare. It seems more like a BDSM fetish item and less like a real cheerleader's garment...".
+	say "This black latex 'cheerleader outfit' is held together by black ribbon which zigzags across [if C is worn]your[otherwise]the wearer's[end if] sides, leaving them mostly bare. It seems more like a BDSM fetish item and less like a real cheerleader's garment...".
 
 Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 

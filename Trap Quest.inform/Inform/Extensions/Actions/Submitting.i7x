@@ -60,7 +60,7 @@ REQUIRES COMMENTING
 Report submitting:
 	let M be a random thing grabbing the player;
 	if M is nothing, now M is a random live thing penetrating a body part;
-	unless M is nothing:
+	unless M is nothing or (diaper quest is 1 and M is live):
 		if forced submit > 0:
 			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
 			now forced submit is 0;

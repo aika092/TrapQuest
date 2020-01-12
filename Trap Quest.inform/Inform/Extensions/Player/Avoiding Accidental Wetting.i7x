@@ -21,10 +21,10 @@ REQUIRES COMMENTING
 +!]
 To diaperreward:
 	if diaper bonus > 0:
-		say "[bold type]You are extremely proud of yourself for still having managed to control your bladder!  Once again you feel yourself gaining real, physical power just from the happiness you feel from having retained your continence.[roman type][line break]";
+		say "[bold type]You are extremely proud of yourself for still having managed to control your bladder! Once again you feel yourself gaining real, physical power just from the happiness you feel from having retained your continence.[roman type][line break]";
 		increase diaper bonus by 1;
 	otherwise:
-		say "[bold type]You pause for a moment, happy that so far all your bladder movements have been voluntary.[roman type]  You get the feeling that the game is trying to make you lose control of your bodily functions and eventually render you incontinent. You feel that by placing a lot of value on your bladder control, you could gain some internal strength to help you fight your way through this world. But the negative impact of wetting yourself involuntarily in the future would likely be more severe. Would you like to make the mental decision to care deeply about your continence? ";
+		say "[bold type]You pause for a moment, happy that so far all your bladder movements have been voluntary.[roman type] You get the feeling that the game is trying to make you lose control of your bodily functions and eventually render you incontinent. You feel that by placing a lot of value on your bladder control, you could gain some internal strength to help you fight your way through this world. But the negative impact of wetting yourself involuntarily in the future would likely be more severe. Would you like to make the mental decision to care deeply about your continence? ";
 		if newbie tips is 1, say "[newbie style]Newbie tip: I would not advise doing this in your first game; it's a real challenge to avoid incontinence in this world![roman type][line break]";
 		if the player is consenting:
 			say "As if it can read your thoughts, the game sends surges waves of positive emotions flowing through your body, and you feel yourself become noticeably stronger and faster!";

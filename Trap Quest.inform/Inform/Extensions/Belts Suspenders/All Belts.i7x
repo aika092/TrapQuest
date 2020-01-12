@@ -46,7 +46,7 @@ To say ShortestDesc of (C - a suspenders):
 [Report wearing stockings when there are worn suspenders:
 	let S be a random worn suspenders;
 	if S is not cursed and the noun is cursed:
-		say "The clips on your [printed name of S] snap onto the [noun] and refuse to let go!  Even worse, your suspenders seal themselves to your hips. It seems that they're cursed now...";
+		say "The clips on your [printed name of S] snap onto the [noun] and refuse to let go! Even worse, your suspenders seal themselves to your hips. It seems that they're cursed now...";
 		now S is cursed;
 		now S is sure;
 		compute summoned quest of S.
@@ -54,7 +54,7 @@ To say ShortestDesc of (C - a suspenders):
 Report wearing suspenders when there are worn stockings:
 	let S be a random worn stockings;
 	if S is not cursed and the noun is cursed:
-		say "The clips on your [noun] snap onto the [printed name of S] and refuse to let go!  Even worse, your stockings shrink a little, sealing themselves to your legs. It seems that they're cursed now...";
+		say "The clips on your [noun] snap onto the [printed name of S] and refuse to let go! Even worse, your stockings shrink a little, sealing themselves to your legs. It seems that they're cursed now...";
 		now S is cursed;
 		now S is sure;
 		compute summoned quest of S.]
@@ -224,7 +224,7 @@ To compute periodic effect of (I - living belt of sturdiness):
 					say "The slow but steady thrusting of your [printed name of the living belt of sturdiness] is slowly building you towards an orgasm!";
 					increase the buildup of the living belt of sturdiness by 1;
 		otherwise:
-			say "Silver tentacles shoot out of the belt and towards your crotch!  You quickly feel the warm, smooth tip of a tentacle trying to push its way into your [asshole]! ";
+			say "Silver tentacles shoot out of the belt and towards your crotch! You quickly feel the warm, smooth tip of a tentacle trying to push its way into your [asshole]! ";
 			while the player is ass protected:
 				let A be a random top level ass protection clothing worn by the player;
 				say "The tentacle easily rips through your [printed name of A]!";
@@ -261,21 +261,21 @@ Section 1 Wearability
 This is the overdress living belt clash rule:
 	if wearing-target is not no protection:
 		if the living belt of sturdiness is worn:
-			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes!  It looks like you're not allowed...";
+			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes! It looks like you're not allowed...";
 			rule fails.
 The overdress living belt clash rule is listed in the overdress wearability rules.
 
 This is the knickers living belt clash rule:
 	if wearing-target is not no protection:
 		if the living belt of sturdiness is worn:
-			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes!  It looks like you're not allowed...";
+			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes! It looks like you're not allowed...";
 			rule fails.
 The knickers living belt clash rule is listed in the knickers wearability rules.
 
 This is the trousers living belt clash rule:
 	if wearing-target is not no protection:
 		if the living belt of sturdiness is worn:
-			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes!  It looks like you're not allowed...";
+			if summoning is 0 and autowear is false, say "Your [printed name of living belt of sturdiness] lashes out and prevents you from putting your feet through the leg holes! It looks like you're not allowed...";
 			rule fails.
 The trousers living belt clash rule is listed in the trousers wearability rules.
 
@@ -319,7 +319,7 @@ Definition: a sissy-suspenders is end of transformation chain: decide yes. [It's
 
 To say TransformReaction of (C - a sissy-suspenders):
 	if the outrage of C is too humiliating:
-		if C is cursed, say "[variable custom style]Am I really stuck wearing this?  Look at these stupid hyper-feminine frills![roman type][line break]";
+		if C is cursed, say "[variable custom style]Am I really stuck wearing this? Look at these stupid hyper-feminine frills![roman type][line break]";
 		otherwise say "[variable custom style]Maybe it's time to take these off. They've just got way too ridiculous...[roman type][line break]";
 	otherwise if C is almost too much:
 		say "[variable custom style]I guess this is what I have become. [if the player is male and transGender is 0]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
@@ -375,7 +375,7 @@ To say ClothingDesc of (C - tongue-belt):
 	say "A belt made completely out of large red demonic tongues. [TongueStatus of C]".
 
 To say ShortDesc of (C - tongue-belt):
-	say "pair of tongued belt".
+	say "demon-tongue belt".
 
 Definition: tongue-belt is demonic: decide yes.
 Definition: tongue-belt is tongued: decide yes.

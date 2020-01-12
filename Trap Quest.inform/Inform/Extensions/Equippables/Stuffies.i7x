@@ -1,6 +1,6 @@
 Stuffies by Equippables begins here.
 
-A stuffie is a kind of equippable. A stuffie is usually slap ready. A stuffie is usually cursed. A stuffie is usually wool. The printed name of stuffie is "[clothing-title-before]stuffie[clothing-title-after]". The text-shortcut of stuffie is "stf".
+A stuffie is a kind of equippable. A stuffie is usually slap ready. A stuffie is usually cursed. A stuffie is usually wool. The printed name of stuffie is "[clothing-title-before]stuffie[clothing-title-after]". The text-shortcut of stuffie is "stf". [####Selkie: What's a stuffie? Is it like a teddy bear, or plushie?]
 
 
 This is the spawn initial mansion stuffie rule:
