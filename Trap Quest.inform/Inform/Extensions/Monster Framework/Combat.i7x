@@ -168,7 +168,7 @@ To compute priestessBlessing of (M - a monster):
 			say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with [him of M], Sister! Do not insult your goddess!'";
 			increase the charge of the dungeon altar by 30;
 		otherwise:
-			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is possessing a vagina]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
 			decrease the charge of the dungeon altar by 150;
 	if M is infernal, RitualUp 2;
 	otherwise RitualUp 1.

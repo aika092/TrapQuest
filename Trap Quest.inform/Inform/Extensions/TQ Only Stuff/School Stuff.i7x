@@ -891,8 +891,8 @@ To compute teaching of (L - swimming-lesson):
 			otherwise: [Sudden gape]
 				now poolCrazyEvent is 3;
 				if yourself is listed in LInPool:
-					say "And then it happens. Suddenly your [if the player is female][vagina] and [asshole] are[otherwise][asshole] is[end if] forced open to an insane width, as if a magical invisible speculum was just opened up inside. A strong current of [semen] rushes inside, rapidly filling you to the brim![line break][variable custom style]What the fuck?![roman type][line break][if the number of entries in LInPool > 1]A brief look around tells you that the same thing has happened to the other [end if][if the number of entries in LInPool > 2]students too.[otherwise if the number of entries in LInPool > 1]student too.[end if]";
-					if the player is female, PussyFill 20;
+					say "And then it happens. Suddenly your [if the player is possessing a vagina][vagina] and [asshole] are[otherwise][asshole] is[end if] forced open to an insane width, as if a magical invisible speculum was just opened up inside. A strong current of [semen] rushes inside, rapidly filling you to the brim![line break][variable custom style]What the fuck?![roman type][line break][if the number of entries in LInPool > 1]A brief look around tells you that the same thing has happened to the other [end if][if the number of entries in LInPool > 2]students too.[otherwise if the number of entries in LInPool > 1]student too.[end if]";
+					if the player is possessing a vagina, PussyFill 20;
 					increase the semen volume of belly by 25;
 				otherwise:
 					say "[if the number of entries in LInPool > 1]The students suddenly start[otherwise][NameDesc of entry 1 in LInPool] starts[end if] screaming. You can't really tell what's going on, but it's clear that something is happening to their bottom half.";

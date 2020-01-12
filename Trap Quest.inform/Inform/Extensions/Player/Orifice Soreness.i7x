@@ -106,21 +106,21 @@ To decide which number is the stimulation of (T - a thing) on (F - a body part):
 	decide on 0.
 
 To stimulate (F - a body part):
-	if F is vagina and the player is male, now F is penis;
-	if F is penis and the player is female, now F is vagina;
+	if F is vagina and the player is possessing a penis, now F is penis;
+	if F is penis and the player is possessing a vagina, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T.
 
 To stimulate (F - a body part) times (N - a number):
-	if F is vagina and the player is male, now F is penis;
-	if F is penis and the player is female, now F is vagina;
+	if F is vagina and the player is possessing a penis, now F is penis;
+	if F is penis and the player is possessing a vagina, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T times N.
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part):
-	if F is vagina and the player is male, now F is penis;
-	if F is penis and the player is female, now F is vagina;
+	if F is vagina and the player is possessing a penis, now F is penis;
+	if F is penis and the player is possessing a vagina, now F is vagina;
 	let T be a random thing penetrating F;
 	passively stimulate F from T.
 
@@ -133,8 +133,8 @@ To stimulate (F - a body part) from (T - an object):
 	stimulate F from T times 1.
 
 To stimulate (F - a body part) from (T - an object) times (N - a number):
-	if F is vagina and the player is male, now F is penis;
-	if F is penis and the player is female, now F is vagina;
+	if F is vagina and the player is possessing a penis, now F is penis;
+	if F is penis and the player is possessing a vagina, now F is vagina;
 	while N > 0:
 		decrease N by 1;
 		if the player is able to get horny:

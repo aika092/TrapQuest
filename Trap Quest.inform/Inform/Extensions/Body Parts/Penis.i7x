@@ -202,7 +202,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is possessing a penis:
-	if the player is sexed male and the player is possessing a penis, decide yes;
+	if the player is sexed male and the size of penis is not 0, decide yes;
 	decide no.
 
 Section 2 - Erections
