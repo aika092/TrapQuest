@@ -50,6 +50,7 @@ To decide which number is the implant of ultimate-lesson-mess:
 To decide which number is the implant of ultimate-lesson-yes:
 	decide on 0.
 
+
 robomatron is a monster.
 boogeymonster is a monster.
 
@@ -66,6 +67,7 @@ Include Gargoyle by Monster.
 Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
 Include Icarus by Monster.
+Include Centaur by Monster.
 
 Include Milking Bench by Furniture.
 Include Dildo Rocking Stool by Furniture.

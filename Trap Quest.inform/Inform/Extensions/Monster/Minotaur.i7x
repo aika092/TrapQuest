@@ -44,6 +44,7 @@ Definition: minotaur is willing to do oral: decide no.
 
 Definition: minotaur is willing to do titfucks: decide no.
 
+Definition: minotaur is musky: decide yes.
 
 To say LongDickDesc of (M - a minotaur):
 	if pregnancy fetish is 1 and lactation fetish is 1 and inhuman pregnancy > 0 and mythical creature fetish is 1:
@@ -110,7 +111,7 @@ To say PregGrowth of (M - minotaur):
 To compute labour to (M - minotaur):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue!  [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] gets on all fours and grunts gently as [he of M] watches the [if mythical creature fetish is 0]half-giant baby emerge[otherwise]minotaur calf[end if]. After the painful but relatively fast birthing, [he of M] roars and picks up the wailing pup in [his of M] arms. You can do nothing but watch as [he of M] takes your new son away.[line break][variable custom style][if the father is mating]I guess it's only right that it should join its siblings...[otherwise if mythical creature fetish is 1]I can't believe I just gave birth to a half-bull...[otherwise]I can't believe I just gave birth to a half... whatever [he of M] is[end if][roman type][line break]";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -179,7 +180,7 @@ Section 1 - Attack
 Definition: minotaur (called M) is automatically tempted:
 	if the bimbo of the player >= 20, decide yes;
 	if the appearance of the player > 7, decide yes;
-	if class of the player is cowgirl, decide yes;
+	if the player is pheromonal, decide yes;
 	if thickness of hips > 5 and pregnancy fetish is 1, decide yes;
 	if wanking > 1, decide yes;
 	if the player is monster fucked, decide yes;
@@ -264,6 +265,11 @@ To compute anal sex of (M - minotaur):
 		otherwise:
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with his full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your asshole until [he of M] wakes up...[at random]";
 			if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 2 for M;
+		say CreampieReactionFlav to M in asshole;
+		if the player is a december 2019 top donator and mythical creature fetish is 1 and cow-horns is off-stage and cow-ears is worn and (the father is M or M is mating):
+			say "[bold type]Your fake cow ears transform into a pair of very permanent horns[roman type][line break]";
+			only destroy cow-ears;
+			summon cow-horns;
 		AssFill 2;
 		orgasm M;
 		now the sleep of M is 150;
@@ -284,14 +290,29 @@ To compute vaginal sex of (M - minotaur):
 		now the nutting-turns of M is 0;
 		PussyFill 2;
 		say "[one of][BigNameDesc of M] seems completely spent - [he of M] pulls your bloated body off [his of M] shaft and leaves you to recover[or][BigNameDesc of M], spent, pulls your bloated body off [his of M] deflating shaft and leaves you to recover[or][BigNameDesc of M] pulls your bloated body off [his of M] shaft as [his of M] ejaculation finally ends, leaving you on the floor to recover[or][BigNameDesc of M] removes [his of M] deflating shaft from your [vagina], completely spent[at random]. [big he of M] stalks off, probably looking for another woman to breed.";
+		say CreampieReactionFlav to M in vagina;
 		if there is a worn tattoo and bred by a bull tattoo is not worn:
 			summon bred by a bull tattoo;
-			say "The words 'BRED BY A BULL' materialise on your left side!  They are now permanently inked onto your skin.";
+			say "The words 'BRED BY A BULL' materialise on your left side! They are now permanently inked onto your skin.";
 		otherwise if cow-ears is off-stage and cow-ears is actually summonable and lactation fetish is 1:
 			say "[bold type]A pair of fake cow ears materialise on your head.[roman type][line break]";
 			summon cow-ears cursed;
 		orgasm M;
 		bore M for 500 seconds.
+
+To say CreampieReactionFlav to (M - minotaur) in (F - vagina):
+	if the class of the player is cowgirl:
+		say "[second custom style]'[one of]Mm...Moo. Moooo.'[or]Moo. Moooo.'[or]M-m-moo. Mooo.'[at random][roman type][line break]";
+	if pregnancy fetish is 1 and the pregnancy of the player is 0:
+		say "[second custom style][if the bimbo of the player < 7][one of]That was so much [semen]...Please don't let me be pregnant.[or]So much...I hope I'm not pregnant.[at random][otherwise if the bimbo of the player < 12][one of]T-That was so much [semen]. [big he of M] really wanted me pregnant![or]So that's what it feels like to be bred. Did it take?[at random][otherwise][one of]So much [semen]...that means I'm probably preggers![or]Fuck, that was so much [semen]. I hope I'm knocked up.[at random][end if][roman type][line break]";
+	otherwise:
+		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise]Those big balls must have been full. There's so much~[end if][roman type][line break]".
+
+To say CreampieReactionFlav to (M - minotaur) in (F - asshole):
+	if M is not penetrating asshole:
+		say "[second custom style][if the bimbo of the player < 7]I thought [he of M] would never stop...[otherwise if the bimbo of the player < 12]So much [semen]...where does it all come from...[otherwise]Those big balls must have been full. There's so much~[end if][roman type][line break]";
+	otherwise:
+		say "[second custom style][if the bimbo of the player < 7][one of]It isn't over? Come on....[or]I thought [he of M] was finished...[at random][otherwise if the bimbo of the player < 12][one of]OK, so it actually isn't over. Great...[or]After filling me with all that [semen], I thought [he of M]'d be finished...[at random][otherwise][one of]I kind of want to stay like this.[or]Aww, [he of M]'s tired. I shouldn't wake [him of M].[at random][end if][roman type][line break]".
 
 To compute priestessBlessing of (M - minotaur):
 	say "You feel a surge in your holy aura and a voice appears in your head: 'Good work, Sister!'";
@@ -334,7 +355,7 @@ To say StrikingSuccessFlav of (M - minotaur) on (B - a body part):
 	BodyRuin 1. [The minotaur automatically does 1 damage, and 2 if he hits.]
 
 To say StrikingFailureFlav of (M - minotaur) on (B - a body part):
-	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow!  Ouch!";
+	say "You try to dodge [NameDesc of M]'s fist, but [he of M] still manages to land a glancing blow! Ouch!";
 	BodyRuin 1.
 
 To compute striking attack of (M - minotaur):
@@ -353,7 +374,7 @@ This is the minotaur replaces the monster rule:
 	let M be current-monster;
 	let N be a random monster penetrating a fuckhole;
 	if there is a monster penetrating asshole, now N is a random monster penetrating asshole; [This is the one who's important to get rid of since this is where we're going.]
-	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately!  [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
+	say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] [one of]sticks [his of M] giant [DickDesc of M] in your [asshole],[or]shoves [his of M] massive [DickDesc of M] up your ass[or]jams [his of M] giant dick into your [asshole][or]clumsily rams [his of M] huge dick in your [asshole][at random] and [one of]starts cumming[or]starts to cum[at random] almost immediately! [line break][variable custom style][if the anal sex addiction of the player < 4]Oh Fuck![otherwise if the anal sex addiction of the player < 6]I thought I was safe with the [N] inside me![otherwise]Finally, a real dick![end if][roman type][line break]";
 	if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 3 for M;
 	now the sex-length of M is 0;
 	now the chosen-orifice of M is asshole;
@@ -383,7 +404,7 @@ To compute (M - minotaur) removing (X - a thing):
 To decide if (M - minotaur) is willing to creampie (F - a vagina):
 	if the player is not possessing a vagina, decide no;
 	if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
-	if the class of the player is cowgirl, decide yes;
+	if the player is pheromonal, decide yes;
 	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;
 	decide no.
 
@@ -406,11 +427,11 @@ To set up sex length of (M - minotaur) in (B - a fuckhole):
 
 
 To say AssholePenetrationFlav of (M - minotaur):
-	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously!  [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
+	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously! [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
 
 
 To say VaginaPenetrationFlav of (M - minotaur):
-	say "[BigNameDesc of M] stares at your body and sniffs your [vagina], assessing you. [big he of M] seems to make up [his of M] mind that you are a suitable breeding partner and poises [his of M] huge penis with the tip at the entrance to your [vagina]. [one of]With very little effort, [he of M] forces [his of M][or]With no effort at all, [he of M] shoves [his of M][or]Without the slightest hint of difficulty [he of M] rams [his of M][or]Without pausing, [he of M] forces [his of M][at random] giant [DickDesc of M] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise if the class of the player is cowgirl and mythical creature fetish is 1]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by [his of M] huge bull [DickDesc of M].[otherwise if pregnancy fetish is 1 and mythical creature fetish is 1]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[end if]".
+	say "[BigNameDesc of M] stares at your body and sniffs your [vagina], assessing you. [big he of M] seems to make up [his of M] mind that you are a suitable breeding partner and poises [his of M] [LongDickDesc of M] with the tip at the entrance to your [vagina]. [one of]With very little effort, [he of M] forces [his of M][or]With no effort at all, [he of M] shoves [his of M][or]Without the slightest hint of difficulty [he of M] rams [his of M][or]Without pausing, [he of M] forces [his of M][at random] giant [DickDesc of M] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise if the class of the player is cowgirl and mythical creature fetish is 1]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by [his of M] huge bull [DickDesc of M].[otherwise if pregnancy fetish is 1 and mythical creature fetish is 1]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[end if]".
 
 Section 2 - Damage
 
@@ -418,7 +439,7 @@ To compute damage of (M - minotaur):
 	if the health of M > 0:
 		if M is awake:
 			if M is uninterested:
-				say "[big he of M] growls viciously!  Uh-oh...";
+				say "[big he of M] growls viciously! Uh-oh...";
 				now M is interested;
 				anger M;
 			otherwise:
@@ -451,7 +472,7 @@ To compute unique death of (M - minotaur):
 	if mythical creature fetish is 1:
 		if full-lady fetish is 1 and X is clothing and a random number between 1 and 3 is 1 and the player is the donator:
 			now the strap-length of X is 11;[15 inches]
-			say "[BigNameDesc of M] falls to the ground, dead. His body disappears, but the huge strapon dildo he was wearing stays behind. It seems like you could actually wear it!";
+			say "[BigNameDesc of M] falls to the ground, dead. Her body disappears, but the huge strapon dildo she was wearing stays behind. It seems like you could actually wear it!";
 			now X is in the location of the player;
 			compute autotaking X;
 		otherwise if H is a thing:

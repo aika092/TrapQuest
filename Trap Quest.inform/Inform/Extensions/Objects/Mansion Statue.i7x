@@ -56,7 +56,7 @@ Check touching MansionScenery01:
 				say "your [K] is surrounded by a dark glow and turn into ";
 				decrease the raw-magic-modifier of K by 2;
 				say "[K]...";
-		compute summoned quest of K;
+			if K is knickers, compute summoned quest of K;
 		now the charge of the noun is 450;
 		allocate 2 seconds instead;
 	otherwise if the player's command includes "leg" or the player's command includes "legs":

@@ -21,10 +21,12 @@ To say AppearanceDesc of (C - a thing):
 	say "".
 
 To say MediumAppearanceDesc of (C - a thing):
+	if C is carried, say "held ";
 	say AppearanceDesc of C;
 	say MediumDesc of C.
 
 To say MediumAppearanceDesc of (C - a clothing):
+	if C is carried, say "held ";
 	say AppearanceDesc of C;
 	say ShortDesc of C;
 	if the used condoms of C > 0, say " with [used condoms of C] used condom[if the used condoms of C > 1]s[end if]".
@@ -76,10 +78,12 @@ Report examining a wearthing:
 		otherwise say "This item [if the noun is worn]is helping[otherwise]would make[end if] you look more like a grown up.";
 	if debuginfo > 0:
 		let U be the unworn outrage of the noun;
+		if the noun is worn, now U is the outrage of the noun;
 		let O be the initial outrage of the noun;
 		say "[input-style]Outrageousness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U]Raw value: [O]/20; After context & bonus modifiers[one of] (e.g. fluids, degrading attachments, or being displaced)[or][stopping]: [end if][U]/20[roman type][line break]";
 		if diaper quest is 1:
 			let U be the unworn cringe of the noun;
+			if the noun is worn, now U is the cringe of the noun;
 			let O be the initial cringe of the noun;
 			say "[input-style]Childishness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U]Raw value: [O]/20; After context & bonus modifiers: [end if][U]/20[roman type][line break]";
 
@@ -100,6 +104,7 @@ To say InfluenceDesc of (C - a wearthing):
 	if the strength-influence of C > 0, say "You can sense that this [item of C] is making you [if the strength-influence of C > 2]much [end if]stronger.";
 	if the dexterity-influence of C < 0, say "You can sense that this [item of C] is making you [if the dexterity-influence of C < -2]much [end if]less agile.";
 	if the dexterity-influence of C > 0, say "You can sense that this [item of C] is making you [if the dexterity-influence of C > 2]much [end if]faster.";
+	if C is speed clothing, say "You can sense that this [item of C] is making you much quicker at moving between rooms.";
 	if the intelligence-influence of C < 0, say "You can sense that this [item of C] is making you [if the intelligence-influence of C < -2]much [end if]dumber.";
 	if the intelligence-influence of C > 0, say "You can sense that this [item of C] is making you [if the intelligence-influence of C > 2]much [end if]smarter.";
 	if diaper quest is 1:
@@ -146,6 +151,20 @@ Report examining worn temptation clothing:
 Report examining worn dominance clothing:
 	say "You can sense that this item is making you feel and act [if the noun is blessed]much [end if]less submissive.".
 
+Report examining breast covering clothing:
+	if the noun is fully covering:
+		say "It fully covers [if the noun is worn]your[otherwise]the wearer's[end if] chest.";
+	otherwise if the noun is high cut:
+		say "Its high cut only exposes a bit of cleavage.";
+	otherwise if the noun is average cut:
+		say "Its average cut exposes a normal amount of cleavage.";
+	otherwise if the noun is low cut:
+		say "The low cut exposes a large amount of cleavage.";
+	otherwise if the noun is very low cut:
+		say "The deep cut exposes a very large amount of cleavage.";
+	otherwise if the noun is ridiculously low cut:
+		say "The extremely skimpy cut exposes essentially all of [if the noun is worn]your[otherwise]the wearer's[end if] chest.".
+
 To say selfexamineuniquetitle of (C - a clothing):
 	say "[ShortDesc of C]".
 
@@ -156,7 +175,7 @@ Report examining clothing:
 		[if the noun is sheer-when-wet, say "The [noun] is currently see-through because it is wet. ";]
 		if the noun is knickers or the noun is trousers or the noun is overdress or the noun is skirt or the noun is nipple covering, say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn][']ll still be exposing your naughty bits even when wearing it[otherwise]r naughty bits are still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
 		otherwise say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn]r skin will still be visible even when wearing it[otherwise]r skin is still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
-	otherwise if the noun is potentially pussy covering and the size of penis > the penis-capacity of the noun:
+	otherwise if the noun is potentially pussy covering and the size of penis > 0 and the noun is not potentially penis covering:
 		say "Your [ShortDesc of penis] is too large and [if the noun is worn and penis is at least partially exposed]pokes out beyond the fabric[otherwise]can't be concealed by it[end if].";
 	otherwise if the noun is skirted and there is worn knickers:
 		let K be a random worn knickers;
@@ -182,11 +201,11 @@ Report examining clothing:
 	[if the noun is worn and (the noun is knickers or the noun is bra or the noun is sex toy or the noun is chastity cage or the noun is condom of kings or the noun is corset):]
 	if the noun is worn:
 		if the noun is currently visible:
-			say "[CurrentlyVisibleFlav of the noun]";
+			say CurrentlyVisibleFlav of the noun;
 		otherwise if the noun is currently at least partially visible:
-			say "[CurrentlyPartiallyConcealedFlav of the noun]";
+			say CurrentlyPartiallyConcealedFlav of the noun;
 		otherwise:
-			say "[CurrentlyConcealedFlav of the noun]".
+			say CurrentlyConcealedFlav of the noun.
 
 Report examining protection clothing:
 	if the noun is identified, say "An aura of magic protection surrounds this item, helping protect [if the noun is worn]you[otherwise]the wearer[end if] from harm in combat.".
@@ -205,13 +224,15 @@ To say CurrentlyVisibleFlav of (C - a clothing):
 
 To say CurrentlyVisibleFlav of (K - a knickers):
 	let C be a random worn skirted clothing;
-	say "It is currently visible to anyone who looks at you[if C is a clothing] because your [C] fails to properly cover it[end if].".
+	say "It is currently visible to anyone who looks at you[if C is a clothing] because your [C] fails to properly cover it[end if].";
+	if debugmode > 0, say "[input-style]DQBulk of [ShortDesc of K]: [DQBulk of K][if C is clothing]; Skirt length of [ShortDesc of C]: [skirtLength of C]; Diaper hiding skirt length of [ShortDesc of C]: [diaperHidingLength of C][end if][roman type][line break]";
 
 To say CurrentlyVisibleFlav of (C - a sex toy):
 	say "It is currently visible to anyone who looks at you from the right angle.".
 
 To say CurrentlyPartiallyConcealedFlav of (C - a diaper):
-	say "The shape of it is clearly visible through your [ShortDesc of at least partial concealer of C].".
+	let CC be the at least partial concealer of C;
+	say "The shape of it is clearly visible through your [ShortDesc of CC].".
 
 To say CurrentlyVisibleFlav of (C - a diaper):
 	say "It is currently visible to anyone who looks at you.".
@@ -254,8 +275,7 @@ To say PlayerThoughts of (C - a clothing):
 			otherwise:
 				say "[variable custom style][if C is worn]Oh god I can't believe I'm wearing this, I feel so humiliated![otherwise]There's no way I would want to be seen dead in something so humiliating...[end if]";
 		otherwise if the outrage of C - 2 is too humiliating:
-			if C is equippable, say "[variable custom style][if C is worn]I really hate using this.[otherwise]I would really hate having to use this to fight with.[end if]";
-			otherwise say "[variable custom style][if C is worn]This is[otherwise]That would be[end if] really humiliating to wear...";
+			say "[variable custom style][MuchTooHumiliatingFlav of C]";
 		otherwise:
 			if C is equippable, say "[variable custom style][if C is worn]I would prefer it if I could find something a little less ridiculous to fight with.[otherwise]It would be quite embarrassing, but I'll use this if I really have to.[end if]";
 			otherwise say "[variable custom style][if C is worn]I feel a bit humiliated wearing this.[otherwise]I would feel a little humiliated wearing this.[end if]";
@@ -275,7 +295,10 @@ To say PlayerThoughts of (C - a clothing):
 			if C is equippable, say "[variable custom style][if C is too boring]I kind of wish this was a bit more exciting. Maybe if it was pinker, or had cocks drawn on it?[otherwise if the bimbo of the player < 7]I'm happy with this. Which is more than I can say for most of the things in this game.[otherwise]I just love this! It's perfect for me![end if][roman type][line break]";
 			otherwise say "[variable custom style][if C is too boring and C is actually dense and C is breast covering or C is belly covering or C is crotch covering][line break][second custom style][one of]Ugh, this is way too plain for me![or]*sigh* Isn't there any way to make it more revealing?[or]Only a prude would wear something this boring![purely at random][otherwise if C is too boring][second custom style][one of]Ugh, this is way too boring for me![or]*sigh* Isn't there any way to make it more lewd?[or]I would prefer something that lets everyone know just how slutty I am![purely at random][otherwise if the bimbo of the player < 7][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise if C is worn][one of]I love wearing this![or]I feel *AMAZING* wearing this![purely at random][otherwise][one of]Ooh, I'd be fine wearing this![or]I'll look [beautiful] in this![purely at random][end if][roman type][line break]".
 
-
+To say MuchTooHumiliatingFlav of (C - a clothing):
+	say "[if C is worn]This is[otherwise]That would be[end if] really humiliating to wear...".
+To say MuchTooHumiliatingFlav of (C - an equippable):
+	say "[if C is worn]I really hate using this.[otherwise]I would really hate having to use this to fight with.[end if]".
 
 
 

@@ -42,7 +42,7 @@ To decide which number is the initial outrage of (C - a sexy blue leotard):
 	decide on 5.
 
 To decide which number is the initial cringe of (C - a leotard):
-	decide on 6.
+	decide on 5.
 
 To decide which number is the heel-skill-influence of (O - a leotard):
 	let X be 2;
@@ -64,7 +64,7 @@ To compute periodic effect of (L - a leotard):
 		let H be a random off-stage ballet heels;
 		let S be a random off-stage plentiful ballet shoes;
 		if H is actually summonable and the raw heel skill of the player > 5:
-			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes!  Uh-oh...[otherwise].[end if][roman type][line break]";
+			say "[bold type]Your leotard glows powerfully, and extremely high heeled ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes! Uh-oh...[otherwise].[end if][roman type][line break]";
 			summon H cursed with quest;
 		otherwise if S is actually summonable:
 			say "[bold type]Your leotard glows softly, and ballet shoes appear on your feet[if the player is upright]. You feel yourself forced to stand on tip-toes![otherwise].[end if][roman type][line break]";

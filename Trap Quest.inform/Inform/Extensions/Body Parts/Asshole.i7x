@@ -38,8 +38,8 @@ Definition: asshole is undefended:
 Fully visible
 
 +!]
-Definition: asshole (called A) is exposed:
-	if the at least partial concealer of A is nothing, decide yes;
+Definition: asshole is exposed:
+	if the at least partial concealer of asshole is nothing, decide yes;
 	decide no.
 
 [!<AssholeIsAtLeastPartiallyExposed>+
@@ -48,8 +48,8 @@ At least a little bit visible
 
 +!]
 Definition: asshole is at least partially exposed:
-	if there is worn potentially asshole covering clothing, decide no;
-	decide yes.
+	if the concealer of asshole is nothing, decide yes;
+	decide no.
 
 [!<ClothingIsPotentiallyAssholeCovering>+
 
@@ -67,7 +67,7 @@ Does this at least partially block vision of asshole when worn?
 
 +!]
 Definition: a clothing (called C) is potentially at least partially asshole covering:
-	if C is total protection and C is not see-through, decide yes;
+	if (C is total protection or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;
 	if C is skirt-covering-crotch and C is not see-through, decide yes;
 	decide no.
 
@@ -213,8 +213,8 @@ To say TotalDesc of asshole:
 		if the soreness of asshole is 6, say "feels sore most of the way inside. ";
 		if the soreness of asshole is 7, say "feels sore, from the entrance to the deepest point inside you. ";
 		if the soreness of asshole is 8, say "feels completely ruined. ";
-		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire!  ";
-		if the soreness of asshole is 10, say "has been completely destroyed by fuckings, you feel like you're about to faint!!  ";
+		if the soreness of asshole is 9, say "has been ruined so hard, it feels like it's on fire! ";
+		if the soreness of asshole is 10, say "has been completely destroyed by fuckings, you feel like you're about to faint!! ";
 	otherwise:
 		say "feels numb. ";
 	if there is a lubricant covering asshole, say "It is dripping with slippery [lubricant]. ".
@@ -279,7 +279,7 @@ To gape (A - asshole) times (X - a number):
 			if the openness of asshole is 7:
 				say "[if the bimbo of the player < 8][line break][variable custom style][one of]Surely my [asshole] isn't permanently stretched this wide?! It'll close back up again soon, right?[or]Oh god, it's super stretched again![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] feels permanently stretched, but that can only be a good thing.[or]My [asshole] feels like it can take anything again![stopping][end if][roman type][line break]";
 			if the openness of asshole is 9:
-				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible?  My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
+				say "[if the bimbo of the player < 10][line break][variable custom style][one of]How it is even possible? My asshole is permanently stretched wider than my fist![or]I can't believe it is even possible to be gaped so wide![stopping][otherwise][line break][second custom style][line break][one of]My [asshole] is gaping wide, I'm so proud![or]I just love the feeling of having a permanently gaping wide [asshole]![stopping][end if][roman type][line break]";
 			increase the openness of asshole by 1;
 			now ruined is 2;
 	if the player is female and the openness of asshole > the openness of vagina + 5 and there is a worn tattoo and a random number between 1 and 10 is 1 and asshole-cupid tattoo is drawable:
@@ -293,7 +293,7 @@ To gape (A - asshole) times (X - a number):
 				PenisDown 1;
 				say "your penis [Shrink] into a [ShortDesc of penis]. ";
 			otherwise:
-				say "cursed!  "; [###Selkie: but this is a lie, right? There's actually no consequence?]
+				say "cursed! "; [###Selkie: but this is a lie, right? There's actually no consequence?]
 			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...[roman type][line break]";
 		otherwise:[i thought it was weird you would sometimes not a message like this on losing your anal virginity first, so I wrote this to clarify things.]
 			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it. [line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";

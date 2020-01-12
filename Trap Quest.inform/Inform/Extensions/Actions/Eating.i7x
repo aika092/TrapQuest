@@ -61,7 +61,7 @@ Check TQeating something:
 	unless the noun is TQedible, say "That is definitely inedible." instead.
 
 
-Understand "swallow [something]", "consume [something]", "bite [something]", "unwrap [something]", "mm [something]", "mmm [something]", "yum [something]" as TQeating.
+Understand "swallow [something]", "consume [something]", "bite [something]", "unwrap [something]" , "mm [something]", "mmm [something]", "yum [something]" as TQeating.
 
 [!<YourselfIsAbleToEat>+
 

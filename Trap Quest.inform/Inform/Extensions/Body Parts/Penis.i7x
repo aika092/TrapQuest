@@ -102,7 +102,7 @@ REQUIRES COMMENTING
 +!]
 Definition: penis is exposed:
 	if the player is not possessing a penis, decide no;
-	if there is a worn actually at least partially penis covering clothing, decide no;
+	if the at least partial concealer of penis is a thing, decide no;
 	decide yes.
 
 [!<PenisIsAtLeastPartiallyExposed>+
@@ -112,29 +112,8 @@ REQUIRES COMMENTING
 +!]
 Definition: penis is at least partially exposed:
 	if the player is not possessing a penis, decide no;
-	if there is a worn actually penis covering clothing, decide no;
+	if the concealer of penis is a thing, decide no;
 	decide yes.
-
-[!<PenisIsSexAvailable>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: penis is sex available:
-	if there is a worn restricting research airhancer, decide no;
-	if there is a worn chastity cage, decide no;
-	if there is a worn condom of kings, decide no;
-	decide yes.
-
-[!<PenisIsSexVulnerable>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: penis is sex vulnerable:
-	if there is a worn potentially penis covering clothing, decide no;
-	if penis is sex available, decide yes;
-	decide no.
 
 [!<ClothingIsPotentiallyPenisCovering>+
 
@@ -143,12 +122,12 @@ REQUIRES COMMENTING
 +!]
 Definition: a clothing (called C) is potentially penis covering:[does not check if penis is visible, only if it is covered by something.]
 	if C is potentially pussy covering clothing:
-		if there is a worn chastity cage:
-			if the size of penis > 3 and the penis-capacity of C >= 3, decide yes;[when you're in chastity, certain clothing can still cover a penis that otherwise wouldn't fit]
+		if penis is not penis-erect:[when your penis is soft, certain clothing will still cover a penis that wouldn't fit when hard]
+			if the size of penis > 3 and the penis-capacity of C >= 3, decide yes;
 		if the size of penis <= the penis-capacity of C, decide yes;
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
-		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
+		if C is not super-short and C is not short, decide yes;[long skirts protect against exposure]
 		if the player is upright and C is not super-short and the size of penis < 4, decide yes; [short skirts protect against exposure as long as you're standing and have a small penis]
 	decide no.
 
@@ -188,6 +167,26 @@ Definition: a clothing (called C) is actually at least partially penis covering:
 	if C is not see-through, decide yes;
 	decide no.
 
+[Highest level penis concealer]
+To decide which object is the concealer of (P - penis):
+	repeat with C running through worn actually penis covering clothing:
+		let this-one be 1;
+		repeat with D running through actually penis covering clothing:
+			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
+		if this-one is 1, decide on C;
+	decide on nothing.
+
+[Highest level penis partial concealer]
+To decide which object is the at least partial concealer of (P - penis):
+	repeat with C running through worn actually at least partially penis covering clothing:
+		let this-one be 1;
+		repeat with D running through worn actually at least partially penis covering clothing:
+			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
+		if this-one is 1, decide on C;
+	decide on nothing.
+
+
+
 [!<DecideWhichNumberIsMinPenisSize>+
 
 REQUIRES COMMENTING
@@ -205,6 +204,130 @@ REQUIRES COMMENTING
 Definition: yourself is possessing a penis:
 	if the player is sexed male and the player is possessing a penis, decide yes;
 	decide no.
+
+Section 2 - Erections
+
+penis has a number called penis-obedience. The penis-obedience of penis is 1.
+
+To PenisObedienceUp (X - a number):
+	while X > 0:
+		if the penis-obedience of penis is 10:
+			now X is 0;
+		otherwise:
+			increase the penis-obedience of penis by 1;
+			if X is 1:[i.e. this is the final change]
+				if the penis-obedience of penis < 4:[player questions what its like to be on top]
+					say "[first custom style][one of]I guess sex can still feel good if you're not in control. Its not like its required or anything.[or]Normally, I like to do the fucking, so just laying back for a change is pretty refreshing.[or]I don't really need to be on top ALL the time. Its fine to let someone else have a turn.[in random order][roman type][line break]";
+				otherwise if the penis-obedience of penis < 7:[player decides they prefer not to be doing the fucking]
+					say "[variable custom style][one of]If you think about it, my penis isn't really for my pleasure anyway.[or]Honestly, being on top is kind of overrated.[or]I don't mind not being on top. After all, I'm lucky I get to have sex at all.[in random order][roman type][line break]";
+				otherwise if the penis-obedience of penis < 10:[orgasms are overrated.]
+					say "[variable custom style][one of]I go soft after just one orgasm, so why even have one? After all, my only job is to stay hard for my partner.[or]Ejaculating is just a bonus. The important thing is if your penis can make someone *else* cum.[or]I've always thought [semen] made a huge mess. Its so much more convenient if I don't cum at all.[in random order][roman type][line break]";
+				otherwise:[10(max)]
+					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realized was that it's meant to be used by someone else.[in random order][roman type][line break]";
+		decrease X by 1.
+
+
+[Whenever an npc abuses your penises, it has a chance of increasing your 'obedience' value.
+
+Normally, your penis has a chance of getting erect when you're aroused, depending on sex addiction and how recent your last orgasm was.
+Additionally, you can get erect on command. This is also easier or harder depending on sex addiction and your most recent orgasm.
+
+Your obedience level will inhibit you from getting erect randomly, and make it harder to get erections on command.
+Instead, you will only be able to get erect when monsters tell you to get erect.
+]
+
+penis can be penis-erect or not penis-erect. penis is not penis-erect.
+
+[Some things prevent the player from getting erections]
+Definition: penis is able to get erect:
+	if the size of penis is 0, decide no;
+	if penis is penis-erect, decide yes;
+	if there is a worn chastity cage, decide no;
+	if there is a worn restricting research airhancer, decide no;
+	if refactoryperiod > 0, decide no;[except in special circumstances, you can't get hard immediately after an orgasm]
+	decide yes.
+
+[There is a chance the player will want to get erect, but won't be able to manage. This is a little humiliating, but they should usually be able to try again.]
+Definition: penis is erect-at-will:
+	if penis is not able to get erect, decide no;
+	if the player is extremely horny, decide yes;
+	let A be 1;
+	if the player is a bit horny, increase A by 1;[You get erect easier if you are horny]
+	if the player is horny, increase A by 1;
+	if the player is very horny, increase A by 1;
+	increase A by the size of penis;[if you're bigger, its easier to get erect]
+	let D be 0;
+	if the wanktime of the player > 0, decrease D by the wanktime of the player / 5;[if you came recently, its harder to get an erection]
+	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
+	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
+	let R be a random number between A and D;
+	if R < -1, decide no;
+	decide yes.
+
+[NPCs can demand the player get an erection (usually for sex). Sometimes the player won't be able to get hard at all, which is a little humiliating, and may earn a different sort of punishment]
+Definition: penis is erect-on-request:
+	if penis is not able to get erect, decide no;
+	if the player is extremely horny, decide yes;
+	if the penis-obedience of penis is 10, decide yes;
+	let A be 1;
+	if the player is horny, increase A by 1;
+	if the player is very horny, increase A by 1;
+	increase A by the size of penis;
+	increase A by the penis-obedience of penis - 1;[now that the player is being asked to get hard, obedience contributes rather than hinders]
+	let D be 0;
+	if the wanktime of the player > 0, decrease D by the wanktime of the player / 5;
+	decrease D by the anal sex addiction of the player / 2;
+	let R be a random number between A and D;
+	if R < -1, decide no;
+	decide yes.
+
+[Whenever the player gains arousal for the turn, they have a chance of getting an erection]
+To compute sudden erection chance (X - a number):
+	if penis is penis-erect or penis is not able to get erect or the penis-obedience of penis is 10:
+		do nothing;
+	otherwise:
+		let M be 1;
+		if the player is a bit horny, increase M by 1;
+		if the player is horny, increase M by 1;
+		if the player is very horny, increase M by 1;
+		decrease M by the anal sex addiction of the player / 3;
+		decrease M by (the penis-obedience of penis - 1) / 3;
+		if the wanktime of the player > 0, decrease M by the wanktime of the player / 5;
+		let A be (X / 100) * M;
+		if a random number between 1 and A > 150 or the player is extremely horny or X > 1000:
+			let K be a random worn potentially penis covering knickers;
+			let S be a random worn potentially penis covering skirted clothing;
+			now penis is penis-erect;
+			say "[line break]";
+			if K is clothing and K is not potentially penis covering:[meaning, something changed when the player got hard]
+				say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, pushing up and out of the waist of your [ShortDesc of K].[line break]";
+			otherwise if S is clothing and S is potentially penis covering:
+				if S is not potentially penis covering:
+					say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very obvious erection, poking out from underneath your skirt.";
+				otherwise if K is clothing:
+					say "Your feel your [ShortDesc of penis] [one of]hardening[or]stiffening[or]growing[at random] into an erection, but thanks to your [ShortDesc of K], it remains concealed under your skirt.";
+				otherwise:
+					if the size of penis > 3:
+						say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which forms a very obvious tent under your skirt.";
+					otherwise:
+						say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which is thankfully not very obvious thanks to your skirt.";
+			otherwise:
+				if K is clothing:
+					if the size of penis > 3:
+						say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which forms a very obvious tent in your [ShortDesc of K].";
+					otherwise:
+						say "[line break]You feel your [ShortDesc of penis] [one of]hardening[or]stiffening[or]growing[at random] into an erection, which is thankfully not obvious thanks to your [ShortDesc of K].";
+				otherwise if the size of penis > 3:
+					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very obvious erection.";
+				otherwise:
+					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very embarassing, albiet subtle, erection.".
+
+[Whenever the player cools off from arousal, they will lose their erection]
+To compute erection decay:
+	if condom of kings is worn and condom of kings is uncursed, do nothing;
+	if ghost-strapon is worn and the size of penis < the strap-length of ghost-strapon, do nothing;
+	say "[line break]Your [ShortDesc of penis] softens.[line break]";
+	now penis is not penis-erect.
 
 Part 2 - Description
 
@@ -320,10 +443,11 @@ To say TotalDesc of penis:
 		if there is worn chastity cage:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is pussy covering clothing:
-			say "You have a [ShortDesc of penis] and [ShortBallsDesc]. ";
+			say "You have a[if penis is penis-erect]n erect[end if] [ShortDesc of penis] and [ShortBallsDesc]. ";
 		otherwise:
-			say "Your [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
-	otherwise if the player is sexed male:
+			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of penis > 5]sway freely[otherwise if the size of penis > 3]hang freely[otherwise]are barely noticeable[end if]. ";
+			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
+	otherwise if the player is male:
 		say "A doll-like flat mound exists where your penis used to be. [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
 
 [!<SayShortBallsDesc>+

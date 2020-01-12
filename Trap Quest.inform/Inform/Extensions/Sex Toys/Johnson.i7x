@@ -2,7 +2,7 @@ Johnson by Sex Toys begins here.
 
 [GENERIC DILDO]
 
-A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColor of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson. [Understand "blue" as describing a johnson if it is blue themed. Understand "green" as describing a johnson if it is green themed. Understand "white" as describing a johnson if it is white themed. Understand "red" as describing a johnson if it is red themed. Understand "flesh", "coloured" as describing a johnson if it is blandness.]
+A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColor of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson.
 
 Definition: a johnson is penis themed: decide yes.
 Definition: a johnson is blue themed if it is refreshment.

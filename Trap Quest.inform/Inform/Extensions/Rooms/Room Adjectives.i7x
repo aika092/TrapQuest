@@ -162,6 +162,11 @@ A room can be bossed or unbossed. A room is usually unbossed.
 
 Definition: A room is furnished rather than unfurnished if there is furniture in it.
 
+[This adds to movement hindrance]
+To decide which number is the obstacle-hindrance of (R - a room):
+	decide on 0.
+To decide which text is ObstacledDesc of (R - a room):
+	decide on "Moving across the [location of the player] delays you slightly.".
 
 Room Adjectives ends here.
 

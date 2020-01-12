@@ -15,10 +15,10 @@ To say big royal-subject of (M - a robot):
 
 
 To compute (S - a spike bra) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]!  It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
 
 To compute (S - a striped top) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]!  It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
 
 To compute kneeling reaction of (M - a robot):
 	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
@@ -150,7 +150,7 @@ To say UnfriendlyFoodLewdFlav of (M - a robot):
 	say "[UnfriendlyFoodRefuseFlav of M]".
 
 To say EnemaPlugDeclarationFlav of (M - a robot):
-	say "[speech style of M]'DING DING DING!  BONUS PUNISHMENT FOUND ACTIVATED.'[roman type][line break]".
+	say "[speech style of M]'DING DING DING! BONUS PUNISHMENT FOUND ACTIVATED.'[roman type][line break]".
 
 To say EnemaPlugAfterFlav of (M - a robot):
 	say "[speech style of M]'BONUS ROUTINE SUCCESSFUL. VOLUNTARY ENEMA EXPULSION NO LONGER POSSIBLE. INVOLUNTARY POTTY EPISODE INEVITABLE.'[roman type][line break]".
@@ -187,7 +187,7 @@ To say CringeDisapprovalFlav of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn orange.[line break][speech style of M]'PROCESSING WITH BABPARSER v[one of]1[or]2[or]3[or]4[or]5[stopping].0... SUBJECT APPEARS TO BE [one of]REQUESTING BABIFICATION[or]COMMUNICATING A DESIRE FOR ADULT BABY PLAY[or]ENGAGING IN ABDL KINK ACTIVITIES[in random order].'[roman type][line break]".
 
 To say GluePullAnnounceFlav of (M - a robot):
-	say "[speech style of M]'SUBJECT APPEARS IN NEED OF ASSISTANCE. ALLEIGANCE LEVEL... ACCEPTABLE. RESCUE ATTEMPT ROUTINE LOADING...'[roman type][line break]".
+	say "[speech style of M]'SUBJECT APPEARS IN NEED OF ASSISTANCE. ALLEGIANCE LEVEL... ACCEPTABLE. RESCUE ATTEMPT ROUTINE LOADING...'[roman type][line break]".
 
 Part - DQ
 
@@ -232,7 +232,7 @@ Section 1 Damage
 To compute damage of (M - a robot):
 	if the health of M > 0:
 		if M is uninterested or M is friendly:
-			say "Its eyes turn red!  Uh-oh...";
+			say "Its eyes turn red! Uh-oh...";
 			now M is interested;
 			now M is unleashed;
 			anger M;

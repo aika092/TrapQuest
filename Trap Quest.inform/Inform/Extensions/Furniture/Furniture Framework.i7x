@@ -152,7 +152,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 4, then calls UniqueFurnitu
 
 +!]
 To compute fatigue refresh of (F - a furniture):
-	say RestingDesc of F;
+	say  RestingDesc of F;
 	allocate 4 seconds;
 	compute unique fatigue effect of F;
 	compute normal effect of F.
@@ -175,7 +175,7 @@ Calls sayFurnitureRestingDesc, increments seconds by 6, calls UniqueFurnitureSor
 
 +!]
 To compute soreness refresh of (F - a furniture):
-	say RestingDesc of F;
+	say  RestingDesc of F;
 	allocate 6 seconds;
 	if debuginfo > 0, say "[input-style]Body damage [body soreness of the player] -> ";
 	compute unique soreness effect of F;

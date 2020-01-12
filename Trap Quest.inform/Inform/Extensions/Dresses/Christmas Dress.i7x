@@ -9,7 +9,7 @@ To decide which number is the initial outrage of (C - a christmas dress):
 	decide on 5.
 
 To decide which number is the initial cringe of (C - a christmas dress):
-	decide on 10.
+	decide on 8.
 
 Definition: a christmas dress is fetish appropriate if diaper lover > 0.
 Definition: a christmas dress is sissifying if diaper lover > 0.
@@ -97,7 +97,7 @@ To decide which number is the initial outrage of (C - a christmas tree dress):
 	decide on 9.
 
 To decide which number is the initial cringe of (C - a christmas tree dress):
-	decide on 14.
+	decide on 11.
 
 Definition: a christmas tree dress is food themed: decide yes.
 Definition: a christmas tree dress is bow themed: decide yes.
@@ -151,6 +151,116 @@ To decide which number is the initial cringe of (C - a gingerbread house dress):
 
 Definition: a gingerbread house dress is pink themed: decide yes.
 Definition: a gingerbread house dress is food themed: decide yes.
+
+
+Part 7 - Naughty or Nice Outfit
+
+naughty-or-nice outfit is a christmas dress. naughty-or-nice outfit can be naughtified. The printed name of naughty-or-nice outfit is "[clothing-title-before][if item described is naughtified]naughty[otherwise]nice[end if] baby christmas outfit[clothing-title-after]". The text-shortcut of naughty-or-nice outfit is "nbco". Understand "baby", "christmas" as naughty-or-nice outfit. Understand "nice" as naughty-or-nice outfit when item described is not naughtified. Understand "naughty" as naughty-or-nice outfit when item described is naughtified.
+
+naughty-or-nice outfit is arm exposing. naughty-or-nice outfit is very low cut. naughty-or-nice outfit is unskirted. naughty-or-nice outfit is crotch-intact.
+
+Figure of nice dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress7a.png".
+Figure of naughty dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress7b.png".
+
+To decide which figure-name is clothing-image of (C - naughty-or-nice outfit):
+	if C is naughtified, decide on figure of naughty dress;
+	decide on figure of nice dress.
+
+To say ClothingDesc of (C - naughty-or-nice outfit):
+	say "A green and red onesie with an upper half fashioned like an apron, with a motif of a baby's face on the front. The baby is [if C is naughtified]pacified and frowning. It has the word 'naughty' above it[otherwise]happy and smiling. It has the word 'nice' above it[end if].".
+
+To say ShortDesc of (C - naughty-or-nice outfit):
+	say "[if C is naughtified]naughty[otherwise]nice[end if] christmas outfit".
+
+To decide which number is the initial outrage of (C - naughty-or-nice outfit):
+	decide on 5.
+
+To decide which number is the initial cringe of (C - naughty-or-nice outfit):
+	if C is naughtified, decide on 8;
+	decide on 6.
+
+Definition: naughty-or-nice outfit is green themed: decide yes.
+Definition: naughty-or-nice outfit is baby themed: decide yes.
+Definition: naughty-or-nice outfit is bow themed: decide yes.
+Definition: naughty-or-nice outfit is transformation-protected: decide yes.
+Definition: naughty-or-nice outfit is displacable: decide no.
+
+
+
+
+Part 8 - Golden Present Outfit
+
+present outfit is a christmas dress. present outfit is latex. The printed name of present outfit is "[clothing-title-before]golden present outfit[clothing-title-after]". The text-shortcut of present outfit is "gpro". Understand "golden" as present outfit.
+
+present outfit is arm exposing. present outfit is average cut. present outfit is neck covering. present outfit is unskirted. present outfit is crotch-intact.
+
+Figure of present outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress8.png".
+
+To decide which figure-name is clothing-image of (C - present outfit):
+	decide on figure of present outfit.
+
+To say ClothingDesc of (C - present outfit):
+	say "A golden latex leotard with a slightly revealing neckline and a big red ribbon going all the way around it and tied in a bow, to make you look like a wrapped present.".
+
+To say ShortDesc of (C - present outfit):
+	say "present outfit".
+
+To say ShortDesc of (C - present outfit):
+	say "golden christmas present outfit".
+
+To decide which number is the initial outrage of (C - present outfit):
+	decide on 3.
+
+Definition: present outfit is yellow themed: decide yes.
+Definition: present outfit is bow themed: decide yes.
+Definition: present outfit is transformation-protected: decide no.
+Definition: present outfit is displacable: decide yes.
+To decide which object is the unique-upgrade-target of (C - present outfit):
+	decide on christmas strap monokini.
+
+
+
+Part 9 - Candy Cane Outfit
+
+candy cane outfit is a christmas dress. candy cane outfit is latex. The printed name of candy cane outfit is "[clothing-title-before]slutty candy cane outfit[if item described is skirted] (ripped)[end if][clothing-title-after]". The text-shortcut of candy cane outfit is "scco". Understand "slutty" as candy cane outfit.
+
+candy cane outfit is arm exposing. candy cane outfit is low cut. candy cane outfit is unskirted. candy cane outfit is crotch-intact.
+
+Figure of candy cane outfit is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress9.png".
+
+To decide which figure-name is clothing-image of (C - candy cane outfit):
+	decide on figure of candy cane outfit.
+
+To say ClothingDesc of (C - candy cane outfit):
+	say "Two tiny red straps going down your front and meeting at the crotch connect a skimpy white bra and skimpy white microskirt[if C is skirted]. It has been ripped at the crotch[end if].".
+
+To say ShortDesc of (C - candy cane outfit):
+	say "candy cane outfit".
+
+To say ShortDesc of (C - candy cane outfit):
+	say "slutty candy cane outfit".
+
+To decide which number is the initial outrage of (C - candy cane outfit):
+	decide on 7.
+
+Definition: candy cane outfit is white themed: decide yes.
+Definition: candy cane outfit is red themed: decide yes.
+Definition: candy cane outfit is transformation-protected: decide no.
+Definition: candy cane outfit is displacable: decide yes.
+To decide which object is the unique-upgrade-target of (C - candy cane outfit):
+	decide on christmas strap monokini.
+
+To compute periodic effect of (C - candy cane outfit):
+	if C is crotch-ripped:
+		now C is no-crotch;
+		now C is short;
+		update appearance level.
+To construct unique icons for (T - candy cane outfit):
+	if T is skirted, add Figure of TornIcon to the list of icons.
+
+
+
+
 
 Christmas Dress ends here.
 

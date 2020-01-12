@@ -71,7 +71,7 @@ To decide which number is total puddle:
 	increase X by the semen-puddle of the location of the player;
 	decide on X.
 
-Carry out mopping pink spraybottle:[TODO: breasts largeness 10+ will touch the ground and become soaked.]
+Carry out mopping pink spraybottle:[TODO:  breasts largeness 10+ will touch the ground and become soaked.]
 	allocate 6 seconds;
 	let D be 0;
 	let E be a random number between 2 and 3;

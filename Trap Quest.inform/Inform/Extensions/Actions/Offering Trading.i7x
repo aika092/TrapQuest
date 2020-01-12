@@ -99,6 +99,7 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterTakeFlav of M to T;
 		now T is in Holding Pen;
 		now M is retaining T;
+		now M is withholding T;
 		compute resolution of M taking T;
 	otherwise:
 		if M is not rejecting T, make M expectant; [The player can keep offering things they haven't offered yet without the NPC immediately moving to punishment.]
@@ -106,7 +107,7 @@ To compute (M - a monster) considering (T - a thing):
 		say MonsterOfferRejectFlav of M to T.
 
 To say MonsterOfferRejectFlav of (M - a monster) to (T - a thing):
-	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if]  [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	if M is intelligent, say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if] [line break][speech style of M]'[if convincing power > 0 and M is unfriendly]You're not going to get let off that easy.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] completely ignores the [T].".
 
 To say MonsterCriminalOfferRejectFlav of (M - a monster) to (T - a thing):
@@ -115,7 +116,7 @@ To say MonsterCriminalOfferRejectFlav of (M - a monster) to (T - a thing):
 To say MonsterOfferAcceptFlav of (M - a monster) to (T - a thing):
 	if M is intelligent:
 		if M is unfriendly:
-			say "[BigNameDesc of M] smiles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really? Thanks a lot! Maybe I've made a mistake judging you.  You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that.  Thanks a bunch.  We're cool now.'[otherwise]Fair enough, have it your way.  I'll leave you alone... this time.'[end if][roman type][line break]";
+			say "[BigNameDesc of M] smiles. [line break][speech style of M]'[if the bartering value of T for M + the favour of M > the aggro limit of M + 4]Wow, really? Thanks a lot! Maybe I've made a mistake judging you. You're alright.'[otherwise if the bartering value of T for M + the favour of M > the aggro limit of M]Heh, I can't turn down an offer like that. Thanks a bunch. We're cool now.'[otherwise]Fair enough, have it your way. I'll leave you alone... this time.'[end if][roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] seems elated. [line break][speech style of M]'Wow, thank you so much! How generous of you.'[roman type][line break]";
 	otherwise:

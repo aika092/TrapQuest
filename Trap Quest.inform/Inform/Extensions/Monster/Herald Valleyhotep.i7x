@@ -42,6 +42,8 @@ To say speech style of (M - herald):
 
 Part 1 - Perception
 
+Definition: herald is scarable: decide no.
+
 To compute perception of (M - herald):
 	now M is interested;
 	if the player-class is cultist:

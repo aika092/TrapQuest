@@ -105,7 +105,7 @@ To decide which figure-name is clothing-image of (C - purple-giant-diaper):
 To say selfexamineuniquetitle of (K - purple-giant-diaper):
 	say "giant purple polka dot diaper".
 To say ClothingDesc of (C - purple-giant-diaper):
-	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding anda polka dot pattern. It has three rows of girly frills at the back.".
+	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding and a polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
 
 
@@ -165,21 +165,21 @@ To decide which number is the weight of (C - a waddle diaper):
 	decide on 5.
 
 To say CurseCurseFlav of (D - a waddle diaper):
-	if D is worn and D is bland, say "Your [ShortDesc of D] expands and expands, pushing your thighs even further apart!  The stupidly thick padding in between your legs is now so thick that it sags far below your knees!".
+	if D is worn and D is bland, say "Your [ShortDesc of D] expands and expands, pushing your thighs even further apart! The stupidly thick padding in between your legs is now so thick that it sags far below your knees!".
 
 To say CurseBlandFlav of (D - a waddle diaper):
-	if D is worn, say "Your [ShortDesc of D] expands a bit, pushing your thighs further apart!  The very thick padding in between your legs is now so thick that it sags down to your knees!".
+	if D is worn, say "Your [ShortDesc of D] expands a bit, pushing your thighs further apart! The very thick padding in between your legs is now so thick that it sags down to your knees!".
 
 To say BlessBlessFlav of (D - a waddle diaper):
-	if D is worn, say "Your [ShortDesc of D] shrinks a little, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches down to your knees.".
+	if D is worn, say "Your [ShortDesc of D] shrinks a little, allowing you to close the gap between your thighs a bit more! The thick padding in between your legs no longer quite reaches down to your knees.".
 
 To say BlessBlandFlav of (D - a waddle diaper):
-	if D is worn, say "Your [ShortDesc of D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more!  The thick padding in between your legs no longer quite reaches below your knees.".
+	if D is worn, say "Your [ShortDesc of D] shrinks a noticeably, allowing you to close the gap between your thighs a bit more! The thick padding in between your legs no longer quite reaches below your knees.".
 
 To compute unique periodic effect of (D - a waddle diaper):
 	if the total-soak of D > the soak-limit of D / 2 or D is messed:
 		if D is perceived wet or D is perceived messed:
-			say "[bold type]You feel the padding of your [ShortDesc of D] suddenly becoming dry[one of][or] again[stopping]![roman type]  ";
+			say "[bold type]You feel the padding of your [ShortDesc of D] suddenly becoming dry[one of][or] again[stopping]![roman type] ";
 			if D is cursed:
 				if there is a worn heels:
 					if the raw heel skill of the player < 10:
@@ -204,7 +204,7 @@ To say MediumDesc of (C - a waddle diaper):
 	say "humongous [selfexamineuniquetitle of C]".
 To say ClothingDesc of (C - a waddle diaper):
 	say "This unique giant PVC [selfexamineuniquetitle of C] has several massive frills on the behind. It has a huge amount of extra material at the crotch, so this heavy rubber forces your thighs apart even when the diaper is completely unused! ";
-	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it!  There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
+	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it! There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
 
 
 pink-waddle-diaper is a waddle diaper. The text-shortcut of pink-waddle-diaper is "pwd". Understand "pink" as pink-waddle-diaper.

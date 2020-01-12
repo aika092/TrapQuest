@@ -185,7 +185,7 @@ The number of times we cycle through maximum-birth-delay turns, i.e. the longer 
 +!]
 To decide which number is slow birth rate:
 	let S be slow birth + 1;
-	decide on S * S * 4. [can balance this later if needed]
+	decide on S * 2. [can balance this later if needed]
 
 [!<maximumPregnancyDelayTracker:Integer>*
 
@@ -252,7 +252,7 @@ To compute pregnancy:
 						say "You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].";
 						cutshow figure of giant pregnancy for belly;
 			otherwise:
-				compute pregnancy annoyance;
+				if the remainder after dividing the womb volume of vagina by 5 is 0, compute pregnancy annoyance;
 	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
@@ -347,13 +347,13 @@ To compute infernal birth:
 	let M be a random imp;
 	let I be the number of off-stage imps;
 	if I is 0:
-		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know its probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know it's probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
 		DelicateUp 1;
 	otherwise:
 		let X be a random number between 1 and I;
 		if X > 3, now X is 3;
 		compute pregnancy clothing displacement;
-		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expression on [his of M][otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although it's difficult to look past [his of M] nasty, lecherous expression[otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
 		StrengthUp 1;
 		DexUp 1;
 		DelicateUp 2;
@@ -462,7 +462,7 @@ To compute pregnancy annoyance:
 	otherwise if the womb volume of vagina > 15:
 		say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb, but your magically protected womb prevents you from suffering any negative effects.";
 	otherwise:
-		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".
+		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".[####Selkie: Just wondering if these various sometimes-empty 'say-expressions' might be the source of the large spands of blank lines that sometimes appear during play?]
 
 Pregnancy ends here.
 

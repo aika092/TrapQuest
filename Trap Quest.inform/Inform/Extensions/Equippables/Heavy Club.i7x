@@ -39,13 +39,17 @@ To decide which number is the damage improvement of (W - heavy-club):
 
 To compute periodic effect of (G - heavy-club):
 	let S be the body soreness of the player;
-	if the player is an april 2019 top donator:
+	if the player is not an april 2019 top donator:
 		do nothing;
+	otherwise if rugged-headband is not worn:
+		say "[bold type]You aren't strong enough to carry the [printed name of G]! It falls out of your hands with a resounding thud.[roman type][line break]";
+		now the charge-status of G is 0;
+		now G is in the location of the player;
 	otherwise if the player is horny:
 		if the charge-status of G > -1, say "[bold type]Your [printed name of G] softens up as you get turned on.[roman type]";
 		now the charge-status of G is -1;
 	otherwise if S < 3:
-		if the charge-status of G is -1, say "[bold type]Your [printed name of G] hardens up again[roman type]";
+		if the charge-status of G is -1, say "[bold type]Your [printed name of G] hardens up again.[roman type]";
 		if the charge-status of G > 0, say "[bold type]Your [printed name of G] loses its glow[roman type]";
 		now the charge-status of G is 0;
 	otherwise if S < 6:

@@ -13,7 +13,7 @@ Carry out TQeating pack of crisps:
 	StrengthUp 1.
 
 Report TQeating pack of crisps:
-	say "Opening the packet, you [if the fat-weight of the player > 20]greedily shove mouthfuls of crisps into your mouth and they are quickly gone. [otherwise]eat the crisps one at a time until they are all gone. [end if]You feel stronger!  You discard the empty wrapper.".
+	say "Opening the packet, you [if the fat-weight of the player > 20]greedily shove mouthfuls of crisps into your mouth and they are quickly gone. [otherwise]eat the crisps one at a time until they are all gone. [end if]You feel stronger! You discard the empty wrapper.".
 
 To compute (M - a robochef) cooking (I - a pack of crisps):
 	let D be a random off-stage stuffed mushroom;

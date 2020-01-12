@@ -79,7 +79,8 @@ To finally arouse (X - a number):
 		if debuginfo > 0, say "[input-style][if debuginfo > 1]Total arousal gain for the turn[otherwise]Arousal:[end if] [arousal of the player] + [X] = ";
 		increase the arousal of the player by X;
 		if debuginfo > 0, say "[arousal of the player].[roman type][line break]";
-		now the delayed arousal of the player is 0.
+		now the delayed arousal of the player is 0;
+		if penis is not penis-erect and penis is able to get erect, compute sudden erection chance X.
 
 [!<DecideIfThePlayerIsAbleToCoolDown>+
 
@@ -223,11 +224,13 @@ REQUIRES COMMENTING
 +!]
 To check for arousal change:
 	[This is us checking if the level of arousal has changed since last turn.]
+	let old-pheromonal be 0;
+	if the player is pheromonal, now old-pheromonal is 1;
 	finally arouse;
 	let P be previous-horny;
 	decrease aroused-turns by 1;
 	update arousal;
-	if P < previous-horny:
+	if P < previous-horny:[TODO: notify player of pheromone activation]
 		if previous-horny is 1:
 			say "[bold type][one of]You are starting to feel a little bit aroused,[or]You feel your arousal slowly start to build once again,[stopping] and you can feel your blood pumping through your body that little bit faster. [one of]You actually feel a bit more energetic than before! [line break][variable custom style]Interesting... the game is rewarding me for being horny?[or]Once again, your dexterity is slightly improved until you orgasm.[stopping][roman type][line break]";
 		if previous-horny is 2:
@@ -239,14 +242,20 @@ To check for arousal change:
 		if previous-horny is 3:
 			say "[bold type]You now feel desperately horny. You are having an even harder time thinking about anything non-sexual[if the bimbo of the player > 8][one of] [second custom style](Tee-hee, hard)[bold type][or][stopping][end if][run paragraph on] - [if diaper quest is 1]your intelligence is significantly reduced until you orgasm or cool off.[otherwise if there is an unfriendly monster penetrating a fuckhole and the player is feeling dominant][run paragraph on]you might struggle to bring yourself to properly resist now.[otherwise if the delicateness of the player < 12][run paragraph on]it's going to be a lot more difficult to say no to the advances of others now![otherwise][run paragraph on]once there's a [manly-penis] inside you, there's no way you're going to be anything but a willing fuckhole until you get off.[end if][roman type][line break]";
 		if previous-horny is 4:
-			say "[bold type][one of]You didn't even realise it was possible to be so aroused. Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumped mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
+			say "[bold type][one of]You didn't even realise it was possible to be so aroused. Your entire crotch burns with desire, your breathing is heavy and your thoughts are [if the intelligence of the player < 6]a jumbled mess[otherwise]all over the place[end if][or]Once again you find yourself extremely horny, more than you ever realised was possible before entering this virtual world[or]You are extremely horny once again[stopping].[roman type][line break]";
 		if the class of the player is symbiote, say "[bold type][one of]Thanks to the symbiotic nature of your relationship with your tongued clothing, you feel your strength increase as well.[or]Once again, your symbiotic tongues also help increase your strength as you become more aroused.[stopping][roman type][line break]";
-		now aroused-turns is 20; [When the game announces that the player becomes aroused, they can't cool down and stop being horny for 20 turns.]
-	if P > previous-horny:
+		if the player is pheromonal and old-pheromonal is 0:
+			let H be a random worn headgear;
+			say "[bold type]A wave of heat blossoms out from your [ShortDesc of H], overwhelming your body with a primitive urge [if pregnancy fetish is 1 and the player is female]to be bred by a superior male[otherwise]to find and satisfy a superior male[end if].[roman type][line break]";
+		now aroused-turns is 20;[When the game announces that the player becomes aroused, they can't cool down and stop being horny for 20 turns.]
+	if P > previous-horny and the number of worn steel collar is 0:
 		if the player is grossed out:
 			say "[bold type]You quickly lose all arousal since you are too grossed out.[roman type][line break]";
 		otherwise if refactoryperiod <= 0:
 			say "[bold type]Over time, you have cooled off and are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
+		if the player is not pheromonal and old-pheromonal is 1:
+			say "[bold type]Your primitive urges seem to fade.[roman type][line break]";
+		if penis is penis-erect, compute erection decay;
 	if diaper quest is 0:
 		now previous-oral-sex-addiction is the calculated oral sex addiction of the player;
 		now previous-anal-sex-addiction is the calculated anal sex addiction of the player;
@@ -258,6 +267,18 @@ To check for arousal change:
 	now previous-sex-addiction is the calculated sex addiction of the player.
 
 Part 3 - Check Values
+
+[You have an animal class, and you will find it difficult to resist 'musky' opponents. Also, beastly monsters are less likely to stop chasing you when you leave the room.]
+Definition: yourself is pheromonal:
+	if mythical creature fetish is 0, decide no;
+	if the class of the player is cowgirl and the class of the player is fertility goddess, decide yes;
+	if the pregnancy of the player is 1, decide no;[you'll be spared if you're pregnant]
+	if the player is horny:
+		if the class of the player is catgirl, decide yes;
+		if the class of the player is puppygirl, decide yes;
+		if the class of the player is bunny, decide yes;
+		if the class of the player is cowgirl, decide yes;
+	decide no.
 
 
 [!<YourselfIsAbleToGetHorny>+
@@ -274,6 +295,7 @@ Definition: yourself is able to get horny:
 	[if the player is male and the size of penis is 0, decide no;]
 	decide yes.
 
+
 [!<ThingIsUnlimitedHorniness>+
 
 REQUIRES COMMENTING
@@ -289,6 +311,7 @@ REQUIRES COMMENTING
 Definition: yourself is unlimited in horniness:
 	if the player is not able to get horny, decide no;
 	if there is a worn unlimited horniness thing, decide yes;
+	if the player is pheromonal, decide yes;
 	decide no.
 
 [!<YourselfIsABitHorny>+

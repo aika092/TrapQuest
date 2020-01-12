@@ -82,18 +82,14 @@ Definition: a clothing is urination blocking: decide yes.
 Is this item currently able to block urination?
 
 +!]
-Definition: a clothing is potentially pee covering:
-	if it is potentially pussy covering and it is urination blocking, decide yes;
-	otherwise decide no.
+Definition: a clothing is potentially pee covering if it is potentially pussy covering and it is urination blocking.
 
 [!<ClothingIsPeeCovering>+
 
 Is this item currently blocking urination?
 
 +!]
-Definition: a clothing is pee covering:
-	if it is worn and it is potentially pee covering, decide yes;
-	otherwise decide no.
+Definition: a clothing is pee covering if it is worn and it is potentially pee covering.
 
 [!<ClothingIsSoakablePeeCovering>+
 
@@ -278,7 +274,7 @@ To decide what number is the anal defence of the player:
 	increase D by (the total volume of hips / 2);
 	repeat with K running through top level ass protection clothing worn by the player:
 		let E be (the armour of K - the damage of K) - (the semen-soak of K / 3);
-		if E > 0, increase D by E;
+		if E  > 0, increase D by E;
 		increase D by the magic-modifier of K;
 	decide on D.
 
@@ -292,7 +288,7 @@ To decide what number is the vaginal defence of the player:
 	increase D by (the total volume of hips / 2);
 	repeat with K running through top level protection clothing worn by the player:
 		let E be (the armour of K - the damage of K);
-		if E > 0, increase D by E;
+		if E  > 0, increase D by E;
 		increase D by the magic-modifier of K;
 	decide on D.
 

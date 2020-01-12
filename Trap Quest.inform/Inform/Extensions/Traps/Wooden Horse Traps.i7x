@@ -46,7 +46,7 @@ Carry Out HorsePressing:
 		remove B from the list of possible horse effects;
 	if B is horse-alarm:
 		add B to the list of current horse effects;
-		say "You press the button, and the sound of extremely loud neighing starts coming from the horse, like some kind of alarm! That's going to attract the attention of anything nearby... [if the bimbo of the player > 14 and the latex-transformation of the player < 7][line break][second custom style]'Yippee, everyone come look at me riding this horsey!  If you help me down I'll suck your [manly-penis]...'[otherwise][line break][variable custom style]Uh-oh...[end if][roman type][line break]";
+		say "You press the button, and the sound of extremely loud neighing starts coming from the horse, like some kind of alarm! That's going to attract the attention of anything nearby... [if the bimbo of the player > 14 and the latex-transformation of the player < 7][line break][second custom style]'Yippee, everyone come look at me riding this horsey! If you help me down I'll suck your [manly-penis]...'[otherwise][line break][variable custom style]Uh-oh...[end if][roman type][line break]";
 	otherwise if B is horse-cuffs:
 		if the silicone volume of breasts > 0 and fake-nails is actually summonable:
 			say "Huge pink fake nails appear on each of your fingers! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
@@ -110,7 +110,7 @@ To trigger (Y - a painted horse):
 	now the reset-timer of Y is 90000; [Doesn't reset]
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint!  [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is female, now Y is penetrating vagina;
@@ -160,7 +160,7 @@ To compute horse pain:
 
 [To compute horse fainting:
 	if the soreness of asshole is 10 and the player is male and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
-		say "You can't take the pressure on your crotch any more!  You pass out.";
+		say "You can't take the pressure on your crotch any more! You pass out.";
 		now the delayed fainting is 1;
 		now the fainting reason of the player is 20;
 	otherwise if the soreness of asshole < 10:
@@ -171,7 +171,7 @@ To compute horse pain:
 		PainUp 1;
 	if the player is female:
 		if the soreness of vagina is 10 and the soreness of asshole is 10 and a random number between 1 and 2 is 1 and the delicateness of the player > 15:
-			say "You can't take the pressure on your crotch any more!  You pass out.";
+			say "You can't take the pressure on your crotch any more! You pass out.";
 			now the delayed fainting is 1;
 			now the fainting reason of the player is 20;
 		otherwise if the soreness of vagina < 10:
@@ -199,7 +199,7 @@ To trigger (Y - a wild horse):
 	now the reset-timer of Y is 500;
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse!  [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
 	if the player is female, now Y is penetrating vagina;
@@ -224,7 +224,7 @@ To compute horse effect of (T - a wild horse):
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:
-			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah!  Ouch.[roman type][line break]";
+			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
 			FatigueUp W;
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;

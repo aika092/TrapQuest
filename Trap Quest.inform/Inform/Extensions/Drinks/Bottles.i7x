@@ -15,7 +15,7 @@ Definition: a bottle is drink themed: [Is it something that has a drink in the p
 
 [!<Bottle>@<doses:Integer>*
 
-How many gulps of liquid are in it right now? A gulp of liquid is about 2 units of liquid everywhere else.
+How many gulps of liquid are in it right now?  A gulp of liquid is about 2 units of liquid everywhere else.
 
 *@!]
 A bottle has a number called doses.
@@ -142,7 +142,7 @@ Definition: a bottle is ingredient: decide yes.
 What number does it register as on the crafting table?
 
 +@!]
-To decide which number is the crafting key of (B - a bottle):
+To decide which number is the crafting key of  (B - a bottle):
 	decide on the fill-type of B.
 
 [!<Bottle>@<WhichNumberIsTheHeaviness>+
@@ -155,7 +155,7 @@ To decide which number is the heaviness of (B - a bottle):
 
 [!<Thing>@<KnownPotion>+
 
-Does the player know what type of drink it is? (This is just to prevent runtime errors during crafting)
+Does the player know what type of drink it is?  (This is just to prevent runtime errors during crafting)
 
 +@!]
 Definition: a thing is known-potion: decide no.

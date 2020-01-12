@@ -482,7 +482,7 @@ To decide which text is NameBimbo:
 		otherwise:
 			decide on "Fetish";
 	otherwise if the player-name is 1000:
-		if the player is originally female:
+		if the player is originally female or transGender is 1:
 			if the bimbo of the player < 4:
 				decide on Name in row 1 of Table of Custom Female Name;
 			otherwise if the bimbo of the player < 7:

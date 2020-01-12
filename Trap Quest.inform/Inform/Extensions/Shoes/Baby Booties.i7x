@@ -29,8 +29,7 @@ To say UniqueShortDesc of (C - a baby booties):
 To say ClothingDesc of (C - a baby booties):
 	say "A pair of pink and white baby booties, made out of a soft cotton.".
 
-Definition: a baby booties (called C) is babywear: [Is it something that an NPC could put on someone to babify them?]
-	decide yes.
+Definition: a baby booties is babywear: decide yes. [Is it something that an NPC could put on someone to babify them?]
 
 To decide which number is the dexterity-influence of (C - a baby booties):
 	decide on 1.
@@ -95,7 +94,6 @@ To say ClothingDesc of (C - rubber booties):
 To say UniqueShortDesc of (C - rubber booties):
 	say "latex booties".
 
-
 This is the latex booties stockings clash rule:
 	if wearing-target is rubber booties:
 		repeat with S running through worn stockings:
@@ -117,6 +115,35 @@ This is the trousers latex booties clash rule:
 		if summoning is 0 and autowear is false, say "You can't wear those at the same time as your [rubber booties]!";
 		rule fails.
 The trousers latex booties clash rule is listed in the trousers wearability rules.
+
+
+
+
+
+
+christmas booties is a baby booties. christmas booties is unique.
+
+Definition: a christmas booties is transformation-protected if the class of the player is santa's little helper.
+
+The printed name of christmas booties is "[clothing-title-before]pair of christmas baby booties[clothing-title-after]". The text-shortcut of christmas booties is "cbbo".
+
+Figure of christmas booties is the file "Items/Clothes/Lower/Feet/Booties/booties5.png".
+
+To decide which figure-name is the clothing-image of (H - a christmas booties):
+	decide on the figure of christmas booties.
+
+Definition: christmas booties is bow themed: decide yes.
+Definition: christmas booties is green themed: decide yes.
+Definition: christmas booties is christmas themed: decide yes.
+Definition: christmas booties is babywear if christmas content is 1. [Is it something that an NPC could put on someone to babify them?]
+
+To say ClothingDesc of (C - christmas booties):
+	say "A pair of green booties with big red bows.".
+
+
+
+
+
 
 Baby Booties ends here.
 

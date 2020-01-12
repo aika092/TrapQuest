@@ -54,11 +54,11 @@ To compute secondLakeArm of (L - a lake monster):
 	say "[line break]".
 
 To compute lakePoint to (B - face) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and stays there, pointing. From here you can see a tiny opening at the tip of the tentacle[one of]...  and you realise these tentacles are definitely sex organs[or], an all-too-clear reminder of how this ended last time[stopping]!";
+	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and stays there, pointing. From here you can see a tiny opening at the tip of the tentacle[one of]... and you realise these tentacles are definitely sex organs[or], an all-too-clear reminder of how this ended last time[stopping]!";
 	increase the m-state of L by 1.
 
 To compute lakePenetrate to (B - face) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and forces its way straight into your mouth!  It [one of]starts pumping away like some sort of sex organ![or]immediately starts pumping away.[stopping]";
+	say "[if A is 2]The second tentacle starts wrapping itself around your opposite wrist and up your arm. When it reaches your shoulder, it[otherwise if A is 3]The third tentacle wraps around your other arm and towards your face. It[otherwise]It journeys up your front and to your head. It[end if] rounds towards your face and forces its way straight into your mouth! It [one of]starts pumping away like some sort of sex organ![or]immediately starts pumping away.[stopping]";
 	now L is penetrating B;
 	increase the m-state of L by 2.
 
@@ -88,14 +88,14 @@ To compute lakePenetrate to (B - vagina) of (L - a lake monster) with arm (A - a
 		let C be a random worn top level protection clothing;
 		say "It goes through the top of your [printed name of C] and out a leg hole. It roughly rips them off you and drops them into the depths of the lake. ";
 		destroy C;
-	say "Then it starts slowly forcing its way into your [if the openness of vagina < 5]tight [end if][vagina][unless the openness of vagina > 8], stretching it painfully as the tentacle's girth increases with depth[end if]. It starts fucking you with a slow rhythm.[if the a-state of L > 1]  You're being double penetrated by this monster![end if]";
+	say "Then it starts slowly forcing its way into your [if the openness of vagina < 5]tight [end if][vagina][unless the openness of vagina > 8], stretching it painfully as the tentacle's girth increases with depth[end if]. It starts fucking you with a slow rhythm.[if the a-state of L > 1] You're being double penetrated by this monster![end if]";
 	now L is penetrating B;
 	increase the p-state of L by 2.
 
 To compute lakeShred to (B - asshole) of (L - a lake monster) with arm (A - a number):
 	while the player is ass protected:
 		let C be a random worn top level ass protection clothing;
-		say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back and into the back of your [printed name of C] and out one leg hole[otherwise]The fourth tentacle wraps around your free leg into one leg hole of your [printed name of C] and out the other[end if]. The tentacle effortlessly rips them off!  ";
+		say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back and into the back of your [printed name of C] and out one leg hole[otherwise]The fourth tentacle wraps around your free leg into one leg hole of your [printed name of C] and out the other[end if]. The tentacle effortlessly rips them off! ";
 		destroy C;
 	while asshole is actually occupied:
 		let C be a random thing penetrating asshole;
@@ -105,11 +105,11 @@ To compute lakeShred to (B - asshole) of (L - a lake monster) with arm (A - a nu
 	increase the a-state of L by 1.
 
 To compute lakePoint to (B - asshole) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back[otherwise]The fourth tentacle wraps around your free leg[end if] and starts poking against the entrance to your ass!  It doesn't push its way in, though.";
+	say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back[otherwise]The fourth tentacle wraps around your free leg[end if] and starts poking against the entrance to your ass! It doesn't push its way in, though.";
 	increase the a-state of L by 1.
 
 To compute lakePenetrate to (B - asshole) of (L - a lake monster) with arm (A - a number):
-	say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back[otherwise]The fourth tentacle wraps around your free leg[end if] and starts poking against the entrance to your ass!  [if the openness of asshole < 5]It slowly forces it way in and then[otherwise]It glides in easily, and[end if] it starts thrusting away, fucking your [asshole] ruthlessly![if the p-state of L > 1]You're being double penetrated by this monster![end if]";
+	say "[if A is 3]The third tentacle wraps around your other arm and then slithers down your back[otherwise]The fourth tentacle wraps around your free leg[end if] and starts poking against the entrance to your ass! [if the openness of asshole < 5]It slowly forces it way in and then[otherwise]It glides in easily, and[end if] it starts thrusting away, fucking your [asshole] ruthlessly![if the p-state of L > 1]You're being double penetrated by this monster![end if]";
 	now L is penetrating B;
 	increase the a-state of L by 2.
 
@@ -124,9 +124,9 @@ To compute lakeUnimpressed of (L - a lake monster) to (F - a fuckhole):
 	otherwise increase the a-state of L by 2.
 
 To compute lakeCram of (L - a lake monster) to (F - a fuckhole):
-	say "It starts poking around near the entrance to your already full [variable F]!  It seems to want in, ignoring the fact that it's already being obscenely stretched. As it starts to try and push the tip in with incredible force, your [variable F] feels on fire. ";
+	say "It starts poking around near the entrance to your already full [variable F]! It seems to want in, ignoring the fact that it's already being obscenely stretched. As it starts to try and push the tip in with incredible force, your [variable F] feels on fire. ";
 	if the openness of F > 6:
-		say "Slowly but surely your loose [variable F] manages to accommodate it, meaning you're being double penetrated in the same hole!  As they settle into an alternate fucking rhythm, you're not even sure if what you're feeling is pleasure or pain.";
+		say "Slowly but surely your loose [variable F] manages to accommodate it, meaning you're being double penetrated in the same hole! As they settle into an alternate fucking rhythm, you're not even sure if what you're feeling is pleasure or pain.";
 		if F is asshole, increase the a-state of L by 2;
 		otherwise increase the p-state of L by 2;
 		now L is penetrating F;[redundant, but just making sure]
@@ -209,7 +209,7 @@ To compute fourthLakeArm of (L - a lake monster):
 			compute lakePenetrate to asshole of L with arm 4;
 		otherwise if the a-state of L is 2:
 			compute lakePoint to asshole of L with arm 4;
-	say "[line break]The monster, now firmly holding you by all four of your limbs, pulls you fully out of the lake and into the air!  [if the a-state of L > 1 or the p-state of L > 1]However it doesn't break its pace fucking you at all.[otherwise][line break][end if]".
+	say "[line break]The monster, now firmly holding you by all four of your limbs, pulls you fully out of the lake and into the air! [if the a-state of L > 1 or the p-state of L > 1]However it doesn't break its pace fucking you at all.[otherwise][line break][end if]".
 
 To compute firstLakeArm of (L - a lake monster):
 	let Z be a random number between 1 and 2;
@@ -229,7 +229,7 @@ To compute firstLakeArm of (L - a lake monster):
 	otherwise if the m-state of L is 1:
 		compute lakePenetrate to face of L with arm 1;
 	otherwise:
-		say "It starts spanking your [AssDesc]!  Ow ow ow ow owwww...";
+		say "It starts spanking your [AssDesc]! Ow ow ow ow owwww...";
 		BodyRuin 3;
 	say "[line break]The monster keeps fucking you like this for a few minutes, and then you feel the steady pace of the tentacles get stronger, faster and a bit more frantic, and too late you realise what is about to happen...".
 
@@ -251,14 +251,14 @@ To compute lakeClimax of (L - a lake monster):
 		say "The tentacle in front of your chest spasms powerfully before painting your [BreastDesc] with layer upon layer of thick white sex-juice. The sticky substance clings to your flesh, dripping off incredibly slowly.";
 		CumTitsUp a random number between 7 and 10;
 	otherwise if the b-state of L is 2:
-		say "The tentacle fucking your [BreastDesc] orgasms, painting both your face and tits with its [semen].[if the m-state of L is 1 or the m-state of L is 3]  The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
+		say "The tentacle fucking your [BreastDesc] orgasms, painting both your face and tits with its [semen].[if the m-state of L is 1 or the m-state of L is 3] The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
 		if the m-state of L is 1 or the m-state of L is 3:
 			CumFaceUp 10;
 			CumTitsUp 10;
 		otherwise:
 			CumTitsUp a random number between 7 and 10;
 	otherwise if the b-state of L is 3:
-		say "The tentacle fucking your [BreastDesc] and the tentacle in front of your chest orgasm, painting both your face and tits with their [semen].[if the m-state of L is 1 or the m-state of L is 3]  The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
+		say "The tentacle fucking your [BreastDesc] and the tentacle in front of your chest orgasm, painting both your face and tits with their [semen].[if the m-state of L is 1 or the m-state of L is 3] The tentacle's [semen] flows off your already covered face and helps completely paint your [BreastDesc] white.[end if]";
 		if the m-state of L is 1 or the m-state of L is 3:
 			CumFaceUp 10;
 			CumTitsUp 20;
@@ -273,7 +273,7 @@ To compute lakeClimax of (L - a lake monster):
 		ruin vagina times 3;
 		FuckCount;
 	otherwise if the p-state of L is 4:
-		say "The tentacles destroying your [vagina] both pump your womb more than full of warm monster [semen], and you can feel your belly stretching and inflating to accommodate the huge loads. This amount of [semen] is beyond inhuman!  It just won't stop coming. There's absolutely no space for it to squirt out around the tentacles so it is all kept inside you...";
+		say "The tentacles destroying your [vagina] both pump your womb more than full of warm monster [semen], and you can feel your belly stretching and inflating to accommodate the huge loads. This amount of [semen] is beyond inhuman! It just won't stop coming. There's absolutely no space for it to squirt out around the tentacles so it is all kept inside you...";
 		PussyFill 11;
 		ruin vagina times 5;
 		FuckCount;
@@ -283,7 +283,7 @@ To compute lakeClimax of (L - a lake monster):
 		CumThighsUp a random number from 7 to 10;
 	if the a-state of L is 2 or the a-state of L is 3:
 		if Egg Laying Fetish is 1:
-			say "The tentacle ruining your [asshole] bulges, becoming nearly twice as wide. You moan with a mixture of intense pleasure and pain as your [asshole] is stretched to new levels. From the bottom end of the tentacle where it emerges from the lake, you see a huge bulge start to slowly travel along its length. Your eyes widen, and if it were possible your eyes would have widened even further when you see three more bulges of the same size appear behind it. You wriggle and wrestle with your bonds but the monster easily holds you in place as the bulges reach your rear.[line break]As the first solid bulge reaches your [asshole], you feel the immense pressure placed against it and shriek [if L is penetrating face]through the tentacle in your mouth [end if]in fear. Your sphincter does not yet yield, the object is just too big!  The tip of the object has lodged itself at the entrance but isn't making any more progress. But as the other bulges catch up, they push the ones in front, doubling, tripling and then quadrupling the force trying to get the first one inside. All of a sudden your [asshole] gapes that slight bit more, and all four objects go rushing at incredible velocity into your belly, mercilessly rubbing against the inside walls of your ass as they do. Your belly instantly bulges out to an impossible size, showing you and the rest of this world just how full you now are.";
+			say "The tentacle ruining your [asshole] bulges, becoming nearly twice as wide. You moan with a mixture of intense pleasure and pain as your [asshole] is stretched to new levels. From the bottom end of the tentacle where it emerges from the lake, you see a huge bulge start to slowly travel along its length. Your eyes widen, and if it were possible your eyes would have widened even further when you see three more bulges of the same size appear behind it. You wriggle and wrestle with your bonds but the monster easily holds you in place as the bulges reach your rear.[line break]As the first solid bulge reaches your [asshole], you feel the immense pressure placed against it and shriek [if L is penetrating face]through the tentacle in your mouth [end if]in fear. Your sphincter does not yet yield, the object is just too big! The tip of the object has lodged itself at the entrance but isn't making any more progress. But as the other bulges catch up, they push the ones in front, doubling, tripling and then quadrupling the force trying to get the first one inside. All of a sudden your [asshole] gapes that slight bit more, and all four objects go rushing at incredible velocity into your belly, mercilessly rubbing against the inside walls of your ass as they do. Your belly instantly bulges out to an impossible size, showing you and the rest of this world just how full you now are.";
 			AssFill 4 Large Eggs;
 			ruin asshole times 4;
 		otherwise:
@@ -293,7 +293,7 @@ To compute lakeClimax of (L - a lake monster):
 		AnalCount;
 	if the a-state of L is 4:
 		if Egg Laying Fetish is 1:
-			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate. Instead of the [semen] you were expecting, the tentacles seem to be pumping you full of small solid spherical objects!  The uncomfortable feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all back out. Your belly balloons under the pressure from your full rectum and full innards.";
+			say "The two tentacles ruining your [asshole] keep up their thrusting as they ejaculate. Instead of the [semen] you were expecting, the tentacles seem to be pumping you full of small solid spherical objects! The uncomfortable feeling immediately turns into a worryingly full feeling, and then soon a feeling of desperately needing to squirt it all back out. Your belly balloons under the pressure from your full rectum and full innards.";
 			AssFill a random number from 10 to 15 small eggs;
 			AssFill a random number from 10 to 15 small eggs;
 			ruin asshole times 4;
@@ -314,8 +314,8 @@ To LakeMonsterCheck (S - a number):
 	if (R * 40 < the semen-sniffing of L) or  (R * 30 < the semen-sniffing of L and the class of the player is schoolgirl):[if a number between 800 and 1000 is less than L]
 		if the dexterity of the player + (the number of worn swimming themed wearthing * 10) < a random number between 7 and 25 or acolyte-chestpiece is worn:
 			allocate 6 seconds;
-			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg!  You're caught!";
-			otherwise say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. Before you can pull yourself out of the lake to safety, the shadow has moved underneath you and four large octopus-like tentacles have risen to the surface!  It must have been attracted here by all the [semen] you washed into the water. You have no chance of escaping as one tentacle grabs one of your ankles and drags you out into the deeper water with incredible strength. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
+			if R is 0, say "[line break]The tentacle monster sends one of its tentacles to grab your leg! You're caught!";
+			otherwise say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. Before you can pull yourself out of the lake to safety, the shadow has moved underneath you and four large octopus-like tentacles have risen to the surface! It must have been attracted here by all the [semen] you washed into the water. You have no chance of escaping as one tentacle grabs one of your ankles and drags you out into the deeper water with incredible strength. The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 			cutshow figure of lake monster cutscene 1 for L;
 			say "[line break]";
 			compute secondLakeArm of L;
@@ -334,7 +334,7 @@ To LakeMonsterCheck (S - a number):
 			say "Having finally finished with you, the monster chucks you onto the ground. The tentacles do not disappear however, seeming to favour this part of the lake now that it is full of the gallons of [semen] that didn't manage to stay on or inside you.";
 			now the stance of the player is 1;
 		otherwise:
-			say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. You pull yourself out of the lake to safety just as the shadow has moved underneath you and four large tentacles have risen to the surface!  It looks like you narrowly missed something horrible happening to you...";
+			say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. You pull yourself out of the lake to safety just as the shadow has moved underneath you and four large tentacles have risen to the surface! It looks like you narrowly missed something horrible happening to you...";
 		now L is in Dungeon35;
 		display entire map.
 
