@@ -29,7 +29,11 @@ To decide which figure-name is the monster-image of (M - a robobellboy):
 	decide on figure of robobellboy.
 
 To say MonsterDesc of (M - a robobellboy):
+<<<<<<< Updated upstream
 	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
+=======
+	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the center, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
+>>>>>>> Stashed changes
 
 To set up (M - a robobellboy):
 	reset M;
@@ -158,7 +162,7 @@ To compute trainee forcing of (M - a robobellboy):
 	let T be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens its chest compartment and pulls out a [C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a [C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
 		bore M;
 		FavourUp M;
 	otherwise if trainee hood is off-stage and trainee hood is actually summonable:
@@ -167,7 +171,7 @@ To compute trainee forcing of (M - a robobellboy):
 		now D is trainee hood;
 	otherwise if T is clothing and T is actually summonable:
 		summon T;
-		say "[BigNameDesc of M] opens its chest compartment and pulls out a pair of [printed name of T]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a pair of [printed name of T]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
 		now D is T;
 	if D is worn:
 		say "[first custom style]'[caps please] BE MORE CONSCIOUS OF YOUR PERFORMANCE IN THE FUTURE.'[roman type][line break]";
@@ -192,7 +196,7 @@ To compute whore forcing of (M - a robobellboy):
 			compute mandatory room leaving of N;
 		let H be a random hotel bed in the location of the player;
 		compute PatronSpawning of H;
-		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot!  What has it got me into?![roman type][line break][or][stopping]";
+		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has it got me into?![roman type][line break][or][stopping]";
 	otherwise:
 		drag to the target-room of M by M.
 
@@ -231,7 +235,7 @@ To compute bra forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-bra clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -253,7 +257,7 @@ To compute knickers forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-knickers clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, it seems to be happy to leave you alone.";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, it seems to be happy to leave you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -314,7 +318,7 @@ To compute basic greeting to (M - a robobellboy):
 To say FirstResponse of (M - a robobellboy):
 	say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 
-To say RepeatResponse of (M -  a robobellboy):
+To say RepeatResponse of (M - a robobellboy):
 	if M is unconcerned:
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 	otherwise:
@@ -405,7 +409,7 @@ To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMIZATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -415,7 +419,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up its chest compartment and pulls out a pair of [ShortDesc of C]!  You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMIZATION.'[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMIZATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -441,7 +445,7 @@ To compute whore forcing of (M - senior robobellboy):
 			compute mandatory room leaving of N;
 		let H be a random hotel bed in the location of the player;
 		compute PatronSpawning of H;
-		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot!  What has it got me into?![roman type][line break][or][stopping]";
+		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has it got me into?![roman type][line break][or][stopping]";
 	otherwise:
 		drag to nearest patron by M.
 

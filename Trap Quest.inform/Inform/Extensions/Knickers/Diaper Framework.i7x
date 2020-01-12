@@ -211,36 +211,18 @@ To decide which number is the heaviness of (D - a diaper):
 
 To decide which number is the initial outrage of (C - a diaper):
 	if diaper quest is 1, decide on 0;
-	if C is currently diaper covered:
-		if the trophy-mode of diaper-trophy is 1, decide on 0;
-		decide on 6;
-	let O be 6 + the unique outrage of C;
-	if the urine-soak of C is 0, decrease O by 2;
-	decide on O.
+	decide on the initial cringe of C.
 
 To decide which number is the initial cringe of (C - a diaper):
-	if C is currently diaper covered:
-		if the trophy-mode of diaper-trophy is 1, decide on 0;
-		decide on 6;
-	let O be 6 + the unique outrage of C;
-	if the urine-soak of C is 0, decrease O by 2;
+	let O be the DQBulk of C + the unique outrage of C;
+	if C is wet, increase O by 2;
 	decide on O.
-
-Definition: a diaper (called D) is currently diaper covered rather than currently diaper uncovered: [if it's uncovered, that means it's fully visible. otherwise it means that probably just the shape can be seen.]
-	if D is not worn, decide no;
-	if there is a worn diaper covering clothing, decide yes;
-	decide no.
-
-Definition: a clothing (called C) is diaper covering:
-	if C is potentially at least partially asshole covering not-butt-windowed clothing and C is not knickers:
-		if the skirtLength of C >= the DQBulk of the player, decide yes;
-	decide no.
 
 To decide which number is the unique outrage of (C - a diaper):
 	decide on 0.
 
 To decide which number is the fluid cringe of (C - a diaper):
-	if C is wet and C is not currently diaper covered:
+	if C is wet and C is currently visible:
 		if the total-soak of C >= the soak-limit of C, decide on 8;
 		decide on 5;
 	decide on 0.
@@ -270,13 +252,13 @@ To compute periodic effect of (D - a diaper):
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 17 or xavier-diaper-link is 39:
-			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds and appears as if you are wetting yourself. ";
 			PissSoak 12 on D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link >= 57 and asshole is not actually occupied:
 			now xavier-diaper-link is 1;
-			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if it's you, which is all that really matters. ";
+			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
 			compute messing;
 	if altar-diaper-link > 0 and D is total protection:
@@ -301,13 +283,17 @@ Definition: a diaper is basic loot: decide no. [a diaper never spawns from selec
 
 Definition: a diaper is fetish appropriate if diaper lover >= 1.
 
-To decide which number is the weight of (D - a diaper):
-	let X be 0;
-	if D is diaper-stack, now X is 3 * (the number of entries in the list of stacked diapers - 1);
-	increase X by the total-soak of D / 10;
-	decrease X by the magic-modifier of D;
-	decrease X by the number of worn diaper covers * 3;
-	if X > 0, decide on X;
+To decide which number is the weight of (D - a knickers):
+	let X be the DQBulk of D;
+	if diaper lover > 0:
+		if D is diaper:
+			increase X by (the total-soak of D + 9) / 10;
+			decrease X by the number of worn diaper covers * 3;
+		otherwise:
+			increase X by (the total-soak of D + 5) / 6;
+		increase X by (the mess of D + 7) / 8;
+		decrease X by the magic-modifier of D;
+	if X > 0, decide on X / 2;
 	decide on 0.
 
 Definition: a diaper (called D) is eligible: [This allows us to pull diapers that have been left around the game universe and re-use them]
@@ -698,6 +684,12 @@ To update diaper stack:
 			now D is in the location of diaper-stack;
 		now diaper-stack is in Holding Pen;
 		now the list of stacked diapers is { }.
+
+To assign quest to (C - diaper-stack):
+	now the quest of C is the random-quest of C;
+	let N be the number of entries in the list of stacked diapers;
+	now the quest of (entry N in the list of stacked diapers) is the quest of C;
+	set up the quest of C.
 
 This is the maintain diaper stack rule:
 	update diaper stack.
