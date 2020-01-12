@@ -29,7 +29,7 @@ REQUIRES COMMENTING
 To compute LaundryRobots:
 	let C be a random worn washable clothing;
 	if there is a worn messed knickers, now C is a random worn knickers;
-	if C is clothing, say "As soon as you [if the player is upright]step over the threshold into this room[otherwise]are released[end if], several metal robotic arms shoot at you from every direction!  Four robotic hands grab hold of each of your limbs respectively, rendering you immobile. ";
+	if C is clothing, say "As soon as you [if the player is upright]step over the threshold into this room[otherwise]are released[end if], several metal robotic arms shoot at you from every direction! Four robotic hands grab hold of each of your limbs respectively, rendering you immobile. ";
 	if C is messed knickers:
 		say "You yelp [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]quietly[end if] as your entire body is picked up, carried over and dunked into a large hot vat of soapy water. The arms unceremoniously strip you of your [C] as you are repeatedly thrust into and out of the bubbly pool. Finally, you are dropped back down onto the ground, now dripping with water and suds. ";
 		repeat with F running through worn fluid vulnerable clothing:

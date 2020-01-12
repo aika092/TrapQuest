@@ -105,7 +105,7 @@ To decide which figure-name is clothing-image of (C - purple-giant-diaper):
 To say selfexamineuniquetitle of (K - purple-giant-diaper):
 	say "giant purple polka dot diaper".
 To say ClothingDesc of (C - purple-giant-diaper):
-	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding anda polka dot pattern. It has three rows of girly frills at the back.".
+	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding and a polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
 
 

@@ -181,7 +181,9 @@ Definition: anchor tattoo is swimming themed: decide yes.
 
 
 angel tattoo is a body tattoo. The tattoo-title of angel tattoo is "angel".
-Definition: angel tattoo is eligible: decide no.
+Definition: angel tattoo is eligible:
+	if the noun is purity clothing or the noun is blessed clothing or the noun is potion of blessing or the noun is bandage or the noun is chastity cage, decide yes;
+	decide no.
 To say tattoo-desc of (T - angel tattoo):
 	say "A drawing of a solemn angel is tattooed on your right arm.".
 To decide which object is the concealer of (T - angel tattoo):
@@ -258,7 +260,9 @@ bat tattoo is a chest tattoo. The tattoo-title of bat tattoo is "bat".
 Figure of bat tattoo is the file "Items/Tats/tattoo39.jpg".
 Definition: bat tattoo is drawable if the number of worn chest tattoo is 0 and it is eligible.
 Definition: bat tattoo is eligible:
-	if the noun is bat corset or the noun is heart themed, decide yes;
+	if the noun is corset:
+		if the strength-influence of the noun is not 0 or the dexterity-influence of the noun is not 0 or the intelligence-influence of the noun is not 0, decide yes;
+	if the noun is heart themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - bat tattoo):
 	decide on figure of bat tattoo.
@@ -486,6 +490,7 @@ Report going when the player is in the location of HotelScenery01:
 		summon T;
 		try examining T;
 		now focused-thing is T;
+		if another-turn-flavour is "", now another-turn-flavour is "[if the player is in the location of HotelScenery01]The robotic arms slowly release you.[end if]";
 		now another-turn is 1.
 
 
@@ -642,7 +647,7 @@ To decide which object is the concealer of (T - cloth revolution tattoo):
 To decide which number is the diaper-addiction-influence of (T - cloth revolution tattoo):
 	decide on 3.
 To decide which number is the initial cringe of (T - cloth revolution tattoo):
-	decide on 8.
+	decide on 4.
 Definition: cloth revolution tattoo is baby themed: decide yes.
 
 
@@ -652,7 +657,7 @@ Definition: cock expert tattoo is eligible:
 	if the noun is penis themed or the noun is dong, decide yes;
 	decide no.
 To say tattoo-desc of (T - cock expert tattoo):
-	say "The words 'cock expert' are tattooed on your inner right forearm in artsy green letters.".
+	say "The words 'cock expert' are tattooed on your inner right forearm in arty green letters.".
 To decide which object is the concealer of (T - cock expert tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the initial outrage of (T - cock expert tattoo):
@@ -1038,7 +1043,7 @@ Definition: drinkme tattoo is magic themed: decide yes.
 
 dumb baby tattoo is a body tattoo. The tattoo-title of dumb baby tattoo is "dumb baby".
 To say tattoo-desc of (T - dumb baby tattoo):
-	say "The words 'dumb baby' are written onto your leg with red Sharpie.".
+	say "The words 'dumb baby' are written onto your leg with red sharpie.".
 To decide which object is the concealer of (T - dumb baby tattoo):
 	decide on a random worn actually dense leg covering clothing.
 To decide which number is the intelligence-influence of (T - dumb baby tattoo):
@@ -1262,7 +1267,7 @@ To decide which number is the initial outrage of (T - free ride tattoo):
 
 
 
-freedom tattoo is an ass tattoo. The tattoo-title of freedom tattoo is "freedom".
+freedom tattoo is a body tattoo. The tattoo-title of freedom tattoo is "freedom".
 Figure of freedom tattoo is the file "Items/Tats/tattoo2.jpg".
 Definition: freedom tattoo is eligible:
 	if the noun is bondage or the noun is submissive collar or the noun is an unlock-key or the noun is bird themed or the noun is slave-dress, decide yes;
@@ -1270,13 +1275,17 @@ Definition: freedom tattoo is eligible:
 To decide which figure-name is the examine-image of (T - freedom tattoo):
 	decide on figure of freedom tattoo.
 To say tattoo-desc of (T - freedom tattoo):
-	say "The word 'Freedom' is permanently etched on your right hand butt cheek in a tidy italic font.".
+	say "The word 'Freedom' is permanently etched on your left ankle in a tidy italic font.".
 To decide which number is the dexterity-modifier of (T - freedom tattoo):
 	decide on 2.
 To decide which number is the initial outrage of (T - freedom tattoo):
 	decide on 0.
 To decide which number is the cringe of (T - freedom tattoo):
 	decide on 0.
+To decide which object is the concealer of (T - freedom tattoo):
+	let C be a random worn actually dense stockings;
+	if C is a thing, decide on C;
+	decide on a random worn actually dense shoes.
 
 
 
@@ -1322,7 +1331,7 @@ Definition: funcenter tattoo is eligible:
 	if the noun is plug or the noun is ass plugging clothing or the noun is mechanical joint or the noun is lubricant or the noun is pin themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - funcenter tattoo):
-	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTRE' inked in giant letters above it.".
+	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTER' inked in giant letters above it.".
 To decide which number is the anal sensitivity influence of (C - funcenter tattoo):
 	decide on 2.
 
@@ -1402,7 +1411,7 @@ Definition: i-suck tattoo is eligible:
 To decide which figure-name is the examine-image of (T - i-suck tattoo):
 	decide on figure of i-suck tattoo.
 To say tattoo-desc of (T - i-suck tattoo):
-	say "The words 'I suck' are written on your arm with red Sharpie.".
+	say "The words 'I suck' are written on your arm with red sharpie.".
 To decide which object is the concealer of (T - i-suck tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the dexterity-influence of (T - i-suck tattoo):
@@ -1416,7 +1425,7 @@ Definition: i-suck tattoo is oral sex themed: decide yes.
 
 incontinent-when-speaking tattoo is a body tattoo. The tattoo-title of incontinent-when-speaking tattoo is "Incontinent when speaking".
 To say tattoo-desc of (T - incontinent-when-speaking tattoo):
-	say "The words 'Incontinent when speaking' are written on your inner thigh with black Sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
+	say "The words 'Incontinent when speaking' are written on your inner thigh with black sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
 To decide which object is the concealer of (T - incontinent-when-speaking tattoo):
 	decide on a random worn actually dense leg covering clothing.
 To decide which number is the initial cringe of (T - incontinent-when-speaking tattoo):
@@ -1600,7 +1609,7 @@ Definition: lock-it tattoo is eligible:
 	if the noun is skeleton key or the noun is bondage or the noun is wrist locking clothing or the noun is ankle locking clothing or the noun is strapon-panties, decide yes;
 	decide no.
 To say tattoo-desc of (T - loser tattoo):
-	say "The phrase 'Lock it, then rock it' is written above your [genitals], with a drawing of a key and a black arrow pointing down at your [genitals]. The dot of the 'i' in 'lock it' is a heart. You feel that there's a good chance you could get punished for masturbating...".
+	say "The phrase 'Lock it, then rock it' is written above your [genitals], with a drawing of a key and a black arrow pointing down at your [genitals]. The dot of the 'i' in 'lock it' is a heart. You feel there's a good chance you could get punished for masturbating...".
 Definition: lock-it tattoo is heart themed: decide yes.
 To decide which number is the initial outrage of (T - lock-it tattoo):
 	decide on 5.
@@ -1610,7 +1619,7 @@ To decide which number is the initial outrage of (T - lock-it tattoo):
 
 loser tattoo is a body tattoo. The tattoo-title of loser tattoo is "loser".
 To say tattoo-desc of (T - loser tattoo):
-	say "The word 'Loser' is written on your shoulder and neck area with red Sharpie.".
+	say "The word 'Loser' is written on your shoulder and neck area with red sharpie.".
 To decide which object is the concealer of (T - loser tattoo):
 	let C be a random worn actually dense neck covering clothing;
 	unless C is accessory, decide on C;
@@ -1680,7 +1689,7 @@ The measurement tattoo pussy slut rule is listed in the pussy slut eligibility r
 mushbutt tattoo is a chest tattoo. The tattoo-title of mushbutt tattoo is "mushbutt".
 Definition: mushbutt tattoo is drawable: decide no.
 To say tattoo-desc of (T - mushbutt tattoo):
-	say "The word 'mushbutt' is written on your chest with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'mushbutt' is written on your chest with red sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which number is the initial cringe of (T - mushbutt tattoo):
 	if there is worn messed knickers, decide on 20;
 	decide on 5.
@@ -1741,7 +1750,7 @@ Definition: nintendolls-brand tattoo is eligible:
 	if the noun is cow themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - nintendolls-brand tattoo):
-	say "The Nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
+	say "The nintendolls logo has been branded just below your cleavage, just like a cow. You can feel it making your breasts much more active!".
 To decide which object is the concealer of (T - nintendolls-brand tattoo):
 	decide on a random worn actually dense breast covering clothing.
 Definition: nintendolls-brand tattoo is cow themed: decide yes.
@@ -2232,10 +2241,10 @@ Definition: semen demon tattoo is drawable:
 	if there is a worn lower back tattoo, decide no;
 	decide yes.
 Definition: semen demon tattoo is eligible:
-	if the noun is squirt dildo or the noun is cum dump's undergarment or the noun is condom of kings or the noun is semen themed, decide yes;
+	if the noun is squirt dildo or (the noun is non-empty bottle and the fill-colour of the noun is creamy) or the noun is cum dump's undergarment or the noun is condom of kings or the noun is semen themed or the noun is demonic, decide yes;
 	decide no.
 To say tattoo-desc of (T - semen demon tattoo):
-	say "You have a tramp stamp tattoo on your lower back that says the words 'Semen Demon'.".
+	say "You have a tramp stamp tattoo on your lower back that says the words 'Semen Demon'. There's a drawing of several sperm cells swimming towards a red trident. You can sense some faint demonic energy emanating from it.".
 To decide which number is the semen-addiction-influence of (T - semen demon tattoo):
 	decide on 2.
 A time based rule (this is the semen demon rule):
@@ -2248,6 +2257,7 @@ A time based rule (this is the semen demon rule):
 				say "[bold type]Suddenly, you feel your Semen Demon tattoo summoning [semen] directly into your belly![line break][variable custom style][one of]Holy shit[or]Eek[stopping]![roman type][line break]";
 				AssFill a random number between 4 and 8.
 Definition: semen demon tattoo is semen themed: decide yes.
+Definition: semen demon tattoo is demonic: decide yes.
 
 
 
@@ -2262,7 +2272,7 @@ Definition: short skirt slut tattoo is eligible:
 To decide which figure-name is the examine-image of (T - short skirt slut tattoo):
 	decide on figure of short skirt slut tattoo.
 To say tattoo-desc of (T - short skirt slut tattoo):
-	say "Your [AssDesc] have the words 'short skirt slut', permanently inked onto your skin in a fancy white font. You can tell that has given you a fetish for wearing short skirts.".
+	say "Your [AssDesc] have the words 'short skirt slut', permanently inked onto your skin in a fancy white font. You can sense it has given you a fetish for wearing short skirts.".
 To decide which number is the initial outrage of (T - short skirt slut tattoo):
 	decide on 8.
 To compute inking effect of (T - short skirt slut tattoo):
@@ -2309,6 +2319,9 @@ To decide which number is the initial outrage of (T - sissy black cock whore tat
 
 
 slimecock tattoo is a body tattoo. The tattoo-title of slimecock tattoo is "slimy cock". Understand "slimy" as slimecock tattoo.
+Definition: slimecock tattoo is drawable:
+	if diaper quest is 0 and slimecock tattoo is not worn and slimecock tattoo is eligible, decide yes;
+	decide no.
 Definition: slimecock tattoo is eligible:
 	if the noun is ectoplasm or the noun is dong, decide yes;
 	decide no.
@@ -2377,6 +2390,30 @@ Definition: spank tattoo is impact play themed: decide yes.
 
 
 
+spank-me-heart tattoo is a dq tattoo. The tattoo-title of spank-me-heart tattoo is "spank me heart".
+Figure of spank-me-heart tattoo is the file "Items/Tats/tattoo154.jpg".
+Definition: spank-me-heart tattoo is drawable:
+	decide no.
+To decide which figure-name is the examine-image of (T - spank-me-heart tattoo):
+    decide on figure of spank-me-heart tattoo.
+To say tattoo-desc of (T - spank-me-heart tattoo):
+	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a handprint on the butt. The words 'spank me' can be read above and underneath ".
+To decide which number is the delicateness-influence of (T - spank-me-heart tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - spank-me-heart tattoo):
+	decide on 6.
+To decide which number is the initial cringe of (T - spank-me-heart tattoo):
+	decide on 6.
+Definition: spank-me-heart tattoo is heart themed: decide yes.
+Definition: spank-me-heart tattoo is impact play themed: decide yes.
+To decide which object is the concealer of (T - spank-me-heart tattoo):
+	let C be a random worn actually dense stockings;
+	if C is a thing, decide on C;
+	decide on a random worn actually dense shoes.
+
+
+
+
 spank my kitty tattoo is an ass tattoo. The tattoo-title of spank my kitty tattoo is "spank my kitty".
 Figure of spank my kitty tattoo is the file "Items/Tats/tattoo4.jpg".
 Definition: spank my kitty tattoo is drawable:
@@ -2420,7 +2457,7 @@ To say tattoo-desc of (T - spit first tattoo):
 
 stinker tattoo is a body tattoo. The tattoo-title of stinker tattoo is "stinker".
 To say tattoo-desc of (T - stinker tattoo):
-	say "The word 'stinker' is written on your arm with red Sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
+	say "The word 'stinker' is written on your arm with red sharpie[unless there is a worn perceived messed knickers]. It would probably be a lot more humiliating to have this written on you if you were messy[end if].".
 To decide which object is the concealer of (T - stinker tattoo):
 	decide on a random worn actually dense arm covering clothing.
 To decide which number is the initial cringe of (T - stinker tattoo):
@@ -2435,10 +2472,10 @@ Definition: stupid whore tattoo is drawable:
 	if there is a worn lower back tattoo, decide no;
 	decide yes.
 Definition: stupid whore tattoo is eligible:
-	if the intelligence-influence of the noun < 0 or the bimbo-influence of the noun > 0 or the noun is recipe or the noun is whore themed, decide yes;
+	if the intelligence-influence of the noun < 0 or the bimbo-influence of the noun > 0 or the noun is pocketbook or the noun is whore themed or the noun is plentiful accessory, decide yes;
 	decide no.
 To say tattoo-desc of (T - stupid whore tattoo):
-	say "You have a tramp stamp tattoo on your lower back that says the words 'Stupid Whore'.".
+	say "You have a tramp stamp tattoo on your lower back that says the words '$tupid Whore'.".
 To decide which number is the intelligence-influence of (T - stupid whore tattoo):
 	decide on -1.
 To decide which number is the bimbo-influence of (T - stupid whore tattoo):
@@ -2521,7 +2558,7 @@ Definition: target tattoo is eligible:
 		if the semen-soak of the noun + the urine-soak of the noun > 0, decide yes;
 	decide no.
 To say tattoo-desc of (T - target tattoo):
-	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the centre.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
+	say "[if the player is a flatchested trap]A giant black and white target is tattooed onto your chest, with the words 'Jizz Here' written in the center.[otherwise]A pair of white cross-hairs are tattooed onto your nipples[end if].".
 To decide which number is the perceived-bimbo-influence of (C - target tattoo):
 	decide on 2.
 To decide which number is the semen-addiction-influence of (T - target tattoo):
@@ -2561,6 +2598,10 @@ Definition: tear it up daddy tattoo is drawable:
 Definition: tear it up daddy tattoo is eligible:
 	if the noun is clothing:
 		if the noun is crotch covering and the noun is no protection, decide yes;
+		if the noun is top-ripped, decide yes;
+		if the noun is torn cutoffs, decide yes;
+		if the noun is torn shirt, decide yes;
+		if the noun is midnight tanto, decide yes;
 	decide no.
 To say tattoo-desc of (T - tear it up daddy tattoo):
 	say "You have a tramp stamp tattoo on your lower back that says the words 'Tear It Up Daddy'.".
@@ -2602,7 +2643,7 @@ Definition: tentacles tattoo is drawable:
 	decide no.
 Definition: tentacles tattoo is eligible if the noun is egg or the noun is writhing vine.
 To say tattoo-desc of (T - tentacles tattoo):
-	say "Several octopus-like tentacles are drawn across your butt, centered on your [asshole] and [vagina]. You feel even more fertile when it comes to tentacle monsters!".
+	say "Several octopus-like tentacles are drawn across your butt, centred on your [asshole] and [vagina]. You feel even more fertile when it comes to tentacle monsters!".
 To decide which number is the initial outrage of (T - tentacles tattoo):
 	decide on 5.
 Definition: tentacles tattoo is pregnancy related: decide yes.
@@ -2782,7 +2823,7 @@ Definition: VIP pussy tattoo is whore themed: decide yes.
 
 
 
-virgin void tattoo is a body tattoo. The tattoo-title of virgin void tattoo is "virgin void".
+virgin void tattoo is a body tattoo. The tattoo-title of virgin void tattoo is "virgin".
 Definition: virgin void tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible and black hole tattoo is not worn.
 Definition: virgin void tattoo is eligible:
 	if the player is male or the virgin of the player is 1, decide no;
@@ -2791,9 +2832,16 @@ Definition: virgin void tattoo is eligible:
 	if the noun is condom of kings or the noun is pregnancy related or the noun is purity clothing or the noun is chastity cage or the noun is vagina themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - virgin void tattoo):
-	say "The black word 'VIRGIN' is tattooed to the right of your belly button, and a large red 'VOID' has been tattooed over the top as if it had been stamped there.".
+	say "The black word 'VIRGIN' is tattooed to the right of your belly button, [if the virgin of the player is 1]reminding you of your purity[otherwise]and a large red 'VOID' has been tattooed over the top as if it had been stamped there[end if].".
 To decide which number is the vaginal sensitivity influence of (C - virgin void tattoo):
+	if the virgin of the player is 1, decide on 0;
 	decide on 2.
+To decide which number is the vaginal-sex-addiciton-influence of (C - virgin void tattoo):
+	if the virgin of the player is 1, decide on -1;
+	decide on 0.
+To decide which number is the outrage of (T - virgin void tattoo):
+	if the virgin of the player is 1, decide on 1;
+	decide on 5.
 To decide which object is the concealer of (T - virgin void tattoo):
 	decide on a random worn actually dense belly covering clothing.
 Definition: virgin void tattoo is vagina themed: decide yes.
@@ -2894,10 +2942,10 @@ Definition: white-trash tattoo is drawable:
 	if there is a worn leg tattoo, decide no;
 	decide yes.
 Definition: white-trash tattoo is eligible:
-	if the noun is clothing and the unworn outrage of the noun > 11, decide yes;
+	if the noun is clothing and (the unworn outrage of the noun > 13 or the noun is white themed), decide yes;
 	decide no.
 To say tattoo-desc of (T - white-trash tattoo):
-	say "The word 'White' is inked on the back your left leg and the word 'Trash' on the back of your right leg. [if the humiliation of the player < 20000]You find it unbearably humiliating to consider yourself trashy![otherwise]It seems quite appropriate considering the things you have worn and done in this game.[end if]".
+	say "The word 'White' is inked on the back your left leg and the word 'Trash' on the back of your right leg. [if the player is modest]You find it unbearably humiliating to consider yourself trashy![otherwise]It seems quite appropriate considering the things you have worn and done in this game.[end if]".
 
 
 

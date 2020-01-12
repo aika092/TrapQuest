@@ -147,7 +147,7 @@ To compute service spill punishment:
 	if bondage protection is 0 and the player is not immobile and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
-		if serving tray is off-stage:
+		if STV is 0 and serving tray is off-stage:
 			say "[bold type]You feel a heavy weight on the front of your neck[if the player is not wrist bound behind], as your arms and wrists are forced behind you and bound with magical rope[end if]! [roman type]You now have a large leather tray sitting in front of your belly, chained to your neck.";
 			summon serving tray locked;
 			now serving tray is wrist-bound-behind;

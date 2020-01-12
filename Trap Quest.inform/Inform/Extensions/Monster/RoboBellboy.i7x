@@ -29,11 +29,7 @@ To decide which figure-name is the monster-image of (M - a robobellboy):
 	decide on figure of robobellboy.
 
 To say MonsterDesc of (M - a robobellboy):
-<<<<<<< Updated upstream
-	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words  '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
-=======
-	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the center, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
->>>>>>> Stashed changes
+	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
 
 To set up (M - a robobellboy):
 	reset M;
@@ -80,7 +76,7 @@ To compute perception of (M - a robobellboy):
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
-	otherwise if the class of the player is maid or the class of the player is hotel employment:
+	otherwise if the class of the player is maid or the player is hotel employed:
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
 		anger M;
 	otherwise if M is babifying the player:
@@ -112,9 +108,9 @@ To compute perception of (M - senior robobellboy):
 		bore M;
 	otherwise if the training-progress of M > 2:
 		say "Its eyes turn red. [line break][speech style of M]'GOOD GOING TRAINEE. [caps please] KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
-	otherwise if (the class of the player is trained hooker or the class of the player is succubus) and the refactory-period of mechanic + the refactory-period of demon lord <= 0:
+	otherwise if (the player is a trained hooker or the class of the player is succubus) and the refactory-period of mechanic + the refactory-period of demon lord <= 0:
 		say "Its eyes turn red. [line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
-	otherwise if the class of the player is maid or the class of the player is hooker in training:
+	otherwise if the class of the player is maid or the player is a hooker in training:
 		say "Its eyes turn red. [line break][speech style of M]HELLO TRAINEE. [caps please] SUBMIT FOR FURTHER PERFORMANCE OPTIMIZATION.'[roman type][line break]";
 	otherwise if the class of the player is succubus:
 		say "Its eyes flicker red, then green. [line break][speech style of M]HELLO HONOURED EMPLOYEE. [caps please] DO NOT HURT ME.[roman type][line break]It appears to lose interest and continues on its way.";
@@ -350,7 +346,7 @@ To say MediumDesc of (M - senior robobellboy):
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1;
-	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head. [line break][second custom style][if the class of the player is trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
+	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head. [line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
 
 To compute unique death of (M - senior robobellboy):
 	say "[BigNameDesc of M] falls apart and clatters to the ground.";

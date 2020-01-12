@@ -38,8 +38,8 @@ Definition: asshole is undefended:
 Fully visible
 
 +!]
-Definition: asshole (called A) is exposed:
-	if the at least partial concealer of A is nothing, decide yes;
+Definition: asshole is exposed:
+	if the at least partial concealer of asshole is nothing, decide yes;
 	decide no.
 
 [!<AssholeIsAtLeastPartiallyExposed>+
@@ -48,8 +48,8 @@ At least a little bit visible
 
 +!]
 Definition: asshole is at least partially exposed:
-	if there is worn potentially asshole covering clothing, decide no;
-	decide yes.
+	if the concealer of asshole is nothing, decide yes;
+	decide no.
 
 [!<ClothingIsPotentiallyAssholeCovering>+
 
@@ -67,7 +67,7 @@ Does this at least partially block vision of asshole when worn?
 
 +!]
 Definition: a clothing (called C) is potentially at least partially asshole covering:
-	if C is total protection and C is not see-through, decide yes;
+	if (C is total protection or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;
 	if C is skirt-covering-crotch and C is not see-through, decide yes;
 	decide no.
 

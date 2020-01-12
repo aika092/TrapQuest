@@ -69,4 +69,36 @@ To decide which number is the perceived-bimbo-influence of (C - lip gag):
 Definition: a ring gag is fetish appropriate: decide no. [Never appears randomly]
 
 
+
+
+Part - Smoothie Predicament Stuff
+
+[Can't go in Predicament World as that extension is defined before clothing!]
+
+smoothie-apron is an overdress. smoothie-apron is arm exposing. smoothie-apron is fully covering. smoothie-apron is unique.
+The printed name of smoothie-apron is "[clothing-title-before]apron[clothing-title-after]". Understand "apron" as smoothie-apron. The text-shortcut of smoothie-apron is "aprn".
+Definition: smoothie-apron is green themed: decide yes.
+Figure of smoothie-apron is the file "Items/Clothes/Upper/Exposing/apron1.jpg".
+To decide which figure-name is clothing-image of (C - smoothie-apron):
+	decide on figure of smoothie-apron.
+To say ClothingDesc of (C - smoothie-apron):
+	say "A green apron with a small white shirt underneath. It only covers your front, so it only conceals whether you are standing in a giant thick super-messy nappy when you are standing with your back to a wall, e.g. in the smoothie van.".
+Definition: smoothie-apron is potentially-bottom-layer-concealing if the player is in Predicament03. [While the player is in the smoothie van only]
+To say ShortDesc of (C - smoothie-apron):
+	say "green apron".
+
+smoothie gag is an opengag. The printed name of smoothie gag is "[TQlink of item described][item style]tube gag[clothing-title-after]". The text-shortcut of smoothie gag is "tga". Understand "tube" as smoothie gag.
+Figure of tube gag is the file "Items/Accessories/Head/tubegag1.jpg".
+To decide which figure-name is clothing-image of (C - smoothie gag):
+	decide on figure of tube gag.
+To say ClothingDesc of (C - smoothie gag):
+	say "This small ring shaped gag stops you from speaking clearly and keeps your mouth open but without stretching your jaw too badly in the process. It is attached to a tube, which is attached to a funnel which people could poor things down to forcefeed you.".
+To decide which number is the initial outrage of (C - smoothie gag):
+	decide on 1.
+To decide which number is the initial cringe of (C - smoothie gag):
+	decide on 1.
+Carry out taking off smoothie gag:
+	repeat with M running through interested bystanders:
+		now M is not interested.
+
 Ring Gag ends here.

@@ -33,7 +33,7 @@ To say MediumDesc of (M - ex-princess):
 To say MonsterDesc of (M - ex-princess):
 	if M is caged:
 		if diaper quest is 1:
-			say "[BigNameDesc of M] is stuck in a small cell behind a solid cell wall with a single viewing window. The cell is empty except for two pink blocks, which [his of M] ankles are strapped to, keeping [his of M] legs apart in a kneeling position, a foot off of the ground. [big he of M][']s wearing nothing except for a thick diaper, a tiara, a pink arm binder and a pink collar. The arm binder is connected to a hole in the ceiling by a tight rope, and [his of M] collar is similarly connected to a hole in the ground by another tight rope. These two ropes serve to allow the [ShortDesc of M][']s captors to move [him of M] into any position of their choice and hold [him of M] there, without needing to go into the room themselves. A clear tube descends in front of the [ShortDesc of M][if the current-torment of M <= 0], with several soiled diapers ready to exit through the flap. However, they are currently being held in place thanks to [NameDesc of M][']s nose and face obstructing the exit, pressed unpleasantly into the worst part of the frontmost diaper[end if]. Several other used diapers litter the ground, no doubt having at some point descended from the tube, which is likely connected to the diaper pail in the nearby hallway. In summary, it would appear that every diaper used by a member of the school ends up in [NameDesc of M][']s cell, essentially making [his of M] cell into a giant diaper pail.[paragraph break]An intercom system has been set up to allow any speakers to communicate with [NameDesc of M]. You also notice a keyhole to the side of the viewing portal, presumably for use on the rare occasion that [he of M] is fed or [his of M] pail is cleaned out. A big button is also accessible to you, on a stand in front of the viewing portal. [if torment-count of M is 0]What could that do?[otherwise]You know that this forces [him of M] to faceplant into the diapers below [him of M], covering [him of M] in more diapers from the tube above, and forcing [him of M] to orgasm.";
+			say "[BigNameDesc of M] is stuck in a small cell behind a solid wall with a single viewing window. The cell is empty except for two pink blocks, which [his of M] ankles are strapped to, keeping [his of M] legs apart in a kneeling position, a foot off the ground. [big he of M][']s wearing nothing except for a thick diaper, a tiara, a pink arm binder and a pink collar. The arm binder is connected to a hole in the ceiling by a tight rope, and [his of M] collar is similarly connected to a hole in the ground by another tight rope. These two ropes serve to allow the [ShortDesc of M][']s captors to move [him of M] into any position of their choice and hold [him of M] there, without needing to go into the room themselves. A clear tube descends in front of the [ShortDesc of M][if the current-torment of M <= 0], with several soiled diapers ready to exit through the flap. However, they are currently being held in place thanks to [NameDesc of M][']s nose and face obstructing the exit, pressed unpleasantly into the worst part of the front most diaper[end if]. Several other used diapers litter the ground, no doubt having at some point descended from the tube, which is likely connected to the diaper pail in the nearby hallway. In summary, it would appear that every diaper used by a member of the school ends up in [NameDesc of M][']s cell, essentially making [his of M] cell into a giant diaper pail.[paragraph break]An intercom system has been set up to allow any speakers to communicate with [NameDesc of M]. You also notice a keyhole to the side of the viewing portal, presumably for use on the rare occasion that [he of M] is fed or [his of M] pail is cleaned out. A big button is also accessible to you, on a stand in front of the viewing portal. [if torment-count of M is 0]What could that do?[otherwise]You know that this forces [him of M] to face plant into the diapers below [him of M], covering [him of M] in more diapers from the tube above, and forcing [him of M] to orgasm.";
 			if the current-torment of M > 0, say "[big he of M] is currently being held with [his of M] face to the ground, engulfed in soiled diapers, with a vibrator loudly buzzing away from within [his of M] diaper. You can hear [him of M] moaning with a mixture of arousal and disgust.";
 		otherwise:
 			say "[BigNameDesc of M] is stuck in a small cell behind a series of strong metal cage bars. The cell is empty except for a toilet in one corner. ";
@@ -121,7 +121,7 @@ To UnidentifiablePosterReaction of (M - ex-princess):
 Part 3 - Combat
 
 
-To compute (M - ex-princess) protecting against (X - a monster): [Default protection if not defined for the monster]
+To compute (M - ex-princess) protecting against (X - a monster):
 	if M is in the school:
 		if glittery-wand is not retained by M or glittery-wand is not cursed, say "[BigNameDesc of M] [one of]seems to have used the last of [his of M] energy for now, and can't help you with the rest of the fight.[or]is panting heavily.[or]is still too out-of-breath to help.[or]continues panting heavily, trying to recover [his of M] breath.[or]seems to be trying to gather enough magical energy for one last spell![or][PrincessHeal][or]coughs out a hoarse apology.[line break][speech style of M]'I'm sorry, there was no other way...'[roman type][line break][or]continues panting heavily.[stopping]";
 		otherwise say "[BigNameDesc of M] [one of]is being forced to masturbate [himself of M] with the cursed wand![or]continues to fervently press the vibrating wand into [his of M] clit, no matter how much [he of M] tries to stop it with [his of M] other arm.[or]pushes the head of the cursed vibrating wand into [his of M] clit and makes small circles.[or]moans with a mixture of passion and despair as [he of M] brings [himself of M] closer to the bring with the powerful wand.[or]screams out as [he of M] has a powerful orgasm from the vibrating wand on [his of M] clit.[or]can't stop stimulating [his of M] clit, even after coming down from [his of M] orgasmic high![or]shudders as [his of M] oversensitive clit receives further vibrating punishment.[cycling]";
@@ -151,7 +151,6 @@ To compute (M - a monster) stomping (N - ex-princess): [TODO: Different interact
 		now N is moved;
 		now the health of M is 1.
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -166,20 +165,13 @@ To compute talk option (N - 1) to (M - ex-princess):
 		if M is interested and breasts is exposed, progress quest of chest-exposing-quest from M;
 		if the times-met of M < 2:
 			say FirstGreeting to M;
+			say FirstResponse of M;
 		otherwise:
 			say RepeatGreeting to M;
+			say RepeatResponse of M;
 		now the boredom of M is 0;
+		now M is interested;
 		check perception of M.
-
-To compute greeting response of (M - ex-princess):
-	if M is caged and the current-torment of M > 0:
-		say SubmissiveResponse of M;
-	otherwise if the times-met of M < 2:
-		say FirstResponse of M;
-	otherwise:
-		say RepeatResponse of M;
-	now the boredom of M is 0;
-	now M is interested.
 
 To say FirstResponse of (M - ex-princess):
 	say "[speech style of M]'Who are you?'[roman type][line break]".
@@ -202,7 +194,117 @@ To compute talk option (N - 2) to (M - ex-princess):
 		otherwise: [She's not alone so you can't talk sincerely]
 			say "You put on a vindictive act in front of your peers.[line break][variable custom style]'Having fun, slut?'[roman type][line break]You see [him of M] notice you're not alone, and [he of M] twitches [his of M] eyebrows at you.[line break][speech style of M]'Fuck you!'[roman type][line break]";
 	otherwise:
-		say "[variable custom style]'Can you help me out?'[line break][speech style of M]'I need to conserve all my energy and strength, so that when the time comes, I can send my aid.'[roman type][line break]".
+		compute default questioning to M.
+
+To compute annoyance of (M - ex-princess):
+	if the questioned of M > the high-annoyance threshold of M:
+		say "[speech style of M]'Uh...Unfortunately, I have something to do. We'll take more later...'[roman type][line break]";
+		Bore M;
+		now the scared of M is 30;
+	otherwise:
+		if questioned of M < the mild-annoyance threshold of M, ApplyFullConvoFatigue to M;
+		say AnnoyedWarn of M;
+
+To say WhereAnswer of (M - ex-princess):
+	if the player is in the dungeon:
+		say "[speech style of M]'This is my royal dungeon. It feels so nostalgic...'[roman type][line break]";
+	otherwise if the player is in the hotel:
+		let hb be mechanic;
+		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
+		if hb is mechanic:
+			say "[speech style of M]'This is Xavier's pleasure hotel. [if hb is alive]If [he of hb] asks you for an amulet, you must never bring it to [him of hb]. There is no telling how powerful [he of hb] would become...'[otherwise]It was unfortunate that [he of hb] had to die, but it is what [he of hb] deserved.'[end if][roman type][line break]";
+		otherwise:
+			say "[speech style of M]'This is the demon Xavier's pleasure hotel. [if hb is alive]Was [he of hb] this powerful before I sealed [him of hb]? Maybe I've grown weaker...'[otherwise]I'm not sure how you managed to defeat [him of hb]...'[end if][roman type][line break]";
+	otherwise if the player is in the woods:
+		let vb be vine boss;
+		say "[speech style of M]'This is the forest of Bimbacia, which the vine lord calls its domain. [if the times-submitted of vb > 0]Naturally, that extends to all orifices in the forest as well...'[otherwise if vb is alive]I don't know why I created something so annoying...'[otherwise]Or- it used to. Defeating such a creature is quite a feat!'[end if][roman type][line break]";
+	otherwise if the player is in the school:
+		say "[speech style of M]'This is the Slut School. I can't wait to leave this place.'[roman type][line break]";
+	otherwise:
+		let mb be vampiress;
+		if herald is alive or herald is bossdefeated, now mb is herald;
+		if mb is vampiress, say "[speech style of M]'This is Aurora's mansion, although...[he of mb] never fights seriously, so it wouldn't be surprising if someone else defeated [him of mb] and started squatting while [he of mb] was recovering.'[roman type][line break]";
+		otherwise say "[speech style of M]'This is Aurora's mansion[if mb is alive], but...something else is trying to claim ownership too. Even I don't know what it is.[otherwise], although I fear that the eldritch entitites that have their eyes on this place have something to say about that.'[roman type][line break]".
+
+To say WhoAnswer of (M - ex-princess):
+	say "[speech style of M]'I told you before, I'm Princess Annie! I created this dimension.'[roman type][line break]".
+
+To say StoryAnswer of (M - ex-princess):
+	if the player is in the dungeon:
+		let db be minotaur;
+		if diaper quest is 1, now db is boogeymonster;
+		if db is minotaur:
+			say "[speech style of M]'I created [NameDesc of db] as a perfect guard for my dungeon. For personal reasons, I gave [him of db] a larger [DickDesc of db] and inhuman stamina, and it made [him of db] impossible to control. Still, if I didn't have my responsibilities as a ruler...'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'I created [NameDesc of db] to guard my dungeon, but [he of db] was too scary...I had no choice but to put [him of db] under lock and key.'[roman type][line break]";
+	otherwise if the player is in the hotel:
+		let hb be mechanic;
+		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
+		if hb is mechanic:
+			say "[speech style of M]'Xavier is a criminal, I bound here as part of [his of hb] punishment.'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'Xavier is an invader from another dimension, who I defeated and sealed away. [if hb is alive][big he of hb] is even more powerful than [he of hb] was back then...I'll need your help[otherwise]Many of [his of hb] vassals remain in this world[end if].'[roman type][line break]";
+	otherwise if the player is in the woods:
+		say "[speech style of M]'When I created this forest, I was going through this phase where I was really into tentacles. Sorry.'[roman type][line break]";
+	otherwise if the player is in the school:
+		say "[speech style of M]'I never thought that headmistress would be able to overpower me like that. That bitch...'[roman type][line break]";
+	otherwise:
+		let mb be vampiress;
+		if herald is alive or herald is bossdefeated, now mb is herald;
+		if mb is vampiress:
+			say "[speech style of M]'This mansion looked a lot cleaner when I created it. This is why you can't trust management to an undead.'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'This mansion [first custom style]BELONGS TO THE GREAT ONES. SOON, OTHER PLACES WILL FALL.'[roman type][line break]".
+
+To say EscapeAnswer of (M - ex-princess):
+	say "[speech style of M]'You must defeat the masters of this game. They're beyond my jurisdiction, so I can't really help you.'[roman type][line break]".[TODO: work on]
+
+To say AdviceQuestion of (M - ex-princess):
+	let B be a random slutty sister;
+	if the player is in the dungeon:
+		if minotaur is alive, now B is minotaur;
+		if boogeymonster is alive, now B is boogeymonster;
+	if the player is in the hotel:
+		if mechanic is alive, now B is mechanic;
+		if demon lord is alive, now B is demon lord;
+	if the player is in the woods:
+		if vine boss is alive, now B is vine boss;
+	if the player is in the mansion:
+		if vampiress is alive, now B is vampiress;
+		if herald is alive, now B is herald;
+	if B is a slutty sister, say "[variable custom style]'How do I defeat the slutty sisters?'[roman type][line break]";
+	otherwise say "[variable custom style]'How do I defeat [NameDesc of B]?'[roman type][line break]".
+
+To say AdviceAnswer of (M - ex-princess):
+	if the player is in the dungeon:
+		if minotaur is alive:
+			let db be minotaur;
+			say "[speech style of M]'[big he of db] may be strong, but [he of db] tires easily. If you exhaust [him of db] first, [he of db] will die quickly.'[roman type][line break]";
+		otherwise if boogeymonster is alive:
+			say "[speech style of M]'You must ignore its evil visions and fight it head on.'[roman type][line break]";
+	otherwise if the player is in the hotel:
+		if demon lord is alive:
+			let dl be demon lord;
+			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. [big he of M] has a weakness, but it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items]
+		otherwise if mechanic is alive:
+			let mec be mechanic;
+			say "[speech style of M]'If you can separate [him of mec] from [his of mec] wrench, [he of mec] will be greatly weakened. After that, [he of mec] will be just like anyone else.'[roman type][line break]";
+	otherwise if the player is in the woods:
+		if vine boss is alive, say "[speech style of M]'You must enter its lair and face it in single combat. If you allow yourself to be violated, you may doom yourself to a horrible fate.'[roman type][line break]";
+	otherwise if the player is in the mansion:
+		if herald is alive:
+			say "[speech style of M]'I...don't know. I have never seen that thing before.'[roman type][line break]";
+		otherwise if vampiress is alive:
+			let mb be vampiress;
+			say "[speech style of M]'Do you really need to defeat [him of mb]? [big he of mb]'s harmless...Well, as a vampire, [he of mb] must feed in order to maintain [his of mb] strength. If you don't allow [him of mb] to feed, [he of mb] will eventually starve.'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Hmm...I didn't create them, so I'm not sure. Let me think about it.'[roman type][line break]".[TODO: work on]
+
+To say TeachQuestion of (M - ex-princess):
+	say "[variable custom style]'So, is there anything you can do to help me?'[roman type][line break]";
+
+To compute teaching of (M - ex-princess):
+	say "[line break][speech style of M]'When the time comes, I will aid you, but until then, I need to conserve all my energy and strength.'[roman type][line break]".
 
 Section 3 - Drink Requesting
 
@@ -234,6 +336,7 @@ To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - a vibe-wand):
 	say "[BigNameDesc of M][']s eyes go wide.[line break][speech style of M]'[if T is royal scepter]Yes... Yes! You found it! Huzzah! With this, the fight will be easy[otherwise if there is a vibe-wand retained by T]This is an unnecessary extra, but it might help. I'll take it[otherwise]Hmm, yes, I can use this, I think. With your help, this should serve[end if]. Now [if diaper quest is 1]go drop that in the diaper pail and then [end if]get me out of here. You did bring a key, didn't you?'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - skeleton key):
+	now the friendly boredom of M is 0;
 	say "[BigNameDesc of M] is visibly elated.[line break][speech style of M]'Yes! You found one! This is exactly what I needed! Now, quick, let's go!'[roman type][line break]With the key, the door to [his of M] cell clicks open and [he of M] staggers out. As soon as [he of M] has crossed the threshold of the cell, you watch as pink sparks fizz across [his of M] outfit, transforming it into an elegant (if rather exposing) pink gown[if diaper lover > 0]. However, [his of M] outfit visibly includes a very bulky plain white diaper, fully visible from under the exposing segment of [his of M] skirt. It doesn't look like [he of M] intended to include the diaper in [his of M] transformation, and is equal parts confused and furious[end if].".
 
 
@@ -381,7 +484,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 				otherwise:
 					now enslave-success is 0;
 					now glittery-wand is cursed;
-					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and goes to deflect it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
+					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and deflects it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
 			otherwise:
 				say "[BigNameDesc of M] laughs in gleeful triumph as [he of M] blasts [NameDesc of N] with a powerful wave of magical energy. [BigNameDesc of N] screeches in shock as [he of N] has [his of N] outfit transformed";
 	if enslave-success is 1:
@@ -509,7 +612,7 @@ A later time based rule (this is the caged princess torture continues rule):
 		decrease the current-torment of M by time-seconds;
 		if M is in the location of the player:
 			if diaper quest is 1:
-				say "You watch [NameDesc of M] coniute trying to nudge the soiled diapers away from [his of M] face and head [one of]without success[or]in vain[or]but to no avail[at random]. [big his of M] vibrator powerfully and loudly buzzes away from within [his of M] padding.[line break][speech style of M]'[one of]Uhnnnnn[or]Aaaaaah[or]MMMMMMmmmmph[or]Mmmmmmm[at random]...'[roman type][line break]";
+				say "You watch [NameDesc of M] continue trying to nudge the soiled diapers away from [his of M] face and head [one of]without success[or]in vain[or]but to no avail[at random]. [big his of M] vibrator powerfully and loudly buzzes away from within [his of M] padding.[line break][speech style of M]'[one of]Uhnnnnn[or]Aaaaaah[or]MMMMMMmmmmph[or]Mmmmmmm[at random]...'[roman type][line break]";
 				if the current-torment of ex-princess <= 0:
 					let N be a random threatening monster in the location of the player;
 					say "You watch with [horror the bimbo of the player] as [NameDesc of M][']s thighs begin to shake uncontrollably, and moments later [he of M] is screaming into the gross padding in front of her mouth as [he of M] cums hard. Now out of breath, [he of M] is forced to take in several desperate gasps of pungent diaper air just to stay conscious. Finally, after [he of M] comes down from [his of M] high, the ropes re-activate, pulling [him of M] back up so that [his of M] face is pressed against the exit of the diaper pail tube[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for making me cum over your fragrant diapers, I hope to smell your diapers again soon[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";

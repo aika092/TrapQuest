@@ -49,9 +49,9 @@ To say MonsterComment of (M - mechanic):
 	otherwise if the bimbo of the player < 8 and the player is male:
 		say "[first custom style][one of]Wrenches are so cool. I bet [he of M] could teach me a thing or two about them.'[or]I don[']t know why, but I can[']t stop staring at [his of M] [if full-lady fetish is 1]dildo collection[otherwise]crotch. [big he of M] must be stuffing it or something, heh[end if].'[or][big he of M]'s pretty good looking, I guess. Must be [his of M] clothes.'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 8:
-		say "[first custom style][one of][big his of M] wrench is so big and hard. I could probably use it to protect myself from all the perverts around here!'[or][big he of M][']s pretty good looking. Obviously I[']d never give Nintendolls the pleasure, but at least they know what to model for.'[or]I can[']t keep from looking at [his of M] crotch. Those fucking Nintendolls must be messing with my head!'[in random order][roman type][line break]";
+		say "[first custom style][one of][big his of M] wrench is so big and hard. I could probably use it to protect myself from all the perverts around here!'[or][big he of M][']s pretty good looking. Obviously I[']d never give nintendolls the pleasure, but at least they know what to model for.'[or]I can[']t keep from looking at [his of M] crotch. Those fucking nintendolls must be messing with my head!'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 12:
-		say "[variable custom style][one of]I[']d play with [his of M] wrench! Wait...'[or][big he of M] looks really intelligent. Totally fuckbuddy material, as long as [he of M] respects my boundaries!'[or]I can[']t stop myself from staring at [his of M] [if full-lady fetish is 1]crotch. I[']m not even that attracted to [him of M], but I just know [his of M] dick is really big[otherwise]belt. It's not really fair to have so many toys out in the open like that[end if]!'[in random order][roman type][line break]";
+		say "[variable custom style][one of]I[']d play with [his of M] wrench! Wait...'[or][big he of M] looks really intelligent. Totallyfuckbuddy material, as long as [he of M] respects my boundaries!'[or]I can[']t stop myself from staring at [his of M] [if full-lady fetish is 1]crotch. I[']m not even that attracted to [him of M], but I just know [his of M] dick is really big[otherwise]belt. It's not really fair to have so many toys out in the open like that[end if]!'[in random order][roman type][line break]";
 	otherwise if the bimbo of the player < 16:
 		say "[second custom style][one of]I'd play with [his of M] wrench. All night if [he of M] let me...[or][big he of M][']s SO cute, but, I don[']t want to just get on my knees right away. I should cook [him of M] dinner first.'[or]I bet [he of M]'s the smart guy that made all those fun robots!'[in random order][roman type][line break]";
 	otherwise:
@@ -467,8 +467,8 @@ To compute post climax effect of (M - mechanic) in (F - a fuckhole):
 
 To decide if (M - mechanic) is losing wrapper in (F - a fuckhole):
 	if the class of the player is princess, decide yes;[he hates princesses]
-	if the class of the player is priestess, decide yes;[he's weak to priestesses]
-	if the class of the player is hotel employment:[He's less keep to creampie the help]
+	if the class of the player is priestess, decide no;[he's weak to priestesses]
+	if the player is hotel employed:[He's less likely to creampie the help]
 		if a random number between 1 and 5 is 1, decide yes;
 	otherwise:
 		if a random number between 1 and 3 is 1, decide yes;
@@ -491,7 +491,7 @@ To decide if (M - mechanic) is willing to creampie (F - a fuckhole):
 	if the class of the player is princess, decide yes;
 	if the class of the player is priestess, decide no;
 	if the reaction of the player is 2:
-		if the class of the player is hotel employment, decide no;
+		if the player is hotel employed, decide no;
 		 if a random number between 1 and the charisma of the player > 1, decide no;[if you don't work for him you need to be persuasive]
 	decide yes.
 
@@ -509,7 +509,7 @@ To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
 To compute happy reward of (M - mechanic):
 	let T be a random tiara;
 	if M is retaining T:
-		say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]OK I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNamedesc of M] hands you the [ShortDesc of T].";
+		say "[line break][speech style of M]'[one of]Alright [']princess['], I guess you've earned this back.'[or]Ok I feel better now. Maybe next time you'll bring the old princess and make it a threesome.'[or]Fuck, that was good. Here's your garbage back.'[or]I like you loads more than the old princess. Take it.'[at random][roman type][line break][BigNamedesc of M] hands you the [ShortDesc of T].";
 		now T is held by the player;
 		now T is not retained by M;
 		now M is not withholding T;
@@ -520,7 +520,7 @@ To compute happy reward of (M - mechanic):
 		now S is held by the player;
 		now S is not retained by M;
 		now M is not withholding S;
-	otherwise if the employee-record of senior robobellboy > 4 and the class of the player is hotel employment:
+	otherwise if the employee-record of senior robobellboy > 4 and the player is hotel employed:
 		let J be a random off-stage plentiful accessory;
 		now J is emerald;
 		say "[speech style of M]'Normally I don[']t pay whores on principle, but since you work for me and all...'[roman type][line break][BigNameDesc of M] hands you a [printed name of J].";
@@ -529,7 +529,7 @@ To compute happy reward of (M - mechanic):
 		say "[speech style of M]'That was actually pretty nice. Plus, given what I[']ve heard about you... You[']re hired!'[roman type][line break][BigNameDesc of M] pulls out a [printed name of black maid headdress] and fixes it on top of your head.";
 		summon black maid headdress cursed;
 	otherwise if the employee-record of senior robobellboy < -2:
-		if the class of the player is hotel employment, say "[speech style of M]'To be honest, I don't see why you get such terrible reviews. After you[']ve done some more training, come back for another fuck.'[roman type][line break]";
+		if the player is hotel employed, say "[speech style of M]'To be honest, I don't see why you get such terrible reviews. After you[']ve done some more training, come back for another fuck.'[roman type][line break]";
 		otherwise say "[speech style of M]'That was pretty good, but I don't trust interns. I still want you to do some proper training later on.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'You[']re not an awful fuck as far as whores go. Don[']t expect me to pay you though.'[roman type][line break]".
@@ -540,15 +540,44 @@ Definition: mechanic is willing to spank: decide yes.
 
 Definition: mechanic is willing to deliver enemas: decide yes.
 
+To decide which number is the enema plug reluctance of (M - mechanic):
+	decide on 2. [Set this to 0 to have the monster never plug after an enema]
+
+To say EnemaDeclarationFlav of (M - mechanic):
+	say "[speech style of M]'I've got too much damn work to do to change you as often as you need. So you're getting this![roman type][line break]".
+
+To say EnemaAfterFlav of (M - mechanic):
+	say "[speech style of M]'I've fixed enough pipes to know what's gonna happen to you soon.'[roman type][line break]".
+
+To say EnemaPlugAfterFlav of (M - mechanic):
+	if M is intelligent, say "[speech style of M]'Don't fuss, I'm a trained professional in blockage.'[roman type][line break]".
+
 Definition: mechanic is willing to confiscate: decide yes.
 
+To say ConfiscationDeclarationFlav of (M - mechanic) on (C - a clothing):
+	say "[speech style of M]'[if C is plentiful accessory]This might be worth something to m... I mean BABIES like you shouldn't have this!'[otherwise if C is equippable]Hmph, your WAY too old to be using this... thing. Into the toolbox it goes.'[otherwise]It's so considerate that you're helping me child proof this hotel by bringing me things like this!'[end if][roman type][line break]".
+
+To say ConfiscationAfterFlav of (M - mechanic) on (C - a clothing):
+	let K be a random worn knickers;
+	say "[speech style of M]'You're tempting me to dig into that [if K is knickers][ShortDesc of K][otherwise]inventory[end if] of yours and see what -else- you're hiding!'[roman type][line break]".
+
 Definition: mechanic is diaper disciplining: decide yes.
+
+To say DiaperChangeComment of (M - mechanic):
+	if the diaper-duration of M <= 0, say "[speech style of M]'[one of]You see my tool box? Do you want to see what's in this tool box? Stay in that diaper then[or]There we go. You keep your hands off that until it's as backed up as the pipes around here[or]Good, now get~ And keep those huggies on if you know what's good for you[in random order]. Understand?'[roman type][line break]";
+	otherwise say "[speech style of M]'There we go. And remember, diapering you will stop being fun for both of us if you don't keep it on.'[roman type][line break]".
 
 Definition: mechanic is willing to change diapers: decide yes.
 
 Definition: mechanic is willing to donate diapers: decide yes.
 
 Definition: mechanic is willing to double diapers: decide yes.
+
+To say DoubleDiaperAnnounceFlav of (M - mechanic):
+	say "[BigNameDesc of M] starts fishing in [his of M] toolbox for ANOTHER diaper.[line break][speech style of M]'[one of]You see this load, little one? It's that full on purpose, isn't it? It's because you wanted two of [']em, right?'[or]I don't get paid enough to double diaper you... but you've made it completely neccesary.'[in random order][roman type][line break]".
+
+To say DoubleDiaperAfterFlav of (M - mechanic):
+	say "[speech style of M]'See? Now I've rubbed all the oil smudges off the first diaper... looks clean as a whistle!'[roman type][line break]".
 
 Definition: mechanic is willing to punish untidiness: decide yes.
 
@@ -674,23 +703,23 @@ To say FirstResponse of (M - mechanic):
 
 To say RepeatResponse of (M - mechanic):
 	if M is unfriendly:
-		if the class of the player is hotel employment, say "[speech style of M]'[one of]In your contract, it said something about waxing hard poles. Get on your knees, I[']ll demonstrate what I mean.'[or]It's time you did some real work for a change, maid. Get on your knees.'[or]Do you feel like a fuck? Because if you value your job, you do.'[or]Hey maid. I[']m giving you a break from serving patrons. Get on your knees, because you[']re going to serve me instead.'[or]Guess what, your boss is horny, get on your knees.'[at random]";
+		if the player is hotel employed, say "[speech style of M]'[one of]In your contract, it said something about waxing hard poles. Get on your knees, I[']ll demonstrate what I mean.'[or]It's time you did some real work for a change, maid. Get on your knees.'[or]Do you feel like a fuck? Because if you value your job, you do.'[or]Hey maid. I[']m giving you a break from serving patrons. Get on your knees, because you[']re going to serve me instead.'[or]Guess what, your boss is horny, get on your knees.'[at random]";
 		otherwise say "[speech style of M]'[one of]Shut up, or I'll make you.'[or]If you value your pretty face, you[']ll get on your knees. Hurry, before I lose my patience.'[or]Shut your mouth.'[or]If you keep running your mouth, I[']ll have to put something in it.'[at random][roman type][line break]";
 	otherwise if the class of the player is maid:
 		say "[speech style of M]'[one of]The patrons are looking forward to having you clean up in their rooms. Don[']t keep them waiting.'[or]Hey, aren[']t you the maid? Stop flirting and get back to work.'[or]I[']m not paying you to make conversation, maid. Granted I[']m not really paying you to [']clean['] either...'[or]Ugh, is this about the pay? The patrons will compensate you when you do your job. Better get going, they might give less if you keep them waiting.'[or]If you[']re here looking for instructions, you[']re in luck. Stop bothering me and get back to work. Clear anything up?'[at random][roman type][line break]";
-	otherwise if the class of the player is hotel employment:
+	otherwise if the player is hotel employed:
 		say "[speech style of M]'[one of]I[']d really prefer it if you kept your flirting to the paying customers.'[or]Don[']t you have a knob you[']re supposed to be sitting on, somewhere? Ugh, why do I pay you?'[or]I[']m not paying you to make conversation. Get back to work.'[or]Ugh, is this about the pay? I swear, it's like you whores have never read a contract before.'[or][if the employee-record of senior robobellboy > 1]I hear you do good work, but I[']m not a whore, so I[']m not planning to give you a bonus for free, if you know what I mean[otherwise if the employee-record of senior robobellboy < -1]I hear you pissed off some of my customers. Clean up your act or it's going to come up on your next performance review[otherwise]If you have time to talk to me, you have time to suck dick. Go find a customer[end if].'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Hi again.'[roman type][line break]".
 
 To say SubmissiveResponse of (M - mechanic):
-	if the class of the player is hotel employment:
+	if the player is hotel employed:
 		FavourDown M;
-		say "[speech style of M]'[one of]Ha. I knew there was a reason I kept sluts like you on my dime. Get on your knees.[or]You want dick in leiu of a paycheck this month? Great, get on your knees.[or]Anything not to do your job, eh? Alright, get on your knees.[or]I think I[']ve heard this one. So horny that you can[']t focus on your job. I[']ll bite. Get on your knees.[at random][if M is not unfriendly] That, or stop bothering me and get your lazy ass back to work.'[otherwise].'[end if][roman type][line break]";
+		say "[speech style of M]'[one of]Ha. I knew there was a reason I kept sluts like you on my dime. Get on your knees.[or]You want dick in lieu of a paycheck this month? Great, get on your knees.[or]Anything not to do your job, eh? Alright, get on your knees.[or]I think I[']ve heard this one. So horny that you can[']t focus on your job. I[']ll bite. Get on your knees.[at random][if M is not unfriendly] That, or stop bothering me and get your lazy ass back to work.'[otherwise].'[end if][roman type][line break]";
 	otherwise if M is not unfriendly:
 		say "[speech style of M]'[one of]Ha ha, yes this is my realm - er, I mean hotel, and I'll fuck whoever I want, whenever I want!'[or]You're still on about that? Ha, you're welcome, I guess.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Back for more, slut?'[or]Did remembering what happened earlier made you horny? Can[']t say I blame you, you obviously can[']t help being a tart.'[or]Horny again, are we? I[']ll help.'[or]Not satisfied with [the times-submitted of M] dickings? OK, let[']s make it [the times-submitted of M + 1]!'[or]Ah! It[']s a good thing you showed up, I was watching you in my security cameras and thought, Man, I[']d like to bang that slut again.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]Back for more, slut?'[or]Did remembering what happened earlier made you horny? Can[']t say I blame you, you obviously can[']t help being a tart.'[or]Horny again, are we? I[']ll help.'[or]Not satisfied with [the times-submitted of M] dickings? Ok, let[']s make it [the times-submitted of M + 1]!'[or]Ah! It[']s a good thing you showed up, I was watching you in my security cameras and thought, Man, I[']d like to bang that slut again.'[at random][roman type][line break]".
 
 To say InvitationRejected of (M - mechanic) with (N - a monster):
 	say "[speech style of M]'[one of]Heh, how could I say no to a face like that?'[or]You need help from the boss, huh? Alright, I can do that.'[or]Hurting for the boss's [DicKDesc of M], huh? I guess I can sate you.'[at random][roman type][line break]";
@@ -825,8 +854,8 @@ To say DominanceIntro of (M - mechanic):
 	let J be mystical amulet;
 	unless J is retained by M, now J is a random off-stage wrench;
 	unless the wrench-timer of M <= 0, now J is throne;
-	if J is clothing, say "You lunge for [NameDesc of M]'s [ShortDesc of J] and wrest it from [his of M] hand. [big he of M] looks from you to the wrench, and slowly drops to [his of M] knees, hands in the air. Nice. [PowerBottomComment of M] [BigNameDesc of M] nods, and gets on [his of M] back, keeping [his of M] hands up. You hold the [ShortDesc of J] away from [him of M] as you unzip [his of M] pants and roughly pull them off.";
-	otherwise say "You lunge for [NameDesc of M] and yank down [his of M] pants. [big he of M] looks at you for a moment and slowly drops to [his of M] knees, hands in the air. Nice. [PowerBottomComment of M] [NameDesc of M] nods, and gets on [his of M] back, keeping [his of M] hands up. You smirk as you pull [his of M] jeans the rest of the way off.";
+	if J is clothing, say "You lunge for [NameDesc of M]'s [ShortDesc of J] and wrest it from [his of M] hand. [big he of M] looks from you to the wrench, and slowly drops to [his of M] knees, hands in the air. Nice. [PowerBottomComment of M] [BigNameDesc of M] nods and gets on [his of M] back, keeping [his of M] hands up. You hold the [ShortDesc of J] away from [him of M] as you unzip [his of M] pants and roughly pull them off.";
+	otherwise say "You lunge for [NameDesc of M] and yank down [his of M] pants. [big he of M] looks at you for a moment and slowly drops to [his of M] knees, hands in the air. Nice. [PowerBottomComment of M] [NameDesc of M] nods and gets on [his of M] back, keeping [his of M] hands up. You smirk as you pull [his of M] jeans the rest of the way off.";
 	if there is a held condom-providing thing:
 		say "Would you like to have him wear a condom?";
 		if the player is consenting:
@@ -853,11 +882,11 @@ To compute failed dominance punishment of (M - mechanic):
 		compute sissification;
 	otherwise:
 		let H be trainee hood;
-		if H is alive or H is not actually summonable or the class of the player is trained hooker, now H is black maid headdress;
+		if H is alive or H is not actually summonable or the player is a trained hooker, now H is black maid headdress;
 		let B be a random off-stage trainee bra;
-		if B is not clothing or the class of the player is trained hooker, now B is a random off-stage pasties;
+		if B is not clothing or the player is a trained hooker, now B is a random off-stage pasties;
 		let E be a random off-stage trainee thigh highs;
-		if E is not clothing or the class of the player is trained hooker, now E is a random off-stage rollerskates;
+		if E is not clothing or the player is a trained hooker, now E is a random off-stage rollerskates;
 		if H is off-stage and H is actually summonable:
 			say "[big he of M] forces a [ShortDesc of H] onto your head! ";
 			summon H cursed;
@@ -868,6 +897,7 @@ To compute failed dominance punishment of (M - mechanic):
 			say "[big he of M] forces a [ShortDesc of E] onto your feet!";
 			summon E cursed;
 		say "[line break][speech style of M]'You want to fuck? Then consider this an interview.'[roman type][line break]";
+	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 	now another-turn is 1.
 
 To say DominanceFailure of (M - a mechanic):
@@ -981,6 +1011,7 @@ To check vaginal dominate vigilance of (M - mechanic) for (J - a thing):
 		unless J is throne, now J is in the location of the player;
 		moderateHumiliate;
 		if M is wrapped:
+			passively stimulate vagina from M;
 			say "[big he of M] suddenly pulls out. [line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][speech style of M][if the semen addiction of the player < 8]I can't believe I did that! I CAN'T BELIEVE I DID THAT[otherwise if pregnancy fetish is 1 and the pregnancy of the player is 0]I could get pregnant... I-I could get fucking pregnant[otherwise]I'm going to take it all in my fucking [vagina][end if]![roman type][line break]";
@@ -994,7 +1025,6 @@ To check vaginal dominate vigilance of (M - mechanic) for (J - a thing):
 			otherwise:
 				say "[BigNameDesc of M] rolls [his of M] eyes[if J is clothing] and grabs the [ShortDesc of J] off the ground[end if].";
 				if J is clothing, now M is retaining J;
-				Arouse 2000;
 		otherwise:
 			if J is clothing and a random number between 0 and the appearance of the player < 10, now M is retaining J;
 			say "[big he of M] suddenly pulls out. [line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud. [line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is retaining J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], keeping [him of M]self hard as [he of M] waits for you to cool off. You look up at [him of M] in dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [vagina] with [semen].";
@@ -1138,6 +1168,7 @@ To check anal dominate vigilance of (M - mechanic) for (J - a thing):
 		unless J is throne, now J is in the location of the player;
 		moderateHumiliate;
 		if M is wrapped:
+			passively stimulate asshole from M;
 			say "[big he of M] suddenly pulls out. [line break][speech style of M]'Lose this.'[roman type][line break][big he of M] gestures at the condom covering [his of M] [DickDesc of M]. Pull it off? It might be your only chance to cum...";
 			if the player is bimbo consenting:
 				say "You rip the condom off without missing a beat, gasping as [his of M] [DickDesc of M] slams back in completely bareback.[line break][variable custom style]I'm going to take it all in my fucking ass![roman type][line break]";
@@ -1160,7 +1191,6 @@ To check anal dominate vigilance of (M - mechanic) for (J - a thing):
 			otherwise:
 				say "[BigNameDesc of M] rolls [his of M] eyes[if J is clothing] and grabs the [ShortDesc of J] off the ground[end if].";
 				if J is clothing, now M is retaining J;
-				Arouse 2000;
 		otherwise:
 			if J is clothing and a random number between 0 and the appearance of the player < 10, now M is retaining J;
 			say "[big he of M] suddenly pulls out. [line break][variable custom style]'W-why did you stop?'[roman type][line break]You blurt, eliciting a nasty grin from your fucktoy turned stud. [line break][speech style of M]'Oh, just making sure you don't cum.'[roman type][line break][big he of M] [if M is retaining J]grabs the [ShortDesc of J] off the ground[otherwise]smirks[end if], keeping [him of M]self hard as [he of M] waits for you to cool off. You look up at [him of M] in dejectedly as [he of M] slams [his of M] [DickDesc of M] back in and ejaculates within only a few thrusts. Equal parts embarrassment and frustration swirl inside you as [he of M] floods your [asshole] with [semen].";
@@ -1205,6 +1235,7 @@ To check anal dominate focus of (M - mechanic) for (J - a thing):
 			say "[big he of M] immediately begins to thrust, shrugging off your attempts to break out of [his of M] hold as [he of M] rapidly fucks you to the finish. Although you're close, the scuffle ruined your concentration, and you don't have time to catch up as [NameDesc of M] ejaculates in only a few thrusts, groaning primally as [he of M] fills your [asshole] with [his of M] big, creamy load.";
 			AssFill the semen load of M;
 			orgasm M;
+			passively stimulate asshole from M;
 		slightHumiliate;
 	otherwise:
 		if debugmode > 0, say "[bold type]PASSED![roman type][line break]";
@@ -1321,7 +1352,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 		let H be trainee hood;
 		unless H is off-stage and H is actually summonable, now H is black maid headdress;
 		increase the employee-record of senior robobellboy by 2;[Worth more than a normal review!]
-		if the class of the player is hotel employment:
+		if the player is hotel employed:
 			say "[speech style of M]'[one of]Nice roleplay session. I really believed you were trying to steal it[or]That was a pretty good time. Nice acting, too[or]That was fun, and WOW are you good at acting[at random]. Consider this a successful employee review.'[roman type][line break]";
 		otherwise if H is actually summonable and H is off-stage:
 			say "[speech style of M]'[one of]You're actually not half bad. In fact, you're hired.'[or]That was a pretty good time. Welcome to my staff.'[or]You just ACED that interview. Welcome aboard, bitch.'[at random][roman type][line break][BigNameDesc of M] pulls out a [ShortDesc of H] and forces you into it!";
@@ -1331,9 +1362,9 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 	otherwise if N is 2:[the player didn't have the option to clean him off]
 		let H be trainee hood;
 		unless H is off-stage and H is actually summonable, now H is black maid headdress;
-		if the class of the player is hotel employment:
+		if the player is hotel employed:
 			increase the employee-record of senior robobellboy by 1;
-			say "[speech style of M]'[one of]Good roleplay, but I felt like something important was missing.[or]Your acting was OK, but I think your performance was missing something.[or][if pregnancy fetish is 1]Breeding[otherwise]Nutting in[end if] you was fun, but I didn't really *believe* you were trying to steal it.[at random]'[roman type][line break]";
+			say "[speech style of M]'[one of]Good roleplay, but I felt like something important was missing.[or]Your acting was ok, but I think your performance was missing something.[or][if pregnancy fetish is 1]Breeding[otherwise]Nutting in[end if] you was fun, but I didn't really *believe* you were trying to steal it.[at random]'[roman type][line break]";
 		otherwise:
 			if the employee-record of senior robobellboy < 0, increase the employee-record of senior robobellboy by 1;
 			say "[speech style of M]'[one of]Good fuck, but I don[']t know if I[']d hire you.'[or]That was fun, but if this were an interview, I[']d say you didn[']t bring your A-game.'[or]That felt good, but if you were trying to impress me with your acting, you're going to need to do better.'[at random][roman type][line break]";
@@ -1342,7 +1373,7 @@ To say AfterDominationComment (N - a number) of (M - mechanic):
 	otherwise if N is 4:[the player stole the amulet]
 		say "[speech style of M]'[one of]This is not over. I will have my amulet one way or another.'[or]You can't even unleash the amulet's full power. It was foolish to take it.'[or]You think you[']ve won, but you haven't. I WILL have my amulet.'[or]You are a fool to think you can truly steal that from me.'[at random][roman type][line break]";
 	otherwise if N is 5:[the player stole the wrench]
-		say "[speech style of M]'[one of]Ugh, whatever. I'll find a fucking replacement, how's that?'[or][if the player is female]Women[otherwise]Sluts[end if] are so annoying. Whatever. I'll just have to replace it.'[or]OK, you win. Keep it. I'll fucking buy a replacement.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Ugh, whatever. I'll find a fucking replacement, how's that?'[or][if the player is female]Women[otherwise]Sluts[end if] are so annoying. Whatever. I'll just have to replace it.'[or]Ok, you win. Keep it. I'll fucking buy a replacement.'[at random][roman type][line break]";
 	otherwise if N is 6:
 		say "[speech style of M]'[one of]You ALMOST had it. Just kidding. Stupid bitch.'[or]Try stealing it again and you[']re going to wish you hadn't.'[or]I didn[']t get to where I am today letting stupid bitches like you steal my possessions.'[at random][roman type][line break]";
 	otherwise:

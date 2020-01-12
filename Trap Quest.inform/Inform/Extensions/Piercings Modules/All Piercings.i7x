@@ -231,7 +231,7 @@ To decide which number is the initial outrage of (C - slut clit piercing):
 	decide on 17.
 
 To say PiercingFlav of (P - a clitoris piercing):
-	say "An arm comes down with a searing hot needle!  You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww!  No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
+	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your poor clitoris is painfully pierced. The needle is quickly removed and a jewelled metal piercing is pushed into place.[line break][variable custom style][if the delicateness of the player < 10]Oww! No, no, anywhere but there! That's my most sensitive part... and I can feel this making it even more sensitive![otherwise if 15 is too humiliating]I have to make sure this is kept hidden under clothes! How embarrassing.[otherwise]Hmm, I can feel this making my clit WAY more sensitive. I guess that will help me have lots of orgasms![end if][roman type][line break]";
 	if there is a worn tattoo and clit-piercing tattoo is not worn and a random number between 1 and 2 is 1:
 		say "A bizarre tattoo appears in your armpit!";
 		summon clit-piercing tattoo;

@@ -49,7 +49,7 @@ To compute CandyCornEat:
 								if bukkake fetish is 1:
 									say "[line break]A [if the semen addiction of the player < 6]heavy[otherwise]heavenly[end if] smell hits your nose as your [printed name of C] suddenly dampens with [semen]!";
 									CumSoak S on C;
-								otherwise:[if bukkake fetish is 0, it means that watersports fetish must be 1, otherwise we would have gone for hair colour.]
+								otherwise:[if bukkake fetish is 0, it means that watersports fetish must be 1, otherwise we would have gone for hair color.]
 									say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [urine]!";
 									PissSoak S on C;
 						otherwise if S < 0:[Above 13? Clean it completely!]

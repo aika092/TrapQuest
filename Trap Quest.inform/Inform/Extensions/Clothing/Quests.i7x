@@ -52,9 +52,6 @@ To assign quest to (C - a clothing):
 	now the quest of C is the random-quest of C;
 	set up the quest of C.
 
-To progress quest of (Q - a clothing-quest) for (C - a clothing):
-	do nothing.
-
 To set up (Q - a clothing-quest):
 	do nothing.
 
@@ -159,14 +156,16 @@ To say QuestCompleteFlav of (Q - a clothing-quest) on (C - a clothing):
 	say "The magic sealing your [MediumDesc of C] is lifted and it rips itself from your [body area of C] before falling to the ground and quickly fading away, leaving nothing behind.".
 
 To progress quest of (Q - a clothing-quest):
-	repeat with C running through worn clothing:
-		if C is diaper-stack:
-			repeat with D running through the list of stacked diapers:
-				if D is cursed or the quest of D is persistent:
-					if the quest of D is Q, compute quest completion of Q on D;
-		otherwise:
-			if C is cursed or the quest of C is persistent:
-				if the quest of C is Q, compute quest completion of Q on C.
+	unless the player is in a predicament room:
+		if debugmode > 0, say "Checking for[QuestTitle of Q].";
+		repeat with C running through worn clothing:
+			if C is diaper-stack:
+				repeat with D running through the list of stacked diapers:
+					if D is cursed or the quest of D is persistent:
+						if the quest of D is Q, compute quest completion of Q on D;
+			otherwise:
+				if C is cursed or the quest of C is persistent:
+					if the quest of C is Q, compute quest completion of Q on C.
 
 To say QuestPersistFlav of (Q - a clothing-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards your efforts by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued efforts by[otherwise]Your [MediumDesc of C] rewards your continued efforts by[end if] ".
@@ -195,6 +194,7 @@ Definition: chest-exposing-quest is appropriate if diaper quest is 0 and the lar
 To decide what number is the quest-weighting of (Q - chest-exposing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
 	if C is not-top-displacable breast covering clothing, decide on 0;
+	if C is gag, decide on 0;
 	if C is temptation, decide on 10;
 	decide on 2.
 
@@ -209,7 +209,7 @@ To say QuestTitle of (Q - chest-exposing-quest):
 	say " (topless greeting quest)".
 
 To progress quest of (Q - chest-exposing-quest) from (M - a monster):
-	unless M is the latest-monster of Q:
+	unless M is the latest-monster of Q or the player is in a predicament room:
 		increase the greet-count of Q by 1;
 		now the latest-monster of Q is M;
 		repeat with C running through worn cursed clothing:
@@ -477,7 +477,7 @@ To say QuestTitle of (Q - vaginal-creampie-quest):
 
 
 To progress quest of (Q - vaginal-creampie-quest) from (T - a thing):
-	if (pregnancy fetish is 1 and T is father material) or T is live:
+	if ((pregnancy fetish is 1 and T is father material) or T is live) and the player is not in a predicament room:
 		repeat with C running through worn cursed clothing:
 			if the quest of C is Q:
 				compute quest completion of Q on C.
@@ -638,6 +638,7 @@ Definition: careful-peeing-quest is appropriate if diaper lover > 0 and the play
 
 To decide what number is the quest-weighting of (Q - careful-peeing-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
+	if C is diaper and toilet allowance is 1, decide on 0; [player can't use toilets while wearing diapers]
 	if C is pee covering and C is not displacable and C is not zippable, decide on 0;
 	if C is bed wetting, decide on 20;
 	decide on 1.
@@ -650,7 +651,7 @@ To say QuestTitle of (Q - careful-peeing-quest):
 
 To compute persistent reward of (Q - careful-peeing-quest) on (C - a clothing):
 	say "temporarily speeding up the digestion [if diaper messing < 3]of fluids [end if]in your stomach!";
-	increase digestion-timer by 60.
+	DigestionTimerUp 60.
 
 
 Part - Swimming Quest
@@ -944,7 +945,7 @@ Part - Hotel Altar Quest
 
 hotel-altar-quest is a clothing-quest.
 
-Definition: hotel-altar-quest is appropriate if Hotel35 is placed and the player is a august 2019 top donator.
+Definition: hotel-altar-quest is appropriate if diaper quest is 0 and Hotel35 is placed and the player is a august 2019 top donator.
 
 To decide what number is the quest-weighting of (Q - hotel-altar-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;

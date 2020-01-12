@@ -106,6 +106,7 @@ REQUIRES COMMENTING
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
+		now DQMessingHunger is false; [Hunger mechanics go back to inactive for players who were magically made hungry]
 		increase the stomach-food of the player by 1 + xavier-belt-link;
 		if xavier-throat-link is 1 and rectum > 0 and diaper messing >= 3, increase rectum by 1 + xavier-belt-link;
 		decrease X by 1.

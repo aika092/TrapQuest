@@ -166,7 +166,7 @@ The worn leg covering clothing prevents removal of stockings rule is listed in t
 
 
 
-bunny socks is a socks. The text-shortcut of bunny socks is "bnys".
+bunny socks is a socks.  The text-shortcut of bunny socks is "bnys".
 
 Figure of bunny socks is the file "Items/Clothes/Lower/Legs/socks3.png".
 
@@ -510,6 +510,31 @@ Definition: a red-and-white striped stockings is transformation-protected if the
 Definition: a red-and-white striped stockings is red themed: decide yes.
 Definition: a red-and-white striped stockings is white themed: decide yes.
 Definition: a red-and-white striped stockings is christmas themed: decide yes.
+
+
+
+red-and-white rubber stockings is a stockings. red-and-white rubber stockings is latex. A red-and-white rubber stockings is dense. The printed name of red-and-white rubber stockings is "[clothing-title-before]red and white latex stockings[clothing-title-after]". The text-shortcut of red-and-white rubber stockings is "rwls". Understand "red", "red and white", "white" as red-and-white rubber stockings.
+
+To decide which figure-name is clothing-image of (C - red-and-white rubber stockings):
+	decide on figure of red-and-white rubber stockings.
+
+Figure of red-and-white rubber stockings is the file "Items/Clothes/Lower/Legs/stripedstockings3.png".
+
+To say ClothingDesc of (C - red-and-white rubber stockings):
+	say "A pair of [if christmas content > 0]candy cane [end if]red and white striped thigh-high stockings made out of shiny latex.".
+
+To say ShortDesc of (C - red-and-white rubber stockings):
+	say "pair of candy cane stockings".
+To say MediumDesc of (C - red-and-white rubber stockings):
+	say "pair of shiny latex candy cane stockings".
+
+Definition: red-and-white rubber stockings is transformation-protected if there is a worn christmas headgear.
+Definition: red-and-white rubber stockings is red themed: decide yes.
+Definition: red-and-white rubber stockings is white themed: decide yes.
+Definition: red-and-white rubber stockings is christmas themed: decide yes.
+
+To decide which number is the initial outrage of (C - red-and-white rubber stockings):
+	decide on 5.
 
 
 

@@ -47,6 +47,7 @@ This is the remove inappropriate skirts rule:
 		now B is in Holding Pen;
 	repeat with B running through chainmail skirts:
 		now B is in Holding Pen;
+	now black-rubber-hobble-skirt is in Holding Pen;
 	repeat with B running through rubber-skirts:
 		now B is in Holding Pen.
 The remove inappropriate skirts rule is listed in the diaper quest fix rules.
@@ -77,9 +78,9 @@ To decide which number is the crafting key of (C - a skirt):
 
 [This is supposed to line up with DQBulk]
 To decide which number is the skirtLength of (C - a clothing):
-	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on 0;
+	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
 	if C is short, decide on 1;
-	if C is knee-length, decide on 7;
+	[if C is knee-length, decide on 7;]
 	decide on 8.
 
 
@@ -650,13 +651,7 @@ To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a
 	decide on the cakes-taken of skirt-tray-vibrator.
 
 Report wearing skirt-tray-vibrator:
-	if diaper quest is 1:
-		now plain-largish-diaper is worn by the player;
-		now plain-largish-diaper is bland;
-		now plain-largish-diaper is blandness;
-		now the raw-magic-modifier of plain-largish-diaper is 0;
-		now plain-largish-diaper is sure;
-		now plain-largish-diaper is identified;
+	if diaper quest is 1, summon plain-largish-diaper uncursed;
 	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is female]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
 
 Report taking off skirt-tray-vibrator when diaper quest is 1:
@@ -685,12 +680,15 @@ This is the skirt tray prevents hand use rule:
 The skirt tray prevents hand use rule is listed in the hands restriction rules.
 
 To compute cupcake perception of (M - a bystander):
-	say "[BigNameDesc of M] walks up to you and takes a cupcake. [DQCupcakeExplanation of M][skirtTrayBuzzFlav]";
+	say "[BigNameDesc of M] walks up to you and takes a cupcake. [CupcakeExplanation of M][skirtTrayBuzzFlav]";
 	now the charge of skirt-tray-vibrator is 3;
 	increase the cakes-taken of skirt-tray-vibrator by 1.
 
-To say DQCupcakeExplanation of (M - a bystander):
-	say "[if diaper quest is 1][one of][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping][end if]".
+To say CupcakeExplanation of (M - a bystander):
+	if diaper quest is 1:
+		say "[one of][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
+	otherwise if the appearance of the player > the outrage tolerance of M:
+		say "[one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
 
 To say skirtTrayBuzzFlav:
 	say "The vibrator [if the player is female]in your [vagina] and pushed against your clit[otherwise]pushed against your [ShortDesc of penis][end if] [if the charge of skirt-tray-vibrator <= 0]kicks into action, [otherwise]becomes even [end if]stronger than before! It buzzes away[skirtTrayVibratorPower].".

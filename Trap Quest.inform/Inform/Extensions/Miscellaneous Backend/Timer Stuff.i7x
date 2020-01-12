@@ -150,6 +150,8 @@ Glulx input handling rule for a timer-event:
 To compute animations:
 	repeat with T running through g-animated animation tracks:
 		if buttonsLatest is not the target-window of T and (PopupButtons > 0 or the target-window of T is map-window or the target-window of T is graphics-window): [Don't want animations to draw over buttons, which they would do without these checks]
+			if the target-window of T is main window, say "BUG - animation track targeted at main window.";
+			[if debugmode > 1, say "Target window of this track is [target-window of T].";]
 			if the number of blank rows in the Table of Graphlink Glulx Replacement Commands is greater than 20 or the target-window of T is map-window or the target-window of T is graphics-window, compute animation of T. [If the graphlink table is almost full, that probably means that this animation has been going for some time, re-adding hyperlinks each time. Let's stop animating, to leave 20 hyperlinks spare for the popup buttons or similar.]
 
 To kill all animations:

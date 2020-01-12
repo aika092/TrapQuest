@@ -85,8 +85,7 @@ To compute monstermotion of (M - robomatron):
 To compute (M - robomatron) seeking (D - a direction):
 	do nothing.
 
-To compute fleeing of (M - robomatron):
-	do nothing.
+Definition: robomatron is scarable: decide no.
 
 Part 3 - Combat
 

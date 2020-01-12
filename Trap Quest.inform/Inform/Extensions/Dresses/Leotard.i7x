@@ -42,7 +42,7 @@ To decide which number is the initial outrage of (C - a sexy blue leotard):
 	decide on 5.
 
 To decide which number is the initial cringe of (C - a leotard):
-	decide on 6.
+	decide on 5.
 
 To decide which number is the heel-skill-influence of (O - a leotard):
 	let X be 2;

@@ -135,12 +135,13 @@ To compute periodic effect of (C - a rejuvenation clothing):
 		let N be 2;
 		if C is cursed, now N is 3;
 		if the player is male, increase N by 1;
+		say bold type;
 		if L > 1 and watersports fetish is 1 and F is asshole:
 			say "Your [ShortDesc of C] pulses as warm, frothy liquid streams into your [variable F].";
 			AssFill N urine;
 			if C is blessed, heal asshole times 2;
 			otherwise heal asshole times 1;
-		otherwise if L > 3:
+		otherwise if L > 3 or diaper quest is 1:
 			say "Your [ShortDesc of C] pulses as cool liquid streams into your [variable F].";
 			AssFill N water;
 			if C is blessed, heal asshole times 2;
@@ -150,7 +151,8 @@ To compute periodic effect of (C - a rejuvenation clothing):
 			if F is asshole, AssFill N;
 			otherwise PussyFill N;
 			if C is blessed, heal F times N;
-			otherwise heal F times N - 1.
+			otherwise heal F times N - 1;
+		say "[roman type][line break]".
 
 To restock (C - a sex toy):
 	let B be a random basic loot sex toy;
@@ -269,7 +271,7 @@ To compute gripping of (I - an insertable thing):
 			now vaginalGripCount is 0.
 
 To decide which number is the bartering value of (T - a sex toy) for (M - a mannequin):
-	unless M is retaining a sex toy, decide on 3;
+	unless M  is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
 
@@ -317,10 +319,16 @@ To say MediumDesc of (C - wood-dong):
 To say ClothingDesc of (C - wood-dong):
 	say "This dildo appears to have been carved out of wood. It doesn't look all that comfortable, but it can probably get the job done in a pinch.".
 
+To decide which number is the original price of (C - wood-dong):[if you find this in the normal shop, its basically free.]
+	decide on 1.
+
 To uniquely set up (C - wood-dong):
 	do nothing.[never has an enchantment]
 
 Figure of wooden dildo is the file "Items/Accessories/Toys/woodendildo1.jpg".
+
+To decide which figure-name is the clothing-image of (C - wood-dong):
+	decide on figure of wooden dildo.
 
 Chapter 2 - Plugs
 
@@ -377,10 +385,18 @@ To say MediumDesc of (P - tiered-plug):
 	say "monstrous beige plug".
 
 To assign size (X - a number) to (C - a basic plug):
-	let P be C;
-	repeat with Z running through basic plugs:
-		if the size of Z is X, now P is Z;
-	if P is not C, silently transform C into P.
+	if C is worn: [if we try to do this when it's not worn, horrible horrible things happen when we do the transform function]
+		let P be C;
+		repeat with Z running through basic plugs:
+			if the size of Z is X, now P is Z;
+		if P is not C, silently transform C into P.
+
+To sizeUp (C - a basic plug) by (X - a number):
+	increase X by the size of C;
+	if X > 10, now X is 10;
+	if X < 1, now X is 1;
+	assign size X to C.
+
 
 To say ShortDesc of (C - a plug):
 	say "plug".

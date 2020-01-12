@@ -289,7 +289,7 @@ To say MediumDesc of (C - leopard print tube top):
 	say "leopard print tube top".
 
 To say ClothingDesc of (C - leopard print tube top):
-	say "A small leopard print tube that clings tightly to your chest in order to stay in place[one of]. The bumps of your nipples are clearly visible.[or]. You [if the player is disgraced]wonder what it would look if your nipples were, uh, 'cold'?[otherwise]grimace at the idea of jokes about 'flashlights'.[end if][or].[in random order]".
+	say "A small leopard print tube that clings tightly to your chest in order to stay in place[one of]. The bumps of your nipples are clearly visible.[or]. You [if the player is disgraced]wonder what it would look if your nipples were, uh, 'cold'?[otherwise]grimace at the idea of jokes about 'flash-lights'.[end if][or].[in random order]".
 
 To decide which object is the unique-upgrade-target of (C - leopard print tube top):
 	decide on a random off-stage leopard print bikini.

@@ -26,9 +26,9 @@ snickering imp is an imp. The text-shortcut of snickering imp is "sni".
 To say MediumDesc of (M - snickering imp):
 	say "snickering imp".
 
-sniveling imp is an imp. The text-shortcut of sniveling imp is "svi".
-To say MediumDesc of (M - sniveling imp):
-	say "sniveling imp".
+snivelling imp is an imp. The text-shortcut of snivelling imp is "svi".
+To say MediumDesc of (M - snivelling imp):
+	say "snivelling imp".
 
 simpering imp is an imp. The text-shortcut of simpering imp is "smi".
 To say MediumDesc of (M - simpering imp):
@@ -88,7 +88,7 @@ To compute (M - a monster) stomping (N - an imp):
 
 To compute (M - demon lord) stomping (N - an imp):
 	compute N protecting against M.[the imp betrays you]
-	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] facefirst onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
+	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] face first onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
 	otherwise say "You hear gagging noises coming from somewhere else in the hotel!";
 	destroy N.]
 
@@ -181,7 +181,7 @@ To satisfy (M - an imp):
 	otherwise:
 		satisfy M for 200 seconds.
 
-To compute refactoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hardcode it here]
+To compute refactoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hard code it here]
 	now the refactory-period of M is the refactory-time of M.
 
 To compute periodic recovery of (M - an imp):
@@ -244,7 +244,10 @@ To compute (M - an imp) protecting against (X - a monster):
 To say AllyDamageFlav of (M - an imp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]claws [NameDesc of X][or]laughs as [he of M] punches [NameDesc of X][or]punches [NameDesc of X][or]kicks [NameDesc of X][then at random]!".
 
-
+To decide if (M - an imp) is willing to creampie (F - vagina):
+	if there is a worn xavier's cunt tattoo, decide no;[they respect their master]
+	if the class of the player is priestess and the number of infernal monsters penetrating the player < 3, decide no;
+	decide yes.
 
 Section 2 - Damage
 

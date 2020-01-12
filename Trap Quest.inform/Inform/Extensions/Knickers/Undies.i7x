@@ -33,13 +33,16 @@ To compute periodic effect of (P - an undies):
 			if the thickness of hips < max hip size and a random number between 1 and 2 is 1:
 				say "You feel your cursed [ShortDesc of P] try to grow your hips to make your buttocks even less concealed!";
 				HipUp 1;
-			otherwise if the size of penis > min penis size:
+			otherwise if P is not potentially penis covering:
 				PenisDown 1;
-				say "You feel your cursed [ShortDesc of P] [Shrink] your manhood to better conceal your [ShortDesc of penis]!".
+				say "You feel your cursed [ShortDesc of P] [Shrink] your [player-penis] to better conceal your [ShortDesc of penis]!".
 
 Report wearing undies:
 	if the penis-capacity of the noun < the size of penis:
-		say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
+		if the penis-capacity of the noun >= 3 and penis is not penis-erect:
+			say "Your [ShortDesc of penis] barely fits inside this tiny piece of fabric!";
+		otherwise:
+			say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
 
 To decide which object is the unique-upgrade-target of (C - an undies):
 	if there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;

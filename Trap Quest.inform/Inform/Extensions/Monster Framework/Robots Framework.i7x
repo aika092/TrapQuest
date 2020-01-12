@@ -187,7 +187,7 @@ To say CringeDisapprovalFlav of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn orange.[line break][speech style of M]'PROCESSING WITH BABPARSER v[one of]1[or]2[or]3[or]4[or]5[stopping].0... SUBJECT APPEARS TO BE [one of]REQUESTING BABIFICATION[or]COMMUNICATING A DESIRE FOR ADULT BABY PLAY[or]ENGAGING IN ABDL KINK ACTIVITIES[in random order].'[roman type][line break]".
 
 To say GluePullAnnounceFlav of (M - a robot):
-	say "[speech style of M]'SUBJECT APPEARS IN NEED OF ASSISTANCE. ALLEIGANCE LEVEL... ACCEPTABLE. RESCUE ATTEMPT ROUTINE LOADING...'[roman type][line break]".
+	say "[speech style of M]'SUBJECT APPEARS IN NEED OF ASSISTANCE. ALLEGIANCE LEVEL... ACCEPTABLE. RESCUE ATTEMPT ROUTINE LOADING...'[roman type][line break]".
 
 Part - DQ
 

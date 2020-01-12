@@ -45,7 +45,7 @@ Definition: throne-fucked (called A) is applicable:
 	if the player is not shameless and the throne is filling asshole, decide yes;
 	decide no.
 To reflect on (A - throne-fucked):
-	say "[first custom style][one of]This is literally the most embarrassing thing that has ever happened to me.[or]This has got to stop!  Why did I sit here...[or]Okay this is the LAST time I let this happen...[or]Fuck, my belly is ridiculously huge![stopping][roman type][line break]".
+	say "[first custom style][one of]This is literally the most embarrassing thing that has ever happened to me.[or]This has got to stop! Why did I sit here...[or]Okay this is the LAST time I let this happen...[or]Fuck, my belly is ridiculously huge![stopping][roman type][line break]".
 
 huge-tits is a humiliating situation.
 Definition: huge-tits (called A) is applicable:
@@ -144,7 +144,7 @@ To reflect on (A - outrageous-knickers):
 		say "[if the bimbo of the player < 12][first custom style][one of]What the fuck am I thinking, wearing these ridiculous latex plug panties?[or]Why did I choose to wear a pair of invasive fetish panties?[or]I feel so full... I have no idea why I opted to wear these latex plug panties...[in random order][otherwise][second custom style]These panties sure are keeping me full everywhere I go... [one of]how humiliating[or]and it's just turning me on[or]imagine if my friends could see me right now... so embarrassing[in random order]![end if][roman type][line break]";
 	otherwise if K is diaper:
 		let B be the diaper addiction of the player - the weight of K;
-		say "[if B < 3][first custom style]I can't even walk properly... I'm going to die of embarrassment if anyone else sees me waddling around![otherwise if B < 7][first custom style]I can't take this embarrassment... people can see that I'm wearing a diaper![otherwise if B < 11][variable custom style]Imagine if my friends could see me waddling around in a diaper!  I'd be so humiliated...[otherwise if B < 15][second custom style]I wonder if I can make waddling look cute?[otherwise][second custom style]I'm wearing a diaper so that everyone can see what a bad girl I've been![end if][roman type][line break]";
+		say "[if B < 3][first custom style]I can't even walk properly... I'm going to die of embarrassment if anyone else sees me waddling around![otherwise if B < 7][first custom style]I can't take this embarrassment... people can see that I'm wearing a diaper![otherwise if B < 11][variable custom style]Imagine if my friends could see me waddling around in a diaper! I'd be so humiliated...[otherwise if B < 15][second custom style]I wonder if I can make waddling look cute?[otherwise][second custom style]I'm wearing a diaper so that everyone can see what a bad girl I've been![end if][roman type][line break]";
 	otherwise:
 		say "[first custom style]What an embarrassing [if the armour of K > 6]pair of [end if]undies to be wearing! [one of]I would never been seen dead in this back home.[or]I really hope nobody is able to see me like this.[or]I feel like such a slut.[in random order][roman type][line break]".
 
@@ -167,9 +167,9 @@ To reflect on (A - chubby-slut):
 	if the fat-weight of the player > 30:
 		say "[variable custom style][one of]Oh god, I'm so obese I can hardly move![or]I'm such a waste of space, literally.[or]I'm so disgracefully lazy that my body has ended up like this. Don't look at me![in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 22:
-		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat!  Nobody is going to want to have sex with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
+		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat! Nobody is going to want to have sex with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 14:
-		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go!  I should probably be less lazy...[in random order][roman type][line break]";
+		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go! I should probably be less lazy...[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 8:
 		say "[variable custom style][one of]Oh dear, I'm getting a bit unfit, aren't I?[or]Oh dear, I feel like I'm getting a bit chubby![in random order][roman type][line break]".
 
@@ -240,7 +240,7 @@ To say StatsChangedFlav:
 				otherwise say "[second custom style][line break]I feel stronger. Hopefully now I can escape from the scary traps more easily.[roman type][line break]";
 			otherwise if saved-flat-strength > 6:
 				if the bimbo of the player < 8, say "[first custom style][line break]I feel a bit less weak now.[roman type][line break]";
-				otherwise say "[second custom style][line break]Ooh I feel a bit less weak now.[if the largeness of breasts > 10]  I need the strength to hold up my humongous boobs![end if][roman type][line break]";
+				otherwise say "[second custom style][line break]Ooh I feel a bit less weak now.[if the largeness of breasts > 10] I need the strength to hold up my humongous boobs![end if][roman type][line break]";
 			otherwise if saved-flat-strength > 1:
 				say "[first custom style][line break]I'm still very weak, but I can move a bit now.[roman type][line break]";
 			now the old strength of the player is saved-flat-strength;
@@ -274,7 +274,7 @@ To say StatsChangedFlav:
 				if the bimbo of the player < 7, say "[one of][line break][first custom style][line break]I feel a bit less stiff now...[roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]Ooh I feel a bit less stiff now. I hope my flexibility comes back soon...[roman type][line break][or][stopping]";
 			otherwise if saved-flat-dexterity < 15:
-				if the bimbo of the player < 7, say "[one of][line break][first custom style][line break]Hmm, I feel more limber!  That could be useful.[roman type][line break][or][stopping]";
+				if the bimbo of the player < 7, say "[one of][line break][first custom style][line break]Hmm, I feel more limber! That could be useful.[roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]I like feeling flexible![roman type][line break][or][stopping]";
 			otherwise if saved-flat-dexterity < 19:
 				if the bimbo of the player < 7, say "[one of][line break][first custom style][line break]I feel fast![roman type][line break][or][stopping]";
@@ -294,7 +294,7 @@ To say StatsChangedFlav:
 				say "[one of][line break][variable custom style][line break]I feel basically paralysed![roman type][line break][or][stopping]";
 			otherwise if saved-flat-dexterity < 8:
 				if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]My muscles feel very stiff now...[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]I feel like I can hardly move![if the bimbo of the player > 10]  Maybe I shouldn't even bother trying to escape...[end if][roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]I feel like I can hardly move![if the bimbo of the player > 10] Maybe I shouldn't even bother trying to escape...[end if][roman type][line break][or][stopping]";
 			otherwise if saved-flat-dexterity < 12:
 				if the bimbo of the player < 8, say "[one of][line break][first custom style][line break]I'm starting to feel pretty sluggish.[roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]I'm feeling pretty stiff, I might not be able to escape from anything![roman type][line break][or][stopping]";
@@ -303,10 +303,10 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]I'm not feeling as flexible... I might not be able to escape from the [if the bimbo of the player < 9]scary [end if]traps![roman type][line break][or][stopping]";
 			otherwise if saved-flat-dexterity < 20:
 				if the bimbo of the player < 7, say "[one of][line break][first custom style][line break]My hand eye coordination feels better than usual.[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]I don't think I can jump really high any more.[if the largeness of breasts > 13]  Oh well, it still makes my boobs bounce around![end if][roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]I don't think I can jump really high any more.[if the largeness of breasts > 13] Oh well, it still makes my boobs bounce around![end if][roman type][line break][or][stopping]";
 			otherwise:
 				if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]I feel less like a ninja now.[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively!  Tee hee![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively! Tee hee![roman type][line break][or][stopping]";
 			now the old dexterity of the player is saved-flat-dexterity;
 			break;
 		if the old intelligence of the player is 0:

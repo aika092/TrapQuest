@@ -952,11 +952,120 @@ Displays some text describing the player giving a monster a titfuck
 To say TitfuckReceiveFlav of (M - a monster):
 	say "[one of][BigFuckerDesc of M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You continue to massage [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You [if the player is in a blindroom]stare[otherwise]sniff[end if] at [his of M] [DickDesc of M] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or][BigFuckerDesc of M]'s [DickDesc of M] gently bumps your chin as [he of M] enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7]gross[otherwise]firm, hard[end if] [DickDesc of M] between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
+[!<SayTitfuckNearingClimaxFlavOfMonster>+
+
+Displays some text describing a monster getting close to climax whilst using the player's breasts
+
+@param <Monster>:<M> The monster fucking the player's breasts
++!]
 To say TitfuckNearingClimaxFlav of (M - a monster):
 	say "[one of][BigFuckerDesc of M] fucks your [BreastDesc] with greater and greater enthusiasm[or]You can feel [FuckerDesc of M]'s [DickDesc of M] begin to twitch as [he of M] uses your [BreastDesc][or][BigFuckerDesc of M] thrust between your [BreastDesc] with more and more urgency[at random]. [big he of M] must be ready to cum!";
 
+[!<SayCleavageClimaxFlavOfMonster>+
+
+Displays some text describing a monster ejaculating whilst using the player's breasts
+
+@param <Monster>:<M> The monster fucking the player's breasts
++!]
 To say CleavageClimaxFlav of (M - a monster):
 	say "[BigFuckerDesc of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
+
+[!<SayErectionDemandOfMonster>+
+
+Displays some text describing a monster instructing the player to get an erection. Can be speech, gestures or whatever, but it should be clear that the monster is expecting an erection from the player.
+
+@param <Monster>:<M> The monster intending to use the player's penis
++!]
+To say ErectionDemand of (M - a monster):
+	say "[line break][speech style of M]'Alright, slut. Get nice and hard for me.'[roman type][line break]".
+
+[!<SayFriendlyErectionPenetrationFlavOfMonster>+
+
+Displays some text describing a monster mounting the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say FriendlyErectionPenetrationFlav of (M - a monster):
+	say ErectionPenetrationFlav of M.
+
+[!<SayErectionPenetrationFlavOfMonster>+
+
+Displays some text describing the player allowing a monster to mount their penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionPenetrationFlav of (M - a monster):
+	say "[BigNameDesc of M] mounts your [ShortDesc of penis].".
+
+[!<ComputeUnerectTauntingOfMonster>+
+
+Handles anything that needs to happen when a monster tells the player to get an erection, and the player can't
+
+@param <Monster>:<M> The monster that told the player to get an erection
++!]
+To compute unerect taunting of (M - a monster):
+	say "[BigNameDesc of M] glances down at your [ShortDesc of penis] expectantly. Your cheeks burn with shame as it remains completely soft. [BigNameDesc of M] rolls [his of M] eyes and loses interest.";
+	strongHumiliate;
+	Bore M.
+
+[!<SayErectionForceFlavOfMonster>+
+
+Displays some text describing a monster using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionForceFlav of (M - a monster):
+	say "[BigNameDesc of M] holds you down as [he of M] aggressively uses your [ShortDesc of penis].".
+
+[!<SayErectionUseFlavOfMonster>+
+
+Displays some text describing the player allowing a monster to use their penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionUseFlav of (M - a monster):
+	say "[BigNameDesc of M] moans happily as [he of M] uses your [ShortDesc of penis].".
+
+[!<SayErectionLostFlavOfMonster>+
+
+Displays some text describing a monster reacting when the player loses their erection during sex.
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionLostFlav of (M - a monster):
+	say "[BigNameDesc of M] gives you a nonplussed look as your [ShortDesc of penis] goes soft.";
+	FavourDown M by 1;
+	Bore M;
+	now the sex-length of M is 1.[so it can be reduced by 1]
+
+[!<SayErectionNearingClimaxFlavOfMonster>+
+
+Displays some text describing a monster getting close to climax whilst using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionNearingClimaxFlav of (M - a monster):
+	say "[BigNameDesc of M] moves faster and faster. [big he of M] must be close!".
+
+[!<ComputeErectionOrgasmOfMonster>+
+
+Displays some text describing the player ejaculating whilst penetrating a monster.
+
+@param <Monster>:<M> The monster occupying the player's penis
++!]
+To compute erection orgasm of (M - a monster):
+	follow the default ejaculation rule;
+	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss skipped if anything is penetrating penis]
+
+[!<SayErectionClimaxFlavOfMonster>+
+
+Displays some text describing a monster finishing up using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionClimaxFlav of (M - a monster):
+	say "[BigNameDesc of M] screams out in satisfaction as [he of M] climaxes.";
+	orgasm M.
 
 To say (M - a monster) sex reaction:
 	say "".
@@ -993,6 +1102,44 @@ To compute racial submission to (M - a monster):
 		now auto is 0;
 		if B is body part:
 			say "[one of]For some reason you[or]You once again[stopping] can't help but want to [if the player is upright]drop to your knees and [end if][if B is body part]present yourself[otherwise]beg for [his of M] [BlackCock][end if].";
+			compute silent surrender to M;
+			if the player is prone, try direct-presenting B to M.
+
+phero-horny-charge is a number that varies.
+
+A time based rule (this is the musk horniness rule):
+	if mythical creature fetish is 0:
+		do nothing;
+	otherwise if minotaur is in the location of the player and the class of the player is cowgirl and the player is not horny and the player is able to get horny:
+		say "All it takes is one whiff of [NameDesc of minotaur]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
+		now the arousal of the player is 3500;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
+		now phero-horny-charge is 0;
+	otherwise if the player is pheromonal and there is a musky monster in the location of the player:
+		let M be a random musky monster in the location of the player;
+		say "Spending time close to [NameDesc of M] causes your body to react to [his of M] [if pregnancy fetish is 1]virile[otherwise]potent[end if] hormones.";
+		increase phero-horny-charge by 2;
+		if phero-horny-charge > 30:
+			compute phero submission to M;
+		otherwise:
+			say "You get even more aroused!";
+			arouse 300;
+	otherwise if the player is in the dungeon and minotaur is alive and the player is pheromonal:
+		increase phero-horny-charge by 1;
+		if phero-horny-charge > 20:
+			now phero-horny-charge is 0;
+			say "[bold type][one of]You catch a whiff of a heavy, masculine scent and start to feel a little more turned on[or]The same masculine scent tickles your nose, and you feel yourself getting more turned on[or]Another whiff of masculine musk temporarily arrests your senses, and you get a little more turned on[stopping].[roman type]";
+			arouse 150.
+
+To compute phero submission to (M - a monster):
+	if M is musky and mythical creature fetish is 1 and a random number between 3 and 7 > the intelligence of the player:
+		now auto is 1;
+		let B be a random actually presentable body part;
+		if B is not vagina and vagina is actually presentable and M is male and M is willing to do vaginal, now B is vagina;
+		if B is not asshole and asshole is actually presentable and M is male and M is willing to do anal, now B is asshole;
+		if B is not breasts and the class of the player is cowgirl and M is male and M is willing to do titfucks, now B is breasts;
+		now auto is 0;
+		if B is body part:
+			say "You can't take it anymore! You immediately [if the player is upright]drop to your knees[otherwise]crawl over[end if] and present yourself for [if pregnancy fetish is 1 and B is vagina]breeding[otherwise]the use of this virile stud[end if].";
 			compute silent surrender to M;
 			if the player is prone, try direct-presenting B to M.
 

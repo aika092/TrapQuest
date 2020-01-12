@@ -1,6 +1,6 @@
 Baby Bonnet by Headgear begins here.
 
-A baby bonnet is a kind of headgear. A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing. A baby bonnet is womanly. A baby bonnet is usually diaper-addiction-influencing. Understand "baby", "bonnet" as a baby bonnet. The printed name of baby bonnet is usually "[clothing-title-before][clothing-material of item described] baby bonnet[clothing-title-after]".
+A baby bonnet is a kind of headgear.  A baby bonnet is blondeness-negative. A baby bonnet is brightness-negative. A baby bonnet is redness-negative. A baby bonnet is usually hair growing.  A baby bonnet is womanly. A baby bonnet is usually diaper-addiction-influencing. Understand "baby", "bonnet" as a baby bonnet. The printed name of baby bonnet is usually "[clothing-title-before][clothing-material of item described] baby bonnet[clothing-title-after]".
 
 Definition: a baby bonnet is baby themed: decide yes.
 Definition: a baby bonnet is pink themed: decide yes.

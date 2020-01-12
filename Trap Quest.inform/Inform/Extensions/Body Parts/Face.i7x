@@ -239,7 +239,7 @@ To say TotalDesc of face:
 	otherwise:
 		say "your face [MakeUpDesc].";
 	let A be alcohol-level;
-	if A > 0, say "[if A > 2]Your expression is one of someone who is pretty much off [his of the player] tits with intoxication, and at risk of going completely off the rails if [he of the player] has any more[otherwise if A > 1]Your vacant expression is one of someone who is rather drunk[otherwise]It's easy to tell that you're a bit tipsy just by looking at your glazed over eyes[end if].";
+	if A > 0, say "[if A > 2]Your expression is one of someone who is pretty much off [his of the player] tits with intoxication, and at risk of going completely off the rails if [he of the player] has any more[otherwise if A > 1]Your vacant expression is one of someone who is rather drunk[otherwise]It's easy to tell you're a bit tipsy just by looking at your glazed-over eyes[end if].";
 	if the number of things penetrating face > 0 or the latex-transformation of the player > 6:
 		let B be a random thing penetrating face;
 		if the latex-transformation of the player > 6:
@@ -270,17 +270,20 @@ REQUIRES COMMENTING
 
 +!]
 To say LipDesc:
-	if the lips of face is 0:[default]
-		say "[if the player is male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
-	if the lips of face is 1:
-		say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
-	if the lips of face is 2:[maximum for vanilla players]
-		say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[at random][end if]";
-	if the latex-transformation of the player > 6:
-		say "[one of]plastic[or]upholstered[or]pillowy[or]padded[at random]";[lips are fixed at 3.]
-	otherwise if the lips of face > 2:
-		say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
-	say " lips".
+	if diaper quest is 1:
+		say "lips";
+	otherwise:
+		if the lips of face is 0:[default]
+			say "[if the player is male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
+		if the lips of face is 1:
+			say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
+		if the lips of face is 2:[maximum for vanilla players]
+			say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[at random][end if]";
+		if the latex-transformation of the player > 6:
+			say "[one of]plastic[or]upholstered[or]pillowy[or]padded[at random]";[lips are fixed at 3.]
+		otherwise if the lips of face > 2:
+			say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
+		say " lips".
 
 
 Part 3 - Modify Face Stats

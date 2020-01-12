@@ -64,7 +64,9 @@ To satisfy (M - a monster) for (N - a number) seconds:
 	if M is interested:
 		bore M for N seconds;
 		FavourUp M;
-		if M is in the location of the player and M is awake, say SatisfiedFlav of M;
+		if M is in the location of the player and M is awake:
+			say SatisfiedFlav of M;
+			progress quest of nice-quest;
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 

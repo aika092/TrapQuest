@@ -122,6 +122,7 @@ To decide which number is the zap damage of (P - a person):
 		let N be the damage improvement of currentZapper;
 		increase A by N;
 		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
+	if A < 0, decide on 0;
 	decide on A.
 
 Zapping it with is an action applying to two things.

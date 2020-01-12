@@ -39,7 +39,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the thirst of the player:
-	if chess table is grabbing the player, decide on 0;
+	if chess table is grabbing the player or the player is in a predicament room, decide on 0;
 	decide on 5 - the stomach-liquid of the player.
 
 [!<YourselfIsThirsty>+
@@ -73,6 +73,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is stomach-period:
+	if the player is in a predicament room, decide on 10; [Happens nearly every turn in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
 	let T be 15;
 	if diaper focus is 0, now T is 20;
@@ -308,6 +309,8 @@ To decide which number is hunger mechanics:
 	if diaper messing >= 3 or active hunger mechanics is 1, decide on 1;
 	decide on 0.
 
+DQMessingHunger is initially false.
+
 [!<decideWhichNumberIsActiveHungerMechanics>+
 
 REQUIRES COMMENTING
@@ -315,8 +318,27 @@ REQUIRES COMMENTING
 +!]
 To decide which number is active hunger mechanics:
 	if the latex-transformation of the player > 4, decide on 0;
+	if DQMessingHunger is true or digestion-timer > 0, decide on 1;
 	if diaper quest is 1 and diaper messing >= 3, decide on 0;
 	decide on 1.
+
+To compute DQ hunger:
+	if diaper quest is 1 and diaper messing >= 3:
+		if the player is not hungry:
+			now DQMessingHunger is true;
+			now the stomach-food of the player is 0;
+			say "[bold type]You suddenly feel very hungry. [roman type]You will have lowered strength until you eat some food.";
+		otherwise:
+			compute food.
+
+To DigestionTimerUp (N - a number):
+	let AHM be active hunger mechanics;
+	increase digestion-timer by N;
+	if AHM is 0 and active hunger mechanics is 1:
+		if the player is hungry:
+			say "You suddenly feel very hungry.";
+		otherwise if the player is nearly hungry:
+			say "You suddenly feel a bit hungry.".
 
 [!<YourselfIsHungry>+
 
@@ -324,7 +346,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is hungry:
-	if chess table is grabbing the player, decide no;
+	if chess table is grabbing the player or the player is in a predicament room, decide no;
 	if the stomach-food of the player is 0 and active hunger mechanics is 1, decide yes;
 	decide no.
 

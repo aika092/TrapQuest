@@ -141,7 +141,7 @@ To say MonsterOfferRejectFlav of (M - a demoness) to (T - a heels):
 	say "[speech style of M]'Do I look like I have any need for another pair of heels?'[roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a heels):
-	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-panties;
+	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
 	if diaper quest is 1 and the heel-height of C < 2, decide on a random off-stage mary janes;
 	if there is a worn diaper, decide on a random off-stage baby booties;
 	if (there are worn stockings or diaper quest is 0) and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.

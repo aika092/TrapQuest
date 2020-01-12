@@ -18,7 +18,7 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the player is immobile or the player is in danger, say "You're a bit busy right now!" instead;
 	if the player is not disgraced and there is a reactive monster and debugmode is 0, say "You consider yourself too dignified to do that in front of someone right now. Peeing on the floor would be humiliating enough." instead;
 	unless the noun is a vessel or the noun is a pedestal, say "How would you pee into that?" instead;
-	if the noun is a vessel and the noun is not open topped, say "You can only pee into open topped containers." instead;
+	if the noun is a vessel and the noun is not open topped, say "You can only pee into open-topped containers." instead;
 	if the noun is erect pedestal, say "There's no opening where you can pee." instead;
 	if the player is prone, say "You can only do that when standing." instead;
 	if there is worn pee covering clothing:
@@ -87,7 +87,7 @@ Carry out PeeBottling:
 		if the player is able to use a urinal, say "You walk up to the [printed name of P] and piss into the mouth carved into the base.";
 		compute PedestalFilling P with urine by (B * 2);
 	allocate 6 seconds.
-Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]", "pp [something]" as PeeBottling.
+Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]" , "pp [something]" as PeeBottling.
 
 Urinating Into Bottles ends here.
 

@@ -38,12 +38,12 @@ To Squirt (L - a liquid-object) On (C - portal-pants) by (N - a number):
 		say "The [L] flows out of the [portal gag] and into your mouth! There's nothing you can do but gulp and swallow!";
 		now N is (N + 1) / 2;
 		if L is semen:
-			say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck yuck yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
+			say "[variable custom style][if the semen taste addiction of the player < 7][one of]Yuck, yuck, yuck![or]Gross...[in random order][otherwise if the semen taste addiction of the player < 14][one of]Salty...[or]Whoops, not again...[then at random][otherwise][one of]Good sissies should always swallow their own cum...[or]Delicious![or]Yum![stopping][end if][roman type][line break]";
 			StomachSemenUp N;
 		otherwise:
 			StomachUp N;
 		if L is urine:
-			say "[variable custom style][if the urine taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the urine taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's piss, I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own piss![or]Yummy![stopping][end if][roman type][line break]";
+			say "[variable custom style][if the urine taste addiction of the player < 7][one of]Disgusting![or]How awful![or]Yuck yuck yuck![or]Gross!!![in random order][otherwise if the urine taste addiction of the player < 14][one of]Eurgh...[or]I'm like Bear Grylls... haha.[or]It's less bad than somebody else's piss, I guess.[in random order][otherwise][one of]Why does it taste so good?![or]I can't get enough of the taste of my own pee![or]Yummy![stopping][end if][roman type][line break]";
 			UrineTasteAddictUp 1;
 		[if L is milk, MilkTasteAddictUp 1;]
 

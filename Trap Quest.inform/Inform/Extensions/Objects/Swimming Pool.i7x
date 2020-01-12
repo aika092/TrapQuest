@@ -24,7 +24,7 @@ To say MediumDesc of (S - swimming-pool):
 
 To compute showering (S - swimming-pool):
 	if diaper quest is 0:
-		say "The [semen] gets absolutely everywhere! By the time you get out, you are soaked from head to toe in slimy [semen].";
+		say "The [semen] gets absolutely everywhere! By the time you get out, you're soaked from head to toe in slimy [semen].";
 		compute cum pool coating;
 		compute cum pool face coating;
 		if the semen addiction of the player < 10, say "Your body can't help but become more accustomed to the sensation of being covered in [semen].";

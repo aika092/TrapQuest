@@ -87,7 +87,7 @@ Check talking:
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, they can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently not able to speak!  You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
+		if the player is not able to speak, say "You are currently not able to speak! You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 

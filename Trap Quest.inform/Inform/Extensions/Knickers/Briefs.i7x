@@ -231,9 +231,7 @@ To say selfexamineuniquetitle of (G - white-cameltoe briefs):
 To say UniqueClothingDesc of (G - white-cameltoe briefs):
 	say "A pair of low cut white briefs that would give a female wearer a very visible cameltoe.".
 Definition: white-cameltoe briefs is white themed: decide yes.
-To decide which number is the unique outrage of (C - white-cameltoe briefs):
-	if the player is female, decide on 3;
-	decide on 0.
+Definition: white-cameltoe briefs is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - white-cameltoe briefs):
 	decide on 2.
 

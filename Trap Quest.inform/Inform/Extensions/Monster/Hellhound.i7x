@@ -13,6 +13,8 @@ Definition: hellhound (called M) is mansion dwelling:
 	if mythical creature fetish is 0 and diaper quest is 0, decide no;
 	decide yes.
 
+Definition: hellhound is musky: decide yes.
+
 Definition: hellhound is infernal: decide yes.
 
 To say ShortDesc of (M - hellhound):
@@ -23,7 +25,7 @@ To say MediumDesc of (M - hellhound):
 
 To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
-		say "This huge black canine is as tall as you even when it's on all fours. Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane[if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around!  [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
+		say "This huge black canine is as tall as you even when it's on all fours. Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane[if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] is completely visible, adorned with a black cock ring near the base[end if].".
 
@@ -99,7 +101,7 @@ Definition: a hellhound (called M) is father material:
 	decide no.
 
 [For some reason the 'father material' thing was commented out, and I didn't see this, so I've commented it for now.
-###MG of the future: My guess is that this was commented out due to the new U.K. laws? That's the only explanation that comes to mind for me.
+###MG of the future: My guess is that this was commented out due to the new UK. laws? That's the only explanation that comes to mind for me.
 
 To say PregGrowth of (M - hellhound):
 	say "the [ShortDesc of M]";
@@ -252,8 +254,10 @@ To decide if (M - hellhound) is willing to creampie (F - asshole):
 	decide no.
 
 To decide if (M - hellhound) is willing to creampie (F - vagina):
-	if the class of the player is catgirl, decide no;
-	if the class of the player is puppygirl or the class of the player is succubus, decide yes;
+	if there is a worn xavier's cunt tattoo, decide no;
+	if the player is pheromonal, decide yes;
+	if the class of the player is catgirl, decide no;[you can still get creampied if you count as pheromonal]
+	if the class of the player is succubus, decide yes;
 	if the class of the player is priestess:
 		if the virgin bonus of the player < 0 or the player is a sissy, decide yes;[sissy priestesses or deflowered priestesses]
 		decide no;[normally he can't vaginally creampie priestesses at all]

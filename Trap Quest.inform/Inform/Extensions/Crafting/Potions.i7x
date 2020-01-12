@@ -187,6 +187,12 @@ Section 5 Space Mead
 
 A space mead is a kind of potion. The printed name of space mead is "[TQlink of item described]carafe of space mead[TQxlink of item described][verb-desc of item described]". The printed plural name of space mead is "[TQlink of item described]carafes of space mead[TQxlink of item described][verb-desc of item described]". There are 3 space meads. Understand "carafe" as space mead. The text-shortcut of space mead is "smd".
 
+A game universe initialisation rule:
+	let K be 1;
+	repeat with W running through space mead:
+		now the text-shortcut of W is the substituted form of "smd[K]";
+		increase K by 1.
+
 To say ExamineDesc of (B - a space mead):
 	say "A small wine carafe with a strange golden liquid in it. It smells quite sweet but has a somewhat ominous shimmer to it that suggests this is something rather unusual.".
 

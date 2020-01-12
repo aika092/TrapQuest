@@ -76,7 +76,7 @@ To decide which number is the core outrage of (C - a knickers): [This is plugged
 To decide which number is the initial outrage of (C - a knickers):
 	decide on the core outrage of C + the unique outrage of C.
 To decide which number is the initial cringe of (C - a knickers):
-	decide on the core outrage of C + the unique cringe of C.
+	decide on 1 + the unique cringe of C.
 
 To decide which number is the unique outrage of (C - a knickers): [Some underwear has additional factors that make it lewd, e.g. a rude phrase]
 	if C is crotch-assless, decide on 4;

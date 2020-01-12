@@ -27,8 +27,11 @@ To compute drink-machine decanting of (V - a vessel):
 		say "Continue sitting on the Sybian? ";
 		if the player is bimbo consenting:
 			compute extra turn;
-			compute sybian sitting;
-			compute drink-machine filling of V;
+			if the player is in the location of drink-machine and the player is not immobile:
+				compute sybian sitting;
+				compute drink-machine filling of V;
+			otherwise:
+				now keep-going is 0;
 		otherwise:
 			now keep-going is 0.
 

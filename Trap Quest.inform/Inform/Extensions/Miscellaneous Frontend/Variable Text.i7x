@@ -41,6 +41,10 @@ To say stud:
 	otherwise:
 		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise]Master[end if]".
 
+To say literalMistress of (M - a monster):
+	if M is presenting as female, say "mistress";
+	otherwise say "master".
+
 [!<SayMistress>+
 
 If the player is impressed with the (assumed female) NPC

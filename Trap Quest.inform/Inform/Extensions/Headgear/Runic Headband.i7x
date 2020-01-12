@@ -57,7 +57,7 @@ Definition: runic headband is magic themed: decide yes.
 
 Chapter - Class Outfit
 
-Definition: runic headband is removal-blocking if wearing-target is not it and wearing-target is purity. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+Definition: runic headband is removal-blocking if  wearing-target is not it and wearing-target is purity. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 priestess-summoned is a number that varies.
 To compute unique recycling of (C - runic headband):

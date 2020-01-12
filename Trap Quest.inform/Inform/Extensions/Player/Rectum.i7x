@@ -163,13 +163,13 @@ To compute soiling:
 	if diaper messing >= 3 and chess table is grabbing the player and chess-victor of chess-lesson is 0:
 		compute chess soiling;
 	otherwise:
-		if the player is upset about sitting in mess and the delicateness of the player < 20:
+		if the player is upset about sitting in mess and the delicateness of the player < 20 and (the player is not in a predicament room or the remainder after dividing time-earnings by 30 < time-seconds): [This would happen every turn during a predicament if we didn't hardcode some periodic timing here]
 			say "You shiver uncontrollably as you continue to wallow in your own mess.";
 			DelicateUp 1;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
 To decide which number is rectum-risky-level:
-	decide on 12 - (incontinence + suppository).
+	decide on 10 - (incontinence + suppository).
 
 [!<CheckRealMessing>+
 
@@ -184,8 +184,9 @@ To check real messing:
 	let hasMessedNow be 0;
 	if the player is feeling full, now messAware is 1;
 	if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
- 	let I be rectum-risky-level;
-	if debuginfo > 0 and canMessNow is 1 and rectum > 1, say "[input-style]Mess self-control check: 12 - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
+	let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
+ 	let I be hold-strength - (incontinence + suppository);
+	if debuginfo > 0 and canMessNow is 1 and rectum > 1, say "[input-style]Mess self-control check: RNG[bracket]10~14[close bracket] ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
  	if I < 4, now I is 4;
 	if rectum >= I and canMessNow is 1, now willMessNow is 1;
 	if rectum >= I - 6, now shouldMessNow is 1;
@@ -222,7 +223,7 @@ To check real messing:
 					now rectum is 1;
 			otherwise if messAware is 1:
 				let D be a random eligible diaper;
-				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied:
+				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals:
 					say "As if reacting to your tummy, ";
 					let K be a random worn knickers;
 					if K is knickers:
@@ -233,8 +234,8 @@ To check real messing:
 					say "a [ShortDesc of D]![one of][line break][variable custom style][if the delicateness of the player < 14]Oh my god, the game is trying to make me mess myself...[otherwise]At least now I have a toilet to go in. Thank you game![end if][roman type][line break][or][stopping]";
 					summon D cursed with quest;
 				otherwise if suppository > 0 or a random number between 1 and 5 is 1:
-					say "Your tummy cramps [if rectum + suppository < 8]painfully[otherwise]brutally[end if][if the player is upright], forcing you onto your knees[end if]. You feel a desperate need to [if the diaper addiction of the player < 12]find a toilet[otherwise if the player is diapered]use your diaper[otherwise]use a diaper[end if].";
-					if the player is upright, try kneeling;
+					say "Your tummy cramps [if rectum + suppository < 8]painfully[otherwise]brutally[end if][if the player is upright and the number of worn stuck clothing is 0], forcing you onto your knees[end if]. You feel a desperate need to [if the diaper addiction of the player < 12]find a toilet[otherwise if the player is diapered]use your diaper[otherwise]use a diaper[end if].";
+					if the player is upright and the number of worn stuck clothing is 0, try kneeling;
 					if rectum + suppository >= 8:
 						say "It takes you several moments to recover.";
 						now another-turn is 1.
@@ -296,7 +297,7 @@ To compute messing:
 		otherwise:
 			say "[variable custom style][if the diaper addiction of the player < 10][one of]I feel weirdly... comfortable. It must be this baby outfit I'm wearing affecting my mind![or]I can't believe how comfortable I feel in a messy diaper.[stopping][otherwise if the diaper addiction of the player < 15][one of]I wanna make it go ever bigger![or]I bet I can fit even more in here![at random][otherwise]Feels... soo... good![end if][roman type][line break]";
 		if the player is desperate to pee and wetting-valued <= 0:
-			now diaper-reaction-said is 1;
+			now diaper-reaction-said is false; [prevents NPCs from reacting to the urination as well as the mess, which would be excessive]
 			now delayed urination is 1;
 			say "The act of messing your diaper also makes you wet yourself.";
 			try urinating;
@@ -310,7 +311,7 @@ To compute messing:
 		if matron is alive, now the boredom of matron is 0; [Next time she sees the player she should probably pay attention!]
 		allocate 6 seconds;
 		if voluntarySquatting is 0, progress quest of adult-baby-quest;
-		now diaper-reaction-said is 0;
+		now diaper-reaction-said is true;
 		now another-turn is 1.
 
 Definition: yourself is ready to cum from messing:
@@ -469,6 +470,10 @@ REQUIRES COMMENTING
 Check TargetMessing:
 	try messing instead.
 
+[If the player is only into scene messing then we need to prevent the player from getting a chance to escape e.g. with the pink pill]
+This is the compulsory change rule:
+	if diaper messing is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster), now another-turn is 1.
+The compulsory change rule is listed in the compulsory action rules.
 
 
 Rectum ends here.

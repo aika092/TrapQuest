@@ -15,10 +15,18 @@ To decide which figure-name is the examine-image of (C - PC Monitor):
 	decide on figure of PC monitor.
 
 To say ExamineDesc of (C - PC Monitor):
-	say "Your PC monitor sits on its desk at the end of your room. [if the currentlyOn of C is 1]You are currently in a video call with [FriendName], your [FriendRole].[otherwise if the currentlyOn of C > 2]It is currently displaying [SlideDesc of C][otherwise]It doesn't seem to be able to be turned on.[end if]";
+	say "Your PC monitor sits on its desk at the end of your room. [if the currentlyOn of C is 1]You are currently in a video call with [FriendName], your [FriendRole].[otherwise if the currentlyOn of C > 2]It is currently displaying [SlideDesc (currentSlide of C)][otherwise]It doesn't seem to be able to be turned on.[end if]".
 
-To say SlideDesc of (C - PC Monitor):
-	say "[DisgracePost (currentSlide of PC Monitor)].[line break][DisgracePostReaction (currentSlide of PC Monitor)]";
+[No humiliation gain, just flavour]
+To say SlideDesc (N - a number):
+	if N is 0:
+		say "A photo of some slut you don't know streaking naked during a football game.";
+	otherwise:
+		say "[DisgracePost N].[line break][DisgracePostReaction N]".
+
+[In-built humiliation gain]
+To say HumiliatingSlideDesc (N - a number):
+	say "[DisgracePost N].[line break][HumiliatingDisgracePostReaction N]".
 
 
 A later time based rule:
@@ -52,7 +60,7 @@ A later time based rule:
 				[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 			otherwise:
 				say "[first custom style]'I don't really understand what's going on here but I also know I don't like it. You'd better have a pretty good fucking explanation the next time I see you, [OriginalNameBimbo].'[roman type][line break][FriendName] hangs up the call, and then the PC Monitor goes blank.";
-	otherwise if the currentlyOn of PC Monitor >= 2 and PC Monitor is in the location of the player:
+	otherwise if the currentlyOn of PC Monitor >= 2 and PC Monitor is in the location of the player and the number of filled rows in the Table of Published Disgraces > 0:
 		increase the CurrentlyOn of PC Monitor by 1;
 		if the currentSlide of PC Monitor is 0:
 			now the currentSlide of PC Monitor is the number of filled rows in the Table of Published Disgraces;
@@ -62,9 +70,40 @@ A later time based rule:
 			decrease the currentSlide of PC Monitor by 1;
 			if the currentSlide of PC Monitor is 0, now the currentSlide of PC Monitor is the number of filled rows in the Table of Published Disgraces;
 			now the currentlyOn of PC Monitor is 3;
-		say SlideDesc of PC Monitor;
+		say HumiliatingSlideDesc (currentSlide of PC Monitor);
 	otherwise if the currentlyOn of PC Monitor > 2:
 		increase the CurrentlyOn of PC Monitor by 1.
+
+
+
+
+
+security screens is a thing. security screens is in Hotel30. security screens is not portable. The printed name of security screens is "[TQlink of item described]security screens[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of security screens is "scs". security screens has a number called currentSlide.
+
+To say ShortDesc of (C - security screens):
+	say "security screens".
+To say MediumDesc of (C - security screens):
+	say "security screens".
+
+Definition: security screens is immune to change: decide yes.
+
+Figure of security screens is the file "Env/Hotel/monitor2.jpg".
+To decide which figure-name is the examine-image of (C - security screens):
+	decide on figure of security screens.
+
+To say ExamineDesc of (C - security screens):
+	say "Your security screens sits on its desk at the end of your room. Your eyes are currently being drawn to [if the currentSlide of C <= 0]footage of a woman streaking across a football field.[otherwise][SlideDesc (currentSlide of C)][end if]".
+
+[Happens after monsters, so if a monster drags you here it happens in the same turn.]
+A later time based rule:
+	if the player is in Hotel30:
+		let N be the number of filled rows in the Table of Published Disgraces;
+		if N > 0:
+			decrease the currentSlide of security screens by 1;
+			if the currentSlide of security screens <= 0:
+				now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
+			say "Your eyes are drawn to [HumiliatingSlideDesc (the currentSlide of security screens)]";
+
 
 
 

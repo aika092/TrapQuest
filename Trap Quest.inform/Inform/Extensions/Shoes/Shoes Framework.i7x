@@ -99,7 +99,7 @@ Check taking off worn shoes:
 			say "You try and bend over whilst on the dildo to take off your heels but your [BreastDesc] are getting in the way!" instead;
 	if the noun is cursed:
 		say "Try as you might you cannot find a way to pull off your [printed name of the noun]!";
-		if the noun is heels, say "[if the hindrance of the noun > 1]They are killing your ankles and toes![otherwise]The curse is bothersome but at least you've become used to walking in heels.[end if]";
+		if the noun is heels, say "[if the hindrance of the noun > 1]They are killing your ankles and toes![otherwise]The curse is bothersome but at least you've become used to walking in heels.[end if]"; 
 		now the noun is sure instead; [Crowdsourced from Anya Snowdrifter]
 	otherwise if the noun is glued:
 		try tearing off the noun;

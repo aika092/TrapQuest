@@ -28,7 +28,7 @@ To compute periodic effect of (C - portal gag):
 			say "[bold type][one of]You can't help but[or]Once again you[stopping] accidentally stimulate yourself with your tongue![roman type][line break]";
 			stimulate vagina from face;
 			if the player is male:
-				if penis is pushed over the edge, vaginally orgasm shamefully;
+				if penis is pushed over the edge, vaginally orgasm shamefully;[####Selkie: surely this should be penile orgasm?]
 			otherwise:
 				if vagina is pushed over the edge, vaginally orgasm shamefully;
 	otherwise:
@@ -43,10 +43,10 @@ To compute periodic effect of (C - portal gag):
 					now the charge of C is 0;
 					if the player is thirsty:
 						if watersports fetish is 1 and a random number between 1 and 2 is 1:
-							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [if M is male][manly-penis][otherwise]pussy[end if] up against your mouth![roman type][line break][big he of M] begins urinating... and there's nowhere for it to go except for in your mouth!";
+							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push [his of M] [if M is male][manly-penis][otherwise]pussy[end if] up against your mouth![roman type][line break][big he of M] begins urinating... and there's nowhere for it to go except into your mouth!";
 							DrinkPiss from M;
 						otherwise:
-							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] pour some kind of drink through the portal.[roman type][line break]There's nowhere for it to go except for in your mouth!";
+							say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] pour some kind of drink through the portal.[roman type][line break]There's nowhere for it to go except into your mouth!";
 							StomachUp 4;
 							if a random number between 0 and alcohol fetish is 1:
 								say "It's some kind of strong [one of]fruity wine[or]alcoholic spirit[or]beer[in random order], which is going straight to your head!";

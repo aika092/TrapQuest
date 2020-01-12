@@ -153,7 +153,7 @@ To decide which text is HairColourText:
 Table of Image Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
-"Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if]  "	--	--	images visible toggle rule
+"Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if] "	--	--	images visible toggle rule
 "Map Window: On / Off: [if map images > 0]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
 

@@ -53,7 +53,7 @@ To say PregGrowth of (M - pimp):
 To compute labour to (M - pimp):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human mixed race baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms with an unconcealed look of annoyance. [line break][first custom style]'Geez, thanks a lot!  Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] kneels down on one knee and delivers the human mixed race baby, which immediately starts crying loudly. [big he of M] takes it into [his of M] arms with an unconcealed look of annoyance. [line break][first custom style]'Geez, thanks a lot! Now I have to manage a brothel AND raise [one of]a[or]yet another[stopping] fucking kid.'[roman type][line break]Without giving you a chance to react, never mind reply, [he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -107,7 +107,7 @@ To compute kneeling reaction of (M - pimp):
 To say DiaperReaction of (M - pimp):
 	if there is a currently visible diaper or the player is shameless:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'That's right, little one. Prove to me what a good little baby-slave you are.'[roman type][line break]";
-		if the player is modest, say "[variable custom style][if the player is able to speak]'I'm not a baby!  I just really needed to go...'[otherwise][big he of M] thinks I'm enjoying being seen like this![end if][roman type][line break]";
+		if the player is modest, say "[variable custom style][if the player is able to speak]'I'm not a baby! I just really needed to go...'[otherwise][big he of M] thinks I'm enjoying being seen like this![end if][roman type][line break]";
 		otherwise say "You [if player is not disgraced]look down at the ground[otherwise]nod[end if] in shame.";
 	otherwise:
 		say "It seems that [NameDesc of M] is unaware of what you've just done.".
@@ -130,7 +130,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp convinced rule:
-	if presented-orifice is not nothing, say "[PresentRejectionFlav of current-monster]".
+	if presented-orifice is not nothing, say PresentRejectionFlav of current-monster.
 The monster convinced rule of pimp is usually the pimp convinced rule.
 
 To say PresentRejectionFlav of (M - pimp):
@@ -141,7 +141,7 @@ To say SelectionFrustrated of (M - pimp):
 	satisfy M.
 
 To say StrikingSuccessFlav of (M - pimp) on (B - a body part):
-	say "[BigNameDesc of M] strikes you [TargetName of B] with his cane!  Wham!".
+	say "[BigNameDesc of M] strikes you [TargetName of B] with his cane! Wham!".
 
 To say StrikingFailureFlav of (M - pimp) on (B - a body part):
 	say "[BigNameDesc of M] tries to whack you [TargetName of B] with [his of M] cane but you manage to get out of the way just in time!".
@@ -195,7 +195,7 @@ Definition: pimp is willing to deliver enemas: decide yes.
 Definition: pimp is willing to confiscate: decide yes.
 
 To say DQSpankResistReactionFlav of (M - pimp):
-	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it off or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin tantrums will get you anywhere.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it out or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin['] tantrums will get you anywhere.'[in random order][roman type][line break]".
 
 Section 3 - Damage
 
@@ -207,7 +207,7 @@ To compute damage of (M - pimp):
 			anger M;
 		otherwise:
 			if the health of M >= the maxhealth of M:
-				say "[BigNameDesc of M] is momentarily dumbstruck with surprise. [line break][speech style of M]'You think you can take me?  Bring it on!'[roman type][line break]";
+				say "[BigNameDesc of M] is momentarily dumbstruck with surprise. [line break][speech style of M]'You think you can take me? Bring it on!'[roman type][line break]";
 			otherwise if the health of M > the maxhealth of M / 2:
 				say "[BigNameDesc of M] [one of]sneers menacingly[or]smiles sadistically[or]grins[at random]. [line break][speech style of M]'[one of]Not bad, not bad[or]You're going to have to do better than that[or]Is that all you've got[or]Oh I'm going to make you regret this[or]Don't say I didn't warn you[in random order]!'[roman type][line break]";
 			otherwise:
@@ -253,7 +253,7 @@ To say AnnoyedResponse of (M - pimp):
 	say "[speech style of M]'[one of]Bitch, I SAID shut up.'[or]Shut the fuck up, bitch!'[or]You betta shut your ass up, bitch.'[at random][roman type]".
 
 To say TauntRejected of (M - pimp):
-	say "[speech style of M]'[one of]You better stop runnin that mouth, bitch.'[or]I'm warning you, bitch. I don't let anyone run their fuckin mouth to me.'[or]You sure that's what you wanted to say, bitch?'[at random][roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
+	say "[speech style of M]'[one of]You better stop runnin that mouth, bitch.'[or]I'm warning you, bitch. I don't let anyone run their fuckin['] mouth to me.'[or]You sure that's what you wanted to say, bitch?'[at random][roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
 
 To say PleadRejected of (M - pimp):
 	say "[speech style of M]'Don't try and act all friendly now. It's too late for that!'[roman type][line break]".
@@ -275,7 +275,7 @@ To compute friendly drink of (M - pimp): [Should never happen]
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
 To compute unfriendly drink of (M - pimp):
-	say "[first custom style]'Do you think you DESERVE a drink?  I don't.'[roman type][line break]";
+	say "[first custom style]'Do you think you DESERVE a drink? I don't.'[roman type][line break]";
 	now M is interested;
 	now the boredom of M is 0.
 
@@ -296,7 +296,7 @@ To compute resolution of (M - pimp) taking (T - a thing):
 		remove M from play. [we don't want to reset him so we don't use the destroy function]
 
 To say MonsterOfferRejectFlav of (M - pimp) to (T - a thing):
-	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if]  [line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
+	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if] [line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
 
 
 

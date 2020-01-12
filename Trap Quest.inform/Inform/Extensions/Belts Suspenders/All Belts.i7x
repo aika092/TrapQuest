@@ -375,7 +375,7 @@ To say ClothingDesc of (C - tongue-belt):
 	say "A belt made completely out of large red demonic tongues. [TongueStatus of C]".
 
 To say ShortDesc of (C - tongue-belt):
-	say "pair of tongued belt".
+	say "demon-tongue belt".
 
 Definition: tongue-belt is demonic: decide yes.
 Definition: tongue-belt is tongued: decide yes.

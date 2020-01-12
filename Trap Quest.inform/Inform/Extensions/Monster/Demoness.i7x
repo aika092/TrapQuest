@@ -64,7 +64,7 @@ infernaler demoness is a demoness. The text-shortcut of infernaler demoness is "
 To say MediumDesc of (M - infernaler demoness):
 	say "[SoulDesc of M]infernal demoness".
 
-cackling demoness is a demoness. The text-shortcut of cackling demoness is "cde".
+cackling demoness is a demoness.  The text-shortcut of cackling demoness is "cde".
 To say MediumDesc of (M - cackling demoness):
 	say "[SoulDesc of M]cackling demoness".
 
@@ -78,15 +78,15 @@ To say MediumDesc of (M - unholy demoness):
 
 To say MonsterDesc of (M - a demoness):
 	if lady fetish is 2:
-		say "An aura of terrifying evil surrounds this man. His lithe, statuesque features are [if diaper quest is 1]covered up by shiny red clothing[otherwise]a bit too perfect, and so much heat is emanating from him that the air around him slightly shimmers. He is wearing an extremely provative shiny red dress and tall black heels with glass dildoes for stilettoes. Two red horns rise up from his long blonde hair[end if][if doomed is 5]. Pink lightning ominously crackles around him...[otherwise].[end if]";
+		say "An aura of terrifying evil surrounds this man. His lithe, statuesque features are [if diaper quest is 1]covered up by shiny red clothing[otherwise]a bit too perfect, and so much heat is emanating from him that the air around him shimmers. He is wearing an extremely provocative shiny red dress and tall black heels with glass dildos for stilettos. Two red horns rise up from his long blonde hair[end if][if doomed is 5]. Pink lightning ominously crackles around him...[otherwise].[end if]";
 	otherwise:
-		say "An aura of terrifying evil surrounds this woman. The demoness has a statuesque humanoid figure[if diaper quest is 1] and shiny red clothing[otherwise]. [big his of M] body is just a bit too perfect, and so much heat is emanating from her that the air around her slightly shimmers. She is wearing an extremely provocative shiny red dress, and tall black heels with glass dildos for stilettoes. Two red horns rise up from her long blonde hair[end if][if doomed is 5]. Pink lightning ominously crackles around her...[otherwise].[end if]";
+		say "An aura of terrifying evil surrounds this woman. The demoness has a statuesque humanoid figure[if diaper quest is 1] and shiny red clothing[otherwise]. [big his of M] body is just a bit too perfect, and so much heat is emanating from her that the air around her slightly shimmers. She is wearing an extremely provocative shiny red dress, and tall black heels with glass dildos for stilettos. Two red horns rise up from her long blonde hair[end if][if doomed is 5]. Pink lightning ominously crackles around her...[otherwise].[end if]";
 
 To say MonsterDesc of (M - an abyssal demoness):
 	if lady fetish is 2:
-		say "An aura of terrifying evil surrounds this man. He has the body of an olympian swimmer, coupled with blue skin and curved horns that give him a decidedly otherworldy appearance. He is wearing a pair of tall black high heels with glass dildoes for stilettoes, a provacative black bikini top, and a matching nylon miniskirt, which does nothing to conceal the 9-inch [manly-penis] hanging between his legs. The air around him seems to shift and morph as if he were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering his face.";
+		say "An aura of terrifying evil surrounds this man. He has the body of an Olympian swimmer, coupled with blue skin and curved horns that give him a decidedly otherworldly appearance. He is wearing a pair of tall black high heels with glass dildos for stilettos, a provocative black bikini top, and a matching nylon miniskirt, which does nothing to conceal the 9-inch [manly-penis] hanging between his legs. The air around him seems to shift and morph as if he were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering his face.";
 	otherwise:
-		say "An aura of terrifying evil surrounds this woman. She [if pregnancy fetish is 1]has the body of an olympian swimmer[otherwise]has a statuesque and clearly pregnant figure[end if], but coupled with blue skin and curved horns that give [him of M] a decidedly otherworldy appearance. [if pregnancy fetish is 1]She is completely naked except for a pair of tall black high heels with glass dildoes for stilettoes[otherwise]She is wearing a pair of tall black high heels with glass dildoes for stilettoes, a provacative black bikini top, and a matching nylon miniskirt, which only barely covers her crotch[end if]. The air around him seems to shift and morph as if she were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering her face.".
+		say "An aura of terrifying evil surrounds this woman. She [if pregnancy fetish is 1]has the body of an Olympian swimmer[otherwise]has a statuesque and clearly pregnant figure[end if], but coupled with blue skin and curved horns that give [him of M] a decidedly otherworldly appearance. [if pregnancy fetish is 1]She is completely naked except for a pair of tall black high heels with glass dildos for stilettos[otherwise]She is wearing a pair of tall black high heels with glass dildos for stilettos, a provocative black bikini top, and a matching nylon miniskirt, which only barely covers her crotch[end if]. The air around him seems to shift and morph as if she were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering her face.".
 
 To say DemonSkin of (M - a demoness):
 	if the soul-timer of M < -99, say "fiery-orange";
@@ -259,11 +259,11 @@ Definition: a demoness is ally: decide no.
 Definition: a demoness is guardian: decide no.
 
 Definition: a demoness (called M) is dealing:
+	if diaper quest is 1, decide no;
 	[unless the player is souled, decide no;]
 	if the player is female:[The demoness is really eager to do business with virgins. She also offers an emergency plan B for pregnant customers!]
-		if diaper quest is 0:
-			if the virgin of the player is 1, decide yes;
-			if the pregnancy of the player is 1, decide yes;
+		if the virgin of the player is 1, decide yes;
+		if the pregnancy of the player is 1, decide yes;
 	unless M is willing to do oral, decide no;
 	let S be the raw sex addiction of the player + the raw semen taste addiction of the player;[calculate once instead of twice]
 	if S is 40, decide no;
@@ -475,7 +475,7 @@ To say MercyReaction of (M - a demoness):
 
 Section 1 - Protect and Attack
 
-To compute (M - a demoness) protecting against (X - a monster):
+To  compute (M - a demoness) protecting against (X - a monster):
 	if X is demoness and the class of the player is not succubus:
 		say "[speech style of M]'I'm afraid I would ally with any of my sisters over an inconsequential mortal any day of the year!'[roman type][line break][BigNameDesc of M] stands next to the [X].";
 		anger M;
@@ -886,7 +886,7 @@ To say FriendlyOralRequest of (M - a demoness):
 		say "[second custom style]'[one of]Cum is part of my reward right? I'm desperate for a taste...'[or]I really need to wet my throat, give me whatever you want...'[or]Let me have a taste of your cum. I promise I[']ll take whatever reward you want...'[at random][roman type][line break]";
 		cutshow figure of demoness cutscene 9 for M;
 	otherwise if the oral sex addiction of the player < 7:
-		say "[variable custom style]'[one of]I... I[']ll take your deal.'[or]So, all I have to do is suck your dick, right? That[']s really it?'[or]I guess if I get something out of it, it's OK...'[or]Alright, it's a deal. It's still on, right?'[or]I could really use your help. Sucking your dick is totally worth that.'[at random][roman type][line break]";
+		say "[variable custom style]'[one of]I... I[']ll take your deal.'[or]So, all I have to do is suck your dick, right? That[']s really it?'[or]I guess if I get something out of it, it's ok...'[or]Alright, it's a deal. It's still on, right?'[or]I could really use your help. Sucking your dick is totally worth that.'[at random][roman type][line break]";
 		cutshow figure of demoness cutscene 10 for M;
 	otherwise:
 		say "[variable custom style]'[one of]Looking for a throat to fuck[or]How would you like a sloppy blowjob[or]Care for me to swallow your load[or]Are you going to let me taste your [DickDesc of M][in random order], babe?'[roman type][line break]";
@@ -1186,6 +1186,7 @@ To compute sexBegging of (M - a demoness) in (F - a fuckhole):
 	compute sexResist of M in F.
 
 To decide if (M - a demoness) is willing to creampie (F - vagina):
+	if there is a worn xavier's cunt tattoo, decide no;[she respects her master]
 	if the pregnancy of the player > 0 and the father is a demonic thing or the father is an infernal monster, decide no;[She won't end your pregnancy if it's one of her own]
 	decide yes.
 
@@ -1234,7 +1235,7 @@ To say CreampieFlav of (M - a demoness) in (F - vagina):
 	if lady fetish is 2 or futanari fetish is 1:
 		say "[one of][BigNameDesc of M] grunts, [his of M] [manly-penis] throbbing as [he of M] unloads [his of M] lust directly into your [vagina]. [big he of M] sighs in satisfaction, raking a hand across your [AssDesc] as [he of M] pulls out.[or][BigNameDesc of M] tightens [his of M] grip, nails digging into your tender skin as [he of M] grunts in pleasure. [if the semen addiction of the player < 7]You shudder and look over your shoulder[otherwise if the semen addiction of the player < 15]You gasp and look over your shoulder[otherwise]You look over your shoulder and grin[end if] as piping hot [semen] flows into your [variable F]. [big he of M] leers back at you, pulling out with an exaggerated sigh of contentment.[or][BigNameDesc of M] coos and tightens [his of M] grip. You [if the semen addiction of the player < 7]whimper[otherwise if the semen addiction of the player < 11]sigh quietly[otherwise]moan happily[end if] as [his of M] [manly-penis] pumps wave after wave of hot, hot [semen] directly into your [variable F]. [big he of M] roughly squeezes your [AssDesc] as [he of M] pulls out.[at random]";
 	otherwise:
-		say "[one of][BigNameDesc of M] grabs the tentacle, pushing it in as deep as it can go as a huge amount of demonic [semen] flows into your [vagina].[or][BigNameDesc of M] aggressively kisses you on the lips as the tentacles forces itself in as deep as it can go, throbbing powerfully as it fills your [vagina] with demonic [semen].[or][BigNameDesc of M] fondles your [ShortDesc of breasts] as the tenacle slams itself in as deep as it can go, throbbing powerfully as it fills your [vagina] with wave after wave of demonic [semen].[at random]";
+		say "[one of][BigNameDesc of M] grabs the tentacle, pushing it in as deep as it can go as a huge amount of demonic [semen] flows into your [vagina].[or][BigNameDesc of M] aggressively kisses you on the lips as the tentacles forces itself in as deep as it can go, throbbing powerfully as it fills your [vagina] with demonic [semen].[or][BigNameDesc of M] fondles your [ShortDesc of breasts] as the tentacle slams itself in as deep as it can go, throbbing powerfully as it fills your [vagina] with wave after wave of demonic [semen].[at random]";
 	if M is friendly-fucking:
 		compute happy reward of M;
 	otherwise:
@@ -1318,7 +1319,7 @@ To compute unique death of (M - a demoness):
 		now F is not stuck;
 	let H be a random off-stage dildo heels;
 	let G be a random off-stage infernal gem;
-	if R < 3 and H is heels:
+	if R  < 3 and H is heels:
 		now H is in the location of the player;
 		now the raw-magic-modifier of H is a random number between 0 and 2;
 		now H is kicking;
@@ -1387,9 +1388,20 @@ To compute punishment of (P - demoness-plug):
 
 Definition: a demoness is willing to change diapers: decide yes.
 
+To say DiaperChangeStart of (M - demoness):
+	say "[BigNameDesc of M] forces you onto your back.[line break][speech style of M]'[if the number of worn diapers is 0 and there is worn knickers]Your attire offends me. It's time for a change...[otherwise if the number of worn diapers is 0]Let's get you into something more... fitting, shall we?'[otherwise if penis is not exposed and vagina is not exposed]Your humiliation begins with your stripping!'[otherwise]Your humiliation begins now!'[end if][roman type][line break]".
+
+
+To say DiaperChangeFlav of (M - demoness):
+	say "With a snap of [NameDesc of M][']s fingers, [if old-diaper is new-diaper]an identical (but clean) [ShortDesc of new-diaper][otherwise]a [ShortDesc of new-diaper][end if] appears around your loins.[line break][speech style of M]'[one of]Does it burn you, little one? Being diapered with no way to stop it?'[or]Yes, yes it fits oh so nicely...right where it belongs!'[or]Hear it crinkle child? Get used to that noise following you!'[in random order][roman type][line break]".
+
 Definition: demoness is willing to double diapers: decide yes.
 
 Definition: a demoness is diaper disciplining: decide yes.
+
+To say DiaperChangeComment of (M - demoness):
+	if the diaper-duration of M <= 0, say "[speech style of M]'And that will stay on unless you want punishment beyond words!'[roman type][line break]";
+	otherwise say "[speech style of M]'[one of]That was far too easy for you to be anything but a baby[or]And another [man of the player] falls to the crinkly grip of a diaper~[or]Mmm yes, how adorable. I picked the right diaper for sure[in random order].'[roman type][line break]".
 
 Definition: a demoness is willing to masturbate if there is a sex toy penetrating asshole or the player is male or the player is very horny.
 
@@ -1413,14 +1425,14 @@ To say MasturbationStartFlav of (M - a demoness):
 	if S is a thing:
 		say "[BigNameDesc of M] focuses [his of M] mystical energy on your [S]. It begins vibrating!";
 	otherwise:
-		say "The mighty demoness snaps [his of M] fingers. Flames burst around you and snare around your limbs with intense speed. The flames dissipate to reveal black chains which bind you to the floor tightly, any muscle movement challenged by the iron locks. [BigNameDesc of M] cackles at your vain struggles and saunters over to you slowly, letting you take in [his of M] approach before [he of M] reaches out, groping your padding and squeezing in. After [he of M] gauges the thickness [his of M] digits massage rhythmically to feel through to your [genitals], with no sign of [him of M] stopping!".
+		say "The mighty demoness snaps [his of M] fingers. Flames burst around you and snake around your limbs with astonishing speed. The flames dissipate to reveal black chains which bind you to the floor tightly, any muscle movement challenged by the iron locks. [BigNameDesc of M] cackles at your vain struggles and saunters over to you slowly, letting you take in [his of M] approach before [he of M] reaches out, groping your padding and squeezing in. After [he of M] gauges the thickness [his of M] digits massage rhythmically to feel through to your [genitals], with no sign of [him of M] stopping!".
 
 To say MasturbationFlav of (M - a demoness):
 	let S be a random sex toy penetrating asshole;
 	if S is a thing:
 		say "The vibrations in your [asshole] send erotic sensations through your body!";
 	otherwise:
-		say "[BigNameDesc of M] continues to masturbate you through your diaper. [one of]Somehow it's like you can feel [his of M] fingers as if you're touching skin-on-skin![or]It feels incredibly delicate and intimate.[or][he of M] is a master of [his of M] trade, bringing you heights of ecstacy with impressive speed![or][big his of M] powerful grip lets [him of M] squeeze you tightly through the thick padding.[in random order]".
+		say "[BigNameDesc of M] continues to masturbate you through your diaper. [one of]Somehow it's like you can feel [his of M] fingers as if you're touching skin-on-skin![or]It feels incredibly delicate and intimate.[or][he of M] is a master of [his of M] trade, bringing you heights of ecstasy with impressive speed![or][big his of M] powerful grip lets [him of M] squeeze you tightly through the thick padding.[in random order]".
 
 To say MasturbationAfterFlav of (M - a demoness):
 	let S be a random sex toy penetrating asshole;
@@ -1430,7 +1442,7 @@ To say MasturbationAfterFlav of (M - a demoness):
 		say "[BigNameDesc of M] seems satisfied, and removes [his of M] strong grip from your groin.[if the player is a bit horny][MasturbationTeaseFlav of M][end if]".
 
 To say DQMasturbationResistReactionFlav of (M - a demoness):
-	say "[BigNameDesc of M] cackles.[line break][speech style of M]'[one of]Your defiance is sickening, and arousing all at once. How do you do it, slave?'[or]I shall have your [if the player is male]seed[otherwise]juices[end if] one way or another mortal, you will not be free until I get it!'[or]Does it shame you mortal? How I can pleasure you through such thick layers? Is this is why you resist me?'[or]Undermining me will only get you thicker diapers, AND thicker chains!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] cackles.[line break][speech style of M]'[one of]Your defiance is sickening and arousing all at once. How do you do it, slave?'[or]I shall have your [if the player is male]seed[otherwise]juices[end if] one way or another mortal, you will not be free until I get it!'[or]Does it shame you mortal? How I can pleasure you through such thick layers? Is this is why you resist me?'[or]Undermining me will only get you thicker diapers, AND thicker chains!'[in random order][roman type][line break]".
 
 
 Definition: a demoness (called M) is eager to confiscate:
@@ -1707,6 +1719,7 @@ To compute failed dominance punishment of (M - a demoness):
 				say "[speech style of M]'Cheapskate!'[roman type][line break][BigNameDesc of M] slaps you in the face, taking extra care to make sure [his of M] nails rake painfully across your cheeks. You can't help the tears that well up in your eyes as you struggle to handle the pain.";
 				PainUp 1;
 			say "[line break][speech style of M]'Now, Get ready to cry for real.'[roman type][line break]";
+			now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
 			now another-turn is 1.
 
 To compute unique dominance reward of (M - a demoness):

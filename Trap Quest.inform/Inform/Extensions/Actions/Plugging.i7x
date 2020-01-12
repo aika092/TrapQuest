@@ -8,6 +8,7 @@ Check plugging something with:
 	if the second noun is not an insertable thing, say "The [printed name of second noun] cannot be inserted into your [noun]." instead;
 	if the second noun is clothing:
 		if the second noun is not sex toy and the second noun is not dildo sword, try wearing the second noun instead;
+	if the noun is vagina and the second noun is egg, say "You can't do that yet. In a future release, you'll probably be able to." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the noun is actually occupied and the second noun is not penetrating the noun, say "Your [noun] is already occupied by the [printed name of random object filling noun]." instead;
 	if the second noun is penetrating an orifice:

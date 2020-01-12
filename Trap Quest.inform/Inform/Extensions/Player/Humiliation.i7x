@@ -484,6 +484,14 @@ To say DisgracePost (N - a number):
 
 To say DisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;
+	say DisgracePostReaction strength S.
+
+To say HumiliatingDisgracePostReaction (N - a number):
+	let S be DisgracePostImpact N;
+	say DisgracePostReaction strength S;
+	humiliate S * 10.
+
+To say DisgracePostReaction strength (S - a number):
 	say variable custom style;
 	if the player is modest:
 		say "[if S < 100][one of]No, no, no, no, NO! This is on the real Internet?![or]No way, my friends will be able to see this![or]I can't believe this is on the real Internet...[then at random][otherwise][one of]Noooo! There's no way I can let anyone in the real world see this![or]No no no no no! I need to get this taken down RIGHT AWAY![or]If this is really on the actual Internet, I'll never ever be able to life this down! I'll be a walking disgrace![or]Oh god no... I'm never going to be able to look my family in the eyes ever again...[in random order][end if]";
