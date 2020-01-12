@@ -3,7 +3,7 @@ Festive Options by Fetish Settings begins here.
 Table of Festive Options
 title	subtable	description	toggle
 "[roman type]Return to Main Menu (shortcut: press Q)"	--	--	quit rule
-"Halloween content: ([if halloween content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	halloween content toggle rule
+"Halloween content: ([if the player is not a top donator]alpha testers only outside of the halloween release![otherwise if halloween content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	halloween content toggle rule
 "Christmas content: ([if the player is not a top donator]alpha testers only outside of the christmas release![otherwise if christmas content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	christmas content toggle rule
 "April Fools content: ([if the player is not a top donator]alpha testers only outside of the april fools release![otherwise if april fools content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	april fools content toggle rule
 "Easter content: ([if the player is not a top donator]alpha testers only outside of the easter release![otherwise if easter content is 0]disabled[otherwise][bold type]enabled[roman type][end if])"	--	--	easter content toggle rule

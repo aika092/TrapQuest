@@ -4,6 +4,8 @@ deep one is a monster. The difficulty of deep one is 12. Understand "deepone" as
 
 deep one can be angered.
 
+Definition: deep one is musky: decide yes.
+
 Figure of deep one is the file "NPCs/Mansion/deepone1.png".
 Figure of family friendly deep one is the file "NPCs/Mansion/deepone2.png".
 
@@ -78,19 +80,38 @@ To TimesSubmittedUp (M - deep one) by (N - a number):
 	if M is angered, now M is not angered;
 	DirectTimesSubmittedUp M by N.
 
-To say CreampieFlav of (M - deep one) in (F - a fuckhole):[TODO]
-	say "[BigNameDesc of M] ejaculates deep inside your [variable F]!".
+To decide if (M - deep one) is willing to creampie (F - vagina):
+	if the pregnancy of the player is 1:
+		if the father is tentacle monster or the father is vine or the father is creampie pole trap, decide no;
+		if the class of the player is cultist:
+			if a random number between 1 and 4 > 1, decide no;
+		decide yes;
+	otherwise:
+		if the player is pheromonal, decide yes;
+		if the class of the player is cultist:
+			if a random number between 1 and 6 > 1, decide no;
+		if a random number between 1 and 4 is 1, decide yes;
+	decide no.
+
+To say CreampieFlav of (M - deep one) in (F - a fuckhole):
+	say "[one of][BigNameDesc of M] makes a deep, guttural noise, slamming [his of M] [DickDesc of M] home as [he of M] fills your [variable F] with [semen]![or]A deep, guttural noise comes from [NameDesc of M]'s throat as [he of M] ejaculates deep inside your [variable F].[or]You hear a deep, guttural noise from behind you as [NameDesc of M] ejaculates, filling your [variable F] with [semen].[or][BigNameDesc of M] tightens [his of M] grip, emitting a deep, guttural noise as [his of M] [semen] explodes into your [variable F]![at random] [run paragraph on]";
+	if the pregnancy of the player is 1 and the father is not deep one:
+		if (the father is musky and a random number between 1 and 6 is 1) or (the father is not musky and a random number between 1 and 3 is 1):
+			say "An odd tingling feeling spreads through your belly, and you sense [PregGrowth of the father] inside of you transforming into...something else.";
+			now the father is deep one;
+		otherwise:
+			say "An odd tingling feeling spreads through your belly, but...it seems to pass.";
+	otherwise:
+		say "[if the player is not ashamed]Fear pierces your body as you suddenly answer [his of M] call, croaking like some demented frog[otherwise if the player is not shameless]Confusion and disbelief assault your mind as you suddenly answer [his of M] call, croaking like a frog[otherwise]You immediately answer with a call of your own, croaking like an obedient little mate[end if] as [he of M] slowly pulls out and returns to [his of M] feet.";
+
+To say MessyPullOutFlav of (M - deep one) in (F - a fuckhole):
+	say "[one of][BigNamedesc of M] suddenly pulls out, spraying your [variable F] with [semen].[or][BigNameDesc of M] suddenly decides to pull out, spraying your [variable F] with fresh [semen].[or][BigNameDesc of M] suddenly decides not to creampie you, allowing [his of M] load to spray out all over your [variable F].[at random]".
+
+To say PullOutFlav of (M - deep one) in (F - a fuckhole):
+	say "[one of][BigNamedesc of M] suddenly pulls out, spraying [his of M] [semen] all over the floor.[or][BigNameDesc of M] suddenly decides to pull out, allowing [his of M] [semen] to shoot out on the floor.[or][BigNameDesc of M] suddenly decides not to creampie you, allowing [his of M] load to shoot out on the floor.[at random]".
 
 To say CondomPieFlav of (M - deep one) in (F - a fuckhole):
-	say "[BigNameDesc of M] ejaculates into the condom.";
-
-To decide if (M - deep one) is willing to creampie (F - a fuckhole):
-	if F is vagina:
-		if pregnancy fetish is 1 and the pregnancy of the player > 0, decide yes;
-	let X be (the number of worn swimming themed wearthing) * 5;
-	if there is a lubricant covering F, increase X by 2;
-	if a random number between -2 and X > -1, decide yes;
-	decide no.
+	say "[one of][BigNameDesc of M] makes a deep, guttural noise, slamming [his of M] [DickDesc of M] home as [he of M] fills the condom with [semen].[or]A deep, guttural noise comes from [NameDesc of M]'s throat as [he of M] ejaculates into the condom![or]You hear a deep, guttural noise from behind you as [NameDesc of M] ejaculates, filling the condom with fresh [semen].[or][BigNameDesc of M] tightens [his of M] grip, emitting a deep, guttural noise as [his of M] [semen] slowly fills the condom.[at random] [if the player is not ashamed]Fear pierces your body as you suddenly answer [his of M] call, croaking like some demented frog[otherwise if the player is not shameless]Confusion and disbelief assault your mind as you suddenly answer [his of M] call, croaking like a frog[otherwise]You immediately answer with a call of your own, croaking like an obedient little mate[end if] as [he of M] pulls out and returns to [his of M] feet.";
 
 Section 2 - DQ
 

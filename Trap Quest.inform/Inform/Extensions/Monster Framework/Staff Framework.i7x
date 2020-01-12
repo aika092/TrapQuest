@@ -2,10 +2,18 @@ Staff Framework by Monster Framework begins here.
 
 A staff member is a kind of monster. A staff member is intelligent. A staff member is usually female.
 
+Definition: a staff member is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
 Definition: a staff member is school dwelling: decide yes.
 
 Definition: a staff member is motionless-when-defeated: decide yes.
+
+To compute monstermotion of (M - a staff member):
+	if playerRegion is not school:
+		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		now M is in School01;
+	otherwise if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
+		compute room leaving of M.
 
 Definition: a staff member is messy if it is diaper-enslaved and diaper messing >= 6.
 
@@ -98,8 +106,11 @@ To say ArmbandCalming of (M - a staff member):
 Part - Protection
 
 To compute (M - a staff member) protecting against (X - a monster):
-	say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
-	anger M.
+	if the health of X < the maxhealth of X:
+		say "[speech style of M]'[if X is staff member]Another rebellion?!'[otherwise]NO FIGHTING! BOTH OF YOU ON THE GROUND!'[end if][roman type][line break][BigNameDesc of M] turns aggressive.";
+		anger M;
+	otherwise:
+		say "[BigNameDesc of M] seems to be watching you out of the corner of [his of M] eye.";
 
 To compute interaction of (M - a staff member):
 	if M is undefeated and M is not caged:
@@ -482,7 +493,7 @@ To execute (A - soiled-diaper-assembly):
 	let M be the assemblyAnnouncer of A;
 	let ST be a random student in the location of the player;
 	let SD be a random soiled-diaper in the location of the player;
-	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face until you are forced to breathe the horrible smell. Your mind [one of]reels with shame[or]continues to grow with self-resentment and shame[stopping].";
+	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face until you are forced to breathe the horrible smell. Your [one of]mind reels with shame[or]feeling of self-resentment continues to grow, from the shame[stopping].";
 	DelicateUp 1;
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
@@ -495,7 +506,7 @@ To say AssemblyStartFlav of (A - egg-assembly):
 		if SD is in the school, now SD is in the location of the player;
 	let M be the assemblyAnnouncer of A;
 	now the stance of the player is 1;
-	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs that you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of player] eggs belong: UP [his of the player in upper case] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
+	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of M] is at the front, ready to lead assembly.[line break][speech style of M]'It has come to my attention that one of you has been using my halls as a dumping ground for their perverse discarded objects.'[roman type][line break][big he of M] points to the table in front of [him of M], upon which [if the number of eggs in the location of the player > 1]are the eggs you left in the school[otherwise]is [NameDesc of a random egg in the location of the player][end if].[line break][speech style of M]'That's right, I know who's responsible. I want everyone here to know it too, and to take part in reminding [NameBimbo] where [his of the player] eggs belong: UP [his of the player in upper case] ASSHOLE.'[roman type][line break]With a snap of [his of M] fingers, you are on your knees and your [asshole] is exposed to all your peers.";
 	repeat with C running through ass covering clothing:
 		if C is displacable, now C is crotch-displaced;
 		otherwise now C is in the location of the player.
@@ -524,6 +535,7 @@ To execute (A - egg-assembly):
 		destroy SD;
 	otherwise:
 		now the assemblyTime of A is 1;
+	say "[one of]You hear amused gasps and giggles from your fellow students[or]Whispers, gasps, and laughter rain down on you from the student body[or]Muttererd comments like 'Slut', 'Check the gape!' and '[Big he of the player]'s really enjoying that'! rise from all around you, down on the floor on your knees[or]Jeers, catcalls, and gasps match the pointing fingers of your shocked peers[in random order].";
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's it for today. And [NameBimbo], make sure you don't leave your disgusting eggs in my halls again.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 Check squatting when egg-assembly is active:
@@ -555,11 +567,56 @@ The detention decay rule is listed in the advance counters rules.
 
 To compute detention of (M - a staff member):
 	now M is in the location of the player;
-	let R be a random number between 1 and 2;
-	if class-time < (lessonFrequency * -3) and the health of M >= the maxhealth of M, say LateDetention of M;
-	otherwise say GenericDetention of M;
-	if R is 1 and diaper quest is 0, compute remedial detention of M;
-	otherwise compute chair detention of M.
+	let specificDetention be 0;
+	let ST be M;
+	if (diaper quest is 0 and the player is a december 2019 top donator) or (diaper quest is 1 and the player is a december 2019 diaper donator):
+		repeat with S running through students in the location of the player:
+			if the health of S < the maxhealth of S, now ST is S;
+	if the health of M < the maxhealth of M:
+		say GenericDetention of M;
+	otherwise if ST is student and there is an appropriate team-predicament:
+		say "[BigNameDesc of M] looks from you, to [NameDesc of ST], then back at you.[line break][speech style of M]'I think you two need some time together, so that you can learn to co-exist peacefully...'[roman type][line break]";
+		now specificDetention is 1;
+		now ST is in School01;
+		drag to School01 by M;
+		now team-predicament-partner is ST;
+		let P be a random appropriate team-predicament;
+		now current-predicament is P;
+		say "[paragraph break]The warp portal's destination is set to the Extra Credit Zone, and then [NameDesc of team-predicament-partner] is pushed into the warp portal alongside you! You're both going in at the same time!";
+		[now the destination of W is the Dungeon;]
+		display entire map;
+		say "As you go through the portal, you feel your clothing stolen away by some invisible forces!";
+		repeat with C running through held things:
+			if C is worn clothing:
+				if C is removable and C is not headgear and C is not combat visor and C is not armband:
+					dislodge C;
+					now C is in Predicament20;
+			otherwise if C is not worn:
+				now C is in Predicament20;
+		now the semen coating of face is 0;
+		now the semen coating of hair is 0;
+		now the urine coating of hair is 0;
+		now the semen coating of breasts is 0;
+		now the semen coating of belly is 0;
+		now the semen coating of thighs is 0;
+		display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
+		now team-predicament-partner is interested;
+		update appearance level;
+		now the latest-appearance of team-predicament-partner is the appearance of the player;
+		if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
+		now turnsWithSoiledDiaper is 0;
+		now the printed name of Predicament01 is "Abandoned Warehouse";
+		execute P;
+		increase the times-completed of P by 1;
+		now temporaryYesNoBackground is Figure of small image;
+		[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]
+	otherwise if class-time < (lessonFrequency * -3):
+		say LateDetention of M;
+	otherwise:
+		say GenericDetention of M;
+	if specificDetention is 0:
+		if diaper quest is 0 and a random number between 1 and 2 is 1, compute remedial detention of M;
+		otherwise compute chair detention of M.
 
 To say LateDetention of (M - a staff member):
 	say "[BigNameDesc of M] stares at you. It looks like [he of M] has been waiting for you.[line break][speech style of M]'YOU'RE LATE! Class is already over! It's detention for you, young Miss. Come with me now!'[roman type][line break]".
@@ -637,9 +694,8 @@ To compute wand chair detention:
 		if the boredom of M is 0, check seeking 1 of M; [NPCs make their way to watch the spectacle]
 	if detention-turns > 0:
 		say "The magic wand [one of]buzzes powerfully[or]continues to buzz[stopping]!";[possibly add text here describing arousal so far]
-		stimulate vagina from detention chair; [TODO NEXT: modify detention chair's stimulation value]
 		FatigueUp 30;
-		if vagina is pushed over the edge, vaginally orgasm shamefully;
+		stimulate vagina from detention chair; [TODO NEXT: modify detention chair's stimulation value]
 	otherwise:
 		let M be a random staff member in Holding Pen;
 		if M is nothing:
@@ -713,7 +769,9 @@ This is the detention orgasm announcement rule:
 The detention orgasm announcement rule is listed last in the orgasm resolution rules.
 
 To say detention orgasm reaction of (M - a monster):
-	say "[speech style of M]'[one of]Wow, so you[']re really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don[']t get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.".
+	say "[speech style of M]'[one of]Wow, so you're really enjoying your punishment THAT much?'[or]What kind of desperate slut actually has an orgasm from something like that?'[or]Is that why you earned yourself a detention? So everyone could watch you cum?'[or]So, you got in trouble on purpose then?'[or]I hope I don[']t get detention after you.'[in random order][roman type][line break][BigNameDesc of M] can't help but watch you.";
+	FavourDown M.
+
 
 To say detention orgasm reaction of (M - a teacher):
 	say "[speech style of M]'[one of]If you enjoy the punishment that much, maybe you should be the one to clean the floor when you[']re done.'[or]Pathetic. That wand isn't even on the highest setting.'[or]Honestly, you haven[']t even been in the chair that long.'[in random order][roman type][line break][BigNameDesc of M] rolls [his of M] eyes as [he of M] watches you.".
@@ -737,7 +795,7 @@ Conference(maybe this would be better as a thing that happens naturally)
 [player is forced to watch a hypno video]
 To compute remedial detention of (M - a staff member):
 	now detention chair is detention-remedial;
-	now detention-turns is a random number between 8 and 12;
+	now detention-turns is 8;
 	drag to School13 by M;
 	say "[speech style of M]'[if the health of M < the maxhealth of M]Clearly you need extra curriculum if you believe you have the time to be aggressive with teachers[otherwise]If you can't get to class on time then you'll have to catch up the hard way[end if]. Sit.'[roman type][line break][big he of M] points to the chair in the centre of the room.";
 	[if diaper quest is 0 or the number of worn diapers is 0, compute TQChairSetup of M;[in TQ underwear is always removed]

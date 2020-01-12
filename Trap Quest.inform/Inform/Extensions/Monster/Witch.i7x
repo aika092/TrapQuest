@@ -2,7 +2,7 @@ Witch by Monster begins here.
 
 witch is a monster. witch is intelligent. witch has a number called altar-uses. The altar-uses of a witch is 2. witch is unconcerned. witch has a number called curse-quest. witch can be bitchy or unbitchy. witch is bitchy.
 
-witch is in Woods20. Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
+witch is in Woods20.  Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
 Definition: witch is dark skinned: decide yes.
 
@@ -141,7 +141,7 @@ Report dropping in the presence of witch:
 	let M be witch;
 	increase altar-drops by 1;
 	if altar-drops > 5 and the bimbo of the player < 10 and the class of the player is maid:
-		say "Like a busy and industrious little maid, you neatly pile up your equipment, keeping one nervous eye on the nearby altar, hoping that nothing too nasty wanders up while you're stripping yourself down to the bare minimum. [BignameDesc of M] seems to be watching you with a smirking expression, as if [he of M] knows what you're doing. But [he of M] says nothing. Somehow, that makes it even more humiliating.";
+		say "Like a busy and industrious little maid, you neatly pile up your equipment, keeping one nervous eye on the nearby altar, hoping that nothing too nasty wanders up while you're stripping yourself down to the bare minimum. [BigNameDesc of M] seems to be watching you with a smirking expression, as if [he of M] knows what you're doing. But [he of M] says nothing. Somehow, that makes it even more humiliating.";
 		humiliate 200;
 		now altar-drops is -200.
 
@@ -279,7 +279,7 @@ The witch tries to trip the player rule is listed last in the witch attack rules
 To say MonsterTripAnnounceFlav of (M - witch):
 	say "[one of]The witch holds [his of M] hand in the air, causing a giant clay hand to grow out of the ground.[or]The witch raises [his of M] hand, causing a giant clay hand to grow out of the ground.[purely at random]".
 
-To say MonsterTrippedFlav of (M - witch): [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
+To say MonsterTrippedFlav of (M - witch):  [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
 	say "[if there is a worn nipple chain]It hooks a finger around your nipple chain, yanking you to the ground.[otherwise if there is a worn nipple piercing]It nimbly snatches the ring in one nipple and tugs down, the pain making you squeal and toppling you onto all fours on the ground[otherwise][one of]It chops your ankle out from under you, causing you to topple over onto your hands and knees.[or]It grabs your ankle, yanking it out from under you. You topple onto your hands and knees.[or]It grabs you by your ankles, tossing you off the ground. You yelp as you fly through the air and land on your hands and knees.[or]It grabs you by the wrist and yanks you onto your hands and knees.[or]It picks you up by your waist and roughly tosses you onto your hands and knees.[or]It grabs you at the knees and roughly yanks them out from under you. You fall to the ground![in random order][end if]".
 
 To say MonsterFailedTripFlav of (M - witch):
@@ -478,7 +478,7 @@ To say FirstResponse of (M - witch):
 
 To say RepeatResponse of (M - witch):
 	if M is unfriendly:
-		say "[speech style of M]'[one of]You can forget about using my altar!'[or]I'm going to make you regret what you did!'[or]Never mess with witch!'[or]Don't mess with an altar witch!'[in random order][roman type][line break]";
+		say "[speech style of M]'[one of]You can forget about using my altar!'[or]I'm going to make you regret what you did!'[or]Never mess with a witch!'[or]Don't mess with an altar witch!'[in random order][roman type][line break]";
 	otherwise if M is unbitchy:
 		say "[speech style of M]'[one of]Hey. You know, it's not an easy life being an altar witch...'[or]Hey, feel free to use my altar whenever you want.'[or]Hi there! Feel free to stay around and chat. Not like there's much else to do in this shit-hole.'[or]Hey, if you ever meet a washed up demon lord anywhere, don[']t believe a word [he of demon lord] says about me.'[at random][roman type][line break]";
 	otherwise if the class of the player is priestess:
@@ -580,6 +580,8 @@ To compute teaching of (M - witch):
 				now the witch-target of M is a random on-stage monster;
 				while the witch-target of M is M:
 					now the witch-target of M is a random on-stage monster;
+					let W be the witch-target of M;
+					if W is student or W is staff member or W is ex-princess, now the witch-target of M is M;
 				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and kill [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
 				DifficultyUp witch-target by 5;
 			otherwise:
@@ -591,7 +593,7 @@ To compute teaching of (M - witch):
 
 [using the default advice question]
 To say AdviceAnswer of (M - witch):
-	say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].[otherwise][one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]Demonesses are lot of a things. Sadistic. Nosey. Arrogant. Fucking bitches... But they're actually pretty limited as a guest in the mortal world. If one uses up a large chunk of [his of a random demoness] power, you can just run away.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[at random][end if][roman type][line break]".
+	say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].[otherwise][one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]Demonesses are lot of a things. Sadistic. Nosey. Arrogant. Fucking bitches... But they're actually pretty limited as a guest in the mortal world. If one uses up a large chunk of [his of a random demoness] power, you can just run away.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass.'[at random][end if][roman type][line break]".
 
 
 Section 3 - Drink Requesting

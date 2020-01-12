@@ -67,9 +67,9 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the stimulation of (O - an object) on (F - a body part):
-	if the semen volume of vagina > 6 and F is vagina, decide on 4; [Pussy creampie expulsion]
+	if the semen volume of vagina > 6 and F is vagina, decide on 3; [Pussy creampie expulsion]
 	if diaper quest is 1:
-		if F is fuckhole, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+		if F is fuckhole or F is penis, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 		decide on 1;
 	decide on 0.
 
@@ -100,30 +100,27 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the stimulation of (T - a thing) on (F - a body part):
 	if F is fuckhole:
-		if T is insertable, decide on the girth of T / 2;
+		if the girth of T > 1 or T is insertable, decide on (the girth of T * 2) / 3;
 		if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
-	decide on 0.
-
-[!<DecideWhichNumberIsTheStimulationOfTrap>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is the stimulation of (T - a trap) on (F - a body part):
-	if the girth of T > 0, decide on (the girth of T * 2) / 3;
-	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+	if diaper quest is 1 and F is penis, decide on 4;
 	decide on 0.
 
 To stimulate (F - a body part):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T.
 
 To stimulate (F - a body part) times (N - a number):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T times N.
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	passively stimulate F from T.
 
@@ -136,11 +133,16 @@ To stimulate (F - a body part) from (T - an object):
 	stimulate F from T times 1.
 
 To stimulate (F - a body part) from (T - an object) times (N - a number):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	while N > 0:
 		decrease N by 1;
-		if the player is able to get horny: [need to check this each time]
+		if the player is able to get horny:
 			passively stimulate F from T;
-			if F is orgasming, do nothing. [This is how we check for an orgasm]
+		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 4:
+			now constant-stimulation-latest is time-turns;
+			if constant-stimulation-started is 0, now constant-stimulation-started is time-turns;
+		if F is orgasming, do nothing.[This is how we check for an orgasm]
 
 To passively stimulate (F - a body part) from (T - an object) times (N - a number):
 	while N > 0:
@@ -150,6 +152,8 @@ To passively stimulate (F - a body part) from (T - an object) times (N - a numbe
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part) from (T - an object):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	if the player is able to get horny:
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
@@ -248,6 +252,8 @@ To RuinRoll (F - a fuckhole):
 				say "The [lubricant] sloshing around inside your [variable F] has helped you take [FuckerDesc of random live thing penetrating F] without getting any more sore!".
 
 [NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions. The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
+
+
 
 
 

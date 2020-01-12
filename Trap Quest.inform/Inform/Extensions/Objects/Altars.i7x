@@ -858,7 +858,7 @@ To DevilPray (P - yourself):
 		summon C;
 	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
 		if diaper quest is 0 and the player is not top heavy:
-			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accomdating the extra weight you're carrying around.";
+			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accommodating the extra weight you're carrying around.";
 			BustUp (N / 3) + 1;
 		otherwise:
 			say "The statue seems to snarl as your muscles suddenly grow.";
@@ -874,9 +874,9 @@ To DevilPray (P - yourself):
 		let X be ((N * 2) / 3) + 1;
 		if X > the number of off-stage imps, now X is the number of off-stage imps;
 		if X is 1:
-			say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischeivous chuckling as an imp steps out.";
+			say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as an imp steps out.";
 		otherwise:
-			say "The statue's eyes glint as [X] portals open up around you, accompanied by mischeivous chuckling as an imp steps out of each portal.";
+			say "The statue's eyes glint as [X] portals open up around you, accompanied by mischievous chuckling as an imp steps out of each portal.";
 		while X > 0:
 			let I be a random off-stage imp;
 			compute reward N set up of I;
@@ -885,11 +885,8 @@ To DevilPray (P - yourself):
 	otherwise:[free of charge, since you didn't get anything good]
 		now R is -1;
 		let D be a random alive infernal monster;
-		if D is monster:
-			DifficultyUp D by 1;
-			say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-		otherwise:
-			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+		if D is monster, DifficultyUp D by 1;
+		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
 	increase the charge of hotel altar by 180;
 	progress quest of hotel-altar-quest;
 	if R > 0:
@@ -912,38 +909,41 @@ To DevilPray (T - a thing):
 	increase the charge of hotel altar by 180;
 
 To DevilPray (T - a clothing):
-	let N be (the charge of hotel altar / 150) + 1;
-	if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
-	if N > 6, now N is 6;
-	say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
-	if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
-		increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 3 -> 4]
-		if T is blandness:
-			let R be a random number between 1 and 4;
-			if R is 1, now T is stumbling;
-			if R is 2, now T is temptation;
-			if R is 3, now T is possession;
-			if R is 4, now T is hostility;
-		otherwise:
-			if T is kicking or T is speed, now T is stumbling;
-			if T is endurance, now T is possession;
-			if T is protection, now T is hostility;
-			if T is dominance, now T is temptation;
-	otherwise:[-6 -> -5 -> -4 -> -3]
-		decrease the raw-magic-modifier of T by (N / 2) + 6;
-		if T is stumbling:
-			now T is kicking;
-		otherwise if T is temptation:
-			now T is dominance;
-		otherwise:
-			let R be a random number between 1 and 4;
-			if R is 1, now T is kicking;
-			if R is 2, now T is dominance;
-			if R is 3, now T is endurance;
-			if R is 4, now T is speed;
-	say "as it is changed into a [printed name of T]!";
-	increase the charge of hotel altar by 180;
-	compute DevilPayment N.
+	if T is cursable:
+		let N be (the charge of hotel altar / 150) + 1;
+		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
+		if N > 6, now N is 6;
+		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
+		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
+			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 3 -> 4]
+			if T is blandness:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is stumbling;
+				if R is 2, now T is temptation;
+				if R is 3, now T is possession;
+				if R is 4, now T is hostility;
+			otherwise:
+				if T is kicking or T is speed, now T is stumbling;
+				if T is endurance, now T is possession;
+				if T is protection, now T is hostility;
+				if T is dominance, now T is temptation;
+		otherwise:[-6 -> -5 -> -4 -> -3]
+			decrease the raw-magic-modifier of T by (N / 2) + 6;
+			if T is stumbling:
+				now T is kicking;
+			otherwise if T is temptation:
+				now T is dominance;
+			otherwise:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is kicking;
+				if R is 2, now T is dominance;
+				if R is 3, now T is endurance;
+				if R is 4, now T is speed;
+		say "as it is changed into a [printed name of T]!";
+		increase the charge of hotel altar by 180;
+		compute DevilPayment N;
+	otherwise:
+		say "Nothing seems to happen.".
 
 [!<ResetDungeonAltar>+
 

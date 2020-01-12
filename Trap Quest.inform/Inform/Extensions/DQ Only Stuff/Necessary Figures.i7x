@@ -9,6 +9,18 @@ Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
 Figure of ghost 7 is the file "NPCs/Mansion/Ghost/ghost7.png".
 
+Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-dq-xray1.jpg".
+Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths-dq1.jpg".
+Figure of Maths Predicament 2 is the file "Special/Cutscene/cutscene-maths-dq2.jpg".
+
+To decide which figure-name is figure of maths predicament:
+	if maths-timer is -100:
+		decide on figure of maths predicament xray 1;
+	otherwise if there is a worn messed knickers:
+		decide on figure of maths predicament 2;
+	otherwise:
+		decide on figure of maths predicament 1.
+
 Figure of Mimic Cutscene 1 is the file "Special/Cutscene/cutscene-mimic1.jpg".
 Figure of Mimic Cutscene 2 is the file "Special/Cutscene/cutscene-mimic2.jpg".
 Figure of Mimic Cutscene 3 is the file "Special/Cutscene/cutscene-mimic3.jpg".
@@ -29,14 +41,29 @@ Figure of Puppy Cutscene 6 is the file "Special/Cutscene/cutscene-puppy6.png".
 Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.png".
 Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.png".
 
+Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
+
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 
-Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
+Figure of throne is the file "Env/Dungeon/throne1b.jpg".
+Figure of transformed throne is the file "Env/Dungeon/throne2b.jpg".
+
+
+Figure of urinal is the file "Env/MultiFloor/urinal2.png".
+
+Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".
+Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-pose4.jpg".
 
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
 
 
+Figure of cutscene-xavier-nightmare-diaper-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper1.jpg".
+Figure of cutscene-xavier-nightmare-diaper-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper2.jpg".
+Figure of cutscene-xavier-nightmare-gag-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-gag1.jpg".
+Figure of cutscene-xavier-nightmare-gag-wet is the file "Special/Cutscene/cutscene-xavier-nightmare-gag2.jpg".
+Figure of cutscene-xavier-nightmare-belt-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-belt1.jpg".
+Figure of cutscene-xavier-nightmare-belt-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-belt2.jpg".
 
 
 Figure of Babified Royal Guard 1 is the file "NPCs/Dungeon/royalguardbab1.jpg".

@@ -158,7 +158,7 @@ A theme blocking rule:
 A theme sharing rule (this is the royalty matching rule):
 	if theme-target is royalty themed and theme-share-target is royalty themed, rule succeeds.
 The royalty matching rule is listed in the interesting theme sharing rules.
-Definition: an object is cow themed: [Is it something to do with cows]
+Definition: an object is cow themed:  [Is it something to do with cows]
 	decide no.
 A theme blocking rule:
 	if theme-target is cow themed and the number of currently at least partially visible cow themed wearthings > 1:
@@ -507,7 +507,7 @@ A dexterity theme rule:
 
 Section - Leopard
 
-Definition: an object is leopard themed: [Is it something to do with leopards, or leopard print]
+Definition: an object is leopard themed:  [Is it something to do with leopards, or leopard print]
 	decide no.
 
 A theme blocking rule:
@@ -756,11 +756,11 @@ Definition: a thing is uncovered themed: [Is it something that should not be wor
 	decide no.
 
 A theme description rule:
-	if theme-target is uncovered themed, say "[if theme-target is currently covered]It is[otherwise][bold type]It would be[end if] very unfashionable to wear anything that concealed this.[roman type][line break]".
+	if theme-target is uncovered themed, say "[if theme-target is currently at least partially visible]It is[otherwise][bold type]It would be[end if] very unfashionable to wear anything that concealed this.[roman type][line break]".
 
 A theme effect description rule:
 	if theme-target is uncovered themed:
-		if theme-target is currently covered, say "[bold type]You can feel your brain losing significant amounts of intelligence due to the fashion blunder of wearing something that conceals this.[roman type][line break]".
+		if theme-target is not currently at least partially visible, say "[bold type]You can feel your brain losing significant amounts of intelligence due to the fashion blunder of wearing something that conceals this.[roman type][line break]".
 
 uncoveredReminder is a number that varies.
 
@@ -768,7 +768,7 @@ An advance counters rule:
 	increase uncoveredReminder by 1;
 	if uncoveredReminder > 20:
 		now uncoveredReminder is 0;
-		let L be the list of worn uncovered themed currently at least partially covered clothing;
+		let L be the list of worn uncovered themed currently concealed clothing;
 		let N be the number of entries in L;
 		if N > 0:
 			say "[bold type]Your ";
@@ -788,7 +788,7 @@ An advance counters rule:
 
 
 An intelligence theme rule:
-	repeat with C running through worn uncovered themed currently at least partially covered clothing:
+	repeat with C running through worn uncovered themed currently concealed clothing:
 		decrease tempThemeBonus by 2.
 
 

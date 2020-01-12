@@ -18,7 +18,7 @@ To say ShortDesc of (C - a throbbing-tentacle):
 	say "Master".
 
 To compute SelfExamineDesc of (H - a throbbing-tentacle):
-	say "The end of your Master barely sticks out of your [if H is penetrating asshole][asshole][otherwise if H is penetrating vagina][vagina][otherwise]tailbone. Please report this bug[end if].".
+	say "The end of your Master barely sticks out of your [if H is penetrating asshole][asshole][otherwise if H is penetrating vagina][vagina][otherwise]tail-bone. Please report this bug[end if].".
 
 Check taking off throbbing-tentacle:
 	say "You can feel the Master is comfortable where he is, and have no desire to remove him." instead.

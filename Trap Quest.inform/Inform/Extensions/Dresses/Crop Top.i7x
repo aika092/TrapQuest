@@ -274,7 +274,7 @@ Definition: gross tank top is black themed: decide yes.
 
 Part 9 - Plaid Tank Top
 
-plaid tank top is a crop top. plaid tank top is dense. The printed name of plaid tank top is "[clothing-title-before]plaid tank top[clothing-title-after]". The text-shortcut of plaid tank top is "pltt".
+plaid tank top is a crop top. plaid tank top is dense. plaid tank top is high cut. The printed name of plaid tank top is "[clothing-title-before]plaid tank top[clothing-title-after]". The text-shortcut of plaid tank top is "pltt".
 
 To decide which number is the initial outrage of (C - plaid tank top):
 	decide on 3.

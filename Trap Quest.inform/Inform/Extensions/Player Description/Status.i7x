@@ -33,7 +33,7 @@ To say WeightDesc:
 		otherwise:
 			say "You are very light for a normal person, [if S > 9]and your strong leg muscles are managing just fine. [otherwise if S > 4]and your muscles can handle it fine. [otherwise]but your poor weak leg muscles are having huge amounts of difficulty dealing with any weight at all. [end if]";
 	otherwise:
-		say "You feel [if W > -7]almost [end if]weightless!  ";
+		say "You feel [if W > -7]almost [end if]weightless! ";
 	say InventoryWeightDesc.
 
 [!<SaySoulsAddictionDesc>+

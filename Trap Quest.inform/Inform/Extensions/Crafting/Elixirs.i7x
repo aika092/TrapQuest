@@ -49,7 +49,7 @@ A time based rule (this is the magnetism elixir decay rule):
 
 Section 2 Elixir of Life
 
-An elixir of life is a kind of elixir. The printed name of elixir of life is "[TQlink of item described]elixir of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of elixir of life is "[TQlink of item described]elixirs of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of elixir of life is "el".  There are 3 elixir of life.
+An elixir of life is a kind of elixir. The printed name of elixir of life is "[TQlink of item described]elixir of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of elixir of life is "[TQlink of item described]elixirs of life[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of elixir of life is "el". There are 3 elixir of life.
 
 To say ExamineDesc of (B - an elixir of life):
 	say "A small glass flask filled with a small dose of shimmering green liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
@@ -68,7 +68,7 @@ Carry out quaffing elixir of life:
 	if the player is male:
 		say DefaultSexchangeFlav;
 		SexChange the player;
-		say "But the elixir hasn't finished yet!  ";
+		say "But the elixir hasn't finished yet! ";
 	if the pregnancy of the player is 0, say "Your [BellyDesc] rumbles[if the largeness of belly < 4] and slightly expands[end if]. You feel a small kick coming from within. [if the children of the player is 0][line break][variable custom style]No way... [roman type][line break][end if]It looks like you're pregnant[if the children of the player > 0] again[end if]!";
 	otherwise say "Your [BellyDesc] rumbles, and energy rushes to your womb. For a brief moment you can feel your womb perfectly - you can feel exactly where it is, how swollen and expanded it is, and you can feel your baby inside with as if the inside lining of your womb had all the sensitive nerve endings of your hand. As you [if the player is upright]stand[otherwise]lie[end if] there stunned, the feeling disappears and your [vagina] is left with a dull, throbbing ache as if it can't wait to feel the sensation of being stretched beyond its limits and giving birth[if the children of the player > 0] again[end if].";
 	allocate 6 seconds;

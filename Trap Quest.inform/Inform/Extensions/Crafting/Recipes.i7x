@@ -3,6 +3,9 @@ Recipes by Crafting begins here.
 
 A recipe is a kind of thing. A recipe can be memorised. A recipe is usually not memorised. A recipe is usually not portable. The text-shortcut of recipe is "re".
 
+['Appropriate' means the player has enabled the right fetishes in order to be allowed to find this recipe.]
+Definition: a recipe is appropriate: decide yes.
+
 To decide which number is the recipe key of (C - a recipe):
 	decide on 0.
 
@@ -46,9 +49,6 @@ To say ExamineDesc of (B - a recipe for latex curse reversal):
 Definition: a recipe for latex curse reversal is immune to change: decide yes.
 Check inking recipe for latex curse reversal:
 	say "You get the feeling that would be a bad idea. What if you ever get the 'latex curse'?!" instead.
-
-To determine items for (R - a recipe for latex curse reversal):
-	do nothing.[The player can't read this particular recipe, so it's uncraftable.]
 
 Recipe for condom of kings is a kind of recipe. The printed name of recipe for condom of kings is "[TQlink of item described]recipe for condom of kings[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for condom of kings. The text-shortcut of recipe for condom of kings is "rck".
 To say ExamineDesc of (B - a recipe for condom of kings):

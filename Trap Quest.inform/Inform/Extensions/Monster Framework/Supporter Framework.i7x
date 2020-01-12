@@ -495,7 +495,7 @@ To say MonsterFailedTripFlav of (M - a supporter):
 	say "You manage to keep your balance.".
 
 To say StrikingSuccessFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
-	say "[BigNameDesc of M] smacks you [TargetName of B]!  Ouch!!".
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
 To say StrikingFailureFlav of (M - a supporter) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".

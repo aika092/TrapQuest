@@ -39,7 +39,7 @@ To trigger (Y - a magic dust trap):
 		if diaper quest is 1 and diaper messing >= 3 and the player is full and asshole is not actually occupied and there is worn total protection soilable knickers:
 			say "A phrase rapidly repeats in your head over and over and over and over.[line break][second custom style]'I don't need maturity! I don't need maturity! I don't need maturity! Don't need maturity! Don't need maturity! Maturity! Maturity! Maturity...'[roman type][line break]";
 			if hypno-trigger-maturity is 0:
-				say "You feel an almost irresistible compulsion to squat down and mess yourself. You might be able to resist, but if you do, there might be more permanent long-term repercussions when you hear the word 'maturity' in the future. Do you try to resist the urge to mess yourself? ";
+				say "You feel an almost irresistable compulsion to squat down and mess yourself. You might be able to resist, but if you do, there might be more permanent long-term repercussions when you hear the word 'maturity' in the future. Do you try to resist the urge to mess yourself? ";
 				if the player is consenting:
 					now hypno-trigger-maturity is 1;
 					say "You grit your teeth and focus on the word 'maturity'. You manage to hold on... for now.[line break][variable custom style]Maturity...[roman type][line break]";

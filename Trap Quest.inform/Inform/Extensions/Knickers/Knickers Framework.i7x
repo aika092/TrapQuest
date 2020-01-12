@@ -76,7 +76,7 @@ To decide which number is the core outrage of (C - a knickers): [This is plugged
 To decide which number is the initial outrage of (C - a knickers):
 	decide on the core outrage of C + the unique outrage of C.
 To decide which number is the initial cringe of (C - a knickers):
-	decide on the core outrage of C + the unique cringe of C.
+	decide on 1 + the unique cringe of C.
 
 To decide which number is the unique outrage of (C - a knickers): [Some underwear has additional factors that make it lewd, e.g. a rude phrase]
 	if C is crotch-assless, decide on 4;
@@ -130,7 +130,7 @@ The knickers already worn rule is listed in the knickers wearability rules.
 
 This is the diapers disabled rule:
 	if diaper lover <= 0 and wearing-target is diaper:
-		if summoning is 0 and autowear is false, say "[if debugmode is 0]You can't wear this, you should even be able to see this, whoops!  Please report the bug.[otherwise]Diapers are disabled, but since you're in debug mode I assume you want to be able to wear this![end if]";
+		if summoning is 0 and autowear is false, say "[if debugmode is 0]You can't wear this, you should even be able to see this, whoops! Please report the bug.[otherwise]Diapers are disabled, but since you're in debug mode I assume you want to be able to wear this![end if]";
 		unless summoning is 0 and debugmode > 0, rule fails.
 The diapers disabled rule is listed in the knickers wearability rules.
 
@@ -161,7 +161,7 @@ Report wearing knickers:
 			ruin vagina;
 		now the noun is penetrating asshole;
 		ruin asshole;
-		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating!  That can't be good...";
+		if the noun is cursed and the noun is vibrating plug panties, say "[line break]The [if the player is female]ass [end if] plug starts vibrating! That can't be good...";
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
 		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][end if] conform to the contours of your [ShortDesc of hips] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable! [end if]These panties are cursed!"; [Written by Anya Snowdrifter]

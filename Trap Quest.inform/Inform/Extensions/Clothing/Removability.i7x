@@ -52,6 +52,7 @@ The not wearing rule is listed in the global removability rules.
 
 This is the unremovable rule:
 	if wearing-target is unremovable:
+		if wipeChecking is true, rule succeeds; [we are currently checking if wipes would work]
 		if summoning is 0 and autoremove is false, say "You can't find any way to take it off!";
 		rule fails.
 The unremovable rule is listed in the global removability rules.

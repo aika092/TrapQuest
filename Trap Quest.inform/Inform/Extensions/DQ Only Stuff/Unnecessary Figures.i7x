@@ -190,6 +190,9 @@ To decide which figure-name is Figure of Teacher Hannah Cutscene 2:
 To decide which figure-name is Figure of Quiz Predicament Room:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Slave Hannah:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
 
@@ -347,9 +350,6 @@ To decide which figure-name is Figure of Lips Cutscene 2a:
 To decide which figure-name is Figure of Lips Cutscene 2b:
 	decide on figure of small image.
 To decide which figure-name is Figure of Lips Cutscene 3:
-	decide on figure of small image.
-
-To decide which figure-name is Figure of Maths Predicament:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Modmachine Cutscene 1:

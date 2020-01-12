@@ -73,7 +73,7 @@ To compute class outfit of (H - rubber top hat):
 			let B be the largeness of breasts;
 			while B is the largeness of breasts:
 				BustImplantsUp 1;
-			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type]  Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
+			say "[bold type]You feel and hear your tits expanding like stretchy rubber until they are [BreastDesc]![roman type] Touching and feeling them, you can definitely feel tight, less squishy areas below the nipple. Somehow, your new dress has summoned breast implants inside of your boobs!";
 		now plastic-summoned is 1;
 	otherwise if the class of the player is silicone queen and P is actually summonable:
 		summon P uncursed;

@@ -10,7 +10,7 @@ Table of Pregnancy Options
 title	subtable	description	toggle
 "I would rather not give birth to something bizarre or inhuman."	--	--	inhuman pregnancy hater rule
 "If it's at least partly human and doesn't come back I'm sure I'll be fine, but nothing too weird please!"	--	--	inhuman pregnancy disliker rule
-"I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate!  (+1 point)"	--	--	inhuman pregnancy rule
+"I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate! (+1 point)"	--	--	inhuman pregnancy rule
 
 
 [!<TheInhumanPregnancyRule>+

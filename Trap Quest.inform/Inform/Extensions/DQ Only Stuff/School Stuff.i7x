@@ -164,7 +164,7 @@ To say MonsterDesc of (M - student-rachel):
 	otherwise if the current-rank of M is 3:
 		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of [his of M] chest. [big his of M] smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that [he of M]'s got on underneath, which if anything is even thicker than before. [big his of M] short brunette hair has been put in little pigtails. [big he of M] still constantly blushes wherever [he of M] goes.";
 	otherwise:
-		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABYGIRL' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this was woman was a respected young professional.".
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABYGIRL' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this woman was a respected young professional.".
 
 The current-rank of student-rachel is 2.
 The max-rank of student-rachel is 4.
@@ -187,7 +187,7 @@ To say StoryAnswer of (M - student-rachel):
 	say "[speech style of M]'My boss... Mr Blair... knows I will do anything he says, because if I get fired, I lose the rights to the incredible mansion my aunt left me in her will. So he's getting me to wear diapers and dress more baby-like and I'm not allowed to change myself and... it's quickly becoming too much! Hopefully here they can teach me some techniques on how to [please] him without going too far...'[roman type][line break]".
 
 To say WhereAnswer of (M - student-rachel):
-	say "[speech style of M]'[if the rank of the player <= 1]Something we all need to learn... how to sometimes swallow your pride for the greater good.'[otherwise]Swallow your pride... and whatever food and drink Master tells you to...'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]Something we all need to learn... how to sometimes swallow our pride for the greater good.'[otherwise]Swallow our pride... and whatever food and drink Master tells us to...'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - student-rachel):
 	say "[speech style of M]'Whatever they tell you to do, you've just got to say [']Yes Mister['] and then get on with it! If you can bring yourself to...'[roman type][line break]".
@@ -367,8 +367,11 @@ Part - Chess Stuff
 
 The lesson-teacher of chess-lesson is teacher-hyacinthe.
 headmistress has a number called chess-boredom.
+chess-lesson has a number called chess-refused.
+chess-lesson has a number called student-latest-percent.
+chess-lesson has a number called player-latest-percent.
 
-Definition: chess-lesson is lesson-appropriate if the chess-victor of it is 0.
+Definition: chess-lesson is lesson-appropriate if the chess-victor of it is 0 and the chess-refused of it is 0.
 
 Figure of chess table is the file "Env/School/chesstable1.png".
 
@@ -435,6 +438,7 @@ To compute teaching of (L - chess-lesson):
 		otherwise:
 			say ". ";
 		say "I'm afraid that until we get two volunteers for this game, or the headmistress gets bored of asking, we're not going to be able to have any other lessons. So for now class is cancelled!'[roman type][line break][big he of M] politely gestures for you all to leave the room.";
+		now the chess-refused of chess-lesson is 1;
 		allocate 6 seconds.
 
 
@@ -545,7 +549,7 @@ To compute chess time:
 			if a random number between 1 and 4 > 1, increase the stomach-water of the player by 1;
 		otherwise:
 			say "[BigNameDesc of ST] is forced to drink more of the punishment [if diaper messing >= 3]NUTRI-LAX [end if]liquid.";
-			increase the student-rectum of chess-lesson by a random number between 1 and 2;
+			increase the student-rectum of chess-lesson by 2;
 		compute hunger and thirst;
 		compute bladder growth;
 		if delayed urination > 0, compute chess urination;
@@ -557,7 +561,7 @@ To compute chess time:
 		check for arousal change;
 		now focused-thing is ST;
 		display stuff;
-		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left.";
+		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left. Your diaper is [if player-latest-percent of chess-lesson > 0][player-latest-percent of chess-lesson][end if]0% of the way towards your pressure plate, and [NameDesc of ST][']s diaper is [if student-latest-percent of chess-lesson > 0][student-latest-percent of chess-lesson][end if]0% of the way towards the other pressure plate.";
 		compute chess move input.
 
 
@@ -568,11 +572,12 @@ To compute opponent chess turn:
 	let mess-factor be (the urine-soak of D * 55) / the soak-limit of D; [we want to calculate who's winning on the diaper front]
 	if diaper messing >= 3, now mess-factor is (the mess of D * 55) / 40;
 	decrease mess-factor by the student-diaper of chess-lesson; [So now, a positive number means that the opponent is winning in the diaper front]
+	increase mess-factor by the lost-pieces of chess-lesson - the student-lost-pieces of chess-lesson; [A positive number means that the opponent is LOSING the chess game (so they need to spend more time thinking to catch up)]
 	if a random number between 5 and 25 < student-rectum of chess-lesson:
 		say "[BigNameDesc of ST] looks like [he of ST][']s about to make a move, but then [his of ST] belly gurgles and the next thing you know, [he of ST][']s whining with shame and [if diaper messing >= 3]messing[otherwise]wetting[end if] [himself of ST].";
 		compute student chess soiling;
 		now the chess-turn of chess-lesson is 1; [Messing doesn't end their turn]
-	otherwise if a random number between 1 and (8 + (mess-factor / 3)) > 4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game, the more time they spend thinking]
+	otherwise if a random number between 1 and (11 + (mess-factor / 3)) >  4 and the student-great-move of chess-lesson > 0 and the student-diaper of chess-lesson < 50: [The more they're winning the diaper game or losing the chess game, the more time they spend thinking]
 		say "[BigNameDesc of ST] keeps thinking.";
 		now the chess-turn of chess-lesson is 1; [Thinking doesn't end their turn]
 	otherwise if student-great-move of chess-lesson <= 0 and a random number between 1 and 3 > 1:
@@ -711,11 +716,12 @@ To compute student chess soiling:
 	increase the student-diaper of chess-lesson by the student-rectum of chess-lesson;
 	let ST be the chess-opponent of chess-lesson;
 	if the student-diaper of chess-lesson < 55:
-		if the student-diaper of chess-lesson > 5, say "[big his of ST] diaper visibly bulges and expands until it is about [bold type][(student-diaper of chess-lesson * 10) / 55]0%[roman type] of the way to the pressure plate[one of] that triggers your victory and freedom[or][stopping].";
+		now the student-latest-percent of chess-lesson is (student-diaper of chess-lesson * 10) / 55;
+		if the student-diaper of chess-lesson > 5, say "[big his of ST] diaper visibly bulges and expands until it is about [bold type][student-latest-percent of chess-lesson]0%[roman type] of the way to the pressure plate[one of] that triggers your victory and freedom[or][stopping].";
 		if the student-diaper of chess-lesson > 37 and the chess-cutscene of chess-lesson is 0:
 			now the chess-cutscene of chess-lesson is 1;
-			if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 1 with priority 4;
-			otherwise appropriate-cutscene-display figure of chess cutscene 2 with priority 4;
+			if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 1 with priority 3;
+			otherwise appropriate-cutscene-display figure of chess cutscene 2 with priority 3;
 	otherwise:
 		compute chess win;
 	now the student-rectum of chess-lesson is 0;
@@ -748,10 +754,11 @@ To compute chess messing:
 		say "You can't help but be [one of]turned on[or]aroused[at random] by the feeling!";
 		arouse 40 * the diaper addiction of the player;
 	if the mess of D < 30:
+		now the player-latest-percent of chess-lesson is the mess of D / 3;
 		if the mess of D > 3, say "Your diaper stretches and expands to the point where it's about [bold type][the mess of D / 3]0%[roman type] of the way down to the pressure plate![if debuginfo > 0][line break][input-style]([mess of D] / 30)[roman type][line break][end if]";
 		if the mess of D > 20 and the chess-cutscene of chess-lesson is 0:
 			now the chess-cutscene of chess-lesson is 1;
-			appropriate-cutscene-display figure of chess cutscene 2 with priority 4;
+			appropriate-cutscene-display figure of chess cutscene 2 with priority 3;
 	otherwise:
 		compute chess loss;
 	if bladder-bursting-level >= 0:
@@ -768,15 +775,16 @@ To compute chess urination:
 		say "You feel that your control over your bladder has been slightly weakened.";
 		increase incontinence by 1;
 	now the bladder of the player is 0;
-	if the diaper addiction of the player > 14 and the player is able to orgasm:
+	if the diaper addiction of the player > 14 and the player is able to get horny:
 		say "Your arousal grows.";
 		arouse 200 * (the diaper addiction of the player - 14);
 	if diaper messing < 3: [we only use this metric if messing is disabled]
 		if the total-soak of D < the soak-limit of D:
-			if the total-soak of D > 5, say "Your diaper stretches and expands to the point where it's about [bold type][(the urine-soak of D * 10) / the soak-limit of D]0%[roman type] of the way down to the pressure plate!";
+			now the player-latest-percent of chess-lesson is (the urine-soak of D * 10) / the soak-limit of D;
+			if the total-soak of D > 5, say "Your diaper stretches and expands to the point where it's about [bold type][player-latest-percent of chess-lesson]0%[roman type] of the way down to the pressure plate!";
 			if the total-soak of D > (the soak-limit of D * 66) / 100 and the chess-cutscene of chess-lesson is 0:
 				now the chess-cutscene of chess-lesson is 1;
-				appropriate-cutscene-display figure of chess cutscene 1 with priority 4;
+				appropriate-cutscene-display figure of chess cutscene 1 with priority 3;
 		otherwise:
 			compute chess loss;
 	now delayed urination is 0;
@@ -969,8 +977,8 @@ To compute chess win reward:
 	say "[speech style of M]'And now, it's punishment time! Hehehe... Go on darlings, take these Sharpies. It's time to get creative!'[roman type][line break]The rest of the student body advances on the stage, permanent markers in hand. Soon [NameDesc of ST] is surrounded by them, and two students hold [his of ST] hands as the rest cover [his of ST] mostly-naked body in humiliating phrases.";
 	destroy ST;
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
-	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 4;
-	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 4;
+	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 3;
+	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 3;
 	now chess piece is carried by the player;
 	say "[BigNameDesc of M] speaks again.[line break][speech style of M]'Now, let's allow [student-name of ST] to sit and... [']stew['] on [his of ST] failings! Nobody is allowed to release [him of ST], understand? Okay, assembly is over!'[roman type][line break]The students and staff begin to disperse, leaving nothing to prove that the event even happened except the [chess piece] in your hand and the poor girl still locked in [his of ST] chair on the stage.";
 	repeat with X running through monsters in the location of the player:
@@ -1013,8 +1021,8 @@ To compute chess loss punishment:
 	now nurse is in School11;
 	now receptionist is in School01;
 	now headmistress is in School08;
-	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 4;
-	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 4.
+	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 3;
+	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 3.
 
 A time based rule (this is the chess table taunting rule):
 	if chess table is grabbing the player and the chess-victor of chess-lesson is 2:
@@ -1186,7 +1194,7 @@ To compute teaching of (L - enema-race-lesson):
 			decrease D1 by 10; [rival moves 5m forward]
 			if M2 >= 0, increase D1 by M2 / 3; [rival's movement reduction from needing to mess]
 			otherwise increase D1 by 1; [rival's mess slowdown penalty]
-			increase D1 by 10; [player moves 5m forward]
+			increase D1 by 10;  [player moves 5m forward]
 			let BK be the buckle threshold of the player;
 			if the fatigue of the player * 3 > BK, decrease D1 by 1;
 			if (the fatigue of the player * 3) / 2 > BK, decrease D1 by 1;
@@ -1249,7 +1257,7 @@ To compute teaching of (L - enema-race-lesson):
 		DexUp 2;
 	otherwise:
 		say "The two ladies burst across the track, both sprinting as fast as they can, which is definitely less than normal thanks to their enema-pregnant bellies, thick padding and poorly supported breasts. The waddling women seem evenly matched for pace at first but after one lap of the gym a gap does begin to appear with [NameDesc of S1] out in front. But then calamity strikes as she loses control and her diaper starts to fill. You watch with [horror the diaper addiction of the player] as her belly slowly deflates and a symphony of squelching and spurting sounds fill the hall. She significantly slows down as the avalanche of [if diaper messing >= 3]liquid poop[otherwise]water[end if] exits her butthole - clearly she can't handle the weird sensation. Her diaper bulges beneath her, the back side expanding to double its original size and becoming very unwieldy. By the time she's finished[if diaper messing >= 3] messing herself[end if], she's fallen behind [NameDesc of S2].";
-		if diaper messing >= 3, appropriate-cutscene-display figure of teacher brooke cutscene 1 with priority 4;
+		if diaper messing >= 3, appropriate-cutscene-display figure of teacher brooke cutscene 1 with priority 3;
 		say "Meanwhile [NameDesc of S2] is having problems of her own. She grips her belly in panic as she travels around the track. Her lead on [NameDesc of S1] continues to grow but only up until the point that she loses control herself. If anything the trumpeting coming from her butthole is even louder than [NameDesc of S1][']s had been! She groans with audible discomfort as she fills the seat of her nappy with her shame. Her sprint turns into a jog turns into an awkward walk as she loudly [if diaper messing >= 3]poops her pants[otherwise]expels her enema[end if]. By the time she's finished and has regained her wits [NameDesc of S1] is once again at her heels, and this makes the final seconds of the race equal amounts of pathetic and intense - two tearful women with heavy, bloated diapers trying to waddle their way along the track faster than the other. In the end it seems that [NameDesc of S1] has had more of a chance to get used to the technique of running with a full nappy and this gives her the advantage - when [NameDesc of M] blows the whistle she has managed to grab the lead by less than a meter. They both collapse to the ground, completely exhausted.";
 		say "[speech style of M]'What a great race! [student-name of S1], congratulations on your win. You deserve this.'[roman type][line break]";
 		promote S1;
@@ -1311,7 +1319,7 @@ To compute teaching of (L - dodgeball-lesson):
 					say "You can throw the ball at:[line break]";
 					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 					repeat with TST running through LS2:
-						set next numerical response to "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if]";
+						set next numerical response to "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if])";
 					compute multiple choice question;
 					now ballTarget is entry player-numerical-response in LS2;
 			otherwise:
@@ -1385,7 +1393,7 @@ To compute teaching of (L - dodgeball-lesson):
 				if bodyTarget is face, HappinessDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
-				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED; 1: FILLED WITH MESS; 2: DOUBLEFILLED WITH MESS; 3: MESSED ONCE; 4: MESSED AND FILLED WITH MESS; 5: MESSED AND DOUBLEFILLED WITH MESS 6+: Scheduled for elimination]
+				increase the lessonInt1 of ballTarget by 1; [0: UNAFFECTED;  1: FILLED WITH MESS;  2: DOUBLEFILLED WITH MESS;  3: MESSED ONCE;  4: MESSED AND FILLED WITH MESS;  5: MESSED AND DOUBLEFILLED WITH MESS  6+: Scheduled for elimination]
 			otherwise:
 				if dodgeChoice is 0, say "You try to [one of]bash the ball out of the way but it rebounds off of your hand and hits your arm[or]sidestep but the ball grazes your chest[at random]! ";
 				otherwise say "You [if dodgeChoice is 1]jump into the air[otherwise]duck towards the ground[end if], which turns out to be the wrong thing to do as the ball comes hurtling towards your [if dodgeChoice is 1]upper[otherwise]lower[end if] half[if D is messed]. To make things worse, your sticky messy diaper sloshes underneath you as you do[end if]. ";
@@ -1517,8 +1525,8 @@ To compute dodgeball messing of (ST - a student) with (M - a monster):
 		say "[BigNameDesc of M] cackles and claps [his of M] hands.[line break][speech style of M]'[one of]Oh how I love getting to watch a double doodoo disaster like that! Outstanding stuff[or]Hahahaha, another double dump! This is my favourite bit[or]Bahahahahahahaha, that looked SO. FUCKING. PATHETIC! Seriously! You're a disgrace! I love it[then at random][if the lessonInt1 of ST is 5]. Well anyway[one of] I'm afraid that means [or], [stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[or][stopping][end if].'[roman type][line break]";
 		increase the lessonInt1 of ST by 1;
 	otherwise if (the lessonInt1 of ST is 1 or the lessonInt1 of ST is 4) and a random number between -2 and (the dedication of ST + 1) < 0:
-		say "A [one of]small whimper comes from [NameDesc of ST][or]sharp intake of breath from [NameDesc of ST][at random] as [he of ST] [one of]soils[or]messes[or]unleashes a massive poop into[at random] [his of ST] diaper. [one of]The whole room can clearly hear the loud disgusting sound[or]It's loud enough for everyone to hear[or]It's several seconds before the trumpeting sounds coming from [his of ST] rear end finally cease[at random] and [one of]you all watch the bizarre sight as [his of ST] belly shrinks and[or]you can't help but watch[or]you can all see[or]you all watch[then at random] as [big his of ST] [if the lessonInt1 of ST is 4]nappy [one of]expands[or]balloons[purely at random] to a giant size, [one of]rendering [him of ST] barely mobile[or]forcing [his of ST] legs wide apart[at random][otherwise]padding [one of]turns brown[or]slowly bulges beneath [him of ST][or]bubbles and expands behind [him of ST][at random][end if].";
-		say "[BigNameDesc of M] smiles and wrings [his of M] hands.[line break][speech style of M]'[one of]That's nasty. I bet you never thought you'd be doing that in front of your classmates before today, did you? [or]What a pathetic pantypooper! Ah I love my job so much. [or]That's music to my ears! [or]Haha, how do you feel, [student-name of ST]? Disgusting? I should hope so. [or]Heh, that was an instant classic. None of us will ever be able to look at you the same way, [student-name of ST]. [in random order][if the lessonInt1 of ST is 4]And [one of]I'm afraid that means [or][stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[stopping][otherwise][one of]Well what are you waiting for? You have to keep playing, you know[or]Well now you've got to play the rest of the game while stinky, so enjoy that[or]I'm going to enjoy listening to the sounds your nappy makes for the rest of the game, sweetie[or]Aww, poor diddums is going to have to play the rest of [his of ST] dodgeball game with a poopy nappy... does that make you want to cry? I bet it does[or]Try not to make lots of gross sounds as you keep playing now[or]Are you ready to keep playing with your new squishy nappy? Too bad, you don't have a choice[then at random][end if].'[roman type][line break]";
+		say "A [one of]small whimper comes from [NameDesc of ST][or]sharp intake of breath from [NameDesc of ST][at random] as [he of ST] [one of]soils[or]messes[or]unleashes a massive poop into[at random] [his of ST] diaper. [one of]The whole room can clearly hear the loud disgusting sound[or]it's loud enough for everyone to hear[or]It's several seconds before the trumpeting sounds coming from [his of ST] rear end finally cease[at random] and [one of]you all watch the bizarre sight as [his of ST] belly shrinks and[or]you can't help but watch[or]you can all see[or]you all watch[then at random] as [his of ST] [if the lessonInt1 of ST is 4]nappy [one of]expands[or]balloons[purely at random] to a giant size, [one of]rendering [him of ST] barely mobile[or]forcing [his of ST] legs wide apart[at random][otherwise]padding [one of]turns brown[or]slowly bulges beneath [him of ST][or]bubbles and expands behind [him of ST][at random][end if].";
+		say "[BigNameDesc of M] smiles and wrings [his of M] hands.[line break][speech style of M]'[one of]That's nasty. I bet you never thought you'd be doing that in front of your classmates before today, did you? [or]What a pathetic pantypooper! Ah I love my job so much. [or]That's music to my ears! [or]Haha, how do you feel, [student-name of ST]? Disgusting? I should hope so. [or]Heh, that was an instant classic. None of us will ever be able to look at you the same way, [student-name of ST]. [in random order][if the lessonInt1 of ST is 4]And [one of]I'm afraid that means [or][stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[stopping][otherwise][one of]Well what are you waiting for? You have to keep playing, you know[or]Well now you've got to play the rest of the game while stinky, so enjoy that[or]I'm going to enjoy listening to the sounds your nappy makes for the rest of the game, sweetie[or]Aww, poor diddums is going to have to play the rest of her dodgeball game with a poopy nappy... does that make you want to cry? I bet it does[or]Try not to make lots of gross sounds as you keep playing now[or]Are you ready to keep playing with your new squishy nappy? Too bad, you don't have a choice[then at random][end if].'[roman type][line break]";
 		increase the lessonInt1 of ST by 2.
 
 
@@ -1536,14 +1544,18 @@ teacher-kaylee is a diamond-teacher.
 
 The text-shortcut of teacher-kaylee is "teka".
 
-Figure of kaylee is the file "NPCs/School/Teacher/teacher12.jpg".
+Figure of kaylee is the file "NPCs/School/Teacher/teacher12a.png".
+Figure of kaylee defeated is the file "NPCs/School/Teacher/teacher12b.png".
 
 To decide which figure-name is the monster-image of (M - teacher-kaylee):
 	decide on figure of kaylee.
+To decide which figure-name is the pacified-image of (M - teacher-kaylee):
+	decide on figure of kaylee defeated.
 
 
 To say MonsterDesc of (M - teacher-kaylee):
-	say "This middle-aged brunette [man of M] is dressed completely in white - white vest top, white sheer stockings, white 6 inch platform heels, and a white (and well-used) diaper. [big he of M] is always sporting a wide friendly grin and occasionally absent-mindedly rubs [himself of M] through [his of M] soggy padding.".
+	if M is diaper-enslaved, say "[BigNameDesc of M] is covered from neck to toe in pure white disposable diaper material, so that it creates a completely encasing bodysuit. Sticky blue tabs strategically placed all over keep it all tightly in place. [big he of M] no longer looks like [he of M] feels sexy and seductive in [his of M] appearance - [his of M] thick diaper is now just a part of [his of M] humiliating mobile padded prison. [big his of M] thickly padded mittens remove all [his of M] manual dexterity and prevent [him of M] from being able to undo any of the sticky tabs.";
+	otherwise say "This middle-aged [man of M] with blue hair is dressed in sexy purple 'starry sky' themed thigh-high stockings and gauze sleeves, and a matching thick purple starry diaper. [big he of M] has nipple tassles covering [his of M] nipples. [big he of M] is always sporting a wide friendly grin and shakes [his of M] hips seductively as [he of M] walks. It's clear that for [him of M], the diaper is intended to be classy and sexy, contributing to [his of M] erotic apperance.".
 
 The teacher-name of teacher-kaylee is "Kaylee".
 
@@ -1563,7 +1575,7 @@ To say AdviceAnswer of (M - teacher-kaylee):
 	say "[speech style of M]'Don't trust toilets. Big [boy of M] potties are evil and mean and nasty. It is known.'[roman type][line break]".
 
 To compute teaching of (M - teacher-kaylee):
-	say "[speech style of M]'Oh, am I a teacher now? Oh yeah, I'd forgotten! Haha.'[roman type][line break]".
+	say "[speech style of M]'I'm going to teach you to fully dedicate yourself to diapers, so that you can become the perfect sexy submissive.'[roman type][line break]".
 
 
 
@@ -1606,9 +1618,9 @@ To compute toilet predicament punishment:
 		appropriate-cutscene-display Figure of Ultimate Lesson Toilet User Cutscene;
 		say "[one of]You're trying to make sense of all of this as you feel a flow of something hot and slimy on your backside.[line break][variable custom style]No, surely not...![roman type][line break][or]Once again you feel that flow of hot slimy stuff on your backside.[stopping]";
 		appropriate-cutscene-display Figure of Ultimate Lesson Toilet Player Cutscene;
-		say "Yep - [FriendName][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [FriendNickname] continues to unload her belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [FriendName] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your binds and carrying you back to the [location of the player], but leaving you with a overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
+		say "Yep - [FriendName][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [FriendNickname] continues to unload her belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [FriendName] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your bonds and carrying you back to the [location of the player], but leaving you with an overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
 		MessSet plain-massive-diaper to 36;
-		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This just is too gross[end if]...[stopping][roman type][line break]";
+		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
 	otherwise:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of ultimate-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";
 		increase incontinence by 3.

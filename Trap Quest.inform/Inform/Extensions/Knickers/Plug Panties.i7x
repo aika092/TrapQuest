@@ -39,7 +39,7 @@ To say ClothingDesc of (P - a vibrating plug panties):
 
 To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips]. ";
-	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
+	say "The in-built plugs keep your [if the player is female][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
 
 Figure of female latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties1.png".
 Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".

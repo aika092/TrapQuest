@@ -3,7 +3,7 @@ Virginity by Player begins here.
 
 [!<Player>@<virgin:Integer>*
 
-For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
+For females, has something alive fucked their vagina?  For males, have they had dominant penetrative sex?
 
 *@!]
 The player has a number called virgin. The virgin of the player is usually 1.
@@ -45,6 +45,10 @@ To compute virginity loss:
 	now the virgin of the player is 0;
 	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah! Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
+	now the tattoo-title of virgin void tattoo is "virgin void";
+	if virgin void tattoo is worn:
+		say "A big red 'VOID' is suddenly magically stamped over the tattoo of the word 'virgin' on your belly!";
+		focus-consider virgin void tattoo;
 	if the virgin bonus of the player > 0:
 		say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
 		now flav-said is 1;

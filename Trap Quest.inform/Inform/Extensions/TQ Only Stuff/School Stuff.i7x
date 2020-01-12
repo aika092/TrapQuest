@@ -343,12 +343,18 @@ Definition: teacher-rochelle is presenting as male if futanari fetish is 0.
 
 The text-shortcut of teacher-rochelle is "tero".
 
-Figure of rochelle is the file "NPCs/School/Teacher/teacher7.png".
-Figure of roger is the file "NPCs/School/Teacher/teacher8.png".
+Figure of rochelle is the file "NPCs/School/Teacher/teacher7a.png".
+Figure of slave rochelle is the file "NPCs/School/Teacher/teacher7b.png".
+Figure of roger is the file "NPCs/School/Teacher/teacher8a.png".
+Figure of slave roger is the file "NPCs/School/Teacher/teacher8b.png".
 
 To decide which figure-name is the monster-image of (M - teacher-rochelle):
 	if lady fetish is 1 or futanari fetish is 1, decide on figure of rochelle;
 	decide on figure of roger.
+
+To decide which figure-name is the pacified-image of (M - teacher-rochelle):
+	if lady fetish is 1 or futanari fetish is 1, decide on figure of slave rochelle;
+	decide on figure of slave roger.
 
 To decide which number is the girth of (M - teacher-rochelle):
 	decide on 7.
@@ -357,7 +363,11 @@ To say LongDickDesc of (M - teacher-rochelle):
 	say "huge thick [DickDesc of M]";
 
 To say MonsterDesc of (M - teacher-rochelle):
-	say "Even if [his of M] armband didn't make it clear that this grinning [man of M] is a teacher, there's no avoiding noticing [his of M] [LongDickDesc of M] swinging from [his of M] crotch. Its 9.5 inch length and equally impressive girth must put it in the top 1% of [manly-penis]s.".
+	if M is pacified:
+		if lady fetish is 1 or futanari fetish is 1, say "This poor big-dicked futa has a unique chastity cage locked around [his of M] loins. It has a strict tight belt to keep it in place and to keep [his of M] pussy blocked off, and a large clear plastic cage to contain [his of M] [LongDickDesc of M]. The exact tight fit of the cage seems to be preventing [him of M] from losing [his of M] erection. But even if [he of M] fucks someone, [he of M][']s not going to be able to feel a thing. [big he of M] is also wearing some new piercings - two nipples piercings and a belly button piercing - connected by a gold chain, completing the 'sex slave' look[unless playerRegion is school]. [big his of M] butt is a raw shade of red - evidence of a recent rough spanking session[end if].";
+		otherwise say "The cuffed ankles, wrists cuffed behind [his of M] back and the ballgag tightly strapped in [his of M] mouth are hardly noticeable thanks to the two huge pink ribbons that now constitute this big-dicked [man of M][']s only clothing. One is aruond [his of M] neck, the other around the base of [his of M] [LongDickDesc of M], mostly covering it. It would appear that either due to magic or just the sheer emasculation of [his of M] new appearance, [he of M] can no longer get hard.";
+	otherwise:
+		say "Even if [his of M] armband didn't make it clear that this grinning [man of M] is a teacher, there's no avoiding noticing [his of M] [LongDickDesc of M] swinging from [his of M] crotch. Its 9.5 inch length and equally impressive girth must put it in the top 1% of [manly-penis]s.".
 
 The teacher-name of teacher-rochelle is "Rochelle".
 
@@ -645,10 +655,8 @@ To compute teaching of (L - swimming-lesson):
 			say "[if there is worn cursed clothing or there is worn locked clothing or there is worn glued clothing][BigNameDesc of M] helps you remove all your clothing. [otherwise if there is worn nudism-disabling removable clothing]You remove all your clothing. [end if]";
 			repeat with C running through worn removable clothing:
 				unless C is armband or C is bag of holding, now C is in the location of the player;
-			summon SM;
-			now the raw-magic-modifier of SM is 0;
+			summon SM uncursed;
 			now SM is cursed;
-			now SM is blandness;
 			now the quest of SM is next-lesson-quest;
 			say "You put on [NameDesc of SM].";
 	say "[BigNameDesc of M] gets you to line up in front of the edge of the pool.[line break][speech style of M]'On your marks, get set, GO!'[roman type][line break]";
@@ -705,7 +713,7 @@ To compute teaching of (L - swimming-lesson):
 				increase playerDistance by D;
 				if playerDistance >= 10, say "[bold type]You make it to the end of the pool![roman type][line break]";
 			otherwise if the printed name of CNR matches the text "wipe":
-				say "You spend some time clearing the thick goop from your eyes so that you can see more clearly again.";
+				say "You spend some time clearing the thick goop from your eyes so you can see more clearly again.";
 				remove yourself from LCumBlinded;
 				now the semen coating of face is 8; [greater than 8 causes the cum blinded status icon]
 			otherwise if the printed name of CNR matches the text "dive":
@@ -873,7 +881,7 @@ To compute teaching of (L - swimming-lesson):
 				now poolCrazyEvent is 2;
 				say "And then it happens: A sea of unused condoms, not in wrappers, rain from the ceiling. They land in the pool all over, and then begin swimming blindly around like leeches, filling up with [semen] from the pool as they move. ";
 				if yourself is listed in LInPool and the number of entries in LInPool is 1: [Player is the only person in the pool]
-					say "One quickly finds itself bumping into you, where it then immediately latches onto your [ShortDesc of CPS]! You try to pull it off, but it's stuck there now, magically pinned in place![line break][variable custom style]Uh-oh...[roman type][line break]";
+					say "One quickly finds itself bumping into you, where it immediately latches onto your [ShortDesc of CPS]! You try to pull it off, but it's stuck there now, magically pinned in place![line break][variable custom style]Uh-oh...[roman type][line break]";
 				otherwise:
 					let CondomTarget be entry 1 of LInPool;
 					if CondomTarget is yourself, now CondomTarget is entry 2 of LInPool;
@@ -957,7 +965,7 @@ To compute teaching of (L - swimming-lesson):
 		if ST is student, now WeightID is lessonInt2 of ST;
 		let WeightName be M;
 		if WeightID > 0, now WeightName is entry WeightID of LWeights;
-		say "[speech style of M]'[BigNameDesc of ST][speech style of M] [if WeightName is M]didn't bring anybody's[otherwise if WeightName is ST]brought [his of ST] own[otherwise]brought [WeightName][speech style of M][']s[end if] weight out of the pool with [him of ST][if WeightName is not M and WeightName is not listed in LOutOfPool]. [otherwise].'[line break][end if]";
+		say "[speech style of M]'[BigNameDesc of ST][speech style of M] [if WeightName is M]didn't bring anybody's[otherwise if WeightName is ST]brought [his of ST] own[otherwise]brought [NameDesc of WeightName][speech style of M][']s[end if] weight out of the pool with [him of ST][if WeightName is not M and WeightName is not listed in LOutOfPool]. [otherwise].'[line break][end if]";
 		if WeightName is not M and WeightName is not listed in LOutOfPool:
 			say "And to think, [NameDesc of WeightName][speech style of M] didn't even get in the pool[if WeightName is the player]!'[roman type][line break][otherwise]! [end if]";
 			if WeightName is the player:
@@ -974,7 +982,7 @@ To compute teaching of (L - swimming-lesson):
 		say "You watch as the ID card inside your armband transforms!";
 		if the player is listed in LOutOfPool:
 			now the armband-title of armband is "Porcelain";
-			now the armband-print of armband is "cumbath queen";
+			now the armband-print of armband is "cum-bath queen";
 		otherwise:
 			now the armband-title of armband is "";
 			now the armband-print of armband is "dead weight";
@@ -1220,9 +1228,9 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		sort LST in random order;
 		let ST1 be entry 1 of LST;
 		let ST2 be entry 2 of LST;
-		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is faceplanted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
+		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is face-planted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
 		if the player is bimbo consenting:
-			say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit lightheaded. [severeHumiliateReflect]";
+			say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed. [severeHumiliateReflect]";
 			if the semen volume of belly + the urine volume of belly > 0:
 				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing and gagging.";
 				StomachSemenUp (the semen volume of belly + 1) / 2;
@@ -1405,7 +1413,7 @@ To say StoryAnswer of (M - student-rosie):
 	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's [if lady fetish is 2]son[otherwise]daughter[end if]. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too! All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best slut school in all of Bimbacia won't let me down!'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-rosie):
-	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said n['] it never hurt me none!'[roman type][line break]".
+	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said an['] it never hurt me none!'[roman type][line break]".
 
 To compute teaching of (M - student-rosie):
 	say "[speech style of M]'I'm here to learn, not sell my daddy's hard won farmin['] secrets!'[roman type][line break]".
@@ -1498,7 +1506,7 @@ To decide which figure-name is the monster-image of (M - student-christi):
 	decide on figure of christi.
 
 To say MonsterDesc of (M - student-christi):
-	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if lady fetish is 2]aside from a brightly coloured chastiy cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if lady fetish is 2]his recently-fucked asshole[otherwise]her shaved recently-fucked pussy[end if].".
+	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if lady fetish is 2]aside from a brightly coloured chastity cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if lady fetish is 2]his recently-fucked asshole[otherwise]her shaved recently-fucked pussy[end if].".
 
 The min-rank of student-christi is 5.
 The current-rank of student-christi is 5.
@@ -1517,7 +1525,7 @@ To say AdviceAnswer of (M - student-christi):
 	say "[speech style of M]'The more you do something here, the more you'll grow to LOVE IT MORE THAN ANYTHING!!!'[roman type][line break]".
 
 To compute teaching of (M - student-christi):
-	say "[speech style of M]'If you want to keep cum inside you for as long as possible, [if pregnancy fetish is 1]perhaps to maximise your chances of getting pregnant, [end if]make sure to put some kind of toy inside you! If you're too loose and it's just instantally falling out, try doing it on your knees instead. And then put some panties over the top to keep it in.'[roman type][line break]".
+	say "[speech style of M]'If you want to keep cum inside you for as long as possible, [if pregnancy fetish is 1]perhaps to maximise your chances of getting pregnant, [end if]make sure to put some kind of toy inside you! If you're too loose and it's just instantly falling out, try doing it on your knees instead. And then put some panties over the top to keep it in.'[roman type][line break]".
 
 
 
@@ -1550,16 +1558,16 @@ To update name of (M - student-stacey):
 		now the student-print of M is "stupid slut".
 
 To say StoryAnswer of (M - student-stacey):
-	say "[speech style of M]'My sugar daddy told me I need to go back to school to get smarterer. So I came here!  They'll help me think good here, right?'[roman type][line break]".
+	say "[speech style of M]'My sugar daddy told me I need to go back to school to get smarterer. So I came here! They'll help me think good, right?'[roman type][line break]".
 
 To say WhoAnswer of (M - student-stacey):
-	say "[big he of M] checks [his of M] armband.[line break][speech style of M]'Oh yeah I remember now, it's [student-name of M]!  *giggle*'[roman type][line break]".
+	say "[big he of M] checks [his of M] armband.[line break][speech style of M]'Oh yeah I remember now, it's [student-name of M]! *giggle*'[roman type][line break]".
 
 To say WhereAnswer of (M - student-stacey):
-	say "[speech style of M]'[if the rank of the player <= 1]We're back at school. This is where dumb girls like us end up!'[otherwise]Ooh, there are ranks?  I just thought these arm-thingies were to help us remember our names!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're back at school. This is where dumb girls like us end up!'[otherwise]Ooh, there are ranks? I just thought these arm-thingies were to help us remember our names!'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - an student-stacey):
-	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out!  And the more of that you drink, the more smarterer you get!  So I try to get as much of it as possible.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out! And the more of that you drink, the more smarterer you get! So I try to get as much of it as possible.'[end if][roman type][line break]".
 
 
 
@@ -1609,7 +1617,7 @@ To say AdviceAnswer of (M - student-bree):
 	say "[speech style of M]'Darling, you need to [if breasts are lewdly exposed]get those big ol['] titties of yours some more attention! And get a few more [manly-penis]s up in between them...'[otherwise if the largeness of breasts > 3]get your tits out! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and yours aren't?'[otherwise if lady fetish is 2]take your shirt off! Guys love cumming on your tits, even if they aren't big!'[otherwise]get a real rack! Why would anyone pay attention to the likes of you while my perfect bazookas are on display and you don't even have any?'[end if][roman type][line break]".
 
 To compute teaching of (M - student-bree):
-	say "[speech style of M]'Oh darling, I'm as dumb as a doormat. The only thing I can teach is how to be airheaded!'[roman type][line break]".
+	say "[speech style of M]'Oh darling, I'm as dumb as a doormat. The only thing I can teach is how to be air-headed!'[roman type][line break]".
 
 To say StoryAnswer of (M - student-bree):
 	say "[speech style of M]'Oh darling, how long do you have? My story begins with my first [manly-penis], it was Brian from maths class, [if TG fetish > 0]or wait, was *I* Brian? And then there was that thing involving that witch... and a curse... my memory is going all fuzzy... huh? What were we talking about?'[roman type][line break][otherwise]and as soon as I got my lips around that thick, juicy shaft of his I was completely addicted, oh [NameBimbo] darling it was just so incredibly dreamy, you have no idea, and the cum... oh the cum! Ahhhh...'[roman type][line break][BigNameDesc of M] seems to drift off into a daydream.[end if]".
@@ -1645,7 +1653,7 @@ To say RepeatResponse of (M - student-pebbles):
 	say "[speech style of M]'Woof! Woof! Hello again, human!'[roman type][line break]".
 
 To say WhoAnswer of (M - student-pebbles):
-	say "[speech style of M]'Uh... Oh no, I think I've forgotten again! I try not to talk like a human too much, and that makes me forget things. Woof!'[roman type][line break]".
+	say "[speech style of M]'Uh... Oh no, I think I've forgotten again! I try not to talk like a human too much, because that makes me forget things. Woof!'[roman type][line break]".
 
 To say WhereAnswer of (M - student-pebbles):
 	say "[speech style of M]'[if the rank of the player <= 1]This is [slut school], darling, welcome!'[otherwise]Oh darling, can't you tell what gets all the praise and glory around these parts?'[end if][roman type][line break]".
@@ -1692,10 +1700,10 @@ To update name of (M - student-winnie):
 		now the student-name of M is "Winnie".
 
 To say StoryAnswer of (M - student-winnie):
-	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real?  But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
+	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real? But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-winnie):
-	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously!  Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously! Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
 To decide which number is the heel-skill of (M - student-winnie):
 	decide on -2.
@@ -1751,7 +1759,7 @@ To decide which figure-name is the monster-image of (M - student-nell):
 	decide on figure of narcissa.
 
 To say MonsterDesc of (M - student-nell):
-	say "This tall brunette is wearing [if the current-rank of M is 3]a black and pink one-piece negligee that covers very little skin, and the bra section is cut so low that [his of M] nipples would be slightly on display if [he of M] wasn't shyly covering them with [his of M] hands. [big he of M] doesn't seem ready to expose even a bit of [his of M] areolae to the world[otherwise if the current-rank of M is 4]nothing but a short red skirt and a fishnet top. [big he of M] still doesn't quite seem particularly comfortable in something so revealing, and so is still walking around with [his of M] hands over [his of M] chest, to prevent [his of M] nipples from being on display[otherwise]tall clear platform 'stripper' heels, sexy lace black briefs and a very sheer flimsy white halter-neck top. [big his of M] hands are by [his of M] side - it seems [he of M] has finally found the sexy outfit that leaves [his of M] feeling comforable enough to not cover [his of M] nipples with [his of M] hands. In fact, [he of M] now looks rather proud[end if].".
+	say "This tall brunette is wearing [if the current-rank of M is 3]a black and pink one-piece negligee that covers very little skin, and the bra section is cut so low that [his of M] nipples would be slightly on display if [he of M] wasn't shyly covering them with [his of M] hands. [big he of M] doesn't seem ready to expose even a bit of [his of M] areolae to the world[otherwise if the current-rank of M is 4]nothing but a short red skirt and a fishnet top. [big he of M] still doesn't quite seem particularly comfortable in something so revealing, and so is still walking around with [his of M] hands over [his of M] chest, to prevent [his of M] nipples from being on display[otherwise]tall clear platform 'stripper' heels, sexy lace black briefs and a very sheer flimsy white halter-neck top. [big his of M] hands are by [his of M] side - it seems [he of M] has finally found the sexy outfit that leaves [his of M] feeling comfortable enough to not cover [his of M] nipples with [his of M] hands. In fact, [he of M] now looks rather proud[end if].".
 
 The current-rank of student-nell is 3.
 The max-rank of student-nell is 5.
@@ -1795,7 +1803,7 @@ To decide which figure-name is the monster-image of (M - student-calamity):
 	decide on figure of calamity.
 
 To say MonsterDesc of (M - student-calamity):
-	say "This busty blonde is covered from head to toe in a decent number of cumshots. [big his of M] grimaced facial expression suggests that [he of M] can't really believe [he of M]'s allowed this to happen.".
+	say "This busty blonde is covered from head to toe in a decent number of cum-shots. [big his of M] grimaced facial expression suggests that [he of M] can't really believe [he of M]'s allowed this to happen.".
 
 The current-rank of student-calamity is 5.
 The max-rank of student-calamity is 6.
@@ -1923,9 +1931,9 @@ To compute student perception of (M - student-katya):
 
 To say FirstResponse of (M - student-katya):
 	if lady fetish is 2:
-		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my clitty for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is pushing up [his of M] chastity cage with both hands.[line break][speech style of M]'My job is to keep my ass hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break]He shoves two fingers into his ass and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]";
+		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my clitty for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is pushing up [his of M] chastity cage with both hands.[line break][speech style of M]'My job is to keep my ass hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break]He shoves two fingers into his ass and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock? I feel so empty and sad when there's no cock inside me!'[roman type][line break][end if]";
 	otherwise:
-		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted up [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside herself and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock?  I feel so empty and sad when there's no cock inside of me!'[roman type][line break][end if]".
+		say "[if the current-rank of M < 4][big he of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'Do I look like I want to talk to you?'[roman type][line break][otherwise if the current-rank of M is 4][big he of M] crosses [his of M] legs and curtseys politely.[line break][speech style of M]'Thank you for gracing me with your presence. Would you like me to present my [cunt] for inspection?'[roman type][line break]Before you can reply [he of M] has lifted [his of M] microskirt and is spreading [his of M] shaved pussy with both hands.[line break][speech style of M]'My job is to keep this hole hot and ready at all times. [big please] watch me as I check its lubrication.'[roman type][line break][big he of M] shoves two fingers inside [him of M]self and begins to pump, until it seems like [he of M] might have forgotten you're even there![otherwise][line break][speech style of M]'Ooh, a friend! [big please], do you know where I can find more cock? I feel so empty and sad when there's no cock inside me!'[roman type][line break][end if]".
 
 To say WhoAnswer of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][student-name of M]['], should I allow you to talk to me,[otherwise][student-name of M]['] because the only important thing about me is my[end if] [if lady fetish is 2]asshole[otherwise][cunt][end if].'[roman type][line break]".
@@ -1939,15 +1947,15 @@ To say EscapeAnswer of (M - student-katya):
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]I don't know yet, but I plan to be the first sane person here to find out[otherwise]I'm hoping there's even bigger and juicier [manly-penis]s to serve[end if].'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-katya):
-	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your ass as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your ass won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful!  Except that it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]";
-	otherwise say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your [cunt] as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your [cunt] won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful!  Except that it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]".
+	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your ass as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your ass won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful! Except it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]";
+	otherwise say "[speech style of M]'[if the current-rank of M < 4]Stay out of my way or you'll live to regret it[otherwise if the current-rank of M is 4]Open your eyes and realise that becoming a living breathing human cock sleeve is so much easier and more fulfilling than trying to think for yourself. And then do what I'm doing, and open your [cunt] as well, so the next thick juicy [manly-penis] can impale you more speedily[otherwise]It's important to stay alive, because otherwise your [cunt] won't be warm any more. And then men wouldn't be able to use it whenever they want. And that would be awful! Except it might mean more [manly-penis]s for me, I guess[end if].'[roman type][line break]".
 
 To say StoryAnswer of (M - student-katya):
-	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I signed that prenup I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his gross dick! Have you ever SEEN a foreskin? Its disgusting. He thinks that by sending me here he can get me to 'learn my place' and become his little sissy wife and the perfect subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to finger myself every few minutes to keep my pathetic asshole hot and wet at all times. Who knows when the next person will want to use me?  A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best!  He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long!  I'm hoping he'll bring his best friends so they can use me whenever they want, too!  Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break!  It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]";
-	otherwise say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I'm as hot as a supermodel I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his tiny dick!  He thinks that by sending me here he can get me to 'learn my place' and become his little housewife and the perfect little subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to masturbate every few minutes to keep my pathetic [cunt] hot and wet at all times. Who knows when the next person will want to use me?  A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best!  He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long!  I'm hoping he'll bring his best friends so they can use me whenever they want, too!  Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break!  It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]".
+	if lady fetish is 2, say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I signed that pre-nup I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his gross dick! Have you ever SEEN a foreskin? It's disgusting. He thinks that by sending me here he can get me to 'learn my place' and become his little sissy wife and the perfect subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to finger myself every few minutes to keep my pathetic asshole hot and wet at all times. Who knows when the next person will want to use me? A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best! He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long! I'm hoping he'll bring his best friends so they can use me whenever they want, too! Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break! It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]";
+	otherwise say "[speech style of M]'[if the current-rank of M < 4]My pathetic husband thought that just because I'm as hot as a supermodel I would let him walk all over me. Imagine his disappointment when he found out I'd rather just spend his money and socialise at parties than waste all my days at home cooking and cleaning and sucking his tiny dick! He thinks that by sending me here he can get me to 'learn my place' and become his little housewife and the perfect little subservient fucktoy for him and his friends. But I'm going to use this as an opportunity to crush his spirit further - by proving I can have the body of a Goddess and the sex life of a horny spinster, but still wear the trousers in my marriage and order him around like the worthless dog he is[otherwise if the current-rank of M is 4]My husband sent me here to learn to how to be a proper fuckdoll for anyone who wishes to use me. I'm so lucky to be blessed with the privilege of serving his majestic cock whenever he desires. I must make sure to masturbate every few minutes to keep my pathetic [cunt] hot and wet at all times. Who knows when the next person will want to use me? A good cock sleeve must be permanently available for instant use[otherwise]My husband is the best! He must be coming to collect me soon. I can't wait until I can fill myself with his glorious [manly-penis], it's been so long! I'm hoping he'll bring his best friends so they can use me whenever they want, too! Ooh and maybe he'll take me to the factory he owns so I can serve the hundreds of cocks there whenever they go on break! It'll all be okay again once I'm stuffed to the brim with [manly-penis][end if].'[roman type][line break]".
 
 To compute teaching of (M - student-katya):
-	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise if lady fetish is 2]If you have a smaller penis than your partner, its your duty to let him do whatever he wants with you. Its just the way of the world![otherwise]Let me teach you how to be a perfect cock-warmer. Step one: Have a [cunt]. Step two: Keep it full of [manly-penis] as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
+	say "[speech style of M]'[if the current-rank of M < 4]I could, if I chose to associate with people this far beneath me[otherwise if the current-rank of M is 4]No, sorry. You have to learn who's in charge the hard way to truly understand your place[otherwise if lady fetish is 2]If you have a smaller penis than your partner, it's your duty to let him do whatever he wants with you. It's just the way of the world![otherwise]Let me teach you how to be a perfect cock-warmer. Step one: Have a [cunt]. Step two: Keep it full of [manly-penis] as much as possible. That's it, I've taught you all I know[end if].'[roman type][line break]".
 
 To compute friendly drink of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]Do I look like a fucking vending machine to you?'[otherwise]I'm sorry, but the only [tasty] thing I drink nowadays is dick juice. And if you want your own, you'll have to use those lips of yours to earn it yourself!'[end if][roman type][line break]".
@@ -1980,7 +1988,7 @@ To update name of (M - student-darla):
 		now the student-print of M is "dazzling diva".
 
 To say StoryAnswer of (M - student-darla):
-	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. Infact, its especially because I have a penis[otherwise]woman[end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
+	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise]woman[end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
 
 
 Book - Belinda
@@ -2101,7 +2109,7 @@ To say StoryAnswer of (M - student-misty):
 
 To compute friendly drink of (M - a student-misty):
 	if the current-rank of M is 4:
-		say "[speech style of M]'No way, I need all this water to keep my clothes wet!  Find your own drink.'[roman type][line break]";
+		say "[speech style of M]'No way, I need all this water to keep my clothes wet! Find your own drink.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Bah. I guess you can have a sip from my water bottle. But only a little mind you, I need the rest [if the current-rank of M is 2]for... reasons[otherwise]to, erm, well, keep myself looking so sexy[end if].'[roman type][line break]";
 		say "You take a sip and feel much better!";
@@ -2120,8 +2128,8 @@ To decide which figure-name is the monster-image of (M - student-rain):
 	decide on figure of rain.
 
 To say MonsterDesc of (M - student-rain):
-	if lady fetish is 2, say "This very short, petite sissy can't be older than 19. All he's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, his puffy nipples and lavender-coloured chastity cage are very visible[otherwise]His puffy nipples are very visible through the fabric and it is purposefully parted above her belly button, leaving [his of M] lavender-coloured chastity cage on full display[end if]. His facial expression is one of confidence and determination[if the current-rank of M >= 5]. His ass squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].";
-	otherwise say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parting above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M >= 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
+	if lady fetish is 2, say "This very short, petite sissy can't be older than 19. All he's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, his puffy nipples and lavender-coloured chastity cage are very visible[otherwise]His puffy nipples are very visible through the fabric and it is purposefully parted above his belly button, leaving [his of M] lavender-coloured chastity cage on full display[end if]. His facial expression is one of confidence and determination[if the current-rank of M >= 5]. His ass squelches loudly as he moves, suggesting it might have been very well used, and recently[end if].";
+	otherwise say "This very short, petite woman can't be older than 19. All she's wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, her small boobs and cute innie pussy are very visible[otherwise]Her small boobs are very visible through the fabric and it is purposefully parted above her belly button, to leave her pussy fully exposed[end if]. Her facial expression is one of confidence and determination[if the current-rank of M >= 5]. Her pussy squelches loudly as she moves, suggesting it might have been very well used, and recently[end if].".
 
 The min-rank of student-rain is 3.
 The current-rank of student-rain is 3.
@@ -2160,7 +2168,7 @@ To decide which figure-name is the monster-image of (M - student-ferrari):
 	decide on figure of ferrari.
 
 To say MonsterDesc of (M - student-ferrari):
-	say "This short, petite [man of M] has luscious locks of perfect pitch-black hair which complement her arm-length black latex gloves and thigh-high black latex stockings. [if lady fetish is 2]He is wearing a custom black chastity cage with neon pink trim, which is completely visible through his super-skimpy[otherwise]Her A-cup breasts and shaved innie pussy are fully exposed through super-skimpy[end if] black crotchless latex panties and matching cupless bra, which are both decorated with pink bows. A matching black latex choker with a pink bow sits around [his of M] neck. [big his of M] facial expression is one of confidence and determination[if the current-rank of M <= 4]. [big he of M] is attempting to hold a sexy, provocative pose with one hand on her hip, but keeps adjusting herself, clearly uncertain if it looks right[end if].".
+	say "This short, petite [man of M] has luscious locks of perfect pitch-black hair which complement [his of M] arm-length black latex gloves and thigh-high black latex stockings. [if lady fetish is 2]He is wearing a custom black chastity cage with neon pink trim, which is completely visible through his super-skimpy[otherwise]Her A-cup breasts and shaved innie pussy are fully exposed through super-skimpy[end if] black crotchless latex panties and matching cupless bra, which are both decorated with pink bows. A matching black latex choker with a pink bow sits around [his of M] neck. [big his of M] facial expression is one of confidence and determination[if the current-rank of M <= 4]. [big he of M] is attempting to hold a sexy, provocative pose with one hand on her hip, but keeps adjusting [him of M]self, clearly uncertain if it looks right[end if].".
 
 The min-rank of student-ferrari is 4.
 The current-rank of student-ferrari is 5.

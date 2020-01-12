@@ -31,7 +31,7 @@ To decide which figure-name is the monster-image of (M - student-lucy):
 	decide on figure of lucy.
 
 To say MonsterDesc of (M - student-lucy):
-	say "This tall blonde is wearing a tartan miniskirt and [if the current-rank of M is 3]slightly sheer [end if]crop top. Knee-high white cotton stockings sit snug under [his of M] neat black court shoes. [if the current-rank of M is 3 and diaper quest is 1]You think you can detect that [his of M] skirt is bulging slightly - you reckon [he of M] might be wearing a diaper now!  [end if][big he of M] looks down at you with a [if the current-rank of M is 1]furious[otherwise]mocking[end if] sneer.".
+	say "This tall blonde is wearing a tartan miniskirt and [if the current-rank of M is 3]slightly sheer [end if]crop top. Knee-high white cotton stockings sit snug under [his of M] neat black court shoes. [if the current-rank of M is 3 and diaper quest is 1]You think you can detect that [his of M] skirt is bulging slightly - you reckon [he of M] might be wearing a diaper now! [end if][big he of M] looks down at you with a [if the current-rank of M is 1]furious[otherwise]mocking[end if] sneer.".
 
 The max-rank of student-lucy is 3.
 The current-rank of student-lucy is 2.
@@ -89,10 +89,10 @@ To say RepeatResponse of (M - a nasty student):
 	say FirstResponse of M.
 
 To say WhoAnswer of (M - a nasty student):
-	say "[speech style of M]'Can't you fucking read my armband?  The name's [student-name of M]. For now.'[roman type][line break]".
+	say "[speech style of M]'Can't you fucking read my armband? The name's [student-name of M]. For now.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nasty student):
-	say "[speech style of M]'[if the rank of the player <= 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]Are you asking for ways to cheat?  You're a real piece of work, aren't you?'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]Are you asking for ways to cheat? You're a real piece of work, aren't you?'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nasty student):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]Hah, if you want to know you have to earn the privilege!'[otherwise]Even if I knew, I wouldn't tell you.'[end if][roman type][line break]".

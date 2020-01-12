@@ -29,13 +29,13 @@ The knife charge decay rule is listed in the advance counters rules.
 Knifing it with is an action applying to two things.
 Check knifing:
 	if the second noun is not knife and (the second noun is not sword or the second noun is not metal) and the second noun is not midnight tanto, say "How would you cut anything with that?" instead;
-	if the second noun is knife or the second noun is not midnight tanto:
+	if the second noun is knife:
 		if the noun is monster, say "Since it's on such a short chain, you really doubt that would work." instead;
-		if the player is not able to manually use manual dexterity, do nothing instead;
+		if the player is not able to manually use manual dexterity and the class of the player is not santa's little helper, do nothing instead;
 	otherwise:
 		if the noun is monster, try slapping the noun instead;
 		if the noun is ass hook and the player is wrist bound in front, say "You can't do that when your wrists are bound together in front of you!" instead;
-		if the noun is not vines and the noun is not ass hook, say "How would you cut that?" instead;
+		if the noun is not vines and the noun is not ass hook and the second noun is not midnight tanto, say "How would you cut that?" instead;
 	if the noun is hair:
 		if the largeness of hair <= favourite hair length, say "[variable custom style][if the bimbo of the player < 10]I feel comfortable with[otherwise if the bimbo of the player < 15]I like[otherwise]I LOVE[end if] my hair being this length.[roman type][line break]" instead;
 	otherwise if the noun is worn clothing:
@@ -76,7 +76,7 @@ Carry out knifing:
 				say "You bend down and find an angle where you can safely chop through several of the vines holding your ankles. You're free!";
 				now V is not grabbing the player;
 			otherwise:
-				if the player is vine-cursed and a random number between 3 and the dexterity of the player < 3: [####Selkie: Changed back to < 3. MG to check. Can only fail if Dex is 1 or 2]
+				if the player is vine-cursed and a random number between 3 and the dexterity of the player < 3: [Selkie: Changed back to < 3. Can only fail if Dex is 1 or 2]
 					say "You bend down to try and free your ankles, but while you[']re looking for a clean cut, several vines lash out and grab you by the wrists, slamming you down onto all fours!";
 					now the stance of the player is 1;
 				otherwise:

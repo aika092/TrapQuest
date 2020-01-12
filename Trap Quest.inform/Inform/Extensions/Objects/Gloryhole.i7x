@@ -36,7 +36,7 @@ Check entering gloryhole:
 	if the player is not a bit horny and the player is upright and the semen taste addiction of the player < 12 and the oral sex addiction of the player < 6, say "You're not aroused enough." instead;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	if the player is male and the size of penis is 0:
+	if the player is upright and the player is male and the size of penis is 0:
 	[Let's also make the milking the default action if they have milky breasts and no dick]
 		if the milk volume of breasts > 0 and bottom level lactation cover is nothing:
 			allocate 6 seconds;
@@ -111,6 +111,7 @@ To say GloryHoleSuction:
 To compute gloryhole blowjob receipt:
 	now busy is 1;
 	say GloryHoleSuction;
+	now gloryhole is penetrating penis;
 	if a random number between 1 and 3 is 1 and the size of penis > 1 and face is not actually occupied:
 		now gloryhole is blowjob portal;
 		say "You gasp in shock as a black hole appears in the portrait next to your face, and [one of]a strangely familiar [ShortDesc of penis] is forced into your mouth! As the [player-penis] pushes past your lips, you feel a pair of lips move around your own. Then, as your tongue touches the base of the [player-penis], you feel a tongue touch the base of your own. [line break][variable custom style]Wait a minute... I'm sucking my own [player-penis]! How [if the bimbo of the player < 9]awful[otherwise if the bimbo of the player < 13]weird[otherwise]cool[end if]![roman type][line break][or]your [player-penis] once again enters your own mouth. [stopping]You [if the bimbo of the player < 10]can't help but [end if]moan as your own mouth starts to stimulate you, and [one of][if the sex addiction of the player < 8]since the magic of the gloryhole clearly isn't going to let you go until you've finished[otherwise]unable to resist the pleasure[end if],[or]once again[stopping] you [if the oral sex addiction of the player < 4]reluctantly [end if]get to work.";
@@ -257,6 +258,7 @@ A time based rule (this is the compute gloryhole rule):
 							say "But even though it felt [italic type]wonderful[roman type], you stare in shock at the tiny amount you squirted out. [line break][variable custom style]I doubt any chick would even FEEL that, if I squirted in her[roman type][line break]Then realise, there's no way you could work your little clit inside [italic type]anyone[roman type]! But the device is still sucking, as if it doesn't realise you're already finished, and you stare in a kind of sick fascination at your groin as your nubbin swells and shrinks with each suck. [line break][variable custom style]It won't really burst, will it?[roman type][line break]Your [player-penis] bulges, flushing a darkening, angry red - but because of the suction, and its tiny length, it's now as wide as it is long! It really [italic type]does[roman type] look like a raspberry. [line break][variable custom style]Or maybe, a strawberry, if I'm being generous?[roman type][line break]It deepens in colour to a dark purple, and it's really starting to hurt... but finally, the suction ends, and the device hisses as air rushes in, and pops free.[line break]";
 						orgasm quietly;
 						now gloryhole is not grabbing the player;
+						now gloryhole is not penetrating penis;
 						now busy is 0;
 					otherwise:
 						say "[one of]The anonymous girl's tongue gently swirls around your tip, causing you to moan with pleasure.[or][if the size of penis > 3]The anonymous slut forces your [player-penis] deep into her throat, and you hear gagging sounds coming through the wall. You squeal with delight.[otherwise]The girl tries to deepthroat your length, but your [player-penis] can't even reach the back of her throat. You make an embarrassed sound and she giggles.[end if][or]The girl lightly scrapes your [player-penis] with her teeth, causing you to shiver, but in a good way.[or]The girl silently sucks away, taking you to a world of bliss.[in random order]";

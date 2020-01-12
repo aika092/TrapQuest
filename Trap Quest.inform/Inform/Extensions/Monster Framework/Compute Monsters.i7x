@@ -11,8 +11,8 @@ To compute monsters:
 	let L be the list of alive simulated monsters;
 	sort L in random order;
 	repeat with M running through L:
-		if timedebug is 1, say "Computing [M].";
-		if M is not seeked: [Monsters that already got a chance to chase the player get no further action.]
+		if debugmode > 1, say "Computing [M]...";
+		unless M is seeked or (M is stalled and (M is nearby or M is in the location of the player)): [Monsters that already got a chance to chase the player get no further action. If the player is moving slowly so monsters get a double move, monsters in the location of the player or nearby who aren't already chasing the player lose their first action.]
 			if M is moved, compute turn 3 of M; [Monsters that already moved don't move again, but get a perception check.]
 			otherwise compute turn 1 of M; [This is a full monster turn.]
 	now shocked-monsters is 0;
@@ -69,6 +69,7 @@ To compute action (N - a number) of (M - a monster):
 	if N is 2, this is a passive action (no attacking)]
 	compute unique early action of M;
 	if M is interested:
+		if the scared of M > 0 and M is not scarable, now the scared of M is 0;
 		if the scared of M > 0 and M is not penetrating a body part:
 			compute fleeing of M;
 			if a random number from 1 to 5 is 1 and M is not in the location of the player and M is not nearby:
@@ -78,7 +79,9 @@ To compute action (N - a number) of (M - a monster):
 				if M is penetrating a body part or M is grabbing the player or (M is unfriendly and M is threatening):
 					check attack of M;
 				otherwise if M is not distracted:
-					if M is undefeated and M is friendly, compute friendly boredom of M; [Potentially make them bored]
+					if M is undefeated and M is friendly:
+						compute friendly boredom of M; [Potentially make them bored]
+						if M is not interested and playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
 					if M is interested, compute interaction of M; [If still interested, check if there's anything for them to do]
 		otherwise:
 			if M is unfriendly:
@@ -90,16 +93,22 @@ To compute action (N - a number) of (M - a monster):
 				if M is interested:
 					check seeking N of M;
 					if M is in the location of the player and M is undefeated, check disapproval of M;
+				otherwise:
+					if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
 	otherwise if M is not distracted and M is not caged and M is not guarding and (M is undefeated or M is not motionless-when-defeated):
 		if (the boredom of M is 0 and M is unleashed and (cowbell is clanking or the player is glued seductively)) or M is messy, check seeking N of M;
 		otherwise check motion of M;
 	compute unique final action of M.
 
-Definition: a monster is motionless-when-defeated if it is fucked-silly. [Most NPCs can continue moving around when enslaved, but not when fucked silly.]
+Definition: a monster is motionless-when-defeated if it is fucked-silly.[Most NPCs can continue moving around when enslaved, but not when fucked silly.]
 
 To check chase boredom of (M - a monster):
-	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1:
+	let D be 15;
+	if there is a worn catbell, increase D by 30;
+	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]
+	if M is not in the location of the player and a random number from 1 to D is 1:
 		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
+		if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
 		compute survival check of M.
 
 To compute survival check of (M - a monster):

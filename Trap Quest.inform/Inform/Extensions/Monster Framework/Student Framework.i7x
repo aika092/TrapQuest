@@ -1,6 +1,6 @@
 Student Framework by Monster Framework begins here.
 
-A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student can be clitLeaded.
+A student is a kind of monster. A student is intelligent. A student is usually female. A student has a number called timesBullied. A student can be clitLeaded. A student has a number called teacher-obedience.
 
 To decide which number is the aggro limit of (M - a student): [The number at which they turn unfriendly]
 	decide on 10.
@@ -9,6 +9,7 @@ A student has a number called lessonInt1. [Can be used to track various things i
 A student has a number called lessonInt2. [Can be used to track various things in a lesson]
 
 Definition: a student is school dwelling: decide yes.
+Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
 To say ShortDesc of (M - a student):
 	say student-name of M.
@@ -182,12 +183,16 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 Part - Motion
 
 To compute monstermotion of (M - a student):
-	if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)), compute room leaving of M.
+	if playerRegion is not school:
+		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		now M is in School01;
+	otherwise if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
+		compute room leaving of M.
 
 To compute (M - a student) seeking (D - a direction):
 	compute monstermotion of M.
 
-To compute room leaving of (M - a student): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.]
+To compute room leaving of (M - a student): [This CANNOT be replaced with a function that potentially doesn't make them leave the room, for any NPC. Some while loops rely on this to eventually succeed or the game will freeze.][####Selkie: What about coding into the end of functions like this, a unique say statement that should never be reached except by a coding error, so an infinite loop here is automatically pinpointed, avoiding the need for any debug to find its source?]
 	if M is in Dungeon11 or M is in Dungeon10:
 		try M going east;
 	otherwise:
@@ -287,20 +292,20 @@ To compute appearance assessment of (M - a student):
 			if M is unfriendly, distract M.
 
 To say FarGoneAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say LewdAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
 To say FarGoneBabAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking as outrageous as that! My poor eyes!'[or]Holy cow, do you know how extreme your outfit is right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how extreme your outfit is right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say BabAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? None of the rest of us'd wanna be seen dead like that!'[in random order][roman type][line break]".
 
 
 To compute nonstudent perception of (M - a student):
-	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][Big he of M] starts to run away!";
+	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][BigNameDesc of M] starts to run away!";
 	anger M;
 	now the scared of M is 100.
 
@@ -363,6 +368,42 @@ To compute punishment of (P - dq-student-flee):
 
 Definition: dq-student-flee is appropriate if current-monster is student and armband is not worn.
 
+
+
+
+The student priority attack rules is a rulebook. The priority attack rules of a student is usually the student priority attack rules.
+
+This is the student obeys teacher rule:
+	let N be current-monster;
+	let S be a random undefeated awake unfriendly staff member in the location of the player;
+	if S is nothing, now S is a random undefeated awake staff member in the location of the player;
+	if S is monster:
+		if the teacher-obedience of N is 1:
+			do nothing;
+		otherwise if S is friendly:
+			say "[BigNameDesc of S] yells angrily.[line break][speech style of S]'NO FIGHTING! BOTH OF YOU DOWN ON THE GROUND, NOW!'[roman type][line break]";
+			repeat with M running through staff members in the location of the player:
+				anger M;
+				now M is interested;
+				now the boredom of M is 0;
+			repeat with M running through awake unfriendly interested students in the location of the player:
+				now the teacher-obedience of M is 1;
+				say "[BigNameDesc of M] [one of]obediently[or]instantly[or]silently[or]immediately[in random order] drops to the ground, and lying face down, assumes [one of]a submissive position with [his of N] hands behind [his of N] head, like a prisoner[or]the position[stopping].";
+		rule succeeds;
+	otherwise if the teacher-obedience of N is 1:
+		now the teacher-obedience of N is 0.
+The student obeys teacher rule is listed in the student priority attack rules.
+
+
+To compute striking success effect of (M - a student) on (B - a body part):
+	let N be a random staff member in the location of M;
+	if N is a monster:
+		if N is uninterested, compute perception of N;
+		if N is interested and the health of M >= the maxhealth of M, now the health of M is the maxhealth of M - 1; [This is how we flag to the game that the staff member has witnessed the fight and can demand that it stops]
+
+
+
+
 Part - Bullying
 
 [This is where we input flavour for all the other bullying students in the crowd.]
@@ -373,7 +414,7 @@ To compute crowd jeering of (M - a student):
 		compute jeering of ST.
 
 To compute jeering of (M - a student):
-	say "[BigNameDesc of M] [one of]points and laughs[or]doubles over with laughter[or]cackles vindictively at your suffering[in random order]!".
+	say "[BigNameDesc of M] [one of]points and laughs[or]doubles over with laughter[or]cackles vindictively at your suffering[or]jeers[in random order]!".
 
 
 To compute crowd boredom of (M - a student):
@@ -451,6 +492,7 @@ To compute punishment of (P - student-bully-swimming-pool):
 		now tracked-semen is 0;
 		Wash Salves;
 		compute showering;
+		now another-turn-flavour is the substituted form of "You slowly clamber out of the pool.";
 		now another-turn is 1;
 	compute crowd boredom of current-monster;
 	satisfy current-monster.
@@ -476,7 +518,7 @@ To compute punishment of (P - student-bully-wedgie):
 		compute room leaving of M;
 	if the location of the player is not School19, drag to School19 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[one of]Up we go[or]This is where you belong[stopping]!'[roman type][line break][if the number of unfriendly students in the location of the player > 1]The bullies lift[otherwise][BigNameDesc of current-monster] lifts[end if] you up by your [ShortDesc of K], hooking the back onto one of the changing room hooks!";
+	say "[speech style of current-monster]'[one of]Up we go[or]This is where you belong[stopping]!'[roman type][line break][if the number of unfriendly students in the location of the player > 1]The bullies lift[otherwise][BigNameDesc of current-monster] lifts[end if] you up by your [ShortDesc of K], pinning the back onto one of the changing room hooks!";
 	let A be a random off-stage ass hook;
 	now A is in the location of the player;
 	now A is revealed;
@@ -489,7 +531,7 @@ To compute punishment of (P - student-bully-wedgie):
 	satisfy current-monster;
 	say "It looks like you'll need to [bold type]jump[roman type] and try and rip your underwear, or [bold type]wait[roman type] for someone to rescue you.";
 	let M be a random unfriendly student in the location of the player;
-	if M is student, say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips and smirks up at you.[line break][speech style of M]'You should pray that your panties hold, [bitch]. If it snaps before I leave, I'm going to blame you.'[roman type][line break]".
+	if M is student, say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips and smirks up at you.[line break][speech style of M]'You better pray your panties hold, [bitch]. If they snap before I leave, I'm going to blame you.'[roman type][line break]".
 
 
 Check going when the player is in School19:
@@ -514,7 +556,7 @@ To compute punishment of (P - student-bully-swirlie):
 		compute room leaving of M;
 	if the location of the player is not toilets, drag to School10 by current-monster;
 	let K be a random worn knickers;
-	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly students in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it in time to!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
+	say "[speech style of current-monster]'[if there is worn wet knickers][one of]Dumb baby! This is where you're supposed to go potty, not in your pants[or]Why are your [ShortDesc of K] wet? Don't you know you're supposed to piss in here?'[or]You're such a pathetic baby you couldn't make it to this toilet without wetting your [ShortDesc of K]!'[in random order][otherwise if the number of unfriendly students in the location of the player > 1]Let's play a fun little game, [bitch]. If you want us to treat you with respect... first you have to kiss the toilet like you love it.'[otherwise if diaper focus > 0]Oh yes, let's take a good look at big [boy of the player] potty, the one you probably can't even make it to in time!'[otherwise][one of]Trying to get a good look at the toilet? How about an even closer one!'[or]Seeing you here gives me an idea...'[in random order][end if][roman type][line break]";
 	compute swirlie of current-monster.
 
 Check going when the player is in School10:
@@ -640,7 +682,7 @@ To compute dq bullying of (M - a student):
 	otherwise if N is 0 and M is able to donate babywear:
 		compute punishment of donate babywear;
 	otherwise:
-		say "[if there is a staff member in the location of M]As soon as there's a brief moment where nobody is looking, [NameDesc of M][otherwise][BigNameDesc of M][end if] punches you in the arm. Ouch!";
+		say "[if there is a staff member in the location of M]As soon as there's a brief moment where nobody is looking, [NameDesc of M][otherwise][BigNameDesc of M][end if] [one of]punches you in the arm[or]Pinches your upper arm[or]Pulls your [ShortHairDesc][or]Flicks your soft cheek[or]Pinches a nipple[or]Jabs you in the side[in random order]. [one of]Ouch![or]Ow![or]Yow![in random order]";
 		PainUp 1;
 		satisfy M.
 
@@ -658,13 +700,14 @@ Part - Damage
 
 To compute damage of (M - a student):
 	if the health of M > 0:
-		if M is uninterested or M is friendly:
+		if M is friendly:
 			say "[big he of M] [if M is asleep]wakes up, [end if]screams, and turns to run away!";
 			now M is interested;
 			now the sleep of M is 0;
 			now the scared of M is 100;
+			anger M;
 		otherwise:
-			say "[big he of M] screams even louder!";
+			say "[big he of M] screams [if M is uninterested]in fury[otherwise]even louder[end if]!";
 	otherwise:
 		compute death of M.
 
@@ -780,7 +823,10 @@ To say ClothingDesc of (C - quiz-partner):
 	let ST be the bound-target of C;
 	if ST is a student:
 		if diaper quest is 0, say "[BigNameDesc of ST] has [his of ST] tongue piercing tightly attached to your [if the player is male]testicle cuffs[otherwise]clit piercing[end if]. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
-		otherwise say "[BigNameDesc of ST] has [his of ST] face tightly bound to the seat of your diaper. This means that you can't stand up and [he of ST] has to follow you around wherever you go.";
+		otherwise say "[BigNameDesc of ST] has [his of ST] collar connected to your ankles with tight rope that flows through D-rings in your thigh binds, which means [his of ST] face is pressed into the seat of your diaper with every crawling movement you take.".
+
+To say MuchTooHumiliatingFlav of (C - quiz-partner):
+	say "I can't let myself be seen like this!".
 
 To decide which number is the initial outrage of (C - quiz-partner):
 	decide on 20.

@@ -38,7 +38,7 @@ Check waiting:
 					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
 					ruin asshole;
 			if M is awake:
-				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong breaks its airtight seal, and assuming that you are unconscious, and wanders off to search for other victims.";
+				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong, breaking its airtight seal. [Big he of M] seems to assume you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
 				regionally place M;
 				display entire map;
@@ -115,7 +115,7 @@ To say WaitingSpeechFlav of (M - a monster):
 				if the player is feeling dominant:
 					say "[variable custom style]'[one of]I've been waiting for [if M is male human monster]the guy[otherwise]someone[end if] who could take me down. Fine then, claim your reward.'[or]Oh, so this is how it's going to be, is it? You're going to try and domesticate me? Give it your best shot, honey.'[or]Go on, try and break me, and turn me into your obedient fuckdoll! If you can...'[in random order][roman type][line break]";
 				otherwise:
-					say "[second custom style]'[one of]You choose, hun!  I'm down for whatever.'[or]Use any or all of my holes. Ruin me!'[or]Be my guest. I'm your little fucktoy.'[or]Please relieve yourself with my body as you see fit.'[or]I am free for your use, however you want me.'[or]Come on then, climb aboard!'[or]I don't give a damn how you fuck me, just get started already!'[or]Please touch me. Fuck me. Do anything you want, sugar!'[in random order][roman type][line break]";
+					say "[second custom style]'[one of]You choose, hun! I'm down for whatever.'[or]Use any or all of my holes. Ruin me!'[or]Be my guest. I'm your little fucktoy.'[or]Please relieve yourself with my body as you see fit.'[or]I am free for your use, however you want me.'[or]Come on then, climb aboard!'[or]I don't give a damn how you fuck me, just get started already!'[or]Please touch me. Fuck me. Do anything you want, sugar!'[in random order][roman type][line break]";
 			otherwise if the player is a pervert:
 				if the player is feeling dominant:
 					say "[variable custom style]'[one of]Well I guess this is your one chance to fuck me, so you'd better make the most of it. I won't be letting it happen again.'[or][if M is male and the girth of M < the size of penis and the player is male]Good luck getting me to submit with that puny dick. It's not even as big as mine!'[otherwise if M is male and the girth of M > highest body part sex addiction]Y-you think that just because you've got a big [manly-penis] I'll break? I can take it. I think...'[otherwise]I'm no stranger to sex. It'll take something pretty special to get me to submit to the likes of you!'[end if][or]Think about whose holes it is that you're about to abuse, [stud-worm of M]. Do you really want to make an enemy of me?'[in random order][roman type][line break]";
@@ -187,24 +187,24 @@ To HookWait:
 	if woman-barbara is regional and the woman-status of woman-barbara is 1:
 		allocate 6 seconds;
 		now woman-barbara is interested;
-		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner!  Salvation![end if]";
+		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
 		now woman-barbara is in the location of the player;
 		if the woman-bimbo of woman-barbara < 3:
-			say "[second custom style]'Oh no, how have you managed to get stuck like that?  That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise if the woman-bimbo of woman-barbara < 5:
-			say "[big he of woman-barbara] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there!  Do you need some help?'[roman type][line break][big he of woman-barbara] pulls at the hook, but slips when [he of woman-barbara] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
+			say "[big he of woman-barbara] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-barbara] pulls at the hook, but slips when [he of woman-barbara] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
 			ruin asshole;
-			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses her grip again!  It shoots back in with twice the force of last time!";
+			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses her grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
 			say "[second custom style]'Silly girl, try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
-			say "[second custom style]'*Giggle*. Look who it is!  You look like you're having fun there. I'm jealous!  Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside!  You scream in surprise.";
+			say "[second custom style]'*Giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
 			ruin asshole;
 			say "[second custom style]'That looks like so much fun!'[roman type][line break][big he of woman-barbara] pulls it out a bit more but then again lets go. You squeal in discomfort.";
 			ruin asshole;
@@ -216,7 +216,7 @@ To HookWait:
 				allocate 6 seconds;
 				compute extra turn;
 			if delayed fainting is 0 and N > 0:
-				say "[second custom style]'Now wasn't that a lovely treat!  I hope you can do the same for me soon.'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
+				say "[second custom style]'Now wasn't that a lovely treat! I hope you can do the same for me soon.'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
 			otherwise if delayed fainting is 0:
 				say "[second custom style]'I'm getting bored, I'm going to see if I can find something to fuck. See you later babe!'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
 			vanish woman-barbara;

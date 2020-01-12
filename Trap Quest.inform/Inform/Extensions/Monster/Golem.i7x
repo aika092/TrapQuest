@@ -41,6 +41,7 @@ To compute (M - a monster) stomping (N - golem):
 	destroy N.
 
 Definition: golem is objectifying the player: decide yes.
+Definition: golem is scarable: decide no.
 
 
 To compute perception of (M - golem):

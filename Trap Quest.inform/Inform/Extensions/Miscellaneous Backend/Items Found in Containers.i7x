@@ -7,6 +7,8 @@ The higher this number, the less will spawn.
 +!]
 To decide which number is the overload of (C - a thing):
 	decide on 0.
+To decide which number is the overload of (C - a pocketwipes):
+	decide on the number of in-play pocketwipes + 2.
 To decide which number is the overload of (C - a shoes):
 	decide on the number of in-play shoes + 1.
 To decide which number is the overload of (C - an overdress):
@@ -266,15 +268,28 @@ To compute generic treasure to (X - a thing):
 			say "[Discovery of I]";
 		compute autotaking I.
 
+
+autotake-target is a thing that varies.
+
 [!<ComputeAutotakingAThing>+
 
 REQUIRES COMMENTING
 
 +!]
 To compute autotaking (I - a thing):
-	if autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
+	if another-turn is 0 and another-turn-action is the no-stored-action rule and autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
 		if the player is wrist bound and there is a worn heels and the player is upright:
 			say "[one of][bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break][or][stopping]";
+		otherwise:
+			now autotake-target is I;
+			now another-turn is 1;
+			now another-turn-action is autotaking continues rule.
+
+This is the autotaking continues rule:
+	let I be autotake-target;
+	if autotake >= 1 and I is in-play and I is not held and ((I is not food and I is not bottle and I is not plentiful accessory) or autotake is 2) and I is not known-cursed-potion and there is a worn bag of holding and the player is able to use their hands and the player is not in danger:
+		if the player is wrist bound and there is a worn heels and the player is upright:
+			say "[bold type]You won't automatically pick stuff up when you have a risk of tripping over because of your heels and wrist bondage.[roman type][line break]";
 		otherwise:
 			try silently taking I;
 			now focused-thing is I;

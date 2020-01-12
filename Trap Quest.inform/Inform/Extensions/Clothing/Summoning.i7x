@@ -44,7 +44,6 @@ To summon (P - a sex toy) cursed vaginally:
 
 To summon (C - a clothing) uncursed:
 	summon C;
-	if C is locked, now C is unlocked;
 	now the raw-magic-modifier of C is 0;
 	now C is blandness;
 	now C is bland.
@@ -52,7 +51,7 @@ To summon (C - a clothing) uncursed:
 To summon (C - a thing) cursed:
 	summon C;
 	if C is locked clothing, now C is unlocked;
-	now C is cursed.
+	if C is clothing, now C is cursed.
 
 To summon (C - a thing) cursed with quest:
 	summon C cursed;

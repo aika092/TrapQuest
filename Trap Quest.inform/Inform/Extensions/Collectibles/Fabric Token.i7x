@@ -47,13 +47,8 @@ To compute mass collectible reward of (T - a fabric token):
 	if C is nothing:
 		say "The transformation fails! This is very unusual, perhaps the universe can't seem to find anything appropriate to give you any more?";
 	otherwise:
-		only destroy C; [resets it]
+		blandify and reveal C; [resets it]
 		now C is carried by the player;
-		now C is sure;
-		now C is bland;
-		now C is identified;
-		now C is blandness;
-		now the raw-magic-modifier of C is 0;
 		say "You pick up your brand new [C]!";
 		repeat with X running through held fabric tokens:
 			destroy X;

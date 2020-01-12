@@ -223,7 +223,7 @@ To compute diaper change of (M - a monster):
 		now current-diaper is a random top level protection clothing; [Top level takes priority]
 		if current-diaper is worn no protection overdress, now current-diaper is nothing; [These are allowed to stay around!]
 		if (current-diaper is nothing or current-diaper is chastity cage) and there are worn knickers, now current-diaper is a random worn knickers; [All knickers MUST be removed]
-		if old-diaper is diaper and current-diaper is chastity cage and M is diaper change chastity cummies rewarding and the player is able to orgasm:
+		if old-diaper is diaper and current-diaper is chastity cage and M is diaper change chastity cummies rewarding and the player is able to orgasm so soon:
 			compute diaper change chastity cummies reward of M;
 			rule succeeds;
 		otherwise if current-diaper is clothing and current-diaper is not chastity cage:
@@ -256,7 +256,7 @@ To compute diaper change of (M - a monster):
 				now current-diaper is in Holding Pen;
 				if current-diaper is diaper, DiaperAddictUp 1;
 				rule succeeds;
-		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm: [player was wearing a diaper, what a good girl! she gets cummies]
+		otherwise if old-diaper is diaper and M is diaper change during cummies rewarding and the player is able to orgasm so soon: [player was wearing a diaper, what a good girl! she gets cummies]
 			compute diaper change during cummies reward of M;
 			rule succeeds;
 		if new-diaper is nothing: [If we just did a double diaper then we skip all this]
@@ -264,6 +264,7 @@ To compute diaper change of (M - a monster):
 			if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, now new-diaper is a random dry unmessed disposable diaper carried by the player;
 			if new-diaper is nothing, now new-diaper is a random eligible plentiful disposable diaper;
 			if new-diaper is nothing, now new-diaper is a random eligible diaper;
+			if new-diaper is nothing, now new-diaper is a random diaper; [failsafe]
 			if new-diaper is not worn:
 				let oldDiaperLeft be nothing;
 				if old-diaper is diaper:
@@ -298,7 +299,7 @@ To compute diaper change of (M - a monster):
 			clean new-diaper;
 			WaterEmpty new-diaper;
 			if M is diaper disciplining, now the diaper-duration of M is the diaper punishment length of M;
-		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm:
+		if old-diaper is diaper and M is diaper change complete cummies rewarding and the player is able to orgasm so soon:
 			compute diaper change complete cummies reward of M;
 		repeat with C running through diaper covers retained by M: [diaper covers need to go on first]
 			unless M is withholding C:
@@ -817,7 +818,7 @@ To compute forcefeed round (N - a number) of (M - a monster):
 	if N is 1 and M is willing to forcefeed pills:
 		if M is intelligent, say "[ForcefeedPillDeclarationFlav of M]";
 		say "[BigNameDesc of M] pushes a small white pill into your mouth and forces you to swallow it. [one of]Almost immediately[or]Once again[stopping] you feel that your stomach is more... active. It feels like it's digesting its contents at double speed!";
-		increase digestion-timer by 360;
+		DigestionTimerUp 360;
 	otherwise:
 		say "[BigNameDesc of M] [one of]shoves[or]forces[or]crams[in random order] ";
 		if diaper messing >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the stomach-food of the player < the stomach-liquid of the player):

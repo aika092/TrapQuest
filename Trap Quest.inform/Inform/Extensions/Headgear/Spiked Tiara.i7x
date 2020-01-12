@@ -8,7 +8,7 @@ The printed name of a spiked-tiara is "[clothing-title-before]spiked tiara[cloth
 
 To say TongueStatus of (C - a clothing):
 	if tonguesActive > 0, say "The tongues are currently salivating and licking every part of you that they can reach.";
-	otherwise say "The tongues are currently motionless, making them look more like a weird fashion statement. Any normal person that looked would assume that they weren't, you know, actual living demonic tongues.".
+	otherwise say "The tongues are currently motionless, making them look more like a weird fashion statement. Any normal person who looked would assume they weren't, you know, actual living demonic tongues.".
 
 To decide which text is tonguesColour:
 	if tonguesBlack is true, decide on "black";
@@ -29,7 +29,7 @@ To decide which figure-name is the clothing-image of (C - spiked-tiara):
 
 
 To say ClothingDesc of (H - spiked-tiara):
-	say "This [tonguesColour] [MediumDesc of H] has small regular spikes along the front, giving it a rather sinister feel. Multiple living tongues rope down from under its body to hug your ears, chin, and anything else they can reach. [TongueStatus of H]".
+	say "This [tonguesColour] [MediumDesc of H] has small regular spikes along the front, giving it a rather sinister feel. Multiple living tongues snake down from under its body to hug your ears, chin, and anything else they can reach. [TongueStatus of H]".
 
 To say ShortDesc of (H - spiked-tiara):
 	say "tongued tiara".
@@ -52,7 +52,7 @@ A time based rule (this is the tongued clothing licking rule):
 	let N be the number of worn tongued clothing;
 	if tonguesBlack is false and the player is female and the virgin of the player is 0:
 		let C be a random worn tongued clothing;
-		if N > 0, say "Your [if N is 1][ShortDesc of C][otherwise]tongued clothing all[end if] turns from a pure white to a dark black. You can tell [if N is 1]it is[otherwise]they are[end if] now making you feel more perverse...";
+		if N > 0, say "Your [if N is 1][ShortDesc of C][otherwise]tongued clothing all[end if] turns from pure white to an intense black. You can tell [if N is 1]it is[otherwise]they are[end if] now making you feel more perverse...";
 		now tonguesBlack is true;
 		now spiked-tiara is brightness-negative;
 	if N > 0:
@@ -147,8 +147,8 @@ To compute class outfit of (H - spiked-tiara):
 			transform S into tongue-heels;
 		otherwise if T is stockings and T is not tongue-stockings:
 			transform T into tongue-stockings;
-		otherwise if BT is belt and T is not demonic:
-			transform T into tongue-belt;
+		otherwise if BT is belt and BT is not demonic:
+			transform BT into tongue-belt;
 		otherwise if B is bra and B is not tongue-bra:
 			transform B into tongue-bra;
 		otherwise if O is overdress and O is not tongue-suit:

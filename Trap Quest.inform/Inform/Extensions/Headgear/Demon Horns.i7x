@@ -15,7 +15,7 @@ To decide which figure-name is the clothing-image of (C - demon horns):
 	decide on figure of demon horns 1.
 
 To say ClothingDesc of (H - demon horns):
-	say "A pair of red horns protruding from your head. [if the player is soulless]They seem to be real![otherwise]Luckily it is just a headband.[end if]".
+	say "A pair of red horns protruding from your head. [if the player is soulless]They seem to be real![otherwise]Luckily they're only attached to a headband.[end if]".
 
 To say ShortDesc of (H - demon horns):
 	say "[if the player is soulless]demon horns[otherwise]fake demon horns[end if]".

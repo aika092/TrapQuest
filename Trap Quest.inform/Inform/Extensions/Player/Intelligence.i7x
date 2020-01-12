@@ -96,6 +96,14 @@ REQUIRES COMMENTING
 The player has a number called old intelligence. The old intelligence of the player is usually 0.
 
 
+Definition: yourself is deserving of more intelligence:
+	let R be a random number between -3 and 56;
+	let S be the flat intelligence of the player;
+	if debuginfo > 0, say "[input-style]Intelligence buff check: d60-4([R]) | ([S].5) player intelligence[roman type][line break]";
+	if R > S, decide yes;
+	decide no.
+
+
 [!<IntUpX>+
 
 REQUIRES COMMENTING

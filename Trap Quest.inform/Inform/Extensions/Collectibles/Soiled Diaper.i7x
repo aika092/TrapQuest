@@ -3,6 +3,7 @@ Soiled Diaper by Collectibles begins here.
 A soiled-diaper is a kind of collectible. There are 30 soiled-diapers. The printed name of soiled-diaper is "[TQlink of item described]soiled [diaper-origin of item described][shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of soiled-diaper is the file "Items/Collectibles/diaper1.jpg". Understand "soiled", "diaper" as soiled diaper.
 
 To decide which number is the outrage of (S - a soiled-diaper):
+	if diaper quest is 1, decide on 0;
 	decide on 20.
 To decide which number is the cringe of (S - a soiled-diaper):
 	decide on 20.
@@ -53,6 +54,7 @@ Carry out examining:
 
 
 A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.png". Understand "diaper pail", "pail" as a diaper pail.
+Figure of diaper pail dunk is the file "Special/Cutscene/cutscene-diaper-pail1.jpg".
 
 A game universe initialisation rule:
 	if diaper messing < 6:
@@ -123,6 +125,7 @@ Check jumping when the player is in DiaperPail:
 
 A later time based rule:
 	if the player is in DiaperPail:
+		cutshow figure of diaper pail dunk;
 		let N be the number of soiled-diaper in DiaperPail;
 		if a random number between 0 and N is not 0:
 			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
@@ -138,6 +141,7 @@ Check BabChanging it with:
 	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.
+
 Carry out BabChanging it with:
 	allocate 6 seconds;
 	say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";

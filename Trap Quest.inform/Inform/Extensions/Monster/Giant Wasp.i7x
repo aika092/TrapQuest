@@ -62,9 +62,9 @@ A honey-wasp is a kind of giant wasp.
 fuzzy giant wasp is a honey-wasp. The text-shortcut of fuzzy giant wasp is "fzwp".
 To say MediumDesc of (M - fuzzy giant wasp):
 	say "fuzzy [ParentDesc of M] wasp".
-wooly giant wasp is a honey-wasp. The text-shortcut of wooly giant wasp is "wzwp".
-To say MediumDesc of (M - wooly giant wasp):
-	say "wooly [ParentDesc of M] wasp".
+woolly giant wasp is a honey-wasp. The text-shortcut of woolly giant wasp is "wzwp".
+To say MediumDesc of (M - woolly giant wasp):
+	say "woolly [ParentDesc of M] wasp".
 
 To say MonsterDesc of (M - a giant wasp):
 	say "This giant flying insect is larger than you, but is still capable of perfect flight from its rapidly oscillating wings. As with real wasps in the real world, this beast seems to be very aggressive for no clear reason. Aside from its terrifying giant stinger, you can also see an ovipositor extending from its underbelly.".
@@ -214,7 +214,7 @@ To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
-	say "[BigNameDesc of M] keeps thrusting with its ovipositor!  ";
+	say "[BigNameDesc of M] keeps thrusting with its ovipositor! ";
 	if the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
 	if a random number between 1 and 2 is 1:
 		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
@@ -224,7 +224,7 @@ To compute anal sex of (M - a giant wasp):
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
 			assfill 1 medium eggs;
-	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof!  This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
+	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof! This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
 	ruin asshole.
 
@@ -299,7 +299,7 @@ To compute SelectionFailure of (M - a giant wasp):
 	bore M.
 
 To say SpitroastPrep of (M - a giant wasp) with (O - a monster) in (F - asshole):
-	say "[BigNameDesc of M] lands on top of you, displacing your centre of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
+	say "[BigNameDesc of M] lands on top of you, displacing your center of gravity as [his of M] bizarre breeding appendage hangs down between your legs".
 
 To say ThreesomePrep of (M - a giant wasp) with (N - a monster) in (F - asshole):
 	if N is intelligent, say "[NameDesc of N] flips you over as [NameDesc of M] lands on top of you, [his of M] bizarre breeding appendage hanging down between your legs.";
@@ -335,7 +335,7 @@ To compute striking attack of (M - a giant wasp):
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
 		increase wasp-poison-timer by 3 * the difficulty of M;
 	otherwise if M is honey-wasp and a random number between 1 and 2 is 1 and the player is the donator:
-		say "An alien-looking appendage unfurls from [NameDesc of M]'s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]Its getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
+		say "An alien-looking appendage unfurls from [NameDesc of M]'s abdomen, pulsating wildly as it spews sweet-smelling honey across your [one of]arm[or]butt[or]neck[or]back[purely at random]. [one of]It's getting more difficult to move![or]You're having trouble moving![or]It's getting harder to move![or]You're having more trouble moving around![or]It doesn't hurt, but it's getting pretty difficult to move...[then at random]";
 		increase wasp-honey-timer by 5 * the difficulty of M;
 		if wasp-honey-timer > 80:
 			say "[bold type]The honey covering your limbs begins to harden, and within moments it becomes impossible to move at all. [roman type][BigNameDesc of M] bumps you gently with [his of M] body, which in your immobile state causes you to fall over.";
@@ -376,7 +376,7 @@ a time based rule (this is the wasp honey decay rule):
 	if wasp-honey-timer > 0:
 		decrease wasp-honey-timer by time-seconds;
 		if wasp-honey-timer <= 0:
-			say "[bold type]The wasp's honey seems to have completelydried and you can now move normally again.[roman type][line break]";
+			say "[bold type]The wasp's honey seems to have completely dried and you can now move normally again.[roman type][line break]";
 			now wasp-honey-timer is 0;
 		otherwise if wasp-honey-timer <= 80 and wasp-honey-timer + time-seconds > 80:
 			say "[bold type]The wasp's honey seems to have dried enough that you can now move at least a little bit.[roman type][line break]".
@@ -429,7 +429,7 @@ To set up (M - domesticated wasp):
 		remove M from play.
 
 To say SummoningFlav of (M - domesticated wasp):
-	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A red-haired fairy emerges shortly from the passage, and quickly swings a set of green reins over the wasps's head as it lifts off the ground.";
+	if the location of the player is Woods30, say "You hear someone (or something) moaning intensely from inside the statue, loudly climaxing as a large object, about the size of a football rolls through the stony passage. The surface of the object cracks, and a full-grown wasp emerges from the egg. A red-haired fairy emerges shortly from the passage, and quickly swings a set of green reins over the wasp’s head as it lifts off the ground.";
 	otherwise say "You hear an egg cracking somewhere close by.".
 
 To say DamageReactHealthy of (M - domesticated wasp):

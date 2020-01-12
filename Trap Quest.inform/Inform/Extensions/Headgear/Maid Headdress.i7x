@@ -87,9 +87,9 @@ To compute class outfit of (H - a maid headdress):
 		if maid-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 			repeat with O running through worn exclusive corsets:
 				say "Your [O] [wardrobeVanishes of O]!";
-				now O is in pink wardrobe;
 				now O is in pink wardrobe;
 			repeat with O running through worn skirted clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -150,7 +150,7 @@ To progress quest of (Q - puddle-cleaning-quest):
 			increase the puddles-cleaned of Q by 1;
 			if the puddles-cleaned of Q < (a random number between 3 and 4) - diaper quest:
 				say "Your [ShortDesc of C] pulses happily. [one of]If you keep this sort of work ethic up, you're sure to be rewarded eventually[or]Keep it up[stopping]!";
-			otherwise if P is cloth and P is worn and the work ethic of P < 150:
+			otherwise if P is cloth and P is worn and the work ethic of P < 150 and diaper quest is 0:
 				say "Your [ShortDesc of C] [if C is cursed]doesn't uncurse - it [end if]seems to think you [one of]need to do more cleaning with the cloth until you have redeemed yourself for breaking the bottle[or]still need to do more cleaning[stopping]!";
 			otherwise:
 				now the puddles-cleaned of Q is 0;

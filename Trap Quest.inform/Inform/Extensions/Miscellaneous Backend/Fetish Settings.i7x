@@ -92,7 +92,7 @@ choice
 0 [starting body shape]
 0 [bonus liquid]
 0 [bondage protection]
-0 [christmas content]
+1 [christmas content]
 0 [easter content] [currently does nothing]
 0 [april fools content]
 1 [futanari fetish]
@@ -107,7 +107,7 @@ choice
 1 [supportersEnabled]
 0 [strongCurses]
 0 [transGender]
-1 [halloween content]
+0 [halloween content]
 
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
@@ -395,6 +395,7 @@ To decide which number is april fools content:
 	decide on the choice in row 67 of the Table of Player Options.
 
 To decide which number is halloween content:
+	if the player is not a top donator, decide on 0;
 	decide on the choice in row 80 of the Table of Player Options.
 
 To decide which number is futanari fetish:

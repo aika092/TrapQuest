@@ -39,9 +39,10 @@ To decide which number is the girth of (M - demon lord):
 	decide on 8.
 
 Definition: demon lord is concealment immune: decide yes.
+Definition: demon lord is scarable: decide no.
 
 Definition: demon lord (called M) is willing to shag:
-	if M is awake and the scared of M is 0 and the boredom of M < 120, decide yes;
+	if M is awake and the boredom of M < 120, decide yes;
 	decide no.
 
 Definition: demon lord is infernal: decide yes.
@@ -285,7 +286,7 @@ To compute post climax effect of (M - demon lord) in (F - asshole):
 		dignify 800.
 
 To compute unique climax of (M - demon lord) in (F - a fuckhole):[assumes M is male]
-	fullscreencutshow figure of xavier cutscene 2 for M;
+	appropriate-display figure of xavier cutscene 2 for M;
 	if M is wrapped, compute wrapped climax of M in F;
 	otherwise compute unprotected climax of M in F.
 
@@ -396,10 +397,10 @@ To say SpankingMercyRejectionFlav of (M - demon lord):
 	say "[speech style of M]'I DO NOT DO MERCY.'[roman type][line break][BigNameDesc of M] ignores your pleas.".
 
 To say SpankingStartFlav of (M - demon lord):
-	say "[BigNameDesc of M][one of][']s eyes glow a fearsome red, before you could stare at them too long you begin to levitate into the air.[or] picks you up off of the ground with [his of M] tail! You're suspended in mid-air, there's no way you can get away now![cycling]".
+	say "[BigNameDesc of M][one of][']s eyes glow a fearsome red, but before you could stare at them too long you begin to levitate into the air.[or] picks you up off of the ground with [his of M] tail! You're suspended in mid-air, there's no way you can get away now![cycling]".
 
 To say SpankingFlav of (M - demon lord):
-	say "[one of]A series of stinging hot flashes collapse into your tender behind in an inconsistant rhythm as to not let you brace for the visceral impacts[or][BigNameDesc of M] delivers several powerful blows to your [buttcheeks][stopping]!".
+	say "[one of]A series of stinging hot flashes smack into your tender behind in an inconsistent rhythm so you can't brace for the visceral impacts[or][BigNameDesc of M] delivers several powerful blows to your [buttcheeks][stopping]!".
 
 To say SpankingDeclarationFlav of (M - demon lord):
 	say "[speech style of M]'HOW SHALL I TORTURE YOU...'[roman type][line break]".
@@ -408,7 +409,7 @@ To say SpankingAfterFlav of (M - demon lord):
 	say "After this [he of M] seems satisfied, and mercilessly drops you to the ground.".
 
 To say DQSpankResistReactionFlav of (M - demon lord):
-	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistence even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddy of demon lord]!'[or]You know what would complete this picture? Squeaks, yes squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] [one of]grins[or]looks bemused[at random].[line break][speech style of M]'[one of]Surely a weak little lamb like you knows better than to try that.'[or]Really now? How precious... this is a resistance even a baby slave would giggle at!'[or]Keep this going and I won't stop until you call me [daddy of demon lord]!'[or]You know what would complete this picture? Squeak, yes squeak for me little thing.'[or]Come now, all you're doing is exciting me.'[in random order][roman type][line break]".
 
 To say DiaperReaction of (M - demon lord):
 	say "[BigNameDesc of M] laughs, with a deep booming tone.[line break][speech style of M]'[one of]YES, I SEE YOU ARE LEARNING YOUR TRUE ROLE AS A PATHETIC DIAPERED MORTAL[or]YOU ARE SO PATHETIC THAT YOU CANNOT EVEN WAIT TO BE ALONE BEFORE SOILING YOUR OWN GARMENTS[at random]!'[roman type][line break]".
@@ -462,10 +463,13 @@ To compute punishment of (P - xavier-nightmare-diaper):
 		summon demon link mark;
 		say "A sharp sting over your crotch lets you know you suddenly have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked above your crotch. ";
 	now xavier-diaper-link is 1;
-	say "You feel a weird pang behind your [genitals]. Like it's not completely yours any more.[line break][second custom style]'Now follow me. And remember, potty [boy of the player]s are supposed to be seen, not heard.'[roman type][line break]You are led from the bedroom throughout the castle, accompanying your Mistress on her queenly duties, including inspecting the troops, settling disputes amongst the common demons, and eating dinner with some demon knights. During this whole time you stay silent with your head down, standing two paces behind her, to her left side. At dinner you are seated next to her, but you are so small compared to her and the other demons that you might as well be a child, feeling a little lost in the adult- that is, the demon-sized chair. Your feet don't even touch the floor, meaning all your weight is on your thick padding. Towards the end of the meal, you notice your Lady arch her back and sigh gently. None of the other demons show that they noticed, if indeed any did. At the same time you feel the weirdest sensation - [if diaper messing >= 3]your sphincter opens wide to allow a thick soft log to exit. At the same time [end if]urine squirts out of your urethra, even though you can feel you're not pushing and nothing is exiting your bladder. It's like a ghost is sitting in your exact position, with his or her pee[if diaper messing >= 3] and poop[end if] materialising as it emerges! The hissing and crinkling sounds fill the hall, making your face turn red. You understand what is happening - the Demon Queen is going to the toilet, but it's appearing in your diaper instead of hers! And since she's so much bigger than you, she has a [italic type]lot[roman type] of waste to get out of her system. Your padding bulges from beneath you, visibly pushing you an inch higher up off of the chair.";
+	say "You feel a weird pang behind your [genitals]. Like it's not completely yours any more.[line break][second custom style]'Now follow me. And remember, potty [boy of the player]s are supposed to be seen, not heard.'[roman type][line break]";
+	if diaper messing < 3, cutshow figure of cutscene-xavier-nightmare-diaper-clean;
+	say "You are led from the bedroom throughout the castle, accompanying your Mistress on her queenly duties, including inspecting the troops, settling disputes amongst the common demons, and eating dinner with some demon knights. During this whole time you stay silent with your head down, standing two paces behind her, to her left side. At dinner you are seated next to her, but you are so small compared to her and the other demons that you might as well be a child, feeling a little lost in the adult- that is, the demon-sized chair. Your feet don't even touch the floor, meaning all your weight is on your thick padding. Towards the end of the meal, you notice your Lady arch her back and sigh gently. None of the other demons show that they noticed, if indeed any did. At the same time you feel the weirdest sensation - [if diaper messing >= 3]your sphincter opens wide to allow a thick soft log to exit. At the same time [end if]urine squirts out of your urethra, even though you can feel you're not pushing and nothing is exiting your bladder. It's like a ghost is sitting in your exact position, with his or her pee[if diaper messing >= 3] and poop[end if] materialising as it emerges! The hissing and crinkling sounds fill the hall, making your face turn red. You understand what is happening - the Demon Queen is going to the toilet, but it's appearing in your diaper instead of hers! And since she's so much bigger than you, she has a [italic type]lot[roman type] of waste to get out of her system. Your padding bulges from beneath you, visibly pushing you an inch higher up off of the chair.";
+	if diaper messing >= 3, cutshow figure of cutscene-xavier-nightmare-diaper-messy;
 	say "[second custom style]'Really now, how disgusting!'[roman type][line break]Your Mistress chides you in a fake offended tone.[line break][second custom style]'Using your diaper at the dinner table. Really now! Get out of here [if diaper messing >= 3]before you stink the whole room up[otherwise]now[end if]! Get a change and then return to my chambers. I'll punish you later.'[roman type][line break]With face and ears as red as hers and a full [if diaper messing >= 3]and [end if]soggy nappy you sulkily waddle your way out of the room, studying the ground intensely as you do. You are halfway through the castle back to the waterfall when you hear a gurgling sound coming from below. Moments later your diaper is completely dry and clean! [line break][variable custom style]Wow, that's... magic.[roman type][line break]You wait for the Queen to return to her bedroom, which takes hours. During this time you end up testing your diaper yourself, and find that after a [if diaper messing is 3]few moments[otherwise]minute or so[end if] it cleans itself in the same way. Finally, your Mistress returns.[line break][second custom style]'Excellent job, pet. You'll make a good potty servant. It's a shame you'll have to do it from afar for now though. I can feel that Xavier's magic is fading. Soon you will return to the mortal realm... for now. However, you are now eternally bonded to me, until the day I sever the connection or you die. So I'm sure you'll never forget me.'[roman type][line break]She and her world start to fade away.[line break][second custom style]'If I were you, I would try and keep hold of that diaper for as long as possible...'[roman type][line break]";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
-	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR 12 HOURS AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
+	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR A SHORT WHILE AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M.
 
 
@@ -475,12 +479,10 @@ xavier-nightmare-gag is a xavier-nightmare.
 
 Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord.
 
-The priority of xavier-nightmare-gag is 4.
+The priority of xavier-nightmare-gag is 5.
 
 xavier-throat-link is a number that varies.
 
-Figure of cutscene-xavier-nightmare-gag-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-gag1.png".
-Figure of cutscene-xavier-nightmare-gag-wet is the file "Special/Cutscene/cutscene-xavier-nightmare-gag2.png".
 
 To compute punishment of (P - xavier-nightmare-gag):
 	now the priority of P is 0; [can only happen once]
@@ -508,9 +510,9 @@ To compute punishment of (P - xavier-nightmare-gag):
 	if ring gag is actually summonable, summon ring gag cursed;
 	say "You feel a weird pang in your throat, like the gag is performing some kind of magical redesign of your gullet. You squirm nervously.[line break][second custom style]'Yay, I think it's working! My brother is a genius.'[roman type][line break]That does little to settle your stomach, but it doesn't matter what you think. The muscular girl-demon leads you to a place where a thin stone slab sits on the ground, like there's something missing that is supposed to be on top of it. You realise that's probably supposed to be you. Your new owner confirms your suspicions.[line break][second custom style]'Go on then, get up there, slave!'[roman type][line break]After a moment of hesitation you stand in place, and turn to face her. Nothing happens.[line break][second custom style]'Hold your arms out to the side, obviously!'[roman type][line break]That was hardly obvious, but now that you've been given the instruction, you quickly do as you are told. And as your arms reach horizontal, the ground begins to shake. Two stone pillars begin to emerge from the ground either side of you, underneath your hands. You expect your hands to be knocked out of the way but instead the pillars phase straight through them. Your immediate reaction is to pull your hands back but they're now completely stuck, sealed inside the concrete! As you struggle to move your arms, a thin plank of stone emerges from each pillar at neck height, connecting around your neck and welding themselves together perfectly. You now can't move your arms or your neck!";
 	say "[second custom style]'Oopsie! Looks like you're stuck!'[roman type][line break]Your captor teases you as she turns to adjust something behind her. As she walks away from it you can see what it is - some kind of water jet! And now she appears to be turning a valve...![line break][second custom style]'Ready, aim fire!'[roman type][line break]A powerful blast of water shoots in an arc from the jet, right into your open mouth. You have no choice but to begin drinking, to avoid choking![line break][second custom style]'Congratulations, you are now a water feature! I'll come and change you whenever I remember.'[roman type][line break]And just like that, you are left alone.";
-	fullscreencutshow figure of cutscene-xavier-nightmare-gag-clean for M;
+	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-clean;
 	say "As you drink, something weird happens. You feel the liquid travelling down your throat, and then it just hits your bladder instantly. [if the player is incontinent]Due to your incontinence you are powerless to prevent yourself from peeing immediately[otherwise]It's not long at all until you are bursting and so you are soon forced to wet your diaper[end if]. Thankfully your diaper is so giant that there's still a lot of dry padding left. For now. You reflect on what just happened - it seems like your stomach is now directly connected to your bladder, in some kind of magic fashion. Everything you drink - and there's a lot - is going straight into your bladder. And since you're being forced to drink such a lot, it's all coming out pretty immediately too. You're essentially stuck in a permanent state of both drinking and peeing, which means that your diaper is gradually getting heavier and heavier. No matter how big it is, it's got to get full at some point, right?![line break]But no matter how much you pee, it doesn't seem to leak. And you keep on peeing. The demon plane's sun moves across the sky and you have nothing to do but drink and wee, drink and wee.[line break][italic type]Glug glug glug[line break]Hsssssss[roman type][line break]Eventually it gets to the point where you can't really remember what it feels like to not be peeing. It just feels normal to be permanently urinating. It's like it's your natural state. And still time moves forward. Day turns to night, and night to day. It must be nearly 24 hours since you were imprisoned here. With nothing to stimulate your attention, time slowly begins to lose meaning. All you know is drinking and wetting. Your diaper feels so heavy that it's like it's made of lead. Another day passes, and then another night. Xavier's daughter is nowhere to be seen. Will nobody come to release you? Why do you not feel hungry, or tired? Are those just weird quirks of this infernal dimension, or is it some magic effect that has been specifically applied to you? Does it matter? But you have nothing better to occupy your mind than questions like this.";
-	fullscreencutshow figure of cutscene-xavier-nightmare-gag-wet for M;
+	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-wet;
 	say "On the third day, Xavier's daughter does finally return. You are so happy just to see another face that you gurgle with glee.[line break][second custom style]'Hey there little miss soggy bottom, how are you settling in? From what I understand, the first thousand years are going to be the worst. After that you get used to it.'[roman type][line break]That makes your eyes widen with horror.[variable custom style][muffled sounds][line break][second custom style]'Yeah I thought you might say something like that. Well, too bad, you're mine now.'[roman type][line break]Just at that moment, the demon girl's form seems to begin to shimmer. No wait, the whole world is shimmering! Every second it's fading more and more.[line break][second custom style]'Yeah, only kidding, Daddy says you have to go back now. So I just came to say goodbye and to thank you for being such a good water feature. But I hope you come and play again soon!'[roman type][line break]You manage to sound one final gurgle of relief before she completely disappears from view.";
 	say "You find yourself on the ground back in front of [NameDesc of M]. You feel just as exhausted as you did in the moment of your defeat.";
 	say "[speech style of M]'I GUESS YOU ARE VERY LUCKY THAT DUE TO MY WEAKENED FORM I HAD TO EVENTUALLY BRING YOU BACK! MAYBE NEXT TIME WE MEET, MY POWERS WILL HAVE FULLY RETURNED AND I CAN KEEP YOU AS MY DAUGHTER'S STATUE FOREVER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
@@ -522,12 +524,10 @@ xavier-nightmare-belt is a xavier-nightmare.
 
 Definition: xavier-nightmare-belt is appropriate if current-monster is demon lord.
 
-The priority of xavier-nightmare-belt is 3.
+The priority of xavier-nightmare-belt is 5.
 
 xavier-belt-link is a number that varies.
 
-Figure of cutscene-xavier-nightmare-belt-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-belt1.png".
-Figure of cutscene-xavier-nightmare-belt-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-belt2.png".
 
 To compute punishment of (P - xavier-nightmare-belt):
 	now the priority of P is 0; [can only happen once]
@@ -557,9 +557,9 @@ To compute punishment of (P - xavier-nightmare-belt):
 		summon demon belly mark;
 		say "A tingling feeling over your belly lets you know you also have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked around your belly button.";
 	say "[first custom style]'Okay, now your job is to try and finish this. And you'd better try your hardest - if you can't get through it all in twenty minutes, you'll spend the rest of your time here strapped to an automatic spanking machine.'[roman type][line break]You frown, still confused. In front of you is a bowl of runny green soup[if diaper messing >= 3] and a small loaf of crusty bread[end if]. Even though you're feeling very full, surely it won't take you longer than a few minutes to finish the [if diaper messing >= 3]meal[otherwise]liquid snack[end if]. You sit down, wincing as your belly [if diaper messing >= 3]growls angrily[otherwise]sloshes loudly[end if] as you move. You pick up your first spoonful of the soup and bring it to your lips, pleasantly surprised by the healthy taste of peas and mint. You swallow it without a problem[if diaper messing >= 3], quickly following it up with a bite of the bread[end if].[line break][bold type]GRUMBLE[roman type][line break]As soon as it makes its way to your stomach, you feel the magic of your new belt at work. ";
-	if diaper messing < 3, fullscreencutshow figure of cutscene-xavier-nightmare-belt-clean for M;
+	if diaper messing < 3, appropriate-cutscene-display figure of cutscene-xavier-nightmare-belt-clean;
 	say "The matter inside you doubles, triples, quadruples in volume, and keeps going! Your belly bulges and swells and expands, making you look like you're eight months pregnant. The pressure on your bladder[if diaper messing >= 3] and bowels[end if] is now immediately too much - you instantly wet[if diaper messing >= 3] and mess[end if] yourself, beginning to fill your [if D is worn]new [end if]diaper with your shame. By the time your belly has visibly deflated a bit and you are able to regain control of your body, your diaper is already feeling rather soggy and full.";
-	if diaper messing >= 3, fullscreencutshow figure of cutscene-xavier-nightmare-belt-messy for M;
+	if diaper messing >= 3, appropriate-cutscene-display figure of cutscene-xavier-nightmare-belt-messy;
 	say "The true nature of your predicament dawns on you. Whatever you consume will now multiply in quantity many times as it reaches your stomach - and you somehow know this new enchantment is irreversibly permanent. Your short term problem becomes abundantly clear - you effectively have eight to ten servings in front of you to somehow force down. Each spoonful is essentially a whole meal![paragraph break]";
 	say "The effects of the next spoonful is just as bad as the first. As soon as the soup hits your stomach, you find yourself immediately peeing[if diaper messing >= 3] and pooping[end if], filling the room with more hissing and crinkling and driving you wild with [if the diaper addiction of the player > 13]arousal[otherwise]shame[end if]. This time you find yourself allowing your body to continue excavating itself, emptying your entire [if diaper messing >= 3]belly[otherwise]bladder[end if] load into your now overly full nappy. The demon prince gives a childish snigger before snapping his fingers, causing your diaper to become completely dry once again.";
 	say "[first custom style]'Poor baby can't hold her [if diaper messing >= 3]bottom back[otherwise]tinkles[end if] at all! You're going to go through a LOT of diapers from now on, aren't you?'[roman type][line break]You can't deny it - that seems like an inevitable truth.[line break][first custom style]'Did I tell you to stop? Keep going.'[roman type][line break]You sigh and submissively return to slurping down spoonfuls of soup[if diaper messing >= 3] in between bites of bread[end if]. Each mouthful turns very quickly into another soiling session, meaning you spend the next ten minutes in an almost permanent state of using your diaper, with it getting magically cleaned every time it reaches the brink of overflowing. When you are close to the end of your magic mega meal, the prince interrupts you once more.[line break][first custom style]'Okay, this has been fun. The invention has been a complete success. For our final little test, I want you to hold it all in until the end, now.'[roman type][line break]You groan but comply, feeling your belly strain and grow to sizes impossible from just [if diaper messing >= 3]drink[otherwise]food[end if] in the real world. But finally you are done! And just as well - you're going to burst any second. He laughs vindictively.[line break][first custom style]'I think I'll leave this one for my father to witness.'[roman type][line break]He snaps his fingers one final time and his world quickly disappears.[line break]";
@@ -583,7 +583,7 @@ Definition: demon lord (called M) is damageable:
 		if S is magic themed equippable or S is purity equippable, decide yes;
 	if attack-type is 3 and there is a worn dildo heels, decide yes;
 	if attack-type > 3, decide yes;
-	if the class of the player is princess or the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or there is a worn demonic wearthing, decide yes;
+	if the class of the player is priestess or the class of the player is virgin warrior or the class of the player is fertility goddess or the class of the player is cultist or there is a worn demonic wearthing, decide yes;
 	decide no.
 
 To decide which number is the damage modifier of (M - demon lord):
@@ -665,7 +665,7 @@ To say RepeatResponse of (M - demon lord):
 
 To say NonEnthusiasmResponse of (M - demon lord):
 	if the class of the player is princess:
-		say "[first custom style]'[one of]HAHAHA! THIS IS MY REVENGE, PRINCESS!'[or]LOUDER! ALL OF BIMBACIA MUST KNOW OF YOUR SERVITUDE!'[or]YOUR PUNISHMENT IS ONLY BEGINNING, DEAR PRINCESS!'[or]YOU HAVE ONLY YOURSELF TO BLAME, PRINCESS!'[at random][roman type][line break][BigNameDesc of M] claps you harshly across the ass.";
+		say "[first custom style]'[one of]HAHAHA! THIS IS MY REVENGE, PRINCESS!'[or]LOUDER! ALL OF BIMBACIA MUST KNOW OF YOUR SERVITUDE!'[or]YOUR PUNISHMENT IS ONLY BEGINNING, DEAR PRINCESS!'[or]YOU HAVE ONLY YOURSELF TO BLAME, PRINCESS!'[at random][roman type][line break][BigNameDesc of M] slaps you harshly across the ass.";
 		PainUp 1;
 	otherwise:
 		say "[first custom style]'[one of]HAHA, YES, MORTAL! SQUIRM!'[or]HAHAHA! LOUDER! LOUDER!'[or]LOUDER, MORTAL! LOUDER!'[at random][roman type][line break]";

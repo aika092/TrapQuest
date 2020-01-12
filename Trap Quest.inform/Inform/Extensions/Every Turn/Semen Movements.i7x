@@ -20,7 +20,7 @@ A time based rule (this is the compute cum movements rule):
 		otherwise if R < the semen coating of belly and the semen coating of belly > 0:
 			compute belly cum dribbling;
 		otherwise if R < the semen coating of thighs and the semen coating of thighs > 0:
-			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6]  [line break][first custom style]Yuck.[roman type][line break][end if]";
+			say "Globs of [semen] drip from your [ShortDesc of thighs] onto the ground.[if the semen addiction of the player < 6] [line break][first custom style]Yuck.[roman type][line break][end if]";
 			CumThighsDown 1;
 			SemenPuddleUp 1;
 		if the total fill of belly > 0:
@@ -359,6 +359,37 @@ To execute (E - enema-incontinence):
 	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if]. ";
 	increase incontinence by 1;
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
+
+
+
+
+
+[!<ComputeAbsorption>+
+
+REQUIRES COMMENTING
+
++!]
+To compute absorption:
+	repeat with C running through worn absorption clothing:
+		compute absorption of C.
+
+[!<ComputeAbsorptionOfClothing>+
+
+REQUIRES COMMENTING
+
++!]
+To compute absorption of (B - a clothing):
+	if the total-soak of B > 0:
+		let X be 50;
+		if B is blessed, now X is 40;
+		if B is cursed, now X is 100;
+		if a random number between 1 and X is 1:
+			if B is perceived soiled:
+				say "Your [printed name of B] [if B is identified]cleans itself by absorbing all the bodily fluids soaked into it.[otherwise]seems to somehow clean itself of bodily fluids.";
+				if B is unidentified:
+					say "It's a [ShortDesc of B] of absorption!";
+					now B is identified;
+			clean B.
 
 
 

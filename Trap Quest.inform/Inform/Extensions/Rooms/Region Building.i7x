@@ -215,7 +215,9 @@ To solve the puzzle:
 					say "Region successfully built.";
 					if the player is consenting, do nothing;
 				if the player is not a top donator, now debugmode is 0;
-				now Terra Incognita is closed.
+				now Terra Incognita is closed;
+	repeat with R running through rooms:
+		update Nviables of R.
 
 [!<FlipTheTableAroundRoom>+
 
@@ -253,12 +255,12 @@ To flip the table around (X - a labyrinth room):
 
 [!<FlipTheTableAroundHauntedRoom>+
 
-REQUIRES COMMENTING
+shouldn't be relevant but we'll see?
 
 +!]
-[To flip the table around (X - a haunted room):[shouldn't be relevant but we'll see?]
+[To flip the table around (X - a haunted room):
 	repeat with R running through puzzle piece placed rooms:
-		unless R is Mansion02[ or R is Mansion12] or R is Mansion22[ or R is Mansion23]:
+		unless R is Mansion02 or R is Mansion22:
 			now Neighbour Finder is R;
 			repeat with D running through N-viable directions:
 				change the D exit of R to Solid Rock;

@@ -164,6 +164,7 @@ To HookPull:
 	if S > 4 or the class of the player is cheerleader:[cheerleaders always get a chance to try.]
 		if S < 9, now S is 9;
 		let R be a random number from 1 to S;
+		if debuginfo > 0, say "[input-style]Escape check: Dexterity-based roll d[S] ([R]) | (6.5) ass hook difficulty check[roman type][line break]";
 		if R > 3:
 			if R > 6:
 				if H is grabbing the player, say "You manage to slowly pull down on the hook until it releases your [ShortDesc of K], ";

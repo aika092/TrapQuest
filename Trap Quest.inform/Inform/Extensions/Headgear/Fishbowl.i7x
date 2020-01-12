@@ -38,7 +38,7 @@ To decide which figure-name is the clothing-image of (C - fishbowl-hat):
 	decide on figure of upside down fishbowl.
 
 To say ClothingDesc of (H - fishbowl-hat):
-	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session [NameDesc of woman-barbara][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red Sharpie across the front, to let everyone know you have no honour even amongst your own kind[end if].".
+	say "This glass bowl [if H is worn]sits upside down on your head. It [end if]still has the dregs of the [if the fill-colour of fishbowl is murky][urine] and [end if][semen] that was collected during your gangbang session [NameDesc of woman-barbara][if H is betrayal]. It has the words 'WHORE TRAITOR' written in red sharpie across the front, to let everyone know you have no honour even amongst your own kind[end if].".
 
 To compute SelfExamineDesc of (H - fishbowl-hat):
 	say "You are wearing a glass bowl [if H is betrayal]that reads 'WHORE TRAITOR' [end if]on top of your [ShortDesc of hair]. ".
@@ -97,7 +97,7 @@ To progress quest of (Q - whore-exposing-quest) for (M - a monster):
 				repeat with C running through worn clothing:
 					if the quest of C is Q, compute quest completion of Q on C;
 			otherwise:
-				say "[BigNameDesc of H] shudders happily at your exposure as a whore. Keep it up.".
+				say "[BigNameDesc of H] shudders happily at your [one of]exposure as a whore[or]whore-like exposure[or]whorish appearance[then at random]. Keep it up.".
 
 To compute persistent reward of (Q - whore-exposing-quest) on (C - a clothing):
 	if C is cursed:

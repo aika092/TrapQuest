@@ -142,11 +142,11 @@ To compute student perception of (M - nurse):
 	otherwise if the breast-enhancement of M is 1:
 		say "[speech style of M]'Ah yes, I've been expecting you, [NameBimbo]. You're here for your breast enhancement, right? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise if the body soreness of the player > 0:
-		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]!  Why don't you come through to the med bay [one of]with me?  I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
+		say "[speech style of M]'Oh no [honey of M], you look [if the body soreness of the player > 8]like you've been through the wars[otherwise if the body soreness of the player > 4]sore all over[otherwise]a little hurt[end if]! Why don't you come through to the med bay [one of]with me? I'm sure we can... make you better...'[or]so we can get your body changed back to the way it should be...'[stopping][roman type][line break]";
 	otherwise if the player is tired:
 		say "[speech style of M]'You look [if the player is not very tired]a little [end if]tired, [honey of M]. Want to come through to the medbay for a quick rest?'[roman type][line break]";
 	otherwise if the boost-cooldown of M <= 0:
-		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]?  If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
+		say "[speech style of M]'Are you looking for a [']boost['], [honey of M]? If so, [please] hop on the table in the med bay and I'll make sure you get what you need.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Sorry [honey of M], but if I give you a [']boost['] too often then there'll be none left for anyone else. You'll have to come back [if the boost-cooldown of M < 50]soon[otherwise]later[end if].'[roman type][line break]".
 
@@ -164,7 +164,7 @@ To say WhoAnswer of (M - a nurse):
 	say "[speech style of M]'I'm the nurse! Glad to make your acquaintance, dear.'[roman type][line break]".
 
 To say WhereAnswer of (M - a nurse):
-	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best on your schoolwork and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]You're in the nurse's office sweetie. If you're not feeling too well, why not try coming with me to the back?'[otherwise]Mmm, I'm not sure. Just do your best on your school-work and I'm sure you'll be all ranked up in no time!'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - a nurse):
 	say "[speech style of M]'[one of]Mmm, I don't know. Maybe you need to increase your rank before you can find out?[or]Mmm, well, I have to stay here to take care of the students, so I don't know too much about that.'[or]Sorry honey, but I don't know much about that. Maybe when you're all done here you should try increasing your rank?'[at random][roman type][line break]".
@@ -208,7 +208,9 @@ To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
 	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds his ass against you. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] grinds her cunt over your nose and mouth, coating them in her juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
-	if med bay bed is grabbing the player, now another-turn is 1.
+	if med bay bed is grabbing the player:
+		if another-turn-flavour is "", now another-turn-flavour is "You're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face.";
+		now another-turn is 1.
 
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;

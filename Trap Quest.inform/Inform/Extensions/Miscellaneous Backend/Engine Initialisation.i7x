@@ -195,11 +195,11 @@ To correct table entries:
 		blank out the whole row;
 		choose the row with a toggle of custom name rule in the Table of Female Name Diaper Quest Options;
 		blank out the whole row;
-	[if the player is not a top donator:
+	if the player is not a top donator:
 		choose the row with a subtable of Table of Festive Options in the Table of Kink Options;
 		blank out the whole row;
 		choose the row with a subtable of Table of Festive Options in the Table of Diaper Fetish Options;
-		blank out the whole row;]
+		blank out the whole row;
 	if diaper quest is 0:
 		choose the row with a toggle of easter content toggle rule in the Table of Festive Options;
 		blank out the whole row;

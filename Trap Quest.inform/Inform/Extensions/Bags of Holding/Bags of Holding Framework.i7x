@@ -19,6 +19,7 @@ Definition: a potion is never-in-bag: decide yes.
 Definition: an elixir is never-in-bag: decide yes.
 Definition: a tincture is never-in-bag: decide yes.
 Definition: water-bomb is never-in-bag: decide yes.
+Definition: a trophy is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried.
 Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet.

@@ -107,7 +107,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 			decrease N by 1;
 		if the semen coating of C > 0:
 			say "[SemenEncounterFlav]";
-			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got cum on your face!  That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
+			if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've got cum on your face! That's not great - you'll be extremely humiliated if anyone sees you. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe face with X'. Your chest and belly work similarly.[roman type][line break][or][stopping]";
 			if LC is tethering lipstick collar, end tethering;
 			if face is temporarily made up and a random number between 1 and 6 is 1:
 				say "[if the make-up of face > 1]Some of your[otherwise]Your[end if] make up is washed away.";
@@ -264,7 +264,7 @@ To UniqueSquirt (L - a liquid-object) On (C - Thighs) by (N - a number):
 		while the semen coating of C < 10 and N > 0:
 			LiquidSoak L on C;
 			decrease N by 1;
-		if newbie tips is 1 and the semen coating of C > 0, say "[one of][newbie style]Newbie tip: You've got cum on your thighs!  That's bad for you - you'll have reduced dexterity until it's gone. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
+		if newbie tips is 1 and the semen coating of C > 0, say "[one of][newbie style]Newbie tip: You've got cum on your thighs! That's bad for you - you'll have reduced dexterity until it's gone. It'll slowly drip off, but if you have any spare clothing, you might be able to use it as a rag to wipe the cum off, by typing 'wipe thighs with X'.[roman type][line break][or][stopping]";
 	otherwise:
 		if the semen coating of C > 0:
 			if the semen coating of C > N:
@@ -622,6 +622,7 @@ REQUIRES COMMENTING
 +!]
 To compute tits cum dribbling:
 	now breasts is soaked;
+	let HCN be highest-cleavage;
 	let HC be highest-cleavage-clothing;
 	if HC is unsoaked clothing:
 		say "Some [semen] runs down your [BreastDesc] and onto your [ShortDesc of HC]. ";

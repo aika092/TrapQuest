@@ -115,6 +115,8 @@ Understand "resilient" as resilient-tentacle-monster.
 
 A wet-tentacle-monster is a kind of tentacle monster.
 
+[Definition: a wet-tentacle-monster is musky: decide yes.]
+
 slimy-tentacle-monster is a wet-tentacle-monster.
 To say ShortDesc of (M - slimy-tentacle-monster):
 	say "slimy tentacle monster".
@@ -134,6 +136,7 @@ slick-tentacle-monster is a wet-tentacle-monster.
 To say ShortDesc of (M - slick-tentacle-monster):
 	say "slick tentacle monster".
 Understand "slick" as slick-tentacle-monster.
+
 
 
 
@@ -347,7 +350,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 	if spare-tentacle is 1 and (a random number between 1 and 4 > 1 or the class of the player is schoolgirl or the class of the player is magical girl or M is dull-tentacle-monster):
 		choose a sex method;
 		if targeted-body-part is face:
-			say "[BigNameDesc of M] decides to escalate things and before you can react it has forced another of its warm, thick appendages into your open mouth!  It thrusts away at the same pace as the other[if the number of orifices penetrated by M is 2]s[end if]. [if M is massive]The tentacle is so large that your jaw is forced into a painfully open position.[otherwise]The tentacle keeps hitting the back of your throat, causing you to make loud gagging noises.[end if]";
+			say "[BigNameDesc of M] decides to escalate things and before you can react it has forced another of its warm, thick appendages into your open mouth! It thrusts away at the same pace as the other[if the number of orifices penetrated by M is 2]s[end if]. [if M is massive]The tentacle is so large that your jaw is forced into a painfully open position.[otherwise]The tentacle keeps hitting the back of your throat, causing you to make loud gagging noises.[end if]";
 			now M is penetrating face;
 		otherwise if targeted-body-part is asshole:
 			if the player is not ass protected:
@@ -646,7 +649,7 @@ To compute damage of (M - a tentacle monster):
 			anger M;
 			now M is interested;
 			now the sleep of M is 0;
-			say "It wakes up, and looks around for the cause of this rude awakening!  It looks like you might be in trouble...";
+			say "It wakes up, and looks around for the cause of this rude awakening! It looks like you might be in trouble...";
 	otherwise:
 		compute death of M.
 

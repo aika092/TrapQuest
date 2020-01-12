@@ -27,7 +27,7 @@ To compute furniture resting on (F - modification machine):
 	if piercing-fetish is 1 and R < 6, now R is 1;
 	let P be a random eligible piercing;
 	if the player is male and (the size of penis <= min penis size or the real size of penis <= min penis size) and tg fetish >= 1 and a random number between 1 and 3 > 1:
-		say "[bold type]A robotic contraption you hadn't noticed with a large sucker on the end shoots down over your crotch![roman type]  You can't see what's happening but feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]!  The sucker pulls back allowing you to realise that a brand new woman's [variable custom style][vagina][roman type] has taken its place. ";
+		say "[bold type]A robotic contraption you hadn't noticed with a large sucker on the end shoots down over your crotch![roman type] You can't see what's happening but feel your insides behind your crotch twisting and turning and rearranging themselves[if the size of penis > 0], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! The sucker pulls back allowing you to realise that a brand new woman's [variable custom style][vagina][roman type] has taken its place. ";
 		SexChange the player;
 	otherwise if diaper quest is 0 and R <= 2 and P is actually summonable:
 		say "[PiercingFlav of P]";
@@ -103,7 +103,7 @@ To compute (M - a modification machine) stretching (F - a fuckhole):
 	let O be the openness of F;
 	now busy is 1;
 	now M is penetrating F;
-	say "A robotic arm with a [dildodesc of M] directs itself towards your crotch. [if the player is not a pervert]You are powerless to resist[otherwise if the player is not a nympho]You lie there stunned[otherwise]You watch with growing excitement[end if] as it pushes forward and starts pressing against your [variable F]. As the pressure increases, it starts slowly rotating like a drill!  [if the openness of F < 10]It's definitely bigger than you're comfortable taking!  You moan loudly as it slowly but surely forces itself in, stretching you wider[otherwise]As it forces itself in, the ridiculously wide bottom section of the cone threatens to split your already gaping hole in two[end if]!";
+	say "A robotic arm with a [dildodesc of M] directs itself towards your crotch. [if the player is not a pervert]You are powerless to resist[otherwise if the player is not a nympho]You lie there stunned[otherwise]You watch with growing excitement[end if] as it pushes forward and starts pressing against your [variable F]. As the pressure increases, it starts slowly rotating like a drill! [if the openness of F < 10]It's definitely bigger than you're comfortable taking! You moan loudly as it slowly but surely forces itself in, stretching you wider[otherwise]As it forces itself in, the ridiculously wide bottom section of the cone threatens to split your already gaping hole in two[end if]!";
 	say "[variable custom style][one of]Oof![or]Ack![or]Aahn![at random][roman type][line break]";
 	ruin F;
 	while the openness of F is O and the openness of F < 10 and delayed fainting is 0 and the latex-transformation of the player < 3:
@@ -125,7 +125,7 @@ To compute (M - a modification machine) babifying:
 		if the player is feeling full, say "As if to answer your question, your stomach begins to grown and churn.";
 	otherwise if the total fill of belly is 0 and a random number between 1 and 2 is 1:
 		compute M removing all protection from asshole;
-		say "A robotic arm pushes a small tube into your [asshole]. A moment later, you can feel yourself being pumped full of an enema!  Moments later, you are brought to bursting point, your belly bulging under the strain. The tube is removed, leaving you with a desperate urge to [bold type]expel[roman type] all the liquid.";
+		say "A robotic arm pushes a small tube into your [asshole]. A moment later, you can feel yourself being pumped full of an enema! Moments later, you are brought to bursting point, your belly bulging under the strain. The tube is removed, leaving you with a desperate urge to [bold type]expel[roman type] all the liquid.";
 		assfill belly limit water;
 	otherwise if the player is bursting and the player is not really bursting:
 		say "A robotic arm injects you in the side with a needle. ";

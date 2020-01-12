@@ -8,6 +8,7 @@ Check plugging something with:
 	if the second noun is not an insertable thing, say "The [printed name of second noun] cannot be inserted into your [noun]." instead;
 	if the second noun is clothing:
 		if the second noun is not sex toy and the second noun is not dildo sword, try wearing the second noun instead;
+	if the noun is vagina and the second noun is egg, say "You can't do that yet. In a future release, you'll probably be able to." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead;
 	if the noun is actually occupied and the second noun is not penetrating the noun, say "Your [noun] is already occupied by the [printed name of random object filling noun]." instead;
 	if the second noun is penetrating an orifice:
@@ -58,10 +59,10 @@ Check unplugging something:
 		otherwise say "That is not inside of you!" instead;
 	if the noun is not penetrating a fuckhole, say "That is not removed like this, try [bold type]removing[roman type] it instead" instead;
 	if the noun is cursed and the noun is not dildo sword: [dildo swords come straight back out]
-		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside!  It must be the curse..." instead;
+		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside! It must be the curse..." instead;
 		if the noun is worn:
 			now the noun is sure;
-			say "It refuses to budge, it's like it's glued inside!  It must be cursed..." instead;
+			say "It refuses to budge, it's like it's glued inside! It must be cursed..." instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [printed name of random bottom level ass protection clothing worn by the player] out of the way first." instead;
 	if the noun is penetrating vagina and the player is pussy protected, say "You need to get your [printed name of random bottom level protection clothing worn by the player] out of the way first." instead;

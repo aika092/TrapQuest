@@ -34,12 +34,25 @@ To Start The Machine:
 	move toilet backdrop to all urinals rooms;
 	move toilet backdrop to all toilets rooms;
 	if spontaneous tattoos is 1:
-		summon ink-me tattoo;
-		say "You notice that [if latex prisoner is 0 and halloween content is 0]you are naked, and that [end if]you have a tattoo of the words 'INK ME' on the back of your left hand.[line break]";
+		if background-pure is 1, summon virgin void tattoo;
+		otherwise summon ink-me tattoo;
+		say "You notice that [if latex prisoner is 0 and halloween content is 0 and christmas content is 0]you are naked, and that [end if]you have a tattoo of the [if background-pure is 1]word 'VIRGIN' on your belly[otherwise]words 'INK ME' on the back of your left hand[end if].[line break]";
+		focus-consider a random worn tattoo;
 	if background-nurse is 1:
 		let B be a random bandage;
 		now B is held by the player;
 		say "You notice that you seem to have some medical supplies. Handy![line break]";
+	if christmas content is 1:
+		if diaper lover > 0:
+			summon christmas bonnet cursed;
+			summon naughty-or-nice outfit;
+			summon plain-small-diaper uncursed;
+			say "You seem to have been given some kind of... festive baby outfit and diaper to wear?! This must be some weird Christmas-themed event...";
+		otherwise:
+			summon conic santa hat cursed;
+			summon present outfit;
+			increase the transform-resistance of present outfit by 2;
+			say "You seem to have been given some kind of... sexy festive outfit to wear?! This must be some weird Christmas-themed event...";
 	if halloween content is 1:
 		set up vampiress;
 		now vampiress is in Mansion01;
@@ -389,7 +402,7 @@ To initialise wardrobe:
 	if combatvisor is 1, now combat visor is worn by the player;
 	if christmas content is 1:
 		initialise christmas gifts;
-		now a random santa hat is in pink wardrobe.
+		[now a random santa hat is in pink wardrobe.]
 
 To compute starting headgear:
 	let H be a random roleplay headgear;

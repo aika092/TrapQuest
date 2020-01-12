@@ -52,7 +52,7 @@ To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance]  [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 To say MinimalBarSecondRow:
 	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
@@ -70,10 +70,10 @@ To say LowResBarPotty:
 	say "STOMACH: [VagueStomach] [if there is a worn diaper]DIAPER: [VagueDiaper][otherwise if there is a worn knickers]UNDIES: [VagueDiaper][end if]".
 
 To say LowResBarAppearance:
-	say "[TQDQ Appearance]  [VagueDignity]".
+	say "[TQDQ Appearance] [VagueDignity]".
 
 To say LowResAddictions:
-	say "[if diaper quest is 1]DIAPER ATTITUDE: [VagueDiaperAddiction][otherwise]SEXUALITY: [VagueAddiction][end if]  PERSONALITY: [VagueDelicateness]".
+	say "[if diaper quest is 1]DIAPER ATTITUDE: [VagueDiaperAddiction][otherwise]SEXUALITY: [VagueAddiction][end if] PERSONALITY: [VagueDelicateness]".
 
 To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
@@ -158,7 +158,7 @@ REQUIRES COMMENTING
 +!]
 To say VagueStrength:
 	if saved-flat-strength < 5:
-		say "Weakling  ";
+		say "Weakling ";
 	otherwise if saved-flat-strength < 10:
 		say "Womanly   ";
 	otherwise if saved-flat-strength < 15:
@@ -184,11 +184,11 @@ To say VagueDex:
 	if saved-flat-dexterity < 5:
 		say "Stiff     ";
 	otherwise if saved-flat-dexterity < 10:
-		say "Sluggish  ";
+		say "Sluggish ";
 	otherwise if saved-flat-dexterity < 15:
 		say "Limber    ";
 	otherwise if saved-flat-dexterity < 20:
-		say "Flexible  ";
+		say "Flexible ";
 	otherwise if saved-flat-dexterity < 25:
 		say "Acrobat   ";
 	otherwise if saved-flat-dexterity < 30:
@@ -479,11 +479,11 @@ To say VagueBreast:
 	otherwise if the largeness of breasts < 5:
 		say "Tiny     ";
 	otherwise if the largeness of breasts < 7:
-		say "Average  ";
+		say "Average ";
 	otherwise if the largeness of breasts < 9:
 		say "Large    ";
 	otherwise if the largeness of breasts < 12:
-		say "V Large  ";
+		say "V Large ";
 	otherwise if the largeness of breasts < 15:
 		say "Giant    ";
 	otherwise if the largeness of breasts < 18:
@@ -506,7 +506,7 @@ To say VagueBelly:
 	otherwise if the largeness of belly < 9:
 		say "Inflated";
 	otherwise:
-		say "Absurd  ".
+		say "Absurd ".
 
 [!<SayVagueHips>+
 

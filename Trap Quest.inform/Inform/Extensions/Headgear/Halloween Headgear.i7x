@@ -8,7 +8,7 @@ Definition: a halloween headgear is roleplay: decide no.
 
 To set up influence of (C - a halloween headgear):
 	set up sex-based influence of C.
-	
+
 Check going down when there is a worn halloween headgear:
 	say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
 
@@ -87,22 +87,13 @@ To compute full outfit summon of (H - rubber nun cowl):
 		summon nun-top;
 		say "a [nun-top], ";
 	if red-orange briefs is actually summonable:
-		summon red-orange briefs;
-		now red-orange briefs is bland;
-		now red-orange briefs is blandness;
-		now the raw-magic-modifier of red-orange briefs is 0;
+		summon red-orange briefs uncursed;
 		say "a [red-orange briefs], ";
 	if black-rubber-hobble-skirt is actually summonable:
-		summon black-rubber-hobble-skirt;
-		now black-rubber-hobble-skirt is bland;
-		now black-rubber-hobble-skirt is blandness;
-		now the raw-magic-modifier of black-rubber-hobble-skirt is 0;
+		summon black-rubber-hobble-skirt uncursed;
 		say "a [black-rubber-hobble-skirt], ";
 	if black-latex-boots is actually summonable:
-		summon black-latex-boots;
-		now black-latex-boots is bland;
-		now black-latex-boots is blandness;
-		now the raw-magic-modifier of black-latex-boots is 0;
+		summon black-latex-boots uncursed;
 		now the heel-height of black-latex-boots is 1;
 		say "and a [black-latex-boots]!".
 
@@ -205,16 +196,10 @@ To compute full outfit summon of (H - doll hairbow):
 		say "a [doll-dress], ";
 	let BOR be a random black-and-orange rubber stockings;
 	if BOR is actually summonable:
-		summon BOR;
-		now BOR is bland;
-		now BOR is blandness;
-		now raw-magic-modifier of BOR is 0;
+		summon BOR uncursed;
 		say "a [BOR], ";
 	if red-orange briefs is actually summonable:
-		summon red-orange briefs;
-		now red-orange briefs is bland;
-		now red-orange briefs is blandness;
-		now the raw-magic-modifier of red-orange briefs is 0;
+		summon red-orange briefs uncursed;
 		say "a [red-orange briefs], ";
 	let P be a random ghost pacifier;
 	if P is actually summonable:
@@ -222,10 +207,7 @@ To compute full outfit summon of (H - doll hairbow):
 		say "a [P], ";
 	let S be black girly bow court heels;
 	if S is actually summonable:
-		summon S;
-		now S is bland;
-		now S is blandness;
-		now the raw-magic-modifier of S is 0;
+		summon S uncursed;
 		now the heel-height of S is 1;
 		say "and a [S]!".
 

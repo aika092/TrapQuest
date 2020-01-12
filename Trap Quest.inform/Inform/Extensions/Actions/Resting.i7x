@@ -46,7 +46,7 @@ Carry out resting:
 					break;
 	if there is a worn maternity dress and there is a worn yoga pants:
 		while the body soreness of the player > 0 and the alert of the player is 0:
-			say  "[one of]Somehow, your clothing is helping heal your body as you rest!  Magic![or]You continue to [if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.[stopping]";
+			say  "[one of]Somehow, your clothing is helping heal your body as you rest! Magic![or]You continue to [if the largeness of breasts > 13]use your [BreastDesc] as pillows to [end if]rest.[stopping]";
 			allocate 6 seconds;
 			BodyHeal 1;
 			compute extra turn;

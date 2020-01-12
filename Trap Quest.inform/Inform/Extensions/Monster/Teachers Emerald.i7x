@@ -17,13 +17,13 @@ To decide which figure-name is the monster-image of (M - teacher-hannah):
 
 To decide which figure-name is the pacified-image of (M - teacher-hannah):
 	if M is diaper-enslaved, decide on figure of babslave hannah;
-	decide on figure of missing NPC.
+	decide on figure of slave hannah.
 
 To say MonsterDesc of (M - teacher-hannah):
-	if M is diaper-enslaved:
-		say "This tall ginger-haired black [man of M] has had [his of M] slinky blue dress swapped out for a super-short navy baby dress with a cute starry sky pattern, with matching colours of stockings and baby mittens. [big he of M] is wearing a matching white diaper with blue stars. The pacifier gag [he of M] had been wielding is firmly locked in [his of M] mouth. [big he of M]'s on [his of M] knees in front of the wooden paddle [he of M] had previously been holding, with one mittened hand held up in front of [his of M] [ChestDesc of M]. Whenever [he of M] lowers the hand, the paddle springs to life, rising up from the ground and slapping [him of M] on the [ChestDesc of M]. And every time [he of M] tries to change position so that the paddle can't get to [his of M] [ChestDesc of M], it just starts spanking [his of M] butt! Oh dear...";
+	if M is pacified:
+		say "This tall ginger-haired black [man of M] has had [his of M] slinky blue dress swapped out for a super-short navy [if M is diaper-enslaved]baby dress with a cute starry sky pattern, with matching colours of stockings and baby[otherwise]crop top that doesn't even come down far enough to cover [his of M] breasts, and matches the colour of [his of M] new fingerless bondage[end if] mittens. [big he of M] is wearing a matching [if M is diaper-enslaved]white diaper with blue stars[otherwise]pair of 'bitch stockings' which have the calves glued to the thighs, rendering [his of M] knees permanently bent back, forcing [him of M] to kneel at all times[end if]. The [if M is diaper-enslaved]pacifier [otherwise]ball[end if]gag [he of M] had been wielding is firmly locked in [his of M] mouth. [unless M is diaper-enslaved]A solid metal chastity belt is locked around [his of M] loins. It's permanently welded shut. [big he of M][']ll never be able to touch [himself of M] down there ever again. [end if][big he of M]'s on [his of M] knees in front of the wooden paddle [he of M] had previously been holding, with one mittened hand held up in front of [his of M] [ChestDesc of M]. Whenever [he of M] lowers the hand, the paddle springs to life, rising from the ground and slapping [him of M] on the [ChestDesc of M]. And every time [he of M] tries to change position so the paddle can't get to [his of M] [ChestDesc of M], it just starts spanking [his of M] butt! Oh dear...";
 	otherwise:
-		say "This tall ginger-haired black [man of M] has a slinky blue dress that goes down to her knees. [big he of M]'s wielding a paddle in one hand and a [if diaper quest is 1]pacifier [otherwise]ball[end if]gag in the other. [big his of M] gaze and posture exude a great amount of confidence and strength.".
+		say "This tall ginger-haired black [man of M] has a slinky blue dress that goes down to [his of M] knees. [big he of M]'s wielding a paddle in one hand and a [if diaper quest is 1]pacifier [otherwise]ball[end if]gag in the other. [big his of M] gaze and posture exude a great amount of confidence and strength.".
 
 The teacher-name of teacher-hannah is "Hannah".
 
@@ -48,6 +48,7 @@ To say DefeatFlav of (M - teacher-hannah):
 pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
 
 To compute teaching of (L - pain-lesson):
+	allocate 1 seconds;
 	let M be the lesson-teacher of L;
 	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as [he of M] paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to [his of M]. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
 	if the player is wrist bound or the player is ankle bound or portal gag is worn:
@@ -128,7 +129,7 @@ To compute teaching of (L - pain-lesson):
 								SilentlyDelicateUp 5;
 								say "[ClitPiercingConcede of ST]";
 								now competition-success is 1;
-			fullscreencutshow figure of teacher hannah cutscene 2 for M;
+			appropriate-cutscene-display figure of teacher hannah cutscene 2 with priority 3; [draw it straight away]
 			if competition-success is 1:
 				say "Yes you won!!! You feel a little bad but you can't stop yourself from grinning from ear to ear. Sweat drips down your face, but it was worth it. [BigNameDesc of M] claps her hands.[line break][speech style of M]'Well done [NameBimbo]. Yes, you've definitely earned a promotion.'[roman type][line break]";
 				now armband is ruby;
@@ -164,7 +165,7 @@ To compute teaching of (L - pain-lesson):
 		allocate 12 seconds;
 		if wrist collar bar is actually summonable and (portal gag is not actually summonable or a random number between 1 and 2 is 1):
 			say "Well, I think we should try taking away someone's ability to use their wrists for a while, and see how they feel after that.'[roman type][line break][big his of M] eyes scan the room and then fall on you.[line break][speech style of M]'Yes, this will be perfect for you!'[roman type][line break][BigNameDesc of M] [if wrist collar bar is held]takes the [ShortDesc of wrist collar bar] from your possession[otherwise]produces a [ShortDesc of wrist collar bar] from underneath [his of M] desk and carries it over to you[end if]. [big he of M] makes you stand up and then uses it to strictly bind your wrists to your neck behind your back.[line break][speech style of M]'I imagine that wearing this around for a bit will give you a good idea of what submission is like! [bold type]Keep it on until next time we have this class [speech style of M] and I'll reward you with a promotion, okay?'[roman type][line break]You whine but nod - it's not like you've got much choice!";
-			if diaper lover > 0, fullscreencutshow figure of teacher hannah cutscene 1 for M;
+			if diaper lover > 0, appropriate-cutscene-display figure of teacher hannah cutscene 1;
 			summon wrist collar bar locked;
 			say "You are surprised at how comfortable your arms are, forced to bend into this backwards position![line break][variable custom style]I must be getting more flexible![roman type][line break]";
 			DexUp 1;
@@ -174,7 +175,7 @@ To compute teaching of (L - pain-lesson):
 			let K be a random worn removable uncursed unglued unlocked knickers;
 			if (portal-pants is actually summonable or (a random number between 1 and 2 is 1 and K is knickers and the number of worn crotch covering clothing is 1)) and (watersports fetish is 1 or watersports mechanics is 0): [Can't do this if player needs to pee but isn't into piss drinking]
 				if K is knickers, now K is in the location of the player;
-				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is possessing a penis][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise if the player is possessing a vagina][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to stop yourself from keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
+				say "A wicked grin flashes on [NameDesc of M][']s face.[line break][speech style of M]'Would you like it, [NameBimbo]?'[roman type][line break]Concern flashes through your brain - that seems too good to be true. And you quickly find out, yes it is. [BigNameDesc of M] [if K is knickers]removes your [ShortDesc of K] and [end if]straps the other half of the portal equipment over your crotch, so that your [if the player is male][ShortDesc of penis] is pushed through the portal and into your mouth[otherwise][vagina] is pressed through the portal right against your mouth and tongue[end if].[line break][speech style of M]'Yes, yes, this is perfect. I don't think you'll be able to resist keeping yourself nice and stimulated until we next see each other. How delightful[if watersports fetish is 1]! And if you find yourself needing the toilet before then... well, I imagine that might be quite fun too[end if].'[roman type][line break]";
 				summon portal-pants locked;
 			otherwise:
 				let N be a random alive male teacher;
@@ -328,41 +329,45 @@ To compute teaching of (L - toy-lesson):
 				let bingo be 0;
 				repeat with N running through LN:
 					increase TN by N;
-				let RN be a random number between 1 and TN;
-				let WST be the player;
-				while the number of entries in LN > 0:
-					decrease RN by entry 1 from LN;
-					if RN > 0 or bingo is 1:
-						add entry 1 from LN to LN2;
-						remove entry 1 from LN;
-						add entry 1 from LS to LS2;
-						remove entry 1 from LS;
-					otherwise:
-						now WST is entry 1 of LS;
-						remove entry 1 from LN;
-						remove entry 1 from LS;
-						now bingo is 1;
-				while the number of entries in LN2 > 0: [move all names back from the backup list to the main list, but the winner has been removed]
-					add entry 1 from LN2 to LN;
-					remove entry 1 from LN2;
-					add entry 1 from LS2 to LS;
-					remove entry 1 from LS2;
-				if armband is emerald or WST is student:
-					say "[BigNameDesc of M] shuffles the pieces of paper in [his of M] raffle box and then picks one. [big he of M] looks up with a smile.[line break][speech style of M]'Congratulations [if WST is yourself][NameBimbo][otherwise][student-name of WST][end if]! [one of]You're a winner today[or]Lucky you[or]Your name's on this one[at random].'[roman type][line break]";
-					if WST is yourself or WST is promotable student, say "[big he of M] snaps [his of M] fingers as [he of M] makes gesture towards [if WST is yourself]you[otherwise][him of WST][end if].";
-					if WST is student:
-						promote WST;
-					otherwise:
-						now armband is ruby;
-						say "You watch as the ID card inside your armband transforms!";
-						if diaper quest is 0:
-							now the armband-title of armband is "Darling";
-							now the armband-print of armband is "daring dong lover";
+				if TN > 0:
+					let RN be a random number between 1 and TN;
+					let WST be the player;
+					while the number of entries in LN > 0:
+						decrease RN by entry 1 from LN;
+						if RN > 0 or bingo is 1:
+							add entry 1 from LN to LN2;
+							remove entry 1 from LN;
+							add entry 1 from LS to LS2;
+							remove entry 1 from LS;
 						otherwise:
-							now the armband-title of armband is "Bambi";
-							now the armband-print of armband is "brave buttplug bearer";
-						say ClothingDesc of armband;
-						update students; [an important line which makes boring old students disappear and new cool ones appear]
+							now WST is entry 1 of LS;
+							remove entry 1 from LN;
+							remove entry 1 from LS;
+							now bingo is 1;
+					while the number of entries in LN2 > 0: [move all names back from the backup list to the main list, but the winner has been removed]
+						add entry 1 from LN2 to LN;
+						remove entry 1 from LN2;
+						add entry 1 from LS2 to LS;
+						remove entry 1 from LS2;
+					if armband is emerald or WST is student:
+						say "[BigNameDesc of M] shuffles the pieces of paper in [his of M] raffle box and then picks one. [big he of M] looks up with a smile.[line break][speech style of M]'Congratulations [if WST is yourself][NameBimbo][otherwise][student-name of WST][end if]! [one of]You're a winner today[or]Lucky you[or]Your name's on this one[at random].'[roman type][line break]";
+						if WST is yourself or WST is promotable student, say "[big he of M] snaps [his of M] fingers as [he of M] makes gesture towards [if WST is yourself]you[otherwise][him of WST][end if].";
+						if WST is student:
+							promote WST;
+						otherwise:
+							now armband is ruby;
+							say "You watch as the ID card inside your armband transforms!";
+							if diaper quest is 0:
+								now the armband-title of armband is "Darling";
+								now the armband-print of armband is "daring dong lover";
+							otherwise:
+								now the armband-title of armband is "Bambi";
+								now the armband-print of armband is "brave buttplug bearer";
+							say ClothingDesc of armband;
+							update students; [an important line which makes boring old students disappear and new cool ones appear]
+				otherwise:
+					say "[NameDesc of M] folds [his of M] arms and frowns.[line break][speech style of M]'Wow, [if winnersAnnounced > 1]the rest of [end if]you ALL failed. How disappointing.'[roman type][line break]";
+					now winnersAnnounced is raffleWinners;
 			say "[speech style of M]'Well, that's all she wrote for today! Until next time, brats.'[roman type][line break][BigNameDesc of M] announces the end of the class.";
 			repeat with P running through plugs in the location of the player:
 				unless P is worn, only destroy P;
