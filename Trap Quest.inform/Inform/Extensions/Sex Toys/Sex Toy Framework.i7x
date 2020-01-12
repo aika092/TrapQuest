@@ -271,7 +271,7 @@ To compute gripping of (I - an insertable thing):
 			now vaginalGripCount is 0.
 
 To decide which number is the bartering value of (T - a sex toy) for (M - a mannequin):
-	unless M  is retaining a sex toy, decide on 3;
+	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
 

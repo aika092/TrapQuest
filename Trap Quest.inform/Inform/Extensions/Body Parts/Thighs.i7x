@@ -29,7 +29,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the weight of (XXX - thighs):
 	let S be the flesh volume of thighs;
-	if the latex-transformation of the player > 1 and  S > 0, now S is 0;
+	if the latex-transformation of the player > 1 and S > 0, now S is 0;
 	decide on S.
 
 Definition: thighs is exposed if the concealer of thighs is nothing.

@@ -2,7 +2,7 @@ Witch by Monster begins here.
 
 witch is a monster. witch is intelligent. witch has a number called altar-uses. The altar-uses of a witch is 2. witch is unconcerned. witch has a number called curse-quest. witch can be bitchy or unbitchy. witch is bitchy.
 
-witch is in Woods20.  Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
+witch is in Woods20. Understand "sneering" as witch. The text-shortcut of witch is "wi". A witch has a number called altar-questioned. A witch has a number called doom-warned. The doom-warned of a witch is usually 0.
 
 Definition: witch is dark skinned: decide yes.
 
@@ -279,7 +279,7 @@ The witch tries to trip the player rule is listed last in the witch attack rules
 To say MonsterTripAnnounceFlav of (M - witch):
 	say "[one of]The witch holds [his of M] hand in the air, causing a giant clay hand to grow out of the ground.[or]The witch raises [his of M] hand, causing a giant clay hand to grow out of the ground.[purely at random]".
 
-To say MonsterTrippedFlav of (M - witch):  [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
+To say MonsterTrippedFlav of (M - witch): [We say "it", not "she" here because the player is actually being tripped by a giant clay hand.]
 	say "[if there is a worn nipple chain]It hooks a finger around your nipple chain, yanking you to the ground.[otherwise if there is a worn nipple piercing]It nimbly snatches the ring in one nipple and tugs down, the pain making you squeal and toppling you onto all fours on the ground[otherwise][one of]It chops your ankle out from under you, causing you to topple over onto your hands and knees.[or]It grabs your ankle, yanking it out from under you. You topple onto your hands and knees.[or]It grabs you by your ankles, tossing you off the ground. You yelp as you fly through the air and land on your hands and knees.[or]It grabs you by the wrist and yanks you onto your hands and knees.[or]It picks you up by your waist and roughly tosses you onto your hands and knees.[or]It grabs you at the knees and roughly yanks them out from under you. You fall to the ground![in random order][end if]".
 
 To say MonsterFailedTripFlav of (M - witch):

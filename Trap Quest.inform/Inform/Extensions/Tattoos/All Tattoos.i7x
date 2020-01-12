@@ -2395,7 +2395,7 @@ Figure of spank-me-heart tattoo is the file "Items/Tats/tattoo154.jpg".
 Definition: spank-me-heart tattoo is drawable:
 	decide no.
 To decide which figure-name is the examine-image of (T - spank-me-heart tattoo):
-    decide on figure of spank-me-heart tattoo.
+	decide on figure of spank-me-heart tattoo.
 To say tattoo-desc of (T - spank-me-heart tattoo):
 	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a handprint on the butt. The words 'spank me' can be read above and underneath ".
 To decide which number is the delicateness-influence of (T - spank-me-heart tattoo):

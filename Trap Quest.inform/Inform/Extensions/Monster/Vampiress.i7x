@@ -818,7 +818,7 @@ To say DominanceIntro of (M - vampiress):
 	let D be the difficulty of M / 4;
 	if the stake of M is wood-dong, now D is -99;
 	if the number of worn actually removable clothing > 0:
-		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs  [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
+		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
 		if X <= D or the player is prone:
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 			now vhypno is 1;

@@ -34,7 +34,7 @@ A time based rule (this is the lactation rule):
 				if the largeness of breasts > previous-size:
 					say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
 					now flav-said is 1;
-			if a random number between 1 and  10 is 1 and the lactation rate of the player > 0:
+			if a random number between 1 and 10 is 1 and the lactation rate of the player > 0:
 				say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
 				decrease the lactation rate of the player by 1;
 	if the milk volume of breasts > 0:

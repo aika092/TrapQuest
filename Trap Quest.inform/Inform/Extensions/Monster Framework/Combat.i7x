@@ -39,7 +39,7 @@ To compute attack of (M - a monster):
 	follow the monster attack rules.
 
 The monster attack rules is a rulebook.
-[In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.'  In this way rule succeeds is used for finishing up completely. Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules. Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
+[In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.' In this way rule succeeds is used for finishing up completely. Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules. Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
 
 
 To MonsterStomp (M - a monster):

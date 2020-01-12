@@ -64,7 +64,7 @@ infernaler demoness is a demoness. The text-shortcut of infernaler demoness is "
 To say MediumDesc of (M - infernaler demoness):
 	say "[SoulDesc of M]infernal demoness".
 
-cackling demoness is a demoness.  The text-shortcut of cackling demoness is "cde".
+cackling demoness is a demoness. The text-shortcut of cackling demoness is "cde".
 To say MediumDesc of (M - cackling demoness):
 	say "[SoulDesc of M]cackling demoness".
 
@@ -475,7 +475,7 @@ To say MercyReaction of (M - a demoness):
 
 Section 1 - Protect and Attack
 
-To  compute (M - a demoness) protecting against (X - a monster):
+To compute (M - a demoness) protecting against (X - a monster):
 	if X is demoness and the class of the player is not succubus:
 		say "[speech style of M]'I'm afraid I would ally with any of my sisters over an inconsequential mortal any day of the year!'[roman type][line break][BigNameDesc of M] stands next to the [X].";
 		anger M;
@@ -1319,7 +1319,7 @@ To compute unique death of (M - a demoness):
 		now F is not stuck;
 	let H be a random off-stage dildo heels;
 	let G be a random off-stage infernal gem;
-	if R  < 3 and H is heels:
+	if R < 3 and H is heels:
 		now H is in the location of the player;
 		now the raw-magic-modifier of H is a random number between 0 and 2;
 		now H is kicking;

@@ -81,7 +81,7 @@ To compute periodic effect of (C - a pink spraybottle):
 
 
 To compute (S - a pink spraybottle) breaking:
-	if a random number between 1 and the dexterity of the player < 5 or (a  random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
+	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
 		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 		now S is cloth;
 		now the charge of S is 0;

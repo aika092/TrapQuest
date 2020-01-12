@@ -1242,7 +1242,7 @@ To compute delay of (M - supporter-misako): [NPCs, when they're confident that t
 To say PresentRejectionFlav of (M - supporter-misako): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'No, I think this will work better...'[roman type][line break]".
 
-To compute the busy waiting of (M - supporter-misako):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - supporter-misako): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait, rubbing [himself of M] as close as [he of M] can reach to [his of M] pussy as [he of M] does.".
 
 To compute the dildo stuck taunting of (M - supporter-misako):
