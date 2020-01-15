@@ -829,12 +829,12 @@ Definition: djinn is willing to confiscate: decide yes.
 
 Definition: djinn (called M) is eager to confiscate: [An angry djinn will confiscate even at maximum health]
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 djinn-mess is a diaper punishment. The priority of djinn-mess is 1.
 
 Definition: djinn (called M) is eager to djinn mess:
- 	decide no.
+	decide no.
 
 Definition: djinn-mess (called P) is appropriate:
 	if current-monster is djinn, decide yes;

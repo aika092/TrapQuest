@@ -37,7 +37,7 @@ To BladderUp (X - a number):
 				otherwise if bladder-bursting-level >= 0 and P < 0:
 					say "[bold type]You could really do with [if the humiliation of the player < 5000]finding a toilet![otherwise]using your diaper![end if][roman type][line break]";
 				otherwise if old-bursting is 0 and the player is bursting:
-					say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]use your diaper.[end if][roman type][line break]";				
+					say "[bold type]You are starting to feel the need to [if the humiliation of the player < 5000]use the rest room.[otherwise]use your diaper.[end if][roman type][line break]";
 			otherwise:
 				if bladder-bursting-level >= 2 and P < 2:
 					say "[if the bimbo of the player < 17][line break][variable custom style]Uh-oh, at this rate I'm going to wet myself![otherwise][line break][second custom style][NameBimbo] needs to go tinkles really bad![end if][roman type][line break]";

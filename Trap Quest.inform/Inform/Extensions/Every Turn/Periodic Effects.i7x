@@ -111,7 +111,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			let X be max ass size + max breast size + 1;
 			let S be X - (the thickness of hips + the largeness of breasts);
 			let SR be a random number between S and time-tracking;
- 			if time-tracking < 1000:
+			if time-tracking < 1000:
 				decrease time-tracking by 1;
 				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 285]; time ticker not yet below 293 so automatic success[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([X].5) max possible body shape[end if][roman type][line break]";
 			if time-tracking < 293:
@@ -403,8 +403,8 @@ To compute reset cooldown of (T - a trap):
 			now the reset-timer of T is 1;
 	otherwise:
 		decrease the reset-timer of T by time-seconds.
-		
-		
+
+
 
 
 

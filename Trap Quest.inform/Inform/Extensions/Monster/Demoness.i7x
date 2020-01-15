@@ -1225,7 +1225,7 @@ To compute pregnancy creampie of (M - a demoness) in (F - vagina):
 	if R < 4, SemenAddictUp R - 4;
 	say "[big he of M] loses interest.";
 	now the father is the throne;
- 	now the pregnancy of the player is 0;
+	now the pregnancy of the player is 0;
 	WombEmpty the womb volume of vagina.
 
 To compute post climax effect of (M - a demoness) in (F - vagina):
@@ -1447,7 +1447,7 @@ To say DQMasturbationResistReactionFlav of (M - a demoness):
 
 Definition: a demoness (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a demoness is willing to confiscate: decide yes.
 

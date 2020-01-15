@@ -51,9 +51,9 @@ Check kneeling:
 	if the player is prone:
 		if the player is glue stuck:
 			if the bimbo of the player > 12:
- 				say "You giggle, almost tempted to see if you can get even more stuck in the glue!" instead;
+				say "You giggle, almost tempted to see if you can get even more stuck in the glue!" instead;
 			otherwise if the sex addiction of the player > 11:
- 				say "[variable custom style]I wouldn't want to get even more helpless... and fuckable![roman type][line break]" instead;
+				say "[variable custom style]I wouldn't want to get even more helpless... and fuckable![roman type][line break]" instead;
 			otherwise if the delicateness of the player > 14:
 				say "[variable custom style]You cringe at the thought of the pain of pulling free of the adhesive mass.[roman type][line break]" instead;
 			otherwise:

@@ -216,7 +216,7 @@ Check urinating:
 		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops! Oh well, let's not break the game.]
 		say "[one of]Player was forced to urinate when they had nothing in their bladder, please report the bug to Aika![or][stopping]";
- 		do nothing instead;
+		do nothing instead;
 	[if diaper lover is 0 and (the player is not bursting or the bladder of the player is 0):
 		if delayed urination is 0, say "You don't feel the need." instead;
 		do nothing instead;]

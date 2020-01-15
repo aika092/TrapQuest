@@ -46,8 +46,8 @@ Check entering gloryhole:
 			say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
 			[otherwise:
 				say "Two springy rods shoot up from the ground, slamming up into your [BreastDesc] from below and pushing aside everything covering them, an instant before two suction cups leap out of the bottom of the portrait and latch onto your nipples! The rods slam back down into the ground, leaving the suction devices impossibly-tightly latched to your instantly erect and throbbing nipples!";]
- 			trigger lactation;
- 			dislodge gloryhole instead;
+			trigger lactation;
+			dislodge gloryhole instead;
 		otherwise: [This is what it used to always do in this case:]
 			say "You would, but you no longer have a penis." instead;
 	if the player is upright:
@@ -84,8 +84,8 @@ Check entering gloryhole:
 						TopDisplace B;
 					say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
 					[say "Two springy rods shoot up from the ground, slamming up into your [BreastDesc] from below and pushing aside everything covering them, an instant before two suction cups leap out of the bottom of the portrait to latch onto your nipples! The rods slam back down into the ground, leaving behind the suction devices, now impossibly-tightly latched to your instantly erect and throbbing nipples!";]
- 				trigger lactation;
- 				dislodge gloryhole instead;
+				trigger lactation;
+				dislodge gloryhole instead;
 			otherwise if the player is male:
 				compute gloryhole blowjob receipt;
 			otherwise:

@@ -83,7 +83,7 @@ To trigger (Y - an ass hook):
 	now Y is revealed;
 	now the reset-timer of Y is 400;
 	if the player is prone:
- 		say "barely touches you as it flies past you and up into a hole in the ceiling. That probably would have gone less well for you if you were not on your knees.";
+		say "barely touches you as it flies past you and up into a hole in the ceiling. That probably would have gone less well for you if you were not on your knees.";
 		now Y is unrevealed;
 	otherwise if diaper quest is 1 or the player is ass protected:
 		let K be a random worn knickers;
@@ -115,12 +115,12 @@ To trigger (Y - an ass hook):
 			let CK be nothing;
 			if K is clothing, now CK is the coverer of K;
 			say "thankfully bounces harmlessly away[if CK is clothing] thanks to your [ShortDesc of CK][otherwise] without being able to find anything to hook onto[end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
- 		now Y is unrevealed;
- 	otherwise if asshole is actually occupied:
- 		say "thankfully bounces harmlessly away thanks to your [if the player is ass protected][ShortDesc of random top level ass protection clothing][otherwise][ShortDesc of random thing penetrating asshole][end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
- 		now Y is unrevealed;
- 	otherwise:
- 		say "glides swiftly into your [asshole] with the upward motion of the rope. You realise as it tries to lift you off the ground by your delicate hole that this is an ass hook on the end of the rope! It lifts you onto your tiptoes and clearly would lift you off the ground by your [asshole] if its pulling mechanism had the strength!";
+		now Y is unrevealed;
+	otherwise if asshole is actually occupied:
+		say "thankfully bounces harmlessly away thanks to your [if the player is ass protected][ShortDesc of random top level ass protection clothing][otherwise][ShortDesc of random thing penetrating asshole][end if]. The hook shoots up into the hole in the ceiling that the rope was connected to.";
+		now Y is unrevealed;
+	otherwise:
+		say "glides swiftly into your [asshole] with the upward motion of the rope. You realise as it tries to lift you off the ground by your delicate hole that this is an ass hook on the end of the rope! It lifts you onto your tiptoes and clearly would lift you off the ground by your [asshole] if its pulling mechanism had the strength!";
 		now Y is penetrating asshole;
 		repeat with M running through reactive monsters:
 			say AssHookTrapReactFlav of M;

@@ -133,7 +133,7 @@ Definition: deep one is willing to confiscate: decide yes.
 
 Definition: deep one (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 
 Section 3 - Damage

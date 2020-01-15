@@ -205,7 +205,7 @@ Section 1 - Attack
 
 Definition: a mannequin (called M) is eager to slap:
 	if a random number between 1 and 3 is 1, decide yes;
- 	decide no.
+	decide no.
 
 To compute flying player taunting of (M - a mannequin):
 	if a random number from 1 to 6 is 1, say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".

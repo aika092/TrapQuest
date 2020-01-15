@@ -727,12 +727,12 @@ To compute student chess soiling:
 	now the student-rectum of chess-lesson is 0;
 
 To compute chess soiling:
- 	let I be 9 - (incontinence + suppository);
+	let I be 9 - (incontinence + suppository);
 	if debuginfo > 0 and rectum > 1, say "[input-style]Mess self-control check: 9 - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
- 	if I < 4, now I is 4;
+	if I < 4, now I is 4;
 	if rectum >= I:
- 		say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
- 		compute chess messing.
+		say "All of a sudden, you feel your rectal muscles spasming and you have absolutely no control as it begins to empty itself of its contents! ";
+		compute chess messing.
 
 To compute chess messing:
 	if rectum < 2, now rectum is 2;

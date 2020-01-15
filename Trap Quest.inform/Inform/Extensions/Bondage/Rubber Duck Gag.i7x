@@ -5,7 +5,7 @@ A rubber duck gag is a kind of ballgag. There is 1 rubber duck gag. The printed 
 To say ShortDesc of (C - a rubber duck gag):
 	say "rubber duck gag".
 
-Definition: a rubber duck gag is yellow themed:	decide yes.
+Definition: a rubber duck gag is yellow themed: decide yes.
 Definition: a rubber duck gag is swimming themed: decide yes.
 
 Figure of rubber duck gag is the file "Items/Accessories/Head/duckgag1.png".

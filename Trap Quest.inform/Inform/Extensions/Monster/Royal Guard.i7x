@@ -1022,7 +1022,7 @@ Definition: a royal guard (called M) is eager to change diapers:
 	if there is worn messed knickers and diaper messing is 3 and diaperSceneHandled is 0, decide yes;
 	if the health of M < the maxhealth of M, decide no; [He won't change you if you have fought back]
 	if M is aware that the player needs a change, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a royal guard is diaper disciplining: decide yes.
 

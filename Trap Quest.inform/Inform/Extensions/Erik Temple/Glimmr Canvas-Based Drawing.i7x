@@ -799,10 +799,10 @@ The specification of bitmap is "A bitmap element draws a rectangular image compo
 
 	{
 	{ 0, 0, 1, 0, 0 },
- 	{ 0, 0, 1, 0, 0 },
- 	{ 1, 1, 1, 1, 1 },
- 	{ 0, 0, 1, 0, 0 },
- 	{ 0, 0, 1, 0, 0 } }.
+	{ 0, 0, 1, 0, 0 },
+	{ 1, 1, 1, 1, 1 },
+	{ 0, 0, 1, 0, 0 },
+	{ 0, 0, 1, 0, 0 } }.
 
 The ones represent bits that are turned on, while the zeros represent bits that are off. Note that each row is represented by its own list of numbers, and that we need to have the same number of entries in each row or errors will result.
 
@@ -1812,10 +1812,10 @@ A bitmap element draws a rectangular image composed of individual "bits" that ar
 
 	{
 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 1, 1, 1, 1, 1 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 }
+		{ 0, 0, 1, 0, 0 },
+		{ 1, 1, 1, 1, 1 },
+		{ 0, 0, 1, 0, 0 },
+		{ 0, 0, 1, 0, 0 }
 	}.
 
 The ones represent bits that are turned on, while the zeros represent bits that are off. Each row is given as a list of numbers with its own set of braces.
@@ -3238,7 +3238,7 @@ If the player is holding fewer than 5 cards, we repeat through the number of pla
 					set a graphlink in the current window identified as the card-manager from (x) by (y) to (x + card-x) by (y + card-y) as "DRAW", ignoring redundant links;
 				increase x by card-x + (card-x / 3).
 
-When we 	set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
+When we set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
 
 In this rule, we change the replacement command to refer to the name of the card, e.g. "discard the ten of hearts".
 

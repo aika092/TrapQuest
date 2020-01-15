@@ -10,7 +10,7 @@ Understand "unicorn", "horn" as unicorn-horn. The text-shortcut of a unicorn-hor
 To say ShortDesc of (C - a unicorn-horn):
 	say "unicorn's horn".
 
-Definition: a unicorn-horn is magic themed:	decide yes.
+Definition: a unicorn-horn is magic themed: decide yes.
 
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a monster):
 	decide on 10.

@@ -1182,13 +1182,13 @@ Include (-
 
 [ FindImageWidth img result img_width;
 	result = glk_image_get_info(ResourceIDsOfFigures-->img, gg_arguments, gg_arguments+WORDSIZE);
-			 		img_width = gg_arguments-->0;
+					img_width = gg_arguments-->0;
 	return img_width;
 ];
 
 [ FindImageHeight img result img_height;
 	result = glk_image_get_info(ResourceIDsOfFigures-->img, gg_arguments, gg_arguments+WORDSIZE);
-			 		img_height = gg_arguments-->1;
+					img_height = gg_arguments-->1;
 	return img_height;
 ];
 
@@ -1742,10 +1742,10 @@ A bitmap draws a rectangular image composed of individual "bits" that are specif
 
 	{
 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 1, 1, 1, 1, 1 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 }
+		{ 0, 0, 1, 0, 0 },
+		{ 1, 1, 1, 1, 1 },
+		{ 0, 0, 1, 0, 0 },
+		{ 0, 0, 1, 0, 0 }
 	}.
 
 The ones represent bits that are turned "on", while the zeros represent bits that are "off". The former will write to the screen using one color, and the latter will either not draw anything, or will draw using a second color (the background color).
@@ -1823,7 +1823,7 @@ Here is an example of a bitmap list for a polychrome bitmap, defined as a global
 			{ -1, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1, -1, -1 },
 			{ -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
 			{ -1, 268431360, 268431360, 268431360, 2, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1 },
-			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 	268431360, 268431360, 268431360, 268431360, 16738740, 16738740 },
+			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 16738740, 16738740 },
 			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
 			{ -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
 			{ -1, -1, -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 }

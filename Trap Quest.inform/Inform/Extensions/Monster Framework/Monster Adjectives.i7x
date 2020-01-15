@@ -25,7 +25,7 @@ A monster has a number called questioned. The questioned of a monster is usually
 	if M is manly-wenchy, decide yes;[So the monster needs only one, not both]
 	decide no.
 Definition: A monster (called M) is manly-wenchy:[specifically refers to monsters that the player will "ride" to dominate them.]
- 	decide no.
+	decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
 Definition: A monster (called M) is father material:[This means the monster can father children.]

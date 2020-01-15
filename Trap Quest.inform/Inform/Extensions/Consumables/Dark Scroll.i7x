@@ -1,6 +1,6 @@
 Dark Scroll by Consumables begins here.
 
-A dark scroll is a kind of thing. There is 1 dark scroll. The printed name of dark scroll is "[TQlink of item described]dark scroll[TQxlink of item described][verb-desc of item described]". The text-shortcut of dark scroll is "dks". 
+A dark scroll is a kind of thing. There is 1 dark scroll. The printed name of dark scroll is "[TQlink of item described]dark scroll[TQxlink of item described][verb-desc of item described]". The text-shortcut of dark scroll is "dks".
 To say ExamineDesc of (B - a dark scroll):
 	say "A scroll given to you by the Herald. It isn't in any language you know, but for some reason you know what it says.".
 
