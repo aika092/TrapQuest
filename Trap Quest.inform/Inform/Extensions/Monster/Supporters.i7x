@@ -631,7 +631,7 @@ To say CurtseyReactionFlav of (M - supporter-teagan):
 		say "[BigNameDesc of M] grins and blows a kiss your way.[line break][speech style of M]'You thirsty, sweetheart?'[roman type][line break]".
 
 To say BecomesAggressive of (M - supporter-teagan):
-	say "[speech style of M]'[one of] ! You better drink it, slut!'[or]Gawd, my tits are, like, so full! I can't take it anymore!'[in random order][roman type][line break][big he of M] assumes an aggressive stance!";
+	say "[speech style of M]'[one of]Yeah! You better drink it, slut!'[or]Gawd, my tits are, like, so full! I can't take it anymore!'[in random order][roman type][line break][big he of M] assumes an aggressive stance!";
 	alwayscutshow figure of teagan interact 1 for M.
 
 To say AlreadyUnfriendlyPerception of (M - supporter-teagan): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]

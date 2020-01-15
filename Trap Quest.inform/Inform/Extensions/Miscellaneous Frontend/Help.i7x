@@ -139,7 +139,7 @@ To say ClothingHelp:
 
 [bold type]Bras:[roman type] These support your boobs and reduce their effective weight for in-game calculations. If you're a girl, you can use them to protect your dignity.
 
-[bold type]Panties:[roman type] These protect your crotch from attacks , giving you a chance to stand back up if you fall over when fighting as you don't immediately get penetrated. Also you can use them to protect your dignity.
+[bold type]Panties:[roman type] These protect your crotch from attacks, giving you a chance to stand back up if you fall over when fighting as you don't immediately get penetrated. Also you can use them to protect your dignity.
 
 [bold type]Corsets:[roman type] These reduce your effective belly size and speed up the rate that liquids exit you.
 

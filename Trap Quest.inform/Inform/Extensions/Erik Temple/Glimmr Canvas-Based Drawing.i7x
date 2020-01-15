@@ -2283,7 +2283,7 @@ Here is a list of properties common to all graphic elements (g-elements). Separa
 
 	display status - indicates whether or not the element is marked for display (i.e., whether or not it will be drawn to the associated canvas of the element when the window displaying that canvas is updated). Can be g-active (marked for display) or g-inactive. Default value: g-active
 
-	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below) . The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
+	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below). The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
 
 	display-layer - a number that defines the "layer" the element will be drawn to, comparable to the z-index in CSS/HTML. Elements with a display-layer of 1 are drawn first, then those with display-layer 2, etc. Lower numbers are thus lower in the stack order. Default value: 1
 

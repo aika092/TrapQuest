@@ -916,7 +916,7 @@ To say NearingClimaxOral of (M - a demoness):
 
 
 To say FriendlySexResistFlav of (M - a demoness):
-	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Wait, !'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Wait, stop!'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
 	otherwise say "[if the player is able to make sounds][line break][variable custom style][muffled sounds][roman type][line break][end if]";
 	if M is penetrating face, say OralResisting of M;
 	otherwise say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M]'s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]".
