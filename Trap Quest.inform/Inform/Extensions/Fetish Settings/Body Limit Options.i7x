@@ -25,7 +25,7 @@ REQUIRES COMMENTING
 This is the max breast size rule:
 	if max breast size <= min breast size:
 		follow the max breast size reset rule;
-	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options  < 4:
+	otherwise if choice in row 33 of the Table of Player Options < max breast size points and choice in row 33 of the Table of Player Options < 4:
 		increase choice in row 33 of the Table of Player Options by 1;
 	otherwise if points count > 0 and max breast size points < 6:
 		increase choice in row 27 of the Table of Player Options by 1;

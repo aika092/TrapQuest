@@ -73,7 +73,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 
 Chapter 2 Pump Plug Panties
 
-pump plug panties is a kind of plug panties. The printed name of  pump plug panties is "[clothing-title-before]pair of [clothing-material of item described] pump plug panties[clothing-title-after]". The printed plural name of pump plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There are 2 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
+pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [clothing-material of item described] pump plug panties[clothing-title-after]". The printed plural name of pump plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There are 2 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
 
 Definition: a pump plug panties is black themed: decide yes.
 Definition: a pump plug panties is inflation themed: decide yes.

@@ -83,73 +83,73 @@ Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.
 
 Figure of change self tattoo is the file "Items/Tats/tattoo110.jpg".
 To decide which figure-name is the examine-image of (T - change-self tattoo):
-    decide on figure of change self tattoo.
+	decide on figure of change self tattoo.
 
 Figure of cloth revolution tattoo is the file "Items/Tats/tattoo56.jpg".
 To decide which figure-name is the examine-image of (T - cloth revolution tattoo):
-    decide on figure of cloth revolution tattoo.
+	decide on figure of cloth revolution tattoo.
 
 Figure of cum when messing male tattoo is the file "Items/Tats/tattoo119a.jpg".
 Figure of cum when messing female tattoo is the file "Items/Tats/tattoo119b.jpg".
 To decide which figure-name is the examine-image of (T - cum-when-messing tattoo):
 	if the player is female, decide on Figure of cum when messing female tattoo;
-    decide on Figure of cum when messing male tattoo.
+	decide on Figure of cum when messing male tattoo.
 
 Figure of demon belly mark is the file "Items/Tats/tattoo120.jpg".
 To decide which figure-name is the examine-image of (T - demon belly mark):
-    decide on figure of demon belly mark.
+	decide on figure of demon belly mark.
 
 Figure of diapered dinosaur tattoo is the file "Items/Tats/tattoo74.jpg".
 To decide which figure-name is the examine-image of (T - diapered dinosaur tattoo):
-    decide on figure of diapered dinosaur tattoo.
+	decide on figure of diapered dinosaur tattoo.
 
 
 Figure of dumb baby tattoo is the file "Items/Tats/tattoo90.jpg".
 To decide which figure-name is the examine-image of (T - dumb baby tattoo):
-    decide on figure of dumb baby tattoo.
+	decide on figure of dumb baby tattoo.
 
 
 Figure of incontinent-when-speaking tattoo is the file "Items/Tats/tattoo112.jpg".
 To decide which figure-name is the examine-image of (T - incontinent-when-speaking tattoo):
-    decide on figure of incontinent-when-speaking tattoo.
+	decide on figure of incontinent-when-speaking tattoo.
 
 
 Figure of kitty cat tattoo is the file "Items/Tats/tattoo69.jpg".
 To decide which figure-name is the examine-image of (T - kitty cat tattoo):
-    decide on figure of kitty cat tattoo.
+	decide on figure of kitty cat tattoo.
 
 Figure of loser tattoo is the file "Items/Tats/tattoo93.jpg".
 To decide which figure-name is the examine-image of (T - loser tattoo):
-    decide on figure of loser tattoo.
+	decide on figure of loser tattoo.
 
 Figure of mushbutt tattoo is the file "Items/Tats/tattoo94.jpg".
 To decide which figure-name is the examine-image of (T - mushbutt tattoo):
-    decide on figure of mushbutt tattoo.
+	decide on figure of mushbutt tattoo.
 
 
 Figure of princess castle tattoo is the file "Items/Tats/tattoo68.jpg".
 To decide which figure-name is the examine-image of (T - princess castle tattoo):
-    decide on figure of princess castle tattoo.
+	decide on figure of princess castle tattoo.
 
 Figure of safety pin tattoo is the file "Items/Tats/tattoo55.jpg".
 To decide which figure-name is the examine-image of (T - safety pin tattoo):
-    decide on figure of safety pin tattoo.
+	decide on figure of safety pin tattoo.
 
 Figure of stinker tattoo is the file "Items/Tats/tattoo91.jpg".
 To decide which figure-name is the examine-image of (T - stinker tattoo):
-    decide on figure of stinker tattoo.
+	decide on figure of stinker tattoo.
 
 Figure of teapot tattoo is the file "Items/Tats/tattoo72.jpg".
 To decide which figure-name is the examine-image of (T - teapot tattoo):
-    decide on figure of teapot tattoo.
+	decide on figure of teapot tattoo.
 
 Figure of tribal diaper tattoo is the file "Items/Tats/tattoo61.jpg".
 To decide which figure-name is the examine-image of (T - tribal diaper tattoo):
-    decide on figure of tribal diaper tattoo.
+	decide on figure of tribal diaper tattoo.
 
 Figure of walking teddy bear tattoo is the file "Items/Tats/tattoo99.jpg".
 To decide which figure-name is the examine-image of (T - walking teddy bear tattoo):
-    decide on figure of walking teddy bear tattoo.
+	decide on figure of walking teddy bear tattoo.
 
 
 

@@ -707,7 +707,7 @@ Part 17 - Domination Skill
 
 To teach divinationskill:
 	if the divinationskill of the player is 0:
-		say "She launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic !**[line break]From now on, you[']ll find it a lot easier to find a way to have dominant sex![roman type][line break]";
+		say "She launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[line break]From now on, you[']ll find it a lot easier to find a way to have dominant sex![roman type][line break]";
 		now the divinationskill of the player is 1;
 		[otherwise:
 			say "She launches into a very long complicated explanation you don't really understand, and although you're nodding along, when she's finished talking you feel like you haven't really learned anything.";]

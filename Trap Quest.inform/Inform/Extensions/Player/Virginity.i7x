@@ -3,7 +3,7 @@ Virginity by Player begins here.
 
 [!<Player>@<virgin:Integer>*
 
-For females, has something alive fucked their vagina?  For males, have they had dominant penetrative sex?
+For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
 
 *@!]
 The player has a number called virgin. The virgin of the player is usually 1.

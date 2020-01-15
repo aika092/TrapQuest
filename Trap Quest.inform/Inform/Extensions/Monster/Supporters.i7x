@@ -631,7 +631,7 @@ To say CurtseyReactionFlav of (M - supporter-teagan):
 		say "[BigNameDesc of M] grins and blows a kiss your way.[line break][speech style of M]'You thirsty, sweetheart?'[roman type][line break]".
 
 To say BecomesAggressive of (M - supporter-teagan):
-	say "[speech style of M]'[one of] ! You better drink it, slut!'[or]Gawd, my tits are, like, so full! I can't take it anymore!'[in random order][roman type][line break][big he of M] assumes an aggressive stance!";
+	say "[speech style of M]'[one of]Yeah! You better drink it, slut!'[or]Gawd, my tits are, like, so full! I can't take it anymore!'[in random order][roman type][line break][big he of M] assumes an aggressive stance!";
 	alwayscutshow figure of teagan interact 1 for M.
 
 To say AlreadyUnfriendlyPerception of (M - supporter-teagan): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]
@@ -1242,7 +1242,7 @@ To compute delay of (M - supporter-misako): [NPCs, when they're confident that t
 To say PresentRejectionFlav of (M - supporter-misako): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
 	say "[BigNameDesc of M] frowns.[line break][speech style of M]'No, I think this will work better...'[roman type][line break]".
 
-To compute the busy waiting of (M - supporter-misako):  [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+To compute the busy waiting of (M - supporter-misako): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
 	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait, rubbing [himself of M] as close as [he of M] can reach to [his of M] pussy as [he of M] does.".
 
 To compute the dildo stuck taunting of (M - supporter-misako):

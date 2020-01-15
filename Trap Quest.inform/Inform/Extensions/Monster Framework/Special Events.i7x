@@ -530,7 +530,7 @@ To compute angry forgiveness of (M - a monster):
 
 Displays some test describing the player breaking free after resisting in the last turn of a blowjob
 
-@param <Monster>:<M>  The monster having oral sex with the player
+@param <Monster>:<M> The monster having oral sex with the player
 
 +!]
 To say FacialBrokenFree of (M - a monster):

@@ -158,7 +158,7 @@ A theme blocking rule:
 A theme sharing rule (this is the royalty matching rule):
 	if theme-target is royalty themed and theme-share-target is royalty themed, rule succeeds.
 The royalty matching rule is listed in the interesting theme sharing rules.
-Definition: an object is cow themed:  [Is it something to do with cows]
+Definition: an object is cow themed: [Is it something to do with cows]
 	decide no.
 A theme blocking rule:
 	if theme-target is cow themed and the number of currently at least partially visible cow themed wearthings > 1:
@@ -507,7 +507,7 @@ A dexterity theme rule:
 
 Section - Leopard
 
-Definition: an object is leopard themed:  [Is it something to do with leopards, or leopard print]
+Definition: an object is leopard themed: [Is it something to do with leopards, or leopard print]
 	decide no.
 
 A theme blocking rule:

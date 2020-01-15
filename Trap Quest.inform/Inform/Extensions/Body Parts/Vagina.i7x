@@ -297,10 +297,10 @@ REQUIRES COMMENTING
 
 +!]
 To PussyClose (X - a number):
- 	now the previous openness of vagina is the openness of vagina;
- 	if the latex-transformation of the player > 2, now X is 0;
- 	while X > 0:
- 		decrease X by 1;
+	now the previous openness of vagina is the openness of vagina;
+	if the latex-transformation of the player > 2, now X is 0;
+	while X > 0:
+		decrease X by 1;
 		if the openness of vagina > 0:
 			if the number of things filling vagina > 0:[We force out any existing item when the player tightens up.]
 				let I be a random insertable thing penetrating vagina;

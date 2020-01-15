@@ -20,12 +20,12 @@ A monster has a number called friendly boredom. The friendly boredom of a monste
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
-A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked?  Most monsters will only tolerate one.]
+A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked? Most monsters will only tolerate one.]
  Definition: A monster (called M) is wenchy:
 	if M is manly-wenchy, decide yes;[So the monster needs only one, not both]
 	decide no.
 Definition: A monster (called M) is manly-wenchy:[specifically refers to monsters that the player will "ride" to dominate them.]
- 	decide no.
+	decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
 Definition: A monster (called M) is father material:[This means the monster can father children.]
@@ -55,7 +55,7 @@ Definition: a monster is school dwelling: decide no.
 
 A monster can be intelligent. A monster is usually not intelligent. [Essentially, can they speak English?]
 Definition: a monster is raunchy: decide no.
-A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around?  (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
+A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around? (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
 A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
 [The following variables are used for deciding what body parts can be automatically presented to a monster.]
 Definition: a monster (called M) is willing to do vaginal:
@@ -162,7 +162,7 @@ Definition: A monster (called M) is expectant:
 
 Definition: A monster is willing to shag: decide no. [A willing monster is one who is currently available for consensual sex.]
 
-Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead?  This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
+Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead? This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
 
 To decide which number is the girth of (M - a monster):
 	if M is male, decide on 2; [Normal penis girth]

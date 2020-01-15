@@ -15,7 +15,7 @@ Check TQEating chocolates bag:
 Check taking chocolates bag:
 	say "It's tightly tied shut and you can't open it! It also seems to be completely immobile, as if it's been glued to the floor!" instead.
 
-Definition: chocolates bag is TQEdible:	decide yes.
+Definition: chocolates bag is TQEdible: decide yes.
 
 chocolate-announced is a number that varies.
 

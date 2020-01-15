@@ -136,7 +136,7 @@ To say PenisSoften of (K - an equine-strapon):
 To say PenisHarden of (K - an equine-strapon):
 	say "You feel your [ShortDesc of penis] tingle as your strapon dildo transforms into a [printed name of K].";]
 
-Chapter 3 -  Gemstone Strapon
+Chapter 3 - Gemstone Strapon
 
 Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. The armour of gem-strapon is 6. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
 

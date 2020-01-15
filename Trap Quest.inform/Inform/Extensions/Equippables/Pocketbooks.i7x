@@ -120,16 +120,16 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 	otherwise if the pregnancy of the player > 0 and R is 1:[Probably too vicious a penalty but that's what you get!]
 		say "'[one of]My belly is getting way too big! Next time that [printed name of the father] wants to breed me with [his of the father] big, virile [manly-penis], I'm going to make [him of the father] wear a condom. UGH![or]I never should have let that [printed name of the father] stick [his of the father] yummy [manly-penis] in me and fertilize me with [his of the father] [semen]! I wish I wasn't pregnant![or]I can't believe that [printed name of the father] pumped me so full of virile sperm! Didn't he know this would happen if he stuck that yummy [manly-penis] in my pussy?[at random] I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it so accurately echoes the regret you've been holding in the pit of your stomach ever since you got pregnant. Suddenly, the book begins to glow, and the words start erasing themselves from the page! Dizziness passes through your body as your belly shrinks and definition drains from your muscles. You drop to your knees as an [if the total volume of vagina > 9]absolutely obscene[otherwise if the womb volume of vagina > 4]obscene[otherwise]huge[end if] amount of [semen] comes dribbling down your thighs.";
 		try kneeling;
- 		now the father is the throne;
- 		let X be the womb volume of vagina + the semen volume of vagina;
- 		now the pregnancy of the player is 0;
- 		now the semen volume of vagina is 0;
- 		WombEmpty the womb volume of vagina;
+		now the father is the throne;
+		let X be the womb volume of vagina + the semen volume of vagina;
+		now the pregnancy of the player is 0;
+		now the semen volume of vagina is 0;
+		WombEmpty the womb volume of vagina;
 		now the semen volume of vagina is X;
 		[if bukkake fetish is 1, CumThighsUp X - 1;
 		otherwise SemenPuddleUp 1;]
- 		StrengthDown X / 10;
- 		DexDown X / 10;
+		StrengthDown X / 10;
+		DexDown X / 10;
 	otherwise if R is 1 and the virgin of the player is 0 and the player is female and the openness of vagina > 5:
 		say "'[one of]I just can't stop thinking about the way I lost my cherry. My tight little cumdump got ruined by that big, hard [manly-penis]! Now, it's like everybody wants to pin me down and [if pregnancy fetish is 1]breed my hot box[otherwise]come inside me[end if]! Life is so unfair[or]I can't believe I let anybody put their [manly-penis] in my fuckhole! Now whenever I get fucked, I have to think about my first time, and how huge that yummy [manly-penis] was[or]I can barely look at myself in the mirror ever since I lost my virginity! All I can think about is getting pounded into the floor by that heavenly [manly-penis]. Umm, hellooo, if I wanted to be treated like the worthless cumdumpster I am, I would ask[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since you lost your purity. The words light up as the book emits a wave of energy, erasing themselves from the page as your [vagina] suddenly and very painfully begins tightening up.";
 		PussyClose 5;
@@ -147,7 +147,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		IntDown P + 1;
 	otherwise if the semen taste addiction of the player > 6 and R < 4:
 		say "'[one of]Sometimes I wish there was more to life than sucking my man's fat monster until he comes. I know my place is on my knees, but it's getting out of hand! It's getting so hard to think when I'm not gargling a fresh load of yummy dick juice, and I KNOW it all started with that first blowjob[or]Whenever my lips are wrapped around a big hard cock, I know it's what I was always meant to do, but I can't focus on anything else! There used to be more to life than a delicious helping of yummy man stuff for breakfast lunch and dinner, but I can't remember what[or]Man cream is my favourite food, but sometimes I wish I didn't have to spend so much time every day draining every pair of aching balls I run into! Every time I do it it feels even better than last time, and sometimes I run out of room in my nasty jizz tank in the middle of the day[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if] wording, but also because it captures how you feel about your growing addiction to blowjobs. The words light up as you move to turn the page, erasing themselves as it suddenly gets a lot harder to think about sucking cocks. It's a lot harder to think about anything...";
- 		SemenTasteAddictDown 4;
+		SemenTasteAddictDown 4;
 		if the noun is not blessed or a random number between 1 and 3 < 2, increase P by 1;
 		IntDown P + 1;
 	otherwise if the sex addiction of the player > 6 and R < 4:
@@ -179,7 +179,7 @@ To say MediumDesc of (C - a book of anal):
 	say "Brandi's Big Book of Anal".
 
 To decide which number is the soreness-influence of (C - a book of anal):
-	if C is tolerance, decide on 3 + (the flat intelligence of the player /  7);[more powerful the better your reading comprehension!]
+	if C is tolerance, decide on 3 + (the flat intelligence of the player / 7);[more powerful the better your reading comprehension!]
 	decide on 0.
 
 [!<TheBookOfAnalButtSlutRule>+

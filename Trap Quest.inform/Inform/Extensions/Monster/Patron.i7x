@@ -1765,7 +1765,7 @@ To say DominanceFailure of (M - a patron):
 		unless M is wrapped:
 			say "[if P is 1][BigNameDesc of M] strokes [him of M]self to hardness[otherwise]The patrons stroke themselves to full hardness[end if].";
 
-[One article of clothing stripped/stolen per patron. ###MG:  Was too brutal, just one thing gets stolen][###Selkie: Actually, what about allowing that in that as another 'Game Hates You' consequence? Easily coded by setting number-to-lose to either no. of patrons or 1 accordingly.]
+[One article of clothing stripped/stolen per patron. ###MG: Was too brutal, just one thing gets stolen][###Selkie: Actually, what about allowing that in that as another 'Game Hates You' consequence? Easily coded by setting number-to-lose to either no. of patrons or 1 accordingly.]
 To compute failed dominance punishment of (M - a patron):
 	if player-fucker is penis:
 		compute sissy punishment of M;

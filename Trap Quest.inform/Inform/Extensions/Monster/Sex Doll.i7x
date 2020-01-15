@@ -281,7 +281,7 @@ To compute (M - a sex doll) entering mouth:
 		if M is not creamfilled-sex-doll:
 			say "[BigNameDesc of M] walks round to your face and waits there for a few seconds, motionless. It looked like it was about to mess with you, but something seemed to change its mind.";
 		otherwise if bukkake fetish is 1:
-			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen!  Could change I guess if there's open gags put into the game]
+			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen! Could change I guess if there's open gags put into the game]
 			say "[BigNameDesc of M] moves round to your face, air hissing quietly as its rubber sack slowly expands. A beat after the noise stops, the doll suddenly begins blasting your face with a torrent of pure white ejaculate! You're completely plastered by the time it deflates.";
 			CumFaceUp 8;
 		otherwise:

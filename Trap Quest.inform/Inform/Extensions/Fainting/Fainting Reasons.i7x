@@ -23,7 +23,7 @@ A leftover is a kind of thing.
 A leftover is scenery.
 A leftover has a number called leftover-type.
 The leftover-type of a leftover is usually 0.
-There are 25 leftovers. 
+There are 25 leftovers.
 
 [!<BeforeDoingSomethingToALeftover>+
 
@@ -122,8 +122,8 @@ REQUIRES COMMENTING
 
 +!]
 To say LeftoverDesc (N - 100):
-	say "An unidentifiable body is on the ground here.[line break]";		
-	
+	say "An unidentifiable body is on the ground here.[line break]";
+
 [ FAINTING REASONS:
 0 - Misc (unknown)
 1 - Bed

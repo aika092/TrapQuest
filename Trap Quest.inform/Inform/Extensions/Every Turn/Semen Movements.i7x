@@ -38,7 +38,7 @@ A time based rule (this is the compute cum movements rule):
 					say "A maternity bra materialises over your breasts![if the size of M is the largeness of breasts + 3]It's way too big for you, as if it has purposefully been left with room for growth![end if]";
 					compute summoned quest of M;
 			compute enema holding;
-		if the pregnancy of the player > 0 and timeBombTime <= 0  and the player is not in a predicament room:
+		if the pregnancy of the player > 0 and timeBombTime <= 0 and the player is not in a predicament room:
 			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
 			compute pregnancy;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:

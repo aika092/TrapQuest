@@ -447,8 +447,8 @@ General purpose method of referring to a monster, "M"'s penis
 
 +!]
  To say DickDesc of (M - a monster):
- 	if full-lady fetish is 1, say "strap-on";
- 	otherwise say manly-penis.
+	if full-lady fetish is 1, say "strap-on";
+	otherwise say manly-penis.
 
 [!<SayLongDickDescOfMonster>+
 

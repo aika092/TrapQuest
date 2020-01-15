@@ -35,7 +35,7 @@ Check taking off piercing:
 
 
 
-A module is a kind of piercing.  A module has a number called module-charge. Understand "module" as a module.
+A module is a kind of piercing. A module has a number called module-charge. Understand "module" as a module.
 
 Definition: a module is eligible: decide no.
 Definition: a module is discovered varied: decide no.

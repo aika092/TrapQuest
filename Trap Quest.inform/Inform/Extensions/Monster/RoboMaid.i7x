@@ -99,7 +99,7 @@ To compute unique periodic effect of (M - a milkmaid):
 			PuddleUp semen by (a random number between 2 and 3) in (the location of M).
 
 To compute perception of (M - a robomaid):
- 	say "[BigNameDesc of M] notices you!";
+	say "[BigNameDesc of M] notices you!";
 	if the number of worn dirty clothing > 0:
 		if M is unfriendly:
 			say "Its eyes turn red and it spins towards you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
@@ -353,7 +353,7 @@ To say FirstResponse of (M - a robomaid):
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 
-To say RepeatResponse of (M -  a robomaid):
+To say RepeatResponse of (M - a robomaid):
 	if the class of the player is maid:
 		say "[first custom style]'HEY GIRLFRIEND. GOODBYE.'[roman type][line break]";
 	otherwise if M is unconcerned:

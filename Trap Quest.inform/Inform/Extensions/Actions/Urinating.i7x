@@ -214,9 +214,9 @@ Check urinating:
 	if the bladder of the player is 0 and the number of worn prostate massager plugs is 0:
 		if delayed urination is not 1, say "You don't feel the need." instead;
 		if debugmode is 1, say "resetting accidental urination flag.";
-		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops!  Oh well, let's not break the game.]
+		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops! Oh well, let's not break the game.]
 		say "[one of]Player was forced to urinate when they had nothing in their bladder, please report the bug to Aika![or][stopping]";
- 		do nothing instead;
+		do nothing instead;
 	[if diaper lover is 0 and (the player is not bursting or the bladder of the player is 0):
 		if delayed urination is 0, say "You don't feel the need." instead;
 		do nothing instead;]
@@ -1080,7 +1080,7 @@ REQUIRES COMMENTING
 To say ClothesPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
 		say "[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
-	otherwise:  [Accidental urination]
+	otherwise: [Accidental urination]
 		if the humiliation of the player < HUMILIATION-SHAMELESS - 2000, say "[if the player is able to speak][line break][variable custom style]'Eek! Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you wet yourself.";
 		otherwise say "[BrokenPeeFlav during sex with M]".
 

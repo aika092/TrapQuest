@@ -113,7 +113,7 @@ Section - Properties to control easing
 
 An animation track has a phrase (number, number, number, number) -> number called the easing. The easing of an animation track is usually the linear easing rule.
 
-[The secondary easing can be activated for a motion track to enable independent easing of the y-axis for  movement; the (primary) easing will then control the x-axis movement.]
+[The secondary easing can be activated for a motion track to enable independent easing of the y-axis for movement; the (primary) easing will then control the x-axis movement.]
 An animation track has a phrase (number, number, number, number) -> number called the secondary easing. The secondary easing of an animation track is usually the null easing rule.
 
 [These are used to manage the easing calculations for a track.]
@@ -542,7 +542,7 @@ To animate (track - an animation track) as a motion animation targeting (targ - 
 		now the track is not cycling;
 	now the start-x of the track is entry 1 of the origin of targ;
 	now the start-y of the track is entry 2 of the origin of targ;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -559,7 +559,7 @@ To animate (track - an animation track) as a motion animation targeting (targ - 
 		now the track is not cycling;
 	now the start-x of the track is entry 1 of the origin of targ;
 	now the start-y of the track is entry 2 of the origin of targ;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	[say "start-x: [start-x of the track]; start-y: [start-y of the track]; delta-x: [delta-x of the track]; delta-y: [delta-y of the track].";]
 	let X be the square root of (delta-x of the track * delta-x of the track) + (delta-y of the track * delta-y of the track);
@@ -818,7 +818,7 @@ To update (fade-reel - a list of figure names) to (next-fade - a number) for (an
 	if the anim-target provides the property stroke:
 		let xx be (min win-x of anim-target or end-x of anim-target) - stroke of anim-target;
 		let yy be (min win-y of anim-target or end-y of anim-target) - stroke of anim-target;
-		draw (entry next-fade of the fade-reel) in (win) at (xx) by (yy) with dimensions ((max win-x of anim-target or end-x of anim-target) + stroke of anim-target - xx) by ((max win-y of anim-target or end-y of anim-target)  + stroke of anim-target - yy);
+		draw (entry next-fade of the fade-reel) in (win) at (xx) by (yy) with dimensions ((max win-x of anim-target or end-x of anim-target) + stroke of anim-target - xx) by ((max win-y of anim-target or end-y of anim-target) + stroke of anim-target - yy);
 	otherwise if the anim-target provides the property end-x:[primitive without a stroke]
 		draw (entry next-fade of the fade-reel) in (win) at (win-x of anim-target) by (win-y of anim-target) with dimensions (end-x of anim-target) by (end-y of anim-target).
 
@@ -1144,7 +1144,7 @@ To animate (track - an animation track) as a parameterized motion animation targ
 	let L be list property P of targ;
 	now start-x of the track is entry 1 of L;
 	now start-y of the track is entry 2 of L;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -1168,7 +1168,7 @@ To animate (track - an animation track) as a parameterized motion animation targ
 	let L be list property P of targ;
 	now start-x of the track is entry 1 of L;
 	now start-y of the track is entry 2 of L;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	let X be the square root of (delta-x of the track * delta-x of the track) + (delta-y of the track * delta-y of the track);
 	let len be X / V;
@@ -1338,7 +1338,7 @@ To decide what number is cubic back easing out for time (t - a number) duration 
 	let b1 be b;
 	say "[>console][CA]Cubic back easing in: using custom parameter of [param] (change the global variable 'back easing parameter' to adjust).[<]";
 	#end if;
-	let t1 be  ((t plus 0.0) / d ) - 1;
+	let t1 be ((t plus 0.0) / d ) - 1;
 	decide on (c * (1 + ( (t1 * t1) * ((param * t1) + t1 + param) ))) + b to the nearest whole number.
 
 To decide what number is cubic back easing in-out for time (t - a number) duration (d - a number) beginning (b - a number) change (c - a number ) (this is the cubic back easing in-out rule):
@@ -1346,7 +1346,7 @@ To decide what number is cubic back easing in-out for time (t - a number) durati
 	let b1 be b;
 	say "[>console][CA]Cubic back easing in-out: using custom parameter of [back easing parameter] (change the global variable 'back easing parameter' to adjust).[<]";
 	#end if;
-	let t1 be  ( (t plus 0.0) / ( (d plus 0.0) / 2 ) );
+	let t1 be ( (t plus 0.0) / ( (d plus 0.0) / 2 ) );
 	let param1 be the back easing parameter * 1.5250;
 	[if t1 < 1:
 		decide on ((((c plus 0.0) / 2) * t) * t * (((param1 + 1) * t) - param1) ) + b to the nearest whole number;]
@@ -1529,7 +1529,7 @@ This will animate the reel for 6 frames at a rate of 4 frames per second; that i
 
 	animate the waving track as a reel animation targeting the player avatar at 4 fps with duration of 6 frames, cycling.
 
-This will repeat through the reel for each pair of frames, producing a smooth alternation of the figures: Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right.  More information on the cycling option is given below.
+This will repeat through the reel for each pair of frames, producing a smooth alternation of the figures: Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right. More information on the cycling option is given below.
 
 Note that the timer is started *immediately* after an animate phrase is invoked. The animation will begin after one interval has passed. In other words, the first frame of the animation will be displayed after one tick of the timer; if we have specified an interval of 4 frames per second, the first frame will be displayed 250 milliseconds after Inform processes the animation phrase.
 
@@ -2639,7 +2639,7 @@ Note that the implementation of this as a standard action, particularly with the
 			now the scaling factor of the item is the resting scaling ratio.
 
 	[Understand "show me source" or "source" or "source code" as a mistake ("
-	Carry out toggling something:[line break]     if the animation-flag of the secondary zooming track is g-active:[line break]          [i][bracket]the sprite we clicked on is already reducing; stop that motion so we can maximize again[close bracket][/i][line break]          deactivate the secondary zooming track;[line break]          deactivate the secondary motion track;[line break]     if there is an maximized cover-image:[line break]          [i][bracket]There is already a maximized sprite; we need to minimize it[close bracket][/i][line break]          let item be a random maximized cover-image;[line break]          now item is not maximized;[line break]          now the display-layer of item is 3;[line break]          animate the secondary zooming track as a zooming animation targeting the item and ending at the resting scaling ratio at 24 fps with duration of 8 frames;[line break]          animate the secondary motion track as a motion animation targeting the item and ending at the rightful position of the item at 24 fps with duration of 6 frames;[line break]          now the display status of the transparent overlay is g-inactive;[line break]          if item is the noun, stop the action;[i][bracket]We clicked on the maximized image, so we don't need to enlarge it; the reduction motion we've already set in motion is sufficient.[close bracket][/i][line break]     now the display-layer of the noun is 4;[line break]     now the noun is maximized;[line break]     now the display status of the transparent overlay is g-active;[line break]     animate the primary zooming track as a zooming animation targeting the noun and ending at the display scaling ratio at 24 fps with duration of 8 frames;[line break]     animate the primary motion track as a motion animation targeting the noun and ending at the display position at 24 fps with duration of 6 frames.").]
+	Carry out toggling something:[line break]	 if the animation-flag of the secondary zooming track is g-active:[line break]		 [i][bracket]the sprite we clicked on is already reducing; stop that motion so we can maximize again[close bracket][/i][line break]		 deactivate the secondary zooming track;[line break]		 deactivate the secondary motion track;[line break]	 if there is an maximized cover-image:[line break]		 [i][bracket]There is already a maximized sprite; we need to minimize it[close bracket][/i][line break]		 let item be a random maximized cover-image;[line break]		 now item is not maximized;[line break]		 now the display-layer of item is 3;[line break]		 animate the secondary zooming track as a zooming animation targeting the item and ending at the resting scaling ratio at 24 fps with duration of 8 frames;[line break]		 animate the secondary motion track as a motion animation targeting the item and ending at the rightful position of the item at 24 fps with duration of 6 frames;[line break]		 now the display status of the transparent overlay is g-inactive;[line break]		 if item is the noun, stop the action;[i][bracket]We clicked on the maximized image, so we don't need to enlarge it; the reduction motion we've already set in motion is sufficient.[close bracket][/i][line break]	 now the display-layer of the noun is 4;[line break]	 now the noun is maximized;[line break]	 now the display status of the transparent overlay is g-active;[line break]	 animate the primary zooming track as a zooming animation targeting the noun and ending at the display scaling ratio at 24 fps with duration of 8 frames;[line break]	 animate the primary motion track as a motion animation targeting the noun and ending at the display position at 24 fps with duration of 6 frames.").]
 
 
 Example: * Eased Movements - This example is primarily a demo of the available easing equations. The animation itself is handled in only a single line, whereas most of the code is devoted to user input, particularly the selection of primary and secondary easing via hyperlinks. The example does however illustrate the use of a number of features that are rarely demoed and which may be of interest to those interested in animation, including mouse input and hyperlink input.
@@ -2850,9 +2850,9 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 	The graphics-canvas is a g-canvas. The canvas-width is 752. The canvas-height is 352. The associated canvas of the graphics-window is the graphics-canvas. The associated canvas of a g-element is the graphics-canvas.
 
 	Window-drawing rule for the side-window (this is the construct inventory rule):
-	     move focus to side-window, clearing the window;
-	     try taking inventory;
-	     return to main screen.
+		 move focus to side-window, clearing the window;
+		 try taking inventory;
+		 return to main screen.
 
 	Every turn when the side-window is g-present: follow the window-drawing rules for the side-window.
 
@@ -3061,7 +3061,7 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 		say "There is nothing to do but to return to the surface. You will slay no undead today.";
 		continue the action.
 
-	The sarcophagus is a container in the hall. "A large stone sarcophagus lies open in a niche at the east end of the chamber."  The sarcophagus is fixed in place.
+	The sarcophagus is a container in the hall. "A large stone sarcophagus lies open in a niche at the east end of the chamber." The sarcophagus is fixed in place.
 
 	The description of the sarcophagus is "The sarcophagus is empty. The fiend is not here! Even the earth from his home burial ground has been removed.[paragraph break]He has moved on. You are too late, Pelón!"
 

@@ -19,7 +19,7 @@ The compulsory action rules is a rulebook. [Things that MUST happen like continu
 [!<EveryTurn>+
 
 REQUIRES COMMENTING
-Oh, so this is how time works!  So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
+Oh, so this is how time works! So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
 ### But the "run the engine" function seems bizarre to Selkie, looking equivalent to just writing:
 ### The another-turn flag can be set to 1 for various reasons, which causes the "engine" to run again without giving the player a chance to act. The player can only have a turn if another-turn is STILL 0 at the end of the turn
 
@@ -104,8 +104,8 @@ To run the engine once:
 		if delayed fainting is 0:
 			follow the compulsory action rules; [things that must happen]
 			unless another-turn is 1, compute instinctive actions;
-			unless another-turn is 1, compute automatic actions;  [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
-			unless another-turn is 1, compute optional actions;  [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
+			unless another-turn is 1, compute automatic actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
+			unless another-turn is 1, compute optional actions; [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, allocate 0 seconds;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;

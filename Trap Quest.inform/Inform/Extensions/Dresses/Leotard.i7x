@@ -1,6 +1,6 @@
 Leotard by Dresses begins here.
 
-A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet.  A leotard has a number called charge.
+A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet. A leotard has a number called charge.
 
 Definition: a leotard is ballet related: decide yes.
 Definition: a leotard is sissifying: decide yes.

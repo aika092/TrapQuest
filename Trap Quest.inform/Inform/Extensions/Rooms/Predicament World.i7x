@@ -110,7 +110,7 @@ To decide which number is the concealment of (R - Park09):
 
 Toilet01 is a bossed predicament room. Toilet01 is urinals. The printed name of Toilet01 is "Men's Toilets". Toilet01 is below Park02. The grid position of Toilet01 is <8,15,7>.
 Definition: Toilet01 is nonstandard: decide yes.
-Toilet02 is a bossed predicament room. Toilet02 is toilets. The printed name of Toilet02 is "Women's Toilets".  Toilet02 is above Park02. The grid position of Toilet02 is <8,15,7>.
+Toilet02 is a bossed predicament room. Toilet02 is toilets. The printed name of Toilet02 is "Women's Toilets". Toilet02 is above Park02. The grid position of Toilet02 is <8,15,7>.
 Definition: Toilet02 is nonstandard: decide yes.
 
 
@@ -227,7 +227,7 @@ To check perception of (M - a bystander):
 			let R be a random number between 1 and the awareness of M;
 			let C be the concealment of the location of the player;
 			let P be the stealth of the player;
-			if debuginfo > 0, say "[input-style]Bystander perception check: awareness roll (d[awareness of M]) = [R] | [C + P].5 =  ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
+			if debuginfo > 0, say "[input-style]Bystander perception check: awareness roll (d[awareness of M]) = [R] | [C + P].5 = ([C].5) [location of the player] concealment rating + ([P]) player [if the player is upright]standing[otherwise]kneeling[end if] stealth rating[roman type][line break]";
 			if C + P >= R:
 				say "[BigNameDesc of M] fails to notice you.";
 			otherwise:

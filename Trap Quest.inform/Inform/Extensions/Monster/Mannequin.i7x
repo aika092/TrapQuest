@@ -49,13 +49,13 @@ To decide which figure-name is the monster-image of (M - lycra-clad mannequin):
 To say MediumDesc of (M - lycra-clad mannequin):
 	say "lycra-clad mannequin".
 
-swimmer mannequin is a mannequin.  The text-shortcut of swimmer mannequin is "swi".
+swimmer mannequin is a mannequin. The text-shortcut of swimmer mannequin is "swi".
 To decide which figure-name is the monster-image of (M - swimmer mannequin):
 	decide on figure of swimmer mannequin.
 To say MediumDesc of (M - swimmer mannequin):
 	say "swimmer mannequin".
 
-latex-clad mannequin is a mannequin.  The text-shortcut of latex-clad mannequin is "lat". Understand "latex", "clad" as latex-clad mannequin.
+latex-clad mannequin is a mannequin. The text-shortcut of latex-clad mannequin is "lat". Understand "latex", "clad" as latex-clad mannequin.
 To decide which figure-name is the monster-image of (M - latex-clad mannequin):
 	decide on figure of latex-clad mannequin.
 To say MediumDesc of (M - latex-clad mannequin):
@@ -205,7 +205,7 @@ Section 1 - Attack
 
 Definition: a mannequin (called M) is eager to slap:
 	if a random number between 1 and 3 is 1, decide yes;
- 	decide no.
+	decide no.
 
 To compute flying player taunting of (M - a mannequin):
 	if a random number from 1 to 6 is 1, say "[BigNameDesc of M] is [one of][or]still [stopping]watching you, waiting.".

@@ -368,7 +368,7 @@ To compute class outfit of (C - a pigtail-scrunchie):
 
 Chapter 5 - Helium Balloons
 
-A pair of helium balloons is a kind of pigtail-scrunchie.  A pair of helium balloons is usually latex.  A pair of helium balloons is not roleplay. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
+A pair of helium balloons is a kind of pigtail-scrunchie. A pair of helium balloons is usually latex. A pair of helium balloons is not roleplay. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
 
 To decide which figure-name is the clothing-image of (C - a pair of helium balloons):
 	decide on figure of helium balloons.

@@ -133,8 +133,8 @@ Definition: nurse (called M) is aware that the player needs a change:
 	let D be a random worn knickers;
 	if D is currently visible knickers or D is messed knickers:
 		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
- 		if D is crotch-ripped diaper, decide yes;
- 	decide no.
+		if D is crotch-ripped diaper, decide yes;
+	decide no.
 
 To compute student perception of (M - nurse):
 	if M is aware that the player needs a change:

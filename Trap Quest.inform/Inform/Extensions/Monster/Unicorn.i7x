@@ -199,7 +199,7 @@ To compute angry punishment of (M - unicorn):
 
 
 To check forgiveness of (M - unicorn):
-	if the class of the player is priestess and a random number between the blue-balls of M  * -1 and the charisma of the player > 1:
+	if the class of the player is priestess and a random number between the blue-balls of M * -1 and the charisma of the player > 1:
 		compute angry forgiveness of M;
 	otherwise:
 		compute angry punishment of M.

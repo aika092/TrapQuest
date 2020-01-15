@@ -178,16 +178,16 @@ We check whether the player needs to go, and whether they go automatically.
 +!]
 To check real messing:
 	let messAware be 0; [Can the player sense their fullness]
- 	let canMessNow be 0; [Is the player physically able to go]
+	let canMessNow be 0; [Is the player physically able to go]
 	let shouldMessNow be 0; [Does the player's body want to go]
 	let willMessNow be 0; [Has the player lost control?]
 	let hasMessedNow be 0;
 	if the player is feeling full, now messAware is 1;
 	if rectum > 1 and there is a worn total protection soilable knickers and asshole is not actually occupied and the number of live things penetrating vagina is 0 and (the number of things grabbing the player is 0 or diaper quest is 1), now canMessNow is 1;
 	let hold-strength be (a random number between 11 and 13) + (a random number between -1 and 1);
- 	let I be hold-strength - (incontinence + suppository);
+	let I be hold-strength - (incontinence + suppository);
 	if debuginfo > 0 and canMessNow is 1 and rectum > 1, say "[input-style]Mess self-control check: RNG[bracket]10~14[close bracket] ([hold-strength]) - incontinence ([incontinence]) - laxative effects ([suppository]) = [I + 0][if I < 4]; minimum 4[end if] | ([rectum].5) rectum volume[roman type][line break]";
- 	if I < 4, now I is 4;
+	if I < 4, now I is 4;
 	if rectum >= I and canMessNow is 1, now willMessNow is 1;
 	if rectum >= I - 6, now shouldMessNow is 1;
 	if messAware is 1:
@@ -385,7 +385,7 @@ REQUIRES COMMENTING
 +!]
 To compute diaper mess reaction of (M - a person):
 	if diaper quest is 1 and M is monster:
-		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me?  You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
+		say "[BigNameDesc of M] looks at you with [one of]a smug expression[or]a judging expression[or]a caring expression[or]a mildly disgusted sneer[or]a smirk[in random order]. [line break][speech style of M]'[one of]Pathetic.'[or]It's not polite to do that in front of people, you disgusting baby. Or can you not control yourself?'[or][if voluntarySquatting is 1]Pooping yourself on purpose in front of me? You really are a naughty little baby aren't you?'[otherwise]If you can't control your bum-bum then you're just a stinky little baby who doesn't deserve any respect.'[end if][or]It looks like you definitely need to be kept in diapers.'[or]Good. Your potty untraining seems to be going well.'[or]I can't believe you'd do that right in front of me!'[in random order][roman type][line break]";
 		humiliate 400;
 		if voluntarySquatting is 1, humiliate 500;
 		unless M is staff member:

@@ -141,21 +141,21 @@ Carry out cleaning it with:
 REQUIRES COMMENTING
 
 +!]
-To 2Clean (P - a body part) with  (C - a clothing):
+To 2Clean (P - a body part) with (C - a clothing):
 	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
- 	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
- 		decrease the semen coating of P by 1;
- 		let R be a random number between 1 and 2;
- 		decrease the water-soak of C by R;
- 		CumSoak R on C;
- 	if the water-soak of C < 0, now the water-soak of C is 0;
+	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
+		decrease the semen coating of P by 1;
+		let R be a random number between 1 and 2;
+		decrease the water-soak of C by R;
+		CumSoak R on C;
+	if the water-soak of C < 0, now the water-soak of C is 0;
 	if the semen coating of P is 0:
 		say "Your [if P is face]face is[otherwise if P is hair]hair is[otherwise if P is belly]belly is[otherwise][variable P] are[end if] now completely clean.";
 	otherwise if the semen coating of P is 1 and P is hair:
 		say "Your hair is now almost completely clean, but you can't get every last strand of cum out without washing in water.";
 	otherwise:
 		say "The [C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
- 	allocate 6 seconds.
+	allocate 6 seconds.
 
 [!<2CleanBodyPartWithLimb>+
 

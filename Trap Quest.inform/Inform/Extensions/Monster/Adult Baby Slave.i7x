@@ -498,7 +498,7 @@ To say DQMasturbationResistReactionFlav of (M - an adult baby slave):
 Definition: an adult baby slave (called M) is eager to deliver enemas:
 	if diaper messing < 4, decide no;
 	if M is able to deliver enemas, decide yes;
- 	decide no.
+	decide no.
 
  To compute enema of (M - an adult baby slave):
 	compute suppository of M.

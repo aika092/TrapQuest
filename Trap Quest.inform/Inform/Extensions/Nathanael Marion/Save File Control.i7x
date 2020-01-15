@@ -61,7 +61,7 @@ Include (-
 	rtrue;
 	.RFailed;
 	RESTORE_THE_GAME_RM('A'); new_line;
-]; 
+];
 
 [ FileIO_WriteSavedGame extf struc fref res;
 	if (actor ~= player) rfalse;
@@ -176,16 +176,16 @@ See the example for standard uses.
 Example: * Permadeath - Allowing the player to only have one save file, and saving automatically each turn. (Adapted from Kerkerkruip.)
 
 	*:"Permadeath"
-	
+
 	Part 1 - The permadeath system
-	
+
 	Use undo prevention.
-	
+
 	Roguelike mode is initially true.
-	
+
 	The binary file of save data is called "PermadeathSaves".
 	The file of save data is save file.
-	
+
 	Before reading a command when roguelike mode is true (this is the automatically save before input rule):
 		write game data to the file of save data;
 		continue the action.
@@ -196,7 +196,7 @@ Example: * Permadeath - Allowing the player to only have one save file, and savi
 
 	Check saving the game when roguelike mode is true (this is the block saving rule):
 		say "The game is saved and loaded automatically. There is no need to save it manually." instead.
-	
+
 	Check restoring the game when roguelike mode is true (this is the block restore rule):
 		say "The game is saved and loaded automatically. There is no need to restore your game manually." instead.
 
@@ -206,17 +206,17 @@ Example: * Permadeath - Allowing the player to only have one save file, and savi
 	First carry out restarting the game (this is the delete save on restart rule):
 		if roguelike mode is true:
 			delete file of save data.
-	
+
 	Part 2 - The scenario
-	
+
 	Use scoring.
-	
+
 	The cliff is a room.
-	
+
 	The book is a thing. The player carries the book.
 
 	Instead of jumping:
 		say "You jump to your death.";
 		end the story saying "You have died".
-	
+
 To test, you can drop the book, do other things, quit and relaunch the story. You can see if the game restored itself if the book is still in the location and if the turn count stayed where you left. Jump or restart if you want to delete the save file.

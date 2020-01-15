@@ -603,7 +603,7 @@ Definition: vampiress (called M) is eager to change diapers:
 	if there is worn messed knickers and diaper messing is 3 and diaperSceneHandled is 0, decide yes;
 	if the health of M < the maxhealth of M, decide no; [She won't change you if you have fought back]
 	if M is aware that the player needs a change, decide yes;
- 	decide no.
+	decide no.
 
 Definition: vampiress (called M) is diaper change complete cummies rewarding:
 	if the health of M >= the maxhealth of M, decide yes;
@@ -818,7 +818,7 @@ To say DominanceIntro of (M - vampiress):
 	let D be the difficulty of M / 4;
 	if the stake of M is wood-dong, now D is -99;
 	if the number of worn actually removable clothing > 0:
-		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs  [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
+		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
 		if X <= D or the player is prone:
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 			now vhypno is 1;

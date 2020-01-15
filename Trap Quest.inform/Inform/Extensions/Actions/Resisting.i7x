@@ -423,7 +423,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to slap:
 	if M is intelligent and a random number between 1 and 5 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<SlapPunishmentIsAppropriate>+
 
@@ -469,7 +469,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to get angry:
 	if M is intelligent and a random number between 1 and 3 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<AngerPunishmentIsAppropriate>+
 

@@ -38,7 +38,7 @@ To imprint (C - a clothing):
 	now imprint-flav is 0;
 	now imprint-target is C;
 	follow the imprinting rules;
-	say "[ImprintEndFlav]".	
+	say "[ImprintEndFlav]".
 
 [!<ResolveDelayedImprints>+
 
@@ -56,7 +56,7 @@ REQUIRES COMMENTING
 
 +!]
 To imprint (C - a diaper):
-	do nothing.	
+	do nothing.
 
 [!<SayImprintStartFlav>+
 
@@ -196,7 +196,7 @@ REQUIRES COMMENTING
 This is the semen addiction imprinting rule:
 	if the semen-addiction-influence of imprint-target is not 0:
 		say "[ImprintStartFlav]creampie[if bukkake fetish is 1] & bukkake[end if] addiction [if the semen-addiction-influence of imprint-target < 0]suppressing[otherwise]increasing[end if] effect [run paragraph on]";
-		if  the semen-addiction-influence of imprint-target > 0, increase the raw semen addiction of the player by 1;
+		if the semen-addiction-influence of imprint-target > 0, increase the raw semen addiction of the player by 1;
 		otherwise decrease the raw semen addiction of the player by 1;
 		if the raw semen addiction of the player > 20, now the raw semen addiction of the player is 20;
 		if the raw semen addiction of the player < 1, now the raw semen addiction of the player is 1.

@@ -113,12 +113,12 @@ To decide which object is the concealer of (C - a clothing):
 			repeat with O running through worn potentially asshole covering bottom-layer-concealing clothing:
 				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
 					now B is O;
-		if B is nothing, decide on nothing;  [Bottom is uncovered. We can stop here.]
+		if B is nothing, decide on nothing; [Bottom is uncovered. We can stop here.]
 	if the mid-layer of C > 0:
 		repeat with O running through actually dense mid-layer-concealing clothing:
 			if the mid-layer of O > the mid-layer of C:
 				now M is O;
-		if M is nothing, decide on nothing;  [Mid is uncovered. We can stop here.]
+		if M is nothing, decide on nothing; [Mid is uncovered. We can stop here.]
 	if the top-layer of C > 0:
 		let T be nothing;
 		repeat with O running through actually dense top-layer-concealing clothing:
@@ -142,12 +142,12 @@ To decide which object is the at least partial concealer of (C - a wearthing):
 				repeat with O running through worn potentially asshole covering clothing:
 					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
 						now B is O;
-			if B is nothing, decide on nothing;  [Bottom is uncovered. We can stop here.]
+			if B is nothing, decide on nothing; [Bottom is uncovered. We can stop here.]
 		if the mid-layer of C > 0:
 			repeat with O running through worn clothing:
 				if the mid-layer of O > the mid-layer of C and O is not see-through:
 					now M is O;
-			if M is nothing, decide on nothing;  [Mid is uncovered. We can stop here.]
+			if M is nothing, decide on nothing; [Mid is uncovered. We can stop here.]
 		if the top-layer of C > 0:
 			let T be nothing;
 			repeat with O running through worn clothing:

@@ -188,7 +188,7 @@ Definition: minotaur (called M) is automatically tempted:
 
 Definition: minotaur (called M) is eager to slap:
 	if a random number between 1 and 4 is 1, decide yes;
- 	decide no.
+	decide no.
 
 The minotaur priority attack rules is a rulebook. The priority attack rules of minotaur is the minotaur priority attack rules.
 To compute interaction of (M - a minotaur):

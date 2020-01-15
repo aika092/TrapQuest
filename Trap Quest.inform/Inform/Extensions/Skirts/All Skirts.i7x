@@ -251,7 +251,7 @@ To say ClothingDesc of (C - a gown of purity):
 To compute SelfExamineDesc of (Y - a gown of purity):
 	say "Pure white fabric flows down the sides of your legs from a belt, concealing nothing useful at all. ".
 
-To say ShortDesc of (Y - a  gown of purity):
+To say ShortDesc of (Y - a gown of purity):
 	say "bright white flowing belt".
 
 To compute virginity-loss of (H - gown of purity):
@@ -386,7 +386,7 @@ Definition: a pink rubber miniskirt is black themed: decide no.
 
 
 
-A microskirt is a kind of skirt. A microskirt is usually super-short. The soak-limit of  microskirt is usually 10. A microskirt is usually transformation-rare.
+A microskirt is a kind of skirt. A microskirt is usually super-short. The soak-limit of microskirt is usually 10. A microskirt is usually transformation-rare.
 
 Understand "micro" or "skirt" as the microskirt.
 
@@ -439,15 +439,15 @@ To decide which number is the dexterity-influence of (C - a black sporty microsk
 To set up influence of (C - a microskirt):
 	set up stat-based influence of C.
 
-To compute SelfExamineDesc of (Y - a  microskirt):
+To compute SelfExamineDesc of (Y - a microskirt):
 	if the player is prone:
 		say "You are sporting a tiny [ShortDesc of Y] around your waist that completely fails to cover your ass or crotch, especially while you are on your knees with your ass in the air. ";
 	otherwise:
 		say "You are sporting a tiny [ShortDesc of Y] around your waist that almost completely fails to cover your ass, even though you're standing up straight. ".
 
-To say ShortDesc of (Y - a  microskirt):
+To say ShortDesc of (Y - a microskirt):
 	say "tiny [clothing-material of Y] microskirt".
-To say ShortDesc of (Y - a  black sporty microskirt):
+To say ShortDesc of (Y - a black sporty microskirt):
 	say "tiny black lycra microskirt".
 
 To decide which number is the initial outrage of (C - a microskirt):

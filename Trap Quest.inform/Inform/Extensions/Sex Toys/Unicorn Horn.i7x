@@ -3,14 +3,14 @@ Unicorn Horn by Sex Toys begins here.
 A unicorn-horn is a kind of dong. The printed name of unicorn-horn is "[TQlink of item described]unicorn horn[shortcut-desc][TQxlink of item described][verb-desc of item described]". A unicorn-horn is usually unique. A unicorn-horn is biological. There is 1 unicorn-horn. The size of a unicorn-horn is usually 4.
 
 To say ExamineDesc of (B - a unicorn-horn):
-	say  "A detached unicorn's horn. It seems valuable, but not like money[if the bimbo of the player > 6]. You could probably use it like a dildo[end if].".
+	say "A detached unicorn's horn. It seems valuable, but not like money[if the bimbo of the player > 6]. You could probably use it like a dildo[end if].".
 
 Understand "unicorn", "horn" as unicorn-horn. The text-shortcut of a unicorn-horn is "uch".
 
 To say ShortDesc of (C - a unicorn-horn):
 	say "unicorn's horn".
 
-Definition: a unicorn-horn is magic themed:	decide yes.
+Definition: a unicorn-horn is magic themed: decide yes.
 
 To decide which number is the bartering value of (T - a unicorn-horn) for (M - a monster):
 	decide on 10.

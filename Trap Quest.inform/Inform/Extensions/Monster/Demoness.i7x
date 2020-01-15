@@ -1,6 +1,6 @@
 Demoness by Monster begins here.
 
-A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness is usually not soul-seeking. A demoness has a number called channelling. A demoness has a number called soul-timer. The soul-timer of a demoness is usually 300. A demoness can be penis-mode or heel-mode.  A demoness is usually heel-mode.
+A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness is usually not soul-seeking. A demoness has a number called channelling. A demoness has a number called soul-timer. The soul-timer of a demoness is usually 300. A demoness can be penis-mode or heel-mode. A demoness is usually heel-mode.
 
 Definition: A demoness is woods dwelling: decide yes.
 
@@ -64,7 +64,7 @@ infernaler demoness is a demoness. The text-shortcut of infernaler demoness is "
 To say MediumDesc of (M - infernaler demoness):
 	say "[SoulDesc of M]infernal demoness".
 
-cackling demoness is a demoness.  The text-shortcut of cackling demoness is "cde".
+cackling demoness is a demoness. The text-shortcut of cackling demoness is "cde".
 To say MediumDesc of (M - cackling demoness):
 	say "[SoulDesc of M]cackling demoness".
 
@@ -475,7 +475,7 @@ To say MercyReaction of (M - a demoness):
 
 Section 1 - Protect and Attack
 
-To  compute (M - a demoness) protecting against (X - a monster):
+To compute (M - a demoness) protecting against (X - a monster):
 	if X is demoness and the class of the player is not succubus:
 		say "[speech style of M]'I'm afraid I would ally with any of my sisters over an inconsequential mortal any day of the year!'[roman type][line break][BigNameDesc of M] stands next to the [X].";
 		anger M;
@@ -572,7 +572,7 @@ To compute unique climax of (M - a demoness) in (F - asshole):
 		cutshow figure of demoness cutscene 3 for M;
 		if there is an insertable object held by M:
 			let P be a random insertable object held by M;
-			say "  [BigNameDesc of M] uses the last of [his of M] energy to magically force the [P] back into your [asshole], smugly bearing a grin at the resulting [if the anal sex addiction of the player <= 3]gasp[otherwise if the anal sex addiction of the player <= 5]moan[otherwise]squeal[end if].";
+			say " [BigNameDesc of M] uses the last of [his of M] energy to magically force the [P] back into your [asshole], smugly bearing a grin at the resulting [if the anal sex addiction of the player <= 3]gasp[otherwise if the anal sex addiction of the player <= 5]moan[otherwise]squeal[end if].";
 			summon P;
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof! It's so big![roman type][line break]";
@@ -683,7 +683,7 @@ This is the demoness punishing occupied assholes rule:
 		say "[BigNameDesc of M] mutters a curse from under [his of M] breath. You yelp uncontrollably as you feel the plug in your [asshole] suddenly grow! [if the openness of asshole <= the size of T]You howl and hold your hands to your ass, as if that could help[otherwise]It now is a better fit for your [asshole][end if].";
 		increase the size of T by 1;
 		if the openness of asshole < the size of T, ruin asshole;
-	otherwise if watersports fetish is 1 and the number of monsters penetrating face is 0  and the latex-transformation of the player <= 4:
+	otherwise if watersports fetish is 1 and the number of monsters penetrating face is 0 and the latex-transformation of the player <= 4:
 		say "[speech style of M]'Drown bitch, drown.'[roman type][line break][BigNameDesc of M] stands over you and grabs you by the head with a surprisingly strong hand, directing your face towards [his of M] crotch. Before long [he of M] lifts up [his of M] dress, and releases a torrent of piss over your hair and face. As the warm liquid cascades down your visage you cough and splutter, struggling to keep your eyes open as little droplets of the yellow fluid stray from your lips and cheeks to splash at your peepers.";
 		FacePiss from M;
 		satisfy M;
@@ -916,7 +916,7 @@ To say NearingClimaxOral of (M - a demoness):
 
 
 To say FriendlySexResistFlav of (M - a demoness):
-	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Wait, !'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Wait, stop!'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
 	otherwise say "[if the player is able to make sounds][line break][variable custom style][muffled sounds][roman type][line break][end if]";
 	if M is penetrating face, say OralResisting of M;
 	otherwise say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M]'s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]".
@@ -1225,7 +1225,7 @@ To compute pregnancy creampie of (M - a demoness) in (F - vagina):
 	if R < 4, SemenAddictUp R - 4;
 	say "[big he of M] loses interest.";
 	now the father is the throne;
- 	now the pregnancy of the player is 0;
+	now the pregnancy of the player is 0;
 	WombEmpty the womb volume of vagina.
 
 To compute post climax effect of (M - a demoness) in (F - vagina):
@@ -1319,7 +1319,7 @@ To compute unique death of (M - a demoness):
 		now F is not stuck;
 	let H be a random off-stage dildo heels;
 	let G be a random off-stage infernal gem;
-	if R  < 3 and H is heels:
+	if R < 3 and H is heels:
 		now H is in the location of the player;
 		now the raw-magic-modifier of H is a random number between 0 and 2;
 		now H is kicking;
@@ -1447,7 +1447,7 @@ To say DQMasturbationResistReactionFlav of (M - a demoness):
 
 Definition: a demoness (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a demoness is willing to confiscate: decide yes.
 

@@ -311,7 +311,7 @@ Definition: a body part is fairy targetable: decide no.
 
 Definition: breasts (called XXX) is fairy targetable:
 	now decideToSuckle is 0;
-	[Selkie: yes if the player has recently lactated; or  probably yes if they have a lot of milk]
+	[Selkie: yes if the player has recently lactated; or probably yes if they have a lot of milk]
 	if a random number between 1 and the milk volume of breasts > 5:
 		now decideToSuckle is 1;
 		decide yes;
@@ -407,7 +407,7 @@ To compute fairySuckling of (M - a fairy):
 			say "Damn it! She [italic type]has[roman type] trained your nipples to sit up and beg!";
 		otherwise if FairySuckled > 7:
 			say "Your trained nipples perk up, to order!";
-	otherwise:  [This is the case were she has to attempt to deal with your nipple covering(s).]
+	otherwise: [This is the case were she has to attempt to deal with your nipple covering(s).]
 		say "She darts forward, and [if FairySuckleSlashes is 0]you suddenly notice her tiny hands are tipped by [otherwise]you just [italic type]know[roman type] she can smell your lovely [milk]. [one of]Your nipples are already perking up.[or]Your traitorous nipples perk up.[at random] Once again your eyes are drawn to her [end if]wickedly-sharp little nails! With amazing and horrifying speed, fingers outstretched, she swoops towards your nipples, moving so fast you don't dare even twitch, for fear of what might happen if you do!";
 		repeat with nC running through worn nipple covering clothing:
 			if nc is milking flappable: [Fairies love milk so much they don't ask, they just rudely expose the player!]
@@ -448,7 +448,7 @@ To compute fairySuckling of (M - a fairy):
 		otherwise if the bimbo of the player > 10:
 			say "With a tremor of excited anticipation, you hold your [BreastDesc] up so the sexy little fairy knows you're ready for any attention she cares to give your swollen and eager nipples!";
 	if there is a worn cow piercing:
-		say "[variable custom style]'Ooh!  I can smell yummy milk from the big, slow cowgirl. Does the sexy cowgirl need milking?  Yes she does, doesn't she?  I bet she's just dying to moo for me and let me milk her!' [roman type]She gives your heavy nipple ring a sharp tug and a twist, and your poor,  tender nub shoots a delicious mix of pain and thrilling pleasure right into your tummy, where it flares out in a shockingly intense sensation that surges into your groin. You blush at the way she's taunting you, but can't help feeling even more aroused!";
+		say "[variable custom style]'Ooh! I can smell yummy milk from the big, slow cowgirl. Does the sexy cowgirl need milking? Yes she does, doesn't she? I bet she's just dying to moo for me and let me milk her!' [roman type]She gives your heavy nipple ring a sharp tug and a twist, and your poor, tender nub shoots a delicious mix of pain and thrilling pleasure right into your tummy, where it flares out in a shockingly intense sensation that surges into your groin. You blush at the way she's taunting you, but can't help feeling even more aroused!";
 		stimulate breasts from M;
 	otherwise if there is a worn nipple chain:
 		say "She tugs sharply on your heavy nipple ring, sending a thrill of pain-tipped pleasure surging through you. And the connecting chain jerks and tweaks your other nipple, doubling the sensation, and making your [BreastDesc] jiggle. She lands on the chain, her wings buzzing as she dances up it, shaking the chain so it jangles and tugs [italic type]both[roman type] your throbbingly-erect nubs, and then grabs the chain and hauls herself closer to the milk-beaded tip, licking her lips. It feels [italic type]so[roman type] good! You bite your lip, knowing you shouldn't be enjoying the feelings of these heavy piercings in your swollen nipples!";
@@ -571,9 +571,9 @@ To compute fairy meddling on (XXX - vagina):
 		increase the bladder of the player by 7;
 		if the bladder of the player < 14, now the bladder of the player is 14;
 		if the bladder of the player > 20, now the bladder of the player is 20;
-		say  "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your waist as she does. She turns and smirks[if the player is bursting] as you feel a sudden urgent need to pee[end if].".
 
-[Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off?  And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
+[Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off? And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
 [Aika: Maybe we do need a more reliable way to deal with fairies. Something like the spraybottle idea but accessible to any class (or at least most)]
 This is the fairy tries meddling rule:
 	let B be a random fairy targetable body part;

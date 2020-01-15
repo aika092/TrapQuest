@@ -624,7 +624,7 @@ To say LateDetention of (M - a staff member):
 To say GenericDetention of (M - a staff member):
 	say "[BigNameDesc of M] looks furious.[line break][speech style of M]'It[']s DETENTION for you, young Miss. Come with me now!'[roman type][line break]".
 
-dq-staff-detention is a diaper punishment.  the priority of dq-staff-detention is 5.
+dq-staff-detention is a diaper punishment. the priority of dq-staff-detention is 5.
 
 To compute punishment of (P - a dq-staff-detention):
 	follow the unique punishment rule of current-monster.

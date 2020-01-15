@@ -54,10 +54,10 @@ To say LeftoverDesc (N - 118):
 Part 2 - Perception
 
 To compute perception of (M - a robobutler):
- 	say "[BigNameDesc of M] notices you!";
+	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
- 	if the class of the player is maid:
- 		say "It seems to recognise you as a member of staff and leaves you alone.";
+	if the class of the player is maid:
+		say "It seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
 		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
@@ -75,14 +75,14 @@ To compute perception of (M - a robobutler):
 		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
- 		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
- 		anger M;
- 		now the planned-punishment of M is 2;
+		say "Its eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+		anger M;
+		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
- 		say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
- 		anger M;
- 		now the planned-punishment of M is 1;
- 	otherwise:
+		say "Its eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		anger M;
+		now the planned-punishment of M is 1;
+	otherwise:
 		say "It glides towards you, bowing deeply as it addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of its 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
 		calm M.
@@ -274,7 +274,7 @@ To say FirstResponse of (M - a robobutler):
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 
-To say RepeatResponse of (M -  a robobutler):
+To say RepeatResponse of (M - a robobutler):
 	if the class of the player is maid:
 		say "[first custom style]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is unconcerned:

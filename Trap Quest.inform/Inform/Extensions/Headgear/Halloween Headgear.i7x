@@ -131,7 +131,7 @@ To decide which number is the initial outrage of (C - witch's hat):
 Chapter - Class Outfit
 
 Definition: witch's hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is latex  court heels or (wearing-target is magic themed and wearing-target is not C), decide yes;
+	if wearing-target is latex court heels or (wearing-target is magic themed and wearing-target is not C), decide yes;
 	decide no.
 
 To compute full outfit summon of (H - witch's hat):

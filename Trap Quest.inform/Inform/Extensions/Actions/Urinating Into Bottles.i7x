@@ -87,7 +87,7 @@ Carry out PeeBottling:
 		if the player is able to use a urinal, say "You walk up to the [printed name of P] and piss into the mouth carved into the base.";
 		compute PedestalFilling P with urine by (B * 2);
 	allocate 6 seconds.
-Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]" , "pp [something]" as PeeBottling.
+Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]", "pp [something]" as PeeBottling.
 
 Urinating Into Bottles ends here.
 

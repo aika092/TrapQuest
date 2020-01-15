@@ -1,6 +1,6 @@
 Food Framework by Food begins here.
 
-A food is a kind of collectible.  Food is edible.
+A food is a kind of collectible. Food is edible.
 
 Figure of food is the file "Items/Collectibles/food1.png".
 

@@ -364,9 +364,9 @@ To compute multiple choice question:
 To reset multiple choice questions:
 	repeat with R running through numerical-response:
 		now the printed name of R is "".
-	
-	
-		
+
+
+
 
 
 

@@ -156,14 +156,14 @@ Apparently, because I am writing these things now, that would indicate that I
 can document things. Woop!
 
  @param <Integer>:<a> The integer, a, is given to the function as a gift from
- 				      three wise programmers.
- @param  <String>:<b> The String, b, is given to the function by a wandering
- 					  shepherd.
+ 					 three wise programmers.
+ @param <String>:<b> The String, b, is given to the function by a wandering
+ 					 shepherd.
  @param <Boolean>:<c> The boolean, c, is given to the function by a daft old
- 					  geezer that appeared from nowhere.
+ 					 geezer that appeared from nowhere.
 
  @return <Boolean> Returns whether the programmer can document things or not.
-  Mainly not since this is kinda a fake function...
+ Mainly not since this is kinda a fake function...
 
 +@!]
 
@@ -306,7 +306,7 @@ Include Barriers by Rooms.
 Include Mansion by Rooms.
 Include School by Rooms.
 
-An introductory room is a kind of room.  An introductory room has a labyrinth shape called shape.  The shape of an introductory room is usually L3/0-0-1-1-1-1.  The grid position of an introductory room is usually <0,0,0>.
+An introductory room is a kind of room. An introductory room has a labyrinth shape called shape. The shape of an introductory room is usually L3/0-0-1-1-1-1. The grid position of an introductory room is usually <0,0,0>.
 
 
 

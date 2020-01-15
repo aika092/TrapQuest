@@ -237,7 +237,7 @@ To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part)
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
 		if a random number between (the dexterity of the player - the semen addiction of the player) and 4 < 8:
-			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4  > 12:
+			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4 > 12:
 				say "[BigNameDesc of M] delicately strokes [his of M] [DickDesc of M], aiming it at you. You react quickly as a huge, unrealistic jet of [semen] blasts from the tip, catching most of it in your mouth and letting the rest splatter liberally across your face and [BreastDesc].";
 				StomachSemenUp 4;
 				CumFaceUp 2;

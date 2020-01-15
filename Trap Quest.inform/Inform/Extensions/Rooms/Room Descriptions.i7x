@@ -49,7 +49,7 @@ To say RoomMonsterDesc:
 			if D is nearby:
 				say "To the [D] you can see:[line break]";
 				repeat with M running through nearby alive monsters:
-					if the nearby-direction of M is D, say "    [M][line break]";
+					if the nearby-direction of M is D, say "	[M][line break]";
 				say "[line break]".
 
 [!<SayDoorDesc>+

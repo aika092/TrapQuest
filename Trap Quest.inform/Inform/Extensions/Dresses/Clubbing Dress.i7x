@@ -44,7 +44,7 @@ The remove inappropriate clubbing dresses rule is listed in the diaper quest fix
 
 Part 1 - Pink Clubbing Dress
 
-A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut.  There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
+A pink clubbing dress is a kind of clubbing dress. A pink clubbing dress is usually average cut. There is 1 pink clubbing dress. Figure of pink clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress1.png". The text-shortcut of pink clubbing dress is "pcd".
 
 The printed name of pink clubbing dress is usually "[clothing-title-before]pink clubbing dress[clothing-title-after]".
 
