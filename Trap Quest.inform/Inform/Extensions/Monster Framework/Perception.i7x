@@ -2,7 +2,7 @@ Perception by Monster Framework begins here.
 
 Part 1 - Perception
 
-A monster has a number called favour. The favour of a monster is usually 13. [The favour of an NPC determines when it turns unfriendly.]
+A monster has a number called favour. The favour of a monster is usually 15. [The favour of an NPC determines when it turns unfriendly.]
 A monster has a number called latest-appearance. [The last time the NPC saw the player, what did they look like? We only update this when the player looked worse than before, or the NPC gets bored then rediscovers the player. So flashing an NPC 5 times in quick succession is not any worse than flashing them once.]
 A monster has a number called latest-cringe. [The last time the NPC saw the player, how childish did they look?]
 
@@ -12,7 +12,7 @@ To FavourReset (M - a monster):
 	now the favour of M is the default favour of M.
 
 To decide which number is the default favour of (M - a monster):
-	decide on 13.
+	decide on 15.
 
 
 Chapter 1 - Check Perception
@@ -119,11 +119,15 @@ To resolve sudden appearance change of (M - a monster):
 		now the previous-objectification of M is 1.
 
 To compute curtsey reaction of (M - a monster):
-	if vagina is exposed or penis is exposed or asshole is exposed or (diaper quest is 1 and there is a worn currently visible diaper):
+	if diaper quest is 1 and there is a worn currently visible diaper:
 		if diaper quest is 1, now the babification of M is 1;
 		otherwise now the objectification of M is 1;
+	otherwise:
+		FavourDown M by 2;
 	if M is uniquely unfriendly and M is normally annoyed:
 		resolve sudden appearance change of M;
+	otherwise if M is friendly and M is groping:
+		compute grope of M;
 	otherwise:
 		say CurtseyReactionFlav of M;
 		if M is unfriendly, say BecomesAggressive of M;
@@ -229,7 +233,7 @@ Determines the number of outrage at which a monster will immediately become unfr
 +!]
 To decide which number is the bimbo tolerance of (M - a monster):
 	if M is wenchy and M is female and there is a worn demon codpiece, decide on 1;
-	decide on 16.
+	decide on 18.
 
 [!<DecideWhichNumberIsTheOutrageToleranceOfMonster>+
 
@@ -559,6 +563,8 @@ Definition: a person is sluttily dressed:
 		decide yes;
 	decrease aroused-monsters by 1;
 	decide no.
+
+
 
 
 Perception ends here.

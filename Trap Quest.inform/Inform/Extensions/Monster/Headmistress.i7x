@@ -24,16 +24,16 @@ To say MediumDesc of (M - headmistress):
 To say MonsterDesc of (M - headmistress):
 	if M is sex-enslaved:
 		if lady fetish is 2:
-			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section revealing [his of M] bright red chastity cage. A presumably new tattoo sits above [his of M] [sissy-penis], with the words 'Enter in Rear' and an arrow pointing toward his butt. His ass has been made more easily accessible with the addition of a very long ankle spreader bar, which keeps his feet over a metre apart from each other at all times. A tally has been started on his right inner thigh. Looks like he's been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. His wrists are cuffed behind him, leaving him absolutely powerless to stop anyone using him as they please. His tongue is stuck out of his mouth with a lewd expression. You watch as he instinctively tries to draw it back into his mouth, but then his 'SLUT' tag flutters wildly as his earring gives him a painful electric shock. He whimpers and returns to sticking his tongue as far out of his mouth as he can.";
+			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section revealing [his of M] bright red chastity cage. A presumably new tattoo sits above [his of M] [sissy-penis], with the words 'Enter in Rear' and an arrow pointing toward [his of M] butt. [big his of M] ass has been made more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like he's been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as he instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. He whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as he can.";
 		otherwise:
-			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section right in front of her bare pussy. A presumably new tattoo sits above her slit, with the words 'Fuck Here' and an arrow pointing at her undefended fuckhole. Her entrance has been made even more easily accessible with the addition of a very long ankle spreader bar, which keeps her feet over a metre apart from each other at all times. A tally has been started on her right inner thigh. Looks like she's been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. Her wrists are cuffed behind her, leaving her absolutely powerless to stop anyone using her as they please. Her tongue is stuck out of her mouth with a lewd expression. You watch as she instinctively tries to draw it back into her mouth, but then her 'SLUT' tag flutters wildly as her earring gives her a painful electric shock. She whimpers and returns to sticking her tongue as far out of her mouth as she can.";
+			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section right in front of [his of M] bare pussy. A presumably new tattoo sits above [his of M] slit, with the words 'Fuck Here' and an arrow pointing at [his of M] undefended fuckhole. [big his of M] entrance has been made even more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like [he of M][']s been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as [he of M] instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. [big he of M] whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as [he of M] can.";
 	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s red dress has been replaced by a heart-themed red onesie with cute pale frills at the shoulders. Matching pale red ribbons keep her jet black hair in pigtails and make her look a lot less fierce than she used to. Long red latex thigh-highs complete the adorable look. It's clear from the bulkiness between her legs that she's well padded under her new onesie. [one of]More curious, however, is the fact that she's keeping her feet over a metre apart for no clear reason. But then you[or]You[stopping] watch as she instinctively moves her feet a little closer together, but then her fists clench and her legs shudder wildly as her high heels give her painful electric shocks. She whimpers and returns to holding her feet as far apart as she can.";
+		say "[BigNameDesc of M][']s red dress has been replaced by a heart-themed red onesie with cute pale frills at the shoulders. Matching pale red ribbons keep [his of M] jet black hair in pigtails and make [him of M] look a lot less fierce than [he of M] used to. Long red latex thigh-highs complete the adorable look. It's clear from the bulkiness between [his of M] legs that [he of M]'s well padded under [his of M] new onesie. [one of]More curious, however, is the fact that [he of M]'s keeping [his of M] feet over a metre apart for no clear reason. But then you[or]You[stopping] watch as [he of M] instinctively moves [his of M] feet a little closer together, but then [his of M] fists clench and [his of M] legs shudder wildly as [his of M] high heels give [him of M] painful electric shocks. [big he of M] whimpers and returns to holding [his of M] feet as far apart as [he of M] can.";
 	otherwise:
 		say "This [man of M] looks almost ageless - [he of M]'s clearly an adult but you can't tell if [he of M]'s 20 or 40. [big his of M] very slim figure is complemented by [if lady fetish is 2]a perfectly sculpted chin and a thick, grabbable butt[otherwise]perfect D cup breasts and not insignificant hips[end if]. A tight red latex dress with a very deep V-neck clings tightly to [him of M], allowing you to appreciate all of [his of M] curves. The dress, although very provocative and not reaching below mid-thigh, somehow gives [him of M] an aura of extreme dominance. This sensation is further enhanced by [his of M] straight neat jet black hair and harsh make up which gives [his of M] face a rather... fierce appearance.".
 
 To say MonsterComment of (M - headmistress):
-	say "[variable custom style]It's like I can actually feel raw power coming from her. [if the bimbo of the player <= 10]I need to be careful[otherwise]I'd better do whatever she says[end if].[roman type][line break]".
+	say "[variable custom style]It's like I can actually feel raw power coming from [him of M]. [if the bimbo of the player <= 10]I need to be careful[otherwise]I'd better do whatever [he of M] says[end if].[roman type][line break]".
 
 To compute (M - a monster) stomping (N - headmistress):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M][if diaper quest is 0], and [his of M] [manly-penis] slid into [his of N] asshole[end if]. [big he of N] shrieks [line break][speech style of N]'That fucking [ShortDesc of ex-princess] had one of these roaming [his of ex-princess] lands?!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts [if diaper quest is 0]cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints[otherwise]transforming[end if].";
@@ -94,10 +94,35 @@ To regionally place (M - headmistress):
 	while M is not regional or M is in the location of the player or M is nearby:
 		now M is in a random placed room.
 
+
+To say EnslavedDominationFlav of (M - headmistress):
+	say "You grab [NameDesc of M][']s ponytail and force [him of M] to [his of M] knees. ";
+	if the number of worn cursed undisplacable clothing is 0:
+		if penis is penis-erect or penis is erect-at-will:
+			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
+			orgasm quietly;
+			check virginity with M;
+		otherwise if the size of penis > 0:
+			say "Unable to get an erection right now, you settle for using the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You wipe your flaccid [player-penis] up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. It feels good but you soon grow bored and let go of [his of M] hair.";
+		otherwise:
+			say "You use the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You rup your wet pussy up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. ";
+			if the player is horny:
+				say "You're able to use [his of M] tongue to bring yourself to a well-earned climax.";
+				orgasm quietly;
+			otherwise:
+				say "It feels good but you soon grow bored and let go of [his of M] hair.";
+	otherwise:
+		say "You begin exploring [his of M] holes with your fingers, trying to extract as many squeaks, squeals and grunts as you can from the poor [man of M] before you get bored. Which you eventually, do, of course.";
+	say "[speech style of M]'H...haaah~'[roman type][line break]That seems to be all [he of M] is capable of saying with [his of M] tongue stuck out like that.".
+
+To decide which number is the EnslavedDominationThreshold of (M - headmistress):
+	decide on 6.
+
+
 Part - Perception
 
 To compute nonstudent perception of (M - a headmistress):
-	say "[speech style of M]'You! [if M is in the school]Where is your armband[otherwise]You think you can enrol in my school and then just decide to drop out halfway through[end if]?!'[roman type][line break][Big he of M] takes an aggressive stance.";
+	say "[speech style of M]'You! [if M is in the school]Where is your armband[otherwise]You think you can enrol in my school and then just decide to drop out halfway through[end if]?!'[roman type][line break][big he of M] takes an aggressive stance.";
 	anger M.
 
 To compute student perception of (M - a headmistress):

@@ -695,5 +695,8 @@ This is the maintain diaper stack rule:
 	update diaper stack.
 The maintain diaper stack rule is listed in the advance counters rules.
 
+Check wearing store diaper:
+	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
+
 Diaper Framework ends here.
 

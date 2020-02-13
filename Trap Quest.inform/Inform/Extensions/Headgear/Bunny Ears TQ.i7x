@@ -73,7 +73,7 @@ To decide which number is the waitress bartering value of (T - a bottle) for (M 
 
 To say OfferFlav of (T - a waitress vessel):
 	if the player is able to speak:
-		say "[variable custom style]'[if the second noun is unfriendly]Please, take this instead!'[otherwise if bunny waitress ears is worn and T is non-empty]Would you care for a drink?'[otherwise if the class of the player is royal slave]Please accept this freshly brewed milk as a gift from the Princess.'[otherwise]Would you be interested in this?'[end if][roman type][line break]";
+		say "[if the second noun is unfriendly][variable custom style]'Please, take this instead!'[otherwise if bunny waitress ears is worn and T is non-empty][variable custom style]'Would you care for a drink?'[otherwise if the class of the player is royal slave][variable custom style]'Please accept this freshly brewed milk as a gift from the Princess.'[otherwise][variable custom style]'Would you be interested in this?'[end if][roman type][line break]";
 	otherwise if the player is able to make sounds:
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
@@ -82,7 +82,7 @@ To say OfferFlav of (T - a waitress vessel):
 To compute (M - a monster) considering (T - a bottle):
 	if M is not interested:
 		say "[BigNameDesc of M] isn[']t even looking at you.";
-	otherwise if M is not intelligent:
+	otherwise if M is unintelligent:
 		say "[BigNameDesc of M] ignores your offer completely.";
 	otherwise if the waitress bartering value of T for M > 0:
 		if the waitress-boredom of M > 0:
@@ -215,6 +215,7 @@ To compute class outfit of (H - bunny waitress ears):
 		now the fill-colour of W is white;
 		now W is bland;
 		now W is sure;
+		DoseFill W;
 		let S be a random serving-bondage;
 		say "[bold type]Suddenly a [ShortDesc of W] appears [if S is a thing]on your [ShortDesc of S][otherwise]in your hand[end if]! It appears to be full of [milk].[roman type][line break]".
 

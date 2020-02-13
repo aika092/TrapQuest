@@ -93,10 +93,10 @@ To decide which number is the sensitivity of (B - breasts):
 
 
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
-	decide on 9.
+	decide on 8.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
-	decide on 14.
+	decide on 13.
 
 
 Definition: breasts is exposed:
@@ -1164,7 +1164,8 @@ Report going:
 			if a random number between 5 and SM < SB:
 				say "Your [ShortDesc of C] rubs against your [if SM < 24][BreastDesc] and [end if]sensitive nipples as you [if the player is upright]walk[otherwise]crawl[end if].";
 				if a random number between 1 and 5 > 1, now breastStimulationFlavAllowed is false;
-				stimulate breasts;
+				if SB >= 10, stimulate breasts;
+				otherwise passively stimulate breasts;
 				now breastStimulationFlavAllowed is true;
 		otherwise if the player is prone and SB > 7 and the largeness of breasts > 10:
 			let SM be 24;
@@ -1172,14 +1173,14 @@ Report going:
 			if a random number between 5 and SM < SB:
 				say "Your sensitive nipples rub against the ground as you crawl.";
 				if a random number between 1 and 5 > 1, now breastStimulationFlavAllowed is false;
-				stimulate breasts;
+				if SB >= 9, stimulate breasts;
+				otherwise passively stimulate breasts;
 				now breastStimulationFlavAllowed is true.
 
 
 
 Section - Image for graphics window
 
-The text-shortcut of breasts is "breasts".
 Figure of CumBreastsButton is the file "Special/Buttons/cumbreasts.png".
 
 To decide which figure-name is the examine-image of (T - breasts):

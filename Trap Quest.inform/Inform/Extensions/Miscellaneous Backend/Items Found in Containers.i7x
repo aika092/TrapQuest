@@ -380,10 +380,13 @@ REQUIRES COMMENTING
 To compute automatic wearing of (C - a clothing):
 	let R be a random number between 12 and 18;
 	if C is not almost too much and C is not too boring and the outrage of C is not too humiliating and R < the bimbo of the player:
+		now summoning is 0;
+		now autowear is true;
 		if C is actually wearable and C is not cursed or C is not sure:
 			say "[variable custom style]Ooh, this is perfect! I want to wear this right now![roman type] You try to put it on.";
 			now C is held by the player;
-			try wearing C.
+			try wearing C;
+		now autowear is false.
 
 [!<ComputeAutomaticEatingOfThing>+
 

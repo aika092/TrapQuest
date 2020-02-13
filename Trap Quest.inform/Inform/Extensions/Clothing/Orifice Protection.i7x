@@ -154,11 +154,11 @@ Definition: a clothing (called C) is top level ass protection:
 	decide yes.
 
 [This cares about layers more than protection. A 'fully exposing' cupless bra could still be this.]
-[Definition: a clothing (called C) is top level breasts protection:
+Definition: a clothing (called C) is top level breasts protection:
 	if C is not worn or C is not breast covering or C is not top-placed, decide no;
 	repeat with O running through breast covering top-placed clothing:
 		if the top-layer of O > the top-layer of C, decide no;
-	decide yes.]
+	decide yes.
 
 Definition: a clothing (called C) is top level titfuck protection: [This cares about whether it prevents titfucks.]
 	if C is not worn or C is not breast covering or C is not top-placed or C is optional-top-displacable or C is fully exposing, decide no;

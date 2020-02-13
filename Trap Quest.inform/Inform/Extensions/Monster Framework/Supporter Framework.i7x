@@ -141,10 +141,14 @@ To compute perception of (M - a supporter):
 		compute appearance assessment of M.
 
 To compute appearance assessment of (M - a supporter):
-	if the saved appearance of the player > the outrage tolerance of M:
+	if the appearance of the player > the outrage tolerance of M:
 		FavourDown M by 2;
-		if M is friendly, say FriendlySluttyPerception of M;
-		otherwise say "[UnfriendlySluttyPerception of M][big he of M] takes an aggressive pose.";
+		if M is unfriendly:
+			say "[UnfriendlySluttyPerception of M][big he of M] takes an aggressive pose.";
+		otherwise if M is a groper and M is groping:
+			compute grope of M;
+		otherwise:
+			say FriendlySluttyPerception of M;
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
@@ -232,12 +236,12 @@ To compute facial strapon climax of (M - a supporter):
 		PainUp 1;
 	say "[big he of M] pulls out, satisfied, and loses interest.";
 	TimesSubmittedUp M by 1;
-	bore M.
+	orgasm bore M.
 
 To compute unique facesit climax effect of (M - a supporter):
 	say "[BigNameDesc of M] gets off of your face and lies down on the ground, where [he of M] promptly falls asleep.";
 	compute M sleeping 200 after sex;
-	Bore M.
+	orgasm bore M.
 
 This is the supporter facesitting prevents breathing rule:
 	repeat with M running through female supporters penetrating face:
@@ -281,7 +285,7 @@ To compute anal sex of (M - a supporter):
 To compute (M - a supporter) sexRuin in (F - a fuckhole):
 	if the class of the player is living sex doll:
 		do nothing;
-	otherwise if M is not intelligent or the reaction of the player < 2:
+	otherwise if M is unintelligent or the reaction of the player < 2:
 		ruin F; [The RuinRoll function handles the chance of avoiding soreness for submitting]
 	otherwise:
 		if a random number between 1 and the charisma of the player is 1, ruin F.
@@ -384,6 +388,8 @@ To set up sex length of (M - a supporter) in (B - a body part):
 
 To decide which number is the outrage tolerance of (M - a supporter):
 	decide on 10.
+
+Definition: a supporter is a groper: decide yes.
 
 To compute post climax effect of (M - a supporter) in (F - a fuckhole):
 	if M is male:

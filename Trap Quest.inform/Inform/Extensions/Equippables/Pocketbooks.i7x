@@ -2,8 +2,10 @@ Pocketbooks by Equippables begins here.
 
 A pocketbook is a kind of equippable. A pocketbook is usually leather. A pocketbook is usually manly. A pocketbook is usually rare. Understand "pocket", "book" as pocketbook. The text-shortcut of a pocketbook is usually "pktb".
 
+Figure of pocketbook is the file "Items/Accessories/Equippables/book1.jpg".
+
 To decide which figure-name is the clothing-image of (C - a pocketbook):
-	decide on figure of necronomicon. [Temporary]
+	decide on figure of pocketbook.
 
 Browsing is an action applying to one thing. Understand "skim [something]", "browse [something]" as browsing.
 
@@ -38,7 +40,7 @@ Section 1 - Pocket Necronomicon
 
 A pocket necronomicon is a kind of pocketbook. A pocket necronomicon is unique. The text-shortcut of pocket necronomicon is "pkn". There is 1 pocket necronomicon. Understand "book", "necro", "nomicon", "nomic" as pocket necronomicon.
 
-Figure of necronomicon is the file "Items/Accessories/Equippables/necronomicon1.png".
+Figure of necronomicon is the file "Items/Accessories/Equippables/necronomicon1.jpg".
 
 To decide which figure-name is the clothing-image of (C - a pocket necronomicon):
 	decide on figure of necronomicon.
@@ -124,6 +126,9 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		let X be the womb volume of vagina + the semen volume of vagina;
 		now the pregnancy of the player is 0;
 		now the semen volume of vagina is 0;
+		now the small egg count of vagina is 0;
+		now the medium egg count of vagina is 0;
+		now the large egg count of vagina is 0;
 		WombEmpty the womb volume of vagina;
 		now the semen volume of vagina is X;
 		[if bukkake fetish is 1, CumThighsUp X - 1;

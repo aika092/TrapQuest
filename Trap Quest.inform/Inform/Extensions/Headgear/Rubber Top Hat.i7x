@@ -4,9 +4,7 @@ Rubber Top Hat by Headgear begins here.
 rubber top hat is a headgear. rubber top hat is latex. rubber top hat is womanly. Figure of rubber top hat is the file "Items/Accessories/Head/tophat1.png". rubber top hat is blondeness-positive. rubber top hat is brightness-positive. rubber top hat is redness-negative. rubber top hat is hair growing. The text-shortcut of rubber top hat is "rth".
 
 
-To decide if rubber top hat is roleplay:
-	if artificial enhancements fetish is 1, decide yes;
-	decide no.
+Definition: rubber top hat is roleplay if artificial enhancements fetish is 1.
 
 The printed name of rubber top hat is "[clothing-title-before]rubber top hat[clothing-title-after]".
 
@@ -95,7 +93,7 @@ To uniquely set up (C - rubber top hat):
 	now the quest of C is titfuck-desirability-quest.
 
 To say QuestFlav of (Q - titfuck-desirability-quest):
-	say "You sense it wants people to choose to fuck your tits without you suggesting it yourself.".
+	say "You sense it wants people to choose to grope or fuck your tits without you suggesting it yourself.".
 
 To say QuestTitle of (Q - titfuck-desirability-quest):
 	say " (fuckable tits quest)".
@@ -103,7 +101,7 @@ To say QuestTitle of (Q - titfuck-desirability-quest):
 To compute generic first time class reward of (Q - titfuck-desirability-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
-		now D is pure diamond;
+		now D is ruby;
 		set shortcut of D;
 		if D is actually summonable:
 			summon D;

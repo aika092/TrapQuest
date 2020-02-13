@@ -143,17 +143,28 @@ Definition: a clothing is crotch-tie-up if it is not no-crotch and it is not cro
 Clothing can be crotch-in-place or crotch-displaced. Clothing is usually crotch-in-place.
 [!<ClothingIsDisplacable>+
 
-Can this be displaced at the crotch?
+Can this (usually) be displaced at the crotch?
 
 +!]
 Definition: a clothing is displacable: decide no.
-
 [!<ClothingIsUndisplacable>+
 
-Is this unable to be displaced at the crotch?
+Is this unable to (usually) be displaced at the crotch?
 
 +!]
 Definition: a clothing is undisplacable if it is not displacable.
+[!<ClothingIsActuallyDisplacable>+
+
+Can this be displaced at the crotch right now?
+
++!]
+Definition: a clothing (called C) is actually displacable rather than actually undisplacable:
+	if C is not worn or C is glued, decide no;
+	if C is crotch-displaced or C is not displacable, decide no;
+	unless C is skirted:
+		repeat with D running through worn top level protection unskirted clothing:
+			if the bottom-layer of D > the bottom-layer of C, decide no;
+	decide yes.
 
 [!<ClothingIsRippable>+
 
@@ -184,6 +195,12 @@ Definition: a clothing is actually breast covering if it is breast covering and 
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
 Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped.
+Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
+	if C is not worn or C is glued, decide no;
+	if C is top-displaced or C is not-top-displacable, decide no;
+	repeat with D running through worn top level breasts protection clothing:
+		if the top-layer of D > the top-layer of C, decide no;
+	decide yes.
 Clothing can be normally-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
 Definition: a clothing (called C) is nipple exposing rather than nipple covering:
 	if C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is chestless or C is fully exposing or C is uniquely nipple exposing, decide yes;
@@ -298,9 +315,8 @@ Definition: a clothing (called C) is desirable:
 	if C is store, decide no;
 	if C is diaper or C is cursed or C is ass plugging or C is vagina plugging, decide no;
 	if C is not worn by the player and C is not held by the player, decide no;
-	if C is worn and C is not currently perceivable, decide no;
-	if C is knickers and C is not total protection, decide no;
-	if C is dirty, decide no;
+	if C is not currently perceivable, decide no;
+	if C is knickers and (C is messed or C is not total protection), decide no;
 	decide yes.
 
 Definition: a clothing is slitted: decide no. [Slitted skirts don't block knee attacks]

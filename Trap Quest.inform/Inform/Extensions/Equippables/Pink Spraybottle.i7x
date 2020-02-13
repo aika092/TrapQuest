@@ -72,12 +72,16 @@ Check taking off pink spraybottle:
 	let M be a random worn maid headdress;
 	if the work ethic of the noun < 0 and M is clothing, say "You try, but it's like the [ShortDesc of M] won't let you put it down.[line break][variable custom style]'Maybe I have to clean something with it first?'[roman type][line break]" instead.
 
-To compute periodic effect of (C - a pink spraybottle):
-	if the work ethic of C < -130:[not cleaning enough? You might be punished!]
-		let R be a random number between -4000 and -130;
-		if debuginfo > 1, say "[input-style]Spraybottle work ethic check: RNG(-4000~-130) = [R] | ([work ethic of C]) work ethic[roman type][line break]";
-		if the work ethic of C < R, compute spraybottle punishment;
-	if the class of the player is maid and the work ethic of C > -400, decrease the work ethic of C by 2.[The bottle gains charge automatically if you uncurse it. Note that it must be worn.]
+Carry out going when there is a worn pink spraybottle:
+	let R be the location of the player;
+	if the class of the player is maid and the semen-puddle of R + the milk-puddle of R + the urine-puddle of R > 0:
+		let S be a random worn pink spraybottle;
+		say "[BigNameDesc of S] [bold type]rattles in your hand, clearly unimpressed that you are leaving without cleaning up the puddle![roman type][line break]";
+		decrease the work ethic of S by 100;
+		if the work ethic of S < -400, now the work ethic of S is -400;
+		let N be a random number between -1000 and -130;
+		if debuginfo > 0, say "[input-style]Spraybottle work ethic check: RNG(-1000~-130) = [N] | ([work ethic of S]) work ethic[roman type][line break]";
+		if the work ethic of S < N, compute spraybottle punishment;
 
 
 To compute (S - a pink spraybottle) breaking:

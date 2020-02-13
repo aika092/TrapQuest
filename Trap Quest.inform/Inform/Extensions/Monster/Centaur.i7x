@@ -8,12 +8,16 @@ Centaur is a monster. Centaur is intelligent. The text-shortcut of centaur is "c
 
 Definition: centaur is presenting as female: decide yes. [For now]
 
+Figure of Centaur is the file "NPCs/Forest/centaur1.png".
+To decide which figure-name is the monster-image of (M - centaur):
+	decide on the figure of centaur.
+
 To say MediumDesc of (M - centaur):
 	say "centaur templar".
 
 To say MonsterDesc of (M - centaur):
-	say "This armored [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] torso is protected by a bit of ornate armour, and [he of M] is holding a large steel sword in one strong hand. [big his of M] shining silvery hair, which matches the fur of [his of M] lower half, flows behind [him of M] as if constantly caught by the wind.".
-	[say "This armored [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] entire torso is covered by a set of silver plate mail, with a large, circular buckler attached to one of [his of M] arms. [big his of M] fiery red hair, which matches the fur of [his of M] lower half, is drawn back into a ponytail.".]
+	say "This armoured [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] torso is protected by a bit of ornate armour, and [he of M] is holding a large steel sword in one strong hand. [big his of M] shining silvery hair, which matches the fur of [his of M] lower half, flows behind [him of M] as if constantly caught by the wind.".
+	[say "This armoured [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] entire torso is covered by a set of silver plate mail, with a large, circular buckler attached to one of [his of M] arms. [big his of M] fiery red hair, which matches the fur of [his of M] lower half, is drawn back into a ponytail.".]
 
 Definition: a centaur is raunchy: decide yes.
 
@@ -101,11 +105,13 @@ To compute appearance assessment of (M - centaur):
 			say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]You dirty imp fucker! I'll make you change your disgusting ways!'[or]Devil lover! I'll force you to repent!'[or]I'll fuck that evil religion right out of you!'[at random][roman type][line break]";
 		otherwise:
 			say "[BigNameDesc of M] curls [his of M] lip.[line break][speech style of M]'[one of]A devil worshipper...You know, there's still time for you to change your ways.'[or]I have ways to make you repent, devil worshipper. There's still time, you know.'[or]Ugh. You'll have to repent sooner or later, devil worshipper.'[at random][roman type][line break]";
-	otherwise if the saved appearance of the player > the outrage tolerance of M:
+	otherwise if the appearance of the player > the outrage tolerance of M:
 		FavourDown M by 2;
 		if M is unfriendly:
 			say "[BigNameDesc of M]'s eyes [if asshole is lewdly exposed]immediately settle on your exposed [asshole][otherwise]hungrily rove your body[end if] as [he of M] licks [his of M] lips.[line break][speech style of M]'[one of]I challenge you to a duel!'[or]I challenge you! Face me!'[or]Lets duel! Right now, before I go soft!'[at random][roman type][line break]";
-		otherwise:[Duel totally isn't a euphemism for anything. Nope. Definitely not.]
+		otherwise if M is groping:
+			compute grope of M;
+		otherwise: [Duel totally isn't a euphemism for anything. Nope. Definitely not.]
 			if the class of the player is cowgirl or the class of the player is puppygirl or the class of the player is catgirl or the class of the player is bunny:
 				say "[BigNameDesc of M]'s eyes rove your body.[line break][speech style of M]'[one of]What a good looking...stance. Wanna duel, [player-class]?'[or]Wow, a [player-class]. And a...tough looking one too...Wanna duel?'[or]You look...strong for a [player-class]. We should duel each other sometime.'[at random][roman type][line break]";
 			otherwise:
@@ -137,14 +143,15 @@ To say StrikingFailureFlav of (M - centaur) on (B - a body part):
 The centaur priority attack rules is a rulebook. The priority attack rules of centaur is the centaur priority attack rules.
 
 This is the centaur raises shield rule:
-	let M be centaur;
-	if M is not shieldblocked and a random number between 1 and 5 is 1 and M is unfriendly:
-		say "[BigNameDesc of M] raises [his of M] sword protectively, using it as a shield.";
-		now M is shieldblocked;
-		rule succeeds;
-	otherwise if M is shieldblocked:
-		say "[BigNameDesc of M] keeps [his of M] sword raised defensively.";
-		rule succeeds.
+	if the player is upright:
+		let M be centaur;
+		if M is not shieldblocked and a random number between 1 and 5 is 1 and M is unfriendly:
+			say "[BigNameDesc of M] raises [his of M] sword protectively, using it as a shield.";
+			now M is shieldblocked;
+			rule succeeds;
+		otherwise if M is shieldblocked:
+			say "[BigNameDesc of M] keeps [his of M] sword raised defensively.";
+			rule succeeds.
 The centaur raises shield rule is listed last in the centaur priority attack rules.
 
 This is the centaur lowers shield rule:
@@ -281,7 +288,7 @@ To say FoursomePrep of (M - centaur) with (N - a monster) and (O - a monster) in
 	otherwise say "With some difficulty, [BigFuckerDesc of M] flips you onto your back without disturbing [FuckerDesc of N] or [FuckerDesc of O]. They continue to fuck you as [FuckerDesc of M] lines up [his of M] [LongDickDesc of M] with your entrance.".
 
 To say TwosomePrep of (M - centaur) in (F - vagina):
-	say "[BigFuckerDesc of M] steps over you, [his of M] [LongDickDesc of M] dragging a line of 'drool' up the side of your leg as [he of M] lines [him of M]self up with your entrance.".
+	say "[BigFuckerDesc of M] steps over you, [his of M] [LongDickDesc of M] dragging a line of 'drool' up the side of your leg as [he of M] lines [himself of M] up with your entrance.".
 
 To say FriendlyPenetrationFlav of (M - centaur) in (F - vagina):
 	say PenetrationFlav of M in F.
@@ -320,11 +327,11 @@ To say LessLooseVaginaPenetrationFlav of (M - centaur):
 
 To say VeryLooseVaginaPenetrationFlav of (M - centaur):
 	if the relevant sex addiction of M < 7:
-		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your unwilling [vagina].[or]You scoff as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]make an indignant noise[otherwise]curl your lip in digust[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [Big he of M] sighs in satisfaction as [he of M] begins to thrust.";
+		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your unwilling [vagina].[or]You scoff as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]make an indignant noise[otherwise]curl your lip in disgust[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [big he of M] sighs in satisfaction as [he of M] begins to thrust.";
 	otherwise if the relevant sex addiction of M < 12:
-		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your not-unwilling [vagina].[or]You suppress a moan as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]make an muffled noise[otherwise]bite your lip[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [Big he of M] sighs in satisfaction as [he of M] begins to thrust.";
+		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your not-unwilling [vagina].[or]You suppress a moan as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]make an muffled noise[otherwise]bite your lip[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [big he of M] sighs in satisfaction as [he of M] begins to thrust.";
 	otherwise:
-		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your oh-so-willing [vagina].[or]You shamelessly moan as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]emit a muffled moan[otherwise]moan hungrily[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [Big he of M] sighs in satisfaction as [he of M] begins to thrust.".
+		say "[one of][BigNameDesc of M] slowly drives [his of M] weight forward, sliding [his of M] bestial shaft into your oh-so-willing [vagina].[or]You shamelessly moan as [he of M] drives [his of M] weight forward, sliding [his of M] bestial shaft into your [vagina].[or]You [if face is actually occupied]emit a muffled moan[otherwise]moan hungrily[end if] as [his of M] bestial shaft presses between your folds, providing its own lubrication as it slowly slides into your [vagina].[in random order] [big he of M] sighs in satisfaction as [he of M] begins to thrust.".
 
 To decide if (M - centaur) is willing to creampie (F - vagina):
 	if the reaction of the player is 0:
@@ -399,7 +406,7 @@ To say RepeatResponse of (M - centaur):
 	otherwise if the player is pheromonal:
 		say "[speech style of M]'[one of]Hey[or]Yo[or]Sup[at random]. [one of]You smell nice.[or]By the way, that's a really nice scent.[or]I like your scent by the way. Its nice.[at random]";
 	otherwise if the class of the player is priestess:
-		say "[speech style of M]'[one of]I am honoured to be in the presence of your holy self.'[or]Its always a pleasure to meet a holy woman.'[or]Well met! I'm always glad to meet a woman of the cloth.'[at random][roman type]";
+		say "[speech style of M]'[one of]I am honoured to be in the presence of your holy self.'[or]It's always a pleasure to meet a holy [man of the player].'[or]Well met! I'm always glad to meet a [man of the player] of the cloth.'[at random][roman type]";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I don't exactly know what altar you tend to, but any altar girl is good enough for me!'[or]Even pagan gods are fine by me!'[or]Well met! Its always a pleasure to meet a fellow devout.'[at random][roman type]";
 	otherwise:

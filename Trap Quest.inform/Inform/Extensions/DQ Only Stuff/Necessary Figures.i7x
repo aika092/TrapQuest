@@ -2,6 +2,8 @@ Necessary Figures by DQ Only Stuff begins here.
 
 Figure of acolyte 5 is the file "NPCs/Mansion/Cultist/cultist5.png".
 
+Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
+
 Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 

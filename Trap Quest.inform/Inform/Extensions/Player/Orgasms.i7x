@@ -178,7 +178,7 @@ REQUIRES COMMENTING
 
 +!]
 To breasts orgasm shamefully:
-	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
 	[severeHumiliate;]

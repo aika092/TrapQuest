@@ -133,6 +133,7 @@ To compute sleeping of (M - a monster):
 	compute sleep reduction of M;[needs to come after healing and recovery]
 	if M is simulated, compute unique periodic effect of M;
 	compute unique unsimulated periodic effect of M;
+	decrease the teaseTimer of M by 1;
 	if the last-interaction of M > 0, decrease the last-interaction of M by 1.
 
 To compute scared reduction of (M - a monster):

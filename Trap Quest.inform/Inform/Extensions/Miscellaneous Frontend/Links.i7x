@@ -263,7 +263,7 @@ Definition: yourself is reverse bimbo consenting:
 
 To render YesNoButtons:
 	let F be YesNoBackground;
-	if F is Figure of no-image-yet, display entire map; [We still want to show the player the map]
+	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
 	zero map-link-table;
 	zero map-button-table;
 	let H be the height of the map-window;
@@ -353,13 +353,25 @@ To compute multiple choice question:
 				say "[link][N]) [R][as][N][end link][line break]";
 		display focus stuff;
 		if the player is virtual, display stuff;
+		let F be YesNoBackground;
+		if F is not Figure of no-image-yet:
+			zero map-link-table;
+			zero map-button-table;
+			let H be the height of the map-window;
+			let W be the width of the map-window;
+			[Calculate background image size]
+			let XRatio be (W * 1.0) / the pixel-width of F;
+			let FY be the pixel-height of F * XRatio;
+			let FYi be FY to the nearest whole number;
+			display the image F in the map-window at 0 by 0 with dimensions W by FYi;
 		now inputNumber is the chosen letter;
 		decrease inputNumber by 48; [convert key ID to integer]
 		say line break;
 		repeat with R running through numerical-response:
 			if the printed name of R is not "" and inputNumber is the numerical-response-value of R, now validAnswer is 1;
 		if validAnswer is 0, say "Input not understood. Please choose a valid number.";
-	now player-numerical-response is inputNumber.
+	now player-numerical-response is inputNumber;
+	conclude consenting. [refreshes the map window]
 
 To reset multiple choice questions:
 	repeat with R running through numerical-response:
@@ -509,15 +521,16 @@ To say unique-verb-desc of (T - a monster):
 		if T is friendly and T is intelligent:
 			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		otherwise if the player is upright:
-			let TZaps be "";
-			if the player is able to zap:
-				repeat with BM running through held zappable things:
-					if the damage improvement of BM > 0, now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
+			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
+			repeat with BM running through held zappable things:
+				if the damage improvement of BM > 0, say " [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
 			repeat with BM running through carried combat-bomb bombs:
-				now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
-			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link][TZaps][if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][end if]";
+				say " [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
+			say "[if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is sex-enslaved and the player is the donator] [link][bracket]punish[close bracket][as]dominate [text-shortcut of T][end link][end if]";
 		otherwise if T is uninterested:
-			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]".
+			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]";
+		if T is actually seducable:
+			say " [link][bracket]seduce[close bracket][as]seduce [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfFairy>+
 

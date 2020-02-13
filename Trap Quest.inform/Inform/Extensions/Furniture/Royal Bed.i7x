@@ -61,7 +61,7 @@ To compute furniture resting on (F - the royal bed):
 		summon N cursed with quest;
 	otherwise:
 		say "You instantly feel fully healed! Magic! ";
-		if the size of penis > 10 - the delicateness of the player:
+		if the size of penis > 0 and the size of penis > 10 - the delicateness of the player:
 			PenisDown 1;
 			say "You feel your penis [shrink] into a [ShortDesc of penis].";
 		otherwise if the delicateness of the player < the sex addiction of the player:

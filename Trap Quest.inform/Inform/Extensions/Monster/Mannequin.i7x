@@ -226,12 +226,11 @@ To compute unique climax of (M - a mannequin) in (F - asshole):
 		bore M;
 		let P be a random sex toy retained by M;
 		if P is sex toy:
-			if a random number between the difficulty of M and 5 > the size of P * 2:
-				say "[BigNameDesc of M] [if P is anal beads]pushes all [the notches of P] into your asshole before removing [his of M] hands and apparently losing interest[otherwise]removes [his of M] hands from the [printed name of P], and seems to lose interest[end if].";
+			if a random number between the difficulty of M and 15 > the size of P * 2:
+				say "[BigNameDesc of M] [if P is anal beads]pushes all [the notches of P] beads into your asshole before removing [his of M] hands and apparently losing interest[otherwise]removes [his of M] hands from the [printed name of P], and seems to lose interest[end if].";
 				now M is not retaining P;
 				summon P;
 				if P is anal beads, now the notch-taken of P is the notches of P;
-				[DifficultyDown M by 3; We'll see if this is needed]
 			otherwise:[if she doesn't leave it inside you, she saves it for next time.]
 				say "[BigNameDesc of M] pulls the [printed name of P] out of your asshole and seems to lose interest.";
 		otherwise:
@@ -338,7 +337,7 @@ To set up sex length of (M - a mannequin) in (F - asshole):
 To compute (M - a mannequin) entering anally:
 	let P be a random sex toy retained by M;
 	if P is sex toy:
-		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward herself as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
+		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
 	otherwise:
 		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
 	if the player is female:

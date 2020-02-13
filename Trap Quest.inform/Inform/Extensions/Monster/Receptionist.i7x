@@ -25,7 +25,7 @@ To say MonsterDesc of (M - receptionist):
 	if M is sex-enslaved:
 		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] [if lady fetish is 2]bright pink chastity cage[otherwise]naked pussy[end if]. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
 	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in her hair and blue flowers on the hem of her shortened dress. She's got girly frills at the top of her blue socks and a blue choker around her neck. Her hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of her dress. It's so big that she has to keep her feet a metre apart just to be able to walk at all[if M is in School01] - not that she can go very far anyway, since one of her ankles is bound to the back of her reception desk with a strong metal chain[end if]. She can't seem to stop rubbing the front and back of her diaper with her two mittened hands, with a vacant drooling facial expression. Whatever her mega-diaper is full of, it sloshes around rather noisily as she rubs it into herself.";
+		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in [his of M] hair and blue flowers on the hem of [his of M] shortened dress. [big he of M]'s got girly frills at the top of [his of M] blue socks and a blue choker around [his of M] neck. [big his of M] hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of [his of M] dress. It's so big that she has to keep [his of M] feet a metre apart just to be able to walk at all[if M is in School01] - not that she can go very far anyway, since one of [his of M] ankles is bound to the back of [his of M] reception desk with a strong metal chain[end if]. She can't seem to stop rubbing the front and back of [his of M] diaper with [his of M] two mittened hands, with a vacant drooling facial expression. Whatever [his of M] mega-diaper is full of, it sloshes around rather noisily as [he of M] rubs it into [himself of M].";
 	otherwise:
 		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
@@ -126,6 +126,24 @@ To compute perception of (M - receptionist):
 
 
 
+To say EnslavedDominationFlav of (M - receptionist):
+	say "You force [NameDesc of M] to bend over [his of M] desk. With [his of M] ankle chained down, there's not much [he of M] can do to stop you. ";
+	if the size of penis > 0 and the number of worn cursed undisplacable clothing is 0:
+		if penis is penis-erect or penis is erect-at-will:
+			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
+			orgasm quietly;
+			check virginity with M;
+		otherwise:
+			say "Holding your [player-penis] up against [his of M] well-lubricated snatch, you are dismayed to find that you can't seem to get hard right now. Slightly disheartened, you settle for teasing [him of M] by rubbing the tip up and down [his of M] slit until [he of M][']s practically begging to be railed, and then backing away while laughing mockingly.";
+	otherwise:
+		say "You begin exploring [his of M] holes with your fingers, trying to extract as many squeaks, squeals and grunts as you can from the poor [man of M] before you get bored. Which you eventually, do, of course.";
+	say "[speech style of M]'H...haaah~ Thank you for punishing me, [if the player is presenting as male]Master[otherwise]Mistress[end if] [NameBimbo]...'[roman type][line break]".
+
+To decide which number is the EnslavedDominationThreshold of (M - receptionist):
+	decide on 6.
+
+
+
 Part - Combat
 
 
@@ -143,7 +161,7 @@ To say MovementBlock of (M - receptionist):
 
 To compute (M - a monster) stomping (N - receptionist):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
-	otherwise say "You hear a woman screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
+	otherwise say "You hear a [man of N] screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;

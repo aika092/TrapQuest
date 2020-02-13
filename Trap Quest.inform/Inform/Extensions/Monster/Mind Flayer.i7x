@@ -176,17 +176,17 @@ This is the mind flayer sees a target rule:
 	let M be current-monster;
 	repeat with N running through monsters in the location of M:
 		if N is woman and the woman-bimbo of woman-barbara < 6:
-			if M is in the location of the player, say "[BigNameDesc of M] sniffs at [N][']s head then stares heavily at her. Her eyes roll slightly back into her head and her mouth hangs open as she drops to her knees and presents her head to the creature, which wraps its tentacles around it. She moans euphorically as a horrible sucking sound fills the area, and after the creature withdraws its tentacles she wanders away, drooling, with unfocused eyes.";
+			if M is in the location of the player, say "[BigNameDesc of M] sniffs at [N][']s head then stares heavily at [him of N]. [big his of N] eyes roll slightly back into [his of N] head and [his of N] mouth hangs open as [he of N] drops to [his of N] knees and presents [his of N] head to the creature, which wraps [his of M] tentacles around it. [big he of N] moans euphorically as a horrible sucking sound fills the area, and after the creature withdraws [his of M] tentacles [he of N] wanders away, drooling, with unfocused eyes.";
 			otherwise say "You hear a strange sucking sound from somewhere else.";
 			WomanSluttify;
 			Vanish N;
 		otherwise if N is woman:
 			if M is in the location of the player and the raw intelligence of the player > 3:
-				say "[BigNameDesc of M] sniffs briefly at [N][']s head and a look of disappointment crosses its face. It stares at her, irritated. After a moment it smirks, seemingly satisfied, and [N] wanders off rubbing her [vagina] and muttering about [manly-penis].";
+				say "[BigNameDesc of M] sniffs briefly at [N][']s head and a look of disappointment crosses [his of M] face. [big he of M] stares at [him of N], irritated. After a moment [he of M] smirks, seemingly satisfied, and [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis].";
 				regionally place N;
 				bore N;
 			otherwise if M is in the location of the player:
-				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. It rolls its white eyes in brief annoyance before a broad, beaky grin crosses its face. It glares at you both, and both of you mindlessly drop to your knees. It stares at her for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing her [vagina] and muttering about [manly-penis]. Then it turns to you...";
+				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. [big he of M] rolls [his of M] white eyes in brief annoyance before a broad, beaky grin crosses [his of M] face. It glares at you both, and both of you mindlessly drop to your knees. [big he of M] stares at [him of N] for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis]. Then [he of M] turns to you...";
 				regionally place N;
 				bore N;
 				try kneeling.
@@ -212,19 +212,19 @@ To say DamageReactDamaged of (M - mind flayer):
 	say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.".
 
 To say DamageReactTired of (M - mind flayer):
-	say "The creature takes the hit, its expression remaining as hard to read as ever.".
+	say "The creature takes the hit, [his of M] expression remaining as hard to read as ever.".
 
 To say DamageReactWeak of (M - mind flayer):
-	say "The creature's expression grows frantic as it senses its life is in jeopardy!".
+	say "The creature's expression grows frantic as [he of M] senses [his of M] life is in jeopardy!".
 
 To compute unique death of (M - mind flayer):
-	say "[BigNameDesc of M] screams hideously as it collapses to the ground. ";
+	say "[BigNameDesc of M] screams hideously as [he of M] collapses to the ground. ";
 	if severed-tentacle is off-stage:
 		now severed-tentacle is in the location of the player;
-		say "Its body disappears, leaving behind a [ShortDesc of severed-tentacle].";
+		say "[big his of M] body disappears, leaving behind a [ShortDesc of severed-tentacle].";
 		compute autotaking severed-tentacle;
 	otherwise:
-		say "Its body disappears".
+		say "[big his of M] body disappears".
 
 
 Mind Flayer ends here.

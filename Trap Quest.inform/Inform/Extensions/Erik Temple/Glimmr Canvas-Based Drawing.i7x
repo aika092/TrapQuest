@@ -71,7 +71,7 @@ Part - Element Definition
 
 A g-element is a kind of thing.
 
-The specification of g-element is "A g-element is an extensible class of things that represent particular instructions for drawing something to a graphics window (or, more precisely, to a canvas object that is then drawn to a window). Default classes of element include sprites (displays and image file), primitives (draw simple shapes, such as rectangles, boxes, lines, and points), bitmaps (the author specifies a grid of colored bits to be drawn to the screen), image maps, and rendered strings (arbitrary text 'painted' to the screen). It is also possible to create new classes of g-elements using commands from the Glimmr Drawing Commands extension. See the specifications for specific element types for more information. Elements need to be explicitly associated with a canvas, e.g. 'the associated canvas of Element A is the graphics-canvas.' (Elements are automatically associated with the graphics-canvas when Glimmr Simple Graphics Window is used.) All g-elements have a property called the origin, written as a list of numbers, e.g. {12, 21}, describing the x, y coordinate of (usually) the upper-left corner of the element. Elements are marked active or inactive, which determines whether they are displayed or not; this is done by setting the display status property to either g-active or g-inactive. If the extension Glimmr Graphic Hyperlinks is included, g-elements can also be hyperlinked. Usually a linked replacement-command is provided, which will paste a command to the input prompt on behalf of the player. However, there are other options available as well (see the Glimmr Graphic Hyperlinks extension)."
+The specification of g-element is "A g-element is an extensible class of things that represent particular instructions for drawing something to a graphics window (or, more precisely, to a canvas object that is then drawn to a window). Default classes of element include sprites (displays and image file), primitives (draw simple shapes, such as rectangles, boxes, lines, and points), bitmaps (the author specifies a grid of coloured bits to be drawn to the screen), image maps, and rendered strings (arbitrary text 'painted' to the screen). It is also possible to create new classes of g-elements using commands from the Glimmr Drawing Commands extension. See the specifications for specific element types for more information. Elements need to be explicitly associated with a canvas, e.g. 'the associated canvas of Element A is the graphics-canvas.' (Elements are automatically associated with the graphics-canvas when Glimmr Simple Graphics Window is used.) All g-elements have a property called the origin, written as a list of numbers, e.g. {12, 21}, describing the x, y coordinate of (usually) the upper-left corner of the element. Elements are marked active or inactive, which determines whether they are displayed or not; this is done by setting the display status property to either g-active or g-inactive. If the extension Glimmr Graphic Hyperlinks is included, g-elements can also be hyperlinked. Usually a linked replacement-command is provided, which will paste a command to the input prompt on behalf of the player. However, there are other options available as well (see the Glimmr Graphic Hyperlinks extension)."
 
 
 Chapter - Display status
@@ -799,10 +799,10 @@ The specification of bitmap is "A bitmap element draws a rectangular image compo
 
 	{
 	{ 0, 0, 1, 0, 0 },
-	{ 0, 0, 1, 0, 0 },
-	{ 1, 1, 1, 1, 1 },
-	{ 0, 0, 1, 0, 0 },
-	{ 0, 0, 1, 0, 0 } }.
+ 	{ 0, 0, 1, 0, 0 },
+ 	{ 1, 1, 1, 1, 1 },
+ 	{ 0, 0, 1, 0, 0 },
+ 	{ 0, 0, 1, 0, 0 }  }.
 
 The ones represent bits that are turned on, while the zeros represent bits that are off. Note that each row is represented by its own list of numbers, and that we need to have the same number of entries in each row or errors will result.
 
@@ -1249,7 +1249,7 @@ To fit (grid - an image-map) to/into a/-- total/-- width of (X - a number) canva
 	otherwise:
 		rule fails;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Trying to fit [grid] to a width of [X] canvas units. Changed tile-width to [width-token]. [if width-token * image-map-width is not X]The width could not be set precisely to [X]. [end if]The overall width before scaling will be [width-token * image-map-width].[<]";
+	    say "[>console][CBD]Trying to fit [grid] to a width of [X] canvas units. Changed tile-width to [width-token]. [if width-token * image-map-width is not X]The width could not be set precisely to [X]. [end if]The overall width before scaling will be [width-token * image-map-width].[<]";
 	#end if.
 
 
@@ -1267,7 +1267,7 @@ To fit (grid - an image-map) to/into a/-- total/-- height of (Y - a number) canv
 	otherwise:
 		rule fails;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Trying to fit [grid] to a height of [Y] canvas units. Changed tile-height override to [height-token]. [if height-token * calc-height is not Y]The height could not be set to [Y]. [end if]The overall height before scaling will be [height-token * calc-height].[<]";
+	    say "[>console][CBD]Trying to fit [grid] to a height of [Y] canvas units. Changed tile-height override to [height-token]. [if height-token * calc-height is not Y]The height could not be set to [Y]. [end if]The overall height before scaling will be [height-token * calc-height].[<]";
 	#end if.
 
 
@@ -1346,16 +1346,16 @@ An element display rule for a tileset image-map (called the grid):
 	unless the background tint of the grid is g-PlaceNullCol:
 		rectdraw (color background tint of the grid) in (current window) from (win-x of the grid) by (win-y) to win-x + (image-map-width * scaled tile-width) by win-y + (image-map-height * scaled tile-height);
 		#if utilizing Glimmr debugging;
-			say "[>console][CBD]Drawing background rectangle (glulx color-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
+		    say "[>console][CBD]Drawing background rectangle (glulx color-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
 		#end if;
 	drimagemap in (current window) at (win-x of the grid) by (win-y of the grid) using (tile-array) rendered with (associated tileset of the grid) with tile-size (scaled tile-width) by (scaled tile-height) px;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Drawing tileset image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles) rendered using tileset [associated tileset]; tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
+	    say "[>console][CBD]Drawing tileset image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles) rendered using tileset [associated tileset]; tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
 	#end if;
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as (the grid) from win-x by win-y to win-x + (scaled tile-width * image-map-width) by win-y + (scaled tile-height * image-map-height) as the linked replacement-command of the grid;
 		#if utilizing Glimmr debugging;
-			say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
+		    say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
 		#end if;
 	if the grid is tile-graphlinked:
 		follow the tiled graphlink setting rules for the grid.
@@ -1369,16 +1369,16 @@ An element display rule for a direct image-map (called the grid):
 	unless the background tint of the grid is g-PlaceNullCol:
 		rectdraw (color background tint of the grid) in (current window) from (win-x of the grid) by (win-y) to win-x + (image-map-width * scaled tile-width) by win-y + (image-map-height * scaled tile-height);
 		#if utilizing Glimmr debugging;
-			say "[>console][CBD]Drawing background rectangle (glulx color-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for direct image-map [i][grid][/i] in [i][current window][/i][<].";
+		    say "[>console][CBD]Drawing background rectangle (glulx color-value [background tint of grid]) from ([win-x], [win-y]) to ([win-x + (image-map-width * scaled tile-width)], [win-y + (image-map-height * scaled tile-height)]) for direct image-map [i][grid][/i] in [i][current window][/i][<].";
 		#end if;
 	drimagemap in (current window) at (win-x of the grid) by (win-y of the grid) using (figure-array) with tile-size (scaled tile-width) by (scaled tile-height) px;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Drawing direct image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles); tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
+	    say "[>console][CBD]Drawing direct image-map [i][grid][/i] in [i][current window][/i] at origin ([win-x of grid], [win-y of grid]). Map ([image-map-width] x [image-map-height] = [image-map-width * image-map-height] tiles); tiles measure [scaled tile-width] x [scaled tile-height] pixels after scaling.[<]";
 	#end if;
 	if the grid is graphlinked:
 		set a graphlink in the current window identified as (the grid) from win-x by win-y to win-x + (scaled tile-width * image-map-width) by win-y + (scaled tile-height * image-map-height) as the linked replacement-command of the grid;
 		#if utilizing Glimmr debugging;
-			say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
+		    say "[>console][CBD]Graphlink corresponding to [i][grid][/i] set in [i][current window][/i] from ([win-x], [win-y]) to ([win-x + (scaled tile-width * image-map-width)], [win-y + (scaled tile-height * image-map-height)]): [quotation mark][linked replacement-command][quotation mark].[<]";
 		#end if;
 	if the grid is tile-graphlinked:
 		follow the tiled graphlink setting rules for the grid.
@@ -1484,7 +1484,7 @@ A tiled graphlink setting rule for an image-map (called the grid):
 		increase row by scaled tile-height of the grid;
 		now column is win-x of the grid;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Graphlinks set on [number of entries in the linked command array of the grid * number of entries in entry 1 of the linked command array of the grid] individual tiles for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
+	    say "[>console][CBD]Graphlinks set on [number of entries in the linked command array of the grid * number of entries in entry 1 of the linked command array of the grid] individual tiles for tileset image-map [i][grid][/i] in [i][current window][/i].[<]";
 	#end if.
 
 
@@ -1507,7 +1507,7 @@ To construct/build graphic/-- hyperlinks/graphlinks array for (grid - a direct i
 				add "" to L;
 		add L to the linked command array of the grid;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Constructed hyperlink command array for [grid] (a direct image-map) from the table [link-table].[<]";
+	    say "[>console][CBD]Constructed hyperlink command array for [grid] (a direct image-map) from the table [link-table].[<]";
 	#end if.
 
 [This table is required for the above routine to compile. It is best to make your own table rather than add to this one.]
@@ -1535,7 +1535,7 @@ To construct/build graphic/-- hyperlinks/graphlinks array for (grid - a tileset 
 				add "" to L;
 		add L to the linked command array of the grid;
 	#if utilizing Glimmr debugging;
-		say "[>console][CBD]Constructed hyperlink command array for [grid] (a tileset image-map) from the translation-table of the tileset [associated tileset of the grid].[<]";
+	    say "[>console][CBD]Constructed hyperlink command array for [grid] (a tileset image-map) from the translation-table of the tileset [associated tileset of the grid].[<]";
 	#end if.
 
 
@@ -1570,7 +1570,7 @@ Carry out dumping imap:
 	let row-count be 1;
 	say "[fixed letter spacing][run paragraph on]";
 	if the noun is a tileset image-map:
-		say "	 ";
+		say "     ";
 		repeat with count running from 1 to the image-map-width:
 			say "[if count < 100] [end if][count][if count < 100] [end if][if count < 10] [end if]";
 		repeat with current-row running through the tile-array of the noun:
@@ -1608,15 +1608,15 @@ Carry out dumping imap:
 
 To say appropriate spacing for (N - a number):
 	if N < 10:
-		say "	";
+		say "    ";
 	otherwise if N < 100:
-		say "  ";
+		say "   ";
 	otherwise:
-		say " ".
+		say "  ".
 
 
 Chapter - Graphlink preview
-[This would be better implemented as a debugging command, perhaps, but is presented as a use option for performance reasons. With a use option, we can use an #ifdef block to define the debugging behavior; in other words, when the use option is not in use, no code at all related to it is compiled into the game, and thus no need to waste time checking a conditional.]
+[This would be better implemented as a debugging command, perhaps, but is presented as a use option for performance reasons. With a use option, we can use an #ifdef block to define the debugging behaviour; in other words, when the use option is not in use, no code at all related to it is compiled into the game, and thus no need to waste time checking a conditional.]
 
 Use image-map graphlink preview translates as (- Constant Glimmr_GRAPHLINK_PREVIEW; -).
 
@@ -1908,9 +1908,9 @@ Individual links can work alongside the global hyperlink for the entire image-ma
 We can refer to image-maps by their internal coordinates in limited ways. The internal coordinates are expressed using curly braces like canvas coordinates, but they refer to the column and row of a cell in the map. For example, refer back to our "hallway" map:
 
 	{ 11, 11, 11, 11, 11, 11, 11,
-	 05, 00, 00, 00, 00, 00, 00,
-	 05, 00, 00, 00, 00, 00, 00,
-	 11, 11, 11, 11, 11, 11, 11 }
+	  05, 00, 00, 00, 00, 00, 00,
+	  05, 00, 00, 00, 00, 00, 00,
+	  11, 11, 11, 11, 11, 11, 11 }
 
 If we want to refer to the 05 on the left side of the second row, we would point to {1, 2}. We can change the image array of an image-map using internal coordinates like so:
 
@@ -1975,7 +1975,7 @@ As has been alluded to, there are two types of rendered string:
 
 	Image-rendered string - Each glyph is drawn using a separate, external image file, preferably in PNG format.
 
-A bitmap-rendered string does not require any external image files, only that a valid bitmap font (such as that provided by the Glimmr Bitmap Font extension) be specified as the "associated font". As with bitmaps, we can set the "bit-size" property to set the size of each bit, and it has the same coarseness in scaling. And as with bitmaps, the "tint" and "background tint" properties define the colors of a bitmap-rendered string, with "tint" providing the color of the letterforms. When a background tint is provided, a single rectangle is drawn encompassing the entire text area of the rendered string.
+A bitmap-rendered string does not require any external image files, only that a valid bitmap font (such as that provided by the Glimmr Bitmap Font extension) be specified as the "associated font". As with bitmaps, we can set the "bit-size" property to set the size of each bit, and it has the same coarseness in scaling. And as with bitmaps, the "tint" and "background tint" properties define the colours of a bitmap-rendered string, with "tint" providing the colour of the letterforms. When a background tint is provided, a single rectangle is drawn encompassing the entire text area of the rendered string.
 
 A rendered string, like a sprite, can be provided its own "scaling factor" property to adjust the size of its glyphs relative to the canvas, and it scales with an accuracy comparable to that of sprite elements. If the "background tint" property is supplied (as always, a glulx color value), a rectangle of that color will be drawn behind the rendered string. The "tint" property of an image-rendered string controls only the color of the cursor; the color of the letterforms is set in the image files.
 
@@ -2283,7 +2283,7 @@ Here is a list of properties common to all graphic elements (g-elements). Separa
 
 	display status - indicates whether or not the element is marked for display (i.e., whether or not it will be drawn to the associated canvas of the element when the window displaying that canvas is updated). Can be g-active (marked for display) or g-inactive. Default value: g-active
 
-	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below). The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
+	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below) . The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
 
 	display-layer - a number that defines the "layer" the element will be drawn to, comparable to the z-index in CSS/HTML. Elements with a display-layer of 1 are drawn first, then those with display-layer 2, etc. Lower numbers are thus lower in the stack order. Default value: 1
 
@@ -2526,7 +2526,7 @@ We can include a little optional code to change the color of the button momentar
 The final line in the block intializes the current graphlink variable to Button_1 (the "undo" button). This is done so that, in the case where the first button pressed by the player is UNDO, the "current graphlink" value will hold a valid g-element (rather than null) after undoing; if the current graphlink doesn't store a button, the timer will go off after the action is undone and try to check the "tint" property of nothing (since the game state will have reverted to before the player pressed the button), resulting in an error.
 
 	*: To revert the/-- button/-- after (T - a number) millisecond/milliseconds:
-		(- glk_request_timer_events({T}); -)
+		(- glk_request_timer_events({T});  -)
 
 	To stop the/-- timer:
 		(- glk_request_timer_events(0); -)
@@ -2617,7 +2617,7 @@ Compare the Table of Button Labels here with the one for Simple Buttons--we've b
 And the (optional) button animations (see the previous example for explanation):
 
 	*: To revert the/-- button/-- after (T - a number) millisecond/milliseconds:
-		(- glk_request_timer_events({T}); -)
+		(- glk_request_timer_events({T});  -)
 
 	To stop the/-- timer:
 		(- glk_request_timer_events(0); -)
@@ -3238,7 +3238,7 @@ If the player is holding fewer than 5 cards, we repeat through the number of pla
 					set a graphlink in the current window identified as the card-manager from (x) by (y) to (x + card-x) by (y + card-y) as "DRAW", ignoring redundant links;
 				increase x by card-x + (card-x / 3).
 
-When we set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
+When we 	set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
 
 In this rule, we change the replacement command to refer to the name of the card, e.g. "discard the ten of hearts".
 
@@ -3611,9 +3611,4 @@ From this point on, the code does not differ from the Inform documentation's "Ti
 		high card.
 
 	Sort-debugging is a truth state that varies.
-
-
-
-
-
 

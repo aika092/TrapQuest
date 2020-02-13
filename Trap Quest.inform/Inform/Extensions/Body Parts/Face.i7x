@@ -348,7 +348,7 @@ To display lips cutscene:
 
 Section - Image for graphics window
 
-The text-shortcut of face is "face". Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
+Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
 Figure of CumFaceButton is the file "Special/Buttons/cumface.png".
 
 To decide which figure-name is the examine-image of (T - face):

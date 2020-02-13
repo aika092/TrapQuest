@@ -54,8 +54,7 @@ To uniquely set up (C - a unicorn-horn):
 	now the size of C is 6;
 	now C is blessed.
 
-Definition: a unicorn-horn is cursable:
-	decide no.
+Definition: a unicorn-horn is cursable: decide no.
 
 To decide which number is the sex-addiction-influence of (C - a unicorn-horn):
 	let X be the magic-modifier of C;

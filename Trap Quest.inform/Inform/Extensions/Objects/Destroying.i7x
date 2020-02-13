@@ -28,6 +28,10 @@ REQUIRES COMMENTING
 To destroy (T - a thing):
 	uniquely destroy T;
 	remove T from play;
+	repeat with M running through monsters:
+		now M is not retaining T;
+		now M is not withholding T;
+		now M is not rejecting T;
 	dislodge T.
 
 [!<UniquelyDestroyThing>+

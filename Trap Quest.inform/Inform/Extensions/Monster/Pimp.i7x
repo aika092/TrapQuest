@@ -137,7 +137,7 @@ To say PresentRejectionFlav of (M - pimp):
 	say "[BigNameDesc of M] cuts you off before you've finished talking. [line break][speech style of M]'I own you, I'll fuck you wherever I goddamn [please].'[roman type][line break]".
 
 To say SelectionFrustrated of (M - pimp):
-	say "[BigNameDesc of M] laughs, seemingly at [him of M]self. [line break][speech style of M]'For some reason I can't seem to get it up. Fine, I guess you get off lucky. This time. You'd better remember this very rare moment of kindness I'm showing you, whore.'[roman type][line break]";
+	say "[BigNameDesc of M] laughs, seemingly at [himself of M]. [line break][speech style of M]'For some reason I can't seem to get it up. Fine, I guess you get off lucky. This time. You'd better remember this very rare moment of kindness I'm showing you, whore.'[roman type][line break]";
 	satisfy M.
 
 To say StrikingSuccessFlav of (M - pimp) on (B - a body part):
@@ -202,7 +202,7 @@ Section 3 - Damage
 To compute damage of (M - pimp):
 	if the health of M > 0:
 		if M is uninterested or M is friendly: [should never happen]
-			say "He shouts angrily!";
+			say "[big he of M] shouts angrily!";
 			now M is interested;
 			anger M;
 		otherwise:
@@ -211,7 +211,7 @@ To compute damage of (M - pimp):
 			otherwise if the health of M > the maxhealth of M / 2:
 				say "[BigNameDesc of M] [one of]sneers menacingly[or]smiles sadistically[or]grins[at random]. [line break][speech style of M]'[one of]Not bad, not bad[or]You're going to have to do better than that[or]Is that all you've got[or]Oh I'm going to make you regret this[or]Don't say I didn't warn you[in random order]!'[roman type][line break]";
 			otherwise:
-				say "[BigNameDesc of M] recoils in pain. [one of]He's not teasing you any more. [or][stopping]";
+				say "[BigNameDesc of M] recoils in pain. [one of][big he of M]'s not teasing you any more. [or][stopping]";
 	otherwise:
 		now pimp-dead is 1;
 		compute death of M.

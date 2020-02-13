@@ -8,6 +8,43 @@ A game universe initialisation rule:
 	repeat with C running through rare clothing:
 		increase the transform-resistance of C by 1.
 
+To decide which object is most-transformable-clothing:
+	let lowest-outrage be 21;
+	let LT be the list of worn upgradable clothing;
+	if the number of entries in LT is 0:
+		let C be a random worn transformation chain transformable clothing;
+		if C is nothing, let C be a random worn transformable clothing;
+		decide on C;
+	let X be a random worn clothing;
+	sort LT in random order;
+	repeat with C running through LT:
+		let O be 0;
+		if diaper quest is 0, let O be the initial outrage of C;
+		otherwise let O be the initial cringe of C;
+		if O < lowest-outrage:
+			now lowest-outrage is O;
+			now X is C;
+	decide on X.
+
+To decide which object is most-transformable-uncovered-clothing:
+	let LT be the list of worn currently uncovered upgradable clothing;
+	if the number of entries in LT is 0:
+		let C be a random worn transformation chain currently uncovered transformable clothing;
+		if C is nothing, let C be a random worn currently uncovered transformable clothing;
+		decide on C;
+	let X be a random worn clothing;
+	let lowest-outrage be 21;
+	sort LT in random order;
+	repeat with C running through LT:
+		let O be 0;
+		if diaper quest is 0, let O be the initial outrage of C;
+		otherwise let O be the initial cringe of C;
+		if O < lowest-outrage:
+			now lowest-outrage is O;
+			now X is C;
+	decide on X.
+
+
 To decide which object is the potential-upgrade-target of (C - a clothing):
 	[THIS IS THE TEMPLATE FOR FINDING THE BEST TRANSFORMATION TARGET.]
 	now theme-share-target is C;

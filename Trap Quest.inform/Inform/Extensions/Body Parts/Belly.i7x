@@ -20,84 +20,84 @@ Understand "torso", "waist", "tummy", "stomach" as belly.
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called flesh volume. The flesh volume of belly is usually 0.
+Belly has a number called flesh volume.
 
 [!<Belly>@<waterVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called water volume. The water volume of belly is usually 0. [Currently unused]
+Belly has a number called water volume.
 
 [!<Belly>@<semenVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called semen volume. The semen volume of belly is usually 0.
+Belly has a number called semen volume.
 
 [!<Belly>@<urineVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called urine volume. The urine volume of belly is usually 0.
+Belly has a number called urine volume.
 
 [!<Belly>@<milkVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called milk volume. The milk volume of belly is usually 0.
+Belly has a number called milk volume.
 
 [!<Belly>@<airVolume:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called air volume. The air volume of belly is usually 0.
+Belly has a number called air volume.
 
 [!<Belly>@<smallEggCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called small egg count. The small egg count of belly is usually 0.
+Belly has a number called small egg count.
 
 [!<Belly>@<mediumEggCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called medium egg count. The medium egg count of belly is usually 0.
+Belly has a number called medium egg count.
 
 [!<Belly>@<largeEggCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-Belly has a number called large egg count. The large egg count of belly is usually 0.
+Belly has a number called large egg count.
 
 [!<Player>@<stomachWater:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called stomach-water. The stomach-water of the player is usually 5.
+The player has a number called stomach-water. The stomach-water of the player is 5.
 
 [!<Player>@<stomachSemen:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called stomach-semen. The stomach-semen of the player is usually 0.
+The player has a number called stomach-semen.
 
 [!<Player>@<stomachFood:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called stomach-food. The stomach-food of the player is usually 2.
+The player has a number called stomach-food. The stomach-food of the player is 2.
 
 [!<Player>@<stance:Integer>*
 
@@ -198,7 +198,7 @@ To decide which number is the largeness fill of belly:
 	increase B by (the stomach of the player + rectum) / 3;
 	if the bladder of the player > 10, increase B by (the bladder of the player - 10) / 3;
 	if the semen volume of vagina > 6, increase B by the semen volume of vagina - 6;
-	increase B by the womb volume of vagina;
+	increase B by the womb volume of vagina + the total egg volume of vagina;
 	increase B by the flesh volume of belly;
 	decide on B.
 
@@ -229,9 +229,9 @@ To decide which number is belly magnitude of (B - a number):
 		now S is 9;
 	otherwise:
 		now S is 10;
-	if the womb volume of vagina > 30: [Super pregnancy sizes]
-		if the womb volume of vagina > 45, decide on 13;
-		if the womb volume of vagina > 37, decide on 12;
+	if the womb volume of vagina > 30 or the pregnancy of the player is 3: [Super pregnancy sizes]
+		if the womb volume of vagina + the total egg volume of vagina > 45, decide on 13;
+		if the womb volume of vagina + the total egg volume of vagina > 37, decide on 12;
 		decide on 11;
 	if S > 10, decide on 10;
 	otherwise decide on S.
@@ -246,7 +246,7 @@ To decide which number is the weight of (XXX - belly):
 	decrease B by the air volume of belly; [this one is to counteract the total belly fill count]
 	decrease B by the air volume of belly * 2; [this one is because the air is lighter than air]
 	increase B by the stomach of the player / 2;
-	increase B by the womb volume of vagina * 3;
+	increase B by (the womb volume of vagina * 3) + the total egg volume of vagina;
 	increase B by the flesh volume of belly;
 	if there is a worn buoyant salve covering belly:
 		let S be a random worn buoyant salve covering belly;
@@ -278,11 +278,9 @@ To decide which number is the weight of (XXX - belly):
 REQUIRES COMMENTING
 
 +!]
-Definition: belly is heavy:
-	if the weight of belly >= 18, decide yes;
-	decide no.
+Definition: belly is heavy if the weight of belly >= 18.
 
-Definition: belly (called B) is exposed:
+Definition: belly is exposed:
 	if there is a worn actually dense belly covering clothing, decide no;
 	decide yes.
 
@@ -294,7 +292,7 @@ REQUIRES COMMENTING
 
 +!]
 To say ShortDesc of belly:
-	say "[BellyDesc]".
+	say BellyDesc.
 
 [!<SayTotalDescOfBelly>+
 
@@ -670,7 +668,7 @@ To Assfill (X - a number):
 		otherwise now the body soreness of the player is 0;
 	if there is a worn slimegirl:
 		let M be a random slimegirl;
-		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]! She communicates with you telepathically.";
+		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]! [big he of M] communicates with you telepathically.";
 		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of M > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
 		now the hunger of M is 0;
 		if the intensity of M > 0:
@@ -1049,8 +1047,8 @@ To AssSquirt:
 						if the number of entries in LV > 0:
 							reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 							truncate LV to 9 entries;
+							say "Where do you want to collect the liquid you're about to expel?[line break]";
 							repeat with V running through LV:
-								say "Where do you want to collect the liquid you're about to expel?[line break]";
 								if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
 								otherwise set next numerical response to "[BigNameDesc of V]";
 							set numerical response 0 to "don't collect";
@@ -1073,7 +1071,7 @@ To AssSquirt:
 					otherwise say "[if urine-count > 0 and semen-count > 0 and milk-count > 0]what must be a disgraceful mix of [urine], [milk] and [semen][otherwise if urine-count > 0 and semen-count > 0]what seems like a mix of [urine] and [semen][otherwise if urine-count > 0 and milk-count > 0]what seems like a mix of [urine] and [milk][otherwise if milk-count > 0 and semen-count > 0]what seems like a mix of [milk] and [semen][otherwise if urine-count > 0][urine][otherwise if semen-count > 0][semen][otherwise if milk-count > 0][milk][otherwise]BUG - can't find any liquid. Report this bug please[end if], directly from your [asshole] ";
 					say "[if the player is ass protected]into [NameDesc of random bottom level ass protection clothing worn by the player][otherwise if collecting is a thing and collecting is not yourself]into [NameDesc of collecting][otherwise]onto your [ShortDesc of thighs][end if].";
 					if there is a worn total protection diaper and the player is full and diaper messing >= 3:
-						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of of squishy, smelly goop[end if] as your bowels are completely excavated.";
+						say "It is accompanied by [if rectum < 8]a large amount of squishy brown mush[otherwise if rectum < 10]a huge log of mess[otherwise]an ungodly amount of squishy, smelly goop[end if] as your bowels are completely excavated.";
 				if collecting is pedestal:
 					let L be water;
 					if urine-count > 0:
@@ -1408,13 +1406,14 @@ To compute squirt declarations into (C - a clothing):
 		otherwise:
 			say "[enema floor declaration of M]".
 
+A person can be reacted-already. [This is used in ass squirting function which occurs over several turns to track which NPCs have already reacted to this particular episode]
 [!<ResetAllMonsterReactions>+
 
 REQUIRES COMMENTING
 
 +!]
 To reset all monster reactions:
-	repeat with M running through reacted-already monsters:
+	repeat with M running through reacted-already people:
 		now M is not reacted-already.
 
 [!<SayEnemaFloorDeclarationOfMonster>+
@@ -1578,16 +1577,16 @@ To compute enema reactions:
 	let C be nothing;
 	if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
 	repeat with M running through reactive people:
-		unless M is reacted-already monster:
+		unless M is reacted-already:
 			if C is diaper:
 				compute diaper mess reaction of M;
 			otherwise if C is clothing:
-				say "[EnemaReactionFlav of M into C]";
+				say EnemaReactionFlav of M into C;
 				compute enema reaction of M into C;
 			otherwise:
-				say "[EnemaFloorReactionFlav of M]";
+				say EnemaFloorReactionFlav of M;
 				compute enema floor reaction of M;
-			if M is monster, now M is reacted-already;
+			now M is reacted-already.
 
 [!<ComputeEnemaFloorReactionOfMonster>+
 
@@ -1625,7 +1624,6 @@ To say EnemaReactionFlav of (M - a person) into (C - a clothing):
 
 Section - Image for graphics window
 
-The text-shortcut of belly is "belly".
 Figure of CumBellyButton is the file "Special/Buttons/cumbelly.png".
 
 To decide which figure-name is the examine-image of (T - belly):

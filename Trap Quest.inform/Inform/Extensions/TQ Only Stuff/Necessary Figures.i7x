@@ -9,6 +9,8 @@ Figure of acolyte 4 is the file "NPCs/Mansion/Cultist/cultist4.png".
 
 Figure of aeromancer cutscene 7 is the file "Special/Cutscene/cutscene-aeromancer-punish1.jpg".
 
+Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3b.png".
+
 Figure of demoness cutscene 1 is the file "Special/Cutscene/cutscene-demoness-soul1.png".
 Figure of demoness cutscene 2 is the file "Special/Cutscene/cutscene-demoness-heel1.png".
 Figure of demoness cutscene 3 is the file "Special/Cutscene/cutscene-demoness-heel2.png".
@@ -251,6 +253,8 @@ To get oral creampie image for (M - a thing):
 		otherwise:
 			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
 			otherwise cutshow figure of Oral Creampie Cutscene 1.
+
+Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 
 Figure of Pole Cutscene 4 is the file "Special/Cutscene/cutscene-pole4.png".
 

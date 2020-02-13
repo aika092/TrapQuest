@@ -33,9 +33,7 @@ To trigger (Y - a discombobulator laser trap):
 	now Y is expired;
 	let X be a random number between 8 and 30;
 	say "A laser ray gun appears from within a hidden compartment in [if item described is in The Woods]a tree[otherwise]the wall[end if], and fires a shot right at you! ";
-	let C be a random worn currently uncovered upgradable clothing;
-	if C is nothing, now C is a random worn currently uncovered transformation chain transformable clothing;
-	if C is nothing, now C is a random worn currently uncovered transformable clothing;
+	let C be most-transformable-uncovered-clothing;
 	if tutorial is 1, now C is a random worn dress;
 	if X > the dexterity of the player or tutorial is 1:
 		if C is clothing:

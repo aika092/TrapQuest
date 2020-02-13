@@ -210,26 +210,30 @@ magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item d
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";
-	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if diaper quest is 1]water[otherwise if watersports fetish is 1][urine][otherwise][semen][end if]!";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if diaper quest is 1]water[otherwise if watersports fetish is 1][urine][otherwise][semen][end if]!";
 	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells not cost magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
-		let BS be belly limit - the total fill of belly;
-		say "Instead of your magic power decreasing, your belly explodes with [if BS > 0]contents until completely full[otherwise]even more liquid. Your belly can't hold it all[end if]!";
-		if BS > 0:
-			if egg laying fetish is 1:
-				AssFill (BS / 2) medium eggs;
-				if the remainder after dividing BS by 2 is 1, AssFill 1;
-			otherwise if diaper quest is 1:
-				AssFill BS water;
-			otherwise if watersports fetish is 1:
-				AssFill BS urine;
-			otherwise:
-				AssFill BS;
-		otherwise if diaper quest is 1:
-			AssFill 1 water; [should trigger overflow]
+		if egg laying fetish is 1 and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
+			say "Instead of your magic power decreasing, your womb explodes with eggs!";
+			WombFill 6 medium eggs;
 		otherwise:
-			AssFill 1. [should trigger overflow]
+			let BS be belly limit - the total fill of belly;
+			say "Instead of your magic power decreasing, your belly explodes with [if BS > 0]contents until completely full[otherwise]even more liquid. Your belly can't hold it all[end if]!";
+			if BS > 0:
+				if egg laying fetish is 1:
+					AssFill (BS / 2) medium eggs;
+					if the remainder after dividing BS by 2 is 1, AssFill 1;
+				otherwise if diaper quest is 1:
+					AssFill BS water;
+				otherwise if watersports fetish is 1:
+					AssFill BS urine;
+				otherwise:
+					AssFill BS;
+			otherwise if diaper quest is 1:
+				AssFill 1 water; [should trigger overflow]
+			otherwise:
+				AssFill 1. [should trigger overflow]
 
 
 Carry out TrophySwitching magic-trophy:

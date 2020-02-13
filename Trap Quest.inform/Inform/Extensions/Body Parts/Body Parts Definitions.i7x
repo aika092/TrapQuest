@@ -57,7 +57,7 @@ a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviousl
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called soreness. The soreness of a fuckhole is usually 0.
+a fuckhole has a number called soreness.
 
 [!<Fuckhole>@<tolerated:Integer>*
 
@@ -119,7 +119,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the semen-volume of (F - a fuckhole):
-	if F is vagina, decide on the total volume of vagina;
+	if F is vagina, decide on the total semen volume of vagina;
 	if F is asshole, decide on the semen volume of belly;
 	decide on 0.
 
@@ -131,7 +131,7 @@ REQUIRES COMMENTING
 Definition: a fuckhole is lewdly exposed if it is exposed.
 
 To decide which number is the lewdly exposed outrage of (F - a fuckhole):
-	let O be 14;
+	let O be 15;
 	if F is asshole and the semen volume of belly > 0, increase O by 2;
 	if F is vagina and the semen volume of vagina > 0, increase O by 2;
 	increase O by the openness of F / 5;
@@ -148,9 +148,9 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	let O be 10;
-	if F is asshole and the semen volume of belly > 0, increase O by 1;
-	if F is vagina and the semen volume of vagina > 0, increase O by 1;
+	let O be 9;
+	if F is asshole and the semen volume of belly > 0, increase O by 2;
+	if F is vagina and the semen volume of vagina > 0, increase O by 2;
 	increase O by the openness of F / 9; [only the most gaped orifices show through clothing]
 	decide on O.
 
@@ -280,13 +280,13 @@ Determines whether a given body part is currently having an orgasm, and if so, t
 
 !]
 Definition: a body part (called F) is orgasming:
-	if the player is extremely horny or F is pushed over the edge:
+	if F is pushed over the edge:
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
 
 Definition: a fuckhole (called F) is orgasming:
-	if for deposit only tattoo is not worn and (the player is extremely horny or F is pushed over the edge):
+	if (for deposit only tattoo is not worn or F is not vagina) and (the player is extremely horny or F is pushed over the edge):
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
@@ -341,6 +341,13 @@ How much do others want to use this body part for sex?
 
 *@!]
 a body part has a number called desirability.
+
+[!<BodyPart>@<gropability:Integer>*
+
+How much do others want to grope this body part after noticing the player?
+
+*@!]
+a body part has a number called gropability.
 
 [!<DecideWhichNumberIsTheWeightOfAThing>+
 
@@ -431,7 +438,7 @@ Definition: a body part is at least partially exposed if the concealer of it is 
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
 To decide which number is the at least partially lewdly exposed outrage of (B - a body part):
-	decide on (the lewdly exposed outrage of B * 2) / 3.
+	decide on (the lewdly exposed outrage of B * 5) / 9.
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
 	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage)), increase O by (the semen coating of B * 3); [the more cum, the more noticeable it is. quickly.]

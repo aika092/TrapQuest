@@ -78,7 +78,7 @@ Check slapping:
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not monster, say "Err, why would you do that?" instead;
 	if the noun is woman-barbara and woman-barbara is not angered:
-		say "Are you sure? You probably won't be able to make her friendly ever again, if you were to do that. ";
+		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
 	if the player is not able to slap, do nothing instead;
 	if the noun is too intimidating, compute surrender to the noun instead.
@@ -138,8 +138,9 @@ Check zapping it with:
 	if the noun is zap ready equippable and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
 	if the second noun is woman-barbara and woman-barbara is not angered:
-		say "Are you sure? You probably won't be able to make her friendly ever again, if you were to do that. ";
+		say "Are you sure? You probably won't be able to make [him of the second noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
+	if the second noun is ex-princess, say "Something tells you that would be a very bad idea." instead;
 	if the player is not able to zap, do nothing instead;
 	if the second noun is too intimidating, compute surrender to the second noun instead.
 
@@ -161,7 +162,12 @@ Carry out zapping it with:
 	compute attack of currentZapper at the second noun;
 	if A > 0:
 		damage A on the second noun;
-		compute spell consequences of currentZapper.
+		compute spell consequences of currentZapper;
+	if the second noun is caged:
+		say "The chain holding the cage off of the ground creaks as the cage swings from side to side[one of]. That seems precarious[or][stopping]...";
+		if a random number between 0 and 15 < A:
+			now the second noun is unleashed;
+			say "[bold type]Suddenly, the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. [BigNameDesc of the second noun] steps out, stretching [himself of the second noun] to full height. Uh-oh...".
 Understand "zap [something] with [something]", "zap [something] at [something]", "cast [something] at [something]", "attack [something] with [something]" as zapping it with.
 
 

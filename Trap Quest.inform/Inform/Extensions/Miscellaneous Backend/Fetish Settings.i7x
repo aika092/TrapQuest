@@ -387,7 +387,7 @@ To decide which number is christmas content:
 	decide on the choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
-	if the player is not a top donator, decide on 0;
+	if the player is not a top donator or diaper quest is 0, decide on 0;
 	decide on the choice in row 66 of the Table of Player Options.
 
 To decide which number is april fools content:

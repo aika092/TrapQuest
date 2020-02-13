@@ -207,7 +207,7 @@ To compute interaction of (M - a minotaur):
 			say "[one of][CagedMinotaurFlav][or][or][or][in random order]".
 
 To say CagedMinotaurFlav:
-	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of [his of current-monster] cage.[or][BigNameDesc of current-monster] paws at the floor of [his of current-monster] cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at [his of current-monster] captive state.[or][BigNameDesc of current-monster] bangs at the bars of [his of current-monster] cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws [him of current-monster]self at the bars of [his of current-monster] cage. You try to ignore [his of current-monster] angry snarling.[in random order]".
+	say "[one of][BigNameDesc of current-monster] angrily shakes the metal bars of [his of current-monster] cage.[or][BigNameDesc of current-monster] paws at the floor of [his of current-monster] cage, snarling with anger.[or][BigNameDesc of current-monster] snarls angrily at [his of current-monster] captive state.[or][BigNameDesc of current-monster] bangs at the bars of [his of current-monster] cage. The sound of clanging metal rings through the room.[or][BigNameDesc of current-monster] throws [himself of current-monster] at the bars of [his of current-monster] cage. You try to ignore [his of current-monster] angry snarling.[in random order]".
 
 To say ArousedCagedMinotaurFlav:
 	let M be current-monster;
@@ -472,7 +472,7 @@ To compute unique death of (M - minotaur):
 	if mythical creature fetish is 1:
 		if full-lady fetish is 1 and X is clothing and a random number between 1 and 3 is 1 and the player is the donator:
 			now the strap-length of X is 11;[15 inches]
-			say "[BigNameDesc of M] falls to the ground, dead. Her body disappears, but the huge strapon dildo she was wearing stays behind. It seems like you could actually wear it!";
+			say "[BigNameDesc of M] falls to the ground, dead. [big his of M] body disappears, but the huge strapon dildo [he of M] was wearing stays behind. It seems like you could actually wear it!";
 			now X is in the location of the player;
 			compute autotaking X;
 		otherwise if H is a thing:

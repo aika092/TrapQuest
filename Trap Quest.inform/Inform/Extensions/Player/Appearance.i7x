@@ -21,7 +21,7 @@ To explain appearance:
 REQUIRES COMMENTING
 
 +!]
-To decide which number is the appearance of the player: [Update values first]
+To decide which number is the appearance of the player: [Update values first. Forces a new line if triggered in the middle of a sentence; consider just using saved appearance and fingers crossed it's not horribly inaccurate.]
 	potentially update appearance and cringe levels;
 	decide on the saved appearance of the player.
 
@@ -59,9 +59,9 @@ To decide which number is cumulative-outrage-level:
 	let A3 be A - A2;
 	let N be 0;
 	let maxSimilarItems be 4;
-	repeat with C running through worn currently at least partially visible wearthings:
+	repeat with C running through worn wearthings:
 		if the outrage of C >= A2, increase N by 1;
-	repeat with C running through carried not-in-bag things:
+	repeat with C running through carried currently-not-in-bag things:
 		if the outrage of C / 2 >= A2, increase N by 1;
 	repeat with C running through body parts:
 		if the outrage of C >= A2, increase N by 1;
@@ -89,12 +89,12 @@ Here we decide what is the most embarrassing visible item of clothing OR BODY PA
 To decide which number is appearance-outrage-level:
 	let O be 0;
 	now appearance-outrage-target is arms;
-	repeat with C running through worn currently at least partially visible wearthings:
+	repeat with C running through worn wearthings:
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
 			now appearance-outrage-target is C;
-	repeat with C running through carried not-in-bag things:
+	repeat with C running through carried currently-not-in-bag things:
 		let OC be the outrage of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
@@ -125,13 +125,13 @@ An appearance validation check update rule (this is the previous items worn upda
 
 previous-items-not-in-bag is a list of things that varies.
 An appearance needs updating rule (this is the previous items not-in-bag check rule):
-	let L be the list of carried not-in-bag things;
+	let L be the list of carried currently-not-in-bag things;
 	let LN be the number of entries in L;
 	if LN is not the number of entries in previous-items-not-in-bag, rule succeeds;
 	repeat with N running from 1 to LN:
 		if entry N of L is not entry N of previous-items-not-in-bag, rule succeeds.
 An appearance validation check update rule (this is the previous items not-in-bag update rule):
-	now previous-items-not-in-bag is the list of carried not-in-bag things.
+	now previous-items-not-in-bag is the list of carried currently-not-in-bag things.
 
 previous-items-displaced is a number that varies.
 An appearance needs updating rule (this is the displaced items worn check rule):
@@ -147,9 +147,9 @@ An appearance validation check update rule (this is the glazed body parts update
 
 previous-clothing-glazed is a number that varies.
 An appearance needs updating rule (this is the glazed clothing check rule):
-	if diaper quest is 0 and the number of dirty clothing is not previous-clothing-glazed, rule succeeds.
+	if diaper quest is 0 and the number of held dirty clothing is not previous-clothing-glazed, rule succeeds.
 An appearance validation check update rule (this is the glazed clothing update rule):
-	now previous-clothing-glazed is the number of dirty clothing.
+	now previous-clothing-glazed is the number of held dirty clothing.
 
 previous-stance is a number that varies.
 An appearance needs updating rule (this is the stance changed check rule):
