@@ -53,7 +53,7 @@ To say ExamineDesc of (C - a tentacle-breeder):
 	if inhuman pregnancy is 2:
 		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime. A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with four eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
 	otherwise:
-		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with four eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the charge of ritual-beads > 8]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
+		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with four eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
 
 Purifying is an action applying to one thing.
 
@@ -61,21 +61,19 @@ Check purifying:
 	if the noun is not tentacle-breeder, say "This verb is for destroying tentacle spawners." instead;
 	if the magic-power of the player < 4:[check if the player can cheat]
 		if ritual-beads is held:
-			if the charge of ritual-beads > 8:
+			if the size of ritual-beads >= 7:
 				say "This will destroy your [ShortDesc of ritual-beads]. Is that what you want? ";
 				if the player is consenting:
 					dislodge ritual-beads;
 					say "You feel a swell of energy as your [ShortDesc of ritual-beads] disintegrates!";
-					now the charge of ritual-beads is 0;
-					now the notches of ritual-beads is 3;
-					destroy ritual-beads;
+					only destroy ritual-beads;
 					MagicPowerUp 5;
 		if there is a held pure totem:
 			let T be a random held pure totem;
 			say "This will destroy your [ShortDesc of T]. Is that what you want? ";
 			if the player is consenting:
 				say "You feel a swell of energy as your [ShortDesc of T] disintegrates!";
-				destroy T;
+				only destroy T;
 				MagicPowerUp 5;
 	if the magic-power of the player < 4, say "You don't have enough magical power to do that (you need 4)." instead.
 

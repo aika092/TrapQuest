@@ -372,13 +372,15 @@ This is the public disgrace description rule:
 	if PD > 0:
 		if PD < 20:
 			say "There's likely a small amount of embarrassing footage of you on the Internet, but nothing that's too bad or too widespread.";
-		otherwise if PD < 100:
-			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame, but it's quite possible that somebody will recognise you soon, and if you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
 		otherwise if PD < 500:
+			say "There's footage of you on the Internet, and it's likely pretty devastating. Who knows exactly how many people have seen your shame, but it's quite possible that somebody will recognise you soon, and if you can't find a way to find it and get it taken down soon, you'll likely never be able to live it down.";
+		otherwise if PD < 2000:
+			say "There's certainly some pretty damning explicit footage of you on the Internet. It seems quite likely that someone will have recognised you by now, and if they decide to share it further, you'll never be able to live it down.";
+		otherwise if PD < 5000:
 			say "Footage of you exists across the Internet of you in extremely shameful situations, with you likely easily identifiable in most if not all of it. Irreperable damage has been done to your reputation - you'll be the laughing stock of your hometown from now until the end of time, and if you can't somehow find a way to do some damage control and get it all taken down, you'll probably never be able to get a proper job again.";
 		otherwise:
 			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe that you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, and endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
-		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 500)[roman type][line break]".
+		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 5000)[roman type][line break]".
 The public disgrace description rule is listed in the addiction listing rules.
 
 

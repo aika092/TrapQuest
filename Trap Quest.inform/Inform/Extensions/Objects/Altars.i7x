@@ -188,7 +188,7 @@ Determines how the dungeon altar will handle an item, "T", that has been placed 
 To AltarPray (T - a thing):
 	AltarUniqueReward of T;
 	if the charge of dungeon altar <= 0:[The reward already happened in the previous function if this is false]
-		if (T is not blessed and T is blessable) or T is ritual-beads:
+		if (T is not blessed and T is blessable) or T is ritual-beads or (T is runic headband and T is not purity):
 			AltarReward T;
 		otherwise:
 			say "Nothing seems to happen.".
@@ -253,7 +253,7 @@ To AltarPray (P - a person):
 	MagicPowerUp 1;
 	while 1 is 1:
 		let R be a random number from 1 to 9;
-		if the class of the player is priestess and (the virgin of the player is 0 or the player is male) and the player is the donator:
+		if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
 			let T be ritual-beads;
 			if T is actually summonable and T is off-stage:
 				summon T;
@@ -265,10 +265,13 @@ To AltarPray (P - a person):
 			now permanent makeup is 0;
 			break;
 		if the pregnancy of the player > 0:
-			if the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0:
+			if (the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
 				say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 				now the pregnancy of the player is 0;
 				WombEmpty the womb volume of vagina;
+				now the small egg count of vagina is 0;
+				now the medium egg count of vagina is 0;
+				now the large egg count of vagina is 0;
 				break;
 		if the player is hungry:
 			say "You feel full!";
@@ -324,9 +327,18 @@ To AltarPray (P - a person):
 				break;
 	if runic headband is actually summonable:
 		summon runic headband cursed;
-		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
+	if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
+		if ritual-beads is not held and ritual-beads is not in the location of the player:
+			only destroy ritual-beads;
+			now ritual-beads is in the location of the player;
+			say "[BigNameDesc of ritual-beads] appears at your feet.";
+			compute autotaking ritual-beads;
+		let C be a random worn cursed sex toy;
+		if C is sex toy:
+			bless C;
 	reset dungeon altar.
 
 
@@ -719,20 +731,39 @@ To compute dark reward of (T - ritual-beads):
 		say "You feel a lot cleaner, but incredibly tired.".
 
 
+To AltarReward (T - runic headband):
+	if T is not purity:
+		let N be the used condoms of T;
+		if N < 3:
+			let D be 3 - N;
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+		otherwise:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+			unless T is blessed, now T is blessed;
+			say "Blue light condenses around [NameDesc of T], and the pinned condoms disappear!";
+			progress quest of priestess-vaginal-service-quest;
+			now the used condoms of T is 0;
+		reset dungeon altar.
+
 To AltarReward (T - ritual-beads):
-	let N be the charge of T;
-	if N < 3:
-		let D be 3 - N;
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]!'[roman type][line break]";
+	if T is worn:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], you should remove your ritual beads before presenting them to the Goddess!'[roman type][line break]";
 	otherwise:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+		let N be the notches of T;
+		if N < 6:
+			let D be 6 - N;
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+		otherwise:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+			unless T is blessed, now T is blessed;
+			if the size of T < 10:
+				say "[line break]Blue light condenses around [NameDesc of T], and it transforms into a ";
+				increase the size of T by 1;
+				now the notches of T is 3;
+				say "[T] with three notches again!";
+			progress quest of priestess-service-quest;
 		compute light reward of T;
-		now the charge of T is 0;
-		unless T is blessed, now T is blessed;
-		if the notches of T < 8:
-			increase the notches of T by 1;
-			say "[line break]Blue light condenses at the end of the [printed name of T], adding a [the notches of T]th bead.";
-	reset dungeon altar.
+		reset dungeon altar.
 
 [!<ComputeLightRewardOfRitualBeads>+
 
@@ -742,46 +773,30 @@ Provides a reward to the player based on how much the ritual beads have been cha
 
 +!]
 To compute light reward of (T - ritual-beads):
-	let N be the charge of T;
+	let N be the notches of T;
 	let R be 0;
-	if N is 8:
-		now R is a random number between 4 and 8;
-	otherwise if N > 6:
-		now R is a random number between 3 and 6;
-	otherwise if N > 4:
-		now R is a random number between 2 and 5;
+	if N >= 8:
+		now R is 6;
 	otherwise:
-		now R is a random number between 1 and 3;
-	if R is 8 and there is a worn headgear:
-		let B be a random worn headgear;
-		if the raw-magic-modifier of B < 5 or (B is not blessed and B is blessable):
-			say "Your [printed name of B] glows powerfully!";
-			if the raw-magic-modifier of B < 5, increase the raw-magic-modifier of B by 1;
-			fully bless B;
-		otherwise:
-			say "You feel more intelligent!";
-			IntUp 2;
-	otherwise if R is 7:
-		say "You feel incredible!";
-		StrengthUp N / 4;
-		DexUp N / 4;
-	otherwise if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
-		let B be prayer-beads;
+		now R is a random number between (N / 2) and (N + 2);
+	if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
 		say "A set of tiny white beads materialises in your hands.";
-		summon B;
-		fully bless B;
-	otherwise if R is 5:
-		say "You feel more resilient!";
-		DelicateDown N / 3;
+		summon prayer-beads;
+		fully bless prayer-beads;
+	otherwise if R >= 5:
+		DelicateDown 2;
 	otherwise if R is 4:
 		say "You feel a wave of new confidence!";
-		Dignify STRONG-HUMILIATION * (N / 2);
+		strongDignify;
 	otherwise if R >= 3 and the raw sex addiction of the player > 0:
 		say "Your mind feels a little clearer.";
-		SilentlySexAddictDown N / 3;
+		SilentlySexAddictDown 1;
 	otherwise if R is 2 and there is a glazed body part:
 		let A be a random glazed body part;
-		say "Your [printed name of A] is cleaned of a little [semen].";
+		say "Your [printed name of A] is cleaned of [semen].";
+		now the semen coating of A is 0;
+	otherwise if the soreness of asshole > 0:
+		heal asshole times 4;
 	otherwise:
 		say "You feel much less tired!";
 		FatigueDown N * 10.

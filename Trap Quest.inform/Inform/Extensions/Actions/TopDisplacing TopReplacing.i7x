@@ -23,7 +23,7 @@ Check TopDisplacing:
 	if the player is wrist bound behind, say "You can't do that with your hands bound behind you." instead.
 
 Carry out TopDisplacing:
-	say "[TopDisplaceFlav of the noun]";
+	say TopDisplaceFlav of the noun;
 	TopDisplace the noun.
 
 To say TopDisplaceFlav of (C - a clothing):

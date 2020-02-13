@@ -102,7 +102,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]";
+	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]".
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -171,6 +171,7 @@ Check dominating:
 	if the noun is not wenchy, say "The [the noun] doesn't look like someone you could successfully dominate." instead;
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don[']t see the point." instead;
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
+	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
 	unless the noun is interested, say "[BigNameDesc of the noun] isn't looking at you right now. Try getting their attention first." instead;
 	now player-fucker is face;[player-fucker is what is used to fuck the monster. Face is merely a default value]
 	if the noun is male:
@@ -274,7 +275,7 @@ Carry out dominating:
 			follow the demon junk reward rule;
 		replace M after domination;
 		let H be rugged-headband;
-		if H is worn and the player is an april 2019 top donator, progress quest of domination-quest;
+		if the player is an april 2019 top donator, progress quest of domination-quest;
 		if the times-dominated of M >= 2 and the player is the donator:
 			if H is actually summonable and rugged-summoned is 0:
 				say "You feel your hair being tousled as a [MediumDesc of H] materializes on your head.";
@@ -301,7 +302,7 @@ Carry out dominating:
 Report dominating:
 	allocate 6 seconds;
 
-Understand "dominate [something]", "fuck [something]", "dom [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
+Understand "dominate [something]", "fuck [something]", "dom [something]", "punish [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
 
 To say DominationReaction of (M - a monster) to (N - a monster):
 	if M is interested, make M expectant;
@@ -610,6 +611,30 @@ To compute sissification:
 	otherwise:
 		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
+
+
+To compute enslaved domination of (M - a monster):
+	if the teaseTimer of M > 0:
+		say "You already did that recently. Perhaps give them a bit of a break first.";
+	otherwise if the player is not able to use their hands:
+		say "You can't use your hands right now so there's not much you can do.";
+	otherwise:
+		allocate 6 seconds;
+		now the teaseTimer of M is 50;
+		compute default enslaved domination of M.
+
+To compute default enslaved domination of (M - a monster):
+	say EnslavedDominationFlav of M;
+	if the raw delicateness of the player > the EnslavedDominationThreshold of M:
+		say "You feel vaguely better about yourself, but mostly just a bit ambivalent.";
+	otherwise:
+		DelicateDown 1.
+
+To say EnslavedDominationFlav of (M - a monster):
+	say "You spank [NameDesc of M] on the buttcheeks, eliciting a pained yelp. ".
+
+To decide which number is the EnslavedDominationThreshold of (M - a monster):
+	decide on 10.
 
 
 

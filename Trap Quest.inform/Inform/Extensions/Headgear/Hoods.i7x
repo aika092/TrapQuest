@@ -57,15 +57,15 @@ Definition: black hood is black themed: decide yes.
 To decide which number is the alchemy key of (C - black hood):
 	decide on 20.
 
-Definition: black hood is recipe specific: decide yes.
+[Definition: black hood is recipe specific: decide yes.
 
 This is the hood specific recipe rule:
 	now the Product in row 33 of the Table of Alchemy is 20;
 	now the Recipe in row 33 of the Table of Alchemy is 1.
-The hood specific recipe rule is listed in the specific recipe rules.
+The hood specific recipe rule is listed in the specific recipe rules.]
 
 To compute recipe specific cursing of (T - a hood):
-	now T is bland;
+	now T is cursed;
 	if the noun is not latex clothing, now T is stumbling.
 
 To decide which number is the strength-influence of (H - black hood):

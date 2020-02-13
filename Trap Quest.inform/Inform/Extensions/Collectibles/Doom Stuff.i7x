@@ -22,6 +22,17 @@ To say ShortDesc of (C - reception bell):
 
 Definition: reception bell is immune to change: decide yes.
 
+To decide which number is the bartering value of (T - reception bell) for (M - hellhound):
+	decide on 5.
+To say MonsterOfferAcceptFlav of (M - hellhound) to (T - reception bell):
+	say "[BigNameDesc of M] seems to like the sound it makes, and turns [his of M] attention fully onto [his of M] new toy.".
+To decide which number is the bartering value of (T - reception bell) for (M - shopkeeper):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - reception bell):
+	say "[speech style of M]'Hmm, yes, I think I could find a use for this.'[roman type][line break]".
+To say MonsterOfferRejectFlav of (M - mechanic) to (T - reception bell):
+	say "[speech style of M]'We don't use those here any more.'[roman type][line break]".
+
 black candle is a collectible. The printed name of black candle is "[TQlink of item described]black candle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of black candle is "bc".
 
 Figure of black candle is the file "Items/Collectibles/candle1.png".
@@ -44,6 +55,19 @@ To say ShortDesc of (C - black candle):
 
 Definition: black candle is immune to change: decide yes.
 
+To decide which number is the bartering value of (T - black candle) for (M - a gladiator):
+	decide on 3.
+To say MonsterOfferAcceptFlav of (M - a gladiator) to (T - black candle):
+	say "[speech style of M]'Ah yes, this will be useful for a certain... ritual.'[roman type][line break]".
+To decide which number is the bartering value of (T - black candle) for (M - dominatrix):
+	decide on 2.
+To say MonsterOfferAcceptFlav of (M - dominatrix) to (T - black candle):
+	say "[speech style of M]'Oh, I've been running low on candles for wax play. I'll take it!'[roman type][line break]".
+To decide which number is the bartering value of (T - black candle) for (M - vampiress):
+	decide on 4.
+To say MonsterOfferAcceptFlav of (M - vampiress) to (T - black candle):
+	say "[speech style of M]'Ah yes, this looks beautiful. I'll put it right next to my coff... I mean, my bed.'[roman type][line break]".
+
 doom notes is a collectible. The printed name of doom notes is "[TQlink of item described]doom notes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of doom notes is "dmn".
 To decide which figure-name is the examine-image of (B - doom notes):
 	decide on figure of recipe.
@@ -56,6 +80,13 @@ To say ShortDesc of (C - doom notes):
 
 Definition: doom notes is immune to change: decide yes.
 Definition: doom notes is ingredient: decide no.
+
+To decide which number is the bartering value of (T - doom notes) for (M - an acolyte):
+	if M is not intelligent, decide on 0;
+	if doomed < 5, decide on 10;
+	decide on 0.
+To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - doom notes):
+	say "[speech style of M]'HAHA! YES! Without this, the heathens have no chance to prevent the return of [Azathot]! You have done a great thing here today.'[roman type][line break]".
 
 Doom Stuff ends here.
 

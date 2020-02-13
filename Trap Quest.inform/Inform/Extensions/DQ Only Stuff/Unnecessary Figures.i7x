@@ -358,6 +358,9 @@ To decide which figure-name is Figure of Modmachine Cutscene 1:
 To get oral creampie image for (M - a thing):
 	do nothing.
 
+To decide which figure-name is Figure of Photo Display Predicament:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Pole Cutscene 4:
 	decide on figure of small image.
 

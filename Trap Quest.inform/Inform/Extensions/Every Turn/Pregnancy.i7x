@@ -201,7 +201,19 @@ Every turn we call this function to calculate what happens to the player's pregn
 +!]
 To compute pregnancy:
 	increase maximum-pregnancy-delay-tracker by 1;
-	if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
+	if the pregnancy of the player is 3:
+		if maximum-pregnancy-delay-tracker <= 75:
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy ticker: [maximum-pregnancy-delay-tracker] | (75.5) minimum time before eggs laid[roman type][line break]";
+		otherwise:
+			let R be a random number between 75 and 1000;
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy check: RNG(75~1000) [R] | [maximum-pregnancy-delay-tracker].5 eggs hold on threshold[roman type][line break]";
+			if R < maximum-pregnancy-delay-tracker:
+				let P be a random thing penetrating vagina;
+				if P is a thing:
+					say "You feel the egg[if the total egg count of vagina > 1]s[end if] in your belly try to come out, but fail because of [NameDesc of P].";
+				otherwise:
+					compute forced womb egg laying;
+	otherwise if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
 		if debuginfo > 1 and the pregnancy of the player is 1 and (slow pregnancy is not 2 or maximum-pregnancy-delay-tracker <= 1), say "[line break][input-style]Pregnancy ticker: [maximum-pregnancy-delay-tracker] | [maximum-pregnancy-delay].5[roman type][line break]";
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay or (slow pregnancy is 2 and maximum-pregnancy-delay-tracker > 1): [if slow pregnancy is 2 that means we grow babies super super fast]
 			now maximum-pregnancy-delay-tracker is 0;
@@ -445,13 +457,18 @@ To compute pregnancy annoyance:
 			otherwise:
 				say "Unable to get the nutrients it needs from your stomach, your womb draws what it needs directly from your muscles. You feel a bit weaker...";
 				StrengthDown 1;
-		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 2 is 1:
+		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 10 is 1:
 			if the bladder of the player < 6, now the bladder of the player is 6;
 			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your bladder.[line break][variable custom style]Oof![roman type][line break]You're suddenly desperate for the loo!";
-		otherwise if a random number between 1 and 4 is 1 and the player is not very horny:
+		otherwise if the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
+			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
+			BustUp 1;
+			if lactation fetish is 1, increase the lactation rate of the player by 1;
+			otherwise TitFuckAddictUp 1;
+		otherwise if a random number between 1 and 5 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
 			arouse 3000;
-		otherwise if the womb volume of vagina > a random number between 15 and 75 and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
+		otherwise if the womb volume of vagina > a random number between 15 and 180 and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
 			say "The weight of your unborn baby is making your feet and back ache. [bold type]You need to sit down and rest soon.[roman type][line break]";
 			now the fatigue of the player is the very tired threshold of the player;
 		otherwise if the womb volume of vagina > 15:

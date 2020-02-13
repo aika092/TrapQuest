@@ -5,6 +5,8 @@ A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. 
 To decide which number is the penis-capacity of (K - a briefs):
 	decide on 6.
 
+Definition: a briefs is rippable: decide yes.
+
 The printed name of briefs is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 To say TypeTitle of (T - a briefs):

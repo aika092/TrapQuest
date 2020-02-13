@@ -366,7 +366,7 @@ To HairUp (X - a number):
 		if P is actually summonable and 0 is the number of worn headgear and there are 2 off-stage pink scrunchie and (hair-fail > 0 or the raw largeness of hair >= 8):
 			say "[bold type]You jump in shock as you feel your [ShortDesc of hair] twisted tightly together behind you, and a scrunchie added! Your hair is now in a ponytail![roman type][line break]";
 			summon P;
-		otherwise if a random number between 1 and 250 is 1 and P is actually summonable and there is a worn pink scrunchie and (hair-fail > 0 or the raw largeness of hair >= 12):
+		otherwise if a random number between 1 and 250 is 1 and P is actually summonable and there is a worn pink scrunchie and (hair-fail > 0 or the raw largeness of hair >= 10):
 			say "[bold type]You jump in shock as you feel your ponytail split in two behind you, and another scrunchie added! Your hair is now in pigtails![roman type][line break]";
 			summon P;
 		otherwise if hair-fail is 2:
@@ -533,7 +533,6 @@ To hair permanent check:
 
 Section - Image for graphics window
 
-The text-shortcut of hair is "hair".
 Figure of CumHairButton is the file "Special/Buttons/cumhair.png".
 
 To decide which figure-name is the examine-image of (T - hair):

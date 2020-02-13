@@ -39,6 +39,8 @@ To set up (M - facehugger):
 To compute labour to (M - a facehugger):
 	compute tentacle birth. [Possibly this can be changed so tentacle monster daddy is different from lake monster, vine, and belt daddy.]
 
+Definition: a facehugger is too intimidating: decide no.
+
 To compute monstermotion of (M - a facehugger):
 	do nothing.
 
@@ -75,16 +77,9 @@ To compute action (N - a number) of (M - a facehugger):
 						say "It pumps your [asshole] full of inhuman [semen]!";
 						assfill SL;
 				otherwise if O is vagina:
-					if egg laying fetish is 1 and pregnancy fetish is 1 and inhuman pregnancy >= 2 and vagina is accepting womb semen:
-						say "It pumps your womb full of inhuman [semen] and its alien eggs!";
-						cancel father material of vagina;
-						now M is inseminating vagina;
-						wombfill SL;
-						check sudden pregnancy;
-						if the pregnancy of the player < 1:
-							say ConceptionFlav;
-							now the pregnancy of the player is 1;
-							check goddess eligibility;
+					if egg laying fetish is 1 and vagina is accepting womb eggs:
+						say "It pumps your womb full of its alien eggs!";
+						wombfill SL small eggs;
 					otherwise:
 						say "It pumps your [vagina] full of inhuman [semen]!";
 						pussyfill SL;
@@ -94,7 +89,7 @@ To compute action (N - a number) of (M - a facehugger):
 						increase the stomach-semen of the player by 1;
 						PukeUp 1;
 						repeat with NN running from 1 to SL:
-							let E be a random off-stage small egg;
+							let E be a random available small egg;
 							if E is egg:
 								now E is in the location of the player;
 								if a random number between 1 and 5 is 1, now the hatching of E is 1;

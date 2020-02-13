@@ -33,6 +33,15 @@ To decide which number is the hipModesty of (C - a trousers):
 To decide which number is the hipExposure of (C - an object):
 	decide on (7 + (the total volume of hips / 2)) - the hipModesty of C.
 
+To decide which object is the concealer of (H - hips):
+	let O be 0;
+	let P be nothing;
+	repeat with C running through worn clothing:
+		if the hipExposure of C <= 0 and the bottom-layer of C >= O:
+			now O is bottom-layer of C;
+			now P is C;
+	decide on P.
+
 To decide which object is the at least partial concealer of (H - hips):
 	let O be 0;
 	let P be nothing;
@@ -44,13 +53,14 @@ To decide which object is the at least partial concealer of (H - hips):
 
 To decide which number is the unique outrage of (H - hips):
 	let C be the at least partial concealer of H;
-	let O be the hipExposure of C;
+	let O be the hipExposure of C / 2;
 	if the strut of the player > 0 and the player is upright, increase O by 5;
 	increase O by the thickness of hips / 4;
 	if O > 20, decide on 20;
 	decide on O.
 
-Definition: hips is at least partially exposed if the hipExposure of the at least partial concealer of hips > 0.
+Definition: hips is at least partially exposed if the concealer of hips is nothing.
+Definition: hips is exposed if the at least partial concealer of hips is nothing.
 
 To say FullExamineDesc of (B - hips):
 	say "[TotalDesc of hips]".
@@ -625,7 +635,6 @@ To FatAssDown (X - a number):
 
 Section - Image for graphics window
 
-The text-shortcut of hips is "hips".
 Figure of CumHipsButton is the file "Special/Buttons/cumhips.png".
 
 To decide which figure-name is the examine-image of (T - hips):

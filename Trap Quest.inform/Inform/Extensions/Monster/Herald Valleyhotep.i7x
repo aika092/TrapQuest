@@ -30,7 +30,7 @@ To say BigFuckerDesc of (M - herald):
 	say "Valleyhotep".
 
 To say MonsterDesc of (M - herald):
-	say "This mass of pink smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied man[otherwise]voluptuous woman[end if]. While its face has no features, you feel like a thousand eyes are peering into your soul in its presence.";
+	say "This mass of pink smoke and crackling lightning has taken the shape of a [if lady fetish is 2]bubble-bootied [man of M][otherwise]voluptuous [man of M][end if]. While its face has no features, you feel like a thousand eyes are peering into your soul in its presence.";
 
 To set up (M - herald):
 	now the monstersetup of M is 1;

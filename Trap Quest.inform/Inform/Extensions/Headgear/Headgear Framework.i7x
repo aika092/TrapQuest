@@ -44,12 +44,6 @@ To compute generic first time class reward of (Q - a clothing-quest) on (C - a c
 		otherwise:
 			now D is in the location of the player;
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
-	[otherwise if the raw intelligence of the player < the raw dexterity of the player:
-		say "increasing your brainpower!";
-		IntUp 1;
-	otherwise if the raw dexterity of the player < 30:
-		say "improving your agility!";
-		DexUp 1;]
 	otherwise:
 		compute generic second time class reward of Q on C.
 
@@ -189,7 +183,7 @@ To decide which number is the hair threshold of (H - a headgear):
 		decide on 60.
 
 To compute hair growth of (H - a headgear):
-	if diaper quest is 0 and H is hair growing:
+	if diaper quest is 0 and H is hair growing and the largeness of hair < the bimbo of the player + 4:
 		increase the hair-charge of H by 1;
 		if the hair-charge of H > the hair threshold of H + (the raw largeness of hair * 3):
 			now the hair-charge of H is 0;

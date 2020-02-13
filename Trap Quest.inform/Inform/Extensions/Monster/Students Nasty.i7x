@@ -62,7 +62,7 @@ To say AdviceAnswer of (M - student-lucy):
 Part - Default Conversation
 
 To compute nonstudent perception of (M - a nasty student):
-	say "[speech style of M]'Your days are numbered if you keep walking around here with no armband.'[roman type][line break][Big he of M] walks away!";
+	say "[speech style of M]'Your days are numbered if you keep walking around here with no armband.'[roman type][line break][big he of M] walks away!";
 	now the scared of M is 50.
 
 [The nasty student has the protection function of a normal monster.]
@@ -107,7 +107,7 @@ To compute friendly drink of (M - a nasty student):
 	say "[speech style of M]'Do I look like I'm in the mood to help you out?!'[roman type][line break]".
 
 To say detention chair tease of (M - a nasty student):
-	say "[speech style of M]'[one of]Bahahah, you really are the worst, aren't you?'[or]You should just give up, you know. Someone like you is never going to make it in a place like this.'[or]Nyer nyer, look at the loser on her punishment chair. Enjoying yourself, [bitch]?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Bahahah, you really are the worst, aren't you?'[or]You should just give up, you know. Someone like you is never going to make it in a place like this.'[or]Nyer nyer, look at the loser on [his of the player] punishment chair. Enjoying yourself, [bitch]?'[in random order][roman type][line break]".
 
 Students Nasty ends here.
 

@@ -19,9 +19,9 @@ To decide which figure-name is the monster-image of (M - witch):
 
 To say MonsterDesc of (M - witch):
 	if lady fetish is 2:
-		say "A tall black man dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in his hand and a witch's hat on his head makes his speciality quite clear. [if there is a diaper retained by M]He is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]";
+		say "A tall black [man of M] dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]";
 	otherwise:
-		say "A tall black woman dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. Her [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M]She is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
+		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
 	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet she loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
@@ -547,7 +547,7 @@ To say WhereAnswer of (M - witch):
 	if M is unbitchy:
 		say "[speech style of M]'[one of]Tinctures tend to have really nasty drawbacks. Timing is everything.'[or]Recipes seem to change depending on what you like.'[or]Salves won[']t stay on if you go for a swim. If you[']re wearing one, be prepared to stay dirty, or make sure you don[']t get that way.'[or][if pregnancy fetish is 1]It's not a coincidence that the recipe for the elixir of life includes a fae mushroom.'[otherwise]A potion of blessing is essentially sugar water anywhere other than the dungeon.'[end if][or]Powerful creatures tend to drop powerful reagents.'[or]Obviously, try not to mess up. There's a risk you don't end up with exactly what you wanted.'[at random][roman type][line break]";
 	otherwise:
-		say "[one of][BigNameDesc of M] snorts. [line break][speech style of M]'Ha. Like you[']d even know an eye of newt from a gargoyle[']s toenail.'[or][BigNameDesc of M] chuckles to [him of M]self. [speech style of M]'Wouldn[']t you like to know.'[at random][roman type][line break]".
+		say "[one of][BigNameDesc of M] snorts. [line break][speech style of M]'Ha. Like you[']d even know an eye of newt from a gargoyle[']s toenail.'[or][BigNameDesc of M] chuckles to [himself of M]. [speech style of M]'Wouldn[']t you like to know.'[at random][roman type][line break]".
 
 To say StoryAnswer of (M - witch):
 	if M is unbitchy:

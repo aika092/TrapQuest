@@ -592,16 +592,18 @@ Check entering teleportation-pad:
 		try masturbating;
 		now auto is 0;
 	otherwise:
+		let RM be the location of M;
 		let X be a random number between 1 and 3;
 		if X is 1:
-			say "You feel a strange tingling sensation as your surroundings seem to spin, and in the blink of an eye you find yourself standing in the [bold type][the location of M][roman type]!";
+			say "You feel a strange tingling sensation as your surroundings seem to spin, and in the blink of an eye you find yourself standing in the [RM]!";
 		otherwise if X is 2:
-			say "You feel a little bit of vertigo as your surroundings seem to spin, and your stomach lurches you suddenly find yourself in the [bold type][the location of M][roman type]!";
+			say "You feel a little bit of vertigo as your surroundings seem to spin, and your stomach lurches you suddenly find yourself in the [RM]!";
 			FatigueUp 75;
 		otherwise:
-			say "You are overwhelmed with vertigo as your surroundings begin to spin, and [if the player is prone]your stomach turns over[otherwise]and you immediately drop to your knees[end if] as you suddenly find yourself in the [bold type][the location of M][roman type]!";
+			say "You are overwhelmed with vertigo as your surroundings begin to spin, and [if the player is prone]your stomach turns over[otherwise]and you immediately drop to your knees[end if] as you suddenly find yourself in the [RM]!";
 			if the player is prone, FatigueUp 100;
 			otherwise now the stance of the player is 1;
+		teleport to RM;
 	if R < 6, ChargeUp teleportation-pad by a random number between 200 and 300;
 	do nothing instead.
 

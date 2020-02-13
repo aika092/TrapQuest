@@ -56,6 +56,7 @@ A later time based rule:
 				now the published entry is the substituted form of "posted to your wall on facepage.com by [FriendName], accompanied by the comment 'WTF explain yourself, [NameBimbo]!'";
 				now the severity entry is 100;
 				now the popularity entry is 0;
+				now the viewsfuzz entry is 0;
 				now the timestamp entry is 0;
 				[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 			otherwise:
@@ -102,7 +103,7 @@ A later time based rule:
 			decrease the currentSlide of security screens by 1;
 			if the currentSlide of security screens <= 0:
 				now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
-			say "Your eyes are drawn to [HumiliatingSlideDesc (the currentSlide of security screens)]";
+			say "Your eyes are drawn to a TV screen! It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
 
 
 

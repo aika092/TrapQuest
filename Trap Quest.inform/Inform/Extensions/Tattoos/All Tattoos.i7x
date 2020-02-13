@@ -620,7 +620,7 @@ To decide which number is the initial outrage of (T - cheating whore tattoo):
 
 
 
-clit-piercing tattoo is a body tattoo. The tattoo-title of clit-piercing tattoo is "clit piercing". Understand "clit","piercing" as clit-piercing tattoo.
+clit-piercing tattoo is a body tattoo. The tattoo-title of clit-piercing tattoo is "clit piercing". Understand "clit", "piercing" as clit-piercing tattoo.
 Definition: clit-piercing tattoo is drawable: decide no.
 To say tattoo-desc of (T - clit-piercing tattoo):
 	say "A detailed vagina with a pierced clitoris is tattooed in your armpit. Its magic seems to influence people to go for your [vagina].".
@@ -1104,7 +1104,7 @@ Definition: elephant tattoo is grey themed: decide yes.
 empty-mind tattoo is a face-tattoo. The tattoo-title of empty-mind tattoo is "empty mind".
 Definition: empty-mind tattoo is eligible:
 	if the noun is wearthing:
-		if the intelligence-influence of the noun is not 0 and the intelligence of the player < 4, decide yes;
+		if the intelligence-influence of the noun < 0, decide yes;
 	decide no.
 Definition: empty-mind tattoo is drawable if it is not worn and the intelligence of the player < 4.
 To say tattoo-desc of (T - empty-mind tattoo):
@@ -1481,7 +1481,7 @@ jack-of-spades tattoo is a crotch tattoo. The tattoo-title of jack-of-spades tat
 Definition: a jack-of-spades tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if interracial fetish is 0 or TG fetish > 0 or the player is female, decide no;
-	decide no.
+	decide yes.
 Definition: jack-of-spades tattoo is eligible:
 	if the noun is interracial themed or the noun is chastity cage or the noun is manly sissifying clothing, decide yes;
 	decide no.
@@ -1769,7 +1769,7 @@ Definition: no-panties tattoo is eligible:
 	if the noun is crotch covering no protection clothing or the noun is undies, decide yes;
 	decide no.
 To say tattoo-desc of (T - no-panties tattoo):
-	say "The words 'no panties' are tattooed in large letters on your hip near your crotch, underneath a drawing of panties and and a big red cross.".
+	say "The words 'no panties' are tattooed in large letters on your hip near your crotch, underneath a drawing of panties and a big red cross.".
 To decide which number is the initial outrage of (T - no-panties tattoo):
 	decide on 8.
 
@@ -2362,6 +2362,7 @@ To say tattoo-desc of (T - slut-tattoo):
 	say "The word 'SLUT' and a drawing of a naked woman are tattooed above your crotch.".
 To decide which number is the bimbo-influence of (T - slut-tattoo):
 	decide on 1.
+Understand "slut tattoo" as slut-tattoo.
 
 
 

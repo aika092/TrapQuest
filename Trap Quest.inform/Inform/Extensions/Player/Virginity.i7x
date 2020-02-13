@@ -254,7 +254,8 @@ REQUIRES COMMENTING
 +!]
 To compute virginity-loss of (T - a thing):
 	say "Your [printed name of T] drops to the ground.";
-	now T is in the location of the player.
+	now T is in the location of the player;
+	dislodge T.
 
 
 Virginity ends here.

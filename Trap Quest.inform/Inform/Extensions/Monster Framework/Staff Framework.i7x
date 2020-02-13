@@ -2,6 +2,7 @@ Staff Framework by Monster Framework begins here.
 
 A staff member is a kind of monster. A staff member is intelligent. A staff member is usually female.
 
+
 Definition: a staff member is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
 Definition: a staff member is school dwelling: decide yes.
@@ -9,7 +10,7 @@ Definition: a staff member is school dwelling: decide yes.
 Definition: a staff member is motionless-when-defeated: decide yes.
 
 To compute monstermotion of (M - a staff member):
-	if playerRegion is not school:
+	if playerRegion is not school and M is undefeated:
 		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
 		now M is in School01;
 	otherwise if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
@@ -24,7 +25,7 @@ To say FullMonsterDesc of (M - a staff member):
 	if M is undefeated, say StaffDesc of M.
 
 To say StaffDesc of (M - a staff member):
-	say "[Big he of M] is wearing a black armband which says 'STAFF' in large [rank-colour of M] letters.".
+	say "[big he of M] is wearing a black armband which says 'STAFF' in large [rank-colour of M] letters.".
 
 To say rank-colour of (M - a staff member):
 	if M is sapphire-teacher:
@@ -90,10 +91,11 @@ To compute perception of (M - a staff member):
 		compute nonstudent perception of M.
 
 To compute student perception of (M - a staff member):
-	do nothing.
+	if M is male and M is groping:
+		compute grope of M.
 
 To compute nonstudent perception of (M - a staff member):
-	say "[speech style of M]'You! Where is your armband?!'[roman type][line break][Big he of M] takes an aggressive stance.";
+	say "[speech style of M]'You! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
 	anger M.
 
 To compute (M - a staff member) reacting to armband replacement:
@@ -232,6 +234,7 @@ To decide which number is the annoyance threshold of (M - a staff member):
 Part - Teachers
 
 A teacher is a kind of staff member. A teacher has an indexed text called teacher-name. Understand the teacher-name property as describing a teacher.
+Definition: a teacher is motionless-when-defeated: decide no.
 
 A sapphire-teacher is a kind of teacher. Understand "sapphire" as a sapphire-teacher.
 An emerald-teacher is a kind of teacher. Understand "emerald" as an emerald-teacher.
@@ -535,7 +538,7 @@ To execute (A - egg-assembly):
 		destroy SD;
 	otherwise:
 		now the assemblyTime of A is 1;
-	say "[one of]You hear amused gasps and giggles from your fellow students[or]Whispers, gasps, and laughter rain down on you from the student body[or]Muttererd comments like 'Slut', 'Check the gape!' and '[Big he of the player]'s really enjoying that'! rise from all around you, down on the floor on your knees[or]Jeers, catcalls, and gasps match the pointing fingers of your shocked peers[in random order].";
+	say "[one of]You hear amused gasps and giggles from your fellow students[or]Whispers, gasps, and laughter rain down on you from the student body[or]Muttererd comments like 'Slut', 'Check the gape!' and '[big he of the player]'s really enjoying that'! rise from all around you, down on the floor on your knees[or]Jeers, catcalls, and gasps match the pointing fingers of your shocked peers[in random order].";
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's it for today. And [NameBimbo], make sure you don't leave your disgusting eggs in my halls again.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
 
 Check squatting when egg-assembly is active:
@@ -606,6 +609,9 @@ To compute detention of (M - a staff member):
 		if diaper quest is 1, now the latest-cringe of team-predicament-partner is the cringe appearance of the player;
 		now turnsWithSoiledDiaper is 0;
 		now the printed name of Predicament01 is "Abandoned Warehouse";
+		repeat with R running through predicament rooms:
+			totally clean R;
+		if the body soreness of the player > 4, now the body soreness of the player is 4;
 		execute P;
 		increase the times-completed of P by 1;
 		now temporaryYesNoBackground is Figure of small image;

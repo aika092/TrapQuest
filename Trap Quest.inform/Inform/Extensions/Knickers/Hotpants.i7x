@@ -6,6 +6,7 @@ To decide which number is the penis-capacity of (H - a hotpants):
 	decide on 6.
 
 Definition: a hotpants is displacable: decide yes.
+Definition: a hotpants is rippable: decide yes.
 
 Definition: a hotpants is uncovered themed: decide yes.
 

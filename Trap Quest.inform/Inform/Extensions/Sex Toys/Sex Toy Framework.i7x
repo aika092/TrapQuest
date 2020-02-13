@@ -35,7 +35,19 @@ Definition: a sex toy is transformation-protected: decide yes.
 Definition: a sex toy is disintegration-protected: decide yes.
 
 To decide which number is the initial outrage of (S - a sex toy):
-	decide on 10 + the size of S.
+	decide on 11.
+
+To decide which number is the unworn outrage of (S - a sex toy):
+	let O be (the initial outrage of S) + (the size of S);
+	if O > 20, decide on 20;
+	if O < 0, decide on 0;
+	decide on O.
+
+To decide which number is the outrage of (S - a sex toy):
+	if S is worn:
+		if S is not currently at least partially visible, decide on 0;
+		if S is not currently visible, decide on (the initial outrage of S * 2) / 3; [this means it is partially visible]
+	decide on the unworn outrage of S.
 
 
 To say DongSize of (C - a sex toy):
@@ -94,7 +106,7 @@ To set up magic state of (C - a sex toy):
 		set up BUC of C.
 
 To set up toy enchantments of (C - a sex toy):
-	let R be a random number between 1 and 6;
+	let R be a random number between 1 and 10;
 	if R is 1, now C is refreshment;
 	if R is 2, now C is rejuvenation;
 	if R is 3, now C is endurance;
@@ -200,7 +212,8 @@ To compute gripping of (I - an insertable thing):
 	let G be the grip of I;
 	let R be a random number between 0 and G * G * 3;
 	if the player is upright:
-		if I is penetrating asshole and the player is not ass protected and G < 10 and R is 0 or G <= 0:
+		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
+		if I is penetrating asshole and the player is not ass protected and G < 10 and R <= 0:
 			if G <= 0:
 				say "The [printed name of I] slips right back out of your [asshole] and drops to the ground.";
 			otherwise if G is 1:
@@ -215,16 +228,20 @@ To compute gripping of (I - an insertable thing):
 				say "You find yourself momentarily paralysed by the intense feelings coming from your [printed name of I] as it starts slowly worming its way out of your [asshole] of its own accord. Your instinct is to push it back in but the feeling of it forcing your sphincter open renders you completely unable to move until it finishes its journey, exits your [asshole] with a loud 'PLOP' and drops to the ground[if the openness of asshole > 6], leaving your very empty feeling [asshole] gaping[end if].";
 			[Flavour and soreness]
 			if G < 4:
-				say "[if the bimbo of the player < 7][line break][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [asshole] for very long.'[otherwise if the bimbo of the player < 14][line break][variable custom style]'Oops, I guess this one is too small for my [asshole]!'[otherwise][line break][second custom style]'Aww, no, it fell out! I need to find a bigger one that can properly fill my greedy [asshole] and keep it stretched and open!'[end if][roman type][line break]";
+				if there is a reactive person, say "[variable custom style]Oh no, not now![roman type][line break]";
+				otherwise say "[if the bimbo of the player < 7][line break][first custom style]Hmm, well I guess there's no way something that small is going to stay inside my [asshole] for very long.[otherwise if the bimbo of the player < 14][line break][variable custom style]Oops, I guess this one is too small for my [asshole]![otherwise][line break][second custom style]Aww, no, it fell out! I need to find a bigger one that can properly fill my greedy [asshole] and keep it stretched and open![end if][roman type][line break]";
 			otherwise if G < 8 or the player is not horny or the player is unable to orgasm so soon:
 				ruin asshole;
-				say "[if the bimbo of the player < 7][line break][first custom style]'Holy shit, that felt pretty intense!'[otherwise if the bimbo of the player < 14][line break][variable custom style]'I can't believe how good that made my [asshole] feel!'[otherwise][line break][second custom style]'MM, I love that feeling!'[end if][roman type][line break]";
+				if there is a reactive person, say "[variable custom style]Really? Now of all times?![roman type][line break]";
+				otherwise say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, that felt pretty intense![otherwise if the bimbo of the player < 14][line break][variable custom style]I can't believe how good that made my [asshole] feel![otherwise][line break][second custom style]MM, I love that feeling![end if][roman type][line break]";
 			otherwise:
 				anally orgasm shamefully;
 			now I is not penetrating asshole;
 			now I is in the location of the player;
 			if newbie tips is 1, say "[one of][newbie style]Toys won't fall out while you are on your knees.[roman type][line break][or][stopping]";
-		otherwise if I is penetrating vagina and the player is not pussy protected and G < 10 and R is 0 or G <= 0:
+			repeat with M running through reactive people:
+				compute toy expulsion reaction of M;
+		otherwise if I is penetrating vagina and the player is not pussy protected and G < 10 and R <= 0:
 			if G <= 0:
 				say "The [printed name of I] slips right back out of your [vagina] and drops to the ground.";
 			otherwise if G is 1:
@@ -239,14 +256,18 @@ To compute gripping of (I - an insertable thing):
 				say "You find yourself momentarily paralysed by the intense feelings coming from your [printed name of I] as it starts slowly worming its way out of your [vagina] of its own accord. Your instinct is to push it back in but the feeling of it forcing your sphincter open renders you completely unable to move until it finishes its journey, exits your [vagina] with a loud 'PLOP' and drops to the ground[if the openness of vagina > 6], leaving your very empty feeling [vagina] gaping[end if].";
 			[Flavour and soreness]
 			if G < 4:
-				say "[if the bimbo of the player < 7][line break][first custom style]'Hmm, well I guess there's no way something that small is going to stay inside my [vagina] for very long.'[otherwise if the bimbo of the player < 14][line break][variable custom style]'Oops, I guess this one is too small for my [vagina]!'[otherwise][line break][second custom style]'Aww, no, it fell out! I need to find a bigger one that can properly fill my greedy [vagina] and keep it stretched and open!'[end if][roman type][line break]";
+				if there is a reactive person, say "[variable custom style]Oh no, not now![roman type][line break]";
+				otherwise say "[if the bimbo of the player < 7][line break][first custom style]Hmm, well I guess there's no way something like that is going to stay inside my [vagina] for very long. Unless perhaps if I was on my knees?[otherwise if the bimbo of the player < 14][line break][variable custom style]Oops, I guess this one is too small for my [vagina]![otherwise][line break][second custom style]Aww, no, it fell out! I need to find a bigger one that can properly fill my greedy [vagina] and keep it stretched and open![end if][roman type][line break]";
 			otherwise if G < 8 or the player is not horny or the player is unable to orgasm so soon:
 				ruin vagina;
-				say "[if the bimbo of the player < 7][line break][first custom style]'Holy shit, that felt pretty intense!'[otherwise if the bimbo of the player < 14][line break][variable custom style]'I can't believe how good that made my [vagina] feel!'[otherwise][line break][second custom style]'MM, I love that feeling!'[end if][roman type][line break]";
+				if there is a reactive person, say "[variable custom style]Really? Now of all times?![roman type][line break]";
+				say "[if the bimbo of the player < 7][line break][first custom style]Holy shit, that felt pretty intense![otherwise if the bimbo of the player < 14][line break][variable custom style]I can't believe how good that made my [vagina] feel![otherwise][line break][second custom style]MM, I love that feeling![end if][roman type][line break]";
 			otherwise:
 				vaginally orgasm shamefully;
 			now I is not penetrating vagina;
 			now I is in the location of the player;
+			repeat with M running through reactive people:
+				compute toy expulsion reaction of M;
 	if I is penetrating asshole:
 		increase analGripCount by 1;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
@@ -270,27 +291,19 @@ To compute gripping of (I - an insertable thing):
 				if the openness of vagina > open, say "You feel permanently more loose.";
 			now vaginalGripCount is 0.
 
+
+To compute toy expulsion reaction of (M - a person):
+	do nothing.
+To compute toy expulsion reaction of (M - a monster):
+	say "[BigNameDesc of M] [one of]almost chokes[or]leaps in surprise[or]barks in surprise[in random order].[line break][speech style of M]'[one of]That was INSIDE you?!'[or]What the hell? Did you just push that out of your fuckhole in front of me?!'[or]You filthy pervert!'[in random order][roman type][line break][moderateHumiliateReflect]";
+	FavourDown M by 1 with consequences.
+
 To decide which number is the bartering value of (T - a sex toy) for (M - a mannequin):
 	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
-
 Check taking off sex toy:
 	try unplugging the noun instead.
-
-To compute toyInsertion of (S - a thing) into (F - a fuckhole):
-	compute insertionRuin of S into F;
-	now S is penetrating F.
-
-To compute insertionRuin of (S - a thing) into (F - a fuckhole):
-	if the girth of S > the openness of F - 4:
-		say "The [printed name of S] [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";
-		ruin F;
-		if the girth of S > the openness of F + 1, ruin F;
-	otherwise if the girth of S > the openness of F - 2:
-		say "Oof! You definitely felt that as you pushed it inside.";
-	otherwise:
-		say "Your [variable F] is loose enough to let the [printed name of S] slip in easily.".
 
 
 Chapter 1 - Dongs
@@ -352,6 +365,11 @@ Definition: small-jewelled-plug is purple themed: decide yes.
 Definition: small-jewelled-plug is gem themed: decide yes.
 To decide which number is the initial cringe of (S - small-jewelled-plug):
 	decide on the initial outrage of S.
+To decide which number is the outrage of (S - small-jewelled-plug):
+	if S is worn:
+		if S is not currently at least partially visible, decide on 0;
+		if S is not currently visible, decide on the initial outrage of S; [the jewel means it gets the full initial outrage rather than 2/3]
+	decide on the unworn outrage of S.
 medium-jewelled-plug is a basic plug. The size of medium-jewelled-plug is 4. The text-shortcut of medium-jewelled-plug is "plu4". medium-jewelled-plug is metal.
 To say MediumDesc of (P - medium-jewelled-plug):
 	say "medium sized metal plug".
@@ -359,6 +377,11 @@ Definition: medium-jewelled-plug is gem themed: decide yes.
 Definition: medium-jewelled-plug is grey themed: decide yes.
 To decide which number is the initial cringe of (S - medium-jewelled-plug):
 	decide on the initial outrage of S.
+To decide which number is the outrage of (S - medium-jewelled-plug):
+	if S is worn:
+		if S is not currently at least partially visible, decide on 0;
+		if S is not currently visible, decide on the initial outrage of S; [the jewel means it gets the full initial outrage rather than 2/3]
+	decide on the unworn outrage of S.
 round-plug is a basic plug. The size of round-plug is 5. The text-shortcut of round-plug is "plu5". Understand "round", "black" as round-plug.
 To say MediumDesc of (P - round-plug):
 	say "large round black plug".
@@ -376,6 +399,11 @@ To say MediumDesc of (P - fish-plug):
 Definition: fish-plug is swimming themed: decide yes.
 Definition: fish-plug is blue themed: decide yes.
 Definition: fish-plug is green themed: decide yes.
+To decide which number is the unworn outrage of (S - fish-plug):
+	let O be (the initial outrage of S) + (the size of S) - 4; [Fish is somewhat disguised]
+	if O > 20, decide on 20;
+	if O < 0, decide on 0;
+	decide on O.
 brown-plug is a basic plug. The size of brown-plug is 9. The text-shortcut of brown-plug is "plu9". Understand "brown" as brown-plug.
 To say MediumDesc of (P - brown-plug):
 	say "monstrous brown plug".
@@ -407,7 +435,8 @@ To say MediumDesc of (C - a plug):
 
 A tail plug is a kind of plug.
 To decide which number is the initial outrage of (S - a tail plug):
-	decide on 14.
+	if S is worn, decide on 11;
+	decide on 14 + (the size of S / 2).
 To decide which number is the initial cringe of (S - a tail plug):
 	decide on the initial outrage of S.
 
@@ -489,7 +518,7 @@ To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a plug):
 Definition: a plug is transformation-protected if it is not plentiful.
 
 To decide which object is the unique-upgrade-target of (C - a plug):
-	decide on a random off-stage anal beads.
+	decide on a random off-stage plentiful anal beads.
 
 
 Section 1 Tail Plug
@@ -538,13 +567,16 @@ Check replacing:
 		unless the noun is crotch-assless or the noun is skirted, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
 
 To decide which object is the concealer of (C - a tail plug):
-	repeat with O running through worn actually dense bottom-layer-concealing unskirted clothing: [Tail plug not concealed by skirts.]
-		decide on O;
-	decide on nothing.
+	let S be a random worn unskirted actually dense potentially asshole covering clothing; [tail plug not concealed by skirts]
+	decide on S.
 
 To say CurrentlyVisibleFlav of (C - a tail plug):
-	let S be a random worn actually dense potentially asshole covering clothing;
-	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
+	let S be a random worn potentially asshole covering clothing;
+	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from behind your [printed name of S][end if].".
+
+To say CurrentlyPartiallyConcealedFlav of (C - a tail plug):
+	let X be the at least partial concealer of C;
+	say "Your [ShortDesc of X] fails to completely hide the fact that you're wearing it[if X is skirted and X is actually dense], because the tail is poking out[end if].".
 
 
 

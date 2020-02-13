@@ -4,7 +4,7 @@ A stethoscope is a kind of neckwear. The printed name of stethoscope is "[clothi
 
 A stethoscope is unique.
 
-Understand "steth","stetho" as a stethoscope. The text-shortcut of stethoscope is "ste".
+Understand "steth", "stetho" as a stethoscope. The text-shortcut of stethoscope is "ste".
 
 To decide which number is the initial outrage of (C - a stethoscope):
 	decide on 0.

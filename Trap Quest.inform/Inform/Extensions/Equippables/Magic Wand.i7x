@@ -56,7 +56,7 @@ To compute takeoff of (W - a magic wand):
 		now M is in the location of the player;
 		set up M;
 		if the location of the player is no-roof:
-			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it. She waves as you float off into the sky.[line break][second custom style]'[one of]You better hope I don't find you again, I won't go easy on you!'[or]Up up and away!'[or]Don't worry, I'll find YOU!'[in random order][roman type][line break]";
+			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it. [big he of M] waves as you float off into the sky.[line break][second custom style]'[one of]You better hope I don't find you again, I won't go easy on you!'[or]Up up and away!'[or]Don't worry, I'll find YOU!'[in random order][roman type][line break]";
 		otherwise:
 			say "As you float off, the wand falls out of your hand! [BigNameDesc of M] appears from thin air and immediately catches it.[line break][second custom style]'[one of]Payback time!'[or]I'm really going to enjoy this.'[or]You're about to get the wind knocked into you!'[or]Revenge is a dish best served in a windmill!'[as decreasingly likely outcomes][roman type][line break]";
 		now the favour of M is 0;

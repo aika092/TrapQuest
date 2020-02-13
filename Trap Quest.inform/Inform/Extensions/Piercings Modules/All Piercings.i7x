@@ -163,7 +163,12 @@ To say PiercingFlav of (P - clitoris lead):
 	cutshow figure of modmachine cutscene 1 for modification machine.
 
 To decide which object is the concealer of (C - clitoris lead):
-	repeat with O running through worn potentially vagina covering clothing:
+	repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
+		unless O is skirted, decide on O;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - clitoris lead):
+	repeat with O running through bottom-layer-concealing potentially at least partially vagina covering clothing:
 		unless O is skirted, decide on O;
 	decide on nothing.
 
@@ -238,7 +243,12 @@ To say PiercingFlav of (P - a clitoris piercing):
 		try examining clit-piercing tattoo.
 
 To decide which object is the concealer of (C - a clitoris piercing):
-	repeat with O running through worn potentially vagina covering clothing:
+	repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
+		decide on O;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - a clitoris piercing):
+	repeat with O running through bottom-layer-concealing potentially at least partially vagina covering clothing:
 		decide on O;
 	decide on nothing.
 
@@ -256,24 +266,30 @@ Definition: a clitoris piercing (called P) is eligible:
 	decide yes.
 
 This is the cursed clitoris piercing stops you wearing underwear rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is not no protection and wearing-target is not diaper:
-			if summoning is 0 and autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+			if summoning is 0 and autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 			rule fails.
 The cursed clitoris piercing stops you wearing underwear rule is listed in the knickers wearability rules.
 
 This is the cursed clitoris piercing stops you wearing trousers rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is not no protection:
-			if summoning is 0 and autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+			if summoning is 0 and autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 			rule fails.
 The cursed clitoris piercing stops you wearing trousers rule is listed in the trousers wearability rules.
 
 This is the cursed clitoris piercing stops you wearing crotch covering dresses rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is crotch covering and wearing-target is not no protection:
 			if summoning is 0:
-				if autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+				if autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 				rule fails. [NB this purposefully doesn't prevent them from being summoned.]
 The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the overdress wearability rules.
 
@@ -431,19 +447,23 @@ To uniquely set up (C - a pair of earrings):
 	now the variation of C is a random number between 1 and 3.
 
 To say CurseCurseFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!".
+	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!";
+	update appearance level.
 
 To say CurseBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now penis shaped again!".
+	say "Your [printed name of C] transform in shape, and are now penis shaped again!";
+	update appearance level.
 
 To say BlessBlessFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!".
+	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!";
+	update appearance level.
 
 To say BlessBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]".
+	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]";
+	update appearance level.
 
 To decide which number is the initial outrage of (C - a pair of earrings):
-	if C is cursed, decide on 12;
+	if C is cursed, decide on 10;
 	if C is blessed, decide on 0;
 	decide on 6.
 

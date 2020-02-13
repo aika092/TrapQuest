@@ -1,10 +1,68 @@
 Removability by Clothing begins here.
 
 
+Definition: a thing is removable: decide yes.
+Definition: a tattoo is removable: decide no.
+
+Definition: a thing is unremovable if it is not removable.
+
+[!<ThingIsStealable>+
+
+This definition performs 3 checks to determine whether or not a monster will actually be able to steal a given piece of clothing(called C):
+1. Ensure that C can be removed
+2. Ensure that C is not a type of bondage, which a monster would not want to remove
+3. Ensure that C is not a super humiliating item a monster also wouldn't want to remove
+
+@param <Object>:<C> The item that can potentially be stolen by an npc
+
+@return <Boolean> returns true if C can be stolen, otherwise returns false
+
++!]
+
+Definition: a thing (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
+	if C is accessory and (the unworn outrage of C >= 5 or the unworn cringe of C >= 5), decide no;[Regardless of how you feel about regular clothes, most npcs would agree it's better not to be naked.]
+	if C is overdress and the class of the player is not adventurer, decide no;
+	if C is worn:
+		if C is not actually strippable, decide no; [This checks if it can be removed by NPCs without destroying it]
+	decide yes.
+Definition: a thing is unstealable if it is not stealable.
+
+[!<ThingIsDestructible>+
+
+This definition determines whether or not an item can be conventionally "destroyed." Meant to be overridden.
+
+@param <Object>:<C> The item to be potentially destroyed
+
+@return <Boolean> returns true if C can be destroyed, otherwise returns false
+
++!]
+Definition: a thing (called C) is destructible:
+	if C is metal, decide no;
+	decide yes.
+Definition: a thing is indestructible if it is not destructible.
+
+[!<ThingIsTearable>+
+
+This definition determines whether or not a given item can be destroyed by being torn off by monsters
+
+@param <Object>:<C> The item that can potentially be torn off
+
+@return <Boolean> returns true if C can be taken, otherwise returns false
+
++!]
+Definition: a thing (called C) is tearable:
+	if C is indestructible, decide no;
+	if C is worn and C is unremovable, decide no;
+	decide yes.
+
+Definition: a thing (called C) is tearable-or-stealable:
+	if C is tearable or C is stealable, decide yes;
+	decide no.
+
+
 the global removability rules is a rulebook.
 
 Definition: a clothing (called C) is actually removable:
-	now summoning is 0;
 	now wearing-target is C;
 	follow the global removability rules;
 	if the rule failed, decide no;
@@ -17,7 +75,7 @@ Definition: a clothing (called C) is actually removable:
 	decide yes.]
 
 Definition: a clothing (called C) is actually strippable:
-	now summoning is 1;
+	now summoning is 1; [suppresses removing text outputs, lets the game know this is being ripped off (some stuff can be ripped off but not put on)]
 	if C is actually removable:
 		now summoning is 0;
 		decide yes;
@@ -64,14 +122,14 @@ This is the cursed unremovable rule:
 The cursed unremovable rule is listed in the global removability rules.
 
 This is the locked unremovable rule:
-	if wearing-target is unremovable and wearing-target is locked clothing and summoning is 0:
-		if autoremove is false, say "It's locked on! You'll need to find someone with a key.";
+	if wearing-target is locked clothing:
+		if autoremove is false and summoning is 0, say "It's locked on! You'll need to find someone with a key.";
 		rule fails.
 The locked unremovable rule is listed in the global removability rules.
 
-This is the player won't automatically remove glue rule:
-	if wearing-target is unremovable and wearing-target is glued clothing and summoning is 0 and autoremove is true, rule fails.
-The player won't automatically remove glue rule is listed in the global removability rules.
+This is the people won't automatically remove glue rule:
+	if wearing-target is glued clothing and (summoning is 1 or autoremove is true), rule fails.
+The people won't automatically remove glue rule is listed in the global removability rules.
 
 This is the removal blocking rule:
 	repeat with C running through worn removal-blocking wearthings:

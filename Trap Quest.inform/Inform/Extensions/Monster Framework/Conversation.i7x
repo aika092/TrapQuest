@@ -38,7 +38,7 @@ To compute talk option (N - 1) to (M - a monster):
 		if M is a friendly interested human monster and breasts is exposed, progress quest of chest-exposing-quest from M;
 		let B be a random number from 1 to 4;
 		if the class of the player is cheerleader, decrease B by 1;
-		if M is not intelligent:[Dumb monsters use a special greeting function]
+		if M is unintelligent:[Dumb monsters use a special greeting function]
 			say MuteGreeting to M;
 			say MuteGreetResponse of M;
 		otherwise if the player is seductive and M is raunchy and B < 2:[Bimbo greetings supersede the normal greeting function]
@@ -767,7 +767,7 @@ To say DominantGreeting to (M - a monster):
 
 [!<SayDominantResponseOfMonster>+
 
-Displayed after a sadictic player greets a monster a mostly dominant history with. Usually the same as a monster's response to taunting.
+Displayed after a sadistic player greets a monster a mostly dominant history with. Usually the same as a monster's response to taunting.
 
 @param <Monster>:<M> The monster being greeted
 
@@ -985,7 +985,7 @@ To compute default questioning to (M - a monster):
 		if I is 1, now I is 2;
 		now Q is a random number between (I - 1) and 6;
 		now the conversation-sequence of M is Q;
-	if M is not intelligent:
+	if M is unintelligent:
 		say MuteQuestionResponse of M;
 	otherwise if player is seductive and M is raunchy and a random number between 1 and 4 is 1:
 		now M is interested;
@@ -1197,7 +1197,7 @@ To compute talk option (N - 3) to (M - a monster):
 		say "[DrinkRequest of M]";
 		if M is uninterested:
 			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
-		otherwise if M is not intelligent:
+		otherwise if M is unintelligent:
 			say "It doesn't look like [he of M] intends to respond.";
 		otherwise if M is willing to urinate and watersports fetish is 1 and a random number between 1 and 20 < the urine taste addiction of the player:
 			compute M urinating;
@@ -1292,7 +1292,7 @@ To compute talk option (N - 4) to (M - a monster):
 			say "[FoodRequest of M]";
 			if M is uninterested:
 				say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
-			otherwise if M is not intelligent:
+			otherwise if M is unintelligent:
 				say "It doesn't look like [he of M] intends to respond.";
 			otherwise if M is friendly:
 				compute friendly food of M;
@@ -1427,7 +1427,7 @@ To compute talk option (N - 5) to (M - a monster):
 			do nothing; [NPC has already reacted]
 		if M is uninterested:
 			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
-		otherwise if M is not intelligent:
+		otherwise if M is unintelligent:
 			say "It doesn't look like [he of M] intends to respond.";
 		otherwise if M is friendly and M is not robot:
 			if M is dismissable, compute friendly dismissal of M;
@@ -1450,7 +1450,7 @@ To say DismissalRequest of (M - a monster):
 		if the player is bimbo consenting, now speakingOutLoud is 2;
 	if speakingOutLoud > 0:
 		say "[variable custom style]";
-		if M is not intelligent or M is robot:
+		if M is unintelligent or M is robot:
 			say "'I don't suppose you'll leave me alone if I ask you to?'";
 		otherwise if M is unfriendly:
 			say "'Fuck off!'";

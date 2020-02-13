@@ -83,10 +83,6 @@ A bottle has a magic-curse.
 Understand the magic-curse property as describing a bottle when item described is sure.
 A bottle is usually bland.
 
-Definition: a bottle (called C) is cursable:
-	if C is cursed, decide no;
-	decide yes.
-
 To say BlessBlessFlav of (B - a bottle):
 	if B is in the location of the player:
 		say "A flash of blue and gold surrounds the [ShortDesc of B] for an instant. It must now be blessed!";

@@ -127,7 +127,7 @@ To compute condom request choice of (M - a monster):
 			if M is condom-preferring and M is convinced to wear a condom:
 				say AutomaticCondomFlav of M;
 				now M is wrapped;
-			otherwise:
+			[otherwise:
 				say "Looks like [NameDesc of M] is probably going for your [chosen-orifice of M]. Would you like to request that [he of M] wear a condom? ";
 				if the player is consenting:
 					say CondomRequestFlav of M;
@@ -143,13 +143,20 @@ To compute condom request choice of (M - a monster):
 					say CondomForceSuccessFlav of M;
 					now M is wrapped;
 				otherwise:
-					say CondomForceFailFlav of M.
+					say CondomForceFailFlav of M.]
 
 Definition: a monster (called M) is convinced to wear a condom:
 	let C be the charisma of the player + (the trophy-mode of condom-trophy * 20);
-	if the class of the player is fertility goddess, decrease C by 3;
+	let CR be the condom resistance of M;
+	if the class of the player is fertility goddess, increase CR by 1;
+	let BB be the blue-balls-limit of M - the blue-balls of M;
+	let ORG be the virility of M - the sex-length of M;
+	if M is seduced:
+		increase CR by BB; [The more patient they are, the less happy they will be to put a condom on already]
+		decrease CR by ORG; [The closer they are to orgasm, the more willing they are to put on a condom]
 	let R be a random number between 0 and C;
-	if R < the condom resistance of M, decide no;
+	if debuginfo > 0, say "[input-style]Condom convince check: condom charisma roll d[C + 1] ([R + 1]) | ([CR].5) [ShortDesc of M] condom resistance[if M is seduced] = ([condom resistance of M]) base condom resistance + ([BB]) patience - ([ORG]) arousal[end if][roman type][line break]";
+	if R < CR, decide no;
 	decide yes.
 
 Definition: a monster (called M) is forced to wear a condom:
@@ -167,7 +174,8 @@ To compute condom filling of (M - a monster):
 
 To compute default condom filling of (M - a monster):
 	let C be a random worn drinkable condom pinned clothing;
-	if C is nothing or a random number between 1 and 4 > 1, now C is a random worn condom pinnable clothing; [75% chance of condoms going on the same item as there are already condoms]
+	if C is nothing or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
+	if runic headband is worn and runic headband is not purity and M is penetrating vagina, now C is runic headband;
 	let S be nothing;
 	if C is nothing:
 		now S is string-belt;
@@ -231,7 +239,8 @@ To say CondomManualFlav of (M - a monster):
 	say "You take out a condom and [if the bimbo of the player > 10 and face is not actually occupied]use your mouth to slowly roll it down [his of M] length[otherwise]quickly roll it down [his of M] length[end if], making [one of]sure the rubber is in intimate contact with every inch of the[or]every bump and vein glisten as you stretch and smooth the rubber over [his of M][at random] tool.".
 
 To say CondomRejectFlav of (M - a monster):
-	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".
+	say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion.".
+	[say "[BigNameDesc of M] [one of]scoffs[or]frowns[or]rolls [his of M] eyes[at random], and ignores your suggestion. Looks like [he of M][']s going in bare...".]
 
 To say CondomForceSuccessFlav of (M - a monster):
 	if chosen-orifice of M is face:
@@ -246,7 +255,7 @@ To say CondomForceFailFlav of (M - a monster):
 		say "[one of]You reach between your legs, grasping for [NameDesc of M]'s [DickDesc of M] as you quickly take out a condom. It's too difficult without being able to see what you're doing, and you accidentally drop it[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M]'s [DickDesc of M]. [big he of M] moves before you can unroll it completely, and you accidentally drop the condom[or]You take out a condom and reach between your legs. It's really difficult to get a good grip on [his of M] [DickDesc of M], and you accidentally drop the condom[at random]! Looks like [he of M][']s going in bare...";
 
 To say AutomaticCondomFlav of (M - a monster):
-	say "After taking one look at your [if there is a worn cumdumpster hat]cumdumpster hat[otherwise][ShortDesc of random held condom-providing thing][end if], [NameDesc of M] takes a condom and deftly protects [his of M] [manly-penis].";
+	say "After looking at your [if there is a worn cumdumpster hat]cumdumpster hat[otherwise][ShortDesc of random held condom-providing thing][end if], [NameDesc of M] takes a condom and deftly protects [his of M] [manly-penis].";
 
 To say CondomPinFlav of (M - a monster) on (C - a clothing):
 	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [ShortDesc of C].";

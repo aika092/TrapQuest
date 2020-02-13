@@ -119,7 +119,7 @@ A time based rule (this is the compute stomach rule):
 	if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
 		compute hunger and thirst;
 	unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth;
-	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck:
+	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck and the player is not in danger:
 		if the player is in Dungeon10 and diaper quest is 0:
 			say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 6]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 10]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";
 			now the stance of the player is 1;

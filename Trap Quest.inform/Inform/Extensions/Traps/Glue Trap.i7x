@@ -568,7 +568,7 @@ To compute the mutation effects of (G - a glue):
 						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [Shortdesc of penis].";
 					otherwise:
 						let C be a random off-stage pink rubber dress;
-						if C is actually wearable:
+						if C is actually summonable:
 							compute GlueMorphingInto of G to C;
 						otherwise:
 							BustUp 1;
@@ -850,7 +850,7 @@ To compute glued reaction of (M - a monster):
 			if M is intelligent:
 				say "[one of]You hear [NameDesc of M] muttering something about 'smart-glue'...[or][line break][first custom style]'I do love the way this smart-glue only sticks to players!'[roman type][line break][first custom style]'Mmm, a lovely little piggy stuck in smart-glue!'[roman type][line break][at random]";
 			otherwise:
-				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [him of M]self up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
+				say "[BigNameDesc of M] sees your hampered vulnerability and begins oiling [himself of M] up. [line break][second custom style]Uh oh, that can't be a good sign![roman type][line break]";
 		otherwise if M is friendly and M is interested:
 			say "[one of][BigNameDesc of M] rolls [his of M] eyes before [his of M] expression shifts and become s a little more... calculating, then[or]Once again, [his of M] expression alters, making you shiver, before [he of M][stopping] turns to leave you alone.";
 			distract M;

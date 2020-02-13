@@ -197,15 +197,13 @@ To decide which number is the recipe key of (C - a recipe for potion of blessing
 	decide on 8.
 
 Recipe for latex hood is a kind of recipe. The printed name of recipe for latex hood is "[TQlink of item described]recipe for latex hood[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for latex hood. The text-shortcut of recipe for latex hood is "rlh".
-To say ExamineDesc of (B - a recipe for latex hood):
-	say "The recipe just says 'Rubber Headwear'.".
+[To say ExamineDesc of (B - a recipe for latex hood):
+	say "The recipe just says 'Rubber Headwear'.".]
 
 To decide which number is the recipe key of (C - a recipe for latex hood):
 	decide on 20.
 
-Definition: a recipe for latex hood (called R) is appropriate:
-	if diaper quest is 1, decide no;
-	decide yes.
+Definition: a recipe for latex hood is appropriate if diaper quest is 0.
 
 Recipe for notebook is a kind of recipe. The printed name of recipe for notebook is "[TQlink of item described]recipe for notebook[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for notebook. The text-shortcut of recipe for notebook is "rsg".
 To say ExamineDesc of (B - a recipe for notebook):
@@ -245,6 +243,14 @@ Definition: a recipe for powder of escape is appropriate: decide yes.
 
 To decide which number is the recipe key of (R - a recipe for powder of escape):
 	decide on 27.
+
+
+Recipe for condom-pack is a kind of recipe. The printed name of recipe for condom-pack is "[TQlink of item described]recipe for condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for condom-pack. The text-shortcut of recipe for condom-pack is "rcpk". Understand "condom pack", "pack" as recipe for condom-pack.
+To say ExamineDesc of (B - a recipe for condom-pack):
+	say "This recipe says 'Place a piece of rubber into the bowl'.".
+Definition: a recipe for condom-pack is appropriate: decide no. [only appears from priestess quest]
+To decide which number is the recipe key of (R - a recipe for condom-pack):
+	decide on 28.
 
 Recipe for smoke bomb is a kind of recipe. The printed name of recipe for smoke bomb is "[TQlink of item described]recipe for smoke bomb[shortcut-desc][TQxlink of item described][verb-desc of item described]". There is 1 recipe for smoke bomb. The text-shortcut of recipe for smoke bomb is "rskb".
 Definition: a recipe for smoke bomb is appropriate: decide yes.

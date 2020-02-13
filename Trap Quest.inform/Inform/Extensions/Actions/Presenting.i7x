@@ -423,7 +423,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say OralRequestFlav of (M - a monster):
-	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to perform oral sex on [him of the second noun][otherwise if the second noun is a friendly male monster]you want to give [him of second noun] a blowjob[otherwise if the second noun is friendly]you want to pleasure [him of second noun] with your tongue[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather use your mouth if possible[otherwise]you're ready to have your mouth used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to perform oral sex on [him of the second noun][otherwise if the second noun is a friendly male monster]you want to give [him of second noun] a blowjob[otherwise if the second noun is friendly]you want to pleasure [him of second noun] with your tongue[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather use your mouth if possible[otherwise]you're ready to have your mouth used[end if].".
 
 
 [!<SayUnfriendlyOralRequestOfMonster>+
@@ -524,7 +524,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say PissRequestFlav of (M - a monster):
-	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of the second noun] [urine][otherwise if the second noun is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of the second noun] [urine][otherwise if the second noun is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
 
 
 [!<SayUnfriendlyPissRequestOfMonster>+
@@ -629,7 +629,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say TitfuckRequestFlav of (M - a monster):
-	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust your [BreastDesc] out, [if there is a worn nipple piercing]showing off your slutty nipple piercings and [end if]trying to signal that [if the second noun is a friendly monster]you'd really enjoy giving [him of second noun] a titfuck right about now[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather have your breasts used for sex[otherwise]you're ready to have your breasts used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You thrust your [BreastDesc] out, [if there is a worn nipple piercing]showing off your slutty nipple piercings and [end if]trying to signal that [if the second noun is a friendly monster]you'd really enjoy giving [him of second noun] a titfuck right about now[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather have your breasts used for sex[otherwise]you're ready to have your breasts used[end if].".
 
 [!<SayUnfriendlyVaginalRequestOfMonster>+
 
@@ -731,7 +731,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say VaginalRequestFlav of (M - a monster):
-	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and pussy lips wide and wiggle your hips, trying to signal that [if the second noun is a friendly male monster]you'd really enjoy getting fucked right now[otherwise if the second noun is friendly]you'd love to have your [vagina] played with right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [vagina][otherwise]you're ready to have your [vagina] used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and pussy lips wide and wiggle your hips, trying to signal that [if the second noun is a friendly male monster]you'd really enjoy getting fucked right now[otherwise if the second noun is friendly]you'd love to have your [vagina] played with right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [vagina][otherwise]you're ready to have your [vagina] used[end if].".
 
 
 [!<SayTakeMyVirginityOfMonster>+
@@ -852,7 +852,7 @@ This makes sure there is flavour even if the player can't speak.
 
 +!]
 To say AnalRequestFlav of (M - a monster):
-	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and [asshole] wide and wiggle your hips, trying to signal that [if the second noun is friendly]you'd really enjoy getting ass-fucked right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is male]you're consenting to getting fucked in the [asshole][otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [asshole][otherwise]you're ready to have your [asshole] used[end if].".
+	if the player is not able to speak or M is unintelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and [asshole] wide and wiggle your hips, trying to signal that [if the second noun is friendly]you'd really enjoy getting ass-fucked right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is male]you're consenting to getting fucked in the [asshole][otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [asshole][otherwise]you're ready to have your [asshole] used[end if].".
 
 
 [!<SayTakeMyAnalVirginityOfMonster>+

@@ -90,7 +90,7 @@ To decide which number is the adult-influence of (C - a silver tube top):
 
 Part 3 - Pink Rubber Tube Top
 
-A pink rubber tube top is a kind of tube top. A pink rubber tube top is usually latex.
+A pink rubber tube top is a kind of tube top. A pink rubber tube top is usually latex. A pink rubber tube top is low cut.
 
 The printed name of pink rubber tube top is usually "[clothing-title-before]pink latex tube top[clothing-title-after]". The text-shortcut of pink rubber tube top is "prtt". A pink rubber tube top is usually dense.
 

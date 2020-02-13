@@ -33,7 +33,7 @@ To decide which figure-name is the monster-image of (M - student-laci):
 	decide on figure of laci.
 
 To say MonsterDesc of (M - student-laci):
-	say "This tall, dirty blonde [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross her feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
+	say "This tall, dirty blonde [man of M] is wearing a skimpy sexy schoolgirl outfit with matching tartan [if the current-rank of M is 1]miniskirt and tie[otherwise]skirt and tie. What was once a miniskirt is now so short it's really nothing more than a belt[end if]. [big his of M] chunky black heels are polished to the nth degree. [big he of M] is constantly 'accidentally' dropping things and then bending over with completely unbent knees to expose as much of [his of M] bottom as possible to whoever might be looking [his of M] way[if the current-rank of M is 3]. Whenever [he of M] bends over [he of M] makes sure to first cross [his of M] feet, perhaps to make sure people know [he of M] is bending at the waist on purpose[end if].".
 
 The max-rank of student-laci is 3.
 
@@ -71,7 +71,7 @@ To decide which figure-name is the monster-image of (M - student-candy):
 	decide on figure of student-candy.
 
 To say MonsterDesc of (M - student-candy):
-	say "This tall blonde woman is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
+	say "This tall blonde [man of M] is wearing a super skimpy pink kitty themed outfit made out of a tiny tube top and even tinier microskirt. [big he of M] has a tattoo of a tiger on [his of M] leg and a black-and-white braid in [his of M] hair. [if the current-rank of M > 1]A sequins necklace in the style of a paw print hangs above [his of M] chest. [end if][big his of M] make up is rather heavily done[if diaper quest is 1] but still looks very grown-up[end if]. [big his of M] expression exudes focus and confidence.".
 
 The max-rank of student-candy is 3.
 

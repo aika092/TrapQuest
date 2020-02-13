@@ -62,7 +62,11 @@ Carry out mopping face:
 		StomachUp 1;
 		if the player is not broken, humiliate SEVERE-HUMILIATION - (MODERATE-HUMILIATION * (the thirst of the player - 1));
 	otherwise:
-		humiliate (SEVERE-HUMILIATION * 2) - (MODERATE-HUMILIATION * (the thirst of the player + 2)).[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
+		humiliate (SEVERE-HUMILIATION * 2) - (MODERATE-HUMILIATION * (the thirst of the player + 2));[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
+	if B > the milk-puddle of the location of the player, MilkTasteAddictUp 1;
+	if A > the urine-puddle of the location of the player:
+		UrineTasteAddictUp 1;
+		progress quest of piss-drinking-quest.
 
 To decide which number is total puddle:
 	let X be 0;

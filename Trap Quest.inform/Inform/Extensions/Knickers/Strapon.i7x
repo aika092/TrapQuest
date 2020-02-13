@@ -15,12 +15,12 @@ To say selfexamineuniquetitle of (K - a strapon-panties):
 To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
 
-Definition: A strapon-panties (called P) is fetish appropriate:
+Definition: a strapon-panties (called P) is fetish appropriate:
 	if diaper quest is 0 and the player is the donator, decide yes;
 	decide no.
 
 [is it a strapon or a penis]
-Definition: A strapon-panties is dildo-usage: decide yes.
+Definition: a strapon-panties is dildo-usage: decide yes.
 
 
 To say ShortDesc of (H - a strapon-panties):

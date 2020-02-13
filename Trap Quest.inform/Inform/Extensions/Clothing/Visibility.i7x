@@ -29,16 +29,14 @@ Definition: a clothing (called C) is bottom-layer-concealing:
 
 current-clothing is a thing that varies.
 
-Definition: a thing (called C) is currently perceivable:
-	if C is carried, decide yes;
-	if C is currently at least partially visible, decide yes;
-	decide no.
+[Can NPCs be aware of its existence?]
+Definition: a thing is currently perceivable if it is currently-not-in-bag or it is currently at least partially visible.
 
 Definition: a thing is currently visible: decide no.
 
 Definition: a wearthing (called C) is currently visible: [Is the item worn and currently completely visible to onlookers?]
 	if C is not worn, decide no;
-	if the at least partial concealer of C is clothing, decide no;
+	if the at least partial concealer of C is a thing, decide no;
 	decide yes.
 
 Definition: a wearthing (called C) is currently at least partially visible: [Is the item worn and currently knowable to onlookers?]
@@ -130,10 +128,10 @@ To decide which object is the concealer of (C - a clothing):
 	decide on M; [We point at the middle coverer (if there is no coverer at all because it's an item without a layer, this will resolve to 'nothing').]
 
 To decide which object is the at least partial concealer of (C - a wearthing):
-	if C is clothing: [The main difference between this and the one above, is whether the item is layer concealing]
+	if C is clothing and (the top-layer of C > 0 or the mid-layer of C > 0 or the bottom-layer of C > 0): [The main difference between this and the one above, is whether the item is layer concealing]
 		let B be nothing;
 		let M be nothing;
-		if the bottom-layer of C > 0 or C is condom of kings:
+		if the bottom-layer of C > 0:
 			if C is pussy protection:
 				repeat with O running through worn potentially vagina covering clothing:
 					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
@@ -202,13 +200,17 @@ To decide which object is the at least partial concealer of (K - a knickers):
 		if C is not K and (the bottom-layer of C > the bottom-layer of K or C is skirted), decide on C;
 	decide on nothing.
 
+To decide which object is the at least partial concealer of (S - a sex toy):
+	if S is penetrating vagina:
+		decide on the at least partial concealer of vagina;
+	otherwise:
+		decide on the at least partial concealer of asshole.
+
 To decide which object is the concealer of (S - a sex toy):
-	repeat with O running through worn actually dense clothing:
-		if S is penetrating asshole:
-			if O is potentially asshole covering clothing, decide on O;
-		if S is penetrating vagina:
-			if O is potentially vagina covering clothing, decide on O;
-	decide on nothing.
+	if S is penetrating vagina:
+		decide on the concealer of vagina;
+	otherwise:
+		decide on the concealer of asshole.
 
 
 Visibility ends here.

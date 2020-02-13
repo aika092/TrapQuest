@@ -150,7 +150,7 @@ Definition: cow-horns is white themed: decide yes.
 
 To uniquely set up (C - cow-horns):
 	now the quest of C is babymaking-quest;
-	if the pregnancy of the player > 0, now the previously-pregnant of babymaking-quest is 1.
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 
 
 To say ClothingDesc of (H - cow-horns):

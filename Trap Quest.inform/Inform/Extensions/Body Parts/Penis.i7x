@@ -66,9 +66,7 @@ To say sexual-player-penis:
 REQUIRES COMMENTING
 
 +!]
-Definition: penis is tiny:
-	if the size of penis > 0 and the size of penis < 4, decide yes;
-	decide no.
+Definition: penis is tiny if the size of penis > 0 and the size of penis < 4.
 
 
 [!<PenisIsLewdlyExposed>+
@@ -76,9 +74,7 @@ Definition: penis is tiny:
 REQUIRES COMMENTING
 
 +!]
-Definition: penis is lewdly exposed:
-	if penis is exposed, decide yes;
-	decide no.
+Definition: penis is lewdly exposed if penis is exposed.
 
 To decide which number is the lewdly exposed outrage of (P - penis):
 	decide on 11 - (the size of penis / 2). [allows us to easily tweak this number]
@@ -88,9 +84,7 @@ To decide which number is the lewdly exposed outrage of (P - penis):
 REQUIRES COMMENTING
 
 +!]
-Definition: penis is at least partially lewdly exposed:
-	if penis is at least partially exposed, decide yes;
-	decide no.
+Definition: penis is at least partially lewdly exposed if penis is at least partially exposed.
 
 To decide which number is the at least partially lewdly exposed outrage of (P - penis):
 	decide on 8 - (the size of penis / 2). [allows us to easily tweak this number]
@@ -171,7 +165,7 @@ Definition: a clothing (called C) is actually at least partially penis covering:
 To decide which object is the concealer of (P - penis):
 	repeat with C running through worn actually penis covering clothing:
 		let this-one be 1;
-		repeat with D running through actually penis covering clothing:
+		repeat with D running through worn actually penis covering clothing:
 			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
 		if this-one is 1, decide on C;
 	decide on nothing.
@@ -232,6 +226,7 @@ penis can be penis-erect or not penis-erect. penis is not penis-erect.
 [Some things prevent the player from getting erections]
 Definition: penis is able to get erect:
 	if the size of penis is 0, decide no;
+	if the player is female, decide no;
 	if penis is penis-erect, decide yes;
 	if there is a worn chastity cage, decide no;
 	if there is a worn restricting research airhancer, decide no;
@@ -311,7 +306,7 @@ To compute sudden erection chance (X - a number):
 				otherwise if the size of penis > 3:
 					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very obvious erection.";
 				otherwise:
-					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very embarassing, albiet subtle, erection.".
+					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very embarassing, albeit subtle, erection.".
 
 [Whenever the player cools off from arousal, they will lose their erection]
 To compute erection decay:
@@ -463,13 +458,13 @@ REQUIRES COMMENTING
 +!]
 To say PenisModesty:
 	if penis is at least partially exposed:
-		let W be a random pussy covering clothing;
+		let W be the at least partial concealer of penis;
 		if W is clothing:
 			say "It is [if penis is exposed]clearly[otherwise]partially[end if] visible [if W is actually dense]poking out of[otherwise]through[end if] your [ShortDesc of W]. ";
 		otherwise:
 			say "You have no clothing covering it. ";
 	otherwise if the size of penis > 0:
-		let W be a random worn actually penis covering clothing;
+		let W be the concealer of penis;
 		say "It can't be seen thanks to the [ShortDesc of W]. ".
 
 Part 3 - Modify Penis Stats

@@ -73,6 +73,9 @@ Check going east when the player is in Tutorial05:
 
 Tutorial06 is an introductory room. "This room has no other exit. It must be the final room! [newbie style]This room has a 'candy machine' in it. These are important rooms because they provide you with awesome edibles. These edibles [if diaper quest is 1]usually have great effects, but if you enable messing, it will contribute to how quickly nature calls[otherwise]not only stave off hunger but usually have great effects[end if]. Let's get one now.[roman type][line break]". Tutorial06 is east of Tutorial05. The printed name of Tutorial06 is "Final Room". The shape of Tutorial06 is L10/0-0-0-1-0-0. The grid position of Tutorial06 is <10,15,11>.
 
+Check CandyObtaining when tutorial is 1:
+	if starting-pack-given is 1, say "You have already done this! [if the number of held candy is 3]You just need to eat the toffee now.[otherwise]The tutorial has finished. Please close and open the program again and begin the game properly with 'Normal Start'.[end if]" instead.
+
 Report CandyObtaining when tutorial is 1:
 	say "[newbie style]As this was the first candy machine you used, you just got given your 'starter pack' of candy, which contains three candies. Usually you'll only get one. The candy machines give you a reason to move from region to region in the main game: When you use a candy machine it'll only spit out boring candy with no positive effects until you've used a candy machine in another region. So staying in one region for a long time is going to quickly mean you're not getting the awesome bonuses that candy can give you. Anyway, you may have noticed that you are (almost certainly!) now injured thanks to your fight with the royal guard. To solve this, let's eat a toffee.[roman type][line break]".
 
@@ -196,8 +199,10 @@ Check masturbating when tutorial is 1:
 Every turn when tutorial is 1:
 	update appearance level;
 	check for arousal change.
+	
 
 To start the tutorial:
+	now temporaryYesNoBackground is figure of small image;
 	let var1 be the class of the player; [For some currently unknown reason, if we don't check the class of the player once at the start, the TitleBimbo function fails on turn 1 of the game.]
 	now a random large sack is in Tutorial01;
 	now a random wooden crate is in Tutorial02;

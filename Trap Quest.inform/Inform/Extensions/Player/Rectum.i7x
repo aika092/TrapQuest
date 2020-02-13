@@ -319,33 +319,36 @@ Definition: yourself is ready to cum from messing:
 	decide no.
 
 To check unhandled diaper scene:
-	if diaper messing is 3 and there is worn messed knickers:
-		follow the diaper scene handling rules;
-		if diaperSceneHandled is 0:
-			now busy is 0;
-			say "[variable custom style][if the diaper addiction of the player < 7 and voluntarySquatting is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]! But it was so fun[or] again, and that means I get a change! Yay[stopping]![end if][roman type][line break]";
-			if the player is upright:
-				now the stance of the player is 1;
-				say "[run paragraph on] [bold type]You are now on your knees.[roman type][line break]";
-			let M be a random willing to change diapers regional monster;
-			if playerRegion is Hotel:
-				if matron is alive, now M is matron;
-				if M is nothing:
-					now M is a random robobellboy;
+	if diaper messing is 3:
+		let K be a random worn knickers;
+		if K is knickers and the known-mess of K > 0:
+			follow the diaper scene handling rules;
+			if diaperSceneHandled is 0:
+				now busy is 0;
+				say "[variable custom style][if the diaper addiction of the player < 7 and voluntarySquatting is 0]How did I let this happen?![otherwise if the diaper addiction of the player < 12]Am I really just as pathetic as an incontinent child now?[otherwise if the diaper addiction of the player < 15]I can't believe how good that felt...[otherwise]Uh-oh, I did a naughty thing[one of]! But it was so fun[or] again, and that means I get a change! Yay[stopping]![end if][roman type][line break]";
+				if the player is upright:
+					now the stance of the player is 1;
+					say "[run paragraph on] [bold type]You are now on your knees.[roman type][line break]";
+				let M be a random willing to change diapers regional monster;
+				if playerRegion is Hotel:
+					if matron is alive, now M is matron;
+					if M is nothing:
+						now M is a random robobellboy;
+						set up M;
+				otherwise if playerRegion is Woods and M is nothing:
+					now M is a random demoness;
 					set up M;
-			otherwise if playerRegion is Woods and M is nothing:
-				now M is a random demoness;
-				set up M;
-			otherwise if playerRegion is Mansion and M is nothing:
-				now M is vampiress;
-				set up M;
-			otherwise if playerRegion is School and M is nothing:
-				now M is nurse;
-				if M is off-stage, set up M;
-			otherwise if M is nothing:
-				now M is a random royal guard;
-				set up M;
-			compute instant change of M.
+				otherwise if playerRegion is Mansion and M is nothing:
+					now M is vampiress;
+					set up M;
+				otherwise if playerRegion is School and M is nothing:
+					now M is nurse;
+					now M is unleashed;
+					if M is off-stage, set up M;
+				otherwise if M is nothing:
+					now M is a random royal guard;
+					set up M;
+				compute instant change of M.
 
 To compute instant change of (M - a monster):
 	if M is not in the location of the player, compute instant change appearance of M;
@@ -356,7 +359,7 @@ To compute instant change appearance of (M - a monster):
 	now M is in the location of the player;
 	now M is interested;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
-	say "Suddenly you notice that [NameDesc of M] is looming over you[if M is robot or M is not intelligent]![otherwise]![line break][speech style of M]'What have we here?'[roman type][line break][end if]";
+	say "Suddenly you notice that [NameDesc of M] is looming over you[if M is robot or M is unintelligent]![otherwise]![line break][speech style of M]'What have we here?'[roman type][line break][end if]";
 	if M is royal guard and the player is not in the dungeon:
 		drag to Dungeon06 by M.
 

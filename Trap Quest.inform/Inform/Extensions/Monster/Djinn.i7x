@@ -34,7 +34,7 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
 	decide on figure of djinn cutscene 1.
 
 To say MonsterDesc of (M - djinn):
-	say "This [if lady fetish is 0]tall, dark-skinned man[otherwise]muscular, dark-skinned woman[end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from her waist.[end if]".
+	say "This [if lady fetish is 0]tall, dark-skinned man[otherwise]muscular, dark-skinned woman[end if] has no legs but instead a billowing smoky pillar below [his of M] [if diaper quest is 1 or full-lady fetish is 1]waist[otherwise]thick, veiny cock[end if]. [big he of M] has four arms, two of which are kept folded in front of [his of M] chest whilst the other two are used to wildly gesticulate as [he of M] talks. [if full-lady fetish is 1 and diaper quest is 0]A patch of night sky in the shape of a penis hangs from [his of M] waist.[end if]".
 
 To say LongDickDesc of (M - djinn):
 	if full-lady fetish is 1:
@@ -69,7 +69,7 @@ Definition: djinn is human: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - djinn):[shouldn't happen]
-	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the center of the clearing, growing darker and darker as a four-armed man materializes from the waist up. He looks at you and narrows his eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned man materializes from the waist up. He crosses his arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
+	if the location of the player is Woods30, say "[one of]The noise inside the statue abruptly stops, and a cloud of smoke forms rapidly in the centre of the clearing, growing darker and darker as a four-armed [man of M] materialises from the waist up. [big he of M] looks at you and narrows [his of M] eyes.[or]You hear a strong rumble, and a thick fog suddenly rolls into the clearing. It seems to grow continually thicker, shifting and twisting as a dark-skinned [man of M] materialises from the waist up. [big he of M] crosses [his of M] arms, looking up at the statue. [line break][speech style of M]'See you at the usual time on Tuesday.'[roman type][line break][as decreasingly likely outcomes]";
 	otherwise say "You hear a low toned manly voice echo throughout the woods. [line break][first custom style]'WHO DISTURBS MY SLUMBER?'[roman type][line break]".
 
 To say DiaperReaction of (M - djinn):
@@ -472,7 +472,7 @@ Part 4 - Djinn Messing
 
 To compute djinn messing of (M - djinn):
 	let R be a random number between 1 and 10;
-	let C be a random worn transformable transformation chain clothing;
+	let C be most-transformable-uncovered-clothing;
 	if R > 1 and C is clothing:
 		compute M transforming C;
 	otherwise:
@@ -598,16 +598,16 @@ To say SuddenPregFlav of (M - djinn):
 	say "[speech style of M]'Excellent, [one of]it appears that we are compatible. Don't worry, this is completely normal, this instant gestation period often happens with Djinn. You'll give birth soon enough. Make sure you're here when you do[or]another perfect conception. See you soon[stopping].'[line break][variable custom style][if the semen addiction of the player < 5]Fuck fuck FUCK! [one of]I'm really pregnant with this asshole's magical demon spawn[or]How did I let this happen again[stopping]?![otherwise if the semen addiction of the player < 11]Well at least I won't be pregnant for long, I guess...[otherwise]Ooh, feeling so heavily pregnant feels so right...[end if][roman type][line break]".
 
 To say CondomFailFlav of (M - djinn) in (F - vagina):
-	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [line break][speech style of M]Hahaha! Your mortal condom was no match for my divine sperm![roman type][line break][end if]".
+	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [line break][speech style of M]'Hahaha! Your mortal condom was no match for my divine sperm!'[roman type][line break][end if]".
 
 To say CreampieFlav of (M - djinn) in (F - vagina):
-	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type] [BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
+	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type][line break][BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
 
 To compute labour to (M - djinn):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] uses [his of M] powers to pull you into the air, and turn you upside down. You begin to feel a bit queasy as [if inhuman pregnancy > 0]one by one, eight small black babies push their way head-first out of your painfully gaping vagina. Each one[otherwise]a little black baby emerges upwards from your painfully gaping vagina, and is[end if] left hovering above your suspended body to take breath and begin to cry. [line break][first custom style]'There there my little one[if inhuman pregnancy > 0]s[end if]. You're safe now.'[roman type][line break]With a click of [his of M] fingers, [NameDesc of M] sends [his of M] new charge[if inhuman pregnancy > 0]s[end if] up into the sky, presumably to their new home. [line break][first custom style]'Good job, mortal, I may have to use your womb again in the future to further expand my clan.'[roman type][line break][big he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] uses [his of M] powers to pull you into the air, and turn you upside down. You begin to feel a bit queasy as [if inhuman pregnancy > 0]one by one, eight small black babies push their way head-first out of your painfully gaping vagina. Each one[otherwise]a little black baby emerges upwards from your painfully gaping vagina, and is[end if] left hovering above your suspended body to take breath and begin to cry. [line break][speech style of M]'There there my little one[if inhuman pregnancy > 0]s[end if]. You're safe now.'[roman type][line break]With a click of [his of M] fingers, [NameDesc of M] sends [his of M] new charge[if inhuman pregnancy > 0]s[end if] up into the sky, presumably to their new home.[line break][speech style of M]'Good job, mortal, I may have to use your womb again in the future to further expand my clan.'[roman type][line break][big he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -1028,7 +1028,7 @@ To female dominate (M - djinn):
 		if R < D:[You get on top]
 			say "[big he of M] tries to quickly let go of your wrists and remove your legs, but that's exactly what you were waiting for! You grab [his of M] shoulders and use the leverage to immediately roll ontop of [him of M]! You flash [him of M] a smirk as you grab [his of M] wrists and pin them against the bed. [if M is unwrapped]If you don't want a creampie, this would be the perfect place to stop, but it would also mean you lose your chance to cum. Stop now?[end if]";
 			if M is wrapped or the player is reverse bimbo consenting:[continue]
-				say "You hold [him of M] down as you begin to aggressively ride [his of M] [DickDesc of M], savoring the feeling of [his of M] cockhead stroking your [if F is asshole]prostate[otherwise]g-spot[end if]. Unfortunately, [he of M] refuses to simply let you enjoy yourself, and [he of M] thrashes fiercely as [he of M] attempts to break your grip. [big he of M]'s still much stronger than a normal man, and your grip steadily begins to weaken.[line break][speech style of M]'I-IT'S OVER, SLAVE! I W-!'[roman type][line break]The [man of M] cuts [him of M]self off with a guttural groan, [his of M] [DickDesc of M] throbbing powerfully as [he of M] wildly bucks [his of M] hips. You answer with a groan of your own, [if the player is female]dousing the bed with femcum[otherwise]jizzing on [his of M] belly[end if] as [he of M] fills [if M is wrapped]the condom[otherwise]your [variable F][end if] with a sticky, white flag of defeat. A deep sense of satisfaction wells up from your core as you climb off the bed.";
+				say "You hold [him of M] down as you begin to aggressively ride [his of M] [DickDesc of M], savouring the feeling of [his of M] cockhead stroking your [if F is asshole]prostate[otherwise]g-spot[end if]. Unfortunately, [he of M] refuses to simply let you enjoy yourself, and [he of M] thrashes fiercely as [he of M] attempts to break your grip. [big he of M]'s still much stronger than a normal man, and your grip steadily begins to weaken.[line break][speech style of M]'I-IT'S OVER, SLAVE! I W-!'[roman type][line break]The [man of M] cuts [himself of M] off with a guttural groan, [his of M] [DickDesc of M] throbbing powerfully as [he of M] wildly bucks [his of M] hips. You answer with a groan of your own, [if the player is female]dousing the bed with femcum[otherwise]jizzing on [his of M] belly[end if] as [he of M] fills [if M is wrapped]the condom[otherwise]your [variable F][end if] with a sticky, white flag of defeat. A deep sense of satisfaction wells up from your core as you climb off the bed.";
 				orgasm;
 				severeDignify;
 				if M is unwrapped:
@@ -1054,10 +1054,10 @@ To female dominate (M - djinn):
 		if F is vagina, vaginally orgasm shamefully;
 		otherwise anally orgasm shamefully;
 		if the size of penis > 0:
-			say "You emit an uncontrollable moan as [if the size of penis < 4]your [sissy-penis] drools a thin a white streak[otherwise if the size of penis < 8]your [manly-penis] shoots a few white streaks[otherwise]your [manly-penis] shoots several white streaks[end if] across your belly, leaving behind the last of your will to resist. Your [literalMistress of M] is satisfied with that, and takes the time to thoroughly enjoy [him of M]self before finally allowing you to feel the warmth of [his of M] load [if M is wrapped]through the condom[otherwise]being planted deep inside your [asshole][end if]. [big he of M] smirks as [he of M] pulls out.";
+			say "You emit an uncontrollable moan as [if the size of penis < 4]your [sissy-penis] drools a thin a white streak[otherwise if the size of penis < 8]your [manly-penis] shoots a few white streaks[otherwise]your [manly-penis] shoots several white streaks[end if] across your belly, leaving behind the last of your will to resist. Your [literalMistress of M] is satisfied with that, and takes the time to thoroughly enjoy [himself of M] before finally allowing you to feel the warmth of [his of M] load [if M is wrapped]through the condom[otherwise]being planted deep inside your [asshole][end if]. [big he of M] smirks as [he of M] pulls out.";
 			CumBellyUp the size of penis;
 		otherwise:
-			say "You emit an uncontrollable moan as your climax erases the last of your will to resist. Your [literalMistress of M] is satisfied with that, and takes the time to thoroughly enjoy [him of M]self before finally allowing you to feel the warmth of [his of M] load [if M is wrapped]through the condom[otherwise]being planted deep inside your [variable F][end if]. [big he of M] smirks as [he of M] pulls out.";
+			say "You emit an uncontrollable moan as your climax erases the last of your will to resist. Your [literalMistress of M] is satisfied with that, and takes the time to thoroughly enjoy [himself of M] before finally allowing you to feel the warmth of [his of M] load [if M is wrapped]through the condom[otherwise]being planted deep inside your [variable F][end if]. [big he of M] smirks as [he of M] pulls out.";
 		moderateHumiliate;
 		if the player is female, PussyFill the semen load of M;
 		otherwise AssFill the semen load of M;

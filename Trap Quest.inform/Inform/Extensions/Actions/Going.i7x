@@ -748,7 +748,7 @@ REQUIRES COMMENTING
 
 +!]
 To say MovementBlock of (M - a monster):
-	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!";
+	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
 
 [!<CarryOutGoingWhileThePlayerIsInDungeon41AndDungeon41IsGuarded>+
 

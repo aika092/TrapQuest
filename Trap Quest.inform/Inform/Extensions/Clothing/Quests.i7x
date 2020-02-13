@@ -363,6 +363,7 @@ To decide what number is the quest-weighting of (Q - interracial-sex-quest) for 
 	if the sex-addiction-influence of C < 0, decide on 0;
 	if C is penetrating asshole, decide on 0;
 	if C is interracial themed, decide on 20;
+	if the bbc addiction of the player < 2, decide on 0;
 	if C is ass covering:
 		if C is not displacable and C is not zippable, decide on 0;
 	decide on 3.
@@ -896,8 +897,7 @@ To progress quest of (Q - show-and-tell-quest) for (M - a monster):
 				otherwise:
 					say "[BigNameDesc of C] shudders happily at being seen with you. Keep it up.".
 
-To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
-	now the expose-count of Q is 0;
+To compute quest completion of (Q - show-and-tell-quest) on (C - a clothing):
 	if C is cursed:
 		compute persistent reward of Q on C;
 	otherwise:
@@ -906,7 +906,8 @@ To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
 Carry out taking off clothing:
 	if the quest of the noun is show-and-tell-quest and the expose-count of show-and-tell-quest >= 10:
 		say "You can feel the blessed magic your [ShortDesc of the noun] had stored within itself shoot straight into your tendons, making you more flexible!";
-		DexUp the expose-count of show-and-tell-quest / 7.
+		DexUp the expose-count of show-and-tell-quest / 7;
+		now the expose-count of show-and-tell-quest is 0.
 
 
 Part - Plug Quest

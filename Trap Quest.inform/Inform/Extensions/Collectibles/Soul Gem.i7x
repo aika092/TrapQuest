@@ -26,7 +26,7 @@ To say MonsterOfferAcceptFlav of (M - a mechanic) to (T - a soul gem):
 	say "[speech style of M]'[one of]Holy shit! Is that pure?'[or]Where the FUCK did you find another one of those?'[stopping][roman type]".
 
 To say MonsterTakeFlav of (M - a mechanic) for (T - a soul gem):
-	say "[BigNameDesc of M] takes the [T], crushing it into a sparkling powder and snorts it up his nose".
+	say "[BigNameDesc of M] takes the [T], crushing it into a sparkling powder and snorts it up [his of M] nose".
 
 To say OfferThanksFlav of (M - a mechanic) for (T - a soul gem):
 	if the xavier-power of M < 3:

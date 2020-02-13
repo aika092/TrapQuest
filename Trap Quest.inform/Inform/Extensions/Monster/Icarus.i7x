@@ -122,6 +122,8 @@ To compute appearance assessment of (M - Icarus):
 		say "[speech style of M]'[one of]Well well well, don't you look delicious? [or]Honey, you've got what I want. [or]You're so beautiful, you look like an angel! [in random order][one of]I really shouldn't, but I can't help myself! [or]It's technically against the rules, but what nobody finds out about won't hurt them... [in random order]Let's have sex.'[roman type][line break][one of]Uh-oh, [he of M] seems unfriendly...[or][stopping]";
 		anger M;
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise if M is groping:
+		compute grope of M;
 	otherwise:
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 6 for M;
 		say "[speech style of M]'Hey there. [if christmas content is 1]Merry Christmas! [end if][one of]Are you willing to let me test out some new 3D designs on you? If you agree, there's a gift in it for you, courtesy of the big guy upstairs[or]I'm still looking to test my graphics in return for gifts[stopping].'[roman type][line break]Agree to [his of M] request? ";
@@ -146,7 +148,7 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if][line break][speech style of M]'[one of]Look who's still lurking around nearby! Clearly you haven't had enough of me, huh?'[or]I've been wondering when you'd show your face here again. I'll make you wish you hadn't, haha!'[or]Lovely to see you again! Let's fuck.'[in random order][roman type][line break][if the player is upright][big he of M] takes an aggressive stance.[end if]";
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is in danger or there is a live thing penetrating a body part:
-		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][Big he of M] turns to leave you alone.";
+		say "[BigNameDesc of M] notices you[if the player is sluttily dressed]! [otherwise]. [end if][line break][speech style of M]'[one of]Don't worry, I won't interrupt[or]Best of luck[in random order]!'[roman type][line break][big he of M] turns to leave you alone.";
 		distract M;
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 4 for M;
 	otherwise:

@@ -58,7 +58,7 @@ Check displacing:
 	if the rule failed, do nothing instead.
 
 Carry out displacing:
-	say "[DisplaceFlav of the noun]";
+	say DisplaceFlav of the noun;
 	displace the noun;
 	if the noun is skirted and there is an intelligent interested monster in the location of the player, progress quest of upskirt-quest.
 
@@ -103,9 +103,11 @@ Check replacing:
 		let P be a random thing penetrating vagina;
 		if P is a thing and P is not the noun, say "You can't because the [P] is already in your [vagina]." instead;
 	if the noun is crotch covering:
+		if gloryhole is grabbing the player, say "You'll need to wait until you're released from the tight magical grip of the gloryhole!" instead;
 		repeat with C running through worn clothing:
 			if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
 			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C]!" instead; [For example, trying to replace jeans over a waddle diaper]
+			if the noun is unskirted and (C is cursed clitoris piercing or C is cursed clitoris lead), say "The curse of your [C] is somehow preventing you from doing this!" instead;
 	repeat with M running through combative monsters:
 		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 

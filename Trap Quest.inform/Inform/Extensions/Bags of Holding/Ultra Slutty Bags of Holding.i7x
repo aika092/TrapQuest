@@ -3,7 +3,7 @@ Ultra Slutty Bags of Holding by Bags of Holding begins here.
 An ultra slutty bag of holding is a kind of bag of holding.
 
 To decide which number is the initial outrage of (C - an ultra slutty bag of holding):
-	decide on 12.
+	decide on 9.
 
 A condom rolls bag of holding is a kind of ultra slutty bag of holding. A condom rolls bag of holding is usually plastic. There is 1 condom rolls bag of holding. The printed name of condom rolls bag of holding is usually "[clothing-title-before]condom rolls bag of holding[clothing-title-after]".
 
