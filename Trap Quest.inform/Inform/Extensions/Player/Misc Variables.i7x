@@ -62,7 +62,7 @@ The player has a number called player-motion.
 REQUIRES COMMENTING
 
 *!]
-milking is a number that varies. milking is usually 0.
+milking is a number that varies.
 
 [!<Player>@<alert:Integer>*
 
@@ -76,29 +76,32 @@ The player has a number called alert.
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called faint count. The faint count of the player is usually 0.
+The player has a number called faint count.
 
 [!<Player>@<crawlCount:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called crawl count. The crawl count of the player is usually 0.
+The player has a number called crawl count.
 
 
 [!<Player>@<pregnancy:Integer>*
 
-REQUIRES COMMENTING
+0: Not pregnant
+1: Normal pregnancy
+2: Paused pregnancy
+3: Egg pregnancy
 
 *@!]
-The player has a number called pregnancy. The pregnancy of the player is usually 0.
+The player has a number called pregnancy.
 
 [!<Player>@<pregnancyRate:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-The player has a number called pregnancy rate. The pregnancy rate of the player is usually 1.
+The player has a number called pregnancy rate. The pregnancy rate of the player is 1.
 
 [!<Player>@<children:Integer>*
 

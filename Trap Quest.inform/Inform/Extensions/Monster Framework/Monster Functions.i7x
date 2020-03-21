@@ -37,10 +37,13 @@ To bore (M - a monster) for (N - a number) seconds:
 	now the boredom of M is N.
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
+	now M is unseduced;
 	now the objectification of M is 0;
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;
+	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M]. Refreshing...";
 	now the latest-appearance of M is the appearance of the player;
+	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
@@ -229,6 +232,27 @@ To set jewellery value of (X - an accessory) to (R - a number):
 		now X is solid gold;
 	set shortcut of X.
 
+
+
+To orgasm bore (M - a monster):
+	orgasm M;
+	bore M.
+
+To orgasm bore (M - a monster) for (N - a number) seconds:
+	orgasm M;
+	bore M for N seconds.
+
+To orgasm satisfy (M - a monster):
+	orgasm M;
+	satisfy M.
+
+To orgasm satisfy (M - a monster) for (N - a number) seconds:
+	orgasm M;
+	satisfy M for N seconds.
+
+To orgasm dislodge (M - a monster):
+	orgasm M;
+	dislodge M.
 
 
 Monster Functions ends here.

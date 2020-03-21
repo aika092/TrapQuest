@@ -58,16 +58,16 @@ Check SalveRubbing:
 Carry out SalveRubbing:
 	let S be the noun;
 	let B be the second noun;
-	if B is body part: 
+	if B is body part:
 		say "You gingerly rub the [printed name of S] [if B is fuckhole]around[otherwise]onto[end if] your [ShortDesc of B] and wait to see what will happen.[line break]";
 	otherwise:
 		say "Your [printed name of B] seems to tremble unnaturally as you rub the slime into the fabric.[line break]";
 	oil B with S;
 	destroy S.
-	
+
 Report SalveRubbing:
 	allocate 6 seconds;
-	
+
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 
 

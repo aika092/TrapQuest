@@ -174,6 +174,8 @@ To compute diaper mess reaction of (M - futanari slutty sister): [Need to make s
 
 Part 3 - Combat
 
+Definition: a slutty sister is seducable: decide no.
+
 Section 1 - Attack
 
 The latex punishment rule of a slutty sister is usually the no latex punishment rule.
@@ -183,7 +185,7 @@ To compute kneeling reaction of (M - a futanari slutty sister):
 	humiliate 75.
 
 To compute kneeling reaction of (M - a bulging slutty sister):
-	say "[BigNameDesc of M] shoves two fingers inside [his of M] [HoleDesc of M], and begins to frig [him of M]self gently. [line break][second custom style]'It's dinner time.'[roman type][line break]";
+	say "[BigNameDesc of M] shoves two fingers inside [his of M] [HoleDesc of M], and begins to frig [himself of M] gently. [line break][second custom style]'It's dinner time.'[roman type][line break]";
 	humiliate 75.
 
 To say LandingTaunt of (M - a slutty sister):
@@ -237,7 +239,7 @@ To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part)
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
 		if a random number between (the dexterity of the player - the semen addiction of the player) and 4 < 8:
-			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4  > 12:
+			if a random number between (the semen taste addiction of the player + the dexterity of the player) and 4 > 12:
 				say "[BigNameDesc of M] delicately strokes [his of M] [DickDesc of M], aiming it at you. You react quickly as a huge, unrealistic jet of [semen] blasts from the tip, catching most of it in your mouth and letting the rest splatter liberally across your face and [BreastDesc].";
 				StomachSemenUp 4;
 				CumFaceUp 2;
@@ -306,15 +308,15 @@ To compute facial sex of (M - a bulging slutty sister):
 		compute facesit sex of M;
 		if delayed fainting is 0:
 			if the sex-length of M is 0 and the reaction of the player > 0:
-				if lady fetish is 2, say "[BigNameDesc of M] climaxes on top of you, and shooting several strings of [semen] across your forehead. [if the belly contents of M > 0]But he doesn't get off on top of you - it looks like he's still determined to make you drink every last drop of the [semen] inside of him![otherwise]He droops forward, steadying himself with his hands.[end if]";
-				otherwise say "[BigNameDesc of M] climaxes on top of you, and her vaginal secretions sweeten the taste of the [semen] in your mouth. [if the belly contents of M > 0]But she doesn't get off on top of you - it looks like she's still determined to make you drink every last drop of the [semen] inside of her![otherwise]She droops forward, steadying herself with her hands.[end if]";
+				if lady fetish is 2, say "[BigNameDesc of M] climaxes on top of you, and shooting several strings of [semen] across your forehead. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
+				otherwise say "[BigNameDesc of M] climaxes on top of you, and [his of M] vaginal secretions sweeten the taste of the [semen] in your mouth. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
 			say "[if the suffocation of M < the suffocation limit of the player - 5]You are still holding your breath.[otherwise if the suffocation of M < the suffocation limit of the player - 1]You are running out of oxygen![otherwise]You still can't breathe. You're going to faint any second now![end if]".
 
 To say FacesitResisting of (M - a bulging slutty sister):
 	say "[one of]You keep your mouth closed, winning the battle but fighting a losing war. There's no way to escape the inevitability of fainting except to lick [him of M] out. [or]You keep your mouth shut, deciding you'd rather faint than submit. [or]You continue to keep your mouth shut, and await the inevitable. [stopping]";
 
 To say FacesitResistingResponse of (M - a bulging slutty sister):
-	say "[BigNameDesc of M] mercilessly holds [him of M]self in place.".
+	say "[BigNameDesc of M] mercilessly holds [himself of M] in place.".
 
 To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 	if the belly contents of M > 0:
@@ -348,9 +350,8 @@ To compute facial climax of (M - a bulging slutty sister):
 To compute facesit climax of (M - a bulging slutty sister):
 	TimesSubmittedUp M by 1;
 	say "[BigNameDesc of M] stands up weakly, removing [his of M] crotch from your face, and allowing you to breathe again. [line break][second custom style]'Okay, you win, that's more than enough for me for today.'[roman type][line break][big he of M] staggers over to one wall, where [he of M] slouches down with fatigue.";
-	now M is not penetrating face;
-	now M is uninterested;
-	now the sleep of M is 1000.
+	compute M sleeping 1000 after sex;
+	orgasm bore M.
 
 To say FacesitClimaxFlav of (M - a bulging slutty sister):[actual orgasm flavour is handled by the facial sex function]
 	say "[BigNameDesc of M] stands up weakly, removing [his of M] crotch from your face, and allowing you to breathe again. [line break][second custom style]'Okay, you win, that's more than enough for me for today.'[roman type][line break][big he of M] staggers over to one wall, where [he of M] slouches down with fatigue.".

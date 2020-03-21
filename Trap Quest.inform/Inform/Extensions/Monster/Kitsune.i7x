@@ -35,15 +35,40 @@ To set up (M - kitsune):
 	now the monstersetup of M is 1;
 	now the difficulty of M is 12;
 	now the health of M is the maxhealth of M;
+	now the vanish timer of M is -1;
 	set up disguise of M.
 
 To set up disguise of (M - kitsune):
 	let R be a random number between 1 and 2;
-	if R is 1:
-		now the target-disguise of M is vampiress;
+	if playerRegion is mansion:
+		if R is 1:
+			now the target-disguise of M is vampiress;
+		otherwise:
+			now the target-disguise of M is a random acolyte;
+	otherwise if playerRegion is dungeon:
+		if R is 1:
+			now the target-disguise of M is a random royal guard;
+		otherwise if diaper quest is 1:
+			now the target-disguise of M is a random adult baby slave;
+		otherwise:
+			now the target-disguise of M is a random wench;
+	otherwise if playerRegion is hotel:
+		if R is 1:
+			now the target-disguise of M is a random wrestler;
+		otherwise if mechanic is alive:
+			now the target-disguise of M is mechanic;
+		otherwise if diaper lover > 0:
+			now the target-disguise of M is matron;
+		otherwise:
+			now the target-disguise of M is dominatrix;
 	otherwise:
-		now the target-disguise of M is a random acolyte;
-	now the text-shortcut of M is the text-shortcut of the target-disguise of M;
+		if R is 1 or diaper quest is 1:
+			now the target-disguise of M is a random demoness;
+		otherwise if inflation fetish is 1 or artificial enhancements fetish is 1:
+			now the target-disguise of M is confident aeromancer;
+		otherwise:
+			now the target-disguise of M is unicorn;
+	now the text-shortcut of M is the text-shortcut of the target-disguise of M.
 
 To reveal disguise of (M - kitsune):
 	if M is in the location of the player, say "Standing in place of [NameDesc of M] is now a ";
@@ -54,16 +79,28 @@ To reveal disguise of (M - kitsune):
 This is the spawn initial kitsune rule:
 	if kitsune is off-stage:
 		set up kitsune;
-		summon kitsune in the mansion.
+		summon kitsune in the mansion;
+		now the vanish timer of kitsune is 0. [We do this to make sure that the kitsune refrshes her disguise immediately, to make sure that it's one appropriate for the mansion.]
 The spawn initial kitsune rule is listed in the setting up mansion monsters rules.
 
 To compute unique unsimulated periodic effect of (M - kitsune):
-	if the vanish timer of M is 0:
-		if M is in the location of the player, say "[BigNameDesc of M] vanishes in a puff of pink smoke!";
-		regionally place M;
-		bore M;
-		set up disguise of M;
-	decrease the vanish timer of M by 1.
+	if playerRegion is not school:
+		if the vanish timer of M is 0 or the vanish timer of M < a random number between -100 and -50: [The former happens 10 turns after the player reveals them. The latter happens after a long number of turns in the same region.]
+			if M is in the location of the player, say "[BigNameDesc of M] vanishes in a puff of pink smoke!";
+			regionally place M;
+			set up disguise of M;
+		decrease the vanish timer of M by 1.
+
+To compute (M - a monster) stomping (N - kitsune):
+	if M is in the location of the player:
+		say "With lightning speed [NameDesc of M] moves to grab [NameDesc of N]! But suddenly, POOF! There's a big cloud of smoke as [NameDesc of N] throws a smoke bomb to the ground.";
+		now the target-disguise of M is M;
+		now the text-shortcut of M is "kt";
+		say "As the smoke begins to clear, you see [NameDesc of N] rapidly hopping away into the distance.";
+	regionally place M;
+	set up disguise of M;
+	now the vanish timer of M is -1.
+
 
 Part 1 - Perception
 
@@ -77,8 +114,8 @@ To compute perception of (M - kitsune):
 		say "Well hello there. Have anything for me?";
 		alwayscutshow figure of kitsune interact 2 for M;
 	otherwise:
-		bore M.
-
+		distract M.
+	
 
 Part 2 - Combat
 
@@ -157,14 +194,21 @@ To decide which number is the bartering value of (T - a thing) for (M - kitsune)
 	if T is plentiful accessory and M is intelligent, decide on the price of T / 2;
 	if T is a mystical amulet, decide on 20;
 	if T is gem-strapon, decide on 15;
+	if T is gem themed, decide on 2;
 	decide on 0.
 
 To say MonsterOfferRejectFlav of (M - kitsune) to (T - a thing):
-	say "[speech style of M]'Hmm, no, I'm just not feeling it with that.'[roman type][line break]";
+	say "[speech style of M]'Hmm, no, I'm just not feeling it with that. Not shiny enough.'[roman type][line break]";
 	alwayscutshow figure of kitsune interact 1 for M.
 
 To say MonsterOfferAcceptFlav of (M - kitsune) to (T - a thing):
-	say "[speech style of M]'Yes, that works for me!'[roman type][line break]".
+	say "[speech style of M]'Ooh, shiny!'[roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - kitsune) to (T - a mystical amulet):
+	say "[speech style of M]'Wow wow wow! I have been hoping to get my hands on this for AGES! Xavier will be pissed. THANK YOU!'[roman type][line break]".
+
+To say MonsterOfferAcceptFlav of (M - kitsune) to (T - gem-strapon):
+	say "[speech style of M]'My own shiny cock! It's all a [boy of M] could dream of and more! THANK YOU!'[roman type][line break]".
 
 To say OfferThanksFlav of (M - kitsune) for (T - a thing):
 	say "[speech style of M]'Now, what do I have for you this time, hmm?'[roman type][line break]";

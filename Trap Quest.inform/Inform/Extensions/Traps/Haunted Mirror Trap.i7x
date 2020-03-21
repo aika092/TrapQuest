@@ -190,7 +190,7 @@ To compute resolution of (M - mirror-stuffie):
 	let C be a random stuffie in the location of the player;
 	say "Your reflection reaches down and picks up [NameDesc of C], cuddling [him of C] close to your chest. You realise you are doing the same thing! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
 	summon C cursed with quest.
-				
+
 
 Haunted Mirror Trap ends here.
 

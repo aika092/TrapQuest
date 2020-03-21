@@ -100,7 +100,7 @@ REQUIRES COMMENTING
 soon-to-imprint is a room.
 
 A blindroom is a kind of room. The printed name of a blindroom is "Blindfolded".
-Definition: A blindroom  is nonstandard: decide yes.
+Definition: A blindroom is nonstandard: decide yes.
 Check looking:
 	if the player is in a blindroom:
 		say "You can't see anything." instead.

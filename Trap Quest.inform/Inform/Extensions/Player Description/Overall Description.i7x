@@ -51,7 +51,10 @@ To say ClothesDescription:
 	if debugmode is 1, explain appearance.
 
 To say PregDescription:
-	if the number of family things is 1:
+	if the pregnancy of the player is 3:
+		let EN be the total egg count of vagina;
+		say "[if EN > 5]a rather large number of eggs[otherwise if the large egg count of vagina > 1][large egg count of vagina] giant monster eggs[otherwise if the large egg count of vagina is 1]a single giant monster egg[otherwise if EN > 1][EN] eggs[otherwise]a single monster egg[end if] inside your womb";
+	otherwise if the number of family things is 1:
 		say "[PregGrowth of the father] inside your womb";
 	otherwise:
 		say "an unknown[if inhuman pregnancy is 2] (and hopefully human)[end if] child".

@@ -271,13 +271,13 @@ To humiliate (X - a number):
 To trivialHumiliate:
 	humiliate TRIVIAL-HUMILIATION.
 
-To say trivialHumiliateRefect:
+To say trivialHumiliateReflect:
 	say HumiliateReflect TRIVIAL-HUMILIATION.
 
 To slightHumiliate:
 	humiliate SLIGHT-HUMILIATION.
 
-To say slightHumiliateRefect:
+To say slightHumiliateReflect:
 	say HumiliateReflect SLIGHT-HUMILIATION.
 
 To moderateHumiliate:
@@ -457,23 +457,23 @@ To Dignify (X - a number):
 
 
 Table of Published Disgraces
-content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)
+content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)	viewsfuzz (a number)
 with 100 blank rows
 
 
 To decide which number is DisgracePostViews (N - a number):
 	choose row N in Table of Published Disgraces;
-	decide on popularity entry * (timestamp entry - earnings). [views]
+	decide on popularity entry * (timestamp entry + viewsfuzz entry - earnings). [views]
 
 To decide which number is DisgracePostImpact (N - a number):
 	choose row N in Table of Published Disgraces;
 	let ET be DisgracePostViews N;
-	if ET < 1, now ET is 1; [somtimes they don't have increasing tracked views, and it's just flat severity]
-	decide on (the square root of ET) * severity entry; [reputation damage]
+	if ET <= 1, decide on severity entry; [somtimes they don't have increasing tracked views, and it's just flat severity]
+	decide on the square root of (ET * severity entry); [reputation damage]
 
 To decide which number is the public disgrace of the player:
 	let PD be 0;
-	repeat with N running from 1 to the number of rows in the Table of Published Disgraces:
+	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
 		if there is a severity in row N of the Table of Published Disgraces, increase PD by DisgracePostImpact N;
 	decide on PD.
 
@@ -489,7 +489,7 @@ To say DisgracePostReaction (N - a number):
 To say HumiliatingDisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;
 	say DisgracePostReaction strength S;
-	humiliate S * 10.
+	humiliate S / 5.
 
 To say DisgracePostReaction strength (S - a number):
 	say variable custom style;
@@ -512,6 +512,7 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 	now the severity entry is S;
 	now the popularity entry is N;
 	now the timestamp entry is earnings;
+	now the viewsfuzz entry is a random number between -100 and 100;
 
 To decide which text is ReputationAttire:
 	let C be the at least partial concealer of vagina;
@@ -523,7 +524,7 @@ To decide which text is ReputationAttire:
 			decide on "topless, with a [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if]";
 	otherwise:
 		let B be the at least partial concealer of breasts;
-		decide on "wearing a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B]and a [ShortDesc of C][end if]";
+		decide on "wearing a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B] and a [ShortDesc of C][end if]";
 
 
 To say sexyWebsite:

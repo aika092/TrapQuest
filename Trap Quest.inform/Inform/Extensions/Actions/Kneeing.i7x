@@ -55,7 +55,7 @@ Check kneeing:
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
 	if the noun is woman-barbara and woman-barbara is not angered:
-		say "Are you sure? You probably won't be able to make her friendly ever again, if you were to do that. ";
+		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
 	if the player is not able to knee, do nothing instead;
 	if the noun is too intimidating, compute surrender to the noun instead.

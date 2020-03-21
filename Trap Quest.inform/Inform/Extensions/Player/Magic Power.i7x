@@ -33,8 +33,18 @@ To MagicPowerUp (X - a number):
 				otherwise:
 					if a random number between 1 and 2 is 1, MagicSteal G;
 					otherwise MagicSteal B;
-		otherwise:
-			increase the magic-power of the player by 1.
+		otherwise if the magic-power of the player < 5:
+			increase the magic-power of the player by 1;
+		otherwise if X is 0:
+			if a random number between 1 and 5 is 1 and the player is deserving of more intelligence:
+				say "Your body is so full of magic that the excess fizzles into your brain, making you slightly smarter.";
+				IntUp 1;
+			otherwise if a random number between 1 and 5 is 1 and the player is deserving of more dexterity:
+				say "Your body is so full of magic that the excess fizzles into your ligaments, making you more limber.";
+				DexUp 1;
+			otherwise:
+				say "Your body is so full of magic that the excess fizzles off of you with a pink display of sparkles.".
+
 
 [###Selkie: might be fun to have a [Smartening] function that would say, depending on intelligence, stuff like "getting smarterer", "getting better at thinking and stuff", "becoming way smarter", "becoming less sluggish", "working more smoothly", "operating more efficiently", "functioning keenly", "sparkling with brilliance".]
 To MagicPowerDown (X - a number):
@@ -73,8 +83,7 @@ To decide which number is the tripping roll of (M - a tentacle monster):
 
 To say MonsterTrippedFlav of (M - a tentacle monster):
 	say "Roaring with unrestrained arousal, [NameDesc of M] picks you up off the ground with several strong tentacles!";
-	let H be a random held heart wand;
-	if H is a thing:
+	repeat with H running through worn equippables:
 		now H is in the location of the player;
 		say "Your [H] is wrestled out of your hand and thrown to the corner of the room!".
 
@@ -83,7 +92,7 @@ Check taking equippable when the player is immobile:
 
 
 This is the magical schoolgirl cums then wins her fight orgasm resolution rule:
-	let H be a random heart wand in the location of the player;
+	let H be a random equippable in the location of the player;
 	if there is a tentacle monster penetrating a body part and the class of the player is "magical schoolgirl" and H is an actually summonable clothing and the body soreness of the player < 10:
 		now the fatigue of the player is 0;
 		say "Your orgasm fills you with renewed energy! You feel like you could escape and keep fighting if you want. Do you want to? ";
@@ -94,7 +103,7 @@ This is the magical schoolgirl cums then wins her fight orgasm resolution rule:
 			repeat with M running through monsters in the location of the player:
 				dislodge M;
 			if the player is able to speak, say "[variable custom style]'[if the player is a nympho]That was fun, but I have to beat you up now, sorry[otherwise if the player is a pervert]You've had your fun, but now you'll pay the price for your sins[otherwise]How dare you make me... orgasm... on your... eww! You will pay with your life[end if]!'[roman type][line break]";
-			if the magic-power of the player < 2:
+			if the magic-power of the player < 2 and H is zap ready:
 				say "You feel your body filled with more magic energy!";
 				MagicPowerUp (2 - the magic-power of the player).
 The magical schoolgirl cums then wins her fight orgasm resolution rule is listed last in the orgasm resolution rules.
@@ -299,6 +308,7 @@ Definition: magic-blinking is reactive-only: decide no.
 To say MagicSpellEffect of (S - magic-blinking):
 	say "blink away to a neighbouring location".
 Report Spellcasting magic-blinking:
+	now Neighbour Finder is the location of the player;
 	let D be a random N-viable direction;
 	let R be the room D from the location of the player;
 	if the player is immobile:

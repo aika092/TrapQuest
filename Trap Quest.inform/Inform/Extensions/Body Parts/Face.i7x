@@ -199,9 +199,9 @@ To say ShortDesc of (F - face):
 	if the semen coating of face > 7:
 		say ", cum plastered";
 	otherwise if the semen coating of face > 4:
-		say  ", partially cum-covered";
+		say ", partially cum-covered";
 	otherwise if the semen coating of face > 0:
-		say  ", creamed";
+		say ", creamed";
 	if the lips of face is 1:
 		say " big-lipped";
 	otherwise if the lips of face > 1:
@@ -233,9 +233,9 @@ To say TotalDesc of face:
 	if the semen coating of face > 7:
 		say "your face [MakeUpDesc][if the make-up of face is 0] but is completely covered in [semen].[otherwise]. It is also completely plastered in [semen]![end if]";
 	otherwise if the semen coating of face > 4:
-		say  "your face [MakeUpDesc] and is dripping with [semen].";
+		say "your face [MakeUpDesc] and is dripping with [semen].";
 	otherwise if the semen coating of face > 0:
-		say  "your face [MakeUpDesc] and has a few lines of [semen] slowly dripping off it.";
+		say "your face [MakeUpDesc] and has a few lines of [semen] slowly dripping off it.";
 	otherwise:
 		say "your face [MakeUpDesc].";
 	let A be alcohol-level;
@@ -348,7 +348,7 @@ To display lips cutscene:
 
 Section - Image for graphics window
 
-The text-shortcut of face is "face". Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
+Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
 Figure of CumFaceButton is the file "Special/Buttons/cumface.png".
 
 To decide which figure-name is the examine-image of (T - face):

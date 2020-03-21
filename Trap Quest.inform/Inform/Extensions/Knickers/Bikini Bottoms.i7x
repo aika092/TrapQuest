@@ -30,6 +30,7 @@ Definition: cow print bikini bottoms is white themed: decide yes.
 Definition: cow print bikini bottoms is transformation-protected if the class of the player is cowgirl.
 Definition: cow print bikini bottoms is discovered varied: decide no.
 Definition: cow print bikini bottoms is is crotch-pullup: decide no.
+Definition: cow print bikini bottoms is rippable: decide yes.
 
 To compute SelfExamineDesc of (K - cow print bikini bottoms):
 	say "A pair of cow print bikini bottoms modestly covers your [ShortDesc of hips]. ";
@@ -146,6 +147,7 @@ Figure of bikini bottoms 5 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bik
 
 
 Definition: red-bikini-briefs is red themed: decide yes.
+Definition: red-bikini-briefs is rippable: decide yes.
 Definition: red-bikini-briefs is is crotch-pullup: decide no.
 
 [leopard print bikini bottoms]
@@ -171,6 +173,7 @@ To decide which number is the unique outrage of (C - leopard print bikini bottom
 
 Definition: leopard print bikini bottoms is leopard themed: decide yes.
 Definition: leopard print bikini bottoms is black themed: decide yes.
+Definition: leopard print bikini bottoms is rippable: decide yes.
 Definition: leopard print bikini bottoms is is crotch-pullup: decide no.
 
 

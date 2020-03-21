@@ -507,7 +507,7 @@ Check going:
 		if the player is upright, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
 		otherwise allocate 6 seconds;
 	repeat with M running through expectant monsters:
-		now the last-interaction of M is 0; [Naughty player, moving is not submissive!  Monsters are not delayed by a going action.]
+		now the last-interaction of M is 0; [Naughty player, moving is not submissive! Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
 	if seconds is 3 or seconds is 6: [only in normal moves, not in double moves]
 		if the player is prone and the player is zeroG:
@@ -602,7 +602,7 @@ Check going:
 		choose a trap to trigger;
 		if the player-motion of the player is 0, say "[bold type]You are still in the [printed name of the location of the player][roman type]." instead; [Some traps will have set player-motion to 0. This means the player hasn't successfully moved from this room.]
 	if the player is triggering a clumsy action, do nothing instead;
-	[The player is successfully moving!  For sure!  So, anything location specific needs to go here, since if we put it as a "carry out" function, we may have already moved.]
+	[The player is successfully moving! For sure! So, anything location specific needs to go here, since if we put it as a "carry out" function, we may have already moved.]
 	[Here we reset paddle traps.]
 	repeat with Y running through swing traps in the location of the player:
 		repeat with D running through dispensers in the location of Y:
@@ -748,7 +748,7 @@ REQUIRES COMMENTING
 
 +!]
 To say MovementBlock of (M - a monster):
-	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!";
+	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
 
 [!<CarryOutGoingWhileThePlayerIsInDungeon41AndDungeon41IsGuarded>+
 
@@ -936,7 +936,7 @@ To Test A Pressure Trap:
 		if R > 13:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress, but you quickly avoid putting too much of your weight onto the slab, avoiding triggering the trap.[roman type][line break]";
 			if B > 16:
-				say "  However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
+				say " However, as your [BreastDesc] crosses the pressure pad, their weight manages to trigger the trap! Whoops![line break]";
 				trigger a pressure trap;
 		otherwise:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";

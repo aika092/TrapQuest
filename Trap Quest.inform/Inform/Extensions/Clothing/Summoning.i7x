@@ -71,70 +71,7 @@ To summon (C - a clothing) locked:
 	now C is locked;
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
 
-Definition: a thing is removable: decide yes.
-Definition: a tattoo is removable: decide no.
 
-Definition: a thing is unremovable if it is not removable.
-
-[!<ThingIsStealable>+
-
-This definition performs 3 checks to determine whether or not a monster will actually be able to steal a given piece of clothing(called C):
-1. Ensure that C can be removed
-2. Ensure that C is not a type of bondage, which a monster would not want to remove
-3. Ensure that C is not a super humiliating item a monster also wouldn't want to remove
-
-@param <Object>:<C> The item that can potentially be stolen by an npc
-
-@return <Boolean> returns true if C can be stolen, otherwise returns false
-
-+!]
-
-Definition: a thing (called C) is stealable: [Some clothing can never be stolen or destroyed, even by monsters.]
-	if C is unremovable, decide no;
-	if C is accessory and (the unworn outrage of C >= 5 or the unworn cringe of C >= 5), decide no;[Regardless of how you feel about regular clothes, most npcs would agree it's better not to be naked.]
-	if C is sex toy, decide no;
-	if C is overdress and the class of the player is not adventurer, decide no;
-	decide yes.
-
-[!<ThingIsDestructible>+
-
-This definition determines whether or not an item can be conventionally "destroyed." Meant to be overridden.
-
-@param <Object>:<C> The item to be potentially destroyed
-
-@return <Boolean> returns true if C can be destroyed, otherwise returns false
-
-+!]
-Definition: a thing (called C) is destructible:
-	if C is metal, decide no;
-	decide yes.
-Definition: a thing (called C) is indestructible:
-	if C is destructible, decide no;
-	decide yes.
-
-[!<ThingIsTearable>+
-
-This definition determines whether or not a given item can be destroyed by being torn off by monsters
-
-@param <Object>:<C> The item that can potentially be torn off
-
-@return <Boolean> returns true if C is both destructible and stealable, otherwise returns false
-
-+!]
-Definition: a thing (called C) is tearable:
-	if C is stealable and C is destructible, decide yes;
-	decide no.
-
-[!<ThingIsStealable>+
-
-This definition determines whether or not an item is unable to be stolen by an npc
-
-@param <Object>:<C> The item that can potentially be stolen
-
-@return <Boolean> returns false if C can be stolen, otherwise returns true
-
-+!]
-Definition: a thing is unstealable if it is not stealable.
 
 Definition: an object is actually wearable: decide no.
 

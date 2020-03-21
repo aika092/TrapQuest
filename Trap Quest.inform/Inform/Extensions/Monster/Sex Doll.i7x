@@ -97,7 +97,7 @@ To say DollColour of (M - a creamfilled-sex-doll):
 
 To say MonsterDesc of (M - a sex doll):
 	if M is creamfilled-sex-doll:
-		say "A [if lady fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if full-lady fetish is 1]Her crotch is black, which makes the flesh-coloured dildo extending from her crotch look like a strapon[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
+		say "A [if lady fetish is 1]female sex doll with conical breasts[otherwise]male sex doll with painted on abs[end if] and [DollColour of M] 'hair' that couldn't look more fake if it were drawn on in permanent marker. [big he of M] is filled with opaque liquid, which sloshes around visibly with [his of M] movements. [if full-lady fetish is 1][big his of M] crotch is black, which makes the flesh-coloured dildo extending from her crotch look like a strapon[otherwise]A flesh-coloured dildo extends from [his of M] crotch, accompanied by a rubbery sack[end if].";
 	otherwise:
 		say "An inflatable female sex doll with spherical breasts and [DollColour of M] lips painted on her face. She is completely naked, and the ends of her arms are adorned with large suctions cups, which could probably give her a quite strong grip. A flesh-coloured dildo extends from her crotch, [if inflation fetish is 1]which appears to be filled with some sort of dark liquid[otherwise]almost like a cork[end if].".
 
@@ -281,7 +281,7 @@ To compute (M - a sex doll) entering mouth:
 		if M is not creamfilled-sex-doll:
 			say "[BigNameDesc of M] walks round to your face and waits there for a few seconds, motionless. It looked like it was about to mess with you, but something seemed to change its mind.";
 		otherwise if bukkake fetish is 1:
-			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen!  Could change I guess if there's open gags put into the game]
+			[If the player is gagged then there shouldn't be a monster also occupying here, so a bukkake can happen! Could change I guess if there's open gags put into the game]
 			say "[BigNameDesc of M] moves round to your face, air hissing quietly as its rubber sack slowly expands. A beat after the noise stops, the doll suddenly begins blasting your face with a torrent of pure white ejaculate! You're completely plastered by the time it deflates.";
 			CumFaceUp 8;
 		otherwise:

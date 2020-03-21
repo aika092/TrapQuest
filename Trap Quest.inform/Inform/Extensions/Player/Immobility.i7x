@@ -2,7 +2,7 @@ Immobility by Player begins here.
 
 The immobility rules is a rulebook.
 
-player-immobile is a number that varies.
+player-immobile is initially false.
 
 [!<ToCheckImmobility>+
 
@@ -11,17 +11,15 @@ We don't want to check this all the time.
 +!]
 To check immobility:
 	follow the immobility rules;
-	if the rule failed, now player-immobile is 1;
-	otherwise now player-immobile is 0.
+	if the rule failed, now player-immobile is true;
+	otherwise now player-immobile is false.
 
 [!<YourselfIsImmobile>+
 
 Is the player unable to move?
 
 +!]
-Definition: yourself is immobile:
-	if player-immobile is 1, decide yes;
-	decide no.
+Definition: yourself is immobile if player-immobile is true.
 
 This is the trap stuck immobility rule:
 	if the player is trap stuck, rule fails.
@@ -30,6 +28,10 @@ The trap stuck immobility rule is listed in the immobility rules.
 This is the blindfolded immobility rule:
 	if the player is in a blindroom, rule fails.
 The blindfolded immobility rule is listed in the immobility rules.
+
+[This is the seduction minigame immobility rule:
+	if there is a seduced reactive monster, rule fails.
+The seduction minigame immobility rule is listed in the immobility rules.]
 
 [!<YourselfIsTrapStuck>+
 
@@ -75,23 +77,23 @@ Definition: yourself is dildo stuck:
 
 
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to
- force you to pose like a little dolly.  In this case, the only such trap will be one that makes you pose
+ force you to pose like a little dolly. In this case, the only such trap will be one that makes you pose
  like a ballerina - because you're wearing ballerina wearables.
  If it's set to "", it's a flag that you're not currently stuck like that.
  To be used in case we use some randomness to decide whether the 'pose' attack initiates.
  In this first implementation, it will always do it if you have two ballerina wearthings.
  I had to add doll-stuck-num, even though redundant, because you can't test 'if doll-stuck is ""' inside say "...".
  Aika has hijacked doll-stuck-num to count the turns the player has been impaled.
-    doll-stuck-num: Number of turns the player has been turning around, posed like a doll in a music box.
+	doll-stuck-num: Number of turns the player has been turning around, posed like a doll in a music box.
  doll-stuck-kind is used to record the kind of doll the dildo wants you to pose as:
  doll-stuck-kind:
 	0: Not doll stuck at all.
 	1: Ballerina.
 	2: TBD
 ]
-doll-stuck is a text that varies.  doll-stuck is "".
-doll-stuck-num is a number that varies.  doll-stuck-num is 0.
-doll-stuck-kind is a number that varies.  doll-stuck-kind is 0.
+doll-stuck is a text that varies. doll-stuck is "".
+doll-stuck-num is a number that varies. doll-stuck-num is 0.
+doll-stuck-kind is a number that varies. doll-stuck-kind is 0.
 
 [!<YourselfIsHorseStuck>+
 

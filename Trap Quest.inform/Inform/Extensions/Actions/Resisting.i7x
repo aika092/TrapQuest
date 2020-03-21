@@ -322,7 +322,8 @@ REQUIRES COMMENTING
 
 +!]
 To say OralSlutResRefusalFlav of (M - a monster):
-	say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]".
+	if M is male, say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]";
+	otherwise say "You just can't bring yourself to resist; you love oral sex so much!".
 
 [!<SayThirstResRefusalFlavOfMonster>+
 
@@ -423,7 +424,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to slap:
 	if M is intelligent and a random number between 1 and 5 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<SlapPunishmentIsAppropriate>+
 
@@ -469,7 +470,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to get angry:
 	if M is intelligent and a random number between 1 and 3 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<AngerPunishmentIsAppropriate>+
 

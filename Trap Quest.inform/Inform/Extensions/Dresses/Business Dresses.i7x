@@ -10,7 +10,7 @@ To set up influence of (C - a business dress):
 
 Part 1 - Polka Dot Business Dress
 
-A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is high cut. A polka dot business dress is usually knee-length. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".
+A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is high cut. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".
 
 Figure of polka dot business dress is the file "Items/Clothes/Upper/Business/businessdress2.png".
 

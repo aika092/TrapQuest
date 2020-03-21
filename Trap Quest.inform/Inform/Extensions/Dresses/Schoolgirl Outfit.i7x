@@ -94,7 +94,7 @@ To decide which figure-name is clothing-image of (C - a halloween schoolgirl out
 	decide on figure of halloween schoolgirl outfit.
 
 To say ClothingDesc of (C - a halloween schoolgirl outfit):
-	say "A white, relatively modest (for this game) short-sleeved top, fashioned in the style of a schoolgirl uniform that has a small horizontal slit above your breasts to show some cleavage . At the top it has a collar and a rebelliously short tie.[line break]";
+	say "A white, relatively modest (for this game) short-sleeved top, fashioned in the style of a schoolgirl uniform that has a small horizontal slit above your breasts to show some cleavage. At the top it has a collar and a rebelliously short tie.[line break]";
 	say "A red tartan miniskirt that barely covers your crotch.".
 
 To decide which number is the initial outrage of (C - a halloween schoolgirl outfit):

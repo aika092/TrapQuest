@@ -19,7 +19,7 @@ The compulsory action rules is a rulebook. [Things that MUST happen like continu
 [!<EveryTurn>+
 
 REQUIRES COMMENTING
-Oh, so this is how time works!  So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
+Oh, so this is how time works! So "seconds" represents how many seconds of the current round has elapsed. And if seconds is 0, the round hasn't really started, so monsters and background activities don't progress.
 ### But the "run the engine" function seems bizarre to Selkie, looking equivalent to just writing:
 ### The another-turn flag can be set to 1 for various reasons, which causes the "engine" to run again without giving the player a chance to act. The player can only have a turn if another-turn is STILL 0 at the end of the turn
 
@@ -67,6 +67,7 @@ To run the engine:
 	let AT be 1;
 	while AT is 1:
 		run the engine once;
+		if debugmode > 0 and debuginfo > 1, say "Engine run complete. Another-turn is set to [another-turn]. The number of entries in the another-turn-rules list is [number of entries in another-turn-rules].";
 		now AT is another-turn;
 		now another-turn is 0;
 		if AT is 1 and another-turn-flavour is not "" and the number of entries in another-turn-rules is 0, say "[bold type][another-turn-flavour][roman type][line break]"; [If we have other stored-action reasons for the extra turn, no need to give the player additional reasons why there was a delayed turn.]
@@ -76,7 +77,7 @@ To run the engine:
 			add R to LR;
 		let A be another-turn-action;
 		now another-turn-action is the no-stored-action rule;
-		truncate another-turn-rules to 0 entries;
+		truncate another-turn-rules to 0 entries; [This is the only safe moment to truncate the entries - just after we have loaded the rules and before we execute them.]
 		if AT is 1:
 			if the number of entries in LR > 0:
 				repeat with R running through LR:
@@ -104,8 +105,8 @@ To run the engine once:
 		if delayed fainting is 0:
 			follow the compulsory action rules; [things that must happen]
 			unless another-turn is 1, compute instinctive actions;
-			unless another-turn is 1, compute automatic actions;  [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
-			unless another-turn is 1, compute optional actions;  [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
+			unless another-turn is 1, compute automatic actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
+			unless another-turn is 1, compute optional actions; [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, allocate 0 seconds;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
@@ -118,7 +119,7 @@ To run the engine once:
 			if the player is consenting, try resisting;
 			otherwise try submitting;
 	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
-		check unhandled diaper scene; [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
+		unless the player is in a predicament room, check unhandled diaper scene; [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
 		[Sometimes when time moves forward we need to refresh the map back to normal from unique situations. We can't do this in a time based rulebook because 'display entire map' breaks the rulebook.]
 		if temporary-map-figure is not figure of no-image-yet:
 			now temporary-map-figure is the figure of no-image-yet;
@@ -1036,6 +1037,7 @@ To Reset Flags:
 	now voluntarySquatting is 0;
 	if presented-orifice is nothing and the player is not live fucked, now the player-reaction of the player is unprepared; [This is how we tell the game that the player is no longer submitting or resisting.]
 	now presented-orifice is nothing;
+	now groping-person is yourself; [reset groping person flag so that if we come back to this NPC in 10 turns with different appearance, we know to recalculate gropability]
 	finally humiliate the delayed humiliation of the player;
 	decrease blush factor by 100;
 	if blush factor > 2000, now blush factor is 2000;

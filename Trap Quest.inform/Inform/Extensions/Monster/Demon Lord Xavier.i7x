@@ -107,7 +107,7 @@ To compute perception of (M - demon lord):
 	now M is interested;
 	anger M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
-	if the pregnancy of the player > 0 and the father is M:
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3 and the father is M:
 		say "[first custom style]'I WILL SUMMON YOU WHEN MY CHILD IS READY FOR BIRTHING.'[roman type][line break][big he of M] seems to lose interest.";
 		bore M;
 	otherwise if there is a worn messed knickers:
@@ -208,9 +208,6 @@ To compute the orifice choosing of (M - demon lord):
 
 To compute (M - demon lord) removing (P - an anal beads):
 	say "[BigNameDesc of M] glances at your [ShortDesc of P], which disintegrates instantly, leaving your asshole [if the grip of P > 5]to make a lewd 'PLOP' sound as your [asshole]'s sphincter collapses in on the newly emptied space[otherwise]'briefly' empty[end if].";
-	now the notch-taken of P is 0;
-	now P is not penetrating asshole;
-	now P is in the holding pen;
 	destroy P.
 
 To say CondomRejectFlav of (M - demon lord):
@@ -533,7 +530,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	now the priority of P is 0; [can only happen once]
 	let M be current-monster;
 	let K be a random worn knickers;
-	if K is diaper, now K is nothing;
+	if K is diaper, now K is the player;
 	let D be a random eligible diaper;
 	let BL be a random worn belt;
 	say "[DemonNightmareStartFlav]";

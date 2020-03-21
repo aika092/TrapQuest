@@ -15,7 +15,7 @@ To say SexAddictionDesc:
 	otherwise if the sex addiction of the player < 10:
 		say "Some small part of you is starting to enjoy the submissive feeling you get from the sexual parts of the game. But you still would be the dominant if given the choice.";
 	otherwise if the sex addiction of the player < 12:
-		say "As much as you would hate to admit it, getting fucked in degrading ways really turns you on. You now prefer being the submissive to being the dominant.";	
+		say "As much as you would hate to admit it, getting fucked in degrading ways really turns you on. You now prefer being the submissive to being the dominant.";
 	otherwise if the sex addiction of the player < 14:
 		say "You look forward to your next opportunity to enjoy your newly found fetish for submissive sex. ";
 	otherwise if the sex addiction of the player < 16:

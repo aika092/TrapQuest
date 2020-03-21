@@ -25,6 +25,9 @@ To compute turn (N - a number) of (M - a monster):
 	[If N is 1, this is a full action
 	if N is 2, this is a passive action (no attacking or perception) because the player moved and we're just making NPCs move at the same time
 	if N is 3, this is a stationary passive action (only perception) because it already moved (probably with the player with N = 2 above)]
+	if M is seduced: [If the NPC got to its compute turn function, that means that the seduction failed (the NPC wasn't stalled) and we can exit the seduction minigame.]
+		if M is interested, now M is seduction-refused;
+		otherwise now M is unseduced;
 	if M is friendly-fucking:
 		if M is not grabbing the player and M is not penetrating a body part, now M is not friendly-fucking; [We need to make sure that NPCs have the friendly fucking flag removed after they've finished a session, and this is probably the most reliable way to do it, if a little messy.]
 	if M is dying:
@@ -108,7 +111,9 @@ To check chase boredom of (M - a monster):
 	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]
 	if M is not in the location of the player and a random number from 1 to D is 1:
 		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
-		if playerRegion is not school and M is threatening and M is regional, progress quest of nice-quest;
+		if playerRegion is not school and M is threatening and M is regional:
+			say "You sense that [NameDesc of M] has lost interest in chasing you.";
+			progress quest of nice-quest;
 		compute survival check of M.
 
 To compute survival check of (M - a monster):

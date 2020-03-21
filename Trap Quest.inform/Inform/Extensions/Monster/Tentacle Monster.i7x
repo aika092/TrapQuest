@@ -414,6 +414,7 @@ This is the tentacle monster climaxes rule:
 		let cum-amount be the semen load of M;
 		SemenPuddleUp cum-amount;
 		if bukkake fetish is 1, CumFaceUp cum-amount * 5;
+	orgasm M; [needs to go above the below functions because this function cares about where is being penetrated]
 	if M is penetrating asshole:
 		compute anal climax of M;
 		AnalCount;
@@ -481,7 +482,16 @@ To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
 	decide no.
 
 To compute vaginal climax of (M - a tentacle monster):
-	if M is wrapped:
+	if egg laying fetish is 1:
+		if M is wrapped, now M is unwrapped;
+		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [vagina] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
+		if M is newborn:
+			WombFill the semen load of M small eggs;
+		otherwise if M is large:
+			WombFill the semen load of M medium eggs;
+		otherwise:
+			WombFill (the semen load of M / 2) - 1 large eggs;
+	otherwise if M is wrapped:
 		if M is losing wrapper in vagina:
 			say "The tentacle in your [vagina] pumps its potent load into the condom, which holds for an instant before bursting, flooding the deepest recesses of your womb with [semen].";
 			now M is unwrapped;

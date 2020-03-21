@@ -279,7 +279,7 @@ To say MessyPullOutFlav of (M - hellhound) in (F - asshole):
 	say "[one of]You think that's the end of it, but then[or]You know it's not over yet, and sure enough[stopping] you realize you can feel [if mythical creature fetish is 0][his of M] cock ring[otherwise]the base of [his of M] [DickDesc of M][end if] inflating. Pinned down by [his of M] full weight, [if the anal sex addiction of the player < 3]your heart sinks[otherwise if the anal sex addiction of the player < 7]you groan[otherwise]you mewl happily[end if] as you realize you are anally [']knotted['] by your canine [if the player is feeling dominant]nemesis[otherwise]mate[end if].".
 
 To say MessyPullOutFlav of (M - hellhound) in (F - vagina):
-	say "[BigNameDesc of M] pulls out, seeming to snicker as [he of M] walks around in front of you. [Big his of M] red eyes fix you with a cruel stare as [he of M] lifts [his of M] leg and begins to pee in your face, as if marking you as [his of M] territory!".
+	say "[BigNameDesc of M] pulls out, seeming to snicker as [he of M] walks around in front of you. [big his of M] red eyes fix you with a cruel stare as [he of M] lifts [his of M] leg and begins to pee in your face, as if marking you as [his of M] territory!".
 
 To say PullOutFlav of (M - hellhound) in (F - vagina):
 	say "[BigNameDesc of M] pulls out, appearing to have immediately lost interest. [Semen] continues leaking from [his of M] [DickDesc of M], leaving a slimy trail along the floor.".
@@ -335,7 +335,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 		otherwise PussyFill 1;
 		decrease the sex-length of M by 1;
 	otherwise:
-		say "[BigNameDesc of M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant inflated [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] has wedged [his of M] [DickDesc of M] firmly inside your [variable F]. Digging [his of M] [if mythical creature fetish is 0]elbows[otherwise]bestial talons[end if] into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], [he of M] [i]wrenches[/i] [him of M]self free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force, releasing you with a loud *POP*.";
+		say "[BigNameDesc of M] turns around and begins to walk off, but some stroke of mercy, or perhaps malice causes [him of M] to pause when [he of M] realizes that [his of M] giant inflated [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] has wedged [his of M] [DickDesc of M] firmly inside your [variable F]. Digging [his of M] [if mythical creature fetish is 0]elbows[otherwise]bestial talons[end if] into the [if the location of M is no-roof]ground[otherwise]floorboards[end if], [he of M] [i]wrenches[/i] [himself of M] free with a [if the openness of F < 3]excruciatingly painful[otherwise if the openness of F < 6]vicious[otherwise if the openness of F < 10]moderate[otherwise]healthy[end if] amount of force, releasing you with a loud *POP*.";
 		ruin F times 5;
 		PainUp 2;
 		UnKnot M in F;
@@ -528,13 +528,13 @@ To say DamageReactWeak of (M - hellhound):
 Part - Conversation
 
 To compute greeting response of (M - hellhound):
-	if M is not intelligent:
+	if M is unintelligent:
 		say MuteGreetResponse of M;
 	otherwise:
 		say "[speech style of M]'[one of]Arf[or]Woof[or]Ruff[or]Woof woof[in random order]!'[roman type][line break]".
 
 To compute talk option (N - 2) to (M - hellhound):
-	if M is not intelligent:
+	if M is unintelligent:
 		say MuteQuestionResponse of M;
 	otherwise:
 		say WhoQuestion of M;

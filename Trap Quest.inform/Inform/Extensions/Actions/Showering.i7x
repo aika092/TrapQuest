@@ -95,7 +95,7 @@ To compute showering:
 		say "You feel the water rushing underneath your [vagina], and the flow helps clear your womb of the [semen] it is holding.";
 		increase tracked-semen by the semen volume of vagina * 2;
 		now the semen volume of vagina is 0;
-		if the womb volume of vagina > 0 and the pregnancy of the player <= 0:
+		if the womb volume of vagina > 0 and the pregnancy of the player is not 1 and the pregnancy of the player is not 2:
 			increase tracked-semen by the womb volume of vagina * 2;
 			WombEmpty the womb volume of vagina;
 	if face is temporarily made up:

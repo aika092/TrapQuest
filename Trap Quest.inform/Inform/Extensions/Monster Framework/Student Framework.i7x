@@ -30,7 +30,7 @@ To say MonsterDesc of (M - a student):
 	say "This student seems to be missing [his of M] description!".
 
 To say StudentDesc of (M - a student):
-	say "[if M is clitLeaded]A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. [end if][Big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
+	say "[if M is clitLeaded]A thin silver chain dangling from [his of M] groin confirms that [he of M] is still wearing [his of M] new permanent clitoris lead piercing. [end if][big he of M] is wearing an armband which says '[student-name of M] the [student-print of M]' in large [rank-colour of M] letters.".
 
 To set up (M - a student):
 	reset M;
@@ -186,6 +186,8 @@ To compute monstermotion of (M - a student):
 	if playerRegion is not school:
 		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
 		now M is in School01;
+	otherwise if M is in a predicament room:
+		do nothing;
 	otherwise if a random number between 1 and 4 is 1 or (the player is immobile and (a random number between 1 and 2 is 1 or there is a teacher in the location of M)):
 		compute room leaving of M.
 
@@ -287,9 +289,12 @@ To compute appearance assessment of (M - a student):
 			FavourDown M by 2;
 			distract M;
 		otherwise if the saved appearance of the player > the outrage tolerance of M:
-			say LewdAppearanceAssessment of M;
+			if M is nasty student and diaper quest is 0, compute grope of M;
+			otherwise say LewdAppearanceAssessment of M;
 			FavourDown M;
-			if M is unfriendly, distract M.
+			if M is unfriendly, distract M;
+		otherwise if M is tryhard student and M is groping:
+			compute grope of M.
 
 To say FarGoneAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
@@ -351,6 +356,10 @@ To HappinessDown (M - an amicable student) by (N - a number):
 
 To say BecomesAggressive of (M - a student):
 	compute bully perception of M.
+
+To compute combatProvoked of (M - a student):
+	HappinessDown M;
+	now M is unleashed.
 
 Part - Protection
 
@@ -483,7 +492,10 @@ Definition: student-bully-swimming-pool is appropriate:
 	if current-monster is student and the player is not immobile and the player is not flying and the rank of the player >= the entry-rank of School20 and the current-rank of current-monster >= the entry-rank of School20, decide yes;
 	decide no.
 To compute punishment of (P - student-bully-swimming-pool):
-	if the location of the player is not School20, drag to School20 by current-monster;
+	if the location of the player is not School20:
+		repeat with ST running through students in the location of the player:
+			if ST is interested and ST is not current-monster and ST is unfriendly, now ST is in School20;
+		drag to School20 by current-monster;
 	say "[speech style of current-monster]'[one of]Watch your step, [bitch][or]You stink - you could use a wash[in random order]!'[roman type][line break][BigNameDesc of current-monster] shoves you into the pool!";
 	compute crowd jeering of current-monster;
 	if diaper quest is 0:
@@ -839,6 +851,11 @@ To say ShortDesc of (C - quiz-partner):
 	if ST is a student, say "[student-name of ST]";
 	otherwise say "BUGGED STUDENT".
 
+To say MediumDesc of (C - quiz-partner):
+	let ST be the bound-target of C;
+	if ST is a student, say "student called [student-name of ST] bound [if diaper quest is 0]attached to your [asshole][otherwise]face-first into your diaper[end if]";
+	otherwise say "BUGGED STUDENT".
+
 To compute squirt declarations into (C - quiz-partner):
 	let ST be the bound-target of C;
 	say "You emit a pained whine as your floodgates open, and you begin powerfully expelling pints of [if watersports fetish is 1]murky[otherwise]creamy[end if] sludge from your [asshole], right into [NameDesc of ST][']s face, onto [his of ST] tongue and into [his of ST] mouth.".
@@ -858,7 +875,7 @@ Check standing when quiz-partner is worn:
 
 To compute quiz partner messing:
 	let ST be the bound-target of quiz-partner;
-	say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if rectum >= 30 and asshole is not actually occupied]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if  rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
+	say "You emit a pained whine as your floodgates open, and you begin depositing what feels like a gallon of [if rectum >= 30 and asshole is not actually occupied]spicy curry aftermath[otherwise][urine][end if] on top of [NameDesc of ST][']s face.[line break][speech style of ST]'Nooo you Bit-GLMPH!'[roman type][line break][big his of ST] exclamation is cut off by the seat of your diaper expanding and engulfing [his of ST] face, forcing [him of ST] to desperately breathe what oxygen [he of ST] can through the soiled fabric.[line break][variable custom style]'I'm sorry [student-name of ST], I'm so sorry!'[roman type][line break]You beg [NameDesc of ST] for forgiveness as you [if rectum >= 30 and asshole is not actually occupied]loudly fill your padding right on top of[otherwise]continue to add to the soggy padding that is covering[end if] [his of ST] eyes, nose and mouth.";
 	let D be a random worn diaper;
 	if rectum >= 30 and asshole is not actually occupied:
 		MessUp D by 30;

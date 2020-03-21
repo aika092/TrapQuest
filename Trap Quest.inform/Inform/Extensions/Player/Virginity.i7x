@@ -3,7 +3,7 @@ Virginity by Player begins here.
 
 [!<Player>@<virgin:Integer>*
 
-For females, has something alive fucked their vagina?  For males, have they had dominant penetrative sex?
+For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
 
 *@!]
 The player has a number called virgin. The virgin of the player is usually 1.
@@ -254,7 +254,8 @@ REQUIRES COMMENTING
 +!]
 To compute virginity-loss of (T - a thing):
 	say "Your [printed name of T] drops to the ground.";
-	now T is in the location of the player.
+	now T is in the location of the player;
+	dislodge T.
 
 
 Virginity ends here.

@@ -118,7 +118,7 @@ To develop (P - a poster):
 	now the old-trousers of P is a random worn trousers;
 	now the old-bimbo of P is the appearance of the player;
 	now the old-sex-addiction of P is the sex addiction of the player;
-	if the pregnancy of the player > 0, now old-father of P is the father;
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now old-father of P is the father;
 	if asshole is lewdly exposed, now the asshole visible of P is 1;
 	if vagina is lewdly exposed or penis is lewdly exposed, now the genitals visible of P is 1;
 	compute special of P;

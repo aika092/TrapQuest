@@ -39,7 +39,7 @@ To say stud:
 	otherwise if the player is not feeling submissive:
 		say "[if diaper lover >= 1]Sir[otherwise][one of]stud[or]handsome[or]stud[or]sailor[as decreasingly likely outcomes][end if]";
 	otherwise:
-		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise]Master[end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]daddy[otherwise][one of]Sir[or]Master[purely at random][end if]".
 
 To say literalMistress of (M - a monster):
 	if M is presenting as female, say "mistress";
@@ -53,10 +53,10 @@ If the player is impressed with the (assumed female) NPC
 To say mistress:
 	if the class of the player is santa's little helper:
 		say "Mrs Santa";
-	if the delicateness of the player < 7:
-		say "[one of]honey[or]cutie[as decreasingly likely outcomes]";
-	otherwise if the delicateness of the player < 14:
-		say "[if diaper lover >= 1]Missus[otherwise][one of]beauty[or]Madame[or]Missus[as decreasingly likely outcomes][end if]";
+	if the player is feeling dominant:
+		say "[one of]honey[or]cutie[or]beautiful[or]doll[as decreasingly likely outcomes]";
+	otherwise if the player is not feeling submissive:
+		say "[one of]Ma'am[or]Missus[or]Madame[as decreasingly likely outcomes]";
 	otherwise:
 		say "[if diaper lover >= 1 and the bimbo of the player > 12]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
 
@@ -65,7 +65,7 @@ To say mistress:
 If the player is impressed with the NPC (unknown gender)
 
 +!]
-To say stud/master/mistress of (M - a monster):
+To say stud/master/mistress of (M - a person):
 	if M is presenting as female, say mistress;
 	otherwise say stud.
 
@@ -447,8 +447,8 @@ General purpose method of referring to a monster, "M"'s penis
 
 +!]
  To say DickDesc of (M - a monster):
- 	if full-lady fetish is 1, say "strap-on";
- 	otherwise say manly-penis.
+	if full-lady fetish is 1, say "strap-on";
+	otherwise say manly-penis.
 
 [!<SayLongDickDescOfMonster>+
 
@@ -501,7 +501,7 @@ To say big royal-subject of (M - a monster):
 REQUIRES COMMENTING
 
 +!]
-To say honey of (M - a monster):
+To say honey of (M - a person):
 	if the class of the player is santa's little helper:
 		say "snowflake";
 	otherwise:
@@ -652,7 +652,7 @@ A humiliation reaction: expands to something grammatically equivalent to "blush 
 
 +!]
 To say BlushPrettily:
-	say "[if the humiliation of the player < HUMILIATION-PROUD][one of]growl angrily[or]grind your teeth[or]growl under your breath[at random][otherwise if the humiliation of the player < HUMILIATION-MODEST][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[or]cringe at how you must look[at random][otherwise][one of]feel your cheeks flush[or]blush prettily[or]feel your face flush bright pink[at random][end if]".
+	say "[if the humiliation of the player < HUMILIATION-PROUD][one of]growl inwardly[or]grind your teeth[or]harrumph under your breath[or]wince with shame[or]grimace with shame[at random][otherwise if the humiliation of the player < HUMILIATION-MODEST][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[or]cringe at how you must look[at random][otherwise][one of]feel your cheeks flush[or]blush prettily[or]feel your face flush bright pink[at random][end if]".
 
 [!<BlushN>+
 
@@ -661,7 +661,7 @@ A humiliation reaction: expands to something grammatically equivalent to "blush"
 +!]
 To say blush (N - a number):
 	now N is N / (1 + (the humiliation of the player / 8000));
-	say "[if the player is proud and N < 25][one of]growl angrily[or]grind your teeth[or]growl under your breath[at random][otherwise if the player is not disgraced and N < 25][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[or]cringe at how you must look[at random][otherwise if N < 25][one of]smile shyly[or]lower your eyes[or]mewl bashfully[or]feel your cheeks flush[or]feel yourself getting warmer[at random][otherwise if N < 50][one of]turn a deep shade of red[or]blush deeply[or]whimper with shame[or]shiver with embarrassment[at random][otherwise][one of]hang your head in shame[or]grimace with self-disgust[or]clench your fists with self-loathing[or]shake your head in self-judgement[at random][end if]";
+	say "[if the player is proud and N < 25][one of]growl angrily[or]grind your teeth[or]growl under your breath[at random][otherwise if the player is not disgraced and N < 25][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[or]cringe at how you must look[at random][otherwise if N < 25 and the player is shameless][one of]smile wickedly[or]cheekily bite your lip[or]shiver with excitement[or]shyly lick your lips[at random][otherwise if N < 25][one of]smile shyly[or]lower your eyes[or]mewl bashfully[or]feel your cheeks flush[or]feel yourself getting warmer[at random][otherwise if N < 50 and the player is shameless][one of]smile nervously[or]shyly bite your lip[or]shiver with arousal[at random][otherwise if N < 50][one of]turn a deep shade of red[or]blush deeply[or]whimper with shame[or]shiver with embarrassment[at random][otherwise][one of]hang your head in shame[or]grimace with self-disgust[or]clench your fists with self-loathing[or]shake your head in self-judgement[at random][end if]";
 	humiliate N.
 
 [!<HumiliateReflectN>+

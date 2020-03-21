@@ -54,7 +54,9 @@ To say TitleBimbo:
 			say " [one of][if the flesh volume of hips > 8]huge assed[otherwise]super curvy[end if][or]voluptuous[sticky random]";
 		if there is a worn cursed chastity cage or there is a worn locked chastity cage:
 			if T is not virgin warrior, say " [if the player is gendered male and the size of penis > 6]emasculated[otherwise][one of]locked away[or]chastised[sticky random][end if]";
-		if the pregnancy of the player > 0:
+		if the pregnancy of the player is 3:
+			say " incubator";
+		otherwise if the pregnancy of the player > 0:
 			if the pregnancy of the player is 2:
 				say " permanently";
 			otherwise if the children of the player > 0:
@@ -79,7 +81,7 @@ To say TitleBimbo:
 		otherwise if the virgin of the player is 1:
 			say " chaste";
 		otherwise if the virgin bonus of the player <= -1:
-			if the children of the player is 0 and pregnancy fetish is 1 and the pregnancy of the player > 0, say " unwed";
+			if the children of the player is 0 and pregnancy fetish is 1 and the pregnancy of the player > 0 and the pregnancy of the player < 3, say " unwed";
 			if the bimbo of the player < 9:
 				say " shamefully deflowered";
 			otherwise if the bimbo of the player < 14:

@@ -4,11 +4,8 @@ An equippable is a kind of clothing. An equippable can be slap ready, knee ready
 
 The printed name of an equippable is "[clothing-title-before][MediumDesc of item described][clothing-title-after]".
 
-To say ShortDesc of of (E - an equippable):
+To say ShortDesc of (E - an equippable):
 	say "weapon".
-
-To say MediumDesc of of (E - an equippable):
-	say ShortDesc of E.
 
 Definition: an equippable is alwaysSure: decide yes.
 

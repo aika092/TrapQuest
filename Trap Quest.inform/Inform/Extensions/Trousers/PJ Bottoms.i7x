@@ -15,7 +15,7 @@ To decide which figure-name is clothing-image of (H - a pyjama bottoms):
 To say UniqueClothingDesc of (Y - a kitty cat pyjama bottoms):
 	say "A pair of kitty cat patterned pyjama bottoms[if Y is worn] that make you feel much more in tune with your inner balance[end if].[if Y is crotch-ripped]There is a large rip at the crotch.[end if]".
 
-To say ShortDesc of (Y - a  kitty cat pyjama bottoms):
+To say ShortDesc of (Y - a kitty cat pyjama bottoms):
 	say "pair of kitty cat pyjama bottoms".
 
 Definition: a kitty cat pyjama bottoms is strut enabling: decide no.

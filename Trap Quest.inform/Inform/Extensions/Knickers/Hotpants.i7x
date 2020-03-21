@@ -1,11 +1,12 @@
 Hotpants by Knickers begins here.
 
-A hotpants is a kind of knickers.  The armour of a hotpants is 5. Understand "pair", "pair of", "hot", "pants", "hotpants" as a hotpants.
+A hotpants is a kind of knickers. The armour of a hotpants is 5. Understand "pair", "pair of", "hot", "pants", "hotpants" as a hotpants.
 
 To decide which number is the penis-capacity of (H - a hotpants):
 	decide on 6.
 
 Definition: a hotpants is displacable: decide yes.
+Definition: a hotpants is rippable: decide yes.
 
 Definition: a hotpants is uncovered themed: decide yes.
 

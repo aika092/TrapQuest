@@ -27,6 +27,7 @@ To compute showering (S - swimming-pool):
 		say "The [semen] gets absolutely everywhere! By the time you get out, you're soaked from head to toe in slimy [semen].";
 		compute cum pool coating;
 		compute cum pool face coating;
+		if the player is naked, cutshow figure of bukkake door cutscene 1 for hair;
 		if the semen addiction of the player < 10, say "Your body can't help but become more accustomed to the sensation of being covered in [semen].";
 		SemenAddictUp 1.
 

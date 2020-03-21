@@ -125,7 +125,7 @@ To say EnemaFlav of (M - deep one):
 
 To say EnemaAftermath of (M - deep one):
 	say "[BigNameDesc of M] pulls [his of M] tube-like tongue from your [asshole] with a noisy slurp, and then [he of M] releases you.".
-	
+
 To decide which number is the enema quarts of (M - deep one):
 	decide on a random number between 2 and 3.
 
@@ -133,7 +133,7 @@ Definition: deep one is willing to confiscate: decide yes.
 
 Definition: deep one (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 
 Section 3 - Damage

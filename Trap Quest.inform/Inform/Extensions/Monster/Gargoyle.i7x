@@ -49,13 +49,13 @@ To say MonsterDesc of (M - gargoyle):
 	if mythical creature fetish is 1:
 		say "An eerie stone statue of a [man of M] with long, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, and although rendered in stone, [big he of M] [if M is vigilant]appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
 	otherwise:
-		say "An eerie stone statue of an angel wearing a[if lady fetish < 2]n ill-fitting robe, draped open by her elbows, leaving her chest completely exposed[otherwise]a thin robe that exposes his rippling chest muscles[end if]. [big he of M] is resting on one knee and [his of M] head is bowed, as if offering deference to [his of M] master. [if M is vigilant][big he of M] appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]There's something way too realistic about [him of M]. You get the feeling [he of M] might wake up and attack you at any time.[end if]".
+		say "An eerie stone statue of an angel wearing a[if lady fetish < 2]n ill-fitting robe, draped open by [his of M] elbows, leaving [his of M] chest completely exposed[otherwise]a thin robe that exposes [his of M] rippling chest muscles[end if]. [big he of M] is resting on one knee and [his of M] head is bowed, as if offering deference to [his of M] master. [if M is vigilant][big he of M] appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]There's something way too realistic about [him of M]. You get the feeling [he of M] might wake up and attack you at any time.[end if]".
 
 To set up (M - gargoyle):
 	reset M;
 	now the monstersetup of M is 1;
 	now the difficulty of M is 8;
-	now the blue-balls of M is 3;
+	now the blue-balls of M is 30;
 	let R be a random no-roof haunted room;
 	unless R is room, now R is Mansion25;
 	now M is in R;
@@ -106,7 +106,7 @@ To compute perception of (M - gargoyle):
 	if M is vigilant:
 		compute appearance assessment of M;
 	otherwise:
-		say "Her [if mythical creature fetish is 1]slitted [end if]eyes seem to pass over you, and she returns to her silent sleep.";
+		say "[big his of M] [if mythical creature fetish is 1]slitted [end if]eyes seem to pass over you, and [he of M] returns to [his of M] silent sleep.";
 		now M is uninterested;
 		now the sleep of M is 30.
 
@@ -313,36 +313,36 @@ To say ErectionForceFlav of (M - gargoyle):
 
 To say ErectionUseFlav of (M - gargoyle):
 	if the size of penis > 8 and lady fetish < 2:[boobjob!]
-		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M]'s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of her tongue and lips.[at random]";
+		say "[one of][BigNameDesc of M] pumps your [ShortDesc of penis] with [his of M] breasts, grunting ravenously as [his of M] tongue strokes your throbbing length.[or][BigNameDesc of M] drools as [his of M] tongue swirls around your tip, mixing with a bit of your own 'drool' to lubricate the [ShortDesc of penis] sandwiched between [his of M] jiggling breasts.[or][BigNameDesc of M] makes noisy slurping noises as [he of M] works your [ShortDesc of penis], lubricating [his of M] breasts with tiny bits of drool as they skilfully massage your shaft.[or][BigNameDesc of M]'s breasts bump your sack as [he of M] works your [manly-penis], torturing the tip with practised movements of [his of M] tongue and lips.[at random]";
 		cutshow Figure of gargoyle BJ 3 for M;
 	otherwise if the size of penis > 2:
-		say "[one of][BigNameDesc of M] slurps away at your [Shortdesc of penis], teasing your most sensitive parts with her tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from balls to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls her tongue around your tip as she mercilessly pumps you with [his of M] lips.[at random]";
+		say "[one of][BigNameDesc of M] slurps away at your [Shortdesc of penis], teasing your most sensitive parts with [his of M] tongue.[or][BigNameDesc of M] mercilessly pleasures you with [his of M] tongue, wings flapping excitedly as [his of M] lips fervently stroke the base of your [manly-penis].[or][BigNameDesc of M] sucks relentlessly, drool leaking out the side of [his of M] mouth as [he of M] lavishes you with expert stimulation from balls to tip.[or][BigNameDesc of M] hums as [he of M] suckles your [ShortDesc of penis], [if mythical creature fetish is 1]sounding very much like a starved animal in the middle of a meal[otherwise]as if your shaft were the most delicious thing in the entire world[end if].[or][BigNameDesc of M] swirls [his of M] tongue around your tip as [he of M] mercilessly pumps you with [his of M] lips.[at random]";
 		if lady fetish < 2, cutshow Figure of gargoyle BJ 4 for M;
 	otherwise:[doubt this will come up so it's mostly copypasta]
-		say "[one of][BigNameDesc of M] relentlessly teases your [Shortdesc of penis] with her tongue.[or][BigNameDesc of M] teases your [Shortdesc of penis] with the very tip of her tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with her tongue.[in random order]".
+		say "[one of][BigNameDesc of M] relentlessly teases your [Shortdesc of penis] with [his of M] tongue.[or][BigNameDesc of M] teases your [Shortdesc of penis] with the very tip of [his of M] tongue, as if stimulating a clitoris[or][BigNameDesc of M] pleasures you mercilessly with [his of M] tongue.[in random order]".
 
 [
 TODO: maybe she stores it for the vampiress to harvest or stores it for herself to use on you when your penis gets too tiny.
 ]
 To compute erection orgasm of (M - gargoyle):
-	say "You can[']t take it anymore! Your back arches as your cock fires several thick ropes of [semen] directly into [NameDesc of M]'s mouth, and just as you think you're all tapped out, [one of]an incredibly pleasurable tingle passes through your balls and [his of M] eyes glow bright white[or]once again, you feel that terrible pleasurable feeling in your balls as [his of M] eyes glow bright white[stopping]. Your orgasm starts up again at three times the intensity, visibly ballooning [NameDesc of M]'s cheeks as [he of M] drains strength, energy, and every last drop of [semen] from your helpless body.";
+	say "You can't take it anymore! Your back arches as your [player-penis] fires several thick ropes of [semen] directly into [NameDesc of M]'s mouth, and just as you think you're all tapped out, [one of]an incredibly pleasurable tingle passes through your balls and [his of M] eyes glow bright white[or]once again, you feel that terrible pleasurable feeling in your balls as [his of M] eyes glow bright white[stopping]. Your orgasm starts up again at three times the intensity, visibly ballooning [NameDesc of M]'s cheeks as [he of M] drains strength, energy, and every last drop of [semen] from your helpless body.";
 	StrengthDown 2;
 	FatigueUp 20;
 	PenisDown 1;
 	increase the satiated of M by 1;
-	if the blue-balls of M > 2, decrease the blue-balls of M by 2;
+	if the blue-balls of M >= 20, decrease the blue-balls of M by 20;
 	if the size of penis > 8, cutshow Figure of gargoyle BJ 5 for M;
 	otherwise cutshow Figure of gargoyle BJ 6 for M;
 	now penis is not penis-erect.[we must do this, because we don't handle erection loss normally while we're penetrating a monster]
 
 To say ErectionLostFlav of (M - gargoyle):
-	say "[big he of M] seems satisfied, and [he of M] climbs off you and silently returns to [his of M] pedestal. As your [ShortDesc of penis] softens, you realize it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [him of M]self! You've been drained!";
+	say "[big he of M] seems satisfied, and [he of M] climbs off you and silently returns to [his of M] pedestal. As your [ShortDesc of penis] softens, you realize it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [himself of M]! You've been drained!";
 	Bore M;
 	compute post climax effect of M in penis;
 
 To say ErectionClimaxFlav of (M - gargoyle):
 	say "[line break][BigNameDesc of M] slows down and peers at you in disappointment before letting go and climbing back onto [his of M] pedestal.";
-	increase the blue-balls of M by 1;
+	increase the blue-balls of M by 10;
 	decrease the satiated of M by 2;
 	Bore M.
 
@@ -360,7 +360,7 @@ To compute damage of (M - gargoyle):
 		if the sleep of M > 0:
 			say "[BigNameDesc of M] seems completely unperturbed.";
 		otherwise if M is guarding or M is uninterested:
-			say "[BigNameDesc of M] faces you and slowly steps down from her pedestal.";
+			say "[BigNameDesc of M] faces you and slowly steps down from [his of M] pedestal.";
 			now M is unleashed;
 			anger M;
 		otherwise:

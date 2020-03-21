@@ -178,7 +178,7 @@ REQUIRES COMMENTING
 
 +!]
 To breasts orgasm shamefully:
-	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
 	[severeHumiliate;]
@@ -822,7 +822,7 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	let O2 be a random number between N and A;
 	let O3 be a random number between N and A;
 	if debuginfo > 0, say "Player might actually be able to orgasm! Final orgasm check: stimulation ([N]) & [one of]arousal-based [or][stopping]orgasm resistance ([A]); RNG([A]~[N]) = [O1] and RNG([A]~[N]) = [O2] must both be above minimum value of [A].[roman type][line break]";
-	if O1 > A and O2 > A[ and O3 > A], decide yes; [With O2: If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%;   With O3: If N = A+1 then orgasm chance is 1 in 8; if N = A+2 then orgasm chance is 8 in 27 (just under 1 in 3); if N = A+3 then orgasm chance is 27 in 64 which is over 40%]
+	if O1 > A and O2 > A[ and O3 > A], decide yes; [With O2: If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%; With O3: If N = A+1 then orgasm chance is 1 in 8; if N = A+2 then orgasm chance is 8 in 27 (just under 1 in 3); if N = A+3 then orgasm chance is 27 in 64 which is over 40%]
 	decide no.
 
 [!<DecideWhichNumberIsFuckholeArousal>+

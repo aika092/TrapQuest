@@ -45,6 +45,9 @@ To say BecomesBoredFlav of (M - vine boss):
 
 Part 2 - Combat
 
+To say MovementBlock of (M - vine boss):
+	say "As you clamber to escape the pit, a vine wraps around your ankle and pulls you right back down to where you started!".
+
 Section 1 - Attack
 
 Definition: vine boss is a tripper if diaper quest is 1.
@@ -94,9 +97,7 @@ To compute (M - vine boss) removing (C - a thing): [This is used for removing in
 	let F be a random orifice penetrated by M;
 	say "Using a particularly nimble vine, [NameDesc of M] effortlessly pulls out your [printed name of C] and discards it onto the floor.";
 	now C is in the location of the player;
-	if C is anal beads:
-		if F is vagina, ruin vagina times the notch-taken of C / 2;
-		otherwise ruin asshole times the notch-taken of C / 2;
+	if C is anal beads, ruin F times the notch-taken of C / 2;
 	dislodge C.
 
 To compute (M - vine boss) attacking (C - a clothing): [This should change for any special flavour or varied mechanics on how the clothing is removed.]
@@ -112,8 +113,8 @@ This is the vine boss ultimate victory attack rule:
 		let V be a random vines penetrating a fuckhole;
 		let F be a random fuckhole penetrated by V;
 		if the TrapNo of V is 3:
-			if ex-princess is alive and ex-princess is unconcerned and the blue-balls of vine boss < the blue-balls-limit of vine boss:
-				increase the blue-balls of vine boss by 1;
+			if ex-princess is alive and ex-princess is unconcerned and the blue-balls of vine boss < 10:
+				now the blue-balls of vine boss is 10;
 				say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your [variable F] it pushes you towards its huge chasm of a mouth. Suddenly the vines holding you are all slashed in a brilliant display of light! As you fall back to the ground you turn around and see [NameDesc of ex-princess] standing behind you.[line break][speech style of ex-princess]'This fucker's got a lot bigger since the last time I saw [him of vine boss]. I heard noises and thought you might need some help. Looks like I was right.'[roman type][line break][big he of ex-princess] warily looks all around [him of ex-princess], at the new freshly-sprouted vines that are all beginning to converge on [him of ex-princess].[line break][speech style of ex-princess]'I... actually can't stay. My magic is needed elsewhere. Best of luck!'[roman type][line break]";
 				destroy V;
 				if the traitor-hypno of hypno-lesson > 0:

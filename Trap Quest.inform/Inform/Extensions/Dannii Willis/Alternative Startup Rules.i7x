@@ -62,7 +62,7 @@ Include (-
 ];
 -).
 
-The recover objects rule is listed in the before starting the virtual machine rules. 
+The recover objects rule is listed in the before starting the virtual machine rules.
 The recover objects rule translates into I6 as "ASR_GGRecoverObjects".
 Include (-
 [ ASR_GGRecoverObjects;
@@ -87,7 +87,7 @@ Include (-
 -).
 
 [ Instead of introducing adding a new rule for the FIX_RNG code, we'll add it into the seed random number generator rule ]
-Include (- 
+Include (-
 [ SEED_RANDOM_NUMBER_GENERATOR_R i;
 	#ifdef FIX_RNG;
 	@random 10000 i;

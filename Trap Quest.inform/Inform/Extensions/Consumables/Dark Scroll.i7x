@@ -1,6 +1,6 @@
 Dark Scroll by Consumables begins here.
 
-A dark scroll is a kind of thing. There is 1 dark scroll. The printed name of dark scroll is "[TQlink of item described]dark scroll[TQxlink of item described][verb-desc of item described]". The text-shortcut of dark scroll is "dks". 
+A dark scroll is a kind of thing. There is 1 dark scroll. The printed name of dark scroll is "[TQlink of item described]dark scroll[TQxlink of item described][verb-desc of item described]". The text-shortcut of dark scroll is "dks".
 To say ExamineDesc of (B - a dark scroll):
 	say "A scroll given to you by the Herald. It isn't in any language you know, but for some reason you know what it says.".
 
@@ -16,7 +16,7 @@ Check casting:
 Carry out casting:
 	let M be a random woman in the location of the player;
 	allocate 6 seconds;
-	say "You read out the scroll the Herald gave you. Pink light suddenly begins to glow around [the printed name of M], and she suddenly vanishes in a flash!";
+	say "You read out the scroll the Herald gave you. Pink light suddenly begins to glow around [the printed name of M], and [he of M] suddenly vanishes in a flash!";
 	vanish M;
 	now the woman-bimbo of woman-barbara is 6;
 	now the quest-status of herald is 2;

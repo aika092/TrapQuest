@@ -318,6 +318,9 @@ Check drinking nail-bomb:
 	if nail-bomb is cursed:
 		say "But instead of the shards flying towards everyone else, they fly back towards your hands! ";
 		if fake-nails is not worn:
+			repeat with E running through worn hand ready equippables:
+				say "You are forced to drop your [E].";
+				now E is in the location of the player;
 			say "Moments later you are wearing a set of long and slutty pink fake nails. Wow that was fast! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
 			summon fake-nails cursed;
 		otherwise if fake-nails is not cursed:
@@ -440,7 +443,7 @@ A time based rule (this is the life elixir decay rule):
 			otherwise if the soreness of vagina > 0:
 				say "Your [vagina] feels [if the openness of vagina < 6]a bit less sore[otherwise][second custom style]ready for more[roman type][end if]!";
 				heal vagina times 1;
-			otherwise if the pregnancy of the player > 0:
+			otherwise if the pregnancy of the player > 0 and the pregnancy of the player < 3:
 				say "You feel life force rushing through your body, as if trying to find something to heal. After rushing through your torso, your [vagina] and your [asshole], it flows through your cervix into your womb.";
 				let B be the largeness of belly;
 				unless the womb volume of vagina is 30, increase the womb volume of vagina by 1;
@@ -1218,7 +1221,7 @@ A time based rule (this is the acceleration tincture decay rule):
 				now acceleration-tincture-bonus is 0;
 				say "Time speeds back up to its normal speed.";
 		otherwise:
-			if the pregnancy of the player > 0 and the largeness of belly < 10:
+			if the pregnancy of the player > 0 and the pregnancy of the player < 3 and the largeness of belly < 10:
 				increase the womb volume of vagina by 1;
 			if the stomach of the player > 1 and the thirst of the player < 5:
 				stomachdown 1;

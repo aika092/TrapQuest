@@ -123,8 +123,11 @@ To say ClothingDesc of (C - baby doll crop top):
 To say ShortDesc of (C - baby doll crop top):
 	say "baby doll crop top".
 
+To decide which number is the initial outrage of (C - baby doll crop top):
+	if diaper quest is 1, decide on 0;
+	decide on 2.
 To decide which number is the initial cringe of (C - baby doll crop top):
-	decide on 4.
+	decide on 3.
 
 Part 4 - Striped Exposing Top
 

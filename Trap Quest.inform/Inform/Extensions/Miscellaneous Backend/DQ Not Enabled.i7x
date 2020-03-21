@@ -31,7 +31,7 @@ To decide which figure-name is YesNoBackground:
 	if the size of penis > 7, decide on figure of YesNoBackground6;
 	decide on figure of YesNoBackground2.
 
-The story description is "Explore a dangerous world of transformation, penetration and bimbofication. 18+ only!".
+The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
 The release number is 10.
 
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".

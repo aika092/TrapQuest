@@ -47,7 +47,7 @@ To say AttractionWorry of (N - a monster):
 	otherwise:
 		let M be a random monster in the location of the player;
 		if M is a monster:
-			[If there's a monster right here, the player probably isn't going to worry about a nearby monster?  Or would they.?  Hmm.]
+			[If there's a monster right here, the player probably isn't going to worry about a nearby monster? Or would they.? Hmm.]
 			do nothing;[We do nothing instead of explicitly "compute correct kneeling reaction of M" because that's automatically done by the "Report kneeling when the player is in danger and seconds > 1" rule. If we did it here too, we'd get two messages in a row.]
 		otherwise:
 			if the player is glue stuck:
@@ -133,6 +133,7 @@ To compute sleeping of (M - a monster):
 	compute sleep reduction of M;[needs to come after healing and recovery]
 	if M is simulated, compute unique periodic effect of M;
 	compute unique unsimulated periodic effect of M;
+	decrease the teaseTimer of M by 1;
 	if the last-interaction of M > 0, decrease the last-interaction of M by 1.
 
 To compute scared reduction of (M - a monster):

@@ -160,6 +160,8 @@ To teleport via (W - a warp portal):
 				if C is removable and C is not headgear and C is not combat visor and C is not armband:
 					dislodge C;
 					now C is in Predicament20;
+					clean C;
+					WaterEmpty C;
 			otherwise if C is not worn:
 				now C is in Predicament20;
 		now the semen coating of face is 0;
@@ -192,7 +194,10 @@ To teleport via (W - a warp portal):
 		if TP is trophy, now TP is in Predicament20;
 		now current-predicament is P;
 		now turnsWithSoiledDiaper is 0;
+		if the body soreness of the player > 4, now the body soreness of the player is 4;
 		now the printed name of Predicament01 is "Abandoned Warehouse";
+		repeat with R running through predicament rooms:
+			totally clean R;
 		execute P;
 		increase the times-completed of P by 1;
 		now temporaryYesNoBackground is Figure of small image;

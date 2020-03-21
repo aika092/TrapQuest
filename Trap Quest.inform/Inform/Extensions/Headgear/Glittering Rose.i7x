@@ -65,7 +65,7 @@ babymaking-quest is a headgear-clothing-quest. babymaking-quest has a number cal
 
 To uniquely set up (C - glittering rose):
 	now the quest of C is babymaking-quest;
-	if the pregnancy of the player > 0, now the previously-pregnant of babymaking-quest is 1.
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 
 To say QuestFlav of (Q - babymaking-quest):
 	say "You sense it wants you to get pregnant.".
@@ -75,7 +75,7 @@ To say QuestTitle of (Q - babymaking-quest):
 
 This is the check for new pregnancy rule:
 	if previously-pregnant of babymaking-quest is 0:
-		if the pregnancy of the player > 0:
+		if the pregnancy of the player > 0 and the pregnancy of the player < 3:
 			now the previously-pregnant of babymaking-quest is 1;
 			progress quest of babymaking-quest;
 	otherwise if the pregnancy of the player <= 0:

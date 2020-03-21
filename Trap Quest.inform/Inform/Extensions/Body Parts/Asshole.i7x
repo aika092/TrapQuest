@@ -17,14 +17,15 @@ To say FullExamineDesc of (B - asshole):
 To decide which object is the concealer of (A - asshole):
 	let C be a random worn actually dense potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
-	if the total volume of hips > 13, decide on hips;
+	if the total volume of hips > 12:
+		if the player is upright or the total volume of hips > 15, decide on hips;
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (A - asshole):
 	let C be a random worn potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
-	if the player is upright and the total volume of hips > 2, decide on hips;
-	decide on the concealer of A.
+	if the player is upright, decide on hips;
+	decide on the concealer of asshole.
 
 
 [Can it be accessed right now with nothing blocking it?]

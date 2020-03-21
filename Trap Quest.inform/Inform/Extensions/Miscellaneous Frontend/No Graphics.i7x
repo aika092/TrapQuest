@@ -5,7 +5,7 @@ No Graphics by Miscellaneous Frontend begins here.
 To decide which number is diaper quest:
 	decide on 0.
 
-The story description is "Explore a dangerous world of transformation, penetration and bimbofication. 18+ only!".
+The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
 The release number is 10.
 
 character-version is a number that varies.

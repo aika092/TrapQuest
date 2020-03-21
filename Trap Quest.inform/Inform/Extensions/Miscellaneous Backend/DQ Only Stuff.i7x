@@ -121,7 +121,7 @@ To decide which text is tonguesColour:
 	decide on "white".
 To say tongueStatus of (C - a clothing):
 	say "".
-portal-pants is a knickers. portal-pants is unique.  The printed name of portal-pants is "portal pants".
+portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
 Include Stuffies by Equippables.
 
@@ -722,6 +722,6 @@ To decide which figure-name is the bannerImage of (T - MirrorAnimation):
 	decide on Figure of Mirror Loading Banner.
 
 To compute unique setup of (T - MirrorAnimation):
-	if diaper messing >= 3, now the image-reel of T is {Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2,  Figure of Mirror Animation Frame 4, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3,  Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5 }.]
+	if diaper messing >= 3, now the image-reel of T is {Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 4, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5 }.]
 
 DQ Only Stuff ends here.

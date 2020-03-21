@@ -21,13 +21,13 @@ To say ClothingDesc of (H - severed-tentacle):
 
 To say ShortDesc of (H - severed-tentacle):
 	say "[if the intelligence of the player is 1 and H is worn]Master[otherwise]severed tentacle[end if]".
-	
+
 To compute SelfExamineDesc of (H - severed-tentacle):
 	say "You have a gently throbbing tentacle wrapped around your head.".
-	
+
 Carry out wearing severed-tentacle:
 	say "As you lay the tentacle on your head, it suddenly wraps tightly around it! You feel gentle suction, and then a voice:[line break][first custom style]'As expected you reveal yourself for the [whore] you are. Your body will serve me now!'[roman type][line break]".
-	
+
 Check TQeating severed-tentacle:
 	if the noun is worn, say "You would need to take it off your head first." instead.
 
@@ -39,7 +39,7 @@ Carry out TQeating severed-tentacle:
 
 To compute throbbing of (H - severed-tentacle) into (T - throbbing-tentacle):
 	let M be mind flayer;
-	say "You feel the tentacle slightly release, and you reverently reach up remove [him of M] from your head. Holding the undulating shaft in both hands, you lower [him of M] down to your [if the player is female]vaginal[otherwise]anal[end if] entrance. [if the player is not lewdly exposed]With awesome strength, [italic type]your Master[roman type] rips aside all obstructions, then[otherwise][italic type]Your Master[roman type] gives you an experimental prod, then[end if] slowly yet forcefully enters you. As [he of M] pushes [he of M]self in, you feel compelled to rub [his of M] length in your hands and are rewarded by [him of M] swelling inside you. After an excruciating moment that feels like an eternity, [he of M] bottoms out inside you, pulsing and rubbing until [he of M] fills you completely. [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
+	say "You feel the tentacle slightly release, and you reverently reach up remove [him of M] from your head. Holding the undulating shaft in both hands, you lower [him of M] down to your [if the player is female]vaginal[otherwise]anal[end if] entrance. [if the player is not lewdly exposed]With awesome strength, [italic type]your Master[roman type] rips aside all obstructions, then[otherwise][italic type]Your Master[roman type] gives you an experimental prod, then[end if] slowly yet forcefully enters you. As [he of M] pushes [himself of M] in, you feel compelled to rub [his of M] length in your hands and are rewarded by [him of M] swelling inside you. After an excruciating moment that feels like an eternity, [he of M] bottoms out inside you, pulsing and rubbing until [he of M] fills you completely. [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
 	repeat with C running through worn top level protection clothing:
 		now C is in pink wardrobe;
 	repeat with D running through worn clothing:
@@ -78,8 +78,8 @@ To compute periodic effect of (H - severed-tentacle):
 				anally orgasm shamefully;
 			otherwise:
 				vaginally orgasm shamefully.
-				
-	
+
+
 Check taking off severed-tentacle:
 	let S be the noun;
 	let T be a random off-stage throbbing-tentacle;

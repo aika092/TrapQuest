@@ -44,7 +44,7 @@ To decide which number is the bondage dexterity penalty of the player:
 		increase D by (the restrictivity of C) * (the restrictivity of C); [The more parts of the body this item connects, the more harshly it affects the player's dexterity.]
 	decide on D.
 
-bondage is a kind of clothing. bondage is usually metal.  bondage is usually unique. bondage is usually manly.
+bondage is a kind of clothing. bondage is usually metal. bondage is usually unique. bondage is usually manly.
 
 
 Definition: a bondage is discovered varied: decide no.

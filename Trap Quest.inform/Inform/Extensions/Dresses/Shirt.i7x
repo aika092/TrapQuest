@@ -85,7 +85,7 @@ There is 1 blue rubber shirt.
 
 Figure of blue rubber shirt is the file "Items/Clothes/Upper/Latex/latexshirt2.png".
 
-To decide which figure-name is clothing-image of (C -  a blue rubber shirt):
+To decide which figure-name is clothing-image of (C - a blue rubber shirt):
 	decide on figure of blue rubber shirt.
 
 To say ClothingDesc of (C - a blue rubber shirt):

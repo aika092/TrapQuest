@@ -52,20 +52,28 @@ Clothing can be temporarily-displaced.
 REQUIRES COMMENTING
 
 *!]
-toilet is a backdrop. Understand "urinal", "urinals", "potty", "throne", "bathroom" as toilet. The text-shortcut of a toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
 To say ExamineDesc of (T - toilet):
 	say "A toilet[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
+To say ExamineDesc of (T - urinal):
+	say "A urinal[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
 	if the player is in Hotel38 and watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
-	if the location of the player is urinals, decide on figure of urinal;
 	decide on figure of toilet.
 
+To decide which figure-name is the examine-image of (T - urinal):
+	decide on figure of urinal.
+
 This is the toilet gets focused rule:
-	if watersports mechanics is 1 and (the location of the player is urinals or the location of the player is toilets) and the the player is not in Dungeon11 and (ex-princess is not in the location of the player or ex-princess is not caged), focus-consider toilet.
+	if watersports mechanics is 1 and the location of the player is toilets and the the player is not in Dungeon11, focus-consider toilet.
 The toilet gets focused rule is listed in the focus finding rules.
+This is the urinal gets focused rule:
+	if watersports mechanics is 1 and the location of the player is urinals and (ex-princess is not in the location of the player or ex-princess is not caged), focus-consider urinal.
+The urinal gets focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - toilet):
 	if ButtonTableFull is 0 and watersports mechanics is 1 and the player is not incontinent:
@@ -86,6 +94,13 @@ To construct normal buttons for (T - toilet):
 			now the ButtonCommand entry is "drop [text-shortcut of E]";
 			now the ButtonColour entry is lightModeFullGreen;
 			if the player is immobile, now the ButtonColour entry is lightModeFullRed.
+To construct normal buttons for (T - urinal):
+	if ButtonTableFull is 0 and watersports mechanics is 1 and the player is not incontinent:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of ToiletButton;
+		now the ButtonCommand entry is "use urinal";
+		now the ButtonColour entry is lightModeFullGreen;
+		if the player is prone, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to stand]
 
 
 [!<YourselfIsAbleToUseAUrinal>+
@@ -94,8 +109,8 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is able to use a urinal:
-	if delayed urination is 1 or the player is immobile or the player is in danger or the player is flying, decide no;
 	if the player is potentially able to use a urinal:
+		if delayed urination is 1 or the player is immobile or the player is in danger or the player is flying, decide no;
 		if watersports mechanics is 0 or there is worn pee covering undisplacable clothing, decide no;
 		decide yes;
 	decide no.
@@ -106,9 +121,9 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is able to use a toilet:
-	if delayed urination is 1 or the player is immobile or the player is in danger or the player is flying, decide no;
 	if the player is potentially able to use a toilet:
-		if (watersports mechanics is 0 or there is pee covering undisplacable clothing) and (asshole is actually occupied or the total squirtable fill of belly <= 0 or there is ass covering undisplacable clothing), decide no;
+		if delayed urination is 1 or the player is immobile or the player is in danger or the player is flying, decide no;
+		if (toilet allowance is 1 or diaper lover is 0) and (watersports mechanics is 0 or there is pee covering undisplacable clothing) and (asshole is actually occupied or the total squirtable fill of belly <= 0 or there is ass covering undisplacable clothing), decide no;
 		decide yes;
 	decide no.
 
@@ -135,9 +150,7 @@ Definition: yourself is potentially able to use a urinal:
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is able to use the toilet past their diaper:
-	if delayed urination is not 1 and there is a worn total protection knickers and the player is not flying and (the number of worn pee covering clothing - the number of worn pee covering displacable clothing) <= 1 and the player is potentially able to use a toilet and toilet allowance is 0 and the player is not in danger and diaper lover > 0, decide yes;
-	decide no.
+Definition: yourself is able to use the toilet past their diaper if toilet allowance is 0 and diaper lover > 0 and the player is able to use a toilet.
 
 [!<ReportWhenThePlayerIsAbleToUseTheToiletPastTheirDiaper>+
 
@@ -145,10 +158,11 @@ REQUIRES COMMENTING
 
 +!]
 Report going when the player is able to use the toilet past their diaper:
-	let D be a random worn total protection knickers;
-	if the player is feeling full or the player is bursting:
-		say "[if D is cursed][bold type]As you enter this room, the leg holes of your [ShortDesc of D] [bold type][one of]seem to [or][stopping]temporarily loosen. [roman type][one of]You can't take them off because the waist is still tightly sealed, but you could probably displace the crotch in order to use the loo. [or][stopping][otherwise]This room has a toilet in it. [end if]Do you want to pull your [D] to the side and use the [if the location of the player is urinals]urinal[otherwise]toilet[end if] like an adult? ";
-		if the player is reverse bimbo consenting, compute toilet use.
+	let PC be a random worn pee covering undisplacable clothing;
+	let AC be a random ass covering undisplacable clothing;
+	if (AC is clothing and the player is feeling full) or (PC is clothing and the player is bursting):
+		if PC is a clothing, now AC is PC;
+		say "[bold type]As you enter this room, the leg holes of your [ShortDesc of AC] [bold type][one of]seem to [or][stopping]temporarily loosen. [roman type][if AC is cursed][one of]You can't take them off because the waist is still tightly sealed, but you could probably displace the crotch in order to use the loo.[or][stopping][otherwise]You could probably pull it to the side and use the toilet without removing it if you liked.[end if]".
 
 
 Toileting is an action applying to one thing.
@@ -158,6 +172,9 @@ Check toileting:
 	if the player is immobile or the player is in danger or the player is flying, say "Aren't you a bit busy?" instead;
 	let PC be a random worn pee covering undisplacable clothing;
 	let AC be a random ass covering undisplacable clothing;
+	if the player is able to use the toilet past their diaper:
+		now PC is the player;
+		now AC is the player;
 	if the location of the player is urinals:
 		if watersports mechanics is 0, say "You have no need to use that!" instead;
 		if the player is incontinent, say "You have no control over that - you are fully incontinent." instead;
@@ -214,9 +231,9 @@ Check urinating:
 	if the bladder of the player is 0 and the number of worn prostate massager plugs is 0:
 		if delayed urination is not 1, say "You don't feel the need." instead;
 		if debugmode is 1, say "resetting accidental urination flag.";
-		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops!  Oh well, let's not break the game.]
+		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops! Oh well, let's not break the game.]
 		say "[one of]Player was forced to urinate when they had nothing in their bladder, please report the bug to Aika![or][stopping]";
- 		do nothing instead;
+		do nothing instead;
 	[if diaper lover is 0 and (the player is not bursting or the bladder of the player is 0):
 		if delayed urination is 0, say "You don't feel the need." instead;
 		do nothing instead;]
@@ -291,7 +308,7 @@ To compute toilet use:
 	allocate 6 seconds;
 	let too be "";
 	let initialBladder be the bladder of the player;
-	if watersports mechanics is 1 and the number of pee covering undisplacable clothing is 0:
+	if watersports mechanics is 1 and (the number of pee covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the bladder of the player > 0:
 			let C be a random pee covering clothing;
 			if C is clothing, say "Pulling the crotch fabric of your [ShortDesc of C] to one side, you ";
@@ -300,7 +317,7 @@ To compute toilet use:
 			now too is " too";
 			now the bladder of the player is 0;
 			now toiletJustUsed is true;
-	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and the number of ass covering undisplacable clothing is 0:
+	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and (the number of ass covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2:
 			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing her. [if the bimbo of the player < 10][one of]You blush at the thought she'll know how you've been used back there.[or]Once again you've sort of creampied her.[or][variable custom style]I hope she doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style]She must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if she appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
 		otherwise:
@@ -517,7 +534,7 @@ To start urination:
 						if S is not K:
 							say "A holy glow surrounds your [ShortDesc of S] as it [if S is skirted]billows upwards[otherwise]falls down[end if], exposing the rapidly yellowing diaper underneath!";
 							displace S;
-				progress quest of altar-sex-quest;
+				progress quest of priestess-service-quest;
 			if the class of the player is priestess and K is currently visible:
 				let M be a random uninterested willing to change diapers intelligent undefeated monster in the dungeon;
 				if M is monster:
@@ -1080,7 +1097,7 @@ REQUIRES COMMENTING
 To say ClothesPeeDeclaration of (M - a monster):
 	if delayed urination is 0: [Voluntary urination]
 		say "[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder in shame as you allow [NameDesc of M] to watch you.[otherwise]You hang your head submissively, not looking [NameDesc of M] in the eyes.[end if]";
-	otherwise:  [Accidental urination]
+	otherwise: [Accidental urination]
 		if the humiliation of the player < HUMILIATION-SHAMELESS - 2000, say "[if the player is able to speak][line break][variable custom style]'Eek! Don't watch!'[roman type][line break][end if]You stay still like a deer in headlights as [NameDesc of M] watches you wet yourself.";
 		otherwise say "[BrokenPeeFlav during sex with M]".
 
@@ -1151,7 +1168,7 @@ This is the compulsory urination rule:
 				progress quest of adult-baby-quest;
 				if D is not currently visible and there is an intelligent monster in the location of the player, progress quest of stealth-diaper-quest;
 				progress quest of bursting-quest;
-				if diaper quest is 1 and the player is in the location of dungeon altar, progress quest of altar-sex-quest;
+				if diaper quest is 1 and the player is in the location of dungeon altar, progress quest of priestess-service-quest;
 				if rattle is worn and the raw-magic-modifier of rattle < 4:
 					say "Your rattle glows blue for a moment! It feels more powerful.";
 					now the raw-magic-modifier of rattle is 4;

@@ -327,7 +327,7 @@ To say TransformReaction of (C - a sissy-suspenders):
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
 
 
-string-belt is a clothing. [No clashes.]  The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
+string-belt is a clothing. [No clashes.] The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
 
 Figure of string belt 0 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt0.png".
 Figure of string belt 1 is the file "Items/Clothes/Lower/Waist/Belts/stringbelt1.png".

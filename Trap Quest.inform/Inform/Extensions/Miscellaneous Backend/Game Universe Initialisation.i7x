@@ -31,8 +31,8 @@ To Start The Machine:
 	move pink smoke backdrop to all smoky rooms;
 	move water-body backdrop to all water-bodied rooms;
 	if debugmode > 1, say "Now configuring toilets.";
-	move toilet backdrop to all urinals rooms;
 	move toilet backdrop to all toilets rooms;
+	move urinal backdrop to all urinals rooms;
 	if spontaneous tattoos is 1:
 		if background-pure is 1, summon virgin void tattoo;
 		otherwise summon ink-me tattoo;

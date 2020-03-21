@@ -94,7 +94,7 @@ A metal crate is a kind of container. A metal crate is openable. A metal crate i
 To say ShortDesc of (C - a metal crate):
 	say "crate".
 
-Figure of metal crate is the file "Env/Dungeon/crate1.png".
+Figure of metal crate is the file "Env/Dungeon/crate1.jpg".
 Figure of toy box is the file "Env/Dungeon/toybox1.png".
 
 To decide which figure-name is the examine-image of (C - a metal crate):
@@ -329,6 +329,8 @@ To add treasure to (X - a treasure chest):
 			say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...[NewbieSpellFlav]";
 			compute learning of S;
 			cutshow figure of recipe for S;
+			say "Magic energy flows through the words and into your body.";
+			MagicPowerUp 1;
 		otherwise:
 			now R is in X;
 			say "You find a [printed name of R] written on the inside of the lid! Interesting...";

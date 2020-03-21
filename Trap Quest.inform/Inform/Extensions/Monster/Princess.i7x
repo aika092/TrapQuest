@@ -357,6 +357,40 @@ To compute resolution of (M - ex-princess) taking (T - a thing):
 To compute resolution of (M - ex-princess) taking (T - skeleton key):
 	destroy T;
 	now M is guarding;
+	now School35 is use-the-floor;
+	let LN be the list of alive undefeated staff members;
+	sort LN in random order;
+	repeat with N running through LN:
+		now N is in School33;
+		anger N;
+		now N is guarding;
+		now the scared of N is 0;
+		if the number of unleashed staff member in the location of M < 2:
+			now N is unleashed;
+			try N going north;
+			now N is interested;
+	repeat with N running through alive students:
+		now N is guarding; [This will stop them joining the fight]
+	let STN be the number of staff members in the location of the player;
+	if STN > 0:
+		say "There is no time to talk to [NameDesc of M] about [his of M] outfit before [his of M] [if STN > 1]captors arrive[otherwise]captor arrives[end if], clearly somehow alerted to [his of M] escape!";
+		let N be headmistress;
+		if N is not in the location of the player, now N is a random staff member in the location of the player;
+		say "[BigNameDesc of N] speaks.[line break][speech style of N]'Really, [NameBimbo]? After all the trust we put in you, and after all we've taught you, this is how you repay us? You WILL regret this.'[roman type][line break]";
+		if armband is held:
+			say "Your [MediumDesc of armband] vanishes!";
+			destroy armband; [destroyed rather than in Holding Pen will allow the player back into the school]
+		say "[speech style of M]'Not likely.'[roman type][line break]";
+		now N is a random unleashed staff member in the location of M;
+		compute M enslaving N;
+		if STN > 1:
+			if royal scepter is retained by M:
+				repeat with STU running through staff members:
+					if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
+			otherwise:
+				say "[BigNameDesc of M] falls to [his of M] knees with fatigue. [big he of M] looks up at you.[speech style of M]'You can take care of the [if STN > 2]others[otherwise]other one[end if], right?'[roman type][line break]";
+				if the player is prone, say "With a final flick of [his of M] wand, [he of M] helps you to stand.";
+				now the stance of the player is 0;
 
 Check going while ex-princess is guarding:
 	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get captured again. You should see this through to the end." instead.
@@ -364,51 +398,10 @@ Check going while ex-princess is guarding:
 
 A later time based rule (this is the school rescue fight rule):
 	if ex-princess is guarding:
-		now School35 is use-the-floor;
 		let M be ex-princess;
 		let R be the location of M;
-		let SMN be the number of alive unleashed staff members + the number of alive unconcerned staff members;
+		let SMN be the number of alive unleashed staff members + the number of alive guarding staff members;
 		if SMN > 0:
-			if the number of defeated staff member is 0:
-				repeat with N running through alive staff members:
-					if N is sapphire-teacher:
-						now N is in School33;
-						anger N;
-						now N is unleashed;
-						try N going north;
-						now N is interested;
-					otherwise:
-						now N is guarding; [This will stop them joining the fight]
-					now the scared of N is 0;
-				if the number of unleashed staff member in the location of M < 2: [If too many sapphire teachers are dead, we have someone else enter at first]
-					repeat with N running through alive staff members:
-						if N is not teacher and the number of unleashed staff member in the location of M < 2:
-							anger N;
-							now N is unleashed;
-							try N going north;
-							now N is interested;
-				repeat with N running through alive students:
-					now N is guarding; [This will stop them joining the fight]
-				let STN be the number of staff members in the location of the player;
-				if STN > 0:
-					say "There is no time to talk to [NameDesc of M] about [his of M] outfit before [his of M] [if STN > 1]captors arrive[otherwise]captor arrives[end if], clearly somehow alerted to [his of M] escape!";
-					let N be headmistress;
-					if N is not in the location of the player, now N is a random staff member in the location of the player;
-					say "[BigNameDesc of N] speaks.[line break][speech style of N]'Really, [NameBimbo]? After all the trust we put in you, and after all we've taught you, this is how you repay us? You WILL regret this.'[roman type][line break]";
-					if armband is held:
-						say "Your [MediumDesc of armband] vanishes!";
-						destroy armband; [destroyed rather than in Holding Pen will allow the player back into the school]
-					say "[speech style of M]'Not likely.'[roman type][line break]";
-					now N is a random unleashed staff member in the location of M;
-					compute M enslaving N;
-					if STN > 1:
-						if royal scepter is retained by M:
-							repeat with STU running through staff members:
-								if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
-						otherwise:
-							say "[BigNameDesc of M] falls to [his of M] knees with fatigue. [big he of M] looks up at you.[speech style of M]'You can take care of the [if STN > 2]others[otherwise]other one[end if], right?'[roman type][line break]";
-							if the player is prone, say "With a final flick of [his of M] wand, [he of M] helps you to stand.";
-							now the stance of the player is 0;
 			if the number of undefeated staff members in the location of M > 0 and (M is not in the location of the player or the player is prone):
 				let N be a random unleashed staff member in the location of M;
 				if M is in the location of the player:
@@ -430,9 +423,7 @@ A later time based rule (this is the school rescue fight rule):
 				if headmistress is in the location of the player and headmistress is not unleashed, say MonsterDesc of headmistress;
 			let NUSM be the number of undefeated staff members in the location of M;
 			if NUSM < a random number between 1 and 2: [A new NPC joins the fray]
-				let LSM be a list of monsters; [All this below complexity is just to select a random staff member that isn't a teacher]
-				repeat with SM running through alive guarding staff members:
-					if SM is not teacher, add SM to LSM;
+				let LSM be the list of alive guarding staff members;
 				if the number of entries in LSM > 0:
 					sort LSM in random order;
 					let SM be entry 1 in LSM;
@@ -444,16 +435,24 @@ A later time based rule (this is the school rescue fight rule):
 				if M is in the location of the player:
 					say "[BigNameDesc of M] folds [his of M] hands in triumph.[line break][speech style of M]'It is done. I have dreamed of this moment for such a long time!'[roman type][line break]With a wave of [his of M] hands, everyone else, including [himself of M], is teleported away.";
 				now M is in Dungeon11;
-				repeat with N running through monsters in the school:
+				let LN be the list of monsters in the school;
+				let NLN be 1;
+				repeat with N running through LN:
 					if N is defeated:
 						if N is headmistress:
-							now N is in School08;
+							now N is in Dungeon11;
 						otherwise if N is receptionist:
 							now N is in School01;
 						otherwise if N is nurse:
 							now N is in School12;
 						otherwise:
-							now N is in School16; [Assembly hall]
+							if the remainder after dividing NLN by 3 is 0:
+								now N is in a random unbossed placed labyrinth room;
+							otherwise if the remainder after dividing NLN by 3 is 1:
+								now N is in a random unbossed placed haunted room;
+							otherwise:
+								now N is in a random unbossed placed modern room;
+							increase NLN by 1;
 					otherwise:
 						destroy N;
 				now M is unconcerned;
@@ -615,7 +614,7 @@ A later time based rule (this is the caged princess torture continues rule):
 				say "You watch [NameDesc of M] continue trying to nudge the soiled diapers away from [his of M] face and head [one of]without success[or]in vain[or]but to no avail[at random]. [big his of M] vibrator powerfully and loudly buzzes away from within [his of M] padding.[line break][speech style of M]'[one of]Uhnnnnn[or]Aaaaaah[or]MMMMMMmmmmph[or]Mmmmmmm[at random]...'[roman type][line break]";
 				if the current-torment of ex-princess <= 0:
 					let N be a random threatening monster in the location of the player;
-					say "You watch with [horror the bimbo of the player] as [NameDesc of M][']s thighs begin to shake uncontrollably, and moments later [he of M] is screaming into the gross padding in front of her mouth as [he of M] cums hard. Now out of breath, [he of M] is forced to take in several desperate gasps of pungent diaper air just to stay conscious. Finally, after [he of M] comes down from [his of M] high, the ropes re-activate, pulling [him of M] back up so that [his of M] face is pressed against the exit of the diaper pail tube[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for making me cum over your fragrant diapers, I hope to smell your diapers again soon[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
+					say "You watch with [horror the bimbo of the player] as [NameDesc of M][']s thighs begin to shake uncontrollably, and moments later [he of M] is screaming into the gross padding in front of [his of M] mouth as [he of M] cums hard. Now out of breath, [he of M] is forced to take in several desperate gasps of pungent diaper air just to stay conscious. Finally, after [he of M] comes down from [his of M] high, the ropes re-activate, pulling [him of M] back up so that [his of M] face is pressed against the exit of the diaper pail tube[if N is monster]. [big he of M] looks at you and seems to be about to say something, but then looks nervously at [NameDesc of N] and seems to change [his of M] mind about what to say.[line break][speech style of M]'Thank you for making me cum over your fragrant diapers, I hope to smell your diapers again soon[otherwise].[line break][speech style of M]'Please, please, [please], I beg you, help me escape this torment. I'll forever be in your debt[end if]...'[roman type][line break]";
 				otherwise if the player is feeling dominant or the player is a nympho:
 					say "[one of]You can't help but find the sight rather arousing.[or][or][or][or][or][cycling]";
 					arouse 300;

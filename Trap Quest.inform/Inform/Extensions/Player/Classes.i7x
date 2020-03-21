@@ -116,14 +116,19 @@ REQUIRES COMMENTING
 
 +!]
 This is the priestess class rule:
-	if runic headband is worn and there is a worn priestess outfit:
-		now player-class is "priestess";
-		if abyssal tattoo is worn, now player-class is "dark priestess";
-		rule succeeds.
+	if runic headband is worn:
+		if the total condoms of runic headband > 0:
+			now player-class is "cumdumpster priestess";
+			rule succeeds;
+		if there is a worn priestess outfit:
+			now player-class is "priestess";
+			if abyssal tattoo is worn, now player-class is "dark priestess";
+			if runic headband is not purity, now player-class is "sinful priestess";
+			rule succeeds.
 The priestess class rule is listed in the player class rules.
 
 Definition: a text (called T) is priestess:
-	if T is "priestess" or T is "dark priestess" or T is "virgin warrior priestess", decide yes;
+	if T matches the text "priestess", decide yes;
 	decide no.
 
 [!<TheVirginWarriorClassRule>+
@@ -693,7 +698,7 @@ Thanks to the walking condom multi-class, we have multiple different texts that 
 
 +!]
 Definition: a text (called T) is cumdumpster:
-	if T is "cumdumpster" or T is "walking condom" or T is "locker room fucktoy" or T is "football team's plastic cumdump" or T is "fraternity's bicycle", decide yes;
+	if T matches the text "cumdumpster" or T is "walking condom" or T is "locker room fucktoy" or T is "football team's plastic cumdump" or T is "fraternity's bicycle", decide yes;
 	decide no.
 
 [!<TheMagicalGirlClassRule>+

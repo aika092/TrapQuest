@@ -3,6 +3,7 @@ Giant Wasp by Monster begins here.
 A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant wasp can be flying. A giant wasp is usually not flying. A giant wasp is usually neuter. The poison-status of a giant wasp is -1. A giant wasp has a number called fertilization-cooldown.
 
 Definition: a giant wasp is willing to do anal: decide yes.
+Definition: a giant wasp is willing to do vaginal if the pregnancy of the player <= 0 or the pregnancy of the player is 3.
 
 Definition: A giant wasp (called M) is woods dwelling:
 	if egg laying fetish is 0 or mythical creature fetish is 0, decide no;
@@ -214,25 +215,39 @@ To say AllyDamageFlav of (M - a giant wasp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]speedily flies in to protect you and your eggs. It [or][stopping]stings the [X]!".
 
 To compute anal sex of (M - a giant wasp):
+	compute fuckhole sex of M.
+To compute vaginal sex of (M - a giant wasp):
+	compute fuckhole sex of M.
+
+To compute fuckhole sex of (M - a giant wasp):
+	let F be a random fuckhole penetrated by M;
 	say "[BigNameDesc of M] keeps thrusting with its ovipositor! ";
-	if the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
+	if F is asshole and the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
 	if a random number between 1 and 2 is 1:
-		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [asshole], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your belly!";
-		assfill 1 medium eggs;
+		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [variable F], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
+		if F is asshole, assfill 1 medium eggs;
+		otherwise wombfill 1 medium eggs;
 	if the reaction of the player > 0:
-		say "You submit to the fucking and relax your [asshole] around the ovipositor. This lets another egg travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]";[NB: humiliation is carried out inside the "Carry Out Submitting" function.]
+		say "You submit to the fucking and relax your [variable F] around the ovipositor. This lets another egg travel more easily through the sex organ, bringing [NameDesc of M] closer to finishing.[if the bimbo of the player < 13]You feel very humiliated letting this happen to you almost willingly.[end if]";[NB: humiliation is carried out inside the "Carry Out Submitting" function.]
 		if the sex-length of M > 1:
 			decrease the sex-length of M by 1;
-			assfill 1 medium eggs;
+			if F is asshole, assfill 1 medium eggs;
+			otherwise wombfill 1 medium eggs;
 	say "[one of][or][or][line break][if the bimbo of the player < 8][line break][first custom style]Fuck fuck fuck, this is bad![otherwise if the bimbo of the player < 13][line break][variable custom style]Oof! This is intense![otherwise][line break][second custom style]Ooh, I can't wait![end if][roman type][line break][or][or][or][or][in random order]";
 	decrease the sex-length of M by 1;
-	ruin asshole.
+	ruin F.
 
-Definition: an giant wasp is willing to let go: decide no.
+Definition: a giant wasp is willing to let go: decide no.
 
 To compute anal climax of (M - a giant wasp):
 	TimesSubmittedUp M by 1;
 	AnalCount;
+	say "Finally [NameDesc of M] pulls out and leaves you alone.";
+	progress quest of wasp-sex-quest;
+	bore M.
+To compute vaginal climax of (M - a giant wasp):
+	TimesSubmittedUp M by 1;
+	FuckCount;
 	say "Finally [NameDesc of M] pulls out and leaves you alone.";
 	progress quest of wasp-sex-quest;
 	bore M.

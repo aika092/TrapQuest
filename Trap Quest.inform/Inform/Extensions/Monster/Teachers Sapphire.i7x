@@ -31,6 +31,24 @@ To say MonsterDesc of (M - teacher-serenity):
 
 The teacher-name of teacher-serenity is "Serenity".
 
+To say EnslavedDominationFlav of (M - teacher-serenity):
+	say "You grab hold of [NameDesc of M][']s nipple chain and yank it downwards, forcing [him of M] into a bent over position. ";
+	if the size of penis > 0 and the number of worn cursed undisplacable clothing is 0:
+		if penis is penis-erect or penis is erect-at-will:
+			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
+			orgasm quietly;
+			check virginity with M;
+		otherwise:
+			say "Holding your [player-penis] up against [his of M] well-lubricated snatch, you are dismayed to find that you can't seem to get hard right now. Slightly disheartened, you settle for teasing [him of M] by rubbing the tip up and down [his of M] slit until [he of M][']s practically begging to be railed, and then backing away while laughing mockingly.";
+	otherwise:
+		say "Pressing a button on [his of M] wand vibe sets it temporarily to maximum speed. You watch with a sly smile as [he of M] squeaks first with shock and then with trepidation and then finally with intense euphoria as a full-body orgasm sends [his of M] clattering to the ground in a pile of sweat and [boy of M]cum. The vibrator is still going at maximum power and won't return back down to its usual setting for a few minutes. [big he of M] just writhes around on the ground, unable to speak, move or think.";
+		now the sleep of M is 120.
+
+To decide which number is the EnslavedDominationThreshold of (M - teacher-serenity):
+	decide on 7.
+
+
+
 heel-lesson is a lesson. The lesson-teacher of heel-lesson is teacher-serenity.
 
 To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there aren't enough students left to run a full class]
@@ -54,7 +72,7 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 	say "[BigNameDesc of ST] stands up quickly.[line break][speech style of ST]'I'll do it!'[roman type][line break]It looks like you could choose to be the second challenger, if you wish. Do you want to volunteer? ";
 	if the player is bimbo consenting:
 		let R be (a random number between 1 and 5) - the heel-skill of ST;
-		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles. [line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students. [line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing her lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch her up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST]. [variable custom style]I've won![end if][roman type][line break]";
+		say "You stand up and raise your hand [if the delicateness of the player > 11]nervously[otherwise if the delicateness of the player < 5]confidently[end if]. You feel several stares boring into the back of your head, but you keep your own gaze fixed firmly on the teacher. [big he of M] nods and smiles. [line break][speech style of M]'[one of]Fine, let's see what you've got[or]Let's hope you do better this time[stopping].'[roman type][line break]You are both taken to one end of the front of the room and then spun round several times until you are quite dizzy. You can hardly see straight, never mind walk! And yet you are quickly given a command to go! The girl who makes it the furthest across the room wins. You see that [NameDesc of ST] has already taken [his of ST] first awkward step and so you quickly try to do the same. You feel so off-balance! And yet you must win. You take another step. [if X > 1 and X > R]THUMP. That's it, you're already flat on your butt! It's over! You hear a few sniggers from other students. [line break][variable custom style]Why did I think this was a good idea?![otherwise if X > R]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is increasing [his of ST] lead! You try to go faster and stagger even more, almost toppling over completely. In the end you are forced to watch as you are beaten by a good couple of feet to the other end of the room. [variable custom style]Darn![otherwise]Step. Wobble. Step. Wobble. [BigNameDesc of ST] is getting further ahead of you! You focus as hard as you can and speed up. You catch [him of ST] up! Stumbling the last few feet, you half lean and half collapse onto the end wall moments before [BigNameDesc of ST]. [variable custom style]I've won![end if][roman type][line break]";
 		if X > R:
 			say "As [NameDesc of ST] whoops and celebrates, one of [NameDesc of M][']s heeled feet lightly presses down on your back, letting you know you're not allowed to stand back up. You keep your head bowed in shame and it's only a few moments before something hard smacks into your butt with a loud THWACK!";
 			PainUp 1;
@@ -77,7 +95,7 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 		let ST2 be a random student in the location of the player;
 		while ST is ST2:
 			now ST2 is a random student in the location of the player;
-		say "[speech style of ST2]'I'll try my best.'[roman type][line break][BigNameDesc of ST2] has risen to the challenge. You sit and watch as they are spun around until they are dizzy and then prance forward on their heels until eventually [if the heel-skill of ST2 > the heel-skill of ST][NameDesc of ST][otherwise][NameDesc of ST2][end if] falls. She is then held down with her butt high in the air as [NameDesc of M] delivers five harsh blows with a large wooden paddle. After her cries of pain and defeat have died down, class is dismissed and people begin to file out.";
+		say "[speech style of ST2]'I'll try my best.'[roman type][line break][BigNameDesc of ST2] has risen to the challenge. You sit and watch as they are spun around until they are dizzy and then prance forward on their heels until eventually [if the heel-skill of ST2 > the heel-skill of ST][NameDesc of ST][otherwise][NameDesc of ST2][end if] falls. [if the heel-skill of ST2 > the heel-skill of ST][big he of ST][otherwise][big he of ST2][end if] is then held down with [if the heel-skill of ST2 > the heel-skill of ST][his of ST][otherwise][his of ST2][end if] butt high in the air as [NameDesc of M] delivers five harsh blows with a large wooden paddle. After [if the heel-skill of ST2 > the heel-skill of ST][his of ST][otherwise][his of ST2][end if] cries of pain and defeat have died down, class is dismissed and people begin to file out.";
 		if the heel-skill of ST2 > the heel-skill of ST:
 			promote ST2;
 		otherwise:
@@ -116,23 +134,32 @@ To say MonsterDesc of (M - teacher-angela):
 
 The teacher-name of teacher-angela is "Angela".
 
-To say WhoAnswer of (M - a teacher-angela):
+To say WhoAnswer of (M - teacher-angela):
 	say "[speech style of M]'I should clearly be teaching you not to azk ztupid queztionz!'[roman type][line break]".
 
-To say WhereAnswer of (M - a teacher-angela):
+To say WhereAnswer of (M - teacher-angela):
 	say "[speech style of M]'[if the rank of the player <= 1]Geez, you're pretty far gone, aren't you.'[otherwise]Rankz are earned, and not without effort. It iz important you realise zat.'[end if][roman type][line break]".
 
-To say EscapeAnswer of (M - a teacher-angela):
+To say EscapeAnswer of (M - teacher-angela):
 	say "[speech style of M]'Vouldn't you like to know?'[roman type][line break]".
 
-To say StoryAnswer of (M - a teacher-angela):
+To say StoryAnswer of (M - teacher-angela):
 	say "[speech style of M]'Thiz inztitution haz been around longer than any of its memberz, zat iz for zure. Itz originz are ztill zurrounded in myztery.'[roman type][line break]".
 
-To say AdviceAnswer of (M - a teacher-angela):
+To say AdviceAnswer of (M - teacher-angela):
 	say "[speech style of M]'Do not take off your armband.'[roman type][line break]".
 
-To compute teaching of (M - a teacher-angela):
+To compute teaching of (M - teacher-angela):
 	say "[speech style of M]'Is zat zupposed to be zome kind of joke?'[roman type][line break]".
+
+
+To say EnslavedDominationFlav of (M - teacher-angela):
+	say "You snap your finges in front of [NameDesc of M][']s face. [big he of M] doesn't even seem to register you at all. It seems like nobody's home.".
+To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
+	decide on 15.
+
+
+
 
 make-up-lesson is a lesson. The lesson-teacher of make-up-lesson is teacher-angela.
 

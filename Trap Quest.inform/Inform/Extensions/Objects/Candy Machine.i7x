@@ -9,11 +9,19 @@ REQUIRES COMMENTING
 
 @!]
 A candy machine is a kind of thing. A candy machine is not portable. 1 candy machine is in Dungeon32. 1 candy machine is in Woods09. 1 candy machine is in Hotel27. 1 candy machine is in Mansion04. The printed name of a candy machine is usually "[TQlink of item described]candy machine ([if the number of on-stage candy >= max-candy]no[otherwise if the recent uses of item described is 0]green[otherwise if the recent uses of item described is -1]golden[otherwise]red[end if] light)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a candy machine is usually "cdm". Understand "button" as candy machine.
-Figure of candy machine is the file "Env/Dungeon/candymachine1.png".
 
-To decide which figure-name is the examine-image of (C - candy machine):
-	decide on figure of candy machine.
+Figure of candy machine green is the file "Env/MultiFloor/candymachine1.jpg".
+Figure of candy machine red is the file "Env/MultiFloor/candymachine2.jpg".
+Figure of candy machine off is the file "Env/MultiFloor/candymachine3.jpg".
+Figure of candy machine gold is the file "Env/MultiFloor/candymachine4.jpg".
 
+To decide which figure-name is the examine-image of (T - candy machine):
+	if the number of on-stage candy >= max-candy, decide on figure of candy machine off;
+	if the recent uses of T > 0, decide on figure of candy machine red; [turn scarlet - red candy]
+	if the recent uses of T is -1, decide on figure of candy machine gold; [turn gold - gold candy]
+	decide on figure of candy machine green. [normal green]
+
+[
 To decide which number is the button-colour of (T - candy machine):
 	if the number of on-stage candy >= max-candy, decide on 0;
 	if the recent uses of T > 0, decide on 16720896; [turn scarlet - red candy]
@@ -23,6 +31,7 @@ To decide which number is the button-colour of (T - candy machine):
 
 To BackgroundRender (T - candy machine) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle button-colour of T in the current focus window at X1 by Y1 with size DX by DY.
+]
 
 [!<CandyMachine>@<recentUses:Integer>*
 
@@ -152,7 +161,7 @@ Carry out CandyObtaining:
 		repeat with N running from 1 to 3:
 			let Z be a random off-stage standard tier candy;
 			if the number of held toffee is 0, now Z is a random off-stage toffee;
-			now Z is held by the player;
+			now Z is carried by the player;
 			say "The machine spits out a [Z]!";
 		say "You take all the candy as the light on the front of the candy machine turns off.";
 		increase the recent uses of the noun by 1;

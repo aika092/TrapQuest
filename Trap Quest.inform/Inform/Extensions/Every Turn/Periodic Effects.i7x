@@ -36,7 +36,7 @@ REQUIRES COMMENTING
 +!]
 To compute periodic effects with earnings (local-earnings - a number) and seconds (local-seconds - a number):
 	[If enough experience has been gained, level up heel skill]
-	if the heel time of the player  > minHeelXP and the player is upright, HeelUp 1;
+	if the heel time of the player > minHeelXP and the player is upright, HeelUp 1;
 	[Real world changes]
 	if the remainder after dividing local-earnings by (500 / (fast breast expansion + 1)) < local-seconds:
 		if extreme proportions fetish is 1 or the remainder after dividing local-earnings by (1000 / (fast breast expansion + 1)) < local-seconds:
@@ -111,7 +111,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			let X be max ass size + max breast size + 1;
 			let S be X - (the thickness of hips + the largeness of breasts);
 			let SR be a random number between S and time-tracking;
- 			if time-tracking < 1000:
+			if time-tracking < 1000:
 				decrease time-tracking by 1;
 				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 285]; time ticker not yet below 293 so automatic success[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([X].5) max possible body shape[end if][roman type][line break]";
 			if time-tracking < 293:
@@ -301,11 +301,11 @@ A time based rule (this is the dressup rule):
 					now S is a random off-stage woven stockings;
 				if P is actually summonable and R is 1:
 					if diaper quest is 1, say "[bold type]Suddenly, a big diaper appears on you![roman type][line break]";
-					otherwise say "[bold type]A pair of crotchless panties appear on you!  How useless![roman type][line break]";
+					otherwise say "[bold type]A pair of crotchless panties appear on you! How useless![roman type][line break]";
 					now C is P;
 				otherwise if B is actually summonable and R is 2:
 					if diaper quest is 1, say "[bold type]A pair of baby booties appear on your feet![roman type][line break]";
-					otherwise say "[bold type]A cupless bra appears on you!  How pointless![roman type][line break]";
+					otherwise say "[bold type]A cupless bra appears on you! How pointless![roman type][line break]";
 					now C is B;
 					now C is absorption;
 				otherwise if E is actually summonable and R is 3:
@@ -314,7 +314,7 @@ A time based rule (this is the dressup rule):
 					now C is E;
 				otherwise if S is actually summonable and R is 4:
 					if diaper quest is 1, say "[bold type]A pair of woolly, frilly stockings suddenly appear on you![roman type][line break]";
-					otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you!  That doesn't seem very useful.[roman type][line break]";
+					otherwise say "[bold type]A small belt with strips of sequins hanging off it appears around you! That doesn't seem very useful.[roman type][line break]";
 					now C is S;
 				unless C is nothing:
 					summon C cursed with quest;
@@ -403,8 +403,8 @@ To compute reset cooldown of (T - a trap):
 			now the reset-timer of T is 1;
 	otherwise:
 		decrease the reset-timer of T by time-seconds.
-		
-		
+
+
 
 
 

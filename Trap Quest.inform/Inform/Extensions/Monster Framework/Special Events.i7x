@@ -530,7 +530,7 @@ To compute angry forgiveness of (M - a monster):
 
 Displays some test describing the player breaking free after resisting in the last turn of a blowjob
 
-@param <Monster>:<M>  The monster having oral sex with the player
+@param <Monster>:<M> The monster having oral sex with the player
 
 +!]
 To say FacialBrokenFree of (M - a monster):
@@ -766,36 +766,37 @@ This function is called when the player makes a monster angry in some way, like 
 +!]
 To compute angry punishment of (M - a monster):
 	say angry punishment insult of M;
-	if there is worn tearable clothing and M is not friendly-fucking:
-		let C be a random worn tearable clothing; [This is done in reverse priority order.]
-		if there is a worn top level ass protection tearable clothing:
-			now C is a random worn top level ass protection tearable clothing;
-		if there is a worn nipple covering tearable bra and the largeness of breasts > 3:
-			now C is a random worn nipple covering tearable bra;
-		if there is a worn nipple covering tearable overdress and the largeness of breasts > 3:
-			now C is a random worn nipple covering tearable overdress;
+	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
+		compute default angry punishment of M.
+
+To compute default angry punishment of (M - a monster):
+	let C be a random worn nudism-disabling currently at least partially visible stealable clothing; [ideally it wants to confiscate not destroy]
+	let stealableFound be 1;
+	if C is nothing:
+		now stealableFound is 0;
+		now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
+	if C is not clothing, rule fails;
+	let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
+	if stealableFound is 1:
+		let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
+		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
+	otherwise:
+		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
+	if D is clothing, now C is D;
+	if stealableFound is 1:
+		compute M confiscating C;
 		if C is accessory and C is plentiful:
-			say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
 			say angry punishment accessory confiscation of M;
 		otherwise:
-			say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
-			say angry punishment clothing destruction of M on C;
+			say angry punishment clothing confiscation of M on C;
+	otherwise:
+		say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
+		say angry punishment clothing destruction of M on C;
 		destroy C.
 
 To compute sissy punishment of (M - a monster):
-	say angry punishment insult of M;
-	let C be the throne;
-	repeat with H running through worn tearable clothing:[only check for worn and tearable once]
-		if H is not sissifying or the player is female:
-			if C is not clothing or a random number between 1 and 2 is 1, now C is H;
-	if C is accessory and C is plentiful:
-		say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
-		say angry punishment accessory confiscation of M;
-	otherwise if C is clothing:
-		say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
-		say angry punishment clothing destruction of M on C;
-	if C is clothing, destroy C;
-	otherwise compute sissification.
+	compute default angry punishment of M;
+	if the rule failed, compute sissification.
 
 [!<SayAngryFizzleOfMonster>+
 
@@ -855,7 +856,17 @@ This should display some text when a monster punishes the player by ripping off 
 +!]
 To say angry punishment clothing destruction of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn clothing > 1]Sluts don't deserve clothes! There, now you are one step closer to being buck naked.'[otherwise]Sluts don't deserve clothes!'[end if][roman type][line break]";
-	otherwise say "it looks like [he of M] is satisfied with leaving it at that.".
+	otherwise say "It looks like [he of M] is satisfied with leaving it at that.".
+
+[!<SayAngryPunishmentClothingConfiscationOfMonster>+
+
+This should display some text when a monster punishes the player by confiscating some clothing
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
+To say angry punishment clothing confiscation of (M - a monster) on (C - a clothing):
+	say angry punishment clothing destruction of M on C.
 
 [!<SayMouthPenetrationFlavOfMonster>+
 
@@ -950,7 +961,7 @@ Displays some text describing the player giving a monster a titfuck
 @param <Monster>:<M> The monster fucking the player's breasts
 +!]
 To say TitfuckReceiveFlav of (M - a monster):
-	say "[one of][BigFuckerDesc of M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You continue to massage [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You [if the player is in a blindroom]stare[otherwise]sniff[end if] at [his of M] [DickDesc of M] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or][BigFuckerDesc of M]'s [DickDesc of M] gently bumps your chin as [he of M] enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7]gross[otherwise]firm, hard[end if] [DickDesc of M] between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
+	say "[one of][BigFuckerDesc of M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You continue to massage [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You [if the player is in a blindroom]sniff[otherwise]stare[end if] at [his of M] [DickDesc of M] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or][BigFuckerDesc of M]'s [DickDesc of M] gently bumps your chin as [he of M] enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7]gross[otherwise]firm, hard[end if] [DickDesc of M] between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
 [!<SayTitfuckNearingClimaxFlavOfMonster>+
 

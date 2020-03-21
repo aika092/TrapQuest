@@ -16,7 +16,7 @@ A glulx text style is a kind of value.
 The glulx text styles are all-styles, normal-style, italic-style, fixed-letter-spacing-style, header-style, bold-style, alert-style, note-style, blockquote-style, input-style, special-style-1 and special-style-2.
 
 A text justification is a kind of value.
-The text justifications are left-justified, left-right-justified, center-justified, and right-justified. 
+The text justifications are left-justified, left-right-justified, center-justified, and right-justified.
 
 A font weight is a kind of value.
 The font weights are light-weight, regular-weight, and bold-weight.
@@ -224,7 +224,7 @@ Glulx Text Effects ends here.
 
 ---- Documentation ----
 
-Glulx Text Effects provides an easy way to set up special text effects for Glulx. 
+Glulx Text Effects provides an easy way to set up special text effects for Glulx.
 
 
 
@@ -290,7 +290,7 @@ Colors are defined by specifying a web (CSS) color in a text. Web colors specify
 If you use a color many times you can define it as a text constant, and then use that in the table:
 
 	Red is always "#FF0000".
-	
+
 	Table of User Styles (continued)
 	style name	color
 	special-style-1	red
@@ -327,13 +327,13 @@ The latest version of this extension can be found at <https://github.com/i7/exte
 Example: * Gaudy - A visually overpowering exercise in modifying all the built-in text styles.
 
 	*: "Gaudy"
-	
-	Include Version 5 of Glulx Text Effects by Emily Short.	
-	
+
+	Include Version 5 of Glulx Text Effects by Emily Short.
+
 	Use scoring.
-	
+
 	Texty Room is a room. "This is a room of [bold type]bold[roman type] and [italic type]italic[roman type] texts as well as messages in [fixed letter spacing]fixed width[variable letter spacing] text."
-	
+
 	Table of User Styles (continued)
 	style name	relative size	color	background color
 	italic-style	-1	"#0000FF" [ blue ]	--
@@ -344,16 +344,16 @@ Example: * Gaudy - A visually overpowering exercise in modifying all the built-i
 	note-style	--	"#00FF00" [ green ]
 	blockquote-style	--	"#FFFF00" [ yellow ]
 	input-style	-1	"#FF00FF" [ magenta ]
-	
+
 	Instead of waiting:
 		increase the score by 5.
-	
+
 	Instead of jumping:
 		end the story finally.
-	
+
 	Every turn:
-		display the boxed quotation "Tempus fugit." 
-	
+		display the boxed quotation "Tempus fugit."
+
 	Test me with "z / z / z / jump".
 
 
@@ -363,7 +363,7 @@ Example: ** The Gallic War - An excuse to print a large, fancily-formatted bit o
 	*: "The Gallic War" by Julius Caesar.
 
 	The story headline is "An interactive campaign".
-	
+
 	Lessons is a room.
 
 	Include Glulx Text Effects by Emily Short.
@@ -376,7 +376,7 @@ Example: ** The Gallic War - An excuse to print a large, fancily-formatted bit o
 	When play begins:
 		now the left hand status line is "";
 		now right hand status line is "";
-		say "[second custom style]Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit. 
+		say "[second custom style]Gallia est omnis divisa in partes tres, quarum unam incolunt Belgae, aliam Aquitani, tertiam qui ipsorum lingua Celtae, nostra Galli appellantur. Hi omnes lingua, institutis, legibus inter se differunt. Gallos ab Aquitanis Garumna flumen, a Belgis Matrona et Sequana dividit.
 
 Horum omnium fortissimi sunt Belgae, propterea quod a cultu atque humanitate provinciae longissime absunt, minimeque ad eos mercatores saepe commeant atque ea quae ad effeminandos animos pertinent important, proximique sunt Germanis, qui trans Rhenum incolunt, quibuscum continenter bellum gerunt. Qua de causa Helvetii quoque reliquos Gallos virtute praecedunt, quod fere cotidianis proeliis cum Germanis contendunt, cum aut suis finibus eos prohibent aut ipsi in eorum finibus bellum gerunt.";
 		pause the game;

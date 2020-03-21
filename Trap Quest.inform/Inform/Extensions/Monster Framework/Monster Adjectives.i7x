@@ -20,18 +20,18 @@ A monster has a number called friendly boredom. The friendly boredom of a monste
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
-A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked?  Most monsters will only tolerate one.]
+A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked? Most monsters will only tolerate one.]
  Definition: A monster (called M) is wenchy:
 	if M is manly-wenchy, decide yes;[So the monster needs only one, not both]
 	decide no.
 Definition: A monster (called M) is manly-wenchy:[specifically refers to monsters that the player will "ride" to dominate them.]
- 	decide no.
+	decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
-Definition: A monster (called M) is father material:[This means the monster can father children.]
+Definition: a monster (called M) is father material:[This means the monster can father children.]
 	if M is male, decide yes;
 	decide no.
-A monster can be intelligent. A monster is usually not intelligent. [Essentially, can they speak English?; TODO: definition]
+A monster can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
 A monster has a number called times-met. The times-met of a monster is usually 0.
 A monster has a number called times-submitted. The times-submitted of a monster is usually 0.
@@ -53,9 +53,9 @@ Definition: a monster is hotel dwelling: decide no.
 Definition: a monster is mansion dwelling: decide no.
 Definition: a monster is school dwelling: decide no.
 
-A monster can be intelligent. A monster is usually not intelligent. [Essentially, can they speak English?]
+A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
 Definition: a monster is raunchy: decide no.
-A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around?  (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
+A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around? (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
 A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
 [The following variables are used for deciding what body parts can be automatically presented to a monster.]
 Definition: a monster (called M) is willing to do vaginal:
@@ -101,18 +101,18 @@ A monster has a rule called the monster convinced rule. The monster convinced ru
 A monster has a rule called the monster friendly convinced rule. The monster friendly convinced rule of a monster is usually the default monster friendly convinced rule.
 The default monster insertion rules is a rulebook. A monster has a rulebook called insertion rules. The insertion rules of a monster is usually the default monster insertion rules.
 The default monster attack rules is a rulebook. A monster has a rulebook called attack rules. The attack rules of a monster is usually the default monster attack rules.
-A monster has a number called collar-pulled. The collar-pulled of a monster is usually 0.
+A monster has a number called collar-pulled.
 A monster has a rule called the pullstring rule. The pullstring rule of a monster is usually the default pullstring rule.
-A monster has a number called blue-balls. [The number of times the player has initiated friendly sex then stopped early.]
+A monster has a number called blue-balls. [A value increased by initiating friendly sex then stopping early, or by seducing. Resets to 0 on orgasm.]
 To decide which number is the blue-balls-limit of (M - a monster):
-	decide on 1.
+	decide on 10.
 A monster has a number called refactory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
 To decide which number is the refactory-time of (M - a monster):
 	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
 A monster can be dragging.
-A monster has a number called monstersetup. The monstersetup of a monster is usually 0.
+A monster has a number called monstersetup.
 Definition: a monster is nonexistant if the monstersetup of it is 0.
-A monster has a number called loot dropped. The loot dropped of a monster is usually 0.
+A monster has a number called loot dropped.
 A monster has a number called leftover-type. The leftover-type of a monster is usually 100.
 
 Definition: a monster is dark skinned: decide no.
@@ -125,7 +125,6 @@ A monster has a number called poison-status. [poison status of -1 makes you immu
 Definition: A monster is poisoned rather than not-poisoned if its poison-status > 0.
 A monster has a number called blind-status. [blind status of -1 makes you immune]
 Definition: A monster is blinded rather than not-blinded if its blind-status > 0.
-A monster can be reacted-already. [This is used in ass squirting function which occurs over several turns to track which NPCs have already reacted to this particular episode]
 A monster has a number called diaper-duration. [NPCs can put the player in a diaper and this will usually be uncursed, the reason the player is motivated to keep it on is that they will receive further punishments if the NPC finds them without a diaper within this duration.]
 A monster has a number called diaper-duration-ended. [When this gets set to 1, we know that the NPC needs to inform the player that their diaper punishment has ended.]
 Understand "NPC", "enemy" as a monster.
@@ -162,7 +161,7 @@ Definition: A monster (called M) is expectant:
 
 Definition: A monster is willing to shag: decide no. [A willing monster is one who is currently available for consensual sex.]
 
-Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead?  This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
+Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead? This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
 
 To decide which number is the girth of (M - a monster):
 	if M is male, decide on 2; [Normal penis girth]
@@ -200,6 +199,12 @@ Definition: a monster is defeated rather than undefeated if it is fucked-silly o
 Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 6 and it is not in the school.
 
 Definition: a monster is scarable: decide yes. [Can this monster be made to flee? Mostly just overridden for bosses.]
+
+A monster can be seduced, unseduced or seduction-refused (this is the monster-seduction property). A monster is usually unseduced. [Is the player currently playing a seduction minigame with it? If it has refused seduction then it won't allow the seduction to happen again.]
+Definition: a monster is seducable if it is male and it is intelligent and it is willing to do anal.
+Definition: a monster is actually seducable if it is seducable and it is reactive and it is interested and it is unseduced.
+A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
+
 
 Monster Adjectives ends here.
 

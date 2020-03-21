@@ -142,10 +142,10 @@ REQUIRES COMMENTING
 +!]
 To compute BadWishing:
 	say "[first custom style]Your wish... offends me.[roman type][line break]";
-	let C be a random worn overdress;
+	let C be most-transformable-clothing;
 	if C is clothing:
 		if watersports fetish is 1 and C is able to take more liquid:
-			say "You feel a [if the total-soak of C > 0]spontaneous wetness[otherwise]spontaneous warmth[end if] on your skin, and look down just as the unmistakable smell of [urine] hits your nostrils. The well has soaked your [ShortDesc of C] in piss!";
+			say "You feel a [if the total-soak of C > 0]spontaneous wetness[otherwise]spontaneous warmth[end if] on your skin, and look down just as the unmistakable smell of [urine] hits your nostrils. The well has soaked your [ShortDesc of C] in [urine]!";
 			UrineSoakUp C by the soak-limit of C - the total-soak of C;
 		otherwise if C is transformation chain and C is transformable:
 			say "A wave of energy passes through your [printed name of C], and it begins to shimmer...";

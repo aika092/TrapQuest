@@ -40,6 +40,8 @@ A time based rule (this is the iron-maiden-punishment rule):
 			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, before falling open, clanging to the ground and allowing you back out in the open. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out metal tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their mechanical invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
 			increase the submission-count of the player by 1;
 			increase the sex-count of the player by 1;
+			repeat with T running through things in Iron Maiden:
+				unless T is the player, now T is in the location of M;
 			now the player is in the location of M;
 			if M is penetrating face and (the stomach-semen of the player + the semen volume of belly > 0), PukeUp;
 			if M is penetrating a body part, progress quest of tentacle-quest;

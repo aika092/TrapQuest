@@ -14,7 +14,13 @@ Definition: a clothing is alwaysSure: [Should never be considered to possibly be
 	decide yes.
 
 Definition: a thing is cursable: decide no.
+Definition: a bottle is cursable if it is held.
 Definition: a clothing is cursable: decide yes.
+
+Definition: a thing (called T) is actually cursable:
+	if T is not cursable, decide no;
+	if T is cursed, decide no;
+	decide yes.
 
 [avoids errors if the item is not something that can be cursed]
 Definition: a thing (called T) is maybe-cursed:

@@ -91,7 +91,7 @@ Definition: A direction (called D) is desired:
 REQUIRES COMMENTING
 
 +@!]
-Definition:  A room (called R) is open and ready: 
+Definition: A room (called R) is open and ready:
 	let NR be the room at the vector sum of Door Finder and the vector of north;
 	let ER be the room at the vector sum of Door Finder and the vector of east;
 	let SR be the room at the vector sum of Door Finder and the vector of south;

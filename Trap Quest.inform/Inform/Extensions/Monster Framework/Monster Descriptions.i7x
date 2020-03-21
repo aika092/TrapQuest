@@ -143,7 +143,7 @@ To decide which figure-name is the examine-image of (M - a monster):
 
 
 After examining a monster:
-	unless the noun is not intelligent or the noun is robot:
+	unless the noun is unintelligent or the noun is robot:
 		say "[FavourDesc of the noun]";
 	if the noun is undefeated:
 		if the health of the noun < the maxhealth of the noun / 4:
@@ -161,11 +161,11 @@ To say FavourDesc of (M - a monster):
 		otherwise say "You have a bad relationship with [NameDesc of M]. It seems like [he of M] wants to fight. [if M is interested][big he of M] is looking right at you![otherwise][big he of M] doesn't seem interested in you right now.[end if]";
 	otherwise if M is undefeated and M is not caged:
 		if M is guardian:
-			say "You have a very solid relationship with [NameDesc of M], and would expect [him of M] to help you out in a fight.";
+			say "You have a very solid relationship with [NameDesc of M], and would expect [him of M] to help you out in a fight and share resources with you.";
 		otherwise if M is ally:
 			say "You have a very good relationship with [NameDesc of M], and you think there's a chance [he of M] might even help you out in a fight.";
 		otherwise if M is buddy:
-			say "You have a good relationship with [NameDesc of M], and feel confident that [he of M] would be more than happy to share advice and resources with you.";
+			say "You have a good relationship with [NameDesc of M], and feel confident that [he of M] would be more than happy to share advice with you.";
 		otherwise if M is acquaintance:
 			say "You have a neutral relationship with [NameDesc of M]; [he of M] is unlikely to help you out too much but also isn't acting aggressive.";
 		otherwise if M is annoyed:

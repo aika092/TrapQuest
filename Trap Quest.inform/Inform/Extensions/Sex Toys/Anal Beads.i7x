@@ -5,6 +5,9 @@ An anal beads is a kind of plug. The printed name of anal beads is usually "[clo
 To compute unique summoning of (S - an anal beads):
 	now the notch-taken of S is the notches of S + (a random number between -1 and 0).
 
+To compute unique dislodging of (P - an anal beads):
+	now the notch-taken of P is 0.
+
 To uniquely set up (C - an anal beads):
 	now the size of C is a random number between 3 and 10;
 	now the notches of C is a random number between 5 and 6;
@@ -15,8 +18,23 @@ To uniquely set up (C - an anal beads):
 	if R is 5, now C is stumbling;
 	if R is 6, now C is refreshment.
 
+To uniquely destroy (T - an anal beads):
+	now the notch-taken of T is 0.
+
+
 Definition: an anal beads is transformation-protected: decide yes.
 Definition: an anal beads is black themed: decide yes.
+
+
+To decide which object is the at least partial concealer of (S - an anal beads):
+	if the notch-taken of S >= the notches of S, decide on asshole;
+	repeat with O running through worn clothing:
+		if S is penetrating asshole:
+			if O is potentially at least partially asshole covering clothing, decide on O;
+		if S is penetrating vagina:
+			if O is potentially at least partially vagina covering clothing, decide on O;
+	decide on nothing.
+
 
 To compute periodic effect of (C - an expansion anal beads):
 	increase the toy-charge of C by 1;
@@ -34,10 +52,31 @@ To compute periodic effect of (C - an expansion anal beads):
 			if the size of C > the openness of F, Ruin F;
 			if the player is possessing a penis, PenisUp 1.
 
-Figure of anal beads is the file "Items/Accessories/Toys/analbeads1.png".
+Figure of anal beads 0 is the file "Items/Accessories/Toys/analbeads0.jpg".
+Figure of anal beads 1 is the file "Items/Accessories/Toys/analbeads1.jpg".
+Figure of anal beads 2 is the file "Items/Accessories/Toys/analbeads2.jpg".
+Figure of anal beads 3 is the file "Items/Accessories/Toys/analbeads3.jpg".
+Figure of anal beads 4 is the file "Items/Accessories/Toys/analbeads4.jpg".
+Figure of anal beads 5 is the file "Items/Accessories/Toys/analbeads5.jpg".
+Figure of anal beads 6 is the file "Items/Accessories/Toys/analbeads6.jpg".
+Figure of anal beads 7 is the file "Items/Accessories/Toys/analbeads7.jpg".
+Figure of anal beads 8 is the file "Items/Accessories/Toys/analbeads8.jpg".
+Figure of anal beads 9 is the file "Items/Accessories/Toys/analbeads9.jpg".
+Figure of anal beads 10 is the file "Items/Accessories/Toys/analbeads10.jpg".
 
 To decide which figure-name is clothing-image of (C - an anal beads):
-	decide on figure of anal beads.
+	let N be the notches of C - the notch-taken of C;
+	if N <= 0, decide on figure of anal beads 0;
+	if N is 1, decide on figure of anal beads 1;
+	if N is 2, decide on figure of anal beads 2;
+	if N is 3, decide on figure of anal beads 3;
+	if N is 4, decide on figure of anal beads 4;
+	if N is 5, decide on figure of anal beads 5;
+	if N is 6, decide on figure of anal beads 6;
+	if N is 7, decide on figure of anal beads 7;
+	if N is 8, decide on figure of anal beads 8;
+	if N is 9, decide on figure of anal beads 9;
+	decide on figure of anal beads 10.
 
 To say ClothingDesc of (P - an anal beads):
 	say "A set of [the notches of P] [PlugSize size of P] beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
@@ -62,58 +101,74 @@ To compute toyInsertion of (S - an anal beads) into (F - a fuckhole):
 	if the notch-taken of S < the notches of S:
 		say "You manage to force in [oldN] bead[if oldN > 1]s[end if], before your sphincter involuntarily tightens up from its ordeal. Looks like you'll have to keep going if you want all of them in...";
 	otherwise:
-		say "You force the last [if oldN is 1]bead[otherwise][oldN] beads[end if] in, finally allowing your sphincter to relax.".
+		say "You force the last [if oldN is 1]bead[otherwise][oldN] beads[end if] in, finally allowing your sphincter to relax.";
+	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 To compute insertionRuin of (S - an anal beads) into (F - a fuckhole):
 	if the girth of S > the openness of F - 4:
 		say "The bead [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";
 		ruin F;
-		if the girth of S > the openness of F + 1, ruin F;
 	otherwise if the girth of S > the openness of F - 2:
 		say "Oof! You definitely felt that as you pushed it inside.";
+		passively stimulate F from S;
 	otherwise:
 		say "Your [variable F] is loose enough to let the bead slip in easily.".
 
 Carry out unplugging anal beads:
-	let N be a random number between 3 and the notch-taken of the noun;
-	let F be a random orifice penetrated by the noun;
-	if N >= 3, now N is 2;
-	if N > the notch-taken of the noun, now N is the notch-taken of the noun;
-	if the player is in danger:
-		say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [PlugSize size of item described] beads out of your fuckhole, [if the notch-taken of the noun > N]creating a perverted show[otherwise]making it available[end if] for the [printed name of random unfriendly interested monster in the location of the player]. Your cheeks turn a beetroot shade of red.";
-		humiliate 125;[the process is more humiliating overall, but less so on a bead by bead basis]
-		compute player submission;
-	if the girth of the noun > the openness of a random orifice penetrated by the noun + 2:
-		let R be a random number between 1 and 2;[50% chance to double the soreness.]
-		if N is 1, now R is 1;
-		say "You hear a loud 'PLOP' as a [PlugSize size of the noun] bead comes out of your [variable F][if N is 1].[otherwise if N is 2], followed shortly after by a second, quieter pop as another one of the [printed name of the noun] slips out through your relaxed [variable F].[end if]";
-		ruin a random orifice penetrated by the noun times R;
-	otherwise if the notch-taken of the noun > N:
-		let NT be the notch-taken of the noun - N;
-		say "Relaxing your [if F is asshole]anal[otherwise]vaginal[end if] muscles, you pull [N] bead[if N > 1]s[end if] out in succession, before your [if F is asshole]sphincter[otherwise][variable F][end if] involuntarily tightens up from its ordeal, with [if NT is 1]one bead[otherwise][NT] beads[end if] still inside you. Looks like you'll have to keep going if you want it out...";
+	let N be 0;
+	if the notch-taken of the noun > 1:
+		say "There are [notch-taken of the noun] beads inside you. How many do you want to pull out? ";
+		let validAnswer be 0;
+		while validAnswer is 0:
+			display focus stuff;
+			display stuff;
+			let F be YesNoBackground;
+			if F is not Figure of no-image-yet:
+				zero map-link-table;
+				zero map-button-table;
+				let H be the height of the map-window;
+				let W be the width of the map-window;
+				[Calculate background image size]
+				let XRatio be (W * 1.0) / the pixel-width of F;
+				let FY be the pixel-height of F * XRatio;
+				let FYi be FY to the nearest whole number;
+				display the image F in the map-window at 0 by 0 with dimensions W by FYi;
+			now N is the chosen letter;
+			decrease N by 48; [convert key ID to integer]
+			say line break;
+			if N >= 0 and N <= the notch-taken of the noun, now validAnswer is 1;
+			if validAnswer is 0, say "Input not understood. Please choose a valid number.";
+		conclude consenting; [refreshes the map window]
+	if N is 0:
+		say "You feel the bead about to come out, and then change your mind.";
 	otherwise:
-		say "Relaxing your [if F is asshole]anal[otherwise]vaginal[end if] muscles, you pull [N] bead[if N > 1]s[end if] out in succession, causing the toy to fall out completely.";
+		let F be a random orifice penetrated by the noun;
+		if the player is in danger:
+			say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [PlugSize size of item described] bead[if N > 1]s[end if] out of your fuckhole, [if the notch-taken of the noun > N]creating a perverted show[otherwise]making it available[end if] for [NameDesc of a random combative monster]. Your cheeks turn a beetroot shade of red.";
+			humiliate 125;
+			compute player submission;
+		if the girth of the noun > the openness of F + 2:
+			say "[if N > 3]You pull hard, hurting your [variable F] in the process. [otherwise if N > 2]You pull relatively hard, making yourself a little sore in the process. [end if]You hear a loud 'PLOP' as a [PlugSize size of the noun] bead comes out of your [variable F][if N is 2], followed shortly after by a second, quieter pop as another one of the [ShortDesc of the noun] slips out through your relaxed [variable F][otherwise if N > 2], followed shortly after by [N - 1] quieter pops as the other [ShortDesc of the noun] slip out through your relaxed [variable F][end if].";
+			if N > 2, ruin F times (N - 2);
+		otherwise if the notch-taken of the noun > N:
+			let NT be the notch-taken of the noun - N;
+			say "Relaxing your [if F is asshole]anal[otherwise]vaginal[end if] muscles, you pull [N] bead[if N > 1]s[end if] out in succession, before your [if F is asshole]sphincter[otherwise][variable F][end if] involuntarily tightens up from its ordeal, with [if NT is 1]one bead[otherwise][NT] beads[end if] still inside you. Looks like you'll have to keep going if you want it out...";
+		otherwise:
+			say "Relaxing your [if F is asshole]anal[otherwise]vaginal[end if] muscles, you pull [N] bead[if N > 1]s[end if] out in succession, causing the toy to fall out completely.";
 	decrease the notch-taken of the noun by N;
 	if the notch-taken of the noun < 1:
-		now the notch-taken of the noun is 0;[the value will sometimes dip below 0, so we reset to make sure.]
 		dislodge the noun;
-		now the noun is carried by the player.
+		now the noun is carried by the player;
+	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 To compute (M - a monster) removing (C - an anal beads):
-	let F be a random fuckhole;
-	while C is not penetrating F:
-		now F is a random fuckhole;
+	let F be a random fuckhole penetrated by C;
 	if M is intelligent:
 		let R be a random number between 3 and the notch-taken of C;
 		if the notch-taken of C > 2, now the notch-taken of C is 3;
 		say "[BigNameDesc of M] pulls hard on the cord connected to your [printed name of C], [if R > 1]forcing [R] beads out of your [variable F] in rapid succession.[otherwise]yanking the remaining bead from your [variable F] with little effort.[end if]";
-		if the notch-taken of C - R > 0:
-			say "[big he of M] gives your [AssDesc] a vicious smack and leaves you alone.";
-			decrease the notch-taken of C by R;
-			PainUp 1;
-			bore M;
-		otherwise:
-			now the notch-taken of C is 0;
+		decrease the notch-taken of C by R;
+		if the notch-taken of C <= 0:
 			now C is in holding pen;
 			now M is retaining C;
 			dislodge C;
@@ -121,24 +176,28 @@ To compute (M - a monster) removing (C - an anal beads):
 		otherwise ruin vagina times R;
 	otherwise:
 		say "[BigNameDesc of M] manages to pull hard enough on your [printed name of C] to remove one bead";
-		ruin F;
-		if the notch-taken of C - 1 > 0:
+		decrease the notch-taken of C by 1;
+		if the notch-taken of C > 0:
 			say ", losing interest after that isn't enough.";
 			bore M;
+			ruin F;
 		otherwise:
 			say ", tossing it on the floor.";
+			ruin F;
 			now C is in the location of the player;
-			dislodge C.
+			dislodge C;
+	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 To compute replacement of (T - an anal beads) in (O - an orifice):
-	unless O is actually occupied or current-monster is not intelligent:
+	unless O is actually occupied or current-monster is unintelligent:
 		say "[BigNameDesc of current-monster] holds you down as [he of current-monster] pushes the [T] back into your [variable O] one bead at a time.";
 		if current-monster is demoness:
-			say "Plus one extra! Uh-oh!";
+			say "Plus one extra! Did the demoness somehow make it longer?!";
 			increase the notches of T by 1;
 		now T is worn by the player;
 		now T is penetrating O;
 		now the notch-taken of T is the notches of T;
+		ruin O times (the notches of T + 1) / 2;
 		now current-monster is not retaining T.
 
 To compute (M - a ghost) removing (C - an anal beads):
@@ -164,15 +223,19 @@ To finish possession of (T - an anal beads) in (O - an orifice):
 	now T is worn by the player.
 
 To decide which number is the original price of (C - an anal beads):
-	decide on the notches of C.
+	let N be 5 - the notches of C / 2;
+	if N < 1, decide on 1;
+	decide on N.
 
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
 
 
-Ritual-beads is an anal beads. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads. Ritual-beads has a number called charge. The charge of ritual-beads is 0.
+ritual-beads is an anal beads. ritual-beads is unique. ritual-beads is purity. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads.
+
+Definition: ritual-beads is cursable: decide no.
 
 To say ClothingDesc of (P - ritual-beads):
-	say "A set of [the notches of P] brown beads, connected by a thin cord, each bead slightly thicker than the last. You can sense it wants you to [if P is not worn]wear it and then [end if]'honour the Goddess of service'. And then afterwards you could try presenting it to the dungeon altar for a reward. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+	say "A set of [the notches of P] brown beads, connected by a thin cord. You can sense it wants you to [if P is not worn]wear it and then [end if]'honour the Goddess of service'. And then afterwards you could try presenting it to the dungeon altar for a reward. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
 
 To say ShortDesc of (P - ritual-beads):
 	say "ritual beads".
@@ -183,46 +246,31 @@ To uniquely set up (C - a ritual-beads):
 
 Definition: ritual-beads is cult garb: decide yes.
 
-[To decide which number is the size of (C - ritual-beads):
-	if the notch-taken of C < 2, decide on 1;
-	decide on the notch-taken of C.]
-
-To decide which number is the strength-influence of (C - ritual-beads):
-	let P be prayer-beads;
-	unless P is worn, decide on 0;
-	let F be 0;
-	let T be the notch-taken of C;
-	if T > the charge of C, increase F by the charge of C / 2;
-	otherwise increase F by T / 2;
-	increase F by the magic-modifier of C;
-	if (the class of the player is cultist and P is cursed) or P is blessed, decide on F;
-	decide on F * -1.
-
 To decide which number is the humiliation-influence of (C - ritual-beads):
 	let P be prayer-beads;
-	unless P is blessed, decide on 0;
+	unless P is worn and P is blessed, decide on 0;
 	let T be the notch-taken of C;
-	if T > the charge of C, decide on the charge of C;
+	if T >= the notches of C, decide on the notches of C;
 	decide on T.
-
-To decide which number is the bimbo-influence of (C - ritual-beads):
-	let P be prayer-beads;
-	unless P is cursed, decide on 0;
-	let T be the notch-taken of C;
-	if T > the charge of C, decide on the charge of C * -1;
-	decide on T * -1.
-
 
 To decide which number is the dexterity-influence of (C - ritual-beads):
 	let P be prayer-beads;
 	unless P is worn, decide on 0;
 	let F be 0;
-	let T be the notch-taken of C;
-	if T > the charge of C, increase F by the charge of C / 2;
-	otherwise increase F by T / 2;
-	increase F by the magic-modifier of C;
+	increase F by the notch-taken of C / 2;
 	if (the class of the player is cultist and P is cursed) or P is blessed, decide on F;
 	decide on F * -1.
+
+To decide which number is the soreness-influence of (C - ritual-beads):
+	decide on the magic-modifier of C.
+
+To compute virginity-loss of (T - ritual-beads):
+	if the player is male or the pregnancy of the player > 0:
+		say "Your [printed name of T] falls out of you and drops to the ground.";
+		now T is in the location of the player;
+		dislodge T;
+		now the notch-taken of T is 0.
+
 
 Anal Beads ends here.
 

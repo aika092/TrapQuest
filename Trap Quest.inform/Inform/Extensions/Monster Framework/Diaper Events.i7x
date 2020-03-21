@@ -882,7 +882,7 @@ To say ConfiscationDeclarationFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[if C is plentiful accessory]Where did you get this jewellery, little one? Babies can't be trusted with expensive items like these. I'll have to confiscate it.'[otherwise if C is equippable]What are you doing handling something this dangerous? Little kids can't be trusted to not hurt themselves. I'll have to take it off of you.'[otherwise]This is not clothing for babies! I'm confiscating it.'[end if][roman type][line break]".
 
 To compute (M - a monster) confiscating (C - a clothing):
-	say "[ConfiscationFlav of M on C]";
+	say ConfiscationFlav of M on C;
 	now M is retaining C;
 	now M is withholding C; [this isn't something the monster should put back on the player after sex or a diaper change]
 	now C is in holding pen.

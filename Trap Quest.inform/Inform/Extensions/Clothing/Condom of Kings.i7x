@@ -39,7 +39,7 @@ Definition: a condom of kings (called A) is fetish appropriate:
 
 Check wearing condom of kings:
 	if the player is gendered female, say "Only a [if the bimbo of the player > 10]sexy [end if]man could wear this." instead;
-	if the player is not possessing a penis, say "Only a real man could wear this." instead;
+	if the player is not possessing a penis, say "Only [if transGender is 1]someone with a penis[otherwise]a real man[end if] could wear this." instead;
 	if the size of penis < 4, say "Your [ShortDesc of penis] is too small, it would never stay on. " instead;
 	repeat with C running through clothing worn by the player:
 		if C is pussy covering:
@@ -76,6 +76,12 @@ To compute periodic effect of (C - a condom of kings):
 			PenisUp 1.
 
 Definition: a condom of kings is stealable: decide no.
+
+To decide which object is the concealer of (C - a condom of kings):
+	decide on the concealer of penis.
+
+To decide which object is the at least partial concealer of (C - a condom of kings):
+	decide on the at least partial concealer of penis.
 
 Condom of Kings ends here.
 

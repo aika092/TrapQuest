@@ -33,6 +33,15 @@ To decide which number is the hipModesty of (C - a trousers):
 To decide which number is the hipExposure of (C - an object):
 	decide on (7 + (the total volume of hips / 2)) - the hipModesty of C.
 
+To decide which object is the concealer of (H - hips):
+	let O be 0;
+	let P be nothing;
+	repeat with C running through worn clothing:
+		if the hipExposure of C <= 0 and the bottom-layer of C >= O:
+			now O is bottom-layer of C;
+			now P is C;
+	decide on P.
+
 To decide which object is the at least partial concealer of (H - hips):
 	let O be 0;
 	let P be nothing;
@@ -44,13 +53,14 @@ To decide which object is the at least partial concealer of (H - hips):
 
 To decide which number is the unique outrage of (H - hips):
 	let C be the at least partial concealer of H;
-	let O be the hipExposure of C;
+	let O be the hipExposure of C / 2;
 	if the strut of the player > 0 and the player is upright, increase O by 5;
 	increase O by the thickness of hips / 4;
 	if O > 20, decide on 20;
 	decide on O.
 
-Definition: hips is at least partially exposed if the hipExposure of the at least partial concealer of hips > 0.
+Definition: hips is at least partially exposed if the concealer of hips is nothing.
+Definition: hips is exposed if the at least partial concealer of hips is nothing.
 
 To say FullExamineDesc of (B - hips):
 	say "[TotalDesc of hips]".
@@ -246,7 +256,7 @@ To decide which number is the weight of (XXX - hips):
 		decrease H by the silicone volume of hips / 4; [Ass implants weigh less for the silicone queen if they've got the abyssal tattoo bonus]
 	if H > 1, now H is H / 2;
 	if the latex-transformation of the player > 1 and H > 6, now H is 6;
-	if the latex-transformation of the player > 5 and  H > 0, now H is 0;
+	if the latex-transformation of the player > 5 and H > 0, now H is 0;
 	decide on H.
 
 
@@ -312,7 +322,7 @@ To say AssDesc:
 	if A < 3, say "tiny flat butt cheeks";
 	if A is 3, say "tight well toned tush";
 	if A is 4, say "toned butt cheeks";
-	if A is 5, say  "roundish but tight butt cheeks";
+	if A is 5, say "roundish but tight butt cheeks";
 	if A is 6, say "cute curvy butt cheeks";
 	if A is 7, say "eye-turning bubble butt";
 	if A is 8, say "well cushioned bottom";
@@ -435,7 +445,7 @@ To say RealHipDesc:
 	if X < 3, say "androgynous hips";
 	if X is 3, say "slight hips";
 	if X is 4, say "defined hips";
-	if X is 5, say  "womanly hips";
+	if X is 5, say "womanly hips";
 	if X is 6, say "pronounced hips";
 	if X is 7, say "[if pregnancy fetish is 1]childbearing[otherwise]very pronounced[end if] hips";
 	if X is 8, say "wide, [if pregnancy fetish is 1]childbearing[otherwise]almost cartoonishly pronounced[end if] hips";
@@ -625,7 +635,6 @@ To FatAssDown (X - a number):
 
 Section - Image for graphics window
 
-The text-shortcut of hips is "hips".
 Figure of CumHipsButton is the file "Special/Buttons/cumhips.png".
 
 To decide which figure-name is the examine-image of (T - hips):

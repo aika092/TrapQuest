@@ -1,6 +1,6 @@
 Golden Tiara by Headgear begins here.
 
-gold-tiara is a headgear. gold-tiara is metal.  gold-tiara is redness-positive. gold-tiara is hair growing. gold-tiara is roleplay. gold-tiara is womanly. Understand "gold", "golden", "tiara" as gold-tiara.
+gold-tiara is a headgear. gold-tiara is metal. gold-tiara is redness-positive. gold-tiara is hair growing. gold-tiara is roleplay. gold-tiara is womanly. Understand "gold", "golden", "tiara" as gold-tiara.
 
 Figure of gold-tiara is the file "Items/Accessories/Head/royaltiara2.jpg".
 

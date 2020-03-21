@@ -54,7 +54,7 @@ To decide which figure-name is the anal-sex-monster-image of (M - a ghost):
 
 To say MonsterDesc of (M - a ghost):
 	if diaper quest is 1:
-		say "[if M is ghostly tentacle]This blue glowing ghost takes on a human female form, dressed in a right black gown which completely fails to cover her very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face.[otherwise]This orange lifeform appears to be a sentient ghost, in the shape of a large, thick diaper cover, with a face etched into it like something out of a Disney movie! [end if][if M is jismbodied ghost]A small cloud of baby powder with its own cute little face floats alongside it.[end if]";
+		say "[if M is ghostly tentacle]This blue glowing ghost takes on a human female form, dressed in a right black gown which completely fails to cover [his of M] very thick white diaper. Beneath a black veil is a friendly and playful but also somewhat sinister face.[otherwise]This orange lifeform appears to be a sentient ghost, in the shape of a large, thick diaper cover, with a face etched into it like something out of a Disney movie! [end if][if M is jismbodied ghost]A small cloud of baby powder with its own cute little face floats alongside it.[end if]";
 	otherwise if M is unfriendly:
 		say "[if M is jismbodied ghost]This floating, faintly glowing penis is composed entirely of semi-solid silver slime. Even for an evil spectre, the size of it is unreal...[otherwise if M is ghostly tentacle]This transparent purple tentacle is hanging from the ceiling, drooling some brightly coloured green fluid.[otherwise][one of]This transparent, faintly glowing green penis is floating a few feet off the ground. It certainly doesn't move as if it's attached to some invisible main body, but sometimes when you look at it from just the right angle, you feel like there's an outline of someone standing behind it.[or]Obviously some kind of ghost, this glowing male sex organ is slightly transparent and floats a few feet off the ground. It seems to have something of a mind of its own.[or]A sickly green penis, floating aimlessly a few feet off the ground. Its [']body['] is slightly transparent, and it casts a dim glow over the surrounding walls and furniture. It's obvious it wants to fuck you.[at random][end if]";
 	otherwise:
@@ -375,7 +375,7 @@ The ghost end of sex rules is a rulebook. The end-of-sex-rules of a ghost is usu
 The reset chosen orifice rule is listed first in the ghost end of sex rules.
 
 To finish possession of (T - a thing) in (O - an orifice):
-	unless O is actually occupied or current-monster is not intelligent:
+	unless O is actually occupied or current-monster is unintelligent:
 		say "The [T] reappears in your [variable O].";
 		now T is worn by the player;
 		now T is penetrating O;
@@ -405,10 +405,10 @@ To compute facial climax of (M - a ghost):
 			StomachSemenUp the semen load of M;
 			humiliate 300;
 	TimesSubmittedUp M by 1;
-	satisfy M.
+	orgasm satisfy M.
 
 To say OralCondomPieFlav of (M - a ghost):
-	say "[one of][BigNameDesc of M] shivers as it ejaculates into the condom[or][BigNameDesc of M] throbs powerfully, firing off jet after jet of warm [semen] into the condom.[or][BigNameDesc of M] spasms as it fills the condom with [his of M] load.[or][BigNameDesc of M] shivers as it begins to ejaculate, bulging the condom with [his of M] big load.[or][BigNameDesc of M] buries itself as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][BigNameDesc of M] forces [him of M]self down your throat, twitching as [he of M] thoroughly fills the condom fills with [his of M] load.[or][BigNameDesc of M] forces itself in all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigNameDesc of M] jizzes, throbbing as it fills the condom with [his of M] load.[in random order]".
+	say "[one of][BigNameDesc of M] shivers as it ejaculates into the condom[or][BigNameDesc of M] throbs powerfully, firing off jet after jet of warm [semen] into the condom.[or][BigNameDesc of M] spasms as it fills the condom with [his of M] load.[or][BigNameDesc of M] shivers as it begins to ejaculate, bulging the condom with [his of M] big load.[or][BigNameDesc of M] buries itself as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][BigNameDesc of M] forces [himself of M] down your throat, twitching as [he of M] thoroughly fills the condom fills with [his of M] load.[or][BigNameDesc of M] forces itself in all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigNameDesc of M] jizzes, throbbing as it fills the condom with [his of M] load.[in random order]".
 
 To say FailedFacialDodge of (M - a ghost):
 	say "[one of]Ghostly hands materialise to hold you still as [NameDesc of M] ejaculates all over your face.[or]Your face is covered in a thick load of [semen] before you can even think about turning your face away.[or][BigNameDesc of M] pops out of your mouth and immediately goes over the edge. You take a full ejaculation all over your face.[or][BigNameDesc of M] pops out of your mouth as it goes over the edge, flexing as it shoots several long ropes of [semen] at you in rapid succession. [if the reaction of the player is 0]You react fast enough to duck out of the way, but the individual strands somehow curve in mid-air, and you still take a full splattering to the face.[otherwise]You close your eyes, obediently taking the full load all over your face.[end if][or][BigNameDesc of M] pulls out and immediately begins to unload all over your face. [if the reaction of the player is 0]You react fast enough to dodge most of it, but just when you think you're safe, it somehow loops around your head and hits you from the other side[otherwise]You barely have time to shut your eyes as the [semen] hits your face[end if][or][if the semen addiction of the player < 8]Knowing what's coming, you try to get out of the way as soon as [NameDesc of M] pulls out. Unfortunately, you just aren[']t fast enough, and you get a full facial anyway.[otherwise if the semen addiction of the player < 12]You know what's coming when [NameDesc of M] pulls out, but you can[']t find the will to struggle and sit obediently for a hot, sticky facial.[otherwise]You immediately know what[']s coming when [NameDesc of M] pulls out, and happily close your eyes for a hot, sticky facial.[end if][or][BigNameDesc of M] pops out of your mouth and immediately jizzes all over your face[or][BigNameDesc of M] withdraws from your mouth and immediately gives you a warm, messy facial.[in random order]".
@@ -426,7 +426,7 @@ This is the ghost anal climax rule:
 The ghost anal climax rule is listed in the ghost end of sex rules.
 
 To finish possession of (T - a sex toy) in (O - an orifice):
-	unless O is actually occupied or current-monster is not intelligent:
+	unless O is actually occupied or current-monster is unintelligent:
 		say "[BigNameDesc of current-monster] leaves the [T] behind in your [variable O], plugging all the [semen] inside of you.";
 		now T is worn by the player;
 		now T is cursed;

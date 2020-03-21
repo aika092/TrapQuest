@@ -68,7 +68,7 @@ To say FriendlySexSubmissionFlav of (T - a thing):
 To compute FriendlySexRelease of (M - a monster):
 	if M is willing to let go:
 		say FriendlySexReleaseFlav of M;
-		increase the blue-balls of M by 1;
+		increase the blue-balls of M by 10;
 		dislodge M;
 	otherwise:
 		say FriendlySexReleaseRefusalFlav of M.

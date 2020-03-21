@@ -740,7 +740,7 @@ To say VagueInternals:
 		if the player is craving milk:
 			say "Cranky";
 			now fine is 0;
-	if player-immobile is 1:
+	if player-immobile is true:
 		if fine is 0, say " & ";
 		say "[if the player is monster fucked]Being Fucked[otherwise]Stuck[end if]";
 		now fine is 0;

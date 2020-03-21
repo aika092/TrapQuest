@@ -7,56 +7,57 @@ REQUIRES COMMENTING
 
 +!]
 A time based rule (this is the lactation rule):
-	let R be the lactation rate of the player;
-	repeat with C running through worn wearthing:
-		if C is milk production clothing:
-			increase R by 2;
-			if C is blessed, decrease R by 1;
-			if C is cursed, increase R by 1;
-		if C is maternity dress, increase R by 1;
-		if C is milking basque, increase R by 1;
-		if C is nintendolls-brand tattoo, increase R by 2;
-		if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
-	if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
-	if R > 0:
-		let L be 200 / R + 1;
-		if the remainder after dividing time-earnings by L < time-seconds:
-			let flav-said be 0;
-			if there is an ass covering milking basque:
-				let previous-size be the largeness of belly;
-				Assfill 1 Milk;
-				if the largeness of belly > previous-size:
-					say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
-					now flav-said is 1;
-			if the number of ass covering white milking basques is 0: [this way, cow print milking basques do both]
-				let previous-size be the largeness of breasts;
-				MilkUp 1;
-				if the largeness of breasts > previous-size:
-					say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
-					now flav-said is 1;
-			if a random number between 1 and  10 is 1 and the lactation rate of the player > 0:
-				say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
-				decrease the lactation rate of the player by 1;
-	if the milk volume of breasts > 0:
-		if the lactation rate of the player > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]
-			if a random number between 1 and 70 is 1: [Added because it was saying this too often]
-				say "[one of]Your [BreastDesc] feel active.[or]Your breasts feel strangely warm.[or]Your [BreastDesc] feel kind of tight, or intense... kind of... busy?[or]There's a funny tingling in your boobs.[or]A funny sort of quiver, deep inside your breasts, makes you stop and stare at your [BreastDesc].[or]You stare at your breasts, certain that - just for a moment - you felt liquid moving inside them![at random] ";
-				if FairySuckled > 3 and a random number between 1 and 2 is 1 :
-					say "[one of]They've felt weird ever since those darned fairies started fixating on your boobs![or]Surely, all that fairy-suckling... are they turning you into a brood mare?[or]You hope it's not a side-effect of all that fairy attention to your milky boobs![or]You worry it's a side-effect of all those milk-hungry fairies![at random][line break]";
-		let M be the milk volume of breasts;
-		let L be 120;
-		if the class of the player is cowgirl, now L is 240;
-		decrease L by M * 2; [The more milk there is, the higher chance of lactation]
-		if there is a worn pasties, now L is 1;[lactation shouldn't happen when the player is wearing pasties]
-		if (the class of the player is not cowgirl or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and a random number between 0 and L <= 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place]
-			trigger lactation;
-		otherwise if the milk volume of breasts >= the flesh volume of breasts:
-			if the ready-for-milking of milking-quest is 0:
-				let quest-2b-milked be nothing;
-				repeat with C running through worn clothing:
-					if the quest of C is milking-quest, now quest-2b-milked is C;
-				say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if].[roman type][line break]";
-			now the ready-for-milking of milking-quest is 1.
+	if lactation fetish > 0:
+		let R be the lactation rate of the player;
+		repeat with C running through worn wearthing:
+			if C is milk production clothing:
+				increase R by 1;
+				if C is cursed, increase R by 1;
+			if C is maternity dress, increase R by 1;
+			if C is milking basque, increase R by 1;
+			if C is nintendolls-brand tattoo, increase R by 2;
+			if C is abyssal tattoo and the class of the player is cowgirl, increase R by 2;
+		if the latex-transformation of the player > 5 or there is a worn pasties, now R is 0;
+		if R > 0:
+			if R > 10, now R is 10;
+			let L be 50 - (R * 4);
+			if the remainder after dividing time-earnings by L < time-seconds:
+				let flav-said be 0;
+				if there is an ass covering milking basque:
+					let previous-size be the largeness of belly;
+					Assfill 1 Milk;
+					if the largeness of belly > previous-size:
+						say "Your body has produced [if the milk volume of belly < 5]enough[otherwise]so much[end if] [milk] that you now have a [BellyDesc]![one of][line break][variable custom style]Wait... what?!?! What the hell is this basque doing to me? That's not how lactation is supposed to work.[roman type][line break][or][stopping]";
+						now flav-said is 1;
+				if the number of ass covering white milking basques is 0: [this way, cow print milking basques do both]
+					let previous-size be the largeness of breasts;
+					MilkUp 1;
+					if the largeness of breasts > previous-size:
+						say "Your body has produced [if the milk volume of breasts < 5]enough[otherwise]so much[end if] [milk] that you now have [BreastDesc]!";
+						now flav-said is 1;
+				if a random number between 1 and 10 is 1 and the lactation rate of the player > 0:
+					say "You feel your [unless there is an ass covering milking basque]breasts['] [end if][milk] production rate [if R is 1]stop.[otherwise][one of]slow down[or]decrease[or]lower[in random order].[end if]";
+					decrease the lactation rate of the player by 1;
+		if the milk volume of breasts > 0:
+			if the lactation rate of the player > 3: [Selkie. (Incidentally: I put this comment in front of the "if" on this line, and Inform got confused.)]
+				if a random number between 1 and 70 is 1: [Added because it was saying this too often]
+					say "[one of]Your [BreastDesc] feel active.[or]Your breasts feel strangely warm.[or]Your [BreastDesc] feel kind of tight, or intense... kind of... busy?[or]There's a funny tingling in your boobs.[or]A funny sort of quiver, deep inside your breasts, makes you stop and stare at your [BreastDesc].[or]You stare at your breasts, certain that - just for a moment - you felt liquid moving inside them![at random] ";
+					if FairySuckled > 3 and a random number between 1 and 2 is 1 :
+						say "[one of]They've felt weird ever since those darned fairies started fixating on your boobs![or]Surely, all that fairy-suckling... are they turning you into a brood mare?[or]You hope it's not a side-effect of all that fairy attention to your milky boobs![or]You worry it's a side-effect of all those milk-hungry fairies![at random][line break]";
+			let M be the milk volume of breasts;
+			let L be 120;
+			if the class of the player is cowgirl, now L is 240;
+			decrease L by M * 2; [The more milk there is, the higher chance of lactation]
+			if there is a worn pasties, now L is 1;[lactation shouldn't happen when the player is wearing pasties]
+			if (the class of the player is not cowgirl or (the class of the player is royal slave and there is a worn crotch-in-place top-placed milking basque)) and a random number between 0 and L <= 0: [We want to allow the cow slave class to still regularly lactate when the milking basque is in place]
+				trigger lactation;
+			otherwise if the milk volume of breasts >= the flesh volume of breasts:
+				if the ready-for-milking of milking-quest is 0:
+					let quest-2b-milked be nothing;
+					repeat with C running through worn clothing:
+						if the quest of C is milking-quest, now quest-2b-milked is C;
+					say "[bold type]Your breasts are now completely full of milk[if quest-2b-milked is clothing]. Your [ShortDesc of quest-2b-milked] fills you with a desire to find somewhere to get milked[end if][if the milk volume of breasts > 10]. Until you do, your heavy breasts will make you become fatigued much faster while standing[end if].[roman type][line break]";
+				now the ready-for-milking of milking-quest is 1.
 
 To decide which number is milkingColour:
 	let R-component be 255;
@@ -135,7 +136,7 @@ To trigger lactation:
 				if a random number between 1 and 4 is 1:
 					say "A strange shivery feeling tingles through your chest.";
 					increase the lactation rate of the player by 1;
-			otherwise: [Selkie: when I started the line below "[Milk] starts..." , that entire block of text came out in bold (and Milk was not capitalised). So I changed it to just say "Milk starts..."]
+			otherwise: [Selkie: when I started the line below "[Milk] starts...", that entire block of text came out in bold (and Milk was not capitalised). So I changed it to just say "Milk starts..."]
 				if M < 10, say "Milk starts jetting from your nipples into the suction cups of the [printed name of N]. You hear a recording of a cow mooing, playing from somewhere right by your head, so that if anyone were looking at you they'd think you were the one mooing in pleasure. Ohhh - how mean! You shiver [if the humiliation of the player > 11]in delight [end if]and wonder if somehow this situation might be somehow making you more cow-like? But they wouldn't be that mean, would they?";
 				otherwise say "Your [BreastDesc] powerfully squirt [milk] into the suction cups of the [printed name of N]. You feel the pressure easing from your swollen udders, and combined with the wonderful feeling of the exciting suction on your tender and sucked-erect teats, and the [milk] squirting from them, you feel a heat growing in your loins. [line break][variable custom style]This is actually pretty wonderful![roman type][line break]It goes on for a long time, and you feel yourself getting hornier, and find yourself pressing your thighs together, trying to squeeze out a little bit more pleasure from your tingling groin. [one of][line break][variable custom style]Wow, this is really giving my milk ducts a workout! Imagine if they were like other muscles, and... oohhh... the more I work them, the better they get at doing their job?[if the bimbo of the player > 14] I sure hope it does![roman type][line break][otherwise]You sure hope not. The idea of [italic type]your[roman type] breasts giving milk is just awful![end if][or][line break][variable custom style]It's like an exercise machine for my milky boobs![roman type][line break][or]You feel a curious burning sensation, spread out deep inside your boobs - it reminds you of growing pains, when you were a teen.[or]You imagine your poor milk ducts, being filled and emptied, over and over.[or]Your milk glands definitely feel [italic type]healthier.[roman type][stopping][line break]";
 				let tempM be M;

@@ -55,7 +55,7 @@ A glulx mouse input rule (this is the default graphlink setting rule):
 	perform glulx graphlink request in current graphlink window.
 
 To perform glulx graphlink request in (g - a graphics g-window):
-	(-  if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) DoGraphLink({g}); -)
+	(- if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) DoGraphLink({g}); -)
 
 Include (-
 
@@ -77,13 +77,13 @@ Include (-
 
 [ SetGraphLink g;
 	if (g.(+ ref number +)) {
-	            if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_request_mouse_event(g.(+ ref number +));
+				if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_request_mouse_event(g.(+ ref number +));
 	}
 ];
 
 [ IgnoreLinks g;
 	if (g.(+ ref number +)) {
-	            if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_cancel_mouse_event(g.(+ ref number +));
+				if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) glk_cancel_mouse_event(g.(+ ref number +));
 	}
 ];
 
@@ -412,7 +412,7 @@ Part 7a - Debugging Commands (not for release)
 
 Chapter 7.1 - Debugging Graphlinks Table
 
-Debugging graphlinks is an action out of world.	Understand "graphlinks" or "graphlinks table" as debugging graphlinks.
+Debugging graphlinks is an action out of world. Understand "graphlinks" or "graphlinks table" as debugging graphlinks.
 
 Check debugging graphlinks:
 	say "[line break][bold type]Table of Graphlink Glulx Replacement Commands[roman type] (presented in reverse order)[line break]There are [number of filled rows in the Table of Graphlink Glulx Replacement Commands] entries in the table.";

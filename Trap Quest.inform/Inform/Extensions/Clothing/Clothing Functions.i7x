@@ -293,9 +293,9 @@ To only destroy (C - clothing):
 	now C is unowned;
 	now the damage of C is 0;
 	now C is not-influencing;
-	repeat with M running through monsters retaining C:
+	repeat with M running through monsters:
 		now M is not retaining C;
-	repeat with M running through monsters rejecting C:
+		now M is not withholding C;
 		now M is not rejecting C;
 	remove C from play;
 	if C is listed in the list of stacked diapers, diaperRemove C;

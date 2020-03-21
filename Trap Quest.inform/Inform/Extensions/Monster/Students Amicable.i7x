@@ -51,7 +51,7 @@ Part - Default Conversation
 
 
 To compute nonstudent perception of (M - an amicable student):
-	say "[speech style of M]'[one of]Uh oh[or]Oh no[or]Wait a second[or]Um, hold on[or]OMG[in random order], [one of]I think you left your armband at home[or]you must have left your armband in your last class[or]someone stole your armband[or]your armband is missing[at random]! I have to find a teacher!'[roman type][line break][Big he of M] frantically walks away!";
+	say "[speech style of M]'[one of]Uh oh[or]Oh no[or]Wait a second[or]Um, hold on[or]OMG[in random order], [one of]I think you left your armband at home[or]you must have left your armband in your last class[or]someone stole your armband[or]your armband is missing[at random]! I have to find a teacher!'[roman type][line break][big he of M] frantically walks away!";
 	[anger M;]
 	now the scared of M is 100.
 
@@ -76,7 +76,7 @@ To say detention chair tease of (M - an amicable student):
 
 To compute (M - an amicable student) protecting against (X - a monster):
 	if M is buddy and X is nasty student:
-		say "[speech style of M]'Leave her alone!'[roman type][line break][BigNameDesc of M] slaps [NameDesc of X]";
+		say "[speech style of M]'Leave [him of the player] alone!'[roman type][line break][BigNameDesc of M] slaps [NameDesc of X]";
 		compute X receiving 2 damage from M;
 	otherwise if X is staff member:
 		unless X is nurse:

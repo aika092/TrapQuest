@@ -12,7 +12,9 @@ To decide which number is the outrage of (C - a wearthing):
 			if C is crotch-displaced and C is skirted and the player is upright and the number of lewdly exposed fuckholes is 0, increase O by 1; [A little less outrageous than below because there are a few reasons you might pull up a skirt, e.g. combat]
 			otherwise increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
 			decide on O;
-	decide on the unworn outrage of C.
+	let O be the unworn outrage of C;
+	if C is worn and C is not currently visible, now O is (O * 2) / 3; [this means it is partially visible]
+	decide on O.
 
 To decide which number is the notManlyFactor of (C - a clothing):
 	if the player is presenting as male and C is not manly, decide on 1;
@@ -22,9 +24,8 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if C is messed knickers and diaper quest is 0 and C is currently visible, decide on 20;
 	let O be the initial outrage of C;
 	increase O by the notManlyFactor of C;
-	if C is sheer-when-wet and C is actually sheer, increase O by 2; [Wet T-shirt contest is not really a dignified look]
 	if O < 11 and C is drinkable condom pinned, now O is 11; [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
-	if diaper quest is 0 and O < 9 and the semen-soak of C > 0, now O is 9; [can't have cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
+	if diaper quest is 0 and O < 6 + the semen-soak of C and the semen-soak of C > 2, now O is 9; [can't have significant amounts of cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
 	if C is not worn or C is currently visible, increase O by the fluid outrage of C;
 	if C is not worn or C is currently visible, increase O by the condom outrage of C;
 	[if C is breast covering and C is actually sheer and O < the at least partially lewdly exposed outrage of breasts and breasts is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of breasts;

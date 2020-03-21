@@ -141,6 +141,7 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 16 and egg laying fetish is 0 or mythical creature fetish is 0, decide no; [wasp wing]
 	if K is 36 and inflation fetish is 0, decide no;
 	if K is 55 and diaper quest is 0, decide no; [Chocolate eggs]
+	if K is 56 and diaper messing < 4, decide no; [Pocketwipes]
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
 

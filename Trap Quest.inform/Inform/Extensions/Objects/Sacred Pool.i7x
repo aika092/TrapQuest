@@ -14,7 +14,7 @@ To compute showering (SP - sacred pool):[Much later: some interaction with slime
 	if the corruption of the sacred pool > 200:
 		say "Tendrils of liquid lash out as soon as you break the surface, latching hold of you, dragging you the rest of the way in and pulling you underwater. You are thrashed around violently underneath the surface and abruptly thrown back out.";
 		PainUp 1;
-		repeat with L running through worn uncursed cursable clothing:
+		repeat with L running through worn actually cursable clothing:
 			curse L;
 		IntDown 1;
 	otherwise if tracked-semen > 0 or B > 0:

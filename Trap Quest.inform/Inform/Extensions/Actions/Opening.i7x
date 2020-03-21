@@ -44,7 +44,7 @@ Check opening a container:
 				compute extra turn;
 				if the player is in danger, say "[bold type]You are in danger, so you stop.[roman type]" instead;
 				allocate 2 seconds;
-			if the noun is open, now autoopen is 0 instead; [If the player automatically searches, there's a chance this could then cause the player to automatically open the container!  SO it might already be open here.]
+			if the noun is open, now autoopen is 0 instead; [If the player automatically searches, there's a chance this could then cause the player to automatically open the container! SO it might already be open here.]
 		otherwise:
 			say "[one of][line break][variable custom style]Searching for traps sounds like a waste of time. What's the worst they could do?[roman type][line break][or][stopping]";
 	now autoopen is 0.

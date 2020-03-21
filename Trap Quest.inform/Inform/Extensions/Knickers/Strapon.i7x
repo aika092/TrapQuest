@@ -15,12 +15,12 @@ To say selfexamineuniquetitle of (K - a strapon-panties):
 To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
 
-Definition: A strapon-panties (called P) is fetish appropriate:
+Definition: a strapon-panties (called P) is fetish appropriate:
 	if diaper quest is 0 and the player is the donator, decide yes;
 	decide no.
 
 [is it a strapon or a penis]
-Definition: A strapon-panties is dildo-usage: decide yes.
+Definition: a strapon-panties is dildo-usage: decide yes.
 
 
 To say ShortDesc of (H - a strapon-panties):
@@ -136,7 +136,7 @@ To say PenisSoften of (K - an equine-strapon):
 To say PenisHarden of (K - an equine-strapon):
 	say "You feel your [ShortDesc of penis] tingle as your strapon dildo transforms into a [printed name of K].";]
 
-Chapter 3 -  Gemstone Strapon
+Chapter 3 - Gemstone Strapon
 
 Gem-strapon is a strapon-panties. The text-shortcut of gem-strapon is "gspd". Gem-strapon is rare. The armour of gem-strapon is 6. Understand "thong", "gem", "encrusted", "gem-encrusted", "gem encrusted" as a gem-strapon. Gem-strapon is silk.
 

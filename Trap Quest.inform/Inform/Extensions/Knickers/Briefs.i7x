@@ -5,6 +5,8 @@ A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. 
 To decide which number is the penis-capacity of (K - a briefs):
 	decide on 6.
 
+Definition: a briefs is rippable: decide yes.
+
 The printed name of briefs is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 To say TypeTitle of (T - a briefs):
@@ -50,7 +52,7 @@ To decide which figure-name is clothing-image of (C - silvery briefs):
 To decide which figure-name is clothing-image of (C - green-briefs):
 	decide on figure of briefs 8.
 
-To decide which figure-name is clothing-image of (C -  grey-briefs):
+To decide which figure-name is clothing-image of (C - grey-briefs):
 	decide on figure of briefs 9.
 
 To decide which figure-name is clothing-image of (C - pale briefs):
@@ -287,7 +289,7 @@ Figure of briefs 17 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs17.p
 
 [Below are from Lucas]
 
-pale blue-briefs is a briefs. The text-shortcut of pale blue-briefs is "pbbr".	pale blue-briefs has a number called charge.
+pale blue-briefs is a briefs. The text-shortcut of pale blue-briefs is "pbbr". pale blue-briefs has a number called charge.
 Understand "I want", "it all", "blue", "briefs" as pale blue-briefs.
 To say selfexamineuniquetitle of (G - pale blue-briefs):
 	say "pair of pale blue 'I WANT IT ALL' briefs".

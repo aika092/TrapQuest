@@ -433,7 +433,7 @@ REQUIRES COMMENTING
 +!]
 To compute surrender to (M - a monster):
 	let N be a random intelligent dangerous monster in the location of the player;
-	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is not intelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
+	say "You consider attacking [NameDesc of M], but then your [if the humiliation of the player >= 40000]desire to be used as an object[otherwise]fear of pain[end if] gets the better of you. You find yourself dropping to your knees. [if N is monster and M is unintelligent][SurrenderFlav of N][otherwise][SurrenderFlav of M][end if]";
 	compute silent surrender to M.
 
 To compute silent surrender to (M - a monster):
@@ -453,7 +453,7 @@ To say SurrenderFlav of (M - a monster):
 		if the player is able to speak:
 			if the humiliation of the player >= 40000, say "[variable custom style]'[one of]Please use my body to your heart's desire.'[or]I understand my place.'[or]I am yours to use. Please do not show me any mercy.'[in random order][roman type][line break]";
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
-	if the player is able to use their hands and the player is not wrist bound behind, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
+	if the player is able to use their hands and the player is not wrist bound behind, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is unintelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
 
 
 Part 4 - Damage Calculation
@@ -690,7 +690,9 @@ To compute failed damage of (M - a monster):
 	do nothing.
 
 To compute combatProvoked of (M - a monster):
+	FavourDown M;
 	now M is unleashed.
+
 
 
 Attacking Monsters ends here.

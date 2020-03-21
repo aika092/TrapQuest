@@ -8,7 +8,7 @@ To decide which figure-name is clothing-image of (H - a yoga pants):
 To say UniqueClothingDesc of (Y - a yoga pants):
 	say "A loose fitting pair of yoga pants[if Y is worn] that make you feel much more in tune with your inner balance[end if].[if Y is crotch-ripped]There is a large rip at the crotch.[end if]".
 
-To say ShortDesc of (Y - a  yoga pants):
+To say ShortDesc of (Y - a yoga pants):
 	say "pair of yoga pants".
 
 To decide which number is the hindrance-modifier of (C - a yoga pants):

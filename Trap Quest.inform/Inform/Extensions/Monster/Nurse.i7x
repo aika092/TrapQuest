@@ -25,7 +25,7 @@ To say MonsterDesc of (M - nurse):
 	if M is sex-enslaved:
 		say "The nurse has lost the bottom half of [his of M] purple dress. What material is left is bunched up at [his of M] waist, exposing the magical purple thigh strap which keeps [his of M] legs snapped tightly together, and prevents [him of M] from being able to walk around. A magic purple vibrator is embedded in [his of M] butthole, visibly and audibly buzzing away inside [his of M] ass, never tiring, never ceasing. [big his of M] [if bukkake fetish is 1]cum covered [end if]facial expression reveals [his of M] mental state - vacant, orgasm-addled, but happy. [big he of M] waddles around on [his of M] knees, gleefully licking up a bit of cum [he of M]'s found stuck to [his of M] glove.";
 	otherwise if M is diaper-enslaved:
-		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. Her mouth is kept full by a large purple pacifier gag. Her skirt has been shortened, so it fully exposes her new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of her diaper, and you think you can see a stream of lady-drool trickling down one of her legs, which might explain why her face is constantly red and sweating.[otherwise]Every few seconds, she winces and you hear a nasty squelch-fart sound come from her rear end. Her diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down her right leg. It would appear that she's been cursed to have her anal cavity constantly slowly filled with [semen]...[end if]";
+		say "The fingers of the nurse's gloves have been removed, turning them into long latex fingerless mittens. [big his of M] mouth is kept full by a large purple pacifier gag. [big his of M] skirt has been shortened, so it fully exposes [his of M] new thick pale purple diaper. [if diaper quest is 1]A loud buzzing is emanating from the inside of [his of M] diaper, and you think you can see a stream of lady-drool trickling down one of [his of M] legs, which might explain why [his of M] face is constantly red and sweating.[otherwise]Every few seconds, [he of M] winces and you hear a nasty squelch-fart sound come from [his of M] rear end. [big his of M] diaper is beginning to leak now, as you watch a steady sticky stream of [semen] trickle down [his of M] right leg. It would appear that [he of M]'s been cursed to have [his of M] anal cavity constantly slowly filled with [semen]...[end if]";
 	otherwise:
 		say "Even the nurse of this institution is not immune from its theme: [his of M] tight purple latex dress hugs [his of M] slim figure and emphasises the curves of [his of M] [if lady fetish is 2]ass[otherwise]tits and ass[end if]. White rubber gloves, a white rubber nurse headband and a matching rubber nurse apron complete the look, which screams 'fetish'. [big his of M] long black hair rests alluringly on [his of M] shoulders. Black lipstick and a naughty grin gives [him of M] a slight air of... evil. You feel like [he of M] definitely doesn't see you as an equal.";
 
@@ -87,7 +87,7 @@ To say DamageReactWeak of (M - nurse):
 	say "[BigNameDesc of M] takes the hit, fighting to maintain [his of M] balance! [line break][speech style of M]'[one of]Ooh!'[or]Ouch!'[at random][roman type][line break]".
 
 To say StrikingFlav of (M - a nurse) on (B - a body part):
-	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward her with seemingly impossible strength!".
+	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward [him of M] with seemingly impossible strength!".
 
 To say StrikingSuccessFlav of (M - a nurse) on (B - a body part):
 	say "[StrikingFlav of M on B]She pricks your biceps with the syringe of pink liquid, which immediately makes you woozy.".
@@ -133,8 +133,8 @@ Definition: nurse (called M) is aware that the player needs a change:
 	let D be a random worn knickers;
 	if D is currently visible knickers or D is messed knickers:
 		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
- 		if D is crotch-ripped diaper, decide yes;
- 	decide no.
+		if D is crotch-ripped diaper, decide yes;
+	decide no.
 
 To compute student perception of (M - nurse):
 	if M is aware that the player needs a change:
@@ -188,6 +188,9 @@ To compute (M - nurse) seeking (D - a direction):
 		compute monstermotion reactions of M.
 
 To compute monstermotion of (M - nurse):
+	if playerRegion is not school and M is undefeated:
+		say "BUG: [BigNameDesc of M] has followed the player out of the school. Please report along with a description of what recently happened. Region: [playerRegion]; Location: [location of M]; Player location: [location of the player].";
+		now M is in School01;
 	unless M is in School11, compute room leaving of M.
 
 [Nurse always successfully follows the player]
@@ -201,13 +204,13 @@ To say FriendlyMouthPenetrationFlav of (M - nurse):
 	say MouthPenetrationFlav of M.
 
 To say MouthPenetrationFlav of (M - nurse):
-	say "[NameDesc of M] lifts up [his of M] dress[if lady fetish is 2], allowing you to glimpse a mint-green chastity cage for an instant before [he of M] turns around and plops right down on your face[otherwise] and plonks her bare shaved [HoleDesc of M] right down onto your mouth[end if].";
+	say "[NameDesc of M] lifts up [his of M] dress[if lady fetish is 2], allowing you to glimpse a mint-green chastity cage for an instant before [he of M] turns around and plops right down on your face[otherwise] and plonks [his of M] bare shaved [HoleDesc of M] right down onto your mouth[end if].";
 	now the sex-length of M is 1.
 
 To compute facial sex of (M - a nurse):
 	decrease the sex-length of M by 1;
-	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds his ass against you. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
-	otherwise say "[BigNameDesc of M] grinds her cunt over your nose and mouth, coating them in her juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	if lady fetish is 2, say "[BigNameDesc of M] holds your head in place, panting as [he of M] grinds [his of M] ass against you. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
+	otherwise say "[BigNameDesc of M] grinds [his of M] cunt over your nose and mouth, coating them in [his of M] juices. [line break][speech style of M]'Ooh yes, this won't take long...'[roman type][line break]";
 	if med bay bed is grabbing the player:
 		if another-turn-flavour is "", now another-turn-flavour is "You're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face.";
 		now another-turn is 1.
@@ -215,12 +218,12 @@ To compute facial sex of (M - a nurse):
 To compute facial climax of (M - nurse):
 	TimesSubmittedUp M by 1;
 	LickCount;
-	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over him. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
-	otherwise say "[BigNameDesc of M] grunts as she shudders, a strong orgasm washing over her. Your mouth and face soon feel even wetter than before as her girlcum joins her other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
+	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	OralSexAddictUp 1;
-	say "[BigNameDesc of M] takes a few moments to recover and then plucks her [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. She unbuckles the straps holding you down and allows you to leave[end if].";
+	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
-	satisfy M;
+	orgasm satisfy M;
 	calm M;
 	now M is interested;
 	now the boredom of M is 0; [because otherwise she stops following us and we can enter the med bay bed without her]

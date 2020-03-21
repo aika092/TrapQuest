@@ -114,7 +114,7 @@ REQUIRES COMMENTING
 +@!]
 Definition: a trap (called T) is relevant:
 	if the room-entering of the player is 0 and the trap-direction of T is the travel-direction of the player, decide yes;
-	if the room-entering of the player is 1 and the trap-direction of T is the  travel-opposite of the player, decide yes;
+	if the room-entering of the player is 1 and the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
 
 [!<TriggerTrap>+
