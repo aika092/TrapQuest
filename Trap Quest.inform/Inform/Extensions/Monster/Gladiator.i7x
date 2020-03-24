@@ -16,7 +16,6 @@ Definition: a gladiator is presenting as male:
 
 Definition: a gladiator is dungeon dwelling: decide yes.
 
-
 Figure of Gladiator Interact 1 is the file "Special/Cutscene/cutscene-gladiator-interact1.png".
 Figure of Gladiator Interact 2 is the file "Special/Cutscene/cutscene-gladiator-interact2.png".
 Figure of Gladiator Interact 3 is the file "Special/Cutscene/cutscene-gladiator-interact3.png".
@@ -30,7 +29,6 @@ Figure of Gladiator Cutscene 13 is the file "Special/Cutscene/cutscene-gladiator
 Figure of Gladiator Cutscene 14 is the file "Special/Cutscene/cutscene-gladiator-event3.png".
 
 Figure of Babified Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator6.jpg".
-
 
 To decide which figure-name is the monster-image of (M - a gladiator):
 	if M is male:
@@ -227,7 +225,6 @@ REQUIRES COMMENTING
 *!]
 gladiatorcurse is a number that varies. gladiatorcurse is 0.[1 - Xavier, 0 - Witch.]
 
-
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a gladiator):
@@ -272,7 +269,6 @@ To say DiaperReaction of (M - a gladiator):
 		FavourDown M with consequences;
 	otherwise:
 		say "It seems that you've gotten away with wetting without [NameDesc of M] noticing. This time.".
-
 
 To compute (M - a monster) stomping (N - a gladiator):
 	if diaper quest is 1:
@@ -444,7 +440,6 @@ To compute appearance assessment of (M - a gladiator):
 		otherwise if M is interested:
 			say "[if M is buddy][BigNameDesc of M] gives you a wide smile, but you struggle to decipher whether it is meant to be friendly or jeering.[otherwise if M is acquaintance][BigNameDesc of M] puts [his of M] hands on [his of M] hips, and seems content to watch you closely for now.[otherwise][BigNameDesc of M]'s tight pursed lips tell you everything you need to know about [his of M] current feelings towards you.[end if]".
 
-
 To compute perception of (M - a gladiator):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed][one of], even though [he of M] is almost naked [himself of M][or][stopping].[otherwise]![end if]";
@@ -563,10 +558,8 @@ To display interaction of (M - a gladiator):
 	otherwise:
 		alwayscutshow figure of gladiator interact 7 for M.
 
-
 To say DQFeedingResistReactionFlav of (M - a gladiator):
 	say "[speech style of M]'[one of]Hahaha, thrash and flail to your heart's content sweetie, my nectar will find its mark, like it or not.'[or][big please] angel, my nipples are practically purple. You will not know release until I allow it!'[or]Hehe, are we embarrassed, being nursed in public? You know proud warriors would not be seen dead like this. And yet here you are!'[in random order][roman type][line break]".
-
 
 Part 3 - Combat
 
@@ -939,7 +932,6 @@ To say TwosomePrep of (M - a gladiator) in (F - asshole):
 
 To say PrepTaunt of (M - a gladiator) in (F - asshole):
 	say "[speech style of M]'[one of]This is supposed to be a punishment, so I[']ll make sure that it hurts.'[or]You should not have angered me. You will feel why.'[or]Your most delicate hole is mine for the taking.'[or]This will hurt.'[or][if the player is female]You don[']t deserve to be called a woman. I will not fuck you like one.'[otherwise]Since you did not want womanhood, perhaps you will like manhood'[end if][or]I will make sure you don[']t enjoy this, whore.'[or]I think I will enjoy punishing you.'[or]It[']s over. You won[']t have dignity to speak of when I am through with you.'[in random order][roman type][line break]".
-
 
 To get failed facial dodge image for (M - a gladiator):
 	cutshow figure of gladiator cutscene 10 for M.
@@ -1642,7 +1634,6 @@ To say AfterDominationComment (N - a number) of (M - a gladiator):
 	otherwise:
 		say "[speech style of M]'[one of]You were the victor. Congratulate yourself while you can.'[or]I was holding back, but no matter. We shall not repeat this.'[or]I regret nothing. However, you will not be so lucky. Soon.'[at random][roman type]";
 
-
 Part 4 - Conversation
 
 To IdentifiablePosterReaction of (M - a gladiator):
@@ -1695,7 +1686,6 @@ To say RepeatResponse of (M - a gladiator):
 			say "[speech style of M]'[one of]Hello, warrior. Impressive that you have remained on the path of purity.'[or]Hello, warrior of purity!'[or]Hello! Your path is one of strength, martial virgin.'[at random][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]Your breasts are starting to look a bit on the small side again, you should fix that.'[or]Your breasts [if the largeness of breasts > 6]are big enough to be worthy of respect, but they could[otherwise]can[end if] always be bigger.'[or]Don't let your breasts get too small, sister. They are the only thing that can make you a real woman.'[at random][roman type][line break]".
-
 
 To say UnAnnoyedResponse of (M - a gladiator):
 	say "[speech style of M]'[one of]Take it, whore!'[or]How does it feel when I punish you, whore!'[or][if the player is male]How does it feel to get fucked by a woman?'[otherwise]I said you would pay!'[end if][at random][roman type][line break]";
@@ -1898,7 +1888,6 @@ To say DismissalResponseStalker of (M - a gladiator):
 
 To say DismissalResponseDefault of (M - a gladiator):
 	say "[speech style of M]'How insulting! [if M is buddy]And to think I was beginning to respect you as an equal[otherwise if M is interested]Do you think we are equals, fool? I am following you because I don't trust you[otherwise]I shall not remain by your side if I'm just to be insulted all day[end if].'[roman type][line break]".
-
 
 Part 5 - Variants
 
@@ -2222,6 +2211,5 @@ To compute failed dominance punishment of (M - an wild gladiator):
 		say "[speech style of M]'Never forget your place, worm. May the jungle determine your fate.'[roman type] [BigNameDesc of M] seems to lose interest you and begins walking away, but it seems like the game still has more in store for you!";
 		compute sissification;
 		Bore M.
-
 
 Gladiator ends here.

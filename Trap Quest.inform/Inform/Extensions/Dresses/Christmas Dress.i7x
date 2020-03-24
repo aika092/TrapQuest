@@ -21,7 +21,6 @@ To set up influence of (C - a christmas dress):
 
 A standard christmas dress is a kind of christmas dress.
 
-
 Part 1 - Snowman Dress
 
 A snowman dress is a kind of standard christmas dress. A snowman dress is only arm covering. There is 1 snowman dress. The printed name of snowman dress is "[clothing-title-before]snowman dress[clothing-title-after]". The text-shortcut of snowman dress is "snwd".

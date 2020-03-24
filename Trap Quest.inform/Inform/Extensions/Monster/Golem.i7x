@@ -42,7 +42,6 @@ To compute (M - a monster) stomping (N - golem):
 
 Definition: golem is objectifying the player: decide yes.
 
-
 To compute perception of (M - golem):
 	now M is interested;
 	anger M;
@@ -114,6 +113,5 @@ To say MuteGreetResponse of (M - golem):
 
 To say MuteQuestionResponse of (M - golem):
 	say "[SexDollExplanation of M]".
-
 
 Golem ends here.

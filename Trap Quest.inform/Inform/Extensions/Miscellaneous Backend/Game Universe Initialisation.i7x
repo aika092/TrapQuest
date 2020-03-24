@@ -231,7 +231,6 @@ To resolve classic cocksucker hyper window opening:
 		open the hyper-window;
 		refresh the hyper-window.
 
-
 [!<InitialiseLatexPrisoner>+
 
 Used at the start of the game to encase the player in latex items, if that option has been enabled.
@@ -308,7 +307,6 @@ To initialise bondage prisoner:
 	if S is actually summonable clothing, summon S cursed with silent quest;
 	say "Suddenly, a collar is wrapped around your neck and a pair of metal cuffs latch around your [if R is 2]wrists[otherwise]ankles[end if]![line break][first custom style]Oh come on, that's not fair![roman type][line break][if there is worn vibrating plug panties]You are about to shout your objections to this dick move by Nintendolls when [otherwise]You are suddenly placed in chastity by a cage appearing at your loins! You don't even have time to consider the implications of this before [end if]your mouth is forced open by the appearance of a [ShortDesc of G]![line break][if D is worn]Just as you think it's over, your eyes widen in shock as a [ShortDesc of D] materialises over your chastity cage![line break][end if][line break][first custom style]'MMMMMMPH!'[roman type][line break]".
 
-
 [!<InitialiseBondageProtection>+
 
 Used at the start of the game to put the necessary bondage items out of the game, if that option has been enabled.
@@ -320,7 +318,6 @@ To initialise bondage protection:
 
 Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 3 + the notManlyFactor of it.
 Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 6 + the notManlyFactor of it.
-
 
 [!<InitialiseWardrobe>+
 
@@ -407,6 +404,5 @@ To Scramble Items:
 	Set Up Collectibles;
 	Set Up Bras;
 	follow the setup starting items rules.
-
 
 Game Universe Initialisation ends here.

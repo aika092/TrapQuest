@@ -18,5 +18,4 @@ To say ClothingDesc of (W - wrist collar bar):
 To say ShortDesc of (W - wrist collar bar):
 	say "wrist collar bar".
 
-
 Wrist Collar Bar ends here.

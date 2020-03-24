@@ -1,6 +1,5 @@
 Info Options by Fetish Settings begins here.
 
-
 Table of Info Options
 name
 "Stephanie" [Full Name]
@@ -14,7 +13,6 @@ name
 "size queen" [white sub]
 
 The File of Info (owned by another project) is called "customflav".
-
 
 To decide which text is FriendName:
 	decide on name in row 1 of the Table of Info Options.
@@ -39,7 +37,6 @@ setting-info is a number that varies.
 setting-male-names is a number that varies.
 setting-female-names is a number that varies.
 setting-instruction is a text that varies.
-
 
 Rule for printing a parser error when the latest parser error is the I beg your pardon error and (setting-info > 0 or setting-male-names > 0 or setting-female-names > 0) (this is the do something useful with blank lines rule):
 	change the text of the player's command to "default";
@@ -86,12 +83,10 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		now setting-info is 0;
 	change the text of the player's command to "finish setting".
 
-
 This is the setup custom flavour rule:
 	follow the quit rule;
 	now setting-info is 1;
 	now setting-instruction is "Enter a type of woman who it would be weird for you to interact with sexually, for example maybe it's your 'old babysitter' or 'ex-teacher' or 'boss' or 'landlord' (the current entry is [FriendRole]): ";
-
 
 After reading a command when setting-male-names > 0 (this is the custom male name choosing rule):
 	say line break;
@@ -131,7 +126,6 @@ This is the setup custom male name rule:
 	now setting-male-names is 1;
 	now setting-instruction is "Enter a name for your (male) player at between 1 and 3 (out of 20) bimbo (the current entry is [name in row 1 of the Table of Custom Male Name]): ";
 
-
 After reading a command when setting-female-names > 0 (this is the custom female name choosing rule):
 	say line break;
 	let PCD be 0;
@@ -169,6 +163,5 @@ This is the setup custom female name rule:
 	follow the quit rule;
 	now setting-female-names is 1;
 	now setting-instruction is "Enter a name for your (female) player at between 1 and 3 (out of 20) bimbo (the current entry is [name in row 1 of the Table of Custom Female Name]): ";
-
 
 Info Options ends here.

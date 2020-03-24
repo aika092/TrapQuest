@@ -1,6 +1,5 @@
 Archive of Old Epilogues by Not Used begins here.
 
-
 Volume 20 - Archive of Old Stuff
 
 [Selkie asks: #### this is good stuff! Why not make it into a separate epilogue, or a free epilogue for the non-patrons?]
@@ -147,6 +146,5 @@ Volume 20 - Archive of Old Stuff
 						say "The girls turn to you and catching you by surprise, shove you back down into the capsule and immediately shut the hatch above you. You scream in protest but it is too late, the buzzing is growing louder again... the walls shift, and then you are once again naked in the stone of the dungeon levels of the game, surrounded by potential traps and magic bottles. You really doubt you will manage to survive a year of this without losing your new found intelligence and being turned into a sex craving bimbo slut...";
 						say "[first custom style]... Fuck.[line break][roman type]";
 						say "[paragraph break]You finished the game as a [line break][second custom style]Year Long Test Subject[roman type][line break]with the following stats:[paragraph break]";]
-
 
 Archive of Old Epilogues ends here.

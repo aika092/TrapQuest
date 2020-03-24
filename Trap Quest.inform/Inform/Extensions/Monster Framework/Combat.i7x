@@ -41,7 +41,6 @@ To compute attack of (M - a monster):
 The monster attack rules is a rulebook.
 [In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.' In this way rule succeeds is used for finishing up completely. Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules. Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
 
-
 To MonsterStomp (M - a monster):
 	let stomped be 0;
 	repeat with N running through undefeated awake monsters in the location of M:
@@ -67,7 +66,6 @@ To compute (M - a monster) stomping (N - a monster):[We keep this completely gen
 	otherwise:
 		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
 
-
 Chapter 1 Continue and Finish Sex
 
 This is the continue sex rule:
@@ -78,7 +76,6 @@ The continue sex rule is listed last in the monster attack rules. [Listed 1st]
 This is the check normal continue sex stuff rule: [If we want to add extra stuff onto the list of things we check for continue sex for an NPC, we can call this at some point too to make sure we check the default stuff as well. Check out 'The adult baby slave continue sex rules' for a practical example.]
 	follow the default continue sex rules;
 	if the rule succeeded, rule succeeds.
-
 
 This is the default check for spanking rule:
 	if current-monster is spanking the player:
@@ -308,7 +305,6 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 		if M is interested, satisfy M;
 		otherwise dislodge M.
 
-
 This is the default anal climax rule:
 	if current-monster is penetrating asshole:
 		compute anal climax of current-monster;
@@ -383,7 +379,6 @@ The default progress sex rule is listed last in the default continue sex rules.
 
 To decide which number is the rounds of sex left of (M - a monster):
 	decide on the sex-length of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
-
 
 This is the default facial sex rule:
 	if current-monster is penetrating face, compute facial sex of current-monster.
@@ -703,7 +698,6 @@ Definition: a belly (called B) is an actual target: [We can always piss on a fac
 	decide no.
 
 Definition: a body part is usable without penetration: decide no. [If a monster can use the body part without penetration e.g. a mannequin applying makeup or a dominatrix spanking, then add a rule for the body part and then write "if current-monster is X, decide yes"]
-
 
 Definition: a monster is concealment immune: decide no. [Can the monster ignore salves of concealment, butt slut, etc.]
 
@@ -1057,7 +1051,6 @@ To compute (M - a monster) entering breasts:
 To say BreastsPenetrationFlav of (M - a monster):
 	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster! It's boring and might not even be accurate if the monster isn't male.]
 
-
 This is the monster begin urination rule:
 	if the chosen-orifice of current-monster is belly, follow the monster begin urination rules.
 The monster begin urination rule is listed in the default monster insertion rules.
@@ -1097,7 +1090,6 @@ To say UrinationFlav of (M - a monster):
 		otherwise:
 			say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
 
-
 Chapter 6 Damaging and Tripping
 
 This is the monster attack rule:
@@ -1105,7 +1097,6 @@ This is the monster attack rule:
 		follow the attack rules of current-monster.
 		[if the rule succeeded, rule succeeds.] [By commenting this out, this means that the monster gets to go straight to punishment if the player drops.]
 The monster attack rule is listed last in the monster attack rules. [Listed 5th]
-
 
 [
 Tripping rolls:
@@ -1156,7 +1147,6 @@ To decide which number is the accuracy roll of (M - a monster):
 	if the blind-status of M > 0, now D is (the difficulty of M + (a random number between 0 and 6) + (a random number between 0 and 6)) / 2; [If the monster is blinded then we ignore the 50% minimum hit chance and also nerf accuracy massively]
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 [ShortDesc of M][line break]";
 	decide on D.
-
 
 A monster has a number called last-tripped.
 
@@ -1265,7 +1255,6 @@ To compute (P - a clothing) protecting (B - breasts):
 	otherwise:
 		BodyRuin 2.
 
-
 To compute (M - a monster) striking (B - hips):
 	let O be the body soreness of the player;
 	let S be a random worn skirted clothing;
@@ -1365,6 +1354,5 @@ To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
 
 To say AllyDamageFlav of (X - a monster) on (M - a monster):
 	say "The [X] strikes [NameDesc of M]!".
-
 
 Combat ends here.

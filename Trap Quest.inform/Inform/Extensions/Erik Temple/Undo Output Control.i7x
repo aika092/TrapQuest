@@ -780,7 +780,6 @@ Include (-
 ];
 -) instead of "Reading the Command" in "Parser.i6t".
 
-
 Undo Output Control ends here.
 
 ---- DOCUMENTATION ----
@@ -831,7 +830,6 @@ However, it should be noted that when the before undoing an action rulebook ends
 
 The "Breaking Glass" example provides examples of ways to use both the before and after undoing entry points to accomplish interesting effects.
 
-
 Section - Undo suspension
 
 Undo Output Control provides a second mechanism for suspending UNDO. To turn UNDO on and off at will, we simply use these phrases:
@@ -851,7 +849,6 @@ By default, these rules print the message "That action cannot be undone."
 
 Be warned that if the player types UNDO immediately after you have reinstated it, there may be unexpected behaviour, as the game can revert to the suspended state, but in such a way that the report attempt to undo-while-disabled rules do not fire.
 
-
 Section - Removing the option to UNDO at the end of the game
 
 Note that the "before undoing an action rule" is NOT consulted after the game has finished, so we will not be able to use it to block UNDO at that point. Instead, we should simply remove UNDO from the list of options that are presented at the end of the game ("Would you like to RESTART, RESTORE a saved game, QUIT or UNDO the last command?"). We can do so by removing it from the Table of Final Question Options, like this:
@@ -861,7 +858,6 @@ Note that the "before undoing an action rule" is NOT consulted after the game ha
 		delete the final question wording entry.
 
 This can be done conditionally if needed. We just need to delete the table row before the command to end the game.
-
 
 Section - Temporary suspension of game state saving
 
@@ -873,7 +869,6 @@ Undo Output Control provides the following phrases for controlling undo saves:
 	enable saving of undo state
 
 See the "Purgatory" example below for a demonstration of how this feature might be used.
-
 
 Section - Changing vocabulary for UNDO and OOPS
 
@@ -904,7 +899,6 @@ To eliminate the "o" synonym for oops:
 	To decide which value is oops word #2:
 		(- 'oops' -)
 
-
 Section - Undoing the current turn
 
 While UNDO is not an action, it is possible to trigger undo from an action. Under the hood, Inform saves the game after reading a command but before parsing it. UNDO then restores to this point, with a signal to read a new command. Inform must do the save very early in the command processing cycle in order to avoid any accidental side-effects in author-written parsing or action processing routines. However, UNDO (and OOPS) have to be processed before this save; otherwise they will restore to just before the player typed "UNDO", rather than before the previous command!
@@ -916,7 +910,6 @@ However, you can use this to your advantage. If at the end of a very long and co
 This can be combined with "disable saving of undo state", as demonstrated in "Purgatory II".
 
 You can also prevent the player from undoing and still use this in your code.
-
 
 Section - Repairing an empty command
 
@@ -930,13 +923,11 @@ For instance:
 
 This happens early enough in parsing that even special commands like "undo" and "oops", or a sequence of commands separated by periods, can be inserted.
 
-
 Section - Using this extension with Conditional Undo by Jesse McGrew
 
 Jesse McGrew's Conditional Undo extension is compatible with Undo Output Control. It provides an activity-based interface to undo suspension which some authors may prefer. If Conditional Undo is included in our project, the "suspend undo" and "reinstate undo" phrases provided by Undo Output Control will not be available. IMPORTANT: The directive to include Conditional Undo must appear in your source text before the instruction to include Undo Output Control, or the extensions will not function as expected.
 
 Instead of using the "report attempt to undo-while-disabled" rulebook to respond to suspended UNDO, users of Conditional Undo should use the "rule for deciding whether to allow undo" activity (see the Conditional Undo documentation).
-
 
 Section - Using this extension with Unified Glulx Input by Andrew Plotkin
 
@@ -945,7 +936,6 @@ Unified Glulx Input has its own method for turning UNDO on and off; these all wo
 Unified Glulx Input has its own method for redefining the words which trigger UNDO, so the method in this extension does not work for "undo" words. However, "oops" words can still be changed using this extension.
 
 Unified Glulx Input has its own (superior) method for dealing with blank lines; "repairing an empty command" is not implemented.
-
 
 Section - Change log
 
@@ -958,7 +948,6 @@ Section - Change log
 	v2 - Added suspension of game state saving and the Breaking Glass and Purgatory examples. Also added the ability to change word constants. Fixed minor bug in operation of undo suspension.
 
 	v1 - Initial release.
-
 
 Example: * Mynah Undo - Presents report rules that reproduce Inform's default output.
 
@@ -984,20 +973,17 @@ Example: * Mynah Undo - Presents report rules that reproduce Inform's default ou
 		say "[bracket]You can't [quotation mark]undo[quotation mark] what hasn't been done![close bracket][line break]";
 		rule succeeds.
 
-
 	Section (for Glulx only)
 
 	Report interpreter undo failure:
 		say "[bracket]You cannot [quotation mark]undo[quotation mark] any further.[close bracket][line break]";
 		rule succeeds.
 
-
 	Section (for Z-machine only)
 
 	Report interpreter undo failure:
 		say "[quotation mark]Undo[quotation mark] failed. [bracket]Not all interpreters provide it.[close bracket][line break]";
 		rule succeeds.
-
 
 Example: ** I Love the Sound of Breaking Glass - This example shows how to rework the output for UNDO using "report undoing an action", as well as how to limit both the total number of UNDOs available and the number of consecutive UNDOs allowed.
 
@@ -1150,5 +1136,4 @@ Example: ** Purgatory II - As an additional enhancement, we make an automatic un
 			continue the action;
 		otherwise:
 			rule fails.
-
 

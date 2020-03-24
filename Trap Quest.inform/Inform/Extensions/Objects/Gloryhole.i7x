@@ -172,7 +172,6 @@ To compute gloryhole genital modification:
 			PainUp 2;
 	dislodge gloryhole.
 
-
 To say SexResistFlav of (G - gloryhole):
 	if the player is prone:
 		if a random number between 3 and the oral sex addiction of the player > 6:
@@ -194,7 +193,6 @@ To say SexResistFlav of (G - gloryhole):
 			say "You try to stimulate yourself as gently and modestly as possible, but it still feels really good[one of]! You clench your eyes shut and try to think of other things than your own taste.[or]![stopping]";
 		otherwise:
 			say "You can't resist the amazing feelings of your own mouth! [SexSubmissionFlav of G]".
-
 
 To say SexSubmissionFlav of (G - a gloryhole):
 	if the player is prone:
@@ -220,7 +218,6 @@ To say SexSubmissionFlav of (G - a gloryhole):
 		otherwise:
 			say "You [if the oral sex addiction of the player < 8]reluctantly [otherwise if the oral sex addiction of the player < 11]hesitantly [end if][one of]slurp on the [manly-penis] in your mouth[or]encircle your [player-penis] with your tongue[or]frantically fuck your own [player-penis] with your mouth[at random].";
 			increase the turns trapped of G by 1.
-
 
 To GloryHoleSwallow:
 	say "You [if the semen taste addiction of the player < 7]shiver with shame as you swallow the stranger's [semen][otherwise if the semen taste addiction of the player < 11]swallow quickly, trying not to think about what you're doing too much[otherwise]swallow the tasty [semen] loudly, trying to make sure the stranger on the other side of the wall can hear what you're doing[end if].";
@@ -346,6 +343,5 @@ To say CondomPinFlav of (M - a fairy) on (C - a clothing):
 
 Check drinking gloryhole:
 	try entering the noun instead.
-
 
 Gloryhole ends here.

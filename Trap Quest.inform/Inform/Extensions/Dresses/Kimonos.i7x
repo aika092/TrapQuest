@@ -24,5 +24,4 @@ To say ClothingDesc of (C - an illusory kimono):
 To compute SelfExamineDesc of (C - an illusory kimono):
 	say "You are wearing a shimmering kimono. While it covers you completely, somehow it feels extremely immodest, as though you're actually naked.".
 
-
 Kimonos ends here.

@@ -1,6 +1,5 @@
 Region Building Woods by Rooms begins here.
 
-
 [!<SetUpTheWoods>+
 
 REQUIRES COMMENTING
@@ -68,6 +67,5 @@ To Scramble Woods:
 	now target-floor is Woods01;[this is an example of a room that satisfies the condition "in the woods". Any will work.]
 	solve the puzzle;
 	make all jungle exits lead to Solid Rock.
-
 
 Region Building Woods ends here.

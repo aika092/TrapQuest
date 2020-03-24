@@ -1,6 +1,5 @@
 Playing Cards by Collectibles begins here.
 
-
 pack of playing cards is a collectible. pack of playing cards is in Dungeon07. The printed name of pack of playing cards is "[TQlink of item described]pack of playing cards[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pack of playing cards is "pc".
 Figure of playing cards is the file "Items/Collectibles/playingcards1.png".
 
@@ -30,7 +29,6 @@ To compute poker table hypno:
 		now hypno-trigger-pussy is 1;
 		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words 'pussy' and 'cunt' consume your inner thoughts...".
 
-
 Part - Poker Table
 
 poker table is a thing. poker table is not portable. poker table is in Dungeon07. The printed name of poker table is "[TQlink of item described]poker table[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of poker table is "pkt".
@@ -43,6 +41,5 @@ To decide which figure-name is the examine-image of (C - poker table):
 
 To say ExamineDesc of (C - poker table):
 	say "[if diaper quest is 0]A round wooden table split into four quarters by a pattern of womanly legs wearing fishnets. At the centre of the table their spread, exposed pussies are explicitly drawn[otherwise]A round wooden table with green felt[end if]. [if pack of cards is not held and pack of cards is in Dungeon07][ExamineDesc of pack of playing cards][end if]".
-
 
 Playing Cards ends here.

@@ -61,5 +61,4 @@ Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy
 Definition: heart window cutoffs is transformation-protected: decide yes.
 Definition: heart window cutoffs is heart themed: decide yes.
 
-
 Cutoffs ends here.

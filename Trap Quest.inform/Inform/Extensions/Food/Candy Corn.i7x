@@ -4,7 +4,6 @@ A candy corn is a kind of candy. The printed name of candy corn is "[TQlink of i
 To say ExamineDesc of (B - a candy corn):
 	say "A translucent packet of white, orange and yellow candies.".
 
-
 Figure of candy corn is the file "Items/Collectibles/candycorn1.jpg".
 
 To decide which figure-name is the examine-image of (F - a candy corn):

@@ -1,6 +1,5 @@
 Urinating by Actions begins here.
 
-
 [!<urinating:Action>*
 
 REQUIRES COMMENTING
@@ -82,7 +81,6 @@ To construct normal buttons for (T - toilet):
 			now the ButtonCommand entry is "drop [text-shortcut of E]";
 			now the ButtonColour entry is lightModeFullGreen;
 			if the player is immobile, now the ButtonColour entry is lightModeFullRed.
-
 
 [!<CheckEnteringToilet>+
 
@@ -474,7 +472,6 @@ To compute pee protected urination:
 				summon royal scepter;
 				say "[bold type]Suddenly a [MediumDesc of royal scepter] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
 
-
 [!<ComputeUrination>+
 
 REQUIRES COMMENTING
@@ -531,7 +528,6 @@ To compute urination:
 		now continued urination is 1;
 	otherwise:
 		end urination.
-
 
 [!<EndUrination>+
 
@@ -630,7 +626,6 @@ To check piss maidification:
 			let C be a random pink spraybottle;
 			compute maidification of C;
 			say "A [C] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
-
 
 [How high will the game allow incontinence to go?]
 To decide which number is the max-incontinence of the player:
@@ -1035,6 +1030,5 @@ REQUIRES COMMENTING
 +!]
 To say BrokenPeeFlav during sex with (M - a monster):
 	say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of [NameDesc of M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].".
-
 
 Urinating ends here.

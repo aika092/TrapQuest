@@ -1,6 +1,5 @@
 Recovering Collectibles by Fainting begins here.
 
-
 [!<RecoverCollectibles>+
 
 REQUIRES COMMENTING

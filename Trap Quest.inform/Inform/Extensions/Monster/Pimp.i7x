@@ -122,7 +122,6 @@ To UnidentifiablePosterReaction of (M - pimp):
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
-
 Part 3 - Combat
 
 Section 1 - Protect and Attack
@@ -226,7 +225,6 @@ To loot (M - pimp):
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -297,6 +295,5 @@ To compute resolution of (M - pimp) taking (T - a thing):
 
 To say MonsterOfferRejectFlav of (M - pimp) to (T - a thing):
 	say "[if M is unfriendly][BigNameDesc of M] smiles.[otherwise][BigNameDesc of M] looks a bit confused.[end if] [line break][speech style of M]'[if T is plentiful accessory and the health of M < the maxhealth of M]It's too late for that, bitch.'[otherwise]Why the hell would I want that?'[end if][roman type][line break]";
-
 
 Pimp ends here.

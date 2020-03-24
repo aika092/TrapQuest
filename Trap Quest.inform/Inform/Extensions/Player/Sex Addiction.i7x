@@ -45,7 +45,6 @@ To decide which number is the sex-addiction-influence of (C - a temptation cloth
 	decrease S by the magic-modifier of C;
 	decide on S.
 
-
 [!<DecideWhichNumberIsTheCalculatedSexAddictionOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -72,7 +71,6 @@ To decide which number is the calculated sex addiction of the player:
 	if S > 20, decide on 20;
 	if S < 1, decide on 1;
 	decide on S.
-
 
 [The following various addictions describe how much the player enjoys having sex using that body part.]
 
@@ -104,7 +102,6 @@ To decide which number is the relevant sex addiction of (M - a thing): [We want 
 
 Part 2 - Modify Sex Addiction
 
-
 [!<Player>@<rawSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -118,7 +115,6 @@ REQUIRES COMMENTING
 
 *!]
 highest sex addiction is a number that varies. highest sex addiction is 0.
-
 
 slowSexAddiction is a number that varies.
 To SlowSexAddictUp (X - a number):
@@ -185,7 +181,6 @@ To SexAddictUp (X - a number):
 				say "[one of]You feel slightly light-headed, but then it passes.[or][or][or][cycling]";
 	if highest sex addiction < the sex addiction of the player, now highest sex addiction is the sex addiction of the player.
 
-
 To SexAddictDown (X - a number):
 	let S be the raw sex addiction of the player;
 	SilentlySexAddictDown X;
@@ -199,7 +194,6 @@ To SilentlySexAddictDown (X - a number):
 
 To SilentlySexAddictDown:
 	if the raw sex addiction of the player > 1, decrease the raw sex addiction of the player by 1.
-
 
 [!<RandomAddictUpX>+
 

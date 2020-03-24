@@ -1,6 +1,5 @@
 Pack of Nuts by Food begins here.
 
-
 A pack of nuts is a kind of snack. The printed name of pack of nuts is "[TQlink of item described]pack of nuts[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pack of nuts is "[TQlink of item described]packs of nuts[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pack of nuts is "nu". There are 2 pack of nuts.
 
 To say ExamineDesc of (C - a pack of nuts):

@@ -1,6 +1,5 @@
 Squirting by Actions begins here.
 
-
 Check squeezing:
 	if the noun is bottle, try squirting the noun instead.
 
@@ -101,6 +100,5 @@ Carry out squirting:
 	allocate 3 seconds.
 
 Understand "squirt [something]", "squeeze [something]" as squirting.
-
 
 Squirting ends here.

@@ -128,5 +128,4 @@ To decide which number is the initial outrage of (C - a minimalist schoolgirl ou
 
 Definition: a minimalist schoolgirl outfit is blue themed: decide yes.
 
-
 Schoolgirl Outfit ends here.

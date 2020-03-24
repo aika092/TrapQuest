@@ -141,5 +141,4 @@ Definition: bunny dress is transformation-protected if the class of the player i
 	repair C;
 	set up magic state of C. redundant]
 
-
 Bunny Outfit ends here.

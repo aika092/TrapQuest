@@ -74,7 +74,6 @@ Report waiting:
 	otherwise:
 		say "Time passes.".
 
-
 [!<SayCorrectWaitingFlavOfMonster>+
 
 REQUIRES COMMENTING

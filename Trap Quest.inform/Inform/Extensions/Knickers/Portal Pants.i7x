@@ -56,5 +56,4 @@ This is the portal pants pussy slut rule:
 	if portal-pants is worn, decrease the desirability of vagina by 10.
 The portal pants pussy slut rule is listed in the pussy slut eligibility rules.
 
-
 Portal Pants ends here.

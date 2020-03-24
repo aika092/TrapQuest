@@ -21,7 +21,6 @@ To say MediumDesc of (M - djinn):
 Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
 Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
 
-
 To decide which figure-name is the monster-image of (M - djinn):
 	if lady fetish is 1, decide on figure of missing NPC;
 	if diaper quest is 0, decide on figure of djinn;
@@ -61,7 +60,6 @@ This is the spawn initial djinn rule:
 The spawn initial djinn rule is listed in the setting up woods monsters rules.
 
 Definition: djinn is human: decide yes.
-
 
 Part 1 - Misc Flavour
 
@@ -160,7 +158,6 @@ To compute DQ perception of (M - djinn):
 To decide which number is the bimbo tolerance of (M - djinn):
 	if interracial fetish is 1, decide on 13;
 	decide on 16.
-
 
 Part 3 - Djinn Wishing
 
@@ -288,10 +285,8 @@ To compute djinn wishing of (M - a monster):
 		say "ERROR: unable to properly process that wish. Please report this as a bug!";
 		compute DjinnDisappointedAfter of M.
 
-
 To say SpankingDeclarationFlav of (M - djinn):
 	say "[speech style of M]'Heh, I had a feeling you would choose wisely. I'm going to enjoy this.'[roman type] ".
-
 
 To say DjinnDisappointedBefore of (M - a monster):
 	say "The djinn narrows [his of M] eyes.[line break][speech style of M]'Fine, so be it.'[roman type][line break]".
@@ -600,7 +595,6 @@ To say CondomFailFlav of (M - djinn) in (F - vagina):
 To say CreampieFlav of (M - djinn) in (F - vagina):
 	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type] [BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
-
 To compute labour to (M - djinn):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
@@ -756,7 +750,6 @@ To compute (M - djinn) wishing on (J - an accessory):
 	otherwise:
 		say "[BigNameDesc of M] nods and disappears in a cloud of white smoke.".
 
-
 Section 2 - Damage
 
 To compute damage of (M - djinn):
@@ -843,7 +836,6 @@ To compute punishment of (P - djinn-mess):
 To say honey of (M - djinn):
 	say "[child of M]".
 
-
 Definition: djinn is willing to forcefeed: decide yes.
 To compute forcefeed round (N - a number) of (M - a djinn):
 	say "[one of]You gasp in surprise as [NameDesc of M][or][BigNameDesc of M][stopping] summons ";
@@ -857,7 +849,6 @@ To compute forcefeed round (N - a number) of (M - a djinn):
 
 To say DQFeedingResistReactionFlav of (M - a djinn):
 	say "[speech style of M]'[one of]What, don't like it? Should have wished for mother's teat... I favour nutrition over taste.'[or]If you don't like the flavour now you REALLY won't appreciate what it's going to make you do later!'[or]Oh, I'm paralysed at the thought of you breaking free... of an almighty Djinn. You do have the decision making skills of an infant, don't you?'[then at random][roman type][line break]".
-
 
 Part 6 - Conversation
 
@@ -938,6 +929,5 @@ To compute unfriendly drink of (M - djinn):
 	say "[speech style of M]'I will decide if and when you are allowed to feed!'[roman type][line break]";
 	now M is interested;
 	now the boredom of M is 0.
-
 
 Djinn ends here.

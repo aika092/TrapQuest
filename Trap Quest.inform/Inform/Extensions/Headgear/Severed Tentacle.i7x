@@ -1,6 +1,5 @@
 Severed Tentacle by Headgear begins here.
 
-
 severed-tentacle is a headgear. severed-tentacle is biological. severed-tentacle is blondeness-positive. severed-tentacle is brightness-neutral. severed-tentacle is redness-negative. Understand "severed", "tentacle", "master" as severed-tentacle. severed-tentacle has a number called tentInt. The tentInt of severed-tentacle is usually 0.
 
 Definition: severed-tentacle is TQedible: decide yes.
@@ -79,7 +78,6 @@ To compute periodic effect of (H - severed-tentacle):
 			otherwise:
 				vaginally orgasm shamefully.
 
-
 Check taking off severed-tentacle:
 	let S be the noun;
 	let T be a random off-stage throbbing-tentacle;
@@ -112,6 +110,5 @@ Check taking off severed-tentacle:
 			SexAddictUp 2;
 			OralSexAddictUp 2;
 			try waiting instead.
-
 
 Severed Tentacle ends here.

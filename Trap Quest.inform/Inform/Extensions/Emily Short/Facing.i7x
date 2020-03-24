@@ -49,7 +49,6 @@ This is the looking through doors rule:
 
 nothing-to-see-that-way is some text that varies. nothing-to-see-that-way is "[We] [can] make out nothing that way."
 
-
 Understand "look [direction]", "face [direction]", "look to/toward/towards [direction]", "turn [direction]", "turn to [direction]" as facing.
 
 Facing is an action applying to one visible thing.

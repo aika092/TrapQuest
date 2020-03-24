@@ -1,6 +1,5 @@
 Bukkake Traps by Traps begins here.
 
-
 Figure of Hose Cutscene 1 is the file "Special/Cutscene/cutscene-hose1.png".
 Figure of Bukkake Door Cutscene 1 is the file "Special/Cutscene/cutscene-bukkake1.png".
 
@@ -152,11 +151,9 @@ To trigger (Y - a bukkake hose):
 		reset soak flavour;
 		cool down 2000.
 
-
 To say BukkakeDoorTrapReactFlav of (M - a monster):
 	say NastyTrapReactFlav of M.
 To say BukkakeHoseTrapReactFlav of (M - a monster):
 	say NastyTrapReactFlav of M.
-
 
 Bukkake Traps ends here.

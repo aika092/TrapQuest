@@ -1,6 +1,5 @@
 Resting by Actions begins here.
 
-
 [!<resting:Action>*
 
 REQUIRES COMMENTING
@@ -63,6 +62,5 @@ Carry out resting:
 			say "[second custom style]I'm full of energy![roman type][line break]";
 		try standing.
 Understand "rest", "recover", "re", "res" as resting.
-
 
 Resting ends here.

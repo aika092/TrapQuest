@@ -1,6 +1,5 @@
 Description by Clothing begins here.
 
-
 To decide which figure-name is the clothing-image of (C - a clothing):
 	decide on figure of no-image-yet.
 
@@ -58,7 +57,6 @@ To say AppearanceDesc of (C - a clothing):
 			say "wet ";
 		otherwise:
 			say "damp ".
-
 
 [Here we will give hints to the player about the clothing.]
 
@@ -191,7 +189,6 @@ Report examining clothing:
 Report examining protection clothing:
 	if the noun is identified, say "An aura of magic protection surrounds this item, helping protect [if the noun is worn]you[otherwise]the wearer[end if] from harm in combat.".
 
-
 To say CurrentlyConcealedFlav of (C - a clothing):
 	let X be the concealer of C;
 	say "It can't be seen thanks to your [ShortDesc of X].".
@@ -274,6 +271,5 @@ To say PlayerThoughts of (C - a clothing):
 		otherwise if the player is not broken: [The item isn't humiliating at all! Let's find out if the player finds it too boring.]
 			if C is equippable, say "[variable custom style][if C is too boring]I kind of wish this was a bit more exciting. Maybe if it was pinker, or had cocks drawn on it?[otherwise if the bimbo of the player < 7]I'm happy with this. Which is more than I can say for most of the things in this game.[otherwise]I just love this! It's perfect for me![end if][roman type][line break]";
 			otherwise say "[variable custom style][if C is too boring and C is actually dense and C is breast covering or C is belly covering or C is crotch covering][line break][second custom style][one of]Ugh, this is way too plain for me![or]*sigh* Isn't there any way to make it more revealing?[or]Only a prude would wear something this boring![purely at random][otherwise if C is too boring][second custom style][one of]Ugh, this is way too boring for me![or]*sigh* Isn't there any way to make it more lewd?[or]I would prefer something that lets everyone know just how slutty I am![purely at random][otherwise if the bimbo of the player < 7][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise if C is worn][one of]I love wearing this![or]I feel *AMAZING* wearing this![purely at random][otherwise][one of]Ooh, I'd be fine wearing this![or]I'll look [beautiful] in this![purely at random][end if][roman type][line break]".
-
 
 Description ends here.

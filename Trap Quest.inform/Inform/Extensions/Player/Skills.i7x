@@ -1,6 +1,5 @@
 Skills by Player begins here.
 
-
 [!<skillListingRules:Rulebook>*
 
 REQUIRES COMMENTING
@@ -657,7 +656,6 @@ This is the firstaidskill list rule:
 	if background-nurse is 1, say "You have been trained in first aid, and can sometimes manage to scrounge up some materials that can help keep you healthy.".
 The firstaidskill list rule is listed in the skill listing rules.
 
-
 Part 15 - Milk Skill
 
 To teach milkskill:
@@ -723,7 +721,6 @@ This is the divinationskill learn rule:
 	now the divinationskill of the player is 1.
 The divinationskill learn rule is listed in the skill cheating rules.
 
-
 Part 18 - Safe Floating
 
 [!<TeachSafeFloating>+
@@ -787,6 +784,5 @@ This is the floatskill learn rule:
 	if the floatskill of the player is 0, say "When you become lighter than air, you won't drop your items.";
 	now the floatskill of the player is 1.
 The floatskill learn rule is listed in the skill cheating rules.
-
 
 Skills ends here.

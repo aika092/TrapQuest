@@ -247,5 +247,4 @@ To loot (M - vine boss):
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
-
 Vine Boss ends here.

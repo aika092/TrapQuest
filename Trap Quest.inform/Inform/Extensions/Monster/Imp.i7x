@@ -42,7 +42,6 @@ naughty imp is an imp. The text-shortcut of naughty imp is "nai".
 To say MediumDesc of (M - naughty imp):
 	say "naughty imp".
 
-
 To decide which number is the girth of (M - an imp):
 	decide on 2.
 
@@ -126,7 +125,6 @@ To compute friendly boredom of (M - an imp):
 		now the boredom of M is 0;
 		anger M.
 
-
 To check consensual submissive sex of (M - an imp):
 	now current-monster is M;
 	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 500:
@@ -170,7 +168,6 @@ To say PresentFriendlyRejectionFlav of (M - an imp):
 	if presented-orifice is a reasonable target and the refactory-period of current-monster > 500, say "[BigNameDesc of M] shakes [his of M] head. It seems that [he of M][']s not ready to go again yet.";
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
-
 To satisfy (M - an imp):
 	if M is interested:
 		dislodge M;
@@ -202,7 +199,6 @@ To say SatisfiedFlav of (M - an imp):
 		now M is interested;
 		now the boredom of M is 0;[just in case]
 
-
 Part 2 - Perception
 
 [imps should only be aggressive if you're stuck by the demoness]
@@ -216,7 +212,6 @@ To compute perception of (M - an imp):
 		say "[BigNameDesc of M] eyes you mischievously.".
 
 Part 3 - Combat
-
 
 Section 1 - Attack
 
@@ -239,20 +234,16 @@ To compute (M - an imp) protecting against (X - a monster):
 			say "[BigNameDesc of X] flails at [NameDesc of M] in self-defence.";
 			increase the imp-rudeness of M by 1.
 
-
 To say AllyDamageFlav of (M - an imp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]claws [NameDesc of X][or]laughs as [he of M] punches [NameDesc of X][or]punches [NameDesc of X][or]kicks [NameDesc of X][then at random]!".
 
-
 Section 2 - Damage
-
 
 Definition: an imp is damageable if the imp-rudeness of it >= the difficulty of it.
 
 To decide which number is the damage modifier of (M - an imp):
 	if M is damageable, decide on (attack-damage * -1);
 	decide on 0.
-
 
 To say damage-flavour of (N - a number) on (M - an imp):
 	if N is 0:

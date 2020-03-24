@@ -11,7 +11,6 @@ To decide which figure-name is the clothing-image of (H - a tall platform heels)
 	if the heel-height of H >= 10, decide on the figure of 10 inch pvc platform heels;
 	decide on the figure of 9 inch pvc platform heels.
 
-
 To say ClothingDesc of (C - a tall platform heels):
 	say "A [if the heel-height of C is 9]unique pink and white [otherwise if the heel-height of C >= 10]unique red [end if]pair of [heel-height of C] inch PVC platform shoes with strong chunky heels and platforms.";
 	say "[SteadinessDesc of C]".
@@ -44,7 +43,6 @@ To say TransformReaction of (C - a tall platform heels):
 		say "[variable custom style]I actually quite how quirky these are, and they make me feel really tall! [if the hindrance of C > 2]I'm not sure how I'm to walk around in them without falling over though.[otherwise]I hope I don't fall over too much, though![end if][roman type][line break]";
 	otherwise if the player is not broken:
 		say "[variable custom style]OMG, these are so cool! [if the hindrance of C > 2]It's going to make it very difficult for me to stay on two feet and keep the naughty boys away from my ass though, tee-hee![otherwise]And they're just what I need to get proper practice walking in extreme heels.[end if][roman type][line break]".
-
 
 tongue-heels is a platform heels. tongue-heels is biological. tongue-heels is unique.
 Understand "tongued", "platform" as tongue-heels. The text-shortcut of tongue-heels is "tghl".
@@ -86,6 +84,5 @@ To decide which number is the unique outrage of (C - tongue-heels):
 To uniquely set up (C - tongue-heels):
 	set up heel length of C;
 	increase the heel-height of C by 2.
-
 
 Supertall Platform Heels ends here.

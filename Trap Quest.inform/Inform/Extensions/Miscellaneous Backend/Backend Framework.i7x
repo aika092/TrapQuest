@@ -1,12 +1,10 @@
 Backend Framework by Miscellaneous Backend begins here.
 
-
 Include Engine Initialisation by Miscellaneous Backend.
 Include Game Universe Initialisation by Miscellaneous Backend.
 
 Include Fainting Framework by Fainting.
 Include Rooms Framework by Rooms.
-
 
 Volume 1 - The Player
 
@@ -86,7 +84,6 @@ Include TG by Player Description.
 Include Status by Player Description.
 Include Addictions by Player Description.
 
-
 Volume 3 - Every Turn (MAIN CODE BLOCK)
 
 Include Compute Turn by Every Turn.
@@ -114,7 +111,6 @@ Include Hypnotic Suggestion by Every Turn.
 
 Volume 4 - Things
 
-
 Include Things Framework by Objects.
 Include Trap Framework by Traps.
 Include Crafting Framework by Crafting.
@@ -132,7 +128,6 @@ Include Immobility by Player.
 Include Manual Dexterity by Player.
 Include Dungeon Shop by Rooms.
 Include Nearby Simulated Danger by Miscellaneous Backend.
-
 
 Volume 6 - Other Actions
 
@@ -191,12 +186,10 @@ Volume 7 - Monsters
 
 Include Monster Framework by Monster Framework.
 
-
 Volume 8 - Other
 
 Include Forbidden Actions by Actions.
 
 Include Actions with Missing Nouns by Actions.
-
 
 Backend Framework ends here.

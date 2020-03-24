@@ -8,7 +8,6 @@ Does nothing.
 This is the do nothing rule:
 	rule succeeds.
 
-
 The maximum score is 150.
 
 [!<diaperQuestFixRules:Rulebook>*
@@ -218,7 +217,6 @@ To retrieve settings:
 		carry out the displaying activity;
 		clear the screen;
 	write File of Preferences from the Table of Settings.
-
 
 To retrieve gender:
 	now the current menu is the Table of Gender Options;

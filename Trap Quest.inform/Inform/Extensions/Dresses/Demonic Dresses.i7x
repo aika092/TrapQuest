@@ -28,7 +28,6 @@ Definition: a blazing dress is class-transformation-protected if the class of th
 Definition: a blazing dress is red themed: decide yes.
 Definition: a blazing dress is demonic: decide yes.
 
-
 tongue-suit is an overdress. tongue-suit is unique. tongue-suit is biological. The printed name of tongue-suit is "[clothing-title-before]tongue suit[clothing-title-after]". The text-shortcut of tongue-suit is "tgst". Understand "tongue", "suit" as tongue-suit.
 
 tongue-suit is unskirted. tongue-suit is very low cut. tongue-suit is crotch-intact.

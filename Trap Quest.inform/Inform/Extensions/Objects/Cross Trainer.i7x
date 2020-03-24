@@ -1,6 +1,5 @@
 Cross Trainer by Objects begins here.
 
-
 cross trainer is a thing. The printed name of cross trainer is "[TQlink of item described]cross trainer[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of cross trainer is "ct". a cross trainer is not portable. cross trainer is in Hotel23. Understand "gym", "gymnasium", "machine" as cross trainer. cross trainer has a number called charge.
 
 Figure of cross trainer is the file "Env/Hotel/crosstrainer1.png".
@@ -45,6 +44,5 @@ Check entering cross trainer:
 
 Check drinking cross trainer:
 	try entering the noun instead.
-
 
 Cross Trainer ends here.

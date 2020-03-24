@@ -1,6 +1,5 @@
 Trap Framework by Traps begins here.
 
-
 [!<Trap>@
 
 REQUIRES COMMENTING
@@ -125,7 +124,6 @@ REQUIRES COMMENTING
 To trigger (Y - a trap):
 	say "Nothing seems to happen.".
 
-
 [!<ResetTrap>+
 
 REQUIRES COMMENTING
@@ -178,7 +176,6 @@ REQUIRES COMMENTING
 *@!]
 A trap can be revealed or unrevealed. A trap is unrevealed.
 
-
 [!<CheckExaminingTrap>+
 
 REQUIRES COMMENTING
@@ -186,7 +183,6 @@ REQUIRES COMMENTING
 +!]
 Check examining trap:
 	unless the noun is revealed, say "You can't see any such thing." instead.[x trap will still reveal things due to the disambiguation extension]
-
 
 [!<BeforeDoingSomethingToATrapWhichIsUnrevealed>+
 
@@ -315,10 +311,8 @@ To say LewdTrapReactFlav of (M - a monster):
 	moderateHumiliate;
 	FavourDown M with consequences.
 
-
 [
 Part 1 Grabby Traps
-
 
 [planned to have grabby traps help out ghosts, but not necessary given their power level]
 
@@ -360,6 +354,5 @@ REQUIRES COMMENTING
 To trigger (Y - a grabby trap):
 	say "A pair of hands burst from the floor and grab your ankles.".
 ]
-
 
 Trap Framework ends here.

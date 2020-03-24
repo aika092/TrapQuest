@@ -1,6 +1,5 @@
 Pregnancy by Every Turn begins here.
 
-
 [!<father:Thing>*
 
 REQUIRES COMMENTING
@@ -64,7 +63,6 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster is human: decide no.
 Definition: a monster is infernal: decide no.
-
 
 [!<MinotaurIsFamily>+
 
@@ -297,7 +295,6 @@ To compute pregnancy clothing displacement:
 		otherwise:
 			say "You instinctively pull your [ShortDesc of P] far enough off of you to get it out of the way of your [vagina].".
 
-
 [!<SayPregFlav>+
 
 REQUIRES COMMENTING
@@ -362,7 +359,6 @@ To compute infernal birth:
 			if N is a monster:
 				compute birth set up of N.
 
-
 [!<ComputeGodBirth>+
 
 REQUIRES COMMENTING
@@ -375,7 +371,6 @@ To compute god birth:
 	if the humiliation of the player >= 40000 and cultist veil is off-stage and cultist veil is actually summonable:
 		summon cultist veil;
 		say "Your vision slightly dims as a black silk veil appears over your face. Somehow you feel comforted, as though you no longer need to be an individual any more.";
-
 
 contractionTracker is a number that varies.
 [!<DelayLabour>+
@@ -425,7 +420,6 @@ To check for extreme pregnancies:
 		cutshow figure of giant pregnancy for belly;
 	if the womb volume of vagina is 30:
 		cutshow figure of full term pregnancy for belly.
-
 
 [Being pregnant is no walk in the park]
 To compute pregnancy annoyance:

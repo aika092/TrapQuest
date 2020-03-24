@@ -28,7 +28,6 @@ To decide which object is the potential-upgrade-target of (C - a baby-dress):
 To decide which object is the potential-upgrade-target of (C - a baby-party-dress):
 	decide on nothing.
 
-
 Part 1 - Floral Purple Sissy Dress
 
 A floral purple sissy dress is a kind of baby-party-dress. There is 1 floral purple sissy dress. The printed name of floral purple sissy dress is "[clothing-title-before]floral purple sissy dress[clothing-title-after]". The text-shortcut of floral purple sissy dress is "fpd".
@@ -46,7 +45,6 @@ To say ShortDesc of (C - a floral purple sissy dress):
 
 Definition: a floral purple sissy dress is flower themed: decide yes.
 Definition: a floral purple sissy dress is purple themed: decide yes.
-
 
 Part 2 - Teddybear Playsuit
 
@@ -75,7 +73,6 @@ Definition: a teddybear playsuit is bear themed: decide yes.
 Definition: a teddybear playsuit is heart themed: decide yes.
 Definition: a teddybear playsuit is bow themed: decide yes.
 Definition: a teddybear playsuit is pink themed: decide yes.
-
 
 Part 3 - Waddle Outfit
 
@@ -159,7 +156,6 @@ To say ShortDesc of (C - a yellow sissy baby dress):
 To say MediumDesc of (C - a yellow sissy baby dress):
 	say "super short yellow sissy baby dress".
 
-
 Part 7 - Patterned baby dress
 
 A patterned baby dress is a kind of baby-party-dress. There is 1 patterned baby dress. The printed name of patterned baby dress is "[clothing-title-before]super short patterned baby dress[clothing-title-after]". The text-shortcut of patterned baby dress is "spbd".
@@ -181,7 +177,6 @@ Definition: a patterned baby dress is drink themed: decide yes.
 Definition: a patterned baby dress is bear themed: decide yes.
 Definition: a patterned baby dress is pink themed: decide yes.
 Definition: a patterned baby dress is white themed: decide yes.
-
 
 Part 8 - Floofy Sissy Baby Dress
 
@@ -268,7 +263,6 @@ Definition: lollipop-dress is food themed: decide yes.
 Definition: lollipop-dress is bow themed: decide yes.
 Definition: lollipop-dress is pink themed: decide yes.
 
-
 Part 12 - Pinafore Dress
 
 pinafore-dress is a baby-dress. The printed name of pinafore-dress is "[clothing-title-before]pinafore dress[clothing-title-after]". The text-shortcut of pinafore-dress is "pnfd". Understand "pinafore", "dress" as pinafore-dress.
@@ -294,7 +288,6 @@ Definition: pinafore-dress is pink themed: decide yes.
 To decide which number is the initial cringe of (C - pinafore-dress):
 	decide on 7.
 
-
 Part 13 - Sailor Fleece Dress
 
 sailor-fleece-dress is a baby-party-dress. The printed name of sailor-fleece-dress is "[clothing-title-before]super short sailor fleece dress[clothing-title-after]". Understand "sailor", "fleece", "dress" as sailor-fleece-dress. The text-shortcut of sailor-fleece-dress is "sfd".
@@ -315,6 +308,5 @@ To say MediumDesc of (C - sailor-fleece-dress):
 Definition: sailor-fleece-dress is blue themed: decide yes.
 Definition: sailor-fleece-dress is swimming themed: decide yes.
 Definition: sailor-fleece-dress is bow themed: decide yes.
-
 
 Diaper Dresses ends here.

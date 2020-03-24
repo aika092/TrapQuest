@@ -2,7 +2,6 @@ Gender by Player begins here.
 
 Definition: Yourself is originally female rather than originally male if original-player-gender is 1.
 
-
 Definition: a person is presenting as male:
   if lady fetish is 2, decide yes;
   if it is male and lady fetish is 0, decide yes;

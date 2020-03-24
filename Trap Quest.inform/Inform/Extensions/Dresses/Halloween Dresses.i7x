@@ -44,7 +44,6 @@ Definition: witch's top is transformation-protected if the class of the player i
 Definition: witch's top is black themed: decide yes.
 Definition: witch's top is magic themed: decide yes.
 
-
 witch's trousers is a trousers. witch's trousers is latex. witch's trousers is unique. The armour of witch's trousers is 10. The printed name of witch's trousers is usually "[clothing-title-before]black latex witch's stockings[clothing-title-after]". The text-shortcut of witch's trousers is "blws". Figure of witch's trousers is the file "Items/Clothes/Lower/Pants/witchpants1.png". Understand "stockings" as witch's trousers.
 
 To decide which figure-name is clothing-image of (W - witch's trousers):
@@ -61,7 +60,6 @@ To say MediumDesc of (Y - witch's trousers):
 Definition: witch's trousers is transformation-protected if the class of the player is trick-or-treater.
 Definition: witch's trousers is black themed: decide yes.
 Definition: witch's trousers is magic themed: decide yes.
-
 
 doll-dress is an overdress. doll-dress is unique. doll-dress is average cut. doll-dress is super-short. doll-dress is latex. doll-dress is neck covering. The text-shortcut of doll-dress is "rbdd". The printed name of doll-dress is "[clothing-title-before]rubber doll dress[clothing-title-after]". Understand "rubber", "doll", "dress" as doll-dress.
 
@@ -85,6 +83,5 @@ To say MediumDesc of (C - doll-dress):
 
 Definition: doll-dress is transformation-protected if the class of the player is trick-or-treater.
 Definition: doll-dress is orange themed: decide yes.
-
 
 Halloween Dresses ends here.

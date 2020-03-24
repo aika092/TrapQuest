@@ -42,7 +42,6 @@ To say ClothingDesc of (O - a ballgown royal dress):
 To decide which number is the initial outrage of (C - a ballgown royal dress):
 	decide on 3.
 
-
 Part 2 - Lolita Royal Dress
 
 A lolita royal dress is a kind of royal dress. There is 1 lolita royal dress. A lolita royal dress is not-top-displacable. The soak-limit of a lolita royal dress is usually 35. The text-shortcut of lolita royal dress is "rd2".
@@ -53,7 +52,6 @@ To decide which figure-name is clothing-image of (C - a lolita royal dress):
 To say ClothingDesc of (O - a lolita royal dress):
 	say "A long frilly hime lolita dress. It is layered with bows and lace, making it incredibly [if diaper quest is 0]feminine[otherwise]innocent looking[end if]. The fine cut of the material is evidence that this dress is meant only for the most important of people.".
 
-
 Definition: a lolita royal dress is bow themed: decide yes.
 Definition: a lolita royal dress is white themed: decide yes.
 
@@ -61,7 +59,6 @@ To decide which number is the initial outrage of (C - a lolita royal dress):
 	decide on 1.
 To decide which number is the initial cringe of (C - a lolita royal dress):
 	decide on 3.
-
 
 Part 3 - Baby Royal Dress
 
@@ -96,6 +93,5 @@ To transform (D - a clothing) into (C - a baby royal dress):
 	say "a [C][bold type] in front of your eyes![roman type] ";
 	cutshow figure of princess diaper cutscene 1 for C;
 	say "[TransformReaction of C]".
-
 
 Royal Dress ends here.

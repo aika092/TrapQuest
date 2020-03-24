@@ -1,13 +1,11 @@
 Fatigue by Player begins here.
 
-
 [!<Player>@<fatigue:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 The player has a number called fatigue.
-
 
 [!<Player>@<fatiMod:Integer>*
 
@@ -35,7 +33,6 @@ Definition: yourself is prone:
 	if the stance of it is 1, decide yes;
 	decide no.
 
-
 [!<resting:Integer>*
 
 REQUIRES COMMENTING
@@ -49,7 +46,6 @@ REQUIRES COMMENTING
 
 *!]
 Busy is a number that varies. Busy is 0.
-
 
 [!<FatigueUpX>+
 
@@ -72,6 +68,5 @@ To FatigueDown (X - a number):
 	[while X > 0:
 		if the fatigue of the player > 0, decrease the fatigue of the player by 1;
 		decrease X by 1.]
-
 
 Fatigue ends here.

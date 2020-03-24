@@ -46,7 +46,6 @@ Definition: thighs (called B) is spread:
 	if there is worn thigh-spreading clothing, decide yes;
 	decide no.
 
-
 Part 2 - Description
 
 [!<SayShortDescOfThighs>+
@@ -95,7 +94,6 @@ To say TotalDesc of (T - thighs):
 	if T is spread, say "They are forced wide apart thanks to your [ShortDesc of random worn thigh-spreading clothing].".
 
 Part 3 - Modify Thighs Stats
-
 
 [!<FatThighsUpX>+
 

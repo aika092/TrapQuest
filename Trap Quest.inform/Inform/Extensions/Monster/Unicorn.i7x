@@ -183,7 +183,6 @@ To compute angry punishment of (M - unicorn):
 		say "Your stomach turns over as a harsh burning sensation passes through your whole body, leaving you with a long lasting reminder of all the pain you brought on yourself for your resistance.";
 	PainUp 1.
 
-
 To check forgiveness of (M - unicorn):
 	if the class of the player is priestess and a random number between the blue-balls of M * -1 and the charisma of the player > 1:
 		compute angry forgiveness of M;
@@ -554,7 +553,6 @@ To say AfterDominationComment (N - a number) of (M - unicorn):
 		say "[speech style of M]'Although you forced yourself on me, in truth, I...er....we won't speak of this again. Goodbye.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Did you have to make a mess of my face?[or]Did you have to make me look like a tart?'[or]My makeup is ruined!'[in random order][roman type][line break]";
-
 
 Part 4 - Conversation
 

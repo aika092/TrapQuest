@@ -78,12 +78,10 @@ This is the gape gloves butt slut rule:
 	if gape-gloves is worn, increase the desirability of asshole by 20.
 The gape gloves butt slut rule is listed in the butt slut eligibility rules.
 
-
 To compute periodic effect of (C - gape-gloves):
 	let S be a random worn crotch-in-place displacable clothing;
 	if S is clothing:
 		say "Your [ShortDesc of S] quickly bunches up at the back thanks to the position of your hands on your [AssDesc].";
 		displace S.
-
 
 Gape Gloves ends here.

@@ -1,6 +1,5 @@
 Condom Pack by Collectibles begins here.
 
-
 condom-pack is a thing. condom-pack is in Dungeon07. The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand ["condom", ]"pack", "condom pack", "pack of condoms", "condom box", "box of condoms", "box", "super", "safe" as condom-pack. condom-pack can be condom-trapped.
 
 A diaper quest fix rule:
@@ -29,12 +28,10 @@ Definition: condom-pack is fetish appropriate if diaper quest is 0.
 To decide which number is the outrage of (C - condom-pack):
 	decide on 12.
 
-
 To decide which number is the alchemy key of (C - condom-pack):
 	decide on 28.
 
 Definition: condom-pack is always alchemy appropriate: decide yes. [condom packs can appear randomly from other recipes]
-
 
 [Definition: condom-pack is recipe specific: decide yes.]
 
@@ -73,7 +70,6 @@ Report going when condom-pack is carried:
 		say CondomNewbieTip;
 		say CondomPinReactionFlav of yourself on a random worn drinkable condom pinned clothing;
 		now condom-pack is not condom-trapped.
-
 
 Definition: a clothing (called C) is condom pinnable:
 	if C is totally-exclusive or C is top-exclusive:

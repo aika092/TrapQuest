@@ -1,6 +1,5 @@
 Visibility by Clothing begins here.
 
-
 Clothing can be layer-exposing or layer-concealing. Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
 
 Definition: a clothing (called C) is top-layer-concealing:
@@ -141,6 +140,5 @@ To decide which object is the concealer of (S - a sex toy):
 		if S is penetrating vagina:
 			if O is potentially vagina covering clothing, decide on O;
 	decide on nothing.
-
 
 Visibility ends here.

@@ -92,5 +92,4 @@ Carry out kneeing:
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "knee [something]", "kn [something]", "strike [something] with knee", "attack [something] with knee" as kneeing.
 
-
 Kneeing ends here.

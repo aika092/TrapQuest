@@ -62,10 +62,8 @@ REQUIRES COMMENTING
 *@!]
 Face has a number called lips.
 
-
 [Can it be accessed right now with nothing blocking it?]
 Definition: face is undefended if face is not actually occupied.
-
 
 [!<facePresentableRules:Rulebook>*
 
@@ -146,7 +144,6 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a monster is requiring facial penetration: decide yes.
-
 
 [!<FaceIsExposed>+
 
@@ -282,9 +279,7 @@ To say LipDesc:
 		say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
 	say " lips".
 
-
 Part 3 - Modify Face Stats
-
 
 [!<FaceUpX>+
 
@@ -341,7 +336,6 @@ To display lips cutscene:
 		if the bimbo of the player < 9, cutshow figure of lips cutscene 2a for face;
 		otherwise cutshow figure of lips cutscene 2b for face;
 	if the lips of face is 3, cutshow figure of lips cutscene 3 for face.
-
 
 Section - Image for graphics window
 

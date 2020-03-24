@@ -19,7 +19,6 @@ Definition: a massive diaper is eligible: decide no. [Never selected randomly]
 To decide which number is the unique outrage of (C - a massive diaper):
 	decide on 3.
 
-
 plain-massive-diaper is a massive diaper. The text-shortcut of plain-massive-diaper is "pmd". Understand "plain" as plain-massive-diaper.
 Figure of plain massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1a.png".
 To decide which figure-name is clothing-image of (C - plain-massive-diaper):
@@ -31,7 +30,6 @@ To say ClothingDesc of (C - plain-massive-diaper):
 Definition: plain-massive-diaper is white themed: decide yes.
 To decide which number is the unique outrage of (C - plain-massive-diaper):
 	decide on 1.
-
 
 blue-massive-diaper is a massive diaper. The text-shortcut of blue-massive-diaper is "bmd". Understand "blue" as blue-massive-diaper.
 Figure of blue massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1b.png".
@@ -47,7 +45,6 @@ Definition: blue-massive-diaper is cat themed: decide yes.
 Definition: blue-massive-diaper is drink themed: decide yes.
 Definition: blue-massive-diaper is bow themed: decide yes.
 
-
 teddy-massive-diaper is a massive diaper. The text-shortcut of teddy-massive-diaper is "tpmd". Understand "teddy", "pattern" as teddy-massive-diaper.
 Figure of teddy massive diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper1c.png".
 To decide which figure-name is clothing-image of (C - teddy-massive-diaper):
@@ -59,7 +56,6 @@ To say ClothingDesc of (C - teddy-massive-diaper):
 Definition: teddy-massive-diaper is bear themed: decide yes.
 Definition: teddy-massive-diaper is green themed: decide yes.
 
-
 Chapter 2 Giant Diaper
 
 giant diaper is a kind of pullup diaper. A giant diaper is womanly. [because of the frills] Understand "giant" as giant diaper.
@@ -69,7 +65,6 @@ To say ShortDesc of (K - a giant diaper):
 	say "giant diaper".
 To decide which number is the unique outrage of (C - a giant diaper):
 	decide on 1.
-
 
 pink-giant-diaper is a giant diaper. The text-shortcut of pink-giant-diaper is "gpd". Understand "pink" as pink-giant-diaper.
 Figure of pink giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2a.png".
@@ -81,7 +76,6 @@ To say ClothingDesc of (C - pink-giant-diaper):
 	say "An excessively large pink adult diaper, with huge amounts of extra puffy padding. It has three rows of girly frills at the back.".
 Definition: pink-giant-diaper is pink themed: decide yes.
 
-
 white-giant-diaper is a giant diaper. The text-shortcut of white-giant-diaper is "gwd". Understand "white" as white-giant-diaper.
 Figure of white giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2b.png".
 To decide which figure-name is clothing-image of (C - white-giant-diaper):
@@ -92,7 +86,6 @@ To say ClothingDesc of (C - white-giant-diaper):
 	say "An excessively large white adult diaper, with huge amounts of extra puffy padding. It has three rows of girly frills at the back in yellow, red and purple.".
 Definition: white-giant-diaper is white themed: decide yes.
 
-
 purple-giant-diaper is a giant diaper. The text-shortcut of purple-giant-diaper is "gppd". Understand "purple", "polka", "polka dot" as purple-giant-diaper.
 Figure of purple giant diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2c.png".
 To decide which figure-name is clothing-image of (C - purple-giant-diaper):
@@ -102,7 +95,6 @@ To say selfexamineuniquetitle of (K - purple-giant-diaper):
 To say ClothingDesc of (C - purple-giant-diaper):
 	say "An excessively large purple adult diaper, with huge amounts of extra puffy padding anda polka dot pattern. It has three rows of girly frills at the back.".
 Definition: purple-giant-diaper is purple themed: decide yes.
-
 
 demon-diaper is a giant diaper. The text-shortcut of demon-diaper is "dmd". The armour of demon-diaper is 25. demon-diaper is unique. A demon-diaper has a number called dry-timer. Understand "pink", "demon" as demon-diaper.
 
@@ -118,7 +110,6 @@ To say ShortDesc of (K - demon-diaper):
 	say "demon diaper".
 To say MediumDesc of (K - demon-diaper):
 	say "super thick pink demon diaper".
-
 
 Figure of demon diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper2d.png".
 
@@ -141,9 +132,7 @@ Definition: demon-diaper is eligible: decide no. [Never selected randomly]
 Definition: demon-diaper is demonic: decide yes.
 Definition: demon-diaper is pink themed: decide yes.
 
-
 Chapter 3 Waddle Diaper
-
 
 waddle diaper is a kind of pullup diaper. A waddle diaper is pvc. The armour of a waddle diaper is 25. A waddle diaper is zippable. A waddle diaper is totally-exclusive. A waddle diaper is transformation-rare. A waddle diaper is womanly.
 The soak-limit of a waddle diaper is 48.
@@ -198,7 +187,6 @@ To say ClothingDesc of (C - a waddle diaper):
 	say "This unique giant PVC [selfexamineuniquetitle of C] has several massive frills on the behind. It has a huge amount of extra material at the crotch, so this heavy rubber forces your thighs apart even when the diaper is completely unused! ";
 	say "The size of the garment is comical - [if C is worn]the bottom of the diaper comes down to[otherwise]when worn the bottom of the diaper would be at[end if] [if C is blessed]the bottom of your thighs[otherwise if C is cursed]below your knees[otherwise]your knees[end if], and it [if C is worn]reaches[otherwise]would reach[end if] out several inches from your body in each direction. There's no way you could wear anything on top of it! There seems to be a small amount of absorbent padding inside, but less than the average adult diaper. You get the feeling that the weight of the waddle diaper itself [if C is worn]makes[otherwise]would make[end if] the weight of any added urine insignificant. Even more curiously, the waddle diaper seems to have a zipper at the crotch, to allow you to open and close access to your genitals. [if C is worn and C is cursed and there are worn heels]You get the feeling that crawling round a bit like this might actually somehow be really good for you![otherwise if C is worn and C is cursed]You get the feeling like you should try putting on some heels and crawling around in this.[otherwise]How bizarre![end if]".
 
-
 pink-waddle-diaper is a waddle diaper. The text-shortcut of pink-waddle-diaper is "pwd". Understand "pink" as pink-waddle-diaper.
 Figure of pink waddle diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper3a.png".
 To decide which figure-name is clothing-image of (C - pink-waddle-diaper):
@@ -206,7 +194,6 @@ To decide which figure-name is clothing-image of (C - pink-waddle-diaper):
 To say selfexamineuniquetitle of (K - pink-waddle-diaper):
 	say "pink waddle diaper".
 Definition: pink-waddle-diaper is pink themed: decide yes.
-
 
 blue-waddle-diaper is a waddle diaper. The text-shortcut of blue-waddle-diaper is "bwd". Understand "blue", "star", "patterned" as blue-waddle-diaper.
 Figure of blue waddle diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper3b.png".
@@ -217,7 +204,6 @@ To say selfexamineuniquetitle of (K - blue-waddle-diaper):
 Definition: blue-waddle-diaper is blue themed: decide yes.
 Definition: blue-waddle-diaper is star themed: decide yes.
 
-
 yellow-waddle-diaper is a waddle diaper. The text-shortcut of yellow-waddle-diaper is "ywd". Understand "yellow", "floral" as yellow-waddle-diaper.
 Figure of yellow waddle diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper3c.png".
 To decide which figure-name is clothing-image of (C - yellow-waddle-diaper):
@@ -227,9 +213,7 @@ To say selfexamineuniquetitle of (K - yellow-waddle-diaper):
 Definition: yellow-waddle-diaper is yellow themed: decide yes.
 Definition: yellow-waddle-diaper is flower themed: decide yes.
 
-
 Chapter 4 Velcro Diaper
-
 
 velcro diaper is a kind of disposable diaper. Understand "velcro" as velcro diaper.
 The DQFigure of velcro diaper is DQvelcro.
@@ -238,7 +222,6 @@ To say ShortDesc of (K - a velcro diaper):
 	say "velcro diaper".
 To decide which number is the unique outrage of (C - a velcro diaper):
 	decide on -4.
-
 
 blue-velcro-diaper is a velcro diaper. The text-shortcut of blue-velcro-diaper is "bvd". Understand "blue" as blue-velcro-diaper.
 Figure of blue velcro diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper4a.png".
@@ -272,9 +255,7 @@ Definition: purple-velcro-diaper is star themed: decide yes.
 To say ClothingDesc of (C - purple-velcro-diaper):
 	say "A velcro diaper with a layer of noisy purple plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has velcro straps to keep it in place. It has a blue pattern of suns, moons, stars and clouds.".
 
-
 Chapter 5 Button Diaper
-
 
 button diaper is a kind of disposable diaper. Understand "button" as button diaper. A button diaper is unique.
 The DQFigure of button diaper is DQBunny.
@@ -283,7 +264,6 @@ To say ShortDesc of (K - a button diaper):
 	say "button diaper".
 To decide which number is the unique outrage of (C - a button diaper):
 	decide on -2.
-
 
 brown-button-diaper is a button diaper. The text-shortcut of brown-button-diaper is "bbd". Understand "brown", "bunny" as brown-button-diaper.
 Figure of brown button diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper5a.png".
@@ -324,9 +304,7 @@ Definition: purple-button-diaper is purple themed: decide yes.
 To say ClothingDesc of (C - purple-button-diaper):
 	say "A reasonably thick purple diaper that does up with white buttons to seal the tabs. There is a colourful pattern of onesies and pacifiers.".
 
-
 Chapter 6 Cloth Diaper
-
 
 cloth diaper is a kind of disposable diaper. Understand "cloth" as cloth diaper.
 The DQFigure of cloth diaper is DQCloth.
@@ -335,7 +313,6 @@ To say ShortDesc of (K - a cloth diaper):
 	say "cloth diaper".
 To decide which number is the unique outrage of (C - a cloth diaper):
 	decide on -3.
-
 
 plain-cloth-diaper is a cloth diaper. The text-shortcut of plain-cloth-diaper is "pcld". Understand "plain" as plain-cloth-diaper.
 Figure of plain cloth diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper6a.png".
@@ -372,16 +349,13 @@ To decide which number is the unique outrage of (C - blue-cloth-diaper):
 	decide on -2.
 Definition: blue-cloth-diaper is blue themed: decide yes.
 
-
 Chapter 7 Huge Diaper
-
 
 huge diaper is a kind of disposable diaper. Understand "huge" as huge diaper.
 The DQFigure of huge diaper is DQHuge.
 The soak-limit of huge diaper is 25.
 To say ShortDesc of (K - a huge diaper):
 	say "huge diaper".
-
 
 pink-huge-diaper is a huge diaper. The text-shortcut of pink-huge-diaper is "hpd". Understand "pink" as pink-huge-diaper.
 Figure of pink huge diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper7a.png".
@@ -392,7 +366,6 @@ To say selfexamineuniquetitle of (K - pink-huge-diaper):
 Definition: pink-huge-diaper is pink themed: decide yes.
 To say ClothingDesc of (C - pink-huge-diaper):
 	say "A huge pink disposable diaper with excessively thick padding, for the heaviest of wetters. There's no special pattern.".
-
 
 balloon-huge-diaper is a huge diaper. The text-shortcut of balloon-huge-diaper is "hbpd". Understand "balloon", "pattern" as balloon-huge-diaper.
 Figure of balloon huge diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper7b.png".
@@ -405,7 +378,6 @@ Definition: balloon-huge-diaper is inflation themed: decide yes.
 To say ClothingDesc of (C - balloon-huge-diaper):
 	say "A huge white disposable diaper with excessively thick padding, for the heaviest of wetters. It has a busy pattern of pink balloons.".
 
-
 doggy-huge-diaper is a huge diaper. The text-shortcut of doggy-huge-diaper is "hdpd". Understand "doggy", "pattern" as doggy-huge-diaper.
 Figure of doggy huge diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper7c.png".
 To decide which figure-name is clothing-image of (C - doggy-huge-diaper):
@@ -417,16 +389,13 @@ Definition: doggy-huge-diaper is dog themed: decide yes.
 To say ClothingDesc of (C - doggy-huge-diaper):
 	say "A huge white and green disposable diaper with excessively thick padding, for the heaviest of wetters. It has a pattern of blue paw prints and bones.".
 
-
 Chapter 8 Large Diaper
-
 
 largish diaper is a kind of disposable diaper. Understand "large" as largish diaper.
 The DQFigure of largish diaper is DQLarge.
 The soak-limit of largish diaper is 21.
 To say ShortDesc of (K - a largish diaper):
 	say "largish diaper".
-
 
 plain-largish-diaper is a largish diaper. The text-shortcut of plain-largish-diaper is "lpd". Understand "plain" as plain-largish-diaper.
 Figure of plain largish diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper8a.png".
@@ -461,16 +430,13 @@ Definition: black-largish-diaper is cat themed: decide yes.
 To say ClothingDesc of (C - black-largish-diaper):
 	say "A large white disposable diaper with rather thick padding, for heavy wetters. It has a blue-green kitty cat pattern.".
 
-
 Chapter 9 Medium Diaper
-
 
 medium diaper is a kind of disposable diaper. Understand "medium" as medium diaper.
 The DQFigure of medium diaper is DQMedium.
 The soak-limit of medium diaper is 17.
 To say ShortDesc of (K - a medium diaper):
 	say "medium diaper".
-
 
 plain-medium-diaper is a medium diaper. The text-shortcut of plain-medium-diaper is "mpd". Understand "plain" as plain-medium-diaper.
 Figure of plain medium diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper9a.png".
@@ -510,9 +476,7 @@ To say ClothingDesc of (C - baby-medium-diaper):
 To decide which number is the unique outrage of (C - baby-medium-diaper):
 	decide on 2.
 
-
 Chapter 10 Small Diaper
-
 
 small diaper is a kind of disposable diaper. Understand "small" as small diaper.
 The DQFigure of small diaper is DQsmall.
@@ -521,7 +485,6 @@ To say ShortDesc of (K - a small diaper):
 	say "small diaper".
 To decide which number is the unique outrage of (C - plain-small-diaper):
 	decide on -2.
-
 
 plain-small-diaper is a small diaper. The text-shortcut of plain-small-diaper is "spd". Understand "plain" as plain-small-diaper.
 Figure of plain small diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper10a.png".
@@ -534,7 +497,6 @@ To say ClothingDesc of (C - plain-small-diaper):
 	say "An smaller than average white disposable diaper with a slightly reduced amount of padding, for light wetters. There's no special pattern.".
 To decide which number is the unique outrage of (C - plain-small-diaper):
 	decide on -4.
-
 
 blue-small-diaper is a small diaper. The text-shortcut of blue-small-diaper is "sbwd". Understand "blue", "white", "and white" as blue-small-diaper.
 Figure of blue small diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper10b.png".
@@ -559,7 +521,6 @@ Definition: pink-small-diaper is pink themed: decide yes.
 Definition: pink-small-diaper is food themed: decide yes.
 To say ClothingDesc of (C - pink-small-diaper):
 	say "An smaller than average pink disposable diaper with a slightly reduced amount of padding, for light wetters. There's a subtle pattern of ice cream and cupcakes.".
-
 
 Chapter 11 Training Pants
 
@@ -606,7 +567,6 @@ To say ClothingDesc of (C - a sexy training pants):
 
 Definition: a training pants is transformation-protected: decide yes.
 
-
 Chapter 25 Latex Diaper
 
 a rubber diaper is a kind of pullup diaper. There is 1 rubber diaper. rubber diaper is totally-exclusive. The text-shortcut of rubber diaper is "rubd". The soak-limit of rubber diaper is usually 24. rubber diaper is latex.
@@ -652,6 +612,5 @@ To compute unique periodic effect of (C - ghost-diaper):
 		only destroy C.
 
 The DQFigure of ghost-diaper is usually DQVelcro.
-
 
 Diapers ends here.

@@ -93,5 +93,4 @@ To say FriendlySexReleaseRefusalFlav of (M - a monster):
 	if M is intelligent, say FriendlySexReleaseRefusalSpeech of M;
 	say "[BigNameDesc of M] refuses to let you go!".
 
-
 Requested Sex ends here.

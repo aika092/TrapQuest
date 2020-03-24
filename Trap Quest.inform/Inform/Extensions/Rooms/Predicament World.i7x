@@ -1,12 +1,10 @@
 Predicament World by Rooms begins here.
 
-
 A predicament room is a kind of room. A park room is a kind of predicament room.
 The shape of a predicament room is usually L8/0-0-0-0-0-0. The grid position of a predicament room is usually <8,0,0>.
 Definition: a predicament room is unwalled: decide yes.
 To decide which number is the concealment of (R - a predicament room):
 	decide on 3.
-
 
 Definition: a predicament room (called R) is within vision:
 	if R is the location of the player, decide yes;
@@ -67,7 +65,6 @@ Report going north when the player is in School01:
 		now T is in School31;
 	progress quest of predicament-quest.
 
-
 [Central Park]
 
 To decide which number is the concealment of (R - a park room):
@@ -104,7 +101,6 @@ Definition: Toilet01 is nonstandard: decide yes.
 Toilet02 is a bossed predicament room. Toilet02 is toilets. The printed name of Toilet02 is "Women's Toilets". Toilet02 is above Park02. The grid position of Toilet02 is <8,15,7>.
 Definition: Toilet02 is nonstandard: decide yes.
 
-
 Predicament01, Predicament02, Predicament03, Predicament04, Predicament05, Predicament06, Predicament07, Predicament08, Predicament09, Predicament10, Predicament11, Predicament12, Predicament13, Predicament14, Predicament15, Predicament16, Predicament17, Predicament18, Predicament19, Predicament20, Park01, Park02, Park03, Park04, Park05, Park06, Park07, Park08, Park09, Toilet01, Toilet02 are in the School.
 
 saved-map-zoom is a number that varies.
@@ -124,7 +120,6 @@ Report going when the player is in a bathroom predicament room:
 
 Report going when the player is in Park02:
 	now map-zoom is 3.
-
 
 To say speech style of (M - a person):
 	say first custom style.
@@ -159,7 +154,6 @@ To decide which number is the outrage tolerance of (M - a bystander):
 
 To decide which number is the cringe tolerance of (M - a bystander):
 	decide on 8.
-
 
 To check perception of (M - a bystander):
 	if M is reactive:
@@ -211,14 +205,11 @@ To compute lewd perception reaction of (M - a bystander):
 To compute cringe perception reaction of (M - a bystander):
 	compute lewd perception reaction of M.
 
-
 To compute non-lewd perception reaction of (M - a bystander):
 	say "[big he of M] looks at you strangely but doesn't say anything.".
 
-
 To compute non-lewd worsened perception reaction of (M - a bystander):
 	say "[BigNameDesc of M] frowns at you.".
-
 
 A camera-bystander is a kind of bystander. The printed name of a camera-bystander is "[TQlink of item described][man of item described] on [his of item described] phone[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "man", "on his phone" as camera-bystander when item described is male. Understand "woman", "on her phone" as camera-bystander when item described is female. Understand "phone" as camera-bystander.
 
@@ -227,7 +218,6 @@ To compute lewd perception reaction of (M - a camera-bystander):
 	let A be the appearance of the player;
 	if diaper quest is 1 and the appearance of the player < the cringe appearance of the player, now A is the cringe appearance of the player;
 	compute digital reputation damage (PredicamentActivity of current-predicament) strength (A) quality (a random number between 1 and 6).
-
 
 To say FlashFlav of (M - a camera-bystander):
 	say "[BigNameDesc of M] [if M is not interested]notices you! [big he of M] [end if]gasps, snapping several photos of you with [his of M] phone![line break][italic type]CLICK! CLICK! CLICK! CLICK![roman type][line break]And then... a 'whoosh' sound as [he of M] sends the photo to who knows how many people![one of][line break][variable custom style]Now the whole world will know my shame...[roman type][line break][or][stopping]";
@@ -242,7 +232,6 @@ To say FlashFlav of (M - a camera-bystander):
 	if the worst-appearance of M < the appearance of the player, now the worst-appearance of M is the appearance of the player;
 	if diaper quest is 1 and the worst-appearance of M < the cringe appearance of the player, now the worst-appearance of M is the cringe appearance of the player;
 	say HumiliateReflect (the appearance of the player * 30).
-
 
 Figure of Reading Bystander is the file "NPCs/School/bystander1.jpg".
 Figure of Bench Bystander is the file "NPCs/School/bystander2.jpg".
@@ -259,7 +248,6 @@ Figure of Janitor Bystander is the file "NPCs/School/bystander12.jpg".
 Figure of Rich Bystander is the file "NPCs/School/bystander13.jpg".
 Figure of Policewoman Bystander is the file "NPCs/School/bystander14.jpg".
 
-
 To decide which figure-name is the examine-image of (M - a bystander):
 	decide on figure of reading bystander.
 
@@ -269,7 +257,6 @@ To decide which figure-name is the examine-image of (M - bench-bystander):
 To decide which number is the awareness of (M - bench-bystander):
 	decide on 3.
 
-
 facetime-bystander is a camera-bystander. The printed name of facetime-bystander is "[TQlink of item described]man in a videocall[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "man", "videocall", "videocaller", "in a videocall" as facetime-bystander.
 To decide which figure-name is the examine-image of (M - facetime-bystander):
 	decide on figure of videocall bystander.
@@ -277,7 +264,6 @@ To decide which number is the awareness of (M - facetime-bystander):
 	decide on 4.
 To decide which number is the outrage tolerance of (M - facetime-bystander):
 	decide on 2.
-
 
 football-bystander is a bystander. The printed name of football-bystander is "[TQlink of item described]footballer[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "footballer" as football-bystander.
 To decide which figure-name is the examine-image of (M - football-bystander):
@@ -290,7 +276,6 @@ To compute lewd perception reaction of (M - football-bystander):
 	say "[line break][first custom style]'[if the appearance of the player > 8][one of]Holy shit! Are you insane?'[or]What the fuck?!'[or]Oh my god!'[in random order][otherwise][one of]Looking good, sweet-cheeks!'[or]Holy cow, you are HOT!'[or]Oh WOW! I'm going to be thinking about you in bed tonight.'[or]Fuck yeah! You single, babe?'[in random order][end if][roman type][line break]".
 To compute cringe perception reaction of (M - football-bystander):
 	say "[line break][first custom style]'[one of]Holy shit! Why are you dressed like that?'[or]What the fuck? Is this a fetish thing?!'[in random order][roman type][line break]".
-
 
 couple-bystander is a bystander. The printed name of couple-bystander is "[TQlink of item described]boyfriend with his girlfriend[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "boyfriend", "girlfriend", "with his girlfriend" as couple-bystander.
 To decide which figure-name is the examine-image of (M - couple-bystander):
@@ -306,7 +291,6 @@ To compute cupcake perception of (M - couple-bystander):
 		increase the cakes-taken of skirt-tray-vibrator by 1;
 	say skirtTrayBuzzFlav.
 
-
 watchful-bystander is a bystander. watchful-bystander is female. The printed name of watchful-bystander is "[TQlink of item described]watchful woman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "watchful", "woman" as watchful-bystander.
 To decide which figure-name is the examine-image of (M - watchful-bystander):
 	decide on figure of watchful bystander.
@@ -314,7 +298,6 @@ To decide which number is the awareness of (M - watchful-bystander):
 	decide on 10.
 To decide which number is the outrage tolerance of (M - watchful-bystander):
 	decide on 2.
-
 
 dogwalking-bystander is a bystander. dogwalking-bystander is female. The printed name of dogwalking-bystander is "[TQlink of item described]dogwalking woman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "dogwalking", "dogwalker", "woman" as dogwalking-bystander.
 To decide which figure-name is the examine-image of (M - dogwalking-bystander):
@@ -331,7 +314,6 @@ To compute cupcake perception of (M - dogwalking-bystander):
 		increase the cakes-taken of skirt-tray-vibrator by 1;
 	say skirtTrayBuzzFlav.
 
-
 idle-bystander is a bystander. The printed name of idle-bystander is "[TQlink of item described]idle man[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "idle", "man" as idle-bystander.
 To decide which figure-name is the examine-image of (M - idle-bystander):
 	decide on figure of idle bystander.
@@ -339,11 +321,9 @@ Definition: idle-bystander is strolling: decide no.
 To decide which number is the outrage tolerance of (M - idle-bystander):
 	decide on 6.
 
-
 businesswoman-bystander is a bystander. businesswoman-bystander is female. The printed name of businesswoman-bystander is "[TQlink of item described]businesswoman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "businesswoman" as businesswoman-bystander.
 To decide which figure-name is the examine-image of (M - businesswoman-bystander):
 	decide on figure of businesswoman bystander.
-
 
 engrossed-bystander is a camera-bystander. engrossed-bystander is female. The printed name of engrossed-bystander is "[TQlink of item described]phone-engrossed woman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "phone-engrossed", "engrossed", "woman" as engrossed-bystander.
 To decide which figure-name is the examine-image of (M - engrossed-bystander):
@@ -354,7 +334,6 @@ Definition: engrossed-bystander is strolling if a random number between 1 and 4 
 To decide which number is the outrage tolerance of (M - engrossed-bystander):
 	decide on 7.
 
-
 jogging-bystander is a bystander. jogging-bystander is female. The printed name of jogging-bystander is "[TQlink of item described]jogging woman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "jogging", "jogger", "woman" as jogging-bystander.
 To decide which figure-name is the examine-image of (M - jogging-bystander):
 	decide on figure of jogging bystander.
@@ -362,21 +341,17 @@ Definition: jogging-bystander is strolling: decide yes.
 To decide which number is the outrage tolerance of (M - jogging-bystander):
 	decide on 8.
 
-
 janitor-bystander is a bystander. janitor-bystander is female. The printed name of janitor-bystander is "[TQlink of item described]janitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "janitor" as janitor-bystander.
 To decide which figure-name is the examine-image of (M - janitor-bystander):
 	decide on figure of janitor bystander.
-
 
 rich-bystander is a bystander. The printed name of rich-bystander is "[TQlink of item described]rich man[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "rich", "man" as rich-bystander.
 To decide which figure-name is the examine-image of (M - rich-bystander):
 	decide on figure of rich bystander.
 
-
 police-bystander is a bystander. police-bystander is female. The printed name of police-bystander is "[TQlink of item described]policewoman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "policewoman", "police officer", "cop" as police-bystander.
 To decide which figure-name is the examine-image of (M - police-bystander):
 	decide on figure of policewoman bystander.
-
 
 A game universe initialisation rule:
 	let N be 1;
@@ -404,7 +379,6 @@ To set up predicament universe:
 	repeat with E running through eggs:
 		if E is in a predicament room, destroy E.
 
-
 A time based rule (this is the cars come past rule):
 	if the player is in an unbossed predicament room:
 		if the player is not in a park room and a random number between 1 and 4 is 1:
@@ -430,7 +404,6 @@ A time based rule (this is the cars come past rule):
 					now M is interested;
 					compute perception of M.
 
-
 A predicament is a kind of thing.
 A predicament has a number called times-completed.
 A team-predicament is a kind of predicament.
@@ -445,12 +418,10 @@ To decide which text is PredicamentActivity of (P - a predicament):
 	decide on "you [one of]sneaking through[or]rushing through[in random order] [if the player is in a park room]a public park[otherwise]your neighbourhood[end if]".
 current-predicament is an object that varies.
 
-
 To say PredicamentRewardExplanation:
 	say "[one of]HERE YOU CAN EARN TROPHIES WHICH MAY BE USEFUL ASSETS THROUGHOUT THE REST OF YOUR TRAINING. PLEASE NOTE, IT IS RECOMMENDED TO MOVE THROUGH THIS AREA WITH AS MODEST AN APPEARANCE AS POSSIBLE TO AVOID EMBARRASSING ENCOUNTERS WITH YOUR NEIGHBOURS. ALL YOUR ITEMS AND YOUR NEW TROPHY ARE WAITING FOR YOU IN THE DESTINATION LOCATION. PLEASE NOTE[or]ANOTHER TROPHY IS WAITING FOR YOU AT THE DESTINATION LOCATION. PLEASE REMEMBER[stopping]: ALL PHOTOS AND VIDEOS TAKEN ARE UPLOADED TO THE *REAL* INTERNET. YOUR REAL PUBLIC REPUTATION IS AT STAKE. ".
 To say PredicamentRewardExplanationReaction:
 	say "[one of][line break][variable custom style]How cryptic. [if the player is shameless]So photos of me can get uploaded to the real life Internet? How outrageous... and exciting![otherwise]But one thing is clear: if there's chances of photos of me being uploaded to the real life Internet, then I really must be careful here...[end if][or][stopping]".
-
 
 simple-sneak-predicament is a predicament.
 Figure of simple sneak predicament is the file "Special/Cutscene/cutscene-predicament-diaper-sneak1.jpg".
@@ -515,7 +486,6 @@ To execute (SSP - simple-sneak-predicament):
 	now the player is in Predicament01;
 	say "You find yourself in a small room, empty except for a wardrobe, a small table and a front door that leads outside. You are completely naked[if diaper quest is 1] except for a [MediumDesc of plain-largish-diaper][end if]. The table has a piece of card on it with the word 'INSTRUCTIONS' on it. You read the instructions:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY... RETURN HOME.'[PredicamentRewardExplanationReaction][roman type][line break]It looks like your outfit has been decided for you...";
 	if diaper quest is 1, cutshow figure of simple sneak predicament.
-
 
 triple-dildo-predicament is a predicament. The printed name of triple-dildo-predicament is "dildo".
 triple-dildo-predicament has a number called pill-timer. The pill-timer of triple-dildo-predicament is -1000.
@@ -614,7 +584,6 @@ A time based rule (this is the triple dildo punishment pill rule):
 		otherwise if the player is not in a predicament room:
 			now the pill-timer of triple-dildo-predicament is 0. [failsafe]
 
-
 painted-cutoffs-predicament is a predicament.
 painted-cutoffs-predicament has a number called predicament-completed.
 Definition: painted-cutoffs-predicament is appropriate if the player is female and ((the predicament-completed of painted-cutoffs-predicament is 0 and the rank of the player is 2) or (the predicament-completed of painted-cutoffs-predicament < 3 and the rank of the player is 3)) and the player is able to get horny.
@@ -668,10 +637,8 @@ To execute (P - painted-cutoffs-predicament):
 			let E be a random available small egg;
 			now E is in Predicament02.
 
-
 Check going east when the player is in Predicament19:
 	if the predicament-completed of painted-cutoffs-predicament is 3 and the number of small egg in the location of the player < 20, say "The door's locked! You need to get all 20 [ShortDesc of a random small egg]s onto the ground here for it to unlock..." instead.
-
 
 serving-tray-predicament is a predicament.
 Definition: serving-tray-predicament is appropriate if the rank of the player is (2 + diaper quest) and the player is able to get horny.
@@ -729,7 +696,6 @@ To execute (P - serving-tray-predicament):
 	now the stance of the player is 0;
 	say "Suddenly you find yourself standing outside, in an alleyway. Round the corner, the noise of a road and the distant sound of voices can be heard. A robotic voice speaks from a speaker in the wall behind you.[line break][first custom style]'WELCOME TO THE [']EXTRA CREDIT['] CLASS. [PredicamentRewardExplanation]THE SKIRT YOU HAVE BEEN PROVIDED COMES WITH A SERVING TRAY. WHENEVER A CAKE IS REMOVED FROM ITS PRESSURE PAD, THE VIBRATOR WILL TURN ON FOR 15 SECONDS. THE INTENSITY OF THE VIBRATION DEPENDS ON HOW MANY CAKES HAVE BEEN TAKEN. IF ALL CAKES ARE REMOVED FROM THEIR PRESSURE PADS, THE VIBRATOR WILL TURN PERMANENTLY ON, STUCK AT MAXIMUM POWER.[paragraph break]'GO.'[PredicamentRewardExplanationReaction][roman type][paragraph break]Looking down at yourself, you begin to realise the challenge. You're wearing a tight pink tube top which shows your nipples straight through it, with the phrase 'FREE SAMPLES' on the front. Your feet are stuck in black court heels. And [if diaper quest is 1 and the player is female]the only other thing on your body is a large white diaper with a subtle hole under your [vagina]. Attached to it and currently in your hands[otherwise if diaper quest is 1]the only other thing on your body is a large white diaper. Attached to it and currently in your hands[otherwise]your bottom half is currently completely naked. On the ground in front of you[end if] is a [skirt-tray-vibrator][paragraph break][ClothingDesc of skirt-tray-vibrator][variable custom style]Holy crap...[roman type][line break]".
 
-
 maths-sex-predicament is a predicament.
 Definition: maths-sex-predicament is appropriate if diaper quest is 0 and the rank of the player >= 3.
 
@@ -757,7 +723,6 @@ To compute maths-sex:
 		check for arousal change;
 		render buffered stuff;
 	say "The [man of current-monster] leaves the way [he of current-monster] came.".
-
 
 leave-me-alone is a maths-sex-predicament-punishment.
 Definition: leave-me-alone is appropriate: decide no.
@@ -836,7 +801,6 @@ To maths-execute (M - spank-my-butt):
 	PainUp 1;
 	say "Satisfied, the [man of A] leaves the way [he of A] came.";
 
-
 make-me-cum is a maths-sex-predicament-punishment.
 To decide which text is the maths-punishment-description of (M - make-me-cum):
 	decide on "Force me to cum with the wand vibrator".
@@ -857,7 +821,6 @@ To maths-execute (M - new-ass-tattoo):
 	say "You hear the [man of A] chuckle and pull the lid off of a permanent marker. And then you feel [him of A] write 'just the tip' on your ass![line break][variable custom style]Really?![roman type][line break]";
 	summon just the tip tattoo;
 	say "The [man of A] leaves the way [he of A] came, taking the pen with [him of A].".
-
 
 maths-timer is a number that varies. maths-timer is -100.
 
@@ -903,7 +866,6 @@ Glulx input handling rule for a timer-event:
 			focus the main window;
 			say "[bold type]The timer runs out - you've failed to press any button at all![roman type] Press any key to continue.";
 			focus W.
-
 
 To execute (MSP - maths-sex-predicament):
 	now Predicament01 is discovered;
@@ -977,7 +939,6 @@ To execute (MSP - maths-sex-predicament):
 	say "[line break][bold type]The hole-in-the-wall widens, releasing you and allowing you to leave at any time via the door. [roman type]On the ground, you have been left an outfit to return home in: [line break]";
 	try examining PMM;
 	compute autotaking PMM.
-
 
 team-enema-predicament is a team-predicament.
 Definition: team-enema-predicament is appropriate if the rank of the player >= 4 and diaper quest is 0.
@@ -1104,7 +1065,6 @@ To execute (TEP - team-enema-predicament):
 	now M is in School01;
 	say "It looks like you're going to have to make your way out of here on your own.".
 
-
 team-quiz-predicament is a team-predicament.
 team-quiz-predicament has a number called questionCorrect.
 team-quiz-predicament has a number called questionWins. [how many questions has the player gotten correct in a row right now?]
@@ -1117,7 +1077,6 @@ Definition: team-quiz-predicament is appropriate:
 	if diaper quest is 1 and the incontinence of the player >= the max-incontinence of the player, decide no;
 	if diaper quest is 0 and the player is male and the size of penis is 0, decide no;
 	decide yes.
-
 
 To execute (L - team-quiz-predicament):
 	now the stance of the player is 1;
@@ -1240,7 +1199,6 @@ To conclude quiz of (L - team-quiz-predicament):
 	otherwise:
 		say "[BigNameDesc of ST] is still stuck, so has to follow you everywhere!".
 
-
 A team-quiz-predicament-question is a kind of object.
 A team-quiz-predicament-question has a number called askedAlready.
 A team-quiz-predicament-question has a list of texts called possible-answers.
@@ -1289,7 +1247,6 @@ To process answer of (Q - a team-quiz-predicament-question):
 	otherwise:
 		now the questionCorrect of team-quiz-predicament is 0.
 
-
 To reset (Q - a team-quiz-predicament-question):
 	truncate the possible-answers of Q to 0 entries;
 	now the askedAlready of Q is 0.
@@ -1300,7 +1257,6 @@ To set up number answers for (Q - a team-quiz-predicament-question):
 	if the correctAnswer of Q + R > 7, now R is 7 - the correctAnswer of Q;
 	now the minAnswer of Q is the correctAnswer of Q + R;
 	now the maxAnswer of Q is the correctAnswer of Q + R + 2.
-
 
 quiz-woods-candy is a team-quiz-predicament-question.
 Definition: quiz-woods-candy is appropriate if there is a candy machine in a placed jungle room and the askedAlready of it is 0.
@@ -1355,7 +1311,6 @@ To set up (Q - quiz-candy):
 		if the recent uses of C > 0, now the correctAnswer of Q is N;
 		increase N by 1;
 
-
 quiz-dog is a team-quiz-predicament-question.
 To say question for (Q - quiz-dog):
 	say "What's the name of the [ShortDesc of hellhound] that lives in the creepy mansion";
@@ -1371,7 +1326,6 @@ To set up (Q - quiz-dog):
 		now N is the number of entries in the possible-answers of Q;
 		if T matches the text DogPetName, now the correctAnswer of Q is N;
 
-
 quiz-fairies is a team-quiz-predicament-question.
 Definition: quiz-fairies is appropriate if Woods01 is placed.
 To say question for (Q - quiz-fairies):
@@ -1381,7 +1335,6 @@ To set up (Q - quiz-fairies):
 	now the correctAnswer of Q is the number of alive fairy;
 	set up number answers for Q.
 
-
 quiz-tentacles is a team-quiz-predicament-question.
 Definition: quiz-tentacles is appropriate if tentacle fetish is 1 and the number of alive tentacle monsters < 10.
 To say question for (Q - quiz-tentacles):
@@ -1390,7 +1343,6 @@ To set up (Q - quiz-tentacles):
 	increase the askedAlready of Q by 1;
 	now the correctAnswer of Q is the number of alive tentacle monsters;
 	set up number answers for Q.
-
 
 quiz-humans is a team-quiz-predicament-question.
 To say question for (Q - quiz-humans):
@@ -1462,6 +1414,5 @@ To set up (Q - quiz-throne):
 	increase the askedAlready of Q by 1;
 	now the correctAnswer of Q is timesSat of the throne;
 	set up number answers for Q.
-
 
 Predicament World ends here.

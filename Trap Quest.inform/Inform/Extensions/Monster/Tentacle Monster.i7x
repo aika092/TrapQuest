@@ -53,7 +53,6 @@ To decide which figure-name is the sex-profile of (M - a tentacle monster):
 
 The text-shortcut of tentacle monster is "tnm". Understand "tentacle", "monster", "tentacle monster" as tentacle monster.
 
-
 A smart-tentacle-monster is a kind of tentacle monster.
 
 cunning-tentacle-monster is a smart-tentacle-monster.
@@ -80,7 +79,6 @@ devious-tentacle-monster is a smart-tentacle-monster.
 To say ShortDesc of (M - devious-tentacle-monster):
 	say "devious tentacle monster".
 Understand "devious" as devious-tentacle-monster.
-
 
 A durable-tentacle-monster is a kind of tentacle monster.
 
@@ -109,7 +107,6 @@ To say ShortDesc of (M - resilient-tentacle-monster):
 	say "resilient tentacle monster".
 Understand "resilient" as resilient-tentacle-monster.
 
-
 A wet-tentacle-monster is a kind of tentacle monster.
 
 slimy-tentacle-monster is a wet-tentacle-monster.
@@ -131,7 +128,6 @@ slick-tentacle-monster is a wet-tentacle-monster.
 To say ShortDesc of (M - slick-tentacle-monster):
 	say "slick tentacle monster".
 Understand "slick" as slick-tentacle-monster.
-
 
 A dull-tentacle-monster is a kind of tentacle monster.
 
@@ -164,7 +160,6 @@ slinking-tentacle-monster is a dull-tentacle-monster.
 To say ShortDesc of (M - slinking-tentacle-monster):
 	say "slinking tentacle monster".
 Understand "slinking" as slinking-tentacle-monster.
-
 
 tentacleShortcutCount is initially 1.
 To TentacleShortcutAssign (C - a tentacle monster):

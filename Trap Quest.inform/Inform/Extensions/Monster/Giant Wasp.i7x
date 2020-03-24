@@ -328,7 +328,6 @@ To say CondomRejectFlav of (M - a domesticated wasp):
 To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
 
-
 To compute striking attack of (M - a giant wasp):
 	if M is dangerous-wasp and a random number between 1 and 2 is 1 and the player is the donator:
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
@@ -383,7 +382,6 @@ a time based rule (this is the wasp honey decay rule):
 This is the honey stuck immobility rule:
 	if wasp-honey-timer > 80, rule fails.
 The honey stuck immobility rule is listed in the immobility rules.
-
 
 To say DamageReactHealthy of (M - a giant wasp):
 	say "The [noun] buzzes angrily!".

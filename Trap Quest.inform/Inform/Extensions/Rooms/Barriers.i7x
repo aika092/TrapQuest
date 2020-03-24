@@ -1,6 +1,5 @@
 Barriers by Rooms begins here.
 
-
 [!<Barrier>@
 
 REQUIRES COMMENTING
@@ -56,6 +55,5 @@ To compute raising of (B - a modesty shutter):
 					let D be a random N-viable direction;
 					say "[one of]A tall black [man of pimp] dressed as a pimp arrive from[or][BigNameDesc of pimp] arrives from[stopping] the [D]!";
 					compute perception of pimp.
-
 
 Barriers ends here.

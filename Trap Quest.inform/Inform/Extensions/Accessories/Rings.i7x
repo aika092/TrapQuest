@@ -19,7 +19,6 @@ To decide which figure-name is the examine-image of (R - a ring):
 	if R is pure diamond, decide on figure of pure diamond ring;
 	decide on figure of solid gold ring.
 
-
 ring wearability rules is a rulebook. The wearability rules of rings is usually ring wearability rules.
 
 This is the rings limited to eight rule:

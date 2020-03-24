@@ -7,7 +7,6 @@ Check spritzing:
 	try spritzing the noun with P instead.
 Understand "spritz [something]", "squirt [something]", "febreeze [something]", "spray [something]", "shoot [something]", "spz [something]" as spritzing.
 
-
 Spritzing it with is an action applying to two things.
 Check spritzing it with:
 	if the second noun is not pink spraybottle, say "The [ShortDesc of the second noun] isn't really built for this task. Perhaps a spraybottle or cloth..." instead;
@@ -51,6 +50,5 @@ To say OfferFlav of (T - a pink spraybottle):
 		say "[variable custom style][muffled sounds][roman type][line break]";
 	otherwise:
 		say "You hold the item up to the [second noun].";
-
 
 Spritzing ends here.

@@ -1,6 +1,5 @@
 Executing Fainting by Fainting begins here.
 
-
 [!<sexChanged:Integer>*
 
 Set to 1 when the player is sex changed, telling us that the next time the player faints, we should mention it. Then it gets set to 2 so we don't do that again the following time the player faints.
@@ -130,7 +129,6 @@ To Execute Fainting:
 		display focus stuff;
 		stop the action.
 
-
 [!<SetLeftovers>+
 
 We put an object in the room that contains some description about how the player fainted there in the past.
@@ -181,6 +179,5 @@ To decide which object is the biggest held jewel:
 			now N is the price of J;
 			now bigJ is J;
 	decide on bigJ.
-
 
 Executing Fainting ends here.

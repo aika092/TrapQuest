@@ -67,5 +67,4 @@ REQUIRES COMMENTING
 +!]
 Definition: a diaper is washable: decide no.
 
-
 Laundry Robots ends here.

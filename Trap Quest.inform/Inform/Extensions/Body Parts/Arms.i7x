@@ -11,7 +11,6 @@ REQUIRES COMMENTING
 @!]
 arms is a limb. arms is everywhere.
 
-
 To say FullExamineDesc of (B - arms):
 	say "[if weight gain fetish is 1][TotalDesc of arms][otherwise]There's nothing interesting to note about your arms.[end if]".
 
@@ -93,7 +92,6 @@ To say TotalDesc of arms:
 
 Part 3 - Modify Arms Stats
 
-
 [!<FatArmsUpX>+
 
 REQUIRES COMMENTING
@@ -114,6 +112,5 @@ To FatArmsDown (X - a number):
 	while X > 0:
 		if the flesh volume of arms > 0, decrease the flesh volume of arms by 1;
 		decrease X by 1.
-
 
 Arms ends here.

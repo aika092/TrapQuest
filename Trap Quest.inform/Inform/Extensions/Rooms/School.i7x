@@ -6,7 +6,6 @@ A room can be lecture. [It's a classroom]
 To decide which number is the entry-rank of (R - a room):
 	decide on 0.
 
-
 Definition: an academic room (called R) is within vision:
 	now neighbour finder is the location of the player;
 	if R is neighbour finder or ((armband is worn or the rank of the player >= the entry-rank of R) and R is next door), decide yes;
@@ -102,7 +101,6 @@ To decide which number is the entry-rank of (R - School31):
 School32 is a lecture academic room. The printed name of School32 is "Diamond Classroom". "This room is fashioned like a [if diaper quest is 1]giant crib, covered in brightly coloured soft blankets and animal themed cushions, and populated by giant stuffed animals and baby toys[otherwise]porno studio, with cameras, spotlights and microphones on poles all trained in on a soft rug at the far end of the room[end if]. The only exit is behind you to the south, back into the Trophy Room.". The shape of School32 is L5/0-0-0-0-1-0. The grid position of School32 is <5,12,10>. School32 is north of School31.
 To decide which number is the entry-rank of (R - School32):
 	decide on 5.
-
 
 [School33 to 35 are the dungeon]
 
@@ -352,7 +350,6 @@ To execute (T - dungeon-bottle-test):
 	otherwise:
 		say "[big he of M] growls at your refusal.[line break][speech style of M]'You'd really rather stay here even longer? Fine by me.'[roman type][line break]".
 
-
 [dungeon-breakout-test is a dungeon-test.
 Definition: dungeon-breakout-test (called T) is eligible:
 	let M be a random tentacle monster in the location of the player;
@@ -363,7 +360,6 @@ To execute (T - dungeon-breakout-test):
 	let M be dungeon-test-monster;
 	let X be a random tentacle monster in the location of the player;
 	say "The [X] busts you out of jail!";]
-
 
 To compute dungeon princess challenge of (M - a monster):
 	say DungeonPrincessDeclarationFlav of M.
@@ -402,6 +398,5 @@ Report dropping clothing when the noun is in School15:
 	otherwise:
 		increase the donations of School15 by 1;
 		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
-
 
 School ends here.

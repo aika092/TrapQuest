@@ -1,6 +1,5 @@
 Dispensers by Drinks begins here.
 
-
 [!<Dispenser>@
 
 REQUIRES COMMENTING
@@ -131,7 +130,6 @@ To say ExamineDesc of (C - a bucket):
 To say ShortDesc of (C - a bucket):
 	say "bucket".
 
-
 [!<RefillDispenser>+
 
 Assigns a fill colour to a dispenser based on the value of its integer argument.
@@ -234,6 +232,5 @@ Report decanting something with alchemical vat:
 	let N be a random number between 1 and 15;
 	refill the second noun with N;
 	[say "[if the doses of N > 0]The rest of the liquid drains away down a sinkhole at the bottom of the vat. Then, a[otherwise]A[end if] small compartment opens in the wall, and a hose snakes out, filling the vat with another serving of [appearance corresponding to an Magic of N in the Table of Drinks] potion[if known corresponding to an Magic of N in the table of drinks is 1] ([FillName N])[end if]!";]
-
 
 Dispensers ends here.

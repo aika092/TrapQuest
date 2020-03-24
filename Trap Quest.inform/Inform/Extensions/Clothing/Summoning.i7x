@@ -1,6 +1,5 @@
 Summoning by Clothing begins here.
 
-
 To summon (C - a wearthing):
 	destroy C;
 	now C is worn by the player.
@@ -144,6 +143,5 @@ Definition: a clothing (called C) is actually summonable:
 	now summoning is 1; [suppresses wearing text outputs, let the game know this is being summoned (some stuff can be summoned but not put on)]
 	if C is actually wearable, decide yes;
 	decide no.
-
 
 Summoning ends here.

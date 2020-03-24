@@ -1,6 +1,5 @@
 Truffle by Food begins here.
 
-
 A truffle is a kind of chef food. There is 1 truffle. The printed name of a truffle is "[TQlink of item described][if the quality of the item described > 1]high quality [otherwise if diaper quest is 1]suspicious quality [otherwise if the quality of the item described is -1]suggestive [otherwise if the quality of the item described <= -2]creampied [end if]truffle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a truffle is "[TQlink of item described]truffles[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a truffle is usually "tr".
 
 To say ShortDesc of (C - a truffle):
@@ -52,6 +51,5 @@ a time based rule (this is the truffle confidence decay rule):
 		if truffle-confidence-timer <= 0:
 			say "[bold type]That taste of the truffle fades.[roman type][line break]";
 			now truffle-confidence-timer is 0.
-
 
 Truffle ends here.

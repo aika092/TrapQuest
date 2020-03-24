@@ -1,14 +1,11 @@
 School Stuff by TQ Only Stuff begins here.
 
-
 Definition: chess-lesson is lesson-appropriate: decide no.
 
 To compute chess soiling:
 	do nothing.
 
-
 Part - Kissing Lesson
-
 
 kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela.
 
@@ -156,7 +153,6 @@ To compute teaching of (L - kissing-lesson):
 	now bigGameLoop is 0;
 	conclude consenting.
 
-
 Part - Seraphina
 
 teacher-seraphina is an emerald-teacher.
@@ -184,7 +180,6 @@ To say WhereAnswer of (M - teacher-seraphina):
 
 To say AdviceAnswer of (M - teacher-seraphina):
 	say "[speech style of M]'Just always remember - bigger is better. No exceptions!'[roman type][line break]".
-
 
 tits-lesson is a lesson. The lesson-teacher of tits-lesson is teacher-seraphina.
 
@@ -286,7 +281,6 @@ To compute tits marker choice of (S - a student):
 To compute tits marker reaction of (S - a student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm, this is fine. Nothing special, but does the job. Not bad, [student-name of S].'[roman type][line break]".
 
-
 To compute tits marker choice of (S - a ditzy student):
 	say "umms to [himself of S] for a few moments [himself of S] before making a gleeful 'ooh!' sound and then taking the pen to your skin. ";
 	let R be a random number between 1 and 3;
@@ -301,7 +295,6 @@ To compute tits marker choice of (S - a ditzy student):
 
 To compute tits marker reaction of (S - a ditzy student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm. A bit crude, but I guess it does the job. You'd certainly get more attention.'[roman type][line break]".
-
 
 To compute tits marker choice of (S - a nasty student):
 	say "doesn't hesitate before taking the pen to your skin. ";
@@ -318,7 +311,6 @@ To compute tits marker choice of (S - a nasty student):
 To compute tits marker reaction of (S - a nasty student):
 	say "[speech style of lesson-teacher of tits-lesson]'No, no no! This is all wrong. Who would want such a horrible message written on their breasts?! Get it together, [student-name of S].'[roman type][line break]".
 
-
 To compute tits marker choice of (S - a tryhard student):
 	say "doesn't hesitate before taking the pen to your skin. ";
 	let R be a random number between 1 and 2;
@@ -331,7 +323,6 @@ To compute tits marker choice of (S - a tryhard student):
 
 To compute tits marker reaction of (S - a tryhard student):
 	say "[speech style of lesson-teacher of tits-lesson]'Great idea, [student-name of S]! I love it. Attention grabbing without being too crass.'[roman type][line break]".
-
 
 Part - Rochelle / Roger
 
@@ -400,7 +391,6 @@ To compute labour to (M - teacher-rochelle):
 		say "[PregFlav]A human head pushes its way out of your cunt, agonisingly slowly and painfully. Finally the head has passed through, and after a final push at the shoulders, the birthing is complete. You pick your child up off the floor and start to cradle it in your arms. [BigNameDesc of the father] appears almost as if on cue! [PregFlav of the father]Severing the umbilical cord, [he of M] pulls the baby from your hands, wraps it in a soft blanket and then carries it away.[line break][variable custom style][if the bimbo of the player < 8]That is definitely for the best.[otherwise if the bimbo of the player < 14]I guess I don't really have anywhere to raise a baby in here, anyway.[otherwise]Oh good, that means I can busy myself with finding a new stud to breed me again![end if][roman type][line break]";
 	otherwise:
 		say DefaultBirthScene.
-
 
 The lesson-teacher of eating-lesson is teacher-rochelle.
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-rochelle.
@@ -600,9 +590,7 @@ To compute teaching of (L - practical-lesson):
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
 	say "[BigNameDesc of lesson-teacher of L] closes [his of lesson-teacher of L] eyes and lazily stretches [his of lesson-teacher of L] arms.[line break][speech style of lesson-teacher of L]'Yep, I'm done. Class dismissed!'[roman type][line break]".
 
-
 Part - Swimming Lesson
-
 
 swimming-lesson is a lesson. The lesson-teacher of swimming-lesson is teacher-hyacinthe.
 
@@ -610,7 +598,6 @@ Definition: swimming-lesson is lesson-appropriate if diaper quest is 0 and the n
 
 To decide which number is the swimming-strength of (M - a student):
 	decide on the dedication of M.
-
 
 To compute teaching of (L - swimming-lesson):
 	allocate 40 seconds;
@@ -974,7 +961,6 @@ To compute teaching of (L - swimming-lesson):
 		update students; [an important line which makes boring old students disappear and new cool ones appear]
 	say "[BigNameDesc of M] licks [his of M] lips with satisfaction.[line break][speech style of M]'Class dismissed!'[roman type][line break]".
 
-
 Part - Kaylee / Karl
 
 teacher-kaylee is a diamond-teacher. teacher-kaylee is male.
@@ -1023,7 +1009,6 @@ To say AdviceAnswer of (M - teacher-kaylee):
 To compute teaching of (M - teacher-kaylee):
 	say "[speech style of M]'By the time you get to me, hopefully you'll already know everything you need.'[roman type][line break]".
 
-
 To compute labour to (M - teacher-kaylee):
 	compute labour to teacher-rochelle. [It's identical]
 
@@ -1061,7 +1046,6 @@ To compute lesson veto:
 		otherwise say "[BigNameDesc of M] snarls.[line break][speech style of M]'That's your last one, [cunt]. The next time you disobey us, you [if STN > 1]and all your little slut friends [otherwise if STN is 1]and your slut friend [end if]will have failed your initiation.";
 	otherwise:
 		now the lesson-completed of ultimate-lesson is -1.
-
 
 An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male. There are 4 ultimate-lesson-actors.
 To say ShortDesc of (M - an ultimate-lesson-actor):
@@ -1233,7 +1217,6 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 			say "You don't like the sound of that noise! Your hands go to your [asshole], protecting it out of fear.";
 			compute lesson veto.
 
-
 An ultimate-fetish-object is a kind of object. An ultimate-fetish-object has a number called happened.
 Definition: an ultimate-fetish-object is eligible if the happened of it is 0.
 
@@ -1275,7 +1258,6 @@ To execute (U - ultimate-fetish-milking) for (M - a monster):
 		say "You [unless there is a worn ringagged clothing]keep your mouth closed and [end if]shake your head.[line break][variable custom style]I'm not a cow![roman type][line break]";
 		compute lesson veto;
 	MilkDown the milk volume of breasts.
-
 
 A time based rule (this is the ultimate diamond lesson rule):
 	if the player is in DiamondLessonBlindfolded:
@@ -1350,11 +1332,9 @@ To compute conclusion of (L - ultimate-lesson):
 			say "[BigNameDesc of M] leans against the cell's metal bars.[speech style of M]'This is the [ShortDesc of headmistress][']s favourite toy. And now that you're [if there is a student in the location of the player]all gold-star students[otherwise]a gold-star student[end if], [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
 			compute mandatory room leaving of M.
 
-
 Volume - STUDENTS
 
 Part - AMICABLE STUDENTS
-
 
 Book - Rosie
 
@@ -1428,7 +1408,6 @@ To say StoryAnswer of (M - student-tiana):
 To say AdviceAnswer of (M - student-tiana):
 	say "[speech style of M]'[one of]It's really hard to get around on your knees when you have tits as big as these puppies. Try to stay on your feet!'[or]You don't always have to wear a bra that fits. Sometimes it only matters that you're close enough.'[at random][roman type][line break]".
 
-
 Book - Minnie
 
 student-minnie is a amicable student.
@@ -1466,7 +1445,6 @@ To say AdviceAnswer of (M - student-minnie):
 To compute teaching of (M - student-minnie):
 	say "[speech style of M]'Feeling comfortable in your own skin isn't something you need to be taught, it's just that you need to *unlearn* the idea that people should wear clothes!'[roman type][line break]".
 
-
 Book - Christi Lynn
 
 student-christi is a amicable student.
@@ -1487,7 +1465,6 @@ The max-rank of student-christi is 6.
 The student-name of student-christi is "Christi Lynn". Understand "Christi" as student-christi.
 The student-print of student-christi is "creampie craver".
 
-
 To say StoryAnswer of (M - student-christi):
 	say "[speech style of M]'When I first came here, I had a crippling fear of getting [semen] [if bukkake fetish is 1]on me or [end if]in me. But look at me now! I can't get enough of this warm sticky feeling! In fact, I should go find a teacher to give me another helping before this one runs out. The hot tub tends to be the best place to [']accidentally['] bump into one...'[roman type][line break]".
 
@@ -1500,9 +1477,7 @@ To say AdviceAnswer of (M - student-christi):
 To compute teaching of (M - student-christi):
 	say "[speech style of M]'If you want to keep cum inside you for as long as possible, [if pregnancy fetish is 1]perhaps to maximise your chances of getting pregnant, [end if]make sure to put some kind of toy inside you! If you're too loose and it's just instantally falling out, try doing it on your knees instead. And then put some panties over the top to keep it in.'[roman type][line break]".
 
-
 Part - DITZY STUDENTS
-
 
 Book - Stacey
 
@@ -1540,7 +1515,6 @@ To say WhereAnswer of (M - student-stacey):
 
 To say AdviceAnswer of (M - an student-stacey):
 	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out! And the more of that you drink, the more smarterer you get! So I try to get as much of it as possible.'[end if][roman type][line break]".
-
 
 Book - Bree
 
@@ -1593,7 +1567,6 @@ To compute teaching of (M - student-bree):
 To say StoryAnswer of (M - student-bree):
 	say "[speech style of M]'Oh darling, how long do you have? My story begins with my first [manly-penis], it was Brian from maths class, [if TG fetish > 0]or wait, was *I* Brian? And then there was that thing involving that witch... and a curse... my memory is going all fuzzy... huh? What were we talking about?'[roman type][line break][otherwise]and as soon as I got my lips around that thick, juicy shaft of his I was completely addicted, oh [NameBimbo] darling it was just so incredibly dreamy, you have no idea, and the cum... oh the cum! Ahhhh...'[roman type][line break][BigNameDesc of M] seems to drift off into a daydream.[end if]".
 
-
 Book - Pebbles
 
 student-pebbles is a ditzy student.
@@ -1641,9 +1614,7 @@ To compute teaching of (M - student-pebbles):
 To say StoryAnswer of (M - student-pebbles):
 	say "[BigNameDesc of M][']s eyes go dark and sullen for a moment.[line break][speech style of M]'I was a bad person, and I gave my dog too much food. I was an awful owner. So now I'm being taught to think from the dog's perspective[if weight gain fetish is 1], and I'm made to eat as much food as I can manage[end if]. To become a good girl. A good girl... Who's a good girl? Am I a good girl? Woof woof!'[roman type][line break]".
 
-
 Part - INNOCENT STUDENTS
-
 
 Book - Winnie
 
@@ -1680,7 +1651,6 @@ To decide which number is the heel-skill of (M - student-winnie):
 To decide which number is the dedication of (M - student-winnie): [We can use this for various calculations to check which students do what]
 	decide on 3.
 
-
 Book - Austin
 
 student-austin is a innocent student.
@@ -1710,11 +1680,9 @@ To say StoryAnswer of (M - student-austin):
 To say WhereAnswer of (M - student-austin):
 	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other [sissy-girls] were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
-
 Book - Nell
 
 student-nell is a innocent student.
-
 
 The text-shortcut of student-nell is "stnl".
 
@@ -1756,7 +1724,6 @@ To say AdviceAnswer of (M - student-nell):
 To compute teaching of (M - student-nell):
 	say "[speech style of M]'Not unless you need to be taught how to stay still and let ten guys cum all over your face. That's apparently the only thing I've managed to do correctly recently.'[roman type][line break]".
 
-
 Book - Calamity
 
 student-calamity is a innocent student.
@@ -1786,7 +1753,6 @@ To say AdviceAnswer of (M - student-calamity):
 
 To compute teaching of (M - student-calamity):
 	say "[speech style of M]'Not unless you need to be taught how to stay still and let ten guys cum all over your face. That's apparently the only thing I've managed to do correctly recently.'[roman type][line break]".
-
 
 Part - NASTY STUDENTS
 
@@ -1831,7 +1797,6 @@ To say StoryAnswer of (M - student-abbi):
 
 To say WhereAnswer of (M - student-abbi):
 	say "[speech style of M]'[if the rank of the player <= 1]Are you literally braindead?'[otherwise]Someone as stupid as you is going to have to guzzle a LOT of cum to make it anywhere in here.'[end if][roman type][line break]".
-
 
 Book - Katya
 
@@ -1927,7 +1892,6 @@ To compute teaching of (M - student-katya):
 To compute friendly drink of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]Do I look like a fucking vending machine to you?'[otherwise]I'm sorry, but the only [tasty] thing I drink nowadays is dick juice. And if you want your own, you'll have to use those lips of yours to earn it yourself!'[end if][roman type][line break]".
 
-
 Book - Darla
 
 student-darla is a nasty student.
@@ -1956,7 +1920,6 @@ To update name of (M - student-darla):
 
 To say StoryAnswer of (M - student-darla):
 	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise][man of M][end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
-
 
 Book - Belinda
 
@@ -1987,7 +1950,6 @@ To update name of (M - student-belinda):
 
 To say StoryAnswer of (M - student-belinda):
 	say "[speech style of M]'My boyfriend wants me to call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. Apparently this place is going to convince me it's fun to act like a bratty [sissy-girl]. We'll see...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
-
 
 Book - Hiroko
 
@@ -2032,9 +1994,7 @@ To say AdviceAnswer of (M - student-hiroko):
 To compute teaching of (M - student-hiroko):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
-
 Part - TRYHARD STUDENTS
-
 
 Book - Misty
 
@@ -2080,7 +2040,6 @@ To compute friendly drink of (M - a student-misty):
 		say "You take a sip and feel much better!";
 		StomachUp 2.
 
-
 Book - Rain
 
 student-rain is a tryhard student.
@@ -2120,7 +2079,6 @@ To say EscapeAnswer of (M - student-rain):
 To compute teaching of (M - student-rain):
 	say "[speech style of M]'[if lady fetish < 2]This is a [cunt]. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
 
-
 Book - Ferrari
 
 student-ferrari is a tryhard student.
@@ -2152,6 +2110,5 @@ To say EscapeAnswer of (M - student-ferrari):
 
 To compute teaching of (M - student-ferrari):
 	say "[speech style of M]'Wearing exposing, fetishy clothes is way more sexy than just being butt-naked. Although, that's still pretty sexy.'[roman type][line break]".
-
 
 School Stuff ends here.

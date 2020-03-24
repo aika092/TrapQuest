@@ -1,6 +1,5 @@
 Self Drinking by Actions begins here.
 
-
 [!<CheckDrinkingBreasts>+
 
 REQUIRES COMMENTING
@@ -52,6 +51,5 @@ Report SelfDrinking:
 	say "[if the humiliation of the player < HUMILIATION-DISGRACED + 1000][line break][variable custom style]Yes it was humiliating, but at least it was tasty![otherwise][line break][second custom style]Oh my, I'm such a naughty girl, drinking my own [milk] straight from the tap![end if][roman type][line break]";
 	if diaper quest is 1, progress quest of puddle-licking-quest;
 	progress quest of milk-drinking-quest.
-
 
 Self Drinking ends here.

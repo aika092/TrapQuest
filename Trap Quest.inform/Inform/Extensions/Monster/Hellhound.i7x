@@ -2,7 +2,6 @@ Hellhound by Monster begins here.
 
 hellhound is a monster. hellhound is male. The leftover-type of hellhound is usually 113. The poison-status of hellhound is -1. hellhound can be unknotted or knotted.
 
-
 To decide which figure-name is the monster-image of (M - hellhound):
 	if mythical creature fetish is 0, decide on figure of slavehound;
 	decide on figure of hellhound.
@@ -74,9 +73,7 @@ To compute unique periodic effect of (M - hellhound):
 					if M is in the location of the player, say "[BigNameDesc of M] sniffs around the puddle on the floor and turns toward you suddenly, as if to glare.";
 					decrease the peeTimer of M by 30.
 
-
 Part 1 - Misc Flavour
-
 
 To decide which text is he of (M - hellhound):
 	decide on "[if mythical creature fetish is 1]it[otherwise if lady fetish is 1]she[otherwise]he[end if]".
@@ -395,10 +392,8 @@ To compute (S - a spike bra) damaging (M - hellhound):
 To say StrikingFailureFlav of (M - hellhound) on (B - a body part):
 	say "[BigNameDesc of M] goes for you with [if diaper quest is 0][his of M] claws, but you manage to move your [variable B] out the way just in time[otherwise]a full body charge, but you manage to leap out of [his of M] path[end if].".
 
-
 To say SexResistSlapFlav of (M - hellhound):
 	say "[BigNameDesc of M] scratches at one of your arms [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".
-
 
 Section 2 - DQ
 
@@ -480,7 +475,6 @@ To compute punishment of (P - hellhound-facesit):
 				cutshow figure of puppy cutscene 4 for M;
 			ruin vagina.
 
-
 The hellhound continue sex rules is a rulebook. The continue sex rules of an hellhound is usually the hellhound continue sex rules.
 
 This is the hellhound extra continue sex check rule:
@@ -543,6 +537,5 @@ To compute talk option (N - 3) to (M - hellhound):
 To compute talk option (N - 4) to (M - hellhound):
 	say FoodRequest of M;
 	compute greeting response of M.
-
 
 Hellhound ends here.

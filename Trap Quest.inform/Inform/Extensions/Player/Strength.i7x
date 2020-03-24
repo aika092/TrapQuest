@@ -2,7 +2,6 @@ Strength by Player begins here.
 
 Part 1 - Calculate Strength
 
-
 [!<DecideWhichNumberIsTheStrengthInfluenceOfThing>+
 
 REQUIRES COMMENTING
@@ -100,7 +99,6 @@ To decide which number is the flat strength of the player:
 	if S > 30, decide on 30;
 	decide on S.
 
-
 [!<DecideWhichNumberIsTheStartingStrengthOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -111,7 +109,6 @@ To decide which number is the starting strength of the player:
 
 Part 2 - Modify Strength
 
-
 [!<Player>@<rawStrength:Integer>*
 
 REQUIRES COMMENTING
@@ -119,14 +116,12 @@ REQUIRES COMMENTING
 *@!]
 The player has a number called raw strength. The raw strength of the player is usually 7. [Min 1 Max 30]
 
-
 [!<Player>@<oldStrength:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 The player has a number called old strength. The old strength of the player is usually 0.
-
 
 [!<StrengthUpX>+
 
@@ -147,6 +142,5 @@ To StrengthDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw strength of the player > 1, decrease the raw strength of the player by 1.
-
 
 Strength ends here.

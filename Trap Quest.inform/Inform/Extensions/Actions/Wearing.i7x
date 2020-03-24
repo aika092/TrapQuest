@@ -38,7 +38,6 @@ Before wearing a thing:
 			otherwise:
 				do nothing instead.
 
-
 Check wearing insertable thing:
 	unless (the noun is ass plugging clothing or the noun is vagina plugging clothing or the noun is dildo sword) and the noun is not sex toy, say "You can't just wear this! Try [bold type]inserting it into[roman type] something." instead;
 
@@ -234,6 +233,5 @@ Report plugging something with expansion clothing:
 
 Report wearing possession clothing:
 	say "A chill goes down your spine as you finish putting it on, and somehow you know you're not alone in these clothes!".
-
 
 Wearing ends here.

@@ -22,7 +22,6 @@ Definition: A strapon-panties (called P) is fetish appropriate:
 [is it a strapon or a penis]
 Definition: A strapon-panties is dildo-usage: decide yes.
 
-
 To say ShortDesc of (H - a strapon-panties):
 	say "strap-on dildo".
 
@@ -179,7 +178,6 @@ To compute periodic effect of (G - gem-strapon):
 		now the strap-length of G is 3;
 		say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 
-
 To decide which number is the sex-addiction-influence of (C - a gem-strapon):
 	decide on 3.
 
@@ -263,6 +261,5 @@ To decide which number is the dexterity-influence of (C - ghost-strapon):
 	decide on X.
 
 Definition: ghost-strapon is blessable: decide no.
-
 
 Strapon ends here.

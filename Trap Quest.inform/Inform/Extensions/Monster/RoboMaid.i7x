@@ -13,7 +13,6 @@ A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "ma
 	If the robomaid is in the room with a patron at any time, she services them in some way and it makes a mess
 ]
 
-
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
 milkmaid is a robomaid. The text-shortcut of milkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
@@ -243,7 +242,6 @@ To compute publicity stunt of (M - a robomaid):
 	repeat with N running through patrons in the location of the player:
 		destroy N.
 
-
 The unique punishment rule of milkmaid is the milkmaid punishment rule.
 
 This is the milkmaid punishment rule:
@@ -335,7 +333,6 @@ To compute publicity stunt of (M - a milkmaid):
 	otherwise say "[NameDesc of P] smirks at you as [he of P] leaves the room.";
 	repeat with N running through patrons in the location of the player:
 		destroy N.
-
 
 To compute basic greeting to (M - a robomaid):
 	if M is interested:

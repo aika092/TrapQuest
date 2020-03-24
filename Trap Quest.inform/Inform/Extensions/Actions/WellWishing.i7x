@@ -161,5 +161,4 @@ To compute BadWishing:
 	otherwise:
 		say "Nothing happens. How lame.".
 
-
 WellWishing ends here.

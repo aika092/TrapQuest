@@ -6,7 +6,6 @@ Definition: a microshorts is displacable: decide yes.
 To decide which number is the penis-capacity of (H - a microshorts):
 	decide on 6.
 
-
 To compute SelfExamineDesc of (K - a microshorts):
 	say "A pair of ridiculously skimpy microshorts covers very little of your [ShortDesc of hips]. ".
 
@@ -32,7 +31,6 @@ To say UniqueTitle of (K - gold-microshorts):
 To say ClothingDesc of (K - gold-microshorts):
 	say "These super-tiny super-shiny super-skimpy gold microshorts just scream 'the only thing I care about is how sexy I look'.".
 
-
 Chapter 2 Black Microshorts
 
 black-microshorts are a kind of microshorts. The printed name of black-microshorts is "[clothing-title-before]pair of black microshorts[clothing-title-after]". The text-shortcut of black-microshorts is "bmi". Understand "black" as black-microshorts.
@@ -49,6 +47,5 @@ Figure of black-microshorts is the file "Items/Clothes/Lower/Underwear/Skimpy/mi
 
 To say UniqueTitle of (K - black-microshorts):
 	say "shiny black microshorts".
-
 
 Microshorts ends here.

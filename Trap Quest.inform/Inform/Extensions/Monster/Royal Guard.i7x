@@ -75,7 +75,6 @@ prison guard is a royal guard. The text-shortcut of prison guard is "prg". priso
 To say MediumDesc of (M - prison guard):
 	say "prison guard".
 
-
 To say MonsterDesc of (M - a royal guard):
 	if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s royal armour has been transformed into a dark blue guard-themed baby cosplay onesie, complete with a giant safety pin on the front and an inflatable floppy sword. [if lady fetish is 1]A cute blue ribbon adorns [his of M] now pigtailed hair[otherwise if TG fetish > 0][BigNameDesc of M] has been transformed into a woman, complete with a cute blue ribbon that now adorns [his of M] now pigtailed hair[otherwise][big his of M] hair has been put into pigtails with a blue ribbon, making [him of M] look like a cute little [sissy] girl[end if]. A thick bulge below the waist makes it clear that [he of M] has been clothed in a big thick nappy.";
@@ -84,7 +83,6 @@ To say MonsterDesc of (M - a royal guard):
 	otherwise:
 		say "A calm, dignified, but obviously powerful [man of M], with hints of an impressive bust as well as a healthy musculature visible within [his of M] thick robes, which bear a royal crest. [big he of M] has [GuardHair of M] hair drawn back into a neat ponytail that rests over [his of M] shoulder.";
 	if M is prison guard and skeleton key is off-stage, say "A single key on a small string dangles from [his of M] belt.".
-
 
 To say MonsterComment of (M - a royal guard):
 	if diaper quest is 0:
@@ -183,7 +181,6 @@ To say DiaperReaction of (M - a royal guard):
 		otherwise say "You turn bright red.";
 	otherwise:
 		say "It seems that [NameDesc of M] [one of]is not aware of what you've just done[or]has not detected what's happening in your diaper[or]is completely oblivious[in random order].[one of][line break][variable custom style]I've played games where I've had to be stealthy in front of guards before, but not like this![roman type][line break][or][stopping]".
-
 
 To compute (M - a monster) stomping (N - a royal guard):[generic M here, but shouldn't matter.]
 	if diaper quest is 1:
@@ -474,7 +471,6 @@ To compute DQ perception of (M - a royal guard):
 			otherwise: [Default catch-all]
 				say "[speech style of M][one of]Anyway, if you see the Princess during your travels, tell [him of ex-princess] [he of ex-princess] is dearly missed.'[or]Anyway, I would advise against trying to steal anything from this place, many containers are even booby trapped.'[or]Anyway, it is always nice to see a fresh face in this lonely place, so stay for as long as you feel comfortable.'[in random order][roman type][line break]";
 	if lady fetish is 0 and M is interested, display interaction of M.
-
 
 Part 3 - Motion
 
@@ -912,7 +908,6 @@ To say ThreesomePrep of (M - a royal guard) with (N - a royal guard) in (F - vag
 
 [TODO: guard foursome, possibly]
 
-
 To compute facial climax of (M - a royal guard):
 	TimesSubmittedUp M by 1;
 	let N be a random wench in the location of the player;
@@ -1086,7 +1081,6 @@ This is the guard punishes diaper rule:
 The diaper punishment rule of a royal guard is usually the guard punishes diaper rule.
 The guard punishes diaper rule is listed last in the royal guard diaper quest rules.
 
-
 This is the guard forcefeeds the player rule:
 	if the player is able to pee and the player is not bursting and face is not actually occupied:
 		let M be current-monster;
@@ -1112,7 +1106,6 @@ To say ForcefeedAftermath of (M - a royal guard):
 
 To say ForcefeedAfterFlav of (M - a royal guard):
 	say "[speech style of M]'There we go. Good [boy of the player].'[roman type][line break]".
-
 
 Chapter 3 - Damage
 
@@ -1178,7 +1171,6 @@ To compute unique death of (M - a royal guard):
 	unless X is nothing:
 		now X is in the location of the player;
 		compute autotaking X.
-
 
 Part 4 - Conversation
 
@@ -1657,7 +1649,6 @@ To weiner dominate (M - a royal guard):
 		if the blue-balls of M > 0, now the blue-balls of M is 0;
 		say AfterDominationComment 5 of M.
 
-
 [This ends up being the safest, if not THE safest way to lose your virginity, since you're in control the whole time]
 To vaginal dominate (M - a royal guard):[with times-submitted we'll assume the sex you had was the "punishment" kind]
 	let O be the openness of vagina;
@@ -1796,7 +1787,6 @@ To anal dominate (M - a royal guard):
 			say AfterDominationComment 1 of M;
 		now M is not penetrating asshole;
 	AnalCount.
-
 
 To say AfterDominationComment (N - a number) of (M - a royal guard):
 	if the class of the player is princess:

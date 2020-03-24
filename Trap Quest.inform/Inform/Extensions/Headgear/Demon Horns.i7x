@@ -1,6 +1,5 @@
 Demon Horns by Headgear begins here.
 
-
 demon horns is a headgear. demon horns is biological. demon horns is blondeness-negative. demon horns is brightness-negative. demon horns is redness-negative. demon horns is heel-skill-influencing.
 
 demon horns has a number called blackfire. The blackfire of demon horns is 0.
@@ -39,7 +38,6 @@ To decide which number is the strength-influence of (H - demon horns):
 
 Definition: demon horns is demonic: decide yes.
 Definition: demon horns is red themed: decide yes.
-
 
 Chapter - Class Outfit
 
@@ -97,6 +95,5 @@ To compute succubus transformation:
 	summon K;
 	now the souled-humiliation of the player is the humiliation of the player;
 	now the humiliation of the player is 0.
-
 
 Demon Horns ends here.

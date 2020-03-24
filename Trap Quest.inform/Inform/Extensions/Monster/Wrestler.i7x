@@ -53,7 +53,6 @@ Figure of Wrestler Cutscene 10 is the file "Special/Cutscene/cutscene-wrestler-f
 Figure of Wrestler Cutscene 11 is the file "Special/Cutscene/cutscene-wrestler-friendly4.png".
 Figure of Wrestler Cutscene 12 is the file "Special/Cutscene/cutscene-wrestler-friendly5.png".
 
-
 To decide which figure-name is the monster-image of (M - a wrestler):
 	if diaper quest is 1, decide on figure of diapered wrestler;
 	otherwise decide on figure of wrestler.
@@ -121,7 +120,6 @@ To say SummoningFlav of (M - a wrestler):
 		say "The teleporter emits a definitive sounding hum, and light fills the room as a [man of M] covered head to toe in shiny latex materialises on the pad. [line break][speech style of M]'I hope my mistress is ready for me.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of squeaky rubber clothing coming from another part of the hotel.".
-
 
 To say ToiletPeeReaction of (M - a wrestler):
 	say "[BigNameDesc of M] licks [his of M] lips. [line break][speech style of M]'[if watersports fetish is 1]You know, it's unusual getting to watch someone else pee without me being on my knees underneath them[otherwise]Is the big [boy of the player] trying to prove [he of the player] doesn't need diapers? How adorable[end if]!'[roman type][line break]".
@@ -292,7 +290,6 @@ To say DragFlav of (M - a wrestler) to (R - a room):
 To say DragArrival of (M - a wrestler) to (R - Hotel31):
 	say "[second custom style]'Here we are!'[line break][variable custom style][one of][if the bimbo of the player < 8]Oh god, why is there a gap between those urinals?[otherwise]Why are we here I wonder?[end if][or][if the bimbo of the player < 13]No no no please not again![otherwise]Uh-oh, looks like it's toilet time again![end if][stopping][roman type][line break]".
 
-
 To UrinalWait:
 	let M be a random wrestler grabbing the player;
 	let N be the urinal-boredom of M;
@@ -341,7 +338,6 @@ The wrestler feeds you to master rule is listed last in the wrestler unique puni
 
 To say DragArrival of (M - a wrestler) to (R - a room):
 	say "[speech style of M]'Here we are!'[roman type][line break]".
-
 
 wrestler-piss-drunk is a number that varies.
 
@@ -617,7 +613,6 @@ To say OralResistingResponse of (M - a wrestler):
 	let P be a random patron in the location of the player;
 	say "[line break][one of][BigNameDesc of M] continues holding you for [NameDesc of P].[or][BigNameDesc of M] holds you down to make sure [NameDesc of P] can fuck you as deep and hard as possible[or][BigNameDesc of M] eggs on [NameDesc of P]. [line break][speech style of M]'Fuck [him of the player] harder!'[roman type][line break][or][BigNameDesc of M] spreads your [AssDesc] for [NameDesc of P], egging [him of P] on[at random][line break]".
 
-
 To compute facial climax of (M - a wrestler):
 	let P be a random patron in the location of the player;
 	if P is patron and P is penetrating asshole:
@@ -673,7 +668,6 @@ The diaper punishment rule of a wrestler is usually the wrestler uses your diape
 
 Section - DQ
 
-
 To compute diaper mess reaction of (M - a wrestler):
 	if M is unfriendly:
 		say "[BigNameDesc of M] watches you with awe. [line break][speech style of M]'Unf, that's so HOT! You're getting me all worked up...'[roman type][line break]";
@@ -698,7 +692,6 @@ To say DiaperReaction of (M - a wrestler):
 				now M is interested;
 	otherwise:
 		say "[BigNameDesc of M] is either completely oblivious or doesn't care about what you've just done.".
-
 
 Definition: a wrestler is willing to masturbate: decide yes.
 
@@ -742,7 +735,6 @@ Definition: a wrestler is willing to confiscate: decide yes.
 
 To say ConfiscationDeclarationFlav of (M - a wrestler) on (C - a clothing):
 	say "[speech style of M]'[if C is plentiful accessory]Since you're being so mean, I'm gonna take this.'[otherwise if C is equippable]Good babies don't fight back, you know. So I'm taking this away from you for your own good.'[otherwise]I assume you're wearing this by mistake, right? It's way too grown up for someone like you. Don't worry, I'll take it off your hands so that you don't feel tempted to keep wearing it.'[end if][roman type][line break]".
-
 
 wrestler-feeds-you-to-master is a diaper punishment. The priority of wrestler-feeds-you-to-master is 5.
 
@@ -807,7 +799,6 @@ To compute punishment of (P - wrestler-romper):
 	say FullExamineDesc of C;
 	say "[speech style of M]'Haha, it totally suits you!'[roman type][line break]";
 	satisfy M.
-
 
 Section 2 - Damage
 
@@ -1165,7 +1156,6 @@ To compute unfriendly drink of (M - a wrestler):
 	now M is interested;
 	now the boredom of M is 0.
 
-
 Section 4 - Food Requesting
 
 Definition: a wrestler is willing to give snacks: decide yes.
@@ -1187,6 +1177,5 @@ To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a clothing):
 To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a sex toy):
 	say "[speech style of M]'Oh I've already got one of those, thanks anyway!'[roman type][line break]";
 	alwayscutshow figure of wrestler interact 4 for M.
-
 
 Wrestler ends here.

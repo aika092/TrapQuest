@@ -344,7 +344,6 @@ This is the ejaculation capture rule:
 		rule succeeds.
 The ejaculation capture rule is listed last in the ejaculation rules.
 
-
 [!<TheDefaultEjaculationRule>+
 
 REQUIRES COMMENTING
@@ -494,7 +493,6 @@ This is the girls pee when they orgasm rule:
 		try urinating.
 The girls pee when they orgasm rule is listed last in the orgasm resolution rules.
 
-
 [!<TheHentaiOrgasmResolutionRule>+
 
 REQUIRES COMMENTING
@@ -525,7 +523,6 @@ This is the ass expulsion from orgasm rule:
 		say "As you cum, you can't help but let go of your anal sphincter!";
 		AssSquirt.
 The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.
-
 
 [!<TheChastityCageOrgasmRule>+
 
@@ -607,7 +604,6 @@ REQUIRES COMMENTING
 To decide which number is the anal sensitivity influence of (C - a wearthing):
 	decide on 0.
 
-
 [!<DecideWhichNumberIsTheSensitivityOfAsshole>+
 
 REQUIRES COMMENTING
@@ -654,7 +650,6 @@ REQUIRES COMMENTING
 Definition: a person is unable to orgasm so soon rather than able to orgasm so soon:
 	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refactoryperiod > 0, decide yes;
 	decide no.
-
 
 Definition: a body part (called B) is pushed over the edge:
 	decide no.
@@ -720,6 +715,5 @@ To decide which number is the enjoyment of (F - a fuckhole):
 	if the reaction of the player is 0 and the player is not friendly-fucking, decrease A by 2;
 	if A < 0, decide on 0;
 	decide on A.
-
 
 Orgasms ends here.

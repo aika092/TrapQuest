@@ -1,6 +1,5 @@
 Demonic Underwear by Knickers begins here.
 
-
 tongue-panties is a knickers. tongue-panties is unique. tongue-panties is biological. The printed name of tongue-panties is "[clothing-title-before]tongue panties[clothing-title-after]". The text-shortcut of tongue-panties is "tgps". Understand "tongue", "panties" as tongue-panties. The armour of tongue-panties is 10.
 
 Figure of white tongue panties is the file "Items/Clothes/Lower/Underwear/Special/tonguepanties1a.png".
@@ -26,7 +25,6 @@ To say MediumDesc of (C - tongue-panties):
 To compute SelfExamineDesc of (C - tongue-panties):
 	say "A pair of [MediumDesc of C] covers a decent amount of your [ShortDesc of hips]. ".
 
-
 Definition: tongue-panties is displacable: decide yes.
 
 Definition: tongue-panties is demonic: decide yes.
@@ -43,7 +41,6 @@ To compute periodic effect of (C - tongue-panties):
 	if C is crotch-in-place and the player is prone and there is a reactive dangerous monster and tonguesActive > 0:
 		say "[bold type][BigNameDesc of C] [bold type]uses its tongues to pull itself out of the way, completely of its own volition![roman type][line break]";
 		displace C.
-
 
 [The codpiece can be obtained in a couple ways. Sometimes crafting, sometimes as a reward from monsters.]
 Demon codpiece is a strapon-panties. Demon codpiece is unique. The armour of demon codpiece is 10. The printed name of demon codpiece is "[clothing-title-before]demon lord's codpiece[clothing-title-after]". The soak-limit of demon codpiece is 6. The text-shortcut of demon codpiece is "dlj". demon codpiece is crotch-assless.[ demon codpiece is leather. demon codpiece is totally-exclusive.] Understand "lord", "lords", "lord's", "cod", "piece" as demon codpiece. demon codpiece has a number called charge. The charge of demon codpiece is 1.

@@ -1,6 +1,5 @@
 Parser Errors by Miscellaneous Frontend begins here.
 
-
 [After asking which do you mean (this is the Disambiguation Choices cause crashes rule):
 	if inline hyperlinks > 0 and newbie tips is 1, say "[bold type][one of]Do not use a hyperlink here, or this will cause the game to crash. Type a number instead. I have no idea why, sorry.[or]Remember, don't use a hyperlink or the game will crash.[stopping][roman type][line break]".]
 
@@ -72,6 +71,5 @@ REQUIRES COMMENTING
 Rule for printing a parser error when the latest parser error is the noun did not make sense in that context error:
 	if the bimbo of the player > 12, say "[second custom style]What does that mean? Is it another word for '[one of]put it up my butt[or]give a blowjob[or]suck on greedily[in random order]'?[roman type][line break]" instead;
 	otherwise say "[variable custom style]I don't know how to do that![roman type][line break]" instead.
-
 
 Parser Errors ends here.

@@ -104,7 +104,6 @@ REQUIRES COMMENTING
 *@!]
 Hips has a number called fat-burning.
 
-
 [!<DecideWhichNumberIsMaxAssSizeModifier>+
 
 REQUIRES COMMENTING
@@ -167,7 +166,6 @@ To say MaxAssSizeDesc:
 			say "cushioned";
 		otherwise:
 			say "oversized".
-
 
 [!<YourselfIsBottomHeavy>+
 
@@ -249,7 +247,6 @@ To decide which number is the weight of (XXX - hips):
 	if the latex-transformation of the player > 5 and H > 0, now H is 0;
 	decide on H.
 
-
 Part 2 - Description
 
 [!<SayShortDescOfHips>+
@@ -299,7 +296,6 @@ To say TotalDesc of hips:
 		say "Your [ShortDesc of C] [AssModestyDesc of C]. The shape of your hips is still visible through the fabric.";
 	otherwise:
 		say "Your buttcheeks are currently completely visible.".
-
 
 [!<SayAssDesc>+
 
@@ -574,9 +570,7 @@ To AssImplantsDown (X - a number):
 		if the silicone volume of hips > 0:
 			decrease silicone volume of hips by 1;
 
-
 Chapter 3 - Fat
-
 
 [!<FatAssUpX>+
 
@@ -619,7 +613,6 @@ To FatAssDown (X - a number):
 		while X > 0:
 			if the flesh volume of hips > min ass size, decrease the flesh volume of hips by 1;
 			decrease X by 1.
-
 
 Section - Image for graphics window
 

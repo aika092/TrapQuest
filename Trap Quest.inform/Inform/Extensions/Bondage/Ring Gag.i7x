@@ -9,7 +9,6 @@ Figure of ring gag is the file "Items/Accessories/Head/ringgag1.png".
 Figure of lips gag is the file "Items/Accessories/Head/lipsgag1.png".
 Figure of dental gag is the file "Items/Accessories/Head/dentalgag1.png".
 
-
 Definition: an opengag is ringagged: decide yes.
 
 To decide which number is the initial outrage of (C - an opengag):
@@ -67,6 +66,5 @@ To decide which number is the perceived-bimbo-influence of (C - lip gag):
 	decide on 1.
 
 Definition: a ring gag is fetish appropriate: decide no. [Never appears randomly]
-
 
 Ring Gag ends here.

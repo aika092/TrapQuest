@@ -50,7 +50,6 @@ To say CurseCurseFlav of (B - a vibrating plug panties):
 To say BlessBlandFlav of (B - a vibrating plug panties):
 	if B is in the location of the player and B is sure, say "The ass plug of the latex plug panties stops vibrating.".
 
-
 To compute periodic effect of (P - a vibrating plug panties):
 	increase the charge of P by 2;
 	if P is cursed, increase the charge of P by 1;
@@ -95,7 +94,6 @@ Carry out kneeling when there is a worn pump plug panties:
 	otherwise if the plug size of P < 10:
 		say "".
 
-
 Chapter 3 WC Plug Panties
 
 WC plug panties is a kind of plug panties.
@@ -123,6 +121,5 @@ To say WCPantiesVibeFlav:
 
 Figure of female WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant.png".
 Figure of male WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant2.png".
-
 
 Plug Panties ends here.

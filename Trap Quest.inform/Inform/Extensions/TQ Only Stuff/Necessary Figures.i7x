@@ -57,14 +57,12 @@ Figure of Ghost Cutscene 2 is the file "Special/Cutscene/cutscene-ghost-sex2.png
 Figure of Ghost Cutscene 3 is the file "Special/Cutscene/cutscene-ghost-sex3.png". [Anal]
 Figure of Ghost Cutscene 4 is the file "Special/Cutscene/cutscene-ghost-climax1.png". [Climax]
 
-
 Figure of Guard Cutscene 2 is the file "Special/Cutscene/cutscene-guard-sex1.png".
 Figure of Guard Cutscene 3 is the file "Special/Cutscene/cutscene-guard-climax1.png".
 Figure of Guard Cutscene 4 is the file "Special/Cutscene/cutscene-guard-climax2.png".
 Figure of Guard Cutscene 5 is the file "Special/Cutscene/cutscene-guard-climax3.png".
 Figure of Guard Cutscene 6 is the file "Special/Cutscene/cutscene-guard-climax4.png".
 Figure of Guard Cutscene 7 is the file "Special/Cutscene/cutscene-guard-sex2.png".
-
 
 Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.png".
 Figure of Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3.png".
@@ -108,7 +106,6 @@ Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
-
 
 Figure of Witch Cutscene 1 is the file "Special/Cutscene/cutscene-witch-satisfied1.png".
 Figure of Witch Cutscene 2 is the file "Special/Cutscene/cutscene-witch-defeated1.png".
@@ -170,7 +167,6 @@ Figure of Fat Growth 1 is the file "Special/Cutscene/cutscene-fat1.png".
 Figure of Fat Growth 2 is the file "Special/Cutscene/cutscene-fat2.png".
 Figure of Fat Growth 3 is the file "Special/Cutscene/cutscene-fat3.png".
 
-
 Figure of Hook Cutscene 1 is the file "Special/Cutscene/cutscene-hook1.png".
 Figure of Hook Cutscene 2 is the file "Special/Cutscene/cutscene-hook2.png".
 Figure of Hook Cutscene 3 is the file "Special/Cutscene/cutscene-hook-pull1.png".
@@ -190,7 +186,6 @@ Figure of Latex Curse 6 is the file "Special/Cutscene/cutscene-latex-curse-man1.
 Figure of Latex Curse 7 is the file "Special/Cutscene/cutscene-latex-curse4.jpg".
 Figure of Latex Curse 8 is the file "Special/Cutscene/cutscene-latex-curse5.jpg".
 Figure of Latex Curse 9 is the file "Special/Cutscene/cutscene-latex-curse6.jpg".
-
 
 Figure of living belt of sturdiness is the file "Items/Clothes/Lower/Waist/Belts/belt2.png".
 Figure of living belt of sturdiness penetrated is the file "Items/Clothes/Lower/Waist/Belts/belt2b.png".
@@ -226,7 +221,6 @@ To decide which figure-name is figure of maths predicament:
 		decide on figure of maths predicament 4;
 	otherwise:
 		decide on figure of maths predicament 5.
-
 
 Figure of Modmachine Cutscene 1 is the file "Special/Cutscene/cutscene-modmachine1.png".
 
@@ -296,7 +290,6 @@ Figure of super rich domme is the file "Special/Epilogue/epilogue-super-rich8.jp
 Figure of helium balloons is the file "Items/Accessories/Head/scrunchie4.png".
 Figure of condom pigtails is the file "Items/Accessories/Head/scrunchie5.png".
 
-
 Figure of all-you-can-eat tattoo is the file "Items/Tats/tattoo145.jpg".
 To decide which figure-name is the examine-image of (T - all-you-can-eat tattoo):
 	decide on figure of all-you-can-eat tattoo.
@@ -343,7 +336,6 @@ Figure of black cock only tattoo is the file "Items/Tats/tattoo77.jpg".
 To decide which figure-name is the examine-image of (T - black cock only tattoo):
 	decide on figure of black cock only tattoo.
 
-
 Figure of black hole belly tattoo is the file "Items/Tats/tattoo105.jpg".
 Figure of black hole tattoo is the file "Items/Tats/tattoo106.jpg".
 To decide which figure-name is the examine-image of (T - black hole tattoo):
@@ -357,7 +349,6 @@ To decide which figure-name is the examine-image of (T - black owned tattoo):
 Figure of bred by a bull tattoo is the file "Items/Tats/tattoo107.jpg".
 To decide which figure-name is the examine-image of (T - bred by a bull tattoo):
 	decide on figure of bred by a bull tattoo.
-
 
 Figure of bright hair tattoo is the file "Items/Tats/tattoo108.jpg".
 Figure of ultra pink hair tattoo is the file "Items/Tats/tattoo109.jpg".
@@ -408,7 +399,6 @@ To decide which figure-name is the examine-image of (T - daddy's cock only tatto
 Figure of double penetration tattoo is the file "Items/Tats/tattoo80.jpg".
 To decide which figure-name is the examine-image of (T - a double penetration tattoo):
 	decide on figure of double penetration tattoo.
-
 
 Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.jpg".
 To decide which figure-name is the examine-image of (T - eat-your-heart-out tattoo):
@@ -612,7 +602,6 @@ Figure of zip tattoo is the file "Items/Tats/tattoo19.jpg".
 To decide which figure-name is the examine-image of (T - zip tattoo):
 	decide on figure of zip tattoo.
 
-
 Figure of HypnoBBCAnimation001 is the file "Special/Animations/HypnoBBC/frame_001.jpg".
 Figure of HypnoBBCAnimation002 is the file "Special/Animations/HypnoBBC/frame_002.jpg".
 Figure of HypnoBBCAnimation003 is the file "Special/Animations/HypnoBBC/frame_003.jpg".
@@ -784,7 +773,6 @@ Figure of HypnoBBCAnimation168 is the file "Special/Animations/HypnoBBC/frame_16
 When play begins:
 	fill BBCHypnoAnimation from Figure of HypnoBBCAnimation001 to 167. [It starts at 1 rather than 0 so ends at 167 rather than 168]
 
-
 Figure of HypnoOralAnimation000 is the file "Special/Animations/HypnoOral/frame_000.jpg".
 Figure of HypnoOralAnimation001 is the file "Special/Animations/HypnoOral/frame_001.jpg".
 Figure of HypnoOralAnimation002 is the file "Special/Animations/HypnoOral/frame_002.jpg".
@@ -955,7 +943,6 @@ Figure of HypnoOralAnimation166 is the file "Special/Animations/HypnoOral/frame_
 Figure of HypnoOralAnimation167 is the file "Special/Animations/HypnoOral/frame_167.jpg".
 When play begins:
 	fill OralHypnoAnimation from Figure of HypnoOralAnimation000 to 167.
-
 
 Figure of HypnoShemaleAnimation000 is the file "Special/Animations/HypnoShemale/frame_000.jpg".
 Figure of HypnoShemaleAnimation001 is the file "Special/Animations/HypnoShemale/frame_001.jpg".
@@ -1224,7 +1211,6 @@ Figure of HypnoDPAnimation228 is the file "Special/Animations/HypnoDP/frame_228.
 When play begins:
 	fill DPHypnoAnimation from Figure of HypnoDPAnimation000 to 228.
 
-
 [Figure of PussyExpelAnimation000 is the file "Special/Animations/PussyExpel/frame_000.jpg".
 Figure of PussyExpelAnimation001 is the file "Special/Animations/PussyExpel/frame_001.jpg".
 Figure of PussyExpelAnimation002 is the file "Special/Animations/PussyExpel/frame_002.jpg".
@@ -1252,6 +1238,5 @@ Figure of PussyExpelAnimation023 is the file "Special/Animations/PussyExpel/fram
 Figure of PussyExpelAnimation024 is the file "Special/Animations/PussyExpel/frame_024.jpg".
 When play begins:
 	fill PussyExpelAnimation from Figure of PussyExpelAnimation016 to 8.
-
 
 Necessary Figures ends here.

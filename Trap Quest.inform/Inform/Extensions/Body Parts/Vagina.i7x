@@ -25,7 +25,6 @@ Vagina has a number called womb volume.
 To decide which number is the total volume of (F - vagina):
 	decide on the semen volume of F + the womb volume of F.
 
-
 To decide which number is the total felchable volume of (F - vagina): [man I love that word]
 	if the pregnancy of the player > 0, decide on the semen volume of F;
 	otherwise decide on the total volume of F.
@@ -342,7 +341,6 @@ To compute pussy expulsion:
 	if the semen volume of vagina > 6 and vagina is not actually occupied, now continued-pussy-expulsion is 1;
 	otherwise now continued-pussy-expulsion is 0.
 
-
 Chapter 3 - Contents and Pregnancy
 
 [!<PussyFillX>+
@@ -424,7 +422,6 @@ To check sudden pregnancy:
 		compute sudden pregnancy;
 	otherwise if the pregnancy of the player > 0:
 		check goddess eligibility.
-
 
 forcedFertility is initially false.
 
@@ -589,6 +586,5 @@ To cancel father material of (F - vagina):
 			now M is not inseminating F;
 		if the pregnancy of the player is 0:
 			now the father is the throne.
-
 
 Vagina ends here.

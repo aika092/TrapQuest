@@ -129,7 +129,6 @@ Report taking off something:
 
 Part 2 - Manage Fat Stats
 
-
 [!<CarryOutGoing>+
 
 REQUIRES COMMENTING
@@ -146,7 +145,6 @@ Carry out going:
 		say "Your [ShortDesc of a random worn ball-and-chain] drags heavily behind you.";
 		if the player is prone:
 			FatigueUp 1.[even when kneeling]
-
 
 A time based rule (this is the training rule):
 	let MD be milk-exercise-bonus;
@@ -185,7 +183,6 @@ A time based rule (this is the training rule):
 		now the fat-burning of the player is 0;
 		decrease milk-exercise-bonus by 1.
 
-
 Part 3 - Modify Fat Stats
 
 [!<Player>@<fatBurning:Integer>*
@@ -194,7 +191,6 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called fat-burning. The fat-burning of the player is usually 0.
-
 
 [!<FatUpX>+
 
@@ -241,7 +237,6 @@ To say FatCutscene (N - a number):
 	if N is 2, appropriate-cutscene-display figure of fat growth 2;
 	if N is 3, appropriate-cutscene-display figure of fat growth 3.
 
-
 [!<ComputeFatBurningReset>+
 
 REQUIRES COMMENTING
@@ -255,7 +250,6 @@ To compute fat burning reset:
 
 Part 4 - Describe Fat Stats
 
-
 [!<SayInventoryWeightDesc>+
 
 REQUIRES COMMENTING
@@ -263,6 +257,5 @@ REQUIRES COMMENTING
 +!]
 To say InventoryWeightDesc:
 	say "[if inventory weight > 20]You are carrying much too many items and this is forcing you to rest on your knees extremely frequently.[otherwise if inventory weight > 16]You are carrying a large number of items that weigh you down a huge amount.[otherwise if inventory weight > 12]You are weighed down a large amount by the items you are carrying.[otherwise if inventory weight > 8]You are weighed down a significant amount by the items you are carrying.[otherwise if inventory weight > 4]The items you are carrying are weighing you down a bit.[otherwise if inventory weight > 0]The items you are carrying hardly weigh anything at all.[otherwise][line break][end if]".
-
 
 Weight Gain ends here.

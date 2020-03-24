@@ -110,7 +110,6 @@ Carry out slapping:
 	damage A on the noun.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
-
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
@@ -161,6 +160,5 @@ Carry out zapping it with:
 		damage A on the second noun;
 		compute spell consequences of currentZapper.
 Understand "zap [something] with [something]", "zap [something] at [something]", "cast [something] at [something]", "attack [something] with [something]" as zapping it with.
-
 
 Slapping ends here.

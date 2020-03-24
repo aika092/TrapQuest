@@ -45,9 +45,7 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a clothing
 		decide on S;
 	decide on 0.
 
-
 Part 2 - Modify Vaginal Sex Addiction
-
 
 [!<Player>@<rawVaginalSexAddiction:Integer>*
 
@@ -84,6 +82,5 @@ To SilentlyVaginalSexAddictDown (X - a number):
 
 To SilentlyVaginalSexAddictDown:
 	if the raw vaginal sex addiction of the player > 1, decrease the raw vaginal sex addiction of the player by 1.
-
 
 Vaginal Sex Addiction ends here.

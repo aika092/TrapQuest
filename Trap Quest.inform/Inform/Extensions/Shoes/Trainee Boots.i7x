@@ -1,6 +1,5 @@
 Trainee Boots by Shoes begins here.
 
-
 A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[clothing-title-before][heel-height of item described] inch trainee thigh highs[clothing-title-after]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized. A trainee thigh highs has a number called train-charge.
 
 To set up magic state of (C - trainee thigh highs):
@@ -48,6 +47,5 @@ To compute periodic effect of (C - a trainee thigh highs):
 			say "Your [printed name of C] [if the training-progress of C < 1]emit a synchronised tone[otherwise]emit [the training-progress of C + 1] synchronised tones[end if] and [if the player is prone]your ankles are forced forward[otherwise]you lurch forward[end if] as the metal stiletto shoots upward.[line break]";
 			increase the heel-height of C by 1;
 			increase the training-progress of C by 1.
-
 
 Trainee Boots ends here.

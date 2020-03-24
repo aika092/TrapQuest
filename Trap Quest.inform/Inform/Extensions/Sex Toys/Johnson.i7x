@@ -58,5 +58,4 @@ To say DongColor of (D - a johnson):
 To say ClothingDesc of (C - a johnson):
 	say "A [DongSize of C] [DongColor of C] dildo.".
 
-
 Johnson ends here.

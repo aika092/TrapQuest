@@ -1,6 +1,5 @@
 Spatial Vectors and Shape by Rooms begins here.
 
-
 [!<SpatialCoordinate>@
 
 REQUIRES COMMENTING
@@ -332,7 +331,6 @@ REQUIRES COMMENTING
 Definition: a direction (called thataway) is N-viable:
 	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and (thataway is north or thataway is south or thataway is west or thataway is east), decide yes;
 	decide no.
-
 
 [!<DirectionIsWanted>+
 

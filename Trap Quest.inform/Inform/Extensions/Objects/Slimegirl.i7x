@@ -1,6 +1,5 @@
 Slimegirl by Objects begins here.
 
-
 A slimegirl is a kind of person. There is 1 slimegirl. The printed name of slimegirl is usually "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. A slimegirl is wearable.
 
 Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
@@ -12,7 +11,6 @@ To decide which figure-name is the examine-image of (C - slimegirl):
 
 To say ExamineDesc of (C - slimegirl):
 	say "A blue, semi-transparent creature made out of some kind of slimy liquid, in the shape of a buxom humanoid girl. It appears that [he of M] can shapeshift, but the extent of [his of M] powers is unclear. [if C is worn][big he of M] is currently living inside your belly. [end if][if C is worn and the intensity of C > 0][big he of M] is making you crave semen much more than usual![end if][line break]".
-
 
 Definition: a slimegirl is cult garb: decide yes.
 
@@ -123,7 +121,6 @@ A time based rule (this is the compute slimegirl rule):
 				SemenAddictDown 2;
 				say "You now have a [BellyDesc].".
 
-
 To SlimeGirlCheck (this is the slime-girl-clean rule):
 	let S be 0;
 	let M be a random slimegirl;
@@ -212,7 +209,6 @@ To SlimeGirlCheck (this is the slime-girl-clean rule):
 		rule succeeds;
 	rule fails.
 
-
 To compute talk option (N - 1) to (M - a slimegirl):
 	if M is worn:
 		say "She telepathically communicates with you.[line break][second custom style]'Are you talking to me? [one of]Yes, I can hear you.'[or]Say what you want to say, already!'[stopping][roman type][line break]";
@@ -251,6 +247,5 @@ To compute talk option (N - 4) to (M - a slimegirl):
 		otherwise:
 			say "[second custom style]'Hah, now you know how I feel!'[roman type]";
 	say "[line break]".
-
 
 Slimegirl ends here.

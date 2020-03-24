@@ -87,5 +87,4 @@ Report unplugging something:
 	otherwise if the number of body parts penetrated by the noun < 1:
 		say "Successfully removed.".
 
-
 Plugging ends here.

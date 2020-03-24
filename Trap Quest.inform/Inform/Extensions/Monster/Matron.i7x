@@ -230,7 +230,6 @@ Definition: matron is willing to forcefeed: decide yes.
 Definition: matron is willing to confiscate: decide yes.
 Definition: matron is able to confiscate: decide yes.
 
-
 This is the matron waits for players to finish peeing rule:
 	if continued urination is 1, rule succeeds.
 The matron waits for players to finish peeing rule is listed in the matron priority attack rules.
@@ -326,7 +325,6 @@ To say DiaperDropFlav of (M - matron):
 To say DQChangeResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] tuts.[line break][speech style of M]'[one of]You can kick and fuss if you must but it won't do you a bit of good. You are getting a diaper change, like it or not!'[or]Now young [if the player is presenting as female]lady[otherwise]man[end if] I don't take kindly to little ones who throw fits! Hold still for [daddytitle of M] or I'll make you wish I stopped at one diaper!'[or]OH, we've got some energy now do we? Well I can correct that AFTER, okay sweetie?'[in random order][roman type][line break]".
 
-
 To compute unique diaper change effect of (M - matron):
 	[increase the times-changed of M by 1;
 		if the times-changed of M > 2 and (M is guardian or M is ally) and the player is incontinent and the potty-training of M is 0:
@@ -401,7 +399,6 @@ To compute confiscate of (M - matron):
 	otherwise:
 		compute enema of M.
 
-
 This is the matron feeds the player rule:
 	[if there is a worn diaper and (face is not actually occupied or the player is gagged):]
 	now the feedingtone of current-monster is 0; [just in case]
@@ -409,7 +406,6 @@ This is the matron feeds the player rule:
 	now the feedingtone of current-monster is 0; [just in case]
 	rule succeeds.
 The matron feeds the player rule is listed last in the matron nanny rules.
-
 
 To say ForcefeedDeclarationFlav of (M - matron):
 	if the feedingtone of M is 2: [If this is a friendly requested feeding]
@@ -482,13 +478,11 @@ To compute (M - a matron) spank displacing (C - knickers):
 	say "[big he of M] takes deliberate slowness to inch your [ShortDesc of C] off your waist until it's bunched up around your ankles, the slow pacing of it designed to make you reflect on your imminent punishment.";
 	displace C.
 
-
 To say DQMasturbationResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] sighs.[line break][speech style of M]'[one of]Oh yes I know it's ticklish [honey of M], but just let it happen, I'll let you nurse afterwards!'[or]I'm doing this for your own good. Do you WANT the others to [']play['] with you instead? I'm starting to think you do!'[or]Sweetuns you're on a changing table already. Are you that ashamed to cream? Do diaper changes embarrass you still? Well, you do get them more than others...'[or]Poor thing, so distraught from having your diapey pulled off!'[in random order][roman type][line break]".
 
 To say MasturbationStartFlav of (M - matron):
 	say "[BigNameDesc of M] tsks as [he of M] hoists you up by your armpits.[line break][speech style of M]'Coming to [daddytitle of M] with such lust in your eyes, I can't have you playing with the others like this!'[roman type][line break]Before asking for your input, [he of M] whisks you off to the changing table and lays you back on it. After bounding your wrists and ankles with tight pink fur covered cuffs, [he of M] begins to shuffle through an unfamiliar cabinet opposite the table.[line break][speech style of M]'We'll get you nice and tuckered out sweetie, don't you worry!'[roman type][line break][big he of M] purrs before producing a large vibrating wand, one even bigger than ones you are familiar with.[line break][speech style of M]'Just know there's no shame in making creamy accidents, my changing table is no stranger to all matter of wetness.'[roman type][line break]Before you can utter a syllable[if the player is not feeling submissive] of defiance[end if], the wand presses into the thick folds of your diaper and sends a sharp shock of pleasure that echoes throughout your [genitals] and them your body! Loud hums deafen your squeals as the wand travels all sections of your diaper region... from your [genitals] all the way to your [asshole]!".
-
 
 Check going when matron is in the location of the player:
 	if matron is interested and matron is friendly:
@@ -649,7 +643,6 @@ To compute teaching of (M - matron):
 	teach begging for mercy;
 	increase the questioned of M by 100. [She gains the same amount of "annoyance" regardless of whether or not she's annoyed already]
 
-
 Section 3 Drink Requesting
 
 To say DrinkRequest of (M - matron):
@@ -704,7 +697,6 @@ To compute friendly drink of (M - matron):
 			StomachUp 2;
 			increase the bladder of the player by 1.
 
-
 Section 4 Food Requesting
 
 To say FoodRequest of (M - matron):
@@ -722,7 +714,6 @@ To say FoodRequest of (M - matron):
 	otherwise:
 		say "'I just need something to put in my mouth... I'll swallow anything you give me...'"; [modify to be unique variants]
 	say "[roman type][line break]".
-
 
 To compute friendly food of (M - matron):
 	if the player is immobile:
@@ -743,6 +734,5 @@ To compute unfriendly food of (M - matron):
 		now the feedingtone of M is 1;
 		compute forcefeed of M;
 		now the feedingtone of M is 0.
-
 
 Matron ends here.

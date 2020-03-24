@@ -30,7 +30,6 @@ To restock (C - a trousers):
 	let B be a random basic loot trousers;
 	if B is trousers, now B is in Standard Item Pen.
 
-
 This is the setup starting trousers rule:
 	let C be a random trousers;
 	restock C.
@@ -77,6 +76,5 @@ This is the knickers trousers clash rule:
 The knickers trousers clash rule is listed in the knickers wearability rules.
 
 trousers removability rules is a rulebook. The removability rules of trousers is usually trousers removability rules.
-
 
 Trousers Framework ends here.

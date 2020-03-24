@@ -8,7 +8,6 @@ To say MediumDesc of (M - a tryhard student):
 To decide which number is the dedication of (M - a tryhard student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 5.
 
-
 To compute student perception of (M - a tryhard student):
 	if the current-rank of M > the rank of the player:
 		say "[big he of M] glances at your armband and turns away without acknowledging you[one of]. It doesn't look like [he of M] is going to engage you in conversation unless you start it.[or].[stopping]";
@@ -19,7 +18,6 @@ To compute student perception of (M - a tryhard student):
 
 To say LewdAppearanceAssessment of (M - a tryhard student):
 	say "[BigNameDesc of M] [one of]clenches [his of M] fists[or]grinds [his of M] teeth[in random order].[line break][speech style of M]'[one of]You're making the rest of us look bad!'[or]If you look like that, the teachers won't pay all of their attention to me!'[in random order][roman type][line break]".
-
 
 Part - Laci
 
@@ -116,7 +114,6 @@ To say DamageReaction (N - a number) of (M - student-candy):
 	say "[speech style of M]'[one of]HISS!'[or]NROOWL!'[or]OW, F- I mean, NYOUCH![at random][roman type]".
 
 Part - Default Conversation
-
 
 To say WhoAnswer of (M - a tryhard student):
 	say "[speech style of M]'My teacher says it is [student-name of M], so it's [student-name of M].'[roman type][line break]".

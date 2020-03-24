@@ -1,6 +1,5 @@
 Diaper Covers by Knickers begins here.
 
-
 diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper cover is usually manly. A diaper cover is usually crotch-intact. A diaper cover is usually polyester. A diaper cover is usually rare. The soak-limit of a diaper cover is usually 24. A diaper cover is usually diaper-addiction-influencing.
 
 Definition: a diaper cover is baby themed: decide yes.
@@ -111,7 +110,6 @@ This is the diaper covers disabled rule:
 		rule fails.
 The diaper covers disabled rule is listed in the diaper cover wearability rules.
 
-
 This is the diaper cover overdress clash rule:
 	if summoning is 0:
 		repeat with C running through worn crotch covering overdresses:
@@ -130,6 +128,5 @@ This is the diaper cover can't go over waddle diapers rule:
 		if summoning is 0 and autowear is false, say "That diaper is way too big to fit a cover over!";
 		rule fails.
 The diaper cover can't go over waddle diapers rule is listed in the diaper cover wearability rules.
-
 
 Diaper Covers ends here.

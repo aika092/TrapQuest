@@ -1,6 +1,5 @@
 Cans by Drinks begins here.
 
-
 [!<Can>@
 
 REQUIRES COMMENTING
@@ -22,7 +21,6 @@ To decide which figure-name is the examine-image of (V - a can):
 
 To BackgroundRender (T - a can) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle TQcolour of fill-colour of T in the current focus window at X1 by Y1 with size DX by DY.
-
 
 [!<Can>@<Restock>+
 
@@ -47,7 +45,6 @@ This is the setup starting cans rule:
 	repeat with N running from 1 to (2 + diaper quest):
 		restock C.
 The setup starting cans rule is listed in the setup starting items rules.
-
 
 [!<DestroyCan>+
 
@@ -84,6 +81,5 @@ Carry out drinking a can:
 
 Report examining can:
 	zero focus stuff. [Flags the focus window for a full redraw (prevents duplicates of the can from appearing in it).]
-
 
 Cans ends here.

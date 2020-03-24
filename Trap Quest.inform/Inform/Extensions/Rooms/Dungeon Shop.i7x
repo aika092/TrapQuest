@@ -1,6 +1,5 @@
 Dungeon Shop by Rooms begins here.
 
-
 [!<discount:Integer>*
 
 The shopkeeper can give the player a discount. This number tracks how many seconds are left on the discount. If the number is -1, this means that the discount will not be offered again. This happens when the discount offer is refused.
@@ -36,6 +35,5 @@ To decide which number is the wealth of the player:
 	repeat with A running through worn accessories:
 		increase X by the price of A;
 	decide on X.
-
 
 Dungeon Shop ends here.

@@ -29,7 +29,6 @@ To say MonsterDesc of (M - receptionist):
 	otherwise:
 		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
-
 To say MonsterComment of (M - receptionist):
 	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, [he of M]'s probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
 
@@ -123,9 +122,7 @@ To compute perception of (M - receptionist):
 		say "[line break][speech style of M]'I'm afraid I've been sent here because you've neglected your studies. I've been ordered to ensure that you return with me. You're not going to put up a fight, are you?'[roman type][line break]";
 		make M expectant.
 
-
 Part - Combat
-
 
 Definition: receptionist (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if (M is in School01 or M is not in the School) and the noun is north, decide yes; [The (unfriendly) receptionist always blocks the entrance into the school unless you kill her]
@@ -137,7 +134,6 @@ Definition: receptionist (called M) is successfully blocking: [Do they succeed i
 To say MovementBlock of (M - receptionist):
 	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the class of the player is hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
 
-
 To compute (M - a monster) stomping (N - receptionist):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
 	otherwise say "You hear a [man of N] screech [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break][if N is nearby]nearby, [otherwise]somewhere in the dungeon, [end if] followed by a wail of shame.";
@@ -148,7 +144,6 @@ To compute (M - a monster) stomping (N - receptionist):
 
 To say LeftoverDesc (N - 129):
 	say "[BigNameDesc of receptionist]is on the ground here, unconscious. [big he of receptionist] has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of receptionist] [asshole].".
-
 
 receptionist-armband is a diaper punishment. The priority of receptionist-armband is 5.
 
@@ -177,6 +172,5 @@ To compute (M - receptionist) forcing armband:
 	say "[BigNameDesc of M] twists your left arm so it's held painfully behind your back. [unless armband is in the location of the player or armband is held][big he of M] presses some kind of cold metal device against your biceps and a beeping sound occurs. A few moments later a nearby printer has somehow... 'printed' your pink armband! Or at least an identical one. [end if][big he of M] reaches for the armband and then places it on your right hand, pulling your arm tighter until you are forced to comply.";
 	now armband is worn by the player;
 	compute armband replacement.
-
 
 Receptionist ends here.

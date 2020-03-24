@@ -39,5 +39,4 @@ This is the remove inappropriate fishnets rule:
 		now B is in Holding Pen.
 The remove inappropriate fishnets rule is listed in the diaper quest fix rules.
 
-
 Fishnet Dress ends here.

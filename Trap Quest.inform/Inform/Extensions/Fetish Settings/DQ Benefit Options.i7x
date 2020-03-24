@@ -1,6 +1,5 @@
 DQ Benefit Options by Fetish Settings begins here.
 
-
 [!<tableOfDiaperQuestBenefitsOptions:Table>*
 
 REQUIRES COMMENTING
@@ -20,7 +19,6 @@ title	subtable	description	toggle
 "Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
 "Combat visor (lets you see some of the behind-the-scenes numbers being calculated. Can be removed but then can't be worn again): [if combatvisor is 1][bold type]Enabled[roman type] - 1 point used[otherwise]Disabled - costs 1 point to enable[end if]"	--	--	combat visor toggle rule
 [ALL BENEFIT OPTIONS MUST GO ABOVE THE COMBAT VISOR LINE, WHICH IS REMOVED WHEN THE PLAYER IS THE DONATOR]
-
 
 This is the incontinence protection toggle rule:
 	if incontinence protection < 5 and points count >= 2, increase choice in row 71 of the Table of Player Options by 1;

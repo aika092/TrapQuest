@@ -8,7 +8,6 @@ REQUIRES COMMENTING
 To deploy (O - an object) in (G - a room):
 	do nothing.
 
-
 To deploy (T - a trap) in (O - an object):
 	if debugmode > 0, say "ERROR: There was not enough room to find a place to deploy [T].".
 
@@ -89,6 +88,5 @@ To deploy minibar in (G - a room):
 	if debugmode is 1, say "Deploying a minibar in [printed name of G][paragraph break]";
 	let T be a random minibar in Holding Pen;
 	now T is in G.
-
 
 Deploying ends here.

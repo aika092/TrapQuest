@@ -1,6 +1,5 @@
 Belly by Body Parts begins here.
 
-
 Part 1 - Definitions
 
 [!<Belly>@
@@ -390,7 +389,6 @@ To say BellyContentsAlone:
 		-- 14: say "a mix of [semen], [milk], and eggs";
 		-- 15: say "an astonishing melange of [semen], [milk], [urine], and eggs".
 
-
 [!<SayBellyWeight>+
 
 REQUIRES COMMENTING
@@ -433,7 +431,6 @@ To say PermanentBelly:
 	say "[if the total squirtable fill of belly is 0] permanent[end if]".
 
 Part 3 - Modify Belly Stats
-
 
 [!<DecideWhichNumberIsBellyLimit>+
 
@@ -481,7 +478,6 @@ To decide which number is belly egg count:
 	decide on X.
 
 Chapter 1 - Fat
-
 
 [!<FatBellyUpX>+
 
@@ -629,7 +625,6 @@ To Overflow:
 				now the fainting reason of the player is 19.
 
 Chapter 3 - Ass Filling
-
 
 [!<assFilled:Integer>+
 
@@ -1612,7 +1607,6 @@ To compute enema reaction of (M - a person) into (C - a clothing):
 To say EnemaReactionFlav of (M - a person) into (C - a clothing):
 	say EnemaFloorReactionFlav of M.
 
-
 Section - Image for graphics window
 
 The text-shortcut of belly is "belly".
@@ -1621,6 +1615,5 @@ Figure of CumBellyButton is the file "Special/Buttons/cumbelly.png".
 To decide which figure-name is the examine-image of (T - belly):
 	if T is overglazed, decide on Figure of CumBellyButton;
 	decide on figure of no-image-yet.
-
 
 Belly ends here.

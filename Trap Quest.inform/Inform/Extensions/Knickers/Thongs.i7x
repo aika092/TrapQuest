@@ -20,7 +20,6 @@ To uniquely set up (T - a thong):
 To say selfexamineuniquetitle of (G - a thong):
 	say "thong".
 
-
 To decide which figure-name is clothing-image of (C - a thong):
 	decide on figure of thong 1.
 
@@ -65,7 +64,6 @@ To decide which figure-name is clothing-image of (C - light-pink-lace-thong):
 
 To decide which figure-name is clothing-image of (C - grey-thong):
 	decide on figure of thong 14.
-
 
 white-thong is a thong. white-thong is sheer-when-wet. The text-shortcut of white-thong is "wth".
 To say selfexamineuniquetitle of (G - white-thong):
@@ -223,6 +221,5 @@ Figure of thong 11 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thon
 Figure of thong 12 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong12.png".
 Figure of thong 13 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong13.png".
 Figure of thong 14 is the file "Items/Clothes/Lower/Underwear/Skimpy/Thongs/thong14.png".
-
 
 Thongs ends here.

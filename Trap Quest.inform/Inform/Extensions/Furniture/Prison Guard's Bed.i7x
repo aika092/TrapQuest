@@ -1,6 +1,5 @@
 Prison Guard's Bed by Furniture begins here.
 
-
 prison guard's bed is a kind of furniture. 1 prison guard's bed is in Dungeon06. The printed name of prison guard's bed is "[TQlink of item described]guard's bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". prison guard's bed can be in use. prison guard's bed is usually not in use. The text-shortcut of prison guard's bed is "gbe".
 
 To say ExamineDesc of (C - prison guard's bed):
@@ -22,6 +21,5 @@ To compute rest ending of (F - a prison guard's bed):
 
 To say RestingDesc of (F - prison guard's bed):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.".
-
 
 Prison Guard's Bed ends here.

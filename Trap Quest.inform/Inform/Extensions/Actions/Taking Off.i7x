@@ -55,5 +55,4 @@ Report taking off clothing:
 		otherwise say "Your hair falls into its natural position.";
 	allocate 6 seconds.
 
-
 Taking Off ends here.

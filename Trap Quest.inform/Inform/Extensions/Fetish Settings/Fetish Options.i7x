@@ -1,6 +1,5 @@
 Fetish Options by Fetish Settings begins here.
 
-
 [!<tableOfFetishOptions:Table>*
 
 REQUIRES COMMENTING
@@ -49,14 +48,12 @@ title	subtable	description	toggle
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 
-
 The random mode rules is a rulebook.
 This is the randomise choices rule:
 	follow the random mode rules.
 The nightmare mode rules is a rulebook.
 This is the nightmare mode rule:
 	follow the nightmare mode rules.
-
 
 To decide which number is bukkake fetish:
 	if diaper quest is 1, decide on 0;
@@ -100,7 +97,6 @@ This is the lactation random rule:
 	if choice in row 6 of the Table of Player Options is 0 or choice in row 6 of the Table of Player Options is 1, now choice in row 6 of the Table of Player Options is a random number between 0 and 1.
 The lactation random rule is listed in the random mode rules.
 
-
 To decide which number is watersports fetish:
 	if diaper quest is 1, decide on 0;
 	if choice in row 7 of the Table of Player Options <= 0, decide on 0;
@@ -114,7 +110,6 @@ The watersports nightmare rule is listed in the nightmare mode rules.
 This is the watersports random rule:
 	if choice in row 7 of the Table of Player Options is 0 or choice in row 7 of the Table of Player Options is 1, now choice in row 7 of the Table of Player Options is a random number between 0 and 1.
 The watersports random rule is listed in the random mode rules.
-
 
 To decide which number is egg laying fetish:
 	if diaper quest is 1, decide on 0;
@@ -199,7 +194,6 @@ This is the artificial enhancements random rule:
 	if choice in row 13 of the Table of Player Options is 0 or choice in row 13 of the Table of Player Options is 1, now choice in row 13 of the Table of Player Options is a random number between 0 and 1.
 The artificial enhancements random rule is listed in the random mode rules.
 
-
 To decide which number is diaper lover:
 	if diaper quest is 1, decide on 1;
 	if choice in row 19 of the Table of Player Options <= 0, decide on 0;
@@ -214,7 +208,6 @@ This is the diaper lover random rule:
 	if choice in row 19 of the Table of Player Options is 0 or choice in row 19 of the Table of Player Options is 1, now choice in row 19 of the Table of Player Options is a random number between 0 and 1.
 The diaper lover random rule is listed in the random mode rules.
 
-
 [!<DecideWhichNumberIsWatersportsMechanics>+
 
 Does the player sometimes need to pee?
@@ -223,7 +216,6 @@ Does the player sometimes need to pee?
 To decide which number is watersports mechanics:
 	if watersports fetish is 1 or diaper lover >= 1, decide on 1;
 	decide on 0.
-
 
 To decide which number is interracial fetish:
 	if diaper quest is 1, decide on 0;
@@ -238,7 +230,6 @@ The interracial nightmare rule is listed in the nightmare mode rules.
 This is the interracial random rule:
 	if choice in row 45 of the Table of Player Options is 0 or choice in row 45 of the Table of Player Options is 1, now choice in row 45 of the Table of Player Options is a random number between 0 and 1.
 The interracial random rule is listed in the random mode rules.
-
 
 To decide which number is mythical creature/creatures fetish:
 	if diaper quest is 1, decide on 0;
@@ -270,7 +261,6 @@ This is the tentacle random rule:
 	if choice in row 61 of the Table of Player Options is 0 or choice in row 61 of the Table of Player Options is 1, now choice in row 61 of the Table of Player Options is a random number between 0 and 1.
 The tentacle random rule is listed in the random mode rules.
 
-
 To decide which number is alcohol fetish:
 	if the player is not the donator, decide on 0;
 	if choice in row 69 of the Table of Player Options <= 0, decide on 0;
@@ -301,6 +291,5 @@ The starting body shape nightmare rule is listed in the nightmare mode rules.
 This is the lady random rule:
 	if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 1, now choice in row 70 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
 The lady random rule is listed in the random mode rules.
-
 
 Fetish Options ends here.

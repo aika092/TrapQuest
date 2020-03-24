@@ -1,8 +1,6 @@
 Halloween Headgear by Headgear begins here.
 
-
 halloween headgear is a kind of headgear. halloween headgear is womanly.
-
 
 Definition: a halloween headgear is roleplay: decide no.
 
@@ -13,7 +11,6 @@ Check going down when there is a worn halloween headgear:
 	say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
 
 Chapter - Quest
-
 
 To compute recycling of (H - a halloween headgear):
 	repeat with C running through in-play candy:
@@ -41,9 +38,7 @@ To progress quest of (Q - trick-or-treat-quest):
 			otherwise:
 				compute quest completion of Q on C.
 
-
 rubber nun cowl is a halloween headgear. rubber nun cowl is womanly. Figure of rubber nun cowl is the file "Items/Accessories/Head/nuncowl1.png". rubber nun cowl is blondeness-negative. rubber nun cowl is brightness-negative. rubber nun cowl is redness-negative. The text-shortcut of rubber nun cowl is "lnc".
-
 
 The printed name of rubber nun cowl is "[clothing-title-before]latex nun cowl[clothing-title-after]".
 
@@ -67,7 +62,6 @@ Definition: rubber nun cowl is fetish appropriate if diaper quest is 0.
 
 To decide which number is the initial outrage of (C - rubber nun cowl):
 	decide on 3.
-
 
 Chapter - Class Outfit
 
@@ -101,9 +95,7 @@ To compute full outfit summon of (H - rubber nun cowl):
 		now the heel-height of black-latex-boots is 1;
 		say "and a [black-latex-boots]!".
 
-
 witch's hat is a halloween headgear. witch's hat is latex. Figure of witch's hat is the file "Items/Accessories/Head/witchhat1.png". witch's hat is blondeness-negative. witch's hat is brightness-negative. witch's hat is redness-negative. The text-shortcut of witch's hat is "wtch".
-
 
 The printed name of witch's hat is "[clothing-title-before]latex witch's hat[clothing-title-after]".
 
@@ -127,7 +119,6 @@ Definition: witch's hat is fetish appropriate if diaper quest is 0.
 
 To decide which number is the initial outrage of (C - witch's hat):
 	decide on 2.
-
 
 Chapter - Class Outfit
 
@@ -153,9 +144,7 @@ To compute full outfit summon of (H - witch's hat):
 		now the heel-height of S is 1;
 		say "and a [S]!".
 
-
 doll hairbow is a halloween headgear. doll hairbow is latex. Figure of doll hairbow is the file "Items/Accessories/Head/dollbow1.png". doll hairbow is blondeness-negative. doll hairbow is brightness-negative. doll hairbow is redness-negative. The text-shortcut of doll hairbow is "dlhb".
-
 
 The printed name of doll hairbow is "[clothing-title-before]doll hairbow[clothing-title-after]".
 
@@ -178,7 +167,6 @@ Definition: doll hairbow is fetish appropriate if diaper quest is 1.
 
 To decide which number is the initial cringe of (C - doll hairbow):
 	decide on 3.
-
 
 Chapter - Class Outfit
 
@@ -217,6 +205,5 @@ To compute full outfit summon of (H - doll hairbow):
 		now the raw-magic-modifier of S is 0;
 		now the heel-height of S is 1;
 		say "and a [S]!".
-
 
 Halloween Headgear ends here.

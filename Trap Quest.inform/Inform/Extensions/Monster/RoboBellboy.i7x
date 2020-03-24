@@ -215,7 +215,6 @@ To compute clothes forcing of (M - a robobellboy):
 	otherwise:
 		compute bra forcing of M.
 
-
 Definition: a clothing (called C) is super-slutty-bra:
 	if C is unique, decide no;
 	if C is ridiculously low cut or lower and diaper quest is 0, decide yes;
@@ -296,7 +295,6 @@ Definition: a bellboy-forced-clothing (called P) is appropriate:
 To compute punishment of (P - bellboy-forced-clothing):
 	compute clothes forcing of current-monster.
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -330,7 +328,6 @@ To compute answer of (M - a robobellboy):
 	otherwise:
 		say "[first custom style]'[caps please] ASK THE BUTLER FOR ASSISTANCE, [robogreeting].'[roman type][line break]".
 
-
 Part 5 - Variants
 
 Section 1 - Senior Robobellboy
@@ -360,7 +357,6 @@ To compute unique death of (M - senior robobellboy):
 	repeat with H running through worn clothing:
 		if H is trainee hood or H is trainee bra or H is trainee thigh highs, demagnetise H;
 	destroy M.
-
 
 To compute trainee forcing of (M - senior robobellboy):
 	if there is a worn free ride tattoo and the training-progress of M is 3, now the training-progress of M is -1;
@@ -447,6 +443,5 @@ To compute failed forcing of (M - senior robobellboy):
 	now the whore-intent of M is 1;
 	say "[BigNameDesc of M] seems to pause for a moment, and then seems to change [his of M] mind in how to deal with you. [line break][first custom style]'UNABLE TO UPGRADE PERFORMANCE. PROSTITUTE MAY BE FULLY UPGRADED. PROSTITUTION DUTIES PROGRAM ENGAGED.'[roman type][line break]";
 	compute whore forcing of M.
-
 
 RoboBellboy ends here.

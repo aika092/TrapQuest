@@ -1,6 +1,5 @@
 Crafting by Actions begins here.
 
-
 times-crafted is a number that varies.
 
 Crafting is an action applying to one thing.
@@ -84,6 +83,5 @@ To compute recipe specific cursing of (T - a thing):
 		otherwise:
 			now T is bland.
 Understand "craft [something]", "brew [something]", "craft with [something]", "brew with [something]", "do alchemy with [something]", "perform alchemy with [something]" as crafting.
-
 
 Crafting ends here.

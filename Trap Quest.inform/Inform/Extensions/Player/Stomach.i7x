@@ -1,6 +1,5 @@
 Stomach by Player begins here.
 
-
 [!<DecideWhichNumberIsTheStomachLiquidOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -152,7 +151,6 @@ To StomachSemenUp (X - a number):
 			OralSexAddictUp 1;
 			if the latex-transformation of the player < 5, PukeUp;
 	if there is a worn tethering lipstick collar, end tethering.
-
 
 [!<PersonIsBecomingMoreAddictedToCum>+
 

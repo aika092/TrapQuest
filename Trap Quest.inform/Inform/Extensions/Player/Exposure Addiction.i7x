@@ -34,7 +34,6 @@ This is the knickers can't be summoned with no panties fetish rule:
 		unless wearing-target is diaper or (wearing-target is no protection and diaper lover <= 0), rule fails.
 The knickers can't be summoned with no panties fetish rule is listed in the knickers wearability rules.
 
-
 topless temporary fetish is a number that varies.
 
 To decide which number is topless-fetish:

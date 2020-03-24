@@ -35,7 +35,6 @@ To say ShortDesc of (M - a futanari slutty sister):
 To say MediumDesc of (M - a slutty sister):
 	say ShortDesc of M.
 
-
 Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.png".
 Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
 
@@ -129,12 +128,10 @@ To compute perception of (M - a slutty sister):
 		say "[second custom style]'[if M is bulging slutty sister][one of]Oh dear [honey of M], you've arrived at the final boss! That's us. Usually we would force you to fight us, but you don't even have enough prize money to pay back the game fee yet.'[or]Oh, you're back again.'[stopping][otherwise][one of]So if you do push the button now, you'll be working for us for a whole year. So we're not gonna stop you!'[or]Have you changed your mind? You gonna end the simulation early and dedicate yourself to work for us for a year?'[stopping][end if][roman type][line break]";
 		calm M.
 
-
 To compute friendly boredom of (M - a slutty sister):
 	if M is not in the location of the player:
 		now M is uninterested;
 		now the boredom of M is 0.
-
 
 Part 2 - Motion
 
@@ -429,7 +426,6 @@ To compute unique death of (M - a bulging slutty sister):
 To compute unique death of (M - a futanari slutty sister):
 	say "[second custom style]'Unf! [if there is a dangerous bulging slutty sister in the location of the player]Fuck her up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely.".
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -518,6 +514,5 @@ To decide which number is the bartering value of (T - a thing) for (M - a slutty
 
 To say MonsterOfferRejectFlav of (M - a slutty sister) to (T - a thing):
 	say "[second custom style]'This is a boss fight baby, there's no trading your way out of this one!'[roman type][line break]".
-
 
 Slutty Sisters ends here.

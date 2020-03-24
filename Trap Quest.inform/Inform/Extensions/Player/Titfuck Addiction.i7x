@@ -47,7 +47,6 @@ To decide which number is the titfuck-addiction-influence of (C - a clothing):
 
 Part 2 - Modify Titfuck Addiction
 
-
 [!<Player>@<rawTitfuckAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -80,7 +79,6 @@ To TitfuckAddictDown (X - a number):
 		decrease X by 1;
 		if the raw titfuck addiction of the player > 1, decrease the raw titfuck addiction of the player by 1.
 
-
 [!<TitfuckAddictUpX>+
 
 REQUIRES COMMENTING
@@ -96,7 +94,6 @@ To TitfuckAddictUp (X - a number):
 		decrease X by 1;
 		if the raw sensitivity of breasts < 10, increase the raw sensitivity of breasts by 1.
 
-
 To TitfuckAddictDown (X - a number):
 	let S be the raw sensitivity of breasts;
 	SilentlyTitfuckAddictDown X;
@@ -110,6 +107,5 @@ To SilentlyTitfuckAddictDown (X - a number):
 
 To SilentlyTitfuckAddictDown:
 	if the raw sensitivity of breasts > 1, decrease the raw sensitivity of breasts by 1.
-
 
 Titfuck Addiction ends here.

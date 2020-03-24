@@ -33,5 +33,4 @@ To compute announcements:
 			if the player is consenting, now choice in row 29 of the Table of Settings is 2;
 			now choice in row 53 of Table of Settings is 5;
 
-
 Announcements ends here.

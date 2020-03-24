@@ -51,7 +51,6 @@ To say SummoningFlav of (M - a robochef):
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
 
-
 To say LeftoverDesc (N - 119):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robochef.[line break]".
 
@@ -85,7 +84,6 @@ To compute monstermotion of (M - a robochef):
 		compute monstermotion reactions of M.
 
 Part 3 - Perception
-
 
 Definition: a robochef (called M) is outrage disapproving:
 	if the class of the player is maid, decide no;
@@ -140,7 +138,6 @@ Definition: a robochef (called M) is concealment immune: [Can the monster ignore
 
 Definition: a robochef (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
 	decide yes.
-
 
 Part 4 - Combat
 
@@ -232,7 +229,6 @@ To say ForcefeedAfterFlav of (M - a robochef):
 To say DQFeedingResistReactionFlav of (M - a robochef):
 	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PERAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
 
-
 Part 5 - Conversation
 
 Section 1 - Greeting
@@ -275,7 +271,6 @@ To compute answer of (M - a robochef):
 		say "[first custom style]'[caps please] ASK THE BUTLER FOR ASSISTANCE, [robogreeting].'[roman type][line break]".
 
 Definition: a robochef is willing to give snacks: decide yes.
-
 
 Part 6 - Trading
 
@@ -327,7 +322,6 @@ To compute resolution of (M - a robochef) taking (T - a thing):
 			say "[BigNameDesc of M] seems to lose interest in 'brewing' for now.";
 			bore M.
 
-
 To compute (M - a robochef) cooking (I - a fae mushroom):
 	let D be a random off-stage stuffed mushroom;
 	now the quality of D is a random number between 2 and -2;
@@ -358,6 +352,5 @@ To say MonsterOfferRejectFlav of (M - a robochef) to (T - a thing):
 
 To say MonsterOfferRejectFlav of (M - a robochef) to (T - a chef food):
 	say "[speech style of M]'ERROR. FOODSTUFF IS ALREADY FULLY UPGRADED.[roman type][line break]".
-
 
 RoboChef ends here.

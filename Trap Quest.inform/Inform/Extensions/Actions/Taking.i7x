@@ -61,7 +61,6 @@ Report taking store clothing:
 			now the boredom of shopkeeper is 0; [Just in case]
 			check perception of shopkeeper.
 
-
 [!<ReportDroppingStolenClothingWhileThePlayerIsInDungeon41>+
 
 REQUIRES COMMENTING
@@ -96,6 +95,5 @@ Carry out taking:
 
 Report taking:
 	if debugmode is 2, say "REPORT.".
-
 
 Taking ends here.

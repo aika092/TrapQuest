@@ -50,5 +50,4 @@ Definition: a platform heels is disintegration-protected if the class of the pla
 Definition: a platform heels is red themed if it is pvc.
 Definition: a platform heels is black themed if it is not pvc.
 
-
 Platform Heels ends here.

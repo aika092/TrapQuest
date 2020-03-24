@@ -1,11 +1,9 @@
 Bimbo by Player begins here.
 
-
 [
 The bimbo rating of the player indicates how much of a bimbo the player is.
 Bimbo is a combination of the specific orifice sex addictions, as well as the semen addiction, sex addiction, heel skill, the bimbo-influence of any clothing worn (including piercings), plus cursed piercings.
 ]
-
 
 [!<DecideWhichNumberIsTheBimboInfluenceOfThing>+
 

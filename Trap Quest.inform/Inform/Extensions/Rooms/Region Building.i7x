@@ -1,6 +1,5 @@
 Region Building by Rooms begins here.
 
-
 [!<targetFloor:Room>*
 
 REQUIRES COMMENTING
@@ -139,7 +138,6 @@ This is the no room to the right of hotel entrance rule:
 
 The no room to the right of hotel entrance rule is listed in the hotel puzzle restrictions rules.
 
-
 [!<Room>@<IsActuallySolvable>+
 
 REQUIRES COMMENTING
@@ -267,7 +265,6 @@ REQUIRES COMMENTING
 	change the east exit of Mansion12 to Solid Rock;
 	change the east exit of Mansion22 to Solid Rock;
 	change the west exit of Mansion22 to Solid Rock.]
-
 
 [
 THE PLAN:
@@ -457,7 +454,6 @@ Definition: a room (called R) is fully ready:
 	if R is open and ready, decide yes;
 	decide no.
 
-
 [Notably more computationally time consuming than empty puzzle socket, we check if there are any rooms left that are actually eligible to go here.]
 [!<DirectionIsSolvablePuzzleSocket>+
 
@@ -530,7 +526,6 @@ Definition: west (called D) is fully solvable puzzle socket:
 		[now Door Finder is ]
 		if R is open and ready, decide yes;
 	decide no.
-
 
 [!<RoomIsRelaxing>+
 

@@ -1,6 +1,5 @@
 Soreness by Player Description begins here.
 
-
 [!<SaySorenessdesc>+
 
 REQUIRES COMMENTING

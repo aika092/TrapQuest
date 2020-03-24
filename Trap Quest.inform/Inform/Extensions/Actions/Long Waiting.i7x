@@ -1,6 +1,5 @@
 Long Waiting by Actions begins here.
 
-
 [!<longWaiting:Action>*
 
 REQUIRES COMMENTING
@@ -31,7 +30,6 @@ Check LongWaiting:
 	if the player is upright:
 		say "Are you aware that you are standing and will therefore might gain fatigue over time? ";
 		unless the player is consenting, say "You decide against it." instead;
-
 
 [!<longWaitRules:Rulebook>*
 
@@ -117,7 +115,6 @@ This is the long wait report danger rule:
 		[say "[bold type]Waiting ended as an aggressive monster is nearby.[roman type][line break]";]
 		rule succeeds.
 The long wait report danger rule is listed in the long wait report rules.
-
 
 This is the long wait school dungeon rule:
 	if the player is in School34 and dungeon chains is not worn:
@@ -387,7 +384,6 @@ This is the long wait report fainting rule:
 		rule succeeds. [No need to say anything here.]
 The long wait report fainting rule is listed in the long wait report rules.
 
-
 longWaitTurns is a number that varies.
 
 This is the long wait turns rule:
@@ -399,7 +395,6 @@ This is the long wait report turns rule:
 		say "Maximum number of turns reached.";
 		rule succeeds.
 The long wait report turns rule is listed in the long wait report rules.
-
 
 Carry out LongWaiting:
 	say "Please enter a maximum number of turns to wait: ";
@@ -433,8 +428,6 @@ This is the longwait setting rule:
 			follow the long wait report rules.
 The longwait setting rule is listed in the statsetting rules.
 
-
 Understand "long wait", "wait for a while", "wait for a long time" as LongWaiting.
-
 
 Long Waiting ends here.

@@ -1,6 +1,5 @@
 Extracting by Actions begins here.
 
-
 Extracting it with is an action applying to two things. [The second noun is the source of the transfer, and the noun is the destination. "Filling" would be a more appropriate verb but IDGAF]
 Check extracting something with:
 	if the noun is not bottle or the second noun is not bottle, say "This verb is for transferring liquid between two containers." instead;
@@ -53,6 +52,5 @@ Check pouring something into:
 	if the second noun is wishing well, try wellwishing the noun instead;
 	unless the second noun is pedestal, try extracting the second noun with the noun instead.
 Understand "pour [something] into [something]", "pour [something] in [something]", "empty [something] into [something]", "empty [something] in [something]", "decant [something] into [something]", "decant [something] in [something]", "siphon [something] into [something]", "siphon [something] in [something]", "siphon [something] to [something]" as pouring it into.
-
 
 Extracting ends here.

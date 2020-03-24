@@ -7,7 +7,6 @@ Definition: magic-beads is cursable: decide no.
 Definition: a magic-beads is blessable: decide no.
 Definition: a magic-beads is magic themed: decide yes.
 
-
 prayer-beads is a magic-beads. prayer-beads is plastic. prayer-beads is unique. Understand "prayer", "prayer beads" as prayer-beads. The text-shortcut of a prayer-beads is usually "pyb".
 
 To say ShortDesc of (C - prayer-beads):
@@ -36,7 +35,6 @@ To say ClothingDesc of (W - prayer-beads):
 
 To uniquely set up (C - a prayer-beads):
 	now C is blessed.
-
 
 jinx-beads is a magic-beads. jinx-beads is plastic. jinx-beads is unique. Understand "jinx", "jinx beads" as jinx-beads. The text-shortcut of jinx-beads is usually "jxb". jinx-beads has a number called jinx-charge.
 

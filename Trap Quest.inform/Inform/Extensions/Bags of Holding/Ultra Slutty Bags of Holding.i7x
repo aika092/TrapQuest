@@ -30,5 +30,4 @@ To compute failed transform of (C - a condom rolls bag of holding):
 	say "But one condom does fall off of the side of the bag, and shoot into the air, magically filling itself up with [semen] as it does. ";
 	compute spontaneous condom of C.
 
-
 Ultra Slutty Bags of Holding ends here.

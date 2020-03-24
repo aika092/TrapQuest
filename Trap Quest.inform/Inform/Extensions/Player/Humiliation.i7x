@@ -69,7 +69,6 @@ unforgettable humiliating event
 To decide which number is OBSCENE-HUMILIATION:
 	decide on HUMILIATION-BASE * 100;[minimum 300, maximum 500]
 
-
 [
 
 Events that are meaningful even if they happen only once. It takes 10 of these to change humiliation level
@@ -454,11 +453,9 @@ To Dignify (X - a number):
 		if the humiliation of the player < X, now the humiliation of the player is 0;
 		otherwise decrease the humiliation of the player by X.
 
-
 Table of Published Disgraces
 content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)
 with 100 blank rows
-
 
 To decide which number is DisgracePostViews (N - a number):
 	choose row N in Table of Published Disgraces;
@@ -492,7 +489,6 @@ To say DisgracePostReaction (N - a number):
 		say "[if S < 100][one of]I deserve everyone to see me like this. I'm such a disgrace.[or]Thinking about my friends seeing me like this is just turning me on...[or]Only that many views? I'm offended! I should make an even naughtier post...[in random order][otherwise][one of]There's no going back from this. I'm a public disgrace forever more...[or]I guess I deserve this. I am disgusting, and it's only fair that everybody knows it.[or]I'm such a filthy, horrible pervert. Why does it turn me on to know that this is on the Internet...[in random order][end if]";
 	say "[roman type][line break]".
 
-
 To compute digital reputation damage (T - a text) strength (S - a number) quality (N - a number):
 	decrease N by a random number between 0 and 1;
 	now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
@@ -516,7 +512,6 @@ To decide which text is ReputationAttire:
 		let B be the at least partial concealer of breasts;
 		decide on "wearing a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B]and a [ShortDesc of C][end if]";
 
-
 To say sexyWebsite:
 	if diaper quest is 1, say "embarrassedbabes.net";
 	otherwise say "[one of]trashyboners.xxx[or]publicnudity.xxx[or]embarrassedbabes.net[or]caughtoncandid.com[or]whoisthathottie.com[at random]".
@@ -524,6 +519,5 @@ To say sexyWebsite:
 To say sluttyWebsite:
 	if diaper quest is 1, say "publicdisgraces.xxx";
 	otherwise say "[one of]publicdisgraces.xxx[or]caughtintheact.com[or]whoresexposed.net[or]sluthub.xxx[or]namedandshamed.com[at random]".
-
 
 Humiliation ends here.

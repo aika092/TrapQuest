@@ -29,7 +29,6 @@ To decide which number is the standing strength of the player:
 	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
 	decide on ((the strength of the player * 13) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
 
-
 [!<DecideWhichNumberIsTheStandingCapabilityOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -188,6 +187,5 @@ To say StandingBlock of (M - a monster):
 
 To say LongHairStandingBlock of (M - a monster):
 	say "[BigNameDesc of M] steps on your [ShortDesc of hair] and stops you from standing up!".
-
 
 Standing ends here.

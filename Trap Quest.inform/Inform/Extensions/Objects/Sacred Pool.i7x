@@ -1,6 +1,5 @@
 Sacred Pool by Objects begins here.
 
-
 The sacred pool is a water-body-scenery. the sacred pool is not portable. The printed name of sacred pool is "[TQlink of item described]sacred pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of sacred pool is "sap". the sacred pool has a number called corruption. the sacred pool has a number called charge. the charge of the sacred pool is usually 0. The sacred pool is in Mansion25.
 
 To decide which figure-name is the examine-image of (C - sacred pool):

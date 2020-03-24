@@ -2,7 +2,6 @@ Intelligence by Player begins here.
 
 Part 1 - Calculate Intelligence
 
-
 [Phaos notes:
 There are actually two intelligence stats that exist simultaneously. One is the base, objective intelligence, which is called "raw intelligence", and the other takes items and such into account.]
 
@@ -69,7 +68,6 @@ To decide which number is the flat intelligence of the player:
 	if I > 30, decide on 30;
 	decide on I.
 
-
 [!<DecideWhichNumberIsTheStartingIntelligenceOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -79,7 +77,6 @@ To decide which number is the starting intelligence of the player:
 	decide on 7 + bonus intelligence + background-nurse - background-sporty.
 
 Part 2 - Modify Intelligence
-
 
 [!<Player>@<rawDexterity:Integer>*
 
@@ -94,7 +91,6 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called old intelligence. The old intelligence of the player is usually 0.
-
 
 [!<IntUpX>+
 

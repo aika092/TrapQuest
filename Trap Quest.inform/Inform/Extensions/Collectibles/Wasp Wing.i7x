@@ -1,6 +1,5 @@
 Wasp Wing by Collectibles begins here.
 
-
 A wasp wing is a kind of monster-drop. There are 3 wasp wings. The printed name of wasp wing is "[TQlink of item described]wasp wing[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of wasp wing is "[TQlink of item described]wasp wings[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of wasp wing is "ww". Figure of wasp wing is the file "Items/Collectibles/wing1.png".
 
 To decide which figure-name is the examine-image of (C - a wasp wing):

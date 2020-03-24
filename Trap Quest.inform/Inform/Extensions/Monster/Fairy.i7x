@@ -24,7 +24,6 @@ Figure of fairy interact 11 is the file "Special/Cutscene/cutscene-fairy-interac
 Figure of fairy interact 12 is the file "Special/Cutscene/cutscene-fairy-interact12.png".
 Figure of fairy interact 13 is the file "Special/Cutscene/cutscene-fairy-interact13.png".
 
-
 To decide which figure-name is the monster-image of (M - a fairy):
 	if diaper quest is 1, decide on the figure of diaper fairy;
 	otherwise decide on the figure of fairy.
@@ -936,7 +935,6 @@ To say DismissalResponseStalker of (M - a fairy):
 To say DismissalResponseDefault of (M - a fairy):
 	say "[speech style of M]'Hmmmmmmm... [if M is interested]Nope[otherwise]Okay[end if]!'[roman type][line break]".
 
-
 Part 5 - Variants
 
 Section 1 - Blue Fairy
@@ -994,7 +992,6 @@ Section 2 - Fairy Witch
 fairy-witch is a fairy. The text-shortcut of fairy-witch is "faw". Understand "fairy", "witch" as fairy-witch.
 To say MediumDesc of (M - fairy-witch):
 	say "fairy [if lady fetish is 2]wizard[otherwise]witch[end if]".
-
 
 Definition: fairy-witch (called M) is woods dwelling:
 	if diaper quest is 1, decide no;

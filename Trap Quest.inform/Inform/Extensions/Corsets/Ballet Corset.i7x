@@ -37,7 +37,6 @@ To compute periodic effect of (C - a ballet corset):
 Check strutting when there is a worn ballet corset:
 	if the strut of the player is 1 and there is a worn thigh high ballet boots, say "You can't stop strutting, you're being magically forced to by your ballet clothing!" instead.
 
-
 [!<ThePlayerCantSlapWhileBalletStruttingRule>+
 
 This rule causes a slap to fail if the player is ballet strutting. If the player is attacking manually, outputs a message explaining why the slap failed.

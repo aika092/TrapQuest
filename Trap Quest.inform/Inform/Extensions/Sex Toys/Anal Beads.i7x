@@ -168,7 +168,6 @@ To decide which number is the original price of (C - an anal beads):
 
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
 
-
 Ritual-beads is an anal beads. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads. Ritual-beads has a number called charge. The charge of ritual-beads is 0.
 
 To say ClothingDesc of (P - ritual-beads):
@@ -211,7 +210,6 @@ To decide which number is the bimbo-influence of (C - ritual-beads):
 	let T be the notch-taken of C;
 	if T > the charge of C, decide on the charge of C * -1;
 	decide on T * -1.
-
 
 To decide which number is the dexterity-influence of (C - ritual-beads):
 	let P be prayer-beads;

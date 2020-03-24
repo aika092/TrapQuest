@@ -1,6 +1,5 @@
 Snacks by Food begins here.
 
-
 A snack is a kind of food.
 
 To restock (C - a snack):

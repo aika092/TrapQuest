@@ -1,6 +1,5 @@
 Monster Framework by Monster Framework begins here.
 
-
 Include Monster Adjectives by Monster Framework.
 Include Monster Descriptions by Monster Framework.
 Include Monster Functions by Monster Framework.
@@ -85,6 +84,5 @@ Include Supporter Framework by Monster Framework.
 Include Woman Barbara by Monster.
 
 Include Talking by Actions.
-
 
 Monster Framework ends here.

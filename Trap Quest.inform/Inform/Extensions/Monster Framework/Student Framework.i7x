@@ -58,7 +58,6 @@ To say FuckerDesc of (M - a student):
 To say BigFuckerDesc of (M - a student):
 	say "[student-name of M]".
 
-
 Part - Rank, Name and Print
 
 A student has a number called current-rank. The current-rank of a student is usually 1.
@@ -135,9 +134,7 @@ Definition: a student (called M) is lesson-appropriate:
 	if the current-rank of M is 5 and armband is pure diamond, decide yes;
 	decide no.
 
-
 Part - Updating Students
-
 
 school-earnings-latest is a number that varies. [let's track how long it's been since the player last stepped into the school]
 
@@ -161,7 +158,6 @@ To compute background student promotions: [Happens whenever the player returns t
 					say "[NameDesc of M].";
 					decrease school-earnings-latest by 120.
 
-
 Part - Stats
 
 To decide which number is the heel-skill of (M - a student):
@@ -177,7 +173,6 @@ To decide which number is the vindictiveness of (M - a student): [Angry students
 	let F be 0;
 	if M is unfriendly, now F is the aggro limit of M - the favour of M;
 	decide on the unique vindictiveness of M + F.
-
 
 Part - Motion
 
@@ -211,7 +206,6 @@ To compute room leaving of (M - a student): [This CANNOT be replaced with a func
 			try M going A;
 			compute monstermotion reactions of M.
 
-
 To compute fleeing of (M - a student):
 	if the player is in danger:
 		now neighbour finder is the location of M;
@@ -230,7 +224,6 @@ To compute fleeing of (M - a student):
 		distract M;
 		now the scared of M is 0;
 		calm M.
-
 
 Part - Perception
 
@@ -298,7 +291,6 @@ To say FarGoneBabAppearanceAssessment of (M - a student):
 To say BabAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
-
 To compute nonstudent perception of (M - a student):
 	say "[speech style of M]'[one of]What the hell[or]Oh my god[or]Erm[or]Wait a second[or]Hold on a minute[or]OMFG[in random order], where is your armband?!'[roman type][line break][big he of M] starts to run away!";
 	anger M;
@@ -337,7 +329,6 @@ To HappinessDown (M - a student) by (N - a number): [This is the same mechanical
 		decrease the favour of M by N;
 		say "You can tell that [BigNameDesc of M] is [if M is friendly][one of]not happy[or]irritated[or]frustrated[in random order][otherwise][one of]pissed off[or]furious[or]angry[in random order] with you[end if].".
 
-
 To FavourDown (M - an amicable student) by (N - a number):
 	do nothing.
 
@@ -374,7 +365,6 @@ To compute crowd jeering of (M - a student):
 
 To compute jeering of (M - a student):
 	say "[BigNameDesc of M] [one of]points and laughs[or]doubles over with laughter[or]cackles vindictively at your suffering[in random order]!".
-
 
 To compute crowd boredom of (M - a student):
 	let LST be the list of unfriendly students in the location of M;
@@ -465,7 +455,6 @@ Check going when the player is in School20:
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
 
-
 student-bully-wedgie is a diaper punishment. The priority of student-bully-wedgie is 1.
 Definition: student-bully-wedgie is appropriate:
 	if current-monster is student and the player is not immobile and the player is not flying and the rank of the player >= the entry-rank of School19 and the current-rank of current-monster >= the entry-rank of School19 and there is an off-stage ass hook and there is worn displacable knickers, decide yes;
@@ -490,7 +479,6 @@ To compute punishment of (P - student-bully-wedgie):
 	let M be a random unfriendly student in the location of the player;
 	if M is student, say "[BigNameDesc of M] puts [his of M] hands on [his of M] hips and smirks up at you.[line break][speech style of M]'You should pray that your panties hold, [bitch]. If it snaps before I leave, I'm going to blame you.'[roman type][line break]".
 
-
 Check going when the player is in School19:
 	let M be a random alive unfriendly student;
 	if M is student, now current-monster is M;
@@ -500,7 +488,6 @@ Check going when the player is in School19:
 		say "[bold type]Suddenly, [NameDesc of M] [bold type]appears, blocking the way![roman type][line break]";
 		compute group bullying of M instead;
 		do nothing instead. [failsafe]
-
 
 student-bully-swirlie is a diaper punishment. The priority of student-bully-swirlie is 3.
 Definition: student-bully-swirlie is appropriate:
@@ -588,13 +575,11 @@ To say FirstTimeBullyDemandFlav of (M - a student):
 To say FirstTimeBullyFlav of (M - a student):
 	say "[speech style of M]'[one of]Oh good, you're on your knees already. That makes it easy for me to give you what you've had coming for a while now.'[or]Oh good, on your knees, begging for forgiveness without me even having to ask. That's a good step in the right direction. This is the next.'[or]Well, well, well, look who's come crawling along, looking for forgiveness. Let me see, how should I thank you properly?'[in random order][roman type][line break]".
 
-
 To say RepeatBullyDemandFlav of (M - a student):
 	say "[speech style of M]'[one of]Hmph, you're still around? I'll teach you to show your face around here again. Knees. Now.'[or]I'm still mad with you. Clearly you still haven't learned how to win friends and influence people. Get on your knees.'[or]Show me how much you want to earn my friendship back, [NameBimbo]. Beg for my forgiveness.'[in random order][roman type][line break]".
 
 To say RepeatBullyFlav of (M - a student):
 	say "[speech style of M]'[one of]Well since you're already on your knees, I guess you know I haven't forgiven you yet.'[or]I'm still mad with you.'[or][NameBimbo] the traitor. Seeking forgiveness, hmm?'[in random order][roman type][line break]".
-
 
 To say BullyCombatFlav of (M - a student):
 	say "[speech style of M]'[one of]I guess you really want to fight.'[or]Oops, looks like you pissed me off.'[or]Now I'm mad. Come on then.'[at random][roman type][line break]".
@@ -649,7 +634,6 @@ To compute food hall bullying of (M - a student):
 	say "[BigNameDesc of M] takes the cup and [one of]takes a long gleeful gulp[or]sips it delicately as if it contains a fine nectar[in random order].[line break][speech style of M]'[one of]Ah, the sweet taste of karma[or]This tastes so much better when my clit isn't sore from sitting on that thing[or]Delicious. Good [boy of the player][in random order].'[roman type][line break]";
 	compute crowd boredom of M;
 	satisfy M.
-
 
 Part - Damage
 
@@ -715,7 +699,6 @@ To compute teaching of (M - a student):
 To decide which number is the annoyance threshold of (M - a student):
 	decide on 999999.
 
-
 To say DismissalRequestVixen of (M - a student):
 	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of a random student] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
 
@@ -746,7 +729,6 @@ To say DismissalResponseBursting of (M - a student):
 		say "[speech style of M]'[if M is interested]Ooh, goody! I can't wait to watch your face as you wet your nappy in front of me[otherwise]Fair enough[end if].'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[if M is interested]Uh-oh, [NameBimbo][']s gonna wet [himself of the player]! Come and see[otherwise]Don't let the teachers catch you having an accident[end if]!'[roman type][line break]".
-
 
 [This is the object used for the team predicament where the student is bound behind the player]
 
@@ -817,6 +799,5 @@ To compute periodic effect of (C - quiz-partner):
 
 To say CurrentlyVisibleFlav of (C - quiz-partner):
 	say "".
-
 
 Student Framework ends here.

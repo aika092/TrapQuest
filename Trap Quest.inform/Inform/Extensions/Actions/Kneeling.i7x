@@ -1,6 +1,5 @@
 Kneeling by Actions begins here.
 
-
 [!<kneeling:Action>*
 
 REQUIRES COMMENTING
@@ -16,7 +15,6 @@ REQUIRES COMMENTING
 Check kneeling while gloryhole is grabbing the player:
 	say "[if seconds is 0]You can't move![end if]" instead.
 
-
 [!<CheckKneelingWhileThePlayerIsDildoStuck>+
 
 REQUIRES COMMENTING
@@ -24,7 +22,6 @@ REQUIRES COMMENTING
 +!]
 Check kneeling while the player is dildo stuck:
 	say "[if seconds is 0]You can't move![end if]" instead.
-
 
 [!<CheckKneelingWhileThePlayerIsImmobile>+
 
@@ -115,7 +112,6 @@ Carry out kneeling:
 	if seconds is 0, allocate 2 seconds;
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 
-
 [!<CheckKneelingWhenTheLocationOfThePlayerIsSmoky>+
 
 REQUIRES COMMENTING
@@ -125,7 +121,6 @@ Check kneeling when the location of the player is smoky:
 	if the player is upright and seconds is 0 and auto is 0:
 		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room, are you sure you want to? ";
 		unless the player is in agreement, do nothing instead.
-
 
 [!<CheckKneelingWhenTheLocationOfThePlayerIsGluePuddled>+
 
@@ -166,6 +161,5 @@ To compute kneeling reaction of (M - a monster): [Default boring reaction if non
 	if M is intelligent, say "[BigNameDesc of M] grins.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shiver with shame.[end if]";
 	otherwise say "[BigNameDesc of M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
-
 
 Kneeling ends here.

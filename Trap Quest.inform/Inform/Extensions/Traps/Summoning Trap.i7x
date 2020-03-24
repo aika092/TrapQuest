@@ -1,6 +1,5 @@
 Summoning Trap by Traps begins here.
 
-
 A summoning trap is a kind of trap. There are 6 click summoning traps.
 
 [This is the spawn initial dungeon summoning traps rule:
@@ -125,6 +124,5 @@ To summon (M - a monster) in (D - the mansion):
 To summon (M - a monster) in (D - the school):
 	if Hotel01 is discovered and a random number from 1 to 2 is 1, summon M in the hotel;
 	otherwise summon M in the dungeon.
-
 
 Summoning Trap ends here.

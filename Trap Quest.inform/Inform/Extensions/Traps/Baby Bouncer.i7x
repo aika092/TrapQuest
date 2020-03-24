@@ -1,6 +1,5 @@
 Baby Bouncer by Traps begins here.
 
-
 A baby bouncer is a kind of trap. The printed name of baby bouncer is "[TQlink of item described]baby bouncer trap[TQxlink of item described][verb-desc of item described]". There are 3 wire baby bouncers. The text-shortcut of a baby bouncer is "bou". A baby bouncer has a number called willingbounce. The willingbounce of a baby bouncer is usually 1.
 
 Figure of hotel baby bouncer is the file "Env/MultiFloor/babybouncer1.jpg".
@@ -69,7 +68,6 @@ To trigger (Y - a baby bouncer):
 			say BouncerTrapReactFlav of M;
 	otherwise:
 		say "Seeing the arms coming for you and not liking where you suspect they plan to place you, you duck under them, narrowly avoiding being grabbed.".
-
 
 To say SexSubmissionFlav of (Y - a baby bouncer):
 	increase the bounces of Y by 1;

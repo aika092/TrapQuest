@@ -87,7 +87,6 @@ To decide which number is the initial outrage of (C - a silver tube top):
 To decide which number is the adult-influence of (C - a silver tube top):
 	decide on 1.
 
-
 Part 3 - Pink Rubber Tube Top
 
 A pink rubber tube top is a kind of tube top. A pink rubber tube top is usually latex.
@@ -111,7 +110,6 @@ To decide which number is the initial outrage of (C - a pink rubber tube top):
 	decide on 3.
 
 Definition: a pink rubber tube top is pink themed: decide yes.
-
 
 Part 4 - Tartan Tube Top
 
@@ -138,7 +136,6 @@ Definition: a tartan tube top is heart themed: decide yes.
 Definition: a tartan tube top is tartan themed: decide yes.
 Definition: a tartan tube top is orange themed: decide yes.
 
-
 To decide which number is the initial outrage of (C - a tartan tube top):
 	decide on 4.
 
@@ -146,7 +143,6 @@ To decide which number is the initial cringe of (C - a tartan tube top):
 	decide on 2.
 
 Definition: a tartan tube top is class-transformation-protected if there is a worn scrunchie.
-
 
 Part 5 - Red Tube Top
 
@@ -248,7 +244,6 @@ To set up influence of (C - a jacket):
 To say ShortDesc of (C - a jacket):
 	say "[clothing-material of C] jacket".
 
-
 This is the remove inappropriate jackets rule:
 	repeat with B running through rubber jackets:
 		now B is in Holding Pen.
@@ -264,10 +259,8 @@ Figure of rubber jacket is the file "Items/Clothes/Upper/Latex/latexjacket1.png"
 To decide which figure-name is clothing-image of (C - a jacket):
 	decide on figure of rubber jacket.
 
-
 To say ClothingDesc of (C - a rubber jacket):
 	say "A thin black sleeveless latex jacket that clings tightly to your chest.[if C is worn][line break]Your erect nipples can be clearly seen through it. [end if]It's very short, [if C is worn]completely exposing[otherwise]and would completely expose[end if] your [BellyDesc].".
-
 
 Part 9 - Leopard Print Tube Top
 

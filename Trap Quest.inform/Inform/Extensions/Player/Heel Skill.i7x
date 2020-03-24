@@ -2,7 +2,6 @@ Heel Skill by Player begins here.
 
 Part 1 - Calculate Heel Skill
 
-
 [!<DecideWhichNumberIsTheHeelSkillInfluenceOfThing>+
 
 REQUIRES COMMENTING
@@ -38,7 +37,6 @@ To decide which number is the heel skill of the player:
 
 Part 2 - Modify Heel Skill
 
-
 [!<Player>@<rawHeelSkill:Integer>*
 
 REQUIRES COMMENTING
@@ -53,10 +51,8 @@ Experience
 *@!]
 The player has a number called heel time. The heel time of the player is usually 0.
 
-
 To decide which number is minHeelXP: [How much experience does it take to go up one level of heel skill]
 	decide on 220.
-
 
 [!<HeelUpX>+
 
@@ -85,7 +81,6 @@ To 2HeelUp:
 		increase the raw heel skill of the player by 1;
 		now heel time of the player is 0.
 
-
 [!<HeelDownX>+
 
 REQUIRES COMMENTING
@@ -103,6 +98,5 @@ REQUIRES COMMENTING
 +!]
 To 2HeelDown:
 	if the raw heel skill of the player > 1, decrease the raw heel skill of the player by 1.
-
 
 Heel Skill ends here.

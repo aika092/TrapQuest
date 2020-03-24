@@ -37,7 +37,6 @@ Definition: a sex toy is disintegration-protected: decide yes.
 To decide which number is the initial outrage of (S - a sex toy):
 	decide on 10 + the size of S.
 
-
 To say DongSize of (C - a sex toy):
 	let N be the size of C;
 	say DongSize N.
@@ -62,7 +61,6 @@ To ToyShortcutAssign (C - a sex toy):
 		now the text-shortcut of C is substituted form of "sty[toyShortcutCount]";
 		increase toyShortcutCount by 1.
 
-
 This is the sex toy pussy slut rule:
 	if there is a sex toy penetrating vagina, decrease the desirability of vagina by 7.
 The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
@@ -70,7 +68,6 @@ The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
 This is the sex toy butt slut rule:
 	if there is a sex toy penetrating asshole, decrease the desirability of asshole by 7.
 The sex toy butt slut rule is listed in the butt slut eligibility rules.
-
 
 To decide which number is the original price of (C - a sex toy):
 	decide on 2.
@@ -270,7 +267,6 @@ To decide which number is the bartering value of (T - a sex toy) for (M - a mann
 	unless M is retaining a sex toy, decide on 3;
 	decide on 1 + (the size of T - the size of a random sex toy retained by M).
 
-
 Check taking off sex toy:
 	try unplugging the noun instead.
 
@@ -287,7 +283,6 @@ To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 		say "Oof! You definitely felt that as you pushed it inside.";
 	otherwise:
 		say "Your [variable F] is loose enough to let the [printed name of S] slip in easily.".
-
 
 Chapter 1 - Dongs
 
@@ -386,7 +381,6 @@ To say ShortDesc of (C - a plug):
 To say MediumDesc of (C - a plug):
 	say "[PlugSize size of C] butt plug".
 
-
 A tail plug is a kind of plug.
 To decide which number is the initial outrage of (S - a tail plug):
 	decide on 14.
@@ -473,7 +467,6 @@ Definition: a plug is transformation-protected if it is not plentiful.
 To decide which object is the unique-upgrade-target of (C - a plug):
 	decide on a random off-stage anal beads.
 
-
 Section 1 Tail Plug
 
 This is the remove inappropriate tail plugs rule:
@@ -527,6 +520,5 @@ To decide which object is the concealer of (C - a tail plug):
 To say CurrentlyVisibleFlav of (C - a tail plug):
 	let S be a random worn actually dense potentially asshole covering clothing;
 	say "It is currently visible to anyone who looks at you[if S is clothing], since the tail is creeping out from under your [printed name of S][end if].".
-
 
 Sex Toy Framework ends here.

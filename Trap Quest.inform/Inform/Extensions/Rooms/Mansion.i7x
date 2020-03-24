@@ -1,6 +1,5 @@
 Mansion by Rooms begins here.
 
-
 [!<HauntedRoom>@
 
 REQUIRES COMMENTING
@@ -54,13 +53,11 @@ Mansion10 is a haunted room. The printed name of Mansion10 is "Peeling Hallway".
 Mansion27 is a no-roof haunted room. The printed name of Mansion27 is "Back Walk". "What probably used to be a well kept garden of fun-shaped bushes and trees is now little more than a creepy bramble full of vaguely human shapes.". The shape of Mansion27 is L4/0-0-0-0-1-1.
 Mansion09 is a haunted room. The printed name of Mansion09 is "Dark Hallway". "This hallway has a way of making you feel cramped and claustrophobic.".
 
-
 [!<mansion:Region>*
 
 REQUIRES COMMENTING
 
 *!]
 The Mansion is a region. Mansion00, Mansion01, Mansion02, Mansion03, Mansion04, Mansion05, Mansion06, Mansion07, Mansion08, Mansion09, Mansion10, Mansion11, Mansion12, Mansion13, Mansion14, Mansion15, Mansion16, Mansion17, Mansion18, Mansion19, Mansion20, Mansion21, Mansion22, Mansion23, Mansion24, Mansion25, Mansion26, Mansion27, Mansion28, Mansion29, Mansion30, Mansion31, Mansion32, Mansion33, Mansion34, Mansion35 and Mansion36 are in The Mansion.
-
 
 Mansion ends here.

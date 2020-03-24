@@ -198,7 +198,6 @@ To compute DQ perception of (M - a mannequin):
 	say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 	anger M.
 
-
 Part 3 - Combat
 
 Section 1 - Attack
@@ -431,6 +430,5 @@ To compute unique death of (M - a mannequin):
 		say "You notice that [his of M] [ShortDesc of J] appears to have remained intact.";
 		now J is in the location of the player;
 		compute autotaking J.
-
 
 Mannequin ends here.

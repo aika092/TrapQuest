@@ -1,6 +1,5 @@
 Clothing Adjectives by Clothing begins here.
 
-
 [!<WearThing>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A wearthing is a kind of thing.
-
 
 [!<Clothing>@
 
@@ -267,10 +265,8 @@ Definition: yourself is naked:
 	if the player is clothed, decide no;
 	decide yes.
 
-
 Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
 	decide no.
-
 
 [!<ClothingIsBasicLoot>+
 
@@ -281,7 +277,6 @@ Definition: a clothing (called C) is basic loot:
 	if C is diaper, decide no;
 	if C is off-stage and C is plentiful and C is fetish appropriate, decide yes;
 	decide no.
-
 
 [!<ClothingIsDesirable>+
 
@@ -303,6 +298,5 @@ tonguesActive is a number that varies.
 tonguesBlack is initially false.
 Definition: a clothing is tongued: decide no.
 Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it is worn.
-
 
 Clothing Adjectives ends here.

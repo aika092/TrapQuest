@@ -1,6 +1,5 @@
 Monster Adjectives by Monster Framework begins here.
 
-
 A monster is a kind of animal. A dungeon boss is a kind of monster.
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
 A monster has a number called sleep. The sleep of a monster is usually 0. [The number of seconds until they wake up.]
@@ -207,6 +206,5 @@ Definition: a monster is pacified if it is non-threatening and it is not caged. 
 Definition: a monster is defeated rather than undefeated if it is fucked-silly or it is sex-enslaved or it is diaper-enslaved. [It's got knocked down, it's not getting up again, it's always going to let you keep it down.]
 
 Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 6 and it is not in the school.
-
 
 Monster Adjectives ends here.

@@ -300,5 +300,4 @@ To decide which object is the unique-upgrade-target of (M - a maid waitress outf
 	if C is off-stage, decide on C;
 	otherwise decide on the unique-upgrade-target of C. [If the next target is not off-stage, we skip it.]
 
-
 Maid Outfit ends here.

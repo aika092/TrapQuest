@@ -484,7 +484,6 @@ To decide which number is the lewdness of (P - a masturbation poster):
 	if old-stimulant of P is a thing, increase N by 100;
 	decide on N.
 
-
 Chapter 4 Wetting Poster
 
 A wetting poster is a kind of poster. A wetting poster has an object called urination-target. A wetting poster has a number called old-humiliation. A wetting poster has a number called old-peereaction. A wetting poster has an object called old-monster.
@@ -761,6 +760,5 @@ To decide which number is the lewdness of (P - an expulsion poster):
 	let N be 300;
 	if the liquid types of P > 1, increase N by 100;
 	decide on N.
-
 
 Camera Trap ends here.

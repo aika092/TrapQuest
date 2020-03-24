@@ -1,6 +1,5 @@
 Hotel by Rooms begins here.
 
-
 [!<ModernRoom>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A modern room is a kind of room. A modern room has a labyrinth shape called shape. The shape of a modern room is usually L3/0-0-1-1-1-1. The grid position of a modern room is usually <0,0,0>.
-
 
 [!<hotel01:ModernRoom>*
 
@@ -347,6 +345,5 @@ REQUIRES COMMENTING
 +!]
 Check entering HotelScenery01:
 	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
-
 
 Hotel ends here.

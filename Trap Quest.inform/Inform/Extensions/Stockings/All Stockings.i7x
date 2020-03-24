@@ -1,10 +1,8 @@
 All Stockings by Stockings begins here.
 
-
 A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. The printed name of stockings is usually "[clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after]". A stockings is usually sheer. The soak-limit of stockings is usually 10.
 
 Definition: a stockings is same-type if theme-share-target is stockings.
-
 
 Report examining stockings:
 	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings and socks make wearing heels more comfortable, and therefore slightly improve your ability to walk in them[unless the noun is socks]. Stockings also improve your knee damage[end if].".
@@ -106,7 +104,6 @@ To say ShortestDesc of (C - a stockings):
 
 Definition: a socks is baby themed if the initial cringe of it > 0.
 
-
 Part - Wearability
 
 stockings wearability rules is a rulebook. The wearability rules of stockings is usually stockings wearability rules.
@@ -138,7 +135,6 @@ This is the leg covering stockings clash rule:
 			rule fails.
 The leg covering stockings clash rule is listed in the stockings wearability rules.
 
-
 stockings removability rules is a rulebook. The removability rules of stockings is usually stockings removability rules.
 
 This is the cursed suspenders prevents removal of stockings rule:
@@ -161,7 +157,6 @@ The worn shoes prevents removal of stockings rule is listed in the stockings rem
 			if autolayerremove is false, rule fails.
 The worn leg covering clothing prevents removal of stockings rule is listed in the stockings removability rules.]
 
-
 bunny socks is a socks. The text-shortcut of bunny socks is "bnys".
 
 Figure of bunny socks is the file "Items/Clothes/Lower/Legs/socks3.png".
@@ -181,7 +176,6 @@ To decide which number is the initial cringe of (C - bunny socks):
 	decide on 5.
 
 Definition: bunny socks is transformation-protected if the class of the player is bunny.
-
 
 cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid stockings is sheer-when-wet. The text-shortcut of cafe maid stockings is "cms".
 
@@ -207,7 +201,6 @@ To decide which number is the initial cringe of (C - a cafe maid stockings):
 
 Definition: cafe maid stockings is pink themed: decide yes.
 
-
 A deer socks is a kind of socks. There is 1 deer socks. The text-shortcut of deer socks is "dso".
 
 Figure of deer socks is the file "Items/Clothes/Lower/Legs/socks1.png".
@@ -230,10 +223,8 @@ To decide which number is the initial outrage of (C - a deer socks):
 To decide which number is the initial cringe of (C - a deer socks):
 	decide on 4.
 
-
 Definition: a deer socks is brown themed: decide yes.
 Definition: a deer socks is christmas themed: decide yes.
-
 
 A frilly green socks is a kind of socks. There is 1 frilly green socks. The text-shortcut of frilly green socks is "fgs".
 
@@ -257,11 +248,9 @@ To decide which number is the initial outrage of (C - a frilly green socks):
 To decide which number is the initial cringe of (C - a frilly green socks):
 	decide on 4.
 
-
 Definition: a frilly green socks is transformation-protected if there is a worn christmas headgear.
 Definition: a frilly green socks is green themed: decide yes.
 Definition: a frilly green socks is christmas themed: decide yes.
-
 
 A frilly stockings is a kind of stockings. There is 1 frilly stockings. A frilly stockings is usually cotton. A frilly stockings is usually sheer-when-wet. The text-shortcut of frilly stockings is "fst".
 
@@ -285,7 +274,6 @@ To decide which number is the initial cringe of (C - a frilly stockings):
 
 To decide which object is the unique-upgrade-target of (C - a frilly stockings):
 	if diaper quest is 1 and bow-stockings is off-stage, decide on bow-stockings.
-
 
 Definition: a frilly stockings is white themed: decide yes.
 
@@ -311,14 +299,11 @@ To decide which number is the initial outrage of (C - bow-stockings):
 To decide which number is the initial cringe of (C - bow-stockings):
 	decide on 5.
 
-
 Definition: bow-stockings is white themed: decide yes.
-
 
 A black rubber stockings is a kind of stockings. There is 1 transformation-rare black rubber stockings. A black rubber stockings is usually latex. A black rubber stockings is usually dense. The text-shortcut of black rubber stockings is "bls". The printed name of black rubber stockings is usually "[clothing-title-before]pair of black [clothing-material of the item described] stockings[clothing-title-after]".
 A black-and-orange rubber stockings is a kind of stockings. There is 1 transformation-rare black-and-orange rubber stockings. A black-and-orange rubber stockings is usually latex. A black-and-orange rubber stockings is usually dense. The text-shortcut of black-and-orange rubber stockings is "bols". The printed name of black-and-orange rubber stockings is usually "[clothing-title-before]pair of black and orange [clothing-material of the item described] stockings[clothing-title-after]".
 A red rubber stockings is a kind of stockings. There is 1 red transformation-rare rubber stockings. A red rubber stockings is usually latex. A red rubber stockings is usually dense. The text-shortcut of red rubber stockings is "rls". The printed name of red rubber stockings is usually "[clothing-title-before]pair of red [clothing-material of the item described] stockings[clothing-title-after]".
-
 
 To say ShortDesc of (C - a red rubber stockings):
 	say "latex stockings".
@@ -366,7 +351,6 @@ To decide which number is the initial outrage of (C - a latex stockings):
 To decide which number is the initial cringe of (C - a latex stockings):
 	decide on 2.
 
-
 A magical stockings is a kind of stockings. There is 1 magical stockings. A magical stockings is usually cotton. The text-shortcut of magical stockings is "mst". A magical stockings is usually unique. A magical stockings is usually dexterity-influencing. The printed name of magical stockings is "[clothing-title-before]magical stockings[clothing-title-after]".
 
 Figure of magical stockings is the file "Items/Clothes/Lower/Legs/magicalstockings1.png".
@@ -395,7 +379,6 @@ To decide which number is the dexterity-influence of (S - a magical stockings):
 Definition: a magical stockings is magic themed: decide yes.
 Definition: a magical stockings is pink themed: decide yes.
 
-
 A heart stockings is a kind of stockings. There is 1 transformation-rare heart stockings. A heart stockings is usually mesh. The text-shortcut of heart stockings is "hbs". The printed name of heart stockings is usually "[clothing-title-before]pair of heart bow [clothing-material of the item described] stockings[clothing-title-after]". Understand "bow" as heart stockings.
 A fishnet stockings is a kind of stockings. There is 1 transformation-rare fishnet stockings. A fishnet stockings is usually mesh. The text-shortcut of fishnet stockings is "fs". The printed name of fishnet stockings is usually "[clothing-title-before]pair of fishnet stockings[clothing-title-after]". Understand "fish", "net" as fishnet stockings.
 
@@ -422,13 +405,11 @@ Definition: a heart stockings is gem themed: decide yes.
 Definition: a heart stockings is bow themed: decide yes.
 Definition: a fishnet stockings is black themed: decide yes.
 
-
 Figure of mesh stockings A is the file "Items/Clothes/Lower/Legs/meshstockings1.png".
 Figure of mesh stockings B is the file "Items/Clothes/Lower/Legs/meshstockings2.png".
 
 To decide which number is the initial outrage of (C - a mesh stockings):
 	decide on 3.
-
 
 A suspender stockings is a kind of stockings. There is 1 suspender stockings. A suspender stockings is usually nylon. The text-shortcut of suspender stockings is "lns". The printed name of suspender stockings is usually "[clothing-title-before]pair of laced [clothing-material of the item described] stockings[clothing-title-after]". Understand "laced" as suspender stockings.
 A lacy stockings is a kind of stockings. There is 1 lacy stockings. A lacy stockings is usually nylon. The text-shortcut of lacy stockings is "nst". The printed name of lacy stockings is usually "[clothing-title-before]pair of lacy [clothing-material of the item described] stockings[clothing-title-after]".
@@ -464,7 +445,6 @@ Definition: a suspender stockings is sissifying: decide yes.
 
 Definition: a lacy stockings is sissifying: decide yes.
 
-
 A black-and-yellow striped stockings is a kind of stockings. There is 1 black-and-yellow striped stockings. A black-and-yellow striped stockings is unique. A black-and-yellow striped stockings is usually biological. A black-and-yellow striped stockings is usually dense. The printed name of black-and-yellow striped stockings is "[clothing-title-before]black and yellow striped stockings[clothing-title-after]". The text-shortcut of black-and-yellow striped stockings is "bys". Understand "black", "black and yellow", "yellow" as black-and-yellow striped stockings.
 
 Definition: a black-and-yellow striped stockings is yellow themed: decide yes.
@@ -483,7 +463,6 @@ To say ShortDesc of (C - a black-and-yellow striped stockings):
 
 Definition: a black-and-yellow striped stockings is transformation-protected if the class of the player is broodmother.
 
-
 A red-and-white striped stockings is a kind of stockings. There is 1 red-and-white striped stockings. A red-and-white striped stockings is usually biological. A red-and-white striped stockings is usually dense. The printed name of red-and-white striped stockings is "[clothing-title-before]red and white striped stockings[clothing-title-after]". The text-shortcut of red-and-white striped stockings is "rws". Understand "red", "red and white", "white" as red-and-white striped stockings.
 
 To decide which figure-name is clothing-image of (C - a red-and-white striped stockings):
@@ -501,7 +480,6 @@ Definition: a red-and-white striped stockings is transformation-protected if the
 Definition: a red-and-white striped stockings is red themed: decide yes.
 Definition: a red-and-white striped stockings is white themed: decide yes.
 Definition: a red-and-white striped stockings is christmas themed: decide yes.
-
 
 A woven stockings is a kind of stockings. There is 1 transformation-rare woven stockings. A woven stockings is usually wool. A woven stockings is usually dense. The text-shortcut of woven stockings is "wlst".
 
@@ -530,7 +508,6 @@ Definition: a woven stockings is pink themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a woven stockings):
 	if diaper lover > 0 and the number of worn trousers is 0, decide on a random off-stage teddy bear pantyhose.
-
 
 tongue-stockings is a stockings. tongue-stockings is unique. tongue-stockings is biological. tongue-stockings is dense. The printed name of tongue-stockings is "[clothing-title-before]tongue stockings[clothing-title-after]". The text-shortcut of tongue-stockings is "tgsk". Understand "tongue", "stockings" as tongue-stockings.
 
@@ -566,6 +543,5 @@ To decide which number is the initial outrage of (C - tongue-stockings):
 To decide which object is the unique-upgrade-target of (C - a stockings):
 	if there is a worn demonic wearthing and tongue-stockings is off-stage, decide on tongue-stockings;
 	decide on nothing.
-
 
 All Stockings ends here.

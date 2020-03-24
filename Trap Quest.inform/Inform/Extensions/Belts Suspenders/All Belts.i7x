@@ -13,7 +13,6 @@ This is the belt already worn rule:
 		rule fails.
 The belt already worn rule is listed in the belt wearability rules.
 
-
 A suspenders is a kind of belt. The printed name of suspenders is usually "[clothing-title-before]pair of suspenders[clothing-title-after]". The printed plural name of suspenders is usually "[clothing-title-before]pairs of suspenders[clothing-title-after]". The text-shortcut of suspenders is "sus". Understand "pair", "pair of", "garter", "garters", "garterbelt" as suspenders.
 
 To decide which number is the initial outrage of (C - a suspenders):
@@ -92,7 +91,6 @@ Definition: a suspenders is ingredient: decide yes.
 To decide which number is the crafting key of (C - a suspenders):
 	decide on 52.
 
-
 Section - Wearability
 
 suspenders removability rules is a rulebook. The removability rules of suspenders is usually suspenders removability rules.
@@ -103,7 +101,6 @@ This is the cursed stockings prevents removal of suspenders rule:
 			if autoremove is false, say "Your [C] are somehow preventing you!";
 			rule fails.
 The cursed stockings prevents removal of suspenders rule is listed in the suspenders removability rules.
-
 
 a black suspenders is a kind of suspenders. There is 1 black suspenders. A black suspenders is usually nylon. A black suspenders is usually sheer. The printed name of a black suspenders is usually "[clothing-title-before]pair of black sheer suspenders[clothing-title-after]". The printed plural name of a black suspenders is usually "[clothing-title-before]pairs of black sheer suspenders[clothing-title-after]". The text-shortcut of black suspenders is "bsu". Figure of black suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders5.png". Understand "sheer" as black suspenders.
 Definition: a black suspenders is black themed: decide yes.
@@ -116,7 +113,6 @@ To say ClothingDesc of (S - a black suspenders):
 
 To decide which number is the initial outrage of (C - a black suspenders):
 	decide on 3.
-
 
 a bridal sissy-suspenders is a kind of suspenders. There is 1 transformation-rare bridal sissy-suspenders. A bridal sissy-suspenders is usually silk. The printed name of a bridal sissy-suspenders is usually "[clothing-title-before]pair of bridal sissy suspenders[clothing-title-after]". The printed plural name of a bridal sissy-suspenders is usually "[clothing-title-before]pairs of bridal sissy-suspenders[clothing-title-after]". The text-shortcut of bridal sissy-suspenders is "bss". Figure of bridal sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders1.png". Understand "sissy", "suspenders" as bridal sissy-suspenders.
 
@@ -138,7 +134,6 @@ To set up influence of (C - a bridal sissy-suspenders):
 To decide which number is the initial outrage of (C - a bridal sissy-suspenders):
 	decide on 4.
 
-
 The demon belt is a belt. Figure of demon belt is the file "Items/Clothes/Lower/Waist/Belts/belt3.png". The demon belt is unique. The demon belt is leather. The printed name of demon belt is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]demon belt[clothing-title-after]". The text-shortcut of demon belt is "dbl".
 
 To decide which figure-name is clothing-image of (C - demon belt):
@@ -159,7 +154,6 @@ To set up magic state of (C - demon belt):
 Definition: demon belt is transformation-protected: decide yes.
 Definition: demon belt is demonic: decide yes.
 Definition: demon belt is black themed: decide yes.
-
 
 living belt of sturdiness is a belt. living belt of sturdiness is unique. living belt of sturdiness is biological. The printed name of living belt of sturdiness is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]living belt of sturdiness[clothing-title-after]". The text-shortcut of living belt of sturdiness is "lbs".
 
@@ -277,7 +271,6 @@ This is the trousers living belt clash rule:
 			rule fails.
 The trousers living belt clash rule is listed in the trousers wearability rules.
 
-
 a red suspenders is a kind of suspenders. There is 1 transformation-rare red suspenders. A red suspenders is usually nylon. A red suspenders is usually sheer. The printed name of a red suspenders is usually "[clothing-title-before]pair of red suspenders[clothing-title-after]". The printed plural name of a red suspenders is usually "[clothing-title-before]pairs of red suspenders[clothing-title-after]". The text-shortcut of red suspenders is "rss". Figure of red suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders4.png".
 Definition: a red suspenders is red themed: decide yes.
 
@@ -289,7 +282,6 @@ To decide which figure-name is clothing-image of (C - a red suspenders):
 
 To say ClothingDesc of (S - a red suspenders):
 	say "A sexy pair of frilly red suspenders.".
-
 
 a sissy-suspenders is a kind of suspenders. There is 1 transformation-rare sissy-suspenders. A sissy-suspenders is usually silk. The printed name of a sissy-suspenders is usually "[clothing-title-before]pair of sissy suspenders[clothing-title-after]". The printed plural name of a sissy-suspenders is usually "[clothing-title-before]pairs of sissy suspenders[clothing-title-after]". Figure of sissy-suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders2.png". The text-shortcut of sissy-suspenders is "sss". Understand "sissy", "suspenders" as sissy-suspenders.
 
@@ -321,7 +313,6 @@ To say TransformReaction of (C - a sissy-suspenders):
 		say "[variable custom style]I guess this is what I have become. [if the player is male and transGender is 0]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
-
 
 string-belt is a clothing. [No clashes.] The printed name of string-belt is "[clothing-title-before]string belt[clothing-title-after]". The text-shortcut of string-belt is "stb". string-belt is unique. string-belt is hemp. string-belt is manly. Understand "string", "belt" as string-belt. The soak-limit of string-belt is 1.
 
@@ -355,7 +346,6 @@ To say ShortDesc of (C - string-belt):
 
 Definition: string-belt is condom pinnable: decide yes.
 
-
 tongue-belt is a belt. tongue-belt is unique. tongue-belt is biological. The printed name of tongue-belt is "[clothing-title-before]tongue belt[clothing-title-after]". The text-shortcut of tongue-belt is "tgbt". Understand "tongue", "belt" as tongue-belt.
 
 Figure of tongue belt is the file "Items/Clothes/Lower/Waist/Belts/tonguebelt1a.png".
@@ -383,7 +373,6 @@ To decide which object is the unique-upgrade-target of (C - a belt):
 	if C is not demonic and there is a worn demonic wearthing and tongue-belt is off-stage, decide on tongue-belt;
 	decide on nothing.
 
-
 a white suspenders is a kind of suspenders. There is 1 white suspenders. A white suspenders is usually nylon. A white suspenders is usually sheer. The printed name of a white suspenders is usually "[clothing-title-before]pair of white sheer suspenders[clothing-title-after]". The printed plural name of a white suspenders is usually "[clothing-title-before]pairs of white sheer suspenders[clothing-title-after]". The text-shortcut of white suspenders is "wss". Figure of white suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders3.png". Understand "sheer" as white suspenders.
 Definition: a white suspenders is white themed: decide yes.
 
@@ -395,6 +384,5 @@ To say ClothingDesc of (S - a white suspenders):
 
 To decide which number is the initial outrage of (C - a white suspenders):
 	decide on 1.
-
 
 All Belts ends here.

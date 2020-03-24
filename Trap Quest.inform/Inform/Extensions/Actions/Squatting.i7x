@@ -14,7 +14,6 @@ If the humiliation of the player is below this, the player will refuse to expel 
 *!]
 public-squatting-limit is a number that varies. public-squatting-limit is 30000.
 
-
 [!<squatting:Action>*
 
 REQUIRES COMMENTING
@@ -69,6 +68,5 @@ Carry out squatting:
 		humiliate 200;
 		AssSquirt.
 Understand "squat", "squat down", "poo", "poop", "expel", "expel enema", "expel creampie" as squatting.
-
 
 Squatting ends here.

@@ -105,7 +105,6 @@ To say GroundPeeReaction of (M - vampiress):
 To say ClothesPeeReaction of (M - vampiress):
 	say GroundPeeReaction of M.
 
-
 Part 2 - Perception
 
 To decide which number is the outrage tolerance of (M - vampiress):
@@ -314,7 +313,6 @@ To say ThirstResRefusalFlav of (M - vampiress):
 
 To say SwallowDemand of (M - vampiress):
 	say "[speech style of M][one of]'You have permission to nourish yourself with my [semen], slave. Do not be ungracious.'[or]'Swallow like a good whore and you'll be making your mistress very happy.'[or]'You should feel lucky that I've decided to share my gift with you.'[or]'This is a gift... Appreciate that.'[or]'I could make you swallow, if I wanted. But you can do that on your own, can[']t you?'[in random order][roman type][line break]".
-
 
 Section 1 - Attack
 
@@ -559,7 +557,6 @@ To compute striking attack of (M - vampiress):
 	FatigueUp a random number between the difficulty of M and the difficulty of M * 3;
 	passively stimulate vagina from M.
 
-
 [The vampiress has to be "invited in"]
 To say SelectionFrustrated of (M - vampiress):
 	let R be a random number between 1 and 3;
@@ -607,7 +604,6 @@ To decide which number is the instant mess influence of (M - vampiress):
 Definition: vampiress is willing to masturbate: decide yes.
 
 Definition: vampiress is willing to confiscate: decide yes.
-
 
 To say WaddleDiaperCheckFlav of (M - vampiress):
 	say "[BigNameDesc of M] stares at your giant waddle diaper.[line break][speech style of M]'[one of]Now THAT is new to me. Fascinating...'[or]I see that you're still in that rather fascinating undergarment. My my my...'[stopping][roman type][line break]".
@@ -687,7 +683,6 @@ To say ConfiscationDeclarationFlav of (M - vampiress) on (C - a clothing):
 To say ConfiscationAfterFlav of (M - vampiress) on (C - a clothing):
 	say "[speech style of M]'What you SHOULD be saying is [']Yes Mistress, Thank You Mistress.['] And nothing else.'[roman type][line break]".
 
-
 To say TriggeredTrapReactFlav of (M - vampiress):
 	say "[BigNameDesc of M] [one of]puts a hand to [his of M] mouth[or]titters gently[purely at random].[line break][speech style of M]'[one of]Perhaps I should have warned you about that[or]Sorry, I thought you would have noticed that yourself[at random]...'[roman type][line break]";
 	moderateHumiliate;
@@ -700,7 +695,6 @@ To say BouncerBounceTrapReactFlav of (M - vampiress):
 
 To say BecomesAggressive of (M - vampiress):
 	say "[big he of M] takes an offensive stance![line break][speech style of M]'[one of]I think you and I need to have some one-on-one time now, don't you?'[or]I'm sorry, but there's no way I can let you go without having some fun first, now that I've seen you like this...'[in random order][roman type][line break]".
-
 
 Section 3 - Damage
 
@@ -1024,7 +1018,6 @@ To compute successful dominance of (M - vampiress):
 	otherwise:
 		IntDown 1;
 		say "[line break][BigNameDesc of M] kisses you on the cheek and confidently walks away.[line break]You look forward to the next time you can please your [if lady fetish is 2]master[otherwise]mistress[end if]...".
-
 
 Part 4 - Conversation
 

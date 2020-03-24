@@ -108,5 +108,4 @@ Check pulling a pullstring collar:
 		say "[if monster-puller is the player]You pull the ring and then you let go, and you[otherwise]You[end if] feel it start winding back into the collar. Nothing seems to happen.";
 	allocate 6 seconds instead.
 
-
 Pullstring Collar ends here.

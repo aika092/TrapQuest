@@ -116,7 +116,6 @@ This is the remove inappropriate knickers rule:
 		now B is in Holding Pen.
 The remove inappropriate knickers rule is listed in the diaper quest fix rules.
 
-
 Part - Wearability
 
 knickers wearability rules is a rulebook. The wearability rules of knickers is usually knickers wearability rules.
@@ -167,7 +166,6 @@ Report wearing knickers:
 	if the size of penis > the penis-capacity of the noun and the noun is crotch-intact and the noun is pussy covering:
 		unless there is a worn chastity cage, say "Your [ShortDesc of penis] [if penis is exposed]remains visible, peeking[otherwise]peeks[end if] out the side of the fabric.".
 
-
 Check taking off worn knickers:
 	if the noun is cursed:
 		say "Try as you might you cannot find a way to slip your fingers under the fabric of your [printed name of the noun], it's as if it is fused to your skin!";
@@ -180,6 +178,5 @@ Check taking off worn knickers:
 		try tearing off the noun;
 		if the noun is glued:
 			do nothing instead.
-
 
 Knickers Framework ends here.

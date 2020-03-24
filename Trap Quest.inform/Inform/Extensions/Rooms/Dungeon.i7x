@@ -1,6 +1,5 @@
 Dungeon by Rooms begins here.
 
-
 [!<LabyrinthRoom>@
 
 REQUIRES COMMENTING
@@ -72,7 +71,6 @@ REQUIRES COMMENTING
 
 *!]
 Dungeon09 is a sandy labyrinth room. The printed name of Dungeon09 is "Arena". "While it isn't large enough to house many, the arena in the dungeons has seen plenty of use. From the slash marks and broken boards along the wooden walls of the fighting ring, it is very easy to see that the warriors who fought within it had the strength to match. There are a few crude seats around it, and the lighting is a little more complex, with wall torches for those watching and a single metal lantern suspended from the ceiling for the fighters.".
-
 
 [!<dungeon10:LabyrinthRoom>*
 
@@ -300,7 +298,6 @@ REQUIRES COMMENTING
 *!]
 Dungeon41 is a mandatory untrappable labyrinth room. The printed name of Dungeon41 is "Dungeon Shop". "The shop you emerge in would fit into nearly any fantasy RPG, with lines of products sitting on wooden shelves, and with their prices neatly stencilled onto wooden plaques sitting beneath them. All manner of goods are sold here, all at the behest of the massive shopkeeper.". The shape of Dungeon41 is L1/0-0-0-0-1-0.
 
-
 [!<dungeonScenery02:Scenery>*
 
 REQUIRES COMMENTING
@@ -382,7 +379,6 @@ Check turning DungeonScenery06:
 Check pushing DungeonScenery06:
 	try turning the noun instead.
 
-
 [!<stairwell01:LabyrinthRoom>*
 
 REQUIRES COMMENTING
@@ -396,6 +392,5 @@ REQUIRES COMMENTING
 
 *!]
 The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, [Dungeon26,] Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Stairwell01 are in The Dungeon.
-
 
 Dungeon ends here.

@@ -153,7 +153,6 @@ To say MediumDesc of (C - stripy lewd crop top):
 To decide which object is the unique-upgrade-target of (C - stripy lewd crop top):
 	decide on a random off-stage actually sheer tube top.
 
-
 Part 5 - Deep Throat Princess Crop Top
 
 deepthroat princess crop top is a crop top. The printed name of deepthroat princess crop top is "[clothing-title-before]deepthroat princess crop top[clothing-title-after]". The text-shortcut of deepthroat princess crop top is "dpt". deepthroat princess crop top is oral-sex-addiction-influencing.
@@ -183,7 +182,6 @@ Definition: deepthroat princess crop top is royalty themed: decide yes.
 Definition: deepthroat princess crop top is oral sex themed: decide yes.
 Definition: deepthroat princess crop top is white themed: decide yes.
 Definition: deepthroat princess crop top is transformation-protected if the class of the player is princess.
-
 
 Part 6 - Spoiled Crop Top
 

@@ -2,7 +2,6 @@ Milk Taste Addiction by Player begins here.
 
 Part 1 - Calculate Milk Taste Addiction
 
-
 milk-drunk is a number that varies. [Used to track how much milk is in the player's digestive system]
 milk-exercise-bonus is a number that varies. [Used to track how much milk has been digested and so should eventually contribute to strength and dex gain]
 
@@ -39,7 +38,6 @@ To decide which number is the milk taste addiction of the player:
 	if S < 1, decide on 1;
 	decide on S.
 
-
 [!<YourselfIsCraving>+
 
 REQUIRES COMMENTING
@@ -55,9 +53,7 @@ Definition: yourself is desperately craving milk:
 	if MTA > 17 and cold milky > cold milky limit and cold milky <= MTA * cold milky addiction limit, decide yes;
 	decide no.
 
-
 Part 2 - Modify Milk Taste Addiction
-
 
 [!<Player>@<rawMilkTasteAddiction:Integer>*
 
@@ -112,6 +108,5 @@ A time based rule (this is the milk digestion rule):
 	if the remainder after dividing time-earnings by 230 < time-seconds:
 		if cold milky > cold milky limit and the player is not craving milk, MilkTasteAddictDown 1;
 		if milk-drunk > 0, MilkDrunkDown 1.
-
 
 Milk Taste Addiction ends here.

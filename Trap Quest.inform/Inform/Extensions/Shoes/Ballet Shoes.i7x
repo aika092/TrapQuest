@@ -1,6 +1,5 @@
 Ballet Shoes by Shoes begins here.
 
-
 A ballet shoes is a kind of shoes. A ballet shoes is usually cotton. The transform-resistance of a ballet shoes is 1.
 
 Definition: a ballet shoes is pink themed: decide yes.
@@ -31,7 +30,6 @@ Definition: a ballet shoes is transformation-protected:
 
 To set up influence of (C - a ballet shoes):
 	set up submissiveness-based influence of C.
-
 
 Definition: a ballet shoes is sissifying: decide yes.
 
@@ -83,7 +81,6 @@ To decide which number is the unique outrage of (C - a sissy ballet boots):
 To decide which number is the unique cringe of (C - a sissy ballet boots):
 	decide on 6.
 
-
 Part 3 - Thigh High Ballet Boots
 
 A thigh high ballet boots is a kind of ballet shoes. A thigh high ballet boots is usually unique. A thigh high ballet boots is usually latex.
@@ -108,6 +105,5 @@ To decide which number is the unique cringe of (C - a thigh high ballet boots):
 	decide on 3.
 
 Definition: a thigh high ballet boots is transformation-protected if there is a worn ballet corset.
-
 
 Ballet Shoes ends here.

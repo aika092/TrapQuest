@@ -40,7 +40,6 @@ To decide which number is the adult appearance of the player:
 		if C is currently visible, increase B by the adult-influence of C;
 	decide on B.
 
-
 [!<cringeTarget:Thing>*
 
 REQUIRES COMMENTING
@@ -82,7 +81,6 @@ To decide which number is appearance-cringe-level:
 			now O is OC;
 			now appearance-cringe-target is C;
 	decide on O.
-
 
 [!<DecideWhichNumberIsCumulativeCringeLevel>+
 

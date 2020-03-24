@@ -15,7 +15,6 @@ To uniquely set up (C - a swimsuit):
 Definition: a swimsuit is swimming themed: decide yes.
 Definition: a swimsuit is uncovered themed: decide yes.
 
-
 Chapter - Monokini
 
 A monokini is a kind of swimsuit. A monokini is usually crotch-intact. Understand "onepiece", "swimsuit" as monokini. A monokini is usually top-displacable.
@@ -36,7 +35,6 @@ This is the remove inappropriate swimwear rule:
 The remove inappropriate swimwear rule is listed in the diaper quest fix rules.
 
 Chapter - Slutty Monokinis
-
 
 [There are a few different types of monokini, really just for transformation sequence handling.]
 
@@ -70,6 +68,5 @@ To decide which number is the initial outrage of (C - a string monokini):
 To decide which number is the original price of (C - a string monokini):
 	if C is total protection, decide on 3;
 	decide on 1.
-
 
 Swimsuit Framework ends here.

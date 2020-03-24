@@ -236,7 +236,6 @@ To say StrikingSuccessFlav of (M - a robot) on (B - a body part):
 To say StrikingFailureFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]You manage to dodge the blow enough that it doesn't hurt.[or]By swiftly blocking the hit, you manage to avoid getting hurt.[or]You manage to step backwards and dodge it.[at random]".
 
-
 Part 4 - Conversation
 
 Section 1 - Greeting

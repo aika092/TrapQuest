@@ -503,7 +503,6 @@ A later time based rule (this is the mechanic finishes with barbara rule):
 			FavourDown woman-barbara;
 			now the sleep of woman-barbara is 300.
 
-
 To say WaitingFlav of (M - a mechanic):
 	unless the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 5 and woman-barbara is in the location of the player:
 		say WaitingSpeechFlav of M;
@@ -646,7 +645,6 @@ To compute contraption climax of (M - a monster):
 	say "[BigNameDesc of woman-barbara] slinks away, muttering a quiet [speech style of woman-barbara]'Sorry.'[roman type][line break]";
 	vanish woman-barbara.
 
-
 Chapter - Shopkeeper Discount Scene
 
 woman-barbara has a number called shopkeeper-scene.
@@ -664,7 +662,6 @@ Report going when shopkeeper is in the location [of the player ]and woman-barbar
 	[increase the delayed sluttification of woman-barbara by 1;]
 	now the woman-status of woman-barbara is 92;
 	now the shopkeeper-scene of woman-barbara is 1.
-
 
 Chapter - Hotel Hypno Scene
 
@@ -1004,7 +1001,6 @@ Check pulling woman-barbara when the woman-status of woman-barbara is 80 and the
 	now the stool-scene of the noun is 2;
 	vanish the noun instead.
 
-
 Chapter - Throne Scene
 
 woman-barbara has a number called throne-scene.
@@ -1056,7 +1052,6 @@ A time based rule (this is the barbara throne rule):
 			SemenPuddleUp 20 in (the location of W);
 			vanish W.
 
-
 Chapter - Crafting Scene
 
 woman-barbara has a number called crafting-scene.
@@ -1094,7 +1089,6 @@ Report going when the player is in Dungeon37 and the player is an april 2019 top
 				say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
 				ImmediateWomanUnsluttify;
 			say MonsterDesc of W.
-
 
 Part 4 - Wandering
 
@@ -1160,7 +1154,6 @@ This is the woman gives birth to a tentacle monster rule:
 			anger M;
 			rule succeeds.
 The woman gives birth to a tentacle monster rule is listed last in the barbara wandering rules.
-
 
 Part 5 - Protection
 

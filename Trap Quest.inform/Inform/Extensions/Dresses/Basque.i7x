@@ -40,7 +40,6 @@ To decide which figure-name is clothing-image of (C - a white milking basque):
 
 Definition: a white milking basque is white themed: decide yes.
 
-
 A cow print milking basque is a kind of milking basque. The printed name of cow print milking basque is usually "[clothing-title-before]cow print basque[clothing-title-after]". The text-shortcut of cow print milking basque is "cwb". A cow print milking basque is enema-helping.
 
 There is 1 cow print milking basque.

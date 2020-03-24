@@ -452,9 +452,7 @@ The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 To say SexSubmissionFlav of (T - a vine):
 	if T is penetrating a body part, say "[one of]You stay still and let the vines take what they want.[or]You relax and allow the vines to plunder your depths.[or]You surrender to the pleasurable sensations of getting [if inhuman pregnancy > 0]bred[otherwise]plowed[end if] by alien vines.[or]You give into the pleasure and let the vines use you freely.[or]You obediently let the vines claim their prize.[purely at random]".
 
-
 Part - Escaping from Vines
-
 
 [!<CheckPullingVineBoss>+
 

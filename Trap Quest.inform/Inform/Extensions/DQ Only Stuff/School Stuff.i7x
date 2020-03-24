@@ -1,6 +1,5 @@
 School Stuff by DQ Only Stuff begins here.
 
-
 The lesson-teacher of eating-lesson is teacher-hannah.
 
 Part - Ruby Teacher Brooke
@@ -36,7 +35,6 @@ To say StoryAnswer of (M - a teacher-brooke):
 
 To say AdviceAnswer of (M - teacher-brooke):
 	say "[speech style of M]'Just DON'T pee your pants! How do you all struggle with something so simple?!'[roman type][line break]".
-
 
 Part - Amicable Student Jennifer
 
@@ -103,7 +101,6 @@ To say EscapeAnswer of (M - student-lottie):
 To say AdviceAnswer of (M - student-lottie):
 	say "[speech style of M]'Always read the label.'[roman type][line break]".
 
-
 Part - Innocent Student Polly
 
 student-polly is a innocent student.
@@ -134,7 +131,6 @@ To say StoryAnswer of (M - student-polly):
 
 To say WhereAnswer of (M - student-polly):
 	say "[speech style of M]'I thought we were just supposed to do whatever the teachers tell us?'[roman type][line break]".
-
 
 Part - Innocent Student Rachel
 
@@ -193,7 +189,6 @@ To say EscapeAnswer of (M - student-rachel):
 
 To compute teaching of (M - student-rachel):
 	say "[speech style of M]'No, sorry, I'm not any good at this yet. I'm the one who needs extra help...'[roman type][line break]".
-
 
 Part - Nasty Student Tanya
 
@@ -267,7 +262,6 @@ To say AdviceAnswer of (M - student-emily):
 To compute teaching of (M - student-emily):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
-
 Part - Tryhard Student Raye
 
 student-raye is a tryhard student.
@@ -313,7 +307,6 @@ To say EscapeAnswer of (M - student-raye):
 To compute teaching of (M - student-raye):
 	say "[speech style of M]'This is a diaper. Babygirls like us wear them to look cute and because we can't control our tinkles.'[roman type][line break]".
 
-
 Part - Ditzy Student Minnie
 
 student-minnie is a ditzy student.
@@ -356,7 +349,6 @@ To say EscapeAnswer of (M - student-minnie):
 
 To compute teaching of (M - student-minnie):
 	say "[speech style of M]'Peepee comes out of [if the current-rank of M is 4]your down-there[otherwise]the tinkle[end if] place.'[roman type][line break]".
-
 
 Part - Chess Stuff
 
@@ -431,7 +423,6 @@ To compute teaching of (L - chess-lesson):
 			say ". ";
 		say "I'm afraid that until we get two volunteers for this game, or the headmistress gets bored of asking, we're not going to be able to have any other lessons. So for now class is cancelled!'[roman type][line break][big he of M] politely gestures for you all to leave the room.";
 		allocate 6 seconds.
-
 
 [The playing chess rules is a rulebook.]
 
@@ -555,7 +546,6 @@ To compute chess time:
 		if the chess-victor of chess-lesson is 0, say "You have [16 - lost-pieces of chess-lesson] pieces left, and [NameDesc of ST] has [16 - student-lost-pieces of chess-lesson] pieces left.";
 		compute chess move input.
 
-
 To compute opponent chess turn:
 	let ST be the chess-opponent of chess-lesson;
 	now the chess-turn of chess-lesson is 0; [Let's assume this ends their turn]
@@ -656,7 +646,6 @@ To reset chess player trap planning:
 	if chess-move-found is 1, now trapping-move of chess-lesson is chess-random-reset + chess-trapping-move-toughness;
 	otherwise now trapping-move of chess-lesson is 999;
 	if the student-lost-pieces of chess-lesson > 12 or the lost-pieces of chess-lesson > 14, now trapping-move of chess-lesson is 999.
-
 
 To reset chess opponent planning:
 	reset chess opponent great planning;
@@ -951,7 +940,6 @@ To compute checkmate:
 		say ClothingDesc of armband;
 		compute chess win reward.
 
-
 To compute chess win reward:
 	let ST be the chess-opponent of chess-lesson;
 	let M be the lesson-teacher of chess-lesson;
@@ -975,7 +963,6 @@ To compute chess win reward:
 	now nurse is in School11;
 	now receptionist is in School01;
 	now headmistress is in School08.
-
 
 To compute chess loss punishment:
 	now the chess-victor of chess-lesson is 2;
@@ -1252,7 +1239,6 @@ To compute teaching of (L - enema-race-lesson):
 	now bigGameLoop is 0;
 	conclude consenting.
 
-
 Part - Dodgeball
 
 dodgeball-lesson is a lesson. The lesson-teacher of dodgeball-lesson is teacher-brooke.
@@ -1515,7 +1501,6 @@ To compute dodgeball messing of (ST - a student) with (M - a monster):
 		say "[BigNameDesc of M] smiles and wrings [his of M] hands.[line break][speech style of M]'[one of]That's nasty. I bet you never thought you'd be doing that in front of your classmates before today, did you? [or]What a pathetic pantypooper! Ah I love my job so much. [or]That's music to my ears! [or]Haha, how do you feel, [student-name of ST]? Disgusting? I should hope so. [or]Heh, that was an instant classic. None of us will ever be able to look at you the same way, [student-name of ST]. [in random order][if the lessonInt1 of ST is 4]And [one of]I'm afraid that means [or][stopping]you're out[one of]. Get off of the pitch, I'll decide on your punishment in a minute[stopping][otherwise][one of]Well what are you waiting for? You have to keep playing, you know[or]Well now you've got to play the rest of the game while stinky, so enjoy that[or]I'm going to enjoy listening to the sounds your nappy makes for the rest of the game, sweetie[or]Aww, poor diddums is going to have to play the rest of [his of ST] dodgeball game with a poopy nappy... does that make you want to cry? I bet it does[or]Try not to make lots of gross sounds as you keep playing now[or]Are you ready to keep playing with your new squishy nappy? Too bad, you don't have a choice[then at random][end if].'[roman type][line break]";
 		increase the lessonInt1 of ST by 2.
 
-
 Part - Kaylee
 
 teacher-kaylee is a diamond-teacher.
@@ -1526,7 +1511,6 @@ Figure of kaylee is the file "NPCs/School/Teacher/teacher12.jpg".
 
 To decide which figure-name is the monster-image of (M - teacher-kaylee):
 	decide on figure of kaylee.
-
 
 To say MonsterDesc of (M - teacher-kaylee):
 	say "This middle-aged brunette [man of M] is dressed completely in white - white vest top, white sheer stockings, white 6 inch platform heels, and a white (and well-used) diaper. [big he of M] is always sporting a wide friendly grin and occasionally absent-mindedly rubs [himself of M] through [his of M] soggy padding.".
@@ -1550,7 +1534,6 @@ To say AdviceAnswer of (M - teacher-kaylee):
 
 To compute teaching of (M - teacher-kaylee):
 	say "[speech style of M]'Oh, am I a teacher now? Oh yeah, I'd forgotten! Haha.'[roman type][line break]".
-
 
 ultimate-lesson is a lesson. The lesson-teacher of ultimate-lesson is teacher-kaylee.
 
@@ -1598,7 +1581,6 @@ To compute toilet predicament punishment:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of ultimate-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";
 		increase incontinence by 3.
 
-
 ultimate-lesson-magic is an ultimate-lesson-object.
 To execute (E - ultimate-lesson-magic):
 	say "[second custom style]Using magic is for grown-ups. Whenever I try to use magic, my body reminds me of how much I need to use my diaper instead.[roman type][line break]Two smaller white runes in the air fly down into your arms. You can feel their magic begin to work their way towards your shoulders...".
@@ -1610,17 +1592,14 @@ A magic consequences rule (this is the ultimate-lesson magic consequence rule):
 			increase rectum by 15;
 			increase suppository by 1.
 
-
 ultimate-lesson-mess is an ultimate-lesson-object.
 Definition: ultimate-lesson-mess is eligible if the implant of it is 0 and diaper messing >= 3.
 To execute (E - ultimate-lesson-mess):
 	say "[second custom style]When my body tells me to go poo, I should do as I'm told and do a number two![roman type][line break]A large circular white rune approaches your bottom and begins to phase inside you...".
 
-
 ultimate-lesson-yes is an ultimate-lesson-object.
 To execute (E - ultimate-lesson-yes):
 	say "[second custom style]A good [boy of the player] should always say yes! When 'yes' is the option that a good obedient baby would make, I will never choose no![roman type][line break]A large white rune shaped a bit like a 'Y' approaches your forehead and begins to settle...".
-
 
 To compute teaching of (L - ultimate-lesson):
 	now bigGameLoop is 2;
@@ -1687,6 +1666,5 @@ To compute teaching of (L - ultimate-lesson):
 			compute mandatory room leaving of M;
 	now bigGameLoop is 0;
 	conclude consenting.
-
 
 School Stuff ends here.

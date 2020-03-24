@@ -39,7 +39,6 @@ To decide which number is the strength-influence of (C - vampiric fangs):
 	if the player is desperately craving semen, decrease X by 2;
 	decide on X.
 
-
 Chapter - Class Outfit
 
 Definition: vampiric fangs (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]

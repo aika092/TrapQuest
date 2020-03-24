@@ -36,7 +36,6 @@ The scrunchie must be the same colour rule is listed in the headgear wearability
 To set up influence of (C - a scrunchie):
 	set up submissiveness-based influence of C.
 
-
 To decide which figure-name is the clothing-image of (C - a scrunchie):
 	if C is pink scrunchie, decide on figure of pink scrunchie;
 	decide on figure of blue scrunchie.
@@ -73,7 +72,6 @@ To decide which number is the initial cringe of (C - a scrunchie):
 	decide on 4.
 
 Definition: a scrunchie is transformation-protected if the player is not pigtailed.
-
 
 Chapter 1 - Pink Scrunchie
 
@@ -143,7 +141,6 @@ To compute class outfit of (H - a pink scrunchie):
 		now cheerleader-summoned is 2;
 		if the player is not ass protected, now the raw-magic-modifier of P is 2.
 
-
 Chapter - Quest
 
 greet-quest is a headgear-clothing-quest.
@@ -158,7 +155,6 @@ To say QuestFlav of (Q - greet-quest):
 
 To say QuestTitle of (Q - greet-quest):
 	say " (attention seeking quest)".
-
 
 Chapter 2 - Blue Scrunchie
 
@@ -202,7 +198,6 @@ To decide which number is the strength-influence of (H - a blue scrunchie):
 To decide which number is the dexterity-influence of (H - a blue scrunchie):
 	if the class of the player is schoolgirl, decide on 0;
 	decide on -1.
-
 
 Chapter - Class Outfit
 
@@ -276,7 +271,6 @@ To compute class outfit of (H - a blue scrunchie):
 			now S is confidence;
 			say "[bold type]White cotton stockings appear around your [ShortDesc of thighs]![roman type][line break]".
 
-
 Chapter - Quest
 
 recipe-quest is a headgear-clothing-quest.
@@ -304,7 +298,6 @@ To compute generic first time class reward of (Q - recipe-quest) on (C - a cloth
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C.
-
 
 Chapter 3 - Monkey Scrunchie
 
@@ -404,7 +397,6 @@ To decide which object is the unique-upgrade-target of (C - a scrunchie):
 	if diaper lover > 0, decide on a random off-stage monkey scrunchie;
 	decide on nothing.
 
-
 Chapter 6 - Condom Pigtails
 
 A condom pigtails is a pigtail-scrunchie. A condom pigtails is latex. A condom pigtails is not roleplay. The text-shortcut of a condom pigtails is "cndp".
@@ -430,6 +422,5 @@ Definition: a condom pigtails is transformation-protected: decide yes.
 Definition: a condom pigtails is roleplay: decide no.
 
 Definition: a condom pigtails is semen themed: decide yes.
-
 
 Scrunchies ends here.

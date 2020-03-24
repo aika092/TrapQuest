@@ -144,5 +144,4 @@ Definition: yourself is too high to see:
 	if the player is flying and playerRegion is Woods, decide yes;
 	decide no.
 
-
 Flight ends here.

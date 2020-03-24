@@ -1,6 +1,5 @@
 Cookie by Food begins here.
 
-
 A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a cookie is "cas".
 
 To say ExamineDesc of (C - a cookie):
@@ -17,7 +16,6 @@ To say ExamineDesc of (C - a cookie):
 
 To say ShortDesc of (C - a cookie):
 	say "cookie".
-
 
 cookie-poison-timer is a number that varies.
 
@@ -58,6 +56,5 @@ a time based rule (this is the cookie poison decay rule):
 		if cookie-poison-timer <= 0:
 			say "[bold type]The drug from the cookie seems to have run its course and you are able to move normally again.[roman type][line break]";
 			now cookie-poison-timer is 0.
-
 
 Cookie ends here.

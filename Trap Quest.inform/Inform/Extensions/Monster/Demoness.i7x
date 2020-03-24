@@ -169,7 +169,6 @@ To DifficultyUp (M - a demoness) by (X - a number):
 
 Part 1 - Misc Flavour
 
-
 To say SummoningFlav of (M - a demoness):
 	if the location of the player is Woods30, say "You hear a piercing shriek from inside the statue, followed by a rash of cruel laughter. The patch of grass between the statue's legs catches fire, and a [printed name of M] materialises in a burst of flames, licking... something off [his of M] lower lip.";
 	otherwise say "You hear the sound of inhuman laughter.".
@@ -426,7 +425,6 @@ To compute (M - a demoness) seeking (D - a direction):
 		now the channelling of M is 0;
 		say "[one of][line break][speech style of M]'Did you not hear me?! On your knees bitch before I end you!'[roman type][line break][or][stopping]";
 	compute monstermotion reactions of M.
-
 
 Part 4 - Combat
 
@@ -844,7 +842,6 @@ This is the demoness floor heating rule:
 			otherwise BodyRuin 2;
 		now the channelling of M is 1.
 The demoness floor heating rule is listed in the demoness attack rules.
-
 
 To say FriendlySexReleaseRefusalSpeech of (M - a demoness):
 	unless M is penetrating asshole:
@@ -1431,7 +1428,6 @@ To say MasturbationAfterFlav of (M - a demoness):
 To say DQMasturbationResistReactionFlav of (M - a demoness):
 	say "[BigNameDesc of M] cackles.[line break][speech style of M]'[one of]Your defiance is sickening, and arousing all at once. How do you do it, slave?'[or]I shall have your [if the player is male]seed[otherwise]juices[end if] one way or another mortal, you will not be free until I get it!'[or]Does it shame you mortal? How I can pleasure you through such thick layers? Is this is why you resist me?'[or]Undermining me will only get you thicker diapers, AND thicker chains!'[in random order][roman type][line break]".
 
-
 Definition: a demoness (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
  	decide no.
@@ -1455,7 +1451,6 @@ To compute forcefeed round (N - a number) of (M - a demoness):
 
 To say DQFeedingResistReactionFlav of (M - a demoness):
 	say "[speech style of M]'[one of]Yes, yes struggle for me baby, all of is in vein as I make your throat as wet as I'm getting!'[or]As if I needed a reason to pull that hair of yours~'[or]Oh, because this worked SO well before~'[or]Mmmmm, have some fight still? Precious, simply adorable...'[or]Maybe this squirming is energy better spent on something useful, like soiling that diaper of yours... or perhaps putting on a masturbatory show for your better~'[then at random][roman type][line break]".
-
 
 Part 6 - Conversation
 
@@ -1543,7 +1538,6 @@ To say VanityAccepted of (M - a demoness):
 
 To say VanityAnnoyed of (M - a demoness):
 	say "[speech style of M]'Fine, if you stop bothering me.'[roman type][line break]".
-
 
 Section 2 - Questioning
 

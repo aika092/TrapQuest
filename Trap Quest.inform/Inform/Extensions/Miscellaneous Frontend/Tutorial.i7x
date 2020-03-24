@@ -15,7 +15,6 @@ This is the tutorial start rule:
 	if earnings is starting-earnings, now tutorial is 1;
 	follow the quit rule.
 
-
 To say TutorialCapsule:
 	if tutorial is 1:
 		if the player is female, now the flesh volume of breasts is 6;
@@ -224,6 +223,5 @@ To start the tutorial:
 	resolve graphics windows mayhem;
 	fix window overhang;
 	if the player is able to automatically slap or the player is able to automatically knee or the player is able to automatically kick, do nothing.
-
 
 Tutorial ends here.

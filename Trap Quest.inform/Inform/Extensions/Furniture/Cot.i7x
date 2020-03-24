@@ -1,6 +1,5 @@
 Cot by Furniture begins here.
 
-
 A cot is a kind of furniture. A cot is not portable. There is 1 cot. The printed name of cot is "[TQlink of item described]cot[TQxlink of item described][verb-desc of item described]". The text-shortcut of a cot is "cot".
 
 To say ExamineDesc of (C - a cot):

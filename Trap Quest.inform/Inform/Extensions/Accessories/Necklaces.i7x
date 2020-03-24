@@ -23,7 +23,6 @@ To decide which figure-name is the examine-image of (R - a necklace):
 	if R is pure diamond, decide on figure of pure diamond necklace;
 	decide on figure of solid gold necklace.
 
-
 To say ShortDesc of (C - a necklace):
 	say "[accessory-colour of C] necklace".
 

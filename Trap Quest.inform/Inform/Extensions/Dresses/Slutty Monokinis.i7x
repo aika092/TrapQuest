@@ -70,7 +70,6 @@ Definition: a grey string monokini is grey themed: decide yes.
 
 Part 4 - Black String Monokini
 
-
 A black string monokini is a kind of string monokini. There is 1 black string monokini. The text-shortcut of black string monokini is "bmk".
 
 The printed name of black string monokini is usually "[clothing-title-before]black string swimsuit[clothing-title-after]".
@@ -92,7 +91,6 @@ To say MediumDesc of (C - a black string monokini):
 Definition: a black string monokini is black themed: decide yes.
 
 Part 5 - Blue Slut Monokini
-
 
 A blue slut monokini is a kind of slut monokini. There is 1 blue slut monokini.
 
@@ -119,7 +117,6 @@ Definition: a blue slut monokini is blue themed: decide yes.
 
 Part 6 - Pink Minimalist Monokini
 
-
 A pink minimalist monokini is a kind of minimalist monokini. There is 1 pink minimalist monokini. A pink minimalist monokini is usually ridiculously low cut. A pink minimalist monokini is usually sheer-when-wet. The text-shortcut of pink minimalist monokini is "pmm".
 
 The printed name of pink minimalist monokini is usually "[clothing-title-before]pink minimalist swimsuit[clothing-title-after]".
@@ -144,7 +141,6 @@ To say MediumDesc of (C - a pink minimalist monokini):
 Definition: a pink minimalist monokini is pink themed: decide yes.
 
 Part 7 - Blue Minimalist Monokini
-
 
 A blue minimalist monokini is a kind of minimalist monokini. There is 1 blue minimalist monokini. The text-shortcut of blue minimalist monokini is "bmm".
 
@@ -208,7 +204,6 @@ To say MediumDesc of (C - a purple minimalist monokini):
 
 Definition: a purple minimalist monokini is purple themed: decide yes.
 
-
 Part 10 - White Slut Monokini
 
 A white slut monokini is a kind of slut monokini. There is 1 white slut monokini. The text-shortcut of white slut monokini is "wm". A white slut monokini is neck exposing.
@@ -231,7 +226,6 @@ To set up influence of (C - a white slut monokini):
 	now C is titfuck-addiction-influencing.
 
 Definition: a white slut monokini is white themed: decide yes.
-
 
 Part 11 - Black Mesh Monokini
 
@@ -277,6 +271,5 @@ To set up influence of (C - a white string cameltoe monokini):
 	now C is titfuck-addiction-influencing.
 
 Definition: a white string cameltoe monokini is white themed: decide yes.
-
 
 Slutty Monokinis ends here.

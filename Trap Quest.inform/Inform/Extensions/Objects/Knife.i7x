@@ -1,6 +1,5 @@
 Knife by Objects begins here.
 
-
 A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. A knife has a number called charge.
 
 Figure of knife is the file "Env/Hotel/knife1.png".
@@ -109,6 +108,5 @@ Report knifing:
 Understand "cut [something] with [something]", "slice [something] with [something]", "destroy [something] with [something]", "remove [something] with [something]" as knifing it with.
 Check cutting when the player is in Hotel19:
 	try knifing the noun with a random knife instead.
-
 
 Knife ends here.

@@ -14,7 +14,6 @@ To FavourReset (M - a monster):
 To decide which number is the default favour of (M - a monster):
 	decide on 13.
 
-
 Chapter 1 - Check Perception
 
 hypno-curtsey-trigger is a number that varies.
@@ -135,7 +134,6 @@ To say CurtseyReactionFlav of (M - a monster):
 	otherwise:
 		say "[BigNameDesc of M] seems completely unaffected[one of] by your sudden display of submissive humility[or][or][cycling].".
 
-
 Chapter 2 - Aggro Framework
 
 Definition: a monster (called M) is aware: [Can it notice the player on its own?]
@@ -148,7 +146,6 @@ Definition: a monster (called M) is aware: [Can it notice the player on its own?
 Definition: a person is reactive if it is in the location of the player. [Can it react to things it sees the player do?]
 Definition: yourself is reactive: decide no.
 Definition: a monster is reactive if it is awake and it is intelligent and it is undefeated and it is in the location of the player. [Can it react to things it sees the player do?]
-
 
 To decide which number is the aggro limit of (M - a monster): [The number at which they turn unfriendly]
 	decide on 10.
@@ -223,7 +220,6 @@ To decide which number is the bimbo tolerance of (M - a monster): [What number o
 
 To decide which number is the outrage tolerance of (M - a monster): [What number of outrage they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
 	decide on 20.
-
 
 To compute sudden babification of (M - a monster):
 	if M is intelligent:
@@ -301,7 +297,6 @@ To say CringeDisapprovalFlav of (M - a monster):
 	if M is intelligent, say "[BigNameDesc of M] [one of]coughs[or]purses [his of M] lips[or]tuts[or]smirks[or]smiles[in random order].[line break][speech style of M]'[one of]Do you realise how childish you look right now?'[or]You're looking more and more like a baby, you know.'[or]An adult wouldn't let me catch [him of the player] looking like that...'[or]You're really begging to be treated like a child, aren't you?'[or]I can't believe how immature you look right now!'[or]You aren't exactly a beacon of [maturity] right now, you know.'[or]That is NOT how you go about getting me to respect your [maturity].'[or]You're discarding all semblance of [maturity] then, are you?'[in random order][roman type][line break]";
 	otherwise say "[BigNameDesc of M] seems to react badly to your new appearance! ".
 
-
 Section - Aggro Stages
 
 Definition: a monster (called M) is normally annoyed:
@@ -354,7 +349,6 @@ To compute appearance assessment of (M - a monster):
 	if M is intelligent, say "looks you up and down.";
 	otherwise say "pauses, taking notice of you.".
 
-
 Chapter 3 - Modifying Aggro
 
 To anger (M - a monster): [This should bring the monster just into unfriendly territory.]
@@ -393,7 +387,6 @@ To FavourDown (M - a monster) by (N - a number) with consequences:
 To FavourDown (M - a monster) by (N - a number):
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0, decrease the favour of M by N.
-
 
 Part 2 - Reflection
 
@@ -443,7 +436,6 @@ To say mortifiedOutfit:
 	say ", which makes you very self-conscious about your [MediumDesc of appearance-outrage-target], and [one of]sends shivers of mortifying humiliation down your spine[or]feel even more nervous about who might be watching you in this awkward situation[or]feel so uneasy that blood rushes to your head[if the player is upright] and you almost lose your balance[otherwise] and you shudder uncontrollably[end if][or]consumes you with an overwhelming sense of shame[or]find yourself in disbelief that you've allowed yourself to be demeaned like this[or]for a moment feel so bashful and vulnerable that you lose your composure[or]for a moment feel so incredibly shy that you almost want to just hide in a dark corner until the time runs out[or]causes you to cringe with humiliation[in random order]";
 	humiliate 10 * calculated-appearance-outrage-level.
 
-
 [!<PersonIsSluttilyDressed>+
 
 We use this at the appropriate point during a 'say' command during the perception computation of an intelligent monster to trigger the humiliation and the extra text
@@ -474,6 +466,5 @@ Definition: a person is sluttily dressed:
 		decide yes;
 	decrease aroused-monsters by 1;
 	decide no.
-
 
 Perception ends here.

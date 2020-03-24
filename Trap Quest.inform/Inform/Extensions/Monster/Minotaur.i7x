@@ -30,7 +30,6 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - minotaur):
 	if lady fetish is 0 and mythical creature fetish is 1, decide on figure of minotaur cutscene 4;
 	decide on figure of missing NPC.
 
-
 The text-shortcut of minotaur is "mi". Understand "large", "hulk" as minotaur.
 
 To say ShortDesc of (M - minotaur):
@@ -43,7 +42,6 @@ Definition: minotaur is willing to do oral: decide no.
 
 Definition: minotaur is willing to do titfucks: decide no.
 
-
 To say LongDickDesc of (M - a minotaur):
 	if pregnancy fetish is 1 and lactation fetish is 1 and inhuman pregnancy > 0 and mythical creature fetish is 1:
 		if full-lady fetish is 1, say "equine strap-on";
@@ -51,7 +49,6 @@ To say LongDickDesc of (M - a minotaur):
 	otherwise:
 		if full-lady fetish is 1, say "15 inch strap-on";
 		otherwise say "15 inch penis".
-
 
 To say MonsterDesc of (M - minotaur):
 	if mythical creature fetish is 1, say "A naked bull-[man of M] with rippling muscles covering [his of M] entire body. [big his of M] face is bestial, covered in thick [one of]auburn[or]gold[or]black[or]brown[or]ashen[sticky random] fur, with big flat nostrils and beady black eyes. Two long grey horns extend from just above [his of M] floppy bovine ears, one of which is pierced with a small [one of]brass[or]iron[or]gold[or]onyx[sticky random] ring. [big he of M] is seething with rage, [his of M] wide shoulders covered in a fine sheen of sweat and [if lady fetish is 1][his of M] heavy bosom[otherwise][his of M] thick barrel chest[end if] heaves with every breath. Between [his of M] legs is a fully erect, [LongDickDesc of M], which twitches and throbs as if it could blow at any time.";
@@ -146,7 +143,6 @@ To compute delay of (M - minotaur):
 	say "[BigNameDesc of M] stands over you, [his of M] [LongDickDesc of M] quickly raising to full mast in front of your face.";
 	if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M.
 
-
 Part 2 - Motion, Seeking and Sleeping
 
 To compute monstermotion of (M - minotaur):
@@ -168,7 +164,6 @@ To compute sleep reduction of (M - minotaur):
 		if the M is awake:
 			now the sleep of M is 0;
 			if M is in the location of the player, say "[BigNameDesc of M] wakes up!".[Very slight deviation from the default.]
-
 
 Part 4 - Combat
 
@@ -402,10 +397,8 @@ To set up sex length of (M - minotaur) in (B - a fuckhole):
 	now the sex-length of M is 0;[preventative measure to prevent bugginess]
 	set up sex length (the health of M / 10) of M in B.
 
-
 To say AssholePenetrationFlav of (M - minotaur):
 	say "[BigNameDesc of M] [one of]forcefully pushes [his of M][or]clumsily rams [his of M][or]jams [his of M][or]forces [his of M][at random] [LongDickDesc of M] into your [asshole], and starts fucking you furiously! [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise]Your [asshole] is instantly stretched beyond belief.[end if]".
-
 
 To say VaginaPenetrationFlav of (M - minotaur):
 	say "[BigNameDesc of M] stares at your body and sniffs your [vagina], assessing you. [big he of M] seems to make up [his of M] mind that you are a suitable breeding partner and poises [his of M] huge penis with the tip at the entrance to your [vagina]. [one of]With very little effort, [he of M] forces [his of M][or]With no effort at all, [he of M] shoves [his of M][or]Without the slightest hint of difficulty [he of M] rams [his of M][or]Without pausing, [he of M] forces [his of M][at random] giant [DickDesc of M] in, and starts fucking you vigorously. [if the sex-length of M is 0]Within seconds, [he of M] has started cumming inside you![otherwise if the class of the player is cowgirl and mythical creature fetish is 1]You find yourself mooing submissively as your [vagina] is instantly stretched beyond belief by [his of M] huge bull [DickDesc of M].[otherwise if pregnancy fetish is 1 and mythical creature fetish is 1]Your [vagina] is instantly - and painfully - stretched beyond belief.[one of][line break][variable custom style]Could I get pregnant from this bull?![roman type][line break][or][stopping][otherwise]Your [vagina] is instantly - and painfully - stretched beyond belief.[end if]".
@@ -484,6 +477,5 @@ To loot (M - minotaur):
 		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
-
 
 Minotaur ends here.

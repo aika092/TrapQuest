@@ -68,7 +68,6 @@ To say ClothingDesc of (W - teddy bear mittens):
 Definition: rubber mittens is pink themed: decide yes.
 Definition: rubber mittens is blue themed: decide yes.
 
-
 teddy bear mittens is womanly.
 Definition: teddy bear mittens is bear themed: decide yes.
 Definition: teddy bear mittens is pink themed: decide yes.
@@ -94,6 +93,5 @@ This is the inflated mittens prevent manual dexterity rule:
 		if manual hands attempt is 1, say "Your [inflated rubber mittens] mean you don't have the manual dexterity to do that.";
 		rule fails.
 The inflated mittens prevent manual dexterity rule is listed in the hands restriction rules.
-
 
 Mittens ends here.

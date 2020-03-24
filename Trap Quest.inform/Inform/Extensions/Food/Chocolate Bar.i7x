@@ -1,10 +1,8 @@
 Chocolate Bar by Food begins here.
 
-
 A chocolate bar is a kind of candy. The printed name of chocolate bar is "[TQlink of item described]chocolate bar[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of chocolate bar is "[TQlink of item described]bars of chocolate[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolate bar is "cb". There is 1 chocolate bar.
 To say ExamineDesc of (B - a chocolate bar):
 	say "A small bar of chocolate, still in its wrapper. The label says 'Experimental molecule replication nanobots will bulk up whatever organic matter they come across! Be healed in seconds!'".
-
 
 Figure of chocolate is the file "Items/Collectibles/chocolate1.jpg".
 
@@ -47,6 +45,5 @@ To compute (M - a robochef) cooking (I - a chocolate bar):
 		if a random number between 1 and 3 is 1, now the quality of D is -2;
 		now the fat of D is a random number between 2 and 3;
 		now D is retained by M.
-
 
 Chocolate Bar ends here.

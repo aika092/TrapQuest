@@ -73,5 +73,4 @@ To check shopstealing of (M - a monster):
 			increase the stolen-aware of shopkeeper by 1;
 			anger shopkeeper.
 
-
 Teleporting and Dragging ends here.

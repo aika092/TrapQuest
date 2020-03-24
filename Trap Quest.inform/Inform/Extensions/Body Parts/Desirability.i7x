@@ -35,7 +35,6 @@ REQUIRES COMMENTING
 *!]
 targeted-body-part is an object that varies.
 
-
 [!<DecideWhichNumberIsTotalDesirability>+
 
 REQUIRES COMMENTING
@@ -64,7 +63,6 @@ To choose a sex method:
 				if targeting-RNG <= 0:
 					now targeted-body-part is B;
 					break.
-
 
 [!<BodyPartIsMostDesirable>+
 
@@ -181,6 +179,5 @@ Let's check all the things that might increase the chances of anal sex.
 
 *!]
 the butt slut eligibility rules is a rulebook.
-
 
 Desirability ends here.

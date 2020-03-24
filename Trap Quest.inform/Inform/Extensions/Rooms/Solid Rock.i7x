@@ -135,5 +135,4 @@ REQUIRES COMMENTING
 			say "[We] [can't go] that way." (A);
 		stop the action.]
 
-
 Solid Rock ends here.

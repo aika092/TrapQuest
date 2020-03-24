@@ -1,6 +1,5 @@
 Bimbo by Player Description begins here.
 
-
 [!<SayBimboDesc>+
 
 REQUIRES COMMENTING

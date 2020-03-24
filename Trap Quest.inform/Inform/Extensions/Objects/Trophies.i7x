@@ -1,6 +1,5 @@
 Trophies by Objects begins here.
 
-
 [!<Trophy>@
 
 REQUIRES COMMENTING
@@ -21,9 +20,7 @@ To decide which number is the trophy-colour of (T - a trophy):
 To BackgroundRender (T - trophy) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle trophy-colour of T in the current focus window at X1 by Y1 with size DX by DY.
 
-
 A trophy has a number called trophy-mode.
-
 
 Check taking trophy:
 	if the player is in School31, say "Unfortunately it seems to have been fixed in place!" instead.
@@ -47,7 +44,6 @@ Carry out TrophySwitching:
 	if the noun is carried, force inventory-focus redraw; [Forces redraw of inventory window]
 	allocate 3 seconds.
 
-
 bbc-trophy is a trophy. The printed name of bbc-trophy is "[TQlink of item described]big black cock trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bbc-trophy is "bbct". Understand "big", "black", "black cock" as bbc-trophy.
 
 To say ExamineDesc of (T - bbc-trophy):
@@ -63,7 +59,6 @@ Carry out TrophySwitching bbc-trophy:
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type][men of shopkeeper] of all races have returned to their normal levels of virility.[roman type][line break]";
 		now the trophy-mode of bbc-trophy is 0.
-
 
 pain-trophy is a trophy. The printed name of pain-trophy is "[TQlink of item described]dominatrix trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pain-trophy is "dmnt". Understand "dominatrix" as pain-trophy.
 
@@ -82,7 +77,6 @@ Carry out TrophySwitching pain-trophy:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]your experience of pain has returned to normal, and exposure to it will gradually make you more submissive.[roman type][line break]";
 		now the trophy-mode of pain-trophy is 0.
 
-
 expel-trophy is a trophy. The printed name of expel-trophy is "[TQlink of item described]sphincter trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of expel-trophy is "spht". Understand "sphincter" as expel-trophy.
 
 To say ExamineDesc of (T - expel-trophy):
@@ -98,7 +92,6 @@ Carry out TrophySwitching expel-trophy:
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you can now once again control when you release liquid from your butthole, but holding it is painful over time.[roman type][line break]";
 		now the trophy-mode of expel-trophy is 0.
-
 
 bust-trophy is a trophy. The printed name of bust-trophy is "[TQlink of item described]bust trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bust-trophy is "bstt". Understand "bust" as bust-trophy.
 
@@ -116,7 +109,6 @@ Carry out TrophySwitching bust-trophy:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]your breast sensitivity and outrageousness has returned to normal.[roman type][line break]";
 		now the trophy-mode of bust-trophy is 0.
 
-
 trip-trophy is a trophy. The printed name of trip-trophy is "[TQlink of item described]heel trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of trip-trophy is "helt". Understand "heel" as trip-trophy.
 
 To say ExamineDesc of (T - trip-trophy):
@@ -130,7 +122,6 @@ Carry out TrophySwitching trip-trophy:
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]your heel balance and likeliness to be tripped has returned to normal.[roman type][line break]";
 		now the trophy-mode of trip-trophy is 0.
-
 
 condom-trophy is a trophy. The printed name of condom-trophy is "[TQlink of item described]condom trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-trophy is "cdmt". Understand "condom" as condom-trophy.
 
@@ -148,7 +139,6 @@ Carry out TrophySwitching condom-trophy:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]people's attitude to condoms and the addictiveness of creampies has returned to normal.[roman type][line break]";
 		now the trophy-mode of condom-trophy is 0.
 
-
 ejaculate-trophy is a trophy. The printed name of ejaculate-trophy is "[TQlink of item described]semen trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of ejaculate-trophy is "smnt". Understand "semen" as ejaculate-trophy.
 
 Definition: ejaculate-trophy is fetish appropriate if ((the player is female or TG fetish > 0) and pregnancy fetish is 1) or bukkake fetish is 1.
@@ -165,7 +155,6 @@ Carry out TrophySwitching ejaculate-trophy:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]the volume of everyone's ejaculation has returned to normal and that drinking and digesting [semen] will once again increase your addiction to it.[roman type][line break]";
 		now the trophy-mode of ejaculate-trophy is 0.
 
-
 diaper-trophy is a trophy. The printed name of diaper-trophy is "[TQlink of item described]diaper trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper-trophy is "dipt". Understand "diaper" as diaper-trophy.
 
 Definition: diaper-trophy is fetish appropriate if diaper quest is 1.
@@ -181,7 +170,6 @@ Carry out TrophySwitching diaper-trophy:
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]people will once again consider the shape of a diaper being visible through other clothing to be childish, and also people who have instructed you to stay in diapers will once again give you permission to stop wearing them after finding that you have managed to stay dry enough times when they check you.[roman type][line break]";
 		now the trophy-mode of diaper-trophy is 0.
-
 
 magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item described]magic wand trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of magic-trophy is "mgwt". Understand "magic", "wand" as magic-trophy.
 
@@ -208,7 +196,6 @@ A magic consequences rule (this is the trophy magic consequence rule):
 		otherwise:
 			AssFill 1. [should trigger overflow]
 
-
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of magic-trophy is 0:
@@ -217,6 +204,5 @@ Carry out TrophySwitching magic-trophy:
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";
 		now the trophy-mode of magic-trophy is 0.
-
 
 Trophies ends here.

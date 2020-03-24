@@ -38,5 +38,4 @@ REQUIRES COMMENTING
 To uniquely destroy (T - a thing): [Are there any special rules we need to follow?]
 	do nothing.
 
-
 Destroying ends here.

@@ -9,7 +9,6 @@ To compute default friendly boredom of (M - a monster):
 	bore M for 150 seconds;
 	if M is in the location of the player, say BecomesBoredFlav of M.
 
-
 To compute interaction of (M - a monster):
 	if M is undefeated and M is not caged, compute protection of M.
 

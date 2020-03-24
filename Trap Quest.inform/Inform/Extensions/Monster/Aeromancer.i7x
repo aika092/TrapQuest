@@ -33,7 +33,6 @@ Figure of aeromancer 1 is the file "NPCs/Dungeon/Aeromancer/aeromancer1.png".
 Figure of aeromancer 2 is the file "NPCs/Dungeon/Aeromancer/aeromancer2.png".
 Figure of aeromancer 3 is the file "NPCs/Dungeon/Aeromancer/aeromancer3.png".
 
-
 Figure of aeromancer interact 1 is the file "Special/Cutscene/cutscene-aeromancer-interact1.png".
 Figure of aeromancer interact 2 is the file "Special/Cutscene/cutscene-aeromancer-interact2.png".
 Figure of aeromancer interact 3 is the file "Special/Cutscene/cutscene-aeromancer-interact3.png".
@@ -154,7 +153,6 @@ To compute (M - a monster) stomping (N - an aeromancer):
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.
 
-
 Definition: an aeromancer (called M) is distracted:
 	if inflation fetish is 1 and M is reactive and (M is uninterested or M is friendly):
 		let N be a random undefeated fairy in the location of M;
@@ -265,7 +263,6 @@ To display interaction of (M - an aeromancer):
 		otherwise:
 			alwayscutshow figure of aeromancer interact 4 for M.
 
-
 Part 3 - Aeromancer Science
 
 To compute aeromancer science of (M - an aeromancer):
@@ -338,7 +335,6 @@ To compute aeromancer science of (M - an aeromancer):
 		SexAddictUp 1;
 	say "[speech style of M]'[one of]Whew, that was awesome!'[or]Thanks for your help.'[or]Interesting...'[or]Well that was unexpected...'[or]Curiouser and curiouser.'[in random order][roman type][line break][BigNameDesc of M] writes a scribble in [his of M] pocket book and then closes it.".
 
-
 Part 4 - Combat
 
 Definition: an aeromancer (called M) is actually interested:
@@ -405,7 +401,6 @@ To compute ballooning of (M - an aeromancer):
 To compute unique dislodging of (M - an aeromancer):
 	now the balloon of M is 1.
 
-
 Section 1 - Attack
 
 To compute the flying player taunting of (M - an aeromancer):[TODO: angry aeromancers actually mess with you.]
@@ -435,7 +430,6 @@ To compute fuckhole sex of (M - an aeromancer): [separated these out so it's les
 	if M is penetrating asshole, ruin asshole;
 	otherwise ruin vagina;
 	decrease the sex-length of M by 1.
-
 
 To compute anal sex of (M - an aeromancer):
 	compute fuckhole sex of M.
@@ -581,7 +575,6 @@ To say PresentAcceptanceFlav of (M - an aeromancer):
 
 To say PresentRejectionFlav of (M - an aeromancer):
 	say "[BigNameDesc of M] laughs at your request.[line break][speech style of M]'Haha, no, that's not going to happen!'[roman type][line break]".
-
 
 To say ThreesomePrep of (M - a monster) with (N - an aeromancer) in (F - asshole):
 	say "A strong gust of wind spins you around, leaving you facing [him of N] as [NameDesc of M] pulls apart your [AssDesc].".
@@ -844,7 +837,6 @@ To oral dominate (M - an aeromancer):
 		say AfterDominationComment 4 of M;
 	if sexual-penis-length >= 4, BlowGet;
 	orgasm.
-
 
 To vaginal dominate (M - an aeromancer):[TODO: Consolidate]
 	if sexual-penis-length >= 4, say "You force [NameDesc of M] onto [his of M] back, knocking the wand out of [his of M] hand. It seems to react to your touch, crackling with energy as solid gold chains appear all over the aeromancer's body, binding [him of M] up like a thanksgiving turkey. You smile from ear to ear, smacking [if M is ballooned][his of M] over-sized tits with your brand new magic stick[otherwise]the wand against your hand like your very own nightstick[end if]. [line break][speech style of M]'What are you going to do with me?'[roman type][line break]You offer a silent answer, lining up your [sexual-player-penis] with [his of M] slit.";

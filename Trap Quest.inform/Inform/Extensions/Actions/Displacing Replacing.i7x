@@ -48,7 +48,6 @@ This is the can't displace what's covered up rule:
 				rule fails.
 The can't displace what's covered up rule is listed last in the displacing rules.
 
-
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
@@ -86,7 +85,6 @@ Check pulling worn clothing:
 
 Part 2 - Replacing
 
-
 Replacing is an action applying to one thing.
 
 Check replacing:
@@ -121,6 +119,5 @@ Report replacing:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 Understand "fix [something]", "repair [something]", "replace [something]", "adjust [something]", "unmove [something]" as replacing.
-
 
 Displacing Replacing ends here.

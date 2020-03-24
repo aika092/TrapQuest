@@ -10,5 +10,4 @@ To decide which figure-name is the examine-image of (C - sewing bench):
 To say ExamineDesc of (C - sewing bench):
 	say "Fabric scissors, sewing machines, and more. This bench has everything you would need to mend damaged clothing. To use it, type [bold type]repair (clothing) with (clothing made of same material)[roman type][line break]".
 
-
 Sewing Bench ends here.

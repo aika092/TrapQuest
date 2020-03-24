@@ -1,6 +1,5 @@
 Podium by Objects begins here.
 
-
 podium is a thing. podium is not portable. podium is in Dungeon31. The printed name of podium is "[TQlink of item described]stage[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of podium is "st". Understand "stage" as podium. podium has a number called charge. Figure of podium is the file "Env/Dungeon/podium1.png".
 
 To say ExamineDesc of (C - podium):
@@ -135,6 +134,5 @@ To compute podium action:
 			try entering podium;
 			now auto-pod is 1;
 			now another-turn is 1.
-
 
 Podium ends here.

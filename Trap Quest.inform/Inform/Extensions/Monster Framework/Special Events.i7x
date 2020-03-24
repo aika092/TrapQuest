@@ -186,7 +186,6 @@ Handles any unique effect to be triggered when the player swallows the urine of 
 To compute unique piss drink effect of (M - an object):
 	do nothing.
 
-
 [!<AMonsterIsWillingToBukkake>+
 
 Determines whether or not a monster will pull out or finish on the player's face after oral sex.
@@ -365,7 +364,6 @@ This function can display a relevant image when the player receives an oral crea
 +!]
 [This is moved to TQ Only Stuff]
 
-
 [!<ComputeDeepthroatCreampieOfMonster>+
 
 This function is called whenever a monster is not willing to bukkake the player, and they ejaculate straight down the player's throat. Humiliates the player, and invokes the happy reward function since the player was probably being obedient.
@@ -436,7 +434,6 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 	DoseFill V;
 	now the fill-colour of V is creamy;
 	now V is monster-origin.
-
 
 [!<ComputeAutoSwallowOfMonster>+
 
@@ -1018,7 +1015,6 @@ To compute ghost fleeing of (M - a monster):
 To compute (M - a monster) sleeping (N - a number) after sex:
 	now the sleep of M is N;
 	if newbie tips is 1, say sleeping tip.
-
 
 [!<SayGangAnnounce>+
 

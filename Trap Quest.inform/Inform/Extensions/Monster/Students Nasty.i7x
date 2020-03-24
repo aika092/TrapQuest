@@ -11,7 +11,6 @@ To say MediumDesc of (M - a nasty student):
 To decide which number is the unique vindictiveness of (M - a nasty student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 4.
 
-
 To say FarGoneAppearanceAssessment of (M - a nasty student):
 	say "[BigNameDesc of M] screws up [his of M] face when [he of M] sees you.[line break][speech style of M]'[one of]What the fuck, freak?! Get away from me!!!'[or]OMG, you disgusting whore! Fuck off, just being near you is bad for my reputation.'[or]You are literally the most disgusting person I've ever seen.'[in random order][roman type][line break]".
 
@@ -67,7 +66,6 @@ To compute nonstudent perception of (M - a nasty student):
 [The nasty student has the protection function of a normal monster.]
 To compute (M - a nasty student) protecting against (X - a monster):
 	compute default protecting of M.
-
 
 To say FirstTimeBullyDemandFlav of (M - a nasty student):
 	say "[speech style of M]'[one of]It's not your lucky day today. Get on your knees, [bitch].'[or]Guess what? I'll go easy on you if you get on your knees right now.'[or]You look pretty fun to mess with. Get on your knees.'[at random][roman type][line break]".

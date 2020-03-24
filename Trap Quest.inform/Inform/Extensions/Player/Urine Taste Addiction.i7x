@@ -2,7 +2,6 @@ Urine Taste Addiction by Player begins here.
 
 Part 1 - Calculate Urine Taste Addiction
 
-
 [!<DecideWhichNumberIsTheUrineTasteAddictionInfluenceOfWearthing>+
 
 REQUIRES COMMENTING
@@ -37,7 +36,6 @@ To decide which number is the urine taste addiction of the player:
 	decide on S.
 
 Part 2 - Modify Urine Taste Addiction
-
 
 [!<Player>@<rawUrineTasteAddiction:Integer>*
 
@@ -74,6 +72,5 @@ To UrineTasteAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw urine taste addiction of the player > 1, decrease the raw urine taste addiction of the player by 1.
-
 
 Urine Taste Addiction ends here.

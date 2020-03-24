@@ -191,7 +191,6 @@ This is the book of anal butt slut rule:
 	if there is a worn provoking book of anal, increase the desirability of asshole by 10.
 The book of anal butt slut rule is listed in the butt slut eligibility rules.
 
-
 Carry out browsing book of anal:[If books are never made easier to get, this probably needs to be buffed.]
 	say "You thumb through the book, which is full of incredibly graphic depictions of [one of]the eponymous Brandi[or]'Brandi'[or]a woman named Brandi[at random] engaged in anal sex.";
 	let R be a random number between 1 and 7;
@@ -289,7 +288,6 @@ To compute studying (N - a number) of (M - a monster):
 			say "The [printed name of G] falls open, filling a few with detailed sketches of [NameDesc of M], which slowly meld with the indecipherable script that covers the rest of its pages. The book seems a bit stronger!";
 			now M is notebook-studied.
 
-
 [Considering the player usually has to go three regions to get to the notebook, then run back, the item should be fairly powerful]
 To decide which number is the damage improvement of (W - a notebook):
 	let X be MagicPowerDamage;
@@ -322,6 +320,5 @@ The notebook specific recipe rule is listed in the specific recipe rules.
 To compute recipe specific cursing of (T - a notebook):
 	now T is bland;
 	if the noun is not pocketbook, now T is cursed.
-
 
 Pocketbooks ends here.

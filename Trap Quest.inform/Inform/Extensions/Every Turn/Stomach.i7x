@@ -1,6 +1,5 @@
 Stomach by Every Turn begins here.
 
-
 [!<coldTurkey:Integer>*
 
 How long has the player starved themselves of semen?
@@ -57,7 +56,6 @@ Definition: yourself is very thirsty:
 Definition: yourself is extremely thirsty:
 	if the thirst of the player > 4 and the latex-transformation of the player < 5, decide yes;
 	decide no.
-
 
 [!<digestionTimer:Integer>*
 
@@ -131,7 +129,6 @@ A time based rule (this is the compute stomach rule):
 					now last-begged-time is earnings;
 					break.
 
-
 To compute hunger and thirst:
 	let T be the thirst of the player;
 	let N be (the stomach-food of the player / 4) + 1;
@@ -194,7 +191,6 @@ To compute bladder growth:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
-
 [!<playerHunger:Integer>*
 
 REQUIRES COMMENTING
@@ -233,7 +229,6 @@ To compute food:
 		if diaper messing < 3, now rectum is 0; [Just to make double triple sure]
 		if the player is hungry and hunger-flav-said is 0, say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
 	now hunger-flav-said is 1.
-
 
 [!<ThingIsDiapered>+
 
@@ -336,6 +331,5 @@ Definition: yourself is nearly hungry:
 	if chess table is grabbing the player, decide no;
 	if the stomach-food of the player is 1 and active hunger mechanics is 1, decide yes;
 	decide no.
-
 
 Stomach ends here.

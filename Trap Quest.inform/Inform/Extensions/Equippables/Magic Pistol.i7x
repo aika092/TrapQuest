@@ -35,5 +35,4 @@ To compute gunshot on (M - a monster):
 	now the stomach-semen of the player is 0;
 	SemenTasteAddictUp 1.
 
-
 Magic Pistol ends here.

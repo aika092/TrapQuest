@@ -1,6 +1,5 @@
 Hoods by Headgear begins here.
 
-
 A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. Figure of latex hood is the file "Items/Accessories/Head/latexhood1.png". A hood is usually oral-sex-addiction-influencing.
 
 Definition: a hood is ringagged: decide yes.
@@ -79,7 +78,6 @@ To say ShortDesc of (H - black hood):
 To say ClothingDesc of (H - black hood):
 	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
 
-
 Chapter - Class Outfit
 
 Definition: black hood (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -87,7 +85,6 @@ Definition: black hood (called C) is removal-blocking: [Some items (mainly headg
 	decide no.
 
 Chapter - Quest
-
 
 just-wait-quest is a headgear-clothing-quest. just-wait-quest has a number called main-reward. just-wait-quest has a number called wait-count.
 
@@ -103,7 +100,6 @@ To say QuestFlav of (Q - just-wait-quest):
 
 To say QuestTitle of (Q - just-wait-quest):
 	say " (no wardrobe changes quest)".
-
 
 To compute unique periodic effect of (H - black hood):
 	if the quest of H is just-wait-quest:
@@ -142,7 +138,6 @@ To uniquely destroy (C - black hood):
 	if the quest of C is just-wait-quest:
 		say "You can feel the hood rewarding you for [if L > 1]all the [L] different latex items[otherwise]the other latex item[end if] you're wearing by improving your dexterity!";
 		DexUp L.
-
 
 Part - White (WC) Hood
 
@@ -249,7 +244,6 @@ To uniquely destroy (C - WC hood):
 	if the gulp-count of human-toilet-quest > 0 and the quest of C is human-toilet-quest:
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your body, [if the gulp-count of human-toilet-quest > 2]significantly [end if]improving your speed!";
 		DexUp (the gulp-count of human-toilet-quest + 1) / 2.
-
 
 Part - Clown Mask
 
@@ -371,7 +365,6 @@ To compute persistent reward of (Q - clown-quest) on (C - a clothing):
 		DexUp 1;
 	otherwise:
 		compute generic second time class reward of Q on C.
-
 
 Part - Trainee Hood
 

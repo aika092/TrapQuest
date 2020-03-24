@@ -91,13 +91,11 @@ To decide which number is the sensitivity of (B - breasts):
 	increase S by 6 * the trophy-mode of bust-trophy;
 	decide on S.
 
-
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
 	decide on 9.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
 	decide on 14.
-
 
 Definition: breasts is exposed:
 	if breasts is not at least partially exposed, decide no;
@@ -156,7 +154,6 @@ To decide which number is the cringe of (B - breasts):
 		decide on 0;
 	decide on C - 3. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
-
 Definition: breasts is showing cleavage:
 	if the largeness of breasts < 4, decide no;
 	if there is worn actually dense fully covering actually breast covering clothing, decide no;
@@ -193,7 +190,6 @@ Definition: a clothing (called C) is very low cut or lower:
 Definition: a clothing (called C) is low cut or lower:
 	if C is low cut or C is very low cut or lower, decide yes;
 	decide no.
-
 
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 
@@ -416,7 +412,6 @@ How much does the player want this body part to be used?
 To decide which number is the desire of (B - breasts):
 	decide on the titfuck addiction of the player.
 
-
 Part 2 - Description
 
 [!<SayShortDescOfBreasts>+
@@ -450,7 +445,6 @@ To say CleavageDesc:
 			say "with lots of cleavage spilling out";
 		otherwise if there is worn actually dense actually breast covering clothing:
 			say "(barely covered at all)".
-
 
 [!<SayTotalDescOfBreasts>+
 
@@ -800,9 +794,7 @@ To say BreastCup (M - a number):
 	if M is 19, say "comical";
 	if M >= 20, say "impossibly huge".
 
-
 Part 3 - Modify Breast Size
-
 
 [!<PersonIsOverbusted>+
 
@@ -884,7 +876,6 @@ To Bustup (X - a number):
 		compute bra strain;
 		update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
-
 
 [!<SetRealBreastSize>+
 
@@ -980,7 +971,6 @@ To Milkup (X - a number):
 		say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!";
 		unless last-lactated-time - earnings < 60, trigger lactation; [Don't want to cause lactation super frequently]
 	if the milk volume of breasts >= the milk capacity of breasts and a random number between 1 and 2 is 1 and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
-
 
 [!<2MilkUp>+
 
@@ -1132,7 +1122,6 @@ Report going:
 				stimulate breasts;
 				now breastStimulationFlavAllowed is true.
 
-
 Section - Image for graphics window
 
 The text-shortcut of breasts is "breasts".
@@ -1141,6 +1130,5 @@ Figure of CumBreastsButton is the file "Special/Buttons/cumbreasts.png".
 To decide which figure-name is the examine-image of (T - breasts):
 	if T is overglazed, decide on Figure of CumBreastsButton;
 	decide on figure of no-image-yet.
-
 
 Breasts ends here.

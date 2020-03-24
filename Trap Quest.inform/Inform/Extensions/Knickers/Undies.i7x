@@ -66,5 +66,4 @@ This is the remove inappropriate undies rule:
 	now green-panties is in Holding Pen.
 The remove inappropriate undies rule is listed in the diaper quest fix rules.
 
-
 Undies ends here.

@@ -1,6 +1,5 @@
 Sex Addiction by Player Description begins here.
 
-
 [!<SaySexAddictionDesc>+
 
 REQUIRES COMMENTING
@@ -32,6 +31,5 @@ To say SexAddictionDesc:
 		say "You're currently quite horny and it's a little more difficult than usual to think straight about anything non-sexual.";
 	otherwise if the player is a bit horny:
 		say "Your arousal has started to build, and has got the blood pumping. This has slightly improved your reflexes and speed.".
-
 
 Sex Addiction ends here.

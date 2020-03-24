@@ -60,7 +60,6 @@ Check TQeating something:
 	if there is a dangerous monster in the location of the player, say "You are too busy fighting to eat that right now!" instead;
 	unless the noun is TQedible, say "That is definitely inedible." instead.
 
-
 Understand "swallow [something]", "consume [something]", "bite [something]", "unwrap [something]", "mm [something]", "mmm [something]", "yum [something]" as TQeating.
 
 [!<YourselfIsAbleToEat>+
@@ -74,6 +73,5 @@ Definition: yourself is able to eat:
 	if the latex-transformation of the player > 4, decide no;
 	if the player is not able to breathe, decide no;
 	decide yes.
-
 
 Eating ends here.

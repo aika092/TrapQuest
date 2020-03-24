@@ -41,9 +41,7 @@ To compute appearance assessment of (M - an amicable student):
 	otherwise:
 		say "[line break][speech style of M]'[if the times-met of M < 2]Hello, have we met?'[otherwise][one of]Hi!'[or]Hello there!'[at random][end if][roman type][line break]";
 
-
 Part - Default Conversation
-
 
 To compute nonstudent perception of (M - an amicable student):
 	say "[speech style of M]'[one of]Uh-oh[or]Oh no[or]Wait a second[or]Um, hold on[or]OMG[in random order], [one of]I think you left your armband at home[or]you must have left your armband in your last class[or]someone stole your armband[or]your armband is missing[at random]! I have to find a teacher!'[roman type][line break][big he of M] frantically walks away!";

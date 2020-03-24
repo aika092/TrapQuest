@@ -92,5 +92,4 @@ REQUIRES COMMENTING
 Check closing a container:
 	if the noun is open, say "You don't see the point." instead.
 
-
 Opening ends here.

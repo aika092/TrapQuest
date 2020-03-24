@@ -43,7 +43,6 @@ To say MonsterDesc of (M - an adult baby slave):
 	otherwise if M is bratty adult baby slave:
 		say "This [man of M] adorns a thick, cloth diaper encased within a pair of babyish plastic panties and a short, ruffled dress emblazoned with images of a cartoon cat. [big he of M] wears a look that tells you that the slightest provocation could easily set [him of M] off, triggering what could be the biggest tantrum of all time.".
 
-
 To say MonsterComment of (M - an adult baby slave):
 	say "[variable custom style][if the bimbo of the player < 5 and the player is male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
 
@@ -318,7 +317,6 @@ To say waitingflav of (M - an adult baby slave):
 	otherwise:
 		say "[one of]You find yourself getting aroused purely form the idea of feeling [his of M] diaper on your face.[or]You wait obediently, more than happy to feel the rustle of [his of M] nappy against your face.[or][line break][variable custom style]'You can put that nappy on my face any time honey, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Are you planning to use that whilst you're on top of me? That could be hot.'[roman type][line break][or]You can't wait to have that unique nappy smell filling your nostrils.[in random order]".
 
-
 This is the adult baby slave facesitting prevents breathing rule:
 	if there is an adult baby slave penetrating face, decide yes;
 	decide no.
@@ -522,7 +520,6 @@ This is the adult baby slave extra continue sex check rule:
 		rule succeeds.
 The adult baby slave extra continue sex check rule is listed in the adult baby slave continue sex rules.
 
-
 adult-baby-facesit is a diaper punishment. The priority of adult-baby-facesit is 2.
 Definition: an adult-baby-facesit (called P) is appropriate:
 	if current-monster is not adult baby slave, decide no;
@@ -556,7 +553,6 @@ Definition: an adult baby slave (called M) is eager to feed to master:
 	unless playerRegion is Hotel and N is monster and the ToMatron of M >= 0, decide no;
 	if the ToMatron of M is 1 or the times-met of N < 1, decide yes;
 	decide no.
-
 
 To compute punishment of (P - adult-baby-matron-drag):
 	 follow the adult baby slave shows you to mommy rule.
@@ -736,6 +732,5 @@ To compute unfriendly drink of (M - an adult baby slave):
 
 To compute friendly drink of (M - an adult baby slave):
 	compute unfriendly drink of M.
-
 
 Adult Baby Slave ends here.

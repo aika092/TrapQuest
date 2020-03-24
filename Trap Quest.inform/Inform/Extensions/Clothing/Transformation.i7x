@@ -1,6 +1,5 @@
 Transformation by Clothing begins here.
 
-
 clothing has an object called upgrade-target.
 clothing has a number called transform-attempts.
 clothing has a number called transform-resistance.
@@ -88,7 +87,6 @@ Definition: a clothing (called C) is untransformable:
 	decide no.
 
 Definition: a clothing is transformable if it is not untransformable.
-
 
 Definition: an equippable is transformation-protected: decide yes.
 
@@ -236,7 +234,6 @@ To transform (C - a clothing):
 To silently transform (C - a clothing):
 	silently transform C into the upgrade-target of C.
 
-
 To potentially transform (C - a clothing):
 	if C is upgradable:
 		if debugmode > 1, say "The [ShortDesc of C] is upgradable.";
@@ -269,7 +266,6 @@ To decide which number is the disintegrate-resistance of (C - a shoes):
 To decide which number is the disintegrate-resistance of (C - a heels):
 	decide on the heel-height of C.
 
-
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
@@ -280,6 +276,5 @@ To compute failed transform of (C - a clothing):
 	otherwise:
 		if C is untransformable, say "It doesn't seem like the [C] can be transformed!";
 		otherwise say "The [C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!".
-
 
 Transformation ends here.

@@ -1,6 +1,5 @@
 Discombobulator Laser Trap by Traps begins here.
 
-
 A discombobulator laser trap is a kind of trap. There are 20 potentially click potentially wire discombobulator laser traps.
 To say ExamineDesc of (C - a discombobulator laser trap):
 	say "A futuristic looking laser ray gun pokes out from its hidden compartment in [if C is in The Woods]a tree[otherwise]the wall[end if].".
@@ -52,6 +51,5 @@ To trigger (Y - a discombobulator laser trap):
 
 To say SuddenTransformTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
-
 
 Discombobulator Laser Trap ends here.

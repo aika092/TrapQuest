@@ -1,6 +1,5 @@
 Decanting by Actions begins here.
 
-
 Decanting it with is an action applying to two things.
 Understand "fill [something] with [something]", "fill [something] in [something]", "fill [something] from [something]", "use [something] in [something]", "dip [something] in [something]", "use [something] with [something]", "use [something] on [something]" as decanting it with.
 Check inserting something into a dispenser:
@@ -72,7 +71,6 @@ To compute standard decanting of (D - a dispenser):
 		DoseEmpty the second noun;
 		say "The [if the second noun is tank]tank[otherwise if the second noun is bucket]bucket[otherwise][second noun][end if] is now empty.".
 
-
 To say DecantingFlav of (V - a vessel):
 	say "You dip the [V] into the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
@@ -113,6 +111,5 @@ Report decanting something with:
 	repeat with T running through all untriggered swing traps in the location of the player:
 		now focused-thing is T;
 		trigger T.
-
 
 Decanting ends here.

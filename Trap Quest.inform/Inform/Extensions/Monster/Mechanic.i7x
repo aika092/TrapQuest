@@ -269,7 +269,6 @@ To say DiaperReaction of (M - mechanic):
 	otherwise:
 		say "[BigNameDesc of M] almost seems to be trying to hide a smirk. But there's no way [he of M] could be able to tell what you're doing, right?".
 
-
 Report slapping a robot:
 	if mechanic is in the location of the player, compute robot anger of mechanic.
 
@@ -555,7 +554,6 @@ Definition: mechanic is willing to punish untidiness: decide yes.
 To say DQSpankResistReactionFlav of (M - mechanic):
 	say "[BigNameDesc of M] harrumphs.[line break][speech style of M]'[one of]I just bent a pipe back into place not 10 minutes ago, what chance do you have, brat?'[or]I'm not one for cute, but dammit if your pathetic display ain't that!'[or]That's okay, I don't mind a slave with a little fire in them!'[or]It's brats like you that are the reason I have a dozen things to do in this dump and not just half a dozen. Hold still!'[in random order][roman type][line break]".
 
-
 Section 3 - Damage
 
 To compute damage of (M - mechanic):
@@ -602,7 +600,6 @@ To compute damage of (M - mechanic):
 					say DamageReaction (the health of M) of M;
 	otherwise:
 		compute death of M.
-
 
 To say DamageReactHealthy of (M - mechanic):
 	say "[BigNameDesc of M] takes the hit, clearly not even taking you seriously.".
@@ -653,7 +650,6 @@ To loot (M - mechanic):
 		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
-
 
 Part 4 - Conversation
 
@@ -817,7 +813,6 @@ To decide which number is the submissiveness base of (M - mechanic):
 		if M is retaining a mystical amulet, increase D by 3;[It's much harder to steal the amulet]
 	decrease D by player-fuckchoice * 2;[player-fuckchoice corresponds to the type of sex.]
 	decide on D.
-
 
 [The player steals the mechanic's wrench and/or amulet]
 To say DominanceIntro of (M - mechanic):

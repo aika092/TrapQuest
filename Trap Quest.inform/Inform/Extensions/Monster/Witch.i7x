@@ -56,9 +56,7 @@ To say DiaperReaction of (M - witch):
 	say "[BigNameDesc of M] smirks and looks directly at your dampening crotch.[line break][speech style of M]'[one of]Ooh, I hope that you're going to give that to me later.'[or]You're such an exhibitionist! You love doing this in front of me, don't you?'[stopping][roman type][line break]";
 	if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.".
 
-
 Part 2 - Perception
-
 
 [
 Latex Transformation Helping Witch:
@@ -323,7 +321,6 @@ To compute the default taunting of (M - witch):
 
 To say PresentFriendlyRejectionFlav of (M - witch):
 	say "[speech style of M]'[one of]I have better things to do than waste my time playing with whores. And FYI, I stand around doing nothing all day.'[or]I[']m bored, but I[']m not THAT bored. Wow.'[or]I should sic some vines on you for even asking me that. Holy shit, what a whore.'[at random][roman type][line break]";
-
 
 Section 2 - Damage
 
@@ -593,7 +590,6 @@ To compute teaching of (M - witch):
 To say AdviceAnswer of (M - witch):
 	say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].[otherwise][one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]Demonesses are lot of a things. Sadistic. Nosey. Arrogant. Fucking bitches... But they're actually pretty limited as a guest in the mortal world. If one uses up a large chunk of [his of a random demoness] power, you can just run away.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[at random][end if][roman type][line break]".
 
-
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - witch):
@@ -605,11 +601,9 @@ To compute friendly drink of (M - witch):
 To compute unfriendly drink of (M - witch):
 	compute annoyance of M.
 
-
 Part 7 - Trading
 
 To decide which number is the bartering value of (T - a thing) for (M - witch):
 	decide on 0.
-
 
 Witch ends here.

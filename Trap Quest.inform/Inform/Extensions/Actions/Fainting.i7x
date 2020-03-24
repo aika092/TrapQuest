@@ -19,5 +19,4 @@ Carry Out AutoFainting:
 		execute fainting.
 Understand "faint", "i like pineapple on pizza", "i like pineapple pizza", "pineapple pizza", "pineapple" as AutoFainting.
 
-
 Fainting ends here.

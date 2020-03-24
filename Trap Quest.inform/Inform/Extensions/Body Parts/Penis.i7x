@@ -70,7 +70,6 @@ Definition: penis is tiny:
 	if the size of penis > 0 and the size of penis < 4, decide yes;
 	decide no.
 
-
 [!<PenisIsLewdlyExposed>+
 
 REQUIRES COMMENTING
@@ -350,7 +349,6 @@ To say PenisModesty:
 
 Part 3 - Modify Penis Stats
 
-
 previous penis length is a number that varies.
 
 To PenisUp (X - a number):
@@ -407,6 +405,5 @@ To PenisDown (X - a number):
 		now Shrink is "shrivel";
 	otherwise:
 		now Shrink is "shrink".
-
 
 Penis ends here.

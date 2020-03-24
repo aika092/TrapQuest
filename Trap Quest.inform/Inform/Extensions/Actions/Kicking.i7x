@@ -45,7 +45,6 @@ A time based rule (this is the kick fatigue recovery rule):
 	otherwise if kick-fatigue > 0:
 		decrease kick-fatigue by 1.
 
-
 Kicking is an action applying to one thing.
 
 [!<CheckKicking>+
@@ -105,6 +104,5 @@ Carry out kicking:
 	if there is a worn hostility clothing, compute hostileDamage;
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "kick [something]", "ki [something]" as kicking.
-
 
 Kicking ends here.

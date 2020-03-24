@@ -14,7 +14,6 @@ After looking:
 	unless the location of the player is nonstandard, say "[RoomTrapDesc][if inline hyperlinks < 2 and map images is 0][DoorDesc][end if]".
 The can't push what's fixed in place rule is not listed in the check pushing rulebook.
 
-
 [!<SayRoomTrapDesc>+
 
 REQUIRES COMMENTING
@@ -33,7 +32,6 @@ To say RoomTrapDesc:
 				say "A thin wire [if the location of the player is no-roof]is strung tightly between two trees either side of the [trap-direction of A] exit[otherwise]crosses the [trap-direction of A] exit of the room[end if] at knee height. ";
 	if the location of the player is garlic, say "[if the location of the player is Mansion23]Something about this room feels less... alive than everywhere else[otherwise if the location of the player is no-roof]There is a glowing crest on the ground here, emanating a gentle aura of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[otherwise]There is a glowing crest painted onto the floorboards in this room, emanating a pleasant feeling of calm into your surroundings. The air here doesn't feel quite as heavy as it is everywhere else[end if].";
 	say "[RoomMonsterDesc]".
-
 
 [!<RoomMonsterDesc>+
 
@@ -75,7 +73,6 @@ To say DoorDesc:
 		if the entry-rank of R > the entry-rank of the location of the player:
 			say "The door to the [D] has a threatening looking [rank-colour of the entry-rank of R] rune on the door.".
 
-
 To decide which direction is the opposite-direction of (D - a direction):
 	if D is north, decide on south;
 	if D is south, decide on north;
@@ -91,7 +88,6 @@ REQUIRES COMMENTING
 +!]
 To say hyperdesc of (D - a direction):
 	say "[TQlink][D][TQdlink]".
-
 
 [This is a rule that comes with the base code, we are removing it to add our own directly below. We are doing this because the original code doesn't list the items inside a container in the things the player can see in a room.]
 The you-can-also-see rule is not listed in the for printing the locale description rulebook.
@@ -193,6 +189,5 @@ To say ExamineDesc of (C - water-body):
 		say ExamineDesc of T;
 	otherwise:
 		say "This body of water is large enough to wash yourself in.".
-
 
 Room Descriptions ends here.

@@ -1,6 +1,5 @@
 Banana by Food begins here.
 
-
 A banana is a kind of snack. The printed name of banana is "[TQlink of item described]banana[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of banana is "[TQlink of item described]bananas[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of banana is "ban". There are 5 bananas.
 To say ExamineDesc of (B - a banana):
 	say "A smallish banana that you could peel and eat.".
@@ -23,6 +22,5 @@ To compute (M - a robochef) cooking (I - a banana):
 		now the quality of D is a random number between 2 and -2;
 		now the fat of D is 2;
 		now D is retained by M.
-
 
 Banana ends here.

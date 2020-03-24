@@ -1,6 +1,5 @@
 Region Building Hotel by Rooms begins here.
 
-
 [!<SetUpTheHotel>+
 
 REQUIRES COMMENTING

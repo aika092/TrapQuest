@@ -1,6 +1,5 @@
 Appearance by Player begins here.
 
-
 [!<DecideWhichNumberIsThePerceivedBimboInfluenceOfThing>+
 
 REQUIRES COMMENTING
@@ -39,14 +38,12 @@ To decide which number is the saved appearance of the player: [When an NPC looks
 	if A > 20, decide on 20;
 	decide on A.
 
-
 [!<outrageTarget:Thing>*
 
 REQUIRES COMMENTING
 
 *!]
 outrage-target is a thing that varies.
-
 
 [!<DecideWhichNumberIsCumulativeOutrageLevel>+
 
@@ -72,7 +69,6 @@ To decide which number is cumulative-outrage-level:
 	decide on A.
 
 calculated-cumulative-outrage-level is a number that varies.
-
 
 [!<appearanceOutrageTarget:Thing>*
 
@@ -111,7 +107,6 @@ calculated-appearance-outrage-level is a number that varies.
 
 The appearance needs updating rules is a rulebook.
 The appearance validation check update rules is a rulebook.
-
 
 previous-items-worn is a list of things that varies.
 An appearance needs updating rule (this is the previous items worn check rule):
@@ -157,7 +152,6 @@ An appearance needs updating rule (this is the stance changed check rule):
 		now previous-stance is the stance of the player;
 		rule succeeds.
 
-
 [This behaviour is designed to minimise CPU cycles as best as possible.]
 To potentially update appearance and cringe levels:
 	follow the appearance needs updating rules;
@@ -166,7 +160,6 @@ To potentially update appearance and cringe levels:
 		follow the appearance validation check update rules. [Update the values for items worn etc.]
 An advance counters rule (this is the update appearance and cringe rule):
 	potentially update appearance and cringe levels.
-
 
 To update appearance level:
 	now calculated-appearance-outrage-level is appearance-outrage-level;
@@ -177,6 +170,5 @@ To update cringe level:
 	if diaper quest is 1:
 		now calculated-cringe-level is appearance-cringe-level;
 		now calculated-cumulative-cringe-level is cumulative-cringe-level.
-
 
 Appearance ends here.

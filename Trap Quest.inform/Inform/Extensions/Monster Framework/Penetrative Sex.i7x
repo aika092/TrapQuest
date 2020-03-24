@@ -82,7 +82,6 @@ Displays some text describing a monster penetrating the player in a specific hol
 To say PenetrationFlav of (M - a monster) in (F - a fuckhole):
 	do nothing.
 
-
 Section 1 - Anal
 
 To say PenPrep of (M - a monster) in (F - asshole):
@@ -166,7 +165,6 @@ Optionally displays a taunt or a comment from a monster as they take the player'
 +!]
 To say AnalVirginityTaunt of (M - a monster):
 	do nothing.
-
 
 [!<SaySexDollAssholePenetrationFlavOfMonster>+
 
@@ -560,7 +558,6 @@ To say FriendlyVeryLooseVaginaPenetrationFlav of (M - a monster):
 		say "[one of]You [if the player is able to use manual dexterity]reach between your legs, spreading your lips wide[otherwise]emit a low moan[end if] as [he of M] slides [his of M] [DickDesc of M] slides into your [vagina], grabbing both of your wrists and pinning them behind your back as [he of M] immediately begins to thrust. Somehow, the thought that [he of M] might not stop if you ask turns you on even more.[or]You look over your shoulder as [he of M] slides [his of M] [DickDesc of M] into your [vagina], suddenly realising what a [line break][second custom style]naughty[roman type][line break]expression you're making when [he of M] slaps your [AssDesc] and immediately begins thrusting.[or]You moan as [FuckerDesc of M] slams [his of M] [DickDesc of M] into your [vagina] and begins thrusting at full force! It's degrading to get treated like a piece of meat like this, but you can[']t help loving every second![at random]";
 	otherwise:
 		say "[one of]You giggle happily as [he of M] slides [his of M] [DickDesc of M] into your [vagina], working your hips back and forth as [he of M] smacks your [AssDesc] and gropes your [BreastDesc]. It's even more fun when you get to do the work![or]You proudly look over your shoulder as [he of M] slides [his of M] [DickDesc of M] into your loose [vagina], grinning at [him of M] as [he of M] begins to thrust. You[']re loose enough that [he of M] can go all out from the get go, [his of M] balls slapping audibly against you as [his of M] hands grab hold of your waist.[or]You push backward against [him of M] as [his of M] [DickDesc of M] slides into your [vagina], glancing over your shoulder to [if there is a worn ballgag]stare seductively at [FuckerDesc of M] as you begin to work your hips back and forth.[otherwise]seductively lick your lips as you begin to work your hips back and forth.[end if][at random]".
-
 
 Chapter 2 - Continue Sex
 
@@ -1068,6 +1065,5 @@ To say MessyPullOutFlav of (M - a monster) in (F - a fuckhole):
 
 To get orgasm image of (M - a monster) in (F - a fuckhole):
 	do nothing.
-
 
 Penetrative Sex ends here.

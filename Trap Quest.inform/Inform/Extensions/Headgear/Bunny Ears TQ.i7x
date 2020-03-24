@@ -4,7 +4,6 @@ A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bun
 
 Definition: a bunny ears is transformation-protected: decide no.
 
-
 Part 1 - Bunny Waitress Ears
 
 bunny waitress ears is a bunny ears. bunny waitress ears is satin. bunny waitress ears has a number called service-ready.
@@ -68,7 +67,6 @@ To decide which number is the waitress bartering value of (T - a bottle) for (M 
 			otherwise:
 				decide on 4;
 	decide on 0.
-
 
 To say OfferFlav of (T - a waitress vessel):
 	if the player is able to speak:
@@ -181,7 +179,6 @@ To compute service spill punishment:
 			if artificial enhancements fetish is 1, BustImplantsUp 4;
 			otherwise BustUp 4.
 
-
 Chapter - Class Outfit
 
 Definition: a bunny ears is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -216,7 +213,6 @@ To compute class outfit of (H - bunny waitress ears):
 		now W is sure;
 		let S be a random serving-bondage;
 		say "[bold type]Suddenly a [ShortDesc of W] appears [if S is a thing]on your [ShortDesc of S][otherwise]in your hand[end if]! It appears to be full of [milk].[roman type][line break]".
-
 
 Chapter - Quest
 
@@ -259,7 +255,6 @@ To uniquely destroy (C - bunny waitress ears):
 			if B is bottle:
 				say "A blue light surrounds your [B]!";
 				bless B.
-
 
 Part 2 - Rubber Bunny Ears
 
@@ -330,7 +325,6 @@ To say QuestFlav of (Q - egg-holding-quest):
 To say QuestTitle of (Q - egg-holding-quest):
 	say " (egg holding quest)".
 
-
 Part 3 - Bunny Hat
 
 bunny hat is a kind of bunny ears.
@@ -345,6 +339,5 @@ Part 4 - Bunny Glasses
 bunny glasses is a bunny ears.
 
 trap-braving-quest is a headgear-clothing-quest.
-
 
 Bunny Ears TQ ends here.

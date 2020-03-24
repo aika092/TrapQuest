@@ -1,6 +1,5 @@
 Glue Trap by Traps begins here.
 
-
 [Glue can be applied to clothing or (maybe) applied to certain objects like dildos?
  Maybe foes will later decide to do stuff like pull a hand free and stick it to your hip so they walk more like a sissy?
 The stickiness of the player now acts as a simple counter, being reduced by various effects.
@@ -213,7 +212,6 @@ To trigger (Y - a glue trap):
 To say GlueTrapReactFlav of (M - a monster):
 	say HarshTrapReactFlav of M.
 
-
 [Glue trip checking is done when the trap 1st activates, AND when the player tries to struggle free (because while struggling, they can get worse stuck).
 The check to see if the player gets stuck depends on their dexterity, modified by how overloaded they are and how well-balanced on their heels they are. If it pulls them off-balance and sticks them, then further mutation effects kick in.
 There is a chance they fall so badly they can get more stuck, too, but this is much reduced compared to the chance of falling at first. ]
@@ -332,7 +330,6 @@ To check glue tripping:
 					say "Good thing you weren't kneeling down, then!";
 			otherwise:
 				say "You dextrously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
-
 
 [See if the glue trap gets the player. If so, it knocks them off their feet.
  I believe this function is called while the trap is in effect.]
@@ -727,7 +724,6 @@ To decide which number is the bartering value of (T - a glue) for (M - a fairy):
 
 GlueRubbing it on is an action applying to two things.
 
-
 Understand "rub [a glue] with [something]" as GlueRubbing it on.
 Understand "rub [a glue] on [something]" as GlueRubbing it on.
 Understand "rub [something] in [a glue]" as GlueRubbing it on.
@@ -828,7 +824,6 @@ Check GlueRubbing:
 Report GlueRubbing:
 	allocate 6 seconds.
 
-
 [Monsters smelling glue is handled in the compute action of (... - a monster) function]
 
 [!<GluedReactionOf>+
@@ -861,7 +856,6 @@ To compute glued reaction of (M - a monster):
 			now M is interested;
 	otherwise:
 		compute correct kneeling reaction of M.
-
 
 gluePainThreshold is a number that varies.
 glueTries is a number that varies.
@@ -922,6 +916,5 @@ Carry out tearing off worn clothing:
 
 Check pulling glue:
 	if the player is glue stuck, try standing instead.
-
 
 Glue Trap ends here.

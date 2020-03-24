@@ -1,6 +1,5 @@
 Lake Monster by Objects begins here.
 
-
 Figure of lake monster is the file "NPCs/Bosses/tentaclemonster1.png".
 Figure of Lake Monster Cutscene 1 is the file "Special/Cutscene/cutscene-lake1.jpg".
 Figure of Lake Monster Cutscene 2 is the file "Special/Cutscene/cutscene-lake2.jpg".
@@ -22,13 +21,11 @@ A time based rule (this is the lake monster gets bored rule):
 			if the player is in the location of L, say "The [L]'s tentacles recede into the water. You watch as the large shadow of the [L] travels away from you, back to the far reaches of the lake. Maybe it's safe to wash in here again now?";
 			remove L from play;
 
-
 To decide which figure-name is the examine-image of (C - a lake monster):
 	decide on figure of lake monster.
 
 To say ExamineDesc of (C - a lake monster):
 	say "You can just about make out the huge shadow of its main body deep beneath the surface, but the only properly visible parts are the strong and seemingly intelligent tentacles that are rising proudly from the water's murky depths.".
-
 
 To say PregGrowth of (M - a lake monster):
 	say "the lake monster's [one of]spawn[or][child][or]babies[as decreasingly likely outcomes]".
@@ -337,6 +334,5 @@ To LakeMonsterCheck (S - a number):
 			say "[line break]Suddenly you notice a huge shadow of something moving underneath the waters, towards where you are. You pull yourself out of the lake to safety just as the shadow has moved underneath you and four large tentacles have risen to the surface! It looks like you narrowly missed something horrible happening to you...";
 		now L is in Dungeon35;
 		display entire map.
-
 
 Lake Monster ends here.

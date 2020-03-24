@@ -97,7 +97,6 @@ To say MouthPenetrationFlav of (M - mind flayer):
 	otherwise:
 		say "The creature tentatively sniffs at your head, but [his of M] expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as [he of M] fixes a piercing gaze on you...".
 
-
 To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
 		say "The creature[']s tentacles continue to suck on your head! You feel terribly light-headed but euphoric at the same time!";
@@ -225,6 +224,5 @@ To compute unique death of (M - mind flayer):
 		compute autotaking severed-tentacle;
 	otherwise:
 		say "[big his of M] body disappears".
-
 
 Mind Flayer ends here.

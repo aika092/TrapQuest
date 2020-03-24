@@ -1,6 +1,5 @@
 Rinsing by Actions begins here.
 
-
 [!<rinsingItIn:Action>*
 
 REQUIRES COMMENTING
@@ -83,6 +82,5 @@ To say RinseFlav of (T - a thing) in (P - sacred pool):
 	say "You put the [noun] in the water and twist and squeeze it until all the bodily fluids are gone. [if T is cursed clothing]Darkness seems to leak out of the [clothing-material of T] and into the pool.[otherwise if T is blessed clothing]The water around it seems to bubble and when you remove it, something about it somehow appears more mundane.[end if]".
 
 Understand "rinse [something] in [something]", "clean [something] in [something]", "wash [something] in [something]" as rinsing it in.
-
 
 Rinsing ends here.

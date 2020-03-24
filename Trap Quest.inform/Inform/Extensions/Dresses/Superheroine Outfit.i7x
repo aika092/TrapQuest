@@ -69,7 +69,6 @@ Definition: an anime superheroine top is heart themed: decide yes.
 Definition: an anime superheroine top is pink themed: decide yes.
 Definition: an anime superheroine top is end of transformation chain: decide yes.
 
-
 Part 2 - Blue Superheroine Outfit
 
 A blue superheroine outfit is a kind of superheroine outfit. A blue superheroine outfit is usually leg covering. A blue superheroine outfit is manly. A blue superheroine outfit is usually only arm covering. A blue superheroine outfit is usually crotch-intact. There is 1 blue superheroine outfit. The text-shortcut of blue superheroine outfit is "bso".
@@ -95,6 +94,5 @@ To decide which object is the unique-upgrade-target of (C - a blue superheroine 
 	if diaper quest is 0, decide on a random off-stage anime superheroine top.
 
 Definition: a blue superheroine outfit is blue themed: decide yes.
-
 
 Superheroine Outfit ends here.

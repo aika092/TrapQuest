@@ -55,7 +55,6 @@ To set up influence of (C - a leotard):
 To decide what number is the original price of (C - a leotard):
 	decide on 5.
 
-
 To compute periodic effect of (L - a leotard):
 	[ballerina stuff]
 	increase the charge of L by 1;
@@ -74,6 +73,5 @@ To decide which object is the unique-upgrade-target of (C - a leotard):
 	if a random number between 1 and 2 is 1, decide on a random off-stage sexy blue leotard;
 	if diaper focus is 0, decide on a random off-stage ballet corset;
 	otherwise decide on a random off-stage teddybear playsuit.
-
 
 Leotard ends here.

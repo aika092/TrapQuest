@@ -1,6 +1,5 @@
 Thigh High Boots by Shoes begins here.
 
-
 A thigh high boots is a kind of boots. The printed name of thigh high boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]". The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]". The text-shortcut of thigh high boots is "thb".
 
 Definition: a thigh high boots is fluid immune: decide yes.
@@ -71,7 +70,6 @@ Report kicking when there are worn WC thigh high boots:
 		otherwise:
 			decrease the powerup of C by 1.
 
-
 black-latex-boots is a boots. black-latex-boots is latex. The printed name of black-latex-boots is "[clothing-title-before]pair of black latex [heel-height of the item described] inch knee high boots[clothing-title-after]".The text-shortcut of black-latex-boots is "lkhb".
 
 Figure of black latex boots is the file "Items/Clothes/Lower/Feet/Boots/latexboots1.png".
@@ -91,6 +89,5 @@ To say ClothingDesc of (H - black-latex-boots):
 
 To say UniqueShortDesc of (H - black-latex-boots):
 	say "black latex knee high boots".
-
 
 Thigh High Boots ends here.

@@ -1,6 +1,5 @@
 Fainting Flavour by Fainting begins here.
 
-
 [!<SayFirstTimeFaintingStory>+
 
 This is what we say if the player has fainted for the first time (and didn't change sex).
@@ -105,6 +104,5 @@ To say FaintingFlav (N - 22):
 
 To say FaintingFlav (N - 50):
 	say "'It was all getting a bit much for you, was it? No need to feel ashamed, it happens to the best of us. Have as much time as you need to rest up and recover.'".
-
 
 Fainting Flavour ends here.

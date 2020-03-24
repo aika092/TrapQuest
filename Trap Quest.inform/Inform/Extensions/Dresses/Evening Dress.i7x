@@ -39,7 +39,6 @@ Definition: outrageous-evening-dress (called A) is applicable:
 To reflect on (A - outrageous-evening-dress):
 	say "[variable custom style]Oh god, I can barely [if the player is upright]walk[otherwise]crawl[end if] in this tight dress. And it doesn't even provide me with much modesty![roman type][line break]".
 
-
 Part 1 - Red Evening Dress
 
 A red evening dress is a kind of evening dress. A red evening dress is usually crotch-exposing. A red evening dress is usually fully exposing. A red evening dress is usually belly exposing. There is 1 red evening dress. The text-shortcut of red evening dress is "rev". A red evening dress is not-top-displacable.
@@ -171,6 +170,5 @@ Definition: purple-evening-dress is purple themed: decide yes.
 
 To decide which number is the initial outrage of (C - purple-evening-dress):
 	decide on 4.
-
 
 Evening Dress ends here.

@@ -194,7 +194,6 @@ To compute monstermotion of (M - nurse):
 To decide which number is the seek roll of (M - nurse):
 	decide on 1. [Needs to be greater than 0 to succeed.]
 
-
 Chapter - Combat
 
 To say FriendlyMouthPenetrationFlav of (M - nurse):
@@ -250,6 +249,5 @@ To say DragFlav of (M - nurse) to (R - a room):
 To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;
 	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. [big he of M] pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
-
 
 Nurse ends here.

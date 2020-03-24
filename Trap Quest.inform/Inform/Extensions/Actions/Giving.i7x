@@ -1,6 +1,5 @@
 Giving by Actions begins here.
 
-
 The can't give clothes being worn rule is not listed in the check giving it to rulebook.
 The block giving rule is not listed in the check giving it to rulebook.
 
@@ -107,6 +106,5 @@ Check giving:
 			otherwise:
 				say "Why would [he of the second noun] want that?" instead;
 	try offering the noun to the second noun instead.
-
 
 Giving ends here.

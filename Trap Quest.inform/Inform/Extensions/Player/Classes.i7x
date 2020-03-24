@@ -1,6 +1,5 @@
 Classes by Player begins here.
 
-
 [!<playerClass:String>*
 
 REQUIRES COMMENTING
@@ -23,7 +22,6 @@ REQUIRES COMMENTING
 +!]
 The player class rules is a rulebook.
 
-
 [!<TheTrickOrTreaterClassRule>+
 
 REQUIRES COMMENTING
@@ -35,7 +33,6 @@ This is the trick-or-treater class rule:
 		rule succeeds.
 The trick-or-treater class rule is listed in the player class rules.
 trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
-
 
 [!<ThePrincessClassRule>+
 
@@ -162,7 +159,6 @@ Definition: a text is schoolgirl if it is "schoolgirl" or it is "magical schoolg
 
 Definition: a wearthing is schoolgirl-enabling: decide no.
 
-
 [!<TheCheerleaderClassRule>+
 
 REQUIRES COMMENTING
@@ -230,7 +226,6 @@ Definition: a text (called T) is royal slave:
 	if T is "royal slave" or T is "cow slave" or T is "demon slave", decide yes;
 	decide no.
 
-
 [!<TheRoyalSlavesCannotMasturbateRule>+
 
 Royal slaves can't masturbate
@@ -273,7 +268,6 @@ This is the latex fetish model class rule:
 		rule succeeds.
 The latex fetish model class rule is listed in the player class rules.
 latex fetish model is a text that varies. latex fetish model is "latex fetish model".
-
 
 [!<TheHumanToiletClassRule>+
 
@@ -320,7 +314,6 @@ The puppygirl class rule is listed in the player class rules.
 puppygirl is a text that varies. puppygirl is "puppygirl".
 puppy is a text that varies. puppy is "puppygirl".
 
-
 [!<TheSymbioteClassRule>+
 
 REQUIRES COMMENTING
@@ -341,7 +334,6 @@ Thanks to the virgin symbiote warrior multi-class, we have multiple different te
 Definition: a text (called T) is symbiote:
 	if T is "symbiote" or T is "virgin symbiote warrior", decide yes;
 	decide no.
-
 
 [!<TheSantaClassRule>+
 
@@ -415,7 +407,6 @@ This is the broodmother class rule:
 The broodmother class rule is listed in the player class rules.
 broodmother is a text that varies. broodmother is "broodmother".
 
-
 [!<oldWasps:Integer>*
 
 REQUIRES COMMENTING
@@ -469,7 +460,6 @@ A time based rule (this is the compute brood rule):
 			say "A small swarm of wasps that was resting on your fur seems to be ready for more action!";
 			increase the swarm of W by 1. [The idea is that your weapon's equilibrium strength will slowly increase once you get past the 50 wasps birthed cut-off, though swarm will tend to be very hard to raise above 20 because it always wants to decay to that point. Also these wasps are technically ones you 'lost' earlier so they don't increase your total]
 
-
 [!<TheVampireSpawnClassRule>+
 
 REQUIRES COMMENTING
@@ -497,7 +487,6 @@ The cultist class rule is listed in the player class rules.
 Definition: a text (called T) is cultist:
 	if T is "cultist" or T is "cultist seer" or T is "dark priestess", decide yes;
 	decide no.
-
 
 [!<whispered:Integer>*
 
@@ -897,7 +886,6 @@ Definition: a text (called T) is worshipper:
 	if T is "demon slave" or T is "demon worshipper" or T is "demon concubine", decide yes;
 	decide no.
 
-
 [!<TheLivingSexDollClassRule>+
 
 REQUIRES COMMENTING
@@ -910,7 +898,6 @@ This is the living sex doll class rule:
 The living sex doll class rule is listed first in the player class rules. [Overrides all other rules]
 living sex doll is a text that varies. living sex doll is "living sex doll".
 
-
 [!<TheAdultBabyClassRule>+
 
 Goes last because it is purely cosmetic and doesn't necessarily use headgear so it can and should be overridden by any other classes.
@@ -919,7 +906,6 @@ Goes last because it is purely cosmetic and doesn't necessarily use headgear so 
 This is the adult baby class rule:
 	if adult-baby-class is 1, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
-
 
 [!<TheAdventurerClassRule>+
 
@@ -930,6 +916,5 @@ This is the adventurer class rule:
 	now player-class is "adventurer".
 The adventurer class rule is listed first in the player class rules. [Catch-all]
 adventurer is a text that varies. adventurer is "adventurer".
-
 
 Classes ends here.

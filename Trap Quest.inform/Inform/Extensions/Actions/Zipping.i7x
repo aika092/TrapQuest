@@ -16,7 +16,6 @@ REQUIRES COMMENTING
 Check closing a crotch-unzipped clothing:
 	try rezipping the noun instead.
 
-
 Part 1 - Unzipping
 
 Unzipping is an action applying to one thing.

@@ -53,7 +53,6 @@ To decide which figure-name is clothing-image of (C - pink-sequin-g-string):
 To decide which figure-name is clothing-image of (C - orange-g-string):
 	decide on figure of g-string 11.
 
-
 white-g-string is a g-string. white-g-string is sheer-when-wet. The text-shortcut of white-g-string is "wgs". Understand "white" as white-g-string.
 To say selfexamineuniquetitle of (G - white-g-string):
 	say "white g-string".
@@ -161,6 +160,5 @@ Definition: orange-g-string is orange themed: decide yes.
 Figure of g-string 9 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring9.png".
 Figure of g-string 10 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring10.png".
 Figure of g-string 11 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring11.png".
-
 
 G-Strings ends here.

@@ -1,6 +1,5 @@
 Puddles by Rooms begins here.
 
-
 [!<Room>@<semenPuddle:Integer>*
 
 REQUIRES COMMENTING
@@ -38,9 +37,7 @@ A room has a number called slime-puddle. The slime-puddle of a room is usually 0
 A room can be glue-puddled. A room is usually not glue-puddled.
 Definition: A room is glue-puddled if a glue is in it. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead.]
 
-
 Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen-puddle of the room + the milk-puddle of the room + the urine-puddle of the room > 0].
-
 
 Book 1 Puddles
 
@@ -244,6 +241,5 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonCommand entry is "clean puddle with mouth";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to kneel]
-
 
 Puddles ends here.

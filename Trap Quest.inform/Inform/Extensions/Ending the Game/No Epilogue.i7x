@@ -8,5 +8,4 @@ Table of Transformation Options Status
 left	central	right
 "Choose how to spend some or all of your prize money. You will keep the rest."	""	""
 
-
 No Epilogue ends here.

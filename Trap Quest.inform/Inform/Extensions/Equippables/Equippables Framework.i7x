@@ -44,7 +44,6 @@ Part 1 - Gloves
 
 A gloves is a kind of equippable. A gloves is usually slap ready. Understand "pair", "pair of", "glove" as gloves.
 
-
 tongue-gloves is a gloves. tongue-gloves is unique. tongue-gloves is biological. The printed name of tongue-gloves is "[clothing-title-before]tongue gloves[clothing-title-after]". The text-shortcut of tongue-gloves is "tgvs". Understand "tongue", "gloves" as tongue-gloves.
 
 Figure of white tongue gloves is the file "Items/Accessories/Equippables/tonguegloves1a.png".
@@ -75,7 +74,6 @@ Definition: tongue-gloves is black themed if tonguesBlack is true.
 To decide which number is the initial outrage of (C - tongue-gloves):
 	if C is tonguing, decide on 14;
 	decide on 4.
-
 
 Part 2 - Wands
 
@@ -139,7 +137,6 @@ Check taking off worn gloves:
 	if E is clothing and E is not the noun:
 		say "You would need to stop wielding the [E] first." instead.
 
-
 painted-vibrator-hands is a gloves.
 The printed name of painted-vibrator-hands is "[clothing-title-before]painted vibrator hands[clothing-title-after]". The text-shortcut of painted-vibrator-hands is "pvh". Figure of painted-vibrator-hands is the file "Items/Accessories/Equippables/thumbvibrators1.jpg". Understand "painted", "vibrator", "hands" as painted-vibrator-hands.
 Definition: painted-vibrator-hands is blue themed: decide yes.
@@ -158,6 +155,5 @@ To say UniqueClothingDesc of (Y - painted-vibrator-hands):
 
 To say ShortDesc of (Y - painted-vibrator-hands):
 	say "thumb vibrators".
-
 
 Equippables Framework ends here.

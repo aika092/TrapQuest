@@ -1,6 +1,5 @@
 Region Building Mansion by Rooms begins here.
 
-
 Figure of mansion loading 1 is the file "Special/Loading/loading10.png".
 Figure of mansion loading 2 is the file "Special/Loading/loading11.png".
 Figure of mansion loading 3 is the file "Special/Loading/loading12.png".
@@ -78,6 +77,5 @@ To Scramble Mansion:
 	now target-floor is Mansion01;
 	solve the puzzle;
 	make all haunted exits lead to Solid Rock.
-
 
 Region Building Mansion ends here.

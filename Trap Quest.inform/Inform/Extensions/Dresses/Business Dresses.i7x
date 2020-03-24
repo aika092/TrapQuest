@@ -35,7 +35,6 @@ To decide which object is the unique-upgrade-target of (C - a polka dot business
 	if vest-dress is off-stage, decide on vest-dress;
 	otherwise decide on a random off-stage pinstripe business dress.
 
-
 Part 2 - Pinstripe Business Dress
 
 A pinstripe business dress is a kind of business dress. There is 1 transformation-rare pinstripe business dress. A pinstripe business dress is low cut. A pinstripe business dress is only arm covering. A pinstripe business dress is usually short. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is usually "[clothing-title-before]pinstripe business dress[clothing-title-after]".
@@ -114,6 +113,5 @@ Definition: vest-dress is tartan themed: decide yes.
 To decide which object is the unique-upgrade-target of (C - vest-dress):
 	if there is a worn scrunchie, decide on a random off-stage cheeky schoolgirl outfit;
 	decide on a random off-stage pinstripe business dress.
-
 
 Business Dresses ends here.

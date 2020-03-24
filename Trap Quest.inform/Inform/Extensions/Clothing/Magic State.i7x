@@ -48,9 +48,7 @@ Definition: a clothing (called T) is potentially blessable:
 
 Definition: a bottle is blessable if it is held and it is not blessed.
 
-
 Definition: an alchemy product is blessable if it is carried and it is not blessed.
-
 
 [Selkie: Would it be a helpful hint add some flavour text here?
 	if B is not blessed:
@@ -84,7 +82,6 @@ To fully bless (B - a thing):
 	if B is cursable:
 		if B is cursed, bless B;
 		if B is blessable, bless B.
-
 
 To say CurseCurseFlav of (B - a thing):
 	do nothing.
@@ -138,6 +135,5 @@ To decide which number is the magic-modifier of (C - a clothing):
 To say raw-magic-modifier-desc:
 	if magic-ID of the item described is identified and raw-magic-modifier of the item described is not 0:
 		say "[if raw-magic-modifier of the item described > 0]+[end if][raw-magic-modifier of the item described] ".
-
 
 Magic State ends here.

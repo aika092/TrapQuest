@@ -29,5 +29,4 @@ Definition: a clothing (called C) is almost too cringeworthy:
 	if the cringe of C + 2 is too humiliating and the cringe of C > 0, decide yes;
 	decide no.
 
-
 Cringe ends here.

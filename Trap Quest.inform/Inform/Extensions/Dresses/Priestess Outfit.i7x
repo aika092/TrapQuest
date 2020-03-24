@@ -115,7 +115,6 @@ To decide which number is the initial outrage of (C - a playdude priestess outfi
 To decide which object is the unique-upgrade-target of (C - a playdude priestess outfit):
 	decide on a random off-stage translucent priestess outfit.
 
-
 Part 6 - Translucent Priestess Outfit
 
 A translucent priestess outfit is a kind of priestess outfit. There is 1 translucent priestess outfit. A translucent priestess outfit is usually sheer. A translucent priestess outfit is usually high cut.
@@ -132,6 +131,5 @@ To say ClothingDesc of (C - a translucent priestess outfit):
 
 To decide which number is the initial outrage of (C - a translucent priestess outfit):
 	decide on 10.
-
 
 Priestess Outfit ends here.

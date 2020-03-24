@@ -400,7 +400,6 @@ To say MouthPenetrationFlav of (M - dominatrix):
 	otherwise:
 		cutshow figure of dominatrix cutscene 3 for M.
 
-
 To compute facial sex of (M - dominatrix):
 	if M is friendly-fucking:
 		say "[one of][BigNameDesc of M] aggressively fucks your throat with [his of M] [LongDickDesc of M].[or][BigNameDesc of M]'s hips slam into your face, [his of M] [LongDickDesc of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming [his of M] [LongDickDesc of M] down your throat.[or]You can[']t help making a lot of noise as [NameDesc of M] slams [his of M] [LongDickDesc of M] into the back of your throat.[in random order]";
@@ -657,7 +656,6 @@ To compute FriendlySexRelease of (M - dominatrix):
 
 To say FriendlySexReleaseSpeech of (M - dominatrix):
 	say "[speech style of M]Whatever, it's your money you[']re wasting.'[roman type] ".
-
 
 Section 2 - Damage
 
@@ -916,7 +914,6 @@ To compute scared reduction of (M - dominatrix):
 		if the scared of M < 0, now the scared of M is 0;
 		if the scared of M is 0 and the location of the player is the room east from Hotel37, say "The metal shutter noisily clatters up.".
 
-
 Part 6 - Conversation
 
 To IdentifiablePosterReaction of (M - dominatrix):
@@ -1079,7 +1076,6 @@ To compute teaching of (M - dominatrix):
 	teach begging for mercy;
 	HeavyConvoFatigue M.
 
-
 Section 3 - Drink Requesting
 
 To compute talk option (N - 3) to (M - dominatrix):
@@ -1108,6 +1104,5 @@ To compute unfriendly drink of (M - dominatrix):
 
 To compute friendly drink of (M - dominatrix):
 	say "[speech style of M]'You'll get no hospitality from me.'[roman type][line break]".
-
 
 Dominatrix ends here.

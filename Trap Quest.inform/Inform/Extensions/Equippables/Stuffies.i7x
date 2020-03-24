@@ -2,13 +2,11 @@ Stuffies by Equippables begins here.
 
 A stuffie is a kind of equippable. A stuffie is usually slap ready. A stuffie is usually cursed. A stuffie is usually wool. The printed name of stuffie is "[clothing-title-before]stuffie[clothing-title-after]". The text-shortcut of stuffie is "stf".
 
-
 This is the spawn initial mansion stuffie rule:
 	let R be a random [wire untrapped] trappable placed haunted room;
 	let T be a random off-stage stuffie;
 	now T is in R.
 The spawn initial mansion stuffie rule is listed in the set up mansion traps rules.
-
 
 To decide which number is the damage improvement of (W - a stuffie):
 	decide on -99.
@@ -29,7 +27,6 @@ To decide which number is the delicateness-influence of (W - a stuffie):
 To decide which number is the sex-addiction-influence of (W - a stuffie):
 	if W is blessed, decide on -2;
 	decide on -1.
-
 
 Report taking a unique stuffie: [The 'unique' bit puts the rule in the correct part of the rule sequence to avoid a stack overflow upon taking.]
 	try wearing the noun instead.
@@ -69,7 +66,6 @@ To assign quest to (C - a stuffie):
 	now the quest of C is show-and-tell-quest;
 	set up the quest of C.
 
-
 commodore cuddles is a stuffie. The printed name of commodore cuddles is "[clothing-title-before]Commodore Cuddles[clothing-title-after]". The text-shortcut of commodore cuddles is "cmdc".
 
 Figure of commodore cuddles is the file "Items/Accessories/Equippables/stuffie1.jpg".
@@ -93,6 +89,5 @@ Definition: commodore cuddles is bear themed: decide yes.
 To decide which number is the strength-influence of (W - commodore cuddles):
 	if W is blessed, decide on 2;
 	decide on 1.
-
 
 Stuffies ends here.

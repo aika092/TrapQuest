@@ -34,7 +34,6 @@ Definition: royal scepter is royalty themed: decide yes.
 To decide which number is the initial outrage of (E - royal scepter):
 	decide on 2.
 
-
 To compute climax effect of (E - royal scepter):
 	if princess-consort is penetrating a body part:
 		say "Your [ShortDesc of E] pulses, and a pleasant feeling wells up inside of you.";
@@ -47,7 +46,6 @@ To compute climax effect of (E - royal scepter):
 			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [princess-consort] appears in your mind.";
 			Arouse 3000;
 			if the refactory-period of princess-consort > 0, decrease the refactory-period of princess-consort by the charge of E * 20.
-
 
 To decide which number is the raw-masturbation-bonus of (E - royal scepter):
 	if princess-consort is penetrating a body part:
@@ -115,6 +113,5 @@ To punish infidelity:
 	otherwise:
 		IntDown 1;
 		say "You feel your mind clouding over with thoughts of regret.".
-
 
 Royal Scepter ends here.

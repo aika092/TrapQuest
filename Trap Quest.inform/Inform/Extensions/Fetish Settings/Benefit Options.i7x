@@ -1,6 +1,5 @@
 Benefit Options by Fetish Settings begins here.
 
-
 [!<tableOfBenefitOptions:Table>*
 
 REQUIRES COMMENTING
@@ -84,7 +83,6 @@ To say MaxBellySizeDesc:
 	if max belly size is 4, say "curvy";
 	if max belly size is 7, say "full";
 	if max belly size is 10, say "bulging".
-
 
 [!<SayBonusStrengthCost>+
 
@@ -283,11 +281,9 @@ This is the bonus liquid reset rule:
 	now choice in row 63 of the Table of Player Options is 0.
 The bonus liquid reset rule is listed in the reset rules.
 
-
 This is the combat visor toggle rule:
 	if combatvisor is 0 and points count >= 1, now choice in row 76 of the Table of Player Options is 1;
 	otherwise now choice in row 76 of the Table of Player Options is 0.
-
 
 This is the supporters enabled toggle rule:
 	if supportersEnabled is 1 and points count >= 1, now choice in row 77 of the Table of Player Options is 0;

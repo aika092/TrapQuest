@@ -1,6 +1,5 @@
 Lipstick Heels by Shoes begins here.
 
-
 A lipstick heels is a kind of stiletto heels. A lipstick heels is usually leather. A lipstick heels is rare. The heel-height of a lipstick heels is usually 5. There is 1 lipstick heels.
 
 The printed name of lipstick heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch lipstick heels[clothing-title-after]". The text-shortcut of lipstick heels is "lsh".
@@ -38,6 +37,5 @@ To decide which number is the damage modifier of (H - a lipstick heels):
 		if R is 1:
 			now critical is 1;
 			decide on combat bonus.
-
 
 Lipstick Heels ends here.

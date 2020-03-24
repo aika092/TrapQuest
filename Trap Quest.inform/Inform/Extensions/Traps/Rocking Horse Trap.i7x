@@ -1,6 +1,5 @@
 Rocking Horse Trap by Traps begins here.
 
-
 A rocking horse is a kind of trap. The text-shortcut of a rocking horse is "rch". The printed name of rocking horse is "[TQlink of item described]rocking horse[TQxlink of item described][verb-desc of item described]".
 
 This is the spawn initial woods rocking horse traps rule:
@@ -126,6 +125,5 @@ To compute RockingReaction of (M - a monster):
 
 To say RockingReactionSpeech of (M - a monster):
 	say "[one of][line break][speech style of M]'Haha, you look just like a real baby!'[roman type][line break][or][stopping]".
-
 
 Rocking Horse Trap ends here.

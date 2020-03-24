@@ -1,6 +1,5 @@
 Pink Smoke Pad Trap by Traps begins here.
 
-
 A pink smoke pad is a kind of trap. There are 20 pressure pink smoke pads.
 
 This is the spawn initial dungeon smoke traps rule:
@@ -42,6 +41,5 @@ To trigger (Y - a pink smoke pad):
 
 To compute reset cooldown of (T - a pink smoke pad):
 	do nothing. [Only ever triggers once]
-
 
 Pink Smoke Pad Trap ends here.

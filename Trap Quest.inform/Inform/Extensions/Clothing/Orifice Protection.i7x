@@ -296,5 +296,4 @@ To decide what number is the vaginal defence of the player:
 		increase D by the magic-modifier of K;
 	decide on D.
 
-
 Orifice Protection ends here.

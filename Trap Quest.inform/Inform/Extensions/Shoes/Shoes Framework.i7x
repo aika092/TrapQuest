@@ -2,7 +2,6 @@ Shoes Framework by Shoes begins here.
 
 shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
 
-
 Definition: a shoes (called C) is hindrance-enabling: [Is it more likely to fall over when wearing these shoes compared to barefoot?]
 	decide no.
 Definition: a heels is hindrance-enabling: decide yes.
@@ -111,6 +110,5 @@ Carry out taking off shoes while the player is dildo stuck:
 	repeat with T running through traps penetrating a fuckhole:
 		if T is penetrating asshole, ruin asshole;
 		otherwise ruin vagina.
-
 
 Shoes Framework ends here.

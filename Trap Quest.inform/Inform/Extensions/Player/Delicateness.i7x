@@ -48,9 +48,7 @@ To decide which number is the delicateness of the player:
 	if S < 1, decide on 1;
 	decide on S.
 
-
 Part 2 - Modify Delicateness
-
 
 [!<Player>@<rawDelicateness:Integer>*
 
@@ -167,6 +165,5 @@ To SilentlyDelicateDown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw delicateness of the player > 1, decrease the raw delicateness of the player by 1.
-
 
 Delicateness ends here.

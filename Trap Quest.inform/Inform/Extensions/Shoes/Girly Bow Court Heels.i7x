@@ -22,7 +22,6 @@ To uniquely set up (C - a girly bow court heels):
 To say UniqueShortDesc of (C - a girly bow court heels):
 	say "girly bow court heels".
 
-
 pink girly bow court heels is a girly bow court heels.
 
 The printed name of pink girly bow court heels is "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch pink girly bow court heels[clothing-title-after]". The text-shortcut of pink girly bow court heels is "pgbc".
@@ -37,7 +36,6 @@ To decide which figure-name is the clothing-image of (H - a pink girly bow court
 To say ClothingDesc of (C - a pink girly bow court heels):
 	say "A pair of [heel-height of C] inch pink and black leather court heels with a large black bow on each foot.";
 	say "[SteadinessDesc of C]".
-
 
 black girly bow court heels is a girly bow court heels.
 
@@ -54,6 +52,5 @@ To decide which figure-name is the clothing-image of (H - a black girly bow cour
 To say ClothingDesc of (C - a black girly bow court heels):
 	say "A pair of [heel-height of C] inch black leather court heels with a large orange bow on each foot.";
 	say "[SteadinessDesc of C]".
-
 
 Girly Bow Court Heels ends here.

@@ -12,7 +12,6 @@ To decide which number is the magic power of the player:
 	if magic-power of the player < 2 and the trophy-mode of magic-trophy is 2, decide on 2;
 	otherwise decide on the magic-power of the player.
 
-
 [Creating functions for magic power management so I can use these to trigger becoming the Magical Girl if you don't have another class when gaining magic power]
 
 To MagicPowerUp (X - a number):
@@ -43,7 +42,6 @@ To MagicPowerDown (X - a number):
 		decrease X by 1;
 		decrease the magic-power of the player by 1.
 
-
 [Stuff to do with casting spells goes below.]
 the magic consequences rules is a rulebook.
 
@@ -60,7 +58,6 @@ To compute spell consequences of (Z - a thing):
 To compute MagicDrain of (Z - a thing):
 	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0:
 		MagicPowerDown 1.
-
 
 Definition: a tentacle monster is a tripper if the class of the player is "magical schoolgirl".
 
@@ -80,7 +77,6 @@ To say MonsterTrippedFlav of (M - a tentacle monster):
 
 Check taking equippable when the player is immobile:
 	if the noun is not held, say "You try to reach it but it's too far away!" instead.
-
 
 This is the magical schoolgirl cums then wins her fight orgasm resolution rule:
 	let H be a random heart wand in the location of the player;
@@ -110,7 +106,6 @@ Definition: a magic-spell is reactive-only: decide yes. [Does it only work when 
 Table of Possible Incantations
 phrase (text) naughtiness (number)
 with 50 blank rows
-
 
 To say NewbieSpellFlav:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a magic spell! Spells consume magic power, which is not particularly plentiful but you should hopefully acquire a bit of it over your adventure. Most spells require you to say the rude words while someone can hear (and understand) you.[roman type][line break][or][stopping]".
@@ -154,7 +149,6 @@ Report Spellcasting:
 		say "Nothing happens. It would seem that this spell only works when used in front of someone who can listen and understand the words.[one of][line break][variable custom style]The laws of this universe are so stupid!!![roman type][line break][or][stopping]".
 Understand "I [magic-spell]" as Spellcasting.
 
-
 To say CastFlav of (S - a magic-spell):
 	[say "[variable custom style]'I [incantation of S]!'[roman type][line break]";]
 	if there is a reactive monster, say "You declare loudly[if the outrageousness of S * 300 > the humiliation of the player], trying to say it quickly[one of] to get it over with as fast as possible[or][stopping][otherwise if the outrageousness of S * 350 < the humiliation of the player], making sure to pronounce each syllable correctly[end if]. [HumiliateReflect (the outrageousness of S * 10 * the number of reactive monsters)]";
@@ -170,7 +164,6 @@ To compute spell outrageousness reaction of (M - a monster) to (S - a magic-spel
 			if M is uninterested, now M is interested;
 			if diaper quest is 0, compute disapproval of M;
 			otherwise compute cringe disapproval of M.
-
 
 A game universe initialisation rule:
 	if diaper quest is 0:
@@ -267,7 +260,6 @@ A game universe initialisation rule:
 			now the phrase entry is "get turned on when I poop my panties";
 			now the naughtiness entry is 16.
 
-
 [
 IDEAS FOR SPELLS:
 
@@ -275,9 +267,7 @@ Buffs: Stats, dodge,
 Heal
 Body size / slutty stats reduce
 
-
 ]
-
 
 magic-mapping is a magic-spell.
 To say MagicSpellEffect of (S - magic-mapping):
@@ -290,7 +280,6 @@ Report Spellcasting magic-mapping when there is a reactive monster:
 		display entire map;
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
-
 
 magic-blinking is a magic-spell.
 Definition: magic-blinking is reactive-only: decide no.
@@ -314,7 +303,6 @@ Report Spellcasting magic-blinking:
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 
-
 magic-inflating is a magic-spell.
 Definition: magic-inflating is fetish appropriate if inflation fetish is 1.
 To say MagicSpellEffect of (S - magic-inflating):
@@ -332,7 +320,6 @@ Report Spellcasting magic-inflating when there is a reactive monster:
 			AssInflate 1;
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
-
 
 magic-smarts-timer is a number that varies.
 magic-smarting is a magic-spell.
@@ -378,7 +365,6 @@ a time based rule (this is the magic speed decay rule):
 			say "[bold type]The speed improving effects of the magic spell have ended.[roman type][line break]";
 			now magic-speed-timer is 0.
 
-
 magic-strength-timer is a number that varies.
 magic-strengthing is a magic-spell.
 To say MagicSpellEffect of (S - magic-strengthing):
@@ -400,7 +386,6 @@ a time based rule (this is the magic strength decay rule):
 		if magic-strength-timer <= 0:
 			say "[bold type]The strength improving effects of the magic spell have ended.[roman type][line break]";
 			now magic-strength-timer is 0.
-
 
 magic-blind is a magic-spell.
 To say MagicSpellEffect of (S - magic-blind):
@@ -432,7 +417,6 @@ Report Spellcasting magic-poison when there is a reactive monster:
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 
-
 magic-paralyze is a magic-spell.
 To say MagicSpellEffect of (S - magic-paralyze):
 	say "paralyse every enemy in the room".
@@ -447,6 +431,5 @@ Report Spellcasting magic-paralyze when there is a reactive monster:
 		if paralyzeSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
-
 
 Magic Power ends here.

@@ -103,7 +103,6 @@ To run the engine once:
 	update saved stats;
 	fix status bar.
 
-
 [!<ComputeExtraTurn>+
 
 REQUIRES COMMENTING
@@ -129,7 +128,6 @@ To compute cleanup:
 		if B is not worn and B is penetrating face:
 			now B is not penetrating face.
 
-
 [!<StorePreviousSizes>+
 
 REQUIRES COMMENTING
@@ -144,7 +142,6 @@ To store previous sizes:
 	now the previous largeness of belly is the largeness of belly;
 	now the previous thickness of hips is the thickness of hips;
 	now the previous total volume of hips is the total volume of hips.
-
 
 [!<timeBased:Rulebook>*
 
@@ -229,6 +226,5 @@ To compute turn:
 	compute flight; [Flight stuff must go last in the compute time order - the concept is it's checking if anything that happened caused the player to start flying.]
 	allocate 0 seconds;
 	if newbie tips is 1, say other tips.
-
 
 Compute Turn ends here.

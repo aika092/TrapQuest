@@ -1,6 +1,5 @@
 Slingshot Trap by Traps begins here.
 
-
 A slingshot is a kind of trap. There are 5 potentially pressure potentially sticky slingshots.
 To say ExamineDesc of (C - a slingshot):
 	say "A loose piece of elastic fabric pokes out of the ground, from where the slingshot trap happened.".
@@ -59,6 +58,5 @@ To trigger (Y - a slingshot):
 
 To say SlingshotTrapReactFlav of (M - a monster):
 	say SuddenTransformTrapReactFlav of M.
-
 
 Slingshot Trap ends here.

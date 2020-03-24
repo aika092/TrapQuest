@@ -79,7 +79,6 @@ Definition: a thing (called C) is in-play:
 	if C is in Holding Pen, decide no;
 	decide yes.
 
-
 [!<AddTreasureToThing>+
 
 REQUIRES COMMENTING
@@ -288,7 +287,6 @@ To compute autotaking (I - a thing):
 					otherwise say "You are now carrying the [ShortDesc of I].";
 				now another-turn is 1.
 
-
 [!<ReportOpeningAContainer>+
 
 REQUIRES COMMENTING
@@ -381,6 +379,5 @@ To compute automatic eating of (I - a thing):
 	let C be I;
 	try TQeating C; [I HAVE NO IDEA WHY THIS SOLVES THE BUG IT JUST DOES DON'T ASK QUESTIONS]
 	if I is off-stage, say "[if the bimbo of the player < 12 and I is candy][line break][variable custom style]I should really work on my self-control...[otherwise if the bimbo of the player < 12][variable custom style]I feel much better![otherwise][line break][second custom style]MMM so yummy! Oh, it's all gone already?[end if][roman type][line break]".
-
 
 Items Found in Containers ends here.

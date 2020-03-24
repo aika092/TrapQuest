@@ -1,6 +1,5 @@
 Cat Ears by Headgear begins here.
 
-
 cat-ears is a headgear. cat-ears is manly. Figure of cat ears is the file "Items/Accessories/Head/catears1.png". Understand "pair", "of" as cat-ears. cat-ears is blondeness-negative. cat-ears is brightness-positive. cat-ears is redness-negative. cat-ears is hair growing. cat-ears is dexterity-influencing. cat-ears is roleplay. Understand "cat", "ears" as cat-ears.
 
 kitty-summoned is a number that varies.
@@ -85,6 +84,5 @@ To say QuestFlav of (Q - puddle-licking-quest):
 
 To say QuestTitle of (Q - puddle-licking-quest):
 	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
-
 
 Cat Ears ends here.

@@ -455,9 +455,7 @@ To say SurrenderFlav of (M - a monster):
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
 	if the player is able to use their hands and the player is not wrist bound behind, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is not intelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
 
-
 Part 4 - Damage Calculation
-
 
 [!<combatBonus:Integer>*
 
@@ -502,7 +500,6 @@ To say combat bonus explanation:
 	let N be combat bonus - combat bonus remainder;
 	if the player is blinded, increase N by 2;
 	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [otherwise if the player is blinded]-2 (blinded by cum) [end if]".
-
 
 [!<DecideWhichNumberIsTheDamageModifierOfThing>+
 
@@ -691,6 +688,5 @@ To compute failed damage of (M - a monster):
 
 To compute combatProvoked of (M - a monster):
 	now M is unleashed.
-
 
 Attacking Monsters ends here.

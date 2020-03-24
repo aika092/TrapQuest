@@ -1,6 +1,5 @@
 Handicap Options by Fetish Settings begins here.
 
-
 [!<tableOfHandicapOptions:Table>*
 
 REQUIRES COMMENTING
@@ -30,7 +29,6 @@ title	subtable	description	toggle
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving is automatic every turn, your save file automatically loads when you open the game, and save file is deleted after typing 'restart' & after losing; causes a bit more lag but protects against crashes) - [if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
 
-
 To decide which number is fast breast expansion:
 	if diaper quest is 1, decide on 0;
 	if choice in row 14 of the Table of Player Options <= 0, decide on 0;
@@ -45,7 +43,6 @@ This is the fast breast expansion random rule:
 	if choice in row 14 of the Table of Player Options is 0 or choice in row 14 of the Table of Player Options is 1, now choice in row 14 of the Table of Player Options is a random number between 0 and 1.
 The fast breast expansion random rule is listed in the random mode rules.
 
-
 To decide which number is latex prisoner:
 	if choice in row 15 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
@@ -58,7 +55,6 @@ The latex prisoner nightmare rule is listed in the nightmare mode rules.
 This is the latex prisoner random rule:
 	if choice in row 15 of the Table of Player Options is 0 or choice in row 15 of the Table of Player Options is 1, now choice in row 15 of the Table of Player Options is a random number between 0 and 1.
 The latex prisoner random rule is listed in the random mode rules.
-
 
 To decide which number is bondage prisoner:
 	if diaper quest is 1, decide on 0;
@@ -74,7 +70,6 @@ This is the bondage prisoner random rule:
 	if choice in row 16 of the Table of Player Options is 0 or choice in row 16 of the Table of Player Options is 1, now choice in row 16 of the Table of Player Options is a random number between 0 and 1.
 The bondage prisoner random rule is listed in the random mode rules.
 
-
 To decide which number is unlucky:
 	if born to lose tattoo is worn, decide on 1;
 	if choice in row 17 of the Table of Player Options <= 0, decide on 0;
@@ -88,7 +83,6 @@ The unlucky nightmare rule is listed in the nightmare mode rules.
 This is the unlucky random rule:
 	if choice in row 17 of the Table of Player Options is 0 or choice in row 17 of the Table of Player Options is 1, now choice in row 17 of the Table of Player Options is a random number between 0 and 1.
 The unlucky random rule is listed in the random mode rules.
-
 
 To decide which number is forgetful airhead:
 	if diaper quest is 1, decide on 0;
@@ -104,7 +98,6 @@ This is the forgetful airhead random rule:
 	if choice in row 18 of the Table of Player Options is 0 or choice in row 18 of the Table of Player Options is 1, now choice in row 18 of the Table of Player Options is a random number between 0 and 1.
 The forgetful airhead random rule is listed in the random mode rules.
 
-
 To decide which number is submissive sex addict:
 	if diaper quest is 1, decide on 0;
 	if choice in row 32 of the Table of Player Options <= 0, decide on 0;
@@ -118,7 +111,6 @@ The cum addiction nightmare rule is listed in the nightmare mode rules.
 This is the cum addiction random rule:
 	if choice in row 32 of the Table of Player Options is 0 or choice in row 32 of the Table of Player Options is 1, now choice in row 32 of the Table of Player Options is a random number between 0 and 1.
 The cum addiction random rule is listed in the random mode rules.
-
 
 [!<DecideWhichNumberIsSaveGameLimit>+
 
@@ -213,7 +205,6 @@ The sex fainting random rule is listed in the random mode rules.
 To decide which number is sex fainting points:
 	decide on choice in row 44 of the Table of Player Options.
 
-
 To decide which number is tough-shit:
 	if choice in row 51 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
@@ -228,7 +219,6 @@ This is the tough-shit random rule:
 The tough-shit random rule is listed in the random mode rules.
 To decide which number is tough-shit points:
 	decide on choice in row 51 of the Table of Player Options.
-
 
 To decide which number is ungape:
 	if diaper quest is 1, decide on 0;
@@ -246,7 +236,6 @@ The ungape random rule is listed in the random mode rules.
 To decide which number is ungape points:
 	decide on choice in row 60 of the Table of Player Options.
 
-
 To decide which number is starting body shape:
 	if diaper quest is 1, decide on 0;
 	if choice in row 62 of the Table of Player Options <= 0, decide on 0;
@@ -263,7 +252,6 @@ This is the starting body shape random rule:
 The starting body shape random rule is listed in the random mode rules.
 To decide which number is starting body shape points:
 	decide on choice in row 62 of the Table of Player Options.
-
 
 [
 0: Less items
@@ -304,7 +292,6 @@ To decide which number is clumsy april fools:
 To say aprilFoolsClumsyFlav:
 	if clumsy april fools is 1, say "[one of][variable custom style]Wait a minute, I'm not usually this clumsy! What's going on?![roman type][line break]As if responding to your thoughts, you hear a girly voice from just behind you giggle and say[line break][second custom style]'Tee-hee, April Fools!'[roman type][line break]But when you turn around, there's nobody there...[or]You hear girly snickering from just behind you, but when you turn around, there's nobody there.[or]Once again you hear giggling from somewhere behind you.[stopping]".
 
-
 To decide which number is strongCurses:
 	if tutorial is 1 or (diaper quest is 0 and the player is not an august 2019 top donator) or (diaper quest is 1 and the player is not an august 2019 diaper donator), decide on 0;
 	if choice in row 78 of the Table of Player Options <= 0, decide on 0;
@@ -318,6 +305,5 @@ The strongCurses nightmare rule is listed in the nightmare mode rules.
 This is the strongCurses random rule:
 	if choice in row 78 of the Table of Player Options is 0 or choice in row 78 of the Table of Player Options is 1, now choice in row 78 of the Table of Player Options is a random number between 0 and 1.
 The strongCurses random rule is listed in the random mode rules.
-
 
 Handicap Options ends here.

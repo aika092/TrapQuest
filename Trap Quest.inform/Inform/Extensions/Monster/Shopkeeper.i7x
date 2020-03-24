@@ -22,7 +22,6 @@ To say ShortDesc of (M - shopkeeper):
 To say MediumDesc of (M - shopkeeper):
 	say "shopkeeper".
 
-
 To decide which figure-name is the monster-image of (M - shopkeeper):
 	if diaper quest is 1:
 		decide on figure of Clothed Shopkeeper;
@@ -160,7 +159,6 @@ To say BecomesBoredFlav of (M - shopkeeper):
 To say DiaperReaction of (M - shopkeeper):
 	if (there is a currently visible diaper or the player is shameless) and M is interested, say "[BigNameDesc of M] frowns as [he of M] watches you. It's very clear that [he of M] can tell what is happening.[line break][variable custom style][if the player is modest]Why did this have to happen to me?![otherwise if the player is not shameless]If [he of M] was kind, [he of M] would look away![otherwise]Yep that's right Sir, I'm going right now in my nappy![end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the player is not shameless]if [he of M] saw[otherwise][his of M] reaction[end if].".
-
 
 Definition: shopkeeper (called M) is distracted:
 	if the refactory-period of M < 0 and M is reactive:
@@ -317,7 +315,6 @@ To compute perception of (M - shopkeeper):
 
 To compute friendly boredom of (M - shopkeeper):
 	if the player is not in the location of M, now M is uninterested.
-
 
 Part 3 - Motion and Seeking
 
@@ -559,7 +556,6 @@ To decide if (M - shopkeeper) is willing to creampie (F - vagina):
 		decide no;
 	decide yes.
 
-
 To say PullOutFlav of (M - shopkeeper) in (F - a fuckhole):
 	say "[speech style of M]'Since you've been so much fun, I'll let you off - I won't [if pregnancy fetish is 1 and M is penetrating vagina and the pregnancy of the player is 0]risk getting you pregnant[otherwise]come inside you[end if]!'[roman type] [BigNameDesc of M] suddenly pulls out and ejaculates over the stone floor. [speech style of M]'I hope you learned your lesson though.'".
 
@@ -751,7 +747,6 @@ To compute diaper use of (M - shopkeeper):
 
 Section 2 - DQ
 
-
 shopkeeper-retrieves-stolen is a diaper punishment. The priority of shopkeeper-retrieves-stolen is 5.
 Definition: shopkeeper-retrieves-stolen (called P) is appropriate:
 	if current-monster is not shopkeeper, decide no;
@@ -787,7 +782,6 @@ To say DQSpankResistReactionFlav of (M - shopkeeper):
 
 To say DQSpankResistExtensionFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] looks frustrated.[line break][speech style of M]'[one of][NameBimbo], we got a sale going on today, 3 struggles gets you 10 free lashes!'[or]Oh, I guess that means you want even more?'[cycling][roman type][line break]".
-
 
 To compute stealing of (C - a clothing):
 	if C is not stolen:
@@ -1405,7 +1399,6 @@ To say DragArrival of (M - shopkeeper) to (R - Dungeon08):[The shopkeeper puts a
 		say "[BigNameDesc of M] reaches into a nearby box, retrieving a bottle of lube. [big he of M] squeezes it liberally onto your [chosen-orifice of M], and then onto [his of M] [manly-penis]. [line break][speech style of M]'[one of]Alright, let's both enjoy ourselves. Don't attack me in my shop again, though[or]I can[']t believe I'm doing this for you again[stopping].'[roman type][line break]".
 
 Section 6 - Trading
-
 
 To compute (M - shopkeeper) considering (T - chess piece):
 	if M is not interested:

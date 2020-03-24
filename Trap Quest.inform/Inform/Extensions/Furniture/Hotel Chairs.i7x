@@ -1,6 +1,5 @@
 Hotel Chairs by Furniture begins here.
 
-
 hotel chairs is a furniture. The printed name of hotel chairs is "[TQlink of item described]hotel [if diaper focus >= 1]baby [end if]chairs[TQxlink of item described][shortcut-desc][verb-desc of item described]". hotel chairs has a number called times-sat. hotel chairs is in Hotel21. Understand "baby chair", "baby chairs", "hotel baby", "chair" as hotel chairs. The text-shortcut of hotel chairs is "hch".
 
 Figure of hotel chairs is the file "Env/Hotel/hotelchairs1.png".
@@ -158,6 +157,5 @@ To compute BabyChairReaction of (M - a monster):
 
 To say RestingDesc of (F - hotel chairs):
 	say "You are happy to find that you instantly feel less tired and less sore! Wow!".
-
 
 Hotel Chairs ends here.

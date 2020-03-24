@@ -81,7 +81,6 @@ To say MediumDesc of (M - hairy patron):
 	if lady fetish is 1, say "pregnant patron";
 	otherwise say "hairy patron".
 
-
 A dickhead patron is a kind of patron.
 menacing patron is a dickhead patron. sneering patron is a dickhead patron. The text-shortcut of menacing patron is "mpa". The text-shortcut of sneering patron is "snp".
 To decide which number is the girth of (M - dickhead patron):
@@ -151,7 +150,6 @@ To compute labour to (M - a patron):
 
 To say NonAliveFatherBirthFlav of (M - a patron):
 	say "You are filled with a desire to return to the Hotel!".
-
 
 To compute fatherhood to (M - a patron):
 	dislodge M.
@@ -265,7 +263,6 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 		if the human-toilet-scene of woman-barbara > 1, ImmediateWomanSluttify;
 	say "[BigNameDesc of P] leaves the way [he of P] came in.";
 
-
 To compute player urinal use of (M - a monster):
 	now M is in the location of the player;
 	say "A [MediumDesc of M] walks into the room and makes a beeline for you. ";
@@ -282,7 +279,6 @@ To compute player urinal use of (M - a monster):
 		say "[speech style of M]'This toilet is malfunctioning. I'll be sure to tell the mechanic about this, so [he of mechanic] can [']fix['] it.'[roman type][line break]";
 		decrease the employee-record of senior robobellboy by 1;
 	say "[big he of M] leaves the way [he of M] came.".
-
 
 To compute patronMeeting of (M - a monster) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
@@ -512,7 +508,6 @@ To compute DQ perception of (M - a patron):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
 		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or][daddytitle of M]'s home, honey! Are you ready to play?'[stopping][roman type][line break]".
-
 
 Part 3 - Motion
 
@@ -1540,9 +1535,7 @@ Definition: a patron is eager to double diapers:
 	if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, decide yes;
 	decide no.
 
-
 Definition: a patron is willing to spank: decide yes.
-
 
 Definition: a patron (called M) is willing to spank gently:
 	if M is pissed off, decide no;
@@ -1590,10 +1583,8 @@ To say SpankingAfterFlav of (M - a patron):
 	say "After this [he of M] seems satisfied, and begins to rub your sore [if asshole is lewdly exposed][buttcheeks][otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] lovingly and speaks in a soothing voice. [line break][speech style of M]'[if M is pissed off]That's what you get for being disobedient, little baby. Maybe next time you'll listen to [daddytitle of M]'s instructions and obey them properly?'[otherwise][one of]It's okay, [daddytitle of M]'s here, [daddytitle of M] loves you[or]There there. [daddytitle of M] only spanks you because [he of M] loves you and wants you to be the perfect baby[or]Wasn't that fun, baby? [daddytitle of M] had fun[or]Aww, does your bum-bum hurt, little Princess? It's supposed to[in random order].'[end if][roman type][line break]After your heart rate starts to calm down, [he of M] gets up. ";
 	compute payment of M.
 
-
 To say DQSpankResistReactionFlav of (M - patron):
 	say "[BigNameDesc of M] [if M is well dressed patron]smiles.[line break][speech style of M]'[one of]Oh, you've done this before have you? Just enough thrashing as to not actually get away. Yes, well done!'[or]Sorry cutie, I guess we forgot to agree on a safeword!'[cycling][otherwise]frowns.[line break][speech style of M]'[one of]Now see here child, I paid extra for NO struggling. I'll be telling your supervisor about this!'[or]Are we crying now? As if that'll get you a better tip!'[cycling][roman type][line break]".
-
 
 Definition: a patron (called M) is willing to forcefeed:
 	if diaper messing >= 3, decide yes;
@@ -1613,10 +1604,8 @@ To say ForcefeedDeclarationFlav of (M - a patron):
 To say ForcefeedPillDeclarationFlav of (M - a patron):
 	say "[speech style of M]'[one of]Hehehe... I've got one more trick up my sleeve...'[or]I paid extra on the way in for one of these... I'm gonna make you explode!'[then at random][roman type][line break]".
 
-
 To say DQFeedingResistReactionFlav of (M - a patron):
 	say "[speech style of M]'[one of]I don't care if you dislike formula, I paid premium for realism and I demand compliance!'[or]No no no it's not burping time yet, nor nap time. Now... hold... still!'[or]I'd be fine with the fussy play if I had forked out the cash for the high chair, dear, but these are the cards we're dealt!'[in random order][roman type][line break]".
-
 
 Section 3 - Damage
 
@@ -1725,7 +1714,6 @@ To compute successful dominance of (M - a patron):
 					TimesSubmittedUp P;
 					store P after tricks;
 				if WB is 0, destroy P.
-
 
 To say DominanceIntro of (M - a patron):
 	let P be the number of patrons in the location of the player;
@@ -2383,6 +2371,5 @@ To say MonsterOfferRejectFlav of (M - a patron) to (T - a plentiful accessory):
 
 To say MonsterOfferRejectFlav of (M - a patron) to (T - a condom of kings):
 	say "[speech style of M]'[one of]Sorry babe, but I don[']t actually fit in condoms.'[or]No way, I like to fuck bareback!'[at random][roman type][line break]".
-
 
 Patron ends here.

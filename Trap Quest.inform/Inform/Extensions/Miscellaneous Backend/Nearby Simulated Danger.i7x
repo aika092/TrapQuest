@@ -29,7 +29,6 @@ Definition: a room (called R) is within vision:
 	if R is neighbour finder or R is next door, decide yes;
 	decide no.
 
-
 [!<ARoomIsNextDoor>+
 
 REQUIRES COMMENTING
@@ -112,6 +111,5 @@ Report going up:
 	update player region.
 Report going down:
 	update player region.
-
 
 Nearby Simulated Danger ends here.

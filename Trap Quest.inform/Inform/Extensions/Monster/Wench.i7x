@@ -67,11 +67,9 @@ kidnapped wench is a wench. The text-shortcut of kidnapped wench is "kwe".
 To say MediumDesc of (M - kidnapped wench):
 	say "kidnapped wench".
 
-
 desperate wench is a horny-wench. The text-shortcut of desperate wench is "dwe".
 To say MediumDesc of (M - desperate wench):
 	say "desperate wench".
-
 
 To say MonsterDesc of (M - a wench):
 	let K be a random knickers retained by M;
@@ -194,7 +192,6 @@ To say LewdTrapReactFlav of (M - a wench):
 	moderateHumiliate;
 	FavourDown M with consequences.
 
-
 Part 2 - Perception
 
 To decide which number is the bimbo tolerance of (M - a wench):
@@ -292,7 +289,6 @@ To display interaction of (M - a wench):
 	otherwise if M is uninterested:
 		alwayscutshow figure of wench interact 10 for M.
 
-
 Part 3 - Protection
 
 To compute (M - a wench) protecting against (X - a monster):
@@ -328,7 +324,6 @@ To compute (M - a wench) WenchReceiving (K - a knickers):
 	FavourUp M by 4;
 	now M is retaining K;
 	now K is in Holding Pen.
-
 
 Section 1 - Attack
 
@@ -1173,7 +1168,6 @@ To say DominantResponse of (M - a wench):
 		if M is friendly, say "[speech style of M]'Haha, just kidding.'[roman type][line break]";
 		alwayscutshow figure of wench interact 6 for M.
 
-
 Section 2 - Questioning
 
 To compute annoyance of (M - a wench):
@@ -1236,9 +1230,7 @@ To compute desperate drinking to (M - a wench):
 	allocate 6 seconds;
 	humiliate 250.
 
-
 Part 5 - Trading
-
 
 To decide which number is the bartering value of (T - a thing) for (M - a horny-wench):
 	decide on 0.

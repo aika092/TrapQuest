@@ -14,7 +14,6 @@ To decide which number is the unique vindictiveness of (M - an innocent student)
 To decide which number is the heel-skill of (M - an innocent student):
 	decide on 0.
 
-
 Part - Hailey
 
 student-hailey is an innocent student.
@@ -58,6 +57,5 @@ To say AdviceAnswer of (M - an innocent student):
 
 To compute teaching of (M - an innocent student):
 	say "[speech style of M]'Ha ha, no, I'm not a teacher!'[roman type][line break]".
-
 
 Students Innocent ends here.

@@ -1,6 +1,5 @@
 Unnecessary Figures by DQ Only Stuff begins here.
 
-
 Part - Monsters
 
 To decide which figure-name is Figure of acolyte 1:
@@ -95,7 +94,6 @@ To decide which figure-name is Figure of ghost 3:
 To decide which figure-name is Figure of ghost 4:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of Ghost Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Ghost Cutscene 2:
@@ -117,7 +115,6 @@ To decide which figure-name is Figure of Guard Cutscene 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of Guard Cutscene 7:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of Futanari Gladiator:
 	decide on figure of small image.
@@ -178,7 +175,6 @@ To decide which figure-name is Figure of Wild Gladiator Cutscene 4:
 To decide which figure-name is Figure of Wild Gladiator Cutscene 5:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of caged urinal princess:
 	decide on figure of small image.
 To decide which figure-name is Figure of caged urinal princess piss:
@@ -192,7 +188,6 @@ To decide which figure-name is Figure of Quiz Predicament Room:
 
 To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of Witch Cutscene 1:
 	decide on figure of small image.
@@ -214,7 +209,6 @@ To decide which figure-name is Figure of Wrestler Fingers 6:
 
 To decide which figure-name is Figure of Xavier Cutscene 2:
 	decide on figure of small image.
-
 
 Part - Other
 
@@ -405,7 +399,6 @@ To decide which figure-name is Figure of Xmas Tentacle Cutscene 1:
 To decide which figure-name is Figure of nintendolls predicamania know-it-all:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of super rich pregnancy sex:
 	decide on figure of small image.
 To decide which figure-name is Figure of super rich pregnancy blowjob:
@@ -447,11 +440,9 @@ To decide which figure-name is Figure of super rich bimbo:
 To decide which figure-name is Figure of super rich domme:
 	decide on figure of small image.
 
-
 To decide which figure-name is figure of helium balloons:
 	decide on figure of small image.
 To decide which figure-name is figure of condom pigtails:
 	decide on figure of small image.
-
 
 Unnecessary Figures ends here.

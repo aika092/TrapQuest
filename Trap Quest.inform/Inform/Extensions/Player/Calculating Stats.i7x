@@ -1,6 +1,5 @@
 Calculating Stats by Player begins here.
 
-
 [!<DecideWhichNumberIsNScaled>+
 
 REQUIRES COMMENTING
@@ -51,7 +50,6 @@ To update saved stats:
 	now saved-printed-kick-damage is saved-kick-damage - combat bonus remainder;
 	now backgroundCombatCalculation is false.
 
-
 [!<DecideWhichNumberIsFetishBonusOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -68,6 +66,5 @@ To decide which number is fetish-bonus of the player:
 		decide on player-enhancement / 8;
 	otherwise:
 		decide on 0.
-
 
 Calculating Stats ends here.

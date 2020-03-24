@@ -60,5 +60,4 @@ To compute mass collectible reward of (T - a fabric token):
 	allocate 6 seconds;
 	reset alchemy charge.
 
-
 Fabric Token ends here.

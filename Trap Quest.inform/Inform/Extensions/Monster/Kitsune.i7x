@@ -79,7 +79,6 @@ To compute perception of (M - kitsune):
 	otherwise:
 		bore M.
 
-
 Part 2 - Combat
 
 Section 1 - Damage
@@ -98,7 +97,6 @@ To compute failed damage of (M - kitsune):
 		regionally place M;
 		now the vanish timer of M is -1;
 		set up disguise of M.
-
 
 Part 3 - Conversation
 
@@ -126,7 +124,6 @@ To say RepeatResponse of (M - kitsune):
 	otherwise:
 		compute KitsuneReveal of M.
 
-
 Section 2 - Questioning
 
 To say WhereAnswer of (M - kitsune):
@@ -148,7 +145,6 @@ To say EscapeAnswer of (M - kitsune):
 To say AdviceAnswer of (M - kitsune):
 	say "[speech style of M]'I've got some special toys I might be willing to part with for frequent customers.'[roman type][line break]";
 	alwayscutshow figure of kitsune interact 2 for M.
-
 
 Part 4 - Trading
 
@@ -229,6 +225,5 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		say "A [printed name of I] appears on the ground!";
 		compute autotaking I;
 		unless I is smoke bomb or I is skeleton key, restock I.
-
 
 Kitsune ends here.

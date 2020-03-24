@@ -29,5 +29,4 @@ To set up influence of (C - a bib):
 To decide which number is the initial cringe of (C - a bib):
 	decide on 13.
 
-
 Bib ends here.

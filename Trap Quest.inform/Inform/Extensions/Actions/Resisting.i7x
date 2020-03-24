@@ -182,7 +182,6 @@ Report resisting:
 				say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 				try examining daddy's wild child tattoo.
 
-
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;
 	otherwise say "[if T is penetrating a body part][one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random][otherwise][DefaultResistFlav of T][end if]".
@@ -255,12 +254,10 @@ To say DQMasturbationResistFlav of (M - a monster):
 To say DQMasturbationResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
-
 To say DQFeedingResistFlav of (M - a monster):
 	say DefaultResistFlav of M.
 To say DQFeedingResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
-
 
 To say DefaultResistFlav of (T - a thing):
 	say "You struggle in vain to free yourself!".
@@ -277,7 +274,6 @@ To compute sex resist punishment of (M - a monster):
 	choose a sex resist punishment.
 
 Understand "resist", "fight back", "escape", "run", "fight", "nono", "noway", "nn" as resisting.
-
 
 [!<SayForcedSubmitFlav>+
 

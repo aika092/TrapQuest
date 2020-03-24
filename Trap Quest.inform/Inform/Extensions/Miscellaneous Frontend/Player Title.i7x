@@ -1,6 +1,5 @@
 Player Title by Miscellaneous Frontend begins here.
 
-
 [!<SayTitleBimbo>+
 
 REQUIRES COMMENTING
@@ -212,6 +211,5 @@ To say TitleBaby:
 			say " trap";
 		otherwise:
 			say " girl[if the player is male]yboy[end if]".
-
 
 Player Title ends here.

@@ -135,7 +135,6 @@ Carry out going up (this is the woods-setup rule):
 		repeat with M running through alive nonsetup monsters:
 			set up M.
 
-
 [!<TheMansionSetUpRule>+
 
 REQUIRES COMMENTING
@@ -250,7 +249,6 @@ REQUIRES COMMENTING
 Definition: yourself is squirming:
 	if there is an insertable object penetrating a fuckhole, decide yes;
 	decide no.
-
 
 [!<movementReductionFlavSaid:Integer>*
 
@@ -426,7 +424,6 @@ This is the default trip flavour rule:
 The default trip flavour rule is listed last in the trip reasons rules.
 
 Part 3 - Main Going Function
-
 
 [This is a long function because the order of considerations is quite important here!]
 [!<CheckGoing>+
@@ -658,7 +655,6 @@ This is the player trips on lever rule:
 			rule succeeds.
 The player trips on lever rule is listed in the clumsiness rules.
 
-
 [!<TheMonstersGoNextRule>+
 
 REQUIRES COMMENTING
@@ -748,7 +744,6 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 			now C is unowned;
 		now flav-said is 1.
 
-
 Part 4 - Trap Triggers
 
 [!<ReportGoing>+
@@ -824,7 +819,6 @@ To Choose A Trap To Trigger:
 		if WasUpright is true and the player is prone and the location of the player is glue-puddled:
 			check glue tripping.
 
-
 [!<YourselfIsWalkingPastAStickyTrap>+
 
 REQUIRES COMMENTING
@@ -864,7 +858,6 @@ To Test a Sticky Trap:
 
 To say StickyTriggerFlav of (T - a trap):
 	say "As your hands hit the ground, you feel a pressure pad depress underneath them! [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
-
 
 [!<YourselfIsWalkingIntoAPressureTrap>+
 
@@ -916,7 +909,6 @@ To Test A Pressure Trap:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";
 			trigger a pressure trap.
 
-
 [!<TriggerAPressureTrap>+
 
 REQUIRES COMMENTING
@@ -937,7 +929,6 @@ To Trigger A Pressure Trap:
 				trigger T;
 				now N is 1.
 
-
 [!<YourselfIsWalkingIntoAWireTrap>+
 
 REQUIRES COMMENTING
@@ -957,7 +948,6 @@ Definition: yourself is walking past a wire trap:
 	repeat with T running through wire traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
-
 
 [!<TestAWireTrap>+
 
@@ -1022,6 +1012,5 @@ To Place Permanent Triggered Wire:
 		now W is wire;
 		now W is not untriggered; [This is so in the future we prefer to trigger wire traps that aren't just tripwires.]
 		now W is revealed.
-
 
 Going ends here.

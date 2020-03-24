@@ -36,7 +36,6 @@ To say WhereAnswer of (M - teacher-hannah):
 To say AdviceAnswer of (M - teacher-hannah):
 	say "[speech style of M]'Following orders becomes easier once you truly accept that you are beneath us.'[roman type][line break]".
 
-
 To say DefeatFlav of (M - teacher-hannah):
 	say "[BigNameDesc of M] collapses, and [if M is in the school]is left sprawled on the floor. [big he of M] won't be getting up any time soon[otherwise][his of M] body disappears[end if].";
 	if skeleton key is off-stage:
@@ -196,7 +195,6 @@ To say ClitPiercingConcede of (M - a tryhard student):
 
 To say ClitPiercingConcede of (M - an innocent student):
 	say "Moments later [NameDesc of M] steps forward, releasing you both from the clitoral torment. [big he of M] shakes [his of M] arms in a panicked fashion.[line break][speech style of M]'No no no, this is just too crazy!'[roman type][line break]".
-
 
 toy-lesson is a lesson. The lesson-teacher of toy-lesson is teacher-hannah.
 
@@ -381,7 +379,6 @@ Definition: a text (called T) is toy-lesson-examine-responsive:
 			if T matches the text text-shortcut of P, decide yes;
 	decide no.
 
-
 Part - Bianca
 
 teacher-bianca is an emerald-teacher.
@@ -492,6 +489,5 @@ To compute teaching of (L - dress-lesson):
 			say "You watch as [his of P] emerald ID card turns into a ruby one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 			compute mandatory room leaving of P;
 			say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'That'll do for now. Class dismissed!'[roman type][line break]".
-
 
 Teachers Emerald ends here.

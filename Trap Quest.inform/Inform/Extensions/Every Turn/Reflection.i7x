@@ -1,6 +1,5 @@
 Reflection by Every Turn begins here.
 
-
 [!<ComputeHumiliationWithEarningsAndSeconds>+
 
 Compute stuff to do with humiliation and reflection that happens every turn.
@@ -91,7 +90,6 @@ To reflect on (A - huge-belly):
 	otherwise:
 		say "[if the player is male]You look down at your [BellyDesc] and [one of]realise how ridiculous your situation really is[or]are suddenly very thankful that you can't get pregnant[or]quiver as you think about how large it might be able to grow to in this game[in random order].[otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]So this is what it's like to feel pregnant? How humiliating...[or]Please don't grow any more...[or]I mustn't let anything else cum inside me![in random order][roman type][line break][end if]".
 
-
 crawling-around is a humiliating situation.
 Definition: crawling-around (called A) is applicable:
 	if (the player is proud or the player-class is succubus or the class of the player is princess) and the player is prone, decide yes;
@@ -105,7 +103,6 @@ To reflect on (A - crawling-around):
 		say "A mocking voice in your head chides you for crawling like a pathetic mortal.";
 	otherwise:
 		say "[first custom style]I'm on my knees [one of]crawling through this place[or]crawling around[or]with my butt high in the air[in random order]. How crazy is this![roman type][line break]".
-
 
 outrageous-heels is a humiliating situation.
 Definition: outrageous-heels (called A) is applicable:
@@ -158,7 +155,6 @@ Definition: outrageous-corset (called A) is applicable:
 To reflect on (A - outrageous-corset):
 	say "[if the bimbo of the player < 10][first custom style]This corset [one of]is much too slutty for me to be wearing...[or]makes me look like a complete tart![or]could get me mistaken for a common whore![in random order][otherwise][second custom style]This corset really does make my waist and hips look sexy...[one of] no wonder everything wants to fuck me![or]I guess people can't be blamed if they want to screw me![or][in random order][end if][roman type][line break]".
 
-
 chubby-slut is a humiliating situation.
 Definition: chubby-slut (called A) is applicable:
 	if the player is not disgraced and the fat-weight of the player > 8 and weight gain fetish is 1, decide yes;
@@ -203,7 +199,6 @@ Definition: outrageous-messy-undies (called A) is applicable:
 To reflect on (A - outrageous-messy-undies):
 	if the player is upset about sitting in mess, say "[variable custom style][one of]I need to get out of this nasty messy prison before someone checks me! But how do I do that...?![or]Oh this is so gross, I can smell my own mess! I give up, someone please come and give me a change already...[or]Yuck yuck yuck, I need to get out of my own filth before someone smells me! I just need to find a bath, or shower, or even a pond would do![in random order][roman type][line break]";
 	otherwise say "[variable custom style][one of]If someone caught me in this messy situation, my reputation would never recover! I should probably find a way to get clean before that happens.[or]If someone realises I'm messy it'll be so embarrassing... I'd rather just stay messy rather than face the humiliation of getting a change from another person![in random order][roman type][line break]".
-
 
 [!<SayHumiliationFlav>+
 
@@ -350,6 +345,5 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]Aww, there was some cool fact about [if diaper quest is 0]sex[otherwise]being a baby[end if] I was just thinking about, but now I can't remember it...[roman type][line break][or][stopping]";
 			now the old intelligence of the player is saved-flat-intelligence;
 			break.
-
 
 Reflection ends here.

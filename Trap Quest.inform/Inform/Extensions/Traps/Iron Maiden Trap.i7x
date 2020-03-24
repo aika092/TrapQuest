@@ -111,7 +111,6 @@ A time based rule (this is the iron-maiden-punishment rule):
 				otherwise:
 					say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [asshole]!";
 
-
 Report urinating when the player is in Iron Maiden:
 	unless there is a worn diaper:
 		say "[if diaper lover > 0]You can't help but wish you were wearing a diaper - at least then you wouldn't be able to smell the stink of your own [urine] so strongly inside this tiny metal box! [end if]You can't help but [if the delicateness of the player < 10]feel a bit more submissive[otherwise]cry a little[end if].";

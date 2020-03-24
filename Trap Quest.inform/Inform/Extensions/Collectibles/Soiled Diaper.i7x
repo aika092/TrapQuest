@@ -51,7 +51,6 @@ Carry out examining:
 		if N > 0:
 			say "[big he of the noun] is carrying [if N is 1]a soiled diaper[otherwise][N] soiled diapers[end if] in [his of the noun] hand[if N > 1]s[end if][if the noun is intelligent]. [big he of the noun] doesn't look happy about it[end if].".
 
-
 A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.png". Understand "diaper pail", "pail" as a diaper pail.
 
 A game universe initialisation rule:
@@ -128,7 +127,6 @@ A later time based rule:
 			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
 			SilentlyDelicateUp 1.
 
-
 BabChanging it with is an action applying to two things.
 Check BabChanging it with:
 	if the noun is not a monster, say "This command only works on NPCs." instead;
@@ -148,6 +146,5 @@ Carry out BabChanging it with:
 		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
 	only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]", "change [a person] using [something]" as BabChanging it with.
-
 
 Soiled Diaper ends here.

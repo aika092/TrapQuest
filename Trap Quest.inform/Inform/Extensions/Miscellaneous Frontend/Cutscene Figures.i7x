@@ -24,5 +24,4 @@ Figure of Ballet Cutscene is the file "Special/Cutscene/cutscene-ballet-strut1.p
 
 Figure of Rocking Horse Cutscene is the file "Special/Cutscene/cutscene-rockinghorse1.png".
 
-
 Cutscene Figures ends here.

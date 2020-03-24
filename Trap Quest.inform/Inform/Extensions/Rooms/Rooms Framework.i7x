@@ -2,13 +2,11 @@ Rooms Framework by Rooms begins here.
 
 Include Static Rooms by Rooms.
 
-
 Include Spatial Vectors and Shape by Rooms.
 Include Solid Rock by Rooms.
 Include Terra Incognita by Rooms.
 Include Region Building by Rooms.
 Include Deploying by Rooms.
-
 
 Include Room Adjectives by Rooms.
 Include Room Descriptions by Rooms.

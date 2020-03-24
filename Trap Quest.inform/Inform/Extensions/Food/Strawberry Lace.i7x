@@ -1,6 +1,5 @@
 Strawberry Lace by Food begins here.
 
-
 A strawberry lace is a kind of candy. The printed name of strawberry lace is "[TQlink of item described]strawberry lace[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of strawberry lace is "[TQlink of item described]strawberry laces[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of strawberry lace is "sl". There are 2 strawberry laces.
 
 To say ExamineDesc of (C - a strawberry lace):
@@ -49,6 +48,5 @@ To compute (M - a robochef) cooking (I - a strawberry lace):
 		now the quality of D is a random number between 2 and -2;
 		now the fat of D is 2;
 		now D is retained by M.
-
 
 Strawberry Lace ends here.

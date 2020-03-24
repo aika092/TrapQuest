@@ -1,6 +1,5 @@
 Room Adjectives by Rooms begins here.
 
-
 [!<Room>@<IsSandy>+
 
 REQUIRES COMMENTING
@@ -99,7 +98,6 @@ REQUIRES COMMENTING
 +@!]
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 
-
 [!<Room>@<IsStamped>+
 
 REQUIRES COMMENTING
@@ -159,8 +157,6 @@ This is a room that NPCs will never walk into voluntarily. Main use should be fo
 +@!]
 A room can be bossed or unbossed. A room is usually unbossed.
 
-
 Definition: A room is furnished rather than unfurnished if there is furniture in it.
-
 
 Room Adjectives ends here.

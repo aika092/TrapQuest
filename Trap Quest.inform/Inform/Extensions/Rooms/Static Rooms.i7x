@@ -16,7 +16,6 @@ Legacy room that was used to try and avoid the weird crash when trying to load f
 Loading is a room. "Type '[bold type]restore[roman type]' to load your save file.".
 Definition: Loading is nonstandard: decide yes.
 
-
 [!<capsule:Room>*
 
 REQUIRES COMMENTING
@@ -25,7 +24,6 @@ REQUIRES COMMENTING
 Capsule is a room. The printed name of Capsule is "Virtual Reality Machine".
 Definition: Capsule is nonstandard: decide yes.
 "A small metal chamber with nothing but a big red button.[TutorialCapsule]".
-
 
 To say unique-verb-desc of (T - a big red button):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]push[close bracket][as]push [text-shortcut of T][end link]".
@@ -89,7 +87,6 @@ Anything in here will be able to appear in the next christmas gift
 *!]
 Christmas Item Pen is a room.
 
-
 [!<soonToImprint:Room>*
 
 REQUIRES COMMENTING
@@ -113,6 +110,5 @@ Definition: MimicCrib is nonstandard: decide yes.
 DiaperPail is a room. "You are stuck upside down inside a diaper pail, with your legs flailing wildly above you! Yuck!". The printed name of DiaperPail is "Inside the diaper pail".
 Definition: DiaperPail is nonstandard: decide yes.
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".
-
 
 Static Rooms ends here.

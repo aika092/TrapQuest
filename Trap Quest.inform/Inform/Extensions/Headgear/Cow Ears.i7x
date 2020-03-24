@@ -2,7 +2,6 @@ Cow Ears by Headgear begins here.
 
 cow-ears is a headgear. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Figure of cow ears full is the file "Items/Accessories/Head/cowears2.png". Understand "pair", "pair of", "cow", "ears" as cow-ears. cow-ears is hair growing. cow-ears is milk-taste-addiction-influencing.
 
-
 Definition: cow-ears is roleplay if lactation fetish is 1.
 Definition: cow-ears is IcarusScienceAppropriate if it is actually summonable and lactation fetish is 1.
 
@@ -58,7 +57,6 @@ To compute cowgirl horniness:[cowgirls get horny if they're in the dungeon at th
 				now cow-horny-charge is 0;
 				say "You catch a whiff of a heavy, masculine scent and start to feel a little [if the arousal of the player > 1]more [end if]turned on.";
 				arouse 150.
-
 
 Chapter - Class Outfit
 
@@ -116,7 +114,6 @@ To compute class outfit of (H - cow-ears):
 		summon G;
 		now the raw-magic-modifier of G is (the milk volume of breasts + a random number between -2 and 6) / 5.
 
-
 Chapter - Quest
 
 milking-quest is a headgear-clothing-quest. milking-quest has a number called ready-for-milking. milking-quest has a number called successful-milks.
@@ -153,6 +150,5 @@ To progress quest of (Q - milking-quest):
 					compute quest completion of Q on C;
 				otherwise:
 					say "Your [ShortDesc of C] pulse happily. [one of]If you keep up this sort of milking routine, you're sure to be rewarded eventually[or]Keep it up[stopping]!".
-
 
 Cow Ears ends here.

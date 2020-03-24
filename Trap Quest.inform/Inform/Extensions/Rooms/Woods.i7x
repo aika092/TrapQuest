@@ -1,6 +1,5 @@
 Woods by Rooms begins here.
 
-
 [!<JungleRoom>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A jungle room is a kind of room. A jungle room has a labyrinth shape called shape. The shape of a jungle room is usually L2/0-0-1-1-1-1. The grid position of a jungle room is usually <0,0,0>. A jungle room is usually no-roof.
-
 
 [!<woods01:JungleRoom>*
 
@@ -331,13 +329,11 @@ Carry out climbing WoodsScenery03:
 			AssFill 8;
 	decrease the uses of WoodsScenery03 by 1.
 
-
 [!<woods:Region>*
 
 REQUIRES COMMENTING
 
 *!]
 The Woods is a region. Woods01, Woods02, Woods03, Woods04, Woods05, Woods06, Woods07, Woods08, Woods09, Woods10, Woods11, Woods12, Woods13, Woods14, Woods15, Woods16, Woods17, Woods18, Woods19, Woods20, Woods21, Woods22, Woods23, Woods24, Woods25, Woods26, Woods27, Woods28, Woods29, Woods30, Stairwell02, Stairwell03 are in The Woods.
-
 
 Woods ends here.

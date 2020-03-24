@@ -33,7 +33,6 @@ humming acolyte is a mindless acolyte. The text-shortcut of humming acolyte is "
 To say MediumDesc of (M - humming acolyte):
 	say "humming cultist".
 
-
 ardent acolyte is an acolyte. The text-shortcut of ardent acolyte is "aac".
 To say MediumDesc of (M - ardent acolyte):
 	say "ardent cultist".
@@ -52,7 +51,6 @@ To say MediumDesc of (M - clairvoyant acolyte):
 	say "clairvoyant cultist".
 
 Definition: clairvoyant acolyte is willing to do oral: decide yes.
-
 
 To decide which figure-name is the monster-image of (M - an acolyte):
 	if diaper quest is 1, decide on figure of acolyte 5;
@@ -157,7 +155,6 @@ To say GroundPeeReaction of (M - an acolyte):
 	if M is intelligent:
 		say "[speech style of M]'You would dare defile this sacred ground?!'[roman type][line break]";
 		FavourDown M with consequences.
-
 
 To say ClothesPeeReaction of (M - an acolyte):
 	if M is interested, say "You feel like you know that [NameDesc of M] is smirking under [his of M] veil, but you can't actually see it.";
@@ -348,7 +345,6 @@ To compute punishment of (P - cultist-altar-force):
 			otherwise:
 				drag to the target-room of M by M.
 
-
 Section 3 - Damage
 
 To compute damage of (M - an acolyte):
@@ -451,7 +447,6 @@ To say MummyChant of (M - an acolyte):
 			DifficultyUp M by 1;
 			ChargeDown mysterious-mummy by 30;
 			if the number of off-stage acolytes > 0, now the next-summon of M is 1.
-
 
 Part 4 - Conversation
 
@@ -556,7 +551,6 @@ To compute teaching of (M - an acolyte):
 		ModerateConvoFatigue M;
 	otherwise:
 		HeavyConvoFatigue M.
-
 
 Section 3 - Drink Requesting
 
@@ -843,7 +837,6 @@ To female dominate (M - an acolyte):[The cultist eats you out herself!]
 	LickGet;
 	say AfterDominationComment 3 of M.
 
-
 To say AfterDominationComment (N - a number) of (M - an acolyte):
 	if N is 1 and the class of the player is cultist, now N is 4;
 	if N is 1, say "[speech style of M]'[one of]Your seed empowers us, non-believer...'[or]All virility is an extension of the [great one]s...'[or]You lack the conviction to stand against the [great one]s, non-believer...'[at random][roman type][line break]";
@@ -1016,6 +1009,5 @@ To compute (M - clairvoyant acolyte) entering mouth:
 
 To say MouthPenetrationFlav of (M - clairvoyant acolyte):
 	say "[big he of M] buries your nose into [his of M] cum-dripping asshole and covers your mouth with [his of M] cum-filled [vagina]. You can't breathe![line break][speech style of M]'[one of]Drink, sister. Drink it all...'[or]Feast on the blessed nectar of the [great one]s...'[or]The taste will be beyond your comprehension at first. Have no fear...'[or]Lick me clean. Prove your devotion to the old gods...[purely at random][roman type][line break]";
-
 
 Acolyte Cultist ends here.

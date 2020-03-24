@@ -1,6 +1,5 @@
 Game Settings by Miscellaneous Backend begins here.
 
-
 [!<crashdebug:Integer>*
 
 Sometimes when there are a lot of crashes during fainting we enable this to allow checkpoints during fainting so we can see how far the interpreter got so that we can work out which bit is causing the crash. When it's set to 1, the game will spit out "CHECKPOINT 1", "CHECKPOINT 2" etc. during the resetting of the map.
@@ -19,7 +18,6 @@ Used to track what game mode was selected.
 
 *!]
 quick start is a number that varies.
-
 
 [!<fileOfPreferences:File>*
 
@@ -373,7 +371,6 @@ Do you want to be warned before entering a room with an active trap that may aff
 To decide which number is trap warning:
 	decide on choice in row 35 of the Table of Settings.
 
-
 [!<DecideWhichNumberIsWonderfullerClothing>+
 
 Are there clothes on the Wonderfuller model?
@@ -382,7 +379,6 @@ Are there clothes on the Wonderfuller model?
 To decide which number is wonderfuller clothing:
 	if the player is not the donator, decide on 0;
 	decide on choice in row 37 of the Table of Settings.
-
 
 [!<DecideWhichNumberIsPreviousSupporterID>+
 
@@ -395,7 +391,6 @@ To decide which number is previous supporter ID:
 To record supporter ID as (N - a number):
 	now choice in row 38 of the Table of Settings is N;
 	write File of Preferences from the Table of Settings.
-
 
 [!<DecideWhichNumberIsInventoryFocusWindowEnabled>+
 
@@ -445,7 +440,6 @@ How many times has the player used undo since they started this new game?
 To decide which number is undo-counter:
 	decide on choice in row 44 of the Table of Settings.
 
-
 [!<DecideWhichNumberIsSchoolNames>+
 
 Does the player's name get overridden in the school?
@@ -470,12 +464,10 @@ How many of those clickable arrows to open windows does the player want?
 To decide which number is flexible focus windows:
 	decide on choice in row 47 of the Table of Settings.
 
-
 Table of Random Settings
 title	subtable	description	toggle
 "Play with the exact settings I just chose for this run-through, and let me choose how I spend my benefits points."	--	--	quit rule
 "I like surprises. Randomise the things that I didn't set to [']never['] or [']always['] and choose my benefits for me!"	--	--	slow random start rule
-
 
 Table of Game Settings
 title	subtable	description	toggle
@@ -514,7 +506,6 @@ To prune settings menu:
 	otherwise:
 		blank out the whole row;
 	sort the Table of Game Settings in description order. [Move blank rows to the bottom]
-
 
 This is the quick start rule:
 	if earnings is starting-earnings and halloween content is 0:
@@ -573,7 +564,6 @@ This is the game difficulty rule:
 		otherwise:
 			now the choice in row 32 of the Table of Settings is 0.
 
-
 [!<TheUltraUndoToggleRule>+
 
 REQUIRES COMMENTING
@@ -597,7 +587,6 @@ This is the crash debug rule:
 		now crashdebug is 1;
 	otherwise:
 		now crashdebug is 0.
-
 
 Part - Optional Text Settings
 
@@ -639,7 +628,6 @@ This is the newbie tips toggle rule:
 	if choice in row 20 of Table of Settings is 0, now choice in row 20 of Table of Settings is 1;
 	otherwise now choice in row 20 of Table of Settings is 0.
 
-
 [!<TheShortcutsToggleRule>+
 
 REQUIRES COMMENTING
@@ -648,7 +636,6 @@ REQUIRES COMMENTING
 This is the shortcuts toggle rule:
 	if choice in row 25 of Table of Settings is 0, now choice in row 25 of Table of Settings is 1;
 	otherwise now choice in row 25 of Table of Settings is 0.
-
 
 [!<TheInlineHyperlinksToggleRule>+
 
@@ -668,9 +655,7 @@ This is the inventory hyperlinks toggle rule:
 	if choice in row 28 of Table of Settings < 2, increase choice in row 28 of Table of Settings by 1;
 	otherwise now choice in row 28 of Table of Settings is 0.
 
-
 Part - Automatic Actions
-
 
 [!<tableOfAutomaticActionsSettings:Table>*
 
@@ -712,9 +697,7 @@ This is the autotake toggle rule:
 	if autotake < 2, increase choice in row 31 of the Table of Settings by 1;
 	otherwise now choice in row 31 of the Table of Settings is 0.
 
-
 Part - GUI Settings
-
 
 [!<tableOfAutomaticActionsSettings:Table>*
 
@@ -755,7 +738,6 @@ To say focusWindowHeightOptions:
 	say "Location window size: [if GUI layout is 1 and diaper quest is 0]NOT COMPATIBLE WITH CLASSIC COCKSUCKER[otherwise if GUI layout is 1]NOT COMPATIBLE WITH CLASSIC CRYBABY[otherwise][focusWindowHeight]% of total window height[end if]".
 
 Part - Image Toggle Rules
-
 
 [!<TheImagesVisibleToggleRule>+
 
@@ -918,7 +900,6 @@ This is the pubic hair images visible toggle rule:
 	otherwise:
 		decrease choice in row 18 of the Table of Settings by 1.
 
-
 [!<TheCharacterLargerToggleRule>+
 
 REQUIRES COMMENTING
@@ -955,7 +936,6 @@ This is the keriax mirror toggle rule:
 	if choice in row 24 of Table of Settings > 0, decrease choice in row 24 of Table of Settings by 1;
 	otherwise now choice in row 24 of Table of Settings is 2.
 
-
 [!<TheImageCutscenesToggleRule>+
 
 REQUIRES COMMENTING
@@ -991,7 +971,6 @@ REQUIRES COMMENTING
 This is the trap warning toggle rule:
 	if choice in row 35 of Table of Settings is 0, increase choice in row 35 of Table of Settings by 1;
 	otherwise now choice in row 35 of Table of Settings is 0.
-
 
 This is the school names toggle rule:
 	if choice in row 45 of Table of Settings is 0, increase choice in row 45 of Table of Settings by 1;
@@ -1070,7 +1049,6 @@ This is the combat visor hidden toggle rule:
 	otherwise:
 		now choice in row 54 of Table of Settings is 0.
 
-
 To decide which number is map-figures:
 	if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator, decide on 0;
 	decide on choice in row 55 of Table of Settings.
@@ -1096,7 +1074,6 @@ Report SettingsSetting:
 	fix window overhang;
 	refresh windows.
 Understand "preferences", "prefs", "help", "hint", "hints", "about", "info", "settings", "menu", "options" as SettingsSetting.
-
 
 Part - Save Game Counter
 

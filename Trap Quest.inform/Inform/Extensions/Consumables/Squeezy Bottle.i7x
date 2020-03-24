@@ -1,6 +1,5 @@
 Squeezy Bottle by Consumables begins here.
 
-
 squeezy-bottle is a thing. squeezy-bottle is in Hotel19. The printed name of squeezy-bottle is "[TQlink of item described]squeezy bottle[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of squeezy-bottle is "sq". Understand "squeezy", "bottle" as squeezy-bottle.
 
 Figure of squeezy bottle is the file "Items/Collectibles/squeezybottle1.png".
@@ -40,6 +39,5 @@ Check drinking squeezy-bottle:
 	otherwise:
 		say "Water squirts from the bottle into your mouth.";
 	StomachUp 1 instead.
-
 
 Squeezy Bottle ends here.

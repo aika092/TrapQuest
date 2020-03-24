@@ -77,5 +77,4 @@ The remove inappropriate sequins dress rule is listed in the diaper quest fix ru
 Definition: a sequins dress is party themed: decide yes.
 Definition: a sequins dress is gem themed: decide yes.
 
-
 Sequins Outfit ends here.

@@ -104,7 +104,6 @@ To compute perception of (M - ex-princess):
 	otherwise:
 		say "[speech style of M]'Greetings [NameBimbo], saviour of Bimbacia!'[roman type][line break]";
 
-
 Part 2 - Misc Flavour
 
 To IdentifiablePosterReaction of (M - ex-princess):
@@ -117,9 +116,7 @@ To UnidentifiablePosterReaction of (M - ex-princess):
 	say "You turn slightly red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player / 2.
 
-
 Part 3 - Combat
-
 
 To compute (M - ex-princess) protecting against (X - a monster): [Default protection if not defined for the monster]
 	if M is in the school:
@@ -150,7 +147,6 @@ To compute (M - a monster) stomping (N - ex-princess): [TODO: Different interact
 		compute mandatory room leaving of N;
 		now N is moved;
 		now the health of M is 1.
-
 
 Part 4 - Conversation
 
@@ -189,7 +185,6 @@ To say RepeatResponse of (M - ex-princess):
 
 To say SubmissiveResponse of (M - ex-princess):
 	say "[speech style of M]'[one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][roman type][line break]".
-
 
 Section 2 - Questioning
 
@@ -236,7 +231,6 @@ To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - a vibe-wand):
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - skeleton key):
 	say "[BigNameDesc of M] is visibly elated.[line break][speech style of M]'Yes! You found one! This is exactly what I needed! Now, quick, let's go!'[roman type][line break]With the key, the door to [his of M] cell clicks open and [he of M] staggers out. As soon as [he of M] has crossed the threshold of the cell, you watch as pink sparks fizz across [his of M] outfit, transforming it into an elegant (if rather exposing) pink gown[if diaper lover > 0]. However, [his of M] outfit visibly includes a very bulky plain white diaper, fully visible from under the exposing segment of [his of M] skirt. It doesn't look like [he of M] intended to include the diaper in [his of M] transformation, and is equal parts confused and furious[end if].".
 
-
 To say MonsterOfferRejectFlav of (M - ex-princess) to (T - a thing):
 	say "[BigNameDesc of M] shakes [his of M] head.[line break][speech style of M]'[if M is caged and the number of monsters in the location of the player > 1]I don't want that! That's the sort of thing you'd give me if you were trying to help me escape, which would be a very silly thing to do IN FRONT OF PEOPLE, haha! Good joke!'[otherwise if T is skeleton key and M is caged]You'd better get me a magic wand first.'[otherwise if M is caged][big please], they'll just punish me more if they catch me with that. Just bring the things I asked for. A magic wand and a key...'[otherwise]Don't worry, [honey of M], I don't need anything from you any more. You've done more than enough for me.'[end if][roman type][line break]";
 	if T is vibe-wand or T is skeleton key, now M is not rejecting T.
@@ -257,7 +251,6 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 
 Check going while ex-princess is guarding:
 	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get captured again. You should see this through to the end." instead.
-
 
 A later time based rule (this is the school rescue fight rule):
 	if ex-princess is guarding:
@@ -388,7 +381,6 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 		if diaper focus > 0, now N is diaper-enslaved;
 		otherwise now N is sex-enslaved.
 
-
 A later time based rule (this is the asscum annie rule):
 	if ex-princess is sex-enslaved and playerRegion is School:
 		if the current-torment of ex-princess <= 0:
@@ -442,7 +434,6 @@ A later time based rule (this is the asscum annie rule):
 		otherwise:
 			decrease the current-torment of ex-princess by time-seconds.
 
-
 A later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
@@ -492,7 +483,6 @@ Check pushing ex-princess when ex-princess is caged:
 		say "Nothing more happens.";
 	do nothing instead.
 
-
 To compute toilet reaction of (M - ex-princess):
 	if M is caged:
 		say "[BigNameDesc of M] wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking [cunt]!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
@@ -537,7 +527,6 @@ A time based rule (this is the caged princess tortured rule):
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
 			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N][one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
-
 Definition: ex-princess is messy if it is unconcerned and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 7.
 
 To say SuddenMessFlav of (M - ex-princess):
@@ -560,6 +549,5 @@ To compute ChangeRequest of (M - ex-princess):
 			SexAddictUp 1;
 		otherwise:
 			say "You wrinkle your nose and step away from [him of M]. [big he of M] looks crestfallen and frustrated.[line break][speech style of M]'...Fine. I won't force you. But don't expect me to be able to help you while I'm stuck like this.'[roman type][line break]".
-
 
 Princess ends here.

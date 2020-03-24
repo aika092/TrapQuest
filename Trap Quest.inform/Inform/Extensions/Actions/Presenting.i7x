@@ -377,7 +377,6 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 						say "You tug your [ShortDesc of C] back into place.";
 						TopReplace C.
 
-
 Understand "present [something]", "offer [something]", "spread [something]", "suggest [something]", "display [something]", "put penis in [something]", "put cock in [something]", "put dick in [something]", "take penis in [something]", "take cock in [something]", "take dick in [something]" as presenting.
 
 Understand "spread [something] for [something]", "suggest [something] to [something]" as direct-presenting it to.
@@ -416,7 +415,6 @@ Redirect command to the desired action
 Check cocksomething:
 	try presenting face instead.
 
-
 [!<SayOralRequestFlavOfMonster>+
 
 This makes sure there is flavour even if the player can't speak.
@@ -424,7 +422,6 @@ This makes sure there is flavour even if the player can't speak.
 +!]
 To say OralRequestFlav of (M - a monster):
 	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to perform oral sex on [him of the second noun][otherwise if the second noun is a friendly male monster]you want to give [him of second noun] a blowjob[otherwise if the second noun is friendly]you want to pleasure [him of second noun] with your tongue[otherwise if the humiliation of the player < HUMILIATION-BROKEN]you'd rather use your mouth if possible[otherwise]you're ready to have your mouth used[end if].".
-
 
 [!<SayUnfriendlyOralRequestOfMonster>+
 
@@ -517,7 +514,6 @@ To say FriendlyOralRequest of (M - a monster):
 					say "[variable custom style]'Hey let's have some fun. I'm really great at cunnilingus, you know. [one of]I mean, not that I'm a weird rugmuncher[or]I'm not saying I have an oral fixation[in random order] or anything...'";
 	say "[roman type][line break]".
 
-
 [!<SayPissRequestFlavOfMonster>+
 
 This makes sure there is flavour even if the player can't speak.
@@ -525,7 +521,6 @@ This makes sure there is flavour even if the player can't speak.
 +!]
 To say PissRequestFlav of (M - a monster):
 	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You open your mouth wide and stick out your tongue, [if there is a worn tongue piercing]showing off your slutty tongue piercing and [end if]trying to signal that [if the second noun is friendly and the delicateness of the player > 12]you are requesting permission to drink [his of the second noun] [urine][otherwise if the second noun is friendly]you want to drink [his of M] [urine][otherwise if the humiliation of the player >= HUMILIATION-BROKEN]you're ready to become [his of M] [one of]human toilet[or]obedient urinal[at random][otherwise if highest body part sex addiction * 2 < the urine taste addiction of the player]you'd rather get pissed on rather than have sex[otherwise]you'd rather drink [his of M] piss right now[end if].".
-
 
 [!<SayUnfriendlyPissRequestOfMonster>+
 
@@ -653,7 +648,6 @@ To say UnfriendlyVaginalRequest of (M - a monster):
 		say "[variable custom style]'[if the delicateness of the player < 10]I don't know what you're planning to do to me, but if it's going to be sexual then you might as well do it to my sex.'[otherwise]Please punish my slutty [vagina]!'[end if]";
 	say "[roman type][line break]".
 
-
 [!<SayFriendlyVaginalRequestOfMonster>+
 
 The player initiates vaginal with a friendly NPC.
@@ -732,7 +726,6 @@ This makes sure there is flavour even if the player can't speak.
 +!]
 To say VaginalRequestFlav of (M - a monster):
 	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and pussy lips wide and wiggle your hips, trying to signal that [if the second noun is a friendly male monster]you'd really enjoy getting fucked right now[otherwise if the second noun is friendly]you'd love to have your [vagina] played with right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [vagina][otherwise]you're ready to have your [vagina] used[end if].".
-
 
 [!<SayTakeMyVirginityOfMonster>+
 
@@ -854,7 +847,6 @@ This makes sure there is flavour even if the player can't speak.
 To say AnalRequestFlav of (M - a monster):
 	if the player is not able to speak or M is not intelligent or the humiliation of the player > HUMILIATION-DISGRACED or the player is feeling submissive, say "You spread your ass cheeks and [asshole] wide and wiggle your hips, trying to signal that [if the second noun is friendly]you'd really enjoy getting ass-fucked right now[otherwise if the humiliation of the player < HUMILIATION-BROKEN and the anal sex addiction of the player < 4 and the player is male]you're consenting to getting fucked in the [asshole][otherwise if the humiliation of the player < HUMILIATION-BROKEN and the delicateness of the player < 10]you'd rather get fucked in the [asshole][otherwise]you're ready to have your [asshole] used[end if].".
 
-
 [!<SayTakeMyAnalVirginityOfMonster>+
 
 Uttered when the player asks to have their anal virginity taken
@@ -875,6 +867,5 @@ To say TakeMyAnalVirginity of (M - a monster):
 			say "[variable custom style]'I think it's about time I tried anal sex, don't you think? Come on, show me what I've been missing! Just don't be too rough, okay?'";
 		otherwise:
 			say "[second custom style]'[if the sex addiction of the player < 13]I can't pretend any more... [end if]I'm desperate for someone to take my anal cherry and show me what true submissive bliss is. Are you up for it? [if the sex addiction of the player > 10]Be as rough as you want... I deserve it[otherwise]I just have a feeling you're the right person to be my first[end if].'".
-
 
 Presenting ends here.

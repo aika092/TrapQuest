@@ -136,7 +136,6 @@ To compute DQ perception of (M - demon lord):
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER.'[roman type][line break]".
 
-
 Part 2 - Stomp
 
 To compute (M - demon lord) stomping (N - a monster):
@@ -149,7 +148,6 @@ To compute (M - demon lord) stomping (N - a monster):
 		now the leftover-type of L is the leftover-type of N;
 	otherwise:
 		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]! Report this bug!".
-
 
 Part 3 - Combat
 
@@ -421,7 +419,6 @@ To compute diaper mess reaction of (M - demon lord):
 		say "[BigNameDesc of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'I DID NOT THINK THAT EVEN HUMANS WOULD DEBASE THEMSELVES TO SUCH DISGUSTING LEVELS[if M is uninterested]. GET OUT OF MY SIGHT[end if].'[roman type][line break]";
 	humiliate 200.
 
-
 Section 3 - Nightmares
 
 xavier-nightmare is a kind of diaper punishment. The priority of a xavier-nightmare is 5.
@@ -468,7 +465,6 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR 12 HOURS AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M.
 
-
 xavier-nightmare-gag is a xavier-nightmare.
 
 Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord.
@@ -514,7 +510,6 @@ To compute punishment of (P - xavier-nightmare-gag):
 	say "[speech style of M]'I GUESS YOU ARE VERY LUCKY THAT DUE TO MY WEAKENED FORM I HAD TO EVENTUALLY BRING YOU BACK! MAYBE NEXT TIME WE MEET, MY POWERS WILL HAVE FULLY RETURNED AND I CAN KEEP YOU AS MY DAUGHTER'S STATUE FOREVER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M;
 	say "[variable custom style]Did that all just happen in my head? It doesn't feel like three days have past... but who knows in this place! One thing's for sure, I'm still in this giant soaked diaper. And my throat still feels... weird...[roman type][line break]".
-
 
 xavier-nightmare-belt is a xavier-nightmare.
 
@@ -570,7 +565,6 @@ To compute punishment of (P - xavier-nightmare-belt):
 		now delayed urination is 1;
 		try urinating;
 	if M is interested, satisfy M.
-
 
 Section 4 - Damage
 
@@ -638,7 +632,6 @@ To compute unique death of (M - demon lord):
 	if G is infernal gem, now G is in the location of the player;
 	compute autotaking G;
 	now M is bossdefeated.
-
 
 Part 4 - Conversation
 
@@ -764,6 +757,5 @@ To decide which number is the bartering value of (T - a thing) for (M - demon lo
 
 To say MonsterOfferRejectFlav of (M - demon lord) to (T - a thing):
 	say "[first custom style]'I CARE NOT FOR YOUR MORTAL TRINKETS!'[roman type][line break]".
-
 
 Demon Lord Xavier ends here.

@@ -18,7 +18,6 @@ Check pulling a sword:
 Check taking a sword:
 	if there is a worn hand ready equippable, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
 
-
 Section 0 - Sword In The Stone
 
 which-sword is a thing. which-sword is in Woods26. The printed name of which-sword is "[TQlink of item described]sword in the stone[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of which-sword is "sw". Understand "sword", "stone", "in the stone" as which-sword.
@@ -57,7 +56,6 @@ Report taking which-sword:
 
 To compute sword destiny of (S - a sword):
 	try examining S.
-
 
 Section 1 - Sword of purity
 
@@ -195,7 +193,6 @@ To compute periodic effect of (D - dildo sword):
 			decrease the raw-magic-modifier of D by 1;
 	otherwise:
 		now the decay-tracker of D is 0.
-
 
 Report plugging something with dildo sword:
 	if the raw-magic-modifier of the second noun < 5:
@@ -431,7 +428,6 @@ To compute periodic effect of (H - demon broadsword):
 			now H is metal;
 			say "It has calmed down enough that it transforms back into a real sword!".
 
-
 Check taking demon broadsword:
 	if the class of the player is priestess, say "The sword shrinks away from your touch. Somehow." instead.
 
@@ -477,7 +473,6 @@ Definition: rattle is baby themed: decide yes.
 Definition: rattle is yellow themed: decide yes.
 Definition: rattle is blue themed: decide yes.
 Definition: rattle is swimming themed: decide yes.
-
 
 The printed name of rattle is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]giant rattle[clothing-title-after]". The text-shortcut of rattle is "rat". Understand "giant" as rattle.
 

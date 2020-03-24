@@ -1,6 +1,5 @@
 Guest Bed by Furniture begins here.
 
-
 A guest bed is a kind of furniture. There is 1 guest bed in Mansion02. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed. The text-shortcut of guest bed is "pgb". A guest bed has a number called song. song is usually 0. A guest bed can be tended. A guest bed is usually not tended. A guest bed has a number called holeCount. The holeCount of a guest bed is usually 0.
 
 To say ExamineDesc of (C - a guest bed):
@@ -103,6 +102,5 @@ To say RestingDesc of (F - a guest bed):
 		if F is not penetrating a body part:
 			say "You feel them [one of]clutching you[or]caressing you[or]cradling you[at random]. You are ready. They are ready.";
 		if a random number between 1 and 3 is 1, RandomAddictUp 1.
-
 
 Guest Bed ends here.

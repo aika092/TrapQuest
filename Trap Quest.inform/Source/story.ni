@@ -46,7 +46,6 @@ Include Menus by Emily Short.
 
 links-disabled is a truth state that varies. [When you want to briefly disable links]
 
-
 [Include Version 3 of Fixed Point Maths by Third Party Extensions.
 Include Version 4 of Glulx Text Effects by Third Party Extensions.
 Include Basic Screen Effects by Third Party Extensions.
@@ -209,7 +208,6 @@ Area 4: Nintendolls R&D Facility
 [THINGS TO ADD TO THE FAQ
 ]
 
-
 Include Cutscene Figures by Miscellaneous Frontend.
 
 Volume 1 - Graphics (Private Version Only)
@@ -229,7 +227,6 @@ Include ASCII Map by Miscellaneous Frontend.
 
 Volume 2 - Game Setup
 
-
 Include Output Text by Miscellaneous Frontend.
 Include Variable Text by Miscellaneous Frontend.
 Include Parser Errors by Miscellaneous Frontend.
@@ -241,7 +238,6 @@ Include Disclaimer by Miscellaneous Frontend.
 Include Announcements by Miscellaneous Frontend.
 
 Include Prologue by Miscellaneous Frontend.
-
 
 [Include Menus by Third Party Extensions.
 Include Basic Help Menu by Third Party Extensions.
@@ -264,7 +260,6 @@ Include Festive Options by Fetish Settings.
 Include Engine Initialisation by Miscellaneous Backend.
 Include Game Universe Initialisation by Miscellaneous Backend.
 
-
 Include Executing Fainting by Fainting.
 Include Fainting Flavour by Fainting.
 Include Recovering the Player by Fainting.
@@ -277,9 +272,7 @@ Include Recovering Containers by Fainting.
 Include Recovering Monsters by Fainting.
 Include Fainting Reasons by Fainting.
 
-
 Include Static Rooms by Rooms.
-
 
 Include Spatial Vectors and Shape by Rooms.
 Include Solid Rock by Rooms.
@@ -293,7 +286,6 @@ Include Region Building School by Rooms.
 Include Region Building by Rooms.
 Include Deploying by Rooms.
 
-
 Include Room Adjectives by Rooms.
 Include Room Descriptions by Rooms.
 Include Puddles by Rooms.
@@ -306,7 +298,6 @@ Include Mansion by Rooms.
 Include School by Rooms.
 
 An introductory room is a kind of room. An introductory room has a labyrinth shape called shape. The shape of an introductory room is usually L3/0-0-1-1-1-1. The grid position of an introductory room is usually <0,0,0>.
-
 
 Volume 1 - The Player
 
@@ -389,7 +380,6 @@ Include TG by Player Description.
 Include Status by Player Description.
 Include Addictions by Player Description.
 
-
 Volume 3 - Every Turn (MAIN CODE BLOCK)
 
 Include Compute Turn by Every Turn.
@@ -435,7 +425,6 @@ Include Mimic by Objects.
 Include MimicInvestigating by Actions.
 
 Include Candy Machine by Objects.
-
 
 Include Altars by Objects.
 Include Sacred Pool by Objects.
@@ -500,7 +489,6 @@ Part - Traps
 
 Include Trap Framework by Traps.
 
-
 Include Makeup Pad Trap by Traps.
 Include Ass Hook Trap by Traps.
 Include Rocking Horse Trap by Traps.
@@ -527,7 +515,6 @@ Include Throne by Objects.
 Part - Crafting
 
 Include Crafting Framework by Crafting.
-
 
 Include Powder by Crafting.
 Include Bombs by Crafting.
@@ -563,7 +550,6 @@ Include Med Bay Bed by Furniture.
 Include Detention Chair by Furniture.
 
 Part - Food
-
 
 Include Food Framework by Food.
 Include Fae Mushroom by Food.
@@ -602,7 +588,6 @@ Include Orifice Protection by Clothing.
 Include Clothing Functions by Clothing.
 Include Clothing Setup by Clothing.
 
-
 Include Outrage by Clothing.
 Include Cringe by Clothing.
 Include Price by Clothing.
@@ -619,7 +604,6 @@ Include Influence by Clothing.
 Include Imprinting by Clothing.
 Include Quests by Clothing.
 Include Themes by Clothing.
-
 
 Include Headgear Framework by Headgear.
 
@@ -649,14 +633,12 @@ Include Cumdumpster Hat by Headgear.
 Include Heart Hairpin by Headgear.
 Include Combat Visor by Headgear.
 
-
 Include Shoes Framework by Shoes.
 
 Include Rollerskates Framework by Shoes.
 Include White Rollerskates by Shoes.
 Include Nonwhite Rollerskates by Shoes.
 Include Heels Framework by Shoes.
-
 
 Include Thigh High Boots by Shoes.
 Include Peep Toe Heels by Shoes.
@@ -679,7 +661,6 @@ Include Sandals by Shoes.
 Include Trainee Boots by Shoes.
 
 Include Bra Framework by Bra.
-
 
 Include Training Bra by Bra.
 Include Wonder Bra by Bra.
@@ -706,7 +687,6 @@ Include Sheer Bra by Bra.
 Include Trainee Bra by Bra.
 Include Pasties by Bra.
 
-
 Include Knickers Framework by Knickers.
 
 Include Plug Panties by Knickers.
@@ -727,11 +707,9 @@ Include Thongs by Knickers.
 Include Briefs by Knickers.
 Include Panties by Knickers.
 
-
 Include Diaper Framework by Knickers.
 Include Diapers by Knickers.
 Include Diaper Covers by Knickers.
-
 
 Include Trousers Framework by Trousers.
 Include Yoga Pants by Trousers.
@@ -822,11 +800,9 @@ Part - Skirts
 
 Include All Skirts by Skirts.
 
-
 Part - Belts and Suspenders
 
 Include All Belts by Belts Suspenders.
-
 
 Part - Stockings
 
@@ -858,16 +834,13 @@ Include Research Airhancer by Accessories.
 
 Include Armband by Accessories.
 
-
 Part - Piercing
 
 Include All Piercings by Piercings Modules.
 
-
 Part - Equippables
 
 Include Equippables Framework by Equippables.
-
 
 Include Whip of Domination by Equippables.
 Include Magic Wand by Equippables.
@@ -900,7 +873,6 @@ Part - Bondage
 
 Include Bondage Framework by Bondage.
 
-
 Include Wrist Bondage by Bondage.
 Include Ankle Bondage by Bondage.
 Include Dungeon Chains by Objects.
@@ -915,7 +887,6 @@ Include Ball and Chain by Bondage.
 Include Wrist Collar Bar by Bondage.
 
 Part - Sex Toys
-
 
 Include Sex Toy Framework by Sex Toys.
 
@@ -944,13 +915,11 @@ Include All Tattoos by Tattoos.
 
 Include Inking by Actions.
 
-
 Part - Bags of Holding
 
 Include Bags of Holding Framework by Bags of Holding.
 Include Sacks of Holding by Bags of Holding.
 Include Handbags of Holding by Bags of Holding.
-
 
 Volume 5 - More Backend Stuff
 
@@ -959,7 +928,6 @@ Include Immobility by Player.
 Include Manual Dexterity by Player.
 Include Dungeon Shop by Rooms.
 Include Nearby Simulated Danger by Miscellaneous Backend.
-
 
 Volume 6 - Other Actions
 
@@ -1098,7 +1066,6 @@ Include Woman Barbara by Monster.
 
 Include Talking by Actions.
 
-
 Volume 8 - Other
 
 Include Forbidden Actions by Actions.
@@ -1106,7 +1073,6 @@ Include Forbidden Actions by Actions.
 Include Actions with Missing Nouns by Actions.
 
 Include Tutorial by Miscellaneous Frontend.
-
 
 The clothingFocusPriority of headgear is -10.
 
@@ -1163,7 +1129,6 @@ The clothingFocusPriority of an ankle bond is 19.
 The clothingFocusPriority of shoes is 20.
 
 The clothingFocusPriority of bag of holding is 24.
-
 
 Volume 3 - Version
 

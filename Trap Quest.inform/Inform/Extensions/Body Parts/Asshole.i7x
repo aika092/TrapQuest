@@ -26,12 +26,10 @@ To decide which object is the at least partial concealer of (A - asshole):
 	if the player is upright and the total volume of hips > 2, decide on hips;
 	decide on the concealer of A.
 
-
 [Can it be accessed right now with nothing blocking it?]
 Definition: asshole is undefended:
 	if asshole is actually occupied or the player is ass protected, decide no;
 	decide yes.
-
 
 [!<AssholeIsExposed>+
 
@@ -250,7 +248,6 @@ To say RealGapeDesc:
 
 Part 3 - Modify Asshole Stats
 
-
 [!<GapeAssholeTimesNumber>+
 
 REQUIRES COMMENTING
@@ -338,6 +335,5 @@ To Assclose (X - a number):
 				otherwise if I is an insertable thing:
 					decrease the openness of asshole by 1;[in the next clause we assume anything penetrating the player is a monster, so we leave the player untightened.]
 			if the number of things filling asshole is 0, decrease the openness of asshole by 1.[if this isn't 0, it wasn't an item, so we leave it in.]
-
 
 Asshole ends here.

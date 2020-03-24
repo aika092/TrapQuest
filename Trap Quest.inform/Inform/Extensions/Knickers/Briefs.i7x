@@ -316,7 +316,6 @@ To compute periodic effect of (G - pale blue-briefs):
 				gape vagina times 1.
 Definition: pale blue-briefs is blue themed: decide yes.
 
-
 red-orange briefs is a briefs. The text-shortcut of red-orange briefs is "rob".
 Understand "trick", "trick me" as red-orange briefs.
 To say selfexamineuniquetitle of (G - red-orange briefs):
@@ -329,7 +328,6 @@ To decide which number is the unique cringe of (C - red-orange briefs):
 	decide on 2.
 Definition: red-orange briefs is red themed: decide yes.
 
-
 grey-hi-cut briefs is a briefs. The text-shortcut of grey-hi-cut briefs is "ghb".
 To say selfexamineuniquetitle of (G - grey-hi-cut briefs):
 	say "pair of grey hi-cut 'I woke up like this' briefs".
@@ -337,7 +335,6 @@ Understand "I woke", "woke up", "like", "this", "grey", "hi-cut" as grey-hi-cut 
 To say UniqueClothingDesc of (G - grey-hi-cut briefs):
 	say "A pair of grey hi-cut briefs with the words [']I woke up like this['] over the right thigh, drawing attention and proclaiming that the wearer is quite the hot mess.".
 Definition: grey-hi-cut briefs is grey themed: decide yes.
-
 
 blue-polka-dot briefs is a briefs. The text-shortcut of blue-polka-dot briefs is "bpb".
 To say selfexamineuniquetitle of (G - blue-polka-dot briefs):
@@ -351,6 +348,5 @@ To decide which number is the sex-addiction-influence of (G - blue-polka-dot bri
 Understand "blue", "polka", "dot" as blue-polka-dot briefs.
 Definition: blue-polka-dot briefs is heart themed: decide yes.
 Definition: blue-polka-dot briefs is blue themed: decide yes.
-
 
 Briefs ends here.

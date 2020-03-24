@@ -78,5 +78,4 @@ REQUIRES COMMENTING
 To say MercyReaction of (M - a monster):
 	if M is not intelligent, say "It doesn't look like [NameDesc of M] understands you.".
 
-
 Begging for Mercy ends here.

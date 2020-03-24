@@ -19,7 +19,6 @@ To say ClothingDesc of (C - a purple string bikini top):
 To decide which number is the initial outrage of (C - a purple string bikini top):
 	decide on 9.
 
-
 Definition: a purple string bikini top is purple themed: decide yes.
 
 Purple String Bikini Top ends here.

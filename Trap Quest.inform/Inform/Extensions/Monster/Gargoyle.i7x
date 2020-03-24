@@ -42,7 +42,6 @@ To decide which figure-name is the sex-profile of (M - gargoyle):
 		[decide on figure of gargoyle cunnilingus 1;]
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
-
 To say MonsterDesc of (M - gargoyle):
 	if mythical creature fetish is 1:
 		say "An eerie stone statue of a [man of M] with long, curved horns and giant bat-like wings. Every inch of [his of M] body is exposed, and although rendered in stone, [big he of M] [if M is vigilant]appraises you silently from atop [his of M] pedestal, never moving, not even to blink.[otherwise]gives you the feeling of a beast lying in wait, ready to pounce.[end if]";
@@ -338,7 +337,6 @@ To compute blowjob ejaculation of (M - gargoyle):
 	Bore M;
 	say "As your [ShortDesc of penis] softens, you realise it's far smaller than it was before! [BigNameDesc of M] must have converted a couple inches into an extra meal for [himself of M]! You feel drained!".
 
-
 To compute blowjob climax of (M - gargoyle):
 	say "[line break][BigNameDesc of M] slows down and peers at you silently for a moment before letting go and climbing back onto [his of M] pedestal.";
 	increase the blue-balls of M by 1;
@@ -410,6 +408,5 @@ To compute (M - gargoyle) protecting against (X - a monster): [Default protectio
 			now M is unleashed;
 		otherwise:
 			compute the default taunting of M.
-
 
 Gargoyle ends here.

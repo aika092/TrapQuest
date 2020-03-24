@@ -13,7 +13,6 @@ To say royal-subject of (M - a robot):
 To say big royal-subject of (M - a robot):
 	say "Automaton".
 
-
 To compute (S - a spike bra) damaging (M - a robot):
 	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
@@ -179,7 +178,6 @@ To say LewdTrapReactFlav of (M - a robot):
 	moderateHumiliate;
 	FavourDown M with consequences.
 
-
 To say DisapprovalFlav of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn orange.[line break][speech style of M]'PROCESSING WITH SLUTPARSER v[one of]1[or]2[or]3[or]4[or]5[stopping].0... SUBJECT APPEARS TO BE [one of]REQUESTING FURTHER DEGRADATION[or]COMMUNICATING A DESIRE FOR SEXUAL DOMINATION[or]ENGAGING IN BDSM KINK ACTIVITIES[in random order].'[roman type][line break]".
 
@@ -215,7 +213,6 @@ To compute talk option (N - 2) to (M - a robot):
 To compute answer of (M - a robot):
 	say "[speech style of M]'......................ERROR.'[roman type][line break]".
 
-
 To say DismissalRequest of (M - a robot):
 	if the player is able to speak:
 		say "[variable custom style]'sudo sleep sixty.'[roman type][line break]";
@@ -225,7 +222,6 @@ To say DismissalRequest of (M - a robot):
 To compute unfriendly dismissal of (M - a robot):
 	if the player is able to speak, say "[speech style of M]'USER IS NOT IN THE SUDOERS FILE. THIS INCIDENT WILL BE REPORTED.'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] makes no indication that [he of M] has understood you.".
-
 
 Section 1 Damage
 
@@ -274,6 +270,5 @@ To finally destroy (M - a robot):
 	now the collar-pulled of M is 0;
 	remove M from play;
 	reset M.
-
 
 Robots Framework ends here.

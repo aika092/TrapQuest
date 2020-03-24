@@ -101,7 +101,6 @@ To decide which number is the flat dexterity of the player:
 	if D > 30, decide on 30;
 	decide on D.
 
-
 [!<DecideWhichNumberIsTheStartingDexterityOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -112,14 +111,12 @@ To decide which number is the starting dexterity of the player:
 
 Part 2 - Modify Dexterity
 
-
 [!<Player>@<rawDexterity:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 The player has a number called raw dexterity. The raw dexterity of the player is usually 7. [Min 1 Max 30]
-
 
 [!<Player>@<oldDexterity:Integer>*
 
@@ -147,6 +144,5 @@ To Dexdown (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw dexterity of the player > 1, decrease the raw dexterity of the player by 1.
-
 
 Dexterity ends here.

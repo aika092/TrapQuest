@@ -22,7 +22,6 @@ Figure of red-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/R
 To decide which figure-name is the clothing-image of (C - red-wheeled white-rollerskates):
 	decide on figure of red-wheeled white-rollerskates.
 
-
 Part 2 - Blue Wheeled
 
 blue-wheeled white-rollerskates is a white rollerskates. The printed name of blue-wheeled white-rollerskates is "[clothing-title-before]pair of blue wheeled white rollerskates[clothing-title-after]". The text-shortcut of blue-wheeled white-rollerskates is "bwwr".
@@ -34,7 +33,6 @@ Figure of blue-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/
 To decide which figure-name is the clothing-image of (C - blue-wheeled white-rollerskates):
 	decide on figure of blue-wheeled white-rollerskates.
 
-
 Part 3 - Pink Wheeled
 
 pink-wheeled white-rollerskates is a white rollerskates. pink-wheeled white-rollerskates is womanly. The printed name of pink-wheeled white-rollerskates is "[clothing-title-before]pair of pink wheeled white rollerskates[clothing-title-after]". The text-shortcut of pink-wheeled white-rollerskates is "pwwr".
@@ -45,6 +43,5 @@ Figure of pink-wheeled white-rollerskates is the file "Items/Clothes/Lower/Feet/
 
 To decide which figure-name is the clothing-image of (C - pink-wheeled white-rollerskates):
 	decide on figure of pink-wheeled white-rollerskates.
-
 
 White Rollerskates ends here.

@@ -1,6 +1,5 @@
 Disclaimer by Miscellaneous Frontend begins here.
 
-
 [!<tableOfDisclaimer:Table>*
 
 REQUIRES COMMENTING

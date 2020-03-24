@@ -70,5 +70,4 @@ Report SalveRubbing:
 
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 
-
 Salve Rubbing ends here.

@@ -1,6 +1,5 @@
 Swimming Pool by Objects begins here.
 
-
 The swimming-pool is a water-body-scenery. the swimming-pool is not portable. The printed name of swimming-pool is "[TQlink of item described]swimming pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of swimming-pool is "swp". swimming-pool is in School20. Understand "swimming", "pool", "swimming pool" as swimming-pool.
 
 To decide which figure-name is the examine-image of (C - swimming-pool):
@@ -30,7 +29,6 @@ To compute showering (S - swimming-pool):
 		if the semen addiction of the player < 10, say "Your body can't help but become more accustomed to the sensation of being covered in [semen].";
 		SemenAddictUp 1.
 
-
 To compute cum pool coating:
 	now the semen coating of thighs is 10;
 	if bukkake fetish is 1:
@@ -45,6 +43,5 @@ To compute cum pool face coating:
 		now the semen coating of hair is the largeness of hair;
 		repeat with C running through worn fluid vulnerable headgear:
 			now the semen-soak of C is the soak-limit of C.
-
 
 Swimming Pool ends here.

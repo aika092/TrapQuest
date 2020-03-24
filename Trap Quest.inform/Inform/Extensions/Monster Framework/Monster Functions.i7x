@@ -1,6 +1,5 @@
 Monster Functions by Monster Framework begins here.
 
-
 [!<DeinterestMonster>+
 
 REQUIRES COMMENTING
@@ -120,7 +119,6 @@ To compute death of (M - a monster):
 		if playerRegion is Woods and giant-statue is active:
 			ChargeDown giant-statue by 20;
 
-
 [!<ComputeUniqueDeathOfMonster>+
 
 REQUIRES COMMENTING
@@ -225,6 +223,5 @@ To set jewellery value of (X - an accessory) to (R - a number):
 	otherwise:
 		now X is solid gold;
 	set shortcut of X.
-
 
 Monster Functions ends here.

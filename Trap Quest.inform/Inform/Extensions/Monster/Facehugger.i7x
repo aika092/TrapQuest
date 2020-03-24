@@ -101,14 +101,12 @@ To compute action (N - a number) of (M - a facehugger):
 				say "The legs let go of you and the body falls off, motionless and dead.";
 				destroy M.
 
-
 To compute (M - a monster) stomping (N - a facehugger):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
 	destroy N;
 	let L be a random off-stage leftover;
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.
-
 
 Section 3 - Damage
 
@@ -117,19 +115,16 @@ To decide which number is the damage modifier of (M - a facehugger):
 	 if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
 	decide on 0.
 
-
 To say damage-flavour of (N - a number) on (M - a facehugger):
 	if N is 0:
 		say "[BigNameDesc of M] hops backwards, dodging your attack! Try again?";
 	otherwise:
 		say "A direct hit!".
 
-
 To compute damage of (M - a facehugger):
 	if the health of M <= 0, compute death of M.
 
 To loot (M - a facehugger):
 	do nothing.
-
 
 Facehugger ends here.

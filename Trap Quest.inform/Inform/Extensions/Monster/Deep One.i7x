@@ -114,7 +114,6 @@ Definition: deep one (called M) is eager to confiscate:
 	if M is able to confiscate, decide yes;
  	decide no.
 
-
 Section 3 - Damage
 
 To compute damage of (M - deep one):

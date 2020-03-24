@@ -122,7 +122,6 @@ This is the research restriction blocks masturbation rule:
 		rule fails.
 The research restriction blocks masturbation rule is listed last in the masturbation restriction rules.
 
-
 This is the bound hands blocks masturbation rule:
 	if the player is wrist bound behind:
 		if auto is 0, say "You can't reach your [genitals] with your wrists bound behind your back!";
@@ -139,7 +138,6 @@ This is the already wanking rule:
 		if auto is 0, say "You are already masturbating!";
 		rule fails.
 The already wanking rule is listed first in the masturbation restriction rules.
-
 
 [!<TheEmbarrassingMasturbationRule>+
 
@@ -184,7 +182,6 @@ This is the clothing blocks masturbation rule:
 		if auto is 0, say "Your [printed name of random cursed pussy covering blocking wanking clothing] won't budge! That item is simply not soft and thin enough for you to [masturbate] through!";
 		rule fails.
 The clothing blocks masturbation rule is listed last in the masturbation restriction rules.
-
 
 [!<DecideWhichNumberIsTheMasturbationBonusOfObject>+
 
@@ -690,7 +687,6 @@ To say OngoingAnalMasturbationFlav of (O - an object) with (M - a thing) in (C -
 			let P be a random worn nipple covering clothing;
 			say "[one of]You fantasise about [PlayerFantasy]. You feel your fingers [if the urine volume of belly > 0]moving through the lukewarm urine trapped inside[otherwise if the total egg fill of belly > 0]bumping the eggs incubating in[otherwise if the semen volume of belly > the milk volume of belly + 3]moving through the thick creampie deep inside [otherwise if the milk volume of belly + the semen volume of belly > 0]moving through the creamy filling planted in [otherwise]as they stroke the inside of [end if] your [asshole] as your mind races.[or]You [if the player is male]eagerly stroke your prostate[otherwise]eagerly fuck your [asshole][end if], moaning [if the humiliation of the player < HUMILIATION-MODEST]quietly[otherwise]loudly[end if] as your mind turns to thoughts of [PlayerFantasy].[or]You slowly move your fingers in and out of your [asshole], [if P is clothing]rubbing your [BreastDesc] through your [printed name of P][otherwise]tweaking your nipples[end if] as you fantasise about [PlayerFantasy].[or]You fuck yourself with your own fingers, [if the bimbo of the player < 5]shuddering[otherwise if the bimbo of the player < 12]trembling[otherwise]rolling your eyes back[end if][if the semen volume of vagina < 1] at how inexorably pleasurable Nintendolls managed to make it feel[otherwise if the semen volume of belly < 4] at the feeling of the slimy [semen] trapped in your [vagina][otherwise] as thick, creamy [semen] coats your fingers and rolls down your arm.[end if][or]You continue your passionate fingering session, [if the bimbo of the player < 7]trying and failing to stifle your shameful moans[otherwise if the bimbo of the player < 13]half-heartedly trying to stifle your passionate moans[otherwise]allowing shameless, wanton moans to stream out of your mouth[end if] as you fantasise about [PlayerFantasy].[at random]".
 
-
 [!<ReportMasturbation>+
 
 REQUIRES COMMENTING
@@ -716,6 +712,5 @@ To compute MasturbationReaction of (M - a monster):
 			bore M;
 		otherwise if M is uninterested:
 			say "[BigNameDesc of M] is looking the other way, probably on purpose.".
-
 
 Masturbating ends here.

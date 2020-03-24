@@ -46,7 +46,6 @@ Definition: A g-event is window-independent rather than window-dependent if it i
 
 Definition: A g-event is glk-initiated if it is timer-event or it is sound-notify-event or it is arrange-event or it is not redraw-event.
 
-
 To decide which g-event is null-event: (- 0 -)
 
 To wait for glk input:
@@ -77,7 +76,6 @@ To reset the/-- Glulx timer:
 To render buffered stuff:
 	wait before continuing.
 
-
 To wait (N - a number) ms before continuing:
 	request repeating Glk timer event at N milliseconds;
 	let event-outcome be a number;
@@ -93,9 +91,7 @@ To wait before continuing:
 	wait for glk input;
 	if the current glk event is glk-initiated, now event-outcome is glk event handled in null-event context.
 
-
 Part - Animation Stuff
-
 
 Section - Animation Tracks
 
@@ -137,7 +133,6 @@ An animation track has a number called the animation-speed. The animation-speed 
 An animation track has a number called the frame-tick. The frame-tick of an animation track is usually 1.
 An animation track has a number called the animationColour. The animationColour of an animation track is usually 16777215. [white]
 
-
 Section - Functions
 
 Glulx input handling rule for a timer-event:
@@ -157,7 +152,6 @@ To wait until animations are over:
 	if animationsEnabled is 1 or there is a g-animated initial animation track:
 		while there is g-animated animation track:
 			wait before continuing.
-
 
 To compute TQanimation of (F - a figure-name) in (W - a g-window) at (X1 - a number) by (Y1 - a number) with dimensions (BX - a number) by (BY - a number):
 	let T be the TQAnimTrack of F;
@@ -268,10 +262,8 @@ To compute animation of (T - an animation track):
 		say "BUG: [target-window of T] was not present to render the animation [T] inside.";
 		cease animation of T.
 
-
 To decide which object is the TQAnimTrack of (F - a figure-name):
 	decide on nothing.
-
 
 Figure of AnimatedRaiseSkirtButtonLight is the file "Special/Buttons/lightMode/skirt3.png".
 Figure of AnimatedRaiseSkirtButtonDark is the file "Special/Buttons/darkMode/skirt3.png".
@@ -286,7 +278,6 @@ To uniquely set up (T - skirtDisplacedAnimation):
 	otherwise add Figure of AnimatedRaiseSkirtButtonLight to the image-reel of T;
 	add Figure of RaiseSkirtButton to the image-reel of T.
 
-
 pantsUnzippedAnimation is an animation track. pantsUnzippedAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of UnzipButtonLight):
 	decide on pantsUnzippedAnimation.
@@ -297,7 +288,6 @@ To uniquely set up (T - pantsUnzippedAnimation):
 	add Figure of UnzipButton to the image-reel of T;
 	add Figure of ZipButton to the image-reel of T.
 
-
 pantsDisplacedAnimation is an animation track. pantsDisplacedAnimation is g-looping.
 To decide which object is the TQAnimTrack of (F - Figure of DisplaceButtonLight):
 	decide on pantsDisplacedAnimation.
@@ -307,7 +297,6 @@ To uniquely set up (T - pantsDisplacedAnimation):
 	now the image-reel of T is { };
 	add Figure of DisplaceButton to the image-reel of T;
 	add Figure of ReplaceButton to the image-reel of T.
-
 
 Figure of AnimatedAlarmIconLight2 is the file "Special/Buttons/lightMode/alarm2.png".
 Figure of AnimatedAlarmIconLight3 is the file "Special/Buttons/lightMode/alarm3.png".
@@ -329,7 +318,6 @@ To uniquely set up (T - alarmAnimation):
 	add Figure of AlarmIcon to the image-reel of T;
 	add Figure of AlarmIcon to the image-reel of T.
 
-
 Figure of AnimatedSirenIcon1 is the file "Special/Animations/Siren/frame1.png".
 Figure of AnimatedSirenIcon2 is the file "Special/Animations/Siren/frame2.png".
 Figure of AnimatedSirenIcon3 is the file "Special/Animations/Siren/frame3.png".
@@ -341,7 +329,6 @@ To decide which object is the TQAnimTrack of (F - Figure of EatButtonDark):
 	decide on sirenAnimation.
 To decide which number is the frameSlowness of (T - sirenAnimation):
 	decide on 1.
-
 
 Figure of AnimatedPoopingIcon1 is the file "Special/Animations/PoopinTime/frame1.png".
 Figure of AnimatedPoopingIcon2 is the file "Special/Animations/PoopinTime/frame2.png".
@@ -384,7 +371,6 @@ To decide which object is the TQAnimTrack of (F - Figure of PeeButton):
 To decide which number is the frameSlowness of (T - peeingTimeAnimation):
 	decide on 1.
 
-
 Section - Cutscene animation tracks
 
 A cutscene animation track is a kind of animation track.
@@ -410,13 +396,11 @@ To commence animation of (T - a cutscene animation track):
 		set a graphlink in the map-window identified as hypermapstairs from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
 		now T is g-animated.
 
-
 Check jumping when there is g-animated cutscene animation track:
 	repeat with G running through g-animated cutscene animation tracks:
 		cease animation of G;
 	refresh the map-window;
 	do nothing instead.
-
 
 To decide which number is the frameSlowness of (T - a cutscene animation track):
 	decide on 1.
@@ -431,7 +415,6 @@ To check speed change of (T - DPHypnoAnimation):
 
 PussyExpelAnimation is a g-looping cutscene animation track.
 
-
 Section - Initial and Ending animation tracks
 
 A solo animation track is a kind of cutscene animation track.
@@ -442,7 +425,6 @@ To compute unique setup of (T - a solo animation track):
 To cease animation of (T - a solo animation track):
 	now T is not g-animated;
 	close the map-window.
-
 
 An initial animation track is a kind of solo animation track.
 
@@ -481,13 +463,11 @@ To commence animation of (T - an initial animation track):
 		draw the image bannerImage of T in the map-window at BIX by BIY with dimensions BIW by BIH;
 	now T is g-animated.
 
-
 To decide which figure-name is the bannerImage of (T - an initial animation track):
 	decide on figure of no-image-yet.
 
 To decide which number is the frameSlowness of (T - an initial animation track):
 	decide on 3.
-
 
 An epilogue animation track is a kind of solo animation track. An epilogue animation track is g-looping.
 
@@ -510,6 +490,5 @@ To commence animation of (T - an epilogue animation track):
 
 To decide which number is the frameSlowness of (T - an epilogue animation track):
 	decide on 1.
-
 
 Timer Stuff ends here.

@@ -36,7 +36,6 @@ To decide which number is the dexterity-influence of (C - glittering rose):
 	decrease X by the raw intelligence of the player / 5;
 	decide on X.
 
-
 Chapter - Class Outfit
 
 Definition: glittering rose is removal-blocking if wearing-target is butterfly wings.
@@ -81,6 +80,5 @@ This is the check for new pregnancy rule:
 	otherwise if the pregnancy of the player <= 0:
 		now the previously-pregnant of babymaking-quest is 0.
 The check for new pregnancy rule is listed in the advance counters rules.
-
 
 Glittering Rose ends here.

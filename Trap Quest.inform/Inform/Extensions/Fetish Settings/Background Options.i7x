@@ -1,6 +1,5 @@
 Background Options by Fetish Settings begins here.
 
-
 [!<tableOfBackgroundOptions:Table>
 
 REQUIRES COMMENTING
@@ -14,7 +13,6 @@ title	subtable	description	toggle
 "Background (only one): [if the player is presenting as female]Waitress[otherwise]Waiter[end if] (slightly higher dexterity, your work uniform's shoes are slightly impractical, so you start with 3/10 skill points walking in heels and your chances of spilling drinks when falling over is halved) - 5 points ([if background-waitress is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	waitress background toggle rule
 "Background (only one): Pure (you start out really caring about your virginity: virgin warrior quest is mandatory unless you lose your virginity early, but gives you positive stats over time once started) - 5 points ([if background-pure is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	pure background toggle rule
 [MAKE SURE PURE BACKGROUND REMAINS THE BOTTOM ROW WHEN ADDING OTHERS]
-
 
 [!<emptyBackgroundRules:Rulebook>*
 
@@ -115,6 +113,5 @@ This is the pure background toggle rule:
 	otherwise:
 		follow the empty background rules;
 		if points count >= 5, now choice in row 55 of the Table of Player Options is 1.
-
 
 Background Options ends here.

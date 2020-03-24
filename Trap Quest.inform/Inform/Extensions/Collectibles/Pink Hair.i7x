@@ -1,6 +1,5 @@
 Pink Hair by Collectibles begins here.
 
-
 A pink hair is a kind of monster-drop. There are 4 pink hairs. The printed name of pink hair is "[TQlink of item described]strand of pink hair[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pink hair is "[TQlink of item described]strands of pink hair[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pink hair is "ph". Understand "strand", "strands", "of" as pink hair. Figure of pink hair is the file "Items/Collectibles/hair1.png".
 
 To decide which figure-name is the examine-image of (C - a pink hair):

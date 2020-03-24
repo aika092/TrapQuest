@@ -47,7 +47,6 @@ Figure of bikini bottoms 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bik
 To decide which number is the unique outrage of (C - cow print bikini bottoms):
 	decide on 1.
 
-
 [pink bikini bottoms]
 
 pink bikini bottoms is a bikini bottoms. A pink bikini bottoms is transformation-rare. A pink bikini bottoms is see-through. [Because it rides up into your snatch - see image]
@@ -70,7 +69,6 @@ To say ClothingDesc of (K - pink bikini bottoms):
 Figure of bikini bottoms 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms2.png".
 
 Definition: pink bikini bottoms is pink themed: decide yes.
-
 
 [white crotchless bikini bottoms]
 
@@ -126,7 +124,6 @@ To decide which number is the unique outrage of (C - black crotchless bikini bot
 Definition: black crotchless bikini bottoms is gem themed: decide yes.
 Definition: black crotchless bikini bottoms is black themed: decide yes.
 
-
 [red bikini briefs]
 
 red-bikini-briefs is a bikini bottoms. The printed name of red-bikini-briefs is "[clothing-title-before]pair of red bikini briefs[clothing-title-after]". The text-shortcut of red-bikini-briefs is "rbb". The armour of red-bikini-briefs is 6. Understand "red", "bikini", "briefs" as red-bikini-briefs.
@@ -143,7 +140,6 @@ To decide which figure-name is clothing-image of (C - red-bikini-briefs):
 To say ClothingDesc of (K - red-bikini-briefs):
 	say "A bottom half of a bikini outfit with a red pattern. The cut is quite narrow, leaving a lot of your butt showing.".
 Figure of bikini bottoms 5 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms5.png".
-
 
 Definition: red-bikini-briefs is red themed: decide yes.
 Definition: red-bikini-briefs is is crotch-pullup: decide no.
@@ -172,6 +168,5 @@ To decide which number is the unique outrage of (C - leopard print bikini bottom
 Definition: leopard print bikini bottoms is leopard themed: decide yes.
 Definition: leopard print bikini bottoms is black themed: decide yes.
 Definition: leopard print bikini bottoms is is crotch-pullup: decide no.
-
 
 Bikini Bottoms ends here.

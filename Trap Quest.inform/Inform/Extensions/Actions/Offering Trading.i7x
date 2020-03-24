@@ -1,6 +1,5 @@
 Offering Trading by Actions begins here.
 
-
 [!<DecideWhichNumberIsTheCharismaOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -44,7 +43,6 @@ Check offering it to:
 		allocate 4 seconds;
 		compute the second noun WenchReceiving the noun instead;
 		do nothing instead. [Weird bug where the above command doesn't do the "instead" bit.]
-
 
 [!<CarryOutOfferingItTo>+
 
@@ -141,6 +139,5 @@ To say OfferThanksFlav of (M - a monster) for (T - a thing):
 
 To compute offer reward of (M - a monster) for (T - a thing): [The NPC doesn't give anything in return by default.]
 	if M is intelligent, FavourUp M by the bartering value of T for M.
-
 
 Offering Trading ends here.

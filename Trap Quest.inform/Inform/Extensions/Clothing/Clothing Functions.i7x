@@ -1,6 +1,5 @@
 Clothing Functions by Clothing begins here.
 
-
 [!<ComputeShortDescOfClothing>+
 
 REQUIRES COMMENTING
@@ -73,7 +72,6 @@ To damage (K - clothing):
 	if D is 0, say "[line break]The [K] glows faintly, regenerating the damage as it happens.";
 	increase the damage of K by D;
 	if D > 0 and debuginfo > 0, say "[input-style][ShortDesc of K] damage [damage of K - 1] -> [damage of K][roman type][line break]".
-
 
 [!<RepairClothing>+
 
@@ -167,7 +165,6 @@ To rip (C - a clothing):
 	ZipDown C;
 	if C is rippable and (C is crotch-intact or C is crotch-skirted), now C is crotch-ripped.
 
-
 [!<DelayedImprintDestroy>+
 
 REQUIRES COMMENTING
@@ -183,7 +180,6 @@ To SemenSoakUp (C - a clothing) by (N - a number):
 	increase the semen-soak of C by N;
 	now previous-clothing-glazed is -1; [force appearance reassessment]
 	if C is diaper, increase the perceived-semen-soak of C by N.
-
 
 To UrineSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
@@ -239,7 +235,6 @@ To StealthWaterSoakUp (C - a clothing) by (N - a number):
 	if the player is diaper aware, increase the perceived-water-soak of C by N;
 	increase the water-soak of C by N.
 
-
 [!<DestroyClothing>+
 
 REQUIRES COMMENTING
@@ -251,7 +246,6 @@ To destroy (C - a clothing):
 
 To only destroy (C - a thing):
 	destroy C.
-
 
 To WaterEmpty (C - a clothing):
 	now the water-soak of C is 0;
@@ -299,6 +293,5 @@ To only destroy (C - clothing):
 	remove C from play;
 	if C is listed in the list of stacked diapers, diaperRemove C;
 	set up C.
-
 
 Clothing Functions ends here.

@@ -14,7 +14,6 @@ To reverse undo weirdness:
 To compute trolling:
 	do nothing.
 
-
 april fools done is a number that varies.
 To compute april fools:
 	do nothing.
@@ -27,7 +26,6 @@ Definition: yourself is a cheater: decide no.
 Definition: a person is the donator: decide yes.
 
 Definition: a person is a top donator: decide yes.
-
 
 To check donators status:
 	do nothing.
@@ -48,7 +46,6 @@ To say Latest Debug Needed:
 Definition: an object is thigh-spreading: decide no.
 To decide which number is the DQBulk of (K - an object):
 	decide on 0.
-
 
 To compute chess soiling:
 	do nothing.

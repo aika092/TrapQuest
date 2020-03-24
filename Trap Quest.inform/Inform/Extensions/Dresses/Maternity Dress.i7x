@@ -36,7 +36,6 @@ To decide which object is the unique-upgrade-target of (C - a maternity dress):
 	if the pregnancy of the player > 0, decide on a random off-stage I'm knocked up T-shirt;
 	decide on nothing.
 
-
 To uniquely set up (M - a maternity dress):
 	if lactation fetish is 1, now M is milk production.
 
@@ -66,6 +65,5 @@ This is the remove inappropriate maternity dresses rule:
 	repeat with B running through maternity dresses:
 		now B is in Holding Pen.
 The remove inappropriate maternity dresses rule is listed in the diaper quest fix rules.
-
 
 Maternity Dress ends here.

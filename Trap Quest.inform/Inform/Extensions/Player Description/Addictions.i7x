@@ -1,6 +1,5 @@
 Addictions by Player Description begins here.
 
-
 [!<addictionListingRules:Rulebook>*
 
 REQUIRES COMMENTING
@@ -75,7 +74,6 @@ Definition: yourself is a masochist: [Does the player prefer taking a submissive
 Definition: a body part is unconditioned rather than conditioned if the desire of it < 6. [Is body part relatively untouched and not used to this new world?]
 
 Definition: yourself is conditioned rather than unconditioned if there is a conditioned body part. [Is the player's body relatively untouched and not used to this new world?]
-
 
 [!<TheSexAddictionDescriptionRule>+
 
@@ -200,7 +198,6 @@ This is the semen feel addiction description rule:
 			say "You are so addicted to [semen] that you refuse to let it leave your [if the player is male][asshole][otherwise]holes[end if] for as long as you can hold it in[if bukkake fetish is 1]. You don't even consider ever wiping it off your face or body - that would be like throwing hard-earned medals and trophies in the bin[end if].";
 		if debuginfo > 0, say "[input-style](Creampie [if bukkake fetish is 1]and bukkake [end if]addiction [semen addiction of the player] / 20)[roman type][line break]".
 The semen feel addiction description rule is listed in the addiction listing rules.
-
 
 [!<TheAnalSexAddictionDescriptionRule>+
 
@@ -329,7 +326,6 @@ This is the diaper addiction description rule:
 		if debuginfo > 0, say "[input-style](Incontinence [incontinence of the player] / 10[if the max-incontinence of the player < 10] [bracket]capped at [max-incontinence of the player][close bracket][end if])[roman type][line break]".
 The diaper addiction description rule is listed in the addiction listing rules.
 
-
 [!<TheShortSkirtAddictionDescriptionRule>+
 
 If the player has a short skirt addiction, we'll explain it to them here.
@@ -341,7 +337,6 @@ This is the short skirt addiction description rule:
 	otherwise if short skirts permanent fetish is 1:
 		say "Your body loves wearing short skirts so much that you feel uncomfortable wearing long ones. It also feels wrong to wear trousers.".
 The short skirt addiction description rule is listed in the addiction listing rules.
-
 
 [!<TheToplessExposureAddictionDescriptionRule>+
 
@@ -366,7 +361,6 @@ This is the humiliation description rule:
 	if debuginfo > 0, say "[input-style]([if the humiliation of the player >= 40000]Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20; [end if]Humiliation: [humiliation of the player] / 40000)[roman type][line break]".
 The humiliation description rule is listed in the addiction listing rules.
 
-
 This is the public disgrace description rule:
 	let PD be the public disgrace of the player;
 	if PD > 0:
@@ -380,6 +374,5 @@ This is the public disgrace description rule:
 			say "You are acutely aware that by now you are likely infamous on the Internet. Everyone knows your name, age, where you come from, and [if diaper quest is 1]they all believe that you're some attention seeking, exhibitionist, humiliation craving, diaper loving pervert[otherwise]what the inside of your [asshole] looks like[end if]. You know what you'll see the next time you check your Twitter profile: hundreds of thousands if not millions of new followers, and countless mentions discussing how brave and/or disgusting you are, and endless unsolicited explicit DMs. You'll never get a real job again, but perhaps you could now make a living selling certain 'premium snapchat' services to discerning degenerates...[line break][variable custom style][if the player is shameless]So much attention... all for me... how humiliating! It makes me horny just thinking about it[otherwise if the player is modest]No... I couldn't! I couldn't ever bring myself to put even more of myself out there...![otherwise]Could I really bring myself to become a camgirl? Debasing myself perverted men around the world... Surely not...?[end if][roman type][line break]";
 		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 500)[roman type][line break]".
 The public disgrace description rule is listed in the addiction listing rules.
-
 
 Addictions ends here.

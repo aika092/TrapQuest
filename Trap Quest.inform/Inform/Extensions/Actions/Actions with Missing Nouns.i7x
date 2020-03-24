@@ -204,7 +204,6 @@ Check AutoDipping:
 	say "Into what?" instead.
 Understand "dip [something]", "fill [something]" as AutoDipping.
 
-
 AutoGlueWiping is an action applying to one thing.
 
 [!<CheckAutoGlueWiping>+
@@ -217,6 +216,5 @@ Check AutoGlueWiping:
 	if C is clothing and the player is glue stuck and the noun is glue, try GlueRubbing the noun on C instead;
 	say "Brush glue on what?" instead.
 Understand "brush [something]" as AutoGlueWiping.
-
 
 Actions with Missing Nouns ends here.

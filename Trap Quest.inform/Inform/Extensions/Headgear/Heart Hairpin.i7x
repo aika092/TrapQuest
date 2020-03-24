@@ -35,7 +35,6 @@ To decide which number is the intelligence-influence of (H - heart hairpin):
 				increase I by 2;
 	decide on I.
 
-
 Chapter - Class Outfit
 
 Definition: heart hairpin (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -78,7 +77,6 @@ To compute class outfit of (H - heart hairpin):
 	otherwise if W is actually summonable:
 		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 		summon W.
-
 
 Chapter - Quest
 

@@ -16,7 +16,6 @@ doomed is a number that varies.
 
 new-acolyte-counter is initially 0.
 
-
 [!<ComputeDoom>+
 
 REQUIRES COMMENTING
@@ -164,7 +163,6 @@ A time based rule (this is the doom weather rule):
 			say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
 			now latestAnnouncedRaining is 0.
 
-
 [!<ResolveDoom>+
 
 REQUIRES COMMENTING
@@ -199,6 +197,5 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 		say "Each of the cultists gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E][otherwise][end if], emitting an insane laugh as [he of N] stumbles to [his of N] feet.";
 	otherwise:
 		if N is monster, say "[BigNameDesc of N] gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E], emitting an insane laugh as [he of N] stumbles to [his of N] feet[otherwise]a mass of black and purple motes, which separate and disappear as [he of N] stumbles to [his of N] feet and emits an insane laugh[end if].".
-
 
 Doom ends here.

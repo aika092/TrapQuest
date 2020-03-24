@@ -94,5 +94,4 @@ This is the players in chastity can't wear vagina plugging clothes rule:
 		rule fails.
 The players in chastity can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
-
 Chastity Cage ends here.

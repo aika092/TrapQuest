@@ -58,7 +58,6 @@ Definition: a body part is available: decide no.
 
 REQUIRES COMMENTING
 
-
 +!]
 Definition: an orifice (called O) is available:
 	if O is actually occupied, decide no;
@@ -231,7 +230,6 @@ To suggestFucker (F - a body part) for (M - a monster):
 		say "Do you want to try and use your [if S is clothing][S][otherwise][player-penis][end if] to fuck [him of M]?";
 	otherwise:
 		say "You definitely won't orgasm if you proceed this way. Do you still want to try and dominate [him of M]?".
-
 
 To say DomThreshold (R - a number):
 	if R is DOMINANT-DOMINANT, say "Auto dominance threshold met.[line break]";
@@ -605,6 +603,5 @@ To compute sissification:
 	otherwise:
 		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
-
 
 Dominating Monsters ends here.

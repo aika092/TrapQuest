@@ -1,6 +1,5 @@
 Electric Fan by Consumables begins here.
 
-
 An electric fan is a kind of thing. There are 7 electric fans. The printed name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fan[TQxlink of item described][verb-desc of item described]". The printed plural name of electric fan is "[TQlink of item described][if item described is blessed]blessed [end if]electric fans[TQxlink of item described][verb-desc of item described]". The text-shortcut of electric fan is "ef".
 When play begins:
 	let fanShortcutCount be 1;
@@ -85,6 +84,5 @@ Check drinking an electric fan:
 	try fanning the noun instead.
 
 Definition: an electric fan is inflation themed: decide yes.
-
 
 Electric Fan ends here.

@@ -1,6 +1,5 @@
 Talking by Actions begins here.
 
-
 [!<playerSpeechRules:Rulebook>*
 
 REQUIRES COMMENTING
@@ -217,7 +216,6 @@ Carry out food requesting:
 	compute talk option 4 to the noun.
 Understand "ask [something] for food", "ask [something] for some food", "ask [something] for something to eat", "request food from [something]" as food requesting.
 
-
 Dismissal is an action applying to one thing.
 
 Check dismissal:
@@ -234,6 +232,5 @@ Carry out dismissal:
 	now conversation-target is the noun;
 	compute talk option 5 to the noun.
 Understand "dismiss [something]", "ask [something] to leave", "say bye to [something]", "say goodbye to [something]", "end conversation with [something]" as dismissal.
-
 
 Talking ends here.

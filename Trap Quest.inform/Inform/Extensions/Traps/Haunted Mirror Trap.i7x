@@ -1,8 +1,6 @@
 Haunted Mirror Trap by Traps begins here.
 
-
 A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror traps. The text-shortcut of a haunted mirror trap is "mrr". The printed name of a haunted mirror trap is "[TQlink of item described]haunted mirror[TQxlink of item described]".
-
 
 Figure of haunted mirror is the file "Env/Mansion/mirror1.jpg".
 To decide which figure-name is the examine-image of (T - a haunted mirror trap):
@@ -180,7 +178,6 @@ To compute resolution of (X - mirror soiling):
 			now auto is 0;
 	now mirror-delayed is 0.
 
-
 mirror-stuffie is a mirror attack.
 Definition: mirror-stuffie is acceptable:
 	let S be a random stuffie in the location of the player;
@@ -190,6 +187,5 @@ To compute resolution of (M - mirror-stuffie):
 	let C be a random stuffie in the location of the player;
 	say "Your reflection reaches down and picks up [NameDesc of C], cuddling [him of C] close to your chest. You realise you are doing the same thing! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
 	summon C cursed with quest.
-
 
 Haunted Mirror Trap ends here.

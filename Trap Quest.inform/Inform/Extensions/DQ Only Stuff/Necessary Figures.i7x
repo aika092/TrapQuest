@@ -36,17 +36,14 @@ Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
 
-
 Figure of Babified Royal Guard 1 is the file "NPCs/Dungeon/royalguardbab1.jpg".
 Figure of Babified Royal Guard 2 is the file "NPCs/Dungeon/royalguardbab2.jpg".
 To decide which figure-name is the pacified-image of (M - a royal guard):
 	if the refactory-period of M <= 0 and diaper messing >= 6, decide on figure of Babified Royal Guard 2;
 	decide on figure of Babified Royal Guard 1.
 
-
 Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
-
 
 Figure of change self tattoo is the file "Items/Tats/tattoo110.jpg".
 To decide which figure-name is the examine-image of (T - change-self tattoo):
@@ -70,16 +67,13 @@ Figure of diapered dinosaur tattoo is the file "Items/Tats/tattoo74.jpg".
 To decide which figure-name is the examine-image of (T - diapered dinosaur tattoo):
 	decide on figure of diapered dinosaur tattoo.
 
-
 Figure of dumb baby tattoo is the file "Items/Tats/tattoo90.jpg".
 To decide which figure-name is the examine-image of (T - dumb baby tattoo):
 	decide on figure of dumb baby tattoo.
 
-
 Figure of incontinent-when-speaking tattoo is the file "Items/Tats/tattoo112.jpg".
 To decide which figure-name is the examine-image of (T - incontinent-when-speaking tattoo):
 	decide on figure of incontinent-when-speaking tattoo.
-
 
 Figure of kitty cat tattoo is the file "Items/Tats/tattoo69.jpg".
 To decide which figure-name is the examine-image of (T - kitty cat tattoo):
@@ -92,7 +86,6 @@ To decide which figure-name is the examine-image of (T - loser tattoo):
 Figure of mushbutt tattoo is the file "Items/Tats/tattoo94.jpg".
 To decide which figure-name is the examine-image of (T - mushbutt tattoo):
 	decide on figure of mushbutt tattoo.
-
 
 Figure of princess castle tattoo is the file "Items/Tats/tattoo68.jpg".
 To decide which figure-name is the examine-image of (T - princess castle tattoo):
@@ -117,6 +110,5 @@ To decide which figure-name is the examine-image of (T - tribal diaper tattoo):
 Figure of walking teddy bear tattoo is the file "Items/Tats/tattoo99.jpg".
 To decide which figure-name is the examine-image of (T - walking teddy bear tattoo):
 	decide on figure of walking teddy bear tattoo.
-
 
 Necessary Figures ends here.

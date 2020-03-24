@@ -17,7 +17,6 @@ To uniquely set up (T - a panties):
 	now the damage of T is 0;
 	now the armour of T is a random number between 10 and 13.
 
-
 To decide which figure-name is clothing-image of (C - a panties):
 	decide on figure of panties 1.
 
@@ -227,7 +226,6 @@ To say UniqueClothingDesc of (G - pale-panties):
 Definition: pale-panties is sissifying: decide yes.
 Definition: pale-panties is pink themed: decide yes.
 
-
 pink-kitty-panties is a panties. Understand "pink", "kitty" as pink-kitty-panties. The text-shortcut of pink-kitty-panties is "pkp".
 To say selfexamineuniquetitle of (G - pink-kitty-panties):
 	say "pair of pink kitty panties".
@@ -235,7 +233,6 @@ To say UniqueClothingDesc of (G - pink-kitty-panties):
 	say "This pair of pink panties has an ASCII cat face on the back.".
 Definition: pink-kitty-panties is cat themed: decide yes.
 Definition: pink-kitty-panties is pink themed: decide yes.
-
 
 Figure of panties 1 is the file "Items/Clothes/Lower/Underwear/Panties/panties1.png".
 Figure of panties special 1 is the file "Items/Clothes/Lower/Underwear/Panties/pantiesspecial1.png".
@@ -250,6 +247,5 @@ Figure of panties 7 is the file "Items/Clothes/Lower/Underwear/Panties/panties7.
 Figure of panties 8 is the file "Items/Clothes/Lower/Underwear/Panties/panties8.png".
 Figure of panties 9 is the file "Items/Clothes/Lower/Underwear/Panties/panties9.png".
 Figure of panties 10 is the file "Items/Clothes/Lower/Underwear/Panties/panties10.png".
-
 
 Panties ends here.

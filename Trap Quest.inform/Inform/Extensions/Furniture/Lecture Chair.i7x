@@ -1,6 +1,5 @@
 Lecture Chair by Furniture begins here.
 
-
 A lecture chair is a kind of furniture. A lecture chair is not portable. The printed name of lecture chair is "[TQlink of item described]lecture chair[TQxlink of item described][verb-desc of item described]". 1 lecture chair is in Hotel24. A lecture chair has a number called charge. The text-shortcut of a lecture chair is "lec".
 
 To say ExamineDesc of (C - a lecture chair):
@@ -55,6 +54,5 @@ To compute furniture resting on (C - a lecture chair):
 		SemenTasteAddictUp 1;
 		humiliate 500;
 	now the charge of C is 450.
-
 
 Lecture Chair ends here.

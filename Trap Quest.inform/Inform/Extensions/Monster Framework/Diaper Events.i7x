@@ -128,7 +128,6 @@ To compute DiaperCheckWetReveal of (M - a monster) to (D - a diaper):
 	process state perception of D;
 	say "It's only now that [he of M] has pointed it out that you can feel it - your diaper is indeed wet[one of]! You must have used it without even realising it[or][stopping].".
 
-
 To say DiaperCheckResultsWetFlav of (M - a monster):
 	let D be a random worn knickers;
 	say "[speech style of M]'[one of]As suspected[or]Unsurprisingly[or]What a surprise,[or]How predictable,[or]As per usual[in random order] [one of]your [if the player is male]little willy[otherwise]weak bladder[end if] hasn't been able to hold on for very long at all[or]you've gone pee-pee in your [if D is diaper]diaper[otherwise]panties[end if][or]you've wet yourself like a little baby[or]it's totally wet[or]you've completely soaked it[or]you've peed in your pants like a little [boy of the player] rather than make it to the toilet like a grown-up[or]you didn't make it to the big [boy of the player] potty[or]pissed yourself like a pathetic child[in random order]! [one of]This is too soggy for you to keep walking around in, you're going to need a change.'[or]I guess it's up to me to change you.'[or]Were you trying to avoid letting me know that you need a change?'[or]I think we're going to need [if D is diaper]a brand new diaper, this one's padding is all used up[otherwise]diapers here[end if].'[in random order][roman type][line break]".
@@ -154,7 +153,6 @@ To say DiaperCheckResultsDryFlav of (M - a monster):
 	otherwise:
 		say "[DiaperCheckResultsDryWellDoneFlav of M]";
 		say "[DiaperCheckResultsDryWellDoneReactionFlav of M]".
-
 
 To say DiaperCheckResultsDryForNowFlav of (M - a monster):
 	say "[speech style of M]'[one of]Oh[or]Hmph[or]Unbelievable[or]How surprising[in random order]. [one of]You've actually managed to stay dry, for now[or]It doesn't feel like you've had an accident, yet[or]You're completely dry[or]It's bone dry[or]No leaks yet, it would seem[in random order]. [one of]I don't expect that will last for long though[or]Maybe one of these days you will actually be ready for big girl pants again[or]Maybe there's a very slight chance I misjudged you? We'll see if you can keep this up for the next time we meet[or]I think you got lucky. I'll be checking again soon and I bet you'll have slipped up by then[in random order].'[roman type][line break]".
@@ -186,7 +184,6 @@ To say DiaperCheckResultsDryWellDoneReactionFlav of (M - a monster):
 To say DiaperChangeRefuseAnger of (M - a monster):
 	say "As [he of M] sees you make a move to resist, [NameDesc of M] gets angry! [line break][speech style of M]'[one of]Bad baby!'[or]Ugh, they never learn...'[or]You will regret this!'[then at random][roman type][line break]".
 
-
 Section - Diaper Change
 
 Definition: a monster (called M) is diaper change cummies rewarding:
@@ -203,7 +200,6 @@ Definition: a monster (called M) is diaper change complete cummies rewarding:
 
 Definition: a monster is diaper disciplining: decide no. [Does this NPC like to demand that the player stays in diapers until they're satisfied they can stay dry?]
 Definition: a monster is diaper leaving: decide yes. [Does this NPC like to leave used diapers behind?]
-
 
 old-diaper is an object that varies.
 current-diaper is an object that varies.
@@ -474,7 +470,6 @@ To compute spanking of (M - a monster):
 Definition: a monster is willing to spank gently: decide yes.
 To decide which number is the spankExtension of (M - a monster): [The chance of them increasing the duration of the spank due to resistance.]
 	decide on a random number between 1 and 3.
-
 
 To decide which number is the spanking length of (M - a monster):
 	decide on a random number between 2 and 4.
@@ -914,7 +909,6 @@ To say ConfiscationReaction of (M - a monster) on (C - a clothing):
 
 To say ConfiscationAfterFlav of (M - a monster) on (C - a clothing):
 	if M is intelligent, say "[speech style of M]'[one of]You should be thankful that I don't punish you further.'[or]I think you've gotten off lightly really, don't you?'[or]Considering your behaviour, I think that you should be grateful I have chosen not to punish your more... physically.'[in random order][roman type][line break]".
-
 
 Section - Babywear Donation
 

@@ -1,6 +1,5 @@
 Makeup Pad Trap by Traps begins here.
 
-
 [!<MakeUpPad>@
 
 REQUIRES COMMENTING

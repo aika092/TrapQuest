@@ -1,6 +1,5 @@
 Removability by Clothing begins here.
 
-
 the global removability rules is a rulebook.
 
 Definition: a clothing (called C) is actually removable:
@@ -117,6 +116,5 @@ The bottom layer removal rule is listed in the global removability rules.
 Check taking off clothing:
 	now summoning is 0;
 	unless the noun is actually removable, do nothing instead.
-
 
 Removability ends here.

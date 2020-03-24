@@ -193,7 +193,6 @@ By default, does nothing
 To compute unique soreness effect of (F - a furniture):
 	do nothing.
 
-
 [!<computeFurnitureAlerting>+
 
 This function is called whenever a nearby monster interrupts the player's resting.
@@ -230,6 +229,5 @@ Called whenever the player stops resting, regardless of the reason why. Does not
 +!]
 To compute rest ending of (F - a furniture):
 	dislodge F.
-
 
 Furniture Framework ends here.

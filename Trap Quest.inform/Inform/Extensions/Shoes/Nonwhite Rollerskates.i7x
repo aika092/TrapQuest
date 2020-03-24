@@ -29,5 +29,4 @@ Definition: black-wheeled red-rollerskates is black themed: decide yes.
 To decide which figure-name is the clothing-image of (C - black-wheeled red-rollerskates):
 	decide on figure of black-wheeled red-rollerskates.
 
-
 Nonwhite Rollerskates ends here.

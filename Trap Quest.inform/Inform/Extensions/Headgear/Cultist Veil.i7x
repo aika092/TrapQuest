@@ -1,6 +1,5 @@
 Cultist Veil by Headgear begins here.
 
-
 cultist veil is a headgear. cultist veil is silk. cultist veil is in Mansion23. cultist veil is roleplay.
 
 The printed name of cultist veil is "[clothing-title-before]cultist veil[clothing-title-after]". The text-shortcut of cultist veil is "cv".
@@ -22,7 +21,6 @@ To say ShortDesc of (H - cultist veil):
 
 To compute SelfExamineDesc of (H - cultist veil):
 	say "Your eyes are covered by a sheer black veil.".
-
 
 To decide which number is the strength-influence of (H - cultist veil):
 	let S be -1;
@@ -70,7 +68,6 @@ Report wearing cultist veil:
 		commence doom.
 
 Definition: cultist veil is condom pinnable: decide yes.
-
 
 Chapter - Class Outfit
 

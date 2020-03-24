@@ -27,7 +27,6 @@ To decide which figure-name is the clothing-image of (C - spiked-tiara):
 		if C is tonguing, decide on figure of tonguing white spiked tiara;
 		decide on figure of white spiked tiara.
 
-
 To say ClothingDesc of (H - spiked-tiara):
 	say "This [tonguesColour] [MediumDesc of H] has small regular spikes along the front, giving it a rather sinister feel. Multiple living tongues rope down from under its body to hug your ears, chin, and anything else they can reach. [TongueStatus of H]".
 
@@ -114,7 +113,6 @@ To compute tongue clothing:
 			say "[bold type]A [MediumDesc of spiked-tiara] appears on your forehead! You feel its tongues immediately begin to explore your head, and inside your ears...[roman type][line break]";
 			summon spiked-tiara cursed.
 
-
 Chapter - Class Outfit
 
 Definition: spiked-tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed]
@@ -159,7 +157,6 @@ To compute class outfit of (H - spiked-tiara):
 		otherwise if E is equippable and E is not demonic:
 			transform E into tongue-gloves.
 
-
 Chapter - Quest
 
 no-orgasm-quest is a headgear-clothing-quest. no-orgasm-quest has a number called rounds-horny.
@@ -172,6 +169,5 @@ To say QuestFlav of (Q - no-orgasm-quest):
 
 To say QuestTitle of (Q - no-orgasm-quest):
 	say " (orgasm avoiding quest)".
-
 
 Spiked Tiara ends here.

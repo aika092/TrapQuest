@@ -3,7 +3,6 @@ Teachers Sapphire by Monster begins here.
 To say MediumDesc of (M - a sapphire-teacher):
 	say "sapphire teacher [teacher-name of M]".
 
-
 Part - Serenity
 
 teacher-serenity is a sapphire-teacher.
@@ -19,7 +18,6 @@ To decide which figure-name is the monster-image of (M - teacher-serenity):
 To decide which figure-name is the pacified-image of (M - teacher-serenity):
 	if M is sex-enslaved, decide on figure of enslaved serenity;
 	decide on figure of enslaved diapered serenity.
-
 
 To say MonsterDesc of (M - teacher-serenity):
 	if M is sex-enslaved:
@@ -87,7 +85,6 @@ To compute teaching of (L - heel-lesson):[TODO - deal with edge case where there
 	otherwise:
 		say "[speech style of M]'Well I guess without two volunteers there will be no test today. Class dismissed.'[roman type][line break]";
 	allocate 65 seconds.
-
 
 Part - Angela
 
@@ -189,6 +186,5 @@ To compute make-up-lesson-application of (M - a tryhard student):
 To compute make-up-lesson-application of (M - an innocent student):
 	say "When it's [his of M] job to return the favour, [he of M] looks very uncertain. [big he of M] ends up hardly applying anything at all, probably too nervous that [he of M] would accidentally make you look ridiculous!";
 	FaceDown 3.
-
 
 Teachers Sapphire ends here.

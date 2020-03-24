@@ -68,5 +68,4 @@ This is the hide combat visor rule:
 		now combat visor is in Holding Pen.
 The hide combat visor rule is listed last in the game universe initialisation rules.
 
-
 Combat Visor ends here.

@@ -1,6 +1,5 @@
 Magic Dust Trap by Traps begins here.
 
-
 A magic dust trap is a kind of trap. There are 10 click magic dust traps.
 To say ExamineDesc of (C - a magic dust trap):
 	say "A small bowl on the end of a wooden pole, set up as a catapult style mechanism.".
@@ -88,6 +87,5 @@ To identify glitter:
 
 To say glitter:
 	say "[if glitter-identified is 0]some kind of glitter[otherwise]magic dust[end if]".
-
 
 Magic Dust Trap ends here.

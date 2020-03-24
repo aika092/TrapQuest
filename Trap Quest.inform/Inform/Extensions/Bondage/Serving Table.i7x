@@ -25,7 +25,6 @@ To compute periodic effect of (C - a serving-bondage):
 			now C is unlocked;
 			now C is wristless.
 
-
 serving table is a serving-bondage. serving table is glass. The printed name of serving table is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]serving table[clothing-title-after]". The text-shortcut of serving table is "svtb".
 
 To decide which figure-name is clothing-image of (C - serving table):
@@ -45,7 +44,6 @@ This is the serving table prevents standing rule:
 		rule fails.
 The serving table prevents standing rule is listed in the ability to stand rules.
 
-
 serving tray is a serving-bondage. serving tray is leather. The printed name of serving tray is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]serving tray[clothing-title-after]".
 
 To decide which figure-name is clothing-image of (C - serving tray):
@@ -60,6 +58,5 @@ To say ClothingDesc of (C - serving tray):
 	let N be a random worn neckwear;
 	if C is worn, say "A black leather serving tray is connected to [if N is neckwear]your [MediumDesc of N][otherwise]a heavy metal collar[end if] by strong metal chains, allowing it to sit in front of your belly button, ready for others to place things on it, or take things from it. On it is your [if there is a held cocktail-glass]cocktail glass[end if][if there is a held cocktail-glass and there is a held champagne-glass] and [end if][if there is a held champagne-glass]champagne glass[end if][if C is wrist-bound-behind]. Your hands are kept behind you by a piece of strong and seemingly magical rope[end if].";
 	otherwise say "The black leather serving tray that had been chained to your neck.".
-
 
 Serving Table ends here.

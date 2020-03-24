@@ -9,7 +9,6 @@ To decide which number is fast TG:
 	if TG fetish is 0, decide on 0;
 	decide on choice in row 73 of the Table of Player Options.
 
-
 Table of TG Options
 title	subtable	description	toggle
 "Transforming into a [if transGender is 1]biological [end if]woman should be something inevitable and rather unavoidable. I'm just starting as a man for the fantasy. (Penis size can't be increased, TG can happen spontaneously)"	--	--	instant tg lover rule
@@ -27,6 +26,5 @@ This is the instant tg liker rule:
 This is the instant tg hater rule:
 	now choice in row 73 of the Table of Player Options is 1;
 	follow quit rule.
-
 
 Instant TG Options ends here.

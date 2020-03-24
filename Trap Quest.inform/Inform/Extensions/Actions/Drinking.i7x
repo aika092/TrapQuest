@@ -135,7 +135,6 @@ Definition: yourself (called Y) is able to drink:
 			decide no;
 	decide yes.
 
-
 Check drinking:
 	now drinking-target is the noun;
 	if the player is not able to drink:
@@ -197,6 +196,5 @@ Carry out drinking a carried bottle:
 	force inventory-focus redraw. [Forces redraw of inventory window]
 
 The block drinking rule is not listed in the check drinking rulebook.
-
 
 Drinking ends here.

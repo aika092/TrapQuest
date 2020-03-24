@@ -21,7 +21,6 @@ To decide which figure-name is the examine-image of (R - a bracelet):
 
 bracelet wearability rules is a rulebook. The wearability rules of bracelets is usually bracelet wearability rules.
 
-
 To say ShortDesc of (C - a bracelet):
 	say "[accessory-colour of C] bracelet".
 

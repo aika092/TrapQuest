@@ -1,6 +1,5 @@
 Gelatin by Food begins here.
 
-
 A gelatin is a kind of chef food. There is 1 gelatin. Understand "gummy" as gelatin. The printed name of a gelatin is "[TQlink of item described]gelatin[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a gelatin is usually "jt".
 
 To say ExamineDesc of (C - a gelatin):
@@ -38,6 +37,5 @@ Carry out TQeating gelatin:
 		Arouse 1000;
 	StomachFoodUp 2;
 	allocate 6 seconds.
-
 
 Gelatin ends here.

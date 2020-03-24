@@ -116,7 +116,6 @@ To decide which number is minimum arousal:
 
 Part 2 - Decay Every Turn
 
-
 [!<previousSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -259,7 +258,6 @@ To check for arousal change:
 
 Part 3 - Check Values
 
-
 [!<YourselfIsAbleToGetHorny>+
 
 REQUIRES COMMENTING
@@ -347,7 +345,6 @@ Definition: yourself is gagging for cock:
 A gagging for cock rule (this is the extremely horny players need cock rule):
 	if the player is extremely horny, rule succeeds.
 
-
 [!<TheNotHornyEnoughToWankRule>+
 
 You need some arousal to masturbate, and also you need to not be grossed out.
@@ -361,6 +358,5 @@ This is the not horny enough to wank rule:
 		if auto is 0, say "You can't masturbate while grossed out.";
 		rule fails.
 The not horny enough to wank rule is listed last in the masturbation restriction rules.
-
 
 Arousal ends here.

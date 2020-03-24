@@ -60,7 +60,6 @@ To compute perception of (M - boogeymonster):
 To say BecomesBoredFlav of (M - boogeymonster):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
-
 Part 2 - Motion, Seeking and Sleeping
 
 To compute monstermotion of (M - boogeymonster):
@@ -82,7 +81,6 @@ To compute sleep reduction of (M - boogeymonster):
 		if the M is awake:
 			now the sleep of M is 0;
 			if M is in the location of the player, say "[BigNameDesc of M] wakes up!".[Very slight deviation from the default.]
-
 
 Part 3 - Boogeymonster Stomp
 
@@ -409,7 +407,6 @@ To compute punishment of (N - boogeymonster-nightmare-courtroom):
 	distract M;
 	if the raw delicateness of the player < 14, increase the raw delicateness of the player by 1.
 
-
 Section - Comicon Nightmare
 
 boogeymonster-nightmare-comicon is boogeymonster-nightmare.
@@ -494,6 +491,5 @@ To loot (M - boogeymonster):
 		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
-
 
 Boogeymonster ends here.

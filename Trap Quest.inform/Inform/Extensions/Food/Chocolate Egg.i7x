@@ -7,12 +7,10 @@ To say ExamineDesc of (B - a chocolate egg):
 To decide which number is the crafting key of (C - a chocolate egg):
 	decide on 55.
 
-
 Figure of chocolate egg is the file "Items/Collectibles/chocolateegg1.jpg".
 
 To decide which figure-name is the examine-image of (F - a chocolate egg):
 	decide on figure of chocolate egg.
-
 
 To say ShortDesc of (C - a chocolate egg):
 	say "chocolate egg".

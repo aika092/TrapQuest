@@ -28,7 +28,6 @@ To say ClothingDesc of (C - yellow-open-front-dress):
 To say ShortDesc of (C - yellow-open-front-dress):
 	say "yellow open front dress".
 
-
 Definition: yellow-open-front-dress is end of transformation chain if diaper quest is 0.
 
 Open Front Dress ends here.

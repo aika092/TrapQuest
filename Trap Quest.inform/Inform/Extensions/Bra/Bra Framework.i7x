@@ -59,7 +59,6 @@ To decide which object is the unique-upgrade-target of (C - a bra):
 	if diaper quest is 1, decide on a random off-stage training bra;
 	decide on nothing.
 
-
 To decide what number is the original price of (C - a bra):
 	decide on 3.
 
@@ -217,7 +216,6 @@ This is the remove inappropriate bras rule:
 	repeat with B running through string bikini tops:
 		now B is in Holding Pen.
 The remove inappropriate bras rule is listed in the diaper quest fix rules.
-
 
 Part - Wearability
 

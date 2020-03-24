@@ -1,6 +1,5 @@
 Semen Movements by Every Turn begins here.
 
-
 To decide which number is vagina-semen-frequency:
 	decide on 129.
 
@@ -106,7 +105,6 @@ To check goddess eligibility:
 					destroy O;
 				say "[bold type]A bunny tail plug materialises inside your [asshole]![roman type][line break]";
 				summon bunny tail plug cursed.
-
 
 [!<SayConceptionFlav>+
 
@@ -359,6 +357,5 @@ To execute (E - enema-incontinence):
 	say "You've been holding onto your [enema] for so long that feel your sphincter weaken[if incontinence > 0] even further[end if]. ";
 	increase incontinence by 1;
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
-
 
 Semen Movements ends here.

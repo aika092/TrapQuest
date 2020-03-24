@@ -113,5 +113,4 @@ To say BecomesBoredFlav of (M - a monster):
 [We can make this resolve to 'yes' and also output some text about what they get up to instead of taking their action.]
 Definition: a monster is distracted: decide no.
 
-
 Compute Monsters ends here.

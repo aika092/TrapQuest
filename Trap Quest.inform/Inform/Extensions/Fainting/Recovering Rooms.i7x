@@ -76,5 +76,4 @@ To Recover Rooms:
 	if crashdebug is 1:
 		say "Room Checkpoint 5.".
 
-
 Recovering Rooms ends here.

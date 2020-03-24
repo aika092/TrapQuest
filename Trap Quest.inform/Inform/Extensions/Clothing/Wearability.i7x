@@ -1,6 +1,5 @@
 Wearability by Clothing begins here.
 
-
 Chapter 7 - Global Wearability Rules
 
 Autowear is initially false.
@@ -241,7 +240,6 @@ This is the legs shoes clash rule:
 					rule fails.
 The legs shoes clash rule is listed in the global wearability rules.
 
-
 This is the clothes can't interrupt anal sex rule:
 	if wearing-target is total protection:
 		repeat with T running through things penetrating asshole:
@@ -269,6 +267,5 @@ This is the cultist won't wear blessed clothing rule:
 			now wearing-target is sure;
 			rule fails.
 The cultist won't wear blessed clothing rule is listed in the global wearability rules.
-
 
 Wearability ends here.

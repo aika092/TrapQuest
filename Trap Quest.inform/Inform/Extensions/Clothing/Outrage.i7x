@@ -1,6 +1,5 @@
 Outrage by Clothing begins here.
 
-
 To decide which number is the outrage of (C - an object):
 	decide on 0.
 
@@ -95,6 +94,5 @@ Definition: a clothing (called C) is almost too much:
 	decide no.
 
 Definition: a clothing is outrageAcceptable if the outrage of it <= 6.
-
 
 Outrage ends here.

@@ -11,7 +11,6 @@ A diaper quest fix rule:
 	repeat with C running through buttockless pants:
 		now C is transformation-rare.
 
-
 blue buttockless pants is a kind of buttockless pants. There is 1 denim blue buttockless pants. yellow buttockless pants is a kind of buttockless pants. There is 1 leather yellow buttockless pants.
 
 The text-shortcut of yellow buttockless pants is "lbp".
@@ -33,7 +32,6 @@ To decide which figure-name is clothing-image of (H - a yellow buttockless pants
 
 To say UniqueClothingDesc of (B - a yellow buttockless pants):
 	say "A pair of yellow pants with the buttocks cut out. It provides modesty to the crotch area[if diaper focus is 1] but allows everyone to see what underwear or nappy you're wearing[otherwise if the outrage of B is too humiliating] but is still extremely humiliating to wear[end if].".
-
 
 To decide which number is the initial outrage of (B - a yellow buttockless pants):
 	decide on 6.

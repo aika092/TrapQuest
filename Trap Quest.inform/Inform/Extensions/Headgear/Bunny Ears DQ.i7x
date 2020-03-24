@@ -1,6 +1,5 @@
 Bunny Ears DQ by Headgear begins here.
 
-
 A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bunny ears is usually dexterity-influencing.
 
 Definition: a bunny ears is transformation-protected: decide no.
@@ -16,20 +15,17 @@ To compute waitress resolution of (M - a monster) taking (T - a bottle):
 To compute service spill punishment:
 	do nothing.
 
-
 bunny-waitress-quest is a headgear-clothing-quest.
 
 serving-bondage is a kind of bondage.
 serving table is a serving-bondage.
 serving tray is a serving-bondage.
 
-
 Part 2 - Rubber Bunny Ears
 
 rubber bunny ears is a bunny ears.
 
 egg-holding-quest is a headgear-clothing-quest.
-
 
 Part 3 - Bunny Hat
 
@@ -39,7 +35,6 @@ bunny-summoned is a number that varies.
 To compute unique recycling of (C - a bunny hat):
 	now the eggs-eaten of egg-eating-quest is 0;
 	now bunny-summoned is 0.
-
 
 black bunny hat is a bunny hat. The printed name of black bunny hat is "[clothing-title-before]black bunny hat[clothing-title-after]". The text-shortcut of black bunny hat is "bbh".
 Definition: black bunny hat is black themed: decide yes.
@@ -229,6 +224,5 @@ To say QuestFlav of (Q - trap-braving-quest):
 
 To say QuestTitle of (Q - trap-braving-quest):
 	say " (trap braving quest)".
-
 
 Bunny Ears DQ ends here.

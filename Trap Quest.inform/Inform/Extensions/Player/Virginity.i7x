@@ -1,6 +1,5 @@
 Virginity by Player begins here.
 
-
 [!<Player>@<virgin:Integer>*
 
 For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
@@ -63,9 +62,7 @@ To compute virginity loss:
 	progress quest of vaginal-virginity-quest;
 	if the openness of vagina < 10, increase the openness of vagina by 1.
 
-
 Part 2 - Virgin Reward
-
 
 [!<VirginReward>+
 
@@ -214,7 +211,6 @@ REQUIRES COMMENTING
 To say VirginFlav:
 	say "[bold type]Another wave of [if the humiliation of the player < 40000]shame[otherwise]the curse[end if] flows through you as you [one of][or]once again [stopping]find yourself thinking about your embarrassing virginity. [roman type]".
 
-
 Part 3 - Virginity Taking Things
 
 [!<ThingIsVirginityTaking>+
@@ -230,7 +226,6 @@ REQUIRES COMMENTING
 
 +!]
 Definition: A thing is live: decide no.
-
 
 [!<YourselfIsLiveFucked>+
 
@@ -249,6 +244,5 @@ REQUIRES COMMENTING
 To compute virginity-loss of (T - a thing):
 	say "Your [printed name of T] drops to the ground.";
 	now T is in the location of the player.
-
 
 Virginity ends here.

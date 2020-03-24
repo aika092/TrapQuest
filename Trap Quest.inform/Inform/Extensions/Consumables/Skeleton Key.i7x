@@ -42,11 +42,9 @@ A later time based rule:
 		say "As [NameDesc of prison guard] shuffles along nearby, a [skeleton key] drops from [his of prison guard] pocket!";
 		compute autotaking skeleton key.
 
-
 toilet-key is an unlock-key. toilet-key is in Holding Pen. [It doesn't start off-stage so that we can easily determine if it's been used yet or not.]
 The printed name of toilet-key is "[TQlink of item described]toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-key is "tkey". Understand "toilet key" as toilet-key.
 To say ExamineDesc of (B - toilet-key):
 	say "This large key could release someone stuck in place as the hotel's human toilet.".
-
 
 Skeleton Key ends here.

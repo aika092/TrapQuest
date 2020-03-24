@@ -26,5 +26,4 @@ This is the halloween content toggle rule:
 
 Definition: a clothing is halloween themed: decide no.
 
-
 Festive Options ends here.

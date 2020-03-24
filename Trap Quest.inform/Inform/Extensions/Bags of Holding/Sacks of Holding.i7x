@@ -13,5 +13,4 @@ To say ShortDesc of (C - a sack of holding):
 	say "magic leather pouch".
 Definition: a sack of holding is brown themed: decide yes.
 
-
 Sacks of Holding ends here.

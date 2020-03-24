@@ -1,6 +1,5 @@
 Memorising by Actions begins here.
 
-
 Memorising is an action applying to one thing.
 Check memorising:
 	if the noun is furniture, try entering the noun instead; [For when people type "re stool"]
@@ -24,7 +23,6 @@ Report memorising:
 Understand "memorise [something]", "memorize [something]", "remember [something]", "learn [something]", "commit [something] to memory", "le [something]", "mem [something]", "re [something]", "rem [something]" as memorising.
 Does the player mean memorising a recipe:
 	it is very likely.
-
 
 Recalling is an action applying to nothing.
 Check recalling:

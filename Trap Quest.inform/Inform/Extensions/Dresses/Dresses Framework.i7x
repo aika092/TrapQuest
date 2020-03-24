@@ -43,7 +43,6 @@ An underdress is usually knee-length. An underdress is usually average cut. An u
 
 Definition: an underdress is displacable: decide yes.
 
-
 Chapter - Wearability
 
 underdress wearability rules is a rulebook. The wearability rules of underdress is usually underdress wearability rules.
@@ -77,7 +76,6 @@ The skirt underdress clash rule is listed in the skirt wearability rules.
 
 Part 2 - Overdresses
 
-
 An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 4. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
 
 To uniquely set up (C - an overdress):
@@ -110,7 +108,6 @@ To decide which object is the unique-upgrade-target of (C - an overdress):
 	otherwise if the player is diaper focused and the class of the player is adventurer and a random number between 1 and 3 is 1:
 		decide on a random off-stage onesie;
 	decide on nothing.
-
 
 Chapter - Wearability
 
@@ -149,6 +146,5 @@ This is the bra overdress clash rule:
 		if summoning is 0 and autowear is false, say "You can't wear that over your [ShortDesc of B], [if wearing-target is exclusive]the [ShortDesc of wearing-target] is [bold type]exclusive[roman type]![otherwise if B is exclusive]the [ShortDesc of B] is [bold type]exclusive[roman type]![otherwise]it should go underneath.[end if]";
 		rule fails.
 The bra overdress clash rule is listed in the bra wearability rules.
-
 
 Dresses Framework ends here.

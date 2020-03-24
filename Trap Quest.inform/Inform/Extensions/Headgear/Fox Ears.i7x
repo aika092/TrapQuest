@@ -29,7 +29,6 @@ To decide which number is the intelligence-influence of (C - fox ears):[vixens g
 	if C is blessed, increase X by X;
 	decide on X + the magic-modifier of C.
 
-
 Chapter - Class Outfit
 
 Definition: fox ears (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]

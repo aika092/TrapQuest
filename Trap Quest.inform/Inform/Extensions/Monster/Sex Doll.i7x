@@ -158,7 +158,6 @@ To say MuteGreetResponse of (M - a sex doll):
 To say MuteQuestionResponse of (M - a sex doll):
 	say "[SexDollExplanation of M]".
 
-
 Part 2 - Perception
 
 Report kneeling when there is an uninterested sex doll in the location of the player:
@@ -191,7 +190,6 @@ To compute perception of (M - a sex doll):
 	if M is interested, now the sex-length of M is the difficulty of M.
 
 Part 3 - Combat
-
 
 Section 1 - Attack
 
@@ -293,7 +291,6 @@ To compute (M - a sex doll) entering mouth:
 				if O is skirted, cumsoak 4 on O;
 		if M is creamfilled-sex-doll, destroy M.
 
-
 To say type security of (M - a sex doll):
 	if M is liquidfilled, say "They're covered in an strange sticky substance, which seems to get stickier as moments go by. It must be some sort of liquid adhesive! [if the player is glue stuck][line break][variable custom style]Oh man, not more glue![roman type][line break][end if]";
 	otherwise say "The suction cups form a weak seal against your skin, but subtle movements of the doll's arms make it tighter and tighter. ".
@@ -351,7 +348,6 @@ This is the sex doll fills diaper rule:
 		destroy M;
 		rule succeeds.
 The diaper punishment rule of a sex doll is usually the sex doll fills diaper rule.
-
 
 To say StrikingSuccessFlav of (M - a sex doll) on (B - a body part):
 	say "[BigNameDesc of M] flails [his of M] limbs, seemingly blindly! [big he of M] smacks you [TargetName of B]! Ouch!!".
@@ -429,6 +425,5 @@ To loot (M - a sex doll):
 		say "A [printed name of X] appears where the destroyed [M] stood moments ago!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
-
 
 Sex Doll ends here.

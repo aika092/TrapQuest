@@ -1,6 +1,5 @@
 Output Text by Miscellaneous Frontend begins here.
 
-
 To decide which number is TQWhite:
 	decide on 16777215.
 To decide which number is TQMagenta:
@@ -120,7 +119,6 @@ special-style-1	--	left-right-justified	true	15	-4	false	"#aa0000" [dark red]
 blockquote-style	--	left-right-justified	false	0	0	false	"#006400" [dark green]
 input-style	--	left-right-justified	false	0	0	false	"#ff0000" [pure red]
 italic-style	--	center-justified	false	0	0	false	--
-
 
 [Table of Common Color Values (continued)
 glulx color value	assigned number

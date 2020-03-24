@@ -2,7 +2,6 @@ Rectum by Player begins here.
 
 Part - Player Definitions
 
-
 [!<rectum:Integer>*
 
 0: Rectum mechanics inactive
@@ -56,7 +55,6 @@ Definition: yourself is feeling full:
 	if the player is full and ((the player is not incontinent and failed potty training tattoo is not worn) or suppository > 0), decide yes;
 	decide no.
 
-
 To decide which number is expelColour:
 	unless the player is feeling full or the total squirtable fill of belly > 0, decide on TQcolour of grey; [white]
 	if the squirt timer of belly > 0:
@@ -74,7 +72,6 @@ To decide which number is expelColour:
 		if G-component > 128, now G-component is 128;
 	now B-component is G-component;
 	decide on (R-component * 65536) + (G-component * 256) + B-component.
-
 
 fullness-time is a number that varies.
 To decide which number is fullness-penalty:
@@ -239,7 +236,6 @@ To check real messing:
 						say "It takes you several moments to recover.";
 						now another-turn is 1.
 
-
 [!<ComputeMessing>+
 
 Make messing happen. REQUIRES UNDERWEAR.
@@ -376,7 +372,6 @@ REQUIRES COMMENTING
 To say diaper mess declaration of (M2 - a monster):
 	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
 
-
 [!<ComputeDiaperMessReactionOfMonster>+
 
 REQUIRES COMMENTING
@@ -401,7 +396,6 @@ To compute diaper mess reaction of (M - a person):
 			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
 			bore M;
 			compute mandatory room leaving of M.
-
 
 [!<messing:Action>*
 
@@ -468,6 +462,5 @@ REQUIRES COMMENTING
 +!]
 Check TargetMessing:
 	try messing instead.
-
 
 Rectum ends here.

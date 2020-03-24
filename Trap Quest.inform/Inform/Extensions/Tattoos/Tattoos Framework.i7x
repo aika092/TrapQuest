@@ -130,7 +130,6 @@ To decide which number is the initial outrage of (T - an asshole-tattoo):
 To decide which number is the anal sensitivity influence of (C - an asshole-tattoo):
 	decide on 1.
 
-
 Section 3 - Crotch Tattoos
 
 A crotch tattoo is a kind of tattoo.
@@ -145,7 +144,6 @@ To decide which object is the concealer of (T - a crotch tattoo):
 To decide which number is the initial outrage of (T - a crotch tattoo):
 	decide on 11.
 
-
 Section 4 - Chest Tattoos
 
 A chest tattoo is a kind of tattoo.
@@ -158,7 +156,6 @@ To decide which object is the concealer of (T - a chest tattoo):
 
 To decide which number is the initial outrage of (T - a chest tattoo):
 	decide on 7.
-
 
 Section 5 - Leg Tattoos
 
@@ -175,7 +172,6 @@ To decide which number is the initial outrage of (T - a leg tattoo):
 	decide on 3.
 To decide which number is the cringe of (T - a leg tattoo):
 	decide on 0.
-
 
 Section 6 - Lower Back Tattoos
 
@@ -202,7 +198,6 @@ To decide which object is the concealer of (T - a upper back tattoo):
 
 To decide which number is the initial outrage of (T - a upper back tattoo):
 	decide on 3.
-
 
 Section 7 - Body Tattoos
 
@@ -242,7 +237,6 @@ To decide which object is the concealer of (T - a belly tattoo):
 To decide which number is the initial outrage of (T - a belly tattoo):
 	decide on 2.
 
-
 Section 10 - DQ Tattoos
 
 [These never show up in TQ]
@@ -252,7 +246,6 @@ Definition: a dq tattoo (called A) is drawable:
 	if diaper quest is 0, decide no;
 	if A is worn, decide no;
 	decide yes. [So these can be selected randomly!]
-
 
 Section 11 - Hand tattoos
 
@@ -268,6 +261,5 @@ Definition: a hand-tattoo (called A) is drawable:
 	if A is worn or the number of worn hand-tattoo >= 2, decide no;
 	if A is eligible, decide yes;
 	decide no.
-
 
 Tattoos Framework ends here.

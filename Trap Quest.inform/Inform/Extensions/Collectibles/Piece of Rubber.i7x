@@ -1,6 +1,5 @@
 Piece of Rubber by Collectibles begins here.
 
-
 A piece of rubber is a kind of monster-drop. There are 3 piece of rubbers. The printed name of piece of rubber is "[TQlink of item described]piece of pink rubber[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of piece of rubber is "[TQlink of item described]pieces of rubber[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of piece of rubber is "ru". Understand "pieces", "of", "pink" as piece of rubber. Figure of rubber is the file "Items/Collectibles/rubber1.png".
 
 To decide which figure-name is the examine-image of (C - a piece of rubber):
@@ -22,6 +21,5 @@ To decide which number is the bartering value of (T - a piece of rubber) for (M 
 
 Definition: a piece of rubber is inflation themed: decide yes.
 Definition: a piece of rubber is pink themed: decide yes.
-
 
 Piece of Rubber ends here.

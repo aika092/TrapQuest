@@ -1,6 +1,5 @@
 Diaper Framework by Knickers begins here.
 
-
 diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
@@ -135,7 +134,6 @@ Definition: a diaper (called D) is perceived unsoiled rather than perceived soil
 Check going down when the player is in Woods16 and there is a worn messed knickers and diaper quest is 0:
 	say "[variable custom style]I'm not going into some small closed space while wearing this smelly thing![roman type][line break]" instead.
 
-
 Definition: a knickers is soilable: decide no.
 
 Definition: a diaper is soilable: decide yes.
@@ -175,7 +173,6 @@ To clean (C - a knickers):
 		now the perceived-semen-soak of C is 0;
 	if C is listed in the list of stacked diapers, update diaper stack;
 	if C is worn, update appearance level.
-
 
 To set up influence of (C - a diaper):
 	now C is delicateness-influencing.
@@ -391,7 +388,6 @@ To decide which object is the potential-upgrade-target of (C - a diaper):
 				now P is the soak-limit of D;
 	decide on Z.
 
-
 Check taking off worn diaper:
 	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead;
 	if the noun is glued:
@@ -465,7 +461,6 @@ Check wearing diaper when there is a worn diaper:
 	diaperAdd the noun instead;
 	do nothing instead.
 
-
 To diaperAdd (C - a clothing):
 	if C is not listed in the list of stacked diapers:
 		now C is identified;
@@ -527,7 +522,6 @@ Definition: diaper-stack is crotch-pullup:
 	repeat with D running through the list of stacked diapers:
 		if D is crotch-pullup, decide yes;
 	decide no.
-
 
 To compute SelfExamineDesc of (K - diaper-stack):
 	say "You are currently wearing ";

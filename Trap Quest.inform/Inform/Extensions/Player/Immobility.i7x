@@ -73,7 +73,6 @@ Definition: yourself is dildo stuck:
 	if there is a dildo trap penetrating a fuckhole, decide yes;
 	decide no.
 
-
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to
  force you to pose like a little dolly. In this case, the only such trap will be one that makes you pose
  like a ballerina - because you're wearing ballerina wearables.

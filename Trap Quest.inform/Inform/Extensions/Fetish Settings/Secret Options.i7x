@@ -1,6 +1,5 @@
 Secret Options by Fetish Settings begins here.
 
-
 [!<tableOfSecretOptions:Table>*
 
 REQUIRES COMMENTING
@@ -13,7 +12,6 @@ title	subtable	description	toggle
 "Secret (only one): You secretly wonder what it would be like to be heavily pierced (+1 strength & dex per piercing) - 7 points ([if piercing-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 piercing fetish toggle rule
 "Secret (only one): You secretly find humiliation kind of exhilarating (up to +5 strength & dex depending on decency) - 7 points ([if humiliation-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 humiliation fetish toggle rule
 "Secret (only one): You secretly find the idea of artificial enhancement exciting[if artificial enhancements fetish is 0] - Only Available with Artificial Enhancements Selected![otherwise] - (up to +5 strength & dex depending on breast, hip and lip enhancements)[end if] - 7 points ([if artificial-fetish is 0]not [otherwise][bold type][end if]chosen[roman type])"	--	--	 artificial fetish toggle rule
-
 
 [!<emptySecretRules:Rulebook>*
 
@@ -109,6 +107,5 @@ This is the artificial fetish toggle rule:
 	otherwise:
 		follow the empty secret rules;
 		if points count >= 7 and artificial enhancements fetish is 1, now choice in row 59 of the Table of Player Options is 1.
-
 
 Secret Options ends here.

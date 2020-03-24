@@ -27,7 +27,6 @@ To reset soak flavour:
 	repeat with T running through soaked body parts:
 		now T is unsoaked.
 
-
 To LiquidSoak (L - a liquid-object) On (O - an object):
 	say "Error - no LiquidSoak function for soaking [L] on [O].".
 
@@ -73,7 +72,6 @@ To Squirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 To UniqueSquirt (L - a liquid-object) On (C - an object) by (N - a number):
 	say "Error - no Soak function for soaking [L] on [C].".
 
-
 times-bukkaked is a number that varies.
 
 To display cumshot reaction to (N - a number):
@@ -87,7 +85,6 @@ To display cumshot reaction to (N - a number):
 		cutshow figure of cumshot reaction 3 for face;
 	otherwise:
 		cutshow figure of cumshot reaction 2 for face;
-
 
 To UniqueSquirt (L - a liquid-object) On (C - Face) by (N - a number):
 	let M be N / 2; [headgear & hair]
@@ -332,7 +329,6 @@ To puddle water before (L - a liquid-object) from (C - a clothing):
 		PuddleUp L by 1;
 		decrease the water-soak of C by 1.
 
-
 To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 	while C is able to take more liquid and N > 0:
 		LiquidSoak L on C;
@@ -419,7 +415,6 @@ To UniqueSquirt (L - a liquid-object) On (C - a clothing) by (N - a number):
 
 Part 2 - Old Stuff made to work with New Stuff
 
-
 [!<ClothingIsAbleToTakeMoreLiquid>+
 
 REQUIRES COMMENTING
@@ -439,7 +434,6 @@ To CumSoak (X - a number) on (C - a clothing):
 	Squirt semen on C by X;
 	reset soak flavour.
 
-
 [!<PissSoakXOnClothing>+
 
 REQUIRES COMMENTING
@@ -449,7 +443,6 @@ To PissSoak (X - a number) on (C - a clothing):
 	if C is fluid vulnerable and C is worn, say "[urine] soaks into your [ShortDesc of C][if bukkake fetish is 0 and C is not crotch covering].[end if]";
 	Squirt urine on C by X;
 	reset soak flavour.
-
 
 [!<PissSoakClothing>+
 
@@ -468,7 +461,6 @@ To MilkSoak (X - a number) on (C - a clothing):
 	if C is fluid vulnerable and C is worn, say "[milk] soaks into your [ShortDesc of C][if bukkake fetish is 0 and C is not crotch covering].[end if]";
 	Squirt milk on C by X;
 	reset soak flavour.
-
 
 [!<MilkSoakClothing>+
 
@@ -533,7 +525,6 @@ To CumTitsUp (X - a number):
 	if a random number between 5 and 13 < the semen coating of breasts, SemenAddictUp 1; [less likely than face]
 	reset soak flavour.
 
-
 [!<CumTitsDownX>+
 
 REQUIRES COMMENTING
@@ -554,7 +545,6 @@ REQUIRES COMMENTING
 To CumBellyUp (X - a number):
 	Squirt semen On Belly By X;
 	reset soak flavour.
-
 
 [!<CumBellyDownX>+
 
@@ -578,7 +568,6 @@ To CumThighsUp (X - a number):
 	if a random number between 6 and 13 < the semen coating of thighs, SemenAddictUp 1; [less likely than face]
 	reset soak flavour.
 
-
 [!<CumThighsDownX>+
 
 REQUIRES COMMENTING
@@ -591,7 +580,6 @@ To CumThighsDown (X - a number):
 			decrease the semen coating of thighs by 1;
 			if the semen coating of thighs is 0, force inventory-focus redraw. [Forces redraw of inventory window]
 
-
 [!<BellyIsDrippable>+
 
 REQUIRES COMMENTING
@@ -603,7 +591,6 @@ Definition: belly is drippable:[can semen drip onto the player's stomach, from a
 	if the largeness of breasts >= 11, decide no;[above this size, always reaches over the belly. Drips to floor.]
 	decide yes.
 
-
 [!<ComputeFaceCumDribbling>+
 
 REQUIRES COMMENTING
@@ -613,7 +600,6 @@ To compute face cum dribbling:
 	say "Globs of [semen] drip down from your chin onto your [BreastDesc]. ";
 	CumTitsUp 1;
 	CumFaceDown 1.
-
 
 [!<ComputeTitsCumDribbling>+
 
@@ -645,6 +631,5 @@ To compute belly cum dribbling:
 To fully clean (B - a body part):
 	now the semen coating of B is 0;
 	now the urine coating of B is 0.
-
 
 Liquid Movements ends here.

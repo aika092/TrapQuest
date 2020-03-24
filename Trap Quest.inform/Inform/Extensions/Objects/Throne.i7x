@@ -340,7 +340,6 @@ A time based rule (this is the compute throne rule):
 					otherwise:
 						say "and you wonder [if the bimbo of the player < 10]in fear [end if]what could have happened if you hadn't managed to escape so quickly!".
 
-
 To Dethrone The Player:
 	let B be the largeness of breasts;
 	allocate 2 seconds;
@@ -375,6 +374,5 @@ To ThroneDisconnect:
 		if seconds is 0, allocate 3 seconds;
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";
 		try kneeling.
-
 
 Throne ends here.

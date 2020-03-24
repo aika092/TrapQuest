@@ -59,5 +59,4 @@ The lipstick collar inhibits gag reflex rule is listed in the gag reflex rules.
 Report going down when there is a worn tethering lipstick collar:
 	end tethering.
 
-
 Lipstick Collar ends here.

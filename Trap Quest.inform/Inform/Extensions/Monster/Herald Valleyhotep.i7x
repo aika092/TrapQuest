@@ -89,7 +89,6 @@ This is the herald's blessing attack rule:
 	rule succeeds.
 The unique punishment rule of herald is usually the herald's blessing attack rule.
 
-
 herald-blessing is a diaper punishment. The priority of herald-blessing is 5.
 Definition: herald-blessing (called P) is appropriate:
 	if current-monster is not herald, decide no;
@@ -120,7 +119,6 @@ To compute punishment of (P - herald-blessing):
 			say ".";
 			UrineSoakUp K by 9;
 	satisfy M.
-
 
 Section 2 - Damage
 
@@ -154,7 +152,6 @@ To loot (M - herald):
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
-
 Part 3 - Conversation
 
 Section 1 - Greeting
@@ -178,7 +175,6 @@ To say RepeatResponse of (M - herald):
 		say "[speech style of M]'I don't know what your boss will think of this but if you want a blessing just ask.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Pretty sure I said I have nothing for you.'[roman type][line break]";
-
 
 Section 2 - Questioning
 
@@ -274,6 +270,5 @@ To compute herald's gift:
 				otherwise DiaperAddictUp 1;
 				DelicateUp 1;
 			now the gifted of herald is 75.
-
 
 Herald Valleyhotep ends here.

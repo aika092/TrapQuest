@@ -1,6 +1,5 @@
 Fainting Reasons by Fainting begins here.
 
-
 [!<Player>@<faintingReason:Integer>*
 
 REQUIRES COMMENTING
@@ -144,6 +143,5 @@ To say LeftoverDesc (N - 100):
 17 - Full Cum Addiction
 18 - Misc Orifice Soreness
 ]
-
 
 Fainting Reasons ends here.

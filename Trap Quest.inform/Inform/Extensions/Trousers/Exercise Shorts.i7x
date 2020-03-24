@@ -19,7 +19,6 @@ To decide which object is the unique-upgrade-target of (C - an exercise shorts):
 Definition: exercise shorts is exercise themed: decide yes.
 Definition: exercise shorts is grey themed: decide yes.
 
-
 predicament-painted-cutoffs is a trousers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The armour of predicament-painted-cutoffs is 1. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs1.jpg". Understand "painted", "cutoffs" as predicament-painted-cutoffs. A predicament-painted-cutoffs can be hand-blocked. A predicament-painted-cutoffs can be hand-decided.
 
 To decide which figure-name is clothing-image of (H - predicament-painted-cutoffs):
@@ -30,7 +29,6 @@ To say UniqueClothingDesc of (Y - predicament-painted-cutoffs):
 
 To say ShortDesc of (Y - predicament-painted-cutoffs):
 	say "painted-on cutoffs".
-
 
 Definition: predicament-painted-cutoffs is blue themed: decide yes.
 Definition: predicament-painted-cutoffs is transformation-protected: decide yes.
@@ -88,6 +86,5 @@ Carry out going when predicament-painted-cutoffs is worn:
 To decide which number is the initial outrage of (C - predicament-painted-cutoffs):
 	if C is hand-blocked, decide on 2;
 	decide on 12.
-
 
 Exercise Shorts ends here.

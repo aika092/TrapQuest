@@ -2,7 +2,6 @@ Staff Framework by Monster Framework begins here.
 
 A staff member is a kind of monster. A staff member is intelligent. A staff member is usually female.
 
-
 Definition: a staff member is school dwelling: decide yes.
 
 Definition: a staff member is motionless-when-defeated: decide yes.
@@ -118,7 +117,6 @@ To compute (M - a staff member) seeking (D - a direction): [Staff members don't 
 
 Part - Combat
 
-
 To make (M - a staff member) expectant: [Staff members do not wait a turn before punishing the player]
 	if M is unfriendly and M is not survived, now M is triumphant;
 	do nothing.
@@ -135,7 +133,6 @@ This is the staff member unique punishment rule:
 	rule succeeds.
 
 The unique punishment rule of a staff member is usually the staff member unique punishment rule.
-
 
 Part - Damage
 
@@ -216,7 +213,6 @@ To compute friendly drink of (M - a staff member):
 
 To decide which number is the annoyance threshold of (M - a staff member):
 	decide on 999999.
-
 
 Part - Teachers
 
@@ -465,7 +461,6 @@ To conclude (A - an assembly):
 		now ST is unleashed;
 	now the assemblyTime of A is 0.
 
-
 soiled-diaper-assembly is an assembly.
 Definition: soiled-diaper-assembly is eligible if there is a soiled-diaper in the School.
 To say AssemblyStartFlav of (A - soiled-diaper-assembly):
@@ -484,7 +479,6 @@ To execute (A - soiled-diaper-assembly):
 	say "[BigNameDesc of ST] [one of]smirks[or]laughs[or]harrumphs[or]grimaces[or]grins[in random order] as [he of ST] takes the [MediumDesc of SD] and smushes it into your face until you are forced to breathe the horrible smell. Your mind [one of]reels with shame[or]continues to grow with self-resentment and shame[stopping].";
 	DelicateUp 1;
 	if the assemblyTime of A is 1, say "[speech style of M]'Okay, that's enough. And [NameBimbo], make sure you take your disgusting mess with you this time.'[roman type][line break]With that instruction from [NameDesc of M], the assembly appears to be over.".
-
 
 egg-assembly is an assembly.
 Definition: egg-assembly is eligible if there is an egg in the School and asshole is not actually occupied.
@@ -532,7 +526,6 @@ Check wearing when egg-assembly is active:
 
 Check replacing when egg-assembly is active:
 	say "This doesn't seem like a sensible time to antagonise [NameDesc of headmistress] by doing that." instead.
-
 
 Part - Detention
 
@@ -682,7 +675,6 @@ To say detention chair tease response of (M - a monster):
 		say "You [one of]shiver[or]shudder[or]cringe[in random order] with shame.";
 		humiliate 50.
 
-
 This is the detention orgasm announcement rule:
 	if detention chair is grabbing the player and the player is able to speak:
 		if the player is feeling submissive or the fatigue of the player > 350:
@@ -787,10 +779,8 @@ To compute rem chair detention:
 			if class-time < 0, now class-time is 0;
 			now detention chair is not grabbing the player.
 
-
 To say RemHypnoContent:
 	if diaper quest is 0, say "[one of]The camera pans over the professor's body as she's being spit-roasted by two of her interns. [line break][first custom style]'Mnaa mun humnd mnurphrmr.'[roman type][line break][or]The camera zooms in on the professor's asshole as three of her interns pound her at once.[line break][first custom style]'Your sphincter is a muscle, ladies. Always be tight for your man, but never too tight for more!'[roman type][line break][or]The camera zooms in on the professor's face, following the lines of spit ruining her makeup as her interns take turns fucking her face.[line break][first custom style]'Glk! Glk! Glk! Glk!'[roman type][line break][or]The camera zooms in as the professor's interns take turns smacking her in the face. She grins straight into the camera as her hands deftly pump their cocks.[line break][first custom style]'You're always happy to be used, ladies. Only frown because it's over.'[roman type][line break][or]The camera pans slowly as the professor rides one of her interns, zooming in [if tg fetish > 0]on her hand as she rapidly pumps her own cock[otherwise]on her hand as she plays with her clit[end if].[line break][first custom style]'Only pleasure during his pleasure, ladies.'[roman type][line break][in random order]";
 	otherwise say "PLACEHOLDER".
-
 
 Staff Framework ends here.

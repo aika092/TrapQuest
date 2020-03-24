@@ -45,7 +45,6 @@ To decide which number is the oral-sex-addiction-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-
 [!<DecideWhichNumberIsTheSemenTasteAddictionInfluenceOfWearThing>+
 
 REQUIRES COMMENTING
@@ -111,9 +110,7 @@ Definition: yourself is desperately craving semen:
 		decide yes;
 	decide no.
 
-
 Part 2 - Modify Oral Sex Addiction
-
 
 [!<Player>@<rawSemenTasteAddiction:Integer>*
 
@@ -122,13 +119,10 @@ REQUIRES COMMENTING
 *@!]
 The player has a number called raw semen taste addiction. The raw semen taste addiction of the player is usually 1. [Min 1 Max 20]
 
-
 [!<Player>@<rawOralSexAddiction:Integer>*
-
 
 *@!]
 The player has a number called raw oral sex addiction. The raw oral sex addiction of the player is usually 1. [Min 1 Max 10]
-
 
 [!<OralSexAddictUpX>+
 
@@ -158,7 +152,6 @@ To OralSexAddictDown (X - a number):
 	decrease S by the raw oral sex addiction of the player;
 	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the oral sex addiction of the player > 6]orally fixated[otherwise]interested in performing oral sex[end if].".
 
-
 To SilentlyOralSexAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -166,7 +159,6 @@ To SilentlyOralSexAddictDown (X - a number):
 
 To SilentlyOralSexAddictDown:
 	if the raw oral sex addiction of the player > 1, decrease the raw oral sex addiction of the player by 1.
-
 
 [!<SemenTasteAddictUpX>+
 
@@ -186,7 +178,6 @@ To SemenTasteAddictUp (X - a number):
 		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]
 			increase the raw semen taste addiction of the player by 1.
 
-
 To SemenTasteAddictDown (X - a number):
 	let S be the raw semen taste addiction of the player;
 	SilentlySemenTasteAddictDown X;
@@ -200,6 +191,5 @@ To SilentlySemenTasteAddictDown (X - a number):
 
 To SilentlySemenTasteAddictDown:
 	if the raw semen taste addiction of the player > 1, decrease the raw semen taste addiction of the player by 1.
-
 
 Semen Taste and Oral Sex Addiction ends here.

@@ -25,7 +25,6 @@ This is the tentacle breeder in dungeon rule:
 	if tentacle fetish is 1, now dungeon-breeder is in a random sandy unrelaxing placed room.
 The tentacle breeder in dungeon rule is listed in the set up dungeon traps rules.
 
-
 This is the tentacle breeder in woods rule:
 	if tentacle fetish is 1, now woods-breeder is in a random placed dodgy room.
 The tentacle breeder in woods rule is listed in the set up woods traps rules.
@@ -89,7 +88,6 @@ Carry out purifying tentacle-breeder:
 	repeat with C running through worn clothing:
 		if the quest of C is tentacle-research-quest:
 			compute quest completion of tentacle-research-quest on C.
-
 
 To compute summoning check of (T - a tentacle-breeder) :
 	decrease the charge of T by (time-seconds + game difficulty) / 2;
@@ -169,6 +167,5 @@ The player breeder rule is listed in the tentacle-breeder-spawning rules
 
 A time based rule (this is the tentacle breeder tester rule):
 	follow the tentacle-breeder-spawning rules.
-
 
 Tentacle Breeder ends here.

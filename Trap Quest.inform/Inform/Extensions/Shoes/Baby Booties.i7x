@@ -41,7 +41,6 @@ To set up influence of (C - a baby booties):
 To decide which object is the unique-upgrade-target of (C - a baby booties):
 	decide on a random off-stage baby slippers.
 
-
 Part 1 - Baby Slippers
 
 A baby slippers is a kind of baby booties. A baby slippers is usually wool.
@@ -85,7 +84,6 @@ Figure of rubber booties is the file "Items/Clothes/Lower/Feet/Booties/booties4.
 To decide which figure-name is the clothing-image of (H - a rubber booties):
 	decide on the figure of rubber booties.
 
-
 Definition: rubber booties is bow themed: decide yes.
 Definition: rubber booties is black themed: decide yes.
 
@@ -94,7 +92,6 @@ To say ClothingDesc of (C - rubber booties):
 
 To say UniqueShortDesc of (C - rubber booties):
 	say "latex booties".
-
 
 This is the latex booties stockings clash rule:
 	if wearing-target is rubber booties:

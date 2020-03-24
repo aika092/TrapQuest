@@ -1,6 +1,5 @@
 Printed Names by Clothing begins here.
 
-
 To say cumdesc:
 	if item described is clothing, say cumdesc of item described.
 
@@ -75,6 +74,5 @@ To say displacement-desc:
 			say " (open)";
 	if the item described is condom pinned:
 		say " ([if the used condoms of the item described > 0][used condoms of the item described] used[end if][if the used condoms of the item described > 0 and the empty condoms of the item described > 0] & [end if][if the empty condoms of the item described > 0][empty condoms of the item described] empty[end if] [if the empty condoms of item described is 1 or (the empty condoms of item described is 0 and the used condoms of item described is 1)]condom[otherwise]condoms[end if])".
-
 
 Printed Names ends here.

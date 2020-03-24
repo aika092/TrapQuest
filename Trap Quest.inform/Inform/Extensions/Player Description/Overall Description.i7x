@@ -1,6 +1,5 @@
 Overall Description by Player Description begins here.
 
-
 The description of yourself is "".
 
 To say FullExamineDesc of (C - yourself):
@@ -90,6 +89,5 @@ To say OptionalDescription:
 
 To say GrabStatus of (M - a monster):
 	say "is restraining you".
-
 
 Overall Description ends here.

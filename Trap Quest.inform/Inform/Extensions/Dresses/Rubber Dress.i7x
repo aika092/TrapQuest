@@ -30,7 +30,6 @@ To say MediumDesc of (C - a white rubber giant bow dress):
 To decide which number is the initial outrage of (C - a white rubber giant bow dress):
 	decide on 3.
 
-
 Definition: a white rubber giant bow dress is white themed: decide yes.
 Definition: a white rubber giant bow dress is bow themed: decide yes.
 

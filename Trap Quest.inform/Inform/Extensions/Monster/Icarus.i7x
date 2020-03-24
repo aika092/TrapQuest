@@ -62,7 +62,6 @@ To say LeftoverDesc (N - 128):
 
 Part 1 - Misc Flavour
 
-
 To say DiaperReaction of (M - a Icarus):
 	if there is a currently visible diaper or the player is shameless:
 		say "[BigNameDesc of M] frowns and looks directly at your dampening crotch.[line break][speech style of M]'[one of]I've never understood you perverts who get off on wearing those things. If that wasn't bad enough, you have the audacity to use it in front of me? Disgusting.'[or][big please] stop doing such disgusting things in front of me.'[stopping][roman type][line break]";
@@ -91,7 +90,6 @@ Part 1 - Misc Flavour
 
 To say SuddenTransformTrapReactFlav of (M - Icarus):
 	say "[BigNameDesc of M] grins.[line break][speech style of M]'The [one of]art[or]graphics[cycling] for that's [one of]not bad, is[or]pretty good, isn't[or]got room for improvement, hasn't[in random order] it?'[roman type][line break]".
-
 
 Part 2 - Perception
 
@@ -150,7 +148,6 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute appearance assessment of M.
 
-
 Part 3 - Icarus Science
 
 Definition: a wearthing is IcarusScienceAppropriate: decide no.
@@ -205,7 +202,6 @@ To compute Icarus science of (M - Icarus):
 		say "[speech style of M]'Hmm, actually I've changed my mind. See you later.'[roman type][line break][BigNameDesc of M] loses interest.";
 		bore M.
 
-
 bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
 
 Definition: bondage-ribbons is red themed: decide yes.
@@ -235,7 +231,6 @@ To uniquely set up (C - bondage-ribbons):
 To decide which number is the initial outrage of (C - bondage-ribbons):
 	decide on 11.
 
-
 chain-collar is a submissive collar. chain-collar is unique. chain-collar is leather. The text-shortcut of chain-collar is "chnc". The printed name of chain-collar is "[clothing-title-before]chain collar[clothing-title-after]". Understand "chain", "collar" as chain-collar.
 
 Definition: chain-collar is grey themed: decide yes.
@@ -259,7 +254,6 @@ To say ShortDesc of (C - chain-collar):
 To decide which number is the initial outrage of (C - chain-collar):
 	decide on 4.
 
-
 leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
@@ -275,12 +269,10 @@ To decide which figure-name is icarus-clothing-image of (C - leather-jacket):
 To say ClothingDesc of (C - leather-jacket):
 	say "A thin black leather jacket that doesn't have enough fabric to be able to button up at your front. In fact it's more of a half-jacket, that barely covers your nipples and exposes your middle.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
 
-
 Definition: a pink rubber shirt is IcarusScienceAppropriate if it is actually summonable.
 Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt2.jpg".
 To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt full.
-
 
 icarus-butt is a wearthing.
 Definition: icarus-butt is IcarusScienceAppropriate if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16.
@@ -342,7 +334,6 @@ To compute IcarusSummon of (C - icarus-belly):
 	cutshow figure of icarus-belly for belly;
 	say TotalDesc of belly.
 
-
 icarus-pasties is a pasties. icarus-pasties is unique. icarus-pasties is sheer. The text-shortcut of icarus-pasties is "psti".
 Figure of icarus-pasties is the file "Items/Clothes/Upper/Bras/pasties2a.jpg".
 Figure of icarus-pasties full is the file "Items/Clothes/Upper/Bras/pasties2b.jpg".
@@ -353,7 +344,6 @@ To decide which figure-name is icarus-clothing-image of (C - icarus-pasties):
 	decide on figure of icarus-pasties full.
 To say ClothingDesc of (C - icarus-pasties):
 	say "Two slightly sheer black pasties made of a flimsy fabric are all that cover your nipples.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
-
 
 Part 4 - Combat
 
@@ -396,7 +386,6 @@ To say PresentAcceptanceFlav of (M - Icarus):
 
 To say PresentRejectionFlav of (M - Icarus):
 	say "[BigNameDesc of M] pouts.[line break][speech style of M]'Hmm, I have something else in mind...'[roman type][line break]".
-
 
 To say ThreesomePrep of (M - a monster) with (N - Icarus) in (F - asshole):
 	say "A strong gust of wind spins you around, leaving you facing [him of N] as [NameDesc of M] pulls apart your [AssDesc].".
@@ -467,7 +456,6 @@ To decide which number is the tripping max of (M - Icarus): [Giving the Icarus h
 	if D < 1, decide on 1;
 	decide on D.
 
-
 Section 2 - Damage
 
 To compute damage of (M - Icarus):
@@ -495,11 +483,9 @@ To say DamageReactTired of (M - Icarus):
 To say DamageReactWeak of (M - Icarus):
 	say "[BigNameDesc of M] takes the hit, angrily fighting to maintain [his of M] balance!".
 
-
 To compute unique death of (M - Icarus):
 	say "[BigNameDesc of M][']s physical structure begins to fizzle, and [he of M] snarls in frustration before vanishing completely.";
 	loot M.
-
 
 Part 6 - Conversation
 
@@ -528,7 +514,6 @@ To say InvitationRejected of (M - Icarus) with (N - a monster):
 To say MildAnnoyedResponse of (M - Icarus):
 	say "[speech style of M]'Less talking, more fucking.'[roman type][line break]";
 	alwayscutshow figure of Icarus interact 8 for M.
-
 
 Section 2 - Questioning
 
@@ -581,7 +566,6 @@ To compute unfriendly drink of (M - Icarus):
 	now the boredom of M is 0.
 
 Section 4 - Food Requesting
-
 
 Definition: Icarus is willing to give snacks if christmas content is 1.
 

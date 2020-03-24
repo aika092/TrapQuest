@@ -1,6 +1,5 @@
 PC Monitor by Objects begins here.
 
-
 PC Monitor is a thing. PC Monitor is in Hotel33. PC Monitor is not portable. The printed name of PC Monitor is "[TQlink of item described]PC monitor[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of PC Monitor is "pcm". PC Monitor has a number called currentlyOn. PC Monitor has a number called currentSlide.
 
 To say ShortDesc of (C - PC Monitor):
@@ -19,7 +18,6 @@ To say ExamineDesc of (C - PC Monitor):
 
 To say SlideDesc of (C - PC Monitor):
 	say "[DisgracePost (currentSlide of PC Monitor)].[line break][DisgracePostReaction (currentSlide of PC Monitor)]";
-
 
 A later time based rule:
 	if the currentlyOn of PC Monitor < 2 and PC Monitor is in the location of the player and the number of patrons in the location of the player > 0:
@@ -65,6 +63,5 @@ A later time based rule:
 		say SlideDesc of PC Monitor;
 	otherwise if the currentlyOn of PC Monitor > 2:
 		increase the CurrentlyOn of PC Monitor by 1.
-
 
 PC Monitor ends here.

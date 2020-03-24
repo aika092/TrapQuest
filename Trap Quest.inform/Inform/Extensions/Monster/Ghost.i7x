@@ -145,7 +145,6 @@ To say SummoningFlav of (M - a ghost):
 	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
 
-
 To compute labour to (M - a ghost):
 	compute pregnancy clothing displacement;
 	say "[PregFlav]Slime trickles out of your [vagina], collecting in a pool between your legs as a steady flow of viscous, glowing fluid spreads across the floor beneath you. A heavy, suffocating feeling falls over your surroundings as your belly slowly returns to its original size. ";
@@ -197,7 +196,6 @@ To compute DQ perception of (M - a ghost):
 		say GhostTip;
 	otherwise:
 		say "[BigNameDesc of M][']s expression seems to change from neutral to an evil sneer, and [he of M] begins to follow you around.".
-
 
 Part 2 - Combat
 
@@ -280,7 +278,6 @@ To say sexSubmitSplitFlav of (M - a ghost) in (O - an orifice):
 	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
 	otherwise say "[if the relevant sex addiction of M < 8][BigNameDesc of M] fucks your [variable O] with all the callousness and vigour of an actual man![otherwise if relevant sex addiction of M < 13][BigNameDesc of M] fucks your [variable O] hard and fast! You pretend you only like it because it's not attached to any man you can see.[otherwise][BigNameDesc of M] fucks your [variable O] with all the roughness and power of an actual man! You're half disappointed you don't have one to thank for all this hard fucking.[end if]".
 
-
 The ghost vagina insertion rules is a rulebook. The blessings block ghosts rule is listed last in the ghost vagina insertion rules. The monster penetrating vagina rule is listed last in the ghost vagina insertion rules.
 
 To say VaginaPenetrationFlav of (M - a ghost):
@@ -301,7 +298,6 @@ To compute (M - a ghost) entering mouth:
 	now the sex-length of M is 3;
 	say "[one of][BigNameDesc of M] moves in closer to your face[or][BigNameDesc of M] floats closer to your face[or][BigNameDesc of M] floats up to your face[at random], throbbing visibly as[one of] a surprisingly[or][stopping] tangible cockhead [if presented-orifice is face][one of]pushes itself into your open mouth[or]slides into your open mouth[or]brushes your lips as it slides into your mouth[or]nudges your tongue as it enters your mouth[at random].[otherwise][one of]prods your pursed lips, which suddenly pop open at its chilling touch.[or]stings your lips with unnatural cold, which forces your lips to obediently fall open.[or]brushes your pursed lips, which sting with unnatural cold as they suddenly pop open.[or]phases through your lips, filling them with unnatural cold as they suddenly open.[at random][end if][if presented-orifice is face][one of]You look down as it slowly begins to thrust[or]It rests in your mouth for a moment before beginning to thrust[or]It feels even more real when it begins to thrust[at random][otherwise if the oral sex addiction of the player < 4]Your scream is abruptly cut off as it slides in and begins to thrust[otherwise if the oral sex addiction of the player < 7]You look down helplessly as it slides in and begins to thrust[otherwise]You look down happily as it slides in and begins to thrust[end if].";
 	now M is penetrating face.
-
 
 To say OralResisting of (M - a ghost):
 	say "[one of]Nothing you do comes anywhere close to forcing the invader out of your mouth.[or]You do everything you can to pull away from your floating assailant.[or]No matter how much you struggle, you can't get it away.[or]You struggle, but there's no escaping it![at random]".
@@ -363,7 +359,6 @@ To compute (M - a ghost) removing (B - a ballgag):
 		now M is retaining B;
 		dislodge B;
 		now M is penetrating chosen-orifice of M.
-
 
 Section 3 - Continue and Finish Sex
 
@@ -501,7 +496,6 @@ This is the ghost winding rule:[Ghosts should wind up if they have a full bank a
 				compute ghost fleeing of N;
 			rule succeeds.
 The ghost winding rule is listed last in the ghost priority attack rules.
-
 
 To compute tripping attack of (M - a ghost):
 	let C be a random worn displacable trousers;
@@ -669,7 +663,6 @@ To say SelectionFrustrated of (M - a ghost):
 	say "[BigNameDesc of M] seems to lose interest.";
 	bore M.
 
-
 ghost-using is a diaper punishment. The priority of ghost-using is 5.
 Definition: ghost-using (called P) is appropriate:
 	if current-monster is not ghostly tentacle, decide no;
@@ -690,7 +683,6 @@ To compute punishment of (P - ghost-using):
 		increase the bladder of the player by 9;
 		if diaper messing >= 3, increase rectum by 7;
 	satisfy M.
-
 
 Part 3 - Damage
 
@@ -872,9 +864,7 @@ Check kneeing ghostly tentacle:
 Check kicking ghostly tentacle:
 	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
 
-
 Section - DQ
-
 
 ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 5.
 Definition: ghostly-diaper-use (called P) is appropriate:
@@ -890,7 +880,6 @@ To compute punishment of (P - ghostly-diaper-use):
 	say "[variable custom style]Oh come on![roman type][line break]";
 	satisfy M.
 
-
 Definition: ghostly tentacle is willing to donate diapers if the number of worn knickers is 0.
 
 To compute diaper change of (M - ghostly tentacle):
@@ -898,7 +887,6 @@ To compute diaper change of (M - ghostly tentacle):
 	let D be a random eligible diaper;
 	summon D cursed with quest;
 	bore M.
-
 
 Section 2 - Tripping
 
@@ -943,6 +931,5 @@ To say MonsterFailedTripFlav of (M - ghostly tentacle):
 		say "[big he of M] pulls hard until [he of M] loses [his of M] grip, weakening the fabric!";
 	otherwise:
 		say "You manage to get out of the way before [he of M] can grab you!".
-
 
 Ghost ends here.
