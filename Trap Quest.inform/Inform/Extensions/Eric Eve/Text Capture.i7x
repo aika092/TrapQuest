@@ -51,7 +51,6 @@ Array captured_text -> CAPTURE_BUFFER_LEN + 3;
 	@output_stream 3 captured_text;
 ];
 
-
 [ EndCapture;
 	if (capture_active == 0)
 		return;
@@ -135,7 +134,6 @@ Include (-
 	}
 	StartCapture();
 ];
-
 
 [ FyreVMEndCapture len;
 	if(is_fyrevm)

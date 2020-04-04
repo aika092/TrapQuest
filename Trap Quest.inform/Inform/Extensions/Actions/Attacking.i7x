@@ -46,4 +46,3 @@ To decide which number is best attack:
 	decide on 1.
 
 Attacking ends here.
-

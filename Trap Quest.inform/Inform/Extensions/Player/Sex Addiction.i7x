@@ -45,7 +45,6 @@ To decide which number is the sex-addiction-influence of (C - a temptation cloth
 	decrease S by the magic-modifier of C;
 	decide on S.
 
-
 [!<DecideWhichNumberIsTheCalculatedSexAddictionOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -56,8 +55,8 @@ To decide which number is the calculated sex addiction of the player:
 	repeat with C running through worn wearthings:
 		increase S by the sex-addiction-influence of C;
 	if submissive sex addict is 1, increase S by 8;
-	if there is a worn slimegirl:
-		let I be the intensity of a random slimegirl;
+	if slimegirl is worn:
+		let I be the intensity of slimegirl;
 		increase S by I * 3;
 	if the arousal of the player >= 5000, increase S by (the arousal of the player - 2000) / 3000;
 	decrease S by the theme bonus of the sex addiction theme rules;
@@ -72,7 +71,6 @@ To decide which number is the calculated sex addiction of the player:
 	if S > 20, decide on 20;
 	if S < 1, decide on 1;
 	decide on S.
-
 
 [The following various addictions describe how much the player enjoys having sex using that body part.]
 
@@ -104,8 +102,6 @@ To decide which number is the relevant sex addiction of (M - a thing): [We want 
 
 Part 2 - Modify Sex Addiction
 
-
-
 [!<Player>@<rawSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -119,7 +115,6 @@ REQUIRES COMMENTING
 
 *!]
 highest sex addiction is a number that varies. highest sex addiction is 0.
-
 
 slowSexAddiction is a number that varies.
 To SlowSexAddictUp (X - a number):
@@ -155,7 +150,7 @@ To SexAddictUp (X - a number):
 		if a random number between 1 and 8 > K: [Sometimes confidence clothing stops sex addiction increases]
 			if the raw sex addiction of the player < 20:
 				if (highest sex addiction < the sex addiction of the player and X is 0 or the sex addiction of the player is 19) and diaper quest is 0: [We only want to output 1 thing from this list even if sex addiction goes up multiple times]
-					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Am I really going to have to get fucked in this game?![otherwise]I can't believe I've only been here a short while and I've already had sex...[end if][roman type][line break]";
+					if the sex addiction of the player is 1, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]Am I really going to have to take part in such perverted things in this game?![otherwise]I can't believe I've only been here a short while and I've already had sex...[end if][roman type][line break]";
 					if the sex addiction of the player is 2, say "[first custom style][if the virgin of the player is 1 and the analvirgin of the player is 1]The sex is all avoidable, right?[otherwise]If I can't avoid getting fucked, my situation is only going to get worse and worse. I've got to keep level headed.[end if][roman type][line break]";
 					if the sex addiction of the player is 3, say "[first custom style]Oh no, I can feel my resistance fading... every time something sexual happens I'm going to enjoy this world a little bit more. I have a to find a way out![roman type][line break]";
 					if the sex addiction of the player is 4, say "[first custom style]I have to avoid the sex! The game is rigged to make me get addicted...[roman type][line break]";
@@ -186,7 +181,6 @@ To SexAddictUp (X - a number):
 				say "[one of]You feel slightly light-headed, but then it passes.[or][or][or][cycling]";
 	if highest sex addiction < the sex addiction of the player, now highest sex addiction is the sex addiction of the player.
 
-
 To SexAddictDown (X - a number):
 	let S be the raw sex addiction of the player;
 	SilentlySexAddictDown X;
@@ -200,7 +194,6 @@ To SilentlySexAddictDown (X - a number):
 
 To SilentlySexAddictDown:
 	if the raw sex addiction of the player > 1, decrease the raw sex addiction of the player by 1.
-
 
 [!<RandomAddictUpX>+
 
@@ -247,4 +240,3 @@ The number of times the player has had submissive sex with any monster, not just
 The player has a number called sex-count. The sex-count of the player is 0.
 
 Sex Addiction ends here.
-

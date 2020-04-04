@@ -41,4 +41,3 @@ This is the remove inappropriate chainmail tops rule:
 The remove inappropriate chainmail tops rule is listed in the diaper quest fix rules.
 
 Chainmail Top ends here.
-

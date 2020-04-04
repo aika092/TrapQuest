@@ -38,4 +38,3 @@ Definition: a demon tail plug is demonic: decide yes.
 Definition: a demon tail plug is red themed: decide yes.
 
 Demon Tail Plug ends here.
-

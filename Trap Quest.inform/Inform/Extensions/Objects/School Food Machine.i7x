@@ -43,4 +43,3 @@ Carry out MachineFeeding:
 				say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
 
 School Food Machine ends here.
-

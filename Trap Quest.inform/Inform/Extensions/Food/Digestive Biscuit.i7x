@@ -52,4 +52,3 @@ To compute offer reward of (M - prison guard) for (T - a digestive biscuit):
 	FavourUp M by 2.
 
 Digestive Biscuit ends here.
-

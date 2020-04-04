@@ -1,6 +1,5 @@
 Cumdumpster Hat by Headgear begins here.
 
-
 A cumdumpster hat is a kind of headgear. A cumdumpster hat is usually hair growing. Understand "cumdumpster" as cumdumpster hat.
 
 To set up influence of (C - a cumdumpster hat):
@@ -25,8 +24,6 @@ To decide which number is the initial outrage of (C - a cumdumpster hat):
 To compute unique recycling of (C - a cumdumpster hat):
 	now the condom-count of condom-eating-quest is 0.
 
-
-
 thirsty work condom hat is a cumdumpster hat. thirsty work condom hat is plastic. thirsty work condom hat is roleplay.
 The printed name of thirsty work condom hat is "[clothing-title-before]thirsty work cumdumpster hat[clothing-title-after]". The text-shortcut of thirsty work condom hat is "twch".
 
@@ -41,14 +38,12 @@ To say ClothingDesc of (H - thirsty work condom hat):
 To compute SelfExamineDesc of (H - thirsty work condom hat):
 	say "You are wearing a condom drinking hat that reads 'Thirsty Work' on top of your [ShortDesc of hair]. ".
 
-
 Definition: thirsty work condom hat is drink themed: decide yes.
 Definition: thirsty work condom hat is red themed: decide yes.
 
 Definition: thirsty work condom hat is transformation-protected: decide no.
 To decide which object is the unique-upgrade-target of (C - thirsty work condom hat):
 	decide on cumdumpster condom hat.
-
 
 cumdumpster condom hat is a cumdumpster hat. cumdumpster condom hat is plastic.
 The printed name of cumdumpster condom hat is "[clothing-title-before]purple cumdumpster hat[clothing-title-after]". The text-shortcut of cumdumpster condom hat is "pcdh". Understand "purple" as cumdumpster condom hat.
@@ -69,8 +64,6 @@ To decide which number is the initial outrage of (C - cumdumpster condom hat):
 
 Definition: cumdumpster condom hat is drink themed: decide yes.
 Definition: cumdumpster condom hat is purple themed: decide yes.
-
-
 
 Chapter - Class Outfit
 
@@ -121,6 +114,4 @@ To uniquely destroy (C - a cumdumpster hat):
 		StrengthUp the delayed-condom-count of condom-eating-quest;
 		now the delayed-condom-count of condom-eating-quest is 0.
 
-
 Cumdumpster Hat ends here.
-

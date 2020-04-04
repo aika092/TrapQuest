@@ -1,8 +1,5 @@
 Monokinis by Dresses begins here.
 
-
-
-
 Part 1 - White Monokini
 
 A white monokini is a kind of monokini. A white monokini is usually sheer. There is 1 white monokini. A white monokini is fully covering. A white monokini is not-top-displacable. The text-shortcut of white monokini is "wmk".
@@ -29,7 +26,6 @@ Definition: a white monokini is white themed: decide yes.
 
 Part 2 - Green Monokini
 
-
 A green monokini is a kind of monokini. There is 1 green monokini. A green monokini is very low cut. The text-shortcut of green monokini is "gmk".
 
 The printed name of green monokini is usually "[clothing-title-before]green onepiece swimsuit[clothing-title-after]".
@@ -49,7 +45,6 @@ To say ShortDesc of (C - a green monokini):
 	say "green swimsuit".
 To say MediumDesc of (C - a green monokini):
 	say "sexy torn green swimsuit".
-
 
 Part 3 - Grey Monokini
 
@@ -76,9 +71,7 @@ To decide which object is the unique-upgrade-target of (C - a grey monokini):
 		otherwise decide on a random grey string monokini;
 	decide on nothing.
 
-
 Definition: a grey monokini is grey themed: decide yes.
-
 
 Part 4 - Lolita Monokini
 
@@ -112,7 +105,6 @@ Definition: lolita-monokini is flower themed: decide yes.
 Definition: lolita-monokini is heart themed: decide yes.
 Definition: lolita-monokini is sissifying: decide yes.
 
-
 Part 5 - Turtle Swimsuit
 
 turtle-swimsuit is a monokini. turtle-swimsuit is transformation-rare. The text-shortcut of turtle-swimsuit is "tsm".
@@ -145,4 +137,3 @@ To decide which object is the unique-upgrade-target of (C - turtle-swimsuit):
 	decide on nothing.
 
 Monokinis ends here.
-

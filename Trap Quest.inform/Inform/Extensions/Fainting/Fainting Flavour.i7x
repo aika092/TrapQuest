@@ -1,6 +1,5 @@
 Fainting Flavour by Fainting begins here.
 
-
 [!<SayFirstTimeFaintingStory>+
 
 This is what we say if the player has fainted for the first time (and didn't change sex).
@@ -83,7 +82,7 @@ To say FaintingFlav (N - 11):
 [12 and 13 and 14 and 15 unused]
 
 To say FaintingFlav (N - 16):
-	say "'[one of]The vine boss is a very difficult monster... maybe if he's too tough for you, you should just leave him alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight him again, good luck sweetie!!'[or]Oh dear you lost to him again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
+	say "'[one of]The vine boss is a very difficult monster... maybe if [he of vine boss]'s too tough for you, you should just leave him alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight him again, good luck sweetie!!'[or]Oh dear you lost to him again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
 
 To say FaintingFlav (N - 17):
 	say "'Uh-oh... looks like you were enjoying that a bit too much. I think it'll be a miracle for you to win the game the proper way at this point. You could always try fucking your way out, though!'".
@@ -106,7 +105,4 @@ To say FaintingFlav (N - 22):
 To say FaintingFlav (N - 50):
 	say "'It was all getting a bit much for you, was it? No need to feel ashamed, it happens to the best of us. Have as much time as you need to rest up and recover.'".
 
-
-
 Fainting Flavour ends here.
-

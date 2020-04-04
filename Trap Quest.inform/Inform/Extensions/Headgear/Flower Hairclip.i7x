@@ -9,7 +9,6 @@ Definition: flower hairclip is white themed: decide yes.
 
 The printed name of flower hairclip is "[clothing-title-before]flower hairclip[clothing-title-after]". The text-shortcut of flower hairclip is "fh".
 
-
 To decide which figure-name is the clothing-image of (C - flower hairclip):
 	decide on figure of flower hairclip.
 
@@ -25,7 +24,6 @@ To compute SelfExamineDesc of (H - flower hairclip):
 
 To compute hair colour change of (H - flower hairclip):
 	compute hair colour darken of H.
-
 
 Chapter - Class Outfit
 
@@ -115,4 +113,3 @@ To uniquely destroy (C - a flower hairclip):
 		DexUp the virginity-count of virginity-retention-quest - 1.
 
 Flower Hairclip ends here.
-

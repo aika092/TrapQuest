@@ -23,4 +23,3 @@ To decide which number is the initial outrage of (C - a gothic corset):
 	decide on 3.
 
 Gothic Corset ends here.
-

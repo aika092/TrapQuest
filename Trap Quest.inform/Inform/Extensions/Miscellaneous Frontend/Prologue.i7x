@@ -59,7 +59,4 @@ To Prologue:
 		say "[second custom style]'If this doesn't sound like the thing for you, then you might as well hit that little 'X' button in the top corner of your game window right now, bub. Now stop making me break the fourth wall and choose [bold type]yes[second custom style] or close the game.'[roman type][line break]";
 	clear the screen.
 
-
-
 Prologue ends here.
-

@@ -39,8 +39,8 @@ To decide which number is the calculated semen addiction of the player:
 	let S be the raw semen addiction of the player;
 	repeat with C running through worn wearthings:
 		increase S by the semen-addiction-influence of C;
-	if there is a worn slimegirl:
-		let I be the intensity of a random slimegirl;
+	if slimegirl is worn:
+		let I be the intensity of slimegirl;
 		increase S by I * 3;
 	if S < the semen taste addiction of the player, decide on the semen taste addiction of the player;
 	if S < recent-bimbo / 3, now S is recent-bimbo / 3;
@@ -49,7 +49,6 @@ To decide which number is the calculated semen addiction of the player:
 	decide on S.
 
 Part 2 - Modify Semen Addiction
-
 
 [!<Player>@<rawSemenAddiction:Integer>*
 
@@ -146,7 +145,4 @@ To say SemenEncounterFlav:
 		now semen-encountered is 1;
 		say "[if the semen addiction of the player < 6][line break][first custom style][one of]Fuck[or]Shit[or]No no no[purely at random]![otherwise if the semen addiction of the player < 9][line break][variable custom style][one of]Gross[or]Eew[or]Grr[stopping].[otherwise if the semen addiction of the player < 12][otherwise if the semen addiction of the player < 15][line break][second custom style]Ooh, yummy![otherwise if the bimbo of the player < 17][second custom style]I want more![otherwise][second custom style][NameBimbo][one of] wants more[or] needs more[or][']s not full yet[then at random]![end if][roman type][line break]".
 
-
-
 Semen Addiction ends here.
-

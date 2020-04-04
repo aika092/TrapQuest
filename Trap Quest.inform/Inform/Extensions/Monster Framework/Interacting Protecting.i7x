@@ -9,7 +9,6 @@ To compute default friendly boredom of (M - a monster):
 	bore M for 150 seconds;
 	if M is in the location of the player, say BecomesBoredFlav of M.
 
-
 To compute interaction of (M - a monster):
 	if M is undefeated and M is not caged, compute protection of M.
 
@@ -35,4 +34,3 @@ To compute default protecting of (M - a monster):
 		say "[one of][BigNameDesc of M] watches, seemingly not noticing your situation.[or][BigNameDesc of M] appears not to have noticed what's going on![or][BigNameDesc of M] is looking the other way, and doesn't see your humiliating situation.[or][BigNameDesc of M] seems confused by your actions.[or][BigNameDesc of M] simply watches, waiting. It's a little embarrassing, and you try to tell yourself that what you're doing is perfectly normal, really. Besides, it's not like [NameDesc of M] cares. Right?[cycling]".
 
 Interacting Protecting ends here.
-

@@ -31,4 +31,3 @@ To compute attack effect of (W - a vampiric claws):
 		otherwise now the fatigue of the player is 0.
 
 Vampiric Claws ends here.
-

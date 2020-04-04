@@ -1,6 +1,5 @@
 Calculating Stats by Player begins here.
 
-
 [!<DecideWhichNumberIsNScaled>+
 
 REQUIRES COMMENTING
@@ -54,7 +53,6 @@ To update saved stats:
 	if saved-printed-kick-damage < 0, now saved-printed-kick-damage is 0;
 	now backgroundCombatCalculation is false.
 
-
 [!<DecideWhichNumberIsFetishBonusOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -72,6 +70,4 @@ To decide which number is fetish-bonus of the player:
 	otherwise:
 		decide on 0.
 
-
 Calculating Stats ends here.
-

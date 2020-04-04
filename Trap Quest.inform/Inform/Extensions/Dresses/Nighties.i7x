@@ -157,6 +157,4 @@ To compute SelfExamineDesc of (O - a flimsy pink nightie):
 To say ShortDesc of (C - a flimsy pink nightie):
 	say "flimsy pink nightie".
 
-
 Nighties ends here.
-

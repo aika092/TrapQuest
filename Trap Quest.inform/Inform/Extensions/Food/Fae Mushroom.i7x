@@ -1,6 +1,5 @@
 Fae Mushroom by Food begins here.
 
-
 A fae mushroom is a kind of food. The printed name of fae mushroom is "[TQlink of item described]fae mushroom[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of fae mushroom is "[TQlink of item described]fae mushrooms[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fae mushroom is "mu". Understand "fm" as fae mushroom. There are 8 fae mushroom. Figure of fae mushroom is the file "Items/Collectibles/mushroom1.png".
 
 To decide which figure-name is the examine-image of (C - a fae mushroom):
@@ -51,6 +50,4 @@ Carry out mushroomeating:
 	if weight gain fetish is 1:
 		if the flesh volume of belly < 10, increase the flesh volume of belly by 1.
 
-
 Fae Mushroom ends here.
-

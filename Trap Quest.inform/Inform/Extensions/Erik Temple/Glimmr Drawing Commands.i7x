@@ -9,13 +9,10 @@ Part - Inclusions
 Include version 5/150123 of Glulx Text Effects by Emily Short.
 Include version 15/160609 of Flexible Windows by Jon Ingold.
 
-
-
 Part - Use options
 
 Use MAX_ARRAYS of 3000.
 Use MAX_STATIC_DATA of 500000.
-
 
 Part - Console settings
 
@@ -24,19 +21,15 @@ Part - Console settings
 To say DC:
 	say "[bracket]Glimmr DC[close bracket]: ".
 
-
 Chapter - The null figure
 
 [Inform users are not allowed to set a figure value of "nothing"--if we leave a figure unspecified, the cover art (or the built-in generic cover art) will print instead. Here, we set up a fake figure to stand in for "nothing".]
 
 Figure of Null is the file of cover art. [The file of cover art is used for the declaration because Inform will ensure that an image is provided. In practice, we simply don't print the image if its resource ID corresponds to Figure of Null]
 
-
 Part - Primitives
 
-
 Chapter - Rectangles
-
 
 Section - Dimensioned rectangle
 [The dimensioned rectangle reflects Glulx Inform's I6-level rectangle command, which provides dimensions for the rectangle rather than start and endpoints.]
@@ -62,7 +55,6 @@ To rect/rectangle (coord1 - a list of numbers) size (width - a number) by/x (hei
 	let y1 be entry 2 of coord1;
 	draw a rectangle (current foreground-color) in current graphics window at x1 by y1 with size width by height;
 
-
 Include (-
 
 [ DrawDimRect hue win x1 y1 width height ;
@@ -72,7 +64,6 @@ Include (-
 ];
 
 -).
-
 
 Section - Rectangle
 
@@ -112,9 +103,7 @@ Include (-
 
 -).
 
-
 Chapter - Outlined rectangles
-
 
 Section - Box
 
@@ -161,7 +150,6 @@ To box (coord1 - a list of numbers) to (coord2 - a list of numbers) at (wgt - a 
 	otherwise:
 		boxdraw (current foreground-color) in (current graphics window) from (x1) by (y1) to (x2) by (y2) with (wgt).
 
-
 Include (-
 
 [ DrawBox hue wgt win x1 y1 x2 y2 outline_opt ;
@@ -189,7 +177,6 @@ Include (-
 ];
 
 -).
-
 
 Section - Stroked Rectangle
 
@@ -232,9 +219,7 @@ Include (-
 
 -).
 
-
 Chapter - Lines
-
 
 Section - Basic line
 [The code for drawing a line between any two points was ported from the GREX module of the GWindows system by L. Ross Raszewski (http://gwindows.trenchcoatsoft.com). The code is there indicated to having been based on code by Paul Heckbert.]
@@ -297,13 +282,11 @@ To linedraw (hue - a number) in (win - a g-window) from (x1 - a number) by/x (y1
 			otherwise:
 				increase y1 by 1.
 
-
 To draw a/-- line (hue - a number) in (win - a g-window) from (x1 - a number) by/x (y1 - a number) to (x2 - a number) by/x (y2 - a number) with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
 	#if utilizing Glimmr debugging;
 	say "[>console][DC]Drawing a line of color [hue] in [i][win][/i] from ([x1], [y1]) to ([x2], [y2]), line-weight [wgt] pixels.[<]";
 	#end if;
 	linedraw (hue) in (win) from (x1) by (y1) to (x2) by (y2) with (wgt).
-
 
 To draw a/-- line (hue - a number) in (win - a g-window) from (coord1 - a list of numbers) to (coord2 - a list of numbers) with (wgt - a number) pixel/pixels/px/-- line-weight/stroke:
 	let x1 be entry 1 of coord1;
@@ -321,7 +304,6 @@ To line (coord1 - a list of numbers) to (coord2 - a list of numbers) at (wgt - a
 	let x2 be entry 1 of coord2;
 	let y2 be entry 2 of coord2;
 	Draw a line (current foreground-color) in current graphics window from x1 by y1 to x2 by y2 with wgt pixel line-weight.
-
 
 Section - Line using angle + distance
 
@@ -349,10 +331,7 @@ To line (coord1 - a list of numbers) dist/distance (distance - a number) px/pixe
 	let y1 be entry 2 of coord1;
 	Draw a line (current foreground-color) in (current graphics window) from (x1) by (y1) measuring (distance) pixels at (angle) with (wgt) pixel line-weight.]
 
-
-
 Chapter - Images
-
 
 Section - Image
 
@@ -391,7 +370,6 @@ Include (-
 
 -).
 
-
 Section - Image with specified size
 
 To drscimage (ID - a figure name) in (win - a g-window) at (x1 - a number) by/x (y1 - a number) with size/dimensions (width - a number) by/x (height - a number):
@@ -419,7 +397,6 @@ To image (ID - a figure name) at (coord1 - a list of numbers) size (width - a nu
 	unless ID is figure of null:
 		drscimage (ID) in (current graphics window) at (x1) by (y1) with dimensions (width) by (height).
 
-
 Include (-
 
 [DrawImageScaled ID win x y image_x image_y ;
@@ -430,10 +407,9 @@ Include (-
 
 -).
 
-
 Part - Drawing bitmaps
 
-[Bitmaps are drawn by coloring individual pixels (or pixels in groups), and are specified by the user using an I7 list. Since they are drawn by setting pixels, they cannot be scaled as PNG or JPEG images can.]
+[Bitmaps are drawn by colouring individual pixels (or pixels in groups), and are specified by the user using an I7 list. Since they are drawn by setting pixels, they cannot be scaled as PNG or JPEG images can.]
 
 Chapter - Monochrome bitmaps
 
@@ -464,7 +440,6 @@ To draw/display a/-- monochrome bitmap (HUE - a number) in (WIN - a g-window) at
 	let y1 be entry 2 of coord1;
 	display a monochrome bitmap (HUE) in (WIN) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px and background (BKGD).
 
-
 Section - Monochrome bitmap without background color
 
 To drmonobitmap (HUE - a number) in (WIN - a g-window) at (X1 - a number) by/x (Y1 - a number) using (BIT_MAP - a list of lists of numbers) with dot/-- size (WGT - a number) pixel/pixels/px/--:
@@ -490,7 +465,6 @@ To draw/display a/-- monochrome bitmap (HUE - a number) in (WIN - a g-window) at
 	let y1 be entry 2 of coord1;
 	display a monochrome bitmap (HUE) in (WIN) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px.
 
-
 Section - Short form of monochrome bitmap
 
 To monochrome/mono bitmap/bmp (BIT_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) dot/-- size (WGT - a number) pixel/pixels/px/--, backgrounded:
@@ -504,11 +478,9 @@ To monochrome/mono bitmap/bmp (BIT_MAP - a list of lists of numbers) at (COORD1 
 	otherwise:
 		display a monochrome bitmap (current foreground-color) in (current graphics window) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px.
 
-
 Chapter - Polychrome bitmaps
 
 [In a polychrome bitmap, we can set a decimal version of any hex RGB-color we like in our bitmap array. To supply a null value (i.e., draw nothing to the screen for a given bit), use any negative number. If we have specified a background color, we will see that background color wherever the null bit is present in our bitmap array.]
-
 
 Section - Polychrome bitmap with background color
 
@@ -537,7 +509,6 @@ To draw/display a/-- polychrome bitmap in (WIN - a g-window) at (COORD1 - a list
 	let y1 be entry 2 of coord1;
 	display a polychrome bitmap in (WIN) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px and background (BKGD).
 
-
 Section - Polychrome bitmap without background color
 
 To drpolybitmap in (WIN - a g-window) at (X1 - a number) by/x (Y1 - a number) using (BIT_MAP - a list of lists of numbers) with dot/-- size (WGT - a number) pixel/pixels/px/--:
@@ -562,7 +533,6 @@ To draw/display a/-- polychrome bitmap in (WIN - a g-window) at (COORD1 - a list
 	let y1 be entry 2 of coord1;
 	display a polychrome bitmap in (WIN) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px.
 
-
 Section - Short form of polychrome bitmap
 
 To polychrome/poly bitmap/bmp (BIT_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) dot/-- size (WGT - a number) pixel/pixels/px/--, backgrounded:
@@ -576,8 +546,6 @@ To polychrome/poly bitmap/bmp (BIT_MAP - a list of lists of numbers) at (COORD1 
 	otherwise:
 		display a polychrome bitmap in (current graphics window) at (X1) by (Y1) using (BIT_MAP) with dot size (WGT) px.
 
-
-
 Chapter - Fonts
 
 Section - The font base class
@@ -587,19 +555,16 @@ A font has a table name called the font table.
 A font has a number called the font-height. The font-height is usually 1.
 A font has some text called the colophon. The colophon is usually "".
 
-
 Section - Private naming of fonts
 
 [Replace this section if you need the player to be able to refer to fonts.]
 
 A font is usually privately-named.
 
-
 Section - Bitmap fonts
 
 A bitmap font is a kind of font.
 A bitmap font has a list of numbers called the glyph map. The glyph map is usually {0}.
-
 
 Section - Dummy bitmap typeface
 
@@ -612,7 +577,6 @@ Table of Null Bitmap Font Parameters
 glyph (indexed text)	char (number)	index (number)	width (number)	height (number)	yoffset (number)	advance (number)
 with 1 blank row
 
-
 Section - Image-based fonts
 
 An image-based font is a kind of font.
@@ -620,7 +584,6 @@ An image-based font has a number called the cursor-width. The cursor-width is us
 
 [The background-margin defines how far outside the bounds of the characters the background color should be drawn. This will be scaled by both the window and "sprite" scaling factors.]
 An image-based font has a number called the background-margin. The background-margin is usually 1.
-
 
 Section - Null image typeface
 
@@ -633,14 +596,12 @@ Table of Null Image Font Parameters
 glyph (indexed text)	char (number)	glyph-ref (figure name)	yoffset (number)	advance (number)
 with 1 blank row
 
-
 Section - Crediting fonts
 
 Report requesting the story file version (this is the announce colophon rule):
 	repeat with typeface running through fonts:
 		unless the colophon of the typeface is "":
 			say "[one of]Typefaces used include:[line break][or][stopping][italic type][typeface]:[roman type] [colophon of the typeface][line break]"
-
 
 Section - Globals
 
@@ -650,8 +611,6 @@ g-LEN is a number variable.
 column-index is a number variable.
 char_code is a number variable.
 g-scan is a number variable.
-
-
 
 Chapter - Text-painting with bitmap fonts
 
@@ -712,7 +671,6 @@ To paint/display a/-- bitmap text (hue - a number) of (str - indexed text) in (w
 		rule succeeds;
 	paint bitmap text (HUE) of (STR) in (WIN) at (X1) by (Y1) using (TYPF) with size (WGT) and background (BKGD).
 
-
 Section - Bitmap strings without a background color
 
 To paintbittext (hue - a number) of (str - indexed text) in (win - a g-window) at (X1 - a number) by/x (Y1 - a number) using font/-- (typf - a font) with/-- dot/-- size (wgt - a number) pixel/pixels/px/--, center-aligned or right-aligned:
@@ -769,7 +727,6 @@ To paint/display a/-- bitmap text (hue - a number) of (str - indexed text) in (w
 		rule succeeds;
 	paint bitmap text (HUE) of (STR) in (WIN) at (X1) by (Y1) using (TYPF) with size (WGT).
 
-
 Section - Short forms of bitmap texts
 
 To bitmap/bmp text/txt (STR - indexed text) at (COORD1 - a list of numbers) size (WGT - a number) pixel/pixels/px/-- backgrounded/background/bkgd, center-aligned or right-aligned:
@@ -801,8 +758,6 @@ To bitmap/bmp text/txt (STR - indexed text) at (COORD1 - a list of numbers) size
 		rule succeeds;
 	otherwise:
 		paint a bitmap text (current foreground-color) of (STR) in (current graphics window) at (X1) by (Y1) using (current font) with dot size (WGT).
-
-
 
 Chapter - Text-painting with image-based fonts
 
@@ -855,7 +810,6 @@ To paint/display an/-- image-based text (hue - a number) of (str - indexed text)
 		rule succeeds;
 	paint image-based text of (STR) in (WIN) at (X1) by (Y1) using (TYPF) scaled at (SCF) with background (BKGD) and margin (MARGIN).
 
-
 Section - Text-painting without a background color
 
 To paintimgtext of/-- (STR - indexed text) in (win - a g-window) at (X1 - a number) by/x (Y1 - a number) using font/-- (TYPF - a font) scaled at (SCF - a real number), center-aligned or right-aligned:
@@ -905,7 +859,6 @@ To paint/display an/-- image-based text (hue - a number) of (str - indexed text)
 		rule succeeds;
 	paint image-based text of (STR) in (WIN) at (X1) by (Y1) using (TYPF) scaled at (SCF).
 
-
 Section - Short forms for image texts
 
 To image/img text/txt (STR - indexed text) at (COORD1 - a list of numbers) scaled/scale (SCF - a real number) margin (MARGIN - a number) pixels/pixel/px, center-aligned or right-aligned:
@@ -938,7 +891,6 @@ To image/img text/txt (STR - indexed text) at (COORD1 - a list of numbers) scale
 	otherwise:
 		paint an image-based text of (STR) in (current graphics window) at (X1) by (Y1) using (current font) scaled at (SCF).
 
-
 Part - Image-maps
 
 Chapter - Definition of the tileset kind
@@ -956,7 +908,6 @@ A tileset has a number called the tile-height. The tile-height is usually 0.
 
 A tileset has a table name called the translation-table.
 
-
 Section - Null tileset
 
 [We provide a minimal tileset to use as a null placeholder.]
@@ -966,7 +917,6 @@ The null tileset is a tileset. The translation-table is Table of Null Tilesettin
 Table of Null Tilesetting
 Char (number)	Tile (figure name)
 1	Figure of Null
-
 
 Chapter - Image-map with figure array
 
@@ -994,7 +944,6 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	let Y1 be entry 2 of coord1;
 	display an image-map in (current graphics window) at (X1) by (Y1) using (IMG_MAP) with tile-size (W) by (H).
 
-
 Section - Long forms of figure image-map (background color)
 
 To draw/display an/-- image-map in (WIN - a g-window) at (X1 - a number) by/x (Y1 - a number) using (IMG_MAP - a list of lists of figure names) with tile-size (W - a number) by/x (H - a number) pixel/pixels/px/-- and background (BKGD - a number):
@@ -1011,7 +960,6 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	let Y1 be entry 2 of coord1;
 	display an image-map in (WIN) at (X1) by (Y1) using (IMG_MAP) with tile-size (W) by (H).
 
-
 Section - Short form	of figure image-map
 
 To image-map (IMG_MAP - a list of lists of figure names) at (COORD1 - a list of numbers) tile-size/size (W - a number) by/x (H - a number) pixel/pixels/px/--, backgrounded:
@@ -1024,7 +972,6 @@ To image-map (IMG_MAP - a list of lists of figure names) at (COORD1 - a list of 
 			display an image-map in (current graphics window) at (X1) by (Y1) using (IMG_MAP) with tile-size (W) by (H) px;
 	otherwise:
 		say "*** Error: Short-form image-map drawing directive ignored. The current graphics window global was not correctly specified."
-
 
 Chapter - Image-map with tileset array
 
@@ -1059,7 +1006,6 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	let Y1 be entry 2 of coord1;
 	display an image-map in (current graphics window) at (X1) by (Y1) using (IMG_MAP) rendered using (TSET) with tile-size (W) by (H).
 
-
 Section - Long forms of tileset image map (background color)
 
 To draw/display an/-- image-map in (WIN - a g-window) at (X1 - a number) by/x (Y1 - a number) using (IMG_MAP - a list of lists of numbers) rendered/-- using/with/by (TSET - a tileset) with tile-size (W - a number) by/x (H - a number) pixel/pixels/px/-- and background (BKGD - a number):
@@ -1078,8 +1024,6 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	let Y1 be entry 2 of coord1;
 	display an image-map in (WIN) at (X1) by (Y1) using (IMG_MAP) rendered using (TSET) with tile-size (W) by (H).
 
-
-
 Section - Short form of tileset image map
 
 To image-map (IMG_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) width/w (WDT - a number) tileset (TSET - a tileset) tile-size/size (W - a number) by/x (H - a number) pixel/pixels/px/--, backgrounded:
@@ -1092,7 +1036,6 @@ To image-map (IMG_MAP - a list of lists of numbers) at (COORD1 - a list of numbe
 			display an image-map in (current graphics window) at (X1) by (Y1) using (IMG_MAP) rendered using (TSET) with tile-size (W) by (H);
 	otherwise:
 		say "*** Error: Short-form image-map drawing directive ignored. The current graphics window global was not correctly specified."
-
 
 Chapter - Global variables
 [The global variables support a very brief form of drawing command; they are not used for the standard length commands.]
@@ -1108,9 +1051,7 @@ The g-imgheight is a number variable. The g-imgheight is 0.
 The current g-row is a number variable. Current g-row is 0.
 The current g-column is a number variable. Current g-column is 0.
 
-
 Chapter - Resources
-
 
 Section - Calculating the rendered length of a string
 
@@ -1125,11 +1066,9 @@ To decide what number is the length of (STR - indexed text) set in (TYPF - a fon
 		increase len by the advance entry;
 	decide on len.
 
-
 Part - Routines for color specification
 
 Chapter - Specifying color using RGB formula
-
 
 Section - RGB color specification
 
@@ -1137,7 +1076,6 @@ To decide which number is R/r --/= (R - a number) G/g --/= (G - a number) B/b --
 	unless R < 0 or R > 255 or G < 0 or G > 255 or B < 0 or B > 255:
 		decide on (R * 65536) + (G * 256) + B;
 	decide on 0;
-
 
 Section - RGB specified as a percentage
 
@@ -1149,7 +1087,6 @@ To decide which number is r%/R% --/= (R - a number) g%/G% --/= (G - a number) b%
 		decide on (R * 65536) + (G * 256) + B;
 	decide on 0;
 
-
 Section - RGB specified as a fixed point percentage
 
 To decide which number is r%/R% --/= (R - a real number) g%/G% --/= (G - a real number) b%/B% --/= (B - a real number):
@@ -1160,13 +1097,10 @@ To decide which number is r%/R% --/= (R - a real number) g%/G% --/= (G - a real 
 		decide on (R1 * 65536) + (G1 * 256) + B1;
 	decide on 0;
 
-
 Chapter - Color specified as a hexadecimal
 
 To decide which number is hex/color/colour (hex - indexed text):
 	(- GTE_ConvertColour( {hex} ) -).
-
-
 
 Part - Other functions
 
@@ -1194,7 +1128,6 @@ Include (-
 
 -)
 
-
 Chapter - Min and max functions
 
 To decide which number is the greater/max of/-- (X - a number) or (Y - a number):
@@ -1208,7 +1141,6 @@ To decide which number is the lesser/min of/-- (X - a number) or (Y - a number):
 To decide what number is ABS/absolute value/-- of/-- (N - a number):
 	if N < 0, decide on 0 - N;
 	decide on N.
-
 
 Chapter - Look up the char number from a text-string
 
@@ -1232,12 +1164,10 @@ Include (-
 
 -).
 
-
 Chapter - Identify a character by code in a string
 
 To say char-code (N - a number):
 	(- glk_put_char({N}); -)
-
 
 Part - Provide indices for each glyph in a bitmap font
 
@@ -1310,7 +1240,6 @@ To write font table to disk for (typeface - a bitmap font):
 To say direct-character placement tab:
 	(- glk_put_char_uni(9); -)
 
-
 Chapter - Graphlink management (for use without Glimmr Graphic Hyperlinks by Erik Temple)
 
 To set a graphlink in (g - a g-window) identified as (newlinkid - an object) from (gleft - a number) by (gtop - a number) to (gright - a number) by (gbottom - a number) as (linkaction - some text), ignoring redundant links:
@@ -1322,7 +1251,6 @@ To set a graphlink in (g - a g-window) identified as (newlinkid - an object) fro
 To set a graphlink in (g - a g-window) identified as (newlinkid - an object) from (gleft - a number) by (gtop - a number) to (gright - a number) by (gbottom - a number) as (linkref - a stored action), ignoring redundant links:
 	do nothing.
 
-
 Part - Debugging
 
 Use Glimmr debugging translates as (- Constant Glimmr_DEBUG; -).
@@ -1333,23 +1261,19 @@ To #if utilizing Glimmr debugging:
 To #end if:
 	(- #endif; -)
 
-
 Chapter - Console command
 [We can add our own text to the console log stream by using this command.]
 
 Understand "> [text]" or ">[text]" as a mistake ("[>console][line break]*[player's command][paragraph break][<]") when the Glimmr debugging option is active.
-
 
 Chapter - Debugging output window
 [We can direct Glimmr's debugging log to output in any window. The primary use for this feature is expected to be the separate console window, as provided by the Glimmr Debugging Console extension.]
 
 The console output window is a g-window variable.
 
-
 Section - Assign the default debugging window (for use without Glimmr Debugging Console by Erik Temple)
 
 The console output window is usually the main window.
-
 
 Section - Logging to the transcript
 
@@ -1371,7 +1295,6 @@ After constructing the console output window when the Glimmr console transcript 
 		echo the text stream of the console output window to the transcript;
 	continue the action;]
 
-
 Chapter - Abbreviations
 [These are phpBB-inspired macros for some fairly keystroke-intensive I7 text substitutions.]
 
@@ -1386,7 +1309,6 @@ To say i:
 
 To say /i:
 	say "[roman type]";
-
 
 Chapter - Debugging commands
 
@@ -1414,7 +1336,6 @@ To decide whether intensive rules tracing is active:
 To show the/-- glk/glklist list/--:
 	(- GlkListSub(); -)
 
-
 Chapter - Text substitutions for logging console messages
 [We preface console log messages with ">console" (the > is used to be sure that "console" doesn't conflict with any object named console. The [>console] *must* be balanced with [<] at the end: this transfers the focus back to the main window from the console.
 
@@ -1426,12 +1347,7 @@ To say >console:
 To say <:
 	(-  glk_set_window( gg_mainwin ); } RunParagraphOn(); -).
 
-
-
-
 Glimmr Drawing Commands ends here.
-
-
 
 ---- DOCUMENTATION ----
 
@@ -1451,7 +1367,6 @@ For these reasons, GDC should be considered a low-level extension, mostly to be 
 
 Note that all graphics operations will be slower within the Inform IDE than in a standalone interpreter. Test your games outside the IDE to get a sense of their actual performance "in the wild". (The Extended Debugging extension will allow you to do this while also retaining debugging commands.)
 
-
 Chapter: Including Glimmr Drawing Commands in a project
 
 Inform remains fairly unsophisticated in its mechanisms for organizing included extensions. When we are dealing with a complex system of modular extensions such as Glimmr, it is very easy to trip it up. The result is usually a list of unhelpful errors. For this reason, each Glimmr extension includes a section--such as this one--about how to include it, particularly in relation to other extensions.
@@ -1460,11 +1375,9 @@ When including Glimmr Drawing Commands, it is not necessary to include Flexible 
 
 We also do not need to include Glimmr Drawing Commands when we are using Glimmr Canvas-Based Drawing; we can simply include the latter extension and GDC will be included too.
 
-
 Chapter: Preliminary notes about commands
 
 Each of the drawing commands in GDC has a relatively flexible syntax. Only one variation of the syntax for each command will be mentioned in this documentation, but users can check the Phrasebook section of the Index after compiling to see the variability that is allowed. (Another option is to open the extension itself and look at the phrase definitions.)
-
 
 Section: Coordinates
 
@@ -1481,7 +1394,6 @@ More conveniently, we can use braces to define each coordinate pair:
 Whichever method we use, the x-coordinate is listed first in each pair, followed by the y-coordinate. For all commands, the coordinates are given in pixels; there is no scaling or other transformation involved. NOTE: for short-form commands (see below), only the brace form for specifying coordinates is allowed.
 
 It is important to note that coordinates can be drawn outside of the window bounds, either positively (coordinate greater than window dimension) or negatively (coordinate a negative number). This allows us a lot of flexibility for interesting effects.
-
 
 Section: Colors
 
@@ -1532,10 +1444,9 @@ A list of 140 color names is provided by the extension HTML Color Names for Glul
 
 The fixed point RGB percentages are made possible by Michael Callaghan's Fixed Point Maths extension (see that extension for details). Fixed point numbers must be specified to 4 decimal places or unexpected results may emerge.
 
-
 Section: Short-form commands
 
-All commands have a short form that minimizes repetition when we are issuing multiple instructions. These short forms require that we set at least one, and possibly more, global variables before using them. The global variables implicated in short-form drawing are:
+All commands have a short form that minimises repetition when we are issuing multiple instructions. These short forms require that we set at least one, and possibly more, global variables before using them. The global variables implicated in short-form drawing are:
 
 	current graphics window (a g-window)
 	current foreground-color (a number)
@@ -1552,11 +1463,9 @@ To use short form commands, we first set one or more of these variables, and the
 
 Short forms must use brace notation for specifying coordinate pairs, e.g. {10, 10}.
 
-
 Chapter: Basic Commands ("Primitives")
 
 This section lays out GDC's simpler commands, what in many systems would be thought of as primitives. In Glulx, only the rectangle, image, and scaled image commands are actually primitives. All of the others are derived from these--a line, for example, involves many rectangles, often only a single pixel in width. Higher-order commands may be noticeably slower than the true primitives. Notes about drawing speed are provided where appropriate.
-
 
 Section: Rectangle
 
@@ -1573,7 +1482,6 @@ Short form:
 
 	rectangle {120, 12} to {300, 24}.
 
-
 Section: Dimensioned rectangle
 
 There is a second type of rectangle, the "dimensioned rectangle". This is used when we prefer to specify the dimensions of the rectangle rather than its extent in the coordinate field. We supply only the origin coordinate (upper left corner); there is no need to provide an endpoint. This command corresponds to the I6 instruction glk_window_fill_rect.
@@ -1588,7 +1496,6 @@ Long forms:
 Short form:
 
 	rectangle {120, 12} size 180 x 12.
-
 
 Section: Image
 
@@ -1606,7 +1513,6 @@ Long forms:
 Short form:
 
 	image Figure of Frolf at {0, 0}.
-
 
 Section: Dimensioned image
 
@@ -1628,8 +1534,6 @@ Short form:
 Speed notes:
 
 	It takes slightly longer to display a scaled image than an unscaled one. In most cases, the difference is unimportant. However, we should always try to avoid scaling very large images. The best approach is to keep our images as close to the size we need as possible--don't use a larger image than is necessary.
-
-
 
 Section: Box
 
@@ -1656,7 +1560,6 @@ Speed notes:
 
 	A box is drawn using four rectangles, one for each side of the box. It will thus take slightly more time to draw than a rectangle. In practice, and particularly in the best multimedia interpreters, a few boxes on screen should still draw instantaneously.
 
-
 Section: Stroked rectangle
 
 A stroked rectangle is a rectangular field of color surrounded by an outline in another color (essentially a rectangle surrounded by a box). For the short form, the "current background-color" global defines the color of the rectangle, while the "current foreground-color" defines the color of the outline.
@@ -1675,7 +1578,6 @@ Short form:
 Speed notes:
 
 	The stroked rectangle is drawn by displaying two rectangles, one in the background color superimposed on one in the outline color. In theory, it should take slightly more time to draw than a standard rectangle, and slightly less time than a box. In practice there is likely to be little difference, except perhaps if many are being drawn to the screen at once.
-
 
 Section: Line
 
@@ -1701,7 +1603,6 @@ Speed notes:
 		* Shorter lines draw faster than longer ones.
 
 		* "Flatter" lines draw faster; the closer a line comes to 45 degrees, the more individual rectangles need to be drawn to render it, and the slower the drawing becomes.
-
 
 Section: Line using distance + angle
 
@@ -1735,7 +1636,6 @@ Speed notes:
 
 		* "Flatter" lines draw faster; the closer a line comes to 45 degrees, the more individual rectangles need to be drawn to render it, and the slower the drawing becomes
 
-
 Chapter: Complex commands: Bitmaps
 
 A bitmap draws a rectangular image composed of individual "bits" that are specified in the form of a list of lists of numbers. For example, a simple cross might be specified like so:
@@ -1763,7 +1663,6 @@ Note that we can include carriage returns and spaces within lists of numbers, wh
 We provide an origin coordinate (corresponding to the upper left corner) for a bitmap, as for all other elements. There is no endpoint--the width of the bitmap is determined by the number of columns multiplied by the dot size.
 
 There are two types of bitmap commands, "monochrome" and "polychrome"; these are laid out below.
-
 
 Section: Monochrome bitmap
 
@@ -1805,10 +1704,9 @@ Speed notes:
 
 	Monochrome and polychrome bitmaps are equally fast. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmaps and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The current leader is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
 
-
 Section: Polychrome bitmaps
 
-A polychrome bitmap allows any RGB color to be provided in the bitmap-array. RGB colors must be specified using a decimalized version of the hexadecimal representation of the color (see Glulx Text Effects for more information)--the transformations described above cannot be used. Polychrome bitmaps are rarely human-readable (white, for example, will be listed in the bitmap-array as 16777215), but they do offer more flexibility of display.
+A polychrome bitmap allows any RGB colour to be provided in the bitmap-array. RGB colours must be specified using a decimalised version of the hexadecimal representation of the colour (see Glulx Text Effects for more information)--the transformations described above cannot be used. Polychrome bitmaps are rarely human-readable (white, for example, will be listed in the bitmap-array as 16777215), but they do offer more flexibility of display.
 
 Here is an example of a bitmap list for a polychrome bitmap, defined as a global list of numbers variable (this is an illustration of Ms. Pac-Man):
 
@@ -1851,7 +1749,6 @@ Speed notes:
 
 	Monochrome bitmaps and polychrome are similar in speed. Unfortunately, most interpreters are still relatively slow when it comes to drawing rectangles, and since rectangles are the basis of bitmaps, they will draw relatively slowly. If you want to use bitmap and don't like the performance on your interpreter, contact your friendly neighbourhood terp maintainer and ask for improvement! (The exception is Gargoyle, which in the bleeding-edge versions available in 2010 is quite fast at rendering bitmaps.)
 
-
 Chapter: Complex commands: Image-maps
 
 An image-map is similar to a bitmap in that the author defines a regular grid for graphical display. However, rather than each cell of the grid displaying a rectangular area of color, it draws an image from a PNG or JPEG file. This could be used for drawing tile-based maps (as in RPG games), sliding-block puzzles, graphical user interfaces, or a number of other things.
@@ -1889,7 +1786,6 @@ Remember that the tile- or figure-array is a list of lists. We supply the standa
 
 (The Glimmr Automap extension uses tilesets to render the automapping data produced by Mark Tilford's Automap extension.)
 
-
 Section: Direct image-maps
 
 As with bitmaps, we supply an origin point (upper left corner), and in addition, we must supply the dimensions of the tiles. All tiles in the image-map will be rendered at the same size, though the images themselves can be of different sizes. If an image has a different aspect ratio from the tile, the image will be stretched to fit.
@@ -1926,8 +1822,7 @@ Speed notes:
 
 	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawing the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practice the extra table-lookup required for tileset maps seems to make little noticeable difference.
 
-	The same speed optimization techniques described for images (see above) apply also to image-maps.
-
+	The same speed optimisation techniques described for images (see above) apply also to image-maps.
 
 Section: Tileset image-maps
 
@@ -1975,8 +1870,7 @@ Speed notes:
 
 	Image-maps must display a number of images every time they are redrawn. Their speed is likely faster than drawin the images individually using the "draw image" command. They are likely to perform well in any interpreter that draws images quickly. Direct image-maps should theoretically draw slightly faster than tileset maps, but in practice the extra table-lookup required for tileset maps seems to make little noticeable difference.
 
-	The same speed optimization techniques described for images (see above) apply also to image-maps.
-
+	The same speed optimisation techniques described for images (see above) apply also to image-maps.
 
 Chapter: Complex commands: Rendered strings
 
@@ -1998,7 +1892,6 @@ Note that rendered strings are limited to a single line, though we can set two s
 
 	bitmap text "This is the first line of" at {10, 10} size 1 px;
 	bitmap text "a two-line paragraph." at {10, 30} size 1 px.
-
 
 Section: Bitmap-rendered strings
 
@@ -2043,7 +1936,7 @@ Note that to use short forms for bitmap-rendered strings, we must first set the 
 
 The current font is set by default to a dummy value, so we will always need to set this before we can paint any texts using the short form.
 
-The text color for short-form commands is determined by the "current foreground-color" global, while the background color is supplied with the "current background-color." The latter is only consulted if backgrounded is included at the end of the main body of the command. Note that there is no comma before the "backgrounded" in the short forms for rendered strings as there is for bitmaps and image-maps.
+The text colour for short-form commands is determined by the "current foreground-color" global, while the background colour is supplied with the "current background-color." The latter is only consulted if backgrounded is included at the end of the main body of the command. Note that there is no comma before the "backgrounded" in the short forms for rendered strings as there is for bitmaps and image-maps.
 
 Speed notes:
 
@@ -2060,9 +1953,9 @@ We can scale image-rendered strings to any size we wish, though obviously some s
 	0.1250 = 1/8 of original size
 	2.0000 = twice the original size (scaling up is not recommended)
 
-Note that Glulx cannot affect the color of image files, so it is not possible to change the color of the glyphs in an image font. For this reason, there is no foreground color specification in the image text painting commands. If the font's image files are transparent PNGs, a background color can be supplied (similar to a highlight effect in Microsoft Word, or to the background-color CSS attribute for inline HTML text elements). For the short form commands, we can as usual specify the background color using the "current background-color" variable.
+Note that Glulx cannot affect the colour of image files, so it is not possible to change the colour of the glyphs in an image font. For this reason, there is no foreground colour specification in the image text painting commands. If the font's image files are transparent PNGs, a background colour can be supplied (similar to a highlight effect in Microsoft Word, or to the background-color CSS attribute for inline HTML text elements). For the short form commands, we can as usual specify the background colour using the "current background-color" variable.
 
-If we provide a background color, we must also specify the width of a margin around the image files. This allows us to optimize the appearance of the background color rectangle. The number of pixels specified must be an integer and will be added to the size of the background color rectangle on each side. So, if the margin is 3, 3 pixels will be added at top, bottom, left, and right. The margin value is similar to the padding value in CSS. (The margin can be set to 0 if we like.)
+If we provide a background colour, we must also specify the width of a margin around the image files. This allows us to optimise the appearance of the background colour rectangle. The number of pixels specified must be an integer and will be added to the size of the background colour rectangle on each side. So, if the margin is 3, 3 pixels will be added at top, bottom, left, and right. The margin value is similar to the padding value in CSS. (The margin can be set to 0 if we like.)
 
 	paint image-based text of <indexed text> in <window> at <origin> using <font> scaled at <scaling factor>
 
@@ -2094,7 +1987,7 @@ Short forms:
 
 	image text "[the location]" at {5, 5} scale 0.4500 margin 3 px, center-aligned.
 
-The presence of the margin in the short form serves to indicate that we want a background color, and that color will be provided by the "current background-color" variable.
+The presence of the margin in the short form serves to indicate that we want a background colour, and that colour will be provided by the "current background-color" variable.
 
 Note that to use short forms for image-rendered strings, we must first set the "current font" global variable to the name of the font we wish to use. For the image font provided along with Glimmr (in the Glimmr Image Font extension), we would do this as follows:
 
@@ -2104,7 +1997,6 @@ Note that to use short forms for image-rendered strings, we must first set the "
 Speed notes:
 
 	A single image-based text command may display a large number of images to the screen at once. The speed is probably roughly equivalent to the speed required to draw the images individually. Image-based texts are likely to perform well in any interpreter that draws images quickly, and until interpreters' speed at drawing rectangles is improved, they will tend to be faster than bitmap-rendered strings. (The bleeding-edge versions of Gargoyle available as of summer 2010 may be exceptions to this.)
-
 
 Chapter: Tilesets
 
@@ -2138,7 +2030,6 @@ The two remaining properties of a tileset describe the dimensions of the tiles. 
 	The tile-width of the Glimmr Automap Tileset is 25.
 	The tile-height of the Glimmr Automap Tileset is 25.
 
-
 Chapter: Fonts and Font Creation
 
 While the design of fonts is beyond the scope of this documentation, the creation of fonts for use with Glimmr is relatively simple, though like all font-making it does involve some fiddly bookkeeping. By far the easiest place to begin to create a font is to open up the fonts included with Glimmr and see how they are made; you may want to refer to one or the other of the font extensions (Glimmr Bitmap Font and Glimmr Image Font) as you peruse this section of the documentation.
@@ -2153,7 +2044,6 @@ Note that fonts actually look up their glyphs by character code (e.g., 32 for a 
 		say char-code 1.
 
 ...and this allows "LOL [happy face]".
-
 
 Section: Creating new fonts
 
@@ -2282,7 +2172,6 @@ This will number the indices for you, verify that the newly assigned index numbe
 
 And that completes the process of creating a bitmap font.
 
-
 Section: Extending bitmap fonts
 
 There are also special facilities for extending a bitmap font if it is missing characters we need. This doesn't require us to edit the original font in any way, and the ease of creating bitmap characters makes it relatively painless. In fact, this is why the Glimmr Bitmap Font has fewer glyphs than Bitmap Image Font--because it is far easier to create new bitmap glyphs than new image ones. (It's also easy to edit a bitmap glyph by directly changing the bitmaps in the glyph map. If you do this to someone else's font, be sure to change the colophon to give yourself credit.)
@@ -2345,7 +2234,6 @@ Finally, "set blank indices" can also output the *entire* table to an external t
 
 If you run your game in the Inform IDE, the external file should be saved to your project folder.
 
-
 Section: Creating new image fonts
 
 Overall, creating image fonts is more difficult than creating bitmap fonts because we need to produce good quality image files--especially ones that will scale nicely--and this can be tricky (it's also beyond the scope of this documentation--but see the resources listed below). However, the process of setting up the font table in Glimmr is easier than for bitmap fonts as image fonts have only a few parameters to keep track of.
@@ -2378,7 +2266,6 @@ The "advance" column tells GDC how many pixels to the right we should scan in or
 
 Once these steps are completed, you will have finished setting up your image font.
 
-
 Chapter: Debugging
 
 Glimmr Drawing Commands does not include any special debugging commands. However, like all Glimmr extensions, it includes a debugging log. To use the log, enable this use option:
@@ -2407,7 +2294,6 @@ Now Glimmr functions will announce themselves, as well as the particular extensi
 		When play begins:
 			try switching the story transcript on.
 
-
 Section: Echoing the debugging log to the transcript
 
 If we are directing output to a window other than the main-window, we may want to echo that window's output to the transcript. To do this, include this use option:
@@ -2416,13 +2302,11 @@ If we are directing output to a window other than the main-window, we may want t
 
 Now, whichever window is designated as the console output window will have its output echoed to the transcript.
 
-
 Section: Console log comments
 
 When we are sending the debugging info somewhere other than the main window, it can be useful to add notes to the console log to help us interpret it later. We can do this by typing "> " and any text we want to add to the log at the command prompt, e.g.:
 
 	> Going west from the Kitchen
-
 
 Section: Additional phrases for triggering debugging from source text
 
@@ -2447,19 +2331,15 @@ It can often be useful to control debugging commands from source text, rather th
 
 The Extended Debugging extension provides further phrases, as well as other useful features. (Note: Extended Debugging is not part of Glimmr, but works well with it.) See the template layer (Appendix B of Writing with Inform: http://inform7.com/sources/src/i6template/Woven/index.html ) for more on these debugging commands.
 
-
 Section: A note for expert users
 
 Each command in GDC also has a special phrasing that does not produce a console message. You may use this phrasing (see the source code) if you wish to supply your own console message. Glimmr Canvas-Based Drawing does this, for example, in order to provide its own messages that describe the state of the graphic element objects that encapsulate drawing commands in that extension.
-
 
 Chapter: Contact info
 
 This extension is released under the Creative Commons Attribution licence. Bug reports, feature requests or questions should be made at <https://github.com/i7/extensions/issues>.
 
 For questions about Glimmr, please consider posting to either the rec.arts.int-fiction newsgroup or at the intfiction forum (http://www.intfiction.org/forum/). This allows questions to be public, where the answers can also benefit others.
-
-
 
 Chapter: Change Log
 
@@ -2469,12 +2349,9 @@ Version 2: Updated for 6F95 (thanks to Harold Gates!). Now uses no deprecated fe
 
 Version 1: Initial release.
 
-
-
 Example: * Retro Drawing - This example presents a good cross-section of the graphics commands provided by GDC. Note that none of the drawing here uses image files--everything is done with "primitives", painted text, and bitmaps.
 
 Note the window-drawing rule provided does not scale, center, or otherwise vary how and where the entities are drawn. This is likely to be awkward in a real game, since players may play with a variety of window sizes, etc. The solution is to use Glimmr Canvas-Based Drawing, or to write our own window-drawing rules to ensure flexible display.
-
 
 	*: "Retro Drawing"
 
@@ -2483,7 +2360,7 @@ Note the window-drawing rule provided does not scale, center, or otherwise vary 
 
 	Arcade is a room. "Nothing at all to do here."
 
-	The graphics-window is a graphics g-window spawned by the main window.	The position is g-placeabove.
+	The graphics-window is a graphics g-window spawned by the main window. The position is g-placeabove.
 
 	G-White is always "#FFFFFF".
 	G-Yellow is always "#FFEE00".
@@ -2492,7 +2369,7 @@ Note the window-drawing rule provided does not scale, center, or otherwise vary 
 		open up the graphics-window.
 
 	After printing the banner text:
-		say "[line break]This example for the Glimmr Drawing Commands extension doesn't do much. It demonstrates a few of the drawing commands, and uses no external resources. Everything is drawn by directly coloring individual pixels. Key: [paragraph break]Ms. Pac-Man: polychrome bitmap.[line break]Maze outlines: line primitives.[line break]Lunch dots: rectangle primitives.[line break]Text box: stroked rectangle primitive.[line break]Text: bitmap-rendered text.[paragraph break]".
+		say "[line break]This example for the Glimmr Drawing Commands extension doesn't do much. It demonstrates a few of the drawing commands, and uses no external resources. Everything is drawn by directly colouring individual pixels. Key: [paragraph break]Ms. Pac-Man: polychrome bitmap.[line break]Maze outlines: line primitives.[line break]Lunch dots: rectangle primitives.[line break]Text box: stroked rectangle primitive.[line break]Text: bitmap-rendered text.[paragraph break]".
 
 	Rule for refreshing the graphics-window:
 		clear the graphics-window;
@@ -2522,6 +2399,4 @@ Note the window-drawing rule provided does not scale, center, or otherwise vary 
 			 { -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
 			 { -1, -1, -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 }
 		 }.
-
-
 

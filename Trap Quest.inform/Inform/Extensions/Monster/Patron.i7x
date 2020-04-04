@@ -1,13 +1,12 @@
 Patron by Monster begins here.
 
-A patron is a kind of monster. A patron is usually intelligent. A patron is male. A patron can be pissed off. A patron is usually not pissed off. The difficulty of a patron is usually 3. A patron has an object called wanking-target. A patron can be trickdone or not trickdone. A patron is usually not trickdone.
+A patron is a kind of monster. A patron is usually intelligent. A patron is male. A patron can be pissed off. A patron is usually not pissed off. The raw difficulty of a patron is usually 3. A patron has an object called wanking-target. A patron can be trickdone or not trickdone. A patron is usually not trickdone.
 
 Definition: a patron is dark skinned: decide yes.
 Definition: a patron is raunchy: decide yes.
 Definition: a patron is condom-preferring: decide yes.[Every John wants to be sensible if the whore has come prepared.]
-Definition: a patron is manly-wenchy:
-	if the player is the donator, decide yes;
-	decide no.
+Definition: a patron is manly-wenchy if the player is the donator.
+Definition: a patron is generic-appropriate: decide yes.
 
 Figure of white inexperienced patron is the file "NPCs/Hotel/Patron/patron1.png".
 Figure of black inexperienced patron is the file "NPCs/Hotel/Patron/patron2.png".
@@ -81,7 +80,6 @@ To say MediumDesc of (M - hairy patron):
 	if lady fetish is 1, say "pregnant patron";
 	otherwise say "hairy patron".
 
-
 A dickhead patron is a kind of patron.
 menacing patron is a dickhead patron. sneering patron is a dickhead patron. The text-shortcut of menacing patron is "mpa". The text-shortcut of sneering patron is "snp".
 To decide which number is the girth of (M - dickhead patron):
@@ -106,7 +104,7 @@ To set up (M - a patron):
 	now the monstersetup of M is 1;
 	now M is unleashed;
 	now M is not pissed off;[In case the patron was angry during his last session with the player. He's calmed down since then.]
-	now the difficulty of M is 3;
+	now the raw difficulty of M is 3;
 	now the health of M is the maxhealth of M;
 	now the wanking-target of M is nothing;
 	now the refactory-period of M is 0.
@@ -151,7 +149,6 @@ To compute labour to (M - a patron):
 
 To say NonAliveFatherBirthFlav of (M - a patron):
 	say "You are filled with a desire to return to the Hotel!".
-
 
 To compute fatherhood to (M - a patron):
 	dislodge M.
@@ -201,8 +198,8 @@ A time based rule (this is the patron encountering rule):
 				now the alert of the player is 1;
 			otherwise if the player is the donator and H is a thing and the number of monsters in the location of the player is 1 and woman-barbara is in the location of the player and the patron-scene-done of woman-barbara is 0 and woman-barbara is friendly:
 				compute patron scene of woman-barbara;
-			otherwise if diaper quest is 0 and resting is 0:
-				let P be a random off-stage patron;
+			otherwise if diaper quest is 0 and resting is 0 and the number of on-stage patrons is 0:
+				let P be a random off-stage generic-appropriate patron;
 				let M be a random monster in the location of the player;
 				if the player is in Hotel38 and watersports fetish is 1 and the human-toilet-scene of woman-barbara is not 1, now M is toilet;
 				let PSRB be a random carried probably-serve-ready bottle;
@@ -265,7 +262,6 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 		if the human-toilet-scene of woman-barbara > 1, ImmediateWomanSluttify;
 	say "[BigNameDesc of P] leaves the way [he of P] came in.";
 
-
 To compute player urinal use of (M - a monster):
 	now M is in the location of the player;
 	say "A [MediumDesc of M] walks into the room and makes a beeline for you. ";
@@ -283,7 +279,6 @@ To compute player urinal use of (M - a monster):
 		decrease the employee-record of senior robobellboy by 1;
 	say "[big he of M] leaves the way [he of M] came.".
 
-
 To compute patronMeeting of (M - a monster) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	compute patronEncounter of P.
@@ -296,7 +291,7 @@ To compute patronMeeting of (M - a demon lord) with (P - a patron):
 To compute patronMeeting of (M - a mechanic) with (P - a patron):[performance]
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	if M is in the location of the player:
-		say "A [MediumDesc of P] walks into the room and makes a beeline for [NameDesc of M]. They glance at you as [NameDesc of P] whispers something in [NameDesc of M]'s ear, and then silently leaves the room.";
+		say "A [MediumDesc of P] walks into the room and makes a beeline for [NameDesc of M]. They glance at you as [NameDesc of P] whispers something in [NameDesc of M][']s ear, and then silently leaves the room.";
 	if P is pissed off:
 		FavourDown M;
 		decrease the employee-record of senior robobellboy by 1;
@@ -308,7 +303,7 @@ To compute patronMeeting of (M - a mechanic) with (P - a patron):[performance]
 To compute patronMeeting of (M - a wrestler) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	let R be a random number between 0 and watersports fetish;
-	if M is in the location of the player, say "A [MediumDesc of P] walks into the room and makes a beeline for [NameDesc of M]. [big he of M] immediately drops to [his of M] knees, pushing up [his of M] [ChestDesc of M] and eagerly lolling out [his of M] tongue as [Namedesc of P] [if R is 1]showers [him of M] with [urine][otherwise]ejaculates all over [NameDesc of M]'s face[end if].";
+	if M is in the location of the player, say "A [MediumDesc of P] walks into the room and makes a beeline for [NameDesc of M]. [big he of M] immediately drops to [his of M] knees, pushing up [his of M] [ChestDesc of M] and eagerly lolling out [his of M] tongue as [Namedesc of P] [if R is 1]showers [him of M] with [urine][otherwise]ejaculates all over [NameDesc of M][']s face[end if].";
 	if R is 1, UrinePuddleUp 2 in the location of M;
 	if the refactory-period of M < 0, now the refactory-period of M is 0.
 
@@ -444,6 +439,8 @@ To compute the orifice choosing of (M - a patron):
 	if debugmode > 0, say "The list of actual target body parts are: [list of actual target body parts].";
 	if the chosen-orifice of current-monster is nothing or the chosen-orifice of current-monster is not an actual target, now the chosen-orifice of current-monster is a random actual target body part.
 
+
+
 To compute perception of (M - a patron):
 	now M is interested;
 	anger M;
@@ -454,7 +451,8 @@ To compute perception of (M - a patron):
 	if M is inexperienced patron, decrease the sex-length of M by a random number between 1 and 2;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	if the class of the player is living sex doll:
-		say "[speech style of M]'Oh, I didn't realise this was that new sex doll facility I've heard about. Awesome!'[roman type][line break]";
+		if M is real-life patron, say NewNameReact of M;
+		otherwise say "[speech style of M]'Oh, I didn't realise this was that new sex doll facility I've heard about. Awesome!'[roman type][line break]";
 	otherwise if M is mating:
 		say "[speech style of M]'Hey I know you, you're the whore I creampied earlier. I hope you didn't get knocked up, did you?[if the player is flying][line break]And what are you doing up there?!'[otherwise]'[end if][roman type][line break]";
 	if the chosen-orifice of M is nothing:
@@ -469,6 +467,9 @@ To compute perception of (M - a patron):
 		now the chosen-orifice of M is nothing;[We will allow the patrons to choose depending on what's available at the time]
 	otherwise:
 		compute appearance assessment of M.
+
+To compute appearance assessment of (M - a patron):[shouldn't display]
+	say "[speech style of M]'[if the chosen-orifice of M is vagina]Get on your knees [slut], I wanna fuck your [pussy]!'[otherwise if the chosen-orifice of M is a fuckhole]Get on your knees [slut], I wanna fuck!'[otherwise]Get over here and suck my [DickDesc of M], [slut]!'[end if][roman type][line break]";
 
 To compute appearance assessment of (M - an inexperienced patron):
 	if the class of the player is princess:
@@ -488,7 +489,7 @@ To compute appearance assessment of (M - an experienced patron):
 	otherwise:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]You're going to let me fuck your asshole today.'[otherwise if the chosen-orifice of M is vagina]Turn around and show me your [cunt].'[otherwise]Open, and suck it.'[end if][roman type][line break]".
 
-To compute appearance assessment of (M - a patron):[dickhead]
+To compute appearance assessment of (M - a dickhead patron):
 	if the class of the player is princess:
 		say "[speech style of M]'[if the chosen-orifice of M is asshole]Your guards don't know I'm here, princess. But don't worry, your asshole is going to find out very soon.'[otherwise if the chosen-orifice of M is vagina and pregnancy fetish + the pregnancy of the player is 1]Your guards don't know I'm here princess. But since I plan on getting you pregnant tonight, they'll probably find out eventually.'[otherwise if the chosen-orifice of M is vagina]Tonight I plan on getting a taste of some prime royal [cunt]!'[otherwise]Look, princess. If you don't swallow all my cum, the guards will know I was here and you'll look like a nasty whore. Understand? So don't complain, you fucking royal [cunt].'[end if][roman type][line break]";
 	otherwise:
@@ -512,7 +513,6 @@ To compute DQ perception of (M - a patron):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise:
 		say "[speech style of M]'[one of]I assume that this is the right room, and you are the adult baby slave for hire, yes? Good.'[or]Daddy's home, honey! Are you ready to play?'[stopping][roman type][line break]".
-
 
 Part 3 - Motion
 
@@ -561,37 +561,43 @@ To say waitingflav of (M - a patron):
 	if the player is not able to speak:
 		say "[one of][line break][variable custom style][muffled sounds][roman type][line break][or]You look up at [if the number of patrons in the location of the player is 1][NameDesc of M][otherwise]the [men of M][end if] silently.[at random]";
 	otherwise if diaper quest is 1:
-		if the diaper addiction of the player < 7:
-			say "[one of]You stare up at [NameDesc of M], still in shock[or]You sigh, having lost any real hope of negotiation being successful[stopping]. [if the player is able to speak][line break][variable custom style]'[one of]I'm sorry, WHAT? What is this place?? Do you think I'm some kind of diaper fetishist?'[or]There's been some kind of mistake, I'm not the baby you're looking for!'[or]Look, can't we talk about this first? There must be another way...'[stopping][roman type][line break]Unsurprisingly, [he of M] completely ignores you.[end if]";
-		otherwise if the diaper addiction of the player < 12:
-			say "You [one of]cough nervously[or]squirm uncomfortably[or]shuffle awkwardly[in random order]. [line break][variable custom style][if the player is able to speak]'[one of]Please be gentle, okay?'[or]You're not going to be mean to me, are you?'[or]If I play along, do you promise to be kind?'[or]Alright, if you're paying, let's do this.'[in random order][otherwise][gag sounds][end if][roman type][line break].";
-		otherwise:
-			say "You [one of]mewl playfully[or]grin gleefully[or]bounce up and down on the bed[or]squeal with delight[in random order]. [line break][variable custom style][if the player is able to speak]'[one of]Ooh yay, this should be fun!'[or]'Ooh yay, are we gonna play a fun game?'[or]I'm your little baby, do what you want with me! Tee-hee!'[in random order][otherwise][gag sounds][end if][roman type][line break]";
+		say SingleWaitingFlavDQ of M;
 	otherwise if the number of patrons in the location of the player is 1:
-		if the player is not a pervert:
-			say "[one of]You stare up at [NameDesc of M], still in shock. [or]You sigh, having lost any real hope of negotiation being successful. [stopping][line break][variable custom style]'[one of]I'm sorry, WHAT? What is this place?? Do you think I'm some kind of prostitute?'[or]There's been some kind of mistake, I'm not the whore you're looking for!'[or]Look, can't we talk about this first? There must be another way...'[stopping][roman type][line break]Unsurprisingly, [he of M] completely ignores you.";
-		otherwise if the sex addiction of the player < 12:
-			if M is dickhead patron:
-				say "[one of]You glare at the rude [man of M]. [or]You harrumph loudly. [at random][line break][variable custom style]'[one of]Look here, bozo. You fuck me, you pay me. No funny business, okay?'[or]Hey, treat me nicely, please? I'm just trying to make an honest living here.'[or]Fuck you, jackass. I'll [if the chosen-orifice of M is face]suck you off[otherwise]fuck you[end if], but only because it's literally my job.'[in random order][roman type][line break]";
-			otherwise if M is gross patron:
-				say "[one of]You hesitantly reply. [or]You look at the barrier, and then back at the [man of M]. [at random][line break][variable custom style]'[one of]I guess I'll do it for one ring.'[or]I guess I should just be glad that you'll pay me at all...'[or]I guess I'll let you decide how much it's worth. Just please don't hurt me?'[in random order][roman type][line break]";
-			otherwise:
-				say "[one of]You stare up at [NameDesc of M] nervously. [or]You look at the barrier, and then back at the [man of M]. [at random][line break][variable custom style]'[one of]You're going to be gentle with me, right?'[or]You're going to pay me after, right?'[or]But I don't have any condoms... Okay, just this once.'[in random order][roman type][line break]";
-		otherwise:
-			if M is dickhead patron:
-				say "[one of]You mewl playfully. [or]You stick your tongue out playfully. [at random][line break][second custom style]'[one of]Whatever you say goes, Mister!'[or]Hey, I'm just a cheap whore. You get to treat me however you like, Mister!'[or]Ooh yes sir, I am good at following orders, sir. [if the chosen-orifice of M is face]Pleease can I have permission to suck on your tasty fuckstick and swallow your yummy [semen]?'[otherwise]Please use me like your own personal fucksleeve for as long as you like~'[end if][in random order][roman type][line break]";
-			otherwise if M is inexperienced patron:
-				say "[one of]You smile gently. [or]You giggle playfully. [at random][line break][second custom style]'[one of]Slow down kiddo, we've got all the time in the world. There's no rush, you can use me as you want.'[or]Whatever you say, kiddo. But take your time! You've got all the time you want until you cum.'[in random order][roman type][line break]";
-			otherwise if M is gross patron:
-				say "[one of]You smile gently. [or]You giggle playfully. [at random][line break][second custom style]'[one of]If I didn't need the money, I'd be doing this for free.'[or]I don't like to think of it as payment, so much as a tip for a job well done.'[in random order][roman type][line break]";
-			otherwise:
-				say "[one of]You stare up at [NameDesc of M] with a warm inviting smile. [or][if the chosen-orifice of M is face]You obediently get onto your knees and drool at the sight of [his of M] [DickDesc of M][otherwise]You obediently turn around and push your [MediumDesc of hips] into the air[end if]. [at random][line break][variable custom style]'[one of]Your wish is my command, honey.'[or]Honey, I was born to serve handsome [DickDesc of M]s like yours.'[or]I love a man that knows what [he of M] wants.'[in random order][roman type][line break]";
+		say SingleWaitingFlavTQ of M;
 	otherwise if the sex addiction of the player < 6 + the number of patrons in the location of the player: [Multiple patrons!]
 		say "[one of]You stare up at the [men of M], in shock that there's [if the number of patrons in the location of the player is 2]more than one[otherwise]so many[end if]. [or]You yelp in fright, not expecting to have to service [if the number of patrons in the location of the player is 2]two at a time[otherwise]quite so many [men of M] at once[end if]. [stopping][line break][variable custom style]'[one of]Look, there's been a mistake, I've never serviced more than one patron at a time before...'[or]Oh come on, this is just too much for one person to handle, surely?!'[or]This cannot be happening...'[stopping][roman type][line break]Unsurprisingly, they completely ignore you.";
 	otherwise if the player is not a nympho:
 		say "[one of]You stare up at the [men of M] nervously[or]You are paralyzed by a mixture of excitement and hesitation[at random]. [line break][variable custom style]'[one of]You're each going to pay me, right? I'm not doing extra for free.'[or]I don't usually take this many customers at once you know. But just this once, I'll let it slide, as long as you're careful with me.'[line break]As if I really had a choice...[in random order][roman type][line break]";
 	otherwise:
 		say "[one of]You stare up at the [men of M] and beckon them invitingly with your finger. [or]You obediently turn around and push your [MediumDesc of hips] into the air, spanking it once for good measure. [at random][line break][variable custom style]'[one of]All aboard, gentle[men of M]. Dinner is served.'[or]If I can [if the body soreness of the player < 8]walk[otherwise]even move[end if] by the time you're [if the number of patrons in the location of the player > 2]all[otherwise]both[end if]done, I'm going to be unimpressed.'[or]Yes, yes, this is more like it! If I don't have [DickDesc of M]s in [if the player is male]both my holes[otherwise if the number of patrons in the location of the player is 2]two of my holes[otherwise]all my holes[end if] within the next five seconds I'm gonna be disappointed. Well come on, hurry up!!!'[in random order][roman type][line break]".
+
+To say SingleWaitingFlavDQ of (M - a patron):
+	if the diaper addiction of the player < 7:
+		say "[one of]You stare up at [NameDesc of M], still in shock[or]You sigh, having lost any real hope of negotiation being successful[stopping]. [if the player is able to speak][line break][variable custom style]'[one of]I'm sorry, WHAT? What is this place?? Do you think I'm some kind of diaper fetishist?'[or]There's been some kind of mistake, I'm not the baby you're looking for!'[or]Look, can't we talk about this first? There must be another way...'[stopping][roman type][line break]Unsurprisingly, [he of M] completely ignores you.[end if]";
+	otherwise if the diaper addiction of the player < 12:
+		say "You [one of]cough nervously[or]squirm uncomfortably[or]shuffle awkwardly[in random order]. [line break][variable custom style][if the player is able to speak]'[one of]Please be gentle, okay?'[or]You're not going to be mean to me, are you?'[or]If I play along, do you promise to be kind?'[or]Alright, if you're paying, let's do this.'[in random order][otherwise][gag sounds][end if][roman type][line break].";
+	otherwise:
+		say "You [one of]mewl playfully[or]grin gleefully[or]bounce up and down on the bed[or]squeal with delight[in random order]. [line break][variable custom style][if the player is able to speak]'[one of]Ooh yay, this should be fun!'[or]'Ooh yay, are we gonna play a fun game?'[or]I'm your little baby, do what you want with me! Tee-hee!'[in random order][otherwise][gag sounds][end if][roman type][line break]".
+
+To say SingleWaitingFlavTQ of (M - a patron):
+	if the player is not a pervert:
+		say "[one of]You stare up at [NameDesc of M], still in shock. [or]You sigh, having lost any real hope of negotiation being successful. [stopping][line break][variable custom style]'[one of]I'm sorry, WHAT? What is this place?? Do you think I'm some kind of prostitute?'[or]There's been some kind of mistake, I'm not the whore you're looking for!'[or]Look, can't we talk about this first? There must be another way...'[stopping][roman type][line break]Unsurprisingly, [he of M] completely ignores you.";
+	otherwise if the sex addiction of the player < 12:
+		if M is dickhead patron:
+			say "[one of]You glare at the rude [man of M]. [or]You harrumph loudly. [at random][line break][variable custom style]'[one of]Look here, bozo. You fuck me, you pay me. No funny business, okay?'[or]Hey, treat me nicely, please? I'm just trying to make an honest living here.'[or]Fuck you, jackass. I'll [if the chosen-orifice of M is face]suck you off[otherwise]fuck you[end if], but only because it's literally my job.'[in random order][roman type][line break]";
+		otherwise if M is gross patron:
+			say "[one of]You hesitantly reply. [or]You look at the barrier, and then back at the [man of M]. [at random][line break][variable custom style]'[one of]I guess I'll do it for one ring.'[or]I guess I should just be glad that you'll pay me at all...'[or]I guess I'll let you decide how much it's worth. Just please don't hurt me?'[in random order][roman type][line break]";
+		otherwise:
+			say "[one of]You stare up at [NameDesc of M] nervously. [or]You look at the barrier, and then back at the [man of M]. [at random][line break][variable custom style]'[one of]You're going to be gentle with me, right?'[or]You're going to pay me after, right?'[or]But I don't have any condoms... Okay, just this once.'[in random order][roman type][line break]";
+	otherwise:
+		if M is dickhead patron:
+			say "[one of]You mewl playfully. [or]You stick your tongue out playfully. [at random][line break][second custom style]'[one of]Whatever you say goes, Mister!'[or]Hey, I'm just a cheap whore. You get to treat me however you like, Mister!'[or]Ooh yes sir, I am good at following orders, sir. [if the chosen-orifice of M is face]Pleease can I have permission to suck on your tasty fuckstick and swallow your yummy [semen]?'[otherwise]Please use me like your own personal fucksleeve for as long as you like~'[end if][in random order][roman type][line break]";
+		otherwise if M is inexperienced patron:
+			say "[one of]You smile gently. [or]You giggle playfully. [at random][line break][second custom style]'[one of]Slow down kiddo, we've got all the time in the world. There's no rush, you can use me as you want.'[or]Whatever you say, kiddo. But take your time! You've got all the time you want until you cum.'[in random order][roman type][line break]";
+		otherwise if M is gross patron:
+			say "[one of]You smile gently. [or]You giggle playfully. [at random][line break][second custom style]'[one of]If I didn't need the money, I'd be doing this for free.'[or]I don't like to think of it as payment, so much as a tip for a job well done.'[in random order][roman type][line break]";
+		otherwise:
+			say "[one of]You stare up at [NameDesc of M] with a warm inviting smile. [or][if the chosen-orifice of M is face]You obediently get onto your knees and drool at the sight of [his of M] [DickDesc of M][otherwise]You obediently turn around and push your [MediumDesc of hips] into the air[end if]. [at random][line break][variable custom style]'[one of]Your wish is my command, honey.'[or]Honey, I was born to serve handsome [DickDesc of M]s like yours.'[or]I love a man that knows what [he of M] wants.'[in random order][roman type][line break]".
 
 To say SexSubmissionFlav of (M - a patron):
 	let A be the relevant sex addiction of M;
@@ -624,11 +630,11 @@ To say DelicateResRefusalFlav of (M - a patron):
 	say SexSubmissionFlav of M.
 
 To say OralAddResRefusalFlav of (M - a patron):
-	say "You have to taste [NameDesc of M]'s [semen]. There's no way you can bring yourself to resist!";
+	say "You have to taste [NameDesc of M][']s [semen]. There's no way you can bring yourself to resist!";
 	say SexSubmissionFlav of M.
 
 To say OralSlutResRefusalFlav of (M - a patron):
-	say "[BigNameDesc of M]'s [DickDesc of M] is too good! You can't bring yourself to resist!";
+	say "[BigNameDesc of M][']s [DickDesc of M] is too good! You can't bring yourself to resist!";
 	say SexSubmissionFlav of M.
 
 To say ThirstResRefusalFlav of (M - a patron):
@@ -639,41 +645,41 @@ To say TwosomeSexSubmission of (M - a patron):
 	let X be the sex addiction of the player;
 	if M is penetrating face:
 		if X < 6:
-			say "[one of]You keep your body as still as you can, and reluctantly hold your mouth open. [BigNameDesc of M] thrusts in and out at a slow but steady pace.[or]You take absolutely no pleasure in holding your mouth open and allowing [NameDesc of M] to continue to use it as a masturbatory aid.[or]You remain silent and try to think about other things as [NameDesc of M] continues to fuck your open mouth.[or]You try not to gag as the tip of [NameDesc of M]'s [DickDesc of M] keeps prodding your tonsils.[or]You hesitantly allow your tongue to gently touch the underside of [NameDesc of M]'s [DickDesc of M] as [he of M] slides in and out of your mouth.[in random order]";
+			say "[one of]You keep your body as still as you can, and reluctantly hold your mouth open. [BigNameDesc of M] thrusts in and out at a slow but steady pace.[or]You take absolutely no pleasure in holding your mouth open and allowing [NameDesc of M] to continue to use it as a masturbatory aid.[or]You remain silent and try to think about other things as [NameDesc of M] continues to fuck your open mouth.[or]You try not to gag as the tip of [NameDesc of M][']s [DickDesc of M] keeps prodding your tonsils.[or]You hesitantly allow your tongue to gently touch the underside of [NameDesc of M][']s [DickDesc of M] as [he of M] slides in and out of your mouth.[in random order]";
 		otherwise if X < 13:
-			say "[one of]You whimper gently around [NameDesc of M]'s [DickDesc of M] as [he of M] fucks your face.[or]You skilfully caress [NameDesc of M]'s [DickDesc of M] with your tongue, telling yourself that it's to make sure this is over as quickly as possible.[or]You massage the head of [NameDesc of M]'s [DickDesc of M] with your lips[if the player is wrist bound behind] whilst milking [his of M] shaft with your hands[end if]. You know you're giving into what the game wants, but also at least this way it won't take too long for [him of M] to climax.[or]You take [NameDesc of M] as deep into your mouth as you can manage without gagging. You watch [him of M] shiver with glee.[or]You form a perfect O with your lips around [NameDesc of M]'s shaft and hold still in order to allow [him of M] to fuck your face steadily.[in random order]";
+			say "[one of]You whimper gently around [NameDesc of M][']s [DickDesc of M] as [he of M] fucks your face.[or]You skilfully caress [NameDesc of M][']s [DickDesc of M] with your tongue, telling yourself that it's to make sure this is over as quickly as possible.[or]You massage the head of [NameDesc of M][']s [DickDesc of M] with your lips[if the player is wrist bound behind] whilst milking [his of M] shaft with your hands[end if]. You know you're giving into what the game wants, but also at least this way it won't take too long for [him of M] to climax.[or]You take [NameDesc of M] as deep into your mouth as you can manage without gagging. You watch [him of M] shiver with glee.[or]You form a perfect O with your lips around [NameDesc of M][']s shaft and hold still in order to allow [him of M] to fuck your face steadily.[in random order]";
 		otherwise:
-			say "[one of]You move your head back and forth as fast as you can go, whilst massaging [NameDesc of M]'s balls with your hand, trying to coax [him of M] to orgasm as powerfully as possible.[or]You loudly slurp [NameDesc of M]'s [DickDesc of M], staring up at [him of M] as [his of M] tip prods your tonsils.[or]You hum gently around [NameDesc of M]'s [DickDesc of M], trying to please [him of M] as much as possible.[or]You gobble down [NameDesc of M]'s [DickDesc of M], as far down your throat as you can manage. You giggle happily around [his of M] member as you watch [him of M] shudder with pleasure.[or]You maintain constant eye contact with [NameDesc of M] as you [if the player is wrist bound behind]pull [his of M] [DickDesc of M] out of your mouth for a moment, and stroke it passionately whilst forcing [his of M] entire scrotum into your mouth[otherwise]work your way down [his of M] shaft, letting your tongue touch [his of M] scrotum as you deepthroat [his of M] shaft[end if]. You hum happily as you massage [his of M] balls with your tongue.[in random order]";
+			say "[one of]You move your head back and forth as fast as you can go, whilst massaging [NameDesc of M][']s balls with your hand, trying to coax [him of M] to orgasm as powerfully as possible.[or]You loudly slurp [NameDesc of M][']s [DickDesc of M], staring up at [him of M] as [his of M] tip prods your tonsils.[or]You hum gently around [NameDesc of M][']s [DickDesc of M], trying to please [him of M] as much as possible.[or]You gobble down [NameDesc of M][']s [DickDesc of M], as far down your throat as you can manage. You giggle happily around [his of M] member as you watch [him of M] shudder with pleasure.[or]You maintain constant eye contact with [NameDesc of M] as you [if the player is wrist bound behind]pull [his of M] [DickDesc of M] out of your mouth for a moment, and stroke it passionately whilst forcing [his of M] entire scrotum into your mouth[otherwise]work your way down [his of M] shaft, letting your tongue touch [his of M] scrotum as you deepthroat [his of M] shaft[end if]. You hum happily as you massage [his of M] balls with your tongue.[in random order]";
 	otherwise if M is penetrating a fuckhole:
 		let F be a random fuckhole penetrated by M;
 		if X < 6:
 			say "[one of]You don't want to get any more sore than you already are, so you hold still and try and take it like a champ.[or]You don't want to anger [NameDesc of M], so you just stay completely still and try to relax and let it happen.[or]You cry internally but remain silent and still, trying not to let [NameDesc of M] see your pain.[or]You try not to make a sound as [NameDesc of M] thrusts in and out of your poor [variable F].[or]You grip the bed-sheets as tightly as you can and grit your teeth, as you try to endure the fucking without crying.[in random order]";
 		otherwise if X < 13:
-			say "[one of]You relax your [variable F], convincing yourself that this is fine, because it's just a game.[or]You slightly hesitantly push back against [NameDesc of M], trying to keep [him of M] happy.[or]You push your face into the pillow and groan gently. You know you're giving into what the game wants, but also at least this way it won't take too long for [him of M] to climax.[or]You find yourself quietly moaning with each thrust of [NameDesc of M]'s [DickDesc of M] into your [variable F].[or]You allow [NameDesc of M] to guide your hips with [his of M] hands, and soon you have fallen into a steady rhythm.[in random order]";
+			say "[one of]You relax your [variable F], convincing yourself that this is fine, because it's just a game.[or]You slightly hesitantly push back against [NameDesc of M], trying to keep [him of M] happy.[or]You push your face into the pillow and groan gently. You know you're giving into what the game wants, but also at least this way it won't take too long for [him of M] to climax.[or]You find yourself quietly moaning with each thrust of [NameDesc of M][']s [DickDesc of M] into your [variable F].[or]You allow [NameDesc of M] to guide your hips with [his of M] hands, and soon you have fallen into a steady rhythm.[in random order]";
 		otherwise:
-			say "[one of]You sigh loudly and push back at [NameDesc of M], encouraging [him of M] to keep going.[or]You guide [NameDesc of M]'s hands to your [ShortDesc of hair], and encourage [him of M] to roughly hold your head up like this. You love being treated this way![or]You moan lewdly as [NameDesc of M]'s [DickDesc of M] continues to roughly plunder your [variable F].[or]You hold yourself still and try to unclench your opening as much as possible, to make sure [NameDesc of M] can get balls deep inside.[or]You sluttily gyrate your hips in an attempt to please [NameDesc of M] even further as [he of M] plows [his of M] [DickDesc of M] in and out of your [variable F].[or]You pull forward until just the tiniest bit of the tip of [NameDesc of M]'s [DickDesc of M] is still inside your [variable F], then suddenly throw your hips backwards so that the entire length of [NameDesc of M]'s [DickDesc of M] brutally rushes inside. From the sound that [NameDesc of M] makes in reaction, you guess that [he of M] almost came instantly from the sensation. You smirk inwardly.[in random order]";
+			say "[one of]You sigh loudly and push back at [NameDesc of M], encouraging [him of M] to keep going.[or]You guide [NameDesc of M][']s hands to your [ShortDesc of hair], and encourage [him of M] to roughly hold your head up like this. You love being treated this way![or]You moan lewdly as [NameDesc of M][']s [DickDesc of M] continues to roughly plunder your [variable F].[or]You hold yourself still and try to unclench your opening as much as possible, to make sure [NameDesc of M] can get balls deep inside.[or]You sluttily gyrate your hips in an attempt to please [NameDesc of M] even further as [he of M] plows [his of M] [DickDesc of M] in and out of your [variable F].[or]You pull forward until just the tiniest bit of the tip of [NameDesc of M][']s [DickDesc of M] is still inside your [variable F], then suddenly throw your hips backwards so that the entire length of [NameDesc of M][']s [DickDesc of M] brutally rushes inside. From the sound that [NameDesc of M] makes in reaction, you guess that [he of M] almost came instantly from the sensation. You smirk inwardly.[in random order]";
 	otherwise:
 		if X < 6:
-			say "[one of]You reluctantly continue pumping [NameDesc of M]'s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You dejectedly kiss the tip of [NameDesc of M]'s [DickDesc of M] as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M]'s [DickDesc of M] with undisguised disgust as you massage it with your [ShortDesc of breasts][end if].[or]You reluctantly push your [BreastDesc] together as [NameDesc of M] thrusts between them.[at random]";
+			say "[one of]You reluctantly continue pumping [NameDesc of M][']s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You dejectedly kiss the tip of [NameDesc of M][']s [DickDesc of M] as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M][']s [DickDesc of M] with undisguised disgust as you massage it with your [ShortDesc of breasts][end if].[or]You reluctantly push your [BreastDesc] together as [NameDesc of M] thrusts between them.[at random]";
 		otherwise if X < 13:
-			say "[one of]Your heart races as you pump [NameDesc of M]'s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You hesitantly kiss the tip of [NameDesc of M]'s [DickDesc of M] as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M]'s [DickDesc of M] with what you try to tell yourself is curiosity as you massage it with your [BreastDesc][end if].[or]You use your arms to hold your [BreastDesc] together as [NameDesc of M] thrusts between them. It actually feels kind of exciting![at random]";
+			say "[one of]Your heart races as you pump [NameDesc of M][']s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You hesitantly kiss the tip of [NameDesc of M][']s [DickDesc of M] as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M][']s [DickDesc of M] with what you try to tell yourself is curiosity as you massage it with your [BreastDesc][end if].[or]You use your arms to hold your [BreastDesc] together as [NameDesc of M] thrusts between them. It actually feels kind of exciting![at random]";
 		otherwise:
-			say "[one of]You eagerly pump [NameDesc of M]'s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You let the tip of [NameDesc of M]'s [DickDesc of M] pop in and out of your mouth as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M]'s [DickDesc of M] with barely contained hunger as you massage it with your [BreastDesc][end if].[or]You eagerly push your [BreastDesc] together as [NameDesc of M] thrusts between them.[at random]".
+			say "[one of]You eagerly pump [NameDesc of M][']s [DickDesc of M] with your [BreastDesc].[or][if face is not actually occupied]You let the tip of [NameDesc of M][']s [DickDesc of M] pop in and out of your mouth as it thrusts between your [BreastDesc][otherwise]You stare at [NameDesc of M][']s [DickDesc of M] with barely contained hunger as you massage it with your [BreastDesc][end if].[or]You eagerly push your [BreastDesc] together as [NameDesc of M] thrusts between them.[at random]".
 
 To say TwosomeSexResist of (M - a patron):
 	let X be the sex addiction of the player;
 	if M is penetrating face:
-		say "[if X < 6][one of]You pull your head back, trying to get [NameDesc of M]'s [DickDesc of M] out of your mouth. But because [he of M] has a tight grip on your wrists, you can't get the full length out![or]You try and pull away as [NameDesc of M] fucks your face fast, but it just encourages [him of M] to thrust even harder![or]You try as hard as you can to get the disgusting [DickDesc of M] out of your mouth, but you can't break [BigNameDesc of M]'s grip on your head![or]You fruitlessly shake your head and can't help but gag as the tip of [NameDesc of M]'s [DickDesc of M] keeps prodding your tonsils.[or]You try and keep your tongue at the base of your mouth so that you don't have to taste the nasty [DickDesc of M] [NameDesc of M] is forcing in and out of your mouth.[in random order][otherwise if X < 13][one of]You try to pull away, even though you know [NameDesc of M] has much too strong a grip on your head.[or]You gag loudly as you try to fight against the [DickDesc of M] in your mouth in vain.[or]You push against [NameDesc of M]'s thighs, trying to get [him of M] to slow down.[or]You make offended whines as [NameDesc of M] slams in and out of your mouth, trying to convince both [him of M] and yourself that you aren't an enthusiastic cocksucker.[in random order][otherwise][one of]You playfully push against [NameDesc of M]'s thighs, pretending that you're struggling to cope with [his of M] girth, to make [him of M] feel good.[or]You pretend to try and fight back, just in case anyone running the game is watching.[or]You playfully slap [NameDesc of M]'s butt cheek, as if telling [him of M] off for being so rough.[or]You make a show of whimpering and gagging around [his of M] [DickDesc of M], putting your hands on [NameDesc of M]'s stomach and pretending that you can't take any more![or]You playfully graze [NameDesc of M]'s [DickDesc of M] with your teeth, hoping [he of M]'ll punish you by being even rougher.[or]You give [NameDesc of M] a middle finger and a wink as [he of M] fucks your face.[in random order][end if]";
+		say "[if X < 6][one of]You pull your head back, trying to get [NameDesc of M][']s [DickDesc of M] out of your mouth. But because [he of M] has a tight grip on your wrists, you can't get the full length out![or]You try and pull away as [NameDesc of M] fucks your face fast, but it just encourages [him of M] to thrust even harder![or]You try as hard as you can to get the disgusting [DickDesc of M] out of your mouth, but you can't break [BigNameDesc of M][']s grip on your head![or]You fruitlessly shake your head and can't help but gag as the tip of [NameDesc of M][']s [DickDesc of M] keeps prodding your tonsils.[or]You try and keep your tongue at the base of your mouth so that you don't have to taste the nasty [DickDesc of M] [NameDesc of M] is forcing in and out of your mouth.[in random order][otherwise if X < 13][one of]You try to pull away, even though you know [NameDesc of M] has much too strong a grip on your head.[or]You gag loudly as you try to fight against the [DickDesc of M] in your mouth in vain.[or]You push against [NameDesc of M][']s thighs, trying to get [him of M] to slow down.[or]You make offended whines as [NameDesc of M] slams in and out of your mouth, trying to convince both [him of M] and yourself that you aren't an enthusiastic cocksucker.[in random order][otherwise][one of]You playfully push against [NameDesc of M][']s thighs, pretending that you're struggling to cope with [his of M] girth, to make [him of M] feel good.[or]You pretend to try and fight back, just in case anyone running the game is watching.[or]You playfully slap [NameDesc of M][']s butt cheek, as if telling [him of M] off for being so rough.[or]You make a show of whimpering and gagging around [his of M] [DickDesc of M], putting your hands on [NameDesc of M][']s stomach and pretending that you can't take any more![or]You playfully graze [NameDesc of M][']s [DickDesc of M] with your teeth, hoping [he of M]'ll punish you by being even rougher.[or]You give [NameDesc of M] a middle finger and a wink as [he of M] fucks your face.[in random order][end if]";
 	otherwise if M is penetrating a fuckhole:
 		let F be a random fuckhole penetrated by M;
 		if X < 7:
 			say "[one of]You desperately do everything you can to get the [DickDesc of M] out of your [variable F], but [NameDesc of M] holds you in place.[or]You don't care if [NameDesc of M] gets angry, you refuse to let [him of M] cum in your [variable F] without putting up a fight![or]You cry out loud in pain and anger, and try to somehow shake [NameDesc of M] out of your [variable F]. But your attempts are so fruitless [he of M] doesn't even realise you're resisting![or]You claw at the bed-sheets, trying to get some grip to pull yourself away from [NameDesc of M], but you can't get enough traction.[or]You try and kick [NameDesc of M] away, but [he of M] catches your foot and forces it back down onto the bed.[in random order]";
 		otherwise if X < 14:
-			say "[one of]You fight against [NameDesc of M], trying to ignore the feeling of [his of M] throbbing [DickDesc of M] thrusting in and out of your [variable F].[or]You try and wriggle your way out of [NameDesc of M]'s grip, but it's difficult when your [variable F] is full of [his of M] [DickDesc of M]![or]You clamp your mouth shut, refusing to let [NameDesc of M] hear you moan in pleasure.[or]You growl at [NameDesc of M]. [line break][variable custom style]Oooh! I am not enjoying this. I am not enjoying this. I am not enjoying this.[roman type][line break][or]You do everything you can to remove the [DickDesc of M] lodged up your [variable F], but its owner continues to be very insistent that it says firmly inside.[in random order]";
+			say "[one of]You fight against [NameDesc of M], trying to ignore the feeling of [his of M] throbbing [DickDesc of M] thrusting in and out of your [variable F].[or]You try and wriggle your way out of [NameDesc of M][']s grip, but it's difficult when your [variable F] is full of [his of M] [DickDesc of M]![or]You clamp your mouth shut, refusing to let [NameDesc of M] hear you moan in pleasure.[or]You growl at [NameDesc of M]. [line break][variable custom style]Oooh! I am not enjoying this. I am not enjoying this. I am not enjoying this.[roman type][line break][or]You do everything you can to remove the [DickDesc of M] lodged up your [variable F], but its owner continues to be very insistent that it says firmly inside.[in random order]";
 		otherwise:
-			say "[one of]You mewl lewdly and pull away from [NameDesc of M], provoking [him of M] into pushing all the way back in with a single powerful thrust.[or]You yelp in pain, pretending to [NameDesc of M] that you're not enjoying the feeling of [his of M] [DickDesc of M] destroying your [variable F].[or]You bend your neck to turn and face [NameDesc of M], and give [him of M] a wink as you playfully kick [him of M] in the thigh with one leg.[or]You push your shoulders up so that they are above your [MediumDesc of hips], giving [NameDesc of M] a much more difficult angle to thrust at. You grin inwardly as [he of M] grabs your head and forces it back down onto the bed.[or]You shake your head wildly, pulling against [NameDesc of M]'s grip on your hair. As [he of M] pulls your hair back tight in response, you find yourself tingling with pleasure as well as pain.[or]You pull forward until just the tiniest bit of the tip of [NameDesc of M]'s [DickDesc of M] is still inside your [variable F], then stop. [big he of M] moves a step forward and the entire length [his of M] [DickDesc of M] brutally rushes back inside your [variable F]. You can't help but shudder in pleasure.[in random order]";
+			say "[one of]You mewl lewdly and pull away from [NameDesc of M], provoking [him of M] into pushing all the way back in with a single powerful thrust.[or]You yelp in pain, pretending to [NameDesc of M] that you're not enjoying the feeling of [his of M] [DickDesc of M] destroying your [variable F].[or]You bend your neck to turn and face [NameDesc of M], and give [him of M] a wink as you playfully kick [him of M] in the thigh with one leg.[or]You push your shoulders up so that they are above your [MediumDesc of hips], giving [NameDesc of M] a much more difficult angle to thrust at. You grin inwardly as [he of M] grabs your head and forces it back down onto the bed.[or]You shake your head wildly, pulling against [NameDesc of M][']s grip on your hair. As [he of M] pulls your hair back tight in response, you find yourself tingling with pleasure as well as pain.[or]You pull forward until just the tiniest bit of the tip of [NameDesc of M][']s [DickDesc of M] is still inside your [variable F], then stop. [big he of M] moves a step forward and the entire length [his of M] [DickDesc of M] brutally rushes back inside your [variable F]. You can't help but shudder in pleasure.[in random order]";
 	otherwise:
-		say "[if X < 6][one of]You squirm helplessly, completely pinned underneath [NameDesc of M]'s weight as [he of M] fucks your tits![or]You helplessly try to wiggle out from under [NameDesc of M] as [he of M] squeezes your [BreastDesc] around [his of M] shaft.[or][BigNameDesc of M] holds your wrists against the bed, completely shrugging off your attempts to resist [his of M] grip as [he of M] thrusts between your tits[in random order][otherwise if X < 13][one of]You halfheartedly squirm as [NameDesc of M] fucks your tits, looking away from [him of M] as [his of M] [DickDesc of M] bumps your chin.[or]You squirm weakly as [NameDesc of M] forces you to hold your [BreastDesc] together, forming a fuckable pocket for [his of M] [DickDesc of M].[or]You weakly squirm against [NameDesc of M]'s weight, trying not to look as [he of M] thrusts [his of M] [DickDesc of M] between your tits.[in random order][otherwise][one of]You squirm playfully, making sure to push your [BreastDesc] together with your arms as [NameDesc of M] thrusts between them.[or]You pretend to try and fight back as [NameDesc of M] fucks your breasts, just in case anyone running the game is watching.[or]You pretend to struggle as [NameDesc of M] fucks your [BreastDesc].'[in random order][end if]".
+		say "[if X < 6][one of]You squirm helplessly, completely pinned underneath [NameDesc of M][']s weight as [he of M] fucks your tits![or]You helplessly try to wiggle out from under [NameDesc of M] as [he of M] squeezes your [BreastDesc] around [his of M] shaft.[or][BigNameDesc of M] holds your wrists against the bed, completely shrugging off your attempts to resist [his of M] grip as [he of M] thrusts between your tits[in random order][otherwise if X < 13][one of]You halfheartedly squirm as [NameDesc of M] fucks your tits, looking away from [him of M] as [his of M] [DickDesc of M] bumps your chin.[or]You squirm weakly as [NameDesc of M] forces you to hold your [BreastDesc] together, forming a fuckable pocket for [his of M] [DickDesc of M].[or]You weakly squirm against [NameDesc of M][']s weight, trying not to look as [he of M] thrusts [his of M] [DickDesc of M] between your tits.[in random order][otherwise][one of]You squirm playfully, making sure to push your [BreastDesc] together with your arms as [NameDesc of M] thrusts between them.[or]You pretend to try and fight back as [NameDesc of M] fucks your breasts, just in case anyone running the game is watching.[or]You pretend to struggle as [NameDesc of M] fucks your [BreastDesc].'[in random order][end if]".
 
 To say ThreesomeSexSubmission of (M - a patron):
 	let X be the sex addiction of the player;
@@ -849,37 +855,37 @@ To say InstantMasturbationFlav of (O - an object) with (M - a patron) in (C - an
 	let B be a random patron penetrating breasts;
 	let X be the raw sex addiction of the player;
 	if the number of patrons penetrating a body part is 4:[gangbang]
-		say "You reach one arm between your legs, [if X < 6]giving up on your inhibitions and[otherwise if X < 12]obediently[otherwise]eagerly[end if] suckling [NameDesc of F]'s [DickDesc of F] as you [if O is vibe-wand]begin to stimulate yourself with the [printed name of O][otherwise]begin to touch yourself[end if]. You can't conceal what you're doing. You know all of them can tell you're masturbating, and [if X < 6]you desperately hope they don't know it's them you're masturbating to[otherwise if X < 12]you don't care whether it's obvious it's them you're masturbating to[otherwise]that's the best part[end if]. You love the feeling of taking [DickDesc of M]'s in every hole, the feeling of [DickDesc of M] in your mouth, the feeling of [LongDickdesc of M] between your [BreastDesc], and every moment turns you on even more. You love getting gangbanged, and [if X < 6]the moment you admit that to yourself[otherwise]the moment that thought enters your head[end if], you realize you're going to cum.";
+		say "You reach one arm between your legs, [if X < 6]giving up on your inhibitions and[otherwise if X < 12]obediently[otherwise]eagerly[end if] suckling [NameDesc of F]'s [DickDesc of F] as you [if O is vibe-wand]begin to stimulate yourself with the [printed name of O][otherwise]begin to touch yourself[end if]. You can't conceal what you're doing. You know all of them can tell you're masturbating, and [if X < 6]you desperately hope they don't know it's them you're masturbating to[otherwise if X < 12]you don't care whether it's obvious it's them you're masturbating to[otherwise]that's the best part[end if]. You love the feeling of taking [DickDesc of M]'s in every hole, the feeling of [DickDesc of M] in your mouth, the feeling of [LongDickdesc of M] between your [BreastDesc], and every moment turns you on even more. You love getting gangbanged, and [if X < 6]the moment you admit that to yourself[otherwise]the moment that thought enters your head[end if], you realise you're going to cum.";
 	otherwise if the number of patrons penetrating a body part is 3:[gangbang]
 		if F is not patron:[bust + holes]
-			say "You [if O is vibe-wand]switch on your [printed name of O][otherwise]reach between your legs[end if] and [if O is vibe-wand]hold the vibrating end against[otherwise]begin to rub[end if] your clit as the patrons use your body. You're on a bed, but no part of your body is actually touching it. Your legs are draped over [NameDesc of V]'s shoulders, your back is resting [NameDesc of A]'s broad chest, and your other arm, which might otherwise be gripping the sheets, is busy holding your [BreastDesc] together as [NameDesc of B] thrusts between them. No matter how you look at it, you are completely at the mercy of [if lady fetish is 1]three total strangers[otherwise]three big, strong men[end if], and it's that thought that hangs in your head as you realize you're already going to cum.";[TODO: could maybe be better, we will see.]
+			say "You [if O is vibe-wand]switch on your [printed name of O][otherwise]reach between your legs[end if] and [if O is vibe-wand]hold the vibrating end against[otherwise]begin to rub[end if] your clit as the patrons use your body. You're on a bed, but no part of your body is actually touching it. Your legs are draped over [NameDesc of V]'s shoulders, your back is resting [NameDesc of A]'s broad chest, and your other arm, which might otherwise be gripping the sheets, is busy holding your [BreastDesc] together as [NameDesc of B] thrusts between them. No matter how you look at it, you are completely at the mercy of [if lady fetish is 1]three total strangers[otherwise]three big, strong men[end if], and it's that thought that hangs in your head as you realise you're already going to cum.";[TODO: could maybe be better, we will see.]
 		otherwise if B is not patron:[triple p]
-			say "You eagerly suck [NameDesc of F]'s [DickDesc of F] as you [if O is vibe-wand]turn on your [printed name of O][otherwise]reach between your legs[end if], [if X < 6]no longer able to conceal[otherwise if X < 12]no longer bothering to conceal[otherwise]ready to show the patrons[end if] how turned on all this is making you. You pleasure yourself to the feeling of being completely surrounded by [if lady fetish is 1]strangers[otherwise]big, powerful men[end if], pleasing their hard [DickDesc of M]'s with every single one of your holes. Nothing more than a moment passes, and [if X < 6]a wave of shame passes through your body[otherwise if X < 12]a tiny bit of shame passes through you[otherwise]you feel your muscles tightening in anticipation[end if] as you realize you're already going to cum.";
+			say "You eagerly suck [NameDesc of F]'s [DickDesc of F] as you [if O is vibe-wand]turn on your [printed name of O][otherwise]reach between your legs[end if], [if X < 6]no longer able to conceal[otherwise if X < 12]no longer bothering to conceal[otherwise]ready to show the patrons[end if] how turned on all this is making you. You pleasure yourself to the feeling of being completely surrounded by [if lady fetish is 1]strangers[otherwise]big, powerful men[end if], pleasing their hard [DickDesc of M]'s with every single one of your holes. Nothing more than a moment passes, and [if X < 6]a wave of shame passes through your body[otherwise if X < 12]a tiny bit of shame passes through you[otherwise]you feel your muscles tightening in anticipation[end if] as you realise you're already going to cum.";
 		otherwise:[bust + face + hole]
-			say "You reach back, [if X < 6]cheeks burning with shame[otherwise]heart thumping with excitement[end if] as you [if O is insertable object]slide the [printed name of O] into your [vagina][otherwise if O is vibe-wand]turn on the [printed name of O] and rub the vibrating end around your [genitals][otherwise if the player is male]begin to rub your [ShortDesc of penis][otherwise if vagina is not actually occupied]slide your fingers into your [vagina][otherwise]begin to rub your clit[end if]. You pleasure yourself to the feeling of having three [if lady fetish is 1]complete strangers[otherwise if the player is female]big, strong men[otherwise]men, MEN[end if] treat you like a cheap piece of meat, and the more you think about it, the more your arousal begins to build. The [DickDesc of B] between your breasts, the [DickDesc of F] in your mouth, the [DickDesc of M] [if the player is male]punching your prostate[otherwise if A is patron]stretching out your [asshole][otherwise]fucking your [vagina][end if]... all of them could be intense on their own, but together they're completely overwhelming, and you feel your muscles tightening in anticipation as you realize you're going to cum.";
+			say "You reach back, [if X < 6]cheeks burning with shame[otherwise]heart thumping with excitement[end if] as you [if O is insertable object]slide the [printed name of O] into your [vagina][otherwise if O is vibe-wand]turn on the [printed name of O] and rub the vibrating end around your [genitals][otherwise if the player is male]begin to rub your [ShortDesc of penis][otherwise if vagina is not actually occupied]slide your fingers into your [vagina][otherwise]begin to rub your clit[end if]. You pleasure yourself to the feeling of having three [if lady fetish is 1]complete strangers[otherwise if the player is female]big, strong men[otherwise]men, MEN[end if] treat you like a cheap piece of meat, and the more you think about it, the more your arousal begins to build. The [DickDesc of B] between your breasts, the [DickDesc of F] in your mouth, the [DickDesc of M] [if the player is male]punching your prostate[otherwise if A is patron]stretching out your [asshole][otherwise]fucking your [vagina][end if]... all of them could be intense on their own, but together they're completely overwhelming, and you feel your muscles tightening in anticipation as you realise you're going to cum.";
 	otherwise if the number of patrons penetrating a body part is 2:
 		if B is patron and A is patron:[bust + ass]
-			say "You [if O is insertable object][otherwise if O is vibe-wand and the player is female]turn on the [printed name of O] and hold it against your clit[otherwise if O is vibe-wand]turn on the [printed name of O] and hold it against your [player-penis][otherwise]reach between your legs, touching yourself[end if] to the feeling of [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one [if the player is male]pounds your prostate[otherwise]stretches out your [asshole][end if], [if X < 6]thoroughly ashamed at how much it[otherwise if X < 12]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realize you're going to cum.";
+			say "You [if O is insertable object][otherwise if O is vibe-wand and the player is female]turn on the [printed name of O] and hold it against your clit[otherwise if O is vibe-wand]turn on the [printed name of O] and hold it against your [player-penis][otherwise]reach between your legs, touching yourself[end if] to the feeling of [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one [if the player is male]pounds your prostate[otherwise]stretches out your [asshole][end if], [if X < 6]thoroughly ashamed at how much it[otherwise if X < 12]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realise you're going to cum.";
 		otherwise if B is patron and V is patron:[bust + vagina]
-			say "You [if O is vibe-wand]turn on the [printed name of O] and hold it against your clit[otherwise]reach between your legs, touching yourself[end if] as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one uses your [vagina], [if X < 6]thoroughly ashamed at how much it[otherwise if X < 12]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realize you're going to cum.";
+			say "You [if O is vibe-wand]turn on the [printed name of O] and hold it against your clit[otherwise]reach between your legs, touching yourself[end if] as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one uses your [vagina], [if X < 6]thoroughly ashamed at how much it[otherwise if X < 12]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realise you're going to cum.";
 		otherwise if B is patron:[face + bust]
-			say "[if X < 6]You try to think about something else[otherwise if X < 12]You tell yourself you should be thinking of something else[otherwise]You don't think of anything else[end if] as you [if O is insertable object]slip the [printed name of O] into your [vagina][otherwise if O is vibe-wand and the player is O]turn on your [printed name of O] and hold the vibrating end against your [ShortDesc of penis][otherwise if the player is female]slip your fingers into your [vagina][otherwise]begin to stroke your [ShortDesc of penis][end if], [if X < 3]but with one [DickDesc of F] in your mouth, another between your [BreastDesc], you don't really have a choice[otherwise if X < 6], but with one [DickDesc of F] in your mouth, and another between your [BreastDesc], you can't help it[otherwise]passionately suckling the [DickDesc of F] in your mouth as the other fucks your [BreastDesc][end if]. You touch yourself to the feeling of being used as nothing but a fucktoy by [if lady fetish is 1]two total strangers[otherwise if the player is female]a pair of big strong men[otherwise if the bimbo of the player < 8]two other men[otherwise]two REAL men[end if], arousal building and building as you realize how soon you're going to cum.";
+			say "[if X < 6]You try to think about something else[otherwise if X < 12]You tell yourself you should be thinking of something else[otherwise]You don't think of anything else[end if] as you [if O is insertable object]slip the [printed name of O] into your [vagina][otherwise if O is vibe-wand and the player is O]turn on your [printed name of O] and hold the vibrating end against your [ShortDesc of penis][otherwise if the player is female]slip your fingers into your [vagina][otherwise]begin to stroke your [ShortDesc of penis][end if], [if X < 3]but with one [DickDesc of F] in your mouth, another between your [BreastDesc], you don't really have a choice[otherwise if X < 6], but with one [DickDesc of F] in your mouth, and another between your [BreastDesc], you can't help it[otherwise]passionately suckling the [DickDesc of F] in your mouth as the other fucks your [BreastDesc][end if]. You touch yourself to the feeling of being used as nothing but a fucktoy by [if lady fetish is 1]two total strangers[otherwise if the player is female]a pair of big strong men[otherwise if the bimbo of the player < 8]two other men[otherwise]two REAL men[end if], arousal building and building as you realise how soon you're going to cum.";
 		otherwise if F is patron:[spitroast]
 			if A is patron:[anal spitroast]
-				say "You [if O is vibe-wand]switch on the [printed name of O] and hold it against your [genitals][otherwise if O is insertable object]reach between your legs and slide the [printed name of O] into your [vagina][otherwise if the player is female and vagina is not actually occupied]reach between your legs and slip your fingers into your [vagina][otherwise if the player is female]reach between your legs and begin to rub your clit[otherwise]reach between your legs and begin to stroke your [ShortDesc of penis][end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of A] with mounting enthusiasm. You [if X < 6]feel a wave of shame[otherwise if X < 12]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realize how soon this is going to make you cum.";
+				say "You [if O is vibe-wand]switch on the [printed name of O] and hold it against your [genitals][otherwise if O is insertable object]reach between your legs and slide the [printed name of O] into your [vagina][otherwise if the player is female and vagina is not actually occupied]reach between your legs and slip your fingers into your [vagina][otherwise if the player is female]reach between your legs and begin to rub your clit[otherwise]reach between your legs and begin to stroke your [ShortDesc of penis][end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of A] with mounting enthusiasm. You [if X < 6]feel a wave of shame[otherwise if X < 12]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realise how soon this is going to make you cum.";
 			otherwise:[vaginal spitroast]
-				say "You [if O is vibe-wand]switch on the [printed name of O] and hold it against your clit[otherwise]reach between your legs and begin to rub your clit[end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of V] with mounting enthusiasm. You [if X < 6]feel a wave of shame[otherwise if X < 12]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realize how soon this is going to make you cum.";
+				say "You [if O is vibe-wand]switch on the [printed name of O] and hold it against your clit[otherwise]reach between your legs and begin to rub your clit[end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of V] with mounting enthusiasm. You [if X < 6]feel a wave of shame[otherwise if X < 12]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realise how soon this is going to make you cum.";
 		otherwise:[double p]
-			say "You [if O is vibe-wand]turn on your [printed name of O][otherwise]reach between your legs[end if], [if X < 6]accidentally making[otherwise if X < 12]making[otherwise]holding[end if] eye contact with [NameDesc of V] as you [if O is vibe-wand]hold it against your clit[otherwise]begin to touch your clit[end if]. [big he of V] fucks you even harder, forcing you to emit [if face is not actually occupied]breathless[otherwise]muffled[end if] moans as [NameDesc of A] notices what's happening and follows suit. They fuck you in an off rhythm, one [DickDesc of M] in, one [DickDesc of M] out, in, out, in out, and as the pleasure builds, you realize how soon this is going to make you cum.";
+			say "You [if O is vibe-wand]turn on your [printed name of O][otherwise]reach between your legs[end if], [if X < 6]accidentally making[otherwise if X < 12]making[otherwise]holding[end if] eye contact with [NameDesc of V] as you [if O is vibe-wand]hold it against your clit[otherwise]begin to touch your clit[end if]. [big he of V] fucks you even harder, forcing you to emit [if face is not actually occupied]breathless[otherwise]muffled[end if] moans as [NameDesc of A] notices what's happening and follows suit. They fuck you in an off rhythm, one [DickDesc of M] in, one [DickDesc of M] out, in, out, in out, and as the pleasure builds, you realise how soon this is going to make you cum.";
 	otherwise:
 		if F is patron:[blowjob]
-			say "You [if X < 12]obediently[otherwise]passionately[end if] suck [NameDesc of F]'s [DickDesc of F], [if X < 6]trying not to make[otherwise if X < 12]accidentally making[otherwise]making[end if] eye contact with [him of F] [if O is insertable object]slide the [printed name of O] into your [vagina][otherwise if O is vibe-wand and the player is male]rub the vibrating head of your [printed name of O] against your hardening [player-penis][otherwise if O is vibe-wand]switch on your [printed name of O] and hold it against your clit[otherwise if vagina is not actually occupied]slide your fingers into your [vagina][otherwise if the player is male]begin to rub your [ShortDesc of penis][otherwise]begin to tenderly rub your clit[end if]. Your arousal builds as you think about how big and hard [his of F] [DickDesc of F] feels in your mouth, and you realize[if X < 6] with shame[end if] that it's actually about to make you cum.";
+			say "You [if X < 12]obediently[otherwise]passionately[end if] suck [NameDesc of F]'s [DickDesc of F], [if X < 6]trying not to make[otherwise if X < 12]accidentally making[otherwise]making[end if] eye contact with [him of F] [if O is insertable object]slide the [printed name of O] into your [vagina][otherwise if O is vibe-wand and the player is male]rub the vibrating head of your [printed name of O] against your hardening [player-penis][otherwise if O is vibe-wand]switch on your [printed name of O] and hold it against your clit[otherwise if vagina is not actually occupied]slide your fingers into your [vagina][otherwise if the player is male]begin to rub your [ShortDesc of penis][otherwise]begin to tenderly rub your clit[end if]. Your arousal builds as you think about how big and hard [his of F] [DickDesc of F] feels in your mouth, and you realise[if X < 6] with shame[end if] that it's actually about to make you cum.";
 		otherwise if B is patron:[boobjob]
-			say "You [if O is insertable object]slip your [printed name of O] into your [vagina][otherwise if O is vibe-wand]switch on your [printed name of O][otherwise if the player is male]grab your [ShortDesc of penis][otherwise]slip a finger into your [vagina][end if], eyes drawn to [NameDesc of B]'s dick as you begin to [if O is insertable object]fuck yourself[otherwise if O is vibe-wand]grind it against your [genitals][otherwise]masturbate[end if]. You feel yourself getting more and more turned on as you watch [his of B] shiny cockhead thrusting between your [BreastDesc], [if X < 6]and before you even have time to feel ashamed[otherwise if X < 12]and before you have time to think about anything else[otherwise]and before you have time to really enjoy yourself[end if], you realize you're going to cum.";
+			say "You [if O is insertable object]slip your [printed name of O] into your [vagina][otherwise if O is vibe-wand]switch on your [printed name of O][otherwise if the player is male]grab your [ShortDesc of penis][otherwise]slip a finger into your [vagina][end if], eyes drawn to [NameDesc of B]'s dick as you begin to [if O is insertable object]fuck yourself[otherwise if O is vibe-wand]grind it against your [genitals][otherwise]masturbate[end if]. You feel yourself getting more and more turned on as you watch [his of B] shiny cockhead thrusting between your [BreastDesc], [if X < 6]and before you even have time to feel ashamed[otherwise if X < 12]and before you have time to think about anything else[otherwise]and before you have time to really enjoy yourself[end if], you realise you're going to cum.";
 		otherwise if the player is male:[anal]
-			say "You [if O is vibe-wand]switch on your [printed name of O] and hold it under the head of your [player-penis][otherwise]wrap your hand around your tiny 3 inch penis and begin to masturbate[end if]. Little sparks of ecstasy bolt up your shaft as [NameDesc of M]'s [DickDesc of M] hits your prostate, pleasure building and building as you [if X < 6]try, and fail, not to focus on[otherwise]focus[end if] how good it feels to get fucked in the ass by [if lady fetish is 1]a complete stranger[otherwise if the bimbo of the player < 8]another man[otherwise]a REAL man[end if]. You [if X < 6]feel a wave of shame[otherwise if X < 12]tell yourself to be ashamed[otherwise]feel a wave of anticipation[end if] as you realize you're about to cum.";
+			say "You [if O is vibe-wand]switch on your [printed name of O] and hold it under the head of your [player-penis][otherwise]wrap your hand around your tiny 3 inch penis and begin to masturbate[end if]. Little sparks of ecstasy bolt up your shaft as [NameDesc of M][']s [DickDesc of M] hits your prostate, pleasure building and building as you [if X < 6]try, and fail, not to focus on[otherwise]focus[end if] how good it feels to get fucked in the ass by [if lady fetish is 1]a complete stranger[otherwise if the bimbo of the player < 8]another man[otherwise]a REAL man[end if]. You [if X < 6]feel a wave of shame[otherwise if X < 12]tell yourself to be ashamed[otherwise]feel a wave of anticipation[end if] as you realise you're about to cum.";
 		otherwise:[vaginal or anal]
-			say "You [if O is insertable object]push the [printed name of O] into your [vagina] and eagerly begin to fuck yourself[otherwise if O is vibe-wand]turn on your [printed name of O] and hold the vibrating end against your clit[otherwise if vagina is not actually occupied]reach between your legs and eagerly push your fingers into your [vagina][otherwise]reach between your legs and eagerly to play with your clit[end if]. All you can think about is how good [NameDesc of M] feels inside you, and you find yourself submitting to [him of M] completely as the pleasure builds and builds. It only takes a moment for you realize you're about to cum.".
+			say "You [if O is insertable object]push the [printed name of O] into your [vagina] and eagerly begin to fuck yourself[otherwise if O is vibe-wand]turn on your [printed name of O] and hold the vibrating end against your clit[otherwise if vagina is not actually occupied]reach between your legs and eagerly push your fingers into your [vagina][otherwise]reach between your legs and eagerly to play with your clit[end if]. All you can think about is how good [NameDesc of M] feels inside you, and you find yourself submitting to [him of M] completely as the pleasure builds and builds. It only takes a moment for you realise you're about to cum.".
 
 To say InstantAnalMasturbationFlav of (O - an object) with (M - a patron) in (C - an object):
 	let V be a random patron penetrating vagina;
@@ -888,21 +894,21 @@ To say InstantAnalMasturbationFlav of (O - an object) with (M - a patron) in (C 
 	let B be a random patron penetrating breasts;
 	let X be the anal sex addiction of the player;
 	if the number of patrons penetrating a body part is 3:[gangbang]
-		say "You reach back, [if X < 4]cheeks burning with shame[otherwise]heart thumping with excitement[end if] as you [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]ease your fingers into your [asshole][end if]. You fuck yourself to the feeling of having three [if lady fetish is 1]complete strangers[otherwise]big, strong men[end if] treat you like a cheap piece of meat, and the more you think about it, the more your arousal begins to build. The [DickDesc of B] between your breasts, the [DickDesc of F] in your mouth, the [DickDesc of V] in your [vagina]... all of them could be intense on their own, but together they're completely overwhelming, and you feel your muscles tightening in anticipation as you realize you're going to cum.";
+		say "You reach back, [if X < 4]cheeks burning with shame[otherwise]heart thumping with excitement[end if] as you [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]ease your fingers into your [asshole][end if]. You fuck yourself to the feeling of having three [if lady fetish is 1]complete strangers[otherwise]big, strong men[end if] treat you like a cheap piece of meat, and the more you think about it, the more your arousal begins to build. The [DickDesc of B] between your breasts, the [DickDesc of F] in your mouth, the [DickDesc of V] in your [vagina]... all of them could be intense on their own, but together they're completely overwhelming, and you feel your muscles tightening in anticipation as you realise you're going to cum.";
 	otherwise if the number of patrons penetrating a body part is 2:
 		if B is patron and V is patron:[bust + vagina]
-			say "You reach back, easing [if O is insertable object]the [printed name of O] into your [asshole][otherwise]your fingers into your [asshole][end if] as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one uses your [vagina], [if X < 3]thoroughly ashamed at how much it[otherwise if X < 6]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realize you're going to cum.";
+			say "You reach back, easing [if O is insertable object]the [printed name of O] into your [asshole][otherwise]your fingers into your [asshole][end if] as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc]. You find yourself thinking about your situation, completely pinned down under a [if lady fetish is 1]total stranger[otherwise]big, strong man[end if] as another one uses your [vagina], [if X < 3]thoroughly ashamed at how much it[otherwise if X < 6]surprised at how much it[otherwise]and how much it totally[end if] turns you on. You [if X < 6]close your eyes in shame[otherwise]close your eyes, embracing the inevitable[end if] as you realise you're going to cum.";
 		otherwise if B is patron:[face + bust]
-			say "[if X < 3]You try to think about something else[otherwise if X < 6]You tell yourself you should be thinking of something else[otherwise]You don't think of anything else[end if] as you slip [if O is insertable object]the [printed name of O] into your [asshole][otherwise]your fingers into your [asshole][end if], [if X < 3]but with one [DickDesc of F] in your mouth, another between your [BreastDesc], you don't really have a choice[otherwise if X < 6], but with one [DickDesc of F] in your mouth, and another between your [BreastDesc], you can't help it[otherwise]passionately suckling the [DickDesc of F] in your mouth as the other fucks your [BreastDesc][end if]. You touch yourself to the feeling of being used as nothing but a fucktoy by [if lady fetish is 1]two total strangers[otherwise if the player is female]a pair of big strong men[otherwise if the bimbo of the player < 8]two other men[otherwise]two REAL men[end if], arousal building and building as you realize how soon you're going to cum.";
+			say "[if X < 3]You try to think about something else[otherwise if X < 6]You tell yourself you should be thinking of something else[otherwise]You don't think of anything else[end if] as you slip [if O is insertable object]the [printed name of O] into your [asshole][otherwise]your fingers into your [asshole][end if], [if X < 3]but with one [DickDesc of F] in your mouth, another between your [BreastDesc], you don't really have a choice[otherwise if X < 6], but with one [DickDesc of F] in your mouth, and another between your [BreastDesc], you can't help it[otherwise]passionately suckling the [DickDesc of F] in your mouth as the other fucks your [BreastDesc][end if]. You touch yourself to the feeling of being used as nothing but a fucktoy by [if lady fetish is 1]two total strangers[otherwise if the player is female]a pair of big strong men[otherwise if the bimbo of the player < 8]two other men[otherwise]two REAL men[end if], arousal building and building as you realise how soon you're going to cum.";
 		otherwise:[face + vagina]
-			say "You [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]push a finger into your [asshole][end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of V] with mounting enthusiasm. You [if X < 3]feel a wave of shame[otherwise if X < 6]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realize how soon this is going to make you cum.";
+			say "You [if O is insertable object]ease the [printed name of O] into your [asshole][otherwise]push a finger into your [asshole][end if], making eye contact with [NameDesc of F] as you suck [his of F] [DickDesc of F]. [big he of F] gives you a knowing look as you play with yourself, and as your arousal builds, you find yourself bobbing your head and pushing back against [NameDesc of V] with mounting enthusiasm. You [if X < 3]feel a wave of shame[otherwise if X < 6]try to feel ashamed[otherwise]feel your muscles tighten in anticipation[end if] as you realise how soon this is going to make you cum.";
 	otherwise:
 		if F is patron:[blowjob]
-			say "You [if X < 6]obediently [otherwise]passionately [end if] suck [NameDesc of F]'s [DickDesc of F], [if X < 3]trying not to make[otherwise if X < 6]accidentally making[otherwise]making[end if] eye contact with [him of F] [if O is insertable object]begin to fuck your [asshole] with the [printed name of O][otherwise]begin to finger your asshole[end if]. Your arousal builds as you think about how big and hard [his of F] [DickDesc of F] feels in your mouth, and you realize[if X < 4] with shame[end if] that it's actually about to make you cum.";
+			say "You [if X < 6]obediently [otherwise]passionately [end if] suck [NameDesc of F]'s [DickDesc of F], [if X < 3]trying not to make[otherwise if X < 6]accidentally making[otherwise]making[end if] eye contact with [him of F] [if O is insertable object]begin to fuck your [asshole] with the [printed name of O][otherwise]begin to finger your asshole[end if]. Your arousal builds as you think about how big and hard [his of F] [DickDesc of F] feels in your mouth, and you realise[if X < 4] with shame[end if] that it's actually about to make you cum.";
 		otherwise if B is patron:[boobjob]
-			say "You [if O is insertable object]slip your [printed name of O] into your [asshole][otherwise]slip a finger into your [asshole][end if], eyes drawn to [NameDesc of B]'s dick as you begin to [if O is insertable object]fuck yourself[otherwise]masturbate[end if]. You feel yourself getting more and more turned on as you watch [his of B] shiny cockhead thrusting between your [BreastDesc], [if X < 3]and before you even have time to feel ashamed[otherwise if X < 6]and before you have time to think about anything else[otherwise]and before you have time to really enjoy yourself[end if], you realize you're going to cum.";
+			say "You [if O is insertable object]slip your [printed name of O] into your [asshole][otherwise]slip a finger into your [asshole][end if], eyes drawn to [NameDesc of B]'s dick as you begin to [if O is insertable object]fuck yourself[otherwise]masturbate[end if]. You feel yourself getting more and more turned on as you watch [his of B] shiny cockhead thrusting between your [BreastDesc], [if X < 3]and before you even have time to feel ashamed[otherwise if X < 6]and before you have time to think about anything else[otherwise]and before you have time to really enjoy yourself[end if], you realise you're going to cum.";
 		otherwise:[vaginal]
-			say "You reach back[if O is insertable object], pushing the [printed name of O] into your [asshole] and eagerly beginning to fuck yourself[otherwise]and eagerly push your fingers into your [asshole][end if]. All you can think about is how good [NameDesc of V] feels inside you, and you find yourself submitting to [him of V] completely as the pleasure builds and builds. It only takes a moment for you realize you're about to cum.".
+			say "You reach back[if O is insertable object], pushing the [printed name of O] into your [asshole] and eagerly beginning to fuck yourself[otherwise]and eagerly push your fingers into your [asshole][end if]. All you can think about is how good [NameDesc of V] feels inside you, and you find yourself submitting to [him of V] completely as the pleasure builds and builds. It only takes a moment for you realise you're about to cum.".
 
 To say StartMasturbationFlav of (O - an object) with (M - a patron) in (C - an object):
 	let V be a random patron penetrating vagina;
@@ -918,7 +924,7 @@ To say StartMasturbationFlav of (O - an object) with (M - a patron) in (C - an o
 		otherwise if the number of patrons penetrating a body part is 2:
 			say "[if B is not patron]the patrons spitroast you[otherwise if A is not patron]as the patrons use your mouth and tits[otherwise]the patrons use your tits and [asshole].";
 		otherwise:
-			say "[if F is patron]you eagerly suck [NameDesc of M]'s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise][NameDesc of A] fucks your [asshole][end if].";
+			say "[if F is patron]you eagerly suck [NameDesc of M][']s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise][NameDesc of A] fucks your [asshole][end if].";
 	otherwise if auto < 2:
 		if O is insertable object:
 			say "You ease the [ShortDesc of O] into your [vagina], and begin to fuck yourself as [run paragraph on]";
@@ -933,7 +939,7 @@ To say StartMasturbationFlav of (O - an object) with (M - a patron) in (C - an o
 		otherwise if the number of patrons penetrating a body part is 2:
 			say "[if B is patron and F is patron]the patrons use your mouth and tits[otherwise if B is patron and V is patron]the patrons use your [vagina] and your tits[otherwise if B is patron]the patrons use your [asshole] and your tits[otherwise if F is patron and V is patron]the patrons use your mouth and your [vagina][otherwise if F is patron]the patrons use your mouth and your [asshole][otherwise]the patrons double penetrate your fuckholes";
 		otherwise:
-			say "[if F is patron]you eagerly suck [NameDesc of M]'s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise if V is patron][NameDesc of V] fucks your [vagina][otherwise][NameDesc of A] fucks your [asshole][end if].".
+			say "[if F is patron]you eagerly suck [NameDesc of M][']s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise if V is patron][NameDesc of V] fucks your [vagina][otherwise][NameDesc of A] fucks your [asshole][end if].".
 
 To say StartAnalMasturbationFlav of (O - an object) with (M - a patron) in (C - an object):
 	let V be a random patron penetrating vagina;
@@ -949,7 +955,7 @@ To say StartAnalMasturbationFlav of (O - an object) with (M - a patron) in (C - 
 		otherwise if the number of patrons penetrating a body part is 2:
 			say "[if B is patron and F is patron]the patrons use your tits and your mouth[otherwise if B is patron]as the patrons use your [vagina] and your tits[otherwise if F is patron]the patrons use your mouth and your [vagina][end if].";
 		otherwise:
-			say "[if F is patron]you eagerly suck [NameDesc of M]'s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise][NameDesc of V] fucks your [vagina][end if].".
+			say "[if F is patron]you eagerly suck [NameDesc of M][']s [Dickdesc of M][otherwise if B is patron][NameDesc of B] fucks your [BreastDesc][otherwise][NameDesc of V] fucks your [vagina][end if].".
 
 To say ClimaxMasturbationFlav of (O - an object) with (M - a patron) in (C - an object):[note, this appears even when the player has an instant orgasm]
 	let F be a random patron penetrating face;
@@ -1010,7 +1016,7 @@ To say OngoingMasturbationFlav of (O - an object) with (M - a patron) in (C - an
 			say "[if O is vibe-wand]You hold the [printed name of O] against your clit[otherwise]You eagerly rub your clit[end if] as [one of]the patrons make use of your body[or]the patrons fuck your [vagina], mouth, [asshole], and even your tits[or]you are gangbanged by four patrons at once[or]as four patrons use your body at the same time[then at random].";
 	otherwise:
 		if F is patron:
-			say "[one of]You [if the oral sex addiction of the player > 4]eagerly [end if]suck [NameDesc of M]'s [DickDesc of M] as you [if O is insertable object]fuck yourself with the [printed name of O][otherwise if O is vibe-wand]stimulate yourself with the [printed name of O][otherwise if the player is male]play with your [ShortDesc of penis][otherwise]play with your clit[end if].[or]You [if O is insertable object]fuck[otherwise if O is vibe-wand]stimulate[otherwise]touch[end if] yourself as you submissively slurp [NameDesc of M]'s [DickDesc of M].[or]You focus on the feeling of [NameDesc of F]'s [DickDesc of F] in your mouth as you [if O is insertable object]plunge the [printed name of O] in and out of your [vagina][otherwise if O is vibe-wand]eagerly stimulate yourself with the [printed name of O][otherwise if the player is male]eagerly stroke your hard [player-penis][otherwise]eagerly diddle your clit[end if].[then at random]";
+			say "[one of]You [if the oral sex addiction of the player > 4]eagerly [end if]suck [NameDesc of M][']s [DickDesc of M] as you [if O is insertable object]fuck yourself with the [printed name of O][otherwise if O is vibe-wand]stimulate yourself with the [printed name of O][otherwise if the player is male]play with your [ShortDesc of penis][otherwise]play with your clit[end if].[or]You [if O is insertable object]fuck[otherwise if O is vibe-wand]stimulate[otherwise]touch[end if] yourself as you submissively slurp [NameDesc of M][']s [DickDesc of M].[or]You focus on the feeling of [NameDesc of F]'s [DickDesc of F] in your mouth as you [if O is insertable object]plunge the [printed name of O] in and out of your [vagina][otherwise if O is vibe-wand]eagerly stimulate yourself with the [printed name of O][otherwise if the player is male]eagerly stroke your hard [player-penis][otherwise]eagerly diddle your clit[end if].[then at random]";
 		otherwise if B is patron:
 			say "[one of]You [if O is vibe-wand]stimulate yourself with the [printed name of O][otherwise]play with yourself[end if] as [NameDesc of M] thrusts between your [BreastDesc].[or]You hold your [BreastDesc] together for [NameDesc of M], focusing on [his of B] thrusting as you [if O is insertable object]fuck yourself with the [printed name of O][otherwise if O is vibe-wand]tease yourself with the vibrating end of the [printed name of O][otherwise if the player is male]stroke your [ShortDesc of penis][otherwise]tease your delicate clit[end if].[or]You submit as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc], [if the titfuck addiction of the player < 5]cheeks burning with shame[otherwise]panting with excitement[end if] as you [if O is insertable object]push the [printed name of O] in and out of your [vagina][otherwise if O is vibe-wand]use the [printed name of O] to stimulate your genitals[otherwise if the player is female and vagina is not actually occupied]plunge your fingers in and out of your [vagina][otherwise]stroke your rock hard [player-penis][end if].[then at random]";
 		otherwise if A is patron:
@@ -1033,7 +1039,7 @@ To say OngoingAnalMasturbationFlav of (O - an object) with (M - a patron) in (C 
 			say "[one of]You [if O is insertable object]fuck yourself[otherwise]finger yourself[end if] to the feeling of the [LongDickDesc of B] between your breasts and the [DickDesc of V] in your [vagina].[or]You [if O is insertable object]fuck yourself with the [printed name of O][otherwise]finger your [asshole][end if] as you allow yourself to be used by two patrons at once.[or]You [if O is insertable object]fuck yourself with deep slow, thrusts[otherwise]finger yourself with deep, slow movements[end if], moaning as you enjoy the feeling of [NameDesc of B]'s [DickDesc of B] between your breasts and [NameDesc of V]'s [DickDesc of V] in your [vagina].[then at random]";
 	otherwise:
 		if F is patron:
-			say "[one of]You [if the oral sex addiction of the player > 4]eagerly [end if]suck [NameDesc of M]'s [DickDesc of M] as you fuck your [asshole] with [if O is insertable object]the [printed name of O][otherwise]your fingers[end if].[or][if O is insertable object]You fuck yourself with slow, deep thrusts, driving the [printed name of O] against[otherwise]You use your fingers to stroke[end if] your [if the player is male]prostate[otherwise]inner walls[end if], as you submissively slurp [NameDesc of M]'s [DickDesc of M].[or]You focus on the feeling of [NameDesc of F]'s [DickDesc of F] in your mouth as you [if O is insertable object]fuck your [asshole] with the [printed name of O][otherwise]eagerly finger your [asshole][end if].[then at random]";
+			say "[one of]You [if the oral sex addiction of the player > 4]eagerly [end if]suck [NameDesc of M][']s [DickDesc of M] as you fuck your [asshole] with [if O is insertable object]the [printed name of O][otherwise]your fingers[end if].[or][if O is insertable object]You fuck yourself with slow, deep thrusts, driving the [printed name of O] against[otherwise]You use your fingers to stroke[end if] your [if the player is male]prostate[otherwise]inner walls[end if], as you submissively slurp [NameDesc of M][']s [DickDesc of M].[or]You focus on the feeling of [NameDesc of F]'s [DickDesc of F] in your mouth as you [if O is insertable object]fuck your [asshole] with the [printed name of O][otherwise]eagerly finger your [asshole][end if].[then at random]";
 		otherwise if B is patron:
 			say "[one of]You fuck your [asshole] with [if O is insertable object]the [printed name of O][otherwise]your fingers[end if] as [NameDesc of M] thrusts between your [BreastDesc].[or]You hold your [BreastDesc] together for [NameDesc of M], focusing on [his of B] thrusting as you [if O is insertable object]fuck yourself with the [printed name of O][otherwise]finger your [asshole][end if][or]You submit as [NameDesc of B]'s [DickDesc of B] thrusts between your [BreastDesc], [if the titfuck addiction of the player < 5]cheeks burning with shame[otherwise]panting with excitement[end if] as you [if O is insertable object]push the [printed name of O] in and out of your[otherwise]move your fingers in and out of your[end if] [asshole].[then at random]";
 		otherwise:
@@ -1044,19 +1050,34 @@ To store (M - a patron) after tricks:
 	now M is unconcerned;
 	now the boredom of M is 999.
 
+To say PissedOffFlav of (M - a patron):
+	say "[speech style of M]'[one of]I'm not paying you after that.'[or]If you want to get paid, you'll behave yourself next time.'[or]I'm not going to pay you. In fact I might complain.'[or]I'll be back, and next time be obedient and you'll actually earn a payment.'[in random order][roman type][line break]".
+
+To say PatronPaymentFlav of (M - an inexperienced patron):
+	say "[speech style of M]'[one of]Thanks for the great time!'[or]That was fun, I'll be back again!'[or]You blew my mind, babe.'[or]That was definitely worth the money.'[or]I think that's the hardest I've ever orgasmed, thank you so much.'[or]Here's your payment, as promised!'[in random order][roman type][line break]";
+
+To say PatronPaymentFlav of (M - a gross patron):
+	say "[speech style of M]'[one of]Thanks.'[or]That was good.'[or]Expensive, but worth it.'[or]I'll be back again.'[in random order][roman type][line break]";
+
+To say PatronPaymentFlav of (M - experienced patron):
+	say "[speech style of M]'[one of]Until next time.'[or]Your performance was acceptable.'[or]You earned it.'[or]Buy yourself something nice.'[in random order][roman type][line break]";
+
+To say PatronPaymentFlav of (M - dickhead patron):
+	say "[speech style of M]'[one of]Keep the change, you filthy animal.'[or]To be honest I'm impressed that you've survived.'[or]You don't even deserve this much.'[or]Until next time, whore.'[or]Try harder next time.'[in random order][roman type][line break]";
+
 To compute payment of (M - a patron):
 	if woman-barbara is in the location of the player:[The scene finishes in a different way.]
 		store M after tricks;
 		now M is not interested;
 	otherwise:
 		if M is pissed off:
-			say "[speech style of M]'[one of]I'm not paying you after that.'[or]If you want to get paid, you'll behave yourself next time.'[or]I'm not going to pay you. In fact I might complain.'[or]I'll be back, and next time be obedient and you'll actually earn a payment.'[in random order][roman type][line break]";
+			say PissedOffFlav of M;
 			decrease the employee-record of senior robobellboy by 1;
 		otherwise:
 			if free ride tattoo is not worn or a random number between 1 and 2 is 1:
 				loot M;
 				if dropped-item is a thing, say "[BigNameDesc of M] [one of]drops[or]tosses[or]places[purely at random] a[if dropped-item is emerald plentiful accessory]n[end if] [dropped-item] [one of]at your feet[or]on the ground in front of you[or]onto the bed[purely at random].";
-			if diaper quest is 0, say "[speech style of M]'[if M is inexperienced patron][one of]Thanks for the great time!'[or]That was fun, I'll be back again!'[or]You blew my mind, babe.'[or]That was definitely worth the money.'[or]I think that's the hardest I've ever orgasmed, thank you so much.'[or]Here's your payment, as promised!'[in random order][otherwise if M is gross patron][one of]Thanks.'[or]That was good.'[or]Expensive, but worth it.'[or]I'll be back again.'[in random order][otherwise if M is experienced patron][one of]Until next time.'[or]Your performance was acceptable.'[or]You earned it.'[or]Buy yourself something nice.'[in random order][otherwise][one of]Keep the change, you filthy animal.'[or]To be honest I'm impressed that you've survived.'[or]You don't even deserve this much.'[or]Until next time, whore.'[or]Try harder next time.'[in random order][end if][roman type][line break]";
+			if diaper quest is 0, say PatronPaymentFlav of M;
 			let C be a random worn wearthing;
 			if the player is hotel employed:
 				repeat with N running from 1 to 10: [We give the RNG several chances to not look at something boring like a ring.]
@@ -1091,7 +1112,7 @@ To compute SelectionWaiting of (M - a patron):
 		now the wanking-target of M is a random available for rubbing body part;
 		say "[BigNameDesc of M] walks up to you and begins [if M is inexperienced patron]furiously[otherwise]slowly[end if] [if the bimbo of the player < 8]masturbating[otherwise]wanking[end if]. [big he of M] pushes [his of M] [DickDesc of M] up against your [wanking version of the wanking-target of M], [if the wanking-target of M is arms or the wanking-target of M is belly]forcing you to grip it and begin to stroke [his of M] length[otherwise]wiping [his of M] pre-cum on your skin and making sure you can feel [his of M] every motion[end if].";
 	otherwise if the sex-length of M > 0:
-		if the wanking-target of M is arms or the wanking-target of M is belly, say "You continue to [if the player is not a pervert or the reaction of the player is 0]reluctantly [end if][one of]stroke[or]pump[or]wank[or]jerk off[at random] [NameDesc of M]'s [DickDesc of M] with your [wanking version of the wanking-target of M].";
+		if the wanking-target of M is arms or the wanking-target of M is belly, say "You continue to [if the player is not a pervert or the reaction of the player is 0]reluctantly [end if][one of]stroke[or]pump[or]wank[or]jerk off[at random] [NameDesc of M][']s [DickDesc of M] with your [wanking version of the wanking-target of M].";
 		otherwise say "[BigNameDesc of M] continues to [if the player is not a pervert]masturbate[otherwise]get [himself of M] off[end if], rubbing the head of [his of M] [DickDesc of M] up against your [wanking version of the wanking-target of M].";
 		decrease the sex-length of M by a random number between 0 and 1;
 	otherwise:
@@ -1241,7 +1262,7 @@ To decide if (M - a patron) is losing wrapper in (F - a fuckhole):
 
 To say CondomFailFlav of (M - a patron) in (F - a fuckhole):
 	let S be the semen addiction of the player;
-	say "[one of][BigNameDesc of M] growls, tightening [his of M] grip as [he of M] fills your [variable F] with [semen]. Wait, what?! Your eyes widen as [he of M] pulls out, the condom bunched up around the base of [his of M] bare [DickDesc of M].[or][BigNameDesc of M] grunts and tightens [his of M] grip. You immediately realize the condom broke, [if S < 8]whimper[otherwise if S < 13]gasp[otherwise]coo[end if]ing as [semen] flows directly into your [variable F].[or][BigNameDesc of M] groans with pleasure, tightening [his of M] grip as [his of M] [DickDesc of M] begins to throb. You feel a flash of warmth near the tip of the condom, which is soon followed by a wet feeling starting just below it. The condom must have broken![or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] fills the condom with [his of M] load. Something snags as [he of M] pulls out, and you [if S < 8]wince[otherwise if S < 12]gasp[otherwise]chuckle[end if] as you feel [his of M] load dribble out into your unprotected [variable F].[at random]";
+	say "[one of][BigNameDesc of M] growls, tightening [his of M] grip as [he of M] fills your [variable F] with [semen]. Wait, what?! Your eyes widen as [he of M] pulls out, the condom bunched up around the base of [his of M] bare [DickDesc of M].[or][BigNameDesc of M] grunts and tightens [his of M] grip. You immediately realise the condom broke, [if S < 8]whimper[otherwise if S < 13]gasp[otherwise]coo[end if]ing as [semen] flows directly into your [variable F].[or][BigNameDesc of M] groans with pleasure, tightening [his of M] grip as [his of M] [DickDesc of M] begins to throb. You feel a flash of warmth near the tip of the condom, which is soon followed by a wet feeling starting just below it. The condom must have broken![or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] fills the condom with [his of M] load. Something snags as [he of M] pulls out, and you [if S < 8]wince[otherwise if S < 12]gasp[otherwise]giggle[end if] as you feel [his of M] load dribble out into your unprotected [variable F].[at random]".
 
 To say CondomPieFlav of (M - a patron) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] growls, tightening [his of M] grip as the condom fills with warmth. [big he of M] continues fucking you, making sure that [his of M] balls have been well and truly emptied of every last drop of [semen]. Finally, you feel [his of M] hands leave your hips and [he of M] pulls out.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [his of M] balls into [his of M] condom. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M].[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as you feel a flash of warmth near [his of M] tip, spreading quickly into the rest of the condom as [he of M] releases your hips and pulls out.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as you feel a flash of warmth near [his of M] tip, spreading quickly into the rest of the condom as [his of M] thrusting comes to a close. [big his of M] hands reluctantly leave your hips as [he of M] pulls out.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as you feel a surge of warmth near [his of M] tip, spreading quickly into the rest of the condom as you milk [his of M] [DickDesc of M] down to the last drop. [big his of M] hands reluctantly leave your hips as [he of M] pulls out.[end if][or][BigNameDesc of M] grunts and tightens [his of M] grip. You [if the semen addiction of the player < 8]whimper[otherwise if the semen addiction of the player < 13]sigh quietly[otherwise]coo[end if] as the condom fills with [his of M] [semen], thin enough that you can still feel it flowing slowly inside it as [he of M] pulls out.[at random]".
@@ -1294,7 +1315,7 @@ To say BreastsPenetrationFlav of (M - an experienced patron):
 	say "[BigNameDesc of M] forces you to lie on the bed and holds you still there with [his of M] two strong hands. [big he of M] carefully takes aim with [his of M] [DickDesc of M] and then thrusts it up between your [ShortDesc of breasts].[line break][speech style of M]'Don't make me do all the work now, or this will take a long time.'[roman type][line break]".
 
 To say BreastsPenetrationFlav of (M - an inexperienced patron):
-	say "[BigNameDesc of M]'s [DickDesc of M] throbs with anticipation! [big he of M] leaps onto the bed and delicately places [his of M] [DickDesc of M] in between your [ShortDesc of breasts].[line break][speech style of M]'[one of]So, what now? I thrust while you squeeze them around my shaft?'[or]I'll just copy what they do in porn, and I'm sure it'll feel great, right?'[stopping][roman type][line break]".
+	say "[BigNameDesc of M][']s [DickDesc of M] throbs with anticipation! [big he of M] leaps onto the bed and delicately places [his of M] [DickDesc of M] in between your [ShortDesc of breasts].[line break][speech style of M]'[one of]So, what now? I thrust while you squeeze them around my shaft?'[or]I'll just copy what they do in porn, and I'm sure it'll feel great, right?'[stopping][roman type][line break]".
 
 To say BreastsPenetrationFlav of (M - a gross patron):
 	say "As you lie on the bed [if the titfuck addiction of the player < 4]nervously[otherwise if the titfuck addiction of the player < 7]obediently[otherwise]impatiently[end if] and watch as [NameDesc of M] stands over your chest and then gets on [his of M] hands and knees. In this position [his of M] [DickDesc of M] slides right in between your [ShortDesc of breasts] but also [his of M] fat belly [if the largeness of breasts > 15]hovers inches from[otherwise]is pressed right against[end if] your face![line break][variable custom style]Gross[if the humiliation of the player > 35000]! But I deserve it.[otherwise]![end if][roman type][line break][line break][speech style of M]'[one of]So, what now? I thrust while you squeeze them around my shaft?'[or]I'll just copy what they do in porn, and I'm sure it'll feel great, right?'[stopping][roman type][line break]".
@@ -1307,7 +1328,7 @@ To say TwosomePrep of (M - a patron) in (F - asshole):
 To say SpitroastPrep of (M - a patron) with (O - a patron) in (F - asshole):
 	let B be a random monster penetrating breasts;
 	if B is monster, say "[BigNameDesc of O] and [NameDesc of B] continue thrusting as [NameDesc of M] lifts your legs, lining up [his of M] tip with your [asshole].";
-	say "[BigNameDesc of O] temporarily stops thrusting, holding you down so [his of O] [DickDesc of O] stays in your mouth as [NameDesc of M] pulls you into [his of M] lap. You can feel [NameDesc of M]'s tip prod your [asshole].".
+	say "[BigNameDesc of O] temporarily stops thrusting, holding you down so [his of O] [DickDesc of O] stays in your mouth as [NameDesc of M] pulls you into [his of M] lap. You can feel [NameDesc of M][']s tip prod your [asshole].".
 
 To say ThreesomePrep of (M - a patron) with (N - a patron) in (F - asshole):
 	let B be a random monster penetrating breasts;
@@ -1333,7 +1354,7 @@ To say PrepTaunt of (M - a gross patron) in (F - asshole):
 To say PrepTaunt of (M - an experienced patron) in (F - asshole):
 	say "[speech style of M]'[one of]I'm going to assume this isn[']t your first rodeo.'[or]The quality of whores in this establishment is declining. Let me teach you how to take a [DickDesc of M] up here properly.'[or]Look, I don[']t really have all day.'[in random order][roman type][line break]".
 
-To say PrepTaunt of (M - a patron) in (F - asshole):[dickhead patron]
+To say PrepTaunt of (M - a dickhead patron) in (F - asshole):
 	say "[speech style of M]'[one of]I hope this hurts. It[']s supposed to.'[or]If this hurts going in, that[']s because I want it to.'[or]If you want to stop early, just remember, you won[']t get paid.'[in random order][roman type][line break]".
 
 To say AnalVirginityTaunt of (M - an experienced patron):
@@ -1385,7 +1406,7 @@ To say (M - a dickhead patron) rough sex (N - a number):
 	say "[speech style of M][one of]'Come on baby, you know you love this [LongDickDesc of M]!'[or][or]'[if face is not actually occupied]Shut up[otherwise]Stop squirming[end if] and take it, [if interracial fetish is 1]ho[otherwise]slut[end if]!'[or][or]'Stop kidding yourself! [if interracial fetish is 1]White bitches love BBC[otherwise]Sluts like you love this sort of treatment[end if]!'[then at random][roman type][line break]".
 
 To say (M - a patron) mercy sex (N - a number):
-	say "[speech style of M][one of]'I guess I don't know my own strength, heh...'[or]'Ok, jeez, I get it.'[or]Come on, I'm not TRYING to hurt you!'[or]Alright, I get it!'[in random order]".
+	say "[speech style of M][one of]'I guess I don't know my own strength, heh...'[or]'OK, jeez, I get it.'[or]Come on, I'm not TRYING to hurt you!'[or]Alright, I get it!'[in random order]".
 
 To say (M - an experienced patron) mercy sex (N - a number):
 	say "[speech style of M][one of]'Fine.'[or]'If you would stop whining this would go a lot faster.'[or]Fine then, but don't expect a good review.'[in random order][roman type][line break]";
@@ -1448,7 +1469,7 @@ To say PrepTaunt of (M - a gross patron) in (F - vagina):
 To say PrepTaunt of (M - an experienced patron) in (F - vagina):
 	say "[speech style of M]'[one of][if M is wrapped]I'm not going to make the mistake of going bareback with a whore like you[otherwise]I'm going in bareback but don't worry, I'm clean[end if].'[or]You're not the prettiest whore I've ever seen, but you'll do for tonight.'[or]Are you just going to lie there like a dumb bitch or are you going to actually service me properly?'[in random order][roman type][line break]".
 
-To say PrepTaunt of (M - a patron) in (F - vagina):[dickhead patron]
+To say PrepTaunt of (M - a dickhead patron) in (F - vagina):
 	say "[speech style of M]'[one of]Don't you dare orgasm before I do.'[or]If you faint before I'm finished, I won't be impressed.'[or]If you want to have any chance of getting paid, you'll take it quietly until I'm done.'[in random order][roman type][line break]".
 
 To say VaginalVirginityTaunt of (M - an inexperienced patron):
@@ -1460,7 +1481,7 @@ To say VaginalVirginityTaunt of (M - an experienced patron):
 To say VaginalVirginityTaunt of (M - a gross patron):
 	say "[speech style of M]'Oh, you were a virgin? Well, don't worry, I'm really good at sex.'[roman type][line break]".
 
-To say VaginalVirginityTaunt of (M - a patron):[dickhead patron]
+To say VaginalVirginityTaunt of (M - a dickhead patron):
 	say "[speech style of M]'So it's my responsibility to break you in, eh?'[roman type][line break]".
 
 To say VeryTightVaginaPenetrationFlav of (M - a patron):[TODO: possibly work on]
@@ -1473,7 +1494,7 @@ To say VeryTightVaginaPenetrationFlav of (M - a patron):[TODO: possibly work on]
 		say "[big his of M] other hand is used to hold the base of [his of M] shaft as you guide it into your [vagina]. You shiver with excitement as you feel yourself stretching to accept [his of M] [DickDesc of M]. [if M is experienced patron]You find yourself[otherwise][big his of M] every [his of M]s and groan of pleasure just makes you feel more proud,[end if] grinning from ear to ear as inch after inch of [his of M] throbbing member sinks into your waiting hole. [big he of M] places [his of M] hands on your hips as [he of M] bottoms out.".
 
 To say LessTightVaginaPenetrationFlav of (M - a patron):
-	say "[if the vaginal sex addiction of the player < 4]You stifle a moan of pleasure as [NameDesc of M]'s [DickDesc of M] slides into your defenceless hole. [big he of M] places [his of M] hands on your hips, driving inch after awful inch of [his of M] [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, assuring you that [he of M] won't let you get away, no matter how much you try.[otherwise if the vaginal sex addiction of the player < 7]You moan in pleasure, fighting the urge to push back against [him of M] as [NameDesc of M]'s [DickDesc of M] slides into your waiting hole. [big he of M] places [his of M] hands on your hips, driving inch after throbbing inch of [his of M] big [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, assuring you that you're in for a good, rough fuck.[otherwise]You moan as loudly as you can, pushing back against [him of M] as [NameDesc of M]'s perfectly sized [DickDesc of M] sinks into your waiting hole. [big he of M] places [his of M] hands on your hips, driving inch after wonderful inch of [his of M] [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, reassuring you that you're in for the good, rough fuck you so desperately want.[end if]".
+	say "[if the vaginal sex addiction of the player < 4]You stifle a moan of pleasure as [NameDesc of M][']s [DickDesc of M] slides into your defenceless hole. [big he of M] places [his of M] hands on your hips, driving inch after awful inch of [his of M] [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, assuring you that [he of M] won't let you get away, no matter how much you try.[otherwise if the vaginal sex addiction of the player < 7]You moan in pleasure, fighting the urge to push back against [him of M] as [NameDesc of M][']s [DickDesc of M] slides into your waiting hole. [big he of M] places [his of M] hands on your hips, driving inch after throbbing inch of [his of M] big [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, assuring you that you're in for a good, rough fuck.[otherwise]You moan as loudly as you can, pushing back against [him of M] as [NameDesc of M][']s perfectly sized [DickDesc of M] sinks into your waiting hole. [big he of M] places [his of M] hands on your hips, driving inch after wonderful inch of [his of M] [DickDesc of M] through your labia lips. [big his of M] grip tightens as [he of M] bottoms out, reassuring you that you're in for the good, rough fuck you so desperately want.[end if]".
 
 To say LessLooseVaginaPenetrationFlav of (M - a patron):
 	say "[if the vaginal sex addiction of the player < 4]You let out a completely involuntary moan as [NameDesc of M] slides in like a knife through butter, grunting as [he of M] bottoms out. [big he of M] grins as you look over your shoulder, [one of]horrified[or]mortified[purely at random] at the sound that just came out of your mouth. Strong hands grab your hips tightly, removing all hope of escape.[otherwise if the vaginal sex addiction of the player < 7]You let out a somewhat involuntary moan of pleasure as [NameDesc of M] slides in like a knife through butter, grunting as [he of M] bottoms out. [big he of M] grins as you look over your shoulder, embarrassed at how good that felt, but still hungry for more. Strong hands grab your hips tightly, assuring you that your hunger will be sated.[otherwise][big his of M] other hand is used to hold the base of [his of M] shaft as you guide it into your [vagina]. You shamelessly moan in pleasure as [NameDesc of M] slides in like a knife through butter, grunting as [he of M] bottoms out. [big he of M] grins as you look over your shoulder, licking your lips in hopes that [he of M]'ll give you the roughest fucking [he of M] can. Strong hands grab your hips tightly, assuring you that you'll get the sex you so desperately, desperately need.[end if]".
@@ -1519,7 +1540,7 @@ To say (M - a patron) sex reaction:
 		otherwise if the relevant sex addiction of M < 8:
 			say "[one of]'Ow ow ow!'[or]'Shit!'[or]'Slow down! I'm not just your fucktoy!'[or]It's like [he of M] doesn't care what I think at all![or][big he of M]'s using me like some sort of cheap whore![or]This is insane![or]This feels so wrong![or]'Stop this! I'm not just a hole!'[or]Please let this be over soon...[in random order]";
 		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]It feels good. That's not my fault.[or]I know I shouldn't be enjoying this, but...[or]Why does it have to feel so good?[or]If I have to have sex, it might as well be with someone who does it right.[or]I wonder if [he of M]'ll cum a lot.[or]It actually feels kind of good.[or]I never realized sex could feel this good![or]I'm actually not sure if I want this to end.[in random order]";
+			say "[one of]It feels good. That's not my fault.[or]I know I shouldn't be enjoying this, but...[or]Why does it have to feel so good?[or]If I have to have sex, it might as well be with someone who does it right.[or]I wonder if [he of M]'ll cum a lot.[or]It actually feels kind of good.[or]I never realised sex could feel this good![or]I'm actually not sure if I want this to end.[in random order]";
 		otherwise:
 			say "[one of]Uh oh, looks like I'm trapped! Teehee![or]I can't get away! Uh ooooh![or]'Oooh!'[or]'Aaah!'[or]'Aah! Aah! Aah!'[or]'I'm having so much fun!'[or]'Oooh Shiiiit!'[or]'Yeah! Fuck me!'[or]'Don't stop! It feels so good!'[or]'Wear me out, stud!'[or]'Fuckme! Fuckme! Fuckme!'[or]I want this to last FOREVER![or]Use me, stud!'[or]'Use me like the dirty slut I am!'[or]'Faster, stud, faster!'[or]'This feels SO right.'[then purely at random]";
 	say "[roman type][line break]".
@@ -1541,9 +1562,7 @@ Definition: a patron is eager to double diapers:
 	if there is a worn diaper bag of holding or there is a worn baby diaper bag of holding, decide yes;
 	decide no.
 
-
 Definition: a patron is willing to spank: decide yes.
-
 
 Definition: a patron (called M) is willing to spank gently:
 	if M is pissed off, decide no;
@@ -1577,7 +1596,7 @@ To say SpankingMercyRejectionFlav of (M - a patron):
 	say "[speech style of M]'[if M is pissed off]There's no chance of that, you little brat!'[otherwise]No no baby, I'm determined to get my money's worth today. You'll take what you're given.'[end if][roman type] [BigNameDesc of M] has an evil smile on [his of M] face.".
 
 To say SoftSpankingFlav of (M - a patron):
-	say "[BigNameDesc of M]'s resolve weakens, and then [he of M] delivers just a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'Well I guess I'll let you off this time, but that was really boring.'[roman type][line break][BigNameDesc of M] lets you go.";
+	say "[BigNameDesc of M][']s resolve weakens, and then [he of M] delivers just a few weak blows to your [buttcheeks] with [his of M] hand. [if there is a worn diaper]Your [random worn diaper] softens the blows even further, so that they just feel like gentle pats. [end if][line break][speech style of M]'Well I guess I'll let you off this time, but that was really boring.'[roman type][line break][BigNameDesc of M] lets you go.";
 	now M is pissed off;
 	compute payment of M.
 
@@ -1591,10 +1610,8 @@ To say SpankingAfterFlav of (M - a patron):
 	say "After this [he of M] seems satisfied, and begins to rub your sore [if asshole is lewdly exposed][buttcheeks][otherwise if there is a worn diaper]bottom through your padding[otherwise]bottom[end if] lovingly and speaks in a soothing voice. [line break][speech style of M]'[if M is pissed off]That's what you get for being disobedient, little baby. Maybe next time you'll listen to Daddy's instructions and obey them properly?'[otherwise][one of]It's okay, Daddy's here, Daddy loves you[or]There there. Daddy only spanks you because [he of M] loves you and wants you to be the perfect baby[or]Wasn't that fun, baby? Daddy had fun[or]Aww, does your bum-bum hurt, little Princess? It's supposed to[in random order].'[end if][roman type][line break]After your heart rate starts to calm down, [he of M] gets up. ";
 	compute payment of M.
 
-
 To say DQSpankResistReactionFlav of (M - patron):
 	say "[BigNameDesc of M] [if M is well dressed patron]smiles.[line break][speech style of M]'[one of]Oh, you've done this before have you? Just enough thrashing as to not actually get away. Yes, well done!'[or]Sorry cutie, I guess we forgot to agree on a safe-word!'[cycling][otherwise]frowns.[line break][speech style of M]'[one of]Now see here child, I paid extra for NO struggling. I'll be telling your supervisor about this!'[or]Are we crying now? As if that'll get you a better tip!'[cycling][roman type][line break]".
-
 
 Definition: a patron (called M) is willing to forcefeed:
 	if diaper messing >= 3, decide yes;
@@ -1609,36 +1626,39 @@ To decide which number is the forcefeed-length of (M - a dickhead patron):
 	decide on 4.
 
 To say ForcefeedDeclarationFlav of (M - a patron):
-	say "[speech style of M]'[one of]I like to keep my babies bellies nice and full.'[or]I've brought some stuff for you to eat, so be a good girl and let me feed you, ok?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]I like to keep my babies bellies nice and full.'[or]I've brought some stuff for you to eat, so be a good girl and let me feed you, OK?'[in random order][roman type][line break]".
 
 To say ForcefeedPillDeclarationFlav of (M - a patron):
 	say "[speech style of M]'[one of]Hehehe... I've got one more trick up my sleeve...'[or]I paid extra on the way in for one of these... I'm gonna make you explode!'[then at random][roman type][line break]".
 
-
 To say DQFeedingResistReactionFlav of (M - a patron):
 	say "[speech style of M]'[one of]I don't care if you dislike formula, I paid premium for realism and I demand compliance!'[or]No no no it's not burping time yet, nor nap time. Now... hold... still!'[or]I'd be fine with the fussy play if I had forked out the cash for the high chair, dear, but these are the cards we're dealt!'[in random order][roman type][line break]".
 
-
 Section 3 - Damage
 
-To compute damage of (M - a patron):
+To compute damage reaction of (M - a patron):
 	now M is pissed off;
-	if the health of M > 0:
-		say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+	say DamageReaction (the health of M) of M.
 
 To say DamageReaction (N - a number) of (M - a patron):
 	say "[speech style of M]'Ouch! [one of]You're going to regret that.'[or]If this is meant to be play fighting, you're being too rough.'[or]Stop that right now!'[or]You're really asking for it, aren't you?!'[or]You are SO not getting paid now.'[or]Is this how you treat all your clients?!'[or]I will be complaining to the management!'[or]You can't be expecting to get any payment after this.'[in random order][roman type][line break]".
 
-To compute death of (M - a patron): [Overrides main death function]
+Definition: a patron is banishable: decide no. [Can this NPC be banished from the land upon defeat?]
+Definition: a patron is taxable: decide no.
+
+To say PityDesc of (M - a patron):
+	say "Leave [him of M] alone.".
+To compute pitying of (M - a patron):
+	compute automatic banishment of M.
+
+To compute automatic banishment of (M - a patron): [Overrides main death function]
 	say "[BigNameDesc of M] turns tail and quickly runs out of the room the way [he of M] came!";
 	loot M;
 	if dropped-item is a thing, say "[BigNameDesc of M] drops a[if dropped-item is emerald plentiful accessory]n[end if] [dropped-item][one of] and in [his of M] haste to leave [he of M] doesn't stop to pick it back up[or][stopping].";
 	if a random number between 1 and the difficulty of M < 4:
 		repeat with N running through patrons:
 			DifficultyUp N by 1; [They slowly get more difficult if you keep beating them]
-	destroy M.
+	compute banishment of M.
 
 dropped-item is a thing that varies.
 
@@ -1726,7 +1746,6 @@ To compute successful dominance of (M - a patron):
 					TimesSubmittedUp P;
 					store P after tricks;
 				if WB is 0, destroy P.
-
 
 To say DominanceIntro of (M - a patron):
 	let P be the number of patrons in the location of the player;
@@ -1882,7 +1901,7 @@ To weiner dominate (M - an experienced patron):
 			moderateDignify;
 			orgasm;
 		otherwise:
-			say "You push [NameDesc of M] to [his of M] knees, [one of]and are surprised when [he of M] takes[or]allowing [him of M] to take[stopping] the initiative and [if C is clothing]pull down your [printed name of C][otherwise]shrug out of [his of M] suit[end if]. [line break][speech style of M]'Ok, miss dominatrix. What now?'[roman type][line break][big he of M] looks up at you expectantly. You never expected to get this far. You're not really sure what to do next. A moment of silence passes, and [he of M] finally leans forward, lolling out [his of M] tongue as [he of M] gingerly strokes your [SexDesc of penis] with two fingers. You immediately shoot your load, causing [him of M] to roll [his of M] eyes as a few tiny ropes of [semen] spurt into [his of M] mouth.";
+			say "You push [NameDesc of M] to [his of M] knees, [one of]and are surprised when [he of M] takes[or]allowing [him of M] to take[stopping] the initiative and [if C is clothing]pull down your [printed name of C][otherwise]shrug out of [his of M] suit[end if]. [line break][speech style of M]'OK, miss dominatrix. What now?'[roman type][line break][big he of M] looks up at you expectantly. You never expected to get this far. You're not really sure what to do next. A moment of silence passes, and [he of M] finally leans forward, lolling out [his of M] tongue as [he of M] gingerly strokes your [SexDesc of penis] with two fingers. You immediately shoot your load, causing [him of M] to roll [his of M] eyes as a few tiny ropes of [semen] spurt into [his of M] mouth.";
 			now player-fucking is DOMINANT-NEUTRAL;
 			orgasm;
 		store M after tricks;
@@ -1902,7 +1921,7 @@ To weiner dominate (M - an inexperienced patron):
 		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 		let C be a random bottom level protection clothing;
 		if sexual-penis-length >= 4:
-			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]prod your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed. [line break][speech style of M]'[one of]This is going to be by first time. Be gentle, ok?'[or]Be gentle, I'm still not very experienced!'[stopping][roman type][line break]You nod, [if lady fetish is 1]spread[otherwise]lift[end if]ing [his of M] legs as you [if sexual-penis-length > 8]slowly, slowly slide the first few inches of your[otherwise if sexual-penis-length < 6]ease[otherwise]push[end if] your [SexDesc of penis] into [his of M] [HoleDesc of M]. [one of][big he of M] wasn't kidding about being a virgin,[or][big he of M]'s still vice tight, and[at random] the feeling of [his of M] inner walls gripping your [SexShaft] is too intense for you to endure very long. No matter how much you try to pace yourself, it's too much, and within moments you lose control[if sexual-penis-length > 7] and flood [his of M] [HoleDesc of M] with a massive load[otherwise if sexual-penis-length > 5] and fill [his of M] [HoleDesc of M] with your load[otherwise], pulling out and shooting a few short ropes of [semen] across [his of M] belly[end if].";
+			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]prod your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed. [line break][speech style of M]'[one of]This is going to be by first time. Be gentle, OK?'[or]Be gentle, I'm still not very experienced!'[stopping][roman type][line break]You nod, [if lady fetish is 1]spread[otherwise]lift[end if]ing [his of M] legs as you [if sexual-penis-length > 8]slowly, slowly slide the first few inches of your[otherwise if sexual-penis-length < 6]ease[otherwise]push[end if] your [SexDesc of penis] into [his of M] [HoleDesc of M]. [one of][big he of M] wasn't kidding about being a virgin,[or][big he of M]'s still vice tight, and[at random] the feeling of [his of M] inner walls gripping your [SexShaft] is too intense for you to endure very long. No matter how much you try to pace yourself, it's too much, and within moments you lose control[if sexual-penis-length > 7] and flood [his of M] [HoleDesc of M] with a massive load[otherwise if sexual-penis-length > 5] and fill [his of M] [HoleDesc of M] with your load[otherwise], pulling out and shooting a few short ropes of [semen] across [his of M] belly[end if].";
 			strongDignify;
 			orgasm;
 			say AfterDominationComment 10 of M;
@@ -1933,7 +1952,7 @@ To weiner dominate (M - a patron):[dickhead patron]
 			say AfterDominationComment 10 of M;
 			FuckGet;
 		otherwise:
-			say "You make [NameDesc of M] kneel down on the bed, excitedly grinding your [SexDesc of penis] between [his of M] cheeks. [line break][speech style of M]'OK, ok, you're going to punish me if I don't pay. I read the brochure, I know all about it. Greedy bitch...'[roman type][line break][big he of M] reaches into [his of M] shirt pocket and tosses a jewel your way. You were actually serious about fucking [him of M], but you decide to just cut your losses and roll with it.";
+			say "You make [NameDesc of M] kneel down on the bed, excitedly grinding your [SexDesc of penis] between [his of M] cheeks. [line break][speech style of M]'OK, OK, you're going to punish me if I don't pay. I read the brochure, I know all about it. Greedy bitch...'[roman type][line break][big he of M] reaches into [his of M] shirt pocket and tosses a jewel your way. You were actually serious about fucking [him of M], but you decide to just cut your losses and roll with it.";
 			loot M;[###Selkie: Note to self - there are some obvious fun humiliation scene ideas I'd like to add here.]
 			say AfterDominationComment 9 of M;
 		store M after tricks;
@@ -2133,7 +2152,7 @@ To toppled dominate (M - a patron):[you get gangbanged by all unleashed patrons 
 			do nothing;
 		otherwise:
 			if the number of patrons penetrating F is 0:
-				say "[BigNameDesc of P] eagerly takes [NameDesc of M]'s place, [if F is asshole]pulling you into [his of P] lap[otherwise]spreading your legs[end if] as [he of P] slides [his of P] [LongDickDesc of P] into your [variable F].[line break]";
+				say "[BigNameDesc of P] eagerly takes [NameDesc of M][']s place, [if F is asshole]pulling you into [his of P] lap[otherwise]spreading your legs[end if] as [he of P] slides [his of P] [LongDickDesc of P] into your [variable F].[line break]";
 				increase X by 1;
 				now P is penetrating F;
 			otherwise if the number of patrons penetrating asshole is 0:
@@ -2176,8 +2195,8 @@ To toppled dominate (M - a patron):[you get gangbanged by all unleashed patrons 
 		compute post blowjob effect of M;
 		BlowCount;
 	otherwise if (A is 2 or A is 3 and the player is female) and X is A:
-		if (L is patron and L is wrapped) or (V is patron and V is wrapped), say "[if V is patron and L is patron][BigNameDesc of V] and [NameDesc of L] finish at the same time, and you feel their loads shifting around inside the condoms as they pull out[otherwise if V is patron][BigNameDesc of V] is already pretty close from watching your 'battle' with [his of M] friend, and a couple pumps later, you feel the condom bulging with [his of M] load as [he of M] pulls out[otherwise][BigNameDesc of L] pounds you like there's no tomorrow, and a couple moments later, you feel the condom bulging with [his of M] load as [he of M] pulls out[end if]. By then, [NameDesc of M]'s [DickDesc of M] is already hard again, and now that you've been shown your place, you continue to polish [his of M] shaft with all the gusto a proper whore should. And when you get that final mouthful of [semen], you know [bold type]you're going be more submissive from now on.[roman type][line break]";
-		otherwise say "[if V is patron and L is patron][BigNameDesc of V] and [NameDesc of L] finish at the same time, filling your holes with their loads[otherwise if V is patron][BigNameDesc of V] doesn't seem bothered by the fact that [he of V]'s getting sloppy seconds, and a couple thrusts later, you feel [him of V] erupting inside of you, filling you with another load[otherwise][BigNameDesc of L] is really eager to add to your anal creampie, and a couple pumps later, you feel [him of M] filling your hole with another load[end if]. By then, [NameDesc of M]'s [DickDesc of M] is already hard again, and now that you've been shown your place, you continue to polish [his of M] shaft with all the gusto a proper whore should. And when you get that final mouthful of [semen], you know [bold type]you're going to be more submissive from now on.[roman type][line break]";
+		if (L is patron and L is wrapped) or (V is patron and V is wrapped), say "[if V is patron and L is patron][BigNameDesc of V] and [NameDesc of L] finish at the same time, and you feel their loads shifting around inside the condoms as they pull out[otherwise if V is patron][BigNameDesc of V] is already pretty close from watching your 'battle' with [his of M] friend, and a couple pumps later, you feel the condom bulging with [his of M] load as [he of M] pulls out[otherwise][BigNameDesc of L] pounds you like there's no tomorrow, and a couple moments later, you feel the condom bulging with [his of M] load as [he of M] pulls out[end if]. By then, [NameDesc of M][']s [DickDesc of M] is already hard again, and now that you've been shown your place, you continue to polish [his of M] shaft with all the gusto a proper whore should. And when you get that final mouthful of [semen], you know [bold type]you're going be more submissive from now on.[roman type][line break]";
+		otherwise say "[if V is patron and L is patron][BigNameDesc of V] and [NameDesc of L] finish at the same time, filling your holes with their loads[otherwise if V is patron][BigNameDesc of V] doesn't seem bothered by the fact that [he of V]'s getting sloppy seconds, and a couple thrusts later, you feel [him of V] erupting inside of you, filling you with another load[otherwise][BigNameDesc of L] is really eager to add to your anal creampie, and a couple pumps later, you feel [him of M] filling your hole with another load[end if]. By then, [NameDesc of M][']s [DickDesc of M] is already hard again, and now that you've been shown your place, you continue to polish [his of M] shaft with all the gusto a proper whore should. And when you get that final mouthful of [semen], you know [bold type]you're going to be more submissive from now on.[roman type][line break]";
 		if L is patron:
 			AssFill 2;
 			[store L after tricks;]
@@ -2195,7 +2214,7 @@ To toppled dominate (M - a patron):[you get gangbanged by all unleashed patrons 
 		compute post blowjob effect of M;
 		SilentlyDelicateUp 1;[This increases submissiveness]
 	otherwise:
-		say "You feel [NameDesc of M]'s [DickDesc of M] twitch a little as the last [if V is patron]two patrons empty out their loads[otherwise]patron empties out [his of M] load[end if] inside you. By now, you've been thoroughly shown your place, and you suck [him of M] off with all the gusto a worthless cumdumpster should. And with that final mouthful of [semen], you know [bold type]you're going be a lot more submissive from now on.[roman type]";
+		say "You feel [NameDesc of M][']s [DickDesc of M] twitch a little as the last [if V is patron]two patrons empty out their loads[otherwise]patron empties out [his of M] load[end if] inside you. By now, you've been thoroughly shown your place, and you suck [him of M] off with all the gusto a worthless cumdumpster should. And with that final mouthful of [semen], you know [bold type]you're going be a lot more submissive from now on.[roman type]";
 		AssFill 2;
 		AnalCount;
 		[store L after tricks;]
@@ -2267,11 +2286,11 @@ To say AfterDominationComment (N - a number) of (M - a gross patron):
 		FavourDown M;
 	otherwise if N is 9:
 		if X > 0:
-			say "[line break][speech style of M]'Don't go easy on her!'[roman type][line break]";
+			say "[line break][speech style of M]'Don't go easy on [him of the player]!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'You're lucky I paid!'[roman type][line break]";
 	otherwise:
-		say "[line break][speech style of M]'Now's the part where you pay me, right? No? Ok.'[roman type][line break]";
+		say "[line break][speech style of M]'Now's the part where you pay me, right? No? OK.'[roman type][line break]";
 		now M is not pissed off.
 
 To say AfterDominationComment (N - a number) of (M - a patron):
@@ -2314,7 +2333,7 @@ To compute basic greeting to (M - a patron):
 		compute conventional greeting of M.
 
 To say AttentionAccepted of (M - a patron) with (N - a monster):
-	say "[speech style of M]'[one of]This is quite the show!'[or]Yeah, ruin that bitch!'[or]Yeah, tear her up!'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]This is quite the show!'[or]Yeah, ruin that bitch!'[or]Yeah, tear [him of the player] up!'[at random][roman type][line break]".
 
 To say InvitationRejected of (M - a patron) with (N - a monster):
 	say "[speech style of M]'I'll pass.'[roman type][line break]".
@@ -2350,7 +2369,7 @@ To say FirstGreeting to (M - a patron):
 	let N be the number of patrons in the location of the player;
 	if there is a hotel bed in the location of the player:
 		if the class of the player is princess:
-			say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of]What is the meaning of this, peasant[if N > 1]s[end if]? Why are you in my bedchamber?'[or]Why are you in my bedchamber, peasant[if N > 1]s[end if]. Explain at once!'[or]Peasant[if N > 1]s[end if]? In my bedchamber? Guards!'[at random][roman type][line break]";
+			say "You compulsively straighten your back as your words come out in a measured tone.[line break][first custom style]'[one of]What is the meaning of this, peasant[if N > 1]s[end if]? Why are you in my bedchamber?'[or]Why are you in my bedchamber, peasant[if N > 1]s[end if]? Explain at once!'[or]Peasant[if N > 1]s[end if]? In my bedchamber? Guards!'[at random][roman type][line break]";
 			slightDignify;
 		otherwise if the class of the player is santa's little helper:
 			say "[variable custom style]'Merry Christmas[if N > 1], everyone[end if]!'[roman type][line break]";
@@ -2386,6 +2405,4 @@ To say MonsterOfferRejectFlav of (M - a patron) to (T - a plentiful accessory):
 To say MonsterOfferRejectFlav of (M - a patron) to (T - a condom of kings):
 	say "[speech style of M]'[one of]Sorry babe, but I don[']t actually fit in condoms.'[or]No way, I like to fuck bareback!'[at random][roman type][line break]".
 
-
 Patron ends here.
-

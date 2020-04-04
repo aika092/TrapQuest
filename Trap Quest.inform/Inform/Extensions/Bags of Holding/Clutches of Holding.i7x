@@ -48,6 +48,4 @@ To say ShortDesc of (C - a lips clutch of holding):
 Definition: a lips clutch of holding is oral sex themed:
 	decide yes.
 
-
 Clutches of Holding ends here.
-

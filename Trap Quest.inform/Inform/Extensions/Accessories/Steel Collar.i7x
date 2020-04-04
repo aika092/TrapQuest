@@ -23,4 +23,3 @@ To say ShortDesc of (C - a steel collar):
 	say "thin steel collar".
 
 Steel Collar ends here.
-

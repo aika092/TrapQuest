@@ -62,10 +62,6 @@ Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy
 Definition: heart window cutoffs is transformation-protected: decide yes.
 Definition: heart window cutoffs is heart themed: decide yes.
 
-
-
-
-
 predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The armour of predicament-painted-cutoffs is 1. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs. A predicament-painted-cutoffs can be hand-blocked. A predicament-painted-cutoffs can be hand-decided.
 
 Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs1.jpg".
@@ -81,7 +77,6 @@ To say UniqueClothingDesc of (Y - predicament-painted-cutoffs):
 To say ShortDesc of (Y - predicament-painted-cutoffs):
 	say "painted-on cutoffs".
 
-
 Definition: predicament-painted-cutoffs is blue themed: decide yes.
 Definition: predicament-painted-cutoffs is transformation-protected: decide yes.
 Definition: predicament-painted-cutoffs is removable: decide no.
@@ -91,7 +86,7 @@ Definition: predicament-painted-cutoffs is potentially asshole covering if it is
 Definition: predicament-painted-cutoffs is potentially at least partially vagina covering if it is hand-blocked.
 Definition: predicament-painted-cutoffs is potentially vagina covering if it is hand-blocked.
 
-To compute periodic effect of (C - predicament-painted-cutoffs):
+To compute school periodic effect of (C - predicament-painted-cutoffs):
 	if current-predicament is vibe-photo-predicament:
 		now C is hand-blocked;
 		if the player is in Predicament20 or the player is not in a predicament room:
@@ -148,7 +143,4 @@ To decide which number is the initial outrage of (C - predicament-painted-cutoff
 	if C is hand-blocked, decide on 2;
 	decide on 12.
 
-
-
 Cutoffs ends here.
-

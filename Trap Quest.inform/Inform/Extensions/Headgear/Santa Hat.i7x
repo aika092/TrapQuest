@@ -58,8 +58,6 @@ To compute persistent reward of (Q - christmas-quest) on (C - a clothing):
 		let CG be a random off-stage christmas gift;
 		now CG is carried by the player.
 
-
-
 A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "Items/Accessories/Head/santahat1.png". There is 1 santa hat.
 
 The printed name of santa hat is usually "[clothing-title-before]santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
@@ -94,7 +92,6 @@ To compute class outfit of (H - a santa hat):
 		if H is not cursed and C is actually summonable:
 			summon C;
 			say "You hear the sound of sleigh bells as a [C] appears around your midriff!".
-
 
 A red bow headband is a kind of christmas headgear. The printed name of red bow headband is usually "[clothing-title-before]red bow headband[clothing-title-after]". Figure of red bow headband is the file "Items/Accessories/Head/bowheadband1.png". There is 1 red bow headband. The text-shortcut of red bow headband is "rbh".
 
@@ -140,8 +137,6 @@ To decide which object is the unique-upgrade-target of (H - a red bow headband):
 To decide which number is the initial cringe of (H - a red bow headband):
 	decide on 2.
 
-
-
 A star headband is a kind of christmas headgear. The printed name of star headband is usually "[clothing-title-before]star headband[clothing-title-after]". Figure of star headband is the file "Items/Accessories/Head/starheadband1.png". There is 1 star headband. The text-shortcut of star headband is "strh".
 
 To decide which figure-name is the clothing-image of (C - a star headband):
@@ -183,8 +178,6 @@ To decide which number is the initial cringe of (H - a star headband):
 
 Definition: a star headband is star themed: decide yes.
 
-
-
 christmas bonnet is a christmas headgear.
 
 The printed name of christmas bonnet is "[clothing-title-before]christmas bonnet[clothing-title-after]". Figure of christmas bonnet is the file "Items/Accessories/Head/christmasbonnet1.png". The text-shortcut of christmas bonnet is "chmb".
@@ -212,7 +205,6 @@ Definition: christmas bonnet is transformation-protected: decide yes.
 To decide which number is the initial cringe of (H - christmas bonnet):
 	decide on 6.
 
-
 conic santa hat is a christmas headgear. conic santa hat is latex.
 
 The printed name of conic santa hat is "[clothing-title-before]conic santa hat[clothing-title-after]". Figure of conic santa hat is the file "Items/Accessories/Head/santahat2.png". The text-shortcut of conic santa hat is "csh".
@@ -238,10 +230,9 @@ Definition: conic santa hat is red themed: decide yes.
 To decide which number is the initial outrage of (H - conic santa hat):
 	decide on 2.
 
-
-
-
 nice-quest is a headgear-clothing-quest. nice-quest has a number called nice-count.
+
+Definition: nice-quest is school-disabled: decide yes.
 
 To uniquely set up (C - christmas bonnet):
 	now the quest of C is nice-quest.
@@ -347,6 +338,4 @@ To compute naughtification:
 			say "Elbow-length candy cane patterned latex gloves appear on your arms!";
 			say "You feel a weird desperate craving to suck on something...";
 
-
 Santa Hat ends here.
-

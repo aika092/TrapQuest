@@ -1,6 +1,5 @@
 Searching by Actions begins here.
 
-
 [!<CheckSearchingAContainer>+
 
 REQUIRES COMMENTING
@@ -157,7 +156,4 @@ Prevsearch means the following:
 4: Found trap after using your stethoscope search.
 ]
 
-
-
 Searching ends here.
-

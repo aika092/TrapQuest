@@ -17,4 +17,3 @@ To decide which number is the bartering value of (T - a focus band) for (M - a g
 Definition: a focus band is black themed: decide yes.
 
 Focus Band ends here.
-

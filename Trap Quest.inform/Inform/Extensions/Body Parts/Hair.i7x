@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 hair is a body part. hair is everywhere. Understand "my hair" as hair. The text-shortcut of hair is "hair".
 To say FullExamineDesc of (B - hair):
-	say "[TotalDesc of hair]".
+	say "[ImageDesc of hair][TotalDesc of hair]".
 
 [!<DecideWhichNumberIsTheLargenessOfHair>+
 
@@ -111,7 +111,6 @@ Stops hair changing
 
 *!]
 frozen hair is a number that varies.
-
 
 Part 2 - Description
 
@@ -313,7 +312,6 @@ To say RealHairDesc (X - a number):
 	if X > 14, say "hair that is even longer than your body".
 
 Part 3 - Modify Hair Stats
-
 
 [!<DecideWhichNumberIsMaxHairLength>+
 
@@ -530,7 +528,6 @@ To hair permanent check:
 			say "[bold type]A new tattoo has appeared on your arm![roman type][line break]";
 			try examining bright-hair tattoo.
 
-
 Section - Image for graphics window
 
 Figure of CumHairButton is the file "Special/Buttons/cumhair.png".
@@ -539,6 +536,4 @@ To decide which figure-name is the examine-image of (T - hair):
 	if T is overglazed, decide on Figure of CumHairButton;
 	decide on figure of no-image-yet.
 
-
 Hair ends here.
-

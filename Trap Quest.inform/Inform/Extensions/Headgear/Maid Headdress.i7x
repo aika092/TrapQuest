@@ -1,11 +1,9 @@
 Maid Headdress by Headgear begins here.
 
-
 A maid headdress is a kind of headgear. A maid headdress is usually brightness-negative. A maid headdress is usually hair growing. A maid headdress is womanly. The text-shortcut of maid headdress is "mhd". A maid headdress is usually strength-influencing. A maid headdress is usually roleplay.
 
 Definition: a maid headdress is white themed: decide yes.
 Definition: a maid headdress is disintegration-protected if the class of the player is maid.
-
 
 To compute SelfExamineDesc of (H - maid headdress):
 	let X be the largeness of hair;
@@ -17,7 +15,6 @@ To decide which number is the initial outrage of (C - a maid headdress):
 
 To decide which number is the initial cringe of (C - a maid headdress):
 	decide on 2.
-
 
 Report going:
 	unless playerRegion is school:
@@ -52,8 +49,6 @@ Report going:
 					decrease the semen-puddle of the location of the player by 1;
 		otherwise:
 			now the crawl count of the player is 0.
-
-
 
 Chapter - Class Outfit
 
@@ -123,9 +118,8 @@ To compute class outfit of (H - a maid headdress):
 			say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
 			summon S uncursed;
 		otherwise if W is actually summonable:
-			say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+			say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 			summon W uncursed.
-
 
 Chapter - Quest
 
@@ -141,7 +135,6 @@ To say QuestFlav of (Q - puddle-cleaning-quest):
 
 To say QuestTitle of (Q - puddle-cleaning-quest):
 	say " (cleaning quest)".
-
 
 To progress quest of (Q - puddle-cleaning-quest):
 	repeat with C running through worn clothing:
@@ -181,7 +174,7 @@ To compute generic class reward of (Q - puddle-cleaning-quest) on (C - a clothin
 		if P is cloth and the work ethic of P < 0:
 			compute generic second time class reward of Q on C;
 		otherwise if P is cloth:
-			say "Your [printed name of P] lights up, emitting a lemony scent as a matching pink spraybottle materializes in your other hand!";
+			say "Your [printed name of P] lights up, emitting a lemony scent as a matching pink spraybottle materialises in your other hand!";
 			now P is spray;
 			now the charge of P is 1;
 		otherwise if P is cursed:
@@ -241,7 +234,4 @@ To decide which number is the initial cringe of (C - cafe maid headdress):
 
 Definition: cafe maid headdress is bear themed: decide yes.
 
-
-
 Maid Headdress ends here.
-

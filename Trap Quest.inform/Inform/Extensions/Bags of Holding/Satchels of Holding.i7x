@@ -3,7 +3,6 @@ Satchels of Holding by Bags of Holding begins here.
 A satchel of holding is a kind of bag of holding.
 Definition: a satchel of holding is pink themed: decide yes.
 
-
 To decide which object is the potential-upgrade-target of (C - a sack of holding):
 	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;
 	decide on a random off-stage satchel of holding.
@@ -32,4 +31,3 @@ To say ShortDesc of (C - a pink satchel of holding):
 	say "pink leather satchel".
 
 Satchels of Holding ends here.
-

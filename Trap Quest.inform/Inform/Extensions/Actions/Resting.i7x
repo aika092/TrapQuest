@@ -1,6 +1,5 @@
 Resting by Actions begins here.
 
-
 [!<resting:Action>*
 
 REQUIRES COMMENTING
@@ -64,6 +63,4 @@ Carry out resting:
 		try standing.
 Understand "rest", "recover", "re", "res" as resting.
 
-
 Resting ends here.
-

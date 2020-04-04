@@ -28,4 +28,3 @@ Definition: a ribbon dress is red themed: decide yes.
 Definition: a ribbon dress is christmas themed: decide yes.
 
 Ribbon Dress ends here.
-

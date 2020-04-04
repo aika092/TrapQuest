@@ -25,6 +25,10 @@ This is the trap stuck immobility rule:
 	if the player is trap stuck, rule fails.
 The trap stuck immobility rule is listed in the immobility rules.
 
+This is the body stuck immobility rule:
+	if the player is body stuck, rule fails.
+The body stuck immobility rule is listed in the immobility rules.
+
 This is the blindfolded immobility rule:
 	if the player is in a blindroom, rule fails.
 The blindfolded immobility rule is listed in the immobility rules.
@@ -74,7 +78,6 @@ REQUIRES COMMENTING
 Definition: yourself is dildo stuck:
 	if there is a dildo trap penetrating a fuckhole, decide yes;
 	decide no.
-
 
 [doll-stuck is meant to be used in remarks that refer to you being stuck on a dildo trap that's trying to
  force you to pose like a little dolly. In this case, the only such trap will be one that makes you pose
@@ -146,4 +149,3 @@ To say SubduedGrabFlav of (C - clothing):
 	if the player is glue stuck, say "[variable custom style]Oh no, this is gonna hurt![roman type][line break]".
 
 Immobility ends here.
-

@@ -126,9 +126,7 @@ To compute specific hypno effect of (Y - a BBC hypno trap):
 	if the raw BBC addiction of the player > the raw sex addiction of the player, SexAddictUp 1; [Remember sex addiction is between 1 and 20, and BBC only between 1 and 10. So this is a fair way to make sure that sex addiction isn't too massively far behind, at least not from a sexy hypno screen.]
 	BBCAddictUp 1.
 
-
 hypno-trigger-please is a number that varies.
-
 
 To compute specific hypno effect of (Y - a diaper hypno trap):
 	commence animation of DiaperHypnoAnimation;
@@ -168,9 +166,6 @@ To say specific video content of (Y - a BBC hypno trap):
 
 To say specific video content of (Y - a diaper hypno trap):
 	say "[second custom style][one of]I'M JUST A BABY[or]I'M JUST A DIAPERSLUT[or]CALL ME POTTYPANTS[or]NO TOILETS[line break]JUST DIAPERS[or]I'M NOT GROWN-UP[line break]I'LL NEVER GROW UP[or][if diaper messing >= 4]GRUNT AND PUSH[otherwise]I WET MY NAPPY[end if][or]SPANK MY ASS[line break][if diaper messing >= 4]AND SPREAD MY MESS[otherwise]AND MAKE IT RED[end if][or]FIND A MOMMY[line break]TO RUB MY DIAPER[or]I NEED[line break]A GROWN-UP[line break]TO TELL ME WHAT TO DO[or]I NEED A DADDY[line break][if player is male and transGender is 0]TO MAKE ME HIS SISSY[otherwise]TO MAKE ME HIS BABYGIRL[end if][or][if player is male]GOOD SISSIES[otherwise]GOOD GIRLS[end if][line break]CREAM THEIR PAMPERS[or][if diaper quest is 1]DON'T THINK[line break]JUST LET IT GO[otherwise]PRETEND HIS COCK[line break]IS A PACIFIER[end if][or]WHEN I'M NAUGHTY[line break]PUT ME OVER YOUR KNEE[or][if diaper quest is 1]THE MORE I DRINK[line break]THE MORE I PEE[otherwise]FILL MY BOTTLE[line break]FULL OF CUM[end if][or][if lactation fetish is 1]FEED ME MILK[line break]FROM YOUR BREASTS[otherwise]BOUNCE ME[end if][line break]IN A DIAPER[line break]ON YOUR KNEE[or]FILL MY NAPPY[line break][if diaper quest is 1]SHOW MY FRIENDS[otherwise]WITH YOUR CUM[end if][or]RUB MY CLITTY[line break]THROUGH MY SOGGY PADDING[or][if diaper messing >= 3]MESS[otherwise]WET[end if] MYSELF ON PURPOSE[line break]DURING MY DIAPER CHECK[or]SPANK ME HARD ENOUGH[line break]AND YOU'LL MAKE ME CUM[or]CLEAN ME OUT[line break]WITH A BIG SOAPY ENEMA[or]THE FEELING OF [if diaper messing >= 3]POOPING[otherwise]WETTING[end if] MYSELF[line break]IS ABSOLUTE BLISS[or][caps please] LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE LET ME PEE PEE PLEASE[in random order][roman type][line break]".
-
-
-
 
 Figure of HypnoDiaperAnimation000 is the file "Special/Animations/HypnoDiaper/frame_000.jpg".
 Figure of HypnoDiaperAnimation001 is the file "Special/Animations/HypnoDiaper/frame_001.jpg".
@@ -284,4 +279,3 @@ When play begins:
 	fill DiaperHypnoAnimation from Figure of HypnoDiaperAnimation000 to 107.
 
 Hypno Traps ends here.
-

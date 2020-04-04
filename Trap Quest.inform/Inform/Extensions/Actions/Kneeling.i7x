@@ -1,6 +1,5 @@
 Kneeling by Actions begins here.
 
-
 [!<kneeling:Action>*
 
 REQUIRES COMMENTING
@@ -16,7 +15,6 @@ REQUIRES COMMENTING
 Check kneeling while gloryhole is grabbing the player:
 	say "[if seconds is 0]You can't move![end if]" instead.
 
-
 [!<CheckKneelingWhileThePlayerIsDildoStuck>+
 
 REQUIRES COMMENTING
@@ -24,7 +22,6 @@ REQUIRES COMMENTING
 +!]
 Check kneeling while the player is dildo stuck:
 	say "[if seconds is 0]You can't move![end if]" instead.
-
 
 [!<CheckKneelingWhileThePlayerIsImmobile>+
 
@@ -62,7 +59,7 @@ Check kneeling:
 			say "You are already kneeling!" instead;
 	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player and auto is 0:
 		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
-	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
+	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out and the player is not perturbed: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
 
 [!<CarryOutKneeling>+
@@ -124,7 +121,6 @@ Carry out kneeling:
 	if seconds is 0, allocate 2 seconds;
 	otherwise allocate 1 seconds. [seconds = 1 means monsters don't get delayed in "report kneeling when the player is in danger"]
 
-
 [!<CheckKneelingWhenTheLocationOfThePlayerIsSmoky>+
 
 REQUIRES COMMENTING
@@ -134,7 +130,6 @@ Check kneeling when the location of the player is smoky:
 	if the player is upright and seconds is 0 and auto is 0:
 		say "There is [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room, are you sure you want to? ";
 		unless the player is in agreement, do nothing instead.
-
 
 [!<CheckKneelingWhenTheLocationOfThePlayerIsGluePuddled>+
 
@@ -176,8 +171,4 @@ To compute kneeling reaction of (M - a monster): [Default boring reaction if non
 	otherwise say "[BigNameDesc of M] watches you, expressionless.[if the humiliation of the player < HUMILIATION-SHAMELESS - 2000]You shudder with shame.[end if]";
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
-
-
-
 Kneeling ends here.
-

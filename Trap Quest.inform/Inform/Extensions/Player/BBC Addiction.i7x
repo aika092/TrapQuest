@@ -52,7 +52,6 @@ Definition: yourself is queen of spades:
 
 Part 2 - Modify BBC Addiction
 
-
 [!<Player>@<rawBBCAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -86,6 +85,4 @@ To SilentlyBBCAddictDown (X - a number):
 To SilentlyBBCAddictDown:
 	if the raw BBC addiction of the player > 1, decrease the raw BBC addiction of the player by 1.
 
-
 BBC Addiction ends here.
-

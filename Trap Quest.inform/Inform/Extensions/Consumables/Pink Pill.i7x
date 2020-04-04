@@ -50,6 +50,4 @@ Carry out PinkEating:
 	if there is a worn lipstick collar, now a random worn lipstick collar is not tethering;
 	remove the noun from play.
 
-
 Pink Pill ends here.
-

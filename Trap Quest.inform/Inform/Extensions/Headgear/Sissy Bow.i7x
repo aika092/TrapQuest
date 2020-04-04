@@ -6,7 +6,6 @@ Definition: a sissy bow is roleplay if the player is male.
 
 The printed name of sissy bow is usually "[clothing-title-before]sissy bow[clothing-title-after]".
 
-
 To compute SelfExamineDesc of (H - a sissy bow):
 	let X be the largeness of hair;
 	say "You are wearing a pink sissy bow in your [ShortDesc of hair]. ".
@@ -44,7 +43,6 @@ To say QuestTitle of (Q - asshole-presenting-quest):
 To compute persistent reward of (Q - asshole-presenting-quest) on (C - a clothing):
 	compute generic class reward of Q on C.
 
-
 Part - Pink Sissy Bow
 
 pink sissy bow is a sissy bow. The printed name of sissy bow is "[clothing-title-before]sissy bow[clothing-title-after]". The text-shortcut of sissy bow is "ssb".
@@ -71,7 +69,6 @@ To decide which object is the unique-upgrade-target of (C - pink sissy bow):
 
 Definition: pink sissy bow is pink themed: decide yes.
 
-
 Part - Baby Sissy Bow
 
 baby sissy bow is a sissy bow. The printed name of baby sissy bow is "[clothing-title-before]baby sissy bow[clothing-title-after]". The text-shortcut of baby sissy bow is "bsb".
@@ -93,9 +90,4 @@ To say ShortDesc of (H - baby sissy bow):
 Definition: baby sissy bow is fetish appropriate if diaper lover > 0.
 Definition: baby sissy bow is blue themed: decide yes.
 
-
-
-
-
 Sissy Bow ends here.
-

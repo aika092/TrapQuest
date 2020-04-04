@@ -33,6 +33,7 @@ Check plugging something with:
 			say "You relax your [variable noun] as much as you can to try and push the [ShortDesc of the second noun] inside of you.".
 
 Carry out plugging something with:
+	allocate arm use;
 	allocate 6 seconds;
 	humiliate 50;
 	compute toyInsertion of the second noun into the noun;
@@ -76,6 +77,7 @@ Check unplugging something:
 	if diaper quest is 0 and the girth of the noun > the insertableGirthAcceptance of a random orifice penetrated by the noun + 4 and the noun is plug:
 		say "You push with your [random orifice penetrated by the noun]'s muscles and [if the noun is anal beads]pull on the cord of the [printed name of noun], but they're just so big that they[otherwise]pull on the base of the [printed name of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
 Carry out unplugging something:
+	allocate arm use;
 	allocate 6 seconds;
 	if the noun is anal beads:
 		do nothing instead; [Important! Anal beads has its own unplugging function]
@@ -96,6 +98,4 @@ Report unplugging something:
 	otherwise if the number of body parts penetrated by the noun < 1:
 		say "Successfully removed.".
 
-
 Plugging ends here.
-

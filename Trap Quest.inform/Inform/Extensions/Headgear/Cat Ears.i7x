@@ -1,6 +1,5 @@
 Cat Ears by Headgear begins here.
 
-
 cat-ears is a headgear. cat-ears is manly. Figure of cat ears is the file "Items/Accessories/Head/catears1.png". Understand "pair", "of" as cat-ears. cat-ears is blondeness-negative. cat-ears is brightness-positive. cat-ears is redness-negative. cat-ears is hair growing. cat-ears is dexterity-influencing. cat-ears is roleplay. Understand "cat", "ears" as cat-ears.
 
 kitty-summoned is a number that varies.
@@ -35,8 +34,8 @@ Definition: cat-ears (called C) is removal-blocking: [Some items (mainly headgea
 
 To compute class outfit of (H - cat-ears):
 	let K be a random off-stage kitty claws;
-	let C be a random off-stage catbell;
-	let P be a random off-stage cat tail plug;
+	let C be a random catbell;
+	let P be a random cat tail plug;
 	let M be a random off-stage exposing magical dress;
 	let W be a random off-stage heart wand;
 	if diaper quest is 0 and the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
@@ -52,7 +51,7 @@ To compute class outfit of (H - cat-ears):
 		now the raw-magic-modifier of M is the stance of the player;
 		now kitty-summoned is 2;
 	otherwise if W is actually summonable and the class of the player is magical girl:
-		say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
+		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
 		summon W;
 	otherwise if K is actually summonable or (K is kitty claws and kitty-summoned is 0):
 		if kitty-summoned is 0:
@@ -65,10 +64,10 @@ To compute class outfit of (H - cat-ears):
 		now the raw-magic-modifier of K is the stance of the player;
 		if kitty-summoned < 1, now kitty-summoned is 1;
 	otherwise if C is actually summonable:
-		say "[bold type]You feel a sudden tightness around your neck. You look down to see that a cat collar has appeared![roman type][line break]";
+		say "[bold type]You feel a sudden tightness around your neck. You look down to see that [if C is held]the cat collar has reappeared[otherwise]a cat collar has appeared[end if]![roman type][line break]";
 		summon C;
-	otherwise if diaper quest is 0 and the class of the player is catgirl and P is actually summonable and the player is not ass protected:
-		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object! Looking around you see a cat tail swaying proudly from your [asshole].[roman type][line break]";
+	otherwise if (P is off-stage or P is cursed) and diaper quest is 0 and the class of the player is catgirl and P is actually summonable and the player is not ass protected:
+		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object! Looking around you see [if P is in-play]the cat tail has reappeared and is[otherwise]a cat tail[end if] swaying proudly from your [asshole].[roman type][line break]";
 		summon P cursed;
 		let X be (the openness of asshole + the number of worn nudism-disabling clothing) - 3;
 		assign size X to P.
@@ -86,7 +85,4 @@ To say QuestFlav of (Q - puddle-licking-quest):
 To say QuestTitle of (Q - puddle-licking-quest):
 	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
 
-
-
 Cat Ears ends here.
-

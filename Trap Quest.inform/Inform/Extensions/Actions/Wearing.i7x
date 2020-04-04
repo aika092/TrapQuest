@@ -38,9 +38,6 @@ Before wearing a thing:
 			otherwise:
 				do nothing instead.
 
-
-
-
 Check wearing insertable thing:
 	unless (the noun is ass plugging clothing or the noun is vagina plugging clothing or the noun is dildo sword) and the noun is not sex toy, say "You can't just wear this! Try [bold type]inserting it into[roman type] something." instead;
 
@@ -148,9 +145,10 @@ The standard report wearing rule is not listed in the report wearing rulebook.
 Carry out wearing clothing:
 	if the noun is ass plugging, now the noun is penetrating asshole;
 	if the noun is vagina plugging:
-		 if the player is female, now the noun is penetrating vagina;
-		 otherwise now the noun is penetrating asshole;
+		if the player is female, now the noun is penetrating vagina;
+		otherwise now the noun is penetrating asshole;
 	if the noun is ballgag, now the noun is penetrating face; [as opposed to ring gags, which take up the face slot but do not necessarily penetrate face]
+	allocate dual arm use;
 	allocate 6 seconds;
 	if the noun is bottom layer, layer the noun correctly; [Cage, knickers and trousers can do some funky stuff like going under skirts]
 	otherwise layer the noun correctly on top;
@@ -226,17 +224,15 @@ Report plugging something with refreshment clothing:
 			if L is blessed or (L is uncursed and the player is male), now the timer of L is a random number between 100 and 150;
 			otherwise now the timer of L is a random number between 30 and 50;
 			now L is covering the noun;
-			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of noun] makes you realize it was just covered in lubricant! This must be a [if the second noun is plug]plug[otherwise if the second noun is dong]dildo[end if] of refreshment!".
+			say "As you move your hand away, a cool, slippery feeling in your [ShortDesc of noun] makes you realise it was just covered in lubricant! This must be a [if the second noun is plug]plug[otherwise if the second noun is dong]dildo[end if] of refreshment!".
 
 Report plugging something with rejuvenation clothing:
 	say "As you move your hand away, the [ShortDesc of second noun] seems to wiggle inside you, as if it were more than just some inanimate object. It must be magic!".
 
 Report plugging something with expansion clothing:
-	say "As you move your hand away, you realize the [ShortDesc of second noun] has actually begun to grow inside of you! It must be a [ShortDesc of second noun] of expansion!".
+	say "As you move your hand away, you realise the [ShortDesc of second noun] has actually begun to grow inside of you! It must be a [ShortDesc of second noun] of expansion!".
 
 Report wearing possession clothing:
 	say "A chill goes down your spine as you finish putting it on, and somehow you know you're not alone in these clothes!".
 
-
 Wearing ends here.
-

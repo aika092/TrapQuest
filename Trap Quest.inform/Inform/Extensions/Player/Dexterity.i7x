@@ -85,13 +85,15 @@ To decide which number is the flat dexterity of the player:
 	if fudge-poison-timer > 0, now D is D / 2;
 	if cookie-poison-timer > 0, decrease D by 2;
 	if wasp-honey-timer > 0, decrease D by wasp-honey-timer / 10;
-	if the player is grossed out and D > 5, now D is 5;
+	if the player is grossed out and D > 5:
+		now D is 5;
+	otherwise if the player is perturbed:
+		decrease D by 2;
 	if temp_dex_dam > 0, decrease D by temp_dex_dam;
 	now D is (D * (5 - alcohol-level)) / 5;
 	if D < 0, decide on 0;
 	if D > 30, decide on 30;
 	decide on D.
-
 
 [!<DecideWhichNumberIsTheStartingDexterityOfThePlayer>+
 
@@ -103,7 +105,6 @@ To decide which number is the starting dexterity of the player:
 
 Part 2 - Modify Dexterity
 
-
 [!<Player>@<rawDexterity:Integer>*
 
 REQUIRES COMMENTING
@@ -111,14 +112,12 @@ REQUIRES COMMENTING
 *@!]
 The player has a number called raw dexterity. The raw dexterity of the player is usually 7. [Min 1 Max 30]
 
-
 [!<Player>@<oldDexterity:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 The player has a number called old dexterity. The old dexterity of the player is usually 0.
-
 
 Definition: yourself is deserving of more dexterity:
 	let R be a random number between -3 and 56;
@@ -147,6 +146,4 @@ To Dexdown (X - a number):
 		decrease X by 1;
 		if the raw dexterity of the player > 1, decrease the raw dexterity of the player by 1.
 
-
 Dexterity ends here.
-

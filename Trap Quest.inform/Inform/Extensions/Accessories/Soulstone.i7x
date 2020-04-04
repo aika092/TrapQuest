@@ -20,9 +20,7 @@ Definition: a soulstone is demonic: decide yes.
 Definition: a soulstone is orange themed: decide yes.
 Definition: a soulstone is grey themed if the player is not soulless.
 
-
 To decide which number is the initial outrage of (C - a soulstone):
 	decide on 1.
 
 Soulstone ends here.
-

@@ -1,6 +1,5 @@
 Eggs by Collectibles begins here.
 
-
 An egg is a kind of collectible. An egg can be laid. An egg is usually not laid.
 
 Definition: an egg is insertable: decide yes.
@@ -124,7 +123,6 @@ To compute hatchtime of (E - an egg):
 	if the hatching of E > 130 and E is regional:
 		compute hatch of E.
 
-
 To compute hatch of (E - an egg):
 	let L be a random off-stage larva;
 	if L is larva:
@@ -210,8 +208,6 @@ To compute hatch of (E - a large egg):
 To decide which number is the outrage of (C - a large egg):
 	decide on 8.
 
-
-
 To say ShortDesc of (E - a small egg):
 	say "[if egg laying fetish is 0]ping pong ball[otherwise]small egg[end if]".
 To say MediumDesc of (E - a small egg):
@@ -236,7 +232,6 @@ To decide which number is the girth of (E - a large egg):
 To decide which number is the heaviness of (C - a large egg):
 	decide on 3.
 
-
 When play begins:
 	let eggShortcutCount be 1;
 	repeat with E running through small egg:
@@ -250,7 +245,6 @@ When play begins:
 	repeat with E running through large egg:
 		now the text-shortcut of E is substituted form of "le[eggShortcutCount]";
 		increase eggShortcutCount by 1.
-
 
 A larva is a kind of person. A larva is neuter. The printed name of larva is "[TQlink of item described]tentacle larva[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of larva is "[TQlink of item described]tentacle larvae[shortcut-desc][TQxlink of item described][verb-desc of item described]". There are 15 larva. Figure of larva is the file "Items/Collectibles/larva1.png". Understand "tentacle", "larvae" as larva. The text-shortcut of a larva is "lva". A larva has a number called larva-growth.
 To decide which figure-name is the examine-image of (C - a larva):
@@ -296,4 +290,3 @@ Check kicking larva:
 Understand "squish [larva]" as attacking.
 
 Eggs ends here.
-

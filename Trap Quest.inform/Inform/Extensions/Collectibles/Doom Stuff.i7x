@@ -89,4 +89,3 @@ To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - doom notes):
 	say "[speech style of M]'HAHA! YES! Without this, the heathens have no chance to prevent the return of [Azathot]! You have done a great thing here today.'[roman type][line break]".
 
 Doom Stuff ends here.
-

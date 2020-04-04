@@ -358,7 +358,6 @@ Carry out taking museum-store clothing:
 			now vampiress is interested;
 			anger vampiress.
 
-
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 
 To say ShortDesc of (C - a pedestal):
@@ -414,7 +413,6 @@ To lock pedestals:
 			otherwise now P is fertile;
 		if L is 4 and lactation fetish is 1, now P is chilled.
 
-
 To add treasure to (X - a pedestal):[This function should happen when the mansion is generated, not when the pedestal is opened.]
 	if there is an off-stage pocket necronomicon:
 		let P be a random off-stage pocket necronomicon;
@@ -437,8 +435,6 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is museum-store;
 		now the paid of X is the price of P / 3;
 		if the paid of X <= 0, now the paid of X is 1.
-
-
 
 To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	let C be a random thing in T;
@@ -563,7 +559,4 @@ To say partialPaymentSatisfy of (P - a pedestal):
 To say paymentSatisfyReject of (P - a pedestal):
 	say "The [pedestal-variant of P] basin fills with the liquid, but the dome doesn't open. Maybe that's the wrong type of liquid? [if P is fertile]Something to do with fertility might be a better shot...[otherwise if P is parched]Maybe the fact that the carving looks like a human toilet is supposed to be suggesting something in particular...[otherwise if P is chilled]The pedestal looks like it keeps whatever liquid it stores cool, so maybe it's for making sure that a certain lactated liquid doesn't go off?[end if]".
 
-
-
 Containers ends here.
-

@@ -22,4 +22,3 @@ To decide which number is the initial outrage of (C - a purple bikini top):
 Definition: a purple bikini top is purple themed: decide yes.
 
 Purple Bikini Top ends here.
-

@@ -11,12 +11,10 @@ title	subtable	description	toggle
 "[roman type]I want to have a penis but always be gendered as a woman, right from the beginning."	--	--	trans choice rule
 "[roman type]I'm female, [if diaper quest is 1]babify[otherwise]sluttify[end if] me!"	--	--	female choice rule
 
-
 [0 means that males are referred to as male pronouns at times
 1 means that the player is always referred to as female]
 To decide which number is transGender:
 	decide on choice in row 79 of the Table of Player Options.
-
 
 [!<TheMaleChoiceRule>+
 
@@ -49,4 +47,3 @@ This is the female choice rule:
 	follow quit rule.
 
 Gender Options ends here.
-

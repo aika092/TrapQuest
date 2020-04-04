@@ -2,7 +2,6 @@ Cow Ears by Headgear begins here.
 
 cow-ears is a headgear. Figure of cow ears is the file "Items/Accessories/Head/cowears1.png". Figure of cow ears full is the file "Items/Accessories/Head/cowears2.png". Understand "pair", "pair of", "cow", "ears" as cow-ears. cow-ears is hair growing. cow-ears is milk-taste-addiction-influencing.
 
-
 Definition: cow-ears is roleplay if lactation fetish is 1.
 Definition: cow-ears is IcarusScienceAppropriate if it is actually summonable and lactation fetish is 1.
 
@@ -86,14 +85,13 @@ To compute class outfit of (H - cow-ears):
 		now P is milk production;
 		if T is actually summonable, summon T;
 		now cow-summoned is 1;
-	otherwise if the class of the player is cowgirl and cowbell is off-stage and cowbell is actually summonable:
-		say "[bold type]You feel a sudden coldness on your chest. You look down to see that a cowbell has appeared![roman type][line break]";
+	otherwise if the class of the player is cowgirl and cowbell is actually summonable:
+		say "[bold type]You feel a sudden coldness on your chest. You look down to see that [if cowbell is held]the cowbell has reappeared[otherwise]a cowbell has appeared[end if]![roman type][line break]";
 		summon cowbell;
 	otherwise if the class of the player is cowgirl and G is actually summonable:
 		say "[bold type]New boots appear around your ankles! They have a cow pattern![roman type][line break]";
 		summon G;
 		now the raw-magic-modifier of G is (the milk volume of breasts + a random number between -2 and 6) / 5.
-
 
 Chapter - Quest
 
@@ -152,7 +150,6 @@ To uniquely set up (C - cow-horns):
 	now the quest of C is babymaking-quest;
 	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 
-
 To say ClothingDesc of (H - cow-horns):
 	say "A pair of stubby cow horns poking out of your forehead. [unless H is removable]They seem to be real![otherwise]Luckily they're only attached to a headband.[end if]".
 
@@ -160,4 +157,3 @@ To compute SelfExamineDesc of (H - cow-horns):
 	say "You [unless H is removable]have a pair of horns protruding from your head.[otherwise]are wearing a headband with a pair of horns.".
 
 Cow Ears ends here.
-

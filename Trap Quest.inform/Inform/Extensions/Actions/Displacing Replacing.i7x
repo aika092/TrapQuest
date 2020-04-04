@@ -48,7 +48,6 @@ This is the can't displace what's covered up rule:
 				rule fails.
 The can't displace what's covered up rule is listed last in the displacing rules.
 
-
 Check displacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
@@ -58,6 +57,8 @@ Check displacing:
 	if the rule failed, do nothing instead.
 
 Carry out displacing:
+	allocate arm use;
+	allocate 4 seconds;
 	say DisplaceFlav of the noun;
 	displace the noun;
 	if the noun is skirted and there is an intelligent interested monster in the location of the player, progress quest of upskirt-quest.
@@ -74,8 +75,7 @@ To say DefaultDisplaceFlav of (C - a clothing):
 
 Report displacing:
 	force clothing-focus redraw; [This forces the clothing window to redraw]
-	if the player is not occupied and ((the noun is not hobble-skirted and the noun is not knee-length) or the player is prone), compute player submission;
-	allocate 4 seconds.
+	if the player is not occupied and ((the noun is not hobble-skirted and the noun is not knee-length) or the player is prone), compute player submission.
 
 Understand "displace [something]", "pull aside [something]", "pull [something] aside", "pull up [something]", "pull [something] up", "move [something]", "move aside [something]", "move [something] aside", "shift [something]", "shift aside [something]", "shift [something] aside", "hike [something]", "hike up [something]", "hike [something] up" as displacing.
 
@@ -85,7 +85,6 @@ Check pulling worn clothing:
 		otherwise try displacing the noun instead.
 
 Part 2 - Replacing
-
 
 Replacing is an action applying to one thing.
 
@@ -104,6 +103,9 @@ Check replacing:
 		if P is a thing and P is not the noun, say "You can't because the [P] is already in your [vagina]." instead;
 	if the noun is crotch covering:
 		if gloryhole is grabbing the player, say "You'll need to wait until you're released from the tight magical grip of the gloryhole!" instead;
+		let T be a random embodied thing penetrating a fuckhole;
+		if T is a thing:
+			say "You can't because [NameDesc of T] is in your [random fuckhole penetrated by T]!" instead;
 		repeat with C running through worn clothing:
 			if C is top level protection and the bottom-layer of C > the bottom-layer of the noun, say "You would need to displace or remove your [printed name of C] first." instead;
 			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C]!" instead; [For example, trying to replace jeans over a waddle diaper]
@@ -112,6 +114,7 @@ Check replacing:
 		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 
 Carry out replacing:
+	allocate arm use;
 	allocate 2 seconds;
 	say ReplaceFlav of the noun;
 	replace the noun.
@@ -124,6 +127,4 @@ Report replacing:
 
 Understand "fix [something]", "replace [something]", "adjust [something]", "unmove [something]" as replacing.
 
-
 Displacing Replacing ends here.
-

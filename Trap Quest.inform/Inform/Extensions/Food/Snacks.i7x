@@ -1,6 +1,5 @@
 Snacks by Food begins here.
 
-
 A snack is a kind of food.
 
 To restock (C - a snack):
@@ -21,4 +20,3 @@ Carry out TQeating snack:
 	allocate 6 seconds.
 
 Snacks ends here.
-

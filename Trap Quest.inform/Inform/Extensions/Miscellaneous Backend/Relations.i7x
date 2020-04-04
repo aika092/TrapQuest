@@ -27,4 +27,3 @@ Inseminating relates various things to various things.
 The verb to inseminate (he inseminates, they inseminate, he inseminated, it is inseminated, he is inseminating) implies the inseminating relation.
 
 Relations ends here.
-

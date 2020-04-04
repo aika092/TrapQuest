@@ -19,4 +19,3 @@ The remove inappropriate trousers rule is listed in the diaper quest fix rules.
 Definition: a rubber trousers is purple themed: decide yes.
 
 Latex Pants ends here.
-

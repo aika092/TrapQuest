@@ -103,4 +103,3 @@ To compute offer reward of (M - a dominatrix) for (T - whip-of-domination):
 		say "[BigNameDesc of M] summons a [D] out of nowhere, and hands it to you.".
 
 Whip of Domination ends here.
-

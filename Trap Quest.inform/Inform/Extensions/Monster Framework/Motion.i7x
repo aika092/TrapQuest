@@ -100,7 +100,6 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 
 The motion reaction rules is a rulebook.
 
-
 To compute monstermotion reactions of (M - a monster): [If the NPC stumbles across the player this turn, they should react appropriately if they catch the player urinating, etc.]
 	if M is reactive:
 		now current-monster is M; [Just to make sure]
@@ -216,6 +215,4 @@ To compute survival rewards:
 	repeat with C running through worn clothing:
 		compute survival reward of C.
 
-
 Motion ends here.
-

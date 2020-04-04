@@ -20,6 +20,4 @@ To compute (M - a robochef) cooking (I - an apple):
 		now the fat of D is 1;
 		now D is retained by M.
 
-
 Apple ends here.
-

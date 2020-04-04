@@ -1,6 +1,5 @@
 Clothing Adjectives by Clothing begins here.
 
-
 [!<WearThing>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A wearthing is a kind of thing.
-
 
 [!<Clothing>@
 
@@ -33,6 +31,7 @@ REQUIRES COMMENTING
 
 *@!]
 Clothing can be dense, sheer-when-wet, sheer, see-through (this is the clothing-transparency property). Understand the clothing-transparency property as describing a clothing. Clothing is usually dense. [Sheer and see-through clothing does not prevent humiliation from being naked but soaks up liquid. Clothing that is see-through can never be less humiliating than being naked. Clothing that is sheer can.]
+Definition: a clothing is not-see-through if it is not see-through.
 
 [!<Clothing>@<IsActuallySheer>+
 
@@ -230,14 +229,13 @@ Clothing can be stuck. Clothing is usually not stuck.
 Is the player unable to move because some clothing is stuck?
 
 +!]
-Definition: yourself is clothing stuck:
-	if there is worn stuck clothing, decide yes;
-	decide no.
+Definition: yourself is clothing stuck if there is worn stuck clothing.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
 Clothing can be spikey. A clothing is usually not spikey.
 A clothing has a number called used condoms. A clothing has a number called empty condoms.
+A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
 A clothing can be unsoaked or soaked. A clothing is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
 Definition: a clothing (called C) is fluid immune:[Is fluid unable to soak into or pass through C?]
 	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
@@ -287,13 +285,8 @@ Definition: yourself is naked:
 	if the player is clothed, decide no;
 	decide yes.
 
-
-
-
-
 Definition: a clothing (called C) is ringagged: [Is it something that includes a ring gag?]
 	decide no.
-
 
 [!<ClothingIsBasicLoot>+
 
@@ -304,7 +297,6 @@ Definition: a clothing (called C) is basic loot:
 	if C is diaper, decide no;
 	if C is off-stage and C is plentiful and C is fetish appropriate, decide yes;
 	decide no.
-
 
 [!<ClothingIsDesirable>+
 
@@ -326,6 +318,4 @@ tonguesBlack is initially false.
 Definition: a clothing is tongued: decide no.
 Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it is worn.
 
-
 Clothing Adjectives ends here.
-

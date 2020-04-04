@@ -20,4 +20,3 @@ To decide which number is the initial outrage of (C - skimpy-pink-bikini-top):
 	decide on 6.
 
 Skimpy Pink Bikini Top ends here.
-

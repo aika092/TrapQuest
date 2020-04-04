@@ -14,7 +14,6 @@ Are we in debug mode?
 *!]
 debugmode is a number that varies.
 
-
 [!<APersonIsVirtual>+
 
 A person is classed as virtual if they are actually in the game that the person is playing within the game
@@ -84,7 +83,6 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called crawl count.
-
 
 [!<Player>@<pregnancy:Integer>*
 
@@ -165,7 +163,6 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called extra lives. The extra lives of the player is usually 3.
-
 
 [!<Person>@<souled:Boolean>*
 
@@ -345,6 +342,4 @@ REQUIRES COMMENTING
 *!]
 FairySuckleSlashes is a number that varies. FairySuckleSlashes is 0.
 
-
 Misc Variables ends here.
-

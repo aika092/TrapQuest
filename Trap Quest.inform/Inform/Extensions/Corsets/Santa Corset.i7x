@@ -25,4 +25,3 @@ To say ShortDesc of (C - a santa corset):
 	say "santa corset".
 
 Santa Corset ends here.
-

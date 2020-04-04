@@ -25,7 +25,6 @@ To say ShortDesc of (H - wasp-antennae):
 To compute SelfExamineDesc of (H - wasp-antennae):
 	say "[if total-wasps < 50]You have a headband with a pair of yellow and black antennae bobbing on your head.[otherwise]You have a pair of twitching black antennae coming out of your head.[end if]".
 
-
 Chapter - Class Outfit
 
 Definition: wasp-antennae (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -58,7 +57,6 @@ To compute class outfit of (H - wasp-antennae):
 		summon S;
 		now the raw-magic-modifier of S is total-wasps / 50.
 
-
 Chapter - Quest
 
 wasp-sex-quest is a headgear-clothing-quest.
@@ -72,11 +70,8 @@ To say QuestFlav of (Q - wasp-sex-quest):
 To say QuestTitle of (Q - wasp-sex-quest):
 	say " (wasp sex quest)".
 
-
 [need: black and yellow bikini (eventually becomes damage blocking), black and yellow stockings (eventually becomes damage blocking), wasp cloud weapon
 
 after you have laid enough eggs, you start very slowly producing them yourself if you don't have any in you perhaps]
 
-
 Wasp Antennae ends here.
-

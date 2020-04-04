@@ -1,6 +1,6 @@
 Special Events by Monster Framework begins here.
 
-[!<SayGangAnnounce>+
+[!<FacePiss>+
 
 Handles the player being pissed on by an unknown entity. The flavour is kept neutral so it shouldn't matter.
 
@@ -11,8 +11,13 @@ To FacePiss from (M - an object):
 	if the player is not forced to drink urine and the player is not gagged:
 		say PissDrinkThreat of M;
 		say "Do you drink the [urine]? ";
+	let vm be a random video-monitor in the location of the player;
 	if the player is gagged:
 		compute urine hitting face;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "getting showered in [urine].";
+			now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	otherwise if there is a worn ringagged clothing:
 		say "Your ring gag means that the [urine] flows straight into your mouth, forcing you to swallow it.";
 		DrinkPiss from M;
@@ -41,6 +46,14 @@ To FacePiss from (M - an object):
 				PainUp 1;
 			otherwise if M is intelligent monster:
 				compute angry punishment of M;
+			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+				now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+				let T be the substituted form of "getting showered in [urine].";
+				now the video-event of vm is T;[note that the video-event always needs to be a present participle]
+	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+		let T be the substituted form of "drinking [urine].";
+		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	SportsCount;
 	if the urine taste addiction of the player > 14:
 		say "The experience [one of]of being used as a toilet now [or][stopping][if the player is a bit horny]arouses you further[otherwise]turns you on[end if].";
@@ -185,7 +198,6 @@ Handles any unique effect to be triggered when the player swallows the urine of 
 +!]
 To compute unique piss drink effect of (M - an object):
 	do nothing.
-
 
 [!<AMonsterIsWillingToBukkake>+
 
@@ -365,7 +377,6 @@ This function can display a relevant image when the player receives an oral crea
 +!]
 [This is moved to TQ Only Stuff]
 
-
 [!<ComputeDeepthroatCreampieOfMonster>+
 
 This function is called whenever a monster is not willing to bukkake the player, and they ejaculate straight down the player's throat. Humiliates the player, and invokes the happy reward function since the player was probably being obedient.
@@ -377,7 +388,7 @@ To compute deepthroat creampie of (M - a monster):
 	get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	[PukeUp;]
 	compute happy reward of M.
 
@@ -437,7 +448,6 @@ To compute semen catching from (M - a monster) in (V - a bottle):
 	now the fill-colour of V is creamy;
 	now V is monster-origin.
 
-
 [!<ComputeAutoSwallowOfMonster>+
 
 This function is called whenever a monster ejaculates in the player's mouth and the player swallows automatically. Humiliating.
@@ -448,7 +458,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute auto swallow of (M - a monster):
 	say AutomaticSwallow of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	humiliate 100;
 	compute happy reward of M.
 
@@ -462,7 +472,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute voluntary swallow of (M - a monster):
 	say VoluntarySwallow of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	humiliate 200;
 	compute happy reward of M.
 
@@ -584,7 +594,7 @@ Displays some flavour describing the player reflexively swallowing semen after a
 
 +!]
 To say AutomaticSwallow of (M - a monster):
-	say "[one of]You swallow it without a second thought.[or]You swallow immediately, only realizing a second later what you've done.[or]You swallow it without a moment to spare.[or]Before you give it so much as a second thought, you've already got [his of M] load slithering down your throat.[or]You suddenly feel so thirsty that you can't stop yourself from swallowing it all in one gulp.[or]Before you can stop yourself, you've already swallowed [his of M] load down to the last drop.[or][if the semen taste addiction of the player < 6]Despite the fact that every fibre of your being tells to spit, you find yourself swallowing every last drop.[otherwise if the semen taste addiction of the player < 10]You swallow every last drop, desperately insisting to yourself that it was because you were thirsty.[otherwise]You swallow every last drop, knowing full well that if you really wanted something else to drink, you would have looked harder.[end if][in random order]".
+	say "[one of]You swallow it without a second thought.[or]You swallow immediately, only realising a second later what you've done.[or]You swallow it without a moment to spare.[or]Before you give it so much as a second thought, you've already got [his of M] load slithering down your throat.[or]You suddenly feel so thirsty that you can't stop yourself from swallowing it all in one gulp.[or]Before you can stop yourself, you've already swallowed [his of M] load down to the last drop.[or][if the semen taste addiction of the player < 6]Despite the fact that every fibre of your being tells to spit, you find yourself swallowing every last drop.[otherwise if the semen taste addiction of the player < 10]You swallow every last drop, desperately insisting to yourself that it was because you were thirsty.[otherwise]You swallow every last drop, knowing full well that if you really wanted something else to drink, you would have looked harder.[end if][in random order]".
 
 [!<SayVoluntarySwallowOfMonster>+
 
@@ -1177,7 +1187,6 @@ To compute (M - a monster) sleeping (N - a number) after sex:
 	now the sleep of M is N;
 	if newbie tips is 1, say sleeping tip.
 
-
 [!<SayGangAnnounce>+
 
 This should display some text if the player is currently being fucked by more than one thing at a time.
@@ -1188,9 +1197,10 @@ To say GangAnnounce:
 	let O be a random live thing penetrating face;
 	let A be a random live thing penetrating asshole;
 	if V is live thing and A is live thing:
+		if debugmode > 0, say "((Fucked by [V][if O is a live thing], [O][end if] and [A]))";
 		say "[line break][bold type]You're being [if O is live thing]triple[otherwise]double[end if] penetrated![roman type][line break]";
 	otherwise if O is monster and (A is live thing or V is live thing):
+		if debugmode > 0, say "((Fucked by [O] and [if A is live thing][A][otherwise][V][end if]))";
 		say "[line break][bold type]You're being spit roasted![roman type][line break]".
 
 Special Events ends here.
-

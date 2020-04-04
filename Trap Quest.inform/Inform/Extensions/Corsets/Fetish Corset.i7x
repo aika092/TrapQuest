@@ -21,4 +21,3 @@ To decide which number is the initial outrage of (C - a fetish corset):
 	decide on 7.
 
 Fetish Corset ends here.
-

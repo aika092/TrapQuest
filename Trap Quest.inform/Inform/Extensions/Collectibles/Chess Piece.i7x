@@ -18,5 +18,4 @@ Definition: chess piece is immune to change: decide yes.
 To say ShortDesc of (C - chess piece):
 	say "chess piece".
 
-
 Chess Piece ends here.

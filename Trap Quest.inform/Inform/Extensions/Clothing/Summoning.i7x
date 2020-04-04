@@ -1,7 +1,5 @@
 Summoning by Clothing begins here.
 
-
-
 To summon (C - a wearthing):
 	destroy C;
 	now C is worn by the player.
@@ -57,6 +55,10 @@ To summon (C - a thing) cursed with quest:
 	summon C cursed;
 	if C is clothing, compute summoned quest of C.
 
+To summon (C - a thing) cursed with persistent quest:
+	summon C cursed;
+	if C is clothing, compute summoned persistent quest of C.
+
 To summon (C - a sex toy) cursed vaginally with quest:
 	summon C cursed vaginally;
 	compute summoned quest of C.
@@ -65,13 +67,15 @@ To summon (C - a thing) cursed with silent quest:
 	summon C cursed;
 	if C is clothing, compute quest of C.
 
+To summon (C - a thing) cursed with silent persistent quest:
+	summon C cursed;
+	if C is clothing, compute persistent quest of C.
+
 To summon (C - a clothing) locked:
 	summon C;
 	if C is cursed, now C is bland;
 	now C is locked;
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: Oh dear, this item is locked! You'll need a key rather than a blessing to make it removable. Unfortunately the prison guard [unless there is an alive prison guard]who is about to spawn [end if]in the Dungeon isn't going to give you the key immediately. Instead, he is going to wait until your 'sentence' is over, which will take a decent amount of time. Of course, if you could defeat him in combat I'm sure you'd be able to salvage a key from his corpse.[roman type][line break][or][stopping]".
-
-
 
 Definition: an object is actually wearable: decide no.
 
@@ -82,6 +86,4 @@ Definition: a clothing (called C) is actually summonable:
 	if C is actually wearable, decide yes;
 	decide no.
 
-
 Summoning ends here.
-

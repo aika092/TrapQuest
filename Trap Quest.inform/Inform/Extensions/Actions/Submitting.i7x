@@ -112,11 +112,9 @@ To say SubmissionFlav of (M - a monster):
 	otherwise:
 		say "[BigNameDesc of M] prepares to assault you. ".
 
-
 To make (M - a monster) expectant: [This is in a function so that you can override it in a particular monster's definition if required.]
 	if M is unfriendly and M is not survived, now M is triumphant;
 	if M is unfriendly or the player is in danger, now the last-interaction of M is 2.
-
 
 [!<ResetSubmittedMonsters>+
 
@@ -127,7 +125,4 @@ To reset submitted monsters: [This means that making an aggressive move breaks a
 	repeat with M running through interested alive monsters:
 		now the last-interaction of M is 0.
 
-
-
 Submitting ends here.
-

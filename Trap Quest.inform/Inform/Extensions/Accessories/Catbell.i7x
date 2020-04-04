@@ -30,4 +30,3 @@ Definition: a catbell is bow themed: decide yes.
 Definition: a catbell is black themed: decide yes.
 
 Catbell ends here.
-

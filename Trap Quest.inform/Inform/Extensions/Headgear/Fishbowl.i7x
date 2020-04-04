@@ -33,7 +33,6 @@ To decide which number is the initial outrage of (C - fishbowl-hat):
 
 Figure of upside down fishbowl is the file "Items/Accessories/Head/bowl1.jpg".
 
-
 To decide which figure-name is the clothing-image of (C - fishbowl-hat):
 	decide on figure of upside down fishbowl.
 
@@ -42,7 +41,6 @@ To say ClothingDesc of (H - fishbowl-hat):
 
 To compute SelfExamineDesc of (H - fishbowl-hat):
 	say "You are wearing a glass bowl [if H is betrayal]that reads 'WHORE TRAITOR' [end if]on top of your [ShortDesc of hair]. ".
-
 
 Chapter - Class Outfit
 
@@ -105,12 +103,9 @@ To compute persistent reward of (Q - whore-exposing-quest) on (C - a clothing):
 	otherwise:
 		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop letting everyone know how pathetic a whore you are.[or]even more blessed magic![stopping]".
 
-
 To uniquely destroy (C - fishbowl-hat):
 	if the expose-count of whore-exposing-quest >= 14 and the quest of C is whore-exposing-quest:
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your tendons, making you more flexible, so you can be a more satisfying prostitute!";
 		DexUp the expose-count of whore-exposing-quest / 7.
 
-
 Fishbowl ends here.
-

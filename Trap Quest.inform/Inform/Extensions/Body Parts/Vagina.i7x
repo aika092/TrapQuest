@@ -12,7 +12,7 @@ REQUIRES COMMENTING
 vagina is a fuckhole. vagina is everywhere. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as vagina. Understand "womb", "vulva", "cherry", "kitty", "slit", "clunge", "honey pot", "baby maker" as vagina when the player is female. The text-shortcut of vagina is "vagina".
 
 To say FullExamineDesc of (B - vagina):
-	say "[if the player is female][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
+	say "[if the player is female][ImageDesc of vagina][TotalDesc of vagina][VaginaModesty][otherwise if the bimbo of the player > 6][description of asshole][otherwise]You don't have a vagina.[end if]".
 
 Vagina has a number called semen volume.
 Vagina has a number called womb volume.
@@ -52,10 +52,13 @@ Definition: vagina is at least partially exposed:
 	decide yes.
 
 To decide which object is the concealer of (V - vagina):
+	if water-fountain is penetrating asshole, decide on water-fountain;
 	let C be a random worn potentially vagina covering clothing;
 	decide on C.
 
 To decide which object is the at least partial concealer of (V - vagina):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
 	let C be a random worn potentially at least partially vagina covering clothing;
 	decide on C.
 
@@ -144,7 +147,6 @@ REQUIRES COMMENTING
 		rule fails.
 The player hates vaginal sex rule is listed in the vagina presentable rules.]
 [!<TheMonsterDoesNotdoVaginalRule>+
-
 
 REQUIRES COMMENTING
 
@@ -263,7 +265,7 @@ To say VaginaModesty:
 	otherwise:
 		let P be the at least partial concealer of vagina;
 		let C be the concealer of vagina;
-		say "It [if C is a thing]can't be seen thanks to[otherwise]is partially concealed by[end if] the [if C is a thing][ShortDesc of C][otherwise][ShortDesc of P][end if]. ";
+		say "It [if C is a thing]can't be seen thanks to [NameDesc of C][otherwise]is partially concealed by [NameDesc of P][end if]. ";
 	if vagina is actually occupied:
 		let P be a random thing penetrating vagina;
 		if P is monster:
@@ -347,11 +349,11 @@ This is the continued pussy expulsion rule:
 	if the semen volume of vagina >= 12, PussySquirt 6;
 	otherwise PussySquirt the semen volume of vagina - 6; [so we always leave 6 behind for dripping over time]
 	commence animation of PussyExpelAnimation;
-	if the semen volume of vagina > 6 and vagina is not actually occupied, now continued-pussy-expulsion is true;
+	if the semen volume of vagina > 6 and (vagina is not actually occupied or the player is in a predicament room), now continued-pussy-expulsion is true;
 	otherwise now continued-pussy-expulsion is false.
 
 This is the compulsory pussy expulsion rule:
-	if the semen volume of vagina > 6 and vagina is not actually occupied:
+	if the semen volume of vagina > 6 and (vagina is not actually occupied or the player is in a predicament room):
 		now another-turn is 1;
 		add continued pussy expulsion rule to another-turn-rules.
 The compulsory pussy expulsion rule is listed in the compulsory action rules.
@@ -441,7 +443,6 @@ To check sudden pregnancy:
 		compute sudden pregnancy;
 	otherwise if the pregnancy of the player > 0:
 		check goddess eligibility.
-
 
 forcedFertility is initially false.
 
@@ -607,9 +608,6 @@ To cancel father material of (F - vagina):
 		if the pregnancy of the player is 0:
 			now the father is the throne.
 
-
-
-
 To wombfill (X - a number) small eggs:
 	while X > 0:
 		decrease X by 1;
@@ -692,8 +690,11 @@ To compute womb egg laying:
 		progress quest of egg-laying-quest;
 		progress quest of egg-holding-quest.
 
+Section - Image for graphics window
 
+Figure of PussyObject1 is the file "CharWins/FocusWin/pussy1.jpg".
 
+To decide which figure-name is the examine-image of (T - vagina):
+	decide on Figure of PussyObject1.
 
 Vagina ends here.
-

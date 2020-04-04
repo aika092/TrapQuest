@@ -1,6 +1,5 @@
 Disclaimer by Miscellaneous Frontend begins here.
 
-
 [!<tableOfDisclaimer:Table>*
 
 REQUIRES COMMENTING
@@ -30,4 +29,3 @@ To say disclaimer:
 		say "This game is a piece of interactive fiction intended for consumption by mature adults only. In this game, the player can be humiliated by being forced to look and act according to old fashioned gender roles and/or as an 'adult baby'. There are no under-age characters in this game - all characters are consenting (if sometimes reluctant!) adults. Why adult babies then, you ask? Well, because there's nothing more outrageously gross and humiliating and scandalous than an adult being made to look and act and use the toilet like a baby. Roleplay based on sexist or similar philosophies are only acceptable when used for mutual enjoyment between consenting adults. In the real world, men, women and others who do not fit into the binary gender spectrum should be respected and treated equally, judged on their deeds and choices and not on the way they were born. Acts based on sexist or similar philosophies are only acceptable when used for mutual enjoyment between consenting adults. It is imperative that you do not play this game unless you are mature enough to be fully aware of this separation between fantasy and reality. The legal age for you to purchase and view adult (X) material in your country may be a reasonable guideline for when you may be approaching this age, but the game author personally recommends not engaging in and consuming such potentially objectionable material as is contained within this game until you are at least 21 years old.[paragraph break]Some images were obtained for this game through image sharing sites where it is a breach of the Terms of Service to upload copyrighted material. If, however, you discover images in this game for which you are the copyright holder, please inform the author who will promptly remove them from the game in compliance with the DMCA. In any case these images are intended to be place-holders and will all be replaced with commissioned art in due course. All non-photographic content (the writing, art and the game code not including third party extensions) is Aika's intellectual property.[paragraph break]".
 
 Disclaimer ends here.
-

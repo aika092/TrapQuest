@@ -53,12 +53,11 @@ To decide which figure-name is clothing-image of (C - pink-sequin-g-string):
 To decide which figure-name is clothing-image of (C - orange-g-string):
 	decide on figure of g-string 11.
 
-
 white-g-string is a g-string. white-g-string is sheer-when-wet. The text-shortcut of white-g-string is "wgs". Understand "white" as white-g-string.
 To say selfexamineuniquetitle of (G - white-g-string):
 	say "white g-string".
 To say UniqueClothingDesc of (G - white-g-string):
-	say "A micro sized white g-string, that would be used for minimizing tan lines when sunbathing.".
+	say "A micro sized white g-string, that would be used for minimising tan lines when sunbathing.".
 Definition: white-g-string is white themed: decide yes.
 
 pink-g-string is a g-string. The text-shortcut of pink-g-string is "pgs". Understand "pink" as pink-g-string.
@@ -97,7 +96,7 @@ blue-g-string is a g-string. The text-shortcut of blue-g-string is "blg". Unders
 To say selfexamineuniquetitle of (G - blue-g-string):
 	say "blue bikini g-string".
 To say UniqueClothingDesc of (G - blue-g-string):
-	say "A micro sized blue g-string, that would be used for minimizing tan lines when sunbathing.".
+	say "A micro sized blue g-string, that would be used for minimising tan lines when sunbathing.".
 Definition: blue-g-string is blue themed: decide yes.
 Definition: blue-g-string is swimming themed: decide yes.
 
@@ -105,7 +104,7 @@ silver-g-string is a g-string. The text-shortcut of silver-g-string is "sgs". Un
 To say selfexamineuniquetitle of (G - silver-g-string):
 	say "silver bikini g-string".
 To say UniqueClothingDesc of (G - silver-g-string):
-	say "A micro sized silver g-string, that would be used for minimizing tan lines when sunbathing. It is made of three very thin strips of silver ribbon connected by a small metal hoop at the front.".
+	say "A micro sized silver g-string, that would be used for minimising tan lines when sunbathing. It is made of three very thin strips of silver ribbon connected by a small metal hoop at the front.".
 Definition: silver-g-string is grey themed: decide yes.
 Definition: silver-g-string is swimming themed: decide yes.
 
@@ -162,6 +161,4 @@ Figure of g-string 9 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/g
 Figure of g-string 10 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring10.png".
 Figure of g-string 11 is the file "Items/Clothes/Lower/Underwear/Skimpy/Gstring/gstring11.png".
 
-
 G-Strings ends here.
-

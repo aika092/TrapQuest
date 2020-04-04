@@ -1,14 +1,11 @@
 School Stuff by TQ Only Stuff begins here.
 
-
 Definition: chess-lesson is lesson-appropriate: decide no.
 
 To compute chess soiling:
 	do nothing.
 
-
 Part - Kissing Lesson
-
 
 kissing-lesson is a lesson. The lesson-teacher of kissing-lesson is teacher-angela.
 
@@ -156,7 +153,6 @@ To compute teaching of (L - kissing-lesson):
 	now bigGameLoop is 0;
 	conclude consenting.
 
-
 Part - Seraphina
 
 teacher-seraphina is an emerald-teacher.
@@ -172,10 +168,10 @@ To decide which figure-name is the monster-image of (M - teacher-seraphina):
 
 To say MonsterDesc of (M - teacher-seraphina):
 	if lady fetish is 2:
-		say "This short, stocky man has wavy brown hair sitting above a confident and slightly vindictive expression. His steampunk style gothic corset exudes a feeling of sex appeal and power.";
+		say "This short, stocky [man of M] has wavy brown hair sitting above a confident and slightly vindictive expression. [big his of M] steampunk style gothic corset exudes a feeling of sex appeal and power.";
 	otherwise:
-		if M is defeated, say "[teacher-name of M][']s steampunk outfit has been removed at the crotch and breasts. Her heaving chest is now on complete display[if lactation fetish is 1], and seems to be uncontrollably lactating[end if]. Her arms and hands appear to be unable to move from their current position - holding a flat silver serving tray up under her hefty bosom, as if preparing them for 'serving', whilst painfully trapping her own nipples under her thumbs. Her huge cleavage is decorated with flavoured chocolate and strawberry sauce which has been used to spell 'Free Fuck Meat' across her chest, and finished with a dollop of whipped cream and a cherry for good measure.";
-		otherwise say "This short, stocky lady has wavy brown hair sitting above a confident and slightly vindictive expression. Her steampunk style, including gothic corset, would be rather unique and eye-catching if it wasn't for the fact that all eyes are invariably drawn to her huge breasts which are pushing the overbust section of her corset to its limits.".
+		if M is defeated, say "[teacher-name of M][']s steampunk outfit has been removed at the crotch and breasts. [big his of M] heaving chest is now on complete display[if lactation fetish is 1], and seems to be uncontrollably lactating[end if]. [big his of M] arms and hands appear to be unable to move from their current position - holding a flat silver serving tray up under [his of M] hefty bosom, as if preparing them for 'serving', whilst painfully trapping [his of M] own nipples under [his of M] thumbs. [big his of M] huge cleavage is decorated with flavoured chocolate and strawberry sauce which has been used to spell 'Free Fuck Meat' across [his of M] chest, and finished with a dollop of whipped cream and a cherry for good measure.";
+		otherwise say "This short, stocky lady has wavy brown hair sitting above a confident and slightly vindictive expression. [big his of M] steampunk style, including gothic corset, would be rather unique and eye-catching if it wasn't for the fact that all eyes are invariably drawn to [his of M] huge breasts which are pushing the overbust section of [his of M] corset to its limits.".
 
 The teacher-name of teacher-seraphina is "Seraphina".
 
@@ -190,7 +186,6 @@ To say WhereAnswer of (M - teacher-seraphina):
 To say AdviceAnswer of (M - teacher-seraphina):
 	say "[speech style of M]'Just always remember - bigger is better. No exceptions!'[roman type][line break]".
 
-
 To say EnslavedDominationFlav of (M - teacher-seraphina):
 	if the player is able to eat:
 		say "You hook two fingers inside [NameDesc of M][']s cunt and pull [him of M] a step closer. [big he of M] just whimpers timidly as [he of M] allows you to eat some tasty whipped cream off of [his of M] exposed chest.";
@@ -200,13 +195,12 @@ To say EnslavedDominationFlav of (M - teacher-seraphina):
 To decide which number is the EnslavedDominationThreshold of (M - teacher-seraphina):
 	decide on 8.
 
-
 tits-lesson is a lesson. The lesson-teacher of tits-lesson is teacher-seraphina.
 
 To compute teaching of (L - tits-lesson):
 	let M be the lesson-teacher of L;
-	if lady fetish is 2, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with his hands at his hips, his nipples chains waving back and forth in front of him as he breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
-	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with her hands at her hips, her giant chest gently heaving up and down in front of her as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
+	if lady fetish is 2, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] nipples chains waving back and forth in front of [him of M] as [he of M] breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
+	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] giant chest gently heaving up and down in front of [him of M] as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
 	allocate 35 seconds;
 	if the player is top heavy or the largeness of breasts >= 12:
 		if breasts is lewdly exposed or the number of worn actually dense top-placed low cut or higher nipple covering clothing is 0:
@@ -221,7 +215,7 @@ To compute teaching of (L - tits-lesson):
 			say ClothingDesc of armband;
 			let S be a random demotable nasty student in the location of the player;
 			if S is student:
-				say "[S] complains loudly.[line break][speech style of S]'This is bullshit! You can't promote a basic bitch like her just for looking like a slutty tramp!'[roman type][line break][M] flashes [him of S] a furious stare.[line break][speech style of M]'[NameBimbo] is the epitome of beauty! You don't deserve to be in my class. No, you don't even deserve to share a rank with these other students!'[roman type][line break]";
+				say "[S] complains loudly.[line break][speech style of S]'This is bullshit! You can't promote a basic bitch like [him of the player] just for looking like a slutty tramp!'[roman type][line break][M] flashes [him of S] a furious stare.[line break][speech style of M]'[NameBimbo] is the epitome of beauty! You don't deserve to be in my class. No, you don't even deserve to share a rank with these other students!'[roman type][line break]";
 				demote S;
 				say "[NameDesc of S] gasps in dismay.[line break][speech style of S]'Oh come on!'[roman type][line break][big he of S] scowls at you.[line break][speech style of S]'I'm not going to forgive you for this!'[roman type][line break]";
 				HappinessDown S by 4;
@@ -236,7 +230,7 @@ To compute teaching of (L - tits-lesson):
 			allocate 12 seconds;
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 		otherwise:
-			say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a woman who has truly strived for perfection, but look at that clothing! There's nowhere near enough cleavage showing. It's almost like she is ashamed of the size of her massive titties. That just won't do!'[roman type][line break][big he of M] actually looks rather angry.[line break][variable custom style]Uh-oh...[roman type][line break][big he of M] opens the ancient-looking book that she is holding and turns it to a certain page. She begins reciting a chant in a very bizarre sounding language.[line break][speech style of M]'PUJ VLTU[']BE[']JAJ!'[roman type][line break]The book glows with dark energy which then shoots out and strikes you in the chest! You feel powerful magic surging through your veins.";
+			say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a woman who has truly strived for perfection, but look at that clothing! There's nowhere near enough cleavage showing. It's almost like she is ashamed of the size of her massive titties. That just won't do!'[roman type][line break][big he of M] actually looks rather angry.[line break][variable custom style]Uh-oh...[roman type][line break][big he of M] opens the ancient-looking book that [he of M] is holding and turns it to a certain page. [big he of M] begins reciting a chant in a very bizarre sounding language.[line break][speech style of M]'PUJ VLTU[']BE[']JAJ!'[roman type][line break]The book glows with dark energy which then shoots out and strikes you in the chest! You feel powerful magic surging through your veins.";
 			MagicPowerUp 6;
 			repeat with C running through worn actually breast covering clothing:
 				say "Your [ShortDesc of C] disintegrates in a burst of black flame!";
@@ -263,7 +257,7 @@ To compute teaching of (L - tits-lesson):
 		compute tits marker reaction of S;
 		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-title of marker chest tattoo]' permanently inked on your chest? ";
 		if the player is bimbo consenting:
-			say "Everybody looks awkward and casts their eyes downward, but you cause the silence to be broken by a few awed gasps as you raise your hand.[line break][speech style of M]'Oh yes, I had a feeling about you.'[roman type][line break][NameDesc of M] grins and with a flourish of her spellbook, everybody's words disappear from their chest, except yours. You test your own ink with a finger and find that it indeed will not rub off or smudge at all. However, at least you can feel that some of the magic power that [NameDesc of M] used has remained in your veins.";
+			say "Everybody looks awkward and casts their eyes downward, but you cause the silence to be broken by a few awed gasps as you raise your hand.[line break][speech style of M]'Oh yes, I had a feeling about you.'[roman type][line break][NameDesc of M] grins and with a flourish of [his of M] spellbook, everybody's words disappear from their chest, except yours. You test your own ink with a finger and find that it indeed will not rub off or smudge at all. However, at least you can feel that some of the magic power that [NameDesc of M] used has remained in your veins.";
 			MagicPowerUp 4;
 			now marker chest tattoo is worn by the player;
 			try examining marker chest tattoo;
@@ -276,7 +270,7 @@ To compute teaching of (L - tits-lesson):
 			update students; [an important line which makes boring old students disappear and new cool ones appear]
 			say "[M] folds [his of M] arms, looking very pleased with [himself of M].[line break][speech style of M]'All right, class dismissed.'[roman type][line break]";
 		otherwise:
-			say "Everybody looks awkward and casts their eyes downward, and a long silence comes over the room. Eventually [NameDesc of M] speaks.[line break][speech style of M]'Disappointing.'[roman type][line break]With a flourish of her spellbook, everybody's words disappear from their chest. You can feel that a small amount of the magic power that [NameDesc of M] just used has remained in your veins.[line break][big he of M] sounds genuinely downcast.[line break][speech style of M]'You all need to work on your bravery for the next time we convene. Class dismissed.'[roman type][line break]";
+			say "Everybody looks awkward and casts their eyes downward, and a long silence comes over the room. Eventually [NameDesc of M] speaks.[line break][speech style of M]'Disappointing.'[roman type][line break]With a flourish of [his of M] spellbook, everybody's words disappear from their chest. You can feel that a small amount of the magic power that [NameDesc of M] just used has remained in your veins.[line break][big he of M] sounds genuinely downcast.[line break][speech style of M]'You all need to work on your bravery for the next time we convene. Class dismissed.'[roman type][line break]";
 			MagicPowerUp 1;
 	otherwise:
 		let S be a random promotable student in the location of the player;
@@ -301,7 +295,6 @@ To compute tits marker choice of (S - a student):
 To compute tits marker reaction of (S - a student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm, this is fine. Nothing special, but does the job. Not bad, [student-name of S].'[roman type][line break]".
 
-
 To compute tits marker choice of (S - a ditzy student):
 	say "umms to [himself of S] for a few moments [himself of S] before making a gleeful 'ooh!' sound and then taking the pen to your skin. ";
 	let R be a random number between 1 and 3;
@@ -316,7 +309,6 @@ To compute tits marker choice of (S - a ditzy student):
 
 To compute tits marker reaction of (S - a ditzy student):
 	say "[speech style of lesson-teacher of tits-lesson]'Hmm. A bit crude, but I guess it does the job. You'd certainly get more attention.'[roman type][line break]".
-
 
 To compute tits marker choice of (S - a nasty student):
 	say "doesn't hesitate before taking the pen to your skin. ";
@@ -333,7 +325,6 @@ To compute tits marker choice of (S - a nasty student):
 To compute tits marker reaction of (S - a nasty student):
 	say "[speech style of lesson-teacher of tits-lesson]'No, no no! This is all wrong. Who would want such a horrible message written on their breasts?! Get it together, [student-name of S].'[roman type][line break]".
 
-
 To compute tits marker choice of (S - a tryhard student):
 	say "doesn't hesitate before taking the pen to your skin. ";
 	let R be a random number between 1 and 2;
@@ -346,9 +337,6 @@ To compute tits marker choice of (S - a tryhard student):
 
 To compute tits marker reaction of (S - a tryhard student):
 	say "[speech style of lesson-teacher of tits-lesson]'Great idea, [student-name of S]! I love it. Attention grabbing without being too crass.'[roman type][line break]".
-
-
-
 
 Part - Rochelle / Roger
 
@@ -428,13 +416,10 @@ To compute labour to (M - teacher-rochelle):
 	otherwise:
 		say DefaultBirthScene.
 
-
 To say EnslavedDominationFlav of (M - teacher-rochelle):
 	say "You grab [NameDesc of M] by the [manly-penis] and pull [him of M] into you. [if the player is able to speak][variable custom style]'Not so tough now, are you? Wimp.'[roman type][line break][otherwise]You stare into [his of M] eyes to let [him of M] know who's in charge. [end if][big he of M] just whimpers timidly and makes sure not to move lets [his of M] member accidentally get pulled so hard that it hurts.".
 To decide which number is the EnslavedDominationThreshold of (M - teacher-angela):
 	decide on 13.
-
-
 
 The lesson-teacher of eating-lesson is teacher-rochelle.
 practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-rochelle.
@@ -588,7 +573,7 @@ To compute teaching of (L - practical-lesson):
 					now slobber-owner is M;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
 				otherwise if ass-count is 0 and M is female and lady fetish < 2 and a random number between 1 and (20 - the practical dirtiness of M) <= 10:
-					say "[BigNameDesc of M] crouches above [NameDesc of lesson-teacher of L] before carefully lowering [his of M] spread pussy onto [NameDesc of lesson-teacher of L][']s [one of]waiting shaft[or]rock hard rod[or]thick [LongDickDesc of lesson-teacher of L][in random order]. [big he of M] [one of]audibly moans as [he of M] rocks back and forth[or]goes a bit red in the face as [he of M] repeatedly rides up and down the whole length[or]hardly moves at all before [he of M] mewls in a high pitched voice and loses control of [his of M] shuddering body as [he of M] cums hard. [big his of M] leaves her panting and collapsed on top of [NameDesc of lesson-teacher of L], that [LongDickDesc of lesson-teacher of L] still fully embedded inside of [him of M][or]tries to clench [his of M] vaginal muscles as [he of M] rides up and down, to make it tighter for [NameDesc of lesson-teacher of L][or]silently thrusts her hips back and forth, taking on the role of the obedient cowgirl[or]grinds down onto the [DickDesc of lesson-teacher of L] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] teacher[or]quickly gets to bouncing up and down with a steady, smooth rhythm[in random order].";
+					say "[BigNameDesc of M] crouches above [NameDesc of lesson-teacher of L] before carefully lowering [his of M] spread pussy onto [NameDesc of lesson-teacher of L][']s [one of]waiting shaft[or]rock hard rod[or]thick [LongDickDesc of lesson-teacher of L][in random order]. [big he of M] [one of]audibly moans as [he of M] rocks back and forth[or]goes a bit red in the face as [he of M] repeatedly rides up and down the whole length[or]hardly moves at all before [he of M] mewls in a high pitched voice and loses control of [his of M] shuddering body as [he of M] cums hard. This leaves [him of M] panting and collapsed on top of [NameDesc of lesson-teacher of L], that [LongDickDesc of lesson-teacher of L] still fully embedded inside of [him of M][or]tries to clench [his of M] vaginal muscles as [he of M] rides up and down, to make it tighter for [NameDesc of lesson-teacher of L][or]silently thrusts [his of M] hips back and forth, taking on the role of the obedient cowgirl[or]grinds down onto the [DickDesc of lesson-teacher of L] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] teacher[or]quickly gets to bouncing up and down with a steady, smooth rhythm[in random order].";
 					increase pussy-count by 1;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
 				otherwise if a random number between 1 and (20 - the practical dirtiness of M) <= 10:
@@ -635,15 +620,7 @@ To compute teaching of (L - practical-lesson):
 	update students; [an important line which makes boring old students disappear and new cool ones appear]
 	say "[BigNameDesc of lesson-teacher of L] closes [his of lesson-teacher of L] eyes and lazily stretches [his of lesson-teacher of L] arms.[line break][speech style of lesson-teacher of L]'Yep, I'm done. Class dismissed!'[roman type][line break]".
 
-
-
-
-
-
-
-
 Part - Swimming Lesson
-
 
 swimming-lesson is a lesson. The lesson-teacher of swimming-lesson is teacher-hyacinthe.
 
@@ -651,7 +628,6 @@ Definition: swimming-lesson is lesson-appropriate if diaper quest is 0 and the n
 
 To decide which number is the swimming-strength of (M - a student):
 	decide on the dedication of M.
-
 
 To compute teaching of (L - swimming-lesson):
 	allocate 40 seconds;
@@ -1015,15 +991,6 @@ To compute teaching of (L - swimming-lesson):
 	now bigGameLoop is 0; [tells the game to refresh windows again]
 	conclude consenting.
 
-
-
-
-
-
-
-
-
-
 Part - Kaylee / Karl
 
 teacher-kaylee is a diamond-teacher. teacher-kaylee is male.
@@ -1046,8 +1013,8 @@ To say LongDickDesc of (M - teacher-kaylee):
 	say "long uncut [manly-penis]".
 
 To say MonsterDesc of (M - teacher-kaylee):
-	if lady fetish is 1 or futanari fetish is 1, say "This may be the most perfect, beautiful, youthful, healthy, and sexy woman you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
-	otherwise say "This naked man's impossibly perfect abs and shockingly impressive muscles [if the player is female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
+	if lady fetish is 1 or futanari fetish is 1, say "This may be the most perfect, beautiful, youthful, healthy, and sexy [man of M] you've ever seen. [if the player is a pervert]Since[otherwise]You struggle to marry this with the fact that since[end if] [he of M][']s fully naked, you can see that [he of M] has a [LongDickDesc of M] swinging between [his of M] legs[if futanari fetish is 0] instead of a pussy[end if].";
+	otherwise say "This naked [man of M]'s impossibly perfect abs and shockingly impressive muscles [if the player is female or the player is a pervert]make you weak at the knees with sexual attraction every time you see [him of M].[otherwise]could attract even the straightest man.[line break][variable custom style]Wait, did I really just think that? I'm attracted to a dude?[roman type][line break][end if]".
 
 The teacher-name of teacher-kaylee is "Kaylee".
 
@@ -1058,7 +1025,7 @@ To say WhoAnswer of (M - teacher-kaylee):
 	say "[speech style of M]'I like to think of it as less of a [']lesson['] and more of an... initiation.'[roman type][line break]".
 
 To say WhereAnswer of (M - teacher-kaylee):
-	say "[speech style of M]'[if the rank of the player <= 1]If you haven't worked that out by now, then Azathot help you.'[otherwise]Stay loose and let it happen.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]If you haven't worked that out by now, then [Azathot] help you.'[otherwise]Stay loose and let it happen.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - teacher-kaylee):
 	say "[speech style of M]'After you pass my initiation, you'll be allowed to join the VIPs in the school dungeon when we tort... I mean [']entertain['] the prisoner.'[roman type][line break]".
@@ -1071,7 +1038,6 @@ To say AdviceAnswer of (M - teacher-kaylee):
 
 To compute teaching of (M - teacher-kaylee):
 	say "[speech style of M]'By the time you get to me, hopefully you'll already know everything you need.'[roman type][line break]".
-
 
 To compute labour to (M - teacher-kaylee):
 	compute labour to teacher-rochelle. [It's identical]
@@ -1094,6 +1060,7 @@ To compute teaching of (L - ultimate-lesson):
 	repeat with U running through ultimate-fetish-objects:
 		now the happened of U is 0;
 	let N be 0;
+	now the source-room of DiamondLessonBlindfolded is School32;
 	repeat with U running through ultimate-lesson-actors:
 		now U is in DiamondLessonBlindfolded;
 		increase N by 1;
@@ -1110,7 +1077,6 @@ To compute lesson veto:
 		otherwise say "[BigNameDesc of M] snarls.[line break][speech style of M]'That's your last one, cunt. The next time you disobey us, you [if STN > 1]and all your little slut friends [otherwise if STN is 1]and your slut friend [end if]will have failed your initiation.";
 	otherwise:
 		now the lesson-completed of ultimate-lesson is -1.
-
 
 An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male. There are 4 ultimate-lesson-actors.
 To say ShortDesc of (M - an ultimate-lesson-actor):
@@ -1232,6 +1198,7 @@ To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 					StomachSemenUp (the semen volume of belly + 1) / 2;
 					StomachUp (the total fluid fill of belly - the semen volume of belly) / 2;
 					if the urine volume of belly > 0, UrineTasteAddictUp 1;
+					progress quest of creampie-drinking-quest;
 				otherwise:
 					compute lesson veto;
 			otherwise if ST is student:
@@ -1262,6 +1229,7 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 				StomachUp (the total fluid fill of belly - the semen volume of belly) / 2;
 				if the urine volume of belly > 0, UrineTasteAddictUp 1;
 				empty belly liquids;
+				progress quest of creampie-drinking-quest;
 			otherwise:
 				say "The entire experience is deeply [unless the player is a nympho]shameful but there's no escaping that the feeling of having your asshole tongued so fervently is rather [end if]pleasurable.";
 				passively stimulate asshole;
@@ -1281,7 +1249,6 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		otherwise:
 			say "You don't like the sound of that noise! Your hands go to your [asshole], protecting it out of fear.";
 			compute lesson veto.
-
 
 An ultimate-fetish-object is a kind of object. An ultimate-fetish-object has a number called happened.
 Definition: an ultimate-fetish-object is eligible if the happened of it is 0.
@@ -1324,9 +1291,6 @@ To execute (U - ultimate-fetish-milking) for (M - a monster):
 		say "You [unless there is a worn ringagged clothing]keep your mouth closed and [end if]shake your head.[line break][variable custom style]I'm not a cow![roman type][line break]";
 		compute lesson veto;
 	MilkDown the milk volume of breasts.
-
-
-
 
 A time based rule (this is the ultimate diamond lesson rule):
 	if the player is in DiamondLessonBlindfolded:
@@ -1401,11 +1365,9 @@ To compute conclusion of (L - ultimate-lesson):
 			say "[BigNameDesc of M] leans against the cell's metal bars.[speech style of M]'This is the [ShortDesc of headmistress][']s favourite toy. And now that you're [if there is a student in the location of the player]all gold-star students[otherwise]a gold-star student[end if], [he of headmistress] has given you permission to play with [him of ex-princess] too. Just try not to break [him of ex-princess].'[roman type][line break]And with that, [NameDesc of M] leaves you behind.";
 			compute mandatory room leaving of M.
 
-
 Volume - STUDENTS
 
 Part - AMICABLE STUDENTS
-
 
 Book - Rosie
 
@@ -1479,7 +1441,6 @@ To say StoryAnswer of (M - student-tiana):
 To say AdviceAnswer of (M - student-tiana):
 	say "[speech style of M]'[one of]It's really hard to get around on your knees when you have tits as big as these puppies. Try to stay on your feet!'[or]You don't always have to wear a bra that fits. Sometimes it only matters that you're close enough.'[at random][roman type][line break]".
 
-
 Book - Minnie
 
 student-minnie is a amicable student.
@@ -1492,7 +1453,7 @@ To decide which figure-name is the monster-image of (M - student-minnie):
 	decide on figure of minnie.
 
 To say MonsterDesc of (M - student-minnie):
-	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3 and lady fetish is 2]barely cover his tiny [sissy-penis] and balls[otherwise if lady fetish is 2]don't even cover his crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely cover her pussy[otherwise]don't even cover [his of M] pussy properly, obscuring her clit but leaving her labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
+	say "This tall leggy blonde is wearing, well, [he of M] might as well be wearing nothing at all! [big his of M] nipples are covered by tiny purple sequins pasties shaped like hearts and similar red hearts [if the current-rank of M is 3 and lady fetish is 2]barely cover [his of M] tiny [sissy-penis] and balls[otherwise if lady fetish is 2]don't even cover [his of M] crotch properly, leaving [his of M] tiny balls completely visible[otherwise if the current-rank of M is 3]barely cover [his of M] pussy[otherwise]don't even cover [his of M] pussy properly, obscuring [his of M] clit but leaving [his of M] labia fully visible[end if]. [big he of M] has sexy 3 inch red stiletto heels, a pierced belly, and a big friendly smile on [his of M] face. [big he of M] looks extremely comfortable with [his of M] striking appearance - from [his of M] posture and gait [if the current-rank of M is 3]you're almost concerned [he of M] has completely forgotten what [he of M][']s wearing[otherwise]it's very clear that [he of M] absolutely loves looking like this[end if]!".
 
 The min-rank of student-minnie is 3.
 The current-rank of student-minnie is 3.
@@ -1517,8 +1478,6 @@ To say AdviceAnswer of (M - student-minnie):
 To compute teaching of (M - student-minnie):
 	say "[speech style of M]'Feeling comfortable in your own skin isn't something you need to be taught, it's just that you need to *unlearn* the idea that people should wear clothes!'[roman type][line break]".
 
-
-
 Book - Christi Lynn
 
 student-christi is a amicable student.
@@ -1531,14 +1490,13 @@ To decide which figure-name is the monster-image of (M - student-christi):
 	decide on figure of christi.
 
 To say MonsterDesc of (M - student-christi):
-	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if lady fetish is 2]aside from a brightly coloured chastity cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if lady fetish is 2]his recently-fucked asshole[otherwise]her shaved recently-fucked pussy[end if].".
+	say "This [sissy-girl]-next-door-looking blonde is wearing nothing [if lady fetish is 2]aside from a brightly coloured chastity cage[otherwise]at all[end if]. [big he of M] seems to be finding it absolutely hilarious that a thick, voluminous creampie is currently oozing out of [if lady fetish is 2][his of M] recently-fucked asshole[otherwise][his of M] shaved recently-fucked pussy[end if].".
 
 The min-rank of student-christi is 5.
 The current-rank of student-christi is 5.
 The max-rank of student-christi is 6.
 The student-name of student-christi is "Christi Lynn". Understand "Christi" as student-christi.
 The student-print of student-christi is "creampie craver".
-
 
 To say StoryAnswer of (M - student-christi):
 	say "[speech style of M]'When I first came here, I had a crippling fear of getting [semen] [if bukkake fetish is 1]on me or [end if]in me. But look at me now! I can't get enough of this warm sticky feeling! In fact, I should go find a teacher to give me another helping before this one runs out. The hot tub tends to be the best place to [']accidentally['] bump into one...'[roman type][line break]".
@@ -1552,10 +1510,7 @@ To say AdviceAnswer of (M - student-christi):
 To compute teaching of (M - student-christi):
 	say "[speech style of M]'If you want to keep cum inside you for as long as possible, [if pregnancy fetish is 1]perhaps to maximise your chances of getting pregnant, [end if]make sure to put some kind of toy inside you! If you're too loose and it's just instantly falling out, try doing it on your knees instead. And then put some panties over the top to keep it in.'[roman type][line break]".
 
-
-
 Part - DITZY STUDENTS
-
 
 Book - Stacey
 
@@ -1593,8 +1548,6 @@ To say WhereAnswer of (M - student-stacey):
 
 To say AdviceAnswer of (M - an student-stacey):
 	say "[speech style of M]'[if the current-rank of M is 1]I've heard a rumour that the smarterest girls let guys stick it up their butt. But I'm a bit scared to try...'[otherwise]When you suck on a [manly-penis], if you do it for long enough then some [tasty] juice comes out! And the more of that you drink, the more smarterer you get! So I try to get as much of it as possible.'[end if][roman type][line break]".
-
-
 
 Book - Bree
 
@@ -1647,7 +1600,6 @@ To compute teaching of (M - student-bree):
 To say StoryAnswer of (M - student-bree):
 	say "[speech style of M]'Oh darling, how long do you have? My story begins with my first [manly-penis], it was Brian from maths class, [if TG fetish > 0]or wait, was *I* Brian? And then there was that thing involving that witch... and a curse... my memory is going all fuzzy... huh? What were we talking about?'[roman type][line break][otherwise]and as soon as I got my lips around that thick, juicy shaft of his I was completely addicted, oh [NameBimbo] darling it was just so incredibly dreamy, you have no idea, and the cum... oh the cum! Ahhhh...'[roman type][line break][BigNameDesc of M] seems to drift off into a daydream.[end if]".
 
-
 Book - Pebbles
 
 student-pebbles is a ditzy student.
@@ -1695,11 +1647,7 @@ To compute teaching of (M - student-pebbles):
 To say StoryAnswer of (M - student-pebbles):
 	say "[BigNameDesc of M][']s eyes go dark and sullen for a moment.[line break][speech style of M]'I was a bad person, and I gave my dog too much food. I was an awful owner. So now I'm being taught to think from the dog's perspective[if weight gain fetish is 1], and I'm made to eat as much food as I can manage[end if]. To become a good girl. A good girl... Who's a good girl? Am I a good girl? Woof woof!'[roman type][line break]".
 
-
-
-
 Part - INNOCENT STUDENTS
-
 
 Book - Winnie
 
@@ -1713,7 +1661,7 @@ To decide which figure-name is the monster-image of (M - student-winnie):
 	decide on figure of winnie.
 
 To say MonsterDesc of (M - student-winnie):
-	say "This middle aged [man of M] is wearing denim daisy dukes and a short T-shirt that reads 'Whore In Training' in black letters. [big he of M] looks [if the current-rank of M is 1]a little out of her comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
+	say "This middle aged [man of M] is wearing denim daisy dukes and a short T-shirt that reads 'Whore In Training' in black letters. [big he of M] looks [if the current-rank of M is 1]a little out of [his of M] comfort zone but still calm and collected[otherwise]a little bit anxious[end if].".
 
 The max-rank of student-winnie is 2.
 
@@ -1735,7 +1683,6 @@ To decide which number is the heel-skill of (M - student-winnie):
 
 To decide which number is the dedication of (M - student-winnie): [We can use this for various calculations to check which students do what]
 	decide on 3.
-
 
 Book - Austin
 
@@ -1766,11 +1713,9 @@ To say StoryAnswer of (M - student-austin):
 To say WhereAnswer of (M - student-austin):
 	say "[speech style of M]'[if the rank of the player <= 1]This is a place to learn how to be less of a prude. That's why I've been sent here anyway.'[otherwise]Some of the other [sissy-girls] were saying you can't get to the top without sucking some [manly-penis]s. I'm hoping it doesn't come to that...'[end if][roman type][line break]".
 
-
 Book - Nell
 
 student-nell is a innocent student.
-
 
 The text-shortcut of student-nell is "stnl".
 
@@ -1784,7 +1729,7 @@ To decide which figure-name is the monster-image of (M - student-nell):
 	decide on figure of narcissa.
 
 To say MonsterDesc of (M - student-nell):
-	say "This tall brunette is wearing [if the current-rank of M is 3]a black and pink one-piece negligee that covers very little skin, and the bra section is cut so low that [his of M] nipples would be slightly on display if [he of M] wasn't shyly covering them with [his of M] hands. [big he of M] doesn't seem ready to expose even a bit of [his of M] areolae to the world[otherwise if the current-rank of M is 4]nothing but a short red skirt and a fishnet top. [big he of M] still doesn't quite seem particularly comfortable in something so revealing, and so is still walking around with [his of M] hands over [his of M] chest, to prevent [his of M] nipples from being on display[otherwise]tall clear platform 'stripper' heels, sexy lace black briefs and a very sheer flimsy white halter-neck top. [big his of M] hands are by [his of M] side - it seems [he of M] has finally found the sexy outfit that leaves [his of M] feeling comfortable enough to not cover [his of M] nipples with [his of M] hands. In fact, [he of M] now looks rather proud[end if].".
+	say "This tall brunette is wearing [if the current-rank of M is 3]a black and pink one-piece negligee that covers very little skin, and the bra section is cut so low that [his of M] nipples would be slightly on display if [he of M] wasn't shyly covering them with [his of M] hands. [big he of M] doesn't seem ready to expose even a bit of [his of M] areolae to the world[otherwise if the current-rank of M is 4]nothing but a short red skirt and a fishnet top. [big he of M] still doesn't quite seem particularly comfortable in something so revealing, and so is still walking around with [his of M] hands over [his of M] chest, to prevent [his of M] nipples from being on display[otherwise]tall clear platform 'stripper' heels, sexy lace black briefs and a very sheer flimsy white halter-neck top. [big his of M] hands are by [his of M] side - it seems [he of M] has finally found the sexy outfit that leaves [him of M] feeling comfortable enough to not cover [his of M] nipples with [his of M] hands. In fact, [he of M] now looks rather proud[end if].".
 
 The current-rank of student-nell is 3.
 The max-rank of student-nell is 5.
@@ -1801,7 +1746,7 @@ To update name of (M - student-nell):
 		now the student-name of M is "Narcissa".
 
 To say StoryAnswer of (M - student-nell):
-	say "[speech style of M]'My neighbour and best friend is such a tool... [he of shopkeeper] only ever sees me as [']one of the guys['], just because I'm cool and act like a tomboy. But... I love [him of shopkeeper], and to capture [his of shopkeeper] attention and prove that I can be [his of shopkeeper] woman, I need to learn how to act and dress like the slutty girls do.'[roman type][line break]".
+	say "[speech style of M]'My neighbour and best friend is such a tool... [he of shopkeeper] only ever sees me as [']one of the guys['], just because I'm cool and act like a tomboy. But... I love [him of shopkeeper], and to capture [his of shopkeeper] attention and prove that I can be [his of shopkeeper] [man of M], I need to learn how to act and dress like the slutty girls do.'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-nell):
 	say "[speech style of M]'I don't know. The rumour about the secret sex dungeon can't be true, surely?'[roman type][line break]".
@@ -1811,8 +1756,6 @@ To say AdviceAnswer of (M - student-nell):
 
 To compute teaching of (M - student-nell):
 	say "[speech style of M]'Not unless you need to be taught how to stay still and let ten guys cum all over your face. That's apparently the only thing I've managed to do correctly recently.'[roman type][line break]".
-
-
 
 Book - Calamity
 
@@ -1844,7 +1787,6 @@ To say AdviceAnswer of (M - student-calamity):
 To compute teaching of (M - student-calamity):
 	say "[speech style of M]'Not unless you need to be taught how to stay still and let ten guys cum all over your face. That's apparently the only thing I've managed to do correctly recently.'[roman type][line break]".
 
-
 Part - NASTY STUDENTS
 
 Book - Abbi
@@ -1859,7 +1801,7 @@ To decide which figure-name is the monster-image of (M - student-abbi):
 	decide on figure of abbi.
 
 To say MonsterDesc of (M - student-abbi):
-	say "This larger woman has light brown hair and is wearing a skimpy sexy schoolgirl outfit with matching tartan miniskirt and tie. [big his of M] giant J-cup breasts hang down in front of her like giant udders, her [if the current-rank of M > 2]sheer [end if]black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] doesn't look happy.".
+	say "This larger [man of M] has light brown hair and is wearing a skimpy sexy schoolgirl outfit with matching tartan miniskirt and tie. [big his of M] giant J-cup breasts hang down in front of [him of M] like giant udders, [his of M] [if the current-rank of M > 2]sheer [end if]black top lewdly exposing 80% of [his of M] titty meat and hardly supporting the rest. [big he of M] doesn't look happy.".
 
 The min-rank of student-abbi is 2.
 The max-rank of student-abbi is 3.
@@ -1888,8 +1830,6 @@ To say StoryAnswer of (M - student-abbi):
 
 To say WhereAnswer of (M - student-abbi):
 	say "[speech style of M]'[if the rank of the player <= 1]Are you literally braindead?'[otherwise]Someone as stupid as you is going to have to guzzle a LOT of cum to make it anywhere in here.'[end if][roman type][line break]".
-
-
 
 Book - Katya
 
@@ -1985,7 +1925,6 @@ To compute teaching of (M - student-katya):
 To compute friendly drink of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]Do I look like a fucking vending machine to you?'[otherwise]I'm sorry, but the only [tasty] thing I drink nowadays is dick juice. And if you want your own, you'll have to use those lips of yours to earn it yourself!'[end if][roman type][line break]".
 
-
 Book - Darla
 
 student-darla is a nasty student.
@@ -2013,8 +1952,7 @@ To update name of (M - student-darla):
 		now the student-print of M is "dazzling diva".
 
 To say StoryAnswer of (M - student-darla):
-	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise]woman[end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
-
+	say "[speech style of M]'I've come here to prove once and for all I am the perfect [if lady fetish is 2]woman, even if I have a penis. In fact, it's especially because I have a penis[otherwise][man of M][end if]. I shall pass every test with flying colours and rise in the ranks faster than anyone ever has before[if the rank of the player < 4]. Whereas I imagine someone as pathetic as you will take quite some time - assuming you ever manage to rise the ranks at all[otherwise if the rank of the player > the current-rank of M]. Don't think I'll let you rub your rank in my face for long, you slutty bitch[end if]!'[roman type][line break]".
 
 Book - Belinda
 
@@ -2031,7 +1969,7 @@ To decide which figure-name is the monster-image of (M - student-belinda):
 	otherwise decide on figure of belle.
 
 To say MonsterDesc of (M - student-belinda):
-	say "This skinny [man of M] has blonde pigtails and an unfriendly frown. [big he of M] is wearing a tight purple belly-exposing latex top with a cleavage window and purple latex pants[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's Girl' on her left arm, and you could swear [his of M] top is a little more translucent than before[end if].".
+	say "This skinny [man of M] has blonde pigtails and an unfriendly frown. [big he of M] is wearing a tight purple belly-exposing latex top with a cleavage window and purple latex pants[if the current-rank of M > 1]. [big he of M] has a tattoo that reads 'Daddy's Girl' on [his of M] left arm, and you could swear [his of M] top is a little more translucent than before[end if].".
 
 The max-rank of student-belinda is 2.
 
@@ -2045,7 +1983,6 @@ To update name of (M - student-belinda):
 
 To say StoryAnswer of (M - student-belinda):
 	say "[speech style of M]'My boyfriend wants me to call him 'Daddy' [if the current-rank of M is 1]but I'm not too sure. Apparently this place is going to convince me it's fun to act like a bratty [sissy-girl]. We'll see...'[otherwise]and I'm training to be his bratty babygirl. I think I've got the attitude for this role already, hah!'[end if][roman type][line break]".
-
 
 Book - Hiroko
 
@@ -2076,7 +2013,7 @@ To say WhoAnswer of (M - student-hiroko):
 	say "[speech style of M]'I'm the Queen Bee of these parts, bitch. Ugly worms like you aren't going to get very far while there are people like me around.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-hiroko):
-	say "[speech style of M]'[if the rank of the player <= 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]It's simple, you get promoted by being the hottest, most attractive woman here. Which means that you have no chance, haha.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]A place where ugly bitches like you get turned into cute girls like me.'[otherwise]It's simple, you get promoted by being the hottest, most attractive [man of M] here. Which means that you have no chance, haha.'[end if][roman type][line break]".
 
 To say EscapeAnswer of (M - student-hiroko):
 	say "[speech style of M]'[if the current-rank of M > the rank of the player]There's a photo of you underneath the words [']NEVER GONNA MAKE IT HERE['] that we like to laugh at as we walk past!'[otherwise]I've heard there's a photo of me on the wall that people like to look at for inspiration.'[end if][roman type][line break]".
@@ -2090,11 +2027,7 @@ To say AdviceAnswer of (M - student-hiroko):
 To compute teaching of (M - student-hiroko):
 	say "[speech style of M]'You can't teach looks. You're always going to be ugly, too bad.'[roman type][line break]".
 
-
-
-
 Part - TRYHARD STUDENTS
-
 
 Book - Misty
 
@@ -2108,7 +2041,7 @@ To decide which figure-name is the monster-image of (M - student-misty):
 	decide on figure of misty.
 
 To say MonsterDesc of (M - student-misty):
-	if lady fetish is 2, say "This slim brunette is wearing a tiny white cotton vest and matching skirt that are both extremely thin and have been torn so they are now hardly large enough to be called clothes. [if the current-rank of M is 2][big his of M] genitals are almost visible under the fragile bottoms[otherwise if the current-rank of M is 3]He has poured a bit of water onto both items, meaning they have gone rather see-through, and you can clearly make out [his of M] cream-coloured chastity cage[otherwise]He is constantly re-soaking both items from [his of M] bottle of water, to make sure [his of M] clothes are extremely sheer and [his of M] naughty bits completely visible at all times[end if].";
+	if lady fetish is 2, say "This slim brunette is wearing a tiny white cotton vest and matching skirt that are both extremely thin and have been torn so they are now hardly large enough to be called clothes. [if the current-rank of M is 2][big his of M] genitals are almost visible under the fragile bottoms[otherwise if the current-rank of M is 3][big he of M] has poured a bit of water onto both items, meaning they have gone rather see-through, and you can clearly make out [his of M] cream-coloured chastity cage[otherwise][big he of M] is constantly re-soaking both items from [his of M] bottle of water, to make sure [his of M] clothes are extremely sheer and [his of M] naughty bits completely visible at all times[end if].";
 	otherwise say "This slim brunette is wearing a tiny white cotton vest and matching skirt that are both extremely thin and have been torn so they are now hardly large enough to be called clothes. [if the current-rank of M is 2][big his of M] small A-cup breasts are almost visible under the fragile top[otherwise if the current-rank of M is 3][big he of M] has poured a bit of water onto both items, meaning they have gone rather see-through, and you can clearly make out [his of M] nipples[otherwise][big he of M] is constantly re-soaking both items from [his of M] bottle of water, to make sure [his of M] clothes are extremely sheer and [his of M] naughty bits completely visible at all times[end if].".
 
 The min-rank of student-misty is 2.
@@ -2140,7 +2073,6 @@ To compute friendly drink of (M - a student-misty):
 		say "You take a sip and feel much better!";
 		StomachUp 2.
 
-
 Book - Rain
 
 student-rain is a tryhard student.
@@ -2154,7 +2086,7 @@ To decide which figure-name is the monster-image of (M - student-rain):
 
 To say MonsterDesc of (M - student-rain):
 	if lady fetish is 2, say "This very short, petite sissy can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] puffy nipples and lavender-coloured chastity cage are very visible[otherwise][big his of M] puffy nipples are very visible through the fabric and it is purposefully parted above his belly button, leaving [his of M] lavender-coloured chastity cage on full display[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] ass squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].";
-	otherwise say "This very short, petite woman can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] small boobs and cute innie pussy are very visible[otherwise][big his of M] small boobs are very visible through the fabric and it is purposefully parted above [his of M] belly button, to leave [his of M] pussy fully exposed[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] pussy squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].".
+	otherwise say "This very short, petite [man of M] can't be older than 19. All [he of M]'s wearing is a flimsy sheer gown made of very thin beige fabric. [if the current-rank of M is 3]Thanks to the very translucent nature of the item, [his of M] small boobs and cute innie pussy are very visible[otherwise][big his of M] small boobs are very visible through the fabric and it is purposefully parted above [his of M] belly button, to leave [his of M] pussy fully exposed[end if]. [big his of M] facial expression is one of confidence and determination[if the current-rank of M >= 5]. [big his of M] pussy squelches loudly as [he of M] moves, suggesting it might have been very well used, and recently[end if].".
 
 The min-rank of student-rain is 3.
 The current-rank of student-rain is 3.
@@ -2179,7 +2111,6 @@ To say EscapeAnswer of (M - student-rain):
 
 To compute teaching of (M - student-rain):
 	say "[speech style of M]'[if lady fetish < 2]This is a cunt. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
-
 
 Book - Ferrari
 
@@ -2212,8 +2143,5 @@ To say EscapeAnswer of (M - student-ferrari):
 
 To compute teaching of (M - student-ferrari):
 	say "[speech style of M]'Wearing exposing, fetishy clothes is way more sexy than just being butt-naked. Although, that's still pretty sexy.'[roman type][line break]".
-
-
-
 
 School Stuff ends here.

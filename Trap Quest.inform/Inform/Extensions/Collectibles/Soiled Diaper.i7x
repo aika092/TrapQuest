@@ -38,9 +38,11 @@ turnsWithSoiledDiaper is a number that varies.
 This is the soiled diapers smell gross rule:
 	if there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers or there is a messy monster in the location of the player:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
-	otherwise if the number of worn messed knickers is 0:
+		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of the soiled diaper is gradually filling your nostrils.";
+	otherwise if turnsWithSoiledDiaper > 0 and the number of worn messed knickers is 0:
 		now turnsWithSoiledDiaper is (turnsWithSoiledDiaper * 3) / 4;
-		if turnsWithSoiledDiaper > 0, say "The gross smell is gradually leaving your nostrils[one of]. It will be gone soon[or][stopping].".
+		if turnsWithSoiledDiaper > 0, say "The gross smell is gradually leaving your nostrils[one of]. It will be gone soon[or][stopping].";
+		otherwise say "The gross smell has completely gone, and you are no longer grossed out.".
 The soiled diapers smell gross rule is listed first in the advance counters rules. [Listed early to make sure that the notification that the player is upset about mess comes after it.]
 
 To say unique-verb-desc of (T - a soiled-diaper):
@@ -51,7 +53,6 @@ Carry out examining:
 		let N be the number of soiled-diaper retained by the noun;
 		if N > 0:
 			say "[big he of the noun] is carrying [if N is 1]a soiled diaper[otherwise][N] soiled diapers[end if] in [his of the noun] hand[if N > 1]s[end if][if the noun is intelligent]. [big he of the noun] doesn't look happy about it[end if].".
-
 
 A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.png". Understand "diaper pail", "pail" as a diaper pail.
 Figure of diaper pail dunk is the file "Special/Cutscene/cutscene-diaper-pail1.jpg".
@@ -97,6 +98,7 @@ To compute diaper pail entrance:
 	repeat with SD running through the pailed-diapers of most-recent-pail:
 		remove SD from the pailed-diapers of most-recent-pail;
 		if SD is off-stage, now SD is in DiaperPail;
+	now the source-room of DiaperPail is the location of the player;
 	now the player is in DiaperPail;
 	now diaperPailStruggleAttempts is 0.
 
@@ -104,7 +106,7 @@ To compute diaper pail exit:
 	repeat with SD running through soiled-diapers in DiaperPail:
 		add SD to the pailed-diapers of most-recent-pail, if absent;
 		remove SD from play;
-	now the player is in the location of most-recent-pail.
+	now the player is in the location of the source-room of DiaperPail.
 
 Check standing when the player is in DiaperPail:
 	try jumping instead.
@@ -131,7 +133,6 @@ A later time based rule:
 			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
 			SilentlyDelicateUp 1.
 
-
 BabChanging it with is an action applying to two things.
 Check BabChanging it with:
 	if the noun is not a monster, say "This command only works on NPCs." instead;
@@ -152,6 +153,5 @@ Carry out BabChanging it with:
 		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
 	only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
-
 
 Soiled Diaper ends here.

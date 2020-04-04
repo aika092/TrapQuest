@@ -1,6 +1,5 @@
 Candy by Food begins here.
 
-
 A candy is a kind of food. Understand "candy" as candy.
 
 Figure of candy is the file "Items/Collectibles/candy1.png".
@@ -46,7 +45,4 @@ This is the setup starting candy rule:
 To decide which number is default-candy-duration:
 	decide on 650.
 
-
-
 Candy ends here.
-

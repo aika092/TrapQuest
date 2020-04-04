@@ -157,7 +157,7 @@ To compute gloryhole genital modification:
 		summon slut-tattoo;
 		say "You feel a sharp pain near your crotch and pull your body back. You now have a 'SLUT' tattoo! [line break][variable custom style][if the bimbo of the player < 13]Fuck![otherwise]Heh. It's making me feel even more [one of]girly[or]giddy[at random]![end if][roman type][line break]";
 	otherwise if clitoris piercing is eligible:
-		summon normal clit piercing cursed;
+		summon normal clit piercing cursed with quest;
 		say "You feel a sharp hot pain in your clit! You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [normal clit piercing]!";
 	otherwise if C is chastity cage:
 		summon C locked;
@@ -172,7 +172,6 @@ To compute gloryhole genital modification:
 			say "Somebody flicks your clitoris painfully! You pull it back out, but the [if the sex addiction of the player < 10]shocking [end if]experience has made you more submissive.";
 			PainUp 2;
 	dislodge gloryhole.
-
 
 To say SexResistFlav of (G - gloryhole):
 	if the player is prone:
@@ -195,7 +194,6 @@ To say SexResistFlav of (G - gloryhole):
 			say "You try to stimulate yourself as gently and modestly as possible, but it still feels really good[one of]! You clench your eyes shut and try to think of other things than your own taste.[or]![stopping]";
 		otherwise:
 			say "You can't resist the amazing feelings of your own mouth! [SexSubmissionFlav of G]".
-
 
 To say SexSubmissionFlav of (G - a gloryhole):
 	if the player is prone:
@@ -221,7 +219,6 @@ To say SexSubmissionFlav of (G - a gloryhole):
 		otherwise:
 			say "You [if the oral sex addiction of the player < 8]reluctantly [otherwise if the oral sex addiction of the player < 11]hesitantly [end if][one of]slurp on the [manly-penis] in your mouth[or]encircle your [player-penis] with your tongue[or]frantically fuck your own [player-penis] with your mouth[at random].";
 			increase the turns trapped of G by 1.
-
 
 To GloryHoleSwallow:
 	say "You [if the semen taste addiction of the player < 7]shiver with shame as you swallow the stranger's [semen][otherwise if the semen taste addiction of the player < 11]swallow quickly, trying not to think about what you're doing too much[otherwise]swallow the tasty [semen] loudly, trying to make sure the stranger on the other side of the wall can hear what you're doing[end if].";
@@ -346,6 +343,4 @@ To say CondomPinFlav of (M - a fairy) on (C - a clothing):
 Check drinking gloryhole:
 	try entering the noun instead.
 
-
 Gloryhole ends here.
-

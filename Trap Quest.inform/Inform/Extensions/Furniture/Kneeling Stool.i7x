@@ -1,6 +1,5 @@
 Kneeling Stool by Furniture begins here.
 
-
 a kneeling stool is a kind of furniture. The printed name of kneeling stool is "[TQlink of item described]kneeling stool[TQxlink of item described][shortcut-desc][verb-desc of item described]". A kneeling stool is not permanent fixture. There are 4 kneeling stools.
 
 To decide which figure-name is the examine-image of (C - a kneeling stool):
@@ -23,7 +22,4 @@ To compute furniture resting on (K - a Kneeling Stool):
 		FatUp 3;
 	compute normal rest of K.
 
-
-
 Kneeling Stool ends here.
-

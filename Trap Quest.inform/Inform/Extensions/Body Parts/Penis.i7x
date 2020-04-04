@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
 To say FullExamineDesc of (B - penis):
-	say "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+	say "[if the player is male][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
@@ -68,7 +68,6 @@ REQUIRES COMMENTING
 +!]
 Definition: penis is tiny if the size of penis > 0 and the size of penis < 4.
 
-
 [!<PenisIsLewdlyExposed>+
 
 REQUIRES COMMENTING
@@ -109,6 +108,8 @@ Definition: penis is at least partially exposed:
 	if the concealer of penis is a thing, decide no;
 	decide yes.
 
+[When penis-capacity is exceeded, the player can still conceal their junk, but there's a chance of wardrobe malfunctions.]
+
 [!<ClothingIsPotentiallyPenisCovering>+
 
 REQUIRES COMMENTING
@@ -116,25 +117,27 @@ REQUIRES COMMENTING
 +!]
 Definition: a clothing (called C) is potentially penis covering:[does not check if penis is visible, only if it is covered by something.]
 	if C is potentially pussy covering clothing:
-		if penis is not penis-erect:[when your penis is soft, certain clothing will still cover a penis that wouldn't fit when hard]
-			if the size of penis > 3 and the penis-capacity of C >= 3, decide yes;
-		if the size of penis <= the penis-capacity of C, decide yes;
+		if penis is penis-erect:[erections change how clothing fits.]
+			if the size of penis <= the penis-capacity of C + 1, decide yes;
+		otherwise:
+			if the size of penis <= the penis-capacity of C + 2, decide yes;
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
 		if C is not super-short and C is not short, decide yes;[long skirts protect against exposure]
 		if the player is upright and C is not super-short and the size of penis < 4, decide yes; [short skirts protect against exposure as long as you're standing and have a small penis]
 	decide no.
 
-[!<ClothingIsPotentiallyPenisCovering>+
+[!<ClothingIsPotentiallyAtLeastPartiallyPenisCovering>+
 
 REQUIRES COMMENTING
 
 +!]
 Definition: a clothing (called C) is potentially at least partially penis covering:[does not check if penis is visible, only if it is covered by something.]
 	if C is potentially pussy covering clothing:
-		if there is a worn chastity cage:
-			if the size of penis > 3 and the penis-capacity of C >= 1, decide yes;[when you're in chastity, certain clothing can still cover a penis that otherwise wouldn't fit]
-		if the size of penis <= the penis-capacity of C + 3, decide yes; [as long as not more than 3 inches are showing we say it's partially covered]
+		if penis is penis-erect:
+			if the size of penis <= the penis-capacity of C + 2, decide yes;
+		otherwise:
+			if the size of penis <= the penis-capacity of C + 4, decide yes;[beyond capacity + 2, at least 2 inches can be partially covered.]
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
 		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
@@ -163,6 +166,7 @@ Definition: a clothing (called C) is actually at least partially penis covering:
 
 [Highest level penis concealer]
 To decide which object is the concealer of (P - penis):
+	if water-fountain is penetrating asshole, decide on water-fountain;
 	repeat with C running through worn actually penis covering clothing:
 		let this-one be 1;
 		repeat with D running through worn actually penis covering clothing:
@@ -172,14 +176,14 @@ To decide which object is the concealer of (P - penis):
 
 [Highest level penis partial concealer]
 To decide which object is the at least partial concealer of (P - penis):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
 	repeat with C running through worn actually at least partially penis covering clothing:
 		let this-one be 1;
 		repeat with D running through worn actually at least partially penis covering clothing:
 			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
 		if this-one is 1, decide on C;
 	decide on nothing.
-
-
 
 [!<DecideWhichNumberIsMinPenisSize>+
 
@@ -208,9 +212,8 @@ To PenisObedienceUp (X - a number):
 				otherwise if the penis-obedience of penis < 10:[orgasms are overrated.]
 					say "[variable custom style][one of]I go soft after just one orgasm, so why even have one? After all, my only job is to stay hard for my partner.[or]Ejaculating is just a bonus. The important thing is if your penis can make someone *else* cum.[or]I've always thought [semen] made a huge mess. Its so much more convenient if I don't cum at all.[in random order][roman type][line break]";
 				otherwise:[10(max)]
-					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realized was that it's meant to be used by someone else.[in random order][roman type][line break]";
+					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realised was that it's meant to be used by someone else.[in random order][roman type][line break]";
 		decrease X by 1.
-
 
 [Whenever an npc abuses your penises, it has a chance of increasing your 'obedience' value.
 
@@ -469,7 +472,6 @@ To say PenisModesty:
 
 Part 3 - Modify Penis Stats
 
-
 previous penis length is a number that varies.
 
 To PenisUp (X - a number):
@@ -527,7 +529,27 @@ To PenisDown (X - a number):
 	otherwise:
 		now Shrink is "shrink".
 
+Section - Image for graphics window
 
+[Figure of PenisObject1 is the file "CharWins/FocusWin/Penis/Penis1.jpg".
+Figure of PenisObject2 is the file "CharWins/FocusWin/Penis/Penis2.jpg".]
+Figure of PenisObject3 is the file "CharWins/FocusWin/Penis/Penis3.jpg".
+Figure of PenisObject4 is the file "CharWins/FocusWin/Penis/Penis4.jpg".
+Figure of PenisObject5 is the file "CharWins/FocusWin/Penis/Penis5.jpg".
+Figure of PenisObject6 is the file "CharWins/FocusWin/Penis/Penis6.jpg".
+[Figure of PenisObject7 is the file "CharWins/FocusWin/Penis/Penis7.jpg".]
+Figure of PenisObject8 is the file "CharWins/FocusWin/Penis/Penis8.jpg".
+Figure of PenisObject9 is the file "CharWins/FocusWin/Penis/Penis9.jpg".
+
+To decide which figure-name is the examine-image of (T - Penis):
+	if the size of penis < 2, decide on figure of PenisObject3;
+	if the size of penis is 2, decide on figure of PenisObject3;
+	if the size of penis is 3, decide on figure of PenisObject3;
+	if the size of penis is 4, decide on figure of PenisObject4;
+	if the size of penis is 5, decide on figure of PenisObject5;
+	if the size of penis is 6, decide on figure of PenisObject6;
+	if the size of penis is 7, decide on figure of PenisObject6;
+	if the size of penis is 8, decide on figure of PenisObject8;
+	decide on figure of PenisObject9.
 
 Penis ends here.
-

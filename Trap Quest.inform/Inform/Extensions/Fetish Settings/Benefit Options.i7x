@@ -1,6 +1,5 @@
 Benefit Options by Fetish Settings begins here.
 
-
 [!<tableOfBenefitOptions:Table>*
 
 REQUIRES COMMENTING
@@ -19,7 +18,7 @@ title	subtable	description	toggle
 "Mindbreak protection (player can't get broken: humiliation, bimbo and sex addiction cap slightly lowered) ([if mindbreak protection is 0]Not enabled - costs 4 points to enable[otherwise][bold type]Enabled[roman type] - 4 points used[end if])"	--	--	mindbreak protection toggle rule
 "Bondage protection (most common ways of getting bondage including chastity are prevented) ([if bondage protection is 0]Not enabled - costs 4 points to enable[otherwise][bold type]Enabled[roman type] - 4 points used[end if])"	--	--	bondage protection toggle rule
 "Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise][bold type]Enabled[roman type] - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
-"Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. However you'll never be able to get that headgear the normal way.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
+"Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. You won't get that headgear the normal way until you've worn it.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
 "Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
 "Remove Guest NPC (lets you get rid of the random patron-designed NPC that spawns each game): [if the player is not the donator]Beta testers only, sorry![otherwise if supportersEnabled is 0][bold type]Removed[roman type] (1 point used)[otherwise]Not removed (costs 1 point to enable)[end if]"	--	--	supporters enabled toggle rule
 "Combat visor (lets you see some of the behind-the-scenes numbers being calculated. Can be removed but then can't be worn again): [if combatvisor is 1][bold type]Enabled[roman type] - 1 point used[otherwise]Disabled - costs 1 point to enable[end if]"	--	--	combat visor toggle rule
@@ -84,7 +83,6 @@ To say MaxBellySizeDesc:
 	if max belly size is 4, say "curvy";
 	if max belly size is 7, say "full";
 	if max belly size is 10, say "bulging".
-
 
 [!<SayBonusStrengthCost>+
 
@@ -283,15 +281,12 @@ This is the bonus liquid reset rule:
 	now choice in row 63 of the Table of Player Options is 0.
 The bonus liquid reset rule is listed in the reset rules.
 
-
 This is the combat visor toggle rule:
 	if combatvisor is 0 and points count >= 1, now choice in row 76 of the Table of Player Options is 1;
 	otherwise now choice in row 76 of the Table of Player Options is 0.
-
 
 This is the supporters enabled toggle rule:
 	if supportersEnabled is 1 and points count >= 1, now choice in row 77 of the Table of Player Options is 0;
 	otherwise now choice in row 77 of the Table of Player Options is 1.
 
 Benefit Options ends here.
-

@@ -117,7 +117,6 @@ To decide which number is minimum arousal:
 
 Part 2 - Decay Every Turn
 
-
 [!<previousSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -203,8 +202,9 @@ A later time based rule (this is the compute arousal rule):
 	if the wanktime of the player > time-seconds, decrease the wanktime of the player by time-seconds;
 	otherwise now the wanktime of the player is 0;
 	[This is arousal slowly decaying.]
-	if the delayed arousal of the player <= 0: [only cool down when no arousal gained this turn]
+	if the delayed arousal of the player <= 0 or (diaper quest is 1 and there is a worn pacifier): [only cool down when no arousal gained this turn]
 		let S be time-seconds * 6;
+		if diaper quest is 1 and there is a worn pacifier, increase S by time-seconds * 3;
 		if the raw sex addiction of the player > 15:
 			now S is S / 6;
 		otherwise if the raw sex addiction of the player > 10:
@@ -213,6 +213,10 @@ A later time based rule (this is the compute arousal rule):
 			now S is S / 4;
 		otherwise:
 			now S is S / 3;
+		if the player is grossed out:
+			increase S by 1000;
+		otherwise if the player is perturbed:
+			increase S by 200;
 		cool down S;
 	if the arousal of the player < minimum arousal, now the arousal of the player is minimum arousal;
 	check for arousal change.
@@ -252,7 +256,7 @@ To check for arousal change:
 		if the player is grossed out:
 			say "[bold type]You quickly lose all arousal since you are too grossed out.[roman type][line break]";
 		otherwise if refactoryperiod <= 0:
-			say "[bold type]Over time, you have cooled off and are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
+			say "[bold type]Over time, [if diaper quest is 1 and there is a worn pacifier]sucking on your pacifier has helped cool you off, and you[otherwise]you have cooled off and[end if] are [if previous-horny is 0]no longer horny[otherwise]now a bit less horny[end if].[roman type][line break]";
 		if the player is not pheromonal and old-pheromonal is 1:
 			say "[bold type]Your primitive urges seem to fade.[roman type][line break]";
 		if penis is penis-erect, compute erection decay;
@@ -268,6 +272,31 @@ To check for arousal change:
 
 Part 3 - Check Values
 
+[!<YourselfIsGrossedOut>+
+
+A grossed out player tends to refuse to rest and quickly loses arousal.
+
++!]
+Definition: yourself is grossed out:
+	if the player is upset about mess, decide yes;
+	if diaper quest is 0 and the location of the player is Dungeon19, decide yes;
+	decide no.
+
+[!<YourselfIsGrossedOut>+
+
+A player who is perturbed slowly loses arousal.
+
++!]
+Definition: yourself is perturbed:
+	if the player is upset about urine or turnsWithSoiledDiaper > 0, decide yes;
+	decide no.
+
+Definition: yourself is magically horny: [Player gets horny even if grossed out]
+	if the player is in School34 or the player is in School13 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, iron maiden]
+	if there is a rocking horse grabbing the player, decide yes;
+	if diaper quest is 1 and there is a vine grabbing the player, decide yes;
+	decide no.
+
 [You have an animal class, and you will find it difficult to resist 'musky' opponents. Also, beastly monsters are less likely to stop chasing you when you leave the room.]
 Definition: yourself is pheromonal:
 	if mythical creature fetish is 0, decide no;
@@ -280,7 +309,6 @@ Definition: yourself is pheromonal:
 		if the class of the player is cowgirl, decide yes;
 	decide no.
 
-
 [!<YourselfIsAbleToGetHorny>+
 
 REQUIRES COMMENTING
@@ -288,13 +316,12 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is able to get horny:
 	if the player is magically horny, decide yes;
-	if the player is grossed out, decide no;
+	[if the player is grossed out, decide no;]
 	if the class of the player is princess and princess-consort is monster and the refactory-period of princess-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
 	if refactoryperiod > 2 and (the player is male or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
 	[if the player is male and the size of penis is 0, decide no;]
 	decide yes.
-
 
 [!<ThingIsUnlimitedHorniness>+
 
@@ -370,7 +397,6 @@ Definition: yourself is gagging for cock:
 A gagging for cock rule (this is the extremely horny players need cock rule):
 	if the player is extremely horny, rule succeeds.
 
-
 [!<TheNotHornyEnoughToWankRule>+
 
 You need some arousal to masturbate, and also you need to not be grossed out.
@@ -385,6 +411,4 @@ This is the not horny enough to wank rule:
 		rule fails.
 The not horny enough to wank rule is listed last in the masturbation restriction rules.
 
-
 Arousal ends here.
-

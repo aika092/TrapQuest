@@ -1,6 +1,5 @@
 Bottles by Drinks begins here.
 
-
 [!<Bottle>@
 
 All drinking vessels that obey standard dosage and colour rules. I.e. not the squeezy bottle.
@@ -21,7 +20,6 @@ How many gulps of liquid are in it right now? A gulp of liquid is about 2 units 
 A bottle has a number called doses.
 
 Definition: a bottle is empty rather than non-empty if the doses of it <= 0.
-
 
 [!<Bottle>@<maxDoses:Integer>*
 
@@ -100,7 +98,6 @@ Bottles have a colour. This is what liquid colour is contained within it.
 *@!]
 A bottle has a drink-colour called the fill-colour. Understand the fill-colour property as describing a bottle when item described is non-empty.
 
-
 To say PotionType of (B - a bottle):
 	say "a [fill-colour of B] liquid";
 	if the fill-type of B is remembered, say " ([FillName the fill-type of B])".
@@ -115,7 +112,6 @@ This variable maybe needs to be renamed, because what it really is checking is w
 
 *@!]
 A bottle can be player-origin or monster-origin. A bottle is usually player-origin.
-
 
 [!<Bottle>@<WhichNumberIsTheFillType>+
 
@@ -201,7 +197,6 @@ To restock (C - a bottle):
 	let B be a random basic loot bottle;
 	if B is bottle, now B is in Standard Item Pen.
 
-
 To Set Up Drinks:
 	repeat with B running through all vessels:
 		unless B is can:
@@ -281,7 +276,6 @@ To Dump (X - a bottle):
 			MilkPuddleUp the doses of X;
 	DoseEmpty X.
 
-
 [!<DestroyBottle>+
 
 This is all the things we need to do when a bottle is destroyed to reset it for the next time it appears and to make sure it has no lingering unintended effects.
@@ -294,7 +288,4 @@ To destroy (T - a bottle):
 	DoseEmpty T;
 	dislodge T.
 
-
-
 Bottles ends here.
-

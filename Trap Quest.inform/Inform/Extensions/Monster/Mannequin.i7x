@@ -115,12 +115,12 @@ To say MonsterDesc of (M - skater mannequin):
 	say "An unsettling [mannequin-model of M] mannequin complete with striking makeup and blankly smiling stare. A pink punk-styled top sits above a tiny white skater mini-skirt, which barely hides whatever underwear [he of M] might be wearing. Fishnet tights sit under multicoloured striped knee-length socks and knee-pads. Fingerless gloves, elbow-pads and black & white trainers finish off the skater look.".
 
 To say MonsterComment of (M - a mannequin):[TODO: fix this]
-	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like her![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
+	if diaper quest is 0, say "[if the bimbo of the player <= 4][line break][first custom style][one of]Wow, [he of M]'s really creepy.[or][big he of M] doesn't look tough, but [he of M]'s not human so I should keep an eye out.[or]I wonder if [he of M]'s got a pussy.[or]This reminds me of this one time me and my friend took a department store mannequin home.[or]Even the clothing models look like total harlots.[or]Hmm, I doubt [he of M] can feel pain, but [he of M] probably has some exploitable weak points.[or]So that's how I'm expected to dress. Disgusting.[in random order][otherwise if the bimbo of the player <= 8][line break][variable custom style][one of][big he of M]'s actually kind of attractive for a walking piece of plastic.[or]What kind pervert dressed [him of M] up so sexy?[or]Is that how I'll look by the end of this? No... I've got to resist![in random order][otherwise if the bimbo of the player <= 12][line break][second custom style][one of][big his of M] make up looks really good.[or]Is that a wig or is that real hair? [big he of M] has good fashion sense.[or]Those clothes don't look too bad...[in random order][otherwise if bimbo of the player <= 16][second custom style][one of]I should have [him of M] do my make up![or]Maybe [he of M] can give me some fashion pointers, teehee![or]People stare at [him of M] all day long, just like they will with me!*giggle*[or]I want, no, I *NEED* to look like [him of M]![in random order][otherwise if bimbo of the player <= 20][second custom style][one of]I wish *MY* head could just be empty plastic![or]Maybe I should be a mannequin when I get home![or][big he of M][']s so lucky, people make all [his of M] choices for [him of M] every day![in random order][end if][roman type][line break]".
 
 To set up (M - a mannequin):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 5;
+	now the raw difficulty of M is 5;
 	now the health of M is the maxhealth of M.
 
 This is the spawn initial mannequin rule:
@@ -131,7 +131,7 @@ The spawn initial mannequin rule is listed in the setting up woods monsters rule
 
 To DifficultyUp (M - a mannequin) by (X - a number):
 	while X > 0:
-		increase the difficulty of M by 1;
+		increase the raw difficulty of M by 1;
 		decrease X by 1;
 	if diaper quest is 0 and the difficulty of M > 10 and the number of sex toys retained by M is 0:
 		let P be a random off-stage dong;[If she doesn't have a dildo and her difficulty is high enough, she gets a dildo from off-stage]
@@ -197,7 +197,6 @@ To compute DQ perception of (M - a mannequin):
 	now M is interested;
 	say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 	anger M.
-
 
 Part 3 - Combat
 
@@ -400,16 +399,8 @@ The selection frustrated rule is listed last in the mannequin diaper quest rules
 
 Section 3 - Damage
 
-To compute damage of (M - a mannequin):
-	if the health of M > 0:
-		if M is uninterested:
-			say "[BigNameDesc of M] seems to notice you. Uh-oh...";
-			now M is interested;
-			anger M;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - a mannequin):
+	say "[BigNameDesc of M] seems to notice you. Uh-oh...".
 
 To say DamageReactHealthy of (M - a mannequin):
 	say "[BigNameDesc of M] doesn't even flinch!".
@@ -423,14 +414,17 @@ To say DamageReactTired of (M - a mannequin):
 To say DamageReactWeak of (M - a mannequin):
 	say "[BigNameDesc of M] looks like [his of M] joints are starting to fail!".
 
-To compute unique death of (M - a mannequin):
-	say "[BigNameDesc of M] falls and breaks into pieces.";
+To say BanishFleeFlav of (M - a mannequin):
+	say "[BigNameDesc of M] falls and breaks into pieces.".
+
+To loot (M - a mannequin):
 	let J be a random off-stage make up kit;
-	if a random number between 1 and 5 > 3 and J is make up kit:
+	if a random number between 1 and 5 > 2 and J is make up kit:
 		say "You notice that [his of M] [ShortDesc of J] appears to have remained intact.";
 		now J is in the location of the player;
-		compute autotaking J.
+		compute autotaking J;
+	otherwise:
+		standard loot M.
 
 
 Mannequin ends here.
-

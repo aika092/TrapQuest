@@ -49,4 +49,3 @@ Report going:
 		say "The [chocolates bag] follows you into the [location of the player]!".
 
 Chocolates Bag ends here.
-

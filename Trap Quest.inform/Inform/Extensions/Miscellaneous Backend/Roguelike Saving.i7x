@@ -1,6 +1,5 @@
 Roguelike Saving by Miscellaneous Backend begins here.
 
-
 The file of save data is save file.
 
 Before reading a command when save game limit > 0 (this is the automatically save before input rule):

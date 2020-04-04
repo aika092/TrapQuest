@@ -21,6 +21,4 @@ To say ClothingDesc of (C - a cream bikini top):
 To decide which number is the initial outrage of (C - a cream bikini top):
 	decide on 1.
 
-
 Cream Bikini Top ends here.
-

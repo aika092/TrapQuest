@@ -1,6 +1,5 @@
 Region Building Dungeon by Rooms begins here.
 
-
 [!<SetUpTheDungeon>+
 
 REQUIRES COMMENTING
@@ -91,6 +90,4 @@ To Scramble Dungeon:
 	solve the puzzle;
 	make all labyrinth exits lead to Solid Rock.
 
-
 Region Building Dungeon ends here.
-

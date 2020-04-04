@@ -1,6 +1,6 @@
 Facehugger by Monster begins here.
 
-A facehugger is a kind of monster. The difficulty of facehugger is 1. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
+A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
 
 There are 10 facehuggers.
 
@@ -30,7 +30,7 @@ To say MonsterDesc of (M - facehugger):
 To set up (M - facehugger):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 1;
+	now the raw difficulty of M is 1;
 	now the health of M is the maxhealth of M;
 	facehuggerShortcutAssign M;
 	anger M;
@@ -100,7 +100,6 @@ To compute action (N - a number) of (M - a facehugger):
 				say "The legs let go of you and the body falls off, motionless and dead.";
 				destroy M.
 
-
 To compute (M - a monster) stomping (N - a facehugger):
 	if M is in the location of the player, say "[BigNameDesc of M] kills the [N].";
 	destroy N;
@@ -108,14 +107,12 @@ To compute (M - a monster) stomping (N - a facehugger):
 	now L is in the location of M;
 	now the leftover-type of L is the leftover-type of N.
 
-
 Section 3 - Damage
 
 [Chance for the facehugger to completely dodge the attack.]
 To decide which number is the damage modifier of (M - a facehugger):
-	 if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
+	if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
 	decide on 0.
-
 
 To say damage-flavour of (N - a number) on (M - a facehugger):
 	if N is 0:
@@ -123,13 +120,14 @@ To say damage-flavour of (N - a number) on (M - a facehugger):
 	otherwise:
 		say "A direct hit!".
 
+To compute standard damage of (M - a facehugger):
+	if the health of M <= 0, compute defeat of M.
 
-To compute damage of (M - a facehugger):
-	if the health of M <= 0, compute death of M.
+To compute defeat of (M - a facehugger):
+	say "You hear a snap as [NameDesc of M] drops lifelessly to the ground.";
+	destroy M.
 
 To loot (M - a facehugger):
 	do nothing.
 
-
 Facehugger ends here.
-

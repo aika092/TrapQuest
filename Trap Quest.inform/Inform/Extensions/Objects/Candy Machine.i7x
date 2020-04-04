@@ -1,6 +1,5 @@
 Candy Machine by Objects begins here.
 
-
 [!<CandyMachine>@
 
 REQUIRES COMMENTING
@@ -27,7 +26,6 @@ To decide which number is the button-colour of (T - candy machine):
 	if the recent uses of T > 0, decide on 16720896; [turn scarlet - red candy]
 	if the recent uses of T is -1, decide on 16766720; [turn gold - gold candy]
 	decide on lightModeFullGreen. [normal green]
-
 
 To BackgroundRender (T - candy machine) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle button-colour of T in the current focus window at X1 by Y1 with size DX by DY.
@@ -211,7 +209,4 @@ REQUIRES COMMENTING
 Report going east when the player is in Dungeon32:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Candy machines are your primary source of food. You'll only be able to have a maximum of three at any time so you'll need to periodically eat some and then come back to machines for more. There's one in each region of the game. After you use a candy machine its light will turn red, and it'll only give you worse candy until you use a different candy machine in other regions. This means that you'll need to keep moving between regions to get the best candy. If you use all the candy machines except one in a row, the final one will turn golden and give you an extra special candy when you use it! It's strongly recommended for you to use this one now, as it'll give you your 'starting pack' of three candies. You can either eat some immediately or wait until you actually get hungry.[roman type][line break][or][stopping]".
 
-
-
 Candy Machine ends here.
-

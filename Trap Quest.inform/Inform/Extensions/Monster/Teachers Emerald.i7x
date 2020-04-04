@@ -38,8 +38,6 @@ To say WhereAnswer of (M - teacher-hannah):
 To say AdviceAnswer of (M - teacher-hannah):
 	say "[speech style of M]'Following orders becomes easier once you truly accept that you are beneath us.'[roman type][line break]".
 
-
-
 To say DefeatFlav of (M - teacher-hannah):
 	say "[BigNameDesc of M] collapses, and [if M is in the school]is left sprawled on the floor. [big he of M] won't be getting up any time soon[otherwise][his of M] body disappears[end if].";
 	if skeleton key is off-stage:
@@ -47,11 +45,8 @@ To say DefeatFlav of (M - teacher-hannah):
 		say "A [skeleton key] drops out of [his of M] cleavage!";
 		compute autotaking skeleton key.
 
-
 To say EnslavedDominationFlav of (M - teacher-hannah):
 	say "You hold [NameDesc of M][']s wrists and force them down to the ground in front of [him of M]. This causes [his of M] magic enchanted paddle to spring to life, attacking [him of M] with powerful spanks from every direction. You laugh as [he of M] squeals and screams through [his of M] gag. Once you are satisfied, you release [his of M] wrist and [he of M] immediately adopts the correct position to cause the paddle to once again peacefully drop to the ground in front of [him of M], watching and waiting patiently for the next transgression.".
-
-
 
 pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
 
@@ -207,7 +202,6 @@ To say ClitPiercingConcede of (M - a tryhard student):
 To say ClitPiercingConcede of (M - an innocent student):
 	say "Moments later [NameDesc of M] steps forward, releasing you both from the clitoral torment. [big he of M] shakes [his of M] arms in a panicked fashion.[line break][speech style of M]'No no no, this is just too crazy!'[roman type][line break]".
 
-
 toy-lesson is a lesson. The lesson-teacher of toy-lesson is teacher-hannah.
 
 To compute teaching of (L - toy-lesson):
@@ -310,7 +304,7 @@ To compute teaching of (L - toy-lesson):
 						now STP is P;
 						now STD is -1000; [prevents any smaller plugs being selected (because we've just chosen our plug)]
 				say "[BigNameDesc of ST] walks up and after a brief hesitation chooses the [MediumDesc of STP]. [if ST is innocent student]After a few seconds of hesitation[otherwise if ST is ditzy student][big he of ST] giggles naughtily as[otherwise]Taking it in one hand[end if] [he of ST] [one of]bends over[or]squats[or]turns around[at random] and tries to push it into [his of ST] [one of]asshole[or]ass[or]butthole[at random]. ";
-				if (a random number from 1 to 7) + (a random number from 1 to 7) <= the size of STP:
+				if ST is not promotable or (a random number from 1 to 7) + (a random number from 1 to 7) <= the size of STP:
 					say "[one of][big he of ST] manages to get it about halfway in before [he of ST] yelps in pain and lets go, causing it to fall to the floor[or]As soon as [he of ST] pushes the first half-inch inside [he of ST] realises [his of ST] mistake - there's no way it'll fit! With a dejected expression [he of ST] gives up and looks to return to [his of ST] desk[or][big he of ST] tries to ease it in but [his of ST] face reveals how much [he of ST][']s struggling. You watch as [he of ST] makes several attempts to overcome the sensations but ultimately fails, hanging [his of ST] head in shame[in random order]. [BigNameDesc of M] shakes [his of M] head.";
 					add 0 to LN;
 					if the size of STP < 5 and ST is demotable:
@@ -395,8 +389,6 @@ Definition: a text (called T) is toy-lesson-examine-responsive:
 			if T matches the text text-shortcut of P, decide yes;
 	decide no.
 
-
-
 Part - Bianca
 
 teacher-bianca is an emerald-teacher.
@@ -411,7 +403,7 @@ To decide which figure-name is the monster-image of (M - teacher-bianca):
 
 To say MonsterDesc of (M - teacher-bianca):
 	if M is sex-enslaved:
-		say "Where there was once a [man of M] with proudly exposed black panties, there is now one with a shamefully exposed cunt, with the words 'JIZZ DUMP' written in permanent marker directly above it in bright pink. In fact [his of M] outfit has been changed to now be entirely pink, with [his of M] dress ripped in several places, emphasising how roughly [he of M] is to be used. The word 'STAFF' on her badge has been crossed out and now reads 'SLUT', again in bright pink. Her face, hair, chest and crotch are all covered in [semen].";
+		say "Where there was once a [man of M] with proudly exposed black panties, there is now one with a shamefully exposed cunt, with the words 'JIZZ DUMP' written in permanent marker directly above it in bright pink. In fact [his of M] outfit has been changed to now be entirely pink, with [his of M] dress ripped in several places, emphasising how roughly [he of M] is to be used. The word 'STAFF' on [his of M] badge has been crossed out and now reads 'SLUT', again in bright pink. [big his of M] face, hair, chest and crotch are all covered in [semen].";
 	otherwise if M is diaper-enslaved:
 		say "Where there was once a [man of M] with proudly exposed black panties, there is now one with a shamefully exposed thick black diaper, with no skirt whatsoever. Instead there are just small frills at [his of M] waistband. Black elbow-length gloves and a matching pacifier complete the babified look.";
 	otherwise:
@@ -471,8 +463,6 @@ To say EnslavedDominationFlav of (M - teacher-bianca):
 To decide which number is the EnslavedDominationThreshold of (M - teacher-bianca):
 	decide on 7.
 
-
-
 dress-lesson is a lesson. The lesson-teacher of dress-lesson is teacher-bianca.
 
 Definition: dress-lesson (called L) is lesson-appropriate:
@@ -531,7 +521,7 @@ To compute teaching of (L - dress-lesson):
 		if the player is bimbo consenting:
 			say "You raise your hand and then at [NameDesc of M][']s signal, you walk to the front of the class. [big he of M] then brushes [his of M] hand over [his of M] desk, making several various pieces of chalk fall to the floor around you.[line break][speech style of M]'Oh no [NameBimbo], how clumsy of you! Pick all those up at once!'[roman type][line break]You understand what is required of you - you are supposed to make sure you always bend at the waist and not at the knees. ";
 			if short skirts permanent fetish is 0 and (the player is proud or (the player is modest and the number of worn dense total protection knickers is 0)):
-				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! You need to loosen up, girl.'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body. After it's finished, you blink a couple of times and look down at your skirt, realising that you do indeed now feel strangely at home in your [ShortDesc of C]. The idea of wearing a normal skirt suddenly feels just... wrong. You look at [NameDesc of M] quizzically, and she just smirks back.[line break][speech style of M]Yes, I think that will do for now. Class dismissed!'[roman type][line break]";
+				say "You try your best, but as your back goes down and your butt becomes exposed to the class, you lose your nerve. This is too weird and embarrassing, to have all this attention on you as your [if the number of worn dense total protection knickers is 0]private parts become[otherwise]underwear becomes[end if] exposed! You can't bring yourself to go through with it, and end up bending your knees and quickly picking up the chalk the 'normal' way. Your cheeks flush red in shame, but you're not even sure if you feel most ashamed about the fact that you didn't manage to complete the task, or the fact that you almost did.[line break][speech style of M]'Very disappointing. Why volunteer when you're CLEARLY not ready to go through with this yet?! You need to loosen up, girl.'[roman type][line break][big he of M] shoves a hand up your skirt and grips a butt cheek, beginning to knead it like dough. You yelp in surprise [if the player is feeling dominant]and then grind your teeth with anger[otherwise]but don't dare move away from [him of M][end if]. You feel a bizarre, almost magical warmth emitting from [his of M] hands, and then a weird shiver overcomes your entire body. After it's finished, you blink a couple of times and look down at your skirt, realising that you do indeed now feel strangely at home in your [ShortDesc of C]. The idea of wearing a normal skirt suddenly feels just... wrong. You look at [NameDesc of M] quizzically, and [he of M] just smirks back.[line break][speech style of M]Yes, I think that will do for now. Class dismissed!'[roman type][line break]";
 				increase short skirts permanent fetish by 1;
 			otherwise:
 				say "You try your best, bending at the waist and exposing your butt to the class. You can feel the attention of every single person in the room on your exposed [if the number of worn dense total protection knickers is 0][player-crotch][otherwise][ShortDesc of random worn knickers][end if], [if the player is shameless]which makes you shiver with excitement[otherwise]and can't help but feel a little shiver of excitement alongside the shame[end if]. You reach the ground and begin to pick up a piece of chalk. Deciding to show off your skills, you reach far to the left and right to try and pick up all the chalk in a single flourish. ";
@@ -558,7 +548,5 @@ To compute teaching of (L - dress-lesson):
 			say "You watch as [his of P] emerald ID card turns into a ruby one, and [he of P] is now '[student-name of P] the [student-print of P]'. [big he of P] grins widely and then prances out of the room.";
 			compute mandatory room leaving of P;
 			say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'That'll do for now. Class dismissed!'[roman type][line break]".
-
-
 
 Teachers Emerald ends here.

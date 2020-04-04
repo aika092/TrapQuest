@@ -1,6 +1,5 @@
 Talking by Actions begins here.
 
-
 [!<playerSpeechRules:Rulebook>*
 
 REQUIRES COMMENTING
@@ -112,6 +111,7 @@ REQUIRES COMMENTING
 +!]
 Check greeting:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
@@ -143,6 +143,7 @@ REQUIRES COMMENTING
 +!]
 Check questioning:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
@@ -170,6 +171,7 @@ REQUIRES COMMENTING
 +!]
 Check drink requesting:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is thirsty, say "You aren't thirsty, so don't see the point." instead;
@@ -198,6 +200,7 @@ REQUIRES COMMENTING
 +!]
 Check food requesting:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
 		unless the player is hungry, say "You aren't hungry, so don't see the point." instead;
@@ -217,11 +220,11 @@ Carry out food requesting:
 	compute talk option 4 to the noun.
 Understand "ask [something] for food", "ask [something] for some food", "ask [something] for something to eat" as food requesting.
 
-
 Dismissal is an action applying to one thing.
 
 Check dismissal:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
 	if the noun is a monster:
 		if the noun is grabbing the player or the noun is penetrating a body part, try resisting instead;
 		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
@@ -235,7 +238,4 @@ Carry out dismissal:
 	compute talk option 5 to the noun.
 Understand "dismiss [something]", "ask [something] to leave", "say goodbye to [something]" as dismissal.
 
-
-
 Talking ends here.
-

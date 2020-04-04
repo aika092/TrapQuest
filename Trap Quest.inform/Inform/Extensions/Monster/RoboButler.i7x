@@ -25,7 +25,7 @@ To say MonsterDesc of (M - a robobutler):
 To set up (M - a robobutler):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 7;
+	now the raw difficulty of M is 7;
 	now the target-room of M is Hotel18;
 	now the health of M is the maxhealth of M;
 	now M is unconcerned.
@@ -44,7 +44,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a robobutler):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materializes on the pad. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a tall, spindly robot materialises on the pad. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CAN I HELP YOU SIR?'[roman type][line break]".
 
@@ -142,8 +142,6 @@ To compute forcefeed of (M - a robobutler):
 		try BowlFeeding feeding bowls;
 		satisfy M for 500 seconds.
 
-
-
 To compute (M - a robobutler) cuffing:
 	let W be a random off-stage pair of wristcuffs;
 	let A be a random off-stage pair of anklecuffs;
@@ -161,7 +159,7 @@ To compute (M - a robobutler) cuffing:
 		repeat with C running through worn bondage:
 			if C is unlocked, now C is locked;
 			increase the sentence of prison guard by 1;
-		say "[BigNameDesc of M]'s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
+		say "[BigNameDesc of M][']s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
@@ -252,8 +250,6 @@ To say StrikingSuccessFlav of (M - a robot) on (B - a body part):
 To say StrikingFailureFlav of (M - a robot) on (B - a body part):
 	say "[StrikingFlav of M on B][one of]You manage to dodge the blow enough that it doesn't hurt.[or]By swiftly blocking the hit, you manage to avoid getting hurt.[or]You manage to step backwards and dodge it.[at random]".
 
-
-
 Part 4 - Conversation
 
 Section 1 - Greeting
@@ -323,4 +319,3 @@ To compute friendly drink of (M - a robot):
 		say "[first custom style]'DRINKS ARE AVAILABLE FROM THE MINIBAR, [robogreeting].'[roman type][line break]".
 
 RoboButler ends here.
-

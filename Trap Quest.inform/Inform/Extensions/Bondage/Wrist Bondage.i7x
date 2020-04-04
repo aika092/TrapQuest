@@ -4,7 +4,6 @@ A wrist bond is a kind of bondage. Understand "cuffs" as wrist bond. A wrist bon
 
 Definition: a wrist bond is same-type if theme-share-target is wrist bond.
 
-
 To say ClothingDesc of (W - a wrist bond):
 	say "[WristBondDesc][if W is not wrist locked and W is worn]They are currently not binding your wrists together. [otherwise if W is wrist-bound-in-front and W is worn]They are binding your wrists in front of you. [otherwise if W is worn]They are binding your wrists behind you. [end if]".
 
@@ -57,10 +56,8 @@ Figure of furry handcuffs is the file "Items/Accessories/Arm/handcuffs3.png".
 Figure of trashy handcuffs is the file "Items/Accessories/Arm/handcuffs4.png".
 Figure of wristcuffs is the file "Items/Accessories/Arm/wristcuffs1.png".
 
-
 Definition: pair of trashy handcuffs is bow themed: decide yes.
 Definition: pair of trashy handcuffs is gem themed: decide yes.
-
 
 To decide which figure-name is clothing-image of (C - pair of handcuffs):
 	decide on figure of handcuffs.
@@ -109,7 +106,6 @@ This is the overdress wrist bondage clash rule:
 		rule fails.
 The overdress wrist bondage clash rule is listed in the overdress wearability rules.
 
-
 This is the wrist bondage dress removal clash rule:
 	if the player is wrist bound and wearing-target is not wrist locked:
 		if summoning is 0 and autoremove is false, say "You won't be able to strip out of this dress whilst your wrists are bound...";
@@ -127,7 +123,6 @@ This is the wrist bondage corset removal clash rule:
 		if summoning is 0 and autoremove is false, say "You won't be able to get out of this corset whilst your wrists are bound...";
 		rule fails.
 The wrist bondage corset removal clash rule is listed in the corset removability rules.
-
 
 This is the bra wrist bondage clash rule:
 	if the player is wrist bound and summoning is 0:
@@ -150,6 +145,4 @@ Carry out wearing wrist bond:
 		say "You click the locks into place with your wrists in front of you.";
 		now the noun is wrist-bound-in-front.
 
-
 Wrist Bondage ends here.
-

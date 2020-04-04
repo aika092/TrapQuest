@@ -39,6 +39,4 @@ To decide which number is the bimbo-influence of (C - a mystical amulet):
 
 Definition: A mystical amulet is immune to change: decide yes.
 
-
 Mystical Amulet ends here.
-

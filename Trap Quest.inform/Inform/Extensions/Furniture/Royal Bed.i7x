@@ -1,6 +1,5 @@
 Royal Bed by Furniture begins here.
 
-
 royal bed is a kind of furniture. 1 royal bed is in Dungeon12. The printed name of royal bed is "[TQlink of item described]royal bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of royal bed is "ryb".
 
 To decide which figure-name is the examine-image of (C - a royal bed):
@@ -77,7 +76,4 @@ To compute furniture resting on (F - the royal bed):
 	if the fatigue of the player > the fatigue of the player / 2, now the fatigue of the player is the fatigue of the player / 2;
 	allocate 6 seconds.
 
-
-
 Royal Bed ends here.
-

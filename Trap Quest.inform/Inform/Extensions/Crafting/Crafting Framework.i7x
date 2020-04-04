@@ -163,7 +163,6 @@ Definition: a number (called K) is alchemy appropriate: [Should we use this alch
 Definition: a thing (called T) is always alchemy appropriate: [Should we OVERRIDE the above function and use this alchemy product as a random outcome?]
 	decide no.
 
-
 [!<Thing>@<IsProduct>+
 
 REQUIRES COMMENTING
@@ -235,7 +234,6 @@ REQUIRES COMMENTING
 +@!]
 Definition: a thing is recipe specific: decide no.
 
-
 [We are not going to classify these as 'bottles' a) since they don't obey the colour & effect rules and b) so that they never get mixed up with normal drinks that are found in containers etc.]
 
 [!<AlchemyProduct>@
@@ -261,7 +259,6 @@ REQUIRES COMMENTING
 *@!]
 An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
 
-
 To display complete alchemy data:
 	[repeat through the Table of Alchemy:
 		say "Product: [Product entry], Recipe: [Recipe entry], Ingredient: [ingredient entry].";]
@@ -273,11 +270,4 @@ To display complete alchemy data:
 		let R1 be a random ingredient-highlighted thing;
 		say "[if Ingredient entry <= highest-cursed or (Ingredient entry >= 20 and Ingredient entry <= 23)][Appearance corresponding to an Magic of current-crafting-key in the Table of Drinks] liquid[otherwise][ShortDesc of R1][end if] ([Ingredient entry]) - [ShortDesc of R2] ([Product entry]) - [if Recipe entry is 1]REAL[otherwise]FAKE[end if].".
 
-
-
-
-
-
-
 Crafting Framework ends here.
-

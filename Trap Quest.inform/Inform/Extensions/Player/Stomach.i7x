@@ -1,6 +1,5 @@
 Stomach by Player begins here.
 
-
 [!<DecideWhichNumberIsTheStomachLiquidOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -152,9 +151,8 @@ To StomachSemenUp (X - a number):
 		if there is a facefucker thing penetrating face:
 			OralSexAddictUp 1;
 			if the latex-transformation of the player < 5, PukeUp;
+			otherwise progress quest of cum-swallowing-quest;
 	if there is a worn tethering lipstick collar, end tethering.
-
-
 
 [!<PersonIsBecomingMoreAddictedToCum>+
 
@@ -274,4 +272,3 @@ To PukeUp (X - a number):
 		say "The liquid from your stomach flows out of your mouth and onto the ground.".
 
 Stomach ends here.
-

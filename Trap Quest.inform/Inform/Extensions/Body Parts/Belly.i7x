@@ -1,6 +1,5 @@
 Belly by Body Parts begins here.
 
-
 Part 1 - Definitions
 
 [!<Belly>@
@@ -12,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 belly is a flesh. Belly is everywhere. The text-shortcut of belly is "belly".
 To say FullExamineDesc of (B - belly):
-	say "[TotalDesc of belly]".
+	say "[ImageDesc of belly][TotalDesc of belly]".
 Understand "torso", "waist", "tummy", "stomach" as belly.
 
 [!<Belly>@<fleshVolume:Integer>*
@@ -140,7 +139,7 @@ REQUIRES COMMENTING
 To decide which number is the total fill of belly:
 	let B be the total squirtable fill of belly;
 	increase B by the air volume of belly;
-	if a random slimegirl is worn, increase B by 10;
+	if slimegirl is worn, increase B by 10;
 	decide on B.
 
 [!<DecideWhichNumberIsTheTotalEggFillOfBelly>+
@@ -178,18 +177,22 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the largeness of belly:
-	if the pregnancy of the player > 0 and womb volume of vagina > 30, decide on belly magnitude of womb volume of vagina; [Monster pregnancy = we only care about womb fill]
+	if the pregnancy of the player > 0 and womb volume of vagina > 30: [Monster pregnancy = we only care about womb fill]
+		let B be womb volume of vagina;
+		if the air volume of belly > B, now B is the air volume of belly;
+		decide on belly magnitude of B;
 	let B be the largeness fill of belly;
 	repeat with C running through corsets worn by the player:
 		decrease B by (the magic-modifier of C + 5);
 		if C is constriction, decrease B by 4;
 	let F be belly magnitude of B;
-	if F > max belly size:
+	if F > max belly size: [we only override max belly size if pregnancy + fat or air is higher on its own.]
 		now B is the flesh volume of belly;
 		if the pregnancy of the player > 0, increase B by the womb volume of vagina;
-		increase B by the air volume of belly;
 		let B2 be belly magnitude of B;
-		if B2 > max belly size, decide on B2; [we only override max belly size if pregnancy + fat + air is higher on its own.]
+		if B2 > max belly size, decide on B2;
+		let B2 be belly magnitude of the air volume of belly;
+		if B2 > max belly size, decide on B2;
 		decide on max belly size;
 	decide on F.
 
@@ -232,6 +235,10 @@ To decide which number is belly magnitude of (B - a number):
 	if the womb volume of vagina > 30 or the pregnancy of the player is 3: [Super pregnancy sizes]
 		if the womb volume of vagina + the total egg volume of vagina > 45, decide on 13;
 		if the womb volume of vagina + the total egg volume of vagina > 37, decide on 12;
+		decide on 11;
+	if the air volume of belly > 30: [super inflation sizes]
+		if the air volume of belly > 45, decide on 13;
+		if the air volume of belly > 37, decide on 12;
 		decide on 11;
 	if S > 10, decide on 10;
 	otherwise decide on S.
@@ -435,7 +442,6 @@ To say PermanentBelly:
 
 Part 3 - Modify Belly Stats
 
-
 [!<DecideWhichNumberIsBellyLimit>+
 
 REQUIRES COMMENTING
@@ -483,7 +489,6 @@ To decide which number is belly egg count:
 
 Chapter 1 - Fat
 
-
 [!<FatBellyUpX>+
 
 REQUIRES COMMENTING
@@ -516,30 +521,34 @@ REQUIRES COMMENTING
 
 +!]
 To Overflow:
-	if currently-squirting is 0 and (diaper quest is 1 or (the player is able to expel and belly liquid types + belly egg count > 0 and the total fill of belly > belly limit and the latex-transformation of the player <= 4)):
+	if currently-squirting is 0 and (diaper quest is 1 or (the player is able to expel and belly liquid types + belly egg count > 0 and the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4)):
 		AssSquirt;
-	otherwise if the total fill of belly > belly limit + 20 and the latex-transformation of the player > 4:
+	otherwise if the total squirtable fill of belly > belly limit + 20 and the latex-transformation of the player > 4:
 		say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 19;
-	otherwise if the total fill of belly > belly limit and the latex-transformation of the player <= 4:
+	otherwise if the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4:
 		let semen-flav-said be 0;
 		let milk-flav-said be 0;
 		let urine-flav-said be 0;
+		let water-flav-said be 0;
 		let small-egg-flav-said be 0;
-		while total fill of belly - belly limit > 0 and delayed fainting is 0:
+		while total squirtable fill of belly - belly limit > 0 and delayed fainting is 0:
 			if the milk volume of belly > 0:
-				if the stomach of the player < 15:
+				if the stomach of the player < 15 or the player is in a predicament room:
 					if milk-flav-said is 0:
 						say "Your stomach audibly gurgles as [milk] flows upwards through your body.";
 						now milk-flav-said is 1;
+						MilkTasteAddictUp 1;
 					StomachUp 1;
 					if a random number from 1 to 2 is 1, StomachUp 1;
 					decrease the milk volume of belly by 1;
 				otherwise:
 					if milk-flav-said < 2:
 						say "Some [milk] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
+						MilkTasteAddictUp 1;
 					decrease the milk volume of belly by 1;
+					MilkPuddleUp 1;
 					let R be a random number between 1 and the intelligence of the player;
 					if R > 4:
 						if milk-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a bit emptier.";
@@ -550,36 +559,41 @@ To Overflow:
 						now the fainting reason of the player is 10;
 					now milk-flav-said is 2;
 			otherwise if the semen volume of belly > 0:
-				if the stomach of the player < 15:
+				if the stomach of the player < 15 or the player is in a predicament room:
 					if semen-flav-said is 0:
 						say "Your stomach audibly gurgles as [semen] flows upwards through your body.[one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping]";
 						now semen-flav-said is 1;
+						SemenAddictUp 1; [The semen came in through the backdoor entrance so creampie addiction is increased, not taste addiction.]
 					increase the stomach-semen of the player by 1;
 					decrease the semen volume of belly by 1;
 				otherwise:
 					if semen-flav-said < 2:
 						say "Some [semen] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
+						SemenTasteAddictUp 1; [The semen now hits the tongue.]
 						if the throne is penetrating asshole, cutshow figure of throne cutscene 5 for the throne;
+					SemenPuddleUp 1;
 					decrease the semen volume of belly by 1;
 					let R be a random number between 5 and the intelligence of the player;
 					if R > 5:
 						if semen-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a lot giddier.";
-						SemenAddictUp 1; [The semen came in through the backdoor entrance so creampie addiction is increased, not taste addiction.]
 					otherwise if delayed fainting is 0:
 						if delayed fainting is 0, say "[if semen-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with [semen] instead. [otherwise]But the [semen] keeps coming! You eventually have to gasp for air but your lungs fill with [semen] instead. [end if]You black out.";
 						now delayed fainting is 1;
 						now the fainting reason of the player is 10;
 					now semen-flav-said is 2;
 			otherwise if the urine volume of belly > 0:
-				if the stomach of the player < 15:
+				if the stomach of the player < 15 or the player is in a predicament room:
 					if urine-flav-said is 0:
 						say "Your stomach audibly gurgles as [urine] flows upwards through your body.[one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping]";
 						now urine-flav-said is 1;
+						UrineTasteAddictUp 1;
 					StomachUp 1;
 					decrease the urine volume of belly by 1;
 				otherwise:
 					if urine-flav-said < 2:
 						say "Some [urine] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
+						UrineTasteAddictUp 1;
+					UrinePuddleUp 1;
 					decrease the urine volume of belly by 1;
 					let R be a random number between 1 and the intelligence of the player;
 					if R > 5:
@@ -590,6 +604,26 @@ To Overflow:
 						now delayed fainting is 1;
 						now the fainting reason of the player is 10;
 					now urine-flav-said is 2;
+			otherwise if the water volume of belly > 0:
+				if the stomach of the player < 15 or the player is in a predicament room:
+					if water-flav-said is 0:
+						say "Your stomach audibly gurgles as water flows upwards through your body.";
+						now water-flav-said is 1;
+					StomachUp 1;
+					decrease the water volume of belly by 1;
+				otherwise:
+					if water-flav-said < 2:
+						say "Some water is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
+					decrease the water volume of belly by 1;
+					let R be a random number between 1 and the intelligence of the player;
+					if R > 5:
+						if water-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a lot emptier.";
+						if a random number between 1 and 3 is 1, IntDown 1;
+					otherwise if delayed fainting is 0:
+						if delayed fainting is 0, say "[if water-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with water instead. [otherwise]But the water keeps coming! You eventually have to gasp for air but your lungs fill with water instead. [end if]You black out.";
+						now delayed fainting is 1;
+						now the fainting reason of the player is 10;
+					now water-flav-said is 2;
 			otherwise if the small egg count of belly > 0:
 				if the stomach of the player < 15:
 					say "[if small-egg-flav-said is 0]Your stomach audibly gurgles and you wince in pain as a solid [ShortDesc of a random small egg] is forced upwards through your body into your stomach.[line break][one of][line break][variable custom style]What the fuck is happening to me![or]Not again![stopping][roman type][line break][otherwise]Another egg is forced up from your belly into your stomach.[end if]";
@@ -620,17 +654,12 @@ To Overflow:
 					if delayed fainting is 0, say "Your body's insides are now just completely full of eggs, but they don't stop coming. As an egg is forced up towards your mouth, it cuts off your ability to breathe. You quickly black out.";
 					now delayed fainting is 1;
 					now the fainting reason of the player is 10;
-			otherwise if the air volume of belly > 10:
-				say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
-				now delayed fainting is 1;
-				now the fainting reason of the player is 10;
 			otherwise:
 				say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 				now delayed fainting is 1;
 				now the fainting reason of the player is 19.
 
 Chapter 3 - Ass Filling
-
 
 [!<assFilled:Integer>+
 
@@ -666,15 +695,14 @@ To Assfill (X - a number):
 		say "As the [semen] rushes through your system into your [BellyDesc], you feel your body somehow being healed!";
 		if the body soreness of the player > X / 2, decrease the body soreness of the player by X / 2;
 		otherwise now the body soreness of the player is 0;
-	if there is a worn slimegirl:
-		let M be a random slimegirl;
-		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of M]! [big he of M] communicates with you telepathically.";
-		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of M > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
-		now the hunger of M is 0;
-		if the intensity of M > 0:
-			say "You feel the negative effects of [NameDesc of M] on your mental state fade away.";
-			now the intensity of M is 0;
-		now the timetaken of M is 0;
+	if slimegirl is worn:
+		say "The [semen] flowing into your [asshole] is consumed by [NameDesc of slimegirl]! [big he of slimegirl] communicates with you telepathically.";
+		say "[second custom style]'[one of]Yum[or]Ooh, hooray[or]Yippee[or]Ooh, goodie[at random][if the hunger of slimegirl > 2]! I feel better now...'[otherwise]!'[end if][roman type][line break]";
+		now the hunger of slimegirl is 0;
+		if the intensity of slimegirl > 0:
+			say "You feel the negative effects of [NameDesc of slimegirl] on your mental state fade away.";
+			now the intensity of slimegirl is 0;
+		now the timetaken of slimegirl is 0;
 		now X is 0;
 	if a random number between 0 and 5 < X, SemenAddictUp 1;
 	while X > 0:
@@ -759,8 +787,7 @@ To Assfill (X - a number) air:
 	if the number of worn research airhancers > 0, increase X by 1;
 	while X > 0:
 		decrease X by 1;
-		increase the air volume of belly by 1;
-	overflow;
+		if the air volume of belly < 50, increase the air volume of belly by 1.
 
 [!<AssFillXWater>+
 
@@ -1608,7 +1635,7 @@ REQUIRES COMMENTING
 
 +!]
 To say EnemaFloorReactionFlav of (M - a person):
-	say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if]. [line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+	if M is intelligent, say "[BigNameDesc of M] [if M is interested]seems unimpressed[otherwise]turns to look at you[end if].[line break][speech style of M]'Disgusting[if M is unfriendly monster and diaper quest is 1]. You need further punishment[end if].'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
 
 [!<ComputeEnemaReactionOfMonsterIntoClothing>+
 
@@ -1621,15 +1648,37 @@ To compute enema reaction of (M - a person) into (C - a clothing):
 To say EnemaReactionFlav of (M - a person) into (C - a clothing):
 	say EnemaFloorReactionFlav of M.
 
-
 Section - Image for graphics window
 
-Figure of CumBellyButton is the file "Special/Buttons/cumbelly.png".
+Figure of CumBellyButton is the file "CharWins/FocusWin/Belly/bellycum.png".
+Figure of BellyObject1 is the file "CharWins/FocusWin/Belly/belly1.jpg".
+Figure of BellyObject2 is the file "CharWins/FocusWin/Belly/belly2.jpg".
+Figure of BellyObject3 is the file "CharWins/FocusWin/Belly/belly3.jpg".
+Figure of BellyObject4 is the file "CharWins/FocusWin/Belly/belly4.jpg".
+Figure of BellyObject5 is the file "CharWins/FocusWin/Belly/belly5.jpg".
+Figure of BellyObject6 is the file "CharWins/FocusWin/Belly/belly6.jpg".
+Figure of BellyObject7 is the file "CharWins/FocusWin/Belly/belly7.jpg".
+Figure of BellyObject8 is the file "CharWins/FocusWin/Belly/belly8.jpg".
+Figure of BellyObject9 is the file "CharWins/FocusWin/Belly/belly9.jpg".
+Figure of BellyObject10 is the file "CharWins/FocusWin/Belly/belly10.jpg".
+Figure of BellyObject11 is the file "CharWins/FocusWin/Belly/belly11.jpg".
+Figure of BellyObject12 is the file "CharWins/FocusWin/Belly/belly12.jpg".
+Figure of BellyObject13 is the file "CharWins/FocusWin/Belly/belly13.jpg".
 
 To decide which figure-name is the examine-image of (T - belly):
 	if T is overglazed, decide on Figure of CumBellyButton;
-	decide on figure of no-image-yet.
-
+	if the largeness of belly < 2, decide on figure of BellyObject1;
+	if the largeness of belly is 2, decide on figure of BellyObject2;
+	if the largeness of belly is 3, decide on figure of BellyObject3;
+	if the largeness of belly is 4, decide on figure of BellyObject4;
+	if the largeness of belly is 5, decide on figure of BellyObject5;
+	if the largeness of belly is 6, decide on figure of BellyObject6;
+	if the largeness of belly is 7, decide on figure of BellyObject7;
+	if the largeness of belly is 8, decide on figure of BellyObject8;
+	if the largeness of belly is 9, decide on figure of BellyObject9;
+	if the largeness of belly is 10, decide on figure of BellyObject10;
+	if the largeness of belly is 11, decide on figure of BellyObject11;
+	if the largeness of belly is 12, decide on figure of BellyObject12;
+	decide on figure of BellyObject13.
 
 Belly ends here.
-

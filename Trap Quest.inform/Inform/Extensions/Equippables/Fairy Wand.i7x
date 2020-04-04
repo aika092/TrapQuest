@@ -4,10 +4,14 @@ A fairy wand is a kind of vibe-wand. A fairy wand is usually unique. A fairy wan
 
 Definition: a fairy wand is destiny-appropriate if diaper quest is 1.
 
+To decide which number is the initial outrage of (E - a fairy wand):
+	decide on 3.
+To decide which number is the initial cringe of (E - a fairy wand):
+	decide on 5.
+
 Figure of fairy wand is the file "Items/Accessories/Equippables/fairywand1.png".
 To decide which figure-name is the clothing-image of (W - a fairy wand):
 	decide on figure of fairy wand.
-
 
 To say ClothingDesc of (W - a fairy wand):
 	say "A hot pink wand vibrator with a yellow crescent moon at one end, which leaves behind a trail of glittering fairy dust wherever it goes. You sense that it's more powerful the less intelligent you are.".
@@ -31,7 +35,6 @@ To compute climax effect of (E - a fairy wand):
 		say "You feel a wave of warmth all the way from your [vagina] to the deepest parts of your womb, and you suddenly know you're going to find it a lot easier to get pregnant from now on.";
 		increase the pregnancy rate of the player by 1.
 
-
 To decide which number is the raw-masturbation-bonus of (E - a fairy wand):
 	let M be a random live thing penetrating vagina;
 	If M is not nothing or the pregnancy of the player is 1:
@@ -44,4 +47,3 @@ To compute attack of (W - a fairy wand) at (M - a monster):
 Definition: a fairy wand is magic themed: decide yes.
 
 Fairy Wand ends here.
-

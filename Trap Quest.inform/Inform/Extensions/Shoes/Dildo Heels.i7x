@@ -31,4 +31,3 @@ To say ClothingDesc of (C - a dildo heels):
 	say "[SteadinessDesc of C]".
 
 Dildo Heels ends here.
-

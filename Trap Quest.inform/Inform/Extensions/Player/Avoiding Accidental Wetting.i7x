@@ -50,6 +50,4 @@ To compute wetting failure:
 	otherwise:
 		now diaper bonus is -2.
 
-
 Avoiding Accidental Wetting ends here.
-

@@ -84,4 +84,3 @@ To decide which object is the at least partial concealer of (C - a condom of kin
 	decide on the at least partial concealer of penis.
 
 Condom of Kings ends here.
-

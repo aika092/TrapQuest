@@ -23,7 +23,6 @@ To compute SelfExamineDesc of (H - puppy ears):
 	let X be the largeness of hair;
 	say "You are wearing a pair of fake puppy ears on top of your [ShortDesc of hair]. ".
 
-
 Chapter - Class Outfit
 
 Definition: puppy ears is removal-blocking if wearing-target is puppy mittens.
@@ -57,7 +56,6 @@ To compute class outfit of (H - puppy ears):
 		let X be the openness of asshole + the number of worn nudism-disabling clothing;
 		assign size X to P;
 
-
 Chapter - Quest
 
 obedience-quest is a headgear-clothing-quest.
@@ -71,6 +69,4 @@ To say QuestFlav of (Q - obedience-quest):
 To say QuestTitle of (Q - obedience-quest):
 	say " (obedience quest)".
 
-
 Puppy Ears ends here.
-

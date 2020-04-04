@@ -1,6 +1,5 @@
 Recovering Containers by Fainting begins here.
 
-
 [!<RecoverContainers>+
 
 REQUIRES COMMENTING
@@ -14,4 +13,3 @@ To Recover Containers:
 			now I is in holding pen.
 
 Recovering Containers ends here.
-

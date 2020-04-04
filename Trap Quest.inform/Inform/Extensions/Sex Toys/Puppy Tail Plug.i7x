@@ -22,4 +22,3 @@ This is the puppy tail prevents speech rule:
 The puppy tail prevents speech rule is listed in the player speech rules.
 
 Puppy Tail Plug ends here.
-

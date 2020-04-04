@@ -4,9 +4,7 @@ A pink spraybottle is a kind of equippable. 1 pink spraybottle is in Dungeon30. 
 
 A pink spraybottle is usually zap ready. A pink spraybottle has a number called charge. A pink spraybottle has a number called magic-charge. A pink spraybottle has a number called work ethic. A pink spraybottle is usually unique. A pink spraybottle can be spray or cloth. A pink spraybottle is usually spray. A pink spraybottle is usually projectile. A pink spraybottle is usually cotton.
 
-
 Definition: a pink spraybottle is stealable if the class of the player is not maid.
-
 
 Figure of spraybottle is the file "Items/Accessories/Equippables/spraybottle1.png".
 Figure of washcloth is the file "Items/Accessories/Equippables/spraybottle2.png".
@@ -83,7 +81,6 @@ Carry out going when there is a worn pink spraybottle:
 		if debuginfo > 0, say "[input-style]Spraybottle work ethic check: RNG(-1000~-130) = [N] | ([work ethic of S]) work ethic[roman type][line break]";
 		if the work ethic of S < N, compute spraybottle punishment;
 
-
 To compute (S - a pink spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
 		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
@@ -102,7 +99,7 @@ To compute spraybottle punishment:
 	let S be a random worn pink spraybottle;
 	if S is clothing:
 		increase the work ethic of S by 130;
-		let V be a random off-stage vibrator;
+		let V be a random off-stage plentiful vibrator;
 		let O be a random worn overdress;
 		let P be a random worn sex toy;
 		if P is nothing, let P be a random off-stage basic plug;
@@ -171,7 +168,6 @@ To compute spraybottle punishment:
 				squirt urine on face by 40;
 		say "[variable custom style][if the player is not a pervert]Fuck! This so unfair![otherwise if the player is not disgraced]Is it really my fault I'm such a terrible maid?[otherwise]I'm a stupid ditz, I deserve to be punished like this...[end if][roman type][line break]".
 
-
 To compute (M - a mechanic) considering (T - a pink spraybottle):
 	if T is cloth:
 		say "[speech style of M]'Ugh. Here I was thinking you might [if diaper quest is 1]be able to hold some adult responsibilities[otherwise]be useful as more than a pair of walking tits[end if], but you actually managed to break your only tool. Fucking incredible.'[roman type][line break][big he of M] takes the destroyed pieces of your [ShortDesc of T] and puts them into a small pocket on [his of M] utility belt.[line break][speech style of M]'Honestly, I should fire you, but I'm willing to hold onto it for you until you a figure out a way to make this up to me. Understand? [if diaper quest is 0]There's two things I like - blowjobs and[otherwise]Here's a hint - I like[end if] *ahem* amulets...'[roman type][line break]";
@@ -193,8 +189,4 @@ To compute attack of (S - a pink spraybottle) at (M - a monster):
 	otherwise:
 		say "You pull the trigger of your [ShortDesc of S], but you have no magic to empower the water that comes out. It's not very effective!";
 
-
-
-
 Pink Spraybottle ends here.
-

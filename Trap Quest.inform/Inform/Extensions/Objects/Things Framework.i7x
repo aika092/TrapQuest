@@ -1,6 +1,5 @@
 Things Framework by Objects begins here.
 
-
 [!<Thing>@<textShortcut:IndexedText>*
 
 REQUIRES COMMENTING
@@ -15,7 +14,6 @@ Definition: a thing (called T) is disembodied rather than embodied: [When penetr
 A thing has a figure-name called the temporary-image. The temporary-image of a thing is usually figure of no-image-yet.
 A thing has a figure-name called the previous-temporary-image. The previous-temporary-image of a thing is usually figure of no-image-yet. [We want to know what we just pushed to the focus window in case the player asks us to blow it up onto the map window.]
 
-
 To decide which figure-name is the next-examine-image of (C - a thing):
 	if the temporary-image of C is not figure of no-image-yet, decide on the temporary-image of C;
 	decide on the examine-image of C.
@@ -26,7 +24,6 @@ To decide which figure-name is the examine-image of (C - a thing):
 Carry out examining a thing:
 	say FullExamineDesc of the noun.
 
-
 To say FullExamineDesc of (C - a thing):
 	say FullTitle of C;
 	say ImageDesc of C;
@@ -34,7 +31,6 @@ To say FullExamineDesc of (C - a thing):
 	say ThemeDesc of C;
 	if C is carried and C is not-in-bag and (the outrage of C > 0 or (diaper quest is 1 and the cringe of C > 0)), say HeldOutrageDesc of C;
 	if C is worn wearthing, say InfluenceDesc of C.
-
 
 To say FullTitle of (C - a thing):
 	let T be links-disabled;
@@ -63,7 +59,6 @@ The examine undescribed things rule is not listed in the carry out examining rul
 To say ExamineDesc of (C - a thing):
 	say "The [MediumDesc of C] looks exactly how you'd expect.".
 
-
 To say HeldOutrageDesc of (C - a thing):
 	say variable custom style;
 	if the player is broken:
@@ -78,9 +73,6 @@ To say HeldOutrageDesc of (C - a thing):
 		say "I guess I should find this a bit embarrassing to carry around where everyone can see it, but I just don't.";
 	if debuginfo > 0, say "[line break][input-style]Held visible item outrage: [outrage of C / 2] / 10[if diaper quest is 1]; childishness: [cringe of C / 2] / 10[end if].";
 	say "[roman type][line break]";
-
-
-
 
 To say MediumDesc of (C - a thing):
 	say ShortDesc of C.
@@ -115,10 +107,6 @@ To say NameDesc of (C - a monster):
 To say BigNameDesc of (C - a monster):
 	say "The [input-style][MediumDesc of C][roman type]".
 
-
-
-
-
 [Show the image in the main window if the player has requested so]
 To cutshow (F - a figure-name) for (M - a thing):
 	unless F is figure of no-image-yet:
@@ -129,7 +117,6 @@ To cutshow (F - a figure-name) for (M - a thing):
 
 To cutshow (F - a figure-name):
 	cutshow F for yourself.
-
 
 [Always show the image in the focus window if it's open. Use this one if we know it's going to be a good replacement for the thing's bust]
 To alwayscutshow (F - a figure-name) for (M - a thing):
@@ -146,8 +133,4 @@ To alwayscutshow (F - a figure-name) for (M - a thing):
 To onlycutshow (F - a figure-name) for (M - a thing):
 	if the focus-window is g-present and image cutscenes > 1, alwayscutshow F for M.
 
-
-
-
 Things Framework ends here.
-

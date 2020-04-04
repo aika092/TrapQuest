@@ -8,11 +8,11 @@ To decide which figure-name is the examine-image of (C - throne):
 			if the largeness of belly > 5, decide on figure of throne cutscene 2;
 			otherwise decide on figure of throne cutscene 1;
 		otherwise if the largeness of belly > 7:
-			 decide on figure of throne cutscene 4;
+			decide on figure of throne cutscene 4;
 		otherwise if the largeness of belly > 5:
-			 decide on figure of throne cutscene 3;
+			decide on figure of throne cutscene 3;
 		otherwise:
-			 decide on figure of throne cutscene 1;
+			decide on figure of throne cutscene 1;
 	if C is untransformed, decide on figure of throne;
 	decide on figure of transformed throne.
 
@@ -184,7 +184,12 @@ Check entering the throne:
 		otherwise if R is 7:
 			if the largeness of hair > 6:
 				say "You hear a metal slice from behind you. You turn around and see that your hair has been cut back down to shoulder length! You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
-				now the raw largeness of hair is 6;
+				let F be 6 - the raw largeness of hair;
+				if F < the fake largeness of hair: [all extensions are cut off first]
+					now the fake largeness of hair is F;
+					if the fake largeness of hair < 0, now the fake largeness of hair is 0;
+				if the largeness of hair > 6:
+					now the raw largeness of hair is 6;
 			otherwise if the redness of hair > 0:
 				say "Your hair feels pleasant, and you feel somewhat less stiff.";
 				HairRedDown 1;
@@ -311,7 +316,7 @@ A time based rule (this is the compute throne rule):
 				if the TrapNo of the throne is 6:
 					say "Your [BellyDesc] is still expanding...";
 				if the TrapNo of the throne is 7:
-					while the total fill of belly < 20 and the number of worn slimegirls is 0:
+					while the total fill of belly < 20 and slimegirl is not worn:
 						assfill 1;
 					say "You [if pregnancy fetish is 1 and the largeness of belly > 6]now look like you are in the late stages of pregnancy[otherwise if the largeness of belly > 6]feel more full then you realised it was possible to feel[otherwise]feel weird[end if]. [if the largeness of breasts > 10 and extreme proportions fetish is 1]In combination with your [BreastDesc] which have now been squashed above it, you can see nothing but your own swollen flesh. [end if][if the throne is untriggered]The binds holding your [ShortDesc of thighs] are finally released. You should probably try and stand up now before you burst![end if]";
 					AnalCount;
@@ -337,7 +342,6 @@ A time based rule (this is the compute throne rule):
 						SemenAddictUp 1;
 					otherwise:
 						say "and you wonder [if the bimbo of the player < 10]in fear [end if]what could have happened if you hadn't managed to escape so quickly!".
-
 
 To Dethrone The Player:
 	let B be the largeness of breasts;
@@ -375,7 +379,4 @@ To ThroneDisconnect:
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";
 		try kneeling.
 
-
-
 Throne ends here.
-

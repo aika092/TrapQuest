@@ -20,4 +20,3 @@ To decide which object is the unique-upgrade-target of (C - a jeans):
 	decide on nothing.
 
 Jeans ends here.
-

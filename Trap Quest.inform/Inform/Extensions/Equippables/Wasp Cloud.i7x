@@ -33,6 +33,4 @@ To decide which number is the damage improvement of (W - a wasp-cloud):
 To compute attack of (W - a wasp-cloud) at (M - a monster):
 	say "Your cloud of wasps charges at [M], brutally stinging them!".
 
-
 Wasp Cloud ends here.
-

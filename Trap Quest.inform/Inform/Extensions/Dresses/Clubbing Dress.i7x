@@ -23,7 +23,6 @@ To decide which number is the adult-influence of (C - a clubbing dress):
 To say ShortDesc of (C - a clubbing dress):
 	say "clubbing dress".
 
-
 Definition: a clubbing dress is party themed: decide yes.
 
 To decide which object is the unique-upgrade-target of (C - a clubbing dress):
@@ -40,7 +39,6 @@ This is the remove inappropriate clubbing dresses rule:
 	repeat with B running through exposing clubbing dresses:
 		now B is in Holding Pen.
 The remove inappropriate clubbing dresses rule is listed in the diaper quest fix rules.
-
 
 Part 1 - Pink Clubbing Dress
 
@@ -61,7 +59,6 @@ To say MediumDesc of (C - a clubbing dress):
 	say "saucy pink clubbing dress".
 
 Definition: a pink clubbing dress is pink themed: decide yes.
-
 
 Part 2 - Long Pink Dress
 
@@ -107,7 +104,6 @@ Report wearing a black clubbing dress when there is a worn diaper:
 Report wearing a diaper when there is a worn black clubbing dress:
 	cutshow figure of clubbing diaper cutscene 1 for the noun.
 
-
 Part 4 - White Slut Clubbing Dress
 
 A white slut clubbing dress is a kind of clubbing dress. There is 1 white slut clubbing dress. A white slut clubbing dress is usually cotton. A white slut clubbing dress is transformation-rare. A white slut clubbing dress is usually ridiculously low cut. A white slut clubbing dress is usually belly exposing. A white slut clubbing dress is usually knee-length. A white slut clubbing dress is usually only arm covering. Figure of white slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress4.png". The text-shortcut of white slut clubbing dress is "wscd". A white slut clubbing dress is usually sheer-when-wet.
@@ -134,7 +130,6 @@ To decide which number is the initial outrage of (C - a white slut clubbing dres
 	if diaper quest is 1, decide on 12;
 	decide on 5.
 
-
 Part 5 - Black Slut Clubbing Dress
 
 A black slut clubbing dress is a kind of clubbing dress. There is 1 black slut clubbing dress. A black slut clubbing dress is usually leather. Figure of black slut clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress5.png". A black slut clubbing dress is transformation-rare. A black slut clubbing dress is usually ridiculously low cut. The text-shortcut of black slut clubbing dress is "bscd".
@@ -157,7 +152,6 @@ To say MediumDesc of (C - a black slut clubbing dress):
 
 To decide which number is the initial outrage of (C - a black slut clubbing dress):
 	decide on 6.
-
 
 Part 6 - Tiny Black Clubbing Dress
 
@@ -182,7 +176,6 @@ To decide which number is the initial outrage of (C - a supertiny navy clubbing 
 Definition: a supertiny navy clubbing dress is gem themed: decide yes.
 Definition: a supertiny navy clubbing dress is blue themed: decide yes.
 
-
 Part 7 - Sexy White Clubbing Dress
 
 A sexy white clubbing dress is a kind of clubbing dress. There is 1 sexy white clubbing dress. A sexy white clubbing dress is usually cotton. A sexy white clubbing dress is usually low cut. A sexy white clubbing dress is usually knee-length. Figure of sexy white clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of sexy white clubbing dress is "wcd".
@@ -200,10 +193,8 @@ To say ShortDesc of (C - a sexy white clubbing dress):
 To say MediumDesc of (C - a sexy white clubbing dress):
 	say "flattering white clubbing dress".
 
-
 Definition: a sexy white clubbing dress is white themed: decide yes.
 Definition: a sexy white clubbing dress is black-and-white themed: decide yes.
-
 
 Part 8 - Exposing Black Clubbing Dress
 
@@ -280,8 +271,4 @@ Definition: a blue slut clubbing dress is blue themed: decide yes.
 To decide which number is the initial outrage of (C - a blue slut clubbing dress):
 	decide on 6.
 
-
-
-
 Clubbing Dress ends here.
-

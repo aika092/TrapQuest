@@ -1,6 +1,5 @@
 All Piercings by Piercings Modules begins here.
 
-
 A piercing is a kind of clothing. A piercing is usually unique. A piercing is usually metal. A piercing is manly.
 
 Definition: a piercing is removable: decide no. [Some clothing can never be removed, even by monsters.]
@@ -15,7 +14,6 @@ To decide which number is the heaviness of (C - a piercing):
 	decide on 0.
 
 Definition: a piercing is eligible if it is off-stage.
-
 
 To say PiercingFlav of (P - a piercing):
 	say "An arm comes down with a searing hot needle! You scream as your flesh is burned and pierced. The needle is quickly moved and a [P] is pushed into place. The connection somehow welds itself shut, meaning that the piercing is permanent!".
@@ -33,8 +31,6 @@ Check wearing piercing:
 Check taking off piercing:
 	say "You can't take that off, it's permanently pierced into your skin!" instead.
 
-
-
 A module is a kind of piercing. A module has a number called module-charge. Understand "module" as a module.
 
 Definition: a module is eligible: decide no.
@@ -51,8 +47,6 @@ Figure of module 1 is the file "Items/Accessories/Piercings/module1.jpg".
 Figure of module 2 is the file "Items/Accessories/Piercings/module2.jpg".
 Figure of module 3 is the file "Items/Accessories/Piercings/module3.jpg".
 Figure of module 4 is the file "Items/Accessories/Piercings/module4.jpg".
-
-
 
 ass-module is a module. The printed name of ass-module is "[clothing-title-before]ass module[clothing-title-after]". The text-shortcut of ass-module is "asm". Understand "ass module" as ass-module.
 
@@ -92,8 +86,6 @@ This is the ass module butt slut rule:
 	if ass-module is worn, increase the desirability of asshole by the dex-transfer of ass-module.
 The ass module butt slut rule is listed in the butt slut eligibility rules.
 
-
-
 breast-module is a module. The printed name of breast-module is "[clothing-title-before]breast module[clothing-title-after]". The text-shortcut of breast-module is "brm". Understand "breast module" as breast-module.
 
 To decide which figure-name is the clothing-image of (C - breast-module):
@@ -117,7 +109,6 @@ This is the breast module slut rule:
 	if breast-module is worn, increase the desirability of breasts by the str-transfer of breast-module.
 The breast module slut rule is listed in the tit slut eligibility rules.
 
-
 To say ClothingDesc of (C - breast-module):
 	say "A triangle of silvery metal is pressed into your skin just above your cleavage. You recall the dire warning you were given - [if the str-transfer of C > 0]removing with it would cause irreparable damage to your strength[otherwise]once it has started to store more power inside your breasts, removing the module would cause you to lose all that power permanently[end if].".
 
@@ -133,7 +124,6 @@ To compute periodic effect of (P - breast-module):
 			BustImplantsUp 1;
 			Intdown 1;
 			increase the str-transfer of P by 1.
-
 
 clitoris lead is a piercing. The printed name of clitoris lead is "[TQlink of item described][item style][if the bimbo of the player > 10]clit[otherwise]clitoris[end if] lead[clothing-title-after]". The text-shortcut of clitoris lead is "cl". Understand "clit" as clitoris lead. Figure of clitoris lead is the file "Items/Accessories/Piercings/clitlead1.png".
 
@@ -168,6 +158,7 @@ To decide which object is the concealer of (C - clitoris lead):
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (C - clitoris lead):
+	if C is listed in the armUses of arms, decide on arms;
 	repeat with O running through bottom-layer-concealing potentially at least partially vagina covering clothing:
 		unless O is skirted, decide on O;
 	decide on nothing.
@@ -194,9 +185,6 @@ Definition: clitoris lead (called P) is eligible:
 	if the player is male or clitoris lead is worn or the player is pussy protected, decide no;
 	if clitoris piercing is worn, decide yes;
 	decide no.
-
-
-
 
 clitoris piercing is a kind of piercing.
 
@@ -243,14 +231,12 @@ To say PiercingFlav of (P - a clitoris piercing):
 		try examining clit-piercing tattoo.
 
 To decide which object is the concealer of (C - a clitoris piercing):
-	repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
-		decide on O;
-	decide on nothing.
+	if C is listed in the armUses of arms, decide on arms;
+	decide on the concealer of vagina.
 
 To decide which object is the at least partial concealer of (C - a clitoris piercing):
-	repeat with O running through bottom-layer-concealing potentially at least partially vagina covering clothing:
-		decide on O;
-	decide on nothing.
+	if C is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of vagina.
 
 Check taking off clitoris piercing:
 	[###Selkie: it would be nice to add some text here if the piercing is not blessed, saying stuff like "... but your hopeless fumbling with it has aroused you further" and increasing the sensitivity of the vagina]
@@ -292,8 +278,6 @@ This is the cursed clitoris piercing stops you wearing crotch covering dresses r
 				if autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 				rule fails. [NB this purposefully doesn't prevent them from being summoned.]
 The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the overdress wearability rules.
-
-
 
 A nipple piercing is a kind of piercing.
 
@@ -376,9 +360,6 @@ This is the bra nipple chain clash rule:
 			rule fails.
 The bra nipple chain clash rule is listed in the bra wearability rules.
 
-
-
-
 A cow piercing is a kind of nipple piercing. The printed name of cow piercing is "[clothing-title-before]nipple rings[clothing-title-after]". The text-shortcut of cow piercing is "nr". There is 1 cow piercing. Understand "nipple", "rings" as cow piercing. A cow piercing is usually titfuck-addiction-influencing. A cow piercing is milk production. Figure of cow piercing is the file "Items/Accessories/Piercings/nipplepiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a cow piercing):
@@ -401,7 +382,6 @@ Worn cow piercings increases the chance of titfucks.
 This is the cow rings slut rule:
 	if there is a worn cow piercing, increase the desirability of breasts by 10.
 The cow rings slut rule is listed in the tit slut eligibility rules.
-
 
 Section - Wearability
 
@@ -429,8 +409,6 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is magically preventing you from wearing any kind of bra! Maybe if you blessed it?";
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
-
-
 
 A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
 The transform-resistance of a pair of earrings is usually 0.
@@ -468,6 +446,11 @@ To decide which number is the initial outrage of (C - a pair of earrings):
 	decide on 6.
 
 To decide which object is the concealer of (C - a pair of earrings):
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	if the largeness of hair > 12, decide on hair;
+	decide on nothing.
+To decide which object is the at least partial concealer of (C - a pair of earrings):
+	if C is listed in the armUses of arms, decide on arms;
 	if there is a worn hood, decide on a random worn hood;
 	if the largeness of hair > 12, decide on hair;
 	decide on nothing.
@@ -490,7 +473,6 @@ To decide which figure-name is the clothing-image of (C - a pair of earrings):
 		decide on figure of Earrings Bukkake Cock;
 	otherwise:
 		decide on figure of Earrings Cock.
-
 
 To say ClothingDesc of (C - a pair of earrings):
 	if C is cursed:
@@ -551,10 +533,6 @@ This is the pair of earrings already worn rule:
 	if there is a worn pair of earrings, rule fails.
 The pair of earrings already worn rule is listed in the pair of earrings wearability rules.
 
-
-
-
-
 heel-module is a module. The printed name of heel-module is "[clothing-title-before]heel module[clothing-title-after]". The text-shortcut of heel-module is "hem". Understand "heel module" as heel-module.
 
 To decide which figure-name is the clothing-image of (C - heel-module):
@@ -587,8 +565,6 @@ To compute periodic effect of (M - heel-module):
 			increase the heel-height of H by 1;
 			say "You feel your ankles twitch, and you suddenly feel your [ShortDesc of H] increase in height. They are now [H]!".
 
-
-
 A lip piercing is a kind of piercing. The printed name of lip piercing is "[TQlink of item described][item style]lip piercing[clothing-title-after]". The text-shortcut of lip piercing is "lpc". There is 1 lip piercing. Figure of lip piercing is the file "Items/Accessories/Piercings/lippiercing1.png".
 
 To decide which figure-name is the clothing-image of (C - a lip piercing):
@@ -611,8 +587,15 @@ To decide which number is the dexterity-influence of (C - a lip piercing):
 To decide which number is the initial outrage of (C - a lip piercing):
 	decide on 3.
 
+To decide which object is the at least partial concealer of (C - a lip piercing):
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn hood, decide on a random worn hood;
+	decide on the at least partial concealer of face.
+
 To decide which object is the concealer of (C - a lip piercing):
-	decide on a random worn hood.
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	decide on the concealer of face.
 
 To set up influence of (C - a lip piercing):
 	set up taste-based influence of C.
@@ -630,8 +613,6 @@ lip piercing wearability rules is a rulebook. The wearability rules of lip pierc
 This is the lip piercing already worn rule:
 	if there is a worn lip piercing, rule fails.
 The lip piercing already worn rule is listed in the lip piercing wearability rules.
-
-
 
 head-module is a module. The printed name of head-module is "[clothing-title-before]head module[clothing-title-after]". The text-shortcut of head-module is "hdmd".
 
@@ -678,11 +659,6 @@ To compute periodic effect of (P - head-module):
 				say "[bold type]Your lips suddenly feel terribly warm as they puff out inside, even more collagen having been created inside by the module! ";
 			say "You feel some [one of][or]more [stopping]of your brainpower transferred into the nanobots for safekeeping.[roman type][line break]";
 
-
-
-
-
-
 A nose piercing is a kind of piercing. The text-shortcut of nose piercing is "np". Understand "septum", "sep" as nose piercing. Figure of small nose piercing is the file "Items/Accessories/Piercings/nosepiercing1.png". Figure of ugly nose piercing is the file "Items/Accessories/Piercings/nosepiercing2.png". A nose piercing is usually manly.
 
 To decide which number is the intelligence-influence of (C - a nose piercing):
@@ -694,12 +670,17 @@ To decide which number is the strength-influence of (C - a nose piercing):
 	decide on 0.
 
 To decide which object is the concealer of (C - a nose piercing):
-	decide on a random worn actually dense hood.
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	decide on the concealer of face.
+
+To decide which object is the at least partial concealer of (C - a nose piercing):
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn hood, decide on a random worn hood;
+	decide on the at least partial concealer of face.
 
 To say PiercingFlav of (P - a nose piercing):
 	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
-
-
 
 Part 1 - Small Nose Piercing
 
@@ -721,7 +702,6 @@ To decide which number is the initial outrage of (C - a small nose piercing):
 To decide which object is the potential-upgrade-target of (C - a small nose piercing):
 	decide on a random off-stage ugly nose piercing.
 
-
 Part 2 - Ugly Nose Piercing
 
 An ugly nose piercing is a kind of nose piercing. There is 1 ugly nose piercing.
@@ -742,7 +722,6 @@ To decide which number is the initial outrage of (C - an ugly nose piercing):
 
 Definition: an ugly nose piercing is eligible: decide no.
 
-
 Section - Wearability
 
 nose piercing wearability rules is a rulebook. The wearability rules of nose piercing is usually nose piercing wearability rules.
@@ -751,17 +730,10 @@ This is the nose piercing already worn rule:
 	if there is a worn nose piercing, rule fails.
 The nose piercing already worn rule is listed in the nose piercing wearability rules.
 
-
-
 A tongue piercing is a kind of piercing. The printed name of tongue piercing is "[TQlink of item described][item style]tongue piercing[clothing-title-after]". The printed plural name of tongue piercing is "[TQlink of item described][item style]tongue piercings[clothing-title-after]". The text-shortcut of tongue piercing is "tpi". There is 1 tongue piercing. A tongue piercing is usually oral-sex-addiction-influencing. A tongue piercing has a number called thirst-charge.
 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
-
-Definition: a tongue piercing (called C) is currently visible: [Is the item worn and currently visible to onlookers?]
-	if C is not worn, decide no;
-	if there is a worn ringagged clothing or the latex-transformation of the player > 6, decide yes; [If there is something holding your mouth open then your piercing is visible]
-	decide no.
 
 This is the tongue piercing inhibits gag reflex rule:
 	if there is a worn tongue piercing:
@@ -770,8 +742,9 @@ This is the tongue piercing inhibits gag reflex rule:
 The tongue piercing inhibits gag reflex rule is listed in the gag reflex rules.
 
 To decide which object is the concealer of (C - a tongue piercing):
-	if C is currently visible, decide on nothing;
-	decide on face.
+	if C is listed in the armUses of arms, decide on arms;
+	unless there is a worn ringagged clothing or the latex-transformation of the player > 6, decide on face;
+	decide on the at least partial concealer of face.
 
 Check taking off tongue piercing:
 	say "That's permanently welded into your tongue!" instead.
@@ -817,6 +790,5 @@ tongue piercing wearability rules is a rulebook. The wearability rules of tongue
 This is the tongue piercing already worn rule:
 	if there is a worn tongue piercing, rule fails.
 The tongue piercing already worn rule is listed in the tongue piercing wearability rules.
-
 
 All Piercings ends here.

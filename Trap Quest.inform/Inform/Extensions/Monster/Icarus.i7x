@@ -46,7 +46,7 @@ To say MonsterDesc of (M - Icarus):
 To set up (M - Icarus):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 9;
+	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M;
 
 To decide which number is the girth of (M - a Icarus):
@@ -64,7 +64,6 @@ To say LeftoverDesc (N - 128):
 	say "A bunch of huge white bird feathers littered over the ground are the only evidence that [NameDesc of Icarus] was defeated on this spot.".
 
 Part 1 - Misc Flavour
-
 
 To say DiaperReaction of (M - a Icarus):
 	if there is a currently visible diaper or the player is shameless:
@@ -94,7 +93,6 @@ Part 1 - Misc Flavour
 
 To say SuddenTransformTrapReactFlav of (M - Icarus):
 	say "[BigNameDesc of M] grins.[line break][speech style of M]'The [one of]art[or]graphics[cycling] for that's [one of]not bad, is[or]pretty good, isn't[or]got room for improvement, hasn't[in random order] it?'[roman type][line break]".
-
 
 Part 2 - Perception
 
@@ -155,7 +153,6 @@ To compute perception of (M - Icarus):
 		say "[BigNameDesc of M] looks you up and down[if the player is sluttily dressed].[otherwise]![end if][line break]";
 		compute appearance assessment of M.
 
-
 Part 3 - Icarus Science
 
 Definition: a wearthing is IcarusScienceAppropriate: decide no.
@@ -210,8 +207,6 @@ To compute Icarus science of (M - Icarus):
 		say "[speech style of M]'Hmm, actually I've changed my mind. See you later.'[roman type][line break][BigNameDesc of M] loses interest.";
 		bore M.
 
-
-
 bondage-ribbons is an overdress. bondage-ribbons is unique. bondage-ribbons is pvc. bondage-ribbons is belly exposing. bondage-ribbons is ridiculously low cut. bondage-ribbons is short. The text-shortcut of bondage-ribbons is "bdgr". The printed name of bondage-ribbons is "[clothing-title-before]bondage ribbons[clothing-title-after]". Understand "bondage", "ribbons" as bondage-ribbons.
 
 Definition: bondage-ribbons is red themed: decide yes.
@@ -241,8 +236,6 @@ To uniquely set up (C - bondage-ribbons):
 To decide which number is the initial outrage of (C - bondage-ribbons):
 	decide on 11.
 
-
-
 chain-collar is a submissive collar. chain-collar is unique. chain-collar is leather. The text-shortcut of chain-collar is "chnc". The printed name of chain-collar is "[clothing-title-before]chain collar[clothing-title-after]". Understand "chain", "collar" as chain-collar.
 
 Definition: chain-collar is grey themed: decide yes.
@@ -266,8 +259,6 @@ To say ShortDesc of (C - chain-collar):
 To decide which number is the initial outrage of (C - chain-collar):
 	decide on 4.
 
-
-
 leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
@@ -283,14 +274,10 @@ To decide which figure-name is icarus-clothing-image of (C - leather-jacket):
 To say ClothingDesc of (C - leather-jacket):
 	say "A thin black leather jacket that doesn't have enough fabric to be able to button up at your front. In fact it's more of a half-jacket, that barely covers your nipples and exposes your middle.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
 
-
-
 Definition: a pink rubber shirt is IcarusScienceAppropriate if it is actually summonable.
 Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt2.jpg".
 To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt full.
-
-
 
 icarus-butt is a wearthing.
 Definition: icarus-butt is IcarusScienceAppropriate if the total weighty volume of hips >= 8 and the total volume of hips < 16 and max ass size >= 16.
@@ -352,7 +339,6 @@ To compute IcarusSummon of (C - icarus-belly):
 	cutshow figure of icarus-belly for belly;
 	say TotalDesc of belly.
 
-
 icarus-pasties is a pasties. icarus-pasties is unique. icarus-pasties is sheer. The text-shortcut of icarus-pasties is "psti".
 Figure of icarus-pasties is the file "Items/Clothes/Upper/Bras/pasties2a.jpg".
 Figure of icarus-pasties full is the file "Items/Clothes/Upper/Bras/pasties2b.jpg".
@@ -364,9 +350,6 @@ To decide which figure-name is icarus-clothing-image of (C - icarus-pasties):
 To say ClothingDesc of (C - icarus-pasties):
 	say "Two slightly sheer black pasties made of a flimsy fabric are all that cover your nipples.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to their edges that parts of your areolae are visible.[end if]".
 
-
-
-
 Part 4 - Combat
 
 To say SexSubmissionFlav of (M - Icarus):
@@ -374,10 +357,10 @@ To say SexSubmissionFlav of (M - Icarus):
 	if the player is feeling submissive:
 		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M][']s in charge![or]You wrap your legs around [NameDesc of M][']s midriff, latching on and pushing [him of M] as deep as [he of M] can go.[or]You hold yourself as still as possible to help [NameDesc of M] use you as [he of M] likes.[in random order]";
 	otherwise:
-		say "[one of]Recognizing how much it will hurt if you fall, you do your best not to resist and hope [NameDesc of M] will get bored soon.[or]As humiliating as it is to let [him of M] have [his of M] way, it[']s not like you can do much about it anyway.[or]You try your best not to break [NameDesc of M]'s concentration. [if F is fuckhole and the openness of F < 6]It hurts, but it would hurt more if [he of M] dropped you.[otherwise]It would hurt if [he of M] dropped you.[end if][or]You submit to being used as a plaything.[in random order]".
+		say "[one of]Recognising how much it will hurt if you fall, you do your best not to resist and hope [NameDesc of M] will get bored soon.[or]As humiliating as it is to let [him of M] have [his of M] way, it[']s not like you can do much about it anyway.[or]You try your best not to break [NameDesc of M][']s concentration. [if F is fuckhole and the openness of F < 6]It hurts, but it would hurt more if [he of M] dropped you.[otherwise]It would hurt if [he of M] dropped you.[end if][or]You submit to being used as a plaything.[in random order]".
 
 To say SexResistFlav of (M - Icarus):
-	say "[one of]You hopelessly flail from your position in mid-air, doing everything you can to resist the invasion.[or]Since you're several feet off the ground, you have no real way of resisting, but you still try![or]You make breaststroke swimming motions with your hands in mid-air, trying something, anything to pull yourself away from [NameDesc of M]![or]You flail around and make as much noise as you can, but no matter how much you try, you can't break [NameDesc of M]'s concentration.[in random order]".
+	say "[one of]You hopelessly flail from your position in mid-air, doing everything you can to resist the invasion.[or]Since you're several feet off the ground, you have no real way of resisting, but you still try![or]You make breaststroke swimming motions with your hands in mid-air, trying something, anything to pull yourself away from [NameDesc of M]![or]You flail around and make as much noise as you can, but no matter how much you try, you can't break [NameDesc of M][']s concentration.[in random order]".
 
 Section 1 - Attack
 
@@ -408,7 +391,6 @@ To say PresentAcceptanceFlav of (M - Icarus):
 
 To say PresentRejectionFlav of (M - Icarus):
 	say "[BigNameDesc of M] pouts.[line break][speech style of M]'Hmm, I have something else in mind...'[roman type][line break]".
-
 
 To say ThreesomePrep of (M - a monster) with (N - Icarus) in (F - asshole):
 	say "A strong gust of wind spins you around, leaving you facing [him of N] as [NameDesc of M] pulls apart your [AssDesc].".
@@ -479,21 +461,10 @@ To decide which number is the tripping max of (M - Icarus): [Giving the Icarus h
 	if D < 1, decide on 1;
 	decide on D.
 
-
 Section 2 - Damage
 
-To compute damage of (M - Icarus):
-	if the health of M > 0:
-		if M is uninterested or M is friendly:
-			say "[BigNameDesc of M] notices you and takes an aggressive stance![if M is friendly][line break][speech style of M]'Fuck you, bitch, I was going to leave you alone! Maybe you are looking for a fuck after all.'[roman type][line break][end if]";
-			anger M;
-			now M is interested;
-		otherwise:
-			anger M;
-			now M is interested;
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - Icarus):
+		say "[BigNameDesc of M] notices you and takes an aggressive stance![if M is friendly][line break][speech style of M]'Fuck you, bitch, I was going to leave you alone! Maybe you are looking for a fuck after all.'[roman type][line break][end if]".
 
 To say DamageReactHealthy of (M - Icarus):
 	say "[BigNameDesc of M] takes the hit, frowning.".
@@ -507,10 +478,16 @@ To say DamageReactTired of (M - Icarus):
 To say DamageReactWeak of (M - Icarus):
 	say "[BigNameDesc of M] takes the hit, angrily fighting to maintain [his of M] balance!".
 
+To say TaxReturnDismay of (M - Icarus):
+	say "[speech style of M]'[one of]If you're going to make me pay you like a whore, then I'm going to keep treating you like a whore.'[or]Whore.'[stopping][roman type][line break]".
 
-To compute unique death of (M - Icarus):
-	say "[BigNameDesc of M][']s physical structure begins to fizzle, and [he of M] snarls in frustration before vanishing completely.";
-	loot M.
+To say BanishForceFlav of (M - Icarus):
+	say "[BigNameDesc of M] bows. [speech style of M]'So be it.'[roman type][line break][big he of M] spreads [his of M] wings wide and takes off. A ray of light appears from the ceiling, acting as a guide towards some sort of invisible portal, which [he of M] quickly disappears through.";
+	let C be a random worn blessable clothing;
+	if C is clothing:
+		say "For a brief moment, the ray of light glances off of your [C]!";
+		bless C.
+
 
 
 Part 6 - Conversation
@@ -540,7 +517,6 @@ To say InvitationRejected of (M - Icarus) with (N - a monster):
 To say MildAnnoyedResponse of (M - Icarus):
 	say "[speech style of M]'Less talking, more fucking.'[roman type][line break]";
 	if lady fetish is 0, alwayscutshow figure of Icarus interact 8 for M.
-
 
 Section 2 - Questioning
 
@@ -594,7 +570,6 @@ To compute unfriendly drink of (M - Icarus):
 
 Section 4 - Food Requesting
 
-
 Definition: Icarus is willing to give snacks if christmas content is 1.
 
 To say FriendlyFoodAgreeFlav of (M - Icarus):
@@ -615,4 +590,3 @@ To say DismissalResponseStalker of (M - Icarus):
 	say "[speech style of M]'[if M is interested]Oi, I'm gathering important data here! How dare you[otherwise]Hmm, I guess it would be a breach of company policy for me to distract you for any longer[end if].'[roman type][line break]".
 
 Icarus ends here.
-

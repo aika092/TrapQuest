@@ -1,8 +1,6 @@
 Haunted Mirror Trap by Traps begins here.
 
-
 A haunted mirror trap is a kind of trap. There are 5 pressure haunted mirror traps. The text-shortcut of a haunted mirror trap is "mrr". The printed name of a haunted mirror trap is "[TQlink of item described]haunted mirror[TQxlink of item described]".
-
 
 Figure of haunted mirror is the file "Env/Mansion/mirror1.jpg".
 To decide which figure-name is the examine-image of (T - a haunted mirror trap):
@@ -173,13 +171,12 @@ To compute resolution of (X - mirror soiling):
 		now nothing-happens is 1;
 	let D be a random worn total protection diaper;
 	if nothing-happens is 0 and D is diaper:
-		say "Looking in front of you again, you can't help but laugh uncontrollably at the pathetic dumb baby in front of you [if D is currently visible]and their[end if][if D is currently visible and the total-soak of D >= 6] deeply yellowing[end if][if D is currently visible and D is perceived messed], brown and sagging[end if][if D is currently visible] [ShortDesc of D], [end if][if the diaper addiction of the player < 3 and the delicateness of the player < 12]before realizing that you're looking at yourself and growling angrily[otherwise if the diaper addiction of the player < 3]before realizing that you're looking at yourself and crying uncontrollably[otherwise if the diaper addiction of the player < 6]before realizing that you're looking at yourself and blushing[otherwise if the diaper addiction of the player < 9]before realizing that you're looking at yourself and quickly stopping[otherwise if the diaper addiction of the player < 11]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, after a hesitating for a few seconds, taking your hands off your diaper[otherwise if the diaper addiction of the player < 13]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, after a hesitating for a few seconds, continuing to rub your diaper[otherwise if the diaper addiction of the player < 15]especially once they begin rubbing their diaper with a grin on their face, before realizing it's you and, upon realizing you have control of your body back, immediately resuming rubbing your diaper[otherwise if the diaper addiction of the player < 17]especially once they begin rubbing their diaper with a huge grin on their face, before realizing it's you and, upon realizing you have control of your body back, immediately resuming rubbing your diaper[otherwise]especially once they begin rubbing their diaper with a huge grin on their face, before realizing it's you and eagerly continuing to rub your diaper without even realizing you have control of your body back[end if].";
+		say "Looking in front of you again, you can't help but laugh uncontrollably at the pathetic dumb baby in front of you [if D is currently visible]and their[end if][if D is currently visible and the total-soak of D >= 6] deeply yellowing[end if][if D is currently visible and D is perceived messed], brown and sagging[end if][if D is currently visible] [ShortDesc of D], [end if][if the diaper addiction of the player < 3 and the delicateness of the player < 12]before realising that you're looking at yourself and growling angrily[otherwise if the diaper addiction of the player < 3]before realising that you're looking at yourself and crying uncontrollably[otherwise if the diaper addiction of the player < 6]before realising that you're looking at yourself and blushing[otherwise if the diaper addiction of the player < 9]before realising that you're looking at yourself and quickly stopping[otherwise if the diaper addiction of the player < 11]especially once they begin rubbing their diaper with a grin on their face, before realising it's you and, after a hesitating for a few seconds, taking your hands off your diaper[otherwise if the diaper addiction of the player < 13]especially once they begin rubbing their diaper with a grin on their face, before realising it's you and, after a hesitating for a few seconds, continuing to rub your diaper[otherwise if the diaper addiction of the player < 15]especially once they begin rubbing their diaper with a grin on their face, before realising it's you and, upon realising you have control of your body back, immediately resuming rubbing your diaper[otherwise if the diaper addiction of the player < 17]especially once they begin rubbing their diaper with a huge grin on their face, before realising it's you and, upon realising you have control of your body back, immediately resuming rubbing your diaper[otherwise]especially once they begin rubbing their diaper with a huge grin on their face, before realising it's you and eagerly continuing to rub your diaper without even realising you have control of your body back[end if].";
 		if the diaper addiction of the player > 10 and the player is a pervert:
 			now auto is 1;
 			try masturbating;
 			now auto is 0;
 	now mirror-delayed is 0.
-
 
 mirror-stuffie is a mirror attack.
 Definition: mirror-stuffie is acceptable:
@@ -191,6 +188,4 @@ To compute resolution of (M - mirror-stuffie):
 	say "Your reflection reaches down and picks up [NameDesc of C], cuddling [him of C] close to your chest. You realise you are doing the same thing! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
 	summon C cursed with quest.
 
-
 Haunted Mirror Trap ends here.
-

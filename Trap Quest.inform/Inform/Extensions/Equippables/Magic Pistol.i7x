@@ -34,5 +34,4 @@ To compute attack of (W - magic pistol) at (M - a monster):
 		now the stomach-semen of the player is 0;
 		SemenTasteAddictUp 1.
 
-
 Magic Pistol ends here.

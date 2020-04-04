@@ -15,7 +15,7 @@ To say monster-title-before of (M - a monster):
 	say "[if M is in the location of the player][TQlink of M][end if][input-style]".
 
 To say monster-title-after of (M - a monster):
-	say "[if M is asleep] (fast asleep)[end if][shortcut-desc][roman type][if M is in the location of the player][TQxlink of M][verb-desc of M][end if]".
+	say "[if debuginfo > 0 and M is threatening] ([difficulty of M])[end if][if M is asleep] (fast asleep)[end if][shortcut-desc][roman type][if M is in the location of the player][TQxlink of M][verb-desc of M][end if]".
 
 To say FullExamineDesc of (M - a monster):
 	say FullMonsterDesc of M.
@@ -26,9 +26,6 @@ To say FullMonsterDesc of (M - a monster):
 	say MonsterDesc of M;
 	say MonsterComment of M;
 	if M is messy, say MessyMonsterFlav of M.
-
-
-
 
 To say MonsterDesc of (M - a monster):
 	say "This NPC seems to be missing [his of M] description!".
@@ -48,11 +45,8 @@ To say MonsterFaceDesc of (M - a tentacle monster):
 To say MonsterFaceDesc of (M - a fairy):
 	say "entire body".
 
-
 To say MessyMonsterFlav of (M - a monster):
 	say "The back of [his of M] diaper is bulging out and [his of M] face is red with embarrassment. It seems that someone has done a stinky.".
-
-
 
 To decide which number is the health-colour of (M - a monster):
 	let HP be the health of M * 1.0;
@@ -81,7 +75,6 @@ To ForegroundRender (M - a monster) at (X1 - a number) by (Y1 - a number) with d
 		now DY is HPR;
 		draw a rectangle health-colour of M in the current focus window at (X1 + 1) by (Y1 + 1) with size (DX - 2) by (DY - 2).
 
-
 [This is their main profile image, or 'bust'.]
 To decide which figure-name is the monster-image of (M - a monster):
 	decide on figure of Missing NPC.
@@ -103,7 +96,6 @@ To decide which figure-name is the oral-sex-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
 To decide which figure-name is the titfuck-monster-image of (M - a monster):
 	decide on figure of Missing NPC.
-
 
 To decide which figure-name is the pacified-image of (M - a monster):
 	decide on figure of Missing NPC.
@@ -139,9 +131,6 @@ To decide which figure-name is the examine-image of (M - a monster):
 	unless F is figure of Missing NPC, decide on F;
 	decide on the non-sex-profile of M.
 
-
-
-
 After examining a monster:
 	unless the noun is unintelligent or the noun is robot:
 		say "[FavourDesc of the noun]";
@@ -175,6 +164,4 @@ To say SexDollExplanation of (M - a monster):
 	say "[variable custom style]'So, should I be worried about the morality of engaging in sex with this thing?'[roman type][line break]";
 	say "The response comes telepathically from the Nintendolls, directly into your head.[line break][second custom style]'It's simply an animated object, controlled via magic. Just consider it like you would a very high-tech sex doll.'[roman type][line break]".
 
-
 Monster Descriptions ends here.
-

@@ -156,7 +156,6 @@ To say MediumDesc of (C - stripy lewd crop top):
 To decide which object is the unique-upgrade-target of (C - stripy lewd crop top):
 	decide on a random off-stage actually sheer tube top.
 
-
 Part 5 - Deep Throat Princess Crop Top
 
 deepthroat princess crop top is a crop top. The printed name of deepthroat princess crop top is "[clothing-title-before]deepthroat princess crop top[clothing-title-after]". The text-shortcut of deepthroat princess crop top is "dpt". deepthroat princess crop top is oral-sex-addiction-influencing.
@@ -186,7 +185,6 @@ Definition: deepthroat princess crop top is royalty themed: decide yes.
 Definition: deepthroat princess crop top is oral sex themed: decide yes.
 Definition: deepthroat princess crop top is white themed: decide yes.
 Definition: deepthroat princess crop top is transformation-protected if the class of the player is princess.
-
 
 Part 6 - Spoiled Crop Top
 
@@ -319,5 +317,23 @@ To say ShortDesc of (C - rugged-crop-top):
 To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 	if leopard print tube top is off-stage, decide on leopard print tube top.
 
-Crop Top ends here.
+nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.jpg". Understand "nipple", "holes" as nipples-crop-top.
+To decide which figure-name is clothing-image of (H - nipples-crop-top):
+	decide on figure of nipples-crop-top.
 
+To say ShortDesc of (C - nipples-crop-top):
+	say "nipple holes crop top".
+To say MediumDesc of (C - nipples-crop-top):
+	say "white crop top with nipple holes".
+To say ClothingDesc of (C - nipples-crop-top):
+	say "This tiny, flimsy white crop top has holes purposefully cut out for your nipples.".
+
+Definition: nipples-crop-top is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - nipples-crop-top):
+	decide on 7.
+
+A gropability rule:
+	if nipples-crop-top is worn and breasts is lewdly exposed, now the gropability of breasts is 9999.
+
+Crop Top ends here.

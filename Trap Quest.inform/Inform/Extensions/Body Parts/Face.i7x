@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 face is an orifice. Face is everywhere. The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]". Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game] The text-shortcut of face is "face".
 To say FullExamineDesc of (B - face):
-	say "[TotalDesc of face]".
+	say "[ImageDesc of face][TotalDesc of face]".
 
 [!<Face>@<previousMakeUp:Integer>*
 
@@ -62,10 +62,8 @@ REQUIRES COMMENTING
 *@!]
 Face has a number called lips.
 
-
 [Can it be accessed right now with nothing blocking it?]
 Definition: face is undefended if face is not actually occupied.
-
 
 [!<facePresentableRules:Rulebook>*
 
@@ -74,6 +72,15 @@ REQUIRES COMMENTING
 *!]
 the face presentable rules is a rulebook.
 the presentable rules of face is usually the face presentable rules.
+
+To decide which object is the concealer of (F - face):
+	decide on a random worn actually dense hood.
+
+To decide which object is the at least partial concealer of (F - face):
+	if face is listed in the armUses of arms, decide on arms;
+	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
+	if cultist veil is worn, decide on cultist veil;
+	decide on nothing.
 
 [!<TheUnableToSpeakToPresentRule>+
 
@@ -118,7 +125,7 @@ This is the too horny to present face rule:
 	if the orifice soreness of the player < 7 and the analvirgin of the player is 0 and the player is horny and the virgin of the player is 0 or the player is male: [This way females can always present mouth to avoid virginity loss, and all players can present mouth to avoid anal virginity loss]
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny:
-				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked, you can't bring yourself to do that!";
+				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
 				rule fails.
 The too horny to present face rule is listed in the face presentable rules.
 
@@ -146,7 +153,6 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a monster is requiring facial penetration: decide yes.
-
 
 [!<FaceIsExposed>+
 
@@ -285,9 +291,7 @@ To say LipDesc:
 			say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
 		say " lips".
 
-
 Part 3 - Modify Face Stats
-
 
 [!<FaceUpX>+
 
@@ -345,15 +349,10 @@ To display lips cutscene:
 		otherwise cutshow figure of lips cutscene 2b for face;
 	if the lips of face is 3, cutshow figure of lips cutscene 3 for face.
 
-
 Section - Image for graphics window
 
 Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
-Figure of CumFaceButton is the file "Special/Buttons/cumface.png".
 
-To decide which figure-name is the examine-image of (T - face):
-	if T is overglazed, decide on Figure of CumFaceButton;
-	decide on figure of no-image-yet.
+[examine-image is documented in Necessary Figures]
 
 Face ends here.
-

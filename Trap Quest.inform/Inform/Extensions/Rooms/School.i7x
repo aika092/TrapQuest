@@ -6,7 +6,6 @@ A room can be lecture. [It's a classroom]
 To decide which number is the entry-rank of (R - a room):
 	decide on 0.
 
-
 Definition: an academic room (called R) is within vision:
 	now neighbour finder is the location of the player;
 	if R is neighbour finder or ((armband is worn or the rank of the player >= the entry-rank of R) and R is next door), decide yes;
@@ -103,7 +102,6 @@ School32 is a lecture academic room. The printed name of School32 is "Diamond Cl
 To decide which number is the entry-rank of (R - School32):
 	decide on 5.
 
-
 [School33 to 35 are the dungeon]
 
 [East Dungeon]
@@ -139,6 +137,7 @@ To reveal the school dungeon:
 Carry out going west when the location of the player is School33:
 	reveal the school dungeon. [if we've exited via the secret doorway then we can return]
 
+previous-dungeon-favour is a number that varies.
 dungeon-favour is a number that varies.
 dungeon-time is a number that varies.
 dungeon-tests is a number that varies. dungeon-tests is usually 0.
@@ -155,13 +154,16 @@ A time based rule (this is the dungeon sentence progress rule):
 To compute (M - a monster) dungeon locking:
 	reveal the school dungeon;
 	now dungeon-favour is 0;
-	say "[DungeonLockPrepFlav of M]";
+	say DungeonLockPrepFlav of M;
 	drag to School34 by M;
 	compute dungeon chain binding of M;
-	say "[DungeonLockAfterFlav of M]";
+	say DungeonLockAfterFlav of M;
 	if there is held bottle or there is held TQedible thing, compute dungeon drink confiscating of M;
+	if skeleton key is held:
+		say "[speech style of M]'You're certainly not allowed this!'[roman type][line break][BigNameDesc of M] confiscates [NameDesc of skeleton key]!";
+		now skeleton key is in School33;
 	compute dungeon long term challenge of M;
-	say "[DungeonLockLeaveFlav of M]";
+	say DungeonLockLeaveFlav of M;
 	try M going north;
 	display entire map;
 	repeat with N running through alive students:
@@ -170,7 +172,7 @@ To compute (M - a monster) dungeon locking:
 		distract N.
 
 To compute dungeon chain binding of (M - a monster):
-	say "[DungeonLockFlav of M]";
+	say DungeonLockFlav of M;
 	now dungeon chains is worn by the player;
 	now dungeon chains is stuck;
 	now dungeon chains is locked;
@@ -191,7 +193,7 @@ To say DungeonLockAfterFlav of (M - a monster):
 	say "[speech style of M]'You will be let out when we believe you have learned your lesson. I guess how long that takes is up to you.'[roman type][line break]".
 
 To compute dungeon drink confiscating of (M - a monster):
-	if there is a held bottle or there is a held TQedible thing, say "[DungeonDrinkFlav of M]";
+	if there is a held bottle or there is a held TQedible thing, say DungeonDrinkFlav of M;
 	repeat with B running through held TQedible things:
 		now B is in School33;
 	repeat with B running through held bottles:
@@ -258,6 +260,7 @@ To compute dungeon diaper setup of (M - a monster):
 
 To compute dungeon checkup of (M - a monster):
 	now M is in the location of the player;
+	now previous-dungeon-favour is dungeon-favour;
 	say DungeonCheckupArrivalFlav of M;
 	compute dungeon test of M;
 	increase dungeon-tests by 1;
@@ -286,8 +289,11 @@ To check dungeon release of (M - a monster):
 			if N is receptionist, now N is in School01;
 		now School34 is not smoky;
 		display entire map;
+		if class-time < 0, now class-time is 0; [so we don't go straight into detention for being late]
+	otherwise if dungeon-favour > previous-dungeon-favour and dungeon-tests is not 3:
+		say "[speech style of M]'Good. [if dungeon-favour >= 2]You're getting close to earning your release. Keep going[otherwise]Keep it up and we'll think about letting you go[end if].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Good. [if dungeon-favour > 2]You're getting close to earning your release. Keep going[otherwise]Keep it up and we'll think about letting you go[end if].'[roman type][line break]";
+		say "[speech style of M]'[if dungeon-tests is 3]You would be out by now if you had complied, by the way[otherwise if dungeon-tests > 3]You continue to test our tolerance. Hmm[otherwise]At this rate, you're going to be in here longer than necessary[end if].'[roman type][line break]";
 
 A dungeon-test is a kind of object.
 dungeon-test-monster is an object that varies.
@@ -357,7 +363,6 @@ To execute (T - dungeon-bottle-test):
 	otherwise:
 		say "[big he of M] growls at your refusal.[line break][speech style of M]'You'd really rather stay here even longer? Fine by me.'[roman type][line break]".
 
-
 [dungeon-breakout-test is a dungeon-test.
 Definition: dungeon-breakout-test (called T) is eligible:
 	let M be a random tentacle monster in the location of the player;
@@ -369,13 +374,12 @@ To execute (T - dungeon-breakout-test):
 	let X be a random tentacle monster in the location of the player;
 	say "The [X] busts you out of jail!";]
 
-
 To compute dungeon princess challenge of (M - a monster):
 	say DungeonPrincessDeclarationFlav of M.
 
 To say DungeonPrincessDeclarationFlav of (M - a monster):
 	say "You watch with [horror the bimbo of the player] as [NameDesc of ex-princess][']s buttcheeks begin to expand in size. [big his of ex-princess] hands clasp [his of ex-princess] butt, trying desperately to stop the growth, but to no avail. [BigNameDesc of M] laughs maliciously.[line break][speech style of M]'[if M is headmistress]I have[otherwise]The [ShortDesc of headmistress][end if] has decided that leaving you with agency is too dangerous. From now on you will be our live-in huge-assed cum-bucket. Thanks for putting your hands there of your own volition, by the way.'[line break][roman type][BigNameDesc of ex-princess] squeals as [he of ex-princess] tries to remove [his of ex-princess] hands and finds they are stuck in place on [his of M] now massive bottom.[line break][speech style of ex-princess]'Help! I can't move my hands! Nooo, mercy! I won't try to escape again! Just return me to my cell and give me my hands back and I'll be a good slave for you, I promise!'[line break][roman type][BigNameDesc of M] chuckles.[line break][speech style of M]'Sorry, [if M is headmistress]but if you didn't want me to be this cruel, perhaps you shouldn't have created me this way[otherwise]that's out of my... [']hands['][end if].'[roman type][line break]You watch as, completely outside of [his of ex-princess] own control, [NameDesc of ex-princess] lies on [his of ex-princess] back, and [his of ex-princess] legs raise themselves above [his of ex-princess] body before locking themselves behind [his of ex-princess] shoulders, in a sort-of pretzel position.[line break][speech style of ex-princess]'Noooooo!'[roman type][line break][BigNameDesc of M] rubs [NameDesc of ex-princess][']s belly lovingly.";
-	say "[speech style of M]'We've applied a special curse to your belly. At least once every minute, your butthole will fill up with a bit of warm sticky semen. The curse will never be lifted until this pocket dimension of yours is somehow destroyed. It will always happen, at least once a minute, and usually faster. While you're awake. While you're asleep. When you're alone. When you're in front of people. You'll be lying on your back, feet behind your head, holding your oversized butt cheeks apart, farting cum. Forever.'[roman type][line break][big he of M] pauses for a moment to let that sink in, and then turns to you.[line break][speech style of M]'As for your punishment for this jailbreak attempt, [NameBimbo]... well, we're going to leave you with Annie Asscum for a while. Oh, and the floor of this room has been enchanted with a clever spell, where if it detects any cum, it'll collect it into a condom and pin that to your clothing. So you'll need to decide whether you would rather drink the semen from her butthole, or wear it with pride from now on. I'll see you in a while!'";
+	say "[speech style of M]'We've applied a special curse to your belly. At least once every minute, your butthole will fill up with a bit of warm sticky semen. The curse will never be lifted until this pocket dimension of yours is somehow destroyed. It will always happen, at least once a minute, and usually faster. While you're awake. While you're asleep. When you're alone. When you're in front of people. You'll be lying on your back, feet behind your head, holding your oversized butt cheeks apart, farting cum. Forever.'[roman type][line break][big he of M] pauses for a moment to let that sink in, and then turns to you.[line break][speech style of M]'As for your punishment for this jailbreak attempt, [NameBimbo]... well, we're going to leave you with Annie Asscum for a while. Oh, and the floor of this room has been enchanted with a clever spell, where if it detects any cum, it'll collect it into a condom and pin that to your clothing. So you'll need to decide whether you would rather drink the semen from [his of ex-princess] butthole, or wear it with pride from now on. I'll see you in a while!'";
 
 To compute dungeon princess diaper challenge of (M - a monster):
 	compute dungeon diaper setup of M;
@@ -408,6 +412,4 @@ Report dropping clothing when the noun is in School15:
 		increase the donations of School15 by 1;
 		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".
 
-
 School ends here.
-

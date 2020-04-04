@@ -1,6 +1,5 @@
 Cookie by Food begins here.
 
-
 A cookie is a kind of chef food. There is 1 cookie. The printed name of a cookie is "[TQlink of item described][if the quality of the item described > 1]chocolate chip cookie[otherwise if the quality of the item described > 0]cookie[otherwise if the quality of the item described > -1]cookie[otherwise if diaper quest is 1 and diaper messing >= 3]prune cookie[otherwise if diaper quest is 1]salty cookie[otherwise if the quality of the item described > -2]penis cookie[otherwise]glazed cookie[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of a cookie is "[TQlink of item described]cookies[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a cookie is "cas".
 
 To say ExamineDesc of (C - a cookie):
@@ -18,7 +17,6 @@ To say ExamineDesc of (C - a cookie):
 To say ShortDesc of (C - a cookie):
 	say "cookie".
 
-
 cookie-poison-timer is a number that varies.
 
 To say DevourFlav of (C - a cookie):
@@ -34,7 +32,7 @@ Carry out TQeating cookie:
 			say "The excessive amount of salt leaves your mouth feeling extremely dry! [line break][variable custom style]Oh dear, I really need a drink now![roman type][line break]";
 			now the stomach-water of the player is 1;
 	otherwise if the quality of the noun is -2:
-		say "You start feeling a bit woozy as the food settles in your stomach, and you realize [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";
+		say "You start feeling a bit woozy as the food settles in your stomach, and you realise [semen] may not have been the only dubious ingredient. It suddenly feels a lot harder to move your muscles. [if the semen addiction of the player < 7][line break][variable custom style]Just when I thought it couldn't get any worse[otherwise]At least I got to taste some [semen][end if]![roman type][line break]";
 		increase cookie-poison-timer by default-candy-duration + the fat of the noun * 5;
 		FatigueUp 50;
 		Arouse the semen taste addiction of the player * 20;
@@ -46,7 +44,7 @@ Carry out TQeating cookie:
 		bodyHeal the fat of the noun;
 		StomachFoodUp 2;
 	otherwise:
-		say "Your stomach rumbles, and you realize the chef might have used some dubious ingredients in your food! You're even hungrier than you were before!";
+		say "Your stomach rumbles, and you realise the chef might have used some dubious ingredients in your food! You're even hungrier than you were before!";
 		StomachFoodUp 1;
 		StomachFoodDown the fat of the noun;
 	bodyHeal 2;
@@ -59,7 +57,4 @@ a time based rule (this is the cookie poison decay rule):
 			say "[bold type]The drug from the cookie seems to have run its course and you are able to move normally again.[roman type][line break]";
 			now cookie-poison-timer is 0.
 
-
-
 Cookie ends here.
-

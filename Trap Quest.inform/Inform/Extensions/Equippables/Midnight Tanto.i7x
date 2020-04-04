@@ -7,7 +7,6 @@ Figure of midnight tanto is the file "Items/Accessories/Equippables/tanto1.jpg".
 To decide which figure-name is the clothing-image of (W - midnight tanto):
 	decide on figure of midnight tanto.
 
-
 To say ClothingDesc of (W - a midnight tanto):
 	say "A Japanese-style knife, its blade is so black as to appear unnatural[if the charge of W <= 0]. The blade is glowing. You wonder if you could [bold type]cut[roman type] some clothing [bold type]with[roman type] it[end if].".
 To say ShortDesc of (W - a midnight tanto):
@@ -29,4 +28,3 @@ To compute periodic effect of (W - a midnight tanto):
 		if the charge of W <= 0, say "[bold type]Your [ShortDesc of W] is now glowing. It could probably cut through another clothing item, if you like.[roman type][line break]".
 
 Midnight Tanto ends here.
-

@@ -1,6 +1,5 @@
 White Wall by Objects begins here.
 
-
 WoodsScenery03 is a thing. WoodsScenery03 is not portable. WoodsScenery03 is in Woods21. The printed name of WoodsScenery03 is "[TQlink of item described]wall statue[TQxlink of item described][verb-desc of item described]". Understand "wall", "statue", "wall statue", "white wall statue", "ladder", "statue ladder", "white wall" as WoodsScenery03. Figure of WoodsScenery03 is the file "Env/Forest/statue3.png". WoodsScenery03 has a number called uses. The uses of WoodsScenery03 is usually 1. The text-shortcut of WoodsScenery03 is "wst".
 
 To decide which figure-name is the examine-image of (C - WoodsScenery03):
@@ -11,6 +10,4 @@ To say ExamineDesc of (C - WoodsScenery03):
 
 Definition: WoodsScenery03 is immune to change: decide yes.
 
-
 White Wall ends here.
-

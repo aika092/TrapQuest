@@ -16,9 +16,13 @@ doomed is a number that varies.
 
 new-acolyte-counter is initially 0.
 
-
 To commence doom:
 	if doom counter is 0:
+		if Mansion00 is unplaced:
+			Set Up The Mansion;
+			follow the setting up mansion monsters rules;
+			repeat with M running through alive nonexistant monsters:
+				set up M;
 		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
 		now doom counter is 1.
@@ -172,7 +176,6 @@ A time based rule (this is the doom weather rule):
 			say "[bold type]You have just stepped inside, out of the rain.[roman type][line break]";
 			now latestAnnouncedRaining is 0.
 
-
 [!<ResolveDoom>+
 
 REQUIRES COMMENTING
@@ -197,7 +200,7 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 		if inhuman pregnancy > 0:
 			let T be a random off-stage tentacle monster;
 			set up T;
-			decrease the difficulty of T by 2;
+			decrease the raw difficulty of T by 2;
 			now T is in the location of A;
 	repeat with M running through tentacle monsters:
 		now the evolved of M is 3;
@@ -208,12 +211,8 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 	otherwise:
 		if N is monster, say "[BigNameDesc of N] gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E], emitting an insane laugh as [he of N] stumbles to [his of N] feet[otherwise]a mass of black and purple motes, which separate and disappear as [he of N] stumbles to [his of N] feet and emits an insane laugh[end if].".
 
-
-
-
 A time based rule (this is the creepiness rule):
 	if playerRegion is Mansion, compute creepiness.
-
 
 [!<creepiness:Integer>*
 
@@ -239,8 +238,4 @@ To compute creepiness: [first implementation of "creeping" of ghosts in non-garl
 		say "[one of][if creepiness > 9]Tension seems to linger in the air around you, and you can't help but feel something will burst out at you at any moment.[end if][or][or][or][if creepiness > 6]You can't shake the feeling that you are being watched.[end if][or][or][cycling]";
 		increase creepiness by 1.
 
-
-
-
 Doom ends here.
-

@@ -1,8 +1,5 @@
 Region Building Hotel by Rooms begins here.
 
-
-
-
 [!<SetUpTheHotel>+
 
 REQUIRES COMMENTING
@@ -90,4 +87,3 @@ To Scramble Hotel:
 	make all modern exits lead to Solid Rock.
 
 Region Building Hotel ends here.
-

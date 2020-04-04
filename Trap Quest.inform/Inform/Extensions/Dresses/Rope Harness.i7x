@@ -55,6 +55,4 @@ Report wearing hemp clothing:
 				fully curse the noun;
 				fully curse B.
 
-
 Rope Harness ends here.
-

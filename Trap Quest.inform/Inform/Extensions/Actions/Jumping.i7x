@@ -51,6 +51,4 @@ Check jumping:
 	compute upright fatigue gain.
 Understand "leap", "bounce", "ju", "cheer" as jumping.
 
-
 Jumping ends here.
-

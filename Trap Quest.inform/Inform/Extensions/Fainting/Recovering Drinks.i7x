@@ -1,6 +1,5 @@
 Recovering Drinks by Fainting begins here.
 
-
 [!<RecoverDrinks>+
 
 REQUIRES COMMENTING
@@ -14,4 +13,3 @@ To Recover Drinks:
 		now D is in Holding Pen.
 
 Recovering Drinks ends here.
-

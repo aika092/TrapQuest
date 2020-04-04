@@ -1,14 +1,9 @@
 Runic Headband by Headgear begins here.
 
-
 runic headband is a headgear. runic headband is silk. runic headband is purity. Figure of runic headband is the file "Items/Accessories/Head/runicheadband1.png". runic headband is hair growing. runic headband is roleplay.
 
 Definition: runic headband is fluid immune: decide yes.
 The printed name of runic headband is "[clothing-title-before]runic headband[clothing-title-after]". The text-shortcut of runic headband is "rhb".
-
-
-To decide which figure-name is the clothing-image of (C - runic headband):
-	decide on figure of runic headband.
 
 To say ClothingDesc of (H - runic headband):
 	say "This white headband [if H is worn]sits on your forehead. It [end if]has runic characters embedded in silver most of the way around. You have no idea what they mean[if abyssal tattoo is worn]. The runes have turned black, and almost seem wet with some kind of sludge[end if].".
@@ -57,8 +52,9 @@ Chapter - Class Outfit
 
 Definition: runic headband is removal-blocking:
 	if wearing-target is runic headband, decide no;
-	if wearing-target is purity, decide yes;
-	if runic headband is not purity and wearing-target is crotchless-panties, decide yes;
+	if wearing-target is purity or wearing-target is priestess outfit, decide yes;
+	if diaper quest is 1 and wearing-target is dirty diaper, decide yes;
+	if runic headband is not purity and (wearing-target is crotchless-panties or wearing-target is heart-pussy-skirt or wearing-target is heart-pussy-hobble-skirt), decide yes;
 	decide no. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 priestess-summoned is a number that varies.
@@ -88,14 +84,15 @@ To compute class outfit of (H - runic headband):
 			summon P;
 			now the raw-magic-modifier of P is the number of worn cursed clothing + the number of worn blessed clothing - 1;
 	otherwise:
-		if pearl crotchless-panties is off-stage and pearl crotchless-panties is actually summonable:
-			say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you!";
+		if cleavage-window-priestess-outfit is off-stage and cleavage-window-priestess-outfit is actually summonable:
+			say "[bold type]Your runic headband gently hums as a [cleavage-window-priestess-outfit] [bold type]appears on you![roman type][line break]";
+			summon cleavage-window-priestess-outfit;
+		otherwise if heart-pussy-skirt is off-stage and heart-pussy-skirt is actually summonable:
+			say "[bold type]Your runic headband gently hums as a [heart-pussy-skirt] [bold type]appears on you![roman type][line break]";
+			summon heart-pussy-skirt;
+		otherwise if pearl crotchless-panties is off-stage and pearl crotchless-panties is actually summonable:
+			say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you![roman type][line break]";
 			summon pearl crotchless-panties uncursed.
-
-
-
-
-
 
 Chapter - Quest
 
@@ -106,15 +103,17 @@ To uniquely set up (C - runic headband):
 	now the quest of C is priestess-service-quest.
 
 To say QuestFlav of (Q - priestess-service-quest):
-	say "You sense that it wants you to [if diaper quest is 1]use a diaper in the dungeon altar room[otherwise]stay a virgin, and 'service' men while your [']ritual beads['] are FULLY inserted inside you, then present the beads at the dungeon altar[end if].".
+	say "You sense that it wants you to [if diaper quest is 1]stay in used diapers for as long as possible[otherwise]stay a virgin, and 'service' men while your [']ritual beads['] are FULLY inserted inside you, then present the beads at the dungeon altar[end if].".
 
 To say QuestTitle of (Q - priestess-service-quest):
-	say " ([if diaper quest is 1]altar diaper[otherwise]ritual beads 'service'[end if] quest)".
+	say " ([if diaper quest is 1]full diaper[otherwise]ritual beads 'service'[end if] quest)".
 
 To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing):
 	let D be a random off-stage ring;
 	if D is ring:
-		if the size of ritual-beads <= 4:
+		if diaper quest is 1:
+			now D is ruby;
+		otherwise if the size of ritual-beads <= 4:
 			now D is emerald;
 		otherwise if the size of ritual-beads <= 6:
 			now D is ruby;
@@ -128,6 +127,14 @@ To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing
 		otherwise:
 			now D is in the location of the player;
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
+	otherwise if diaper quest is 1:
+		let B be a random worn unblessed blessable clothing;
+		if B is clothing and B is not C:
+			say "laying a blessing upon your [printed name of B]!";
+			bless B;
+		otherwise:
+			say "helping you maintain your sanity!";
+			SexAddictDown 1;
 	otherwise:
 		say "materialising useful tools near the altar!";
 		let L be a random off-stage lubricant;
@@ -146,7 +153,6 @@ To compute persistent reward of (Q - priestess-service-quest) on (C - a clothing
 			now F is in the location of the player;
 			compute autotaking F;
 
-
 priestess-vaginal-service-quest is a headgear-clothing-quest.
 
 To say QuestFlav of (Q - priestess-vaginal-service-quest):
@@ -154,7 +160,6 @@ To say QuestFlav of (Q - priestess-vaginal-service-quest):
 
 To say QuestTitle of (Q - priestess-vaginal-service-quest):
 	say " (vaginal sex quest)".
-
 
 To compute persistent reward of (Q - priestess-vaginal-service-quest) on (C - a clothing):
 	let D be a random off-stage ring;
@@ -191,6 +196,29 @@ To compute virginity-loss of (C - runic headband):
 		now C is cursed;
 		say "Your [ShortDesc of C] shudders as a curse falls upon it. A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful cunt of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		now the quest of C is priestess-vaginal-service-quest;
+		repeat with O running through worn trousers:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn knickers:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn bras:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		let PO be a random worn priestess outfit;
+		if PO is clothing:
+			transform PO into cameltoe-priestess-outfit;
+			now cameltoe-priestess-outfit is crotch-displaced;
+		otherwise:
+			repeat with O running through worn skirted clothing:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			summon cameltoe-priestess-outfit;
+			now cameltoe-priestess-outfit is crotch-displaced;
+			say "A [cameltoe-priestess-outfit] appears on you!";
 		repeat with M running through male unwrapped monsters penetrating vagina:
 			say "A condom appears around [NameDesc of M][']s [DickDesc of M]!";
 			now M is wrapped;
@@ -221,6 +249,7 @@ A later time based rule (this is the sinful priestess punishment rule):
 				say "A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with unsacred seed, and have begun to carry life inside you! ";
 		otherwise if the womb volume of vagina > 2:
 			say "A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have allowed your womb to become defiled with disgraceful amounts of unsacred seed! ";
+			now priestessPunish is 1;
 		if priestessPunish is 1:
 			say "This is unforgivable. You have broken my trust and failed me. Fine. I release you from your charge, and leave you to the demons. Perhaps the Other Side will have more use for a whore such as you.'[roman type][line break]";
 			compute unique recycling of gold-tiara;
@@ -228,8 +257,16 @@ A later time based rule (this is the sinful priestess punishment rule):
 			transform runic headband into gold-tiara;
 			now gold-tiara is cursed;
 			say QuestFlav of gold-tiara;
-			compute class outfit of gold-tiara.
-
+			compute class outfit of gold-tiara;
+		otherwise if the pregnancy of the player is 0 and the womb volume of vagina > 0 and the womb volume of vagina <= 2:
+			let C be a random worn dress;
+			if C is cameltoe-priestess-outfit or C is exposing-priestess-outfit:
+				say "[bold type][BigNameDesc of C] [bold type]reacts to the [semen] that's entered your womb![roman type][line break]";
+				transform C into cleavage-window-priestess-outfit;
+				repeat with O running through worn skirted clothing:
+					say "Your [O] [wardrobeVanishes of O]!";
+					now O is in pink wardrobe;
+				summon heart-pussy-skirt;
+				say "[bold type][BigNameDesc of heart-pussy-skirt] [bold type]appears on you![roman type][line break]".
 
 Runic Headband ends here.
-

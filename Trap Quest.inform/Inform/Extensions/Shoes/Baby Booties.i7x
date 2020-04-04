@@ -6,7 +6,7 @@ The printed name of baby booties is usually "[clothing-title-before]pair of baby
 
 pink-baby-booties is a baby booties.
 
-Definition: a baby booties is pink themed: decide yes.
+Definition: pink-baby-booties is pink themed: decide yes.
 
 To decide which figure-name is the clothing-image of (H - a baby booties):
 	decide on the figure of baby booties.
@@ -40,7 +40,6 @@ To set up influence of (C - a baby booties):
 To decide which object is the unique-upgrade-target of (C - a baby booties):
 	decide on a random off-stage baby slippers.
 
-
 Part 1 - Baby Slippers
 
 A baby slippers is a kind of baby booties. A baby slippers is usually wool.
@@ -48,6 +47,8 @@ A baby slippers is a kind of baby booties. A baby slippers is usually wool.
 The printed name of baby slippers is usually "[clothing-title-before]pair of baby slippers[clothing-title-after]". The text-shortcut of baby slippers is "bsl".
 
 There is 1 baby slippers.
+
+Definition: a baby slippers is pink themed: decide yes.
 
 To say UniqueShortDesc of (C - a baby slippers):
 	say "baby slippers".
@@ -61,7 +62,7 @@ To decide which figure-name is the clothing-image of (H - a baby slippers):
 Figure of baby slippers is the file "Items/Clothes/Lower/Feet/Booties/booties2.png".
 
 To decide which number is the unique cringe of (C - a baby slippers):
-	decide on 12.
+	decide on 9.
 
 To decide which number is the dexterity-influence of (C - a baby slippers):
 	decide on 2.
@@ -83,7 +84,6 @@ Figure of rubber booties is the file "Items/Clothes/Lower/Feet/Booties/booties4.
 
 To decide which figure-name is the clothing-image of (H - a rubber booties):
 	decide on the figure of rubber booties.
-
 
 Definition: rubber booties is bow themed: decide yes.
 Definition: rubber booties is black themed: decide yes.
@@ -116,11 +116,6 @@ This is the trousers latex booties clash rule:
 		rule fails.
 The trousers latex booties clash rule is listed in the trousers wearability rules.
 
-
-
-
-
-
 christmas booties is a baby booties. christmas booties is unique.
 
 Definition: a christmas booties is transformation-protected if the class of the player is santa's little helper.
@@ -140,10 +135,4 @@ Definition: christmas booties is babywear if christmas content is 1. [Is it some
 To say ClothingDesc of (C - christmas booties):
 	say "A pair of green booties with big red bows.".
 
-
-
-
-
-
 Baby Booties ends here.
-

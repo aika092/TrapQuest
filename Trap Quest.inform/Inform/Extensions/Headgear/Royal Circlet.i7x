@@ -19,7 +19,6 @@ To compute SelfExamineDesc of (H - royal circlet):
 	let X be the largeness of hair;
 	say "You are wearing a royal slave's circlet in your [ShortDesc of hair]. ".
 
-
 To decide which number is the intelligence-influence of (H - royal circlet):
 	repeat with M running through worn clothing:
 		if the milk-soak of M > 1, decide on -1;[Your job is to hold the milk, not spill it.]
@@ -45,8 +44,6 @@ Definition: royal circlet is gem themed: decide yes.
 
 Report examining worn clothing:
 	if the noun is enema-helping, say "You can feel that this item somehow prevents your body from being weaker when holding in enemas.".
-
-
 
 Chapter - Class Outfit
 
@@ -105,6 +102,4 @@ To say QuestFlav of (Q - milk-serve-quest):
 To say QuestTitle of (Q - milk-serve-quest):
 	say " (milk serving quest)".
 
-
 Royal Circlet ends here.
-

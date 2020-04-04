@@ -1,7 +1,5 @@
 Ass Hook Trap by Traps begins here.
 
-
-
 [!<AssHook>@
 
 REQUIRES COMMENTING
@@ -282,6 +280,4 @@ A time based rule (this is the ass hook wedgie pain rule):
 			destroy H;
 			distract M.
 
-
 Ass Hook Trap ends here.
-

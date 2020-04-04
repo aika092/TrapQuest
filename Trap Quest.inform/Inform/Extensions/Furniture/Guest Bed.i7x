@@ -1,6 +1,5 @@
 Guest Bed by Furniture begins here.
 
-
 A guest bed is a kind of furniture. There is 1 guest bed in Mansion02. The printed name of guest bed is "[TQlink of item described]guest bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "guest", "bed" as guest bed. The text-shortcut of guest bed is "pgb". A guest bed has a number called song. song is usually 0. A guest bed can be tended. A guest bed is usually not tended. A guest bed has a number called holeCount. The holeCount of a guest bed is usually 0.
 
 To say ExamineDesc of (C - a guest bed):
@@ -9,13 +8,10 @@ To say ExamineDesc of (C - a guest bed):
 To decide which figure-name is the examine-image of (C - a guest bed):
 	decide on figure of hotel bed.
 
-To say RestingDesc of (F - a guest bed):
-	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress. [one of]It's pleasant and warm underneath the covers.[or][stopping]".
-
 To compute rest ending of (F - a guest bed):
 	if the holeCount of F > 0:
 		let O be a random orifice penetrated by F;
-		say "[if F is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of F is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] [BigNameDesc of clairvoyant acolyte] regards you from the side of the bed, gasping softly as feminine fluids dribble down her bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
+		say "[if F is penetrating face]The feeling of [semen] spurting into your mouth[otherwise]The feeling of warm fluid flowing into you[end if] suddenly jars you from your stupor. [if the holeCount of F is 1]Your [variable O] is stuffed full of a giant purple tentacle, throbbing viciously as it pumps you full of [semen].[otherwise]You're being pinned down by several giant tentacles, which throb viciously as they pump your holes full of [semen].[end if] [BigNameDesc of clairvoyant acolyte] regards you from the side of the bed, gasping softly as feminine fluids dribble down [his of clairvoyant acolyte] bare legs. You feel a fog being lifted as the tentacles slowly retract, allowing you to finally throw aside the covers.";
 		repeat with S running through orifices penetrated by F:
 			now ghostly tentacle is penetrating S;
 			now F is not penetrating S;
@@ -81,9 +77,9 @@ To say RestingDesc of (F - a guest bed):
 	let N be the song of F;
 	say "[line break]";
 	if N < 4:
-		say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if M is in the location of the player]. [BigNameDesc of M] [one of]twists her nipples[or]strokes her clit[or]fondles herself[or]paws at herself[or]fondles you through the covers[or][at random] [one of]as she whispers incomprehensible lyrics into your ear[or]as she moans her song into your ear[or]as she croons lecherously[at random][end if].";
+		say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if M is in the location of the player]. [BigNameDesc of M] [one of]twists [his of M] nipples[or]strokes [his of M] clit[or]fondles [himself of M][or]paws at [himself of M][or]fondles you through the covers[or][at random] [one of]as [he of M] whispers incomprehensible lyrics into your ear[or]as [he of M] moans [his of M] song into your ear[or]as [he of M] croons lecherously[at random][end if].";
 	otherwise if N < 7:
-		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M]'s words.[or]watching every movement of [NameDesc of M]'s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M]'s voice.[or], hanging onto [NameDesc of M]'s every word.[at random]";
+		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M][']s words.[or]watching every movement of [NameDesc of M][']s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M][']s voice.[or], hanging onto [NameDesc of M][']s every word.[at random]";
 	otherwise if N < 11 or diaper quest is 1:
 		say "[if N is 10]You continue resting, [one of]treasuring the soothing blankness in your mind.[or]whispering to yourself into a language you do not know.[or]anticipating... them.[at random][end if]";
 		now player-hypno-great is 1;
@@ -104,6 +100,4 @@ To say RestingDesc of (F - a guest bed):
 			say "You feel them [one of]clutching you[or]caressing you[or]cradling you[at random]. You are ready. They are ready.";
 		if a random number between 1 and 3 is 1, RandomAddictUp 1.
 
-
 Guest Bed ends here.
-

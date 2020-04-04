@@ -57,7 +57,7 @@ To decide which number is the base semen load of (M - demon lord):
 To set up (M - demon lord):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 12 + (the charge of demon codpiece * 2);
+	now the raw difficulty of M is 12 + (the charge of demon codpiece * 2);
 	now the health of M is the maxhealth of M.
 
 To unseal xavier from (M - a monster):
@@ -137,7 +137,6 @@ To compute DQ perception of (M - demon lord):
 	otherwise:
 		say "[first custom style]'YOU! GET ON YOUR KNEES AND PRESENT YOURSELF BEFORE YOUR [one of]NEW [or][stopping]MASTER.'[roman type][line break]".
 
-
 Part 2 - Stomp
 
 To compute (M - demon lord) stomping (N - a monster):
@@ -149,8 +148,7 @@ To compute (M - demon lord) stomping (N - a monster):
 		now L is in the location of M;
 		now the leftover-type of L is the leftover-type of N;
 	otherwise:
-		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]! Report this bug!".
-
+		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with [NameDesc of N]! Report this bug!".
 
 Part 3 - Combat
 
@@ -239,7 +237,7 @@ To compute fuckhole sex of (M - demon lord):
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
-		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
 	if the reaction of the player > 0:
 		compute sexSubmit of M in F;
 		if the reaction of the player is 2:
@@ -299,10 +297,10 @@ To compute condom failure of (M - demon lord) in (F - a fuckhole):
 	PussyFill the semen load of M / 2.
 
 To say CondomPieFlav of (M - demon lord) in (F - a fuckhole):
-	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of]his orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or]he starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
+	say "[BigNameDesc of M] [one of]roars with pleasure, stretching the condom like a water balloon with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that the condom immediately begins stretching like a water balloon[or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation causes it to stretch[at random]. The latex inches up [his of M] length as it struggles to contain [his of M] huge load, allowing you to feel every throb of [his of M] [DickDesc of M] that much more intimately than the last as the condom comes closer and closer to coming off completely. By some stroke of [if the semen addiction of the player > 6]bad [end if]luck, [one of][his of M] orgasm dies down just as the condom is about to overflow, and [he of M] begins to pull out[or][he of M] starts to pull out just as it's about to overflow[or]it doesn't overflow, and [his of M] [semen] stays safely behind a layer of latex as [he of M] pulls out[at random]. [big he of M] seems to lose interest.".
 
 To say CondomFailFlav of (M - demon lord) in (O - a fuckhole):
-	say "[BigNameDesc of M] [one of]roars with pleasure, pushing the condom further and further off [his of M] [DickDesc of M] with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that condom is slowly dragged further and further off [his of M] [DickDesc of M][or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation pushes it further and further off [his of M] [DickDesc of M][at random]. You feel every throb that much more intimately than the last, [one of]knowing it's far too late to escape[or]held too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as [one of]your unprotected [variable O] floods with [his of M] [semen], which leaks[or]his load explodes into your [variable O], flooding it with fresh [semen], which leaks[or]his [semen] coats the inside of your [variable O], leaking[at random] out slowly as [he of M] pulls out.".
+	say "[BigNameDesc of M] [one of]roars with pleasure, pushing the condom further and further off [his of M] [DickDesc of M] with the sheer force of [his of M] ejaculation[or]groans in pleasure, ejaculating with such force that condom is slowly dragged further and further off [his of M] [DickDesc of M][or]balloons the condom with [his of M] load, roaring with pleasure as the insane force of [his of M] ejaculation pushes it further and further off [his of M] [DickDesc of M][at random]. You feel every throb that much more intimately than the last, [one of]knowing it's far too late to escape[or]held too tightly to escape[or]completely pinned under [his of M] weight[at random] as a final, powerful spurt forces the condom off completely! [big he of M] laughs powerfully as [one of]your unprotected [variable O] floods with [his of M] [semen], which leaks[or][his of M] load explodes into your [variable O], flooding it with fresh [semen], which leaks[or][his of M] [semen] coats the inside of your [variable O], leaking[at random] out slowly as [he of M] pulls out.".
 
 To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	let W be a random number between the weight of the player and 0;
@@ -313,7 +311,7 @@ To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	decide no.
 
 To say CreampieFlav of (M - demon lord) in (O - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is immense, and it's only thanks to [his of M] iron-tight grip that you don't go flying across the room.[or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off slightly as [his of M] orgasm continues, but [his of M] iron-tight grip forces you to thoroughly endure the entire thing.[or][BigNameDesc of M]'s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. Just as you think you're about to go flying across the room, [he of M] tightens [his of M] grip, keeping you firmly in place as [he of M] fills you with [his of M] titanic load.[at random] Your belly bulges obscenely as the torrent finally weakens, and [he of M] slowly pulls out.".
+	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is immense, and it's only thanks to [his of M] iron-tight grip that you don't go flying across the room.[or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off slightly as [his of M] orgasm continues, but [his of M] iron-tight grip forces you to thoroughly endure the entire thing.[or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. Just as you think you're about to go flying across the room, [he of M] tightens [his of M] grip, keeping you firmly in place as [he of M] fills you with [his of M] titanic load.[at random] Your belly bulges obscenely as the torrent finally weakens, and [he of M] slowly pulls out.".
 
 To compute (M - demon lord) messily pulling out of (F - a fuckhole):
 	get messy pull out image of M in F;
@@ -333,10 +331,10 @@ To compute (M - demon lord) cleanly pulling out of (F - a fuckhole):
 	SemenPuddleUp X * 2.
 
 To say PullOutFlav of (M - demon lord) in (O - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M]'s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] gushing out of your gaping hole as [NameDesc of M] gets to [his of M] feet.".
+	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] gushing out of your gaping hole as [NameDesc of M] gets to [his of M] feet.".
 
 To say MessyPullOutFlav of (M - demon lord) in (O - a fuckhole):
-	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M]'s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] cascading down your legs as [NameDesc of M] gets to [his of M] feet.".
+	say "[one of][BigNameDesc of M] roars with pleasure as [his of M] [DickDesc of M] spasms powerfully, literally flooding your [variable O] with a huge explosion of [semen]! The force of it is so immense that it literally forces you up and off [his of M] shaft, sending you flying across the room![or][BigNameDesc of M] ejaculates with incredible force, instantly filling your [variable O] with [semen]. You feel yourself lifting off as [his of M] orgasm continues, and with one last powerful spurt you go flying across the room![or][BigNameDesc of M][']s [DickDesc of M] spasms as it fills your [variable O] with just one spurt of [semen], ejaculating with such force that you can literally feel yourself lifting off. All it takes is one last powerful spurt to send you flying across the room![at random] You smack into the opposite wall, [semen] cascading down your legs as [NameDesc of M] gets to [his of M] feet.".
 
 To say StrikingSuccessFlav of (M - demon lord) on (B - a body part):
 	say "[BigNameDesc of M] strikes you [TargetName of B] with a large claw! Ouch!!";
@@ -419,7 +417,6 @@ To compute diaper mess reaction of (M - demon lord):
 		say "[BigNameDesc of M] looks at you with pure disgust in [his of M] eyes.[line break][speech style of M]'I DID NOT THINK THAT EVEN HUMANS WOULD DEBASE THEMSELVES TO SUCH DISGUSTING LEVELS[if M is uninterested]. GET OUT OF MY SIGHT[end if].'[roman type][line break]";
 	humiliate 200.
 
-
 Section 3 - Nightmares
 
 xavier-nightmare is a kind of diaper punishment. The priority of a xavier-nightmare is 5.
@@ -469,9 +466,6 @@ To compute punishment of (P - xavier-nightmare-diaper):
 	say "[speech style of M]'YOU ARE FORTUNATE I AM RECOVERING MY STRENGTH AND CAN ONLY KEEP YOU THERE FOR A SHORT WHILE AT A TIME... IN THE FUTURE IT WILL BE LONGER! HA HA HA! UNTIL NEXT TIME, CHILD.'[roman type][line break]";
 	satisfy M.
 
-
-
-
 xavier-nightmare-gag is a xavier-nightmare.
 
 Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord.
@@ -479,7 +473,6 @@ Definition: xavier-nightmare-gag is appropriate if current-monster is demon lord
 The priority of xavier-nightmare-gag is 5.
 
 xavier-throat-link is a number that varies.
-
 
 To compute punishment of (P - xavier-nightmare-gag):
 	now the priority of P is 0; [can only happen once]
@@ -516,7 +509,6 @@ To compute punishment of (P - xavier-nightmare-gag):
 	satisfy M;
 	say "[variable custom style]Did that all just happen in my head? It doesn't feel like three days have past... but who knows in this place! One thing's for sure, I'm still in this giant soaked diaper. And my throat still feels... weird...[roman type][line break]".
 
-
 xavier-nightmare-belt is a xavier-nightmare.
 
 Definition: xavier-nightmare-belt is appropriate if current-monster is demon lord.
@@ -524,7 +516,6 @@ Definition: xavier-nightmare-belt is appropriate if current-monster is demon lor
 The priority of xavier-nightmare-belt is 5.
 
 xavier-belt-link is a number that varies.
-
 
 To compute punishment of (P - xavier-nightmare-belt):
 	now the priority of P is 0; [can only happen once]
@@ -570,8 +561,6 @@ To compute punishment of (P - xavier-nightmare-belt):
 		try urinating;
 	if M is interested, satisfy M.
 
-
-
 Section 4 - Damage
 
 Definition: demon lord (called M) is damageable:
@@ -584,9 +573,7 @@ Definition: demon lord (called M) is damageable:
 	decide no.
 
 To decide which number is the damage modifier of (M - demon lord):
-	[Xavier can only be harmed by the above means.]
-	if M is not damageable, decide on (attack-damage * -1);
-	otherwise decide on attack-damage + the number of worn demonic wearthings.
+	decide on the number of worn demonic wearthings.
 
 To say damage-flavour of (N - a number) on (M - demon lord):
 	if N is 0 and M is not damageable:
@@ -606,25 +593,23 @@ To say damage-flavour of (N - a number) on (M - demon lord):
 	otherwise:
 		say "POW! Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!".
 
-To compute damage of (M - demon lord):
-	if the health of M > 0:
-		if M is uninterested:
-			say "[BigNameDesc of M] turns to face you with a terrifying roar!";
-			now M is interested;
-			anger M;
-		otherwise:
-			if the health of M >= the maxhealth of M:
-				say "[BigNameDesc of M] laughs at you mockingly!";
-			otherwise if the health of M > the maxhealth of M / 2:
-				say "[BigNameDesc of M] growls angrily[one of]! [line break][first custom style]'ARGH! HOW CAN YOU HARM ME?!'[roman type][line break][or]![stopping]";
-			otherwise:
-				say "[BigNameDesc of M] recoils in pain[one of]! [line break][first custom style]'I WILL NOT BE DEFEATED!'[roman type][line break][or]![stopping]";
+To compute damage reaction of (M - demon lord):
+	if M is uninterested:
+		say "[BigNameDesc of M] turns to face you with a terrifying roar!";
 	otherwise:
-		compute death of M.
+		if the health of M >= the maxhealth of M:
+			say "[BigNameDesc of M] laughs at you mockingly!";
+		otherwise if the health of M > the maxhealth of M / 2:
+			say "[BigNameDesc of M] growls angrily[one of]![line break][first custom style]'ARGH! HOW CAN YOU HARM ME?!'[roman type][line break][or]![stopping]";
+		otherwise:
+			say "[BigNameDesc of M] recoils in pain[one of]![line break][first custom style]'I WILL NOT BE DEFEATED!'[roman type][line break][or]![stopping]".
 
-To compute unique death of (M - demon lord):
-	say "[first custom style]'NOOOO! HOW CAN THIS BE?'[roman type][line break]A tiny red gem appears below [NameDesc of M][']s feet, and [his of M] body is slowly but surely sucked into the stone, until nothing remains. You have won!";
-	loot M;
+Definition: demon lord is automatically banishable: decide yes.
+
+To say BanishFleeFlav of (M - demon lord):
+	say "[first custom style]'NOOOO! HOW CAN THIS BE?'[roman type][line break]A tiny red gem appears below [NameDesc of M][']s feet, and [his of M] body is slowly but surely sucked into the stone, until nothing remains. You have won!".
+
+To compute unique banishment of (M - demon lord):
 	if gladiatorcurse is 1, uncurse gladiators;
 	let X be a random off-stage plentiful bracelet;
 	unless X is nothing:
@@ -638,7 +623,6 @@ To compute unique death of (M - demon lord):
 	if G is infernal gem, now G is in the location of the player;
 	compute autotaking G;
 	now M is bossdefeated.
-
 
 Part 4 - Conversation
 
@@ -694,10 +678,10 @@ To compute annoyed punishment of (M - demon lord):
 	let B be a random off-stage huge ballgag;
 	if B is not actually summonable or B is not fetish appropriate, now B is a random off-stage fetish appropriate gag;
 	if B is actually summonable:
-		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M]'s finger, wracking your body with pain as a [printed name of B] forces your jaws apart.";
+		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M][']s finger, wracking your body with pain as a [printed name of B] forces your jaws apart.";
 		summon B locked;
 	otherwise:
-		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M]'s finger, wracking your body with horrible pain.";
+		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M][']s finger, wracking your body with horrible pain.";
 	PainUp 3;
 	now the questioned of M is the mild-annoyance threshold of M.
 
@@ -765,7 +749,4 @@ To decide which number is the bartering value of (T - a thing) for (M - demon lo
 To say MonsterOfferRejectFlav of (M - demon lord) to (T - a thing):
 	say "[first custom style]'I CARE NOT FOR YOUR MORTAL TRINKETS!'[roman type][line break]".
 
-
-
 Demon Lord Xavier ends here.
-

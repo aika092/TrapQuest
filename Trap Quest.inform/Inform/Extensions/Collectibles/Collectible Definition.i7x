@@ -1,6 +1,5 @@
 Collectible Definition by Collectibles begins here.
 
-
 A collectible is a kind of thing.
 A monster-drop is a kind of collectible.
 [Items that do nothing on their own, but can be used in recipes or given to NPCs or so on.]
@@ -23,6 +22,4 @@ Definition: a mass collectible is fetish appropriate: decide yes.
 
 Definition: a mass collectible is ingredient: decide no.
 
-
 Collectible Definition ends here.
-

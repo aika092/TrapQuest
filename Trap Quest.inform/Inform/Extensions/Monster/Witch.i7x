@@ -24,12 +24,12 @@ To say MonsterDesc of (M - witch):
 		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
-	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet she loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
+	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
 
 To set up (M - witch):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 9;
+	now the raw difficulty of M is 9;
 	[now the sex-length of M is 2;]
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
@@ -56,9 +56,7 @@ To say DiaperReaction of (M - witch):
 	say "[BigNameDesc of M] smirks and looks directly at your dampening crotch.[line break][speech style of M]'[one of]Ooh, I hope that you're going to give that to me later.'[or]You're such an exhibitionist! You love doing this in front of me, don't you?'[stopping][roman type][line break]";
 	if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.".
 
-
 Part 2 - Perception
-
 
 [
 Latex Transformation Helping Witch:
@@ -215,7 +213,7 @@ The witch is satisfied once the player is boned rule is listed last in the witch
 This is the witch monster fucked taunting rule:
 	let M be current-monster;
 	if the player is not vine-cursed:
-		say "[BigNameDesc of M] places one hand on your forehead, chanting under [his of M] breath as [he of M] pours magical energy into your body. The vines around you freeze as [his of M] other hand slams into the ground, which rumbles ominously as the energy drains from your body and into the soil. For an instant, you can feel every vine in the forest, all extensions of a single being deep inside the earth, which you somehow know feels just as connected with you. [BigNameDesc of M] spits in your face. [line break][speech style of M]'Shouldn[']t have messed with me, bitch. He[']s never going to leave you alone now.'[roman type][line break]";
+		say "[BigNameDesc of M] places one hand on your forehead, chanting under [his of M] breath as [he of M] pours magical energy into your body. The vines around you freeze as [his of M] other hand slams into the ground, which rumbles ominously as the energy drains from your body and into the soil. For an instant, you can feel every vine in the forest, all extensions of a single being deep inside the earth, which you somehow know feels just as connected with you. [BigNameDesc of M] spits in your face. [line break][speech style of M]'Shouldn[']t have messed with me, bitch. [big he of vine boss][']s never going to leave you alone now.'[roman type][line break]";
 		now the player is vine-cursed;
 	otherwise:
 		say "[one of][BigNameDesc of M] smirks, leaning forward to spit on your face before turning away. Looks like [he of M]'s finished with you.[or][BigNameDesc of M] leans forward, spitting in your face. [line break][speech style of M]'I'm finished with you.'[or][BigNameDesc of M] spits at your feet, transferring [his of M] interest to a nearby tree. Looks like [he of M]'s finished with you.[or][BigNameDesc of M] seems happy, and begins adjusting [his of M] skirt. [line break][speech style of M]'I'm finished with you.'[or][BigNameDesc of M] spits in your face. [speech style of M]'I'm finished with you.'[or][BigNameDesc of M] smirks. [line break][speech style of M]'I'm done with you.'[or][BigNameDesc of M] adjusts [his of M] gloves, looking up briefly. [line break][speech style of M]'I[']m done with you.'[or][BigNameDesc of M] kicks a clod of dirt into your face. [line break][speech style of M]'I'm done with you.'[or][BigNameDesc of M] adjusts [his of M] belt, looking up briefly. [line break][speech style of M]'I'm done with you.'[or][BigNameDesc of M] wipes a bit of dirt off [his of M] chest. Looks like [he of M]'s finished with you.[or][BigNameDesc of M] cackles triumphantly, kicking a clod of dirt in your face. [line break][speech style of M]'Enjoy yourself, Bitch! I'm done with you.'[or][BigNameDesc of M] looks down at you scornfully, throwing back [his of M] head as [he of M] emits a haughty laugh. [line break][speech style of M]'Enjoy yourself, Bitch! I'm done with you.'[or][BigNameDesc of M] launches a wad of hot spit into your face. [big he of M] laughs triumphantly at the audible splat. [line break][speech style of M]'Enjoy yourself, Bitch! I'm done with you.'[or][BigNameDesc of M] leans forward, obnoxiously laughing in your face. [line break][speech style of M]'Enjoy yourself, Bitch! I'm done with you.'[in random order][roman type][line break]";
@@ -246,7 +244,7 @@ This is the witch summons cursed clothing rule:
 			compute summoned quest of C;
 		otherwise if G is actually summonable:[TODO: update for opengags]
 			if G is opengag:
-				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. [big he of M] smirks as a [printed name of G] materializes in your mouth.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. A rigid [printed name of G] attaches itself to your face as [he of M] finishes [his of M] spell.[at random][line break][variable custom style]'UUOAAH!?!'[roman type][line break]";
+				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. [big he of M] smirks as a [printed name of G] materialises in your mouth.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. A rigid [printed name of G] attaches itself to your face as [he of M] finishes [his of M] spell.[at random][line break][variable custom style]'UUOAAH!?!'[roman type][line break]";
 			otherwise:
 				say "[one of][BigNameDesc of M] holds up a fist, your mouth opening against your will as [he of M] uncurls [his of M] fingers. Clasping [his of M] hands together, [he of M] attaches a [printed name of G] to your face.[or][BigNameDesc of M] holds up a fist, magically forcing your jaws apart as [he of M] uncurls [his of M] fingers. [big he of M] clasps [his of M] hands together, your teeth suddenly digging into hard plastic. A [printed name of G] has been attached to your face![or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your tongue is forced to the bottom of your mouth as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your teeth dig into hard plastic as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] holds up a fist and slowly uncurls [his of M] fingers, forcing your jaws apart. Your mouth stays open as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces open your jaws and clasps [his of M] hands together. You claw at your mouth in vain as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces open your jaws and clasps [his of M] hands together. Your eyes widen in shock as a [printed name of G] attaches itself to your face.[or][BigNameDesc of M] magically forces your jaws apart. [big he of M] clasps [his of M] hands together as a [printed name of G] attaches itself to your face. [line break][variable custom style]'MMMMPH!'[roman type][in random order]";
 			summon G locked;
@@ -286,7 +284,7 @@ To say MonsterFailedTripFlav of (M - witch):
 	say "[one of]It swings over to chop your legs out from under you, but you jump on top of it instead, causing it to disintegrate.[or]It tries to grab your ankles, but you kick it away, destroying it instantly.[or]It grabs you by the ankle but you crush its fingers with your other foot.[or]It grabs your wrist, but you yank it clean off the ground, causing it to disintegrate.[or]It tries to grab your waist, but you dodge out of the way. It disintegrates.[or]It reaches up to grab your legs, but you kick it powerfully before it gets close, destroying it instantly.[in random order]".
 
 To say SelectionFrustrated of (M - witch):
-	say "[one of][BigNameDesc of M] crosses [his of M] arms, laughing proudly at [his of M] handiwork.[or][BigNameDesc of M] throws [his of M] head back and laughs derisively.[or][BigNameDesc of M]'s breasts jiggle as [he of M] throws [his of M] head back and cackles derisively.[or][if there is a worn pair of anklecuffs][BigNameDesc of M] points at your [random worn pair of anklecuffs], cackling madly.[otherwise][BigNameDesc of M] holds [his of M] middle finger in your direction, laughing scornfully.[end if][or][BigNameDesc of M] points at you with a grin, laughing scornfully.[or][BigNameDesc of M] cackles madly, seemingly pleased by your awkward situation.[or][BigNameDesc of M] cackles with glee, pleased by your awkward situation.[or][BigNameDesc of M] squats, holding [his of M] stomach and cackling madly. [big he of M]'s clearly pleased by your situation.[or][BigNameDesc of M] laughs derisively, holding [his of M] middle finger in your direction.[in random order]";[The witch is only bored once you're getting fucked.]
+	say "[one of][BigNameDesc of M] crosses [his of M] arms, laughing proudly at [his of M] handiwork.[or][BigNameDesc of M] throws [his of M] head back and laughs derisively.[or][BigNameDesc of M][']s breasts jiggle as [he of M] throws [his of M] head back and cackles derisively.[or][if there is a worn pair of anklecuffs][BigNameDesc of M] points at your [random worn pair of anklecuffs], cackling madly.[otherwise][BigNameDesc of M] holds [his of M] middle finger in your direction, laughing scornfully.[end if][or][BigNameDesc of M] points at you with a grin, laughing scornfully.[or][BigNameDesc of M] cackles madly, seemingly pleased by your awkward situation.[or][BigNameDesc of M] cackles with glee, pleased by your awkward situation.[or][BigNameDesc of M] squats, holding [his of M] stomach and cackling madly. [big he of M]'s clearly pleased by your situation.[or][BigNameDesc of M] laughs derisively, holding [his of M] middle finger in your direction.[in random order]";[The witch is only bored once you're getting fucked.]
 
 This is the witch summons vines rule:
 	let M be witch;
@@ -324,51 +322,68 @@ To compute the default taunting of (M - witch):
 To say PresentFriendlyRejectionFlav of (M - witch):
 	say "[speech style of M]'[one of]I have better things to do than waste my time playing with whores. And FYI, I stand around doing nothing all day.'[or]I[']m bored, but I[']m not THAT bored. Wow.'[or]I should sic some vines on you for even asking me that. Holy shit, what a whore.'[at random][roman type][line break]";
 
-
 Section 2 - Damage
 
-To compute damage of (M - witch):
-	if the health of M > 0:
-		if M is unconcerned:
-			now M is unleashed;
-			anger M;
-			now M is interested;
-			say "The [noun] shrieks with rage, and turns aggressive!";
-		otherwise:
-			anger M;
-			now M is interested;
-			say DamageReaction (the health of M) of M;
+To compute damage reaction of (M - witch):
+	if M is unconcerned:
+		now M is unleashed;
+		say "[BigNameDesc of M] shrieks with rage, and turns aggressive!";
 	otherwise:
-		if the health of M <= 0:
-			compute death of M.
+		say DamageReaction (the health of M) of M.
 
 To say DamageReactHealthy of (M - witch):
-	say "[one of]The [noun] screams with rage, taking the hit![or]The [noun] chants threateningly at the top of [his of M] lungs![stopping]".
+	say "[BigNameDesc of M] [one of]screams with rage, taking the hit![or]chants threateningly at the top of [his of M] lungs![stopping]".
 
 To say DamageReactDamaged of (M - witch):
-	say "The [noun] takes the hit, wincing as [he of M] [one of]chants[or]continues chanting[stopping] under [his of M] breath!".
+	say "[BigNameDesc of M] takes the hit, wincing as [he of M] [one of]chants[or]continues chanting[stopping] under [his of M] breath!".
 
 To say DamageReactTired of (M - witch):
-	say "The [noun] takes the hit, staggering as [he of M] repeats a slurred chant between breaths.".
+	say "[BigNameDesc of M] takes the hit, staggering as [he of M] repeats a slurred chant between breaths.".
 
 To say DamageReactWeak of (M - witch):
-	say "The [noun] takes the hit, screaming in pain!".
+	say "[BigNameDesc of M] takes the hit, screaming in pain!".
 
 To say DamageReactSubmissive of (M - witch):
-	say "The [noun] staggers as [he of M] takes the hit, seeming to take extra care not to turn [his of M] back towards you.".
+	say "[BigNameDesc of M] staggers as [he of M] takes the hit, seeming to take extra care not to turn [his of M] back towards you.".
 
-To compute unique death of (M - witch):
-	say "[BigNameDesc of M] disappears, leaving just a tattered robe and several gems. Shortly after, the robe vanishes.";
-	if gladiatorcurse is 0, uncurse gladiators;
-	loot M;
-	loot M;
-	loot M;
+
+To compute (M - witch) slinking away:
+	say "Touching the altar with both hands, [he of M] is able to [if the health of M >= the maxhealth of M]soothe [his of M] anger[otherwise]quickly return to full health[end if]. [big he of M] looks a lot more calm.";
+	calm M;
+	now M is unconcerned;
+	now the health of M is the maxhealth of M.
+
+Definition: witch is uniquely-fuckable if gladiatorcurse is 0.
+To say UniqueFuckDesc of (M - witch):
+	say "Demand [he of M] undoes the curse [he of M] laid upon the gladiators.".
+To compute unique domination of (M - witch):
+	say "[BigNameDesc of M] frowns but concedes.[line break][speech style of M]'Fine. I guess they've suffered enough.'[roman type][line break][big he of M] waves [his of M] hands.[line break][speech style of M]'It is done.'[roman type][line break]";
+	uncurse gladiators;
+	compute M slinking away.
+
+To say BanishDesc of (M - witch):
+	say "Demand free use of the altar!".
+
+To compute forced banishment of (M - witch):
+	if the player is able to speak, say "[variable custom style]'I get to use your altar for free from now on. Understand?!'[roman type][line break]";
+	otherwise say "You do your best to signal that you want to be able to use the altar for free.";
+	say "[BigNameDesc of M] frowns but concedes.[line break][speech style of M]'Fine, have it your way. But piss me off again and I'll rain hell down on your delicate little asshole.'[roman type][line break]";
+	now the altar-uses of M is 999999;
+	compute M slinking away.
+
+To compute tax return of (M - witch):
 	let P be a random off-stage pure totem;
 	if P is a thing:
-		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of P]!";
+		say "[BigNameDesc of M] conjures a [printed name of P]![line break][speech style of M]'A fair demand deserves a fair gift. If you wield this, your mind will be protected, for now.'[roman type][line break]";
 		now P is in the location of the player;
 		compute autotaking P;
-	destroy M.
+	otherwise:
+		compute default tax return of M.
+To say TaxReturnDismay of (M - witch):
+	say "[speech style of M]'There are few who could overpower me so impressively. I guess I should be thankful that you decided to claim this as your prize and not something more... intimate.'[roman type][line break]".
+
+To say PityOfferResponse of (M - witch):
+	say "[speech style of M]'Fine. I guess we can put this down to an innocent misunderstanding. Let's try and avoid this happening again, shall we?'[roman type][line break]".
 
 Part 5 - Dominant Sex
 
@@ -595,7 +610,6 @@ To compute teaching of (M - witch):
 To say AdviceAnswer of (M - witch):
 	say "[speech style of M]'[if the pregnancy of the player > 0]Keep your legs closed, [one of]skank[or]whore[at random].[otherwise][one of]Fairies are fucking annoying, but tag is one of their favourite games. They're not bothered if you win.'[or]Demonesses are lot of a things. Sadistic. Nosey. Arrogant. Fucking bitches... But they're actually pretty limited as a guest in the mortal world. If one uses up a large chunk of [his of a random demoness] power, you can just run away.'[or]Personally, I think the vines liven up this place, but if you're tired of them, keep this in mind. They aren't connected to any aboveground plant.'[or]As an altar witch, I'm not allowed to wear underwear, but you are. A good pair of panties can help you out in more ways than one.'[or]If a vampire is ever giving you trouble, just stuff a stake up their ass.'[at random][end if][roman type][line break]".
 
-
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - witch):
@@ -607,13 +621,9 @@ To compute friendly drink of (M - witch):
 To compute unfriendly drink of (M - witch):
 	compute annoyance of M.
 
-
 Part 7 - Trading
 
 To decide which number is the bartering value of (T - a thing) for (M - witch):
 	decide on 0.
 
-
-
 Witch ends here.
-

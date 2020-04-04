@@ -1,7 +1,7 @@
 Semen Movements by Every Turn begins here.
 
-
 To decide which number is vagina-semen-frequency:
+	if the player is in a predicament room, decide on 9;
 	decide on 129.
 
 [!<ComputeCumMovements>+
@@ -42,24 +42,22 @@ A time based rule (this is the compute cum movements rule):
 			if the latex-transformation of the player > 3 and the pregnancy of the player is 1, now the pregnancy of the player is 2;
 			compute pregnancy;
 		if the remainder after dividing time-earnings by vagina-semen-frequency < time-seconds:
-			if the womb volume of vagina > 0:
-				if pregnancy fetish is 1:
-					if the pregnancy of the player is 0:
-						let PR be 0 - the pregnancy rate of the player;
-						if the class of the player is cheerleader, increase PR by 3;
-						if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
-						let R be a random number from PR to 5;
-						if the number of family things > 0 and slow pregnancy < 3:
-							if forcedFertility is true:
-								now R is 0;
-								now forcedFertility is false;
-							otherwise if debuginfo > 0:
-								say "[input-style]Conception avoidance check: pregnancy resistance ([PR]) ==> RNG([PR]~5) = [R] | ([womb volume of vagina].5) womb volume[roman type][line break]";
-							if R <= the womb volume of vagina:
-								say ConceptionFlav;
-								now the pregnancy of the player is 1;
-								check goddess eligibility;
-			if the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]
+			if the player is not in a predicament room and the womb volume of vagina > 0 and pregnancy fetish is 1 and the pregnancy of the player is 0:
+				let PR be 0 - the pregnancy rate of the player;
+				if the class of the player is cheerleader, increase PR by 3;
+				if there is a worn maternity dress or the class of the player is fertility goddess, decrease R by 3; [TODO probably needs better balancing]
+				let R be a random number from PR to 5;
+				if the number of family things > 0 and slow pregnancy < 3:
+					if forcedFertility is true:
+						now R is 0;
+						now forcedFertility is false;
+					otherwise if debuginfo > 0:
+						say "[input-style]Conception avoidance check: pregnancy resistance ([PR]) ==> RNG([PR]~5) = [R] | ([womb volume of vagina].5) womb volume[roman type][line break]";
+					if R <= the womb volume of vagina:
+						say ConceptionFlav;
+						now the pregnancy of the player is 1;
+						check goddess eligibility;
+			if the player is not in a predicament room and the remainder after dividing time-earnings by (vagina-semen-frequency * 2) < time-seconds and the latex-transformation of the player <= 3: [half the time we are going to cause womb absorption, the other half is pussy trickling]
 				if the pregnancy of the player is 0 and the womb volume of vagina > 0: [Womb semen isn't absorbed during a pregnancy!]
 					let S be a random number between 1 and 3;
 					if debuginfo > 0, say "[input-style]Womb absorption roll: d3 ([S + 0]) | 1)Creampie addiction + 3; 2)Intelligence + 1; 3)Hip width + 1[roman type][line break]";
@@ -106,7 +104,6 @@ To check goddess eligibility:
 					destroy O;
 				say "[bold type]A bunny tail plug materialises inside your [asshole]![roman type][line break]";
 				summon bunny tail plug cursed.
-
 
 [!<SayConceptionFlav>+
 
@@ -360,10 +357,6 @@ To execute (E - enema-incontinence):
 	increase incontinence by 1;
 	say "[if the player is not incontinent]You'll now find it even more difficult to hold things in and tell when you need the toilet[otherwise]You can somehow tell that you are now completely incontinent[end if].".
 
-
-
-
-
 [!<ComputeAbsorption>+
 
 REQUIRES COMMENTING
@@ -391,7 +384,4 @@ To compute absorption of (B - a clothing):
 					now B is identified;
 			clean B.
 
-
-
 Semen Movements ends here.
-

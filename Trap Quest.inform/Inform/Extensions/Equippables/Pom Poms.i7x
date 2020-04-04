@@ -39,7 +39,7 @@ To compute periodic effect of (C - a pom-pom):
 		if the charge of C < 1, say "Your [printed name of C] stop glowing as your excess spirit fades.".
 
 To compute attack of (W - a pom-pom) at (M - a monster):
-	say "You shake your [printed name of W] in [NameDesc of M]'s face. [big he of M] seems to find that really annoying.".
+	say "You shake your [printed name of W] in [NameDesc of M][']s face. [big he of M] seems to find that really annoying.".
 
 To compute attack effect of (E - a pom-pom):
 	if attack-type is 3:
@@ -47,4 +47,3 @@ To compute attack effect of (E - a pom-pom):
 		FatigueDown 2.
 
 Pom Poms ends here.
-

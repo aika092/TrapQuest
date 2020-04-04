@@ -13,7 +13,6 @@ another-turn-rules is a list of rules that varies. [if we have another turn, is 
 another-turn-action is a rule that varies. another-turn-action is the no-stored-action rule. [if we have another turn, is there a rule we should follow as an automatic action]
 time-turns is a number that varies. [just lets us count how many turns have passed]
 
-
 The compulsory action rules is a rulebook. [Things that MUST happen like continued urination and expulsion]
 
 [!<EveryTurn>+
@@ -55,19 +54,18 @@ To allocate (N - a number) seconds:
 			if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
 			zero focus stuff; [We've just been told that we're going to need to run the engine. Let's empty the lists of images to display and begin building it anew.]
 			render buffered stuff; [Gives the player some feedback to know that their command went through]
-	now seconds is N.
+	now seconds is N;
+	if realisticArms is 1, update arms.
 
 To force allocate (N - a number) seconds:
 	now seconds is 0; [This way we force the recalculation of the focus window]
 	allocate N seconds.
 
-
-
 To run the engine:
 	let AT be 1;
 	while AT is 1:
 		run the engine once;
-		if debugmode > 0 and debuginfo > 1, say "Engine run complete. Another-turn is set to [another-turn]. The number of entries in the another-turn-rules list is [number of entries in another-turn-rules].";
+		if debugmode > 1, say "Engine run complete. Another-turn is set to [another-turn]. The number of entries in the another-turn-rules list is [number of entries in another-turn-rules].";
 		now AT is another-turn;
 		now another-turn is 0;
 		if AT is 1 and another-turn-flavour is not "" and the number of entries in another-turn-rules is 0, say "[bold type][another-turn-flavour][roman type][line break]"; [If we have other stored-action reasons for the extra turn, no need to give the player additional reasons why there was a delayed turn.]
@@ -85,9 +83,6 @@ To run the engine:
 			otherwise: [no compulsory rules so we can do the stored automatic action]
 				follow A;
 	map-draw around the location of the player.
-
-
-
 
 To run the engine once:
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
@@ -131,7 +126,6 @@ To run the engine once:
 	update saved stats;
 	fix status bar.
 
-
 [!<ComputeExtraTurn>+
 
 REQUIRES COMMENTING
@@ -157,7 +151,6 @@ To compute cleanup:
 		if B is not worn and B is penetrating face:
 			now B is not penetrating face.
 
-
 [!<StorePreviousSizes>+
 
 REQUIRES COMMENTING
@@ -172,7 +165,6 @@ To store previous sizes:
 	now the previous largeness of belly is the largeness of belly;
 	now the previous thickness of hips is the thickness of hips;
 	now the previous total volume of hips is the total volume of hips.
-
 
 [!<timeBased:Rulebook>*
 
@@ -260,8 +252,6 @@ To compute turn:
 	allocate 0 seconds;
 	if newbie tips is 1, say other tips.
 
-
-
 To compute automatic actions:
 	if delayed stand is 1:
 		if there is a revealed hypno trap in the location of the player or there is a revealed haunted mirror trap in the location of the player or there is a revealed sprinkle trap in the location of the player or the location of the player is smoky: [The player might prefer to move first]
@@ -283,7 +273,6 @@ To compute optional actions:
 				try mopping the noun;
 		otherwise:
 			progress quest of puddle-cleaning-quest.
-
 
 [!<DecideWhichNumberIsTheBuckleThresholdOfThePlayer>+
 
@@ -353,7 +342,7 @@ REQUIRES COMMENTING
 +!]
 To compute player standing:
 	now resting is 0;
-	if the largeness of belly > 3 or the largeness of breasts > 16 or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
+	if the largeness of belly > 3 or the largeness of breasts > 16 or dungeon chains is worn or black hood is worn or (the ready-for-milking of milking-quest is 1 and the milk volume of breasts > 10)[ or there is worn heels], compute upright fatigue gain; [We only gain fatigue while standing for very big bodies or when wearing heels. Other fatigue gain comes from walking around and kicking.]
 	if diaper quest is 0 and the location of the player is Dungeon19:
 		if the soreness of asshole is 10:
 			say "The stench in this room takes you over the edge and you start to faint.";
@@ -424,12 +413,6 @@ To compute drill damage:
 		say "The dildo keeps spinning inside your [variable F], making you more and more sensitive!";
 		ruin F;
 		stimulate F from D. [extra stimulation and chance of orgasm]
-
-
-
-
-
-
 
 [!<ComputePlayerKneeling>+
 
@@ -520,17 +503,6 @@ Definition: a person (called P) is able to breathe:
 	if the rule succeeded, decide no;
 	decide yes.
 
-
-
-
-
-
-
-
-
-
-
-
 [!<ComputeInstinctiveactions>+
 
 REQUIRES COMMENTING
@@ -542,7 +514,6 @@ To Compute Instinctive Actions:
 	if another-turn is 0, Compute Compulsions;
 	if the player is in Dungeon31 and another-turn is 0, compute podium action;
 	if another-turn is 0, Compute Broken Actions.
-
 
 [!<ComputeCompulsions>+
 
@@ -596,7 +567,6 @@ To Compute Compulsions:
 			compute urinal use;
 			now another-turn is 1.
 
-
 [!<ComputeBrokenActions>+
 
 REQUIRES COMMENTING
@@ -648,10 +618,6 @@ To compute broken sex of (M - a monster):
 		say "[one of][bold type]Now that you are on your knees, you remember your role as an object to be used and[or]You[stopping] can't bring yourself to fight back.[roman type][line break]";
 		now another-turn is 1.
 
-
-
-
-
 The hypno triggers rules is a rulebook.
 
 This is the great ones hypno rule:
@@ -659,8 +625,6 @@ This is the great ones hypno rule:
 		say "Just thinking about the [great one]s makes you feel how powerless you are in comparison to them!";
 		humiliate 20.
 The great ones hypno rule is listed in the hypno triggers rules.
-
-
 
 This is the present-for-oral hypno rule:
 	if hypno-trigger is "tasty" and hypno-trigger-tasty is 1 and diaper quest is 0:
@@ -750,8 +714,6 @@ This is the autopiss hypno rule:
 				now auto is 0;
 				now another-turn is 1.
 The autopiss hypno rule is listed in the hypno triggers rules.
-
-
 
 [!<advanceCountersRules:Rulebook>*
 
@@ -912,8 +874,7 @@ This is the urine gross out resolution rule:
 	if the player is upset about urine, now previous-urine-upset is 1;
 	otherwise now previous-urine-upset is 0;
 	if P is not previous-urine-upset:
-		if P is 0, say "[bold type][one of]You can't help but be extremely grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be significantly reduced.[or]Once again your dexterity is significantly limited until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]";
-		now the arousal of the player is 0.
+		if P is 0, say "[bold type][one of]You can't help but be a bit grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be reduced.[or]Once again your dexterity is reduced until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]".
 The urine gross out resolution rule is listed in the advance counters rules.
 
 [!<previousMessUpset:Integer>*
@@ -935,10 +896,10 @@ This is the mess gross out resolution rule:
 	if P is not previous-mess-upset:
 		if P is 0 and previous-urine-upset is 0:
 			if the player is upset about sitting in mess:
-				if diaper messing is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping][if the player is not magically horny]! All arousal immediately disappears as the reality of your situation hits you[end if].[roman type][line break]";
+				if diaper messing is 3, say "[bold type]You can't believe [one of]what has just happened[or]it happened again[stopping][if the player is not magically horny and the player is a bit horny]! Your arousal quickly begins to disappear as the reality of your situation hits you[end if].[roman type][line break]";
 				otherwise say "[bold type][one of]You can't believe what has just happened! Until you get changed, your dexterity will be significantly reduced and you won't be able to knee or kick enemies.[or]Once again your dexterity is significantly limited until you can escape the gross [random worn messed knickers].[stopping][roman type][line break]";
 			otherwise:
-				say "[bold type]You are [one of][or]once again [stopping]completely grossed out[if the player is not magically horny]! All arousal immediately disappears as the smell hits your nostrils[end if].[roman type][line break]";
+				say "[bold type]You are [one of][or]once again [stopping]completely grossed out[if the player is not magically horny and the player is a bit horny]! Your arousal quickly starts to disappear as the smell hits your nostrils[end if].[roman type][line break]";
 		if the player is not magically horny, now the arousal of the player is 0.
 The mess gross out resolution rule is listed in the advance counters rules.
 
@@ -1004,10 +965,6 @@ This is the pain drain cooldown rule:
 	if drain-duration > 0, decrease drain-duration by 1.
 The pain drain cooldown rule is listed in the advance counters rules.
 
-
-
-
-
 [Any and all flags that only last for one turn should go here.]
 [Also delayed humiliation, since it's the last thing that happens in a round.]
 
@@ -1070,17 +1027,4 @@ To say other tips:
 	if the player is not immobile and the soreness of asshole > 6 or the soreness of vagina > 6, say "[one of][newbie style]Newbie tip: Your hole is quite sore. It'll slowly go down over time, but you can heal it a bit instantly with lubricant. Also, you can drink from the statue in the statue hall to heal loads instantly, but don't do this too much - every time you do, you'll have to swallow some semen, and too much will make you become addicted.[roman type][line break][or][stopping]";
 	if the player is monster fucked or there is a monster grabbing the player, say "[one of][newbie style]Newbie tip: There's no way to escape until they're done with you. You can now pretty much only choose between 'submit' and 'resist'. Submitting increases humiliation but generally helps prevent other [']bad['] stats [if diaper quest is 1]increasing and prevents angering the enemy further, meaning hopefully they'll be friendly the next time they meet you, rather than hold a grudge[otherwise](mainly soreness) increasing[end if].[roman type][line break][or][stopping]".
 
-
-
-
-
-
-
-
-
-
-
-
-
 Compute Turn ends here.
-

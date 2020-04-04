@@ -112,4 +112,3 @@ Check going:
 			say "As you try to touch the door, your armband shoots a powerful jolt of electricity down your arm![one of][line break][variable custom style]I guess I'm not allowed to go through here yet...[roman type][line break][or][stopping]" instead.
 
 Armband ends here.
-

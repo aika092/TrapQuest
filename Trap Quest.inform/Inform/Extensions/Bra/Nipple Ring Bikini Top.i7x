@@ -33,4 +33,3 @@ To say TransformReaction of (C - a nipple ring bikini top):
 		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone can check out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Nipple Ring Bikini Top ends here.
-

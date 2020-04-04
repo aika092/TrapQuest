@@ -1,6 +1,5 @@
 Gelatin by Food begins here.
 
-
 A gelatin is a kind of chef food. There is 1 gelatin. Understand "gummy" as gelatin. The printed name of a gelatin is "[TQlink of item described]gelatin[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a gelatin is usually "jt".
 
 To say ExamineDesc of (C - a gelatin):
@@ -30,7 +29,7 @@ Carry out TQeating gelatin:
 		otherwise FatigueDown 10;
 		Arouse 1000;
 	otherwise:
-		say "The fruity taste fills your body with lasting warmth. [if the silicone volume of breasts + the silicone volume of hips > 0]Your implants seem to heat up, and as a wash of arousal moves through your body, you realize they've actually gotten bigger![otherwise]Your scalp seems to heat up, and as a wave of arousal descends over your body, you realize something's happening to your hair![end if]";
+		say "The fruity taste fills your body with lasting warmth. [if the silicone volume of breasts + the silicone volume of hips > 0]Your implants seem to heat up, and as a wash of arousal moves through your body, you realise they've actually gotten bigger![otherwise]Your scalp seems to heat up, and as a wave of arousal descends over your body, you realise something's happening to your hair![end if]";
 		if the silicone volume of breasts > 0, BustImplantsUp 1;
 		if the silicone volume of hips > 0, AssImplantsUp 1;
 		if the silicone volume of hips + the silicone volume of breasts is 0:
@@ -39,7 +38,4 @@ Carry out TQeating gelatin:
 	StomachFoodUp 2;
 	allocate 6 seconds.
 
-
-
 Gelatin ends here.
-

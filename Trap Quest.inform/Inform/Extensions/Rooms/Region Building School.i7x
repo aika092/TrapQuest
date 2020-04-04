@@ -15,7 +15,7 @@ To Set Up The School:
 	if M is monster, set up M;
 	let M be a random fetish appropriate school dwelling rank1 nasty student;
 	if M is monster, set up M;
-	now the favour of M is 0;
+	[now the favour of M is 0;]
 	let M be a random fetish appropriate school dwelling rank1 ditzy student;
 	if M is monster, set up M;
 	let M be a random fetish appropriate school dwelling rank1 amicable student;
@@ -127,4 +127,3 @@ To update students:
 			destroy M.]
 
 Region Building School ends here.
-

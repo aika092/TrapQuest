@@ -1,6 +1,5 @@
 Archive of Old Epilogues by Not Used begins here.
 
-
 Volume 20 - Archive of Old Stuff
 
 [Selkie asks: #### this is good stuff! Why not make it into a separate epilogue, or a free epilogue for the non-patrons?]
@@ -99,7 +98,7 @@ Volume 20 - Archive of Old Stuff
 						say "[first custom style]Where am I? I was... playing a game... Now I'm here...[line break][roman type]";
 						say "[first custom style]'Help please!'[line break][roman type]That's all you can manage to say since a considerable amount of your brain capacity has just been fried by your passing out in the game. The girls help you out of the capsule and take you to a nearby room with a fluffy pink bed where you can lie down, but you clearly don't like the sight of it.[line break]";
 						say "[bold type][first custom style]'No no no! Pink bad! Girly bad!'[line break][roman type]";
-						say "The girls look at each other in dismay.[line break][second custom style]'This isn't good. She's had her intelligence greatly reduced by the game but she clearly is still not sexualized anywhere near enough. And she's so dumb I doubt we can use threats of legal action against her either. This is crap!'[roman type][line break]";
+						say "The girls look at each other in dismay.[line break][second custom style]'This isn't good. She's had her intelligence greatly reduced by the game but she clearly is still not sexualised anywhere near enough. And she's so dumb I doubt we can use threats of legal action against her either. This is crap!'[roman type][line break]";
 						say "The other girl speaks up with a sly grin on her face.";
 						say "[second custom style]'On the other hand, she can't really sue us either, can she? And do you remember that one thing the CEOs wanted, and they said would reward us dearly if we could find someone who could do that job but could also be guaranteed to never bring the company down with a lawsuit?'[roman type][line break]";
 						say "The first girl joins the other in sporting the most evil grin. They turn to you grab you, and lead you to a lab room. There they secure you onto an operating table, and work on you tirelessly for hours, ignoring your simple-worded protests, performing cosmetic surgery on your chest until you have the most ridiculously sized breasts[if B > 10] (of course they aren't quite as big as the massive pair you had in the game, but they still make you look like ridiculous),[otherwise], even bigger than the ones you had in the game at the moment you fell unconscious,[end if] they apply some kind of makeup to your face, they do something you can't see to your throat that makes you voice squeakier and more girly.[line break]";
@@ -130,7 +129,7 @@ Volume 20 - Archive of Old Stuff
 						say "[second custom style]'Gentlemen and gentlemen! Welcome to the Nintendolls male pornstar tryouts! As you know we plan to release full virtual reality within a few years, and when we do, we anticipate one of our biggest products will of course be porn! People are going to want to be able to experience every type of sex their minds can think up! That's where you come in - we need models to base our virtual sex worlds on. So for the next year or so, we're going to be tryout out fifty or so guys a night, and a select few will be chosen to come and work with Nintendolls in the first virtual reality sex project the world has ever known! No boys, I'm afraid it won't be us you'll be fucking, but without further ado, let me show you the model you will be working with, and the scenario you will be acting in today!'[line break][roman type]";
 						say "You hear the sound of curtains to your right being pulled apart, and then some evil chuckles from the audience.";
 						say "[first custom style]I'm on a stage?[line break][roman type]";
-						say "[second custom style]'Our kind volunteer here is called Jasmine, and she is here to help you act out an anal bondage scene! We're going to do this alphabetically, first up tonight is Mr Dickin Abbot. Please step forward! Are you ready Jasmine?'";
+						say "[second custom style]'Our kind volunteer here is called Jasmine, and she is here to help you act out an anal bondage scene! We're going to do this alphabetically, first up tonight is Mr. Dickin Abbot. Please step forward! Are you ready Jasmine?'";
 						say "[first custom style]'MMMMMMMMMMMMMMMMM!'";
 						say "[second custom style]'Haha already in character, I like it! Please do your best!'[line break][roman type]";
 						say "You feel two strong hands pull your ass cheeks apart, and then feel a stream of lube dripped onto your asshole. You whimper softly as you feel the tip of a real penis prodding the entrance to your asshole. This isn't a simulation, this is real, this is happening to you right now. The man forces his whole length into you in one thrust, causing you to scream out in shock. He starts roughly fucking your asshole while pulling your hair, then spanking your ass cheeks and inner thighs. Eventually he grabs hold of your waist and thrusts extremely hard right into the deepest parts of you, and then you feel him filling you up with his seed. It feels like there's torrents of it, and as he pulls out, you are forced to push out his cum, accompanied by very embarrassing squelching noises.";
@@ -148,7 +147,4 @@ Volume 20 - Archive of Old Stuff
 						say "[first custom style]... Fuck.[line break][roman type]";
 						say "[paragraph break]You finished the game as a [line break][second custom style]Year Long Test Subject[roman type][line break]with the following stats:[paragraph break]";]
 
-
-
 Archive of Old Epilogues ends here.
-
