@@ -78,7 +78,4 @@ To compute periodic effect of (C - portal gag):
 				otherwise:
 					say "[BigNameDesc of M] is still fucking your mouth through the portal![line break][variable custom style]'Glk glk glk glk glk...'[roman type][line break]";
 
-
-
-
 Portal Gag ends here.

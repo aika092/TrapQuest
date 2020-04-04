@@ -1,6 +1,5 @@
 Hotel Feeding Bowls by Objects begins here.
 
-
 feeding bowls is a thing. The printed name of feeding bowls is "[TQlink of item described]feeding bowls[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of feeding bowls is "fb". feeding bowls is in Hotel18.
 
 To say ExamineDesc of (C - feeding bowls):
@@ -44,4 +43,3 @@ Carry out BowlFeeding:
 			say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
 
 Hotel Feeding Bowls ends here.
-

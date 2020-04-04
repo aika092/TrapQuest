@@ -13,7 +13,6 @@ A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "ma
 	If the robomaid is in the room with a patron at any time, she services them in some way and it makes a mess
 ]
 
-
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
 milkmaid is a robomaid. The text-shortcut of milkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
@@ -49,7 +48,7 @@ The spawn initial robomaid rule is listed in the setting up hotel monsters rules
 
 To say SummoningFlav of (M - a robomaid):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a voluptuous robot materializes on the pad. [line break][second custom style]'SHOULD I CLEAN THAT UP FOR YOU?'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a voluptuous robot materialises on the pad. [line break][second custom style]'SHOULD I CLEAN THAT UP FOR YOU?'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][second custom style]'SHOULD I CLEAN THAT UP FOR YOU?'[roman type][line break]".
 
@@ -104,14 +103,14 @@ To compute perception of (M - a robomaid):
 		if M is unfriendly:
 			say "Its eyes turn red and it spins towards you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
 		otherwise:
-			say "Its eyes turn yellow as it glides up to you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labeled [']PAYMENT['].";[if you don't pay her she takes matters into her own hands]
+			say "Its eyes turn yellow as it glides up to you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labelled [']PAYMENT['].";[if you don't pay her she takes matters into her own hands]
 		FavourDown M by 3;
 	otherwise if the number of worn clothing is 0:
 		if the number of glazed body parts is 0 or M is unfriendly:
 			say "Its eyes turn red and it spins towards you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. CLOTHING ASSISTANCE PROGRAM INITIATED.'[roman type][line break]";
 			anger M;
 		otherwise:
-			say "Its eyes flash yellow and it glides up next to you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labeled [']PAYMENT['].";
+			say "Its eyes flash yellow and it glides up next to you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labelled [']PAYMENT['].";
 		FavourDown M by 3;
 	otherwise if the class of the player is vixen:
 		say "Its eyes turn red and it spins toward you. [line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
@@ -120,7 +119,7 @@ To compute perception of (M - a robomaid):
 		say "It glides towards you, striking a provocative pose as it addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
 		if the player is consenting and the player is able to speak and the refactory-period of M < 0:
 			if the player is not hotel employed:
-				say "Its eyes turn green, and it points unsubtly toward a slot between its breasts, labeled [']PAYMENT['].";
+				say "Its eyes turn green, and it points unsubtly toward a slot between its breasts, labelled [']PAYMENT['].";
 				FavourDown M;
 			otherwise:
 				say "Its eyes turn green. [line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
@@ -128,7 +127,7 @@ To compute perception of (M - a robomaid):
 		otherwise:
 			if the player is not hotel employed:
 				say "[if the player is not able to speak or the refactory-period of M >= 0]It seems to [']think['] for a moment, and i[otherwise]I[end if]ts eyes turn yellow. [line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M]'[roman type][line break]";
-				increase the difficulty of M by 1;
+				increase the raw difficulty of M by 1;
 			otherwise:
 				say "Its eyes turn yellow. [line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
 				FavourDown M;
@@ -151,7 +150,7 @@ To compute perception of (M - a milkmaid):
 		say "Its eyes turn red and it spins toward you. [line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
 	otherwise if M is friendly:
-		say "It glides toward you, pushing out its chest as it addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]BEEP BOOP, I LIKE MAN SOUP.[at random] [caps please] TIP ME.[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labeled [']PAYMENT['].";
+		say "It glides toward you, pushing out its chest as it addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM INITIATED...[one of]YOU ARE SEXY.[or]OBSERVE MY TITS, HOT STUFF.[or]BEEP BOOP, I LIKE MAN SOUP.[at random] [caps please] TIP ME.[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labelled [']PAYMENT['].";
 		FavourDown M;
 	otherwise:
 		say "Its eyes turn red and it spins toward you. [line break][first custom style]'FREELANCE WHORE DETECTED. PUBLICITY STUNT PROGRAM INITIATED.'[roman type][line break]";
@@ -173,7 +172,7 @@ This is the robomaid punishment rule:
 		compute LaundryRobots;
 		rule succeeds;
 	otherwise if the number of worn clothing is 0 and there is a alive robobellboy:[the maid drags you to the nearest robobellboy for clothing.]
-		say "[BigNameDesc of M]'s eyes turn purple as [he of M] sweeps you off the ground. [line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
+		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground. [line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let N be a random robobellboy in the location of the player;
 		unless N is monster:
 			let R be a random modern room;
@@ -190,13 +189,13 @@ This is the robomaid punishment rule:
 		bore M for 500 seconds;
 		rule succeeds;
 	otherwise:
-		say "[BigNameDesc of M]'s eyes turn purple as [he of M] sweeps you off the ground. [line break][speech style of M]'SEARCHING... SEARCHING... AUDIENCE FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
+		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground. [line break][speech style of M]'SEARCHING... SEARCHING... AUDIENCE FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let R be a random modern room;
 		while (R is not placed or R is Hotel20 or R is bossed):
 			now R is a random modern room;
 		let X be a random number between 1 and 3;
 		while X > 0:
-			let P be a random off-stage patron;
+			let P be a random off-stage generic-appropriate patron;
 			now P is in R;
 			decrease X by 1;
 		drag to R by M;
@@ -215,7 +214,7 @@ To compute publicity stunt of (M - a robomaid):
 			now D is C;
 			break;
 	if D is clothing:[flash]
-		say "You feel [NameDesc of M]'s hand grab your [printed name of D] and begin to pull it off. [line break][speech style of current-monster]'LET'S GET NAKED, [robogreeting of M].'[roman type][line break]Do you let [him of M] strip you? ";
+		say "You feel [NameDesc of M][']s hand grab your [printed name of D] and begin to pull it off. [line break][speech style of current-monster]'LET'S GET NAKED, [robogreeting of M].'[roman type][line break]Do you let [him of M] strip you? ";
 		if the player is bimbo consenting:
 			say "[if X > 1]The patrons chuckle[otherwise][BigNameDesc of P] smirks[end if] as [NameDesc of M] slips off your [printed name of D] and tosses it to the ground, revealing everything underneath it. You feel a wave of [if the player is disgraced]embarrassment[otherwise]excitement[end if] as [if X > 1]each of them blow their loads on the ground and leave the room[otherwise][NameDesc of P] blows [his of P] load on the ground and leaves[end if]. [BigNameDesc of M] sets you down gently, satisfied.";
 			now D is in the location of the player;
@@ -224,13 +223,13 @@ To compute publicity stunt of (M - a robomaid):
 			increase the employee-record of senior robobellboy by 1;
 			humiliate X * MODERATE-HUMILIATION;
 		otherwise:
-			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M]'s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of M] abruptly drops you.";
+			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M][']s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of M] abruptly drops you.";
 			PainUp 1;
 			decrease the employee-record of senior robobellboy by 1;
 	otherwise:[grope]
 		say "[BigNameDesc of M] begins to grope you, turning to put the act on full display for [if X > 1]the patrons[otherwise][NameDesc of P][end if] as [he of M] fondles your [ShortDesc of breasts].[line break][speech style of current-monster]'I AM SO HORNY.'[roman type][line break]Do you smack [his of M] hand away? ";
 		if the player is reverse bimbo consenting:
-			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M]'s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of P] abruptly drops you.";
+			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M][']s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of P] abruptly drops you.";
 			PainUp 1;
 			decrease the employee-record of senior robobellboy by 1;
 		otherwise:
@@ -242,7 +241,6 @@ To compute publicity stunt of (M - a robomaid):
 			humiliate X * (MODERATE-HUMILIATION + SLIGHT-HUMILIATION);
 	repeat with N running through patrons in the location of the player:
 		destroy N.
-
 
 The unique punishment rule of milkmaid is the milkmaid punishment rule.
 
@@ -269,13 +267,13 @@ This is the milkmaid punishment rule:
 			bore M for 500 seconds;
 			rule succeeds;
 	otherwise:
-		say "[BigNameDesc of M]'s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
+		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground.[line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let R be a random placed unbossed modern room;
 		while R is Hotel20:
 			now R is a random placed unbossed modern room;
 		let X be a random number between 1 and 3;
 		while X > 0:
-			let P be a random off-stage patron;
+			let P be a random off-stage generic-appropriate patron;
 			now P is in R;
 			decrease X by 1;
 		drag to R by M;
@@ -326,7 +324,7 @@ To compute publicity stunt of (M - a milkmaid):
 			PainUp 1;
 			humiliate R * SLIGHT-HUMILIATION;
 		otherwise:[aphrodisiac]
-			say "as [NameDesc of M]'s [LongDickDesc of M] pushes out from underneath [his of M] apron and [one of]spurts warm, pink liquid across your [ShortDesc of breasts][or]shoots several [']ropes['] of warm, pink fluid onto your [BellyDesc][or]splatters your [ShortDesc of face] with warm, pink liquid[at random].[line break][speech style of M]'OOH. SO HOT. SO HOT.'[roman type][line break]You can feel the fluid absorbing into your skin as [NameDesc of M] rolls off of you. You feel incredibly turned on!";
+			say "as [NameDesc of M][']s [LongDickDesc of M] pushes out from underneath [his of M] apron and [one of]spurts warm, pink liquid across your [ShortDesc of breasts][or]shoots several [']ropes['] of warm, pink fluid onto your [BellyDesc][or]splatters your [ShortDesc of face] with warm, pink liquid[at random].[line break][speech style of M]'OOH. SO HOT. SO HOT.'[roman type][line break]You can feel the fluid absorbing into your skin as [NameDesc of M] rolls off of you. You feel incredibly turned on!";
 			Arouse 1000;
 			humiliate R * SLIGHT-HUMILIATION;
 	Bore M;
@@ -335,7 +333,6 @@ To compute publicity stunt of (M - a milkmaid):
 	otherwise say "[NameDesc of P] smirks at you as [he of P] leaves the room.";
 	repeat with N running through patrons in the location of the player:
 		destroy N.
-
 
 To compute basic greeting to (M - a robomaid):
 	if M is interested:

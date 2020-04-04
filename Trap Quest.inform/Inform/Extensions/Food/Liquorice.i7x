@@ -1,6 +1,5 @@
 Liquorice by Food begins here.
 
-
 A liquorice is a kind of candy. The printed name of liquorice is "[TQlink of item described]liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of liquorice is "[TQlink of item described]pieces of liquorice[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of liquorice is "lq". There are 3 liquorice. Understand "pieces" as liquorice.
 
 To say ExamineDesc of (C - a liquorice):
@@ -51,6 +50,4 @@ To compute (M - a robochef) cooking (I - a liquorice):
 		now the fat of D is 1;
 		now D is retained by M.
 
-
 Liquorice ends here.
-

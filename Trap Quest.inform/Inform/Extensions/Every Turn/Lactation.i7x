@@ -1,6 +1,5 @@
 Lactation by Every Turn begins here.
 
-
 [!<ComputeLactationWithEarningsAndSeconds>+
 
 REQUIRES COMMENTING
@@ -75,8 +74,6 @@ To decide which object is bottom level lactation cover:
 			now N is C;
 	if N is nothing and the player is upright and gloryhole is grabbing the player, now N is gloryhole;
 	decide on N.
-
-
 
 [!<TriggerLactation>+
 
@@ -176,7 +173,4 @@ To trigger lactation:
 		if N is gloryhole, progress quest of milking-quest;
 		otherwise now the ready-for-milking of milking-quest is 1.
 
-
-
 Lactation ends here.
-

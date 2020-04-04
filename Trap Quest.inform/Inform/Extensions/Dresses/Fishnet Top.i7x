@@ -63,7 +63,4 @@ To say ClothingDesc of (C - a pink fishnet top):
 
 The soak-limit of a pink fishnet top is usually 4.
 
-
-
 Fishnet Top ends here.
-

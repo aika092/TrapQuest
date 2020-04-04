@@ -1,7 +1,5 @@
 Stomach by Every Turn begins here.
 
-
-
 [!<coldTurkey:Integer>*
 
 How long has the player starved themselves of semen?
@@ -59,7 +57,6 @@ Definition: yourself is extremely thirsty:
 	if the thirst of the player > 4 and the latex-transformation of the player < 5, decide yes;
 	decide no.
 
-
 [!<digestionTimer:Integer>*
 
 Some things can speed up digestion by increasing this variable. It counts down over time.
@@ -73,10 +70,9 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is stomach-period:
-	if the player is in a predicament room, decide on 10; [Happens nearly every turn in the predicament world]
+	if the player is in a predicament room, decide on 24; [Happens much more frequently in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
-	let T be 15;
-	if diaper focus is 0, now T is 20;
+	let T be 25;
 	if the player is not overly full, now T is T * 2;
 	let R be the number of worn respiration-enhancing wearthings;
 	if R is 0, now T is T * 2;
@@ -132,7 +128,6 @@ A time based rule (this is the compute stomach rule):
 					now last-begged is M;
 					now last-begged-time is earnings;
 					break.
-
 
 To compute hunger and thirst:
 	let T be the thirst of the player;
@@ -196,7 +191,6 @@ To compute bladder growth:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
-
 [!<playerHunger:Integer>*
 
 REQUIRES COMMENTING
@@ -236,7 +230,6 @@ To compute food:
 		if the player is hungry and hunger-flav-said is 0, say "[bold type]You are beginning to feel quite hungry[if there is a worn cursed ballgag].[roman type] Your [random worn ballgag] loosens slightly, as if it's temporarily allowing you to eat around it.[otherwise].[roman type][line break][end if]";
 	now hunger-flav-said is 1.
 
-
 [!<ThingIsDiapered>+
 
 REQUIRES COMMENTING
@@ -251,7 +244,7 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is urine averse:
 	if the player is an adult baby, decide no;
-	if diaper lover >= 1 and the diaper addiction of the player < 10 and the humiliation of the player < 40000, decide yes;
+	if diaper lover >= 1 and the diaper addiction of the player < 10 and the player is not broken, decide yes;
 	decide no.
 
 [!<ClothingIsUrineSoaked>+
@@ -360,6 +353,4 @@ Definition: yourself is nearly hungry:
 	if the stomach-food of the player is 1 and active hunger mechanics is 1, decide yes;
 	decide no.
 
-
 Stomach ends here.
-

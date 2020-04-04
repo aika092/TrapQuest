@@ -1,6 +1,5 @@
 Dressup by Every Turn begins here.
 
-
 A time based rule (this is the dressup rule):
 	if a random number between 1 and 100 < 2 + unlucky:
 		let dressup-clothing be nothing;
@@ -83,7 +82,4 @@ A time based rule (this is the dressup rule):
 			Humiliate 5;
 			if P is breasts, arouse the raw sensitivity of breasts * 5.
 
-
-
 Dressup ends here.
-

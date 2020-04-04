@@ -34,7 +34,6 @@ Definition: a wedge heels is heart themed if it is leather.
 Definition: a wedge heels is leopard themed if it is pvc.
 Definition: a wedge heels is black themed: decide yes.
 
-
 To uniquely set up (C - a wedge heels):
 	if C is pvc, now the text-shortcut of C is "pwh";
 	if C is satin, now the text-shortcut of C is "swh";
@@ -56,4 +55,3 @@ To decide which object is the potential-upgrade-target of (C - a wedge heels):
 	decide on nothing.
 
 Wedge Heels ends here.
-

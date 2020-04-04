@@ -35,6 +35,4 @@ To add treasure to (X - a pink wardrobe):
 			say "[first custom style][if latex prisoner is 1]So THAT's what I'll be able to wear after I get this awful thing off?[otherwise if there is I love my wet nappies T-shirt in X]That underwear seems okay at least. Wait, does that T-shirt say what I think it says?![otherwise][one of]Is this supposed to be my wardrobe?[or]Am I supposed to wear this slutty crap?[or]So, I either have to go naked, or I have to walk around in this crap like a tart. I'm not sure which is worse.[purely at random][end if][roman type][line break]";
 	if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your starting kit. These items will never be blessed, and are sometimes cursed but they're often better than nothing, since going around naked will upset most NPCs, and these are actually some of the least outrageous clothing items in the game. Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]".
 
-
 Pink Wardrobe ends here.
-

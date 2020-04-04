@@ -1,6 +1,5 @@
 Sprinkle Trap by Traps begins here.
 
-
 A sprinkle trap is a kind of trap. There are 10 potentially wire potentially sticky sprinkle traps. Understand "sprinkler" as sprinkle trap.
 
 This is the spawn initial dungeon sprinkle traps rule:
@@ -68,7 +67,4 @@ To compute time decay of (T - a sprinkle trap):
 		if T is nearby, say "The [T] in the [location of T] finally stops.";
 		now T is expired.
 
-
-
 Sprinkle Trap ends here.
-

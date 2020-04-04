@@ -72,8 +72,8 @@ Definition: a ghost is blocker: decide no.
 To set up (M - a ghost):
 	reset M;
 	now the monstersetup of M is 1;
-	if M is jismbodied ghost, now the difficulty of M is 8;
-	otherwise now the difficulty of M is 6;
+	if M is jismbodied ghost, now the raw difficulty of M is 8;
+	otherwise now the raw difficulty of M is 6;
 	now the health of M is the maxhealth of M;
 	if diaper quest is 1, now M is neuter;
 	now M is phased.
@@ -142,9 +142,8 @@ To compute unique final action of (M - ghostly tentacle):
 	do nothing.
 
 To say SummoningFlav of (M - a ghost):
-	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on her crotch, [otherwise]in front of her face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over her face[otherwise if futanari fetish is 0]phases through her face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
+	if M is in the location of the player, say "You hear far away laughter as the glow surrounding the mummy intensifies and simultaneously converges [if futanari fetish is 1]on [his of M] crotch, [otherwise]in front of [his of M] face, [end if] coalescing into a [MediumDesc of M] and immediately [if bukkake fetish is 1 and futanari fetish is 0]ejaculates all over [his of M] face[otherwise if futanari fetish is 0]phases through [his of M] face, causing a very audible gagging noise as it comes out the other side[otherwise]ejaculates[end if]. The mummy slowly climbs to its feet, spit and [if diaper quest is 1][urine][otherwise][semen][end if] absorbing into the frayed cloth without another trace.";
 	otherwise say "You hear distant laughter somewhere else in the mansion.".
-
 
 To compute labour to (M - a ghost):
 	compute pregnancy clothing displacement;
@@ -198,7 +197,6 @@ To compute DQ perception of (M - a ghost):
 	otherwise:
 		say "[BigNameDesc of M][']s expression seems to change from neutral to an evil sneer, and [he of M] begins to follow you around.".
 
-
 Part 2 - Combat
 
 Section 1 - Protection
@@ -211,7 +209,7 @@ To compute (M - a ghost) protecting against (X - a monster):
 Section 2 - Sex
 
 To say CondomForceFailFlav of (M - a ghost):
-	say "[one of]You reach between your legs, grasping for [NameDesc of M]'s [DickDesc of M] as you quickly take out a condom. [if M is phased]Unfortunately, your fingers simply pass through its incorporeal form[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[or]You take out a condom and reach between your legs, awkwardly trying to apply it to [NameDesc of M]'s [DickDesc of M]. [if M is phased]Unfortunately, its incorporeal form allows it to pass right through[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[at random]";
+	say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. [if M is phased]Unfortunately, your fingers simply pass through its incorporeal form[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[or]You take out a condom and reach between your legs, awkwardly trying to apply it to [NameDesc of M][']s [DickDesc of M]. [if M is phased]Unfortunately, its incorporeal form allows it to pass right through[otherwise]Unfortunately, your hand is forcefully shoved away by a wall of pressure[end if].[at random]";
 
 To decide which number is the condom resistance of (M - a ghost):
 	if M is phased, decide on 99;
@@ -263,7 +261,7 @@ To say sexSubmitPushFlav of (M - a ghost) in (O - an orifice):
 
 To say sexSubmitBiteFlav of (M - a ghost) in (O - an orifice):
 	let F be the openness of O - the girth of M;
-	say "[if the F < 0 and the relevant sex addiction of M > 11][BigNameDesc of M] is roughly fucking your [variable O] at breakneck speed. It's even better because it barely fits![otherwise if F < -2]The thickness of [NameDesc of M]'s [manly-penis] is VERY noticeable as [he of M] slams it in and out of your tight [variable O].[otherwise if F < 0][BigNameDesc of M] ruts you like an animal. Each of [his of M] thrusts reach nice and deep, as if to acclimate your tight [variable O] to the feeling of [manly-penis].[otherwise if F > 4][BigNameDesc of M] pounds your [variable O] mercilessly, but your [variable O] is so stretched it doesn't feel rough at all.[otherwise if F > 2][BigNameDesc of M] fucks you hard and fast. However, your [variable O] is loose enough that it doesn[']t actually feel rough at all.[otherwise][BigNameDesc of M]'s thrusts come quickly, greedily seeking the inner reaches of your [variable O].[end if]".
+	say "[if the F < 0 and the relevant sex addiction of M > 11][BigNameDesc of M] is roughly fucking your [variable O] at breakneck speed. It's even better because it barely fits![otherwise if F < -2]The thickness of [NameDesc of M][']s [manly-penis] is VERY noticeable as [he of M] slams it in and out of your tight [variable O].[otherwise if F < 0][BigNameDesc of M] ruts you like an animal. Each of [his of M] thrusts reach nice and deep, as if to acclimate your tight [variable O] to the feeling of [manly-penis].[otherwise if F > 4][BigNameDesc of M] pounds your [variable O] mercilessly, but your [variable O] is so stretched it doesn't feel rough at all.[otherwise if F > 2][BigNameDesc of M] fucks you hard and fast. However, your [variable O] is loose enough that it doesn[']t actually feel rough at all.[otherwise][BigNameDesc of M][']s thrusts come quickly, greedily seeking the inner reaches of your [variable O].[end if]".
 
 To say sexSubmitSqueezeFlav of (M - a ghost) in (O - an orifice):
 	let C be a random worn skirted clothing;
@@ -279,7 +277,6 @@ To say sexSubmitEmbarrassFlav of (M - a ghost) in (O - an orifice):
 To say sexSubmitSplitFlav of (M - a ghost) in (O - an orifice):
 	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
 	otherwise say "[if the relevant sex addiction of M < 8][BigNameDesc of M] fucks your [variable O] with all the callousness and vigour of an actual man![otherwise if relevant sex addiction of M < 13][BigNameDesc of M] fucks your [variable O] hard and fast! You pretend you only like it because it's not attached to any man you can see.[otherwise][BigNameDesc of M] fucks your [variable O] with all the roughness and power of an actual man! You're half disappointed you don't have one to thank for all this hard fucking.[end if]".
-
 
 The ghost vagina insertion rules is a rulebook. The blessings block ghosts rule is listed last in the ghost vagina insertion rules. The monster penetrating vagina rule is listed last in the ghost vagina insertion rules.
 
@@ -302,7 +299,6 @@ To compute (M - a ghost) entering mouth:
 	say "[one of][BigNameDesc of M] moves in closer to your face[or][BigNameDesc of M] floats closer to your face[or][BigNameDesc of M] floats up to your face[at random], throbbing visibly as[one of] a surprisingly[or][stopping] tangible cockhead [if presented-orifice is face][one of]pushes itself into your open mouth[or]slides into your open mouth[or]brushes your lips as it slides into your mouth[or]nudges your tongue as it enters your mouth[at random].[otherwise][one of]prods your pursed lips, which suddenly pop open at its chilling touch.[or]stings your lips with unnatural cold, which forces your lips to obediently fall open.[or]brushes your pursed lips, which sting with unnatural cold as they suddenly pop open.[or]phases through your lips, filling them with unnatural cold as they suddenly open.[at random][end if][if presented-orifice is face][one of]You look down as it slowly begins to thrust[or]It rests in your mouth for a moment before beginning to thrust[or]It feels even more real when it begins to thrust[at random][otherwise if the oral sex addiction of the player < 4]Your scream is abruptly cut off as it slides in and begins to thrust[otherwise if the oral sex addiction of the player < 7]You look down helplessly as it slides in and begins to thrust[otherwise]You look down happily as it slides in and begins to thrust[end if].";
 	now M is penetrating face.
 
-
 To say OralResisting of (M - a ghost):
 	say "[one of]Nothing you do comes anywhere close to forcing the invader out of your mouth.[or]You do everything you can to pull away from your floating assailant.[or]No matter how much you struggle, you can't get it away.[or]You struggle, but there's no escaping it![at random]".
 
@@ -314,7 +310,7 @@ To say OralSubmissionResponse of (M - a ghost):
 	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if][or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist.[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do.[otherwise]obediently stroking the underside with your tongue.[end if][or][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
 
 To say NearingClimaxOral of (M - a ghost):
-	say "[one of][BigNameDesc of M] seems to be speeding up![or][BigNameDesc of M] thrusts faster and faster with no regard for your reaction.[or]The space between [NameDesc of M]'s thrusts gets smaller with every passing moment![in random order] It must be close!".
+	say "[one of][BigNameDesc of M] seems to be speeding up![or][BigNameDesc of M] thrusts faster and faster with no regard for your reaction.[or]The space between [NameDesc of M][']s thrusts gets smaller with every passing moment![in random order] It must be close!".
 
 To compute (M - a ghost) attacking (C - a clothing):
 	if C is blessed and M is jismbodied ghost:
@@ -363,7 +359,6 @@ To compute (M - a ghost) removing (B - a ballgag):
 		now M is retaining B;
 		dislodge B;
 		now M is penetrating chosen-orifice of M.
-
 
 Section 3 - Continue and Finish Sex
 
@@ -451,7 +446,7 @@ To say CondomPieFlav of (M - a ghost) in (F - a fuckhole):
 	say "[one of]The room fills with a ghastly glow as [NameDesc of M] slams itself home, eagerly flooding the condom with its seed. After several [if the semen addiction of the player < 7]excruciating[otherwise if the semen addiction of the player < 15]intense[otherwise]wonderful[end if] moments of stillness, broken only by the subtle twitching between loads, [NameDesc of M] pulls out.[or][BigNameDesc of M] jizzes into the condom, continuing to thrust as it slowly fills with its unnervingly cold [semen]. You look over your shoulder, [if the semen addiction of the player < 7]shuddering[otherwise]quivering[end if][if the semen addiction of the player > 14] with excitement[end if] as it pulls out.[or][BigNameDesc of M] throbs as it pumps load after load of thick [semen] into the condom, allowing the ghastly cold to soak you through to the bone before pulling out.[or][BigNameDesc of M] continues to thrust as its ghastly cold [semen] slowly fills the condom ensuring the sensation will be thoroughly embedded into your memory for a long, long time.[at random][line break]".
 
 To say CondomPinFlav of (M - a ghost) on (C - a clothing):
-	say "A ghostly hand materializes to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and presses it to your [C].";
+	say "A ghostly hand materialises to peel the [one of]wobbling[or]semen-swollen[or]newly used[or]slimy[at random] condom off [his of M] shaft and presses it to your [C].";
 	if M is awake and M is intelligent and M is interested, say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. ";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [C]. ".
 
@@ -501,7 +496,6 @@ This is the ghost winding rule:[Ghosts should wind up if they have a full bank a
 				compute ghost fleeing of N;
 			rule succeeds.
 The ghost winding rule is listed last in the ghost priority attack rules.
-
 
 To compute tripping attack of (M - a ghost):
 	let C be a random worn displacable trousers;
@@ -568,7 +562,7 @@ To say StrikingFailureFlav of (M - a ghost) on (B - a body part):
 	say "That slap wasn't too bad.".
 
 To compute (C - a clothing) damaging (M - a ghost):[covers both spike bra and striped top]
-	say "The spikes of your [printed name of C] leave visible, pulsing gaps in [NameDesc of M]'s form for several seconds after its attack!";
+	say "The spikes of your [printed name of C] leave visible, pulsing gaps in [NameDesc of M][']s form for several seconds after its attack!";
 	decrease the health of M by 2;
 	if C is blessed, decrease the health of M by 2.
 
@@ -669,7 +663,6 @@ To say SelectionFrustrated of (M - a ghost):
 	say "[BigNameDesc of M] seems to lose interest.";
 	bore M.
 
-
 ghost-using is a diaper punishment. The priority of ghost-using is 5.
 Definition: ghost-using (called P) is appropriate:
 	if current-monster is not ghostly tentacle, decide no;
@@ -691,8 +684,6 @@ To compute punishment of (P - ghost-using):
 		if diaper messing >= 3, increase rectum by 7;
 	satisfy M.
 
-
-
 Part 3 - Damage
 
 Definition: a ghost (called M) is damageable:
@@ -706,9 +697,6 @@ Definition: a ghost (called M) is damageable:
 	if attack-type > 3, decide yes;
 	if the class of the player is cultist or the class of the player is priestess, decide yes;
 	decide no.
-
-To decide which number is the damage modifier of (M - a ghost):
-	if M is not damageable, decide on (attack-damage * -1).
 
 To say damage-flavour of (N - a number) on (M - a ghost):
 	if N is 0 and M is not damageable:
@@ -731,53 +719,57 @@ To say damage-flavour of (N - a number) on (M - a ghost):
 	otherwise:
 		say "POW! Your attack is accompanied by a loud sound and sends [NameDesc of M] flying across the room! An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!".
 
-To compute damage of (M - a ghost):
-	if the health of M > 0:
-		if M is uninterested:
-			if M is jismbodied ghost, say "[BigNameDesc of M]'s slimy core begins to expand, slowly reforming itself into a very big and very erect floating [one of]penis[or]dick[at random], big enough to club you over the head.";
-			otherwise say "The light emanating from [NameDesc of M] flickers, and seems to bend around an unseen object at its core, slowly reforming it into a very long and very erect [manly-penis] right before your eyes";
-			now M is interested;
-			anger M;
-		otherwise if the health of M is the maxhealth of M:
-			say "[one of]Green fluid beads at its tip[or]Green fluid continues dripping from its tip[stopping]. It seems like all you've succeeded at is turning it on!";
-			increase the bank of M by 10;
-			anger M;
-		otherwise if the wind-up of M > 0 and M is not jismbodied ghost:
-			if M is ghostly tentacle:
-				say "[BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack!";
-				now the wind-up of M is 0;
-				now M is phased;
-			otherwise if a random number between 1 and 2 is 1:
-				say "[BigNameDesc of M] flickers after being sent back several feet. Looks like you interrupted it!";
-				now the wind-up of M is 0;
-			otherwise:
-				say "[BigNameDesc of M] seems completely undeterred by your attack!";
+To compute damage reaction of (M - a ghost):
+	if M is uninterested:
+		if M is jismbodied ghost, say "[BigNameDesc of M][']s slimy core begins to expand, slowly reforming itself into a very big and very erect floating [one of]penis[or]dick[at random], big enough to club you over the head.";
+		otherwise say "The light emanating from [NameDesc of M] flickers, and seems to bend around an unseen object at its core, slowly reforming it into a very long and very erect [manly-penis] right before your eyes";
+		now M is interested;
+		anger M;
+	otherwise if the health of M is the maxhealth of M:
+		say "[one of]Green fluid beads at its tip[or]Green fluid continues dripping from its tip[stopping]. It seems like all you've succeeded at is turning it on!";
+		increase the bank of M by 10;
+		anger M;
+	otherwise if the wind-up of M > 0 and M is not jismbodied ghost:
+		if M is ghostly tentacle:
+			say "[BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack!";
+			now the wind-up of M is 0;
+			now M is phased;
+		otherwise if a random number between 1 and 2 is 1:
+			say "[BigNameDesc of M] flickers after being sent back several feet. Looks like you interrupted it!";
+			now the wind-up of M is 0;
 		otherwise:
-			if the health of M > the maxhealth of M / 2, say "It seems completely undeterred by your attack!";
-			otherwise say "Its glow is getting dimmer.";
+			say "[BigNameDesc of M] seems completely undeterred by your attack!";
 	otherwise:
-		compute death of M.
+		if the health of M > the maxhealth of M / 2, say "It seems completely undeterred by your attack!";
+		otherwise say "Its glow is getting dimmer.".
 
-To compute unique death of (M - a ghost):
-	now creepiness is 0; [Having defeated a ghost shouldn't cause a new one to appear immediately]
-	if diaper quest is 0:
-		let X be ghost-strapon;
-		if X is off-stage and the player is the donator and a random number between 1 and 3 is 1 and M is not disembodied ghost:
-			now X is in the location of the player;
-			say "You hear a terrible shriek as [NameDesc of M] abruptly drops to the ground, and a pair of black crotchless panties materialize on top of it.";
-			compute autotaking X;
-		otherwise:
-			let D be a random off-stage ectoplasm;
-			say "You hear a terrible shriek and [NameDesc of M] disappears behind a curtain of green flames.";
-			if D is ectoplasm and (M is disembodied ghost or a random number between 1 and 3 is 1):
-				now D is in the location of the player;
-				say "You notice a green substance congealing on the floor below where it was floating.";
-				compute autotaking D;
-			increase creepiness by the difficulty of M * 2;
-		if X is worn and the player is the donator and the strap-length of X > 2:
-			decrease the strap-length of X by 2;
-			say "Your [ShortDesc of X] seems to weaken[if the strap-length of X > the size of penis], and you feel a wave of relief as it shrinks into a [PenisFlavour of X][end if].";
-		destroy M.
+
+To say BanishFleeFlav of (M - a ghost):
+	say "You hear a terrible shriek and [NameDesc of M] disappears behind a curtain of green flames.".
+
+To say BanishFleeFlav of (M - jismbodied ghost):
+	say "You hear a terrible shriek as [NameDesc of M] abruptly drops to the ground.".
+
+To loot (M - a ghost):
+	let D be a random off-stage ectoplasm;
+	if D is ectoplasm:
+		now D is in the location of the player;
+		say "You notice a green substance congealing on the floor below where it was floating.";
+		compute autotaking D;
+	increase creepiness by the difficulty of M * 2.
+
+To loot (M - jismbodied ghost):
+	let X be ghost-strapon;
+	if X is off-stage and a random number between 1 and 3 is 1:
+		now X is in the location of the player;
+		say "A pair of black crotchless panties materialise on top of it.";
+		compute autotaking X;
+	otherwise if X is worn and the strap-length of X > 2:
+		decrease the strap-length of X by 2;
+		say "Your [ShortDesc of X] seems to weaken[if the strap-length of X > the size of penis], and you feel a wave of relief as it shrinks into a [PenisFlavour of X][end if].".
+
+To compute unique automatic banishment of (M - a ghost):
+	now creepiness is 0. [Having defeated a ghost shouldn't cause a new one to appear immediately]
 
 [To compute desperate drinking to (M - a ghost):
 	compute M entering mouth.]
@@ -797,7 +789,7 @@ Definition: ghostly tentacle is father material: decide no.
 To set up (M - ghostly tentacle):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 9;
+	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M;
 	if diaper quest is 1:
 		now M is not neuter;
@@ -873,9 +865,7 @@ Check kneeing ghostly tentacle:
 Check kicking ghostly tentacle:
 	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
 
-
 Section - DQ
-
 
 ghostly-diaper-use is a diaper punishment. The priority of ghostly-diaper-use is 5.
 Definition: ghostly-diaper-use (called P) is appropriate:
@@ -891,7 +881,6 @@ To compute punishment of (P - ghostly-diaper-use):
 	say "[variable custom style]Oh come on![roman type][line break]";
 	satisfy M.
 
-
 Definition: ghostly tentacle is willing to donate diapers if the number of worn knickers is 0.
 
 To compute diaper change of (M - ghostly tentacle):
@@ -899,9 +888,6 @@ To compute diaper change of (M - ghostly tentacle):
 	let D be a random eligible diaper;
 	summon D cursed with quest;
 	bore M.
-
-
-
 
 Section 2 - Tripping
 
@@ -947,6 +933,4 @@ To say MonsterFailedTripFlav of (M - ghostly tentacle):
 	otherwise:
 		say "You manage to get out of the way before [he of M] can grab you!".
 
-
 Ghost ends here.
-

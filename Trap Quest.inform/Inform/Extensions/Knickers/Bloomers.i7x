@@ -69,6 +69,4 @@ To set up influence of (C - crotchless bloomers):
 
 Definition: crotchless bloomers is end of transformation chain: decide yes.
 
-
 Bloomers ends here.
-

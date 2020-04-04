@@ -58,7 +58,6 @@ To say MonsterTakeFlav of (M - witch) for (T - a soul gem):
 To say OfferThanksFlav of (M - witch) for (T - a soul gem):
 	say "[speech style of M]'There. Now try not to lose it again.'[roman type]".
 
-
 To decide which number is the bartering value of (T - a soul gem) for (M - witch):
 	if M is unfriendly, decide on -10;
 	decide on 3.

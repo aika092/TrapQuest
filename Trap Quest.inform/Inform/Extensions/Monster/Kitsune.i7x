@@ -33,7 +33,7 @@ To say MonsterDesc of (M - kitsune):
 
 To set up (M - kitsune):
 	now the monstersetup of M is 1;
-	now the difficulty of M is 12;
+	now the raw difficulty of M is 12;
 	now the health of M is the maxhealth of M;
 	now the vanish timer of M is -1;
 	set up disguise of M.
@@ -94,13 +94,12 @@ To compute unique unsimulated periodic effect of (M - kitsune):
 To compute (M - a monster) stomping (N - kitsune):
 	if M is in the location of the player:
 		say "With lightning speed [NameDesc of M] moves to grab [NameDesc of N]! But suddenly, POOF! There's a big cloud of smoke as [NameDesc of N] throws a smoke bomb to the ground.";
-		now the target-disguise of M is M;
-		now the text-shortcut of M is "kt";
+		now the target-disguise of N is N;
+		now the text-shortcut of N is "kt";
 		say "As the smoke begins to clear, you see [NameDesc of N] rapidly hopping away into the distance.";
-	regionally place M;
-	set up disguise of M;
-	now the vanish timer of M is -1.
-
+	regionally place N;
+	set up disguise of N;
+	now the vanish timer of N is -1.
 
 Part 1 - Perception
 
@@ -115,7 +114,6 @@ To compute perception of (M - kitsune):
 		alwayscutshow figure of kitsune interact 2 for M;
 	otherwise:
 		distract M.
-	
 
 Part 2 - Combat
 
@@ -135,8 +133,6 @@ To compute failed damage of (M - kitsune):
 		regionally place M;
 		now the vanish timer of M is -1;
 		set up disguise of M.
-
-
 
 Part 3 - Conversation
 
@@ -164,7 +160,6 @@ To say RepeatResponse of (M - kitsune):
 	otherwise:
 		compute KitsuneReveal of M.
 
-
 Section 2 - Questioning
 
 To say WhereAnswer of (M - kitsune):
@@ -186,7 +181,6 @@ To say EscapeAnswer of (M - kitsune):
 To say AdviceAnswer of (M - kitsune):
 	say "[speech style of M]'I've got some special toys I might be willing to part with for frequent customers.'[roman type][line break]";
 	alwayscutshow figure of kitsune interact 2 for M.
-
 
 Part 4 - Trading
 
@@ -275,6 +269,4 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		compute autotaking I;
 		unless I is smoke bomb or I is skeleton key, restock I.
 
-
 Kitsune ends here.
-

@@ -111,17 +111,10 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is on tiptoes:
 	if there is a worn butterfly wings, decide yes;
-	if the weight of the player < 3 and the weight of the player > -3, decide yes;
+	if the weight of the player < 3 and the weight of the player > -5, decide yes;
 	decide no.
 
-[!<YourselfIsZeroG>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is zeroG:
-	if the weight of the player < -2 and the weight of the player > -6, decide yes;
-	decide no.
+Definition: yourself is zeroG if the class of the player is living sex doll.
 
 [!<YourselfIsFlying>+
 
@@ -144,7 +137,4 @@ Definition: yourself is too high to see:
 	if the player is flying and playerRegion is Woods, decide yes;
 	decide no.
 
-
-
 Flight ends here.
-

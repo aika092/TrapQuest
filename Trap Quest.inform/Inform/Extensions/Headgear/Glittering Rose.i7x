@@ -1,6 +1,6 @@
 Glittering Rose by Headgear begins here.
 
-glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. The text-shortcut of glittering rose is "gr". Understand "glit", "glitter" as glittering rose.
+glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. The text-shortcut of glittering rose is "glr". Understand "glit", "glitter" as glittering rose.
 
 The printed name of glittering rose is "[clothing-title-before]glittering rose[clothing-title-after]".
 
@@ -35,7 +35,6 @@ To decide which number is the dexterity-influence of (C - glittering rose):
 	if abyssal tattoo is worn, increase X by 2;
 	decrease X by the raw intelligence of the player / 5;
 	decide on X.
-
 
 Chapter - Class Outfit
 
@@ -82,7 +81,4 @@ This is the check for new pregnancy rule:
 		now the previously-pregnant of babymaking-quest is 0.
 The check for new pregnancy rule is listed in the advance counters rules.
 
-
-
 Glittering Rose ends here.
-

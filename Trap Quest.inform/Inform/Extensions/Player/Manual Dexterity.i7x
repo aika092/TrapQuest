@@ -1,6 +1,5 @@
 Manual Dexterity by Player begins here.
 
-
 [!<manualHandsAttempt:Integer>*
 
 REQUIRES COMMENTING
@@ -106,7 +105,6 @@ Definition: yourself is able to manually use manual dexterity: [play manually in
 	now manual hands attempt is 0;
 	decide no.
 
-
 [!<TheHandUseRequiredForMasturbationRule>+
 
 Prevents masturbation
@@ -118,6 +116,4 @@ This is the hand use required for masturbation rule:
 		rule fails.
 The hand use required for masturbation rule is listed last in the masturbation restriction rules.
 
-
 Manual Dexterity ends here.
-

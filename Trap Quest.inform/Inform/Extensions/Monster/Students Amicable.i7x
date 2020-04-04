@@ -3,7 +3,7 @@ Students Amicable by Monster begins here.
 An amicable student is a kind of student. Understand "friendly" as an amicable student.
 
 To say MediumDesc of (M - an amicable student):
-	say "friendly [rank-colour of item described] student [student-name of item described]".
+	say "friendly [rank-colour of M] student [student-name of M]".
 
 To decide which number is the unique vindictiveness of (M - an amicable student): [We can use this for various calculations to check which students do what]
 	decide on 0.
@@ -41,14 +41,7 @@ To compute appearance assessment of (M - an amicable student):
 	otherwise:
 		say "[line break][speech style of M]'[if the times-met of M < 2]Hello, have we met?'[otherwise][one of]Hi!'[or]Hello there!'[at random][end if][roman type][line break]";
 
-
-
-
-
-
-
 Part - Default Conversation
-
 
 To compute nonstudent perception of (M - an amicable student):
 	say "[speech style of M]'[one of]Uh oh[or]Oh no[or]Wait a second[or]Um, hold on[or]OMG[in random order], [one of]I think you left your armband at home[or]you must have left your armband in your last class[or]someone stole your armband[or]your armband is missing[at random]! I have to find a teacher!'[roman type][line break][big he of M] frantically walks away!";
@@ -76,7 +69,7 @@ To say detention chair tease of (M - an amicable student):
 
 To compute (M - an amicable student) protecting against (X - a monster):
 	if M is buddy and X is nasty student:
-		say "[speech style of M]'Leave [him of the player] alone!'[roman type][line break][BigNameDesc of M] slaps [NameDesc of X]";
+		say "[speech style of M]'Leave [him of the player] alone!'[roman type][line break]";
 		compute X receiving 2 damage from M;
 	otherwise if X is staff member:
 		unless X is nurse:
@@ -88,4 +81,3 @@ To compute (M - an amicable student) protecting against (X - a monster):
 		FavourDown M.
 
 Students Amicable ends here.
-

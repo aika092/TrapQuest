@@ -1,6 +1,5 @@
 Price by Clothing begins here.
 
-
 To decide what number is the original price of (C - a clothing):
 	decide on 0.
 
@@ -30,6 +29,4 @@ To decide what number is the price of (C - a clothing):
 		if X < 1, now X is 1;
 	decide on X.
 
-
 Price ends here.
-

@@ -1,6 +1,5 @@
 Fudge by Food begins here.
 
-
 A fudge is a kind of candy. The printed name of fudge is "[TQlink of item described]fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of fudge is "[TQlink of item described]pieces of fudge[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fudge is "fud". There is 1 fudge.
 
 To say ExamineDesc of (C - a fudge):
@@ -41,6 +40,4 @@ To compute (M - a robochef) cooking (I - a fudge):
 		now the fat of D is 2;
 		now D is retained by M.
 
-
 Fudge ends here.
-

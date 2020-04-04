@@ -27,4 +27,3 @@ Definition: a sandals is transformation-protected: decide yes.
 Definition: a sandals is brown themed: decide yes.
 
 Sandals ends here.
-

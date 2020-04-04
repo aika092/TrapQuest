@@ -65,6 +65,4 @@ This is the fake nails prevent hand use rule:
 		rule fails.
 The fake nails prevent hand use rule is listed in the manual dexterity restriction rules.
 
-
 Fake Nails ends here.
-

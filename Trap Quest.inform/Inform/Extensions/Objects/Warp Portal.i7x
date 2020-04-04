@@ -122,12 +122,12 @@ To teleport via (W - a warp portal):
 					if Woods01 is unplaced:
 						Set Up The Woods;
 						follow the setting up woods monsters rules;
-						repeat with M running through alive nonsetup monsters:
+						repeat with M running through alive nonexistant monsters:
 							set up M;
 					if Hotel01 is unplaced:
 						Set Up The Hotel;
 						follow the setting up hotel monsters rules;
-						repeat with M running through alive nonsetup monsters:
+						repeat with M running through alive nonexistant monsters:
 							set up M;
 					now the destination of W is hotel;
 					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
@@ -136,12 +136,12 @@ To teleport via (W - a warp portal):
 					if Woods01 is unplaced:
 						Set Up The Woods;
 						follow the setting up woods monsters rules;
-						repeat with M running through alive nonsetup monsters:
+						repeat with M running through alive nonexistant monsters:
 							set up M;
 					if Mansion01 is unplaced:
 						Set Up The Mansion;
 						follow the setting up mansion monsters rules;
-						repeat with M running through alive nonsetup monsters:
+						repeat with M running through alive nonexistant monsters:
 							set up M;
 					now the destination of W is mansion;
 					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
@@ -157,11 +157,15 @@ To teleport via (W - a warp portal):
 		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
 		repeat with C running through held things:
 			if C is worn clothing:
+				clean C;
+				WaterEmpty C;
 				if C is removable and C is not headgear and C is not combat visor and C is not armband:
 					dislodge C;
+					if C is cursed and the raw strength of the player > 1:
+						say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
+						increase the stolen-strength of C by 1;
+						decrease the raw strength of the player by 1;
 					now C is in Predicament20;
-					clean C;
-					WaterEmpty C;
 			otherwise if C is not worn:
 				now C is in Predicament20;
 		now the semen coating of face is 0;
@@ -170,6 +174,7 @@ To teleport via (W - a warp portal):
 		now the semen coating of breasts is 0;
 		now the semen coating of belly is 0;
 		now the semen coating of thighs is 0;
+		empty belly;
 		display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
 		sort L in random order;
 		let P be entry 1 in L;
@@ -238,9 +243,4 @@ To teleport via (W - a warp portal):
 		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
 	progress quest of predicament-quest. [failsafe in case it has been missed at the end of a predicament somehow]
 
-
-
-
-
 Warp Portal ends here.
-

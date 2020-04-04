@@ -1,6 +1,5 @@
 Addictions by Player Description begins here.
 
-
 [!<addictionListingRules:Rulebook>*
 
 REQUIRES COMMENTING
@@ -75,7 +74,6 @@ Definition: yourself is a masochist: [Does the player prefer taking a submissive
 Definition: a body part is unconditioned rather than conditioned if the desire of it < 6. [Is body part relatively untouched and not used to this new world?]
 
 Definition: yourself is conditioned rather than unconditioned if there is a conditioned body part. [Is the player's body relatively untouched and not used to this new world?]
-
 
 [!<TheSexAddictionDescriptionRule>+
 
@@ -201,7 +199,6 @@ This is the semen feel addiction description rule:
 		if debuginfo > 0, say "[input-style](Creampie [if bukkake fetish is 1]and bukkake [end if]addiction [semen addiction of the player] / 20)[roman type][line break]".
 The semen feel addiction description rule is listed in the addiction listing rules.
 
-
 [!<TheAnalSexAddictionDescriptionRule>+
 
 We explain how much the player likes receiving anal sex.
@@ -247,7 +244,7 @@ This is the semen taste addiction description rule:
 		otherwise if the semen taste addiction of the player < 17:
 			say "You are desperate to find ways to get to taste and swallow more [semen].";
 		otherwise:
-			say "You are so addicted to [semen] that you hold it in your mouth and play with it with your tongue for as long as possible before swallowing, to minimize the amount of time that your mouth isn't full of cum!";
+			say "You are so addicted to [semen] that you hold it in your mouth and play with it with your tongue for as long as possible before swallowing, to minimise the amount of time that your mouth isn't full of cum!";
 		if debuginfo > 0, say "[input-style](Semen taste addiction [semen taste addiction of the player] / 20)[roman type][line break]".
 The semen taste addiction description rule is listed in the addiction listing rules.
 
@@ -329,7 +326,6 @@ This is the diaper addiction description rule:
 		if debuginfo > 0, say "[input-style](Incontinence [incontinence of the player] / 10[if the max-incontinence of the player < 10] [bracket]capped at [max-incontinence of the player][close bracket][end if])[roman type][line break]".
 The diaper addiction description rule is listed in the addiction listing rules.
 
-
 [!<TheShortSkirtAddictionDescriptionRule>+
 
 If the player has a short skirt addiction, we'll explain it to them here.
@@ -341,7 +337,6 @@ This is the short skirt addiction description rule:
 	otherwise if short skirts permanent fetish is 1:
 		say "Your body loves wearing short skirts so much that you feel uncomfortable wearing long ones. It also feels wrong to wear trousers.".
 The short skirt addiction description rule is listed in the addiction listing rules.
-
 
 [!<TheToplessExposureAddictionDescriptionRule>+
 
@@ -366,7 +361,6 @@ This is the humiliation description rule:
 	if debuginfo > 0, say "[input-style]([if the humiliation of the player >= 40000]Sex addiction [sex addiction of the player] / 20; Delicateness [delicateness of the player] / 20; [end if]Humiliation: [humiliation of the player] / 40000)[roman type][line break]".
 The humiliation description rule is listed in the addiction listing rules.
 
-
 This is the public disgrace description rule:
 	let PD be the public disgrace of the player;
 	if PD > 0:
@@ -383,7 +377,4 @@ This is the public disgrace description rule:
 		if debuginfo > 0, say "[input-style](Public Disgrace: [PD] / 5000)[roman type][line break]".
 The public disgrace description rule is listed in the addiction listing rules.
 
-
-
 Addictions ends here.
-

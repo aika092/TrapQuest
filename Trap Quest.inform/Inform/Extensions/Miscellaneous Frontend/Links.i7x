@@ -1,6 +1,5 @@
 Links by Miscellaneous Frontend begins here.
 
-
 Part 0 - Backend Hacky Stuff
 
 waitingForChar is initially false.
@@ -96,10 +95,7 @@ First for processing hyperlinks (This is the Aika char-inject with hyperlinks ru
 		rule succeeds;
 	continue the action.
 
-
-
 Part 1 - Basic Links
-
 
 To decide which number is linksCurrentlyEnabled:
 	if (links-disabled is true and inventory hyperlinks is 0) or (excessiveHyperlinks is 0 and inventory-busy is 0 and the focus-window is g-present and the clothing-focus-window is g-present and (the inventory-focus-window is g-present or the inventory-window is g-present) and the map-window is g-present), decide on 0;
@@ -148,7 +144,6 @@ To say TQxlink of (T - a thing):
 	otherwise if inline hyperlinks >= 1 and the text-shortcut of T is not "":
 		say "[as]x [text-shortcut of T][end link]".
 
-
 [*<SayTQdlink>+
 
 End of a hyperlink.
@@ -174,7 +169,6 @@ To say TQtlink of (T - a thing):
 	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[as]ta [text-shortcut of T][end link]".
 
 Part 2 - Yes & No
-
 
 Definition: yourself is in agreement: [Some issues with hyperlinks and yes/no]
 	[if inline hyperlinks >= 1:
@@ -288,7 +282,6 @@ To render YesNoButtons:
 		set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
 		draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset.
 
-
 Part 3 - Multiple Choice
 
 player-numerical-response is a number that varies.
@@ -376,12 +369,6 @@ To compute multiple choice question:
 To reset multiple choice questions:
 	repeat with R running through numerical-response:
 		now the printed name of R is "".
-
-
-
-
-
-
 
 Part 4 - VerbDescs
 
@@ -551,7 +538,7 @@ To say unique-verb-desc of (T - a vine boss):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - a slimegirl):
+To say unique-verb-desc of (T - slimegirl):
 	if inline hyperlinks >= 2, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfDildoTrap>+
@@ -872,9 +859,7 @@ To say unique-verb-desc of (T - WoodsScenery02):
 To say unique-verb-desc of (T - time-bomb):
 	if inline hyperlinks >= 2, say " [link][bracket]use[close bracket][as]use [text-shortcut of T][end link]".
 
-
 Part 3 - Smart Links
-
 
 [!<uniqueOptionsRules:Rulebook>*
 
@@ -1059,7 +1044,6 @@ REQUIRES COMMENTING
 +!]
 Definition: a thing is shortcutless if the text-shortcut of it is "".
 
-
 [!<ThePullLeverUniqueOptionRule>+
 
 REQUIRES COMMENTING
@@ -1097,6 +1081,4 @@ Carry out AltarListing:
 	[say "[line break][if there are worn tattoos]You can also [bold type]place[roman type] a tattoo on the altar.[end if]".]
 Understand "list blessables" as AltarListing.
 
-
 Links ends here.
-

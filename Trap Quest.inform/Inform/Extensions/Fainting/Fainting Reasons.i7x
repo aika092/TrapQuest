@@ -1,6 +1,5 @@
 Fainting Reasons by Fainting begins here.
 
-
 [!<Player>@<faintingReason:Integer>*
 
 REQUIRES COMMENTING
@@ -145,6 +144,4 @@ To say LeftoverDesc (N - 100):
 18 - Misc Orifice Soreness
 ]
 
-
 Fainting Reasons ends here.
-

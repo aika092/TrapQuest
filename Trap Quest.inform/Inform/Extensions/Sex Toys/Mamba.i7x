@@ -31,4 +31,3 @@ To decide which number is the initial outrage of (S - a mamba):
 	decide on 16.
 
 Mamba ends here.
-

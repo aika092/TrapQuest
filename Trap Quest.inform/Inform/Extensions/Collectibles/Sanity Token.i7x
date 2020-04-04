@@ -48,5 +48,4 @@ To compute mass collectible reward of (T - a sanity token):
 		destroy X;
 	reset alchemy charge.
 
-
 Sanity Token ends here.

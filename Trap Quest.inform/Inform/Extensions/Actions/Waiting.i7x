@@ -30,12 +30,12 @@ Check waiting:
 	otherwise if the player is live fucked or there is a thing grabbing the player:
 		let M be a random live thing penetrating a body part;
 		if M is minotaur and M is asleep:
-			say "You lay there and wait, hoping not to faint before he wakes up.";
+			say "You lay there and wait, hoping not to faint before [he of M] wakes up.";
 			while M is asleep and delayed fainting is 0:
 				allocate 6 seconds;
 				compute extra turn;
 				if a random number between 1 and 6 is 1 and the player is not in Dungeon12:
-					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
+					say "[BigNameDesc of M][']s [manly-penis] twitches inside of you.";
 					ruin asshole;
 			if M is awake:
 				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong, breaking its airtight seal. [big he of M] seems to assume you are unconscious, and wanders off to search for other victims.";
@@ -73,7 +73,6 @@ Report waiting:
 		say "You [doll-stuck], [BlushingPrettily].";
 	otherwise:
 		say "Time passes.".
-
 
 [!<SayCorrectWaitingFlavOfMonster>+
 
@@ -187,7 +186,7 @@ To HookWait:
 	if woman-barbara is regional and the woman-status of woman-barbara is 1:
 		allocate 6 seconds;
 		now woman-barbara is interested;
-		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
+		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as [he of woman-barbara] looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
 		now woman-barbara is in the location of the player;
 		if the woman-bimbo of woman-barbara < 3:
 			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
@@ -197,7 +196,7 @@ To HookWait:
 		otherwise if the woman-bimbo of woman-barbara < 5:
 			say "[big he of woman-barbara] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-barbara] pulls at the hook, but slips when [he of woman-barbara] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
 			ruin asshole;
-			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses her grip again! It shoots back in with twice the force of last time!";
+			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses [his of woman-barbara] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
 			say "[second custom style]'Silly girl, try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
@@ -229,4 +228,3 @@ To HookWait:
 			if the dexterity of the player > prev-dex, say "You've gained back a bit of dexterity, better check if that changes anything!".
 
 Waiting ends here.
-

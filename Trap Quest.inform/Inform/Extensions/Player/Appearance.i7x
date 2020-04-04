@@ -1,6 +1,5 @@
 Appearance by Player begins here.
 
-
 [!<DecideWhichNumberIsThePerceivedBimboInfluenceOfThing>+
 
 REQUIRES COMMENTING
@@ -39,15 +38,6 @@ To decide which number is the saved appearance of the player: [When an NPC looks
 	if A > 20, decide on 20;
 	decide on A.
 
-
-[!<outrageTarget:Thing>*
-
-REQUIRES COMMENTING
-
-*!]
-outrage-target is a thing that varies.
-
-
 [!<DecideWhichNumberIsCumulativeOutrageLevel>+
 
 REQUIRES COMMENTING
@@ -73,13 +63,18 @@ To decide which number is cumulative-outrage-level:
 
 calculated-cumulative-outrage-level is a number that varies.
 
-
 [!<appearanceOutrageTarget:Thing>*
 
-REQUIRES COMMENTING
+We save the most embarrassing thing for the player right now
 
 *!]
 appearance-outrage-target is a thing that varies.
+[!<secondAppearanceOutrageTarget:Thing>*
+
+We save the second most embarrassing thing for the player right now
+
+*!]
+second-appearance-outrage-target is a thing that varies.
 
 [!<DecideWhichNumberIsAppearanceOutrageLevel>+
 
@@ -89,20 +84,24 @@ Here we decide what is the most embarrassing visible item of clothing OR BODY PA
 To decide which number is appearance-outrage-level:
 	let O be 0;
 	now appearance-outrage-target is arms;
+	now second-appearance-outrage-target is arms;
 	repeat with C running through worn wearthings:
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
+			now second-appearance-outrage-target is appearance-outrage-target;
 			now appearance-outrage-target is C;
 	repeat with C running through carried currently-not-in-bag things:
 		let OC be the outrage of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
+			now second-appearance-outrage-target is appearance-outrage-target;
 			now appearance-outrage-target is C;
 	repeat with C running through body parts:
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;
+			now second-appearance-outrage-target is appearance-outrage-target;
 			now appearance-outrage-target is C;
 	if appearance-explained is 1, say "(highest outrage thing is [appearance-outrage-target] with outrage [O]) ";
 	decide on O.
@@ -111,7 +110,6 @@ calculated-appearance-outrage-level is a number that varies.
 
 The appearance needs updating rules is a rulebook.
 The appearance validation check update rules is a rulebook.
-
 
 previous-items-worn is a list of things that varies.
 An appearance needs updating rule (this is the previous items worn check rule):
@@ -157,7 +155,6 @@ An appearance needs updating rule (this is the stance changed check rule):
 		now previous-stance is the stance of the player;
 		rule succeeds.
 
-
 [This behaviour is designed to minimise CPU cycles as best as possible.]
 To potentially update appearance and cringe levels:
 	follow the appearance needs updating rules;
@@ -166,7 +163,6 @@ To potentially update appearance and cringe levels:
 		follow the appearance validation check update rules. [Update the values for items worn etc.]
 An advance counters rule (this is the update appearance and cringe rule):
 	potentially update appearance and cringe levels.
-
 
 To update appearance level:
 	now calculated-appearance-outrage-level is appearance-outrage-level;
@@ -178,6 +174,4 @@ To update cringe level:
 		now calculated-cringe-level is appearance-cringe-level;
 		now calculated-cumulative-cringe-level is cumulative-cringe-level.
 
-
 Appearance ends here.
-

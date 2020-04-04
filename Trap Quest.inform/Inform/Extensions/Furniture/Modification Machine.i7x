@@ -139,7 +139,6 @@ To compute (M - a modification machine) babifying:
 		now the bladder of the player is 14;
 		say "[if B is 1]You feel even more desperate to go to the toilet![otherwise if the player is really bursting]You suddenly feel a desperate need to go to the toilet![otherwise]You don't feel any different.[line break][variable custom style]Huh?[roman type][line break][end if]".
 
-
 To decide which number is the girth of (F - a modification machine):
 	if F is penetrating asshole, decide on the openness of asshole + 1;
 	decide on the openness of vagina + 1.
@@ -162,6 +161,4 @@ To say dildodesc of (F - a modification machine):
 	otherwise:
 		say "large orange and white traffic cone that couldn't possibly fit all the way inside any human".
 
-
 Modification Machine ends here.
-

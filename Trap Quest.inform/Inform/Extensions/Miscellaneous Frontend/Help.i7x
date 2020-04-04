@@ -1,6 +1,5 @@
 Help by Miscellaneous Frontend begins here.
 
-
 Understand "help" or "hint" or "hints" or "about" or "info" or "settings" or "menu" or "options" as asking for help.
 
 Report asking for help:
@@ -127,7 +126,6 @@ To go towards to the location you have remembered, use [']return[']. You will on
 
 To refresh the map if it glitches, use [']map[']."	--
 "Fetishes"	--	"[FetishHelp]"	--
-
 
 [!<SayClothingHelp>+
 
@@ -279,4 +277,3 @@ To say FetishHelp:
 ]
 
 Help ends here.
-

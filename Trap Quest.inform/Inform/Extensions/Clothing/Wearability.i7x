@@ -1,6 +1,5 @@
 Wearability by Clothing begins here.
 
-
 Chapter 7 - Global Wearability Rules
 
 Autowear is initially false.
@@ -109,7 +108,7 @@ The assfilled players can't wear ass plugging clothes rule is listed in the glob
 This is the vaginafilled players can't wear vagina plugging clothes rule:
 	if wearing-target is vagina plugging:
 		if (the player is female and vagina is actually occupied) or (the player is male and asshole is actually occupied):
-			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [vagina]!";
+			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [if the player is male][asshole][otherwise][vagina][end if]!";
 			rule fails.
 The vaginafilled players can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
@@ -241,7 +240,6 @@ This is the legs shoes clash rule:
 					rule fails.
 The legs shoes clash rule is listed in the global wearability rules.
 
-
 This is the clothes can't interrupt anal sex rule:
 	if wearing-target is total protection:
 		repeat with T running through things penetrating asshole:
@@ -270,7 +268,4 @@ This is the cultist won't wear blessed clothing rule:
 			rule fails.
 The cultist won't wear blessed clothing rule is listed in the global wearability rules.
 
-
-
 Wearability ends here.
-

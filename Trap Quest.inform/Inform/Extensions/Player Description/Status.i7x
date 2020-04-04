@@ -1,6 +1,5 @@
 Status by Player Description begins here.
 
-
 [!<SayStatusDesc>+
 
 New version removes mental stats
@@ -130,6 +129,4 @@ To say DiaperDisciplineDesc:
 	repeat with M running through alive monsters:
 		say "[if the diaper-duration of M > 0][BigNameDesc of M] has ordered you to stay in diapers. [end if]".
 
-
 Status ends here.
-

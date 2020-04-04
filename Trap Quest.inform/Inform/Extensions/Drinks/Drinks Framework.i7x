@@ -1,8 +1,5 @@
 Drinks Framework by Drinks begins here.
 
-
-
-
 [
 Magic Types:
 1: Potion of dignity
@@ -39,7 +36,6 @@ To decide which number is lowest-cursed:
 
 To decide which number is highest-cursed:
 	decide on 15.
-
 
 [!<tableOfDrinks:Table>*
 
@@ -162,6 +158,4 @@ To Print Drinks Table:
 	repeat with N running from 1 to the number of rows in the Table of Drinks:
 		say "[appearance in row N of Table of Drinks] [Magic in row N of Table of Drinks] [Known in row N of Table of Drinks][line break]" .
 
-
 Drinks Framework ends here.
-

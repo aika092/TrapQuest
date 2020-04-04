@@ -1,6 +1,5 @@
 Milking Bench by Furniture begins here.
 
-
 milking bench is a kind of furniture. A milking bench has a number called units collected. A milking bench is not permanent fixture. The printed name of milking bench is "[TQlink of item described]milking bench[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of milking bench is "mb". Understand "milking", "bench" as milking bench.
 
 mansion-milking-bench is a milking bench.
@@ -135,4 +134,3 @@ To say RestingDesc of (F - a milking bench):
 	say "You [one of][or]continue to [stopping]kneel on the bench.";
 
 Milking Bench ends here.
-

@@ -37,8 +37,6 @@ Check taking something:
 		otherwise:
 			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 
-
-
 Check inserting food into bag of holding:
 	say "A warning on the [second noun] says that this would be a horrible idea." instead.
 
@@ -141,6 +139,8 @@ To compute periodic effect of (C - a bag of holding):
 			force clothing-focus redraw; [This forces the clothing window to redraw]
 			now the alert of the player is 1;
 			say "[bold type]Your [ShortDesc of C] growls hungrily. [roman type]You should feed it with an item of clothing soon or it might choose one on its own!".
+To compute school periodic effect of (C - a bag of holding):
+	compute periodic effect of C.
 
 To compute (C - a bag of holding) unique inheriting from (D - a bag of holding):
 	now the hunger of C is the hunger of D;
@@ -190,7 +190,7 @@ To execute (E - bag-feeding-condoms) on (C - a thing):
 			let S be nothing;
 			if P is nothing:
 				now S is string-belt;
-				summon S cursed;
+				summon S cursed with silent quest;
 				now P is S;
 			let UC be the used condoms of C;
 			let EC be the empty condoms of C;
@@ -220,7 +220,6 @@ To execute (E - bag-feeding-condoms) on (C - a thing):
 			say "Your condom bag absorbs the [semen] from the [C] and transfers it into a condom! The now full condom shoots out of the bag, hovering still in mid-air in front of you for a brief moment. ";
 			compute spontaneous condom of a random worn bag of holding.
 
-
 bag-feeding-semen is a bag-feeding-effect.
 To execute (E - bag-feeding-semen) on (C - a thing):
 	if diaper quest is 0 and C is semen themed and the number of carried non-empty bottles is 0:
@@ -236,7 +235,6 @@ To execute (E - bag-feeding-semen) on (C - a thing):
 			say "What's more, a [printed name of S] appears on the ground in front of you! Something tells you that you can guess what's inside...";
 			now S is in the location of the player.
 
-
 bag-feeding-urine is a bag-feeding-effect.
 To execute (E - bag-feeding-urine) on (C - a thing):
 	if watersports fetish is 1 and C is toilet themed and the number of carried non-empty bottles is 0:
@@ -251,14 +249,12 @@ To execute (E - bag-feeding-urine) on (C - a thing):
 			say "What's more, a [champagne-glass] appears on the ground in front of you! Something tells you that you can guess what's inside...";
 			now champagne-glass is in the location of the player.
 
-
 bag-feeding-swimming is a bag-feeding-effect.
 To execute (E - bag-feeding-swimming) on (C - a thing):
 	if C is swimming themed:
 		say "Your bag reacts to the swimwear theme of the [ShortDesc of C] by drenching everything you're wearing in water!";
 		repeat with T running through worn fluid vulnerable clothing:
 			drench T.
-
 
 bag-feeding-toy is a bag-feeding-effect.
 To execute (E - bag-feeding-toy) on (C - a thing):
@@ -268,14 +264,12 @@ To execute (E - bag-feeding-toy) on (C - a thing):
 		say "Your bag reacts to the toy by making your [variable F] tingle with delight!";
 		ruin F times 1.
 
-
 bag-feeding-skirt is a bag-feeding-effect.
 To execute (E - bag-feeding-skirt) on (C - a thing):
 	let S be a random worn skirted crotch-in-place displacable clothing;
 	if C is a skirt and S is clothing:
 		say "Your bag reacts to the skirt by making your [ShortDesc of S] fly up into the air, exposing everything underneath!";
 		displace S.
-
 
 bag-feeding-sex-themes is a bag-feeding-effect.
 To execute (E - bag-feeding-sex-themes) on (C - a thing):
@@ -349,13 +343,11 @@ To execute (E - bag-feeding-pink-theme) on (C - a thing):
 				say "You feel more perverted...";
 				SexAddictUp 1.
 
-
 bag-feeding-wet-diaper is a bag-feeding-effect.
 To execute (E - bag-feeding-wet-diaper) on (C - a thing):
 	if (C is wet diaper or (C is wet knickers and diaper quest is 1)) and the player is not incontinent:
 		say "Your bag reacts to the wetness! You feel a twinge behind your bladder as it weakens...";
 		increase incontinence by 1.
-
 
 bag-feeding-diaper-bag is a bag-feeding-effect.
 To execute (E - bag-feeding-diaper-bag) on (C - a thing):
@@ -366,13 +358,8 @@ To execute (E - bag-feeding-diaper-bag) on (C - a thing):
 			DiaperPrint SD from C;
 			say "Your diaper bag reacts to the [ShortDesc of C]! It rumbles and then spits out a [SD] onto the ground!".
 
-
-
 To compute BagFeedingEffect of (C - a thing):
 	repeat with E running through bag-feeding-effects:
 		execute E on C.
 
-
-
 Bags of Holding Framework ends here.
-

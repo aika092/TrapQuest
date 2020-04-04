@@ -1,6 +1,5 @@
 DQ Punishments by Monster Framework begins here.
 
-
 This is the choosing a diaper punishment rule:
 	choose a diaper punishment;
 	if chosen diaper punishment is punishment-not-found:
@@ -30,8 +29,6 @@ To choose a diaper punishment:
 		unless chosen diaper punishment is a diaper punishment, now chosen diaper punishment is punishment-not-found;
 		decrease current-priority by 1.
 
-
-
 Section 1 Diaper Change
 
 diaper-change is a diaper punishment. The priority of diaper-change is 4.
@@ -39,6 +36,7 @@ diaper-change is a diaper punishment. The priority of diaper-change is 4.
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
 	if there is a soiled-diaper retained by M or the health of M < the maxhealth of M, decide no;
+	if the class of the player is priestess, decide no;
 	if M is aware that the player needs a change, decide yes;
 	if M is aware that a diapering is possible, decide yes;
 	decide no.
@@ -48,6 +46,8 @@ Definition: a monster (called M) is aware that the player needs a change:
 	repeat with N running through things grabbing the player:
 		if N is not M, decide no;
 	let D be a random worn knickers;
+	if the class of the player is priestess and D is not diaper, decide yes;
+	if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if D is currently visible knickers or D is messed knickers:
 		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
 		if D is crotch-ripped diaper, decide yes;
@@ -64,6 +64,7 @@ Definition: a monster (called M) is scene messing triggering: [CURRENTLY UNUSED.
 
 To decide which number is the soak tolerance of (M - a monster):
 	let D be a random worn knickers;
+	if D is diaper-stack, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if D is clothing, decide on 2 * the soak-limit of D / 3;
 	decide on 0.
 
@@ -107,7 +108,6 @@ Definition: diaper-donate is appropriate if current-monster is willing to donate
 
 To compute punishment of (P - diaper-donate):
 	compute diaper change of current-monster.
-
 
 Section 2 Spanking Session
 
@@ -160,7 +160,6 @@ Definition: masturbation-session (called P) is appropriate:
 
 To compute punishment of (P - masturbation-session):
 	compute masturbation of current-monster.
-
 
 Section 4 Enema
 
@@ -238,7 +237,6 @@ Definition: confiscate (called P) is appropriate:
 To compute punishment of (P - confiscate):
 	compute confiscate of current-monster.
 
-
 Section 7 Babywear Donation
 
 donate babywear is a diaper punishment. The priority of donate babywear is 2.
@@ -266,7 +264,6 @@ Definition: donate babywear (called P) is appropriate:
 To compute punishment of (P - donate babywear):
 	compute babywear donation of current-monster.
 
-
 Section 8 Untidy Punishment Session
 
 untidy-session is a diaper punishment. The priority of untidy-session is 5.
@@ -289,6 +286,4 @@ Definition: untidy-session is appropriate if current-monster is willing to punis
 To compute punishment of (P - untidy-session):
 	compute untidiness punishment of current-monster.
 
-
 DQ Punishments ends here.
-

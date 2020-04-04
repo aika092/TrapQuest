@@ -60,6 +60,4 @@ Carry out strutting:
 		say "[bold type]You have stopped strutting around.[roman type][line break]".
 Understand "strut", "strutting", "slut it up" as strutting.
 
-
 Strutting ends here.
-

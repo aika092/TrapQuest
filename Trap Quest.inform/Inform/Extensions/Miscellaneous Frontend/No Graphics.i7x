@@ -37,7 +37,6 @@ To mapdraw:
 To fix map-drag-glitch of the player:
 	do nothing.
 
-
 To initialise display stuff:
 	do nothing.
 To display stuff:
@@ -53,10 +52,8 @@ To initialise hyperlink stuff:
 To vary stickman counters:
 	do nothing.
 
-
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually NoDQImage.
 DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
-
 
 [!<DecideWhichTextIsHairColourText>+
 
@@ -149,15 +146,12 @@ To decide which text is HairColourText:
 			if the redness of hair is 2, decide on "blonde";
 			if the redness of hair is 3, decide on "ultra pink".
 
-
 Table of Image Settings
 title	subtable	description	toggle
 "Previous Menu (Shortcut: Q)"	--	--	quit rule
 "Display Images: (Enable images - many / most are adult.) [if images visible is 1]ON[otherwise]OFF[end if] "	--	--	images visible toggle rule
 "Map Window: On / Off: [if map images > 0]ON[otherwise]OFF[end if]"	--	--	map images toggle rule
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
-
-
 
 Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png".
 Figure of wench1 is the file "NPCs/Dungeon/Wench/wench1.png".
@@ -170,4 +164,3 @@ Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 Include Low Res Figures by Miscellaneous Frontend.
 
 No Graphics ends here.
-

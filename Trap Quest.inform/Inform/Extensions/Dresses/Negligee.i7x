@@ -23,7 +23,6 @@ This is the remove inappropriate negligee rule:
 		now B is in Holding Pen.
 The remove inappropriate negligee rule is listed in the diaper quest fix rules.
 
-
 Part 1 - Backless Negligee
 
 backless negligee is a negligee. The text-shortcut of backless negligee is "bng".
@@ -41,6 +40,7 @@ To say MediumDesc of (C - backless negligee):
 To say ClothingDesc of (C - backless negligee):
 	say "This sheer naughty lingerie dress covers the front of the wearer but just has minimalist straps at the back.".
 
+Definition: backless negligee is potentially-bottom-layer-concealing: decide no.
 
 Part 2 - Lacy Negligee
 
@@ -56,8 +56,4 @@ To decide which figure-name is clothing-image of (C - lacy negligee):
 To say ClothingDesc of (C - lacy negligee):
 	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
 
-
-
-
 Negligee ends here.
-

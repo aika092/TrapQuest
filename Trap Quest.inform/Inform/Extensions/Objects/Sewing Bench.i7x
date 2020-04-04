@@ -42,7 +42,4 @@ Carry out repairing:
 
 Understand "repair [something]", "patch [something]", "patch up [something]", "mend [something]", "fix [something]" as repairing.
 
-
-
 Sewing Bench ends here.
-

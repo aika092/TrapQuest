@@ -53,8 +53,6 @@ To decide which figure-name is the sex-profile of (M - a tentacle monster):
 
 The text-shortcut of tentacle monster is "tnm". Understand "tentacle", "monster", "tentacle monster" as tentacle monster.
 
-
-
 A smart-tentacle-monster is a kind of tentacle monster.
 
 cunning-tentacle-monster is a smart-tentacle-monster.
@@ -81,8 +79,6 @@ devious-tentacle-monster is a smart-tentacle-monster.
 To say ShortDesc of (M - devious-tentacle-monster):
 	say "devious tentacle monster".
 Understand "devious" as devious-tentacle-monster.
-
-
 
 A durable-tentacle-monster is a kind of tentacle monster.
 
@@ -111,8 +107,6 @@ To say ShortDesc of (M - resilient-tentacle-monster):
 	say "resilient tentacle monster".
 Understand "resilient" as resilient-tentacle-monster.
 
-
-
 A wet-tentacle-monster is a kind of tentacle monster.
 
 [Definition: a wet-tentacle-monster is musky: decide yes.]
@@ -136,9 +130,6 @@ slick-tentacle-monster is a wet-tentacle-monster.
 To say ShortDesc of (M - slick-tentacle-monster):
 	say "slick tentacle monster".
 Understand "slick" as slick-tentacle-monster.
-
-
-
 
 A dull-tentacle-monster is a kind of tentacle monster.
 
@@ -171,7 +162,6 @@ slinking-tentacle-monster is a dull-tentacle-monster.
 To say ShortDesc of (M - slinking-tentacle-monster):
 	say "slinking tentacle monster".
 Understand "slinking" as slinking-tentacle-monster.
-
 
 tentacleShortcutCount is initially 1.
 To TentacleShortcutAssign (C - a tentacle monster):
@@ -219,11 +209,11 @@ To set up (M - a tentacle monster):
 	reset M;
 	now the monstersetup of M is 1;
 	let D be 5;
-	 if M is large:
+	if M is large:
 		increase D by 3;
 	otherwise if M is massive:
 		increase D by 3;
-	now the difficulty of M is D;
+	now the raw difficulty of M is D;
 	TentacleShortcutAssign M;
 	now M is not player-brood;
 	now the health of M is the maxhealth of M.
@@ -237,7 +227,7 @@ To compute birth set up of (M - a tentacle monster):
 	regionally place M;
 	now M is player-brood.
 
-Definition: A tentacle monster (called M) is willing to shag:
+Definition: a tentacle monster (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening, decide yes;
 	decide no.
 
@@ -275,7 +265,7 @@ To compute monstermotion of (M - a tentacle monster): [Tentacle monsters shouldn
 
 Part 1 - Perception
 
-Definition: a tentacle monster is uniquely unfriendly: decide no. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant]
+Definition: a tentacle monster is uniquely unfriendly if playerRegion is School. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However the tentacle monster in the school dungeon must always be an enemy.]
 
 To compute perception of (M - a tentacle monster):
 	say "[BigNameDesc of M] notices you! [big he of M] stares at your belly with [his of M] single large eye.";
@@ -331,8 +321,8 @@ The default finish sex rule is listed last in the tentacle monster continue sex 
 
 This is the tentacle monster continues sex rule:[TODO: update for evolved tentacle monsters]
 	let M be current-monster;
-	if the number of orifices penetrated by M is 1, say "[BigNameDesc of M]'s tentacle [if M is massive]plows[otherwise]thrusts[end if] into your [variable random orifice penetrated by M] ";
-	otherwise say "[BigNameDesc of M]'s tentacles [if M is massive]plow[otherwise]thrust[end if] into you ";
+	if the number of orifices penetrated by M is 1, say "[BigNameDesc of M][']s tentacle [if M is massive]plows[otherwise]thrusts[end if] into your [variable random orifice penetrated by M] ";
+	otherwise say "[BigNameDesc of M][']s tentacles [if M is massive]plow[otherwise]thrust[end if] into you ";
 	if M is newborn, say "steadily.";
 	otherwise say "powerfully.";
 	decrease the sex-length of M by 1;
@@ -552,7 +542,7 @@ To compute facial climax of (M - a tentacle monster):
 			say "The condom in your mouth bursts, forcing you to gulp salty [semen].";
 			StomachSemenUp the semen load of M;
 		otherwise:
-			say "The condom in your mouth bulges[if M is massive] obscenely[end if] with [NameDesc of M]'s load, but manages to resist the strain. ";
+			say "The condom in your mouth bulges[if M is massive] obscenely[end if] with [NameDesc of M][']s load, but manages to resist the strain. ";
 			compute condom filling of M;
 	otherwise:
 		say "The tentacle in your mouth forces you to gulp down the salty [semen].";
@@ -569,7 +559,7 @@ To say StrikingSuccessFlav of (M - a tentacle monster) on (B - a body part):
 	if M is massive, BodyRuin 1.
 
 To say StrikingFailureFlav of (M - a tentacle monster) on (B - a body part):
-	say "You manage to narrowly dodge [NameDesc of M]'s tentacle as it comes flying towards your [printed name of B].".
+	say "You manage to narrowly dodge [NameDesc of M][']s tentacle as it comes flying towards your [printed name of B].".
 
 This is the tentacle monster convinced rule:
 	if presented-orifice is a potential target:
@@ -606,7 +596,7 @@ To say VaginaPenetrationFlav of (M - a tentacle monster):
 	say "Without hesitation [NameDesc of M] forces a [DickDesc of M] deep inside your [vagina].[if M is massive][line break]The tentacle is so large that you can feel your [vagina] being permanently gaped.[end if]".
 
 To say SelectionFrustrated of (M - a tentacle monster):
-	say "[BigNameDesc of M]'s one eye stares at you with visible frustration but then seems to decide to leave you alone.";
+	say "[BigNameDesc of M][']s one eye stares at you with visible frustration but then seems to decide to leave you alone.";
 	bore M.
 
 To say BreastsPenetrationFlav of (M - a tentacle monster):
@@ -633,7 +623,7 @@ To say TitfuckResistFlav of (M - a tentacle monster):
 	say "[one of]You do everything you can to push [him of M] away, but [if C is clothing]your [ShortDesc of C] keeps [him of M] firmly sandwiched between them![otherwise]you simply don't have the leverage from your position on your knees![end if][or]You struggle but you can't get away![or]You resist, but you simply can't get away![in random order]".
 
 To say TitfuckForceFlav of (M - a tentacle monster):
-	say "[one of][BigNameDesc of M] keeps your [ShortDesc of breasts] pushed together as the [DickDesc of M] thrusts between them.[or][BigNameDesc of M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as the [DickDesc of M] thrusts between them![or]The [DickDesc of M] holds your [ShortDesc of breasts] together as it roughly thrusts between them.[or][BigNameDesc of M]'s [DickDesc of M] gently bumps your chin as it enthusiastically thrusts between your [ShortDesc of breasts].[in random order]".
+	say "[one of][BigNameDesc of M] keeps your [ShortDesc of breasts] pushed together as the [DickDesc of M] thrusts between them.[or][BigNameDesc of M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as the [DickDesc of M] thrusts between them![or]The [DickDesc of M] holds your [ShortDesc of breasts] together as it roughly thrusts between them.[or][BigNameDesc of M][']s [DickDesc of M] gently bumps your chin as it enthusiastically thrusts between your [ShortDesc of breasts].[in random order]".
 
 To say TitfuckReceiveFlav of (M - a tentacle monster):
 	say TitfuckForceFlav of M.
@@ -643,29 +633,24 @@ To say DickDesc of (M - a tentacle monster):
 
 Section 2 - Damage
 
-To compute damage of (M - a tentacle monster):
-	if the health of M > 0:
-		if M is awake:
-			if M is uninterested:
-				say "The monster turns to fight!";
-				now M is interested;
-				anger M;
-			otherwise:
-				if M is friendly:
-					say "[BigNameDesc of M]'s single eye widens with surprise, but it raises its appendages and takes an offensive stance!";
-					anger M;
-					if a random number between 1 and 3 is 1, increase the sex-length of M by 1;
+To compute damage reaction of (M - a tentacle monster):
+	if M is awake:
+		if M is uninterested:
+			say "[BigNameDesc of M] turns to fight!";
 		otherwise:
-			anger M;
-			now M is interested;
-			now the sleep of M is 0;
-			say "It wakes up, and looks around for the cause of this rude awakening! It looks like you might be in trouble...";
+			if M is friendly:
+				say "[BigNameDesc of M][']s single eye widens with surprise, but [he of M] raises [his of M] appendages and takes an offensive stance!";
+				if a random number between 1 and 3 is 1, increase the sex-length of M by 1;
 	otherwise:
-		compute death of M.
+		now the sleep of M is 0;
+		say "[big he of M] wakes up, and looks around for the cause of this rude awakening! It looks like you might be in trouble...".
 
-To compute unique death of (M - a tentacle monster):
-	say "[if the evolved of M is 3][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its white colour fades to black, and the body slowly melts away into nothingness[otherwise][BigNameDesc of M] has lost the last of its energy, and its powerful limbs fall to the ground with a thud. Its single eye closes and then the body slowly melts away into nothingness[end if].";
-	if M is massive, loot M;
+To say BanishFleeFlav of (M - a tentacle monster):
+	say "[BigNameDesc of M] [if the evolved of M is 3]has lost the last of [his of M] magical energy. [big his of M] white colour fades to black. [big he of M] [end if][if the class of the player is magical girl]tries to grip into the ground with [his of M] tentacles as a portal opens up to the demon realm behind [him of M], but it's not use. [BigNameDesc of M] is sucked back into the demon realm, banished thanks to your magic[otherwise]makes a weird gurgling hissing squeak noise and scuttles away as fast as [his of M] tentacles can carry [him of M][end if]! [one of][bold type]You won't be seeing [him of M] again.[roman type][line break][or]Good riddance.[or]Another monster driven from the land. Good job![or]Good riddance.[stopping]".
+
+Definition: a tentacle monster is auto-banish-loot-dropping if it is massive. [Will it automatically drop jewellery when it is banished in this manner?]
+
+To compute unique banishment of (M - a tentacle monster):
 	if M is newborn:
 		MagicPowerUp 1;
 	otherwise if M is large:
@@ -729,7 +714,7 @@ To say NewTentacleDesc:
 	unless the item described is player-brood:
 		do nothing;
 	otherwise:
-		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or]It's a fucking demon-spawn. I'm killing it.[or]I have to kill this thing before it decides it wants to breed with me.[or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of]He's adorable![or]How cute![or]I love my baby![or]Mmm, he looks hor~ny![or]I want to take *good care* of my baby boy.[or]He looks like he wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]".
+		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or]It's a fucking demon-spawn. I'm killing it.[or]I have to kill this thing before it decides it wants to breed with me.[or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of the item described]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of the item described] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of the item described] looks like [he of the item described] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]".
 
 To say LargeTentacleDesc:
 	say "[one of]A large mass of [TentacleColour of the item described] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, penis-like tip. [or]A person-sized mass of [TentacleColour of the item described] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, phallic tip.[in random order]";
@@ -737,7 +722,7 @@ To say LargeTentacleDesc:
 	unless the item described is player-brood:
 		do nothing;
 	otherwise:
-		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or]He had sex with me even though I'm his mother.[or]He's getting big. Could he grow like that again?[or]I probably could have fought more, but... he was just so cute.[or]His tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of]He had a growth spurt![or]I let him breed me like any good mommy would![or]He's growing up so fast. Especially where it counts...[or]I want to let him breed me again. He might grow even bigger![or]Who wants to fuck mommy? You do! You do![or]He's going to grow up big and horny, just like his daddy.[then at random][end if][roman type][line break]".
+		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of the item described] had sex with me even though I'm [his of the item described] mother.[or][big he of the item described]'s getting big. Could [he of the item described] grow like that again?[or]I probably could have fought more, but... [he of the item described] was just so cute.[or][big his of the item described] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of the item described] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of the item described]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of the item described] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of the item described]'s going to grow up big and horny, just like [his of the item described] daddy.[then at random][end if][roman type][line break]".
 
 To say MassiveTentacleDesc:
 	let V be the evolved of the item described;
@@ -746,7 +731,6 @@ To say MassiveTentacleDesc:
 	unless the item described is player-brood:
 		do nothing;
 	otherwise:
-		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of]He's so strong now. There's no way I can fight him, let alone keep him from fucking me.[or]He's all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish he were more obedient, but still...[or]His tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or]He knows just how to please his mommy.[or]Those [manly-penis]s are so big! He gets it from his daddy.[or]I wonder when he'll be ready to breed me again?[in random order][end if][roman type][line break]".
+		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the item described]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the item described]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the item described] were more obedient, but still...[or][big his of the item described] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the item described] knows just how to please [his of the item described] mommy.[or]Those [manly-penis]s are so big! [big he of the item described] gets it from [his of the item described] daddy.[or]I wonder when [he of the item described]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
 Tentacle Monster ends here.
-

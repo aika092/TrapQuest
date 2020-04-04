@@ -9,12 +9,13 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
+asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16. The text-shortcut of asshole is "butthole".
 
 To say FullExamineDesc of (B - asshole):
-	say "[TotalDesc of asshole][AssholeModesty]".
+	say "[ImageDesc of asshole][TotalDesc of asshole][AssholeModesty]".
 
 To decide which object is the concealer of (A - asshole):
+	if water-fountain is penetrating asshole, decide on water-fountain;
 	let C be a random worn actually dense potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
 	if the total volume of hips > 12:
@@ -22,17 +23,17 @@ To decide which object is the concealer of (A - asshole):
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (A - asshole):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
 	let C be a random worn potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
 	if the player is upright, decide on hips;
 	decide on the concealer of asshole.
 
-
 [Can it be accessed right now with nothing blocking it?]
 Definition: asshole is undefended:
 	if asshole is actually occupied or the player is ass protected, decide no;
 	decide yes.
-
 
 [!<AssholeIsExposed>+
 
@@ -233,7 +234,7 @@ To say AssholeModesty:
 		otherwise if asshole is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
-		say "It [if asshole is at least partially exposed]is partially concealed by[otherwise]can't be seen thanks to[end if] the [ShortDesc of the at least partial concealer of asshole]. ";
+		say "It [if asshole is at least partially exposed]is partially concealed by [NameDesc of the at least partial concealer of asshole][otherwise]can't be seen thanks to [NameDesc of the concealer of asshole][end if]. ";
 	if asshole is actually occupied:
 		let P be a random thing penetrating asshole;
 		if P is monster:
@@ -250,7 +251,6 @@ To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is female] and your pussy is [PussyGape real openness of vagina]".
 
 Part 3 - Modify Asshole Stats
-
 
 [!<GapeAssholeTimesNumber>+
 
@@ -340,6 +340,11 @@ To Assclose (X - a number):
 					decrease the openness of asshole by 1;[in the next clause we assume anything penetrating the player is a monster, so we leave the player untightened.]
 			if the number of things filling asshole is 0, decrease the openness of asshole by 1.[if this isn't 0, it wasn't an item, so we leave it in.]
 
+Section - Image for graphics window
+
+Figure of AssholeObject1 is the file "CharWins/FocusWin/asshole1.jpg".
+
+To decide which figure-name is the examine-image of (T - asshole):
+	decide on Figure of AssholeObject1.
 
 Asshole ends here.
-

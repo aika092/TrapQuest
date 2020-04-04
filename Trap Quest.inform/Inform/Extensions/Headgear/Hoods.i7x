@@ -1,6 +1,5 @@
 Hoods by Headgear begins here.
 
-
 A hood is a kind of headgear. A hood is usually latex. A hood is usually manly. Figure of latex hood is the file "Items/Accessories/Head/latexhood1.png". A hood is usually oral-sex-addiction-influencing.
 
 Definition: a hood is ringagged: decide yes.
@@ -79,9 +78,6 @@ To say ShortDesc of (H - black hood):
 To say ClothingDesc of (H - black hood):
 	say "This black latex hood completely covers your head, and only has holes for your eyes, your nostrils, [if the player is pigtailed or the player is ponytailed]your hair, [end if]and your mouth. The mouth hole is fitted with an O-ring tube gag, which keeps your mouth wide open and prevents you from speaking properly. Anyone could put anything into your mouth that they wanted, even a penis or another gag.".
 
-
-
-
 Chapter - Class Outfit
 
 Definition: black hood (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -90,8 +86,9 @@ Definition: black hood (called C) is removal-blocking: [Some items (mainly headg
 
 Chapter - Quest
 
-
 just-wait-quest is a headgear-clothing-quest. just-wait-quest has a number called main-reward. just-wait-quest has a number called wait-count.
+
+Definition: just-wait-quest is school-disabled: decide yes.
 
 To compute unique recycling of (C - black hood):
 	now the wait-count of just-wait-quest is 0;
@@ -106,13 +103,13 @@ To say QuestFlav of (Q - just-wait-quest):
 To say QuestTitle of (Q - just-wait-quest):
 	say " (no wardrobe changes quest)".
 
-
 To compute unique periodic effect of (H - black hood):
 	if the quest of H is just-wait-quest:
-		increase the wait-count of just-wait-quest by 1;
-		if the wait-count of just-wait-quest > a random number between 30 and 1000:
-			progress quest of just-wait-quest;
-			now the wait-count of just-wait-quest is 0.
+		unless the player is in a bossed room or playerRegion is school:
+			increase the wait-count of just-wait-quest by 1;
+			if the wait-count of just-wait-quest > a random number between (30 + (latex prisoner * 30)) and 1000:
+				progress quest of just-wait-quest;
+				now the wait-count of just-wait-quest is 0.
 
 To compute persistent reward of (Q - just-wait-quest) on (C - a clothing):
 	if the main-reward of Q is 0:
@@ -144,7 +141,6 @@ To uniquely destroy (C - black hood):
 	if the quest of C is just-wait-quest:
 		say "You can feel the hood rewarding you for [if L > 1]all the [L] different latex items[otherwise]the other latex item[end if] you're wearing by improving your dexterity!";
 		DexUp L.
-
 
 Part - White (WC) Hood
 
@@ -251,7 +247,6 @@ To uniquely destroy (C - WC hood):
 	if the gulp-count of human-toilet-quest > 0 and the quest of C is human-toilet-quest:
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your body, [if the gulp-count of human-toilet-quest > 2]significantly [end if]improving your speed!";
 		DexUp (the gulp-count of human-toilet-quest + 1) / 2.
-
 
 Part - Clown Mask
 
@@ -374,7 +369,6 @@ To compute persistent reward of (Q - clown-quest) on (C - a clothing):
 	otherwise:
 		compute generic second time class reward of Q on C.
 
-
 Part - Trainee Hood
 
 trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetized. trainee hood is magnetized. trainee hood is not roleplay.
@@ -404,7 +398,7 @@ Report wearing trainee hood:
 To compute class outfit of (H - trainee hood):[TODO: improve]
 	if the training-progress of H is 3:
 		LipsUp 3;
-		say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them off, you realize they've merged fully with your skin! You now have [LipDesc]!";
+		say "The [printed name of H] emits four short tones, and falls off your face. You can still feel the heavy lips resting on your face, but when you move to peel them off, you realise they've merged fully with your skin! You now have [LipDesc]!";
 		DelicateUp 2;
 		now the training-progress of H is 0;
 		only destroy H;
@@ -420,4 +414,3 @@ To demagnetise (C - a clothing):[Do not call this function unless you know it is
 	now C is not magnetized.
 
 Hoods ends here.
-

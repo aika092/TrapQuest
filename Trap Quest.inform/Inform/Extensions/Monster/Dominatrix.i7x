@@ -1,6 +1,6 @@
 Dominatrix by Monster begins here.
 
-dominatrix is a monster. dominatrix is intelligent. The difficulty of dominatrix is 9. The leftover-type of dominatrix is 125.
+dominatrix is a monster. dominatrix is intelligent. The leftover-type of dominatrix is 125.
 
 dominatrix has a number called orgasm watch. dominatrix has a number called disappointment. dominatrix has a number called strap-on girth. The strap-on girth of dominatrix is 2. dominatrix has a number called frustration.
 
@@ -91,7 +91,7 @@ To say MonsterComment of (M - dominatrix):
 		otherwise if the player is female:
 			say "[second custom style][one of]Wow! Look at that cock![or][big his of M] new dildo looks so yummy! If I'm good, maybe I'll get fucked with it![or]Sometimes, I wish guys would grow bigger cocks if you do your best to make them feel good. I guess Mistress is better than a guy![or][big his of M] rules about orgasms are so unfair! It feels so good when Mistress fucks me, how can I not cum?[in random order]";
 		otherwise if the bimbo of the player < 7:
-			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]Ok, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]Ok, so what if [he of M] decides I'm a chick or something. My dick is still massive, and I'll always have that on [him of M]. Next time we meet, things will change, and I'll be the one fucking [him of M].[end if][in random order]";
+			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]OK, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]OK, so what if [he of M] decides I'm a chick or something. My dick is still massive, and I'll always have that on [him of M]. Next time we meet, things will change, and I'll be the one fucking [him of M].[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
 			say "[variable custom style][one of]I can't believe I actually let [him of M] fuck me. I'm supposed to be a man, men shouldn't get fucked...[or]I know I don't want [him of M] to fuck me with that again, but, I don't want to punish me either. How did I get into this mess?[or]I'm actually looking forward to letting [him of M] fuck me again. I guess I'm a total [if transGender is 0]fag[otherwise]slut[end if] now.[or]I'm [his of M] slave now, so I can't exactly say no if [he of M] wants to but that in me, but it's not like I wanted to be [his of M] slave in the first place. I think.[or][if the size of penis < 1]I'm stuck with no penis, and [his of M] is even bigger. If I let people fuck me, and I don't have a penis, how can I call myself a man?[otherwise if the size of penis < 5]The first dildo made me feel inadequate. This is just cruel. It's not my fault if my penis keeps shrinking! Everybody wants to fuck me![otherwise if the size of penis < 9][big his of M] dildo is actually bigger than my penis. I deserve to be smaller, though. After letting [him of M] fuck me, there's no way for me to pretend I make a better man than [he of M] does.[otherwise]My dick is still bigger than [hers of M], but only by a few inches. And if I keep letting [him of M] fuck me, it's only a matter of time until that's not true.[end if][or]I know by now it's not a good idea to play by [his of M] rules, but how am I supposed to hold my orgasm when that thing is going to be ramming my prostate?[in random order]";
 		otherwise:
@@ -116,7 +116,7 @@ Definition: dominatrix is wenchy: decide yes.
 To set up (M - dominatrix):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 11;
+	now the raw difficulty of M is 11;
 	now the health of M is the maxhealth of M;
 	calm M.
 
@@ -132,7 +132,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - dominatrix):
 	if M is in the location of the player:
-		say "The teleportation pad emits a definitive sounding hum, and light fills the room as an imposing looking woman materializes on top of it. [BigNameDesc of M] hums to [himself of M] adjusting [his of M] [LongDickDesc of M] as [he of M] steps off the pad.";
+		say "The teleportation pad emits a definitive sounding hum, and light fills the room as an imposing looking woman materialises on top of it. [BigNameDesc of M] hums to [himself of M] adjusting [his of M] [LongDickDesc of M] as [he of M] steps off the pad.";
 	otherwise:
 		say "You hear the sound of a [man of M] humming gently.".
 
@@ -294,9 +294,9 @@ To compute stocks paddling of (M - dominatrix):
 	if M is grabbing the player:
 		if the sex-length of M is 3:
 			let X be 1 + (bukkake fetish * 4);
-			let P be a random off-stage patron;
+			let P be a random off-stage generic-appropriate patron;
 			while X >= 0:
-				now P is a random off-stage patron;
+				now P is a random off-stage generic-appropriate patron;
 				now P is in the location of the player;
 				set up P;
 				anger P;
@@ -334,7 +334,7 @@ To compute stocks paddling of (M - dominatrix):
 					destroy N;
 					BlowCount;
 				otherwise:
-					say "[BigNameDesc of N] climaxes, spilling [his of N] [semen] onto the floor in front of you.[line break][speech style of M]'[one of]If I were you, I'd make her clean that up[or]That was really hot, thanks for letting me be a part of it[or]I love this place[or]I'm so glad I got to witness this bitch's punishment[or]I hope you enjoyed the privilege of me jacking off over your punishment, slut[in random order].'[roman type][line break]With that, [he of N] turns around and leaves.";
+					say "[BigNameDesc of N] climaxes, spilling [his of N] [semen] onto the floor in front of you.[line break][speech style of M]'[one of]If I were you, I'd make [him of the player] clean that up[or]That was really hot, thanks for letting me be a part of it[or]I love this place[or]I'm so glad I got to witness this bitch's punishment[or]I hope you enjoyed the privilege of me jacking off over your punishment, slut[in random order].'[roman type][line break]With that, [he of N] turns around and leaves.";
 					SemenPuddleUp the semen load of N;
 					destroy N;
 		[And now for what the dominatrix does herself...]
@@ -356,7 +356,7 @@ To compute stocks paddling of (M - dominatrix):
 
 To compute dominatrixClimax of (N - a patron):
 	TimesSubmittedUp N by 1;[now you remember which guy came on your face!]
-	say "[BigNameDesc of N] climaxes, and spurts [his of N] load over your face! [big he of N] [one of]chuckles to himself and then leaves the room.[or]sighs gently and then leaves the room.[or]mutters something rude under [his of N] breath and then sees himself out.[or]groans loudly as [he of N] paints your forehead white, and then zips up and leaves.[or]growls under [his of N] breath as [he of N] rides [his of N] waves of ecstasy. After [he of N] comes down, [he of N] tucks himself away and then exits the way [he of N] came.[in random order][line break][variable custom style][if the semen addiction of the player < 6][one of]Eww, gross![or]Yuck yuck yuck![or]Nooooo![or]I can't wipe it off with my hands bound like this...[or]How disgusting![or]Anywhere but my face![in random order][otherwise if the semen addiction of the player < 12][one of]Grr, just you wait![or]My face isn't just somewhere you should dump your [semen]![or]How could you![or]How rude![or][big he of N] treated me as if I was just an object![in random order][otherwise if the player is able to speak][line break][second custom style][one of]'Come back any time, [stud]!'[or]'Thank you sir!'[or]'Thank you for your [semen]!'[or]'Yum! Thank you~'[or]'Your cum tastes great!'[in random order][otherwise][second custom style][one of]I do love cum![or]Yummy![or]I want even more![or]I wish I could thank him properly.[in random order][end if][roman type][line break]";
+	say "[BigNameDesc of N] climaxes, and spurts [his of N] load over your face! [big he of N] [one of]chuckles to himself and then leaves the room.[or]sighs gently and then leaves the room.[or]mutters something rude under [his of N] breath and then sees himself out.[or]groans loudly as [he of N] paints your forehead white, and then zips up and leaves.[or]growls under [his of N] breath as [he of N] rides [his of N] waves of ecstasy. After [he of N] comes down, [he of N] tucks himself away and then exits the way [he of N] came.[in random order][line break][variable custom style][if the semen addiction of the player < 6][one of]Eww, gross![or]Yuck yuck yuck![or]Nooooo![or]I can't wipe it off with my hands bound like this...[or]How disgusting![or]Anywhere but my face![in random order][otherwise if the semen addiction of the player < 12][one of]Grr, just you wait![or]My face isn't just somewhere you should dump your [semen]![or]How could you![or]How rude![or][big he of N] treated me as if I was just an object![in random order][otherwise if the player is able to speak][line break][second custom style][one of]'Come back any time, [stud]!'[or]'Thank you sir!'[or]'Thank you for your [semen]!'[or]'Yum! Thank you~'[or]'Your cum tastes great!'[in random order][otherwise][second custom style][one of]I do love cum![or]Yummy![or]I want even more![or]I wish I could thank [him of N] properly.[in random order][end if][roman type][line break]";
 	CumFaceUp the semen load of N;
 	destroy N.
 
@@ -400,10 +400,9 @@ To say MouthPenetrationFlav of (M - dominatrix):
 	otherwise:
 		cutshow figure of dominatrix cutscene 3 for M.
 
-
 To compute facial sex of (M - dominatrix):
 	if M is friendly-fucking:
-		say "[one of][BigNameDesc of M] aggressively fucks your throat with [his of M] [LongDickDesc of M].[or][BigNameDesc of M]'s hips slam into your face, [his of M] [LongDickDesc of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming [his of M] [LongDickDesc of M] down your throat.[or]You can't help making a lot of noise as [NameDesc of M] slams [his of M] [LongDickDesc of M] into the back of your throat.[in random order]";
+		say "[one of][BigNameDesc of M] aggressively fucks your throat with [his of M] [LongDickDesc of M].[or][BigNameDesc of M][']s hips slam into your face, [his of M] [LongDickDesc of M] repeatedly striking the back of your throat.[or][BigNameDesc of M] slams [his of M] [LongDickDesc of M] in and out of your mouth, forcing you to make a lewd gagging noise with every thrust.[or][BigNameDesc of M] wears a wide grin, mercilessly ramming [his of M] [LongDickDesc of M] down your throat.[or]You can't help making a lot of noise as [NameDesc of M] slams [his of M] [LongDickDesc of M] into the back of your throat.[in random order]";
 		let I be 0;
 		decrease I by the strap-on girth of M;
 		let G be a random number between the intelligence of the player and I;
@@ -428,7 +427,7 @@ To compute facial climax of (M - dominatrix):
 		compute happy reward of M;
 		TimesSubmittedUp M by 1;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that's all the time you get. [if the frustration of M < 2]Feel free to come back next time you have some cash, you're a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] pulls [his of M] [DickDesc of M] out of your mouth and turns [his of M] attention to getting it clean.";
+		say "[speech style of M]'OK, that's all the time you get. [if the frustration of M < 2]Feel free to come back next time you have some cash, you're a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] pulls [his of M] [DickDesc of M] out of your mouth and turns [his of M] attention to getting it clean.";
 		now the sex-length of M is 0;
 		TimesSubmittedUp M by 1;
 	otherwise:[times-submitted isn't incremented here yet.]
@@ -545,7 +544,7 @@ To compute unique climax of (M - dominatrix) in (F - asshole):
 		decrease the frustration of M by 2;
 		compute happy reward of M;
 	otherwise if M is friendly-fucking:
-		say "[speech style of M]'Ok, that's all the time you get. [if the frustration of M < 2]Feel free to come back next time you have some cash, you're a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] loses interest.";
+		say "[speech style of M]'OK, that's all the time you get. [if the frustration of M < 2]Feel free to come back next time you have some cash, you're a surprisingly good sub. [end if]You know the way out.'[roman type][line break][BigNameDesc of M] loses interest.";
 		now the sex-length of M is 0;
 	otherwise if M is interested:
 		if the disappointment of M is 1:
@@ -567,7 +566,6 @@ Check going when dominatrix is in the location of the player:
 Definition: dominatrix (called M) is willing to let go:
 	if the frustration of M >= 3, decide no;
 	decide yes.
-
 
 Definition: dominatrix (called M) is actually interested:[custom bit to allow the player to give jewellery to the dominatrix, but not modify her existing "friendly" functionality.]
 	if M is retaining a plentiful accessory and M is interested, decide yes;
@@ -656,23 +654,10 @@ To compute FriendlySexRelease of (M - dominatrix):
 To say FriendlySexReleaseSpeech of (M - dominatrix):
 	say "[speech style of M]Whatever, it's your money you're wasting.'[roman type] ".
 
-
 Section 2 - Damage
 
-To compute damage of (M - dominatrix):
-	if the health of M > 0:
-		if M is uninterested:
-			say "[big he of M] shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
-			now M is interested;
-			anger M;
-		otherwise:
-			if M is friendly:
-				say "[big he of M] shrieks with shock. [line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]";
-				anger M;
-			otherwise:
-				say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - dominatrix):
+	say "[big he of M] shrieks with shock.[line break][speech style of M]'[one of]How dare you!'[or]Do you never learn?!'[cycling][roman type][line break]".
 
 To say DamageReactHealthy of (M - dominatrix):
 	say "[one of][speech style of M]'You will not enjoy your punishment, I can guarantee that!'[roman type][line break][or][big he of M] sneers aggressively![stopping]".
@@ -686,22 +671,25 @@ To say DamageReactTired of (M - dominatrix):
 To say DamageReactWeak of (M - dominatrix):
 	say "The dominatrix swears as [he of M] struggles to maintain [his of M] balance!".
 
-To compute unique death of (M - dominatrix):
-	say "The [noun] screams as [he of M] falls to the floor. ";
-	let B be a random off-stage focus band;
+To compute unique banishment of (M - dominatrix):
 	let X be a random off-stage strapon-dildo;
 	if the strap-on girth of M >= 6 and mythical creature fetish is 1, now X is a random off-stage equine-strapon;
-	if B is a thing:
-		now B is in the location of the player;
-		say "[big his of M] body disappears, leaving behind a [printed name of B][if X is clothing] and the strap-on [he of M] was wearing[end if].";
-		compute autotaking B;
-	otherwise:
-		say "[big his of M] body disappears[if X is clothing], leaving behind the strap-on [he of M] was wearing[end if].";
 	if X is clothing:
 		now the strap-length of X is the strap-on girth of M + 5;
-		if the strap-on girth of M >= 6, now the strap-length of X is 12;[20 inches]
+		if the strap-on girth of M >= 6, now the strap-length of X is 12; [20 inches]
+		say "[BigNameDesc of M] unstraps and drops [his of M] [X] to help [himself of M] run faster!";
 		now X is in the location of the player;
 		compute autotaking X.
+
+To compute tax return of (M - dominatrix):
+	let B be a random off-stage focus band;
+	if B is a thing:
+		now B is in the location of the player;
+		say "[BigNameDesc of M] removes a [printed name of B] from [his of M] arm.[line break][speech style of M]'When I next catch you, there will be no mercy. You will need something like this just to survive.'[roman type][line break]";
+		compute autotaking B;
+	otherwise:
+		loot M;
+		say TaxReturnDismay of M.
 
 To say StrikingSuccessFlav of (M - dominatrix) on (B - a body part):
 	say "[BigNameDesc of M] [one of]smacks[or]swats[as decreasingly likely outcomes] you [TargetName of B] with a riding crop! Ouch!!".
@@ -848,7 +836,7 @@ To compute failed dominance punishment of (M - dominatrix):
 		DifficultyUp M by 1;
 	otherwise if the player is female and the player is horny and the times-submitted of M > a random number between 3 and 4:[Wow, so merciful!]
 		if asshole is actually occupied and the number of worn crotch covering clothing is 0:
-			let V be a random off-stage vibrator;
+			let V be a random off-stage plentiful vibrator;
 			let C be a random chastity cage;
 			if C is held by the player, now C is a random off-stage g-string;
 			let W be a random off-stage wrist bond;
@@ -915,7 +903,6 @@ To compute scared reduction of (M - dominatrix):
 		if the scared of M < 0, now the scared of M is 0;
 		if the scared of M is 0 and the location of the player is the room east from Hotel37, say "The metal shutter noisily clatters up.".
 
-
 Part 6 - Conversation
 
 To IdentifiablePosterReaction of (M - dominatrix):
@@ -979,7 +966,7 @@ To say FriendlyPartnerGreeting to (M - dominatrix):
 		if the player is feeling dominant:
 			say "[first custom style]'[one of]This is confidential, right?'[or]You won't tell anyone about this, right?'[or]You'll keep this a secret, right?'[at random][roman type]";
 		otherwise:
-			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, ok?'[at random][roman type]";
+			say "[variable custom style]'[one of]Just so you know, I don't exactly want to become a slave permanently.'[or]And remember, you can't tell ANYONE about this...'[or]This is just a business transaction! N-nothing more, OK?'[at random][roman type]";
 		say NonEnthusiasmResponse of M.
 
 To say MildAnnoyedResponse of (M - dominatrix):
@@ -991,8 +978,8 @@ To say MildAnnoyedResponse of (M - dominatrix):
 
 To say UnAnnoyedResponse of (M - dominatrix):
 	let P be a random patron in the location of M;
-	if P is monster, say "[speech style of M]'[one of]So you wanted this all along, did you? Can't say I'm surprised.'[or]Ha, what a trashy slut. Give her what she wants, boys.[or]You're desperate to show these men what a naughty minx looks like, eh?[or]There's no punishing sluts like you, is there?[or]Surround you with dongs and suddenly you're willing to follow orders. What a dirty slut.'[or]Just like a slave to get turned on by getting degraded in front of an audience.'[at random][roman type][line break]";
-	otherwise say "[speech style of M]'[one of]Sluts say the darndest things.'[or]Ha, licking my boot has given you quite the trashy tongue.'[or]Shut up. I don't care if you like getting fucked or not, because I'm going to do it anyway.'[or]I'm always in the mood to use my favourite fuckhole.'[or]I don't remember telling you it was ok to address me, but I can't resist a slut who knows her place.'[at random][roman type][line break]".
+	if P is monster, say "[speech style of M]'[one of]So you wanted this all along, did you? Can't say I'm surprised.'[or]Ha, what a trashy slut. Give [him of the player] what [he of the player] wants, boys.[or]You're desperate to show these men what a naughty minx looks like, eh?[or]There's no punishing sluts like you, is there?[or]Surround you with dongs and suddenly you're willing to follow orders. What a dirty slut.'[or]Just like a slave to get turned on by getting degraded in front of an audience.'[at random][roman type][line break]";
+	otherwise say "[speech style of M]'[one of]Sluts say the darndest things.'[or]Ha, licking my boot has given you quite the trashy tongue.'[or]Shut up. I don't care if you like getting fucked or not, because I'm going to do it anyway.'[or]I'm always in the mood to use my favourite fuckhole.'[or]I don't remember telling you it was OK to address me, but I can't resist a slut who knows [his of the player] place.'[at random][roman type][line break]".
 
 [TODO if you annoy the dominatrix too much, she locks you up]
 
@@ -1078,25 +1065,19 @@ To compute teaching of (M - dominatrix):
 	teach begging for mercy;
 	HeavyConvoFatigue M.
 
-
 Section 3 - Drink Requesting
 
 To compute talk option (N - 3) to (M - dominatrix):
 	let B be a random number from 1 to 4;
-	if B is 1 and the player is seductive and M is raunchy:
-		now M is interested;
-		say "[BimboSeduce of M]";
-		say "[BimboSeduced of M]";
-	otherwise:
-		say "[DrinkRequest of M]";
-		if M is unintelligent:
-			say "It doesn't look like [NameDesc of M] speaks English.";
-		otherwise if M is not actually interested:
-			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
-		otherwise if M is friendly:
-			compute friendly drink of M;
-		otherwise if M is unfriendly:
-			compute unfriendly drink of M.
+	say DrinkRequest of M;
+	if M is unintelligent:
+		say "It doesn't look like [NameDesc of M] speaks English.";
+	otherwise if M is not actually interested:
+		say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
+	otherwise if M is friendly:
+		compute friendly drink of M;
+	otherwise if M is unfriendly:
+		compute unfriendly drink of M.
 
 To compute unfriendly drink of (M - dominatrix):
 	if M is uninterested:
@@ -1108,6 +1089,4 @@ To compute unfriendly drink of (M - dominatrix):
 To compute friendly drink of (M - dominatrix):
 	say "[speech style of M]'You'll get no hospitality from me.'[roman type][line break]".
 
-
 Dominatrix ends here.
-

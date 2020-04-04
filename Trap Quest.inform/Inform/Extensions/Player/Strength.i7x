@@ -2,7 +2,6 @@ Strength by Player begins here.
 
 Part 1 - Calculate Strength
 
-
 [!<DecideWhichNumberIsTheStrengthInfluenceOfThing>+
 
 REQUIRES COMMENTING
@@ -100,7 +99,6 @@ To decide which number is the flat strength of the player:
 	if S > 30, decide on 30;
 	decide on S.
 
-
 [!<DecideWhichNumberIsTheStartingStrengthOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -111,14 +109,12 @@ To decide which number is the starting strength of the player:
 
 Part 2 - Modify Strength
 
-
 [!<Player>@<rawStrength:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
 The player has a number called raw strength. The raw strength of the player is usually 7. [Min 1 Max 30]
-
 
 [!<Player>@<oldStrength:Integer>*
 
@@ -133,7 +129,6 @@ Definition: yourself is deserving of more strength:
 	if debuginfo > 0, say "[input-style]Strength buff check: d60-4([R]) | ([S].5) player strength[roman type][line break]";
 	if R > S, decide yes;
 	decide no.
-
 
 [!<StrengthUpX>+
 
@@ -155,6 +150,4 @@ To StrengthDown (X - a number):
 		decrease X by 1;
 		if the raw strength of the player > 1, decrease the raw strength of the player by 1.
 
-
 Strength ends here.
-

@@ -13,7 +13,6 @@ To say royal-subject of (M - a robot):
 To say big royal-subject of (M - a robot):
 	say "Automaton".
 
-
 To compute (S - a spike bra) damaging (M - a robot):
 	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
 
@@ -80,7 +79,7 @@ To say ClothesPeeReaction of (M - a robot):
 	say GroundPeeReaction of M.
 
 To say DiaperReaction of (M - a robot):
-	say "[BigNameDesc of M]'s blank metal expression does not change, so it's hard to gauge whether it saw or understood what you just did in front of it.".
+	say "[BigNameDesc of M][']s blank metal expression does not change, so it's hard to gauge whether it saw or understood what you just did in front of it.".
 
 To say BecomesAggressive of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn red![line break][speech style of M]'[one of]CHOOSING PUNISHMENT ROUTINE.'[or]EXECUTING [if the player is upright]COMBAT.EXE[otherwise]PUNISHMENT.BAT[end if].'[in random order][roman type][line break]".
@@ -97,10 +96,10 @@ Definition: a robot is ally: decide no.
 Definition: a robot is guardian: decide no.
 
 To compute sudden objectification of (M - a robot):
-	say "[BigNameDesc of M]'s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING OBJECTIFICATION PROTOCOL...'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING OBJECTIFICATION PROTOCOL...'[roman type][line break]".
 
 To compute sudden babification of (M - a robot):
-	say "[BigNameDesc of M]'s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING BABY SLAVE TRAINING PROTOCOL...'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]'APPEARANCE THRESHOLD REACHED. LOADING BABY SLAVE TRAINING PROTOCOL...'[roman type][line break]".
 
 To decide which number is the bimbo tolerance of (M - a robot):
 	decide on 21.
@@ -179,7 +178,6 @@ To say LewdTrapReactFlav of (M - a robot):
 	moderateHumiliate;
 	FavourDown M with consequences.
 
-
 To say DisapprovalFlav of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn orange.[line break][speech style of M]'PROCESSING WITH SLUTPARSER v[one of]1[or]2[or]3[or]4[or]5[stopping].0... SUBJECT APPEARS TO BE [one of]REQUESTING FURTHER DEGRADATION[or]COMMUNICATING A DESIRE FOR SEXUAL DOMINATION[or]ENGAGING IN BDSM KINK ACTIVITIES[in random order].'[roman type][line break]".
 
@@ -215,7 +213,6 @@ To compute talk option (N - 2) to (M - a robot):
 To compute answer of (M - a robot):
 	say "[speech style of M]'......................ERROR.'[roman type][line break]".
 
-
 To say DismissalRequest of (M - a robot):
 	if the player is able to speak:
 		say "[variable custom style]'sudo sleep sixty.'[roman type][line break]";
@@ -226,21 +223,13 @@ To compute unfriendly dismissal of (M - a robot):
 	if the player is able to speak, say "[speech style of M]'USER IS NOT IN THE SUDOERS FILE. THIS INCIDENT WILL BE REPORTED.'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] makes no indication that [he of M] has understood you.".
 
-
 Section 1 Damage
 
-To compute damage of (M - a robot):
-	if the health of M > 0:
-		if M is uninterested or M is friendly:
-			say "Its eyes turn red! Uh-oh...";
-			now M is interested;
-			now M is unleashed;
-			anger M;
-			if M is robobellboy, now the target-room of M is nearest patron;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - a robot):
+	say "Its eyes turn red! Uh-oh...";
+	now M is unleashed;
+	anger M;
+	if M is robobellboy, now the target-room of M is nearest patron.
 
 To say DamageReaction (N - a number) of (M - a robot):
 	if N > (the maxhealth of M / 4) * 3:
@@ -250,19 +239,24 @@ To say DamageReaction (N - a number) of (M - a robot):
 	otherwise if N > (the maxhealth of M / 4):
 		say "Sparks fly out of [him of M] as you hit [him of M]!";
 	otherwise:
-		say "[BigNameDesc of M]'s metal chassis warps as [he of M] takes the hit.".
+		say "[BigNameDesc of M][']s metal chassis warps as [he of M] takes the hit.".
 
-To compute unique death of (M - a robot):
-	say "[BigNameDesc of M] falls apart and clatters to the ground.";
+Definition: a robot is automatically banishable: decide yes.
+Definition: a robot is auto-banish-loot-dropping: decide yes. [Will it automatically drop jewellery when it is banished in this manner?]
+To compute automatic banishment of (M - a robot):
+	say "[speech style of M]'CRITICAL... ERROR.'[roman type][line break][BigNameDesc of M] falls apart and clatters to the ground.".
+To loot (M - a robot):
 	let D be a random off-stage mechanical joint;
 	if D is mechanical joint:
 		now D is in the location of the player;
 		say "You manage to salvage a working [D].";
 		compute autotaking D;
+	otherwise:
+		standard loot M.
+To compute unique banishment of (M - a robot):
 	let L be a random off-stage leftover;
-	now the leftover-type of L is the leftover-type of M;[robots leave a corpse behind that the mechanic can fix.]
-	now L is in the location of the player;
-	destroy M.
+	now the leftover-type of L is the leftover-type of M; [robots leave a corpse behind that the mechanic can fix.]
+	now L is in the location of the player.
 
 To finally destroy (M - a robot):
 	uniquely destroy M;
@@ -275,6 +269,4 @@ To finally destroy (M - a robot):
 	remove M from play;
 	reset M.
 
-
 Robots Framework ends here.
-

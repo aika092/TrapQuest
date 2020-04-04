@@ -48,10 +48,7 @@ To decide which number is the delicateness of the player:
 	if S < 1, decide on 1;
 	decide on S.
 
-
 Part 2 - Modify Delicateness
-
-
 
 [!<Player>@<rawDelicateness:Integer>*
 
@@ -127,7 +124,7 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 						if the delicateness of the player is 15, say "[second custom style][if diaper lover >= 1]I'm just a fragile little baby[boy of the player], why is everyone being so mean to me in this place?[otherwise if the player is a sissy]I'm just a fragile little sissy, why does everyone have to be so mean to me?[otherwise]I feel so small and fragile...[end if][roman type][line break]";
 						if the delicateness of the player is 16, say "[second custom style]Won't anyone take GENTLE care of little me?![roman type][line break]";
 						if the delicateness of the player is 17, say "[second custom style][if diaper lover >= 1]I'm so scared of getting hurt, I almost don't want to fight back at all...[end if][roman type][line break]";
-						if the delicateness of the player is 18, say "[second custom style][if diaper lover >= 1 and there is a matron in the location of the player]Nana knows what's best for me. I'll try to be a good girl for her.[otherwise if diaper lover >= 1]I want my Nana![otherwise]*sniff* I want my mummy.[end if][roman type][line break]";
+						if the delicateness of the player is 18, say "[second custom style][if diaper lover >= 1 and there is a matron in the location of the player]Nana knows what's best for me. I'll try to be a good [boy of the player] for [him of a matron].[otherwise if diaper lover >= 1]I want my Nana![otherwise]*sniff* I want my mummy.[end if][roman type][line break]";
 						if the delicateness of the player is 19, say "[second custom style][if the bimbo of the player > 17][NameBimbo] deserves[otherwise]I deserve[end if][if there is a worn diaper] to be punished, I'm a very naughty nappied baby![otherwise if diaper lover >= 1] to be kept in nappies for ever and ever after this, I'm so naughty![otherwise] to be punished, I'm a bad [boy of the player].[end if][roman type][line break]";
 				if pain-balance > 0:
 					increase the raw delicateness of the player by 1;
@@ -169,8 +166,4 @@ To SilentlyDelicateDown (X - a number):
 		decrease X by 1;
 		if the raw delicateness of the player > 1, decrease the raw delicateness of the player by 1.
 
-
-
-
 Delicateness ends here.
-

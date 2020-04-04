@@ -27,7 +27,6 @@ To decide which figure-name is the clothing-image of (C - spiked-tiara):
 		if C is tonguing, decide on figure of tonguing white spiked tiara;
 		decide on figure of white spiked tiara.
 
-
 To say ClothingDesc of (H - spiked-tiara):
 	say "This [tonguesColour] [MediumDesc of H] has small regular spikes along the front, giving it a rather sinister feel. Multiple living tongues snake down from under its body to hug your ears, chin, and anything else they can reach. [TongueStatus of H]".
 
@@ -61,7 +60,7 @@ A time based rule (this is the tongued clothing licking rule):
 		if the player is not a bit horny or refactoryperiod > 0:
 			now the rounds-horny of no-orgasm-quest is 0;
 			if refactoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refactory period is over, tongues will start]
-		otherwise:
+		otherwise if playerRegion is not school:
 			increase the rounds-horny of no-orgasm-quest by 1;
 		if tonguesActive <= -30 and refactoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
 			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and begin to salivate and lick you wherever they can reach![roman type][line break]";
@@ -85,7 +84,7 @@ A time based rule (this is the tongued clothing licking rule):
 			otherwise:
 				say "[one of]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] continue to lick you with their sloppy, salivating tongues.[or][or][or][or][cycling]";
 				arouse 25 * N;
-		if the rounds-horny of no-orgasm-quest >= a random number between (45 - the sex addiction of the player) and 200: [It's more difficult for a sex addicted player to avoid orgasms]
+		if playerRegion is not school and the rounds-horny of no-orgasm-quest >= a random number between (45 - the sex addiction of the player) and 200: [It's more difficult for a sex addicted player to avoid orgasms]
 			progress quest of no-orgasm-quest;
 			now the rounds-horny of no-orgasm-quest is 0;
 	otherwise:
@@ -113,7 +112,6 @@ To compute tongue clothing:
 		if spiked-tiara is off-stage and tonguesActive > 0 and spiked-tiara is actually summonable:
 			say "[bold type]A [MediumDesc of spiked-tiara] appears on your forehead! You feel its tongues immediately begin to explore your head, and inside your ears...[roman type][line break]";
 			summon spiked-tiara cursed.
-
 
 Chapter - Class Outfit
 
@@ -159,10 +157,11 @@ To compute class outfit of (H - spiked-tiara):
 		otherwise if E is equippable and E is not demonic:
 			transform E into tongue-gloves.
 
-
 Chapter - Quest
 
 no-orgasm-quest is a headgear-clothing-quest. no-orgasm-quest has a number called rounds-horny.
+
+Definition: no-orgasm-quest is school-disabled: decide yes.
 
 To uniquely set up (C - spiked-tiara):
 	now the quest of C is no-orgasm-quest.
@@ -173,8 +172,4 @@ To say QuestFlav of (Q - no-orgasm-quest):
 To say QuestTitle of (Q - no-orgasm-quest):
 	say " (orgasm avoiding quest)".
 
-
-
-
 Spiked Tiara ends here.
-

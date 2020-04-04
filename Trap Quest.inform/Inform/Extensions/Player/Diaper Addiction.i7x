@@ -2,7 +2,6 @@ Diaper Addiction by Player begins here.
 
 Part 1 - Calculate Diaper Addiction
 
-
 [!<DecideWhichNumberIsTheDiaperAddictionInfluenceOfWearThing>+
 
 REQUIRES COMMENTING
@@ -37,7 +36,6 @@ To decide which number is the diaper addiction of the player: [How much do they 
 	decide on B.
 
 Part 2 - Modify Diaper Addiction
-
 
 [!<Player>@<rawDiaperAddiction:Integer>*
 
@@ -76,7 +74,6 @@ To SilentlyDiaperAddictDown (X - a number):
 
 To SilentlyDiaperAddictDown:
 	if the raw diaper addiction of the player > 1, decrease the raw diaper addiction of the player by 1.
-
 
 Part - Adult Baby
 
@@ -122,13 +119,11 @@ An advance counters rule (this is the diapers affect adult babies rule):
 			say "[bold type]You can feel that the game is no longer identifying you as an adult baby.[roman type][line break]";
 		if adult-baby-dex is 1:
 			now adult-baby-dex is 0;
-			say "[bold type]Now that you're no longer being labeled as an 'adult baby', you can feel that your reflexes have returned to normal.[roman type][line break]";
+			say "[bold type]Now that you're no longer being labelled as an 'adult baby', you can feel that your reflexes have returned to normal.[roman type][line break]";
 		if adult-baby-int is 1:
 			now adult-baby-int is 0;
 			say "[bold type]Now that you're no longer being treated as an 'adult baby', you can feel your lost intelligence and strength returning to you.[roman type][line break]".
 
 		]
 
-
 Diaper Addiction ends here.
-

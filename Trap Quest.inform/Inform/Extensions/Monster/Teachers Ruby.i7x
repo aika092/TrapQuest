@@ -3,7 +3,6 @@ Teachers Ruby by Monster begins here.
 To say MediumDesc of (M - a ruby-teacher):
 	say "ruby teacher [teacher-name of M]".
 
-
 chess-lesson is a lesson.
 chess-lesson has a number called chess-victor.
 chess-lesson has a monster called chess-opponent.
@@ -46,10 +45,6 @@ To decide which number is the practical dirtiness of (M - an innocent student):
 	decide on 1.
 To decide which number is the practical dirtiness of (M - a tryhard student):
 	decide on 6.
-
-
-
-
 
 eating-lesson is a lesson.
 Definition: eating-lesson is lesson-appropriate if (diaper quest is 0 or diaper messing >= 3) and the player is able to eat.
@@ -129,14 +124,5 @@ To compute teaching of (L - eating-lesson):
 		otherwise:
 			promote N;
 	if yourself is listed in F, update students; [an important line which makes boring old students disappear and new cool ones appear]
-
-
-
-
-
-
-
-
-
 
 Teachers Ruby ends here.

@@ -15,4 +15,3 @@ Definition: a cat tail plug is cat themed: decide yes.
 Definition: a cat tail plug is black themed: decide yes.
 
 Cat Tail Plug ends here.
-

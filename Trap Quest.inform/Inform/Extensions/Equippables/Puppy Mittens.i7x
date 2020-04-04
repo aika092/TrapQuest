@@ -39,4 +39,3 @@ To uniquely set up (C - a puppy mittens):
 	now C is endurance.
 
 Puppy Mittens ends here.
-

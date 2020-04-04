@@ -33,9 +33,10 @@ To say TopDisplaceFlav of (C - a clothing):
 		say "You move your [ShortDesc of C] just enough to free up access to your [BreastDesc].".
 
 Report TopDisplacing:
+	allocate arm use;
+	allocate 4 seconds;
 	compute player submission;
 	force clothing-focus redraw; [This forces the clothing window to redraw]
-	allocate 4 seconds.
 
 Definition: a clothing (called C) is top level covering: [we only care about breast exposure, nipples are irrelevant.]
 	if C is breast exposing or C is fully exposing or C is top-displaced, decide no;
@@ -61,9 +62,10 @@ Check topReplacing:
 		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
 
 Carry out topReplacing:
+	allocate arm use;
+	allocate 2 seconds;
 	say "You pull the [ShortDesc of noun] back into its proper position over your [BreastDesc].";
 	TopReplace the noun;
-	allocate 2 seconds.
 
 Report topReplacing:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
@@ -71,4 +73,3 @@ Report topReplacing:
 Understand "pull up [something]", "button [something]", "pull [something] closed" as topReplacing.
 
 TopDisplacing TopReplacing ends here.
-

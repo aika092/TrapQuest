@@ -7,6 +7,7 @@ The setting up mansion monsters rules is a rulebook.
 The setting up school monsters rules is a rulebook.
 
 To regionally place (M - a monster):
+	if debugmode > 0, say "Regionally placing [M].";
 	remove M from play;
 	bore M for 0 seconds; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
 	[now M is unleashed;]
@@ -36,10 +37,7 @@ Every turn we quickly check if there are any NPCs in a weird state in the locati
 
 +!]
 To compute MonsterSetUpFix:
-	repeat with M running through nonsetup monsters in the location of the player:
+	repeat with M running through nonexistant monsters in the location of the player:
 		Set Up M.
 
-Definition: a monster is nonsetup if the monstersetup of it is 0.
-
 Set Up Monsters ends here.
-

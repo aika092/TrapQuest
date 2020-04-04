@@ -25,4 +25,3 @@ Definition: a vampiric cape is black themed: decide yes.
 Definition: a vampiric cape is red themed: decide yes.
 
 Vampiric Cape ends here.
-

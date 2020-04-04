@@ -1,6 +1,5 @@
 Influence by Clothing begins here.
 
-
 Clothing can be strength-influencing, dexterity-influencing, intelligence-influencing, sex-addiction-influencing, anal-sex-addiction-influencing, vaginal-sex-addiction-influencing, oral-sex-addiction-influencing, titfuck-addiction-influencing, semen-addiction-influencing, semen-taste-addiction-influencing, milk-taste-addiction-influencing, urine-taste-addiction-influencing, diaper-addiction-influencing, delicateness-influencing, heel-skill-influencing, not-influencing (this is the clothing-influence property). Clothing is usually not-influencing.
 
 To set up stat-based influence of (C - a clothing):
@@ -42,6 +41,4 @@ To set up random-based influence of (C - a clothing):
 To set up influence of (C - a clothing):
 	do nothing.
 
-
 Influence ends here.
-

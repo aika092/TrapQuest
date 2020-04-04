@@ -1,6 +1,5 @@
 Altars by Objects begins here.
 
-
 The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
 
 To decide which figure-name is the examine-image of (C - dungeon altar):
@@ -193,7 +192,6 @@ To AltarPray (T - a thing):
 		otherwise:
 			say "Nothing seems to happen.".
 
-
 [!<AltarUniqueRewardThing>+
 
 Defines any unique effects that should happen for an item, "T" when placed on the dungeon altar. If the item is completely unique, it should completely rewrite AltarPrayThing instead
@@ -258,7 +256,7 @@ To AltarPray (P - a person):
 			if T is actually summonable and T is off-stage:
 				summon T;
 				now T is blessed;
-				say "You feel your [asshole] being forced open as a [printed name of T] materializes in your ass.";
+				say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
 				break;
 		if permanent makeup is 1:
 			say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
@@ -341,7 +339,6 @@ To AltarPray (P - a person):
 			bless C;
 	reset dungeon altar.
 
-
 To AltarReward (T - wrist bond):
 	if T is cursed:
 		if strongCurses is 1:
@@ -382,7 +379,6 @@ To AltarPray (T - a tattoo):
 	AltarUniqueReward of T;
 	reset dungeon altar.
 
-
 To AltarReward (T - a bottle):
 	now the curse-ID of T is sure;
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed]I shall remove this curse for you!'[otherwise if T is not known-potion and T is not empty]I shall identify this potion for you!'[otherwise]Drink my holy juices and good fortune shall come to you!'[end if][roman type][line break]";
@@ -396,8 +392,6 @@ To AltarReward (T - a bottle):
 		DoseUp T by the max-doses of T;
 		say "The [ShortDesc of T] is filled up to the brim with a [PotionType of T]!";
 	reset dungeon altar.
-
-
 
 To AltarReward (T - a clothing):
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed and strongCurses is 1]I shall help you with this curse[otherwise if T is cursed]I shall remove this curse for you[otherwise]I shall bless this item for you[end if]!'[roman type][line break]";
@@ -415,7 +409,6 @@ To AltarReward (T - a clothing):
 	[if T is not blessed and T is worn and T is not piercing:
 		say "Would you like to remove the [ShortDesc of T] immediately? ";
 		if the player is consenting, try taking off T.]
-
 
 To WoodsOffer (T - an accessory):
 	let max-bless-count be the price of T;
@@ -506,14 +499,14 @@ To ElderEmpower (T - flower hairclip):
 To ElderEmpower (T - runic headband):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R cursed;
 		reset elder altar.
 
 To ElderEmpower (T - a cultist veil):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R;
 		now R is cursed;
 		reset elder altar.
@@ -608,7 +601,6 @@ To ElderConnect:
 	now altar-diaper-link is 92;
 	compute periodic effect of D.
 
-
 []
 To ElderSacrifice (T - a thing):
 	say "The [printed name of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if] It finally vanishes in a puff of smoke.";
@@ -630,7 +622,6 @@ To ElderSacrifice (T - a thing):
 	otherwise:
 		increase the charge of the elder altar by 25;
 	remove T from play.
-
 
 To ElderSacrifice (T - ritual-beads):
 	say "The [ShortDesc of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if]";
@@ -730,13 +721,12 @@ To compute dark reward of (T - ritual-beads):
 		FatigueUp 20;
 		say "You feel a lot cleaner, but incredibly tired.".
 
-
 To AltarReward (T - runic headband):
 	if T is not purity:
 		let N be the used condoms of T;
 		if N < 3:
 			let D be 3 - N;
-			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if].'[roman type][line break]";
 		otherwise:
 			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
 			unless T is blessed, now T is blessed;
@@ -752,7 +742,7 @@ To AltarReward (T - ritual-beads):
 		let N be the notches of T;
 		if N < 6:
 			let D be 6 - N;
-			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. In the meantime, here is a gift to help you continue this quest!'[roman type][line break]";
 		otherwise:
 			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
 			unless T is blessed, now T is blessed;
@@ -842,8 +832,6 @@ To compute DevilPayment (N - a number):
 			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
 			SexAddictUp N.
 
-
-
 To DevilPray (P - yourself):
 	let N be (the charge of hotel altar / 180) + 1;
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
@@ -853,7 +841,7 @@ To DevilPray (P - yourself):
 	if gold-summoned is 0:
 		if the player is soulless or (the pregnancy of the player is 1 and the father is an infernal monster) or the times-submitted of demon lord > 0, now R is 0;
 	if R is 0 and gold-tiara is actually summonable: [if the player is soulless, or the player's babydaddy is a demon, or the player has ever had sex with the demon lord, the altar can summon a gold tiara]
-		say "The statue's face seems to grin as a golden tiara materializes on your head.";
+		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if R is 1 and the number of entries in LDC > 0:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
 		sort LDC in random order;
@@ -972,7 +960,6 @@ To reset dungeon altar:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-
 Rule for supplying a missing second noun while praying something with:
 	if the player is in Dungeon28, now the second noun is dungeon altar;
 	if the player is in Woods20, now the second noun is woods altar;
@@ -985,7 +972,4 @@ Check putting something on woods altar:
 
 Understand "place [something] on [something]", "offer [something] on [something]"[, "use [something] on [something]"] as praying it with.
 
-
-
 Altars ends here.
-

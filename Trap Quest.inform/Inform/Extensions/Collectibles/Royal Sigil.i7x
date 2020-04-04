@@ -26,4 +26,3 @@ Definition: a royal sigil is royalty themed: decide yes.
 Definition: a royal sigil is grey themed: decide yes.
 
 Royal Sigil ends here.
-

@@ -1,6 +1,5 @@
 Bondage Framework by Bondage begins here.
 
-
 A clothing can be wristless, wrist-unbound, wrist-bound-in-front or wrist-bound-behind (this is the wrist-restriction property). Clothing is usually wristless.
 Definition: a clothing is wrist locking if it is not wristless.
 Definition: a clothing is wrist locked if it is wrist-bound-in-front or it is wrist-bound-behind.
@@ -46,7 +45,6 @@ To decide which number is the bondage dexterity penalty of the player:
 
 bondage is a kind of clothing. bondage is usually metal. bondage is usually unique. bondage is usually manly.
 
-
 Definition: a bondage is discovered varied: decide no.
 
 Definition: a bondage is too boring: decide no.
@@ -67,8 +65,4 @@ To say ShortDesc of (T - a bondage):
 To uniquely set up (C - a bondage):
 	now the raw-magic-modifier of C is 0.
 
-
-
-
 Bondage Framework ends here.
-

@@ -2,7 +2,6 @@ Ankle Bondage by Bondage begins here.
 
 An ankle bond is a kind of bondage. Understand "cuffs" as ankle bond. An ankle bond is usually ankle-bound.
 
-
 To decide which number is the initial outrage of (C - an ankle bond):
 	decide on 2.
 
@@ -51,6 +50,4 @@ This is the trousers ankle bondage clash rule:
 		rule fails.
 The trousers ankle bondage clash rule is listed in the trousers wearability rules.
 
-
 Ankle Bondage ends here.
-

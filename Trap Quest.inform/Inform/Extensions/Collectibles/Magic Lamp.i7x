@@ -30,4 +30,3 @@ To decide which number is the bartering value of (T - a magic lamp) for (M - Ica
 	decide on 4.
 
 Magic Lamp ends here.
-

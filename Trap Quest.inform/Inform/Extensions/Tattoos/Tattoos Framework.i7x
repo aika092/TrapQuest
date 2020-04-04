@@ -65,10 +65,17 @@ To decide which object is the coverer of (T - a tattoo):
 
 To decide which object is the concealer of (T - a tattoo):
 	decide on nothing.
+To decide which object is the at least partial concealer of (T - a tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on nothing.
 
 To say visibility-desc of (T - a tattoo):
-	if the concealer of T is a thing, say "It currently can't be seen thanks to your [concealer of T].";
-	otherwise say "It can currently be seen by anyone who looks at you.".
+	if the concealer of T is a thing:
+		say "It currently can't be seen thanks to [NameDesc of concealer of T].";
+	otherwise if the at least partial concealer of T is a thing:
+		say "It currently can only partially be seen thanks to [NameDesc of at least partial concealer of T].";
+	otherwise:
+		say "It can currently be seen by anyone who looks at you.".
 
 To say outrage-desc of (T - a tattoo):
 	if the unworn outrage of T is too humiliating:
@@ -101,6 +108,19 @@ To decide which number is the unworn cringe of (T - a tattoo):
 Check taking off tattoo:
 	say "That's permanently inked into your skin!" instead.
 
+This is the tattoos get focused rule:
+	if tattoo vision is 1 and the focus-window is g-present:
+		repeat with T running through worn tattoos:
+			if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
+				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
+				if the outrage of T >= A, focus-consider T;
+			otherwise:
+				let C be calculated-cringe-level - (calculated-cringe-level / 2);
+				if the cringe of T >= C, focus-consider T.
+The tattoos get focused rule is listed in the focus finding rules.
+
+
+
 Section 1 - Ass Tattoos
 
 An ass tattoo is a kind of tattoo.
@@ -110,6 +130,9 @@ Definition: an ass tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - an ass tattoo):
 	decide on a random worn potentially asshole covering clothing.
+To decide which object is the at least partial concealer of (T - an ass tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn potentially at least partially asshole covering clothing.
 
 Section 2 - Asshole tattoos
 
@@ -123,13 +146,15 @@ Definition: an asshole-tattoo is anal sex themed: decide yes.
 
 To decide which object is the concealer of (T - an asshole-tattoo):
 	decide on the concealer of asshole.
+To decide which object is the at least partial concealer of (T - an asshole-tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of asshole.
 
 To decide which number is the initial outrage of (T - an asshole-tattoo):
 	decide on 14.
 
 To decide which number is the anal sensitivity influence of (C - an asshole-tattoo):
 	decide on 1.
-
 
 Section 3 - Crotch Tattoos
 
@@ -140,11 +165,13 @@ Definition: a crotch tattoo (called A) is drawable:
 	decide yes.
 
 To decide which object is the concealer of (T - a crotch tattoo):
-	decide on a random worn potentially vagina covering clothing.
+	decide on the concealer of vagina.
+To decide which object is the at least partial concealer of (T - a crotch tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of vagina.
 
 To decide which number is the initial outrage of (T - a crotch tattoo):
 	decide on 11.
-
 
 Section 4 - Chest Tattoos
 
@@ -155,10 +182,12 @@ Definition: a chest tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - a chest tattoo):
 	decide on a random worn actually dense fully covering actually breast covering clothing.
+To decide which object is the at least partial concealer of (T - a chest tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through fully covering actually breast covering clothing.
 
 To decide which number is the initial outrage of (T - a chest tattoo):
 	decide on 7.
-
 
 Section 5 - Leg Tattoos
 
@@ -170,12 +199,15 @@ Definition: a leg tattoo (called A) is drawable:
 To decide which object is the concealer of (T - a leg tattoo):
 	let C be a random worn leg covering actually dense clothing;
 	decide on C.
+To decide which object is the at least partial concealer of (T - a leg tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	let C be a random worn leg covering not-see-through clothing;
+	decide on C.
 
 To decide which number is the initial outrage of (T - a leg tattoo):
 	decide on 3.
 To decide which number is the cringe of (T - a leg tattoo):
 	decide on 0.
-
 
 Section 6 - Lower Back Tattoos
 
@@ -186,6 +218,9 @@ Definition: a lower back tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - a lower back tattoo):
 	decide on a random worn actually dense belly covering clothing.
+To decide which object is the at least partial concealer of (T - a lower back tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through belly covering clothing.
 
 To decide which number is the initial outrage of (T - a lower back tattoo):
 	decide on 5.
@@ -199,10 +234,12 @@ Definition: a upper back tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - a upper back tattoo):
 	decide on a random worn actually dense breast covering clothing.
+To decide which object is the at least partial concealer of (T - a upper back tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through breast covering clothing.
 
 To decide which number is the initial outrage of (T - a upper back tattoo):
 	decide on 3.
-
 
 Section 7 - Body Tattoos
 
@@ -216,14 +253,19 @@ Definition: a body tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - a body tattoo):
 	decide on nothing.
+To decide which object is the at least partial concealer of (T - a body tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on nothing.
 
 Section 8 - Face tattoos
 
 A face-tattoo is a kind of body tattoo. Understand "face tattoo" as a face-tattoo.
 
 To decide which object is the concealer of (T - a face-tattoo):
-	if cultist veil is worn, decide on cultist veil;
-	decide on a random worn hood.
+	decide on the concealer of face.
+To decide which object is the at least partial concealer of (T - a face-tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of face.
 
 To decide which number is the initial outrage of (T - a face-tattoo):
 	decide on 10.
@@ -238,10 +280,12 @@ Definition: a belly tattoo (called A) is drawable:
 
 To decide which object is the concealer of (T - a belly tattoo):
 	decide on a random worn actually dense belly covering clothing.
+To decide which object is the at least partial concealer of (T - a belly tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through belly covering clothing.
 
 To decide which number is the initial outrage of (T - a belly tattoo):
 	decide on 2.
-
 
 Section 10 - DQ Tattoos
 
@@ -253,13 +297,15 @@ Definition: a dq tattoo (called A) is drawable:
 	if A is worn, decide no;
 	decide yes. [So these can be selected randomly!]
 
-
 Section 11 - Hand tattoos
 
 A hand-tattoo is a kind of body tattoo. Understand "hand tattoo" as a hand-tattoo.
 
 To decide which object is the concealer of (T - a hand-tattoo):
 	decide on a random worn actually dense finger covering clothing.
+To decide which object is the at least partial concealer of (T - a hand-tattoo):
+	if T is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through finger covering clothing.
 
 To decide which number is the initial outrage of (T - a hand-tattoo):
 	decide on 1.
@@ -269,6 +315,4 @@ Definition: a hand-tattoo (called A) is drawable:
 	if A is eligible, decide yes;
 	decide no.
 
-
 Tattoos Framework ends here.
-

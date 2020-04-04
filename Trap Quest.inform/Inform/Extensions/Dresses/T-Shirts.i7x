@@ -54,7 +54,6 @@ To say MediumDesc of (C - a Boobies T-shirt):
 To decide which number is the initial outrage of (C - a Boobies T-shirt):
 	decide on 1.
 
-
 Part 2 - Gang Bang Girl T-shirt
 
 A Gang Bang Girl T-shirt is a kind of T-shirt. The printed name of Gang Bang Girl T-shirt is usually "[clothing-title-before]Gang Bang Girl T-shirt[clothing-title-after]". The text-shortcut of Gang Bang Girl T-shirt is "ggt".
@@ -160,7 +159,6 @@ Definition: an I love my wet nappies T-shirt is baby themed: decide yes.
 Definition: an I love my wet nappies T-shirt is white themed: decide yes.
 Definition: an I love my wet nappies T-shirt is pin themed: decide yes. [Is it something related to safety pins?]
 
-
 Part 5 - I Wish These Were Brains T-shirt
 
 An I wish these were brains T-shirt is a kind of T-shirt. The printed name of I wish these were brains T-shirt is usually "[clothing-title-before]I wish these were brains T-shirt[clothing-title-after]". The text-shortcut of I wish these were brains T-shirt is "wwt".
@@ -188,7 +186,6 @@ To decide which number is the intelligence-influence of (C - an I wish these wer
 	let D be 2 + the magic-modifier of C;
 	decrease D by the largeness of breasts / 3;
 	decide on D.
-
 
 Part 6 - Birth Control is for Sissies T-shirt
 
@@ -218,7 +215,6 @@ To decide which number is the vaginal-sex-addiction-influence of (C - a birth co
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
-
 
 Part 7 - Sissy T-shirt
 
@@ -250,7 +246,6 @@ Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the play
 To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
 
-
 Part 8 I'm Knocked Up T-shirt
 
 An I'm knocked up T-shirt is a kind of T-shirt. The printed name of I'm knocked up T-shirt is usually "[clothing-title-before]I'm knocked up T-shirt[clothing-title-after]". The text-shortcut of I'm knocked up T-shirt is "kut".
@@ -281,7 +276,6 @@ To decide which number is the vaginal-sex-addiction-influence of (C - an I'm kno
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
-
 
 Part 9 - Crybaby T-shirt
 
@@ -413,7 +407,6 @@ To decide which number is the semen-addiction-influence of (C - an ahegao T-shir
 To decide which number is the initial outrage of (C - an ahegao T-shirt):
 	decide on 8.
 
-
 Part 13 - Sissy Faggot T-shirt
 
 A sissy faggot T-shirt is a kind of T-shirt. The printed name of sissy faggot T-shirt is usually "[clothing-title-before]sissy faggot T-shirt[clothing-title-after]". The text-shortcut of sissy faggot T-shirt is "sft".
@@ -444,4 +437,3 @@ To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.
 
 T-Shirts ends here.
-

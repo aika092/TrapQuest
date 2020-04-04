@@ -1,6 +1,5 @@
 Podium by Objects begins here.
 
-
 podium is a thing. podium is not portable. podium is in Dungeon31. The printed name of podium is "[TQlink of item described]stage[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of podium is "st". Understand "stage" as podium. podium has a number called charge. Figure of podium is the file "Env/Dungeon/podium1.png".
 
 To say ExamineDesc of (C - podium):
@@ -19,9 +18,7 @@ Check entering podium:
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
 	if the player is not able to use manual dexterity, say "You don't have the manual dexterity needed to climb up there." instead;
 	if the player is prone, say "You would need to be standing up." instead;[now we can assume the player can get onto the podium]
-	say "[if seconds > 0]Giving into temptation, you[otherwise]You[end if] quickly climb up on the stage and [if diaper quest is 1]suddenly feel compelled to turn and look out. Looking around you can imagine what it would be like to be part of such a humiliating performance - you can feel the warm clammy feeling of a full diaper, the laughs of the crowd as you struggle to move around normally, pawing at your nappy with fists locked within tight pink mittens, and sucking nervously on your pacifier[otherwise]turn to look out. Looking around you can imagine the cold bite of the iron cuffs around your wrists and ankles, chaining you, while bidders shout out their offers for you, their eyes raking you over, making you feel defenceless. You shiver once more as the Auctioneer steps up and manhandles you, [his of shopkeeper] hands exposing your assets to the onlookers all while calling out for higher bids, urging them on[end if].
-
-Closing your eyes you can feel another shiver run though you. Taking a deep breath you hold it for a moment then let out slowly. ";
+	say "[if seconds > 0]Giving into temptation, you[otherwise]You[end if] quickly climb up on the stage and [if diaper quest is 1]suddenly feel compelled to turn and look out. Looking around you can imagine what it would be like to be part of such a humiliating performance - you can feel the warm clammy feeling of a full diaper, the laughs of the crowd as you struggle to move around normally, pawing at your nappy with fists locked within tight pink mittens, and sucking nervously on your pacifier[otherwise]turn to look out. Looking around you can imagine the cold bite of the iron cuffs around your wrists and ankles, chaining you, while bidders shout out their offers for you, their eyes raking you over, making you feel defenceless. You shiver once more as the Auctioneer steps up and manhandles you, [his of shopkeeper] hands exposing your assets to the onlookers all while calling out for higher bids, urging them on[end if].[line break][line break][line break][line break][line break]Closing your eyes, you can feel another shiver run though you. Taking a deep breath you hold it for a moment then let out slowly. ";
 	allocate 6 seconds;
 	passively stimulate thighs from podium;
 	passively stimulate arms from podium;
@@ -141,6 +138,4 @@ This is the automatic podium rule:
 	try entering podium;
 	if the charge of podium <= 0, now the charge of podium is 500. [Failsafe to prevent against infinite loops]
 
-
 Podium ends here.
-

@@ -1,18 +1,20 @@
 Monster Adjectives by Monster Framework begins here.
 
-
 A monster is a kind of animal. A dungeon boss is a kind of monster.
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
 A monster has a number called sleep. The sleep of a monster is usually 0. [The number of seconds until they wake up.]
 Definition: A monster is awake rather than asleep if its sleep <= 0 and timeBombTime <= 0.
 A monster has a number called sex-length. The sex-length of a monster is usually 0. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
-A monster has a number called difficulty. The difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
+A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
+To decide which number is the difficulty of (M - a monster):
+	decide on the raw difficulty of M + game difficulty.
 A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
+Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
 	let X be 3;
-	increase X by (the difficulty of M * (10 + game difficulty)) / 3;
+	increase X by (the difficulty of M * 10) / 3;
 	if M is durable-tentacle-monster, increase X by the difficulty of M;
 	decide on X.
 A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
@@ -31,7 +33,7 @@ A monster has a number called scared. The scared of a monster is usually 0. [How
 Definition: a monster (called M) is father material:[This means the monster can father children.]
 	if M is male, decide yes;
 	decide no.
-A monster can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
+A person can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
 A monster has a number called times-met. The times-met of a monster is usually 0.
 A monster has a number called times-submitted. The times-submitted of a monster is usually 0.
@@ -205,6 +207,4 @@ Definition: a monster is seducable if it is male and it is intelligent and it is
 Definition: a monster is actually seducable if it is seducable and it is reactive and it is interested and it is unseduced.
 A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
 
-
 Monster Adjectives ends here.
-

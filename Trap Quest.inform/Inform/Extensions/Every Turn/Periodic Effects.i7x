@@ -1,11 +1,16 @@
 Periodic Effects by Every Turn begins here.
 
-
 A time based rule (this is the compute clothing rule):
 	repeat with C running through in-play clothing:
 		compute drying of C;
 	repeat with C running through worn wearthing:
-		compute periodic effect of C.
+		if C is clothing and the stolen-strength of C > 0:
+			say "You feel your stolen strength returning to you from [NameDesc of C].";
+			StrengthUp the stolen-strength of C;
+			now the stolen-strength of C is 0;
+		if playerRegion is school, compute school periodic effect of C;
+		otherwise compute periodic effect of C.
+
 
 [!<dominationTime:Integer>*
 
@@ -27,7 +32,6 @@ temp_dex_dam is a number that varies. temp_dex_dam is 0.
 temp_int_dam is a number that varies. temp_int_dam is 0.
 
 Part 1 - Main Procedure
-
 
 [!<ComputePeriodicEffectsWithEarnings>+
 
@@ -88,7 +92,9 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 		compute orifice soreness decay;
 	if the remainder after dividing local-earnings by 676 < local-seconds:
 		compute makeup decay;
-	if the remainder after dividing local-earnings by 9 < local-seconds:
+	let inflation-decay-rate be 29;
+	if the player is flying, now inflation-decay-rate is 9;
+	if the remainder after dividing local-earnings by inflation-decay-rate < local-seconds:
 		compute inflation decay;
 	if the remainder after dividing local-earnings by 49 < local-seconds and temp_str_dam + temp_dex_dam + temp_int_dam > 0:
 		compute stat healing;
@@ -181,7 +187,6 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 
 Part 2 - Specific Procedures
 
-
 [!<ComputeHairColourDecay>+
 
 REQUIRES COMMENTING
@@ -240,7 +245,6 @@ To compute orifice soreness decay:
 			otherwise:
 				heal vagina times 1.
 
-
 [!<ComputeInflationDecay>+
 
 REQUIRES COMMENTING
@@ -261,8 +265,6 @@ To compute inflation decay:
 		if flav-said is 0, say "Your [ShortDesc of hips] have slightly deflated.";
 	if the player is flying and a random number between 1 and 2 is 1, say "[one of]You can't believe you're stuck in the air! How humiliating.[or]Being stuck in mid-air gives you plenty of time to reflect on how messed up your situation really is.[or][line break][variable custom style]I'm a floating blimp. How disgraceful![roman type][line break][or][line break][variable custom style]How long is it going to take for me to deflate?[roman type][line break][or][line break][variable custom style]What sort of [if the bimbo of the player < 12]fucked up [end if]person thinks of putting something like this into a game?!?![roman type][line break][or][line break][variable custom style]This is a strangely calming experience...[roman type][line break][or][line break][variable custom style]I think I'm slowly getting heavier again![roman type][line break][in random order]";
 
-
-
 To compute stat healing:
 	if temp_str_dam > 0 and a random number between 1 and 10 > temp_str_dam:
 		decrease temp_str_dam by 1;
@@ -273,9 +275,6 @@ To compute stat healing:
 	if temp_int_dam > 0 and a random number between 1 and 10 > temp_int_dam:
 		decrease temp_int_dam by 1;
 		say "[bold type]You feel as though your mind is slightly clearer![roman type]";
-
-
-
 
 A time based rule (this is the dressup rule):
 	if playerRegion is not school:
@@ -356,10 +355,6 @@ A time based rule (this is the dressup rule):
 				say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling exposed knowing your own clothes can mess with you any time![at random]";
 				if P is breasts, stimulate breasts.
 
-
-
-
-
 shunk-happened is a number that varies.
 
 A time based rule (this is the trap time rule):
@@ -392,6 +387,7 @@ To compute reset cooldown of (T - a trap):
 			now T is not expired;
 			now T is not triggered;
 			now T is unrevealed;
+			dislodge T;
 			if T is click:
 				repeat with C running through containers in the location of T:
 					now C is closed;
@@ -404,17 +400,12 @@ To compute reset cooldown of (T - a trap):
 	otherwise:
 		decrease the reset-timer of T by time-seconds.
 
-
-
-
-
 [!<mindflayerQuest:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
 mindflayer quest is a number that varies. mindflayer quest is 0.
-
 
 [!<mindflayerSpawned:Integer>*
 
@@ -423,15 +414,12 @@ REQUIRES COMMENTING
 *!]
 mindflayer spawned is a number that varies. mindflayer spawned is 0.
 
-
-
 [!<Player>@<domination:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
 The player has a number called domination. The domination of the player is usually 0.
-
 
 A time based rule (this is the mindflayer spawns rule):
 	if mindflayer spawned is 0 and diaper quest is 0 and the remainder after dividing time-earnings by 417 < time-seconds:
@@ -459,7 +447,6 @@ A later time based rule (this is the mindflayer quest rule):
 		say "The PA system comes alive again. [line break][second custom style]'Oh wonderful. Nintendolls thanks you for your contribution to the completion of this testing phase! The standard bug bounty has been credited to your winnings, how lucky for you! Oh, and if it dropped anything feel free to keep it, it[']s an item from later in the game so it[']s probably pretty powerful.'[roman type][line break]";
 		now mindflayer quest is 2.
 
-
 A time based rule (this is the mindflayer domination rule):
 	if the domination of the player > 0:[Revised Mind Flayer Domination Attack, starts by checking for domination at all]
 		if domination-time - (a random number between the domination of the player and 40) < 0:
@@ -483,9 +470,6 @@ A time based rule (this is the mindflayer domination rule):
 		otherwise:
 			decrease domination-time by 1.
 				[Digesting souls- preliminary version definitely way too strong but it has to be in the game to balance it]
-
-
-
 
 [
 LATEX TRANSFORMATION GUIDELINES:
@@ -552,7 +536,6 @@ To compute latex transformation:
 					now C is in the location of the player;
 		say "[roman type][line break]".
 
-
 [!<TheSexDollsHaveNoVoiceRule>+
 
 REQUIRES COMMENTING
@@ -568,8 +551,4 @@ To decide which number is latex transformation rate:
 	if dolly tattoo is worn, decrease N by 69;
 	decide on N.
 
-
-
-
 Periodic Effects ends here.
-

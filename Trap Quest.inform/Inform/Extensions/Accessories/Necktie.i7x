@@ -28,4 +28,3 @@ Definition: a necktie is tartan themed: decide yes.
 Definition: a necktie is pink themed: decide yes.
 
 Necktie ends here.
-

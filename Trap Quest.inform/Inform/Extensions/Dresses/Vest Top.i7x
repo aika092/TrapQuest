@@ -8,7 +8,6 @@ To decide which number is the initial outrage of (C - a vest top):
 To compute SelfExamineDesc of (C - a vest top):
 	say "You are wearing a [ShortDesc of C]. ".
 
-
 This is the remove inappropriate vest tops rule:
 	repeat with B running through vest tops:
 		now B is in Holding Pen.
@@ -115,9 +114,6 @@ To say MediumDesc of (C - a rubber vest top):
 To decide which number is the initial outrage of (C - a rubber vest top):
 	decide on 4.
 
-
 Definition: a rubber vest top is black themed: decide yes.
 
-
 Vest Top ends here.
-

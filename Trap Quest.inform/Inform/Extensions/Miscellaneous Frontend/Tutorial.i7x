@@ -15,7 +15,6 @@ This is the tutorial start rule:
 	if earnings is starting-earnings, now tutorial is 1;
 	follow the quit rule.
 
-
 To say TutorialCapsule:
 	if tutorial is 1:
 		if the player is female, now the flesh volume of breasts is 6;
@@ -32,7 +31,7 @@ Tutorial01 is an introductory room. "A weird room with a stone ground and pink w
 Check going east when the player is in Tutorial01:
 	unless there is a worn grey monokini, say "You should probably make sure that your naughty bits aren't on display before you continue.[unless there is a held grey monokini] What's in that sack, I wonder?[end if]" instead.
 
-Tutorial02 is an introductory room. "An identical room to the one before, but this one has a different container in the middle of it![paragraph break][newbie style]Looks like another thing you can open. This game is easy! Surely nothing can go wrong? Also, you'll notice you can see a guard in the next room, but not yet interact or even examine him. You can only do actions to things in the same location as yourself.[roman type][line break]". Tutorial02 is east of Tutorial01. The printed name of Tutorial02 is "Another pink room". The shape of Tutorial02 is L10/0-0-0-1-0-1. The grid position of Tutorial02 is <10,12,12>.
+Tutorial02 is an introductory room. "An identical room to the one before, but this one has a different container in the middle of it![paragraph break][newbie style]Looks like another thing you can open. This game is easy! Surely nothing can go wrong? Also, you'll notice you can see a guard in the next room, but not yet interact or even examine [him of a random royal guard]. You can only do actions to things in the same location as yourself.[roman type][line break]". Tutorial02 is east of Tutorial01. The printed name of Tutorial02 is "Another pink room". The shape of Tutorial02 is L10/0-0-0-1-0-1. The grid position of Tutorial02 is <10,12,12>.
 
 Check going east when the player is in Tutorial02:
 	unless there is a worn heels and there is a worn grey monokini, say "You should probably make sure you're obtaining and wearing all possible equipment before moving forward." instead.
@@ -44,7 +43,7 @@ Report wearing:
 
 		NB: Most items in the real game that you find in containers like this will come with a 'decurse quest' which gives you an alternate method of getting rid of the item. But usually the task will be something you should probably be trying to avoid...".
 
-Tutorial03 is an introductory room. "An identical room to the one before, but this one has a scary looking man in it![paragraph break][newbie style]Here's a non-player character! But clearly he is currently facing a wall or something because he hasn't noticed you. But never fear, you can force NPCs to notice you by using the 'greet' command. Let's hope he's friendly![roman type][line break]". Tutorial03 is east of Tutorial02. The printed name of Tutorial03 is "And another pink room". The shape of Tutorial03 is L10/0-0-0-1-0-1. The grid position of Tutorial03 is <10,13,12>.
+Tutorial03 is an introductory room. "An identical room to the one before, but this one has a scary looking [man of a random royal guard] in it![paragraph break][newbie style]Here's a non-player character! But clearly [he of a random royal guard] is currently facing a wall or something because [he of a random royal guard] hasn't noticed you. But never fear, you can force NPCs to notice you by using the 'greet' command. Let's hope [he of a random royal guard]'s friendly![roman type][line break]". Tutorial03 is east of Tutorial02. The printed name of Tutorial03 is "And another pink room". The shape of Tutorial03 is L10/0-0-0-1-0-1. The grid position of Tutorial03 is <10,13,12>.
 
 Check going east when the player is in Tutorial03:
 	unless there is an interested royal guard, say "You should probably get the guard's attention first." instead.
@@ -119,7 +118,7 @@ Report opening a container:
 		say "[newbie style]Wow, so a lot just happened! Firstly you got hit by a trap. That happens a lot I'm afraid, and there's not too much you can do about it. The higher intelligence you have, the more chance you have to avoid triggering traps, either by noticing tripwires or detecting trapped containers, and the higher your dexterity, the higher your chance of dodging triggered traps, and sometimes escape traps that have caught you. Except for that, traps are just one of those parts of the game that are kind of inevitable. In general, being on your knees can help you avoid traps and make them less likely to affect you, but this is not always the case. Anyway, this particular trap increased [if diaper quest is 1]your arousal, as I'm sure you noticed[otherwise]the size of your hips. Did you notice the character window change? In the game your hips won't grow as quickly as that, but they can grow slowly but surely thanks to effects like the needle trap[end if].[paragraph break]Next, you have found some heels. Heels are interesting... they make your appearance a bit more slutty and at the beginning of the game they make you grow tired more quickly because you are not skilled at walking in them. But they increase the power of your kick attacks, which is very useful. For this tutorial, we will wear them. In the real game, it is up to you.[roman type][line break]".
 
 To say TutorialGreet of (M - a royal guard):
-	say "[speech style of M]'Oh, I didn't notice you there! Erm... that's an interesting choice of attire you have on there. But it's not inappropriate enough for me to be forced to arrest you. You may proceed unhindered for now.'[paragraph break][newbie style]Looks like he's friendly! But now that he's interested, he will follow you from room to room until he gets bored, so you'd better hope that nothing happens that makes him change his mind! Also, since he's interested and friendly you can ask him questions. To do this simply use the 'ask' verb. Each different type of NPC can teach you a skill if you ask the right question (random chance based on your intelligence), but you can only ask a certain number of questions before the NPC gets annoyed and stops answering. When you are bored with asking questions, feel free to move on.[roman type][line break]".
+	say "[speech style of M]'Oh, I didn't notice you there! Erm... that's an interesting choice of attire you have on there. But it's not inappropriate enough for me to be forced to arrest you. You may proceed unhindered for now.'[paragraph break][newbie style]Looks like [he of M]'s friendly! But now that [he of M]'s interested, [he of M] will follow you from room to room until [he of M] gets bored, so you'd better hope that nothing happens that makes [him of M] change [his of M] mind! Also, since [he of M]'s interested and friendly you can ask [him of M] questions. To do this simply use the 'ask' verb. Each different type of NPC can teach you a skill if you ask the right question (random chance based on your intelligence), but you can only ask a certain number of questions before the NPC gets annoyed and stops answering. When you are bored with asking questions, feel free to move on.[roman type][line break]".
 
 Report opening a container:
 	if the player is in Tutorial04:
@@ -132,7 +131,7 @@ Report opening a container:
 
 Check slapping when tutorial is 1:
 	if the noun is not monster, say "This verb is for attacking NPCs." instead;
-	if the noun is friendly, say "Let's not antagonise him." instead;
+	if the noun is friendly, say "Let's not antagonise [him of the noun]." instead;
 	say "We're going to only use [bold type]kick[roman type]ing in this fight." instead.
 
 Check kneeing when tutorial is 1:
@@ -140,7 +139,7 @@ Check kneeing when tutorial is 1:
 
 Check kicking when tutorial is 1:
 	if the noun is not monster, say "This verb is for attacking NPCs." instead;
-	if the noun is friendly, say "Let's not antagonise him." instead.
+	if the noun is friendly, say "Let's not antagonise [him of the noun]." instead.
 
 Check waiting when tutorial is 1:
 	say "There's no waiting around allowed in this scripted tutorial!" instead.
@@ -172,7 +171,7 @@ Report resisting when tutorial is 1:
 		now the sleep of M is 0;
 		now M is uninterested;
 		calm M;
-		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button next to the map. But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, he will be happy to leave us alone and we can move south without him coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
+		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button next to the map. But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, [he of M] will be happy to leave us alone and we can move south without [him of M] coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
 
 Report squatting when the player is in Tutorial05:
 	say "[newbie style]Nice one! [if bukkake fetish is 1]Of course there is a slight problem with expelling when you are on your knees, which is that your thighs get covered in cum, lowering your dexterity. Cum can be wiped off in bodies of water or by using unworn clothing as rags. [end if]When you finish expelling, you should[if diaper quest is 0] do two things: fix the crotch of your swimsuit ('replace') and[end if] use the altar to help you escape these heels. [if the clothing-focus-window is g-present]Just click on the symbol of the altar under the image of your heels on the left. Or you could type phrases along the lines of 'place heels on altar'[otherwise if inline hyperlinks >= 2]Open your clothing inventory by typing 'c' or clicking on the appropriate hyperlink in the bottom left window[otherwise]Type phrases along the lines of 'place heels on altar'[end if].[roman type][line break]".
@@ -199,7 +198,6 @@ Check masturbating when tutorial is 1:
 Every turn when tutorial is 1:
 	update appearance level;
 	check for arousal change.
-	
 
 To start the tutorial:
 	now temporaryYesNoBackground is figure of small image;
@@ -228,7 +226,4 @@ To start the tutorial:
 	fix window overhang;
 	if the player is able to automatically slap or the player is able to automatically knee or the player is able to automatically kick, do nothing.
 
-
-
 Tutorial ends here.
-

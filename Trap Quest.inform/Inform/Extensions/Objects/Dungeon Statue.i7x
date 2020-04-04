@@ -69,6 +69,4 @@ Carry out whacking:
 		SilentlyDelicateUp 1.
 Understand "spank [something]" as whacking.
 
-
 Dungeon Statue ends here.
-

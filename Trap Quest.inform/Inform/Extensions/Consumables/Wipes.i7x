@@ -1,6 +1,5 @@
 Wipes by Consumables begins here.
 
-
 A pocketwipes is a kind of collectible. There are 7 pocketwipes. The printed name of pocketwipes is "[TQlink of item described]pack of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of pocketwipes is "[TQlink of item described]packs of pocketwipes[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pocketwipes is "pkw". Understand "pack", "pack of", "wipes" as pocketwipes.
 Figure of pocketwipes is the file "Items/Collectibles/pocketwipes1.png".
 
@@ -47,7 +46,8 @@ wipeChecking is initially false. [We need a way to flag to the remove checking f
 
 Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
 	let K be a random worn knickers;
-	if K is not messed knickers, say "You're not wearing any underwear that needs cleaning.";
+	if K is not messed knickers, say "You're not wearing any underwear that needs cleaning." instead;
+	if diaper quest is 1 and the class of the player is priestess, say "Your headband is somehow forbidding you from doing this!" instead;
 	now wipeChecking is true;
 	if K is actually removable: [if this check fails it'll explain why]
 		now wipeChecking is false;
@@ -70,6 +70,4 @@ Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
 To say unique-verb-desc of (T - a pocketwipes):
 	if inline hyperlinks >= 2 and there is worn messed knickers, say " [link][bracket]clean me[close bracket][as]use [text-shortcut of T][end link]".
 
-
 Wipes ends here.
-

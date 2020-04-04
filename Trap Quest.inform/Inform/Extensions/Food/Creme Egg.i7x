@@ -1,6 +1,5 @@
 Creme Egg by Food begins here.
 
-
 A creme egg is a kind of candy. The printed name of creme egg is "[TQlink of item described]creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of creme egg is "[TQlink of item described]creme eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of creme egg is "ce". There are 2 creme eggs.
 To say ExamineDesc of (C - a creme egg):
 	say "A small chocolate egg, still in its wrapper. A mystery filling awaits inside.".
@@ -10,7 +9,6 @@ Figure of golden creme egg is the file "Items/Collectibles/creme2.jpg".
 
 To decide which figure-name is the examine-image of (F - creme egg):
 	decide on figure of creme egg.
-
 
 A golden creme egg is a kind of creme egg. There is 1 golden creme egg. The printed name of golden creme egg is "[TQlink of item described]golden creme egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of golden creme egg is "gce".
 To say ExamineDesc of (C - a golden creme egg):
@@ -70,6 +68,4 @@ To compute (M - a robochef) cooking (I - a creme egg):
 		if D is golden creme egg, increase the fat of D by 1;
 		now D is retained by M.
 
-
 Creme Egg ends here.
-

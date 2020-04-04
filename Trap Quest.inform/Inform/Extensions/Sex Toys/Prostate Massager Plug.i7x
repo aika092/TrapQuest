@@ -24,6 +24,4 @@ A time based rule:
 
 Definition: a prostate massager plug is vaginally summonable: decide no.
 
-
 Prostate Massager Plug ends here.
-

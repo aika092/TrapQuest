@@ -1,6 +1,5 @@
 Mansion Statue by Objects begins here.
 
-
 MansionScenery01 is a thing. MansionScenery01 is in Mansion36. MansionScenery01 is not portable. Understand "statue", "womman", "statue's", "back", "butt", "leg", "legs" as MansionScenery01. Figure of MansionScenery01 is the file "Env/Mansion/statue1.jpg".
 The printed name of MansionScenery01 is "[TQlink of item described]statue[TQxlink of item described][shortcut-desc][verb-desc of item described]".
 MansionScenery01 has a number called charge.
@@ -76,4 +75,3 @@ To decide which number is the stimulation of (T - MansionScenery01) on (F - a bo
 	decide on 5.
 
 Mansion Statue ends here.
-

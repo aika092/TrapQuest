@@ -16,7 +16,6 @@ Definition: a baby bonnet is condom pinnable: decide yes.
 
 Part - Class Outfit
 
-
 Definition: a baby bonnet is removal-blocking if wearing-target is onesie or wearing-target is mittens or wearing-target is baby booties. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 baby-summoned is a number that varies.
@@ -66,11 +65,7 @@ To compute class outfit of (H - a baby bonnet):
 		summon P cursed with quest;
 		now the raw-magic-modifier of P is 0.
 
-
-
-
 Part - Quest
-
 
 adult-baby-quest is a headgear-clothing-quest.
 
@@ -82,7 +77,6 @@ To say QuestFlav of (Q - adult-baby-quest):
 
 To say QuestTitle of (Q - adult-baby-quest):
 	say " (incontinence quest)".
-
 
 Part - Variations
 
@@ -115,10 +109,4 @@ This is the rubber baby bonnet prevents speech rule:
 	if rubber-baby-bonnet is worn, rule fails.
 The rubber baby bonnet prevents speech rule is listed in the player speech rules.
 
-
-
-
-
-
 Baby Bonnet ends here.
-

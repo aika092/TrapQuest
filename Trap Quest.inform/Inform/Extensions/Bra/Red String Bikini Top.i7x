@@ -4,7 +4,6 @@ A red string bikini top is a kind of string bikini top. A red string bikini top 
 
 There is 1 transformation-rare red string bikini top. A red string bikini top is ridiculously low cut.
 
-
 To say ShortDesc of (B - a red string bikini top):
 	say "red string bikini top".
 
@@ -23,4 +22,3 @@ To decide which number is the initial outrage of (C - a red string bikini top):
 Definition: a red string bikini top is red themed: decide yes.
 
 Red String Bikini Top ends here.
-

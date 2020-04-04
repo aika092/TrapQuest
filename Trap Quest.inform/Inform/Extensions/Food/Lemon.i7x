@@ -21,4 +21,3 @@ To compute (M - a robochef) cooking (I - a lemon):
 		now D is retained by M.
 
 Lemon ends here.
-

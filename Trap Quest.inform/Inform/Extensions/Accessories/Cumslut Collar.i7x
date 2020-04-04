@@ -37,6 +37,4 @@ Definition: a cumslut collar is gem themed: decide yes.
 Definition: a cumslut collar is pink themed: decide yes.
 Definition: a cumslut collar is black themed: decide yes.
 
-
 Cumslut Collar ends here.
-

@@ -1,6 +1,5 @@
 Removability by Clothing begins here.
 
-
 Definition: a thing is removable: decide yes.
 Definition: a tattoo is removable: decide no.
 
@@ -58,7 +57,6 @@ Definition: a thing (called C) is tearable:
 Definition: a thing (called C) is tearable-or-stealable:
 	if C is tearable or C is stealable, decide yes;
 	decide no.
-
 
 the global removability rules is a rulebook.
 
@@ -177,7 +175,4 @@ Check taking off clothing:
 	now summoning is 0;
 	unless the noun is actually removable, do nothing instead.
 
-
-
 Removability ends here.
-

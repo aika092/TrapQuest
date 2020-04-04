@@ -1,6 +1,5 @@
 Recovering Clothing by Fainting begins here.
 
-
 [!<RecoverClothing>+
 
 REQUIRES COMMENTING
@@ -22,4 +21,3 @@ To Recover Clothing:
 		if I is worn store clothing, compute stealing of I.
 
 Recovering Clothing ends here.
-

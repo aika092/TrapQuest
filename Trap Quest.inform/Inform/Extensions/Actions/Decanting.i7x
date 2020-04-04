@@ -1,6 +1,5 @@
 Decanting by Actions begins here.
 
-
 Decanting it with is an action applying to two things.
 Understand "fill [something] with [something]", "fill [something] in [something]", "fill [something] from [something]", "use [something] in [something]", "dip [something] in [something]", "use [something] with [something]", "use [something] on [something]" as decanting it with.
 Check inserting something into a dispenser:
@@ -23,6 +22,7 @@ Check decanting something with:
 		otherwise say "That would be impractical." instead;
 	if the second noun is not a dispenser[ and the second noun is not sacred pool], say "The [second noun] doesn't have any liquid in it..." instead;
 	if the player is immobile, say "You're a bit tied up right now." instead;
+	if there is a triggered cage trap in the location of the player, say "You can't reach from inside the cage!" instead;
 	if the second noun is not drink-machine and (the player is not able to use their hands or the player is wrist bound behind), say "You can't use your hands right now!" instead;
 	if the player is prone, say "You can't reach while on your knees." instead;
 	if [the second noun is not sacred pool and ]the doses of the second noun is 0, say "[if the second noun is tank]The[otherwise if the second noun is bucket]You try, but the[end if] [second noun] is empty." instead;
@@ -72,7 +72,6 @@ To compute standard decanting of (D - a dispenser):
 		DoseEmpty the second noun;
 		say "The [if the second noun is tank]tank[otherwise if the second noun is bucket]bucket[otherwise][second noun][end if] is now empty.".
 
-
 To say DecantingFlav of (V - a vessel):
 	say "You dip the [V] into the [second noun] and take it back out, now with a serving of [fill-colour of the second noun] liquid[if the fill-type of the second noun is remembered] ([FillName the fill-type of second noun])[end if].".
 
@@ -114,6 +113,4 @@ Report decanting something with:
 		now focused-thing is T;
 		trigger T.
 
-
 Decanting ends here.
-

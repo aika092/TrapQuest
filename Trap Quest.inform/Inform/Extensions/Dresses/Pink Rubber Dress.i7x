@@ -56,4 +56,3 @@ To set up influence of (C - a pink rubber dress):
 Definition: a pink rubber dress is pink themed: decide yes.
 
 Pink Rubber Dress ends here.
-

@@ -19,4 +19,3 @@ To Recover Traps:
 		destroy B.
 
 Recovering Traps ends here.
-

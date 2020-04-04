@@ -1,6 +1,5 @@
 Pregnancy Options by Fetish Settings begins here.
 
-
 [!<tableOfPregnancyOptions:Table>+
 
 REQUIRES COMMENTING
@@ -11,7 +10,6 @@ title	subtable	description	toggle
 "I would rather not give birth to something bizarre or inhuman."	--	--	inhuman pregnancy hater rule
 "If it's at least partly human and doesn't come back I'm sure I'll be fine, but nothing too weird please!"	--	--	inhuman pregnancy disliker rule
 "I'm prepared to risk giving birth to a monster, and even risk it growing up and deciding its own 'mother' would make a good mate! (+1 point)"	--	--	inhuman pregnancy rule
-
 
 [!<TheInhumanPregnancyRule>+
 
@@ -39,12 +37,6 @@ REQUIRES COMMENTING
 This is the inhuman pregnancy hater rule:
 	now choice in row 20 of the Table of Player Options is 0;
 	follow quit rule.
-
-
-
-
-
-
 
 [!<randomSlowPregnancy:Integer>*
 
@@ -86,7 +78,6 @@ To decide which number is expectedChildRate:
 To decide which number is childValue times (N - a number):
 	decide on (N * the children of the player) / expectedChildRate.
 
-
 [!<DecideWhichNumberIsPregnancyPoints>+
 
 REQUIRES COMMENTING
@@ -102,7 +93,6 @@ To decide which number is pregnancy points:
 		decide on P;
 	decide on 0.
 
-
 [!<tableOfSlowPregnancyOptions:Table>*
 
 REQUIRES COMMENTING
@@ -115,7 +105,6 @@ title	subtable	description	toggle
 "Pregnancies should grow superfast! (0 points)"	--	--	fast pregnancy lover rule
 "Pregnancies should become full term immediately through magic! (-1 point)"	--	--	superfast pregnancy lover rule
 "The way pregnancy works in this world should be a surprise! (+1 point)"	--	--	random pregnancy lover rule
-
 
 [!<TheSuperfastPregnancyLoverRule>+
 
@@ -162,9 +151,6 @@ This is the slow pregnancy lover rule:
 	now choice in row 49 of the Table of Player Options is 1;
 	follow quit rule.
 
-
-
-
 [!<tableOfSlowBirthOptions:Table>*
 
 REQUIRES COMMENTING
@@ -205,8 +191,6 @@ This is the fast birth lover rule:
 	now choice in row 75 of the Table of Player Options is 0;
 	follow quit rule.
 
-
-
 [!<TheSuperfastBirthLoverRule>+
 
 REQUIRES COMMENTING
@@ -225,8 +209,4 @@ This is the random birth lover rule:
 	now choice in row 75 of the Table of Player Options is 1;
 	follow quit rule.
 
-
-
-
 Pregnancy Options ends here.
-

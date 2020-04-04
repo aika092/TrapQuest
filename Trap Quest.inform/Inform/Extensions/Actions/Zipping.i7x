@@ -16,7 +16,6 @@ REQUIRES COMMENTING
 Check closing a crotch-unzipped clothing:
 	try rezipping the noun instead.
 
-
 Part 1 - Unzipping
 
 Unzipping is an action applying to one thing.
@@ -35,8 +34,9 @@ Carry out unzipping:
 	ZipDown the noun.
 
 Report unzipping:
-	if the player is not occupied and ((the noun is not hobble-skirted and the noun is not knee-length) or the player is prone), compute player submission;
-	allocate 2 seconds.
+	allocate arm use;
+	allocate 2 seconds;
+	if the player is not occupied and ((the noun is not hobble-skirted and the noun is not knee-length) or the player is prone), compute player submission.
 
 Understand "unzip [something]", "pull zip on [something]", "pull zip on [something] down" as unzipping.
 
@@ -57,11 +57,11 @@ Check rezipping:
 		say "[BigNameDesc of M] gets in the way and stops you from touching the zip on your [noun]." instead.
 
 Carry out rezipping:
+	allocate arm use;
+	allocate 2 seconds;
 	say "You reach [if the player is prone]behind you[otherwise]down[end if] and pull your [noun]'s zip back into its proper position over your [if noun is total protection]crotch.[otherwise if the noun is pussy protection][vagina].[otherwise]body.[end if]";
-	ZipUp the noun;
-	allocate 2 seconds.
+	ZipUp the noun.
 
 Understand "zip [something]", "rezip [something]", "pull up zip on [something]", "pull zip on [something] up" as rezipping.
 
 Zipping ends here.
-

@@ -41,6 +41,4 @@ Definition: a heart wand is heart themed: decide yes.
 Definition: a heart wand is magic themed: decide yes.
 Definition: a heart wand is pink themed: decide yes.
 
-
 Heart Wand ends here.
-

@@ -1,6 +1,5 @@
 Toffee by Food begins here.
 
-
 A toffee is a kind of candy. The printed name of toffee is "[TQlink of item described]toffee[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of toffee is "[TQlink of item described]toffees[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of toffee is "to". There is 1 toffee.
 
 To say ExamineDesc of (C - a toffee):
@@ -41,6 +40,4 @@ To compute (M - a robochef) cooking (I - a toffee):
 		now the fat of D is 3;
 		now D is retained by M.
 
-
 Toffee ends here.
-

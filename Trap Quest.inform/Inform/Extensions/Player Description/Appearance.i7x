@@ -1,6 +1,5 @@
 Appearance by Player Description begins here.
 
-
 [!<SayPerceivedBimboDesc>+
 
 REQUIRES COMMENTING
@@ -69,6 +68,4 @@ To say PerceivedAdultDesc:
 	otherwise:
 		say "You look [if there is a lewdly exposed body part]like you have purposefully chosen a wardrobe designed to expose yourself[otherwise]like a dolled up bimbo[end if], like one might expect from a porn star or stripper. [if the player is naked]Perhaps you should put some clothes on[otherwise if C > 5]It clashes horribly with your infantile attire, making you look like you have some bizarre split personality[otherwise if there is a worn diaper]It clashes with your diaper, making you look quite ridiculous[otherwise if C > 2]Especially with the more childish elements, you give off the impression of a dedicated submissive[otherwise]Anyone who felt responsible for your safekeeping would have no choice but to punish you and take control of dressing you themselves[end if].".
 
-
 Appearance ends here.
-

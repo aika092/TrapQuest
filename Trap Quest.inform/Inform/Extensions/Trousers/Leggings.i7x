@@ -27,4 +27,3 @@ To decide which object is the unique-upgrade-target of (C - a leggings):
 	decide on nothing.
 
 Leggings ends here.
-

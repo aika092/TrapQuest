@@ -76,14 +76,12 @@ To say ClothingDesc of (W - christmas mittens):
 Definition: rubber mittens is pink themed: decide yes.
 Definition: rubber mittens is blue themed: decide yes.
 
-
 teddy bear mittens is womanly.
 Definition: teddy bear mittens is bear themed: decide yes.
 Definition: teddy bear mittens is pink themed: decide yes.
 
 To decide which number is the initial cringe of (C - teddy bear mittens):
 	decide on 9.
-
 
 Definition: christmas mittens is green themed: decide yes.
 Definition: christmas mittens is red themed: decide yes.
@@ -108,7 +106,4 @@ This is the inflated mittens prevent manual dexterity rule:
 		rule fails.
 The inflated mittens prevent manual dexterity rule is listed in the hands restriction rules.
 
-
-
 Mittens ends here.
-

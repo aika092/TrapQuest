@@ -1,9 +1,7 @@
 Cleaning by Actions begins here.
 
-
 The can't rub another person rule is not listed in the check rubbing rulebook.
 The report rubbing rule is not listed in the report rubbing rulebook.
-
 
 ragFound is an object that varies.
 
@@ -198,6 +196,4 @@ To clean (C - a clothing):
 	now the semen-soak of C is 0;
 	if C is worn, update appearance level.
 
-
 Cleaning ends here.
-

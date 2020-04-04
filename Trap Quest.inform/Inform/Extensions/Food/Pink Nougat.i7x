@@ -6,7 +6,6 @@ Definition: a pink nougat is pink themed: decide yes.
 
 Figure of pink nougat is the file "Items/Collectibles/pinknougat1.jpg".
 
-
 To decide which figure-name is the examine-image of (C - a pink nougat):
 	decide on figure of pink nougat.
 
@@ -53,6 +52,4 @@ To compute (M - a robochef) cooking (I - a pink nougat):
 		now the fat of D is 3;
 		now D is retained by M.
 
-
 Pink Nougat ends here.
-

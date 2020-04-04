@@ -39,6 +39,4 @@ To decide which figure-name is clothing-image of (C - a cute button diaper bag o
 To say ClothingDesc of (C - a cute button diaper bag of holding):
 	say "A cute pink cotton diaper bag kept closed with a single large button. It holds all your spare items and negates their weight. To you it's very obviously a diaper bag, [if the cringe of C is too humiliating]but maybe hopefully others won't realise and think it's just a normal bag... [otherwise]and you hope others realise as well! [end if]A warning on the label says '[BagHoldingWarning] bag'.".
 
-
 Diaper Bags of Holding ends here.
-

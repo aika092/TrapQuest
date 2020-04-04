@@ -149,7 +149,6 @@ To decide which figure-name is clothing-image of (C - a red fetish dress):
 To say ClothingDesc of (O - a red fetish dress):
 	say "This tight fitting red latex dress has a huge circular neckline, made for someone with gigantic boobs to show off most of their cleavage. It [if O is worn]provides[otherwise]would provide[end if] a decent amount of modesty for your bottom half.".
 
-
 Definition: a red fetish dress is red themed: decide yes.
 
 Part 5 - White Fetish Dress
@@ -289,7 +288,6 @@ To decide which number is the strength-influence of (O - an assless fetish dress
 
 Definition: an assless fetish dress is red themed: decide yes.
 
-
 Part 10 - Fetish Baby Dress
 
 fetish baby dress is a fetish dress. fetish baby dress is short. A fetish baby dress is transformation-rare. The text-shortcut of fetish baby dress is "fbbd".
@@ -317,6 +315,4 @@ Definition: a fetish baby dress is white themed: decide yes.
 Definition: a fetish baby dress is bow themed: decide yes.
 Definition: a fetish baby dress is transformation-protected if the class of the player is latex clown.
 
-
 Fetish Dress ends here.
-

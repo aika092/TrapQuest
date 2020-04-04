@@ -43,14 +43,13 @@ To say MonsterDesc of (M - an adult baby slave):
 	otherwise if M is bratty adult baby slave:
 		say "This [man of M] adorns a thick, cloth diaper encased within a pair of babyish plastic panties and a short, ruffled dress emblazoned with images of a cartoon cat. [big he of M] wears a look that tells you that the slightest provocation could easily set [him of M] off, triggering what could be the biggest tantrum of all time.".
 
-
 To say MonsterComment of (M - an adult baby slave):
-	say "[variable custom style][if the bimbo of the player < 5 and the player is male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get her to take her diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel her diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
+	say "[variable custom style][if the bimbo of the player < 5 and the player is male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
 
 To set up (M - an adult baby slave):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 5;
+	now the raw difficulty of M is 5;
 	now the health of M is the maxhealth of M.
 
 This is the spawn initial dungeon adult baby slave rule:
@@ -88,7 +87,7 @@ To say DiaperReaction of (M - an adult baby slave):
 		if M is unfriendly:
 			say "[BigNameDesc of M] slaps your diapered ass as you wet yourself.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to a Daddy or Mommy for a change unless you like sitting in your wet diapers. I do.'[or]Having you pee your diaper while I sit on your face is really turning me on... You don't have to do anything else, do you?'[or]You peeing your diaper while I sit on your face with mine is making me pretty horny.'[at random][otherwise if the player is upright]You really should have let me know if we were gonna take a pee break.'[otherwise]It's nice to see that I'm in good company, piddle-pants.'[end if][roman type][line break]";
 		otherwise:
-			say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Don[']t feel bad about wetting your diaper. It means that you're more like me.'[or]Doesn't it feel really good to flood your diaper? I love the warm, wet squish!'[or]If we go ask mommy, maybe she'll change us into each others diapers... Would you want to wear my wet diaper?'[at random][roman type][line break]";
+			say "[BigNameDesc of M] smiles gently and pats your back.[line break][speech style of M]'[one of]Don[']t feel bad about wetting your diaper. It means that you're more like me.'[or]Doesn't it feel really good to flood your diaper? I love the warm, wet squish!'[or]If we go ask mommy, maybe [he of matron]'ll change us into each others diapers... Would you want to wear my wet diaper?'[at random][roman type][line break]";
 		if the player is modest, say "[variable custom style][if the player is able to speak]'Wait! I swear I don[']t normally do that!'[otherwise]I can[']t even try to explain myself...[end if][roman type][line break]";
 		otherwise say "You feel your cheeks flush as you avert your eyes from [his of M] gaze.";
 	otherwise:
@@ -96,12 +95,12 @@ To say DiaperReaction of (M - an adult baby slave):
 
 To compute diaper mess reaction of (M - an adult baby slave):
 	if M is unfriendly:
-		if M is bratty adult baby slave, say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]You made all that fuss and you still went in your pants? Guess you're just drooling and babbling away, from being like the other babies around here. You were all just talk!'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]Ohhh, I know you could only feel it, but watching your dignity drain out of you to swell your diaper was just a sight! You know what I'm going to do now right? It's ok, you'll learn to love it!'[roman type][line break]As the musk of soiled diaper furrows into your nostrils, the slave's unnecessarily evil giggle fills the room, [his of M] victory punctuated by [his of M] childish bouncing and mocking tune, the song of your helpless subservience to [his of M] infantile wants![line break][speech style of M]'Just let it happen cutie, your smelly load tells me how badly you want this!'[roman type][line break]You panic as the reality of the situation sets in. Your body grows heavy as you struggle desperately for just one gasp of fresh air as the adult baby's filthy diaper takes dominion of your senses.[at random][otherwise if the player is upright]Awww, you know how long it's been since I had a 69 diaper soiling? You say you're a big girl but you're a selfish one!'[otherwise]How does it feel being dominated by a dirty diaper slave, are you embarrassed?'[end if][roman type][line break]";
+		if M is bratty adult baby slave, say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]You made all that fuss and you still went in your pants? Guess you're just drooling and babbling away, from being like the other babies around here. You were all just talk!'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]Ohhh, I know you could only feel it, but watching your dignity drain out of you to swell your diaper was just a sight! You know what I'm going to do now right? It's OK, you'll learn to love it!'[roman type][line break]As the musk of soiled diaper furrows into your nostrils, the slave's unnecessarily evil giggle fills the room, [his of M] victory punctuated by [his of M] childish bouncing and mocking tune, the song of your helpless subservience to [his of M] infantile wants![line break][speech style of M]'Just let it happen cutie, your smelly load tells me how badly you want this!'[roman type][line break]You panic as the reality of the situation sets in. Your body grows heavy as you struggle desperately for just one gasp of fresh air as the adult baby's filthy diaper takes dominion of your senses.[at random][otherwise if the player is upright]Awww, you know how long it's been since I had a 69 diaper soiling? You say you're a big girl but you're a selfish one!'[otherwise]How does it feel being dominated by a dirty diaper slave, are you embarrassed?'[end if][roman type][line break]";
 		otherwise say "[BigNameDesc of M] slaps your diapered ass as you mess yourself, spreading your mess around while it's still coming out of you.[line break][speech style of M]'[if M is penetrating a body part][one of]Once I'm done playing with you, you should probably go to mommy for a change unless you like sitting in your dirty diapers... I do but mommy says that only the biggest babies like playing in their own messes...'[or]Watching you make such a big, mushy mess in your Huggies is making me really horny!'[or]That's not fair! If you told me you had to mess, we could have gone at the same time! Still... Is it weird that I think your dirty diaper smells really good?'[roman type][line break]The adult baby slave shoves [his of M] face in your messy diaper, adopting a 69 position.[line break][speech style of M]'But better late than never, right?'[roman type][line break]You panic at [his of M] insinuation as [he of M] fills [his of M] diaper with a load of warm mush on your face, causing you to gag at the scent of [his of M] mess as [he of M] continues to nuzzle and caress your own.[at random][otherwise if the player is upright]Hey! You should have told me you needed to mess yourself! I might have let you sit on my face...'[otherwise]'How does it feel knowing that you're as big a baby as I am?[end if][roman type][line break]";
 		humiliate 400;
 	otherwise: [###Selkie: “Kimberly”, not [PlayerName]?]
 		if M is bratty adult baby slave, say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Ewww, did you just soil your diaper? I thought you were a big girl! Maybe if you beg I'll change you... in exchange for some playtime!'[or]How did you manage to stinky your diaper before me? I'd be back in big girl panties WAY before you... if I wanted them anyway!'[or]Kimberly made a stiiinky~! Kimberly made a stiiinky~! Wait until I tell mama what you did!'[or]Ohhhh, so THAT's what it means to be a big girl, you make even bigger dirty diapers!'[or]sniff sniff PU! I think I found the dirty diaper culprit!'[at random][roman type][line break]";
-		otherwise say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Don[']t feel too bad about messing your diaper. You might just be a big baby but at least we can be big babies together!'[or]Doesn't it feel really good to fill your diaper with hot mush? I love feeling the warm, squishy feeling spread around my diaper...'[or]If we go ask mommy, maybe she'll change us into each others diapers... Would you want to wear my messy diaper?'[at random][roman type][line break]";
+		otherwise say "[BigNameDesc of M] smiles gently and pats your back. [line break][speech style of M]'[one of]Don[']t feel too bad about messing your diaper. You might just be a big baby but at least we can be big babies together!'[or]Doesn't it feel really good to fill your diaper with hot mush? I love feeling the warm, squishy feeling spread around my diaper...'[or]If we go ask mommy, maybe [he of matron]'ll change us into each others diapers... Would you want to wear my messy diaper?'[at random][roman type][line break]";
 		humiliate 400;
 	if the humiliation of the player < 15000, say "[variable custom style][if the player is able to speak]'Wait! This isn't normal for me! I'm not a baby!'[otherwise]I'm stuck in a loaded diaper and I can't even try to explain myself... What could I even say?[end if][roman type][line break]";
 	otherwise say "You blush fiercely and avert your eyes, hearing [him of M] giggle as you do so.".
@@ -126,7 +125,7 @@ To compute (M - a monster) stomping (N - an adult baby slave):
 	now the sleep of N is 300.
 
 To say LeftoverDesc (N - 123):
-	say "An unconscious adult baby is lying here, with a very full diaper and a smile on her face.".
+	say "An unconscious adult baby is lying here, with a very full diaper and a smile on [his of a random adult baby slave] face.".
 
 To say DiaperCheckResultsDryForNowFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Baby Waby foo foo, diapered up so thick! Dry and clean, so it seems, it has to be a trick!'[or]Haha, good joke, you must have literally just got a change, huh? There's no way you're tricking me, I know a pottypants when I see one!'[or]Why is this dry, [sissy slut]? Why would you waste a perfectly good diaper by not using it, huh?'[in random order][roman type][line break]".
@@ -229,7 +228,7 @@ To say GroundPeeReaction of (M - a bratty adult baby slave):
 			follow the adult baby slave shows you to mommy rule.
 
 To say GroundPeeReaction of (M - an angelic adult baby slave):
-	say "[speech style of M]'That's naughty! If you can[']t control your pee, you obviously need diapers!'[roman type][line break]She adopts an aggressive stance.";
+	say "[speech style of M]'That's naughty! If you can[']t control your pee, you obviously need diapers!'[roman type][line break][big he of M] adopts an aggressive stance.";
 	now M is interested;
 	anger M.
 
@@ -244,7 +243,7 @@ This is the adult baby slave obeys guard rule:
 			otherwise:
 				let M be a random spanking the player royal guard;
 				if a random number between 1 and 3 is 1:
-					say "[BigNameDesc of current-monster] [one of]submissively[or]diligently[or]quietly[or]obediently[at random] nuzzles [his of current-monster] cheek against [NameDesc of M]'s shoulder.";
+					say "[BigNameDesc of current-monster] [one of]submissively[or]diligently[or]quietly[or]obediently[at random] nuzzles [his of current-monster] cheek against [NameDesc of M][']s shoulder.";
 				otherwise if face is not actually occupied and a random number between 1 and 3 is 1:
 					say "[BigNameDesc of current-monster] kneels in front of you and plants an apologetic kiss [if the delicateness of the player < 7]on your cheek[otherwise]on your lips[end if]. You [if the delicateness of the player < 9]frown with humiliation[otherwise if the delicateness of the player < 13]blush, turning a pale shade of pink, your brain struggling to compute the combination of the pain in your [buttcheeks] and the loving tenderness of [NameDesc of current-monster] at the same time[otherwise]find yourself returning the kiss, turning pink with shy embarrassment as you do[end if].";
 					humiliate 50;
@@ -278,18 +277,18 @@ This is the adult baby slave shows you to mommy rule:
 			say "[one of][line break][second custom style]'We're gonna go see mommy!'[roman type][line break][or][stopping]";
 			drag to the target-room of M by M;
 		if N is in the location of M:
-			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet Mommy! She's the best.'[line break]";
+			if the times-met of N < 1, say "[second custom style]'[NameBimbo], meet Mommy! [big he of N]'s the best.'[line break]";
 			otherwise say "[second custom style]'Mommy! [NameBimbo] had an accident so [he of the player] needs diapers! That's the rule, right?!'[line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]Let me go!'[otherwise]Umm...'[end if]";
 			say "[roman type][line break]";
-			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, humming to herself merrily, seemingly happy with herself for her 'good deed'.";
+			say "[BigNameDesc of M] dumps you in front of the [N] in this room, and then promptly skips away, humming to [himself of M] merrily, seemingly happy with [himself of M] for [his of M] 'good deed'.";
 			now N is diaper-committed;
 			now the ToMatron of M is -1;
 			if N is friendly or N is uninterested, check perception of N;
 			bore M;
 			compute monstermotion of M;
 		otherwise:
-			say "[second custom style]'Oh, she's not here. That's weird. Oh well, I guess we can wait for her here. I've got an idea of something we can do to pass the time...'[roman type][line break]";
+			say "[second custom style]'Oh, [he of N]'s not here. That's weird. Oh well, I guess we can wait for [him of N] here. I've got an idea of something we can do to pass the time...'[roman type][line break]";
 			now the ToMatron of M is -1;
 		rule succeeds.
 The adult baby slave shows you to mommy rule is listed in the adult baby slave unique punish rules.
@@ -305,19 +304,18 @@ Section 1 - Attack
 The adult baby slave priority attack rules is a rulebook. The priority attack rules of an adult baby slave is usually the adult baby slave priority attack rules.
 
 To compute kneeling reaction of (M - an adult baby slave):
-	say "[BigNameDesc of M] walks over to you, rubbing the front of her diaper and staring down luridly into your eyes. She stops rubbing long enough to push her diaper closer to your face, forcing you to inhale the sweet scent of baby powder.";
+	say "[BigNameDesc of M] walks over to you, rubbing the front of [his of M] diaper and staring down luridly into your eyes. [big he of M] stops rubbing long enough to push [his of M] diaper closer to your face, forcing you to inhale the sweet scent of baby powder.";
 	if the ToMatron of M < 1 and diaper quest is 0, say "[one of][line break][speech style of M]'Looking forward to having my diaper on your face little [if the player is presenting as male]brother[otherwise]sister[end if]?'[roman type][line break][or]'Just the thought of your nose in my diaper makes me super wet... and not with pee. Not yet anyway.'[roman type][or]'I kinda have to use my diaper... I hope you don't mind if I do it on your face.'[roman type][or]'Would you forgive me if I wet my diaper on your face?... Might you even like it a little?'[roman type][or][if diaper messing >= 4]'Would you hate me forever if I messed my diaper on your face, because I really want to! Maybe you'll even like it.'[end if][line break][in random order]";
 
 To say waitingflav of (M - an adult baby slave):
 	if the player is not able to speak:
 		say "[one of][line break][variable custom style][muffled sounds][roman type][line break][or]You look up at [NameDesc of M] silently.[at random]";
 	otherwise if the diaper addiction of the player < 10:
-		say "[one of]You find yourself in a state of disbelief at the realisation that your face is about to become the seat of some overgrown baby.[or]Your eyes glaze over as your brain can't comprehend the surreal situation you've found yourself in.[or][line break][first custom style]'You can't be serious...'[roman type][line break][or]You avert your eyes, praying to a god that you may or not believe in that her diaper remains clean.[or][line break][first custom style]'You can't do this to me!'[roman type][line break][or]You find yourself paralysed with disgust at the notion of her potentially using her diaper on your face.[in random order]";
+		say "[one of]You find yourself in a state of disbelief at the realisation that your face is about to become the seat of some overgrown baby.[or]Your eyes glaze over as your brain can't comprehend the surreal situation you've found yourself in.[or][line break][first custom style]'You can't be serious...'[roman type][line break][or]You avert your eyes, praying to a god that you may or not believe in that [his of M] diaper remains clean.[or][line break][first custom style]'You can't do this to me!'[roman type][line break][or]You find yourself paralysed with disgust at the notion of [him of M] potentially using [his of M] diaper on your face.[in random order]";
 	otherwise if the diaper addiction of the player < 14:
-		say "[one of]While you wouldn't normally choose to have a diaper on your face, having this cutie's [vagina] so close to your mouth sounds pretty hot, even if there will be a couple of inches of padding between it and you.[or]You wait obediently, a large part of you actually looking forward to the humiliation at hand.[or][line break][variable custom style]'You can sit on my face, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Just try not to use your diaper if you can help it. '[roman type][line break][or]Your heart starts racing as the thought of being so thoroughly dominated as to have this pampered little girl sit her diaper on your face.[in random order]";
+		say "[one of]While you wouldn't normally choose to have a diaper on your face, having this cutie's [vagina] so close to your mouth sounds pretty hot, even if there will be a couple of inches of padding between it and you.[or]You wait obediently, a large part of you actually looking forward to the humiliation at hand.[or][line break][variable custom style]'You can sit on my face, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Just try not to use your diaper if you can help it.'[roman type][line break][or]Your heart starts racing as the thought of being so thoroughly dominated as to have this pampered little [boy of M] sit [his of M] diaper on your face.[in random order]";
 	otherwise:
-		say "[one of]You find yourself getting aroused purely form the idea of feeling her diaper on your face.[or]You wait obediently, more than happy to feel the rustle of her nappy against your face.[or][line break][variable custom style]'You can put that nappy on my face any time honey, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Are you planning to use that whilst you're on top of me? That could be hot.'[roman type][line break][or]You can't wait to have that unique nappy smell filling your nostrils.[in random order]".
-
+		say "[one of]You find yourself getting aroused purely form the idea of feeling [his of M] diaper on your face.[or]You wait obediently, more than happy to feel the rustle of [his of M] nappy against your face.[or][line break][variable custom style]'You can put that nappy on my face any time honey, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'Are you planning to use that whilst you're on top of me? That could be hot.'[roman type][line break][or]You can't wait to have that unique nappy smell filling your nostrils.[in random order]".
 
 This is the adult baby slave facesitting prevents breathing rule:
 	if there is an adult baby slave penetrating face, decide yes;
@@ -341,7 +339,7 @@ To compute (M - an adult baby slave) entering mouth:
 		if R > B:
 			now the suffocation of M is 0; [This is what we use to track how many turns the adult baby slave has been forcing the player to hold their breath.]
 			if presented-orifice is face or M is friendly-fucking, say "You lay still, letting [him of M] plop [his of M] padded behind on your face. ";
-			otherwise say "the adult baby's tickling is too much for you to handle, leaving you thoroughly exhausted. [big he of M] sits on your face, burying it in layers of padding and plastic, adjusting herself to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[or]Sorry in advance if I use my diaper on your face.'[or]Just so you know, if I use my diaper on your face, it might not be an accident...'[at random][roman type][line break]";
+			otherwise say "the adult baby's tickling is too much for you to handle, leaving you thoroughly exhausted. [big he of M] sits on your face, burying it in layers of padding and plastic, adjusting [himself of M] to get comfortable on top of you, crinkling all the while. You can't breathe![line break][speech style of M]'[one of]You ready?'[or]This is gonna be fun!'[or]Your face feels pretty good against my diaper...'[or]Sorry in advance if I use my diaper on your face.'[or]Just so you know, if I use my diaper on your face, it might not be an accident...'[at random][roman type][line break]";
 			compute diaper sit of M;
 		otherwise:
 			say "Though [he of M] continues [his of M] tickle-torture, you manage to keep [his of M] diaper away from your face. [big he of M] huffs and pouts at your resilience.";
@@ -362,29 +360,29 @@ To compute facial sex of (M - an adult baby slave):
 	if the diaper addiction of the player > 17, arouse 150;
 	increase the suffocation of M by 2;
 	if the body soreness of the player + the suffocation of M >= 17:
-		say "[BigNameDesc of M] continues to grind against your face you with her diapered crotch. [one of]You really need to breathe soon! You are so exhausted there is nothing you can do, you struggle weakly but the plastic coat of her padding is completely preventing you from breathing. [or][stopping]";
+		say "[BigNameDesc of M] continues to grind against your face you with [his of M] diapered crotch. [one of]You really need to breathe soon! You are so exhausted there is nothing you can do, you struggle weakly but the plastic coat of [his of M] padding is completely preventing you from breathing. [or][stopping]";
 		if diaper quest is 1 or sex fainting is 0:
 			say "Your lungs burn as your lack of oxygen [one of]becomes painful[or]continues to hurt you[stopping].";
 			PainUp 1;
 		otherwise:
-			say "You notice her empty her bladder into your diaper right before your vision fades to black.";
+			say "You notice [him of M] empty [his of M] bladder into your diaper right before your vision fades to black.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 22;
 	if the reaction of the player > 0:
-		say "[one of]You nuzzle the adult baby's diaper, doing your best to stimulate her through her padding and are rewarded with several moans and a speedier grind.[or]You press your nose deeply into her padding and rub where you imagine her engorged clit must be. The ecstatic response you receive would suggest that your guess was spot on.[or]As you do your best to speed along this process, several squirts of urine spray into her diaper, vibrating against your face and filling your nostrils with the scent of pee.[or]You try to focus on the sweet scent of the baby powder wafting into your nose as you do your best to rub your face against the adult baby's diaper in such a way to make her cum.[or]You deliver a series of quick kisses to her diapered groin, causing the girl above you to pant heavily.[or][if diaper messing >= 7]As you rub your face into her diaper, she releases a smelly bout of flatulence which enters your nose and causes you to momentarily struggle, seeming only to turn her on more. You'd better hurry up or that might not be the end of it![end if][or][if diaper messing >= 7]As you become lost in the girl's cute squeals of pleasure as you passionately kiss her genitals through her diaper, you quickly come back to reality as you hear her grunt and feel a load of smelly mush push her diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome her. You simply accept your fate and continue your work as she giggles between moans, humping your face with her dirty diaper.[end if][in random order]";
+		say "[one of]You nuzzle the adult baby's diaper, doing your best to stimulate [him of M] through [his of M] padding and are rewarded with several moans and a speedier grind.[or]You press your nose deeply into [his of M] padding and rub where you imagine [his of M] engorged clit must be. The ecstatic response you receive would suggest that your guess was spot on.[or]As you do your best to speed along this process, several squirts of urine spray into [his of M] diaper, vibrating against your face and filling your nostrils with the scent of pee.[or]You try to focus on the sweet scent of the baby powder wafting into your nose as you do your best to rub your face against the adult baby's diaper in such a way to make [him of M] cum.[or]You deliver a series of quick kisses to [his of M] diapered groin, causing the [boy of M] above you to pant heavily.[or][if diaper messing >= 7]As you rub your face into [his of M] diaper, [he of M] releases a smelly bout of flatulence which enters your nose and causes you to momentarily struggle, seeming only to turn [him of M] on more. You'd better hurry up or that might not be the end of it![end if][or][if diaper messing >= 7]As you become lost in the [boy of M]'s cute squeals of pleasure as you passionately kiss [his of M] genitals through [his of M] diaper, you quickly come back to reality as you hear [him of M] grunt and feel a load of smelly mush push [his of M] diaper outward against your face. You gag and struggle as the garment continues to fill but ultimately find yourself unable to gain the leverage to overcome [him of M]. You simply accept your fate and continue your work as [he of M] giggles between moans, humping your face with [his of M] dirty diaper.[end if][in random order]";
 		decrease the sex-length of M by 1;
 		if a random number between 1 and 3 > 1, DiaperAddictUp 1;
 	if the reaction of the player is 0:
-		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push her off you as she bounces her padded behind on your face. [or]You continue trying to fight her, failing miserably to do any damage as she continues to grind her diapered bottom against you. [or]The only stimulation she's going to get from you is pushing and muffled yelling! [or]You simply won't give in! At least if you pass out, you'll be able to look at yourself in the mirror. [in random order][BigNameDesc of M] keeps grinding her diaper on your face anyway!";
+		say "[one of]You refuse to sit still as you are degraded like this! You struggle, failing to push [him of M] off you as [he of M] bounces [his of M] padded behind on your face. [or]You continue trying to fight [him of M], failing miserably to do any damage as [he of M] continues to grind [his of M] diapered bottom against you. [or]The only stimulation [he of M]'s going to get from you is pushing and muffled yelling! [or]You simply won't give in! At least if you pass out, you'll be able to look at yourself in the mirror. [in random order][BigNameDesc of M] keeps grinding [his of M] diaper on your face anyway!";
 		if a random number between 1 and 3 > 1, decrease the sex-length of M by 1;
 	if there is a worn diaper:
 		if there is a worn perceived messed diaper:
-			say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]lovingly massages[stopping] your messy diaper with her hands. [line break][speech style of M]'[one of]Do you like wearing messy diapers too? I thought I was alone in that!'[or]Don't you love the way they squish when they're dirty?'[or]Is it weird that I like the scent of your messy nappy?'[or]Got any more in your bowels? I think it'd be pretty hot if we messed our diapers at the same time, especially while I sit on your face.'[stopping][roman type][line break]";
+			say "[BigNameDesc of M] [one of]thoroughly rubs and mashes[or]lovingly massages[stopping] your messy diaper with [his of M] hands. [line break][speech style of M]'[one of]Do you like wearing messy diapers too? I thought I was alone in that!'[or]Don't you love the way they squish when they're dirty?'[or]Is it weird that I like the scent of your messy nappy?'[or]Got any more in your bowels? I think it'd be pretty hot if we messed our diapers at the same time, especially while I sit on your face.'[stopping][roman type][line break]";
 			humiliate 300;
 			stimulate vagina from M;
 			DiaperAddictUp 1;
 		otherwise:
-			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from her advantageous position[or][stopping]. [line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [if player is male]brother[end if][if player is female]sister[end if].'[stopping][roman type][line break]";
+			say "[BigNameDesc of M] lovingly rubs your diaper[one of] from [his of M] advantageous position[or][stopping]. [line break][speech style of M]'[one of]I love how nice the outside of a nappy feels against my skin... What do you think?'[or]Do you think you could use your nappy for me? Pretty [please] with sugar on top?'[or]You know, it would make me really happy if you used your diaper for me...'[or]You know, I might cum faster if you use your diaper... That would be a pretty big turn-on.'[or]If you get stuck here forever and ever, I'll let you be my little [if player is male]brother[end if][if player is female]sister[end if].'[stopping][roman type][line break]";
 			humiliate 200;
 			stimulate vagina from M;
 			if a random number between 1 and 3 is 1, DiaperAddictUp 1;
@@ -394,7 +392,7 @@ To compute facial climax of (M - an adult baby slave):
 	if the reaction of the player > 0, humiliate 200;
 	TimesSubmittedUp M by 1;
 	now M is not filling face;
-	say "A screaming orgasm overcomes [NameDesc of M]. You feel her cum squirt into her diaper, followed by a [if diaper messing >= 7]loud squelching sound as she empties her bladder and bowels against your face. The scent is overwhelming and you can literally feel the warm mush against your face[otherwise]long hissing sound as she empties her bladder against your face. The scent of pee is overwhelming[end if]. Once she's done, a yawn leaves her lips and she rolls over, sticking her thumb into her mouth and closing her eyes.[line break][speech style of M]'Ni-ni...'[roman type][line break]";
+	say "A screaming orgasm overcomes [NameDesc of M]. You feel [his of M] cum squirt into [his of M] diaper, followed by a [if diaper messing >= 7]loud squelching sound as [he of M] empties [his of M] bladder and bowels against your face. The scent is overwhelming and you can literally feel the warm mush against your face[otherwise]long hissing sound as [he of M] empties [his of M] bladder against your face. The scent of pee is overwhelming[end if]. Once [he of M]'s done, a yawn leaves [his of M] lips and [he of M] rolls over, sticking [his of M] thumb into [his of M] mouth and closing [his of M] eyes.[line break][speech style of M]'Ni-ni...'[roman type][line break]";
 	compute M sleeping 400 after sex;
 	if newbie tips is 1, say sleeping tip;
 	FavourUp M;
@@ -404,7 +402,7 @@ To compute (M - an adult baby slave) entering anally:
 	if diaper messing >= 4:
 		compute suppository of M;
 	otherwise:
-		say "[BigNameDesc of M] looked like she was about to do something, but then she stopped because she realised that you haven't enabled the right fetish. This shouldn't have happened, please report the bug!";
+		say "[BigNameDesc of M] looked like [he of M] was about to do something, but then [he of M] stopped because [he of M] realised that you haven't enabled the right fetish. This shouldn't have happened, please report the bug!";
 		bore M.
 
 This is the adult baby slave monster convinced rule:
@@ -418,7 +416,7 @@ This is the adult baby slave monster convinced rule:
 		now the chosen-orifice of current-monster is asshole;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
-		say "[BigNameDesc of M] sees your request and shakes her head. [line break][speech style of M]'Mmmm... Nuh uh!'[roman type][line break]".
+		say "[BigNameDesc of M] sees your request and shakes [his of M] head. [line break][speech style of M]'Mmmm... Nuh uh!'[roman type][line break]".
 The monster convinced rule of an adult baby slave is usually the adult baby slave monster convinced rule.
 
 To say PresentFriendlyAcceptanceFlav of (M - an adult baby slave):
@@ -443,7 +441,7 @@ To say StrikingFlav of (M - an adult baby slave) on (B - a body part):
 
 To say StrikingSuccessFlav of (M - an adult baby slave) on (B - a body part):
 	say "[StrikingFlav of M on B]";
-	say "Ouch[one of]! She hits pretty hard for such a baby[or][or][or][or][or][or][or][cycling]!".
+	say "Ouch[one of]! [big he of M] hits pretty hard for such a baby[or][or][or][or][or][or][or][cycling]!".
 
 To say StrikingFailureFlav of (M - an adult baby slave) on (B - a body part):
 	say "[StrikingFlav of M on B]";
@@ -521,8 +519,6 @@ This is the adult baby slave extra continue sex check rule:
 		rule succeeds.
 The adult baby slave extra continue sex check rule is listed in the adult baby slave continue sex rules.
 
-
-
 adult-baby-facesit is a diaper punishment. The priority of adult-baby-facesit is 2.
 Definition: an adult-baby-facesit (called P) is appropriate:
 	if current-monster is not adult baby slave, decide no;
@@ -557,16 +553,14 @@ Definition: an adult baby slave (called M) is eager to feed to master:
 	if the ToMatron of M is 1 or the times-met of N < 1, decide yes;
 	decide no.
 
-
-
 To compute punishment of (P - adult-baby-matron-drag):
-	 follow the adult baby slave shows you to mommy rule.
+	follow the adult baby slave shows you to mommy rule.
 
 To say SuppositoryDeclarationFlav of (M - an adult baby slave):
 	say "[if presented-orifice is asshole or M is friendly-fucking]You stick your ass out in the direction of [NameDesc of M], waiting to see[otherwise][BigNameDesc of M] has a very evil look in [his of M] eyes, and you are concerned about[end if] what [he of M] has in mind. ".
 
 To say SuppositoryFlav of (M - an adult baby slave):
-	say "[BigNameDesc of M] sticks her finger inside of your rectum, though it doesn't seem to be alone! Once the finger is all the way up there [he of M] twists it around several times before pulling it back out, causing you to gasp[if the sex addiction of the player <= 7] with shock[end if][if the sex addiction of the player >= 5], and moan with arousal[end if].[line break][speech style of M]'I thought you could use a messy diaper, so I just gave you a suppository. These things are pretty fast acting, so it shouldn't be long now...'[roman type][line break]".
+	say "[BigNameDesc of M] sticks [his of M] finger inside of your rectum, though it doesn't seem to be alone! Once the finger is all the way up there [he of M] twists it around several times before pulling it back out, causing you to gasp[if the sex addiction of the player <= 7] with shock[end if][if the sex addiction of the player >= 5], and moan with arousal[end if].[line break][speech style of M]'I thought you could use a messy diaper, so I just gave you a suppository. These things are pretty fast acting, so it shouldn't be long now...'[roman type][line break]".
 
 To say SuppositoryAftermath of (M - an adult baby slave):
 	if there is a worn diaper or there is a diaper retained by M: [If there's a retained diaper, she's about to replace it.]
@@ -580,57 +574,56 @@ To say SuppositoryAfterFlav of (M - an adult baby slave):
 
 Section 3 - Damage
 
-To compute damage of (M - an adult baby slave):
-	if the health of M > 0:
-		if M is awake:
-			if M is uninterested:
-				say "The girl looks shocked. [line break][speech style of M]'[one of]Hey! I'll tell mommy on you![or]Stop! That hurts!'[or]I'm gonna make you pay for this!'[at random][roman type][line break]";
-				now M is interested;
-				anger M;
-				now the sex-length of M is 3;
-			otherwise:
-				say DamageReaction (the health of M) of M;
-				if a random number between 1 and 3 is 1, increase the sex-length of M by 1;
+To compute damage reaction of (M - an adult baby slave):
+	if M is awake:
+		if M is uninterested or M is friendly:
+			say "The [boy of M] looks shocked.[line break][speech style of M]'[one of]Hey! I'll tell mommy on you![or]Stop! That hurts!'[or]I'm gonna make you pay for this!'[at random][roman type][line break]";
+			now the sex-length of M is 3;
 		otherwise:
-			decrease the sleep of M by 300;
-			if the health of M < the maxhealth of M / 2, now the sleep of M is 0;
-			if the sleep of M < 0, now the sleep of M is 0;
-			if the sleep of M is 0:
-				say "[big he of M] wakes up, yelping and rubbing [his of M] eyes groggily before registering that you hit [him of M], leaping at you with rage once [he of M] makes the connection between you and [his of M] new pain.";
-				now the sex-length of M is a random number between 3 and 4;
-				now M is interested;
-				anger M;
-			otherwise:
-				say "[big he of M]'s still sleeping like a baby.";
+			say DamageReaction (the health of M) of M;
+			if a random number between 1 and 3 is 1, increase the sex-length of M by 1;
 	otherwise:
-		compute death of M.
+		decrease the sleep of M by 300;
+		if the health of M < the maxhealth of M / 2, now the sleep of M is 0;
+		if the sleep of M < 0, now the sleep of M is 0;
+		if the sleep of M is 0:
+			say "[big he of M] wakes up, yelping and rubbing [his of M] eyes groggily before registering that you hit [him of M], leaping at you with rage once [he of M] makes the connection between you and [his of M] new pain.";
+			now the sex-length of M is a random number between 3 and 4;
+			now M is interested;
+			anger M;
+		otherwise:
+			say "[big he of M][']s still sleeping like a baby.".
 
 To say DamageReactHealthy of (M - an adult baby slave):
 	say "[big he of M] blows a raspberry in the air at you... What a brat!".
 
 To say DamageReactDamaged of (M - an adult baby slave):
-	say "[big he of M] looks like [he of M]'s contemplating biting you.".
+	say "[big he of M] looks like [he of M][']s contemplating biting you.".
 
 To say DamageReactTired of (M - an adult baby slave):
-	say "[big he of M] looks like [he of M] wants to cry but [he of M]'s holding it together surprisingly well for [his of M] maturity level.".
+	say "[big he of M] looks like [he of M] wants to cry but [he of M][']s holding it together surprisingly well for [his of M] maturity level.".
 
 To say DamageReactWeak of (M - an adult baby slave):
-	say "[big he of M] looks like [he of M]'s ready to burst into tears!".
+	say "[big he of M] looks like [he of M][']s ready to burst into tears!".
 
-To compute unique death of (M - an adult baby slave):
-	say "[BigNameDesc of M] cries as [he of M] falls to the floor and vanishes. ";
+To say BanishFleeFlav of (M - an adult baby slave):
+	say "[BigNameDesc of M] cries as [he of M]  flees, tripping and falling to the floor more than once on the way out.".
+
+To compute tax return of (M - an adult baby slave):
 	let D be a random off-stage eligible diaper;
-	if D is a thing:
+	if D is a thing and the number of in-play identified confidence diapers is 0:
+		say "[speech style of M]'Okay... You can have my most favourite diaper.'[roman type][line break][BigNameDesc of M] drops a clean diaper in front of you.";
+		reset D;
 		now D is blessed;
 		now the raw-magic-modifier of D is 0;
 		now D is confidence;
 		now D is sure;
 		now D is identified;
 		now D is in the location of the player;
-		say "[his of M] body disappears, leaving behind a [printed name of D].";
 		compute autotaking D;
-	otherwise if D is not a thing:
-		say "[his of M] body disappears.".
+		say "[speech style of M]'Meanie.'[roman type][line break]";
+	otherwise:
+		compute default tax return of M.
 
 Part 4 - Conversation
 
@@ -696,7 +689,7 @@ Section 2 - Questioning
 
 To compute annoyance of (M - an adult baby slave):
 	if M is uninterested:
-		say "The adult baby slave doesn't seem to realize you are talking to [him of M].[line break]";
+		say "The adult baby slave doesn't seem to realise you are talking to [him of M].[line break]";
 	otherwise if M is unfriendly:
 		say "The adult baby slave ignores your question. [line break][speech style of M]'No!'[roman type][line break]";
 	otherwise:
@@ -707,11 +700,11 @@ To say WhereAnswer of (M - an adult baby slave):
 	otherwise say "[speech style of M]'[one of]We're in a big world full of Mommies and Daddies that want to keep us in diapers. It's the best!'[or]I already told you! We're in a magical diaper world. It's like the best place ever!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]".
 
 To say WhoAnswer of (M - an adult baby slave):
-	if M is in the hotel, say "[speech style of M]'I'm one of mommy's slaves. It's actually pretty fun! You should be one'a her slaves too!'[roman type][line break]";
+	if M is in the hotel, say "[speech style of M]'I'm one of mommy's slaves. It's actually pretty fun! You should be one'a [his of matron] slaves too!'[roman type][line break]";
 	otherwise say "[speech style of M]'I'm your new best friend!'[roman type][line break]".
 
 To say StoryAnswer of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Well, I used to be a big girl. Then, I tried out some video game where I met mommy and she taught me that I was never really a big girl all along.'[or]For a while, I really thought I was a grown-up. Mommy showed me that wasn't true.'[or]Let's see... I played a video game, I met mommy and then I became her baby and I've never been happier!'[or]Hm... I think I used to work on making some sorta game... I forgotted about that. Oh well!'[as decreasingly likely outcomes][roman type][line break]".
+	say "[speech style of M]'[one of]Well, I used to be a big [boy of M]. Then, I tried out some video game where I met mommy and she taught me that I was never really a big [boy of M] all along.'[or]For a while, I really thought I was a grown-up. Mommy showed me that wasn't true.'[or]Let's see... I played a video game, I met mommy and then I became [his of matron] baby and I've never been happier!'[or]Hm... I think I used to work on making some sorta game... I forgotted about that. Oh well!'[as decreasingly likely outcomes][roman type][line break]".
 
 To say EscapeAnswer of (M - an adult baby slave):
 	if M is in the hotel, say "[speech style of M]'You can leave the hotel any time you'd like from the front entrance but why would you want to when mommy and me are here? Plus there are all of the big toys!'[roman type][line break]";
@@ -738,6 +731,4 @@ To compute unfriendly drink of (M - an adult baby slave):
 To compute friendly drink of (M - an adult baby slave):
 	compute unfriendly drink of M.
 
-
 Adult Baby Slave ends here.
-

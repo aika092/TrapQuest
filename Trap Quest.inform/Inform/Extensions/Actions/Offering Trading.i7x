@@ -1,6 +1,5 @@
 Offering Trading by Actions begins here.
 
-
 To decide what number is the charisma-influence of (C - a thing):
 	decide on 0.
 
@@ -23,7 +22,6 @@ To decide which number is the charisma of the player:
 	if there is a worn book of regrets, increase X by 1;
 	if bitch tattoo is worn, decrease X by 1;
 	decide on X.
-
 
 [!<offerItTo:Action>*
 
@@ -51,7 +49,6 @@ Check offering it to:
 		allocate 4 seconds;
 		compute the second noun WenchReceiving the noun instead;
 		do nothing instead. [Weird bug where the above command doesn't do the "instead" bit.]
-
 
 [!<CarryOutOfferingItTo>+
 
@@ -156,6 +153,4 @@ To compute offer reward of (M - a monster) for (T - a thing): [The NPC doesn't g
 To say OfferFriendshipFlav of (M - a monster):
 	if M is intelligent, say "[speech style of M]'[if M is guardian]I'm thankful to have you as my ally[otherwise if M is ally]We should stick together, you and me[otherwise if M is buddy]I hope to see you again soon[otherwise if M is acquaintance]You're all right[otherwise]Maybe you're not as much of a [bitch] as I thought[end if].'[roman type][line break]".
 
-
 Offering Trading ends here.
-

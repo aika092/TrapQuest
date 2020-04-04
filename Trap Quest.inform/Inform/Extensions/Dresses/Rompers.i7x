@@ -129,7 +129,6 @@ To decide which number is the initial cringe of (C - a yellow baby romper):
 Definition: a yellow baby romper is end of transformation chain: decide yes.
 Definition: a yellow baby romper is babywear: decide yes.
 
-
 Part - Plaid Skimpy Romper
 
 plaid skimpy romper is a romper. plaid skimpy romper is leg exposing. plaid skimpy romper is arm exposing. The text-shortcut of plaid skimpy romper is "psr". The printed name of plaid skimpy romper is "[clothing-title-before]plaid skimpy romper[clothing-title-after]".
@@ -164,8 +163,4 @@ To decide which object is the unique-upgrade-target of (C - plaid skimpy romper)
 	if diaper quest is 1, decide on a random off-stage yellow baby romper;
 	decide on nothing.
 
-
-
-
 Rompers ends here.
-

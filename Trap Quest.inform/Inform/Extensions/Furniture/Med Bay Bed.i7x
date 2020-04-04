@@ -99,4 +99,3 @@ To compute med bay breast enhancement:
 	say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, [NameDesc of nurse] unbuckles the straps holding you down and allows you to leave.".
 
 Med Bay Bed ends here.
-

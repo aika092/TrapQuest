@@ -1,10 +1,5 @@
 Region Building Woods by Rooms begins here.
 
-
-
-
-
-
 [!<SetUpTheWoods>+
 
 REQUIRES COMMENTING
@@ -73,6 +68,4 @@ To Scramble Woods:
 	solve the puzzle;
 	make all jungle exits lead to Solid Rock.
 
-
 Region Building Woods ends here.
-

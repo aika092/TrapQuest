@@ -20,7 +20,7 @@ To say MonsterDesc of (M - vine boss):
 To set up (M - vine boss):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 10;
+	now the raw difficulty of M is 10;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - vine boss): [More HP than your average difficult 10 enemy]
@@ -28,9 +28,7 @@ To decide which number is the maxhealth of (M - vine boss): [More HP than your a
 
 Definition: vine boss is concealment immune: decide yes. [Can the monster ignore salves of concealment, butt slut, etc.]
 
-
 Definition: vine boss is able to remove cursed plugs: decide yes. [Can the monster remove all butt plugs?]
-
 
 Part 1 - Perception
 
@@ -135,7 +133,7 @@ This is the vine boss ultimate victory attack rule:
 				appropriate-cutscene-display figure of vine boss cutscene 1;
 				say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
 				now delayed fainting is 1;
-			otherwise if the player is male and the total fill of belly >= 13 or there is a worn slimegirl:
+			otherwise if the player is male and the total fill of belly >= 13 or slimegirl is worn:
 				say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your [asshole] it pushes you into its huge chasm of a mouth and swallows you whole. ";
 				appropriate-cutscene-display figure of vine boss cutscene 1;
 				say "Your body falls into its belly of vines and soon you are being completely filled in both your [asshole] and your mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";
@@ -215,12 +213,6 @@ The vine boss makes the player sore rule is listed last in the vine boss attack 
 
 Section 2 - Damage
 
-To compute damage of (M - vine boss):
-	if the health of M > 0:
-		say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
-
 To say DamageReactHealthy of (M - vine boss):
 	say "The giant vine beast does not seem to react to your attacks as if it can't feel pain!".
 
@@ -233,16 +225,21 @@ To say DamageReactTired of (M - vine boss):
 To say DamageReactWeak of (M - vine boss):
 	say "The vine beast continues screeching, huge chunks of dying vegetation falling from the ceiling as it fights on.".
 
-To compute unique death of (M - vine boss):
-	let B be a random writhing vine;
-	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory! Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
+To say BanishFleeFlav of (M - vine boss):
+	say "With one final screech, the life leaves all of the vines that make up the beast, and all the vines in the room around you. They slowly and gracefully fall to the ground in a large pile. Victory!".
+
+To compute unique banishment of (M - vine boss):
 	repeat with V running through vines:
 		destroy V;
-	now B is in the location of the player;
-	compute autotaking B;
 	now M is bossdefeated.
 
 To loot (M - vine boss):
+	let B be a random off-stage writhing vine;
+	if B is a thing:
+		say "Searching the pile, you find a single, now harmless looking [printed name of B] that is still slightly alive!";
+		now B is in the location of the player;
+		compute autotaking B;
+		increase the loot dropped of M by 1;
 	let X be a random off-stage plentiful ring;
 	unless X is nothing:
 		now X is in the location of the player;
@@ -252,6 +249,4 @@ To loot (M - vine boss):
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
-
 Vine Boss ends here.
-

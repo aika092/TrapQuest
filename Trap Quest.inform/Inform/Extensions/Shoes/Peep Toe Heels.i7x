@@ -40,6 +40,4 @@ To uniquely set up (C - a peep toe heels):
 		if R is 2, now C is kicking;
 	set up heel length of C.
 
-
 Peep Toe Heels ends here.
-

@@ -25,20 +25,19 @@ To say MonsterDesc of (M - receptionist):
 	if M is sex-enslaved:
 		say "[BigNameDesc of M][']s smart dress has been torn at the crotch, completely exposing [his of M] [if lady fetish is 2]bright pink chastity cage[otherwise]naked pussy[end if]. It's also been torn over one breast. [big his of M] armband, instead of showing a picture of [his of M] face, and the word 'STAFF', now just reads 'SPANK ME'. [big his of M] left hand is still raised with an adorable pointing finger, but the fury on [his of M] face tells you it's not hanging there of [his of M] own volition. In fact both of [his of M] arms and hands seem magically frozen in place. [big his of M] face and mouth have been left free to allow [him of M] to frown and snarl[if M is in School01], and [he of M] would be able to walk around if one of [his of M] ankles wasn't bound to the back of [his of M] reception desk with a strong metal chain[end if].";
 	otherwise if M is diaper-enslaved:
-		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in [his of M] hair and blue flowers on the hem of [his of M] shortened dress. [big he of M]'s got girly frills at the top of [his of M] blue socks and a blue choker around [his of M] neck. [big his of M] hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of [his of M] dress. It's so big that she has to keep [his of M] feet a metre apart just to be able to walk at all[if M is in School01] - not that she can go very far anyway, since one of [his of M] ankles is bound to the back of [his of M] reception desk with a strong metal chain[end if]. She can't seem to stop rubbing the front and back of [his of M] diaper with [his of M] two mittened hands, with a vacant drooling facial expression. Whatever [his of M] mega-diaper is full of, it sloshes around rather noisily as [he of M] rubs it into [himself of M].";
+		say "[BigNameDesc of M][']s blue outfit has had several subtle changes made. There's a blue ribbon in [his of M] hair and blue flowers on the hem of [his of M] shortened dress. [big he of M]'s got girly frills at the top of [his of M] blue socks and a blue choker around [his of M] neck. [big his of M] hands are encased in fingerless elbow-length mittens. The most notable change, however, is the rather giant blue diaper bulging out from underneath the short skirt section of [his of M] dress. It's so big that [he of M] has to keep [his of M] feet a metre apart just to be able to walk at all[if M is in School01] - not that [he of M] can go very far anyway, since one of [his of M] ankles is bound to the back of [his of M] reception desk with a strong metal chain[end if]. [big he of M] can't seem to stop rubbing the front and back of [his of M] diaper with [his of M] two mittened hands, with a vacant drooling facial expression. Whatever [his of M] mega-diaper is full of, it sloshes around rather noisily as [he of M] rubs it into [himself of M].";
 	otherwise:
 		say "This [man of M] looks like [he of M]'s in [his of M] mid-thirties, but [his of M] complexion and physique are completely perfect in every way. A made up face and long wavy blonde hair sit on top of a Barbie-doll body with an impossibly small waist, covered by a tight-fitting very short blue dress that manages to ooze sex appeal and still look at least slightly professional.".
 
-
 To say MonsterComment of (M - receptionist):
-	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of]She looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, she's probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
+	say "[if the bimbo of the player <= 10 and the player is female][line break][first custom style]That's not fair, we can't all be born with perfect genes like that...[otherwise if the bimbo of the player <= 7]Oh, mama! What a fox![otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks so good in that dress.[or]What an amazing look![purely at random][otherwise][line break][second custom style][one of]Wow, [he of M]'s probably like, the perfect shape for a bimbo![or]Oh, how I wish I looked like that![or]Maybe I can look like that one day, too![at random][end if][roman type][line break]".
 
 To set up (M - receptionist):
 	reset M;
 	now the monstersetup of M is 1;
 	now M is in [School01] Dungeon10;
 	now M is guarding;
-	now the difficulty of M is the starting difficulty of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - receptionist):
@@ -75,7 +74,7 @@ To compute perception of (M - receptionist):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the times-met of M <= 1 and armband is not worn and the number of fucked-silly monsters in the school is 0:
 		if M is in School01:
-			say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break]She hands you a neon reflective pink armband and gestures for you to strap it on.";
+			say "[line break][speech style of M]'Well hello there, you're a new face! Welcome to [slut school]! Did your [if diaper quest is 1]Daddy[otherwise]boyfriend[end if] send you along? Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.";
 			now armband is carried by the player;
 			now the armband-print of armband is "new recruit";
 			say ExamineDesc of armband;
@@ -83,7 +82,7 @@ To compute perception of (M - receptionist):
 			if the player is bimbo consenting:
 				try wearing armband;
 			otherwise:
-				say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break]She looks ready to fight.";
+				say "The receptionist looks disappointed.[line break][speech style of M]'It was not a request. Put it on right now or I'll make you!'[roman type][line break][big he of M] looks ready to fight.";
 				anger M;
 		otherwise:
 			say "[line break][speech style of M]'[one of]Well hello there, I've been looking for you everywhere! You must be the new recruit, right? I was told that you'd be dressed rather... [']interestingly['][run paragraph on][if the appearance of the player > 3], but I see you've really taken that instruction to heart![otherwise].[end if] Excellent, I'll get you enrolled right away. You start at rank 1 but I'm sure a person like you will be climbing the ranks in no time!'[or]You there, you've got to be the new student I'm looking for, right?'[stopping][roman type][line break][big he of M] hands you a neon reflective pink armband and gestures for you to strap it on.[line break][speech style of M]'Quickly now, strap this on and jump through the portal. It'll take you straight to the head office.'[roman type][line break]";
@@ -114,7 +113,7 @@ To compute perception of (M - receptionist):
 			display entire map; [needs to update because the portal is now closed]
 	otherwise if playerRegion is School:
 		if armband is worn:
-			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a trophy but you could escape from that annoying cursed clothing[otherwise]You can earn a cool trophy[end if][one of]! All you have to do is pull that lever before you leave[or][stopping]!'[roman type][line break]";
+			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens and a cool trophy[end if][one of]! All you have to do is pull that lever before you leave[or][stopping]!'[roman type][line break]";
 			otherwise say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'Hey, I recognise you! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
@@ -123,8 +122,6 @@ To compute perception of (M - receptionist):
 		anger M;
 		say "[line break][speech style of M]'I'm afraid I've been sent here because you've neglected your studies. I've been ordered to ensure that you return with me. You're not going to put up a fight, are you?'[roman type][line break]";
 		make M expectant.
-
-
 
 To say EnslavedDominationFlav of (M - receptionist):
 	say "You force [NameDesc of M] to bend over [his of M] desk. With [his of M] ankle chained down, there's not much [he of M] can do to stop you. ";
@@ -142,22 +139,17 @@ To say EnslavedDominationFlav of (M - receptionist):
 To decide which number is the EnslavedDominationThreshold of (M - receptionist):
 	decide on 6.
 
-
-
 Part - Combat
-
 
 Definition: receptionist (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if (M is in School01 or M is not in the School) and the noun is north, decide yes; [The (unfriendly) receptionist always blocks the entrance into the school unless you kill her]
-	let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	let R be (a random number from 1 to (the difficulty of M * 2)) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
 	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
 
 To say MovementBlock of (M - receptionist):
 	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the player is a hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
-
-
 
 To compute (M - a monster) stomping (N - receptionist):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";
@@ -169,7 +161,6 @@ To compute (M - a monster) stomping (N - receptionist):
 
 To say LeftoverDesc (N - 129):
 	say "[BigNameDesc of receptionist]is on the ground here, unconscious. [big he of receptionist] has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of receptionist] [asshole].".
-
 
 receptionist-armband is a diaper punishment. The priority of receptionist-armband is 5.
 
@@ -195,11 +186,8 @@ The receptionist forces armband rule is listed first in the receptionist unique 
 The staff member unique punishment rule is listed last in the receptionist unique punishment rules. [Detention / Dungeon]
 
 To compute (M - receptionist) forcing armband:
-	say "[BigNameDesc of M] twists your left arm so it's held painfully behind your back. [unless armband is in the location of the player or armband is held]She presses some kind of cold metal device against your biceps and a beeping sound occurs. A few moments later a nearby printer has somehow... 'printed' your pink armband! Or at least an identical one. [end if]She reaches for the armband and then places it on your right hand, pulling your arm tighter until you are forced to comply.";
+	say "[BigNameDesc of M] twists your left arm so it's held painfully behind your back. [unless armband is in the location of the player or armband is held][big he of M] presses some kind of cold metal device against your biceps and a beeping sound occurs. A few moments later a nearby printer has somehow... 'printed' your pink armband! Or at least an identical one. [end if][big he of M] reaches for the armband and then places it on your right hand, pulling your arm tighter until you are forced to comply.";
 	now armband is worn by the player;
 	compute armband replacement.
 
-
-
 Receptionist ends here.
-

@@ -7,7 +7,6 @@ Check drinking bomb:
 
 Definition: a bomb is combat-bomb: decide no.
 
-
 SmokeBombing it to is an action applying to two objects.
 Check SmokeBombing:
 	if the noun is not smoke bomb, say "This verb is for using a smoke bomb to escape." instead;
@@ -25,7 +24,6 @@ Understand "throw [bomb] to [direction]", "throw [bomb] to escape [direction]" a
 Figure of bomb is the file "Items/Collectibles/bomb1.png".
 To decide which figure-name is the examine-image of (V - a bomb):
 	decide on the figure of bomb.
-
 
 Section 1 - Smoke Bomb
 
@@ -100,7 +98,7 @@ Check throwing water-bomb at a monster:
 			say "[big he of the second noun] seems to be even more blinded than [he of the second noun] was before you threw it!";
 		if the blind-status of the second noun is not -1:
 			increase the blind-status of the second noun by a random number between 3 and 8;
-		if the second noun is friendly or the second noun is not interested, compute damage of the second noun;
+		if the second noun is friendly or the second noun is not interested, compute standard damage of the second noun;
 	destroy the noun;
 	now the cum-known of water-bomb is 1 instead;
 	do nothing instead.
@@ -291,7 +289,6 @@ To progress stopped time:
 		decrease timeBombTime by 1;
 		if timeBombTime is 0, say "Time seems to start moving normally again.".
 
-
 Section 5 - Nail Bomb
 
 nail-bomb is a bomb. nail-bomb is blessed. [for testing] The printed name of nail-bomb is "[TQlink of item described]nail bomb[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of nail-bomb is "naib". Understand "nail" as nail-bomb.
@@ -322,7 +319,7 @@ Check drinking nail-bomb:
 				say "You are forced to drop your [E].";
 				now E is in the location of the player;
 			say "Moments later you are wearing a set of long and slutty pink fake nails. Wow that was fast! You are immediately filled with a horrible sense of dread; almost all you can think about is [if the player is horny]how horny you are and [end if]how awful, and painful, it would be if any of your nails were to break. The invasive thought is so powerful that you also feel significantly weaker and slower as your mind makes you think twice about every action you take.";
-			summon fake-nails cursed;
+			summon fake-nails cursed with persistent quest;
 		otherwise if fake-nails is not cursed:
 			say "They apply themselves on top of your [fake-nails], returning them to a cursed delicate state.";
 			now fake-nails is cursed;
@@ -339,8 +336,6 @@ Check drinking nail-bomb:
 	destroy the noun instead;
 	do nothing instead.
 
-
-
 An elixir is a kind of alchemy product. Understand "elixirs" as an elixir.
 
 Definition: an elixir is drink themed: decide yes.
@@ -348,7 +343,6 @@ Definition: an elixir is drink themed: decide yes.
 Figure of elixir is the file "Items/Collectibles/elixir1.png".
 To decide which figure-name is the examine-image of (V - an elixir):
 	decide on the figure of elixir.
-
 
 Section 1 Elixir of Magnetism
 
@@ -363,30 +357,27 @@ To BackgroundRender (T - an elixir of magnetism) at (X1 - a number) by (Y1 - a n
 To decide which number is the alchemy key of (A - an elixir of magnetism):
 	decide on 3.
 
-magnetism-elixir-timer is a number that varies. magnetism-elixir-timer is 0.
+magnetism-timer is a number that varies. magnetism-timer is 0.
 
 Carry out quaffing elixir of magnetism:
-	say "You pull out the tiny stopper and down the glowing liquid. You feel more... present[one of], even though you can't really put a finger on what that means[or][stopping].";
+	say "You pull out the tiny stopper and down the glowing liquid. You feel more... present, as if [bold type]people are now being drawn towards you.[roman type][line break]";
 	let R be a random number between 20 and 25;
 	if the noun is blessed, increase R by 6;
-	now magnetism-elixir-timer is R * 6;
+	now magnetism-timer is R * 6;
 	repeat with M running through alive monsters:
 		now the scared of M is 0;
 	if the noun is not cursed and the player is in danger:
 		repeat with M running through unfriendly interested monsters in the location of the player:
-			if M is penetrating a body part or M is grabbing the player:
-				say "[BigNameDesc of M]'s eyes open wide for a moment, but then it passes.";
+			if M is penetrating a body part or M is grabbing the player or M is not scarable:
+				say "[BigNameDesc of M][']s eyes open wide for a moment, but then it passes.";
 			otherwise:
-				now the scared of M is magnetism-elixir-timer;
+				now the scared of M is magnetism-timer;
 				say "[one of]As if mind controlled, the[or]The[stopping] [M] turns tail and starts fleeing away from you!".
 
-
 A time based rule (this is the magnetism elixir decay rule):
-	if magnetism-elixir-timer > 0:
-		decrease magnetism-elixir-timer by time-seconds;
-		if magnetism-elixir-timer < 0, now magnetism-elixir-timer is 0.
-
-
+	if magnetism-timer > 0:
+		decrease magnetism-timer by time-seconds;
+		if magnetism-timer < 0, now magnetism-timer is 0.
 
 Section 2 Elixir of Life
 
@@ -427,7 +418,6 @@ Carry out quaffing elixir of life:
 		let R be a random number between 20 and 25;
 		if the noun is blessed, increase R by 20;
 		now life-elixir-timer is R * 20.
-
 
 A time based rule (this is the life elixir decay rule):
 	if life-elixir-timer > 0:
@@ -471,7 +461,6 @@ Carry out quaffing elixir of invigoration:
 	if the noun is cursed, decrease R by 19;
 	now invigoration-elixir-timer is R * 6.
 
-
 A time based rule (this is the invigoration elixir decay rule):
 	if invigoration-elixir-timer > 0:
 		decrease invigoration-elixir-timer by time-seconds;
@@ -511,7 +500,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				let X be siphoning-elixir-charge;
 				if the player is female or the size of penis is 10:
 					if the virgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
-						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realize your [vagina] has been replaced by your original [player-penis]!";
+						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
 						ReverseSexChange the player;
 					otherwise:
 						say "You feel smarter!";
@@ -545,10 +534,6 @@ A time based rule (this is the siphoning elixir decay rule):
 			MagicPowerUp (X / 2) + 1;[you always get a little bit of power out of it]
 			now siphoning-elixir-charge is 0;
 			now siphoning-elixir-timer is 0.]
-
-
-
-
 
 A potion is a kind of alchemy product.
 
@@ -766,8 +751,6 @@ Carry out quaffing space mead:
 	increase alcohol level;
 	increase alcohol level.
 
-
-
 A powder is a kind of alchemy product. Understand "powders" as a powder.
 
 PowderRubbing it on is an action applying to two things.
@@ -780,11 +763,9 @@ Carry Out PowderRubbing:
 
 Understand "sprinkle [powder] on [something]" as PowderRubbing it on.
 
-
 Figure of powder is the file "Items/Collectibles/powder1.png".
 To decide which figure-name is the examine-image of (V - a powder):
 	decide on the figure of powder.
-
 
 Section 1 - Powder of Identification
 
@@ -873,7 +854,6 @@ Carry Out PowderRubbing a powder of resistance on a thing:
 		increase the transform-resistance of the second noun by 3;
 		if the noun is blessed, increase the transform-resistance of the second noun by 2.
 
-
 Section 4 - Powder of Escape
 
 A powder of escape is a kind of powder. The printed name of powder of escape is "[TQlink of item described]powder of escape[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of powder of escape is "[TQlink of item described]powders of escape[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of powder of escape is "pox". There are 3 powder of escape.
@@ -904,19 +884,14 @@ Carry Out PowderRubbing a powder of escape on a thing:
 		now the second noun is unlocked;
 		now the second noun is carried by the player.
 
-
-
-
 A salve is a kind of alchemy product. Understand "salves" as a salve.
 A true salve is a kind of alchemy product. Understand "salves" as a true salve.
 A true salve is wearable.
-
 
 Check taking off salve:
 	say "The only way this [noun] is coming off is if you wash it off." instead.
 Check taking off true salve:
 	say "The only way this [noun] is coming off is if you wash it off." instead.
-
 
 Figure of salve is the file "Items/Collectibles/salve1.png".
 To decide which figure-name is the examine-image of (V - a salve):
@@ -952,8 +927,6 @@ To oil (B - a body part) with (S - a salve of buoyancy):
 	now O is worn by the player;
 	now O is covering B;
 	if S is cursed, now O is cursed.
-
-
 
 Part 2 - Salve of Restriction
 
@@ -992,7 +965,6 @@ A time based rule (this is the cursed restricting salve punishment rule):
 					increase the thickness of hips by 1;
 					say "Your [ShortDesc of hips] have somehow slightly grown in size[one of]! The salve must have been cursed[or][stopping]!";
 				if weight gain fetish is 0 or the flesh volume of hips is the thickness of hips - 1, now the flesh volume of hips is the thickness of hips.
-
 
 To oil (B - a body part) with (S - a salve of restriction):
 	say "You feel a bit more... stable.";
@@ -1049,9 +1021,6 @@ Increases the chance of anal sex if cursed and applied to asshole.
 This is the salve butt slut rule:
 	if there is a cursed concealment salve covering asshole, increase the desirability of asshole by 15.
 The salve butt slut rule is listed in the butt slut eligibility rules.
-
-
-
 
 SalveRubbing it on is an action applying to two things.
 
@@ -1123,14 +1092,6 @@ Report SalveRubbing:
 
 Understand "rub [something] on [something]", "rub [something] into [something]", "apply [something] on [something]", "apply [something] to [something]", "apply [something] into [something]" as SalveRubbing it on.
 
-
-
-
-
-
-
-
-
 A tincture is a kind of alchemy product.
 
 Definition: a tincture is drink themed: decide yes.
@@ -1138,7 +1099,6 @@ Definition: a tincture is drink themed: decide yes.
 Figure of tincture is the file "Items/Collectibles/tincture1.png".
 To decide which figure-name is the examine-image of (V - a tincture):
 	decide on the figure of tincture.
-
 
 Section 1 Tincture of Strength
 
@@ -1167,7 +1127,6 @@ Carry out quaffing tincture of strength:
 		now saved-flat-strength is the flat strength of the player;
 	if the noun is cursed, now strength-tincture-timer is 7;
 	if the noun is blessed, increase strength-tincture-timer by 20.
-
 
 A time based rule (this is the strength tincture decay rule):
 	if strength-tincture-timer > 0:
@@ -1211,7 +1170,6 @@ Carry out quaffing tincture of acceleration:
 	if the noun is cursed, now acceleration-tincture-bonus is 0;
 	if the noun is blessed, increase acceleration-tincture-timer by 20.
 
-
 A time based rule (this is the acceleration tincture decay rule):
 	if acceleration-tincture-timer > 0:
 		decrease acceleration-tincture-timer by time-seconds;
@@ -1236,8 +1194,4 @@ A time based rule (this is the acceleration tincture decay rule):
 				check sudden pregnancy;
 			if the player is upright and acceleration-tincture-bonus > 0, increase the fat-burning of the player by 20.
 
-
-
-
 Alchemy Products ends here.
-

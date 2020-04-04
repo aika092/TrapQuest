@@ -20,4 +20,3 @@ To decide which number is the initial outrage of (C - pink-bikini-top):
 	decide on 3.
 
 Pink Bikini Top ends here.
-

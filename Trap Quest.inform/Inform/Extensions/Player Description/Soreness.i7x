@@ -1,6 +1,5 @@
 Soreness by Player Description begins here.
 
-
 [!<SaySorenessdesc>+
 
 REQUIRES COMMENTING
@@ -51,4 +50,3 @@ REQUIRES COMMENTING
 	if S > 13, say "[if the bimbo of the player < 14][line break][first custom style]I'm on the verge of tears... [roman type][line break][otherwise][line break][second custom style]I think I need more lube... [roman type][line break][end if]".]
 
 Soreness ends here.
-

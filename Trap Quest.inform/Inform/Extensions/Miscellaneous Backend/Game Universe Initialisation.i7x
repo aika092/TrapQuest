@@ -19,7 +19,7 @@ To Start The Machine:
 		follow the setting up woods monsters rules;
 		Set Up The Mansion;
 		follow the setting up mansion monsters rules;
-		repeat with M running through alive nonsetup monsters:
+		repeat with M running through alive nonexistant monsters:
 			set up M;
 		now the player is in Mansion01;
 		now playerRegion is Mansion;
@@ -244,7 +244,6 @@ To resolve classic cocksucker hyper window opening:
 		open the hyper-window;
 		refresh the hyper-window.
 
-
 [!<InitialiseLatexPrisoner>+
 
 Used at the start of the game to encase the player in latex items, if that option has been enabled.
@@ -252,7 +251,7 @@ Used at the start of the game to encase the player in latex items, if that optio
 +!]
 To initialise latex prisoner:
 	let R be a random number between 1 and 2;
-	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. ";
+	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. [if diaper quest is 0 and black hood is actually summonable]Your mouth is opened wide by a ring-gag as a latex hood appears over your face! [end if]";
 	if diaper quest is 0, say "Suddenly you feel your [if the player is female][vagina] and [end if][asshole] invaded by [if the player is male]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is female]rear [end if]plug starts vibrating!";
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
@@ -276,20 +275,21 @@ To initialise latex prisoner:
 		now C is identified;
 		now C is sure;
 		now C is unowned;
+		now C is bland;
 		if C is heels:
 			now C is posture training;
 			now the heel-height of C is 2;
 			compute quest of C;
-		if C is vibrating plug panties:
+		otherwise if C is vibrating plug panties:
 			now the damage of C is 7;
-			now C is cursed;
 		otherwise if C is rubber mittens:
 			do nothing;
-		otherwise:
+		otherwise if diaper quest is 1 or black hood is not actually summonable:
 			now C is glued;
 		if C is overdress:
 			layer C correctly;
 			if C is posture training, now C is blandness;
+	if black hood is actually summonable, summon black hood cursed;
 	if rubber-baby-bonnet is worn:
 		now rubber-baby-bonnet is cursed;
 		now baby-summoned is 1;
@@ -321,7 +321,6 @@ To initialise bondage prisoner:
 	if S is actually summonable clothing, summon S cursed with silent quest;
 	say "Suddenly, a collar is wrapped around your neck and a pair of metal cuffs latch around your [if R is 2]wrists[otherwise]ankles[end if]![line break][first custom style]Oh come on, that's not fair![roman type][line break][if there is worn vibrating plug panties]You are about to shout your objections to this dick move by Nintendolls when [otherwise]You are suddenly placed in chastity by a cage appearing at your loins! You don't even have time to consider the implications of this before [end if]your mouth is forced open by the appearance of a [ShortDesc of G]![line break][if D is worn]Just as you think it's over, your eyes widen in shock as a [ShortDesc of D] materialises over your chastity cage![line break][end if][line break][first custom style]'MMMMMMPH!'[roman type][line break]".
 
-
 [!<InitialiseBondageProtection>+
 
 Used at the start of the game to put the necessary bondage items out of the game, if that option has been enabled.
@@ -333,7 +332,6 @@ To initialise bondage protection:
 
 Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 3 + the notManlyFactor of it.
 Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 6 + the notManlyFactor of it.
-
 
 [!<InitialiseWardrobe>+
 
@@ -406,7 +404,10 @@ To initialise wardrobe:
 
 To compute starting headgear:
 	let H be a random roleplay headgear;
-	if latex prisoner is 1, now H is black hood;
+	let failsafe be 25;
+	while H is not off-stage and failsafe > 0:
+		let H be a random roleplay headgear;
+		decrease failsafe by 1;
 	now H is in pink wardrobe;
 	now H is cursed.
 
@@ -421,6 +422,4 @@ To Scramble Items:
 	Set Up Bras;
 	follow the setup starting items rules.
 
-
 Game Universe Initialisation ends here.
-

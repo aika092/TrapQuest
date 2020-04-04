@@ -8,7 +8,6 @@ Definition: an accessory is too boring: decide no.
 Definition: an accessory is magic-enhanceable: decide no.
 Definition: an accessory is cursable if it is not plentiful.
 
-
 To decide which number is the initial outrage of (C - an accessory):
 	let X be 1;
 	if C is pink diamond, increase X by 2;
@@ -53,12 +52,10 @@ To say ClothingDesc of (A - an accessory):
 
 Definition: an accessory is stealable if it is plentiful.
 
-
 Definition: an accessory is transformation-protected: decide yes.
 
 To say ShortDesc of (C - an accessory):
 	say "accessory".
-
 
 [!<SetShortcutOfAccessory>+
 
@@ -102,7 +99,4 @@ To decide which indexed text is jewellery-shortcut of (A - an accessory):
 	if A is bracelet, decide on "b";
 	decide on "r".
 
-
-
 Accessories Framework ends here.
-

@@ -1,6 +1,5 @@
 Thigh High Boots by Shoes begins here.
 
-
 A thigh high boots is a kind of boots. The printed name of thigh high boots is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]". The printed plural name of thigh high boots is usually "[TQlink of item described][item style]pairs of [clothing-title-before][clothing-material of item described] [heel-height of the item described] inch thigh high boots[clothing-title-after]". The text-shortcut of thigh high boots is "thb".
 
 Definition: a thigh high boots is fluid immune: decide yes.
@@ -71,28 +70,24 @@ Report kicking when there are worn WC thigh high boots:
 		otherwise:
 			decrease the powerup of C by 1.
 
+black-leather-boots is a boots. black-leather-boots is leather. The printed name of black-leather-boots is "[clothing-title-before]pair of black latex [heel-height of the item described] inch knee high boots[clothing-title-after]".The text-shortcut of black-leather-boots is "lkhb".
 
+Figure of black leather boots is the file "Items/Clothes/Lower/Feet/Boots/leatherboots1.png".
 
-black-latex-boots is a boots. black-latex-boots is latex. The printed name of black-latex-boots is "[clothing-title-before]pair of black latex [heel-height of the item described] inch knee high boots[clothing-title-after]".The text-shortcut of black-latex-boots is "lkhb".
+Definition: black-leather-boots is fluid immune: decide yes.
+Definition: black-leather-boots is black themed: decide yes.
 
-Figure of black latex boots is the file "Items/Clothes/Lower/Feet/Boots/latexboots1.png".
-
-Definition: black-latex-boots is fluid immune: decide yes.
-Definition: black-latex-boots is black themed: decide yes.
-
-To decide which number is the unique outrage of (C - black-latex-boots):
+To decide which number is the unique outrage of (C - black-leather-boots):
 	decide on 2.
 
-To decide which figure-name is the clothing-image of (H - black-latex-boots):
-	decide on figure of black latex boots.
+To decide which figure-name is the clothing-image of (H - black-leather-boots):
+	decide on figure of black leather boots.
 
-To say ClothingDesc of (H - black-latex-boots):
-	say "This pair of knee-high black latex boots laces up at the front and has a [heel-height of H] inch platform heel.";
-	say "[SteadinessDesc of H]".
+To say ClothingDesc of (H - black-leather-boots):
+	say "This pair of knee-high black leather boots laces up at the front and has a [heel-height of H] inch platform heel. It has a gothic feel.";
+	say SteadinessDesc of H.
 
-To say UniqueShortDesc of (H - black-latex-boots):
-	say "black latex knee high boots".
-
+To say UniqueShortDesc of (H - black-leather-boots):
+	say "black leather knee high boots".
 
 Thigh High Boots ends here.
-

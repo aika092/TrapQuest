@@ -31,6 +31,4 @@ To decide which object is the potential-upgrade-target of (C - a mary janes):
 
 Definition: a mary janes is black themed: decide yes.
 
-
 Mary Janes ends here.
-

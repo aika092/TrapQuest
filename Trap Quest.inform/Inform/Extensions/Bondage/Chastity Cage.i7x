@@ -13,11 +13,10 @@ To decide which number is the delicateness-influence of (C - a chastity cage):
 To decide which number is the initial outrage of (C - a chastity cage):
 	decide on 18.
 
-[!<ClothingIsUrinationBlocking>+
+To decide which number is the usualHipModesty of (C - a chastity cage):
+	decide on 0.
 
-Some things like chastity cages can allow urination and ejaculation through freely.
-
-+!]
+[Some things like chastity cages can allow urination and ejaculation through freely.]
 Definition: a chastity cage is urination blocking: decide no.
 
 outrageous-chastity is a humiliating situation.
@@ -56,6 +55,8 @@ To compute periodic effect of (C - a chastity cage):
 		if the size of penis > min penis size and a random number between 1 and 250 is 1:
 			PenisDown 1;
 			say "You feel your cursed chastity cage [Shrink] your penis into a [ShortDesc of penis].";]
+To compute school periodic effect of (C - a chastity cage):
+	compute periodic effect of C.
 
 [!<TheChastityCagePussySlutRule>+
 
@@ -94,6 +95,4 @@ This is the players in chastity can't wear vagina plugging clothes rule:
 		rule fails.
 The players in chastity can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
-
 Chastity Cage ends here.
-

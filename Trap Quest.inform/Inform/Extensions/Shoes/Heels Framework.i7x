@@ -55,7 +55,6 @@ To decide which number is the adult-influence of (C - a heels):
 To decide which number is the unique outrage of (C - a heels):
 	decide on 0.
 
-
 To decide which number is the original price of (C - a heels):
 	decide on the heel-height of C + 1.
 
@@ -165,6 +164,5 @@ To compute (C - a heels) unique inheriting from (D - a heels):
 
 To compute (C - a shoes) unique inheriting from (D - a heels):
 	if the quest of D is heel-walking-quest, now the quest of C is kicking-quest. [We can't have the heel walking quest if they are no longer heels]
-
 
 Heels Framework ends here.

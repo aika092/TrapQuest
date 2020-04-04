@@ -1,6 +1,5 @@
 Bunny Ears DQ by Headgear begins here.
 
-
 A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bunny ears is usually dexterity-influencing.
 
 Definition: a bunny ears is transformation-protected: decide no.
@@ -16,20 +15,17 @@ To compute waitress resolution of (M - a monster) taking (T - a bottle):
 To compute service spill punishment:
 	do nothing.
 
-
 bunny-waitress-quest is a headgear-clothing-quest.
 
 serving-bondage is a kind of bondage.
 serving table is a serving-bondage.
 serving tray is a serving-bondage.
 
-
 Part 2 - Rubber Bunny Ears
 
 rubber bunny ears is a bunny ears.
 
 egg-holding-quest is a headgear-clothing-quest.
-
 
 Part 3 - Bunny Hat
 
@@ -39,7 +35,6 @@ bunny-summoned is a number that varies.
 To compute unique recycling of (C - a bunny hat):
 	now the eggs-eaten of egg-eating-quest is 0;
 	now bunny-summoned is 0.
-
 
 black bunny hat is a bunny hat. The printed name of black bunny hat is "[clothing-title-before]black bunny hat[clothing-title-after]". The text-shortcut of black bunny hat is "bbh".
 Definition: black bunny hat is black themed: decide yes.
@@ -204,6 +199,9 @@ To compute class outfit of (H - bunny glasses):
 			repeat with O running through worn leg covering clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
+			repeat with O running through worn stockings:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 		say "[bold type]You feel your bunny hat twitch as if the ears were real, and then a [ShortDesc of K] appears on your feet![roman type][line break]";
 		summon K;
 		now the raw-magic-modifier of K is 1;
@@ -230,12 +228,6 @@ To say QuestFlav of (Q - trap-braving-quest):
 To say QuestTitle of (Q - trap-braving-quest):
 	say " (trap braving quest)".
 
-
-
-
-
-
-
 A chocolate egg is a kind of food. The printed name of chocolate egg is "[TQlink of item described]chocolate egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of chocolate egg is "[TQlink of item described]chocolate eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of chocolate egg is "ceg". There are 8 chocolate egg.
 To say ExamineDesc of (B - a chocolate egg):
 	say "A small chocolate Easter egg.".
@@ -243,12 +235,10 @@ To say ExamineDesc of (B - a chocolate egg):
 To decide which number is the crafting key of (C - a chocolate egg):
 	decide on 55.
 
-
 Figure of chocolate egg is the file "Items/Collectibles/chocolateegg1.jpg".
 
 To decide which figure-name is the examine-image of (F - a chocolate egg):
 	decide on figure of chocolate egg.
-
 
 To say ShortDesc of (C - a chocolate egg):
 	say "chocolate egg".
@@ -266,6 +256,5 @@ To compute (M - a robochef) cooking (I - a chocolate egg):
 		now the quality of D is a random number between 2 and 0;
 		now the fat of D is 1;
 		now D is retained by M.
-
 
 Bunny Ears DQ ends here.

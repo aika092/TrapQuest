@@ -187,9 +187,8 @@ The summoning-circle is in Dungeon33. The summoning-circle is a summoning portal
 To decide which figure-name is the examine-image of (C - summoning-circle):
 	decide on figure of summoning circle.
 
-
 To say ExamineDesc of (C - summoning-circle):
-	say "A softly glowing pentagram, with candles placed at all five points of the star. You can see that a mirror has been inlaid into the center of the circle, although if you look closely, you see that it doesn't show your reflection. [if C is active][PortalHint of C]The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
+	say "A softly glowing pentagram, with candles placed at all five points of the star. You can see that a mirror has been inlaid into the centre of the circle, although if you look closely, you see that it doesn't show your reflection. [if C is active][PortalHint of C]The energy around the circle is slowly building, as if it were hungry for something. Maybe you can find some way to [bold type]appease[roman type] it.[end if][if C is active and the divinationskill of the player is 1][DivinationHint of C][end if]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie Tip: This is the mechanism that the Dungeon uses to summon new NPCs into the region over time. It will slowly count down until it releases a brand new monster into the dungeon. When it gets close, it'll start glowing, at which point you can increase its timer by entering it or offering valuable items to it.[roman type][or][stopping]".
 
 To say PortalHint of (S - summoning-circle):
@@ -279,7 +278,7 @@ Check entering summoning-circle:
 		say "A strange feeling ripples down your spine, and you look over your shoulder to catch your [AssDesc] having a sudden growth spurt!";
 		AssSwell a random number between 1 and 2;
 	if R is 5:[force the player to masturbate, which gets the portal closer to spawning]
-		say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realize its impossible to resist...";
+		say "The magic surrounding you seems to rapidly intensify rather than fade away, and your arousal flares as you realise its impossible to resist...";
 		now auto is 1;
 		if the player is very horny, try masturbating;
 		now auto is 0;
@@ -298,7 +297,7 @@ Carry out appeasing something with summoning-circle:
 		ChargeUp the second noun by 300;
 		only destroy the noun;
 	otherwise if the noun is demonic:
-		say "The [noun] lights up as you throw it into the circle, which turns bright red as it cannibalizes its energy. You can feel the magic intensify rapidly as the [noun] bursts into flames.";
+		say "The [noun] lights up as you throw it into the circle, which turns bright red as it cannibalises its energy. You can feel the magic intensify rapidly as the [noun] bursts into flames.";
 		ChargeDown the second noun by 1000;
 		only destroy the noun;
 	otherwise if the noun is blessed clothing:
@@ -723,21 +722,21 @@ To say PortalHint of (S - a mysterious-mummy):
 	if S is active:
 		let N be the next-summon of the item described;
 		if N is 1:[cultist]
-			say "A squirming woman wrapped from head to toe in white linen, with a purple aura highlighting her features. Her arms are crossed in front of her chest, but it looks like her wrists are being held together by an invisible rope. There's nothing lewd about the way she's standing, but whenever you look at her, you can't help but feel like you're watching someone having sex.";
+			say "A squirming [man of a random acolyte] wrapped from head to toe in white linen, with a purple aura highlighting [his of a random acolyte] features. [big his of a random acolyte] arms are crossed in front of [his of a random acolyte] chest, but it looks like [his of a random acolyte] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of a random acolyte]'s standing, but whenever you look at [him of a random acolyte], you can't help but feel like you're watching someone having sex.";
 		otherwise if N is 2:[gladiator]
-			say "A tall woman wrapped from head to toe in white linen, with a golden aura highlighting her busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near her crotch, which twitches slightly[otherwise]There is a dark spot near her crotch, which grows slowly[end if] as her visibly muscular arms struggle against their wrappings.";
+			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
 		otherwise if N is 3 or N is 8:[vampiress(8); 3 used to be gargoyle, but she no longer re-spawns.]
-			say "A feminine figure wrapped in white linen, her features highlighted by a faint pink aura. There is a bat resting on one of her shoulders.";
+			say "A feminine figure wrapped in white linen, [his of vampiress] features highlighted by a faint pink aura. There is a bat resting on one of [his of vampiress] shoulders.";
 		otherwise if N is 4:[mannequin]
-			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding her features. Dusky makeup is peppered over its face, and its arms are splayed at disturbing angles to its sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
+			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding [his of a random mannequin] features. Dusky makeup is peppered over [his of a random mannequin] face, and [his of a random mannequin] arms are splayed at disturbing angles to [his of a random mannequin] sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
 		otherwise if N is 5:[demoness]
-			say "A tall woman wrapped from head to toe in white linen, with a red aura highlight her features. One hand rests on her hips, and the other extends out in front of her in command. Two horns curve around her temples, like a wreath, and although you can't see her feet, you're almost certain she's wearing heels.[if pregnancy fetish is 1] She's pregnant.[end if]";
+			say "A tall [man of a random demoness] wrapped from head to toe in white linen, with a red aura highlight [his of a random demoness] features. One hand rests on [his of a random demoness] hips, and the other extends out in front of [him of a random demoness] in command. Two horns curve around [his of a random demoness] temples, like a wreath, and although you can't see [his of a random demoness] feet, you're almost certain [he of a random demoness]'s wearing heels.[if pregnancy fetish is 1] [big he of a random demoness]'s pregnant.[end if]";
 		otherwise if N is 6:[kitsune; shouldn't happen]
-			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting her features. She has just about your build and height, and her arms are crossed in front of her chest. The wrappings don't actually look that secure, and its head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
+			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting [his of kitsune] features. [big he of kitsune] has just about your build and height, and [his of kitsune] arms are crossed in front of [his of kitsune] chest. The wrappings don't actually look that secure, and [his of kitsune] head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
 		otherwise if N is 7:[hellhound]
-			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight her features. She's on all fours, and there is a leather collar and leash gripped in one of her hands. [one of]For some reason she's holding it from the wrong end[or]She's holding it from the collar end instead of the leash[at random].";
+			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight [his of hellhound] features. [big he of hellhound]'s on all fours, and there is a leather collar and leash gripped in one of [his of hellhound] hands. [one of]For some reason [he of hellhound]'s holding it from the wrong end[or][big he of hellhound]'s holding it from the collar end instead of the leash[at random].";
 		otherwise:[ghost?]
-			say "A womanly figure wrapped in white linen, with a green aura highlighting her features in the relative darkness. The fabric is pulled taut near all of her sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";
+			say "A [man of a random ghost]ly figure wrapped in white linen, with a green aura highlighting [his of a random ghost] features in the relative darkness. The fabric is pulled taut near all of [his of a random ghost] sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";
 	otherwise:
 		say "A feminine figure wrapped in white linen. Her height and build seem to change slightly whenever you look at her, and her arms seem to be gesturing to what's below her.".
 
@@ -873,7 +872,7 @@ Check entering mysterious-mummy:
 			FaceUp 1;
 			if the number of off-stage mansion dwelling mannequins > 0, now the next-summon of the noun is 4;
 		otherwise if the class of the player is succubus or the class of the player is priestess:
-			say "Your vision is filled with pure flame, and for a moment, you feel only fear as you realize something is staring at you from beyond.";
+			say "Your vision is filled with pure flame, and for a moment, you feel only fear as you realise something is staring at you from beyond.";
 			if a random number between 1 and 2 is 1, DelicateUp 1;
 			if there is an off-stage demoness:
 				now the next-summon of the noun is 5;
@@ -896,7 +895,7 @@ Check entering mysterious-mummy:
 			now the next-summon of the noun is 0;
 		say "The candles at the mummy's feet turn [MummyColour of the noun] as the linen unravels, leaving you standing exactly where you where before.";
 	otherwise:
-		say "You step into the circle at the mummy's feet, and disturbing the growing buildup of magic. It saturates you!";
+		say "You step into the circle at the mummy's feet, and disturbing the growing build-up of magic. It saturates you!";
 		allocate 2 seconds;
 		let R be a random number between 1 and 4;
 		if the player is very horny, now R is 5;
@@ -918,7 +917,7 @@ Check entering mysterious-mummy:
 			say "A shiver runs up your spine.";
 			increase creepiness by 100;
 		if R is 5:
-			say "The magic surrounding you seems to intensify rather than fade away, and as your arousal flares as you realize its impossible to resist...";
+			say "The magic surrounding you seems to intensify rather than fade away, and as your arousal flares as you realise its impossible to resist...";
 			now auto is 1;
 			if the player is very horny, try masturbating;
 			now auto is 0;
@@ -926,4 +925,3 @@ Check entering mysterious-mummy:
 	do nothing instead.
 
 Summoning Portals ends here.
-

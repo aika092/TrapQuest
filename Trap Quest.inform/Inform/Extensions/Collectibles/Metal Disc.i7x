@@ -1,6 +1,5 @@
 Metal Disc by Collectibles begins here.
 
-
 A metal disc is a kind of monster-drop. There are 3 metal discs. The printed name of metal disc is "[TQlink of item described]metal disc[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of metal disc is "[TQlink of item described]metal discs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of metal disc is "mdi". Figure of metal disc is the file "Items/Collectibles/disc1.png".
 
 To decide which figure-name is the examine-image of (C - a metal disc):
@@ -24,4 +23,3 @@ To decide which number is the bartering value of (T - a metal disc) for (M - a s
 	decide on 1.
 
 Metal Disc ends here.
-

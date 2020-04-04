@@ -1,6 +1,5 @@
 Makeup Pad Trap by Traps begins here.
 
-
 [!<MakeUpPad>@
 
 REQUIRES COMMENTING
@@ -74,4 +73,3 @@ To say MakeUpTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
 Makeup Pad Trap ends here.
-

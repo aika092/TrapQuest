@@ -49,7 +49,6 @@ To decide which number is the outrage of (S - a sex toy):
 		if S is not currently visible, decide on (the initial outrage of S * 2) / 3; [this means it is partially visible]
 	decide on the unworn outrage of S.
 
-
 To say DongSize of (C - a sex toy):
 	let N be the size of C;
 	say DongSize N.
@@ -74,8 +73,6 @@ To ToyShortcutAssign (C - a sex toy):
 		now the text-shortcut of C is substituted form of "sty[toyShortcutCount]";
 		increase toyShortcutCount by 1.
 
-
-
 This is the sex toy pussy slut rule:
 	if there is a sex toy penetrating vagina, decrease the desirability of vagina by 7.
 The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
@@ -83,8 +80,6 @@ The sex toy pussy slut rule is listed in the pussy slut eligibility rules.
 This is the sex toy butt slut rule:
 	if there is a sex toy penetrating asshole, decrease the desirability of asshole by 7.
 The sex toy butt slut rule is listed in the butt slut eligibility rules.
-
-
 
 To decide which number is the original price of (C - a sex toy):
 	decide on 2.
@@ -291,7 +286,6 @@ To compute gripping of (I - an insertable thing):
 				if the openness of vagina > open, say "You feel permanently more loose.";
 			now vaginalGripCount is 0.
 
-
 To compute toy expulsion reaction of (M - a person):
 	do nothing.
 To compute toy expulsion reaction of (M - a monster):
@@ -304,7 +298,6 @@ To decide which number is the bartering value of (T - a sex toy) for (M - a mann
 
 Check taking off sex toy:
 	try unplugging the noun instead.
-
 
 Chapter 1 - Dongs
 
@@ -425,13 +418,11 @@ To sizeUp (C - a basic plug) by (X - a number):
 	if X < 1, now X is 1;
 	assign size X to C.
 
-
 To say ShortDesc of (C - a plug):
 	say "plug".
 
 To say MediumDesc of (C - a plug):
 	say "[PlugSize size of C] butt plug".
-
 
 A tail plug is a kind of plug.
 To decide which number is the initial outrage of (S - a tail plug):
@@ -513,13 +504,12 @@ To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a plug):
 	say "[speech style of M]'Pff, that's not big enough for me, it'd fall right out!'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a plug):
-	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break][BigNameDesc of M] unzips the crotch of her latex outfit, and with a lewd, shameless face, works the plug into her asshole, before zipping her outfit back up.[line break][speech style of M]'Tada!'[roman type][line break]".
+	say "[speech style of M]'Ooh, fine, you've tempted me.'[roman type][line break][BigNameDesc of M] unzips the crotch of [his of M] latex outfit, and with a lewd, shameless face, works the plug into [his of M] asshole, before zipping [his of M] outfit back up.[line break][speech style of M]'Tada!'[roman type][line break]".
 
 Definition: a plug is transformation-protected if it is not plentiful.
 
 To decide which object is the unique-upgrade-target of (C - a plug):
 	decide on a random off-stage plentiful anal beads.
-
 
 Section 1 Tail Plug
 
@@ -567,6 +557,7 @@ Check replacing:
 		unless the noun is crotch-assless or the noun is skirted, say "You can't replace any clothing while you are wearing the [random worn tail plug]!" instead.
 
 To decide which object is the concealer of (C - a tail plug):
+	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
 	let S be a random worn unskirted actually dense potentially asshole covering clothing; [tail plug not concealed by skirts]
 	decide on S.
 
@@ -578,7 +569,4 @@ To say CurrentlyPartiallyConcealedFlav of (C - a tail plug):
 	let X be the at least partial concealer of C;
 	say "Your [ShortDesc of X] fails to completely hide the fact that you're wearing it[if X is skirted and X is actually dense], because the tail is poking out[end if].".
 
-
-
 Sex Toy Framework ends here.
-

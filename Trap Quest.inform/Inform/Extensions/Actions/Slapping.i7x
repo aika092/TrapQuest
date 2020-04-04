@@ -52,15 +52,15 @@ To decide which number is the slap damage of (P - a person):
 			if damage-explained > 1, say "+1 (living tentacles) ";
 	unless there is a worn slap ready projectile equippable:
 		if the breastskill of the player is 0:
-			let N be the largeness of breasts / 6;
-			decrease A by N;
-			if damage-explained > 1 and N > 0, say "-[N] (large breasts) ";
+			let N be (the largeness of breasts - 3) / 3;
+			let B be a random worn bra;
+			if B is bra, decrease N by the current support of B;
+			if N > 0:
+				decrease A by N;
+				if damage-explained > 1, say "-[N] (large breasts) ";
 		if the player is wrist bound:
 			decrease A by 2;
 			if damage-explained > 1, say "-2 (wrists bound) ";
-		if the weight of the player < 1:
-			decrease A by 2;
-			if damage-explained > 1, say "-2 (very low weight) ";
 		if the player is zeroG:
 			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
 			now A is 0;
@@ -77,6 +77,7 @@ Check slapping:
 	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not monster, say "Err, why would you do that?" instead;
+	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the noun is woman-barbara and woman-barbara is not angered:
 		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
@@ -110,8 +111,6 @@ Carry out slapping:
 	damage A on the noun.
 Understand "slap [something]", "hit [something]", "punch [something]", "slash [something]", "slash at [something]", "swipe [something]", "swipe at [something]", "scratch [something]", "thrust at [something]", "swing at [something]", "sa [something]", "sl [something]", "pu [something]" as slapping.
 
-
-
 To decide which number is the zap damage of (P - a person):
 	if damage-explained > 1, say "[input-style]Base zap damage calculation: [bracket]0 (base damage) ";
 	let A be 0;
@@ -137,6 +136,7 @@ Check zapping it with:
 	if the second noun is not monster, say "Err, why would you do that?" instead;
 	if the noun is zap ready equippable and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
+	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the second noun is woman-barbara and woman-barbara is not angered:
 		say "Are you sure? You probably won't be able to make [him of the second noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
@@ -170,9 +170,4 @@ Carry out zapping it with:
 			say "[bold type]Suddenly, the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. [BigNameDesc of the second noun] steps out, stretching [himself of the second noun] to full height. Uh-oh...".
 Understand "zap [something] with [something]", "zap [something] at [something]", "cast [something] at [something]", "attack [something] with [something]" as zapping it with.
 
-
-
-
-
 Slapping ends here.
-

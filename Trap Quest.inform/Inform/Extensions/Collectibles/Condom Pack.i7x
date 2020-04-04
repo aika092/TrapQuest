@@ -1,6 +1,5 @@
 Condom Pack by Collectibles begins here.
 
-
 condom-pack is a thing. condom-pack is in Dungeon07. The printed name of condom-pack is "[TQlink of item described]condom pack[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of condom-pack is "cdp". Understand ["condom", ]"pack", "condom pack", "condom box", "box", "super", "safe" as condom-pack. condom-pack can be condom-trapped.
 
 A diaper quest fix rule:
@@ -29,12 +28,10 @@ Definition: condom-pack is fetish appropriate if diaper quest is 0.
 To decide which number is the outrage of (C - condom-pack):
 	decide on 12.
 
-
 To decide which number is the alchemy key of (C - condom-pack):
 	decide on 28.
 
 Definition: condom-pack is always alchemy appropriate: decide yes. [condom packs can appear randomly from other recipes]
-
 
 [Definition: condom-pack is recipe specific: decide yes.]
 
@@ -58,8 +55,8 @@ Report going when condom-pack is carried:
 		if S is worn:
 			say "Three used condoms appear on your [ShortDesc of S]!";
 		otherwise:
-			summon S cursed;
 			say "Suddenly, a [printed name of S] appears around your waist, with three used condoms already pinned to it!";
+			summon S cursed with quest;
 		increase the used condoms of S by 3;
 		update appearance level;
 		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
@@ -73,7 +70,6 @@ Report going when condom-pack is carried:
 		say CondomNewbieTip;
 		say CondomPinReactionFlav of yourself on a random worn drinkable condom pinned clothing;
 		now condom-pack is not condom-trapped.
-
 
 Definition: a clothing (called C) is condom pinnable:
 	if C is totally-exclusive or C is top-exclusive:
@@ -179,7 +175,7 @@ To compute default condom filling of (M - a monster):
 	let S be nothing;
 	if C is nothing:
 		now S is string-belt;
-		summon S cursed;
+		summon S cursed with silent quest;
 		now C is S;
 	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if][CondomPinFlav of M on C][CondomPinReactionFlav of M on C]";
 	say CondomNewbieTip;
@@ -246,13 +242,13 @@ To say CondomForceSuccessFlav of (M - a monster):
 	if chosen-orifice of M is face:
 		say CondomManualFlav of M;
 	otherwise:
-		say "[one of]You reach between your legs, holding [NameDesc of M]'s [DickDesc of M] steady as you take out a condom and quickly roll it down [his of M] length.[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M]'s twitching [DickDesc of M].[at random]".
+		say "[one of]You reach between your legs, holding [NameDesc of M][']s [DickDesc of M] steady as you take out a condom and quickly roll it down [his of M] length.[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M][']s twitching [DickDesc of M].[at random]".
 
 To say CondomForceFailFlav of (M - a monster):
 	if chosen-orifice of M is face:
-		say "You hold [NameDesc of M]'s [DickDesc of M] steady as you take out a condom and try to unroll it down [his of M] length. [big he of M] moves suddenly, and you accidentally drop it! Looks like [he of M][']s going in bare...";
+		say "You hold [NameDesc of M][']s [DickDesc of M] steady as you take out a condom and try to unroll it down [his of M] length. [big he of M] moves suddenly, and you accidentally drop it! Looks like [he of M][']s going in bare...";
 	otherwise:
-		say "[one of]You reach between your legs, grasping for [NameDesc of M]'s [DickDesc of M] as you quickly take out a condom. It's too difficult without being able to see what you're doing, and you accidentally drop it[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M]'s [DickDesc of M]. [big he of M] moves before you can unroll it completely, and you accidentally drop the condom[or]You take out a condom and reach between your legs. It's really difficult to get a good grip on [his of M] [DickDesc of M], and you accidentally drop the condom[at random]! Looks like [he of M][']s going in bare...";
+		say "[one of]You reach between your legs, grasping for [NameDesc of M][']s [DickDesc of M] as you quickly take out a condom. It's too difficult without being able to see what you're doing, and you accidentally drop it[or]You take out a condom and reach between your legs, awkwardly applying it to [NameDesc of M][']s [DickDesc of M]. [big he of M] moves before you can unroll it completely, and you accidentally drop the condom[or]You take out a condom and reach between your legs. It's really difficult to get a good grip on [his of M] [DickDesc of M], and you accidentally drop the condom[at random]! Looks like [he of M][']s going in bare...";
 
 To say AutomaticCondomFlav of (M - a monster):
 	say "After looking at your [if there is a worn cumdumpster hat]cumdumpster hat[otherwise][ShortDesc of random held condom-providing thing][end if], [NameDesc of M] takes a condom and deftly protects [his of M] [manly-penis].";
@@ -341,7 +337,7 @@ To compute spontaneous condom of (C - a clothing):
 	let S be nothing;
 	if P is nothing:
 		now S is string-belt;
-		summon S cursed;
+		summon S cursed with silent quest;
 		now P is S;
 	say "[if S is clothing]Suddenly, a [printed name of S] appears around your waist! [end if]You watch in [horror the semen taste addiction of the player] as the condom flies onto your [MediumDesc of P] and fuses itself to the [clothing-material of P]. [if the used condoms of P is 0]Your [ShortDesc of P] now has a used condom pinned to it![end if][line break][CondomPinReactionFlav of yourself on P]";
 	increase the used condoms of P by 1;
@@ -351,4 +347,3 @@ To compute spontaneous condom of (C - a clothing):
 	force clothing-focus redraw. [Forces redraw of clothing window]
 
 Condom Pack ends here.
-

@@ -25,5 +25,4 @@ To decide which figure-name is clothing-image of (H - a pink bloomers):
 
 Definition: a pink bloomers is babywear: decide yes. [NPCs can put this on the player]
 
-
 Bloomers ends here.

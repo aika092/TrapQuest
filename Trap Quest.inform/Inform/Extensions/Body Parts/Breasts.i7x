@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 breasts is a flesh. breasts is everywhere. Understand "tits", "breast", "boobs", "cleavage", "bust" as breasts. Understand "chest" as breasts when the number of treasure chests in the location of the player is 0. The text-shortcut of breasts is "breasts".
 To say FullExamineDesc of (B - breasts):
-	say "[TotalDesc of breasts][line break]".
+	say "[ImageDesc of breasts][TotalDesc of breasts][line break]".
 
 [!<Breasts>@<fleshVolume:Integer>*
 
@@ -91,13 +91,11 @@ To decide which number is the sensitivity of (B - breasts):
 	increase S by 6 * the trophy-mode of bust-trophy;
 	decide on S.
 
-
 To decide which number is the at least partially lewdly exposed outrage of (B - breasts):
 	decide on 8.
 
 To decide which number is the lewdly exposed outrage of (B - breasts):
 	decide on 13.
-
 
 Definition: breasts is exposed:
 	if the at least partial concealer of breasts is a thing, decide no;
@@ -112,20 +110,27 @@ Definition: breasts is lewdly exposed if breasts is exposed and (the player is f
 Definition: breasts is at least partially lewdly exposed if breasts is at least partially exposed and the largeness of breasts > 1.
 
 To decide which object is the at least partial concealer of (B - breasts):
-	repeat with C running through worn actually breast covering at least partially nipple covering clothing:
-		unless C is see-through:
-			let this-one be 1;
-			repeat with D running through worn actually breast covering at least partially nipple covering clothing:
-				if D is not see-through and the cleavageCover of D > the cleavageCover of C, now this-one is 0;
-			if this-one is 1, decide on C;
+	let N be 0;
+	let chosenThing be the throne;
+	repeat with C running through worn not-see-through actually breast covering at least partially nipple covering clothing:
+		let CC be the cleavageCover of C;
+		if the cleavageCover of C > N:
+			now chosenThing is C;
+			now N is CC;
+	if realisticArms is 1 and ((N > 0 and N <= the cleavageCover of arms) or (N is 0 and the cleavageCover of arms > 0)), decide on arms;
+	if chosenThing is not the throne, decide on chosenThing;
 	decide on nothing.
 
 To decide which object is the concealer of (B - breasts):
-	repeat with C running through worn actually dense actually breast covering nipple covering clothing:
-		let this-one be 1;
-		repeat with D running through worn actually dense actually breast covering nipple covering clothing:
-			if the cleavageCover of D > the cleavageCover of C, now this-one is 0;
-		if this-one is 1, decide on C;
+	let N be 0;
+	let chosenThing be the throne;
+	repeat with C running through worn actually dense actually breast covering at least partially nipple covering clothing:
+		let CC be the cleavageCover of C;
+		if the cleavageCover of C > N:
+			now chosenThing is C;
+			now N is CC;
+	if realisticArms is 1 and ((N > 0 and N <= the cleavageCover of arms) or (N is 0 and the cleavageCover of arms > 0)), decide on arms;
+	if chosenThing is not the throne, decide on chosenThing;
 	decide on nothing.
 
 To decide which number is the cleavageCover of (C - a clothing):
@@ -139,9 +144,15 @@ To decide which number is the cleavageCover of (C - a clothing):
 		if C is fully exposing, decide on 0;
 	decide on 0.
 
+To decide which number is the cleavageCover of (C - arms):
+	if breasts is listed in the armUses of arms:
+		if entry 1 in the armUses of arms is breasts and entry 2 in the armUses of arms is breasts, decide on 5;
+		decide on 3;
+	decide on 0.
+
 To decide which number is cleavageCover: [The higher this number, the less humiliating giant breasts are]
 	let C be the at least partial concealer of breasts;
-	if C is clothing:
+	if C is clothing or C is arms:
 		let CC be the cleavageCover of C;
 		if CC < 3, decide on 3;
 		if CC > 7, decide on 7;
@@ -176,7 +187,6 @@ To decide which number is the cringe of (B - breasts):
 		if B is exposed, decide on 2;
 		decide on 0;
 	decide on C - 3. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
-
 
 Definition: breasts is showing cleavage:
 	if the largeness of breasts < 3 or cleavageCover is 7, decide no;
@@ -213,9 +223,6 @@ Definition: a clothing (called C) is very low cut or lower:
 Definition: a clothing (called C) is low cut or lower:
 	if C is low cut or C is very low cut or lower, decide yes;
 	decide no.
-
-
-
 
 [!<DecideWhichNumberIsTheLargenessOfBreasts>+
 
@@ -281,10 +288,9 @@ To decide which number is the weight of (XXX - breasts):
 	let S be the supportable weight of breasts;
 	[If the weight of breasts < 1, then we don't make calculations about how well it's supported. Essentially clothing can help you fight fatigue gain and strength requirements, but not help you defy gravity.]
 	if S > 0:
-		repeat with B running through bras worn by the player:
-			if the largeness of breasts + 2 > the size of B and B is top-placed, decrease S by the support of B;
-			decrease S by the magic-modifier of B;
-		repeat with O running through overdresses worn by the player:
+		repeat with B running through worn bras:
+			decrease S by the current support of B;
+		repeat with O running through worn overdresses:
 			if O is maternity dress:
 				if O is cursed:
 					if the pregnancy of the player is 0:
@@ -399,7 +405,7 @@ This is the too horny to present breasts rule:
 	if the player is horny:
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny and the sensitivity of breasts < 8:
-				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked, you can't bring yourself to do that!";
+				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
 				rule fails;
 			if the semen addiction of the player < 6 and bukkake fetish is 1:
 				if auto is 0, say "The thought of getting [semen] over your [BreastDesc] is just too gross, you can't bring yourself to offer that!";
@@ -437,7 +443,6 @@ How much does the player want this body part to be used?
 +!]
 To decide which number is the desire of (B - breasts):
 	decide on the titfuck addiction of the player.
-
 
 Part 2 - Description
 
@@ -486,9 +491,6 @@ To say CleavageDesc:
 			otherwise if O > 0:
 				say "with only a small amount of cleavage".
 
-
-
-
 [!<SayTotalDescOfBreasts>+
 
 REQUIRES COMMENTING
@@ -504,7 +506,7 @@ To say TotalDesc of breasts:
 		otherwise say "on your hands and knees under the weight of your ";
 	let supportiveBra be 0;
 	let B be a random worn bra;
-	if B is bra and the support of B > 0 and B is top-placed, now supportiveBra is 1;
+	if B is bra and the current support of B > 0, now supportiveBra is 1;
 	if supportiveBra is 1:
 		say "[BreastDesc]. ";
 	otherwise if the player is prone:
@@ -842,9 +844,7 @@ To say BreastCup (M - a number):
 	if M is 19, say "comical";
 	if M >= 20, say "impossibly huge".
 
-
 Part 3 - Modify Breast Size
-
 
 [!<PersonIsOverbusted>+
 
@@ -926,8 +926,6 @@ To Bustup (X - a number):
 		compute bra strain;
 		update appearance level;
 	if the player is overbusted, say "[one of][bold type]BustUp function has increased breasts to larger than max size. Please report bug with as much information as possible about the situation.[roman type][line break][or][stopping]".
-
-
 
 [!<SetRealBreastSize>+
 
@@ -1023,7 +1021,6 @@ To Milkup (X - a number):
 		say "Your breasts are forced to grow into [ShortDesc of breasts] to contain all the milk!";
 		unless last-lactated-time - earnings < 60, trigger lactation; [Don't want to cause lactation super frequently]
 	if the milk volume of breasts >= the milk capacity of breasts and a random number between 1 and 2 is 1 and (the milk volume of breasts > 5 or the player is top heavy), say "[one of][variable custom style]I really need a [if the bimbo of the player > 5]good [end if]milking![roman type][line break][or][or][cycling]".
-
 
 [!<2MilkUp>+
 
@@ -1177,16 +1174,8 @@ Report going:
 				otherwise passively stimulate breasts;
 				now breastStimulationFlavAllowed is true.
 
-
-
 Section - Image for graphics window
 
-Figure of CumBreastsButton is the file "Special/Buttons/cumbreasts.png".
-
-To decide which figure-name is the examine-image of (T - breasts):
-	if T is overglazed, decide on Figure of CumBreastsButton;
-	decide on figure of no-image-yet.
-
+[Documented in Necessary Figures]
 
 Breasts ends here.
-

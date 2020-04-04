@@ -11,7 +11,7 @@ Check WellWishing:
 	unless the location of the player is Woods27, say "You'd probably need a wishing well to do that." instead;
 	if the noun is bottle:
 		unless the noun is open topped, say "It probably makes more sense to try that with something that has an open top." instead;
-		 if the doses of the noun < 1, say "But it's empty?" instead;
+		if the doses of the noun < 1, say "But it's empty?" instead;
 	otherwise if the noun is not a plentiful accessory:
 		unless the noun is infernal gem, say "It probably makes more sense to use something like jewellery." instead;
 	[otherwise:
@@ -161,6 +161,4 @@ To compute BadWishing:
 	otherwise:
 		say "Nothing happens. How lame.".
 
-
 WellWishing ends here.
-

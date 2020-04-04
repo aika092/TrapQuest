@@ -47,7 +47,6 @@ To decide which number is the anal-sex-addiction-influence of (C - a clothing):
 
 Part 2 - Modify Anal Sex Addiction
 
-
 [!<Player>@<rawAnalSexAddiction:Integer>*
 
 REQUIRES COMMENTING
@@ -84,7 +83,4 @@ To SilentlyAnalSexAddictDown (X - a number):
 To SilentlyAnalSexAddictDown:
 	if the raw anal sex addiction of the player > 1, decrease the raw anal sex addiction of the player by 1.
 
-
-
 Anal Sex Addiction ends here.
-

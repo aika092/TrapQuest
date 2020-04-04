@@ -20,4 +20,3 @@ Definition: lycra-bodysuit is class-transformation-protected if the class of the
 Definition: lycra-bodysuit is green themed: decide yes.
 
 Lycra Bodysuit ends here.
-

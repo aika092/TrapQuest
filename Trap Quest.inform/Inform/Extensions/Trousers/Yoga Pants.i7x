@@ -34,4 +34,3 @@ Definition: yoga pants is exercise themed: decide yes.
 Definition: yoga pants is blue themed: decide yes.
 
 Yoga Pants ends here.
-

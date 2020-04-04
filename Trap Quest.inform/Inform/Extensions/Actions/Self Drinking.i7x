@@ -1,6 +1,5 @@
 Self Drinking by Actions begins here.
 
-
 [!<CheckDrinkingBreasts>+
 
 REQUIRES COMMENTING
@@ -53,7 +52,4 @@ Report SelfDrinking:
 	if diaper quest is 1, progress quest of puddle-licking-quest;
 	progress quest of milk-drinking-quest.
 
-
-
 Self Drinking ends here.
-

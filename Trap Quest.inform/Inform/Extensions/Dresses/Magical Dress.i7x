@@ -90,6 +90,4 @@ To say ClothingDesc of (O - magical-maid-outfit):
 To decide which number is the initial outrage of (H - magical-maid-outfit):
 	decide on 6.
 
-
 Magical Dress ends here.
-

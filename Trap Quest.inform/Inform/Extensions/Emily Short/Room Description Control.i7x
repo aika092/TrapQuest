@@ -2,7 +2,6 @@ Version 13/160517 of Room Description Control by Emily Short begins here.
 
 "A framework by which the author can considerably change the listing of objects in a room description. Includes facilities for concealing objects arbitrarily and changing the order in which objects are listed."
 
-
 Section 1 - Priority and Concealment Rules
 
 Include Complex Listing by Emily Short.
@@ -83,7 +82,6 @@ A thing has a number called description-rank.
 
 Ranking rules are an object-based rulebook.
 
-
 Table of Seen Things
 output	current rank
 an object	a number
@@ -92,8 +90,6 @@ with 60 blank rows.
 Definition: a thing is mentionable if it is marked for listing and it is unmentioned. Definition: a thing is unmentionable if it is not mentionable.
 
 Definition: a thing is descriptively dull if the description-rank of it is lowest-rank.
-
-
 
 [This portion makes sure that items that are listed together in groups get properly flagged 'mentioned':]
 
