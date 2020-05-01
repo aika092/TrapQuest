@@ -117,7 +117,7 @@ To initialise variables:
 		now new-seed is 1;
 	if new-seed is 1:
 		now choice in row 17 of Table of Settings is a random number between 1 and 1000; [This should only happen once and is used to validate against cheaters.]
-	check donators status;
+	check donators status with 0; [check for a donators file]
 	now random slow pregnancy is a random number between 0 and 3;
 	now random slow birth is a random number between -1 and 3.
 
@@ -141,7 +141,8 @@ To fill in fake table blanks:
 		unless there is a choice in row 52 of the Table of Settings, now choice in row 52 of Table of Settings is 30;
 		unless there is a choice in row 53 of the Table of Settings, now choice in row 53 of Table of Settings is 0;
 		unless there is a choice in row 54 of the Table of Settings, now choice in row 54 of Table of Settings is 0;
-		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1.
+		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1;
+		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;

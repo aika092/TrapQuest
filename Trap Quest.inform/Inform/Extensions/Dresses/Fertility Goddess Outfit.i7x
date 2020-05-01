@@ -75,7 +75,7 @@ Living tentacles has a number called charge. The charge of living tentacles is u
 The printed name of living tentacles is usually "[clothing-title-before]living tentacles[clothing-title-after]".
 
 To say ClothingDesc of (C - a living tentacles):
-	say "A creepy little twitching mass of purple that was once on your neck. [if C is worn]The thing that's grabbing your neck appears to be trying to 'help' by covering your skin up with its tentacles. While you appreciate the gesture, one thing it does not have a strong grasp of is the concept of what you care about covering. Still, it's definitely okay that it is here. You feel very strongly about that. The tentacles are very helpful, even! They sometimes help you attack, and now you're never without a drink...".
+	say "A creepy little twitching mass of purple that was once on your neck. [if C is worn]The thing that's grabbing your neck appears to be trying to 'help' by covering your skin up with its tentacles. While you appreciate the gesture, one thing it does not have a strong grasp of is the concept of what you care about covering. Still, it's definitely okay that it is here. You feel very strongly about that. The tentacles are very helpful, even! They sometimes help you attack, and now you're never without a drink...[end if]".
 
 To say ShortDesc of (C - a living tentacles):
 	say "living tentacles".
@@ -87,5 +87,8 @@ To decide which number is the initial outrage of (C - a living tentacles):
 	decide on 19.
 
 Definition: a living tentacles is purple themed: decide yes.
+
+To compute periodic effect of (L - a living tentacles):
+	if the charge of L > 0, decrease the charge of L by time-seconds.
 
 Fertility Goddess Outfit ends here.

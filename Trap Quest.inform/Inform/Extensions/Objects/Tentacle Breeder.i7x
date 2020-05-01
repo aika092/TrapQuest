@@ -9,11 +9,11 @@ To decide which number is the true-growth of (T - a tentacle-breeder):
 	if the player-class is magical girl, increase G by 1;
 	decide on G.
 
-The dungeon-breeder is a tentacle-breeder.
-The woods-breeder is a tentacle-breeder.
-The hotel-breeder is a tentacle-breeder.
-The mansion-breeder is a tentacle-breeder.
-The player-breeder is a tentacle-breeder.
+dungeon-breeder is a tentacle-breeder.
+woods-breeder is a tentacle-breeder.
+hotel-breeder is a tentacle-breeder.
+mansion-breeder is a tentacle-breeder.
+player-breeder is a tentacle-breeder. player-breeder can be maid-history.
 
 To say unique-verb-desc of (T - a tentacle-breeder):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]purify[close bracket][as]purify [text-shortcut of T][end link]".
@@ -50,7 +50,7 @@ To decide which figure-name is the examine-image of (C - player-breeder):
 
 To say ExamineDesc of (C - a tentacle-breeder):
 	if inhuman pregnancy is 2:
-		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime. A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with four eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
+		say "A massively pregnant [if C is player-breeder]previous version of yourself[otherwise]woman[end if] is stuck to the wall with thick, pink slime[if C is maid-history], [bold type]your old maid headdress and magical maid outfit still worn, but completely coated in cum. [roman type][otherwise]. [end if]A sea of tentacles pushes itself into all of [if C is player-breeder]your previous self's[otherwise]her[end if] holes, throbbing rhythmically. Semen drools from her lips around the tentacles and from her [vagina]. Her eyes are rolled back up into her head, and it seems she doesn't have even the slightest sense of self or awareness. There is a translucent barrier covering her whole body, which seems to pulse in time with four eldritch seals etched into the ground below her. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] her corruption and rescue her from her predicament[otherwise if C is player-breeder]Realising that you are in some manner of speaking a... clone... of this woman raises some questions about the nature of consciousness which you don't have the time or desire to think about right now[otherwise]You feel like you should probably stay away from her, until you have enough power to overcome all the seals[end if].";
 	otherwise:
 		say "A messy dome of grey flesh is stuck to one wall, with rapidly pulsating holes, kind of like spasming assholes. There is a translucent barrier covering it, which seems to vibrate in time with four eldritch seals etched into the ground below it. [if the magic-power of the player > 4]For some reason, you feel like you might be able to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise if there is a held pure totem or ritual-beads is held and the size of ritual-beads >= 7]For some reason, you feel like you have a magical item you can use to [bold type]purify[roman type] the corrupt substance and halt the spawning of tentacle monsters into this region[otherwise]You feel like you won't be able to halt the spawning of tentacle monsters here until you have enough power to overcome all the seals[end if].".
 
@@ -87,8 +87,10 @@ Carry out purifying tentacle-breeder:
 		if the quest of C is tentacle-research-quest:
 			compute quest completion of tentacle-research-quest on C.
 
-To compute summoning check of (T - a tentacle-breeder) :
-	decrease the charge of T by (time-seconds + game difficulty) / 2;
+Definition: a tentacle-breeder is loaded if it is regional. [Tentacle breeders only summon tentacle monsters when the player is nearby.]
+
+To compute summoning check of (T - a tentacle-breeder):
+	decrease the charge of T by time-seconds;
 	if the charge of T < 1:
 		let M be the summonChoice of T;
 		if M is monster:
@@ -113,28 +115,24 @@ To compute portal reset of (T - a tentacle-breeder):
 	now the reset-count of T is 0;
 	increase the growth of T by 1.
 
-To compute (T - a dungeon-breeder) regionally summoning (M - a monster):
+To compute (T - dungeon-breeder) regionally summoning (M - a monster):
 	summon M in the dungeon;
 	now the charge of T is 450.
 
-A time based rule (this is the tentacle breeders progress rule):
-	repeat with T running through tentacle-breeder:
-		if T is regionally in playerRegion, compute summoning check of T.
-
-To compute (T - a woods-breeder) regionally summoning (M - a monster):
+To compute (T - woods-breeder) regionally summoning (M - a monster):
 	summon M in the woods;
 	now the charge of T is 400.
 
-To compute (T - a hotel-breeder) regionally summoning (M - a monster):
+To compute (T - hotel-breeder) regionally summoning (M - a monster):
 	summon M in the hotel;
 	now the charge of T is 300.
 
-To compute (T - a mansion-breeder) regionally summoning (M - a monster):
+To compute (T - mansion-breeder) regionally summoning (M - a monster):
 	summon M in the mansion;
 	now the charge of T is 200. [Just because I expect people to spend less time in the mansion]
 
-To compute (T - a player-breeder) regionally summoning (M - a monster):
+To compute (T - player-breeder) regionally summoning (M - a monster):
 	summon M;
-	now the charge of T is 300.
+	now the charge of T is 400.
 
 Tentacle Breeder ends here.

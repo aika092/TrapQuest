@@ -163,7 +163,7 @@ To compute reset cooldown of (T - a cage trap):
 			if T is triggered:
 				repeat with C running through stuck clothing:
 					now C is not stuck;
-					say "As the cage shakes and shudders, your [ShortDesc of C] shrinks back down and becomes unstuck, and you fall out.";
+					if C is worn, say "As the cage shakes and shudders, your [ShortDesc of C] shrinks back down and becomes unstuck, and you fall out.";
 				repeat with C running through stuck body parts:
 					now C is not stuck;
 					say "As the cage shakes and shudders, your [ShortDesc of C] becomes unstuck, and you fall out.";
@@ -175,13 +175,25 @@ Check going when there is a triggered cage trap in the location of the player:
 	let C be a random worn stuck clothing;
 	if C is clothing:
 		say "You can't go anywhere while your [ShortDesc of C] is stuck in between the cage bars!" instead;
-	let C be a random worn stuck body part;
+	let C be a random stuck body part;
 	if C is body part:
 		say "You can't go anywhere while your [ShortDesc of C] is stuck in between the cage bars!" instead;
 	allocate 6 seconds;
 	if diaper quest is 0:
+		let LB be the largeness of breasts;
+		let BL be the largeness of belly;
 		let TH be the thickness of hips;
 		let R be a random number between 1 and 10;
+		if debuginfo > 0, say "[input-style]Breasts squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) breast size[roman type][line break]";
+		if R <= LB:
+			now the stance of the player is 1;
+			now breasts is stuck;
+			say "You try to squeeze through the cage, but your [BreastDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+		if debuginfo > 0, say "[input-style]Belly squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) belly size[roman type][line break]";
+		if R <= BL:
+			now the stance of the player is 1;
+			now belly is stuck;
+			say "You try to squeeze through the cage, but your [BellyDesc] gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
 		if debuginfo > 0, say "[input-style]Hips squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) hips width[roman type][line break]";
 		if R <= TH:
 			now the stance of the player is 1;

@@ -34,7 +34,6 @@ To decide which figure-name is YesNoBackground:
 The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
 The release number is 11.
 
-Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually NoDQImage.
 DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
@@ -130,7 +129,6 @@ Include Stiff Slave by Nintendolls One Year Later Epilogues.
 Include Street Prostitute by Nintendolls One Year Later Epilogues.
 Include Super Gape by Nintendolls One Year Later Epilogues.
 Include Super Genius by Nintendolls One Year Later Epilogues.
-Include Toilet by Nintendolls One Year Later Epilogues.
 Include Super Giant Tits by Nintendolls One Year Later Epilogues.
 Include Super Giant Ass by Nintendolls One Year Later Epilogues.
 

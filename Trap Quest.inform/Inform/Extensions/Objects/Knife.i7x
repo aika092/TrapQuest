@@ -18,12 +18,11 @@ Check going when there is a knife in the location of the player:
 Report going when there is a knife in the location of the player:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-This is the knife charge decay rule:
+A later time based rule (this is the knife charge decay rule):
 	repeat with K running through knife:
 		if the charge of K > 0:
-			decrease the charge of K by counters-seconds;
+			decrease the charge of K by time-seconds;
 			if the charge of K <= 0 and the player is in the location of K, say "The knife suddenly starts glowing again!.".
-The knife charge decay rule is listed in the advance counters rules.
 
 Knifing it with is an action applying to two things.
 Check knifing:

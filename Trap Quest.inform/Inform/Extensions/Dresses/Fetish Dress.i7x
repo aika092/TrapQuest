@@ -1,6 +1,6 @@
 Fetish Dress by Dresses begins here.
 
-A fetish dress is a kind of overdress. A fetish dress is usually latex. A fetish dress is usually transformation-rare.
+A fetish dress is a kind of overdress. A fetish dress is usually latex. A fetish dress is usually transformation-rare. A fetish dress is usually erect-nipple-exposing.
 
 Figure of Latex Dress 1 is the file "Items/Clothes/Upper/Latex/latexdress1.png".
 Figure of Latex Dress 2 is the file "Items/Clothes/Upper/Latex/latexdress2.png".

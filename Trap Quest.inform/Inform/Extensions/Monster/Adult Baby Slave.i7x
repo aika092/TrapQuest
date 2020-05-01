@@ -21,21 +21,13 @@ angelic adult baby slave is an adult baby slave. Understand "angel" as angelic a
 To say MediumDesc of (M - angelic adult baby slave):
 	say "angelic adult baby slave".
 
-Definition: An angelic adult baby slave is dungeon dwelling: decide yes.
-
-Definition: An angelic adult baby slave (called M) is first level:
-	if diaper lover is 0, decide no;
-	decide yes.
+Definition: an angelic adult baby slave is dungeon dwelling if diaper lover is 1.
 
 bratty adult baby slave is an adult baby slave. Understand "brat" as bratty adult baby slave. The text-shortcut of bratty adult baby slave is "bbs".
 To say MediumDesc of (M - bratty adult baby slave):
 	say "bratty adult baby slave".
 
-Definition: An bratty adult baby slave is hotel dwelling: decide yes.
-
-Definition: A bratty adult baby slave (called M) is third level:
-	if diaper lover is 0, decide no;
-	decide yes.
+Definition: an bratty adult baby slave is hotel dwelling if diaper lover is 1.
 
 To say MonsterDesc of (M - an adult baby slave):
 	if M is angelic adult baby slave:
@@ -52,7 +44,7 @@ To set up (M - an adult baby slave):
 	now the raw difficulty of M is 5;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial dungeon adult baby slave rule:
+[This is the spawn initial dungeon adult baby slave rule:
 	if angelic adult baby slave is not in the dungeon and diaper lover >= 1:
 		if debugmode > 0, say "Summoning adult baby slave in dungeon.";
 		summon angelic adult baby slave in the hotel.
@@ -62,7 +54,7 @@ This is the spawn initial hotel adult baby slave rule:
 	if bratty adult baby slave is not in the hotel and diaper lover >= 1:
 		if debugmode > 0, say "Summoning adult baby slave in hotel.";
 		summon bratty adult baby slave in the hotel.
-The spawn initial hotel adult baby slave rule is listed in the setting up hotel monsters rules.
+The spawn initial hotel adult baby slave rule is listed in the setting up hotel monsters rules.]
 
 Definition: an adult baby slave is human: decide yes.
 
@@ -607,7 +599,7 @@ To say DamageReactWeak of (M - an adult baby slave):
 	say "[big he of M] looks like [he of M][']s ready to burst into tears!".
 
 To say BanishFleeFlav of (M - an adult baby slave):
-	say "[BigNameDesc of M] cries as [he of M]  flees, tripping and falling to the floor more than once on the way out.".
+	say "[BigNameDesc of M] cries as [he of M] flees, tripping and falling to the floor more than once on the way out.".
 
 To compute tax return of (M - an adult baby slave):
 	let D be a random off-stage eligible diaper;

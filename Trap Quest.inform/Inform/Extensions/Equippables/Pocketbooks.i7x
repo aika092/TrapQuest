@@ -26,6 +26,7 @@ Check browsing:
 Definition: a pocketbook is fetish appropriate if diaper quest is 0.
 Definition: a pocketbook is ingredient if it is not product.
 Definition: a pocketbook is brown themed: decide yes.
+Definition: a pocketbook is book themed: decide yes.
 
 To say ShortDesc of (C - a pocketbook):
 	say "pocketbook".
@@ -175,6 +176,9 @@ A book of anal is a kind of pocketbook. There is 1 book of anal. The text-shortc
 To decide which number is the price of (C - a book of anal):
 	decide on 3.
 
+To decide which number is the initial outrage of (C - a book of anal):
+	decide on 13.
+
 To say ClothingDesc of (C - a book of anal):
 	say "A paperback book with the words BRANDI'S BIG BOOK OF ANAL superimposed over a naked rear end.".
 
@@ -186,6 +190,8 @@ To say MediumDesc of (C - a book of anal):
 To decide which number is the soreness-influence of (C - a book of anal):
 	if C is tolerance, decide on 3 + (the flat intelligence of the player / 7);[more powerful the better your reading comprehension!]
 	decide on 0.
+
+Definition: a book of anal is anal sex themed: decide yes.
 
 [!<TheBookOfAnalButtSlutRule>+
 
@@ -199,7 +205,7 @@ The book of anal butt slut rule is listed in the butt slut eligibility rules.
 Carry out browsing book of anal:[If books are never made easier to get, this probably needs to be buffed.]
 	say "You thumb through the book, which is full of incredibly graphic depictions of [one of]the eponymous Brandi[or]'Brandi'[or]a woman named Brandi[at random] engaged in anal sex.";
 	let R be a random number between 1 and 7;
-	if the player is horny and R >= 4 and the player is able to automatically masturbate:
+	if the player is horny and R >= 4 and the player is able to automatically masturbate:[TODO: automatic ass wank]
 		say " [line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
 		now auto is 1;
 		try masturbating;
@@ -238,6 +244,8 @@ Section 4 - Notebook
 A notebook is a kind of pocketbook. There is 1 notebook. A notebook is usually unique. A notebook is usually zap ready. A notebook is usually leather. The text-shortcut of notebook is "hfn".[ A notebook has a number called tear. ]A notebook has a number called charge. A notebook is usually intelligence-influencing. A notebook is usually projectile.
 
 A study-buddy is a thing that varies. study-buddy is the throne.
+
+Definition: a notebook is fetish appropriate if diaper quest is 0.
 
 To say ClothingDesc of (W - a notebook):
 	let X be the number of notebook-studied monsters;
@@ -305,7 +313,9 @@ To decide which number is the damage improvement of (W - a notebook):
 	if X < 0, decide on 0;
 	decide on X.
 
+Definition: a notebook is ingredient: decide no.
 Definition: a notebook is product: decide yes.
+Definition: a notebook is recipe specific: decide yes.
 
 To decide which number is the alchemy key of (C - a notebook):
 	decide on 22.
@@ -313,11 +323,13 @@ To decide which number is the alchemy key of (C - a notebook):
 To decide which number is the crafting key of (C - a notebook):
 	decide on 0.
 
-Definition: a notebook is recipe specific: decide yes.
+
+To decide which text is the RecipeDesc of (C - a notebook):
+	say "The recipe just says 'Place a pocketbook in the bowl'.".
 
 This is the notebook specific recipe rule:
-	let R be a random recipe for notebook;
-	if R is appropriate:
+	let R be a random notebook;
+	if R is fetish appropriate:
 		now the Product in row 37 of the Table of Alchemy is 22;
 		now the Recipe in row 37 of the Table of Alchemy is 1.
 The notebook specific recipe rule is listed in the specific recipe rules.

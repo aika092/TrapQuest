@@ -7,13 +7,13 @@ TopDisplacing is an action applying to one thing.
 Check TopDisplacing:
 	if the noun is not clothing, say "This verb is used for moving clothing that can be moved aside." instead;
 	if the noun is not-top-displacable and the noun is displacable, try displacing the noun instead;
-	if the noun is not worn, say "But you're not even wearing [the noun]..." instead;
+	if the noun is not worn, say "But you're not even wearing [NameDesc of the noun]..." instead;
 	if breasts is exposed:
 		if the noun is top-displaced:
 			try topreplacing the noun instead;
 		otherwise:
 			say "But your breasts are already on display..." instead;
-	if the noun is breast exposing, say "But [the noun] isn't covering your breasts..." instead;[Should cover fully exposing and chestless]
+	if the noun is breast exposing, say "But [NameDesc of the noun] isn't covering your breasts..." instead;[Should cover fully exposing and chestless]
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
 	if the noun is not-top-displacable and the noun is overdress, say "That's not the sort of item of clothing that can be displaced." instead;
 	if the noun is not-top-displacable, say "That's [if the noun is top-ripped]already shredded to bits so there's no point displacing it[otherwise]too stiff to displace[end if].";
@@ -39,9 +39,9 @@ Report TopDisplacing:
 	force clothing-focus redraw; [This forces the clothing window to redraw]
 
 Definition: a clothing (called C) is top level covering: [we only care about breast exposure, nipples are irrelevant.]
-	if C is breast exposing or C is fully exposing or C is top-displaced, decide no;
-	repeat with O running through breast covering clothing:
-		if O is not top-displaced and O is not fully exposing and the top-layer of O > the top-layer of C, decide no;
+	if C is not actually breast covering, decide no;
+	repeat with O running through actually breast covering clothing:
+		if the top-layer of O > the top-layer of C, decide no;
 	decide yes.
 
 Understand "pull down [something]", "pull open [something]", "unbutton [something]" as TopDisplacing.

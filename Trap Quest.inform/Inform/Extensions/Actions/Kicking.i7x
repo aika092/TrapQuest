@@ -36,7 +36,7 @@ permanent-kick-bonus is a number that varies.
 kick-fatigue is a number that varies.
 kick-fatigue-delay is a number that varies.
 
-A time based rule (this is the kick fatigue recovery rule):
+An all time based rule (this is the kick fatigue recovery rule):
 	if kick-fatigue-delay > 0:
 		decrease kick-fatigue-delay by 1;
 	otherwise if kick-fatigue > 0:
@@ -67,6 +67,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out kicking:
+	allocate 6 seconds;
 	now attack-type is 3;
 	reset submitted monsters;
 	increase the fat-burning of the player by 45;
@@ -78,7 +79,6 @@ Carry out kicking:
 	if damage-explained > 0, say "[roman type][line break]";
 	now kick-fatigue-delay is 2;
 	increase kick-fatigue by 1;
-	allocate 6 seconds;
 	let H be a random heels worn by the player;
 	if H is heels:
 		increase the heel time of the player by the hindrance of H;

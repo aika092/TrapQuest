@@ -32,7 +32,6 @@ Check giving:
 		do nothing instead;
 	otherwise if the second noun is witch:[TODO: compute WitchGiving (T - a thing) to (M- a witch)]
 		if the second noun is unfriendly, say "[variable custom style]I think it's a bit late for that![roman type][line break]" instead;
-		if the noun is soul gem, try offering the noun to the second noun instead;
 		if the noun is vessel:
 			if the doses of the noun is 0, say "That's empty." instead;
 			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would [he of the second noun] want that?" instead;
@@ -107,7 +106,7 @@ Check giving:
 				now the second noun is unbitchy;
 				now the curse-quest of the second noun is 3 instead;
 			otherwise:
-				say "Why would [he of the second noun] want that?" instead;
+				try offering the noun to the second noun instead;
 	try offering the noun to the second noun instead.
 
 Giving ends here.

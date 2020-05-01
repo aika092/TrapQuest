@@ -497,7 +497,7 @@ combat bonus remainder is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the combat bonus rule):
+An all later time based rule (this is the combat bonus rule):
 	let N be saved-flat-strength / combat scaling;
 	let N2 be the remainder after dividing the strength of the player by combat scaling;
 	if a random number between 1 and combat scaling <= N2:
@@ -563,7 +563,6 @@ To compute damage reaction of (M - a monster):
 To say CombatProvokedReaction of (M - a monster):
 	say "[BigNameDesc of M] instantly [if M is awake]reacts[otherwise]wakes up[end if], taking a fighting stance!".
 
-
 To compute combatProvoked of (M - a monster):
 	FavourDown M;
 	now M is unleashed.
@@ -577,7 +576,7 @@ To say DamageReaction (N - a number) of (M - a monster):
 		say DamageReactTired of M;
 	otherwise if diaper quest is 0 and M is dominantSexReady:
 		say DamageReactSubmissive of M;
-		if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! Maybe you can see if [he of M][']ll let you be on top with 'dominate [MediumDesc of M].'[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! You may be able to dominate [him of M] if you defeat [him of M]!'[roman type][line break][or][stopping]";
 	otherwise:
 		say DamageReactWeak of M.
 
@@ -639,7 +638,6 @@ REQUIRES COMMENTING
 
 +!]
 To damage (A - a number) on (M - a monster):
-	allocate 6 seconds;
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);
 	if damage-explained > 0, say "[input-style]=> [if A < 1]RNG(A~1)[otherwise]2d[A][end if] = [attack-damage]; ";
@@ -703,6 +701,5 @@ To damage (A - a number) on (M - a monster):
 		if the player is not in danger and side images > 0 and character-version is 0:
 			now danaume-arms-victory is 1.
 			[display character window.]
-
 
 Attacking Monsters ends here.

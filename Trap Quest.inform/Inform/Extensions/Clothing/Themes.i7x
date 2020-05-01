@@ -305,14 +305,6 @@ A theme blocking rule:
 A theme sharing rule (this is the pink matching rule):
 	if theme-target is pink themed and theme-share-target is pink themed, rule succeeds.
 The pink matching rule is listed in the colour sharing rules.
-Definition: an object is green themed: decide no.
-A theme blocking rule:
-	if theme-target is green themed and the number of currently at least partially visible green themed clothing > 2:
-		add "green" to colour-themes-shared-list;
-		if the upgrade-target of theme-target is not green themed, increase colour-themes-shared by 1.
-A theme sharing rule (this is the green matching rule):
-	if theme-target is green themed and theme-share-target is green themed, rule succeeds.
-The green matching rule is listed in the colour sharing rules.
 Definition: an object is black-and-white themed if it is white themed and it is black themed.
 A theme blocking rule:
 	if theme-target is black-and-white themed and the number of currently at least partially visible black-and-white themed clothing > 1:
@@ -665,8 +657,36 @@ A theme effect description rule:
 	if theme-target is yellow themed:
 		let YTB be yellow theme bonus;
 		if YTB > 0:
-			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow themed items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee. ";
-			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow themed items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][urine][otherwise][semen][end if] without getting addicted to it. ".
+			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee[if watersports fetish is 1] and you are better at drinking [urine] without getting addicted to it[end if]. ";
+			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][urine][otherwise][semen][end if] without getting addicted to it. ".
+
+Section - Green
+
+Definition: an object is green themed: decide no.
+
+A theme blocking rule:
+	if theme-target is green themed and the number of currently at least partially visible green themed wearthings > 2:
+		add "green" to colour-themes-shared-list;
+		if the upgrade-target of theme-target is not green themed, increase colour-themes-shared by 1.
+A theme sharing rule (this is the green matching rule):
+	if theme-target is green themed and theme-share-target is green themed, rule succeeds.
+The green matching rule is listed in the colour sharing rules.
+
+A theme description rule:
+	if theme-target is green themed:
+		if theme-target is wearable, say "It would be fashionable to wear this along with other items with lots of green in them. ";
+		otherwise say "This item would probably be valuable to anyone who loves the colour green.".
+
+[Player gets increased luck for each green thing worn after the first.]
+To decide which number is green theme bonus:
+	let N be the number of worn green themed wearthings - 1;
+	if N > 0, decide on N;
+	decide on 0.
+
+A theme effect description rule:
+	if theme-target is green themed:
+		let GTB be green theme bonus;
+		if GTB > 0, say "As a reward for wearing [if GTB is 1]two[otherwise]several[end if] green items, you can feel that you are [if GTB > 1]much [end if]luckier. ".
 
 Section - Grey
 
@@ -737,7 +757,7 @@ A theme effect description rule:
 
 uncoveredReminder is a number that varies.
 
-An advance counters rule:
+An all later time based rule (this is the uncovered reminder rule):
 	increase uncoveredReminder by 1;
 	if uncoveredReminder > 20:
 		now uncoveredReminder is 0;
@@ -856,8 +876,8 @@ A theme effect description rule:
 
 Section - Magic Themed
 
-Definition: an object is magic themed: [Is it something that implies magic?]
-	decide no.
+Definition: an object is magic themed: decide no. [Is it something that implies magic?]
+Definition: a thing is magic themed if it is zappable. [It can be used to cast a magic spell.]
 A theme blocking rule:
 	if theme-target is magic themed and the number of currently at least partially visible magic themed wearthings > 1:
 		add "magic themed" to interesting-themes-shared-list;

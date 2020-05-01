@@ -158,7 +158,7 @@ Carry out CandyObtaining:
 	if starting-pack-given is 0:
 		repeat with N running from 1 to 3:
 			let Z be a random off-stage standard tier candy;
-			if the number of held toffee is 0, now Z is a random off-stage toffee;
+			if toffee is not held, now Z is toffee;
 			now Z is carried by the player;
 			say "The machine spits out a [Z]!";
 		say "You take all the candy as the light on the front of the candy machine turns off.";

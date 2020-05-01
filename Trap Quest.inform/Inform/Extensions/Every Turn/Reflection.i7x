@@ -6,14 +6,16 @@ Compute stuff to do with humiliation and reflection that happens every turn.
 We reduce the player's humiliation by the number of seconds, and then we check if it's time to output some more random flavour as the player reflects on their situation.
 
 +!]
-A later time based rule (this is the reflection rule):
+An all later time based rule (this is the reflection rule):
 	let N be 239; [The number of seconds between each reflection]
 	if the remainder after dividing time-earnings by N < time-seconds and the player is not a nympho:
 		say HumiliationFlav;
 	otherwise if the number of interested monsters in the location of the player is 0 and the player is not immobile:
 		say StatsChangedFlav;
-	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus, humiliate time-seconds;
-	otherwise dignify time-seconds.
+	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
+		humiliate time-seconds;
+	otherwise if playerRegion is not school:
+		dignify time-seconds.
 
 [!<HumiliatingSituation>@
 

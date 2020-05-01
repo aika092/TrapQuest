@@ -12,7 +12,6 @@ Definition: an equippable is alwaysSure: decide yes.
 Definition: an equippable is stealable if diaper quest is 1.
 
 Definition: a thing is zappable: decide no. [Can it be used to cast a magic combat spell?]
-Definition: a thing is castable if it is zappable. [Can it be used to cast a magic spell?]
 
 Definition: an equippable is zappable if it is zap ready and it is worn.
 Definition: an equippable is hand ready if it is slap ready or it is zap ready.
@@ -83,6 +82,7 @@ To decide which number is the initial outrage of (C - tongue-gloves):
 Part 2 - Wands
 
 A vibe-wand is a kind of equippable. A vibe-wand is usually zap ready. Understand "vibe", "vibrator", "wand", "vibrating" as vibe-wand. A vibe-wand is usually projectile. A vibe-wand is usually plastic.
+wandAttacks is a number that varies.
 
 To compute climax effect of (E - a vibe-wand):
 	do nothing.
@@ -103,6 +103,14 @@ To decide which number is the damage improvement of (W - a vibe-wand):
 
 To compute attack of (W - a vibe-wand) at (M - a monster):
 	say "You flick the wand, slashing at [NameDesc of M] with arcs of [if W is pink themed]pink [end if]magic.".
+
+To compute MagicDrain of (Z - a vibe-wand):
+	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0:
+		increase wandAttacks by 1;
+		if wandAttacks > 2:
+			now wandAttacks is 0;
+			say "You can feel that all your attacks with wands have spent some of your magic.";
+			MagicPowerDown 1.
 
 To decide which number is the raw-masturbation-bonus of (E - a vibe-wand):
 	decide on 0.
@@ -152,10 +160,21 @@ To decide which number is the stimulation of (D - painted-vibrator-hands) on (B 
 	decide on a random number between 5 and 10.
 To decide which figure-name is clothing-image of (H - painted-vibrator-hands):
 	decide on figure of painted-vibrator-hands.
+To decide which number is the wornArmsRequired of (C - painted-vibrator-hands):
+	if predicament-painted-cutoffs is hand-blocked, decide on 2;
+	decide on 0.
 To say ClothingDesc of (Y - painted-vibrator-hands):
-	say "Blue and white paint has been applied to the backs of your hands in the correct pattern to complete the missing pattern around your crotch. Two silently but powerfully buzzing blue egg vibrators are somehow stuck to the inner tips of your two thumbs. That's right... in order to make your painted-on cutoffs look convincing, you would need to push the two egg vibrators into your sensitive clit...".
+	say "Blue and white paint has been applied to the backs of your hands in the correct pattern to complete the missing pattern around your crotch. Two silently but powerfully buzzing blue egg vibrators are somehow stuck to the inner tips of your two thumbs. That's right... in order to make your painted-on cutoffs look convincing, you would need to push the two egg vibrators into your sensitive clit! To decide where to put your arms, you need to use the command [bold type]adjust arms[roman type].".
 To say ShortDesc of (Y - painted-vibrator-hands):
 	say "thumb vibrators".
+To say unique-verb-desc of (T - painted-vibrator-hands):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if realisticArms is 1] [link][bracket]arms[close bracket][as]adjust arms[end link][end if]".
+To construct normal buttons for (T - painted-vibrator-hands):
+	if ButtonTableFull is 0 and realisticArms is 1:
+		choose a blank row in the Table of Buttons;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonImage entry is the examine-image of predicament-painted-cutoffs;
+		now the ButtonColour entry is lightModeFullGreen.
 
 candy-cane-gloves is a gloves. candy-cane-gloves is latex.
 The printed name of candy-cane-gloves is "[clothing-title-before]candy cane gloves[clothing-title-after]". The text-shortcut of candy-cane-gloves is "ccg". Figure of candy-cane-gloves is the file "Items/Accessories/Equippables/gloves2.png". Understand "candy", "cane", "gloves" as candy-cane-gloves.

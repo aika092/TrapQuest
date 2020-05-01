@@ -69,8 +69,8 @@ Does this at least partially block vision of asshole when worn?
 
 +!]
 Definition: a clothing (called C) is potentially at least partially asshole covering:
-	if (C is total protection or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;
-	if C is skirt-covering-crotch and C is not see-through, decide yes;
+	if C is see-through, decide no;
+	if C is skirt-covering-crotch or C is total protection, decide yes;
 	decide no.
 
 [!<assholePresentableRules:Rulebook>+
@@ -342,9 +342,30 @@ To Assclose (X - a number):
 
 Section - Image for graphics window
 
-Figure of AssholeObject1 is the file "CharWins/FocusWin/asshole1.jpg".
+Figure of AssholeObject0 is the file "CharWins/FocusWin/Asshole/A0.jpg".
+Figure of AssholeObject1 is the file "CharWins/FocusWin/Asshole/A1.jpg".
+Figure of AssholeObject1B is the file "CharWins/FocusWin/Asshole/A1B.jpg".
+Figure of AssholeObject2 is the file "CharWins/FocusWin/Asshole/A2.jpg".
+Figure of AssholeObject2B is the file "CharWins/FocusWin/Asshole/A2B.jpg".
+Figure of AssholeObject3 is the file "CharWins/FocusWin/Asshole/A3.jpg".
+Figure of AssholeObject3B is the file "CharWins/FocusWin/Asshole/A3B.jpg".
 
 To decide which figure-name is the examine-image of (T - asshole):
-	decide on Figure of AssholeObject1.
+	if the openness of asshole < 2:
+		decide on Figure of AssholeObject0;
+	otherwise if the openness of asshole < 5:
+		decide on Figure of AssholeObject1;
+	otherwise if the openness of asshole < 8:
+		decide on Figure of AssholeObject2;
+	otherwise:
+		decide on Figure of AssholeObject3.
+
+To ExpelDisplay:
+	if the openness of asshole < 5:
+		cutshow Figure of AssholeObject1B for asshole;
+	otherwise if the openness of asshole < 8:
+		cutshow Figure of AssholeObject2B for asshole;
+	otherwise:
+		cutshow Figure of AssholeObject3B for asshole.
 
 Asshole ends here.

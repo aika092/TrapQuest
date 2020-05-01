@@ -324,7 +324,6 @@ To say IdentifiablePosterReactionFlav of (M - supporter-critchett):
 To say UnidentifiablePosterReactionFlav of (M - supporter-critchett):
 	say "[speech style of M]'Ohhh, would you look at that! That really looks... hot! Would you like to play that out with me? We could do our own photo shoot! You[']d look good like that!'[roman type][line break]";
 
-
 To say PresentFriendlyAcceptanceFlav of (M - supporter-critchett): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Ooo, good choice! You'd be amazed at what can bring you to the very brink of cumming. And how easy it is to lose control!'[roman type][line break]".
 
@@ -630,7 +629,6 @@ To say IdentifiablePosterReactionFlav of (M - supporter-teagan):
 To say UnidentifiablePosterReactionFlav of (M - supporter-teagan):
 	say "[speech style of M]'Oh wow, there's some next-level sluts strutting around here!'[roman type][line break]".
 
-
 To say PresentFriendlyAcceptanceFlav of (M - supporter-teagan): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Aww, you want some milk? C'mere.'[roman type][line break]".
 
@@ -771,7 +769,7 @@ To say FacesitResistingResponse of (M - supporter-teagan): [The player is refusi
 	say "[one of][BigNameDesc of M] doesn't seem to care about your futile protests as [his of M] milk splashes over your tongue and spills from the corners of your mouth.[or][BigNameDesc of M] sighs with relief and clutches your head tightly into [his of M] cleavage, squirting hot dairy against the back of your throat despite your feeble attempts to get away![or][BigNameDesc of M] grins as [he of M] kneads [his of M] engorged breast with the hand that isn't holding your head in place, forcing way too much milk into your mouth for you to handle! You cough and [he of M] laughs when breast milk squirts out of your nose! [or][BigNameDesc of M]clutches your hair with one hand and jerks [his of M] shoulders from side to side, slapping you across the face with [his of M] enormous, firm tits! [line break][speech style of M]'Ugh, just drink some already! They feel like they're gonna explode![in random order]".
 
 To say FacesitSubmissionResponse of (M - supporter-teagan): [Normal breastfeeding. Explain what's happening!]
-	say "[one of][BigNameDesc of M] watches with a bemused smirk as you willingly suckle the milkbags wobbling in your face.[or][BigNameDesc of M] gently guides your head to [his of M] other leaky breast, making sure you pay equal attention to both. [or][BigNameDesc of M] lets out a deep, content sigh and smiles down at you as you drink from [his of M] overfilled, quivering jugs. [or][BigNameDesc of M] delicately caresses the back of your head as you alternate sucking the sweet cream out of each of [his of M] throbbing nipples [in random order]".
+	say "[one of][BigNameDesc of M] watches with a bemused smirk as you willingly suckle the milkbags wobbling in your face.[or][BigNameDesc of M] gently guides your head to [his of M] other leaky breast, making sure you pay equal attention to both.[or][BigNameDesc of M] lets out a deep, content sigh and smiles down at you as you drink from [his of M] overfilled, quivering jugs. [or][BigNameDesc of M] delicately caresses the back of your head as you alternate sucking the sweet cream out of each of [his of M] throbbing nipples.[in random order]".
 
 To say NearingClimaxFacesit of (M - supporter-teagan): [Next turn your NPC is going to cum! Give a hint to the player by changing up the flavour. Also this allows the climax to make more sense (rather than her sitting still and the player refusing to tongue, and then suddenly there's an orgasm!)]
 	say "[one of][BigNameDesc of M] gasps loudly and tightens [his of M] grip on your head. The nipple in your mouth is almost as swollen and stiff as a tiny cock! [or][BigNameDesc of M] leans back so [he of M] clutches you tightly and emits a throaty moan as [he of M] mashes [his of M] titanic, squirting melons against your face![in random order]";

@@ -53,9 +53,9 @@ To decide which number is the unique outrage of (C - white-hotpants):
 Definition: white-hotpants is bird themed: decide yes.
 Definition: white-hotpants is white themed: decide yes.
 
-football-hotpants is a hotpants. football-hotpants is unique.
+football-hotpants is a hotpants. football-hotpants is unique. football-hotpants is sheer-when-wet.
 
-The printed name of football-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of football-hotpants is "hp".
+The printed name of football-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of football-hotpants is "fhp".
 
 To decide which figure-name is clothing-image of (H - football-hotpants):
 	decide on figure of football-hotpants.

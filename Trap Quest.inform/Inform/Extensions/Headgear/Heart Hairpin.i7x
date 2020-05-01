@@ -37,8 +37,9 @@ To decide which number is the intelligence-influence of (H - heart hairpin):
 
 Chapter - Class Outfit
 
+
 Definition: heart hairpin (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is magical dress or wearing-target is magical stockings, decide yes;
+	if wearing-target is magical dress or wearing-target is magical stockings or wearing-target is heart wand, decide yes;
 	if wearing-target is C and the magic-power of the player > 1 and there is an on-stage tentacle-breeder, decide yes;
 	decide no.
 
@@ -55,7 +56,6 @@ To compute unique recycling of (C - heart hairpin):
 To compute class outfit of (H - heart hairpin):
 	let D be a random off-stage lolita magical dress;
 	if the class of the player is schoolgirl, now D is a random schoolgirl outfit; [We don't want to overwrite the schoolgirl stuff with magical stuff if the player is both]
-	let W be a random off-stage heart wand;
 	let S be a random off-stage magical stockings;
 	if D is actually summonable or (magic-summoned is 0 and D is magical dress and the number of worn magical dress is 0):
 		if magic-summoned is 0:
@@ -69,14 +69,42 @@ To compute class outfit of (H - heart hairpin):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]You feel a rush of magic as a [ShortDesc of D] materialises around you.[roman type][line break]";
-		summon D;
+		summon D uncursed;
 		now magic-summoned is 1;
 	otherwise if S is actually summonable:
 		say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
-		summon S;
-	otherwise if W is actually summonable:
-		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
-		summon W.
+		summon S uncursed.
+
+wand-summoning is a magic-spell.
+Definition: wand-summoning is reactive-only: decide no.
+To say MagicSpellEffect of (S - wand-summoning):
+	say "summon a magic wand".
+Report Spellcasting wand-summoning:
+	let E be a random worn hand ready equippable;
+	if E is clothing, now wearing-target is E;
+	let H be a random worn headgear;
+	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]
+		say "The spell doesn't seem to work while you're holding [NameDesc of E]!";
+	otherwise if the magic power of the player > 0:
+		let W be nintendolls-wand;
+		if the class of the player is magical girl, now W is a random heart wand;
+		if the class of the player is "magical schoolgirl", now W is a random notebook;
+		summon W uncursed;
+		say "With a flash of pink, [NameDesc of W] appears in your hand! Wow!";
+		if the player is in danger:
+			say "The flash temporarily blinds the enemies in the room, making them lose a turn!";
+			repeat with M running through combative monsters:
+				now M is stalled;
+	otherwise:
+		say "Nothing happens. Perhaps you need more magical energy first.".
+
+An all later time based rule (this is the magical girl spell rule):
+	if the class of the player is magical girl and wand-summoning is uncastable and the number of worn zap ready equippable is 0:
+		now wand-summoning is everywhere;
+		now the outrageousness of wand-summoning is 6;
+		now the incantation of wand-summoning is "call upon the power of girlcum";
+		now the text-shortcut of wand-summoning is "call upon the power of girlcum";
+		say "[bold type]You now instinctively know how to [MagicSpellEffect of wand-summoning]! The magic incantation is 'I [incantation of wand-summoning]'.[SpelloutrageousnessInfo of wand-summoning][roman type][line break]".
 
 Chapter - Quest
 
@@ -103,8 +131,7 @@ To progress quest of (Q - tentacle-research-quest):
 
 This is the tentacle monsters are interesting rule:
 	if there is a tentacle monster in the location of the player, progress quest of tentacle-research-quest.
-The tentacle monsters are interesting rule is listed in the advance counters rules.
-The tentacle monsters are interesting rule is listed in the time based rules.
-The tentacle monsters are interesting rule is listed in the later time based rules. [Just to make sure we don't somehow miss a chance to see a big tentacle monster]
+The tentacle monsters are interesting rule is listed in the all time based rules.
+The tentacle monsters are interesting rule is listed in the all later time based rules. [Just to make sure we don't somehow miss a chance to see a big tentacle monster]
 
 Heart Hairpin ends here.

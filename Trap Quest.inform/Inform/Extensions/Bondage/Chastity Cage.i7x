@@ -67,6 +67,20 @@ This is the chastity cage pussy slut rule:
 	if there is a worn chastity cage, decrease the desirability of vagina by 5.
 The chastity cage pussy slut rule is listed in the pussy slut eligibility rules.
 
+[!<TheChastityCageOrgasmRule>+
+
+If the player orgasms while wearing a chastity cage they could remove, it becomes cursed.
+
++!]
+This is the chastity cage orgasm resolution rule:
+	let C be a random worn chastity cage;
+	if C is chastity cage:
+		if C is not cursed and C is not locked and C is not glued:
+			say "[bold type]You feel your [MediumDesc of C] become cursed[one of][or] again[stopping]![roman type][line break]";
+			now C is cursed;
+			compute summoned quest of C.
+The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
+
 Chapter - Wearability
 
 chastity cage wearability rules is a rulebook. The wearability rules of chastity cage is usually chastity cage wearability rules.

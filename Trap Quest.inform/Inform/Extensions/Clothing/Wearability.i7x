@@ -27,7 +27,7 @@ Definition: a clothing (called C) is too outrageous:
 	if C is not worn:
 		if C is crotch-displaced, replace C;
 		ZipUp C;
-	if C is nipple covering actually dense clothing and the outrage of C < 11, decide no;
+	if C is nipple covering clothing and the outrage of C < 11, decide no;
 	if C is crotch covering clothing:
 		if C is not no protection, decide no;
 	if C is able to cover crotch and the outrage of C < 15, decide no;
@@ -39,7 +39,7 @@ Definition: a clothing (called C) is too cringeworthy:
 	if C is not worn:
 		if C is crotch-displaced, replace C;
 		ZipUp C;
-	if C is nipple covering actually dense clothing and the outrage of C < 11, decide no;
+	if C is nipple covering clothing and the outrage of C < 11, decide no;
 	if C is crotch covering clothing:
 		if C is not no protection, decide no;
 	if C is able to cover crotch and the outrage of C < 15, decide no;

@@ -24,10 +24,9 @@ To decide which number is the bartering value of (S - a sword) for (M - a gladia
 
 To compute offer reward of (M - a gladiator) for (T - a sword):
 	let S be a random off-stage chainmail skirt;
-	if S is a thing and M is ally:
+	if S is a thing and M is ally and Dungeon13 is placed:
 		only destroy S;
-		if Dungeon13 is placed, now S is in Dungeon13;
-		otherwise now S is in Dungeon18;
+		now S is in Dungeon13;
 		now the raw-magic-modifier of S is 1;
 		now S is blessed;
 		now S is confidence;
@@ -537,32 +536,7 @@ Report taking rattle:
 	try wearing the noun;
 	if the noun is cursed and the noun is worn, say "Your grip tightens involuntarily as your fingers close around the handle. [line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
 
-Section 6 - Sword of the Void
-
-voidblade is a sword.
-
-The printed name of voidblade is "[clothing-title-before]voidblade[clothing-title-after]". The text-shortcut of voidblade is "vdb". Understand "void", "blade" as voidblade.
-
-To say ClothingDesc of (S - voidblade):
-	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great one]s, and you know its power comes from surrendering that which does not venerate them.".
-
-To compute attack of (W - voidblade) at (M - a monster):
-	say "The [printed name of W] seems to slice through reality itself as it arcs towards [NameDesc of M]!".
-
-To compute attack effect of (W - voidblade):
-	say "As you swing the blade, you cannot help but gaze into the swirling black and pink void it leaves in its wake. You feel like a tiny portion of your sense of self is being sucked into it.";
-	humiliate 10.
-
-To decide which number is the damage improvement of (W - voidblade):
-	let X be 0;
-	increase X by the magic-modifier of W;
-	increase X by the humiliation of the player / 7000;
-	decide on X.
-
-Definition: voidblade is cult garb: decide yes.
-Definition: voidblade is magic themed: decide yes.
-
-Section 7 - Sissy Slut's Longsword
+Section  6 - Sissy Slut's Longsword
 
 [gets stronger whenever you have a prostate orgasm]
 
@@ -622,5 +596,30 @@ This is the sissy-swords resolution rule:
 		say "Your [ShortDesc of sissy-sword] emits a burst of warmth as the gemstone in the hilt turns a shade of bright blue.";
 		increase the charge of sissy-sword by a random number between 60 and 70.
 The sissy-swords resolution rule is listed in the orgasm resolution rules.
+
+Section 7 - Sword of the Void
+
+voidblade is a sword.
+
+The printed name of voidblade is "[clothing-title-before]voidblade[clothing-title-after]". The text-shortcut of voidblade is "vdb". Understand "void", "blade" as voidblade.
+
+To say ClothingDesc of (S - voidblade):
+	say "The blade of this sword seems to be made of pure darkness, with a swirling sea of pink motes floating in it. When you look at it, you somehow think of the [great one]s, and you know its power comes from surrendering that which does not venerate them.".
+
+To compute attack of (W - voidblade) at (M - a monster):
+	say "The [printed name of W] seems to slice through reality itself as it arcs towards [NameDesc of M]!".
+
+To compute attack effect of (W - voidblade):
+	say "As you swing the blade, you cannot help but gaze into the swirling black and pink void it leaves in its wake. You feel like a tiny portion of your sense of self is being sucked into it.";
+	humiliate 10.
+
+To decide which number is the damage improvement of (W - voidblade):
+	let X be 0;
+	increase X by the magic-modifier of W;
+	increase X by the humiliation of the player / 7000;
+	decide on X.
+
+Definition: voidblade is cult garb: decide yes.
+Definition: voidblade is magic themed: decide yes.
 
 Swords ends here.

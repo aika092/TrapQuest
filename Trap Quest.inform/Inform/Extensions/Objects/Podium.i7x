@@ -28,17 +28,14 @@ Check entering podium:
 		if debuginfo > 0, say "[input-style]Stage roll: bad scenes not possible ([if the charge of podium > 0]stage already used recently[otherwise if the class of the player is princess]princess can't be sold[otherwise if the class of the player is royal slave]royal slave can't be sold[otherwise]temporary unique situation[end if]); so gold bracelet not available.[roman type][line break]";
 		now the charge of the podium is 500;
 		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought! You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild! You feel a bit more aroused from the experience. You[end if] get down from the stage." instead;
-	otherwise if a random number between 1 and 3 is 1 and B is bracelet and the number of on-stage solid gold bracelets is 0:
-		if debuginfo > 0, say "[input-style]Stage roll: d3 (3) | (2.5) bracelet[roman type][line break]";
+	otherwise if B is bracelet and the number of on-stage solid gold bracelets is 0 and the player is getting lucky:
 		now B is solid gold;
 		set shortcut of B;
 		now B is in the location of the player;
-		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought! You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild! You feel a bit more aroused from the experience. You[end if] open your eyes. Looking down you see that a shiny [printed name of B] has fallen down to the ground behind the stage. It looks valuable! Maybe it was stealthily dropped by a slave who didn't want it becoming the property of her new master...";
+		say "[if (the sex addiction of the player < 10 and diaper quest is 0) or (the diaper addiction of the player < 10 and diaper quest is 1)]You realise you're actually getting aroused by the thought! You push the bizarre fantasy to the back of your mind, and[otherwise]Your imagination runs wild! You feel a bit more aroused from the experience. You[end if] open your eyes. Looking down you see that a shiny [printed name of B] has fallen down to the ground behind the stage. It looks valuable! Maybe it was stealthily dropped by a slave who didn't want it becoming the property of her new master.[line break][GotLuckyFlav]";
 		compute autotaking B;
 	otherwise if a random number between 1 and 2 is 1 and there is an alive undefeated royal guard:
-		if debuginfo > 0:
-			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 (1) | (2.5) bracelet[roman type][line break]";
-			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); guard scene selected automatically.[roman type][line break]";
+		if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); guard scene selected automatically.[roman type][line break]";
 		let M be a random alive undefeated royal guard;
 		anger M;
 		now M is interested;
@@ -85,9 +82,7 @@ Check entering podium:
 			say "Opening your eyes you move forward to step off the stage only to be brought up short by the chains binding you. Blinking your eyes you gasp in surprise and stare in shock at the chains binding you, the very real chains. [if A is worn and pair of wristcuffs is worn]You are now wearing a [A] and a [pair of wristcuffs]! [otherwise if A is worn]You are now wearing a [A]! [otherwise if pair of wristcuffs is worn]You are now wearing a [pair of wristcuffs]! [end if][if S is worn]You have a [printed name of S] around your neck! [end if][line break][first custom style]'SOLD!'[roman type][line break]yells the Auctioneer as [he of shopkeeper] slams [his of shopkeeper] gravel down on the podium. Swallowing, you shiver as [he of shopkeeper] yanks at your chains, hauling you forward to meet the winning bidder and your new Master... [NameDesc of M]![line break][first custom style]'Get on your knees, slave.'[roman type][line break][big he of M] pulls you by [if the largeness of hair > 2]your hair[otherwise]the neck[end if] and you trip over your bondage, landing on your knees. The magical scene behind you disappears, leaving you with an empty stage, [NameDesc of M], and [if the sex addiction of the player < 13]a decision to be made - fight, flight or fuck?[otherwise][his of M] waiting [manly-penis].[end if]";
 		now the stance of the player is 1;
 	otherwise if the class of the player is adventurer and bondage protection is 0 and the number of unremovable neckwear is 0 and the number of unremovable dresses is 0 and the number of unremovable skirts is 0 and the number of unremovable bras is 0:
-		if debuginfo > 0:
-			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 (2) | (2.5) bracelet[roman type][line break]";
-			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
+		if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 		unless slave-dress is worn or bondage-ribbons is worn:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -110,15 +105,11 @@ Check entering podium:
 				now slave-dress is wrist-bound-in-front;
 				say "You've barely blinked when you find yourself wearing a [slave-dress]! Your wrists are now stuck in cuffs connected to your collar via metal chains. Uh-oh.";
 	otherwise if P is actually summonable and diaper quest is 0:
-		if debuginfo > 0:
-			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 (2) | (2.5) bracelet[roman type][line break]";
-			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
+		if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 		summon P cursed with quest;
 		say "You open your eyes and are shocked to find that you now have a [P]. It's like you've been marked as somebody's property!";
 	otherwise:
-		if debuginfo > 0:
-			if B is bracelet and the number of on-stage solid gold bracelets is 0, say "[input-style]Stage roll: d3 (2) | (2.5) bracelet[roman type][line break]";
-			otherwise say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
+		if debuginfo > 0 and (B is not bracelet or there is an on-stage solid gold bracelet), say "[input-style]Stage roll: bracelet scene not possible ([if B is bracelet]solid gold bracelet is already in game universe[otherwise]no bracelets left off-stage[end if]); slave stuff selected automatically.[roman type][line break]";
 		say "[paragraph break]THWACK, THWACK! You imagine being struck on the back by a harsh whip. Ow, that really hurts! What the hell? It's like you can feel the pain for real! You open your eyes, tears welling up in them, leaving you feeling a lot more submissive.";
 		PainUp 2;
 	now the charge of the podium is 500 instead;

@@ -155,7 +155,7 @@ To decide which number is the original price of (C - a fetish bra):
 	decide on 1.
 
 To decide which number is the initial outrage of (C - a fetish bra):
-	decide on 15.
+	decide on 9.
 
 A maternity bra is a kind of bra. Figure of maternity bra is the file "Items/Clothes/Upper/Bras/maternitybra1.png". The soak-limit of a maternity bra is usually 15.
 
@@ -208,7 +208,7 @@ To decide what number is the original price of (C - a cupless bra):
 	decide on 1.
 
 To decide which number is the initial outrage of (C - a cupless bra):
-	decide on 12.
+	decide on 6.
 
 To set up influence of (C - a cupless bra):
 	now C is titfuck-addiction-influencing.
@@ -262,7 +262,7 @@ To decide which number is the original price of (C - a ribbon bra):
 	decide on 1.
 
 To decide which number is the initial outrage of (C - a ribbon bra):
-	decide on 10.
+	decide on 6.
 
 To decide which object is the unique-upgrade-target of (C - a ribbon bra):
 	if the number of worn knickers is 0 and the number of worn bra is 0 and the number of worn dress is 0, decide on a random off-stage ribbon dress;
@@ -312,6 +312,9 @@ To decide which number is the alchemy key of (C - a spike bra):
 
 Definition: a spike bra is recipe specific: decide yes.
 
+To decide which text is RecipeDesc of (B - a spike bra):
+	decide on "This recipe says '[if egg laying fetish is 1]Medium Sized Egg or [end if][if diaper quest is 1]Grown Up[otherwise]Super Slutty[end if] Bra'".
+
 This is the spike bra specific recipe rule:
 	now the Product in row 26 of the Table of Alchemy is 14;
 	now the Recipe in row 26 of the Table of Alchemy is 1;
@@ -332,14 +335,14 @@ To compute recipe specific cursing of (T - a spike bra):
 	now T is bland;
 	now the raw-magic-modifier of T is 0;
 	if the noun is bra:
-		if the noun is fully exposing:
+		if the noun is fully exposing or the noun is actually nipple exposing:
 			now the raw-magic-modifier of T is 1;
 		otherwise if diaper quest is 1:
 			if the noun is training bra or the noun is sissifying:
 				now T is cursed;
 				now T is respiration;
 				now the raw-magic-modifier of T is -2;
-		otherwise if the noun is nipple covering:
+		otherwise:
 			now T is cursed;
 			now T is temptation;
 			now the raw-magic-modifier of T is -2;
@@ -353,7 +356,7 @@ To compute periodic effect of (B - a spike bra):
 		Dignify 200.
 
 To decide which number is the initial outrage of (C - a spike bra):
-	decide on 5.
+	decide on 4.
 
 To decide which number is the initial outrage of (C - a pink spike bra):
 	decide on 1.
@@ -372,7 +375,7 @@ A flimsy bra is a kind of bra. Figure of sheer bra is the file "Items/Clothes/Up
 [The printed name of the bra is sheer bra hence the shortcut. Since sheer is already a keyword the game wouldn't let me create an object called the sheer bra hence why it's object identifier is flimsy bra. A player in-game will never see the word "flimsy".]
 There is 1 flimsy bra. The text-shortcut of flimsy bra is "shb".
 
-The min size of a flimsy bra is usually 2. The max size of a flimsy bra is usually 15. The support of a flimsy bra is usually 2. A flimsy bra is transformation-rare.
+The min size of a flimsy bra is usually 2. The max size of a flimsy bra is usually 15. The support of a flimsy bra is usually 2. A flimsy bra is transformation-rare. A flimsy bra is sheer. A flimsy bra is erect-nipple-exposing.
 
 To say ShortDesc of (B - a flimsy bra):
 	say "sheer bra".
@@ -387,7 +390,7 @@ To say ClothingDesc of (C - a flimsy bra):
 	say "A very sheer flimsy bra made of nylon. It offers an average amount of support.".
 
 To decide which number is the initial outrage of (C - a flimsy bra):
-	decide on 6.
+	decide on 3.
 
 To decide which number is the initial cringe of (C - a flimsy bra):
 	decide on 4.
@@ -402,24 +405,16 @@ To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	if (a random number between 1 and 2 is 1 and there is an off-stage fetish bra) or the number of off-stage ribbon bra is 0, decide on a random off-stage fetish bra;
 	decide on a random off-stage ribbon bra.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. Understand "stickers", "caps", "nipple" as pasties. There is 1 transformation-rare pasties. The text-shortcut of a pasties is "psts".
-
-Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".
-
-To decide which figure-name is clothing-image of (C - a pasties):
-	decide on figure of pasties.
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts".
 
 To say ShortDesc of (B - a pasties):
 	say "nipple pasties".
-
-To say ClothingDesc of (C - a pasties):
-	say "These red latex stickers [if item described is worn]expose your [BreastDesc] as much as possible, clinging seamlessly to your nipples[otherwise]would barely do anything to cover the wearer's [BreastDesc], only providing a small amount of 'modesty' to the wearer's nipples[end if][if the lactation rate of the player > 0 and the item described is worn]. It is completely preventing you from lactating at all[end if].".
 
 To set up influence of (C - a pasties):
 	now C is titfuck-addiction-influencing.
 
 To decide which number is the initial outrage of (C - a pasties):
-	decide on 8.
+	decide on 6.
 
 To compute bra strain of (C - a pasties):
 	do nothing.
@@ -433,7 +428,17 @@ To decide which number is the bartering value of (T - a pasties) for (M - a robo
 To decide which number is the bartering value of (T - a pasties) for (M - a mechanic):
 	decide on 2.
 
-Definition: a pasties is end of transformation chain: decide yes.
+
+red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
+
+Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".
+
+To decide which figure-name is clothing-image of (C - a pasties):
+	decide on figure of pasties.
+
+To say ClothingDesc of (C - a pasties):
+	say "These red latex stickers [if item described is worn]expose your [BreastDesc] as much as possible, clinging seamlessly to your nipples[otherwise]would barely do anything to cover the wearer's [BreastDesc], only providing a small amount of 'modesty' to the wearer's nipples[end if][if the lactation rate of the player > 0 and the item described is worn]. It is completely preventing you from lactating at all[end if].".
+
 Definition: a pasties is red themed: decide yes.
 
 [nipple tassels]
@@ -454,6 +459,8 @@ To decide which figure-name is clothing-image of (C - tassels):
 
 To say ClothingDesc of (C - tassels):
 	say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the center, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the center, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and C is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
+
+Definition: tassels is end of transformation chain: decide yes.
 
 To decide which number is the perceived-bimbo-influence of (C - tassels):
 	if the largeness of breasts > 3, decide on 1;

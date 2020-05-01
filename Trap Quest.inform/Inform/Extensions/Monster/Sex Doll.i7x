@@ -5,7 +5,7 @@ A sex doll is a kind of monster. A sex doll is male. A sex doll is neuter. The l
 Definition: a sex doll is willing to do titfucks: decide no.
 Definition: a sex doll is forced to wear a condom: decide no.
 
-Definition: A sex doll is dungeon dwelling: decide yes.
+Definition: a sex doll is dungeon dwelling: decide yes.
 
 Figure of Male Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll1.png".
 Figure of Female Sex Doll is the file "NPCs/Dungeon/SexDoll/sexdoll2.png".
@@ -113,12 +113,12 @@ To set up (M - a sex doll):
 	now the raw difficulty of M is 3;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial sex doll rule:
+[This is the spawn initial sex doll rule:
 	if debugmode > 1, say "Now summoning doll.";
 	if the number of alive sex dolls is 0:
 		let M be a random sex doll;
 		summon M in the dungeon.
-The spawn initial sex doll rule is listed in the setting up dungeon monsters rules.
+The spawn initial sex doll rule is listed in the setting up dungeon monsters rules.]
 
 To decide which number is the girth of (M - a sex doll):
 	decide on 3.
@@ -413,6 +413,5 @@ To loot (M - a sex doll):
 		compute autotaking S;
 	otherwise:
 		standard loot M.
-
 
 Sex Doll ends here.

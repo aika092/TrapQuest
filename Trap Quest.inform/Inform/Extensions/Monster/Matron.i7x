@@ -362,7 +362,6 @@ This is the matron confiscates grown up items rule:
 
 The matron confiscates grown up items rule is listed last in the matron nanny rules.
 
-
 To compute confiscate of (M - matron):
 	let H be a random off-stage victorian-baby-bonnet;
 	let N be the number of held vessels;

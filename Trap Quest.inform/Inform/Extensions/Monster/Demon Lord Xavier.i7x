@@ -33,7 +33,7 @@ To say BigFuckerDesc of (M - demon lord):
 	say "Xavier".
 
 To say MonsterDesc of (M - demon lord):
-	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [if diaper quest is 0][big he of M] is completely naked, and as you might expect, [big his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [end if]You can feel a raw aura of lust and evil emanating from [him of M].".
+	say "A giant red humanoid, with a monster's face and large red wings. [big he of M] must be literally twice as tall and wide as you. [if diaper quest is 0][big he of M] is completely naked, and as you might expect, [his of M] red monster of a [DickDesc of M] is about twice as large and thick as the average well hung human male. [end if]You can feel a raw aura of lust and evil emanating from [him of M].".
 
 To decide which number is the girth of (M - demon lord):
 	decide on 8.
@@ -194,7 +194,7 @@ This is the xavier replaces the monster rule:
 		say "[BigNameDesc of M] kicks the [N] out of the way, and takes over! [big he of M] sticks [his of M] giant [DickDesc of M] in your [asshole], and starts pounding you mercilessly! Fuck!";
 		now the sex-length of M is 2;
 		now the chosen-orifice of M is asshole;
-		destroy N;
+		destroy N;[TODO: update]
 		now M is penetrating asshole;
 		ruin asshole.
 
@@ -305,8 +305,8 @@ To say CondomFailFlav of (M - demon lord) in (O - a fuckhole):
 To decide if (M - demon lord) is willing to creampie (F - a fuckhole):
 	let W be a random number between the weight of the player and 0;
 	increase W by the difficulty of M;
-	if the class of the player is priestess, decrease W by 5;
-	if F is vagina and pregnancy fetish is 1, increase W by 5;
+	if the reaction of the player is 0:
+		if the class of the player is priestess or a random number between 1 and 2 is 1, decrease W by 5;
 	if W > 10, decide yes;
 	decide no.
 
@@ -521,6 +521,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	now the priority of P is 0; [can only happen once]
 	let M be current-monster;
 	let K be a random worn knickers;
+	let R be a random worn diaper;
 	if K is diaper, now K is the player;
 	let D be a random eligible diaper;
 	let BL be a random worn belt;
@@ -530,8 +531,9 @@ To compute punishment of (P - xavier-nightmare-belt):
 		say "He snaps his fingers and your [ShortDesc of K] vanishes[if K is perceived messed], along with all the mess[end if]!";
 		destroy K;
 	if there is a worn messed diaper:
-		if there is a worn perceived messed diaper, say "He snaps his fingers and all the mess disappears from your [ShortDesc of a random worn diaper]!";
-		MessSet a random worn diaper to 0;
+		if there is a worn perceived messed diaper, say "He snaps his fingers and all the mess disappears from your [ShortDesc of R]!";
+		MessSet R to 0;
+		now the foreign-mess of R is 0;
 	if there is a worn diaper:
 		say "[first custom style]'Okay now here, put this on.'[roman type][line break]Just like with his mother, the young demon uses a flick of his finger to summon something - ";
 	otherwise:

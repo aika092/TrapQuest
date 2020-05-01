@@ -161,7 +161,7 @@ To potentially update appearance and cringe levels:
 	if the rule succeeded:
 		update appearance level;
 		follow the appearance validation check update rules. [Update the values for items worn etc.]
-An advance counters rule (this is the update appearance and cringe rule):
+An all later time based rule (this is the update appearance and cringe rule):
 	potentially update appearance and cringe levels.
 
 To update appearance level:

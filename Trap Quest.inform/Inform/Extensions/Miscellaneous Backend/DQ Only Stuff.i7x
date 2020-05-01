@@ -122,6 +122,10 @@ To say tongueStatus of (C - a clothing):
 	say "".
 portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
+tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
+Definition: tits-lesson is lesson-appropriate: decide no.
+
+
 Include Stuffies by Equippables.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".

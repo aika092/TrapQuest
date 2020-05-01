@@ -89,7 +89,6 @@ This is the golem merging rule:
 	destroy golem;
 	rule succeeds.
 
-
 To say CombatProvokedReaction of (M - golem):
 	say "[BigNameDesc of M] barely seems to react but does take up what could be interpreted as a fighting stance.".
 

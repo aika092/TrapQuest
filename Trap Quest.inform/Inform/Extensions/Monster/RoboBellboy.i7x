@@ -2,8 +2,6 @@ RoboBellboy by Monster begins here.
 
 A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
 
-Definition: A robobellboy is hotel dwelling: decide yes.
-
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.png".
 
 Figure of RoboBellboy Cutscene 1 is the file "Special/Cutscene/cutscene-robobellboy-perception1.png".
@@ -48,14 +46,14 @@ To decide which room is the nearest patron:
 			now D is N;
 	decide on H.
 
-This is the spawn initial robobellboy rule:
+[This is the spawn initial robobellboy rule:
 	if the number of alive robobellboys is 0:
 		if debugmode > 0, say "Summoning bellboy in hotel.";
 		let M be a random robobellboy;
 		while M is senior robobellboy:[never the first one to spawn.]
 			now M is a random robobellboy;
 		summon M in the hotel.
-The spawn initial robobellboy rule is listed in the setting up hotel monsters rules.
+The spawn initial robobellboy rule is listed in the setting up hotel monsters rules.]
 
 Part 1 - Misc Flavour
 

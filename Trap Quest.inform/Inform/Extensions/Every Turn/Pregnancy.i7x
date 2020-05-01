@@ -199,15 +199,16 @@ Every turn we call this function to calculate what happens to the player's pregn
 To compute pregnancy:
 	increase maximum-pregnancy-delay-tracker by 1;
 	if the pregnancy of the player is 3:
-		if maximum-pregnancy-delay-tracker <= 75:
-			if debuginfo > 1, say "[line break][input-style]Egg pregnancy ticker: [maximum-pregnancy-delay-tracker] | (75.5) minimum time before eggs laid[roman type][line break]";
+		if maximum-pregnancy-delay-tracker <= 20:
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy ticker: [maximum-pregnancy-delay-tracker] | (20.5) minimum time before eggs laid[roman type][line break]";
 		otherwise:
-			let R be a random number between 75 and 1000;
-			if debuginfo > 1, say "[line break][input-style]Egg pregnancy check: RNG(75~1000) [R] | [maximum-pregnancy-delay-tracker].5 eggs hold on threshold[roman type][line break]";
+			let R be a random number between 20 and 500;
+			if the largeness of belly >= max belly size, now R is -1;
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy check: [if R is -1]BELLY AT MAXIMUM SIZE - AUTOMATIC EGG BIRTH[otherwise]RNG(20~500) [R] | [maximum-pregnancy-delay-tracker].5 eggs hold on threshold[end if][roman type][line break]";
 			if R < maximum-pregnancy-delay-tracker:
 				let P be a random thing penetrating vagina;
 				if P is a thing:
-					say "You feel the egg[if the total egg count of vagina > 1]s[end if] in your belly try to come out, but fail because of [NameDesc of P].";
+					if R > 0, say "You feel the egg[if the total egg count of vagina > 1]s[end if] in your belly try to come out, but fail because of [NameDesc of P].";
 				otherwise:
 					compute forced womb egg laying;
 	otherwise if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
@@ -280,7 +281,7 @@ To compute pregnancy:
 					repeat with P running through worn temporarily-displaced clothing:
 						replace P;]
 			otherwise: [The father is inanimate]
-				if inhuman pregnancy < 2:
+				if inhuman pregnancy < 2 or (extreme proportions fetish is 1 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
 					say DefaultBirthScene;
 				otherwise if the father is elder altar:
 					compute god birth;
@@ -349,7 +350,7 @@ To compute tentacle birth:
 		summon tentacles tattoo;
 		try examining tentacles tattoo;
 	let M be a random off-stage tentacle monster;
-	compute birth set up of M.
+	if M is a monster, compute birth set up of M.
 
 To compute infernal birth:
 	let M be a random imp;
@@ -368,8 +369,7 @@ To compute infernal birth:
 		while X > 0:
 			decrease X by 1;
 			let N be a random off-stage imp;
-			if N is a monster:
-				compute birth set up of N.
+			if N is a monster, compute birth set up of N.
 
 [!<ComputeGodBirth>+
 
@@ -421,10 +421,11 @@ REQUIRES COMMENTING
 +!]
 To check for extreme pregnancies:
 	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar:
 			now the womb volume of vagina is 31;
-		if the father is creampie pole trap and inhuman pregnancy is 2 and a random number between 1 and 5 >= 2:
+		if the father is creampie pole trap and inhuman pregnancy is 2 and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;
+			if tentacle fetish is 0, say "[if slow pregnancy > 2][bold type]You have just noticed that your belly is getting even bigger than a normal pregnancy. [end if][one of][line break][variable custom style]What the hell have I got growing inside me?! [or][stopping][roman type][GotUnluckyFlav]";
 		if the father is djinn:
 			now the womb volume of vagina is 31;
 	if the womb volume of vagina is 31 and slow pregnancy > 2:

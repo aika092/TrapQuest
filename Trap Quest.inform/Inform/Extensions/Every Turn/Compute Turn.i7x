@@ -49,6 +49,7 @@ To allocate (N - a number) seconds:
 	if N > 0:
 		[time is moving foward, so icons should move]
 		purge NPC icons;
+		if acceleration-timer of acceleration-tincture > 0, now N is 1; [everything happens fast]
 		if seconds is 0:
 			zero the focus-link-table;
 			if debugmode > 1, say "Zeroing focus stuff and allocating [N] seconds.";
@@ -82,7 +83,7 @@ To run the engine:
 					follow R; [This way, if the stored rule demands another turn, and adds another stored rule in, we don't truncate away that rule too early.]
 			otherwise: [no compulsory rules so we can do the stored automatic action]
 				follow A;
-	map-draw around the location of the player.
+	display entire map.
 
 To run the engine once:
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
@@ -132,8 +133,6 @@ REQUIRES COMMENTING
 
 +!]
 To compute extra turn:
-	now predicament-painted-cutoffs is hand-decided;
-	now predicament-painted-cutoffs is not hand-blocked;
 	run the engine once.
 
 [!<ComputeCleanup>+
@@ -168,17 +167,31 @@ To store previous sizes:
 
 [!<timeBased:Rulebook>*
 
-All the procedures that need to be called every turn, BEFORE monsters act.
+All the procedures that need to be called every turn, BEFORE monsters act. Will not tick down in the school.
 
 *!]
 time based is a rulebook.
 
+[!<allTimeBased:Rulebook>*
+
+All the procedures that need to be called every turn, BEFORE monsters act.
+
+*!]
+all time based is a rulebook.
+
 [!<laterTimeBased:Rulebook>*
+
+All the procedures that need to be called every turn, AFTER monsters act. Will not tick down in the school.
+
+*!]
+later time based is a rulebook.
+
+[!<allLaterTimeBased:Rulebook>*
 
 All the procedures that need to be called every turn, AFTER monsters act.
 
 *!]
-later time based is a rulebook.
+all later time based is a rulebook.
 
 [!<timeSeconds:Integer>*
 
@@ -230,22 +243,24 @@ To compute turn:
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
 	if debugmode > 1, say "BEFORE TIME BASED.";
-	if timeBombTime > 0, progress stopped time;
-	otherwise follow the time based rulebook;
+	if timeBombTime > 0:
+		progress stopped time;
+	otherwise:
+		if playerRegion is not school, follow the time based rulebook;
+		follow the all time based rulebook;
 	if debugmode > 1, say "AFTER TIME BASED.";
 	if the player is flying or last-turn-flight is 0: [This means, the turn that the player lands monsters don't get to act.]
 		if debugmode > 1, say "BEFORE MONSTERS.";
 		if delayed fainting is 0 and timeBombTime <= 0, compute monsters;
 		if debugmode > 1, say "AFTER MONSTERS.";
 	compute monster sleeping;
-	now counters-seconds is local-seconds;
-	follow the advance counters rules;
-	if debugmode > 1, say "AFTER COUNTERS.";
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
 	repeat with M running through alive dying monsters:
 		finally destroy M;
-	if timeBombTime <= 0, follow the later time based rulebook;
+	if timeBombTime <= 0:
+		if playerRegion is not school, follow the later time based rulebook;
+		follow the all later time based rulebook;
 	Reset Flags;
 	if debugmode > 1, say "AFTER FLAGS.";
 	compute flight; [Flight stuff must go last in the compute time order - the concept is it's checking if anything that happened caused the player to start flying.]
@@ -264,8 +279,8 @@ To compute automatic actions:
 			now another-turn is 1.
 
 To compute optional actions:
-	if was-mopping is 1:
-		now was-mopping is 0;
+	if was-mopping is true:
+		now was-mopping is false;
 		if total puddle > 0:
 			say "Keep mopping? ";
 			if the player is consenting: [if this was bimbo consenting there are some edge case loops with broken players who infinitely lick a puddle while peeing]
@@ -353,9 +368,47 @@ To compute player standing:
 			unless the player is trap stuck:
 				say "Your knees buckle with fatigue, and you fall down onto them. ";
 				try kneeling;
-				repeat with M running through intelligent dangerous monsters in the location of the player:
+				repeat with M running through intelligent combative monsters:
 					make M expectant; [This way monsters are delayed for a turn when you buckle, giving you a chance to wait, submit, etc.]
-				if there is a dangerous monster in the location of the player and the body soreness of the player > 8 and the bladder of the player > 6 and the player is not feeling dominant:
+				let MO be a random worn maid outfit;
+				if the magic-power of the player > 0 and the class of the player is maid and MO is a thing and there is a combative tentacle monster:
+					say "You sense that you could use some of your magic to temporarily [bold type]power up[roman type] and continue the fight. Would you like to do it? ";
+					if the player is bimbo consenting:
+						say "Magic surges from your hands to the rest of your body! [bold type]You're fully healed and upright in an instant![roman type][line break]";
+						now the stance of the player is 0;
+						now the body soreness of the player is 0;
+						repeat with O running through worn removable breast covering clothing:
+							if O is not MO:
+								if the saved-item of magical-maid-outfit is clothing:
+									say "Your [O] [wardrobeVanishes of O]!";
+									now O is in pink wardrobe;
+								otherwise:
+									say "Your [O] vanishes!";
+									now O is in Holding Pen;
+									now the saved-item of magical-maid-outfit is O;
+						transform MO into magical-maid-outfit;
+						now the charge of magical-maid-outfit is a random number between 10 and 40;
+						if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
+							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off as a girl...";
+							SexChange the player;
+						update appearance level;
+						if asshole is lewdly exposed:
+							say "[variable custom style][if the player is not shameless]EEK! [end if]My privates are on display?![roman type][line break]";
+						otherwise if breasts is lewdly exposed:
+							say "[variable custom style][if the player is not disgraced]EEK! [end if]My [ShortDesc of breasts] are on display?![roman type][line break]";
+						compute spell consequences of magical-maid-outfit;
+						if pink-spraybottle is worn:
+							if pink-spraybottle is cloth:
+								say "A new pink spraybottle appears in your hand to accompany the cloth!";
+								now pink-spraybottle is spray;
+								now the charge of pink-spraybottle is 1;
+							otherwise if the charge of pink-spraybottle < 4:
+								say "[BigNameDesc of pink-spraybottle] fills up with dark liquid!";
+								now the charge of pink-spraybottle is 4;
+						if the magic-power of the player is 0:
+							say "Some magic energy returns to you!";
+							MagicPowerUp 1;
+				otherwise if there is a combative monster and the body soreness of the player > 8 and the bladder of the player > 6 and the player is not feeling dominant:
 					now delayed urination is 1;
 					say "Overcome with pain[if the player is not a pervert] and fear[otherwise if the humiliation of the player < 12500] and shame[end if], you involuntarily wet yourself.";
 					try urinating;
@@ -561,11 +614,60 @@ To Compute Compulsions:
 		summon cultist veil;
 		now another-turn is 1;
 	if the traitor-hypno of hypno-lesson > 0:
-		if ex-princess is in the location of the player and ex-princess is caged and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
+		if ex-princess is in the location of the player and ex-princess is caged and diaper quest is 0 and watersports fetish is 1 and the player is not incontinent and the player is desperate to pee and the player is able to use a urinal:
 			decrease the traitor-hypno of hypno-lesson by 1;
 			say "Something inside you urges you to [second custom style]help your friend[roman type].";
 			compute urinal use;
 			now another-turn is 1.
+
+This is the broken automatic submission rule:
+	let M be a random willing to shag right now reactive monster;
+	if M is monster:
+		now auto is 1;
+		let B be a random actually presentable orifice;
+		if B is not face and face is actually presentable and M is male and the player is craving semen and M is willing to do oral, now B is face;
+		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
+		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
+		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;
+		if the sensitivity of breasts > 7 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
+		now auto is 0;
+		if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]
+			if M is interested:
+				say "Without a second thought, you crawl towards [NameDesc of M].";
+			otherwise:
+				say "Without a second thought, you crawl towards [NameDesc of M], gently stroking your head on [his of M] [if M is airborne]body[otherwise]leg[end if].";
+				now M is interested;
+			try direct-presenting B to M;
+			if M is reactive and M is not penetrating a body part and M is friendly: [Proposition failed. NPC needs to leave to protect against infinite loops.]
+				bore M;
+				compute mandatory room leaving of M;
+		otherwise if M is dangerous:
+			say "[one of][bold type]Now that you are on your knees, you remember your role as an object to be used and[or]You[or]You[or]You[or]You[or]You[or]You[cycling] can't bring yourself to fight back.[roman type][line break]";
+		otherwise: [To protect against edge case infinite loops]
+			bore M;
+			compute mandatory room leaving of M;
+	otherwise:
+		say "BUG - tried to submit to an NPC but it was no longer there.".
+
+This is the broken statue suck rule:
+	say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 10]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 14]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";
+	now the stance of the player is 1;
+	try drinking DungeonScenery01.
+
+This is the broken drink beg rule:
+	let P be the player;
+	repeat with M running through reactive friendly monsters:
+		if M is not last-begged, now P is M;
+	if P is not the player:
+		compute desperate drinking to P;
+		now last-begged is P;
+		now last-begged-time is earnings.
+
+This is the too horny masturbation rule:
+	say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
+	now auto is 1;
+	try masturbating;
+	now auto is 0.
 
 [!<ComputeBrokenActions>+
 
@@ -573,50 +675,23 @@ REQUIRES COMMENTING
 
 +!]
 To Compute Broken Actions:
-	if diaper quest is 0 and the humiliation of the player >= 40000 and the player is prone and the player is not immobile and resting is 0 and busy is 0:
-		if there is a willing to shag monster in the location of the player:
-			let M be a random willing to shag monster in the location of the player;
-			compute broken sex of M;
-	otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room:
-		[say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";] [How did this get here?!]
-		if the player is able to automatically masturbate:
-			say "You're just way too horny - there is nothing you can do except immediately begin to masturbate!";
-			now auto is 1;
-			try masturbating;
-			now auto is 0.
+	if another-turn is 0 and another-turn-action is the no-stored-action rule:
+		if diaper quest is 0 and the player is broken and the player is prone and the player is not immobile and resting is 0 and busy is 0 and there is a willing to shag right now reactive monster:
+			now another-turn is 1;
+			now another-turn-action is the broken automatic submission rule;
+		otherwise if diaper quest is 0 and the thirst of the player is 5 and the player is thirsty and busy is 0 and resting is 0 and the player is not flying and face is not actually occupied and the player is not immobile and the player is not in danger:
+			if the player is in Dungeon10 and the semen taste addiction of the player > 7:
+				now another-turn is 1;
+				now another-turn-action is the broken statue suck rule;
+			otherwise if last-begged-time < earnings - 30 and the player is able to speak:
+				repeat with M running through reactive friendly monsters:
+					if M is not last-begged:
+						now another-turn is 1;
+						now another-turn-action is the broken drink beg rule;
+		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate:
+			now another-turn is 1;
+			now another-turn-action is the too horny masturbation rule.
 
-broken-present-cooldown is a number that varies.
-
-[!<ComputeBrokenSexOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
-To compute broken sex of (M - a monster):
-	let B be nothing;
-	if broken-present-cooldown <= 0:
-		now auto is 1;
-		now B is a random actually presentable orifice;
-		if B is not face and face is actually presentable and M is male and the player is craving semen and M is willing to do oral, now B is face;
-		if the player is a butt slut and asshole is actually presentable and M is willing to do anal, now B is asshole;
-		if the player is a pussy slut and vagina is actually presentable and M is willing to do vaginal, now B is vagina;
-		if the player is a tit slut and M is male and M is willing to do titfucks and breasts are actually presentable, now B is breasts;
-		if the sensitivity of breasts > 7 and there is a worn nipple chain and M is male and M is willing to do titfucks, now B is breasts;
-		now auto is 0;
-	otherwise:
-		decrease broken-present-cooldown by seconds;
-	if B is body part and the sex addiction of the player > a random number between 12 and 18: [If B is nothing, this means there's no sex we can have right now.]
-		if M is interested:
-			say "Without a second thought, you crawl towards [NameDesc of M].";
-		otherwise:
-			say "Without a second thought, you crawl towards [NameDesc of M], gently stroking your head on [his of M] [if M is airborne]body[otherwise]leg[end if].";
-			now M is interested;
-		try direct-presenting B to M;
-		now broken-present-cooldown is 120;
-		now another-turn is 1;
-	otherwise if M is dangerous:
-		say "[one of][bold type]Now that you are on your knees, you remember your role as an object to be used and[or]You[stopping] can't bring yourself to fight back.[roman type][line break]";
-		now another-turn is 1.
 
 The hypno triggers rules is a rulebook.
 
@@ -641,7 +716,6 @@ This is the present-for-oral hypno rule:
 				say "All that happens is that you feel a little silly, since there's nobody here to offer a blowjob to.";
 			otherwise:
 				try direct-presenting face to M;
-				now broken-present-cooldown is 120;
 		now another-turn is 1.
 The present-for-oral hypno rule is listed in the hypno triggers rules.
 
@@ -715,181 +789,67 @@ This is the autopiss hypno rule:
 				now another-turn is 1.
 The autopiss hypno rule is listed in the hypno triggers rules.
 
-[!<advanceCountersRules:Rulebook>*
+A later time based rule (this is the throne charge decay rule):
+	if the charge of the throne > 0, decrease the charge of the throne by time-seconds.
 
-REQUIRES COMMENTING
+A later time based rule (this is the modification machine charge decay rule):
+	if the charge of modification machine > 0, decrease the charge of modification machine by time-seconds.
 
-*!]
-The advance counters rules is a rulebook.
+A later time based rule (this is the cross trainer charge decay rule):
+	if the charge of cross trainer > 0, decrease the charge of cross trainer by time-seconds.
 
-[!<countersSeconds:Integer>*
+A later time based rule (this is the podium charge decay rule):
+	if the charge of podium > 0, decrease the charge of podium by time-seconds.
 
-REQUIRES COMMENTING
+An all later time based rule (this is the gloryhole charge decay rule):
+	if the charge of gloryhole > 0, decrease the charge of gloryhole by time-seconds.
 
-*!]
-counters-seconds is a number that varies.
-
-[!<TheThroneChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the throne charge decay rule:
-	if the charge of the throne > 0, decrease the charge of the throne by counters-seconds.
-The throne charge decay rule is listed in the advance counters rules.
-
-[!<TheModificationMachineChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the modification machine charge decay rule:
-	if the charge of modification machine > 0, decrease the charge of modification machine by counters-seconds.
-The modification machine charge decay rule is listed in the advance counters rules.
-
-[!<TheCrossTrainerChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the cross trainer charge decay rule:
-	if the charge of cross trainer > 0, decrease the charge of cross trainer by counters-seconds.
-The cross trainer charge decay rule is listed in the advance counters rules.
-
-[!<ThePodiumChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the podium charge decay rule:
-	if the charge of podium > 0, decrease the charge of podium by counters-seconds.
-The podium charge decay rule is listed in the advance counters rules.
-
-[!<TheGloryholeChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the gloryhole charge decay rule:
-	if the charge of gloryhole > 0, decrease the charge of gloryhole by counters-seconds.
-The gloryhole charge decay rule is listed in the advance counters rules.
-
-[!<TheLectureChairChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the lecture chair charge decay rule:
+A later time based rule (this is the lecture chair charge decay rule):
 	let L be a random lecture chair;
-	if the charge of L > 0, decrease the charge of L by counters-seconds.
-The lecture chair charge decay rule is listed in the advance counters rules.
+	if the charge of L > 0, decrease the charge of L by time-seconds.
 
-[!<TheDigestionTimerChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the digestion timer charge decay rule:
+An all later time based rule (this is the digestion timer charge decay rule):
 	if diaper quest is 1 and digestion-timer > 0:
-		decrease digestion-timer by counters-seconds;
+		decrease digestion-timer by time-seconds;
 		if digestion-timer <= 0:
 			if diaper quest is 1 and diaper messing >= 3 and the stomach-food of the player <= 1 and DQMessingHunger is false:
 				if the player is hungry, now DQMessingHunger is true; [no flavour text necessary]
 				otherwise compute DQ hunger; [tell the player they're now feeling more hungry]
 			now digestion-timer is 0.
-The digestion timer charge decay rule is listed in the advance counters rules.
 
-[!<TheAlchemyChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the alchemy charge decay rule:
+A later time based rule (this is the alchemy charge decay rule):
 	if the charge of alchemist's table > 0:
-		decrease the charge of alchemist's table by counters-seconds;
+		decrease the charge of alchemist's table by time-seconds;
 		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform!".
-The alchemy charge decay rule is listed in the advance counters rules.
 
-[!<TheScienceChargeDecayRule>+
+A later time based rule (this is the science charge decay rule):
+	if the charge of science table > 0, decrease the charge of science table by time-seconds;
+	if the second charge of science table > 0, decrease the second charge of science table by time-seconds.
 
-REQUIRES COMMENTING
+A later time based rule (this is the laundry charge decay rule):
+	if the charge of laundry robots > 0, decrease the charge of laundry robots by time-seconds.
 
-+!]
-This is the science charge decay rule:
-	if the charge of science table > 0:
-		decrease the charge of science table by counters-seconds;
-		if the charge of science table <= 0 and science table is in the location of the player, say "[bold type]The left hand bowl on the science table starts glowing again.[roman type] It must be ready for another ingredient to transform!";
-	if the second charge of science table > 0:
-		decrease the second charge of science table by counters-seconds;
-		if the second charge of science table <= 0 and science table is in the location of the player, say "[bold type]The right hand bowl on the science table starts glowing again.[roman type] It must be ready for another ingredient to transform!".
-The science charge decay rule is listed in the advance counters rules.
+A later time based rule (this is the sacred pool decay rule):
+	if the charge of the sacred pool > 0, decrease the charge of the sacred pool by time-seconds.
 
-[!<TheLaundryChargeDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the laundry charge decay rule:
-	if the charge of laundry robots > 0:
-		decrease the charge of laundry robots by counters-seconds.
-The laundry charge decay rule is listed in the advance counters rules.
-
-[!<TheSacredPoolDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the sacred pool decay rule:
-	if the charge of the sacred pool > 0:
-		decrease the charge of the sacred pool by counters-seconds.
-The sacred pool decay rule is listed in the advance counters rules.
-
-This is the living tentacles decay rule:[TODO: migrate to periodical effect function for living tentacles]
-	let L be a random living tentacles;
-	if the charge of L > 0:
-		decrease the charge of L by counters-seconds.
-The living tentacles decay rule is listed in the advance counters rules.
-
-[!<TheDiscountDecayRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the discount decay rule:
+A later time based rule (this is the discount decay rule):
 	if discount < -2:
-		increase discount by counters-seconds;
+		increase discount by time-seconds;
 		if discount > -3, now discount is 0;
 	otherwise if discount > 0:
-		decrease discount by counters-seconds;
+		decrease discount by time-seconds;
 		if discount < 1, now discount is 0.
-The discount decay rule is listed in the advance counters rules.
 
-[!<TheUrineGrossOutResolutionRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the urine gross out resolution rule:
+previous-urine-upset is a number that varies.
+An all later time based rule (this is the urine gross out resolution rule):
 	let P be previous-urine-upset;
 	if the player is upset about urine, now previous-urine-upset is 1;
 	otherwise now previous-urine-upset is 0;
 	if P is not previous-urine-upset:
 		if P is 0, say "[bold type][one of]You can't help but be a bit grossed out by the [if the number of worn urine soaked clothing > 1][urine] soaked clothing you are wearing. Until you remove or clean it all, [otherwise][random worn urine soaked clothing]. Until you clean it or remove it, [end if]your dexterity will be reduced.[or]Once again your dexterity is reduced until you can escape the gross [if the number of worn urine soaked clothing > 1][urine] soaked clothing[otherwise][random worn urine soaked clothing][end if].[stopping][roman type][line break]".
-The urine gross out resolution rule is listed in the advance counters rules.
 
-[!<previousMessUpset:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 previous-mess-upset is a number that varies.
-
-[!<TheMessGrossOutResolutionRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the mess gross out resolution rule:
+An all later time based rule (this is the mess gross out resolution rule):
 	let P be previous-mess-upset;
 	if the player is upset about mess, now previous-mess-upset is 1;
 	otherwise now previous-mess-upset is 0;
@@ -901,51 +861,21 @@ This is the mess gross out resolution rule:
 			otherwise:
 				say "[bold type]You are [one of][or]once again [stopping]completely grossed out[if the player is not magically horny and the player is a bit horny]! Your arousal quickly starts to disappear as the smell hits your nostrils[end if].[roman type][line break]";
 		if the player is not magically horny, now the arousal of the player is 0.
-The mess gross out resolution rule is listed in the advance counters rules.
 
-[!<previousTooFull:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 previous-too-full is a number that varies.
-
-[!<TheTooFullResolutionRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the too full resolution rule:
+An all later time based rule (this is the too full resolution rule):
 	if diaper quest is 0:
 		let P be previous-too-full;
 		if the player is overly full, now previous-too-full is 1;
 		otherwise now previous-too-full is 0;
 		if P is not previous-too-full:
 			if P is 0, say "[bold type]Your stomach is now overly full! [one of]Until it has digested enough of its contents, your dexterity is slightly reduced.[or]Once again your dexterity is slightly lowered until you have digested enough of its contents.[stopping][roman type][line break]".
-The too full resolution rule is listed in the advance counters rules.
 
-[!<recentBreastsLargeness:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 recent-breasts-largeness is a number that varies.
-
-[!<TheRecentBreastsLargenessRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the recent breasts largeness rule:
+An all later time based rule (this is the recent breasts largeness rule):
 	now recent-breasts-largeness is the largeness of breasts.
-The recent breasts largeness rule is listed in the advance counters rules.
 
-[!<TheFirstAidCooldownRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the first aid cooldown rule:
+A time based rule (this is the first aid cooldown rule):
 	if background-nurse is 1:
 		if FAcooldown > 0:
 			decrease FAcooldown by 1;
@@ -953,17 +883,10 @@ This is the first aid cooldown rule:
 			say "A new bandage appears in your bag!";
 			let B be a random bandage;
 			now B is held by the player.
-The first aid cooldown rule is listed in the advance counters rules.
 
-[!<ThePainDrainCooldownRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the pain drain cooldown rule:
+An all later time based rule (this is the pain drain cooldown rule):
 	if pain-duration > 0, decrease pain-duration by 1;
 	if drain-duration > 0, decrease drain-duration by 1.
-The pain drain cooldown rule is listed in the advance counters rules.
 
 [Any and all flags that only last for one turn should go here.]
 [Also delayed humiliation, since it's the last thing that happens in a round.]
@@ -984,6 +907,7 @@ To Reset Flags:
 	if refactoryperiod > 0:
 		decrease refactoryperiod by 1;
 		now aroused-turns is 0; [The player can keep gaining arousal after orgasms. But then some of it will rather quickly drop off after sex ends, if she successfully orgasmed.]
+		if refactoryperiod is 0 and painted-vibrator-hands is worn, say "[bold type]Your clit feels less sensitive now, and you are willing to push the thumb vibes into it again.[roman type][line break]";
 	[if testing-val is not the number of things in standard item pen and testing-val > 0, say "[bold type]The number of things in Standard Item Pen went from [testing-val] to [number of things in standard item pen].[roman type][line break]";
 	now testing-val is the number of things in standard item pen;]
 	now auto is 0;
@@ -1015,7 +939,9 @@ To Reset Flags:
 		let being-fucked be 0;
 		repeat with R running through things penetrating F:
 			if R is embodied, now being-fucked is 1;
-		if being-fucked is 0, now the buildup of F is 0.
+		if being-fucked is 0, now the buildup of F is 0;
+	if the rawness of penis > 0 and wanking is 0 and the number of monsters penetrating penis is 0:
+		if a random number between 1 and 10 is 1, RawDown penis.
 
 [!<SayOtherTips>+
 

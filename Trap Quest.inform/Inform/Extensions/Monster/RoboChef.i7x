@@ -26,12 +26,12 @@ To set up (M - a robochef):
 	now the raw difficulty of M is 8;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial robochef rule:
+[This is the spawn initial robochef rule:
 	if the number of alive robochefs is 0:
 		let M be a random robochef;
 		if debugmode > 0, say "Summoning chef in hotel.";
 		summon M in the hotel.
-The spawn initial robochef rule is listed in the setting up hotel monsters rules.
+The spawn initial robochef rule is listed in the setting up hotel monsters rules.]
 
 To decide which number is the girth of (M - a robochef):
 	decide on 4.

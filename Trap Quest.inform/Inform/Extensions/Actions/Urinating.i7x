@@ -39,6 +39,9 @@ We may need to flag that the thing that was collecting the player's pee overflow
 *!]
 overflowed is a number that varies.
 
+[Is the player peeing into a body of water?]
+water-peeing is initially false.
+
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
 
 REQUIRES COMMENTING
@@ -51,7 +54,7 @@ Clothing can be temporarily-displaced.
 REQUIRES COMMENTING
 
 *!]
-toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg".
 urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
 To say ExamineDesc of (T - toilet):
@@ -61,7 +64,10 @@ To say ExamineDesc of (T - urinal):
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
+	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
 	if the player is in Hotel38 and watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
+	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
+	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
 
 To decide which figure-name is the examine-image of (T - urinal):
@@ -238,10 +244,13 @@ Check urinating:
 	[if the player is not bursting and delayed urination is 0, say "You don't feel the need." instead;]
 	if delayed urination is 0 and (the player is able to use a toilet or the player is able to use a urinal):
 		say "Did you want to use the [if the location of the player is urinals]urinal[otherwise]toilet[end if]? ";
-		if the player is consenting, try toileting toilet instead;
+		if the player is consenting:
+			if the location of the player is urinals, try toileting urinal instead;
+			try toileting toilet instead;
 	if delayed urination is 0 and the player is pee protected:
 		if the player is not able to use a toilet and the player is not able to use a urinal:
 			let P be a random bottom level pee protection clothing;
+			now auto is 1;
 			if there is pee covering undisplacable unzippable clothing or (there is a worn diaper and the diaper addiction of the player >= 3):
 				if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				if P is not diaper or the diaper addiction of the player < 3:
@@ -249,20 +258,21 @@ Check urinating:
 					if the player is bimbo consenting, say "";
 					otherwise say "Then you should probably get it out of the way first." instead;
 			otherwise if P is clothing:
-				say "Do you want to get your clothes out of the way first? ";
-				if the player is bimbo consenting:
-					repeat with C running through worn pee covering clothing:
-						if C is crotch-zipped:
-							say "You unzip your [ShortDesc of C].";
-							ZipDown C;
-							now C is temporarily-displaced;
-						otherwise if C is displacable:
-							say "You pull your [ShortDesc of C] out of the way.";
-							now C is crotch-displaced;
-							now C is temporarily-displaced;
-						allocate 2 seconds;
+				if the player is able to displace:
+					say "Do you want to get your clothes out of the way first? ";
+					if the player is bimbo consenting:
+						repeat with C running through worn pee covering clothing:
+							if C is crotch-zipped:
+								try unzipping C;
+								if C is crotch-unzipped, now C is temporarily-displaced;
+							otherwise if C is displacable and C is crotch-in-place:
+								try displacing C;
+								if C is crotch-displaced, now C is temporarily-displaced;
+					otherwise:
+						if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				otherwise:
-					if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
+					say "You can't displace [NameDesc of P] right now, so you'll have to pee in it. Are you sure that's what you want to do? ";
+					if the player is not consenting, say "You change your mind." instead;
 	if the player is prone and the location of the player is bathroom and delayed urination is 0:
 		say "Do you really want to try to pee [if the player is pee protected]your pants[otherwise]on the floor here[end if], while kneeling? ";
 		if the player is bimbo consenting:
@@ -301,7 +311,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute toilet use:
-	allocate 6 seconds;
+	if seconds is 0, allocate 6 seconds;
 	let too be "";
 	let initialBladder be the bladder of the player;
 	if watersports mechanics is 1 and (the number of pee covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
@@ -414,10 +424,11 @@ REQUIRES COMMENTING
 
 +!]
 To compute urinal use:
-	allocate 6 seconds;
+	if seconds is 0, allocate 6 seconds;
 	if there is displacable pee covering clothing, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and release your hold on your bladder.";
+	if the location of the player is urinals, say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and ";
+	say "release your hold on your bladder.";
 	if the bladder of the player > 0:
 		now the bladder of the player is 0;
 		repeat with M running through reactive monsters:
@@ -429,14 +440,8 @@ To compute urinal use:
 	otherwise:
 		say "Nothing comes out!".
 
-[!<ComputeToiletReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute toilet reaction of (M - a monster):
-	humiliate STRONG-HUMILIATION;
-	say "[ToiletReactionFlav of M]".
+	say ToiletReactionFlav of M.
 
 [!<SayToiletReactionFlavOfMonster>+
 
@@ -469,6 +474,7 @@ To start urination:
 	if seconds is 0, allocate 6 seconds;
 	now player-urinating is 1;
 	now overflowed is 0;
+	now water-peeing is false;
 	if pee-bottling is 1: [We are automatically urinating so we set delayed urination to 1 to make sure we skipped the check functions. But we don't want to tell the player that the urination was involuntary because that's not actually true.]
 		now pee-bottling is 0;
 		if debugmode is 1, say "resetting accidental urination flag.";
@@ -494,12 +500,18 @@ To start urination:
 			compute urinal use;
 			say PeeReaction 0;
 		otherwise if the player is able to use a body of water and delayed urination is 0:
-			say "You [if the size of penis > 0 and the player is upright]walk up to the edge and [urinate] into the water[otherwise]walk past the edge, wading into the water until you can discreetly [urinate][end if]. ";
-			if incontinence > 0:
-				decrease incontinence by 1;
-				say "You feel as if you've regained some control over your bladder!";
-			progress quest of careful-peeing-quest;
-			say PeeReaction 0;
+			say "Get into the water (people won't be able to see you peeing but you'll get wet)? ";
+			if the player is consenting:
+				say "You walk past the edge, wading into the water until you can discreetly [urinate]. ";
+				if incontinence > 0:
+					decrease incontinence by 1;
+					say "You feel as if you've regained some control over your bladder!";
+				progress quest of careful-peeing-quest;
+				[say PeeReaction 0;] [Removed because the idea is that the player is being stealthy]
+				now water-peeing is true;
+			otherwise:
+				compute urinal use;
+				say PeeReaction 0;
 		otherwise if resting is 1 and there is a hotel bed in the location of the player:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] soaks into the sheets and mattress.";
 			now a random hotel bed in the location of the player is soggy;
@@ -724,7 +736,7 @@ To end urination:
 		try masturbating;
 		now auto is 0;
 		if the player is horny and wanking is 0, say "You overcome your urge and behave yourself.";
-	if the player is able to use a body of water and the size of penis is 0 or the player is prone:
+	if the player is able to use a body of water and water-peeing is true:
 		try showering water-body;
 	let TP be a random worn training pants;
 	if TP is training pants and there is a worn T-shirt:
@@ -774,10 +786,9 @@ To check piss maidification:
 			otherwise if the player is not incontinent:
 				say "You feel a twinge from behind your bladder, as if it is punishing you by making you gradually more incontinent...";
 				increase incontinence by 1;
-		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is actually summonable)):
-			let C be a random pink spraybottle;
-			compute maidification of C;
-			say "A [C] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
+		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is not listed in the list of headgear recycling and black maid headdress is actually summonable)):
+			compute maidification of pink-spraybottle;
+			say "A [pink-spraybottle] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
 
 [How high will the game allow incontinence to go?]
 To decide which number is the max-incontinence of the player:

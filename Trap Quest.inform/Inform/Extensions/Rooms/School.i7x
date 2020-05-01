@@ -142,7 +142,7 @@ dungeon-favour is a number that varies.
 dungeon-time is a number that varies.
 dungeon-tests is a number that varies. dungeon-tests is usually 0.
 
-A time based rule (this is the dungeon sentence progress rule):
+An all time based rule (this is the dungeon sentence progress rule):
 	if dungeon chains is worn:
 		increase dungeon-time by time-seconds;
 		if dungeon-time > 40 and the player is not immobile:
@@ -390,7 +390,7 @@ To say DungeonPrincessDiaperDeclarationFlav of (M - a monster):
 	say "With a snap of [NameDesc of M][']s fingers, [NameDesc of ex-princess] is now wearing a massive white diaper with a colourful alien pattern, and a sheer pink nightie. Thick deep pink baby mittens and booties complete [his of ex-princess] new outfit. You watch with [horror the bimbo of the player] as [NameDesc of M] then presses [his of M] hands to [NameDesc of ex-princess][']s scalp, and [NameDesc of ex-princess][']s eyes roll into the back of [his of ex-princess] head.[line break][speech style of ex-princess]'What? No... please, don't make me do that... no, anything but that...!'[roman type][line break][BigNameDesc of M] laughs maliciously, as the front of [NameDesc of ex-princess][']s diaper visibly yellows, and [he of ex-princess] flushes red with what you assume is shame. But it quickly becomes clear that it's not just embarrassment - [his of ex-princess] tongue lolls out of [his of ex-princess] mouth and [he of ex-princess] involuntarily moves one mittened hand to the front of [his of ex-princess] diaper and the other to [his of ex-princess] right breast. Both start rubbing fervently, as [he of ex-princess] emits a loud erotic cry.[line break][speech style of M]'Let me explain to [NameBimbo] what just happened. [if M is headmistress]I have[otherwise]The [ShortDesc of headmistress][end if] has decided that the princess just being a diaper pail was too kind. The bitch is now fully incontinent, and from now on, whenever [he of ex-princess] soils [himself of ex-princess], [he of ex-princess] will be overcome with an incredibly powerful state of arousal.'[roman type][line break]";
 	say "[BigNameDesc of M] pauses to chuckle.[line break][speech style of M]'That's not all. Whenever [he of ex-princess] sees someone in a used diaper, [he of ex-princess] will be completely unable to stop [himself of ex-princess] from smushing [his of ex-princess] face into it, until the wearer walks away. Of course... you can't walk away right now, can you?'[line break][roman type][BigNameDesc of M] turns to fully face you, and then presses [his of M] hands to your belly. For a moment, a low humming sound can be heard.[line break][speech style of M]'As for your punishment for this jailbreak attempt, [NameBimbo]... well, we're going to leave you with Fannie Facerub for a while. Oh, and your belly has been enchanted with a cheeky little spell, to make your [if diaper messing < 4]bladder[otherwise]bowels[end if] go into overdrive for a little while. So, enjoy trying to hold on until I return.'".
 
-A time based rule (this is the school dungeon diaper balance rule):
+An all time based rule (this is the school dungeon diaper balance rule):
 	if diaper quest is 1 and the player is in School34 and ex-princess is in the location of the player:
 		if the stomach-food of the player < 2, now the stomach-food of the player is 2;
 		if the stomach-liquid of the player < 5, now the stomach-water of the player is 5.
@@ -408,6 +408,9 @@ Carry out taking clothing when the player is in School15:
 Report dropping clothing when the noun is in School15:
 	if the noun is cursed:
 		say "The magic runes around the ceiling and doorway turn black for a moment before [if the donations of School15 < 5]returning to their previous purple pulse[otherwise]returning to being grey and inactive[end if]. Maybe [if the noun is sure]because [end if]the [ShortDesc of the noun] was cursed?";
+		now the noun is sure;
+	otherwise if the noun is plentiful accessory:
+		say "The magic runes around the ceiling and doorway seem to fail to detect that you've dropped [NameDesc of the noun].";
 	otherwise:
 		increase the donations of School15 by 1;
 		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".

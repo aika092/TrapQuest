@@ -6,9 +6,11 @@ A woman is a kind of monster.
 
 woman-barbara is a woman.
 
-woman-barbara is intelligent. woman-barbara has a number called delayed sluttification. woman-barbara can be stranger or introduced. woman-barbara is stranger. woman-barbara can be permanently dead. woman-barbara is not permanently dead. The leftover-type of woman-barbara is usually 130. woman-barbara can be angered. the favour of woman-barbara is 10. woman-barbara can be tentacle-pregnant. woman-barbara can be truly-female or truly-male. woman-barbara is truly-female.
+woman-barbara is intelligent. woman-barbara has a number called delayed sluttification. woman-barbara can be stranger or introduced. woman-barbara is stranger. The leftover-type of woman-barbara is usually 130. woman-barbara can be angered. the favour of woman-barbara is 10. woman-barbara can be tentacle-pregnant. woman-barbara can be truly-female or truly-male. woman-barbara is truly-female.
 
 Definition: woman-barbara is normally ally if the favour of it >= 10.
+
+Definition: woman-barbara is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 woman-barbara has a number called woman-status.
 
@@ -108,10 +110,10 @@ To say MonsterDesc of (M - woman-barbara):
 
 To set up (M - woman-barbara):
 	now the monstersetup of M is 1;
-	now the health of M is the maxhealth of M;
 	[if lady fetish is 2, now M is truly-male;]
 	now M is in Woods01;
 	now the raw difficulty of M is 17;
+	now the health of M is the maxhealth of M;
 	calm M.
 
 To decide which number is the difficulty of (M - woman-barbara):
@@ -187,7 +189,7 @@ This is the spawn initial barbara rule:
 The spawn initial barbara rule is listed in the setting up woods monsters rules.
 
 To uniquely destroy (M - woman-barbara): [Are there any special rules we need to follow?]
-	now M is permanently dead. [This should stop her spawning again.]
+	now M is permanently banished. [This should stop her spawning again.]
 
 Definition: woman-barbara is human: decide yes.
 
@@ -264,12 +266,20 @@ STATES:
 99: Dead
 ]
 
+Definition: woman-barbara is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
+Definition: woman-barbara is redeploy appropriate:
+	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)):
+		if the number of interested regional monsters is 0, decide yes;
+	decide no.
+Definition: woman-barbara is deploy appropriate if it is off-stage and it is not angered and it is summon-available and it is introduced.
+Definition: woman-barbara is angry deploy appropriate if it is off-stage and it is summon-available and it is introduced.
+
 To deploy (M - woman-barbara) with woman-status (V - a number):
 	now the woman-status of M is V;
 	now the sleep of M is 0;
 	now the boredom of M is 0;
 	now M is not interested;
-	if M is off-stage and M is introduced and M is not permanently dead and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops barbara spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
+	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops barbara spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 2:
 			now M is in the location of the player;
@@ -277,7 +287,7 @@ To deploy (M - woman-barbara) with woman-status (V - a number):
 			now M is interested;
 		otherwise if V is 3:
 			now M is in Dungeon06;
-			if the player is in Dungeon06, say "[bold type]You spot [M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
+			if the player is in Dungeon06, say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
 			now minotaur is unleashed;
 			if the player is in Dungeon36, say "You hear a mechanism whirring and watch with [if the bimbo of the player < 8]horror[otherwise if the bimbo of the player < 13]terrified excitement[otherwise]delight[end if] as the [minotaur][']s cage suddenly swings open!";
 			otherwise say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
@@ -287,7 +297,7 @@ To deploy (M - woman-barbara) with woman-status (V - a number):
 The womanspawning rules is a rulebook.
 
 A time based rule (this is the woman spawning rule):
-	if woman-barbara is off-stage and woman-barbara is introduced and woman-barbara is not permanently dead:
+	if woman-barbara is angry deploy appropriate:
 		follow the womanspawning rules;
 	if woman-barbara is off-stage:
 		while the delayed sluttification of woman-barbara > 0:
@@ -303,7 +313,7 @@ A time based rule (this is the woman spawning rule):
 			unless woman-barbara is in the location of the player or woman-barbara is nearby or woman-barbara is stranger or the woman-status of woman-barbara >= 80, vanish woman-barbara.
 
 This is the woman spawning to help the player with bondage rule:
-	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1:
+	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
 		deploy woman-barbara with woman-status 2;
 		rule succeeds.
 The woman spawning to help the player with bondage rule is listed last in the womanspawning rules.
@@ -340,7 +350,7 @@ The woman spawning in the region of the player rule is listed last in the womans
 Chapter - Hotel Chair Scene
 
 Report going when the player is in Hotel21 and Hotel21 is not discovered:
-	if woman-barbara is introduced and the number of monsters in Hotel21 is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in Hotel21 is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 5;
 		say "You walk into the staff room just in time to see [NameDesc of woman-barbara] sitting down on one of the dildo chairs in this room, easing the large golden dong into [his of woman-barbara] asshole. Suddenly [he of woman-barbara] yelps. ";
 		let R be a random number between 1 and 4;
@@ -367,7 +377,7 @@ woman-barbara has a number called vine-scene.
 
 Report going when there is an aggressive vine in the location [of the player ]and the woman-bimbo of woman-barbara < 4 and the vine-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 90;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -375,7 +385,7 @@ Report going when there is an aggressive vine in the location [of the player ]an
 			now the TrapNo of V is -7500; [prevents it from attacking the player]
 		say "As you arrive here you see that [NameDesc of woman-barbara] is here, on [his of woman-barbara] hands and knees, with strong green vines wrapped around [his of woman-barbara] wrists and ankles, holding them in place.".
 
-A time based rule (this is the barbara vines rule):
+An all time based rule (this is the barbara vines rule):
 	if the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 4:
 		if there are vines in the location of woman-barbara:
 			let W be woman-barbara;
@@ -453,7 +463,7 @@ woman-barbara has a number called vine-hole-scene.
 
 Report going when the vine-hole-scene of woman-barbara is 0 and the woman-bimbo of woman-barbara is 2 and the player is the donator and the location is Woods16:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and woman-barbara is not permanently dead and another-turn is 0 and vine boss is in WoodsBoss01 and the vine-scene of woman-barbara is 6:
+	if the number of monsters in the location of the player is 0 and another-turn is 0 and vine boss is in WoodsBoss01 and the vine-scene of woman-barbara is 6 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 29;
 		now the vine-hole-scene of woman-barbara is 1;
 		now woman-barbara is in the location of the player;
@@ -528,7 +538,7 @@ woman-barbara has a number called mechanic-scene.
 
 Report going when there is an uninterested mechanic in the location [of the player ]and the mechanic-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and the number of monsters in the location of the player is 1 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 1 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 91;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -580,7 +590,7 @@ Check kneeing mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-
 Check kicking mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-barbara is 91:
 	if the mechanic-scene of woman-barbara <= 3 and woman-barbara is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
 
-A later time based rule (this is the mechanic finishes with barbara rule):
+An all later time based rule (this is the mechanic finishes with barbara rule):
 	if the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 3 and mechanic is not in the location of the player:
 		increase the mechanic-scene of woman-barbara by 1;
 		if the mechanic-scene of woman-barbara is 4:
@@ -605,7 +615,7 @@ Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley",
 
 Report going when the player is in Hotel37 and the anal-contraption-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and the number of monsters in the location of the player is 0 and (the number of interested regional monsters) - (the number of interested regional woman) is 0 and woman-barbara is not permanently dead and dominatrix is alive:
+	if the number of monsters in the location of the player is 0 and dominatrix is alive and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 93;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -783,12 +793,12 @@ woman-barbara has a number called human-toilet-scene.
 
 To check barbara toilet:
 	if the player is in Hotel38 and watersports fetish is 1:
-		if the human-toilet-scene of woman-barbara is 0 and woman-barbara is not permanently dead and woman-barbara is introduced and woman-barbara is not nearby and woman-barbara is not in the location of the player and the woman-bimbo of woman-barbara >= a random number between 2 and 5 and the woman-status of woman-barbara < 10:
+		if the human-toilet-scene of woman-barbara is 0 and the woman-bimbo of woman-barbara >= (a random number between 2 and 5) and the woman-status of woman-barbara < 10 and woman-barbara is redeploy appropriate:
 			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-barbara] below you looks different from usual.";
 			cutshow figure of barbara cutscene 4 for toilet;
 			say "Looking [if the player is female]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-barbara]! [big he of woman-barbara] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-barbara]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-barbara][']s saying? There's a key that can be used to release [him of woman-barbara], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-barbara] is the new hotel toilet. It's up to you how many more times you use [his of woman-barbara] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-barbara] sanity, but it might help you feel more dominant.";
 			now the human-toilet-scene of woman-barbara is 2;
-			now woman-barbara is permanently dead;
+			now woman-barbara is permanently banished;
 			WomanSluttify;
 		otherwise if the human-toilet-scene of woman-barbara is not 1:
 			cutshow figure of barbara cutscene 4 for toilet;
@@ -816,7 +826,7 @@ To compute barbara toilet release:
 		otherwise:
 			allocate 6 seconds;
 			now the human-toilet-scene of woman-barbara is 1;
-			now woman-barbara is not permanently dead;
+			now woman-barbara is summon-available;
 			say "You push the key into the slot and twist. Moments later you have parted the front of the toilet bowl and [NameDesc of woman-barbara] is clambering out of [his of woman-barbara] prison. [big he of woman-barbara] rolls over onto [his of woman-barbara] side and promptly pukes up a gallon of [urine].[line break][speech style of woman-barbara]'Thank you so much for saving me...'[roman type][line break]That's all [he of woman-barbara] can manage before passing out.";
 			deploy woman-barbara with woman-status 95;
 			now woman-barbara is in the location of the player;
@@ -1094,15 +1104,15 @@ Chapter - Throne Scene
 
 woman-barbara has a number called throne-scene.
 
-Report going when the player is in Dungeon11 and the player is an april 2019 top donator and the woman-bimbo of woman-barbara is 4 and the throne-scene of woman-barbara is 0 and (woman-barbara is off-stage or the woman-status of woman-barbara < 10):
+Report going when the player is in Dungeon11 and the player is the donator and the woman-bimbo of woman-barbara is 4 and the throne-scene of woman-barbara is 0 and woman-barbara is redeploy appropriate:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 97;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
 		say "As you arrive you see [NameDesc of woman-barbara] is here, sitting on the throne. [big his of woman-barbara] belly looks a little more round than you'd expect. It looks like [he of woman-barbara] was about to stand up, but then [he of woman-barbara] saw you and changed [his of woman-barbara] mind.".
 
-A time based rule (this is the barbara throne rule):
+An all time based rule (this is the barbara throne rule):
 	if the woman-status of woman-barbara is 97 and the throne-scene of woman-barbara <= 4:
 		let W be woman-barbara;
 		if W is in the location of the player:
@@ -1153,39 +1163,37 @@ Chapter - Crafting Scene
 
 woman-barbara has a number called crafting-scene.
 
-Report going when the player is in Dungeon37 and the player is an april 2019 top donator and the woman-bimbo of woman-barbara is 4 and the crafting-scene of woman-barbara is 0 and (woman-barbara is off-stage or the woman-status of woman-barbara < 10):
-	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
-		let W be woman-barbara;
-		deploy W with woman-status 6;
-		now W is in the location of the player;
-		now W is interested;
-		say "You see [NameDesc of W] is here, in the middle of crafting a potion. [big he of W] is bent over at the waist, deep in thought, [his of W] [if lady fetish < 2]pussy and [end if]asshole on total display.";
-		alwayscutshow Figure of Barbara Cutscene 6 for W;
-		say "Before you can say anything, [he of woman-barbara] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of W]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of W] hands you the pink vial.";
-		appropriate-cutscene-display Figure of Barbara Cutscene 7;
-		say "Do you drink it? ";
-		if the player is consenting:
-			say "You bravely swig the vial in a single gulp. ";
-			if a random number between 1 and 3 is 1:
-				let L be the list of worn upgradable clothing;
-				say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
-				repeat with C running through L:
-					potentially transform C;
-			otherwise:
-				say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
-				SexAddictDown 1;
-				FuckholeAddictDown 1;
-				IntUp 1;
+Report going when the player is in Dungeon37 and the player is the donator and the woman-bimbo of woman-barbara is 4 and the crafting-scene of woman-barbara is 0 and woman-barbara is redeploy appropriate:
+	let W be woman-barbara;
+	deploy W with woman-status 6;
+	now W is in the location of the player;
+	now W is interested;
+	say "You see [NameDesc of W] is here, in the middle of crafting a potion. [big he of W] is bent over at the waist, deep in thought, [his of W] [if lady fetish < 2]pussy and [end if]asshole on total display.";
+	alwayscutshow Figure of Barbara Cutscene 6 for W;
+	say "Before you can say anything, [he of woman-barbara] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of W]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of W] hands you the pink vial.";
+	appropriate-cutscene-display Figure of Barbara Cutscene 7;
+	say "Do you drink it? ";
+	if the player is consenting:
+		say "You bravely swig the vial in a single gulp. ";
+		if a random number between 1 and 3 is 1:
+			let L be the list of worn upgradable clothing;
+			say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
+			repeat with C running through L:
+				potentially transform C;
 		otherwise:
-			say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
-			if a random number between 1 and 2 is 1:
-				say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
-				ImmediateWomanSluttify;
-			otherwise:
-				say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
-				ImmediateWomanUnsluttify;
-			say MonsterDesc of W.
+			say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
+			SexAddictDown 1;
+			FuckholeAddictDown 1;
+			IntUp 1;
+	otherwise:
+		say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
+		if a random number between 1 and 2 is 1:
+			say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
+			ImmediateWomanSluttify;
+		otherwise:
+			say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
+			ImmediateWomanUnsluttify;
+		say MonsterDesc of W.
 
 Part 4 - Wandering
 
@@ -1615,5 +1623,10 @@ To compute friendly food of (M - woman-barbara):
 Definition: woman-barbara is dismissable if the woman-status of it < 80.
 To say Undismissable of (M - woman-barbara):
 	say "[BigNameDesc of M] seems [if the woman-status of M is 80]a bit confused[otherwise]to choose to ignore that[end if].".
+
+To compute enema floor reaction of (M - woman-barbara):
+	humiliate 100;
+	if voluntarySquatting is 1, humiliate 200;
+	if M is interested and M is friendly, say "[BigNameDesc of M] coughs and pretends [he of M] doesn't notice.".
 
 Woman Barbara ends here.

@@ -13,7 +13,7 @@ Figure of pinkwardrobe is the file "Env/Dungeon/wardrobe1.png".
 Definition: pink wardrobe is immune to change: decide yes.
 
 To add treasure to (X - a pink wardrobe):
-	say "You open the pink wardrobe, revealing several pieces of [if the bimbo of the player < 3]obscene[otherwise if the bimbo of the player < 7]dodgy looking[otherwise]useful looking[end if] clothing. You see ";
+	say "You open the pink wardrobe, revealing several pieces of [if the bimbo of the player < 7]dodgy[otherwise]useful[end if] looking clothing. You see ";
 	let c-count be 0;
 	repeat with O running through clothing in pink wardrobe:
 		increase c-count by 1;
@@ -33,6 +33,6 @@ To add treasure to (X - a pink wardrobe):
 			say "[first custom style][if there is I love my wet nappies T-shirt in X]Oh sweet! Looks like a total MILF lives here. And one who really loves her offspring, looking at that T-shirt.[otherwise][one of]Wow, a total slut must live in here.[or]I've only seen closets like this in hustler magazine.[or]I hope the babe that lives in here won't mind if I steal her panties.[purely at random][end if][roman type][line break]";
 		otherwise:
 			say "[first custom style][if latex prisoner is 1]So THAT's what I'll be able to wear after I get this awful thing off?[otherwise if there is I love my wet nappies T-shirt in X]That underwear seems okay at least. Wait, does that T-shirt say what I think it says?![otherwise][one of]Is this supposed to be my wardrobe?[or]Am I supposed to wear this slutty crap?[or]So, I either have to go naked, or I have to walk around in this crap like a tart. I'm not sure which is worse.[purely at random][end if][roman type][line break]";
-	if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your starting kit. These items will never be blessed, and are sometimes cursed but they're often better than nothing, since going around naked will upset most NPCs, and these are actually some of the least outrageous clothing items in the game. Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]".
+	if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your main starting kit. These items start identified and have no random magic properties and although they might be more slutty than what your character would normally wear, you are still going to want to put some on, since going around naked will upset most NPCs, and these are actually some of the least outrageous clothing items in the game.[roman type][line break]".
 
 Pink Wardrobe ends here.

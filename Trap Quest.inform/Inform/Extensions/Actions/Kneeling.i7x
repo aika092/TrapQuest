@@ -82,8 +82,8 @@ Carry out kneeling:
 					now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]
 					compute service spill punishment;
 					say aprilFoolsClumsyFlav;
-		if the class of the player is maid and there is a worn spray pink spraybottle and a random number between clumsy and 1 > 0:
-			compute a random pink spraybottle breaking;
+		if the class of the player is maid and pink-spraybottle is worn and pink-spraybottle is spray and a random number between clumsy and 1 > 0:
+			compute pink-spraybottle breaking;
 		if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
 			let D be ((a random number from 15 to 35) - the dexterity of the player) / 3;
 			if D + the cakes-taken of skirt-tray-vibrator > the max-cakes of skirt-tray-vibrator, now D is the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;

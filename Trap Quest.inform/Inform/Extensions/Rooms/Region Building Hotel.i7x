@@ -58,6 +58,13 @@ To Set Up The Hotel:
 	if debugmode > 0, say "Finished setting up traps.";
 	repeat with M running through alive monsters in the hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
+	[let N1 be the regionalMonsterCount of the Hotel;]
+	repeat with N2 running from 1 to startingRegionalMonsterCount:
+		let M be a random off-stage hotel dwelling regionally missing monster;
+		if M is not monster, now M is a random off-stage hotel dwelling monster;
+		if M is monster:
+			set up M;
+			now M is in a random placed modern room;
 	[change the down exit of School01 to Hotel29;]
 	if armband is off-stage and receptionist is undefeated: [Player can engage with the school side quest the first time they find this room]
 		set up receptionist;

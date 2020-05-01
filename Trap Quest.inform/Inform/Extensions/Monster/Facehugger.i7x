@@ -4,6 +4,8 @@ A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of fa
 
 There are 10 facehuggers.
 
+Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 To decide which number is the girth of (M - a facehugger):
 	decide on 1.
 
@@ -35,6 +37,12 @@ To set up (M - facehugger):
 	facehuggerShortcutAssign M;
 	anger M;
 	now M is interested.
+
+To decide which number is the difficulty of (M - a facehugger):
+	decide on the raw difficulty of M.
+
+To decide which number is the maxhealth of (M - a facehugger):
+	decide on 6 + game difficulty.
 
 To compute labour to (M - a facehugger):
 	compute tentacle birth. [Possibly this can be changed so tentacle monster daddy is different from lake monster, vine, and belt daddy.]

@@ -66,37 +66,40 @@ Figure of Guard Cutscene 5 is the file "Special/Cutscene/cutscene-guard-climax3.
 Figure of Guard Cutscene 6 is the file "Special/Cutscene/cutscene-guard-climax4.png".
 Figure of Guard Cutscene 7 is the file "Special/Cutscene/cutscene-guard-sex2.png".
 
-Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.png".
-Figure of Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3.png".
-Figure of Insane Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4.png".
-Figure of Wild Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator5.png".
+Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1b.jpg".
+Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.jpg".
+Figure of Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3.jpg".
+Figure of Unfriendly Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3b.jpg".
+Figure of Enlightened Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4.png".
+Figure of Unfriendly Enlightened Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4b.jpg".
 
-Figure of Gladiator Interact 8 is the file "Special/Cutscene/cutscene-gladiator-interact8.png".
+Figure of Gladiator Interact 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact8.jpg".
+Figure of Gladiator Interact 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact9.jpg".
 
-Figure of Gladiator Cutscene 1 is the file "Special/Cutscene/cutscene-gladiator-transform1.png".
-Figure of Gladiator Cutscene 2 is the file "Special/Cutscene/cutscene-gladiator-transform2.png".
-Figure of Gladiator Cutscene 3 is the file "Special/Cutscene/cutscene-gladiator-fuck1.png".
-Figure of Gladiator Cutscene 4 is the file "Special/Cutscene/cutscene-gladiator-fuck2.png".
-Figure of Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladiator-fuck3.png".
-Figure of Gladiator Cutscene 6 is the file "Special/Cutscene/cutscene-gladiator-fuck4.png".
-Figure of Gladiator Cutscene 7 is the file "Special/Cutscene/cutscene-gladiator-fuck5.png".
-Figure of Gladiator Cutscene 8 is the file "Special/Cutscene/cutscene-gladiator-fuck6.png".
-Figure of Gladiator Cutscene 9 is the file "Special/Cutscene/cutscene-gladiator-fuck7.png".
-Figure of Gladiator Cutscene 10 is the file "Special/Cutscene/cutscene-gladiator-fuck8.png".
-Figure of Gladiator Cutscene 11 is the file "Special/Cutscene/cutscene-gladiator-fuck9.png".
+Figure of Gladiator Cutscene 1 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform1.png".
+Figure of Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform2.png".
+Figure of Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck1.png".
+Figure of Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck2.png".
+Figure of Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck3.png".
+Figure of Gladiator Cutscene 6 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck4.png".
+Figure of Gladiator Cutscene 7 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck5.png".
+Figure of Gladiator Cutscene 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck6.png".
+Figure of Gladiator Cutscene 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck7.png".
+Figure of Gladiator Cutscene 10 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck8.png".
+Figure of Gladiator Cutscene 11 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck9.png".
 
-Figure of Gladiator Cutscene 15 is the file "Special/Cutscene/cutscene-gladiator-revenge1.png". [missionary]
-Figure of Gladiator Cutscene 16 is the file "Special/Cutscene/cutscene-gladiator-revenge2.png". [doggy]
-Figure of Gladiator Cutscene 17 is the file "Special/Cutscene/cutscene-gladiator-revenge3.png". [oral]
-Figure of Gladiator Cutscene 18 is the file "Special/Cutscene/cutscene-gladiator-revenge4.png". [facial]
-Figure of Gladiator Cutscene 19 is the file "Special/Cutscene/cutscene-gladiator-revenge5.png". [titfuck]
-Figure of Gladiator Cutscene 20 is the file "Special/Cutscene/cutscene-gladiator-revenge6.png". [titfuck cumshot]
+Figure of Gladiator Cutscene 15 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge1.png". [missionary]
+Figure of Gladiator Cutscene 16 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge2.png". [doggy]
+Figure of Gladiator Cutscene 17 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge3.png". [oral]
+Figure of Gladiator Cutscene 18 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge4.png". [facial]
+Figure of Gladiator Cutscene 19 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge5.png". [titfuck]
+Figure of Gladiator Cutscene 20 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge6.png". [titfuck cumshot]
 
-Figure of Wild Gladiator Cutscene 1 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck1.png". [male anal]
-Figure of Wild Gladiator Cutscene 2 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck2.png". [female anal]
-Figure of Wild Gladiator Cutscene 3 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck3.jpg". [male anal woods]
-Figure of Wild Gladiator Cutscene 4 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
-Figure of Wild Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
+Figure of Wild Gladiator Cutscene 1 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck1.png". [male anal]
+Figure of Wild Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck2.png". [female anal]
+Figure of Wild Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck3.jpg". [male anal woods]
+Figure of Wild Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
+Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
 
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
@@ -104,6 +107,10 @@ Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
+
+Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+Figure of male toilet is the file "Env/MultiFloor/toilet3.jpg".
+Figure of female toilet is the file "Env/MultiFloor/toilet4.jpg".
 
 Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg".
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
@@ -161,6 +168,8 @@ Figure of Egg Laying 6 is the file "Special/Cutscene/cutscene-egg-large1.jpg".
 Figure of Egg Laying 7 is the file "Special/Cutscene/cutscene-egg-large2.jpg".
 
 Figure of Egg Laying 8 is the file "Special/Cutscene/cutscene-egg-small3.jpg".
+
+Figure of elder altar is the file "Env/Mansion/altar2.jpg".
 
 Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
 Figure of enslaved headmistress is the file "NPCs/School/headmistress2.png".
@@ -251,6 +260,8 @@ To get oral creampie image for (M - a thing):
 		otherwise:
 			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
 			otherwise cutshow figure of Oral Creampie Cutscene 1.
+
+Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
 
 Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 

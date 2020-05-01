@@ -1,5 +1,8 @@
 Dominating Monsters by Monster Framework begins here.
 
+
+
+Definition: a monster is permanently banishable if it is intelligent. [Can't be summoned again once banished]
 To compute banishment of (M - a monster):
 	compute unique banishment of M;
 	if there are things retained by M:
@@ -13,8 +16,7 @@ To compute banishment of (M - a monster):
 	if J is clothing and M is wenchy, follow the demon junk punishment rule;
 	if there is a worn notebook, compute studying 1 of M;
 	destroy M;
-	if playerRegion is Woods and giant-statue is active:
-		ChargeDown giant-statue by 20.
+	if M is permanently banishable, now M is permanently banished.
 To compute unique banishment of (M - a monster):
 	do nothing.
 
@@ -83,7 +85,6 @@ To compute pitying of (M - a monster):
 	if M is intelligent, say PityOfferResponse of M;
 	compute M slinking away.
 
-
 To say PityOfferFlav of (M - a monster):
 	if M is intelligent:
 		say "You lower a hand to help [NameDesc of M] to [his of M] feet.";
@@ -94,12 +95,14 @@ To say PityOfferResponse of (M - a monster):
 
 Definition: a monster is penis-fuckable if it is wenchy. [Can this NPC be fucked with a penis when defeated?]
 Definition: yourself is penis-fuckable: [Can the player use their penis to dominant-fuck?]
+	if diaper quest is 1, decide no;
 	if there is a worn condom of kings, decide no;
-	if there is worn strapon-panties and (there is a worn chastity cage or there is a worn restricting research airhancer), decide no;
-	if there is a undisplacable pussy covering clothing, decide no;
 	if there is a worn chastity cage, decide no;
 	if there is a worn restricting research airhancer, decide no;
-	if sexual-penis-length > 0, decide yes;
+	if sexual-penis-length > 0:
+		if there is a worn strapon-panties, decide yes;[most strapons ARE undisplacable pussy covering clothing.]
+		if there is a undisplacable pussy covering clothing, decide no;
+		decide yes;
 	decide no.
 To say PenisFucker:
 	let S be a random worn strapon-panties;
@@ -110,6 +113,7 @@ To say PenisFuckDesc of (M - a monster):
 
 Definition: a monster is vagina-rideable if it is wenchy. [Can this NPC have the player use their pussy to dominate them?]
 Definition: yourself is vagina-rideable: [Can the player use their pussy to dominate them?]
+	if diaper quest is 1, decide no;
 	if the player is male, decide no;
 	if there is undisplacable pussy covering clothing, decide no;
 	if there is a worn chastity cage, decide no;
@@ -120,6 +124,8 @@ To say VaginaRideDesc of (M - a monster):
 
 Definition: a monster is ass-rideable if it is wenchy. [Can this NPC have the player use their asshole to dominate them?]
 Definition: yourself is ass-rideable: [Can the player use their asshole to dominate them?]
+	if diaper quest is 1, decide no;
+	if the player is female, decide no;[right now, all the anal domination scenes assume the player definitely doesn't have a vagina, so this needs to be disabled for now]
 	if there is a worn undisplacable ass covering clothing, decide no;
 	if asshole is actually occupied, decide no;
 	decide yes.
@@ -128,12 +134,19 @@ To say AssRideDesc of (M - a monster):
 
 Definition: a monster is piss-fuckable if it is wenchy. [Can this NPC be pissed on when defeated?]
 Definition: yourself is piss-fuckable: [Can the player currently piss on someone?]
-	decide no;[not implemented yet]
+	if watersports fetish is 0, decide no;
 	if there is worn undisplacable pee covering clothing, decide no;
 	if the player is not bursting, decide no;
 	decide yes.
 To say PissFuckDesc of (M - a monster):
 	say "Attempt to dominate [him of M] by pissing on [him of M].".
+
+Definition: a monster is diaper-rideable if it is wenchy. [Can this NPC be diaper-sat on when defeated?]
+Definition: yourself is diaper-rideable: [Can the player currently diaper-sit on someone?]
+	if the number of worn diapers is 0, decide no;
+	decide yes.
+To say DiaperRideDesc of (M - a monster):
+	say "Attempt to dominate [him of M] by sitting your diaper on [his of M] face.".
 
 Definition: a monster is uniquely-fuckable: decide no. [Can this NPC be dominated in a unique way?]
 To say UniqueFuckDesc of (M - a monster): [This should be replaced with a short description of the unique domination action]
@@ -158,17 +171,19 @@ To compute defeat of (M - a monster):
 		let AT be the substituted form of "[AssRideDesc of M]";
 		let VT be the substituted form of "[VaginaRideDesc of M]";
 		let PiT be the substituted form of "[PissFuckDesc of M]";
+		let DT be the substituted form of "[DiaperRideDesc of M]";
 		let UT be the substituted form of "[UniqueFuckDesc of M]";
 		if the player-class is succubus and M is intelligent and M is not infernal, add "Absorb [his of M] soul" to LT;
 		if M is banishable, add BT to LT;
 		if M is taxable, add TT to LT;
 		if M is pitiable, add PT to LT;
 		let vm be a random video-monitor in the location of the player;[too annoying to deal with, so its not allowed.]
-		if diaper quest is 0 and the latex-transformation of the player < 6 and (vm is not video-monitor or the video-caller of vm is the throne) and (the player is not feeling submissive or the player is a nympho):
+		if the latex-transformation of the player < 6 and (vm is not video-monitor or the video-caller of vm is the throne) and (the player is not feeling submissive or the player is a nympho):
 			if M is penis-fuckable and the player is penis-fuckable, add PeT to LT;
 			if M is vagina-rideable and the player is vagina-rideable, add VT to LT;
 			if M is ass-rideable and the player is ass-rideable, add AT to LT;
-			if watersports fetish is 1 and M is piss-fuckable and the player is piss-fuckable, add PeT to LT;
+			if M is piss-fuckable and the player is piss-fuckable, add PiT to LT;
+			if M is diaper-rideable and the player is diaper-rideable, add DT to LT;
 			if M is uniquely-fuckable, add UT to LT;
 		if the number of entries in LT is 0:
 			compute automatic banishment of M;
@@ -200,6 +215,9 @@ To compute defeat of (M - a monster):
 			otherwise if T is PiT:
 				now player-fucker is belly;
 				compute dominating M;
+			otherwise if T is DT:
+				now player-fucker is thighs;
+				compute dominating M;
 			otherwise if T is UT:
 				now player-fucker is face;
 				compute dominating M;
@@ -216,12 +234,6 @@ To compute defeat of (M - a monster):
 				destroy M;
 			otherwise:
 				say "BUG: Unable to understand defeat choice.".
-
-
-
-
-
-
 
 [!<YourselfIsDomLicious>+
 
@@ -366,14 +378,6 @@ Determines what type of sex the player is currently attempting to have.
 3 - Cowgirl
 
 *!]
-Player-fuckchoice is a number that varies.
-FUCK-WATERSPORTS is always -3.
-FUCK-PENETRATION is always -2.
-FUCK-BLOWJOB is always -1.
-FUCK-NONE is always 0.
-FUCK-FACESIT is always 1.
-FUCK-UNIQUE is always 2.
-FUCK-RIDE is always 3.
 
 Player-fucker is a body part that varies.
 
@@ -382,6 +386,8 @@ Dominating is an action applying to one thing.
 [!<CheckDominating>+
 
 This functions determines whether we let the player try to dominate a monster, and sets things up for the actual attempt. Players that have a penis and players who are wearing strapons have an option to use those on monsters. Players also have an option to use either their vagina (female players) or their asshole (male players). If the player has no penis or no strapon, then it defaults to one of those two. Once we know what the player will be using to dominate the monster, we perform some more specific checks to make sure that the player is actually able to use that properly. NOTE: if the player has a chastity item on, then they won't be able to use a penis for sex, even if it's not directly attached to their body
+
+@deprecated
 
 +!]
 Check dominating:
@@ -398,7 +404,7 @@ Check dominating:
 	say "You would need to defeat [NameDesc of the noun] first." instead;
 	unless the noun is interested, say "[BigNameDesc of the noun] isn't looking at you right now. Try getting their attention first." instead;
 	now player-fucker is face;[player-fucker is what is used to fuck the monster. Face is merely a default value]
-	if the noun is male:
+	if the noun is male and player-fucker is not thighs:
 		let C be 5;
 		if the player is horny, decrease C by 1;
 		if the player is very horny, decrease C by 1;
@@ -437,7 +443,7 @@ Check dominating:
 	otherwise if player-fucker is asshole:
 		if there is a worn undisplacable ass covering clothing, say "You[']ll have to find a way to get your [printed name of a random worn undisplacable ass covering clothing] out of the way first." instead;
 		if asshole is actually occupied, say "You need to remove your [printed name of a random thing penetrating asshole] first!" instead;
-	if the player is feeling submissive and the player is not a nympho, say "Wouldn't it be easier to ask [him of the noun] to fuck me? It would probably be more fun that way, too!" instead;[players with very high delicateness will be too afraid to dominate unless they have high sex obsession too]
+	if the player is feeling submissive and the player is not a nympho, say "Wouldn't it be easier to ask [him of the noun] to dominate me? It would probably be more fun that way, too!" instead;[players with very high delicateness will be too afraid to dominate unless they have high sex obsession too]
 	repeat with M running through monsters in the location of the player:
 		if M is not the noun, compute domination interference of (M) for (the noun);
 		if player-fucking is DOMINANT-FAILURE, now player-fucking is DOMINANT-NONE instead;
@@ -450,7 +456,7 @@ To compute domination interference of (M - a monster) for (N - a monster):
 		say "[BigNameDesc of M] gets in your way and prevents you from dominating [NameDesc of the noun]!";
 		now player-fucking is DOMINANT-FAILURE.
 
-To suggestFucker (F - a body part) for (M - a monster):
+[To suggestFucker (F - a body part) for (M - a monster):
 	if F is a fuckhole:
 		if M is male, say "Do you want to try and use your [variable F] to ride [him of M]?";
 		otherwise say "Do you want to see if you can make [him of M] eat out your [variable F]?";
@@ -458,13 +464,42 @@ To suggestFucker (F - a body part) for (M - a monster):
 		let S be a random worn strapon-panties;
 		say "Do you want to try and use your [if S is clothing][S][otherwise][player-penis][end if] to fuck [him of M]?";
 	otherwise:
-		say "You definitely won't orgasm if you proceed this way. Do you still want to try and dominate [him of M]?".
+		say "You definitely won't orgasm if you proceed this way. Do you still want to try and dominate [him of M]?".]
 
 To say DomThreshold (R - a number):
 	if debuginfo > 0:
 		if R is DOMINANT-DOMINANT, say "Auto dominance threshold met.[roman type][line break]";
 		if R is DOMINANT-NONE, say "Neither auto threshold met.[roman type][line break]";
 		if R is DOMINANT-FAILURE, say "Auto failure threshold met.[roman type][line break]".
+
+Player-fuckchoice is a number that varies.
+FUCK-WATERSPORTS is always -3.
+FUCK-PENETRATION is always -2.
+FUCK-BLOWJOB is always -1.
+FUCK-NONE is always 0.
+FUCK-FACESIT is always 1.
+FUCK-UNIQUE is always 2.
+FUCK-RIDE is always 3.
+
+To decide which number is the dominationtype of (M - a monster) using (F - a body part):
+	if F is a fuckhole:
+		if M is male:
+			if there is a held condom-providing thing:
+				reset multiple choice questions;
+				set next numerical response to "Try riding bareback";
+				set next numerical response to "Try riding with a condom";
+				say "Do you want to use protection?";
+				compute multiple choice question;
+				let CNR be the chosen numerical response;
+				if the printed name of CNR is "Try riding with a condom":
+					say CondomManualFlav of M;
+					now M is wrapped;
+			decide on FUCK-RIDE;
+		otherwise:
+			decide on FUCK-FACESIT;
+	if F is penis, decide on FUCK-PENETRATION;[default, can also be FUCK-BLOWJOB]
+	if F is belly, decide on FUCK-WATERSPORTS;
+	if F is face, decide on FUCK-UNIQUE.
 
 [!<CarryOutDominating>+
 
@@ -479,12 +514,14 @@ AFTER EVERYTHING is said and done, we reset player-fucking to 0.
 
 +!]
 To compute dominating (M - a monster):
+	now player-fuckchoice is the dominationtype of M using player-fucker;
+	if player-fucker is penis and demon codpiece is worn, say CodTightenFlav of demon codpiece;
 	now the health of M is the maxhealth of M; [They'll always go back to max HP after a fuck]
 	now player-fucking is DOMINANT-NONE;[we set this to 1 after we're finished determining success]
 	let R be (the number of worn dominance clothing * 2) + (the maxhealth of M / 2);
 	if let it die tattoo is worn, decrease R by 10;
 	if the delicateness of the player is 20:
-		now player-fucking is DOMINANT-FAILURE;[anymore than 50% hp and it's auto loss]
+		now player-fucking is DOMINANT-FAILURE;
 		if debugmode > 0, say "[input style]Player is too submissive.[line break]";
 		say DomThreshold player-fucking;
 	otherwise:
@@ -497,7 +534,6 @@ To compute dominating (M - a monster):
 		if J is clothing and player-fucker is penis:
 			say CodLoosenFlav of J;
 			follow the demon junk reward rule;
-		replace M after domination;
 		let H be rugged-headband;
 		if the player is the donator, progress quest of domination-quest;
 		if the times-dominated of M >= 2 and the player is the donator:
@@ -505,6 +541,8 @@ To compute dominating (M - a monster):
 				say "You feel your hair being tousled as a [MediumDesc of H] materialises on your head.";
 				summon H cursed with quest;
 				now rugged-summoned is 1;
+		unless M is interested:[if a monster is still interested, it means we want them to stay around after they are dominated. ]
+			replace M after domination;
 		repeat with N running through monsters in the location of the player:
 			if N is not M, say DominationReaction of N to M;
 	otherwise:[Player failed and is getting punished]
@@ -519,10 +557,9 @@ To compute dominating (M - a monster):
 			replace M after domination;
 		repeat with N running through monsters in the location of the player:
 			if N is not M, say DominationFailedReaction of N to M;
-		if the player is an april 2019 top donator, progress quest of domination-quest;
+		if the player is the donator, progress quest of domination-quest;
 	now player-fucking is DOMINANT-NONE;
 	now player-fuckchoice is FUCK-NONE.
-
 
 Understand "dominate [something]", "fuck [something]", "dom [something]", "punish [something]", "screw [something]", "bang [something]", "do [something]", "enjoy [something]", "have sex with [something]", "sleep with [something]" as dominating.
 
@@ -541,8 +578,9 @@ By default, puts 1/3 the player's strength against roughly 5/6 the monster's dif
 
 +!]
 To decide which number is the physical dominance roll for (M - a monster):
-	if debuginfo > 0, say "[input style]Physical overpower roll eligibility: Player strength rating ([flat strength of the player / 2]) | ([difficulty of M].5) Difficulty level of [ShortDesc of M]";
-	if flat strength of the player / 2 > difficulty of M:
+	let S be the flat strength of the player / 2;
+	if debuginfo > 0, say "[input style]Physical overpower roll eligibility: Player strength rating ([S]) | ([difficulty of M].5) Difficulty level of [ShortDesc of M]";
+	if S > difficulty of M:
 		if debuginfo > 0, say "PASSED! 50% Chance of automatic success...[roman type][line break]";
 		if a random number between 1 and 2 is 1, decide on DOMINANT-DOMINANT;
 	if debuginfo > 0, say "Failed.[roman type][line break]";
@@ -568,6 +606,7 @@ To decide which number is the dominance of the player:
 			if sexual-penis-length > 7, increase D by 1;
 			if sexual-penis-length < 5, decrease D by 1; [a smaller erection is actually less intimidating]
 	if fuckskill is 0, decrease D by the delicateness of the player / 4;
+	increase D by the charisma of the player;
 	decide on D.
 
 [!<DecideWhichNumberIsTheSubmissivenessOfMonster>+
@@ -587,6 +626,27 @@ To decide which number is the submissiveness of (M - a monster):
 	if debuginfo > 0, say "[input style]Final dominance check: Player dominance roll ([N]) | ([D].5) [ShortDesc of M] resistance[roman type][line break]";
 	if N > D, decide on DOMINANT-DOMINANT;
 	decide on DOMINANT-FAILURE.
+
+[!<DecideWhichNumberIsTheSemiDominanceRollForMonster>+
+
+Sometimes player will need to flex their domination muscles after they successfully dominate a monster. This check is meant to standardize those checks.
+
+@param <Monster>:<M> The monster the player is trying to flex on
+@return <Integer> A negative value indicates that the player's flexing failed. Any other value means the player succeeded.
+
++!]
+To decide which number is the semi-dominance roll for (M - a monster):
+	let D be the dominance of the player;
+	let S be the submissiveness base of M * -1;
+	if debuginfo > 0, say "[input style]Calculating semi dominance. Value based on player dominance and [ShortDesc of M] submissiveness DC = RNG([D] ~ [S]) [roman type][line break]";
+	decide on a random number between D and S.
+
+To decide which number is the mental semi-dominance roll for (M - a monster):
+	let I be the intelligence of the player;
+	let D be a random number between the dominance of the player and I;
+	let S be a random number between the submissiveness base of M and (I * -1);
+	if debuginfo > 0, say "[input style]Calculating semi dominance(intelligence based). Value based on player dominance and [ShortDesc of M] submissiveness DC = RNG([D] ~ [S]) [roman type][line break]";
+	decide on a random number between D and S.
 
 [!<DecideIfMonsterIsDominantSexReady>+
 
@@ -613,7 +673,7 @@ Outputs the strength of the player's current domination attempt for a particular
 To decide which number is the mental dominance roll for (M - a monster):
 	let D be the dominance of the player;
 	let DD be a random number between (D / 2) and (D * 2);
-	if debuginfo > 0, say "[input style]Calculating player's dominance. Raw value based on remaining energy [if fuckskill is 0]and submissiveness [end if]= [D][line break]RNG([D]/2 ~ [D]*2) = [DD][roman type][line break]";
+	if debuginfo > 0, say "[input style]Calculating player's dominance. Raw value based on remaining energy [if fuckskill is 0]and submissiveness [end if]= [D][line break]RNG([D]/2[bracket][D / 2][close bracket] ~ [D]*2[bracket][D * 2][close bracket]) = [DD][roman type][line break]";
 	decide on DD.
 
 [!<DecideWhichNumberIsSubmissivenessBaseOfMonster>+
@@ -626,10 +686,9 @@ Outputs the "DC" the player's mental dominance roll needs to beat in order to do
 +!]
 To decide which number is the submissiveness base of (M - a monster):
 	let D be the difficulty of M;
-	[decrease D by the times-dominated of M * 2;]
-	decrease D by player-fuckchoice * 2;[player-fuckchoice corresponds to the type of sex.]
+	increase D by player-fuckchoice * 2;[player-fuckchoice corresponds to the type of sex]
+	if M is wrapped, increase D by 2;[making them wear a condom will make domination slightly harder, but they will keep the condom on if you fail]
 	decide on D.
-
 
 [!<SayDominanceSuccessOfMonster>+
 
@@ -639,7 +698,19 @@ This function determines what happens when a monster fails its "submissiveness" 
 
 +!]
 To say DominanceSuccess of (M - a monster):
-	say "You successfully force [NameDesc of M] to [his of M] knees and [if the size of penis > 0]use [him of M] as your own personal cocksleeve! [otherwise]finger-bang [him of M] into submission. [end if][big he of M] is visibly angry that you managed to get the better of [him of M] this time.".
+	if player-fuckchoice is FUCK-WATERSPORTS:
+		watersports dominate M;
+	otherwise if player-fuckchoice is FUCK-PENETRATION:
+		penetration dominate M;
+	otherwise if player-fuckchoice is FUCK-BLOWJOB:
+		blowjob dominate M;
+	otherwise if player-fuckchoice is FUCK-FACESIT:
+		facesit dominate M;
+	otherwise if player-fuckchoice is FUCK-RIDE:
+		ride dominate M;
+	otherwise:
+		unique dominate M;
+	Bore M.[Ensures that the monster does not remain interested and in the room after domination. If the monster needs to stay around, this function should be replaced]
 
 To say DominationEscapeFlav of (M - a monster):
 	say "[line break][BigNameDesc of M] slinks away as soon as [he of M] has the strength.".
@@ -719,10 +790,8 @@ To compute power bottom reward of (M - monster):
 				if the empty condoms of C > 1, decrease the empty condoms of C by 1;
 				otherwise decrease the used condoms of C by 1;
 				now condom-removed is 1;
-		DelicateDown 1;
-	otherwise:
-		DelicateDown 2;
-		now M is unwrapped.
+	DelicateDown 1;
+	now M is unwrapped.
 
 [!<ReplaceMonsterAfterDomination>+
 
@@ -735,34 +804,117 @@ To replace (M - a monster) after domination:
 	regionally place M;
 	bore M.
 
-[There is a template for dominating monsters, since having the functions broken up is easier than trying to debug a giant unreadable wall of text
-
-Copy Paste.
-
+[Use this for scenes where the player pees on a monster; These scenes should be more dignifying than normal, but not give a chance to orgasm]
 To watersports dominate (M - a monster):
-	say "You fuck [NameDesc of M] and urinate on [him of M].";
+	say "You shove [NameDesc of M] and douse [him of M] with fresh [urine]. [big he of M] is completely humiliated to be treated like a human toilet.";
+	now player-fucking is DOMINANT-DOMINANT;
+	strongDignify;
+	now the bladder of the player is 0;
 	SportsGet.
 
-To oral dominate (M - a monster):
-	say "You make [NameDesc of M] to give you a blowjob.";
+[Use this for oral sex scenes involving the player's penis/strapon.]
+To blowjob dominate (M - a monster):
+	let C be a random bottom level protection clothing;
+	let L be sexual-penis-length;
+	say "You force [NameDesc of M] to [his of M] knees, [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis] and facefuck [him of M] until you cum. [big he of M] is [if L > 8]visibly exhausted, having accepted[otherwise if L > 4]visibly angry[otherwise]completely humiliated[end if] that you got the better of [him of M] this time.";
+	now player-fucking is DOMINANT-NEUTRAL;[all default scenes should be neutral]
+	orgasm;
+	moderateDignify;
 	BlowGet.
 
-To anal dominate (M - a monster):
-	say "You fuck [NameDesc of M] in the ass.";
+[Use this for scenes that potentially take the player's virginity.]
+To penetration dominate (M - a monster):
+	let C be a random bottom level protection clothing;
+	let L be sexual-penis-length;
+	say "You force [NameDesc of M] onto [his of M] hands and knees, [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis], and [if L > 8]destroy[otherwise if L > 4]fuck[otherwise]hump[end if] [his of M] [HoleDesc of M] until you cum. [big he of M] is visibly [if L > 8]exhausted[otherwise if L > 4]annoyed[otherwise]amused[end if] when you return to your feet.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	orgasm;
+	strongDignify;
+	if M is presenting as male, AnalGet;
+	otherwise FuckGet.
+
+[Use this for penetration scenes that definitely involve a monster's ass. Use penetration dominate if there is only one penetration scene.]
+To anal penetration dominate (M - a monster):
+	let C be a random bottom level protection clothing;
+	let L be sexual-penis-length;
+	say "You force [NameDesc of M] onto [his of M] hands and knees, [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis], and [if L > 8]destroy[otherwise if L > 4]fuck[otherwise]hump[end if] [his of M] asshole until you cum. [big he of M] is visibly [if L > 8]exhausted[otherwise if L > 4]annoyed[otherwise]amused[end if] when you return to your feet.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	strongDignify;
+	orgasm;
 	AnalGet.
 
-To vaginal dominate (M - a monster):
-	say "You fuck [NameDesc of M] right in the pussy.";
+[Use this for penetration scenes that involve a monster's main orifice. Use penetration dominate if there is only one penetration scene.]
+To vaginal penetration dominate (M - a monster):
+	let C be a random bottom level protection clothing;
+	let L be sexual-penis-length;
+	say "You force [NameDesc of M] onto [his of M] hands and knees, [if C is not strapon-panties and C is clothing]pull out[otherwise]take[end if] your [SexDesc of penis], and [if L > 8]destroy[otherwise if L > 4]fuck[otherwise]hump[end if] [his of M] pussy until you cum. [big he of M] is [if L > 8]thoroughly satisfied[otherwise if L > 4]visibly satisfied[otherwise]visibly unsatisfied[end if] when you return to your feet.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	strongDignify;
+	orgasm;
+	if L > 4, orgasm M;
 	FuckGet.
 
-To female dominate (M - a monster):
-	say "You make [NameDesc of M] eat you out";
+[Use this for scenes involving one of the player's fuckholes and a monster's mouth. It should be rare for the player to orgasm in these scenes.]
+To facesit dominate (M - a monster):
+	say "You force [NameDesc of M] to [his of M] knees and take a seat on [his of M] face. [big he of M] endures, although [he of M] is clearly annoyed that you got the better of [him of M].";
+	now player-fucking is DOMINANT-NEUTRAL;
+	moderateDignify;
 	LickGet.
 
+[Use this for scenes involving one of the player's fuckholes and a monster's penis. Should generally be riskier than other types of dominant sex.]
+To ride dominate (M - a monster):
+	let F be player-fucker;
+	say "You push [NameDesc of M] down and ride [his of M] [DickDesc of M] until [he of M] fills [if M is wrapped]the condom[otherwise]your [variable F][end if] with [semen]. [big he of M] clearly isn't happy that you got the better of [him of M] this time.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	slightDignify;
+	now M is penetrating F;
+	ruin F;[So the player can lose their virginity]
+	orgasm;
+	orgasm M;
+	if F is asshole:
+		AnalCount;
+		unless M is wrapped, AssFill the semen load of M;[We usually want to avoid pinning condoms to the player during dominant sex.]
+	otherwise:
+		FuckCount;
+		unless M is wrapped, PussyFill the semen load of M;
+	now M is not penetrating F.
+
+[Use this for scenes involving the player's asshole and a monster's penis. If there is only one riding scene, use ride dominate.]
+To anal ride dominate (M - a monster):
+	say "You push [NameDesc of M] down and ride [his of M] [DickDesc of M] until [he of M] fills [if M is wrapped]the condom[otherwise]your [asshole][end if] with [semen]. [big he of M] clearly isn't happy that you got the better of [him of M] this time.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	slightDignify;
+	now M is penetrating asshole;
+	ruin asshole;
+	orgasm;
+	orgasm M;
+	AnalCount;
+	unless M is wrapped, AssFill the semen load of M;
+	now M is not penetrating asshole.
+
+[Use this for scenes involving the player's vagina and a monster's penis. If there is only one riding scene, use ride dominate.]
+To vaginal ride dominate (M - a monster):
+	say "You push [NameDesc of M] down and ride [his of M] [DickDesc of M] until [he of M] fills [if M is wrapped]the condom[otherwise]your [vagina][end if] with [semen]. [big he of M] clearly isn't happy that you got the better of [him of M] this time.";
+	now player-fucking is DOMINANT-NEUTRAL;
+	slightDignify;
+	now M is penetrating vagina;
+	ruin vagina;
+	orgasm;
+	orgasm M;
+	FuckCount;
+	unless M is wrapped, PussyFill the semen load of M;
+	now M is not penetrating vagina.
+
+[Use this for scenes that don't rely on the player's penis or fuckholes. This generally shouldn't show up, since a monster with a unique domination scene will have their own version of this function]
+To unique dominate (M - a monster):
+	say "You successfully force [NameDesc of M] to [his of M] knees and finger-bang [him of M] into submission! [big he of M] is visibly angry that you managed to get the better of [him of M] this time.";
+	slightDignify.
+
+[After the player dominates a monster, they usually have something to say about it! Include this in any xxx dominate functions.]
 To say AfterDominationComment (N - a number) of (M - a monster):
 	say "[line break][speech style of M]'I[']ll pay you back for that...'[roman type][line break]".
 
-]
+
 
 [The monster succeeded the submissiveness check! Easily reusable]
 [!<SayDominanceFailureOfMonster>+

@@ -8,7 +8,9 @@ Definition: shopkeeper is dark skinned: decide yes.
 
 Definition: shopkeeper is raunchy: decide yes.
 
-Definition: shopkeeper is manly-wenchy: decide yes.
+Definition: shopkeeper is wenchy: decide yes.
+
+Definition: shopkeeper is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 shopkeeper is in Dungeon41. Understand "shop", "keeper" as shopkeeper. The printed name of shopkeeper is "[if item described is in the location of the player][TQlink of item described][end if][input-style]well built shopkeeper[shortcut-desc][roman type][if item described is in the location of the player][TQxlink of item described][verb-desc of item described][end if]". The text-shortcut of shopkeeper is "sh". Understand "well", "built" as shopkeeper.
 
@@ -501,7 +503,7 @@ To say angry punishment accessory confiscation of (M - shopkeeper):
 	say "[speech style of M]'I'm gonna keep this for my own personal stash. Don't expect it back from me any time soon, [bitch].'[roman type][line break]".
 
 To say angry punishment clothing destruction of (M - shopkeeper) on (C - a clothing):
-	say "[speech style of M]'[if C is nipple covering and the largeness of breasts > 3]Don't worry, with such good cocksucking skills I'm sure you'll find another soon!'[otherwise if C is ass covering]I hope you don't mind your fuckholes out in the open. I'm guessing not after that display!'[otherwise if the number of worn clothing > 1]Too bad, just buy another from my shop you fucking whore.'[otherwise]Sluts don't need clothes!'[end if][roman type][line break]".
+	say "[speech style of M]'[if C is actually breast covering and the largeness of breasts > 3]Don't worry, with such good cocksucking skills I'm sure you'll find another soon!'[otherwise if C is ass covering]I hope you don't mind your fuckholes out in the open. I'm guessing not after that display!'[otherwise if the number of worn clothing > 1]Too bad, just buy another from my shop you fucking whore.'[otherwise]Sluts don't need clothes!'[end if][roman type][line break]".
 
 To compute the flying player taunting of (M - shopkeeper):
 	if a random number from 1 to 6 is 1:
@@ -527,14 +529,14 @@ To send (M - shopkeeper) home:
 	bore M.
 
 To say CondomPieFlav of (M - shopkeeper) in (F - a fuckhole):
-	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh Shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this black dick to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
+	say "[speech style of M]'Fuck, this is so good! [one of]I'm almost there, baby!'[or]Ooh shit! Shii-iit! Here it comes!'[cycling][roman type][line break][BigNameDesc of M] buries [his of M] entire length inside of you, groaning with pleasure as the condom fills with [his of M] [semen]. You can feel it slowly bulging inside you, stretched thinner with every passing second as it struggles to contain [his of M] massive load, miraculously staying intact as [he of M] slowly pulls out and carefully peels it off without spilling a drop.[line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Didn't actually mean to come inside you, but I guess it's OK since I was wearing a condom.'[otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]I bet you wish this load actually ended up inside you, eh slut? Come back[or]Come[stopping] back when you're ready for this [BlackCock] to breed you for real.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson, otherwise I might have to do it without the condom sometime.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - shopkeeper) in (F - vagina):
 	if the class of the player is living sex doll:[#####Selkie: could do much better here]
 		say "You're vaguely aware you've been hearing some hot chick squealing and squeaking and grunting without words for a long, long time, and then finally fireworks are exploding through your mind and body. When next you come to your senses, you can feel [semen] dripping down your thighs and [NameDesc of M] watching you with one eyebrow raised in smug amusement.";
 		CumThighsUp 2;
 	otherwise:
-		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length inside of you and releasing [his of M] hot load. You can almost hear it flowing inside of you. [line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by black cock. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more black cock, slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
+		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length inside of you and releasing [his of M] hot load. You can almost hear it flowing inside of you. [line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
 To say CreampieFlav of (M - shopkeeper) in (F - asshole):
 	if the class of the player is living sex doll:
@@ -542,7 +544,7 @@ To say CreampieFlav of (M - shopkeeper) in (F - asshole):
 		say "[speech style of M]'Whoah!'[roman type], [he of M] exclaims, pulling [his of M] dick free with a cartoonish rubber squeak, your puckered flange squee-geeing [his of M] dick clean of [semen]. [line break][speech style of M]'Man, that was the best one yet! The sounds this new model makes really add something special to the experience. I wonder if I could convince them to let me add you to my product line? I could even give demonstrations, to potential customers. What say, [']doll[']?'[roman type][line break]";
 		say "[big he of M] leers at you, and you wonder whether [he of M] might [italic type]really[roman type] decide to keep you here! [line break][variable custom style]Then again, would that be so bad?[roman type][line break]Part of you wonders about the possibility of hanging around, maybe poking [him of M] again? After all, you have other orifices your new friend could play with.[line break]";
 	otherwise:
-		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length in you and releasing [his of M] hot load. You can almost hear it flowing inside you. [line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by black cock. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more black cock, slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
+		say "[speech style of M]'Fuck, this is so good! [one of]I haven't properly fucked anyone in way too long...'[or]Don't worry, I've still got lots of jizz left for you...'[stopping][roman type] [BigNameDesc of M] loses control over [himself of M] and orgasms, burying [his of M] entire length in you and releasing [his of M] hot load. You can almost hear it flowing inside you. [line break][speech style of M]'[if the reaction of the player is 2 or the class of the player is cheerleader]Sorry about that, to be fair I didn't mean to come inside you. [otherwise if the class of the player is living sex doll]Wow, you are one amazing sex doll. I hope you come back here again soon!'[otherwise if sissy black cock whore tattoo is worn][one of]Congratulations, you're at least good for one thing, getting bred by [BlackCock]. What do you want, a gold star? Now piss off and come[or]Come[stopping] back when you're ready for more [BlackCock], slut.'[otherwise if M is friendly-fucking]That was fucking amazing. Feel free to ask me to do that again any time!'[otherwise]I hope you learned your lesson.'[end if][roman type][line break]".
 
 To compute post climax effect of (M - shopkeeper) in (F - a fuckhole):
 	if M is friendly, say "[line break][speech style of M]'That was awesome! Feel free to return to the shop if you start feeling horny, I[']m down to fuck you anytime!'[roman type][line break]";
@@ -894,7 +896,6 @@ To MonsterHeal (M - shopkeeper) by (N - a number):
 			now the health of M is the maxhealth of M;
 			if M is unconcerned, send M home.
 
-
 Part 4 - Conversation
 
 Section 1 - Greetings
@@ -984,7 +985,6 @@ To say TauntRejected of (M - shopkeeper):
 	say "[speech style of M]'That's not going to work this time, thief.'[roman type][line break][BigNameDesc of M] seems even more determined to beat you!".
 
 Section 2 - Questions
-
 
 To compute annoyance of (M - shopkeeper):
 	if M is unfriendly:
@@ -1112,45 +1112,13 @@ Definition: shopkeeper is willing to give snacks: decide yes.
 
 Section 5 - Dominant Sex
 
-To suggestFucker (F - a body part) for (M - shopkeeper):
-	if F is penis:
-		say "Do you want to try make [him of M] jerk off your [SexDesc of penis]?";
-		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-UNIQUE;
-	otherwise if F is a fuckhole:
-		say "Do you want to try riding [him of M]?.";
-		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-RIDE;
-	otherwise:
-		say "You decide against it.".
+To decide which number is the dominationtype of (M - shopkeeper) using (F - penis):
+	decide on FUCK-BLOWJOB.
 
 To compute unique dominance reward of (M - shopkeeper):
 	compute power bottom reward of M.
 
-To say DominanceSuccess of (M - shopkeeper):
-	if player-fucker is penis:
-		calm M;
-		weiner dominate M;
-	otherwise:
-		say DominanceIntro of M;
-		now refactoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
-		unless M is wrapped:
-			say "You spit on [his of M] [manly-penis], lubing [him of M] up a bit and breathing in [his of M] rich aroma while nuzzling around the shaft before finally lining up the tip with your hole.";
-		say "[BigNameDesc of M] tries to throw you off, but you have all the leverage here, so it's pretty easy to grab [his of M] wrists and wedge them under [his of M] back.";
-		if the player is male, anal dominate M;
-		otherwise vaginal dominate M.
-
-To say DominanceIntro of (M - shopkeeper):
-	say "You force [NameDesc of M] to the ground, straddling [him of M] as you stroke [his of M] massive [manly-penis]. [PowerBottomComment of M] The shopkeeper raises an eyebrow. [line break][speech style of M][if the class of the player is cheerleader]'This is actually one of my biggest fantasies. I feel like it would be more fun for both of us if I were on top, though.'[otherwise if the class of the player is vixen]'There[']s no way you[']re going to tire me out enough to steal everything. I won[']t fall for that again!'[otherwise]'I had a feeling that's what this was about, but if you wanted to fuck you could have just asked.'[end if][roman type][line break]";
-	if there is a held condom-providing thing:
-		say "Would you like to have [him of M] wear a condom?";
-		if the player is consenting:
-			say CondomManualFlav of M;
-			now M is wrapped.
-
-To weiner dominate (M - shopkeeper):
+To blowjob dominate (M - shopkeeper):[TODO: incorporate a bj here]
 	say "You force [NameDesc of M] to [his of M] knees, [if sexual-penis-length > 8]pressing [his of M] hands to your rapidly hardening[otherwise if sexual-penis-length > 3]placing [his of M] hand against your hardening[otherwise]pulling [his of M] hand toward your stiffening[end if] [SexDesc of penis]. [line break][if the bimbo of the player < 5][first custom style]'[one of]Get to work.'[or]It's not gonna wank itself.'[or]You know what to do.'[at random][otherwise if the bimbo of the player < 11][variable custom style]'[one of]A little help?'[or]You're good at this right? Help me out.'[or]Do something about it.'[at random][otherwise][second custom style]'[one of]Make me cum, baby'[or]I need a [man of M]'s touch.'[or]I'd think about you while I was doing it anyway...'[at random][end if][roman type][line break]";
 	if sexual-penis-length > 8:
 		say "[big he of M] nods, wrapping both hands around your [SexShaft] and slowly beginning to pump. [big his of M] technique is top notch, and it doesn't take long for [him of M] to bring you to an explosive orgasm. [big he of M] stands up with your load dripping from [his of M] hands.";
@@ -1166,12 +1134,18 @@ To weiner dominate (M - shopkeeper):
 		moderateDignify;
 		passively stimulate penis from M times 2.
 
+To ride dominate (M - a shopkeeper):
+	say "You force [NameDesc of M] to the ground, straddling [him of M] as you stroke [his of M] [LongDickDesc of M]. [PowerBottomComment of M] The shopkeeper raises an eyebrow. [line break][speech style of M][if the class of the player is cheerleader]'This is actually one of my biggest fantasies. I feel like it would be more fun for both of us if I were on top, though.'[otherwise if the class of the player is vixen]'There[']s no way you[']re going to tire me out enough to steal everything. I won[']t fall for that again!'[otherwise]'I had a feeling that's what this was about, but if you wanted to fuck you could have just asked.'[end if][roman type][line break]";
+	now refactoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
+	if the player is male and player-fucker is asshole, anal ride dominate M;
+	otherwise vaginal ride dominate M.
+
 [IMPORTANT: The shopkeeper needs to be full health, friendly, and a lot more difficult immediately after sex ends.]
-To vaginal dominate (M - shopkeeper):[The shopkeeper dominant sex is more about him seducing you. You always get a discount, but it's smaller the less of [his of M] cum you dealt with. The more you get seduced, the more you get a discount]
+To vaginal ride dominate (M - shopkeeper):[The shopkeeper dominant sex is more about him seducing you. You always get a discount, but it's smaller the less of [his of M] cum you dealt with. The more you get seduced, the more you get a discount]
 	let V be the vaginal sex addiction of the player * 2;
 	let Ofit be the openness of vagina - the girth of M;
 	now M is penetrating vagina;
-	say "You hold [his of M] [manly-penis] firmly, [if Ofit < -1]grunting quietly under your breath[otherwise if Ofit < 2]sighing[otherwise]humming happily[end if] as you guide the first few inches into your [vagina]. It's huge. [if Ofit < -1]It's not that you're tight (You [i]are[/i] tight), it's that [he of M]'s hung like an elephant, and[otherwise if Ofit < 2]You're not that tight, but [he of M]'s still hung like an elephant, and pretty[otherwise]You're pretty loose, but you know a big piece of meat when you feel one and this one is not just [i]big[/i], it's[end if] excited too.";
+	say "You hold [his of M] shaft firmly, [if Ofit < -1]grunting quietly under your breath[otherwise if Ofit < 2]sighing[otherwise]humming happily[end if] as you guide the first few inches into your [vagina]. It's huge. [if Ofit < -1]It's not that you're tight (You [i]are[/i] tight), it's that [he of M]'s hung like an elephant, and[otherwise if Ofit < 2]You're not that tight, but [he of M]'s still hung like an elephant, and pretty[otherwise]You're pretty loose, but you know a big piece of meat when you feel one and this one is not just [i]big[/i], it's[end if] excited too.";
 	calm M;[This is done first so favour increases have a chance to stick]
 	if V <= 3:[total dominance]
 		ruin vagina times 1;
@@ -1220,7 +1194,7 @@ To vaginal dominate (M - shopkeeper):[The shopkeeper dominant sex is more about 
 		now discount is 1000;
 	FuckCount.
 
-To anal dominate (M - shopkeeper):
+To anal ride dominate (M - shopkeeper):
 	let V be the anal sex addiction of the player * 2;
 	let Ofit be the openness of asshole - the girth of M;
 	now M is penetrating asshole;
@@ -1318,42 +1292,40 @@ To say AfterDominationComment (N - a number) of (M - shopkeeper):
 		say "[speech style of M]'[one of]I'd rather we had sex, but that was OK.'[or]Did you really enjoy that? Sex is way better.'[or]I hope we can work our way up to sex sometime.'[at random][roman type][line break]".
 
 To say DominanceFailure of (M - shopkeeper):
-	if player-fucker is penis:
-		say "[NameDesc of M] strikes you in the chest as you try to force [him of M] to the ground, and something about the look in [his of M] eye says you've already lost. You suddenly collapse into [him of M], [his of M] [DickDesc of M] hardening against your thigh as [he of M] guides you onto your hands and knees.";[omae wa mou...]
-	otherwise:
-		say DominanceIntro of M;
-		unless M is wrapped:
-			say "You stick out your tongue at [him of M], giving [his of M] face a good smack as [if the player is male]you grind your bare [AssDesc] against [his of M] hardening [manly-penis][otherwise]you grind [his of M] hardening [manly-penis] between your naked lower lips[end if].";
-		say "[big he of M] throws you off [his of M] lap, grabbing your wrists and roughly pinning them together behind your back.".
+	say "[NameDesc of M] strikes you in the chest as you try to force [him of M] to the ground, and something about the look in [his of M] eye says you've already lost. You suddenly collapse into [him of M], [his of M] [DickDesc of M] hardening against your thigh as [he of M] guides you onto your hands and knees.".
 
 To compute failed dominance punishment of (M - shopkeeper):
 	if the number of worn removable stolen clothing + the number of held stolen clothing > 0:
 		say "[speech style of M]'First things first.'[roman type][line break]";
-		repeat with T running through worn tearable clothing:[If you're stolen anything, he takes EVERYTHING]
-			say "The shopkeeper yanks off the [T] and throws it to the floor!";
-			now T is in the location of the player;
-			now T is unowned;
+		repeat with T running through worn stolen clothing:
+			say "The shopkeeper yanks off the [T]!";
+			now M is retaining T;
 		repeat with S running through held stolen clothing:
 			say "The shopkeeper takes the [S]!";
 			now M is retaining S;
-	let N be a random number between 1 and 3;
-	if the class of the player is cheerleader, decrease N by 1;[cheerleaders never get the worst outcome]
-	if the class of the player is vixen, now N is 3;[vixens always get the worst outcome]
-	if N is 3:[he summons every guard on the level to gangbang you]
-		drag to Dungeon03 by M;
-	otherwise if N is 2:
-		drag to Dungeon08 by M;
-	otherwise:[he usually takes cheerleaders here]
+	if Dungeon05 is placed and (the class of the player is cheerleader or the player is getting unlucky):
 		drag to Dungeon05 by M;
-	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
-	now another-turn is 1.
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
+		now another-turn is 1;
+	otherwise if Dungeon03 is placed and (the class of the player is vixen or the player is getting very unlucky):
+		drag to Dungeon03 by M;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
+		now another-turn is 1;
+	[otherwise if Dungeon08 is placed and the player is getting unlucky:
+		drag to Dungeon08 by M;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
+		now another-turn is 1;]
+	otherwise:
+		say "[big he of M] gives your ass a firm spank before allowing you to stand up. [speech style of M]'Keep your hands to yourself, you naughty minx.'[roman type][line break]";
+		PainUp 1;
+		Satisfy M.
 
 To say DragFlav of (M - shopkeeper) to (R - Dungeon03):[The stone cell]
 	say "[speech style of M]'People like you need to know what it's like to spend time in a cell.'[roman type][line break]";
 	repeat with N running through alive royal guards:
 		now N is in R.
 
-To say DragArrival of (M - shopkeeper) to (R - Dungeon03):
+To say DragArrival of (M - shopkeeper) to (R - Dungeon03):[TODO: possibly update]
 	let N be the number of alive royal guards;
 	let G be a random royal guard in the location of the player;
 	if N > 0:
@@ -1373,39 +1345,29 @@ To say DragFlav of (M - shopkeeper) to (R - Dungeon05):[Storage room]
 	say "[speech style of M]'Let's take this some place private.'[roman type][line break]".
 
 To say DragArrival of (M - shopkeeper) to (R - Dungeon05):
-	if the number of monsters in the location of the player > 1:
-		say "[speech style of M]'Looks like we have an audience after all! Oh well.'[roman type][line break]";
+	if the number of monsters in the location of the player > 1:[he kicks everyone out]
+		say "[speech style of M]'Give us some privacy, will you!'[roman type][line break]";
+		repeat with X running through monsters in the location of the player:
+			unless X is M:
+				say "[BigNameDesc of X] leaves.";
+				while X is in R:
+					regionally place X;
 	otherwise if the class of the player is cheerleader:
 		say "[speech style of M]'No hard feelings, by the way. I finally get to fuck a cheerleader!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'OK, you can moan as loud as you want here. Better luck next time, by the way.'[roman type][line break]";
 	now the sex-length of M is a random number between 4 and 5.[the sex lasts longer because you're alone]
 
-To say DragFlav of (M - shopkeeper) to (R - Dungeon08):[Training room]
+[To say DragFlav of (M - shopkeeper) to (R - Dungeon08):[Training room]
 	say "[speech style of M]'Let's take this somewhere more fun.'[roman type][line break]".
 
-To say DragArrival of (M - shopkeeper) to (R - Dungeon08):[The shopkeeper puts a dildo in one of your fuckholes]
-	let D be a random off-stage sex toy;
-	let N be 0;
-	while D is unique and N < 25:
-		now D is a random off-stage sex toy;
-		increase N by 1;
-	if the player is female and D is vaginally summonable:
-		[now the chosen-orifice of M is a random orifice;]
-		say "[BigNameDesc of M] reaches into a nearby box, retrieving a [ShortDesc of D]. [big he of M] braces one hand on your hips as [he of M] lines up the tip with your slit, applying gradually increasing pressure on the base until it slides in. [line break][speech style of M][if the chosen-orifice of M is vagina]Oh, wait. I actually meant to fuck your asshole. Oh well, I can put it back later[otherwise]Alright, now the fun part begins[end if].[roman type][line break]";
-		summon D cursed with quest;
-		dislodge D;
-		now D is penetrating vagina;
-	otherwise if D is actually summonable:
-		say "[BigNameDesc of M] reaches into a nearby box, retrieving a [ShortDesc of D]. [big he of M] pushes apart your [AssDesc] as [he of M] lines up the tip with your rosebud, applying gradually increasing pressure on the base until it slides in. [line break][speech style of M][if the chosen-orifice of M is asshole]Oh, wait. I actually meant to fuck your asshole. Oh well, I can put it back later[otherwise]Alright, now the fun part begins[end if].[roman type][line break]";
-		summon D cursed with quest;
-	otherwise:[If you have sex toys in all of your fuckholes, you get a free lube]
-		now the chosen-orifice of M is a random fuckhole;
-		if the player is male and the chosen-orifice of M is vagina, now the chosen-orifice of M is asshole;
-		let L be a random off-stage lubricant;
-		now L is covering chosen-orifice of M;
-		now the timer of L is a random number between 300 and 600;
-		say "[BigNameDesc of M] reaches into a nearby box, retrieving a bottle of lube. [big he of M] squeezes it liberally onto your [chosen-orifice of M], and then onto [his of M] [manly-penis]. [line break][speech style of M]'[one of]Alright, lets both enjoy ourselves. Don't attack me in my shop again, though[or]I can[']t believe I'm doing this for you again[stopping].'[roman type][line break]".
+To say DragArrival of (M - shopkeeper) to (R - Dungeon08):[The shopkeeper lubes you up first]
+	now the chosen-orifice of M is a random fuckhole;
+	if the player is male and the chosen-orifice of M is vagina, now the chosen-orifice of M is asshole;
+	let L be a random lubricant;
+	now L is covering chosen-orifice of M;
+	now the timer of L is a random number between 300 and 600;
+	say "[BigNameDesc of M] reaches into a nearby box, retrieving a bottle of lube. [big he of M] squeezes it liberally onto your [chosen-orifice of M], and then onto [his of M] [DickDesc of M]. [line break][speech style of M]'[one of]Alright, lets both enjoy ourselves. Don't attack me in my shop again, though[or]I can[']t believe I'm doing this for you again[stopping].'[roman type][line break]".]
 
 Section 6 - Trading
 

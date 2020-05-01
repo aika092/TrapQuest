@@ -196,7 +196,7 @@ Definition: a monster (called M) is eager to forcefeed:
 	if M is able to forcefeed, decide yes;
 	decide no.
 
- Definition: a monster (called M) is able to forcefeed:
+Definition: a monster (called M) is able to forcefeed:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn cursed ballgag and M is not able to remove cursed plugs, decide no;
@@ -211,7 +211,8 @@ Definition: forcefeed (called P) is appropriate:
 	decide no.
 
 To compute punishment of (P - forcefeed):
-	compute forcefeed of current-monster.
+	if watersports fetish is 1 and current-monster is willing to urinate, compute current-monster urinating;
+	otherwise compute forcefeed of current-monster.
 
 Section 6 Confiscation
 

@@ -395,7 +395,7 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 Check going while ex-princess is guarding:
 	if ex-princess is in the location of the player, say "If you leave [NameDesc of ex-princess] here, [he of ex-princess] might get captured again. You should see this through to the end." instead.
 
-A later time based rule (this is the school rescue fight rule):
+An all later time based rule (this is the school rescue fight rule):
 	if ex-princess is guarding:
 		let M be ex-princess;
 		let R be the location of M;
@@ -492,7 +492,7 @@ To compute (M - ex-princess) enslaving (N - headmistress):
 		if diaper focus > 0, now N is diaper-enslaved;
 		otherwise now N is sex-enslaved.
 
-A later time based rule (this is the asscum annie rule):
+An all later time based rule (this is the asscum annie rule):
 	if ex-princess is sex-enslaved and playerRegion is School:
 		if the current-torment of ex-princess <= 0:
 			now the current-torment of ex-princess is a random number between 25 and 35;
@@ -545,7 +545,7 @@ A later time based rule (this is the asscum annie rule):
 		otherwise:
 			decrease the current-torment of ex-princess by time-seconds.
 
-A later time based rule (this is the fannie facerub rule):
+An all later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
 			if there is a worn dirty diaper:
@@ -604,7 +604,7 @@ To compute toilet reaction of (M - ex-princess):
 	otherwise:
 		say "[BigNameDesc of M] frowns but politely looks the other way.".
 
-A later time based rule (this is the caged princess torture continues rule):
+An all later time based rule (this is the caged princess torture continues rule):
 	if ex-princess is caged and the current-torment of ex-princess > 0:
 		let M be ex-princess;
 		decrease the current-torment of M by time-seconds;
@@ -626,17 +626,17 @@ A later time based rule (this is the caged princess torture continues rule):
 					say "[one of]You can't help but find the sight rather arousing.[or][or][or][or][or][cycling]";
 					arouse 300.
 
-A time based rule (this is the caged princess tortured rule):
+An all time based rule (this is the caged princess tortured rule):
 	if ex-princess is caged and the current-torment of ex-princess <= 0 and ex-princess is in the location of the player:
 		let N be a random threatening friendly monster in the location of ex-princess;
 		if N is monster:
 			let M be ex-princess;
-			say "[if N is student][one of][speech style of N]'Hmm, this looks fun!'[roman type][line break][or][stopping][end if][if watersports fetish is 1][BigNameDesc of N] waltzes up to the urinal and lets loose a stream of [urine] into the bowl. [BigNameDesc of M] watches on with a mixture of despair and anger.[end if]";
+			say "[if N is student][one of][speech style of N]'Hmm, this looks fun!'[roman type][line break][or][stopping][end if][if watersports fetish is 1 and diaper quest is 0][BigNameDesc of N] waltzes up to the urinal and lets loose a stream of [urine] into the bowl. [BigNameDesc of M] watches on with a mixture of despair and anger.[end if]";
 			increase the torment-count of M by 1;
 			increase the current-torment of M by 60;
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
-			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N][one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
 Definition: ex-princess is messy if it is unconcerned and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 7.
 

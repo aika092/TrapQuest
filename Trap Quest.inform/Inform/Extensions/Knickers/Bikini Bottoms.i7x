@@ -50,11 +50,7 @@ To decide which number is the unique outrage of (C - cow print bikini bottoms):
 
 [pink bikini bottoms]
 
-pink bikini bottoms is a bikini bottoms. A pink bikini bottoms is transformation-rare. A pink bikini bottoms is see-through. [Because it rides up into your snatch - see image]
-The printed name of pink bikini bottoms is "[clothing-title-before]pair of pink bikini bottoms[clothing-title-after]". The text-shortcut of pink bikini bottoms is "pbb". The armour of pink bikini bottoms is 3.
-
-To decide which number is the penis-capacity of (K - pink bikini bottoms):
-	decide on 0.
+pink bikini bottoms is a bikini bottoms. A pink bikini bottoms is transformation-rare. The printed name of pink bikini bottoms is "[clothing-title-before]pair of pink bikini bottoms[clothing-title-after]". The text-shortcut of pink bikini bottoms is "pbb". The armour of pink bikini bottoms is 3.
 
 To compute SelfExamineDesc of (K - pink bikini bottoms):
 	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is female] and rides up into your [vagina][end if]. ";
@@ -70,6 +66,11 @@ To say ClothingDesc of (K - pink bikini bottoms):
 Figure of bikini bottoms 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms2.png".
 
 Definition: pink bikini bottoms is pink themed: decide yes.
+
+Definition: pink bikini bottoms is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+
+To decide which number is the penis-capacity of (H - pink bikini bottoms):
+	decide on 1.
 
 [white crotchless bikini bottoms]
 

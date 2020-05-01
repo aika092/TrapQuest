@@ -28,7 +28,7 @@ Check SelfDrinking:
 	if the largeness of breasts < 7, say "Your [ShortDesc of breasts] are [if the largeness of breasts < 5]nowhere near[otherwise]not[end if] big enough." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is wrist bound behind, say "You would need the proper use of your arms and hands for that." instead;
-	if the player is not nipples exposed, say "Your nipples are not exposed." instead;
+	if there is worn actually nipple covering clothing, say "Your nipples are not exposed." instead.
 
 [!<CarryOutSelfDrinking>+
 

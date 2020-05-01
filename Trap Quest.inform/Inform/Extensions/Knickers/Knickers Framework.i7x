@@ -66,9 +66,9 @@ Report examining knickers:
 		say "[one of][item style]Underwear [if the noun is diaper]in general [end if][if the noun is no protection or (the player is male and the noun is pussy protection)](but not this one!) [end if][if the number of worn knickers is 0]would provide[otherwise]provides[end if] a line of defence against things accessing your [fuckholes].[roman type][line break][or][stopping]".
 
 To decide which number is the core outrage of (C - a knickers): [This is plugged into both outrage and cringe]
-	if C is crotch-exposing, decide on 15;
-	if C is crotch-ripped, decide on 12;
-	if C is actually sheer, decide on 11; [Sheer undies? Very lewd!]
+	if C is crotch-exposing, decide on 11;
+	[if C is crotch-ripped, decide on 12;] [Let's try turning this off. Ripped underwear doesn't make it lewd, but of course what it exposes is probably lewd.]
+	if C is actually sheer, decide on 8; [Sheer undies? Very lewd!]
 	let O be 10 - the armour of C;
 	if O < 3, decide on 3; [It's always a bit tiny bit outrageous to have your bottoms on display, even if it's swimwear]
 	decide on O.

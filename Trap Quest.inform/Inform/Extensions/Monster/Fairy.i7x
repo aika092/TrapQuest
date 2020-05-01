@@ -28,7 +28,7 @@ To decide which figure-name is the monster-image of (M - a fairy):
 	if diaper quest is 1, decide on the figure of diaper fairy;
 	otherwise decide on the figure of fairy.
 
-Definition: A fairy is woods dwelling: decide yes.
+Definition: a fairy is woods dwelling: decide yes.
 
 To say ShortDesc of (M - a fairy):
 	say "fairy".
@@ -71,11 +71,11 @@ To set up (M - a fairy):
 To decide which number is the maxhealth of (M - a fairy):
 	decide on 1 + (the difficulty of M * (1 + game difficulty)).
 
-This is the spawn initial fairy rule:
+[This is the spawn initial fairy rule:
 	while the number of alive fairy < 2:
 		let M be a random off-stage woods dwelling fairy;
 		summon M in the woods.
-The spawn initial fairy rule is listed in the setting up woods monsters rules.
+The spawn initial fairy rule is listed in the setting up woods monsters rules.]
 
 Definition: a fairy is blocker: decide no.
 
@@ -378,7 +378,7 @@ To compute fairySuckling of (M - a fairy):
 	[Let's say the fairy is about size 7, so she can't drink more than that]
 	let NipsWereNkd be 0; [This will be set to 1 if the player had their nipples already sluttily exposed. Not really used, but could be for some humiliating text.]
 	let slashedSomething be 0;
-	if bottom level lactation cover is nothing and random worn nipple covering clothing is nothing:
+	if bottom level lactation cover is nothing and random worn actually nipple covering clothing is nothing:
 		[So this is the case of nipples uncovered: tempting targets]
 		now NipsWereNkd is 1;
 		say "[BigNameDesc of M] [one of]notices your naked teats[or]eyes your breasts[or]eyes focus on your chest[or]narrows [his of M] eyes[at random], and purses [his of M] lips as if sucking. ";
@@ -408,10 +408,10 @@ To compute fairySuckling of (M - a fairy):
 			say "Your trained nipples perk up, to order!";
 	otherwise: [This is the case were she has to attempt to deal with your nipple covering(s).]
 		say "[big he of M] darts forward, and [if FairySuckleSlashes is 0]you suddenly notice [his of M] tiny hands are tipped by [otherwise]you just [italic type]know[roman type] [he of M] can smell your lovely [milk]. [one of]Your nipples are already perking up.[or]Your traitorous nipples perk up.[at random] Once again your eyes are drawn to [his of M] [end if]wickedly-sharp little nails! With amazing and horrifying speed, fingers outstretched, [he of M] swoops towards your nipples, moving so fast you don't dare even twitch, for fear of what might happen if you do!";
-		repeat with nC running through worn nipple covering clothing:
+		repeat with nC running through worn actually breast covering clothing:
 			if nc is milking flappable: [Fairies love milk so much they don't ask, they just rudely expose the player!]
 				say "The [FairyName] [one of]nimbly opens[or]quickly unlatches[or]frees up your teats from[or]slips your nipple free from[or]whips open[or]draws aside the covering of[at random] your [printed name of nC]";
-			otherwise if nC is nipple exposing:
+			otherwise if nC is actually nipple exposing:
 				say "The [FairyName] [one of]smirks[or]grins[or]sniggers[at random] at the [one of]lewdly-[or]sluttily-[or]perkily-[or]mouth-wateringly [or]prominently [or]temptingly [at random]exposed nipples of your [printed name of nC]";
 			otherwise if nC is top-displacable: [This means, CAN be displaced, yes?]
 				say "The [FairyName] [one of]swiftly tugs[or]pulls[or]draws[or]jerks[or]slips[or]shifts[or]displaces[at random] your [printed name of nC] [one of]aside[or]aside[or]to one side[or]out of the way[or]askew[at random].";
@@ -420,7 +420,7 @@ To compute fairySuckling of (M - a fairy):
 				say "The [FairyName] slashes futilely at your [nC], [his of M] [one of]fiendishly sharp[or]wicked[or]razor sharp[or]scary[at random] nails grating against and scratching the tough material, but finally [he of M] gives up, looking frustrated and annoyed!";
 				now decideToSuckle is 1; [This is my weak-ass attempt to make her more likely to try again next time: unfortunately, I don't think it will work.]
 				stop; [Selkie: I believe this is the right way in i7 to exit a function early, if it returns no value. (break/next are loop controls.) '"Stop" is the plain-jane return statement. It isn't used much, partly because of some other synonyms for return, and partly as fallout from the rules-based structure of the language.']
-			otherwise if nC is nipple covering: [she'll rip it unless it's no protection or has already been damaged: which we take to mean that it exposes the nipples]
+			otherwise: [if it was already top-ripped then it would have been caught by the check for 'actually nipple exposing' above]
 				say "[big his of M] [one of]flashing nails[or]tiny but scary claws[or]razor-sharp fingernails[or]oyster-shell sharp little crescent nails[at random] [one of]carve[or]cut[or]slice[or]magically slide through[at random] your [nC], exposing your nipples to [his of M] [one of]tender mercies[or]gaze[or]hungry gaze[or]eager mouth[at random].[line break]";
 				now nC is top-ripped;
 				now slashedSomething is 1;
@@ -719,7 +719,6 @@ To say TauntRejected of (M - a fairy):
 	say "[speech style of M]'You're mean!'[roman type][line break][BigNameDesc of M] seems even more determined to beat you!";
 	now M is fairydistracted.
 
-
 Section 2 - Questioning
 
 To compute annoyance of (M - a fairy):
@@ -897,14 +896,14 @@ To say MonsterOfferRejectFlav of (M - a fairy) to (T - a plentiful accessory):
 To compute offer reward of (M - a fairy) for (T - a thing):
 	if M is friendly:
 		let C be yourself;
-		if recipe for potion of the womb is appropriate and shopkeeper is not mating:
-			let P be a random off-stage potion of the womb;
-			if P is potion:
-				now C is P;
-				now C is blessed;
+		if womb-potion is fetish appropriate and shopkeeper is not mating:
+			if womb-potion is off-stage:
+				now C is womb-potion;
+				now womb-potion is blessed;
 		unless C is yourself:
-			now C is carried by the player;
-			say "[BigNameDesc of M] hands you a [C].[line break][speech style of M]'Take this. [if C is potion of the womb and interracial fetish is 1]If you use it at the right time you will make a certain black [man of shopkeeper] very happy[otherwise if C is potion of the womb]If you use it at the right time you will make a certain strong [man of shopkeeper] very happy[otherwise]It's a good one[end if]. Yep yep yep.'[roman type][line break]".
+			now C is in the location of the player;
+			say "[BigNameDesc of M] hands you a [C].[line break][speech style of M]'Take this. [if C is womb-potion and interracial fetish is 1]If you use it at the right time you will make a certain black [man of shopkeeper] very happy[otherwise if C is womb-potion]If you use it at the right time you will make a certain strong [man of shopkeeper] very happy[otherwise]It's a good one[end if]. Yep yep yep.'[roman type][line break]";
+			compute autotaking C.
 
 Section 5 - Dismissal
 
@@ -968,7 +967,6 @@ To set up (M - blue-fairy):
 To decide which number is the maxhealth of (M - blue-fairy):
 	decide on 5 + (the difficulty of M * (2 + game difficulty)).
 
-
 [Of course, 'current-monster' here is the blue-fairy]
 This is the blue-fairy powerup rule:
 	if current-monster is blue-fairy:
@@ -987,9 +985,7 @@ fairy-witch is a fairy. The text-shortcut of fairy-witch is "faw". Understand "f
 To say MediumDesc of (M - fairy-witch):
 	say "fairy [if lady fetish is 2]wizard[otherwise]witch[end if]".
 
-Definition: fairy-witch (called M) is woods dwelling:
-	if diaper quest is 1, decide no;
-	decide yes.
+Definition: fairy-witch is woods dwelling if diaper quest is 0.
 
 To say AdviceAnswer of (M - fairy-witch):
 	let S be a random on-stage sword;

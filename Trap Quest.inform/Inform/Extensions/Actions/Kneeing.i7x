@@ -32,7 +32,7 @@ To decide which number is the knee damage of (P - a person):
 knee-fatigue is a number that varies.
 knee-fatigue-delay is a number that varies.
 
-A time based rule (this is the knee fatigue recovery rule):
+An all time based rule (this is the knee fatigue recovery rule):
 	if knee-fatigue-delay > 0:
 		decrease knee-fatigue-delay by 1;
 	otherwise if knee-fatigue > 0:
@@ -64,6 +64,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out kneeing:
+	allocate 6 seconds;
 	now attack-type is 2;
 	reset submitted monsters;
 	increase the fat-burning of the player by 30;
@@ -75,7 +76,6 @@ Carry out kneeing:
 	if damage-explained > 0, say "[roman type][line break]";
 	now knee-fatigue-delay is 2;
 	increase knee-fatigue by 1;
-	allocate 6 seconds;
 	if the player is zeroG:
 		say "Your body is weightless, meaning you can hardly get any force into your knee without sending yourself backwards.";
 	otherwise if the weight of the player < 1:

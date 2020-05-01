@@ -596,7 +596,6 @@ To say MasturbationStartFlav of (M - a monster):
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;
 	stimulate vagina from M;
-	if the player is male, RawUp penis;
 	if refactoryperiod > 0, now the sex-length of M is 0;[If player came, the monster is done]
 	compute unique masturbation effect of M.
 
@@ -818,6 +817,9 @@ To progress the forcefeeding of (M - a monster):
 	let S be the square root of (a random number between 1 and (N * N));
 	decrease the chosen-forcefeed-round of M by S;
 	decrease the sex-length of M by 1.
+
+To say ForcefeedPissDeclarationFlav of (M - a monster):
+	say "[speech style of M]'[one of]I've prepared a special drink for your din-dins!'[or]Here you go baby, today your juice drink is nice and warm and straight from the tap...'[in random order][roman type][line break]".
 
 To say ForcefeedDeclarationFlav of (M - a monster):
 	say "[speech style of M]'[one of]It looks like it's time for your din-dins!'[or]Babies need to eat and drink to keep up their strength... and to keep their bowels moving.'[in random order][roman type][line break]".

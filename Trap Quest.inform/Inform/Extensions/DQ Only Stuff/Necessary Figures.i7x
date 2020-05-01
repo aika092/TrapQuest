@@ -7,6 +7,10 @@ Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
+Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+
+Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
+
 Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
 Figure of ghost 7 is the file "NPCs/Mansion/Ghost/ghost7.png".

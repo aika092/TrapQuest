@@ -99,7 +99,7 @@ Carry out wearing cursed clothing:
 		compute quest of the noun.
 
 Report examining clothing:
-	if the noun is sure and (the noun is cursed or the quest of the noun is persistent), say FullQuestFlav of the noun.
+	if the noun is sure and (the noun is cursed or the quest of the noun is persistent), say FullQuestFlav of (the quest of the noun).
 
 Report wearing clothing:
 	if the noun is worn cursed clothing:
@@ -143,7 +143,7 @@ To compute consequence of (Q - questTired):
 	now the fatigue of the player is the tired threshold of the player + 1.
 
 questHungry is a questConsequence.
-Definition: questHungry is eligible if the stomach-food of the player > 0.
+Definition: questHungry is eligible if hunger mechanics is 1 and the stomach-food of the player > 0.
 To compute consequence of (Q - questHungry):
 	say "The effort of concentrating so hard on your [ShortDesc of quest-target] has made you a bit more hungry.";
 	decrease the stomach-food of the player by 1;
@@ -734,7 +734,7 @@ Part - Inking Quest
 
 inking-quest is a clothing-quest. inking-quest is persistent.
 
-Definition: inking-quest is appropriate if the number of worn tattoos > 0.
+Definition: inking-quest is appropriate if the number of worn tattoos > 0 and Hotel16 is discovered.
 
 To decide what number is the quest-weighting of (Q - inking-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -792,7 +792,11 @@ To compute persistent reward of (Q - upskirt-quest) on (C - a clothing):
 	BodyHeal 2;
 	decrease the fatigue of the player by the fatigue of the player / 2;
 	heal asshole times 2;
-	heal vagina times 2.
+	heal vagina times 2;
+	let S2 be a random off-stage pink scrunchie;
+	if there is a worn pink scrunchie and S2 is a thing:
+		summon S2 cursed;
+		say "[bold type]A second [S2] appears in your hair! [roman type]You now have pigtails.".
 
 Part - Tentacle Quest
 
@@ -810,10 +814,9 @@ To say QuestTitle of (Q - tentacle-quest):
 	say " (tentacle quest)".
 
 To compute persistent reward of (Q - tentacle-quest) on (C - a clothing):
-	let A be a random off-stage apple;
-	if A is apple:
-		now A is carried by the player;
-		say "dropping an [A] into your hand.";
+	if apple is not carried:
+		now apple is carried by the player;
+		say "dropping an [apple] into your hand.";
 	otherwise:
 		say "filling your mind with a reminder to eat your fruit.".
 
@@ -853,10 +856,9 @@ To say QuestTitle of (Q - next-lesson-quest):
 	say " (school lesson quest)".
 
 To compute persistent reward of (Q - next-lesson-quest) on (C - a clothing):
-	let A be a random off-stage apple;
-	if A is apple:
-		now A is carried by the player;
-		say "dropping an [A] into your hand.";
+	if apple is not carried:
+		now apple is carried by the player;
+		say "dropping an [apple] into your hand.";
 	otherwise:
 		say "filling your mind with a reminder to eat your fruit.".
 
@@ -930,16 +932,15 @@ To say QuestTitle of (Q - plug-quest):
 To set up (Q - plug-quest):
 	now the plug-count of plug-quest is 0.
 
-A time based rule:
-	if playerRegion is not school:
-		let C be a random sex toy penetrating asshole;
-		if C is sex toy:
-			increase the plug-count of plug-quest by 1;
-			if the plug-count of plug-quest > a random number between 25 and 100:
-				progress quest of plug-quest;
-				now the plug-count of plug-quest is 0;
-		otherwise if the plug-count of plug-quest > 0:
-			now the plug-count of plug-quest is 0.
+A time based rule (this is the plug quest rule):
+	let C be a random sex toy penetrating asshole;
+	if C is sex toy:
+		increase the plug-count of plug-quest by 1;
+		if the plug-count of plug-quest > a random number between 25 and 100:
+			progress quest of plug-quest;
+			now the plug-count of plug-quest is 0;
+	otherwise if the plug-count of plug-quest > 0:
+		now the plug-count of plug-quest is 0.
 
 Part - Hotel Altar Quest
 
@@ -1020,5 +1021,55 @@ To say QuestFlav of (Q - predicament-quest):
 
 To say QuestTitle of (Q - predicament-quest):
 	say " (predicament completion quest)".
+
+Part - Make Up Quest
+
+make-up-quest is a clothing-quest.
+
+To decide what number is the quest-weighting of (Q - make-up-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 2.
+
+Definition: make-up-quest is appropriate if the make-up of face < 3 and face is temporarily made up.
+
+To say QuestFlav of (Q - make-up-quest):
+	say "You sense that it wants you to increase the amount of make up you're wearing.".
+
+To say QuestTitle of (Q - make-up-quest):
+	say " (make up quest)".
+
+Part - Bust Up Quest
+
+bust-up-quest is a clothing-quest. bust-up-quest has a number called target-bust.
+
+To set up (Q - bust-up-quest):
+	now the target-bust of bust-up-quest is the largeness of breasts + 3;
+	if the target-bust of bust-up-quest > 15, now the target-bust of bust-up-quest is 15;
+	if the target-bust of bust-up-quest > max breast size, now the target-bust of bust-up-quest is max breast size.
+
+To decide what number is the quest-weighting of (Q - bust-up-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	if C is breast covering, decide on 5;
+	decide on 1.
+
+Definition: bust-up-quest is appropriate if diaper quest is 0 and the player is not top heavy and the largeness of breasts < 15.
+
+To say QuestFlav of (Q - bust-up-quest):
+	say "You sense that it wants you to have at least [BraSize the target-bust of Q] cup breasts.".
+
+To say QuestTitle of (Q - bust-up-quest):
+	say " (breast expansion quest)".
+
+To progress quest of (Q - bust-up-quest):
+	if the largeness of breasts > the target-bust of Q:
+		if debugmode > 0, say "Checking for[QuestTitle of Q].";
+		repeat with C running through worn clothing:
+			if C is diaper-stack:
+				repeat with D running through the list of stacked diapers:
+					if D is cursed or the quest of D is persistent:
+						if the quest of D is Q, compute quest completion of Q on D;
+			otherwise:
+				if C is cursed or the quest of C is persistent:
+					if the quest of C is Q, compute quest completion of Q on C.
 
 Quests ends here.

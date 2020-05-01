@@ -8,6 +8,8 @@ Definition: pimp is dark skinned: decide yes.
 
 Definition: pimp is raunchy: decide yes.
 
+Definition: pimp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 pimp-dead is initially false.
 
 Definition: pimp is willing to do oral: decide no.
@@ -106,7 +108,7 @@ Part 2 - Misc Flavour
 
 To compute kneeling reaction of (M - pimp):
 	say "[BigNameDesc of M] laughs. [line break][first custom style]'[if the health of M >= the maxhealth of M]I guess this one time, you can pay me with your services[otherwise]Surrender means nothing to me. You've crossed me, and now I'm going to make your life a misery[end if].'[roman type][line break]";
-	humiliate 75.
+	strongHumiliate.
 
 To say DiaperReaction of (M - pimp):
 	if there is a currently visible diaper or the player is shameless:
@@ -295,6 +297,12 @@ Part 5 - Trading
 To decide which number is the bartering value of (T - a thing) for (M - pimp):
 	if T is plentiful accessory and the health of M >= the maxhealth of M, decide on 99;
 	decide on 0.
+
+To decide which number is the bartering value of (T - id-poster) for (M - pimp):
+	decide on 4.
+
+To say MonsterOfferAcceptFlav of (M - pimp) to (T - id-poster):
+	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'You made this? This is PERFECT! As soon as I get a gloryhole installed, I'll make sure you get the first shift. And the second!'[roman type][line break][severeHumiliateReflect]".
 
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - a thing):
 	say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good girl[or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]".

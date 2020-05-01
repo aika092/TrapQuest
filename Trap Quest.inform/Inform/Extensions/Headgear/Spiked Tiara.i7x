@@ -47,7 +47,7 @@ To decide which number is the initial outrage of (C - spiked-tiara):
 To compute SelfExamineDesc of (H - spiked-tiara):
 	say "You are wearing a [MediumDesc of H] on top of your [ShortDesc of hair]. ".
 
-A time based rule (this is the tongued clothing licking rule):
+An all time based rule (this is the tongued clothing licking rule):
 	let N be the number of worn tongued clothing;
 	if tonguesBlack is false and the player is female and the virgin of the player is 0:
 		let C be a random worn tongued clothing;

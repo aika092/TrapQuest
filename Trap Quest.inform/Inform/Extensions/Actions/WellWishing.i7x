@@ -94,15 +94,14 @@ Carry out WellWishing:
 		now the tolerated of asshole is 0;
 	otherwise if P + a random number between 1 and 16 > 8 - (wishskill of the player * 3):
 		say "[first custom style]Wish... granted.[roman type][line break]";
-		let S be a random pink spraybottle;
-		if S is cloth:
-			say "The [printed name of S] glitters as long strands of lemony-scented air float out of the well, weaving themselves into a brand new matching pink bottle of cleaner.";
-			now S is spray;
+		if pink-spraybottle is held and pink-spraybottle is cloth:
+			say "[BigNameDesc of pink-spraybottle] glitters as long strands of lemony-scented air float out of the well, weaving themselves into a brand new matching pink bottle of cleaner.";
+			now pink-spraybottle is spray;
 			now B is 1;
-		otherwise if S is worn:
-			if the charge of S < 4, increase the charge of S by 2;
-			otherwise increase the work ethic of S by 50;
-			say "Your [printed name of S] glitters as it fills up with darkly coloured liquid.";
+		otherwise if pink-spraybottle is worn:
+			if the charge of pink-spraybottle < 4, increase the charge of pink-spraybottle by 2;
+			otherwise increase the work ethic of pink-spraybottle by 50;
+			say "[BigNameDesc of pink-spraybottle] glitters as it fills up with darkly coloured liquid.";
 			now B is 1;
 		otherwise if a random number between 1 and 2 is 1:
 			repeat with C running through worn clothing:
@@ -116,10 +115,14 @@ Carry out WellWishing:
 						if C is crotch-ripped, repair C;
 						now the damage of C is 0;
 						now B is 1;
-		if B is 0:
+		if B is 0 and the body soreness of the player > (a random number between 2 and 4) or the player is very tired:
 			say "A healing wave spreads through your body, erasing all wounds and filling you with new-found energy.";
 			now the body soreness of the player is 0;
 			now the fatigue of the player is 0;
+			now B is 1;
+		if B is 0:
+			say "A wave of positivity flows through your body, and you now feel more... lucky?";
+			increase the raw luck of the player by P;
 	otherwise if the noun is not bottle:
 		if djinn is mating, compute djinn wishing on the noun;
 		otherwise say "[first custom style]Wish... denied.[roman type]";[possible punishment of fairy spawn or vine summon in the future?]

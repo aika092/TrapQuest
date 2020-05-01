@@ -79,7 +79,7 @@ Definition: a body part (called B) is most desirable:
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the determining desirability rule):
+An all time based rule (this is the determining desirability rule):
 	if diaper quest is 0:
 		now the desirability of face is 5 + the number of worn oral sex themed wearthings;
 		now the desirability of breasts is 0;
@@ -379,7 +379,7 @@ To compute seduction grope of (M - a monster):
 To say BreastsGropeFlav of (M - a person):
 	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These funbags are just begging to be played with!'[or]Do you really expect people to just leave these alone when you wlak around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
 To compute breasts grope of (M - a person):
-	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid nipple covering clothing], making sure to tweak your nipples hard[end if]!".
+	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid actually nipple covering clothing], making sure to tweak your nipples hard[end if]!".
 
 To say AssholeGropeFlav of (M - a person):
 	let A be a random uncursed anal beads penetrating asshole;
@@ -401,7 +401,8 @@ To compute asshole grope of (M - a person):
 		if the notch-taken of A <= 0:
 			now A is in the location of the player;
 			dislodge A;
-			say "The [A] falls to the ground.".
+			say "The [A] falls to the ground.";
+		force immediate inventory-focus redraw.
 
 To say VaginaGropeFlav of (M - a person):
 	if M is not unintelligent monster, say "[speech style of M]'[if vagina is lewdly exposed][one of]Your [cunt] is on display[or]You're showing me your [pussy][in random order][one of], eh? Is that an invitation?'[or]. Most people would take that to mean you want to fuck...'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if vagina is at least partially lewdly exposed][one of]My my, what can I spy between those thighs of yours?'[or]Is this really your [pussy] I can see the outline of down here?'[or]Did I just catch a glimpse of your [pussy]?'[in random order][otherwise][one of]Your [pussy] is calling to me, [slut]...'[or]Are you wet down there? I bet you're wet down there.'[or]When you walk around looking like that, you're asking for this.'[in random order][end if][roman type][line break]".

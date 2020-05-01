@@ -246,7 +246,7 @@ Carry out direct-presenting something to:[TODO: make this less humiliating for a
 		let displacingFinished be 0;
 		if the noun is face:
 			let urine-request be 0;
-			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the urine taste addiction of the player > 6 or the humiliation of the player > HUMILIATION-DISGRACED or debugmode > 0):
+			if watersports fetish is 1 and the second noun is willing to urinate and (the player is thirsty or the urine taste addiction of the player > 6 or the player is disgraced or debugmode > 0):
 				say "Would you like to specifically ask [if the player is a pervert]to be pissed on[otherwise]for a golden shower[end if]? ";
 				if the player is consenting, now urine-request is 1;
 			if urine-request is 1:

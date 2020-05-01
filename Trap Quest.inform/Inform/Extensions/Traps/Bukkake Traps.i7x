@@ -148,7 +148,7 @@ To trigger (Y - a bukkake hose):
 		cutshow figure of water bomb cutscene 1 for face;
 		Squirt water on face by X * 10;
 		reset soak flavour;
-		cool down 2000.
+		force cool down 2000.
 
 To say BukkakeDoorTrapReactFlav of (M - a monster):
 	say NastyTrapReactFlav of M.

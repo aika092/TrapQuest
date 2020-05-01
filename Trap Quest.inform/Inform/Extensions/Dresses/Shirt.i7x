@@ -48,7 +48,7 @@ To decide which number is the oral-sex-addiction-influence of (C - an I heart cu
 
 Part 2 - Rubber Shirt
 
-A rubber shirt is a kind of shirt. A rubber shirt is usually latex.
+A rubber shirt is a kind of shirt. A rubber shirt is usually latex. A rubber shirt is usually erect-nipple-exposing.
 
 To decide which number is the initial outrage of (C - a rubber shirt):
 	decide on 2.

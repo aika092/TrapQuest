@@ -134,7 +134,7 @@ To decide which number is the initial outrage of (C - a translucent priestess ou
 
 Part 7 - Sinful Priestess Outfits
 
-cameltoe-priestess-outfit is a priestess outfit. The printed name of cameltoe-priestess-outfit is "[clothing-title-before]cameltoe priestess outfit[clothing-title-after]". The text-shortcut of cameltoe-priestess-outfit is "cpo". Understand "cameltoe", "priestess", "outfit" as cameltoe-priestess-outfit.
+cameltoe-priestess-outfit is a priestess outfit. cameltoe-priestess-outfit is erect-nipple-exposing. The printed name of cameltoe-priestess-outfit is "[clothing-title-before]cameltoe priestess outfit[clothing-title-after]". The text-shortcut of cameltoe-priestess-outfit is "cpo". Understand "cameltoe", "priestess", "outfit" as cameltoe-priestess-outfit.
 
 cameltoe-priestess-outfit is crotch-intact. cameltoe-priestess-outfit is bottom-exclusive. cameltoe-priestess-outfit is unskirted. cameltoe-priestess-outfit is silk. cameltoe-priestess-outfit is low cut. cameltoe-priestess-outfit is top-displacable. cameltoe-priestess-outfit is only arm covering. cameltoe-priestess-outfit is not purity.
 
@@ -155,7 +155,7 @@ To decide which number is the penis-capacity of (H - cameltoe-priestess-outfit):
 To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-outfit):
 	decide on exposing-priestess-outfit.
 
-exposing-priestess-outfit is a priestess outfit. The printed name of exposing-priestess-outfit is "[clothing-title-before]exposing priestess outfit[clothing-title-after]". The text-shortcut of exposing-priestess-outfit is "epo". Understand "exposing", "priestess", "outfit" as exposing-priestess-outfit. exposing-priestess-outfit is not purity.
+exposing-priestess-outfit is a priestess outfit. exposing-priestess-outfit is erect-nipple-exposing. The printed name of exposing-priestess-outfit is "[clothing-title-before]exposing priestess outfit[clothing-title-after]". The text-shortcut of exposing-priestess-outfit is "epo". Understand "exposing", "priestess", "outfit" as exposing-priestess-outfit. exposing-priestess-outfit is not purity.
 
 exposing-priestess-outfit is bottom-exclusive. exposing-priestess-outfit is unskirted. exposing-priestess-outfit is crotch-exposing. exposing-priestess-outfit is silk. exposing-priestess-outfit is low cut. exposing-priestess-outfit is top-displacable. exposing-priestess-outfit is only arm covering.
 
@@ -170,7 +170,7 @@ To say ClothingDesc of (C - exposing-priestess-outfit):
 To decide which number is the initial outrage of (C - exposing-priestess-outfit):
 	decide on 3.
 
-cleavage-window-priestess-outfit is a priestess outfit. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
+cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
 
 cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is optional-top-displacable. cleavage-window-priestess-outfit is only arm covering.
 

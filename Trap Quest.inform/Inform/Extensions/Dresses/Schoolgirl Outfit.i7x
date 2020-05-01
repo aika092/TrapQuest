@@ -109,7 +109,7 @@ Definition: a halloween schoolgirl outfit is red themed: decide yes.
 
 Part 4 - Minimalist Schoolgirl Outfit
 
-A minimalist schoolgirl outfit is a kind of schoolgirl outfit. A minimalist schoolgirl outfit is usually low cut. A minimalist schoolgirl outfit is usually super-short. A minimalist schoolgirl outfit is usually belly exposing. A minimalist schoolgirl outfit is usually optional-top-displacable.
+A minimalist schoolgirl outfit is a kind of schoolgirl outfit. A minimalist schoolgirl outfit is usually low cut. A minimalist schoolgirl outfit is usually super-short. A minimalist schoolgirl outfit is usually belly exposing. A minimalist schoolgirl outfit is usually optional-top-displacable. A minimalist schoolgirl outfit is usually erect-nipple-exposing.
 
 The printed name of minimalist schoolgirl outfit is usually "[clothing-title-before]minimalist schoolgirl outfit[clothing-title-after]". The text-shortcut of minimalist schoolgirl outfit is "mso".
 

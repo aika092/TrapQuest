@@ -11,7 +11,7 @@ To decide which number is the current support of (B - a bra):
 
 A bra is usually rare.
 
-Definition: a bra is same-type if theme-share-target is bra.
+Definition: a bra is same-type if theme-share-target is bra and theme-share-target is not bikini top.
 
 Definition: a bra is ingredient if it is not product.
 
@@ -98,7 +98,7 @@ To uniquely set up (B - a bra):
 		now B is temptation;
 		if diaper quest is 1, now B is respiration;
 	if R is 4 and lactation fetish is 1, now B is milk production;
-	if (R is 5 or R is 6) and B is fully exposing, now B is protection;
+	if R > 6 and B is fully exposing, now B is protection;
 	if R is 3 or R is 4, curse B;
 
 To Assign Size to (B - a bra):
@@ -153,7 +153,7 @@ This is the setup starting bras rule:
 		restock C.
 The setup starting bras rule is listed in the setup starting items rules.
 
-To Say BraSize (X - a number):
+To say BraSize (X - a number):
 	if X is 2, say "AA";
 	if X is 3, say "A";
 	if X is 4, say "B";
@@ -245,17 +245,31 @@ Report wearing a bra:
 		if the noun is chastity bra, say "[one of][line break][variable custom style]Wow, this is heavy...[roman type][line break][or][stopping]";
 	if the noun is cursed:
 		say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bikini top![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]";
+		now the noun is identified;
+		now the noun is sure;
 		BraGrow the noun.
 
 To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow itself or your breasts.]
-	if diaper quest is 0 and the player is not top heavy:
-		if the size of B > the largeness of breasts or the support of B is 0:
+	if diaper quest is 0 and the player is not top heavy and the player is not a flatchested trap:
+		let LB be the largeness of breasts;
+		if the size of B < the max size of B and the size of B <= LB:
+			say "The [printed name of B] grows into a ";
+			increase the size of B by 1;
+			say "[printed name of B]!";
+		if the size of B > LB or the support of B is 0:
 			say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of[otherwise]fill[end if] your [ShortDesc of B]!";
-			BustUp 1.
+			let FB be the flesh volume of breasts;
+			let keep-going be 1;
+			while keep-going is 1:
+				BustUp 1;
+				if the flesh volume of breasts <= FB or the largeness of breasts > LB, now keep-going is 0;
+				otherwise now FB is the flesh volume of breasts.
 
-A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. The soak-limit of a bikini top is 6. A bikini top is usually plentiful. A bikini top is usually low cut. Understand "bikini", "top" as bikini top.
+A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. The soak-limit of a bikini top is 6. A bikini top is usually plentiful. A bikini top is usually low cut. A bikini top is usually erect-nipple-exposing. Understand "bikini", "top" as bikini top.
 
 The text-shortcut of bikini top is "bt".
+
+Definition: a bikini top is same-type if theme-share-target is bikini top or (theme-share-target is bra and there is worn bikini bottoms).
 
 The min size of a bikini top is usually 2. The max size of a bikini top is usually 15. The support of a bikini top is usually 1.
 

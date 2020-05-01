@@ -2,7 +2,7 @@ RoboMatron by Monster begins here.
 
 robomatron is a robot. robomatron is intelligent. Understand "matron", "matronbot" as robomatron. The text-shortcut of robomatron is "mtb".
 
-Definition: A robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
+Definition: a robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
 
 To say ShortDesc of (M - robomatron):
 	say "MatronBot".

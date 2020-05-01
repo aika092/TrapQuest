@@ -47,7 +47,7 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
 	now the dismissRefused of M is 0;
-	if N >= 50 and the player is not in Dungeon12, decrease the charge of the dungeon altar by a random number between 1 and 50.
+	if N >= 50 and the player is not in Dungeon12 and playerRegion is not School, decrease the charge of the dungeon altar by a random number between 1 and 50.
 
 [!<SatisfyMonster>+
 
@@ -147,7 +147,6 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 				now M is in a random placed haunted room;
 			otherwise:
 				finally destroy M.
-
 
 To loot (M - a monster):
 	standard loot M.

@@ -55,12 +55,13 @@ To rotate (W - a warp portal) attempt (N - a number):
 		now the destination of W is the school;
 		if N is 1, now N is 2;
 	if the destination of W is the school and (N is 1 or (W is in the school and ((the player is not an october 2019 top donator and the player is not an october 2019 diaper donator) or the number of appropriate eligible predicaments is 0 or predicamentJustDone is true or the player is not predicament-ready)) or (armband is not worn and ex-princess is not unconcerned)):
+		if N > 1 and newbie tips is 1 and the player is a top donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator]your unlock file is not up-to-date enough[otherwise if predicamentJustDone is true]you haven't returned to the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
 		now the destination of W is the dungeon;
 		if W is in the Dungeon and N < 3, rotate W attempt (N + 1).
 
 To say DestinationDesc of (T - a warp portal):
 	if T is regionally in school and the destination of T is school:
-		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?! Text underneath reads [bold type]'Removes all cursed clothing and earns participating students a [']trophy['].'[roman type][line break][or] the 'extra credit' zone again, where you can free yourself from cursed clothing and earn a trophy.[stopping]";
+		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?! Text underneath reads [bold type]'Removes all cursed clothing and earns participating students a [']trophy['].'[if newbie tips is 1][line break][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[end if][roman type][line break][or] the 'extra credit' zone again, where you can free yourself from cursed clothing and earn a trophy.[stopping]";
 	otherwise if T is next-portal-forbidden:
 		say "The warp portal won't currently be able to take you anywhere - it's glitching wildly!";
 	otherwise if T is not regionally in the destination of T:
@@ -150,15 +151,19 @@ To teleport via (W - a warp portal):
 		now P is not next-portal-forbidden;
 		if P is regionally in the destination of W, now D is P;
 	if D is warp portal, now the destination of D is playerRegion; [The portal you just went through will send you right back to where you were unless you pull the lever]
+	if playerRegion is school:
+		if the body soreness of the player < 10 and the fatigue of the player > 0, say "[bold type]As you go through the portal, you find your fatigue leaving you.[roman type][line break]"; [no point telling the player that they have a fatigue refresh at 0% HP]
+		now the fatigue of the player is 0;
 	if W is D: [School portal leads to extra credit zone. Anything added here might also need to be added to the detention code in Staff Framework.i7x]
 		now the destination of W is the Dungeon;
 		display entire map;
 		let L be the list of eligible appropriate predicaments;
 		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
 		repeat with C running through held things:
-			if C is worn clothing:
+			if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
 				clean C;
 				WaterEmpty C;
+			if C is worn clothing:
 				if C is removable and C is not headgear and C is not combat visor and C is not armband:
 					dislodge C;
 					if C is cursed and the raw strength of the player > 1:
@@ -176,6 +181,7 @@ To teleport via (W - a warp portal):
 		now the semen coating of thighs is 0;
 		empty belly;
 		display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
+		refresh the inventory-focus-window; [just to be sure]
 		sort L in random order;
 		let P be entry 1 in L;
 		if debugmode > 0, say "selected [P].";

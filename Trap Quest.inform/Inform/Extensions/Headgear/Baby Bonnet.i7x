@@ -95,7 +95,7 @@ To say ClothingDesc of (H - victorian-baby-bonnet):
 To decide which object is the unique-upgrade-target of (H - victorian-baby-bonnet):
 	decide on rubber-baby-bonnet.
 
-rubber-baby-bonnet is a baby bonnet. The text-shortcut of rubber-baby-bonnet is "lbon".
+rubber-baby-bonnet is a baby bonnet. rubber-baby-bonnet is latex. The text-shortcut of rubber-baby-bonnet is "lbon".
 
 Figure of rubber baby bonnet is the file "Items/Accessories/Head/babybonnet2.png".
 

@@ -107,14 +107,13 @@ To compute teaching of (M - nurse):
 
 Chapter - Perception
 
-This is the nurse boost cooldown rule:
+An all later time based rule (this is the nurse boost cooldown rule):
 	if the boost-cooldown of nurse > 0:
-		decrease the boost-cooldown of nurse by counters-seconds;
+		decrease the boost-cooldown of nurse by time-seconds;
 		if the boost-cooldown of nurse <= 0:
 			say "You feel your body calm down as the positive [if the boost-int-drain of nurse > 0]and negative [end if]effects of the nurse's [']boost['] come to an end.";
 			now the boost-int-drain of nurse is 0;
 			if nurse is in the location of the player and nurse is not grabbing the player and nurse is friendly, say "The [nurse] stretches out the wrist of one glove, and lets it snap back into place.[line break][speech style of nurse]'Okay I think that's long enough. If you want another [']boost['], I'm ready to give you one. Just get on the med bay bed.'[roman type][line break]".
-The nurse boost cooldown rule is listed in the advance counters rules.
 
 Definition: nurse (called M) is aware that the player needs a change:
 	if diaper lover <= 0, decide no;
@@ -210,7 +209,7 @@ To compute facial climax of (M - nurse):
 	LickCount;
 	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
-	OralSexAddictUp 1;
+	SilentlyOralSexAddictUp;
 	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	orgasm satisfy M;

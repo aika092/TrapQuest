@@ -2,7 +2,7 @@ Herald Valleyhotep by Monster begins here.
 
 herald is a monster. herald is intelligent. herald is neuter. The poison-status of herald is -1.
 
-Definition: herald is mansion dwelling: decide yes.
+Definition: herald is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Understand "Valleyhotep", "herald" as herald. The text-shortcut of herald is "vht".
 
@@ -123,7 +123,6 @@ To compute punishment of (P - herald-blessing):
 	satisfy M.
 
 Section 2 - Damage
-
 
 To say CombatProvokedReaction of (M - a mannequin):
 	say "[speech style of M]'That was, like, not a good idea.'[roman type][line break]".

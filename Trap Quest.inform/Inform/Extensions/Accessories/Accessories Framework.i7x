@@ -72,7 +72,7 @@ To check shortcut of (A - an accessory):
 	if T is not CT:
 		say "BUG: The [A] you just received did not have its text shortcut set up correctly. Aika has temporarily added this procedure to work out where this is happening. Please report where the jewel came from as a bug.";
 
-A later time based rule:
+An all later time based rule:
 	repeat with A running through worn plentiful accessory:
 		check shortcut of A.
 

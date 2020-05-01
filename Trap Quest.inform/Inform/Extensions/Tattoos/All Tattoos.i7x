@@ -163,7 +163,7 @@ Definition: anchor tattoo is swimming themed: decide yes.
 
 angel tattoo is a body tattoo. The tattoo-title of angel tattoo is "angel".
 Definition: angel tattoo is eligible:
-	if the noun is purity clothing or the noun is blessed clothing or the noun is potion of blessing or the noun is bandage or the noun is chastity cage, decide yes;
+	if the noun is purity clothing or the noun is blessed clothing or the noun is blessing-potion or the noun is bandage or the noun is chastity cage, decide yes;
 	decide no.
 To say tattoo-desc of (T - angel tattoo):
 	say "A drawing of a solemn angel is tattooed on your right arm.".
@@ -411,7 +411,7 @@ Definition: black owned tattoo is eligible:
 	if the noun is interracial themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - black owned tattoo):
-	say "The words 'black owned' are tattooed in swirly letters on your left inner thigh, around a Queen of Spades symbol. It's helping you realise how much [if the sex addiction of the player < 12]dark skinned people are your natural superiors[otherwise]black cock is just... better[end if].".
+	say "The words 'black owned' are tattooed in swirly letters on your left inner thigh, around a Queen of Spades symbol. It's helping you realise how much [if the sex addiction of the player < 12]dark skinned people are your natural superiors[otherwise][BlackCock] is just... better[end if].".
 To decide which number is the initial outrage of (T - black owned tattoo):
 	decide on 8.
 To decide which object is the concealer of (T - black owned tattoo):
@@ -438,6 +438,8 @@ To decide which number is the cringe of (T - born to lose tattoo):
 	decide on 0.
 To decide which number is the initial outrage of (T - born to lose tattoo):
 	decide on 3.
+To decide which number is the luck-influence of (T - born to lose tattoo):
+	decide on -5.
 Report going when the player is in the location of HotelScenery01:
 	if clumsy is 1 and (a random number between 1 and 2 is 1 or unlucky > 0) and pack of playing cards is carried and born to lose tattoo is drawable and the player is upright and (there is a worn tattoo or clumsy april fools is 1):
 		let BG be a random worn bag of holding;
@@ -593,7 +595,7 @@ Definition: cloth revolution tattoo is baby themed: decide yes.
 
 cock expert tattoo is a body tattoo. The tattoo-title of cock expert tattoo is "cock expert".
 Definition: cock expert tattoo is eligible:
-	if the noun is penis themed or the noun is dong, decide yes;
+	if the noun is penis themed or the noun is dong or the noun is id-poster, decide yes;
 	decide no.
 To say tattoo-desc of (T - cock expert tattoo):
 	say "The words 'cock expert' are tattooed on your inner right forearm in arty green letters.".
@@ -653,7 +655,7 @@ Definition: cum-dump tattoo is semen themed: decide yes.
 cum dumpster lip tattoo is a body tattoo. The tattoo-title of cum dumpster lip tattoo is "cum dumpster lip".
 Definition: cum dumpster lip tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible.
 Definition: cum dumpster lip tattoo is eligible:
-	if the noun is oral sex themed or the noun is semen themed, decide yes;
+	if the noun is oral sex themed or the noun is semen themed or the noun is id-poster, decide yes;
 	if the noun is clothing:
 		if the semen-soak of the noun > 0, decide yes;
 	if the noun is bottle:
@@ -1040,10 +1042,10 @@ To decide which figure-name is the examine-image of (T - fairy-cheek tattoo):
 To say tattoo-desc of (T - fairy-cheek tattoo):
 	say "A drawing of a cheeky fairy holding a wooden magic wand is tattooed on your right cheek. You can tell that people are more likely to want to have sex with your face.".
 To decide which number is the initial outrage of (T - fairy-cheek tattoo):
-	if diaper quest is 1, decide on 2;
-	decide on 5.
+	if diaper quest is 1, decide on 1;
+	decide on 3.
 To decide which number is the initial cringe of (T - fairy-cheek tattoo):
-	decide on 5.
+	decide on 3.
 To decide which number is the dexterity-influence of (T - fairy-cheek tattoo):
 	decide on 1.
 Definition: fairy-cheek tattoo is magic themed:
@@ -1323,11 +1325,11 @@ To decide which figure-name is the examine-image of (T - ink-me tattoo):
 Definition: ink-me tattoo is eligible: decide no.
 To say tattoo-desc of (T - ink-me tattoo):
 	say "The words 'INK ME' are tattooed in block capitals on the back of one hand.".
-To decide which object is the concealer of (T - ink-me tattoo):
+[To decide which object is the concealer of (T - ink-me tattoo):
 	decide on a random worn actually dense finger covering clothing.
 To decide which object is the at least partial concealer of (T - ink-me tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through finger covering clothing.
+	decide on a random worn not-see-through finger covering clothing.][Redundant, since this tattoo is a hand-tattoo]
 To decide which number is the initial outrage of (T - ink-me tattoo):
 	decide on 1.
 
@@ -1448,7 +1450,7 @@ Definition: lock-it tattoo is drawable:
 Definition: lock-it tattoo is eligible:
 	if the noun is skeleton key or the noun is bondage or the noun is wrist locking clothing or the noun is ankle locking clothing or the noun is strapon-panties, decide yes;
 	decide no.
-To say tattoo-desc of (T - loser tattoo):
+To say tattoo-desc of (T - lock-it tattoo):
 	say "The phrase 'Lock it, then rock it' is written above your [genitals], with a drawing of a key and a black arrow pointing down at your [genitals]. The dot of the 'i' in 'lock it' is a heart. You feel there's a good chance you could get punished for masturbating...".
 Definition: lock-it tattoo is heart themed: decide yes.
 To decide which number is the initial outrage of (T - lock-it tattoo):
@@ -1468,6 +1470,8 @@ To decide which object is the at least partial concealer of (T - loser tattoo):
 	decide on nothing.
 To decide which number is the strength-influence of (T - loser tattoo):
 	decide on -1.
+To decide which number is the luck-influence of (T - loser tattoo):
+	decide on -2.
 To decide which number is the initial outrage of (T - loser tattoo):
 	decide on 1.
 
@@ -1479,13 +1483,15 @@ Definition: lucky you tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if it is eligible, decide yes;
 	decide no.
-Definition: lucky you tattoo is eligible if the noun is pack of playing cards or the noun is chess piece.
+Definition: lucky you tattoo is eligible if the noun is pack of playing cards or the noun is chess piece or the noun is green-briefs or the noun is luck-potion.
 To say tattoo-desc of (T - lucky you tattoo):
-	say "The words 'Lucky You' and drawings of playdude bunnies are tattooed above your crotch. You can feel it making you lucky.".
+	say "The words 'Lucky You' and drawings of playdude bunnies are tattooed above your crotch.".
 To decide which number is the cringe of (T - lucky you tattoo):
 	decide on 0.
 To decide which number is the initial outrage of (T - lucky you tattoo):
-	decide on 11.
+	decide on 8.
+To decide which number is the luck-influence of (T - lucky you tattoo):
+	decide on 4.
 
 Book - M Tattoos
 
@@ -1631,7 +1637,7 @@ To decide which object is the at least partial concealer of (T - nothing's sacre
 nun blowjob tattoo is a body tattoo. The tattoo-title of nun blowjob tattoo is "nun blowjob".
 Definition: nun blowjob tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible.
 Definition: nun blowjob tattoo is eligible:
-	if the noun is hood or the noun is bag lunch or the noun is purity clothing or the noun is oral sex themed or the noun is bandage, decide yes;
+	if the noun is hood or the noun is bag lunch or the noun is purity clothing or the noun is oral sex themed or the noun is bandage or the noun is id-poster, decide yes;
 	decide no.
 To say tattoo-desc of (T - nun blowjob tattoo):
 	say "A tattoo on your arm of a bimbo nun with huge dick sucking lips and heavy eye makeup in a black latex hood sucking on a juicy cock. Perhaps something good will happen if you get on your knees and mimic her.".
@@ -1758,13 +1764,13 @@ To compute periodic effect of (T - portal tattoo):
 				let N be belly limit - the total fill of belly;
 				say "[if N <= 1]a small egg[otherwise][N] small eggs[end if]!";
 				increase the small egg count of belly by N;
-		otherwise if a random number between 1 and 3 is 1 or diaper quest is 1:
+		otherwise if a random number between 1 and 3 is 1 or (diaper quest is 1 and watersports fetish is 0):
 			say "huge amounts of water!";
 			let N be belly limit - the total fill of belly;
 			Assfill N with water;
 		otherwise:
 			let L be semen;
-			if watersports fetish is 1 and a random number between 1 and 2 is 1, now L is urine;
+			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1), now L is urine;
 			if lactation fetish is 1 and a random number between 1 and 3 is 1, now L is milk;
 			say "insane amounts of [L]!";
 			let N be belly limit - the total fill of belly;
@@ -2053,7 +2059,7 @@ Figure of showtime tattoo is the file "Items/Tats/tattoo25.jpg".
 To decide which figure-name is the examine-image of (T - showtime tattoo):
 	decide on figure of showtime tattoo.
 Definition: showtime tattoo is eligible:
-	if the noun is stockings, decide yes;
+	if the noun is stockings or the noun is id-poster, decide yes;
 	decide no.
 To say tattoo-desc of (T - showtime tattoo):
 	say "The word 'Show' is inked on the back your left leg and the word 'Time' on the back of your right leg.".
@@ -2076,7 +2082,7 @@ Definition: sissy black cock whore tattoo is eligible:
 	if the noun is interracial themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - sissy black cock whore tattoo):
-	say "The words 'Sissy Black Cock Whore' are tattooed in large letters on your [BreastDesc]. It's helping you realise how much [if the sex addiction of the player < 12]dark skinned people are your natural superiors[otherwise]black cock is just... better[end if].".
+	say "The words 'Sissy Black Cock Whore' are tattooed in large letters on your [BreastDesc]. It's helping you realise how much [if the sex addiction of the player < 12]dark skinned people are your natural superiors[otherwise][BlackCock] is just... better[end if].".
 To decide which number is the initial outrage of (T - sissy black cock whore tattoo):
 	decide on 18.
 
@@ -2490,8 +2496,8 @@ Definition: true love tattoo is drawable:
 	decide yes.
 Definition: true love tattoo is eligible:
 	if the noun is heart themed or the noun is boob themed or the noun is royal scepter, decide yes;
-	if the noun is clothing:
-		if the noun is breast covering and the noun is not nipple covering, decide yes;
+	if the noun is breast covering clothing:
+		if the noun is actually nipple exposing or the noun is actually sheer, decide yes;
 	decide no.
 To say tattoo-desc of (T - true love tattoo):
 	say "The words 'True Love' is tattooed in large letters above your [BreastDesc], on top of a heart. Either side, there is an angelic cloud with a halo. You can feel it making your [ShortDesc of breasts] more sensitive.".
@@ -2542,7 +2548,7 @@ Definition: a VIP pussy tattoo is drawable:
 	if the player is male and TG fetish is 0, decide no;
 	decide yes.
 Definition: VIP pussy tattoo is eligible:
-	if the noun is salve of concealment or the noun is vagina themed, decide yes;
+	if the noun is concealment-salve or the noun is vagina themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - VIP pussy tattoo):
 	say "The letters 'V', 'I' and 'P' are written in stylish blue and black above your [genitals]. [if the player is male]It doesn't seem to do much right now[otherwise]It might discourage weak enemies from choosing vaginal sex[end if].".

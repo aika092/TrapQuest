@@ -16,6 +16,8 @@ Definition: a tentacle monster is virginity taking: decide yes.
 
 Definition: a tentacle monster is father material: decide yes.
 
+Definition: a tentacle monster is summoningRelevant if tentacle fetish is 0 and it is undefeated and it is regional. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 Report examining tentacle monster:
 	progress quest of tentacle-research-quest.
 
@@ -405,18 +407,18 @@ This is the tentacle monster climaxes rule:
 		SemenPuddleUp cum-amount;
 		if bukkake fetish is 1, CumFaceUp cum-amount * 5;
 	orgasm M; [needs to go above the below functions because this function cares about where is being penetrated]
-	if M is penetrating asshole:
-		compute anal climax of M;
-		AnalCount;
-	if M is penetrating vagina:
-		compute vaginal climax of M;
-		FuckCount;
 	if M is penetrating breasts:
 		increase the raw sensitivity of breasts by 1;
 		now M is not penetrating breasts;
 	if M is penetrating face:
 		compute facial climax of M;
 		BlowCount;
+	if M is penetrating asshole:
+		compute anal climax of M;
+		AnalCount;
+	if M is penetrating vagina:
+		compute vaginal climax of M;
+		FuckCount;
 	if the magic-power of the player > 0:
 		say "You feel some magic draining from your body...[line break]";
 		compute MagicDrain of M;
@@ -424,7 +426,6 @@ This is the tentacle monster climaxes rule:
 			say "As the magic drains away, you feel your brain [one of]sparkling with brilliance[or]gaining even more smarts[stopping]!";
 			IntUp 2;
 	progress quest of tentacle-quest;
-	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if][if the bimbo of the player < 11 and M is large and the openness of asshole < 9 and the openness of vagina < 9][line break][first custom style]'Holy shit. I am getting the fuck out of here while this thing is sleeping. I could never take that...'[roman type][line break][end if]";
 	if M is wrapped:
 		let X be the semen load of M;
 		while X > 0:
@@ -433,26 +434,44 @@ This is the tentacle monster climaxes rule:
 		now M is unwrapped;
 	if M is not massive:
 		DifficultyUp M by 3;
-	if M is large:
-		now M is massive;
-		if heart hairpin is off-stage:
-			if the class of the player is schoolgirl and the player is ponytailed:
-				let S be a random worn scrunchie;
-				say "Your [S] explodes in a shower of cartoon lovehearts!";
-				destroy S;
-			if heart hairpin is actually summonable:
-				say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a wave of shame come over you... You doubt you'll be very good at this job, judging by how things have been going so far.[roman type][line break]";
-				summon heart hairpin cursed;
-				if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-					say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
-					SexChange the player;
-	if M is newborn:
-		now M is large;
-	now the sleep of M is 250;
-	if the class of the player is schoolgirl, decrease the sleep of M by 100;
-	if the evolved of M is 3 or M is in School34, decrease the sleep of M by 100;
-	if M is dull-tentacle-monster, decrease the sleep of M by 25;
-	deinterest M;
+	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if]";
+	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy is 2 and the player is female)):
+		if M is large, now M is massive;
+		if M is newborn, now M is large;
+		say "[bold type]Just as you are about to begin to crawl away, you feel some magic drain from your [magical-maid-outfit], and it wakes up again![line break][variable custom style][one of]What?![or]I can't... I'll break...[stopping][roman type][line break]";
+		MagicPowerDown 1;
+		if inhuman pregnancy is 2 and the player is female:
+			say "With renewed vigour it leaps into action once again, and within seconds is filling all of your holes and molesting you anew. Before you know it, a second barrage of [semen] is coating you and filling you to the brim. More magic ebbs and flows from [NameDesc of magical-maid-outfit] into [NameDesc of M], enabling [him of M] to recommence fucking you over and over and over again, pumping you full of its potent [semen] until eventually you white out.";
+			now delayed fainting is 1;
+			now the fainting reason of the player is 18;
+			bore M;
+			if M is not massive:
+				DifficultyUp M by 3;
+				now M is massive;
+		otherwise:
+			dislodge M;
+	otherwise:
+		say "[if the bimbo of the player < 11 and M is large and the openness of asshole < 9 and the openness of vagina < 9][line break][first custom style]'Holy shit. I am getting the fuck out of here while this thing is sleeping. I could never take that...'[roman type][line break][end if]";
+		if M is large:
+			now M is massive;
+			if heart hairpin is off-stage:
+				if the class of the player is schoolgirl and the player is ponytailed:
+					let S be a random worn scrunchie;
+					say "Your [S] explodes in a shower of cartoon lovehearts!";
+					destroy S;
+				if heart hairpin is actually summonable:
+					say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a wave of shame come over you... You doubt you'll be very good at this job, judging by how things have been going so far.[roman type][line break]";
+					summon heart hairpin cursed;
+					if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
+						say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
+						SexChange the player;
+		if M is newborn:
+			now M is large;
+		now the sleep of M is 250;
+		if the class of the player is schoolgirl, decrease the sleep of M by 100;
+		if the evolved of M is 3 or M is in School34, decrease the sleep of M by 100;
+		if M is dull-tentacle-monster, decrease the sleep of M by 25;
+		deinterest M;
 	rule succeeds.
 The tentacle monster climaxes rule is listed in the tentacle monster end of sex rules.
 
@@ -466,15 +485,23 @@ To say CondomPinReactionFlav of (M - a tentacle monster) on (C - a clothing):
 	do nothing.
 
 To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
+	if M is penetrating vagina and F is asshole, decide no; [Otherwise the vaginal condom automatically fails afterwards because the asshole one failed which doesn't make much sense]
 	if M is massive and a random number between 1 and 4 > 1, decide yes;
 	if M is large and a random number between 1 and 4 > 2, decide yes;
 	if M is newborn and a random number between 1 and 3 is 1, decide yes;
 	decide no.
 
+To decide if (M - a tentacle monster) is willing to creampie (F - a fuckhole):
+	if the reaction of the player is 0 and the class of the player is not schoolgirl:
+		if M is massive and a random number between 1 and 6 is 1, decide no;[1 in 6]
+		if M is large and a random number between 1 and 3 is 1, decide no;[1 in 3]
+		if M is newborn and a random number between 1 and 3 > 1, decide no;[2 out of 3]
+	decide yes.
+
 To compute vaginal climax of (M - a tentacle monster):
 	if egg laying fetish is 1:
-		if M is wrapped, now M is unwrapped;
 		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [vagina] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
+		if M is wrapped, now M is unwrapped;
 		if M is newborn:
 			WombFill the semen load of M small eggs;
 		otherwise if M is large:
@@ -492,9 +519,13 @@ To compute vaginal climax of (M - a tentacle monster):
 			say "The tentacle in your [vagina] pumps its potent load into the condom.";
 			PussyFill the semen load of M;
 	otherwise:
-		say "The tentacle in your [vagina] pumps its potent load into the deepest recesses of your womb.";
-		PussyFill the semen load of M;
-		say CreampieReactionFlav to M in vagina;
+		if M is willing to creampie vagina:
+			say "The tentacle in your [vagina] pumps its potent load into the deepest recesses of your womb.";
+			PussyFill the semen load of M;
+			say CreampieReactionFlav to M in vagina;
+		otherwise:
+			say "Your struggling causes the tentacle in your [vagina] to slip out at the last moment, spraying your belly with [semen].";
+			CumBellyUp the semen load of M;
 	if the largeness of belly < 10:[We haven't shown an image already]
 		if M is penetrating face, cutshow figure of tentacle cutscene 6 for M;
 		otherwise cutshow figure of tentacle cutscene 5 for M;
@@ -508,8 +539,8 @@ To say CreampieReactionFlav to (M - a tentacle monster) in (F - vagina):
 
 To compute anal climax of (M - a tentacle monster):
 	if egg laying fetish is 1:
-		if M is wrapped, now M is unwrapped;
 		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [asshole] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
+		if M is wrapped, now M is unwrapped;
 		if M is newborn:
 			AssFill the semen load of M small eggs;
 		otherwise if M is large:
@@ -527,8 +558,12 @@ To compute anal climax of (M - a tentacle monster):
 				say "The tentacle in your [asshole] thoroughly fills the condom before pulling out.";
 				AssFill the semen load of M;
 		otherwise:
-			say "You feel the tentacle in your [asshole] filling you up with its load before pulling out.";
-			AssFill the semen load of M;
+			if M is willing to creampie vagina:
+				say "You feel the tentacle in your [asshole] filling you up with its load before pulling out.";
+				AssFill the semen load of M;
+			otherwise:
+				say "Your struggling causes the tentacle in your [asshole] to slip out at the last moment, spraying your ass and thighs with [semen].";
+				CumThighsUp the semen load of M;
 	now M is not penetrating asshole;
 	if the largeness of belly >= 10:
 		cutshow figure of tentacle cutscene 2 for M;
@@ -545,17 +580,31 @@ To compute facial climax of (M - a tentacle monster):
 			say "The condom in your mouth bulges[if M is massive] obscenely[end if] with [NameDesc of M][']s load, but manages to resist the strain. ";
 			compute condom filling of M;
 	otherwise:
-		say "The tentacle in your mouth forces you to gulp down the salty [semen].";
-		StomachSemenUp the semen load of M;
+		if M is willing to bukkake:
+			say "Your struggling causes the tentacle in your mouth to pop out at the last moment, spraying your face with its [semen].";
+			CumFaceUp the semen load of M;
+		otherwise:
+			say "The tentacle in your mouth forces you to gulp down the salty [semen].";
+			StomachSemenUp the semen load of M;
 	now M is not penetrating face.
 
 To decide if (M - a tentacle monster) is losing wrapper in (F - face):
+	if the number of body parts penetrated by M > 1, decide no; [since we don't track condoms separately, let's let the face condom always succeed if the tentacle monster is wearing several condoms (face goes first)]
 	if M is massive and a random number between 1 and 3 > 1, decide yes;[2/3]
 	if M is large and a random number between 1 and 3 is 1, decide yes;[1/3]
 	decide no.[newborns never break the condom]
 
+Definition: A tentacle monster (called M) is willing to bukkake:
+	if the reaction of the player is 0:
+		if M is massive and a random number between 1 and 6 is 1, decide yes;[1 in 6]
+		if M is large and a random number between 1 and 3 is 1, decide yes;[1 in 3]
+		if M is newborn and a random number between 1 and 3 > 1, decide yes;[2 out of 3]
+	decide no.
+
+
 To say StrikingSuccessFlav of (M - a tentacle monster) on (B - a body part):
 	say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
+	if the class of the player is maid and the magic-power of the player > 0, BodyRuin 1;
 	if M is massive, BodyRuin 1.
 
 To say StrikingFailureFlav of (M - a tentacle monster) on (B - a body part):
@@ -563,11 +612,11 @@ To say StrikingFailureFlav of (M - a tentacle monster) on (B - a body part):
 
 This is the tentacle monster convinced rule:
 	if presented-orifice is a potential target:
-		say "[PresentAcceptanceFlav of current-monster]";
+		say PresentAcceptanceFlav of current-monster;
 		now the chosen-orifice of current-monster is presented-orifice;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
-		say "[PresentRejectionFlav of current-monster]".
+		say PresentRejectionFlav of current-monster.
 The monster convinced rule of a tentacle monster is usually the tentacle monster convinced rule.
 
 To compute the orifice choosing of (M - a tentacle monster):
@@ -619,7 +668,7 @@ To say CondomForceFailFlav of (M - a tentacle monster):
 	say "You grab hold of a [DickDesc of M] and try to unroll a condom down its length. [BigNameDesc of M] quickly smacks your hand away. Looks like [he of M][']s going in bare...";
 
 To say TitfuckResistFlav of (M - a tentacle monster):
-	let C be a random worn top level covering nipple covering clothing;
+	let C be a random worn top level covering clothing;
 	say "[one of]You do everything you can to push [him of M] away, but [if C is clothing]your [ShortDesc of C] keeps [him of M] firmly sandwiched between them![otherwise]you simply don't have the leverage from your position on your knees![end if][or]You struggle but you can't get away![or]You resist, but you simply can't get away![in random order]".
 
 To say TitfuckForceFlav of (M - a tentacle monster):
@@ -651,13 +700,14 @@ To say BanishFleeFlav of (M - a tentacle monster):
 Definition: a tentacle monster is auto-banish-loot-dropping if it is massive. [Will it automatically drop jewellery when it is banished in this manner?]
 
 To compute unique banishment of (M - a tentacle monster):
+	say "[bold type]You feel [if M is not newborn]huge amounts of [end if]magic power surging through your veins![roman type][line break][one of][variable custom style]Wow! This is what happens when I defeat tentacle monsters?[roman type][line break][or][stopping]";
 	if M is newborn:
 		MagicPowerUp 1;
 	otherwise if M is large:
 		MagicPowerUp 2;
 	otherwise if M is massive:
-		MagicPowerUp 4;
-	if the magic-power of the player > 1:
+		MagicPowerUp 3;
+	if the magic-power of the player > 2:
 		if the class of the player is virgin warrior and virgin magical girl outfit is off-stage and the number of worn golden warrior priestess outfit is 0:
 			repeat with O running through worn breast covering clothing:
 				say "Your [O] vanishes!";

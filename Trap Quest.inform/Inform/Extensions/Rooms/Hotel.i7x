@@ -224,7 +224,7 @@ Hotel30 is a modern room. The printed name of Hotel30 is "Security Room". "This 
 REQUIRES COMMENTING
 
 *!]
-Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if the player is female], which would be impractical for you to use[end if]. [if watersports fetish is 1 and diaper quest is 0]In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for.[end if]". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
+Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if the player is female], which would be impractical for you to use[end if][if watersports fetish is 1]. In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
 
 [!<hotel32:ModernRoom>*
 

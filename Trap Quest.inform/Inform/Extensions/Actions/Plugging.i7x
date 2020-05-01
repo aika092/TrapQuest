@@ -61,34 +61,36 @@ Unplugging is an action applying to one thing.
 Understand "unplug [something]", "pull [something]" as unplugging.
 Check unplugging something:
 	if the noun is not worn and the noun is sword, try taking the noun instead;
-	if the noun is not an insertable object, say "I didn't understand what you wanted to do with the [printed name of noun], since it's not an insertable object." instead;
-	if the noun is not penetrating an orifice:
-		if the noun is worn, now the noun is carried by the player instead; [Shouldn't happen but in some cases this glitch seems to occur]
-		otherwise say "That is not inside of you!" instead;
-	if the noun is not penetrating a fuckhole, say "That is not removed like this, try [bold type]removing[roman type] it instead." instead;
-	if the noun is cursed and the noun is not dildo sword: [dildo swords come straight back out]
+	if the noun is not an insertable object, say "I didn't understand what you wanted to do with [NameDesc of noun], since it's not an insertable object." instead;
+	if the noun is not penetrating a body part, say "[if the noun is worn]That is not removed like this, try [bold type]removing[roman type] it instead[otherwise]That is not inside of you[end if]." instead;
+	if the noun is maybe-cursed and the noun is not dildo sword: [dildo swords come straight back out]
 		if the noun is sure and the noun is worn, say "It refuses to budge, it's like it's glued inside! It must be the curse..." instead;
 		if the noun is worn:
 			now the noun is sure;
 			say "It refuses to budge, it's like it's glued inside! It must be cursed..." instead;
 	if the latex-transformation of the player is 8, say "You don't have the manual dexterity to do that!" instead;
-	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [printed name of random bottom level ass protection clothing] out of the way first." instead;
-	if the noun is penetrating vagina and the player is pussy protected, say "You need to get your [printed name of random bottom level protection clothing] out of the way first." instead;
-	if diaper quest is 0 and the girth of the noun > the insertableGirthAcceptance of a random orifice penetrated by the noun + 4 and the noun is plug:
-		say "You push with your [random orifice penetrated by the noun]'s muscles and [if the noun is anal beads]pull on the cord of the [printed name of noun], but they're just so big that they[otherwise]pull on the base of the [printed name of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
+	if the noun is penetrating asshole and the player is ass protected, say "You need to get your [random bottom level ass protection clothing] out of the way first." instead;
+	if (the noun is penetrating vagina or the noun is penetrating penis) and the player is pussy protected, say "You need to get your [random bottom level protection clothing] out of the way first." instead;
+	if diaper quest is 0 and the noun is plug and the noun is penetrating a fuckhole and the girth of the noun > the insertableGirthAcceptance of a random fuckhole penetrated by the noun + 4:
+		say "You push with your [random fuckhole penetrated by the noun][']s muscles and [if the noun is anal beads]pull on the cord of [NameDesc of noun], but they're just so big that they[otherwise]pull on the base of [NameDesc of noun], but the plug's bulb is so big that it[end if] just won't come out!" instead.
 Carry out unplugging something:
 	allocate arm use;
 	allocate 6 seconds;
+	let F be a random body part penetrated by the noun;
 	if the noun is anal beads:
 		do nothing instead; [Important! Anal beads has its own unplugging function]
 	otherwise:
-		if the player is in danger:
-			say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling the [printed name of the noun] out of your fuckhole to make it available for the [printed name of random unfriendly interested monster in the location of the player]. Your cheeks turn a beetroot shade of red.";
-			humiliate 125;
-			compute player submission;
-		if the girth of the noun > the openness of a random orifice penetrated by the noun + 2:
-			say "The [printed name of the noun] makes a loud 'PLOP' as you pull it clean out of your [random orifice penetrated by the noun].";
-			ruin a random orifice penetrated by the noun;
+		if F is penis:
+			say "You take [NameDesc of the noun] off of your [ShortDesc of penis].";
+		otherwise:
+			let M be a random combative monster;
+			if M is monster:
+				say "Blood rushes to your head as you feel incredibly humiliated, submissively pulling [NameDesc of noun] out of your fuckhole to make it available for [NameDesc of M]. Your cheeks turn a beetroot shade of red.";
+				humiliate 125;
+				compute player submission;
+			if the girth of the noun > the openness of F + 2:
+				say "[BigNameDesc of the noun] makes a loud 'PLOP' as you pull it clean out of your [variable F].";
+				ruin F;
 		dislodge the noun;
 		now the noun is carried by the player.
 Report unplugging something:

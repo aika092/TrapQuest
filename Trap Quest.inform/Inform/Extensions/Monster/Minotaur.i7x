@@ -2,8 +2,6 @@ Minotaur by Monster begins here.
 
 minotaur is a dungeon boss. minotaur is male. The leftover-type of minotaur is 107. minotaur has a number called nutting-turns. The nutting-turns of minotaur is usually 0.
 
-Definition: A minotaur is dungeon dwelling: decide yes.
-
 minotaur is in Dungeon36. minotaur is caged.
 Figure of minotaur is the file "NPCs/Bosses/Minotaur/minotaur1.png". Figure of minotaur caged is the file "NPCs/Bosses/Minotaur/minotaur2.png". Figure of hulk is the file "NPCs/Bosses/Minotaur/hulk1.png".
 
@@ -352,16 +350,12 @@ To say StrikingFailureFlav of (M - minotaur) on (B - a body part):
 	say "You try to dodge [NameDesc of M][']s fist, but [he of M] still manages to land a glancing blow! Ouch!";
 	BodyRuin 1.
 
-To compute striking attack of (M - minotaur):
+To decide which body part is the painful-part of (M - minotaur):
 	let B be a random body part;
 	if B is a fuckhole, now B is hips;
 	if B is hair, now B is breasts;
 	if B is not hips and B is not breasts, now B is belly;
-	if the accuracy roll of M > the dexterity of the player:
-		say "[StrikingSuccessFlav of M on B]";
-		compute M striking B;
-	otherwise:
-		say "[StrikingFailureFlav of M on B]".
+	decide on B.
 
 The monster fucked taunting rule of minotaur is the minotaur replaces the monster rule.
 This is the minotaur replaces the monster rule:
@@ -452,7 +446,7 @@ To say DamageReactWeak of (M - minotaur):
 To compute unique automatic banishment of (M - minotaur):
 	let H be a random off-stage horn;
 	let X be a random off-stage equine-strapon;
-	let B be a random off-stage potion of bull strength;
+	let B be bull-strength-potion;
 	now M is bossdefeated;
 	if M is caged, say "The cage swings wildly, and then suddenly the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. ";
 	say "The injured [ShortDesc of M] turns and flees towards the exit of the dungeon. ";
@@ -480,8 +474,7 @@ To compute unique automatic banishment of (M - minotaur):
 			say "In [his of M] haste, [he of M] dropped a [ShortDesc of B]!";
 			now B is in the location of the player;
 			compute autotaking B;
-			increase the loot dropped of M by 1;
-	loot M.
+			increase the loot dropped of M by 1.
 
 To loot (M - minotaur):
 	let X be a random off-stage plentiful ring;

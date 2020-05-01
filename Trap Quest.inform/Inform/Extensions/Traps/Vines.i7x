@@ -399,10 +399,9 @@ To compute vine laxative torture of (V - a vine):
 	say "Holding your limbs carefully in place, one vine approaches your mouth holding a big purple baby bottle labelled 'LAX'. [one of]Somehow you suspect that isn't a reference to some unnamed Los Angeles-based ex-girlfriend. [or][stopping]After the nipple is pushed into your mouth, the vine squeezes the middle of the bottle and the bitter tasting liquid squirts into your mouth. There's nothing you can do but drink up.";
 	increase suppository by 2;
 	StomachUp 1;
-	let C be a random off-stage butterfly wings;
-	if C is actually summonable:
+	if butterfly wings is actually summonable:
 		say "Even more bizarrely, you feel a pair of wings sprout from your back! You feel lighter.";
-		summon C cursed with quest;
+		summon butterfly wings cursed with quest;
 	appropriate-cutscene-display figure of vines cutscene 4;
 	say "After this the vines release you, retreating back into the trees and disappearing into the ground.";
 	now V is not grabbing the player;

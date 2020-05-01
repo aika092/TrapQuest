@@ -346,17 +346,17 @@ This is the nipple chain already worn rule:
 The nipple chain already worn rule is listed in the nipple piercing wearability rules.
 
 This is the overdress nipple chain clash rule:
-	if wearing-target is nipple covering or wearing-target is ridiculously low cut or higher:
+	if wearing-target is actually nipple covering:
 		repeat with N running through worn nipple chains:
 			if N is not blessed:
-				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you blessed it?";
+				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing any clothing that would cover your nipples! Maybe if you blessed it?";
 				rule fails.
 The overdress nipple chain clash rule is listed in the overdress wearability rules.
 
 This is the bra nipple chain clash rule:
-	if wearing-target is nipple covering:
+	if wearing-target is actually nipple covering:
 		repeat with N running through worn nipple chains:
-			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is preventing you from ever wearing any kind of bra!";
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is preventing you from ever wearing any kind of bra that would cover your nipples!";
 			rule fails.
 The bra nipple chain clash rule is listed in the bra wearability rules.
 

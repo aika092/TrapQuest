@@ -3,7 +3,7 @@ Diaper Lover Options by Fetish Settings begins here.
 To decide which number is diaper messing:
 	if diaper lover <= 0, decide on 0;
 	if choice in row 50 of the Table of Player Options <= 0, decide on 0;
-	if (the player is not an april 2019 diaper donator or diaper quest is 0) and choice in row 50 of the Table of Player Options >= 6, decide on 5;
+	if (the player is not a top donator or diaper quest is 0) and choice in row 50 of the Table of Player Options >= 6, decide on 5;
 	decide on choice in row 50 of the Table of Player Options.
 
 Part 1 - Diaper Lover
@@ -15,8 +15,8 @@ title	subtable	description	toggle
 "Enable diaper messing scenes only (these will always be 'cleaned up' right away afterwards)."	--	--	extreme diaper lover rule
 "Enable diaper messing (you'll need to go find a change yourself)."	--	--	messed diaper lover rule
 "Messiness can happen all the time, even when I'm wearing panties! (+1 point)"	--	--	panty messer rule
-"Yes to panty messing, and also messy diapers are usually left behind for me to clean up myself! (+1 point)[if diaper quest is 0] [bracket]DISABLED - Doesn't work in TQ yet, only DQ[close bracket][otherwise if the player is not an april 2019 diaper donator] [bracket]DISABLED - Patrons only[close bracket][end if]"	--	--	diaper tidier rule
-"Yes to panty messing and messy diaper tidying, and also enable scenes where my face is smushed against the (outside!) of messy diapers! (+3 points)[if diaper quest is 0] [bracket]DISABLED - Doesn't work in TQ yet, only DQ[close bracket][otherwise if the player is not an april 2019 diaper donator] [bracket]DISABLED - Patrons only[close bracket][end if]"	--	--	diaper faceplanter rule
+"Yes to panty messing, and also messy diapers are usually left behind for me to clean up myself! (+1 point)[if diaper quest is 0] [bracket]DISABLED - Doesn't work in TQ yet, only DQ[close bracket][otherwise if the player is not a top donator] [bracket]DISABLED - Patrons only[close bracket][end if]"	--	--	diaper tidier rule
+"Yes to panty messing and messy diaper tidying, and also enable scenes where my face is smushed against the (outside!) of messy diapers! (+3 points)[if diaper quest is 0] [bracket]DISABLED - Doesn't work in TQ yet, only DQ[close bracket][otherwise if the player is not a top donator] [bracket]DISABLED - Patrons only[close bracket][end if]"	--	--	diaper faceplanter rule
 
 This is the messed diaper lover rule:
 	now choice in row 50 of the Table of Player Options is 4;
@@ -39,12 +39,12 @@ This is the panty messer rule:
 	follow quit rule.
 
 This is the diaper tidier rule:
-	if the player is an april 2019 diaper donator:
+	if the player is a top donator:
 		now choice in row 50 of the Table of Player Options is 6;
 		follow quit rule.
 
 This is the diaper faceplanter rule:
-	if the player is an april 2019 diaper donator:
+	if the player is a top donator:
 		now choice in row 50 of the Table of Player Options is 7;
 		follow quit rule.
 

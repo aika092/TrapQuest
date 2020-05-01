@@ -33,6 +33,9 @@ The pom-poms prevent manual dexterity rule is listed in the manual dexterity res
 To decide which number is the damage improvement of (W - a pom-pom):
 	decide on the magic-modifier of W - 4.
 
+To decide which number is the luck-influence of (W - a pom-pom):
+	decide on the magic-modifier of W + 5.
+
 To compute periodic effect of (C - a pom-pom):
 	if the charge of C > 0:
 		decrease the charge of C by 1;

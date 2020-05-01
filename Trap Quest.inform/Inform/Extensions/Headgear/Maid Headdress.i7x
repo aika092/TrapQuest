@@ -55,19 +55,18 @@ Chapter - Class Outfit
 Definition: a maid headdress is removal-blocking if wearing-target is maid outfit or wearing-target is magical-maid-outfit or wearing-target is cafe maid stockings. [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 
 To decide which thing is chosen-maid-outfit:
-	if the magic-power of the player > 0 and magical-maid-outfit is off-stage and diaper quest is 0, decide on magical-maid-outfit;
 	if (diaper quest is 1 or cafe maid headdress is worn) and a random off-stage maid waitress outfit is actually summonable:
 		decide on a random off-stage maid waitress outfit;
-	let B be the bimbo of the player;
-	increase B by a random number from -3 to 5;
-	if B < 3 and a random maid waitress outfit is actually summonable, decide on a random maid waitress outfit;
-	if B < 5 and a random sexy maid outfit is actually summonable, decide on a random sexy maid outfit;
-	if B < 7 and a random sexy maid outfit is actually summonable, decide on a random drooping maid outfit;
-	if B < 9 and a random cheap maid outfit is actually summonable, decide on a random cheap maid outfit;
-	if B < 11 and a random fetish maid outfit is actually summonable, decide on a random fetish maid outfit;
-	if B < 13 and a random pink maid outfit is actually summonable, decide on a random pink maid outfit;
-	if B < 15 and a random slutty maid outfit is actually summonable, decide on a random slutty maid outfit;
-	if B < 17 and a random V-shape maid outfit is actually summonable, decide on a random V-shape maid outfit;
+	let B be the humiliation of the player;
+	increase B by a random number from 0 to 5000;
+	if B < 5000 and a random maid waitress outfit is actually summonable, decide on a random maid waitress outfit;
+	if B < 10000 and a random sexy maid outfit is actually summonable, decide on a random sexy maid outfit;
+	if B < 15000 and a random sexy maid outfit is actually summonable, decide on a random drooping maid outfit;
+	if B < 20000 and a random cheap maid outfit is actually summonable, decide on a random cheap maid outfit;
+	if B < 25000 and a random fetish maid outfit is actually summonable, decide on a random fetish maid outfit;
+	if B < 30000 and a random pink maid outfit is actually summonable, decide on a random pink maid outfit;
+	if B < 35000 and a random slutty maid outfit is actually summonable, decide on a random slutty maid outfit;
+	if B < 40000 and a random V-shape maid outfit is actually summonable, decide on a random V-shape maid outfit;
 	decide on a random fishnet maid outfit.
 
 maid-summoned is a number that varies.
@@ -111,15 +110,7 @@ To compute class outfit of (H - a maid headdress):
 	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
 		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]![roman type] [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
 		summon C locked;
-		say "[variable custom style]I'm a hornymaid locked in chastity! But I need to cum so badly...[roman type][line break]";
-	otherwise if the class of the player is magical girl:
-		let W be a random off-stage heart wand;
-		if S is actually summonable:
-			say "[bold type]A pair of light pink stockings appears on your legs![roman type][line break]";
-			summon S uncursed;
-		otherwise if W is actually summonable:
-			say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
-			summon W uncursed.
+		say "[variable custom style]I'm a hornymaid locked in chastity! But I need to cum so badly...[roman type][line break]".
 
 Chapter - Quest
 
@@ -139,11 +130,10 @@ To say QuestTitle of (Q - puddle-cleaning-quest):
 To progress quest of (Q - puddle-cleaning-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
-			let P be a random pink spraybottle;
 			increase the puddles-cleaned of Q by 1;
 			if the puddles-cleaned of Q < (a random number between 3 and 4) - diaper quest:
 				say "Your [ShortDesc of C] pulses happily. [one of]If you keep this sort of work ethic up, you're sure to be rewarded eventually[or]Keep it up[stopping]!";
-			otherwise if P is cloth and P is worn and the work ethic of P < 150 and diaper quest is 0:
+			otherwise if pink-spraybottle is cloth and pink-spraybottle is worn and the work ethic of pink-spraybottle < 150 and diaper quest is 0:
 				say "Your [ShortDesc of C] [if C is cursed]doesn't uncurse - it [end if]seems to think you [one of]need to do more cleaning with the cloth until you have redeemed yourself for breaking the bottle[or]still need to do more cleaning[stopping]!";
 			otherwise:
 				now the puddles-cleaned of Q is 0;
@@ -169,21 +159,20 @@ To compute generic second time class reward of (Q - puddle-cleaning-quest) on (C
 	now the fatigue of the player is 0.
 
 To compute generic class reward of (Q - puddle-cleaning-quest) on (C - a clothing):
-	let P be a random pink spraybottle;
-	if P is worn:
-		if P is cloth and the work ethic of P < 0:
+	if pink-spraybottle is worn:
+		if pink-spraybottle is cloth and the work ethic of pink-spraybottle < 0:
 			compute generic second time class reward of Q on C;
-		otherwise if P is cloth:
-			say "Your [printed name of P] lights up, emitting a lemony scent as a matching pink spraybottle materialises in your other hand!";
-			now P is spray;
-			now the charge of P is 1;
-		otherwise if P is cursed:
-			say "Your [printed name of P] lights up, emitting a puff of green, minty vapour as it loses its curse.";
-			silently bless P;
+		otherwise if pink-spraybottle is cloth:
+			say "[BigNameDesc of pink-spraybottle] lights up, emitting a lemony scent as a matching pink spraybottle materialises in your other hand!";
+			now pink-spraybottle is spray;
+			now the charge of pink-spraybottle is 1;
+		otherwise if pink-spraybottle is cursed:
+			say "[BigNameDesc of pink-spraybottle] lights up, emitting a puff of green, minty vapour as it loses its curse.";
+			silently bless pink-spraybottle;
 		otherwise:
-			if the work ethic of P >= 400:
-				say "Your [printed name of P] lights up, emitting a puff of sweet-smelling vapour as it becomes blessed.";
-				silently bless P;
+			if the work ethic of pink-spraybottle >= 400:
+				say "[BigNameDesc of pink-spraybottle] lights up, emitting a puff of sweet-smelling vapour as it becomes blessed.";
+				silently bless pink-spraybottle;
 			otherwise:
 				compute generic second time class reward of Q on C;
 	otherwise:

@@ -23,16 +23,15 @@ To decide which number is the unworn outrage of (C - a clothing):
 	if C is messed knickers and diaper quest is 0 and C is currently at least partially visible, decide on 20;
 	let O be the initial outrage of C;
 	increase O by the notManlyFactor of C;
-	if O < 11 and C is drinkable condom pinned, now O is 11; [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
+	[if O < 11 and C is drinkable condom pinned, now O is 11;] [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
 	if diaper quest is 0 and O < 6 + the semen-soak of C and the semen-soak of C > 2, now O is 9; [can't have significant amounts of cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
-	if C is not worn or C is currently at least partially visible, increase O by the fluid outrage of C;
-	if C is not worn or C is currently at least partially visible, increase O by the condom outrage of C;
-	[if C is breast covering and C is actually sheer and O < the at least partially lewdly exposed outrage of breasts and breasts is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of breasts;
-	if C is breast covering and (C is nipple exposing or C is see-through) and O < the lewdly exposed outrage of breasts and breasts is lewdly exposed, now O is the lewdly exposed outrage of breasts;
-	if C is crotch covering and C is actually sheer and O < the at least partially lewdly exposed outrage of asshole and asshole is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of asshole;
-	if C is skirted and C is actually sheer and O < the at least partially lewdly exposed outrage of asshole and asshole is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of asshole;
-	if C is crotch covering and (C is not total protection or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole;
-	if C is skirted and (C is super-short or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole;] [EXPERIMENTAL: Items can't be less humiliating than what they expose.]
+	if C is not worn or C is currently at least partially visible:
+		increase O by the fluid outrage of C;
+		if the used condoms of C > 1 and O < 12:
+			now O is 12;
+		otherwise if the used condoms of C is 1 and O < 7:
+			now O is 7;
+		increase O by the condom outrage of C;
 	if O > 20, now O is 20;
 	decide on O.
 
@@ -41,6 +40,8 @@ To decide which number is the outrage of (C - a vessel):
 		decide on 11;
 	otherwise if C is baby's bottle:
 		decide on 8;
+	otherwise if C is novelty mug:
+		decide on 6;
 	otherwise if C is cocktail-glass:
 		decide on 3;
 	otherwise:

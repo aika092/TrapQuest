@@ -110,11 +110,10 @@ To uniquely destroy (E - an egg):
 	now the hatching of E is 0;
 	now E is not laid.
 
-A later time based rule:
-	if playerRegion is not school:
-		repeat with E running through on-stage eggs:
-			if E is laid or the hatching of E > 0:
-				compute hatchtime of E.
+A later time based rule (this is the hatchtime rule):
+	repeat with E running through on-stage eggs:
+		if E is laid or the hatching of E > 0:
+			compute hatchtime of E.
 
 To compute hatchtime of (E - an egg):
 	increase the hatching of E by a random number between 1 and 2;
@@ -251,7 +250,7 @@ To decide which figure-name is the examine-image of (C - a larva):
 	decide on figure of larva.
 To say ExamineDesc of (B - a larva):
 	say "A small maggot-like creature. You could easily destroy it.".
-A later time based rule:
+A later time based rule (this is the larvae growth rule):
 	repeat with M running through on-stage larva:
 		increase the larva-growth of M by a random number between 0 and 2;
 		if M is regional:

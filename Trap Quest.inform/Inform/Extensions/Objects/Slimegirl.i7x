@@ -43,7 +43,7 @@ slimegirl has a number called timetaken.
 The higher this number, the longer it has been since the last time the hunger of the slimegirl changed.
 ]
 
-A time based rule (this is the compute slimegirl rule):
+An all time based rule (this is the compute slimegirl rule):
 	if slimegirl is worn:
 		let M be slimegirl;
 		increase the timetaken of M by seconds;

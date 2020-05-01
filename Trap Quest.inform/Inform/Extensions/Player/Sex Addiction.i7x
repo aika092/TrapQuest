@@ -118,9 +118,9 @@ highest sex addiction is a number that varies. highest sex addiction is 0.
 
 slowSexAddiction is a number that varies.
 To SlowSexAddictUp (X - a number):
-	let slowSexAddictionLimit be 1 - diaper quest;
+	let slowSexAddictionLimit be 0[ - diaper quest];
 	if the player is a pervert, increase slowSexAddictionLimit by 1;
-	if the player is a nympho, increase slowSexAddictionLimit by the sex addiction of the player - 13; [nymphos love orgasms so much that it takes a long time for their nymphomania to get even worse]
+	if the player is a nympho, increase slowSexAddictionLimit by (the sex addiction of the player - 13) / 2; [nymphos love orgasms so much that it takes a long time for their nymphomania to get even worse]
 	while X > 0:
 		decrease X by 1;
 		increase slowSexAddiction by 1;

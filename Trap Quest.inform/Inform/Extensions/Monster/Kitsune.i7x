@@ -5,6 +5,7 @@ kitsune is a monster. kitsune is intelligent. kitsune has a number called vanish
 Understand "vampiress", "seductive" as kitsune when the target-disguise of the item described is vampiress. Understand "cultist", "acolyte", "ardent" as kitsune when the target-disguise of the item described is acolyte.
 
 Definition: kitsune is mansion dwelling: decide yes.
+Definition: kitsune is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Figure of kitsune is the file "NPCs/Mansion/Kitsune/kitsune1.jpg".
 Figure of kitsune interact 1 is the file "NPCs/Mansion/Kitsune/kitsune2.jpg".

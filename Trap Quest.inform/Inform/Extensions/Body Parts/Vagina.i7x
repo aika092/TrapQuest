@@ -68,8 +68,8 @@ Definition: a clothing (called C) is potentially vagina covering:
 	decide no.
 
 Definition: a clothing (called C) is potentially at least partially vagina covering:
-	if (C is potentially pussy covering or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;[if it protects your pussy, it must be covering it.]
-	if C is skirt-covering-crotch and C is not see-through, decide yes;
+	if C is see-through, decide no; [if it protects your pussy, it must be covering it.]
+	if C is skirt-covering-crotch or C is potentially pussy covering, decide yes;
 	decide no.
 
 [!<vaginaPresentableRules:Rulebook>*
@@ -373,7 +373,7 @@ To PussyFill (X - a number):
 		now X is 0;
 		compute condom filling of M;
 	if X > 0:
-		if invigoration-elixir-timer > 0 and the soreness of vagina > 0:
+		if invigoration-timer of invigoration-elixir > 0 and the soreness of vagina > 0:
 			say "The lining of your [vagina] is somehow healed as the [semen] rushes in!";
 			if the soreness of vagina > X, decrease the soreness of vagina by X;
 			otherwise now the soreness of vagina is 0;
@@ -405,6 +405,7 @@ To PussyFill (X - a number):
 
 Definition: vagina is accepting womb semen if the womb volume of vagina < 5 and the pregnancy of the player is 0. [If the womb is full or carrying a child then it can't get more semen in it via the old fashioned way]
 Definition: vagina is accepting womb eggs if the pregnancy of the player is 0 or the pregnancy of the player is 3.
+Definition: yourself is able to get pregnant if pregnancy fetish is 1 and the pregnancy of the player is 0 and the player is not in a predicament room.
 
 [!<WombFillX>+
 
@@ -434,7 +435,7 @@ To WombFill (X - a number):
 		if tentacles tattoo is worn and (there is a tentacle monster penetrating vagina or there is a vine penetrating vagina or there is a creampie pole trap penetrating vagina), now IG is 1;
 		if IG is 0 and the player is pheromonal and there is a musky monster penetrating vagina:
 			if a random number between 1 and 4 is 1, now IG is 1;
-		if IG is 1 and the pregnancy of the player is 0 and pregnancy fetish is 1:
+		if IG is 1 and the player is able to get pregnant:
 			compute father material of vagina;
 			compute sudden pregnancy.
 
@@ -692,9 +693,17 @@ To compute womb egg laying:
 
 Section - Image for graphics window
 
-Figure of PussyObject1 is the file "CharWins/FocusWin/pussy1.jpg".
+Figure of PussyObject0 is the file "CharWins/FocusWin/Vagina/pussy0.jpg".
+Figure of PussyObject1 is the file "CharWins/FocusWin/Vagina/pussy1.jpg".
+Figure of PussyObject1B is the file "CharWins/FocusWin/Vagina/pussy1b.jpg".
 
 To decide which figure-name is the examine-image of (T - vagina):
-	decide on Figure of PussyObject1.
+	if the virgin of the player is 1:
+		decide on Figure of PussyObject0;
+	otherwise if the semen volume of vagina > 0:
+		decide on Figure of PussyObject1B;
+	otherwise:
+		decide on Figure of PussyObject1.
+
 
 Vagina ends here.

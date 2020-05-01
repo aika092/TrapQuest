@@ -139,6 +139,7 @@ To stimulate (F - a body part) from (T - an object) times (N - a number):
 	if F is penis and the player is female, now F is vagina;
 	while N > 0:
 		decrease N by 1;
+		if F is penis, RawUp penis;
 		if the player is able to get horny:
 			passively stimulate F from T;
 		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 2:

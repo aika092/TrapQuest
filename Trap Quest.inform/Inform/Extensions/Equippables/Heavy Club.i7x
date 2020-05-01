@@ -39,7 +39,7 @@ To decide which number is the damage improvement of (W - heavy-club):
 
 To compute periodic effect of (G - heavy-club):
 	let S be the body soreness of the player;
-	if the player is not an april 2019 top donator:
+	if the player is not the donator:
 		do nothing;
 	otherwise if rugged-headband is not worn:
 		say "[bold type]You aren't strong enough to carry the [printed name of G]! It falls out of your hands with a resounding thud.[roman type][line break]";

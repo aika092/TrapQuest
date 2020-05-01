@@ -1006,7 +1006,7 @@ To say CreampieReactionFlav to (M - a monster) in (F - a fuckhole):
 	do nothing.
 
 To say CreampieReactionFlav to (M - a monster) in (F - vagina):
-	if pregnancy fetish is 1 and M is male and the pregnancy of the player is 0, say "[variable custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
+	if M is male and the player is able to get pregnant, say "[variable custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
 
 [!<SayCondomPieFlavOfMonsterInFuckhole>+
 

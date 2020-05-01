@@ -5,9 +5,7 @@ A giant wasp is a kind of monster. A giant wasp is usually airborne. A giant was
 Definition: a giant wasp is willing to do anal: decide yes.
 Definition: a giant wasp is willing to do vaginal if the pregnancy of the player <= 0 or the pregnancy of the player is 3.
 
-Definition: A giant wasp (called M) is woods dwelling:
-	if egg laying fetish is 0 or mythical creature fetish is 0, decide no;
-	decide yes.
+Definition: a giant wasp is woods dwelling if egg laying fetish is 1 and mythical creature fetish is 1.
 
 daddy-wasp is an object that varies. daddy-wasp is usually the throne.
 newborn-wasp is an object that varies. newborn-wasp is usually the throne.
@@ -24,6 +22,9 @@ Figure of Wasp Cutscene 1 is the file "Special/Cutscene/cutscene-wasp-sex1.png".
 
 To decide which figure-name is the monster-image of (M - a giant wasp):
 	decide on figure of giant wasp.
+
+To decide which figure-name is the anal-sex-monster-image of (M - a giant wasp):
+	decide on figure of Wasp Cutscene 1.
 
 Understand "daddy", "dwsp" as giant wasp when the item described is daddy-wasp.
 Understand "newborn", "nwsp" as giant wasp when the item described is newborn-wasp.
@@ -93,15 +94,11 @@ To set up (M - a giant wasp):
 To decide which number is the girth of (M - a giant wasp):
 	decide on 6.
 
-Definition: A giant wasp (called M) is second level:
-	if egg laying fetish is 0, decide no;
-	decide yes.
-
-This is the spawn initial giant wasp rule:
+[This is the spawn initial giant wasp rule:
 	if the number of alive giant wasps is 0 and egg laying fetish is 1:
 		let M be a random giant wasp;
 		summon M in the woods.
-The spawn initial giant wasp rule is listed in the setting up woods monsters rules.
+The spawn initial giant wasp rule is listed in the setting up woods monsters rules.]
 
 Part 1 - Misc Flavour
 
@@ -222,7 +219,6 @@ To compute vaginal sex of (M - a giant wasp):
 To compute fuckhole sex of (M - a giant wasp):
 	let F be a random fuckhole penetrated by M;
 	say "[BigNameDesc of M] keeps thrusting with its ovipositor! ";
-	if F is asshole and the medium egg count of belly is 0, cutshow figure of wasp cutscene 1 for M;
 	if a random number between 1 and 2 is 1:
 		say "As [NameDesc of M] pushes its ovipositor into the deepest recesses of your [variable F], you feel [one of]a solid round object[or]another egg[stopping] travel through the organ and exit into your [if F is asshole]belly[otherwise]womb[end if]!";
 		if F is asshole, assfill 1 medium eggs;
@@ -343,7 +339,7 @@ To say CondomRejectFlav of (M - a domesticated wasp):
 To set up sex length of (M - a giant wasp) in (B - asshole):
 	set up sex length 4 of M in B.
 
-To compute striking attack of (M - a giant wasp):
+To compute damaging attack of (M - a giant wasp):
 	if M is dangerous-wasp and a random number between 1 and 2 is 1 and the player is the donator:
 		say "The wasp stings you in the [one of]arm[or]butt[or]neck[or]back[purely at random], and you feel [if wasp-poison-timer < 1]some strength being sapped from your body! You've been poisoned![otherwise]more poison entering your body![end if]";
 		increase wasp-poison-timer by 3 * the difficulty of M;
@@ -379,7 +375,7 @@ A time based rule (this is the wasp poison decay rule):
 
 wasp-honey-timer is a number that varies.
 
-A time based rule (this is the wasp honey decay rule):
+An all time based rule (this is the wasp honey decay rule):
 	if wasp-honey-timer > 0:
 		decrease wasp-honey-timer by time-seconds;
 		if wasp-honey-timer <= 0:
@@ -472,7 +468,6 @@ To compute delay of (M - domesticated wasp):
 
 To say PrepTaunt of (M - a domesticated wasp) in (F - asshole):
 	say "[line break][speech style of fairy-witch]'[one of]Here comes the fun part. Get it? [']Part?[']'[or]That's right. [big he of the player]'s all yours!'[or]Get ready loser, it's breeding time.'[or]I'd do it, but it just won't fit. Thanks a lot, loser!'[or]I like to watch.'[at random][roman type][line break]";
-
 
 To compute (M - a giant wasp) fathering (W - a domesticated wasp):
 	say "[BigNameDesc of M] swoops down and lands next to the egg. A different phallic appendage protrudes itself from the wasp's underbelly and it drips a few drops of a mostly clear liquid onto the egg. You watch, paralysed with awe and fear, as the white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiar looking larva has emerged from the egg. The older wasp is suddenly hit in the side with a pink bolt of energy, and it flees as a tiny fairy with [his of fairy-witch] hair drawn back into a ponytail bursts from the bushes. [big he of fairy-witch] sprinkles the young wasp with a handful of glittering dust as [he of fairy-witch] wraps a pair of fibrous reins around [his of W] head, causing it to go through the entire metamorphosis a normal wasp goes through in [his of W] youth, but in the span of only a few seconds. The fairy seems too absorbed with [his of fairy-witch] new mount to care about you.";
@@ -611,7 +606,6 @@ To compute SelectionFailure of (M - domesticated wasp):
 		ruin asshole;
 	bore M.
 
-
 Definition: domesticated wasp is automatically banishable: decide yes.
 
 To compute unique banishment of (M - domesticated wasp):
@@ -623,6 +617,5 @@ To compute unique banishment of (M - domesticated wasp):
 		now the boredom of fairy-witch is 0;
 		now the health of fairy-witch is (the maxhealth of fairy-witch * 2) / 3;
 		say "[BigNameDesc of fairy-witch] tumbles from [NameDesc of M][']s back![line break][speech style of fairy-witch]'You just cost me my ride, [bitch]!'[roman type][line break][big he of fairy-witch] looks injured and angry...".
-
 
 Giant Wasp ends here.

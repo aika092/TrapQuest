@@ -38,6 +38,13 @@ To Set Up The Woods:
 	follow the set up woods traps rules;
 	repeat with M running through alive monsters in the woods:
 		if the location of M is not placed, now M is in a random placed dodgy room;
+	[let N1 be the regionalMonsterCount of the Woods;]
+	repeat with N2 running from 1 to startingRegionalMonsterCount:
+		let M be a random off-stage woods dwelling regionally missing monster;
+		if M is not monster, now M is a random off-stage woods dwelling monster;
+		if M is monster:
+			set up M;
+			now M is in a random placed dodgy room;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 

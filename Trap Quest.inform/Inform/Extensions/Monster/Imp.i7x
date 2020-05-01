@@ -8,6 +8,8 @@ Definition: an imp is father material if the player is a august 2019 top donator
 
 Definition: an imp is raunchy: decide yes.
 
+Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp taking leaving after being attacked]
 
 Figure of imp 1 is the file "NPCs/MultiFloor/imp1.png".
@@ -110,13 +112,12 @@ To decide which number is the seek roll of (M - an imp):
 	if M is friendly, decide on 1; [imps always follow you around perfectly when not bored]
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
-A later time based rule: [after compute monsters]
-	if playerRegion is not school: [imps don't go to the school]
-		repeat with M running through on-stage imps:
-			if M is not in the location of the player:
-				now M is in the location of the player;
-				say "A portal appears, and [NameDesc of M] hops out!";
-				if M is not interested, compute perception of M.
+A later time based rule (this is the imps follow the player rule): [after compute monsters]
+	repeat with M running through on-stage imps:
+		if M is not in the location of the player:
+			now M is in the location of the player;
+			say "A portal appears, and [NameDesc of M] hops out!";
+			if M is not interested, compute perception of M.
 
 [rather than becoming bored, they turn on you]
 To compute friendly boredom of (M - an imp):
@@ -271,6 +272,5 @@ To say BanishFleeFlav of (M - an imp):
 	say "[BigNameDesc of M] leaps away from you, sticking out [his of M] tongue as a portal opens up behind [him of M]. [big he of M] cackles tauntingly as [he of M] jumps through and portal closes after [him of M].".
 
 Definition: an imp is auto-banish-loot-dropping: decide no. [Will it automatically drop jewellery when it is banished in this manner?]
-
 
 Imp ends here.

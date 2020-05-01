@@ -27,6 +27,7 @@ To compute furniture resting on (F - med bay bed):
 		otherwise if the breast-enhancement of nurse > 0:
 			compute med bay breast enhancement;
 			decrease the breast-enhancement of nurse by 1;
+			if the breast-enhancement of nurse is 0, now the breast-enhancement of nurse is -1; [this is how we flag that the player had a breast enhancement]
 			now auto is 1;
 			try standing;
 			now auto is 0;

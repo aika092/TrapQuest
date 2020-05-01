@@ -221,15 +221,19 @@ To say StrikingSuccessFlav of (M - a futanari slutty sister) on (B - a body part
 To say StrikingFailureFlav of (M - a futanari slutty sister) on (B - a body part):
 	say "[BigNameDesc of M] spins rapidly towards you, but you manage to jump out the way!".
 
+To compute damaging attack of (M - a bulging slutty sister) on (B - a body part):
+	if the belly contents of M <= 7:[If her belly gets too low, she connects with an attack every time.]
+		let B be the painful-part of M;
+		say "[BigNameDesc of M] spins towards you, landing a brutal roundhouse kick [TargetName of B]!";
+		compute M striking B;
+	otherwise:
+		compute striking attack of M.
+
 To say StrikingSuccessFlav of (M - a bulging slutty sister) on (B - a body part):
 	say "[BigNameDesc of M] uses [his of M] [if nintendolls-wand is not held and nintendolls-wand is not in the location of the player]wand[otherwise]fingers[end if] to strike you [TargetName of B] with several arcs of blue energy!".
 
 To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part):
-	if the belly contents of M > 7:
-		say "[BigNameDesc of M] tries to spin towards you, but [his of M] body is too bloated and you dodge it easily!";
-	otherwise:
-		say "[BigNameDesc of M] spins towards you, landing a brutal roundhouse kick [TargetName of B]!"; [If her belly gets too low, she connects with an attack every time.]
-		compute M striking B.
+	say "[BigNameDesc of M] uses [his of M] [if nintendolls-wand is not held and nintendolls-wand is not in the location of the player]wand[otherwise]fingers[end if] to send several arcs of blue energy toward you, but you duck out of the way!".
 
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
@@ -414,7 +418,6 @@ To compute damage reaction of (M - a bulging slutty sister):
 	otherwise:
 		now the sleep of M is 0;
 		say "[BigNameDesc of M] jumps to [his of M] feet! [big he of M] looks very angry.[line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]".
-
 
 To compute defeat of (M - a bulging slutty sister):
 	say "[second custom style]'Aack! [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";

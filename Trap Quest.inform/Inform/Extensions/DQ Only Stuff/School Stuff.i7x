@@ -1013,7 +1013,7 @@ To compute chess loss punishment:
 	if diaper messing < 3, appropriate-cutscene-display figure of chess cutscene 3 with priority 3;
 	otherwise appropriate-cutscene-display figure of chess cutscene 4 with priority 3.
 
-A time based rule (this is the chess table taunting rule):
+An all time based rule (this is the chess table taunting rule):
 	if chess table is grabbing the player and the chess-victor of chess-lesson is 2:
 		repeat with X running through monsters in the location of the player:
 			compute mandatory room leaving of X;
@@ -1569,7 +1569,7 @@ To execute (E - ultimate-lesson-toilet):
 	say "[second custom style]I'll never use the big [boy of the player] potty again. If I ever try to use a toilet, I will be dragged down into the punishment realm.[roman type][line break]A large white rune in the air flies down into your chest, right where your heart is. You can feel its magic begin to take hold...";
 	now toiletJustUsed is false.
 
-A later time based rule:
+An all later time based rule (this is the toilet punishment rule):
 	if the implant of ultimate-lesson-toilet is 1 and toiletJustUsed is true:
 		compute toilet predicament punishment;
 		now toiletJustUsed is false.
@@ -1596,6 +1596,7 @@ To compute toilet predicament punishment:
 		appropriate-cutscene-display Figure of Ultimate Lesson Toilet Player Cutscene;
 		say "Yep - [MediumDesc of friend][']s super nasty episode is being funnelled directly into your own [plain-massive-diaper]. You wiggle and squirm but the ropes hold you tight, so there's nothing you can do but watch with [horror the diaper addiction of the player] as [he of friend] continues to unload [his of friend] belly and load your padding. The awful smell quickly fills your room, leaving you gagging.[paragraph break]What feels like several minutes pass before [MediumDesc of friend] finally finishes indirectly messing your diaper, with a final ungraceful [italic type]BLART[roman type]. The curse's demonic hands return, quickly undoing your bonds and carrying you back to the [location of the player], but leaving you with an overfilled messy [ShortDesc of plain-massive-diaper][if rubber mittens is worn], [rubber mittens][end if][if there is a worn ballgag] and [ShortDesc of random worn ballgag][end if] as a souvenir.";
 		MessSet plain-massive-diaper to 36;
+		now the foreign-mess of plain-massive-diaper is 36;
 		say "[variable custom style][one of]Oh god... is that really going to happen every time I try to use a toilet from now on?![or]I think maybe I need to stick to diapers[if the diaper addiction of the player < 15]. This is just too gross[end if]...[stopping][roman type][line break]";
 	otherwise:
 		say "Suddenly, the magic curse you got from [NameDesc of lesson-teacher of ultimate-lesson] activates! You feel like your bladder is much weaker than before. Uh-oh...";

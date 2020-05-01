@@ -1,6 +1,6 @@
 Crop Top by Dresses begins here.
 
-A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. The soak-limit of a crop top is usually 16. A crop top is usually sheer-when-wet. Understand "crop", "top" as crop top.
+A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. The soak-limit of a crop top is usually 16. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. Understand "crop", "top" as crop top.
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
@@ -124,8 +124,8 @@ To say ShortDesc of (C - baby doll crop top):
 	say "baby doll crop top".
 
 To decide which number is the initial outrage of (C - baby doll crop top):
-	if diaper quest is 1, decide on 0;
-	decide on 2.
+	if diaper quest is 1, decide on 2;
+	decide on 4.
 To decide which number is the initial cringe of (C - baby doll crop top):
 	decide on 3.
 

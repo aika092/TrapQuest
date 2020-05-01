@@ -1,122 +1,24 @@
 Skills by Player begins here.
 
-[!<skillListingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The skill listing rules is a rulebook.
 
-[!<skillCheatingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The skill cheating rules is a rulebook.
 
-[!<Player>@<mercySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called mercyskill. The mercyskill of the player is usually 0.
-
-[!<Player>@<strutSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called strutskill. The strutskill of the player is usually 0.
-
-[!<Player>@<strut:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called strut. The strut of the player is usually 0.
-
-[!<Player>@<breastSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called breastskill. The breastskill of the player is usually 0.
-
-[!<Player>@<throatSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called throatskill. The throatskill of the player is usually 0.
-
-[!<Player>@<identifySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called identifyskill. The identifyskill of the player is usually 0.
-
-[!<Player>@<wankTime:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called wanktime. The wanktime of the player is usually 0.
-
-[!<Player>@<bellySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called bellyskill. The bellyskill of the player is usually 0.
-
-[!<Player>@<milkSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called milkskill. The milkskill of the player is usually 0.
-
-[!<Player>@<relaxSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called relaxskill. The relaxskill of the player is usually 0.
-
-[!<Player>@<invokeSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called invokeskill. The invokeskill of the player is usually 0.
-
-[!<Player>@<craftSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called craftskill. The craftskill of the player is usually 0.
-
-[!<Player>@<floatSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
+The player has a number called alchemyskill. The alchemyskill of the player is usually 0.
 The player has a number called floatskill. The floatskill of the player is usually 0.
-
-[!<Player>@<wishSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called wishskill. The wishskill of the player is usually 0.
-
-[!<Player>@<fuckSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called fuckskill. The fuckskill of the player is usually 0.
 
 The player has a number called buttskill. The buttskill of the player is usually 0.
@@ -454,12 +356,11 @@ REQUIRES COMMENTING
 To teach fastcrafting:
 	if the craftskill of the player is 0:
 		if times-crafted > 0:
-			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again four times as quickly.[roman type][line break]";
+			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again twice as quickly.[roman type][line break]";
 			now the craftskill of the player is 1;
 		otherwise:
-			let M be a random interested friendly aeromancer in the location of the player;
-			if M is nothing, now M is Icarus;
-			say "When you admit that you have no idea what [he of M] means by alchemy, [he of M] quickly shuts up.[line break][second custom style]'Forget I said anything.'[roman type][line break]";
+			let M be a random aeromancer;
+			say "When you admit that you have no idea what [he of M] means by alchemy, [he of M] quickly shuts up.[line break][speech style of M]'Forget I said anything.'[roman type][line break]";
 	otherwise:
 		say "[bold type]You already know how to craft faster![roman type][line break]".
 
@@ -481,6 +382,27 @@ This is the craftskill learn rule:
 	if the craftskill of the player is 0, say "When you use the alchemist's bowl, it recharges much faster.";
 	now the craftskill of the player is 1.
 The craftskill learn rule is listed in the skill cheating rules.
+
+Part 9 - Better Alchemy
+
+To teach betteralchemy:
+	if the alchemyskill of the player is 0:
+		if times-crafted > 0:
+			say "[bold type]**You have learned improved alchemy skills!**[line break]When you craft an item (using the correct recipe), you have an increased chance of creating a blessed version.[roman type][line break]";
+			now the alchemyskill of the player is 1;
+		otherwise:
+			say "You try to follow [his of Icarus] instructions, but because you don't really understand what [he of Icarus] is talking about, it's too much to comprehend.";
+	otherwise:
+		say "[bold type]You already have improved alchemy skills![roman type][line break]".
+
+This is the alchemyskill list rule:
+	if the alchemyskill of the player is 1, say "When you create an uncursed item using alchemy, you have an increased chance of making a blessed version.".
+The alchemyskill list rule is listed in the skill listing rules.
+
+This is the alchemyskill learn rule:
+	if the alchemyskill of the player is 0, say "When you create an uncursed item using alchemy, you have an increased chance of making a blessed version.";
+	now the alchemyskill of the player is 1.
+The alchemyskill learn rule is listed in the skill cheating rules.
 
 Part 10 - Wish Enhancing
 
