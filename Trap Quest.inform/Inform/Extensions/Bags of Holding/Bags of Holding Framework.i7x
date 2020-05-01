@@ -22,8 +22,8 @@ Definition: water-bomb is never-in-bag: decide yes.
 Definition: a trophy is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried.
-Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet.
-Definition: a knickers is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and it is not messed.
+Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and the used condoms of it is 0.
+Definition: a knickers is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and it is not messed and the used condoms of it is 0.
 Definition: a thing is currently-in-bag if it is in-bag and there is a worn bag of holding.
 Definition: a thing is currently-not-in-bag if it is carried and it is not currently-in-bag.
 

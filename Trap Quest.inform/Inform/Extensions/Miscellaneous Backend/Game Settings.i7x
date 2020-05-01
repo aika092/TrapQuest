@@ -88,6 +88,7 @@ choice
 0 [announcements seen]
 0 [combat-visor-hidden]
 1 [map-figures]
+15 [maximumMenuSize]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -477,6 +478,7 @@ title	subtable	description	toggle
 "Quick RANDOM Start [if halloween content is 1]- disabled because halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Game Difficulty: [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
+"Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
 "IMAGE AND LAYOUT SETTINGS"	Table of Image Settings	--	--
 "OPTIONAL TEXT SETTINGS"	Table of Optional Text Settings	--	--
 "AUTOMATIC ACTIONS SETTINGS"	Table of Automatic Actions Settings	--	--
@@ -946,7 +948,6 @@ This is the image cutscenes toggle rule:
 	if choice in row 29 of the Table of Settings is 0 or (GUI layout is 0 and choice in row 29 of Table of Settings < 2), increase choice in row 29 of Table of Settings by 1;
 	otherwise now choice in row 29 of Table of Settings is 0.
 
-
 This is the tattoo vision toggle rule:
 	if tattoo vision is 0:
 		now choice in row 30 of the Table of Settings is 1;
@@ -1036,7 +1037,7 @@ To decide which number is PopupButtons:
 	decide on choice in row 51 of Table of Settings.
 
 This is the focus window height toggle rule:
-	if focusWindowHeight < 40:
+	if focusWindowHeight < 39:
 		increase choice in row 52 of Table of Settings by 2;
 	otherwise:
 		now choice in row 52 of Table of Settings is 20.
@@ -1066,6 +1067,19 @@ This is the map-figures toggle rule:
 		increase choice in row 55 of Table of Settings by 1;
 	otherwise:
 		now choice in row 55 of Table of Settings is 0.
+
+To decide which number is maximumMenuSize:
+	decide on choice in row 56 of Table of Settings.
+
+This is the maximumMenuSize toggle rule:
+	if maximumMenuSize < 40:
+		increase choice in row 56 of Table of Settings by 1;
+	otherwise:
+		now choice in row 56 of Table of Settings is 4;
+		if current menu selection > 3, now current menu scroll is current menu selection - 3;
+	let CM be the number of filled rows in the current menu - current menu scroll; [current number of rows shown]
+	if CM < maximumMenuSize, now current menu scroll is the number of filled rows in the current menu - maximumMenuSize; [autoscroll back up so that we're showing as many rows as possible]
+	if current menu scroll < 1, now current menu scroll is 1.
 
 Part - Settings
 

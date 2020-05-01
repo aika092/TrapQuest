@@ -120,12 +120,16 @@ To decide which figure-name is Figure of Futanari Gladiator:
 	decide on figure of small image.
 To decide which figure-name is Figure of Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Insane Gladiator:
+To decide which figure-name is Figure of Unfriendly Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Wild Futanari Gladiator:
+To decide which figure-name is Figure of Enlightened Gladiator:
+	decide on figure of small image.
+To decide which figure-name is Figure of Unfriendly Enlightened Gladiator:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Interact 8:
+	decide on figure of small image.
+To decide which figure-name is Figure of Gladiator Interact 9:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Cutscene 1:
@@ -360,6 +364,9 @@ To get oral creampie image for (M - a thing):
 To decide which figure-name is Figure of Photo Display Predicament:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Pink Lollipop:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Pole Cutscene 4:
 	decide on figure of small image.
 
@@ -380,6 +387,13 @@ To decide which figure-name is Figure of Throne Cutscene 4:
 To decide which figure-name is Figure of Throne Cutscene 5:
 	decide on figure of small image.
 To decide which figure-name is Figure of Throne Cutscene 6:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of human toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of male toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of female toilet:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Vines Cutscene 1:

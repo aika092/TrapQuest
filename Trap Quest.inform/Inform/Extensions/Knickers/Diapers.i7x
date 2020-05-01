@@ -608,7 +608,7 @@ Definition: ghost-diaper is removal-blocking if wearing-target is ghost-diaper. 
 To compute unique periodic effect of (C - ghost-diaper):
 	if the total-soak of C >= the soak-limit of C:
 		say "[BigNameDesc of C] seems happy that [he of jismbodied ghost] has drunk [his of jismbodied ghost] fill and releases [his of jismbodied ghost] grip, before flying away into the distance.";
-		follow the spawn initial ghosts rule; [Put at least 1 ghost back in the mansion]
+		[follow the spawn initial ghosts rule;] [Put at least 1 ghost back in the mansion] [TODO: consider rebalance]
 		only destroy C.
 
 The DQFigure of ghost-diaper is usually DQVelcro.

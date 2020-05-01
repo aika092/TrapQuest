@@ -56,7 +56,7 @@ To decide which number is the raw-masturbation-bonus of (E - royal scepter):
 
 princess-consort is a thing that varies. princess-consort is the throne.
 
-This is the betrothal rule:[This only triggers when the player is fucked by a monster, for now.]
+To compute betrothal of (M - a monster):[This only triggers when the player is fucked by a monster, for now.]
 	if debugmode > 0, say "princess-consort is [princess-consort][line break]";
 	if royal scepter is worn:
 		let F be 0;
@@ -94,7 +94,6 @@ This is the betrothal rule:[This only triggers when the player is fucked by a mo
 			now royal scepter is worn by the player;
 			say "You look up at [NameDesc of current-monster] and your eyes meet. A [printed name of royal scepter] appears in your hand, as if to symbolize your lasting connection.";
 		progress quest of betrothal-quest.
-[The betrothal rule is part of the end of sex rules]
 
 To punish infidelity:
 	humiliate the charge of royal scepter * 40;

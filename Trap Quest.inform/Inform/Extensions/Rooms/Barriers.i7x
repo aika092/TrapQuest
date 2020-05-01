@@ -24,7 +24,7 @@ Check going when there is a barrier in the location of the player:
 REQUIRES COMMENTING
 
 +!]
-A later time based rule (this is the barriers raising rule):
+An all later time based rule (this is the barriers raising rule):
 	repeat with B running through on-stage barriers:
 		compute raising of B.
 
@@ -86,9 +86,9 @@ A reinforced-door is a kind of barrier. There is 1 reinforced-door.
 To say OpeningFlav of (B - reinforced-door):
 	say "[bold type]The doors swing open, allowing you to leave the room.[roman type][line break]".
 
-A prison-bars is a kind of barrier. There is 1 prison-bars.
+prison-bars is a barrier.
 
-To say OpeningFlav of (B - a prison-bars):
+To say OpeningFlav of (B - prison-bars):
 	say "[bold type]The cell door swings open, allowing you to leave the room.[roman type][line break]".
 
 [cell-door is a barrier.

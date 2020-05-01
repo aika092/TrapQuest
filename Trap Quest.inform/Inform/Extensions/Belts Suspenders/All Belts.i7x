@@ -169,6 +169,7 @@ living belt of sturdiness has a number called buildup. The buildup of the living
 
 Definition: a living belt of sturdiness is father material: decide yes.
 Definition: a living belt of sturdiness is grey themed: decide yes.
+Definition: a living belt of sturdiness is fetish appropriate if diaper quest is 0.
 
 To decide which figure-name is clothing-image of (C - the living belt of sturdiness):
 	if C is penetrating a fuckhole, decide on figure of living belt of sturdiness penetrated;
@@ -189,7 +190,7 @@ Definition: a living belt of sturdiness is product: decide yes.
 To decide which number is the alchemy key of (C - living belt of sturdiness):
 	decide on 19.
 
-Definition: A clothing (called C) is thrusting:
+Definition: a clothing (called C) is thrusting:
 	if C is living belt of sturdiness and C is penetrating a fuckhole and the player is upright and the player is horny, decide yes;
 	decide no.
 

@@ -319,15 +319,15 @@ REQUIRES COMMENTING
 To say AssDesc:
 	let A be the total volume of hips;
 	if A < 3, say "tiny flat butt cheeks";
-	if A is 3, say "tight well toned tush";
+	if A is 3, say "tight well toned ass cheeks";
 	if A is 4, say "toned butt cheeks";
 	if A is 5, say "roundish but tight butt cheeks";
 	if A is 6, say "cute curvy butt cheeks";
-	if A is 7, say "eye-turning bubble butt";
-	if A is 8, say "well cushioned bottom";
+	if A is 7, say "eye-turning bubble cheeks";
+	if A is 8, say "well cushioned cheeks";
 	if A is 9, say "[if weight gain fetish is 1]chunky[otherwise]thick[end if], wobbly ass cheeks";
 	if A is 10, say "oversized [if weight gain fetish is 1]fat girl [end if]ass cheeks";
-	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]bottom";
+	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]butt cheeks";
 	if A is 12, say "Kardashian sized protruding butt cheeks";
 	if A is 13, say "giant wobbling butt cheeks";
 	if A is 14, say "giant bouncing ass cheeks";

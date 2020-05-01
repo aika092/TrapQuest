@@ -36,7 +36,7 @@ Check decanting an unlock-key with something:
 Check drinking an unlock-key:
 	say "On what? Try [bold type]unlock (noun)[roman type] instead." instead.
 
-A later time based rule:
+A later time based rule (this is the defeated prison guard key rule):
 	if prison guard is defeated and prison guard is alive and skeleton key is off-stage and prison guard is in the location of the player:
 		now skeleton key is in the location of the player;
 		say "As [NameDesc of prison guard] shuffles along nearby, a [skeleton key] drops from [his of prison guard] pocket!";

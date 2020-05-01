@@ -4,9 +4,9 @@ A staff member is a kind of monster. A staff member is intelligent. A staff memb
 
 Definition: a staff member is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
 
-Definition: a staff member is school dwelling: decide yes.
-
 Definition: a staff member is motionless-when-defeated: decide yes.
+
+Definition: a staff member is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 To compute monstermotion of (M - a staff member):
 	if playerRegion is not school and M is undefeated:
@@ -103,6 +103,13 @@ To compute (M - a staff member) reacting to armband replacement:
 
 To say ArmbandCalming of (M - a staff member):
 	if M is unfriendly, say "[BigNameDesc of M] calms down.".
+
+To compute toilet reaction of (M - a staff member):
+	if diaper quest is 1:
+		say "[BigNameDesc of M] claps and smiles whilst proudly watching you![line break][speech style of M]'[one of]Well done, you made it[or]Good [boy of the player][or]Who's a big [boy of the player][in random order]!'";
+	otherwise:
+		say "[BigNameDesc of M] watches you almost unblinkingly, as if supervising you![line break][speech style of M]'[one of]Good [boy of the player]s don't need privacy[or]Good, your exhibitionism is coming along nicely[then at random]!'";
+	say "[roman type][line break][strongHumiliateReflect]".
 
 Part - Protection
 
@@ -316,18 +323,13 @@ And the other pure diamond class would be fucking an inhuman beast, or tentacle 
 ###Selkie wonders about the possibility of a less extreme option, in which the extreme angle is something like a gangbang that's also viewed via cam of the player's friends and family members? Or streamed live to social media in the real world?
 ]
 
-This is the class-time cooldown rule:
+An all later time based rule (this is the class-time cooldown rule):
 	if class-time < 1000 and armband is not solid gold and (playerRegion is not Hotel or Hotel40 is discovered) and (playerRegion is not Mansion or Mansion32 is discovered): [We use 1000 to represent that the player hasn't been to a class before.] [Players who are in the hotel looking for the warp portal shouldn't be penalised]
-		let CS be counters-seconds;
+		let CS be time-seconds;
 		if class-time <= 0 and playerRegion is Woods, now CS is (CS + 1) / 2; [Woods is further away from the school so school time moves slower here.]
 		if playerRegion is not School or class-time <= 0, decrease class-time by CS;
 		if class-time <= 0 and class-time + CS > 0 and armband is worn:
-			say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock! ";
-			[if (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel or playerRegion is Mansion) and the number of warp portals in the location of the player is 0:
-				now school portal is in the location of the player;
-				say "A shimmering green [school portal] appears [if north is N-viable]to the north, blocking that exit[otherwise if playerRegion is Woods]in front of the trees to the north[otherwise]on the north wall[end if].";]
-			say "[line break][variable custom style][one of]Huh?! Does this mean it's time for the next class or something?[or]Time for class again...[stopping][roman type][line break]".
-The class-time cooldown rule is listed in the advance counters rules.
+			say "[bold type]Your [ShortDesc of armband] begins to beep like an alarm clock![line break][variable custom style][one of]Huh?! Does this mean it's time for the next class or something?[or]Time for class again...[stopping][roman type][line break]".
 
 Definition: a lesson (called L) is correctly-situated:
 	if lesson-room is School14 and the lesson-teacher of L is sapphire-teacher, decide yes;
@@ -349,6 +351,9 @@ Definition: a lesson is correctly-ranked if the lesson-teacher of it is correctl
 Definition: a lesson is lesson-appropriate: decide yes.
 
 Definition: a lesson (called L) is appropriate:
+	if the lesson-teacher of L is emerald-teacher and the breast-enhancement of nurse is not 0 and the lesson-teacher of tits-lesson is alive: [If the player was recently instructed to get a breast enhancement, it takes top priority]
+		if L is tits-lesson, decide yes;
+		otherwise decide no;
 	if the lesson-teacher of L is emerald-teacher and L is not pain-lesson and the lesson-teacher of pain-lesson is alive and (the player is wrist bound or the player is ankle bound or portal gag is worn), decide no; [Most if not all other emerald lessons should let releasing the bondage from the pain lesson take priority]
 	if the lesson-teacher of L is alive and the lesson-teacher of L is undefeated and L is lesson-appropriate, decide yes;
 	decide no.
@@ -389,6 +394,9 @@ To compute potential lesson:
 					repeat with C running through worn clothing:
 						if the quest of C is next-lesson-quest, increase B by 2;
 					if B > 0, increase class-time by B * 60; [Lessons are spaced further apart if the player isn't slutty enough for them]
+					if the breast-enhancement of nurse is not 0:
+						decrease the breast-enhancement of nurse by 1; [If the player has had a lesson since they were instructed to get a breast enhancement, this should end that side-quest.]
+						if the breast-enhancement of nurse is 0, say "[bold type]You realise that you should now be able to visit the nurse again without [him of the nurse] giving you a breast enhancement.[roman type][line break]";
 				otherwise:
 					say "Your rank is [accessory-colour of armband], so there's no lesson for you here.".
 
@@ -443,7 +451,7 @@ To decide which number is the assemblyTurns of (A - an assembly):
 To say AssemblyStartFlav of (A - an assembly):
 	say "As you stumble through the warp portal, you find yourself in the assembly hall. A lot of other students are also filing in, and [NameDesc of the assemblyAnnouncer of A] is at the front, ready to lead assembly.".
 
-A time based rule (this is the assembly computation rule):
+An all time based rule (this is the assembly computation rule):
 	let A be a random active assembly;
 	if A is assembly:
 		if the player is in School16 and (the assemblyTime of A <= 1 or the player is not in danger):
@@ -574,9 +582,8 @@ Report Showering:
 
 detention-turns is a number that varies.
 
-This is the detention decay rule:
+An all later time based rule (this is the detention decay rule):
 	if detention-turns > 0, decrease detention-turns by 1.
-The detention decay rule is listed in the advance counters rules.
 
 To compute detention of (M - a staff member):
 	now M is in the location of the player;
@@ -587,7 +594,7 @@ To compute detention of (M - a staff member):
 			if the health of S < the maxhealth of S, now ST is S;
 	if the health of M < the maxhealth of M:
 		say GenericDetention of M;
-	otherwise if ST is student and there is an appropriate team-predicament:
+	otherwise if ST is student and there is an appropriate eligible team-predicament:
 		say "[BigNameDesc of M] looks from you, to [NameDesc of ST], then back at you.[line break][speech style of M]'I think you two need some time together, so that you can learn to co-exist peacefully...'[roman type][line break]";
 		now specificDetention is 1;
 		now ST is in School01;
@@ -702,7 +709,7 @@ To DetentionChairWait:
 		allocate 6 seconds;
 		compute extra turn.
 
-A time based rule (this is the detention chair rule):
+An all time based rule (this is the detention chair rule):
 	if detention chair is grabbing the player:
 		if detention chair is detention-wand:
 			compute wand chair detention;

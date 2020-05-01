@@ -24,7 +24,7 @@ Figure of chocolates cutscene 1 is the file "Special/Cutscene/DQChocolates1.png"
 Figure of chocolates cutscene 2 is the file "Special/Cutscene/DQChocolates2.png".
 
 A time based rule (this is the chocolates stalking rule):
-	if christmas content is 1 and playerRegion is not school:
+	if christmas content is 1:
 		while chocolates bag is not regional:
 			now chocolates bag is in a random placed room;
 			if debugmode is 1, say "now chocolates bag is in [location of chocolates bag].";

@@ -188,7 +188,7 @@ To decide which number is the largeness of belly:
 	let F be belly magnitude of B;
 	if F > max belly size: [we only override max belly size if pregnancy + fat or air is higher on its own.]
 		now B is the flesh volume of belly;
-		if the pregnancy of the player > 0, increase B by the womb volume of vagina;
+		if the pregnancy of the player > 0, increase B by the womb volume of vagina + the total egg volume of vagina;
 		let B2 be belly magnitude of B;
 		if B2 > max belly size, decide on B2;
 		let B2 be belly magnitude of the air volume of belly;
@@ -232,14 +232,11 @@ To decide which number is belly magnitude of (B - a number):
 		now S is 9;
 	otherwise:
 		now S is 10;
-	if the womb volume of vagina > 30 or the pregnancy of the player is 3: [Super pregnancy sizes]
-		if the womb volume of vagina + the total egg volume of vagina > 45, decide on 13;
-		if the womb volume of vagina + the total egg volume of vagina > 37, decide on 12;
-		decide on 11;
-	if the air volume of belly > 30: [super inflation sizes]
-		if the air volume of belly > 45, decide on 13;
-		if the air volume of belly > 37, decide on 12;
-		decide on 11;
+	[Super pregnancy sizes and super inflation sizes]
+	if the womb volume of vagina + the total egg volume of vagina > 45 or the air volume of belly > 45, decide on 13;
+	if the womb volume of vagina + the total egg volume of vagina > 37 or the air volume of belly > 37, decide on 12;
+	if the womb volume of vagina + the total egg volume of vagina > 30 or the air volume of belly > 30, decide on 11;
+	[Normal sizes]
 	if S > 10, decide on 10;
 	otherwise decide on S.
 
@@ -521,8 +518,13 @@ REQUIRES COMMENTING
 
 +!]
 To Overflow:
-	if currently-squirting is 0 and (diaper quest is 1 or (the player is able to expel and belly liquid types + belly egg count > 0 and the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4)):
+	if currently-squirting is 0 and the player is able to expel and belly liquid types + belly egg count > 0 and the total squirtable fill of belly > belly limit and the latex-transformation of the player <= 4:
 		AssSquirt;
+	otherwise if diaper quest is 1:
+		while the total squirtable fill of belly > belly limit and the water volume of belly > 0:
+			decrease the water volume of belly by 1;
+		while the total squirtable fill of belly > belly limit and the urine volume of belly > 0:
+			decrease the urine volume of belly by 1;
 	otherwise if the total squirtable fill of belly > belly limit + 20 and the latex-transformation of the player > 4:
 		say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 		now delayed fainting is 1;
@@ -686,12 +688,12 @@ To Assfill (X - a number):
 	otherwise:
 		compute father material of asshole;
 		now assfilled is 1;
-	if invigoration-elixir-timer > 0 and the soreness of asshole > 0 and X > 0:
+	if invigoration-timer of invigoration-elixir > 0 and the soreness of asshole > 0 and X > 0:
 		say "As the [semen] rushes through your system into your [BellyDesc], the lining of your [asshole] is somehow healed!";
 		if the soreness of asshole > X, decrease the soreness of asshole by X;
 		otherwise now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
-	if there is a worn cum dump's undergarment and the body soreness of the player > 0 and X > 1:
+	if cum dump's undergarment is worn and the body soreness of the player > 0 and X > 1:
 		say "As the [semen] rushes through your system into your [BellyDesc], you feel your body somehow being healed!";
 		if the body soreness of the player > X / 2, decrease the body soreness of the player by X / 2;
 		otherwise now the body soreness of the player is 0;
@@ -1109,6 +1111,10 @@ To AssSquirt:
 						otherwise now L is milk;
 					otherwise:
 						now L is semen;
+					if semen-count > 0:
+						ExpelDisplay;
+					otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
+						cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
 					compute PedestalFilling collecting with L by (urine-count + semen-count + milk-count);
 					now urine-count is 0;
 					now semen-count is 0;
@@ -1135,6 +1141,10 @@ To AssSquirt:
 						otherwise:
 							[Shouldn't be able to happen]
 							now the fill-colour of collecting is murky;
+					if semen-count > 0:
+						ExpelDisplay;
+					otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
+						cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
 					[Now we fill the bottle]
 					if debugmode is 1, say "liquid-count: [liquid-count], liquid-total: [liquid-total], milk-count: [milk-count], semen-count: [semen-count], urine-count: [urine-count], doses: [doses of collecting] / [max-doses of collecting].";
 					while liquid-count < liquid-total and liquid-total > 0 and the doses of collecting < the max-doses of collecting:
@@ -1169,6 +1179,10 @@ To AssSquirt:
 				now the urine-soak of C is 10;
 				now the semen-soak of C is 10;
 				now the water-soak of C is 10;
+				if semen-count > 0:
+					ExpelDisplay;
+				otherwise if the examine-image of asshole is Figure of AssholeObject0 or the examine-image of asshole is Figure of AssholeObject1:
+					cutshow Figure of AssholeObject2 for asshole; [show asshole as partially gaped for one turn]
 				[But if the player is wearing underwear we'll need to keep track of that item of clothing to see how soaked it's getting.]
 				if the player is ass protected, now C is a random bottom level ass protection clothing worn by the player;
 				if turn-count is 0, compute squirt declarations into C;
@@ -1625,7 +1639,7 @@ To compute enema floor reaction of (M - a person):
 	if voluntarySquatting is 1, humiliate 500;
 	if M is monster:
 		FavourDown M with consequences;
-		if M is friendly and M is interested:
+		if M is interested and M is friendly:
 			say "[BigNameDesc of M] turns to leave you alone.";
 			distract M.
 

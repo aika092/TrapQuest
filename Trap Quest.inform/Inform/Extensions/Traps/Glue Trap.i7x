@@ -333,7 +333,7 @@ To check glue tripping:
 
 [See if the glue trap gets the player. If so, it knocks them off their feet.
  I believe this function is called while the trap is in effect.]
-A time based rule (this is the glue-stuck-mutation rule):
+An all time based rule (this is the glue-stuck-mutation rule):
 	if the player is glue stuck:
 		[if the player is flying:
 			let M be a random monster in the location of the player;

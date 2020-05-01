@@ -124,11 +124,19 @@ To Execute Fainting:
 			if Newly-tattooed is 1:
 				say "Your lower back feels sore, and when you look you realise you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
 				now Newly-tattooed is 0;
-			if inhuman pregnancy is 2 and tentacled is 1:
+			if inhuman pregnancy is 2 and tentacled is 1 and the player is female:
 				now tentacled is 0;
 				now player-breeder is in the location of the player;
 				now the growth of player-breeder is 0;
 				say "You see a suspiciously familiar body wrapped up by tentacles and stuck to the wall. Oh dear...";
+				if magical-maid-outfit is worn:
+					now magical-maid-outfit is in Holding Pen;
+					let MH be a random worn maid headdress;
+					if MH is clothing, now MH is in Holding Pen;
+					now player-breeder is maid-history;
+				otherwise:
+					now player-breeder is not maid-history;
+				try examining player-breeder;
 			check immobility;
 			refresh windows;
 			zero focus stuff;

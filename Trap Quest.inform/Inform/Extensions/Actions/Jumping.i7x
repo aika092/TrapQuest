@@ -17,6 +17,7 @@ Check jumping:
 		if C is stuck and the player is not dildo stuck, say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	let B be the largeness of breasts;
 	allocate 2 seconds;
+	if the pill-timer of triple-dildo-predicament > 0, increase the pill-timer of triple-dildo-predicament by 1;
 	if the player is pole stuck:
 		if the player is monster fucked, say "You can't because the [random monster penetrating a body part] is holding you still and fucking you!" instead;
 		otherwise jump from the dildo instead;

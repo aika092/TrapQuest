@@ -2,9 +2,7 @@ Layering by Clothing begins here.
 
 current-layer is a number that varies.
 
-Definition: a clothing (called C) is top layer:
-	if C is breast covering, decide yes;
-	decide no.
+Definition: a clothing is top layer if it is breast covering.
 
 To decide which number is max-top-layer:
 	let X be 0;
@@ -19,9 +17,7 @@ Definition: a clothing (called C) is top-layer-highlighted:
 	if the top-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing (called C) is mid layer:
-	if C is belly covering, decide yes;
-	decide no.
+Definition: a clothing is mid layer if it is belly covering.
 
 To decide which number is max-mid-layer:
 	let X be 0;
@@ -35,9 +31,7 @@ Definition: a clothing (called C) is mid-layer-highlighted:
 	if the mid-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing (called C) is bottom layer:
-	if C is crotch covering, decide yes;
-	decide no.
+Definition: a clothing is bottom layer if it is crotch covering.
 
 Definition: a chastity cage is bottom layer: decide yes.
 

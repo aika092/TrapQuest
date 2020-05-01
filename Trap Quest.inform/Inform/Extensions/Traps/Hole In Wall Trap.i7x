@@ -273,10 +273,10 @@ To compute punishment of (P - hole-enema):
 			destroy C;
 		now C is a random worn top level ass protection clothing;
 	let L be semen;
-	if diaper quest is 1:
-		now L is water;
-	otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1:
+	if watersports fetish is 1 and a random number between 1 and 2 is 1:
 		now L is urine;
+	otherwise if diaper quest is 1:
+		now L is water;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
 		now L is milk;
 	say "You feel the tip of some kind of thin hard cold object pushed inside your [asshole]. Moments later a warm liquid starts to fill you up! It must be some kind of enema syringe[if diaper quest is 0]! Somehow, maybe from the texture or consistency, you can tell you are being given a huge [L] enema[end if]!";

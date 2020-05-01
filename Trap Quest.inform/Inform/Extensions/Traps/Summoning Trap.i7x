@@ -36,13 +36,13 @@ To trigger (Y - a summoning trap):
 	now the reset-timer of Y is 250;
 	let M be nothing;
 	if playerRegion is Dungeon:
-		now M is a random off-stage first level monster;
+		now M is a random off-stage dungeon dwelling monster;
 	if playerRegion is Woods:
-		now M is a random off-stage second level monster;
+		now M is a random off-stage woods dwelling monster;
 	if playerRegion is Hotel:
-		now M is a random off-stage third level monster;
+		now M is a random off-stage hotel dwelling monster;
 	if playerRegion is Mansion:
-		now M is a random off-stage fourth level monster;
+		now M is a random off-stage mansion dwelling monster;
 	if M is a monster:
 		summon M;
 		say SummoningFlav of M;
@@ -52,38 +52,22 @@ To trigger (Y - a summoning trap):
 To say SummoningFlav of (M - a monster):
 	say "A monster has spawned somewhere nearby!".
 
-Definition: A monster (called M) is first level:
-	if M is dungeon dwelling, decide yes;
-	decide no.
-
-Definition: A monster (called M) is second level:
-	if M is woods dwelling, decide yes;
-	decide no.
-
-Definition: A monster (called M) is third level:
-	if M is hotel dwelling, decide yes;
-	decide no.
-
-Definition: A monster (called M) is fourth level:
-	if M is mansion dwelling, decide yes;
-	decide no.
-
 To summon (M - a monster):
-	if M is first level and playerRegion is Dungeon:
+	if M is dungeon dwelling and playerRegion is Dungeon:
 		summon M in the dungeon;
-	otherwise if M is second level and playerRegion is Woods:
+	otherwise if M is woods dwelling and playerRegion is Woods:
 		summon M in the woods;
-	otherwise if M is third level and playerRegion is Hotel:
+	otherwise if M is hotel dwelling and playerRegion is Hotel:
 		summon M in the hotel;
-	otherwise if M is fourth level and playerRegion is Mansion:
+	otherwise if M is mansion dwelling and playerRegion is Mansion:
 		summon M in the mansion;
-	otherwise if M is first level:
+	otherwise if M is dungeon dwelling:
 		summon M in the dungeon;
-	otherwise if M is second level:
+	otherwise if M is woods dwelling:
 		summon M in the woods;
-	otherwise if M is third level:
+	otherwise if M is hotel dwelling:
 		summon M in the hotel;
-	otherwise if M is fourth level:
+	otherwise if M is mansion dwelling:
 		summon M in the mansion;
 	otherwise if playerRegion is School:
 		summon M in the school;
@@ -95,6 +79,8 @@ To summon (M - a monster):
 		summon M in the hotel;
 	otherwise if M is in the mansion:
 		summon M in the mansion;
+	otherwise:
+		summon M in playerRegion;
 	if M is nonexistant and M is on-stage, set up M.
 
 To summon (M - a monster) in (D - the dungeon):

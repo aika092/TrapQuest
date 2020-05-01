@@ -1,6 +1,6 @@
 Open Front Dress by Dresses begins here.
 
-an open-front-dress is a kind of overdress. an open-front-dress is super-short. an open-front-dress is arm exposing. an open-front-dress is transformation-rare.
+an open-front-dress is a kind of overdress. an open-front-dress is super-short. an open-front-dress is arm exposing. an open-front-dress is erect-nipple-exposing. an open-front-dress is transformation-rare.
 
 To decide which number is the initial outrage of (C - an open-front-dress):
 	decide on 10.

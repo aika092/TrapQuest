@@ -45,7 +45,7 @@ Carry out TQeating truffle:
 	StomachFoodUp 1;
 	allocate 6 seconds.
 
-a time based rule (this is the truffle confidence decay rule):
+an all time based rule (this is the truffle confidence decay rule):
 	if truffle-confidence-timer > 0:
 		decrease truffle-confidence-timer by time-seconds;
 		if truffle-confidence-timer <= 0:

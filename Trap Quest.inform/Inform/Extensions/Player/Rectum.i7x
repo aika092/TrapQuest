@@ -82,7 +82,7 @@ To decide which number is fullness-penalty:
 Over time as the player refuses to go, they get a larger and larger (temporary) intelligence penalty as they become more and more distracted by their bowels.
 
 +!]
-This is the fullness causes intelligence loss rule:
+An all later time based rule (this is the fullness causes intelligence loss rule):
 	let F be fullness-penalty;
 	if the player is feeling full:
 		increase fullness-time by 1;
@@ -90,7 +90,6 @@ This is the fullness causes intelligence loss rule:
 	otherwise:
 		now fullness-time is 0;
 		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
-The fullness causes intelligence loss rule is listed in the advance counters rules.
 
 [!<YourselfIsUpsetAboutMess>+
 

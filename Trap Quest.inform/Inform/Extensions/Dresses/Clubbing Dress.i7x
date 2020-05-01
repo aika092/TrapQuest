@@ -1,6 +1,6 @@
 Clubbing Dress by Dresses begins here.
 
-A clubbing dress is a kind of overdress. A clubbing dress is usually short. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
+A clubbing dress is a kind of overdress. A clubbing dress is usually short. A clubbing dress is usually erect-nipple-exposing. A clubbing dress is usually very low cut. The text-shortcut of clubbing dress is "cd".
 
 To decide which number is the dexterity-influence of (C - a clubbing dress):
 	if C is protection, decide on 0;

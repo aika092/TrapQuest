@@ -786,8 +786,6 @@ Report going:
 	Do important going resolution.
 
 To do important going resolution:
-	if map images > 0:
-		map-draw around the location of the player;
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
 		now the room-entering of the player is 1;
 		choose a trap to trigger;

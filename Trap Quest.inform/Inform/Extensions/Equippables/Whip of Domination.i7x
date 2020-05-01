@@ -27,6 +27,9 @@ To decide which number is the alchemy key of (W - whip-of-domination):
 
 Definition: whip-of-domination is recipe specific: decide yes.
 
+To decide which text is RecipeDesc of (B - whip-of-domination):
+	decide on "The recipe just reads 'Severed Vine'.".
+
 This is the whip-of-domination specific recipe rule:
 	now the Product in row 19 of the Table of Alchemy is 15;
 	now the Recipe in row 19 of the Table of Alchemy is 1.

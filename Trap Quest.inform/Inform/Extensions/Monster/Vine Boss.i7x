@@ -4,6 +4,8 @@ vine boss is a monster. vine boss is neuter. The blind-status of vine boss is -1
 
 vine boss is in WoodsBoss01. Understand "monstrous" as vine boss. Figure of Vine Boss is the file "NPCs/Bosses/vineboss1.png". The text-shortcut of vine boss is "vb".
 
+Definition: vine boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 To say ShortDesc of (M - vine boss):
 	say "vine boss".
 

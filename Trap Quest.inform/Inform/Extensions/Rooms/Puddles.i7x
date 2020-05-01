@@ -152,7 +152,7 @@ A time based rule (this is the puddles disappearing rule):
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the sticky decay rule):
+An all time based rule (this is the sticky decay rule):
 	let WasGlued be 0;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
@@ -228,11 +228,10 @@ This is the puddles get focused rule:
 The puddles get focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - puddle-object):
-	let P be a random worn pink spraybottle;
-	if ButtonTableFull is 0 and P is a thing:
+	if ButtonTableFull is 0 and pink-spraybottle is worn:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is examine-image of P;
-		now the ButtonCommand entry is "clean puddle with [text-shortcut of P]";
+		now the ButtonImage entry is examine-image of pink-spraybottle;
+		now the ButtonCommand entry is "clean puddle with [text-shortcut of pink-spraybottle]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
 	if diaper quest is 0 and ButtonTableFull is 0:

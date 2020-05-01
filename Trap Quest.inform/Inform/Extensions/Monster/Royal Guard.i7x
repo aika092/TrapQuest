@@ -1,6 +1,6 @@
 Royal Guard by Monster begins here.
 
-A royal guard is a kind of monster. A royal guard is usually intelligent. A royal guard is male. A royal guard has a number called patrol. The leftover-type of a royal guard is usually 101.
+A royal guard is a kind of monster. A royal guard is usually intelligent. A royal guard is male. A royal guard has a number called patrol. The leftover-type of a royal guard is usually 101. A royal guard has a number called shieldblock. A royal guard can be shieldblocked or not shieldblocked. A royal guard is usually not shieldblocked.
 
 Definition: A royal guard is willing to urinate: decide yes.
 
@@ -46,7 +46,7 @@ To decide which figure-name is the anal-sex-monster-image of (M - a royal guard)
 To decide which figure-name is the oral-sex-monster-image of (M - a royal guard):
 	decide on figure of guard cutscene 7.
 
-Definition: A royal guard is dungeon dwelling: decide yes.
+Definition: a royal guard is dungeon dwelling: decide yes.
 
 To say ShortDesc of (M - a royal guard):
 	say "royal guard".
@@ -78,15 +78,20 @@ To say MediumDesc of (M - prison guard):
 To say MonsterDesc of (M - a royal guard):
 	if M is diaper-enslaved:
 		say "[BigNameDesc of M][']s royal armour has been transformed into a dark blue guard-themed baby cosplay onesie, complete with a giant safety pin on the front and an inflatable floppy sword. [if lady fetish is 1]A cute blue ribbon adorns [his of M] now pigtailed hair[otherwise if TG fetish > 0][BigNameDesc of M] has been transformed into a woman, complete with a cute blue ribbon that now adorns [his of M] now pigtailed hair[otherwise][big his of M] hair has been put into pigtails with a blue ribbon, making [him of M] look like a cute little [sissy] girl[end if]. A thick bulge below the waist makes it clear that [he of M] has been clothed in a big thick nappy.";
-	otherwise if lady fetish is 0:
-		say "A calm, dignified, but obviously powerful man, with hints of a [one of]rugged[or]chiselled[or]stony[at random] musculature visible within [his of M] thick robes, which bear a royal crest. [one of][big he of M] has a square, masculine jaw, which is darkened by an impressive five o'clock shadow.[or][big he of M] looks as though [he of M] could grow a full beard in the space of a day, [his of M] square, masculine jaw darkened by an impressive five o'clock shadow.[or][big he of M] has a square, masculine jaw, completely clean shaven, but textured due to many years of diligent shaving.[or]A thin strip of [GuardHair of M] hair runs the length of [his of M] square jaw, which is otherwise completely clean-shaven.[or][big his of M] square, manly jaw is mostly clean shaven, except for a well maintained patch of [GuardHair of M] hair that forms moustache-goatee combo.[in random order]";
+	otherwise if M is fucked-silly:
+		say "[BigNameDesc of M]'s armor has been torn to shreds, and [his of M] ridiculously distended belly is completely filled with [MediumDesc of minotaur] [semen].";
+	[otherwise if lady fetish is 0:
+		say "A calm, dignified, but obviously powerful man, with hints of a [one of]rugged[or]chiselled[or]stony[at random] musculature visible within [his of M] thick robes, which bear a royal crest. [one of][big he of M] has a square, masculine jaw, which is darkened by an impressive five o'clock shadow.[or][big he of M] looks as though [he of M] could grow a full beard in the space of a day, [his of M] square, masculine jaw darkened by an impressive five o'clock shadow.[or][big he of M] has a square, masculine jaw, completely clean shaven, but textured due to many years of diligent shaving.[or]A thin strip of [GuardHair of M] hair runs the length of [his of M] square jaw, which is otherwise completely clean-shaven.[or][big his of M] square, manly jaw is mostly clean shaven, except for a well maintained patch of [GuardHair of M] hair that forms moustache-goatee combo.[in random order] [big his of M] shield, which bears a royal crest, [if the difficulty of M < 10]is too small to cover much of [his of M] body.[otherwise if M is prison guard]has tiny symbols covering its small surface, probably increasing [his of M] defenses against magic.[otherwise]is large enough to cover most of [his of M] upper body.[end if]";]
 	otherwise:
-		say "A calm, dignified, but obviously powerful [man of M], with hints of an impressive bust as well as a healthy musculature visible within [his of M] thick robes, which bear a royal crest. [big he of M] has [GuardHair of M] hair drawn back into a neat ponytail that rests over [his of M] shoulder.";
+		say "A calm and dignified [man of M] with a long, black hood covering most of [his of M] face. [big he of M] is wearing armor, but it seems to be specialized for ease of removal, as well showcasing [if M is presenting as male]the rugged musculature of his[otherwise][his of M] visibly muscular[end if] torso.";
+	if M is not diaper-enslaved and M is not fucked-silly:[The guard can hold up his shield, making himself immune to slapping/punching. However, his shield can't take infinite attacks.]
+		if M is prison guard, say "[big his of M] shield, which bears a royal crest, [if the difficulty of M < 10]is clearly too flimsy to be of any use.[otherwise if the difficulty of M < 15]is clearly reinforced, although it looks too small to cover up much of [his of M] body.[otherwise]is well reinforced, and is large enough to cover most of [his of M] upper body.[end if]";[no blocking -> Single hit block(Doesn't include magic) -> Long term blocking(Doesn't include magic)]
+		otherwise say "[big his of M] shield is large enough to cover [his of M] upper body, and has tiny symbols covering its surface, probably increasing [his of M] resistance to magic.";[Long term blocking(Includes magic)]
 	if M is prison guard and skeleton key is off-stage, say "A single key on a small string dangles from [his of M] belt.".
 
 To say MonsterComment of (M - a royal guard):
 	if diaper quest is 0:
-		if lady fetish is 0 or lady fetish is 2, say "[variable custom style][one of][if the player is male and the bimbo of the player < 5]Man, that dude looks so chill! I'd totally have a beer with [him of M].[otherwise if the bimbo of the player < 5]Hmm, I have a good feeling about this guy. [big he of M]'ll probably leave me alone if I don't provoke [him of M].[otherwise if the bimbo of the player < 8]This [man of M] looks tough, but [he of M] doesn't look like [he of M]'s carrying a weapon.[otherwise if the bimbo of the player < 12 and the player is male and the size of penis < 6][big his of M] [manly-penis] is probably bigger than mine.[otherwise if the bimbo of the player < 12]I have to admit, I'm a little curious how [he of M] looks when he's not wearing those robes.[otherwise if the bimbo of the player < 15][big he of M] looks like [he of M] has a nice big [manly-penis].[otherwise]Mmmm, I wonder what [his of M] [manly-penis] look like. I hope it's big.[end if][or][if the bimbo of the player < 5]For a [man of M], [he of M] actually seems pretty laid back. If I leave [him of M] alone [he of M] should leave me alone.[otherwise if the bimbo of the player < 7 and the class of the player is not princess][big he of M]'s been looking at me weird. Maybe I should start avoiding him?[otherwise if the bimbo of the player < 8][big he of M] isn't carrying a weapon but [he of M] still looks pretty tough.[otherwise if the bimbo of the player < 10][big he of M]'s got a pretty nice bulge near [his of M] crotch. Not that I care.[otherwise if the bimbo of the player < 12]I know it would be slutty, but if [he of M] tries to cop a feel I might let [him of M].[otherwise if the bimbo of the player < 15]I'd suck [his of M] [manly-penis], but only if [he of M] asked me to. I really hope [he of M] asks me to.[otherwise]Maybe if I get naked he'll get naked with me?[end if][stopping][roman type][line break]";
+		if lady fetish is 0 or lady fetish is 2, say "[variable custom style][one of][if the player is male and the bimbo of the player < 5]Man, that dude looks so chill! I'd totally have a beer with [him of M].[otherwise if the bimbo of the player < 5]Hmm, I have a good feeling about this guy. [big he of M]'ll probably leave me alone if I don't provoke [him of M].[otherwise if the bimbo of the player < 8]This [man of M] looks tough, but [he of M] doesn't look like [he of M]'s carrying a weapon.[otherwise if the bimbo of the player < 12 and the player is male and the size of penis < 6][big his of M] [manly-penis] is probably bigger than mine.[otherwise if the bimbo of the player < 12]I have to admit, I'm a little curious how [he of M] looks when he's not wearing that armor[otherwise if the bimbo of the player < 15][big he of M] looks like [he of M] has a nice big [manly-penis].[otherwise]Mmmm, I wonder what [his of M] [manly-penis] look like. I hope it's big.[end if][or][if the bimbo of the player < 5]For a [man of M], [he of M] actually seems pretty laid back. If I leave [him of M] alone [he of M] should leave me alone.[otherwise if the bimbo of the player < 7 and the class of the player is not princess][big he of M]'s been looking at me weird. Maybe I should start avoiding him?[otherwise if the bimbo of the player < 8][big he of M] isn't carrying a weapon but [he of M] still looks pretty tough.[otherwise if the bimbo of the player < 10][big he of M]'s got a pretty nice bulge near [his of M] crotch. Not that I care.[otherwise if the bimbo of the player < 12]I know it would be slutty, but if [he of M] tries to cop a feel I might let [him of M].[otherwise if the bimbo of the player < 15]I'd suck [his of M] [manly-penis], but only if [he of M] asked me to. I really hope [he of M] asks me to.[otherwise]Maybe if I get naked he'll get naked with me?[end if][stopping][roman type][line break]";
 		otherwise say "[variable custom style][one of][if the player is male and the bimbo of the player < 5]She looks so uptight. Heh, I can fix that[otherwise if the bimbo of the player < 5]Hmm, I have a good feeling about this chick. Maybe I can get some action if we get to know each other better.[otherwise if the bimbo of the player < 8]This chick looks tough, but [he of M] doesn't look like she's carrying a weapon, so I can probably take [him of M]. I think.[otherwise if the bimbo of the player < 12]She'll make sure to keep me in check.[otherwise if the bimbo of the player < 15][big he of M] looks like [he of M] has a nice big [DickDesc of M].[otherwise]Mmmm, I hope she has a big [DickDesc of M].[end if][or][if the bimbo of the player < 5]She seems rather strait-laced. We should get along well.[otherwise if the bimbo of the player < 7 and the class of the player is not princess]She's been looking at me weird. Maybe I should start avoiding him?[otherwise if the bimbo of the player < 8]She isn't carrying a weapon but [he of M] still looks pretty tough.[otherwise if the bimbo of the player < 10]She's got a pretty nice bulge near [his of M] crotch. Not that I care.[otherwise if the bimbo of the player < 12]I know it would be slutty, but if she tries to cop a feel I might let [him of M].[otherwise if the bimbo of the player < 15]I'd suck [his of M] [DickDesc of M], but only if she asked me to. I really hope [he of M] asks me to.[otherwise]Maybe if I get naked [his of M] instincts will just take over.[end if][stopping][roman type][line break]".
 
 To say GuardHair of (M - a royal guard):
@@ -99,7 +104,7 @@ To set up (M - a royal guard):
 	now the health of M is the maxhealth of M;
 	if M is prison guard, now the sentence of M is a random number between 3 and 4.
 
-Definition: a royal guard is manly-wenchy: decide yes.
+Definition: a royal guard is wenchy: decide yes.
 
 This is the spawn initial royal guard rule:
 	if debugmode > 1, say "Now summoning guard.";
@@ -129,7 +134,7 @@ To say LeftoverDesc (N - 101):
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a royal guard):
-	say "[if M is in the location of the player]A space opens up in the centre of the circle, and a strong, muscular hand pushes its way through. [line break][speech style of M]Back, demon! My princess needs me![roman type][line break]A [printed name of M] climbs free of the portal, boots clanking soundly as [he of M] finds [his of M] feet. The strange energy dissipates as the portal closes behind [him of M].[otherwise]You hear the sound of clanking metal boots coming from another part of the dungeon[end if]".
+	say "[if M is in the location of the player]A space opens up in the centre of the circle, and a strong, muscular hand pushes its way through.[line break][speech style of M]'Back, demon! My princess needs me!'[roman type][line break]A [printed name of M] climbs free of the portal, boots clanking soundly as [he of M] finds [his of M] feet. The strange energy dissipates as the portal closes behind [him of M][otherwise]You hear the sound of clanking metal boots coming from another part of the dungeon[end if].".
 
 To say PregGrowth of (M - a royal guard):
 	say "[NameDesc of M][']s [child]".
@@ -189,12 +194,10 @@ To compute (M - a monster) stomping (N - a royal guard):[generic M here, but sho
 		now N is diaper-enslaved;
 		if TG fetish > 0, now N is female;
 	otherwise:
-		if N is in the location of the player, say "[BigNameDesc of M] forcefully pushes the [NameDesc of N] to the ground and stamps on [his of M] body. [BigNameDesc of N] is now motionless on the ground.";
+		if N is in the location of the player, say "[BigNameDesc of M] ruthlessly tears off [NameDesc of N]'s armor and pins [him of M] to the ground. [BigNameDesc of N] cries out in pain as [NameDesc of M] rams [his of M] [LongDickDesc of M] up [NameDesc of N]'s [HoleDesc of N] and begins thrusting furiously. [BigNameDesc of N]'s eyes roll back in [his of N] head as [NameDesc of M] ejaculates, [NameDesc of N]'s belly expanding rapidly as [NameDesc of M] fills [him of N] with [semen]. Satisfied, [NameDesc of M] tosses [NameDesc of N] to the ground, where [he of N] faints.";
 		otherwise say "You hear a royal guard cry out in pain from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
-		destroy N;
-		let L be a random off-stage leftover;
-		now L is in the location of M;
-		now the leftover-type of L is the leftover-type of N.
+		now N is fucked-silly;
+		now the sleep of M is 600.
 
 To say MonsterOfferAcceptFlav of (M - a royal guard) to (T - a thing):
 	if M is unfriendly:
@@ -358,7 +361,10 @@ To compute perception of (M - a royal guard):
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]"; [The output for clothing humiliation takes place within the 'sluttily dressed' check.]
 	let PSRB be a random carried probably-serve-ready bottle;
 	if tutorial is 1:
-		say "[TutorialGreet of M]";
+		say TutorialGreet of M;
+	otherwise if the number of combative royal guards > 1 or (M is friendly and there is a combative royal guard):
+		say "[speech style of M]'A criminal?! Allow me to assist in [his of the player] arrest!'[roman type][line break]";
+		anger M;
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and M is not uniquely unfriendly:
 		say "[if the outrage tolerance of M <= the saved appearance of the player][big he of M] frowns at your appearance but doesn't act aggressively. [end if][big he of M] seems to be eyeing your [PSRB].";
 		calm M;
@@ -580,8 +586,8 @@ To compute monstermotion of (M - a royal guard):
 		compute monstermotion reactions of M.
 
 To compute unique periodic effect of (M - a royal guard):
-	if diaper quest is 0 and M is undefeated and M is awake and M is not seduced and the refactory-period of M <= the refactory-time of M * -1 and M is not penetrating a body part:[is he horny?]
-		if a random number between 1 and 45 is 1:
+	if diaper quest is 0 and M is undefeated and M is awake and M is not seduced  and M is not penetrating a body part and M is not combative:
+		if the refactory-period of M < a random number between -200 and -120: [is he horny?]
 			if M is in the location of the player:
 				say "You see [NameDesc of M] pull out [his of M] [DickDesc of M] and masturbate until [he of M] blows [his of M] load on the ground. [if (the class of the player is princess or M is mating) and M is friendly][big he of M] seems really embarrassed that you're watching[otherwise][big he of M] clearly has no respect for you at all[end if]...";
 			SemenPuddleUp 1 in (the location of M);
@@ -631,7 +637,7 @@ To say AllyDamageFlav of (M - a royal guard) on (X - a monster):
 Part 1 - Combat
 
 To compute kneeling reaction of (M - a royal guard):
-	say "[one of][BigNameDesc of M] grins, parting [his of M] robes to reveal [his of M] flaccid [DickDesc of M]. Locking you in a steady gaze, [he of M] slowly moves closer, [his of M] exposed member bouncing [if the bimbo of the player < 4]threateningly[otherwise if the bimbo of the player < 8]ominously[otherwise if the bimbo of the player < 12]happily[otherwise if the bimbo of the player < 16]excitedly[otherwise]enticingly[end if] as it grows to a full, throbbing erection. You stare at it [if the bimbo of the player < 4]fearfully[otherwise if the bimbo of the player < 7]uneasily[otherwise if the bimbo of the player < 10]nervously[otherwise if the bimbo of the player < 13]anxiously[otherwise if the bimbo of the player < 16]hungrily[otherwise]eagerly[end if], looking up at the guard when [he of M] comes to a stop about a foot away.[or][BigNameDesc of M] grins, parting [his of M] robes to reveal [his of M] half-hardened [DickDesc of M]. [big he of M] moves calmly moves forward, stroking himself to a full, throbbing erection. [big he of M] stops a foot or so away, crossing [his of M] arms and looking at you expectantly.[or][if the bimbo of the player < 4]You grimace and close your eyes as the guard lowers [his of M] hands to [his of M] crotch. You open one just a crack at the rustling of some fabric, just in time for the guard's [DickDesc of M] to fall free, mere inches from your face.[otherwise if the bimbo of the player < 7]You stare at the obvious tent in [NameDesc of M][']s robes, knowing that a massive, throbbing erection waits behind the thin veil of fabric. After a moment of silence, the guard scoffs and pulls it free.[otherwise if the bimbo of the player < 10]You see the guard remove [his of M] penis from its prison and fight back an urge to reach up with your hands and pull it free. You stare at [him of M] with a weird mixture of deep embarrassment and hot excitement as [he of M] leers down at you whilst [his of M] [DickDesc of M] throbs mere inches from your face.[otherwise if the bimbo of the player < 13]You can't bring yourself to tear your eyes away as the guard lowers [his of M] hands to [his of M] crotch, and pulls [his of M] rock hard, throbbing penis free. Before you can stop yourself, you reach your hand up to touch it.[otherwise if the bimbo of the player < 16][BigNameDesc of M] grins as [he of M] lowers [his of M] hands to [his of M] crotch and pulls [his of M] rock hard [DickDesc of M] free. You lick your lips and eagerly rub at your genitals.[otherwise]You reach up with your hands, placing your hands on either side of the obvious tent in [his of M] robes, pulling the fabric to reveal the beast within. You wrap a hand around the base, stroking it slowly and looking up at the guard, smiling.[end if][in random order]";
+	say "[one of][BigNameDesc of M] grins, pulling [his of M] flaccid [DickDesc of M] out of [his of M] pants. Locking you in a steady gaze, [he of M] slowly moves closer, [his of M] exposed member bouncing [if the bimbo of the player < 4]threateningly[otherwise if the bimbo of the player < 8]ominously[otherwise if the bimbo of the player < 12]happily[otherwise if the bimbo of the player < 16]excitedly[otherwise]enticingly[end if] as it grows to a full, throbbing erection. You stare at it [if the bimbo of the player < 4]fearfully[otherwise if the bimbo of the player < 7]uneasily[otherwise if the bimbo of the player < 10]nervously[otherwise if the bimbo of the player < 13]anxiously[otherwise if the bimbo of the player < 16]hungrily[otherwise]eagerly[end if], looking up at the guard when [he of M] comes to a stop about a foot away.[or][BigNameDesc of M] grins, pulling [his of M] half-hardened [DickDesc of M] out of [his of M] pants. [big he of M] moves calmly moves forward, stroking himself to a full, throbbing erection. [big he of M] stops a foot or so away, crossing [his of M] arms and looking at you expectantly.[or][if the bimbo of the player < 4]You grimace and close your eyes as the guard lowers [his of M] hands to [his of M] crotch. You open one just a crack at the rustling of some fabric, just in time for the guard's [DickDesc of M] to fall free, mere inches from your face.[otherwise if the bimbo of the player < 7]You stare at the obvious tent in [NameDesc of M][']s pants, knowing that a massive, throbbing erection waits behind the thin veil of fabric. After a moment of silence, the guard scoffs and pulls it free.[otherwise if the bimbo of the player < 10]You see the guard remove [his of M] penis from its prison and fight back an urge to reach up with your hands and pull it free. You stare at [him of M] with a weird mixture of deep embarrassment and hot excitement as [he of M] leers down at you whilst [his of M] [DickDesc of M] throbs mere inches from your face.[otherwise if the bimbo of the player < 13]You can't bring yourself to tear your eyes away as the guard lowers [his of M] hands to [his of M] crotch, and pulls [his of M] rock hard, throbbing penis free. Before you can stop yourself, you reach your hand up to touch it.[otherwise if the bimbo of the player < 16][BigNameDesc of M] grins as [he of M] lowers [his of M] hands to [his of M] crotch and pulls [his of M] rock hard [DickDesc of M] free. You lick your lips and eagerly rub at your genitals.[otherwise]You reach up with your hands, placing your hands on either side of the obvious tent in [his of M] pants, pulling the fabric to reveal the beast within. You wrap a hand around the base, stroking it slowly and looking up at the guard, smiling.[end if][in random order]";
 	humiliate 75.
 
 To compute DQ delay of (M - a royal guard):
@@ -668,7 +674,7 @@ To say SexResistFlav of (M - a royal guard):
 	if M is penetrating breasts:
 		do nothing;
 	otherwise:
-		if M is penetrating a fuckhole and diaper quest is 0, say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You try to squirm away from the guard, accidentally guiding [his of M] [DickDesc of M] into a tender spot. You freeze with pain.[or]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but the guard makes sure you stay in place.[or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] robes.[in random order][otherwise][one of]You resist the guard and try to escape but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
+		if M is penetrating a fuckhole and diaper quest is 0, say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You try to squirm away from the guard, accidentally guiding [his of M] [DickDesc of M] into a tender spot. You freeze with pain.[or]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but the guard makes sure you stay in place.[or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to kick back at [him of M] with your legs, only managing to get your foot caught in [his of M] cloak.[in random order][otherwise][one of]You resist the guard and try to escape but your heart isn't really in it.[or]You kick back at [him of M] but it's more playful than violent.[in random order][end if]";
 		otherwise say "[if the relevant sex addiction of M < a random number between 8 and 13][one of]You struggle against [his of M] strong grip, but remain in place.[or]You attempt to crawl away, but the guard makes sure you stay in place.[or]You squirm, attempting to loosen [his of M] grip, but with no success.[or]You try to push [NameDesc of M] away with your hands, but [his of M] hold on your head is too strong.[in random order][otherwise][one of]You resist the guard and try to escape but your heart isn't really in it.[or]You grasp [his of M] thighs and try to push away more playful than violent.[or]You hold still and force the guard to do all the work.[in random order][end if]";
 		if the player is able to speak:
 			say "[variable custom style]'[one of][if the relevant sex addiction of M > 13]Work for it, stud!'[otherwise if the class of the player is princess]Aren't you supposed to protect me?!'[otherwise]Hey! Somebody help me!'[end if][or][if the bimbo of the player > 10]You're so strong!'[otherwise if the bimbo of the player > 5]Let go of me!'[otherwise]Stop it, you brute!'[end if][or][if the delicateness of the player > 13]This is fun!'[otherwise if the delicateness of the player > 7]You're being too rough!'[otherwise]What the fuck, dude?!'[end if][purely at random][roman type][line break]";
@@ -676,6 +682,41 @@ To say SexResistFlav of (M - a royal guard):
 			say "[variable custom style][muffled sounds][roman type][line break]".
 
 Chapter 1 - Attack
+
+The guard priority attack rules is a rulebook. The priority attack rules of a royal guard is the guard priority attack rules.
+
+This is the guard raises shield rule:
+	if the player is upright:
+		let M be current-monster;
+		if M is not interested, now the shieldblock of M is 0;
+		if M is unfriendly and M is interested:[He can only have a raised shield if he's fighting you.]
+			if M is not shieldblocked:
+				if the shieldblock of M is 0 and (M is prison guard or the difficulty of M >= 10) and the health of M < the maxhealth of M / 2 and a random number between 1 and 5 is 1:
+					say "[bold type][BigNameDesc of M][bold type] raises [his of M] shield, protecting [his of M] upper body.[roman type]";
+					if M is prison guard or the difficulty of M >= 15, now the shieldblock of M is 6;
+					otherwise now the shieldblock of M is 2;
+					now M is shieldblocked;
+					rule succeeds;[Raising or lowering his shield is his action for the turn.]
+				otherwise if the shieldblock of M < 0:
+					increase the shieldblock of M by 1;
+			otherwise if M is shieldblocked:
+				if the shieldblock of M > 0:
+					say "[BigNameDesc of M] keeps [his of M] shield raised defensively.";
+					decrease the shieldblock of M by 1;
+				otherwise:
+					say "[BigNameDesc of M] lowers [his of M] shield.";
+					now M is not shieldblocked;
+					decrease the shieldblock of M by 5;
+					rule succeeds;[Raising or lowering his shield is his action for the turn.]
+		otherwise:
+			now the shieldblock of M is 0;
+			now M is not shieldblocked.
+The guard raises shield rule is listed last in the guard priority attack rules.
+
+To compute failed damage of (M - a royal guard):
+	if M is shieldblocked:
+		say "[BigNameDesc of M] grunts as [he of M] takes the blow with [his of M] shield.";
+		decrease the shieldblock of M by 2;[Attacking the shield causes it to be lowered twice as fast.]
 
 To get orgasm image of (M - a royal guard) in (F - a fuckhole):
 	if lady fetish is 0, cutshow figure of guard cutscene 3 for M.
@@ -830,8 +871,8 @@ The royal guard arresting a criminal rule is listed last in the royal guard uniq
 
 This is the royal guard incarcerating a criminal rule:
 	let M be current-monster;
-	let N be the number of royal guards in the location of the player;
-	if ((shopkeeper is unfriendly and shopkeeper is off-stage) or M is prison guard) and the number of barriers in the location of the player is 0:[the prison guard always takes you to the cell]
+	let N be the number of alive royal guards;
+	if the number of barriers in the location of the player is 0 and Dungeon03 is placed and (M is prison guard or (shopkeeper is off-stage and shopkeeper is unfriendly)):[the prison guard always takes you to the cell]
 		if milking is 0 and the number of monsters penetrating a body part is 0:[if you're busy, he'll wait.]
 			if the location of the player is not Dungeon03:
 				repeat with G running through alive royal guards:
@@ -845,12 +886,12 @@ This is the royal guard incarcerating a criminal rule:
 				say "[speech style of M]'Civilians disperse. From here on out, this criminal is in the hands of the law.'[roman type][line break][BigNameDesc of M] keeps you firmly pinned to the ground as [if N > 2]the other guards herd the 'civilians' [otherwise if N > 1][his of M] partner herds the 'civilians'[otherwise][he of M] shoos the 'civilians'[end if] out of the room. [line break][speech style of M]'Your crime spree ends here, villain. You have been sentenced to ten minutes of community service.'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
 			otherwise:
 				say "[speech style of M]'Your crime spree ends here, villain. You have been sentenced to ten minutes of community service.'[roman type][line break][BigNameDesc of M] [if N is 1]throws you into the cell, following you in and locking the door behind [him of M][otherwise if N > 2]drags you into the cell as the rest of the guards follow you in and lock the door behind them[otherwise]the other guard follows you in and locks the door behind [him of M][end if].";
-			now a random prison-bars is in the location of the player;
-			rule succeeds.
+			now prison-bars is in the location of the player;
+		rule succeeds.
 The royal guard incarcerating a criminal rule is listed last in the royal guard unique punishment rules.
 
 To say DragFlav of (M - a royal guard) to (R - a room):
-	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]! [line break][speech style of M]'[one of]You are under arrest! Do not struggle.'[or][stopping][roman type][line break]".
+	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]![one of][line break][speech style of M]'You are under arrest! Do not struggle.'[roman type][line break][or][stopping]".
 
 To say BreastsPenetrationFlav of (M - a royal guard):
 	say "[BigNameDesc of M] takes his [DickDesc of M] and moves it towards your chest. You watch in silence as he pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
@@ -1017,7 +1058,7 @@ To say angry punishment accessory confiscation of (M - a royal guard):
 	say "[speech style of M]'I am confiscating this, and you shall not be seeing it again. I will go spend it on a good girl who can actually follow orders.'[roman type][line break]".
 
 To say angry punishment clothing destruction of (M - a royal guard) on (C - a clothing):
-	say "[speech style of M]'[if C is nipple covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn nudism-disabling clothing > 1]Disgraceful wenches don't deserve clothes! There, now you are one step closer to being buck naked, as you should be.'[otherwise]Disgraceful wenches don't deserve clothes!'[end if][roman type][line break]".
+	say "[speech style of M]'[if C is actually breast covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn nudism-disabling clothing > 1]Disgraceful wenches don't deserve clothes! There, now you are one step closer to being buck naked, as you should be.'[otherwise]Disgraceful wenches don't deserve clothes!'[end if][roman type][line break]".
 
 To say (M - a royal guard) sex reaction:
 	let F be a random fuckhole penetrated by M;
@@ -1157,6 +1198,18 @@ To say ForcefeedAfterFlav of (M - a royal guard):
 	say "[speech style of M]'There we go. Good [boy of the player].'[roman type][line break]".
 
 Chapter 3 - Damage
+
+Definition: a royal guard (called M) is damageable:
+	if M is shieldblocked:
+		if attack-type is 1:[The guard's shield protects him from slap attacks, but not knees or kicks]
+			decide no;
+		if attack-type > 3:[The prison guard is also protected from bombs and zapping]
+			if M is prison guard, decide no;
+	decide yes.
+
+To compute (M - royal guard) receiving (N - a number) damage from (X - a monster):
+	say AllyDamageFlav of X on M;
+	if M is not damageable, say "[BigNameDesc of M] blocks the attack!".
 
 To compute damage reaction of (M - a royal guard):
 	if M is awake:
@@ -1567,20 +1620,6 @@ To say DismissalResponseDefault of (M - a royal guard):
 
 Chapter 4 - Dominant Sex
 
-To suggestFucker (F - a body part) for (M - a royal guard):
-	if F is penis:
-		say "Do you want to try fucking [him of M] with your [SexDesc of penis]? It could be challenging.";
-		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-PENETRATION;
-	otherwise if F is a fuckhole:
-		say "Do you want to try riding [him of M]?";
-		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-RIDE;
-	otherwise:
-		say "You decide against it.".
-
 To compute domination interference of (M - a royal guard) for (N - a monster):
 	if the class of the player is not princess:
 		if M is unfriendly and the times-dominated of M is 0 or N is royal guard:
@@ -1594,76 +1633,42 @@ To compute domination interference of (M - a royal guard) for (N - a monster):
 	otherwise if M is interested:
 		say "[BigNameDesc of M] turns to [NameDesc of N]. [line break][speech style of M]'[one of]You there, the princess has need of your services.'[or]You have been drafted. Make certain the princess is satisfied.'[or]It's time you served the crown properly!'[in random order][roman type][line break]".
 
-To say DominanceIntro of (M - a royal guard):
-	say "You force [NameDesc of M] to [his of M] knees, straddling [him of M] as you fish [his of M] [DickDesc of M] out of [his of M] robes. [PowerBottomComment of M] [BigNameDesc of M] frowns. [line break][speech style of M][if the class of the player is princess]'Your highness, I can handle this on my own. My hand will not be stayed from performing my duty to the crown.'[otherwise if the class of the player is royal slave]'How dare you disrespect the sanctity of the law! You will not escape punishment, wench!'[otherwise]'Unhand me at once, wench! You have my word that I will thoroughly punish you on my own.'[end if][roman type][line break]";
-	if there is a held condom-providing thing:
-		say "Would you like to have [him of M] wear a condom?";
-		if the player is consenting:
-			say CondomManualFlav of M;
-			now M is wrapped.
-
 To say DominanceFailure of (M - a royal guard):
-	if player-fucker is penis:
-		say "You try to force [NameDesc of M] the ground, but your apparent difficulty overpowering [him of M] makes it perfectly clear who will be dominating who. It's hard not to notice the tent in [his of M] robes as [he of M] forces you onto your hands and knees.";
-	otherwise:
-		say DominanceIntro of M;
-		unless M is wrapped:
-			say "You stick out your tongue at [him of M], giving [his of M] face a good smack as [if the player is male]you grind your bare [AssDesc] against [his of M] hardening [DickDesc of M][otherwise]you grind [his of M] hardening [DickDesc of M] between your naked lower lips[end if].";
-		say "[big he of M] throws you off [his of M] lap, grabbing your wrists and roughly pinning them together behind your back.".
+	say "You try to force [NameDesc of M] the ground, but your apparent difficulty overpowering [him of M] makes it perfectly clear who will be dominating who. A moment or two later, and you find yourself kneeling at [his of M] feet.".
 
 To compute failed dominance punishment of (M - a royal guard):
-	if the class of the player is royal slave and watersports fetish is 1:
-		say "[speech style of M]'You will pay dearly for this transgression, wench.'[roman type][line break][BigNameDesc of M] grabs a handful of your hair, forcing you to turn and look up at [him of M]. [big he of M] glares down at you sternly as [he of M][if M is wrapped]peels off the condom and pisses[otherwise] begins peeing[end if] in your face.";
-		now M is unwrapped;
-		FacePiss from M;
-		say "But [he of M]'s not satisfied with just that. [big he of M] then turns you around, spanking you roughly as [he of M] forces you onto all fours.";
-		if the player is female, now the chosen-orifice of M is a random fuckhole;
-		otherwise now the chosen-orifice of M is asshole;
-	otherwise if the class of the player is princess:[just normal sex]
-		if the player is female, now the chosen-orifice of M is a random fuckhole;
-		otherwise now the chosen-orifice of M is asshole;
-		say "[speech style of M]'I am sorry, my liege. This is all my fault. If I had kept my mind on the task, you would never have believed it necessary to take matters into your own hands.'[roman type][line break][BigNameDesc of M] sighs, keeping you held down with one hand.";
-		FavourDown M;
-	otherwise:[one of two things: He puts you in bondage(lucky), or he summons another guard. In either case, sex.]
-		if the number of alive uninterested royal guards > a random number between 0 and 2:[he always calls for help if there are more than 2]
-			let N be nothing;
-			repeat with G running through alive royal guards:
-				unless G is M, now N is G;[get a random royal guard that isn't this one]
-			say "[BigNameDesc of M] looks around, [if N is in the location of the player]noticing the [N] and quickly catching [his of N] attention[otherwise]beckoning in a [N] from outside the room[end if].[line break][speech style of M]'For this one, normal punishment will not suffice. We must work together if we are to have any hope of teaching such a whore.'[roman type][line break]The [N] nods, fishing [his of N] [DickDesc of M] out of [his of M] robes and quickly stroking it to erection.";
-			now N is in the location of the player;
-			now N is interested;
-			anger N;
-		otherwise:
-			let B be a random off-stage actually summonable bondage;
-			if B is clothing:
-				summon B locked;
-				if B is wrist bond, now B is wrist-bound-behind;
-				say "[BigNameDesc of M] pulls out a [ShortDesc of B] and quickly snaps it into place on you. [line break][speech style of M]'I am about to show you your place, wench. That will help you remember.'[roman type][line break]";
+	if the class of the player is princess:[just normal sex]
+		if asshole is undefended:
+			say "[speech style of M]'My liege...I had no idea you felt this strongly. Say the word, and I will do my utmost to satisfy you.'[roman type][line break]Ask [him of M] to fuck you?";
+			if the player is bimbo consenting:
+				say "[speech style of M]'At once, princess.'[roman type][line break]";
+				Calm M;
+				say FriendlyAssholePenetrationFlav of M;
+				now M is penetrating asshole;
+				set up sex length of M in asshole;
+				now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] fucks you with gentle thrusts.";
+				now another-turn is 1;
 			otherwise:
-				say "[speech style of M]'You need to be shown your place.'[roman type][line break]";
-				FavourDown M by 2;
-	now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
-	now another-turn is 1.[The guard will always go for sex]
-
-To say DominanceSuccess of (M - a royal guard):
-	if player-fucker is penis:
-		weiner dominate M;
+				say "[speech style of M]'Oh...Ahem, as you wish, princess.'[roman type][line break]";
+				FavourDown M by 1;
+				increase the blue-balls of M by 1;
+				Bore M;
+		otherwise:
+			say "[speech style of M]'I am flattered that you would hold such lust for me, princess. I will not hold this against you.'[roman type][line break][BigNamedesc of M] smiles as [he of M] gently pats your head.";
+			Satisfy M;
+			increase the blue-balls of M by 1;
 	otherwise:
-		say DominanceIntro of M;
-		now refactoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
-		unless M is wrapped:
-			say "You spit on [his of M] [DickDesc of M], lubing [him of M] up a bit around a bit before lining up the tip with your hole.";
-		say "[BigNameDesc of M] tries to throw you off, but you have all the leverage here, so it's pretty easy to grab [his of M] wrists and wedge them under [his of M] back.";
-		if the player is male, anal dominate M;
-		otherwise vaginal dominate M.
+		say "[speech style of M]'You need to be shown your place, wench.'[roman type][line break]";
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
+		now another-turn is 1.
 
 To say HoleDesc of (M - a royal guard):
 	if lady fetish is 1, say "pussy";
 	otherwise say "asshole".
 
-To weiner dominate (M - a royal guard):
+To penetration dominate (M - a royal guard):
 	if the size of penis > 8:
-		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] robe to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, eyes widening as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]P-PRINCESS!?!'[or]M- MY LIEGE?!?'[or]Y-YOUR LORDSHIP!?!'[at random][otherwise][one of]U-uh, I am a [man of M] of the law. This is-!'[or]T-this is highly uncouth-!'[or]P-propriety dictates that-![at random][end if][roman type][line break] You don't wait for [him of M] to finish, slamming it in and immediately beginning to thrust. [big he of M]'s [one of]clearly a virgin, so you take it as slow as you can, making sure [he of M] has time to fully acclimate to the new sensation[or][if lady fetish is 1]already soaking wet, so you don't need to take much time[otherwise]still holding the last load you put inside of [him of M], which lubricates [him of M] enough that you don't need to take much time[end if][stopping] before you start fucking [him of M] for real. You take your sweet time showing [him of M] what [his of M] place is, [if lady fetish is 1]fondling [his of M] breasts as you slowly pump away. It's not long before you feel [him of M] clench up around you, shuddering as feminine fluids dribble down the side of [his of M] leg[otherwise]teasing [his of M] [DickDesc of M] as you pound away. It's not long before you can feel [his of M] prostate tightening up, [his of M] [DickDesc of M] throbbing as it spits several spurts of [semen] onto the ground[end if]. Satisfied, you work yourself to an orgasm of your own, roaring with pleasure as you flood [his of M] [HoleDesc of M] with your load.";
+		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] cloak to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, eyes widening as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]P-PRINCESS!?!'[or]M-MY LIEGE?!?'[or]Y-YOUR LORDSHIP!?!'[at random][otherwise][one of]Uh, I-I am a [man of M] of the law. This is-!'[or]T-this is highly uncouth-!'[or]P-propriety dictates that-![at random][end if][roman type][line break] You don't wait for [him of M] to finish, slamming it in and immediately beginning to thrust. [big he of M]'s [one of]clearly a virgin, so you take it as slow as you can, making sure [he of M] has time to fully acclimate to the new sensation[or][if lady fetish is 1]already soaking wet, so you don't need to take much time[otherwise]still holding the last load you put inside of [him of M], which lubricates [him of M] enough that you don't need to take much time[end if][stopping] before you start fucking [him of M] for real. You take your sweet time showing [him of M] what [his of M] place is, [if lady fetish is 1]fondling [his of M] breasts as you slowly pump away. It's not long before you feel [him of M] clench up around you, shuddering as feminine fluids dribble down the side of [his of M] leg[otherwise]teasing [his of M] [DickDesc of M] as you pound away. It's not long before you can feel [his of M] prostate tightening up, [his of M] [DickDesc of M] throbbing as it spits several spurts of [semen] onto the ground[end if]. Satisfied, you work yourself to an orgasm of your own, roaring with pleasure as you flood [his of M] [HoleDesc of M] with your load.";
 		if lady fetish is 1, FuckGet;
 		otherwise AnalGet;
 		severeDignify;
@@ -1671,14 +1676,14 @@ To weiner dominate (M - a royal guard):
 		orgasm M;
 		say AfterDominationComment 4 of M;
 	otherwise if the size of penis > 3:
-		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] robe to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, eyes widening as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]P-PRINCESS!?!'[or]M- MY LIEGE?!?'[or]Y-YOUR LORDSHIP!?!'[at random][otherwise][one of]U-uh, I am a [man of M] of the law. This is-!'[or]T-this is highly uncouth-!'[or]P-propriety dictates that-![at random][end if][roman type][line break] You don't wait for [him of M] to finish, slamming it in and immediately beginning to thrust. [big he of M]'s [one of]clearly a virgin, so you take it as slow as you can, making sure [he of M] has time to fully acclimate to the new sensation[or][if lady fetish is 1]already soaking wet, so you don't need to take much time[otherwise]still holding the last load you put inside of [him of M], which lubricates [him of M] enough that you don't need to take much time[end if][stopping] before you start fucking [him of M] for real. You enjoy yourself, but you don't drag things out either, slamming your [sexual-player-penis] home and groaning as you fill [his of M] [HoleDesc of M] with your load.";
+		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] cloak to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, eyes widening as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]P-PRINCESS!?!'[or]M-MY LIEGE?!?'[or]Y-YOUR LORDSHIP!?!'[at random][otherwise][one of]Uh, I-I am a [man of M] of the law. This is-!'[or]T-this is highly uncouth-!'[or]P-propriety dictates that-![at random][end if][roman type][line break] You don't wait for [him of M] to finish, slamming it in and immediately beginning to thrust. [big he of M]'s [one of]clearly a virgin, so you take it as slow as you can, making sure [he of M] has time to fully acclimate to the new sensation[or][if lady fetish is 1]already soaking wet, so you don't need to take much time[otherwise]still holding the last load you put inside of [him of M], which lubricates [him of M] enough that you don't need to take much time[end if][stopping] before you start fucking [him of M] for real. You enjoy yourself, but you don't drag things out either, slamming your [sexual-player-penis] home and groaning as you fill [his of M] [HoleDesc of M] with your load.";
 		if lady fetish is 1, FuckGet;
 		otherwise AnalGet;
 		strongDignify;
 		orgasm;
 		say AfterDominationComment 4 of M;
 	otherwise:
-		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] robe to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, raising [his of M] eyebrows as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]Princess[or]My liege[or]Your lordship[at random]... I understand. I will clean up my act at once.'[otherwise]Hmmph. So I see. Very well. I will leave you be.'[end if][roman type][line break] You're a little embarrassed that [he of M] misconstrued your intention to actually fuck [him of M], but you decide to roll with it and get to your feet with your head held high.";
+		say "You force [NameDesc of M] to [his of M] hands and knees, using [his of M] cloak to tie [his of M] wrists together behind [his of M] back. [big he of M] looks over [his of M] shoulder, raising [his of M] eyebrows as you line up your [SexDesc of penis] with [his of M] [HoleDesc of M].[line break][speech style of M]'[if the class of the player is princess][one of]Princess[or]My liege[or]Your lordship[at random]... I understand. I will clean up my act at once.'[otherwise]Hmmph. So I see. Very well. I will leave you be.'[end if][roman type][line break] You're a little embarrassed that [he of M] misconstrued your intention to actually fuck [him of M], but you decide to roll with it and get to your feet with your head held high.";
 		moderateDignify;
 		now player-fuckchoice is FUCK-NONE;
 		now player-fucking is DOMINANT-NEUTRAL;
@@ -1686,8 +1691,13 @@ To weiner dominate (M - a royal guard):
 		if the blue-balls of M > 0, now the blue-balls of M is 0;
 		say AfterDominationComment 5 of M.
 
-[This ends up being the safest, if not THE safest way to lose your virginity, since you're in control the whole time]
-To vaginal dominate (M - a royal guard):[with times-submitted we'll assume the sex you had was the "punishment" kind]
+To ride dominate (M - a royal guard):
+	say "You force [NameDesc of M] to [his of M] knees, [if player-fucker is asshole]shaking your butt in [his of M] face[otherwise]giving [his of M] face a good slap[end if] as you straddle [his of M] crotch. [PowerBottomComment of M][line break][speech style of M][if the class of the player is princess]'Y-your highness...'[otherwise if the class of the player is royal slave]'Unhand me at once, wench! Respect the sanctity of the law!'[otherwise]'Such sluttery is against the law!'[end if][roman type][line break]";
+	now refactoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
+	if player-fucker is asshole and the player is male, anal ride dominate M;
+	otherwise vaginal ride dominate M.
+
+To vaginal ride dominate (M - a royal guard):[with times-submitted we'll assume the sex you had was the "punishment" kind]
 	let O be the openness of vagina;
 	let G be the girth of M;
 	now M is penetrating vagina;
@@ -1711,13 +1721,8 @@ To vaginal dominate (M - a royal guard):[with times-submitted we'll assume the s
 		orgasm M;
 		say AfterDominationComment 1 of M;
 	otherwise:
-		let S be (the soreness of vagina * 2);
-		increase S by (O - G) * 2;
-		let A be the semen addiction of the player;
-		let R be a random number between 10 and 17;
-		decrease R by the arousal of the player / 450;
-		if debugmode > 0, say "[input style]Guard pull off check: Is [S] (sensation roll) or [A] (semen addiction) < [R] (Arousal roll)?[roman type]";
-		if S < R or A < R:
+		let R be the semi-dominance roll for M;
+		if R > 0:
 			if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 			say "[line break]Do you want to keep going and let [him of M] creampie you?";
 			if the player is bimbo consenting:
@@ -1729,20 +1734,13 @@ To vaginal dominate (M - a royal guard):[with times-submitted we'll assume the s
 				say AfterDominationComment 1 of M;
 				strongDignify;
 			otherwise:
-				say "It's not [his of M] lucky day. You stop abruptly and pull [him of M] out, relishing [his of M] look of frustration as you return to your feet. [if watersports fetish is 1 and the player is desperate to pee]Do you want to humiliate [him of M] further with a golden shower?[end if]";
-				if watersports fetish is 1 and the player is desperate to pee and the player is consenting:
-					say "[speech style of M]'WENCH! YOU WILL FINISH WH-'[roman type][line break]You're not really interested in what [he of M] has to say, so you cut [him of M] off by relieving your bladder all over [his of M] face, sighing loudly as [he of M] angrily raises [his of M] hands to try to block the flow.";
-					now player-fuckchoice is FUCK-WATERSPORTS;
-					now the bladder of the player is 0;
-					moderateDignify;
-					say AfterDominationComment 3 of M;
-				otherwise:
-					say AfterDominationComment 2 of M;
-				arouse 1000;
+				say "It's not [his of M] lucky day. You stop abruptly and pull [him of M] out, relishing [his of M] look of frustration as you return to your feet.";
+				say AfterDominationComment 2 of M;
+				passively stimulate vagina;
 				severeDignify;[it's very dignifying to control his orgasm]
 		otherwise:[accidental creampie]
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-			say "[if S >= R]Your recent ordeals have left you so close to the edge that the thought of stopping doesn't cross your mind until its too late[otherwise if A >= R]The thought of being inseminated turns you on so much you immediately abandon any thought of stopping[otherwise]You're way too turned on to even consider stopping[end if], and you cum as [one of][he of M] floods your [vagina] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [vagina] fills with [his of M] hot [semen][at random]. You emit a shrieking moan as waves of pleasure crash through your body, and you feel yourself clamping down around [him of M] [if the openness of vagina < 6]as girlcum dribbles down your thigh[otherwise]as you squirt everywhere[end if]. [BigNameDesc of M] doesn't move as you ride out your orgasm, trying to pant unobtrusively as you slowly climb off and get to your feet.";
+			say "[if the soreness of vagina > 5]Your recent ordeals have left you so close to the edge that the thought of stopping doesn't cross your mind until its too late[otherwise]After putting [him of M] through so much, you immediately abandon any thought of stopping[end if], and you cum as [one of][he of M] floods your [vagina] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [vagina] fills with [his of M] hot [semen][at random]. You emit a shrieking moan as waves of pleasure crash through your body, and you feel yourself clamping down around [him of M] [if the openness of vagina < 6]as girlcum dribbles down your thigh[otherwise]as you squirt everywhere[end if]. [BigNameDesc of M] doesn't move as you ride out your orgasm, trying to pant unobtrusively as you slowly climb off and get to your feet.";
 			moderateDignify;
 			orgasm;
 			PussyFill the semen load of M;
@@ -1762,7 +1760,7 @@ To say AnalTaunt (M - a royal guard):
 		say "[line break][if the bimbo of the player < 6][line break][first custom style]'How does it feel to have a dirty [']harlot['] treat you like this?'[otherwise if the bimbo of the player < 12][line break][variable custom style]'Do you like my ass? Wait, sorry. Do you like this [']dirty harlot[']s' ass?'[otherwise][line break][second custom style]'Does this dirty harlot feel good, baby?'[end if][roman type][line break]You smirk down at [him of M], taking in the deep crimson of arousal and anger on [his of M] face, [if there is a worn chastity cage]your tiny cage bobbing slightly[otherwise if the size of penis > 4]your rock hard [ShortDesc of penis] gently tapping [his of M] belly[otherwise if the size of penis > 0]your rock hard [ShortDesc of penis] bobbing gently[otherwise]swivelling your hips[end if] as you begin to[run paragraph on]".
 
 [male player rides the guard.]
-To anal dominate (M - a royal guard):
+To anal ride dominate (M - a royal guard):
 	let C be the number of worn chastity cages;
 	let A be a random worn gag;
 	let O be the openness of asshole;
@@ -1788,17 +1786,12 @@ To anal dominate (M - a royal guard):
 		orgasm M;
 		say AfterDominationComment 1 of M;
 	otherwise:
-		let S be (the soreness of asshole * 2);
-		increase S by (O - G) * 2;
-		let N be the semen addiction of the player;
-		let R be a random number between 10 and 17;
-		decrease R by the arousal of the player / 450;
-		if debugmode > 0, say "[input style]Guard pull off check: Is [S] (sensation roll) or [N] (semen addiction) < [R] (Arousal roll)?[roman type]";
-		if S < R or N < R:
+		let R be the semi-dominance roll for M;
+		if R > 0:
 			if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 			say "[line break]Do you want to keep going and let [him of M] creampie you?";
 			if the player is bimbo consenting:
-				say "You decide it's worth being inseminated if you get to cum, riding [him of M] just hard enough to get [one of]a rush of[or]that familiar rush of[stopping] pleasure through your prostate, your internal muscles rapidly tensing and relaxing as [one of][he of M] floods your [asshole] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [asshole] fills with [his of M] hot [semen][at random].";
+				say "You decide it's worth being inseminated if you get to cum, riding [him of M] just hard enough to get [one of]a rush of[or]that familiar rush of[stopping] pleasure through your prostate, your internal muscles rapidly tensing and relaxing as [one of][he of M] floods your [asshole] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [asshole] fills with [his of M] hot [semen][at random]. [if C > 0]Your cage bounces as your load dribbles out into a puddle on [his of M] belly[otherwise if the size of penis < 3]Your [ShortDesc of penis] jiggles pitifully, dribbling a tiny load onto [his of M] belly[otherwise if the size of penis < 5] Your [ShortDesc of penis] bobs excitedly, spitting its load in a short line on [his of M] belly[otherwise if the size of penis < 8]Your [ShortDesc of penis] throbs as it shoots its [load] in a rough line across [his of M] belly[otherwise]Your [ShortDesc of penis] tenses, shooting several long ropes across [his of M] belly and chest[end if]";
 				slightDignify;
 				orgasm;
 				Assfill the semen load of M;
@@ -1809,12 +1802,12 @@ To anal dominate (M - a royal guard):
 			otherwise:
 				say "You decide you want to avoid ruining your victory by being inseminated, and force yourself to stop moving and pull off. [BigNameDesc of M] fumes as you return to your feet, [his of M] [DickDesc of M] throbbing in desperate disappointment. You can feel your own unspent anticipation thrumming like heat under your skin.";
 				strongDignify;
-				say AfterDominationComment 2 of M;
-				arouse 2000;
+				passively stimulate asshole;
 				increase the blue-balls of M by 20;
+				say AfterDominationComment 2 of M;
 		otherwise:
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-			say "[if S >= R]Your recent ordeals have left you so sensitive that the increase in stimulation immediately sends you over the edge,[otherwise if N >= R]The thought of being inseminated turns you on enough to immediately send you over the edge,[otherwise]You're already so turned on that the sudden increase in stimulation is all you need to get there,[end if] and you immediately feel [one of]a rush of[or]that familiar rush of[stopping] pleasure through your prostate, your internal muscles rapidly tensing and relaxing as [one of][he of M] floods your [asshole] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [asshole] fills with [his of M] hot [semen][at random]. [if C > 0]Your cage bounces as your load dribbles out into a puddle on [his of M] belly[otherwise if the size of penis < 3]Your [ShortDesc of penis] jiggles pitifully, dribbling a tiny load onto [his of M] belly[otherwise if the size of penis < 5] Your [ShortDesc of penis] bobs excitedly, spitting its load in a short line on [his of M] belly[otherwise if the size of penis < 8]Your [ShortDesc of penis] throbs as it shoots its [load] in a rough line across [his of M] belly[otherwise]Your [ShortDesc of penis] tenses, shooting several long ropes across [his of M] belly and chest[end if], a testament to the shameful nature of your orgasm as much as it is proof that you managed to be dominant while having it. You blow a short sigh of relief[if A is clothing] through your nose[end if], sharing eye contact with [him of M] as you return to your feet.";
+			say "[if the soreness of asshole > 5]Your recent ordeals have left you so sensitive that the increase in stimulation immediately sends you over the edge,[otherwise]After putting [him of M] through so much, you immediately abandon any thought of stopping[end if] and you immediately feel [one of]a rush of[or]that familiar rush of[stopping] pleasure through your prostate, your internal muscles rapidly tensing and relaxing as [one of][he of M] floods your [asshole] with hot [semen][or][he of M] pumps you full of thick, warm [semen][or][he of M] fills you with every last drop of [his of M] [semen][or]your [asshole] fills with [his of M] hot [semen][at random]. [if C > 0]Your cage bounces as your load dribbles out into a puddle on [his of M] belly[otherwise if the size of penis < 3]Your [ShortDesc of penis] jiggles pitifully, dribbling a tiny load onto [his of M] belly[otherwise if the size of penis < 5] Your [ShortDesc of penis] bobs excitedly, spitting its load in a short line on [his of M] belly[otherwise if the size of penis < 8]Your [ShortDesc of penis] throbs as it shoots its [load] in a rough line across [his of M] belly[otherwise]Your [ShortDesc of penis] tenses, shooting several long ropes across [his of M] belly and chest[end if], a testament to the shameful nature of your orgasm as much as it is proof that you managed to be dominant while having it. You blow a short sigh of relief[if A is clothing] through your nose[end if], sharing eye contact with [him of M] as you return to your feet.";
 			now player-fucking is DOMINANT-NEUTRAL;
 			slightDignify;
 			orgasm;

@@ -96,13 +96,6 @@ To say wardrobeVanishes of (C - a clothing):
 	say "[one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]";
 	dislodge C.
 
-Definition: a headgear (called B) is ingredient:
-	if B is product, decide no;
-	decide yes.
-
-To decide which number is the crafting key of (B - a headgear):
-	decide on 33.
-
 To compute hair colour change of (H - a headgear):
 	increase the colour-charge of H by 1;
 	if the colour-charge of H > the hair threshold of H:

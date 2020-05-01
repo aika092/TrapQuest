@@ -65,7 +65,7 @@ REQUIRES COMMENTING
 highest semen addiction is a number that varies.
 
 creampieAddictCountdown is a number that varies.
-An advance counters rule:
+An all later time based rule (this is the creampie addict countdown rule):
 	if creampieAddictCountdown > 0, decrease creampieAddictCountdown by 1.
 
 [!<SemenAddictUpX>+

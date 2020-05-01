@@ -44,7 +44,6 @@ Check going:
 			compute furniture resting on F instead;
 			do nothing instead.
 
-
 Section - Trap Beds
 
 [prison cell]
@@ -102,7 +101,7 @@ To compute furniture resting on (F - a prison bed):
 	compute crappy rest of F.
 
 To say RestingDesc of (F - a prison bed):
-	say  "You [one of][or]continue to [stopping]rest on the prison bed.";
+	say "You [one of][or]continue to [stopping]rest on the prison bed.";
 
 To compute unique normal effect of (F - a prison bed):
 	let M be a random unfriendly monster regionally in playerRegion;
@@ -168,7 +167,7 @@ To compute furniture resting on (F - a straw bed):
 	compute crappy rest of F.
 
 To say RestingDesc of (F - a straw bed):
-	say  "You [one of][or]continue to [stopping]rest on the straw bed.";
+	say "You [one of][or]continue to [stopping]rest on the straw bed.";
 
 To compute unique normal effect of (F - a straw bed):
 	let M be a random unfriendly monster in the Woods;

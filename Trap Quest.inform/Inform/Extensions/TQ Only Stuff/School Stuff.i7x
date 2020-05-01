@@ -202,12 +202,12 @@ To compute teaching of (L - tits-lesson):
 	if lady fetish is 2, say "[speech style of M]'Nipples.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] nipples chains waving back and forth in front of [him of M] as [he of M] breathes.[line break][speech style of M]'Sissies are better than women. Do you know why? Breasts. That's right. Women have it easy. Women are lazy. Sissies do not have it easy. Sissies work hard, and to beat women at their own game, sissies must make full use of what assets they have.'[roman type][line break]";
 	otherwise say "[speech style of M]'Breasts.'[roman type][line break][NameDesc of M] stands at the front of the room with [his of M] hands at [his of M] hips, [his of M] giant chest gently heaving up and down in front of [him of M] as [he of M] breathes.[line break][speech style of M]'A woman's most important seductive tool, and a great symbol of her power. Why is it then, that so many of you fools do not spend your lives seeking new ways to enhance and empower your primary assets?'[roman type][line break]";
 	allocate 35 seconds;
-	if the player is top heavy or the largeness of breasts >= 12:
-		if breasts is lewdly exposed or the number of worn actually dense top-placed low cut or higher nipple covering clothing is 0:
+	if the player is top heavy or the largeness of breasts >= 12 or the breast-enhancement of nurse < 0:
+		if the breast-enhancement of nurse < 0 or breasts is lewdly exposed or the number of worn top-placed low cut or higher nipple covering clothing is 0:
 			if lady fetish is 2:
-				say "[NameDesc of M] gestures at you. [line break][speech style of M]'This is what all women could look like. She is a woman who has truly strived for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn top-placed rigid nipple covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
+				say "[NameDesc of M] gestures at you. [line break][speech style of M]'This is what all women could look like. She is a woman who has truly strived for perfection, and I am proud to call her my superior.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't even try to compete with this cutie for attention in a club or bar.'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more that I can teach you. Try to leave some knowledge for the rest of us.'[roman type][line break]";
 			otherwise:
-				say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a [if the largeness of breasts > 5]woman who has truly strived for perfection, and I am proud to call her my equal.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your large breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't want to try and compete with this cutie for attention in a club or bar[otherwise]special case, there seems to be some special magic keeping these puppies small and disappointing.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your nipples with one of [his of M] hands, squeezing them painfully.[line break][speech style of M]'Still, even itty bitties like this can be fun to play with, I think[end if].'[roman type][line break]After a [if there is worn top-placed rigid nipple covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more I need to teach you. You may proceed.'[roman type][line break]";
+				say "[NameDesc of M] gestures at you.[line break][speech style of M]'Now this is a [if the largeness of breasts > 5]woman who has truly strived for perfection, and I am proud to call her my equal.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your large breasts with one of [his of M] hands, squeezing them gently.[line break][speech style of M]'The texture, the shape, the sheer weight of these puppies screams [']power['], don't you think? I wouldn't want to try and compete with this cutie for attention in a club or bar[otherwise]special case, there seems to be some special magic keeping these puppies small and disappointing.'[roman type][line break][NameDesc of M] strides over to you and then takes a step behind you, grabbing each of your nipples with one of [his of M] hands, squeezing them painfully.[line break][speech style of M]'Still, even itty bitties like this can be fun to play with, I think[end if].'[roman type][line break]After a [if there is worn rigid actually breast covering clothing]final big squeeze[otherwise]cheeky tweak of your nipples[end if], [big he of M] lets go.[line break][speech style of M]'There is nothing more I need to teach you. You may proceed.'[roman type][line break]";
 			now armband is ruby;
 			say "You watch as the ID card inside your armband transforms!";
 			now the armband-title of armband is "Juggz";
@@ -238,8 +238,14 @@ To compute teaching of (L - tits-lesson):
 			if topless temporary fetish is 0:
 				say "You suddenly feel very comfortable with having your [BreastDesc] on full display. In fact, the idea of wearing something that covers you up now feels just objectively... wrong. Your magnificent mammaries and proudly erect nipples are destined to be gazed upon! It would be wrong of you to deprive anyone of that wonderful privilege.";
 				now topless temporary fetish is 20;
-			say "[M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] will certainly have to learn [his of the player] lesson the practical way - TWENTY TIMES, in in fact. Anyway, until next time.'[roman type][line break][big he of M] disbands the class.";
-	otherwise if the breast-enhancement of nurse >= (a random number between 0 and 1) and the number of worn chest tattoos is 0 and breasts is showing cleavage:
+			say "[speech style of M]'That's better! Now we can clearly see that these ta-tas definitely deserve a promotion.'[roman type][line break]";
+			now armband is ruby;
+			say "You watch as the ID card inside your armband transforms!";
+			now the armband-title of armband is "Juggz";
+			now the armband-print of armband is "topless talent";
+			say ClothingDesc of armband;
+			say "[BigNameDesc of M] smirks.[line break][speech style of M]'Well I think that's enough excitement for one day! Hopefully you've all learned something about what it TRULY means to own a pair of proper boobs. [NameBimbo] will certainly have to learn [his of the player] lesson the practical way - TWENTY TIMES, in in fact. Anyway, until next time.'[roman type][line break][big he of M] disbands the class.";
+	otherwise if (the breast-enhancement of nurse is not 0 or a random number between 1 and 2 is 1) and the number of worn chest tattoos is 0 and breasts is showing cleavage:
 		let S be random student in the location of the player;
 		say "[big he of M] opens a desk drawer and retrieves several black marker pens.[line break][speech style of M]'Today we will be helping each other learn to be proud of displaying their [if lady fetish is 2]flat chests[otherwise]cleavage[end if]. Firstly, let's split into groups.'[roman type][line break][NameDesc of M] assigns people into pairs. You are partnered with [NameDesc of S].[line break][speech style of M]'You will each be writing a phrase on your partner's [if lady fetish is 2]cleavage[otherwise]chest[end if]. I want you to come up with something cheeky that will make the wearer's titty-meat nice and eye catching. Don't worry, it's not permanent.'[roman type][line break]Each pair is handed a pen. You are given the pen for your pair, so you go first. [if the player is a nympho]A naughty thought comes to your mind, and you write 'stick your dick here'[otherwise if the player is a pervert]After thinking for a few moments you write 'one for the wank bank'[otherwise]You struggle to think of anything inventive, and end up just writing 'hot stuff'[end if] on [NameDesc of S][']s cleavage.[line break]But then it's [his of S] turn. [big he of S] takes the pen off you and ";
 		compute tits marker choice of S;
@@ -253,7 +259,7 @@ To compute teaching of (L - tits-lesson):
 			say "[variable custom style]Pfft, boring! I could have come up with something way better.[roman type][line break]";
 		otherwise:
 			say "[variable custom style]I guess this isn't too bad.[roman type][line break]";
-		say "[M] makes you stand in a line so that [he of M] can inspect your titty graffiti. Eventually [he of M] reaches you and makes you puff our your chest as [he of M] reads the small black letters.";
+		say "[BigNameDesc of M] makes you stand in a line so that [he of M] can inspect your titty graffiti. Eventually [he of M] reaches you and makes you puff our your chest as [he of M] reads the small black letters.";
 		compute tits marker reaction of S;
 		say "[big he of M] coughs loudly and then raises [his of M] voice.[line break][speech style of M]'Okay, let's raise the stakes a bit. I have a spell that can turn any ink into a permanent tattoo. Anyone who says they are willing to have their words become a permanent public declaration on bosom will graduate this class and become a ruby student. Anyone interested?'[roman type][line break]Do you volunteer to have the words '[tattoo-title of marker chest tattoo]' permanently inked on your chest? ";
 		if the player is bimbo consenting:
@@ -278,7 +284,7 @@ To compute teaching of (L - tits-lesson):
 		if student-tiana is in the location of the player, now S is student-tiana; [She's super huge breasted after all]
 		say "[NameDesc of M] makes you all stand and practice a few poses that are designed to emphasise your breasts, including pushing your shoulders back, squeezing your tits in between your arms, and bending over at the waist. Soon you are all tired and [he of M] looks satisfied.[line break][speech style of M]'Okay, that's enough for today. [if S is student][student-name of S], you have made brilliant progress since you first started coming to my classes. I think you deserve a promotion. For the rest of you, [end if]I'm going to assign you some optional [']homework[']. I've informed the nurse of our little problems here... and I do mean little. So the next time you go to visit [him of nurse], you can expect [him of nurse] to be giving each and everyone one of you a nice... enhancement. If you don't want it, then you'd better not go see [him of nurse] before the next time we meet.'[roman type][line break]With that, [NameDesc of M] packs up [his of M] things and begins to walk for the door.[line break][speech style of M]'Until next time, then!'[roman type][line break]";
 		if S is student, promote S;
-		now the breast-enhancement of nurse is 1.
+		now the breast-enhancement of nurse is 2. [It will immediately get reduced to 1 by the code in "To compute potential lesson"]
 
 To compute tits marker choice of (S - a student):
 	say "thinks for a few moments [himself of S] before taking the pen to your skin. ";
@@ -1078,7 +1084,7 @@ To compute lesson veto:
 	otherwise:
 		now the lesson-completed of ultimate-lesson is -1.
 
-An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male. There are 4 ultimate-lesson-actors.
+An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male. There are 4 ultimate-lesson-actors. The text-shortcut of an ultimate-lesson-actor is "voi". Understand "manly", "womanly", "voice" as ultimate-lesson-actor.
 To say ShortDesc of (M - an ultimate-lesson-actor):
 	say "voice".
 To say MediumDesc of (M - an ultimate-lesson-actor):
@@ -1091,10 +1097,39 @@ To say FuckingDesc of (M - an ultimate-lesson-actor):
 	let B be a random body part penetrated by M;
 	say "[one of]stranger[or]anonymous [man of M][or][man of M][at random][if B is body part] [one of]in[or]fucking[or]sliding in and out of[or]plowing[or]thrusting in and out of[as decreasingly likely outcomes] your [variable B][end if]".
 To say MonsterDesc of (M - an ultimate-lesson-actor):
-	say "Who knows what this [man of M] looks like. You know nothing about [him of M], other than [he of M] clearly is a high ranking member of this institution. You'll probably never find out who [he of M] is.".
+	say "Who knows what this [man of M] looks like. You know nothing about [him of M][if the player is not in a predicament room], other than [he of M] clearly is a high ranking member of this institution[end if]. You'll probably never find out who [he of M] is.".
 To compute action (N - a number) of (M - an ultimate-lesson-actor):
+	if M is in a predicament room and M is penetrating face:
+		if a random number between 1 and 3 > 1:
+			say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holding [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping]";
+		otherwise:
+			BlowCount;
+			if M is wrapped:
+				say "[one of][BigFuckerDesc of M] pushes forward as far as [he of M] can go, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[in random order]";
+				if lycra-bodysuit is in Toilet01:
+					say "After [he of M] pulls away, you hear [him of M] fumbling with the condom for a few moments.";
+					increase the used condoms of lycra-bodysuit by 1;
+				dislodge M;
+				now M is not wrapped;
+			otherwise: [Internal cumshot]
+				compute deepthroat creampie of M;
+			increase the cocks-sucked of gloryhole-predicament by 1;
+			if id-poster is in Toilet01 and the remainder after dividing the cocks-sucked of gloryhole-predicament by 2 is 0, say "[speech style of M]'[one of]Thanks a lot[or]Good job[in random order], [NameBimbo].'[line break][variable custom style][one of]'Wait what?! How do you know my name?!'[or]How does [he of M] know my name?! What can [he of M] see on [his of M] side of the wall?![stopping][roman type][line break]";
+			say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[line break][variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
+			destroy M.
+To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
+	say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
+	say "Fed up, you pull away from [NameDesc of M][']s [manly-penis], coughing and spluttering as you do.".
+To compute FriendlySexRelease of (M - an ultimate-lesson-actor):
+	say "[BigNameDesc of M] makes [one of]a disappointed[or]a frustrated[or]an annoyed[in random order] sound and then leaves.[line break][MissedGloryholeCock]";
+	dislodge M;
+	destroy M.
+To check perception of (M - an ultimate-lesson-actor):
 	do nothing.
-Figure of unseen actor is the file "NPCs/School/unseen1.jpg".
+To compute perception of (M - an ultimate-lesson-actor):
+	do nothing.
+Definition: an ultimate-lesson-actor is anticipating-climax: decide no.
+Figure of unseen actor is the file "NPCs/School/unseen1.png".
 To decide which figure-name is the monster-image of (M - an ultimate-lesson-actor):
 	decide on figure of unseen actor.
 Definition: an ultimate-lesson-actor is human: decide yes.
@@ -1122,6 +1157,17 @@ To compute facial climax of (M - an ultimate-lesson-actor):
 		compute deepthroat creampie of M;
 	if M is interested and the rounds of sex left of M <= 0:[possibly allows for another round of sex]
 		orgasm satisfy M.[dislodges him automatically]
+To compute deepthroat creampie of (M - an ultimate-lesson-actor):
+	get deepthroat creampie image for M;
+	say DeepthroatCreampie of M;
+	StomachSemenUp the semen load of M;
+	if M is in Toilet02, dislodge M;
+	otherwise compute happy reward of M.
+To say DeepthroatCreampie of (M - an ultimate-lesson-actor):
+	if M is in Toilet02:
+		say "Without warning, [one of][FuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][FuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[in random order]";
+	otherwise:
+		say DefaultDeepthroatCreampie of M.
 To compute sudden objectification of (M - an ultimate-lesson-actor):
 	do nothing.
 To compute condom request choice of (M - an ultimate-lesson-actor):
@@ -1292,7 +1338,7 @@ To execute (U - ultimate-fetish-milking) for (M - a monster):
 		compute lesson veto;
 	MilkDown the milk volume of breasts.
 
-A time based rule (this is the ultimate diamond lesson rule):
+An all time based rule (this is the ultimate diamond lesson rule):
 	if the player is in DiamondLessonBlindfolded:
 		if lesson-completed of ultimate-lesson > 0:
 			let LST be the list of students in the location of the lesson-teacher of ultimate-lesson;

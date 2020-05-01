@@ -5,13 +5,7 @@ Fetish Settings by Miscellaneous Backend begins here.
 Some things are only 'fetish appropriate' (and therefore allowed in the game) when certain fetishes are enabled.
 
 +!]
-Definition: a thing (called C) is fetish appropriate:
-	if C is product:
-		let R be the recipe of the alchemy key of C;
-		if R is recipe:
-			if R is appropriate, decide yes;
-		decide no;
-	decide yes.
+Definition: a thing is fetish appropriate: decide yes.
 
 [!<fileOfPlayerOptions:File>*
 

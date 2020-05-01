@@ -2,14 +2,13 @@ Spritzing by Actions begins here.
 
 Spritzing is an action applying to one thing.
 Check spritzing:
-	let P be a random worn pink spraybottle;
-	unless P is a thing, say "With what?" instead;
-	try spritzing the noun with P instead.
+	unless pink-spraybottle is worn, say "With what?" instead;
+	try spritzing the noun with pink-spraybottle instead.
 Understand "spritz [something]", "squirt [something]", "febreeze [something]", "spray [something]", "shoot [something]", "spz [something]" as spritzing.
 
 Spritzing it with is an action applying to two things.
 Check spritzing it with:
-	if the second noun is not pink spraybottle, say "The [ShortDesc of the second noun] isn't really built for this task. Perhaps a spraybottle or cloth..." instead;
+	if the second noun is not pink-spraybottle, say "The [ShortDesc of the second noun] isn't really built for this task. Perhaps a spraybottle or cloth..." instead;
 	if the noun is monster, say "It would probably make more sense to zap [NameDesc of the noun] with [NameDesc of the second noun] instead." instead;
 	if the noun is not clothing, say "How would you clean that?" instead;
 	if the noun is wet diaper or the noun is messed knickers, say "Unfortunately, you doubt that would work." instead;
@@ -28,7 +27,7 @@ Carry out spritzing it with:
 	allocate 6 seconds.
 Understand "spritz [something] with [something]", "squirt [something] with [something]", "febreeze [something] with [something]", "spray [something] with [something]", "shoot [something] with [something]", "spz [something] with [something]" as spritzing it with.
 
-To say OfferFlav of (T - a pink spraybottle):
+To say OfferFlav of (T - a pink-spraybottle):
 	if the player is able to speak:
 		if T is cloth, say "[variable custom style]'I lost my spraybottle, can you give me a replacement?'[roman type][line break]";
 		otherwise say "[variable custom style]'[if the second noun is unfriendly]Please, take this instead!'[otherwise]Would you be interested in this?'[end if][roman type][line break]";

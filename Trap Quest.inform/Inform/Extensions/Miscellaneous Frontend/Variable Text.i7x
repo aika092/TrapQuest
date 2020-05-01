@@ -203,7 +203,8 @@ REQUIRES COMMENTING
 
 +!]
 To say load:
-	say "[if the size of penis < 5][one of]below average load[or]small load[or]thin load[purely at random][otherwise if the size of penis < 8][one of]hot load[or]thick load[or]average load[purely at random][otherwise][one of]massive load[or]big load[or]fat load[purely at random][end if]".
+	let A be the semen load of the player;
+	say "[if A < 3][one of]tiny[or]watery[or]small[purely at random] load[otherwise if A < 6][one of]hot[or]warm[or]average[at random] load[otherwise if A < 9][one of]thick[or]creamy[or]big[or]fat[purely at random] load[otherwise if A < 11][one of]huge[or]massive[or]ultra thick[purely at random] load[otherwise][one of]inhuman[or]insane[or]ridiculous[purely at random] load[end if]";
 
 [!<SayVariableBodyPart>+
 
@@ -675,6 +676,11 @@ In support of a hypnosis test, you can be indoctrinated by the cultists to react
 +!]
 To say great one:
 	say "Great One";
+	if player-hypno-great is 1:
+		now hypno-trigger is "great one".
+
+To say great ones:
+	say "Great Ones";
 	if player-hypno-great is 1:
 		now hypno-trigger is "great one".
 

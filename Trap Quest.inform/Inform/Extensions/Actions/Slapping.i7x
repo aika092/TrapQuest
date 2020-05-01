@@ -90,6 +90,7 @@ The second portion of the "Slapping" action, which executes calculates damage ba
 
 +!]
 Carry out slapping:
+	allocate 6 seconds;
 	now attack-type is 1;
 	reset submitted monsters;
 	increase the fat-burning of arms by 20;
@@ -152,6 +153,7 @@ The second portion of the "Zapping" action, which executes calculates damage bas
 
 +!]
 Carry out zapping it with:
+	allocate 6 seconds;
 	now attack-type is 5;
 	reset submitted monsters;
 	increase the fat-burning of arms by 20;

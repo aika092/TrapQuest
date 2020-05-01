@@ -38,7 +38,7 @@ To decide which number is the initial cringe of (C - a thing):
 	decide on 0. [Default assumption is that it is not childish.]
 
 Definition: a clothing (called C) is too adult:
-	if the bimbo of the player > 7 and the cringe of C + 7 is not too humiliating and the cringe of C < 11 and C is actually dense and C is not super-short and C is not short, decide yes;
+	if the bimbo of the player > 7 and the cringe of C + 7 is not too humiliating and the cringe of C < 11 and C is actually dense and C is not super-short and C is not short and (C is not breast covering or C is normally-nipple-covering), decide yes;
 	decide no.
 
 Definition: a clothing (called C) is almost too cringeworthy:

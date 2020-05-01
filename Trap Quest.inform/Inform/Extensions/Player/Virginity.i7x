@@ -181,22 +181,18 @@ REQUIRES COMMENTING
 
 +!]
 To check virginity with (M - a monster):
-	if the virgin of the player is 1:
+	if the virgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:
 		if virgincursed is 1:
-			if (player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER)[ and player-fuckchoice is FUCK-PENETRATION]:[only 'true' dominant sex can reverse your virgin curse]
+			if player-fucking is DOMINANT-NONE or player-fucking is DOMINANT-SHAMEFUL:[only 'true' dominant sex can reverse your virgin curse]
+				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I[']m gonna be a virgin forever...[then at random][roman type][line break]";
+			otherwise:
 				virginremovecurse;
 				now the virgin of the player is 0;
 				now penisvirginity-taker is M;
-			otherwise:
-				if player-fucking is DOMINANT-NEUTRAL, say "[variable custom style][one of]That wasn't really humiliating, but... I think I have to be more dominant than that...[or]That wasn't dominant enough. I have to keep trying...[stopping][roman type][line break]";[player was humiliated or emasculated a little]
-				otherwise say "[variable custom style][one of]I didn[']t feel like I was in charge at all... there[']s no way it counts...[or]No way that counts... I[']m gonna be a virgin forever...[stopping][roman type][line break]";[tables were completely turned, or the player was humiliated]
-		otherwise[ if player-fuckchoice is FUCK-PENETRATION]:
-			if player-fucking > DOMINANT-NONE and player-fucking is not DOMINANT-SHAMEFUL:
-				say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
-				now the virgin of the player is 0;
-				now penisvirginity-taker is M;
-			otherwise:
-				say "[variable custom style]I guess that was sex, but... I can[']t tell anybody that happened. No way I[']m calling this my first...[roman type][line break]".
+		otherwise:
+			say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
+			now the virgin of the player is 0;
+			now penisvirginity-taker is M.
 
 [!<VirginRemoveCurse>+
 

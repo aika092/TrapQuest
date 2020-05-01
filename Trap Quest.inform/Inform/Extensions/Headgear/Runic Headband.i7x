@@ -191,10 +191,10 @@ To compute persistent reward of (Q - priestess-vaginal-service-quest) on (C - a 
 			compute autotaking condom-pack.
 
 To compute virginity-loss of (C - runic headband):
-	now C is not purity;
-	if diaper quest is 0 and the quest of C is priestess-service-quest and the player is female and the pregnancy of the player is 0:
+	if diaper quest is 0 and the quest of C is priestess-service-quest and the player is female:
+		now C is not purity;
+		say "[if C is not cursed]Your [ShortDesc of C] shudders as a curse falls upon it. [end if]A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful [cunt] of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		now C is cursed;
-		say "Your [ShortDesc of C] shudders as a curse falls upon it. A voice rebounds in your head.[line break][second custom style]'[GoddessAddress] you have sinned! Your quest will have to be... reassigned. Once a sinner, always a sinner, as they say. From now on, you must use that sinful cunt of yours for your service. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your ritual beads or headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
 		now the quest of C is priestess-vaginal-service-quest;
 		repeat with O running through worn trousers:
 			say "Your [O] [wardrobeVanishes of O]!";
@@ -222,10 +222,11 @@ To compute virginity-loss of (C - runic headband):
 		repeat with M running through male unwrapped monsters penetrating vagina:
 			say "A condom appears around [NameDesc of M][']s [DickDesc of M]!";
 			now M is wrapped;
-		say "A recipe appears at your feet!";
-		let R be a random recipe for condom-pack;
-		now R is in the location of the player;
-		try examining R.
+		let R be the recipe of 28; [condom pack recipe]
+		if R is recipe:
+			say "A recipe appears at your feet!";
+			now R is in the location of the player;
+			try examining R.
 
 [!<TheRunicHeadbandPussySlutRule>+
 
@@ -240,8 +241,8 @@ This is the runic headband pussy slut rule:
 			increase the desirability of vagina by the size of ritual-beads.
 The runic headband pussy slut rule is listed in the pussy slut eligibility rules.
 
-A later time based rule (this is the sinful priestess punishment rule):
-	if runic headband is worn and the quest of runic headband is priestess-vaginal-service-quest:
+An all later time based rule (this is the sinful priestess punishment rule):
+	if the player is not in a predicament room and runic headband is worn and (the quest of runic headband is priestess-vaginal-service-quest or the pregnancy of the player > 0):
 		let priestessPunish be 0;
 		if pregnancy fetish is 1:
 			if the pregnancy of the player > 0:

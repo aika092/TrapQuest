@@ -97,13 +97,13 @@ To decide which number is the girth of (M - a ghost):
 	[decide on the size of a random sex toy retained by M;]
 	decide on 3.
 
-This is the spawn initial ghosts rule:
+[This is the spawn initial ghosts rule:
 	if the number of alive ghosts - the number of alive ghostly tentacle <= 0:
 		let M be a random off-stage ghost;
 		if M is ghost:
 			set up M;
 			summon M in the mansion.
-The spawn initial ghosts rule is listed in the setting up mansion monsters rules.
+The spawn initial ghosts rule is listed in the setting up mansion monsters rules.]
 
 To compute unique unsimulated periodic effect of (M - a ghost):
 	if the bank of M < 120:
@@ -513,10 +513,10 @@ To compute tripping attack of (M - a ghost):
 		if debuginfo > 0, say "[input-style][ShortDesc of C] gives ghost an extra tripping bonus of +2.[roman type][line break]";
 	if C is trousers, now C is crotch-displaced;
 	if D >= the dexterity of the player:
-		say "[MonsterTrippedFlav of M]";
+		say MonsterTrippedFlav of M;
 		try kneeling;
 	otherwise:
-		say "[MonsterFailedTripFlav of M]".
+		say MonsterFailedTripFlav of M.
 
 To say MonsterTrippedFlav of (M - a ghost):
 	let C be a random worn displacable trousers;
@@ -539,101 +539,41 @@ To say MonsterFailedTripFlav of (M - a ghost):
 	otherwise:
 		say "You manage to get out of their way before they can grab you.".
 
-To compute striking attack of (M - a ghost):[Only attacks places it could conceivably fuck]
+To decide which body part is the painful-part of (M - a ghost):[Only attacks places it could conceivably fuck]
 	let B be a random body part;
 	if B is belly, now B is thighs;
 	if B is a fuckhole or B is penis, now B is hips;
 	if B is hair, now B is face;
-	if the accuracy roll of M > the dexterity of the player:
-		say "[StrikingSuccessFlav of M on B]";
-		compute M striking B;
-	otherwise:
-		say "[StrikingFailureFlav of M on B]".
+	decide on B.
 
 To say StrikingFlav of (M - a ghost) on (B - a body part):
 	say "[BigNameDesc of M] slams [if B is hips]your ass[otherwise if B is face]you in the face[otherwise]itself into your [variable B][end if]!";
 
+[TODO: more of a "cockslap"
+To compute striking success effect of (M - a monster) on (B - a body part):
+	do nothing.]
+
 To say StrikingSuccessFlav of (M - a ghost) on (B - a body part):
-	say "[StrikingFlav of M on B]";
+	say StrikingFlav of M on B;
 	say "Ouch! That one hurt.".
 
 To say StrikingFailureFlav of (M - a ghost) on (B - a body part):
-	say "[StrikingFlav of M on B]";
+	say StrikingFlav of M on B;
 	say "That slap wasn't too bad.".
 
-To compute (C - a clothing) damaging (M - a ghost):[covers both spike bra and striped top]
-	say "The spikes of your [printed name of C] leave visible, pulsing gaps in [NameDesc of M][']s form for several seconds after its attack!";
-	decrease the health of M by 2;
-	if C is blessed, decrease the health of M by 2.
+To compute (C - a clothing) damaging (M - a ghost):
+	if C is spikey:[covers both spike bra and striped top]
+		say "The spikes of your [printed name of C] leave visible, pulsing gaps in [NameDesc of M]'s form for several seconds after its attack!";
+		decrease the health of M by 2;
+		if C is blessed, decrease the health of M by 2;
+	otherwise if C is blessed:
+		say "[BigNameDesc of M] seems to blur around the edges after its attack. It must have been hurt by the blessing on your [ShortDesc of C]!";
+		decrease the health of M by 2.
 
-To compute (M - a ghost) striking (B - breasts):
-	let C be a random worn top level covering blessed clothing;
-	let P be a random worn breast covering protection clothing;
-	let R be 0;
-	if there is a worn santa corset:
-		let R be a random number between 2 and 22;
-		if R > the largeness of breasts:
-			say "The brunt of the blow is absorbed by your [ShortDesc of random worn santa corset]!";
-		otherwise:
-			BodyRuin 2;
-	otherwise if there is a worn striped top and total-wasps > 50:
-		say "The blow deflects off the shiny black carapace covering your breasts!"; [The ghost simply passes through a chainmail top, but it can't pass through something "part" of your skin.]
-	otherwise if P is clothing:
-		if a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-		otherwise now R is 1;
-	otherwise:
-		now R is 1;
-	if R is 1:
-		if C is clothing:
-			say "[BigNameDesc of M] seems to blur around the edges after its attack. It must have been hurt by the blessing on your [ShortDesc of C]!";
-			decrease the health of M by 2;
-		BodyRuin 2;
-	if C is spikey:
-		compute C damaging M;
-	otherwise if C is clothing and M is jismbodied ghost and bukkake fetish is 1:
-		say "[BigNameDesc of M] leaves some of itself behind on your [printed name of C]!";
-		CumSoak a random number between 2 and 3 on C.
-
-To compute (M - a ghost) striking (B - hips):
-	let C be a random worn blessed skirted clothing;
-	if C is nothing, now C is a random worn blessed top level protection clothing;
-	let R be 0;
-	let P be a random worn skirted protection clothing;
-	if P is nothing, let P be a random worn crotch covering protection clothing;
-	if P is clothing:
-		if a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-		otherwise now R is 1;
-	if R is 1:
-		if C is clothing:
-			say "[BigNameDesc of M] seems to blur around the edges after its attack. It must have been hurt by the blessing on your [ShortDesc of C]!";
-			decrease the health of M by 2;
-		BodyRuin 1;
-	if C is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak a random number between 2 and 3 on C.
-
-To compute (M - a ghost) striking (B - arms):
-	let R be 0;
-	let P be a random worn arm covering clothing;
-	if P is clothing and P is protection:
-		if a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-	otherwise:
-		if M is jismbodied ghost and P is clothing and P is blessed:
-			say "[BigNameDesc of M] seems to blur around the edges after its attack. It must have been hurt by the blessing on your [printed name of P]!";
-			decrease the health of M by 2;
-	if P is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak a random number between 2 and 3 on P;
-	BodyRuin R.
-
-To compute (M - a ghost) striking (B - thighs):
-	let R be 0;
-	let P be a random worn leg covering clothing;
-	if P is clothing and P is protection:
-		if a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-		otherwise now R is 1;
-	otherwise:
-		if M is jismbodied ghost and P is clothing and P is blessed:
-			say "[BigNameDesc of M] seems to blur around the edges after its attack. It must have been hurt by the blessing on your [printed name of P]!";
-			decrease the health of M by 2;
-	if P is clothing and M is jismbodied ghost and bukkake fetish is 1, CumSoak a random number between 2 and 3 on P;
-	BodyRuin R.
+To compute striking success effect of (M - jismbodied ghost) on (B - a body part):
+	if bukkake fetish is 1:
+		say "[BigNameDesc of M] leaves a glob of [semen] behind on your [B]";
+		squirt semen on B by a random number between 2 and 3.
 
 Part 2 - DQ
 
@@ -677,6 +617,7 @@ To compute punishment of (P - ghost-using):
 		if diaper messing >= 3:
 			say "You squirm as the foreign mush squishes itself against your butt.";
 			MessUp D by 7;
+			increase the foreign-mess of D by 7;
 	otherwise:
 		say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper messing >= 3]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] you can feel pressure building inside of you. [BigNameDesc of M] is somehow using you as [his of M] own personal toilet, filling your bladder with [his of M] pee[if diaper messing >= 3] and your bowels with [his of M] poop[end if]![line break][variable custom style][if the diaper addiction of the player < 9]What the fuck, get out of me! This is so gross and weird!!![otherwise if the diaper addiction of the player < 15]Hnng... Oh gosh this feels really uncomfortable, please stop![otherwise]So I guess I'm the diaper now! That's what I get for not wearing nappies like a good [boy of the player], haha![end if][roman type][line break]";
 		DelicateUp 1;
@@ -742,7 +683,6 @@ To compute damage reaction of (M - a ghost):
 	otherwise:
 		if the health of M > the maxhealth of M / 2, say "It seems completely undeterred by your attack!";
 		otherwise say "Its glow is getting dimmer.".
-
 
 To say BanishFleeFlav of (M - a ghost):
 	say "You hear a terrible shriek and [NameDesc of M] disappears behind a curtain of green flames.".

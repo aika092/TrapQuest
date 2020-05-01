@@ -98,13 +98,6 @@ REQUIRES COMMENTING
 +@!]
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 
-[!<Room>@<IsStamped>+
-
-REQUIRES COMMENTING
-
-+@!]
-A room can be stamped. A room is usually not stamped. [Have we placed temporary icons or hyperlink buttons in this room on the map?]
-
 [!<Room>@<IsMandatory>+
 
 REQUIRES COMMENTING

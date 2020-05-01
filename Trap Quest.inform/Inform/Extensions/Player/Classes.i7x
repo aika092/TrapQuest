@@ -41,14 +41,18 @@ REQUIRES COMMENTING
 +!]
 This is the princess class rule:
 	if there is a worn royalty themed wearthing:
-		if the training-progress of senior robobellboy is -1:
+		if the training-progress of senior robobellboy is -1 and there is a worn tiara:
 			now player-class is "trained fuck princess";
 			rule succeeds;
 		otherwise if there is a worn tiara:
 			now player-class is "princess";
 			rule succeeds.
 The princess class rule is listed in the player class rules.
-princess is a text that varies. princess is "princess".
+[princess is a text that varies. princess is "princess".]
+
+Definition: a text (called T) is princess:
+	if T is "princess" or T is "trained fuck princess", decide yes;
+	decide no.
 
 [!<TheMaidClassRule>+
 
@@ -69,7 +73,7 @@ Thanks to the magical maid multi-class, we have multiple different texts that ne
 
 +!]
 Definition: a text (called T) is maid:
-	if T is "maid" or T is "fully trained maid" or T is "magical maid", decide yes;
+	if T is "maid" or T is "fully trained maid" or T is "magical maid" or T is "cafe maid", decide yes;
 	decide no.
 
 [!<TheCowgirlClassRule>+
@@ -146,17 +150,10 @@ REQUIRES COMMENTING
 +!]
 This is the schoolgirl class rule:
 	if there is a worn scrunchie:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "schoolgirl";
 			if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "schoolgirl";
-				if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-				rule succeeds.
+			rule succeeds.
 The schoolgirl class rule is listed in the player class rules.
 [!<TextIsSchoolgirl>+
 
@@ -582,7 +579,7 @@ A time based rule (this is the compute whispers rule):
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 		if whispered < 0 and whisper-type is not 0 and whisper-tracking is 0:
-			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can[']t quite place it.";
+			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can't quite place it.";
 			SexAddictUp 2;
 			SemenAddictUp 2;
 			now whisper-type is 0;
@@ -621,7 +618,7 @@ This is the faerie class rule:
 		if the virgin of the player is 1:
 			now the player-class is "fairy godmother";
 			rule succeeds;
-		otherwise if there is a worn butterfly wings:
+		otherwise if butterfly wings is worn:
 			now the player-class is "faerie";
 			rule succeeds.
 The faerie class rule is listed in the player class rules.
@@ -648,7 +645,7 @@ Definition: a text (called T) is bunny:
 	decide no.
 
 bunny-reminder is a number that varies.
-A time based rule (this is the bunny reminder rule):
+An all time based rule (this is the bunny reminder rule):
 	if the class of the player is bunny:
 		if bunny-reminder is 0 and playerRegion is Woods:
 			say "[bold type]You feel your bunny reflexes improve while you are in the woods![roman type][line break]";
@@ -707,7 +704,7 @@ The latex clown class requires the clown mask.
 This is the latex clown class rule:
 	if clown mask is worn:
 		now the player-class is "clown";
-		if adult-baby-class is 1, now the player-class is "baby clown";
+		if the player is actually an adult baby, now the player-class is "baby clown";
 		rule succeeds.
 The latex clown class rule is listed in the player class rules.
 
@@ -799,7 +796,7 @@ The virgin warrior priestess class rule is listed first in the player class rule
 
 [!<TheMagicalMaidClassRule>+
 
-The magical maid is a combination class of the maid and magical girl. It needs the maid headdress and magical maid outfit.
+The magical maid is a combination class of the maid and magical girl. It needs a maid headdress and magical maid outfit.
 
 +!]
 This is the magical maid class rule:
@@ -808,6 +805,20 @@ This is the magical maid class rule:
 		rule succeeds.
 The magical maid class rule is listed first in the player class rules.
 
+[!<TheCafeMaidClassRule>+
+
+The cafe maid is a combination class of the maid and waitress bunny. It needs a maid headdress and cafe maid outfit.
+
++!]
+This is the cafe maid class rule:
+	if there is a worn maid headdress and there is a worn cafe maid outfit:
+		now the player-class is "cafe maid";
+		rule succeeds.
+The cafe maid class rule is listed first in the player class rules.
+
+Check dropping waitress vessel:
+	if the class of the player is "cafe maid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
+
 [!<TheMagicalSchoolgirlClassRule>+
 
 The magical schoolgirl is a combination class of the schoolgirl and magical girl. It needs the heart hairpin and any school outfit, or vice versa.
@@ -815,15 +826,9 @@ The magical schoolgirl is a combination class of the schoolgirl and magical girl
 +!]
 This is the magical schoolgirl class rule:
 	if heart hairpin is worn:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "magical schoolgirl";
 			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "magical schoolgirl";
-				rule succeeds;
 	if there is a worn scrunchie and there is a worn magical dress:
 		now the player-class is "magical schoolgirl";
 		rule succeeds.
@@ -881,7 +886,7 @@ Goes last because it is purely cosmetic and doesn't necessarily use headgear so 
 
 +!]
 This is the adult baby class rule:
-	if adult-baby-class is 1, now the player-class is "adult baby".
+	if the player is actually an adult baby, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
 
 [!<TheHookerInTrainingClassRule>+

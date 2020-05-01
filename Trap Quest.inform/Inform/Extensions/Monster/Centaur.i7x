@@ -4,11 +4,11 @@ Centaur by Monster begins here.
 
 ]
 
-Centaur is a monster. Centaur is intelligent. The text-shortcut of centaur is "cttm". Understand "templar" as centaur. Centaur is male. Centaur can be shieldblocked or not shieldblocked.
+Centaur is a monster. Centaur is intelligent. The text-shortcut of centaur is "cttm". Understand "templar" as centaur. Centaur is male. Centaur can be swordblocked or not swordblocked.
 
 Definition: centaur is presenting as female: decide yes. [For now]
 
-Figure of Centaur is the file "NPCs/Forest/centaur1.png".
+Figure of Centaur is the file "NPCs/Forest/centaur1.jpg".
 To decide which figure-name is the monster-image of (M - centaur):
 	decide on the figure of centaur.
 
@@ -16,7 +16,7 @@ To say MediumDesc of (M - centaur):
 	say "centaur templar".
 
 To say MonsterDesc of (M - centaur):
-	say "This armoured [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] torso is protected by a bit of ornate armour, and [he of M] is holding a large steel sword in one strong hand. [big his of M] shining silvery hair, which matches the fur of [his of M] lower half, flows behind [him of M] as if constantly caught by the wind.".
+	say "This armoured [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] torso is protected by a bit of ornate armour, and [he of M] is holding a large steel sword in one strong hand and a medium sized shield in the other. [big his of M] wispy black hair flows behind [him of M] as if constantly caught by the wind. A [LongDickDesc of M] dangles between [his of M] hind legs.".
 	[say "This armoured [man of M] has the body of a horse from the waist down, with a [LongDickDesc of M] hanging down between [his of M] legs. Aside from [his of M] head, [his of M] entire torso is covered by a set of silver plate mail, with a large, circular buckler attached to one of [his of M] arms. [big his of M] fiery red hair, which matches the fur of [his of M] lower half, is drawn back into a ponytail.".]
 
 Definition: a centaur is raunchy: decide yes.
@@ -27,13 +27,13 @@ Definition: centaur is presenting as male if lady fetish is 2.
 
 Definition: A centaur is woods dwelling: decide yes.
 
-This is the spawn potential centaur rule:
+[This is the spawn potential centaur rule:
 	if a random number between 1 and 2 is 1 and unicorn is not alive:
 		summon centaur in the woods.
-The spawn potential centaur rule is listed in the setting up woods monsters rules.
+The spawn potential centaur rule is listed in the setting up woods monsters rules.]
 
-Definition: centaur (called M) is controlling:[Will it grab onto subduing clothing e.g. a clitoris lead?]
-	decide no.
+Definition: centaur is controlling: decide no.[Will it grab onto subduing clothing e.g. a clitoris lead?]
+
 
 Definition: centaur is musky: decide yes.
 Definition: centaur is a tripper: decide no.
@@ -62,16 +62,13 @@ To decide which number is the girth of (M - centaur):
 	decide on 6;
 
 To say SummoningFlav of (M - centaur):
-	if M is in the location of the player, say "You hear very sexual sounding sigh, followed by a short prayer. Several seconds later, a heavily armoured [man of M] with the lower body of a horse leaps out out of the statue, landing on the ground with a resounding *clop*.";
+	if M is in the location of the player, say "You hear a very sexual sounding sigh, followed by a short prayer. Several seconds later, a heavily armoured [man of M] with the lower body of a horse leaps out out of the statue, landing on the ground with a resounding *clop*.";
 	otherwise say "You hear the clopping of hooves nearby.".
 
 Part 1 - Misc Flavour
 
 To say speech style of (M - centaur):
 	say second custom style.
-
-["To think I would have to use my full power..."
-"You didn't even bring out 10% of my strength."]
 
 [To compute kneeling reaction of (M -centaur):
 	say "".]
@@ -111,7 +108,7 @@ To compute appearance assessment of (M - centaur):
 			compute grope of M;
 		otherwise: [Duel totally isn't a euphemism for anything. Nope. Definitely not.]
 			if the class of the player is cowgirl or the class of the player is puppygirl or the class of the player is catgirl or the class of the player is bunny:
-				say "[BigNameDesc of M][']s eyes rove your body.[line break][speech style of M]'[one of]What a good looking...stance. Wanna duel, [player-class]?'[or]Wow, a [player-class]. And a...tough looking one too...Wanna duel?'[or]You look...strong for a [player-class]. We should duel each other sometime.'[at random][roman type][line break]";
+				say "[BigNameDesc of M][']s eyes rove your body.[line break][speech style of M]'[one of]What a good looking...stance. Wanna duel, [player-class]?'[or]Wow, a [player-class]. And a...*tough* looking one too. Wanna duel?'[or]You look...*strong* for a [player-class]. We should duel each other sometime.'[at random][roman type][line break]";
 			otherwise:
 				say "[BigNameDesc of M][']s eyes widen as [his of M] gaze [if asshole is lewdly exposed]settles on your exposed [asshole][otherwise]roves your body[end if].[line break][speech style of M]'[one of]You look...strong. Wanna duel?'[or]You look like a...warrior. I really want to fight you.'[or]Up for a duel? You look like you are...'[or]Feel like duelling me? You duel all the time, don't you...'[at random][roman type][line break]";
 	otherwise if the class of the player is priestess or the class of the player is cultist:
@@ -144,19 +141,18 @@ This is the centaur raises shield rule:
 	if the player is upright:
 		let M be centaur;
 		if M is not shieldblocked and a random number between 1 and 5 is 1 and M is unfriendly:
-			say "[BigNameDesc of M] raises [his of M] sword protectively, using it as a shield.";
+			say "[BigNameDesc of M] raises [his of M] shield protectively, using it as a shield.";
 			now M is shieldblocked;
 			rule succeeds;
 		otherwise if M is shieldblocked:
-			say "[BigNameDesc of M] keeps [his of M] sword raised defensively.";
+			say "[BigNameDesc of M] keeps [his of M] shield raised defensively.";
 			rule succeeds.
 The centaur raises shield rule is listed last in the centaur priority attack rules.
 
 This is the centaur lowers shield rule:
 	let M be centaur;
 	if M is shieldblocked and a random number between 1 and 2 is not 1:
-		say "[BigNameDesc of M] lowers [his of M] sword.";
-		now M is not shieldblocked;
+		say "[BigNameDesc of M] lowers [his of M] shield.";
 		rule succeeds.
 The centaur lowers shield rule is listed first in the centaur priority attack rules.
 
@@ -164,7 +160,7 @@ Section 2 - Damage
 
 To compute damage reaction of (M - centaur):
 	if M is shieldblocked:[Counter!]
-		say "[line break][speech style of M]'[one of]Hyah!'[or]Dumbass!'[or]Gotcha!'[at random][roman type][line break][BigNameDesc of M] waits for the moment just before your attack connects and suddenly bashes you with the flat of [his of M] sword!";
+		say "[line break][speech style of M]'[one of]Hyah!'[or]Dumbass!'[or]Gotcha!'[at random][roman type][line break][BigNameDesc of M] waits for the moment just before your attack connects and suddenly bashes you with [his of M] shield!";
 		now M is not shieldblocked;
 		silently try kneeling;
 		if the player is prone:
@@ -434,7 +430,7 @@ To say EscapeAnswer of (M - centaur):
 	say "[speech style of M]'You need to go through the back door. Heheheheh.'[roman type][line break]".
 
 To say AdviceAnswer of (M - centaur):
-	say "[speech style of M]'[one of]Lube doesn't just make things slippery. It can also soothe a hole that's recently taken a lot of punishment, and in a pinch, you can even drink it.'[or]There is a slimegirl in this forest that knows of a technique once known only to gladiators. If you can earn [his of slimegirl] trust, [he of slimegirl] might be willing to teach you.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Lube doesn't just make things slippery. It can also soothe a hole that's recently taken a lot of punishment, and in a pinch, you can even drink it.'[or]There is a slimegirl in this forest that knows of a technique once known only to gladiators. If you can earn [his of slimegirl] trust, [he of slimegirl] might be willing to teach you.'[or]Creampies are great, but if you don't want them, try begging. Of course, I can't pull out even if I want to, but in cases like mine you're better off struggling.'[at random][roman type][line break]".
 
 Section 3 - Drink Requesting
 

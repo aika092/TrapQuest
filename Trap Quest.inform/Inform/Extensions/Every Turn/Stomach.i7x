@@ -66,11 +66,11 @@ digestion-timer is a number that varies.
 
 [!<DecideWhichNumberIsStomachPeriod>+
 
-REQUIRES COMMENTING
+Time in between stomach digesting things and the checks for whether the player needs to expel an enema.
 
 +!]
 To decide which number is stomach-period:
-	if the player is in a predicament room, decide on 24; [Happens much more frequently in the predicament world]
+	if the player is in a predicament room, decide on 30; [Happens much more frequently in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
 	let T be 25;
 	if the player is not overly full, now T is T * 2;
@@ -79,6 +79,14 @@ To decide which number is stomach-period:
 	if R < 2, now T is T * 2;
 	if digestion-timer <= 0, now T is T * 2;
 	decide on T.
+
+[!<DecideWhichNumberIsBladderPeriod>+
+
+Time in between bladder increases and checks for whether the player wets themselves
+
++!]
+To decide which number is bladder-period:
+	decide on 35.
 
 Definition: a wearthing (called C) is respiration-enhancing: [Done so that we can include tattoos]
 	if C is respiration clothing, decide yes;
@@ -98,36 +106,25 @@ To decide which number is food-period:
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the compute stomach rule):
-	compute corset strain;
-	if the player is craving semen and the stomach-semen of the player is 0:
-		if cold turkey <= the semen taste addiction of the player * 20:
-			increase cold turkey by time-seconds;
-			if cold turkey > the semen taste addiction of the player * 20:
-				say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving semen]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
-	increase cold milky by time-seconds;
-	if cold milky > cold milky limit and the milk taste addiction of the player > 13:
-		if cold milky - time-seconds <= cold milky limit:
-			say "[bold type]Your stomach and taste buds are beginning to [if the player is desperately craving milk]desperately [end if]crave more [milk]. [roman type]Until you either drink some more [milk] or avoid milk for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
-		otherwise if cold milky > the milk taste addiction of the player * cold milky addiction limit and cold milky - time-seconds <= the milk taste addiction of the player * cold milky addiction limit:
-			say "[bold type]Your mind and body is now slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
-	[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
-	if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
-		compute hunger and thirst;
-	unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth;
-	if the thirst of the player is 5 and the player is thirsty and delayed fainting is 0 and busy is 0 and the player is able to speak and the player is not flying and the player is not stuck and the player is not in danger:
-		if the player is in Dungeon10 and diaper quest is 0:
-			say "You see the statue with a hollow penis and [if the semen taste addiction of the player < 6]realise you are just too thirsty to resist[otherwise if the semen taste addiction of the player < 10]understand what you need to do to quench your thirst[otherwise]your eyes light up as you realise how you can quench your thirst[end if]. [if the player is upright]You get on your knees. [end if]";
-			now the stance of the player is 1;
-			try drinking DungeonScenery01;
-		otherwise if last-begged-time < earnings - 30:
-			repeat with M running through intelligent friendly interested monsters in the location of the player:
-				if M is awake and the player is not immobile and the thirst of the player > 3 and the player is not stuck and M is not last-begged:
-					now the alert of the player is 1;
-					compute desperate drinking to M;
-					now last-begged is M;
-					now last-begged-time is earnings;
-					break.
+An all time based rule (this is the compute stomach rule):
+	if the player is not in Predicament20 and the player is not in Predicament19 and the player is not in Toilet01 and the player is not in Toilet02: [The Safe Rooms of the predicament world should not let you stall out your bodily functions]
+		compute corset strain;
+		if playerRegion is not school:
+			if the player is craving semen and the stomach-semen of the player is 0:
+				if cold turkey <= the semen taste addiction of the player * 20:
+					increase cold turkey by time-seconds;
+					if cold turkey > the semen taste addiction of the player * 20:
+						say "[bold type]Your stomach has been empty of [semen] for so long that you can feel your body's demand for the addictive substance slowly disappearing. [if the player is craving semen]But even though your body doesn't crave it as much any more, your mind still does...[end if][roman type][line break]";
+			increase cold milky by time-seconds;
+			if cold milky > cold milky limit and the milk taste addiction of the player > 13:
+				if cold milky - time-seconds <= cold milky limit:
+					say "[bold type]Your stomach and taste buds are beginning to [if the player is desperately craving milk]desperately [end if]crave more [milk]. [roman type]Until you either drink some more [milk] or avoid milk for a long time, you will feel [second custom style]cranky[roman type], lowering your submissiveness but also significantly lowering your intelligence.";
+				otherwise if cold milky > the milk taste addiction of the player * cold milky addiction limit and cold milky - time-seconds <= the milk taste addiction of the player * cold milky addiction limit:
+					say "[bold type]Your mind and body is now slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
+		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
+		if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
+			compute hunger and thirst;
+		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
 
 To compute hunger and thirst:
 	let T be the thirst of the player;
@@ -187,7 +184,7 @@ To compute bladder growth:
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
 		bladderup (1 + xavier-belt-link) * the delayed bladder of the player;
 		now the delayed bladder of the player is 0;
-	otherwise if (the remainder after dividing time-earnings by 25 < time-seconds or (chess table is grabbing the player and the chess-victor of chess-lesson is 0)) and the delayed bladder of the player > 0:
+	otherwise if (the remainder after dividing time-earnings by bladder-period < time-seconds or (chess table is grabbing the player and the chess-victor of chess-lesson is 0)) and the delayed bladder of the player > 0:
 		bladderup 1 + xavier-belt-link;
 		decrease the delayed bladder of the player by 1.
 
@@ -278,12 +275,6 @@ Definition: yourself is diaper kicking:
 		if the diaper addiction of the player < 6 and the total-soak of D >= the diaper addiction of the player, decide yes;
 	decide no.
 
-[!<previousUrineUpset:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
-previous-urine-upset is a number that varies.
 
 [!<previousHorny:Integer>*
 

@@ -119,8 +119,6 @@ This is the tattoos get focused rule:
 				if the cringe of T >= C, focus-consider T.
 The tattoos get focused rule is listed in the focus finding rules.
 
-
-
 Section 1 - Ass Tattoos
 
 An ass tattoo is a kind of tattoo.

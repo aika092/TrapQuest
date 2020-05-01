@@ -927,13 +927,13 @@ Flexible Windows adds a "window" column to the Table of User Styles found in the
 	Table of User Styles (continued)
 	window (a g-window)	style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 
-Note that the "background color" column is for the background color of the text only, not the background color of the entire window.
+Note that the "background color" column is for the background colour of the text only, not the background colour of the entire window.
 
-To color the background of the entire window, we instead set the g-window property "background color" to a six-digit web color code (with or without the # symbol):
+To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web color code (with or without the # symbol):
 
 	The background color of the side window is "#CCCCFF".
 
-If the story will be running in a browser, we'll need to use CSS to set custom colors or styles. See the "Rock Number" section for how to refer to a particular window in CSS.
+If the story will be running in a browser, we'll need to use CSS to set custom colours or styles. See the "Rock Number" section for how to refer to a particular window in CSS.
 
 Section: Rock Number
 

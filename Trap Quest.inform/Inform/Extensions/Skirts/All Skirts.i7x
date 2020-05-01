@@ -166,7 +166,7 @@ To say ShortDesc of (Y - chequered skirt):
 	say "chequered skirt".
 
 To decide which number is the initial outrage of (C - chequered skirt):
-	decide on 2.
+	decide on 1.
 
 To set up influence of (C - chequered skirt):
 	set up random-based influence of C.
@@ -192,7 +192,7 @@ To say ShortDesc of (Y - flowing skirt):
 	say "flowing white skirt".
 
 To decide which number is the initial outrage of (C - flowing skirt):
-	decide on 3.
+	decide on 2.
 
 To set up influence of (C - flowing skirt):
 	set up random-based influence of C.
@@ -330,7 +330,7 @@ To say ClothingDesc of (C - a longer rubber skirt):
 	say "This tight knee length black skirt is made entirely of latex, which makes it cling even tighter to your body.".
 
 To decide which number is the initial outrage of (C - a longer rubber skirt):
-	decide on 4.
+	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - a longer rubber skirt):
 	decide on a random off-stage shorter-rubber-skirt.
@@ -340,7 +340,7 @@ Part 2 - Shorter Rubber Skirt
 A shorter-rubber-skirt is a kind of rubber-skirt. A shorter-rubber-skirt is usually short. A shorter-rubber-skirt is usually transformation-rare. Understand "short" as shorter-rubber-skirt.
 
 To decide which number is the initial outrage of (C - a shorter-rubber-skirt):
-	decide on 6.
+	decide on 4.
 
 A black rubber skirt is a kind of shorter-rubber-skirt. There is 1 black rubber skirt. Figure of black rubber skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt2.png". Printed name of black rubber skirt is "[clothing-title-before]short black latex skirt[clothing-title-after]". The text-shortcut of black rubber skirt is "sbs".
 
@@ -431,8 +431,8 @@ To say ShortDesc of (Y - a black sporty microskirt):
 	say "tiny black lycra microskirt".
 
 To decide which number is the initial outrage of (C - a microskirt):
-	if C is latex, decide on 7;
-	decide on 5.
+	if C is latex, decide on 5;
+	decide on 3. [It's not really the skirt that's outrageous, it's more what it's failing to conceal]
 
 Definition: a microskirt is end of transformation chain: decide yes.
 
@@ -458,7 +458,7 @@ To say ClothingDesc of (C - a tartan miniskirt):
 	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
-	decide on 3.
+	decide on 2.
 
 Definition: a tartan miniskirt is class-transformation-protected if the class of the player is schoolgirl.
 
@@ -508,7 +508,7 @@ To say ShortDesc of (C - office skirt):
 Definition: office skirt is black themed: decide yes.
 
 To decide which number is the initial outrage of (C - office skirt):
-	decide on 2.
+	decide on 1.
 
 To decide which number is the adult-influence of (C - office skirt):
 	decide on 2.
@@ -566,7 +566,7 @@ To say ShortDesc of (Y - a sequins belt):
 	say "sequins belt".
 
 To decide which number is the initial outrage of (C - a sequins belt):
-	decide on 6.
+	decide on 4.
 
 To decide which number is the bartering value of (T - a sequins belt) for (M - a gladiator):
 	decide on 2.
@@ -633,7 +633,7 @@ Report taking off skirt-tray-vibrator when diaper quest is 1:
 Check taking off plain-largish-diaper when skirt-tray-vibrator is worn:
 	try taking off skirt-tray-vibrator instead.
 
-A time based rule (this is the skirt tray vibrator rule):
+An all time based rule (this is the skirt tray vibrator rule):
 	if the player is in a predicament room:
 		if the player is in Predicament20:
 			if skirt-tray-vibrator is held or skirt-tray-vibrator is in the location of the player, say "Now that you are safely inside, [NameDesc of skirt-tray-vibrator] fizzles from existence.";
@@ -691,6 +691,6 @@ To say ClothingDesc of (C - grope-me-skirt):
 	say "This short purple tartan skirt has a sign pinned to the front that reads 'Please Grope My Tits'...".
 
 To decide which number is the initial outrage of (C - grope-me-skirt):
-	decide on 4.
+	decide on 6.
 
 All Skirts ends here.

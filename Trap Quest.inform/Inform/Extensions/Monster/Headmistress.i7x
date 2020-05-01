@@ -70,7 +70,7 @@ Part - Motion
 To compute monstermotion of (M - headmistress):
 	unless M is in School08 and M is friendly, compute room leaving of M.
 
-A later time based rule:
+An all later time based rule (this is the school recruiters rule):
 	if armband is worn and class-time < (lessonFrequency * -5):
 		if headmistress is alive and headmistress is undefeated:
 			if headmistress is not regional, regionally place headmistress;

@@ -67,7 +67,7 @@ To decide which number is milkingColour:
 
 To decide which object is bottom level lactation cover:
 	let N be nothing;
-	repeat with C running through worn nipple covering clothing:
+	repeat with C running through worn actually nipple covering clothing:
 		if N is nothing:
 			now N is C;
 		otherwise if the top-layer of N > the top-layer of C:

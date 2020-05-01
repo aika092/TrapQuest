@@ -88,7 +88,8 @@ To uniquely set up (C - a cumdumpster hat):
 	now the quest of C is condom-eating-quest.
 
 To say QuestFlav of (Q - condom-eating-quest):
-	say "You sense that it wants you to drink the cum from used condoms, or collect more condoms onto your clothing.".
+	say "You sense that it wants you to collect more condoms onto your clothing, and you can earn extra brownie points by eating the cum from your collected used condoms.";
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each condom that gets pinned to you increases the counter by 1. Each used condom you eat increases the counter by 1 again. You need to do this 5 times total.[roman type][line break][or][stopping]".
 
 To say QuestTitle of (Q - condom-eating-quest):
 	say " (used condom collection & drinking quest)".
@@ -97,9 +98,16 @@ To progress quest of (Q - condom-eating-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase condom-count of Q by 1;
-			if condom-count of Q > 2:
+			if condom-count of Q >= 5:
 				now the condom-count of Q is 0;
-				compute quest completion of Q on C.
+				compute quest completion of Q on C;
+			otherwise if total used condoms is 0:
+				if C is thirsty work condom hat:
+					transform C into cumdumpster condom hat;
+				otherwise:
+					say "[BigNameDesc of C] wiggles happily! But becuase you are still wearing some used condoms, it doesn't want to reward you just yet. You either need to eat them all or collect some more!";
+			otherwise:
+				say "[BigNameDesc of C] wiggles happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
 
 To compute persistent reward of (Q - condom-eating-quest) on (C - a clothing):
 	if C is cursed:

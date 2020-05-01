@@ -234,7 +234,7 @@ REQUIRES COMMENTING
 +!]
 To say HairDesc (X - a number):
 	say "[2HairDesc X]";
-	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]. ";
+	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]";
 
 [!<Say2HairDescNumber>+
 
@@ -242,7 +242,9 @@ REQUIRES COMMENTING
 
 +!]
 To say 2HairDesc (X - a number):
-	if the player is upright:
+	if diaper quest is 1:
+		say "[HairColour] hair";
+	otherwise if the player is upright:
 		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";

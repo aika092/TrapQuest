@@ -8,9 +8,7 @@ To decide which figure-name is the monster-image of (M - hellhound):
 
 Understand "hell", "hound", "dog", "puppy", "slave" as hellhound. The text-shortcut of hellhound is "hh".
 
-Definition: hellhound (called M) is mansion dwelling:
-	if mythical creature fetish is 0 and diaper quest is 0, decide no;
-	decide yes.
+Definition: hellhound is mansion dwelling if mythical creature fetish is 1 or diaper quest is 1.
 
 Definition: hellhound is musky: decide yes.
 
@@ -35,9 +33,9 @@ To set up (M - hellhound):
 	if mythical creature fetish is 0, now M is intelligent;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial hellhound rule:
+[This is the spawn initial hellhound rule:
 	if hellhound is off-stage and hellhound is mansion dwelling, summon hellhound in the mansion.
-The spawn initial hellhound rule is listed in the setting up mansion monsters rules.
+The spawn initial hellhound rule is listed in the setting up mansion monsters rules.]
 
 To decide which number is the girth of (M - hellhound):
 	if mythical creature fetish is 0, decide on 2;
@@ -513,7 +511,6 @@ To say DamageReactWeak of (M - hellhound):
 
 To say BanishFleeFlav of (M - hellhound):
 	say "[BigNameDesc of M] limps away, howling in pain! You get the feeling you won't be seeing [him of M] again any time soon!".
-
 
 Part - Conversation
 

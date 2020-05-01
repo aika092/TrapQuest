@@ -6,9 +6,13 @@ Slight retcon: The player's friends have an understanding that they are being ca
 essentially, they originally think they're here to observe your "testing", but really Nintendolls is just marketing their newest whore.
 ]
 
-A real-life patron is a kind of patron. A real-life patron has a number called friend-max-appearance. The friend-max-appearance of a real-life patron is usually 1. A real-life patron has a text called friend-old-name. The friend-old-name of a real-life patron is usually "none". A real-life patron can be real-seenNaked or not real-seenNaked. A real-life patron is usually not real-seenNaked. A real-life patron can be friend-shocked or not friend-shocked. A real-life patron is usually not friend-shocked. A real-life patron has a number called times-called.
+A real-life patron is a kind of patron. A real-life patron has a number called friend-max-appearance. The friend-max-appearance of a real-life patron is usually 1. A real-life patron has a text called friend-old-name. The friend-old-name of a real-life patron is usually "none".
+A real-life patron can be real-seenNaked. A real-life patron is usually not real-seenNaked.
+A real-life patron can be friend-shocked. A real-life patron is usually not friend-shocked.
+A real-life patron can be reconciled. [The player and the patron are now (permanently) on good terms.]
+A real-life patron has a number called times-called.
 
-Definition: a real-life patron is manly-wenchy:
+Definition: a real-life patron is wenchy:
 	decide no.
 
 Definition: a real-life patron is father material:
@@ -32,11 +36,11 @@ Definition: a real-life patron is presenting as male:
 	decide no.
 
 To say MonsterDesc of (M - a real-life patron):
-	say "This is your [RelationDesc of M], [MediumDesc of M]. You know [him of M] from outside the game, but after seeing you act like a whore so many times, [he of M]'s paid a lot of money to try you out [him of M]self!".
+	say "This is your [RelationDesc of M], [MediumDesc of M]. You know [him of M] from outside the game, but after seeing you act like a whore so many times, [he of M]'s paid a lot of money to try you out [himself of M]!".
 
 To say NewNameReact of (M - a real-life patron):
 	if the friend-old-name of M is not NameBimbo, say "[speech style of M]'Hello, ['][NameBimbo][']. Your new name really suits you.'[roman type][line break][moderateHumiliateReflect]";
-	otherwise say "[speech style of M]'Hello again,  ['][NameBimbo]['].'[roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[speech style of M]'Hello again, ['][NameBimbo]['].'[roman type][line break][moderateHumiliateReflect]";
 	now the friend-old-name of M is the substituted form of "[NameBimbo]".
 
 To say LongDickDesc of (M - a real-life patron):
@@ -73,7 +77,6 @@ To say NewAppearanceReaction of (M - a real-life patron):
 			say "";
 		now the friend-max-appearance of M is the appearance of the player;
 	if the player is naked and M is not real-seenNaked, now M is real-seenNaked.
-
 
 To say GenericSituationReaction of (M - a real-life patron):
 	let P be the appearance of the player;
@@ -150,7 +153,7 @@ To compute (M - a real-life patron) protecting against (X - a monster):
 		say FightObserve of M with X.
 
 To say BaseObservationFlav of (M - a real-life patron):
-	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just offscreen.[or].[or], clearly playing with [him of M]self offscreen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or]in total disbelief.[or].[then at random][end if][line break]";
+	say "[MediumDesc of M] continues to watch [one of]the action[or]you[purely at random][if M is unfriendly][one of], [his of M] hand moving just offscreen.[or].[or], clearly playing with [himself of M] offscreen.[or].[then at random][otherwise][one of], mouth wide open.[or].[or]in total disbelief.[or].[then at random][end if][line break]";
 
 To say FightObserve of (M - a real-life patron) with (N - a monster):
 	if the player is prone:
@@ -192,10 +195,10 @@ Section - Platonic Friend
 platonic-friend is a real-life patron.
 
 To say MediumDesc of (M - platonic-friend):
-	say "[PlatonicName]";
+	say PlatonicName;
 
 To say RelationDesc of (M - platonic-friend):
-	say "[PlatonicRole]";
+	say PlatonicRole;
 
 Definition: platonic-friend is presenting as male:
 	if PlatonicGender is "masculine gender", decide yes;
@@ -211,7 +214,7 @@ To say FightObserve of (M - platonic-friend) with (N - a monster):
 
 To say SexObserve of (M - platonic-friend) with (N - a monster):
 	if M is unfriendly, say "[first custom style]'[one of]What a disgrace.'[or]Is this [man of N] a stranger too?'[or]Even if I've seen it before, its still shocking!'[or]You seem like you're having a great time.'[or]Dragging it out, as always.'[then at random][roman type][line break][strongHumiliateReflect]";
-	otherwise say "[first custom style]'[one of]I hope you're ashamed of yourself.'[or]Do you even know this [man of N]'s name?!'[or]I can't believe what I'm seeing!'[or]You're enjoying this, aren't you?'[or]How long is this going to take?!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	otherwise say "[first custom style]'[one of]I hope you're ashamed of yourself.'[or]Do you even know this [man of N][']s name?!'[or]I can't believe what I'm seeing!'[or]You're enjoying this, aren't you?'[or]How long is this going to take?!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - platonic-friend):
 	let B be the friend-old-name of M;
@@ -248,7 +251,7 @@ To say MediumDesc of (M - nemesis-friend):
 To say RelationDesc of (M - nemesis-friend):
 	say "[NemesisRole]";
 
-Definition: a nemesis-friend is presenting as male:
+Definition: nemesis-friend is presenting as male:
 	if NemesisGender is "masculine gender", decide yes;
 	decide no.
 
@@ -258,7 +261,7 @@ To say LongDickDesc of (M - nemesis-friend):
 To say FightObserve of (M - nemesis-friend) with (N - a monster):
 	let name be the friend-old-name of M;
 	if the player is prone:
-		say "[speech style of M]'[one of]Do me a favor and stay down.  I want to see how [NameDesc of N] messes with you!'[or]Giving up already? I can't say I'm surprised.'[or]Yes, I knew it! You were only pretending to fight so you could save face!'[at random][roman type][line break][moderateHumiliateReflect]".
+		say "[speech style of M]'[one of]Do me a favour and stay down. I want to see how [NameDesc of N] messes with you!'[or]Giving up already? I can't say I'm surprised.'[or]Yes, I knew it! You were only pretending to fight so you could save face!'[at random][roman type][line break][moderateHumiliateReflect]".
 
 To say SexObserve of (M - nemesis-friend) with (N - a monster):
 	say "[first custom style]'[one of]I always knew you'd turn out to be a whore.'[or]This is too good to be true! Hahaha, oh my god...'[or]We both know you're enjoying this. Stop fucking kidding yourself.'[or]You're really dragging this out, aren't you.'[then at random][strongHumiliateReflect]".
@@ -387,6 +390,5 @@ To compute HangUpUndisgraced of (C - a video-monitor) with (M - fancied-friend):
 To compute appearance assessment of (M - fancied-friend):
 	say NewNameReact of M;
 	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Does it matter? Does the weird thrill you get from having sex with strangers not extend to people you know, [NameBimbo]? I payed the money, and that's all that matters to a whore like you, right?'[roman type][line break][or][MediumDesc of M], please w-[roman type][line break][speech style of M]'Tell it to someone who respects you, [NameBimbo].'[roman type][line break][stopping]";
-
 
 Real Life Patron ends here.

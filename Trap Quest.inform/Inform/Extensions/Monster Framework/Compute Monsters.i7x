@@ -116,12 +116,12 @@ To check chase boredom of (M - a monster):
 	if M is not in the location of the player and a random number from 1 to D is 1:
 		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
 		if playerRegion is not school and M is threatening and M is regional:
-			say "You sense that [NameDesc of M] has lost interest in chasing you.";
+			say "You sense that [NameDesc of M] has [if M is survived]once again [end if]lost interest in chasing you.";
 			progress quest of nice-quest;
-		compute survival check of M.
+			compute survival check of M.
 
 To compute survival check of (M - a monster):
-	if M is strangers:
+	if M is not survived:
 		now M is survived;
 		compute survival rewards.
 

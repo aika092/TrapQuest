@@ -196,7 +196,7 @@ To decide which number is the girth of (I - a sex toy):
 To decide which number is the girth of (I - a clothing):
 	decide on the plug size of I.
 
-A time based rule (this is the sex toys slipping out rule):
+An all time based rule (this is the sex toys slipping out rule):
 	repeat with I running through insertable things penetrating a fuckhole:
 		compute gripping of I.
 
@@ -266,7 +266,7 @@ To compute gripping of (I - an insertable thing):
 	if I is penetrating asshole:
 		increase analGripCount by 1;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
-			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
+			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate asshole from I;
 			if the girth of I > the openness of asshole and diaper quest is 0:
 				let open be the openness of asshole;
@@ -277,7 +277,7 @@ To compute gripping of (I - an insertable thing):
 	if I is penetrating vagina:
 		increase vaginalGripCount by 1;
 		if vaginalGripCount > 23 - ((the girth of I - the openness of vagina) * 2):
-			say "The [ShortDesc of I] [one of]stimulates[or]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
+			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate vagina from I;
 			if the girth of I > the openness of vagina and diaper quest is 0:
 				let open be the openness of vagina;

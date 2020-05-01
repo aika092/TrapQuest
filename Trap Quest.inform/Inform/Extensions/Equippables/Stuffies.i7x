@@ -42,7 +42,7 @@ Report taking off a stuffie:
 Report examining an unblessed sure stuffie:
 	say "Perhaps if it is [bold type]blessed[roman type] before you put it down, it will stop following you around...".
 
-A later time based rule (this is the stuffies want to be held rule):
+An all later time based rule (this is the stuffies want to be held rule):
 	repeat with C running through regional unblessed stuffies:
 		if C is in the location of the player:
 			if the player is prone and C is actually summonable:

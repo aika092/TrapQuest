@@ -30,12 +30,12 @@ To set up (M - a robobutler):
 	now the health of M is the maxhealth of M;
 	now M is unconcerned.
 
-This is the spawn initial robobutler rule:
+[This is the spawn initial robobutler rule:
 	if the number of alive robobutlers is 0:
 		let M be a random robobutler;
 		if debugmode > 0, say "Summoning butler in hotel.";
 		summon M in the hotel.
-The spawn initial robobutler rule is listed in the setting up hotel monsters rules.
+The spawn initial robobutler rule is listed in the setting up hotel monsters rules.]
 
 To say speech style of (M - a robobutler):
 	say first custom style.

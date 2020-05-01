@@ -24,7 +24,6 @@ rugged-summoned is a number that varies.
 To compute unique recycling of (C - rugged-headband):
 	now rugged-summoned is 0.
 
-
 Definition: rugged-headband (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
 	if wearing-target is not C and wearing-target is leopard themed, decide yes;
 	if wearing-target is heavy-club, decide yes;

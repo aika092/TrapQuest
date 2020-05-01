@@ -43,7 +43,7 @@ Definition: a bottle (called T) is serve-ready:
 Definition: a bottle is probably-serve-ready if it is non-empty and it is player-serve-ready.
 
 Definition: a bottle (called T) is player-serve-ready:
-	if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage, decide yes;
+	if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid", decide yes;
 	if the class of the player is royal slave and the fill-colour of T is white, decide yes;
 	decide no.
 

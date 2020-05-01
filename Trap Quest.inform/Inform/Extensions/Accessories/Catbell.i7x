@@ -28,5 +28,6 @@ To say ShortDesc of (C - a catbell):
 Definition: a catbell is cat themed: decide yes.
 Definition: a catbell is bow themed: decide yes.
 Definition: a catbell is black themed: decide yes.
+Definition: a catbell is bell themed: decide yes.
 
 Catbell ends here.

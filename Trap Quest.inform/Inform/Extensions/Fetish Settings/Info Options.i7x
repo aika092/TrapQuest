@@ -29,13 +29,13 @@ name
 The File of Info (owned by another project) is called "customflav".
 
 To decide which text is PlatonicName:
-	decide on name in row 1 of the Table of Info Options.
+	decide on name in row 1 of the Table of Info Options in title case.
 To decide which text is PlatonicNickname:
-	decide on name in row 2 of the Table of Info Options.
+	decide on name in row 2 of the Table of Info Options in title case.
 To decide which text is PlatonicSexyName:
-	decide on name in row 3 of the Table of Info Options.
+	decide on name in row 3 of the Table of Info Options in title case.
 To decide which text is PlatonicSlutName:
-	decide on name in row 4 of the Table of Info Options.
+	decide on name in row 4 of the Table of Info Options in title case.
 To decide which text is PlatonicRole:
 	decide on name in row 5 of the Table of Info Options.
 To decide which text is GrossMate:
@@ -47,15 +47,15 @@ To decide which text is BlackCock:
 To decide which text is WhiteSub:
 	decide on name in row 9 of the Table of Info Options.
 To decide which text is NemesisName:
-	decide on name in row 10 of the Table of Info Options.
+	decide on name in row 10 of the Table of Info Options in title case.
 To decide which text is NemesisRole:
 	decide on name in row 11 of the Table of Info Options.
 To decide which text is FanciedName:
-	decide on name in row 12 of the Table of Info Options.
+	decide on name in row 12 of the Table of Info Options in title case.
 To decide which text is FanciedRole:
 	decide on name in row 13 of the Table of Info Options.
 To decide which text is DistantName:
-	decide on name in row 14 of the Table of Info Options.
+	decide on name in row 14 of the Table of Info Options in title case.
 To decide which text is DistantRole:
 	decide on name in row 15 of the Table of Info Options.
 To decide which text is PlatonicGender:
@@ -207,7 +207,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		if PCD is 0, now name in row 8 of the Table of Info Options is the player's command in lower case;
 		if interracial fetish is 1:
 			say "Now please enter your favourite term for a white person who worships black cock (the current entry is [WhiteSub]): ";
-	 if setting-info >= 16:
+	if setting-info >= 16:
 		if PCD is 0 and setting-info is 16, now name in row 9 of the Table of Info Options is the player's command in lower case;
 		write the File of Info from the Table of Info Options;
 		say "Thanks! Now get back to the game.";

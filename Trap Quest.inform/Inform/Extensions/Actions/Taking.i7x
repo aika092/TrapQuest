@@ -91,7 +91,7 @@ Report taking something:
 	allocate 2 seconds.
 
 takingStuff is initially false.
-An advance counters rule:
+An all later time based rule (this is the taking stuff reset rule):
 	now takingStuff is false.
 
 Check taking:

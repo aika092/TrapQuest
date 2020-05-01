@@ -27,13 +27,13 @@ Check touching MansionScenery01:
 	otherwise if the player's command includes "butt":
 		say "As your hand touches the statue's butt, her thong shines brightly, blinding you! In the next moment, when you can see again, ";
 		let K be a random worn knickers;
-		if a random number between 1 and 3 is 1:
+		if the player is getting lucky:
 			let D be a random off-stage ring;
 			if D is ring:
 				now D is pure diamond;
 				set shortcut of D;
 				now D is in the location of the player;
-				say "there is a shining diamond ring at your feet. Wow!";
+				say "there is a shining diamond ring at your feet. Wow![line break][GotLuckyFlav]";
 				compute autotaking D;
 			otherwise:
 				say "nothing is different. Strange...";

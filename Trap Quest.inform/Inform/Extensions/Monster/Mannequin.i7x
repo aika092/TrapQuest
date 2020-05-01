@@ -2,7 +2,7 @@ Mannequin by Monster begins here.
 
 A mannequin is a kind of monster. The poison-status of a mannequin is -1.
 
-Definition: A mannequin is woods dwelling: decide yes.
+Definition: a mannequin is woods dwelling: decide yes.
 
 To say ShortDesc of (M - mannequin):
 	say "mannequin".
@@ -78,10 +78,8 @@ To decide which figure-name is the monster-image of (M - goth mannequin):
 	decide on figure of goth mannequin.
 To say MediumDesc of (M - goth mannequin):
 	say "goth mannequin".
-Definition: goth mannequin (called M) is woods dwelling:
-	if doomed < 5, decide no;
-	decide yes.
-Definition: goth mannequin is mansions dwelling: decide yes.
+Definition: goth mannequin is woods dwelling if doomed >= 5.
+Definition: goth mannequin is mansions dwelling if doomed > 2.
 
 To say mannequin-model of (M - mannequin):
 	if lady fetish is 2, say "male";
@@ -123,11 +121,11 @@ To set up (M - a mannequin):
 	now the raw difficulty of M is 5;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial mannequin rule:
+[This is the spawn initial mannequin rule:
 	if the number of alive mannequins is 0:
 		let M be a random mannequin;
 		summon M in the woods.
-The spawn initial mannequin rule is listed in the setting up woods monsters rules.
+The spawn initial mannequin rule is listed in the setting up woods monsters rules.]
 
 To DifficultyUp (M - a mannequin) by (X - a number):
 	while X > 0:
@@ -425,6 +423,5 @@ To loot (M - a mannequin):
 		compute autotaking J;
 	otherwise:
 		standard loot M.
-
 
 Mannequin ends here.

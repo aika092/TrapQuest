@@ -57,6 +57,7 @@ To decide which figure-name is clothing-image of (C - remote-controlled-vibrator
 	if the player is male, decide on figure of remote controlled vibrator 2;
 	decide on figure of remote controlled vibrator 1.
 Definition: remote-controlled-vibrator is discovered varied: decide no.
+Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops it spawning randomly]
 To say ClothingDesc of (C - remote-controlled-vibrator):
 	if the game-state of team-football-predicament is 0:
 		say "This hi-tech remote controlled [if the player is male]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is male]pants[otherwise][vagina][end if] filled to the brim with cum.";
@@ -67,26 +68,31 @@ To say ClothingDesc of (C - remote-controlled-vibrator):
 	otherwise:
 		say "A hi-tech remote controlled [if the player is male]onahole [end if]vibrator that was used in the football extra credit lesson.".
 To compute periodic effect of (P - remote-controlled-vibrator):
-	if the toy-charge of P >= 10 and the game-state of team-football-predicament is not 1:
-		if the toy-charge of P is 10, say "[bold type][BigNameDesc of P] [bold type]seems to run out of battery, and stops vibrating.[roman type][line break]";
-		now the toy-charge of P is 11;
-	otherwise:
-		if football is in the location of the player or the game-state of team-football-predicament is 2: [double stimulation]
-			if the football-possessor of football is the player or the game-state of team-football-predicament is 2: [triple stimulation]
-				if the player is female:
-					if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more sore![or]Your [ShortDesc of P] ruins your [vagina] with its powerful buzzing![or]Your [ShortDesc of P] is making you sore with its powerful vibrations.[cycling]";
-					otherwise say "[one of]Your [ShortDesc of P] is powerfully stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more aroused![or]Your [ShortDesc of P] powerfully buzzez away inside your [vagina]![or]Your [ShortDesc of P] is vibrating strongly inside your [vagina].[cycling]";
-					ruin vagina;
+	if the game-state of team-football-predicament is not 1:
+		if the toy-charge of P >= 10:
+			if the toy-charge of P is 10, say "[bold type][BigNameDesc of P] [bold type]seems to run out of battery, and stops vibrating.[roman type][line break]";
+			now the toy-charge of P is 11;
+		otherwise:
+			if football is in the location of the player or the game-state of team-football-predicament is 2: [double stimulation]
+				if the football-possessor of football is the player or the game-state of team-football-predicament is 2: [triple stimulation]
+					if the player is female:
+						if diaper quest is 0, say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more sore![or]Your [ShortDesc of P] ruins your [vagina] with its powerful buzzing![or]Your [ShortDesc of P] is making you sore with its powerful vibrations.[cycling]";
+						otherwise say "[one of]Your [ShortDesc of P] is powerfully stimulating the deepest parts of your [vagina]! Every moment it stays inside of you is making you more aroused![or]Your [ShortDesc of P] powerfully buzzez away inside your [vagina]![or]Your [ShortDesc of P] is vibrating strongly inside your [vagina].[cycling]";
+						ruin vagina;
+					otherwise:
+						say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [player-penis]! Every moment your [player-penis] stays inside of it is making you more aroused![or]Your [ShortDesc of P] powerfully buzzes away on your [player-penis]![or]Your [ShortDesc of P] is vibrating strongly on your [player-penis].[cycling]";
+						stimulate penis from P;
+					if the player is not in a predicament room, increase the toy-charge of P by 1;
 				otherwise:
-					say "[one of]Your [ShortDesc of P] is stimulating the deepest parts of your [player-penis]! Every moment your [player-penis] stays inside of it is making you more aroused![or]Your [ShortDesc of P] powerfully buzzes away on your [player-penis]![or]Your [ShortDesc of P] is vibrating strongly on your [player-penis].[cycling]";
-					stimulate penis from P;
-				if the player is not in a predicament room, increase the toy-charge of P by 1;
-			otherwise:
-				say "Your [ShortDesc of P] stimulates you with moderately strong vibrations!";
-			stimulate vagina from P;
-		otherwise if the game-state of team-football-predicament is 0:
-			say "Your [ShortDesc of P] gently stimulates you.";
-		if the game-state of team-football-predicament is not 1, stimulate vagina from P.
+					say "Your [ShortDesc of P] stimulates you with moderately strong vibrations!";
+				stimulate vagina from P;
+			otherwise if the game-state of team-football-predicament is 0:
+				say "Your [ShortDesc of P] gently stimulates you.";
+			stimulate vagina from P.
+Check plugging something with remote-controlled-vibrator when the player is male:
+	say "You can't work out how to put this back on." instead.
+Check wearing remote-controlled-vibrator when the player is male:
+	say "You can't work out how to put this back on." instead.
 Check plugging asshole with remote-controlled-vibrator:
 	say "That doesn't fit that way round." instead.
 

@@ -39,12 +39,12 @@ To say speech style of (M - a robomaid):
 To say robogreeting of (M - a robomaid):
 	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is presenting as female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
 
-This is the spawn initial robomaid rule:
+[This is the spawn initial robomaid rule:
 	if the number of alive robomaids is 0:
 		let M be a random robomaid;
 		if debugmode > 0, say "Summoning maid in hotel.";
 		summon M in the hotel.
-The spawn initial robomaid rule is listed in the setting up hotel monsters rules.
+The spawn initial robomaid rule is listed in the setting up hotel monsters rules.]
 
 To say SummoningFlav of (M - a robomaid):
 	if M is in the location of the player:
@@ -210,7 +210,7 @@ To compute publicity stunt of (M - a robomaid):
 	let X be the number of patrons in the location of the player;
 	let D be nothing;
 	repeat with C running through currently uncovered clothing:[already checks for worn]
-		if C is removable and ((breasts is not exposed and C is actually breast covering nipple covering clothing) or C is potentially at least partially vagina covering):
+		if C is removable and ((breasts is not exposed and C is actually breast covering clothing) or C is potentially at least partially vagina covering):
 			now D is C;
 			break;
 	if D is clothing:[flash]

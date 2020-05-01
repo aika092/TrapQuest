@@ -264,6 +264,7 @@ To silently transform (D - a clothing) into (C - a clothing):
 	now C is worn by the player;
 	compute C inheriting from D;
 	only destroy D;
+	if D is headgear, commence recycling of D; [stops that headgear re-appearing for a while]
 	layer C correctly;
 	if the quest of C is not appropriate, compute quest of C.
 

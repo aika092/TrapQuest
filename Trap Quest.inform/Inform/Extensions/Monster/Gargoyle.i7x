@@ -4,7 +4,7 @@ gargoyle is a monster. The poison-status of gargoyle is -1. The paralyze-status 
 
 Definition: gargoyle is mansion dwelling: decide yes.
 
-Definition: gargoyle (called M) is willing to charm snakes: decide yes.
+Definition: gargoyle is willing to charm snakes: decide yes.
 
 Definition: gargoyle is willing to masturbate: decide yes.
 
@@ -118,8 +118,7 @@ To compute appearance assessment of (M - gargoyle):
 	if the size of penis > the satiated of M:
 		say "on your crotch as [he of M] hungrily licks [his of M] lips.";
 	otherwise if the class of the player is faerie:
-		let W be a random worn butterfly wings;
-		say "on your [ShortDesc of W].";
+		say "on your [if butterfly wings is worn][ShortDesc of butterfly wings][otherwise][ShortDesc of a random worn headgear][end if].";
 	otherwise if the class of the player is vixen:
 		let V be fox ears;
 		say "on your [ShortDesc of V].";
@@ -133,11 +132,11 @@ To compute appearance assessment of (M - gargoyle):
 	otherwise:[If she woke up because the player was horny, due to magic item, or the doom counter, she just stares at you]
 		say "on you, and [big he of M] stares at you in silence for several seconds.";
 	if M is objectifying the player:
-		say " [big his of M] wings unfurl as [he of M] steps down from the pedestal.";
+		say "[big his of M] wings unfurl as [he of M] steps down from the pedestal.";
 		anger M;
 		now M is unleashed;
 	otherwise:
-		say " [big his of M] eyes continue to follow you as you move around the room.";
+		say "[big his of M] eyes continue to follow you as you move around the room.";
 
 To bore (M - gargoyle):
 	now the sleep of M is 50;
@@ -381,7 +380,7 @@ To say StrikingSuccessFlav of (M - gargoyle) on (B - a body part):
 To say StrikingFailureFlav of (M - gargoyle) on (B - a body part):
 	say "[BigNameDesc of M] swipes at you, but you manage to dodge it.".
 
-To say BanishFleeFlav of (M - a monster):
+To say BanishFleeFlav of (M - gargoyle):
 	say "[BigNameDesc of M] collapses into a pile of dust and rubble.".
 
 Definition: gargoyle (called M) is damageable:

@@ -27,6 +27,7 @@ Check LongWaiting:
 		detentionchairwait instead;
 	if the player is immobile, say "You're a bit busy to use this verb!" instead;
 	if the player is in danger, say "You can't use this verb when there are monsters nearby!" instead;
+	if the player is in a predicament room, say "Sorry, you can't use this in the Extra Credit Zone." instead;
 	if the player is upright:
 		say "Are you aware that you are standing and will therefore might gain fatigue over time? ";
 		unless the player is consenting, say "You decide against it." instead;
@@ -153,9 +154,9 @@ This is the long wait thirst rule:
 	if the thirst of the player > old-thirst and the player is thirsty:
 		if debugmode > 1, say "Stopped for thirst.";
 		rule fails;
-	if there is a worn cock pacifier and the thirst of the player < old-thirst and watersports fetish is 0:
+	if there is a worn cock pacifier and the thirst of the player < old-thirst:
 		if debugmode > 1, say "Stopped for cock pacifier.";
-		rule fails.[With watersports fetish enabled, the cock pacifier can cause an infinite loop.]
+		rule fails.
 The long wait thirst rule is listed in the long wait rules.
 
 [!<TheLongWaitReportThirstRule>+

@@ -101,7 +101,7 @@ Displayed when the player greets a monster that does not talk, or does not like 
 
 +!]
 To say MuteGreeting to (M - a monster):
-	say "[line break][speech style of M]'Hello th-'[roman type][line break]".
+	say "[line break][variable custom style]'Hello th-'[roman type][line break]".
 
 [!<SayMuteGreetResponseOfMonster>+
 
@@ -1155,9 +1155,9 @@ To say EscapeAnswer of (M - a monster):
 
 To say AdviceAnswer of (M - a monster):
 	if watersports fetish is 1:
-		say "[speech style of M]'Don[']t eat yellow snow. Unless you get off on it or something.'[roman type][line break]";
+		say "[speech style of M]'Don't eat yellow snow. Unless you get off on it or something.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Don[']t eat yellow snow.'[roman type][line break]".
+		say "[speech style of M]'Don't eat yellow snow.'[roman type][line break]".
 
 To say DefeatedQuestion of (M - a monster):
 	if M is diaper-enslaved:
@@ -1448,6 +1448,9 @@ To say DismissalRequest of (M - a monster):
 		otherwise if the class of the player is vixen:
 			now dismissalConvincingPower is the DismissalPowerVixen of M;
 			say DismissalRequestVixen of M;
+		otherwise if the player is in danger:
+			now dismissalConvincingPower is the DismissalPowerCombat of M;
+			say DismissalRequestCombat of M;
 		otherwise if the player is thinking of relieving themselves:
 			now dismissalConvincingPower is the DismissalPowerToilet of M;
 			say DismissalRequestToilet of M;
@@ -1511,6 +1514,17 @@ To say DismissalRequestHorny of (M - a monster):
 	otherwise:
 		say "'I need to see to some... needs... Would you please kindly [if the player is feeling dominant]fuck off and come back later[otherwise]allow me the decency of some privacy[end if]?'".
 
+To decide which number is the DismissalPowerCombat of (M - a monster):
+	decide on 2.
+
+To say DismissalRequestCombat of (M - a monster):
+	if the player is a nympho:
+		say "'This might get [']messy['], are you sure you want to stick around?'";
+	otherwise if the player is prone:
+		say "'[if M is shameless]If you want to watch, that's okay, but please don't think you have to indulge in my shame[otherwise]Please, I don't want you to watch this[end if]...'";
+	otherwise:
+		say "'Hey, I'm a little busy kicking butt right now, [if M is not guardian]so if you're not going to help [end if]can you come back later?'".
+
 To decide which number is the DismissalPowerStalker of (M - a monster):
 	decide on 1.
 
@@ -1566,6 +1580,8 @@ To say DismissalResponse of (M - a monster):
 			say DismissalResponseRoyal of M;
 		otherwise if the class of the player is vixen:
 			say DismissalResponseVixen of M;
+		otherwise if the player is in danger:
+			say DismissalResponseCombat of M;
 		otherwise if the player is thinking of relieving themselves:
 			say DismissalResponseToilet of M;
 		otherwise if the player is bursting or the player is feeling full or the total squirtable fill of belly > 0:
@@ -1601,6 +1617,12 @@ To say DismissalResponseBursting of (M - a monster):
 	otherwise:
 		if the player is a nympho, say "[speech style of M]'[if M is interested and there is a worn diaper]I would respect you more if you could hold it in. But I'm not leaving you alone, no.'[otherwise if M is interested]I think the question is, why can't you hold it in until I'm ready to leave you be?'[otherwise]Oh. No thank you. Nope.'[end if][roman type][line break]";
 		otherwise say "[speech style of M]'[if M is interested and diaper lover > 0]Really? Only the biggest baby would really lose hold of their enema while in polite company!'[otherwise if M is interested]If you expel the contents of your belly in front of me, there will be consequences, young [man of the player].'[otherwise]Oh. I have no desire to see that right now, thank you very much.'[end if][roman type][line break]".
+
+To say DismissalResponseCombat of (M - a monster):
+	if the player is a nympho or M is prone:
+		say "[speech style of M]'[if M is interested]A good-for-nothing slut like you doesn't need privacy to do something like that, I'm sure[otherwise]Ugh. No, I guess I don't[end if].'[roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Hmm. [if M is interested]I think I'll stay and watch[otherwise]Best of luck, then[end if].'[roman type][line break]".
 
 To say DismissalResponseHorny of (M - a monster):
 	if the player is a nympho:

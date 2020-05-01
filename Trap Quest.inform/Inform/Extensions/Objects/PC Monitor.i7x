@@ -8,7 +8,6 @@ A video-monitor can be recording-disgrace or not recording-disgrace. A video-mon
 A video-monitor has a number called call-cooldown.
 A video-monitor has a number called currentlyOn.
 
-
 A later time based rule:
 	let V be a random video-monitor regionally in playerRegion;
 	if V is video-monitor:
@@ -90,7 +89,6 @@ To say GenericSituationReaction of (M - a monster):
 	otherwise:
 		say "That's right, you finally have an audience! Don't let it go to your head, alright? ".
 
-
 To say FriendReaction of (M - a slutty sister) to (A - a humiliating situation):
 	say GenericSituationReaction of M.
 
@@ -137,7 +135,7 @@ To say BaseObservationFlav of (M - a slutty sister):
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
 	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, its a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safeword [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
-	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or]We care about our investors, so we dull any pain that you might experience within the situation.'[or]Repressed submissives like [NameBimbo] here will often take awhile to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
+	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or]We care about our investors, so we dull any pain that you might experience within the situation.'[or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
 	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]Its important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]Its true [he of the player]'s resisting, but remember that safeword we told you about?[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.[end if]'[or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price...Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the center of attention right now!'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! Its like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
@@ -168,7 +166,6 @@ To compute disgraceful event of (C - a video-monitor):
 		otherwise now T is the substituted form of "[one of]getting humiliated[or]engaging in kinky play[or]acting like a shameful whore[at random]";
 	now the video-event of C is T.
 
-
 To compute endCall of (C - a video-monitor):
 	let T be "doing nothing special";
 	let M be the video-caller of C;
@@ -187,15 +184,14 @@ To compute endCall of (C - a video-monitor):
 To compute HangUpDisgraced of (C - a video-monitor) with (M - a slutty sister):
 	say "[second custom style]'*Great* job, [NameBimbo]! Our investors here think that footage was good enough for a commercial release, so look forward to seeing it once we've got it uploaded. That will be all for now!'[roman type][line break][strongHumiliateReflect]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.";
 	choose a blank row in Table of Published Disgraces;
-	now the content entry is the substituted form of "an HD video of you [the video-event of C].";
-	now the published entry is the substituted form of "uploaded to the Nintendolls company website.'";
-	now the severity entry is 100;
+	now the content entry is the substituted form of "an HD video of you [the video-event of C]";
+	now the published entry is the substituted form of "has been uploaded to the Nintendolls company website";
+	now the severity entry is 10;
 	now the popularity entry is 1;
 	now the timestamp entry is earnings.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - a slutty sister):
 	say "[second custom style]'Alright, good job, [NameBimbo]. That will be all for now!'[roman type][line break]The slutty sister hangs up the call, and the [MediumDesc of C] turns off.".
-
 
 Definition: a video-monitor (called V) is video-callable:
 	if the currentlyOn of V > 0 and the call-cooldown of V <= 0, decide yes;
@@ -238,7 +234,6 @@ To say HumiliatingSlideDesc (N - a number):
 
 [
 Slideshow thing that was originally part of the video monitor. Should probably find a way to work it back in
-
 
 A later time based rule:
 	if the currentlyOn of PC Monitor < 2 and PC Monitor is in the location of the player and the number of patrons in the location of the player > 0:
@@ -341,6 +336,6 @@ A later time based rule:
 			decrease the currentSlide of security screens by 1;
 			if the currentSlide of security screens <= 0:
 				now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
-			say "Your eyes are drawn to a TV screen! It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
+			say "[bold type]Your eyes are drawn to a TV screen![roman type] It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
 
 PC Monitor ends here.

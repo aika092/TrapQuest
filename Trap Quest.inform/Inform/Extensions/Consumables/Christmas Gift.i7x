@@ -145,12 +145,10 @@ To initialise christmas gifts:
 			if BC is 0, now B is cursed;
 			if BC is 1, now B is blessed;
 			increase BC by 1;
-		let T be a random tincture of strength; [2 tincture buffs]
-		now T is in Christmas Item Pen;
-		now T is blessed;
-	let T be a random tincture of acceleration;
-	now T is in Christmas Item Pen;
-	now T is blessed;
+	now luck-tincture is in Christmas Item Pen; [2 tincture buffs]
+	now luck-tincture is blessed;
+	now acceleration-tincture is in Christmas Item Pen;
+	now acceleration-tincture is blessed;
 	if diaper quest is 0 and Icarus is off-stage, now Icarus is in Christmas Item Pen. [And a brand new festive NPC]
 
 To compute christmas gifting of (M - a monster):

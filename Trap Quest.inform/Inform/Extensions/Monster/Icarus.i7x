@@ -52,11 +52,11 @@ To set up (M - Icarus):
 To decide which number is the girth of (M - a Icarus):
 	decide on 3.
 
-This is the spawn initial Icarus rule:
+[This is the spawn initial Icarus rule:
 	if christmas content is 0 and a random number between 1 and 5 > 2:
 		if debugmode > 1, say "Now summoning Icarus.";
 		if Icarus is off-stage, summon Icarus in the dungeon.
-The spawn initial Icarus rule is listed in the setting up dungeon monsters rules.
+The spawn initial Icarus rule is listed in the setting up dungeon monsters rules.]
 
 Definition: Icarus is human: decide yes.
 
@@ -302,7 +302,7 @@ Figure of icarus-lips is the file "Special/Cutscene/cutscene-icarus-lips1.jpg".
 To compute IcarusSummon of (C - icarus-lips):
 	say "[BigNameDesc of Icarus] blows glitter from [his of Icarus] palms onto your face. You feel your lips begin to swell!";
 	now the lips of face is 2;
-	if the make-up of face < 2, now the make-up of face is 2;
+	if the make-up of face < 2, FaceUp (2 - the make-up of face);
 	cutshow figure of icarus-lips for face;
 	say TotalDesc of face.
 
@@ -488,8 +488,6 @@ To say BanishForceFlav of (M - Icarus):
 		say "For a brief moment, the ray of light glances off of your [C]!";
 		bless C.
 
-
-
 Part 6 - Conversation
 
 Section 1 - Greeting
@@ -530,7 +528,7 @@ To compute annoyance of (M - Icarus):
 To compute teaching of (M - Icarus):
 	say "[speech style of M]'I know a lot about how science works down here. Would you like to hear a secret about alchemy?'[roman type][line break]";
 	cutshow figure of Icarus interact 6 for M;
-	teach fastcrafting;
+	teach betteralchemy;
 	if the questioned of M <= 290:
 		increase the questioned of M by 100;
 	otherwise:

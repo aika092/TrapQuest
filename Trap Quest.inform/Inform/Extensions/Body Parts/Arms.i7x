@@ -151,7 +151,7 @@ To allocate dual arm use to (T - a thing):
 		add T to the temporaryArmUses of arms;
 		update arms.
 
-An advance counters rule (this is the update arms rule):
+An all later time based rule (this is the update arms rule):
 	if realisticArms is 1:
 		follow the update compulsory arm uses rule; [Rebuild the 'temporaryArmUses' list]
 		update arms;
@@ -174,18 +174,23 @@ To update arms:
 	let UAL be 0;
 	let UI be 0;
 	let UC be 0;
+	let A1R be A1;
+	let A2R be A2;
+	if the player is male: [Redirect vagina to penis]
+		if A1R is vagina, now A1R is penis;
+		if A2R is vagina, now A2R is penis;
 	if A1 is A2:
 		if A1 is body part and A1 is not arms and A1 is not entry 1 in the armUses of arms:
-			if the number of reactive people > 0 and the lewdly exposed outrage of A1 > 0:
-				if A1 is not entry 2 in the armUses of arms, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove both of your arms from[otherwise]Both of your arms are no longer[end if] covering your [ShortDesc of A1] in front of the [list of reactive people].";
-				otherwise say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove one of your arms from[otherwise]Now only one of your arms is[end if] covering your [ShortDesc of A1] in front of the [list of reactive people].";
+			if the number of reactive people > 0 and the lewdly exposed outrage of A1R > 0:
+				if A1 is not entry 2 in the armUses of arms, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove both of your arms from[otherwise]Both of your arms are no longer[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
+				otherwise say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove one of your arms from[otherwise]Now only one of your arms is[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
 			now UAL is 1;
 	otherwise:
 		if A1 is body part and A1 is not arms and A1 is not listed in the armUses of arms:
-			if the number of reactive people > 0 and the lewdly exposed outrage of A1 > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A1] in front of the [list of reactive people].";
+			if the number of reactive people > 0 and the lewdly exposed outrage of A1R > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
 			now UAL is 1;
 		if A2 is body part and A2 is not arms and A2 is not listed in the armUses of arms:
-			if the number of reactive people > 0 and the lewdly exposed outrage of A1 > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A2] in front of the [list of reactive people].";
+			if the number of reactive people > 0 and the lewdly exposed outrage of A2R > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A2R] in front of the [list of reactive people].";
 			now UAL is 1;
 	if A1 is not entry 1 of the armUses of arms:
 		if A1 is worn or entry 1 of the armUses of arms is worn, now UC is 1;
@@ -263,6 +268,7 @@ To change default arm positions:
 	set numerical response 3 to "covering your chest";
 	set numerical response 4 to "covering your face";
 	if enema-backpack is worn, set numerical response 5 to "behind your head";
+	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
 	set numerical response 0 to "by your side";
 	compute multiple choice question;
 	if player-numerical-response is 0:
@@ -274,7 +280,8 @@ To change default arm positions:
 	otherwise if player-numerical-response is 3:
 		now the defaultLeftTarget of arms is breasts;
 	otherwise if player-numerical-response is 5:
-		now the defaultLeftTarget of arms is hair;
+		if painted-vibrator-hands is worn, now the defaultLeftTarget of arms is painted-vibrator-hands;
+		otherwise now the defaultLeftTarget of arms is hair;
 	otherwise:
 		now the defaultLeftTarget of arms is face;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
@@ -284,6 +291,7 @@ To change default arm positions:
 	if player-numerical-response is not 3, set numerical response 3 to "covering your chest";
 	if player-numerical-response is not 4, set numerical response 4 to "covering your face";
 	if enema-backpack is worn, set numerical response 5 to "behind your head";
+	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
 	set numerical response 0 to "by your side";
 	compute multiple choice question;
 	if player-numerical-response is 0:
@@ -295,7 +303,8 @@ To change default arm positions:
 	otherwise if player-numerical-response is 3:
 		now the defaultRightTarget of arms is breasts;
 	otherwise if player-numerical-response is 5:
-		now the defaultRightTarget of arms is hair;
+		if painted-vibrator-hands is worn, now the defaultrightTarget of arms is painted-vibrator-hands;
+		otherwise now the defaultRightTarget of arms is hair;
 	otherwise:
 		now the defaultRightTarget of arms is face.
 

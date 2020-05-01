@@ -31,18 +31,19 @@ To decide which number is the outrage of (C - condom-pack):
 To decide which number is the alchemy key of (C - condom-pack):
 	decide on 28.
 
-Definition: condom-pack is always alchemy appropriate: decide yes. [condom packs can appear randomly from other recipes]
-
-[Definition: condom-pack is recipe specific: decide yes.]
-
 This is the condom pack specific recipe rule:
-	now the Product in row 44 of the Table of Alchemy is 28;
-	now the Recipe in row 44 of the Table of Alchemy is 1.
+	if condom-pack is fetish appropriate:
+		now the Product in row 44 of the Table of Alchemy is 28;
+		now the Recipe in row 44 of the Table of Alchemy is 1.
 The condom pack specific recipe rule is listed in the specific recipe rules.
 
-To compute recipe specific cursing of (C - condom-pack):
-	if the noun is piece of rubber, now C is not condom-trapped;
-	otherwise now C is condom-trapped.
+To compute recipe specific cursing of (T - condom-pack):
+	now T is condom-trapped;
+	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 1, now T is not condom-trapped; [One random other ingredient will be correct]
+	if current-crafting-key is 44, now T is not condom-trapped. [Piece of rubber is always correct]
+
+To decide which text is the RecipeDesc of (C - condom-pack):
+	decide on "This recipe says 'Place a piece of rubber into the bowl'.".
 
 Report taking condom-pack when the player is in Dungeon07:
 	if a random number between 1 and 4 is 1, now condom-pack is condom-trapped;
@@ -193,7 +194,7 @@ To compute default condom filling of (M - a monster):
 		transform C into P;
 	otherwise if the player is in a predicament room:
 		do nothing; [no new classes in the predicament world!]
-	otherwise if (C is string-belt or total used condoms > 2):
+	otherwise if total used condoms > 2:
 		if thirsty work condom hat is off-stage and thirsty work condom hat is actually summonable:
 			summon thirsty work condom hat cursed;
 			say "As if to celebrate your [']achievement['], a [ShortDesc of thirsty work condom hat] appears on your head!";
@@ -326,7 +327,6 @@ To compute condom biting of (C - a clothing):
 	increase the empty condoms of C by 1;
 	StomachSemenUp 2;
 	get oral creampie image for the player;
-	increase the condom-count of condom-eating-quest by 1; [Counts as double as good as collecting more.]
 	progress quest of condom-eating-quest;
 	update appearance level;
 	if C is worn, force clothing-focus redraw; [Forces redraw of clothing window]

@@ -167,9 +167,9 @@ Definition: face is lewdly exposed if it is exposed.
 
 To decide which number is the lewdly exposed outrage of (F - face):
 	if diaper quest is 1 and the make-up of face >= 3, decide on 2;
-	let O be the make-up of face * 2;
-	increase O by the lips of face * 2;
-	increase O by alcohol-level * 3;
+	let O be the make-up of face;
+	increase O by the lips of face;
+	increase O by alcohol-level;
 	decide on O.
 
 To decide which number is the cringe of (F - face):

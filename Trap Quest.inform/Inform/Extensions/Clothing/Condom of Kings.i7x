@@ -19,8 +19,8 @@ To set up magic state of (C - a condom of kings):
 	do nothing.
 
 This is the condom of kings specific recipe rule:
-	let R be a random recipe for condom of kings;
-	if R is appropriate:
+	let R be a random condom of kings;
+	if R is fetish appropriate:
 		now the Product in row 14 of the Table of Alchemy is 13;
 		now the Recipe in row 14 of the Table of Alchemy is 1.
 The condom of kings specific recipe rule is listed in the specific recipe rules.
@@ -32,10 +32,7 @@ To decide which number is the initial outrage of (C - a condom of kings):
 	if C is creamfilled, decide on 15;
 	decide on 0.
 
-Definition: a condom of kings (called A) is fetish appropriate:
-	let R be a random recipe for condom of kings;
-	if R is appropriate, decide yes;
-	decide no.
+Definition: a condom of kings is fetish appropriate: decide no. [disabled for now]
 
 Check wearing condom of kings:
 	if the player is female, say "Only a [if the bimbo of the player > 10]sexy [end if]man could wear this." instead;

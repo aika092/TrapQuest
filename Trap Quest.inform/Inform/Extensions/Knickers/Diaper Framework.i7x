@@ -1,6 +1,6 @@
 Diaper Framework by Knickers begins here.
 
-diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
@@ -169,6 +169,7 @@ To clean (C - a knickers):
 	now the urine-soak of C is 0;
 	now the milk-soak of C is 0;
 	now the semen-soak of C is 0;
+	now the foreign-mess of C is 0;
 	MessSet C to 0;
 	if C is diaper:
 		now the perceived-urine-soak of C is 0;
@@ -396,7 +397,9 @@ To StealthMessUp (K - a knickers) by (N - a number):
 
 To MessDown (K - a knickers) by (N - a number):
 	decrease the mess of K by N;
-	if the mess of K < 0, now the mess of K is 0;
+	if the mess of K < 0:
+		now the mess of K is 0;
+		now the foreign-mess of K is 0;
 	if K is diaper, now the perceived-mess of K is the mess of K.
 
 To MessSet (K - a knickers) to (N - a number):
@@ -609,10 +612,14 @@ To StealthMessUp (K - diaper-stack) by (N - a number):
 To MessDown (K - diaper-stack) by (N - a number):
 	let D be entry 1 of the list of stacked diapers;
 	decrease the mess of D by N;
-	if the mess of D < 0, now the mess of D is 0;
+	if the mess of D < 0:
+		now the mess of D is 0;
+		now the foreign-mess of D is 0;
 	now the perceived-mess of D is the mess of D;
 	decrease the mess of K by N;
-	if the mess of K < 0, now the mess of K is 0;
+	if the mess of K < 0:
+		now the mess of K is 0;
+		now the foreign-mess of K is 0;
 	now the perceived-mess of K is the mess of K.
 
 To MessSet (K - diaper-stack) to (N - a number):
@@ -623,6 +630,7 @@ To MessSet (K - diaper-stack) to (N - a number):
 		repeat with C running through the list of stacked diapers:
 			now the mess of C is 0;
 			now the perceived-mess of C is 0;
+			now the foreign-mess of C is 0;
 	now the mess of K is N;
 	now the perceived-mess of K is the mess of K.
 
@@ -649,6 +657,7 @@ To update diaper stack:
 		let N be the number of entries in the list of stacked diapers;
 		compute diaper-stack inheriting from entry N in the list of stacked diapers;
 		now the mess of diaper-stack is 0;
+		now the foreign-mess of diaper-stack is 0;
 		now the perceived-mess of diaper-stack is 0;
 		now the soak-limit of diaper-stack is 0;
 		now the urine-soak of diaper-stack is 0;
@@ -688,9 +697,8 @@ To assign quest to (C - diaper-stack):
 	now the quest of (entry N in the list of stacked diapers) is the quest of C;
 	set up the quest of C.
 
-This is the maintain diaper stack rule:
+An all later time based rule (this is the maintain diaper stack rule):
 	update diaper stack.
-The maintain diaper stack rule is listed in the advance counters rules.
 
 Check wearing store diaper:
 	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
