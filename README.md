@@ -6,4 +6,3 @@ Partially redacted public version of the source code for the indie adult rogueli
 
 Read this first:
 https://github.com/aika092/TrapQuest/wiki/
-
