@@ -48,7 +48,7 @@ To decide which number is the oral-sex-addiction-influence of (C - an I heart cu
 
 Part 2 - Rubber Shirt
 
-A rubber shirt is a kind of shirt. A rubber shirt is usually latex.
+A rubber shirt is a kind of shirt. A rubber shirt is usually latex. A rubber shirt is usually erect-nipple-exposing.
 
 To decide which number is the initial outrage of (C - a rubber shirt):
 	decide on 2.
@@ -74,7 +74,6 @@ To compute SelfExamineDesc of (C - a pink rubber shirt):
 To say ShortDesc of (C - a pink rubber shirt):
 	say "pink rubber top".
 
-
 Definition: a pink rubber shirt is pink themed: decide yes.
 
 Part 3 - Blue Rubber Shirt
@@ -96,7 +95,6 @@ To compute SelfExamineDesc of (C - a blue rubber shirt):
 
 To say ShortDesc of (C - a blue rubber shirt):
 	say "blue rubber top".
-
 
 Definition: a blue rubber shirt is blue themed: decide yes.
 
@@ -122,7 +120,6 @@ To say ShortDesc of (C - a polo shirt):
 
 To say MediumDesc of (C - a polo shirt):
 	say "modest ladies tennis shirt".
-
 
 Definition: a polo shirt is exercise themed: decide yes.
 Definition: a polo shirt is pink themed: decide yes.
@@ -150,9 +147,6 @@ To decide which number is the initial outrage of (C - a torn shirt):
 To decide which number is the adult-influence of (C - a torn shirt):
 	decide on 1.
 
-
 Definition: a torn shirt is black themed: decide yes.
 
-
 Shirt ends here.
-

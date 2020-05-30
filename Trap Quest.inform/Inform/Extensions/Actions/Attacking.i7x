@@ -26,7 +26,7 @@ Check attacking:
 	if the player is immobile, say "You're a bit immobile right now to be trying to attack anything!" instead;
 	if the noun is asleep, say "Just because they're asleep doesn't mean you can defeat [him of the noun] in one hit in this world. You're going to have to attack them as usual, which will wake [him of the noun] up.";
 	say "You need to be more specific, please choose between [bold type]kick [bracket]ki[close bracket] ([saved-printed-kick-damage] [if kick-fatigue > 0](-[kick-fatigue]) [end if]average damage)[roman type], [bold type]knee [bracket]kn[close bracket] ([saved-printed-knee-damage] [if knee-fatigue > 0](-[knee-fatigue]) [end if]average damage)[roman type] and [bold type]slap [bracket]sl[close bracket] ([saved-printed-slap-damage] average damage)[roman type]." instead.
-Understand "kill [something]", "murder [something]", "destroy [something]", "stamp on [something]", "stamp [something]", "k [something]", "at [something]", "break [something]" as attacking.
+Understand "kill [something]", "murder [something]", "destroy [something]", "stamp on [something]", "stamp [something]", "k [something]", "at [something]", "break [something]", "knock [something]", "knock on [something]" as attacking.
 
 To decide which number is best attack:
 	now autoattack is 1;
@@ -46,4 +46,3 @@ To decide which number is best attack:
 	decide on 1.
 
 Attacking ends here.
-

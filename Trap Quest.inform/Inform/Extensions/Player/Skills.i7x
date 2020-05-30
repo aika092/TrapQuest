@@ -1,123 +1,24 @@
 Skills by Player begins here.
 
-
-[!<skillListingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The skill listing rules is a rulebook.
 
-[!<skillCheatingRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The skill cheating rules is a rulebook.
 
-[!<Player>@<mercySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called mercyskill. The mercyskill of the player is usually 0.
-
-[!<Player>@<strutSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called strutskill. The strutskill of the player is usually 0.
-
-[!<Player>@<strut:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called strut. The strut of the player is usually 0.
-
-[!<Player>@<breastSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called breastskill. The breastskill of the player is usually 0.
-
-[!<Player>@<throatSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called throatskill. The throatskill of the player is usually 0.
-
-[!<Player>@<identifySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called identifyskill. The identifyskill of the player is usually 0.
-
-[!<Player>@<wankTime:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called wanktime. The wanktime of the player is usually 0.
-
-[!<Player>@<bellySkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called bellyskill. The bellyskill of the player is usually 0.
-
-[!<Player>@<milkSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called milkskill. The milkskill of the player is usually 0.
-
-[!<Player>@<relaxSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called relaxskill. The relaxskill of the player is usually 0.
-
-[!<Player>@<invokeSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called invokeskill. The invokeskill of the player is usually 0.
-
-[!<Player>@<craftSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called craftskill. The craftskill of the player is usually 0.
-
-[!<Player>@<floatSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
+The player has a number called alchemyskill. The alchemyskill of the player is usually 0.
 The player has a number called floatskill. The floatskill of the player is usually 0.
-
-[!<Player>@<wishSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called wishskill. The wishskill of the player is usually 0.
-
-[!<Player>@<fuckSkill:Integer>
-
-REQUIRES COMMENTING
-
-*@]
 The player has a number called fuckskill. The fuckskill of the player is usually 0.
 
 The player has a number called buttskill. The buttskill of the player is usually 0.
@@ -227,7 +128,7 @@ To teach strutting:
 			say "[bold type]**You have learned how to strut!**[line break]Type 'strut' to activate or deactivate strutting whilst wearing heels. You'll have significantly increased dexterity but also your [MediumDesc of hips] will look much more provocative.[roman type][line break]";
 			now the strutskill of the player is 1;
 		otherwise:
-			say "[if the bimbo of the player < 12]You decide that looking more slutty than you do already is not a priority right now[otherwise]You resent her for implying that you need to look any more sexy than you already do, and ignore her advice[end if]. But maybe once you're better at walking in heels, you'll value her advice.";
+			say "[if the bimbo of the player < 12]You decide that looking more slutty than you do already is not a priority right now[otherwise]You resent [him of current-monster] for implying that you need to look any more sexy than you already do, and ignore [his of current-monster] advice[end if]. But maybe once you're better at walking in heels, you'll value [his of current-monster] advice.";
 	otherwise:
 		say "[bold type]You already know how to strut![roman type][line break]".
 
@@ -263,7 +164,7 @@ To teach titjobs:
 			say "[bold type]**You have learned how to slap with large breasts!**[roman type][line break]";
 			now the breastskill of the player is 1;
 		otherwise:
-			say "Your breasts aren't large enough to be able to attempt to put her advice into practice.";
+			say "Your breasts aren't large enough to be able to attempt to put [his of current-monster] advice into practice.";
 	otherwise:
 		say "[bold type]You already know how to fight with big tits![roman type][line break]".
 
@@ -350,7 +251,7 @@ To teach belly management:
 			say "[bold type]**You have learned how to better support your belly!**[line break]This ability passively reduces the amount that your belly weight affects your fatigue by 66%.[roman type][line break]";
 			now the bellyskill of the player is 1;
 		otherwise:
-			say "You try and understand what she's showing you about how to shift your weight, but your belly isn't as large as hers and so it doesn't make much sense to you.";
+			say "You try and understand what [he of current-monster]'s showing you about how to shift your weight, but your belly isn't as large as [hers of current-monster] and so it doesn't make much sense to you.";
 	otherwise:
 		say "[bold type]You already know how to better support your belly![roman type][line break]".
 
@@ -386,7 +287,7 @@ To teach relaxing:
 			say "[bold type]**You have learned how to relax!**[line break]When submitting during sex you'll have a bonus chance to avoid soreness increases.[roman type][line break]";
 			now the relaxskill of the player is 1;
 		otherwise:
-			say "You hate the idea of anal [if the player is possessing a vagina]and vaginal [end if]sex so much that you just can't bring yourself you pay attention to her tips.";
+			say "You hate the idea of anal [if the player is female]and vaginal [end if]sex so much that you just can't bring yourself you pay attention to [his of current-monster] tips.";
 	otherwise:
 		say "[bold type]You already know how to relax![roman type][line break]".
 
@@ -455,12 +356,11 @@ REQUIRES COMMENTING
 To teach fastcrafting:
 	if the craftskill of the player is 0:
 		if times-crafted > 0:
-			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again four times as quickly.[roman type][line break]";
+			say "[bold type]**You have learned how to preserve the magic energy of the alchemist's bowl!**[line break]When you craft an item, the table will be ready to use again twice as quickly.[roman type][line break]";
 			now the craftskill of the player is 1;
 		otherwise:
-			let M be a random interested friendly aeromancer in the location of the player;
-			if M is nothing, now M is Icarus;
-			say "When you admit that you have no idea what [he of M] means by alchemy, [he of M] quickly shuts up.[line break][second custom style]'Forget I said anything.'[roman type][line break]";
+			let M be a random aeromancer;
+			say "When you admit that you have no idea what [he of M] means by alchemy, [he of M] quickly shuts up.[line break][speech style of M]'Forget I said anything.'[roman type][line break]";
 	otherwise:
 		say "[bold type]You already know how to craft faster![roman type][line break]".
 
@@ -482,6 +382,27 @@ This is the craftskill learn rule:
 	if the craftskill of the player is 0, say "When you use the alchemist's bowl, it recharges much faster.";
 	now the craftskill of the player is 1.
 The craftskill learn rule is listed in the skill cheating rules.
+
+Part 9 - Better Alchemy
+
+To teach betteralchemy:
+	if the alchemyskill of the player is 0:
+		if times-crafted > 0:
+			say "[bold type]**You have learned improved alchemy skills!**[line break]When you craft an item (using the correct recipe), you have an increased chance of creating a blessed version.[roman type][line break]";
+			now the alchemyskill of the player is 1;
+		otherwise:
+			say "You try to follow [his of Icarus] instructions, but because you don't really understand what [he of Icarus] is talking about, it's too much to comprehend.";
+	otherwise:
+		say "[bold type]You already have improved alchemy skills![roman type][line break]".
+
+This is the alchemyskill list rule:
+	if the alchemyskill of the player is 1, say "When you create an uncursed item using alchemy, you have an increased chance of making a blessed version.".
+The alchemyskill list rule is listed in the skill listing rules.
+
+This is the alchemyskill learn rule:
+	if the alchemyskill of the player is 0, say "When you create an uncursed item using alchemy, you have an increased chance of making a blessed version.";
+	now the alchemyskill of the player is 1.
+The alchemyskill learn rule is listed in the skill cheating rules.
 
 Part 10 - Wish Enhancing
 
@@ -657,7 +578,6 @@ This is the firstaidskill list rule:
 	if background-nurse is 1, say "You have been trained in first aid, and can sometimes manage to scrounge up some materials that can help keep you healthy.".
 The firstaidskill list rule is listed in the skill listing rules.
 
-
 Part 15 - Milk Skill
 
 To teach milkskill:
@@ -707,10 +627,10 @@ Part 17 - Domination Skill
 
 To teach divinationskill:
 	if the divinationskill of the player is 0:
-		say "She launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[line break]From now on, you[']ll find it a lot easier to find a way to have dominant sex![roman type][line break]";
+		say "[big he of current-monster] launches into a very long complicated explanation you don't fully understand, but manage to follow, mostly. [bold type]**You have learned how to read the flow of magic!**[line break]From now on, you[']ll find it a lot easier to find a way to have dominant sex![roman type][line break]";
 		now the divinationskill of the player is 1;
 		[otherwise:
-			say "She launches into a very long complicated explanation you don't really understand, and although you're nodding along, when she's finished talking you feel like you haven't really learned anything.";]
+			say "[big he of current-monster] launches into a very long complicated explanation you don't really understand, and although you're nodding along, when [he of current-monster]'s finished talking you feel like you haven't really learned anything.";]
 	otherwise:
 		say "[bold type]You[']ve already learned how to read the flow of magic![roman type]".
 
@@ -722,7 +642,6 @@ This is the divinationskill learn rule:
 	if the divinationskill of the player is 0, say "When you try to have dominant sex, you are now just as likely to succeed regardless of sex addiction.";
 	now the divinationskill of the player is 1.
 The divinationskill learn rule is listed in the skill cheating rules.
-
 
 Part 18 - Safe Floating
 
@@ -788,6 +707,4 @@ This is the floatskill learn rule:
 	now the floatskill of the player is 1.
 The floatskill learn rule is listed in the skill cheating rules.
 
-
 Skills ends here.
-

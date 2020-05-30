@@ -1,13 +1,13 @@
 Altars by Objects begins here.
 
-
 The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
 
 To decide which figure-name is the examine-image of (C - dungeon altar):
 	decide on figure of dungeon altar.
 
 To say ExamineDesc of (C - dungeon altar):
-	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
+	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]";
+	if newbie tips is 1, say "[one of][newbie style]Placing things on here can bless them. Placing yourself here can help you or give you the priestess class. The altar doesn't recharge over time like other objects. Instead, it recharges slowly each time you open a container or interact with an NPC.[roman type][line break][or][stopping]".
 
 Check going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
@@ -17,15 +17,16 @@ Report going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
+The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
 
 To decide which figure-name is the examine-image of (C - woods altar):
 	decide on figure of woods altar.
 
 To say ExamineDesc of (C - woods altar):
-	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or] It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
+	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping].";
+	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
 
-The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al". Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
@@ -35,7 +36,9 @@ Definition: an elder altar is father material: decide yes.
 Definition: An elder altar is live: decide yes.
 
 To say ExamineDesc of (C - elder altar):
-	say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don[']t want to think about what might happen if you got on it yourself.".
+	if diaper quest is 0, say "A rough stone table. Grotesque unholy phallic symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. On the front, naked women are drawn being overpowered by tentacles. You hear faint whispers in the air which get louder with proximity. ";
+	otherwise say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. ";
+	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
 The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al".
 
@@ -193,7 +196,6 @@ To AltarPray (T - a thing):
 		otherwise:
 			say "Nothing seems to happen.".
 
-
 [!<AltarUniqueRewardThing>+
 
 Defines any unique effects that should happen for an item, "T" when placed on the dungeon altar. If the item is completely unique, it should completely rewrite AltarPrayThing instead
@@ -258,7 +260,7 @@ To AltarPray (P - a person):
 			if T is actually summonable and T is off-stage:
 				summon T;
 				now T is blessed;
-				say "You feel your [asshole] being forced open as a [printed name of T] materializes in your ass.";
+				say "You feel your [asshole] being forced open as a [printed name of T] materialises in your ass.";
 				break;
 		if permanent makeup is 1:
 			say "The make up on your face feels less... permanent. Maybe it will start to fade soon!";
@@ -325,9 +327,12 @@ To AltarPray (P - a person):
 				summon angel tattoo;
 				say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 				break;
-	if runic headband is actually summonable:
+	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
 		summon runic headband cursed;
 		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		if the player is female and the virgin of the player is 0:
+			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
+			compute virginity-loss of runic headband;
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
 	if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
@@ -340,7 +345,6 @@ To AltarPray (P - a person):
 		if C is sex toy:
 			bless C;
 	reset dungeon altar.
-
 
 To AltarReward (T - wrist bond):
 	if T is cursed:
@@ -382,7 +386,6 @@ To AltarPray (T - a tattoo):
 	AltarUniqueReward of T;
 	reset dungeon altar.
 
-
 To AltarReward (T - a bottle):
 	now the curse-ID of T is sure;
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed]I shall remove this curse for you!'[otherwise if T is not known-potion and T is not empty]I shall identify this potion for you!'[otherwise]Drink my holy juices and good fortune shall come to you!'[end if][roman type][line break]";
@@ -396,8 +399,6 @@ To AltarReward (T - a bottle):
 		DoseUp T by the max-doses of T;
 		say "The [ShortDesc of T] is filled up to the brim with a [PotionType of T]!";
 	reset dungeon altar.
-
-
 
 To AltarReward (T - a clothing):
 	say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] [if T is cursed and strongCurses is 1]I shall help you with this curse[otherwise if T is cursed]I shall remove this curse for you[otherwise]I shall bless this item for you[end if]!'[roman type][line break]";
@@ -415,7 +416,6 @@ To AltarReward (T - a clothing):
 	[if T is not blessed and T is worn and T is not piercing:
 		say "Would you like to remove the [ShortDesc of T] immediately? ";
 		if the player is consenting, try taking off T.]
-
 
 To WoodsOffer (T - an accessory):
 	let max-bless-count be the price of T;
@@ -506,14 +506,14 @@ To ElderEmpower (T - flower hairclip):
 To ElderEmpower (T - runic headband):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R cursed;
 		reset elder altar.
 
 To ElderEmpower (T - a cultist veil):
 	let R be ritual-beads;
 	if R is actually summonable and R is off-stage and the player is the donator:
-		say "You feel your [asshole] being forced open as a [ShortDesc of R] materializes in your ass.";
+		say "You feel your [asshole] being forced open as a [ShortDesc of R] materialises in your ass.";
 		summon R;
 		now R is cursed;
 		reset elder altar.
@@ -608,7 +608,6 @@ To ElderConnect:
 	now altar-diaper-link is 92;
 	compute periodic effect of D.
 
-
 []
 To ElderSacrifice (T - a thing):
 	say "The [printed name of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if] It finally vanishes in a puff of smoke.";
@@ -623,14 +622,12 @@ To ElderSacrifice (T - a thing):
 		increase the charge of the elder altar by 100;
 		if whispered > 0 and whisper-type is 2:
 			now whisper-tracking is 1;
-		if doom counter > 0:
-			increase doom counter by 5;
+		if doom counter > 0, increase doom counter by 5;
 	otherwise if T is bland:
 		increase the charge of the elder altar by 50;
 	otherwise:
 		increase the charge of the elder altar by 25;
 	remove T from play.
-
 
 To ElderSacrifice (T - ritual-beads):
 	say "The [ShortDesc of T] bursts into ominous black flames![if T is worn] Fortunately, it seems they are not actually hot.[end if]";
@@ -730,13 +727,12 @@ To compute dark reward of (T - ritual-beads):
 		FatigueUp 20;
 		say "You feel a lot cleaner, but incredibly tired.".
 
-
 To AltarReward (T - runic headband):
 	if T is not purity:
 		let N be the used condoms of T;
 		if N < 3:
 			let D be 3 - N;
-			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if].'[roman type][line break]";
 		otherwise:
 			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
 			unless T is blessed, now T is blessed;
@@ -752,7 +748,7 @@ To AltarReward (T - ritual-beads):
 		let N be the notches of T;
 		if N < 6:
 			let D be 6 - N;
-			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. Here is a gift to help you on this quest!'[roman type][line break]";
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. In the meantime, here is a gift to help you continue this quest!'[roman type][line break]";
 		otherwise:
 			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
 			unless T is blessed, now T is blessed;
@@ -842,8 +838,6 @@ To compute DevilPayment (N - a number):
 			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
 			SexAddictUp N.
 
-
-
 To DevilPray (P - yourself):
 	let N be (the charge of hotel altar / 180) + 1;
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
@@ -851,9 +845,10 @@ To DevilPray (P - yourself):
 	let R be a random number between 1 and 4;
 	let LDC be the list of off-stage actually summonable demonic clothing;
 	if gold-summoned is 0:
-		if the player is soulless or (the pregnancy of the player is 1 and the father is an infernal monster) or the times-submitted of demon lord > 0, now R is 0;
+		repeat with M running through infernal monsters:
+			if the times-submitted of M > 0, now R is 0;
 	if R is 0 and gold-tiara is actually summonable: [if the player is soulless, or the player's babydaddy is a demon, or the player has ever had sex with the demon lord, the altar can summon a gold tiara]
-		say "The statue's face seems to grin as a golden tiara materializes on your head.";
+		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
 	otherwise if R is 1 and the number of entries in LDC > 0:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
 		sort LDC in random order;
@@ -972,7 +967,6 @@ To reset dungeon altar:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-
 Rule for supplying a missing second noun while praying something with:
 	if the player is in Dungeon28, now the second noun is dungeon altar;
 	if the player is in Woods20, now the second noun is woods altar;
@@ -985,7 +979,4 @@ Check putting something on woods altar:
 
 Understand "place [something] on [something]", "offer [something] on [something]"[, "use [something] on [something]"] as praying it with.
 
-
-
 Altars ends here.
-

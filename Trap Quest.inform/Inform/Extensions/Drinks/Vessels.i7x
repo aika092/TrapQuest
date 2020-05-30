@@ -1,6 +1,5 @@
 Vessels by Drinks begins here.
 
-
 [!<Vessel>@
 
 Something that the player can refill and drink from repeatedly.
@@ -44,10 +43,9 @@ Definition: a bottle (called T) is serve-ready:
 Definition: a bottle is probably-serve-ready if it is non-empty and it is player-serve-ready.
 
 Definition: a bottle (called T) is player-serve-ready:
-	if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage, decide yes;
+	if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid", decide yes;
 	if the class of the player is royal slave and the fill-colour of T is white, decide yes;
 	decide no.
-
 
 [!<Vessel>@<openTopped:Boolean>*
 
@@ -56,7 +54,6 @@ REQUIRES COMMENTING
 *@!]
 A vessel can be open topped.
 The doses of a vessel is usually 0.
-
 
 [!<Vessel>@<Restock>+
 
@@ -139,8 +136,6 @@ Definition: a squirt dildo is oral sex themed: decide yes.
 Definition: a squirt dildo is penis themed: decide yes.
 To decide which number is the initial outrage of (V - a squirt dildo):
 	decide on 14.
-
-
 
 baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".
 To decide which figure-name is the examine-image of (V - baby's bottle):
@@ -225,7 +220,6 @@ To increase alcohol level:
 	otherwise:
 		now alcohol is alcohol-level-tier (A + 1);
 		if newbie tips is 1 and A is 0, say "[one of][newbie style]Newbie tip: You're getting a bit drunk! Each level of drunkenness makes you look more slutty and significantly decreases all your stats. But it also improves your self-respect and hampers dignity loss[if diaper quest is 0] and soreness gain. So it's only a good idea to seek out alcohol if you're planning to act like a total slut anyway[end if]. Oh yeah, and if your drunk level gets too high, your player might go on a bit of a drunken journey of their own...[roman type][line break][or][stopping]".
-
 
 To decide which number is alcohol-level:
 	if alcohol <= 0 or alcohol fetish is 0, decide on 0; [Put at the top for efficiency]
@@ -344,12 +338,6 @@ To compute drunken adventure:
 		update player region;
 		refresh the map-window.
 
-
-
-
-
-
-
 gold chalice is a vessel. the curse-ID of gold chalice is sure. gold chalice is open topped. The max-doses of a gold chalice is 3. The printed name of gold chalice is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]gold chalice[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of gold chalice is "gc". Figure of gold chalice is the file "Items/Accessories/Vessels/goldenchalice1.png".
 To decide which figure-name is the examine-image of (V - gold chalice):
 	decide on the figure of gold chalice.
@@ -445,8 +433,6 @@ To compute drinking (X - witch's goblet):
 Definition: a witch's goblet is magic themed: decide yes.
 Definition: a witch's goblet is gem themed: decide yes.
 
-
-
 horn is a vessel. horn is open topped. The max-doses of horn is 2. The printed name of horn is "[TQlink of item described][unless curse-ID of the item described is unsure][magic-curse] [end if]minotaur horn[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of horn is "mho". Figure of horn is the file "Items/Accessories/Vessels/horn1.png". Understand "minotaur" as horn.
 To decide which figure-name is the examine-image of (V - horn):
 	decide on the figure of horn.
@@ -484,10 +470,4 @@ To decide which figure-name is the examine-image of (V - a vessel):
 To say VesselDesc of (V - a vessel):
 	say "A [ShortDesc of V].".
 
-
-
-
-
-
 Vessels ends here.
-

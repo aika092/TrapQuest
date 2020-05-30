@@ -73,4 +73,3 @@ Definition: a dirty little whore sack of holding is white themed: decide yes.
 Definition: a dirty little whore sack of holding is black-and-white themed: decide yes.
 
 Patterned Sacks of Holding ends here.
-

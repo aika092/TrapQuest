@@ -36,6 +36,8 @@ Carry out taking off something:
 	dislodge the noun.
 
 Report taking off clothing:
+	allocate arm use;
+	allocate 6 seconds;
 	if forgetful airhead is 1:
 		unless the noun is alwaysIdentified clothing, now the noun is unidentified;
 		unless the noun is alwaysSure clothing, now the noun is unsure;
@@ -53,8 +55,5 @@ Report taking off clothing:
 	if the noun is scrunchie:
 		if the player is ponytailed, say "You remove one scrunchie, and the rest of your hair appears magically inside the other in a perfect ponytail!";
 		otherwise say "Your hair falls into its natural position.";
-	allocate 6 seconds.
-
 
 Taking Off ends here.
-

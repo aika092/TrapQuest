@@ -92,4 +92,3 @@ To decide which number is the initial cringe of (C - a full body baby romper):
 	decide on 12.
 
 Bodysuit ends here.
-

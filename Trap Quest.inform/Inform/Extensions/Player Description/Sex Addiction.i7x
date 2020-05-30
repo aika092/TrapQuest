@@ -1,6 +1,5 @@
 Sex Addiction by Player Description begins here.
 
-
 [!<SaySexAddictionDesc>+
 
 REQUIRES COMMENTING
@@ -33,6 +32,4 @@ To say SexAddictionDesc:
 	otherwise if the player is a bit horny:
 		say "Your arousal has started to build, and has got the blood pumping. This has slightly improved your reflexes and speed.".
 
-
 Sex Addiction ends here.
-

@@ -20,4 +20,3 @@ To say DelicatenessDesc:
 		say "[if diaper lover >= 1]You can't control your emotions at all, and you end up crying like a baby whenever you get hurt. [end if]You are more than happy to follow anyone's orders, whatever they are - after all, who are you to know any better?".
 
 Delicateness ends here.
-

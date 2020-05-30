@@ -313,7 +313,7 @@ To decide which text is NameBimbo:
 		otherwise if the bimbo of the player < 16:
 			decide on "Mimi";
 		otherwise:
-			 decide on "Misti";
+			decide on "Misti";
 	otherwise if the player-name is 23:
 		if the player-class is succubus and total-souls of the player > 10:
 			decide on "Injustice";
@@ -513,7 +513,6 @@ OriginalNameBimbo is a text that varies.
 A game universe initialisation rule:
 	now OriginalNameBimbo is the substituted form of NameBimbo.
 
-
 [!<fileOfMaleCharacter:File>*
 
 REQUIRES COMMENTING
@@ -556,7 +555,6 @@ Name (indexed text)
 "Undefined Name 5"
 "Undefined Name 6"
 
-
 [!<tableOfMaleNameOptions:Table>*
 
 REQUIRES COMMENTING
@@ -588,7 +586,6 @@ title	subtable	description	toggle
 "Colin"	--	--	colin name rule
 "[Name in row 1 of Table of Custom Male Name]"	--	--	custom name rule
 
-
 Table of Male Name Diaper Quest Options
 title	subtable	description	toggle
 "Lucas"	--	--	lucas name rule
@@ -596,7 +593,6 @@ title	subtable	description	toggle
 "Terrence"	--	--	terrence name rule
 "Colin"	--	--	colin name rule
 "[Name in row 1 of Table of Custom Male Name]"	--	--	custom name rule
-
 
 [!<TheMaleNameRule>+
 
@@ -808,7 +804,4 @@ This is the stephanie name rule:
 	now the choice in row 2 of the Table of Player Options is 36;
 	follow quit rule.
 
-
-
 Player Name ends here.
-

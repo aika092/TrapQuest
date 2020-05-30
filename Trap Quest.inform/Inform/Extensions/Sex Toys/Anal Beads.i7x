@@ -21,20 +21,18 @@ To uniquely set up (C - an anal beads):
 To uniquely destroy (T - an anal beads):
 	now the notch-taken of T is 0.
 
-
 Definition: an anal beads is transformation-protected: decide yes.
 Definition: an anal beads is black themed: decide yes.
 
-
 To decide which object is the at least partial concealer of (S - an anal beads):
 	if the notch-taken of S >= the notches of S, decide on asshole;
+	if S is listed in the armUses of arms, decide on arms;
 	repeat with O running through worn clothing:
 		if S is penetrating asshole:
 			if O is potentially at least partially asshole covering clothing, decide on O;
 		if S is penetrating vagina:
 			if O is potentially at least partially vagina covering clothing, decide on O;
 	decide on nothing.
-
 
 To compute periodic effect of (C - an expansion anal beads):
 	increase the toy-charge of C by 1;
@@ -79,7 +77,7 @@ To decide which figure-name is clothing-image of (C - an anal beads):
 	decide on figure of anal beads 10.
 
 To say ClothingDesc of (P - an anal beads):
-	say "A set of [the notches of P] [PlugSize size of P] beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+	say "A set of [the notches of P] [PlugSize size of P] pink beads, connected by a thin cord with a small hook at the end. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
 
 To say ShortDesc of (P - an anal beads):
 	say "anal beads".
@@ -139,6 +137,8 @@ Carry out unplugging anal beads:
 			if N >= 0 and N <= the notch-taken of the noun, now validAnswer is 1;
 			if validAnswer is 0, say "Input not understood. Please choose a valid number.";
 		conclude consenting; [refreshes the map window]
+	otherwise:
+		now N is 1;
 	if N is 0:
 		say "You feel the bead about to come out, and then change your mind.";
 	otherwise:
@@ -229,13 +229,12 @@ To decide which number is the original price of (C - an anal beads):
 
 [Haunted beads: locked at ass openness + 1. Beads only come out if pulled by npc or if repeatedly blessed.]
 
-
 ritual-beads is an anal beads. ritual-beads is unique. ritual-beads is purity. The printed name of ritual-beads is usually "[clothing-title-before][PlugSize size of item described] ritual beads[clothing-title-after]". The text-shortcut of ritual-beads is "rtb". The notches of ritual-beads is 3. Understand "ritual", "ritual beads" as ritual-beads.
 
 Definition: ritual-beads is cursable: decide no.
 
 To say ClothingDesc of (P - ritual-beads):
-	say "A set of [the notches of P] brown beads, connected by a thin cord. You can sense it wants you to [if P is not worn]wear it and then [end if]'honour the Goddess of service'. And then afterwards you could try presenting it to the dungeon altar for a reward. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
+	say "A set of [the notches of P] pink beads, connected by a thin cord. You can sense it wants you to [if P is not worn]wear it and then [end if]'honour the Goddess of service'. And then afterwards you could try presenting it to the dungeon altar for a reward. [if the notch-taken of P is the notches of P]Every single one is currently up your ass. [otherwise if the notch-taken of P is 1]It is currently hanging from your ass.[otherwise if the notches of P > the notch-taken of P and the notch-taken of P > 0][the notch-taken of P] are currently up your ass. [end if][if the notch-taken of P > 1]It won't be easy to remove them all at once.[end if]".
 
 To say ShortDesc of (P - ritual-beads):
 	say "ritual beads".
@@ -271,6 +270,4 @@ To compute virginity-loss of (T - ritual-beads):
 		dislodge T;
 		now the notch-taken of T is 0.
 
-
 Anal Beads ends here.
-

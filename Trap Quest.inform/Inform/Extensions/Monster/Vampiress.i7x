@@ -11,7 +11,7 @@ Definition: vampiress is willing to do titfucks: decide no.
 
 Definition: vampiress is raunchy: decide yes.
 
-Definition: vampiress is manly-wenchy: decide yes.
+Definition: vampiress is wenchy: decide yes.
 
 The text-shortcut of vampiress is "va".
 Understand "vampire", "seductive", "vamp" as vampiress.
@@ -38,12 +38,12 @@ To say MonsterDesc of (M - vampiress):
 To set up (M - vampiress):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 9;
+	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M;
 	now the stake of M is the throne;
 	now M is in Mansion16.
 
-A time based rule (this is the vampiress hunts untidy players rule):
+An all time based rule (this is the vampiress hunts untidy players rule):
 	if diaper messing >= 6 and vampiress is off-stage:
 		if playerRegion is not Mansion:
 			repeat with SD running through on-stage soiled-diaper:
@@ -95,7 +95,7 @@ To say DiaperReaction of (M - vampiress):
 		say "[BigNameDesc of M] smirks condescendingly. [line break][speech style of M][one of]'Why don't you just lay down, baby. I'll take that diaper off for you...'[or]'Want something to suck, sweetheart? I think I can help...'[or]You're looking kind of sick baby! Why don't you lie on your tummy and let me stick my thermometer inside of you. Just be warned, it's pretty big.[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Poor baby... Not even potty trained yet.'[or]Well, it's a good thing you're still in diapers, isn't it?'[or]Don't worry. I couldn't care less whether you're potty trained or not.'[at random][roman type][line break]";
-	if the diaper addiction of the player < 10, say "[variable custom style][if the player is able to speak]'This doesn't usually happen, I swear!'[otherwise]I can't even tell her that this isn't what I usually wear![end if][roman type][line break]";
+	if the diaper addiction of the player < 10, say "[variable custom style][if the player is able to speak]'This doesn't usually happen, I swear!'[otherwise]I can't even tell [him of M] that this isn't what I usually wear![end if][roman type][line break]";
 	otherwise say "You turn bright red.".
 
 To say GroundPeeReaction of (M - vampiress):
@@ -109,7 +109,6 @@ To say GroundPeeReaction of (M - vampiress):
 
 To say ClothesPeeReaction of (M - vampiress):
 	say GroundPeeReaction of M.
-
 
 Part 2 - Perception
 
@@ -263,7 +262,7 @@ To compute unique periodic effect of (M - vampiress):
 		if the remainder after dividing the hunger-timer of M by 30 is 0 and M is willing to do vaginal and M is not grabbing the player and M is not penetrating a body part:[she can't disappear if she's in the middle of feeding]
 			DifficultyDown M by 1;
 			decrease the hunger-timer of M by 30;
-			if the difficulty of M is 0:
+			if the raw difficulty of M is 0:
 				if M is in the location of the player, say "[BigNameDesc of M] doubles over, groaning as if in agony. [big he of M] gives you a single doleful, famished look as [his of M] body dissolves into a cloud of bats and disperses in every direction. You have a feeling [he of M] won't be back soon.";
 				otherwise say "You hear the screeching of fleeing bats coming from another room in the mansion.";
 				destroy M.
@@ -271,12 +270,12 @@ To compute unique periodic effect of (M - vampiress):
 Part 3 - Combat
 
 To say MercyReaction of (M - vampiress):[possibly change this, doesn't really fit with her personality]
-	say "[speech style of M]'Your pleas only turn me on more, you pathetic creature! [big please], continue singing such sweet melodies so I may find the inspiration to use you harder!'[roman type][line break]She drags her fangs your skin, not hard enough to break the skin but the sensation still stings terribly, causing you to whimper.";
+	say "[speech style of M]'Your pleas only turn me on more, you pathetic creature! [big please], continue singing such sweet melodies so I may find the inspiration to use you harder!'[roman type][line break][big he of M] drags [his of M] fangs your skin, not hard enough to break the skin but the sensation still stings terribly, causing you to whimper.";
 	bodyruin 1;
 	PainUp 1.
 
 To compute kneeling reaction of (M - vampiress):
-	say "[BigNameDesc of M] approaches you, sticking her sharp talon-like finger nails in your hair and rubbing sensuously.[if diaper quest is 0][line break][one of][line break][speech style of M]'I'm hungry and you're clearly defeated. I won't hurt you too badly as long as you stay still. Understand?'[or]'I'm hungry and you don't want to fuck with me. Don't move a muscle or you'll regret it.'[or]'You know, I could have overcome your mind any time that I wanted... I just like to see my prey squirm first.'[in random order][roman type][line break][end if]".
+	say "[BigNameDesc of M] approaches you, sticking [his of M] sharp talon-like finger nails in your hair and rubbing sensuously.[if diaper quest is 0][line break][one of][line break][speech style of M]'I'm hungry and you're clearly defeated. I won't hurt you too badly as long as you stay still. Understand?'[or]'I'm hungry and you don't want to fuck with me. Don't move a muscle or you'll regret it.'[or]'You know, I could have overcome your mind any time that I wanted... I just like to see my prey squirm first.'[in random order][roman type][line break][end if]".
 
 To say waitingflav of (M - vampiress):
 	if times-submitted of M < 1:
@@ -303,11 +302,11 @@ To say SexSubmissionFlav of (M - vampiress):
 		otherwise:
 			say "[one of]You passionately pump the vampiress's [DickDesc of M] as you bob your head back and forth.[or]You fellate [NameDesc of M] with unrestrained enthusiasm.[or]You suck the vampiress's [DickDesc of M] like the hungry cumslut you are.[or]You aggressively fellate the vampiress, emitting muffled moans of contentment.[or]You gaze up at [NameDesc of M] lovingly as you eagerly pleasure [his of M] [DickDesc of M].[or]You enthusiastically pleasure [NameDesc of M] with your mouth and tongue.[or]You pucker your lips and finger [his of M] [vagina] as you hungrily suckle [his of M] [DickDesc of M].[in random order]";
 	otherwise:
-		say "[if the bimbo of the player < a random number between 8 and 13][one of]You lie still and accept the invasion.[or]You gleefully submit to being used as a plaything.[or]You don't resist being used... You're not even sure that you remember how to resist.[in random order][otherwise][one of]You purposefully loosen up and accept the vampiress's thrusts to easily slide fully in and out.[or]You push back at [NameDesc of M] enthusiastically in the same rhythm that she is fucking you.[in random order][end if]";
-		say "[variable custom style][one of][if the relevant sex addiction of M > 12 and the player is able to speak]'Fuck me, mistress!'[otherwise if the relevant sex addiction of M > 12 and the player is able to make sounds][muffled sounds][otherwise]Maybe if I relax, this will hurt less?[end if][or][if the relevant sex addiction of M > 10]This feels too good![otherwise if the relevant sex addiction of M > 5]Why am I letting [him of M] do this so willingly? Am I a whore?[otherwise]It hurts so good![end if][or][if the relevant sex addiction of M > 13 and the player is able to speak]'That feels good! Go faster!'[otherwise if the relevant sex addiction of M > 13 and the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 8]Maybe I really am a slut?[otherwise]I wanted this to end a moment ago but now I'm not sure.[end if][or][if the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 14 and the player is able to speak]'Harder!'[otherwise if the relevant sex addiction of M > 14]I kind of wish she'd go even harder![otherwise if the relevant sex addiction of M > 6] How am I enjoying this so much?[otherwise]Why do I wish that she would never stop fucking me?[end if][purely at random][roman type][line break]".
+		say "[if the bimbo of the player < a random number between 8 and 13][one of]You lie still and accept the invasion.[or]You gleefully submit to being used as a plaything.[or]You don't resist being used... You're not even sure that you remember how to resist.[in random order][otherwise][one of]You purposefully loosen up and accept the vampiress's thrusts to easily slide fully in and out.[or]You push back at [NameDesc of M] enthusiastically in the same rhythm that [he of M] is fucking you.[in random order][end if]";
+		say "[variable custom style][one of][if the relevant sex addiction of M > 12 and the player is able to speak]'Fuck me, mistress!'[otherwise if the relevant sex addiction of M > 12 and the player is able to make sounds][muffled sounds][otherwise]Maybe if I relax, this will hurt less?[end if][or][if the relevant sex addiction of M > 10]This feels too good![otherwise if the relevant sex addiction of M > 5]Why am I letting [him of M] do this so willingly? Am I a whore?[otherwise]It hurts so good![end if][or][if the relevant sex addiction of M > 13 and the player is able to speak]'That feels good! Go faster!'[otherwise if the relevant sex addiction of M > 13 and the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 8]Maybe I really am a slut?[otherwise]I wanted this to end a moment ago but now I'm not sure.[end if][or][if the player is able to make sounds][muffled sounds][otherwise if the relevant sex addiction of M > 14 and the player is able to speak]'Harder!'[otherwise if the relevant sex addiction of M > 14]I kind of wish [he of M]'d go even harder![otherwise if the relevant sex addiction of M > 6] How am I enjoying this so much?[otherwise]Why do I wish that [he of M] would never stop fucking me?[end if][purely at random][roman type][line break]".
 
 To say VampResistRefusalFlav:
-	say "[if the bimbo of the player > a random number between 8 and 13][one of]You consider resisting, but it's even easier than normal to just give in and let it happen.[or]You tell your body to resist, but it ignores you completely, just like you hoped it would.[or]Your body refuses to resist, but it doesn't bother you as much as it should...[at random][otherwise][one of]You try to resist, but your body ignores you completely. It's like it's not even on your side here![or]You can feel the vampiress[']s influence like a heavy weight on your mind, twisting every rebellious idea into fervent submission.[or]Your body refuses to obey your commands, moving in a way not unlike you'd expect [NameDesc of vampiress] to move herself.[or][BigNameDesc of vampiress] has an ironclad grip on your mind, nullifying every thought of resistance and replacing them with unconditional submission.[or]You try to resist the vampiress, but your body fights you at every turn. [big he of vampiress]'s keeping you from controlling your own actions![or]Instead of fighting the way you tell it to, your body emits a sharp moan instead, as if to tell you to stop resisting and give in.[in random order][end if]";
+	say "[if the bimbo of the player > a random number between 8 and 13][one of]You consider resisting, but it's even easier than normal to just give in and let it happen.[or]You tell your body to resist, but it ignores you completely, just like you hoped it would.[or]Your body refuses to resist, but it doesn't bother you as much as it should...[at random][otherwise][one of]You try to resist, but your body ignores you completely. It's like it's not even on your side here![or]You can feel the vampiress[']s influence like a heavy weight on your mind, twisting every rebellious idea into fervent submission.[or]Your body refuses to obey your commands, moving in a way not unlike you'd expect [NameDesc of vampiress] to move [himself of vampiress].[or][BigNameDesc of vampiress] has an ironclad grip on your mind, nullifying every thought of resistance and replacing them with unconditional submission.[or]You try to resist the vampiress, but your body fights you at every turn. [big he of vampiress]'s keeping you from controlling your own actions![or]Instead of fighting the way you tell it to, your body emits a sharp moan instead, as if to tell you to stop resisting and give in.[in random order][end if]";
 	if the player is able to speak:
 		say "[variable custom style]'[one of][if the bimbo of the player > 11]I'm yours, mistress...'[otherwise]Thank you, mistress...'[end if][or][if the bimbo of the player > 10]I don't deserve your time, mistress.'[otherwise if the bimbo of the player > 5]Thank you for letting me please you, mistress'[otherwise]'Do whatever you want with me, mistress'[end if][or][if the bimbo of the player > 13]I just want to be yours forever!'[otherwise if the bimbo of the player > 7]Please don't stop, mistress!'[otherwise]Oh my god! Yes!'[end if][purely at random][roman type][line break]";
 	otherwise:
@@ -324,8 +323,6 @@ To say ThirstResRefusalFlav of (M - vampiress):
 
 To say SwallowDemand of (M - vampiress):
 	say "[speech style of M][one of]'You have permission to nourish yourself with my [semen], slave. Do not be ungracious.'[or]'Swallow like a good whore and you'll be making your mistress very happy.'[or]'You should feel lucky that I've decided to share my gift with you.'[or]'This is a gift... Appreciate that.'[or]'I could make you swallow, if I wanted. But you can do that on your own, can[']t you?'[in random order][roman type][line break]".
-
-
 
 Section 1 - Attack
 
@@ -358,7 +355,7 @@ This is the vampiress punishes diaper rule:
 		if D is not messed and the player is able to get horny:
 			say "The vampiress, seeing your diapered state, gets an odd look in [his of M] eyes before smiling deviously. The pupils of [his of M] eyes turn white and, out of nowhere, your [asshole] begins dilating widely, as if something rather large were penetrating you. Overcome by the sensation, you fall down onto your hands and knees, sticking your ass into the air behind you as the phantom lover continues to fuck you wildly.[line break][if the anal sex addiction of the player < 4][line break][variable custom style]'Wait... What are you doing?! How are you doing that?! Please stop!'[roman type][line break]Despite yourself, you moan loudly and bite your lower lip.[otherwise if the anal sex addiction of the player < 7][line break][variable custom style]'Oh my god!'[roman type][line break]Despite your attempts to simply hate this, you quiver in pleasure and grind your ass against a lover that isn't there as your [asshole] continues to be stimulated by this monster's power. [otherwise][line break][variable custom style]'Go harder! Go faster! Whatever you do, please don't ever stop!'[roman type][line break]You pant and moan like a bitch in heat as your [asshole] continues to dilate to various shapes and sizes.[end if][line break]";
 			anally orgasm shamefully;
-			say "Seeing your climax, [NameDesc of vampiress] walks up to you, kneels down and reaches up through the leg holes of your diaper, scooping your cum into [his of M] fingers and licking them sensuously.[line break][speech style of M]'Thanks for the treat, baby.'[roman type][line break][if the anal sex addiction of the player < 5]Wait... What the hell was that?![otherwise if the anal sex addiction of the player < 7][line break][variable custom style]'Huh?!'[roman type][line break]She simply laughs at you before ignoring you altogether.[otherwise][line break][variable custom style]'No... Thank you!'[roman type][line break]You're not completely sure what that was but you look forward to the next time you get to do it.[end if]";
+			say "Seeing your climax, [NameDesc of vampiress] walks up to you, kneels down and reaches up through the leg holes of your diaper, scooping your cum into [his of M] fingers and licking them sensuously.[line break][speech style of M]'Thanks for the treat, baby.'[roman type][line break][if the anal sex addiction of the player < 5]Wait... What the hell was that?![otherwise if the anal sex addiction of the player < 7][line break][variable custom style]'Huh?!'[roman type][line break][big he of M] simply laughs at you before ignoring you altogether.[otherwise][line break][variable custom style]'No... Thank you!'[roman type][line break]You're not completely sure what that was but you look forward to the next time you get to do it.[end if]";
 			now the stance of the player is 1;
 			bore M for 450 seconds;
 			reset vampire hunger;
@@ -390,7 +387,7 @@ To say PrepTaunt of (M - vampiress) in (F - a fuckhole):
 
 To decide if (M - vampiress) is willing to creampie (F - asshole):
 	if M is willing to do vaginal, decide yes;
-	if the reaction of the player is not 1, decide no;
+	if the reaction of the player is not 1, decide no;[she stops for both begging and resisting]
 	decide yes.
 
 To compute (M - vampiress) pulling out of (F - a fuckhole):
@@ -420,12 +417,12 @@ To compute condom success of (M - vampiress) in (F - a fuckhole):
 	say CondomPieFlav of M in F;
 	let R be a random number between 10 and the difficulty of M;
 	if the number of worn ballgags is 0 and R > the semen taste addiction of the player and the player is bimbo consenting:
-		say "You obediently open your mouth as [semen] slowly dribbles out of the open end, plopping wetly onto your tongue before slowly rolling down your throat. She grins, lowering it closer and closer to your face as it empties out, shaking it twice before gently laying it to rest on the bridge of your nose.";
+		say "You obediently open your mouth as [semen] slowly dribbles out of the open end, plopping wetly onto your tongue before slowly rolling down your throat. [big he of M] grins, lowering it closer and closer to your face as it empties out, shaking it twice before gently laying it to rest on the bridge of your nose.";
 		say "[speech style of M]'Wear it. Let everyone know of our tryst.'[roman type][line break]";
 		humiliate 200;
 		StomachSemenUp the semen load of M;
 	otherwise:
-		say "[speech style of M]'[if the number of worn ballgags > 0]What[']s that dear? You can[']t? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be...'[otherwise]Oh my. But aren[']t you hungry?'[end if][roman type] The condom disappears from [his of M] hand in a flash of mesmerising purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by [NameDesc of M] fill your mind. She blows you a kiss, eyes glowing brightly as she straightens up and begins to walk away.";
+		say "[speech style of M]'[if the number of worn ballgags > 0]What[']s that dear? You can[']t? Just think what you're missing out on, darling. Think hard...'[otherwise if R > the semen taste addiction of the player]Wait a moment, darling, what am I saying? You are not ready for my seed now, but you WILL be...'[otherwise]Oh my. But aren[']t you hungry?'[end if][roman type] The condom disappears from [his of M] hand in a flash of mesmerising purple flames, and you feel a strange tickle in the back of your throat as vivid images of being face-fucked by [NameDesc of M] fill your mind. [big he of M] blows you a kiss, eyes glowing brightly as [he of M] straightens up and begins to walk away.";
 		SemenTasteAddictUp the semen load of M / 2;
 	if refactoryperiod > 0, DifficultyUp M by 1.
 
@@ -466,9 +463,9 @@ The vampiric cumslut rule is listed first in the vampire rules.
 
 To say NormalMouthPenetrationFlav of (M - vampiress):
 	if the oral sex addiction of the player < 3:
-		say "[one of][BigNameDesc of M] traces [his of M] finger along the side of your chin, lifting [his of M] skirt as a strange tingling sensation moves up your neck. Your eyes latch onto the delicious yellow [italic type]popsicle[roman type] [he of M] was hiding underneath [his of M] dress, and as [he of M] forces it between your lips, you can't help but wonder what the big deal is about sucking it. It's not like you hate popsicles, so why not just... suck... Suuuuck. Suck. Suck. Suck-! You suddenly jerk out of a trance, realizing that 'yummy' thing sliding in and out of your mouth is actually [NameDesc of M]'s [DickDesc of M]![or][BigNameDesc of M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but you suddenly have a much better idea. She'd probably hate it if you sucked [his of M] dick. Yeah. Sucked it until she came. Yeah, suck... You catch yourself too late, struggling furiously as [M]'s [DickDesc of M] is already sliding in and out of your mouth.[or][BigNameDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You snarl. [line break][first custom style]'Not on your life, bitch. You really think I'd suck your huge, yummy [DickDesc of M]? Ok, maybe I fucking will.'[roman type][line break]You grab [his of M] shaft and angrily slide it into your mouth, your eyes widening with the realization of what you've just done as [he of M] begins to thrust.[at random]";
+		say "[one of][BigNameDesc of M] traces [his of M] finger along the side of your chin, lifting [his of M] skirt as a strange tingling sensation moves up your neck. Your eyes latch onto the delicious yellow [italic type]popsicle[roman type] [he of M] was hiding underneath [his of M] dress, and as [he of M] forces it between your lips, you can't help but wonder what the big deal is about sucking it. It's not like you hate popsicles, so why not just... suck... Suuuuck. Suck. Suck. Suck-! You suddenly jerk out of a trance, realizing that 'yummy' thing sliding in and out of your mouth is actually [NameDesc of M][']s [DickDesc of M]![or][BigNameDesc of M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but you suddenly have a much better idea. [big he of M]'d probably hate it if you sucked [his of M] dick. Yeah. Sucked it until [he of M] came. Yeah, suck... You catch yourself too late, struggling furiously as [M]'s [DickDesc of M] is already sliding in and out of your mouth.[or][BigNameDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You snarl. [line break][first custom style]'Not on your life, bitch. You really think I'd suck your huge, yummy [DickDesc of M]? OK, maybe I fucking will.'[roman type][line break]You grab [his of M] shaft and angrily slide it into your mouth, your eyes widening with the realization of what you've just done as [he of M] begins to thrust.[at random]";
 	otherwise if the oral sex addiction of the player < 7:
-		say "[one of][BigNameDesc of M] taps you on the chin as she lifts [his of M] skirt, revealing the big, dick-shaped [italic type]popsicle[roman type] she was hiding underneath. A strange tingling sensation moves up your neck as she gently pushes it into your mouth, and you hesitantly begin to slurp. It's really delicious, though it doesn't taste much like a popsicle. But, delicious things should be sucked, so really that shouldn't matter. [line break][speech style of M]Faster, darling.[roman type][line break]Sucking feels so right. So good. So... so... wait. You might be wrong but it seems like you're actually sucking [NameDesc of M]'s real [DickDesc of M]![or][BigNameDesc of M] puts one hand on the back of your head. Naturally, you open your mouth and accept [his of M] invading [DickDesc of M]. It's what anyone would do in this position. Suck. Suck until she comes. Anyone would do that.[or][BigNameDesc of M] points to your mouth, grinning. You open and loll out your tongue, somehow failing to break eye contact with [him of M], not even once, as [his of M] [DickDesc of M] slides through your lips.[at random]";
+		say "[one of][BigNameDesc of M] taps you on the chin as [he of M] lifts [his of M] skirt, revealing the big, dick-shaped [italic type]popsicle[roman type] [he of M] was hiding underneath. A strange tingling sensation moves up your neck as [he of M] gently pushes it into your mouth, and you hesitantly begin to slurp. It's really delicious, though it doesn't taste much like a popsicle. But, delicious things should be sucked, so really that shouldn't matter. [line break][speech style of M]Faster, darling.[roman type][line break]Sucking feels so right. So good. So... so... wait. You might be wrong but it seems like you're actually sucking [NameDesc of M][']s real [DickDesc of M]![or][BigNameDesc of M] puts one hand on the back of your head. Naturally, you open your mouth and accept [his of M] invading [DickDesc of M]. It's what anyone would do in this position. Suck. Suck until [he of M] comes. Anyone would do that.[or][BigNameDesc of M] points to your mouth, grinning. You open and loll out your tongue, somehow failing to break eye contact with [him of M], not even once, as [his of M] [DickDesc of M] slides through your lips.[at random]";
 	otherwise:
 		say "[one of][BigNameDesc of M] smiles down at you as [he of M] lifts [his of M] skirt, patting your head as you eagerly accept [his of M] [LongDickDesc of M] into your mouth. You share sighs of contentment as you begin to suck.[or][BigNameDesc of M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [LongDickDesc of M] slides through your lips.[or][BigNameDesc of M] places one hand on your shoulder. You greedily lean forward and take [his of M] [LongDickDesc of M] into your mouth.[at random]".
 
@@ -519,11 +516,11 @@ To say (M - vampiress) sex reaction:
 			otherwise if the relevant sex addiction of M < 12:
 				say "[one of]I want [him of M] to make me [his of M] bitch![or]I'm so hard...[or]Oh! That felt really good![in random order]";
 			otherwise:
-				say "[one of]She's hitting my g-spot! Teehee![or]'Make me jizz all over the floor!'[or]'Harder! I want to hands-free cum!'[in random order]";
+				say "[one of][big he of M]'s hitting my g-spot! Teehee![or]'Make me jizz all over the floor!'[or]'Harder! I want to hands-free cum!'[in random order]";
 		otherwise if the relevant sex addiction of M < 8:
-			say "[one of]'Mmm...'[or][first custom style]'Make me your fucktoy!... Wait, what?!'[or]I didn't want this a moment ago... What changed?[or]She's using me like some sort of cheap floozy!... But I guess that's what I deserve.[or]This feels so wrong! ... And yet, somehow, it feels so right![or]'[if M is friendly-fucking]Use me![otherwise]I'm yours![end if] Make me yours!'[or]Please never let this end...[in random order]";
+			say "[one of]'Mmm...'[or][first custom style]'Make me your fucktoy!... Wait, what?!'[or]I didn't want this a moment ago... What changed?[or][big he of M]'s using me like some sort of cheap floozy!... But I guess that's what I deserve.[or]This feels so wrong! ... And yet, somehow, it feels so right![or]'[if M is friendly-fucking]Use me![otherwise]I'm yours![end if] Make me yours!'[or]Please never let this end...[in random order]";
 		otherwise if the relevant sex addiction of M < 12:
-			say "[one of]It feels so good...[or]I know I shouldn't be enjoying this... On second thought, this is perfectly natural, right? Sex is supposed to feel good...[or]Why does it have to feel so good?![or]If I have to have sex, it might as well be with someone who does it right... Like my new mistress.[or]I wonder if she'll cum a lot... I hope so.[or]It feels amazing![or]I never realized sex could feel this amazing![or]I'm actually not sure if I want this to end... As a matter of fact, I'm pretty sure that I don't![in random order]";
+			say "[one of]It feels so good...[or]I know I shouldn't be enjoying this... On second thought, this is perfectly natural, right? Sex is supposed to feel good...[or]Why does it have to feel so good?![or]If I have to have sex, it might as well be with someone who does it right... Like my new mistress.[or]I wonder if [he of M]'ll cum a lot... I hope so.[or]It feels amazing![or]I never realized sex could feel this amazing![or]I'm actually not sure if I want this to end... As a matter of fact, I'm pretty sure that I don't![in random order]";
 		otherwise:
 			say "[one of]Uh oh, looks like I'm trapped! Teehee![or]I can't get away! Uh ooooh![or]'Oooh!'[or]'Aaah!'[or]'Aah! Aah! Aah!'[or]'I'm having so much fun!'[or]'Oooh Shiiiit!'[or]'Yeah! Fuck me!'[or]'Don't stop! It feels so good!'[or]'Wear me out!'[or]'Fuckme! Fuckme! Fuckme!'[or]I want this to last FOREVER![or]Use me!'[or]'Use me like the dirty slut I am!'[or]'Faster, faster!'[or]'This feels SO right.'[then purely at random]";
 	say "[roman type][line break]".
@@ -540,16 +537,16 @@ To say sexSubmitSqueezeFlav of (M - vampiress) in (O - an orifice):
 	say "[BigNameDesc of M] [if C is clothing]pushes [his of M] hand underneath your [printed name of C][otherwise]squeezes your [AssDesc][end if] as [he of M] plows your [variable O], effortlessly finding your body's every sensitivity.".
 
 To say sexSubmitReflectFlav of (M - vampiress) in (O - an orifice):
-	say "[if the relevant sex addiction of M < 6][BigNameDesc of M] plows [his of M] [DickDesc of M] in and out of your [variable O]. It's extra humiliating because you can actually feel yourself enjoying it![otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] slams [his of M] [DickDesc of M] in and out of your [variable O], panting heavily. You tell yourself you're only enjoying it because she's in your head, but [italic type]both of us know that's not true.[roman type][otherwise][BigNameDesc of M] fucks your [variable O] with fast, hard thrusts. You close your eyes, losing yourself in the pleasure.[end if]".
+	say "[if the relevant sex addiction of M < 6][BigNameDesc of M] plows [his of M] [DickDesc of M] in and out of your [variable O]. It's extra humiliating because you can actually feel yourself enjoying it![otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] slams [his of M] [DickDesc of M] in and out of your [variable O], panting heavily. You tell yourself you're only enjoying it because [he of M]'s in your head, but [italic type]both of us know that's not true.[roman type][otherwise][BigNameDesc of M] fucks your [variable O] with fast, hard thrusts. You close your eyes, losing yourself in the pleasure.[end if]".
 
 To say sexSubmitEmbarrassFlav of (M - vampiress) in (O - an orifice):
-	say "[if the relevant sex addiction of M < 7]A persistent image of an [variable O] hangs in your mind, being fiercely pounded in time with [NameDesc of M]'s strokes. You don't want to admit it. You [italic type]want[roman type] to deny it... but both of you know who that hole belongs to.[otherwise if the humiliation of the player < 15000]A persistent image of your own [variable O] hangs in your mind, forcing you to watch as [NameDesc of M] gives it the hard fucking [italic type]it's always deserved.[roman type][otherwise if the relevant sex addiction of M < 10]A persistent image of your own [variable O] hangs in your mind, forcing you to watch as [NameDesc of M] gives it the hard fucking it deserves. The [italic type]best[roman type] is that you never imagined it would look so good.[otherwise]A persistent image of your own [variable O] hangs in your mind, allowing you to watch as [NameDesc of M] gives your [variable O] the hard fucking it deserves.[end if]";
+	say "[if the relevant sex addiction of M < 7]A persistent image of an [variable O] hangs in your mind, being fiercely pounded in time with [NameDesc of M][']s strokes. You don't want to admit it. You [italic type]want[roman type] to deny it... but both of you know who that hole belongs to.[otherwise if the humiliation of the player < 15000]A persistent image of your own [variable O] hangs in your mind, forcing you to watch as [NameDesc of M] gives it the hard fucking [italic type]it's always deserved.[roman type][otherwise if the relevant sex addiction of M < 10]A persistent image of your own [variable O] hangs in your mind, forcing you to watch as [NameDesc of M] gives it the hard fucking it deserves. The [italic type]best[roman type] is that you never imagined it would look so good.[otherwise]A persistent image of your own [variable O] hangs in your mind, allowing you to watch as [NameDesc of M] gives your [variable O] the hard fucking it deserves.[end if]";
 
 To say sexSubmitSplitFlav of (M - vampiress) in (O - an orifice):
 	if there is a worn chastity cage:
-		say "You can feel [NameDesc of M]'s hands on your [genitals] as [he of M] [one of]pounds[or]plows[or]ruts[at random] your [asshole], separated by a layer of metal, but nonetheless *there* all the same. ";
+		say "You can feel [NameDesc of M][']s hands on your [genitals] as [he of M] [one of]pounds[or]plows[or]ruts[at random] your [asshole], separated by a layer of metal, but nonetheless *there* all the same. ";
 	otherwise if the player is male:
-		say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like a [italic type]QUEEN[roman type]. You can practically feel your [player-penis] slipping away.[otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how [italic type]cute[roman type]your [ShortDesc of penis] compares to [his of M].[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You feel proud of how [italic type]cute[roman type] your [ShortDesc of penis] is compared to [his of M].[otherwise if the bimbo of the player < 3][BigNameDesc of M]'s balls repeatedly slap your taint as [his of M] dick pistons in and out of your [asshole], as if to remind you how [italic type]pointless[roman type] it would be to resist [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [manly-penis] as [he of M] pounds your [asshole]. And you thought it was humiliating [italic type]before[roman type]...[otherwise if the bimbo of the player < 7][BigNameDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked like a common sex toy.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10 and transGender is 0][BigNameDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a [italic type]yummy[roman type] faggot for enjoying this.[otherwise if the bimbo of the player < 12]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you [italic type]obviously[roman type] love getting railed.[otherwise if the bimbo of the player < 14]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
+		say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like a [italic type]QUEEN[roman type]. You can practically feel your [player-penis] slipping away.[otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how [italic type]cute[roman type]your [ShortDesc of penis] compares to [his of M].[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You feel proud of how [italic type]cute[roman type] your [ShortDesc of penis] is compared to [his of M].[otherwise if the bimbo of the player < 3][BigNameDesc of M][']s balls repeatedly slap your taint as [his of M] dick pistons in and out of your [asshole], as if to remind you how [italic type]pointless[roman type] it would be to resist [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [manly-penis] as [he of M] pounds your [asshole]. And you thought it was humiliating [italic type]before[roman type]...[otherwise if the bimbo of the player < 7][BigNameDesc of M][']s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked like a common sex toy.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10 and transGender is 0][BigNameDesc of M][']s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a [italic type]yummy[roman type] faggot for enjoying this.[otherwise if the bimbo of the player < 12]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you [italic type]obviously[roman type] love getting railed.[otherwise if the bimbo of the player < 14]As [NameDesc of M] pistons in and out of your [asshole], [his of M] balls repeatedly slap your taint, as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
 	otherwise:
 		say "[if the player is horny and vagina is actually occupied][BigNameDesc of M] fucks your [variable O] hard and fast, knowing without a shred of doubt how desperately wet you are.[otherwise if the player is horny][BigNameDesc of M] fucks your [variable O] hard and fast. [big he of M] pumps [his of M] fingers in and out of your [vagina], ensuring there's no hiding how wet you really are.[otherwise if vagina is actually occupied][BigNameDesc of M] teases your clit as [he of M] pounds your [variable O].[otherwise][BigNameDesc of M] gently pumps [his of M] fingers in and out of your [vagina], skilfully stimulating your most intimate reaches as [he of M] fiercely plows your [variable O].[end if]".
 
@@ -572,7 +569,6 @@ To compute striking attack of (M - vampiress):
 		passively stimulate vagina from M;
 		increase health of M by 2;
 	FatigueUp a random number between the difficulty of M and the difficulty of M * 3.
-
 
 [The vampiress has to be "invited in"]
 To say SelectionFrustrated of (M - vampiress):
@@ -626,13 +622,12 @@ Definition: vampiress is willing to masturbate: decide yes.
 
 Definition: vampiress is willing to confiscate: decide yes.
 
-
 To say WaddleDiaperCheckFlav of (M - vampiress):
 	say "[BigNameDesc of M] stares at your giant waddle diaper.[line break][speech style of M]'[one of]Now THAT is new to me. Fascinating...'[or]I see that you're still in that rather fascinating undergarment. My my my...'[stopping][roman type][line break]".
 
 To say DiaperCheckFlav of (M - vampiress):
 	let D be a random worn knickers;
-	say "You blink once, and in the time that your eyes are closed [NameDesc of M] has silently crossed the entire length of room, as if she somehow teleported, and [his of M] eyes are locked with yours. You freeze and scream in shock, and [he of M] takes this opportunity to press [his of M] hands into the front and back of your [MediumDesc of D], and check whether you're dry.".
+	say "You blink once, and in the time that your eyes are closed [NameDesc of M] has silently crossed the entire length of room, as if [he of M] somehow teleported, and [his of M] eyes are locked with yours. You freeze and scream in shock, and [he of M] takes this opportunity to press [his of M] hands into the front and back of your [MediumDesc of D], and check whether you're dry.".
 
 To say DiaperCheckReactionFlav of (M - vampiress):
 	say "[if the diaper addiction of the player < 11]For some reason, even though you want to recoil away from [him of M], your blood pumps in your ears and you find yourself lacking any will to resist at all.[otherwise]The sound of your own heartbeat fills your ears, and almost instinctively you push your hips forward so that [NameDesc of M] can get a good feel.[end if]".
@@ -647,25 +642,25 @@ To say DiaperCheckResultsDrynessProvedFlav of (M - vampiress):
 	say "[speech style of M]'You baffle me, [NameBimbo]. I will freely admit, I did not expect you to manage to stay dry all this time. I will concede for now that you have more self-control than I gave you credit for, and I officially allow you to return to adult underwear. Now go.'[roman type][line break]".
 
 To say DiaperCheckResultsDryWellDoneFlav of (M - vampiress):
-	say "[speech style of M]'Oh I'm surprised, you're actually dry. Still, if you're wearing that, I'm sure there's a reason, hmm? Perhaps you're not going to be dry for much longer...'[roman type][line break][BigNameDesc of M] appears to lick her lips at the thought.".
+	say "[speech style of M]'Oh I'm surprised, you're actually dry. Still, if you're wearing that, I'm sure there's a reason, hmm? Perhaps you're not going to be dry for much longer...'[roman type][line break][BigNameDesc of M] appears to lick [his of M] lips at the thought.".
 
 To say DiaperChangeRefuseAnger of (M - vampiress):
 	say "As [he of M] sees you make a move to resist, [NameDesc of M] yawns.[line break][speech style of M]'Fine, we'll do it the hard way. I'll make this quick.[roman type][line break]".
 
 To say DiaperChangeStart of (M - vampiress):
-	say "With a flick of her wrist, [NameDesc of M] causes you to begin to float in the air! With another small gesture, you're on your back, legs spread wide in front of her, completely unable to move.[line break][speech style of M]'[if there is a worn diaper]Your little mortal bodies are so weak, unable to survive even a few hours like this without getting a rash. Oh well...'[otherwise][one of]I'm going to keep you in diapers for a long, long time, worm.'[or]As you know by now, I like to keep my slaves in diapers. It will help you remember who's in charge and who's just a weak little baby.'[stopping][end if][roman type][line break]".
+	say "With a flick of [his of M] wrist, [NameDesc of M] causes you to begin to float in the air! With another small gesture, you're on your back, legs spread wide in front of [him of M], completely unable to move.[line break][speech style of M]'[if there is a worn diaper]Your little mortal bodies are so weak, unable to survive even a few hours like this without getting a rash. Oh well...'[otherwise][one of]I'm going to keep you in diapers for a long, long time, worm.'[or]As you know by now, I like to keep my slaves in diapers. It will help you remember who's in charge and who's just a weak little baby.'[stopping][end if][roman type][line break]".
 
 Definition: vampiress is diaper leaving: decide no.
 
 To say DiaperChangeRemovalFlav of (M - vampiress):
-	say "[BigNameDesc of M] uses her telekinesis to send the [ShortDesc of current-diaper] sailing away into the distance[if current-diaper is messed knickers]. After indulging herself with a couple of gleeful deep breaths, [NameDesc of M] snaps her fingers and your entire body becomes as clean and soft as... a baby's bottom[end if].".
+	say "[BigNameDesc of M] uses [his of M] telekinesis to send the [ShortDesc of current-diaper] sailing away into the distance[if current-diaper is messed knickers]. After indulging [himself of M] with a couple of gleeful deep breaths, [NameDesc of M] snaps [his of M] fingers and your entire body becomes as clean and soft as... a baby's bottom[end if].".
 
 To say DiaperChangeFlav of (M - vampiress):
 	say "Without even moving a muscle, you watch as [if old-diaper is new-diaper]an identical (but clean) [ShortDesc of new-diaper][otherwise]a [ShortDesc of new-diaper][end if] appears out of thin air and sails onto your bum and then fixes itself in place.".
 
 To say DoubleDiaperFlav of (M - vampiress):
 	say DoubleDiaperAnnounceFlav of M;
-	say "[BigNameDesc of M] spreads her arms as she summons a giant [ShortDesc of new-diaper] from thin air and sends it to strap itself on TOP of your [ShortDesc of old-diaper]!".
+	say "[BigNameDesc of M] spreads [his of M] arms as [he of M] summons a giant [ShortDesc of new-diaper] from thin air and sends it to strap itself on TOP of your [ShortDesc of old-diaper]!".
 
 To say DoubleDiaperAnnounceFlav of (M - vampiress):
 	say "All of a sudden an evil sneer appears on [NameDesc of M][']s face.[line break][speech style of M]'I lied. I'm enjoying your scent so long, I think we should see how long we can make it last...'[roman type][line break]".
@@ -676,7 +671,7 @@ To say DoubleDiaperAfterFlav of (M - vampiress):
 To compute diaper change complete cummies reward of (M - vampiress):
 	say "[speech style of M]'[one of]And now, for a little incentive to keep you coming back for more...'[or]I imagine this bit is the reason you keep coming back, hmm?'[stopping][roman type][line break][BigNameDesc of M] grips your [genitals] through your soft padding and begins to stimulate you with strong strokes. Your eyes are soon rolling into the back of your head as you [if the sex addiction of the player > 12]sigh in glee and[otherwise]can't help but[end if] explode an orgasm into your new nappy.";
 	vaginally orgasm shamefully;
-	say "[BigNameDesc of M] says nothing, but licks her lips with pride.".
+	say "[BigNameDesc of M] says nothing, but licks [his of M] lips with pride.".
 
 To say DiaperChangeComment of (M - vampiress):
 	say "[speech style of M]'[if M is diaper disciplining and the diaper-duration of M <= 0]You're my slave now. For my first instruction, I command you to stay in diapers until you can prove to me that you can hold it in and stay dry. And I wholeheartedly expect that to be... NEVER[otherwise]I enjoyed that[end if].'[roman type][line break]".
@@ -691,10 +686,10 @@ To say MasturbationDeclarationFlav of (M - vampiress):
 	say "[speech style of M]'[one of]You should know... I can sense when people are turned on.'[or]It's funny, you often seem to wander into my domain when you're desperately horny...'[stopping][roman type][line break]".
 
 To say MasturbationStartFlav of (M - vampiress):
-	say "[BigNameDesc of M] clenches one fist, and even though she's not physically touching you, you can feel her magical grip on your [genitals].".
+	say "[BigNameDesc of M] clenches one fist, and even though [he of M]'s not physically touching you, you can feel [his of M] magical grip on your [genitals].".
 
 To say MasturbationFlav of (M - vampiress):
-	say "[BigNameDesc of M] [one of]keeps her eyes locked on yours as she telekinetically plays with your [genitals][or]stands over you, deftly stroking your [genitals] with her otherworldly powers[or]grips her fist even tighter, [if the player is female]which forces two magical fingers inside of you[otherwise]bringing the stimulation to almost unbearable levels[end if][or]brings her hand to her mouth and licks her palm, causing you to feel a magical tongue caressing your [genitals][or]changes from quick pulses to long powerful strokes, forcing an unbidden moan from your lips[in random order].".
+	say "[BigNameDesc of M] [one of]keeps [his of M] eyes locked on yours as [he of M] telekinetically plays with your [genitals][or]stands over you, deftly stroking your [genitals] with [his of M] otherworldly powers[or]grips [his of M] fist even tighter, [if the player is female]which forces two magical fingers inside of you[otherwise]bringing the stimulation to almost unbearable levels[end if][or]brings [his of M] hand to [his of M] mouth and licks [his of M] palm, causing you to feel a magical tongue caressing your [genitals][or]changes from quick pulses to long powerful strokes, forcing an unbidden moan from your lips[in random order].".
 
 To say DQMasturbationResistReactionFlav of (M - vampiress):
 	say "[BigNameDesc of M] smiles gently.[line break][speech style of M]'[one of]Mmmm the more you resist, mi amore, the more I persist!'[or]Oh how your diaper sings to me, Mi amore, how you complement it with your moans, you make the perfect duet!'[or]You know we vampires drink many different fluids. Many... different... fluids.'[or]You flinch at my touch turtle dove? Just close your eyes... it'll be over before the echoes of your moans fade from these halls!'[then at random][roman type][line break]".
@@ -704,7 +699,6 @@ To say ConfiscationDeclarationFlav of (M - vampiress) on (C - a clothing):
 
 To say ConfiscationAfterFlav of (M - vampiress) on (C - a clothing):
 	say "[speech style of M]'What you SHOULD be saying is [']Yes Mistress, Thank You Mistress.['] And nothing else.'[roman type][line break]".
-
 
 To say TriggeredTrapReactFlav of (M - vampiress):
 	say "[BigNameDesc of M] [one of]puts a hand to [his of M] mouth[or]titters gently[purely at random].[line break][speech style of M]'[one of]Perhaps I should have warned you about that[or]Sorry, I thought you would have noticed that yourself[at random]...'[roman type][line break]";
@@ -719,27 +713,19 @@ To say BouncerBounceTrapReactFlav of (M - vampiress):
 To say BecomesAggressive of (M - vampiress):
 	say "[big he of M] takes an offensive stance![line break][speech style of M]'[one of]I think you and I need to have some one-on-one time now, don't you?'[or]I'm sorry, but there's no way I can let you go without having some fun first, now that I've seen you like this...'[in random order][roman type][line break]".
 
-
-
 Section 3 - Damage
 
-To compute damage of (M - vampiress):
-	if the health of M > 0:
-		if M is uninterested:
-			say "She grins malevolently! Uh-oh...";
-			now M is interested;
-			anger M;
+To compute damage reaction of (M - vampiress):
+	if M is uninterested:
+		say "[big he of M] grins malevolently! Uh-oh...";
+		now the sex-length of M is a random number between 2 and 3;
+	otherwise:
+		if M is friendly:
+			say "[BigNameDesc of M] looks surprised, but quickly smirks before leering seductively in your direction!";
 			now the sex-length of M is a random number between 2 and 3;
 		otherwise:
-			if M is friendly:
-				say "[BigNameDesc of M] looks surprised, but quickly smirks before leering seductively in your direction!";
-				anger M;
-				now the sex-length of M is a random number between 2 and 3;
-			otherwise:
-				say DamageReaction (the health of M) of M;
-				if a random number between 1 and 3 is 1, increase the sex-length of M by 1;
-	otherwise:
-		compute death of M.
+			say DamageReaction (the health of M) of M;
+			if a random number between 1 and 3 is 1, increase the sex-length of M by 1.
 
 To say DamageReactHealthy of (M - vampiress):
 	say "[one of][BigNameDesc of M] laughs playfully, ignoring the hit.[or][BigNameDesc of M] continues to shrug off your hits with mirth.[at random]".
@@ -756,167 +742,161 @@ To say DamageReactWeak of (M - vampiress):
 To say DamageReactSubmissive of (M - vampiress):
 	say "[BigNameDesc of M] moans, rubbing [his of M] thighs together as [he of M] endures the hit. [line break][speech style of M]'[one of]Ooh, take me NOW, darling!'[or]I'm ready, darling. Take me! TAKE ME!'[or]Take me now! TAKE ME NOW!'[in random order][roman type][line break]".
 
-To compute unique death of (M - vampiress):
+To say BanishDemandFlav of (M - vampiress):
+	say "[variable custom style]'[if there is worn purity clothing]Begone, evil creature[otherwise]I guess this is my house now[end if]!'[roman type][line break]".
+
+To say BanishForceFlav of (M - vampiress):
+	say "You make the sign of a cross. [BanishFleeFlav of M]".
+
+To say BanishFleeFlav of (M - vampiress):
+	say "[BigNameDesc of M][']s body transforms into a flock of bats which quickly fly up out of the mansion and into the sky.".
+
+Definition: vampiress is permanently banishable: decide no. [Can be summoned again once banished]
+
+To compute tax return of (M - vampiress):
+	let P be a random on-stage closed pedestals;
+	if P is a pedestal:
+		let T be a random thing in P;
+		say "[BigNameDesc of M] clicks [his of M] fingers and you hear the sound of glass grating against stone.";
+		if T is a thing:
+			say "[speech style of M]'Fine, my [ShortDesc of T] is yours. It is in the [location of P]. You can't miss it. But mark my words, if I catch you in my house again, you WILL become my next meal.'[roman type][line break]";
+		otherwise:
+			say "[speech style of M]'Weird, I opened a pedestal with nothing in it. Perhaps consider reporting this as a game bug.'[roman type][line break]";
+	otherwise:
+		compute default tax return of M.
+
+To compute unique banishment of (M - vampiress):
 	let X be nothing;
 	let R be a random number between 0 and 5;
 	if (full-lady fetish is 1 or a random number between 1 and 3 is 3) and gem-strapon is off-stage and the player is the donator:
 		now X is gem-strapon;
-	otherwise if R > 3:
-		repeat with B running through off-stage cans:
-			if the fill-type of B is 1:
-				now X is B;
-				break;
 	otherwise:
 		now X is a random off-stage gothic corset;
 	if X is gem-strapon:
-		say "The vampiress's body transforms into a hoard of rats which quickly scurry out of sight. In their wake, you find a [X].";
+		say "In their wake, you find a [X].";
 	otherwise if X is gothic corset:
-		say "The vampiress's body transforms into a hoard of rats which quickly scurry out of sight. In their wake, you find her [X].";
-	otherwise if X is can:
-		say "The vampiress's body transforms into a hoard of rats which quickly scurry out of sight. In their wake, you find a [printed name of X]! I bet that's useful...";
-	otherwise:
-		say "The vampiress's body transforms into a hoard of rats which quickly scurry out of sight.";
+		say "In their wake, you find [his of M] [X].";
 	unless X is nothing:
 		now X is in the location of the player;
 		compute autotaking X;
 	if there is a worn tethering lipstick collar, end tethering;
+	progress quest of ritual-quest.
+
+To compute (M - vampiress) slinking away:
+	say "[BigNameDesc of M][']s body transforms into a hoard of rats which quickly scurry out of sight.";
 	while M is nearby:
 		now M is in a random placed haunted room;
-	increase the hunger-timer of M by 50;
-	progress quest of ritual-quest.
+	bore M;
+	increase the hunger-timer of M by 50.
+
+To compute unique dislodging of (M - vampiress):
+	if there is a worn tethering lipstick collar, end tethering.
 
 Section 4 - Dominant Sex
 
-To suggestFucker (F - a body part) for (M - vampiress):
-	if F is penis:
-		say "Do you want to have [him of M] suck your [SexDesc of penis]? It might make [him of M] stronger...";
+To decide which number is the dominationtype of (M - vampiress) using (F - penis):
+	decide on FUCK-BLOWJOB.
+
+Definition: vampiress (called M) is uniquely-fuckable:
+	if the stake of M is a sex toy and M is retaining the stake of M, decide no;
+	if the number of held sex toys is 0, decide no;
+	decide yes.
+
+To say UniqueFuckDesc of (M - vampiress):
+	say "'Pierce' [him of M] with a stake.".
+
+To decide which number is the dominationtype of (M - vampiress) using (F - face):[face is unique]
+	repeat with S running through held sex toys:
+		say "Use your [MediumDesc of S] as the stake?";
 		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-BLOWJOB;
-	otherwise if F is a fuckhole:
-		say "Do you want to try riding [him of M]?";
-		if the player is consenting:
-			now player-fucker is F;
-			now player-fuckchoice is FUCK-RIDE;
-	otherwise:
-		repeat with S running through held sex toys:
-			if the stake of M is not the throne:
-				break;
-			unless S is worn:
-				say "Your [MediumDesc of S] might work as a stake. Do you want to see if you can weaken [him of M]?";
-				if the player is consenting:
-					now the stake of M is S;
-					now player-fucker is F;
-					now player-fuckchoice is FUCK-UNIQUE;
-		unless player-fuckchoice is FUCK-UNIQUE, say "You decide against it.".
+			now the stake of M is S;
+			decide on FUCK-UNIQUE;
+	unless the stake of M is a sex toy:
+		let T be a random held sex toy;
+		now the stake of M is T;
+	decide on FUCK-UNIQUE.
 
 To decide which number is the submissiveness base of (M - vampiress):
-	let D be the health of M;
-	decrease D by the times-dominated of M * 2;
-	decrease D by player-fuckchoice * 2;[player-fuckchoice corresponds to the type of sex.]
-	if the stake of M is an insertable thing, decrease D by 5;
-	if the stake of M is a wood-dong, decrease D by 5;
+	let D be the difficulty of M;
+	increase D by player-fuckchoice * 2;
+	if the stake of M is an insertable thing, decrease D by 2;
+	if the stake of M is a wood-dong, decrease D by 2;
 	decide on D.
 
-[The vampiress dominant sex is about intelligence. If you can't resist her mind control, there will be some negative effect]
-To say DominanceIntro of (M - vampiress):
-	let F be a random furniture in the location of the player;
-	let vhypno be 0;
-	let X be a random number between 0 and the intelligence of the player;
-	let D be the difficulty of M / 4;
-	if the stake of M is wood-dong, now D is -99;
-	if the number of worn actually removable clothing > 0:
-		if debugmode > 0, say "[input style]Vampiress strip check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
-		if X <= D or the player is prone:
-			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-			now vhypno is 1;
-		otherwise:
-			say "[bold type]PASSED[roman type][line break]";
-	if the player is prone, now vhypno is 1;[means the player failed]
-	say "You grab [NameDesc of M] by the wrists and force [him of M] [if F is guest bed or F is master bed]onto the bed[otherwise]to the ground[end if]. [big he of M] catches your eye as you [if lady fetish is 2]pull [his of M] loincloth aside[otherwise]lift up [his of M] skirt[end if], and it becomes a little hard to think as your neck begins to tingle[if vhypno is 0]. Luckily, the feeling seems to pass[end if]. [run paragraph on]";
-	if vhypno is 1:
-		say "The tingle intensifies as you [if face is not actually occupied]use both hands to stroke [him of M]to hardness[otherwise]use your mouth to bring [him of M] to hardness[end if], never looking away from [him of M] as a little voice in your head tells you to take off your clothes. You're not sure how that's dominant, but it was your idea, so no sense ignoring it, right?";
-		repeat with C running through worn actually removable clothing:
-			if C is headgear, next;
-			if C is penetrating a body part, next;
-			if C is accessory, next;
-			if C is a bag of holding, next;
-			say "You take off your [ShortDesc of C] and toss it on the ground.";
-			now C is in the location of the player;
-	otherwise:
-		if there is a held condom-providing thing:
-			say "Would you like to have [him of M] wear a condom?";
-			if the player is consenting:
-				say CondomManualFlav of M;
-				now M is wrapped;
-		if M is unwrapped:
-			say "You sit in [his of M] lap, smirking as you grind against [his of M] hardening [DickDesc of M].".
+[
+The vampiress will try to mind control you when you dominate her. However, its kind of fucky, so we'll be changing it.
+
+First value:
+	Random number between dominance and intelligence of the player;
+Second value:
+	between vampiress difficulty and intelligence * -1
+	between vampiress submissiveness and intelligence * -1
+	between vampiress submissiveness and difficulty
+
+
+Example:
+	let I be the intelligence of the player;
+	let X be a random number between the dominance of the player and I;
+	let D be a random number between the submissiveness base of M and (I * -1);
+	if X >= D, player wins
+	otherwise, vampiress wins
+]
 
 To say DominanceFailure of (M - vampiress):
 	if player-fucker is penis:
-		say "[BigNameDesc of M] smiles playfully as you grab [his of M] wrists and try to force [him of M] to [his of M] knees. You get lost in [his of M] eyes, and your head tingles strangely as you drop down onto your hands and knees.";
+		say "[BigNameDesc of M] smiles playfully, catching your eye as you try to force [him of M] to [his of M] knees. You get lost in [his of M] gaze, and your head tingles please as you release [him of M].";
 	otherwise if player-fucker is face:
 		let S be the stake of M;
-		say "You try to get behind [NameDesc of M] before [he of M] realizes what's happening, but [he of M]'s too fast for you. [big he of M] roughly grabs your chin, forcing you to look [him of M] in the eye as [he of M] wrenches the [MediumDesc of S] out of your hand. You get lost in [his of M] gaze, and your head tingles as you slowly drop to your knees.";
+		say "You try to get behind [NameDesc of M], but [he of M] turns on you with a supernatural quickness, wrenching the [MediumDesc of S] out of your hand as [he of M] roughly grabs you by the chin. Your head tingles as [he of M] forces you to look [him of M] in the eye, and you stop resisting as you lose yourself in [his of M] gaze.";
 		now M is retaining S;
 		now the stake of M is the throne;
 	otherwise:
-		say DominanceIntro of M.
+		say "You grab [NameDesc of M] by the wrists and force [him of M] [if guest bed is in the location of the player or master bed is in the location of the player]onto the bed. [otherwise]to the ground. [end if][big he of M] catches your eye as you [if lady fetish is 2]pull [his of M] loincloth aside[otherwise]lift up [his of M] skirt[end if], and your head begins to tingle as you get lose yourself in [his of M] gaze. [run paragraph on]".
 
 To compute failed dominance punishment of (M - vampiress):
 	let V be a random off-stage vampiric fangs;
 	let F be player-fucker;
-	if V is actually summonable and M is not willing to do vaginal:[if she's starved she skips straight to sex]
+	if F is fuckhole or the player is getting unlucky or M is willing to do vaginal:[if she's starved or you tried to ride her, she skips straight to the sex]
+		let R be a random number between 1 and 3;
+		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, pulling you into [his of M] embrace as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F].[line break][speech style of M]'Don't worry, darling, just focus on enjoying yourself. I'll handle everything.'[roman type][line break]";
+		now M is penetrating F;
+		set up sex length of M in F;
+		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] fucks you with gentle thrusts.";
+		now another-turn is 1;
+	otherwise if V is actually summonable and F is face or the player is getting very unlucky:[if you tried to "stake" her or you're just super unlucky, she punishes you]
 		say "[BigNameDesc of M] never breaks eye contact as you lie down next to [him of M], [if face is not actually occupied]kissing you passionately[otherwise]peppering kisses around your mouth[end if] as [he of M] pulls you into [his of M] embrace.[line break][speech style of M]'You've been bad, [NameBimbo]. But if you become my thrall, I won't have to punish you.'[roman type][line break][big he of M] grazes your neck with [his of M] fangs, and you realize [he of M]'s asking for permission to suck your blood.";
 		if the player is consenting:[Bloodsucking may squick some people, so the player has to choose it explicitly]
 			say "You feel a jolt of pain as [his of M] fangs pierce your neck, but thankfully it's over with quickly. [NameDesc of M] kisses you on the cheek, blood running down [his of M] chin as [he of M] gets to [his of M] feet. [line break][speech style of M]'Consider myself my newest fledgling. As long as you have enough semen in your diet, you should enjoy it immensely. See you later, darling!'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.";
 			reset vampire hunger;
-			reset vampire hunger;[she may not like the taste, but she gets more from drinking your blood]
 			summon V cursed;
 			follow the vampire rules;
+			Calm M;
 		otherwise:
 			say "Pain pierces through your skull as [NameDesc of M] climbs to [his of M] feet. [line break][speech style of M]'Oh well. I prefer the new way anyway.'[roman type][line break]";
-			PainUp 3;
+			PainUp 2;
 		Bore M;
-	otherwise if F is fuckhole:
-		let R be a random number between 1 and 3;
-		say "[BigNameDesc of M] never breaks eye contact as you sit down in [his of M] lap, guiding [his of M] [LongDickDesc of M] into your [variable F] as [he of M] pulls you into [his of M] embrace. [line break][speech style of M]'Don't worry, darling, I can take care of everything. You just focus on enjoying yourself.'[roman type][line break]The ease with which [he of M] took control completely shatters your confidence, [if R is 1]but the thought quickly fades, leaving you with nothing to think about but [NameDesc of M] as [he of M] begins to thrust[otherwise if R is 2]making it that much easier to accept your place as [NameDesc of M] begins to thrust[otherwise]but it's quickly replaced with enthusiasm for what [NameDesc of M] has in store for you as [he of M] begins to thrust[end if].";
-		strongHumiliate;
-		if R is 1, IntDown 1;
-		if R is 2, DelicateUp 2;
-		if R is 3, SexAddictUp 3;
-		now M is penetrating F;
-		set up sex length of M in F;
 	otherwise:
+		say "[line break][speech style of M]'Better luck next time, darling. I'm rooting for you!'[roman type][line break]";
 		compute sissification;
-		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place. [big he of M]licks [his of M] lips as [he of M] strokes [his of M] hardening [DickDesc of M].";
-		now another-turn is 1.
+		Bore M.
 
-To say DominanceSuccess of (M - vampiress):
-	if player-fucker is penis:
-		oral dominate M;
-	otherwise if player-fucker is face:
-		female dominate M;
-	otherwise:
-		say DominanceIntro of M;
-		now refactoryperiod is 1;
-		bottom dominate M.
-
-To female dominate (M - vampiress):
+To unique dominate (M - vampiress):
 	let S be the stake of M;
 	now M is retaining S;
-	say "You get behind [NameDesc of M] before [he of M] realizes what's happening and immediately jam the [MediumDesc of S] right up [his of M] ass. [line break][speech style of M]'[one of]H-how did you...my weakness...'[or]A s-stake? Damn it...'[or]N-not again...M-my ass is...'[at random][roman type][line break][BigNameDesc of M] stumbles away from you, unsteady on [his of M] feet.";
+	say "You get behind [NameDesc of M] before [he of M] realizes what's happening and immediately jam the [MediumDesc of S] right up [his of M] ass. [line break][speech style of M]'[one of]My weakness...[or]A s-stake? Oh SHIT![or]H-how did you find out m-my...[at random] A-aah...AAAAAH!'[roman type][line break][BigNameDesc of M] screams with pleasure as [his of M] [LongDickDesc of M] immediately jumps to erection, twitching and spasming as it shoots long ropes of [semen] across the floor.";
+	orgasm M;
+	FavourDown M by 5;
 	now player-fucking is DOMINANT-SUPER.
 
 To oral dominate (M - vampiress):[You 'feed' the vampiress]
-	let R be a random number between the intelligence of the player and 0;
-	let D be the difficulty of M / 2;
-	if the stake of M is wood-dong, now D is -99;
+	let C be a random bottom level protection clothing;
+	let R be mental semi-dominance roll for M;
+	if the stake of M is wood-dong, now R is 1;
 	if sexual-penis-length > 8:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] stares up at you hungrily as you bring your [SexDesc of penis] to hardness, eagerly opening [his of M] mouth so your [sexual-player-penis] slides right in. [big he of M] touches [himself of M] as you roughly fuck [his of M] face, [his of M] tongue stroking the underside of your shaft as your balls slap [his of M] chin. [big his of M] eye contact never wavers, and as tiny bursts of pleasure creep down your length, you realize how difficult it is to look away. [if R < D]You don't want to look away anyway, and you lose yourself in [his of M] gaze as you jizz straight down [his of M] throat.[otherwise]You shove [him of M] way, and deciding that [he of M]'s too eager for a mouthful, finish yourself off all over the floor[end if]";
+		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] meets your gaze as you [if C is clothing and C is not strapon-panties]pull out your [SexDesc of penis], [otherwise if penis is penis-erect]stroke your [SexDesc of penis], [otherwise]bring your [SexDesc of penis] to hardness, [end if]opening [his of M] mouth so you can slide it right in. You were planning to be rough with [him of M] at first, but you end up letting [him of M] do most of the work instead, staring deeply into [his of M] eyes as [he of M] takes your [SexShaft] down [his of M] throat. [big his of M] eye contact never wavers, and as tiny bursts of pleasure creep up your length, you realize how difficult it is to look away.[if R <= 0]Your head tingles as you suddenly lose control, groaning with pleasure as you fill [his of M] belly with [semen].[otherwise][big he of M]'s clearly a little too eager for a mouthful, so you shove [him of M] away and finish yourself off all over the floor.[end if]";
 		BlowGet;
 		obsceneDignify;
-		if R < D:
+		if R <= 0:
 			reset vampire hunger;
 			say AfterDominationComment 1 of M;
 		otherwise:
@@ -924,9 +904,9 @@ To oral dominate (M - vampiress):[You 'feed' the vampiress]
 			say AfterDominationComment 0 of M;
 		orgasm;
 	otherwise if sexual-penis-length > 3:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] stares at you as [he of M] eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realize how difficult it is to look away. [if R < D]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet.[otherwise]You think of a way to make looking at [him of M] even more fun, pushing [him of M] off and ejaculating all over [his of M] face[end if][if R < D and face is not actually occupied]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < D]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
+		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], fondling your balls as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realize how difficult it is to look away. [if R <= 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R <= 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R <= 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
 		BlowGet;
-		if R < 0:
+		if R <= 0:
 			if face is not actually occupied:
 				if futanari fetish is 1 or lady fetish is 2, StomachSemenUp 1;
 				otherwise SemenAddictUp 1;
@@ -943,10 +923,10 @@ To oral dominate (M - vampiress):[You 'feed' the vampiress]
 		reset vampire hunger;
 		orgasm;
 	otherwise:
-		if D < 0:
+		if R <= 0:
 			now player-fucking is DOMINANT-NEUTRAL;
 			if futanari fetish is 1 or lady fetish is 2:
-				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you shoot your load in [his of M] mouth. [BigNameDesc of M] gives you an expectant look as [he of M] swallows, and you are suddenly overcome with an urge to get on your knees [if face is not actually occupied]and wrap your lips around [his of M] [LongDickDesc of M]. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you with a big load straight down your throat.[otherwise]wrap your hands around [his of M] [LongDickDesc of M]. You don't really see what's dominant about it, but it's exhilarating to pleasure your mistress, and eventually [he of M] rewards you with a big load all over your face.[end if]";
+				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you cover [his of M] tongue with fresh [semen]. [BigNameDesc of M] swallows your [load] as [he of M] returns to [his of M] feet, and you are suddenly overcome with an urge to get on your knees [if face is not actually occupied]and wrap your lips around [his of M] [LongDickDesc of M]. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you with a big load straight down your throat.[otherwise]wrap your hands around [his of M] [LongDickDesc of M]. You don't really see what's dominant about it, but it's exhilarating to pleasure your mistress, and eventually [he of M] rewards you with a big load all over your face.[end if]";
 				BlowGet;
 				if face is not actually occupied:
 					BlowCount;
@@ -954,14 +934,14 @@ To oral dominate (M - vampiress):[You 'feed' the vampiress]
 				otherwise if bukkake fetish is 1:
 					CumFaceUp the semen load of M;
 				otherwise:
-					SemenAddictUp 2;
+					OralSexAddictUp 1;
 			otherwise:
-				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you shoot your load in [his of M] mouth. [BigNameDesc of M] gives you an expectant look as [he of M] swallows, and you are suddenly overcome with an urge to get on your knees and bury your face in [his of M] crotch. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you by noisily cumming all over your face.";
-				SemenAddictUp 2;
+				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm and you lose yourself in [his of M] gaze as you cover [his of M] tongue with fresh [semen]. [BigNameDesc of M] swallows your [load] as [he of M] returns to [his of M] feet, and you are suddenly overcome with an urge to get on your knees and bury your face in [his of M] crotch. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you by noisily cumming all over your face.";
+				OralSexAddictUp 1;
 			say AfterDominationComment 2 of M;
 			trivialDignify;
 		otherwise:
-			say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and sensation explodes down your length as you shoot your load into [his of M] mouth.";
+			say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and sensation explodes down your length as you cover [his of M] tongue with fresh [semen].";
 			slightDignify;
 			say AfterDominationComment 1 of M;
 		orgasm;
@@ -972,43 +952,36 @@ To say AfterDominationComment (N - a number) of (M - vampiress):
 	if N is 1, say "[speech style of M]'[one of]Delicious. Next time, I'll milk it out myself!'[or]Mmm, I bet it would taste even better if I milked it out!'[or]It's always fun to have it from the tap every once in a while.'[in random order][roman type][line break]";
 	if N is 2, say "[speech style of M]'[one of]'Dinner was wonderful, darling[or]So delicious, I couldn't eat another bite[or]I feel full[in random order], but don't worry I'll be back later for more.'[roman type][line break]".
 
-To bottom dominate (M - vampiress):
+To ride dominate (M - vampiress):
+	now refactoryperiod is 1;[prevents player from orgasming too early in the scene]
 	let F be player-fucker;
 	let C be a random worn chastity cage;
 	let G be the openness of F - the girth of M;
-	say "You hiss in pleasure as you [if G > 2]slide [his of M] shaft into your hungry[otherwise if G > -2]push [his of M] shaft into your[otherwise]ease [his of M] shaft into your[end if] [variable F].";
 	now M is penetrating F;
+	say "You grab [NameDesc of M] by the wrists and force [him of M] [if guest bed is in the location of the player or master bed is in the location of the player]onto the bed[otherwise]to the ground[end if]. [big he of M] catches your eye as you [if lady fetish is 2]pull [his of M] loincloth aside[otherwise]lift up [his of M] skirt[end if], and it becomes a little hard to think as your neck begins to tingle. Luckily, the feeling seems to pass. You climb ontop of [him of M], emitting a little hiss of pleasure as you [if G > 2]slide [his of M] shaft into your hungry[otherwise if G > -2]guide [his of M] shaft into your[otherwise]ease [his of M] shaft into your[end if] [variable F].";
 	ruin F;
 	now refactoryperiod is 0;
-	say "[if the soreness of F > 6]Your recent ordeals have left you pretty sensitive, and the sensation of [him of M] entering you very nearly pushes you over the edge. [NameDesc of M] catches your eye as you struggle to acclimate to [his of M] [LongDickDesc of M], and once again you feel a tingle[otherwise]Your enthusiasm takes its toll on your hole and you pause for a second as you struggle to acclimate to the [LongDickDesc of M]. [NameDesc of M] catches your eye as you as you adjust your position, once again you feel a tingle[end if]near the back of your neck.";
-	check ride dominate of M;
-	if refactoryperiod > 0 and the player is possessing a penis:[You came and you have a penis]
-		say "[line break]Your [manly-penis] shoots a few ropes of [semen] across [his of M] belly, leaving a clear indicator of the shameful nature of your orgasm even as you twist out of [his of M] grip and jump off [him of M]. You pant heavily as [he of M] scoops it up and licks it off [his of M] fingers. [run paragraph on]";
-		reset vampire hunger;
-	otherwise if refactoryperiod > 0:[You came and you don't have a penis. Should account for TG]
-		say "[line break]You twist out of [his of M] grip, jumping off [him of M] as [if player-fucker is asshole and previous penis length > 0][he of M] scoops up the creamy remnants of your last ever male orgasm and licks them off [his of M] fingers[otherwise][he of M] use [his of M] fingers (and [his of M] mouth) to clean your feminine juices off [his of M] belly[end if]. [run paragraph on]";
-		reset vampire hunger;
-	otherwise:[player didn't cum.]
-		say "[line break]You twist out of [his of M] grip and jump off [him of M], [if the delicateness of the player < 8]shaken[otherwise]excited[end if] at how easy it was for [him of M] to take control. [run paragraph on]";
-	say "[if the refactory-period of M <= 0][BigNameDesc of M] gently jerks [himself of M] off, keeping [himself of M] hard[otherwise if M is wrapped][BigNameDesc of M] peels off the condom[otherwise][BigNameDesc of M]'s [semen] slowly seeps out of your [variable F][end if] as you ponder whether or not to continue. [if the refactory-period of M > 0 and refactoryperiod > 0]You both came already, but yours was a shameful orgasm, and there might be no other way to salvage your dignity[otherwise if refactoryperiod > 0]You already came, but it was a shameful orgasm, and you're not sure there's any other way to salvage your dignity[otherwise]You've yet to cum, but you don't know what could happen if you get carried away again[end if]. Keep going?";
-	if the player is bimbo consenting:[Yes, continue]
+	now the refactory-period of M is 0;[so we know who came and who didn't]
+	say "[if the soreness of F > 6]Your recent ordeals have left you pretty sensitive, and the sensation of [him of M] entering you very nearly pushes you over the edge. You once again find yourself looking into [NameDesc of M]'s eyes as you struggle to acclimate to [his of M] [LongDickDesc of M], [otherwise]Your enthusiasm takes its toll, and you pause for a second as you struggle to acclimate to [his of M] [LongDickDesc of M]. You once again find yourself looking into [NameDesc of M]'s eyes as you adjust your position, [end if]and you feel [one of]a familiar[or]the familiar[stopping] tingle near the back of your neck.";
+	compute ride dominate checkpoint of M;
+	let R be the refactory-period of M;
+	say "[line break][BigNameDesc of M] smirks, calmly [if M is wrapped and R > 0]adjusting [his of M] condom[otherwise if R > 0]jerking [himself of M] off[otherwise if M is wrapped]peeling off the used condom and replacing it with a new one[otherwise]'maintaining' [his of M] erection[end if] as you struggle to regain your composure. [line break][speech style of M]'I admit what I did was selfish, but you aren't planning to stop are you? You aren't finished dominating me!'[roman type][line break]Well, that [he of M]'s proven how easily [he of M] can take over, it might be too risky to continue. Do you want to cut your losses? ";
+	if the player is bimbo consenting:
 		say "Wary of [him of M] trying to take control again, you turn around and plop yourself down on [his of M] face. [big he of M] doesn't hesitate to let [his of M] tongue slip into your [if M is unwrapped and the refactory-period of M > 0]creampied [end if][variable F], playing with [himself of M] as [his of M] spit soothes your [if the soreness of F > 6]ravaged [otherwise]sore [end if][if player-fucker is asshole]sphincter[otherwise]entrance[end if]. [if the delicateness of the player < 5][big he of M] definitely doesn't deserve a reward after the little stunt [he of M] pulled, and you glance over your shoulder disdainfully as you move to stop [him of M][otherwise if the delicateness of the player < 11][big he of M] isn't doing anything wrong, but you need to put your foot down and make sure [he of M] knows [he of M] can't do whatever [he of M] wants. You glance over your shoulder as you move to stop [him of M][otherwise][big he of M]'s already established that [he of M] can do anything [he of M] wants, but you're still holding out hope that you maintain control over the situation. You glance over your shoulder as you move to stop [him of M][end if]. Your eyes meet, and you feel the now familiar tingle near the back of your neck.";
-		check sitting dominate of M;
-		compute bottom dominate aftermath of M;
+		compute ride dominate continue of M;
+		compute ride dominate aftermath of M;
 	otherwise:[No, don't continue]
 		moderateHumiliate;
-		compute bottom dominate aftermath of M.
+		compute ride dominate aftermath of M.
 
-To check ride dominate of (M - vampiress):
+To compute ride dominate checkpoint of (M - vampiress):
 	let F be player-fucker;
 	let U be a random guest bed in the location of the player;
 	unless U is furniture, now U is a random master bed in the location of the player;
 	let G be the openness of F - the girth of M;
-	let X be a random number between 0 and the intelligence of the player;
-	let D be the difficulty of M / 2;
-	if the stake of M is wood-dong, now D is -99;
-	if debugmode > 0, say "[input style]Vampiress riding check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
-	if X <= D:[She makes you ride her really hard]
+	let R be mental semi-dominance roll for M;
+	if the stake of M is wood-dong, now R is 1;
+	if R <= 0:[She makes you ride her really hard]
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;
 		say "You're unable to look away from [him of M] as [he of M] begins to thrust into you, and you find yourself perfectly matching [him of M] in both pace and intensity as you pick up speed. [if G > 2]It's nothing you can't handle, but your body refuses to slow down[otherwise if G > -2]It's a little more than you can handle, but your body refuses to slow down[otherwise]It's far more than you can handle, but your body refuses to slow down[end if], leaving you helpless as the soreness slowly begins to build. [BigNameDesc of M], on the other hand, enjoys [himself of M] thoroughly, [if U is furniture]gripping the sheets[otherwise]digging [his of M] claws into the ground[end if] as you breathlessly bounce on [his of M] [DickDesc of M]. [big he of M] grabs your waist as [his of M] voice grows ragged, and your body once again refuses to listen to your commands as [he of M] begins to fuck you for real. You are unable to resist as [his of M] [DickDesc of M] spasms, [if M is wrapped]filling the condom with several spurts of [semen][otherwise]shooting several spurts of [semen] directly into your [variable F][end if].";
@@ -1020,18 +993,20 @@ To check ride dominate of (M - vampiress):
 		say "The feeling passes as you slowly begin to move your hips, carefully maintaining your pace to keep yourself from getting sore. [if G > 2]It doesn't take long for you to settle into a strong rhythm[otherwise if G > -2]It takes a while, but you eventually settle into a good rhythm[otherwise]It takes a while for you to get used to, but eventually you settle into a nice, steady rhythm[end if] of bouncing on [his of M] [DickDesc of M]. [NameDesc of M] responds appreciatively as you bring up the intensity, tweaking [his of M] nipples and biting [his of M] lip as [he of M] begins to meet you with gentle thrusts. You appreciate it at first, but [he of M] gets carried away, and [he of M] suddenly grabs your waist as [he of M] begins to fuck you for real.";
 		now player-fucking is DOMINANT-NEUTRAL;
 		Ruin F times 1;
+	if refactoryperiod > 0:
+		say "[big he of M] catches your [if the size of penis > 0]load in [his of M] hand, winking at you as [he of M] slurps your [semen][otherwise]juices in [his of M] hand, winking at you as [he of M] slurps your femcum[end if] off [his of M] fingers. Only then does [he of M] allow you to get up.";
+		reset vampire hunger;
+	otherwise:
+		say "[big he of M] can't hold onto you for very long, though, and you get up after forcing [him of M] to relax [his of M] grip.";
 	if F is asshole, AnalCount;
 	otherwise FuckCount.
 
-To check sitting dominate of (M - vampiress):
+To compute ride dominate continue of (M - vampiress):
 	let F be player-fucker;
 	let G be the openness of F - the girth of M;
-	let D be the difficulty of M / 2;
-	if the refactory-period of M > 0, decrease D by 5;[if she already hypnotized you, the second time is less likely]
-	if the stake of M is wood-dong, now D is -99;
-	let X be a random number between 0 and the intelligence of the player;
-	if debugmode > 0, say "[input style]Vampiress sitting check:[line break][X] (intelligence roll) vs [D] (vampiress modified difficulty)[line break]Is [X] <= [D]?[roman type]";
-	if X <= D:[She makes you give her round 2]
+	let R be mental semi-dominance roll for M;
+	if the stake of M is wood-dong, now R is 1;
+	if R <= 0:[She makes you give her round 2]
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;
 		say "You are immediately overcome with an urge to get up, turn around and lie down on top of [him of M]. [big he of M] stares deeply into your eyes as [he of M] pulls you into [his of M] arms, and it becomes clear to you that this is what dominance was all along. The bottom does the fucking, and the top gets fucked. Hard. That's the way it's always been, darling. You [italic type]dominantly[roman type] bite your lip as [he of M] [if M is wrapped]lays the old condom across your ass and unrolls a new one down [his of M] shaft[otherwise]prods your entrance with [his of M] rock hard [DickDesc of M], smearing it with slippery precum[end if]. [line break][speech style of M]'Are you ready, darling? To dominate me?'[roman type][line break][big he of M] purrs, [italic type]submissively[roman type] running [his of M] tongue along the nape of your neck. You respond with [if face is not actually occupied]desperate[otherwise]muffled[end if] moan, [italic type]dominantly[roman type] spreading your [AssDesc] as [he of M] slowly [if G > 2]slides[otherwise if G > -1]pushes[otherwise]squeezes[end if] [his of M] [LongDickDesc of M] back into your [variable F]. Whether [he of M] takes you for minutes, hours, moments, or even days, you do not know. All you know is that you are [italic type]dominant[roman type], [he of M] is [italic type]submissive[roman type], and it is utterly impossible to turn away from [his of M] gaze. After no time at all, or perhaps an eternity, you [italic type]dominantly[roman type] wrap your legs around [his of M] waist, [if player is male]spewing your load across [his of M] belly and [end if]clenching around [him of M] as [he of M] thoroughly empties [his of M] balls into [if M is wrapped]condom[otherwise]your [variable F][end if].";
@@ -1055,7 +1030,7 @@ To check sitting dominate of (M - vampiress):
 			orgasm;
 			reset vampire hunger.
 
-To compute bottom dominate aftermath of (M - vampiress):
+To compute ride dominate aftermath of (M - vampiress):
 	let V be vampiric fangs;
 	if player-fucker is asshole and V is actually summonable and the refactory-period of M > 0 and M is unwrapped:
 		say "[BigNameDesc of M] sits up.[line break][speech style of M]'That was a wonderful change of pace, darling. You may not have noticed, but when I came inside you, I turned you into my newest fledgling. Don't be surprised if you have insatiable cravings for the essence of the living!'[roman type][line break]You check your mouth and, sure enough, fangs have grown where your canine teeth once were.";
@@ -1078,17 +1053,14 @@ To replace (M - vampiress) after domination:
 		regionally place M.
 
 To compute successful dominance of (M - vampiress):
-	if player-fucking is DOMINANT-SUPER:
-		say "[line break][BigNameDesc of M] seems weakened! This could be your chance to finally defeat [him of M]!";
 	if player-fucking is not DOMINANT-SHAMEFUL:
 		compute unique dominance reward of M;
-	if player-fucking is DOMINANT-DOMINANT:
+	if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER:
 		DominateUp M;
 		say "[line break][BigNameDesc of M] transforms into a hoard of rats, which quickly scurry out of sight. [line break]You feel more [if the player is male]manly[otherwise]dominant[end if]!";
 	otherwise:
 		IntDown 1;
 		say "[line break][BigNameDesc of M] kisses you on the cheek and confidently walks away.[line break]You look forward to the next time you can please your [if lady fetish is 2]master[otherwise]mistress[end if]...".
-
 
 Part 4 - Conversation
 
@@ -1168,7 +1140,7 @@ To say StoryAnswer of (M - vampiress):
 	say "[speech style of M]'[one of]As I might have told you, I can't remember for sure, I originally came from Rome. When I was turned, Trajan was still emperor... He was a damned fine one too. But, I digress.'[or]In case you wondered, yes, I used to feast on blood. And, for the record, people tasted better before industrialization. In addition to the pure cruelty of sucking people dry, it was all of the processed food that led me to switch from blood to cum... Though, truth be told, cum used to taste better as well. When all else fails, at least there's pineapple.'[or]When I was younger, I served as a vestal virgin... If they could only see me now!'[or]Why am I here? I found out about this little game and decided it might be amusing. I fucked the creator, manipulated them into letting me in and they don't even remember me doing it!'[as decreasingly likely outcomes][roman type][line break]".
 
 To say EscapeAnswer of (M - vampiress):
-	say "[speech style of M]'I suppose you can leave this place any time you like. Just find the front door and walk out. [if M is annoyed] But, you'll stay awhile, won't you? I'd love to have you for dinner...'[otherwise]Now getting back to your home... That's the real question, isn't it?'[end if][roman type][line break]".
+	say "[speech style of M]'I suppose you can leave this place any time you like. Just find the front door and walk out. [if M is annoyed] But, you'll stay a while, won't you? I'd love to have you for dinner...'[otherwise]Now getting back to your home... That's the real question, isn't it?'[end if][roman type][line break]".
 
 To say AdviceAnswer of (M - vampiress):
 	say "[speech style of M]'[one of]I'm not the only dead thing here, just to warn you. The ghosts here can be quite annoying.'[or]I'd avoid the cultists if I were you. There's a price to be paid for the things that they engage in... But then again, there's a price for just about everything, isn't there?[or]The owners of this house had an odd sense of humor. You might want to avoid the mirrors, and some of the chests are not quite what they seem.'[at random][roman type][line break]".

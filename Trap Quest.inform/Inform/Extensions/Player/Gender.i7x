@@ -2,12 +2,12 @@ Gender by Player begins here.
 
 Definition: yourself is originally female rather than originally male if original-player-gender is 1.
 
-
 Definition: a person is presenting as male:
-  if lady fetish is 2, decide yes;
-  if it is male and lady fetish is 0, decide yes;
-  decide no.
-Definition: yourself is presenting as male if the player is gendered male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3.
+	if lady fetish is 2, decide yes;
+	if it is male and lady fetish is 0, decide yes;
+	decide no.
+
+Definition: yourself is presenting as male if transGender is 0 and the player is male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3.
 Definition: a person is presenting as female if it is not presenting as male.
 
 Definition: yourself is gendered female:
@@ -46,7 +46,7 @@ To SexChange (P - a person):
 To ReverseSexChange (P - a person):
 	if the player is female and sex-changed < 2 and the virgin of the player is 1:[Failsafe. If either of the latter two conditions are true, this shouldn't even trigger.]
 		now the player is male;
-		if there is a worn chastity cage:
+		if there is a worn chastity cage and min penis size > 0:
 			say "Your chastity belt morphs into a tight, snug chastity cage. [run paragraph on]";
 		if the player is a flatchested trap or diaper quest is 1:
 			if the silicone volume of breasts > 0:[breast implants are irreversible]
@@ -89,4 +89,3 @@ To SexChange (C - a clothing):
 	do nothing.
 
 Gender ends here.
-

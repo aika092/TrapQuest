@@ -1,6 +1,5 @@
 Wooden Horse Traps by Traps begins here.
 
-
 A wooden horse is a kind of trap. The text-shortcut of a wooden horse is "wdh". The printed name of wooden horse is "[TQlink of item described]wooden horse[TQxlink of item described][verb-desc of item described]".
 
 Figure of wooden horse is the file "Env/Forest/horse1.png".
@@ -21,13 +20,11 @@ To compute turn trap effect of (T - a wooden horse):
 	if T is penetrating a fuckhole:
 		compute horse effect of T.
 
-
 Section 1 Painted Horse Trap
 
 A painted horse is a kind of wooden horse. There are 3 potentially pressure potentially sticky painted horses. Understand "button", "buttons" as painted horse.
 To say ExamineDesc of (C - a painted horse):
 	say "A large block of triangular wood that ends in a thin point at the top. A carved block of wood sits at the front, painted to make it resemble an actual horse. On top of the horse's head are 5 buttons. [5 - the number of entries in list of possible horse effects] buttons have already been pressed.".
-
 
 Check pushing painted horse:
 	try HorsePressing the noun instead;
@@ -81,7 +78,6 @@ Carry Out HorsePressing:
 
 Understand "press [something]", "push button on [something]", "press button on [something]", "pr [something]" as HorsePressing.
 
-
 The horse-vibrations, the horse-alarm, the horse-disable, the horse-cuffs, the horse-blade and the horse-hair are things.
 
 [!<listOfPossibleHorseEffects:ListOfThings>*
@@ -133,16 +129,7 @@ To compute horse effect of (T - a painted horse):
 	if W < 3, now W is 3;
 	let R be a random number between -1 and W;
 	if horse-alarm is listed in the list of current horse effects:
-		repeat with M running through nearby uninterested monsters:
-			now the sleep of M is 0;
-			if M is unfriendly:
-				if the boredom of M is 0, now M is interested;
-				if M is interested, say "The nearby [M] seems to notice the wooden horse's 'alarm' and heads your way...";
-		repeat with M running through uninterested monsters in the location of the player:
-			if M is asleep:
-				now the sleep of M is 0;
-				say "[BigNameDesc of M] wakes up!";
-			check perception of M;
+		now magnetism-timer is 1;
 	if horse-vibrations is listed in the list of current horse effects and W > 2:
 		say "The vibrations of the wooden horse continue to overstimulate your [asshole][if the player is possessing a vagina] and [vagina][end if].";
 		if the player is possessing a vagina:
@@ -156,7 +143,6 @@ To compute horse effect of (T - a painted horse):
 To compute horse pain:
 	say "You can't help but cry as the pressure on your [player-crotch] continues to cause you huge amounts of pain!";
 	PainUp 1.
-
 
 [To compute horse fainting:
 	if the soreness of asshole is 10 and the player is male and a random number between 1 and 4 is 1 and the delicateness of the player > 15:
@@ -177,7 +163,6 @@ To compute horse pain:
 		otherwise if the soreness of vagina < 10:
 			increase the soreness of vagina by 1;
 			say "The pressure on your [vagina] is making it steadily more sore!".]
-
 
 Section 2 Wild Horse Trap
 
@@ -267,7 +252,4 @@ Carry Out horsePulling:
 	otherwise:
 		say "You pull hard on the bit, but the horse doesn[']t leave its path, the pre-recorded galloping sound continuing to play as it rounds the clearing.".
 
-
-
 Wooden Horse Traps ends here.
-

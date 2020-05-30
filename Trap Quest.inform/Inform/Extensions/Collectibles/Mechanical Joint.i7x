@@ -1,6 +1,5 @@
 Mechanical Joint by Collectibles begins here.
 
-
 A mechanical joint is a kind of monster-drop. There are 7 mechanical joints. The printed name of mechanical joint is "[TQlink of item described]mechanical joint[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of mechanical joint is "[TQlink of item described]mechanical joints[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of mechanical joint is "mj". Figure of mechanical joint is the file "Items/Collectibles/joint1.png".
 
 To decide which figure-name is the examine-image of (C - a mechanical joint):
@@ -15,4 +14,3 @@ To say ShortDesc of (C - a mechanical joint):
 	say "mechanical joint".
 
 Mechanical Joint ends here.
-

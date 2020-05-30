@@ -27,6 +27,7 @@ To compute furniture resting on (F - med bay bed):
 		otherwise if the breast-enhancement of nurse > 0:
 			compute med bay breast enhancement;
 			decrease the breast-enhancement of nurse by 1;
+			if the breast-enhancement of nurse is 0, now the breast-enhancement of nurse is -1; [this is how we flag that the player had a breast enhancement]
 			now auto is 1;
 			try standing;
 			now auto is 0;
@@ -99,4 +100,3 @@ To compute med bay breast enhancement:
 	say "[if the largeness of breasts > B and artificial enhancements fetish is 1]You now have [BreastDesc][otherwise]Your breasts feel noticeably bigger[end if]![line break][speech style of nurse]'Oh wow don't they look amazing? You must be very proud!'[roman type][line break]After that, [NameDesc of nurse] unbuckles the straps holding you down and allows you to leave.".
 
 Med Bay Bed ends here.
-

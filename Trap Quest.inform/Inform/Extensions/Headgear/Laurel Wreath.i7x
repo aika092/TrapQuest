@@ -1,6 +1,5 @@
 Laurel Wreath by Headgear begins here.
 
-
 laurel wreath is a headgear. laurel wreath is biological. Figure of laurel wreath is the file "Items/Accessories/Head/laurelwreath1.png". laurel wreath is blondeness-positive. laurel wreath is brightness-positive. laurel wreath is redness-positive. laurel wreath is hair growing. laurel wreath is vaginal-sex-addiction-influencing.
 
 Definition: laurel wreath is roleplay if pregnancy fetish is 1 and the player is originally female.
@@ -11,7 +10,6 @@ Definition: laurel wreath is pregnancy related: decide yes.
 Definition: laurel wreath is brown themed: decide yes.
 
 The printed name of laurel wreath is "[clothing-title-before]laurel wreath[clothing-title-after]". The text-shortcut of laurel wreath is "lw".
-
 
 To decide which figure-name is the clothing-image of (C - laurel wreath):
 	decide on figure of laurel wreath.
@@ -25,7 +23,6 @@ To say ShortDesc of (H - laurel wreath):
 To compute SelfExamineDesc of (H - laurel wreath):
 	let X be the largeness of hair;
 	say "You are wearing a divine laurel wreath in your [ShortDesc of hair]. ".
-
 
 Chapter - Class Outfit
 
@@ -69,7 +66,6 @@ To compute class outfit of (H - laurel wreath):
 		now fertility-summoned is 2;
 		now the raw-magic-modifier of I is childValue times 5.
 
-
 Chapter - Quest
 
 To uniquely set up (C - laurel wreath):
@@ -91,6 +87,4 @@ To uniquely destroy (C - laurel wreath):
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your body, [if X > 1]significantly [end if]improving your speed!";
 		DexUp X.
 
-
 Laurel Wreath ends here.
-

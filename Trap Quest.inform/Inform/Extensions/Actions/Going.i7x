@@ -119,7 +119,7 @@ Carry out going up (this is the hotel-setup rule):
 		if Hotel01 is unplaced:
 			set up the hotel;
 			follow the setting up hotel monsters rules;
-			repeat with M running through alive nonsetup monsters:
+			repeat with M running through alive nonexistant monsters:
 				set up M.
 			[deploy a random off-stage camera trap in the location of HotelBedPatrons;]
 
@@ -132,9 +132,8 @@ Carry out going up (this is the woods-setup rule):
 	if the player is in Stairwell01 and Woods01 is unplaced:
 		Set Up The Woods;
 		follow the setting up woods monsters rules;
-		repeat with M running through alive nonsetup monsters:
+		repeat with M running through alive nonexistant monsters:
 			set up M.
-
 
 [!<TheMansionSetUpRule>+
 
@@ -145,7 +144,7 @@ Carry out going up (this is the mansion-setup rule):
 	if the player is in Stairwell03 and Mansion00 is unplaced:
 		Set Up The Mansion;
 		follow the setting up mansion monsters rules;
-		repeat with M running through alive nonsetup monsters:
+		repeat with M running through alive nonexistant monsters:
 			set up M.
 
 [!<CheckGoingEastWhileThePlayerIsInHotel01>+
@@ -251,7 +250,6 @@ Definition: yourself is squirming:
 	if there is an insertable object penetrating a fuckhole, decide yes;
 	decide no.
 
-
 [!<movementReductionFlavSaid:Integer>*
 
 REQUIRES COMMENTING
@@ -310,6 +308,11 @@ To decide which number is the movement reduction of the player:
 				if movement-reduction-flav-said is false:
 					now movement-reduction-flav-said is true;
 					now T is the substituted form of "Your [if Hi >= 4]dangerous imbalance[otherwise if Hi >= 2]precarious imbalance[otherwise]lack of perfect balance[end if] in your [ShortDesc of H] is hindering your movement.";
+		if the football-possessor of football is the player:
+			increase X by 3;
+			if movement-reduction-flav-said is false:
+				now movement-reduction-flav-said is true;
+				now T is the substituted form of "Dribbling the football makes you move significantly less quickly!";
 	otherwise:
 		increase X by the crawling hindrance of the player;
 		if movement-reduction-flav-said is false:
@@ -344,7 +347,6 @@ To decide which number is the movement bonus of the player:
 	repeat with S running through speed clothing worn by the player:
 		increase X by 3;
 	decide on X.
-
 
 Part 2 - Tripping
 
@@ -467,7 +469,6 @@ The default trip flavour rule is listed last in the trip reasons rules.
 
 Part 3 - Main Going Function
 
-
 [This is a long function because the order of considerations is quite important here!]
 [!<CheckGoing>+
 
@@ -484,18 +485,19 @@ Check going:
 	let S be the strength of the player + 15;
 	if seconds is 0:
 		let L be the room noun from the location of the player;
-		repeat with ST running through revealed sprinkle traps in L:
-			unless ST is expired:
-				say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? ";
-				unless the player is in agreement, say "You change your mind." instead;
-		repeat with ST running through revealed hypno traps in L:
-			unless ST is expired:
-				say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? ";
-				unless the player is in agreement, say "You change your mind." instead;
-		repeat with ST running through revealed haunted mirror traps in L:
-			unless ST is expired:
-				say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? ";
-				unless the player is in agreement, say "You change your mind." instead;
+		if trap warning is 1:
+			repeat with ST running through revealed sprinkle traps in L:
+				unless ST is expired:
+					say "There is a sprinkler currently dispensing [SprinkleLiquid of ST] in that room, are you sure you want to try and go that way? ";
+					unless the player is in agreement, say "You change your mind." instead;
+			repeat with ST running through revealed hypno traps in L:
+				unless ST is expired:
+					say "There is a hypno trap currently displaying [hypno content of ST] in that room. Are you sure you want to try and go that way? ";
+					unless the player is in agreement, say "You change your mind." instead;
+			repeat with ST running through revealed haunted mirror traps in L:
+				unless ST is expired:
+					say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? ";
+					unless the player is in agreement, say "You change your mind." instead;
 		repeat with ST running through futanari slutty sisters in L:
 			unless ST is asleep or ST is off-stage or the wealth of the player < 20:
 				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
@@ -504,8 +506,11 @@ Check going:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0:
-		if the player is upright, allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
-		otherwise allocate 6 seconds;
+		if the player is upright:
+			allocate 3 seconds; [From this point on, movement takes 3 seconds and triggers a turn, even if it fails.]
+		otherwise:
+			allocate arm use; [one arm needed to crawl]
+			allocate 6 seconds;
 	repeat with M running through expectant monsters:
 		now the last-interaction of M is 0; [Naughty player, moving is not submissive! Monsters are not delayed by a going action.]
 	[The player has a chance of involuntarily standing up when super light and moving.]
@@ -641,8 +646,6 @@ This is the player trips on lever rule:
 			rule succeeds.
 The player trips on lever rule is listed in the clumsiness rules.
 
-
-
 [!<TheMonstersGoNextRule>+
 
 REQUIRES COMMENTING
@@ -657,7 +660,6 @@ Carry Out Going (this is the monsters-go-next rule):
 		repeat with M running through alive simulated monsters:
 			unless M is vine boss or M is in R, compute turn 2 of M;
 		if the noun is not up and the noun is not down, compute slow movement.
-
 
 previous-slow-movement-flavour is a text that varies.
 
@@ -698,7 +700,6 @@ To compute slow movement:
 				if playerRegion is Dungeon, say "You are shamefully aware of the lewd 'click-clack' that your [printed name of a random worn heels] make on the stone floor as you walk.";
 			otherwise if the semen coating of thighs > 4 and a random number from 1 to (15 - the semen coating of thighs) is 1:
 				say "You leave footprints of [semen] as you walk.".
-
 
 Definition: yourself is moving slowly:
 	let MR be the movement reduction of the player;
@@ -774,7 +775,6 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 			now C is unowned;
 		now flav-said is 1.
 
-
 Part 4 - Trap Triggers
 
 [!<ReportGoing>+
@@ -786,8 +786,6 @@ Report going:
 	Do important going resolution.
 
 To do important going resolution:
-	if map images > 0:
-		map-draw around the location of the player;
 	if an untriggered pressure trap is in the location of the player or an untriggered wire trap is in the location of the player or a sticky trap is in the location of the player:
 		now the room-entering of the player is 1;
 		choose a trap to trigger;
@@ -850,7 +848,6 @@ To Choose A Trap To Trigger:
 		if WasUpright is true and the player is prone and the location of the player is glue-puddled:
 			check glue tripping.
 
-
 [!<YourselfIsWalkingPastAStickyTrap>+
 
 REQUIRES COMMENTING
@@ -891,14 +888,13 @@ To Test a Sticky Trap:
 To say StickyTriggerFlav of (T - a trap):
 	say "As your hands hit the ground, you feel a pressure pad depress underneath them! [one of]That can't be good.[or]Oh dear...[or]Not again...[or]Dammit.[stopping]".
 
-
 [!<YourselfIsWalkingIntoAPressureTrap>+
 
 REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking into a pressure trap:
-	if the player is zeroG, decide no;
+	if the player is zeroG or the player is on tiptoes, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-opposite of the player, decide yes;
 	decide no.
@@ -909,7 +905,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is walking past a pressure trap:
-	if the player is zeroG, decide no;
+	if the player is zeroG or the player is on tiptoes, decide no;
 	repeat with T running through all untriggered pressure traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
@@ -942,7 +938,6 @@ To Test A Pressure Trap:
 			say "[bold type]As you crawl your hand touches a stone slab that starts to depress.[roman type] You fail to react in time and trigger a trap![line break]";
 			trigger a pressure trap.
 
-
 [!<TriggerAPressureTrap>+
 
 REQUIRES COMMENTING
@@ -963,8 +958,6 @@ To Trigger A Pressure Trap:
 				trigger T;
 				now N is 1.
 
-
-
 [!<YourselfIsWalkingIntoAWireTrap>+
 
 REQUIRES COMMENTING
@@ -984,7 +977,6 @@ Definition: yourself is walking past a wire trap:
 	repeat with T running through wire traps in the location of the player:
 		if the trap-direction of T is the travel-direction of the player, decide yes;
 	decide no.
-
 
 [!<TestAWireTrap>+
 
@@ -1050,6 +1042,4 @@ To Place Permanent Triggered Wire:
 		now W is not untriggered; [This is so in the future we prefer to trigger wire traps that aren't just tripwires.]
 		now W is revealed.
 
-
 Going ends here.
-

@@ -1,6 +1,5 @@
 Links by Miscellaneous Frontend begins here.
 
-
 Part 0 - Backend Hacky Stuff
 
 waitingForChar is initially false.
@@ -96,10 +95,7 @@ First for processing hyperlinks (This is the Aika char-inject with hyperlinks ru
 		rule succeeds;
 	continue the action.
 
-
-
 Part 1 - Basic Links
-
 
 To decide which number is linksCurrentlyEnabled:
 	if (links-disabled is true and inventory hyperlinks is 0) or (excessiveHyperlinks is 0 and inventory-busy is 0 and the focus-window is g-present and the clothing-focus-window is g-present and (the inventory-focus-window is g-present or the inventory-window is g-present) and the map-window is g-present), decide on 0;
@@ -123,7 +119,7 @@ To say TQlink of (T - a thing):
 
 A thing has a number called the link-disambiguation-ID.
 linkDisambiguationHighest is a number that varies.
-An advance counters rule (this is the reset link disambiguation rule):
+An all later time based rule (this is the reset link disambiguation rule):
 	if linkDisambiguationHighest > 0:
 		now linkDisambiguationHighest is 0;
 		repeat with T running through things:
@@ -147,7 +143,6 @@ To say TQxlink of (T - a thing):
 		increase disambiguation-ID-count by 1; [It seems to go up twice each time for no reason. Hence we do the halving thing.]
 	otherwise if inline hyperlinks >= 1 and the text-shortcut of T is not "":
 		say "[as]x [text-shortcut of T][end link]".
-
 
 [*<SayTQdlink>+
 
@@ -174,7 +169,6 @@ To say TQtlink of (T - a thing):
 	if inline hyperlinks >= 1 and the text-shortcut of T is not "", say "[as]ta [text-shortcut of T][end link]".
 
 Part 2 - Yes & No
-
 
 Definition: yourself is in agreement: [Some issues with hyperlinks and yes/no]
 	[if inline hyperlinks >= 1:
@@ -241,7 +235,7 @@ To conclude consenting:
 	if bigGameLoop is 0, refresh the map-window;
 	if bigGameLoop < 2, render buffered stuff.
 
-[Some things it'll be fun if the player can't say no after a while.]
+[Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
 Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
@@ -251,7 +245,7 @@ Definition: yourself is bimbo consenting:
 			decide yes;
 		decide no.
 
-[For some things the 'bimbo' answer is no.]
+[works the same as normal consenting, unless bimbo forces the player to say no. For some things the 'bimbo' answer is no.]
 Definition: yourself is reverse bimbo consenting:
 	if the player is consenting:
 		if the bimbo of the player >= a random number between 16 and 20:
@@ -287,7 +281,6 @@ To render YesNoButtons:
 		display the image Figure of NoButton in the map-window at X by Y with dimensions buttonSize by buttonSize;
 		set a graphlink in the map-window identified as hypermapno from X by Y to (X + buttonSize) by (Y + buttonSize) as "no";
 		draw a box lightModeFullRed in the map-window from X by Y to (X + buttonSize) by (Y + buttonSize) with 1 pixel line-weight, inset.
-
 
 Part 3 - Multiple Choice
 
@@ -377,12 +370,6 @@ To reset multiple choice questions:
 	repeat with R running through numerical-response:
 		now the printed name of R is "".
 
-
-
-
-
-
-
 Part 4 - VerbDescs
 
 [!<SayVerbDescOfThing>+
@@ -456,7 +443,7 @@ REQUIRES COMMENTING
 
 +!]
 To say displacelinks of (T - a clothing):
-	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is not not-top-displacable and T is worn top-placed nipple covering clothing] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is zippable and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is zippable] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
+	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is not not-top-displacable and T is worn actually breast covering clothing] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is zippable and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is zippable] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
 
 To say wipelinks of (T - a clothing):
 	if T is not worn and T is appropriate for cleaning and the semen-soak of T + the urine-soak of T + the milk-soak of T < the soak-limit of T:
@@ -551,7 +538,7 @@ To say unique-verb-desc of (T - a vine boss):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - a slimegirl):
+To say unique-verb-desc of (T - slimegirl):
 	if inline hyperlinks >= 2, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfDildoTrap>+
@@ -679,7 +666,7 @@ To say unique-verb-desc of (T - salve):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - salve of concealment):
+To say unique-verb-desc of (T - concealment-salve):
 	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is male][link][bracket]use[close bracket][as]rub [text-shortcut of T] on butthole[end link][otherwise][link][bracket]pussy[close bracket][as]rub [text-shortcut of T] on vagina[end link] [link][bracket]ass[close bracket][as]rub [text-shortcut of T] on butthole[end link][end if]".
 
 [!<SayUniqueVerbDescOfPowder>+
@@ -872,9 +859,7 @@ To say unique-verb-desc of (T - WoodsScenery02):
 To say unique-verb-desc of (T - time-bomb):
 	if inline hyperlinks >= 2, say " [link][bracket]use[close bracket][as]use [text-shortcut of T][end link]".
 
-
 Part 3 - Smart Links
-
 
 [!<uniqueOptionsRules:Rulebook>*
 
@@ -925,7 +910,7 @@ To compute smart links:
 	say "[line break]";
 	if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in School34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
 	unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
-	if the player is prone and there is a worn pink spraybottle and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
+	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
 		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]wash in water[end link] ";
 	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is not barbie)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
@@ -1059,7 +1044,6 @@ REQUIRES COMMENTING
 +!]
 Definition: a thing is shortcutless if the text-shortcut of it is "".
 
-
 [!<ThePullLeverUniqueOptionRule>+
 
 REQUIRES COMMENTING
@@ -1097,6 +1081,4 @@ Carry out AltarListing:
 	[say "[line break][if there are worn tattoos]You can also [bold type]place[roman type] a tattoo on the altar.[end if]".]
 Understand "list blessables" as AltarListing.
 
-
 Links ends here.
-

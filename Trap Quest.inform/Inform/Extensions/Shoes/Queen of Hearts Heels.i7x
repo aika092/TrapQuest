@@ -1,6 +1,5 @@
 Queen of Hearts Heels by Shoes begins here.
 
-
 A queen of hearts heels is a kind of stiletto heels. A queen of hearts heels is usually leather. A queen of hearts heels is usually unique. The heel-height of a queen of hearts heels is usually 5.
 
 The printed name of queen of hearts heels is usually "[clothing-title-before]pair of [clothing-material of item described] [heel-height of the item described] inch queen of hearts heels[clothing-title-after]". The text-shortcut of queen of hearts heels is "qh".
@@ -16,12 +15,16 @@ Definition: a queen of hearts heels is black themed: decide yes.
 Definition: a queen of hearts heels is heart themed: decide yes.
 Definition: a queen of hearts heels is bow themed: decide yes.
 
-
 To decide which number is the unique outrage of (C - a queen of hearts heels):
 	decide on 1.
 
 To decide which number is the hindrance-modifier of (C - a queen of hearts heels):
 	decide on 0.
+
+To decide which number is the luck-influence of (C - a queen of hearts heels):
+	if C is cursed, decide on -1;
+	if C is blessed, decide on 5;
+	decide on 1.
 
 To say UniqueShortDesc of (C - a queen of hearts heels):
 	say "queen of hearts heels".
@@ -37,6 +40,9 @@ To decide which number is the alchemy key of (C - a queen of hearts heels):
 
 Definition: a queen of hearts heels is recipe specific: decide yes.
 
+To decide which text is RecipeDesc of (B - a queen of hearts heels):
+	decide on "This recipe just says 'Queen of Hearts Playing Card'.".
+
 This is the queen specific recipe rule:
 	now the Product in row 31 of the Table of Alchemy is 17;
 	now the Recipe in row 31 of the Table of Alchemy is 1.
@@ -50,4 +56,3 @@ To compute recipe specific cursing of (T - a queen of hearts heels):
 Definition: a queen of hearts heels is strut enabling: decide yes.
 
 Queen of Hearts Heels ends here.
-

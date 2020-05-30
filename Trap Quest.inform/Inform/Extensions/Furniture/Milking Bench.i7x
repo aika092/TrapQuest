@@ -1,6 +1,5 @@
 Milking Bench by Furniture begins here.
 
-
 milking bench is a kind of furniture. A milking bench has a number called units collected. A milking bench is not permanent fixture. The printed name of milking bench is "[TQlink of item described]milking bench[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of milking bench is "mb". Understand "milking", "bench" as milking bench.
 
 mansion-milking-bench is a milking bench.
@@ -21,16 +20,16 @@ Figure of milking bench cutscene 2 is the file "Special/Cutscene/cutscene-milkin
 
 To compute furniture resting on (M - a milking bench):
 	let milking-allowed be 1;
-	if there is worn not-top-displacable milking unflappable nipple covering clothing or the class of the player is living sex doll:
+	if there is worn not-top-displacable milking unflappable actually nipple covering clothing or the class of the player is living sex doll:
 		now milking-allowed is 0;
-	otherwise if the milk volume of breasts >= 0 and there is worn nipple covering clothing and the player is able to use their hands and the player is not wrist bound behind:
+	otherwise if the milk volume of breasts >= 0 and there is worn actually nipple covering clothing and the player is able to use their hands and the player is not wrist bound behind:
 		let N be max-top-layer;
 		decrease milking-allowed by N;
 		while N > 0: [start with top layered clothing and work downwards]
 			let B be nothing;
 			repeat with C running through worn top layer clothing:
 				if the top-layer of C is N, now B is C;
-			if B is nipple covering clothing and N + milking-allowed >= 1: [Is it still possible to expose nipples? (Essentially this stops us asking about lower down items if the player refused to move higher up items)]
+			if B is actually nipple covering clothing and N + milking-allowed >= 1: [Is it still possible to expose nipples? (Essentially this stops us asking about lower down items if the player refused to move higher up items)]
 				if B is milking flappable:
 					say "Open the milking flaps of your [ShortDesc of B]? ";
 					if the player is bimbo consenting:
@@ -48,7 +47,7 @@ To compute furniture resting on (M - a milking bench):
 					otherwise:
 						say "You decide against exposing your nipples before resting on the bench.";
 			decrease N by 1;
-	if the player is nipples exposed, now milking-allowed is 1;
+	if the number of worn actually nipple covering clothing is 0, now milking-allowed is 1;
 	now resting is 1;
 	compute fat burning reset;
 	now the stance of the player is 1;
@@ -135,4 +134,3 @@ To say RestingDesc of (F - a milking bench):
 	say "You [one of][or]continue to [stopping]kneel on the bench.";
 
 Milking Bench ends here.
-

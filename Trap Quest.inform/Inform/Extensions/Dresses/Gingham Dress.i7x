@@ -68,4 +68,3 @@ To decide which number is the initial cringe of (C - a super short gingham dress
 Definition: a super short gingham dress is pink themed: decide yes.
 
 Gingham Dress ends here.
-

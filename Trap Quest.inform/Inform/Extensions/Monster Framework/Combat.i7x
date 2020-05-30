@@ -41,7 +41,6 @@ To compute attack of (M - a monster):
 The monster attack rules is a rulebook.
 [In each rule in this rulebook, we write 'if the rule succeeded, rule succeeds.' In this way rule succeeds is used for finishing up completely. Rule fails is used for exiting a rulebook and moving to the next rulebook in the sex rules. Obviously if a rulebook ends with neither, then we also continue as if we had encountered a rule fails.]
 
-
 To MonsterStomp (M - a monster):
 	let stomped be 0;
 	repeat with N running through undefeated awake monsters in the location of M:
@@ -67,18 +66,19 @@ To compute (M - a monster) stomping (N - a monster):[We keep this completely gen
 	otherwise:
 		say "[BigNameDesc of M] is glitching, it doesn't know how to deal with the [N]. Report this bug please!";[This will not happen with default game but with added monsters it allows the ability for them to be dungeon dwelling and have a scene where the minotaur kills them.]
 
-
 Chapter 1 Continue and Finish Sex
 
 This is the continue sex rule:
 	follow the continue sex rules of current-monster;
-	if the rule succeeded, rule succeeds.
+	if the rule succeeded:
+		let vm be a random video-monitor in the location of the player;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace, now vm is recording-disgrace;[if you willingly have sex, your friend disapproves.]
+		rule succeeds.
 The continue sex rule is listed last in the monster attack rules. [Listed 1st]
 
 This is the check normal continue sex stuff rule: [If we want to add extra stuff onto the list of things we check for continue sex for an NPC, we can call this at some point too to make sure we check the default stuff as well. Check out 'The adult baby slave continue sex rules' for a practical example.]
 	follow the default continue sex rules;
 	if the rule succeeded, rule succeeds.
-
 
 This is the default check for spanking rule:
 	if current-monster is spanking the player:
@@ -137,27 +137,30 @@ To orgasm (M - a monster):
 	if ritual-beads is worn or runic headband is worn:
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
 	if ghost-strapon is worn, compute ghostGrowth of M;
-	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, follow the betrothal rule;
+	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, compute betrothal of M;
 	compute refactoryReset of M;
 	if M is infernal, progress quest of demon-slut-quest;
-	if there is a worn notebook, compute studying 0 of M;[
-	if siphoning-elixir-charge is not 0:
-		say "You feel yourself absorbing some of [NameDesc of M]'s excess energy!";
+	let vm be a random video-monitor in the location of the player;
+	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+		let T be the substituted form of "making [NameDesc of M] cum";
+		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
+	if there is a worn notebook or (the class of the player is schoolgirl and there is a notebook in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
+	[if siphoning-elixir-charge is not 0:
+		say "You feel yourself absorbing some of [NameDesc of M][']s excess energy!";
 		if siphoning-elixir-charge > 0, increase siphoning-elixir-charge by 1;
 		otherwise decrease siphoning-elixir-charge by 1;]
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
 		say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
-		ChargeUp giant-statue by 60.
+		ChargeDown S by 60.
 
 To compute refactoryReset of (M - a monster):
 	if the blue-balls of M > 0, now the blue-balls of M is 0;
 	if M is intelligent:
 		now the refactory-period of M is the refactory-time of M;
-		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);[
-		if siphoning-elixir-charge > 0, increase the refactory-period of M by 20;
-		if siphoning-elixir-charge > 0, decrease the refactory-period of M by 20;]
-		if there is a worn enhancing book of anal:
+		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
+		if there is a worn enhancing book of anal and M is penetrating asshole:
 			FavourUp M;
 			increase the refactory-period of M by the intelligence of the player.
 
@@ -169,6 +172,8 @@ To compute priestessBlessing of (M - a monster):
 		otherwise:
 			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is possessing a vagina]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
 			decrease the charge of the dungeon altar by 150;
+			if ritual-beads is worn, heal asshole times (the soreness of asshole / 5);
+			if M is penetrating vagina and runic headband is not purity, heal vagina times (the soreness of vagina / 5);
 	if M is infernal, RitualUp 2;
 	otherwise RitualUp 1.
 
@@ -179,11 +184,11 @@ To RitualUp (X - a number):
 			if the notches of R <= the notch-taken of R:
 				say "Blue light condenses around the end of [NameDesc of R], as another [PlugSize size of R] bead appears next to the hoop.";
 				increase the notches of R by 1;
-				force clothing-focus redraw; [This forces the clothing window to redraw]
+				force immediate clothing-focus redraw; [This forces the clothing window to redraw]
 			otherwise:
-				say "The [BigNameDesc of R] shifts slightly inside of you, but doesn't seem to get any longer. Maybe because it's not properly inside you?";
+				say "[BigNameDesc of R] shifts slightly inside of you, but doesn't seem to get any longer. Maybe because it's not properly inside you?";
 		otherwise:
-			say "The [BigNameDesc of R] shifts slightly inside of you, but doesn't seem to get any longer. Maybe it's at maximum capacity?".
+			say "[BigNameDesc of R] shifts slightly inside of you, but doesn't seem to get any longer. Maybe it's at maximum capacity?".
 
 To compute ghostGrowth of (M - a monster):
 	let G be ghost-strapon;
@@ -282,10 +287,10 @@ To compute default facial climax for (M - a monster):
 				compute facial dodging of M;
 			otherwise: [the player submitted]
 				compute facial accepting of M;
-		otherwise: [Internal cumshot]
+		otherwise:[Internal cumshot]
 			if the reaction of the player is 0:
 				compute oral creampie of M;
-			otherwise: [submitted, deepthroat]
+			otherwise:[submitted, deepthroat]
 				compute deepthroat creampie of M;
 	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
 		if M is interested, orgasm satisfy M;[dislodges him automatically]
@@ -308,7 +313,6 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 	if the rounds of sex left of M <= 0:
 		if M is interested, orgasm satisfy M;
 		otherwise orgasm dislodge M.
-
 
 [!<ComputePostClimaxEffectOfMonsterInBodypart>+
 
@@ -371,7 +375,6 @@ This is the default cleavage climax rule:
 		progress quest of titfuck-quest.
 The default cleavage climax rule is listed in the default end-of-sex rules.
 
-
 To compute cleavage climax of (M - a monster):
 	TitfuckAddictUp 1;
 	TimesSubmittedUp M by 1;
@@ -404,8 +407,6 @@ The default progress sex rule is listed last in the default continue sex rules.
 To decide which number is the rounds of sex left of (M - a monster):
 	decide on the sex-length of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
 
-
-
 This is the default facial sex rule:
 	if current-monster is penetrating face, compute facial sex of current-monster.
 The default facial sex rule is listed in the default progress sex rules.
@@ -413,7 +414,7 @@ The default facial sex rule is listed in the default progress sex rules.
 To compute facial sex of (M - a monster):
 	compute default facial sex of M.
 
-To decide if (M - a monster) is anticipating-climax:
+Definition: a monster (called M) is anticipating-climax:
 	let R be a random number between 1 and 7;
 	if the reaction of the player is 0, increase R by 2;
 	let Ig be the intelligence of the player;
@@ -512,7 +513,6 @@ To compute erection sex of (M - a monster):
 	if M is not penetrating penis:
 		compute post climax effect of M in penis;
 	otherwise:
-		RawUp penis;
 		decrease the sex-length of M by 1;
 		stimulate penis from M;
 		say "[one of][M sex reaction][or][cycling]".
@@ -751,7 +751,6 @@ Definition: a belly (called B) is an actual target: [We can always piss on a fac
 
 Definition: a body part is usable without penetration: decide no. [If a monster can use the body part without penetration e.g. a mannequin applying makeup or a dominatrix spanking, then add a rule for the body part and then write "if current-monster is X, decide yes"]
 
-
 Definition: a monster is concealment immune: decide no. [Can the monster ignore salves of concealment, butt slut, etc.]
 
 Definition: a monster (called M) is butt slut immune: [Can the monster ignore the divine powers that force them to ignore vaginas?]
@@ -771,18 +770,18 @@ This is the default monster convinced rule:
 	if presented-orifice is a reasonable target:
 		let C be the charisma of the player;
 		if current-monster is seduction-refused, increase C by the virility of current-monster - the sex-length of current-monster; [The player tried to make our monster happy by reducing their sex length. Let's see how well that worked]
-		if a random number between -1 and the charisma of the player >= 0:
+		if the number of worn cursed concealment salve is 0 and a random number between -1 and the charisma of the player >= 0:
 			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
-			say "[PresentAcceptanceFlav of current-monster]";
+			say PresentAcceptanceFlav of current-monster;
 			rule succeeds;
 		otherwise if (presented-orifice is face or presented-orifice is belly) and current-monster is intelligent and there is a worn tongue piercing:
 			say "[BigNameDesc of current-monster] was about to ignore you, but it seems that your tongue piercing made your request extremely convincing!";
 			now the chosen-orifice of current-monster is presented-orifice;
 			rule succeeds;
 		otherwise:
-			say "[PresentRejectionFlav of current-monster]";
+			say PresentRejectionFlav of current-monster;
 	otherwise if presented-orifice is not nothing:
-		say "[PresentRejectionFlav of current-monster]".
+		say PresentRejectionFlav of current-monster.
 
 To say PresentAcceptanceFlav of (M - a monster):
 	say "[BigNameDesc of M] seems convinced by your request!".
@@ -1095,8 +1094,6 @@ To compute (M - a monster) entering mouth:
 		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
 		distract M.
 
-
-
 This is the monster breasts insertion rule:
 	if the chosen-orifice of current-monster is breasts:
 		let C be a random top level titfuck protection clothing;
@@ -1120,7 +1117,6 @@ To compute (M - a monster) entering breasts:
 
 To say BreastsPenetrationFlav of (M - a monster):
 	say "[BigNameDesc of M] forces [his of M] [manly-penis] in between your [ShortDesc of breasts]!". [This needs changing for every monster! It's boring and might not even be accurate if the monster isn't male.]
-
 
 This is the monster penis insertion rule:
 	if the chosen-orifice of current-monster is penis, follow the monster penis insertion rules.
@@ -1194,11 +1190,12 @@ This is the monster urinating rule:
 The monster urinating rule is listed last in the monster begin urination rules.
 
 To compute (M - a monster) urinating:
-	say "[UrinationFlav of M]"; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
+	say UrinationFlav of M; [If you just want to change the text, replace the Flav function. Otherwise replace the entire compute function.]
 	FacePiss from M;
 	satisfy M.
 
 To say UrinationFlav of (M - a monster):
+	if diaper quest is 1, say ForcefeedPissDeclarationFlav of M;
 	if M is male:
 		if M is intelligent:
 			say "[one of][BigNameDesc of M] laughs, taking a handful of your [ShortDesc of hair] and yanking your head back. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![or][BigNameDesc of M] laughs, tilting your chin up and wrapping a hand around the base of [his of M] shaft. A golden stream of [urine] shoots out of [his of M] [manly-penis], headed straight for your face![in random order][if the humiliation of the player < 17500 and the urine taste addiction of the player is 1][line break][first custom style]What the actual fuck.[roman type][line break][end if]";
@@ -1210,7 +1207,6 @@ To say UrinationFlav of (M - a monster):
 		otherwise:
 			say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
 
-
 Chapter 6 Damaging and Tripping
 
 This is the monster attack rule:
@@ -1218,7 +1214,6 @@ This is the monster attack rule:
 		follow the attack rules of current-monster.
 		[if the rule succeeded, rule succeeds.] [By commenting this out, this means that the monster gets to go straight to punishment if the player drops.]
 The monster attack rule is listed last in the monster attack rules. [Listed 5th]
-
 
 [
 Tripping rolls:
@@ -1263,6 +1258,14 @@ To decide which number is the tripping max of (M - a monster):
 	if D < 1, decide on 1;
 	decide on D.
 
+[!<ToDecideWhichNumberIsTheAccuracyRollOfMonster>
+
+Determines the accuracy of a monster's action, usually a damaging attack
+
+@param <Monster>:<M> The monster making the accuracy roll
+@return <Number> The accuracy roll. Higher means more accuracy, lower means less accuracy.
+
++!]
 To decide which number is the accuracy roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
 	if D > the difficulty of M + 7, now D is 9999; [This check means that the right hand side of the normal distribution roll always is a successful hit. i.e. 50% of the time, the monster will hit automatically]
@@ -1270,11 +1273,30 @@ To decide which number is the accuracy roll of (M - a monster):
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 [ShortDesc of M][line break]";
 	decide on D.
 
+[!<ToDecideWhichNumberIsTheStrengthRollOfMonster>
+
+Determines the strength of a monster for an action.
+
+@param <Monster>:<M> The monster making the strength roll
+@return <Number> The strength roll. The higher the number, the better the strength. The lower the number, the worse the strength
+
++!]
+To decide which number is the strength roll of (M - a monster):
+	let D be the difficulty of M + a random number between 1 and (the difficulty of M / 2);
+	if debugmode is 1, say "Player [strength of the player] | [D].5 [ShortDesc of M][line break]";
+	decide on D.
 
 A monster has a number called last-tripped.
 
 Definition: a monster is a tripper if it is intelligent.
 
+[!<ToSayTripChanceFlavOfMonster>
+
+Displays a hint that tells the player how likely a monster is to try to trip them rather than attack them.
+
+@param <Monster>:<M> The monster that may trip the player
+
++!]
 To say TripChanceFlav of (M - a monster):
 	if the last-tripped of M > 4:
 		say "[BigNameDesc of M] [one of]is blatantly staring at your [feet][or]looks down at your [feet][or][if M is human]bends [his of M] knees[otherwise]aims for your knees[end if][in random order]! [big he of M] is clearly going to try and trip you soon.";
@@ -1284,67 +1306,158 @@ To say TripChanceFlav of (M - a monster):
 Definition: a jismbodied ghost is a tripper: decide yes.
 
 This is the choice of attack rule:
-	if current-monster is a tripper:
-		let TC be 10;
-		if the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is 5;
-		if the last-tripped of current-monster > a random number between 1 and TC or (tutorial is 1 and the last-tripped of current-monster is 2):
-			now the last-tripped of current-monster is 0;
-			compute tripping attack of current-monster;
-		otherwise:
-			increase the last-tripped of current-monster by 1;
-			compute striking attack of current-monster;
-			if the player is upright and current-monster is a tripper and current-monster is intelligent, say "[TripChanceFlav of current-monster]";
-	otherwise:
-		compute striking attack of current-monster.
+	compute attack choice of current-monster.
 The choice of attack rule is listed last in the default monster attack rules.
 
+[!<ToComputeAttackChoiceOfMonster>
+
+Determines whether a monster will try to trip or attack the player this turn, or potentially do something else. Also, this function helps resolve the blindness status effect
+
+@param <Monster>:<M> The monster making the action
+
++!]
+To compute attack choice of (M - a monster):
+	let TC be 10;
+	if the trophy-mode of trip-trophy is 1 and there is worn heels, now TC is 5;
+	if M is a tripper and the last-tripped of M > a random number between 1 and TC or (tutorial is 1 and the last-tripped of M is 2):
+		now the last-tripped of M is 0;
+		compute tripping attack of M;
+	otherwise:
+		increase the last-tripped of M by 1;
+		compute damaging attack of M;
+		if the player is upright and M is a tripper and M is intelligent, say TripChanceFlav of M;
+	if the blind-status of M > 0:
+		decrease the blind-status of M by 1;
+		if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
+
+[!<ToComputeTrippingAttackOfMonster>
+
+Handles a monster attempting to make the player trip.
+
+@param <Monster>:<M> The monster trying to trip the player
+
++!]
 To compute tripping attack of (M - a monster):
 	say MonsterTripAnnounceFlav of M;
 	let D be the tripping roll of M;
 	if debugmode is 1, say "Player [dexterity of the player] | [D].5 Monster[line break]";
 	if (D >= the dexterity of the player and the blind-status of M is not 1) or tutorial is 1:
-		say "[MonsterTrippedFlav of M]";
+		say MonsterTrippedFlav of M;
 		try kneeling;
 		if the player is prone and tutorial is 0, check attack of M;
 	otherwise:
-		say "[MonsterFailedTripFlav of M]";
-		if the blind-status of M > 0:
-			decrease the blind-status of M by 1;
-			if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
+		say MonsterFailedTripFlav of M.
 
+[!<ToSayMonsterTripAnnounceFlavOfMonster>
+
+Describes a monster attempting to trip the player
+
+@param <Monster>:<M> The monster trying to trip the player
+
++!]
 To say MonsterTripAnnounceFlav of (M - a monster):
 	say "[BigNameDesc of M] tries to trip you up!".
 
+[!<ToSayMonsterTrippedFlavOfMonster>
+
+Describes the player being tripped by a monster
+
+@param <Monster>:<M> The monster tripping the player
+
++!]
 To say MonsterTrippedFlav of (M - a monster):
 	say "You flail wildly [if the player is ankle bound]but you can't move your legs far enough apart to maintain your balance. You[otherwise]and[end if] fall to the ground!".
 
+[!<ToSayMonsterFailedTripFlavOfMonster>
+
+Describes the player resisting a monster's attempt to make them trip
+
+@param <Monster>:<M> The monster trying to trip the player
+
++!]
 To say MonsterFailedTripFlav of (M - a monster):
 	say "You manage to keep your balance.".
 
-To compute striking attack of (M - a monster):
+[!<ToComputeDamagingAttackOfMonster>
+
+Handles damaging attacks (i.e. default actions) from a monster.
+
+@param <Monster>:<M> The monster attacking the player
+
++!]
+To compute damaging attack of (M - a monster):
+	compute striking attack of M.
+
+[!<DecideWhichBodyPartIsThePainfulPartOfPortal>
+
+Chooses which part of the body this monster will attack. Certain body parts can't be targeted by default.
+
+@param <Monster>:<M> The monster attacking the body part
+@return <BodyPart> The body part to be attacked
+
++!]
+To decide which body part is the painful-part of (M - a monster):
 	let B be a random body part;
 	if B is a fuckhole or B is penis, now B is hips;
 	if B is hair, now B is face;
+	decide on B.
+
+[!<ToComputeStrikingAttackOfMonster>
+
+Handles the default damaging attack for a given monster. Randomly selects a body part as a target, then pits a randomly generated accuracy value against the player's dexterity.
+
+@param <Monster>:<M> The monster attacking the player
+
++!]
+To compute striking attack of (M - a monster):
+	let B be the painful-part of M;
 	if the accuracy roll of M >= the dexterity of the player:
-		say "[StrikingSuccessFlav of M on B]";
+		say StrikingSuccessFlav of M on B;
 		compute M striking B;
 		compute striking success effect of M on B;
 	otherwise:
-		say "[StrikingFailureFlav of M on B]";
-		if the blind-status of M > 0:
-			decrease the blind-status of M by 1;
-			if the blind-status of M is 0, say "[BigNameDesc of M] is no longer blind!".
+		say StrikingFailureFlav of M on B.
 
+[!<ToComputeStrikingSuccessEffectOfMonsterOnBodyPart>
 
+Handles any code to be run every time a monster successfuly attacks a particular body part
+
+@param <Monster>:<M> The monster attacking the player
+@param <BodyPart>:<B> The body part that was attacked
+
++!]
 To compute striking success effect of (M - a monster) on (B - a body part):
 	do nothing.
 
+[!<ToSayStrikingSuccessFlavOfMonsterOnBodyPart>
+
+Describes a monster attacking a body part, but failing to do damage, or failing to do full damage
+
+@param <Monster>:<M> The monster attacking the player
+@param <BodyPart>:<B> The body part being attacked
+
++!]
 To say StrikingSuccessFlav of (M - a monster) on (B - a body part):
 	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
 
+[!<ToSayStrikingFailureFlavOfMonsterOnBodyPart>
+
+Describes a monster attacking a body part, but failing to do damage, or failing to do full damage
+
+@param <Monster>:<M> The monster attacking the player
+@param <BodyPart>:<B> The body part being attacked
+
++!]
 To say StrikingFailureFlav of (M - a monster) on (B - a body part):
 	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
 
+[!<ToSayTargetNameOfBodyPart>
+
+Describes a particular body part in the context of it being a target for attacks
+
+@param <BodyPart>:<B> The body part being attacked
+
++!]
 To say TargetName of (B - a body part):
 	if B is face:
 		say "in the face";
@@ -1353,102 +1466,65 @@ To say TargetName of (B - a body part):
 	otherwise:
 		say "on the [printed name of B]".
 
-To compute (M - a monster) striking (B - a body part):
+[!<ToComputeMonsterHurtingBodyPart>
+
+Handles a monster damaging a particular body part. Handles actual application of damage, as well as any effects that need to be handled the same way regardless of attack type
+
+@param <Monster>:<M> The monster attacking the player
+@param <BodyPart>:<B> The body part being attacked
+
++!]
+To compute (M - a monster) hurting (B - a body part):
 	BodyRuin 1.
+
+To compute (M - a monster) hurting (B - breasts):
+	BodyRuin 2.
+
+To compute (M - a monster) hurting (B - face):
+	BodyRuin 2.
+
+[!<ToComputeMonsterStrikingBodyPart>
+
+Handles a monster hitting a particular body part. Meant to be overriden with unique functionality. Generally should leave actual damge to the ComputeMonsterHurtingBodyPart function
+
+@param <Monster>:<M> The monster attacking the player
+@param <BodyPart>:<B> The body part being attacked
+
++!]
+To compute (M - a monster) striking (B - a body part):
+	compute M hurting B.
 
 To compute (M - a monster) striking (B - breasts):
 	let P be a random worn breast covering clothing;
-	if P is clothing, compute P protecting B;
-	otherwise BodyRuin 2;
+	if P is clothing, compute P protecting B from M;
+	otherwise compute M hurting B;
 	let S be a random worn spikey breast covering clothing;
 	if S is clothing:
 		compute S damaging M.
-
-To compute (P - a santa corset) protecting (B - breasts):
-	if a random number between 2 and 22 > the largeness of breasts, say "The brunt of the blow is absorbed by your [printed name of P]!";
-	otherwise BodyRuin 2.
-
-To compute (P - a chainmail top) protecting (B - breasts):
-	say "Your [printed name of P] blocks the brunt of the force!";
-
-To compute (P - a striped top) protecting (B - breasts):
-	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your breasts!";
-	otherwise BodyRuin 2.
-
-To compute (P - a clothing) protecting (B - breasts):
-	if P is protection and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] protects you from being properly injured by the attack!";
-	otherwise if P is possession and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] causes the attack to phase through you completely!";
-	otherwise:
-		BodyRuin 2.
-
 
 To compute (M - a monster) striking (B - hips):
 	let O be the body soreness of the player;
 	let S be a random worn skirted clothing;
 	let C be a random worn crotch covering clothing;[crotch covering, not crotch protecting.]
 	if S is clothing:
-		compute S protecting B;
+		compute S protecting B from M;
 	if C is clothing and O is not the body soreness of the player:
-		compute C protecting B;
+		compute C protecting B from M;
 	otherwise:
-		BodyRuin 1.
-
-To compute (P - clothing) protecting (B - body part): [default - no effect]
-	BodyRuin 1.
-
-To compute (P - clothing) protecting (B - hips):
-	if P is protection and a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-	otherwise BodyRuin 1.
-
-To compute (P - skirted clothing) protecting (B - hips):
-	if P is protection and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] protects you from being properly injured by the attack!";
-	otherwise if P is possession and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] causes the attack to phase through you completely!";
-	otherwise:
-		BodyRuin 1.
-
-To compute (P - a chainmail skirt) protecting (B - hips):[I.E. all of it.]
-	say "Your [random worn chainmail skirt] blocks the brunt of the force!".
+		compute M hurting B.
 
 To compute (M - a monster) striking (B - arms):
 	let P be a random worn arm covering clothing;
-	if P is clothing, compute P protecting B;
-	otherwise BodyRuin 1.
-
-To compute (P - a clothing) protecting (B - arms):
-	if P is protection and a random number between the magic-modifier of P and 8 > 4, say "The [P] protects you from being properly injured by the attack!";
-	otherwise BodyRuin 1;
+	if P is clothing, compute P protecting B from M;
+	otherwise compute M hurting B;
 
 To compute (M - a monster) striking (B - thighs):
 	let P be a random worn leg covering clothing;
-	if P is clothing, compute P protecting B;
-	otherwise BodyRuin 1.
-
-To compute (P - a black-and-yellow striped stockings) protecting (B - thighs):
-	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your legs!";
-	otherwise BodyRuin 1.
-
-To compute (P - a clothing) protecting (B - thighs):
-	if P is protection and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] protects you from being properly injured by the attack!";
-	otherwise if P is possession and a random number between the magic-modifier of P and 8 > 4:
-		say "The [P] causes the attack to phase through you completely!";
-	otherwise:
-		BodyRuin 1.
-
-To compute (S - a clothing) damaging (M - a monster):
-	if S is spikey, say "[BigNameDesc of M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
-	otherwise say "Somehow, [NameDesc of M] hurts [himself of M] as [he of M] attacks!";
-	if S is spikey and S is a striped top and the poison-status of M is 0:
-		say "After striking you, [NameDesc of M] takes on an unhealthy shade of green!";
-		now the poison-status of M is 3;
-	decrease the health of M by 4.
+	if P is clothing, compute P protecting B from M;
+	otherwise compute M hurting B.
 
 To compute (M - a monster) striking (B - face):
-	BodyRuin 2;
+	compute M hurting B;
 	if wasp-antennae is worn and total-wasps > 50:
 		say "Your antennae are clipped by the blow, which causes you even more pain!";
 		BodyRuin 1.
@@ -1456,36 +1532,118 @@ To compute (M - a monster) striking (B - face):
 To compute (M - a monster) striking (B - belly):
 	let P be a random worn belly covering clothing;
 	if P is clothing:
-		compute P protecting B;
+		compute P protecting B from M;
 	otherwise:
-		BodyRuin 1;
+		compute M hurting B;
 		if the player is able to expel and a random number between -6 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
 			say "The hit puts pressure on the contents of your belly, and causes you to momentarily lose control of your sphincter!";
 			AssSquirt.
 
-To compute (P - a clothing) protecting (B - belly):
+[!<ToComputeClothingProtectingBodyPartFromMonster>
+
+Determines how effective a piece of clothing is at protecting a particular body part from damage, depending on the monster causing the damage.
+
+@param <Clothing>:<P> The clothing potentially protecting the body part
+@param <Bodypart>:<B> The body part being attacked
+@param <Monster>:<M> The monster attacking the body part
+
++!]
+To compute (P - a clothing) protecting (B - a body part) from (M - a monster):[default]
 	if P is protection and a random number between the magic-modifier of P and 8 > 4:
 		say "The [P] protects you from being properly injured by the attack!";
-	otherwise if P is possession and a random number between the magic-modifier of P and 8 > 4:
+	otherwise if (B is breasts or B is hips or B is thighs) and P is possession:
+		if M is ghost and a random number between the magic-modifier of P and 8 < 4:[for ghosts, the posession enchantment is a negative]
+			compute M hurting B;
+			say "The [P] contricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+			PainUp 1;
+		otherwise if a random number between the magic-modifier of P and 10 > 6:[not as good as protection]
+			say "The [P] causes the attack to phase through you completely!";
+		otherwise:
+			compute M hurting B;
+	otherwise:
+		compute M hurting B.
+
+To compute (P - a santa corset) protecting (B - breasts) from (M - a monster):
+	if a random number between 2 and 22 > the largeness of breasts, say "The brunt of the blow is absorbed by your [printed name of P]!";
+	otherwise BodyRuin 2.
+
+To compute (P - a chainmail top) protecting (B - breasts) from (M - a monster):
+	say "Your [printed name of P] blocks the brunt of the force!";
+
+To compute (P - a striped top) protecting (B - breasts) from (M - a monster):
+	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your breasts!";
+	otherwise compute M hurting B.
+
+To compute (P - a chainmail skirt) protecting (B - hips) from (M - a monster):[I.E. all of it.]
+	say "Your [random worn chainmail skirt] blocks the brunt of the force!".
+
+To compute (P - a black-and-yellow striped stockings) protecting (B - thighs) from (M - a monster):
+	if total-wasps > 50, say "The blow deflects off the shiny black carapace covering your legs!";
+	otherwise compute M hurting B.
+
+To compute (P - a clothing) protecting (B - belly) from (M - a monster):
+	if P is protection and a random number between the magic-modifier of P and 8 > 4:
+		say "The [P] protects you from being properly injured by the attack!";
+	otherwise if P is possession and M is ghost and a random number between the magic-modifier of P and 8 < 4:
+		compute M hurting B;
+		say "The [P] contricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+		PainUp 1;
+	otherwise if P is possession and M is not ghost and a random number between the magic-modifier of P and 10 > 6:
 		say "The [P] causes the attack to phase through you completely!";
 	otherwise:
-		BodyRuin 1;
+		compute M hurting B;
 		if the player is able to expel and a random number between -4 and the total squirtable fill of belly > 0 and the latex-transformation of the player < 5 and currently-squirting is 0:
 			say "The hit puts pressure on the contents of your belly, and causes you to momentarily lose control of your sphincter!";
 			AssSquirt.
 
+[!<ToComputeClothingDamagingMonster>
+
+Handles a monster being damaged after attacking a body part that is covered by a potentially damaging clothing
+
+@param <Clothing>:<P> The clothing potentially damaging the monster
+@param <Monster>:<M> The monster being damaged
+
++!]
+To compute (S - a clothing) damaging (M - a monster):
+	if S is spikey:
+		say "[BigNameDesc of M], hitting your [printed name of S], [if M is male and M is intelligent and M is not futanari slutty sister]cries out in pain as the spikes cut into his hand[otherwise]recoils in pain from the spikes[end if]!";
+		if S is a striped top and the poison-status of M is 0:
+			say "After striking you, [NameDesc of M] takes on an unhealthy shade of green!";
+			now the poison-status of M is 3;
+	otherwise:
+		say "Somehow, [NameDesc of M] hurts [himself of M] as [he of M] attacks!";
+	decrease the health of M by 4.
+
+[!<ToSayMonsterAttackError>
+
+Displays an error message when a monster can't attack for some reason.
+
++!]
 To say MonsterAttackError:
 	say "[one of][bold type]ERROR - this monster doesn't know how to attack. Some stupid slut forgot to code this right! Oh dear. I guess it just stands there and does nothing.[roman type][line break][or][stopping]".
 
+[!<ToComputeMonsterReceivingNumberDamageFromMonster>
+
+Handles a monster being damaged by another monster.
+
+@param <Monster>:<M> The monster being damaged
+@param <Number>:<N> The amount of damage
+@param <Monster>:<X> The monster doing the damage
+
++!]
 To compute (M - a monster) receiving (N - a number) damage from (X - a monster):
-	say "[AllyDamageFlav of X on M]";
+	say AllyDamageFlav of X on M;
 	decrease the health of M by N.
 
+[!<ToSayAllyDamageFlavOfMonsterOnMonster>
+
+Displays some text describing a monster being attacked by another monster
+
+@param <Monster>:<X> The monster doing the damage
+@param <Monster>:<M> The monster being damaged
+
++!]
 To say AllyDamageFlav of (X - a monster) on (M - a monster):
-	say "The [X] strikes [NameDesc of M]!".
-
-
-
+	say "[BigNameDesc of X] strikes [NameDesc of M]!".
 
 Combat ends here.
-

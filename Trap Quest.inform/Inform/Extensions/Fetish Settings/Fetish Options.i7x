@@ -1,6 +1,5 @@
 Fetish Options by Fetish Settings begins here.
 
-
 [!<tableOfFetishOptions:Table>*
 
 REQUIRES COMMENTING
@@ -14,7 +13,7 @@ title	subtable	description	toggle
 "Cum splatter on body and clothing - 7 points ([if choice in row 4 of the Table of Player Options is -1]never[otherwise if choice in row 4 of the Table of Player Options is 0]not now[otherwise if choice in row 4 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	bukkake fetish toggle rule
 "Pregnancy[if tg fetish is 0 and the player is sexed male] related flavour[end if] - [pregnancy points] points ([if choice in row 5 of the Table of Player Options is -1]never[otherwise if choice in row 5 of the Table of Player Options is 0]not now[otherwise if choice in row 5 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	pregnancy fetish toggle rule
 "Lactation - 5 points ([if choice in row 6 of the Table of Player Options is -1]never[otherwise if choice in row 6 of the Table of Player Options is 0]not now[otherwise if choice in row 6 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	lactation fetish toggle rule
-"Watersports (urine) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
+"Watersports (urine drinking) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
 "Diapers - [diaper points] points ([if choice in row 19 of the Table of Player Options is -1]never[otherwise if choice in row 19 of the Table of Player Options is 0]not now[otherwise if choice in row 19 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	diaper lover toggle rule
 "Egg Laying - 3 points ([if choice in row 8 of the Table of Player Options is -1]never[otherwise if choice in row 8 of the Table of Player Options is 0]not now[otherwise if choice in row 8 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	egg laying fetish toggle rule
 "Air inflation - 4 points ([if choice in row 11 of the Table of Player Options is -1]never[otherwise if choice in row 11 of the Table of Player Options is 0]not now[otherwise if choice in row 11 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	inflation fetish toggle rule
@@ -45,16 +44,11 @@ title	subtable	description	toggle
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving & restoring is automatic and save file is deleted after restarting / losing) - [if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
 "Weight gain - 3 points ([if choice in row 12 of the Table of Player Options is -1]never[otherwise if choice in row 12 of the Table of Player Options is 0]not now[otherwise if choice in row 12 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	weight gain fetish toggle rule
+"Watersports (urine drinking) - 3 points ([if choice in row 7 of the Table of Player Options is -1]never[otherwise if choice in row 7 of the Table of Player Options is 0]not now[otherwise if choice in row 7 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	watersports fetish toggle rule
 "Alcohol - 2 points ([if the player is not a top donator]bab testers only for now![otherwise if choice in row 69 of the Table of Player Options is -1]never[otherwise if choice in row 69 of the Table of Player Options is 0]not now[otherwise if choice in row 69 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	alcohol fetish toggle rule
 "Male-to-female sex change - 2 points ([if choice in row 1 of the Table of Player Options is 1]Disabled since the player is female[otherwise if choice in row 10 of the Table of Player Options is -1]never[otherwise if choice in row 10 of the Table of Player Options is 0]not now[otherwise if choice in row 10 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	TG fetish toggle rule
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
-
-
-
-
-
-
 
 The random mode rules is a rulebook.
 This is the randomise choices rule:
@@ -62,7 +56,6 @@ This is the randomise choices rule:
 The nightmare mode rules is a rulebook.
 This is the nightmare mode rule:
 	follow the nightmare mode rules.
-
 
 To decide which number is bukkake fetish:
 	if diaper quest is 1, decide on 0;
@@ -106,9 +99,7 @@ This is the lactation random rule:
 	if choice in row 6 of the Table of Player Options is 0 or choice in row 6 of the Table of Player Options is 1, now choice in row 6 of the Table of Player Options is a random number between 0 and 1.
 The lactation random rule is listed in the random mode rules.
 
-
 To decide which number is watersports fetish:
-	if diaper quest is 1, decide on 0;
 	if choice in row 7 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
 This is the watersports fetish toggle rule:
@@ -120,7 +111,6 @@ The watersports nightmare rule is listed in the nightmare mode rules.
 This is the watersports random rule:
 	if choice in row 7 of the Table of Player Options is 0 or choice in row 7 of the Table of Player Options is 1, now choice in row 7 of the Table of Player Options is a random number between 0 and 1.
 The watersports random rule is listed in the random mode rules.
-
 
 To decide which number is egg laying fetish:
 	if diaper quest is 1, decide on 0;
@@ -205,7 +195,6 @@ This is the artificial enhancements random rule:
 	if choice in row 13 of the Table of Player Options is 0 or choice in row 13 of the Table of Player Options is 1, now choice in row 13 of the Table of Player Options is a random number between 0 and 1.
 The artificial enhancements random rule is listed in the random mode rules.
 
-
 To decide which number is diaper lover:
 	if diaper quest is 1, decide on 1;
 	if choice in row 19 of the Table of Player Options <= 0, decide on 0;
@@ -220,8 +209,6 @@ This is the diaper lover random rule:
 	if choice in row 19 of the Table of Player Options is 0 or choice in row 19 of the Table of Player Options is 1, now choice in row 19 of the Table of Player Options is a random number between 0 and 1.
 The diaper lover random rule is listed in the random mode rules.
 
-
-
 [!<DecideWhichNumberIsWatersportsMechanics>+
 
 Does the player sometimes need to pee?
@@ -230,7 +217,6 @@ Does the player sometimes need to pee?
 To decide which number is watersports mechanics:
 	if watersports fetish is 1 or diaper lover >= 1, decide on 1;
 	decide on 0.
-
 
 To decide which number is interracial fetish:
 	if diaper quest is 1, decide on 0;
@@ -245,8 +231,6 @@ The interracial nightmare rule is listed in the nightmare mode rules.
 This is the interracial random rule:
 	if choice in row 45 of the Table of Player Options is 0 or choice in row 45 of the Table of Player Options is 1, now choice in row 45 of the Table of Player Options is a random number between 0 and 1.
 The interracial random rule is listed in the random mode rules.
-
-
 
 To decide which number is mythical creature/creatures fetish:
 	if diaper quest is 1, decide on 0;
@@ -277,7 +261,6 @@ The tentacle nightmare rule is listed in the nightmare mode rules.
 This is the tentacle random rule:
 	if choice in row 61 of the Table of Player Options is 0 or choice in row 61 of the Table of Player Options is 1, now choice in row 61 of the Table of Player Options is a random number between 0 and 1.
 The tentacle random rule is listed in the random mode rules.
-
 
 To decide which number is alcohol fetish:
 	if the player is not the donator, decide on 0;
@@ -310,9 +293,4 @@ This is the lady random rule:
 	if the remainder after dividing choice in row 70 of the Table of Player Options by 2 is 1, now choice in row 70 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
 The lady random rule is listed in the random mode rules.
 
-
-
-
-
 Fetish Options ends here.
-

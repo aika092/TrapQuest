@@ -30,4 +30,3 @@ Definition: a monster (called M) is successfully blocking: [Do they succeed in a
 	decide no.
 
 Blocking ends here.
-

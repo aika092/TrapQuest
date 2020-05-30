@@ -37,4 +37,3 @@ To bodyheal (X - a number):
 		if the body soreness of the player > 0, decrease the body soreness of the player by 1.
 
 Body Soreness ends here.
-

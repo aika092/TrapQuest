@@ -1,6 +1,5 @@
 Taking Inventory by Miscellaneous Frontend begins here.
 
-
 The print standard inventory rule is not listed in the carry out taking inventory rulebook.
 
 [inventory-busy is a number that varies.]
@@ -244,7 +243,6 @@ To say MassCollectiblesList:
 		[decrease TokTypes by 1;] [currently unnecessary]
 		say "[random held defiance token][inventory style] (x[number of held defiance tokens])". [Even if there are 10 held we only want to write it once]
 
-
 TattooListing is an action applying to nothing. Understand "tattoo", "list tattoo", "tats", "list tats", "tattoos", "list tattoos" as TattooListing.
 
 [!<CarryOutTattooListing>+
@@ -265,9 +263,4 @@ To say ShortDesc of (L - a list of things):
 		say "[ShortDesc of C][if E > 2], [otherwise if E is 2] and [end if]";
 		decrease E by 1.
 
-
-
-
-
 Taking Inventory ends here.
-

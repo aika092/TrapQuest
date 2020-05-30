@@ -9,12 +9,13 @@ REQUIRES COMMENTING
 @inherits <Fuckhole>
 
 @!]
-asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is not possessing a vagina and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16.
+asshole is a fuckhole. asshole is everywhere. Understand "butthole", "anus", "ass hole", "butt hole" as asshole. Understand "pussy", "fuckhole", "cunt", "fanny", "snatch", "muffin", "cum dump" as asshole when the player is male and the player is a butt slut. Understand "hole" as asshole when the player is not in Hotel16. The text-shortcut of asshole is "butthole".
 
 To say FullExamineDesc of (B - asshole):
-	say "[TotalDesc of asshole][AssholeModesty]".
+	say "[ImageDesc of asshole][TotalDesc of asshole][AssholeModesty]".
 
 To decide which object is the concealer of (A - asshole):
+	if water-fountain is penetrating asshole, decide on water-fountain;
 	let C be a random worn actually dense potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
 	if the total volume of hips > 12:
@@ -22,17 +23,17 @@ To decide which object is the concealer of (A - asshole):
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (A - asshole):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
 	let C be a random worn potentially at least partially asshole covering clothing;
 	if C is clothing, decide on C;
 	if the player is upright, decide on hips;
 	decide on the concealer of asshole.
 
-
 [Can it be accessed right now with nothing blocking it?]
 Definition: asshole is undefended:
 	if asshole is actually occupied or the player is ass protected, decide no;
 	decide yes.
-
 
 [!<AssholeIsExposed>+
 
@@ -68,8 +69,8 @@ Does this at least partially block vision of asshole when worn?
 
 +!]
 Definition: a clothing (called C) is potentially at least partially asshole covering:
-	if (C is total protection or C is crotch-ripped or C is crotch-unzipped) and C is not see-through, decide yes;
-	if C is skirt-covering-crotch and C is not see-through, decide yes;
+	if C is see-through, decide no;
+	if C is skirt-covering-crotch or C is total protection, decide yes;
 	decide no.
 
 [!<assholePresentableRules:Rulebook>+
@@ -233,7 +234,7 @@ To say AssholeModesty:
 		otherwise if asshole is not actually occupied:
 			say "It is completely unprotected. ";
 	otherwise:
-		say "It [if asshole is at least partially exposed]is partially concealed by[otherwise]can't be seen thanks to[end if] the [ShortDesc of the at least partial concealer of asshole]. ";
+		say "It [if asshole is at least partially exposed]is partially concealed by [NameDesc of the at least partial concealer of asshole][otherwise]can't be seen thanks to [NameDesc of the concealer of asshole][end if]. ";
 	if asshole is actually occupied:
 		let P be a random thing penetrating asshole;
 		if P is monster:
@@ -250,7 +251,6 @@ To say RealGapeDesc:
 	say "Your asshole is [AssGape real openness of asshole][if the player is possessing a vagina] and your pussy is [PussyGape real openness of vagina]".
 
 Part 3 - Modify Asshole Stats
-
 
 [!<GapeAssholeTimesNumber>+
 
@@ -340,6 +340,32 @@ To Assclose (X - a number):
 					decrease the openness of asshole by 1;[in the next clause we assume anything penetrating the player is a monster, so we leave the player untightened.]
 			if the number of things filling asshole is 0, decrease the openness of asshole by 1.[if this isn't 0, it wasn't an item, so we leave it in.]
 
+Section - Image for graphics window
+
+Figure of AssholeObject0 is the file "CharWins/FocusWin/Asshole/A0.jpg".
+Figure of AssholeObject1 is the file "CharWins/FocusWin/Asshole/A1.jpg".
+Figure of AssholeObject1B is the file "CharWins/FocusWin/Asshole/A1B.jpg".
+Figure of AssholeObject2 is the file "CharWins/FocusWin/Asshole/A2.jpg".
+Figure of AssholeObject2B is the file "CharWins/FocusWin/Asshole/A2B.jpg".
+Figure of AssholeObject3 is the file "CharWins/FocusWin/Asshole/A3.jpg".
+Figure of AssholeObject3B is the file "CharWins/FocusWin/Asshole/A3B.jpg".
+
+To decide which figure-name is the examine-image of (T - asshole):
+	if the openness of asshole < 2:
+		decide on Figure of AssholeObject0;
+	otherwise if the openness of asshole < 5:
+		decide on Figure of AssholeObject1;
+	otherwise if the openness of asshole < 8:
+		decide on Figure of AssholeObject2;
+	otherwise:
+		decide on Figure of AssholeObject3.
+
+To ExpelDisplay:
+	if the openness of asshole < 5:
+		cutshow Figure of AssholeObject1B for asshole;
+	otherwise if the openness of asshole < 8:
+		cutshow Figure of AssholeObject2B for asshole;
+	otherwise:
+		cutshow Figure of AssholeObject3B for asshole.
 
 Asshole ends here.
-

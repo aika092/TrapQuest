@@ -73,7 +73,6 @@ To say ClothingDesc of (C - a supershort cheerleader outfit):
 	if diaper quest is 1, say "This white cheerleader one-piece dress covers very little skin.";
 	otherwise say "This blue cheerleader outfit has a ridiculously short skirt.".
 
-
 To say TransformReaction of (C - a supershort cheerleader outfit):
 	if the outrage of C is too humiliating:
 		say "[variable custom style]Oh no, change it back! [if asshole is lewdly exposed or vagina is lewdly exposed]This is much too short, my naughty bits are on show! Eek![otherwise]This is much too short, it's not decent![end if][roman type][line break]";
@@ -134,8 +133,6 @@ To decide which object is the unique-upgrade-target of (C - blue-rubber-cheerlea
 To decide which number is the initial outrage of (C - blue-rubber-cheerleader-outfit):
 	decide on 5.
 
-
-
 black-rubber-cheerleader-outfit is a rubber cheerleader outfit. Understand "black" as black-rubber-cheerleader-outfit.
 
 Figure of black rubber cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader7.png".
@@ -154,8 +151,6 @@ Definition: black-rubber-cheerleader-outfit is black themed: decide yes.
 To decide which object is the unique-upgrade-target of (C - black-rubber-cheerleader-outfit):
 	decide on black-fetish-cheerleader-outfit.
 
-
-
 black-fetish-cheerleader-outfit is a rubber cheerleader outfit. Understand "black", "fetish" as black-fetish-cheerleader-outfit. black-fetish-cheerleader-outfit is high cut.
 
 Figure of black fetish cheerleader outfit is the file "Items/Clothes/Upper/Special/Cheerleader/cheerleader8.png".
@@ -173,6 +168,4 @@ To say ClothingDesc of (C - black-fetish-cheerleader-outfit):
 
 Definition: black-fetish-cheerleader-outfit is black themed: decide yes.
 
-
 Cheerleader Outfit ends here.
-

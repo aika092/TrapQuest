@@ -32,8 +32,11 @@ To compute announcements:
 			say "The new recommended setting for image cutscenes is that they all appear in the location window. This is because even if they appear rather small at first, they can now be clicked on and examined in order to push a zoomed-in version to the map window. This is especially advised for anyone playing on a monitor that's not particularly high resolution, as cutscene images in the main window can only be cropped, not resized. Would you like me to make that setting change for you now? ";
 			if the player is consenting, now choice in row 29 of the Table of Settings is 2;
 			now choice in row 53 of Table of Settings is 5;
-
-
+		otherwise if announcements seen < 7 and GUI layout is 0:
+			if tattoo vision is 0:
+				clear the screen;
+				say "You can now have tattoos appear in the Location Window when they are both visible and outrageous enough to be currently contributing to your overall appearance rating. However this is currently disabled. Would you like to enable it now? ";
+				if the player is consenting, now choice in row 30 of the Table of Settings is 1;
+			now choice in row 53 of Table of Settings is 6;
 
 Announcements ends here.
-

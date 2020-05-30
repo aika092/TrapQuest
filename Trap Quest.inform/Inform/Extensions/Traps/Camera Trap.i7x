@@ -160,7 +160,7 @@ To decide which number is the lewdness of (P - a poster):
 Check examining an unspotted poster:
 	follow the player spots poster rule. [This stops the player somehow examining the poster first.]
 
-A time based rule (this is the player spots poster rule):
+An all time based rule (this is the player spots poster rule):
 	let P be a random unspotted poster in the location of the player;
 	if P is poster:
 		if playerRegion is Hotel:
@@ -174,7 +174,7 @@ A time based rule (this is the player spots poster rule):
 		humiliate the lewdness of P;
 		now P is spotted.
 
-A time based rule (this is the monster spots poster rule):
+An all time based rule (this is the monster spots poster rule):
 	let P be a random spotted poster in the location of the player;
 	if P is poster:
 		repeat with M running through reactive monsters:
@@ -271,7 +271,7 @@ To say ExamineDesc of (C - an upskirt poster):
 				say "[if the old-knickers-urine of C > the soak-limit of old-knickers of C / 2] that is soaked[otherwise]that is damp[end if]";
 			say ". ";
 	if old-cumthighs of C > 0, say "Your thighs are [if old-cumthighs of C > 7]caked[otherwise if old-cumthighs of C > 3]covered[otherwise]splattered[end if] with [semen].";
-	say "It seems unlikely someone could recognize you just from this image. [TitleDesc of C]".
+	say "It seems unlikely someone could recognise you just from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - an upskirt poster):
 	say "The photo shows you at a [if upskirt successful of P is 1]convenient upskirt[otherwise]compromising[end if] angle. There is a perfect view of your [if asshole visible of P is 1]naughty bits[otherwise if upskirt successful of P is 1 and old-trousers of P is nothing and old-knickers of P is clothing][selfexamineuniquetitle of old-knickers of P][otherwise]butt[end if].".
@@ -375,7 +375,7 @@ To say ExamineDesc of (C - a shameful orgasm poster):
 	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
-	say "It is very easy to recognize you from this image. [TitleDesc of C]".
+	say "It is very easy to recognise you from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a shameful orgasm poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if]You are in the throes of an orgasm[if old-stimulant of P is a thing] caused by the [old-stimulant of P][end if]. ".
@@ -474,7 +474,7 @@ To say ExamineDesc of (C - a masturbation poster):
 	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
-	say "It is very easy to recognize you from this image. [TitleDesc of C]".
+	say "It is very easy to recognise you from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a masturbation poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing straight. [otherwise]on your hands and knees. [end if][if old-stimulant of P is insertable thing]You are fucking yourself with your [old-stimulant of P]. [otherwise if old-stimulant of P is knickers]You are very visibly pleasuring yourself through your [selfexamineuniquetitle of old-knickers of P]. [otherwise if old-stimulant of P is clothing]You are very visibly pleasuring yourself through your clothing. [otherwise]It is very clear that you are wanking. [end if]".
@@ -483,9 +483,6 @@ To decide which number is the lewdness of (P - a masturbation poster):
 	let N be 200;
 	if old-stimulant of P is a thing, increase N by 100;
 	decide on N.
-
-
-
 
 Chapter 4 Wetting Poster
 
@@ -594,7 +591,7 @@ To say ExamineDesc of (C - a wetting poster):
 	if old-overdress of C is clothing, say "You are wearing a [ShortDesc of old-overdress of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
-	say "It is very easy to recognize you just from this image. [TitleDesc of C]".
+	say "It is very easy to recognise you just from this image. [TitleDesc of C]".
 
 To say ShortDesc of (P - a wetting poster):
 	say "An extremely detailed photo of you from the front, shot from ground level. You are [if old-stance of P is 0]standing with your knees slightly bent. [otherwise]on your hands and knees. [end if][if urination-target of P is clothing]You are very visibly wetting yourself into your [urination-target of P]. [otherwise if urination-target of P is room]You are very visibly peeing onto the floor of the [urination-target of P]. [otherwise]You are very visibly peeing onto the ground. [end if]";
@@ -747,7 +744,7 @@ To say ExamineDesc of (C - an expulsion poster):
 	if old-skirt of C is clothing, say "You are wearing a [ShortDesc of old-skirt of C]. ";
 	if old-trousers of C is clothing, say "You are [if old-overdress of C is clothing]also [end if]wearing a [ShortDesc of old-trousers of C]. ";
 	say "[PosterCum of C]";
-	say "It is very easy to recognize you from this image. [TitleDesc of C]".
+	say "It is very easy to recognise you from this image. [TitleDesc of C]".
 
 To decide which number is the liquid types of (P - an expulsion poster):
 	let N be 0;
@@ -764,8 +761,4 @@ To decide which number is the lewdness of (P - an expulsion poster):
 	if the liquid types of P > 1, increase N by 100;
 	decide on N.
 
-
-
-
 Camera Trap ends here.
-

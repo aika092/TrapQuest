@@ -1,18 +1,11 @@
 Fetish Settings by Miscellaneous Backend begins here.
 
-
 [!<AThingIsFetishAppropriate>+
 
 Some things are only 'fetish appropriate' (and therefore allowed in the game) when certain fetishes are enabled.
 
 +!]
-Definition: a thing (called C) is fetish appropriate:
-	if C is product:
-		let R be the recipe of the alchemy key of C;
-		if R is recipe:
-			if R is appropriate, decide yes;
-		decide no;
-	decide yes.
+Definition: a thing is fetish appropriate: decide yes.
 
 [!<fileOfPlayerOptions:File>*
 
@@ -108,7 +101,7 @@ choice
 0 [strongCurses]
 0 [transGender]
 0 [halloween content]
-
+0 [realisticHands]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -127,7 +120,6 @@ Which set of names to use.
 +!]
 To decide which number is the player-name:
 	decide on choice in row 2 of the Table of Player Options.
-
 
 [!<DecideWhichNumberIsInhumanPregnancy>+
 
@@ -230,7 +222,6 @@ REQUIRES COMMENTING
 To decide which number is cheater-check:
 	decide on choice in row 31 of the Table of Player Options.
 
-
 [!<DecideWhichNumberIsTrapFetish>+
 
 REQUIRES COMMENTING
@@ -266,7 +257,6 @@ To decide which number is max belly size points:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 37 of the Table of Player Options.
 
-
 [!<DecideWhichNumberIsToiletAllowance>+
 
 REQUIRES COMMENTING
@@ -274,8 +264,6 @@ REQUIRES COMMENTING
 +!]
 To decide which number is toilet allowance:
 	decide on choice in row 39 of the Table of Player Options.
-
-
 
 [!<DecideWhichNumberIsDiaperFocus>+
 
@@ -287,7 +275,6 @@ To decide which number is diaper focus:
 	if diaper quest is 1, decide on 1;
 	decide on choice in row 43 of the Table of Player Options.
 
-
 [!<DecideWhichNumberIsRoleplayFetish>+
 
 REQUIRES COMMENTING
@@ -296,8 +283,6 @@ REQUIRES COMMENTING
 To decide which number is roleplay fetish:
 	if diaper quest is 1, decide on 0;
 	decide on choice in row 47 of the Table of Player Options.
-
-
 
 [!<DecideWhichNumberIsBackgroundNurse>+
 
@@ -371,8 +356,6 @@ To decide which number is artificial-fetish:
 	if diaper quest is 1, decide on 0;
 	decide on the choice in row 59 of the Table of Player Options.
 
-
-
 To decide which number is max bonus liquid:
 	decide on 6.
 
@@ -392,7 +375,8 @@ To decide which number is easter content:
 
 To decide which number is april fools content:
 	if the player is not a top donator, decide on 0;
-	decide on the choice in row 67 of the Table of Player Options.
+	if choice in row 67 of the Table of Player Options > 0, decide on 1;
+	decide on 0.
 
 To decide which number is halloween content:
 	if the player is not a top donator, decide on 0;
@@ -411,13 +395,10 @@ To decide which number is combatvisor:
 	if the player is the donator, decide on 0;
 	decide on the choice in row 76 of the Table of Player Options.
 
-
 To decide which number is supportersEnabled:
 	if diaper quest is 1, decide on 0;
 	if the player is not the donator, decide on 1;
 	decide on the choice in row 77 of the Table of Player Options.
-
-
 
 Definition: a person is a flatchested trap:
 	if diaper quest is 1, decide no;
@@ -425,12 +406,7 @@ Definition: a person is a flatchested trap:
 	if the player is male and max breast size <= 1, decide yes;
 	decide no.
 
-
 Part - Options Menus
-
-
-
-
 
 [!<tableOfKinkOptions:Table>*
 
@@ -444,7 +420,6 @@ title	subtable	description	toggle
 "ENABLE OTHER HANDICAPS"	Table of Handicap Options	--	--
 "ENABLE SEASONAL CONTENT"	Table of Festive Options	--	--
 [DO NOT PUT ANY OPTIONS BELOW THE SEASONAL CONTENT ROW - they will not appear for non-alpha testers. Put them above the seasonal row instead.]
-
 
 Part - Points
 
@@ -492,7 +467,6 @@ To decide which number is positive points count:
 	increase X by natural brightness;
 	increase X by starting body shape * 2;
 	decide on X.
-
 
 [!<DecideWhichNumberIsDiaperPoints>+
 
@@ -544,8 +518,6 @@ To decide which number is points count:
 	if supportersEnabled is 0 and diaper quest is 0, decrease X by 1;
 	decide on X.
 
-
-
 [!<TheRandomiseBonusesRule>+
 
 REQUIRES COMMENTING
@@ -571,8 +543,4 @@ REQUIRES COMMENTING
 				otherwise:
 					follow max ass size rule.]
 
-
-
-
 Fetish Settings ends here.
-

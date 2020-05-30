@@ -1,7 +1,5 @@
 Ass Hook Trap by Traps begins here.
 
-
-
 [!<AssHook>@
 
 REQUIRES COMMENTING
@@ -266,7 +264,7 @@ To Jump From The Hook:
 				FavourDown M;
 				now M is interested.
 
-A time based rule (this is the ass hook wedgie pain rule):
+An all time based rule (this is the ass hook wedgie pain rule):
 	let H be a random ass hook grabbing the player;
 	if H is ass hook:
 		say "The pressure of the wedgie on your ass crack is causing you significant pain!";
@@ -282,6 +280,4 @@ A time based rule (this is the ass hook wedgie pain rule):
 			destroy H;
 			distract M.
 
-
 Ass Hook Trap ends here.
-

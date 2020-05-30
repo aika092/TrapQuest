@@ -49,5 +49,4 @@ To compute periodic effect of (C - a fuckdoll collar):
 		say "[bold type]You feel different[roman type], but you can't put your finger on why. Maybe you feel a tiny bit... numb?";
 		now the latex-transformation of the player is 1.
 
-
 Fuckdoll Collar ends here.

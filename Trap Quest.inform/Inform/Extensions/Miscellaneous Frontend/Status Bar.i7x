@@ -1,6 +1,5 @@
 Status Bar by Miscellaneous Frontend begins here.
 
-
 [!<RuleForConstructingTheStatusLine>+
 
 REQUIRES COMMENTING
@@ -21,13 +20,11 @@ Rule for constructing the status line:
 
 Part - Normal Status Bars
 
-
 Table of High Res Status
 left	central	right
 "[TitleBimbo]"	""	""
 "[MainStatsBar]"	"[HighResBarSecondRow]"	""
 "[HighResBarThirdRow]"	"[HighResBarFourthRow]"	""
-
 
 Table of Low Res Status
 left	central	right
@@ -39,10 +36,9 @@ left	central	right
 "[LowResStatus]"	""	""
 "[LowResCombat]"	""	""
 
-
 Table of Minimal Status
 left	central	right
-"[TitleBimbo]    [TQDQ Appearance]"	""	""
+"[TitleBimbo]	[TQDQ Appearance]"	""	""
 "[MinimalBarSecondRow]"	""	""
 
 To say TQDQ Appearance:
@@ -81,10 +77,7 @@ To say LowResStatus:
 To say LowResCombat:
 	say "SLAP POWER: [saved-printed-slap-damage] KNEE POWER: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK POWER: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
-
-
 Part - Debug Res Status Bars
-
 
 Table of Debug High Res Status
 left	central	right
@@ -113,7 +106,6 @@ To say ZapAttacks:
 		let T be the substituted form of "[ShortDesc of Z]";
 		now currentZapper is Z;
 		say " [T in upper case]: [zap damage of the player]";
-
 
 Part - Rose
 
@@ -162,7 +154,7 @@ To say VagueStrength:
 	otherwise if saved-flat-strength < 10:
 		say "Womanly   ";
 	otherwise if saved-flat-strength < 15:
-		say "Manly     ";
+		say "Manly	 ";
 	otherwise if saved-flat-strength < 20:
 		say "Well Built";
 	otherwise if saved-flat-strength < 25:
@@ -182,11 +174,11 @@ REQUIRES COMMENTING
 +!]
 To say VagueDex:
 	if saved-flat-dexterity < 5:
-		say "Stiff     ";
+		say "Stiff	 ";
 	otherwise if saved-flat-dexterity < 10:
 		say "Sluggish ";
 	otherwise if saved-flat-dexterity < 15:
-		say "Limber    ";
+		say "Limber	";
 	otherwise if saved-flat-dexterity < 20:
 		say "Flexible ";
 	otherwise if saved-flat-dexterity < 25:
@@ -215,13 +207,13 @@ To say VagueInt:
 	otherwise if saved-flat-intelligence < 13:
 		say "Pensive   ";
 	otherwise if saved-flat-intelligence < 16:
-		say "Geeky     ";
+		say "Geeky	 ";
 	otherwise if saved-flat-intelligence < 20:
-		say "Brainy    ";
+		say "Brainy	";
 	otherwise if saved-flat-intelligence < 24:
-		say "Genius    ";
+		say "Genius	";
 	otherwise if saved-flat-intelligence < 29:
-		say "Sage      ";
+		say "Sage	  ";
 	otherwise:
 		say "Deep Thought".
 
@@ -404,7 +396,7 @@ To say VagueAddiction:
 		if the player is feeling dominant, say "Dominant";
 		otherwise say "Reluctant";
 	otherwise if the player is feeling dominant and the player is not a nympho:
-		 say "Dominatrix";
+		say "Dominatrix";
 	otherwise if the sex addiction of the player < 10:
 		say "Curious";
 	otherwise if the sex addiction of the player < 13:
@@ -475,17 +467,17 @@ REQUIRES COMMENTING
 +!]
 To say VagueBreast:
 	if the largeness of breasts < 3:
-		say "Flat     ";
+		say "Flat	 ";
 	otherwise if the largeness of breasts < 5:
-		say "Tiny     ";
+		say "Tiny	 ";
 	otherwise if the largeness of breasts < 7:
 		say "Average ";
 	otherwise if the largeness of breasts < 9:
-		say "Large    ";
+		say "Large	";
 	otherwise if the largeness of breasts < 12:
 		say "V Large ";
 	otherwise if the largeness of breasts < 15:
-		say "Giant    ";
+		say "Giant	";
 	otherwise if the largeness of breasts < 18:
 		say "Monstrous";
 	otherwise:
@@ -498,7 +490,7 @@ REQUIRES COMMENTING
 +!]
 To say VagueBelly:
 	if the largeness of belly < 4:
-		say "Flat    ";
+		say "Flat	";
 	otherwise if the largeness of belly < 6:
 		say "Round   ";
 	otherwise if the largeness of belly < 7:
@@ -515,13 +507,13 @@ REQUIRES COMMENTING
 +!]
 To say VagueHips:
 	if the thickness of hips < 4:
-		say "Slim     ";
+		say "Slim	 ";
 	otherwise if the thickness of hips < 7:
-		say "Curvy    ";
+		say "Curvy	";
 	otherwise if the thickness of hips < 11:
-		say "Wide     ";
+		say "Wide	 ";
 	otherwise if the thickness of hips < 15:
-		say "Huge     ";
+		say "Huge	 ";
 	otherwise:
 		say "Unnatural".
 
@@ -557,7 +549,6 @@ REQUIRES COMMENTING
 +!]
 To say VagueExternalFeeling:
 	say "[VagueSoreness]".
-
 
 [!<DecideWhichNumberIsTheOrificeSorenessOfThePlayer>+
 
@@ -688,6 +679,10 @@ To say VagueInternals:
 		if fine is 0, say " & ";
 		say "Grossed Out";
 		now fine is 0;
+	otherwise if the player is perturbed:
+		if fine is 0, say " & ";
+		say "Perturbed";
+		now fine is 0;
 	if the player is overly full and diaper quest is 0:
 		if fine is 0, say " & ";
 		say "Oversatiated";
@@ -749,8 +744,6 @@ To say VagueInternals:
 		say "Weighed Down";
 		now fine is 0;
 	if fine is 1, say "Fine".
-
-
 
 The constructing status line while displaying rule is not listed in any rulebook.
 
@@ -844,7 +837,6 @@ left	central	right
 "Choose how to spend your points."	""	""
 "CURRENT POINTS LEFT: [points count]"	""	""
 
-
 Part - Other Status Bars
 
 [!<tableOfEmptyStatus:Table>*
@@ -925,8 +917,4 @@ left	central	right
 ""	"Randomise Your Setup?"	""
 ""	""	""
 
-
-
-
 Status Bar ends here.
-

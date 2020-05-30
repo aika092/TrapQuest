@@ -1,6 +1,5 @@
 Bag Lunch by Food begins here.
 
-
 A bag lunch is a kind of food. There are 5 bag lunches. Understand "condom" as bag lunch. The printed name of bag lunch is "[TQlink of item described]bag 'lunch'[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bag lunch is "bal".
 To say ExamineDesc of (B - a bag lunch):
 	say "A stretchy, bite-sized bag [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if]. Apparently it's meant to be eaten whole.".
@@ -45,4 +44,3 @@ To decide which number is the bartering value of (T - a bag lunch) for (M - a se
 Definition: a bag lunch is oral sex themed: decide yes.
 
 Bag Lunch ends here.
-

@@ -1,6 +1,6 @@
 Swimsuit Framework by Dresses begins here.
 
-A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. The text-shortcut of swimsuit is "ss".
+A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss".
 
 To compute SelfExamineDesc of (C - a swimsuit):
 	say "A [ShortDesc of C] clings tightly to your body. ".
@@ -14,8 +14,6 @@ To uniquely set up (C - a swimsuit):
 
 Definition: a swimsuit is swimming themed: decide yes.
 Definition: a swimsuit is uncovered themed: decide yes.
-
-
 
 Chapter - Monokini
 
@@ -37,7 +35,6 @@ This is the remove inappropriate swimwear rule:
 The remove inappropriate swimwear rule is listed in the diaper quest fix rules.
 
 Chapter - Slutty Monokinis
-
 
 [There are a few different types of monokini, really just for transformation sequence handling.]
 
@@ -80,7 +77,4 @@ To decide which number is the original price of (C - a string monokini):
 	if C is total protection, decide on 3;
 	decide on 1.
 
-
 Swimsuit Framework ends here.
-
-

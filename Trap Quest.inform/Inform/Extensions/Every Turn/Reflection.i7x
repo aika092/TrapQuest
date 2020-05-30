@@ -1,20 +1,21 @@
 Reflection by Every Turn begins here.
 
-
 [!<ComputeHumiliationWithEarningsAndSeconds>+
 
 Compute stuff to do with humiliation and reflection that happens every turn.
 We reduce the player's humiliation by the number of seconds, and then we check if it's time to output some more random flavour as the player reflects on their situation.
 
 +!]
-A later time based rule (this is the reflection rule):
+An all later time based rule (this is the reflection rule):
 	let N be 239; [The number of seconds between each reflection]
 	if the remainder after dividing time-earnings by N < time-seconds and the player is not a nympho:
 		say HumiliationFlav;
 	otherwise if the number of interested monsters in the location of the player is 0 and the player is not immobile:
 		say StatsChangedFlav;
-	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus, humiliate time-seconds;
-	otherwise dignify time-seconds.
+	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
+		humiliate time-seconds;
+	otherwise if playerRegion is not school:
+		dignify time-seconds.
 
 [!<HumiliatingSituation>@
 
@@ -91,7 +92,6 @@ To reflect on (A - huge-belly):
 	otherwise:
 		say "[if the player is not possessing a vagina]You look down at your [BellyDesc] and [one of]realise how ridiculous your situation really is[or]are suddenly very thankful that you can't get pregnant[or]quiver as you think about how large it might be able to grow to in this game[in random order].[otherwise]You put a hand on your [BellyDesc].[line break][first custom style][one of]So this is what it's like to feel pregnant? How humiliating...[or]Please don't grow any more...[or]I mustn't let anything else cum inside me![in random order][roman type][line break][end if]".
 
-
 crawling-around is a humiliating situation.
 Definition: crawling-around (called A) is applicable:
 	if (the player is proud or the player-class is succubus or the class of the player is princess) and the player is prone, decide yes;
@@ -105,7 +105,6 @@ To reflect on (A - crawling-around):
 		say "A mocking voice in your head chides you for crawling like a pathetic mortal.";
 	otherwise:
 		say "[first custom style]I'm on my knees [one of]crawling through this place[or]crawling around[or]with my butt high in the air[in random order]. How crazy is this![roman type][line break]".
-
 
 outrageous-heels is a humiliating situation.
 Definition: outrageous-heels (called A) is applicable:
@@ -158,7 +157,6 @@ Definition: outrageous-corset (called A) is applicable:
 To reflect on (A - outrageous-corset):
 	say "[if the bimbo of the player < 10][first custom style]This corset [one of]is much too slutty for me to be wearing...[or]makes me look like a complete tart![or]could get me mistaken for a common whore![in random order][otherwise][second custom style]This corset really does make my waist and hips look sexy...[one of] no wonder everything wants to fuck me![or]I guess people can't be blamed if they want to screw me![or][in random order][end if][roman type][line break]".
 
-
 chubby-slut is a humiliating situation.
 Definition: chubby-slut (called A) is applicable:
 	if the player is not disgraced and the fat-weight of the player > 8 and weight gain fetish is 1, decide yes;
@@ -167,7 +165,7 @@ To reflect on (A - chubby-slut):
 	if the fat-weight of the player > 30:
 		say "[variable custom style][one of]Oh god, I'm so obese I can hardly move![or]I'm such a waste of space, literally.[or]I'm so disgracefully lazy that my body has ended up like this. Don't look at me![in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 22:
-		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat! Nobody is going to want to have sex with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
+		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat! Nobody is going to want to have [if the sex addiction of the player > 5]sex[otherwise]anything to do[end if] with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 14:
 		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is gendered female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go! I should probably be less lazy...[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 8:
@@ -204,6 +202,20 @@ To reflect on (A - outrageous-messy-undies):
 	if the player is upset about sitting in mess, say "[variable custom style][one of]I need to get out of this nasty messy prison before someone checks me! But how do I do that...?![or]Oh this is so gross, I can smell my own mess! I give up, someone please come and give me a change already...[or]Yuck yuck yuck, I need to get out of my own filth before someone smells me! I just need to find a bath, or shower, or even a pond would do![in random order][roman type][line break]";
 	otherwise say "[variable custom style][one of]If someone caught me in this messy situation, my reputation would never recover! I should probably find a way to get clean before that happens.[or]If someone realises I'm messy it'll be so embarrassing... I'd rather just stay messy rather than face the humiliation of getting a change from another person![in random order][roman type][line break]".
 
+glazed-body is a humiliating situation.
+Definition: glazed-body (called A) is applicable:
+	if the player is not shameless and the number of glazed body parts > 0 and the semen addiction of the player < 4, decide yes;
+	decide no.
+To reflect on (A - glazed-body):
+	let F be a random glazed body part;
+	say "[variable custom style]'[one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....'[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting!'[or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...'[in random order][roman type]".
+
+visible-erection is a humiliating situation.
+Definition: visible-erection is applicable:
+	if the size of penis > 2 and penis is exposed and penis is penis-erect and the player is modest, decide yes;
+	decide no.
+To reflect on (A - visible-erection):
+	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
 
 [!<SayHumiliationFlav>+
 
@@ -351,6 +363,4 @@ To say StatsChangedFlav:
 			now the old intelligence of the player is saved-flat-intelligence;
 			break.
 
-
 Reflection ends here.
-

@@ -1,6 +1,5 @@
 Variable Text by Miscellaneous Frontend begins here.
 
-
 [!<SayVariableCustomStyle>+
 
 REQUIRES COMMENTING
@@ -52,7 +51,7 @@ If the player is impressed with the (assumed female) NPC
 +!]
 To say mistress:
 	if the class of the player is santa's little helper:
-		say "Mrs Santa";
+		say "Mrs. Santa";
 	if the player is feeling dominant:
 		say "[one of]honey[or]cutie[or]beautiful[or]doll[as decreasingly likely outcomes]";
 	otherwise if the player is not feeling submissive:
@@ -204,7 +203,8 @@ REQUIRES COMMENTING
 
 +!]
 To say load:
-	say "[if the size of penis < 5][one of]below average load[or]small load[or]thin load[purely at random][otherwise if the size of penis < 8][one of]hot load[or]thick load[or]average load[purely at random][otherwise][one of]massive load[or]big load[or]fat load[purely at random][end if]".
+	let A be the semen load of the player;
+	say "[if A < 3][one of]tiny[or]watery[or]small[purely at random] load[otherwise if A < 6][one of]hot[or]warm[or]average[at random] load[otherwise if A < 9][one of]thick[or]creamy[or]big[or]fat[purely at random] load[otherwise if A < 11][one of]huge[or]massive[or]ultra thick[purely at random] load[otherwise][one of]inhuman[or]insane[or]ridiculous[purely at random] load[end if]";
 
 [!<SayVariableBodyPart>+
 
@@ -375,7 +375,6 @@ To say milk:
 	otherwise:
 		say "[if a random number between 10 and 20 < the milk taste addiction of the player][one of]tasty[or]yummy[purely at random] [end if][if diaper lover >= 1][one of]milk[or]breast milk[or]momma's milk[or]boob juice[as decreasingly likely outcomes][otherwise if lactation fetish is 1 and a random number between 1 and the bimbo of the player > 8][one of]cow juice[or]udder milk[or]breast milk[at random][otherwise]milk[end if]".
 
-
 To decide which text is man of (M - a thing):
 	decide on "[if M is live]being[otherwise]thing[end if]".
 
@@ -387,8 +386,6 @@ To decide which text is men of (M - a thing):
 
 To decide which text is men of (M - a person):
 	decide on "[if M is neuter]beings[otherwise if M is presenting as female]women[otherwise]men[end if]".
-
-
 
 To decide which text is sissy-girl:
 	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
@@ -672,7 +669,6 @@ A humiliation reaction: expands to a full sentence grammatically equivalent to "
 To say HumiliateReflect (N - a number):
 	say "You [blush N].".
 
-
 [!<SayGreatOne>+
 
 In support of a hypnosis test, you can be indoctrinated by the cultists to react to them mentioning the Great Ones
@@ -680,6 +676,11 @@ In support of a hypnosis test, you can be indoctrinated by the cultists to react
 +!]
 To say great one:
 	say "Great One";
+	if player-hypno-great is 1:
+		now hypno-trigger is "great one".
+
+To say great ones:
+	say "Great Ones";
 	if player-hypno-great is 1:
 		now hypno-trigger is "great one".
 
@@ -733,6 +734,4 @@ To say caps please:
 	say "PLEASE";
 	now hypno-trigger is "please".
 
-
 Variable Text ends here.
-

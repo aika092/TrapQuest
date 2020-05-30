@@ -102,6 +102,4 @@ To Recover the Player:
 	now busy is 0;
 	if debugmode > 0, say "Finished recovering player.".
 
-
 Recovering the Player ends here.
-

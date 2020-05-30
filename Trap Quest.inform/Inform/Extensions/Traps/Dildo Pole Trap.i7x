@@ -1,6 +1,5 @@
 Dildo Pole Trap by Traps begins here.
 
-
 Figure of Pole Cutscene 1 is the file "Special/Cutscene/cutscene-pole1.png".
 Figure of Pole Cutscene 2 is the file "Special/Cutscene/cutscene-pole2.png".
 Figure of Pole Cutscene 3 is the file "Special/Cutscene/cutscene-pole3.png".
@@ -27,7 +26,6 @@ Figure of mansion dildo trap is the file "Env/Mansion/dildopole1.jpg".
 To decide which figure-name is the examine-image of (C - a dildo trap):
 	decide on figure of dungeon dildo trap.
 
-
 [!<DildoTrap>@<SayEnvironmentDesc>+
 
 This is what is put in the room description when the trap is visible (revealed).
@@ -38,7 +36,6 @@ To say EnvironmentDesc of (T - a dildo trap):
 
 To say ShortDesc of (T - a dildo trap):
 	say "pole-mounted dildo".
-
 
 [!<DildoTrap>@<WhichNumberIsTheGirth>+
 
@@ -55,7 +52,6 @@ REQUIRES COMMENTING
 +@!]
 Check taking off dildo trap:
 	if the noun is penetrating a fuckhole, say "You can't just remove it with all your weight on it. You're going to have to jump!" instead.
-
 
 [!<DildoPoleTrap>@<Trigger>+
 
@@ -77,7 +73,6 @@ To compute orgasm resolution of (R - a dildo trap):
 To compute orgasm retraction of (R - a dildo trap):
 	say "The dildo retracts as your knees buckle, pulling free as you fall to the floor.".
 
-
 [!<DildoTrap>@<ComputePoleCutsceneImage>+
 
 REQUIRES COMMENTING
@@ -90,7 +85,6 @@ To compute pole cutscene image of (Y - a dildo trap):
 		cutshow figure of pole cutscene 1 for Y;
 	otherwise:
 		cutshow figure of pole cutscene 2 for Y.
-
 
 [This does the majority of the mechanics for a standard dildo trap entering you.]
 [!<DildoTrap>@<TriggerPoleTrap>+
@@ -183,7 +177,6 @@ To compute (Y - a dildo trap) penetration of (C - an object) into (G - a fuckhol
 		now doll-stuck-kind is 1; [ballerina]
 		say "You slowly [doll-stuck]. [one of]Your ankles flex, trying futilely to stretch down to touch the floor, but it's useless! You're impaled, suspended helplessly above the ground. And then the pole starts slowly turning, and of course, you move with it, unable to do anything to prevent it. A wave of humiliation washes through you, and the dildo briefly vibrates, as if sensing your shame and rubbing it in. But how will you ever get off here?[line break]As if in response to your thought, a picture of a pretty ballerina in a frilly, wispy tutu, turning in a music box, flashes into your mind[or]You try to stretch your toes to the floor, but fail[or]The tinkly music starts up again, as the pole starts turning you[stopping]. You feel a mental pressure to submit, and adopt the required pose.".
 
-
 To say DildoTrapReactFlav of (M - a monster):
 	say HarshTrapReactFlav of M.
 
@@ -270,7 +263,6 @@ Check resisting when doll-stuck-num > 0:
 	allocate 6 seconds;
 	do nothing instead.
 
-
 dildoJumpSucceeded is initially true.
 
 To Jump From The Dildo:
@@ -289,7 +281,7 @@ To Jump From The Dildo:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
-	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 1 and 2 is 1):
+	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 0 and 1 < clumsy april fools):
 		let D be the dexterity of the player;
 		let W be the weight of the player;
 		let Hi be 0;
@@ -382,9 +374,6 @@ This is the spawn initial dildo pole traps rule:
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial dildo pole traps rule is listed in the set up dungeon traps rules.
 
-
-
-
 Part 2 - Drill Pole Trap
 
 [!<DrillPoleTrap>@
@@ -397,7 +386,6 @@ REQUIRES COMMENTING
 A drill pole trap is a kind of dildo trap. There are 10 drill pole traps. The printed name of drill pole trap is "[TQlink of item described]drill pole trap[TQxlink of item described][verb-desc of item described]".
 To say ExamineDesc of (C - a drill pole trap):
 	say "A metal pole with a flesh coloured dildo on the end. When it is inside you, it spins rapidly! Usually...".
-
 
 To decide which figure-name is the examine-image of (C - a drill pole trap):
 	decide on figure of woods dildo trap.
@@ -413,7 +401,6 @@ This is the spawn initial drill pole traps rule:
 		let T be a random off-stage drill pole trap;
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial drill pole traps rule is listed in the set up woods traps rules.
-
 
 [!<DrillPoleTrap>@<Trigger>+
 
@@ -510,7 +497,6 @@ This is the spawn initial creampie pole traps rule:
 		unless there is a dildo trap in R, deploy T in R.
 The spawn initial creampie pole traps rule is listed in the set up hotel traps rules.
 
-
 A creampie pole trap has a number called previous-cutscene.
 
 To get creampie cutscene of (Y - a creampie pole trap):
@@ -533,7 +519,6 @@ To get creampie cutscene of (Y - a creampie pole trap):
 		otherwise:
 			cutshow figure of creampie pole cutscene 5 for Y;
 	now the previous-cutscene of Y is R.
-
 
 [!<CreampiePoleTrap>@<Trigger>+
 
@@ -585,7 +570,6 @@ REQUIRES COMMENTING
 A ghostly dildo pole trap is a kind of dildo trap. There are 10 ghostly dildo pole traps. The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]".
 To say ExamineDesc of (C - a ghostly dildo pole trap):
 	say "A seemingly incorporeal pole with a translucent dildo on the end.".
-
 
 To decide which figure-name is the examine-image of (C - a ghostly dildo pole trap):
 	decide on figure of mansion dildo trap.
@@ -653,6 +637,4 @@ To compute orgasm resolution of (R - a ghostly dildo pole trap):
 	otherwise:
 		compute orgasm retraction of R.
 
-
 Dildo Pole Trap ends here.
-

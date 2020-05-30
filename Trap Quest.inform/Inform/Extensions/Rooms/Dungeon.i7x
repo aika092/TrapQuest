@@ -1,6 +1,5 @@
 Dungeon by Rooms begins here.
 
-
 [!<LabyrinthRoom>@
 
 REQUIRES COMMENTING
@@ -29,7 +28,7 @@ Dungeon02 is a sandy labyrinth room. The printed name of Dungeon02 is "Large Sto
 REQUIRES COMMENTING
 
 *!]
-Dungeon03 is a sandy labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if saved-flat-intelligence > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon02 is L1/0-0-0-0-1-0.
+Dungeon03 is a sandy mandatory labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if saved-flat-intelligence > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon03 is L1/0-0-0-0-1-0.
 
 [!<dungeon04:LabyrinthRoom>*
 
@@ -72,7 +71,6 @@ REQUIRES COMMENTING
 
 *!]
 Dungeon09 is a sandy labyrinth room. The printed name of Dungeon09 is "Arena". "While it isn't large enough to house many, the arena in the dungeons has seen plenty of use. From the slash marks and broken boards along the wooden walls of the fighting ring, it is very easy to see that the warriors who fought within it had the strength to match. There are a few crude seats around it, and the lighting is a little more complex, with wall torches for those watching and a single metal lantern suspended from the ceiling for the fighters.".
-
 
 [!<dungeon10:LabyrinthRoom>*
 
@@ -288,14 +286,14 @@ Dungeon38 is a sandy labyrinth room. The printed name of Dungeon38 is "Chapel". 
 REQUIRES COMMENTING
 
 *!]
-Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's Room". "It wasn't much, but you can faintly make out this room as some kind of doctor's or medicine man's room. There are cabinets lined with various herbal remedies and a long table one could lie down on along the side of the room. Candles light the area, giving a very cosy, intimate feel to the entire area... or maybe just that no one had used the room in quite a while.".
+Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's Room". "It wasn't much, but you can faintly make out this room as some kind of doctor's or masseuse's room. There are cabinets lined with various herbal remedies and a long table one could lie down on along the side of the room. Candles light the area, giving a very cosy, intimate feel to the entire area... or maybe just that no one had used the room in quite a while.".
 
 [!<dungeon40:LabyrinthRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if saved-flat-intelligence > 7][one of][line break]Upon closer examination, you recognize the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
+Dungeon40 is a sandy labyrinth room. The printed name of Dungeon40 is "Circular Stone Room". "While the other rooms you've passed through in the dungeon have proven to be of a fairly rudimentary rectangular shape, this single room has a circular design. It wouldn't be noteworthy if it weren't for the strange change from the norm that it brought. Examining the area, you look up at the domed ceiling to make out a portrait of female angels circling overhead, looking down at you as you pass through.[if saved-flat-intelligence > 7][one of][line break]Upon closer examination, you recognise the angels as the Nintendolls employees that locked you in this simulation. The reminder of your captivity doesn't sit easy with you as you press on.[or][stopping]".
 
 [!<dungeon41:LabyrinthRoom>*
 
@@ -303,7 +301,6 @@ REQUIRES COMMENTING
 
 *!]
 Dungeon41 is a mandatory untrappable labyrinth room. The printed name of Dungeon41 is "Dungeon Shop". "The shop you emerge in would fit into nearly any fantasy RPG, with lines of products sitting on wooden shelves, and with their prices neatly stencilled onto wooden plaques sitting beneath them. All manner of goods are sold here, all at the behest of the massive shopkeeper.". The shape of Dungeon41 is L1/0-0-0-0-1-0.
-
 
 [!<dungeonScenery02:Scenery>*
 
@@ -335,7 +332,7 @@ To say ExamineDesc of (T - DungeonScenery03):
 	let L be a random lake monster;
 	let S be the semen-sniffing of L;
 	if L is not in the location of the player, now S is 0;
-	say "A large underground lake, spanning as far as you can see. [if S < 200]The waters are calm, and you can see deep into the dark abyss underneath the surface.[otherwise if S < 400]The water is calm, although a tiny wave occasionally travels across the surface.[otherwise if S < 800]Tiny waves move frequently over the surface, seeming to emanate from some place far offshore.[otherwise if L is not in the location of the player]Tiny waves move across the surface in a subtle rhythm, emanating from some place far offshore.[otherwise]The surface is choppy, and the tentacles appear to be in the center of the waves.[end if]".
+	say "A large underground lake, spanning as far as you can see. [if S < 200]The waters are calm, and you can see deep into the dark abyss underneath the surface.[otherwise if S < 400]The water is calm, although a tiny wave occasionally travels across the surface.[otherwise if S < 800]Tiny waves move frequently over the surface, seeming to emanate from some place far offshore.[otherwise if L is not in the location of the player]Tiny waves move across the surface in a subtle rhythm, emanating from some place far offshore.[otherwise]The surface is choppy, and the tentacles appear to be in the centre of the waves.[end if]".
 
 [!<dungeonScenery04:Scenery>*
 
@@ -386,7 +383,6 @@ Check turning DungeonScenery06:
 Check pushing DungeonScenery06:
 	try turning the noun instead.
 
-
 [!<stairwell01:LabyrinthRoom>*
 
 REQUIRES COMMENTING
@@ -401,6 +397,4 @@ REQUIRES COMMENTING
 *!]
 The Dungeon is a region. Dungeon01, Dungeon02, Dungeon03, Dungeon04, Dungeon05, Dungeon06, Dungeon07, Dungeon08, Dungeon09, Dungeon10, Dungeon11, Dungeon12, Dungeon13, Dungeon14, Dungeon15, Dungeon16, Dungeon17, Dungeon18, Dungeon19, Dungeon20, Dungeon21, Dungeon22, Dungeon23, Dungeon24, Dungeon25, [Dungeon26,] Dungeon27, Dungeon28, Dungeon29, Dungeon30, Dungeon31, Dungeon32, Dungeon33, Dungeon34, Dungeon35, Dungeon36, Dungeon37, Dungeon38, Dungeon39, Dungeon40, Dungeon41, Stairwell01 are in The Dungeon.
 
-
 Dungeon ends here.
-

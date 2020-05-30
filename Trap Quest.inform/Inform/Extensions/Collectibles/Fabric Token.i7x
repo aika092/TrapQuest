@@ -17,9 +17,12 @@ Definition: a fabric token is fetish appropriate: decide yes.
 To compute mass collectible reward of (T - a fabric token):
 	let N be the number of held fabric tokens + a random number between 0 and 4;
 	say "You place [if number of held fabric tokens is 1]the metal token[otherwise if number of held fabric tokens is 2]both metal tokens[otherwise]all [number of held fabric tokens] metal tokens[end if] into the bowl and there [if number of held fabric tokens is 1]it begins to turn[otherwise]they slowly merge together and then begin to turn[end if] into a single piece of fabric.";
-	say "You can feel the magic searching your mind to understand your desires. You could probably influence whether it takes the shape of a bra or a pair of panties. Do you wish for a bra (if you choose 'no', you'll get panties)? ";
+	say "You can feel the magic searching your mind to understand your desires.";
 	let C be nothing;
-	if the player is consenting:
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	set numerical response 1 to "wish for a bra";
+	set numerical response 2 to "wish for undies";
+	if player-numerical-response is 1:
 		now C is a random off-stage fetish appropriate transformation-eligible almost too much bra;
 		if N > a random number between 4 and 7:
 			now C is a random off-stage rare fetish appropriate outrageAcceptable bra;
@@ -54,6 +57,5 @@ To compute mass collectible reward of (T - a fabric token):
 			destroy X;
 	allocate 6 seconds;
 	reset alchemy charge.
-
 
 Fabric Token ends here.

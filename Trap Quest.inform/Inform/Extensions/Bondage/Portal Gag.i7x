@@ -73,12 +73,10 @@ To compute periodic effect of (C - portal gag):
 					dislodge C;
 					now M is penetrating face;
 					StomachSemenUp the semen load of M; [We make sure M is penetrating face, for correct deepthroat checks.]
+					orgasm M;
 					dislodge M;
 					now C is penetrating face;
 				otherwise:
 					say "[BigNameDesc of M] is still fucking your mouth through the portal![line break][variable custom style]'Glk glk glk glk glk...'[roman type][line break]";
-
-
-
 
 Portal Gag ends here.

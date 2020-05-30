@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 hair is a body part. hair is everywhere. Understand "my hair" as hair. The text-shortcut of hair is "hair".
 To say FullExamineDesc of (B - hair):
-	say "[TotalDesc of hair]".
+	say "[ImageDesc of hair][TotalDesc of hair]".
 
 [!<DecideWhichNumberIsTheLargenessOfHair>+
 
@@ -111,7 +111,6 @@ Stops hair changing
 
 *!]
 frozen hair is a number that varies.
-
 
 Part 2 - Description
 
@@ -235,7 +234,7 @@ REQUIRES COMMENTING
 +!]
 To say HairDesc (X - a number):
 	say "[2HairDesc X]";
-	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]. ";
+	if the fake largeness of hair > 0, say " and fake hair extensions which are extending your hair to [2HairDesc the largeness of hair]";
 
 [!<Say2HairDescNumber>+
 
@@ -243,7 +242,9 @@ REQUIRES COMMENTING
 
 +!]
 To say 2HairDesc (X - a number):
-	if the player is upright:
+	if diaper quest is 1:
+		say "[HairColour] hair";
+	otherwise if the player is upright:
 		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
 		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
@@ -313,7 +314,6 @@ To say RealHairDesc (X - a number):
 	if X > 14, say "hair that is even longer than your body".
 
 Part 3 - Modify Hair Stats
-
 
 [!<DecideWhichNumberIsMaxHairLength>+
 
@@ -530,7 +530,6 @@ To hair permanent check:
 			say "[bold type]A new tattoo has appeared on your arm![roman type][line break]";
 			try examining bright-hair tattoo.
 
-
 Section - Image for graphics window
 
 Figure of CumHairButton is the file "Special/Buttons/cumhair.png".
@@ -539,6 +538,4 @@ To decide which figure-name is the examine-image of (T - hair):
 	if T is overglazed, decide on Figure of CumHairButton;
 	decide on figure of no-image-yet.
 
-
 Hair ends here.
-

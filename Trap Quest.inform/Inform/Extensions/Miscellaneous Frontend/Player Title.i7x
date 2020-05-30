@@ -1,7 +1,5 @@
 Player Title by Miscellaneous Frontend begins here.
 
-
-
 [!<SayTitleBimbo>+
 
 REQUIRES COMMENTING
@@ -94,7 +92,7 @@ To say TitleBimbo:
 			if the player-class is not broodmother:
 				say " butt slut";
 			otherwise:
-				say "abdomen slut";
+				say " abdomen slut";
 		otherwise if the player is a pussy slut:
 			say " craving cunt";
 		otherwise if the player is a blowjob slut:
@@ -141,7 +139,7 @@ To say TitleBimbo:
 			otherwise if T is "puppygirl" and the player is gendered male and the bimbo of the player < 13 and the largeness of breasts < 6:
 				say " puppyboy";
 			otherwise if the player is a sissy and the player is queen of spades and the bimbo of the player > 7:
-				say " black cock [if highest body part sex addiction > 7]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
+				say " [BlackCock] [if highest body part sex addiction > 7]addict[otherwise if the sex addiction of the player > 11]lover[otherwise]enthusiast[end if]";
 			otherwise:
 				say " [T]";
 		otherwise if armband is worn:
@@ -216,7 +214,4 @@ To say TitleBaby:
 		otherwise:
 			say " girl[if the player is gendered male]yboy[end if]".
 
-
-
 Player Title ends here.
-

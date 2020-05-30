@@ -10,7 +10,7 @@ To look is a verb. To see is a verb.
 
 1. facing a direction; 2. looking toward a named room; 3. looking through a given door.
 
-In all three cases we want to establish the direction, the goal room, and the intervening door, then apply check and carry out rules in a sensible way. This is not quite as complex as the going action, which has to keep track of direction traveled, door traveled through, objects pushed along, and vehicles; but we use a similar technique of setting a bunch of global variables and then consolidating the check rules in such a way that any given rule (such as "the player cannot see through a closed door") is expressed in only one place.]
+In all three cases we want to establish the direction, the goal room, and the intervening door, then apply check and carry out rules in a sensible way. This is not quite as complex as the going action, which has to keep track of direction travelled, door travelled through, objects pushed along, and vehicles; but we use a similar technique of setting a bunch of global variables and then consolidating the check rules in such a way that any given rule (such as "the player cannot see through a closed door") is expressed in only one place.]
 
 Viewed location is a room that varies. Occluding door is an object that varies. Direction faced is a direction that varies.
 
@@ -48,7 +48,6 @@ This is the looking through doors rule:
 	otherwise try the person asked trying looking toward the viewed location.
 
 nothing-to-see-that-way is some text that varies. nothing-to-see-that-way is "[We] [can] make out nothing that way."
-
 
 Understand "look [direction]" as facing. Understand "face [direction]" as facing. Understand "look to/toward/towards [direction]" as facing.
 

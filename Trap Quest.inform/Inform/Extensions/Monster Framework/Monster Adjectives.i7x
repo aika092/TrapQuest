@@ -1,18 +1,21 @@
 Monster Adjectives by Monster Framework begins here.
 
-
 A monster is a kind of animal. A dungeon boss is a kind of monster.
+Definition: a dungeon boss is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 A monster can be interested or uninterested. A monster is usually uninterested. [Are they currently actively looking to interact with the player?]
 A monster has a number called sleep. The sleep of a monster is usually 0. [The number of seconds until they wake up.]
 Definition: A monster is awake rather than asleep if its sleep <= 0 and timeBombTime <= 0.
 A monster has a number called sex-length. The sex-length of a monster is usually 0. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
-A monster has a number called difficulty. The difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
+A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
+To decide which number is the difficulty of (M - a monster):
+	decide on the raw difficulty of M + game difficulty.
 A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
+Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
 To decide which number is the maxhealth of (M - a monster):
 	if tutorial is 1, decide on 99999;
 	let X be 3;
-	increase X by (the difficulty of M * (10 + game difficulty)) / 3;
+	increase X by (the difficulty of M * 10) / 3;
 	if M is durable-tentacle-monster, increase X by the difficulty of M;
 	decide on X.
 A monster has a number called boredom. The boredom of a monster is usually 0. [The number of seconds until they will begin actively perceiving. If the monster doesn't fall asleep, set this to something between 100 and 250 after sex to stop the monster just fucking the player repeatedly.]
@@ -21,17 +24,13 @@ A monster has a room called target-room. [Any monster that can change locations 
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
 A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked? Most monsters will only tolerate one.]
- Definition: A monster (called M) is wenchy:
-	if M is manly-wenchy, decide yes;[So the monster needs only one, not both]
-	decide no.
-Definition: A monster (called M) is manly-wenchy:[specifically refers to monsters that the player will "ride" to dominate them.]
-	decide no.
+ Definition: A monster (called M) is wenchy: decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
 Definition: a monster (called M) is father material:[This means the monster can father children.]
 	if M is male, decide yes;
 	decide no.
-A monster can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
+A person can be intelligent or unintelligent. A monster is usually unintelligent. [Essentially, can they speak English?; TODO: definition]
 A monster is usually female. [Male = Do they have a sex organ that can ejaculate semen?]
 A monster has a number called times-met. The times-met of a monster is usually 0.
 A monster has a number called times-submitted. The times-submitted of a monster is usually 0.
@@ -43,15 +42,21 @@ A monster can be bossdefeated. A monster is usually not bossdefeated.
 A monster can be diaper-committed. A monster is usually not diaper-committed.
 A monster can be double-diaper-committed. A monster is usually not double-diaper-committed.
 A monster has a number called dismissRefused. [Have they refused to be dismissed?]
+A monster can be summon-available or permanently banished. A monster is usually summon-available. [Can it come back?]
+Definition: a monster is summon appropriate if it is summon-available and it is summoningRelevant. [Can it be randomly selected to be summoned?]
 
-Definition: a monster is fetish appropriate: decide yes.
-
-[These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap.]
+[These adjectives describe what regions a monster is allowed to spawn in, via the spawning trap and summoning portals.]
 Definition: a monster is dungeon dwelling: decide no.
 Definition: a monster is woods dwelling: decide no.
 Definition: a monster is hotel dwelling: decide no.
 Definition: a monster is mansion dwelling: decide no.
-Definition: a monster is school dwelling: decide no.
+Definition: a monster (called M) is regionally missing:
+	let T1 be the substituted form of "[ShortDesc of M]";
+	repeat with N running through in-play monsters:
+		let T2 be the substituted form of "[ShortDesc of N]";
+		if T1 is T2, decide no;
+	decide yes.
+
 
 A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
 Definition: a monster is raunchy: decide no.
@@ -159,7 +164,8 @@ Definition: A monster (called M) is expectant:
 		decide yes;
 	decide no.
 
-Definition: A monster is willing to shag: decide no. [A willing monster is one who is currently available for consensual sex.]
+Definition: a monster is willing to shag: decide no. [A willing monster is one who is currently available for consensual sex.]
+Definition: a monster is willing to shag right now if it is willing to shag and the refactory-period of it < 0. [Currently available for consensual sex and hasn't orgasmed recently.]
 
 Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead? This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
 
@@ -202,9 +208,7 @@ Definition: a monster is scarable: decide yes. [Can this monster be made to flee
 
 A monster can be seduced, unseduced or seduction-refused (this is the monster-seduction property). A monster is usually unseduced. [Is the player currently playing a seduction minigame with it? If it has refused seduction then it won't allow the seduction to happen again.]
 Definition: a monster is seducable if it is male and it is intelligent and it is willing to do anal.
-Definition: a monster is actually seducable if it is seducable and it is reactive and it is interested and it is unseduced.
+Definition: a monster is actually seducable if it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part.
 A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
 
-
 Monster Adjectives ends here.
-

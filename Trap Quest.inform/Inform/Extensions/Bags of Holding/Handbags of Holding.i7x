@@ -27,4 +27,3 @@ To say ShortDesc of (C - designer handbag of holding):
 	say "designer handbag".
 
 Handbags of Holding ends here.
-

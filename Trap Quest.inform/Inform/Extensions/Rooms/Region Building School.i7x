@@ -1,85 +1,88 @@
 Region Building School by Rooms begins here.
 
 To Set Up The School:
-	if diaper quest is 0, now gloryhole is in School19;
+	if diaper quest is 0:
+		now gloryhole is in School19;
+		now male-gloryhole is in Toilet01;
+		now female-gloryhole is in Toilet02;
 	[change the up exit of Hotel29 to School01;]
 	change the west exit of School33 to School07; [one-way so that people don't get trapped but can't access normally]
 	now school portal is in School01;
-	if watersports fetish is 1 and ex-princess is caged, now the location of ex-princess is urinals;
+	if watersports fetish is 1 and diaper quest is 0 and ex-princess is caged, now the location of ex-princess is urinals;
 	set up junk room;
-	repeat with M running through fetish appropriate school dwelling staff members:
+	repeat with M running through fetish appropriate staff members:
 		unless M is diamond-teacher or M is pink-diamond-teacher or M is ruby-teacher, set up M;
-	let M be a random fetish appropriate school dwelling rank1 innocent student;
+	let M be a random fetish appropriate rank1 innocent student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank1 tryhard student;
+	let M be a random fetish appropriate rank1 tryhard student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank1 nasty student;
+	let M be a random fetish appropriate rank1 nasty student;
 	if M is monster, set up M;
-	now the favour of M is 0;
-	let M be a random fetish appropriate school dwelling rank1 ditzy student;
+	[now the favour of M is 0;]
+	let M be a random fetish appropriate rank1 ditzy student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank1 amicable student;
+	let M be a random fetish appropriate rank1 amicable student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank2 innocent student;
+	let M be a random fetish appropriate rank2 innocent student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank2 tryhard student;
+	let M be a random fetish appropriate rank2 tryhard student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank2 nasty student;
+	let M be a random fetish appropriate rank2 nasty student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank2 ditzy student;
+	let M be a random fetish appropriate rank2 ditzy student;
 	if M is monster, set up M;
-	let M be a random fetish appropriate school dwelling rank2 amicable student;
+	let M be a random fetish appropriate rank2 amicable student;
 	if M is monster, set up M.
 
 To set up rank three students:
 	unless there is an alive rank3 innocent student or (there is an alive promotable rank2 innocent student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank3 innocent student;
+		let M be a random off-stage fetish appropriate rank3 innocent student;
 		if M is monster, set up M;
 	unless there is an alive rank3 tryhard student or (there is an alive promotable rank2 tryhard student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank3 tryhard student;
+		let M be a random off-stage fetish appropriate rank3 tryhard student;
 		if M is monster, set up M;
 	unless there is an alive rank3 nasty student or (there is an alive promotable rank2 nasty student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank3 nasty student;
+		let M be a random off-stage fetish appropriate rank3 nasty student;
 		if M is monster, set up M;
 	unless there is an alive rank3 ditzy student or (there is an alive promotable rank2 ditzy student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank3 ditzy student;
+		let M be a random off-stage fetish appropriate rank3 ditzy student;
 		if M is monster, set up M;
 	unless there is an alive rank3 amicable student or (there is an alive promotable rank2 amicable student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank3 amicable student;
+		let M be a random off-stage fetish appropriate rank3 amicable student;
 		if M is monster, set up M.
 
 To set up rank four students:
 	unless there is an alive rank4 innocent student or (there is an alive promotable rank3 innocent student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank4 innocent student;
+		let M be a random off-stage fetish appropriate rank4 innocent student;
 		if M is monster, set up M;
 	unless there is an alive rank4 tryhard student or (there is an alive promotable rank3 tryhard student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank4 tryhard student;
+		let M be a random off-stage fetish appropriate rank4 tryhard student;
 		if M is monster, set up M;
 	unless there is an alive rank4 nasty student or (there is an alive promotable rank3 nasty student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank4 nasty student;
+		let M be a random off-stage fetish appropriate rank4 nasty student;
 		if M is monster, set up M;
 	unless there is an alive rank4 ditzy student or (there is an alive promotable rank3 ditzy student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank4 ditzy student;
+		let M be a random off-stage fetish appropriate rank4 ditzy student;
 		if M is monster, set up M;
 	unless there is an alive rank4 amicable student or (there is an alive promotable rank4 amicable student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank4 amicable student;
+		let M be a random off-stage fetish appropriate rank4 amicable student;
 		if M is monster, set up M.
 
 To set up rank five students:
 	unless there is an alive rank5 innocent student or (there is an alive promotable rank4 innocent student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank5 innocent student;
+		let M be a random off-stage fetish appropriate rank5 innocent student;
 		if M is monster, set up M;
 	unless there is an alive rank5 tryhard student or (there is an alive promotable rank4 tryhard student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank5 tryhard student;
+		let M be a random off-stage fetish appropriate rank5 tryhard student;
 		if M is monster, set up M;
 	unless there is an alive rank5 nasty student or (there is an alive promotable rank4 nasty student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank5 nasty student;
+		let M be a random off-stage fetish appropriate rank5 nasty student;
 		if M is monster, set up M;
 	unless there is an alive rank5 ditzy student or (there is an alive promotable rank4 ditzy student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank5 ditzy student;
+		let M be a random off-stage fetish appropriate rank5 ditzy student;
 		if M is monster, set up M;
 	unless there is an alive rank5 amicable student or (there is an alive promotable rank4 amicable student and a random number between 1 and 2 is 1):
-		let M be a random off-stage fetish appropriate school dwelling rank5 amicable student;
+		let M be a random off-stage fetish appropriate rank5 amicable student;
 		if M is monster, set up M.
 
 To set up junk room:
@@ -127,4 +130,3 @@ To update students:
 			destroy M.]
 
 Region Building School ends here.
-

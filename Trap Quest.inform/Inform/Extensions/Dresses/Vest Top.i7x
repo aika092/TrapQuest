@@ -1,13 +1,12 @@
 Vest Top by Dresses begins here.
 
-A vest top is a kind of overdress. A vest top is usually unskirted. A vest top is usually fully covering. A vest top is usually transformation-rare. A vest top is usually manly. A vest top is usually not-top-displacable. A vest top is usually sheer-when-wet.
+A vest top is a kind of overdress. A vest top is usually unskirted. A vest top is usually fully covering. A vest top is usually transformation-rare. A vest top is usually manly. A vest top is usually not-top-displacable. A vest top is usually sheer-when-wet. A vest top is usually erect-nipple-exposing.
 
 To decide which number is the initial outrage of (C - a vest top):
 	decide on 0.
 
 To compute SelfExamineDesc of (C - a vest top):
 	say "You are wearing a [ShortDesc of C]. ".
-
 
 This is the remove inappropriate vest tops rule:
 	repeat with B running through vest tops:
@@ -115,9 +114,6 @@ To say MediumDesc of (C - a rubber vest top):
 To decide which number is the initial outrage of (C - a rubber vest top):
 	decide on 4.
 
-
 Definition: a rubber vest top is black themed: decide yes.
 
-
 Vest Top ends here.
-

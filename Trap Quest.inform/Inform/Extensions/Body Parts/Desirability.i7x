@@ -35,8 +35,6 @@ REQUIRES COMMENTING
 *!]
 targeted-body-part is an object that varies.
 
-
-
 [!<DecideWhichNumberIsTotalDesirability>+
 
 REQUIRES COMMENTING
@@ -66,7 +64,6 @@ To choose a sex method:
 					now targeted-body-part is B;
 					break.
 
-
 [!<BodyPartIsMostDesirable>+
 
 REQUIRES COMMENTING
@@ -82,7 +79,7 @@ Definition: a body part (called B) is most desirable:
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the determining desirability rule):
+An all time based rule (this is the determining desirability rule):
 	if diaper quest is 0:
 		now the desirability of face is 5 + the number of worn oral sex themed wearthings;
 		now the desirability of breasts is 0;
@@ -193,9 +190,6 @@ Definition: yourself is a penis slut:
 
 The penis slut eligibility rules is a rulebook.
 
-
-
-
 Volume - Gropability
 
 groping-person is a person that varies.
@@ -274,6 +268,7 @@ To decide which number is the ass grope preference of (M - a person):
 To decide which number is the groping threshold of (M - a person):
 	decide on a random number between 10 and 20.
 Definition: a person (called M) is groping:
+	if grope-me-skirt is worn, decide yes;
 	if diaper quest is 1, decide no;
 	if M is monster and the times-met of M is 0, decide no;
 	if groping-person is not M: [For efficiency, we only need to update gropability if the NPC we are looking at has changed this turn.]
@@ -384,7 +379,7 @@ To compute seduction grope of (M - a monster):
 To say BreastsGropeFlav of (M - a person):
 	if M is not unintelligent monster, say "[speech style of M]'[one of]My my my, what a lovely pair!'[or]These funbags are just begging to be played with!'[or]Do you really expect people to just leave these alone when you wlak around looking like this?'[or]Wow, today is my lucky day!'[or]Whoops, my hands must have slipped...'[or]Honk honk!'[in random order][roman type][line break]".
 To compute breasts grope of (M - a person):
-	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid nipple covering clothing], making sure to tweak your nipples hard[end if]!".
+	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]grabs[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with both hands[unless there is worn rigid actually nipple covering clothing], making sure to tweak your nipples hard[end if]!".
 
 To say AssholeGropeFlav of (M - a person):
 	let A be a random uncursed anal beads penetrating asshole;
@@ -406,7 +401,8 @@ To compute asshole grope of (M - a person):
 		if the notch-taken of A <= 0:
 			now A is in the location of the player;
 			dislodge A;
-			say "The [A] falls to the ground.".
+			say "The [A] falls to the ground.";
+		force immediate inventory-focus redraw.
 
 To say VaginaGropeFlav of (M - a person):
 	if M is not unintelligent monster, say "[speech style of M]'[if vagina is lewdly exposed][one of]Your [cunt] is on display[or]You're showing me your [pussy][in random order][one of], eh? Is that an invitation?'[or]. Most people would take that to mean you want to fuck...'[or], [slut].'[or]...'[or]. Disgraceful!'[in random order][otherwise if vagina is at least partially lewdly exposed][one of]My my, what can I spy between those thighs of yours?'[or]Is this really your [pussy] I can see the outline of down here?'[or]Did I just catch a glimpse of your [pussy]?'[in random order][otherwise][one of]Your [pussy] is calling to me, [slut]...'[or]Are you wet down there? I bet you're wet down there.'[or]When you walk around looking like that, you're asking for this.'[in random order][end if][roman type][line break]".
@@ -433,9 +429,9 @@ To compute belly grope of (M - a person):
 To say BellyGropeFlav of (M - a person):
 	if M is not unintelligent monster:
 		if the pregnancy of the player > 0 and the pregnancy of the player < 3:
-			say "[speech style of M]'[if the largeness of belly > 10][one of]What in the world did you mate with, you crazy [whore]?'[or]What in Azathot's name are you pregnant with?! What creatures have you been letting fuck you?! You're an even bigger slut than I realised.'[in random order][otherwise if the largeness of belly > 3][one of]Couldn't keep your legs together, eh? Well, this is what happens. Or did they never teach you that in school?'[or]Naughty mommy must have done naughty things to get knocked up! What a [slut]!'[or]Well well well. Looks like someone should have used a condom.'[or]If you spread your [cunt] wide for every Tom, Dick or Harry that wants a shag then this is what you get, you know.'[in random order][otherwise][one of]What's this I can feel? Is something growing in here?'[or]Something tells me this womb is already occupied! Someone's been very naughty.'[in random order][end if][roman type][line break]";
+			say "[speech style of M]'[if the largeness of belly > 10][one of]What in the world did you mate with, you crazy [whore]?'[or]What in [Azathot]'s name are you pregnant with?! What creatures have you been letting fuck you?! You're an even bigger slut than I realised.'[in random order][otherwise if the largeness of belly > 3][one of]Couldn't keep your legs together, eh? Well, this is what happens. Or did they never teach you that in school?'[or]Naughty mommy must have done naughty things to get knocked up! What a [slut]!'[or]Well well well. Looks like someone should have used a condom.'[or]If you spread your [cunt] wide for every Tom, Dick or Harry that wants a shag then this is what you get, you know.'[in random order][otherwise][one of]What's this I can feel? Is something growing in here?'[or]Something tells me this womb is already occupied! Someone's been very naughty.'[in random order][end if][roman type][line break]";
 		otherwise if the pregnancy of the player is 3 or the total egg fill of belly > 0:
-			say "[speech style of M]'[if the largeness of belly > 8][one of]What on earth did you mate with, you crazy [whore]?'[or]What in the world are you incubating in there?!'[in random order][otherwise][one of]Am I right in saying you're literally full of a monster's eggs right now?! Azathot above!'[or]Are those EGGS that I can feel?!'[or]Are you serious? Eggs?! You're a walking incubator for some disgusting monster's larvae?!'[in random order][end if][roman type][line break]";
+			say "[speech style of M]'[if the largeness of belly > 8][one of]What on earth did you mate with, you crazy [whore]?'[or]What in the world are you incubating in there?!'[in random order][otherwise][one of]Am I right in saying you're literally full of a monster's eggs right now?! [Azathot] above!'[or]Are those EGGS that I can feel?!'[or]Are you serious? Eggs?! You're a walking incubator for some disgusting monster's larvae?!'[in random order][end if][roman type][line break]";
 		otherwise if slimegirl is worn:
 			say "[speech style of M]'[one of]Who the fuck have you got INSIDE your belly? No, I don't even want to know.'[or]I can feel something weird inside here. Wait, is it MOVING? What the FUCK is inside your belly?!'[or]Your belly is looking suspiciously full. What are you smuggling in there? Or should I say... WHO are you smuggling in there?!'[in random order][roman type][line break]";
 		otherwise if the total squirtable fill of belly > 0:
@@ -443,7 +439,7 @@ To say BellyGropeFlav of (M - a person):
 		otherwise if M is willing to urinate monster:
 			say "[speech style of M]'[one of]This belly would look even hotter if it was full of my piss, don't you think?'[or][if the largeness of belly > 3]Your belly looks nice and full[otherwise]Don't you think you should try and keep this belly nice and full of piss[end if], like a good little toilet...'[or]This tummy of yours, something tells me its destiny is to be a piss bucket. Hmm...'[or]Tell me, does your stomach crave to be filled to the brim with piss?'[in random order][roman type][line break]";
 		otherwise if M is male monster:
-			say "[speech style of M]'[one of]Something tells me you would be a lot happier if you were full of my cum.'[or][if pregnancy fetish > 0]Not pregnant yet? There's still time...'[otherwise]Are you thirsty, [honey of M]? If so, I could help...'[end if][or]I wonder, is this really a normal stomach, or is it just a cum recepticle in disguise?'[in random order][roman type][line break]";
+			say "[speech style of M]'[one of]Something tells me you would be a lot happier if you were full of my cum.'[or][if pregnancy fetish > 0]Not pregnant yet? There's still time...'[otherwise]Are you thirsty, [honey of M]? If so, I could help...'[end if][or]I wonder, is this really a normal stomach, or is it just a cum receptacle in disguise?'[in random order][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Tell me what your stomach craves, [honey of M]...'[roman type][line break]".
 
@@ -490,9 +486,6 @@ To compute grope reaction of (M - a person):
 To compute grope orgasm reaction of (M - a person):
 	say "You shiver with [if the player is disgraced]arousal[otherwise]shame[end if].";
 	if the player is able to speak, say "[variable custom style]'Haaaaah~! [if a random number between 16000 and 24000 > the humiliation of the player and M is not seduced monster]How dare you!'[otherwise]Oooh...'[end if][roman type][line break]".
-
-
-
 
 Volume - Seduction
 
@@ -545,7 +538,6 @@ Carry out seducing:
 	follow the core seduction rule.
 Understand "seduce [a monster]", "appease [a monster]", "placate [a monster]" as seducing.
 
-
 A body part has a number called seductions-performed. [Most body parts can only perform one seduction a turn.]
 
 This is the core seduction rule:
@@ -569,7 +561,6 @@ This is the core seduction rule:
 		add the core seduction rule to another-turn-rules;
 	repeat with M running through unseduced reactive monsters:
 		if the boredom of M < 470, compute seduction witness reaction of M. [NPCs that just climaxed aren't going to be unimpressed with the player. This 30s window gives them a chance to wander away]
-
 
 To compute seduction choice of (M - a monster):
 	say "What do you want to do to [NameDesc of M]?";
@@ -626,7 +617,7 @@ To compute seduction choice of (M - a monster):
 			let D be entry 1 of LD;
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			repeat with DX running through LD:
-				set next numerical response to "Try going [LD]";
+				set next numerical response to "Try going [DX]";
 			set numerical response 0 to "don't attempt to move";
 			compute multiple choice question;
 			if player-numerical-response is 0:
@@ -723,8 +714,14 @@ To compute seduction choice of (M - a monster):
 				now the blue-balls of M is the blue-balls-limit of M + 5;
 			otherwise:
 				say BlueBallsImpatientFlav of M;
-			if the player is prone, follow the sex attempt rules;
-			otherwise anger M;
+			if the player is prone:
+				if M is unfriendly:
+					follow the sex attempt rules;
+				otherwise:
+					while M is interested and M is not penetrating a body part and the blue-balls of M >= the blue-balls-limit of M and M is seduced and M is friendly:
+						follow the sex attempt rules;
+			otherwise:
+				anger M;
 			if M is interested:
 				if M is penetrating a body part:
 					if M is friendly, now M is friendly-fucking;
@@ -753,7 +750,7 @@ To compute seduction choice of (M - a monster):
 
 To say BlueBallsTooFarFlav of (M - a monster):
 	if M is intelligent, say "[if M is friendly][speech style of M]'Argh, I can't hold back any longer[otherwise][speech style of M]'That's it, stay right there[end if]!'[roman type][line break]";
-	 say "[BigNameDesc of M] seems to have gotten too worked up to wait any longer!";
+	say "[BigNameDesc of M] seems to have gotten too worked up to wait any longer!";
 	if the player is upright:
 		say "Do you get on your knees? ";
 		if the player is bimbo consenting:
@@ -851,7 +848,7 @@ To compute SeductionMasturbateClimax of (M - a monster):
 
 To compute FirstTurnSeduceGrindAnnounce of (M - a monster):
 	if the player is able to speak:
-		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]Haha, ok! How do you want me, [stud of M]?'[otherwise if the player is a pervert]Is this what you wanted, huh?'[otherwise]Maybe there's another way to resolve our disagreement...'[end if][roman type][line break]";
+		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]Haha, OK! How do you want me, [stud of M]?'[otherwise if the player is a pervert]Is this what you wanted, huh?'[otherwise]Maybe there's another way to resolve our disagreement...'[end if][roman type][line break]";
 		otherwise say "[variable custom style]'[if the player is a nympho]How do you want me, [stud of M]?'[otherwise if the player is a pervert]I wonder, can you resist a cute little minx like me?'[otherwise]Um... hi there...'[end if][roman type][line break]".
 
 To compute SeductionGrind of (M - a monster):
@@ -879,7 +876,6 @@ To compute SeductionGrind of (M - a monster):
 		if a random number between 1 and the sex-length of M > 1, compute WeakSexProgress of M;
 		otherwise compute WeakSexFalter of M.
 
-
 To compute FirstTurnSeducePaizuriAnnounce of (M - a monster):
 	if the player is able to speak:
 		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]I'm sorry [stud of M]! Will you let me make it up to you with my soft, cushiony tits?'[otherwise if the player is a pervert]Okay fine, I'll do it with my tits. Is that good enough?'[otherwise]Okay, you win. But if we have to do it, I'd like to do it like this...'[end if][roman type][line break]";
@@ -902,7 +898,6 @@ To compute SeductionPaizuriClimax of (M - a monster):
 	now M is penetrating breasts;
 	follow the default cleavage climax rule;
 	orgasm M.
-
 
 To compute FirstTurnSeduceOralAnnounce of (M - a monster):
 	if the player is able to speak:
@@ -941,8 +936,7 @@ To compute WeakSexFalter of (M - a monster):
 To compute FirstTurnSeduceSubmitAnnounce of (M - a monster):
 	if the player is able to speak:
 		if the health of M < the maxhealth of M and M is unfriendly, say "[variable custom style]'[if the player is a nympho]Ooh, [stud of M], let me show you just how sorry I am...'[otherwise if the player is a pervert]Okay okay, you win. Just give me a chance to satisfy you...'[otherwise]Okay, fine, it's clear I can't beat you, so I'll pay the forfeit.'[end if][roman type][line break]";
-		otherwise say "[variable custom style]'[if the player is a nympho]Get ready, [stud of M], I'm going to take you to heaven...'[otherwise if M is unfriendly]Okay fine, just give me a moment...'[otherwise if the player is a pervert]Want to have a piece of this? One time offer, [stud of M].'[otherwise]Don't get me wrong, I'm not usually this type of [boy of the player], but...'[end if][roman type][line break]".
-
+		otherwise say "[variable custom style][if the player is a nympho]'Get ready, [stud of M], I'm going to take you to heaven...'[otherwise if M is unfriendly]'Okay fine, just give me a moment...'[otherwise if the player is a pervert]'Want to have a piece of this? One time offer, [stud of M].'[otherwise]'Don't get me wrong, I'm not usually this type of [boy of the player], but...'[end if][roman type][line break]".
 
 To compute friendly seduction end of (M - a monster):
 	now M is unseduced;
@@ -954,4 +948,3 @@ To compute seduction witness reaction of (M - a monster):
 	if M is not dangerous, say LewdTrapReactFlav of M.
 
 Desirability ends here.
-

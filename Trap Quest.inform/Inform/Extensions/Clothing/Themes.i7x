@@ -15,9 +15,7 @@ interesting-themes-shared is a number that varies.
 colour-themes-shared-list is a list of texts that varies.
 interesting-themes-shared-list is a list of texts that varies.
 
-
 Definition: a clothing is same-type: decide no. [Bras find bras, dresses find dresses, and so on.]
-
 
 Definition: a clothing (called C) is theme-sharing: [Before calling this definition, you must set theme-share-target to the other item]
 	now theme-target is C;
@@ -59,13 +57,11 @@ Report wearing:
 	follow the theme effect description rules;
 	say line break.
 
-
 tempThemeBonus is a number that varies.
 To decide which number is the theme bonus of (R - a rulebook):
 	now tempThemeBonus is 0;
 	follow R;
 	decide on tempThemeBonus.
-
 
 The strength theme rules is a rulebook.
 The dexterity theme rules is a rulebook.
@@ -77,12 +73,10 @@ The sex addiction theme rules is a rulebook.
 	follow the strength theme rules;
 	decide on tempThemeBonus.]
 
-
 [To decide which number is sex-addiction-theme-bonus:
 	now tempThemeBonus is 0;
 	follow the sex addiction theme rules;
 	decide on tempThemeBonus.]
-
 
 To decide which number is material-sharers:
 	let N be 0;
@@ -105,7 +99,6 @@ A theme sharing rule (this is the material matching rule):
 	if theme-target is clothing and theme-share-target is clothing:
 		if the clothing-material of theme-target is the clothing-material of theme-share-target, rule succeeds.
 The material matching rule is listed in the interesting theme sharing rules.
-
 
 Definition: an object is pregnancy related: decide no.
 A theme blocking rule:
@@ -312,14 +305,6 @@ A theme blocking rule:
 A theme sharing rule (this is the pink matching rule):
 	if theme-target is pink themed and theme-share-target is pink themed, rule succeeds.
 The pink matching rule is listed in the colour sharing rules.
-Definition: an object is green themed: decide no.
-A theme blocking rule:
-	if theme-target is green themed and the number of currently at least partially visible green themed clothing > 2:
-		add "green" to colour-themes-shared-list;
-		if the upgrade-target of theme-target is not green themed, increase colour-themes-shared by 1.
-A theme sharing rule (this is the green matching rule):
-	if theme-target is green themed and theme-share-target is green themed, rule succeeds.
-The green matching rule is listed in the colour sharing rules.
 Definition: an object is black-and-white themed if it is white themed and it is black themed.
 A theme blocking rule:
 	if theme-target is black-and-white themed and the number of currently at least partially visible black-and-white themed clothing > 1:
@@ -433,9 +418,6 @@ A theme blocking rule:
 A theme sharing rule:
 	if theme-target is cult garb and theme-share-target is cult garb, rule succeeds.
 
-
-
-
 Section - Bear
 
 Definition: an object is bear themed: [Is it something to do with bears]
@@ -465,7 +447,6 @@ A theme effect description rule:
 
 A strength theme rule:
 	increase tempThemeBonus by bear theme bonus.
-
 
 Section - Heart
 
@@ -504,7 +485,6 @@ A dexterity theme rule:
 				if the player is extremely horny:
 					increase tempThemeBonus by heart theme bonus.
 
-
 Section - Leopard
 
 Definition: an object is leopard themed: [Is it something to do with leopards, or leopard print]
@@ -534,8 +514,6 @@ A theme effect description rule:
 
 A strength theme rule:
 	increase tempThemeBonus by leopard theme bonus * 2.
-
-
 
 Section - Flower
 
@@ -567,7 +545,6 @@ A theme effect description rule:
 A sex addiction theme rule:
 	increase tempThemeBonus by flower theme bonus.
 
-
 Section - Gem
 
 Definition: an object is gem themed: decide no.
@@ -593,10 +570,6 @@ A theme effect description rule:
 	if theme-target is gem themed:
 		let GTB be gem theme bonus;
 		if GTB > 0, say "As a reward for wearing [if GTB is 1]two[otherwise]several[end if] sparkly jewel themed items, you can feel that your charisma is being [if GTB > 1]significantly [end if]enhanced! ".
-
-
-
-
 
 Section - Tartan
 
@@ -624,8 +597,6 @@ A theme effect description rule:
 	if theme-target is tartan themed:
 		let TTB be tartan theme craft bonus;
 		if TTB > 1, say "As a reward for wearing [if TTB is 2]two[otherwise]several[end if] tartan themed items, you can feel that you will be able to perform alchemy [if TTB > 2]much [end if]more frequently! ".
-
-
 
 Section - Exercise
 
@@ -659,7 +630,6 @@ A theme effect description rule:
 A dexterity theme rule:
 	increase tempThemeBonus by exercise theme bonus.
 
-
 Section - Yellow
 
 Definition: an object is yellow themed if it is leopard themed.
@@ -687,9 +657,36 @@ A theme effect description rule:
 	if theme-target is yellow themed:
 		let YTB be yellow theme bonus;
 		if YTB > 0:
-			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow themed items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee. ";
-			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow themed items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][urine][otherwise][semen][end if] without getting addicted to it. ".
+			if diaper quest is 1, say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at holding in your pee[if watersports fetish is 1] and you are better at drinking [urine] without getting addicted to it[end if]. ";
+			otherwise say "As a reward for wearing [if YTB is 1]two[otherwise]several[end if] yellow items, you can feel that you are [if YTB > 1]much [end if]better at drinking [if watersports fetish is 1][urine][otherwise][semen][end if] without getting addicted to it. ".
 
+Section - Green
+
+Definition: an object is green themed: decide no.
+
+A theme blocking rule:
+	if theme-target is green themed and the number of currently at least partially visible green themed wearthings > 2:
+		add "green" to colour-themes-shared-list;
+		if the upgrade-target of theme-target is not green themed, increase colour-themes-shared by 1.
+A theme sharing rule (this is the green matching rule):
+	if theme-target is green themed and theme-share-target is green themed, rule succeeds.
+The green matching rule is listed in the colour sharing rules.
+
+A theme description rule:
+	if theme-target is green themed:
+		if theme-target is wearable, say "It would be fashionable to wear this along with other items with lots of green in them. ";
+		otherwise say "This item would probably be valuable to anyone who loves the colour green.".
+
+[Player gets increased luck for each green thing worn after the first.]
+To decide which number is green theme bonus:
+	let N be the number of worn green themed wearthings - 1;
+	if N > 0, decide on N;
+	decide on 0.
+
+A theme effect description rule:
+	if theme-target is green themed:
+		let GTB be green theme bonus;
+		if GTB > 0, say "As a reward for wearing [if GTB is 1]two[otherwise]several[end if] green items, you can feel that you are [if GTB > 1]much [end if]luckier. ".
 
 Section - Grey
 
@@ -723,12 +720,9 @@ A theme effect description rule:
 A sex addiction theme rule:
 	increase tempThemeBonus by grey theme bonus.
 
-
-
 Section - Unskirted Themed
 
 Definition: a thing is unskirted themed: decide no. [Is it something that should not be worn at the same time as a skirt?]
-
 
 Definition: a trousers is unskirted themed: decide yes.
 Definition: a dress is unskirted themed if it is not no-crotch and it is not skirted.
@@ -749,7 +743,6 @@ A dexterity theme rule:
 		repeat with C running through worn unskirted themed clothing:
 			decrease tempThemeBonus by 2.
 
-
 Section - Uncovered Themed
 
 Definition: a thing is uncovered themed: [Is it something that should not be worn with anything on top?]
@@ -764,7 +757,7 @@ A theme effect description rule:
 
 uncoveredReminder is a number that varies.
 
-An advance counters rule:
+An all later time based rule (this is the uncovered reminder rule):
 	increase uncoveredReminder by 1;
 	if uncoveredReminder > 20:
 		now uncoveredReminder is 0;
@@ -786,11 +779,9 @@ An advance counters rule:
 					decrease N by 1;
 				say "[if the number of entries in T is 1]is [one of][or]still [stopping]dampening your strength and speed because you are wearing a skirt over it[otherwise]are still each dampening your strength and speed because you are wearing a skirt over them[end if]![roman type][line break]";
 
-
 An intelligence theme rule:
 	repeat with C running through worn uncovered themed currently concealed clothing:
 		decrease tempThemeBonus by 2.
-
 
 Section - Food Themed
 
@@ -819,7 +810,6 @@ A theme effect description rule:
 		let FTB be food theme bonus;
 		if FTB > 0, say "As a reward for wearing [if FTB is 1]two[otherwise]several[end if] food and drink themed items, you can feel that your physical endurance is being [if FTB > 1]significantly [end if]improved! ".
 
-
 Section - Drink Themed
 
 Definition: an object is drink themed: [Is it something that has a drink in the pattern?]
@@ -835,7 +825,6 @@ The drink matching rule is listed in the interesting theme sharing rules.
 
 A theme description rule:
 	if theme-target is drink themed, say "This item is drink themed. ".
-
 
 Section - Swimming Themed
 
@@ -855,8 +844,6 @@ A theme description rule:
 		if theme-target is wearable, say "You [if theme-target is not worn]would [end if]feel safer and more competent swimming[if theme-target is clothing] whilst wearing this[end if]. It would be fashionable to wear this along with other swimming themed items. ";
 		otherwise say "This item would probably be valuable to anyone who loves swimming.";
 		if theme-target is fluid vulnerable clothing, say "You sense that this item [if theme-target is wet and theme-target is clean and theme-target is worn]currently has significantly increased magical powers because it is[otherwise]would have significantly increased magical powers whilst[end if] wet (but only with water).".
-
-
 
 Section - Whore Themed
 
@@ -887,11 +874,10 @@ A theme effect description rule:
 		let WTB be whore theme bonus;
 		if WTB > 0, say "As a reward for having [if WTB is 1]two[otherwise]several[end if] whoring themed items, you can feel that you are likely to get given [if WTB > 1]significantly [end if]more expensive jewellery when people pay you for sex! ".
 
-
 Section - Magic Themed
 
-Definition: an object is magic themed: [Is it something that implies magic?]
-	decide no.
+Definition: an object is magic themed: decide no. [Is it something that implies magic?]
+Definition: a thing is magic themed if it is zappable. [It can be used to cast a magic spell.]
 A theme blocking rule:
 	if theme-target is magic themed and the number of currently at least partially visible magic themed wearthings > 1:
 		add "magic themed" to interesting-themes-shared-list;
@@ -912,6 +898,5 @@ A theme effect description rule:
 	if theme-target is magic themed and theme-target is worn:
 		let MTB be magic theme bonus;
 		if MTB > 0, say "As a reward for wearing [if MTB is 1]two[otherwise]several[end if] magical items, you can feel that your spells are more powerful! ".
-
 
 Themes ends here.

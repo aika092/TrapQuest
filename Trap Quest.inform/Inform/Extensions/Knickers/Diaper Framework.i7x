@@ -1,14 +1,13 @@
 Diaper Framework by Knickers begins here.
 
-
-diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. The text-shortcut of diaper is "dp".
+diaper is a kind of knickers. The armour of diaper is 11. The soak-limit of diaper is usually 20. a diaper is usually manly. a knickers has a number called mess. a knickers has a number called foreign-mess. The text-shortcut of diaper is "dp".
 
 The printed name of a diaper is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 A diaper has a number called perceived-urine-soak. A diaper has a number called perceived-milk-soak. A diaper has a number called perceived-water-soak. A diaper has a number called perceived-semen-soak. A diaper has a number called perceived-mess.
 
 Definition: yourself is diaper aware: [Do they always know the state of their diaper?]
-	if failed potty training tattoo is worn or the diaper addiction of the player >= 20, decide no;
+	if failed potty training tattoo is worn or the incontinence of the player >= 10 or the diaper addiction of the player >= 20, decide no;
 	decide yes.
 
 To uniquely destroy (C - a diaper):
@@ -44,11 +43,14 @@ Report examining worn diaper when seconds is 0 and the player is not diaper awar
 	compute state check of the noun.
 
 To process state perception of (C - a diaper):
-	now the perceived-urine-soak of C is the urine-soak of C;
-	now the perceived-milk-soak of C is the milk-soak of C;
-	now the perceived-water-soak of C is the water-soak of C;
-	now the perceived-semen-soak of C is the semen-soak of C;
-	now the perceived-mess of C is the mess of C.
+	if diaper-stack is worn:
+		process state perception of diaper-stack;
+	otherwise:
+		now the perceived-urine-soak of C is the urine-soak of C;
+		now the perceived-milk-soak of C is the milk-soak of C;
+		now the perceived-water-soak of C is the water-soak of C;
+		now the perceived-semen-soak of C is the semen-soak of C;
+		now the perceived-mess of C is the mess of C.
 
 To process state perception of (D - diaper-stack):
 	repeat with C running through the list of stacked diapers:
@@ -135,7 +137,6 @@ Definition: a diaper (called D) is perceived unsoiled rather than perceived soil
 Check going down when the player is in Woods16 and there is a worn messed knickers and diaper quest is 0:
 	say "[variable custom style]I'm not going into some small closed space while wearing this smelly thing![roman type][line break]" instead.
 
-
 Definition: a knickers is soilable: decide no.
 
 Definition: a diaper is soilable: decide yes.
@@ -168,6 +169,7 @@ To clean (C - a knickers):
 	now the urine-soak of C is 0;
 	now the milk-soak of C is 0;
 	now the semen-soak of C is 0;
+	now the foreign-mess of C is 0;
 	MessSet C to 0;
 	if C is diaper:
 		now the perceived-urine-soak of C is 0;
@@ -175,7 +177,6 @@ To clean (C - a knickers):
 		now the perceived-semen-soak of C is 0;
 	if C is listed in the list of stacked diapers, update diaper stack;
 	if C is worn, update appearance level.
-
 
 To set up influence of (C - a diaper):
 	now C is delicateness-influencing.
@@ -214,15 +215,15 @@ To decide which number is the initial outrage of (C - a diaper):
 	decide on the initial cringe of C.
 
 To decide which number is the initial cringe of (C - a diaper):
-	let O be the DQBulk of C + the unique outrage of C;
-	if C is wet, increase O by 2;
+	let O be 3 + the DQBulk of C + the unique outrage of C;
 	decide on O.
 
 To decide which number is the unique outrage of (C - a diaper):
 	decide on 0.
 
 To decide which number is the fluid cringe of (C - a diaper):
-	if C is wet and C is currently visible:
+	if C is wet:
+		if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
 		if the total-soak of C >= the soak-limit of C, decide on 8;
 		decide on 5;
 	decide on 0.
@@ -344,7 +345,7 @@ Check taking off a worn messed knickers:
 	if the noun is perceived unmessed, compute state check of the noun;
 	say "[variable custom style]There's no way I'm touching that until I've found [if the bimbo of the player < 13]a way to change and clean myself[otherwise]someone to change me[end if].[roman type][line break]" instead.
 
-Definition: a knickers is unremovable rather than removable if it is messed.
+Definition: a knickers is removable if it is not messed.
 
 To say MonsterOfferRejectFlav of (M - an intelligent monster) to (T - a diaper):
 	say "[speech style of M]'Do I look like I have problems controlling my bladder?!'[roman type][line break]".
@@ -377,7 +378,6 @@ To decide which object is the potential-upgrade-target of (C - a diaper):
 				now P is the soak-limit of D;
 	decide on Z.
 
-
 Check taking off worn diaper:
 	if there is a worn I love my wet nappies T-shirt and the urine-soak of the noun is not 0 and the total-soak of the noun < (the soak-limit of the noun / 2) and the noun is total protection, say "Your [printed name of random worn I love my wet nappies T-shirt] is somehow magically preventing you from removing the [noun]!" instead;
 	if the noun is glued:
@@ -397,7 +397,9 @@ To StealthMessUp (K - a knickers) by (N - a number):
 
 To MessDown (K - a knickers) by (N - a number):
 	decrease the mess of K by N;
-	if the mess of K < 0, now the mess of K is 0;
+	if the mess of K < 0:
+		now the mess of K is 0;
+		now the foreign-mess of K is 0;
 	if K is diaper, now the perceived-mess of K is the mess of K.
 
 To MessSet (K - a knickers) to (N - a number):
@@ -450,7 +452,6 @@ Check wearing diaper when there is a worn diaper:
 	say "You wear the [ShortDesc of the noun] on top of the [ShortDesc of a random worn diaper].";
 	diaperAdd the noun instead;
 	do nothing instead.
-
 
 To diaperAdd (C - a clothing):
 	if C is not listed in the list of stacked diapers:
@@ -513,7 +514,6 @@ Definition: diaper-stack is crotch-pullup:
 	repeat with D running through the list of stacked diapers:
 		if D is crotch-pullup, decide yes;
 	decide no.
-
 
 To compute SelfExamineDesc of (K - diaper-stack):
 	say "You are currently wearing ";
@@ -612,10 +612,14 @@ To StealthMessUp (K - diaper-stack) by (N - a number):
 To MessDown (K - diaper-stack) by (N - a number):
 	let D be entry 1 of the list of stacked diapers;
 	decrease the mess of D by N;
-	if the mess of D < 0, now the mess of D is 0;
+	if the mess of D < 0:
+		now the mess of D is 0;
+		now the foreign-mess of D is 0;
 	now the perceived-mess of D is the mess of D;
 	decrease the mess of K by N;
-	if the mess of K < 0, now the mess of K is 0;
+	if the mess of K < 0:
+		now the mess of K is 0;
+		now the foreign-mess of K is 0;
 	now the perceived-mess of K is the mess of K.
 
 To MessSet (K - diaper-stack) to (N - a number):
@@ -626,6 +630,7 @@ To MessSet (K - diaper-stack) to (N - a number):
 		repeat with C running through the list of stacked diapers:
 			now the mess of C is 0;
 			now the perceived-mess of C is 0;
+			now the foreign-mess of C is 0;
 	now the mess of K is N;
 	now the perceived-mess of K is the mess of K.
 
@@ -652,6 +657,7 @@ To update diaper stack:
 		let N be the number of entries in the list of stacked diapers;
 		compute diaper-stack inheriting from entry N in the list of stacked diapers;
 		now the mess of diaper-stack is 0;
+		now the foreign-mess of diaper-stack is 0;
 		now the perceived-mess of diaper-stack is 0;
 		now the soak-limit of diaper-stack is 0;
 		now the urine-soak of diaper-stack is 0;
@@ -691,12 +697,10 @@ To assign quest to (C - diaper-stack):
 	now the quest of (entry N in the list of stacked diapers) is the quest of C;
 	set up the quest of C.
 
-This is the maintain diaper stack rule:
+An all later time based rule (this is the maintain diaper stack rule):
 	update diaper stack.
-The maintain diaper stack rule is listed in the advance counters rules.
 
 Check wearing store diaper:
 	if diaper-stack is worn, say "You can't do that without the shopkeeper having ample time to stop you." instead.
 
 Diaper Framework ends here.
-

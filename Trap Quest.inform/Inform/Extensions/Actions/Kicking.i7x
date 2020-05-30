@@ -20,9 +20,6 @@ To decide which number is the kick damage of the player:
 	if damage-explained > 1, say combat bonus explanation;
 	increase A by permanent-kick-bonus;
 	if damage-explained > 1 and permanent-kick-bonus is not 0, say "[if permanent-kick-bonus >= 0]+[end if][permanent-kick-bonus] (imprinted kick bonus) ";
-	if the weight of the player < 1:
-		decrease A by 2;
-		if damage-explained > 1, say "-2 (very low weight) ";
 	if demon horns is worn and the total-souls of the player > 9:
 		increase A by 3;
 		if damage-explained > 1, say "+3 (over 9 souls collected) ";
@@ -39,12 +36,11 @@ permanent-kick-bonus is a number that varies.
 kick-fatigue is a number that varies.
 kick-fatigue-delay is a number that varies.
 
-A time based rule (this is the kick fatigue recovery rule):
+An all time based rule (this is the kick fatigue recovery rule):
 	if kick-fatigue-delay > 0:
 		decrease kick-fatigue-delay by 1;
 	otherwise if kick-fatigue > 0:
 		decrease kick-fatigue by 1.
-
 
 Kicking is an action applying to one thing.
 
@@ -57,6 +53,7 @@ Check kicking:
 	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not a monster, say "Err, why would you do that?" instead;
+	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the player is flying, say "You're not even on the ground!" instead;
 	if the noun is woman-barbara and woman-barbara is not angered:
 		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
@@ -70,6 +67,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out kicking:
+	allocate 6 seconds;
 	now attack-type is 3;
 	reset submitted monsters;
 	increase the fat-burning of the player by 45;
@@ -81,7 +79,6 @@ Carry out kicking:
 	if damage-explained > 0, say "[roman type][line break]";
 	now kick-fatigue-delay is 2;
 	increase kick-fatigue by 1;
-	allocate 6 seconds;
 	let H be a random heels worn by the player;
 	if H is heels:
 		increase the heel time of the player by the hindrance of H;
@@ -106,6 +103,4 @@ Carry out kicking:
 	reset submitted monsters. [Otherwise kneeling makes them delayed]
 Understand "kick [something]", "ki [something]" as kicking.
 
-
 Kicking ends here.
-

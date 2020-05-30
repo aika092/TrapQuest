@@ -1,6 +1,5 @@
 Hot Tub by Objects begins here.
 
-
 The hot-tub is a water-body-scenery. the hot-tub is not portable. The printed name of hot-tub is "[TQlink of item described]hot tub[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of hot-tub is "tub". the hot-tub has a number called charge. hot-tub is in School21. Understand "hot", "tub" as hot-tub.
 To decide which figure-name is the examine-image of (C - hot-tub):
 	decide on Figure of school hot tub.
@@ -40,7 +39,5 @@ To compute showering (H - hot-tub):
 			otherwise:
 				compute angry punishment of M;
 				satisfy M.
-
-
 
 Hot Tub ends here.

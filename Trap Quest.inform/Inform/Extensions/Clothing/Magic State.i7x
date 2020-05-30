@@ -24,13 +24,13 @@ Definition: a thing (called T) is actually cursable:
 
 [avoids errors if the item is not something that can be cursed]
 Definition: a thing (called T) is maybe-cursed:
-	if T is bottle or T is collectible or T is clothing:
+	if T is bottle or T is collectible or T is clothing or T is alchemy product:
 		if T is cursed, decide yes;
 	decide no.
 
 [avoids errors if the item is not something that can be blessed]
 Definition: a thing (called T) is maybe-blessed:
-	if T is bottle or T is collectible or T is clothing:
+	if T is bottle or T is collectible or T is clothing or T is alchemy product:
 		if T is blessed, decide yes;
 	decide no.
 
@@ -54,12 +54,10 @@ Definition: a clothing (called T) is potentially blessable:
 
 Definition: a bottle is blessable if it is held and it is not blessed.
 
-
 Definition: an alchemy product is blessable if it is carried and it is not blessed.
 
-
 To blandify (C - a clothing):
-	only destroy C;
+	only destroy C; [resets it but also sets it up with random magic state, so we need to do the below]
 	now the raw-magic-modifier of C is 0;
 	now C is bland;
 	now C is blandness.
@@ -101,7 +99,6 @@ To fully bless (B - a thing):
 	if B is cursable:
 		if B is cursed, bless B;
 		if B is blessable, bless B.
-
 
 To say CurseCurseFlav of (B - a thing):
 	do nothing.
@@ -156,6 +153,4 @@ To say raw-magic-modifier-desc:
 	if magic-ID of the item described is identified and raw-magic-modifier of the item described is not 0:
 		say "[if raw-magic-modifier of the item described > 0]+[end if][raw-magic-modifier of the item described] ".
 
-
 Magic State ends here.
-

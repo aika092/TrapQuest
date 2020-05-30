@@ -138,7 +138,7 @@ To compute vines kneeling:
 			let R be a random number from 1 to D;
 			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
 			if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
-				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realize it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
+				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
 				now V is grabbing the player;
 			otherwise:
 				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
@@ -172,8 +172,8 @@ To compute (V - a vine) penetrating:
 		otherwise compute V penetrating F.
 
 To compute condomCatch of (V - a vine) in (F - a fuckhole):
-	if V is penetrating F, say "[one of]The soil continues to shift underneath you, and you realize another vine must be headed for your [variable F][or]The soil shifts as another vine gets ready to penetrate your [variable F][stopping]. Try to intercept it with a condom?";
-	otherwise say "You feel the ground shifting directly under your [variable F], and you realize where the vines are heading next. Try to protect yourself with a condom?";
+	if V is penetrating F, say "[one of]The soil continues to shift underneath you, and you realise another vine must be headed for your [variable F][or]The soil shifts as another vine gets ready to penetrate your [variable F][stopping]. Try to intercept it with a condom?";
+	otherwise say "You feel the ground shifting directly under your [variable F], and you realise where the vines are heading next. Try to protect yourself with a condom?";
 	if the player is consenting:
 		let D be the dexterity of the player;
 		let R be a random number from 1 to D;
@@ -356,7 +356,7 @@ To compute vineNut of (V - a vine):
 			SemenPuddleUp 2;
 			let F be a random fairy grabbing the player;
 			if F is monster and the pregnancy of the player is 0 and pregnancy fetish is 1 and inhuman pregnancy is 2:
-				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering herself as she floats away.";
+				say "Your belly grows rapidly, emitting magenta light as [NameDesc of F] grins up at you, fingering [himself of F] as [he of F] floats away.";
 				cutshow figure of fairy cutscene 19 for F;
 				now the pregnancy of the player is 1;
 				now V is inseminating vagina;
@@ -399,10 +399,9 @@ To compute vine laxative torture of (V - a vine):
 	say "Holding your limbs carefully in place, one vine approaches your mouth holding a big purple baby bottle labelled 'LAX'. [one of]Somehow you suspect that isn't a reference to some unnamed Los Angeles-based ex-girlfriend. [or][stopping]After the nipple is pushed into your mouth, the vine squeezes the middle of the bottle and the bitter tasting liquid squirts into your mouth. There's nothing you can do but drink up.";
 	increase suppository by 2;
 	StomachUp 1;
-	let C be a random off-stage butterfly wings;
-	if C is actually summonable:
+	if butterfly wings is actually summonable:
 		say "Even more bizarrely, you feel a pair of wings sprout from your back! You feel lighter.";
-		summon C cursed with quest;
+		summon butterfly wings cursed with quest;
 	appropriate-cutscene-display figure of vines cutscene 4;
 	say "After this the vines release you, retreating back into the trees and disappearing into the ground.";
 	now V is not grabbing the player;
@@ -452,9 +451,7 @@ The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 To say SexSubmissionFlav of (T - a vine):
 	if T is penetrating a body part, say "[one of]You stay still and let the vines take what they want.[or]You relax and allow the vines to plunder your depths.[or]You surrender to the pleasurable sensations of getting [if inhuman pregnancy > 0]bred[otherwise]plowed[end if] by alien vines.[or]You give into the pleasure and let the vines use you freely.[or]You obediently let the vines claim their prize.[purely at random]".
 
-
 Part - Escaping from Vines
-
 
 [!<CheckPullingVineBoss>+
 
@@ -535,4 +532,3 @@ To say VineSubmitTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.
 
 Vines ends here.
-

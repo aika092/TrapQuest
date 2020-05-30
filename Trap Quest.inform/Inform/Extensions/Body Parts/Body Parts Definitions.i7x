@@ -14,6 +14,18 @@ REQUIRES COMMENTING
 
 @!]
 a body part is a kind of backdrop.
+a body part can be stuck.
+[!<YourselfIsBodyStuck>+
+
+Is the player unable to move because a body part is stuck?
+
++!]
+Definition: yourself is body stuck if there is a stuck body part.
+
+To say NameDesc of (B - a body part):
+	say "your [ShortDesc of B]".
+To say BigNameDesc of (B - a body part):
+	say "Your [ShortDesc of B]".
 
 [!<Limb>@
 
@@ -50,7 +62,6 @@ REQUIRES COMMENTING
 
 @!]
 a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviously]
-
 
 [!<Fuckhole>@<soreness:Integer>*
 
@@ -181,21 +192,20 @@ Increases the soreness of a fuckhole "F" by a given number and handles all effec
 @param <Fuckhole>:<F> The fuckhole being ruined
 @param <Integer>:<X> The number of times to ruin F
 
-
 +!]
 To ruin (F - a fuckhole) times (X - a number):
 	now the previous soreness of F is the soreness of F;
 	unless F is vagina and the player is not possessing a vagina, increase the buildup of F by 1;
 	while X > 0:
 		decrease X by 1;
-		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
+		if the soreness of F > 8 and cum dump's undergarment is worn, now the soreness of F is 8; [undergarment prevents fainting from soreness]
 		if F is orgasming:
 			do nothing;
 		otherwise if the buildup of F >= 20 and the soreness of F < 10:
 			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking. Over time, you feel it getting slowly more and more sore...";
 			now the soreness of F is 10;
 			now the buildup of F is 0;
-		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and for deposit only tattoo is not worn:
+		otherwise if the soreness of F is 10 and X is 0 and for deposit only tattoo is not worn:
 			check soreness fainting of F;
 		let T be a random thing penetrating F;
 		passively stimulate F from T;
@@ -211,14 +221,14 @@ REQUIRES COMMENTING
 To say RuinedFlav of (F - a fuckhole):
 	say "[bold type]Your [variable F] is completely and utterly ruined. You won't be able to think straight until it has healed at least a bit.[roman type][line break][one of][if sex fainting is 0][otherwise if there is a live thing penetrating F]If [FuckerDesc of random live thing penetrating F] keeps fucking you much longer, you'll be at risk of fainting.[otherwise]If anyone was to try and fuck your [variable F] now, you might faint.[end if][or][stopping][roman type][line break]".
 
-
 [!<CheckSorenessFaintingOfFuckhole>+
 
 REQUIRES COMMENTING
 
 +!]
 To check soreness fainting of (F - a fuckhole):
-	if sex fainting is 1 or there is a futanari slutty sister penetrating F:
+	let M be a random monster penetrating F;
+	if (sex fainting is 1 or there is a futanari slutty sister penetrating F) and there is an embodied thing penetrating F:
 		let N be the raw anal sex addiction of the player;
 		if F is vagina, now N is the raw vaginal sex addiction of the player;
 		if the tolerated of F <= N / 2:
@@ -235,12 +245,17 @@ To check soreness fainting of (F - a fuckhole):
 				now delayed fainting is 1;
 				IntDown 1;
 				now the fainting reason of the player is 18;
+	otherwise if the class of the player is magical girl and M is tentacle monster:
+		say "[one of][bold type]Your magical body somehow allows your [variable F] and your [ShortDesc of belly] to comically stretch to accomodate [NameDesc of M] without breaking you.[roman type][line break][or][or][or][or][cycling]";
 	otherwise:
 		increase sex-hurt-balance by 1;
-		if sex-hurt-balance > 1:
+		if sex-hurt-balance >= 5: [Requires two ticks of sex pain (or five if they are all in the same turn - otherwise egg laying could go nuts) to trigger the PainUp function]
 			now sex-hurt-balance is 0;
 			PainUp 1;
 			potentially despair about F sex.
+
+An all later time based rule (this is the sore sex hurts rule):
+	if sex-hurt-balance > 0 and sex-hurt-balance < 5, now sex-hurt-balance is 5.
 
 [!<sexHurtBalance:Integer>*
 
@@ -260,7 +275,6 @@ To potentially despair about (F - a fuckhole) sex:
 		SilentlySexAddictDown 1;
 		if F is asshole and the raw anal sex addiction of the player * 2 > the raw delicateness of the player, AnalSexAddictDown 1;
 		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1.
-
 
 To trigger shameful orgasm of (F - a body part):
 	vaginally orgasm shamefully.
@@ -290,7 +304,6 @@ Definition: a fuckhole (called F) is orgasming:
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
-
 
 [!<HealFuckholeX>+
 
@@ -378,7 +391,6 @@ REQUIRES COMMENTING
 To say ShortDesc of (B - a body part):
 	say "[printed name of B]".
 
-
 [!<SayTotalDescOfBodyPart>+
 
 REQUIRES COMMENTING
@@ -419,6 +431,8 @@ REQUIRES COMMENTING
 +!]
 Definition: a body part is lewdly exposed: decide no.
 
+Definition: a body part is currently visible if it is exposed.
+
 [!<BodyPartIsAtLeastPartiallyLewdlyExposed>+
 
 REQUIRES COMMENTING
@@ -427,13 +441,13 @@ REQUIRES COMMENTING
 Definition: a body part is at least partially lewdly exposed: decide no.
 
 To decide which object is the at least partial concealer of (C - a body part):
+	if C is listed in the armUses of arms, decide on arms;
 	decide on the concealer of C. [For most items there's no difference.]
 To decide which object is the concealer of (C - a body part):
 	decide on nothing.
 
 Definition: a body part is exposed if the at least partial concealer of it is nothing.
 Definition: a body part is at least partially exposed if the concealer of it is nothing.
-
 
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
@@ -457,9 +471,8 @@ To decide which number is the cringe of (B - a body part):
 	if C < 4, decide on 0;
 	decide on C / 2. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
-
 Report examining a body part:
-	say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
+	if debuginfo > 0, say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
 
 [!<BodyPartIsUnSoakedOrSoaked>+
 
@@ -480,8 +493,6 @@ Definition: a body part is occupied:
 
 [Can it be accessed right now with nothing blocking it?]
 Definition: a body part is undefended: decide yes.
-
-
 
 [!<BodyPartIsFakeOccupied>+
 
@@ -527,10 +538,7 @@ Definition: yourself is completely exposed:
 Used by some NPCs to decide if they thing that the player is inappropriately dressed. Are nipples showing?
 
 +!]
-Definition: yourself is nipples exposed:
-	repeat with B running through worn nipple covering clothing:
-		unless B is top-displaced, decide no; [This one cares about lactation so we don't include dense here]
-	decide yes.
+Definition: yourself is nipples exposed if the number of worn nipple covering clothing is 0.
 
 [!<YourselfIsCrotchCovered>+
 
@@ -543,13 +551,23 @@ Definition: yourself is crotch covered:
 	if penis is at least partially lewdly exposed, decide no;
 	decide yes.
 
-
-
 Section - Image for graphics window
 
-
 This is the body parts get focused rule:
-	repeat with B running through overglazed body parts:
+	let LB be the list of overglazed body parts;
+	repeat with B running through body parts:
+		if B is not arms:
+			if realisticArms is 1 and B is listed in the armUses of arms:
+				add B to LB, if absent;
+			otherwise if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
+				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
+				if the outrage of B >= A:
+					add B to LB, if absent;
+			otherwise:
+				let C be calculated-cringe-level - (calculated-cringe-level / 2);
+				if the cringe of B >= C:
+					add B to LB, if absent;
+	repeat with B running through LB:
 		focus-consider B.
 The body parts get focused rule is listed in the focus finding rules.
 
@@ -569,7 +587,4 @@ To construct normal buttons for (T - a body part):
 				now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of C]";
 				now the ButtonColour entry is lightModeFullGreen.
 
-
-
 Body Parts Definitions ends here.
-

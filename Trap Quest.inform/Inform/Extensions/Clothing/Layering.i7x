@@ -2,9 +2,7 @@ Layering by Clothing begins here.
 
 current-layer is a number that varies.
 
-Definition: a clothing (called C) is top layer:
-	if C is breast covering, decide yes;
-	decide no.
+Definition: a clothing is top layer if it is breast covering.
 
 To decide which number is max-top-layer:
 	let X be 0;
@@ -19,9 +17,7 @@ Definition: a clothing (called C) is top-layer-highlighted:
 	if the top-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing (called C) is mid layer:
-	if C is belly covering, decide yes;
-	decide no.
+Definition: a clothing is mid layer if it is belly covering.
 
 To decide which number is max-mid-layer:
 	let X be 0;
@@ -35,9 +31,7 @@ Definition: a clothing (called C) is mid-layer-highlighted:
 	if the mid-layer of C is current-layer, decide yes;
 	decide no.
 
-Definition: a clothing (called C) is bottom layer:
-	if C is crotch covering, decide yes;
-	decide no.
+Definition: a clothing is bottom layer if it is crotch covering.
 
 Definition: a chastity cage is bottom layer: decide yes.
 
@@ -125,7 +119,6 @@ To validate layers:
 	if max-top-layer is not the number of worn top layer clothing, compress top layers;
 	if max-mid-layer is not the number of worn mid layer clothing, compress mid layers;
 	if max-bottom-layer is not the number of worn bottom layer clothing, compress bottom layers.
-
 
 To layer (C - a clothing) correctly:
 	now C is in Holding Pen; [Make sure it's not worn for validation]
@@ -220,7 +213,6 @@ To layer (C - a clothing) correctly:
 To say type (N - a number) layering bug:
 	say "Uh-oh, A type [N] layering bug has cropped up! Aika apologises and asks that you [bold type]undo one turn if you are a donator[roman type], immediately save the game and make a bug report with the save file (and an explanation of what just happened)!".
 
-
 To check that (C - a clothing) usually goes under (D - a clothing): [I tried making this with "Definition:" but the compiler didn't like me defining a second parameter.]
 	rule fails.
 
@@ -282,4 +274,3 @@ To check that (C - a corset) usually goes under (D - a dress):
 	rule succeeds.
 
 Layering ends here.
-

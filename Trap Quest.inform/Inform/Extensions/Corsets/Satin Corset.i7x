@@ -18,6 +18,4 @@ Definition: a pink corset is pink themed: decide yes.
 To decide which number is the initial outrage of (C - a pink corset):
 	decide on 4.
 
-
 Satin Corset ends here.
-

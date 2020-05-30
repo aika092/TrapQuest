@@ -1,6 +1,5 @@
 Classes by Player begins here.
 
-
 [!<playerClass:String>*
 
 REQUIRES COMMENTING
@@ -23,10 +22,6 @@ REQUIRES COMMENTING
 +!]
 The player class rules is a rulebook.
 
-
-
-
-
 [!<TheTrickOrTreaterClassRule>+
 
 REQUIRES COMMENTING
@@ -39,7 +34,6 @@ This is the trick-or-treater class rule:
 The trick-or-treater class rule is listed in the player class rules.
 trick-or-treater is a text that varies. trick-or-treater is "trick or treater".
 
-
 [!<ThePrincessClassRule>+
 
 REQUIRES COMMENTING
@@ -47,14 +41,18 @@ REQUIRES COMMENTING
 +!]
 This is the princess class rule:
 	if there is a worn royalty themed wearthing:
-		if the training-progress of senior robobellboy is -1:
+		if the training-progress of senior robobellboy is -1 and there is a worn tiara:
 			now player-class is "trained fuck princess";
 			rule succeeds;
 		otherwise if there is a worn tiara:
 			now player-class is "princess";
 			rule succeeds.
 The princess class rule is listed in the player class rules.
-princess is a text that varies. princess is "princess".
+[princess is a text that varies. princess is "princess".]
+
+Definition: a text (called T) is princess:
+	if T is "princess" or T is "trained fuck princess", decide yes;
+	decide no.
 
 [!<TheMaidClassRule>+
 
@@ -75,7 +73,7 @@ Thanks to the magical maid multi-class, we have multiple different texts that ne
 
 +!]
 Definition: a text (called T) is maid:
-	if T is "maid" or T is "fully trained maid" or T is "magical maid", decide yes;
+	if T is "maid" or T is "fully trained maid" or T is "magical maid" or T is "cafe maid", decide yes;
 	decide no.
 
 [!<TheCowgirlClassRule>+
@@ -152,17 +150,10 @@ REQUIRES COMMENTING
 +!]
 This is the schoolgirl class rule:
 	if there is a worn scrunchie:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "schoolgirl";
 			if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "schoolgirl";
-				if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-				rule succeeds.
+			rule succeeds.
 The schoolgirl class rule is listed in the player class rules.
 [!<TextIsSchoolgirl>+
 
@@ -172,9 +163,6 @@ Thanks to the various schoolgirl multi-classes, we have multiple different texts
 Definition: a text is schoolgirl if it is "schoolgirl" or it is "magical schoolgirl" or it is "fraternity's bicycle".
 
 Definition: a wearthing is schoolgirl-enabling: decide no.
-
-
-
 
 [!<TheCheerleaderClassRule>+
 
@@ -243,7 +231,6 @@ Definition: a text (called T) is royal slave:
 	if T is "royal slave" or T is "cow slave" or T is "demon slave", decide yes;
 	decide no.
 
-
 [!<TheRoyalSlavesCannotMasturbateRule>+
 
 Royal slaves can't masturbate
@@ -286,9 +273,6 @@ This is the latex fetish model class rule:
 		rule succeeds.
 The latex fetish model class rule is listed in the player class rules.
 latex fetish model is a text that varies. latex fetish model is "latex fetish model".
-
-
-
 
 [!<TheHumanToiletClassRule>+
 
@@ -335,8 +319,6 @@ The puppygirl class rule is listed in the player class rules.
 puppygirl is a text that varies. puppygirl is "puppygirl".
 puppy is a text that varies. puppy is "puppygirl".
 
-
-
 [!<TheSymbioteClassRule>+
 
 REQUIRES COMMENTING
@@ -357,9 +339,6 @@ Thanks to the virgin symbiote warrior multi-class, we have multiple different te
 Definition: a text (called T) is symbiote:
 	if T is "symbiote" or T is "virgin symbiote warrior", decide yes;
 	decide no.
-
-
-
 
 [!<TheSantaClassRule>+
 
@@ -435,7 +414,6 @@ This is the broodmother class rule:
 The broodmother class rule is listed in the player class rules.
 broodmother is a text that varies. broodmother is "broodmother".
 
-
 [!<oldWasps:Integer>*
 
 REQUIRES COMMENTING
@@ -475,7 +453,7 @@ A time based rule (this is the compute brood rule):
 				destroy E;
 			otherwise:
 				let W be a random off-stage wasp-cloud;
-				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognize you as their mother!";
+				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds a cloud of normal-sized wasps appears and begins buzzing around you. It seems like they recognise you as their mother!";
 				summon W;
 				now the swarm of W is 3;
 				now total-wasps is 3;
@@ -488,8 +466,6 @@ A time based rule (this is the compute brood rule):
 		if total-wasps > 49 and the swarm of W < (total-wasps / 10) and a random number between 1 and 3 is 1:
 			say "A small swarm of wasps that was resting on your fur seems to be ready for more action!";
 			increase the swarm of W by 1. [The idea is that your weapon's equilibrium strength will slowly increase once you get past the 50 wasps birthed cut-off, though swarm will tend to be very hard to raise above 20 because it always wants to decay to that point. Also these wasps are technically ones you 'lost' earlier so they don't increase your total]
-
-
 
 [!<TheVampireSpawnClassRule>+
 
@@ -518,7 +494,6 @@ The cultist class rule is listed in the player class rules.
 Definition: a text (called T) is cultist:
 	if T is "cultist" or T is "cultist seer" or T is "dark priestess", decide yes;
 	decide no.
-
 
 [!<whispered:Integer>*
 
@@ -604,7 +579,7 @@ A time based rule (this is the compute whispers rule):
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 		if whispered < 0 and whisper-type is not 0 and whisper-tracking is 0:
-			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can[']t quite place it.";
+			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can't quite place it.";
 			SexAddictUp 2;
 			SemenAddictUp 2;
 			now whisper-type is 0;
@@ -643,7 +618,7 @@ This is the faerie class rule:
 		if the virgin of the player is 1:
 			now the player-class is "fairy godmother";
 			rule succeeds;
-		otherwise if there is a worn butterfly wings:
+		otherwise if butterfly wings is worn:
 			now the player-class is "faerie";
 			rule succeeds.
 The faerie class rule is listed in the player class rules.
@@ -670,7 +645,7 @@ Definition: a text (called T) is bunny:
 	decide no.
 
 bunny-reminder is a number that varies.
-A time based rule (this is the bunny reminder rule):
+An all time based rule (this is the bunny reminder rule):
 	if the class of the player is bunny:
 		if bunny-reminder is 0 and playerRegion is Woods:
 			say "[bold type]You feel your bunny reflexes improve while you are in the woods![roman type][line break]";
@@ -729,7 +704,7 @@ The latex clown class requires the clown mask.
 This is the latex clown class rule:
 	if clown mask is worn:
 		now the player-class is "clown";
-		if adult-baby-class is 1, now the player-class is "baby clown";
+		if the player is actually an adult baby, now the player-class is "baby clown";
 		rule succeeds.
 The latex clown class rule is listed in the player class rules.
 
@@ -821,7 +796,7 @@ The virgin warrior priestess class rule is listed first in the player class rule
 
 [!<TheMagicalMaidClassRule>+
 
-The magical maid is a combination class of the maid and magical girl. It needs the maid headdress and magical maid outfit.
+The magical maid is a combination class of the maid and magical girl. It needs a maid headdress and magical maid outfit.
 
 +!]
 This is the magical maid class rule:
@@ -830,6 +805,20 @@ This is the magical maid class rule:
 		rule succeeds.
 The magical maid class rule is listed first in the player class rules.
 
+[!<TheCafeMaidClassRule>+
+
+The cafe maid is a combination class of the maid and waitress bunny. It needs a maid headdress and cafe maid outfit.
+
++!]
+This is the cafe maid class rule:
+	if there is a worn maid headdress and there is a worn cafe maid outfit:
+		now the player-class is "cafe maid";
+		rule succeeds.
+The cafe maid class rule is listed first in the player class rules.
+
+Check dropping waitress vessel:
+	if the class of the player is "cafe maid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
+
 [!<TheMagicalSchoolgirlClassRule>+
 
 The magical schoolgirl is a combination class of the schoolgirl and magical girl. It needs the heart hairpin and any school outfit, or vice versa.
@@ -837,15 +826,9 @@ The magical schoolgirl is a combination class of the schoolgirl and magical girl
 +!]
 This is the magical schoolgirl class rule:
 	if heart hairpin is worn:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "magical schoolgirl";
 			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "magical schoolgirl";
-				rule succeeds;
 	if there is a worn scrunchie and there is a worn magical dress:
 		now the player-class is "magical schoolgirl";
 		rule succeeds.
@@ -884,7 +867,6 @@ Definition: a text (called T) is worshipper:
 	if T is "demon slave" or T is "demon worshipper" or T is "demon concubine", decide yes;
 	decide no.
 
-
 [!<TheLivingSexDollClassRule>+
 
 REQUIRES COMMENTING
@@ -898,14 +880,13 @@ This is the living sex doll class rule:
 The living sex doll class rule is listed first in the player class rules. [Overrides all other rules]
 living sex doll is a text that varies. living sex doll is "living sex doll".
 
-
 [!<TheAdultBabyClassRule>+
 
 Goes last because it is purely cosmetic and doesn't necessarily use headgear so it can and should be overridden by any other classes.
 
 +!]
 This is the adult baby class rule:
-	if adult-baby-class is 1, now the player-class is "adult baby".
+	if the player is actually an adult baby, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
 
 [!<TheHookerInTrainingClassRule>+
@@ -951,6 +932,4 @@ This is the adventurer class rule:
 The adventurer class rule is listed first in the player class rules. [Catch-all]
 adventurer is a text that varies. adventurer is "adventurer".
 
-
 Classes ends here.
-

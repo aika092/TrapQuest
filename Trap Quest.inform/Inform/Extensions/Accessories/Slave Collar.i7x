@@ -35,4 +35,3 @@ To decide which object is the unique-upgrade-target of (C - a slave collar):
 	decide on a random off-stage cumslut collar.
 
 Slave Collar ends here.
-

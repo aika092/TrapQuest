@@ -1,6 +1,5 @@
 Lactation by Every Turn begins here.
 
-
 [!<ComputeLactationWithEarningsAndSeconds>+
 
 REQUIRES COMMENTING
@@ -68,15 +67,13 @@ To decide which number is milkingColour:
 
 To decide which object is bottom level lactation cover:
 	let N be nothing;
-	repeat with C running through worn nipple covering clothing:
+	repeat with C running through worn actually nipple covering clothing:
 		if N is nothing:
 			now N is C;
 		otherwise if the top-layer of N > the top-layer of C:
 			now N is C;
 	if N is nothing and the player is upright and gloryhole is grabbing the player, now N is gloryhole;
 	decide on N.
-
-
 
 [!<TriggerLactation>+
 
@@ -176,7 +173,4 @@ To trigger lactation:
 		if N is gloryhole, progress quest of milking-quest;
 		otherwise now the ready-for-milking of milking-quest is 1.
 
-
-
 Lactation ends here.
-

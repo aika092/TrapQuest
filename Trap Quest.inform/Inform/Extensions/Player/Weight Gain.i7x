@@ -23,7 +23,7 @@ To decide which number is the weight of the player:
 		increase B by the weight of P;
 	now B is B / 3; [Some attempted balancing]
 	increase B by 10; [This is how much the head and the rest of the player's body weighs. In reality of course it would be much larger but for the purposes of potentially having players floating, this is what it will be.]
-	if there is a worn butterfly wings, decrease B by 3;
+	if butterfly wings is worn, decrease B by 3;
 	if the latex-transformation of the player > 6 and B > 0, now B is 0; [THIS SHOULD NOT BE NECESSARY, but at the moment it is here as a failsafe.]
 	decide on B.
 
@@ -108,12 +108,11 @@ To decide which number is item weight:
 
 Definition: yourself is overburdened if item weight > 6.
 
-This is the reset overburdened rule:
+An all later time based rule (this is the reset overburdened rule):
 	now weightSaved is 0.
-The reset overburdened rule is listed in the advance counters rules.
 
 overburdenWarned is initially false.
-An advance counters rule (this is the overburdened warning rule):
+An all later time based rule (this is the overburdened warning rule):
 	if overburdenWarned is false:
 		now overburdenWarned is true;
 		if the player is overburdened, say "[bold type]You are wearing and carrying a lot of heavy stuff[if there is worn bag of holding] that can't go in your bag[end if]. Your dexterity will be reduced until you drop some.[roman type][line break]".
@@ -128,7 +127,6 @@ Report taking off something:
 	follow the reset overburdened rule. [This means that we'll recalculate weight after this action]
 
 Part 2 - Manage Fat Stats
-
 
 [!<CarryOutGoing>+
 
@@ -147,8 +145,7 @@ Carry out going:
 		if the player is prone:
 			FatigueUp 1.[even when kneeling]
 
-
-A time based rule (this is the training rule):
+An all time based rule (this is the training rule):
 	let MD be milk-exercise-bonus;
 	if MD > 10, now MD is 10;
 	let FBT be (40 - (exercise theme bonus * 40)) + ((the raw dexterity of the player + the raw strength of the player) * (25 - MD));
@@ -185,7 +182,6 @@ A time based rule (this is the training rule):
 		now the fat-burning of the player is 0;
 		decrease milk-exercise-bonus by 1.
 
-
 Part 3 - Modify Fat Stats
 
 [!<Player>@<fatBurning:Integer>*
@@ -194,7 +190,6 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called fat-burning. The fat-burning of the player is usually 0.
-
 
 [!<FatUpX>+
 
@@ -241,7 +236,6 @@ To say FatCutscene (N - a number):
 	if N is 2, appropriate-cutscene-display figure of fat growth 2;
 	if N is 3, appropriate-cutscene-display figure of fat growth 3.
 
-
 [!<ComputeFatBurningReset>+
 
 REQUIRES COMMENTING
@@ -255,7 +249,6 @@ To compute fat burning reset:
 
 Part 4 - Describe Fat Stats
 
-
 [!<SayInventoryWeightDesc>+
 
 REQUIRES COMMENTING
@@ -264,6 +257,4 @@ REQUIRES COMMENTING
 To say InventoryWeightDesc:
 	say "[if inventory weight > 20]You are carrying much too many items and this is forcing you to rest on your knees extremely frequently.[otherwise if inventory weight > 16]You are carrying a large number of items that weigh you down a huge amount.[otherwise if inventory weight > 12]You are weighed down a large amount by the items you are carrying.[otherwise if inventory weight > 8]You are weighed down a significant amount by the items you are carrying.[otherwise if inventory weight > 4]The items you are carrying are weighing you down a bit.[otherwise if inventory weight > 0]The items you are carrying hardly weigh anything at all.[otherwise][line break][end if]".
 
-
 Weight Gain ends here.
-

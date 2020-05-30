@@ -22,8 +22,6 @@ To decide which number is the raw-masturbation-bonus of (W - nintendolls-wand):
 	if there is a slutty sister penetrating a body part, decide on 5;
 	decide on 0.
 
-
-
 glittery-wand is a vibe-wand. glittery-wand is unique. The printed name of glittery-wand is "[clothing-title-before]glittery wand[clothing-title-after]". The text-shortcut of glittery-wand is "gw". Understand "glittery" as glittery-wand.
 
 Figure of glittery wand is the file "Items/Accessories/Equippables/wand2.jpg".
@@ -42,6 +40,5 @@ To compute climax effect of (E - a glittery-wand):
 	if the raw sex addiction of the player < 20:
 		say "Your orgasm was so powerful that you feel [if the player is a pervert]even more [end if]perverted as a result.";
 		SexAddictUp 1.
-
 
 Nintendolls Wand ends here.

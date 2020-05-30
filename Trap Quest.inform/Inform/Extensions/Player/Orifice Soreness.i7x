@@ -139,6 +139,7 @@ To stimulate (F - a body part) from (T - an object) times (N - a number):
 	if F is penis and the player is possessing a vagina, now F is vagina;
 	while N > 0:
 		decrease N by 1;
+		if F is penis, RawUp penis;
 		if the player is able to get horny:
 			passively stimulate F from T;
 		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 2:
@@ -150,7 +151,6 @@ To passively stimulate (F - a body part) from (T - an object) times (N - a numbe
 	while N > 0:
 		decrease N by 1;
 		passively stimulate F from T.
-
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part) from (T - an object):
@@ -210,7 +210,6 @@ To communicate struggling of (F - a fuckhole):
 			if ungape is 0, say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
 			otherwise say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
 
-
 [!<RuinRollFuckhole>+
 
 REQUIRES COMMENTING
@@ -256,10 +255,6 @@ To RuinRoll (F - a fuckhole):
 
 [NB ruin asshole times & ruin vagina times functions are in Asshole and Vagina extensions. The core functionality is that soreness fainting is checked if soreness is at max, and then afterwards we RuinRoll the orifice (the procedure directly above this line)]
 
-
-
-
-
 To compute submission success of (M - a thing) in (F - a fuckhole):
 	say submission success of M in F;
 	if F is asshole:
@@ -270,7 +265,4 @@ To compute submission success of (M - a thing) in (F - a fuckhole):
 To say submission success of (M - a thing) in (F - a fuckhole):
 	say "[if the latex-transformation of the player > 3][one of]Your rubber [variable F] doesn't get sore.[or][or][cycling][otherwise if the relaxskill of the player is 1]By relaxing your [variable F] like the wrestler taught you, you have avoided getting more sore![otherwise]By not resisting the acts of [FuckerDesc of M], you have successfully stopped your [variable F] getting more sore![end if]".
 
-
-
 Orifice Soreness ends here.
-

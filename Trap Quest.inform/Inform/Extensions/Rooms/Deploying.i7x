@@ -8,7 +8,6 @@ REQUIRES COMMENTING
 To deploy (O - an object) in (G - a room):
 	do nothing.
 
-
 To deploy (T - a trap) in (O - an object):
 	if debugmode > 0, say "ERROR: There was not enough room to find a place to deploy [T].".
 
@@ -76,6 +75,8 @@ To deploy bucket in (G - a room):
 	if debugmode is 1, say "Deploying a bucket in [printed name of G][paragraph break]";
 	if the number of on-stage iron-maidens is 0:
 		now a random off-stage iron-maiden is in G;
+	otherwise if the number of on-stage cage traps is 0:
+		now a random off-stage cage trap is in G;
 	let T be a random bucket in Holding Pen;
 	SetDose T to (a random number from 2 + bonus liquid to 8);
 	now T is in G.
@@ -90,6 +91,4 @@ To deploy minibar in (G - a room):
 	let T be a random minibar in Holding Pen;
 	now T is in G.
 
-
 Deploying ends here.
-

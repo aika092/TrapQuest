@@ -1,6 +1,5 @@
 Unnecessary Figures by DQ Only Stuff begins here.
 
-
 Part - Monsters
 
 To decide which figure-name is Figure of acolyte 1:
@@ -95,7 +94,6 @@ To decide which figure-name is Figure of ghost 3:
 To decide which figure-name is Figure of ghost 4:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of Ghost Cutscene 1:
 	decide on figure of small image.
 To decide which figure-name is Figure of Ghost Cutscene 2:
@@ -118,17 +116,20 @@ To decide which figure-name is Figure of Guard Cutscene 6:
 To decide which figure-name is Figure of Guard Cutscene 7:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of Futanari Gladiator:
 	decide on figure of small image.
 To decide which figure-name is Figure of Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Insane Gladiator:
+To decide which figure-name is Figure of Unfriendly Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Wild Futanari Gladiator:
+To decide which figure-name is Figure of Enlightened Gladiator:
+	decide on figure of small image.
+To decide which figure-name is Figure of Unfriendly Enlightened Gladiator:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Interact 8:
+	decide on figure of small image.
+To decide which figure-name is Figure of Gladiator Interact 9:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Cutscene 1:
@@ -178,7 +179,6 @@ To decide which figure-name is Figure of Wild Gladiator Cutscene 4:
 To decide which figure-name is Figure of Wild Gladiator Cutscene 5:
 	decide on figure of small image.
 
-
 To decide which figure-name is Figure of caged urinal princess:
 	decide on figure of small image.
 To decide which figure-name is Figure of caged urinal princess piss:
@@ -195,7 +195,6 @@ To decide which figure-name is Figure of Slave Hannah:
 
 To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of Witch Cutscene 1:
 	decide on figure of small image.
@@ -218,8 +217,6 @@ To decide which figure-name is Figure of Wrestler Fingers 6:
 To decide which figure-name is Figure of Xavier Cutscene 2:
 	decide on figure of small image.
 
-
-
 Part - Other
 
 To decide which figure-name is Figure of Body Reaction 1:
@@ -241,6 +238,9 @@ To decide which figure-name is Figure of Body Reaction 13:
 To decide which figure-name is Figure of Body Reaction 14:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 15:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Bukkake Door Cutscene 1:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Cumshot Reaction 1:
@@ -293,6 +293,9 @@ To decide which figure-name is Figure of Fat Growth 1:
 To decide which figure-name is Figure of Fat Growth 2:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fat Growth 3:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Football Predicament:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Hook Cutscene 1:
@@ -361,6 +364,9 @@ To get oral creampie image for (M - a thing):
 To decide which figure-name is Figure of Photo Display Predicament:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Pink Lollipop:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of Pole Cutscene 4:
 	decide on figure of small image.
 
@@ -381,6 +387,13 @@ To decide which figure-name is Figure of Throne Cutscene 4:
 To decide which figure-name is Figure of Throne Cutscene 5:
 	decide on figure of small image.
 To decide which figure-name is Figure of Throne Cutscene 6:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of human toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of male toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of female toilet:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Vines Cutscene 1:
@@ -408,7 +421,6 @@ To decide which figure-name is Figure of Xmas Tentacle Cutscene 1:
 
 To decide which figure-name is Figure of nintendolls predicamania know-it-all:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of super rich pregnancy sex:
 	decide on figure of small image.
@@ -451,13 +463,9 @@ To decide which figure-name is Figure of super rich bimbo:
 To decide which figure-name is Figure of super rich domme:
 	decide on figure of small image.
 
-
-
 To decide which figure-name is figure of helium balloons:
 	decide on figure of small image.
 To decide which figure-name is figure of condom pigtails:
 	decide on figure of small image.
-
-
 
 Unnecessary Figures ends here.

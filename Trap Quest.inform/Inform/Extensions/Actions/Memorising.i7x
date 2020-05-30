@@ -1,6 +1,5 @@
 Memorising by Actions begins here.
 
-
 Memorising is an action applying to one thing.
 Check memorising:
 	if the noun is furniture, try entering the noun instead; [For when people type "re stool"]
@@ -25,8 +24,6 @@ Understand "memorise [something]", "memorize [something]", "remember [something]
 Does the player mean memorising a recipe:
 	it is very likely.
 
-
-
 Recalling is an action applying to nothing.
 Check recalling:
 	if the number of memorised recipes + the number of castable magic-spells is 0, say "You haven't committed anything to memory." instead.
@@ -42,4 +39,3 @@ Carry out recalling:
 Understand "recall recipes", "recipes", "memorised recipes", "known recipes", "recall spells", "spells", "memorised spells", "known spells" as recalling.
 
 Memorising ends here.
-

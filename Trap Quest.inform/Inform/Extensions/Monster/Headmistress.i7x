@@ -24,7 +24,7 @@ To say MediumDesc of (M - headmistress):
 To say MonsterDesc of (M - headmistress):
 	if M is sex-enslaved:
 		if lady fetish is 2:
-			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section revealing [his of M] bright red chastity cage. A presumably new tattoo sits above [his of M] [sissy-penis], with the words 'Enter in Rear' and an arrow pointing toward [his of M] butt. [big his of M] ass has been made more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like he's been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as he instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. He whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as he can.";
+			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section revealing [his of M] bright red chastity cage. A presumably new tattoo sits above [his of M] [sissy-penis], with the words 'Enter in Rear' and an arrow pointing toward [his of M] butt. [big his of M] ass has been made more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like [he of M]'s been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as [he of M] instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. [big he of M] whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as he can.";
 		otherwise:
 			say "[BigNameDesc of M][']s dress has been opened further at the front, including a big slit in the skirt section right in front of [his of M] bare pussy. A presumably new tattoo sits above [his of M] slit, with the words 'Fuck Here' and an arrow pointing at [his of M] undefended fuckhole. [big his of M] entrance has been made even more easily accessible with the addition of a very long ankle spreader bar, which keeps [his of M] feet over a metre apart from each other at all times. A tally has been started on [his of M] right inner thigh. Looks like [he of M][']s been fucked at least five times already. One ear has been pierced and a large 'SLUT' tag added. [big his of M] wrists are cuffed behind [him of M], leaving [him of M] absolutely powerless to stop anyone using [him of M] as they please. [big his of M] tongue is stuck out of [his of M] mouth with a lewd expression. You watch as [he of M] instinctively tries to draw it back into [his of M] mouth, but then [his of M] 'SLUT' tag flutters wildly as [his of M] earring gives [him of M] a painful electric shock. [big he of M] whimpers and returns to sticking [his of M] tongue as far out of [his of M] mouth as [he of M] can.";
 	otherwise if M is diaper-enslaved:
@@ -54,7 +54,7 @@ To set up (M - headmistress):
 	now the monstersetup of M is 1;
 	now M is in School08;
 	now M is guarding;
-	now the difficulty of M is the starting difficulty of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - headmistress):
@@ -70,7 +70,7 @@ Part - Motion
 To compute monstermotion of (M - headmistress):
 	unless M is in School08 and M is friendly, compute room leaving of M.
 
-A later time based rule:
+An all later time based rule (this is the school recruiters rule):
 	if armband is worn and class-time < (lessonFrequency * -5):
 		if headmistress is alive and headmistress is undefeated:
 			if headmistress is not regional, regionally place headmistress;
@@ -94,7 +94,6 @@ To regionally place (M - headmistress):
 	while M is not regional or M is in the location of the player or M is nearby:
 		now M is in a random placed room.
 
-
 To say EnslavedDominationFlav of (M - headmistress):
 	say "You grab [NameDesc of M][']s ponytail and force [him of M] to [his of M] knees. ";
 	if the number of worn cursed undisplacable clothing is 0:
@@ -117,7 +116,6 @@ To say EnslavedDominationFlav of (M - headmistress):
 
 To decide which number is the EnslavedDominationThreshold of (M - headmistress):
 	decide on 6.
-
 
 Part - Perception
 
@@ -191,4 +189,3 @@ To compute teaching of (M - a headmistress):
 	say "[speech style of M]'I have my [ShortDesc of M] duties to take care of. Ask a teacher if you would like a lesson.'[roman type][line break]".
 
 Headmistress ends here.
-

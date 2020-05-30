@@ -1,6 +1,5 @@
 Help by Miscellaneous Frontend begins here.
 
-
 Understand "help" or "hint" or "hints" or "about" or "info" or "settings" or "menu" or "options" as asking for help.
 
 Report asking for help:
@@ -128,7 +127,6 @@ To go towards to the location you have remembered, use [']return[']. You will on
 To refresh the map if it glitches, use [']map[']."	--
 "Fetishes"	--	"[FetishHelp]"	--
 
-
 [!<SayClothingHelp>+
 
 REQUIRES COMMENTING
@@ -254,7 +252,7 @@ To say FetishHelp:
 [bold type]Pregnancy Fetish:[roman type] If you are male, this fetish increases the rate at which your penis shrinks, and also you gain large amounts of humiliation if your belly is filled to the point where you look pregnant. If you are female, you have the chance of becoming pregnant when your womb is full of semen. Pregnancy grows your belly at an alarming rate, and you won't be able to stay standing for very long with a huge belly. When ready to give birth, contractions can force you to your knees at inconvenient times. This fetish can also spawn pregnancy related items on your person when you are pregnant (or male and look pregnant). Optionally inhuman pregnancies can be enabled, which if combined with extreme proportions fetish can make your belly grow to insane sizes.
 
 [bold type]Lactation Fetish:[roman type] Enables some traps and clothing to fill your breasts with milk, or increase your milk production rate. Milk-filled breasts are much more heavy which makes it more difficult to stay on your feet for long periods of time. If your breasts create more milk than they should be able to hold, your breasts will balloon in size, and eventually lactate in bursts! Finding a milking bench can be a great way to remove all the milk from your breasts, as long as you aren't wearing cursed clothing that prevents you from exposing your nipples.";
-	say "[bold type]Watersports Fetish:[roman type] Enables some traps and monsters to urinate on or inside you. This results in extreme amounts of humiliation. Urine can also make your hair blonder. You will also have to deal with needing to urinate on a regular basis.
+	say "[bold type]Watersports Fetish:[roman type] Enables some traps and monsters to urinate on or inside you. This results in extreme amounts of humiliation. You will also have to deal with needing to urinate on a regular basis.
 
 [bold type]Diaper Fetish:[roman type] You will have to deal with needing to urinate on a regular basis. Urinating in inappropriate places can stain clothes (making them worse at their job), cause large amounts of humiliation and slipping hazards. Failing to manually urinate in time will gradually cause you to become incontinent. Diapers will be enabled; they can be humiliating to wear themselves whilst dignity is high but remove any humiliation from the act of urinating and often have high armour ratings.
 
@@ -279,4 +277,3 @@ To say FetishHelp:
 ]
 
 Help ends here.
-

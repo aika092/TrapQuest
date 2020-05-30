@@ -1,6 +1,5 @@
 Manual Dexterity by Player begins here.
 
-
 [!<manualHandsAttempt:Integer>*
 
 REQUIRES COMMENTING
@@ -38,7 +37,7 @@ Definition: yourself is able to use their hands:
 	if the rule failed, decide no;
 	decide yes.
 
-A later time based rule (this is the harsh inventory rule):
+An all later time based rule (this is the harsh inventory rule):
 	if the player is not able to use their hands:
 		if not-in-bag > 1 or (the number of worn bag of holding is 0 and the number of carried things > 1):
 			let N be 0;
@@ -106,7 +105,6 @@ Definition: yourself is able to manually use manual dexterity: [play manually in
 	now manual hands attempt is 0;
 	decide no.
 
-
 [!<TheHandUseRequiredForMasturbationRule>+
 
 Prevents masturbation
@@ -118,6 +116,4 @@ This is the hand use required for masturbation rule:
 		rule fails.
 The hand use required for masturbation rule is listed last in the masturbation restriction rules.
 
-
 Manual Dexterity ends here.
-

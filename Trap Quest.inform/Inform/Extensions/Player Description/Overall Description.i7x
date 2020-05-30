@@ -1,6 +1,5 @@
 Overall Description by Player Description begins here.
 
-
 The description of yourself is "".
 
 To say FullExamineDesc of (C - yourself):
@@ -89,11 +88,16 @@ To say OptionalDescription:
 	otherwise if there is a monster grabbing the player:
 		say "[BigNameDesc of a random monster grabbing the player] [if diaper quest is 1]is punishing you[otherwise][GrabStatus of a random monster grabbing the player][end if]. ";
 	if diaper quest is 1, say "[PerceivedAdultDesc][InternalsDesc][SorenessDesc][DiaperDisciplineDesc]";
-	otherwise say "[PerceivedBimboDesc][InternalsDesc][SorenessDesc][line break][StatusDesc][BimboDesc]".
+	otherwise say "[PerceivedBimboDesc][InternalsDesc][SorenessDesc][line break][StatusDesc][BimboDesc]";
+	if the raw luck of the player > 5:
+		say "You've been having a decent streak of mostly good luck.";
+	otherwise if the raw luck of the player < -5:
+		say "You've been having run of mostly bad luck. Surely the tide turn soon.";
+	let NT be the number of in-play trophies;
+	if NT > 0:
+		say "You can sense that [if NT is 1]the trophy you earned from the Extra Credit Zone is slightly[otherwise]the [NT] trophies you have earned from the Extra Credit Zone are each[end if] improving your luck.".
 
 To say GrabStatus of (M - a monster):
 	say "is restraining you".
 
-
 Overall Description ends here.
-

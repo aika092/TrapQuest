@@ -26,6 +26,7 @@ Check browsing:
 Definition: a pocketbook is fetish appropriate if diaper quest is 0.
 Definition: a pocketbook is ingredient if it is not product.
 Definition: a pocketbook is brown themed: decide yes.
+Definition: a pocketbook is book themed: decide yes.
 
 To say ShortDesc of (C - a pocketbook):
 	say "pocketbook".
@@ -104,7 +105,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 	let P be 0;
 	let D be a random worn diaper;
 	if the player is incontinent and D is diaper and diaper messing >= 3 and asshole is not actually occupied and R is 1:
-		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favourite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet and filled to the brim! I went who knows how long without even realizing I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, your ass in the air, and begin grunting, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder and bowels again! They feel awfully full, that is until you feel them begin to empty into your diaper!";
+		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favourite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet and filled to the brim! I went who knows how long without even realising I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, your ass in the air, and begin grunting, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder and bowels again! They feel awfully full, that is until you feel them begin to empty into your diaper!";
 		if D is not total protection, repair D;
 		try kneeling;
 		now rectum is 11;
@@ -112,7 +113,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		compute messing;
 		now incontinence is 0;
 	otherwise if the player is incontinent and D is diaper and R is 1:
-		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favourite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet! I went who knows how long without even realizing I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder again! It feels awfully full, until you feel it begin to empty into your diaper!";
+		say "'[one of]I can't believe I've let myself become this much of a baby. I never should've started wearing diapers! I didn't even mean to use them, they were just supposed to be a joke! But they were so hard to get off, so I thought what could the harm be? Then after that diaper was fully used (why let it go to waste?) and I changed myself, the toilet was so far away when I had to go that it only made sense to use my diaper! At this point I've forgotten what a pot - I mean toilet, feels like[or]I tried using my training potty today, I had the perfect plan! I sat on the potty with my favourite pink diaper on, all I had to do when I felt the slightest need to go is take it off! I waited, and waited, and waited, and I never felt the need to go! I finally decided to check it, and it was already soaking wet! I went who knows how long without even realising I had soiled my diaper[or]Why do they make it so hard to stop using diapers! They're [italic type]so[roman type] much more convenient than using the potty, of course I started only going potty in them! But now that everyone sees me for the pathetic pottypants baby, I want to start using the potty again, but getting potty trained is so hard[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the diaper addiction of the player > 14]adult[end if]wording, but also because it perfectly represents how you've felt since you completely lost control of your bladder and bowels. Suddenly, the book begins to glow, and the words start erasing themselves from the page! You feel light-headed, and fall to your knees, before suddenly [if D is not total protection]feeling a warm glow from your diaper, as it miraculously repairs itself! Better yet, you can feel[otherwise]feeling[end if] your bladder again! It feels awfully full, until you feel it begin to empty into your diaper!";
 		if D is not total protection, repair D;
 		try kneeling;
 		now the bladder of the player is 10;
@@ -175,6 +176,9 @@ A book of anal is a kind of pocketbook. There is 1 book of anal. The text-shortc
 To decide which number is the price of (C - a book of anal):
 	decide on 3.
 
+To decide which number is the initial outrage of (C - a book of anal):
+	decide on 13.
+
 To say ClothingDesc of (C - a book of anal):
 	say "A paperback book with the words BRANDI'S BIG BOOK OF ANAL superimposed over a naked rear end.".
 
@@ -187,6 +191,8 @@ To decide which number is the soreness-influence of (C - a book of anal):
 	if C is tolerance, decide on 3 + (the flat intelligence of the player / 7);[more powerful the better your reading comprehension!]
 	decide on 0.
 
+Definition: a book of anal is anal sex themed: decide yes.
+
 [!<TheBookOfAnalButtSlutRule>+
 
 If it's in provoking mode, it increases the chances of anal sex.
@@ -196,11 +202,10 @@ This is the book of anal butt slut rule:
 	if there is a worn provoking book of anal, increase the desirability of asshole by 10.
 The book of anal butt slut rule is listed in the butt slut eligibility rules.
 
-
 Carry out browsing book of anal:[If books are never made easier to get, this probably needs to be buffed.]
 	say "You thumb through the book, which is full of incredibly graphic depictions of [one of]the eponymous Brandi[or]'Brandi'[or]a woman named Brandi[at random] engaged in anal sex.";
 	let R be a random number between 1 and 7;
-	if the player is horny and R >= 4 and the player is able to automatically masturbate:
+	if the player is horny and R >= 4 and the player is able to automatically masturbate:[TODO: automatic ass wank]
 		say " [line break][variable custom style][if the bimbo of the player < 8 and the player is male]Nothing wrong with a quick wank...[otherwise if the bimbo of the player < 8]I-I can't believe I'm about to do this...[otherwise if the analvirgin of the player is 1]T-that was... H-he came right when... and... and... I have to get off. I have to get off RIGHT now.[otherwise if the bimbo of the player < 13]I can't help myself...[otherwise]Ugh, now I HAVE to masturbate! Maybe someone will find me and take over...[end if][roman type][line break]";
 		now auto is 1;
 		try masturbating;
@@ -212,12 +217,12 @@ Carry out browsing book of anal:[If books are never made easier to get, this pro
 			now the noun is tolerance;
 			arouse 300;
 		if R is 2:
-			say " You flip through the book until you encounter a page showing Brandi [']sitting['] on top of a male client. A long line of customers extends out behind her, covered up by some text. [line break][second custom style]'I dealt with SO many ungrateful boy-toys when I was getting into the business, I realized it just wasn't enough fun to destroy my asshole! Like everyone, I tried glitter first, but when that didn't work I came up with my very own technique that keeps [']em waiting and satisfied at the same time!'[roman type][line break]";
+			say " You flip through the book until you encounter a page showing Brandi [']sitting['] on top of a male client. A long line of customers extends out behind her, covered up by some text. [line break][second custom style]'I dealt with SO many ungrateful boy-toys when I was getting into the business, I realised it just wasn't enough fun to destroy my asshole! Like everyone, I tried glitter first, but when that didn't work I came up with my very own technique that keeps [']em waiting and satisfied at the same time!'[roman type][line break]";
 			say " The next page contains a surprising amount of text, and it's a bit hard to remember, but keeping this book in your hand to remind you makes you feel like [bold type]people will start treat you better after anal sex.[roman type]";
 			now the noun is enhancing;
 			arouse 300;
 		if R is 3:
-			say " You come to a page with Brandi bent over a table, smirking over her shoulder. There's a lot of text on the page, but somehow all you can think about is what it would be like to kneel down behind her and stick your tongue in her [asshole]. Eventually you manage to tear your eyes away, but the image stays firmly in the back of your mind as you read her tip. [line break][second custom style]'Some boys think they're too good for the backdoor, but that's no reason to let a big horny cock go to waste! It's as easy as visualizing your cumdump as the most fun place for anybody to be! Keep that image in your head and people will be lining up for a turn in your ass!'[roman type][line break]";
+			say " You come to a page with Brandi bent over a table, smirking over her shoulder. There's a lot of text on the page, but somehow all you can think about is what it would be like to kneel down behind her and stick your tongue in her [asshole]. Eventually you manage to tear your eyes away, but the image stays firmly in the back of your mind as you read her tip. [line break][second custom style]'Some boys think they're too good for the backdoor, but that's no reason to let a big horny cock go to waste! It's as easy as visualising your cumdump as the most fun place for anybody to be! Keep that image in your head and people will be lining up for a turn in your ass!'[roman type][line break]";
 			say "[bold type]As long as you have this book to keep that image fresh in your mind, your [asshole] will seem like a much better place to fuck![roman type]";
 			now the noun is provoking;
 			arouse 300;
@@ -239,6 +244,8 @@ Section 4 - Notebook
 A notebook is a kind of pocketbook. There is 1 notebook. A notebook is usually unique. A notebook is usually zap ready. A notebook is usually leather. The text-shortcut of notebook is "hfn".[ A notebook has a number called tear. ]A notebook has a number called charge. A notebook is usually intelligence-influencing. A notebook is usually projectile.
 
 A study-buddy is a thing that varies. study-buddy is the throne.
+
+Definition: a notebook is fetish appropriate if diaper quest is 0.
 
 To say ClothingDesc of (W - a notebook):
 	let X be the number of notebook-studied monsters;
@@ -272,12 +279,12 @@ To compute studying (N - a number) of (M - a monster):
 	if the class of the player is schoolgirl, decrease C by the number of worn scrunchies;
 	if N is 0:[sex]
 		if M is notebook-studied:
-			say "A yellow bolt shoots out of the [printed name of G] disappears into [NameDesc of M]'s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";
+			say "A yellow bolt shoots out of the [printed name of G] disappears into [NameDesc of M][']s chest. [big his of M] expression changes slightly, and somehow you know [he of M] looks more favourably on you now.";
 			FavourUp M by 1;
 		if a random number between 0 and the times-submitted of M < C:
 			say "The [printed name of G] shivers, as if a draft were passing through its pages. Looks like it wants to know more about [NameDesc of M]!";
 		otherwise:
-			say "The [printed name of G] falls open, filling several pages with detailed sketches of [NameDesc of M]'s genitals, which slowly meld with the inscrutable script that covers the rest of its pages. The book seems a lot stronger!";
+			say "The [printed name of G] falls open, filling several pages with detailed sketches of [NameDesc of M][']s genitals, which slowly meld with the inscrutable script that covers the rest of its pages. The book seems a lot stronger!";
 			now M is notebook-studied;
 	otherwise:[kill]
 		if M is notebook-studied:
@@ -294,7 +301,6 @@ To compute studying (N - a number) of (M - a monster):
 			say "The [printed name of G] falls open, filling a few with detailed sketches of [NameDesc of M], which slowly meld with the indecipherable script that covers the rest of its pages. The book seems a bit stronger!";
 			now M is notebook-studied.
 
-
 [Considering the player usually has to go three regions to get to the notebook, then run back, the item should be fairly powerful]
 To decide which number is the damage improvement of (W - a notebook):
 	let X be MagicPowerDamage;
@@ -307,7 +313,9 @@ To decide which number is the damage improvement of (W - a notebook):
 	if X < 0, decide on 0;
 	decide on X.
 
+Definition: a notebook is ingredient: decide no.
 Definition: a notebook is product: decide yes.
+Definition: a notebook is recipe specific: decide yes.
 
 To decide which number is the alchemy key of (C - a notebook):
 	decide on 22.
@@ -315,11 +323,13 @@ To decide which number is the alchemy key of (C - a notebook):
 To decide which number is the crafting key of (C - a notebook):
 	decide on 0.
 
-Definition: a notebook is recipe specific: decide yes.
+
+To decide which text is the RecipeDesc of (C - a notebook):
+	say "The recipe just says 'Place a pocketbook in the bowl'.".
 
 This is the notebook specific recipe rule:
-	let R be a random recipe for notebook;
-	if R is appropriate:
+	let R be a random notebook;
+	if R is fetish appropriate:
 		now the Product in row 37 of the Table of Alchemy is 22;
 		now the Recipe in row 37 of the Table of Alchemy is 1.
 The notebook specific recipe rule is listed in the specific recipe rules.
@@ -328,6 +338,4 @@ To compute recipe specific cursing of (T - a notebook):
 	now T is bland;
 	if the noun is not pocketbook, now T is cursed.
 
-
 Pocketbooks ends here.
-

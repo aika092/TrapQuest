@@ -18,13 +18,14 @@ To say ShortDesc of (H - gold-tiara):
 Definition: gold-tiara is gem themed: decide yes.
 Definition: gold-tiara is demonic: decide yes.
 
-
 Definition: gold-tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed]
 	if wearing-target is not C and wearing-target is demonic, decide yes;
 	decide no.
 
 gold-summoned is a number that varies.
 To compute unique recycling of (C - gold-tiara):
+	now gold-summoned is 0.
+To compute predicament resolution of (C - gold-tiara):
 	now gold-summoned is 0.
 
 To compute class outfit of (H - gold-tiara):[TODO: acolyte arm braces]
@@ -41,16 +42,15 @@ To compute class outfit of (H - gold-tiara):[TODO: acolyte arm braces]
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		summon B;
-		say "[bold type]Your tiara shivers, and a [printed name of B] materializes on your chest![roman type][line break]";
+		say "[bold type]Your tiara shivers, and a [printed name of B] materialises on your chest![roman type][line break]";
 		if gold-summoned < 2, now gold-summoned is 2;
 	otherwise if T is not worn and (gold-summoned < 3 or T is actually summonable):
 		repeat with O running through worn crotch covering clothing:
 			say "Your [O] [wardrobeVanishes of O]!";
 			now O is in pink wardrobe;
 		summon T;
-		say "[bold type]Your tiara shivers, and a [printed name of T] materializes on your crotch.[roman type][line break]";
+		say "[bold type]Your tiara shivers, and a [printed name of T] materialises on your crotch.[roman type][line break]";
 		if gold-summoned < 3, now gold-summoned is 3.
-
 
 demon-slut-quest is a headgear-clothing-quest. [demon-slut-quest has a number called demons-lain.]
 To uniquely set up (C - gold-tiara):

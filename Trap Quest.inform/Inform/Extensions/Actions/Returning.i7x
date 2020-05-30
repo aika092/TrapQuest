@@ -1,6 +1,5 @@
 Returning by Actions begins here.
 
-
 [!<rememberedLocation:Room>*
 
 REQUIRES COMMENTING
@@ -55,7 +54,4 @@ Carry out returning:
 		say "You can't work out how to get back there from where you currently are!".
 Understand "return", "marked", "r" as returning.
 
-
-
 Returning ends here.
-

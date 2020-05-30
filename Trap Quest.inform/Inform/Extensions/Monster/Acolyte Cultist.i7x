@@ -1,10 +1,10 @@
 Acolyte Cultist by Monster begins here.
 
-An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. The difficulty of an acolyte is usually 6. Understand "cultist" as acolyte.
+An acolyte is a kind of monster. An acolyte is usually intelligent. An acolyte is usually female. Understand "cultist" as acolyte.
 
-Definition: An acolyte is wenchy: decide yes.
+Definition: an acolyte is wenchy: decide yes.
 
-Definition: An acolyte is mansion dwelling: decide yes.
+Definition: an acolyte is mansion dwelling: decide yes.
 
 An acolyte has a number called entranced. The entranced of an acolyte is usually 0.
 
@@ -14,6 +14,7 @@ To say ShortDesc of (M - an acolyte):
 	say "cultist".
 
 A mindless acolyte is a kind of acolyte. A mindless acolyte is unintelligent. The entranced of a mindless acolyte is 1. A mindless acolyte is unconcerned.
+Definition: a mindless acolyte is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 To say ShortDesc of (M - a mindless acolyte):
 	say "mindless cultist".
 
@@ -33,7 +34,6 @@ humming acolyte is a mindless acolyte. The text-shortcut of humming acolyte is "
 To say MediumDesc of (M - humming acolyte):
 	say "humming cultist".
 
-
 ardent acolyte is an acolyte. The text-shortcut of ardent acolyte is "aac".
 To say MediumDesc of (M - ardent acolyte):
 	say "ardent cultist".
@@ -47,12 +47,12 @@ To say MediumDesc of (M - insane acolyte):
 	say "insane cultist".
 
 clairvoyant acolyte is an acolyte. The text-shortcut of clairvoyant acolyte is "clc".
+Definition: clairvoyant acolyte is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 clairvoyant acolyte has a number called suffocation. Understand "seer", "voyant", "clair" as clairvoyant acolyte.
 To say MediumDesc of (M - clairvoyant acolyte):
 	say "clairvoyant cultist".
 
 Definition: clairvoyant acolyte is willing to do oral: decide yes.
-
 
 To decide which figure-name is the monster-image of (M - an acolyte):
 	if diaper quest is 1, decide on figure of acolyte 5;
@@ -71,14 +71,14 @@ To say MonsterDesc of (M - an acolyte):
 	otherwise say "This [man of M] wears a black hooded robe that covers [his of M] eyes and therefore conceals [his of M] identity. [if lady fetish is 2][big his of M] fully exposed nipples[otherwise][big his of M] fully exposed breasts[end if] are pierced and chained together by a light gold chain. The open robe also leaves [his of M] massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. [big he of M] has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on [his of M] pink pacifier read '777'. [big he of M] wields a bizarre looking gold and blue sacrificial dagger in [his of M] left hand, with several pointed stars and other basic shapes etched into the design.".
 
 To say MonsterComment of (M - an acolyte):
-	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another sister in service of the [great one]s! Wait, what?[or]I hope my sister's not sad that the [great one]s haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
+	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another sister in service of the [great ones]! Wait, what?[or]I hope my sister's not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - a mindless acolyte):
 	if diaper quest is 1:
 		say MonsterDesc of ardent acolyte;
 		say "[big he of M] stands completely still, humming, [his of M] mouth gaping vacantly as [he of M] rubs the front of [his of M] diaper with [his of M] right hand. Your impression is of someone who is completely empty minded or in a trance and wholly unaware of their surroundings.";
 	otherwise:
-		say "A veiled [man of M] in a sheer black robe. While you cannot clearly see [his of M] eyes, [his of M] mouth gapes vacantly and the cords of drool running from it betray how empty [his of M] mind must be[if pregnancy fetish is 1 and lady fetish < 2]. [big he of M] is massively pregnant, and [his of M] only motion is to absently rub [his of M] belly every so often[otherwise if lady fetish is 2]. [big his of M] penis is locked into a glowing purple chastity cage, and [his of M] only motion is to absently rub [his of M] ass every so often[otherwise]. [big his of M] only motion is to absently touch herself every so often[end if].".
+		say "A veiled [man of M] in a sheer black robe. While you cannot clearly see [his of M] eyes, [his of M] mouth gapes vacantly and the cords of drool running from it betray how empty [his of M] mind must be[if pregnancy fetish is 1 and lady fetish < 2]. [big he of M] is massively pregnant, and [his of M] only motion is to absently rub [his of M] belly every so often[otherwise if lady fetish is 2]. [big his of M] penis is locked into a glowing purple chastity cage, and [his of M] only motion is to absently rub [his of M] ass every so often[otherwise]. [big his of M] only motion is to absently touch [himself of M] every so often[end if].".
 
 To say MonsterComment of (M - a mindless acolyte):
 	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of]That's not how I'm supposed to end up, is it?[or]I need to make sure they don't do that to me...[in random order][otherwise if the player-class is cultist][line break][second custom style][one of]They look like they have things really easy, maybe it wouldn't be so bad to join them...[or]My sisters look really happy...[in random order][otherwise if the bimbo of the player <= 8][first custom style]Well they're sure creepy.[otherwise][second custom style]That's kind of a hot look on them...[end if][roman type][line break]".
@@ -91,18 +91,18 @@ To say MonsterDesc of (M - clairvoyant acolyte):
 		say "A veiled [man of M] in a sheer black robe. While you cannot clearly see [his of M] eyes, there is a noticeably blank look on [his of M] face, as if [he of M] were thinking of... nothing at all. [big his of M] [if bukkake fetish is 1 and the location of the player is Mansion02]entire body is coated in [semen], especially [his of M] crotch and chin, which are very clearly leaking onto the bedspread beneath [him of M][otherwise if the location of the player is Mansion02]body is pale, almost green compared to the bedspread beneath [him of M][otherwise if bukkake fetish is 1]entire body is coated in [semen], especially [his of M] [HoleDesc of M] and chin, but [he of M] doesn't seem to mind[otherwise]body is pale, almost green, but it almost seems like [he of M]'s... stronger for it[end if]. [if pregnancy fetish is 1 and lady fetish < 2]You can't be certain, but it looks like [he of M] has a bit of a baby bump.[end if]";
 
 To say MonsterComment of (M - clairvoyant acolyte):
-	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of][big he of M] seems different to the others, maybe I should be a bit cautious.[or]This one is definitely more in touch with whatever the cult works for.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of][big he of M]'s so pretty! I wish the [great one]s favoured me that much. Um, did I just think that?[or]I should probably stay and let [him of M] mould my weak mind. Wait, should I be thinking that?[in random order][otherwise if the bimbo of the player <= 8][first custom style]I might not want to stick around here...[otherwise][second custom style]That's a weird look, but it kind of works for [him of M]![end if][roman type][line break]".
+	say "[if the player-class is cultist and the bimbo of the player <= 8][line break][first custom style][one of][big he of M] seems different to the others, maybe I should be a bit cautious.[or]This one is definitely more in touch with whatever the cult works for.[in random order][otherwise if the player-class is cultist][line break][second custom style][one of][big he of M]'s so pretty! I wish the [great ones] favoured me that much. Um, did I just think that?[or]I should probably stay and let [him of M] mould my weak mind. Wait, should I be thinking that?[in random order][otherwise if the bimbo of the player <= 8][first custom style]I might not want to stick around here...[otherwise][second custom style]That's a weird look, but it kind of works for [him of M]![end if][roman type][line break]".
 
 To set up (M - an acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 6;
+	now the raw difficulty of M is 6;
 	now the health of M is the maxhealth of M.
 
 To set up (M - a mindless acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 4;
+	now the raw difficulty of M is 4;
 	if doomed is 5:
 		DifficultyUp M by 4;
 		now M is unleashed;
@@ -128,10 +128,10 @@ This is the spawn initial acolytes rule:
 		set up clairvoyant acolyte;
 		summon clairvoyant acolyte in the mansion;
 		now clairvoyant acolyte is in Mansion02;
-	if the number of alive intelligent acolytes < 2:
+	[if the number of alive intelligent acolytes < 2:
 		let M be a random off-stage intelligent acolyte;
 		set up M;
-		summon M in the mansion;
+		summon M in the mansion;]
 	while the number of alive mindless acolyte < 2:
 		let M be a random off-stage mindless acolyte;
 		set up M;
@@ -141,7 +141,7 @@ The spawn initial acolytes rule is listed in the setting up mansion monsters rul
 
 To say SummoningFlav of (M - an acolyte):
 	if M is in the location of the player:
-		if M is intelligent, say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. [big his of M] legs shake a bit as she steps forward, mumbling the same syllable over and over under [his of M] breath. The mummy immediately reforms behind [him of M].";
+		if M is intelligent, say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. [big his of M] legs shake a bit as [he of M] steps forward, mumbling the same syllable over and over under [his of M] breath. The mummy immediately reforms behind [him of M].";
 		otherwise say "The cloth wrappings covering the mummified figure slowly unravel, revealing [NameDesc of M] underneath. [big he of M] stands in place for a moment before stumbling forward, allowing the mummy to reform behind [him of M].";
 	otherwise:
 		say "You hear fabric unravelling somewhere else in the mansion".
@@ -158,7 +158,6 @@ To say GroundPeeReaction of (M - an acolyte):
 		say "[speech style of M]'You would dare defile this sacred ground?!'[roman type][line break]";
 		FavourDown M with consequences.
 
-
 To say ClothesPeeReaction of (M - an acolyte):
 	if M is interested, say "You feel like you know that [NameDesc of M] is smirking under [his of M] veil, but you can't actually see it.";
 	otherwise say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [his of M] reaction.".
@@ -166,12 +165,12 @@ To say ClothesPeeReaction of (M - an acolyte):
 To compute unique periodic effect of (M - an acolyte):
 	let R be the location of M;
 	if R is garlic and a random number between 1 and 7 is 1:
-		if watersports fetish is 1 and a random number between 1 and 2 is 1:
+		if diaper quest is 0 and watersports fetish is 1 and a random number between 1 and 2 is 1:
 			if M is in the location of the player, say "[BigNameDesc of M] spreads [his of M] nether lips, chanting fervently as [he of M] douses the ground with [urine].";
 			PuddleUp urine by 1 in R;
 		otherwise:
 			if M is in the location of the player, say "[BigNameDesc of M] begins to masturbate, chanting fervently as [he of M] reaches an explosive climax within seconds.";
-		if doomed > 0 and doomed < 5, increase doom counter by 5.
+		if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 5.
 
 To compute unique periodic effect of (M - a mindless acolyte):
 	if a random number between 1 and 7 is 1 and M is unleashed:
@@ -200,8 +199,6 @@ To compute perception of (M - a mindless acolyte):
 		say "[BigNameDesc of M] does not react to your presence in any way!";
 	commence doom.
 
-
-
 To compute perception of (M - an acolyte):
 	now M is interested;
 	say "[BigNameDesc of M] notices you![line break]";
@@ -215,13 +212,13 @@ To compute perception of (M - an acolyte):
 		say "[first custom style]'If you are willing to abase yourself before the Masters, you may pass, servant of Xavier.'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is vampire spawn:
-		say "[first custom style]'The [great one]s tolerate the existence of your kind, but watch your step.'[roman type][line break]";
+		say "[first custom style]'The [great ones] tolerate the existence of your kind, but watch your step.'[roman type][line break]";
 		calm M;
 	otherwise if the pregnancy of the player > 0:
 		say "[first custom style]'Have you been blessed? You should report downstairs for your veil, it is improper that you maintain individuality.'[roman type][line break]";
 		calm M;
-	otherwise if the player is possessing a vagina and the pregnancy of the player is 0 and pregnancy fetish is 1:
-		say "[first custom style]'An unbeliever, here! You too must serve the [great one]s with your [if diaper quest is 0]body[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if]!'[roman type][line break]";
+	otherwise if the player is female and the pregnancy of the player is 0 and pregnancy fetish is 1:
+		say "[first custom style]'An unbeliever, here! You too must serve the [great ones] with your [if diaper quest is 0]body[otherwise if diaper messing >= 3]bowels[otherwise]bladder[end if]!'[roman type][line break]";
 		anger M;
 	otherwise:
 		say "[first custom style]'An unbeliever? Here? And one who has no use as a vessel! You must be driven off!'[roman type][line break]";
@@ -230,11 +227,11 @@ To compute perception of (M - an acolyte):
 
 To compute appearance assessment of (M - clairvoyant acolyte):
 	if mystical amulet is worn:
-		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favour from the [great one]s were you to gift it to them at their altar.'";
+		say "[speech style of M]'That amulet you possess bears a mighty power, [if the class of the player is cultist]sister[otherwise]heretic[end if]. You could gain great favour from the [great ones] were you to gift it to them at their altar.'";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.'[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random]";
 	otherwise:
-		say "[speech style of M]'[one of]A non-believer? Here? Now? The [great one]s test us...'[or]I knew you were coming, non-believer. You cannot stop what has already been set in motion.'[or]Do not try to oppose us, non-believer. We serve a greater will...'[stopping]";
+		say "[speech style of M]'[one of]A non-believer? Here? Now? The [great ones] test us...'[or]I knew you were coming, non-believer. You cannot stop what has already been set in motion.'[or]Do not try to oppose us, non-believer. We serve a greater will...'[stopping]";
 	say "[roman type][line break]";
 	commence doom.
 
@@ -253,7 +250,7 @@ To compute monstermotion of (M - clairvoyant acolyte):
 		if a random number between 1 and 5 > 2 and D is N-viable, try M going D.
 
 To compute kneeling reaction of (M - an acolyte):
-	say "[BigNameDesc of M] appears to grin. [line break][speech style of M]'[one of]You will make a fine servant to the [great one]s.'[or]Yes. Accept your place, like all of us have done before you.'[or][big please], I will take you to receive their blessing.'[or]Their holy power can sway even the hardest non-believers.'[at random][roman type][line break]";
+	say "[BigNameDesc of M] appears to grin. [line break][speech style of M]'[one of]You will make a fine servant to the [great ones].'[or]Yes. Accept your place, like all of us have done before you.'[or][big please], I will take you to receive their blessing.'[or]Their holy power can sway even the hardest non-believers.'[at random][roman type][line break]";
 	if the humiliation of the player < HUMILIATION-SHAMELESS - 2000:
 		say " You shiver with shame.";
 		say "[line break]";
@@ -277,7 +274,6 @@ To say ClothesPeeReaction of (M - an acolyte):
 To say DiaperReaction of (M - an acolyte):
 	say "[BigNameDesc of M] slightly bows [his of M] head.[line break][speech style of M]'Amen.'[roman type][line break]".
 
-
 To resolve sudden appearance change of (M - clairvoyant acolyte):
 	do nothing. [She could get you in an infinite loop if she became unfriendly while friendly-fucking]
 
@@ -298,11 +294,11 @@ This is the cult conversion rule:
 		otherwise if the player is immobile:
 			say "[one of][BigNameDesc of M] chants feverishly to [himself of M][or][BigNameDesc of M] fervently whispers to [himself of M][or][BigNameDesc of M] continues [his of M] hushed chanting[then at random].";
 		otherwise if the class of the player is not cultist and the pregnancy of the player is 0:
-			say "[one of][line break][first custom style]'[if M is intelligent]You too shall serve as a vessel for the power of the [great one]s!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";
+			say "[one of][line break][first custom style]'[if M is intelligent]You too shall serve as a vessel for the power of the [great ones]!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";
 			now the target-room of M is Mansion23;
 			if delayed stand is 0:
 				if the location of the player is the target-room of M:
-					say "[BigNameDesc of M] forces you onto the altar! [line break][first custom style]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with seed.'[otherwise]The [great one]s...'[end if][roman type][line break]";
+					say "[BigNameDesc of M] forces you onto the altar! [line break][first custom style]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with seed.'[otherwise]The [great ones]...'[end if][roman type][line break]";
 					try praying yourself with the elder altar;
 					satisfy M for 600 seconds;
 				otherwise:
@@ -344,47 +340,42 @@ To compute punishment of (P - cultist-altar-force):
 	otherwise if the player is immobile:
 		say "[one of][BigNameDesc of M] chants feverishly to [himself of M][or][BigNameDesc of M] fervently whispers to [himself of M][or][BigNameDesc of M] continues [his of M] hushed chanting[then at random].";
 	otherwise:
-		say "[one of][line break][first custom style]'[if M is intelligent]You too shall serve as a vessel for the power of the [great one]s!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";
+		say "[one of][line break][first custom style]'[if M is intelligent]You too shall serve as a vessel for the power of the [great ones]!'[otherwise]Vessel...'[end if][roman type][line break][or][stopping]";
 		now the target-room of M is Mansion23;
 		if delayed stand is 0:
 			if the location of the player is the target-room of M:
-				say "[BigNameDesc of M] forces you onto the altar! [line break][first custom style]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with its [']blessing['].'[otherwise]The [great one]s...'[end if][roman type][line break]";
+				say "[BigNameDesc of M] forces you onto the altar! [line break][first custom style]'[if M is intelligent]I envy you for the pure fulfilment you will achieve when the [great one] fills you with its [']blessing['].'[otherwise]The [great ones]...'[end if][roman type][line break]";
 				try praying yourself with the elder altar;
 				satisfy M for 600 seconds;
 			otherwise:
 				drag to the target-room of M by M.
 
-
 Section 3 - Damage
 
-To compute damage of (M - an acolyte):
-	if the health of M > 0:
-		if M is uninterested:
-			say "'You will regret this madness. I should know.'";
-			now M is interested;
-			anger M;
-			commence doom;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To compute damage reaction of (M - an acolyte):
+	say DamageReaction (the health of M) of M;
+	if M is uninterested:
+		say "[speech style of M]'You will regret this madness. I should know.'[roman type][line break]";
+		commence doom.
 
-To compute damage of (M - a mindless acolyte):
+To compute standard damage of (M - a mindless acolyte):
 	if the health of M > 0:
+		say DamageReaction (the health of M) of M;
 		if M is unleashed:
-			say "The cultist's head snaps toward you, and she assumes an aggressive stance.";
+			if M is uninterested, say "[BigNameDesc of M][']s head snaps toward you, and [he of M] assumes an aggressive stance.";
+			now M is interested;
 			anger M;
 		otherwise:
 			say "The cultist still does not seem to notice your presence.";
 			calm M;
-		if deep one is in the location of the player:
-			say "The grotesque fish-man seems to take offence at your actions!";
-			now deep one is angered;
-			now deep one is interested;
-			anger deep one;
 	otherwise:
-		compute death of M;
-	if the maxhealth of M > the health of M and deep one is not in the location of the player:
+		compute defeat of M;
+	if deep one is in the location of the player:
+		say "The grotesque fish-man seems to take offence at your actions!";
+		now deep one is angered;
+		now deep one is interested;
+		anger deep one;
+	otherwise:
 		say "An ominous shape appears from behind [if the player is in Mansion23]the altar[otherwise]the cultist[end if]! It seems a horrible creature has come to defend [him of M]!";
 		set up deep one;
 		now deep one is angered;
@@ -405,15 +396,13 @@ To say DamageReactWeak of (M - an acolyte):
 To say DamageReactSubmissive of (M - an acolyte):
 	say "[big he of M] staggers as [he of M] takes the hit, pushing out [his of M] chest provocatively as [he of M] struggles to maintain [his of M] balance.".
 
-To compute unique death of (M - an acolyte):
-	say "The [noun] shrieks and falls to the ground. ";
+Definition: an acolyte is automatically banishable if it is unconcerned.
+
+To compute unique banishment of (M - an acolyte):
 	let B be a random off-stage space mead;
 	if B is a thing:
-		now B is in the location of the player;
-		say "[big his of M] body disappears, leaving behind a [ShortDesc of B].";
-		compute autotaking B;
-	otherwise:
-		say "[big his of M] body disappears".
+		say "[BigNameDesc of M] left behind a [ShortDesc of B]!";
+		compute autotaking B.
 
 The acolyte priority attack rules is a rulebook. The priority attack rules of an acolyte is usually the acolyte priority attack rules.
 
@@ -456,8 +445,8 @@ To say MummyChant of (M - an acolyte):
 			say "[BigNameDesc of M] steps into the circle of candles at [ShortDesc of mysterious-mummy]'s feet, holding [his of M] arms wide open as the mummy bursts forward, completely covering [him of M] with strips of frayed linen. A moment passes, and the linen releases [him of M], reforming the mummy as [NameDesc of M] stumbles away.";
 			DifficultyUp M by 1;
 			ChargeDown mysterious-mummy by 30;
-			if the number of off-stage acolytes > 0, now the next-summon of M is 1.
-
+			let A be a random off-stage summon appropriate acolyte;
+			if A is acolyte, now the next-summon of mysterious-mummy is A.
 
 Part 4 - Conversation
 
@@ -493,7 +482,7 @@ To say RepeatResponse of (M - an acolyte):
 		say "[speech style of M]'[one of]The blessed are better seen than heard. Do remember that.'[or]Remember, the blessed are to open themselves to the void and be nothing. Which means no talking'[or]You do know you shouldn't even be thinking, much less talking?'[at random][roman type][line break]".
 
 To say TauntAccepted of (M - an acolyte):
-	say "[speech style of M]'Hm. You are still of use to the [great one]s. I will quarrel with you no further.'[roman type][line break][BigNameDesc of M] turns to leave.".
+	say "[speech style of M]'Hm. You are still of use to the [great ones]. I will quarrel with you no further.'[roman type][line break][BigNameDesc of M] turns to leave.".
 
 To say TauntRejected of (M - an acolyte):
 	say "[speech style of M]'[one of]Kneel before the power of the [great one]!'[or]The [great one] will reward me for your life!'[or]For your blood, the [great one] will fill me with its holy [if diaper quest is 0]seed[otherwise]milk[end if]!'[or]The [great one] will bless me by making me a vessel for its [if diaper quest is 0]seed[otherwise]urinations[end if] when I destroy you!'[at random][roman type][line break]".
@@ -535,16 +524,16 @@ To say WhereAnswer of (M - an acolyte):
 	say "[first custom style]'[one of]I think this used to be the house of a rich family. They[']re long since dead though.'[or]This is our temporary base. Kind of a fixer-upper, though.'[at random][roman type][line break]".
 
 To say WhoAnswer of (M - an acolyte):
-	say "[first custom style]'We are all one in service of the [great one]s, feel free to call me whatever you prefer.'[roman type][line break]".
+	say "[first custom style]'We are all one in service of the [great ones], feel free to call me whatever you prefer.'[roman type][line break]".
 
 To say StoryAnswer of (M - an acolyte):
-	say "[first custom style]'[one of]I had a life before, but I was called into the service of the [great one]s when I was brought to their holy altar and experienced their glory first-hand.'[or]My story begins when I was brought to the holy altar and experienced the glory of the [great one]s first-hand. I knew then that I had a higher call.'[or]I just really like the outfits. And servitude of the almighty [great one]s.'[at random][roman type][line break]".
+	say "[first custom style]'[one of]I had a life before, but I was called into the service of the [great ones] when I was brought to their holy altar and experienced their glory first-hand.'[or]My story begins when I was brought to the holy altar and experienced the glory of the [great ones] first-hand. I knew then that I had a higher call.'[or]I just really like the outfits. And servitude of the almighty [great ones].'[at random][roman type][line break]".
 
 To say EscapeAnswer of (M - an acolyte):
 	say "[first custom style]'The void surrounds us all, there is no escape from it.'[roman type][line break]".
 
 To say AdviceAnswer of (M - an acolyte):
-	say "[first custom style]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. She won't give it back...'[or]I think this place is haunted. And if it wasn[']t before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great one]s out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great one]s and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
+	say "[first custom style]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. [big he of vampiress] won't give it back...'[or]I think this place is haunted. And if it wasn[']t before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great ones] out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great ones] and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
 
 To decide which number is the mild-annoyance threshold of (M - an acolyte):
 	decide on 150.
@@ -556,13 +545,12 @@ To compute annoyance of (M - an acolyte):
 		say "[first custom style]'You clearly have already surrendered your mind to the void. Admirable, but kind of annoying to deal with.'[roman type][line break]";
 
 To compute teaching of (M - an acolyte):
-	say "[first custom style]'For the weak and infirm of faith, the curses their clothing bear weigh them down. But we see that while blessing is limited, the power of curses is truly bottomless. If you open your mind to the [great one]s, they will answer your call and their curses will flow to you as well.'[roman type][line break]";
+	say "[first custom style]'For the weak and infirm of faith, the curses their clothing bear weigh them down. But we see that while blessing is limited, the power of curses is truly bottomless. If you open your mind to the [great ones], they will answer your call and their curses will flow to you as well.'[roman type][line break]";
 	teach invoking;
 	if the questioned of M <= the mild-annoyance threshold of M:
 		ModerateConvoFatigue M;
 	otherwise:
 		HeavyConvoFatigue M.
-
 
 Section 3 - Drink Requesting
 
@@ -574,7 +562,7 @@ To compute friendly drink of (M - an acolyte):
 		bore M;
 		allocate 6 seconds;
 	otherwise:
-		say "[first custom style]'Sorry, but only true servants of the [great one]s would [']appreciate['] what I have to offer you.'[roman type]";
+		say "[first custom style]'Sorry, but only true servants of the [great ones] would [']appreciate['] what I have to offer you.'[roman type]";
 		bore M;
 		allocate 6 seconds;
 	say "[line break]".
@@ -597,47 +585,13 @@ To compute desperate drinking to (M - an acolyte):
 To compute (M - a mindless acolyte) protecting against (X - a monster):
 	if M is unleashed and M is friendly:
 		if X is tentacle monster or X is herald or X is deep one:
-			say "[BigNameDesc of M]'s attention snaps over to you, and she assumes what looks like an aggressive stance.";
+			say "[BigNameDesc of M][']s attention snaps over to you, and [he of M] assumes what looks like an aggressive stance.";
 			anger M.
 
 Section 4 - Dominant Sex
 
-To suggestFucker (F - a body part) for (M - an acolyte):
-	if F is penis:
-		if watersports fetish is 1 and the player is desperate to pee:
-			say "Do you want to piss on [his of M] face? It might be really difficult to get [him of M] on board...";
-			if the player is consenting:
-				now player-fucker is F;
-				now player-fuckchoice is FUCK-WATERSPORTS;
-		if player-fucker is face:
-			if the size of penis > 3:
-				say "Do you want to fuck [his of M] [HoleDesc of M]? [if watersports fetish is 1 and the player is desperate to pee]It might still be risky[otherwise]It could be risky[end if]...";
-				if the player is consenting:
-					now player-fucker is F;
-					now player-fuckchoice is FUCK-PENETRATION;
-			otherwise:
-				say "You consider fucking [him of M], but your [SexDesc of penis] isn't big enough for proper sex.";
-	otherwise if F is fuckhole:
-		if F is vagina and watersports fetish is 1 and the player is desperate to pee:
-			say "Do you want to piss on [his of M] face? It might be really difficult to get [him of M] on board...";
-			if the player is consenting:
-				now player-fucker is F;
-				now player-fuckchoice is FUCK-WATERSPORTS;
-		if player-fucker is face:
-			if M is mindless acolyte:
-				say "You consider getting [him of M] to eat you out, but there's no way [he of M]'d do it.";
-			otherwise:
-				say "Do you want to make [him of M] eat out your [variable F]?";
-				if the player is consenting:
-					now player-fucker is F;
-					now player-fuckchoice is FUCK-FACESIT;
-	otherwise:
-		if the player is male and M is not mindless acolyte:
-			say "Do you still want to dominate [him of M]? Maybe [he of M] has a ritual that can help you.";
-			if the player is consenting:
-				now player-fucker is penis;
-				now player-fuckchoice is FUCK-UNIQUE;
-		if player-fuckchoice is 0, say "You decide against it.".
+To decide which number is the dominationtype of (M - an acolyte) using (F - a fuckhole):
+	decide on FUCK-FACESIT.
 
 To compute domination interference of (M - an acolyte) for (N - a monster):
 	say "[BigNameDesc of M] seems to be waiting to see how this resolves.";
@@ -646,103 +600,80 @@ To compute domination interference of (M - a mindless acolyte) for (N - a monste
 	say "[BigNameDesc of M] barely turns [his of M] head toward [NameDesc of N].";
 
 To say DominanceFailure of (M - an acolyte):
-	say "You grab [NameDesc of M] and try to force [him of M] to [his of M] knees. [big he of M] places [his of M] hand on your forehead, uttering a harsh word under [his of M] breath as every muscle in your body suddenly goes limp, causing you to crumple helplessly at [his of M] feet. [line break][speech style of M]'[one of]Your dominance goes against the will of the [great one]s, non-believer...'[or]Non-believer, your dominance goes against the will of the [great one]s...'[or]This body exists only for the [great one]s, non-believer...[or]My body exists only as a conduit to the will of the [great one]s...'[at random][roman type][line break]";
+	say "You grab [NameDesc of M] and try to force [him of M] to [his of M] knees. [big he of M] places [his of M] hand on your forehead, uttering a harsh word under [his of M] breath as every muscle in your body suddenly goes limp, causing you to crumple helplessly at [his of M] feet. [line break][speech style of M]'[one of]Your dominance goes against the will of the [great ones], non-believer...'[or]Non-believer, your dominance goes against the will of the [great ones]...'[or]This body exists only for the [great ones], non-believer...[or]My body exists only as a conduit to the will of the [great ones]...'[at random][roman type][line break]";
 
-To decide which number is the physical dominance roll for (M - a mindless acolyte):
+[To decide which number is the physical dominance roll for (M - a mindless acolyte):
 	if debugmode > 0, say "[input style]Cultist Virility Check...[line break]";
 	if the size of penis <= 3 or the player is a sissy or there is an alive herald, decide on DOMINANT-FAILURE;
 	let R be (the strength of the player + the dominance of the player + 2) / 2 - (the difficulty of M / 2 + the difficulty of M / 3);[the mindless cultist is more submissive than most]
 	if R > 0:
 		if a random number between 1 and 2 is 1, decide on DOMINANT-DOMINANT;[The player is far stronger than the monster's difficulty]
-	decide on DOMINANT-NONE.
-
-To say DominanceFailure of (M - a mindless acolyte):
-	say "A terrible chill rumbles down your spine as you put your hands on [NameDesc of M], and you fall over backward as every muscle in your body freezes at once.[line break]";
-
-To compute failed dominance punishment of (M - a mindless acolyte):
-	let P be 1;
-	say "Your vision fades, and you find yourself floating naked in a black void, [one of]drifting inexorably toward a rapidly growing[or]once again drifting toward a[stopping] mass of pink fog in the distance. That same terrible chill takes hold of your body as you pass the precipice, and a [if the times-met of herald > 1]familiar[otherwise]unfamiliar[end if] voice fills every fibre of your being.";
-	if the player is male:
-		if the size of penis is min penis size and TG fetish > 0:[transform player into a woman, and impregnate them if possible.]
-			say "[speech style of herald]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of [Azathot] and stuff[otherwise]powerless before the will of [Azathot][end if]!'[roman type][line break]A huge black tentacle reaches out of the smoke, pinning your wrists together behind your back as it [if the player is feeling dominant]pries[otherwise]pushes[end if] your thighs apart, shiny, bulbous head pushing insistently against your taint. You feel your insides behind your crotch rearranging themselves[if the player is possessing a penis] as your [Shortdesc of penis] recedes fully into your body[end if], twisting and turning as the tentacle grinds harder and harder, coating your skin with its slimy, viscous drool. Your legs are forced even wider as the tip pushes further, deeper and deeper into a space that never existed inside you before, simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Huge bulges pass up its length as the tentacle bumps up against what must be your cervix, stretching your new hole wide as it bastes your insides with hot, warm [semen]. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] oozing out of your new [vagina]. You've been transformed into a woman!";
-			SexChange the player;
-			now the virgin of the player is 0;
-			now elder altar is penetrating vagina;
-			ruin vagina times 2;
-			PussyFill 6;
-			now elder altar is not penetrating vagina;
-			FuckCount;
-			now P is 0;
-		otherwise if the size of penis > min penis size:[reduce penis size by the number of mindless acolytes]
-			say "[speech style of herald]'[one of]FYI, nothing can stand before the might of [Azathot]. Asshole.'[or]Your dick is, um, totally beneath the might of [Azathot], jerk!'[or]Your dick will bend to the will of [Azathot] and stuff.'[at random][roman type][line break]The smoke converges on your [ShortDesc of penis], covering it.";
-			now P is 0;
-			PenisDown the number of on-stage mindless acolytes;
-	otherwise if pregnancy fetish is 1 and the humiliation of the player > HUMILIATION-SHAMELESS:[humiliation beyond certain point? Impregnate the player!]
-		say "[speech style of herald]'[one of]You're totally about to be fertilized by the seed of [Azathot], just you know.[or]You're about to become the vessel for the spawn of [Azathot]!'[or]Get your fucking [pussy] ready to be bent to the will of [Azathot]!'[at random][line break]A huge black tentacle reaches out of the smoke, drooling thick, viscous[semen] from its shiny, bulbous tip as it inches toward your crotch. It leaves a trial of white as it curls around your thighs, effortlessly [if the player is feeling dominant]prying[otherwise]pulling[end if] them wide open before slowly entering your [vagina]. You should be horrified/aroused, but, you can't really muster much of a feeling about anything. Your mind is blank. Every thought fades in an instant, leaving nothing between you and the Great Ones. Nothing at all to distract you from your duty. Your service. You exist only as a vessel for the spawn of the Great Ones. Until now, what you knew was only a childish imitation of purpose. Everything else is pointless. You feel a sensation like a curtain being thrust open as you suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] leaking out of your [vagina][if bukkake fetish is 1]and plastered to your inner thighs[end if]. It's very hard to think about anything, and even if you try to force yourself, you can't imagine yourself as being an individual in any sense of the word.";
-		now P is 0;
-		PussyFill 6;
-		now the pregnancy of the player is 1;
-		now the father is elder altar;
-		check sudden pregnancy;
-		Humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION;
-		FuckCount;
-	if P is 1:[HUMILIATION SMASH]
-		say "[speech style of herald]'[one of]Your mind is fucking forfeit to the will of [Azathot], or something!'[or]All holes are, like, one before the will of [Azathot]!'[at random][roman type][line break]The smoke converges around you, forcing your mouth[if the player is possessing a vagina], [vagina],[end if] and [asshole] wide open as the fog spreads to your thoughts, and volts of pleasure ripple through your entire body. You feel but do not see huge cylindrical objects thrusting in and out of all your orifices, faster and faster until you feel a sensation like a curtain being thrust open and suddenly wake up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], fresh [semen] leaking out of every hole. You feel like your sense of self worth is somehow harder to grasp.";
-		StomachSemenUp 2;
-		PussyFill 2;
-		AssFill 2;
-		Humiliate SEVERE-HUMILIATION + MODERATE-HUMILIATION.
+	decide on DOMINANT-NONE.]
 
 To compute failed dominance punishment of (M - an acolyte):
-	let R be a random number between 1 and 2;
-	if the player is female and the pregnancy of the player is 0:
-		now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, color creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
-		now another-turn is 1;
-	otherwise if R is 1:[She summons a ghost]
-		let G be a random off-stage ghostly tentacle;
-		unless G is monster, now G is a random off-stage ghost;
-		say "[BigNameDesc of M] resumes [his of M] chanting, but its rhythm is now different. An incredibly uneasy feeling settles over you as the cultist theatrically fondles [his of M] breasts and plunges a pair of fingers in and out of [his of M] mouth, as if to put on a show for some unseen audience. [run paragraph on]";
-		if G is ghost:
-			set up G;
-			now G is in the location of the player;
-			say "The atmosphere grows more intense the more perverted [he of M] makes [his of M] display, and you can hear the drop in the air as a pinprick of light appears in front of [him of M], dripping bright green, glowing fluid as it slowly transforms into a [printed name of G]. [BigNameDesc of M] quickly wraps a hand around it, running [his of M] tongue along its shaft as its light continues to intensify, [if bukkake fetish is 1]angling it towards you as its veins bulge with greater and greater definition. You can only look on helplessly as it ejaculates, covering you in a cascade of slime, which adheres to your skin in an instant. [BigNameDesc of M] leaves you to your fate.[otherwise]slurping loudly as a sickly green glow spreads over your surroundings. [big he of M] freezes when the light reaches its most intense point, and with [one of]unexpected[or]unnerving[stopping] speed bolts from the room just as the [printed name of G] releases a violent pulse of energy, which magically fastens you to the floor!";
-			now the stickiness of the player is 7;
-			now the slime-puddle of the location of the player is the semen load of G;
+	let P be 1;
+	let H be herald;
+	say "Your vision fades, and you suddenly find yourself in a bubblegum pink void that extends on in every direction. The sounds and sensations of sex echo all around you as you struggle to make sense of where you are, and you find yourself face to face with a pair of red, almond-shaped eyes as a [if the times-met of H > 1]familiar[otherwise]unfamiliar[end if] voice fills every fibre of your being.";
+	if the player is getting very unlucky:[all of these outcomes are kind of severe]
+		if the player is able to get pregnant and the player is female:[your "soul" is creampied]
+			say "[speech style of H]'[one of]Ok, so like, [Azathot] is about to bust a nut inside your soul.'[or]Um, [Azathot] says your soul is like, hurting for a squirting.'[or][Azathot] is totally going to make your soul ovulate or something. '[at random][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, rubbing its bulbous, shiny head between your lips before sliding its way into your [if interracial fetish is 1]white [vagina]. [otherwise][vagina]. [end if]Your mind goes blank as you are overtaken by the essence of the Great Ones, and you finally realize your true purpose is-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], the feeling of [semen] very fresh on your mind.";
+			SemenAddictUp 1;
+			let G be ghostly tentacle;
+			now G is penetrating vagina;
+			PussyFill 1;
+			now G is not penetrating vagina;
+			severeHumiliate;
 			Bore M;
-			if another-turn-flavour is "", now another-turn-flavour is "You are fastened to the floor by green goo.";
-			now another-turn is 1;
-		otherwise:
-			say "The atmosphere grows more intense the more perverted [he of M] makes [his of M] display, and you can practically feel the air suffocating you as [he of M] finishes, leaving you as laden with arousal as the air around you.";
-			Arouse 3000;
-			increase creepiness by 100;
+		otherwise if the player is male and the size of penis is min penis size and TG fetish > 0:[you get turned into a girl]
+			say "[speech style of herald]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of [Azathot] and stuff[otherwise]powerless before the will of [Azathot][end if]!'[roman type][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, insistently rubbing its bulbous, shiny head against your [if the size of penis > 0 and interracial fetish is 1]inferior white [sissy-penis], forcing it to recede into your[otherwise if the size of penis > 0]against your [ShortDesc of penis], forcing it to recede into your[otherwise]blank[end if] taint. The tentacle pushes harder, further, and deeper , simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Your mind goes blank in anticipation of what's to come. A lifetime of service to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your [ShortDesc of penis] and your purity gone without a trace.";
+			severeHumiliate;
+			SexChange the player;
+			now elder altar is penetrating vagina;
+			ruin vagina times 1;
+			now elder altar is not penetrating vagina;
+		otherwise:[you get gaped and humiliated]
+			say "[speech style of H]'[one of]Your mind is fucking forfeit to the will of [Azathot], or something!'[or]All mortal minds, like, crumble before will of [Azathot]!'[at random][roman type][line break]Your [if the player is female]orifices are forced wide open[otherwise][asshole] is forced wide open[end if] as the void's [italic type]essence[roman type] invades your body, and for a moment, you become a part of it. The myriad of blissful souls around you welcome you as one of your own, and you finally realize the reason for your existence. Its obvious. You were born to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your entire body tingling as it acclimates to a new, much lesser sense of self.";
+			severeHumiliate;
+			gape asshole times 1;
+			if the player is female, gape vagina times 1;
 			Bore M;
 	otherwise:
-		compute sissy punishment of M;
+		say "[speech style of H]'[one of]Wow, your spirit tits are like, fucking ridonk!'[or]Babe, your spirit tits are like, rocking as fuck!'[or]OMG, are those spirit boobs real?'[at random][roman type][line break]Your whole body tingles as you hear applause all around you, and [if interracial fetish is 1]big black[otherwise]white[end if] tentacles fill your vision as-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar, [otherwise]on the ground, [end if]feeling slightly less like your own person.";
+		slightHumiliate;
 		Bore M.
 
-To say DominanceFailure of (M - clairvoyant acolyte):
-	say "You grab [NameDesc of M] and try to force [him of M] to [his of M] knees. [big he of M] places [his of M] hand on your forehead, uttering a harsh word under [his of M] breath as every muscle in your body suddenly goes limp, causing you to crumple helplessly at [his of M] feet. [line break][speech style of M]'[one of]You are in need of their word, non-believer...'[or]Non-believer... I will make you believe...'[or]You will see as I have seen, non-believer...[or]It is their word that all things belong to the [great one]s. You will hear it...'[at random][roman type][line break]";
+[To compute failed dominance punishment of (M - an acolyte):
+	let R be a random number between 1 and 2;
+	if the player is female and the pregnancy of the player is 0:
+		now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, colour creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
+		now another-turn is 1;
+	otherwise if the player is getting unlucky:[She summons a ghost]
+		say "[BigNameDesc of M] resumes [his of M] chanting, but its rhythm is now different. An incredibly uneasy feeling settles over you as the cultist theatrically fondles [his of M] breasts and plunges a pair of fingers in and out of [his of M] mouth, as if to put on a show for some unseen audience. The atmosphere grows more intense the more perverted [he of M] makes [his of M] display, and you can practically feel the air suffocating you as [he of M] finishes, leaving you as laden with arousal as the air around you.";
+		Arouse 3000;
+		increase creepiness by 100;
+		Bore M;
+	otherwise:
+		compute sissy punishment of M;
+		Bore M.]
 
-To compute failed dominance punishment of (M - an clairvoyant acolyte):
+[To say DominanceFailure of (M - clairvoyant acolyte):
+	say "You grab [NameDesc of M] and try to force [him of M] to [his of M] knees. [big he of M] places [his of M] hand on your forehead, uttering a harsh word under [his of M] breath as every muscle in your body suddenly goes limp, causing you to crumple helplessly at [his of M] feet. [line break][speech style of M]'[one of]You are in need of their word, non-believer...'[or]Non-believer... I will make you believe...'[or]You will see as I have seen, non-believer...[or]It is their word that all things belong to the [great ones]. You will hear it...'[at random][roman type][line break]";]
+
+[To compute failed dominance punishment of (M - an clairvoyant acolyte):
 	let B be a random worn clothing penetrating face;
 	if B is clothing:
 		say "[BigNameDesc of M] pulls out your [ShortDesc of B].";
 		now B is in holding pen;
 		now M is retaining B;
 		dislodge B;
-	now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, color creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
-	now another-turn is 1.
+	now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, colour creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
+	now another-turn is 1.]
 
-To say DominanceSuccess of (M - a mindless acolyte):[vaginal sex only]
-	say "You grab [NameDesc of M] and quickly force [him of M] to [his of M] knees. [big his of M] head jerks toward you, and [he of M] utters a harsh word under [his of M] breath as [his of M] robe instantly tears itself to shreds, leaving only [his of M] hood. [line break][speech style of M]'[one of]Defile, non-believer...'[or]Ruin, non-believer...'[or]Feed with ruination, non-believer.[or]Defile, non-believer. Ruin everything.'[at random][roman type][line break]";
-	if watersports fetish is 1 and the player is desperate to pee, watersports dominate M;
-	otherwise vaginal dominate M.
-	[eventually TODO: female stuff]
-
-To compute unique dominance reward of (M - a monster):
+To compute unique dominance reward of (M - an acolyte):
 	compute default dominance reward of M;
 	DifficultyUp deep one by 2.
 
+[None of the following four functions should trigger]
 To say DominationEscapeFlav of (M - a mindless acolyte):
 	do nothing.
 
@@ -765,63 +696,48 @@ To replace (M - clairvoyant acolyte) after domination:
 	FatigueUp 10;
 	teleport to R.
 
-To say DominanceSuccess of (M - an acolyte):
-	say "You grab [NameDesc of M] and quickly force [him of M] to [his of M] knees. [run paragraph on]";
-	if player-fucker is penis and player-fuckchoice < FUCK-NONE:
-		say "[big he of M] tears off [his of M] robe, somehow leaving [his of M] hood intact. [line break][speech style of M]'[one of]Take me, non-believer. It is the will of the [great one]s...'[or]Defile me, non-believer. I am tested by the [great one]s...'[or]Defile me, non-believer. It is the will of the [great one]s...'[or]Take me, non-believer. Your role in their plan has yet to be fulfilled...'[at random][roman type][line break]";
-		if player-fuckchoice is -3, watersports dominate M;
-		otherwise vaginal dominate M;
-	otherwise if player-fucker is a fuckhole:
-		say "[big he of M] nods in no direction in particular.[line break][speech style of M]'[one of]You must be cleansed before you become a vessel.'[or]It is their will that your body be cleansed...'[or]You must be cleansed before your role in their plan can be fulfilled...'[or]I understand. I will attend to the new vessel...'[at random][roman type][line break]";
-		female dominate M;
-	otherwise:
-		now the size of penis is 6;
-		say "[big he of M] clasps [his of M] hands together, uttering a harsh word under [his of M] breath as your wrists instantly snap together behind your back. [line break][speech style of M]'[one of]Sire with dominance...'[or]Water with seed...'[or]Plant at the root...'[at random][roman type][line break][big he of M] starts a chant under [his of M] breath [if there is bottom level protection clothing]as [he of M] pulls your [sissy-penis] out of your [printed name of random worn bottom level protection clothing][otherwise]as [he of M] grasps your [sissy-penis][end if], softly placing [his of M] hand on your chest. Pleasure blooms outward from [his of M] fingertips, your [sissy-penis] hardening instantly as thick pink [semen] begins drooling continuously from the tip, growing inch by inch into a [ShortDesc of penis]. [big he of M] finishes [his of M] chant definitively, and you suddenly collapse at [his of M] feet, overwhelmed with fatigue.";[TODO: look later and see if this needs improved]
-		now the fatigue of the player is the tired threshold of the player;
-		Dignify 10;
-		say AfterDominationComment 2 of M;
-		orgasm.
-
 To watersports dominate (M - an acolyte):
-	say "You hold [his of M] head in place, pissing directly onto [his of M] forehead so the [urine] flows down [his of M] face[if bukkake fetish is 1 and M is clairvoyant acolyte], washing the [semen] off the bridge of [his of M] nose[end if] and into [his of M] open mouth. The veil is soaked within moments, clinging to [his of M] skin as the piss overflows from the golden 'lake' in [his of M] mouth and runs down [his of M] [if bukkake fetish is 1 and M is clairvoyant acolyte]cream-covered[end if] tits. You're not sure how to feel about [his of M] total non-reaction to being treated like a human toilet, but it's unbelievably satisfying to watch [him of M] close [his of M] mouth when you're done, spilling some down [his of M] chin as [he of M] swallows a mouthful of your [urine] in a single huge gulp.";
+	say "[BigNameDesc of M] drops to [his of M] knees, keeping [his of M] mouth wide open as [he of M] cups [his of M] hands under [his of M] chin. You don't wait for more invitation than that, gently holding [his of M] head in place as you begin to piss directly onto [his of M] forehead. [big he of M] remains completely still as your [urine] flows down [his of M] face[if bukkake fetish is 1 and M is clairvoyant acolyte], washing the [semen] off the bridge of [his of M] nose[end if] and into [his of M] open mouth. [big his of M] veil is soaked within moments, clinging to [his of M] skin as the piss overflows from the golden 'lake' in [his of M] mouth and runs down [his of M] [if bukkake fetish is 1 and M is clairvoyant acolyte]cream-covered [end if][ChestDesc of M]. You're not sure how to feel about [his of M] total non-reaction to being treated like a human toilet, but it's unbelievably satisfying to watch [him of M] hold all that piss in [his of M] mouth.";
 	now the bladder of the player is 0;
 	unless M is mindless acolyte, say AfterDominationComment 2 of M;
-	Dignify 30;
+	moderateDignify;
 	SportsGet.
 
-To vaginal dominate (M - an acolyte):
+To penetration dominate (M - an acolyte):
+	let C be a random bottom level protection clothing;
 	let A be a random insertable thing penetrating asshole;
 	let F be a random gag penetrating face;
-	say "[BigNameDesc of M] spreads [his of M] legs, but otherwise remains completely motionless as you push your [SexDesc of penis] into [his of M] [vagina]. [big he of M] barely reacts to you being inside [him of M], and you pound [him of M] harder and harder as [he of M] blankly stares up at you. [big his of M] breasts jiggle pleasantly with the force of your strokes, punctuated by the rhythmic slap of your crotches repeatedly slamming together. You can faintly feel tentacles coiling around your body as you thrust, stroking your nipples, tracing your lips, and prodding [if asshole is actually occupied]the [printed name of random thing penetrating asshole] embedded in your [asshole][otherwise]your [asshole], which feels increasingly vulnerable by the second[end if]. [if the sex addiction of the player < 6]It's unsettling enough that you try to pull out, but that only makes the tendrils tighten their grip[otherwise if the sex addiction of the player < 12]Your instincts tell you to pull out, as much as it turns you on, but the tendrils tighten their grip as soon as you finish your thought[otherwise]And if that wasn't enough to turn you on, the tendrils tighten their grip after coiling around most of your body[end if], completely wresting away control of your hips and forcing you to fuck [NameDesc of M] with even more enthusiasm.";
+	say "[BigNameDesc of M] drops to [his of M] knees, as you [if C is not strapon-panties and C is clothing]pull your [SexDesc of penis] out of your [printed name of random worn bottom level protection clothing], [otherwise]play with your [SexDesc of penis], [end if]remaining completely motionless as you spread [his of M] legs and push your [SexDesc of penis] into [his of M] [HoleDesc of M]. [line break][speech style of M]'[one of]Defile, non-believer...'[or]Ruin, non-believer...'[or]Feed with ruination, non-believer.[or]Defile, non-believer. Ruin everything.'[at random][roman type][line break][big he of M] whispers under [his of M] breath as you begin to fuck [him of M], blankly staring up at you as [if M is presenting as male][his of M] buttcheeks clap[otherwise][his of M] breasts jiggle pleasantly[end if] with the force of your thrusts. You can faintly feel tentacles coiling around your body as you pick up speed, stroking your nipples, tracing your lips, and prodding [if asshole is actually occupied]the [printed name of random thing penetrating asshole] embedded in your [asshole][otherwise]your [asshole], which feels increasingly vulnerable by the second[end if]. [if the sex addiction of the player < 6]It's unsettling enough that you try to pull out, but that only makes the tendrils tighten their grip[otherwise if the sex addiction of the player < 12]Your instincts tell you to pull out, as much as it turns you on, but the tendrils tighten their grip as soon as you finish your thought[otherwise]And if that wasn't enough to turn you on, the tendrils tighten their grip after coiling around most of your body[end if], completely wresting away control of your hips and forcing you to fuck [NameDesc of M] with even more enthusiasm.";
 	if A is a thing and F is a thing:
-		say "[BigNameDesc of M]'s legs wrap around your waist, and you feel the tentacles desperately trying to strong-arm their way into your holes as the pleasure slowly begins to build. You take a bit of comfort in knowing that to an on-looker, it seems like you're really just giving it a willing slut, but as the tentacle near your [asshole] punches your [printed name of a random thing penetrating asshole], you can't deny how humiliating it feels to know it's anything but. Your [if the player is male]balls[otherwise]muscles[end if] tighten, and you emit a muffled grunt as your [SexDesc of penis] explodes into [NameDesc of M]'s vagina, filling it with your [load].";
+		say "[BigNameDesc of M][']s legs wrap around your waist, and you feel the tentacles desperately trying to strong-arm their way into your holes as the pleasure slowly begins to build. You take a bit of comfort in knowing that to an on-looker, it seems like you're really just giving it a willing slut, but as the tentacle near your [asshole] punches your [printed name of a random thing penetrating asshole], you can't deny how humiliating it feels to know it's anything but. Your [if the player is male]balls[otherwise]muscles[end if] tighten, and you emit a muffled grunt as your [SexDesc of penis] explodes into [NameDesc of M][']s [HoleDesc of M], filling it with your [load].";
 		slightHumiliate;
 	otherwise if A is a thing:
-		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, forcing you to [if the oral sex addiction of the player > 2]enjoy[otherwise]'enjoy'[end if] its pungent, salty taste as the pleasure slowly, inexorably begins to build. You take a bit of comfort in knowing that to an on-looker, it seems like you're really just giving it to a willing slut, but as the tentacle near your [asshole] punches your [printed name of A], you can't deny how humiliating it feels to know it's anything but. Your [if the player is male]balls[otherwise]muscles[end if] tighten, and you emit a muffled grunt as your [SexDesc of penis] explodes into [NameDesc of M]'s vagina, filling it with your [load]. You feel the tentacle in your mouth pulsating wildly as your mouth fills with the taste of [semen], although strangely, there isn't actually anything there.";
+		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, forcing you to [if the oral sex addiction of the player > 2]enjoy[otherwise]'enjoy'[end if] its pungent, salty taste as the pleasure slowly, inexorably begins to build. You take a bit of comfort in knowing that to an on-looker, it seems like you're really just giving it to a willing slut, but as the tentacle near your [asshole] punches your [printed name of A], you can't deny how humiliating it feels to know it's anything but. Your [if the player is male]balls[otherwise]muscles[end if] tighten, and you emit a muffled grunt as your [SexDesc of penis] explodes into [NameDesc of M][']s [HoleDesc of M], filling it with your [load]. You feel the tentacle in your mouth pulsating wildly as your mouth floods with the taste of [semen], although strangely, there isn't actually anything there.";
 		moderateHumiliate;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise if F is a thing:
-		say "You feel a strong push from the tentacle near your asshole, forcing you wide open as [NameDesc of M]'s legs wrap around your waist. Your [if the player is male]balls tighten as it presses insistently against your prostate[otherwise]muscles tighten as it fills you[end if], and you emit a muffled groan as pleasure builds and builds, finally coming to an explosive head as your [SexDesc of penis] [if the size of penis > 8]floods [NameDesc of M]'s [vagina] with semen[otherwise if sexual-penis-length > 6]shoots several long ropes of [semen] spurt into [NameDesc of M]'s [vagina][otherwise]shoots several times into [NameDesc of M]'s [vagina][end if]. You can feel the tentacle pulsating wildly, but although it's as humiliating as being inseminated, strangely, it feels like nothing is actually being left inside you.";
+		say "You feel a strong push from the tentacle near your asshole, forcing you wide open as [NameDesc of M][']s legs wrap around your waist. Your [if the player is male]balls tighten as it presses insistently against your prostate[otherwise]muscles tighten as it fills you[end if], and you emit a muffled groan as pleasure builds and builds, finally coming to an explosive head as your [SexDesc of penis] fills [NameDesc of M]'s [HoleDesc of M] with your [load]. You can feel the tentacle pulsating wildly, but although it's as humiliating as being inseminated, strangely, it feels like nothing is actually being left inside you.";
 		strongHumiliate;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise:
-		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is male]against your prostate[otherwise]inside[end if] as [NameDesc of M]'s legs wrap around your waist, and you feel your [if the player is male]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as [if sexual-penis-length > 8][semen] floods[otherwise if sexual-penis-length > 6]several long ropes of [semen] spurt into[otherwise]several short streamers of [semen] spurt into[end if] [NameDesc of M]'s [vagina], and you feel the tentacles pulsating wildly, your mouth filling with the unmistakeable taste of cum, although strangely, there isn't actually anything there.";
+		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is male]against your prostate[otherwise]inside[end if] as [NameDesc of M][']s legs wrap around your waist, and you feel your [if the player is male]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as your [SexDesc of penis] explodes, filling [NameDesc of M]'s [HoleDesc of M] with your [load]. You feel the tentacles pulsating wildly as your mouth is flooded with the unmistakable taste of [semen], but strangely, there isn't actually anything there.";
 		severeHumiliate;
 		now player-fucking is DOMINANT-SHAMEFUL;
 	FuckGet;
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
-	increase doom counter by 50 + the size of penis;
-	if the size of penis < 10 and the player is possessing a penis:
+	if doom counter > 0, increase doom counter by 50 + the size of penis;
+	if the size of penis < 10 and the player is male:
 		if the size of penis > 7, PenisUp (10 - the size of penis);
 		otherwise PenisUp 3;
 	otherwise:
 		say "Tingles pass through your body as your muscles suddenly grow in size.";
 		StrengthUp 1;
-	if M is mindless acolyte, increase doom counter by 50;
+	if M is mindless acolyte and doom counter > 0, increase doom counter by 50;
 	otherwise say AfterDominationComment 1 of M.
 
-To female dominate (M - an acolyte):[The cultist eats you out herself!]
+To facesit dominate (M - an acolyte):[The cultist eats you out herself!]
+	say "[BigNameDesc of M] nods in no direction in particular as you force [him of M] to [his of M] knees.[line break][speech style of M]'[one of]You must be cleansed before you become a vessel...'[or]It is their will that your body be cleansed...'[or]You must be cleansed before your role in their plan can be fulfilled...'[or]I understand. I will attend to the new vessel...'[at random][roman type][line break]";
 	if the player is female:
 		say "You don't really know what [he of M]'s talking about, but it sounds like [he of M]'s planning to do what you had in mind anyway, so you join [him of M] on the ground and expectantly spread your legs. [big he of M] doesn't need a word of encouragement, pushing [his of M] fingers into your [vagina] as [his of M] tongue goes to work on your clit. The veil keeps you from seeing exactly what [he of M]'s doing, but [one of][he of M]'s unexpectedly good at it for someone in a game about sucking dick[or]apparently that religious stuff has more to it, because [he of M]'s pretty good at this[stopping]! You arch your back, legs shaking with pleasure as [he of M] [if the player is very horny]brings you to orgasm within moments[otherwise if the player is horny]brings you to orgasm in under a minute[otherwise if the player is a bit horny]brings you to orgasm with the impossibly dexterous motions of [his of M] tongue[otherwise]uses [his of M] dexterous tongue to bring you to an impossibly fast orgasm[end if], extending it with rhythmic, surgically precise pumping of [his of M] fingers. You can do nothing but ride on the wave of pleasure, moaning through clenched teeth as adrenaline floods through your body. When [he of M] eventually does let up, [he of M] resumes the chanting under [his of M] breath, [if the semen volume of vagina > 0 and bukkake fetish is 1][semen] clinging to [his of M] chin as [he of M] helps[otherwise if the semen volume of vagina > 0]licking [his of M] lips as [he of M] helps[otherwise]helping[end if] you gracefully to your feet. You feel great! Although for some reason you actually feel less dignified than you did before...";
 		orgasm;
@@ -858,13 +774,12 @@ To female dominate (M - an acolyte):[The cultist eats you out herself!]
 	LickGet;
 	say AfterDominationComment 3 of M.
 
-
 To say AfterDominationComment (N - a number) of (M - an acolyte):
 	if N is 1 and the class of the player is cultist, now N is 4;
-	if N is 1, say "[speech style of M]'[one of]Your seed empowers us, non-believer...'[or]All virility is an extension of the [great one]s...'[or]You lack the conviction to stand against the [great one]s, non-believer...'[at random][roman type][line break]";
-	if N is 2, say "[speech style of M]'You will yet become a worthy servant of the [great one]s.'[roman type][line break]";
-	if N is 3, say "[speech style of M]You are ready now to carry the future of the [great one]s.'[roman type][line break]";
-	if N is 4, say "[speech style of M]'[one of]Your seed is empowered by the [great one]s...'[or]We are truly blessed by the [great one]s, sister.'[or]Did you feel it, sister? Their blessing?'[at random][roman type][line break]".
+	if N is 1, say "[speech style of M]'[one of]Your seed empowers us, non-believer...'[or]All virility is an extension of the [great ones]...'[or]You lack the conviction to stand against the [great ones], non-believer...'[at random][roman type][line break]";
+	if N is 2, say "[speech style of M]'You will yet become a worthy servant of the [great ones].'[roman type][line break]";
+	if N is 3, say "[speech style of M]You are ready now to carry the future of the [great ones].'[roman type][line break]";
+	if N is 4, say "[speech style of M]'[one of]Your seed is empowered by the [great ones]...'[or]We are truly blessed by the [great ones], sister.'[or]Did you feel it, sister? Their blessing?'[at random][roman type][line break]".
 
 Part 5 - Variants
 
@@ -873,7 +788,7 @@ Section 1 - Clairvoyant Acolyte
 To set up (M - clairvoyant acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 12;
+	now the raw difficulty of M is 12;
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
 
@@ -883,54 +798,54 @@ To say PresentFriendlyAcceptanceFlav of (M - clairvoyant acolyte):
 To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 	[if doomed is 5, clairvoyant acolyte delivers you to the herald.]
 	if X is acolyte or the class of the player is cultist:
-		say "[if the class of the player is cultist and X is acolyte][line break][speech style of M]'There is no point in fighting amongst ourselves... the rise of the [great one]s is inevitable...'[roman type][line break][BigNameDesc of M] doesn't seem to want to get involved![otherwise][line break][speech style of M]'Resisting is useless, non-believer. The [great one]s will rise. It is is... inevitable.'[roman type][line break]";
+		say "[if the class of the player is cultist and X is acolyte][line break][speech style of M]'There is no point in fighting amongst ourselves... the rise of the [great ones] is inevitable...'[roman type][line break][BigNameDesc of M] doesn't seem to want to get involved![otherwise][line break][speech style of M]'Resisting is useless, non-believer. The [great ones] will rise. It is is... inevitable.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Your petty squabbles are nothing compared to the might of the [great one]s...'[roman type]";
+		say "[speech style of M]'Your petty squabbles are nothing compared to the might of the [great ones]...'[roman type]";
 	distract M.
 
 To compute unique periodic effect of (M - a clairvoyant acolyte):
 	if a random number between 1 and 45 is 1:
 		if M is in the location of the player, say "[BigNameDesc of M] sighs as [semen] dribbles out of [his of M] [HoleDesc of M]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
 		PuddleUp semen by 1 in (the location of M);
-		if doomed > 0 and doomed < 5, increase doom counter by 5.
+		if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 5.
 
 To say MercyReaction of (M - clairvoyant acolyte):
-	say "Your attempts to beg are muffled by [NameDesc of M]'s ass and pussy in your face!".
+	say "Your attempts to beg are muffled by [NameDesc of M][']s ass and pussy in your face!".
 
 To compute kneeling reaction of (M - clairvoyant acolyte):
 	say "[one of][BigNameDesc of M] walks over to you, eyes rolling beneath [his of M] veil as [semen] leaks freely from [his of M] [vagina].[or][BigNameDesc of M] traces strange symbols in the air as [he of M] strides over to you, only tangentially aware of the steadily increasing flow of [semen] from [his of M] already [semen] packed [vagina].[or]A colour creeps back into [NameDesc of M][']s skin as [he of M] calmly glides over to you, more and more turned on by [his of M] imminent 'missionary' work.[or][BigNameDesc of M] begins to chant under [his of M] breath, magically stemming the flow of leftover [semen] down [his of M] legs as [he of M] bears down on you.[or][BigNameDesc of M] looms over you, [his of M] cum dripping pussy level with your head. [big his of M] face is directed upward, and [he of M]'s wobbling slightly, as if looking at something [he of M] cannot quite see.[in random order][line break]";
-	say "[speech style of M][one of]The blessed seed of the [great one]s will fertilize your mind...'[or]When you have tasted their seed, your mind will grow open for the [great one]s...'[or]The [great one]s blessed me with their seed... this is my responsibility...'[at random][roman type]";
+	say "[speech style of M][one of]The blessed seed of the [great ones] will fertilize your mind...'[or]When you have tasted their seed, your mind will grow open for the [great ones]...'[or]The [great ones] blessed me with their seed... this is my responsibility...'[at random][roman type]";
 	humiliate 75.
 
 To say waitingflav of (M - clairvoyant acolyte):
 	if the player is not able to speak:
 		say "[one of][variable custom style][gag sounds][roman type][line break][or]You look up at [NameDesc of M] silently.[at random]";
 	otherwise if the semen taste addiction of the player < 8:
-		say "[one of]You stare up at the cultist, stunned.[or]You shake your head in disbelief of the situation you've gotten yourself into.[or]You turn away. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Whatever you're thinking of doing to me, please don't.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'Fuck off, I'm not doing it.'[roman type][line break][or]You find yourself paralysed with dread, staring at the disgusting [semen] dripping from [NameDesc of M]'s holes.[in random order]";
+		say "[one of]You stare up at the cultist, stunned.[or]You shake your head in disbelief of the situation you've gotten yourself into.[or]You turn away. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Whatever you're thinking of doing to me, please don't.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'Fuck off, I'm not doing it.'[roman type][line break][or]You find yourself paralysed with dread, staring at the disgusting [semen] dripping from [NameDesc of M][']s holes.[in random order]";
 	otherwise if the semen taste addiction of the player < 11:
-		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of [NameDesc of M]'s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'[if the class of the player is cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the oral sex addiction of the player < 4]Internally you feel disgusted by the idea of [him of M] sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
+		say "[one of]You are surprised with how calm you feel about the idea of swallowing the [semen] dripping out of [NameDesc of M][']s holes.[or]You wait obediently, convincing yourself it's because you have no other choice, and not because you are starting to enjoy the taste of [semen].[or][line break][variable custom style]'I don't care if I have to eat you out, but please don't stay so long that you make me faint.'[roman type][line break][or][line break][variable custom style]'[if the class of the player is cultist]Okay, I guess I can do that. You know more about this religious stuff than I do[otherwise]Okay I'll lick it out of you but don't think I care about any of that weird religious stuff. You just really look like you need an orgasm[end if].''[roman type][line break][or][if the sex addiction of the player < 11]You try not to think about[otherwise]You find yourself thinking about[end if] the creature that must have been the source of that much [semen].[or][if the oral sex addiction of the player < 4]Internally you feel disgusted by the idea of [him of M] sitting on your face, but[otherwise]You[end if] find yourself licking your lips in anticipation.[in random order]";
 	otherwise:
-		say "[one of][if the player is not a pervert]You are stunned with indecision - you don't want to have to lick [him of M] out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at [his of M] [semen] dripping filled orifices and lick your lips greedily. It's like Christmas came early![end if][or]You stare at [NameDesc of M]'s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style][if the class of the player is cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining [his of M] religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
+		say "[one of][if the player is not a pervert]You are stunned with indecision - you don't want to have to lick [him of M] out but you do love the idea of getting to swallow some more [semen].[otherwise]You stare at [his of M] [semen] dripping filled orifices and lick your lips greedily. It's like Christmas came early![end if][or]You stare at [NameDesc of M][']s [semen] coated pussy lips and thighs, and find yourself licking your lips in anticipation. [line break][second custom style]'It's a tough job, but somebody's got to do it.'[roman type][line break][or][line break][second custom style]'I do love [semen]...'[roman type][line break][or][line break][second custom style][if the class of the player is cultist]I knew I picked the right religious order to follow! I LOVE [semen][otherwise]I wouldn't mind joining [his of M] religious order or whatever if I get to swallow [semen] all day[end if]![roman type][line break][or][line break][second custom style]'I'm always up for getting another taste of a stranger's [semen]!'[roman type][line break][in random order]".
 
 To say RepeatResponse of (M - clairvoyant acolyte):
 	say "[one of]Though they may be delayed now, they will always find a way to return. That is the power of the Old Gods.'[or]Tomorrow's horoscope is... sunny.'[or]You fight a battle you cannot win.'[or]You will find yourself in a blasphemous room, and fight against a horse[']s third leg.'[cycling]";
 
-To compute damage of (M - clairvoyant acolyte):
+To compute standard damage of (M - clairvoyant acolyte):
 	if the health of M > 0:
 		if M is uninterested:
-			say "The [man of M] laughs bitterly and takes a fighting stance. [line break][speech style of M]'[if the class of the player is cultist]Jealousy is pointless. I will show you...'[otherwise][one of]Do you truly believe you can stand against a prophet of the [great one]s?'[or]Even you can be useful to the [great one]s.'[at random][end if][roman type][line break]";
+			say "The [man of M] laughs bitterly and takes a fighting stance.[line break][speech style of M]'[if the class of the player is cultist]Jealousy is pointless. I will show you...'[otherwise][one of]Do you truly believe you can stand against a prophet of the [great ones]?'[or]Even you can be useful to the [great ones].'[at random][end if][roman type][line break]";
 			now M is interested;
 			anger M;
-			now the sex-length of M is 2;
+			commence doom;
 		otherwise:
 			say DamageReaction (the health of M) of M;
-	otherwise :
-		compute death of M;
+	otherwise:
 		if deep one is not in the location of the player:
 			say "An ominous shape appears from behind [if the player is in Mansion23]the altar[otherwise]the cultist[end if]! It seems a horrible creature has come to avenge [him of M]!";
 			set up deep one;
 			now deep one is angered;
-			now deep one is in the location of the player.
+			now deep one is in the location of the player;
+		compute defeat of M.
 
 To say PresentFriendlyAcceptanceFlav of (M - clairvoyant acolyte):
 	say "[speech style of M]'[one of]I cannot deny you.'[or]You need only ask.'[at random][roman type][line break]".
@@ -963,7 +878,7 @@ To compute facial sex of (M - clairvoyant acolyte):
 		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".
 
 To say FacesitResisting of (M - clairvoyant acolyte):
-	say "[one of]You refuse to let [him of M] use you as [his of M] own personal cleaning service, or whatever it is she wants from you. [or]You keep your mouth shut, valuing your dignity over your ability to breathe. [or]You spitefully purse your lips, wanting to make sure she gets as little out of it as possible. [or]You keep your mouth shut. At least if you pass out, you'll still have some dignity. [in random order][BigNameDesc of M] keeps grinding on your face anyway!";
+	say "[one of]You refuse to let [him of M] use you as [his of M] own personal cleaning service, or whatever it is [he of M] wants from you. [or]You keep your mouth shut, valuing your dignity over your ability to breathe. [or]You spitefully purse your lips, wanting to make sure [he of M] gets as little out of it as possible. [or]You keep your mouth shut. At least if you pass out, you'll still have some dignity. [in random order][BigNameDesc of M] keeps grinding on your face anyway!";
 
 To say FacesitSubmissionResponse of (M - clairvoyant acolyte):
 	say "[one of]You lick the seer's cunt with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You dig your tongue into the seer's pussy, which immediately rewards you with a thick glob of salty [semen].[or]You tease the seer's clit with your tongue. Warm [semen] slowly dribbles out of [his of M] cunt and into your open mouth.[or]You spear your tongue into the seer's gaping honey pot, allowing the [semen] within to slowly roll into your mouth.[or]You obediently open your mouth, allowing the [semen] slowly oozing out of [his of M] pussy to slide down your throat.[or][if the semen taste addiction of the player < 8]You reluctantly stroke the seer's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise if the sex addiction of the player < 10]You somewhat reluctantly stroke the seer's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[otherwise]You eagerly stroke the seer's folds with your tongue, swallowing obediently as [semen] dribbles into your mouth.[end if][or][if the semen taste addiction of the player < 8]You leaf through [his of M] folds with your tongue, trying to clean it out while tasting as little [semen] as possible. There's still quite a lot.[otherwise if the semen addiction of the player < 12]You obediently scour [his of M] pussy with your tongue, hesitating only for a moment before swallowing the [semen] that trickles out.[otherwise]You kiss and lick every inch of [his of M] pussy, eagerly lapping up and swallowing any [semen] that trickles out.[end if][in random order]";
@@ -994,11 +909,11 @@ The seer facesitting prevents breathing rule is listed in the breathing blocking
 This is the seer monster convinced rule:
 	let M be current-monster;
 	if presented-orifice is face:
-		say "[BigNameDesc of M] sees your request and smiles calmly. [line break][speech style of M]'You will make a fine servant of the [great one]s.'[roman type][line break]";
+		say "[BigNameDesc of M] sees your request and smiles calmly. [line break][speech style of M]'You will make a fine servant of the [great ones].'[roman type][line break]";
 		now the chosen-orifice of current-monster is face;
 		rule succeeds;
 	otherwise if presented-orifice is not nothing:
-		say "[BigNameDesc of M] sees your request and shakes [his of M] head. [line break][speech style of M]'I will use your body in no such manner. You are to serve the [great one]s, and them alone.'[roman type][line break]".
+		say "[BigNameDesc of M] sees your request and shakes [his of M] head. [line break][speech style of M]'I will use your body in no such manner. You are to serve the [great ones], and them alone.'[roman type][line break]".
 The monster convinced rule of clairvoyant acolyte is usually the seer monster convinced rule.
 
 To compute (M - clairvoyant acolyte) entering mouth:
@@ -1021,7 +936,7 @@ To compute (M - clairvoyant acolyte) entering mouth:
 			if bukkake fetish is 1:
 				say "A large glob of [semen] leaks out of [his of M] ass and onto your face.[if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
 				CumFaceUp 1;
-			say "[one of][big his of M] hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking [him of M] out, swallowing the [semen] dripping from [his of M] pussy and hoping she [if the sex addiction of the player < 3]finishes[otherwise if the sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until she's finished with you[stopping]!";
+			say "[one of][big his of M] hold on your neck and head is too strong, you'll have to choose between either [bold type]resist[roman type]ing and risk it taking longer until you can breathe or [bold type]submit[roman type]ing by licking [him of M] out, swallowing the [semen] dripping from [his of M] pussy and hoping [he of M] [if the sex addiction of the player < 3]finishes[otherwise if the sex addiction of the player < 7]climaxes[otherwise]cums over your face[end if] quickly[or]Once again, you won't be able to breathe until [he of M]'s finished with you[stopping]!";
 			now M is filling face;
 		otherwise:
 			say "[big he of M] doesn't manage it this time.";
@@ -1030,8 +945,6 @@ To compute (M - clairvoyant acolyte) entering mouth:
 				bore M for 600 seconds.
 
 To say MouthPenetrationFlav of (M - clairvoyant acolyte):
-	say "[big he of M] buries your nose into [his of M] cum-dripping asshole and covers your mouth with [his of M] cum-filled [vagina]. You can't breathe![line break][speech style of M]'[one of]Drink, sister. Drink it all...'[or]Feast on the blessed nectar of the [great one]s...'[or]The taste will be beyond your comprehension at first. Have no fear...'[or]Lick me clean. Prove your devotion to the old gods...[purely at random][roman type][line break]";
-
+	say "[big he of M] buries your nose into [his of M] cum-dripping asshole and covers your mouth with [his of M] cum-filled [vagina]. You can't breathe![line break][speech style of M]'[one of]Drink, sister. Drink it all...'[or]Feast on the blessed nectar of the [great ones]...'[or]The taste will be beyond your comprehension at first. Have no fear...'[or]Lick me clean. Prove your devotion to the old gods...[purely at random][roman type][line break]";
 
 Acolyte Cultist ends here.
-

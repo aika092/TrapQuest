@@ -36,7 +36,6 @@ The scrunchie must be the same colour rule is listed in the headgear wearability
 To set up influence of (C - a scrunchie):
 	set up submissiveness-based influence of C.
 
-
 To decide which figure-name is the clothing-image of (C - a scrunchie):
 	if C is pink scrunchie, decide on figure of pink scrunchie;
 	decide on figure of blue scrunchie.
@@ -74,7 +73,6 @@ To decide which number is the initial cringe of (C - a scrunchie):
 
 Definition: a scrunchie is transformation-protected if the player is not pigtailed.
 
-
 Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
@@ -111,7 +109,9 @@ Definition: a pink scrunchie (called C) is removal-blocking: [Some items (mainly
 
 cheerleader-summoned is a number that varies.
 To compute unique recycling of (C - a pink scrunchie):
-	if the class of the player is not cheerleader, now cheerleader-summoned is 0.
+	if the class of the player is not cheerleader:
+		now the cheer-greets of greet-quest is 0;
+		now cheerleader-summoned is 0.
 
 To compute class outfit of (H - a pink scrunchie):
 	let C be a random off-stage longsleeved cheerleader outfit;
@@ -138,15 +138,14 @@ To compute class outfit of (H - a pink scrunchie):
 		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
 	otherwise if P is actually summonable and cheerleader-summoned < 2:
 		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type][line break]";
-		summon P cursed with quest;
+		summon P cursed with persistent quest;
 		now the raw-magic-modifier of P is 0;
 		now cheerleader-summoned is 2;
 		if the player is not ass protected, now the raw-magic-modifier of P is 2.
 
-
 Chapter - Quest
 
-greet-quest is a headgear-clothing-quest.
+greet-quest is a headgear-clothing-quest. greet-quest has a number called cheer-greets.
 
 To uniquely set up (C - a pink scrunchie):
 	let X be a random worn pink scrunchie;
@@ -154,11 +153,20 @@ To uniquely set up (C - a pink scrunchie):
 	now the quest of C is greet-quest.
 
 To say QuestFlav of (Q - greet-quest):
-	say "You sense it wants you to greet (intelligent) people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if the class of the player is not cheerleader]. (You'll first have to wait until you fully become a cheerleader.)[otherwise].[end if]".
+	say "You sense it wants you to talk to (intelligent) friendly people who *might* want to [if diaper quest is 1]punish[otherwise]fuck[end if] you[if the class of the player is not cheerleader]. (You'll first have to wait until you fully become a cheerleader.)[otherwise].[end if]".
 
 To say QuestTitle of (Q - greet-quest):
 	say " (attention seeking quest)".
 
+To progress quest of (Q - greet-quest):
+	increase the cheer-greets of Q by 1;
+	let S be a random worn headgear;
+	if the cheer-greets of Q < (a random number between 3 and 4) and S is headgear:
+		say "Your [ShortDesc of S] pulses happily. Keep it up!";
+	otherwise:
+		now the cheer-greets of Q is 0;
+		repeat with C running through worn clothing:
+			if the quest of C is Q, compute quest completion of Q on C.
 
 Chapter 2 - Blue Scrunchie
 
@@ -202,7 +210,6 @@ To decide which number is the strength-influence of (H - a blue scrunchie):
 To decide which number is the dexterity-influence of (H - a blue scrunchie):
 	if the class of the player is schoolgirl, decide on 0;
 	decide on -1.
-
 
 Chapter - Class Outfit
 
@@ -276,7 +283,6 @@ To compute class outfit of (H - a blue scrunchie):
 			now S is confidence;
 			say "[bold type]White cotton stockings appear around your [ShortDesc of thighs]![roman type][line break]".
 
-
 Chapter - Quest
 
 recipe-quest is a headgear-clothing-quest.
@@ -304,8 +310,6 @@ To compute generic first time class reward of (Q - recipe-quest) on (C - a cloth
 		say "summoning a [MediumDesc of D] [if D is worn]straight onto your finger[otherwise]right in front of you[end if]!";
 	otherwise:
 		compute generic second time class reward of Q on C.
-
-
 
 Chapter 3 - Monkey Scrunchie
 
@@ -405,7 +409,6 @@ To decide which object is the unique-upgrade-target of (C - a scrunchie):
 	if diaper lover > 0, decide on a random off-stage monkey scrunchie;
 	decide on nothing.
 
-
 Chapter 6 - Condom Pigtails
 
 A condom pigtails is a pigtail-scrunchie. A condom pigtails is latex. A condom pigtails is not roleplay. The text-shortcut of a condom pigtails is "cndp".
@@ -432,8 +435,4 @@ Definition: a condom pigtails is roleplay: decide no.
 
 Definition: a condom pigtails is semen themed: decide yes.
 
-
-
-
 Scrunchies ends here.
-

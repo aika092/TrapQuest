@@ -34,7 +34,7 @@ To say MonsterDesc of (M - mind flayer):
 To set up (M - mind flayer):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 13;
+	now the raw difficulty of M is 13;
 	now the health of M is the maxhealth of M;
 	anger M.
 
@@ -96,7 +96,6 @@ To say MouthPenetrationFlav of (M - mind flayer):
 		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as it wraps its tentacles around your skull!";
 	otherwise:
 		say "The creature tentatively sniffs at your head, but its expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as it fixes a piercing gaze on you...".
-
 
 To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
@@ -194,38 +193,25 @@ The mind flayer sees a target rule is listed in the mind flayer priority attack 
 
 Section 2 - Damage
 
-To compute damage of (M - mind flayer):
-	if the health of M > 0:
-		if M is uninterested:
-			say "The creature seems to notice you. Uh-oh...";
-			now M is interested;
-			anger M;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - mind flayer):
+	say "The creature seems to notice you. Uh-oh...".
 
 To say DamageReactHealthy of (M - mind flayer):
 	say "The thing doesn't even flinch!".
 
 To say DamageReactDamaged of (M - mind flayer):
-	say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.".
+	say "The creature doesn't seem to be looking quite at you, only slightly reacting to the hit.".
 
 To say DamageReactTired of (M - mind flayer):
 	say "The creature takes the hit, [his of M] expression remaining as hard to read as ever.".
 
 To say DamageReactWeak of (M - mind flayer):
-	say "The creature's expression grows frantic as [he of M] senses [his of M] life is in jeopardy!".
+	say "The creature's expression grows frantic as [he of M] senses [his of M] life might be in jeopardy!".
 
-To compute unique death of (M - mind flayer):
-	say "[BigNameDesc of M] screams hideously as [he of M] collapses to the ground. ";
+To loot (M - mind flayer):
 	if severed-tentacle is off-stage:
 		now severed-tentacle is in the location of the player;
-		say "[big his of M] body disappears, leaving behind a [ShortDesc of severed-tentacle].";
-		compute autotaking severed-tentacle;
-	otherwise:
-		say "[big his of M] body disappears".
-
+		say "You spot a [ShortDesc of severed-tentacle] on the ground.";
+		compute autotaking severed-tentacle.
 
 Mind Flayer ends here.
-

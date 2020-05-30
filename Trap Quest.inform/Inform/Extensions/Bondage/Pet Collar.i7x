@@ -21,4 +21,3 @@ Definition: a pet collar is black themed: decide yes.
 Definition: a pet collar is subduing: decide yes.
 
 Pet Collar ends here.
-

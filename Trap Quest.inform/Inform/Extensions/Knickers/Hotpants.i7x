@@ -26,19 +26,15 @@ Figure of leopard-hotpants is the file "Items/Clothes/Lower/Underwear/Skimpy/hot
 To decide which figure-name is clothing-image of (H - leopard-hotpants):
 	decide on figure of leopard-hotpants.
 
-
 To say selfexamineuniquetitle of (K - leopard-hotpants):
 	say "pair of leopard print hotpants".
-
 
 To say UniqueTitle of (K - leopard-hotpants):
 	say "tiny leopard print hotpants".
 
-
 white-hotpants is a hotpants. white-hotpants is sheer-when-wet.
 
 The printed name of white-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of white-hotpants is "hp".
-
 
 To decide which figure-name is clothing-image of (H - white-hotpants):
 	decide on figure of white-hotpants.
@@ -54,9 +50,26 @@ Figure of white-hotpants is the file "Items/Clothes/Lower/Underwear/Skimpy/hotpa
 To decide which number is the unique outrage of (C - white-hotpants):
 	decide on 1.
 
-
 Definition: white-hotpants is bird themed: decide yes.
 Definition: white-hotpants is white themed: decide yes.
 
-Hotpants ends here.
+football-hotpants is a hotpants. football-hotpants is unique. football-hotpants is sheer-when-wet.
 
+The printed name of football-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of football-hotpants is "fhp".
+
+To decide which figure-name is clothing-image of (H - football-hotpants):
+	decide on figure of football-hotpants.
+
+To say selfexamineuniquetitle of (K - football-hotpants):
+	say "pair of skimpy football-themed hotpants".
+
+To say UniqueTitle of (K - football-hotpants):
+	say "tiny cotton hotpants".
+
+Figure of football-hotpants is the file "Items/Clothes/Lower/Underwear/Special/football1.jpg".
+
+Definition: football-hotpants is exercise themed: decide yes.
+Definition: football-hotpants is discovered varied: decide no.
+Definition: football-hotpants is displacable: decide no.
+
+Hotpants ends here.

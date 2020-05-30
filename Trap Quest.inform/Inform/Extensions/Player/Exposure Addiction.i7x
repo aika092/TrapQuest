@@ -18,7 +18,7 @@ Definition: yourself is fighting against no-panties:
 
 no panties reminder is a number that varies. no panties reminder is 0.
 
-An advance counters rule (this is the fighting against no-panties fetish rule):
+An all later time based rule (this is the fighting against no-panties fetish rule):
 	if the player is fighting against no-panties:
 		if no panties reminder <= 0:
 			let C be a random worn no-panties-disallowed knickers;
@@ -34,7 +34,6 @@ This is the knickers can't be summoned with no panties fetish rule:
 		unless wearing-target is diaper or (wearing-target is no protection and diaper lover <= 0), rule fails.
 The knickers can't be summoned with no panties fetish rule is listed in the knickers wearability rules.
 
-
 topless temporary fetish is a number that varies.
 
 To decide which number is topless-fetish:
@@ -44,7 +43,7 @@ To decide which number is topless-fetish:
 
 Definition: a clothing (called C) is topless-fetish-disallowed:
 	if topless-fetish is 1:
-		if C is actually dense nipple covering clothing, decide yes;
+		if C is nipple covering clothing, decide yes;
 	decide no.
 
 Definition: yourself is fighting against topless:
@@ -58,12 +57,12 @@ The topless tattoo gets focused when relevant rule is listed in the focus findin
 
 braless reminder is a number that varies. braless reminder is 0.
 
-An advance counters rule (this is the fighting against topless fetish rule):
-	if topless-fetish is 1, say "[one of][if the humiliation of the player >= 37000][bold type]You have now become so addicted to the sexual thrill of degradation that you feel that you must keep your [BreastDesc] on display at all times.[roman type][line break][end if][or][stopping]";
+An all later time based rule (this is the fighting against topless fetish rule):
+	if topless-fetish is 1, say "[one of][if the humiliation of the player >= 37000][bold type]You have now become so addicted to the sexual thrill of degradation that you feel that you must keep your nipples at least partially visible at all times.[roman type][line break][end if][or][stopping]";
 	if the player is fighting against topless:
 		if braless reminder <= 0:
 			let C be a random worn topless-fetish-disallowed clothing;
-			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if topless tattoo is worn]Your heart aches and you[otherwise]You[end if] want to free your [BreastDesc]. It lowers your awareness and consumes your thought.[or][if C is not not-top-displacable]You would feel much better if you pulled it out of the way and exposed your breasts.[end if][stopping][roman type][line break]";
+			if C is clothing, say "[bold type]You [one of][or]still [stopping]feel terrible wearing your [ShortDesc of C]! [one of][if topless tattoo is worn]Your heart aches and you[otherwise]You[end if] want to free your nipples. It lowers your awareness and consumes your thought.[or][if C is not not-top-displacable]You would feel much better if you pulled it out of the way and exposed your breasts.[end if][stopping][roman type][line break]";
 			now braless reminder is 30;
 		decrease braless reminder by 1.
 
@@ -76,4 +75,3 @@ This is the bra can't be summoned with braless fetish rule:
 The bra can't be summoned with braless fetish rule is listed in the bra wearability rules.
 
 Exposure Addiction ends here.
-

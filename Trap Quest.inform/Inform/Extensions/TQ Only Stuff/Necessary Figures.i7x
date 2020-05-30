@@ -59,7 +59,6 @@ Figure of Ghost Cutscene 2 is the file "Special/Cutscene/cutscene-ghost-sex2.png
 Figure of Ghost Cutscene 3 is the file "Special/Cutscene/cutscene-ghost-sex3.png". [Anal]
 Figure of Ghost Cutscene 4 is the file "Special/Cutscene/cutscene-ghost-climax1.png". [Climax]
 
-
 Figure of Guard Cutscene 2 is the file "Special/Cutscene/cutscene-guard-sex1.png".
 Figure of Guard Cutscene 3 is the file "Special/Cutscene/cutscene-guard-climax1.png".
 Figure of Guard Cutscene 4 is the file "Special/Cutscene/cutscene-guard-climax2.png".
@@ -67,38 +66,40 @@ Figure of Guard Cutscene 5 is the file "Special/Cutscene/cutscene-guard-climax3.
 Figure of Guard Cutscene 6 is the file "Special/Cutscene/cutscene-guard-climax4.png".
 Figure of Guard Cutscene 7 is the file "Special/Cutscene/cutscene-guard-sex2.png".
 
+Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1b.jpg".
+Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.jpg".
+Figure of Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3.jpg".
+Figure of Unfriendly Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3b.jpg".
+Figure of Enlightened Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4.png".
+Figure of Unfriendly Enlightened Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4b.jpg".
 
-Figure of Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator2.png".
-Figure of Wild Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator3.png".
-Figure of Insane Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator4.png".
-Figure of Wild Futanari Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator5.png".
+Figure of Gladiator Interact 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact8.jpg".
+Figure of Gladiator Interact 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact9.jpg".
 
-Figure of Gladiator Interact 8 is the file "Special/Cutscene/cutscene-gladiator-interact8.png".
+Figure of Gladiator Cutscene 1 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform1.png".
+Figure of Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-transform2.png".
+Figure of Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck1.png".
+Figure of Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck2.png".
+Figure of Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck3.png".
+Figure of Gladiator Cutscene 6 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck4.png".
+Figure of Gladiator Cutscene 7 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck5.png".
+Figure of Gladiator Cutscene 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck6.png".
+Figure of Gladiator Cutscene 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck7.png".
+Figure of Gladiator Cutscene 10 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck8.png".
+Figure of Gladiator Cutscene 11 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck9.png".
 
-Figure of Gladiator Cutscene 1 is the file "Special/Cutscene/cutscene-gladiator-transform1.png".
-Figure of Gladiator Cutscene 2 is the file "Special/Cutscene/cutscene-gladiator-transform2.png".
-Figure of Gladiator Cutscene 3 is the file "Special/Cutscene/cutscene-gladiator-fuck1.png".
-Figure of Gladiator Cutscene 4 is the file "Special/Cutscene/cutscene-gladiator-fuck2.png".
-Figure of Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladiator-fuck3.png".
-Figure of Gladiator Cutscene 6 is the file "Special/Cutscene/cutscene-gladiator-fuck4.png".
-Figure of Gladiator Cutscene 7 is the file "Special/Cutscene/cutscene-gladiator-fuck5.png".
-Figure of Gladiator Cutscene 8 is the file "Special/Cutscene/cutscene-gladiator-fuck6.png".
-Figure of Gladiator Cutscene 9 is the file "Special/Cutscene/cutscene-gladiator-fuck7.png".
-Figure of Gladiator Cutscene 10 is the file "Special/Cutscene/cutscene-gladiator-fuck8.png".
-Figure of Gladiator Cutscene 11 is the file "Special/Cutscene/cutscene-gladiator-fuck9.png".
+Figure of Gladiator Cutscene 15 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge1.png". [missionary]
+Figure of Gladiator Cutscene 16 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge2.png". [doggy]
+Figure of Gladiator Cutscene 17 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge3.png". [oral]
+Figure of Gladiator Cutscene 18 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge4.png". [facial]
+Figure of Gladiator Cutscene 19 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge5.png". [titfuck]
+Figure of Gladiator Cutscene 20 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge6.png". [titfuck cumshot]
 
-Figure of Gladiator Cutscene 15 is the file "Special/Cutscene/cutscene-gladiator-revenge1.png". [missionary]
-Figure of Gladiator Cutscene 16 is the file "Special/Cutscene/cutscene-gladiator-revenge2.png". [doggy]
-Figure of Gladiator Cutscene 17 is the file "Special/Cutscene/cutscene-gladiator-revenge3.png". [oral]
-Figure of Gladiator Cutscene 18 is the file "Special/Cutscene/cutscene-gladiator-revenge4.png". [facial]
-Figure of Gladiator Cutscene 19 is the file "Special/Cutscene/cutscene-gladiator-revenge5.png". [titfuck]
-Figure of Gladiator Cutscene 20 is the file "Special/Cutscene/cutscene-gladiator-revenge6.png". [titfuck cumshot]
-
-Figure of Wild Gladiator Cutscene 1 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck1.png". [male anal]
-Figure of Wild Gladiator Cutscene 2 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck2.png". [female anal]
-Figure of Wild Gladiator Cutscene 3 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck3.jpg". [male anal woods]
-Figure of Wild Gladiator Cutscene 4 is the file "Special/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
-Figure of Wild Gladiator Cutscene 5 is the file "Special/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
+Figure of Wild Gladiator Cutscene 1 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck1.png". [male anal]
+Figure of Wild Gladiator Cutscene 2 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck2.png". [female anal]
+Figure of Wild Gladiator Cutscene 3 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck3.jpg". [male anal woods]
+Figure of Wild Gladiator Cutscene 4 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-fuck4.jpg". [female anal woods]
+Figure of Wild Gladiator Cutscene 5 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-wild-delay1.png". [delay]
 
 Figure of caged urinal princess is the file "NPCs/MultiFloor/Princess/cage1.jpg".
 Figure of caged urinal princess piss is the file "NPCs/MultiFloor/Princess/cage2.jpg".
@@ -107,6 +108,10 @@ Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5b.png".
 Figure of Slave Hannah is the file "NPCs/School/Teacher/teacher5d.png".
 Figure of Teacher Hannah Cutscene 2 is the file "Special/Cutscene/cutscene-hannah-tug1.png".
 
+Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+Figure of male toilet is the file "Env/MultiFloor/toilet3.jpg".
+Figure of female toilet is the file "Env/MultiFloor/toilet4.jpg".
+
 Figure of quiz predicament room is the file "Special/Cutscene/cutscene-quiz1.jpg".
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
@@ -114,7 +119,6 @@ Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
 Figure of throne is the file "Env/Dungeon/throne1a.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".
-
 
 Figure of Witch Cutscene 1 is the file "Special/Cutscene/cutscene-witch-satisfied1.png".
 Figure of Witch Cutscene 2 is the file "Special/Cutscene/cutscene-witch-defeated1.png".
@@ -145,6 +149,8 @@ Figure of Body Reaction 13 is the file "Special/Cutscene/cutscene-body-reaction1
 Figure of Body Reaction 14 is the file "Special/Cutscene/cutscene-body-reaction14.png".
 Figure of Body Reaction 15 is the file "Special/Cutscene/cutscene-body-reaction15.png".
 
+Figure of Bukkake Door Cutscene 1 is the file "Special/Cutscene/cutscene-bukkake1.png".
+
 Figure of Cumshot Reaction 1 is the file "Special/Cutscene/cutscene-cumshot-reaction1.png".
 Figure of Cumshot Reaction 2 is the file "Special/Cutscene/cutscene-cumshot-reaction2.png".
 Figure of Cumshot Reaction 3 is the file "Special/Cutscene/cutscene-cumshot-reaction3.png".
@@ -163,6 +169,8 @@ Figure of Egg Laying 7 is the file "Special/Cutscene/cutscene-egg-large2.jpg".
 
 Figure of Egg Laying 8 is the file "Special/Cutscene/cutscene-egg-small3.jpg".
 
+Figure of elder altar is the file "Env/Mansion/altar2.jpg".
+
 Figure of enslaved angela is the file "NPCs/School/Teacher/teacher2b.png".
 Figure of enslaved headmistress is the file "NPCs/School/headmistress2.png".
 Figure of enslaved nurse is the file "NPCs/School/nurse2.png".
@@ -176,6 +184,7 @@ Figure of Fat Growth 1 is the file "Special/Cutscene/cutscene-fat1.png".
 Figure of Fat Growth 2 is the file "Special/Cutscene/cutscene-fat2.png".
 Figure of Fat Growth 3 is the file "Special/Cutscene/cutscene-fat3.png".
 
+Figure of Football Predicament is the file "Special/Cutscene/cutscene-predicament-football1.jpg".
 
 Figure of Hook Cutscene 1 is the file "Special/Cutscene/cutscene-hook1.png".
 Figure of Hook Cutscene 2 is the file "Special/Cutscene/cutscene-hook2.png".
@@ -196,7 +205,6 @@ Figure of Latex Curse 6 is the file "Special/Cutscene/cutscene-latex-curse-man1.
 Figure of Latex Curse 7 is the file "Special/Cutscene/cutscene-latex-curse4.jpg".
 Figure of Latex Curse 8 is the file "Special/Cutscene/cutscene-latex-curse5.jpg".
 Figure of Latex Curse 9 is the file "Special/Cutscene/cutscene-latex-curse6.jpg".
-
 
 Figure of living belt of sturdiness is the file "Items/Clothes/Lower/Waist/Belts/belt2.png".
 Figure of living belt of sturdiness penetrated is the file "Items/Clothes/Lower/Waist/Belts/belt2b.png".
@@ -233,7 +241,6 @@ To decide which figure-name is figure of maths predicament:
 	otherwise:
 		decide on figure of maths predicament 5.
 
-
 Figure of Modmachine Cutscene 1 is the file "Special/Cutscene/cutscene-modmachine1.png".
 
 Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-creampie1.jpg".
@@ -253,6 +260,8 @@ To get oral creampie image for (M - a thing):
 		otherwise:
 			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
 			otherwise cutshow figure of Oral Creampie Cutscene 1.
+
+Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
 
 Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 
@@ -309,9 +318,40 @@ Figure of super rich domme is the file "Special/Epilogue/epilogue-super-rich8.jp
 Figure of helium balloons is the file "Items/Accessories/Head/scrunchie4.png".
 Figure of condom pigtails is the file "Items/Accessories/Head/scrunchie5.png".
 
+Figure of runic headband 1 condom is the file "Items/Accessories/Head/runicheadband1a.png".
+Figure of runic headband 2 condom is the file "Items/Accessories/Head/runicheadband1b.png".
+Figure of runic headband 3 condom is the file "Items/Accessories/Head/runicheadband1c.png".
+Figure of runic headband 4 condom is the file "Items/Accessories/Head/runicheadband1d.png".
+Figure of runic headband 5 condom is the file "Items/Accessories/Head/runicheadband1e.png".
+Figure of runic headband 6 condom is the file "Items/Accessories/Head/runicheadband1f.png".
+Figure of runic headband 7 condom is the file "Items/Accessories/Head/runicheadband1g.png".
+Figure of runic headband 8 condom is the file "Items/Accessories/Head/runicheadband1h.png".
+Figure of runic headband 9 condom is the file "Items/Accessories/Head/runicheadband1i.png".
+Figure of runic headband 10 condom is the file "Items/Accessories/Head/runicheadband1j.png".
 
-
-
+To decide which figure-name is the clothing-image of (C - runic headband):
+	if the used condoms of C <= 0:
+		decide on figure of runic headband;
+	otherwise if the used condoms of C is 1:
+		decide on figure of runic headband 1 condom;
+	otherwise if the used condoms of C is 2:
+		decide on figure of runic headband 2 condom;
+	otherwise if the used condoms of C is 3:
+		decide on figure of runic headband 3 condom;
+	otherwise if the used condoms of C is 4:
+		decide on figure of runic headband 4 condom;
+	otherwise if the used condoms of C is 5:
+		decide on figure of runic headband 5 condom;
+	otherwise if the used condoms of C is 6:
+		decide on figure of runic headband 6 condom;
+	otherwise if the used condoms of C is 7:
+		decide on figure of runic headband 7 condom;
+	otherwise if the used condoms of C is 8:
+		decide on figure of runic headband 8 condom;
+	otherwise if the used condoms of C is 9:
+		decide on figure of runic headband 9 condom;
+	otherwise:
+		decide on figure of runic headband 10 condom.
 
 Figure of all-you-can-eat tattoo is the file "Items/Tats/tattoo145.jpg".
 To decide which figure-name is the examine-image of (T - all-you-can-eat tattoo):
@@ -359,7 +399,6 @@ Figure of black cock only tattoo is the file "Items/Tats/tattoo77.jpg".
 To decide which figure-name is the examine-image of (T - black cock only tattoo):
 	decide on figure of black cock only tattoo.
 
-
 Figure of black hole belly tattoo is the file "Items/Tats/tattoo105.jpg".
 Figure of black hole tattoo is the file "Items/Tats/tattoo106.jpg".
 To decide which figure-name is the examine-image of (T - black hole tattoo):
@@ -373,7 +412,6 @@ To decide which figure-name is the examine-image of (T - black owned tattoo):
 Figure of bred by a bull tattoo is the file "Items/Tats/tattoo107.jpg".
 To decide which figure-name is the examine-image of (T - bred by a bull tattoo):
 	decide on figure of bred by a bull tattoo.
-
 
 Figure of bright hair tattoo is the file "Items/Tats/tattoo108.jpg".
 Figure of ultra pink hair tattoo is the file "Items/Tats/tattoo109.jpg".
@@ -424,7 +462,6 @@ To decide which figure-name is the examine-image of (T - daddy's cock only tatto
 Figure of double penetration tattoo is the file "Items/Tats/tattoo80.jpg".
 To decide which figure-name is the examine-image of (T - a double penetration tattoo):
 	decide on figure of double penetration tattoo.
-
 
 Figure of eat-your-heart-out tattoo is the file "Items/Tats/tattoo81.jpg".
 To decide which figure-name is the examine-image of (T - eat-your-heart-out tattoo):
@@ -630,7 +667,235 @@ Figure of zip tattoo is the file "Items/Tats/tattoo19.jpg".
 To decide which figure-name is the examine-image of (T - zip tattoo):
 	decide on figure of zip tattoo.
 
+Figure of Face101 is the file "CharWins/FocusWin/Face/face101.jpg".
+Figure of Face105 is the file "CharWins/FocusWin/Face/face105.jpg".
+Figure of Face111 is the file "CharWins/FocusWin/Face/face111.jpg".
+Figure of Face115 is the file "CharWins/FocusWin/Face/face115.jpg".
+Figure of Face121 is the file "CharWins/FocusWin/Face/face121.jpg".
+Figure of Face125 is the file "CharWins/FocusWin/Face/face125.jpg".
+Figure of Face131 is the file "CharWins/FocusWin/Face/face131.jpg".
+Figure of Face135 is the file "CharWins/FocusWin/Face/face135.jpg".
 
+Figure of Face201 is the file "CharWins/FocusWin/Face/face201.jpg".
+Figure of Face205 is the file "CharWins/FocusWin/Face/face205.jpg".
+Figure of Face211 is the file "CharWins/FocusWin/Face/face211.jpg".
+Figure of Face215 is the file "CharWins/FocusWin/Face/face215.jpg".
+Figure of Face221 is the file "CharWins/FocusWin/Face/face221.jpg".
+Figure of Face225 is the file "CharWins/FocusWin/Face/face225.jpg".
+Figure of Face231 is the file "CharWins/FocusWin/Face/face231.jpg".
+Figure of Face235 is the file "CharWins/FocusWin/Face/face235.jpg".
+
+Figure of Face301 is the file "CharWins/FocusWin/Face/face301.jpg".
+Figure of Face305 is the file "CharWins/FocusWin/Face/face305.jpg".
+Figure of Face311 is the file "CharWins/FocusWin/Face/face311.jpg".
+Figure of Face315 is the file "CharWins/FocusWin/Face/face315.jpg".
+Figure of Face321 is the file "CharWins/FocusWin/Face/face321.jpg".
+Figure of Face325 is the file "CharWins/FocusWin/Face/face325.jpg".
+Figure of Face331 is the file "CharWins/FocusWin/Face/face331.jpg".
+Figure of Face335 is the file "CharWins/FocusWin/Face/face335.jpg".
+
+Figure of FaceCum101 is the file "CharWins/FocusWin/Face/facecum101.jpg".
+Figure of FaceCum105 is the file "CharWins/FocusWin/Face/facecum105.jpg".
+Figure of FaceCum111 is the file "CharWins/FocusWin/Face/facecum111.jpg".
+Figure of FaceCum115 is the file "CharWins/FocusWin/Face/facecum115.jpg".
+Figure of FaceCum121 is the file "CharWins/FocusWin/Face/facecum121.jpg".
+Figure of FaceCum125 is the file "CharWins/FocusWin/Face/facecum125.jpg".
+Figure of FaceCum131 is the file "CharWins/FocusWin/Face/facecum131.jpg".
+Figure of FaceCum135 is the file "CharWins/FocusWin/Face/facecum135.jpg".
+
+Figure of FaceCum201 is the file "CharWins/FocusWin/Face/facecum201.jpg".
+Figure of FaceCum205 is the file "CharWins/FocusWin/Face/facecum205.jpg".
+Figure of FaceCum211 is the file "CharWins/FocusWin/Face/facecum211.jpg".
+Figure of FaceCum215 is the file "CharWins/FocusWin/Face/facecum215.jpg".
+Figure of FaceCum221 is the file "CharWins/FocusWin/Face/facecum221.jpg".
+Figure of FaceCum225 is the file "CharWins/FocusWin/Face/facecum225.jpg".
+Figure of FaceCum231 is the file "CharWins/FocusWin/Face/facecum231.jpg".
+Figure of FaceCum235 is the file "CharWins/FocusWin/Face/facecum235.jpg".
+
+Figure of FaceCum301 is the file "CharWins/FocusWin/Face/facecum301.jpg".
+Figure of FaceCum305 is the file "CharWins/FocusWin/Face/facecum305.jpg".
+Figure of FaceCum311 is the file "CharWins/FocusWin/Face/facecum311.jpg".
+Figure of FaceCum315 is the file "CharWins/FocusWin/Face/facecum315.jpg".
+Figure of FaceCum321 is the file "CharWins/FocusWin/Face/facecum321.jpg".
+Figure of FaceCum325 is the file "CharWins/FocusWin/Face/facecum325.jpg".
+Figure of FaceCum331 is the file "CharWins/FocusWin/Face/facecum331.jpg".
+Figure of FaceCum335 is the file "CharWins/FocusWin/Face/facecum335.jpg".
+
+To decide which figure-name is the examine-image of (T - face):
+	if T is overglazed:
+		if the lips of face <= 0:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum101;
+				otherwise:
+					decide on Figure of FaceCum105;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum111;
+				otherwise:
+					decide on Figure of FaceCum115;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum121;
+				otherwise:
+					decide on Figure of FaceCum125;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum131;
+				otherwise:
+					decide on Figure of FaceCum135;
+		otherwise if the lips of face is 1:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum201;
+				otherwise:
+					decide on Figure of FaceCum205;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum211;
+				otherwise:
+					decide on Figure of FaceCum215;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum221;
+				otherwise:
+					decide on Figure of FaceCum225;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum231;
+				otherwise:
+					decide on Figure of FaceCum235;
+		otherwise:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum301;
+				otherwise:
+					decide on Figure of FaceCum305;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum311;
+				otherwise:
+					decide on Figure of FaceCum315;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum321;
+				otherwise:
+					decide on Figure of FaceCum325;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of FaceCum331;
+				otherwise:
+					decide on Figure of FaceCum335;
+	otherwise:
+		if the lips of face <= 0:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of Face101;
+				otherwise:
+					decide on Figure of Face105;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of Face111;
+				otherwise:
+					decide on Figure of Face115;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of Face121;
+				otherwise:
+					decide on Figure of Face125;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of Face131;
+				otherwise:
+					decide on Figure of Face135;
+		otherwise if the lips of face is 1:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of Face201;
+				otherwise:
+					decide on Figure of Face205;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of Face211;
+				otherwise:
+					decide on Figure of Face215;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of Face221;
+				otherwise:
+					decide on Figure of Face225;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of Face231;
+				otherwise:
+					decide on Figure of Face235;
+		otherwise:
+			if the make-up of face <= 0:
+				if alcohol-level <= 0:
+					decide on Figure of Face301;
+				otherwise:
+					decide on Figure of Face305;
+			otherwise if the make-up of face is 1:
+				if alcohol-level <= 0:
+					decide on Figure of Face311;
+				otherwise:
+					decide on Figure of Face315;
+			otherwise if the make-up of face is 2:
+				if alcohol-level <= 0:
+					decide on Figure of Face321;
+				otherwise:
+					decide on Figure of Face325;
+			otherwise:
+				if alcohol-level <= 0:
+					decide on Figure of Face331;
+				otherwise:
+					decide on Figure of Face335;
+
+Figure of CumBreastsButton is the file "CharWins/FocusWin/Breasts/breastscum.jpg".
+Figure of BreastsObject1 is the file "CharWins/FocusWin/Breasts/breasts1.jpg".
+Figure of BreastsObject2 is the file "CharWins/FocusWin/Breasts/breasts2.jpg".
+Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/breasts3.jpg".
+Figure of BreastsObject4 is the file "CharWins/FocusWin/Breasts/breasts4.jpg".
+Figure of BreastsObject5 is the file "CharWins/FocusWin/Breasts/breasts5.jpg".
+Figure of BreastsObject6 is the file "CharWins/FocusWin/Breasts/breasts6.jpg".
+Figure of BreastsObject7 is the file "CharWins/FocusWin/Breasts/breasts7.jpg".
+Figure of BreastsObject8 is the file "CharWins/FocusWin/Breasts/breasts8.jpg".
+Figure of BreastsObject9 is the file "CharWins/FocusWin/Breasts/breasts9.jpg".
+
+To decide which figure-name is the examine-image of (T - breasts):
+	if T is overglazed, decide on Figure of CumBreastsButton;
+	if the largeness of breasts < 2, decide on figure of BreastsObject1;
+	if the largeness of breasts < 4, decide on figure of BreastsObject2;
+	if the largeness of breasts < 6, decide on figure of BreastsObject3;
+	if the largeness of breasts < 8, decide on figure of BreastsObject4;
+	if the largeness of breasts < 10, decide on figure of BreastsObject5;
+	if the largeness of breasts < 12, decide on figure of BreastsObject6;
+	if the largeness of breasts < 14, decide on figure of BreastsObject7;
+	if the largeness of breasts < 17, decide on figure of BreastsObject8;
+	decide on figure of BreastsObject9.
+
+Figure of CumHipsButton is the file "CharWins/FocusWin/Hips/cumhips.png".
+Figure of HipsObject1 is the file "CharWins/FocusWin/Hips/hips1.jpg".
+Figure of HipsObject2 is the file "CharWins/FocusWin/Hips/hips2.jpg".
+Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
+[Figure of HipsObject4 is the file "CharWins/FocusWin/Hips/hips4.jpg".]
+Figure of HipsObject5 is the file "CharWins/FocusWin/Hips/hips5.jpg".
+Figure of HipsObject6 is the file "CharWins/FocusWin/Hips/hips6.jpg".
+Figure of HipsObject7 is the file "CharWins/FocusWin/Hips/hips7.jpg".
+Figure of HipsObject8 is the file "CharWins/FocusWin/Hips/hips8.jpg".
+Figure of HipsObject9 is the file "CharWins/FocusWin/Hips/hips9.jpg".
+
+To decide which figure-name is the examine-image of (T - hips):
+	if T is overglazed, decide on Figure of CumHipsButton;
+	if the total volume of hips < 2, decide on figure of HipsObject1;
+	if the total volume of hips < 4, decide on figure of HipsObject2;
+	if the total volume of hips < 6, decide on figure of HipsObject3;
+	if the total volume of hips < 8, decide on figure of HipsObject3;
+	if the total volume of hips < 10, decide on figure of HipsObject5;
+	if the total volume of hips < 12, decide on figure of HipsObject6;
+	if the total volume of hips < 14, decide on figure of HipsObject7;
+	if the total volume of hips < 17, decide on figure of HipsObject8;
+	decide on figure of HipsObject9.
 
 Figure of HypnoBBCAnimation001 is the file "Special/Animations/HypnoBBC/frame_001.jpg".
 Figure of HypnoBBCAnimation002 is the file "Special/Animations/HypnoBBC/frame_002.jpg".
@@ -803,7 +1068,6 @@ Figure of HypnoBBCAnimation168 is the file "Special/Animations/HypnoBBC/frame_16
 When play begins:
 	fill BBCHypnoAnimation from Figure of HypnoBBCAnimation001 to 167. [It starts at 1 rather than 0 so ends at 167 rather than 168]
 
-
 Figure of HypnoOralAnimation000 is the file "Special/Animations/HypnoOral/frame_000.jpg".
 Figure of HypnoOralAnimation001 is the file "Special/Animations/HypnoOral/frame_001.jpg".
 Figure of HypnoOralAnimation002 is the file "Special/Animations/HypnoOral/frame_002.jpg".
@@ -974,7 +1238,6 @@ Figure of HypnoOralAnimation166 is the file "Special/Animations/HypnoOral/frame_
 Figure of HypnoOralAnimation167 is the file "Special/Animations/HypnoOral/frame_167.jpg".
 When play begins:
 	fill OralHypnoAnimation from Figure of HypnoOralAnimation000 to 167.
-
 
 Figure of HypnoShemaleAnimation000 is the file "Special/Animations/HypnoShemale/frame_000.jpg".
 Figure of HypnoShemaleAnimation001 is the file "Special/Animations/HypnoShemale/frame_001.jpg".
@@ -1243,7 +1506,6 @@ Figure of HypnoDPAnimation228 is the file "Special/Animations/HypnoDP/frame_228.
 When play begins:
 	fill DPHypnoAnimation from Figure of HypnoDPAnimation000 to 228.
 
-
 [Figure of PussyExpelAnimation000 is the file "Special/Animations/PussyExpel/frame_000.jpg".
 Figure of PussyExpelAnimation001 is the file "Special/Animations/PussyExpel/frame_001.jpg".
 Figure of PussyExpelAnimation002 is the file "Special/Animations/PussyExpel/frame_002.jpg".
@@ -1271,6 +1533,5 @@ Figure of PussyExpelAnimation023 is the file "Special/Animations/PussyExpel/fram
 Figure of PussyExpelAnimation024 is the file "Special/Animations/PussyExpel/frame_024.jpg".
 When play begins:
 	fill PussyExpelAnimation from Figure of PussyExpelAnimation016 to 8.
-
 
 Necessary Figures ends here.

@@ -48,4 +48,3 @@ Check inserting it into while the second noun is HotelScenery01:
 	try inking the noun instead.
 
 Inking ends here.
-

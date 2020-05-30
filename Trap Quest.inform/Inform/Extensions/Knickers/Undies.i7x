@@ -23,26 +23,14 @@ To decide which number is the core outrage of (C - an undies): [This is plugged 
 	if O < 6, decide on 6; [It's always a bit outrageous to have your underwear on display]
 	decide on O.
 
-An undies has a number called shape-charge.
-
-To compute periodic effect of (P - an undies):
-	if P is cursed and diaper quest is 0:
-		increase the shape-charge of P by 1;
-		if the shape-charge of P > 45:
-			now the shape-charge of P is 0;
-			if the thickness of hips < max hip size and a random number between 1 and 2 is 1:
-				say "You feel your cursed [ShortDesc of P] try to grow your hips to make your buttocks even less concealed!";
-				HipUp 1;
-			otherwise if P is not potentially penis covering:
-				PenisDown 1;
-				say "You feel your cursed [ShortDesc of P] [Shrink] your [player-penis] to better conceal your [ShortDesc of penis]!".
-
 Report wearing undies:
-	if the penis-capacity of the noun < the size of penis:
-		if the penis-capacity of the noun >= 3 and penis is not penis-erect:
-			say "Your [ShortDesc of penis] barely fits inside this tiny piece of fabric!";
-		otherwise:
-			say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
+	if the noun is cursed and diaper quest is 0:
+		if the thickness of hips < max hip size and a random number between 1 and 2 is 1:
+			say "You feel [NameDesc of the noun] try to grow your hips to make your buttocks even less concealed!";
+			HipUp 1;
+		otherwise if the noun is not potentially penis covering:
+			PenisDown 1;
+			say "You feel [NameDesc of the noun] [Shrink] your [player-penis] to better conceal your [ShortDesc of penis]!".
 
 To decide which object is the unique-upgrade-target of (C - an undies):
 	if there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
@@ -69,6 +57,4 @@ This is the remove inappropriate undies rule:
 	now green-panties is in Holding Pen.
 The remove inappropriate undies rule is listed in the diaper quest fix rules.
 
-
 Undies ends here.
-

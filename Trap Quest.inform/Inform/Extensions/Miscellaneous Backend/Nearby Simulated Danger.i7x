@@ -29,7 +29,6 @@ Definition: a room (called R) is within vision:
 	if R is neighbour finder or R is next door, decide yes;
 	decide no.
 
-
 [!<ARoomIsNextDoor>+
 
 REQUIRES COMMENTING
@@ -101,18 +100,25 @@ Definition: a thing is regional if it is regionally in playerRegion.
 
 playerRegion is a region that varies. playerRegion is Dungeon.
 noRegion is a region.
-To decide which region is currentPlayerRegion:
+To decide which region is the currentRegion of (T - a thing):
 	repeat with R running through regions:
-		if the player is regionally in R, decide on R;
+		if T is regionally in R, decide on R;
 	decide on noRegion.
+Definition: a region is loaded:	decide no.
+Definition: Dungeon is loaded: decide yes.
+Definition: School is loaded: decide yes.
+Definition: Woods is loaded if Woods01 is placed.
+Definition: Hotel is loaded if Hotel01 is placed.
+Definition: Mansion is loaded if Mansion01 is placed.
+Definition: a thing (called T) is loaded:
+	if the currentRegion of T is loaded, decide yes;
+	decide no.
 To update player region:
-	let R be currentPlayerRegion;
+	let R be the currentRegion of the player;
 	if R is not noRegion, now playerRegion is R.
 Report going up:
 	update player region.
 Report going down:
 	update player region.
 
-
 Nearby Simulated Danger ends here.
-

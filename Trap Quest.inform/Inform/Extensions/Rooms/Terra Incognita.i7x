@@ -1,6 +1,5 @@
 Terra Incognita by Rooms begins here.
 
-
 [Like "Solid Rock", "Terra Incognita" is a room which is never visited. The rule is that a maze exit leads to TI if and only if it would take one to a grid position which is still inside the boundaries of the maze, but at which no room has yet been located. All exits in the maze lead either to Solid Rock (no way through), Terra Incognita (we try extending the maze if this exit is taken) or another room in the maze.]
 
 [!<TerraIncognita>@
@@ -44,7 +43,6 @@ To position (new room - a room) at (grid ref - a spatial coordinate):
 			otherwise:
 				if debugmode is 1, say "[this way] connection rejected by [new room].".
 
-
 [Terra Incognita is said to be "open" if there are still maze rooms left to discover, and "closed" if they have all been played, so that the maze is exhausted.]
 
 [!<TerraIncognita>@<IsOpen>+
@@ -53,7 +51,6 @@ REQUIRES COMMENTING
 
 +@!]
 Terra Incognita can be open or closed. Terra Incognita is open.
-
 
 [!<Room>@<IsAcceptable>+
 
@@ -110,6 +107,4 @@ Definition: A room (called R) is open and ready:
 		if S part of the shape of WR is 1 and W part of the shape of R is 0, decide no;
 	decide yes.
 
-
 Terra Incognita ends here.
-

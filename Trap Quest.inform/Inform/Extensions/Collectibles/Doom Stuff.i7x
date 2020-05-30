@@ -7,7 +7,6 @@ Figure of reception bell is the file "Items/Collectibles/bell1.png".
 To decide which figure-name is the examine-image of (B - reception bell):
 	decide on figure of reception bell.
 
-Definition: reception bell is ingredient: decide no.
 
 To say ExamineDesc of (C - reception bell):
 	say "The bell from the reception desk.".
@@ -20,7 +19,9 @@ Report taking reception bell:
 To say ShortDesc of (C - reception bell):
 	say "bell".
 
+Definition: reception bell is ingredient: decide no.
 Definition: reception bell is immune to change: decide yes.
+Definition: reception bell is bell themed: decide yes.
 
 To decide which number is the bartering value of (T - reception bell) for (M - hellhound):
 	decide on 5.
@@ -43,7 +44,6 @@ To decide which figure-name is the examine-image of (B - black candle):
 To say ExamineDesc of (C - black candle):
 	say "A black candle.".
 
-Definition: black candle is ingredient: decide no.
 
 Report taking black candle:
 	if doom counter is 0:
@@ -53,7 +53,9 @@ Report taking black candle:
 To say ShortDesc of (C - black candle):
 	say "black candle".
 
+Definition: black candle is ingredient: decide no.
 Definition: black candle is immune to change: decide yes.
+Definition: black candle is candle themed: decide yes.
 
 To decide which number is the bartering value of (T - black candle) for (M - a gladiator):
 	decide on 3.
@@ -89,4 +91,3 @@ To say MonsterOfferAcceptFlav of (M - an acolyte) to (T - doom notes):
 	say "[speech style of M]'HAHA! YES! Without this, the heathens have no chance to prevent the return of [Azathot]! You have done a great thing here today.'[roman type][line break]".
 
 Doom Stuff ends here.
-

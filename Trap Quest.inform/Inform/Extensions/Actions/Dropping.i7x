@@ -18,6 +18,4 @@ Report dropping insertable things:
 
 Does the player mean dropping a held thing: it is likely.
 
-
 Dropping ends here.
-

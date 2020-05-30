@@ -322,23 +322,65 @@ REQUIRES COMMENTING
 
 +!]
 To add treasure to (X - a treasure chest):
-	let R be a random off-stage appropriate recipe;
-	let S be a random uncastable fetish appropriate magic-spell;
-	if a random number between 1 and 6 > (2 - the number of worn blue scrunchie) and earnings < starting-earnings - 100 and (R is recipe or S is magic-spell):
-		if S is magic-spell and a random number between -16 and the number of in-play recipes > 0:
-			say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...[NewbieSpellFlav]";
-			compute learning of S;
-			cutshow figure of recipe for S;
-			say "Magic energy flows through the words and into your body.";
-			MagicPowerUp 1;
-		otherwise:
-			now R is in X;
-			say "You find a [printed name of R] written on the inside of the lid! Interesting...";
-			say NewbieMagicSpells;
-			say ExamineDesc of R;
-			say line break;
+	if the location of X is Dungeon12: [Like the stuff in the pink wardrobe but unidentified]
+		let L be a list of clothing;
+		let C be a random pinkWardrobeAppropriate undies;
+		if C is clothing, add C to L;
+		let C be a random pinkWardrobeAppropriate corset;
+		if C is clothing, add C to L;
+		now C is a random basic loot fetish appropriate heels;
+		if C is clothing, add C to L;
+		if C is platform heels or C is wedge heels, now the heel-height of C is 3;
+		otherwise now the heel-height of C is 1;
+		let LB be the list of pinkWardrobeAppropriate bras;
+		sort LB in random order;
+		repeat with B running through LB:
+			if B is not bikini top, now C is B;
+		if C is bra:
+			add C to L;
+			now the size of C is the largeness of breasts;
+			if the size of C > the max size of C, now the size of C is the max size of C;
+			if the size of C < the min size of C, now the size of C is the min size of C;
+		now C is a random pinkWardrobeAppropriate suspenders;
+		if C is clothing, add C to L;
+		now C is a random pinkWardrobeAppropriate skirted overdress;
+		if C is clothing, add C to L;
+		now C is a random pinkWardrobeAppropriate trousers;
+		if C is clothing, add C to L;
+		repeat with Z running through L:
+			if Z is in Standard Item Pen, restock Z;
+			now Z is in X;
+			if Z is blessed, now Z is bland;
+			if Z is suspenders and the raw-magic-modifier of Z > 0, now the raw-magic-modifier of Z is 0;
+			if the raw-magic-modifier of Z < -2, now the raw-magic-modifier of Z is a random number between -2 and 0;
+			if the raw-magic-modifier of Z > 2, now the raw-magic-modifier of Z is a random number between 0 and 2;
+			if Z is cursed, assign quest to Z;
+			otherwise now Z is blandness;
+			now Z is unowned;
+		let I be a random can in Standard Item Pen;
+		if I is can:
+			now I is in X;
+			restock I;
+		say "You find a lot of stuff in here. But something tells you that you can't be sure if any of it has any magical effects until you put them on...";
+		if newbie tips is 1, say "[newbie style]Newbie tip: Consider this your bonus starting kit. These items start UNIDENTIFIED and may have random magic properties - they might be cursed. Wearing heels is an interesting but challenging choice because this will make you more vulnerable in the early game but is a great source of damage later on.[roman type][line break]";
 	otherwise:
-		compute generic treasure to X.
+		let R be a random off-stage appropriate recipe;
+		let S be a random uncastable fetish appropriate magic-spell;
+		if a random number between 1 and 6 > (2 - the number of worn blue scrunchie) and earnings < starting-earnings - 100 and (R is recipe or S is magic-spell):
+			if S is magic-spell and a random number between -16 and the number of in-play recipes > 0:
+				say "[bold type]You find the instructions for casting a magic spell written on the inside of the lid! [roman type]Interesting...[NewbieSpellFlav]";
+				compute learning of S;
+				cutshow figure of recipe for S;
+				say "Magic energy flows through the words and into your body.";
+				MagicPowerUp 1;
+			otherwise:
+				now R is in X;
+				say "You find a [printed name of R] written on the inside of the lid! Interesting...";
+				say NewbieMagicSpells;
+				say ExamineDesc of R;
+				say line break;
+		otherwise:
+			compute generic treasure to X.
 
 To say NewbieMagicSpells:
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've found a recipe! Recipes allow you to craft certain things at the Apothecary in the Dungeon once you've found the necessary ingredient. Using anything but the correct ingredients will create cursed versions of random craftable items, so it's dangerous to risk it without knowing the recipe, as you won't know that what you've created will have a beneficial effect. You can choose to memorise the recipe, but you can only remember a certain number, depending on your intelligence. For most recipes, memorising it gives you a chance to create a better (e.g. blessed) version of the item.[roman type][line break][or][stopping]".
@@ -357,7 +399,6 @@ Carry out taking museum-store clothing:
 			set up vampiress;
 			now vampiress is interested;
 			anger vampiress.
-
 
 A pedestal is a kind of container. A pedestal is usually not openable. A pedestal is closed. A pedestal is not portable. The printed name of a pedestal is "[TQlink of item described][if the item described is erect and diaper lover > 0]nurturing[otherwise][pedestal-lock of the item described][end if] [pedestal-variant of the item described] pedestal[if the paid of the item described > 0] ([paid of the item described])[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of pedestal is "ped". A pedestal has a number called paid. The paid of a pedestal is usually 0. Understand "glass", "dome", "case", "barrier" as pedestal.
 
@@ -409,11 +450,12 @@ To lock pedestals:
 			increase V by 1;
 		let L be a random number between 1 and 5;
 		if L is 1 and diaper quest is 0, now P is fertile;
-		if (L is 2 or L is 3) and diaper quest is 0:
-			if a random number between 1 and 2 is watersports fetish, now P is parched;
-			otherwise now P is fertile;
+		if (L is 2 or L is 3):
+			if watersports fetish is 1 and (diaper quest is 1 or a random number between 1 and 2 is 1):
+				now P is parched;
+			otherwise if diaper quest is 0:
+				now P is fertile;
 		if L is 4 and lactation fetish is 1, now P is chilled.
-
 
 To add treasure to (X - a pedestal):[This function should happen when the mansion is generated, not when the pedestal is opened.]
 	if there is an off-stage pocket necronomicon:
@@ -437,8 +479,6 @@ To add treasure to (X - a pedestal):[This function should happen when the mansio
 		now P is museum-store;
 		now the paid of X is the price of P / 3;
 		if the paid of X <= 0, now the paid of X is 1.
-
-
 
 To BackgroundRender (T - a pedestal) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	let C be a random thing in T;
@@ -480,7 +520,12 @@ Check drinking a pedestal:
 
 Carry out drinking a pedestal:
 	allocate 6 seconds;
-	if diaper lover > 0:
+	if a random number between 0 and watersports fetish is 1:
+		say "You put your lips on the end of the [pedestal-variant of the noun] [if diaper lover > 0]sippy cup[otherwise][manly-penis][end if] and suck. It squirts [urine] straight down your throat, with quite some force. [if the urine taste addiction of the player < 7]You cough and splutter![otherwise if the urine taste addiction of the player <= 13][line break][variable custom style]Ack![roman type][line break][otherwise][line break][second custom style]Yum![roman type][line break][end if]";
+		StomachUp the paid of the noun;
+		if the stomach-liquid of the player > 5, say "Your belly feels very full of [urine].";
+		UrineTasteAddictUp ((the paid of the noun + 1) / 2);
+	otherwise if diaper lover > 0:
 		say "You put your lips on the end of the [pedestal-variant of the noun] sippy cup and suck. Warm sweet fluid immediately rushes into your mouth and straight down your throat![line break]";
 		StomachUp the paid of the noun;
 		Humiliate 10 * the paid of the noun;
@@ -499,14 +544,9 @@ Carry out drinking a pedestal:
 				say "You feel your muscles stiffening[one of][or] further[stopping]...";
 				DexDown 1;
 	otherwise:
-		if a random number between 0 and watersports fetish is 0:
-			say "[one of]You put your lips around the [pedestal-variant of the noun] penis, and suck. [if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force. [line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly – after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
-			StomachSemenUp the paid of the noun;
-			get oral creampie image for the noun;
-		otherwise:
-			say "[if the urine taste addiction of the player < 7][line break][first custom style]Your thoughts are interrupted by the penis squirting [urine] straight down your throat, with quite some force. You cough and splutter![otherwise if the urine taste addiction of the player > 13]The stone penis squirts [urine] straight down your throat, with quite some force.[line break][second custom style]Yum![roman type][line break][otherwise]The penis squirts [urine] straight down your throat, with quite some force.[end if][line break]";
-			StomachUp the paid of the noun;
-			UrineTasteAddictUp ((the paid of the noun + 1) / 2);
+		say "You put your lips around the [pedestal-variant of the noun] [manly-penis], and suck. [one of][if the semen taste addiction of the player < 8][line break][first custom style]I can't believe I'm doing this! Do I really need it open this badly?[roman type][line break]Your thoughts are interrupted by the penis ejaculating [semen] straight down your throat, with quite some force. You cough and splutter![otherwise if the semen taste addiction of the player > 11]The stone penis ejaculates [semen] straight down your throat, with quite some force. [line break][second custom style]Yippee![roman type][line break][otherwise]The penis ejaculates [semen] straight down your throat, with quite some force. [end if][or]You [if the oral sex addiction of the player < 5]wish you could push away the invasive imagination that the stone penis belongs to a real, living man. You scrunch your eyes in dismay[otherwise]pretend the stone penis belongs to a real, living stud, and curl your tongue around it while you suck avidly – after all, no one can see what your tongue is doing, right, so what's the harm in making it extra fun by a little imagining? Your finely-tuned BJ skills warn you, and you pull back to ease it out of your throat so you can taste it properly! You thrill[end if] as you feel it spurt its [semen]. [if the semen taste addiction of the player > 11]Yummy! You swirl it around for a while, savouring the taste properly, before you reluctantly [otherwise]You [end if]swallow it down.[or]You give the penis another blowjob, and once again it ejaculates [semen] into your mouth. You [if the semen taste addiction of the player > 11]greedily [end if]gulp it down.[stopping][line break]";[TODO: vary for oral sex addiction]
+		StomachSemenUp the paid of the noun;
+		get oral creampie image for the noun;
 	now the paid of the noun is 0;
 	say "You hear a distinctive *shunk* as the glass dome splits and slowly opens.";
 	now the paid of the noun is 0;
@@ -563,7 +603,4 @@ To say partialPaymentSatisfy of (P - a pedestal):
 To say paymentSatisfyReject of (P - a pedestal):
 	say "The [pedestal-variant of P] basin fills with the liquid, but the dome doesn't open. Maybe that's the wrong type of liquid? [if P is fertile]Something to do with fertility might be a better shot...[otherwise if P is parched]Maybe the fact that the carving looks like a human toilet is supposed to be suggesting something in particular...[otherwise if P is chilled]The pedestal looks like it keeps whatever liquid it stores cool, so maybe it's for making sure that a certain lactated liquid doesn't go off?[end if]".
 
-
-
 Containers ends here.
-

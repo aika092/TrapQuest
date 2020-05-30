@@ -33,11 +33,9 @@ To reset alchemy charge:
 
 To reset alchemy charge of (C - a crafting-table):
 	now the charge of C is 625 - (the intelligence of the player * 20);
-	if the craftskill of the player is 1, now the charge of C is the charge of C / 4;
+	if the craftskill of the player is 1, now the charge of C is the charge of C / 2;
 	now the charge of C is the charge of C / tartan theme craft bonus;
 	say "The bowl stops glowing[one of] - maybe you will have to wait a while until the magic returns[or][stopping].".
-
-
 
 the alchemist's table is a crafting-table. alchemist's table is in Dungeon37. The text-shortcut of alchemist's table is "at". The indefinite article of alchemist's table is "an". Understand "alchemy", "alchemists" as alchemist's table. Figure of alchemist's table is the file "Env/Dungeon/bowl1.png".
 
@@ -54,12 +52,12 @@ Definition: a science table (called C) is ready for alchemy:
 To reset alchemy charge of (C - science table):
 	if the charge of C <= 0:
 		now the charge of C is 625 - (the intelligence of the player * 20);
-		if the craftskill of the player is 1, now the charge of C is the charge of C / 4;
+		if the craftskill of the player is 1, now the charge of C is the charge of C / 2;
 		now the charge of C is the charge of C / tartan theme craft bonus;
 		say "The first bowl stops glowing[if the second charge of C <= 0], but the second bowl is still ready for use[end if].";
 	otherwise:
 		now the second charge of C is 625 - (the intelligence of the player * 20);
-		if the craftskill of the player is 1, now the second charge of C is the second charge of C / 4;
+		if the craftskill of the player is 1, now the second charge of C is the second charge of C / 2;
 		now the second charge of C is the second charge of C / tartan theme craft bonus;
 		say "The second bowl stops glowing.".
 

@@ -36,12 +36,11 @@ Check decanting an unlock-key with something:
 Check drinking an unlock-key:
 	say "On what? Try [bold type]unlock (noun)[roman type] instead." instead.
 
-A later time based rule:
+A later time based rule (this is the defeated prison guard key rule):
 	if prison guard is defeated and prison guard is alive and skeleton key is off-stage and prison guard is in the location of the player:
 		now skeleton key is in the location of the player;
 		say "As [NameDesc of prison guard] shuffles along nearby, a [skeleton key] drops from [his of prison guard] pocket!";
 		compute autotaking skeleton key.
-
 
 toilet-key is an unlock-key. toilet-key is in Holding Pen. [It doesn't start off-stage so that we can easily determine if it's been used yet or not.]
 The printed name of toilet-key is "[TQlink of item described]toilet key[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of toilet-key is "tkey". Understand "toilet key" as toilet-key.
@@ -53,6 +52,4 @@ The printed name of house-key is "[TQlink of item described]house key[shortcut-d
 To say ExamineDesc of (B - house-key):
 	say "This small key unlocks your front door.".
 
-
 Skeleton Key ends here.
-

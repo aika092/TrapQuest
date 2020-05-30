@@ -1,6 +1,5 @@
 Spatial Vectors and Shape by Rooms begins here.
 
-
 [!<SpatialCoordinate>@
 
 REQUIRES COMMENTING
@@ -324,7 +323,6 @@ REQUIRES COMMENTING
 *!]
 The neighbour finder is a room that varies.
 
-
 [!<DirectionIsNViable>+
 
 REQUIRES COMMENTING
@@ -355,7 +353,6 @@ Definition: a direction (called D) is N-viable:
 		decide no;
 	otherwise: [we can use saved variables]
 		if D is listed in the Nviables of Neighbour Finder, decide yes.
-
 
 [!<DirectionIsWanted>+
 
@@ -413,4 +410,3 @@ Definition: West (called D) is wanted:
 	decide yes.
 
 Spatial Vectors and Shape ends here.
-

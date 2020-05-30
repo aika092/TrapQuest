@@ -52,7 +52,7 @@ To say FriendlySexResistFlav of (T - a thing):
 To say FriendlySexResistFlav of (M - a monster):
 	if the player is able to speak, say "[variable custom style]'[if the player is in danger][one of]Oh god, we have to stop now!'[or]Uh-oh. Please get off quickly, I need to deal with this!'[or]FUCK!'[at random][otherwise][one of]This was fun, but we need to stop now.'[or]I'm finished now, please let me go!'[or]I've changed my mind, I don't want this!'[or]Sorry, I'm not feeling it any more.'[at random][end if][roman type][line break]";
 	otherwise say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
-	if M is penetrating an orifice, say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M]'s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]";
+	if M is penetrating an orifice, say "[one of]You tap [NameDesc of M] on the [if M is human]shoulder[otherwise]back[end if], trying to get [him of M] to stop.[or]You try to yank your [if M is penetrating a fuckhole]hips[otherwise if M is penetrating face]head[otherwise]body[end if] away from [NameDesc of M][']s grasp.[or]You try and pull [NameDesc of M] [if M is penetrating an orifice]out[otherwise]off[end if] of you.[or]You turn and try to push [NameDesc of M] off you.[purely at random]";
 	otherwise say "You squirm but can't get away!".
 
 To say FriendlySexSubmissionFlav of (T - a thing):
@@ -61,7 +61,7 @@ To say FriendlySexSubmissionFlav of (T - a thing):
 	if T is penetrating face and T is monster:
 		do nothing;[handled by the monster itself, usually]
 	otherwise if the player is feeling dominant:
-		say "[one of]You lie still and allow the [T] to keep going.[or]You submit to the [T][if T is monster], hoping [he of T] won[']t realize you aren[']t really in charge[end if].[or]You stay still and let yourself be used.[or]You push back against the [T][if T is monster], eager to have this over and done with as soon as possible[end if].[or]You silently submit to the [T], forcing yourself not to resist.[or]You 'allow' the [T] to keep going unhindered.[in random order]";
+		say "[one of]You lie still and allow the [T] to keep going.[or]You submit to the [T][if T is monster], hoping [he of T] won[']t realise you aren[']t really in charge[end if].[or]You stay still and let yourself be used.[or]You push back against the [T][if T is monster], eager to have this over and done with as soon as possible[end if].[or]You silently submit to the [T], forcing yourself not to resist.[or]You 'allow' the [T] to keep going unhindered.[in random order]";
 	otherwise:
 		say "[one of]You lie still and allow yourself to enjoy the stimulation.[or]You eagerly submit to the [T][if T is monster] - you know who's in charge[end if].[or]You are happy just staying still and letting yourself be used.[or]You push back against the [T][if T is monster] to get [him of T] nice and worked up[end if]![or]You clench your muscles, joining in the same rhythm of the [T].[or]You vigorously thrust your [random body part penetrated by T] back and forth![in random order]".
 
@@ -93,7 +93,4 @@ To say FriendlySexReleaseRefusalFlav of (M - a monster):
 	if M is intelligent, say FriendlySexReleaseRefusalSpeech of M;
 	say "[BigNameDesc of M] refuses to let you go!".
 
-
-
 Requested Sex ends here.
-

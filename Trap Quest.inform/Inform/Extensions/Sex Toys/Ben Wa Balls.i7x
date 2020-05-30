@@ -41,4 +41,3 @@ To uniquely set up (C - ben wa balls):
 	if R is 1, now C is endurance.
 
 Ben Wa Balls ends here.
-

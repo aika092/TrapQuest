@@ -128,4 +128,3 @@ To decide which list of objects is (jewellery - list of objects) priced at (N - 
 	decide on try without first.
 
 Paying ends here.
-

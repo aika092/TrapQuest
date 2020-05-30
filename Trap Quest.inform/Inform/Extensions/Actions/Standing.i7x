@@ -20,6 +20,12 @@ This is the xavier prevents standing rule:
 		rule fails.
 The xavier prevents standing rule is listed in the ability to stand rules.
 
+This is the stuck stuff prevents standing rule:
+	if the player is clothing stuck:
+		if auto is 0, say "You can't because your [random worn stuck clothing] is stuck in place!";
+		rule fails.
+The stuck stuff prevents standing rule is listed in the ability to stand rules.
+
 [!<DecideWhichNumberIsTheStandingStrengthOfThePlayer>+
 
 REQUIRES COMMENTING
@@ -29,13 +35,13 @@ To decide which number is the standing strength of the player:
 	[This is what the player uses to try and stand up. It is the strength of the player times 13, scaled down by body soreness 10% each time.]
 	decide on ((the strength of the player * 13) * (10 - the body soreness of the player)) / 10. [If you change this you need to change the debuginfo output in the main function below]
 
-
 [!<DecideWhichNumberIsTheStandingCapabilityOfThePlayer>+
 
 REQUIRES COMMENTING
 
 +!]
 To decide which number is the standing capability of the player: [If you change this you need to change the debuginfo output in the main function below]
+	if water-fountain is penetrating asshole, decide on 100; [always success]
 	if the player is tired, decide on the standing strength of the player - the fatigue of the player;
 	otherwise decide on the standing strength of the player.
 
@@ -165,6 +171,7 @@ REQUIRES COMMENTING
 
 +!]
 Carry out standing:
+	allocate dual arm use;
 	allocate 5 seconds;
 	if the weight of the player > 5, increase the fat-burning of the player by the weight of the player / 4;
 	now fatimod is 1;
@@ -189,6 +196,4 @@ To say StandingBlock of (M - a monster):
 To say LongHairStandingBlock of (M - a monster):
 	say "[BigNameDesc of M] steps on your [ShortDesc of hair] and stops you from standing up!".
 
-
 Standing ends here.
-

@@ -1,6 +1,5 @@
 Transformation by Clothing begins here.
 
-
 clothing has an object called upgrade-target.
 clothing has a number called transform-attempts.
 clothing has a number called transform-resistance.
@@ -43,7 +42,6 @@ To decide which object is most-transformable-uncovered-clothing:
 			now lowest-outrage is O;
 			now X is C;
 	decide on X.
-
 
 To decide which object is the potential-upgrade-target of (C - a clothing):
 	[THIS IS THE TEMPLATE FOR FINDING THE BEST TRANSFORMATION TARGET.]
@@ -125,7 +123,6 @@ Definition: a clothing (called C) is untransformable:
 	decide no.
 
 Definition: a clothing is transformable if it is not untransformable.
-
 
 Definition: an equippable is transformation-protected: decide yes.
 
@@ -242,7 +239,7 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 		if the unworn cringe of C is too humiliating:
 			say "[variable custom style][one of]Holy cow! Thank goodness it's covered up.[or]Oh my god, I'm so glad this is covered up at the moment![or]There's no way I could feel comfortable wearing something so childish if it wasn't covered up![in random order][roman type][line break]";
 		otherwise if C is not gloves and C is equippable or C is bag of holding:
-			say "[variable custom style][one of]I guess this will be ok for now. But only until I find something a bit more appropriate for my age.[or]Hmm, this will have to do for now, I guess![in random order][roman type][line break]";
+			say "[variable custom style][one of]I guess this will be OK for now. But only until I find something a bit more appropriate for my age.[or]Hmm, this will have to do for now, I guess![in random order][roman type][line break]";
 		otherwise:
 			say "[variable custom style][one of]I guess this will do for now.[or]This isn't that grown up, but I'll be fine wearing it.[or]I don't feel too uncomfortable wearing this.[or]Probably not my first choice, but not as babyish as it could be.[or]Fair enough, I'll wear this for now.[or]Hmm, this will have to do, I guess![or]I'll be fine wearing this for now.[in random order][roman type][line break]";
 	otherwise if C is almost too much or the unworn outrage of C is too humiliating:
@@ -253,12 +250,12 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 		otherwise:
 			say "[variable custom style][one of]I guess this will do for now.[or]This is pretty out there, but I'll be fine wearing it.[or]I don't feel too uncomfortable wearing this.[or]This wouldn't be my first choice to wear, but it's not bad.[or]Fair enough, I'll wear this for now.[or]Hmm, this will have to do, I guess![or]I'll be fine wearing this for now.[in random order][roman type][line break]";
 	otherwise if diaper quest is 1 and the humiliation of the player < HUMILIATION-BROKEN:
-		 if C is not gloves and C is equippable or C is bag of holding:
+		if C is not gloves and C is equippable or C is bag of holding:
 			say "[if C is too adult][line break][second custom style][one of]Ugh, this is still way too boring for me![or]*sigh* Isn't there any way to make it even more obvious it's for babies?[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with using this.[or]I'm fine holding onto this.[purely at random][otherwise][line break][variable custom style][one of]Ooh, I look even more adorable with this![or]Ooh, how cute! I'm more than happy carrying this.[in random order][end if][roman type][line break]";
 		otherwise:
 			say "[if C is too adult][line break][second custom style][one of]Ugh, this is still way too adult for me![or]*sigh* Isn't there any way to make it even more cartoony and fun?[or]I would prefer something that properly lets everyone know just how immature I am![or]Hmm, this is better but it doesn't scream 'will you take care of me?' in the way I was hoping.[or]Hmm, better, but still too grown up for me.[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise][line break][variable custom style][one of]I love wearing this![or]I feel so giddy wearing this![or]Ooh, I'm fine wearing this![or]Ooh, how cute! I'm more than happy wearing this.[or]Wow, I look so adorable in this![in random order][end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
-		 if C is not gloves and C is equippable or C is bag of holding:
+		if C is not gloves and C is equippable or C is bag of holding:
 			say "[if C is too boring][line break][second custom style][one of]Ugh, this is still way too practical for me! I need something that yells 'I'M A DISGUSTING WHORE'.[or]*sigh* Isn't there any way to make it even more slutty?[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with using this.[or]This is still fine for me.[purely at random][otherwise][line break][variable custom style][one of]Oh nice, I'm going to love showing this off![or]Ooh, how lush! My friends would be so jealous if they could see me with this.[in random order][end if][roman type][line break]";
 		otherwise:
 			say "[if C is too boring and C is actually dense and C is breast covering or C is belly covering or C is crotch covering][line break][second custom style][one of]Ugh, this is still way too plain for me![or]*sigh* Isn't there any way to make it even more revealing?[or]Aww, I was hoping for something even more slutty![or]Hmm, can't it get even more revealing?[in random order][otherwise if C is too boring][second custom style][one of]Ugh, this is still way too boring for me![or]*sigh* Isn't there any way to make it even more lewd?[or]I would prefer something that properly lets everyone know just how slutty I am![or]Hmm, this is better but it doesn't scream 'FUCK ME' in the way I was hoping.[or]Hmm, better, but still too boring for me.[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise][line break][variable custom style][one of]I love wearing this![or]I feel AMAZING wearing this![or]Ooh, I'm fine wearing this![or]Ooh, how lush! I'm more than happy wearing this.[or]Wow, I look [beautiful] in this![in random order][end if][roman type][line break]".
@@ -267,6 +264,7 @@ To silently transform (D - a clothing) into (C - a clothing):
 	now C is worn by the player;
 	compute C inheriting from D;
 	only destroy D;
+	if D is headgear, commence recycling of D; [stops that headgear re-appearing for a while]
 	layer C correctly;
 	if the quest of C is not appropriate, compute quest of C.
 
@@ -275,7 +273,6 @@ To transform (C - a clothing):
 
 To silently transform (C - a clothing):
 	silently transform C into the upgrade-target of C.
-
 
 To potentially transform (C - a clothing):
 	if C is upgradable:
@@ -309,8 +306,6 @@ To decide which number is the disintegrate-resistance of (C - a shoes):
 To decide which number is the disintegrate-resistance of (C - a heels):
 	decide on the heel-height of C.
 
-
-
 To compute failed transform of (C - a clothing):
 	increase the transform-attempts of C by 1;
 	if the transform-attempts of C > the disintegrate-resistance of C + ((the used condoms of C + the empty condoms of C) * 2) + the transform-resistance of C:
@@ -322,6 +317,4 @@ To compute failed transform of (C - a clothing):
 		if C is untransformable, say "It doesn't seem like the [C] can be transformed!";
 		otherwise say "The [C] seems to [if the transform-attempts of C > 1]once again [end if]resist being transformed!".
 
-
 Transformation ends here.
-

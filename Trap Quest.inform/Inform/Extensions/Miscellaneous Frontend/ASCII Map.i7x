@@ -1,7 +1,5 @@
 ASCII Map by Miscellaneous Frontend begins here.
 
-
-
 [!<MapDraw>+
 
 REQUIRES COMMENTING
@@ -125,7 +123,6 @@ To decide which spatial coordinate is the map sum of (V1 - a spatial coordinate)
 	let the sum be the spatial coordinate with maze level part L easting part E northing part N;
 	decide on the sum.
 
-
 [!<DecideIfSomethingIsInDirection>+
 
 REQUIRES COMMENTING
@@ -149,6 +146,4 @@ To decide if there is something to the (D - a direction):
 			if D is west and W part of Sh is 1, decide yes;
 	decide no.
 
-
 ASCII Map ends here.
-

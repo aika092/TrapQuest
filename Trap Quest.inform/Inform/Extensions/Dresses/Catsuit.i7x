@@ -1,6 +1,6 @@
 Catsuit by Dresses begins here.
 
-catsuit is a kind of overdress. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually unskirted. A catsuit is usually leg covering. A catsuit is usually only arm covering. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
+catsuit is a kind of overdress. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually unskirted. A catsuit is usually leg covering. A catsuit is usually only arm covering. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
 
 To decide which object is the unique-upgrade-target of (C - a catsuit):
 	if there is a worn demonic wearthing, decide on tongue-suit;
@@ -77,8 +77,6 @@ To decide which number is the initial outrage of (C - a pink catsuit):
 To decide which number is the original price of (C - a pink catsuit):
 	decide on 8.
 
-
-
 Part 2 - Black Catsuit
 
 A black catsuit is a kind of catsuit. A black catsuit is fully exposing. There is 1 black catsuits. The printed name of black catsuit is usually "[clothing-title-before]black latex catsuit[clothing-title-after]". The text-shortcut of black catsuit is "bcs".
@@ -144,8 +142,7 @@ Definition: a WC catsuit is class-transformation-protected if the class of the p
 To decide which number is the initial outrage of (C - a WC catsuit):
 	decide on 16.
 
-
-plugsuit is an overdress. plugsuit is latex. plugsuit is manly. plugsuit is unskirted. plugsuit is crotch-intact. plugsuit is vagina plugging. The plug size of plugsuit is 2. The printed name of plugsuit is "[clothing-title-before]latex plugsuit[clothing-title-after]". The text-shortcut of plugsuit is "pst". Understand "suit" as plugsuit.
+plugsuit is an overdress. plugsuit is latex. plugsuit is manly. plugsuit is unskirted. plugsuit is bottom-exclusive. plugsuit is crotch-intact. plugsuit is vagina plugging. The plug size of plugsuit is 2. The printed name of plugsuit is "[clothing-title-before]latex plugsuit[clothing-title-after]". The text-shortcut of plugsuit is "pst". Understand "suit" as plugsuit.
 
 Definition: plugsuit is displacable: decide no.
 Definition: plugsuit is black themed: decide yes.
@@ -175,4 +172,3 @@ To decide which number is the original price of (C - a plugsuit):
 	decide on 4.
 
 Catsuit ends here.
-

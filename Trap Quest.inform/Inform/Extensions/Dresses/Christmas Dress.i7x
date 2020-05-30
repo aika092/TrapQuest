@@ -21,7 +21,6 @@ To set up influence of (C - a christmas dress):
 
 A standard christmas dress is a kind of christmas dress.
 
-
 Part 1 - Snowman Dress
 
 A snowman dress is a kind of standard christmas dress. A snowman dress is only arm covering. There is 1 snowman dress. The printed name of snowman dress is "[clothing-title-before]snowman dress[clothing-title-after]". The text-shortcut of snowman dress is "snwd".
@@ -152,7 +151,6 @@ To decide which number is the initial cringe of (C - a gingerbread house dress):
 Definition: a gingerbread house dress is pink themed: decide yes.
 Definition: a gingerbread house dress is food themed: decide yes.
 
-
 Part 7 - Naughty or Nice Outfit
 
 naughty-or-nice outfit is a christmas dress. naughty-or-nice outfit can be naughtified. The printed name of naughty-or-nice outfit is "[clothing-title-before][if item described is naughtified]naughty[otherwise]nice[end if] baby christmas outfit[clothing-title-after]". The text-shortcut of naughty-or-nice outfit is "nbco". Understand "baby", "christmas" as naughty-or-nice outfit. Understand "nice" as naughty-or-nice outfit when item described is not naughtified. Understand "naughty" as naughty-or-nice outfit when item described is naughtified.
@@ -185,9 +183,6 @@ Definition: naughty-or-nice outfit is bow themed: decide yes.
 Definition: naughty-or-nice outfit is transformation-protected: decide yes.
 Definition: naughty-or-nice outfit is displacable: decide no.
 
-
-
-
 Part 8 - Golden Present Outfit
 
 present outfit is a christmas dress. present outfit is latex. The printed name of present outfit is "[clothing-title-before]golden present outfit[clothing-title-after]". The text-shortcut of present outfit is "gpro". Understand "golden" as present outfit.
@@ -217,8 +212,6 @@ Definition: present outfit is transformation-protected: decide no.
 Definition: present outfit is displacable: decide yes.
 To decide which object is the unique-upgrade-target of (C - present outfit):
 	decide on christmas strap monokini.
-
-
 
 Part 9 - Candy Cane Outfit
 
@@ -258,9 +251,4 @@ To compute periodic effect of (C - candy cane outfit):
 To construct unique icons for (T - candy cane outfit):
 	if T is skirted, add Figure of TornIcon to the list of icons.
 
-
-
-
-
 Christmas Dress ends here.
-

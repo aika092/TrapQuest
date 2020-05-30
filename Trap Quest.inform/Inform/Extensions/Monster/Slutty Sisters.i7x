@@ -33,7 +33,6 @@ To say ShortDesc of (M - a futanari slutty sister):
 To say MediumDesc of (M - a slutty sister):
 	say ShortDesc of M.
 
-
 Figure of futanari slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister1.png".
 Figure of bulging slutty sister is the file "NPCs/Bosses/SluttySister/sluttysister2.png".
 
@@ -61,10 +60,15 @@ To say MonsterComment of (M - a bulging slutty sister):
 To set up (M - a slutty sister):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 12;
+	now the raw difficulty of M is 12;
 	if M is bulging slutty sister, now the belly contents of M is 20;
 	now the health of M is the maxhealth of M;
 	now M is in Hotel36.
+
+To compute unique periodic effect of (M - a bulging slutty sister):
+	if the belly contents of M < 20:
+		let F be a random futanari slutty sister;
+		if F is in the location of M and M is awake and F is awake and M is uninterested and F is uninterested and M is not in the location of the player, increase the belly contents of M by 1.
 
 To decide which number is the maxhealth of (M - a slutty sister):
 	decide on 20 + (4 * game difficulty).
@@ -77,13 +81,11 @@ To decide which number is the semen-load of (M - a futanari slutty sister):
 
 Definition: a slutty sister is too intimidating: decide no. [The player never refuses to fight the final boss.]
 
-
 Definition: a slutty sister is able to remove cursed plugs: decide yes.
 
 Definition: a slutty sister is concealment immune: decide yes.
 
 Definition: a slutty sister is butt slut immune: decide no. [Special case where they are immune to concealment but obey butt slut.]
-
 
 This is the spawn initial slutty sisters rule:
 	if diaper quest is 0:
@@ -127,12 +129,10 @@ To compute perception of (M - a slutty sister):
 		say "[second custom style]'[if M is bulging slutty sister][one of]Oh dear honey, you've arrived at the final boss! That's us. Usually we would force you to fight us, but you don't even have enough prize money to pay back the game fee yet.'[or]Oh, you're back again.'[stopping][otherwise][one of]So if you do push the button now, you'll be working for us for a whole year. So we're not gonna stop you!'[or]Have you changed your mind? You gonna end the simulation early and dedicate yourself to work for us for a year?'[stopping][end if][roman type][line break]";
 		calm M.
 
-
 To compute friendly boredom of (M - a slutty sister):
 	if M is not in the location of the player:
 		now M is uninterested;
 		now the boredom of M is 0.
-
 
 Part 2 - Motion
 
@@ -140,7 +140,6 @@ To compute monstermotion of (M - a slutty sister):
 	if M is not in Hotel36 and M is alive:
 		say "BUG: slutty sister appeared outside of boss room. Please report this to Aika with the following information:[line break]Current monster's turn: [current-monster][line break]Player's location: [location of the player][line break]NPC state: in [location of M]; [unless M is interested]not [end if]interested; [unless M is asleep]not [end if]asleep[paragraph break]";
 		now M is in Hotel36.
-
 
 To compute (M - a slutty sister) seeking (D - a direction):
 	do nothing.
@@ -170,7 +169,6 @@ To compute diaper mess reaction of (M - futanari slutty sister): [Need to make s
 	say "[BigNameDesc of M] rolls [his of M] eyes.[line break][speech style of M]'This is NOT the time.'[roman type][line break][big he of M] waves [his of M] hands and suddenly you're not wearing and underwear at all, and you're completely clean!";
 	let D be a random worn knickers;
 	if D is knickers, destroy D.
-
 
 Part 3 - Combat
 
@@ -223,18 +221,19 @@ To say StrikingSuccessFlav of (M - a futanari slutty sister) on (B - a body part
 To say StrikingFailureFlav of (M - a futanari slutty sister) on (B - a body part):
 	say "[BigNameDesc of M] spins rapidly towards you, but you manage to jump out the way!".
 
-To say StrikingFailureFlav of (M - a futanari slutty sister) on (B - a body part):
-	say "[BigNameDesc of M] uses [his of M] wand to send several arcs of blue energy toward you, but you duck out of the way!".
+To compute damaging attack of (M - a bulging slutty sister) on (B - a body part):
+	if the belly contents of M <= 7:[If her belly gets too low, she connects with an attack every time.]
+		let B be the painful-part of M;
+		say "[BigNameDesc of M] spins towards you, landing a brutal roundhouse kick [TargetName of B]!";
+		compute M striking B;
+	otherwise:
+		compute striking attack of M.
 
 To say StrikingSuccessFlav of (M - a bulging slutty sister) on (B - a body part):
-	say "[BigNameDesc of M] uses [his of M] wand to strike you [TargetName of B] with several arcs of blue energy!".
+	say "[BigNameDesc of M] uses [his of M] [if nintendolls-wand is not held and nintendolls-wand is not in the location of the player]wand[otherwise]fingers[end if] to strike you [TargetName of B] with several arcs of blue energy!".
 
 To say StrikingFailureFlav of (M - a bulging slutty sister) on (B - a body part):
-	if the belly contents of M > 7:
-		say "[BigNameDesc of M] tries to spin towards you, but [his of M] body is too bloated and you dodge it easily!";
-	otherwise:
-		say "[BigNameDesc of M] spins towards you, landing a brutal roundhouse kick [TargetName of B]!"; [If her belly gets too low, she connects with an attack every time.]
-		compute M striking B.
+	say "[BigNameDesc of M] uses [his of M] [if nintendolls-wand is not held and nintendolls-wand is not in the location of the player]wand[otherwise]fingers[end if] to send several arcs of blue energy toward you, but you duck out of the way!".
 
 To compute tripping attack of (M - a futanari slutty sister):
 	if there is a dangerous bulging slutty sister in the location of the player and bukkake fetish is 1:
@@ -264,9 +263,9 @@ To compute (M - a bulging slutty sister) entering mouth:
 	otherwise say "[BigNameDesc of M] rolls you over onto your back!";
 	if presented-orifice is face, say "You let [him of M], and [he of M] immediately sits on your face. ";
 	otherwise say "[big he of M] succeeds, and immediately sits on your face. ";
-	say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, she covers your nose with the top of her vagina, and your mouth with her taint, giving you access to both her creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] vagina, and your mouth with [his of M] taint, giving you access to both [his of M] creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
 	if bukkake fetish is 1:
-		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2]his hole[otherwise]both her holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
+		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2][his of M] hole[otherwise]both [his of M] holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
 		if the semen coating of face < 10, CumFaceUp 1;
 	now the sex-length of M is 4;
 	now the suffocation of M is 0;
@@ -328,13 +327,13 @@ To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 			increase the stomach-semen of the player by 4;
 			SemenTasteAddictUp 1;
 		otherwise:
-			say "Your mind goes blank as [NameDesc of M]'s unending stream of [semen] fills your lungs. You white out.";
+			say "Your mind goes blank as [NameDesc of M][']s unending stream of [semen] fills your lungs. You white out.";
 			now delayed fainting is 1;
 			now the fainting reason of the player is 22;
 		decrease the belly contents of M by 2;
 		if the belly contents of M <= 0 and delayed fainting is 0, say "The flow of [semen] seems to slow down and then dry up. [if the semen taste addiction of the player < 8]Hopefully[otherwise if the semen taste addiction of the player < 14 or the stomach of the player >= 10]Maybe[otherwise]Oh no,[end if] that's the last of it?[if the sex-length of M > 0][line break][BigNameDesc of M] continues to ride your face. It looks like you're not going to be allowed to breathe until you've made [him of M] cum![end if]";
 	otherwise:
-		say "You [one of]flick your tongue along [NameDesc of M]'s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M]'s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M]'s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M]'s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]".
+		say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]".
 
 To say NearingClimaxFacesit of (M - a bulging slutty sister):
 	say FacesitSubmissionResponse of M;
@@ -394,58 +393,47 @@ To say CreampieFlav of (M - a futanari slutty sister) in (F - a fuckhole):
 
 Section 2 - Damage
 
-To compute damage of (M - a futanari slutty sister):
-	if the health of M > 0:
-		if M is awake:
-			if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] growls[one of], with a look of sexual hunger in [his of M] eyes[or] angrily[stopping]!";
-			otherwise say "[one of][BigNameDesc of M]'s growl is definitely getting weaker. But [his of M] [DickDesc of M] is just throbbing even harder![or][BigNameDesc of M] grunts with pain.[stopping]";
-		otherwise:
-			anger M;
-			now M is interested;
-			now the sleep of M is 0;
-			say "Suddenly, [NameDesc of M]'s [DickDesc of M] springs back to a full erection! [big he of M] looks very angry. [line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]";
+To compute damage reaction of (M - a futanari slutty sister):
+	if M is awake:
+		if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] growls[one of], with a look of sexual hunger in [his of M] eyes[or] angrily[stopping]!";
+		otherwise say "[one of][BigNameDesc of M][']s growl is definitely getting weaker. But [his of M] [DickDesc of M] is just throbbing even harder![or][BigNameDesc of M] grunts with pain.[stopping]";
 	otherwise:
-		compute death of M.
+		now the sleep of M is 0;
+		say "Suddenly, [NameDesc of M][']s [DickDesc of M] springs back to a full erection! [big he of M] looks very angry. [line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]".
 
-To compute damage of (M - a bulging slutty sister):
-	if the health of M > 0:
-		if M is awake:
-			if attack-type is 2 and the belly contents of M > 0:
-				say "Your knee right in [his of M] stomach causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [asshole]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller belly has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
-				if the belly contents of M >= 4:
-					SemenPuddleUp 4;
-					decrease the belly contents of M by 4;
-				otherwise:
-					SemenPuddleUp the belly contents of M;
-					now the belly contents of M is 0;
-				increase the difficulty of M by 2;
+To compute damage reaction of (M - a bulging slutty sister):
+	if M is awake:
+		if attack-type is 2 and the belly contents of M > 0:
+			say "Your knee right in [his of M] stomach causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [asshole]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller belly has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
+			if the belly contents of M >= 4:
+				SemenPuddleUp 4;
+				decrease the belly contents of M by 4;
 			otherwise:
-				if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] squeaks with anger!";
-				otherwise say "[BigNameDesc of M] squeals with pain!";
+				SemenPuddleUp the belly contents of M;
+				now the belly contents of M is 0;
+			increase the raw difficulty of M by 2;
 		otherwise:
-			anger M;
-			now M is interested;
-			now the sleep of M is 0;
-			say "[BigNameDesc of M] jumps to [his of M] feet! [big he of M] looks very angry. [line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]";
+			if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] squeaks with anger!";
+			otherwise say "[BigNameDesc of M] squeals with pain!";
 	otherwise:
-		compute death of M.
+		now the sleep of M is 0;
+		say "[BigNameDesc of M] jumps to [his of M] feet! [big he of M] looks very angry.[line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]".
 
-To compute unique death of (M - a bulging slutty sister):
-	say "[second custom style]'Aack! [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely[if nintendolls-wand is not held], leaving [his of M] wand behind[end if].";
+To compute defeat of (M - a bulging slutty sister):
+	say "[second custom style]'Aack! [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
+	now the sleep of M is 300;
+	now the health of M is 1;
 	if nintendolls-wand is not held:
 		now nintendolls-wand is in the location of the player.[you might still be in combat, so no autotaking.]
 
-To compute unique death of (M - a futanari slutty sister):
-	say "[second custom style]'Unf! [if there is a dangerous bulging slutty sister in the location of the player]Fuck her up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M]'s body flutters suddenly as if it was a malfunctioning hologram, and then disappears completely.".
-
+To compute defeat of (M - a futanari slutty sister):
+	say "[second custom style]'Unf! [if there is a dangerous bulging slutty sister in the location of the player]Fuck her up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
+	now the health of M is 1;
+	now the sleep of M is 300.
 
 Part 4 - Conversation
 
 Section 1 - Greeting
-
-To say BimboSeduced of (M - a slutty sister):
-	say "Something seems to suddenly switch in [NameDesc of M]'s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
-	anger M.
 
 To compute basic greeting to (M - a slutty sister):
 	If the greet-window of M < 1 or M is not interested:
@@ -481,7 +469,7 @@ To say RepeatGreeting to (M - a slutty sister):
 	otherwise if the bimbo of the player < 10 and the player is female:
 		say "'[one of]Ugh, haven[']t we been through this already? You had your fun, now let me out!'[or]You[']re not going to turn me into a slut. Not if I can beat you first.'[or]I really don[']t want to keep fighting you. I just want to leave!'[or]This isn[']t fair! If you[']re going to turn me into a slut at least play by your own rules!'[at random]";
 	otherwise if the bimbo of the player < 10:
-		say "'[one of]Ok, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
+		say "'[one of]OK, you proved I[']m not much of a man anymore, but instead of rubbing it in, you could let me out of here instead.'[or]Listen. I want to fuck sluts, not become one! You put me in the wrong game!'[or]Let me out while I can still think straight!'[at random]";
 	otherwise if the bimbo of the player < 15:
 		say "[second custom style]'[one of]This time I[']ll satisfy you for sure!'[or]I[']ll make you both cum eventually, then I[']ll be free!'[or]I[']m pretty sure you[']re gonna get tired of fucking with me soon, then I[']ll be free to get out of here and suck some... freedom.'[at random]";
 	otherwise:
@@ -528,6 +516,4 @@ To decide which number is the bartering value of (T - a thing) for (M - a slutty
 To say MonsterOfferRejectFlav of (M - a slutty sister) to (T - a thing):
 	say "[second custom style]'This is a boss fight baby, there's no trading your way out of this one!'[roman type][line break]".
 
-
 Slutty Sisters ends here.
-

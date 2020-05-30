@@ -4,7 +4,6 @@ A bunny ears is a kind of headgear. Understand "pair", "of" as bunny ears. A bun
 
 Definition: a bunny ears is transformation-protected: decide no.
 
-
 Part 1 - Bunny Waitress Ears
 
 bunny waitress ears is a bunny ears. bunny waitress ears is satin. bunny waitress ears has a number called service-ready.
@@ -62,14 +61,12 @@ To decide which number is the waitress bartering value of (T - a bottle) for (M 
 	if M is intelligent and M is human and M is friendly and T is non-empty:
 		if the class of the player is royal slave and the fill-colour of T is white:
 			decide on 5;
-		if ((the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage):
+		if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid":
 			if the fill-colour of T is golden or the fill-colour of T is murky or the fill-colour of T is creamy:
 				if M is female, decide on 2;
 			otherwise:
 				decide on 4;
 	decide on 0.
-
-
 
 To say OfferFlav of (T - a waitress vessel):
 	if the player is able to speak:
@@ -81,7 +78,7 @@ To say OfferFlav of (T - a waitress vessel):
 
 To compute (M - a monster) considering (T - a bottle):
 	if M is not interested:
-		say "[BigNameDesc of M] isn[']t even looking at you.";
+		say "[BigNameDesc of M] isn't even looking at you.";
 	otherwise if M is unintelligent:
 		say "[BigNameDesc of M] ignores your offer completely.";
 	otherwise if the waitress bartering value of T for M > 0:
@@ -163,6 +160,7 @@ To compute service spill punishment:
 					now the fill-colour of V is white;
 					DoseFill V;
 					if alcohol fetish is 1, now V is cursed;
+					if tough-shit is 0, now V is monster-origin; [Royal Slaves can only serve stuff brewed inside them but it would be harsh to enforce that here]
 					say "Your [ShortVesselDesc of V] [if V is cursed]is surrounded by a dark glow. It [end if]magically fills itself with milk and then disappears from your hand, appearing on top of the [ShortDesc of serving table]!";
 				otherwise if STV is 0:
 					say "Your [ShortVesselDesc of V] disappears from your hand, appearing on top of the [ShortDesc of serving table]!";
@@ -172,7 +170,10 @@ To compute service spill punishment:
 				say "[variable custom style][one of]What, so I'm being forced to serve people drinks like some kind of fetish bondage waitress?[or]Uh-oh, not this again![stopping][roman type][line break]";
 	if black maid headdress is worn and cafe maid headdress is off-stage:
 		transform black maid headdress into cafe maid headdress;
-	if bondage protection is 1 or the class of the player is bunny:
+		let O be a random worn overdress;
+		let CMO be a random cafe maid outfit;
+		if O is clothing and O is not CMO, transform O into CMO;
+	otherwise if bondage protection is 1 or the class of the player is bunny or the class of the player is "cafe maid":
 		if the total weighty volume of hips < the largeness of breasts and the player is not bottom heavy:
 			say "You feel your butt expanding [if the silicone volume of hips > 0]with more silicone [otherwise if artificial enhancements fetish is 1]with silicone implants [end if]as punishment[if the class of the player is bunny][one of] for being a clumsy waitress[or][stopping][end if]!";
 			if artificial enhancements fetish is 1, AssImplantsUp 2;
@@ -181,7 +182,6 @@ To compute service spill punishment:
 			say "You feel your [if the silicone volume of breasts > 0]breast implants expanding[otherwise if artificial enhancements fetish is 1]breasts being enhanced with silicone implants[otherwise]breasts growing larger[end if] [if the class of the player is bunny]to try and make up for the fact that you're a [one of]useless[or]rubbish[or]terrible[or]clumsy[in random order] cocktail waitress[otherwise]as punishment[end if]!";
 			if artificial enhancements fetish is 1, BustImplantsUp 4;
 			otherwise BustUp 4.
-
 
 Chapter - Class Outfit
 
@@ -216,9 +216,8 @@ To compute class outfit of (H - bunny waitress ears):
 		now W is bland;
 		now W is sure;
 		DoseFill W;
-		let S be a random serving-bondage;
+		let S be a random worn serving-bondage;
 		say "[bold type]Suddenly a [ShortDesc of W] appears [if S is a thing]on your [ShortDesc of S][otherwise]in your hand[end if]! It appears to be full of [milk].[roman type][line break]".
-
 
 Chapter - Quest
 
@@ -261,7 +260,6 @@ To uniquely destroy (C - bunny waitress ears):
 			if B is bottle:
 				say "A blue light surrounds your [B]!";
 				bless B.
-
 
 Part 2 - Rubber Bunny Ears
 
@@ -332,7 +330,6 @@ To say QuestFlav of (Q - egg-holding-quest):
 To say QuestTitle of (Q - egg-holding-quest):
 	say " (egg holding quest)".
 
-
 Part 3 - Bunny Hat
 
 bunny hat is a kind of bunny ears.
@@ -347,7 +344,5 @@ Part 4 - Bunny Glasses
 bunny glasses is a bunny ears.
 
 trap-braving-quest is a headgear-clothing-quest.
-
-
 
 Bunny Ears TQ ends here.

@@ -1,6 +1,5 @@
 Giving by Actions begins here.
 
-
 The can't give clothes being worn rule is not listed in the check giving it to rulebook.
 The block giving rule is not listed in the check giving it to rulebook.
 
@@ -33,7 +32,6 @@ Check giving:
 		do nothing instead;
 	otherwise if the second noun is witch:[TODO: compute WitchGiving (T - a thing) to (M- a witch)]
 		if the second noun is unfriendly, say "[variable custom style]I think it's a bit late for that![roman type][line break]" instead;
-		if the noun is soul gem, try offering the noun to the second noun instead;
 		if the noun is vessel:
 			if the doses of the noun is 0, say "That's empty." instead;
 			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would [he of the second noun] want that?" instead;
@@ -54,7 +52,10 @@ Check giving:
 			[say "Minor bug: action should end here! Don't worry, Aika knows about it." instead.]
 		otherwise if the noun is diaper:
 			let T be the total-soak of the noun - the water-soak of the noun;
-			if T < the soak-limit of the noun / 3 and the noun is not messed:
+			if diaper quest is 1 and the class of the player is priestess and the noun is worn:
+				allocate 2 seconds;
+				say "[second custom style]'I'm LITERALLY an altar witch. Do you really think I'm about to anger the altar Goddess by removing the diaper of an altar Priestess?'[roman type][line break]";
+			otherwise if T < the soak-limit of the noun / 3 and the noun is not messed:
 				allocate 2 seconds;
 				say "[second custom style]'[if the total-soak of the noun is 0]Why would I want that? It's bone dry!'[otherwise if the total-soak of the noun >= the soak-limit of the noun / 3]I'm sorry, but there's too much water in that diaper. I need the good shit.'[otherwise]Nah, that's not used enough for me. Use it some more and then come back to me.'[end if][roman type][line break]";
 			otherwise:
@@ -99,15 +100,13 @@ Check giving:
 				now a random recipe for latex curse reversal is in Hotel25;
 				now the second noun is interested instead;
 			otherwise if the curse-quest of the second noun is 2 and the noun is recipe for latex curse reversal:
-				say "[second custom style]'Nice, you got it! All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of her wand, you feel the curse leaving you! [if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human. What a relief![line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
+				say "[second custom style]'Nice, you got it! All right leave the rest to me...'[roman type][line break]The [second noun] takes the recipe and studies it carefully, muttering words you don't understand whilst stirring the mushroom into some kind of murky liquid. With a hum and a wave of [his of the second noun] wand, you feel the curse leaving you! [if the latex-transformation of the player > 2]The feeling of your skin and bones returning is extremely weird but it's over quickly and you feel as good as new. But feeling behind you, you realise your orifices have been left gaping open. But at least you[otherwise]You[end if] are back to being fully human. What a relief![line break][second custom style]'[one of]You know that was the most interesting thing I've had to do this century, I've been DYING of boredom here. You're all right kid. Feel[or]You should probably be more careful in the future, or eventually we'll run out of mushrooms to turn you back. See you around baby - you should still feel[stopping] free to come by any time if you want to use my altar.'[roman type][line break]";
 				now the latex-transformation of the player is 0;
 				if the pregnancy of the player is 2, now the pregnancy of the player is 1;
 				now the second noun is unbitchy;
 				now the curse-quest of the second noun is 3 instead;
 			otherwise:
-				say "Why would she want that?" instead;
+				try offering the noun to the second noun instead;
 	try offering the noun to the second noun instead.
 
-
 Giving ends here.
-

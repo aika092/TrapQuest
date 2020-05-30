@@ -1,6 +1,5 @@
 Rinsing by Actions begins here.
 
-
 [!<rinsingItIn:Action>*
 
 REQUIRES COMMENTING
@@ -90,6 +89,4 @@ To say RinseFlav of (T - a thing) in (P - sacred pool):
 
 Understand "rinse [something] in [something]", "clean [something] in [something]", "wash [something] in [something]" as rinsing it in.
 
-
 Rinsing ends here.
-

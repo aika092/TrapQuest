@@ -1,6 +1,5 @@
 Make Up Kit by Consumables begins here.
 
-
 A make up kit is a kind of collectible. There are 7 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
 Figure of make up kit is the file "Items/Collectibles/makeup1.png".
 
@@ -60,8 +59,4 @@ Definition: a make up kit is oral sex themed: decide yes.
 
 Understand "brush [something] on [something]", "makeup [something] on [something]" as brushing it with.
 
-
-
-
 Make Up Kit ends here.
-

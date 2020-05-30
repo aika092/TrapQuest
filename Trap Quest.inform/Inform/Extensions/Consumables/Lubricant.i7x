@@ -1,6 +1,5 @@
 Lubricant by Consumables begins here.
 
-
 A lubricant is a kind of collectible. There are 9 lubricants. Understand "lube" or "baby oil" or "oil" as lubricant. The printed name of lubricant is "[TQlink of item described][item style][lubricant][TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The printed plural name of lubricant is "[TQlink of item described][item style][lubricant]s[TQxlink of item described][verb-desc of the item described][shortcut-desc][roman type]". The text-shortcut of lubricant is "lu".
 
 Definition: a lubricant is anal sex themed: decide yes.
@@ -23,7 +22,7 @@ To decide which number is the crafting key of (C - a lubricant):
 Lubricant has a number called timer. The timer of lubricant is usually 0.
 
 To say ShortDesc of (C - a lubricant):
-	say "[lubricant]".
+	say lubricant.
 
 To say lubricant:
 	if diaper focus is 1:
@@ -65,7 +64,6 @@ This is the lube prevents gag reflex rule:
 	if lube-bonus + I > G, rule succeeds.
 The lube prevents gag reflex rule is listed last in the gag reflex rules.
 
-
 Orilubing it with is an action applying to two things.
 Check orilubing something with:
 	if the second noun is a dispenser, try decanting the noun with the second noun instead;
@@ -82,15 +80,19 @@ Check orilubing something with:
 	if the second noun is face, try drinking the noun instead;
 	if there is a lubricant covering the second noun and the soreness of the second noun is 0, say "Your [variable second noun] is already covered in [lubricant]." instead;
 	if the latex-transformation of the player > 3, say "You don't see how that would help, your latex insides are naturally smooth and slippery and not at risk of getting sore." instead;
-	if the second noun is actually occupied:
-		say "You can't lube up your [variable second noun] while there is something in it." instead;
+	let T be a random thing penetrating the second noun;
+	if T is a live thing:
+		say "You can't lube up your [variable second noun] while there is something fucking it." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is monster fucked, say "You're a little busy right now!" instead.
 
 Carry out orilubing something with:
 	allocate 6 seconds;
 	let F be the second noun;
-	if the bimbo of the player < 8:
+	let T be a random thing penetrating F;
+	if T is a thing:
+		say "You carefully apply [lubricant] to [FuckerDesc of T] and the entrance of your [variable F], until the friction is less intense. ";
+	otherwise if the bimbo of the player < 8:
 		say "You delicately apply [lubricant] to your [variable F], until it feels a little less dry. ";
 	otherwise if the bimbo of the player < 14:
 		say "You liberally squirt [lubricant] deep into your [variable F], until it feels nice and slippery all the way inside. ";
@@ -118,14 +120,14 @@ To lube up (O - an orifice) with (L - a lubricant):
 	say "You discard the empty bottle of [lubricant].";
 	remove L from play.
 
-A time based rule (this is the lubricant drying rule):
+An all time based rule (this is the lubricant drying rule):
 	repeat with L running through lubricants covering an orifice:
 		if there is a worn refreshment clothing:
 			do nothing;
 		otherwise if spit first tattoo is worn and L is covering asshole and a random number between 1 and 3 > 1: [The tattoo makes it take much longer for the lube to dry on assholes]
 			do nothing;
 		otherwise if seconds < the timer of L:
-			decrease the timer of L by seconds;
+			decrease the timer of L by time-seconds;
 		otherwise:
 			now the timer of L is 0;
 			repeat with F running through orifices covered by L:
@@ -170,4 +172,3 @@ To destroy (C - a lubricant):
 	if C is held by the player, remove C from play.
 
 Lubricant ends here.
-

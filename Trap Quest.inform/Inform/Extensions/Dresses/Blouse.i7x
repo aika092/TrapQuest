@@ -63,7 +63,4 @@ To decide which object is the unique-upgrade-target of (C - pink bodice):
 	if diaper quest is 1 and the number of worn skirts is 0, decide on a random patterned baby dress;
 	decide on nothing.
 
-
-
 Blouse ends here.
-

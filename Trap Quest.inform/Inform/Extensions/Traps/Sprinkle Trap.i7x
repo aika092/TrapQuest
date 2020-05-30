@@ -1,6 +1,5 @@
 Sprinkle Trap by Traps begins here.
 
-
 A sprinkle trap is a kind of trap. There are 10 potentially wire potentially sticky sprinkle traps. Understand "sprinkler" as sprinkle trap.
 
 This is the spawn initial dungeon sprinkle traps rule:
@@ -46,7 +45,7 @@ To sprinkle (T - a sprinkle trap):
 			HairUp 1;
 		if the TrapNo of T is 2 and watersports fetish is 1:
 			repeat with C running through worn able to take more liquid clothing:
-				PissSoak a random number between 0 and 2 on C.
+				PissSoak a random number between 0 and 1 on C.
 
 To say SprinkleLiquid of (S - a sprinkle trap):
 	if diaper quest is 1:
@@ -68,7 +67,4 @@ To compute time decay of (T - a sprinkle trap):
 		if T is nearby, say "The [T] in the [location of T] finally stops.";
 		now T is expired.
 
-
-
 Sprinkle Trap ends here.
-

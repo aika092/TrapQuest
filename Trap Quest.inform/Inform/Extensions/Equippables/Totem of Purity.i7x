@@ -29,24 +29,22 @@ To say MonsterOfferAcceptFlav of (M - a gladiator) to (T - a pure totem):
 	say "[speech style of M]Ha! What could you possibly have that would spare you from my-...[roman type]".
 
 To say MonsterTakeFlav of (M - a gladiator) to (T - a pure totem):
-	say "[BigNameDesc of M]'s eyes grow wide, and she takes the [printed name of T] from you with a shaky hand.".
+	say "[BigNameDesc of M][']s eyes grow wide, and [he of M] takes the [printed name of T] from you with a shaky hand.".
 
 To compute resolution of (M - a gladiator) taking (T - a pure totem):
 	say OfferThanksFlav of M for T;
 	compute offer reward of M for T.
 
 To say OfferThanksFlav of (M - a gladiator) for (T - a pure totem):
-	say "It immediately begins to glow, [if M is male]causing her cock to immediately harden and then slowly shrink into nothingness, leaving her vulva as unblemished as it was before[otherwise]and as if erasing them directly from her skin, causes her bulging muscles and strange tattoos to completely disappear, leaving her in the far more natural shape she had before[end if].[line break][speech style of M]I... I must thank you. I can still feel the curse inside of me, but I must respect any warrior who rights her own wrongs. At the very least, you deserve a second chance.[roman type]".
-	
+	say "It immediately begins to glow, [if M is presenting as male]causing [his of M] [DickDesc of M] to immediately soften as a steel cage materializes around it. [otherwise]causing [his of M] [DickDesc of M] to immediately harden and then slowly shrink into nothingness, leaving [his of M] vulva as unblemished as it was before. [end if][line break][speech style of M]I... I must thank you. I can still feel the curse inside of me, but I must respect any warrior who rights [his of the player] own wrongs. At the very least, you deserve a second chance.[roman type][line break]".
 
 To compute offer reward of (M - a gladiator) for (T - a pure totem):
 	FavourUp M by (1 + the bartering value of T for M) / 2; [must happen first]
 	uncurse M.
 
 To decide which number is the bartering value of (T - a pure totem) for (M - a gladiator):
-	if M is insane gladiator or M is wild gladiator, decide on -1;
+	if M is enlightened gladiator or M is wild gladiator, decide on -10;[They don't want to be uncursed!]
 	if M is raunchy, decide on 10;[if she's cursed, she'll forgive you for everything. otherwise, it's worthless.]
 	decide on -1.
 
 Totem of Purity ends here.
-

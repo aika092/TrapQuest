@@ -6,9 +6,11 @@ A woman is a kind of monster.
 
 woman-barbara is a woman.
 
-woman-barbara is intelligent. woman-barbara has a number called delayed sluttification. woman-barbara can be stranger or introduced. woman-barbara is stranger. woman-barbara can be permanently dead. woman-barbara is not permanently dead. The leftover-type of woman-barbara is usually 130. woman-barbara can be angered. the favour of woman-barbara is 10. woman-barbara can be tentacle-pregnant. woman-barbara can be truly-female or truly-male. woman-barbara is truly-female.
+woman-barbara is intelligent. woman-barbara has a number called delayed sluttification. woman-barbara can be stranger or introduced. woman-barbara is stranger. The leftover-type of woman-barbara is usually 130. woman-barbara can be angered. the favour of woman-barbara is 10. woman-barbara can be tentacle-pregnant. woman-barbara can be truly-female or truly-male. woman-barbara is truly-female.
 
 Definition: woman-barbara is normally ally if the favour of it >= 10.
+
+Definition: woman-barbara is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 woman-barbara has a number called woman-status.
 
@@ -46,7 +48,7 @@ The text-shortcut of woman is "wo".
 To say ShortDesc of (M - woman-barbara):
 	say "[if M is stranger]the [end if][FuckerDesc of M]".
 To say MediumDesc of (M - woman-barbara):
-	say "[if M is introduced][BarbaraTitle] [BarbaraName][otherwise]mysterious woman[end if][if M is tentacle-pregnant] (pregnant)[end if]".
+	say "[if M is introduced][BarbaraTitle] [BarbaraName][otherwise]mysterious [man of M][end if][if M is tentacle-pregnant] (pregnant)[end if]".
 
 To say NameDesc of (M - woman-barbara):
 	say "[input-style][FuckerDesc of M][roman type]".
@@ -85,21 +87,21 @@ if (tg fetish is 1 and the woman-bimbo of M < 2 and lady fetish is not 1) or lad
 ]
 To say MonsterDesc of (M - woman-barbara):
 	if lady fetish is 2:
-		if the woman-bimbo of M is 0, say "A slim, brown-haired man wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. His strong jawline is darkened with stubble, and although most of his skin is covered up, you can tell he's fairly athletic. He is wearing a pair of square-rimmed glasses and carrying a modern-looking pistol.";[Barney]
-		if the woman-bimbo of M is 1, say "A man with ear-length brown hair and a soft cast to his facial features that makes him look very feminine. He is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of his nose are slightly askew, and he is carrying a modern-looking pistol.";[Barry]
-		if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, he's wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
-		if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that his [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
-		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on his top half but a sheer lace bra that leaves his nipples very visible. He is wearing black suspenders and stockings but no underwear, leaving his [manly-penis], which is locked in chastity, fully exposed. He is wearing heavily done make up. You can tell by his facial expressions that he's having more trouble than usual thinking straight.";
-		if the woman-bimbo of M is 5, say "A man wearing nothing on his top half at all except a tight black latex choker around his neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose his chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. He is wearing a very heavy amount of make up. You can tell by his facial expressions he's having huge amounts of trouble thinking straight.";
+		if the woman-bimbo of M is 0, say "A slim, brown-haired [man of M] wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. [big his of M] strong jawline is darkened with stubble, and although most of [his of M] skin is covered up, you can tell [he of M]'s fairly athletic. [big he of M] is wearing a pair of square-rimmed glasses and carrying a modern-looking pistol.";[Barney]
+		if the woman-bimbo of M is 1, say "A [man of M] with ear-length brown hair and a soft cast to [his of M] facial features that makes [him of M] look very feminine. [big he of M] is wearing a black fishnet shirt under a cropped leather jacket, and a matching pair of fishnet leggings underneath a pair of form-hugging leather shorts. The glasses resting on the bridge of [his of M] nose are slightly askew, and [he of M] is carrying a modern-looking pistol.";[Barry]
+		if the woman-bimbo of M is 2, say "A long haired brunette wearing a black fishnet shirt underneath a tight black leather corset. Below that, [he of M]'s wearing a pair of torn fishnet leggings and a tiny pair of black hotpants, which provides the bare minimum of modesty for [his of M] crotch. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";
+		if the woman-bimbo of M is 3, say "A long haired brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [his of M] [manly-penis] has been locked into chastity. [big he of M] is wearing glasses over a decent amount of makeup.";
+		if the woman-bimbo of M is 4, say "A long haired brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] [manly-penis], which is locked in chastity, fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";
+		if the woman-bimbo of M is 5, say "A [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties, which fully expose [his of M] chastity cage, along with a pair of very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions [he of M]'s having huge amounts of trouble thinking straight.";
 		if the woman-bimbo of M is 6:
-			say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if] and a matching white chastity cage around his [sissy-penis]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] fuckhole. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
+			say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if] and a matching white chastity cage around [his of M] [sissy-penis]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] fuckhole. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";
 	otherwise:
 		if the woman-bimbo of M is 0, say "A short haired, flatchested brunette wearing a dark grey shirt under a black leather jacket and a matching pair of figure-hugging leather pants. [big he of M] isn't wearing makeup, so [his of M] naturally sharp facial features are accentuated by the glasses resting on the bridge of [his of M] nose. [big he of M] is carrying a modern-looking pistol.";[no cleavage, crotch covered]
 		if the woman-bimbo of M is 1, say "A long haired, slim brunette wearing a black fishnet shirt under a cropped leather jacket and a matching pair of form-hugging leather shorts over a pair of black fishnet leggings. [big he of M] is wearing glasses over a small amount of makeup, and carrying a modern-looking pistol.";[cleavage, nipples covered, crotch covered]
 		if the woman-bimbo of M is 2, say "A long haired, big breasted brunette wearing a black fishnet shirt underneath a tight black leather corset, and a pair of torn fishnet leggings under a tiny pair of black hotpants, which provides modesty for [his of M] crotch region but little else. [big he of M] is wearing glasses over a decent amount of makeup, and carrying a modern looking pistol.";[nipples exposed, crotch covered]
 		if the woman-bimbo of M is 3, say "A long haired, large breasted brunette wearing a tight black latex top which is too small and has too large of a cleavage window to cover [his of M] nipples. A pair of fishnet leggings and a super short black latex skirt are too exposing to hide the fact that [he of M][']s not wearing underwear and barely provides any modesty for [his of M] pussy. [big he of M] is wearing glasses over a decent amount of makeup.";[nipples exposed, crotch almost visible]
-		if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that she's having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
-		if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that she's having huge amounts of trouble thinking straight.";[basically naked]
+		if the woman-bimbo of M is 4, say "A long haired, huge breasted brunette wearing nothing on [his of M] top half but a sheer lace bra that leaves [his of M] boobs and nipples very visible. [big he of M] is wearing black suspenders and stockings but no underwear, leaving [his of M] pussy fully exposed. [big he of M] is wearing heavily done make up. You can tell by [his of M] facial expressions that [he of M]'s having more trouble than usual thinking straight.";[nipples exposed, crotch exposed]
+		if the woman-bimbo of M is 5, say "A huge breasted [man of M] wearing nothing on [his of M] top half at all except a tight black latex choker around [his of M] neck. [big he of M] is wearing a pair of fake kitty cat ears with the headband well hidden under [his of M] long brown hair, which is in a ponytail. [big he of M] is also wearing a pair of black latex crotchless panties which has a line of pearls running along [his of M] pussy, and some very shiny black latex thigh-high boots with long stiletto heels. [big he of M] is wearing a very heavy amount of make up. You can tell by [his of M] facial expressions that [he of M]'s having huge amounts of trouble thinking straight.";[basically naked]
 		if the woman-bimbo of M is 6, say "A long haired, huge breasted brunette wearing nothing at all[if bukkake fetish is 0] except a pair of white latex fetish boots with chunky heels[end if]. [big his of M] facial expression is one of empty-headed bliss.[if bukkake fetish is 1] [big he of M] is thoroughly covered in [semen] from head to toe, and has yet more [semen] dripping out of [his of M] two lower fuckholes. [big his of M] hips and buttcheeks must have doubled if not tripled in size since you first met [him of M].";[actually naked]
 	if M is tentacle-pregnant, say "[big his of M] massive bulging belly is a clear sign that [he of M][']s pregnant, and probably with something inhuman.";
 	if the human-toilet-scene of M is 1, say "[big he of M] is wearing oversized nipple rings and has the words 'TOILET SLUT' and 'URINAL GIRL' permanently written onto [his of M] flesh.";
@@ -108,11 +110,14 @@ To say MonsterDesc of (M - woman-barbara):
 
 To set up (M - woman-barbara):
 	now the monstersetup of M is 1;
-	now the difficulty of M is 20;
-	now the health of M is the maxhealth of M;
 	[if lady fetish is 2, now M is truly-male;]
 	now M is in Woods01;
+	now the raw difficulty of M is 17;
+	now the health of M is the maxhealth of M;
 	calm M.
+
+To decide which number is the difficulty of (M - woman-barbara):
+	decide on the raw difficulty of M + game difficulty - (woman-bimbo of M * 2).
 
 Definition: woman-barbara is unfriendly rather than friendly if it is angered and it is not pacified.
 Definition: woman-barbara is uniquely unfriendly: decide no.
@@ -125,12 +130,10 @@ To WomanSluttify:
 To ImmediateWomanSluttify:
 	if woman-barbara is introduced and the woman-bimbo of woman-barbara < 6:
 		increase the woman-bimbo of woman-barbara by 1;
-		decrease the difficulty of woman-barbara by 2;
 		update name of woman-barbara.
 To ImmediateWomanUnsluttify:
 	if woman-barbara is introduced and [the woman-bimbo of woman-barbara >= 2]the woman-bimbo of woman-barbara > 0:
 		decrease the woman-bimbo of woman-barbara by 1;
-		increase the difficulty of woman-barbara by 2;
 		update name of woman-barbara;
 To WomanUnsluttify:
 	if woman-barbara is introduced and the woman-bimbo of woman-barbara > 0:
@@ -186,7 +189,7 @@ This is the spawn initial barbara rule:
 The spawn initial barbara rule is listed in the setting up woods monsters rules.
 
 To uniquely destroy (M - woman-barbara): [Are there any special rules we need to follow?]
-	now M is permanently dead. [This should stop her spawning again.]
+	now M is permanently banished. [This should stop her spawning again.]
 
 Definition: woman-barbara is human: decide yes.
 
@@ -245,17 +248,13 @@ STATES:
 7: Just freed the player from bondage (or told them no)
 ==Anything below 10 can be interpreted as normal wandering and hijacked for a scene==
 
-
-
 29: Just rescued from the vine boss hole
 ==Anything below 30 implies that a scene has just ended so a new one shouldn't start, but she's able to move around as normal==
-
-
 
 ==Anything 80 or above prevents protection==
 80: Anal only stool
 
-==Anything 90 or above prevents movement
+==Anything 90 or above prevents movement==
 90: Appeared by being fucked by vines in the woods
 91: Appeared by being fucked by mechanic in the hotel
 92: Appeared to try the deepthroat discount challenge with the shopkeeper
@@ -267,11 +266,20 @@ STATES:
 99: Dead
 ]
 
+Definition: woman-barbara is summon appropriate: decide no. [Can she be randomly selected to be summoned?]
+Definition: woman-barbara is redeploy appropriate:
+	if it is not angered and it is summon-available and it is introduced and (it is off-stage or (the woman-status of it < 10 and it is not in the location of the player and it is not nearby)):
+		if the number of interested regional monsters is 0, decide yes;
+	decide no.
+Definition: woman-barbara is deploy appropriate if it is off-stage and it is not angered and it is summon-available and it is introduced.
+Definition: woman-barbara is angry deploy appropriate if it is off-stage and it is summon-available and it is introduced.
+
 To deploy (M - woman-barbara) with woman-status (V - a number):
 	now the woman-status of M is V;
 	now the sleep of M is 0;
 	now the boredom of M is 0;
-	if M is off-stage and M is introduced and M is not permanently dead and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops barbara spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
+	now M is not interested;
+	if M is introduced and M is summon-available and (playerRegion is Dungeon or playerRegion is Woods or playerRegion is Hotel): [stops barbara spawning somewhere stupid like hole in the wall, iron maiden, blindfolded]
 		now the health of M is the maxhealth of M;
 		if V is 2:
 			now M is in the location of the player;
@@ -279,7 +287,7 @@ To deploy (M - woman-barbara) with woman-status (V - a number):
 			now M is interested;
 		otherwise if V is 3:
 			now M is in Dungeon06;
-			if the player is in Dungeon06, say "[bold type]You spot [M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
+			if the player is in Dungeon06, say "[bold type]You spot [NameDesc of M] trotting up to you![roman type] [big he of M] grins seemingly oblivious to your presence, and then pulls the foreboding looking lever before you can react.";
 			now minotaur is unleashed;
 			if the player is in Dungeon36, say "You hear a mechanism whirring and watch with [if the bimbo of the player < 8]horror[otherwise if the bimbo of the player < 13]terrified excitement[otherwise]delight[end if] as the [minotaur][']s cage suddenly swings open!";
 			otherwise say "You hear a mechanism whirring, and what sounds like a metal door swing open.";
@@ -289,7 +297,7 @@ To deploy (M - woman-barbara) with woman-status (V - a number):
 The womanspawning rules is a rulebook.
 
 A time based rule (this is the woman spawning rule):
-	if woman-barbara is off-stage and woman-barbara is introduced and woman-barbara is not permanently dead:
+	if woman-barbara is angry deploy appropriate:
 		follow the womanspawning rules;
 	if woman-barbara is off-stage:
 		while the delayed sluttification of woman-barbara > 0:
@@ -301,11 +309,11 @@ A time based rule (this is the woman spawning rule):
 	otherwise:
 		if woman-barbara is not regional and (woman-barbara is not in WoodsBoss01 or playerRegion is not woods):
 			vanish woman-barbara;
-		otherwise if a random number between 1 and 40 is 1:
+		otherwise if a random number between 1 and 40 is 1 or woman-barbara is asleep:
 			unless woman-barbara is in the location of the player or woman-barbara is nearby or woman-barbara is stranger or the woman-status of woman-barbara >= 80, vanish woman-barbara.
 
 This is the woman spawning to help the player with bondage rule:
-	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1:
+	if there is worn locked clothing and portal gag is not worn and wrist collar bar is not worn and a random number between 1 and 60 is 1 and the player is not in danger:
 		deploy woman-barbara with woman-status 2;
 		rule succeeds.
 The woman spawning to help the player with bondage rule is listed last in the womanspawning rules.
@@ -342,7 +350,7 @@ The woman spawning in the region of the player rule is listed last in the womans
 Chapter - Hotel Chair Scene
 
 Report going when the player is in Hotel21 and Hotel21 is not discovered:
-	if woman-barbara is introduced and the number of monsters in Hotel21 is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in Hotel21 is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 5;
 		say "You walk into the staff room just in time to see [NameDesc of woman-barbara] sitting down on one of the dildo chairs in this room, easing the large golden dong into [his of woman-barbara] asshole. Suddenly [he of woman-barbara] yelps. ";
 		let R be a random number between 1 and 4;
@@ -369,7 +377,7 @@ woman-barbara has a number called vine-scene.
 
 Report going when there is an aggressive vine in the location [of the player ]and the woman-bimbo of woman-barbara < 4 and the vine-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 90;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -377,13 +385,13 @@ Report going when there is an aggressive vine in the location [of the player ]an
 			now the TrapNo of V is -7500; [prevents it from attacking the player]
 		say "As you arrive here you see that [NameDesc of woman-barbara] is here, on [his of woman-barbara] hands and knees, with strong green vines wrapped around [his of woman-barbara] wrists and ankles, holding them in place.".
 
-A time based rule (this is the barbara vines rule):
+An all time based rule (this is the barbara vines rule):
 	if the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 4:
 		if there are vines in the location of woman-barbara:
 			let W be woman-barbara;
 			increase the vine-scene of W by 1;
 			if the vine-scene of W is 1:
-				 if W is in the location of the player, say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me [please], it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] [HoleDesc of W]. It looks like you could [if inline hyperlinks >= 2][link]pull vines[as]pull[end link][otherwise][bold type]pull[roman type][end if] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
+				if W is in the location of the player, say "[second custom style]'[NameBimbo], thank goodness you're here! Quick, help me [please], it's going to - unf!!!'[roman type][line break][BigNameDesc of W] is cut off as a thick green vine pushes its way into [his of W] [HoleDesc of W]. It looks like you could [if inline hyperlinks >= 2][link]pull vines[as]pull[end link][otherwise][bold type]pull[roman type][end if] on the vines to try and rescue [him of W], or just sit back, [bold type]wait[roman type] and watch.";
 			otherwise if the vine-scene of W is 2:
 				if W is in the location of the player, say "[second custom style]'Come on [NameBimbo], what's the hold-up?! Aaaahn~'[roman type][line break]A second green vine finds room in [NameDesc of W][']s [HoleDesc of W] next to the first, stretching it wide.";
 			otherwise if the vine-scene of W is 3:
@@ -418,6 +426,12 @@ To WomanVinePull:
 	if the traitor-hypno of hypno-lesson > 0:
 		say "Something inside you urges you to [second custom style]help your friend[roman type] instead. You stand and watch.";
 		if the vine-scene of W >= 4, decrease the traitor-hypno of hypno-lesson by 1;
+	otherwise if the player is upright and clumsy april fools is 1:
+		say "You reach for a vine but instead trip and fall!";
+		try kneeling;
+		say aprilFoolsClumsyFlav;
+		now another-turn is 1;
+		now another-turn-flavour is "It takes you a few moments to steady yourself in the dirt and find your hands.";
 	otherwise:
 		say "You yank at the vines holding one of [NameDesc of W][']s wrists and it loosens enough for [him of W] to pull free. Then with your help [he of W] is able to quickly loosen the rest, pull the dastardly ones inside of [him of W] out and then finally stand up!";
 		if the vine-scene of W is 1:
@@ -443,15 +457,13 @@ To WomanVinePull:
 			increase the delayed sluttification of W by 1;
 		now the vine-scene of W is 6.
 
-
-
 Chapter - Vine Hole Scene
 
 woman-barbara has a number called vine-hole-scene.
 
 Report going when the vine-hole-scene of woman-barbara is 0 and the woman-bimbo of woman-barbara is 2 and the player is the donator and the location is Woods16:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and woman-barbara is not permanently dead and another-turn is 0 and vine boss is in WoodsBoss01 and the vine-scene of woman-barbara is 6:
+	if the number of monsters in the location of the player is 0 and another-turn is 0 and vine boss is in WoodsBoss01 and the vine-scene of woman-barbara is 6 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 29;
 		now the vine-hole-scene of woman-barbara is 1;
 		now woman-barbara is in the location of the player;
@@ -520,17 +532,13 @@ Report going when the vine-hole-scene of woman-barbara is 0 and the woman-bimbo 
 			otherwise:
 				increase the woman-bimbo of woman-barbara by 1.
 
-
-
-
-
 Chapter - Mechanic Sex Scene
 
 woman-barbara has a number called mechanic-scene.
 
 Report going when there is an uninterested mechanic in the location [of the player ]and the mechanic-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and the number of monsters in the location of the player is 1 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 1 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 91;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -582,7 +590,7 @@ Check kneeing mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-
 Check kicking mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-barbara is 91:
 	if the mechanic-scene of woman-barbara <= 3 and woman-barbara is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
 
-A later time based rule (this is the mechanic finishes with barbara rule):
+An all later time based rule (this is the mechanic finishes with barbara rule):
 	if the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 3 and mechanic is not in the location of the player:
 		increase the mechanic-scene of woman-barbara by 1;
 		if the mechanic-scene of woman-barbara is 4:
@@ -592,7 +600,6 @@ A later time based rule (this is the mechanic finishes with barbara rule):
 			increase the delayed sluttification of woman-barbara by 1;
 			FavourDown woman-barbara;
 			now the sleep of woman-barbara is 300.
-
 
 To say WaitingFlav of (M - a mechanic):
 	unless the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 5 and woman-barbara is in the location of the player:
@@ -606,9 +613,9 @@ woman-barbara has a number called anal-contraption-search.
 
 Understand "fucking", "machine", "box", "pink dildo", "rope", "ropes", "pulley", "pulleys", "spring", "springs", "glue", "glove", "gloves" as woman-barbara when the woman-status of woman-barbara is 93.
 
-Report going when the player is in Hotel37 and the anal-contraption-scene of woman-barbara is 0 and the player is the donator:
+Report going when the player is in Hotel37 and the anal-contraption-scene of woman-barbara is 0:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead and dominatrix is alive:
+	if the number of monsters in the location of the player is 0 and dominatrix is alive and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 93;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
@@ -692,12 +699,12 @@ Check searching woman-barbara when the woman-status of woman-barbara is 93 and t
 	do nothing instead.
 
 To compute DominatrixInterruption:
-	if dominatrix is in the location or dominatrix is in the room east from the location or (a random number between 1 and 10) is 1:
+	if clumsy april fools is 1 or dominatrix is in the location or dominatrix is in the room east from the location or (a random number between 1 and 10) is 1:
 		let M be dominatrix;
 		now M is in the location of the player;
 		now M is interested;
 		anger M;
-		say "[bold type]All of a sudden, [BigNameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break][big he of M] crosses [his of M] arms at the wrists, making an intricate sign with [his of M] fingers.[line break][speech style of M]'Mutanretla Menimoh.'[roman type][line break]Your head feels funny... And then your body feels funny. You try to move your hands but they are glued to your buttcheeks, holding your [asshole] open wide. Your ankles are dangling high in the air above your face, attached to ropes and pulleys. Your legs feel completely exhausted. [NameDesc of woman-barbara] is looking down at you with [horror (the woman-bimbo of woman-barbara * 4)] from a kneeling position next to you. You've somehow swapped positions with [him of woman-barbara]!";
+		say "[bold type][if clumsy april fools is 1]You accidentally knock two pulleys into each other, which make a loud metal CLANG! [roman type][aprilFoolsClumsyFlav][bold type]Moments later[otherwise]All of a sudden,[end if] [NameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break][big he of M] crosses [his of M] arms at the wrists, making an intricate sign with [his of M] fingers.[line break][speech style of M]'Mutanretla Menimoh.'[roman type][line break]Your head feels funny... And then your body feels funny. You try to move your hands but they are glued to your buttcheeks, holding your [asshole] open wide. Your ankles are dangling high in the air above your face, attached to ropes and pulleys. Your legs feel completely exhausted. [NameDesc of woman-barbara] is looking down at you with [horror (the woman-bimbo of woman-barbara * 4)] from a kneeling position next to you. You've somehow swapped positions with [him of woman-barbara]!";
 		repeat with C running through worn total protection clothing:
 			now C is in the location of the player;
 		repeat with C running through worn equippables:
@@ -736,7 +743,6 @@ To compute contraption climax of (M - a monster):
 	say "[BigNameDesc of woman-barbara] slinks away, muttering a quiet [speech style of woman-barbara]'Sorry.'[roman type][line break]";
 	vanish woman-barbara.
 
-
 Chapter - Shopkeeper Discount Scene
 
 woman-barbara has a number called shopkeeper-scene.
@@ -754,7 +760,6 @@ Report going when shopkeeper is in the location [of the player ]and woman-barbar
 	[increase the delayed sluttification of woman-barbara by 1;]
 	now the woman-status of woman-barbara is 92;
 	now the shopkeeper-scene of woman-barbara is 1.
-
 
 Chapter - Hotel Hypno Scene
 
@@ -788,12 +793,12 @@ woman-barbara has a number called human-toilet-scene.
 
 To check barbara toilet:
 	if the player is in Hotel38 and watersports fetish is 1:
-		if the human-toilet-scene of woman-barbara is 0 and woman-barbara is not permanently dead and woman-barbara is introduced and woman-barbara is not nearby and woman-barbara is not in the location of the player and the woman-bimbo of woman-barbara >= a random number between 2 and 5 and the woman-status of woman-barbara < 10:
-			say "A groaning, gurgling noise from below you makes you notice that the woman below you looks different from usual.";
+		if the human-toilet-scene of woman-barbara is 0 and the woman-bimbo of woman-barbara >= (a random number between 2 and 5) and the woman-status of woman-barbara < 10 and woman-barbara is redeploy appropriate:
+			say "A groaning, gurgling noise from below you makes you notice that the [man of woman-barbara] below you looks different from usual.";
 			cutshow figure of barbara cutscene 4 for toilet;
 			say "Looking [if the player is possessing a vagina]between your legs [end if]into the toilet bowl you realise you recognise the ring-gagged face at the bottom - it's [NameDesc of woman-barbara]! [big he of woman-barbara] looks up at you with imploring puppy-dog eyes.[line break][speech style of woman-barbara]'Wease eh ee ow! Weeeease! Ha hay-hron hah heh hee!'[roman type][line break]You think you understand what [he of woman-barbara][']s saying? There's a key that can be used to release [him of woman-barbara], but it's currently in the possession of a hotel patron. Perhaps if you spend enough time in the hotel, you'll be able to encounter [him of a random patron] and agree to pay some kind of... [']ransom[']. Until then there's nothing you can do about the fact that [NameDesc of woman-barbara] is the new hotel toilet. It's up to you how many more times you use [his of woman-barbara] mouth as your waste disposal unit. You doubt it'll be very good for [his of woman-barbara] sanity, but it might help you feel more dominant.";
 			now the human-toilet-scene of woman-barbara is 2;
-			now woman-barbara is permanently dead;
+			now woman-barbara is permanently banished;
 			WomanSluttify;
 		otherwise if the human-toilet-scene of woman-barbara is not 1:
 			cutshow figure of barbara cutscene 4 for toilet;
@@ -821,7 +826,7 @@ To compute barbara toilet release:
 		otherwise:
 			allocate 6 seconds;
 			now the human-toilet-scene of woman-barbara is 1;
-			now woman-barbara is not permanently dead;
+			now woman-barbara is summon-available;
 			say "You push the key into the slot and twist. Moments later you have parted the front of the toilet bowl and [NameDesc of woman-barbara] is clambering out of [his of woman-barbara] prison. [big he of woman-barbara] rolls over onto [his of woman-barbara] side and promptly pukes up a gallon of [urine].[line break][speech style of woman-barbara]'Thank you so much for saving me...'[roman type][line break]That's all [he of woman-barbara] can manage before passing out.";
 			deploy woman-barbara with woman-status 95;
 			now woman-barbara is in the location of the player;
@@ -850,8 +855,9 @@ woman-barbara has a number called patron-scene-fighting.
 
 To compute patron scene of (W - woman-barbara):
 	repeat with M running through off-stage patrons:
-		now M is in the location of the player;
-		set up M;
+		if M is not a real-life patron:
+			now M is in the location of the player;
+			set up M;
 	now neighbour finder is the location of the player;
 	now the woman-status of W is 96;
 	now the patron-scene-done of W is 1;
@@ -1094,27 +1100,25 @@ Check pulling woman-barbara when the woman-status of woman-barbara is 80 and the
 	now the stool-scene of the noun is 2;
 	vanish the noun instead.
 
-
-
 Chapter - Throne Scene
 
 woman-barbara has a number called throne-scene.
 
-Report going when the player is in Dungeon11 and the player is an april 2019 top donator and the woman-bimbo of woman-barbara is 4 and the throne-scene of woman-barbara is 0 and (woman-barbara is off-stage or the woman-status of woman-barbara < 10):
+Report going when the player is in Dungeon11 and the player is the donator and the woman-bimbo of woman-barbara is 4 and the throne-scene of woman-barbara is 0 and woman-barbara is redeploy appropriate:
 	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
+	if the number of monsters in the location of the player is 0 and woman-barbara is redeploy appropriate:
 		deploy woman-barbara with woman-status 97;
 		now woman-barbara is in the location of the player;
 		now woman-barbara is interested;
 		say "As you arrive you see [NameDesc of woman-barbara] is here, sitting on the throne. [big his of woman-barbara] belly looks a little more round than you'd expect. It looks like [he of woman-barbara] was about to stand up, but then [he of woman-barbara] saw you and changed [his of woman-barbara] mind.".
 
-A time based rule (this is the barbara throne rule):
+An all time based rule (this is the barbara throne rule):
 	if the woman-status of woman-barbara is 97 and the throne-scene of woman-barbara <= 4:
 		let W be woman-barbara;
 		if W is in the location of the player:
 			increase the throne-scene of W by 1;
 			if the throne-scene of W is 1:
-				 say "[speech style of W]'Oh wow, [NameBimbo], fancy seeing you here at a time like this. Not that there's anything going on here. Nothing's going on here. Would you mind, um, leaving me alone for a moment?'[roman type][line break]";
+				say "[speech style of W]'Oh wow, [NameBimbo], fancy seeing you here at a time like this. Not that there's anything going on here. Nothing's going on here. Would you mind, um, leaving me alone for a moment?'[roman type][line break]";
 			otherwise if the throne-scene of W is 2:
 				say "You can see [NameDesc of W][']s belly growing larger with each moment that passes. Is [he of W] getting filled up from behind?[line break][speech style of W]'Seriously, there's nothing going on here, so if you could please just leave me alone for a brief second I'll... ergh...'[roman type][line break]";
 			otherwise:
@@ -1155,52 +1159,41 @@ A time based rule (this is the barbara throne rule):
 			SemenPuddleUp 20 in (the location of W);
 			vanish W.
 
-
-
-
-
 Chapter - Crafting Scene
 
 woman-barbara has a number called crafting-scene.
 
-Report going when the player is in Dungeon37 and the player is an april 2019 top donator and the woman-bimbo of woman-barbara is 4 and the crafting-scene of woman-barbara is 0 and (woman-barbara is off-stage or the woman-status of woman-barbara < 10):
-	if debugmode is 1, say "Checking if barbara can appear.";
-	if woman-barbara is introduced and woman-barbara is not angered and the number of monsters in the location of the player is 0 and the number of interested regional monsters is 0 and woman-barbara is not permanently dead:
-		let W be woman-barbara;
-		deploy W with woman-status 6;
-		now W is in the location of the player;
-		now W is interested;
-		say "You see [NameDesc of W] is here, in the middle of crafting a potion. [big he of W] is bent over at the waist, deep in thought, [his of W] [if lady fetish < 2]pussy and [end if]asshole on total display.";
-		alwayscutshow Figure of Barbara Cutscene 6 for W;
-		say "Before you can say anything, [he of woman-barbara] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of W]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of W] hands you the pink vial.";
-		appropriate-cutscene-display Figure of Barbara Cutscene 7;
-		say "Do you drink it? ";
-		if the player is consenting:
-			say "You bravely swig the vial in a single gulp. ";
-			if a random number between 1 and 3 is 1:
-				let L be the list of worn upgradable clothing;
-				say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
-				repeat with C running through L:
-					potentially transform C;
-			otherwise:
-				say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
-				SexAddictDown 1;
-				FuckholeAddictDown 1;
-				IntUp 1;
+Report going when the player is in Dungeon37 and the player is the donator and the woman-bimbo of woman-barbara is 4 and the crafting-scene of woman-barbara is 0 and woman-barbara is redeploy appropriate:
+	let W be woman-barbara;
+	deploy W with woman-status 6;
+	now W is in the location of the player;
+	now W is interested;
+	say "You see [NameDesc of W] is here, in the middle of crafting a potion. [big he of W] is bent over at the waist, deep in thought, [his of W] [if lady fetish < 2]pussy and [end if]asshole on total display.";
+	alwayscutshow Figure of Barbara Cutscene 6 for W;
+	say "Before you can say anything, [he of woman-barbara] stands up triumphantly, holding a small vial full of a brightly glowing pink liquid.[line break][speech style of W]'Oh hey [NameBimbo], I almost didn't notice you there! I think this one is gonna be good! Do you want to try it? If you don't, I'll be the guinea pig myself!'[roman type][line break][big he of W] hands you the pink vial.";
+	appropriate-cutscene-display Figure of Barbara Cutscene 7;
+	say "Do you drink it? ";
+	if the player is consenting:
+		say "You bravely swig the vial in a single gulp. ";
+		if a random number between 1 and 3 is 1:
+			let L be the list of worn upgradable clothing;
+			say "Almost immediately you can tell something is wrong. You feel uneasy[if the number of entries in L > 0]. And then the magic bursts out of your body and into your clothes![otherwise]... but nothing happens? Weird. Oh well, no harm done apparently.[end if]";
+			repeat with C running through L:
+				potentially transform C;
 		otherwise:
-			say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
-			if a random number between 1 and 2 is 1:
-				say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
-				ImmediateWomanSluttify;
-			otherwise:
-				say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
-				ImmediateWomanUnsluttify;
-			say MonsterDesc of W.
-
-
-
-
-
+			say "Almost immediately, you feel great! Your mind feels sharper and some of your new desires feel less important.";
+			SexAddictDown 1;
+			FuckholeAddictDown 1;
+			IntUp 1;
+	otherwise:
+		say "[BigNameDesc of W] takes the vial back and bravely swigs it in a single gulp. ";
+		if a random number between 1 and 2 is 1:
+			say "Almost immediately you can tell something is wrong.[line break][speech style of W]'I don't feel so good...'[roman type][line break]You see [his of W] mind going blanker as the magic potion transforms [his of W] clothes!";
+			ImmediateWomanSluttify;
+		otherwise:
+			say "[line break][speech style of W]'Yeah, I feel amazing!'[roman type][line break]You see [his of W] mind becoming sharper as the magic potion transforms [his of W] clothes!";
+			ImmediateWomanUnsluttify;
+		say MonsterDesc of W.
 
 Part 4 - Wandering
 
@@ -1266,7 +1259,6 @@ This is the woman gives birth to a tentacle monster rule:
 			anger M;
 			rule succeeds.
 The woman gives birth to a tentacle monster rule is listed last in the barbara wandering rules.
-
 
 Part 5 - Protection
 
@@ -1396,30 +1388,27 @@ To say StrikingSuccessFlav of (M - woman-barbara) on (B - a body part):
 
 Section 2 - Damage
 
-To compute damage of (M - woman-barbara):
-	if the health of M > 0:
-		if M is awake:
-			if M is uninterested or M is not angered:
-				say "[BigNameDesc of M] looks shocked.[line break][speech style of M]'[one of]Fucking bitch! Come on then![or]What the fuck is your problem? You're going down!'[or]Oh you are going to wish you never messed with me!'[at random][roman type][line break]";
-				now M is interested;
-				now M is angered;
-			otherwise:
-				say DamageReaction (the health of M) of M;
+To compute damage reaction of (M - woman-barbara):
+	if M is awake:
+		if M is uninterested or M is not angered:
+			say "[BigNameDesc of M] looks shocked.[line break][speech style of M]'[one of]Fucking bitch! Come on then![or]What the fuck is your problem? You're going down!'[or]Oh you are going to wish you never messed with me!'[at random][roman type][line break]";
+			now M is interested;
+			now M is angered;
 		otherwise:
-			decrease the sleep of M by 300;
-			if the health of M < the maxhealth of M / 2, now the sleep of M is 0;
-			if the sleep of M < 0, now the sleep of M is 0;
-			if M is awake:
-				say "[big he of M] wakes up, looking very pissed off indeed! Uh-oh...";
-				now M is interested;
-				anger M;
-			otherwise:
-				say "[big he of M] is still unconscious.";
+			say DamageReaction (the health of M) of M;
 	otherwise:
-		compute death of M.
+		decrease the sleep of M by 300;
+		if the health of M < the maxhealth of M / 2, now the sleep of M is 0;
+		if the sleep of M < 0, now the sleep of M is 0;
+		if M is awake:
+			say "[big he of M] wakes up, looking very pissed off indeed! Uh-oh...";
+			now M is interested;
+			now M is angered;
+		otherwise:
+			say "[big he of M] is still unconscious.".
 
 To say DamageReactHealthy of (M - woman-barbara):
-	say "[big he of M] looks [one of][or]even [stopping]more pissed off than she did already!".
+	say "[big he of M] looks [one of][or]even [stopping]more pissed off than [he of M] did already!".
 
 To say DamageReactDamaged of (M - woman-barbara):
 	say "[big he of M] grunts in pain!".
@@ -1433,17 +1422,22 @@ To say DamageReactWeak of (M - woman-barbara):
 To say DamageReactSubmissive of (M - woman-barbara):
 	say "[big he of M] groans in pain, [if the size of penis <= 3]seemingly resigning [himself of M] to something[otherwise]staring apprehensively at your crotch[end if] as [he of M] fights to maintain [his of M] balance.".
 
-To compute unique death of (M - woman-barbara):
-	now the sleep of M is 0;
-	if the health of M <= 0:
+To compute defeat of (M - woman-barbara):
+	now the health of M is 1;
+	if M is awake:
+		say "[big he of M] drops to the ground, unconscious.";
+		now M is angered;
+		WomanSluttify;
 		if the woman-bimbo of M <= 2:
 			now magic pistol is in the location of the player;
-			say "[big he of M] [if M is awake]grunts and drops to the ground before disappearing[otherwise]stops breathing and then disappears[end if]. [big his of M] gun is left behind, lying on the ground.";
+			say "[big his of M] gun falls out of [his of M] hand.";
 			compute autotaking magic pistol;
 		otherwise:
-			say "[big he of M] [if M is awake]grunts and drops to the ground before disappearing[otherwise]stops breathing and then disappears[end if].";
 			loot M;
-			loot M.
+		now the sleep of M is 300.
+
+To say LootFlav of (X - a thing) by (M - woman-barbara):
+	say "You notice that [he of M][']s wearing a [printed name of X]!".
 
 Part 7 - Conversation
 
@@ -1469,7 +1463,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 		say "[variable custom style][gag sounds][roman type][line break]";
 	if the woman-status of M is 0 and M is stranger:
 		say "[second custom style]'Oh shit! Wait... oh my god, are you another player? I didn't realise there was more than one of us playing at the same time! [if the faint count of the player > 1]No wonder the map keeps resetting around me... [otherwise if the faint count of the player is 1]No wonder the map shifted around me a while ago! [end if]I wonder if we're allowed to work together? What's my name? My name... I can't think of anything except 'Barbara'... but I don't think that is my real name...'[roman type][line break]";
-		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M]'ll start to lose the game herself, and become more slutty. Also, sometimes when you bump into [him of M] [he of M]'ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
+		if newbie tips is 1, say "[newbie style]Newbie tip: Barbara is a special type of NPC, that under normal circumstances remains friendly throughout the entire course of the game, and will even fight alongside you, or appear to help you out of sticky situations. However if bad things happen, including if you lose a fight alongside [him of M], [he of M]'ll start to lose the game [himself of M], and become more slutty. Also, sometimes when you bump into [him of M] [he of M]'ll be in the middle of a predicament, and you have to choose whether to help [him of M] or let it happen. Letting it happen usually either avoids the risk of bad stuff, or rewards you with powerful items. However, it'll continue Barbara's progress towards becoming a brainless bimbo. A super slutty Barbara is a sort-of useless sidekick who can even do really unhelpful things like release the [ShortDesc of minotaur].[roman type][line break]";
 		now M is introduced;
 		now the text-shortcut of M is "ba";
 	otherwise if the woman-status of M is 91 and the mechanic-scene of M <= 5 and M is in the location of the player and mechanic is unfriendly:
@@ -1501,7 +1495,7 @@ To compute talk option (N - 1) to (M - woman-barbara):
 	otherwise if the woman-status of M is 2 or the woman-status of M is 7:
 		if the favour of M < the bondage-favour-limit of M:
 			say "[second custom style]'Karma's a bitch, but not as much of a bitch as you.'[roman type][line break]";
-		otherwise	if the woman-old-bimbo of M is the woman-bimbo of M:
+		otherwise if the woman-old-bimbo of M is the woman-bimbo of M:
 			if the woman-bimbo of M < 3:
 				say "[second custom style]'You should be more careful, bondage is really difficult to deal with.'[roman type][line break]";
 			otherwise if the woman-bimbo of M < 5:
@@ -1587,14 +1581,14 @@ To compute talk option (N - 2) to (M - woman-barbara):
 			say "[second custom style]'[one of]Why am I back down here? To [']fight['] the [ShortDesc of minotaur], of course, silly!'[or]Yep, I've let it out! If I were you, I've leave the Dungeon before it finds you! Unless you want to join in with the fun?'[or]I don't know what happens if the [ShortDesc of minotaur] catches you, that's why I want to find out!'[cycling][roman type][line break]";
 	otherwise if playerRegion is Dungeon:
 		if the woman-bimbo of M < 3:
-			say "[second custom style]'[one of]Why am I back down here? Well the shop and altar are often useful, and until the royal guards turn aggressive it's a bit safer than anywhere else.'[or][if minotaur is alive]The [ShortDesc of minotaur]? There's a lever in the prison guard's room that I bet releases him, but I'm too scared to try it.'[otherwise]I can't believe you have slain the [ShortDesc of minotaur] either! You're amazing!'[end if][or]The royal bed? I think it heals you to full, but I'm not sure it's worth it, I bet it also helps turn you into a bimbo.'[in random order][roman type][line break]";
+			say "[second custom style]'[one of]Why am I back down here? Well the shop and altar are often useful, and until the royal guards turn aggressive it's a bit safer than anywhere else.'[or][if minotaur is alive]The [ShortDesc of minotaur]? There's a lever in the prison guard's room that I bet releases [him of minotaur], but I'm too scared to try it.'[otherwise]I can't believe you have slain the [ShortDesc of minotaur] either! You're amazing!'[end if][or]The royal bed? I think it heals you to full, but I'm not sure it's worth it, I bet it also helps turn you into a bimbo.'[in random order][roman type][line break]";
 		otherwise if the woman-bimbo of M < 5:
 			say "[second custom style]'[one of]Why am I back down here? Well the sex dolls are easy to beat, and that shopkeeper is just so delicious...'[or][if minotaur is caged and minotaur is alive]The [ShortDesc of minotaur]? There's a lever in the prison guard's room that I'm always tempted to try out...'[otherwise]I can't believe you have released the minotaur either! You're so daring!'[end if][or]The statue with the huge penis? Yeah it somehow magically heals your orifices, and it helps you get used to the taste of semen, which is a good thing, right?'[in random order][roman type][line break]";
 		otherwise:
-			say "[second custom style]'[one of]Why am I back down here? Well I wanted to see if I could beat up a royal guard. Turns out I can't, but don't worry, he gave me a consolation prize! *giggle*'[or][if minotaur is caged and minotaur is alive]The [ShortDesc of minotaur] cage? There's a lever somewhere apparently, and when I find it I'm definitely going to try it out!'[otherwise]I can't believe we've released the [ShortDesc of minotaur] either! How fun...'[end if][in random order][roman type][line break]";
+			say "[second custom style]'[one of]Why am I back down here? Well I wanted to see if I could beat up a royal guard. Turns out I can't, but don't worry, [he of a random royal guard] gave me a consolation prize! *giggle*'[or][if minotaur is caged and minotaur is alive]The [ShortDesc of minotaur] cage? There's a lever somewhere apparently, and when I find it I'm definitely going to try it out!'[otherwise]I can't believe we've released the [ShortDesc of minotaur] either! How fun...'[end if][in random order][roman type][line break]";
 	otherwise if playerRegion is Hotel:
 		if the woman-bimbo of M < 4:
-			say "[second custom style]'[one of]I'm still looking for the way out. I hope you haven't fallen into complete depravity yet, have you?'[or]From the looks of it, I'd say that the mechanic looks like he's probably the most dangerous of the lot. But it's just a hunch.'[or]I'd just had way too much trouble with those vines, so I came up here to get away from here. And now I have to deal with robots! Grr!'[in random order][roman type][line break]";
+			say "[second custom style]'[one of]I'm still looking for the way out. I hope you haven't fallen into complete depravity yet, have you?'[or]From the looks of it, I'd say that the mechanic looks like [he of mechanic]'s probably the most dangerous of the lot. But it's just a hunch.'[or]I'd just had way too much trouble with those vines, so I came up here to get away from here. And now I have to deal with robots! Grr!'[in random order][roman type][line break]";
 		otherwise:
 			say "[second custom style]'[one of]I'm getting myself some deliciously thick robot cock! What about you?'[or]I don't know who's the strongest here, but it's definitely not me! Tee hee.'[or]Ooh, yes, you must try the modification machine in room 101 - I feel much more ready to [']take on['] the monsters now, if you know what I mean.'[in random order][roman type][line break]";
 	otherwise if there is a revealed hypno trap in the location of M: [looking at hypno trap]
@@ -1630,5 +1624,9 @@ Definition: woman-barbara is dismissable if the woman-status of it < 80.
 To say Undismissable of (M - woman-barbara):
 	say "[BigNameDesc of M] seems [if the woman-status of M is 80]a bit confused[otherwise]to choose to ignore that[end if].".
 
-Woman Barbara ends here.
+To compute enema floor reaction of (M - woman-barbara):
+	humiliate 100;
+	if voluntarySquatting is 1, humiliate 200;
+	if M is interested and M is friendly, say "[BigNameDesc of M] coughs and pretends [he of M] doesn't notice.".
 
+Woman Barbara ends here.

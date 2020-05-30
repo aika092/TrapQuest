@@ -184,7 +184,6 @@ Report resisting:
 				say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 				try examining daddy's wild child tattoo.
 
-
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;
 	otherwise say "[if T is penetrating a body part][one of]You struggle in vain to free yourself![or]You try to crawl away but are being held in place![or]You resist being used as much as you can![purely at random][otherwise][DefaultResistFlav of T][end if]".
@@ -257,12 +256,10 @@ To say DQMasturbationResistFlav of (M - a monster):
 To say DQMasturbationResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
-
 To say DQFeedingResistFlav of (M - a monster):
 	say DefaultResistFlav of M.
 To say DQFeedingResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
-
 
 To say DefaultResistFlav of (T - a thing):
 	say "You struggle in vain to free yourself!".
@@ -279,10 +276,6 @@ To compute sex resist punishment of (M - a monster):
 	choose a sex resist punishment.
 
 Understand "resist", "fight back", "escape", "run", "fight", "nono", "noway", "nn" as resisting.
-
-
-
-
 
 [!<SayForcedSubmitFlav>+
 
@@ -314,7 +307,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is gendered female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 [!<SayOralSlutResRefusalFlavOfMonster>+
 
@@ -516,4 +509,3 @@ To say DQResistChangeChastise of (M - a monster):
 	say "[BigNameDesc of M] [one of]tuts condescendingly[or]scowls[or]makes a noise like an angry parent[at random].[line break][speech style of M]'[one of]Hey, no messing around now, or I'll be keeping you in diapers for even longer!'[or]This is for your own good, you silly baby!'[or]All you're doing is making me angrier.'[or]You are NOT acting like someone who's ready for big girl panties.'[or]Is this the way that someone who's trying to prove they're big girl should act? I don't think so.'[or]All you're doing is proving that you're just a pathetic child.'[in random order][roman type][line break]".
 
 Resisting ends here.
-

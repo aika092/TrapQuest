@@ -4,38 +4,44 @@ Part 1 - Definitions
 
 [!<Penis>@
 
-REQUIRES COMMENTING
+The player's penis.
 
 @inherits <BodyPart>
 
 @!]
 penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
 To say FullExamineDesc of (B - penis):
-	say "[if the player is male][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
+	say "[if the player is male][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
 [!<Penis>@<size:Integer>*
 
-REQUIRES COMMENTING
+Describes the player's penis size inside the game. Usually, but not always corresponds to penis length. Affects success rate during dominant sex.
 
 *@!]
 penis has a number called size. the size of penis is usually 0.
 
 [!<Penis>@<realSize:Integer>*
 
-REQUIRES COMMENTING
+Describes the player's penis size in real life. Unlike other real-life values, this one doesn't prevent the player's penis from getting bigger
 
 *@!]
 penis has a number called real size. The real size of penis is usually 0.
 
 [!<Penis>@<rawness:Integer>*
 
-Factored in for masturbation-related scenes.
+Describes how close to orgasm the player's penis is.
 
 *@!]
 penis has a number called rawness. The rawness of penis is usually 0.
+penis has a number called previous rawness.
 
+[!<Penis>@<rawness:Integer>*
+
+Describes how close to orgasm the player's penis is.
+
+*@!]
 To decide which number is the max-rawness of (P - penis):
 	let X be the size of penis;
 	if there is a worn focus band, increase X by 2;
@@ -46,15 +52,37 @@ To decide which number is the max-rawness of (P - penis):
 	if the player is extremely horny, decrease X by 2;
 	decide on X.
 
-To RawUp (P - penis):
-	increase the rawness of penis by 1.
+[!<RawUpPenis>+
 
+Increases the rawness value of penis. Should be called whenever the player's penis receives strong stimulation.
+
+@param <Penis>:<P> The player's penis
++!]
+
+To RawUp (P - penis):
+	if the rawness of penis < the max-rawness of penis, increase the rawness of penis by 1.
+
+To RawDown (P - penis):
+	if the rawness of penis > 0, decrease the rawness of penis by 1.
+
+[!<DecideWhichNumberIsSexualPenisLength>+
+
+Outputs either the player's strapon length or penis length. Used mainly for dominant sex.
+
+@return <Number> A larger value means a bigger phallus.
++!]
 To decide which number is sexual-penis-length:
 	if there is a worn strapon-panties:
 		let C be a random worn strapon-panties;
 		if the size of penis < the strap-length of C or C is gem-strapon or C is demon codpiece, decide on the strap-length of C;
 	decide on the size of penis.
 
+[!<SaySexualPlayerPenis>+
+
+Outputs a one or two word description for the player's penis or strapon. Used mainly for dominant sex.
+
+@return <Number> A larger value means a bigger phallus.
++!]
 To say sexual-player-penis:
 	if there is a worn strapon-panties:
 		say ShortPenisFlav of a random worn strapon-panties;
@@ -68,10 +96,9 @@ REQUIRES COMMENTING
 +!]
 Definition: penis is tiny if the player is possessing a penis and the size of penis < 4.
 
-
 [!<PenisIsLewdlyExposed>+
 
-REQUIRES COMMENTING
+Determines whether the player's penis is exposed in a provacative way.
 
 +!]
 Definition: penis is lewdly exposed if penis is exposed.
@@ -81,7 +108,7 @@ To decide which number is the lewdly exposed outrage of (P - penis):
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
-REQUIRES COMMENTING
+Determines whether the player's penis is partially exposed in a provacative way.
 
 +!]
 Definition: penis is at least partially lewdly exposed if penis is at least partially exposed.
@@ -91,7 +118,7 @@ To decide which number is the at least partially lewdly exposed outrage of (P - 
 
 [!<PenisIsExposed>+
 
-REQUIRES COMMENTING
+Determines whether penis is concealed, not if it is covered by something.
 
 +!]
 Definition: penis is exposed:
@@ -101,7 +128,7 @@ Definition: penis is exposed:
 
 [!<PenisIsAtLeastPartiallyExposed>+
 
-REQUIRES COMMENTING
+Determines whether penis is partially concealed.
 
 +!]
 Definition: penis is at least partially exposed:
@@ -109,32 +136,40 @@ Definition: penis is at least partially exposed:
 	if the concealer of penis is a thing, decide no;
 	decide yes.
 
+[When penis-capacity is exceeded, the player can still conceal their junk, but there's a chance of wardrobe malfunctions.]
+
 [!<ClothingIsPotentiallyPenisCovering>+
 
-REQUIRES COMMENTING
+Determines whether a piece of clothing can cover the player's penis. Does NOT check if penis is visible, only if it is covered.
+
+@param <Clothing>:<C> The clothing that potentially covers the player's penis
 
 +!]
-Definition: a clothing (called C) is potentially penis covering:[does not check if penis is visible, only if it is covered by something.]
+Definition: a clothing (called C) is potentially penis covering:
 	if C is potentially pussy covering clothing:
-		if penis is not penis-erect:[when your penis is soft, certain clothing will still cover a penis that wouldn't fit when hard]
-			if the size of penis > 3 and the penis-capacity of C >= 3, decide yes;
-		if the size of penis <= the penis-capacity of C, decide yes;
+		if penis is penis-erect:[erections change how clothing fits.]
+			if the size of penis <= the penis-capacity of C + 1, decide yes;
+		otherwise:
+			if the size of penis <= the penis-capacity of C + 2, decide yes;
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
 		if C is not super-short and C is not short, decide yes;[long skirts protect against exposure]
 		if the player is upright and C is not super-short and the size of penis < 4, decide yes; [short skirts protect against exposure as long as you're standing and have a small penis]
 	decide no.
 
-[!<ClothingIsPotentiallyPenisCovering>+
+[!<ClothingIsPotentiallyAtLeastPartiallyPenisCovering>+
 
-REQUIRES COMMENTING
+Determines whether a piece of clothing can cover the player's penis at least a little. Does not check if penis is visible, only if it is covered.
+
+@param <Clothing>:<C> The clothing that potentially covers the player's penis
 
 +!]
-Definition: a clothing (called C) is potentially at least partially penis covering:[does not check if penis is visible, only if it is covered by something.]
+Definition: a clothing (called C) is potentially at least partially penis covering:
 	if C is potentially pussy covering clothing:
-		if there is a worn chastity cage:
-			if the size of penis > 3 and the penis-capacity of C >= 1, decide yes;[when you're in chastity, certain clothing can still cover a penis that otherwise wouldn't fit]
-		if the size of penis <= the penis-capacity of C + 3, decide yes; [as long as not more than 3 inches are showing we say it's partially covered]
+		if penis is penis-erect:
+			if the size of penis <= the penis-capacity of C + 2, decide yes;
+		otherwise:
+			if the size of penis <= the penis-capacity of C + 4, decide yes;[beyond capacity + 2, at least 2 inches can be partially covered.]
 	if C is skirted clothing:
 		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
 		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
@@ -143,7 +178,9 @@ Definition: a clothing (called C) is potentially at least partially penis coveri
 
 [!<ClothingIsActuallyPenisCovering>+
 
-REQUIRES COMMENTING
+Determines whether a piece of clothing conceals the player's penis
+
+@param <Clothing>:<C> The clothing that potentially covers the player's penis
 
 +!]
 Definition: a clothing (called C) is actually penis covering:
@@ -153,7 +190,9 @@ Definition: a clothing (called C) is actually penis covering:
 
 [!<ClothingIsActuallyAtLeastPartiallyPenisCovering>+
 
-REQUIRES COMMENTING
+Determines whether a piece of clothing conceals the player's penis at least a little
+
+@param <Clothing>:<C> The clothing that potentially covers the player's penis
 
 +!]
 Definition: a clothing (called C) is actually at least partially penis covering:
@@ -161,8 +200,15 @@ Definition: a clothing (called C) is actually at least partially penis covering:
 	if C is not see-through, decide yes;
 	decide no.
 
-[Highest level penis concealer]
+[!<DecideWhichObjectIsTheConcealerOfPenis>+
+
+Determines which object is concealing the player's penis at the highest level.
+
+@return <Object> The object that is concealing penis. If this function returns nothing, it means there is no concealer.
+
++!]
 To decide which object is the concealer of (P - penis):
+	if water-fountain is penetrating asshole, decide on water-fountain;
 	repeat with C running through worn actually penis covering clothing:
 		let this-one be 1;
 		repeat with D running through worn actually penis covering clothing:
@@ -170,8 +216,16 @@ To decide which object is the concealer of (P - penis):
 		if this-one is 1, decide on C;
 	decide on nothing.
 
-[Highest level penis partial concealer]
+[!<DecideWhichObjectIsTheConcealerOfPenis>+
+
+Determines which object is partially concealing the player's penis at the highest level.
+
+@return <Object> The object that is concealing penis. If this function returns nothing, it means there is no concealer.
+
++!]
 To decide which object is the at least partial concealer of (P - penis):
+	if water-fountain is penetrating asshole, decide on water-fountain;
+	if vagina is listed in the armUses of arms, decide on arms;
 	repeat with C running through worn actually at least partially penis covering clothing:
 		let this-one be 1;
 		repeat with D running through worn actually at least partially penis covering clothing:
@@ -179,11 +233,11 @@ To decide which object is the at least partial concealer of (P - penis):
 		if this-one is 1, decide on C;
 	decide on nothing.
 
-
-
 [!<DecideWhichNumberIsMinPenisSize>+
 
-REQUIRES COMMENTING
+Outputs the player's minimum penis size
+
+@returns <Number> The smallest size penis the player can have during the playthrough, aside from being female
 
 +!]
 To decide which number is min penis size:
@@ -217,9 +271,8 @@ To PenisObedienceUp (X - a number):
 				otherwise if the penis-obedience of penis < 10:[orgasms are overrated.]
 					say "[variable custom style][one of]I go soft after just one orgasm, so why even have one? After all, my only job is to stay hard for my partner.[or]Ejaculating is just a bonus. The important thing is if your penis can make someone *else* cum.[or]I've always thought [semen] made a huge mess. Its so much more convenient if I don't cum at all.[in random order][roman type][line break]";
 				otherwise:[10(max)]
-					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realized was that it's meant to be used by someone else.[in random order][roman type][line break]";
+					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realised was that it's meant to be used by someone else.[in random order][roman type][line break]";
 		decrease X by 1.
-
 
 [Whenever an npc abuses your penises, it has a chance of increasing your 'obedience' value.
 
@@ -443,7 +496,7 @@ To say TotalDesc of penis:
 			if penis is penis-erect, say "Your [one of]erect[or]hard[or]stiff[at random] [ShortDesc of penis] stands at attention, and your [ShortBallsDesc] [if the size of penis > 5]sway freely[otherwise if the size of penis > 3]hang freely[otherwise]are barely noticeable[end if]. ";
 			otherwise say "Your soft [ShortDesc of penis] and [ShortBallsDesc] [if the size of penis > 5]sway freely. [otherwise if the size of penis > 3]hang freely. [otherwise]are barely noticeable. [end if]";
 	otherwise if the player is male:
-		say "A doll-like flat mound exists where your penis used to be. [if watersports fetish is 1 or diaper lover >= 1]There's just a tiny hole to allow you to pee.[end if]".
+		say "A doll-like flat mound exists where your penis used to be[if watersports mechanics is 1]. There's just a tiny hole to allow you to pee[end if].".
 
 [!<SayShortBallsDesc>+
 
@@ -479,7 +532,6 @@ To say PenisModesty:
 		say "It can't be seen thanks to the [ShortDesc of W]. ".
 
 Part 3 - Modify Penis Stats
-
 
 previous penis length is a number that varies.
 
@@ -538,7 +590,27 @@ To PenisDown (X - a number):
 	otherwise:
 		now Shrink is "shrink".
 
+Section - Image for graphics window
 
+[Figure of PenisObject1 is the file "CharWins/FocusWin/Penis/Penis1.jpg".
+Figure of PenisObject2 is the file "CharWins/FocusWin/Penis/Penis2.jpg".]
+Figure of PenisObject3 is the file "CharWins/FocusWin/Penis/Penis3.jpg".
+Figure of PenisObject4 is the file "CharWins/FocusWin/Penis/Penis4.jpg".
+Figure of PenisObject5 is the file "CharWins/FocusWin/Penis/Penis5.jpg".
+Figure of PenisObject6 is the file "CharWins/FocusWin/Penis/Penis6.jpg".
+[Figure of PenisObject7 is the file "CharWins/FocusWin/Penis/Penis7.jpg".]
+Figure of PenisObject8 is the file "CharWins/FocusWin/Penis/Penis8.jpg".
+Figure of PenisObject9 is the file "CharWins/FocusWin/Penis/Penis9.jpg".
+
+To decide which figure-name is the examine-image of (T - Penis):
+	if the size of penis < 2, decide on figure of PenisObject3;
+	if the size of penis is 2, decide on figure of PenisObject3;
+	if the size of penis is 3, decide on figure of PenisObject3;
+	if the size of penis is 4, decide on figure of PenisObject4;
+	if the size of penis is 5, decide on figure of PenisObject5;
+	if the size of penis is 6, decide on figure of PenisObject6;
+	if the size of penis is 7, decide on figure of PenisObject6;
+	if the size of penis is 8, decide on figure of PenisObject8;
+	decide on figure of PenisObject9.
 
 Penis ends here.
-

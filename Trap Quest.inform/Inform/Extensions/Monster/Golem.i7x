@@ -21,7 +21,7 @@ To say MonsterDesc of (M - golem):
 To set up (M - golem):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 7;
+	now the raw difficulty of M is 7;
 	now M is guarding;
 	now the health of M is the maxhealth of M.
 
@@ -35,14 +35,20 @@ To compute monstermotion of (M - golem):
 			try M going A;
 		MonsterStomp M.
 
+To MonsterStomp (M - golem):
+	let stomped be 0;
+	repeat with N running through undefeated awake monsters in the location of M:
+		if stomped is 0 and N is not penetrating a body part and N is not grabbing the player and N is not M:
+			compute N stomping M; [reversed]
+			now stomped is 1.
+
 To compute (M - a monster) stomping (N - golem):
-	say "[BigNameDesc of M] grabs the [N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs [NameDesc of M], and its muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M]'s skin. It grunts as its muscles suddenly bulge out with even more definition and power![end if]";
+	say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. It grunts as its muscles suddenly bulge out with even more definition and power![end if]";
 	DifficultyUp M by 6;
 	destroy N.
 
 Definition: golem is objectifying the player: decide yes.
 Definition: golem is scarable: decide no.
-
 
 To compute perception of (M - golem):
 	now M is interested;
@@ -57,7 +63,7 @@ To compute (M - a monster) stomping (N - golem):
 
 The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
-	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realize it isn't stopping as it moves towards you, and finally presses up against you! Its cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what it might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
+	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise it isn't stopping as it moves towards you, and finally presses up against you! Its cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what it might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
 	if artificial enhancements fetish is 1:
 		if rubber top hat is off-stage and rubber top hat is actually summonable:
 			say "You're now wearing a small pink latex top hat!";
@@ -83,16 +89,8 @@ This is the golem merging rule:
 	destroy golem;
 	rule succeeds.
 
-To compute damage of (M - golem):
-	if the health of M > 0:
-		if M is uninterested:
-			say "[BigNameDesc of M] barely seems to react but does take up what could be interpreted as a fighting stance.";
-			anger M;
-		otherwise:
-			if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] seems completely unaffected by your attack!";
-			otherwise say "";
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - golem):
+	say "[BigNameDesc of M] barely seems to react but does take up what could be interpreted as a fighting stance.".
 
 To say DamageReaction (N - a number) of (M - golem):
 	if N > (the maxhealth of M / 4):
@@ -106,16 +104,13 @@ To say StrikingSuccessFlav of (M - golem) on (B - a body part):
 To say StrikingFailureFlav of (M - golem) on (B - a body part):
 	say "[BigNameDesc of M] swipes at you, but you manage to dodge it.".
 
-To compute unique death of (M - golem):
-	say "[BigNameDesc of M] [if artificial enhancements fetish is 1]dissolves into clear fluid and evaporates away[otherwise]collapses into a pile of limbs, which is a bit gross, you must admit[end if].";
-	destroy M.
+To say BanishFleeFlav of (M - golem):
+	say "[BigNameDesc of M] [if artificial enhancements fetish is 1]dissolves into clear fluid and evaporates away[otherwise]collapses into a pile of limbs, which is a bit gross, you must admit[end if].".
 
 To say MuteGreetResponse of (M - golem):
 	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
 
 To say MuteQuestionResponse of (M - golem):
-	say "[SexDollExplanation of M]".
-
+	say SexDollExplanation of M.
 
 Golem ends here.
-

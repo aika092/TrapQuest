@@ -81,7 +81,6 @@ Definition: a thing (called C) is in-play:
 	if C is in Holding Pen, decide no;
 	decide yes.
 
-
 [!<AddTreasureToThing>+
 
 REQUIRES COMMENTING
@@ -143,9 +142,9 @@ REQUIRES COMMENTING
 
 +!]
 To compute generic treasure to (X - a thing):
-	let luck be 0;
-	if lucky you tattoo is worn, now luck is 50;
-	if X is rich and earnings < starting-earnings - 100 and a random number between 1 and 500 <= luck + 50 - (10 * (the number of in-play alchemy products)): [starts at 1 in 10 and gets worse as alchemy products appear]
+	let chest-luck be 0;
+	if lucky you tattoo is worn, now chest-luck is 50;
+	if X is rich and earnings < starting-earnings - 100 and a random number between 1 and 500 <= chest-luck + 50 - (10 * (the number of in-play alchemy products)): [starts at 1 in 10 and gets worse as alchemy products appear]
 		let Z be nothing;
 		let R be a random number from 1 to 4;
 		if R is 1:
@@ -175,7 +174,7 @@ To compute generic treasure to (X - a thing):
 			compute autotaking Z;
 		otherwise:
 			say "Oh no, it's empty. Boo!";
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < luck + 100 - (10 * (the number of in-play rare clothing - the number of rare clothing in School15)):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < chest-luck + 100 - (10 * (the number of in-play rare clothing - the number of rare clothing in School15)):
 		let C be a random off-stage rare fetish appropriate clothing;
 		now C is in X;
 		if C is bra, compute found size of C;
@@ -188,7 +187,7 @@ To compute generic treasure to (X - a thing):
 			now C is in X;
 			say "You find a [printed name of C]! Hooray!";
 			compute autotaking C;
-	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < luck + 100 - (5 * snacks-found):
+	otherwise if X is rich and a random number between the square root of the remainder after dividing earnings by 10001 and 150 < chest-luck + 100 - (5 * snacks-found):
 		let C be a random off-stage snack;
 		now C is in X;
 		increase snacks-found by 1;
@@ -268,7 +267,6 @@ To compute generic treasure to (X - a thing):
 			say "[Discovery of I]";
 		compute autotaking I.
 
-
 autotake-target is a thing that varies.
 
 [!<ComputeAutotakingAThing>+
@@ -302,7 +300,6 @@ This is the autotaking continues rule:
 					if I is not food and I is not bottle and I is not plentiful accessory, say "You add the [ShortDesc of I] to your bag.";
 					otherwise say "You are now carrying the [ShortDesc of I].";
 				now another-turn is 1.
-
 
 [!<ReportOpeningAContainer>+
 
@@ -400,6 +397,4 @@ To compute automatic eating of (I - a thing):
 	try TQeating C; [I HAVE NO IDEA WHY THIS SOLVES THE BUG IT JUST DOES DON'T ASK QUESTIONS]
 	if I is off-stage, say "[if the bimbo of the player < 12 and I is candy][line break][variable custom style]I should really work on my self-control...[otherwise if the bimbo of the player < 12][variable custom style]I feel much better![otherwise][line break][second custom style]MMM so yummy! Oh, it's all gone already?[end if][roman type][line break]".
 
-
 Items Found in Containers ends here.
-

@@ -1,6 +1,5 @@
 Puddles by Rooms begins here.
 
-
 [!<Room>@<semenPuddle:Integer>*
 
 REQUIRES COMMENTING
@@ -38,9 +37,7 @@ A room has a number called slime-puddle. The slime-puddle of a room is usually 0
 A room can be glue-puddled. A room is usually not glue-puddled.
 Definition: A room is glue-puddled if a glue is in it. [One approach might be to let the glue-puddle be a number, and use that to represent how sticky it is; but since the stickiness of the player is already being used to do that, I *think* it makes sense to use that instead.]
 
-
 Understand "puddle", "pool", "liquid", "mess", "juice" as a room[ when the semen-puddle of the room + the milk-puddle of the room + the urine-puddle of the room > 0].
-
 
 Book 1 Puddles
 
@@ -155,7 +152,7 @@ A time based rule (this is the puddles disappearing rule):
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the sticky decay rule):
+An all time based rule (this is the sticky decay rule):
 	let WasGlued be 0;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
@@ -231,11 +228,10 @@ This is the puddles get focused rule:
 The puddles get focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - puddle-object):
-	let P be a random worn pink spraybottle;
-	if ButtonTableFull is 0 and P is a thing:
+	if ButtonTableFull is 0 and pink-spraybottle is worn:
 		choose a blank row in the Table of Buttons;
-		now the ButtonImage entry is examine-image of P;
-		now the ButtonCommand entry is "clean puddle with [text-shortcut of P]";
+		now the ButtonImage entry is examine-image of pink-spraybottle;
+		now the ButtonCommand entry is "clean puddle with [text-shortcut of pink-spraybottle]";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
 	if diaper quest is 0 and ButtonTableFull is 0:
@@ -245,6 +241,4 @@ To construct normal buttons for (T - puddle-object):
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is upright, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to kneel]
 
-
 Puddles ends here.
-

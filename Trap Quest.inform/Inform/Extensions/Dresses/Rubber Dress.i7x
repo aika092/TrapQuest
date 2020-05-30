@@ -1,6 +1,6 @@
 Rubber Dress by Dresses begins here.
 
-A rubber dress is a kind of overdress. A rubber dress is usually latex. [Latex dresses that aren't otherwise particularly special]
+A rubber dress is a kind of overdress. A rubber dress is usually latex. A rubber dress is usually erect-nipple-exposing. [Latex dresses that aren't otherwise particularly special]
 
 To set up influence of (C - a rubber dress):
 	set up random-based influence of C.
@@ -29,7 +29,6 @@ To say MediumDesc of (C - a white rubber giant bow dress):
 
 To decide which number is the initial outrage of (C - a white rubber giant bow dress):
 	decide on 3.
-
 
 Definition: a white rubber giant bow dress is white themed: decide yes.
 Definition: a white rubber giant bow dress is bow themed: decide yes.
@@ -90,4 +89,3 @@ Definition: a superheroine fetish dress is yellow themed: decide yes.
 Definition: a superheroine fetish dress is boob themed: decide yes.
 
 Rubber Dress ends here.
-

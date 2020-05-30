@@ -83,7 +83,6 @@ To decide which number is the skirtLength of (C - a clothing):
 	[if C is knee-length, decide on 7;]
 	decide on 8.
 
-
 Chapter - Wearability
 
 Check wearing gown of purity:
@@ -108,8 +107,6 @@ Check taking off worn skirt:
 	if the noun is living belt of sturdiness:
 		if the noun is penetrating a fuckhole, say "You're going to have to find some way to remove it from your insides first!" instead.
 
-
-
 assless skirt is a skirt. assless skirt is latex. assless skirt is transformation-rare. assless skirt is butt-windowed.
 Definition: assless skirt is black themed: decide yes.
 
@@ -129,8 +126,6 @@ To say MediumDesc of (Y - assless skirt):
 
 To decide which number is the initial outrage of (C - assless skirt):
 	decide on 7.
-
-
 
 A chainmail skirt is a kind of miniskirt. A chainmail skirt is usually see-through. A chainmail skirt is rare. A chainmail skirt is metal. There is 1 chainmail skirt. Figure of chainmail skirt is the file "Items/Clothes/Lower/Skirts/chainmailskirt1.png".
 
@@ -156,8 +151,6 @@ Definition: a chainmail skirt is grey themed: decide yes.
 
 [A chainmail skirt is a skirt, so its cost is 2, which is appropriate.]
 
-
-
 chequered skirt is a skirt. Figure of chequered skirt is the file "Items/Clothes/Lower/Skirts/skirt2.png". The printed name of chequered skirt is "[clothing-title-before]chequered skirt[clothing-title-after]". The text-shortcut of chequered skirt is "cqs".
 
 To decide which figure-name is clothing-image of (C - chequered skirt):
@@ -173,7 +166,7 @@ To say ShortDesc of (Y - chequered skirt):
 	say "chequered skirt".
 
 To decide which number is the initial outrage of (C - chequered skirt):
-	decide on 2.
+	decide on 1.
 
 To set up influence of (C - chequered skirt):
 	set up random-based influence of C.
@@ -181,10 +174,8 @@ To set up influence of (C - chequered skirt):
 To decide which number is the adult-influence of (C - chequered skirt):
 	decide on 1.
 
-
 Definition: chequered skirt is black themed: decide yes.
 Definition: chequered skirt is white themed: decide yes.
-
 
 flowing skirt is a skirt. Figure of flowing skirt is the file "Items/Clothes/Lower/Skirts/skirt1.png". The printed name of flowing skirt is "[clothing-title-before]flowing white skirt[clothing-title-after]". The text-shortcut of flowing skirt is "fws". Understand "white" as flowing skirt.
 
@@ -201,7 +192,7 @@ To say ShortDesc of (Y - flowing skirt):
 	say "flowing white skirt".
 
 To decide which number is the initial outrage of (C - flowing skirt):
-	decide on 3.
+	decide on 2.
 
 To set up influence of (C - flowing skirt):
 	set up random-based influence of C.
@@ -211,7 +202,6 @@ To decide which number is the adult-influence of (C - flowing skirt):
 
 Definition: flowing skirt is slitted: decide yes.
 Definition: flowing skirt is white themed: decide yes.
-
 
 full zip skirt is a skirt. Figure of full zip skirt is the file "Items/Clothes/Lower/Skirts/skirt3.png". The printed name of full zip skirt is "[clothing-title-before]full zip white skirt[clothing-title-after]". The text-shortcut of full zip skirt is "fzs". Understand "white" as full zip skirt. full zip skirt is zippable. full zip skirt is leather.
 
@@ -238,7 +228,6 @@ To set up influence of (C - full zip skirt):
 
 To decide which number is the adult-influence of (C - full zip skirt):
 	decide on 1.
-
 
 A gown of purity is a kind of skirt. Figure of Gown of Purity is the file "Items/Clothes/Lower/Skirts/gown1.png". A gown of purity is usually see-through. A gown of purity is usually purity. There is 1 unique silk cursed gown of purity. The printed name of gown of purity is usually "[clothing-title-before]gown of purity[clothing-title-after]". The text-shortcut of gown of purity is "gop".
 
@@ -272,7 +261,6 @@ To decide which number is the initial outrage of (C - a gown of purity):
 
 Definition: a gown of purity is slitted: decide yes.
 
-
 black-rubber-hobble-skirt is a skirt. Printed name of black-rubber-hobble-skirt is "[clothing-title-before]tight black latex skirt[clothing-title-after]". The text-shortcut of black-rubber-hobble-skirt is "tbls". black-rubber-hobble-skirt is latex. black-rubber-hobble-skirt is hobble-skirted. black-rubber-hobble-skirt is crotch-skirted. The armour of black-rubber-hobble-skirt is 10. Understand "tight" as black-rubber-hobble-skirt.
 
 Figure of black-rubber-hobble-skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt2.png".
@@ -299,9 +287,6 @@ To restock (C - black-rubber-hobble-skirt):
 To set up influence of (C - black-rubber-hobble-skirt):
 	do nothing.
 
-
-
-
 blue rubber hobble skirt is a skirt. Printed name of blue rubber hobble skirt is "[clothing-title-before]blue latex hobble skirt[clothing-title-after]". The text-shortcut of blue rubber hobble skirt is "lxhs". blue rubber hobble skirt is latex. blue rubber hobble skirt is hobble-skirted. blue rubber hobble skirt is crotch-skirted. The armour of blue rubber hobble skirt is 12.
 
 Figure of blue rubber hobble skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexhobbleskirt1.png".
@@ -318,8 +303,6 @@ To say ShortDesc of (C - blue rubber hobble skirt):
 To decide which number is the initial outrage of (C - blue rubber hobble skirt):
 	decide on 4.
 
-
-
 Definition: blue rubber hobble skirt is blue themed: decide yes.
 
 To restock (C - blue rubber hobble skirt):
@@ -327,7 +310,6 @@ To restock (C - blue rubber hobble skirt):
 
 To set up influence of (C - blue rubber hobble skirt):
 	do nothing.
-
 
 A rubber-skirt is a kind of skirt. A rubber-skirt is usually latex.
 Definition: a rubber-skirt is black themed: decide yes.
@@ -348,7 +330,7 @@ To say ClothingDesc of (C - a longer rubber skirt):
 	say "This tight knee length black skirt is made entirely of latex, which makes it cling even tighter to your body.".
 
 To decide which number is the initial outrage of (C - a longer rubber skirt):
-	decide on 4.
+	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - a longer rubber skirt):
 	decide on a random off-stage shorter-rubber-skirt.
@@ -358,7 +340,7 @@ Part 2 - Shorter Rubber Skirt
 A shorter-rubber-skirt is a kind of rubber-skirt. A shorter-rubber-skirt is usually short. A shorter-rubber-skirt is usually transformation-rare. Understand "short" as shorter-rubber-skirt.
 
 To decide which number is the initial outrage of (C - a shorter-rubber-skirt):
-	decide on 6.
+	decide on 4.
 
 A black rubber skirt is a kind of shorter-rubber-skirt. There is 1 black rubber skirt. Figure of black rubber skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt2.png". Printed name of black rubber skirt is "[clothing-title-before]short black latex skirt[clothing-title-after]". The text-shortcut of black rubber skirt is "sbs".
 
@@ -383,8 +365,6 @@ To say ShortDesc of (Y - a pink rubber miniskirt):
 
 Definition: a pink rubber miniskirt is pink themed: decide yes.
 Definition: a pink rubber miniskirt is black themed: decide no.
-
-
 
 A microskirt is a kind of skirt. A microskirt is usually super-short. The soak-limit of microskirt is usually 10. A microskirt is usually transformation-rare.
 
@@ -451,12 +431,10 @@ To say ShortDesc of (Y - a black sporty microskirt):
 	say "tiny black lycra microskirt".
 
 To decide which number is the initial outrage of (C - a microskirt):
-	if C is latex, decide on 7;
-	decide on 5.
+	if C is latex, decide on 5;
+	decide on 3. [It's not really the skirt that's outrageous, it's more what it's failing to conceal]
 
 Definition: a microskirt is end of transformation chain: decide yes.
-
-
 
 A lace miniskirt is a kind of miniskirt. There is 1 mesh lace miniskirt. A lace miniskirt is transformation-rare. Printed name of lace miniskirt is "[clothing-title-before]sheer miniskirt[clothing-title-after]". The text-shortcut of lace miniskirt is "sms". Figure of lace miniskirt is the file "Items/Clothes/Lower/Skirts/Mini/miniskirt1.png". Understand "sheer" as lace miniskirt.
 
@@ -480,7 +458,7 @@ To say ClothingDesc of (C - a tartan miniskirt):
 	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
-	decide on 3.
+	decide on 2.
 
 Definition: a tartan miniskirt is class-transformation-protected if the class of the player is schoolgirl.
 
@@ -489,8 +467,6 @@ To decide which object is the unique-upgrade-target of (C - a tartan miniskirt):
 
 Definition: a tartan miniskirt is tartan themed: decide yes.
 Definition: a tartan miniskirt is orange themed: decide yes.
-
-
 
 A naughty skirt is a kind of skirt. A naughty skirt is usually leather. A naughty skirt is transformation-rare. A naughty skirt is usually butt-windowed.
 
@@ -513,8 +489,6 @@ To decide which number is the initial outrage of (C - a naughty skirt):
 
 Definition: a naughty skirt is black themed: decide yes.
 
-
-
 office skirt is a skirt. Printed name of office skirt is "[clothing-title-before]office skirt[clothing-title-after]". The text-shortcut of office skirt is "os". office skirt is nylon. office skirt is hobble-skirted. office skirt is crotch-skirted. The armour of office skirt is 7.
 
 Figure of office skirt is the file "Items/Clothes/Lower/Skirts/officeskirt1.png".
@@ -534,7 +508,7 @@ To say ShortDesc of (C - office skirt):
 Definition: office skirt is black themed: decide yes.
 
 To decide which number is the initial outrage of (C - office skirt):
-	decide on 2.
+	decide on 1.
 
 To decide which number is the adult-influence of (C - office skirt):
 	decide on 2.
@@ -544,7 +518,6 @@ To restock (C - office skirt):
 
 To set up influence of (C - office skirt):
 	do nothing.
-
 
 A punishment skirt is a kind of skirt. A punishment skirt is usually latex. A punishment skirt is usually hobble-skirted. A punishment skirt is usually crotch-skirted. A punishment skirt is transformation-rare. A punishment skirt is usually butt-windowed. The armour of punishment skirt is usually 12.
 
@@ -578,7 +551,6 @@ Definition: a punishment skirt is end of transformation chain if the unique-upgr
 Definition: a punishment skirt is displacable: decide no.
 Definition: a punishment skirt is black themed: decide yes.
 
-
 A sequins belt is a kind of skirt. A sequins belt is usually sheer. A sequins belt is short. Figure of sequins belt is the file "Items/Clothes/Lower/Waist/Belts/belt1.png". There is 1 transformation-rare metal sequins belt. The printed name of sequins belt is "[clothing-title-before]sequins belt[clothing-title-after]". The text-shortcut of sequins belt is "seq".
 
 To decide which figure-name is clothing-image of (C - a sequins belt):
@@ -594,7 +566,7 @@ To say ShortDesc of (Y - a sequins belt):
 	say "sequins belt".
 
 To decide which number is the initial outrage of (C - a sequins belt):
-	decide on 6.
+	decide on 4.
 
 To decide which number is the bartering value of (T - a sequins belt) for (M - a gladiator):
 	decide on 2.
@@ -615,8 +587,6 @@ To transform (D - a sequins belt) into (C - a sequins outfit):
 	say "a [C] [bold type]in front of your eyes![roman type] ";
 	say "[TransformReaction of C]".
 
-
-
 skirt-tray-vibrator is a skirt. skirt-tray-vibrator is unique. skirt-tray-vibrator is sure. skirt-tray-vibrator is identified.
 
 Figure of skirt tray vibrator is the file "Items/Clothes/Lower/Waist/Belts/trayvibrator1.jpg".
@@ -636,6 +606,9 @@ To say MediumDesc of (C - skirt-tray-vibrator):
 
 To decide which number is the max-cakes of (C - skirt-tray-vibrator):
 	decide on 11.
+
+To decide which number is the wornArmsRequired of (C - skirt-tray-vibrator):
+	decide on 2.
 
 To say skirtTrayVibratorPower:
 	let N be the cakes-taken of skirt-tray-vibrator;
@@ -660,7 +633,7 @@ Report taking off skirt-tray-vibrator when diaper quest is 1:
 Check taking off plain-largish-diaper when skirt-tray-vibrator is worn:
 	try taking off skirt-tray-vibrator instead.
 
-A time based rule (this is the skirt tray vibrator rule):
+An all time based rule (this is the skirt tray vibrator rule):
 	if the player is in a predicament room:
 		if the player is in Predicament20:
 			if skirt-tray-vibrator is held or skirt-tray-vibrator is in the location of the player, say "Now that you are safely inside, [NameDesc of skirt-tray-vibrator] fizzles from existence.";
@@ -705,12 +678,19 @@ This is the orgasm drops cupcakes rule:
 			now the charge of skirt-tray-vibrator is 3.
 The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rules.
 
+To decide which object is the concealer of (C - skirt-tray-vibrator): decide on nothing.
+To decide which object is the at least partial concealer of (C - skirt-tray-vibrator): decide on nothing.
 
+grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.jpg". Understand "please", "grope", "my tits", "skirt" as grope-me-skirt.
+To decide which figure-name is clothing-image of (H - grope-me-skirt):
+	decide on figure of grope-me-skirt.
 
+To say ShortDesc of (C - grope-me-skirt):
+	say "skirt".
+To say ClothingDesc of (C - grope-me-skirt):
+	say "This short purple tartan skirt has a sign pinned to the front that reads 'Please Grope My Tits'...".
 
-
-
-
-
+To decide which number is the initial outrage of (C - grope-me-skirt):
+	decide on 6.
 
 All Skirts ends here.

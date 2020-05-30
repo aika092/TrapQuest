@@ -1,6 +1,5 @@
 Hotel by Rooms begins here.
 
-
 [!<ModernRoom>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A modern room is a kind of room. A modern room has a labyrinth shape called shape. The shape of a modern room is usually L3/0-0-1-1-1-1. The grid position of a modern room is usually <0,0,0>.
-
 
 [!<hotel01:ModernRoom>*
 
@@ -226,7 +224,7 @@ Hotel30 is a modern room. The printed name of Hotel30 is "Security Room". "This 
 REQUIRES COMMENTING
 
 *!]
-Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if the player is not possessing a penis], which would be impractical for you to use[end if]. [if watersports fetish is 1 and diaper quest is 0]In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for.[end if]". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
+Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if the player is female], which would be impractical for you to use[end if][if watersports fetish is 1]. In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
 
 [!<hotel32:ModernRoom>*
 
@@ -286,7 +284,7 @@ To say HotelToiletDesc:
 REQUIRES COMMENTING
 
 *!]
-Hotel39 is a modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the center seem a bit out of place.".
+Hotel39 is a modern room. The printed name of Hotel39 is "Private Dining Room". "A large room, lined with pictures of gorgeous women [if diaper quest is 1]posing with their hands displaying [']peace['] signs[otherwise]being fucked in various sexual positions[end if]. Each one is wearing something similar to the women who put you in this game, and the bottom of every frame has a plaque reading 'Employee of the Month.' Long tables fill the edges, which make the bed in the centre seem a bit out of place.".
 To decide which number is the obstacle-hindrance of (R - Hotel39):
 	decide on 3.
 To decide which text is ObstacledDesc of (R - Hotel39):
@@ -301,7 +299,7 @@ Hotel40 is a mandatory modern room. The printed name of Hotel40 is "[if there is
 
 Hotel41 is a mandatory modern room. The printed name of Hotel41 is "Maintenance Room". "A small room with tools of varying complexity lined up on the many shelves adorning its walls.".
 Hotel42 is a modern room. The printed name of Hotel42 is "Theatre". "A large room, dark room with [if diaper quest is 1]a video of a diapered woman in a straitjacket with a strong vibrating wand taped to her diaper[otherwise]an explicit BDSM porno[end if] is playing on a huge screen. [NoChairs]". The shape of Hotel42 is L3/0-0-0-0-0-1.
-Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the center of the room. [NoChairs]"
+Hotel43 is a modern room. The printed name of Hotel43 is "Donator Hall". "A large room lined with pictures of well-dressed men and women. A long table fills the centre of the room. [NoChairs]"
 
 [!<SayNoChairs>+
 
@@ -352,7 +350,4 @@ REQUIRES COMMENTING
 Check entering HotelScenery01:
 	say "You don't see any point unless you want to [bold type]insert[roman type] something into the hole." instead.
 
-
-
 Hotel ends here.
-

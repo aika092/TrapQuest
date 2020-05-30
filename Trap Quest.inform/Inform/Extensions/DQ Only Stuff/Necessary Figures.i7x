@@ -7,6 +7,10 @@ Figure of bianca defeated is the file "NPCs/School/Teacher/teacher3c.png".
 Figure of demoness cutscene 15 is the file "Special/Cutscene/cutscene-demoness-dq-facesit1.png".
 Figure of detention chair is the file "Env/School/detentionchair2.jpg".
 
+Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+
+Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1a.jpg".
+
 Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
 Figure of ghost 7 is the file "NPCs/Mansion/Ghost/ghost7.png".
@@ -50,7 +54,6 @@ Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 Figure of throne is the file "Env/Dungeon/throne1b.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2b.jpg".
 
-
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
 
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".
@@ -59,7 +62,6 @@ Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-po
 Figure of Vines Cutscene 3a is the file "Special/Cutscene/cutscene-vines3a.png".
 Figure of Vines Cutscene 3b is the file "Special/Cutscene/cutscene-vines3b.png".
 
-
 Figure of cutscene-xavier-nightmare-diaper-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper1.jpg".
 Figure of cutscene-xavier-nightmare-diaper-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-diaper2.jpg".
 Figure of cutscene-xavier-nightmare-gag-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-gag1.jpg".
@@ -67,21 +69,17 @@ Figure of cutscene-xavier-nightmare-gag-wet is the file "Special/Cutscene/cutsce
 Figure of cutscene-xavier-nightmare-belt-clean is the file "Special/Cutscene/cutscene-xavier-nightmare-belt1.jpg".
 Figure of cutscene-xavier-nightmare-belt-messy is the file "Special/Cutscene/cutscene-xavier-nightmare-belt2.jpg".
 
-
 Figure of Babified Royal Guard 1 is the file "NPCs/Dungeon/royalguardbab1.jpg".
 Figure of Babified Royal Guard 2 is the file "NPCs/Dungeon/royalguardbab2.jpg".
 To decide which figure-name is the pacified-image of (M - a royal guard):
 	if the refactory-period of M <= 0 and diaper messing >= 6, decide on figure of Babified Royal Guard 2;
 	decide on figure of Babified Royal Guard 1.
 
-
 Figure of caged pail princess is the file "NPCs/MultiFloor/Princess/cage7.jpg".
 Figure of caged pail princess messy is the file "NPCs/MultiFloor/Princess/cage6.jpg".
 
-
-
-
-
+To decide which figure-name is the clothing-image of (C - runic headband):
+	decide on figure of runic headband.
 
 Figure of change self tattoo is the file "Items/Tats/tattoo110.jpg".
 To decide which figure-name is the examine-image of (T - change-self tattoo):
@@ -105,16 +103,13 @@ Figure of diapered dinosaur tattoo is the file "Items/Tats/tattoo74.jpg".
 To decide which figure-name is the examine-image of (T - diapered dinosaur tattoo):
 	decide on figure of diapered dinosaur tattoo.
 
-
 Figure of dumb baby tattoo is the file "Items/Tats/tattoo90.jpg".
 To decide which figure-name is the examine-image of (T - dumb baby tattoo):
 	decide on figure of dumb baby tattoo.
 
-
 Figure of incontinent-when-speaking tattoo is the file "Items/Tats/tattoo112.jpg".
 To decide which figure-name is the examine-image of (T - incontinent-when-speaking tattoo):
 	decide on figure of incontinent-when-speaking tattoo.
-
 
 Figure of kitty cat tattoo is the file "Items/Tats/tattoo69.jpg".
 To decide which figure-name is the examine-image of (T - kitty cat tattoo):
@@ -127,7 +122,6 @@ To decide which figure-name is the examine-image of (T - loser tattoo):
 Figure of mushbutt tattoo is the file "Items/Tats/tattoo94.jpg".
 To decide which figure-name is the examine-image of (T - mushbutt tattoo):
 	decide on figure of mushbutt tattoo.
-
 
 Figure of princess castle tattoo is the file "Items/Tats/tattoo68.jpg".
 To decide which figure-name is the examine-image of (T - princess castle tattoo):
@@ -145,15 +139,53 @@ Figure of teapot tattoo is the file "Items/Tats/tattoo72.jpg".
 To decide which figure-name is the examine-image of (T - teapot tattoo):
 	decide on figure of teapot tattoo.
 
-Figure of tribal diaper tattoo is the file "Items/Tats/tattoo61.jpg".
-To decide which figure-name is the examine-image of (T - tribal diaper tattoo):
-	decide on figure of tribal diaper tattoo.
+Figure of ABDL finger tattoo is the file "Items/Tats/tattoo61.jpg".
+To decide which figure-name is the examine-image of (T - ABDL finger tattoo):
+	decide on figure of ABDL finger tattoo.
 
 Figure of walking teddy bear tattoo is the file "Items/Tats/tattoo99.jpg".
 To decide which figure-name is the examine-image of (T - walking teddy bear tattoo):
 	decide on figure of walking teddy bear tattoo.
 
+Figure of Face101 is the file "CharWins/FocusWin/Face/face101.jpg".
+Figure of Face105 is the file "CharWins/FocusWin/Face/face105.jpg".
+Figure of Face111 is the file "CharWins/FocusWin/Face/face111.jpg".
+Figure of Face115 is the file "CharWins/FocusWin/Face/face115.jpg".
+Figure of Face121 is the file "CharWins/FocusWin/Face/face121.jpg".
+Figure of Face125 is the file "CharWins/FocusWin/Face/face125.jpg".
+Figure of Face131 is the file "CharWins/FocusWin/Face/face131.jpg".
+Figure of Face135 is the file "CharWins/FocusWin/Face/face135.jpg".
 
+To decide which figure-name is the examine-image of (T - face):
+	if the make-up of face <= 0:
+		if alcohol-level <= 0:
+			decide on Figure of Face101;
+		otherwise:
+			decide on Figure of Face105;
+	otherwise if the make-up of face is 1:
+		if alcohol-level <= 0:
+			decide on Figure of Face111;
+		otherwise:
+			decide on Figure of Face115;
+	otherwise if the make-up of face is 2:
+		if alcohol-level <= 0:
+			decide on Figure of Face121;
+		otherwise:
+			decide on Figure of Face125;
+	otherwise:
+		if alcohol-level <= 0:
+			decide on Figure of Face131;
+		otherwise:
+			decide on Figure of Face135.
 
+Figure of BreastsObject3 is the file "CharWins/FocusWin/Breasts/breasts3.jpg".
+
+To decide which figure-name is the examine-image of (T - breasts):
+	decide on figure of BreastsObject3.
+
+Figure of HipsObject3 is the file "CharWins/FocusWin/Hips/hips3.jpg".
+
+To decide which figure-name is the examine-image of (T - hips):
+	decide on figure of HipsObject3.
 
 Necessary Figures ends here.

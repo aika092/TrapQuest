@@ -1,9 +1,7 @@
 Cleaning by Actions begins here.
 
-
 The can't rub another person rule is not listed in the check rubbing rulebook.
 The report rubbing rule is not listed in the report rubbing rulebook.
-
 
 ragFound is an object that varies.
 
@@ -106,7 +104,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that!" instead;
 	if the second noun is not clothing and the second noun is not arms, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
-		if the second noun is pink spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
+		if the second noun is pink-spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
 		if the player is flying and the second noun is not held by the player, say "The [printed name of the second noun] is on the ground, and you're not." instead;
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
@@ -142,7 +140,7 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with (C - a clothing):
-	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
+	say "You use [NameDesc of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
 	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
 		decrease the semen coating of P by 1;
 		let R be a random number between 1 and 2;
@@ -154,7 +152,7 @@ To 2Clean (P - a body part) with (C - a clothing):
 	otherwise if the semen coating of P is 1 and P is hair:
 		say "Your hair is now almost completely clean, but you can't get every last strand of cum out without washing in water.";
 	otherwise:
-		say "The [C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
+		say "[BigNameDesc of C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
 	allocate 6 seconds.
 
 [!<2CleanBodyPartWithLimb>+
@@ -198,6 +196,4 @@ To clean (C - a clothing):
 	now the semen-soak of C is 0;
 	if C is worn, update appearance level.
 
-
 Cleaning ends here.
-

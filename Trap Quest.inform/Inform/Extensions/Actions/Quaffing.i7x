@@ -1,6 +1,5 @@
 Quaffing by Actions begins here.
 
-
 [Quaffing is the verb used to handle potions created via alchemy. It is called automatically by the drinking verb when appropriate.]
 Quaffing is an action applying to one thing.
 Check quaffing:
@@ -16,9 +15,7 @@ Check quaffing:
 Carry out quaffing:
 	allocate 3 seconds;
 	StomachUp 1;
-	if the noun is cursed and the noun is not potion of blessing, say "That tasted really awful - you're pretty sure it was cursed!";
+	if the noun is cursed and the noun is not blessing-potion, say "That tasted really awful - you're pretty sure it was cursed![line break][variable custom style]Uh-oh. That probably hasn't done what it was supposed to do...[roman type][line break]";
 	destroy the noun.
 
-
 Quaffing ends here.
-

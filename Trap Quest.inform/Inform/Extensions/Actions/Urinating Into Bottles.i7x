@@ -1,6 +1,5 @@
 Urinating Into Bottles by Actions begins here.
 
-
 [!<peeBottling:Action>*
 
 REQUIRES COMMENTING
@@ -22,18 +21,18 @@ Check PeeBottling:[TODO: compatible with parched pedestal]
 	if the noun is erect pedestal, say "There's no opening where you can pee." instead;
 	if the player is prone, say "You can only do that when standing." instead;
 	if there is worn pee covering clothing:
-		say "Do you want to get your clothes out of the way first? ";
-		if the player is bimbo consenting:
-			repeat with C running through worn pee covering clothing:
-				if C is crotch-zipped:
-					say "You unzip your [ShortDesc of C].";
-					ZipDown C;
-					now C is temporarily-displaced;
-				otherwise if C is displacable:
-					say "You pull your [ShortDesc of C] out of the way.";
-					now C is crotch-displaced;
-					now C is temporarily-displaced;
-				allocate 2 seconds;
+		now auto is 1;
+		if the player is able to displace:
+			say "Do you want to get your clothes out of the way first? ";
+			if the player is consenting:
+				repeat with C running through worn pee covering clothing:
+					if C is crotch-zipped:
+						try unzipping C;
+						if C is crotch-unzipped, now C is temporarily-displaced;
+					otherwise if C is displacable and C is crotch-in-place:
+						try displacing C;
+						if C is crotch-displaced, now C is temporarily-displaced;
+		now auto is 0;
 		if there is worn pee covering clothing, say "If you peed right now, it'd be inside your [MediumDesc of random worn pee covering clothing]." instead;
 	if the noun is a vessel:
 		if the doses of the noun > 0 and the fill-type of the noun is not 21:
@@ -90,4 +89,3 @@ Carry out PeeBottling:
 Understand "pee into [something]", "pee in [something]", "piss in [something]", "piss into [something]", "urinate in [something]", "urinate into [something]", "wee in [something]", "wee into [something]", "pp [something]" as PeeBottling.
 
 Urinating Into Bottles ends here.
-

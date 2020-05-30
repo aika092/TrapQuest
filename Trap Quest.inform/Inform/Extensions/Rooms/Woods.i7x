@@ -1,6 +1,5 @@
 Woods by Rooms begins here.
 
-
 [!<JungleRoom>@
 
 REQUIRES COMMENTING
@@ -9,7 +8,6 @@ REQUIRES COMMENTING
 
 @!]
 A jungle room is a kind of room. A jungle room has a labyrinth shape called shape. The shape of a jungle room is usually L2/0-0-1-1-1-1. The grid position of a jungle room is usually <0,0,0>. A jungle room is usually no-roof.
-
 
 [!<woods01:JungleRoom>*
 
@@ -205,7 +203,7 @@ Woods26 is an important mandatory jungle room. The printed name of Woods26 is "S
 REQUIRES COMMENTING
 
 *!]
-Woods27 is a dodgy jungle room. The printed name of Woods27 is "The Well". "[if vine boss is off-stage]An overgrown clearing with a brick well surrounded by four stone statues in the center. Each statue is intricately carved, all depicting a blissfully masturbating nude woman.[otherwise]An overgrown clearing with a dilapidated brick well in the center. It is surrounded by four pillars of varying height, all completely encased with solid vine.[end if]".
+Woods27 is a dodgy jungle room. The printed name of Woods27 is "The Well". "[if vine boss is off-stage]An overgrown clearing with a brick well surrounded by four stone statues in the centre. Each statue is intricately carved, all depicting a blissfully masturbating nude woman.[otherwise]An overgrown clearing with a dilapidated brick well in the centre. It is surrounded by four pillars of varying height, all completely encased with solid vine.[end if]".
 
 [!<woods28:JungleRoom>*
 
@@ -219,14 +217,16 @@ Woods28 is a dodgy jungle room. The printed name of Woods28 is "Abandoned Nest".
 REQUIRES COMMENTING
 
 *!]
-Woods29 is a mandatory jungle room. The printed name of Woods29 is "Pumpkin Patch". "A patch of wild pumpkins, growing on the edges of a small clearing.". [The grid position of Woods29 is <?,?,?>.]
+Woods29 is a jungle room. The printed name of Woods29 is "Pumpkin Patch". "A patch of wild pumpkins, growing on the edges of a small clearing.". [The grid position of Woods29 is <?,?,?>.]
 
 [!<woods30:JungleRoom>*
 
 REQUIRES COMMENTING
 
 *!]
-Woods30 is a mandatory dodgy jungle room. The printed name of Woods30 is "Giant Statue". "There is an enormous statue of a naked woman [if doomed is 5]laying in the center of this clearing. Green vines are wrapped around her body, as if holding her down for the massive, sickly purple creepers plugging her holes.[otherwise if vine boss is off-stage]kneeling in the center of this clearing.[otherwise]on all fours in the center of this clearing. Massive green vines are crammed into her mouth and wrapped around her wrists and ankles.[end if]". The shape of Woods30 is L2/0-0-0-1-0-1.
+Woods30 is a mandatory dodgy jungle room. The printed name of Woods30 is "Giant Statue". "There is an enormous statue of a naked woman [if doomed is 5]laying in the centre of this clearing. Green vines are wrapped around her body, as if holding her down for the massive, sickly purple creepers plugging her holes.[otherwise if vine boss is off-stage]kneeling in the centre of this clearing.[otherwise]on all fours in the centre of this clearing. Massive green vines are crammed into her mouth and wrapped around her wrists and ankles.[end if]". The shape of Woods30 is L2/0-0-0-1-0-1.
+
+Woods31 is a dodgy jungle room. The printed name of Woods31 is "Cave of Divination". "A shallow cave, with a pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if]women carved into the rock on either side of the entrance.". The shape of Woods31 is L2/0-0-0-0-0-1.
 
 [!<stairway03:JungleRoom>*
 
@@ -271,6 +271,8 @@ To say ExamineDesc of (C - WoodsScenery01):
 To decide which figure-name is the examine-image of (C - WoodsScenery01):
 	decide on figure of DungeonScenery03.
 
+[woodsscenery02 is a statue]
+
 [!<woodsScenery04:Scenery>*
 
 REQUIRES COMMENTING
@@ -281,55 +283,10 @@ WoodsScenery04 is a scenery. WoodsScenery04 is in Woods27. Understand "well", "b
 To say ExamineDesc of (C - WoodsScenery04):
 	say "A dilapidated brick well.".
 
-The block climbing rule is not listed in the check climbing rulebook.
+WoodsScenery05 is a scenery. WoodsScenery05 is in Woods31. Understand "statue", "women", "woman", "statues" as WoodsScenery05.
 
-[!<CheckDrinkingWoodsScenery03>+
-
-REQUIRES COMMENTING
-
-+!]
-Check drinking WoodsScenery03:
-	try climbing the noun instead.
-
-[!<CheckClimbingSomething>+
-
-REQUIRES COMMENTING
-
-+!]
-Check climbing something:
-	if the noun is not WoodsScenery03, say "How would that work?" instead;
-	if the player is prone, say "You need to be standing up to climb a ladder." instead;
-	if the player is ankle bound, say "You can't climb the ladder with your ankles bound." instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead;
-	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead.
-
-[!<CarryOutClimbingWoodsScenery03>+
-
-REQUIRES COMMENTING
-
-+!]
-Carry out climbing WoodsScenery03:
-	allocate 6 seconds;
-	say "You climb the ladder and put your face through the statue's hole.[line break]";
-	let R be a random number between 1 and 3 - (diaper quest + ungape);
-	if R is 1:
-		say "You can't believe what you see - beyond the wall is a beautiful green field meadow, with the sun shining onto a glittering lake. Fluffy rabbits roam the grass and graceful swans drift freely on the lake. You desire for nothing more than to find a way to the other side of the wall. The sight is so uplifting that you feel more wholesome inside.";
-		SemenAddictDown 2;
-		IntUp 1;
-		Dignify 5000;
-	if R is 3:
-		say "The statue appears to continue on the other side of the wall - you can't see what's inside.[if the openness of asshole < 10][line break]While your head is in the statue's asshole, you feel your own sphincter suddenly stretch![end if]";
-		gape asshole times 5;
-	if R is 2:
-		say "The statue appears to continue on the other side of the wall - the belly of the statue is filled with [if diaper quest is 0][semen][otherwise if diaper messing >= 4 and there are worn knickers]food[otherwise]water[end if]![if the largeness of belly < 10][line break]While your head is in there, you feel your own belly suddenly fill from the inside![end if]";
-		if diaper quest is 1:
-			if diaper messing >= 4 and there are worn knickers:
-				increase rectum by 12;
-			otherwise:
-				increase the water volume of belly by belly limit - the total fill of belly;
-		otherwise:
-			AssFill 8;
-	decrease the uses of WoodsScenery03 by 1.
+To say ExamineDesc of (C - WoodsScenery05):
+	say "A pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if] women carved out of stone, with [if vine boss is alive]green vines wrapping up their bodies like ropes.[otherwise]with their arms positioned to cover up their bodies.[end if]".
 
 
 [!<woods:Region>*
@@ -337,8 +294,6 @@ Carry out climbing WoodsScenery03:
 REQUIRES COMMENTING
 
 *!]
-The Woods is a region. Woods01, Woods02, Woods03, Woods04, Woods05, Woods06, Woods07, Woods08, Woods09, Woods10, Woods11, Woods12, Woods13, Woods14, Woods15, Woods16, Woods17, Woods18, Woods19, Woods20, Woods21, Woods22, Woods23, Woods24, Woods25, Woods26, Woods27, Woods28, Woods29, Woods30, Stairwell02, Stairwell03 are in The Woods.
-
+The Woods is a region. Woods01, Woods02, Woods03, Woods04, Woods05, Woods06, Woods07, Woods08, Woods09, Woods10, Woods11, Woods12, Woods13, Woods14, Woods15, Woods16, Woods17, Woods18, Woods19, Woods20, Woods21, Woods22, Woods23, Woods24, Woods25, Woods26, Woods27, Woods28, Woods29, Woods30, Woods31, Stairwell02, Stairwell03 are in The Woods.
 
 Woods ends here.
-

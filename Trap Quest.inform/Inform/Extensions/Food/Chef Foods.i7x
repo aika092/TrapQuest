@@ -1,6 +1,5 @@
 Chef Foods by Food begins here.
 
-
 A chef food is a kind of food. A chef food has a number called quality. The quality of a chef food is usually 1. A chef food has a number called fat. The fat of a chef food is usually 1.
 
 To say DevourFlav of (C - a chef food):
@@ -25,6 +24,4 @@ Report TQeating chef food:
 	DelicateDown 1;
 	destroy the noun.
 
-
 Chef Foods ends here.
-

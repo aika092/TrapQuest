@@ -1,6 +1,5 @@
 Drink Effects by Drinks begins here.
 
-
 [!<Bottle>@<ComputeCursedDrinking>+
 
 REQUIRES COMMENTING
@@ -8,7 +7,6 @@ REQUIRES COMMENTING
 +@!]
 To compute cursed drinking (X - a bottle):
 	compute default cursed drinking X.
-
 
 To compute default cursed drinking (X - a bottle):
 	if the fill-type of X > highest-cursed and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1, say "This [if the fill-type of X is 20][semen][otherwise if the fill-type of X is 21][urine][otherwise if the fill-type of X is 22][milk][otherwise]ungodly mix of bodily fluids[end if] tastes [if the fill-type of X is 22]much[otherwise]even[end if] more bitter than usual!";
@@ -72,7 +70,6 @@ To compute default cursed drinking (X - a bottle):
 		say "Your crotch feels all tingly!";
 		passively stimulate vagina times 3.
 
-
 [!<overfullQuotient:Integer>*
 
 REQUIRES COMMENTING
@@ -102,7 +99,7 @@ To compute drinking (X - a bottle):
 			curse X;
 			now the curse-ID of X is sure;
 		otherwise:
-			 if (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed) and X is sure and X is not cursed:
+			if (the fill-type of X >= lowest-cursed and the fill-type of X <= highest-cursed) and X is sure and X is not cursed:
 				now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1; [the vessel wasn't cursed so the potion must have been!]
 			if (the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed) and the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1:
 				now the curse-ID of X is sure; [We know this potion is good so the vessel must be cursed!]
@@ -163,8 +160,6 @@ To compute drinking effect (N - 2):
 		DiaperAddictDown 1;
 		OralSexAddictDown 1;
 		VaginalSexAddictDown 1.
-
-
 
 [!<ComputeDrinkingEffect3>+
 
@@ -256,15 +251,12 @@ To compute drinking effect (N - 7):
 		now C is identified;
 		say "You sense that something good has happened, but you don't know where[if debugmode >= 1] (DEBUG: It was the [C] in the [location of C])[end if].".
 
-
-
 Definition: a clothing (called C) is positive-magic-enhanceable:
 	if C is not magic-enhanceable, decide no;
 	if the raw-magic-modifier of C < 0, decide no;
 	decide yes.
 
 Definition: a clothing is magic-enhanceable if it is cursable.
-
 
 [!<ComputeDrinkingEffect20>+
 
@@ -320,7 +312,4 @@ To compute drinking effect (N - 23):
 	StomachSemenUp 1;
 	if lactation fetish is 1, increase the fat-burning of the player by 250.
 
-
-
 Drink Effects ends here.
-

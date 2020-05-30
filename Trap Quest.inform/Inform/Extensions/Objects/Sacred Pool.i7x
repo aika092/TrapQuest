@@ -1,6 +1,5 @@
 Sacred Pool by Objects begins here.
 
-
 The sacred pool is a water-body-scenery. the sacred pool is not portable. The printed name of sacred pool is "[TQlink of item described]sacred pool[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of sacred pool is "sap". the sacred pool has a number called corruption. the sacred pool has a number called charge. the charge of the sacred pool is usually 0. The sacred pool is in Mansion25.
 
 To decide which figure-name is the examine-image of (C - sacred pool):
@@ -23,7 +22,8 @@ To compute showering (SP - sacred pool):[Much later: some interaction with slime
 			say "[line break]Your clothes fizz slightly, and when you look, somehow they seem... not as interesting as they were before.";
 			repeat with C running through worn clothing:
 				if C is cursed:
-					bless C;
+					if strongCurses is 1, compute new quest of C;
+					otherwise bless C;
 					increase tracked-semen by 25;
 				otherwise if C is blessed:
 					curse C;
@@ -56,8 +56,6 @@ To pollute (N - a number):
 		say "[one of]There is a noticeable shift in the air around you, and that reedy 'alive' feeling from inside the mansion slowly creeps in behind you and settles over the area.[or][stopping]";
 		repeat with G running through garlic rooms:
 			unless G is Mansion23, now G is not garlic;
-		if doomed < 5:
-			increase doom counter by 150.
+		if doomed < 5 and doom counter > 0, increase doom counter by 150.
 
 Sacred Pool ends here.
-

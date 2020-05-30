@@ -36,4 +36,3 @@ To SexChange (C - pouch-panties):
 	if C is upgradable, transform C into the upgrade-target of C.
 
 Pouch Panties ends here.
-

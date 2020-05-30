@@ -48,14 +48,9 @@ Figure of bikini bottoms 1 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bik
 To decide which number is the unique outrage of (C - cow print bikini bottoms):
 	decide on 1.
 
-
 [pink bikini bottoms]
 
-pink bikini bottoms is a bikini bottoms. A pink bikini bottoms is transformation-rare. A pink bikini bottoms is see-through. [Because it rides up into your snatch - see image]
-The printed name of pink bikini bottoms is "[clothing-title-before]pair of pink bikini bottoms[clothing-title-after]". The text-shortcut of pink bikini bottoms is "pbb". The armour of pink bikini bottoms is 3.
-
-To decide which number is the penis-capacity of (K - pink bikini bottoms):
-	decide on 0.
+pink bikini bottoms is a bikini bottoms. A pink bikini bottoms is transformation-rare. The printed name of pink bikini bottoms is "[clothing-title-before]pair of pink bikini bottoms[clothing-title-after]". The text-shortcut of pink bikini bottoms is "pbb". The armour of pink bikini bottoms is 3.
 
 To compute SelfExamineDesc of (K - pink bikini bottoms):
 	say "A super skimpy pair of pink bikini bottoms completely exposes your [ShortDesc of hips][if the player is possessing a vagina] and rides up into your [vagina][end if]. ";
@@ -72,6 +67,10 @@ Figure of bikini bottoms 2 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bik
 
 Definition: pink bikini bottoms is pink themed: decide yes.
 
+Definition: pink bikini bottoms is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+
+To decide which number is the penis-capacity of (H - pink bikini bottoms):
+	decide on 1.
 
 [white crotchless bikini bottoms]
 
@@ -127,7 +126,6 @@ To decide which number is the unique outrage of (C - black crotchless bikini bot
 Definition: black crotchless bikini bottoms is gem themed: decide yes.
 Definition: black crotchless bikini bottoms is black themed: decide yes.
 
-
 [red bikini briefs]
 
 red-bikini-briefs is a bikini bottoms. The printed name of red-bikini-briefs is "[clothing-title-before]pair of red bikini briefs[clothing-title-after]". The text-shortcut of red-bikini-briefs is "rbb". The armour of red-bikini-briefs is 6. Understand "red", "bikini", "briefs" as red-bikini-briefs.
@@ -144,7 +142,6 @@ To decide which figure-name is clothing-image of (C - red-bikini-briefs):
 To say ClothingDesc of (K - red-bikini-briefs):
 	say "A bottom half of a bikini outfit with a red pattern. The cut is quite narrow, leaving a lot of your butt showing.".
 Figure of bikini bottoms 5 is the file "Items/Clothes/Lower/Underwear/Skimpy/Bikini/bikinibottoms5.png".
-
 
 Definition: red-bikini-briefs is red themed: decide yes.
 Definition: red-bikini-briefs is rippable: decide yes.
@@ -176,6 +173,4 @@ Definition: leopard print bikini bottoms is black themed: decide yes.
 Definition: leopard print bikini bottoms is rippable: decide yes.
 Definition: leopard print bikini bottoms is is crotch-pullup: decide no.
 
-
 Bikini Bottoms ends here.
-

@@ -15,7 +15,7 @@ Definition: a person is fighting against short skirts:
 	decide no.
 
 short skirts reminder is a number that varies. short skirts reminder is 0.
-A time based rule (this is the fighting against short skirts fetish rule):
+An all time based rule (this is the fighting against short skirts fetish rule):
 	if the player is fighting against short skirts:
 		if short skirts reminder <= 0:
 			let C be a random worn skirted short-skirt-disallowed clothing;
@@ -31,4 +31,3 @@ This is the skirts can't be summoned with short skirts fetish rule:
 The skirts can't be summoned with short skirts fetish rule is listed in the global wearability rules.
 
 Short Skirt Addiction ends here.
-

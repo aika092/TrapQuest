@@ -1,6 +1,5 @@
 Room Adjectives by Rooms begins here.
 
-
 [!<Room>@<IsSandy>+
 
 REQUIRES COMMENTING
@@ -99,15 +98,6 @@ REQUIRES COMMENTING
 +@!]
 A room can be trappable or untrappable. A room is usually trappable. [An untrappable room doesn't have traps spawn, e.g. the shop.]
 
-
-[!<Room>@<IsStamped>+
-
-REQUIRES COMMENTING
-
-+@!]
-A room can be stamped. A room is usually not stamped. [Have we placed temporary icons or hyperlink buttons in this room on the map?]
-A room can be NPCStamped. A room is usually not NPCStamped. [Have we already calculated the coordinates for NPC icons on this space?]
-
 [!<Room>@<IsMandatory>+
 
 REQUIRES COMMENTING
@@ -159,7 +149,6 @@ This is a room that NPCs will never walk into voluntarily. Main use should be fo
 +@!]
 A room can be bossed or unbossed. A room is usually unbossed.
 
-
 Definition: A room is furnished rather than unfurnished if there is furniture in it.
 
 [This adds to movement hindrance]
@@ -169,4 +158,3 @@ To decide which text is ObstacledDesc of (R - a room):
 	decide on "Moving across the [location of the player] delays you slightly.".
 
 Room Adjectives ends here.
-

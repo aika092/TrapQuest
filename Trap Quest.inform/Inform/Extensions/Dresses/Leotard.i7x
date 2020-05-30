@@ -1,6 +1,6 @@
 Leotard by Dresses begins here.
 
-A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet. A leotard has a number called charge.
+A leotard is a kind of overdress. A leotard is usually crotch-intact. A leotard is usually crotch-intact. A leotard is usually unskirted. A leotard is fully covering. A leotard is usually not-top-displacable. A leotard is usually sheer-when-wet. A leotard is usually erect-nipple-exposing. A leotard has a number called charge.
 
 Definition: a leotard is ballet related: decide yes.
 Definition: a leotard is sissifying: decide yes.
@@ -55,7 +55,6 @@ To set up influence of (C - a leotard):
 To decide what number is the original price of (C - a leotard):
 	decide on 5.
 
-
 To compute periodic effect of (L - a leotard):
 	[ballerina stuff]
 	increase the charge of L by 1;
@@ -75,8 +74,4 @@ To decide which object is the unique-upgrade-target of (C - a leotard):
 	if diaper focus is 0, decide on a random off-stage ballet corset;
 	otherwise decide on a random off-stage teddybear playsuit.
 
-
-
-
 Leotard ends here.
-

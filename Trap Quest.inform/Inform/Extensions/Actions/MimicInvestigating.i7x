@@ -28,4 +28,3 @@ Report MimicInvestigating:
 	allocate 3 seconds.
 
 MimicInvestigating ends here.
-

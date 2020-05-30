@@ -1,6 +1,5 @@
 Bladder by Player begins here.
 
-
 [!<PersonIsAbleToPee>+
 
 REQUIRES COMMENTING
@@ -59,4 +58,3 @@ To BladderDown (X - a number):
 		now the bladder of the player is 0.
 
 Bladder ends here.
-

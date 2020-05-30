@@ -24,4 +24,3 @@ To decide which number is the initial outrage of (C - a vinyl corset):
 	decide on 4.
 
 Vinyl Corset ends here.
-

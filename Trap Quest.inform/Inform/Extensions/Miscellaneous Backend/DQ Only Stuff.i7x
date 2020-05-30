@@ -1,6 +1,5 @@
 DQ Only Stuff by Miscellaneous Backend begins here.
 
-
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
@@ -39,10 +38,9 @@ Chapter - Unused but referenced Figures
 
 Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 
-
 To decide which figure-name is YesNoBackground:
+	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	decide on figure of YesNoBackground1.
-
 
 Include School Stuff by DQ Only Stuff.
 
@@ -78,6 +76,7 @@ A facehugger is a kind of monster.
 An ultimate-lesson-actor is a kind of monster.
 student-katya is a monster.
 centaur is a monster.
+confident aeromancer is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.
@@ -98,7 +97,7 @@ HorsePulling is an action applying to one thing.
 A lake monster is a kind of person. A lake monster has a number called semen-sniffing. There is 1 lake monster.
 To LakeMonsterCheck (S - a number):
 	do nothing.
-A slimegirl is a kind of person. A slimegirl has a number called hunger. A slimegirl has a number called intensity. A slimegirl has a number called timetaken.
+slimegirl is a person. slimegirl has a number called hunger. slimegirl has a number called intensity. slimegirl has a number called timetaken.
 To SlimegirlCheck:
 	do nothing.
 
@@ -123,8 +122,11 @@ To say tongueStatus of (C - a clothing):
 	say "".
 portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
-Include Stuffies by Equippables.
+tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
+Definition: tits-lesson is lesson-appropriate: decide no.
 
+
+Include Stuffies by Equippables.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
 Figure of Jammy Messy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading/frame_000004.jpeg".
@@ -264,7 +266,6 @@ Figure of Jammy Messy Loading Animation Frame 403 is the file "Special/Animation
 Figure of Jammy Messy Loading Animation Frame 406 is the file "Special/Animations/JammyLoading/frame_000406.jpeg".
 Figure of Jammy Messy Loading Animation Frame 409 is the file "Special/Animations/JammyLoading/frame_000409.jpeg".
 Figure of Jammy Messy Loading Animation Frame 412 is the file "Special/Animations/JammyLoading/frame_000412.jpeg".
-
 
 Figure of Jammy Nonmessy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading2/frame_000001.jpeg".
 Figure of Jammy Nonmessy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading2/frame_000004.jpeg".
@@ -406,7 +407,6 @@ Figure of Jammy Nonmessy Loading Animation Frame 409 is the file "Special/Animat
 Figure of Jammy Nonmessy Loading Animation Frame 412 is the file "Special/Animations/JammyLoading2/frame_000412.jpeg".]
 
 JammyLoadingAnimation is an initial animation track.
-
 
 To compute unique setup of (T - JammyLoadingAnimation):
 	if diaper messing >= 3 and a random number between 1 and 2 is 1:
@@ -696,16 +696,10 @@ To compute unique setup of (T - JammyLoadingAnimation):
 To decide which figure-name is the bannerImage of (T - JammyLoadingAnimation):
 	decide on Figure of Jammy Nonmessy Loading Animation Frame 1.
 
-
 The animationColour of JammyLoadingAnimation is 16765178.
 
 To decide which number is the frameSlowness of (T - JammyLoadingAnimation):
 	decide on 1.
-
-
-
-
-
 
 [Figure of Mirror Loading Banner is the file "Special/Animations/Mirror/mirror banner.png".
 Figure of Mirror Animation Frame 2 is the file "Special/Animations/Mirror/mirror2.png".

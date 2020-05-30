@@ -159,6 +159,19 @@ Definition: yourself is able to kick:
 	now autoattack is 0;
 	decide yes.
 
+[!<ThePlayerCanNotAttackWhenCagedRule>+
+
+This rule causes an attack to fail when the player is in the dungeon chains. If the player is attacking manually, outputs a brief message explaining why.
+
++!]
+This is the player can't attack when caged rule:
+	if dungeon chains is worn:
+		if autoattack is 0, say "The [dungeon chains] are making that impractical!";
+		rule fails.
+The player can't attack when caged rule is listed in the ability to slap rules.
+The player can't attack when caged rule is listed in the ability to knee rules.
+The player can't attack when caged rule is listed in the ability to kick rules.
+
 [!<ThePlayerCanNotAttackWhenFlyingRule>+
 
 This rule causes an attack to fail when the player is flying. If the player is attacking manually, outputs a brief message explaining why.
@@ -168,7 +181,6 @@ This is the player can't attack when flying rule:
 	if the player is flying:
 		if autoattack is 0, say "You aren't even on the ground!";
 		rule fails.
-
 The player can't attack when flying rule is listed in the ability to slap rules.
 The player can't attack when flying rule is listed in the ability to knee rules.
 The player can't attack when flying rule is listed in the ability to kick rules.
@@ -455,9 +467,7 @@ To say SurrenderFlav of (M - a monster):
 			otherwise say "[variable custom style]'[one of]Do what you want with me, just please don't be rough!'[or]I'll do whatever you say, just please don't hurt me!'[or]You're the boss... just please be kind to me!'[or]I'm delicate, please don't break me!'[or]I'm just a poor weakling, please show me mercy!'[in random order][roman type][line break]";
 	if the player is able to use their hands and the player is not wrist bound behind, say "You [if the humiliation of the player >= 40000]put your hands on the back of your head[otherwise]raise your hands above your head[end if] as a sign of [if the humiliation of the player >= 40000]your status as a powerless object[otherwise][one of]surrender[or]submission[at random][end if][if M is unintelligent and the humiliation of the player < 40000], unsure if [NameDesc of M] even understands your actions[end if].".
 
-
 Part 4 - Damage Calculation
-
 
 [!<combatBonus:Integer>*
 
@@ -487,7 +497,7 @@ combat bonus remainder is a number that varies.
 REQUIRES COMMENTING
 
 +!]
-A time based rule (this is the combat bonus rule):
+An all later time based rule (this is the combat bonus rule):
 	let N be saved-flat-strength / combat scaling;
 	let N2 be the remainder after dividing the strength of the player by combat scaling;
 	if a random number between 1 and combat scaling <= N2:
@@ -502,7 +512,6 @@ To say combat bonus explanation:
 	let N be combat bonus - combat bonus remainder;
 	if the player is blinded, increase N by 2;
 	say "[if N >= 0]+[end if][N] (strength component) [if combat bonus remainder is 1]+1 (strength component fluctuation) [end if][if the player is breasts blinded]-2 (blinded by breasts) [otherwise if the player is blinded]-2 (blinded by cum) [end if]".
-
 
 [!<DecideWhichNumberIsTheDamageModifierOfThing>+
 
@@ -531,26 +540,33 @@ To compute slaying bonus of (M - a monster):
 		if the delicateness of the player > 20 - the difficulty of M, DelicateDown 1;
 		DelicateDown 1.
 
-[!<ComputeDamageOfMonster>+
+To compute failed damage of (M - a monster):
+	do nothing.
 
-REQUIRES COMMENTING
-
-+!]
-To compute damage of (M - a monster):
+To compute standard damage of (M - a monster):
 	if the health of M > 0:
-		say DamageReaction (the health of M) of M;
+		compute damage reaction of M;
 		now M is interested;
 		anger M;
 		now the boredom of M is 0;
+		if M is undefeated and M is not caged, compute combatProvoked of M; [All NPCs should become unfriendly here, if able.]
 	otherwise:
-		say "The [noun] drops slowly to the ground defeated, and disappears.";
-		compute death of the noun.
+		compute defeat of M.
 
-[!<SayDamageReactionOfMonster>+
+To compute damage reaction of (M - a monster):
+	if M is uninterested or M is friendly:
+		say CombatProvokedReaction of M;
+		now the sleep of M is 0;
+	otherwise:
+		say DamageReaction (the health of M) of M.
 
-REQUIRES COMMENTING
+To say CombatProvokedReaction of (M - a monster):
+	say "[BigNameDesc of M] instantly [if M is awake]reacts[otherwise]wakes up[end if], taking a fighting stance!".
 
-+!]
+To compute combatProvoked of (M - a monster):
+	FavourDown M;
+	now M is unleashed.
+
 To say DamageReaction (N - a number) of (M - a monster):
 	if N > (the maxhealth of M / 4) * 3:
 		say DamageReactHealthy of M;
@@ -560,7 +576,7 @@ To say DamageReaction (N - a number) of (M - a monster):
 		say DamageReactTired of M;
 	otherwise if diaper quest is 0 and M is dominantSexReady:
 		say DamageReactSubmissive of M;
-		if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! Maybe you can see if [he of M][']ll let you be on top with 'dominate [MediumDesc of M].'[roman type][line break][or][stopping]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: Looks like the [he of M] would rather fuck than fight! You may be able to dominate [him of M] if you defeat [him of M]!'[roman type][line break][or][stopping]";
 	otherwise:
 		say DamageReactWeak of M.
 
@@ -622,7 +638,6 @@ REQUIRES COMMENTING
 
 +!]
 To damage (A - a number) on (M - a monster):
-	allocate 6 seconds;
 	[Roll for damage - essentially 2dX]
 	now attack-damage is (a random number between 1 and A) + (a random number between 1 and A);
 	if damage-explained > 0, say "[input-style]=> [if A < 1]RNG(A~1)[otherwise]2d[A][end if] = [attack-damage]; ";
@@ -648,12 +663,15 @@ To damage (A - a number) on (M - a monster):
 	if N is not 0:
 		increase attack-damage by N;
 		if damage-explained > 0, say "[if N >= 0]+[end if][N] (damage [if N < 0]reduction[otherwise]amplification[end if] of [ShortDesc of M]) ";
+	if M is not damageable:
+		now attack-damage is 0;
+		if damage-explained > 0, say "CANCELLED - ENEMY IS INVULNERABLE!";
 	[Damage calculation over, deal damage now.]
 	if damage-explained > 0, say "[line break][health of M] HP - [attack-damage] damage -> ";
 	decrease the health of M by attack-damage;
 	if damage-explained > 0, say "[health of M] HP[roman type][line break]";
 	if the health of M > 0:
-		say "[Damage-flavour of attack-damage on M]";
+		say Damage-flavour of attack-damage on M;
 	otherwise if attack-damage > 0:
 		increase the fat-burning of the player by 20 * the difficulty of M; [Your exercise count is massively rewarded by defeating a monster. Not relevant to the other clause but putting it here because why not.]
 	[Just in case it doesn't happen in the monster's damage function - everything should be unfriendly after you attack it.]
@@ -662,9 +680,7 @@ To damage (A - a number) on (M - a monster):
 	if M is interested and M is friendly, progress quest of attack-quest;
 	[Call the damage function of the monster]
 	if attack-damage > 0:
-		compute damage of M;
-		anger M;
-		if M is undefeated and M is not caged, compute combatProvoked of M; [All NPCs should become unfriendly here, if able.]
+		compute standard damage of M;
 	otherwise:
 		if the health of M < 1: [This could happen if an allied NPC damages it this turn, but the player fails to do any damage.]
 			now the health of M is 1;
@@ -686,14 +702,4 @@ To damage (A - a number) on (M - a monster):
 			now danaume-arms-victory is 1.
 			[display character window.]
 
-To compute failed damage of (M - a monster):
-	do nothing.
-
-To compute combatProvoked of (M - a monster):
-	FavourDown M;
-	now M is unleashed.
-
-
-
 Attacking Monsters ends here.
-

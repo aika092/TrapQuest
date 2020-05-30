@@ -103,6 +103,7 @@ To anally orgasm shamefully:
 		say "[if the player is not disgraced][line break][first custom style]What a shameful way to orgasm...[otherwise if the player is not shameless][line break][variable custom style]Cumming like that is so humiliating. So why do I find myself just getting turned on even more?[otherwise][line break][second custom style]I came just from my butthole... I'm so dirty![end if][roman type][line break]";
 		orgasm;
 		slowSexAddictUp 1 + the number of live things penetrating vagina;
+		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		increase anal-orgasms by 1;
 	if refactoryperiod > 0:
 		if there is a camera trap in the location of the player and there is an off-stage shameful orgasm poster:
@@ -166,8 +167,9 @@ To vaginally orgasm shamefully:
 		say VaginalOrgasmFlav;
 		if interracial fetish is 1 and there is a dark skinned male monster penetrating vagina, say "[one of][if the sex addiction of the player < 6][line break][first custom style]I can't believe I just came from a black [manly-penis]...[otherwise if the raw sex addiction of the player < 11][line break][variable custom style]I just came all over a black [manly-penis]... I didn't know it would feel so good.[otherwise][line break][second custom style]Oh my god, black [manly-penis] is the best. I want more![end if][or][if the sex addiction of the player < 6][first custom style]What is it about black [manly-penis] that makes me cum, even when I don't want to?![otherwise if the sex addiction of the player < 9][first custom style]If this keeps happening, I know I won't be able to stop myself from genuinely enjoying getting railed by big black [manly-penis]. [second custom style]I might be enjoying it already...[otherwise if the sex addiction of the player < 12][variable custom style]I only cum this hard when it's a black [manly-penis]![otherwise][second custom style]That felt so FUCKING good! I need even more black [manly-penis]![end if][stopping][roman type][line break]";
 		otherwise say "[one of][if the sex addiction of the player < 8][line break][first custom style]I can't believe I just came...[otherwise if the raw sex addiction of the player < 13][line break][variable custom style]I just came... I didn't know it would feel so good.[otherwise][line break][second custom style]That felt sooooo good... I want more![end if][or][if the sex addiction of the player < 8][first custom style]I have to find a way to stop orgasming like this...[otherwise if the sex addiction of the player < 13][first custom style]If this keeps happening, I know I'll get addicted. [second custom style]I might be already...[otherwise][second custom style]That felt so FUCKING good! More![end if][stopping][roman type][line break]";
-		slowSexAddictUp 1 + the number of live things penetrating asshole;
 		orgasm;
+		slowSexAddictUp 1 + the number of live things penetrating asshole;
+		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		[strongHumiliate;]
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling.
@@ -193,7 +195,7 @@ REQUIRES COMMENTING
 To punish shameful male orgasm:
 	if fast tg > 1 and the size of penis <= min penis size:
 		say DefaultSexChangeFlav;
-		say "The fact that this is happening as you shudder through yet another anal orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
+		say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
 		sexchange the player;
 	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
 		if the size of penis > min penis size and the latex-transformation of the player <= 3:
@@ -207,14 +209,6 @@ To punish shameful male orgasm:
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
-[!<PunishShamefulFemaleOrgasm>+
-
-REQUIRES COMMENTING
-
-+!]
-To punish shameful female orgasm:
-	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	slowSexAddictUp 1.
 
 [!<ShamefulTip>+
 
@@ -222,7 +216,7 @@ REQUIRES COMMENTING
 
 +!]
 To say shameful tip:
-	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction and humiliation[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
+	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is male] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
 
 [!<orgasmFatigueEffectsRules:Rulebook>*
 
@@ -371,6 +365,14 @@ This is the penetration ejaculation rule:
 		rule succeeds.
 The penetration ejaculation rule is listed last in the ejaculation rules.
 
+[It would be harsh for the player to get cum soaked pants before the game ends]
+This is the football game ejaculation rule:
+	if remote-controlled-vibrator is worn:
+		let A be the semen load of the player;
+		say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if] into [NameDesc of remote-controlled-vibrator].";
+		rule succeeds.
+The football game ejaculation rule is listed last in the ejaculation rules.
+
 [!<TheEjaculationIntoClothingRule>+
 
 REQUIRES COMMENTING
@@ -400,19 +402,15 @@ This is the ejaculation capture rule:
 	let collecting be nothing;
 	if diaper quest is 0 and the player is not immobile and the player is not in danger and the player is able to use manual dexterity:
 		let LV be the list of carried open topped vessels;
-		if the number of entries in LV > 1:
-			say "You have the following open topped vessels:[line break]";
-			repeat with V running through LV:
-				say "[V][line break]";
 		if the number of entries in LV > 0:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			truncate LV to 9 entries;
+			say "Where do you want your [semen] to go?[line break]";
 			repeat with V running through LV:
-				if collecting is nothing:
-					say "Collect your cum into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
-					if the player is consenting:
-						if the doses of V > 0:
-							say "You tip the contents of the [ShortDesc of V] onto the floor.";
-							dump V;
-						now collecting is V;
+				set next numerical response to "in the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+			set numerical response 0 to "on the ground";
+			compute multiple choice question;
+			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is bottle:
 		say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
 		SemenTasteAddictUp 1;
@@ -430,10 +428,9 @@ This is the ejaculation capture rule:
 			otherwise if collecting is not cursed:
 				now collecting is cursed;
 				now the curse-ID of collecting is sure;
-				say "Your [ShortVesselDesc of collecting] is surrounded by a dark glow. It has been cursed!";
+				say "[bold type]Your [ShortVesselDesc of collecting] is surrounded by a dark glow. It has been cursed![roman type][line break]";
 		rule succeeds.
 The ejaculation capture rule is listed last in the ejaculation rules.
-
 
 [!<TheDefaultEjaculationRule>+
 
@@ -596,7 +593,6 @@ This is the girls pee when they orgasm rule:
 		try urinating.
 The girls pee when they orgasm rule is listed last in the orgasm resolution rules.
 
-
 [!<TheHentaiOrgasmResolutionRule>+
 
 REQUIRES COMMENTING
@@ -628,18 +624,6 @@ This is the ass expulsion from orgasm rule:
 		AssSquirt.
 The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.
 
-
-[!<TheChastityCageOrgasmRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the chastity cage orgasm resolution rule:
-	if there is a worn chastity cage:
-		if a random worn chastity cage is not cursed:
-			say "You feel your [random worn chastity cage] become cursed[one of][or] again[stopping]!";
-			now a random worn chastity cage is cursed.
-The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
 
 [!<TheDrilldoOrgasmResolutionRule>+
 
@@ -709,7 +693,6 @@ REQUIRES COMMENTING
 To decide which number is the anal sensitivity influence of (C - a wearthing):
 	decide on 0.
 
-
 [!<DecideWhichNumberIsTheSensitivityOfAsshole>+
 
 REQUIRES COMMENTING
@@ -757,7 +740,6 @@ Definition: a person is unable to orgasm so soon rather than able to orgasm so s
 	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refactoryperiod > 0, decide yes;
 	decide no.
 
-
 Definition: a body part (called B) is pushed over the edge:
 	decide no.
 
@@ -769,7 +751,7 @@ Definition: breasts (called B) is pushed over the edge:
 
 constant-stimulation-started is a number that varies.
 constant-stimulation-latest is a number that varies.
-An advance counters rule:
+An all later time based rule (this is the check for constant stimulation rule):
 	if constant-stimulation-latest is not time-turns, now constant-stimulation-started is 0.
 
 This is the constant stimulation counter reset rule:
@@ -793,7 +775,6 @@ Definition: penis (called P) is pushed over the edge:
 	if the player is not a bit horny, decide no;
 	if the rawness of penis > the max-rawness of penis, decide yes;
 	decide no.
-
 
 [!<FuckholeIsPushedOverTheEdge>+
 
@@ -849,6 +830,4 @@ To decide which number is the enjoyment of (F - a fuckhole):
 	if A < 0, decide on 0;
 	decide on A.
 
-
 Orgasms ends here.
-

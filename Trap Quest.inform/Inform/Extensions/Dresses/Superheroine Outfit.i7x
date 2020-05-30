@@ -1,6 +1,6 @@
 Superheroine Outfit by Dresses begins here.
 
-A superheroine outfit is a kind of overdress. A superheroine outfit is rare. A superheroine outfit is usually nylon. A superheroine outfit is usually low cut. A superheroine outfit is usually unskirted. A superheroine outfit is usually top-exclusive. A superheroine outfit is usually not-top-displacable. The soak-limit of a superheroine outfit is usually 20.
+A superheroine outfit is a kind of overdress. A superheroine outfit is rare. A superheroine outfit is usually nylon. A superheroine outfit is usually low cut. A superheroine outfit is usually unskirted. A superheroine outfit is usually top-exclusive. A superheroine outfit is usually not-top-displacable. A superheroine outfit is usually erect-nipple-exposing. The soak-limit of a superheroine outfit is usually 20.
 Definition: a superheroine outfit is boob themed: decide yes.
 
 The printed name of superheroine outfit is usually "[clothing-title-before]superheroine outfit[clothing-title-after]".
@@ -69,8 +69,6 @@ Definition: an anime superheroine top is heart themed: decide yes.
 Definition: an anime superheroine top is pink themed: decide yes.
 Definition: an anime superheroine top is end of transformation chain: decide yes.
 
-
-
 Part 2 - Blue Superheroine Outfit
 
 A blue superheroine outfit is a kind of superheroine outfit. A blue superheroine outfit is usually leg covering. A blue superheroine outfit is manly. A blue superheroine outfit is usually only arm covering. A blue superheroine outfit is usually crotch-intact. There is 1 blue superheroine outfit. The text-shortcut of blue superheroine outfit is "bso".
@@ -97,7 +95,4 @@ To decide which object is the unique-upgrade-target of (C - a blue superheroine 
 
 Definition: a blue superheroine outfit is blue themed: decide yes.
 
-
-
 Superheroine Outfit ends here.
-

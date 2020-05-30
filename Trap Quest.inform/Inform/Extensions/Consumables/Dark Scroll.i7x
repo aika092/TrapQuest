@@ -25,4 +25,3 @@ Carry out casting:
 Definition: a dark scroll is magic themed: decide yes.
 
 Dark Scroll ends here.
-

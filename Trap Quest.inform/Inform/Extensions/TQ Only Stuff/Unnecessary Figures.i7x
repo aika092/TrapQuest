@@ -1,6 +1,5 @@
 Unnecessary Figures by TQ Only Stuff begins here.
 
-
 To decide which figure-name is Figure of acolyte 5:
 	decide on figure of small image.
 
@@ -11,7 +10,6 @@ To decide which figure-name is Figure of ghost 6:
 	decide on figure of small image.
 To decide which figure-name is Figure of ghost 7:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of Mimic Cutscene 1:
 	decide on figure of small image.
@@ -53,7 +51,6 @@ To decide which figure-name is Figure of Vines Cutscene 3a:
 	decide on figure of small image.
 To decide which figure-name is Figure of Vines Cutscene 3b:
 	decide on figure of small image.
-
 
 To decide which figure-name is Figure of Vines Cutscene 3a:
 	decide on figure of small image.

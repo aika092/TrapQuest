@@ -190,7 +190,7 @@ To decide which figure-name is clothing-image of (C - a V-shape maid outfit):
 	decide on figure of maid outfit 7.
 
 To say ClothingDesc of (M - a V-shape maid outfit):
-	say " An extremely complex corset comprised of black satin, white lace, and some buckles to make sure it doesn't go anywhere. Holding tightly and keeping your posture at a perfect ten, this is a corset worthy of only the most obedient and beautiful of royal maids. The top of the outfit is so low that it [if M is not worn]might not even cover your nipples[otherwise if M is nipple covering]can barely even cover your nipples[otherwise]fails to even cover your nipples[end if].".
+	say " An extremely complex corset comprised of black satin, white lace, and some buckles to make sure it doesn't go anywhere. Holding tightly and keeping your posture at a perfect ten, this is a corset worthy of only the most obedient and beautiful of royal maids. The top of the outfit is so low that it [if M is not worn]might not even cover your nipples[otherwise if M is at least partially nipple covering]can barely even cover your nipples[otherwise]fails to even cover your nipples[end if].".
 
 To decide which number is the initial outrage of (C - a V-shape maid outfit):
 	decide on 9.
@@ -213,7 +213,7 @@ To decide which object is the unique-upgrade-target of (M - a V-shape maid outfi
 
 Part 8 - Fishnet Maid Outfit
 
-A fishnet maid outfit is a kind of maid outfit. There is 1 fishnet maid outfit. A fishnet maid outfit is fully covering. A fishnet maid outfit is mesh. A fishnet maid outfit is usually unskirted. A fishnet maid outfit is usually crotch-intact. The text-shortcut of fishnet maid outfit is "mo8". The printed name of fishnet maid outfit is usually "[clothing-title-before]fishnet maid outfit[clothing-title-after]". Understand "fish", "net" as fishnet maid outfit.
+A fishnet maid outfit is a kind of maid outfit. There is 1 fishnet maid outfit. A fishnet maid outfit is fully covering. A fishnet maid outfit is mesh. A fishnet maid outfit is usually unskirted. A fishnet maid outfit is usually crotch-intact. A fishnet maid outfit is see-through. The text-shortcut of fishnet maid outfit is "mo8". The printed name of fishnet maid outfit is usually "[clothing-title-before]fishnet maid outfit[clothing-title-after]". Understand "fish", "net" as fishnet maid outfit.
 
 To decide which figure-name is clothing-image of (C - a fishnet maid outfit):
 	decide on figure of maid outfit 8.
@@ -230,6 +230,10 @@ To uniquely set up (C - a fishnet maid outfit):
 
 Definition: a fishnet maid outfit is black themed: decide yes.
 Definition: a fishnet maid outfit is white themed: decide yes.
+
+[The apron conceals the front half but not the back half (i.e. the player's asshole).]
+Definition: a fishnet maid outfit is potentially vagina covering if it is crotch-in-place.
+Definition: a fishnet maid outfit is potentially at least partially vagina covering if it is crotch-in-place.
 
 To decide which object is the unique-upgrade-target of (M - a fishnet maid outfit):
 	decide on a random off-stage black fetish hobble dress.
@@ -300,6 +304,4 @@ To decide which object is the unique-upgrade-target of (M - a maid waitress outf
 	if C is off-stage, decide on C;
 	otherwise decide on the unique-upgrade-target of C. [If the next target is not off-stage, we skip it.]
 
-
 Maid Outfit ends here.
-

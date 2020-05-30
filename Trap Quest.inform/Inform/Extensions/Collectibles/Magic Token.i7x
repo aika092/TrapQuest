@@ -26,5 +26,4 @@ To compute mass collectible reward of (T - a magic token):
 		destroy X;
 	reset alchemy charge.
 
-
 Magic Token ends here.

@@ -22,8 +22,6 @@ Definition: a tiara is grey themed: decide yes.
 To compute SelfExamineDesc of (H - a metal tiara):
 	say "You are wearing a[if the bimbo of the player > 11]n[line break][second custom style] absolutely gorgeous and shiny[roman type][line break][end if] metal [ShortDesc of H] on top of your [ShortDesc of hair]. ".
 
-
-
 Chapter - Class Outfit
 
 Definition: a tiara (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
@@ -55,7 +53,6 @@ To compute class outfit of (H - a tiara):
 		increase the raw-magic-modifier of R by the number of friendly alive royal guards;
 		decrease the raw-magic-modifier of R by the number of unfriendly alive royal guards.
 
-
 Chapter - Quest
 
 betrothal-quest is a headgear-clothing-quest.
@@ -72,11 +69,9 @@ To say QuestTitle of (Q - betrothal-quest):
 	say " (betrothal quest)".
 
 To say QuestFlav of (Q - stealth-diaper-quest):
-	say "You sense it wants you to pee in a diaper in front of someone without them being able to see that you're wearing a diaper.".
+	say "You sense it wants you to pee in a diaper in front of someone without them being able to see that you're wearing a diaper OR pee into a diaper while another completely dry diaper is layered on top of it.".
 
 To say QuestTitle of (Q - stealth-diaper-quest):
 	say " (sneaky wetting quest)".
 
-
 Tiara ends here.
-

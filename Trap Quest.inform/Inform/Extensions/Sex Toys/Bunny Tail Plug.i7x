@@ -22,5 +22,4 @@ To compute periodic effect of (P - bunny tail plug):
 
 Definition: bunny tail plug is white themed: decide yes.
 
-
 Bunny Tail Plug ends here.

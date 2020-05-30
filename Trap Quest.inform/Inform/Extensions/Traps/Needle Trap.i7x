@@ -57,7 +57,6 @@ To trigger (Y - a needle trap):
 	repeat with M running through reactive monsters:
 		say NeedleTrapReactFlav of M.
 
-
 To compute (Y - a needle trap) injecting into (X - breasts):
 	let R be a random number between 1 and 7;
 	let needle-blocker be nothing;
@@ -110,7 +109,6 @@ To cutscene needle breasts:
 		cutshow figure of needle cutscene 2 for breasts;
 	otherwise:
 		cutshow figure of needle cutscene 3 for breasts.
-
 
 To compute (Y - a needle trap) injecting into (X - belly):
 	let needle-blocker be nothing;
@@ -188,4 +186,3 @@ To say NeedleTrapReactFlav of (M - a monster):
 	say TriggeredTrapReactFlav of M.
 
 Needle Trap ends here.
-

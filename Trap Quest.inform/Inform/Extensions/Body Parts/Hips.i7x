@@ -22,6 +22,9 @@ To decide which number is the hipModesty of (C - an object):
 	if C is worn not-butt-windowed clothing, decide on the usualHipModesty of C;
 	decide on 0.
 
+To decide which number is the hipModesty of (C - arms):
+	decide on 3.
+
 To decide which number is the hipModesty of (C - a knickers):
 	if C is butt-windowed or C is actually sheer, decide on 0;
 	decide on the armour of C.
@@ -49,6 +52,7 @@ To decide which object is the at least partial concealer of (H - hips):
 		if the hipModesty of C > O:
 			now O is the hipModesty of C;
 			now P is C;
+	if arms is listed in the armUses of arms and the hipModesty of arms > O, decide on arms;
 	decide on P.
 
 To decide which number is the unique outrage of (H - hips):
@@ -63,7 +67,7 @@ Definition: hips is at least partially exposed if the concealer of hips is nothi
 Definition: hips is exposed if the at least partial concealer of hips is nothing.
 
 To say FullExamineDesc of (B - hips):
-	say "[TotalDesc of hips]".
+	say "[ImageDesc of hips][TotalDesc of hips]".
 
 [!<Hips>@<thickness:Integer>*
 
@@ -113,7 +117,6 @@ REQUIRES COMMENTING
 
 *@!]
 Hips has a number called fat-burning.
-
 
 [!<DecideWhichNumberIsMaxAssSizeModifier>+
 
@@ -177,7 +180,6 @@ To say MaxAssSizeDesc:
 			say "cushioned";
 		otherwise:
 			say "oversized".
-
 
 [!<YourselfIsBottomHeavy>+
 
@@ -259,8 +261,6 @@ To decide which number is the weight of (XXX - hips):
 	if the latex-transformation of the player > 5 and H > 0, now H is 0;
 	decide on H.
 
-
-
 Part 2 - Description
 
 [!<SayShortDescOfHips>+
@@ -311,7 +311,6 @@ To say TotalDesc of hips:
 	otherwise:
 		say "Your buttcheeks are currently completely visible.".
 
-
 [!<SayAssDesc>+
 
 REQUIRES COMMENTING
@@ -320,15 +319,15 @@ REQUIRES COMMENTING
 To say AssDesc:
 	let A be the total volume of hips;
 	if A < 3, say "tiny flat butt cheeks";
-	if A is 3, say "tight well toned tush";
+	if A is 3, say "tight well toned ass cheeks";
 	if A is 4, say "toned butt cheeks";
 	if A is 5, say "roundish but tight butt cheeks";
 	if A is 6, say "cute curvy butt cheeks";
-	if A is 7, say "eye-turning bubble butt";
-	if A is 8, say "well cushioned bottom";
+	if A is 7, say "eye-turning bubble cheeks";
+	if A is 8, say "well cushioned cheeks";
 	if A is 9, say "[if weight gain fetish is 1]chunky[otherwise]thick[end if], wobbly ass cheeks";
 	if A is 10, say "oversized [if weight gain fetish is 1]fat girl [end if]ass cheeks";
-	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]bottom";
+	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]butt cheeks";
 	if A is 12, say "Kardashian sized protruding butt cheeks";
 	if A is 13, say "giant wobbling butt cheeks";
 	if A is 14, say "giant bouncing ass cheeks";
@@ -585,9 +584,7 @@ To AssImplantsDown (X - a number):
 		if the silicone volume of hips > 0:
 			decrease silicone volume of hips by 1;
 
-
 Chapter 3 - Fat
-
 
 [!<FatAssUpX>+
 
@@ -631,15 +628,8 @@ To FatAssDown (X - a number):
 			if the flesh volume of hips > min ass size, decrease the flesh volume of hips by 1;
 			decrease X by 1.
 
-
-
 Section - Image for graphics window
 
-Figure of CumHipsButton is the file "Special/Buttons/cumhips.png".
-
-To decide which figure-name is the examine-image of (T - hips):
-	if T is overglazed, decide on Figure of CumHipsButton;
-	decide on figure of no-image-yet.
+[Documented in Necessary Figures]
 
 Hips ends here.
-

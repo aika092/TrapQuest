@@ -1,6 +1,5 @@
 Headgear Framework by Headgear begins here.
 
-
 A headgear is a kind of clothing. headgear is unique. headgear can be hair growing. The soak-limit of a headgear is usually 7. A headgear has a number called hair-charge. A headgear has a number called colour-charge. A headgear has a number called outfit-charge. A headgear is usually manly.
 A headgear can be roleplay. A headgear is usually not roleplay. [Can this headgear appear in the wardrobe when picking the random headgear starting option.]
 
@@ -24,7 +23,6 @@ To assign quest to (C - a headgear):
 A game universe initialisation rule:
 	repeat with H running through on-stage headgear:
 		set up H. [otherwise they don't get their quests]
-
 
 To compute persistent reward of (Q - a headgear-clothing-quest) on (C - a clothing):
 	if C is cursed:
@@ -56,7 +54,6 @@ To compute generic class reward of (Q - a headgear-clothing-quest) on (C - a clo
 	repeat with F running through fuckholes:
 		heal F times 5;
 	now the fatigue of the player is 0.
-
 
 Report taking off headgear: [Otherwise the player could remove the headgear, remove the nasty class blocked clothing items, then replace the headgear.]
 	compute AutoRemoveFizzling of the noun.
@@ -92,20 +89,12 @@ To release recycled headgear:
 		now C is cursed; [Should be already but let's make double sure]
 		compute unique recycling of C.
 
-
 To say ShortDesc of (C - a headgear):
 	say "headwear".
 
 To say wardrobeVanishes of (C - a clothing):
 	say "[one of]vanishes. You can sense that it has been sent to the pink wardrobe[or]is sent from your [body area of C] to the pink wardrobe[stopping]";
 	dislodge C.
-
-Definition: a headgear (called B) is ingredient:
-	if B is product, decide no;
-	decide yes.
-
-To decide which number is the crafting key of (B - a headgear):
-	decide on 33.
 
 To compute hair colour change of (H - a headgear):
 	increase the colour-charge of H by 1;
@@ -220,8 +209,4 @@ To compute HeadgearAutoCursing of (H - a headgear):
 		say "As you put it on, it becomes cursed, sealing itself to your [ShortDesc of hair]!";
 		now H is cursed.
 
-
-
-
 Headgear Framework ends here.
-

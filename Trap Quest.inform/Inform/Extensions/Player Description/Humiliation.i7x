@@ -1,6 +1,5 @@
 Humiliation by Player Description begins here.
 
-
 Definition: yourself is proud:
 	if the humiliation of the player < HUMILIATION-PROUD, decide yes;
 	decide no.
@@ -20,7 +19,6 @@ Definition: yourself is shameless:
 Definition: yourself is broken:
 	if the humiliation of the player >= HUMILIATION-BROKEN, decide yes;
 	decide no.
-
 
 [!<SayHumiliationDesc>+
 
@@ -43,7 +41,6 @@ To say HumiliationDesc:
 	otherwise:
 		say "You are mentally broken - your submission to the monsters and the people in this game and your frequent state of slutty dressing has taken its toll. You no longer have any will to fight back. You can't help but actively seek out more ways to publicly embarrass yourself and encourage people to [if diaper quest is 0]objectify your body and use[otherwise]play with[end if] you like a doll, as you consider yourself nothing but an object, and a pretty worthless one at that. Willingly performing degrading acts now turns you on, and you secretly seek out new ways to achieve this thrill. Anything that isn't inherently shameful just seems so very boring.".
 
-
 [Here is the definition of the HUMILIATION-xxx values (functions). Also, refer to HOLY BIBLE OF HUMILIATION GUIDELINES]
 
 To decide which number is HUMILIATION-PROUD:
@@ -61,8 +58,4 @@ To decide which number is HUMILIATION-SHAMELESS:
 To decide which number is HUMILIATION-BROKEN:
 	decide on HUMILIATION-SHAMELESS + 8000.
 
-
-
-
 Humiliation ends here.
-

@@ -61,12 +61,12 @@ This is the spawn hole-in-wall rule:
 			set shortcut of A.
 The spawn hole-in-wall rule is listed last in the set up hotel traps rules.
 
-
 To compute HoleInWallEntrance:
 	increase the times-stuck of hole-in-wall by 1;
 	repeat with P running through hole-in-wall punishments:
 		if P is not hole-punishment-not-found and the priority of P is 1, now the priority of P is 2;
 	now the stance of the player is 1;
+	now the source-room of HoleInWall is the location of the player;
 	now the player is in HoleInWall;
 	check immobility;
 	refresh the map-window.
@@ -132,7 +132,7 @@ To HoleWait:
 		distract M;
 		now the boredom of M is 30;
 		say "A little while later you feel someone gripping you by your hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'PLEASE REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
-		now the player is in the location of hole-in-wall;
+		now the player is in the source-room of the location of the player;
 		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
 		refresh the map-window;
 		check immobility.
@@ -157,7 +157,6 @@ To choose hole-in-wall punishment:
 		now chosen hole-in-wall punishment is a random prioritised appropriate hole-in-wall punishment;
 		unless chosen hole-in-wall punishment is hole-in-wall punishment, now chosen hole-in-wall punishment is hole-punishment-not-found;
 		decrease current-priority by 1.
-
 
 hole-spank is hole-in-wall punishment.
 Definition: hole-spank is appropriate: decide yes.
@@ -205,7 +204,6 @@ To compute punishment of (P - hole-spank):
 			now delayed urination is 1;
 			try urinating;
 	say "Just as suddenly as he or she began, the mysterious spanker stops. [one of]You wonder if they've gone, or whether they're still there, silently watching you.[or]You listen, but can't hear anyone. Are they still there?[or]You listen for footsteps, but hear nothing. Are they there, watching? Or did they simply walk off and leave you, still stuck?[or]You think - [italic type]hope[roman type] - they've gone.[at random]".
-
 
 hole-wank is hole-in-wall punishment.
 Definition: hole-wank (called P) is appropriate:
@@ -257,7 +255,6 @@ To compute punishment of (P - hole-strip):
 	say "[variable custom style][if the humiliation of the player < 18500]Oh god, how embarrassing![otherwise]Hey, that's mean![end if][roman type][line break]";
 	if there is a worn top level protection clothing and a random number between 1 and 2 is 1, now the priority of P is 2.
 
-
 hole-enema is hole-in-wall punishment.
 Definition: hole-enema (called P) is appropriate:
 	if asshole is actually occupied, decide no;
@@ -276,10 +273,10 @@ To compute punishment of (P - hole-enema):
 			destroy C;
 		now C is a random worn top level ass protection clothing;
 	let L be semen;
-	if diaper quest is 1:
-		now L is water;
-	otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1:
+	if watersports fetish is 1 and a random number between 1 and 2 is 1:
 		now L is urine;
+	otherwise if diaper quest is 1:
+		now L is water;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
 		now L is milk;
 	say "You feel the tip of some kind of thin hard cold object pushed inside your [asshole]. Moments later a warm liquid starts to fill you up! It must be some kind of enema syringe[if diaper quest is 0]! Somehow, maybe from the texture or consistency, you can tell you are being given a huge [L] enema[end if]!";
@@ -301,7 +298,6 @@ To compute punishment of (P - hole-tattoo):
 	say "You [if the delicateness of the player < 9]begrudgingly [end if]hold perfectly still as the stranger gives you a tramp stamp tattoo! When it is complete, you can feel the magic inside the ink come alive. Not only can you feel that it is affecting your body and mind, but even though you can't physically see the tattoo you can see a picture of it clearly in your inner mind.";
 	try examining princess-tattoo.
 
-
 hole-piercing is hole-in-wall punishment.
 Definition: hole-piercing (called P) is appropriate:
 	if diaper quest is 1, decide no;
@@ -320,7 +316,6 @@ To compute punishment of (P - hole-piercing):
 	PainUp 2;
 	say "You can't help but scream in pain as [if C is clitoris lead]it is heated up and a [ShortDesc of C] is attached to it[otherwise]your clitoris is pierced with a burning hot needle and a [ShortDesc of C] is slotted inside[end if].[line break][variable custom style][if the bimbo of the player < 12]This is not good.[otherwise]Uh-oh, I think I might be in a bit of a pickle here! *giggle*[end if][roman type][line break]";
 	say FullExamineDesc of C.
-
 
 hole-plug is hole-in-wall punishment.
 Definition: hole-plug (called P) is appropriate:
@@ -344,7 +339,6 @@ To compute punishment of (P - hole-plug):
 		summon C cursed with quest;
 		ruin asshole;
 		say FullExamineDesc of C.
-
 
 hole-gatling-fuck is hole-in-wall punishment.
 Definition: hole-gatling-fuck is appropriate if diaper quest is 0 and the player is not diaper focused.
@@ -405,6 +399,4 @@ To compute punishment of (P - hole-gatling-fuck):
 	say "Finally the loud sound of a crowd of men begins to die away as they bore of you and dissipate.";
 	dislodge hole-in-wall.
 
-
 Hole In Wall Trap ends here.
-

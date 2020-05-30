@@ -8,7 +8,6 @@ Does nothing.
 This is the do nothing rule:
 	rule succeeds.
 
-
 The maximum score is 150.
 
 [!<diaperQuestFixRules:Rulebook>*
@@ -25,6 +24,11 @@ This is the second procedure the game runs when the game is opened, the first on
 +!]
 When play begins:
 	clear the screen;
+	[the armUses of arms needs to have 2 entries right away to avoid errors when outrage or appearance is checked]
+	now the defaultLeftTarget of arms is yourself;
+	now the defaultRightTarget of arms is yourself;
+	add arms to the armUses of arms;
+	add arms to the armUses of arms;
 	let old-seed be new-seed;
 	while old-seed is 1 and tutorial is 0:
 		say "Your settings file was incompatible with this new version and had to be erased. Please note that the default settings are the [bold type]recommended[roman type] settings, so you should really try the game as-is before messing with them! Do you understand? ";
@@ -113,7 +117,7 @@ To initialise variables:
 		now new-seed is 1;
 	if new-seed is 1:
 		now choice in row 17 of Table of Settings is a random number between 1 and 1000; [This should only happen once and is used to validate against cheaters.]
-	check donators status;
+	check donators status with 0; [check for a donators file]
 	now random slow pregnancy is a random number between 0 and 3;
 	now random slow birth is a random number between -1 and 3.
 
@@ -122,6 +126,11 @@ choice (number)
 with 100 blank rows
 
 To fill in table blanks:
+	fill in fake table blanks;
+	fill in legacy table blanks;[Allows old save files to load properly]
+	fill in custom flavour blanks.
+
+To fill in fake table blanks:
 	if there is a choice in row 46 of the Table of Fake Settings:
 		read File of Preferences into the Table of Settings;
 		unless there is a choice in row 47 of the Table of Settings, now choice in row 47 of Table of Settings is 1;
@@ -133,7 +142,9 @@ To fill in table blanks:
 		unless there is a choice in row 53 of the Table of Settings, now choice in row 53 of Table of Settings is 0;
 		unless there is a choice in row 54 of the Table of Settings, now choice in row 54 of Table of Settings is 0;
 		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1;
-	[Allows old save files to load properly]
+		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15.
+
+To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
 	unless there is a choice in row 33 of the Table of Player Options, now choice in row 33 of Table of Player Options is 0;
 	unless there is a choice in row 34 of the Table of Player Options, now choice in row 34 of Table of Player Options is 0;
@@ -184,6 +195,23 @@ To fill in table blanks:
 	unless there is a choice in row 79 of the Table of Player Options, now choice in row 79 of Table of Player Options is 0;
 	unless there is a choice in row 80 of the Table of Player Options, now choice in row 80 of Table of Player Options is 1. [TODO change to 0]
 
+To fill in custom flavour blanks:
+	unless there is a name in row 10 of the Table of Info Options:
+		now name in row 10 of the Table of Info Options is "Keith";
+		now name in row 11 of the Table of Info Options is "chess rival";
+		now name in row 12 of the Table of Info Options is "Ashley";
+		now name in row 13 of the Table of Info Options is "roommate";
+		now name in row 14 of the Table of Info Options is "John";
+		now name in row 15 of the Table of Info Options is "neighbor";
+		now name in row 16 of the Table of Info Options is "feminine gender";
+		now name in row 17 of the Table of Info Options is "strapon";
+		now name in row 18 of the Table of Info Options is "masculine gender";
+		now name in row 19 of the Table of Info Options is "penis";
+		now name in row 20 of the Table of Info Options is "feminine gender";
+		now name in row 21 of the Table of Info Options is "strapon";
+		now name in row 22 of the Table of Info Options is "masculine gender";
+		now name in row 23 of the Table of Info Options is "penis".
+
 To correct table entries:
 	if the player is not the donator or Name in row 1 of Table of Custom Male Name is "Undefined Name 1":
 		choose the row with a toggle of custom name rule in the Table of Male Name Options;
@@ -203,6 +231,10 @@ To correct table entries:
 	if diaper quest is 0:
 		choose the row with a toggle of easter content toggle rule in the Table of Festive Options;
 		blank out the whole row;
+		choose the row with a toggle of diaper faceplanter rule in the Table of Diaper Options;
+		blank out the whole row;
+		choose the row with a toggle of diaper tidier rule in the Table of Diaper Options;
+		blank out the whole row;
 	if the player is the donator:
 		choose the row with a toggle of combat visor toggle rule in the Table of Benefit Options;
 		if diaper quest is 1, choose the row with a toggle of combat visor toggle rule in the Table of Diaper Quest Benefit Options;
@@ -218,7 +250,6 @@ To retrieve settings:
 		carry out the displaying activity;
 		clear the screen;
 	write File of Preferences from the Table of Settings.
-
 
 To retrieve gender:
 	now the current menu is the Table of Gender Options;
@@ -355,5 +386,3 @@ To fix starting stats:
 	now the real largeness of hair is the raw largeness of hair.
 
 Engine Initialisation ends here.
-
-

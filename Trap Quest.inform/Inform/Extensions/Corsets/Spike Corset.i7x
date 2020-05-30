@@ -26,4 +26,3 @@ To say ShortDesc of (C - a spike corset):
 Definition: a spike corset is black themed: decide yes.
 
 Spike Corset ends here.
-

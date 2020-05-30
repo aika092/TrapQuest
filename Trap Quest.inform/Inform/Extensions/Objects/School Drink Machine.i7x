@@ -13,7 +13,6 @@ To decide which figure-name is the examine-image of (C - drink-machine):
 To say ExamineDesc of (C - drink-machine):
 	say "This drinks dispenser is a lot like what you might expect to see at a fast food joint. However instead of there being a normal button to press to start the flow of liquid, instead there's a large 'Sybian' style vibrator that someone must sit on in order to open the nozzle.".
 
-
 To compute standard decanting of (D - drink-machine):
 	allocate 6 seconds;
 	compute drink-machine decanting of the noun;
@@ -42,8 +41,6 @@ To compute drink-machine filling of (V - a vessel):
 	if the doses of V < the max-doses of V:
 		say "The [ShortDesc of V] is filled with [if V is empty]a[otherwise]another[end if] mouthful of [fill-colour of V] liquid.";
 		increase the doses of V by 1;
-
-
 
 To compute sybian sitting:
 	let K be a random worn bottom level pee protection clothing;
@@ -77,8 +74,4 @@ Report going when the player is in School17: [We automatically get a bully if po
 						try M going north;
 			if M is in the location of the player, compute perception of M.
 
-
-
-
 School Drink Machine ends here.
-

@@ -23,15 +23,15 @@ To say MonsterDesc of (M - a robochef):
 To set up (M - a robochef):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 8;
+	now the raw difficulty of M is 8;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial robochef rule:
+[This is the spawn initial robochef rule:
 	if the number of alive robochefs is 0:
 		let M be a random robochef;
 		if debugmode > 0, say "Summoning chef in hotel.";
 		summon M in the hotel.
-The spawn initial robochef rule is listed in the setting up hotel monsters rules.
+The spawn initial robochef rule is listed in the setting up hotel monsters rules.]
 
 To decide which number is the girth of (M - a robochef):
 	decide on 4.
@@ -47,10 +47,9 @@ Part 1 - Misc Flavour
 To say SummoningFlav of (M - a robochef):
 	if M is in the location of the player:
 		let P be a random patron;
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materializes on the pad. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a large, [if lady fetish is 1]vase[otherwise]barrel[end if] shaped robot materialises on the pad. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of a robotic voice coming from elsewhere in the hotel. [line break][first custom style]'CULINARY WORK SEQUENCE COMMENCING.'[roman type][line break]".
-
 
 To say LeftoverDesc (N - 119):
 	say "There is a pile of mangled nuts and bolts here that used to be a fully functional robochef.[line break]".
@@ -85,7 +84,6 @@ To compute monstermotion of (M - a robochef):
 		compute monstermotion reactions of M.
 
 Part 3 - Perception
-
 
 Definition: a robochef (called M) is outrage disapproving:
 	if the class of the player is maid, decide no;
@@ -141,8 +139,6 @@ Definition: a robochef (called M) is concealment immune: [Can the monster ignore
 Definition: a robochef (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
 	decide yes.
 
-
-
 Part 4 - Combat
 
 Chapter 1 - Attack
@@ -180,7 +176,7 @@ To compute unique climax of (M - a robochef) in (F - asshole):
 	if M is wrapped:
 		compute condom filling of M;
 	otherwise:
-		say "You can feel the filling of [NameDesc of M]'s [manly-penis] being squirted straight into your belly!";
+		say "You can feel the filling of [NameDesc of M][']s [manly-penis] being squirted straight into your belly!";
 		AssFill 6 - ((watersports fetish * 2) + (lactation fetish * 2));
 		if watersports fetish is 1, AssFill 2 Urine;
 		if lactation fetish is 1, AssFill 2 Milk;
@@ -199,7 +195,7 @@ To compute condom filling of (M - a robochef):
 	progress quest of condom-creampie-quest.
 
 To say CondomAcceptFlav of (M - a robochef):
-	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M]'s glass penis retracts into its body, replacing itself with a black rubber dildo of the same size.".
+	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M][']s glass penis retracts into its body, replacing itself with a black rubber dildo of the same size.".
 
 Chapter 2 - DQ
 
@@ -216,10 +212,10 @@ To say ForcefeedDeclarationFlav of (M - a robochef):
 	say "[speech style of M]'[one of][caps please] OPEN YOUR NUTRITION CONSUMPTION ORIFICE.'[or][caps please] REMAIN IN THE NUTRITION RECEPTION POSITION.'[in random order][roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a robochef):
-	say "[BigNameDesc of M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place. A panel in the front of [NameDesc of M]'s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm. Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in. And then the first one does, depositing its load between your lips, followed immediately by another, and another. You are forced to keep swallowing just to keep up with the speed of the spoons. Fortunately, the food doesn't require chewing!".
+	say "[BigNameDesc of M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place. A panel in the front of [NameDesc of M][']s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm. Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in. And then the first one does, depositing its load between your lips, followed immediately by another, and another. You are forced to keep swallowing just to keep up with the speed of the spoons. Fortunately, the food doesn't require chewing!".
 
 To compute forcefeed round (N - a number) of (M - a robochef):
-	say "[BigNameDesc of M]'s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";
+	say "[BigNameDesc of M][']s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";
 	[if diaper messing >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the player is hungry):
 		say "baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";]
 	StomachFoodUp 2.
@@ -232,10 +228,6 @@ To say ForcefeedAfterFlav of (M - a robochef):
 
 To say DQFeedingResistReactionFlav of (M - a robochef):
 	say "[speech style of M]'[one of]DISREGARDING RESISTANCE, SUBJECT NOT FILLED TO PROPER SUSTENANCE PERAMETERS!'[or]STRUGGLING DETECTED. INCREASING FEEDING SPEED.'[or]I AM PROGRAMMED TO FIND YOUR STRUGGLING... CUTE. AWWW.'[in random order][roman type][line break]".
-
-
-
-
 
 Part 5 - Conversation
 
@@ -280,7 +272,6 @@ To compute answer of (M - a robochef):
 
 Definition: a robochef is willing to give snacks: decide yes.
 
-
 Part 6 - Trading
 
 [The player can offer food to the robochef for a chance of upgrading it.]
@@ -295,7 +286,7 @@ To compute (M - a robochef) considering (T - a thing):
 		compute M cooking T;
 		let D be a random chef food retained by M;
 		if D is chef food:
-			say "A grate opens up on [NameDesc of M]'s face as it takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as it processes your food, and after a sharp ding, its chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
+			say "A grate opens up on [NameDesc of M][']s face as it takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as it processes your food, and after a sharp ding, its chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
 			now D is held by the player;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;
@@ -303,10 +294,10 @@ To compute (M - a robochef) considering (T - a thing):
 			now D is not retained by M;
 		otherwise:
 			say "[speech style of M]ERROR. INSTANCE OF UPGRADED FOODSTUFF ALREADY EXISTS. [caps please] FINISH YOUR FOOD.[roman type][line break]";
-			say "Looks like you[']ll need to finish the last thing he gave you before he upgrades your [printed name of T]";
+			say "Looks like you[']ll need to finish the last thing [he of M] gave you before [he of M] upgrades your [printed name of T]";
 	otherwise if T is snack:
 		say "[speech style of M]'ERROR. UNABLE TO DEDUCT THE NECESSARY PAYMENT FROM YOUR ACCOUNT. TRY AGAIN LATER.'[roman type][line break]";
-		say "Looks like he's not interested in it right now.";
+		say "Looks like [he of M]'s not interested in it right now.";
 	otherwise if T is plentiful accessory:
 		say "[speech style of M]'PROCESSING DEPOSIT. THANK YOU, CUSTOMER. PAYMENT HAS BEEN ADDED TO YOUR ACCOUNT. [caps please] PROVIDE SUITABLE INGREDIENT FOR COOKING.'[roman type][line break]";
 		say "[BigNameDesc of M] takes the [printed name of T].";
@@ -330,7 +321,6 @@ To compute resolution of (M - a robochef) taking (T - a thing):
 		otherwise:
 			say "[BigNameDesc of M] seems to lose interest in 'brewing' for now.";
 			bore M.
-
 
 To compute (M - a robochef) cooking (I - a fae mushroom):
 	let D be a random off-stage stuffed mushroom;
@@ -363,6 +353,4 @@ To say MonsterOfferRejectFlav of (M - a robochef) to (T - a thing):
 To say MonsterOfferRejectFlav of (M - a robochef) to (T - a chef food):
 	say "[speech style of M]'ERROR. FOODSTUFF IS ALREADY FULLY UPGRADED.[roman type][line break]".
 
-
 RoboChef ends here.
-

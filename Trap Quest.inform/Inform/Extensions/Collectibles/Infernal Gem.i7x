@@ -1,6 +1,5 @@
 Infernal Gem by Collectibles begins here.
 
-
 An infernal gem is a kind of monster-drop. There are 4 infernal gems. The printed name of infernal gem is "[TQlink of item described]infernal gem[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of infernal gem is "[TQlink of item described]infernal gems[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of infernal gem is the file "Items/Collectibles/gem1.png".
 
 To decide which figure-name is the examine-image of (C - an infernal gem):
@@ -59,6 +58,4 @@ To compute offer reward of (M - a mechanic) for (T - an infernal gem):
 To decide which number is the bartering value of (T - an infernal gem) for (M - a shopkeeper):
 	decide on 2.
 
-
 Infernal Gem ends here.
-

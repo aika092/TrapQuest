@@ -22,7 +22,6 @@ Definition: a strapon-panties (called P) is fetish appropriate:
 [is it a strapon or a penis]
 Definition: a strapon-panties is dildo-usage: decide yes.
 
-
 To say ShortDesc of (H - a strapon-panties):
 	say "strap-on dildo".
 
@@ -67,7 +66,7 @@ Definition: A strapon-dildo (called P) is dildo-usage:
 	decide yes.
 
 To say PenisSoften of (K - a strapon-dildo):
-	say "The nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materializes out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
+	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materialises out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
 	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.".
@@ -81,7 +80,7 @@ To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-pe
 
 To say ShortDesc of (H - a strapon-dildo):
 	if H is dildo-usage, say "strap-on dildo";
-	otherwise say "nintendolls pouch".
+	otherwise say "Nintendolls pouch".
 
 To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
@@ -179,11 +178,9 @@ To compute periodic effect of (G - gem-strapon):
 			now the strap-length of G is 5;
 			say "The gemstones covering your strap-on regain some of their colour, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 	otherwise:
-		 if the strap-length of G > 3:
+		if the strap-length of G > 3:
 			now the strap-length of G is 3;
 			say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].".
-
-
 
 To decide which number is the sex-addiction-influence of (C - a gem-strapon):
 	decide on 3.
@@ -273,6 +270,5 @@ To decide which number is the dexterity-influence of (C - ghost-strapon):
 	decide on X.
 
 Definition: ghost-strapon is blessable: decide no.
-
 
 Strapon ends here.

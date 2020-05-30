@@ -38,7 +38,7 @@ To set up (M - nurse):
 	reset M;
 	now the monstersetup of M is 1;
 	now M is in School11;
-	now the difficulty of M is the starting difficulty of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - nurse):
@@ -90,40 +90,30 @@ To say StrikingFlav of (M - a nurse) on (B - a body part):
 	say "[BigNameDesc of M] grabs you by the wrist and pulls your arm toward [him of M] with seemingly impossible strength!".
 
 To say StrikingSuccessFlav of (M - a nurse) on (B - a body part):
-	say "[StrikingFlav of M on B]She pricks your biceps with the syringe of pink liquid, which immediately makes you woozy.".
+	say "[StrikingFlav of M on B][big he of M] pricks your biceps with the syringe of pink liquid, which immediately makes you woozy.".
 
 To say StrikingFailureFlav of (M - a nurse) on (B - a body part):
-	say "[StrikingFlav of M on B][one of]You manage to escape before she can prick you with the syringe[or]You manage to dodge the syringe[or]You bat away the syringe before she can prick you[in random order].".
+	say "[StrikingFlav of M on B][one of]You manage to escape before [he of M] can prick you with the syringe[or]You manage to dodge the syringe[or]You bat away the syringe before [he of M] can prick you[in random order].".
 
 To compute (M - nurse) striking (B - a body part):
-	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 6;
+	FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 5;
 	passively stimulate arms from M.
 
-To compute damage of (M - nurse):
-	if the health of M > 0:
-		if M is uninterested or M is friendly:
-			say "She raises an eyebrow and pulls out a syringe full of pink liquid. [line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]";
-			now M is interested;
-			anger M;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		if the health of M <= 0:
-			compute death of M.
+To say CombatProvokedReaction of (M - nurse):
+	say "[big he of M] raises an eyebrow and pulls out a syringe full of pink liquid.[line break][speech style of M]'Don't fret dear, this will help you calm down some.'[roman type][line break]".
 
 To compute teaching of (M - nurse):
 	say "[speech style of M]'My skills are a bit more... [']hands-on['] than just transferring knowledge.'[roman type][line break]".
 
 Chapter - Perception
 
-This is the nurse boost cooldown rule:
+An all later time based rule (this is the nurse boost cooldown rule):
 	if the boost-cooldown of nurse > 0:
-		decrease the boost-cooldown of nurse by counters-seconds;
+		decrease the boost-cooldown of nurse by time-seconds;
 		if the boost-cooldown of nurse <= 0:
 			say "You feel your body calm down as the positive [if the boost-int-drain of nurse > 0]and negative [end if]effects of the nurse's [']boost['] come to an end.";
 			now the boost-int-drain of nurse is 0;
 			if nurse is in the location of the player and nurse is not grabbing the player and nurse is friendly, say "The [nurse] stretches out the wrist of one glove, and lets it snap back into place.[line break][speech style of nurse]'Okay I think that's long enough. If you want another [']boost['], I'm ready to give you one. Just get on the med bay bed.'[roman type][line break]".
-The nurse boost cooldown rule is listed in the advance counters rules.
 
 Definition: nurse (called M) is aware that the player needs a change:
 	if diaper lover <= 0, decide no;
@@ -197,7 +187,6 @@ To compute monstermotion of (M - nurse):
 To decide which number is the seek roll of (M - nurse):
 	decide on 1. [Needs to be greater than 0 to succeed.]
 
-
 Chapter - Combat
 
 To say FriendlyMouthPenetrationFlav of (M - nurse):
@@ -220,7 +209,7 @@ To compute facial climax of (M - nurse):
 	LickCount;
 	if lady fetish is 2, say "[BigNameDesc of M] grunts and shudders, a strong orgasm washing over [him of M]. Several droplets of clear precum hit your face as [his of M] [sissy-penis] desperately strains against its cage. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
 	otherwise say "[BigNameDesc of M] grunts as [he of M] shudders, a strong orgasm washing over [him of M]. Your mouth and face soon feel even wetter than before as [his of M] girlcum joins [his of M] other juices on your face. You feel [if the oral sex addiction of the player > 6]even more eager to perform oral sex in the future[otherwise]somewhat more comfortable with the act of performing oral sex[end if].";
-	OralSexAddictUp 1;
+	SilentlyOralSexAddictUp;
 	say "[BigNameDesc of M] takes a few moments to recover and then plucks [his of M] [HoleDesc of M] from your mouth and nose, allowing you to breathe[if med bay bed is grabbing the player]. [big he of M] unbuckles the straps holding you down and allows you to leave[end if].";
 	dislodge med bay bed;
 	orgasm satisfy M;
@@ -256,6 +245,4 @@ To say DiaperChangeStart of (M - nurse):
 	unless M is in School12, drag to School12 by M;
 	say "[unless med bay bed is grabbing the player][BigNameDesc of M] lowers you onto the [med bay bed]. [big he of M] pins you down with one strong arm and uses the other to binds your wrists and ankles with the inbuilt straps.[end if]".
 
-
 Nurse ends here.
-

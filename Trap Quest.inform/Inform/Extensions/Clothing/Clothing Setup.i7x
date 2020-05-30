@@ -1,6 +1,5 @@
 Clothing Setup by Clothing begins here.
 
-
 To Set Up Clothing:
 	if tutorial is 0:
 		repeat with C running through clothing:
@@ -134,9 +133,4 @@ To set up BUC of (C - a clothing):
 	if R <= 2, now C is cursed;
 	if R >= 7 and C is not cursed, now C is blessed.
 
-
-
-
-
 Clothing Setup ends here.
-

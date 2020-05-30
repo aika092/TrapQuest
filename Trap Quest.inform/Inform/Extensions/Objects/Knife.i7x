@@ -1,6 +1,5 @@
 Knife by Objects begins here.
 
-
 A knife is a kind of thing. A knife is usually not portable. 1 knife is in Hotel19. The printed name of knife is "[TQlink of item described]sharp knife ([if the charge of item described > 0]not [end if]glowing)[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a knife is "kn". Understand "sharp" as knife. A knife has a number called charge.
 
 Figure of knife is the file "Env/Hotel/knife1.png".
@@ -19,12 +18,11 @@ Check going when there is a knife in the location of the player:
 Report going when there is a knife in the location of the player:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-This is the knife charge decay rule:
+A later time based rule (this is the knife charge decay rule):
 	repeat with K running through knife:
 		if the charge of K > 0:
-			decrease the charge of K by counters-seconds;
+			decrease the charge of K by time-seconds;
 			if the charge of K <= 0 and the player is in the location of K, say "The knife suddenly starts glowing again!.".
-The knife charge decay rule is listed in the advance counters rules.
 
 Knifing it with is an action applying to two things.
 Check knifing:
@@ -110,6 +108,4 @@ Understand "cut [something] with [something]", "slice [something] with [somethin
 Check cutting when the player is in Hotel19:
 	try knifing the noun with a random knife instead.
 
-
 Knife ends here.
-

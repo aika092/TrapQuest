@@ -1,6 +1,6 @@
 Pink Rubber Dress by Dresses begins here.
 
-A pink rubber dress is a kind of overdress. A pink rubber dress is usually unique. A pink rubber dress is usually low cut. A pink rubber dress is usually latex. A pink rubber dress is usually short. A pink rubber dress has a number called charge.
+A pink rubber dress is a kind of overdress. A pink rubber dress is usually unique. A pink rubber dress is usually low cut. A pink rubber dress is usually latex. A pink rubber dress is usually short. A pink rubber dress has a number called charge. A pink rubber dress is erect-nipple-exposing.
 
 There is 1 pink rubber dress.
 
@@ -56,4 +56,3 @@ To set up influence of (C - a pink rubber dress):
 Definition: a pink rubber dress is pink themed: decide yes.
 
 Pink Rubber Dress ends here.
-

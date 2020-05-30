@@ -2,7 +2,6 @@ Rectum by Player begins here.
 
 Part - Player Definitions
 
-
 [!<rectum:Integer>*
 
 0: Rectum mechanics inactive
@@ -56,7 +55,6 @@ Definition: yourself is feeling full:
 	if the player is full and ((the player is not incontinent and failed potty training tattoo is not worn) or suppository > 0), decide yes;
 	decide no.
 
-
 To decide which number is expelColour:
 	unless the player is feeling full or the total squirtable fill of belly > 0, decide on TQcolour of grey; [white]
 	if the squirt timer of belly > 0:
@@ -75,7 +73,6 @@ To decide which number is expelColour:
 	now B-component is G-component;
 	decide on (R-component * 65536) + (G-component * 256) + B-component.
 
-
 fullness-time is a number that varies.
 To decide which number is fullness-penalty:
 	decide on fullness-time / 25.
@@ -85,7 +82,7 @@ To decide which number is fullness-penalty:
 Over time as the player refuses to go, they get a larger and larger (temporary) intelligence penalty as they become more and more distracted by their bowels.
 
 +!]
-This is the fullness causes intelligence loss rule:
+An all later time based rule (this is the fullness causes intelligence loss rule):
 	let F be fullness-penalty;
 	if the player is feeling full:
 		increase fullness-time by 1;
@@ -93,23 +90,6 @@ This is the fullness causes intelligence loss rule:
 	otherwise:
 		now fullness-time is 0;
 		if F > 0, say "Now that your bowels are empty, your ability to concentrate improves and your intelligence returns.".
-The fullness causes intelligence loss rule is listed in the advance counters rules.
-
-[!<YourselfIsGrossedOut>+
-
-A grossed out player tends to refuse to rest and can't be horny.
-
-+!]
-Definition: yourself is grossed out:
-	if the player is upset about urine or the player is upset about mess, decide yes;
-	if diaper quest is 0 and the location of the player is Dungeon19, decide yes;
-	decide no.
-
-Definition: yourself is magically horny: [Player gets horny even if grossed out]
-	if the player is in School34 or the player is in School13 or the player is in a nonstandard room, decide yes; [School dungeon room, school detention room, iron maiden]
-	if there is a rocking horse grabbing the player, decide yes;
-	if diaper quest is 1 and there is a vine grabbing the player, decide yes;
-	decide no.
 
 [!<YourselfIsUpsetAboutMess>+
 
@@ -164,8 +144,11 @@ To compute soiling:
 		compute chess soiling;
 	otherwise:
 		if the player is upset about sitting in mess and the delicateness of the player < 20 and (the player is not in a predicament room or the remainder after dividing time-earnings by 30 < time-seconds): [This would happen every turn during a predicament if we didn't hardcode some periodic timing here]
-			say "You shiver uncontrollably as you continue to wallow in your own mess.";
-			DelicateUp 1;
+			if diaper quest is 1 and the class of the player is priestess:
+				say "You shiver uncontrollably as you continue to wallow in your own mess[one of]. But instead of feeling more little, you feel a sense of holy pride welling up inside of you![or], but in a good, holy way.[stopping]";
+			otherwise:
+				say "You shiver uncontrollably as you continue to wallow in your own mess.";
+				DelicateUp 1;
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, check real messing.
 
 To decide which number is rectum-risky-level:
@@ -223,7 +206,7 @@ To check real messing:
 					now rectum is 1;
 			otherwise if messAware is 1:
 				let D be a random eligible diaper;
-				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals:
+				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
 					say "As if reacting to your tummy, ";
 					let K be a random worn knickers;
 					if K is knickers:
@@ -239,7 +222,6 @@ To check real messing:
 					if rectum + suppository >= 8:
 						say "It takes you several moments to recover.";
 						now another-turn is 1.
-
 
 [!<ComputeMessing>+
 
@@ -278,6 +260,7 @@ To compute messing:
 					say "With the least dignified noise you've ever heard, you overly full guts begin to excavate themselves. Your [ShortDesc of D] rapidly expands outwards, forced to in every direction by the veritable truckloads of smelly goop that is forcing its way out of your [asshole]. You are unable to stop the flow as log after log pushes its way out of your rectum, each one finding it more difficult than the one before to find a resting place. Soon your [ShortDesc of D] is almost twice its previous size, straining under the pressure as your poop forces itself between your legs and into the front of your nappy, filling that side too. Completely stunned, you can do nothing but shudder, moan and press your hands against your padding as the biggest shit of your life continues, warm foamy sludge following swiftly behind your uncountable number of solid chunks, filling up the small amounts of gaps left for it to find. ";
 				otherwise: [should generally only happen from magical diaper links]
 					say "A monstrous snake of mush brutally pushes its way out of your butthole. Your [ShortDesc of D] crinkles and groans as it stretches and stretches to attempt to contain the impossibly bulky beast, as thick as your forearm and seemingly unending, like a train coming out of a tunnel with no end in sight. The front of your underwear is soon required to contain the log, filling every spare inch of space with soft yet substantial poop. By the time the craptastic boatload of muck has finished its journey into your pants, your [ShortDesc of D] has visibly doubled in size, now a weird balloon of brown around your midriff. You stay absolutely still, whimpering in shame. You can't move a muscle without making a sickening squelch as it rubs against you. ";
+				if the mess of D > 0 and diaper quest is 1, progress quest of priestess-service-quest;
 				MessUp D by rectum - 1;
 				if rectum >= 16:
 					say "[one of]Your [ShortDesc of D] has become a padded [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if] [if the diaper addiction of the player < 13]within[otherwise]from[end if] which you are almost completely unwilling to [if the diaper addiction of the player < 13]move[otherwise]leave[end if]. You [if the diaper addiction of the player < 13]have no idea what to do[otherwise]had no idea messing yourself could feel this good[end if]![or]Once again your [ShortDesc of D] has become your messy [if the diaper addiction of the player < 13]prison[otherwise]paradise[end if]![stopping]";
@@ -367,9 +350,9 @@ To compute instant change appearance of (M - matron):
 	now M is in the location of the player;
 	now M is interested;
 	if M is friendly, anger M; [This just helps the correct inline hyperlinks turn up]
-	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold her hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
+	say "Just as you finish [if the diaper addiction of the player < 9]one of the most humiliating experiences of your life[otherwise if the diaper addiction of the player < 15]your potty pants session[otherwise]you're incredibly fun potty pants session[end if], [NameDesc of M] suddenly arrives, adding to your shame. [big he of M] [if M is changing the player]continues to hold [his of M] hand pressed against your rear, making sure you realise that [he of M] is a full witness to your shame[otherwise]instantly notices your sagging incontinence aid, and before you can move a muscle [he of M] is standing over you, one hand pressed firmly against the warm posterior of your padding[end if]. [line break][speech style of M]'[one of]Uh-oh, what do we have here?! How have you managed this, you naughty baby! Only the most pathetic of babies can't control their number twos! [or]Again?! You're so lucky I'm always here when you need me, really now. If you can't control your bottom you're going to have to be in nappies for a long, long time. [stopping][if rectum > 6][one of]And how in the heavens is there so much?! How long has it been since you last went potty?! [or][stopping][end if]Let's get you [if the player is not in Hotel22]back to the nursery and [end if]changed[one of] into something less stinky[or][stopping].'[roman type][line break]";
 	if the player is not in Hotel22:
-		say "[line break][bold type][BigNameDesc of M] [bold type]lifts you into the air and [if playerRegion is Hotel]without a word swiftly carries you all the way to[otherwise]snaps her fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
+		say "[line break][bold type][BigNameDesc of M] [bold type]lifts you into the air and [if playerRegion is Hotel]without a word swiftly carries you all the way to[otherwise]snaps [his of M] fingers, and after a brief moment of feeling like you are flying, suddenly you are back in[end if] the Nursery![roman type][line break]";
 		drag to Hotel22 by M;
 
 [!<SayDiaperMessDeclarationOfMonster>+
@@ -379,7 +362,6 @@ REQUIRES COMMENTING
 +!]
 To say diaper mess declaration of (M2 - a monster):
 	say "[variable custom style]'[if the humiliation of the player < 15000]Noooo! Don't watch!'[otherwise if the diaper addiction of the player > 15]Ooh [daddy of M2], I think I'm gonna need a change...'[otherwise if the humiliation of the player > 31000]Please watch me and laugh at me as I [one of]mess my stinky bottom[or]do a poopy in my pants[or]go number two[at random]!'[otherwise if the diaper addiction of the player < 8]Fuck fuck fuck, I can't believe this[one of][or] is happening again[stopping]. Please don't look!'[otherwise][one of]That was... bad timing...'[or]Uh-oh, it happened again...'[stopping][end if][roman type][line break]".
-
 
 [!<ComputeDiaperMessReactionOfMonster>+
 
@@ -405,7 +387,6 @@ To compute diaper mess reaction of (M - a person):
 			if M is friendly, say "Unable to stomach what [he of M][']s seeing, [NameDesc of M] abandons you.";
 			bore M;
 			compute mandatory room leaving of M.
-
 
 [!<messing:Action>*
 
@@ -478,6 +459,4 @@ This is the compulsory change rule:
 	if diaper messing is 3 and there is worn messed knickers and (there is a changing the player monster or there is a spanking the player monster), now another-turn is 1.
 The compulsory change rule is listed in the compulsory action rules.
 
-
 Rectum ends here.
-

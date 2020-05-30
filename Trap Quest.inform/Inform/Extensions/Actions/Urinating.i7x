@@ -1,6 +1,5 @@
 Urinating by Actions begins here.
 
-
 [!<urinating:Action>*
 
 REQUIRES COMMENTING
@@ -40,6 +39,9 @@ We may need to flag that the thing that was collecting the player's pee overflow
 *!]
 overflowed is a number that varies.
 
+[Is the player peeing into a body of water?]
+water-peeing is initially false.
+
 [!<Clothing>@<temporarilyDisplaced:Boolean>*
 
 REQUIRES COMMENTING
@@ -52,7 +54,7 @@ Clothing can be temporarily-displaced.
 REQUIRES COMMENTING
 
 *!]
-toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of human toilet is the file "Env/MultiFloor/toilet2.png".
+toilet is a backdrop. Understand "potty", "throne", "bathroom" as toilet. The text-shortcut of toilet is "toilet". Figure of toilet is the file "Env/MultiFloor/toilet1.png". Figure of school toilets is the file "Env/School/toilets1.jpg".
 urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The text-shortcut of urinal is "urinal".
 
 To say ExamineDesc of (T - toilet):
@@ -62,7 +64,10 @@ To say ExamineDesc of (T - urinal):
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
+	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
 	if the player is in Hotel38 and watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
+	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
+	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
 
 To decide which figure-name is the examine-image of (T - urinal):
@@ -101,7 +106,6 @@ To construct normal buttons for (T - urinal):
 		now the ButtonCommand entry is "use urinal";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is prone, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to stand]
-
 
 [!<YourselfIsAbleToUseAUrinal>+
 
@@ -150,7 +154,7 @@ Definition: yourself is potentially able to use a urinal:
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is able to use the toilet past their diaper if toilet allowance is 0 and diaper lover > 0 and the player is able to use a toilet.
+Definition: yourself is able to use the toilet past their diaper if toilet allowance is 0 and diaper lover > 0 and (the player is able to use a toilet or the player is able to use a urinal).
 
 [!<ReportWhenThePlayerIsAbleToUseTheToiletPastTheirDiaper>+
 
@@ -164,10 +168,9 @@ Report going when the player is able to use the toilet past their diaper:
 		if PC is a clothing, now AC is PC;
 		say "[bold type]As you enter this room, the leg holes of your [ShortDesc of AC] [bold type][one of]seem to [or][stopping]temporarily loosen. [roman type][if AC is cursed][one of]You can't take them off because the waist is still tightly sealed, but you could probably displace the crotch in order to use the loo.[or][stopping][otherwise]You could probably pull it to the side and use the toilet without removing it if you liked.[end if]".
 
-
 Toileting is an action applying to one thing.
 Check toileting:
-	if the noun is not toilet, say "This verb is for using the toilet." instead;
+	if the noun is not toilet and the noun is not urinal, say "This verb is for using the toilet." instead;
 	if the player is prone, say "You can only do that while on two feet." instead;
 	if the player is immobile or the player is in danger or the player is flying, say "Aren't you a bit busy?" instead;
 	let PC be a random worn pee covering undisplacable clothing;
@@ -182,7 +185,10 @@ Check toileting:
 	otherwise if the location of the player is toilets:
 		if the total squirtable fill of belly <= 0 and the player is incontinent, say "You can't use the toilet normally because you are fully incontinent." instead;
 		let P be a random thing penetrating asshole;
-		if PC is clothing and (P is a thing or AC is a clothing), say "You can't pee in the toilet because of [NameDesc of PC] and you can't expel the contents of your belly because of [if P is a thing][NameDesc of P][otherwise][NameDesc of AC][end if]." instead;
+		if PC is clothing and (P is a thing or AC is a clothing):
+			say "You can't pee in the toilet because of [NameDesc of PC][run paragraph on]";
+			if the total squirtable fill of belly > 0 or rectum > 0, say " and you can't expel the contents of your belly because of [if P is a thing][NameDesc of P][otherwise][NameDesc of AC][end if][run paragraph on]";
+			say "." instead;
 		if P is a thing or AC is a clothing:
 			if watersports mechanics is 0, say "You can't expel the contents of your belly because of [if P is a thing][NameDesc of P][otherwise][NameDesc of AC][end if]." instead;
 		if PC is clothing or watersports mechanics is 0:
@@ -198,21 +204,17 @@ Carry out toileting:
 	otherwise if the location of the player is urinals:
 		compute urinal use.
 
-[!<CheckEnteringToilet>+
-
-REQUIRES COMMENTING
-
-+!]
 Check entering toilet:
 	try Toileting toilet instead.
 
-[!<CheckDrinkingDiaper>+
-
-REQUIRES COMMENTING
-
-+!]
 Check drinking toilet:
 	try toileting toilet instead.
+
+Check entering urinal:
+	try Toileting urinal instead.
+
+Check drinking urinal:
+	try toileting urinal instead.
 
 [!<CheckDrinkingDiaper>+
 
@@ -242,10 +244,13 @@ Check urinating:
 	[if the player is not bursting and delayed urination is 0, say "You don't feel the need." instead;]
 	if delayed urination is 0 and (the player is able to use a toilet or the player is able to use a urinal):
 		say "Did you want to use the [if the location of the player is urinals]urinal[otherwise]toilet[end if]? ";
-		if the player is consenting, try toileting toilet instead;
+		if the player is consenting:
+			if the location of the player is urinals, try toileting urinal instead;
+			try toileting toilet instead;
 	if delayed urination is 0 and the player is pee protected:
 		if the player is not able to use a toilet and the player is not able to use a urinal:
 			let P be a random bottom level pee protection clothing;
+			now auto is 1;
 			if there is pee covering undisplacable unzippable clothing or (there is a worn diaper and the diaper addiction of the player >= 3):
 				if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				if P is not diaper or the diaper addiction of the player < 3:
@@ -253,20 +258,21 @@ Check urinating:
 					if the player is bimbo consenting, say "";
 					otherwise say "Then you should probably get it out of the way first." instead;
 			otherwise if P is clothing:
-				say "Do you want to get your clothes out of the way first? ";
-				if the player is bimbo consenting:
-					repeat with C running through worn pee covering clothing:
-						if C is crotch-zipped:
-							say "You unzip your [ShortDesc of C].";
-							ZipDown C;
-							now C is temporarily-displaced;
-						otherwise if C is displacable:
-							say "You pull your [ShortDesc of C] out of the way.";
-							now C is crotch-displaced;
-							now C is temporarily-displaced;
-						allocate 2 seconds;
+				if the player is able to displace:
+					say "Do you want to get your clothes out of the way first? ";
+					if the player is bimbo consenting:
+						repeat with C running through worn pee covering clothing:
+							if C is crotch-zipped:
+								try unzipping C;
+								if C is crotch-unzipped, now C is temporarily-displaced;
+							otherwise if C is displacable and C is crotch-in-place:
+								try displacing C;
+								if C is crotch-displaced, now C is temporarily-displaced;
+					otherwise:
+						if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
 				otherwise:
-					if P is pants pee refusal inducing and debugmode is 0, do nothing instead;
+					say "You can't displace [NameDesc of P] right now, so you'll have to pee in it. Are you sure that's what you want to do? ";
+					if the player is not consenting, say "You change your mind." instead;
 	if the player is prone and the location of the player is bathroom and delayed urination is 0:
 		say "Do you really want to try to pee [if the player is pee protected]your pants[otherwise]on the floor here[end if], while kneeling? ";
 		if the player is bimbo consenting:
@@ -305,7 +311,7 @@ REQUIRES COMMENTING
 
 +!]
 To compute toilet use:
-	allocate 6 seconds;
+	if seconds is 0, allocate 6 seconds;
 	let too be "";
 	let initialBladder be the bladder of the player;
 	if watersports mechanics is 1 and (the number of pee covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
@@ -319,7 +325,7 @@ To compute toilet use:
 			now toiletJustUsed is true;
 	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and (the number of ass covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
 		if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2:
-			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing her. [if the bimbo of the player < 10][one of]You blush at the thought she'll know how you've been used back there.[or]Once again you've sort of creampied her.[or][variable custom style]I hope she doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style]She must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if she appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
+			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing [him of woman-barbara]. [if the bimbo of the player < 10][one of]You blush at the thought [he of woman-barbara]'ll know how you've been used back there.[or]Once again you've sort of creampied [him of woman-barbara].[or][variable custom style]I hope [he of woman-barbara] doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style][big he of woman-barbara] must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if [he of woman-barbara] appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
 		otherwise:
 			say "With an embarrassing sound, you evacuate your bowels[too]. ";
 		if the large egg count of belly > 0:
@@ -370,7 +376,7 @@ To compute toilet use:
 		if R is 1 and the player is not diapered:
 			repeat with K running through worn knickers:
 				only destroy K;
-			summon D cursed;
+			summon D cursed with quest;
 			say "As you finish your business, you suddenly feel a burst of energy and blinding light from the seat of the potty. Before you can react, you find a [ShortDesc of D] wrapped around your waist! Tugging at the waistband, you confirm your suspicion: it's cursed![line break][variable custom style][if the diaper addiction of the player < 11]But I just proved I can use the [otherwise]I got to go like a grown-up AND I got fresh protection! Thanks, [end if]potty![roman type][line break]";
 		otherwise if R is 2:
 			say "As you finish your business, you suddenly feel a burst of energy rush from the seat of the potty to your head. ";
@@ -418,10 +424,11 @@ REQUIRES COMMENTING
 
 +!]
 To compute urinal use:
-	allocate 6 seconds;
+	if seconds is 0, allocate 6 seconds;
 	if there is displacable pee covering clothing, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and release your hold on your bladder.";
+	if the location of the player is urinals, say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and ";
+	say "release your hold on your bladder.";
 	if the bladder of the player > 0:
 		now the bladder of the player is 0;
 		repeat with M running through reactive monsters:
@@ -433,14 +440,8 @@ To compute urinal use:
 	otherwise:
 		say "Nothing comes out!".
 
-[!<ComputeToiletReactionOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute toilet reaction of (M - a monster):
-	humiliate STRONG-HUMILIATION;
-	say "[ToiletReactionFlav of M]".
+	say ToiletReactionFlav of M.
 
 [!<SayToiletReactionFlavOfMonster>+
 
@@ -459,7 +460,6 @@ REQUIRES COMMENTING
 Carry out urinating:
 	start urination.
 
-
 This is the urination continues rule:
 	if the player is in danger, say "You try to stop the flow but you can't! You continue to [urinate]. ";
 	otherwise say "[one of]Time passes as you[or]You[cycling] continue to [urinate]. ";
@@ -474,6 +474,7 @@ To start urination:
 	if seconds is 0, allocate 6 seconds;
 	now player-urinating is 1;
 	now overflowed is 0;
+	now water-peeing is false;
 	if pee-bottling is 1: [We are automatically urinating so we set delayed urination to 1 to make sure we skipped the check functions. But we don't want to tell the player that the urination was involuntary because that's not actually true.]
 		now pee-bottling is 0;
 		if debugmode is 1, say "resetting accidental urination flag.";
@@ -499,12 +500,18 @@ To start urination:
 			compute urinal use;
 			say PeeReaction 0;
 		otherwise if the player is able to use a body of water and delayed urination is 0:
-			say "You [if the player is possessing a penis and the player is upright]walk up to the edge and [urinate] into the water[otherwise]walk past the edge, wading into the water until you can discreetly [urinate][end if]. ";
-			if incontinence > 0:
-				decrease incontinence by 1;
-				say "You feel as if you've regained some control over your bladder!";
-			progress quest of careful-peeing-quest;
-			say PeeReaction 0;
+			say "Get into the water (people won't be able to see you peeing but you'll get wet)? ";
+			if the player is consenting:
+				say "You walk past the edge, wading into the water until you can discreetly [urinate]. ";
+				if incontinence > 0:
+					decrease incontinence by 1;
+					say "You feel as if you've regained some control over your bladder!";
+				progress quest of careful-peeing-quest;
+				[say PeeReaction 0;] [Removed because the idea is that the player is being stealthy]
+				now water-peeing is true;
+			otherwise:
+				compute urinal use;
+				say PeeReaction 0;
 		otherwise if resting is 1 and there is a hotel bed in the location of the player:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] soaks into the sheets and mattress.";
 			now a random hotel bed in the location of the player is soggy;
@@ -600,6 +607,7 @@ To compute pee protected urination:
 					otherwise:
 						UrinePuddleUp 1;
 						if flav-said is 0, say "Your [urine] drips through your clothing and onto the ground.";
+					if there is a worn diaper and diaper quest is 1, progress quest of priestess-service-quest;
 				otherwise:
 					if flav-said is 0, say "Your [urine] flows into your [ShortDesc of K][unless K is fluid immune or K is diaper], soaking it[end if].";
 					UrineSoakUp K by 1;
@@ -608,22 +616,25 @@ To compute pee protected urination:
 						if K is cursed diaper and the location of the player is toilets, appropriate-cutscene-display figure of toilet diaper cutscene 1;
 						if K is diaper and the location of the player is UrinalBlindfolded and the class of the player is human toilet, appropriate-cutscene-display figure of human toilet diaper cutscene 1;
 					let sK be a random worn bottom level soakable pee protection clothing;
-					if K is not sK and X < N:
+					if K is not sK and X < N: [We now need to soak past the original thing we were urinating into and this isn't the last unit of urine]
 						say urinationoverflow of K;
 						now overflowed is 1;
+						if diaper quest is 1, progress quest of priestess-service-quest;
 						if diaper lover >= 1:
 							let H be a random off-stage victorian-baby-bonnet;
 							if H is actually summonable:
 								say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
 								summon H cursed;
 						now K is sK;
+					otherwise if K is diaper-stack and diaper quest is 1 and X is N:
+						let dK be entry 1 in the list of stacked diapers;
+						if the total-soak of dK >= the soak-limit of dK, progress quest of priestess-service-quest; [only the innermost diaper needs to be full]
 				now flav-said is 1;
 		if oldSoak is 0 and K is worn diaper and the urine-soak of K > 0:
 			if the class of the player is princess and the player is not in a predicament room and royal scepter is actually summonable:
 				summon royal scepter;
 				now the charge of royal scepter is 25;
 				say "[bold type]Suddenly a [MediumDesc of royal scepter] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
-
 
 [!<ComputeUrination>+
 
@@ -668,7 +679,7 @@ To compute urination:
 		if K is not diaper and diaper lover >= 1 and the bladder of the player <= 6:
 			let N be a random off-stage unique nightie;
 			if N is actually summonable and a random number between 1 and 6 - (unlucky * 4) is 1:
-				summon N cursed;
+				summon N cursed with quest;
 				now N is bed wetting;
 				compute quest of N;
 				say "[bold type]As you finish peeing, a flimsy [ShortDesc of N] shimmers into existence around you![roman type][line break][variable custom style]Because I wet myself?[roman type][line break]";
@@ -682,7 +693,6 @@ To compute urination:
 		add the urination continues rule to another-turn-rules, if absent;
 	otherwise:
 		end urination.
-
 
 [!<EndUrination>+
 
@@ -726,7 +736,7 @@ To end urination:
 		try masturbating;
 		now auto is 0;
 		if the player is horny and wanking is 0, say "You overcome your urge and behave yourself.";
-	if the player is able to use a body of water and the size of penis is 0 or the player is prone:
+	if the player is able to use a body of water and water-peeing is true:
 		try showering water-body;
 	let TP be a random worn training pants;
 	if TP is training pants and there is a worn T-shirt:
@@ -776,11 +786,9 @@ To check piss maidification:
 			otherwise if the player is not incontinent:
 				say "You feel a twinge from behind your bladder, as if it is punishing you by making you gradually more incontinent...";
 				increase incontinence by 1;
-		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is actually summonable)):
-			let C be a random pink spraybottle;
-			compute maidification of C;
-			say "A [C] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
-
+		otherwise if (there is a worn maid headdress or (black maid headdress is off-stage and black maid headdress is not listed in the list of headgear recycling and black maid headdress is actually summonable)):
+			compute maidification of pink-spraybottle;
+			say "A [pink-spraybottle] appears in your hand! It looks like some kind of magic force is demanding that you clean up after you own messes!".
 
 [How high will the game allow incontinence to go?]
 To decide which number is the max-incontinence of the player:
@@ -801,7 +809,7 @@ This is essentially the highest level of incontinence that matters, because at t
 
 +!]
 Definition: yourself is incontinent:
-	if the incontinence of the player >= 10, decide yes;
+	if the incontinence of the player >= 8, decide yes;
 	decide no.
 
 To decide which number is bladder-risky-level:
@@ -1032,7 +1040,7 @@ To say PeeReaction (N - 2):
 
 To say DiaperDeclaration of (M - a monster):
 	let D be a random worn diaper;
-	if D is not currently visible: [Player managed to stealth-pee]
+	if D is not currently visible or (D is diaper-stack and entry (number of entries in the list of stacked diapers) in the list of stacked diapers is dry diaper): [Player managed to stealth-pee]
 		now diaper-reaction-said is false;
 		if the player is not disgraced:
 			say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone! It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
@@ -1051,7 +1059,6 @@ To say DiaperDeclaration of (M - a monster):
 			say "You [if delayed urination is 1]freeze in place and [end if]stare at [NameDesc of M] coyly, drawing [his of M] attention down to your rapidly dampening diaper.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why do I want [him of M] to notice?![in random order][otherwise][line break][variable custom style][one of]I'm so naughty![or]Come on, say something![or]That's right, down here! Now watch me wet myself![in random order][end if][roman type][line break]";
 		otherwise if the player is able to speak:
 			say "You stare directly at [NameDesc of M].[line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Watch me wet myself!'[end if][or]Please watch me as I pee in my diaper!'[or]Are you watching me wet myself?'[in random order][roman type][line break]".
-
 
 [!<SayPeeReaction3>+
 
@@ -1144,7 +1151,6 @@ REQUIRES COMMENTING
 To say BrokenPeeFlav during sex with (M - a monster):
 	say "You shudder[if the humiliation of the player < HUMILIATION-BROKEN], finding that the humiliation of [NameDesc of M] seeing you lose control is actually turning you on[otherwise] with a weird mixture of shame and pleasure[end if].".
 
-
 [This is where we process the fact that the player is wetting themselves this turn.]
 This is the compulsory urination rule:
 	if delayed urination is 1 and busy is 0:
@@ -1156,8 +1162,8 @@ This is the compulsory urination rule:
 				StealthUrineSoakUp D by the bladder of the player;
 				now the bladder of the player is 0;
 				if the player is diaper aware or diaper bonus > 0:
-					say "A warm wet feeling lets you know that you just [one of]used[or]went number one in[or]peed in[or]wet[at random] your diaper.[line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great! I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";
-					[say "You reach down to feel the front of your [ShortDesc of D] and realise that it's [one of]much warmer and heavier than before. You must have used your diaper recently without even realising it![or]once again [if urine-before is 0]now quite damp[otherwise]much fuller than before[end if]. You must have wet yourself again![stopping][line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great! I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";]
+					say "A warm wet feeling lets you know that you just [one of]used[or]went number one in[or]peed in[or]wet[at random] your diaper.[line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great! I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr. Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";
+					[say "You reach down to feel the front of your [ShortDesc of D] and realise that it's [one of]much warmer and heavier than before. You must have used your diaper recently without even realising it![or]once again [if urine-before is 0]now quite damp[otherwise]much fuller than before[end if]. You must have wet yourself again![stopping][line break][variable custom style][if the diaper addiction of the player < 8][one of]Oh shit![or]Oh crap! Not again...[stopping][otherwise if the diaper addiction of the player < 12][one of]Uh-oh.[or]Oh dear, it looks like I really am incontinent![stopping][otherwise][one of]Wearing this diaper means I never have to worry about my bladder![or]This is great! I just need to make sure I don't run out of diapers.[or]It feels nice and warm![or]Thank you Mr. Diaper![or]I can't imagine life without diapers![then at random][end if][roman type][line break]";]
 					if diaper bonus > 0, compute wetting failure;
 					if a random number between 1 and 4 - (unlucky * 2) is 1 and D is not bed wetting:
 						say "Your [D] glows softly. Something tells you it is now making you even more incontinent!";
@@ -1166,9 +1172,9 @@ This is the compulsory urination rule:
 				otherwise:
 					SilentlyDiaperAddictUp 1;
 				progress quest of adult-baby-quest;
+				if diaper quest is 1 and the total-soak of D >= the soak-limit of D, progress quest of priestess-service-quest;
 				if D is not currently visible and there is an intelligent monster in the location of the player, progress quest of stealth-diaper-quest;
 				progress quest of bursting-quest;
-				if diaper quest is 1 and the player is in the location of dungeon altar, progress quest of priestess-service-quest;
 				if rattle is worn and the raw-magic-modifier of rattle < 4:
 					say "Your rattle glows blue for a moment! It feels more powerful.";
 					now the raw-magic-modifier of rattle is 4;
@@ -1183,7 +1189,4 @@ This is the compulsory urination rule:
 		now delayed urination is 0.
 The compulsory urination rule is listed in the compulsory action rules.
 
-
-
 Urinating ends here.
-

@@ -4,7 +4,6 @@ A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually met
 
 Definition: a warrior chestpiece is class-transformation-protected if the class of the player is virgin warrior.
 
-
 Check wearing warrior chestpiece:
 	if the virgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
 
@@ -38,7 +37,6 @@ This is the virgin warrior butt slut rule:
 	if there is a worn immodest warrior chestpiece, increase the desirability of asshole by 20.
 The virgin warrior butt slut rule is listed in the butt slut eligibility rules.
 
-
 Part 1 - Ornate Warrior Chestpiece
 
 An ornate warrior chestpiece is a kind of holy warrior chestpiece. An ornate warrior chestpiece is usually neck covering. An ornate warrior chestpiece is usually ridiculously low cut.
@@ -56,7 +54,6 @@ To say ClothingDesc of (O - an ornate warrior chestpiece):
 	say "This is less of a bra and more of a metal chestpiece, by beginning at your shoulders and your sides, travelling around your neck and underneath your bustline and narrowing and ending at your nipples from below, it manages to provide some protection to your upper chest whilst completely exposing essentially the entirety of your breasts. An ornate golden necklace shaped out of what seems to be hearts and religious iconography sits proudly on top of your cleavage, but hides nothing.[line break]It is impossible to wear other necklaces or collars whilst wearing this chestpiece.".
 
 Definition: an ornate warrior chestpiece is heart themed: decide yes.
-
 
 To decide which number is the initial outrage of (C - an ornate warrior chestpiece):
 	decide on 8.
@@ -88,7 +85,6 @@ To decide which number is the heaviness of (C - a leaf pattern warrior chestpiec
 
 To decide which object is the unique-upgrade-target of (C - a leaf pattern warrior chestpiece):
 	decide on a random off-stage ornate warrior chestpiece.
-
 
 Definition: a leaf pattern warrior chestpiece is grey themed: decide yes.
 Definition: a leaf pattern warrior chestpiece is flower themed: decide yes.
@@ -248,11 +244,4 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 	decrease the virgin bonus of the player by 1;
 	only destroy H.
 
-To compute periodic effect of (H - virgin magical girl outfit):
-	let W be a random off-stage heart wand;
-	if W is actually summonable:
-		say "[bold type]You feel a rush of magic as a wand suddenly materializes in your hand![roman type][line break]";
-		summon W.
-
 Warrior's Chestpiece ends here.
-

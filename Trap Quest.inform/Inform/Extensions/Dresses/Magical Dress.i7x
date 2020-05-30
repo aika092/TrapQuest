@@ -67,7 +67,7 @@ To decide which number is the initial outrage of (H - an exposing magical dress)
 Definition: an exposing magical dress is nudism-enabling: decide yes.
 Definition: an exposing magical dress is blue themed: decide yes.
 
-magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. magical-maid-outfit is unskirted.
+magical-maid-outfit is a magical dress. Understand "magical", "maid", "outfit" as magical-maid-outfit. magical-maid-outfit is fully exposing. magical-maid-outfit is arm exposing. magical-maid-outfit is crotch-intact. magical-maid-outfit is unskirted. magical-maid-outfit has a number called charge. magical-maid-outfit has an object called saved-item.
 
 Definition: magical-maid-outfit is white themed: decide yes.
 
@@ -88,8 +88,20 @@ To say ClothingDesc of (O - magical-maid-outfit):
 	say "A white one-piece leotard with big maid-like frills all around the chest where a giant hole leaves [if O is worn]your [BreastDesc][otherwise]the wearer's chest[end if] completely exposed and a giant blue bow at the neckline makes it feel like an anime superheroine outfit.".
 
 To decide which number is the initial outrage of (H - magical-maid-outfit):
-	decide on 6.
+	decide on 4.
 
+To compute periodic effect of (O - magical-maid-outfit):
+	decrease the charge of O by 1;
+	if the charge of O <= 0 and the number of combative tentacle monsters is 0 and the number of embodied things penetrating a fuckhole is 0:
+		let MO be chosen-maid-outfit;
+		say "[bold type][BigNameDesc of O] [bold type]runs out of magical energy![roman type][line break]";
+		transform O into MO;
+		if the saved-item of O is clothing:
+			if the saved-item of O is actually summonable:
+				summon the saved-item of O;
+				say "[BigNameDesc of O] reappears on you.";
+			otherwise:
+				now the saved-item of O is in pink wardrobe;
+			now the saved-item of O is nothing.
 
 Magical Dress ends here.
-

@@ -14,8 +14,6 @@ If the humiliation of the player is below this, the player will refuse to expel 
 *!]
 public-squatting-limit is a number that varies. public-squatting-limit is 30000.
 
-
-
 [!<squatting:Action>*
 
 REQUIRES COMMENTING
@@ -49,6 +47,7 @@ Check squatting:
 			say "Do you really want to push the contents of your belly out into [NameDesc of P]? ";
 			if the player is bimbo consenting, say "";
 			otherwise say "Then you should probably [if P is displacable][bold type]displace[roman type] [him of P][otherwise]get [him of P] out of the way[end if] first." instead;
+	if the pill-timer of triple-dildo-predicament > 0, increase the pill-timer of triple-dildo-predicament by 1;
 	if the player is able to use a toilet and the location of the player is toilets:
 		say "Did you mean to use the toilet? ";
 		if the player is reverse bimbo consenting:
@@ -72,6 +71,4 @@ Carry out squatting:
 		AssSquirt.
 Understand "squat", "squat down", "poo", "poop", "expel", "expel enema", "expel creampie" as squatting.
 
-
 Squatting ends here.
-

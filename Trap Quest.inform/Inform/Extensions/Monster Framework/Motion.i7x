@@ -100,7 +100,6 @@ To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified
 
 The motion reaction rules is a rulebook.
 
-
 To compute monstermotion reactions of (M - a monster): [If the NPC stumbles across the player this turn, they should react appropriately if they catch the player urinating, etc.]
 	if M is reactive:
 		now current-monster is M; [Just to make sure]
@@ -203,7 +202,7 @@ To compute survival reward of (C - a clothing):
 To compute survival rewards:
 	if the remainder after dividing the number of survived monsters by 2 is 0:
 		say "[bold type]You feel like you're getting better at avoiding and escaping monsters![roman type][line break]";
-		if the number of dangerous monsters is 0:
+		if the number of regional dangerous monsters is 0:
 			if the bimbo of the player < 7:
 				say "[variable custom style][one of]Phew, I think I got away![or]I got away again![stopping]";
 			otherwise if the bimbo of the player < 13:
@@ -216,6 +215,4 @@ To compute survival rewards:
 	repeat with C running through worn clothing:
 		compute survival reward of C.
 
-
 Motion ends here.
-

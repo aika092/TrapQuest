@@ -1,6 +1,5 @@
 Well by Objects begins here.
 
-
 wishing well is a thing. The printed name of wishing well is "[TQlink of item described]wishing well[TQxlink of item described][shortcut-desc][verb-desc of item described]". The text-shortcut of wishing well is "wiw". wishing well is not portable. wishing well is in Woods27. Figure of well is the file "Env/Forest/well1.png".
 
 To decide which figure-name is the examine-image of (C - wishing well):
@@ -14,4 +13,3 @@ Check inserting something into wishing well:
 	try WellWishing the noun instead.
 
 Well ends here.
-

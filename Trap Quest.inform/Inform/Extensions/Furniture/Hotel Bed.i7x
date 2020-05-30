@@ -1,6 +1,5 @@
 Hotel Bed by Furniture begins here.
 
-
 hotel bed is a kind of furniture. The printed name of hotel bed is usually "[if item described is soggy]soggy [end if]hotel bed". The printed name of hotel bed is "[TQlink of item described]hotel bed[TQxlink of item described][shortcut-desc][verb-desc of item described]". A hotel bed can be unencountered or encountered. A hotel bed is usually unencountered. A hotel bed is not permanent fixture. A hotel bed can be soggy. Understand "soggy" as hotel bed when the item described is soggy. Understand "hotel", "bed" as hotel bed. The text-shortcut of hotel bed is "hb".
 
 To decide which figure-name is the examine-image of (C - a hotel bed):
@@ -23,7 +22,6 @@ To compute furniture resting on (F - a hotel bed):
 		allocate 6 seconds;
 		compute PatronSpawning of F;
 		now F is encountered.
-
 
 To say RestingDesc of (F - a hotel bed):
 	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress.".
@@ -59,7 +57,6 @@ To compute rest ending of (F - HotelBedCreamy):
 		say "[if F is unencountered]It is only as you start to get up, you wrinkle your nose at a weird smell. Suddenly you realise that underneath the covers, the entire bed was recently soaked in [semen]! The [otherwise]Once again the [end if]strong fumes of the rapidly drying moist baby butter assaults your senses and makes you feel funny.";
 		SemenAddictUp 1.
 
-
 HotelBedCollar is a kind of hotel bed. There are 2 HotelBedCollar.
 
 To compute rest ending of (F - HotelBedCollar):
@@ -74,7 +71,6 @@ HotelBedPatrons is a kind of hotel bed. There are 2 HotelBedPatrons. 1 HotelBedP
 
 patronbed uses is a number that varies.
 
-
 To compute PatronSpawning of (F - a hotel bed):
 	increase patronbed uses by 1;
 	let R be 1;
@@ -88,7 +84,7 @@ To compute PatronSpawning of (F - a hotel bed):
 		now R is a random number between 1 and H;
 		if R > 6, now R is 6;
 		repeat with N running from 1 to R:
-			let M be a random off-stage patron;
+			let M be a random off-stage generic-appropriate patron;
 			now M is in the location of the player;
 			set up M;
 		if R > 3, say "[first custom style]'Hey everyone, get in here!'[roman type][line break]";
@@ -103,6 +99,4 @@ To compute PatronSpawning of (F - a hotel bed):
 	if R > 2, say "[if the player is a nympho][second custom style]Ooh yay! The more the merrier![otherwise if the sex addiction of the player < 4 + (R * 2)][variable custom style]Oh crap, that's way too many...[otherwise][variable custom style]I hope I can please them all...[end if][roman type][line break]";
 	now a random modesty shutter is in the location of the player.
 
-
 Hotel Bed ends here.
-

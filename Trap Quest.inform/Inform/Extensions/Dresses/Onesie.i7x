@@ -57,7 +57,6 @@ To compute periodic effect of (L - a onesie):
 To decide which object is the unique-upgrade-target of (C - a onesie):
 	decide on nothing.
 
-
 Part 1 - Velcro Onesie
 
 A velcro onesie is a kind of onesie. There is 1 velcro onesie. A velcro onesie is usually crotch-exposing. The text-shortcut of velcro onesie is "von".
@@ -82,7 +81,6 @@ To decide which object is the unique-upgrade-target of (C - a velcro onesie):
 	decide on a random off-stage waddle outfit.
 
 Definition: a velcro onesie is pink themed: decide yes.
-
 
 A frilly onesie is a kind of onesie. There is 1 frilly onesie. A frilly onesie is usually zippable. The printed name of frilly onesie is usually "[clothing-title-before]frilly onesie[clothing-title-after]". The text-shortcut of frilly onesie is "fon".
 
@@ -124,4 +122,3 @@ Definition: a little dinosaur onesie is dinosaur themed: decide yes.
 Definition: a little dinosaur onesie is white themed: decide yes.
 
 Onesie ends here.
-

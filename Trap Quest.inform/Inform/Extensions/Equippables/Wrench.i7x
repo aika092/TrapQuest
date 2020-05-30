@@ -42,7 +42,7 @@ To compute resolution of (M - mechanic) taking (T - a wrench):
 	say OfferThanksFlav of M for T.
 
 To say MonsterOfferAcceptFlav of (M - a demoness) to (T - a wrench):
-	say "[speech style of M]'[one of]I'll return to him, but how did YOU get it?'[or]How did you... Never mind. I'll return it to him.'[stopping][roman type]".
+	say "[speech style of M]'[one of]I'll return to [him of demon lord], but how did YOU get it?'[or]How did you... Never mind. I'll return it to [him of demon lord].'[stopping][roman type]".
 
 To say OfferThanksFlav of (M - a demoness) for (T - a wrench):
 	say "[if the class of the player is succubus]Our[otherwise]My[end if] master grows stronger.".
