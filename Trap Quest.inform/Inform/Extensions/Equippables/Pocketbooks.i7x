@@ -323,7 +323,6 @@ To decide which number is the alchemy key of (C - a notebook):
 To decide which number is the crafting key of (C - a notebook):
 	decide on 0.
 
-
 To decide which text is the RecipeDesc of (C - a notebook):
 	say "The recipe just says 'Place a pocketbook in the bowl'.".
 

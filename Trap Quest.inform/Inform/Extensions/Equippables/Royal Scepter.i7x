@@ -11,7 +11,7 @@ The text-shortcut of royal scepter is "rs".
 
 To say ClothingDesc of (W - royal scepter):
 	say "A gold and pink wand vibrator, with opaque crystal ball set into the top underneath a golden crown. ";
-	if diaper quest is 0, say "The ball [if the charge of W < 0]seems to draw in the light around it[otherwise]illuminates the area around it[end if], and when you look closely, you can see a faint image of the [princess-consort] swirling around inside it. Somehow, you know you can find [him of princess-consort] in the [bold type][the location of princess-consort][roman type]. [if the refactory-period of princess-consort <= 0]You can sense that [he of princess-consort] is currently in need of your care![otherwise]You sense that [he of princess-consort] is currently not in need of your care.[end if]";
+	if diaper quest is 0, say "The ball [if the charge of W < 0]seems to draw in the light around it[otherwise]illuminates the area around it[end if], and when you look closely, you can see a faint image of the [princess-consort] swirling around inside it. Somehow, you know you can find [him of princess-consort] in the [bold type][the location of princess-consort][roman type]. [if the refractory-period of princess-consort <= 0]You can sense that [he of princess-consort] is currently in need of your care![otherwise]You sense that [he of princess-consort] is currently not in need of your care.[end if]";
 	otherwise say "The ball seems to shine brightly when you're in a used diaper - it has the power to help you change yourself!".
 
 To say ShortDesc of (W - royal scepter):
@@ -45,7 +45,7 @@ To compute climax effect of (E - royal scepter):
 		otherwise:
 			say "Your [ShortDesc of E] pulses, and you feel a powerful sense of yearning deep in your heart as an image of the [princess-consort] appears in your mind.";
 			Arouse 3000;
-			if the refactory-period of princess-consort > 0, decrease the refactory-period of princess-consort by the charge of E * 20.
+			if the refractory-period of princess-consort > 0, decrease the refractory-period of princess-consort by the charge of E * 20.
 
 To decide which number is the raw-masturbation-bonus of (E - royal scepter):
 	if princess-consort is penetrating a body part:
@@ -64,7 +64,7 @@ To compute betrothal of (M - a monster):[This only triggers when the player is f
 		otherwise now F is -1;
 		if princess-consort is current-monster, now F is 2;
 		if F is -1:
-			if princess-consort is alive and princess-consort is mating and the refactory-period of princess-consort > 0:
+			if princess-consort is alive and princess-consort is mating and the refractory-period of princess-consort > 0:
 				say "Your [printed name of royal scepter] pulses, and an image of [NameDesc of princess-consort] appears in your head. You know that no matter who you have sex with, nothing could ever shake your everlasting connection.";
 			otherwise if princess-consort is alive:
 				say "Your [printed name of royal scepter] pulses, and an image of [NameDesc of princess-consort] appears in your head as an overwhelming feeling of guilt washes over you.";

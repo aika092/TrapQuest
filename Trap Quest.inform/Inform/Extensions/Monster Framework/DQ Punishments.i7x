@@ -146,7 +146,7 @@ Definition: a monster (called M) is eager to masturbate:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn chastity cage, decide no;
-	if (the player is not a bit horny and M is only willing to masturbate horny players) or refactoryperiod > 0, decide no;
+	if (the player is not a bit horny and M is only willing to masturbate horny players) or refractoryperiod > 0, decide no;
 	decide yes.
 
 Definition: a monster is willing to masturbate: decide no.

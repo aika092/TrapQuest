@@ -428,7 +428,6 @@ To decide which number is the bartering value of (T - a pasties) for (M - a robo
 To decide which number is the bartering value of (T - a pasties) for (M - a mechanic):
 	decide on 2.
 
-
 red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
 
 Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".

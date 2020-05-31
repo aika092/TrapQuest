@@ -82,7 +82,6 @@ This is the select rule:
 		end if;
 	end if.
 
-
 To redraw status line:
 	(- DrawStatusLine(); -)
 
@@ -147,7 +146,6 @@ Table of Shallow Menu Status
 left	central	right
 ""	"[current menu title]"	""
 
-
 Table of Deep Menu Status
 left	central	right
 ""	"[current menu title]"	""
@@ -177,7 +175,6 @@ To say known hints from (hint booklet - table name):
 		end if;
 	end repeat;
 	say "Press SPACE to return to the menu or H to reveal another hint."
-
 
 To say hints from (hint booklet - table name):
 	let __index be 0;

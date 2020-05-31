@@ -13,7 +13,7 @@ To compute showering (H - hot-tub):
 	BodyHeal 10;
 	let M be a random alive male teacher;
 	if diaper quest is 1, now M is a random alive teacher;
-	if M is monster and the refactory-period of M < 0 and armband is worn and face is not actually occupied and M is not in the location of the player:
+	if M is monster and the refractory-period of M < 0 and armband is worn and face is not actually occupied and M is not in the location of the player:
 		if diaper quest is 0:
 			now M is in the location of the player;
 			now M is interested;

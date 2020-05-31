@@ -112,7 +112,7 @@ Include (-
 		if (res == 0) {
 			! Left-justify the header style
 			glk_stylehint_set(wintype_TextBuffer, style_Header, stylehint_Justification, 0);
-			! Try to make emphasized type in italics and not boldface
+			! Try to make emphasised type in italics and not boldface
 			glk_stylehint_set(wintype_TextBuffer, style_Emphasized, stylehint_Weight, 0);
 			glk_stylehint_set(wintype_TextBuffer, style_Emphasized, stylehint_Oblique, 1);
 			gg_mainwin = glk_window_open(0, 0, 0, wintype_TextBuffer, GG_MAINWIN_ROCK);

@@ -126,7 +126,7 @@ To compute vines kneeling:
 			dislodge V; [To avoid glitches]
 		if the player is vine stuck and the player is not vine fucked:
 			compute V penetrating;
-		otherwise if diaper quest is 1 and refactoryperiod <= 0 and the player is able to get horny:
+		otherwise if diaper quest is 1 and refractoryperiod <= 0 and the player is able to get horny:
 			let D be a random worn diaper;
 			say "Squirming living vines [one of]rise up from the ground and begin rubbing[or]squirm and rub[stopping] against the crotch of your diaper! Your [genitals] [one of]is stimulated through your padding[or]feels amazing[or]tingles with delight[or]pulses with pleasure[at random]...";
 			if the player is not a pervert, say "[variable custom style][one of]Not good, not good![or]I need to get out of here! Or at least stand up high enough that these guys can't reach me...[or][if the diaper addiction of the player < 8]No, I don't want to be turned on in my diaper[otherwise]Enough with making me turned on all the time, I just want to wear my diapers in peace[end if]![or]This game is totally trying to give me a diaper fetish, isn't it?[then at random][roman type][line break]";

@@ -34,7 +34,6 @@ The spawn potential centaur rule is listed in the setting up woods monsters rule
 
 Definition: centaur is controlling: decide no.[Will it grab onto subduing clothing e.g. a clitoris lead?]
 
-
 Definition: centaur is musky: decide yes.
 Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide no.[soon....]
@@ -174,7 +173,7 @@ To say DamageReactHealthy of (M - centaur):
 	say "[big he of M] laughs as [he of M] [one of]shrugs off[or]ignores[at random] the damage.".
 
 To say DamageReactDamaged of (M - centaur):
-	say "[big he of M] [one of]takes the hit without flinching[or]uses [his of M] armor to lessen the hit[at random].".
+	say "[big he of M] [one of]takes the hit without flinching[or]uses [his of M] armour to lessen the hit[at random].".
 
 To say DamageReactTired of (M - centaur):
 	say "[big he of M] grunts as [he of M] [one of]endures the hit[or]weathers the hit[at random]!".
@@ -252,7 +251,7 @@ To say LessLooseAssholePenetrationFlav of (M - centaur):
 	otherwise if the relevant sex addiction of M < 12:
 		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. You aren't sure whether to resist or just give in, and after a couple seconds of continuous pushing, your [asshole] makes the decision for you, allowing [his of M] wide shaft through your anal ring with a satisfying pop.[or][BigNameDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. Since you're trapped under [his of M] huge lower body, there's nothing you can do but accept it, and after a few seconds of pushing, you feel [his of M] wide [DickDesc of M] pop through your anal ring, following by the first few inches of [his of M] shaft.[at random] You bite back a moan as [he of M] eagerly begins to thrust.";
 	otherwise:
-		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. [big his of M] precum provides more than enough natural lubrication to allow [his of M] flat cockhead to pop past your anal ring after a couple seconds of pushing, and you moan hungrily as the first few inches of [his of M] big, fat [DickDesc of M] slide into your [asshole].[or][BigNameDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. You don't put up a shred of resistance, simply enjoying the brief period of continuous pushing before [his of M] [DickDesc of M] passes through your anal ring with a satifying pop.[at random] You roll your eyes back as [he of M] eagerly begins to thrust.".
+		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. [big his of M] precum provides more than enough natural lubrication to allow [his of M] flat cockhead to pop past your anal ring after a couple seconds of pushing, and you moan hungrily as the first few inches of [his of M] big, fat [DickDesc of M] slide into your [asshole].[or][BigNameDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. You don't put up a shred of resistance, simply enjoying the brief period of continuous pushing before [his of M] [DickDesc of M] passes through your anal ring with a satisfying pop.[at random] You roll your eyes back as [he of M] eagerly begins to thrust.".
 
 To say VeryLooseAssholePenetrationFlav of (M - centaur):
 	let O be a random monster penetrating face;
@@ -261,7 +260,7 @@ To say VeryLooseAssholePenetrationFlav of (M - centaur):
 	otherwise if the relevant sex addiction of M < 12:
 		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. You put up a token resistance, but even that only delays [him of M] by a second. After exactly one second, you feel [his of M] wide cockhead pop past your anal ring, followed by the first few inches of [his of M] [DickDesc of M]. [big he of M] doesn't bother leaving time for build-up as [he of M] begins to thrust.[or][BigNameDesc of M][']s flat tip presses against your sphincter for a moment before popping in, followed by the first few inches of [his of M] shaft. By the time you think to resist, [he of M] has already begun to thrust.[at random]";
 	otherwise:
-		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. You wiggle your ass just a bit, so you can savor the feeling of penetration that much longer. After exactly one second, you feel [his of M] wide cockhead pop past your anal ring, followed by the first few inches of [his of M] big, fat [DickDesc of M]. Within the next moment [he of M] has already begun to thrust.[or][BigNameDesc of M][']s flat tip presses against your sphincter for a moment before popping in, followed by the first few inches of [his of M] big, fat shaft. You shudder with pleasure as [he of M] immediately begins to thrust.[at random]".
+		say "[one of][BigNameDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. You wiggle your ass just a bit, so you can savour the feeling of penetration that much longer. After exactly one second, you feel [his of M] wide cockhead pop past your anal ring, followed by the first few inches of [his of M] big, fat [DickDesc of M]. Within the next moment [he of M] has already begun to thrust.[or][BigNameDesc of M][']s flat tip presses against your sphincter for a moment before popping in, followed by the first few inches of [his of M] big, fat shaft. You shudder with pleasure as [he of M] immediately begins to thrust.[at random]".
 
 To say SpitroastPrep of (M - centaur) with (O - a monster) in (F - vagina):
 	say "[BigFuckerDesc of M] uses a hoof to force you onto all fours, [his of M] [LongDickDesc of M] prodding your thighs as [he of M] clumsily lines it up with your entrance.".
@@ -397,7 +396,7 @@ To say RepeatResponse of (M - centaur):
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I don't exactly know what altar you tend to, but any altar girl is good enough for me!'[or]Even pagan gods are fine by me!'[or]Well met! Its always a pleasure to meet a fellow devout.'[at random][roman type]";
 	otherwise:
-		if the refactory-period of M > 0:
+		if the refractory-period of M > 0:
 			say "[speech style of M]'[one of]Hey there. I don't really feel like dueling right now, but I might later.'[or]Hi. I'm not up for anything at the moment, but don't forget to check back later.'[or]Hey! I'm feeling pretty satisfied at the moment, but I'll be ready for more soon.'[at random][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]Hey! If you don't want to duel, we could definitely try something more casual.'[or]Hi there. If it seems like I have a boner for combat, you're right. It gets me so rigid.'[or]Hey there. If you're wondering about this shield, its a family heirloom.'[or]Well met! Want to get to know each other better?'[at random][roman type][line break]".

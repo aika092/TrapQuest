@@ -22,7 +22,7 @@ To Set Up Monsters:
 	if Hotel01 is placed, follow the setting up hotel monsters rules;
 	if debugmode > 1, say "Now setting up mansion monsters...";
 	if Mansion01 is placed, follow the setting up mansion monsters rules;
-	repeat with M running through alive nonexistant monsters:
+	repeat with M running through alive nonexistent monsters:
 		if debugmode > 1, say "Setting up initial state of [M]...";
 		set up M.
 
@@ -37,7 +37,7 @@ Every turn we quickly check if there are any NPCs in a weird state in the locati
 
 +!]
 To compute MonsterSetUpFix:
-	repeat with M running through nonexistant monsters in the location of the player:
+	repeat with M running through nonexistent monsters in the location of the player:
 		Set Up M.
 
 Set Up Monsters ends here.

@@ -57,12 +57,12 @@ An all time based rule (this is the tongued clothing licking rule):
 	if N > 0:
 		decrease tonguesActive by 1;
 		let C be a random worn tongued clothing;
-		if the player is not a bit horny or refactoryperiod > 0:
+		if the player is not a bit horny or refractoryperiod > 0:
 			now the rounds-horny of no-orgasm-quest is 0;
-			if refactoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refactory period is over, tongues will start]
+			if refractoryperiod > 0 and tonguesActive < 0, now tonguesActive is -30; [As soon as refractory period is over, tongues will start]
 		otherwise if playerRegion is not school:
 			increase the rounds-horny of no-orgasm-quest by 1;
-		if tonguesActive <= -30 and refactoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
+		if tonguesActive <= -30 and refractoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
 			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and begin to salivate and lick you wherever they can reach![roman type][line break]";
 			now tonguesActive is a random number between 15 and 40;
 			update appearance level;

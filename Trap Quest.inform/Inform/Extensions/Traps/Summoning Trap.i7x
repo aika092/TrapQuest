@@ -81,24 +81,24 @@ To summon (M - a monster):
 		summon M in the mansion;
 	otherwise:
 		summon M in playerRegion;
-	if M is nonexistant and M is on-stage, set up M.
+	if M is nonexistent and M is on-stage, set up M.
 
 To summon (M - a monster) in (D - the dungeon):
 	while M is off-stage or M is nearby or M is in the location of the player or M is in Dungeon12 or M is in Dungeon11 or M is in Dungeon10:
 		now M is in a random placed unbossed labyrinth room;
-		if M is nonexistant and the number of placed labyrinth rooms is the number of discovered labyrinth rooms, DifficultyUp M by 5.
+		if M is nonexistent and the number of placed labyrinth rooms is the number of discovered labyrinth rooms, DifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the woods):
 	if the number of placed unbossed jungle rooms > 1:
 		while M is off-stage or M is nearby or M is in the location of the player or M is in Woods01:
 			now M is in a random placed unbossed jungle room;
-			if M is nonexistant and the number of placed jungle rooms is the number of discovered jungle rooms, DifficultyUp M by 5.
+			if M is nonexistent and the number of placed jungle rooms is the number of discovered jungle rooms, DifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the hotel):
 	if the number of placed unbossed modern rooms > 1:
 		while M is off-stage or M is nearby or M is in the location of the player or M is in Hotel01:
 			now M is in a random placed unbossed modern room;
-			if M is nonexistant and the number of placed modern rooms is the number of discovered modern rooms, DifficultyUp M by 5.
+			if M is nonexistent and the number of placed modern rooms is the number of discovered modern rooms, DifficultyUp M by 5.
 
 To summon (M - a monster) in (D - the mansion):
 	if the number of placed unbossed haunted rooms > 1:

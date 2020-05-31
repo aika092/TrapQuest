@@ -62,7 +62,7 @@ Report wearing cultist veil:
 		if Mansion01 is not placed:
 			Set Up The Mansion;
 			follow the setting up mansion monsters rules;
-		repeat with M running through alive nonexistant monsters:
+		repeat with M running through alive nonexistent monsters:
 			set up M;
 		say "You feel that something epic has begun.";
 		commence doom.

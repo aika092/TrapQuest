@@ -39,7 +39,7 @@ doubled fatigue and body soreness recovery rate.
 
 To compute furniture resting on (F - a master bed):
 	let V be a random alive vampiress;
-	if V is monster and the refactory-period of V <= 0 and (there is a worn submissive collar or the player is horny):
+	if V is monster and the refractory-period of V <= 0 and (there is a worn submissive collar or the player is horny):
 		if there is a worn submissive collar:
 			say "You climb onto the bed and begin to pull back the covers, but a sudden flash of warmth from your collar makes you stop what you're doing, turn around, and immediately lay spread-eagled over the comforter. [line break][variable custom style]What just happened?[roman type][line break]Glowing pink chains billow out from underneath the bed, instantly latching onto your wrists and ankles, securing them to the bedposts. [line break][second custom style]'My mistress will be here to take me shortly.'[roman type][line break]";
 		otherwise:
