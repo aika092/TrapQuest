@@ -27,6 +27,7 @@ REQUIRES COMMENTING
 
 +!]
 Check squatting:
+	if the trophy-mode of expel-trophy is 1, say "Thanks to the magic power of [NameDesc of expel-trophy], this only happens automatically." instead;
 	if the semen addiction of the player >= 20 and the semen volume of belly > 0, say "[variable custom style]There's no way I'm letting out my precious [semen] until I literally can't hold it in any longer![roman type][line break]" instead;
 	if the semen addiction of the player > 16 and the semen volume of belly > 0 and the incidents of enema-cramping <= 0, say "[variable custom style]I think I'd like to keep holding onto the warm cum, at least until I start cramping.[roman type][line break]" instead;
 	if the total squirtable fill of belly <= 0, say "You don't have any liquid[if egg laying fetish is 1] or eggs[end if] in your belly." instead;
@@ -46,6 +47,7 @@ Check squatting:
 			say "Do you really want to push the contents of your belly out into [NameDesc of P]? ";
 			if the player is bimbo consenting, say "";
 			otherwise say "Then you should probably [if P is displacable][bold type]displace[roman type] [him of P][otherwise]get [him of P] out of the way[end if] first." instead;
+	if the pill-timer of triple-dildo-predicament > 0, increase the pill-timer of triple-dildo-predicament by 1;
 	if the player is able to use a toilet and the location of the player is toilets:
 		say "Did you mean to use the toilet? ";
 		if the player is reverse bimbo consenting:

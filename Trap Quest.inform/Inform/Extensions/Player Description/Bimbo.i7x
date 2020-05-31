@@ -16,7 +16,7 @@ To say BimboDesc:
 	if the bimbo of the player is 8, say "[line break][variable custom style]I guess there's nothing really that wrong with being carefree, is there?[roman type][line break]";
 	if the bimbo of the player is 9, say "[first custom style][line break]These thoughts keep invading my head...[paragraph break][second custom style][one of]I want to look pretty![or]Dicks dicks dicks![stopping][roman type][line break]";
 	if the bimbo of the player is 10, say "[line break][first custom style][if the player is male and transGender is 0]I'm a man, not a woman... I think.[otherwise]I'm not a slut... am I?[end if][roman type][line break]";
-	if the bimbo of the player is 11, say "[second custom style][one of]*giggle*[or]Tee-hee![or]I feel fabulous![at random][one of][paragraph break][first custom style]N...[or][stopping][roman type][line break]";
+	if the bimbo of the player is 11, say "[second custom style][one of]*Giggle*[or]Teehee![or]I feel fabulous![at random][one of][paragraph break][first custom style]N...[or][stopping][roman type][line break]";
 	if the bimbo of the player is 12, say "[second custom style][line break]My voice seems a lot higher pitched, and I'm swaying my hips wildly...[paragraph break][first custom style]When did that happen?[paragraph break][second custom style]Oh well who cares anyway, it's not like there's any real people here to judge.[roman type][line break]";
 	if the bimbo of the player is 13, say "[second custom style][line break]I'm having so much fun![roman type][line break]";
 	if the bimbo of the player is 14, say "[second custom style][line break]I love this game![roman type][line break]";

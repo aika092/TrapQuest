@@ -13,7 +13,7 @@ To compute showering (SP - sacred pool):[Much later: some interaction with slime
 	if the corruption of the sacred pool > 200:
 		say "Tendrils of liquid lash out as soon as you break the surface, latching hold of you, dragging you the rest of the way in and pulling you underwater. You are thrashed around violently underneath the surface and abruptly thrown back out.";
 		PainUp 1;
-		repeat with L running through worn uncursed cursable clothing:
+		repeat with L running through worn actually cursable clothing:
 			curse L;
 		IntDown 1;
 	otherwise if tracked-semen > 0 or B > 0:
@@ -22,7 +22,8 @@ To compute showering (SP - sacred pool):[Much later: some interaction with slime
 			say "[line break]Your clothes fizz slightly, and when you look, somehow they seem... not as interesting as they were before.";
 			repeat with C running through worn clothing:
 				if C is cursed:
-					bless C;
+					if strongCurses is 1, compute new quest of C;
+					otherwise bless C;
 					increase tracked-semen by 25;
 				otherwise if C is blessed:
 					curse C;
@@ -55,7 +56,6 @@ To pollute (N - a number):
 		say "[one of]There is a noticeable shift in the air around you, and that reedy 'alive' feeling from inside the mansion slowly creeps in behind you and settles over the area.[or][stopping]";
 		repeat with G running through garlic rooms:
 			unless G is Mansion23, now G is not garlic;
-		if doomed < 5:
-			increase doom counter by 150.
+		if doomed < 5 and doom counter > 0, increase doom counter by 150.
 
 Sacred Pool ends here.

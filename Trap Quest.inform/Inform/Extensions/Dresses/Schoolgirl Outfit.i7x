@@ -94,7 +94,7 @@ To decide which figure-name is clothing-image of (C - a halloween schoolgirl out
 	decide on figure of halloween schoolgirl outfit.
 
 To say ClothingDesc of (C - a halloween schoolgirl outfit):
-	say "A white, relatively modest (for this game) short-sleeved top, fashioned in the style of a schoolgirl uniform that has a small horizontal slit above your breasts to show some cleavage . At the top it has a collar and a rebelliously short tie.[line break]";
+	say "A white, relatively modest (for this game) short-sleeved top, fashioned in the style of a schoolgirl uniform that has a small horizontal slit above your breasts to show some cleavage. At the top it has a collar and a rebelliously short tie.[line break]";
 	say "A red tartan miniskirt that barely covers your crotch.".
 
 To decide which number is the initial outrage of (C - a halloween schoolgirl outfit):
@@ -109,7 +109,7 @@ Definition: a halloween schoolgirl outfit is red themed: decide yes.
 
 Part 4 - Minimalist Schoolgirl Outfit
 
-A minimalist schoolgirl outfit is a kind of schoolgirl outfit. A minimalist schoolgirl outfit is usually low cut. A minimalist schoolgirl outfit is usually super-short. A minimalist schoolgirl outfit is usually belly exposing. A minimalist schoolgirl outfit is usually optional-top-displacable.
+A minimalist schoolgirl outfit is a kind of schoolgirl outfit. A minimalist schoolgirl outfit is usually low cut. A minimalist schoolgirl outfit is usually super-short. A minimalist schoolgirl outfit is usually belly exposing. A minimalist schoolgirl outfit is usually optional-top-displacable. A minimalist schoolgirl outfit is usually erect-nipple-exposing.
 
 The printed name of minimalist schoolgirl outfit is usually "[clothing-title-before]minimalist schoolgirl outfit[clothing-title-after]". The text-shortcut of minimalist schoolgirl outfit is "mso".
 

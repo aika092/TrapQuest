@@ -30,6 +30,6 @@ To say TransformReaction of (C - a nipple ring bikini top):
 	otherwise if C is almost too much:
 		say "[variable custom style]This is pretty extreme! But also kind of thrilling to be wearing...[roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:[why not just a generic otherwise: statement here?]
-		say "[variable custom style]Tee-hee, this game knows exactly what sort of thing I'd love to wear! This way, everyone can check out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
+		say "[variable custom style]Teehee, this game knows exactly what sort of thing I'd love to wear! This way, everyone can check out my [if the largeness of breasts > 2]tits[otherwise]nipples[end if]![roman type][line break]".
 
 Nipple Ring Bikini Top ends here.

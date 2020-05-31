@@ -5,6 +5,8 @@ A briefs is a kind of undies. Understand "pair", "pair of", "briefs" as briefs. 
 To decide which number is the penis-capacity of (K - a briefs):
 	decide on 6.
 
+Definition: a briefs is rippable: decide yes.
+
 The printed name of briefs is "[clothing-title-before][selfexamineuniquetitle of item described][clothing-title-after]".
 
 To say TypeTitle of (T - a briefs):
@@ -202,6 +204,8 @@ To decide which number is the sex-addiction-influence of (G - green-briefs):
 	decide on 2.
 To decide which number is the unique outrage of (C - green-briefs):
 	decide on 1.
+To decide which number is the luck-influence of (C - green-briefs):
+	decide on 5.
 Definition: green-briefs is green themed: decide yes.
 
 grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb".
@@ -231,9 +235,7 @@ To say selfexamineuniquetitle of (G - white-cameltoe briefs):
 To say UniqueClothingDesc of (G - white-cameltoe briefs):
 	say "A pair of low cut white briefs that would give a female wearer a very visible cameltoe.".
 Definition: white-cameltoe briefs is white themed: decide yes.
-To decide which number is the unique outrage of (C - white-cameltoe briefs):
-	if the player is female, decide on 3;
-	decide on 0.
+Definition: white-cameltoe briefs is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - white-cameltoe briefs):
 	decide on 2.
 

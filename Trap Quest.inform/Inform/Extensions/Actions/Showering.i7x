@@ -19,7 +19,7 @@ Check showering:
 		say "You feel that it isn't too sensible to get into a body of water when wearing a super-absorbent diaper! Are you sure you want to? ";
 		unless the player is in agreement, say "Action cancelled." instead;
 	if the humiliation of the player > 28000 and the semen addiction of the player > 11 and the number of glazed body parts > 0 and watersports fetish is 1 and auto is 0:[We only prevent players from washing themselves if there is another way for them to get clean. i.e. showers of the golden variety rather than normal ones]
-		unless there is a lake monster in the location of the player or (there is a worn slimegirl and the hunger of a random slimegirl > 7), say "[second custom style]No way! If I want to get clean, I'll just have someone douse me in [urine]![roman type]" instead.
+		unless there is a lake monster in the location of the player or (slimegirl is worn and the hunger of slimegirl > 7), say "[second custom style]No way! If I want to get clean, I'll just have someone douse me in [urine]![roman type]" instead.
 
 Report going when the player is in Dungeon35 and newbie tips is 1:
 	say "[one of][newbie style]Newbie tip: A body of water! If [if diaper quest is 1]your clothes have been soiled[otherwise]you have been stained with bodily fluids[end if], you can use this to your advantage. You can clean individual items of clothing with 'clean X in water' and you can use 'wash in water' to go in yourself, and clean everything you're wearing at the same time[if diaper messing >= 4]. You can even use this to clean up after messing yourself[otherwise if diaper lover > 0]. It may be sensible to remove any diapers first though, unless you want them to instantly get fully waterlogged[end if]![roman type][line break][or][stopping]".
@@ -95,7 +95,7 @@ To compute showering:
 		say "You feel the water rushing underneath your [vagina], and the flow helps clear your womb of the [semen] it is holding.";
 		increase tracked-semen by the semen volume of vagina * 2;
 		now the semen volume of vagina is 0;
-		if the womb volume of vagina > 0 and the pregnancy of the player <= 0:
+		if the womb volume of vagina > 0 and the pregnancy of the player is not 1 and the pregnancy of the player is not 2:
 			increase tracked-semen by the womb volume of vagina * 2;
 			WombEmpty the womb volume of vagina;
 	if face is temporarily made up:

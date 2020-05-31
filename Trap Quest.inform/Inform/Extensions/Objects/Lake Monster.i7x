@@ -4,7 +4,7 @@ Figure of lake monster is the file "NPCs/Bosses/tentaclemonster1.png".
 Figure of Lake Monster Cutscene 1 is the file "Special/Cutscene/cutscene-lake1.jpg".
 Figure of Lake Monster Cutscene 2 is the file "Special/Cutscene/cutscene-lake2.jpg".
 
-A lake monster is a kind of person. There is 1 lake monster. The printed name of lake monster is usually "[TQlink of item described][input-style]lake monster[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of lake monster is "lm". A lake monster has a number called semen-sniffing. A lake monster is not portable.
+A lake monster is a kind of person. A lake monster is usually unintelligent. There is 1 lake monster. The printed name of lake monster is usually "[TQlink of item described][input-style]lake monster[roman type][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of lake monster is "lm". A lake monster has a number called semen-sniffing. A lake monster is not portable.
 
 Definition: a lake monster is father material: decide yes.
 Definition: A lake monster is live: decide yes.

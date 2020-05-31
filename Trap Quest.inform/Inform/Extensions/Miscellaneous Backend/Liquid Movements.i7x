@@ -608,6 +608,7 @@ REQUIRES COMMENTING
 +!]
 To compute tits cum dribbling:
 	now breasts is soaked;
+	let HCN be highest-cleavage;
 	let HC be highest-cleavage-clothing;
 	if HC is unsoaked clothing:
 		say "Some [semen] runs down your [BreastDesc] and onto your [ShortDesc of HC]. ";

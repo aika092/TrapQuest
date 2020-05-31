@@ -238,8 +238,8 @@ Chapter: Style features
 Each text style has the following features:
 
 	Table of style features
-	background color	specifies the background color of the text
-	color	specifies the color of the text itself
+	background color	specifies the background colour of the text
+	color	specifies the colour of the text itself
 	fixed width	a truth state (default: false). If true then the text will be displayed with a fixed width (monospace) font
 	font weight	specifies the weight of the font. Can be set to "light-weight", "regular-weight" (the default), or "bold-weight"
 	indentation	a number (default: 0) specifying the number of units of indentation for the whole block of text. Units are defined by interpreter, but are often equivalent to spaces
@@ -265,9 +265,9 @@ This definition table above will make everything red and italics, except for the
 
 Your table continuation does not need to include every column in the Table of User Styles, nor does it need to define every style. You can also continue the table multiple times, and even define a style in multiple places; if you do then the definitions will be combined together. If you do not want to set a feature for a style you can leave it blank with "--".
 
-Colors are defined by specifying a web (CSS) color in a text. Web colors specify the red/green/blue components of a color in hexadecimal, and a correctly specified color will be 6 characters long (with an optional # at the beginning.) Note that short (#000) web colors are not supported.
+Coors are defined by specifying a web (CSS) colour in a text. Web colours specify the red/green/blue components of a colour in hexadecimal, and a correctly specified colour will be 6 characters long (with an optional # at the beginning.) Note that short (#000) web colours are not supported.
 
-If you use a color many times you can define it as a text constant, and then use that in the table:
+If you use a colour many times you can define it as a text constant, and then use that in the table:
 
 	Red is always "#FF0000".
 

@@ -122,7 +122,7 @@ To decide which number is the dexterity-influence of (C - demon codpiece):
 This is the demon junk reward rule:
 	say "Your [ShortDesc of demon codpiece] shifts and the gem lights up, [one of]as if reacting in approval[or]once again showing its opinion of your actions[stopping]! You feel more powerful!";
 	increase the charge of demon codpiece by 1;
-	increase the strap-length of demon codpiece by 1;
+	if the strap-length of demon codpiece < 12, increase the strap-length of demon codpiece by 1;
 	Dignify 50.
 
 This is the demon junk punishment rule:
@@ -171,7 +171,7 @@ To decide which figure-name is the clothing-image of (C - acolyte-undergarment):
 	decide on figure of acolyte undergarment.
 
 To say ShortDesc of (B - acolyte-undergarment):
-	say "acolyte's undegarment".
+	say "acolyte's undergarment".
 
 To say ClothingDesc of (C - acolyte-undergarment):
 	say "A pair of crotchless golden 'underwear,' with [if the player is male]two matching strings of rubies[otherwise]a string of rubies[end if][if the player is female and C is worn] that stimulate your [vagina] as you walk[otherwise if C is worn]that fit around your [ShortDesc of penis][otherwise]down the middle[end if]. It hides absolutely nothing.[if the charge of C > 0][line break][end if][if the charge of C > 4]The skimpy 'fabric' is warm to the touch, and you can tell it has absorbed a great deal of power.[otherwise if the charge of C > 1]The skimpy 'fabric' is slightly warm to the touch, and you can tell it has absorbed a bit of power.[otherwise]The skimpy 'fabric' is surprisingly cool to the touch.[end if]";

@@ -110,18 +110,11 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is on tiptoes:
-	if there is a worn butterfly wings, decide yes;
-	if the weight of the player < 3 and the weight of the player > -3, decide yes;
+	if butterfly wings is worn, decide yes;
+	if the weight of the player < 3 and the weight of the player > -5, decide yes;
 	decide no.
 
-[!<YourselfIsZeroG>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: yourself is zeroG:
-	if the weight of the player < -2 and the weight of the player > -6, decide yes;
-	decide no.
+Definition: yourself is zeroG if the class of the player is living sex doll.
 
 [!<YourselfIsFlying>+
 
@@ -130,7 +123,7 @@ REQUIRES COMMENTING
 +!]
 Definition: yourself is flying:
 	if the player is immobile, decide no;
-	if there is a worn butterfly wings, decide no;
+	if butterfly wings is worn, decide no;
 	if the latex-transformation of the player > 5, decide no;
 	if the weight of the player < -5, decide yes;
 	decide no.

@@ -17,6 +17,7 @@ Check jumping:
 		if C is stuck and the player is not dildo stuck, say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	let B be the largeness of breasts;
 	allocate 2 seconds;
+	if the pill-timer of triple-dildo-predicament > 0, increase the pill-timer of triple-dildo-predicament by 1;
 	if the player is pole stuck:
 		if the player is monster fucked, say "You can't because the [random monster penetrating a body part] is holding you still and fucking you!" instead;
 		otherwise jump from the dildo instead;
@@ -42,8 +43,8 @@ Check jumping:
 				if the player is male and penis is lewdly exposed, now B is 16;
 			if B >= 16 and M is interested:
 				say "[BigNameDesc of M] [one of]seems actively turned on by your cheer[or]seems to [i]really like[/i] your cheer[at random].";
-				if the refactory-period of M > 4:
-					decrease the refactory-period of M by 4;
+				if the refractory-period of M > 4:
+					decrease the refractory-period of M by 4;
 				otherwise:
 					if a random number between 1 and 3 is 1, FavourDown M by 1;
 	otherwise:

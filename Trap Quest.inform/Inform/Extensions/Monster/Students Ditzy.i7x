@@ -3,7 +3,7 @@ Students Ditzy by Monster begins here.
 A ditzy student is a kind of student. Understand "ditzy" as a ditzy student.
 
 To say MediumDesc of (M - a ditzy student):
-	say "ditzy [rank-colour of item described] student [student-name of item described]".
+	say "ditzy [rank-colour of M] student [student-name of M]".
 
 To decide which number is the dedication of (M - a ditzy student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 0 and 5.

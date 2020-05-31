@@ -2,7 +2,7 @@ Perception by Monster Framework begins here.
 
 Part 1 - Perception
 
-A monster has a number called favour. The favour of a monster is usually 13. [The favour of an NPC determines when it turns unfriendly.]
+A monster has a number called favour. The favour of a monster is usually 15. [The favour of an NPC determines when it turns unfriendly.]
 A monster has a number called latest-appearance. [The last time the NPC saw the player, what did they look like? We only update this when the player looked worse than before, or the NPC gets bored then rediscovers the player. So flashing an NPC 5 times in quick succession is not any worse than flashing them once.]
 A monster has a number called latest-cringe. [The last time the NPC saw the player, how childish did they look?]
 
@@ -12,7 +12,7 @@ To FavourReset (M - a monster):
 	now the favour of M is the default favour of M.
 
 To decide which number is the default favour of (M - a monster):
-	decide on 13.
+	decide on 15.
 
 Chapter 1 - Check Perception
 
@@ -37,8 +37,8 @@ To check perception of (M - a monster):
 			if M is the father:
 				calm M;
 				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
-			otherwise if the scared of M > 0:
-				say "[if the class of the player is cheerleader][BigNameDesc of M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness][BigNameDesc of M] scoffs and starts to move in the other direction.[otherwise][BigNameDesc of M] notices you immediately and starts to run away![end if]";
+			otherwise if the scared of M > 0 and M is scarable:
+				compute scared perception of M;
 			otherwise if (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
 				say PerceptionFail of M;
 				if the blind-status of M > 0, decrease the blind-status of M by 1;
@@ -118,11 +118,15 @@ To resolve sudden appearance change of (M - a monster):
 		now the previous-objectification of M is 1.
 
 To compute curtsey reaction of (M - a monster):
-	if vagina is exposed or penis is exposed or asshole is exposed or (diaper quest is 1 and there is a worn currently visible diaper):
+	if diaper quest is 1 and there is a worn currently visible diaper:
 		if diaper quest is 1, now the babification of M is 1;
 		otherwise now the objectification of M is 1;
+	otherwise:
+		FavourDown M by 2;
 	if M is uniquely unfriendly and M is normally annoyed:
 		resolve sudden appearance change of M;
+	otherwise if M is friendly and M is groping:
+		compute grope of M;
 	otherwise:
 		say CurtseyReactionFlav of M;
 		if M is unfriendly, say BecomesAggressive of M;
@@ -134,13 +138,15 @@ To say CurtseyReactionFlav of (M - a monster):
 	otherwise:
 		say "[BigNameDesc of M] seems completely unaffected[one of] by your sudden display of submissive humility[or][or][cycling].".
 
+To compute scared perception of (M - a monster):
+	say "[if the class of the player is cheerleader][BigNameDesc of M] notices you and awkwardly starts to move in the other direction.[otherwise if the blue-balls of M > 0 and M is demoness][BigNameDesc of M] scoffs and starts to move in the other direction.[otherwise][BigNameDesc of M] notices you immediately and starts to run away![end if]".
+
 Chapter 2 - Aggro Framework
 
 Definition: a monster (called M) is aware: [Can it notice the player on its own?]
 	if M is asleep or the boredom of M > 0, decide no;
 	if the player is too high to see, decide no;
 	if M is in the location of the player, decide yes;
-	if M is nearby and magnetism-elixir-timer > 0, decide yes;
 	decide no.
 
 Definition: a person is reactive if it is in the location of the player. [Can it react to things it sees the player do?]
@@ -152,15 +158,15 @@ To decide which number is the aggro limit of (M - a monster): [The number at whi
 
 To DifficultyUp (M - a monster) by (X - a number):
 	while X > 0:
-		increase the difficulty of M by 1;
+		increase the raw difficulty of M by 1;
 		decrease X by 1.
-	[if debugmode > 0, say "Now the difficulty of [M] is [the difficulty of M]".]
+	[if debugmode > 0, say "now the raw difficulty of [M] is [the difficulty of M]".]
 
 [This is coded as a loop, MG explained, in case something happens when a monster passes a certain threshold of difficulty(and only when passing that threshold of difficulty)]
 [Aika: That's not true, currently this loop is pointless. There's no way the code can detect when a threshold is reached. It does however mean that it follows the same structure as other similar functions and could be quickly modified in the future to allow for such triggers.]
 To DifficultyDown (M - a monster) by (X - a number):
 	while X > 0:
-		decrease the difficulty of M by 1;
+		decrease the raw difficulty of M by 1;
 		decrease X by 1.
 
 [
@@ -214,11 +220,27 @@ Definition: a monster (called M) is objectifying the player:
 		decide yes;
 	decide no.
 
-To decide which number is the bimbo tolerance of (M - a monster): [What number of outrage they become immediately unfriendly.]
-	if M is wenchy and there is a worn demon codpiece, decide on 1;
-	decide on 16.
+[!<DecideWhichNumberIsTheBimboToleranceOfMonster>+
 
-To decide which number is the outrage tolerance of (M - a monster): [What number of outrage they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+Determines the number of outrage at which a monster will immediately become unfriendly. Sluttiness focused
+
+@param <Monster>:<M> The monster noticing the player
+@return <Integer> integer indicating the appearance level the monster is willing to tolerate
+
++!]
+To decide which number is the bimbo tolerance of (M - a monster):
+	if M is wenchy and M is female and there is a worn demon codpiece, decide on 1;
+	decide on 18.
+
+[!<DecideWhichNumberIsTheOutrageToleranceOfMonster>+
+
+Determines the number of outrage at which a monster will be unimpressed and start to lose favour. Set to 20 by default so that it isn't used. Sluttiness focused.
+
+@param <Monster>:<M> The monster noticing the player
+@return <Integer> integer indicating the appearance level when the monster will start to become unfriendly
+
++!]
+To decide which number is the outrage tolerance of (M - a monster):
 	decide on 20.
 
 To compute sudden babification of (M - a monster):
@@ -238,15 +260,39 @@ Definition: a monster (called M) is babifying the player:
 		decide yes;
 	decide no.
 
-To decide which number is the bab tolerance of (M - a monster): [What number of cringe they become immediately unfriendly.]
+[!<DecideWhichNumberIsTheBimboToleranceOfMonster>+
+
+Determines the number of cringe at which a monster will immediately become unfriendly. Diaper Quest only
+
+@param <Monster>:<M> The monster noticing the player
+@return <Integer> integer indicating the appearance level the monster is willing to tolerate
+
++!]
+To decide which number is the bab tolerance of (M - a monster):
 	decide on 16.
 
-To decide which number is the cringe tolerance of (M - a monster): [What number of cringe they are unimpressed and lose favour. Set to 20 by default so that it isn't used.]
+[!<DecideWhichNumberIsTheCringeToleranceOfMonster>+
+
+Determines the number of cringe at which a monster will be unimpressed and start to lose favour. Set to 20 by default so that it isn't used. Diaper Quest only.
+
+@param <Monster>:<M> The monster noticing the player
+@return <Integer> integer indicating the appearance level when the monster will start to become unfriendly
+
++!]
+To decide which number is the cringe tolerance of (M - a monster):
 	decide on 20.
 
 To say BecomesAggressive of (M - a monster):
 	say "[big he of M] takes an offensive stance![if M is intelligent][line break][speech style of M]'[one of]There's only one thing for it.'[or]There's only one thing to do, then...'[or]Okay then, let's do this.'[or]You do realise what I'm going to do now, right?'[in random order][roman type][line break][end if]".
 
+[!<MonsterIsOutrageDisapproving>+
+
+Determines whether a monster currently disapproves of the player's appearance. Sluttiness focused.
+
+@param <Monster>:<M> The monster noticing the player
+@return <Boolean> True if the monster disapproves
+
++!]
 Definition: a monster (called M) is outrage disapproving:
 	if the outrage tolerance of M < 20: [for efficiency we'll make this check first]
 		let A be the appearance of the player;
@@ -257,6 +303,14 @@ Definition: a monster (called M) is outrage disapproving:
 			decide yes;
 	decide no.
 
+[!<MonsterIsCringeDisapproving>+
+
+Determines whether a monster currently disapproves of the player's appearance. Diaper Quest only.
+
+@param <Monster>:<M> The monster noticing the player
+@return <Boolean> True if the monster disapproves
+
++!]
 Definition: a monster (called M) is cringe disapproving:
 	if diaper quest is 1 and the cringe tolerance of M < 20:
 		let C be the cringe appearance of the player;
@@ -267,6 +321,13 @@ Definition: a monster (called M) is cringe disapproving:
 			decide yes;
 	decide no.
 
+[!<CheckDisapprovalOfMonster>+
+
+Checks to see if a monster is currently disapproving of the player's appearance.
+
+@param <Monster>:<M> The monster noticing the player
+
++!]
 To check disapproval of (M - a monster):
 	if the last-interaction of M is 0:
 		if M is interested:
@@ -275,24 +336,52 @@ To check disapproval of (M - a monster):
 			otherwise if M is outrage disapproving:
 				compute disapproval of M;
 		otherwise:
-			check perception of M. [The monster is given an extra chance to assess the player's appearance.]
+			check perception of M.[The monster is given an extra chance to assess the player's appearance.]
 
+[!<ComputeDisapprovalOfMonster>+
+
+Handles a monster's reaction when they are disapproving of the player's appearance. Mainly for sluttiness.
+
+@param <Monster>:<M> The monster noticing the player
+
++!]
 To compute disapproval of (M - a monster):
 	say DisapprovalFlav of M;
 	FavourDown M;
 	if M is unfriendly and M is interested:
 		say BecomesAggressive of M.
 
+[!<ComputeCringeDisapprovalOfMonster>+
+
+Handles a monster's reaction when they are disapproving of the player's appearance. Diaper Quest only.
+
+@param <Monster>:<M> The monster noticing the player
+
++!]
 To compute cringe disapproval of (M - a monster):
 	say CringeDisapprovalFlav of M;
 	FavourDown M;
 	if M is unfriendly and M is interested:
 		say BecomesAggressive of M.
 
+[!<SayDisapprovalFlavOfMonster>+
+
+Outputs some flavour describing a monster reacting negatively to the player's appearance. Mainly for sluttiness
+
+@param <Monster>:<M> The monster noticing the player
+
++!]
 To say DisapprovalFlav of (M - a monster):
 	if M is intelligent, say "[BigNameDesc of M] [one of]narrows [his of M] eyes[or]widens [his of M] eyes[or]purses [his of M] lips[or]tuts[in random order].[line break][speech style of M]'[one of]I see, that's how it is.'[or]Wow.'[or]You really are something else...'[or]You're really begging for it, aren't you?'[or]I can't believe what I'm seeing!'[or]Gosh!'[in random order][roman type][line break]";
 	otherwise say "[BigNameDesc of M] seems to react badly to your new appearance! ".
 
+[!<SayCringeDisapprovalFlavOfMonster>+
+
+Outputs some flavour describing a monster reacting negatively to the player's appearance. Diaper Quest only.
+
+@param <Monster>:<M> The monster noticing the player
+
++!]
 To say CringeDisapprovalFlav of (M - a monster):
 	if M is intelligent, say "[BigNameDesc of M] [one of]coughs[or]purses [his of M] lips[or]tuts[or]smirks[or]smiles[in random order].[line break][speech style of M]'[one of]Do you realise how childish you look right now?'[or]You're looking more and more like a baby, you know.'[or]An adult wouldn't let me catch [him of the player] looking like that...'[or]You're really begging to be treated like a child, aren't you?'[or]I can't believe how immature you look right now!'[or]You aren't exactly a beacon of [maturity] right now, you know.'[or]That is NOT how you go about getting me to respect your [maturity].'[or]You're discarding all semblance of [maturity] then, are you?'[in random order][roman type][line break]";
 	otherwise say "[BigNameDesc of M] seems to react badly to your new appearance! ".
@@ -377,12 +466,13 @@ To FavourUp (M - a monster) by (N - a number):
 	if N > 0, increase the favour of M by N.
 
 To FavourDown (M - a monster) by (N - a number) with consequences:
-	let P be 0;
-	if M is unfriendly, now P is 1;
-	decrease the favour of M by N;
-	if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
-		now M is interested;
-		say BecomesAggressive of M.
+	if M is alive:
+		let P be 0;
+		if M is unfriendly, now P is 1;
+		decrease the favour of M by N;
+		if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
+			now M is interested;
+			say BecomesAggressive of M.
 
 To FavourDown (M - a monster) by (N - a number):
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
@@ -451,7 +541,7 @@ Definition: a person is sluttily dressed:
 		if calculated-appearance-outrage-level - 4 is too humiliating:
 			say "[one of][mortifiedOutfit][or] and [if appearance-outrage-target is asshole]catches a glimpse of[otherwise if appearance-outrage-target is body part]can see[otherwise]can easily see[end if] your [MediumDesc of appearance-outrage-target], making you [blush 10 * calculated-appearance-outrage-level][purely at random]";
 		otherwise:
-			say ", which [one of]makes you feel a little uneasy in your [MediumDesc of appearance-outrage-target][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if appearance-outrage-target is headgear]think about the impression your [ShortDesc of appearance-outrage-target] must be giving[otherwise]look down towards your [ShortDesc of appearance-outrage-target] bashfully[end if][in random order]";
+			say ", which [one of]makes you feel a little uneasy [if appearance-outrage-target is worn clothing and appearance-outrage-target is not equippable]in[otherwise]with[end if] your [MediumDesc of appearance-outrage-target][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if appearance-outrage-target is headgear]think about the impression your [ShortDesc of appearance-outrage-target] must be giving[otherwise]look down towards your [ShortDesc of appearance-outrage-target] bashfully[end if][in random order]";
 			humiliate 10 * calculated-appearance-outrage-level;
 		decide yes;
 	decrease shocked-monsters by 1; [if we're deciding no, then we remove the shocked monster count]
@@ -461,7 +551,7 @@ Definition: a person is sluttily dressed:
 		arouse 100;
 		decide yes;
 	otherwise if the player is nearly outraged: [The player no longer feels embarrassed about clothing, only aroused at being seen! But if their clothing is too boring, they won't even be aroused.]
-		say ", and you find yourself feeling [one of]thrillingly nervous[or]getting a little [if the player is a bit horny]more [end if]turned on[or]blushing with shyness and pride[or]shivering with nervous excitement[at random] because [he of current-monster] can see your [if the number of worn rings > 1 and outrage-target is ring][number of worn rings] rings[otherwise][MediumDesc of appearance-outrage-target][end if]";
+		say ", and you find yourself feeling [one of]thrillingly nervous[or]getting a little [if the player is a bit horny]more [end if]turned on[or]blushing with shyness and pride[or]shivering with nervous excitement[at random] because [he of current-monster] can see your [if the number of worn rings > 1 and appearance-outrage-target is ring][number of worn rings] rings[otherwise][MediumDesc of appearance-outrage-target][end if]";
 		arouse 25 * calculated-appearance-outrage-level;
 		decide yes;
 	decrease aroused-monsters by 1;

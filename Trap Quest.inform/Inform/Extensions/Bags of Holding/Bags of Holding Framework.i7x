@@ -19,10 +19,11 @@ Definition: a potion is never-in-bag: decide yes.
 Definition: an elixir is never-in-bag: decide yes.
 Definition: a tincture is never-in-bag: decide yes.
 Definition: water-bomb is never-in-bag: decide yes.
+Definition: a trophy is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried.
-Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet.
-Definition: a knickers is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and it is not messed.
+Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and the used condoms of it is 0.
+Definition: a knickers is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and it is not messed and the used condoms of it is 0.
 Definition: a thing is currently-in-bag if it is in-bag and there is a worn bag of holding.
 Definition: a thing is currently-not-in-bag if it is carried and it is not currently-in-bag.
 
@@ -138,6 +139,8 @@ To compute periodic effect of (C - a bag of holding):
 			force clothing-focus redraw; [This forces the clothing window to redraw]
 			now the alert of the player is 1;
 			say "[bold type]Your [ShortDesc of C] growls hungrily. [roman type]You should feed it with an item of clothing soon or it might choose one on its own!".
+To compute school periodic effect of (C - a bag of holding):
+	compute periodic effect of C.
 
 To compute (C - a bag of holding) unique inheriting from (D - a bag of holding):
 	now the hunger of C is the hunger of D;
@@ -187,7 +190,7 @@ To execute (E - bag-feeding-condoms) on (C - a thing):
 			let S be nothing;
 			if P is nothing:
 				now S is string-belt;
-				summon S cursed;
+				summon S cursed with silent quest;
 				now P is S;
 			let UC be the used condoms of C;
 			let EC be the empty condoms of C;

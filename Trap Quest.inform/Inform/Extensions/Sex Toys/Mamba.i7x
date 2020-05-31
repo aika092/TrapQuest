@@ -27,4 +27,7 @@ To decide which number is the raw-masturbation-bonus of (C - a mamba):
 	if interracial fetish is 1, decide on 3;
 	decide on 1.
 
+To decide which number is the initial outrage of (S - a mamba):
+	decide on 16.
+
 Mamba ends here.

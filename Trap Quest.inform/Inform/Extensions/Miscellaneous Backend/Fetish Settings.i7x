@@ -5,13 +5,7 @@ Fetish Settings by Miscellaneous Backend begins here.
 Some things are only 'fetish appropriate' (and therefore allowed in the game) when certain fetishes are enabled.
 
 +!]
-Definition: a thing (called C) is fetish appropriate:
-	if C is product:
-		let R be the recipe of the alchemy key of C;
-		if R is recipe:
-			if R is appropriate, decide yes;
-		decide no;
-	decide yes.
+Definition: a thing is fetish appropriate: decide yes.
 
 [!<fileOfPlayerOptions:File>*
 
@@ -91,7 +85,7 @@ choice
 0 [starting body shape]
 0 [bonus liquid]
 0 [bondage protection]
-0 [christmas content]
+1 [christmas content]
 0 [easter content] [currently does nothing]
 0 [april fools content]
 1 [futanari fetish]
@@ -106,7 +100,8 @@ choice
 1 [supportersEnabled]
 0 [strongCurses]
 0 [transGender]
-1 [halloween content]
+0 [halloween content]
+0 [realisticHands]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -375,14 +370,16 @@ To decide which number is christmas content:
 	decide on the choice in row 65 of the Table of Player Options.
 
 To decide which number is easter content:
-	if the player is not a top donator, decide on 0;
+	if the player is not a top donator or diaper quest is 0, decide on 0;
 	decide on the choice in row 66 of the Table of Player Options.
 
 To decide which number is april fools content:
 	if the player is not a top donator, decide on 0;
-	decide on the choice in row 67 of the Table of Player Options.
+	if choice in row 67 of the Table of Player Options > 0, decide on 1;
+	decide on 0.
 
 To decide which number is halloween content:
+	if the player is not a top donator, decide on 0;
 	decide on the choice in row 80 of the Table of Player Options.
 
 To decide which number is futanari fetish:

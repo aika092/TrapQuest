@@ -2,6 +2,7 @@ Panties by Knickers begins here.
 
 A panties is a kind of undies. Understand "pair", "pair of", "panties" as panties. The text-shortcut of panties is "pan".
 
+Definition: a panties is rippable: decide yes.
 To decide which number is the penis-capacity of (K - a panties):
 	decide on 6.
 

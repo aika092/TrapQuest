@@ -26,7 +26,7 @@ To decide which number is the damage improvement of (W - royal scepter):
 	decide on X.
 
 To compute attack of (W - royal scepter) at (M - a monster):
-	say "You blast [NameDesc of M] with a[if the charge of W is 3] pulsing[end if] wave of magic.".
+	say "You blast [NameDesc of M] with a[if the charge of W > 3] pulsing[end if] wave of magic.".
 
 Definition: royal scepter is unlimited horniness: decide yes.
 Definition: royal scepter is royalty themed: decide yes.
@@ -56,7 +56,7 @@ To decide which number is the raw-masturbation-bonus of (E - royal scepter):
 
 princess-consort is a thing that varies. princess-consort is the throne.
 
-This is the betrothal rule:[This only triggers when the player is fucked by a monster, for now.]
+To compute betrothal of (M - a monster):[This only triggers when the player is fucked by a monster, for now.]
 	if debugmode > 0, say "princess-consort is [princess-consort][line break]";
 	if royal scepter is worn:
 		let F be 0;
@@ -80,12 +80,12 @@ This is the betrothal rule:[This only triggers when the player is fucked by a mo
 					punish infidelity;
 		if F is 2:
 			say "Your [royal scepter] pulses, and a pleasant feeling wells up inside of you.";
-			dignify the charge of royal scepter * 7;
+			dignify the charge of royal scepter * 5;
 			if princess-consort is mating:
 				FatigueDown the charge of royal scepter * 5;
-				if the charge of royal scepter < 6, increase the charge of royal scepter by 2;
+				if the charge of royal scepter < 25, increase the charge of royal scepter by 10;
 			otherwise:
-				if the charge of royal scepter < 3, increase the charge of royal scepter by 1;
+				if the charge of royal scepter < 25, increase the charge of royal scepter by 5;
 				unless princess-consort is father material, FavourUp princess-consort;
 			progress quest of betrothal-quest;
 	otherwise if the times-submitted of current-monster > 1 or current-monster is friendly:
@@ -94,7 +94,6 @@ This is the betrothal rule:[This only triggers when the player is fucked by a mo
 			now royal scepter is worn by the player;
 			say "You look up at [NameDesc of current-monster] and your eyes meet. A [printed name of royal scepter] appears in your hand, as if to symbolise your lasting connection.";
 		progress quest of betrothal-quest.
-[The betrothal rule is part of the end of sex rules]
 
 To punish infidelity:
 	humiliate the charge of royal scepter * 40;

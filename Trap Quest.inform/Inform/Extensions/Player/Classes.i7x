@@ -41,14 +41,18 @@ REQUIRES COMMENTING
 +!]
 This is the princess class rule:
 	if there is a worn royalty themed wearthing:
-		if the training-progress of senior robobellboy is -1:
+		if the training-progress of senior robobellboy is -1 and there is a worn tiara:
 			now player-class is "trained fuck princess";
 			rule succeeds;
 		otherwise if there is a worn tiara:
 			now player-class is "princess";
 			rule succeeds.
 The princess class rule is listed in the player class rules.
-princess is a text that varies. princess is "princess".
+[princess is a text that varies. princess is "princess".]
+
+Definition: a text (called T) is princess:
+	if T is "princess" or T is "trained fuck princess", decide yes;
+	decide no.
 
 [!<TheMaidClassRule>+
 
@@ -69,7 +73,7 @@ Thanks to the magical maid multi-class, we have multiple different texts that ne
 
 +!]
 Definition: a text (called T) is maid:
-	if T is "maid" or T is "fully trained maid" or T is "magical maid", decide yes;
+	if T is "maid" or T is "fully trained maid" or T is "magical maid" or T is "cafe maid", decide yes;
 	decide no.
 
 [!<TheCowgirlClassRule>+
@@ -78,7 +82,10 @@ REQUIRES COMMENTING
 
 +!]
 This is the cowgirl class rule:
-	if cow-ears is worn and the number of worn cow themed wearthings > 1:
+	if cow-horns is worn:
+		now player-class is "breeding cow";
+		rule succeeds;
+	otherwise if cow-ears is worn and the number of worn cow themed wearthings > 1:
 		now player-class is "cowgirl";
 		rule succeeds.
 The cowgirl class rule is listed in the player class rules.
@@ -89,7 +96,7 @@ Thanks to the cow slave multi-class, we have multiple different texts that need 
 
 +!]
 Definition: a text (called T) is cowgirl:
-	if T is "cowgirl" or T is "cow slave", decide yes;
+	if T is "cowgirl" or T is "cow slave" or T is "breeding cow", decide yes;
 	decide no.
 
 [!<TheCowSlutRule>+
@@ -107,14 +114,19 @@ REQUIRES COMMENTING
 
 +!]
 This is the priestess class rule:
-	if runic headband is worn and there is a worn priestess outfit:
-		now player-class is "priestess";
-		if abyssal tattoo is worn, now player-class is "dark priestess";
-		rule succeeds.
+	if runic headband is worn:
+		if the total condoms of runic headband > 0:
+			now player-class is "cumdumpster priestess";
+			rule succeeds;
+		if there is a worn priestess outfit:
+			now player-class is "priestess";
+			if abyssal tattoo is worn, now player-class is "dark priestess";
+			if runic headband is not purity, now player-class is "sinful priestess";
+			rule succeeds.
 The priestess class rule is listed in the player class rules.
 
 Definition: a text (called T) is priestess:
-	if T is "priestess" or T is "dark priestess" or T is "virgin warrior priestess", decide yes;
+	if T matches the text "priestess", decide yes;
 	decide no.
 
 [!<TheVirginWarriorClassRule>+
@@ -138,17 +150,10 @@ REQUIRES COMMENTING
 +!]
 This is the schoolgirl class rule:
 	if there is a worn scrunchie:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "schoolgirl";
 			if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "schoolgirl";
-				if there is a worn pigtail-scrunchie, now player-class is "fraternity's bicycle";
-				rule succeeds.
+			rule succeeds.
 The schoolgirl class rule is listed in the player class rules.
 [!<TextIsSchoolgirl>+
 
@@ -190,11 +195,11 @@ The fertility goddess class rule is listed in the player class rules.
 
 [!<TextIsFertilityGoddess>+
 
-Thanks to the fertile bunny multi-class, we have multiple different texts that need to be able to return true for the class of the player being fertility goddess.
+There are multiple different texts that need to be able to return true for the class of the player being fertility goddess.
 
 +!]
 Definition: a text (called T) is fertility goddess:
-	if T is "fertility goddess" or T is "fertile bunny" or T is "fairy godmother", decide yes;
+	if T is "fertility goddess" or T is "fertile bunny" or T is "fairy godmother" or T is "breeding cow", decide yes;
 	decide no.
 
 [!<TheFertilityGoddessPussySlutRule>+
@@ -342,12 +347,14 @@ REQUIRES COMMENTING
 +!]
 This is the santa class rule:
 	if there is a worn christmas headgear and christmas content is 1:
-		if there is a worn christmas dress, now player-class is "christmas tree";
+		if there is a worn christmas dress and naughty-or-nice outfit is not worn, now player-class is "christmas tree";
 		otherwise now player-class is "santa's little helper";
+		if present outfit is worn or christmas strap monokini is worn, now player-class is "christmas present";
+		if candy cane outfit is worn, now player-class is "candy cane";
 		rule succeeds.
 The santa class rule is listed in the player class rules.
 Definition: a text (called T) is santa's little helper:
-	if T is "santa's little helper" or T is "christmas tree", decide yes;
+	if T is "santa's little helper" or T is "candy cane" or T matches the text "christmas", decide yes;
 	decide no.
 
 [!<TheWenchedClassRule>+
@@ -572,7 +579,7 @@ A time based rule (this is the compute whispers rule):
 				now whisper-semen-tracker is 0;
 				now whisper-tracking is 0;
 		if whispered < 0 and whisper-type is not 0 and whisper-tracking is 0:
-			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can[']t quite place it.";
+			say "You hear a strange voice echoing through you! [line break][first custom style]'YOU HAVE FAILED US'[roman type][line break]You feel an ominous sensation, but you can't quite place it.";
 			SexAddictUp 2;
 			SemenAddictUp 2;
 			now whisper-type is 0;
@@ -611,7 +618,7 @@ This is the faerie class rule:
 		if the virgin of the player is 1:
 			now the player-class is "fairy godmother";
 			rule succeeds;
-		otherwise if there is a worn butterfly wings:
+		otherwise if butterfly wings is worn:
 			now the player-class is "faerie";
 			rule succeeds.
 The faerie class rule is listed in the player class rules.
@@ -638,7 +645,7 @@ Definition: a text (called T) is bunny:
 	decide no.
 
 bunny-reminder is a number that varies.
-A time based rule (this is the bunny reminder rule):
+An all time based rule (this is the bunny reminder rule):
 	if the class of the player is bunny:
 		if bunny-reminder is 0 and playerRegion is Woods:
 			say "[bold type]You feel your bunny reflexes improve while you are in the woods![roman type][line break]";
@@ -648,40 +655,6 @@ A time based rule (this is the bunny reminder rule):
 			now bunny-reminder is 0;
 	otherwise:
 		now bunny-reminder is 0.
-
-[!<TheHookerInTrainingClassRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the hooker in training class rule:
-	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs:
-		now the player-class is "hooker in training";
-		rule succeeds.
-The hooker in training class rule is listed in the player class rules.
-
-Definition: a text (called T) is hooker in training:[catch-all]
-	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
-
-This is the trained hooker class rule:
-	if the training-progress of senior robobellboy is -1:
-		if there is a worn royalty themed wearthing:
-			now the player-class is "trained fuck princess";
-		otherwise if there is a worn maid headdress:
-			now the player-class is "fully trained maid";
-		otherwise if the latex-transformation of the player is 8:
-			now the player-class is "rentable doll";
-		otherwise:
-			now the player-class is "trained hooker".
-The trained hooker class rule is listed in the player class rules.
-
-Definition: a text (called T) is hotel employment:
-	if T is hooker in training, decide yes;
-	if T is trained hooker, decide yes;
-	decide no.
-
-Definition: a text (called T) is trained hooker:
-	if the training-progress of senior robobellboy is -1, decide yes.
 
 [!<TheCumdumpsterClassRule>+
 
@@ -700,7 +673,7 @@ Thanks to the walking condom multi-class, we have multiple different texts that 
 
 +!]
 Definition: a text (called T) is cumdumpster:
-	if T is "cumdumpster" or T is "walking condom" or T is "locker room fucktoy" or T is "football team's plastic cumdump" or T is "fraternity's bicycle", decide yes;
+	if T matches the text "cumdumpster" or T is "walking condom" or T is "locker room fucktoy" or T is "football team's plastic cumdump" or T is "fraternity's bicycle", decide yes;
 	decide no.
 
 [!<TheMagicalGirlClassRule>+
@@ -731,7 +704,7 @@ The latex clown class requires the clown mask.
 This is the latex clown class rule:
 	if clown mask is worn:
 		now the player-class is "clown";
-		if adult-baby-class is 1, now the player-class is "baby clown";
+		if the player is actually an adult baby, now the player-class is "baby clown";
 		rule succeeds.
 The latex clown class rule is listed in the player class rules.
 
@@ -823,7 +796,7 @@ The virgin warrior priestess class rule is listed first in the player class rule
 
 [!<TheMagicalMaidClassRule>+
 
-The magical maid is a combination class of the maid and magical girl. It needs the maid headdress and magical maid outfit.
+The magical maid is a combination class of the maid and magical girl. It needs a maid headdress and magical maid outfit.
 
 +!]
 This is the magical maid class rule:
@@ -832,6 +805,20 @@ This is the magical maid class rule:
 		rule succeeds.
 The magical maid class rule is listed first in the player class rules.
 
+[!<TheCafeMaidClassRule>+
+
+The cafe maid is a combination class of the maid and waitress bunny. It needs a maid headdress and cafe maid outfit.
+
++!]
+This is the cafe maid class rule:
+	if there is a worn maid headdress and there is a worn cafe maid outfit:
+		now the player-class is "cafe maid";
+		rule succeeds.
+The cafe maid class rule is listed first in the player class rules.
+
+Check dropping waitress vessel:
+	if the class of the player is "cafe maid", say "[BigNameDesc of a random worn maid headdress] won't allow you to drop [NameDesc of the noun]!" instead.
+
 [!<TheMagicalSchoolgirlClassRule>+
 
 The magical schoolgirl is a combination class of the schoolgirl and magical girl. It needs the heart hairpin and any school outfit, or vice versa.
@@ -839,15 +826,9 @@ The magical schoolgirl is a combination class of the schoolgirl and magical girl
 +!]
 This is the magical schoolgirl class rule:
 	if heart hairpin is worn:
-		if there is a worn schoolgirl-enabling wearthing:
+		if there is a worn schoolgirl-enabling wearthing or there is a worn tartan themed skirted clothing or (there is a worn tartan themed dress and there is a worn necktie):
 			now player-class is "magical schoolgirl";
 			rule succeeds;
-		let O be a random worn overdress;
-		if O is tartan tube top:
-			let S be a random worn skirt;
-			if S is tartan miniskirt or S is tartan microskirt or there is a worn necktie:
-				now player-class is "magical schoolgirl";
-				rule succeeds;
 	if there is a worn scrunchie and there is a worn magical dress:
 		now the player-class is "magical schoolgirl";
 		rule succeeds.
@@ -893,7 +874,8 @@ REQUIRES COMMENTING
 +!]
 This is the living sex doll class rule:
 	if the latex-transformation of the player is 8:
-		now player-class is "living sex doll";
+		if the player is a trained hooker, now player-class is "rentable doll";
+		otherwise now player-class is "living sex doll";
 		rule succeeds.
 The living sex doll class rule is listed first in the player class rules. [Overrides all other rules]
 living sex doll is a text that varies. living sex doll is "living sex doll".
@@ -904,8 +886,41 @@ Goes last because it is purely cosmetic and doesn't necessarily use headgear so 
 
 +!]
 This is the adult baby class rule:
-	if adult-baby-class is 1, now the player-class is "adult baby".
+	if the player is actually an adult baby, now the player-class is "adult baby".
 The adult baby class rule is listed first in the player class rules.
+
+[!<TheHookerInTrainingClassRule>+
+
+Hooker in training is not a class, so if another title is suitable, it will be overriden
+
++!]
+This is the hooker in training class rule:
+	if the player is a hooker in training:
+		if the player is a trained hooker, now the player-class is "professional prostitute";
+		otherwise now the player-class is "prostitute in training".
+The hooker in training class rule is listed first in the player class rules.
+
+Definition: yourself is a hooker in training:
+	if trainee hood is worn or there is a worn trainee bra or there is a worn trainee thigh highs, decide yes.
+
+[!<TheTrainedHookerClassRule>+
+
+Trained hooker is not a class, so if another title is suitable, it will be overridden
+
++!]
+This is the trained hooker class rule:
+	if the player is a trained hooker, now player-class is "prostitute".
+The trained hooker class rule is listed first in the player class rules.
+
+Definition: yourself is a trained hooker:
+	if the training-progress of senior robobellboy is -1, decide yes.
+
+Definition: yourself is hotel employed:
+	if the player is a hooker in training, decide yes;
+	if the player is a trained hooker, decide yes;
+	if the class of the player is succubus, decide yes;
+	if the class of the player is maid, decide yes;
+	decide no.
 
 [!<TheAdventurerClassRule>+
 

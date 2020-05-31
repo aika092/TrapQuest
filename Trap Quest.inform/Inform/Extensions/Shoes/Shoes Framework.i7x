@@ -2,10 +2,9 @@ Shoes Framework by Shoes begins here.
 
 shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
 
-Definition: a shoes (called C) is hindrance-enabling: [Is it more likely to fall over when wearing these shoes compared to barefoot?]
-	decide no.
+Definition: a shoes is hindrance-enabling: decide no. [Is it more likely to fall over when wearing these shoes compared to barefoot?]
+
 Definition: a heels is hindrance-enabling: decide yes.
-Definition: a rollerskates is hindrance-enabling: decide yes.
 
 To say ShoeType of (S - a shoes):
 	say "shoes".
@@ -81,7 +80,7 @@ This is the trousers stuck shoes clash rule:
 The trousers stuck shoes clash rule is listed in the trousers wearability rules.
 
 Report wearing shoes:
-	if the noun is unsure and the noun is cursed, say "You finish slipping your [printed name of the noun] onto your [if there are worn stockings]stockings clad [end if]feet . As you take your first step you feel a pulse of warmth that runs from your toe tips to the back of your [feet]! The material of the [feet] shrinks to fit your feet [if the bimbo of the player < 6]firmly[otherwise if the bimbo of the player < 10]tightly[otherwise if the bimbo of the player < 15]deliciously[otherwise]enticingly[end if]. Lifting your foot tentatively, you can feel the sole of your [ShoeType of the noun] clinging to the bottom of your feet. These [ShoeType of the noun] are cursed!"; [Crowdsourced from Anya Snowdrifter]
+	if the noun is unsure and the noun is cursed, say "You finish slipping your [printed name of the noun] onto your [if there are worn stockings]stockings clad [end if]feet. As you take your first step you feel a pulse of warmth that runs from your toe tips to the back of your [feet]! The material of the [feet] shrinks to fit your feet [if the bimbo of the player < 6]firmly[otherwise if the bimbo of the player < 10]tightly[otherwise if the bimbo of the player < 15]deliciously[otherwise]enticingly[end if]. Lifting your foot tentatively, you can feel the sole of your [ShoeType of the noun] clinging to the bottom of your feet. These [ShoeType of the noun] are cursed!"; [Crowdsourced from Anya Snowdrifter]
 	otherwise say "[if the bimbo of the player > 12 and a random number between 1 and 2 is 1][line break][second custom style]These make my ass look great![roman type][line break][end if]";
 	if the noun is queen of hearts heels:
 		if the strutskill of the player is 0 and the player is not wobbling, say "These heels are so [if the bimbo of the player < 5]beautiful[otherwise][line break][second custom style]sexy[roman type][line break][end if], you feel like [bold type]strut[roman type]ting around in them!".

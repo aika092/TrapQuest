@@ -1,6 +1,6 @@
 T-Shirts by Dresses begins here.
 
-A T-shirt is a kind of overdress. A T-shirt is usually unskirted. A T-shirt is usually fully covering. A T-shirt is usually manly. A T-shirt is usually not-top-displacable. A T-shirt is usually sheer-when-wet.
+A T-shirt is a kind of overdress. A T-shirt is usually unskirted. A T-shirt is usually fully covering. A T-shirt is usually manly. A T-shirt is usually not-top-displacable. A T-shirt is usually sheer-when-wet. A T-shirt is usually erect-nipple-exposing.
 
 Understand "shirt", "T" as T-shirt.
 

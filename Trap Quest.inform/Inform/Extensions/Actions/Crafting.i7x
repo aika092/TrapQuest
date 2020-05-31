@@ -53,14 +53,19 @@ Carry out crafting:
 				say "In a puff of smoke, the [noun] turns into a [T]! Magic! ";
 				destroy the noun;
 			say "You pick it up.";
-			if the recipe of current-alchemy-key is memorised and Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
-				say "Hmm. Since you have memorised the correct recipe for crafting a [ShortDesc of T] you are confident that [bold type]the one you have just crafted is cursed.[line break][variable custom style]I probably shouldn't use this.[roman type][line break]";
+			if the recipe of current-alchemy-key is memorised:
+				if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0, say "Hmm. Since you have memorised the correct recipe for crafting a [ShortDesc of T] you are confident that [bold type]the one you have just crafted is cursed.[line break][variable custom style]I probably shouldn't use this.[roman type][line break]";
 				if T is clothing or T is alchemy product, now T is sure;
+			otherwise if (T is clothing or T is alchemy product) and T is blessed:
+				say "[BigNameDesc of T] glitters with divine blue energy! It seems that thanks to your genius crafting, you've managed to create a [bold type]blessed[roman type] version!";
+				now T is sure;
 			increase times-crafted by 1;
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;
-			if H is clothing, compute class outfit of H;
-			if H is clothing, MagicPowerUp 1;
+			if H is clothing:
+				compute class outfit of H;
+				say "Magic surges from [NameDesc of H] to the rest of your body!";
+				MagicPowerUp 1;
 		otherwise:
 			if there is a product-highlighted thing:
 				say "Nothing happens.";
@@ -73,12 +78,17 @@ Carry out crafting:
 To compute recipe specific cursing of (T - a thing):
 	let K be the alchemy key of T;
 	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
-		if a random number between 2 and 16 <= the number of worn blue scrunchies and the class of the player is schoolgirl:
+		if the class of the player is schoolgirl and the player is getting lucky:
 			now T is bland;[Schoolgirls can get very lucky and complete a potion recipe with the wrong ingredients.]
+			say GotLuckyFlav;
 		otherwise:
 			now T is cursed;
 	otherwise:
-		if (a random number between 2 and 5 <= the number of worn blue scrunchies and the class of the player is schoolgirl) or (a random number between 1 and 30 < saved-flat-intelligence and the recipe of K is memorised):
+		let I be the intelligence of the player;
+		increase I by (the number of worn blue scrunchies + alchemyskill of the player) * 8;
+		if the recipe of K is memorised, increase I by 5;
+		let R be a random number between 1 and I;
+		if R > 15:
 			now T is blessed;
 		otherwise:
 			now T is bland.

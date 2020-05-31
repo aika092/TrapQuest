@@ -30,16 +30,16 @@ A glulx hyperlink rule (this is the default inline hyperlink handling rule):
 		request glulx hyperlink event in main window.
 
 To request glulx hyperlink event in the/-- main window:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_request_hyperlink_event(gg_mainwin); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_request_hyperlink_event(gg_mainwin); -)
 
 To cancel glulx hyperlink request in the/-- main window:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_cancel_hyperlink_event(gg_mainwin); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_cancel_hyperlink_event(gg_mainwin); -)
 
 To request glulx hyperlink event in the/-- status window:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)  && gg_statuswin) glk_request_hyperlink_event(gg_statuswin); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0) && gg_statuswin) glk_request_hyperlink_event(gg_statuswin); -)
 
 To cancel glulx hyperlink request in the/-- status window:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0) && gg_statuswin) glk_cancel_hyperlink_event(gg_statuswin); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0) && gg_statuswin) glk_cancel_hyperlink_event(gg_statuswin); -)
 
 To decide whether the status window is the hyperlink source:
 	(- (gg_event-->1==gg_statuswin) -)
@@ -80,10 +80,10 @@ To say end link:
 	say "[set link (hyperlink index)][hyperlinked text][terminate link]";
 
 To say set link (N - a number):
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink({N}); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink({N}); -)
 
 To say terminate link:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink(0); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink(0); -)
 
 Section - Processing hyperlinks
 
@@ -132,10 +132,10 @@ To say end link:
 	say "[set link (hyperlink index)][hyperlinked text][terminate link]";
 
 To say set link (N - a number):
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink({N}); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink({N}); -)
 
 To say terminate link:
-	(-  if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink(0); -)
+	(- if (glk_gestalt(gestalt_Hyperlinks, 0)) glk_set_hyperlink(0); -)
 
 Chapter 3 - Replace Hyperlinks handling if necessary (for use with Hyperlinks by Dannii Willis)
 

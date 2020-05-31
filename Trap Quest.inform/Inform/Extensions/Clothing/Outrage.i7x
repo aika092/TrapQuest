@@ -11,27 +11,27 @@ To decide which number is the outrage of (C - a wearthing):
 			if C is crotch-displaced and C is skirted and the player is upright and the number of lewdly exposed fuckholes is 0, increase O by 1; [A little less outrageous than below because there are a few reasons you might pull up a skirt, e.g. combat]
 			otherwise increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
 			decide on O;
-	decide on the unworn outrage of C.
+	let O be the unworn outrage of C;
+	if C is worn and C is not currently visible, now O is (O * 7) / 10; [this means it is partially visible]
+	decide on O.
 
 To decide which number is the notManlyFactor of (C - a clothing):
 	if the player is presenting as male and C is not manly, decide on 1;
 	decide on 0.
 
 To decide which number is the unworn outrage of (C - a clothing):
-	if C is messed knickers and diaper quest is 0 and C is currently visible, decide on 20;
+	if C is messed knickers and diaper quest is 0 and C is currently at least partially visible, decide on 20;
 	let O be the initial outrage of C;
 	increase O by the notManlyFactor of C;
-	if C is sheer-when-wet and C is actually sheer, increase O by 2; [Wet T-shirt contest is not really a dignified look]
-	if O < 11 and C is drinkable condom pinned, now O is 11; [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
-	if diaper quest is 0 and O < 9 and the semen-soak of C > 0, now O is 9; [can't have cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
-	increase O by the fluid outrage of C;
-	increase O by the condom outrage of C;
-	[if C is breast covering and C is actually sheer and O < the at least partially lewdly exposed outrage of breasts and breasts is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of breasts;
-	if C is breast covering and (C is nipple exposing or C is see-through) and O < the lewdly exposed outrage of breasts and breasts is lewdly exposed, now O is the lewdly exposed outrage of breasts;
-	if C is crotch covering and C is actually sheer and O < the at least partially lewdly exposed outrage of asshole and asshole is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of asshole;
-	if C is skirted and C is actually sheer and O < the at least partially lewdly exposed outrage of asshole and asshole is at least partially lewdly exposed, now O is the at least partially lewdly exposed outrage of asshole;
-	if C is crotch covering and (C is not total protection or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole;
-	if C is skirted and (C is super-short or C is see-through) and O < the lewdly exposed outrage of asshole and asshole is lewdly exposed, now O is the lewdly exposed outrage of asshole;] [EXPERIMENTAL: Items can't be less humiliating than what they expose.]
+	[if O < 11 and C is drinkable condom pinned, now O is 11;] [can't have condoms pinned to your clothing for less than 11 outrage (also each condom including the first adds +1)]
+	if diaper quest is 0 and O < 6 + the semen-soak of C and the semen-soak of C > 2, now O is 9; [can't have significant amounts of cum on your clothing for less than 9 outrage (also we will apply fluid outrage as normal on top of this 9)]
+	if C is not worn or C is currently at least partially visible:
+		increase O by the fluid outrage of C;
+		if the used condoms of C > 1 and O < 12:
+			now O is 12;
+		otherwise if the used condoms of C is 1 and O < 7:
+			now O is 7;
+		increase O by the condom outrage of C;
 	if O > 20, now O is 20;
 	decide on O.
 
@@ -40,6 +40,8 @@ To decide which number is the outrage of (C - a vessel):
 		decide on 11;
 	otherwise if C is baby's bottle:
 		decide on 8;
+	otherwise if C is novelty mug:
+		decide on 6;
 	otherwise if C is cocktail-glass:
 		decide on 3;
 	otherwise:
@@ -59,7 +61,10 @@ To decide which number is the fluid outrage of (C - a knickers):
 	decide on 0.
 
 To decide which number is the fluid cringe of (C - a clothing):
-	if diaper quest is 0:
+	if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
+	if C is swimming themed and the urine-soak of C < the soak-limit of C: [Unless it's literally drenched in piss, we only care about semen soak for swimwear]
+		decide on (1 + the semen-soak of C) / 2;
+	otherwise if diaper quest is 0:
 		decide on (1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2;
 	otherwise:
 		if C is crotch covering and C is wet, decide on 5;

@@ -1,13 +1,13 @@
 Rubber Dress by Dresses begins here.
 
-A rubber dress is a kind of overdress. A rubber dress is usually latex. [Latex dresses that aren't otherwise particularly special]
+A rubber dress is a kind of overdress. A rubber dress is usually latex. A rubber dress is usually erect-nipple-exposing. [Latex dresses that aren't otherwise particularly special]
 
 To set up influence of (C - a rubber dress):
 	set up random-based influence of C.
 
 This is the remove inappropriate rubber dresses rule:
-	repeat with B running through superheroine fetish dresses:
-		now B is in Holding Pen.
+	repeat with B running through rubber dress:
+		unless B is white rubber giant bow dress, now B is in Holding Pen.
 The remove inappropriate rubber dresses rule is listed in the diaper quest fix rules.
 
 Part 1 - White Rubber Giant Bow Dress

@@ -47,6 +47,7 @@ This is the remove inappropriate skirts rule:
 		now B is in Holding Pen;
 	repeat with B running through chainmail skirts:
 		now B is in Holding Pen;
+	now black-rubber-hobble-skirt is in Holding Pen;
 	repeat with B running through rubber-skirts:
 		now B is in Holding Pen.
 The remove inappropriate skirts rule is listed in the diaper quest fix rules.
@@ -77,9 +78,9 @@ To decide which number is the crafting key of (C - a skirt):
 
 [This is supposed to line up with DQBulk]
 To decide which number is the skirtLength of (C - a clothing):
-	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on 0;
+	if C is super-short or C is unskirted or C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped, decide on -1;
 	if C is short, decide on 1;
-	if C is knee-length, decide on 7;
+	[if C is knee-length, decide on 7;]
 	decide on 8.
 
 Chapter - Wearability
@@ -165,7 +166,7 @@ To say ShortDesc of (Y - chequered skirt):
 	say "chequered skirt".
 
 To decide which number is the initial outrage of (C - chequered skirt):
-	decide on 2.
+	decide on 1.
 
 To set up influence of (C - chequered skirt):
 	set up random-based influence of C.
@@ -191,7 +192,7 @@ To say ShortDesc of (Y - flowing skirt):
 	say "flowing white skirt".
 
 To decide which number is the initial outrage of (C - flowing skirt):
-	decide on 3.
+	decide on 2.
 
 To set up influence of (C - flowing skirt):
 	set up random-based influence of C.
@@ -329,7 +330,7 @@ To say ClothingDesc of (C - a longer rubber skirt):
 	say "This tight knee length black skirt is made entirely of latex, which makes it cling even tighter to your body.".
 
 To decide which number is the initial outrage of (C - a longer rubber skirt):
-	decide on 4.
+	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - a longer rubber skirt):
 	decide on a random off-stage shorter-rubber-skirt.
@@ -339,7 +340,7 @@ Part 2 - Shorter Rubber Skirt
 A shorter-rubber-skirt is a kind of rubber-skirt. A shorter-rubber-skirt is usually short. A shorter-rubber-skirt is usually transformation-rare. Understand "short" as shorter-rubber-skirt.
 
 To decide which number is the initial outrage of (C - a shorter-rubber-skirt):
-	decide on 6.
+	decide on 4.
 
 A black rubber skirt is a kind of shorter-rubber-skirt. There is 1 black rubber skirt. Figure of black rubber skirt is the file "Items/Clothes/Lower/Skirts/Latex/latexskirt2.png". Printed name of black rubber skirt is "[clothing-title-before]short black latex skirt[clothing-title-after]". The text-shortcut of black rubber skirt is "sbs".
 
@@ -430,8 +431,8 @@ To say ShortDesc of (Y - a black sporty microskirt):
 	say "tiny black lycra microskirt".
 
 To decide which number is the initial outrage of (C - a microskirt):
-	if C is latex, decide on 7;
-	decide on 5.
+	if C is latex, decide on 5;
+	decide on 3. [It's not really the skirt that's outrageous, it's more what it's failing to conceal]
 
 Definition: a microskirt is end of transformation chain: decide yes.
 
@@ -457,7 +458,7 @@ To say ClothingDesc of (C - a tartan miniskirt):
 	say "This tiny apricot skirt is has a tartan pattern, you could imagine a skirt four times the length being part of a school uniform but this version is clearly never acceptable attire. It barely covers your crotch, and even bending over slightly would reveal everything to anyone behind you.".
 
 To decide which number is the initial outrage of (C - a miniskirt):
-	decide on 3.
+	decide on 2.
 
 Definition: a tartan miniskirt is class-transformation-protected if the class of the player is schoolgirl.
 
@@ -507,7 +508,7 @@ To say ShortDesc of (C - office skirt):
 Definition: office skirt is black themed: decide yes.
 
 To decide which number is the initial outrage of (C - office skirt):
-	decide on 2.
+	decide on 1.
 
 To decide which number is the adult-influence of (C - office skirt):
 	decide on 2.
@@ -565,7 +566,7 @@ To say ShortDesc of (Y - a sequins belt):
 	say "sequins belt".
 
 To decide which number is the initial outrage of (C - a sequins belt):
-	decide on 6.
+	decide on 4.
 
 To decide which number is the bartering value of (T - a sequins belt) for (M - a gladiator):
 	decide on 2.
@@ -606,6 +607,9 @@ To say MediumDesc of (C - skirt-tray-vibrator):
 To decide which number is the max-cakes of (C - skirt-tray-vibrator):
 	decide on 11.
 
+To decide which number is the wornArmsRequired of (C - skirt-tray-vibrator):
+	decide on 2.
+
 To say skirtTrayVibratorPower:
 	let N be the cakes-taken of skirt-tray-vibrator;
 	say "[if N > 10] obscenely powerfully[otherwise if N > 8] extremely powerfully[otherwise if N > 6] very strongly[otherwise if N > 4] strongly[otherwise if N <= 2] weakly[end if]".
@@ -620,13 +624,7 @@ To decide which number is the stimulation of (D - skirt-tray-vibrator) on (B - a
 	decide on the cakes-taken of skirt-tray-vibrator.
 
 Report wearing skirt-tray-vibrator:
-	if diaper quest is 1:
-		now plain-largish-diaper is worn by the player;
-		now plain-largish-diaper is bland;
-		now plain-largish-diaper is blandness;
-		now the raw-magic-modifier of plain-largish-diaper is 0;
-		now plain-largish-diaper is sure;
-		now plain-largish-diaper is identified;
+	if diaper quest is 1, summon plain-largish-diaper uncursed;
 	say "You [if diaper quest is 1]wear the diaper and [end if]push the vibrator [if the player is female]into your [vagina][otherwise]up against your [ShortDesc of penis][end if] and hold the tray with your hands either side.".
 
 Report taking off skirt-tray-vibrator when diaper quest is 1:
@@ -635,7 +633,7 @@ Report taking off skirt-tray-vibrator when diaper quest is 1:
 Check taking off plain-largish-diaper when skirt-tray-vibrator is worn:
 	try taking off skirt-tray-vibrator instead.
 
-A time based rule (this is the skirt tray vibrator rule):
+An all time based rule (this is the skirt tray vibrator rule):
 	if the player is in a predicament room:
 		if the player is in Predicament20:
 			if skirt-tray-vibrator is held or skirt-tray-vibrator is in the location of the player, say "Now that you are safely inside, [NameDesc of skirt-tray-vibrator] fizzles from existence.";
@@ -655,12 +653,15 @@ This is the skirt tray prevents hand use rule:
 The skirt tray prevents hand use rule is listed in the hands restriction rules.
 
 To compute cupcake perception of (M - a bystander):
-	say "[BigNameDesc of M] walks up to you and takes a cupcake. [DQCupcakeExplanation of M][skirtTrayBuzzFlav]";
+	say "[BigNameDesc of M] walks up to you and takes a cupcake. [CupcakeExplanation of M][skirtTrayBuzzFlav]";
 	now the charge of skirt-tray-vibrator is 3;
 	increase the cakes-taken of skirt-tray-vibrator by 1.
 
-To say DQCupcakeExplanation of (M - a bystander):
-	say "[if diaper quest is 1][one of][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping][end if]".
+To say CupcakeExplanation of (M - a bystander):
+	if diaper quest is 1:
+		say "[one of][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
+	otherwise if the appearance of the player > the outrage tolerance of M:
+		say "[one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
 
 To say skirtTrayBuzzFlav:
 	say "The vibrator [if the player is female]in your [vagina] and pushed against your clit[otherwise]pushed against your [ShortDesc of penis][end if] [if the charge of skirt-tray-vibrator <= 0]kicks into action, [otherwise]becomes even [end if]stronger than before! It buzzes away[skirtTrayVibratorPower].".
@@ -676,5 +677,20 @@ This is the orgasm drops cupcakes rule:
 			say "[bold type]Your whole body shakes, and you can't help but make the tray shake too![roman type] [if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
 			now the charge of skirt-tray-vibrator is 3.
 The orgasm drops cupcakes rule is listed last in the orgasm fatigue effects rules.
+
+To decide which object is the concealer of (C - skirt-tray-vibrator): decide on nothing.
+To decide which object is the at least partial concealer of (C - skirt-tray-vibrator): decide on nothing.
+
+grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. The printed name of grope-me-skirt is "[clothing-title-before]'PLEASE GROPE MY TITS' skirt[clothing-title-after]". The text-shortcut of grope-me-skirt is "gms". Figure of grope-me-skirt is the file "Items/Clothes/Lower/Skirts/gropemeskirt1.jpg". Understand "please", "grope", "my tits", "skirt" as grope-me-skirt.
+To decide which figure-name is clothing-image of (H - grope-me-skirt):
+	decide on figure of grope-me-skirt.
+
+To say ShortDesc of (C - grope-me-skirt):
+	say "skirt".
+To say ClothingDesc of (C - grope-me-skirt):
+	say "This short purple tartan skirt has a sign pinned to the front that reads 'Please Grope My Tits'...".
+
+To decide which number is the initial outrage of (C - grope-me-skirt):
+	decide on 6.
 
 All Skirts ends here.

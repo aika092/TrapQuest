@@ -2,7 +2,7 @@ Immobility by Player begins here.
 
 The immobility rules is a rulebook.
 
-player-immobile is a number that varies.
+player-immobile is initially false.
 
 [!<ToCheckImmobility>+
 
@@ -11,25 +11,31 @@ We don't want to check this all the time.
 +!]
 To check immobility:
 	follow the immobility rules;
-	if the rule failed, now player-immobile is 1;
-	otherwise now player-immobile is 0.
+	if the rule failed, now player-immobile is true;
+	otherwise now player-immobile is false.
 
 [!<YourselfIsImmobile>+
 
 Is the player unable to move?
 
 +!]
-Definition: yourself is immobile:
-	if player-immobile is 1, decide yes;
-	decide no.
+Definition: yourself is immobile if player-immobile is true.
 
 This is the trap stuck immobility rule:
 	if the player is trap stuck, rule fails.
 The trap stuck immobility rule is listed in the immobility rules.
 
+This is the body stuck immobility rule:
+	if the player is body stuck, rule fails.
+The body stuck immobility rule is listed in the immobility rules.
+
 This is the blindfolded immobility rule:
 	if the player is in a blindroom, rule fails.
 The blindfolded immobility rule is listed in the immobility rules.
+
+[This is the seduction minigame immobility rule:
+	if there is a seduced reactive monster, rule fails.
+The seduction minigame immobility rule is listed in the immobility rules.]
 
 [!<YourselfIsTrapStuck>+
 

@@ -1,6 +1,6 @@
 Bat Corset by Corsets begins here.
 
-A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is rare. A bat corset is usually normally-nipple-covering. There is 1 bat corset. A bat corset is usually low cut.
+A bat corset is a kind of corset. A bat corset is usually leather. A bat corset is rare. A bat corset is usually normally-nipple-covering. There is 1 bat corset. A bat corset is usually very low cut.
 
 Definition: a bat corset is fluid immune: decide yes.
 Definition: a bat corset is black themed: decide yes.

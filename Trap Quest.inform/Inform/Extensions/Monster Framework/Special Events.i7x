@@ -1,6 +1,6 @@
 Special Events by Monster Framework begins here.
 
-[!<SayGangAnnounce>+
+[!<FacePiss>+
 
 Handles the player being pissed on by an unknown entity. The flavour is kept neutral so it shouldn't matter.
 
@@ -11,8 +11,13 @@ To FacePiss from (M - an object):
 	if the player is not forced to drink urine and the player is not gagged:
 		say PissDrinkThreat of M;
 		say "Do you drink the [urine]? ";
+	let vm be a random video-monitor in the location of the player;
 	if the player is gagged:
 		compute urine hitting face;
+		if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+			now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+			let T be the substituted form of "getting showered in [urine].";
+			now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	otherwise if there is a worn ringagged clothing:
 		say "Your ring gag means that the [urine] flows straight into your mouth, forcing you to swallow it.";
 		DrinkPiss from M;
@@ -41,6 +46,14 @@ To FacePiss from (M - an object):
 				PainUp 1;
 			otherwise if M is intelligent monster:
 				compute angry punishment of M;
+			if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+				now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+				let T be the substituted form of "getting showered in [urine].";
+				now the video-event of vm is T;[note that the video-event always needs to be a present participle]
+	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
+		now vm is recording-disgrace;[since sex is probably over by now, we need to set up the recorded event right away.]
+		let T be the substituted form of "drinking [urine].";
+		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	SportsCount;
 	if the urine taste addiction of the player > 14:
 		say "The experience [one of]of being used as a toilet now [or][stopping][if the player is a bit horny]arouses you further[otherwise]turns you on[end if].";
@@ -375,7 +388,7 @@ To compute deepthroat creampie of (M - a monster):
 	get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	[PukeUp;]
 	compute happy reward of M.
 
@@ -445,7 +458,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute auto swallow of (M - a monster):
 	say AutomaticSwallow of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	humiliate 100;
 	compute happy reward of M.
 
@@ -459,7 +472,7 @@ This function is called whenever a monster ejaculates in the player's mouth and 
 To compute voluntary swallow of (M - a monster):
 	say VoluntarySwallow of M;
 	StomachSemenUp the semen load of M;
-	progress quest of cum-swallowing-quest;
+	[progress quest of cum-swallowing-quest;]
 	humiliate 200;
 	compute happy reward of M.
 
@@ -652,7 +665,7 @@ Displays some text describing the player deepthroating a monster as they ejacula
 
 +!]
 To say DefaultDeepthroatCreampie of (M - a monster):
-	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat. [or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as [his of M] load rushes down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] pinging into the back of your throat.[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as [he of M] fills your belly with a decent load.[or][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] pumps [his of M] load directly into your belly.[or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. There's nothing you can do but swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You obediently swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You happily swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[end if][or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen in horror as they empty themselves straight down your throat.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen as they empty themselves straight down your throat.[otherwise][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. You emit a muffled moan as they empty themselves straight down your throat.[end if][in random order]".
+	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as [his of M] load rushes down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] pinging into the back of your throat.[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as [he of M] fills your belly with a decent load.[or][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] pumps [his of M] load directly into your belly.[or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. There's nothing you can do but swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You obediently swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[otherwise][BigFuckerDesc of M] forces you all the way down as [he of M] begins to ejaculate. You happily swallow as [his of M] [DickDesc of M] pumps [semen] directly into your mouth.[end if][or][if the semen taste addiction of the player < 7][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen in horror as they empty themselves straight down your throat.[otherwise if the semen taste addiction of the player < 12][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. Your eyes widen as they empty themselves straight down your throat.[otherwise][BigFuckerDesc of M] forces [his of M] [DickDesc of M] deeper and deeper into your mouth, grunting as your lips hit [his of M] balls. You emit a muffled moan as they empty themselves straight down your throat.[end if][in random order]".
 
 [!<SayOralResistingOfMonster>+
 
@@ -695,7 +708,7 @@ Displays some text describing the player giving a blowjob to a friendly monster
 
 +!]
 To say FriendlySubOralResponse of (M - a monster):
-	say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the player is feeling dominant]avoiding eye contact[otherwise]looking up at [FuckerDesc of M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M]'s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible.[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] cock, [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or][BigFuckerDesc of M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or][BigFuckerDesc of M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]".
+	say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the player is feeling dominant]avoiding eye contact[otherwise]looking up at [FuckerDesc of M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if].[or][BigFuckerDesc of M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] cock, [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or][BigFuckerDesc of M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or][BigFuckerDesc of M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]".
 
 [!<SayNormalSubOralResponseOfMonster>+
 
@@ -763,36 +776,37 @@ This function is called when the player makes a monster angry in some way, like 
 +!]
 To compute angry punishment of (M - a monster):
 	say angry punishment insult of M;
-	if there is worn tearable clothing and M is not friendly-fucking:
-		let C be a random worn tearable clothing; [This is done in reverse priority order.]
-		if there is a worn top level ass protection tearable clothing:
-			now C is a random worn top level ass protection tearable clothing;
-		if there is a worn nipple covering tearable bra and the largeness of breasts > 3:
-			now C is a random worn nipple covering tearable bra;
-		if there is a worn nipple covering tearable overdress and the largeness of breasts > 3:
-			now C is a random worn nipple covering tearable overdress;
+	if M is not friendly-fucking and (M is not seduced or M is unfriendly):
+		compute default angry punishment of M.
+
+To compute default angry punishment of (M - a monster):
+	let C be a random worn nudism-disabling currently at least partially visible stealable clothing; [ideally it wants to confiscate not destroy]
+	let stealableFound be 1;
+	if C is nothing:
+		now stealableFound is 0;
+		now C is a random worn nudism-disabling currently at least partially visible tearable clothing;
+	if C is not clothing, rule fails;
+	let D be a random top level protection nudism-disabling currently at least partially visible tearable clothing;
+	if stealableFound is 1:
+		let D be a random top level protection nudism-disabling currently at least partially visible stealable clothing;
+		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible stealable clothing;
+	otherwise:
+		if D is nothing and the largeness of breasts > 3, now D is a random top level breasts protection nudism-disabling currently at least partially visible tearable clothing;
+	if D is clothing, now C is D;
+	if stealableFound is 1:
+		compute M confiscating C;
 		if C is accessory and C is plentiful:
-			say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
 			say angry punishment accessory confiscation of M;
 		otherwise:
-			say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
-			say angry punishment clothing destruction of M on C;
+			say angry punishment clothing confiscation of M on C;
+	otherwise:
+		say "[BigNameDesc of M] brutally rips your [C] from your [body area of C]. It is completely destroyed!";
+		say angry punishment clothing destruction of M on C;
 		destroy C.
 
 To compute sissy punishment of (M - a monster):
-	say angry punishment insult of M;
-	let C be the throne;
-	repeat with H running through worn tearable clothing:[only check for worn and tearable once]
-		if H is not sissifying or the player is female:
-			if C is not clothing or a random number between 1 and 2 is 1, now C is H;
-	if C is accessory and C is plentiful:
-		say "[BigNameDesc of M] rips your [C] from your [if C is necklace]neck[otherwise if C is bracelet]wrist[otherwise if C is ring]finger[otherwise]body[end if]. ";
-		say angry punishment accessory confiscation of M;
-	otherwise if C is clothing:
-		say "[BigNameDesc of M] brutally rips your [C] from your [if C is heels]feet[otherwise if C is headgear]head[otherwise]body[end if]. It is completely destroyed! ";
-		say angry punishment clothing destruction of M on C;
-	if C is clothing, destroy C;
-	otherwise compute sissification.
+	compute default angry punishment of M;
+	if the rule failed, compute sissification.
 
 [!<SayAngryFizzleOfMonster>+
 
@@ -851,8 +865,18 @@ This should display some text when a monster punishes the player by ripping off 
 
 +!]
 To say angry punishment clothing destruction of (M - a monster) on (C - a clothing):
-	if M is intelligent, say "[first custom style]'[if C is nipple covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn clothing > 1]Sluts don't deserve clothes! There, now you are one step closer to being buck naked.'[otherwise]Sluts don't deserve clothes!'[end if][roman type][line break]";
-	otherwise say "it looks like [he of M] is satisfied with leaving it at that.".
+	if M is intelligent, say "[first custom style]'[if C is actually breast covering and the largeness of breasts > 3]You don't deserve to have your slutty tits covered by this.'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise if the number of worn clothing > 1]Sluts don't deserve clothes! There, now you are one step closer to being buck naked.'[otherwise]Sluts don't deserve clothes!'[end if][roman type][line break]";
+	otherwise say "It looks like [he of M] is satisfied with leaving it at that.".
+
+[!<SayAngryPunishmentClothingConfiscationOfMonster>+
+
+This should display some text when a monster punishes the player by confiscating some clothing
+
+@param <Monster>:<M> A monster the player pissed off
+
++!]
+To say angry punishment clothing confiscation of (M - a monster) on (C - a clothing):
+	say angry punishment clothing destruction of M on C.
 
 [!<SayMouthPenetrationFlavOfMonster>+
 
@@ -927,7 +951,7 @@ Displays some text describing the player resisting during a titfuck
 @param <Monster>:<M> The monster fucking the player's breasts
 +!]
 To say TitfuckResistFlav of (M - a monster):
-	let C be a random worn top level covering nipple covering clothing;
+	let C be a random worn top level covering clothing;
 	say "[one of]You try and pry [his of M] hands off, but [he of M]'s too strong![or]You do everything you can to push [him of M] away, but [if C is clothing]your [ShortDesc of C] keeps [him of M] firmly sandwiched between your breasts![otherwise]you simply don't have the leverage from your position on your knees![end if][or]You struggle but you can't get away![or]You resist, but you simply can't get away![or]You try to push [him of M] away, but [he of M] stays right on top of you.[in random order]".
 
 [!<SayTitfuckForceFlavOfMonster>+
@@ -937,7 +961,7 @@ Displays some text describing a monster using the player's breasts for a titfuck
 @param <Monster>:<M> The monster fucking the player's breasts
 +!]
 To say TitfuckForceFlav of (M - a monster):
-	let C be a random worn top level covering nipple covering clothing;
+	let C be a random worn top level covering clothing;
 	say "[one of][if C is clothing]The [ShortDesc of C][otherwise][BigFuckerDesc of M][end if] keeps your [ShortDesc of breasts] pushed together around [FuckerDesc of M][']s [DickDesc of M] as [he of M] thrusts between them.[or][BigFuckerDesc of M] continues to powerfully thrust between your [ShortDesc of breasts]![or]Your [ShortDesc of breasts] jiggle[if the largeness of breasts > 10] obscenely[end if] as [FuckerDesc of M] continues thrusting between them![or][BigFuckerDesc of M] forces you to hold your [ShortDesc of breasts] together as [he of M] roughly thrusts between them.[or][BigFuckerDesc of M] holds you by the wrists, keeping your [ShortDesc of breasts] wrapped around [his of M] [DickDesc of M] as [he of M] thrusts between them.[in random order]".
 
 [!<SayTitfuckReceiveFlavOfMonster>+
@@ -947,13 +971,122 @@ Displays some text describing the player giving a monster a titfuck
 @param <Monster>:<M> The monster fucking the player's breasts
 +!]
 To say TitfuckReceiveFlav of (M - a monster):
-	say "[one of][BigFuckerDesc of M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You continue to massage [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You [if the player is in a blindroom]stare[otherwise]sniff[end if] at [his of M] [DickDesc of M] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or][BigFuckerDesc of M]'s [DickDesc of M] gently bumps your chin as [he of M] enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7]gross[otherwise]firm, hard[end if] [DickDesc of M] between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
+	say "[one of][BigFuckerDesc of M] continues to enthusiastically thrust in between your [ShortDesc of breasts]![or]You [if the relevant sex addiction of M < 8]hesitantly[otherwise]eagerly[end if] continue pumping [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You continue to massage [his of M] [DickDesc of M] with your [ShortDesc of breasts].[or]You [if the player is in a blindroom]sniff[otherwise]stare[end if] at [his of M] [DickDesc of M] [if the relevant sex addiction of M < 5]with undisguised disgust[otherwise if the relevant sex addiction of M < 10]with what you decide is curiosity[otherwise]with barely contained hunger[end if] as it thrusts between your [ShortDesc of breasts].[or][BigFuckerDesc of M]'s [DickDesc of M] gently bumps your chin as [he of M] enthusiastically thrusts it between your [ShortDesc of breasts].[or]You [if the relevant sex addiction of M < 5]dejectedly[otherwise]happily[end if] massage the [if the bimbo of the player < 7]gross[otherwise]firm, hard[end if] [DickDesc of M] between your [if the largeness of breasts > 10]wobbling[otherwise]jiggling[end if] breasts.[in random order]".
 
+[!<SayTitfuckNearingClimaxFlavOfMonster>+
+
+Displays some text describing a monster getting close to climax whilst using the player's breasts
+
+@param <Monster>:<M> The monster fucking the player's breasts
++!]
 To say TitfuckNearingClimaxFlav of (M - a monster):
 	say "[one of][BigFuckerDesc of M] fucks your [BreastDesc] with greater and greater enthusiasm[or]You can feel [FuckerDesc of M]'s [DickDesc of M] begin to twitch as [he of M] uses your [BreastDesc][or][BigFuckerDesc of M] thrust between your [BreastDesc] with more and more urgency[at random]. [big he of M] must be ready to cum!";
 
+[!<SayCleavageClimaxFlavOfMonster>+
+
+Displays some text describing a monster ejaculating whilst using the player's breasts
+
+@param <Monster>:<M> The monster fucking the player's breasts
++!]
 To say CleavageClimaxFlav of (M - a monster):
 	say "[BigFuckerDesc of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
+
+[!<SayErectionDemandOfMonster>+
+
+Displays some text describing a monster instructing the player to get an erection. Can be speech, gestures or whatever, but it should be clear that the monster is expecting an erection from the player.
+
+@param <Monster>:<M> The monster intending to use the player's penis
++!]
+To say ErectionDemand of (M - a monster):
+	say "[line break][speech style of M]'Alright, slut. Get nice and hard for me.'[roman type][line break]".
+
+[!<SayFriendlyErectionPenetrationFlavOfMonster>+
+
+Displays some text describing a monster mounting the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say FriendlyErectionPenetrationFlav of (M - a monster):
+	say ErectionPenetrationFlav of M.
+
+[!<SayErectionPenetrationFlavOfMonster>+
+
+Displays some text describing the player allowing a monster to mount their penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionPenetrationFlav of (M - a monster):
+	say "[BigNameDesc of M] mounts your [ShortDesc of penis].".
+
+[!<ComputeUnerectTauntingOfMonster>+
+
+Handles anything that needs to happen when a monster tells the player to get an erection, and the player can't
+
+@param <Monster>:<M> The monster that told the player to get an erection
++!]
+To compute unerect taunting of (M - a monster):
+	say "[BigNameDesc of M] glances down at your [ShortDesc of penis] expectantly. Your cheeks burn with shame as it remains completely soft. [BigNameDesc of M] rolls [his of M] eyes and loses interest.";
+	strongHumiliate;
+	Bore M.
+
+[!<SayErectionForceFlavOfMonster>+
+
+Displays some text describing a monster using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionForceFlav of (M - a monster):
+	say "[BigNameDesc of M] holds you down as [he of M] aggressively uses your [ShortDesc of penis].".
+
+[!<SayErectionUseFlavOfMonster>+
+
+Displays some text describing the player allowing a monster to use their penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionUseFlav of (M - a monster):
+	say "[BigNameDesc of M] moans happily as [he of M] uses your [ShortDesc of penis].".
+
+[!<SayErectionLostFlavOfMonster>+
+
+Displays some text describing a monster reacting when the player loses their erection during sex.
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionLostFlav of (M - a monster):
+	say "[BigNameDesc of M] gives you a nonplussed look as your [ShortDesc of penis] goes soft.";
+	FavourDown M by 1;
+	Bore M;
+	now the sex-length of M is 1.[so it can be reduced by 1]
+
+[!<SayErectionNearingClimaxFlavOfMonster>+
+
+Displays some text describing a monster getting close to climax whilst using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionNearingClimaxFlav of (M - a monster):
+	say "[BigNameDesc of M] moves faster and faster. [big he of M] must be close!".
+
+[!<ComputeErectionOrgasmOfMonster>+
+
+Displays some text describing the player ejaculating whilst penetrating a monster.
+
+@param <Monster>:<M> The monster occupying the player's penis
++!]
+To compute erection orgasm of (M - a monster):
+	follow the default ejaculation rule;
+	now penis is not penis-erect.[Although the above line is a default, and should be changed, this line should almost always be included, since automatic erection loss skipped if anything is penetrating penis]
+
+[!<SayErectionClimaxFlavOfMonster>+
+
+Displays some text describing a monster finishing up using the player's penis
+
+@param <Monster>:<M> The monster using the player's penis
++!]
+To say ErectionClimaxFlav of (M - a monster):
+	say "[BigNameDesc of M] screams out in satisfaction as [he of M] climaxes.";
+	orgasm M.
 
 To say (M - a monster) sex reaction:
 	say "".
@@ -993,6 +1126,44 @@ To compute racial submission to (M - a monster):
 			compute silent surrender to M;
 			if the player is prone, try direct-presenting B to M.
 
+phero-horny-charge is a number that varies.
+
+A time based rule (this is the musk horniness rule):
+	if mythical creature fetish is 0:
+		do nothing;
+	otherwise if minotaur is in the location of the player and the class of the player is cowgirl and the player is not horny and the player is able to get horny:
+		say "All it takes is one whiff of [NameDesc of minotaur]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
+		now the arousal of the player is 3500;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
+		now phero-horny-charge is 0;
+	otherwise if the player is pheromonal and there is a musky monster in the location of the player:
+		let M be a random musky monster in the location of the player;
+		say "Spending time close to [NameDesc of M] causes your body to react to [his of M] [if pregnancy fetish is 1]virile[otherwise]potent[end if] hormones.";
+		increase phero-horny-charge by 2;
+		if phero-horny-charge > 30:
+			compute phero submission to M;
+		otherwise:
+			say "You get even more aroused!";
+			arouse 300;
+	otherwise if playerRegion is dungeon and minotaur is alive and the player is pheromonal:
+		increase phero-horny-charge by 1;
+		if phero-horny-charge > 20:
+			now phero-horny-charge is 0;
+			say "[bold type][one of]You catch a whiff of a heavy, masculine scent and start to feel a little more turned on[or]The same masculine scent tickles your nose, and you feel yourself getting more turned on[or]Another whiff of masculine musk temporarily arrests your senses, and you get a little more turned on[stopping].[roman type]";
+			arouse 150.
+
+To compute phero submission to (M - a monster):
+	if M is musky and mythical creature fetish is 1 and a random number between 3 and 7 > the intelligence of the player:
+		now auto is 1;
+		let B be a random actually presentable body part;
+		if B is not vagina and vagina is actually presentable and M is male and M is willing to do vaginal, now B is vagina;
+		if B is not asshole and asshole is actually presentable and M is male and M is willing to do anal, now B is asshole;
+		if B is not breasts and the class of the player is cowgirl and M is male and M is willing to do titfucks, now B is breasts;
+		now auto is 0;
+		if B is body part:
+			say "You can't take it anymore! You immediately [if the player is upright]drop to your knees[otherwise]crawl over[end if] and present yourself for [if pregnancy fetish is 1 and B is vagina]breeding[otherwise]the use of this virile stud[end if].";
+			compute silent surrender to M;
+			if the player is prone, try direct-presenting B to M.
+
 To compute (M - a monster) buttplugging with (P - a sex toy):
 	say ButtplugFlav of M with P;
 	now P is worn by the player;
@@ -1026,8 +1197,10 @@ To say GangAnnounce:
 	let O be a random live thing penetrating face;
 	let A be a random live thing penetrating asshole;
 	if V is live thing and A is live thing:
+		if debugmode > 0, say "((Fucked by [V][if O is a live thing], [O][end if] and [A]))";
 		say "[line break][bold type]You're being [if O is live thing]triple[otherwise]double[end if] penetrated![roman type][line break]";
 	otherwise if O is monster and (A is live thing or V is live thing):
+		if debugmode > 0, say "((Fucked by [O] and [if A is live thing][A][otherwise][V][end if]))";
 		say "[line break][bold type]You're being spit roasted![roman type][line break]".
 
 Special Events ends here.

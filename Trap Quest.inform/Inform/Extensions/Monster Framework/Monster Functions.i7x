@@ -36,15 +36,18 @@ To bore (M - a monster) for (N - a number) seconds:
 	now the boredom of M is N.
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
+	now M is unseduced;
 	now the objectification of M is 0;
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;
+	if debugmode > 1, say "Deinteresting [ShortDesc of M]. Latest appearance seen is [latest-appearance of M]. Refreshing...";
 	now the latest-appearance of M is the appearance of the player;
+	if debugmode > 1, say "Latest appearance seen is now [latest-appearance of M].";
 	if diaper quest is 1, now the latest-cringe of M is the cringe appearance of the player;
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
 	now the dismissRefused of M is 0;
-	if N >= 50 and the player is not in Dungeon12, decrease the charge of the dungeon altar by a random number between 1 and 50.
+	if N >= 50 and the player is not in Dungeon12 and playerRegion is not School, decrease the charge of the dungeon altar by a random number between 1 and 50.
 
 [!<SatisfyMonster>+
 
@@ -63,7 +66,9 @@ To satisfy (M - a monster) for (N - a number) seconds:
 	if M is interested:
 		bore M for N seconds;
 		FavourUp M;
-		if M is in the location of the player and M is awake, say SatisfiedFlav of M;
+		if M is in the location of the player and M is awake:
+			say SatisfiedFlav of M;
+			progress quest of nice-quest;
 	otherwise:
 		bore M for N seconds. [We still want to dislodge etc. even if they weren't interested for some reason.]
 
@@ -78,54 +83,7 @@ To say SatisfiedFlav of (M - a monster):
 		if M is intelligent and M is unfriendly, now U is 1; [This check can cause a line break]
 		say "[BigNameDesc of M] seems [if U is 1]satisfied, and loses[otherwise]to lose[end if] interest.".
 
-[!<SayDeathBrinkOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
-To say DeathBrink of (M - a monster):
-	say "[BigNameDesc of M] is on the brink of defeat. Do you want to leave [him of M] alive and fuck [him of M] instead?".
-
-[!<ComputeDeathOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
-To compute death of (M - a monster):
-	if the health of M <= 0:
-		compute unique death of M;
-		if the player-class is succubus:
-			increase the souls of the player by 1;
-			increase the total-souls of the player by 1;
-			say "You feel the soul of [NameDesc of M] flow into you!";[Gain a soul for defeating an enemy basic implementation]
-			dignify 400;[Heal some lost humiliation on eating a soul]
-			let D be a random worn demon tail plug;
-			if D is a thing and the soreness of asshole > 0:
-				heal asshole times 5;
-				say "Your [asshole] feels ";
-		if a random number between 1 and 20 > 3 or the difficulty of M >= 12, loot M; [85% chance]
-		if there are things retained by M:
-			say "Your [list of things retained by M] [if the number of things retained by M > 1]are[otherwise]is[end if] also left behind.";
-			repeat with K running through things retained by M:
-				now K is in the location of the player;
-				now M is not retaining K;
-				now M is not withholding K;
-				compute autotaking K;
-		let J be a random worn demon codpiece;
-		if J is clothing and M is wenchy, follow the demon junk punishment rule;
-		if there is a worn notebook, compute studying 1 of M;
-		if M is in the location of the player:
-			destroy M;
-		if playerRegion is Woods and giant-statue is active:
-			ChargeDown giant-statue by 20;
-
-[!<ComputeUniqueDeathOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
-To compute unique death of (M - a monster):
-	say "[BigNameDesc of M] drops to the ground, dead. After a couple of seconds, [his of M] body disappears.".
+Part - Destroying
 
 [!<DestroyMonster>+
 
@@ -166,7 +124,7 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 	now the last-interaction of M is 0;
 	now the health of M is the maxhealth of M;
 	now the loot dropped of M is 0;
-	now the refactory-period of M is 0;
+	now the refractory-period of M is 0;
 	FavourReset M;
 	repeat with K running through things rejected by M:
 		now K is in the location of the player;
@@ -190,20 +148,21 @@ To reset (M - a monster): [We do this when the player faints to all monsters, ev
 			otherwise:
 				finally destroy M.
 
-[!<LootMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To loot (M - a monster):
+	standard loot M.
+
+To standard loot (M - a monster):
 	let X be a random off-stage plentiful accessory;
 	if the class of the player is santa's little helper, now X is a random off-stage christmas gift;
 	unless X is nothing:
 		now X is in the location of the player;
 		if X is plentiful accessory, compute appraisal of X from M;
-		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
+		say LootFlav of X by M;
 		increase the loot dropped of M by 1;
 		compute autotaking X.
+
+To say LootFlav of (X - a thing) by (M - a monster):
+	say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if][if M is dying or M is not in the location of the player]dropped[otherwise]drops[end if] a [printed name of X]!".
 
 To compute appraisal of (X - an accessory) from (M - a monster):
 	let R be a random number from the difficulty of M to (the difficulty of M * 4) / 3;
@@ -223,5 +182,25 @@ To set jewellery value of (X - an accessory) to (R - a number):
 	otherwise:
 		now X is solid gold;
 	set shortcut of X.
+
+To orgasm bore (M - a monster):
+	orgasm M;
+	bore M.
+
+To orgasm bore (M - a monster) for (N - a number) seconds:
+	orgasm M;
+	bore M for N seconds.
+
+To orgasm satisfy (M - a monster):
+	orgasm M;
+	satisfy M.
+
+To orgasm satisfy (M - a monster) for (N - a number) seconds:
+	orgasm M;
+	satisfy M for N seconds.
+
+To orgasm dislodge (M - a monster):
+	orgasm M;
+	dislodge M.
 
 Monster Functions ends here.

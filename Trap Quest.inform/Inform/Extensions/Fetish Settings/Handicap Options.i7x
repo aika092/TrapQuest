@@ -25,7 +25,7 @@ title	subtable	description	toggle
 "Map resets on fainting - [map reset points] points ([if choice in row 38 of the Table of Player Options is -1]never[otherwise if choice in row 38 of the Table of Player Options is 0]not now[otherwise if choice in row 38 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	map reset toggle rule
 "Sex can result in fainting - 0 points ([if choice in row 44 of the Table of Player Options is -1]never[otherwise if choice in row 44 of the Table of Player Options is 0]not now[otherwise if choice in row 44 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	sex fainting toggle rule
 "Realistic orifice re-tightening (you don't stay gaped which means you'll get sore faster) - 2 points ([if choice in row 60 of the Table of Player Options is -1]never[otherwise if choice in row 60 of the Table of Player Options is 0]not now[otherwise if choice in row 60 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	ungape toggle rule
-"Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can reroll uncurse quests) - 5 points ([if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
+"Stronger Curses (The knives and altars can't remove cursed clothing, instead, altars can re-roll uncurse quests) - 5 points ([if choice in row 78 of the Table of Player Options is -1]never[otherwise if choice in row 78 of the Table of Player Options is 0]not now[otherwise if choice in row 78 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	strongCurses toggle rule
 "Game Hates You (the most horribly unfair traps and outcomes) - 8 points ([if choice in row 51 of the Table of Player Options is -1]never[otherwise if choice in row 51 of the Table of Player Options is 0]not now[otherwise if choice in row 51 of the Table of Player Options is 1][bold type]yes this time[roman type][otherwise][bold type]always[roman type][end if])"	--	--	tough-shit toggle rule
 "Roguelike Mode (Saving is automatic every turn, your save file automatically loads when you open the game, and save file is deleted after typing 'restart' & after losing; causes a bit more lag but protects against crashes) - [if save game limit is 0]4[otherwise][(save game limit * 2) + 2][end if] points ([if save game limit is 0]not [otherwise][bold type][end if]chosen[roman type][if the player is the donator and save game limit is not 0], max [max-undos] undos[end if])"	--	--	save game toggle rule
 
@@ -273,6 +273,7 @@ To decide which number is inventory handicap points:
 	decide on choice in row 72 of the Table of Player Options.
 
 To decide which number is clumsy:
+	if clumsy april fools is 1, decide on 1;
 	if choice in row 74 of the Table of Player Options <= 0, decide on 0;
 	otherwise decide on 1.
 This is the clumsy toggle rule:
@@ -286,7 +287,7 @@ This is the clumsy random rule:
 The clumsy random rule is listed in the random mode rules.
 
 To decide which number is clumsy april fools:
-	if april fools content is 1 and clumsy is 1, decide on 1;
+	if april fools content is 1[ and clumsy is 1], decide on 1;
 	decide on 0.
 
 To say aprilFoolsClumsyFlav:
@@ -305,5 +306,12 @@ The strongCurses nightmare rule is listed in the nightmare mode rules.
 This is the strongCurses random rule:
 	if choice in row 78 of the Table of Player Options is 0 or choice in row 78 of the Table of Player Options is 1, now choice in row 78 of the Table of Player Options is a random number between 0 and 1.
 The strongCurses random rule is listed in the random mode rules.
+
+To decide which number is realisticArms:
+	if the player is in a predicament room and the player is not in Predicament01 and the player is not in Predicament20, decide on 1;
+	decide on 0;
+	if tutorial is 1 or (diaper quest is 0 and the player is not a february 2020 top donator) or (diaper quest is 1 and the player is not a february 2020 diaper donator), decide on 0;
+	if choice in row 81 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on 1.
 
 Handicap Options ends here.

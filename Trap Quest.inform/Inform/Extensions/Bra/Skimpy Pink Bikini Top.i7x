@@ -17,6 +17,6 @@ To say ClothingDesc of (C - skimpy-pink-bikini-top):
 	say "This metallic pink bikini top has very small triangles for cups, giving it a very provocative appearance. Anyone wearing this on a beach would have to expect to be followed by a number of surprised stares.".
 
 To decide which number is the initial outrage of (C - skimpy-pink-bikini-top):
-	decide on 6.
+	decide on 4.
 
 Skimpy Pink Bikini Top ends here.

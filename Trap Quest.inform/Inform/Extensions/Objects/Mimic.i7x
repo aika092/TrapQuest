@@ -77,6 +77,7 @@ To compute mimic:[The mimic is special in that it has no treasure in it, and wil
 	if diaper quest is 1:
 		say "As you go to open it, the lid springs open and the resulting gap shapeshifts into a giant mouth! You have no time to react before this monster has begun to swallow you whole!";
 		if the map-window is g-unpresent, appropriate-cutscene-display figure of mimic cutscene 1;
+		now the source-room of MimicCrib is the location of the player;
 		now the player is in MimicCrib;
 		display entire map;
 	otherwise:
@@ -99,12 +100,12 @@ To compute mimic:[The mimic is special in that it has no treasure in it, and wil
 
 To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or fully remove any semen covering the player's body]
 	if the semen coating of face + the semen coating of breasts > 0:
-		say "A shadowy mass rises out of the sack, slowly forming itself into a green-skinned woman with piercing yellow eyes and wickedly sharp fangs. [line break][first custom style]'Sssso much venom... sssso li-'[roman type][line break]She trails off, staring at you as drool collects in the corners of her mouth. [line break][first custom style]'Sssso much man ssstuff... you're ssso ssssslathered in ssssemen...'[roman type][line break]The [item style]hissing mimic[roman type] lunges with her tongue outstretched, slurping loudly as she licks every last drop of cum from your face, hair and chest. [line break][first custom style]'Ssso tassssty...'[roman type][line break]The mimic licks her lips as she pulls the sack shut.";
+		say "A shadowy mass rises out of the sack, slowly forming itself into a green-skinned [man of a memic] with piercing yellow eyes and wickedly sharp fangs. [line break][first custom style]'Sssso much venom... sssso li-'[roman type][line break][big he of a memic] trails off, staring at you as drool collects in the corners of [his of a memic] mouth. [line break][first custom style]'Sssso much man ssstuff... you're ssso ssssslathered in ssssemen...'[roman type][line break]The [item style]hissing mimic[roman type] lunges with [his of a memic] tongue outstretched, slurping loudly as [he of a memic] licks every last drop of cum from your face, hair and chest. [line break][first custom style]'Ssso tassssty...'[roman type][line break]The mimic licks [his of a memic] lips as [he of a memic] pulls the sack shut.";
 		fully clean hair;
 		fully clean face;
 		fully clean breasts;
 	otherwise:
-		say "A shadowy mass rises out of the sack, slowly forming itself into a green-skinned woman with piercing yellow eyes and wickedly sharp fangs. [line break][first custom style]'[one of]Exxxperiensss the sssstrength of my venom[or]Sssso much venom... sssso little[or]Ssssometimess... I worry sssssome greedy sssslut won't sssssaunter by, but[at random]... sssslut.'[roman type][line break]She lunges, hissing as her teeth sink into your neck. You shiver as her magical venom rushes into your body, and find yourself rubbing your thighs together as a sudden wave of arousal washes over you. Your surroundings seem to spin around you as the mimic releases you and disappears into the sack.";
+		say "A shadowy mass rises out of the sack, slowly forming itself into a green-skinned [man of a memic] with piercing yellow eyes and wickedly sharp fangs. [line break][first custom style]'[one of]Exxxperiensss the sssstrength of my venom[or]Sssso much venom... sssso little[or]Ssssometimess... I worry sssssome greedy sssslut won't sssssaunter by, but[at random]... sssslut.'[roman type][line break][big he of a memic] lunges, hissing as [his of a memic] teeth sink into your neck. You shiver as [his of a memic] magical venom rushes into your body, and find yourself rubbing your thighs together as a sudden wave of arousal washes over you. Your surroundings seem to spin around you as the mimic releases you and disappears into the sack.";
 		FatigueUp 30;
 		let R be a random number between 1 and 3;
 		if R is 1 and the lips of face < 2 + artificial enhancements fetish:
@@ -132,31 +133,31 @@ To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or ful
 		passively stimulate vagina from memic.
 
 To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes or messes with the player's headgear]
-	say "A shadowy mass rises out of the crate, slowly forming itself into a green-skinned woman with piercing yellow eyes and huge GG-cup breasts, which are barely restrained by a sparkling magenta bikini. [line break][first custom style]'[one of]You[']re looking for a makeover, aren[']t you? Of course you are, you look terrible honey.'[or]I can[']t blame you for being greedy, you obviously need a complete makeover.'[or]Oh my. You[']re in dire need of my expertise, aren[']t you, honey?[or]You may not think you need a makeover, but trust me honey, you do.'[at random][roman type][line break]";
+	say "A shadowy mass rises out of the crate, slowly forming itself into a green-skinned [man of a memic] with piercing yellow eyes and huge GG-cup breasts, which are barely restrained by a sparkling magenta bikini. [line break][first custom style]'[one of]You[']re looking for a makeover, aren[']t you? Of course you are, you look terrible honey.'[or]I can[']t blame you for being greedy, you obviously need a complete makeover.'[or]Oh my. You[']re in dire need of my expertise, aren[']t you, honey?[or]You may not think you need a makeover, but trust me honey, you do.'[at random][roman type][line break]";
 	if the number of worn clothing - the number of worn headgear > 0:
-		say "The [item style]stylish mimic[roman type] takes a deep breath, lifting you a full metre off the ground as she forcefully exhales glittering dust over your whole body.";
+		say "The [item style]stylish mimic[roman type] takes a deep breath, lifting you a full metre off the ground as [he of a memic] forcefully exhales glittering dust over your whole body.";
 		repeat with C running through worn upgradable clothing:
 			potentially transform C; [allows for theme protection]
 		Intdown 1;
-		say "[line break][first custom style]There, now don't you feel hotter?[roman type][line break]The mimic puts you down, blowing you a kiss as she dissolves downward into the crate, closing the lid sharply behind her.";
+		say "[line break][first custom style]There, now don't you feel hotter?[roman type][line break]The mimic puts you down, blowing you a kiss as [he of a memic] dissolves downward into the crate, closing the lid sharply behind [him of a memic].";
 	otherwise if the make-up of face < 3:
-		say "The [item style]stylish mimic[roman type] takes a deep breath, pulling you halfway into the crate as she exhales glittering dust over your face. It holds fast to your cheeks as she releases you, blowing you a kiss as she swiftly closes the lid.";
+		say "The [item style]stylish mimic[roman type] takes a deep breath, pulling you halfway into the crate as [he of a memic] exhales glittering dust over your face. It holds fast to your cheeks as [he of a memic] releases you, blowing you a kiss as [he of a memic] swiftly closes the lid.";
 		FaceUp 3;
 	otherwise:
 		let S be a random off-stage pink scrunchie;
 		if S is actually summonable:
-			say "The [item style]stylish mimic[roman type] pulls you halfway into the crate, firmly holding your face between her breasts[if permanent makeup is 0], which makes your cheeks tingle strangely[end if] as she [if the number of worn scrunchies is 1]splits your hair into pigtails with a [printed name of S][otherwise]back into a ponytail and slips on a [printed name of S][end if]. [line break][first custom style]There, you're hotter already![roman type][line break]The mimic releases you, beaming as she sharply closes the lid on top of her.";
+			say "The [item style]stylish mimic[roman type] pulls you halfway into the crate, firmly holding your face between [his of a memic] breasts[if permanent makeup is 0], which makes your cheeks tingle strangely[end if] as [he of a memic] [if the number of worn scrunchies is 1]splits your hair into pigtails with a [printed name of S][otherwise]back into a ponytail and slips on a [printed name of S][end if]. [line break][first custom style]There, you're hotter already![roman type][line break]The mimic releases you, beaming as [he of a memic] sharply closes the lid on top of [him of a memic].";
 			summon S;
 		otherwise:
 			let H be a random worn headgear;
-			say "The [item style]stylish mimic[roman type] pulls you halfway into the crate, firmly holding your face between her breasts[if permanent makeup is 0], which makes your cheeks tingle strangely[end if] as she sprinkles a handful of glittering dust over your [printed name of H].[line break][first custom style]There, you're hotter already![roman type][line break]The mimic releases you, beaming as she sharply closes the lid.";
+			say "The [item style]stylish mimic[roman type] pulls you halfway into the crate, firmly holding your face between [his of a memic] breasts[if permanent makeup is 0], which makes your cheeks tingle strangely[end if] as [he of a memic] sprinkles a handful of glittering dust over your [printed name of H].[line break][first custom style]There, you're hotter already![roman type][line break]The mimic releases you, beaming as [he of a memic] sharply closes the lid.";
 			curse H;
 			decrease the raw-magic-modifier of H by 1;
 			unless H is scrunchie, now H is temptation;
 		now permanent makeup is 1.
 
 To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size, equalises asshole and vagina gape, or gives the player a free lube]
-	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green woman with piercing yellow eyes and a giant green dildo attached to a harness around her waist, [otherwise]frail green woman with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk. [line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as she yanks your body forward[run paragraph on]";
+	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk. [line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Lets see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
 	if the player is male:[Penis scrambling]
 		let P be a random number between 0 and 10;
 		let Ab be a random worn plug;
@@ -193,7 +194,7 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 			say " and more shadows emerge from the trunk and envelop your crotch. You feel a wrenching sensation deep in your gut as your [vagina] and [asshole] are forced wide open, and then painfully tightened.";
 			ruin asshole;
 			ruin vagina;
-	say "[line break][second custom style]'You[']re welcome!'[roman type][line break]The mimic releases you, maintaining her nasty smile as her body disappears and the trunk rapidly swings shut.".
+	say "[line break][second custom style]'You[']re welcome!'[roman type][line break]The mimic releases you, maintaining [his of a memic] nasty smile as [his of a memic] body disappears and the trunk rapidly swings shut.".
 
 To compute mimic teasing (N - 2):[snickering mimic;reverses bust and hip size, then increases delicateness]
 	say "More hands jump out at you, pulling harder and harder until you finally lose your balance and topple in head first as hysterical laughter fills your ears. [line break][second custom style]'[one of]Now I REALLY get to mess with you! Hee he he[or]Just so you know, I'm about to have a LOT of fun[or]Now I can do WHATEVER I want! Ha ha ha[or]Yes, finally! It's been so long since I had anyone to PLAY with[at random]!'[roman type][line break]The [item style]snickering mimic[roman type]'s voice only grows louder as a shadowy mass envelops your whole body, [if the number of worn clothing > 0]slithers under your clothes and clamping over your mouth[otherwise]tickling your bare skin and clamping over your mouth[end if], as the mimic begins reshaping your body as it sees fit. You can feel it twisting your nipples and viciously spanking your ass as it rearranges your features, but you have no way of responding to the pain other than to simply endure it until it abruptly chucks you out on your ass and closes sharply behind you.";
@@ -238,7 +239,7 @@ Report waiting when the player is in MimicCrib:
 		PainUp 1;
 		now the fatigue of the player is the buckle threshold of the player;
 	now the stance of the player is 1;
-	now the player is in the location of memic;
+	now the player is in the source-room of the location of the player;
 	say "[bold type]You are on your knees. [roman type]The mimic disappears in a puff of pink smoke.";
 	display entire map;
 	now the mimic-boredom of memic is 0;

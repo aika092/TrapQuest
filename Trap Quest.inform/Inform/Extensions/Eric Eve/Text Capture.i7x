@@ -193,13 +193,13 @@ The test "if text capturing is active" can be used to determing whether or text 
 
 LIMITATIONS
 
-1.  The extension uses only a single text buffer, and each time a start capturing text/output something/stop capturing text sequence is executed, the buffer contents will be overwritten. You can get round this by copying the contents of the buffer to an indexed text variable, as shown above.
+1. The extension uses only a single text buffer, and each time a start capturing text/output something/stop capturing text sequence is executed, the buffer contents will be overwritten. You can get round this by copying the contents of the buffer to an indexed text variable, as shown above.
 
-2.  By default the text capture buffer has a maximum length of 256 characters, so it should only be used for fairly short pieces of text. Overflowing the buffer will cause a run-time error in Z-Code games, and the loss of all characters beyond the 256th in Glulx games. If a larger buffer is needed, use the maximum capture buffer length option:
+2. By default the text capture buffer has a maximum length of 256 characters, so it should only be used for fairly short pieces of text. Overflowing the buffer will cause a run-time error in Z-Code games, and the loss of all characters beyond the 256th in Glulx games. If a larger buffer is needed, use the maximum capture buffer length option:
 
 	Use maximum capture buffer length of at least 512.
 
-3.  Beware of using certain debugging verbs such as RULES or RULES ALL whenever text capturing might become active, since their output will be captured as well, which will almost certainly overflow the buffer.
+3. Beware of using certain debugging verbs such as RULES or RULES ALL whenever text capturing might become active, since their output will be captured as well, which will almost certainly overflow the buffer.
 
 Example: * Intelligent Putting - Using text capture to improve implicit take messages.
 
@@ -217,22 +217,22 @@ One way round this is to capture the output from the take action, then test whet
 
 	Before putting something on something when the noun is not carried:
 	 if the noun is on the second noun,
-		say "[The noun] is already on [the second noun]." instead;
+		 say "[The noun] is already on [the second noun]." instead;
 	 take the noun implicitly;
 	 if the noun is not carried, stop the action.
 
 	Before inserting something into something when the noun is not carried:
 	 if the noun is in the second noun,
-		say "[The noun] is already in [the second noun]." instead;
+		 say "[The noun] is already in [the second noun]." instead;
 	 take the noun implicitly;
 	 if the noun is not carried, stop the action.
 
 	To take (obj - a thing) implicitly:
-	  start capturing text;
-	  silently try taking the obj;
-	  stop capturing text;
-	  say "(first [if the obj is carried]taking[otherwise]trying to take[end if] [the obj])[command clarification break]";
-	  if the obj is not carried, say captured text.
+	 start capturing text;
+	 silently try taking the obj;
+	 stop capturing text;
+	 say "(first [if the obj is carried]taking[otherwise]trying to take[end if] [the obj])[command clarification break]";
+	 if the obj is not carried, say captured text.
 
 	Part 2 - Scenario
 

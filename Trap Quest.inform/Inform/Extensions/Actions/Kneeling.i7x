@@ -48,9 +48,9 @@ Check kneeling:
 	if the player is prone:
 		if the player is glue stuck:
 			if the bimbo of the player > 12:
- 				say "You giggle, almost tempted to see if you can get even more stuck in the glue!" instead;
+				say "You giggle, almost tempted to see if you can get even more stuck in the glue!" instead;
 			otherwise if the sex addiction of the player > 11:
- 				say "[variable custom style]I wouldn't want to get even more helpless... and fuckable![roman type][line break]" instead;
+				say "[variable custom style]I wouldn't want to get even more helpless... and fuckable![roman type][line break]" instead;
 			otherwise if the delicateness of the player > 14:
 				say "[variable custom style]You cringe at the thought of the pain of pulling free of the adhesive mass.[roman type][line break]" instead;
 			otherwise:
@@ -59,7 +59,7 @@ Check kneeling:
 			say "You are already kneeling!" instead;
 	if seconds is 0 and the fatigue of the player < the buckle threshold of the player and debugmode is 0 and the delicateness of the player < 9 and the bimbo of the player < 10 and the player is in danger and the player is not very horny and the class of the player is princess and princess-consort is not in the location of the player and auto is 0:
 		say "A strange tingle passes through your head, and a strange voice orders you to stay on your feet. [line break][first custom style]'A princess does not kneel for anyone!'[roman type][line break]" instead;[TODO: WILLING TO KNEEL RULES]
-	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
+	if seconds is 0 and auto is 0 and the fatigue of the player < the buckle threshold of the player and the delicateness of the player < 3 and the player is not a pervert and debugmode is 0 and the bimbo of the player < 8 and the player is in danger and the player is not a bit horny and the class of the player is not puppy and the number of dangerous gladiator in the location of the player is 0 and the player is not grossed out and the player is not perturbed: [It's very legit to submit to a gladiator early, so she doesn't grow a penis.]
 		say "[variable custom style]No way, I'm fighting until I drop![roman type][line break]" instead.
 
 [!<CarryOutKneeling>+
@@ -82,8 +82,17 @@ Carry out kneeling:
 					now servePunished is 1; [So that this only happens once per trip, even with multiple vessels]
 					compute service spill punishment;
 					say aprilFoolsClumsyFlav;
-		if the class of the player is maid and there is a worn spray pink spraybottle and a random number between clumsy and 1 > 0:
-			compute a random pink spraybottle breaking;
+		if the class of the player is maid and pink-spraybottle is worn and pink-spraybottle is spray and a random number between clumsy and 1 > 0:
+			compute pink-spraybottle breaking;
+		if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
+			let D be ((a random number from 15 to 35) - the dexterity of the player) / 3;
+			if D + the cakes-taken of skirt-tray-vibrator > the max-cakes of skirt-tray-vibrator, now D is the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;
+			if D <= 0:
+				say "You manage to keep the tray stable enough to avoid any more cupcakes falling off of their pressure pads.";
+			otherwise:
+				increase the cakes-taken of skirt-tray-vibrator by D;
+				say "[if D is 1]Another cupcake falls off its pressure plate[otherwise][D] more cupcakes fall off their pressure plates[end if] and onto the ground. [skirtTrayBuzzFlav]";
+				now the charge of skirt-tray-vibrator is 3;
 	let R be a random number between (the bimbo of the player / 2) and the bimbo of the player;
 	if there is a dangerous intelligent monster in the location of the player and seconds > 0 and the fatigue of the player > the buckle threshold of the player:
 		say "[bold type]You drop to your knees, [if the bimbo of the player < 12]trying not to make eye contact[otherwise]quivering in anticipation[end if].[roman type][line break]";

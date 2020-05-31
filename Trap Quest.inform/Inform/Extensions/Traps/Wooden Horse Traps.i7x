@@ -129,16 +129,7 @@ To compute horse effect of (T - a painted horse):
 	if W < 3, now W is 3;
 	let R be a random number between -1 and W;
 	if horse-alarm is listed in the list of current horse effects:
-		repeat with M running through nearby uninterested monsters:
-			now the sleep of M is 0;
-			if M is unfriendly:
-				if the boredom of M is 0, now M is interested;
-				if M is interested, say "The nearby [M] seems to notice the wooden horse's 'alarm' and heads your way...";
-		repeat with M running through uninterested monsters in the location of the player:
-			if M is asleep:
-				now the sleep of M is 0;
-				say "[BigNameDesc of M] wakes up!";
-			check perception of M;
+		now magnetism-timer is 1;
 	if horse-vibrations is listed in the list of current horse effects and W > 2:
 		say "The vibrations of the wooden horse continue to overstimulate your [asshole][if the player is female] and [vagina][end if].";
 		if the player is female:

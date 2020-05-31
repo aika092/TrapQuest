@@ -106,11 +106,11 @@ To say SpitroastPrep of (M - a monster) with (O - a monster) in (F - asshole):
 
 To say ThreesomePrep of (M - a monster) with (N - a monster) in (F - asshole):
 	if N is intelligent, say "[BigFuckerDesc of N] flips you over so you're face to face, holding you by the waist as [FuckerDesc of M] pulls apart your [AssDesc].";
-	otherwise say "[BigFuckerDesc of M] flips you onto your side, so you're facing [FuckerDesc of N]. [BigFuckerDesc of N] continues to fuck your [vagina] as the newcomer spreads apart your asscheeks.".
+	otherwise say "[BigFuckerDesc of M] flips you onto your side, so you're facing [FuckerDesc of N]. [BigFuckerDesc of N] continues to fuck your [vagina] as [FuckerDesc of M] spreads apart your asscheeks.".
 
 To say FoursomePrep of (M - a monster) with (N - a monster) and (O - a monster) in (F - asshole):
-	if N is intelligent, say "[BigFuckerDesc of N] flips you over so your chin is resting on [his of N] chest, holding you by the waist as [FuckerDesc of M] pulls apart your [AssDesc].";
-	otherwise say "[BigFuckerDesc of M] flips you onto your side, so you[']re facing [FuckerDesc of N]. [BigFuckerDesc of N] and [FuckerDesc of O] continue to fuck you as the newcomer spreads apart your asscheeks.".
+	if N is intelligent, say "[BigFuckerDesc of O] keeps using your mouth as [FuckerDesc of N] flips you over and firmly grabs your waist. [BigFuckerDesc of M] pulls apart your [AssDesc].";
+	otherwise say "[BigFuckerDesc of M] flips you onto your side, so you[']re facing [FuckerDesc of N]. [BigFuckerDesc of N] and [FuckerDesc of O] continue to fuck you as [FuckerDesc of M] spreads apart your asscheeks.".
 
 To say TwosomePrep of (M - a monster) in (F - asshole):[twosome == normal sex]
 	say "[BigFuckerDesc of M] shoves you face down and pulls your hips up against [his of M] body. [big he of M] spreads your [AssDesc] apart.".
@@ -191,7 +191,7 @@ To say VeryTightAssholePenetrationFlav of (M - a monster):
 	otherwise if the relevant sex addiction of M < 12:
 		say "[one of]You [if O is monster]half-heartedly struggle as [his of M] [DickDesc of M] prods at your sphincter, trying your best to ignore what[']s in your mouth and focus on keeping [him of M] at bay[otherwise if the player is in a blindroom]silently blind behind your blindfold[otherwise]silently look over your shoulder as [his of M] [DickDesc of M] prods at your sphincter, doing absolutely nothing to stop [him of M] even though every part of your being is telling you you should[end if]. [BigFuckerDesc of M] stops, but only to spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way into your [asshole].[or]You brace yourself as [FuckerDesc of M]'s [DickDesc of M] presses at your sphincter, stretching it bit by painful bit as it slowly forces its way into your [asshole]. The feeling is so intense, that by the time it occurs to you to bolt or at least fight, [his of M] balls are already slapping your [if the player is male]coin-purse[otherwise]taint[end if].[at random]";
 	otherwise:
-		say "You [if O is monster]continue servicing the dick in your mouth[otherwise]look over your shoulder with a grin[end if] as [his of M] [DickDesc of M] prods at your sphincter, attempting to force its way in with brute force alone. [BigFuckerDesc of M] pauses only to [unless O is monster or the player is in a blindroom]return your look and [end if]spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.".
+		say "You [if O is monster]continue servicing [FuckerDesc of O][otherwise]look over your shoulder with a grin[end if] as [his of M] [DickDesc of M] prods at your sphincter, attempting to force its way in with brute force alone. [BigFuckerDesc of M] pauses only to [unless O is monster or the player is in a blindroom]return your look and [end if]spit in your hole, giving [him of M] that last bit of lubrication needed to slowly, painfully, force [his of M] way in.".
 
 [!<SayLessTightAssholePenetrationFlavOfMonster>+
 
@@ -674,7 +674,7 @@ To compute sexSubmit of (M - a monster) in (F - a fuckhole):
 	ruin F.
 
 To say sexSubmitNearingClimax of (M - a monster) in (F - a fuckhole):
-	say "[one of][BigFuckerDesc of M] grabs your hips with both hands as [he of M] speeds up[or][BigFuckerDesc of M] spanks your [AssDesc] as begins to thrust faster and faster[or][BigFuckerDesc of M] seems to speeding up[at random]. [one of][big he of M] must be close[or][big he of M] must be close to climax[or][big he of M] must be ready to cum[at random]!".
+	say "[one of][BigFuckerDesc of M] grabs your hips with both hands as [he of M] speeds up[or][BigFuckerDesc of M] spanks your [AssDesc] as [he of M] begins to thrust faster and faster[or][BigFuckerDesc of M] seems to speeding up[at random]. [one of][big he of M] must be close[or][big he of M] must be close to climax[or][big he of M] must be ready to cum[at random]!".
 
 [!<SayMonsterSubmissionSexNumber>+
 
@@ -722,7 +722,7 @@ To say sexSubmitEmbarrassFlav of (M - a monster) in (O - an orifice):
 	say "[if the relevant sex addiction of M < 7][BigFuckerDesc of M] gives your [variable O] the hard fucking it deserves. You clench your fists and try to ignore your growing embarrassment.[otherwise if the humiliation of the player < 15000][BigFuckerDesc of M] fucks your [variable O], panting heavily. You can almost feel your dignity crumbling, every thrust humiliating you more and more.[otherwise if the relevant sex addiction of M < 10][BigFuckerDesc of M] plows [his of M] [DickDesc of M] in and out of your [variable O]. There's something so invigorating about letting [him of M] do it![otherwise][BigFuckerDesc of M] plows [his of M] [DickDesc of M] in and out of your [variable O]. It's so satisfying to degrade yourself like this![end if]".
 
 To say sexSubmitSplitFlav of (M - a monster) in (O - an orifice):
-	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigFuckerDesc of M] fucks you like the girl you really are![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigFuckerDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed of how minuscule your [ShortDesc of penis] is compared to [hers of M].[otherwise if the size of penis < 4 and the size of penis > 0][BigFuckerDesc of M] pounds your [asshole] hard and fast. You feel proud of how minuscule your [ShortDesc of penis] is compared to [hers of M].[otherwise if the bimbo of the player < 3][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how little you've actually done to stop [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [DickDesc of M] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked by another man.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10 and transGender is 0][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a dirty faggot for enjoying this.[otherwise if the bimbo of the player < 12][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how much you secretly like this.[otherwise if the bimbo of the player < 14][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
+	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigFuckerDesc of M] fucks you like the girl you really are![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigFuckerDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the size of penis < 4 and the size of penis > 0][BigFuckerDesc of M] pounds your [asshole] hard and fast. You feel proud of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the bimbo of the player < 3][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole],as if to remind you how little you've actually done to stop [him of M].[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [DickDesc of M] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked by another man.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10 and transGender is 0][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a dirty faggot for enjoying this.[otherwise if the bimbo of the player < 12][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how much you secretly like this.[otherwise if the bimbo of the player < 14][BigFuckerDesc of M]'s balls repeatedly slap your taint as [he of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
 	otherwise say "[if the player is horny and the relevant sex addiction of M < 10][BigFuckerDesc of M] fucks your [variable O] hard and fast. After a few seconds [he of M] reaches between your legs, chuckling when [he of M] discovers just how wet you are.[otherwise if the player is horny][BigFuckerDesc of M] fucks your [asshole] hard and fast. After a few seconds [he of M] reaches between your legs, sinking a finger into your [vagina] when [he of M] realises how wet you are.[otherwise if the openness of vagina > 3][BigFuckerDesc of M] reaches between your legs, sinking two fingers into your [vagina] as [he of M] slams in and out of your [asshole].[otherwise][BigFuckerDesc of M] reaches between your legs, gently rubbing your clit in small circles as [he of M] plows your [asshole].[end if]".
 
 [!<ComputeSexResistOfMonsterInFuckhole>+
@@ -779,10 +779,10 @@ To say sexRoughClapFlav of (M - a monster) in (O - an orifice):
 
 To say sexRoughSplitFlav of (M - a monster) in (O - an orifice):
 	if the player is male:
-		if the relevant sex addiction of M > 7 and penis is sex available:
+		if penis is penis-erect:
 			let P be a random worn knickers;
 			if P is clothing:
-				say "[if there is a worn chastity cage]Your caged [player-penis] drools into your [printed name of P][otherwise if the size of penis < the penis-capacity of P - 3]Your [ShortDesc of penis] makes a barely noticeable tent in your [printed name of P][otherwise if the penis-capacity of P < the size of penis]Your hard [ShortDesc of penis] peeks out of your [printed name of P][otherwise]Your [ShortDesc of penis] visibly tents your [printed name of P][end if] as [FuckerDesc of M] plows your [asshole] without mercy.";
+				say "[if there is a worn chastity cage]Your caged [player-penis] drools into your [ShortDesc of P][otherwise if the size of penis < the penis-capacity of P - 3]Your [ShortDesc of penis] makes a barely noticeable wet spot in your [ShortDesc of P][otherwise if the penis-capacity of P < the size of penis]Your hard [ShortDesc of penis] drools[otherwise]Your [ShortDesc of penis] creates a large damp spot in your [ShortDesc of P][end if] as [FuckerDesc of M] plows your [asshole] without mercy.";
 			otherwise:
 				say "[if there is a worn chastity cage]Your cage jiggles uselessly[otherwise if the size of penis > 3]Your [ShortDesc of penis] slaps audibly against your [belly][otherwise]Your desperately hard [sissy-penis] drools precum[end if] as [FuckerDesc of M] plows your [asshole] without mercy.";
 		otherwise:
@@ -806,17 +806,6 @@ Contains the unique handling for a monster "M" climaxing in a fuckhole "F". Mons
 To compute unique climax of (M - a monster) in (F - a fuckhole):[assumes M is male]
 	if M is wrapped, compute wrapped climax of M in F;
 	otherwise compute unprotected climax of M in F.
-
-[!<ComputePostClimaxEffectOfMonster>+
-
-Handles anything that needs to happen after a monster "M" climaxes in a fuckhole "F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of the outer function "compute climax of M in F". No functionality in this function by default
-
-@param <Monster>:<M> The monster that had the climax
-@param <Fuckhole>:<F> The fuckhole the monster had the climax with
-
-+!]
-To compute post climax effect of (M - a monster) in (F - a fuckhole):
-	do nothing.
 
 [!<DecideIfMonsterIsLosingWrapperInFuckhole>+
 
@@ -1017,7 +1006,7 @@ To say CreampieReactionFlav to (M - a monster) in (F - a fuckhole):
 	do nothing.
 
 To say CreampieReactionFlav to (M - a monster) in (F - vagina):
-	if pregnancy fetish is 1 and M is male and the pregnancy of the player is 0, say "[variable custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
+	if M is male and the player is able to get pregnant, say "[variable custom style][if the bimbo of the player < 6][one of]I can[']t believe [he of M] came inside. What if...? [or]W-what if I get pregnant? [or]Please don't let me be pregnant... [at random][otherwise if the bimbo of the player < 12][one of]Doesn[']t [he of M] know I could get pregnant like this?[or]I could actually get pregnant from that...[or]Is [he of M] really going to do that every time we have sex...[at random][otherwise][one of]I hope I get pregnant...[or]I hope that was enough to put a bun in my oven...[or]I know I might get pregnant from that, but it just feels so good...[or]It's no fun unless it's risky...[at random][end if][roman type][line break]".
 
 [!<SayCondomPieFlavOfMonsterInFuckhole>+
 

@@ -13,11 +13,10 @@ To decide which number is the delicateness-influence of (C - a chastity cage):
 To decide which number is the initial outrage of (C - a chastity cage):
 	decide on 18.
 
-[!<ClothingIsUrinationBlocking>+
+To decide which number is the usualHipModesty of (C - a chastity cage):
+	decide on 0.
 
-Some things like chastity cages can allow urination and ejaculation through freely.
-
-+!]
+[Some things like chastity cages can allow urination and ejaculation through freely.]
 Definition: a chastity cage is urination blocking: decide no.
 
 outrageous-chastity is a humiliating situation.
@@ -56,6 +55,8 @@ To compute periodic effect of (C - a chastity cage):
 		if the size of penis > min penis size and a random number between 1 and 250 is 1:
 			PenisDown 1;
 			say "You feel your cursed chastity cage [Shrink] your penis into a [ShortDesc of penis].";]
+To compute school periodic effect of (C - a chastity cage):
+	compute periodic effect of C.
 
 [!<TheChastityCagePussySlutRule>+
 
@@ -65,6 +66,20 @@ Decreases the chance of vaginal sex.
 This is the chastity cage pussy slut rule:
 	if there is a worn chastity cage, decrease the desirability of vagina by 5.
 The chastity cage pussy slut rule is listed in the pussy slut eligibility rules.
+
+[!<TheChastityCageOrgasmRule>+
+
+If the player orgasms while wearing a chastity cage they could remove, it becomes cursed.
+
++!]
+This is the chastity cage orgasm resolution rule:
+	let C be a random worn chastity cage;
+	if C is chastity cage:
+		if C is not cursed and C is not locked and C is not glued:
+			say "[bold type]You feel your [MediumDesc of C] become cursed[one of][or] again[stopping]![roman type][line break]";
+			now C is cursed;
+			compute summoned quest of C.
+The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
 
 Chapter - Wearability
 

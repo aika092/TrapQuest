@@ -219,7 +219,7 @@ Include (-
 ! Undo Output Control replacement for Parser.i6t: Reading the Command
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-[ Keyboard  a_buffer a_table  nw i w w2 x1 x2;
+[ Keyboard a_buffer a_table nw i w w2 x1 x2;
 	sline1 = score; sline2 = turns;
 
 	while (true) {
@@ -230,7 +230,7 @@ Include (-
 		! disastrous if it did:
 		#Ifdef TARGET_ZCODE;
 		a_buffer->0 = INPUT_BUFFER_LEN;
-		a_table->0 = 15;  ! Allow to split input into this many words
+		a_table->0 = 15; ! Allow to split input into this many words
 		#Endif; ! TARGET_
 
 		! Print the prompt, and read in the words and dictionary addresses
@@ -276,8 +276,8 @@ Include (-
 
 			for (i=0 : i<INPUT_BUFFER_LEN : i++) buffer2->i = a_buffer->i;
 			#Ifdef TARGET_ZCODE;
-			x1 = a_table->9;  ! Start of word following "oops"
-			x2 = a_table->8;  ! Length of word following "oops"
+			x1 = a_table->9; ! Start of word following "oops"
+			x2 = a_table->8; ! Length of word following "oops"
 			#Ifnot; ! TARGET_GLULX
 			x1 = a_table-->6; ! Start of word following "oops"
 			x2 = a_table-->5; ! Length of word following "oops"
@@ -291,9 +291,9 @@ Include (-
 			! Work out the position in the buffer of the word to be corrected:
 			#Ifdef TARGET_ZCODE;
 			w = a_table->(4*oops_from + 1); ! Start of word to go
-			w2 = a_table->(4*oops_from);    ! Length of word to go
+			w2 = a_table->(4*oops_from); ! Length of word to go
 			#Ifnot; ! TARGET_GLULX
-			w = a_table-->(3*oops_from);      ! Start of word to go
+			w = a_table-->(3*oops_from);  ! Start of word to go
 			w2 = a_table-->(3*oops_from - 1); ! Length of word to go
 			#Endif; ! TARGET_
 
@@ -367,7 +367,7 @@ Include (-
 ! Undo Output Control replacement for Parser.i6t: Reading the Command
 ! ==== ==== ==== ==== ==== ==== ==== ==== ==== ====
 
-[ Keyboard  a_buffer a_table  nw i w w2 x1 x2;
+[ Keyboard a_buffer a_table nw i w w2 x1 x2;
 	sline1 = score; sline2 = turns;
 
 	while (true) {
@@ -378,7 +378,7 @@ Include (-
 		! disastrous if it did:
 		#Ifdef TARGET_ZCODE;
 		a_buffer->0 = INPUT_BUFFER_LEN;
-		a_table->0 = 15;  ! Allow to split input into this many words
+		a_table->0 = 15; ! Allow to split input into this many words
 		#Endif; ! TARGET_
 
 		! Print the prompt, and read in the words and dictionary addresses
@@ -389,7 +389,7 @@ Include (-
 		! Set nw to the number of words
 		#Ifdef TARGET_ZCODE; nw = a_table->1; #Ifnot; nw = a_table-->0; #Endif;
 
-		! If the line was blank, ask the game to fill it in.  If it doesn't, get a fresh line.
+		! If the line was blank, ask the game to fill it in. If it doesn't, get a fresh line.
 		if (nw == 0) {
 			x2 = false; ! repurposing local variable as a flag
 
@@ -424,8 +424,8 @@ Include (-
 
 			for (i=0 : i<INPUT_BUFFER_LEN : i++) buffer2->i = a_buffer->i;
 			#Ifdef TARGET_ZCODE;
-			x1 = a_table->9;  ! Start of word following "oops"
-			x2 = a_table->8;  ! Length of word following "oops"
+			x1 = a_table->9; ! Start of word following "oops"
+			x2 = a_table->8; ! Length of word following "oops"
 			#Ifnot; ! TARGET_GLULX
 			x1 = a_table-->6; ! Start of word following "oops"
 			x2 = a_table-->5; ! Length of word following "oops"
@@ -439,9 +439,9 @@ Include (-
 			! Work out the position in the buffer of the word to be corrected:
 			#Ifdef TARGET_ZCODE;
 			w = a_table->(4*oops_from + 1); ! Start of word to go
-			w2 = a_table->(4*oops_from);    ! Length of word to go
+			w2 = a_table->(4*oops_from); ! Length of word to go
 			#Ifnot; ! TARGET_GLULX
-			w = a_table-->(3*oops_from);      ! Start of word to go
+			w = a_table-->(3*oops_from);  ! Start of word to go
 			w2 = a_table-->(3*oops_from - 1); ! Length of word to go
 			#Endif; ! TARGET_
 
@@ -520,13 +520,13 @@ Include (-
 ! This is called from Parser Letter A (primary command input) and NounDomain (disambig inputs).
 ! (Context-specific questions, such as YesOrNo and the end-game question, do not use this wrapper. They call AwaitInput directly.)
 ! In this function, unlike in AwaitInput, a_buffer and a_table are both mandatory. They may be either buffer/table (primary context) or buffer2/table2 (disambiguation context).
-[ ParserInput  incontext a_event a_buffer a_table    evtyp nw i w w2 x1 x2 undoable;
+[ ParserInput incontext a_event a_buffer a_table evtyp nw i w w2 x1 x2 undoable;
 	! Repeat loop until an acceptable input arrives.
 	while (true) {
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customise this.)
+		! Set up the input requests. (Normally just line input, but the game can customize this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -578,7 +578,7 @@ Include (-
 			VM_Tokenise(a_buffer,a_table);
 
 			! Work out the position in the buffer of the word to be corrected:
-			w = a_table-->(3*oops_from);      ! Start of word to go
+			w = a_table-->(3*oops_from);  ! Start of word to go
 			w2 = a_table-->(3*oops_from - 1); ! Length of word to go
 
 			! Write spaces over the word to be corrected:
@@ -655,13 +655,13 @@ Include (-
 ! This is called from Parser Letter A (primary command input) and NounDomain (disambig inputs).
 ! (Context-specific questions, such as YesOrNo and the end-game question, do not use this wrapper. They call AwaitInput directly.)
 ! In this function, unlike in AwaitInput, a_buffer and a_table are both mandatory. They may be either buffer/table (primary context) or buffer2/table2 (disambiguation context).
-[ ParserInput  incontext a_event a_buffer a_table    evtyp nw i w w2 x1 x2 undoable;
+[ ParserInput incontext a_event a_buffer a_table evtyp nw i w w2 x1 x2 undoable;
 	! Repeat loop until an acceptable input arrives.
 	while (true) {
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customise this.)
+		! Set up the input requests. (Normally just line input, but the game can customize this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -713,7 +713,7 @@ Include (-
 			VM_Tokenise(a_buffer,a_table);
 
 			! Work out the position in the buffer of the word to be corrected:
-			w = a_table-->(3*oops_from);      ! Start of word to go
+			w = a_table-->(3*oops_from);  ! Start of word to go
 			w2 = a_table-->(3*oops_from - 1); ! Length of word to go
 
 			! Write spaces over the word to be corrected:
@@ -798,7 +798,7 @@ The basic rulebooks provided by Undo Output Control are:
 
 These rulebooks provide hooks into the following "moments" in the UNDO process: (1) before testing whether UNDO is allowed/possible; (2) after an action has been _successfully_ undone; and (3) after an action has been successfully undone but immediately before it is reported, optionally allowing us to replace Inform's default output with our own. The report undoing an action rules should end explicitly in either success or failure. The rulebook will end in failure by default, which means that Inform's default reporting for UNDO will be printed. If you want to substitute Inform's reporting with your own, end your report undoing an action rule with "rule succeeds" or equivalent (see the example for a demonstration).
 
-The same is true of the more specialized rules:
+The same is true of the more specialised rules:
 
 	report prevented undo rules
 	report interpreter-undo-incapacity rules
@@ -919,7 +919,7 @@ This extension adds a new activity, "repairing an empty command". When the playe
 
 For instance:
 
-  Rule for repairing an empty command: change the text of the player's command to "look".
+ Rule for repairing an empty command: change the text of the player's command to "look".
 
 This happens early enough in parsing that even special commands like "undo" and "oops", or a sequence of commands separated by periods, can be inserted.
 

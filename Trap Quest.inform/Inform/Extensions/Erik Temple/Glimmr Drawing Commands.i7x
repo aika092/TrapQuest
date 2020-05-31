@@ -409,7 +409,7 @@ Include (-
 
 Part - Drawing bitmaps
 
-[Bitmaps are drawn by coloring individual pixels (or pixels in groups), and are specified by the user using an I7 list. Since they are drawn by setting pixels, they cannot be scaled as PNG or JPEG images can.]
+[Bitmaps are drawn by colouring individual pixels (or pixels in groups), and are specified by the user using an I7 list. Since they are drawn by setting pixels, they cannot be scaled as PNG or JPEG images can.]
 
 Chapter - Monochrome bitmaps
 
@@ -1024,9 +1024,9 @@ To draw/display an/-- image-map in (WIN - a g-window) at (COORD1 - a list of num
 	let Y1 be entry 2 of coord1;
 	display an image-map in (WIN) at (X1) by (Y1) using (IMG_MAP) rendered using (TSET) with tile-size (W) by (H).
 
-Section - Short form	of tileset image map
+Section - Short form of tileset image map
 
-To image-map (IMG_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) width/w (WDT - a number) tileset (TSET - a tileset) tile-size/size (W - a number) by/x (H - a number)  pixel/pixels/px/--, backgrounded:
+To image-map (IMG_MAP - a list of lists of numbers) at (COORD1 - a list of numbers) width/w (WDT - a number) tileset (TSET - a tileset) tile-size/size (W - a number) by/x (H - a number) pixel/pixels/px/--, backgrounded:
 	if the type of the current graphics window is g-graphics:
 		let x1 be entry 1 of coord1;
 		let y1 be entry 2 of coord1;
@@ -1114,15 +1114,15 @@ To decide what number is the image-height of (img - a figure name):
 
 Include (-
 
-[ FindImageWidth  img result img_width;
+[ FindImageWidth img result img_width;
 	result = glk_image_get_info(ResourceIDsOfFigures-->img, gg_arguments, gg_arguments+WORDSIZE);
-						img_width  = gg_arguments-->0;
+					img_width = gg_arguments-->0;
 	return img_width;
 ];
 
-[ FindImageHeight  img result img_height;
+[ FindImageHeight img result img_height;
 	result = glk_image_get_info(ResourceIDsOfFigures-->img, gg_arguments, gg_arguments+WORDSIZE);
-						img_height  = gg_arguments-->1;
+					img_height = gg_arguments-->1;
 	return img_height;
 ];
 
@@ -1345,7 +1345,7 @@ To say >console:
 	(- if ( GetEitherOrProperty( (+ console output window +), (+ g-present +) ) ) { glk_set_window( (+ console output window +).(+ ref number +)); -).
 
 To say <:
-	(-   glk_set_window( gg_mainwin ); } RunParagraphOn(); -).
+	(-  glk_set_window( gg_mainwin ); } RunParagraphOn(); -).
 
 Glimmr Drawing Commands ends here.
 
@@ -1365,7 +1365,7 @@ A note on what GDC will *not* do: It does not:
 
 For these reasons, GDC should be considered a low-level extension, mostly to be used by experts. Users wanting a robust solution that *does* handle all of the above points should use Glimmr Canvas-Based Drawing.
 
-Note that all graphics operations will be slower within the Inform IDE than in a stand-alone interpreter. Test your games outside the IDE to get a sense of their actual performance "in the wild". (The Extended Debugging extension will allow you to do this while also retaining debugging commands.)
+Note that all graphics operations will be slower within the Inform IDE than in a standalone interpreter. Test your games outside the IDE to get a sense of their actual performance "in the wild". (The Extended Debugging extension will allow you to do this while also retaining debugging commands.)
 
 Chapter: Including Glimmr Drawing Commands in a project
 
@@ -1397,7 +1397,7 @@ It is important to note that coordinates can be drawn outside of the window boun
 
 Section: Colours
 
-Colours in GDC are specified as numbers. However, we actually have a lot of freedom in how we actually specify those numbers. The (computationally) fastest way to specify a colour is as an unadorned decimal representation of the hex colour code that would be used in I6 glulx. This is inconvenient, since we have to convert a hex code to decimal (using a hex calculator or online conversion utility), and very often we will have first had to convert an RGB colour to hex.
+Colours in GDC are specified as numbers. However, we actually have a lot of freedom in how we actually specify those numbers. The (computationally) fastest way to specify a colour is as an unadorned decimal representation of the hex colour code that would be used in I6 glulx. This is inconvenient, since we have to convert a hex code to decimal (using a hex calculator or online conversion utility), and very often we will have first had to convert an RGB color to hex.
 
 	16777215 (decimal) = $FFFFFF (hex) = white = RGB (255, 255, 255)
 
@@ -1614,7 +1614,7 @@ The angle must be supplied as an integer when degrees are used, or as a real num
 
 		0°
 	270 + 90
-		180
+	  180
 
 Long forms:
 
@@ -1642,10 +1642,10 @@ A bitmap draws a rectangular image composed of individual "bits" that are specif
 
 	{
 		{ 0, 0, 1, 0, 0 },
-  		{ 0, 0, 1, 0, 0 },
- 		{ 1, 1, 1, 1, 1 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 }
+		{ 0, 0, 1, 0, 0 },
+		{ 1, 1, 1, 1, 1 },
+		{ 0, 0, 1, 0, 0 },
+		{ 0, 0, 1, 0, 0 }
 	}.
 
 The ones represent bits that are turned "on", while the zeros represent bits that are "off". The former will write to the screen using one colour, and the latter will either not draw anything, or will draw using a second colour (the background colour).
@@ -1706,25 +1706,25 @@ Speed notes:
 
 Section: Polychrome bitmaps
 
-A polychrome bitmap allows any RGB colour to be provided in the bitmap-array. RGB colours must be specified using a decimalized version of the hexadecimal representation of the colour (see Glulx Text Effects for more information)--the transformations described above cannot be used. Polychrome bitmaps are rarely human-readable (white, for example, will be listed in the bitmap-array as 16777215), but they do offer more flexibility of display.
+A polychrome bitmap allows any RGB colour to be provided in the bitmap-array. RGB colours must be specified using a decimalised version of the hexadecimal representation of the colour (see Glulx Text Effects for more information)--the transformations described above cannot be used. Polychrome bitmaps are rarely human-readable (white, for example, will be listed in the bitmap-array as 16777215), but they do offer more flexibility of display.
 
 Here is an example of a bitmap list for a polychrome bitmap, defined as a global list of numbers variable (this is an illustration of Ms. Pac-Man):
 
 	Pac-definition is a list of numbers variable. Pac-definition is {
-			{ 1,  -1,  -1, 16758465, 16758465,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1 },
-			{ -1,  -1,  -1, 16758465, 16758465, 16758465,  268431360,  268431360,  268431360,  268431360,  -1,  -1,  -1 },
-			{ -1,  -1, 16758465, 16758465, 16738740, 16738740,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  -1 },
-			{ 16758465, 16758465, 16738740, 16738740,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360 },
-			{ 16738740, 16758465, 16758465,  268431360,  268431360,  268431360, 2, 2,  268431360,  268431360,  268431360, 16738740, 16738740 },
-			{ -1, 16738740, 16738740,  268431360,  268431360, 2, 205,  268431360,  268431360,  -1,  -1,  -1,  -1 },
-			{ -1,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  -1,  -1,  -1,  -1,  -1,  -1 },
-			{ -1,  268431360,  268431360,  268431360,  268431360,  -1,  -1,  -1,  -1,  -1,  -1,  -1,  -1 },
-			{ -1,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  -1,  -1,  -1,  -1,  -1,  -1 },
-			{ -1,  268431360,  268431360,  268431360, 2,  268431360,  268431360,  268431360,  268431360,  -1,  -1,  -1,  -1 },
-			{ -1,  -1,  268431360,  268431360,  268431360,  268431360,  268431360,  	268431360,  268431360,  268431360,  268431360, 16738740, 16738740 },
-			{ -1,  -1,  268431360,  268431360,  268431360,  268431360,  268431360, 268431360,  268431360,  268431360,  268431360,  268431360,  268431360 },
-			{ -1,  -1,  -1,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  268431360,  -1 },
-			{ -1,  -1,  -1,  -1,  -1,  268431360,  268431360,  268431360,  268431360,  268431360,  -1,  -1, -1 }
+			{ 1, -1, -1, 16758465, 16758465, -1, -1, -1, -1, -1, -1, -1, -1 },
+			{ -1, -1, -1, 16758465, 16758465, 16758465, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 },
+			{ -1, -1, 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
+			{ 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
+			{ 16738740, 16758465, 16758465, 268431360, 268431360, 268431360, 2, 2, 268431360, 268431360, 268431360, 16738740, 16738740 },
+			{ -1, 16738740, 16738740, 268431360, 268431360, 2, 205, 268431360, 268431360, -1, -1, -1, -1 },
+			{ -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
+			{ -1, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1, -1, -1 },
+			{ -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
+			{ -1, 268431360, 268431360, 268431360, 2, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1 },
+			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 16738740, 16738740 },
+			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
+			{ -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
+			{ -1, -1, -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 }
 		}.
 
 NOTE: In a polychrome bitmap, all positive numbers map directly to colours. To leave a bit "off," use any negative number. If a background colour has been specified, the background colour will appear in these empty zones.
@@ -1844,7 +1844,7 @@ Long forms:
 		{ 11, 11, 11, 11, 11, 11, 11 },
 		{ 05, 00, 00, 00, 00, 00, 00 },
 		{ 05, 00, 00, 00, 00, 00, 00 },
-		{ 11, 11, 11, 11, 11, 11, 11 }  } rendered by the Dungeon-tileset with tile-size 16 by 16 pixels.
+		{ 11, 11, 11, 11, 11, 11, 11 } } rendered by the Dungeon-tileset with tile-size 16 by 16 pixels.
 
 	display an image-map in the graphics-window at 5 by 120 using Hallway-definition rendered by the Dungeon-tileset with tile-size 16 by 16 pixels.
 
@@ -2188,7 +2188,7 @@ Extending bitmap fonts is a two-step process. First, we need to add our new glyp
 			1, 0, 1, 1, 1, 0, 1,
 			1, 0, 0, 1, 1, 0, 1,
 			1, 0, 0, 0, 0, 0, 1,
-			0, 1, 1, 1, 1, 1, 0  } to the glyph map of Glimmr C&C.
+			0, 1, 1, 1, 1, 1, 0 } to the glyph map of Glimmr C&C.
 
 Never use any syntax but the "Add {} to the glyph map of ..." shown here to extend glyph maps. The order of glyphs in the glyph map is of critical importance, and new glyphs must always be added *after* all earlier glyphs.
 
@@ -2217,7 +2217,7 @@ Note that the "index" column has been left blank. Just as when we create a new f
 			1, 0, 1, 1, 1, 0, 1,
 			1, 0, 0, 1, 1, 0, 1,
 			1, 0, 0, 0, 0, 0, 1,
-			0, 1, 1, 1, 1, 1, 0  } to the glyph map of Glimmr C&C;
+			0, 1, 1, 1, 1, 1, 0 } to the glyph map of Glimmr C&C;
 		set blank indices for Glimmr C&C.
 
 But we can also use the same command on a temporary basis to fix the table. To see the calculated index numbers, simply remove the silently from the above phrase:
@@ -2258,7 +2258,7 @@ Now we are ready to tackle the font table. The columns for an image font table a
 
 The "glyph" and "char" columns are the same as their counterparts in the bitmap font table (see the bitmap font section for an explanation). The glyph-ref column is the figure name of the glyph associated with the character, e.g. Figure of Glimmr Lucidex 33.
 
-The "yoffset" and "advance" columns are similar in purpose to their counterparts in the bitmap font table.  The yoffset column describes the y-offset, number of pixels down from the imaginary top line of the font we should place the image file of the the glyph. An uppercase "A", for example, which is a tall character, likely will have a y-offset of 0. A character like lowercase "y", however, is a short character and will likely have a positive y-offset.
+The "yoffset" and "advance" columns are similar in purpose to their counterparts in the bitmap font table. The yoffset column describes the y-offset, number of pixels down from the imaginary top line of the font we should place the image file of the the glyph. An uppercase "A", for example, which is a tall character, likely will have a y-offset of 0. A character like lowercase "y", however, is a short character and will likely have a positive y-offset.
 
 That said, it is *highly* recommended that the yoffset always be set to 0, with every image file being the full height of the font-height. In other words, if the full font-height is 56 pixels, every image file should be sized at 56 pixels, with the glyph placed appropriately within. This is because scaling is inherently inaccurate, and images of different heights may not scale in exactly the same way. (Please see the image files for the Glimmr Image Font for a real-world example.) The yoffset column is there if it is needed, and a negative value can even be used, if needed, to make characters taller than the standard, but the quality of the output really will be better if height is controlled with the images rather than with offsets.
 
@@ -2384,18 +2384,18 @@ Note the window-drawing rule provided does not scale, centre, or otherwise vary 
 		paint a bitmap text (color g-Yellow) of "EAT IT" in the graphics-window at { 28, 64 } using Glimmr C&C with dot size 3 px.
 
 	The Pac-Lady is a list of lists of numbers variable. The Pac-Lady is {
-			{ 1, -1, -1, 16758465, 16758465, -1, -1, -1, -1, -1, -1, -1, -1 },
-			{ -1, -1, -1, 16758465, 16758465, 16758465, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 },
-			{ -1, -1, 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
-			{ 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
-			{ 16738740, 16758465, 16758465, 268431360, 268431360, 268431360, 2, 2, 268431360, 268431360, 268431360, 16738740, 16738740 },
-			{ -1, 16738740, 16738740, 268431360, 268431360, 2, 205, 268431360, 268431360, -1, -1, -1, -1 },
-			{ -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
-			{ -1, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1, -1, -1 },
-			{ -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
-			{ -1, 268431360, 268431360, 268431360, 2, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1 },
-			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 16738740, 16738740 },
-			{ -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
-			{ -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
-			{ -1, -1, -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 }
-		}.
+			 { 1, -1, -1, 16758465, 16758465, -1, -1, -1, -1, -1, -1, -1, -1 },
+			 { -1, -1, -1, 16758465, 16758465, 16758465, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 },
+			 { -1, -1, 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
+			 { 16758465, 16758465, 16738740, 16738740, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
+			 { 16738740, 16758465, 16758465, 268431360, 268431360, 268431360, 2, 2, 268431360, 268431360, 268431360, 16738740, 16738740 },
+			 { -1, 16738740, 16738740, 268431360, 268431360, 2, 205, 268431360, 268431360, -1, -1, -1, -1 },
+			 { -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
+			 { -1, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1, -1, -1 },
+			 { -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1, -1, -1 },
+			 { -1, 268431360, 268431360, 268431360, 2, 268431360, 268431360, 268431360, 268431360, -1, -1, -1, -1 },
+			 { -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 16738740, 16738740 },
+			 { -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360 },
+			 { -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, 268431360, -1 },
+			 { -1, -1, -1, -1, -1, 268431360, 268431360, 268431360, 268431360, 268431360, -1, -1, -1 }
+		 }.

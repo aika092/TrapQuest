@@ -28,7 +28,7 @@ Dungeon02 is a sandy labyrinth room. The printed name of Dungeon02 is "Large Sto
 REQUIRES COMMENTING
 
 *!]
-Dungeon03 is a sandy labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if saved-flat-intelligence > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon02 is L1/0-0-0-0-1-0.
+Dungeon03 is a sandy mandatory labyrinth room. The printed name of Dungeon03 is "Stone Cell". "In a far, dark corner of the dungeon, you find a room containing a private jail cell. The room is divided in half with metal bars, a door with an opened lock bridging the divide. Peering inside the cell, you can make out only a stone bench for the captive to lay on, and some chains on the walls to hold them in place. [if diaper quest is 0]Dark visions pass through your mind as you think of what could happen to someone stuck in this game for too long...[end if][if saved-flat-intelligence > 12][one of][line break]Examining the jail cell, you come across a strange carving under the bench. While most of the text in the dungeon is a language you don't know, there is a single word in plain English: hope. Standing up and returning to the lock, you notice that it was picked open, possibly by whoever was being held here. Maybe there's someone with the will to fight still in this world. Maybe you can find an ally.[or][stopping][end if]". The shape of Dungeon03 is L1/0-0-0-0-1-0.
 
 [!<dungeon04:LabyrinthRoom>*
 
@@ -218,6 +218,10 @@ REQUIRES COMMENTING
 
 *!]
 Dungeon31 is a sandy labyrinth room. The printed name of Dungeon31 is "[if diaper quest is 1]Theatre[otherwise]Brothel[end if]". "[if diaper quest is 0]If walls could talk, these ones would moan. You can practically smell the events that took place in here by walking around, admiring the secluded tables, dim lighting, and small stage. There is a podium up there, hinting that the guards might have bid on who they were taking back that night[otherwise]A bunch of tables and seats are dispersed amongst this room, that has a raised stage in one corner. The background of the stage is decorated with flowery and animal motifs like you might expect in a nursery, which makes it self-evident the type of 'productions' this theatre probably shows[end if]. [if the bimbo of the player > 13][line break][second custom style]Looks like people had fun in this room![roman type][line break][otherwise if diaper quest is 1]There's a gap between the background and the stage that you won't be able to see down without getting up onto the stage.[otherwise]A chill runs down your spine at the thought of being brought up to that podium in chains...[end if]".
+To decide which number is the obstacle-hindrance of (R - Dungeon31):
+	decide on 4.
+To decide which text is ObstacledDesc of (R - Dungeon31):
+	decide on "It takes a bit of extra time to weave in between the tables and chairs.".
 
 [!<dungeon32:LabyrinthRoom>*
 
@@ -282,7 +286,7 @@ Dungeon38 is a sandy labyrinth room. The printed name of Dungeon38 is "Chapel". 
 REQUIRES COMMENTING
 
 *!]
-Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's Room". "It wasn't much, but you can faintly make out this room as some kind of doctor's or medicine man's room. There are cabinets lined with various herbal remedies and a long table one could lie down on along the side of the room. Candles light the area, giving a very cosy, intimate feel to the entire area... or maybe just that no one had used the room in quite a while.".
+Dungeon39 is a sandy labyrinth room. The printed name of Dungeon39 is "Healer's Room". "It wasn't much, but you can faintly make out this room as some kind of doctor's or masseuse's room. There are cabinets lined with various herbal remedies and a long table one could lie down on along the side of the room. Candles light the area, giving a very cosy, intimate feel to the entire area... or maybe just that no one had used the room in quite a while.".
 
 [!<dungeon40:LabyrinthRoom>*
 

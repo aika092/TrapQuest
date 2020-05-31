@@ -1,6 +1,6 @@
 Swimsuit Framework by Dresses begins here.
 
-A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. The text-shortcut of swimsuit is "ss".
+A swimsuit is a kind of underdress. A swimsuit is usually unskirted. A swimsuit is usually nylon. A swimsuit is usually bottom-exclusive. A swimsuit is usually optional-top-displacable. A swimsuit is usually erect-nipple-exposing. The text-shortcut of swimsuit is "ss".
 
 To compute SelfExamineDesc of (C - a swimsuit):
 	say "A [ShortDesc of C] clings tightly to your body. ".
@@ -42,19 +42,27 @@ A string monokini is a kind of monokini. The armour of string monokini is usuall
 To decide which object is the unique-upgrade-target of (C - a string monokini):
 	[if tutorial is 1, decide on nothing;]
 	decide on a random off-stage transformation-eligible colour-sharing slut monokini.
+To decide which number is the penis-capacity of (C - a string monokini):[what's the largest size of penis it can cover?]
+	decide on 1.
 
 A minimalist monokini is a kind of monokini. A minimalist monokini is usually very low cut.
 To decide which number is the initial outrage of (C - a minimalist monokini):
 	decide on 6.
+To decide which number is the penis-capacity of (C - a minimalist monokini):[what's the largest size of penis it can cover?]
+	decide on 4.
 
 A strap monokini is a kind of monokini. Understand "strap" as strap monokini. A strap monokini is usually ridiculously low cut.
 To decide which number is the initial outrage of (C - a strap monokini):
 	decide on 8.
+To decide which number is the penis-capacity of (C - a strap monokini):[what's the largest size of penis it can cover?]
+	decide on 2.
 
 A slut monokini is a kind of string monokini. A slut monokini is usually neck covering.
 To decide which number is the initial outrage of (C - a slut monokini):
 	decide on 12.
 Definition: a slut monokini is end of transformation chain: decide yes.
+To decide which number is the penis-capacity of (C - a slut monokini):[what's the largest size of penis it can cover?]
+	decide on 1.
 
 To compute SelfExamineDesc of (O - a string monokini):
 	say "A [ShortDesc of O] stretches over your body without covering much at all. ".

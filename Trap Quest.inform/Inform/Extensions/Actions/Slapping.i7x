@@ -52,15 +52,15 @@ To decide which number is the slap damage of (P - a person):
 			if damage-explained > 1, say "+1 (living tentacles) ";
 	unless there is a worn slap ready projectile equippable:
 		if the breastskill of the player is 0:
-			let N be the largeness of breasts / 6;
-			decrease A by N;
-			if damage-explained > 1 and N > 0, say "-[N] (large breasts) ";
+			let N be (the largeness of breasts - 3) / 3;
+			let B be a random worn bra;
+			if B is bra, decrease N by the current support of B;
+			if N > 0:
+				decrease A by N;
+				if damage-explained > 1, say "-[N] (large breasts) ";
 		if the player is wrist bound:
 			decrease A by 2;
 			if damage-explained > 1, say "-2 (wrists bound) ";
-		if the weight of the player < 1:
-			decrease A by 2;
-			if damage-explained > 1, say "-2 (very low weight) ";
 		if the player is zeroG:
 			if damage-explained > 1, say "[if A * -1 >= 0]+[end if][A * -1] (weightless) ";
 			now A is 0;
@@ -77,6 +77,7 @@ Check slapping:
 	if the noun is container, try MimicInvestigating the noun instead;
 	if the noun is lake monster, say "You can't reach it from here." instead;
 	if the noun is not monster, say "Err, why would you do that?" instead;
+	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the noun is woman-barbara and woman-barbara is not angered:
 		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
@@ -89,6 +90,7 @@ The second portion of the "Slapping" action, which executes calculates damage ba
 
 +!]
 Carry out slapping:
+	allocate 6 seconds;
 	now attack-type is 1;
 	reset submitted monsters;
 	increase the fat-burning of arms by 20;
@@ -120,6 +122,7 @@ To decide which number is the zap damage of (P - a person):
 		let N be the damage improvement of currentZapper;
 		increase A by N;
 		if damage-explained > 1, say "[if N >= 0]+[end if][N] ([ShortDesc of currentZapper] bonus) ";
+	if A < 0, decide on 0;
 	decide on A.
 
 Zapping it with is an action applying to two things.
@@ -134,9 +137,11 @@ Check zapping it with:
 	if the second noun is not monster, say "Err, why would you do that?" instead;
 	if the noun is zap ready equippable and the noun is not worn, say "Unfortunately, you can't use that if you're not wielding it!" instead;
 	if the noun is not zappable, say "That can't be used to cast spells." instead;
+	if the player is in a predicament room, say "This is neither the time nor the place for violence." instead;
 	if the second noun is woman-barbara and woman-barbara is not angered:
-		say "Are you sure? You probably won't be able to make [him of the noun] friendly ever again, if you were to do that. ";
+		say "Are you sure? You probably won't be able to make [him of the second noun] friendly ever again, if you were to do that. ";
 		unless the player is consenting, say "You change your mind." instead;
+	if the second noun is ex-princess, say "Something tells you that would be a very bad idea." instead;
 	if the player is not able to zap, do nothing instead;
 	if the second noun is too intimidating, compute surrender to the second noun instead.
 
@@ -148,6 +153,7 @@ The second portion of the "Zapping" action, which executes calculates damage bas
 
 +!]
 Carry out zapping it with:
+	allocate 6 seconds;
 	now attack-type is 5;
 	reset submitted monsters;
 	increase the fat-burning of arms by 20;
@@ -158,7 +164,12 @@ Carry out zapping it with:
 	compute attack of currentZapper at the second noun;
 	if A > 0:
 		damage A on the second noun;
-		compute spell consequences of currentZapper.
+		compute spell consequences of currentZapper;
+	if the second noun is caged:
+		say "The chain holding the cage off of the ground creaks as the cage swings from side to side[one of]. That seems precarious[or][stopping]...";
+		if a random number between 0 and 15 < A:
+			now the second noun is unleashed;
+			say "[bold type]Suddenly, the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. [BigNameDesc of the second noun] steps out, stretching [himself of the second noun] to full height. Uh-oh...".
 Understand "zap [something] with [something]", "zap [something] at [something]", "cast [something] at [something]", "attack [something] with [something]" as zapping it with.
 
 Slapping ends here.

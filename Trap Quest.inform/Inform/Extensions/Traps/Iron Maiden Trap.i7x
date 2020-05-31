@@ -20,6 +20,7 @@ To trigger (Y - an iron-maiden):
 	now Y is expired;
 	now iron-maiden-turns is 0;
 	say "As you finish using the bucket and lower your arms, a giant metal contraption springs out of the ground from both in front and behind you, instantly closing around you with a loud CLANG! [one of]You're trapped inside, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel something slimy, cold, hard and... wriggling... pressing at you from all directions. The inside lining of the maiden is made of metal tentacles! [or]The Iron Maiden has gotten you again! Once again the slimy metal tentacles press in against you from all directions. [stopping]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].";
+	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
 	now the player is in Iron Maiden;
 	refresh the map-window.
 
@@ -40,6 +41,8 @@ A time based rule (this is the iron-maiden-punishment rule):
 			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, before falling open, clanging to the ground and allowing you back out in the open. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out metal tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their mechanical invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
 			increase the submission-count of the player by 1;
 			increase the sex-count of the player by 1;
+			repeat with T running through things in Iron Maiden:
+				unless T is the player or T is backdrop, now T is in the location of M;
 			now the player is in the location of M;
 			if M is penetrating face and (the stomach-semen of the player + the semen volume of belly > 0), PukeUp;
 			if M is penetrating a body part, progress quest of tentacle-quest;
@@ -119,5 +122,95 @@ Report urinating when the player is in Iron Maiden:
 
 To say IronMaidenTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.
+
+A cage trap is a kind of trap. There is 1 swing cage trap.
+
+The printed name of a cage trap is "[TQlink of item described]cage[TQxlink of item described][verb-desc of item described]". The text-shortcut of a cage trap is "cgt".
+
+Figure of cage trap is the file "Env/Forest/cage1.jpg".
+Figure of diaper cage trap is the file "Env/Forest/cage2.jpg".
+Figure of messy diaper cage trap is the file "Env/Forest/cage3.jpg".
+
+To decide which figure-name is the examine-image of (C - a cage trap):
+	let D be a random worn stuck diaper;
+	if D is diaper:
+		if D is messed, decide on figure of messy diaper cage trap;
+		decide on figure of diaper cage trap;
+	decide on figure of cage trap.
+
+To say ExamineDesc of (C - a cage trap):
+	say "A small cuboid metal cage with wide strong metal bars that fell down around you[if C is grabbing the player]. It seems like you should be able to just squeeze your way out between two bars, unless you've got something too thick to get through...[otherwise].[end if]".
+
+To trigger (Y - a cage trap):
+	if the player is not in danger:
+		say "[bold type]With a loud CRASH, a metal cage falls from a tree and surrounds you! [roman type]That noise might attract others to this location...";
+		now Y is not untriggered;
+		now Y is triggered;
+		now Y is revealed;
+		now the reset-timer of Y is 30;
+		now magnetism-timer is 20;;
+		repeat with M running through reactive monsters:
+			say TriggeredTrapReactFlav of M.
+
+To compute reset cooldown of (T - a cage trap):
+	if the reset-timer of T <= time-seconds or the player is in danger:
+		now the reset-timer of T is 0;
+		now T is untriggered;
+		now T is not expired;
+		now T is unrevealed;
+		if T is in the location of the player:
+			say "[bold type]There is a sound of a rope creaking as the cage resets, rising back into the tree[if the player is not clothing stuck and the player is not body stuck], freeing you[end if].[roman type][line break]";
+			if T is triggered:
+				repeat with C running through stuck clothing:
+					now C is not stuck;
+					if C is worn, say "As the cage shakes and shudders, your [ShortDesc of C] shrinks back down and becomes unstuck, and you fall out.";
+				repeat with C running through stuck body parts:
+					now C is not stuck;
+					say "As the cage shakes and shudders, your [ShortDesc of C] becomes unstuck, and you fall out.";
+		now T is not triggered;
+	otherwise:
+		decrease the reset-timer of T by time-seconds.
+
+Check going when there is a triggered cage trap in the location of the player:
+	let C be a random worn stuck clothing;
+	if C is clothing:
+		say "You can't go anywhere while your [ShortDesc of C] is stuck in between the cage bars!" instead;
+	let C be a random stuck body part;
+	if C is body part:
+		say "You can't go anywhere while your [ShortDesc of C] is stuck in between the cage bars!" instead;
+	allocate 6 seconds;
+	if diaper quest is 0:
+		let LB be the largeness of breasts;
+		let BL be the largeness of belly;
+		let TH be the thickness of hips;
+		let R be a random number between 1 and 10;
+		if debuginfo > 0, say "[input-style]Breasts squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) breast size[roman type][line break]";
+		if R <= LB:
+			now the stance of the player is 1;
+			now breasts is stuck;
+			say "You try to squeeze through the cage, but your [BreastDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+		if debuginfo > 0, say "[input-style]Belly squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) belly size[roman type][line break]";
+		if R <= BL:
+			now the stance of the player is 1;
+			now belly is stuck;
+			say "You try to squeeze through the cage, but your [BellyDesc] gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+		if debuginfo > 0, say "[input-style]Hips squeeze check: cage squeeze attempt d10 ([R]) | ([TH].5) hips width[roman type][line break]";
+		if R <= TH:
+			now the stance of the player is 1;
+			now hips is stuck;
+			say "You try to squeeze through the cage, but your [HipDesc] get stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to somehow release you.[roman type][line break]" instead;
+	let D be a random worn diaper;
+	if D is diaper:
+		let BK be the DQBulk of the player;
+		if diaper-stack is worn, increase BK by 5;
+		let R be a random number between 1 and 10;
+		if debuginfo > 0, say "[input-style]Diaper squeeze check: cage squeeze attempt d10 ([R]) | ([BK].5) diaper bulk[roman type][line break]";
+		if R <= BK:
+			now the stance of the player is 1;
+			now D is stuck;
+			say "You try to squeeze through the cage, but as your [ShortDesc of D] brushes against the bars, some sort of magic curse makes it grow twenty times in size! It gets stuck between the bars! You're completely stuck! [bold type]You'll have to wait for the cage to release you.[roman type][line break]" instead;
+	repeat with T running through cage traps:
+		now T is not triggered;
+	say "You manage to squeeze out of the cage. [bold type]You are still in the [location of the player].[roman type][line break]" instead.
 
 Iron Maiden Trap ends here.

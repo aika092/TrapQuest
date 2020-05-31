@@ -17,10 +17,14 @@ REQUIRES COMMENTING
 
 @!]
 A dildo trap is a kind of trap. A dildo trap is usually potentially wire. The text-shortcut of a dildo trap is "dt".
-Figure of dildo trap is the file "Env/MultiFloor/dildopole1.png".
+[Figure of dildo trap is the file "Env/MultiFloor/dildopole1.png".]
+Figure of dungeon dildo trap is the file "Env/Dungeon/dildopole1.jpg".
+Figure of woods dildo trap is the file "Env/Forest/dildopole1.jpg".
+Figure of hotel dildo trap is the file "Env/Hotel/dildopole1.jpg".
+Figure of mansion dildo trap is the file "Env/Mansion/dildopole1.jpg".
 
 To decide which figure-name is the examine-image of (C - a dildo trap):
-	decide on figure of dildo trap.
+	decide on figure of dungeon dildo trap.
 
 [!<DildoTrap>@<SayEnvironmentDesc>+
 
@@ -124,7 +128,7 @@ To trigger pole trap (Y - a dildo trap):
 					increase the notch-taken of P by 1;
 					say "Another bead is forced inside!";
 		otherwise if O is clothing:
-			if O is bottom level ass protection or (target-BP is vagina and O is bottom level protection):
+			if (target-BP is asshole and O is bottom level ass protection) or (target-BP is vagina and O is bottom level protection):
 				let A be a random number between 5 and 12;
 				let D be the anal defence of the player;
 				if target-BP is vagina, now D is the vaginal defence of the player;
@@ -217,7 +221,7 @@ To compute DollObservation humiliation:
 			otherwise say "[one of][variable custom style]I wonder if [he of M] is enjoying the show?[roman type][line break][or][variable custom style]What does [he of M] want?[roman type][line break][or][big his of M] disgust actually makes the experience more exciting.[or][big he of M] shakes [his of M] head at your lewd display.[in random order]";
 			FavourDown M;
 		moderateHumiliate;
-	[Sex dolls are not intelligent. But I think it'd be especially humiliating to be posing like a doll in front of a doll.]
+	[Sex dolls are unintelligent. But I think it'd be especially humiliating to be posing like a doll in front of a doll.]
 	repeat with M running through sex dolls in the location of the player:
 		compute the dildo stuck taunting of M;
 		moderateHumiliate.
@@ -277,7 +281,7 @@ To Jump From The Dildo:
 			say "Your [ShortDesc of C] [if C is shoes]are[otherwise]is[end if] stuck, stopping you from jumping off the dildo!";
 		otherwise:
 			say "You can't jump because your [printed name of C] is stuck in place.";
-	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 1 and 2 is 1):
+	otherwise if H is shoes or (dildoJumpSucceeded is true and clumsy is 1 and a random number between 0 and 1 < clumsy april fools):
 		let D be the dexterity of the player;
 		let W be the weight of the player;
 		let Hi be 0;
@@ -383,6 +387,9 @@ A drill pole trap is a kind of dildo trap. There are 10 drill pole traps. The pr
 To say ExamineDesc of (C - a drill pole trap):
 	say "A metal pole with a flesh coloured dildo on the end. When it is inside you, it spins rapidly! Usually...".
 
+To decide which figure-name is the examine-image of (C - a drill pole trap):
+	decide on figure of woods dildo trap.
+
 [!<TheSpawnInitialDrillPoleTrapsRule>+
 
 REQUIRES COMMENTING
@@ -473,6 +480,9 @@ To say ExamineDesc of (C - a creampie pole trap):
 	say "A metal pole with a flesh coloured dildo on the end. It has a hole in the tip which shoots [semen] upon successful penetration[if F is fuckhole]. [one of]It rises so high up off the ground that even on tip toes you can't get it out of your [variable F]![or]Maybe if you [bold type]jump[roman type] high enough you can get off it?[or][stopping][otherwise].[end if]".
 Understand "insemination" as a creampie pole trap.
 
+To decide which figure-name is the examine-image of (C - a creampie pole trap):
+	decide on figure of hotel dildo trap.
+
 Definition: a creampie pole trap is father material: decide yes.
 
 [!<TheSpawnInitialCreampiePoleTrapsRule>+
@@ -560,6 +570,9 @@ REQUIRES COMMENTING
 A ghostly dildo pole trap is a kind of dildo trap. There are 10 ghostly dildo pole traps. The printed name of ghostly dildo pole trap is "[TQlink of item described]ghostly dildo pole trap[TQxlink of item described][verb-desc of item described]".
 To say ExamineDesc of (C - a ghostly dildo pole trap):
 	say "A seemingly incorporeal pole with a translucent dildo on the end.".
+
+To decide which figure-name is the examine-image of (C - a ghostly dildo pole trap):
+	decide on figure of mansion dildo trap.
 
 [!<TheSpawnInitialGhostlyDildoPoleTrapsRule>+
 

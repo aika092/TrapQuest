@@ -32,7 +32,6 @@ Check giving:
 		do nothing instead;
 	otherwise if the second noun is witch:[TODO: compute WitchGiving (T - a thing) to (M- a witch)]
 		if the second noun is unfriendly, say "[variable custom style]I think it's a bit late for that![roman type][line break]" instead;
-		if the noun is soul gem, try offering the noun to the second noun instead;
 		if the noun is vessel:
 			if the doses of the noun is 0, say "That's empty." instead;
 			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would [he of the second noun] want that?" instead;
@@ -53,7 +52,10 @@ Check giving:
 			[say "Minor bug: action should end here! Don't worry, Aika knows about it." instead.]
 		otherwise if the noun is diaper:
 			let T be the total-soak of the noun - the water-soak of the noun;
-			if T < the soak-limit of the noun / 3 and the noun is not messed:
+			if diaper quest is 1 and the class of the player is priestess and the noun is worn:
+				allocate 2 seconds;
+				say "[second custom style]'I'm LITERALLY an altar witch. Do you really think I'm about to anger the altar Goddess by removing the diaper of an altar Priestess?'[roman type][line break]";
+			otherwise if T < the soak-limit of the noun / 3 and the noun is not messed:
 				allocate 2 seconds;
 				say "[second custom style]'[if the total-soak of the noun is 0]Why would I want that? It's bone dry!'[otherwise if the total-soak of the noun >= the soak-limit of the noun / 3]I'm sorry, but there's too much water in that diaper. I need the good shit.'[otherwise]Nah, that's not used enough for me. Use it some more and then come back to me.'[end if][roman type][line break]";
 			otherwise:
@@ -104,7 +106,7 @@ Check giving:
 				now the second noun is unbitchy;
 				now the curse-quest of the second noun is 3 instead;
 			otherwise:
-				say "Why would [he of the second noun] want that?" instead;
+				try offering the noun to the second noun instead;
 	try offering the noun to the second noun instead.
 
 Giving ends here.

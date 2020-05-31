@@ -22,7 +22,6 @@ Definition: a cow print bikini top is white themed: decide yes.
 Definition: a cow print bikini top is discovered varied: decide no.
 
 To compute periodic effect of (B - a cow print bikini top):
-	BraGrow B;
 	let K be a random off-stage cow print bikini bottoms;
 	if lactation fetish is 1 and a random number between 1 and 250 - (unlucky * 100) is 1 and K is actually summonable:
 		say "[bold type]A cow print bikini bottom appears around your loins, matching your [ShortDesc of B]![roman type][line break]";
@@ -38,7 +37,7 @@ To BraGrow (B - a cow print bikini top): [Quadruple the standard chance of the b
 			otherwise:
 				say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of your [printed name of B]![otherwise]fill your [printed name of B]![end if]";
 				BustUp 1;
-		otherwise if the size of B is the largeness of breasts and the player is not top heavy and the size of B < the max size of B and a random number between 1 and 25 is 1 and the support of B > 1:
+		otherwise if the size of B is the largeness of breasts and the player is not top heavy and the size of B < the max size of B and a random number between 1 and 25 is 1:
 			if B is milk production, say "You feel your [printed name of B] grow in size to allow your [BreastDesc] to produce [if the milk volume of breasts > 0]even more [end if][milk]!";
 			otherwise say "You feel your [printed name of B] grow in size to allow your [BreastDesc] to fill out even further!";
 			increase the size of B by 1.

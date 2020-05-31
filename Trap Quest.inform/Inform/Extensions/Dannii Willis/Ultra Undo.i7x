@@ -185,7 +185,7 @@ Include (-
 	@save gg_savestr res;
 	if (res == -1) {
 		! The player actually just typed "restore". We're going to print
-		!  GL__M(##Restore,2); the Z-Code Inform library does this correctly
+		! GL__M(##Restore,2); the Z-Code Inform library does this correctly
 		! now. But first, we have to recover all the Glk objects; the values
 		! in our global variables are all wrong.
 		Ultra_Undo_Test();
@@ -202,7 +202,6 @@ Include (-
 ];
 
 -) instead of "Save The Game Rule" in "Glulx.i6t".
-
 
 Section - Cleaning up
 

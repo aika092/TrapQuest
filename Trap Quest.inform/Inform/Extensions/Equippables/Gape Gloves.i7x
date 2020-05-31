@@ -71,9 +71,6 @@ Check replacing:
 	if gape-gloves is worn and gape-gloves is wrist-bound-behind:
 		unless the noun is crotch-assless, say "You can't replace any clothing while you are stuck with your [MediumDesc of gape-gloves] on your [AssDesc]!" instead.
 
-To decide which object is the concealer of (C - gape-gloves):
-	decide on nothing.
-
 This is the gape gloves butt slut rule:
 	if gape-gloves is worn, increase the desirability of asshole by 20.
 The gape gloves butt slut rule is listed in the butt slut eligibility rules.
@@ -83,5 +80,7 @@ To compute periodic effect of (C - gape-gloves):
 	if S is clothing:
 		say "Your [ShortDesc of S] quickly bunches up at the back thanks to the position of your hands on your [AssDesc].";
 		displace S.
+To compute school periodic effect of (C - gape-gloves):
+	compute periodic effect of C.
 
 Gape Gloves ends here.

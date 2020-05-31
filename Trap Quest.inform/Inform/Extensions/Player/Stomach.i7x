@@ -52,7 +52,7 @@ To decide which number is potential-fullness-bonus:
 	if the stomach-food of the player > 4, decide on 3; [we don't want this to be too crazy]
 	decide on (the stomach-food of the player + 1) / 2.
 
-This is the satiated causes bonus strength rule:
+An all later time based rule (this is the satiated causes bonus strength rule):
 	let F be fullness-bonus;
 	if F > old-fullness-bonus:
 		if old-fullness-bonus is 0, say "[bold type]Now that you're full of food and drink, and [if there is a worn diaper]properly padded[otherwise]wearing underwear[end if], you feel the game [one of]making you feel incredible and[or]once again[stopping] rewarding you with [if F > 2]huge amounts of [otherwise if F > 1]large amounts of [end if]strength![roman type][line break]";
@@ -68,7 +68,6 @@ This is the satiated causes bonus strength rule:
 		otherwise:
 			say "Now that you are not wearing [if diaper messing >= 5]underwear[otherwise]a diaper[end if], your bonus strength from feeling full has disappeared.";
 		now old-fullness-bonus is F.
-The satiated causes bonus strength rule is listed in the advance counters rules.
 
 [!<StomachUpX>+
 
@@ -105,6 +104,7 @@ REQUIRES COMMENTING
 To StomachFoodUp (X - a number):
 	if the latex-transformation of the player > 4, now X is 0;
 	while X > 0:
+		now DQMessingHunger is false; [Hunger mechanics go back to inactive for players who were magically made hungry]
 		increase the stomach-food of the player by 1 + xavier-belt-link;
 		if xavier-throat-link is 1 and rectum > 0 and diaper messing >= 3, increase rectum by 1 + xavier-belt-link;
 		decrease X by 1.
@@ -150,6 +150,7 @@ To StomachSemenUp (X - a number):
 		if there is a facefucker thing penetrating face:
 			OralSexAddictUp 1;
 			if the latex-transformation of the player < 5, PukeUp;
+			otherwise progress quest of cum-swallowing-quest;
 	if there is a worn tethering lipstick collar, end tethering.
 
 [!<PersonIsBecomingMoreAddictedToCum>+
@@ -227,7 +228,7 @@ To PukeUp:
 			transform R into D;
 		otherwise if T is actually summonable and a random number between 5 and the oral sex addiction of the player > 7:
 			say "[bold type]A cold metal piercing suddenly appears in your mouth, embedded into your tongue! You've never had something like that in your mouth before, so it's difficult to stop thinking about the [if the bimbo of the player < 10]unwelcome [end if]intrusion. Even worse, you can feel its cursed magic somehow preventing you from speaking properly![roman type][line break]";
-			summon T cursed;
+			summon T cursed with quest;
 		otherwise if there is a worn baby bonnet and P is actually summonable:
 			say "[bold type]Your baby's bonnet flutters wildly and a large pink pacifier appears in your mouth! You can't remove it! [roman type]But it does make you feel stronger...";
 			summon P cursed with quest;

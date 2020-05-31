@@ -7,6 +7,42 @@ A game universe initialisation rule:
 	repeat with C running through rare clothing:
 		increase the transform-resistance of C by 1.
 
+To decide which object is most-transformable-clothing:
+	let lowest-outrage be 21;
+	let LT be the list of worn upgradable clothing;
+	if the number of entries in LT is 0:
+		let C be a random worn transformation chain transformable clothing;
+		if C is nothing, let C be a random worn transformable clothing;
+		decide on C;
+	let X be a random worn clothing;
+	sort LT in random order;
+	repeat with C running through LT:
+		let O be 0;
+		if diaper quest is 0, let O be the initial outrage of C;
+		otherwise let O be the initial cringe of C;
+		if O < lowest-outrage:
+			now lowest-outrage is O;
+			now X is C;
+	decide on X.
+
+To decide which object is most-transformable-uncovered-clothing:
+	let LT be the list of worn currently uncovered upgradable clothing;
+	if the number of entries in LT is 0:
+		let C be a random worn transformation chain currently uncovered transformable clothing;
+		if C is nothing, let C be a random worn currently uncovered transformable clothing;
+		decide on C;
+	let X be a random worn clothing;
+	let lowest-outrage be 21;
+	sort LT in random order;
+	repeat with C running through LT:
+		let O be 0;
+		if diaper quest is 0, let O be the initial outrage of C;
+		otherwise let O be the initial cringe of C;
+		if O < lowest-outrage:
+			now lowest-outrage is O;
+			now X is C;
+	decide on X.
+
 To decide which object is the potential-upgrade-target of (C - a clothing):
 	[THIS IS THE TEMPLATE FOR FINDING THE BEST TRANSFORMATION TARGET.]
 	now theme-share-target is C;
@@ -129,9 +165,12 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	if D is glued, now C is glued;
 	otherwise now C is unglued;
 	if (C is ass plugging and D is ass plugging) or (C is vagina plugging and D is vagina plugging), now the plug size of C is the plug size of D;
-	repeat with B running through body parts penetrated by D:
-		now C is penetrating B;
-		now D is not penetrating B;
+	repeat with B running through body parts:
+		if D is penetrating B:
+			now C is penetrating B;
+			now D is not penetrating B;
+		otherwise:
+			now C is not penetrating B;
 	[if D is crotch-displaced and C is crotch covering, now C is crotch-displaced;] [not sure about this one]
 	if D is crotch-unzipped and C is crotch-zipped, ZipDown C;
 	if D is crotch-ripped and (C is crotch-intact or C is crotch-zipped or C is crotch-skirted), now C is crotch-ripped;
@@ -211,12 +250,12 @@ To say TransformReaction of (C - a clothing): [We make the assumption it's worse
 		otherwise:
 			say "[variable custom style][one of]I guess this will do for now.[or]This is pretty out there, but I'll be fine wearing it.[or]I don't feel too uncomfortable wearing this.[or]This wouldn't be my first choice to wear, but it's not bad.[or]Fair enough, I'll wear this for now.[or]Hmm, this will have to do, I guess![or]I'll be fine wearing this for now.[in random order][roman type][line break]";
 	otherwise if diaper quest is 1 and the humiliation of the player < HUMILIATION-BROKEN:
-		 if C is not gloves and C is equippable or C is bag of holding:
+		if C is not gloves and C is equippable or C is bag of holding:
 			say "[if C is too adult][line break][second custom style][one of]Ugh, this is still way too boring for me![or]*sigh* Isn't there any way to make it even more obvious it's for babies?[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with using this.[or]I'm fine holding onto this.[purely at random][otherwise][line break][variable custom style][one of]Ooh, I look even more adorable with this![or]Ooh, how cute! I'm more than happy carrying this.[in random order][end if][roman type][line break]";
 		otherwise:
 			say "[if C is too adult][line break][second custom style][one of]Ugh, this is still way too adult for me![or]*sigh* Isn't there any way to make it even more cartoony and fun?[or]I would prefer something that properly lets everyone know just how immature I am![or]Hmm, this is better but it doesn't scream 'will you take care of me?' in the way I was hoping.[or]Hmm, better, but still too grown up for me.[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise][line break][variable custom style][one of]I love wearing this![or]I feel so giddy wearing this![or]Ooh, I'm fine wearing this![or]Ooh, how cute! I'm more than happy wearing this.[or]Wow, I look so adorable in this![in random order][end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
-		 if C is not gloves and C is equippable or C is bag of holding:
+		if C is not gloves and C is equippable or C is bag of holding:
 			say "[if C is too boring][line break][second custom style][one of]Ugh, this is still way too practical for me! I need something that yells 'I'M A DISGUSTING WHORE'.[or]*sigh* Isn't there any way to make it even more slutty?[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with using this.[or]This is still fine for me.[purely at random][otherwise][line break][variable custom style][one of]Oh nice, I'm going to love showing this off![or]Ooh, how lush! My friends would be so jealous if they could see me with this.[in random order][end if][roman type][line break]";
 		otherwise:
 			say "[if C is too boring and C is actually dense and C is breast covering or C is belly covering or C is crotch covering][line break][second custom style][one of]Ugh, this is still way too plain for me![or]*sigh* Isn't there any way to make it even more revealing?[or]Aww, I was hoping for something even more slutty![or]Hmm, can't it get even more revealing?[in random order][otherwise if C is too boring][second custom style][one of]Ugh, this is still way too boring for me![or]*sigh* Isn't there any way to make it even more lewd?[or]I would prefer something that properly lets everyone know just how slutty I am![or]Hmm, this is better but it doesn't scream 'FUCK ME' in the way I was hoping.[or]Hmm, better, but still too boring for me.[in random order][otherwise if the bimbo of the player < 7][line break][first custom style][one of]I don't have any problems with wearing this.[or]I'm fine with wearing this.[purely at random][otherwise][line break][variable custom style][one of]I love wearing this![or]I feel AMAZING wearing this![or]Ooh, I'm fine wearing this![or]Ooh, how lush! I'm more than happy wearing this.[or]Wow, I look [beautiful] in this![in random order][end if][roman type][line break]".
@@ -225,6 +264,7 @@ To silently transform (D - a clothing) into (C - a clothing):
 	now C is worn by the player;
 	compute C inheriting from D;
 	only destroy D;
+	if D is headgear, commence recycling of D; [stops that headgear re-appearing for a while]
 	layer C correctly;
 	if the quest of C is not appropriate, compute quest of C.
 

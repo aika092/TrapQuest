@@ -1,6 +1,6 @@
 Open Front Dress by Dresses begins here.
 
-an open-front-dress is a kind of overdress. an open-front-dress is super-short. an open-front-dress is arm exposing. an open-front-dress is transformation-rare.
+an open-front-dress is a kind of overdress. an open-front-dress is super-short. an open-front-dress is arm exposing. an open-front-dress is erect-nipple-exposing. an open-front-dress is transformation-rare.
 
 To decide which number is the initial outrage of (C - an open-front-dress):
 	decide on 10.
@@ -23,7 +23,7 @@ To decide which figure-name is clothing-image of (C - yellow-open-front-dress):
 	decide on figure of yellow-open-front-dress.
 
 To say ClothingDesc of (C - yellow-open-front-dress):
-	say "This would be a completely normal yellow sundress but the fabric parts just below the chest, spreading wider and wider, to fully expose [if C is worn]your[otherwise]the wearer's[end if] [if diaper quest is 1]underwear[otherwise]privates[end if].".
+	say "This would be a completely normal yellow sun-dress but the fabric parts just below the chest, spreading wider and wider, to fully expose [if C is worn]your[otherwise]the wearer's[end if] [if diaper quest is 1]underwear[otherwise]privates[end if].".
 
 To say ShortDesc of (C - yellow-open-front-dress):
 	say "yellow open front dress".

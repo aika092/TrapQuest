@@ -37,7 +37,7 @@ To set up (M - receptionist):
 	now the monstersetup of M is 1;
 	now M is in [School01] Dungeon10;
 	now M is guarding;
-	now the difficulty of M is the starting difficulty of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the starting difficulty of (M - receptionist):
@@ -113,7 +113,8 @@ To compute perception of (M - receptionist):
 			display entire map; [needs to update because the portal is now closed]
 	otherwise if playerRegion is School:
 		if armband is worn:
-			say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
+			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens and a cool trophy[end if][one of]! All you have to do is pull that lever before you leave[or][stopping]!'[roman type][line break]";
+			otherwise say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'Hey, I recognise you! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";
 			anger M;
@@ -122,17 +123,33 @@ To compute perception of (M - receptionist):
 		say "[line break][speech style of M]'I'm afraid I've been sent here because you've neglected your studies. I've been ordered to ensure that you return with me. You're not going to put up a fight, are you?'[roman type][line break]";
 		make M expectant.
 
+To say EnslavedDominationFlav of (M - receptionist):
+	say "You force [NameDesc of M] to bend over [his of M] desk. With [his of M] ankle chained down, there's not much [he of M] can do to stop you. ";
+	if the size of penis > 0 and the number of worn cursed undisplacable clothing is 0:
+		if penis is penis-erect or penis is erect-at-will:
+			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
+			orgasm quietly;
+			check virginity with M;
+		otherwise:
+			say "Holding your [player-penis] up against [his of M] well-lubricated snatch, you are dismayed to find that you can't seem to get hard right now. Slightly disheartened, you settle for teasing [him of M] by rubbing the tip up and down [his of M] slit until [he of M][']s practically begging to be railed, and then backing away while laughing mockingly.";
+	otherwise:
+		say "You begin exploring [his of M] holes with your fingers, trying to extract as many squeaks, squeals and grunts as you can from the poor [man of M] before you get bored. Which you eventually, do, of course.";
+	say "[speech style of M]'H...haaah~ Thank you for punishing me, [if the player is presenting as male]Master[otherwise]Mistress[end if] [NameBimbo]...'[roman type][line break]".
+
+To decide which number is the EnslavedDominationThreshold of (M - receptionist):
+	decide on 6.
+
 Part - Combat
 
 Definition: receptionist (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if (M is in School01 or M is not in the School) and the noun is north, decide yes; [The (unfriendly) receptionist always blocks the entrance into the school unless you kill her]
-	let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	let R be (a random number from 1 to (the difficulty of M * 2)) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
 	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
 
 To say MovementBlock of (M - receptionist):
-	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the class of the player is hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
+	say "[BigNameDesc of M] moves into the doorway, completely blocking your path![line break][speech style of M]'No [honey of M], you're not allowed [if the noun is north]into the school[otherwise]to just skip classes[end if] [if armband is worn and playerRegion is School]with that attitude[otherwise if armband is worn]without consequences for your actions[otherwise]without an armband[end if][if the class of the player is princess]. Don't expect to get special treatment just because you're a princess[otherwise if the class of the player is maid]. I do not care what mess you're trying to clean up[otherwise if the class of the player is schoolgirl]. If you got away with this sort of thing at your old school, you're in for a rude awakening here[otherwise if the class of the player is cheerleader]. Don't worry, I'm sure someone like you can catch up in no time[otherwise if the player is a hooker in training]. I already know you're eager to learn, but that doesn't mean you don't have to follow the same rules as everyone else[end if].'[roman type][line break]";
 
 To compute (M - a monster) stomping (N - receptionist):
 	if M is in the location of the player, say "Before [he of N] can react, [NameDesc of N] has been pinned to the wall by [NameDesc of M], and [his of M] [manly-penis] slid into [his of N] asshole. [big he of N] shrieks [line break][speech style of N]'I don't get paid enough for this!'[roman type][line break]but this turns into an undecipherable wail as [he of M] starts cumming. [big his of N] belly stretches to contain all the [semen]. After [he of N] is full, [he of M] tosses [him of N] to the ground, where [he of N] promptly faints.";

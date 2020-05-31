@@ -3,6 +3,7 @@ Cutoffs by Knickers begins here.
 cutoffs is a kind of knickers. cutoffs is usually denim. cutoffs is usually totally-exclusive. The armour of cutoffs is 7. Understand "pair", "of" as cutoffs. The soak-limit of cutoffs is usually 12.
 
 Definition: a cutoffs is blue themed: decide yes.
+Definition: a cutoffs is rippable: decide yes.
 
 To compute SelfExamineDesc of (K - a cutoffs):
 	say "A pair of tiny tiny denim cutoffs fails to provide much dignity to your [ShortDesc of hips]. ";
@@ -60,5 +61,75 @@ Figure of heart window cutoffs is the file "Items/Clothes/Lower/Underwear/Skimpy
 
 Definition: heart window cutoffs is transformation-protected: decide yes.
 Definition: heart window cutoffs is heart themed: decide yes.
+
+predicament-painted-cutoffs is a knickers. predicament-painted-cutoffs is unique. predicament-painted-cutoffs is crotch-exposing. The armour of predicament-painted-cutoffs is 1. The printed name of predicament-painted-cutoffs is "[clothing-title-before]painted cutoffs[clothing-title-after]". The text-shortcut of predicament-painted-cutoffs is "pcf". Understand "painted", "cutoffs" as predicament-painted-cutoffs.
+
+Definition: predicament-painted-cutoffs is hand-blocked if current-predicament is vibe-photo-predicament or (realisticArms is 1 and entry 1 in the armUses of arms is painted-vibrator-hands and entry 2 in the armUses of arms is painted-vibrator-hands).
+
+Figure of predicament-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs1.jpg".
+Figure of full-painted-cutoffs is the file "Items/Clothes/Lower/Pants/paintedcutoffs2.jpg".
+
+To decide which figure-name is clothing-image of (H - predicament-painted-cutoffs):
+	if current-predicament is vibe-photo-predicament, decide on figure of full-painted-cutoffs;
+	decide on figure of predicament-painted-cutoffs.
+
+To say UniqueClothingDesc of (Y - predicament-painted-cutoffs):
+	say "Blue and white paint has been applied to your loins in a way that would make it look like you're wearing denim cutoffs[if current-predicament is vibe-photo-predicament]! Hopefully it's convincing enough that people won't notice...[otherwise], but there are two hand-prints missing! In order to make it look convincing, you need to hold your hands (which also have blue paint on them) in the exact correct position, which makes it look like you have your hands in your pockets. This will put the tips of your thumbs right on top of your clit. To decide where to put your arms, you need to use the command [bold type]adjust arms[roman type][end if].".
+
+To say ShortDesc of (Y - predicament-painted-cutoffs):
+	say "painted-on cutoffs".
+
+Definition: predicament-painted-cutoffs is blue themed: decide yes.
+Definition: predicament-painted-cutoffs is transformation-protected: decide yes.
+Definition: predicament-painted-cutoffs is removable: decide no.
+Definition: predicament-painted-cutoffs is discovered varied: decide no.
+Definition: predicament-painted-cutoffs is potentially at least partially asshole covering if it is hand-blocked.
+Definition: predicament-painted-cutoffs is potentially asshole covering if it is hand-blocked.
+Definition: predicament-painted-cutoffs is potentially at least partially vagina covering if it is hand-blocked.
+Definition: predicament-painted-cutoffs is potentially vagina covering if it is hand-blocked.
+
+To say unique-verb-desc of (T - predicament-painted-cutoffs):
+	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say "[if realisticArms is 1 and current-predicament is not vibe-photo-predicament] [link][bracket]arms[close bracket][as]adjust arms[end link][end if]".
+
+To construct normal buttons for (T - predicament-painted-cutoffs):
+	if ButtonTableFull is 0 and current-predicament is not vibe-photo-predicament and realisticArms is 1:
+		choose a blank row in the Table of Buttons;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonImage entry is the examine-image of painted-vibrator-hands;
+		now the ButtonColour entry is lightModeFullGreen.
+
+To compute school periodic effect of (C - predicament-painted-cutoffs):
+	if current-predicament is vibe-photo-predicament:
+		if the player is in Predicament20 or the player is not in a predicament room:
+			say "[bold type]The paint on your loins fades from existence![roman type][line break]";
+			only destroy predicament-painted-cutoffs;
+			destroy vibe-photo-predicament;
+	otherwise if the player is in Predicament20 or the player is not in a predicament room:
+		say "[bold type]The paint on your hands and loins fades from existence! [roman type]The vibrating eggs drop to the floor, motionless.";
+		only destroy predicament-painted-cutoffs;
+		only destroy painted-vibrator-hands;
+		increase the predicament-completed of painted-cutoffs-predicament by 1;
+	otherwise:
+		if the player is in a park room, cutshow Figure of painted cutoffs predicament;
+		if C is hand-blocked:
+			let T be a random carried thing;
+			if T is a thing or the player is prone or refractoryperiod > 0:
+				say bold type;
+				if refractoryperiod > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
+				otherwise say "You can't cover the hand prints of your [C] while [if T is a thing]carrying [NameDesc of T][otherwise]on your knees[end if][bold type].";
+				say "[roman type][line break]";
+				now the defaultLeftTarget of arms is the player;
+				now the defaultRightTarget of arms is the player;
+				update arms;
+			say "The egg vibrators are both pushed into your clit from either side. They buzz away powerfully!";
+			stimulate vagina from painted-vibrator-hands.
+
+Report going when predicament-painted-cutoffs is worn:
+	if the player is in Predicament19: [Reaching home safely]
+		now the defaultLeftTarget of arms is the player;
+		now the defaultRightTarget of arms is the player.
+
+To decide which number is the initial outrage of (C - predicament-painted-cutoffs):
+	decide on 2.
 
 Cutoffs ends here.

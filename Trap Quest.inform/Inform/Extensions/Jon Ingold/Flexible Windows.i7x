@@ -153,9 +153,9 @@ To call FW_glk_window_close for (ref - a number):
 
 Include (-
 [ FW_glk_window_close _vararg_count;
-  ! glk_window_close(window, &{uint, uint})
-  @glk 36 _vararg_count 0;
-  return 0;
+ ! glk_window_close(window, &{uint, uint})
+ @glk 36 _vararg_count 0;
+ return 0;
 ];
 -).
 
@@ -296,9 +296,9 @@ Include (-
 ];
 
 [ FW_glk_window_open _vararg_count ret;
-  ! glk_window_open(window, uint, uint, uint, uint) => window
-  @glk 35 _vararg_count ret;
-  return ret;
+ ! glk_window_open(window, uint, uint, uint, uint) => window
+ @glk 35 _vararg_count ret;
+ return ret;
 ];
 -).
 
@@ -927,9 +927,9 @@ Flexible Windows adds a "window" column to the Table of User Styles found in the
 	Table of User Styles (continued)
 	window (a g-window)	style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 
-Note that the "background color" column is for the background color of the text only, not the background colour of the entire window.
+Note that the "background color" column is for the background colour of the text only, not the background colour of the entire window.
 
-To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web colour code (with or without the # symbol):
+To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web color code (with or without the # symbol):
 
 	The background color of the side window is "#CCCCFF".
 

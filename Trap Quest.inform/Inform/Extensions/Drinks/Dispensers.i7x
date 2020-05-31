@@ -221,7 +221,7 @@ To say ExamineDesc of (D - alchemical vat):
 
 Definition: alchemical vat is immune to change: decide yes.
 
-A time based rule (this is the vat cycling rule):
+An all time based rule (this is the vat cycling rule):
 	if Mansion19 is placed and the remainder after dividing time-earnings by 995 < time-seconds:
 		let N be a random number between 1 and 15;
 		refill alchemical vat with N;

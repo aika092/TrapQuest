@@ -9,15 +9,18 @@ Section 1 - Furniture Verb
 
 Check entering furniture:
 	if the latex-transformation of the player > 5 and the noun is not HotelBedPatrons and the noun is not hotel chairs and the noun is not modification machine, say "You don't need to rest on furniture as you have no body soreness to heal[if the noun is milking bench] and no [milk] in your breasts[end if]." instead;
-	if the player is upset about mess:
-		if the player is upset about sitting in mess, say "[variable custom style]There's no way I'm resting until I've [if the bimbo of the player < 10]got[otherwise]been[end if] changed.[roman type][line break]" instead;
-		say "[variable custom style]There's no way I can rest with this awful smell.[roman type][line break]" instead;
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	[if the fatigue of the player is 0 and the body soreness of the player is 0 and the noun is not modification machine and (the noun is not milking bench or the milk volume of breasts <= 0) and the noun is not lecture chair and the noun is not med bay bed, say "You feel completely fine." instead;]
 	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
 	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
 	if the noun is soggy hotel bed, say "[variable custom style]I'm not getting in those sheets again, they're soaked![roman type][line break]" instead;
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
+	if the player is upset about mess:
+		if diaper quest is 1 and the class of the player is priestess:
+			say "[variable custom style]I guess as a disgusting 'diaper priestess', I have to stay messy even when I lie down to rest. Yuck...[roman type][line break]";
+		otherwise:
+			if the player is upset about sitting in mess, say "[variable custom style]There's no way I'm resting until I've [if the bimbo of the player < 10]got[otherwise]been[end if] changed.[roman type][line break]" instead;
+			say "[variable custom style]There's no way I can rest with this awful smell.[roman type][line break]" instead;
 	if the noun is hammock:
 		if there are revealed aggressive vines in the location of the player and the player is prone, say "You can't kneel on the hammock like that while these threatening vines are nearby! Try standing first?" instead;
 		say "Rest on the hammock until you feel completely better? ";
@@ -104,6 +107,29 @@ To compute normal rest of (F - a furniture):
 	while the fatigue of the player > 0 and the alert of the player is 0:
 		compute fatigue refresh of F;
 	while the body soreness of the player > 0 and the alert of the player is 0:
+		compute soreness refresh of F;
+	if the alert of the player is 1:
+		compute alerting of F;
+	otherwise:
+		compute rest completion of F;
+	now resting is 0;
+	compute rest ending of F.
+
+[!<computeCrappyRest>+
+
+This function represents the effects of resting on a really uncomfortable piece of furniture. The effect is the same as a normal rest, but fatigue and soreness are only recovered up to half.
+
+@param <Furniture>:<F> The furniture the player is going to be resting on
+
++!]
+To compute crappy rest of (F - a furniture):
+	now resting is 1;
+	compute fat burning reset;
+	now the stance of the player is 1;
+	now the alert of the player is 0;
+	while the fatigue of the player > (the buckle threshold of the player / 2) and the alert of the player is 0:
+		compute fatigue refresh of F;
+	while the body soreness of the player > 5 and the alert of the player is 0:
 		compute soreness refresh of F;
 	if the alert of the player is 1:
 		compute alerting of F;
@@ -213,12 +239,15 @@ This function is called when the player finishes resting without being interrupt
 
 +!]
 To compute rest completion of (F - a furniture):
-	if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
-	otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]";
+	say RestCompleteFlav of F;
 	now resting is 0;
 	now auto is 1;
 	try standing;
 	now auto is 0.
+
+To say RestCompleteFlav of (F - a furniture):
+	if the bimbo of the player < 11, say "[first custom style]I feel so much better![roman type][line break]";
+	otherwise say "[second custom style]I'm full of energy again. Yum![roman type][line break]".
 
 [!<computeFurnitureRestCompletion>+
 

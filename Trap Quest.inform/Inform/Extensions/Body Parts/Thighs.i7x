@@ -32,13 +32,20 @@ To decide which number is the weight of (XXX - thighs):
 	if the latex-transformation of the player > 1 and S > 0, now S is 0;
 	decide on S.
 
-Definition: thighs is exposed if the concealer of thighs is nothing.
-
 To decide which object is the concealer of (T - thighs):
-	let C be a random worn leg covering crotch-in-place actually dense clothing;
-	if C is clothing, decide on C;
-	now C is a random worn knee-length or longer crotch-in-place actually dense clothing;
-	if C is clothing, decide on C;
+	if entry 1 of the armUses of arms is thighs and entry 2 of the armUses of arms is thighs, decide on arms;
+	repeat with C running through worn leg covering crotch-in-place actually dense clothing:
+		decide on C;
+	repeat with C running through worn knee-length or longer crotch-in-place actually dense clothing:
+		decide on C;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (T - thighs):
+	if thighs is listed in the armUses of arms, decide on arms;
+	repeat with C running through worn leg covering crotch-in-place clothing:
+		if C is not see-through, decide on C;
+	repeat with C running through worn knee-length or longer crotch-in-place actually dense clothing:
+		if C is not see-through, decide on C;
 	decide on nothing.
 
 Definition: thighs (called B) is spread:

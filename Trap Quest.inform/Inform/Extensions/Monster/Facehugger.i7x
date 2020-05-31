@@ -1,8 +1,10 @@
 Facehugger by Monster begins here.
 
-A facehugger is a kind of monster. The difficulty of facehugger is 1. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
+A facehugger is a kind of monster. facehugger is neuter. The text-shortcut of facehugger is "fhgr".
 
 There are 10 facehuggers.
+
+Definition: a facehugger is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 To decide which number is the girth of (M - a facehugger):
 	decide on 1.
@@ -25,19 +27,27 @@ To say MediumDesc of (M - facehugger):
 	say "facehugger".
 
 To say MonsterDesc of (M - facehugger):
-	say "This weird insect-like monster is not much bigger than your handspan. It has several strong legs which allow it to leap really high and then try to latch onto you.".
+	say "This weird insect-like monster is not much bigger than your hand-span. It has several strong legs which allow it to leap really high and then try to latch onto you.".
 
 To set up (M - facehugger):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 1;
+	now the raw difficulty of M is 1;
 	now the health of M is the maxhealth of M;
 	facehuggerShortcutAssign M;
 	anger M;
 	now M is interested.
 
+To decide which number is the difficulty of (M - a facehugger):
+	decide on the raw difficulty of M.
+
+To decide which number is the maxhealth of (M - a facehugger):
+	decide on 6 + game difficulty.
+
 To compute labour to (M - a facehugger):
 	compute tentacle birth. [Possibly this can be changed so tentacle monster daddy is different from lake monster, vine, and belt daddy.]
+
+Definition: a facehugger is too intimidating: decide no.
 
 To compute monstermotion of (M - a facehugger):
 	do nothing.
@@ -60,9 +70,13 @@ To compute action (N - a number) of (M - a facehugger):
 				say "You manage to move yourself out of the way, and [NameDesc of M] goes flying past. It turns around, ready to try again...";
 			otherwise:
 				let SL be a random number between 3 and 5;
-				say "You can't move out of the way in time! It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
+				say "You don't move out of the way in time! It latches on, quickly pushing its ovipositor into your [variable O] before you have a chance to rip it off.";
 				now M is penetrating O;
 				if O is fuckhole, ruin O;
+				if the player is able to use their hands:
+					say "[one of]You tug at the horrid, slimy creature[or]You frantically try to pull it free[or]Its thick, bony legs are like steel clamps, and its main body is stuck to you as if its sucking at your skin[or]Your fingers scrabble futilely against its tough, slick skin[in random order]. [one of]But it's like it's vacuum-sealed to you. You can't squeeze even a fingertip under the edge of its inhuman grip[or]But rather than pulling it loose, all you do is shift it and your flesh around together, making it look like you're actively participating in its fucking of your[variable O][or]But between its slimy skin and inhuman suction, all you do is jiggle it, thrusting it harder into your [variable O][in random order]!";
+				otherwise:
+					say "Without the use of your hands[one of] you can only squirm helplessly as you feel something [i]thick[/i] force open your [variable O][or] it's like you're welcoming the invasive penetration of your [variable O][or] you try to squeeze your muscles to prevent the muscular penetration... fruitlessly[or] you shiver helplessly as you feel [i]something[/i] gape your [variable O] wide, throbbing as it does[in random order].";
 				if O is asshole:
 					if egg laying fetish is 1:
 						say "It pumps several eggs inside of your belly!";
@@ -71,16 +85,9 @@ To compute action (N - a number) of (M - a facehugger):
 						say "It pumps your [asshole] full of inhuman [semen]!";
 						assfill SL;
 				otherwise if O is vagina:
-					if egg laying fetish is 1 and pregnancy fetish is 1 and inhuman pregnancy >= 2 and vagina is accepting womb semen:
-						say "It pumps your womb full of inhuman [semen] and its alien eggs!";
-						cancel father material of vagina;
-						now M is inseminating vagina;
-						wombfill SL;
-						check sudden pregnancy;
-						if the pregnancy of the player < 1:
-							say ConceptionFlav;
-							now the pregnancy of the player is 1;
-							check goddess eligibility;
+					if egg laying fetish is 1 and vagina is accepting womb eggs:
+						say "It pumps your womb full of its alien eggs!";
+						wombfill SL small eggs;
 					otherwise:
 						say "It pumps your [vagina] full of inhuman [semen]!";
 						pussyfill SL;
@@ -90,7 +97,7 @@ To compute action (N - a number) of (M - a facehugger):
 						increase the stomach-semen of the player by 1;
 						PukeUp 1;
 						repeat with NN running from 1 to SL:
-							let E be a random off-stage small egg;
+							let E be a random available small egg;
 							if E is egg:
 								now E is in the location of the player;
 								if a random number between 1 and 5 is 1, now the hatching of E is 1;
@@ -112,7 +119,7 @@ Section 3 - Damage
 
 [Chance for the facehugger to completely dodge the attack.]
 To decide which number is the damage modifier of (M - a facehugger):
-	 if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
+	if (a random number between 1 and the dexterity of the player) + (a random number between 1 and the dexterity of the player) < a random number between 3 and 12, decide on (attack-damage * -1);
 	decide on 0.
 
 To say damage-flavour of (N - a number) on (M - a facehugger):
@@ -121,8 +128,12 @@ To say damage-flavour of (N - a number) on (M - a facehugger):
 	otherwise:
 		say "A direct hit!".
 
-To compute damage of (M - a facehugger):
-	if the health of M <= 0, compute death of M.
+To compute standard damage of (M - a facehugger):
+	if the health of M <= 0, compute defeat of M.
+
+To compute defeat of (M - a facehugger):
+	say "You hear a snap as [NameDesc of M] drops lifelessly to the ground.";
+	destroy M.
 
 To loot (M - a facehugger):
 	do nothing.

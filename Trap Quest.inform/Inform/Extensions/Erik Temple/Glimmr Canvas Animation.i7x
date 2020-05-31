@@ -65,14 +65,14 @@ An animation track has a number called the timer frame-multiple. The timer frame
 
 Section - Animation track presets
 
-An animation preset is a kind of value. The animation presets are custom, reel, parameterized reel, motion, parameterized motion, zooming, parameterized zooming, flicker, fade, and temporalizing.
+An animation preset is a kind of value. The animation presets are custom, reel, parametrised reel, motion, parametrised motion, zooming, parametrised zooming, flicker, fade, and temporalizing.
 
 An animation track has an animation preset.
 
 Section - Modalities for animation tracks
 
 An animation track can be cycling. An animation track is usually not cycling.
-An animation track can be animation-randomized. An animation track is usually not animation-randomized.
+An animation track can be animation-randomised. An animation track is usually not animation-randomised.
 
 Section - Properties for basic tracking
 [These properties determine whether the track is active as well as tracking progress]
@@ -98,7 +98,7 @@ Section - Properties to control easing
 
 An animation track has a phrase (number, number, number, number) -> number called the easing. The easing of an animation track is usually the linear easing rule.
 
-[The secondary easing can be activated for a motion track to enable independent easing of the y-axis for  movement; the (primary) easing will then control the x-axis movement.]
+[The secondary easing can be activated for a motion track to enable independent easing of the y-axis for movement; the (primary) easing will then control the x-axis movement.]
 An animation track has a phrase (number, number, number, number) -> number called the secondary easing. The secondary easing of an animation track is usually the null easing rule.
 
 [These are used to manage the easing calculations for a track.]
@@ -349,11 +349,11 @@ To cycle (track - an animation track):
 To stop cycling (track - an animation track):
 	now track is not cycling.
 
-To randomize (track - an animation track):
-	now track is animation-randomized.
+To randomise (track - an animation track):
+	now track is animation-randomised.
 
 To remove randomization from (track - an animation track):
-	now track is not animation-randomized.
+	now track is not animation-randomised.
 
 [The following "fit" rule is intended only for reel and parameterized reel tracks; it allows us to change the length of a reel sequence to a specified number of frames. The animation rule will use the easing of the track to extend or contract the length of the animation using the frames in the original reel. For example, if our original image reel was specified as a list with four entries, and we then fit the sequence to 12 frames using the linear easing rule, each of the four images in the original would be displayed for approximately 3 frames. However, note that, due to rounding errors, this will not always work well, particularly when the original reel sequence specified is short.]
 To fit (track - an animation track) sequence into/to (N - a number) frame/frames:
@@ -382,11 +382,11 @@ Animation rule for a custom animation track (called the track) (this is the mini
 
 Section - Invocation phrases for custom preset
 
-To animate (track - an animation track) as a custom animation at (interv - a number), randomized and/or cycling:
-	if randomized:
-		now the track is animation-randomized;
+To animate (track - an animation track) as a custom animation at (interv - a number), randomised and/or cycling:
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -394,11 +394,11 @@ To animate (track - an animation track) as a custom animation at (interv - a num
 	set up track as custom;
 	animate the track at interv[ ms per frame].
 
-To animate (track - an animation track) as a custom animation at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomized and/or cycling:
-	if randomized:
-		now the track is animation-randomized;
+To animate (track - an animation track) as a custom animation at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomised and/or cycling:
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -416,7 +416,7 @@ First animation rule for a reel animation track (called the track) (this is the 
 	let img be a figure name;
 	let x be a number;
 	let cyclic-frame be current-frame of the track - (cycles completed of the track * cycle-length of the track);
-	if the track is animation-randomized:
+	if the track is animation-randomised:
 		let x be a random number between 1 and the number of entries in the image-reel of the track;
 	otherwise if the cycle-length of the track is not the number of entries of the image-reel of the track:
 		let x be the easing of the track applied to the cyclic-frame and the cycle-length of the track and 1 and the number of entries of the image-reel of the track;
@@ -437,11 +437,11 @@ First animation rule for a reel animation track (called the track) (this is the 
 
 Section - Invocation phrases for reel preset
 
-To animate (track - an animation track) as a reel animation targeting (targ - an object) at (interv - a number), randomized and/or cycling:
-	if randomized:
-		now the track is animation-randomized;
+To animate (track - an animation track) as a reel animation targeting (targ - an object) at (interv - a number), randomised and/or cycling:
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -453,11 +453,11 @@ To animate (track - an animation track) as a reel animation targeting (targ - an
 	now the animation-target of the track is targ;
 	animate the track at interv[ ms per frame].
 
-To animate (track - an animation track) as a reel animation targeting (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomized and/or cycling:
-	if randomized:
-		now the track is animation-randomized;
+To animate (track - an animation track) as a reel animation targeting (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomised and/or cycling:
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -505,7 +505,7 @@ To animate (track - an animation track) as a motion animation targeting (targ - 
 		now the track is not cycling;
 	now the start-x of the track is entry 1 of the origin of targ;
 	now the start-y of the track is entry 2 of the origin of targ;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -522,7 +522,7 @@ To animate (track - an animation track) as a motion animation targeting (targ - 
 		now the track is not cycling;
 	now the start-x of the track is entry 1 of the origin of targ;
 	now the start-y of the track is entry 2 of the origin of targ;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	[say "start-x: [start-x of the track]; start-y: [start-y of the track]; delta-x: [delta-x of the track]; delta-y: [delta-y of the track].";]
 	let X be the square root of (delta-x of the track * delta-x of the track) + (delta-y of the track * delta-y of the track);
@@ -613,7 +613,7 @@ Section - Flicker animation rule
 
 First animation rule for a flicker animation track (called the track) (this is the default flicker animation rule):
 	let g-toggled be false;
-	if the track is animation-randomized and a random chance of 50 in 100 succeeds:
+	if the track is animation-randomised and a random chance of 50 in 100 succeeds:
 		toggle animation-target of the track for the track;
 		let g-toggled be true;
 	otherwise if current-frame of the track is odd:
@@ -647,14 +647,14 @@ Section - Invocation phrases for flicker preset
 
 [NOTE: If the canvas is not being displayed in a window when the animation is invoked, it will be necessary to identify it specifically before invoking the animation.]
 
-To animate (track - an animation track) as a flicker animation targeting (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomized and/or cycling:
+To animate (track - an animation track) as a flicker animation targeting (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomised and/or cycling:
 	if targ is a graphics g-window:
 		now the target-canvas of the track is the associated canvas of targ;
 	now the animation-target of the track is targ;
-	if randomized:
-		now the track is animation-randomized;
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -663,15 +663,15 @@ To animate (track - an animation track) as a flicker animation targeting (targ -
 	now the cycle-length of the track is len;
 	animate the track at interv[ ms per frame].
 
-To animate (track - an animation track) as a flicker animation targeting (targ - an object) at (interv - a number), randomized and/or cycling:
+To animate (track - an animation track) as a flicker animation targeting (targ - an object) at (interv - a number), randomised and/or cycling:
 	set up track as flicker;
 	if targ is a graphics g-window:
 		now the target-canvas of the track is the associated canvas of targ;
 	now the animation-target of the track is targ;
-	if randomized:
-		now the track is animation-randomized;
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	now the track is cycling;[Notice that, with no duration specified, the animation is always a cycling one-otherwise, we'd have only a single frame of flicker]
 	now the cycle-length of the track is 1;
 	animate the track at interv[ ms per frame].
@@ -770,7 +770,7 @@ To update (fade-reel - a list of figure names) to (next-fade - a number) for (an
 	if the anim-target provides the property stroke:
 		let xx be (min win-x of anim-target or end-x of anim-target) - stroke of anim-target;
 		let yy be (min win-y of anim-target or end-y of anim-target) - stroke of anim-target;
-		draw (entry next-fade of the fade-reel) in (win) at (xx) by (yy) with dimensions ((max win-x of anim-target or end-x of anim-target) + stroke of anim-target - xx) by ((max win-y of anim-target or end-y of anim-target)  + stroke of anim-target - yy);
+		draw (entry next-fade of the fade-reel) in (win) at (xx) by (yy) with dimensions ((max win-x of anim-target or end-x of anim-target) + stroke of anim-target - xx) by ((max win-y of anim-target or end-y of anim-target) + stroke of anim-target - yy);
 	otherwise if the anim-target provides the property end-x:[primitive without a stroke]
 		draw (entry next-fade of the fade-reel) in (win) at (win-x of anim-target) by (win-y of anim-target) with dimensions (end-x of anim-target) by (end-y of anim-target).
 
@@ -895,7 +895,7 @@ First animation rule for a parameterized reel animation track (called the track)
 	let max-frames be the reel-length appropriate to the track and the property-name-storage of the track;
 	let N be a number;
 	let cyclic-frame be current-frame of the track - (cycles completed of the track * cycle-length of the track);
-	if the track is animation-randomized:
+	if the track is animation-randomised:
 		let N be a random number between 1 and max-frames;
 	otherwise if the cycle-length of the track is not max-frames:
 		let N be the easing of the track applied to the cyclic-frame and the cycle-length of the track and 1 and max-frames;
@@ -928,7 +928,7 @@ First animation rule for a parameterized reel animation track (called the track)
 
 Section - Parameterized reel invocation phrases
 
-To animate (track - an animation track) as a parameterized reel animation targeting (P - a value of kind K valued property) of (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomized and/or cycling:
+To animate (track - an animation track) as a parameterized reel animation targeting (P - a value of kind K valued property) of (targ - an object) at (interv - a number) with a/-- duration of/-- (len - a number) frame/frames, randomised and/or cycling:
 	let P1 be P converted to a number;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -937,10 +937,10 @@ To animate (track - an animation track) as a parameterized reel animation target
 		now the property-storage of the track is P1;
 		let X be the text which relates to P1 by the property-naming relation;
 		now the property-name-storage of the track is X;
-	if randomized:
-		now the track is animation-randomized;
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -949,7 +949,7 @@ To animate (track - an animation track) as a parameterized reel animation target
 	set up track as a parameterized reel with duration len;
 	animate the track at interv[ ms per frame].
 
-To animate (track - an animation track) as a parameterized reel animation targeting (P - a value of kind K valued property) of (targ - an object) at (interv - a number), randomized and/or cycling:
+To animate (track - an animation track) as a parameterized reel animation targeting (P - a value of kind K valued property) of (targ - an object) at (interv - a number), randomised and/or cycling:
 	let P1 be P converted to a number;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -958,10 +958,10 @@ To animate (track - an animation track) as a parameterized reel animation target
 		now the property-storage of the track is P1;
 		let X be the text which relates to P1 by the property-naming relation;
 		now the property-name-storage of the track is X;
-	if randomized:
-		now the track is animation-randomized;
+	if randomised:
+		now the track is animation-randomised;
 	otherwise:
-		now the track is not animation-randomized;
+		now the track is not animation-randomised;
 	if cycling:
 		now the track is cycling;
 	otherwise:
@@ -1082,7 +1082,7 @@ To animate (track - an animation track) as a parameterized motion animation targ
 	let L be list property P of targ;
 	now start-x of the track is entry 1 of L;
 	now start-y of the track is entry 2 of L;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	now the animation-target of the track is targ;
 	if the targ provides the property display status:
@@ -1106,7 +1106,7 @@ To animate (track - an animation track) as a parameterized motion animation targ
 	let L be list property P of targ;
 	now start-x of the track is entry 1 of L;
 	now start-y of the track is entry 2 of L;
-	now the delta-x of the track is (entry 1 of end pt) -  start-x of the track;
+	now the delta-x of the track is (entry 1 of end pt) - start-x of the track;
 	now the delta-y of the track is (entry 2 of end pt) - start-y of the track;
 	let X be the square root of (delta-x of the track * delta-x of the track) + (delta-y of the track * delta-y of the track);
 	let len be X / V;
@@ -1403,7 +1403,7 @@ Section: Implementation details
 
 At each tick of the timer, Inform calls the "glulx timed activity" rulebook (provided by Emily Short's Glulx Entry Points extension). If one or more of our animation tracks is active, the "animation dispatch rule", one of the timed activity rules, will fire. This rule iterates through all of the active animation tracks, processing each in turn. This processing occurs in the "animation" rulebook. Most users will not need to add rules to the animation rulebook, but it is necessary to do so to create custom animations (see below), and it can sometimes be useful if we wish to trigger other events from within preset animations, rather than via callbacks at the end. See the "Animation Rule Variations" example below for some illustrations.
 
-Note that the rules in the animation rulebook are intended for making changing to the properties of targeted objects/elements, not for actually drawing to the screen. Once all of the tracks have been processed, the "updating graphics windows for animation" activity is called. There is only one rule in this activity, the "animation window-updating rule", which updates the graphics in each of the open graphics windows. If we have a number of static graphics windows alongside one with animation, we can improve performance by preempting this rule with one of our own that updates only the window with animations. (Otherwise, we are needlessly redrawing all windows every tick of the timer.)
+Note that the rules in the animation rulebook are intended for making changing to the properties of targeted objects/elements, not for actually drawing to the screen. Once all of the tracks have been processed, the "updating graphics windows for animation" activity is called. There is only one rule in this activity, the "animation window-updating rule", which updates the graphics in each of the open graphics windows. If we have a number of static graphics windows alongside one with animation, we can improve performance by pre-empting this rule with one of our own that updates only the window with animations. (Otherwise, we are needlessly redrawing all windows every tick of the timer.)
 
 Section: Undo, Save, Restore
 
@@ -1415,17 +1415,17 @@ GCA handles undo and restore transparently:
 
 Implementation note:
 
-The Glulx virtual machine does not store the state of the timer when saving the state of the game. That means that we need to do that ourselves in order to properly restore the game or undo a previous turn. GCA takes care of this for us by storing the timer interval in a global variable, and then either triggering the timer at the appropriate speed or turning it off as appropriate immediatedly after restoring or undoing. If we are making changing to save/restore, the after restoring the game rules, or undo code, we should be sure that we don't break this functionality.
+The Glulx virtual machine does not store the state of the timer when saving the state of the game. That means that we need to do that ourselves in order to properly restore the game or undo a previous turn. GCA takes care of this for us by storing the timer interval in a global variable, and then either triggering the timer at the appropriate speed or turning it off as appropriate immediately after restoring or undoing. If we are making changing to save/restore, the after restoring the game rules, or undo code, we should be sure that we don't break this functionality.
 
 Chapter: Animation tracks
 
 GCA simplifies the specification of animations through the concept of the "animation track". An animation track handles one and only one kind of animation effect for one and only one graphic element. However, tracks are "stackable"-you can run multiple tracks simultaneously-so you can build up very complex animations. To display a person walking, for example, you might have two tracks running simultaneously, one responsible for the motion of the sprite from point A to B, and the other for cycling the image used to represent the sprite.
 
-Animation tracks can also do such things as increase or decrease the scaling factor of an element ("zooming" it), fade an element or the entire canvas out to a background color, or simply mark time.
+Animation tracks can also do such things as increase or decrease the scaling factor of an element ("zooming" it), fade an element or the entire canvas out to a background colour, or simply mark time.
 
 Section: Basics of animation tracks
 
-In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organising information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognize the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
+In programming terms, an animation track is an Inform 7 object, not too different from the "things" that authors use to build their storyworlds. However, they are not intended to be physical game objects; they are simply convenient containers for storing and organizing information, usually in the form of properties. (Users of Glimmr Canvas-Based Drawing will recognise the same concept in the use of g-elements, which are also objects in the same sense.) Defining an animation track is quite simple. Here we do two at a stroke:
 
 	The movement track and the walking track are animation tracks.
 
@@ -1447,7 +1447,7 @@ This will animate the reel for 6 frames at a rate of 4 frames per second; that i
 
 	animate the waving track as a reel animation targeting the player avatar at 4 fps with duration of 6 frames, cycling.
 
-This will repeat through the reel for each pair of frames, producing a smooth alternation of the figures: Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right.  More information on the cycling option is given below.
+This will repeat through the reel for each pair of frames, producing a smooth alternation of the figures: Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right, Figure of Hand Left, Figure of Hand Right. More information on the cycling option is given below.
 
 Note that the timer is started *immediately* after an animate phrase is invoked. The animation will begin after one interval has passed. In other words, the first frame of the animation will be displayed after one tick of the timer; if we have specified an interval of 4 frames per second, the first frame will be displayed 250 milliseconds after Inform processes the animation phrase.
 
@@ -1548,7 +1548,7 @@ The phrases required are straightforward:
 	cycle <track>
 	stop cycling <track>
 
-	randomize <track>
+	randomise <track>
 	remove randomization from <track>
 
 Chapter: Animation track presets
@@ -1577,15 +1577,15 @@ Section: Track options
 
 There are two track options that we can select by adding a comma and the option or options after the body of the command phrase, like so:
 
-	animate..., cycling and randomized
+	animate..., cycling and randomised
 
 These options are defined as follows:
 
 	cycling - an animation track that has been designated as cycling will not stop when it reaches the end; instead, it will begin again at the beginning.
 
-	randomized - a randomized track will select the state of any given frame at random from the available options.
+	randomised - a randomised track will select the state of any given frame at random from the available options.
 
-Note that any animation track can be cycling, but tracks that involve smooth movement (such as motion or zooming tracks) cannot be randomized.
+Note that any animation track can be cycling, but tracks that involve smooth movement (such as motion or zooming tracks) cannot be randomised.
 
 Section: Frames, cycles, and duration
 
@@ -1620,15 +1620,15 @@ The reel must be defined in advance of triggering the animation track; this is d
 
 To invoke a reel preset we use the following phrase:
 
-	animate <track> as a reel animation targeting <target> at <interval> with a duration of <length> frames, <cycling><randomized>
+	animate <track> as a reel animation targeting <target> at <interval> with a duration of <length> frames, <cycling><randomised>
 
 If we wish, we may omit the duration, resulting in this variant phrasing:
 
-	animate <track> as a reel animation targeting <target> at <interval>, <cycling><randomized>
+	animate <track> as a reel animation targeting <target> at <interval>, <cycling><randomised>
 
 If we do this, the duration will be set automatically to the number of entries in the image-reel. Moreover, if we also set the "cycling" option when no duration has been set, the track will continue to repeat ad infinitum, or until stopped by another event (such as a callback from another track; see the section on callbacks below).
 
-The images in the image-reel list will be shown in order, unless we set the "randomized" option for a reel track, in which case an image will be chosen at random from the reel for each frame. (We can of course include multiple mentions of the same figure to influence percentages; if Figure 1 is listed twice in the reel while Figure 2 is listed just once, then the chance that Figure 1 will be displayed is twice as great as the chance that Figure 2 will be.)
+The images in the image-reel list will be shown in order, unless we set the "randomised" option for a reel track, in which case an image will be chosen at random from the reel for each frame. (We can of course include multiple mentions of the same figure to influence percentages; if Figure 1 is listed twice in the reel while Figure 2 is listed just once, then the chance that Figure 1 will be displayed is twice as great as the chance that Figure 2 will be.)
 
 Here are some examples of usage (code snippets, not complete games):
 
@@ -1793,17 +1793,17 @@ Canvases are toggled by changing the "associated canvas" property of the window 
 
 To invoke a flicker animation, we have two options:
 
-	animate <track> as a flicker animation targeting <target> at <interval> with a duration of <length> frames, <cycling><randomized>
+	animate <track> as a flicker animation targeting <target> at <interval> with a duration of <length> frames, <cycling><randomised>
 
-	animate <track> as a flicker animation targeting <target> at <interval>, <randomized>
+	animate <track> as a flicker animation targeting <target> at <interval>, <randomised>
 
 If we set the "cycling" option, the flicker will continue ad infinitum until we stop it (perhaps using a callback on another animation; see the section on callbacks below). For the second option, which specifies no duration, the animation is automatically set to cycle.
 
-If we set the "randomized" option, then the pattern of flickering will be randomized. Each frame, there is a 50% chance that the object will be toggled.
+If we set the "randomised" option, then the pattern of flickering will be randomised. Each frame, there is a 50% chance that the object will be toggled.
 
 Usage examples:
 
-Targeting a sprite, and cycling endessly:
+Targeting a sprite, and cycling endlessly:
 	*: The neon track is an animation track.
 
 	The Neon Sign is a sprite. The display status is g-inactive.
@@ -1811,19 +1811,19 @@ Targeting a sprite, and cycling endessly:
 	When play begins:
 		animate the neon track as a flicker animation targeting the Neon Sign at 8 fps.
 
-Targeting a window with a randomized flicker. Since the flicker is randomized, there is no way to ensure that the animation will end with the canvas visible. We can ensure that it will by specifying an animation callback for the track:
+Targeting a window with a randomised flicker. Since the flicker is randomised, there is no way to ensure that the animation will end with the canvas visible. We can ensure that it will by specifying an animation callback for the track:
 	*: The static track is an animation track. The animation-callback is "[@ now the associated canvas of the graphics-window is the target-canvas of the static track]".
 
-	The TV canvas is a g-canvas. The background image is Figure of Color Bars. The associated canvas of the graphics-window is the TV canvas.
+	The TV canvas is a g-canvas. The background image is Figure of Colour Bars. The associated canvas of the graphics-window is the TV canvas.
 
 	To display static on the television:
-		animate the static track as a flicker animation targeting the graphics-window at 8 fps with a duration of 24 frames, randomized.
+		animate the static track as a flicker animation targeting the graphics-window at 8 fps with a duration of 24 frames, randomised.
 
 Note that easing equations have no effect on flicker tracks!
 
 Section: Fade animation tracks
 
-"Fade" animations fade in or out from a background color. Glulx does not provide the ability to change opacity dynamically, so this is accomplished by means of a rather terrible hack. Rather than change a property of the target object as other animation presets do, fade tracks actually draw a transparent PNG image on top of the target. By stepping through a series of PNGs with different opacities, we imitate fading in/out.
+"Fade" animations fade in or out from a background colour. Glulx does not provide the ability to change opacity dynamically, so this is accomplished by means of a rather terrible hack. Rather than change a property of the target object as other animation presets do, fade tracks actually draw a transparent PNG image on top of the target. By stepping through a series of PNGs with different opacities, we imitate fading in/out.
 
 Fade animations require a special kind of Inform object called a "fader". Like fonts and tilesets, faders are packaged as extensions plus the set of opacity-scaled images. Glimmr includes one sample fader called Glimmr Animation Fader - Black.
 
@@ -1935,15 +1935,15 @@ To set up a parameterized reel, we must supply a list of values (the "reel") of 
 
 To invoke a parameterized reel animation:
 
-	animate <track> as a parameterized reel animation targeting <chosen parameter/property> of <target> at <interval> with a duration of <length> frames, <cycling><randomized>
+	animate <track> as a parameterized reel animation targeting <chosen parameter/property> of <target> at <interval> with a duration of <length> frames, <cycling><randomised>
 
 If we wish, we may omit the duration, resulting in this variant phrasing:
 
-	animate <track> as a parameterized reel animation targeting <chosen parameter/property> of <target> at <interval>, <cycling><randomized>
+	animate <track> as a parameterized reel animation targeting <chosen parameter/property> of <target> at <interval>, <cycling><randomised>
 
 If we do this, the duration will be set automatically to the number of entries in the reel that corresponds to the type of the property we've chosen. And if we set the "cycling" option when no duration has been set, the track will continue to repeat ad infinitum, or until stopped by another event (such as a callback from another track; see the section on callbacks).
 
-The entries in the reel list will be shown in order, unless we've set the "randomized" option, in which case an entry will be chosen at random from the reel for each frame. (We can of course include multiple mentions of the same entity to influence percentages; if value A is listed twice in the reel while value B is listed just once, then the chance that value A will be displayed is twice as great as the chance that value B will be.)
+The entries in the reel list will be shown in order, unless we've set the "randomised" option, in which case an entry will be chosen at random from the reel for each frame. (We can of course include multiple mentions of the same entity to influence percentages; if value A is listed twice in the reel while value B is listed just once, then the chance that value A will be displayed is twice as great as the chance that value B will be.)
 
 Examples of usage:
 
@@ -1964,12 +1964,12 @@ The position of a sprite, "teleporting" from location to location on the canvas:
 		animate the teleporting track as a parameterized reel animation targeting the origin of Bamff at 2 fps.
 
 Showing different text strings randomly:
-	*: The flashcard track is an animation track. The indexed-text-reel is {"Eat only meats!", "Capitalize on murder!", "Fleece your neighbour!", "Wear plaid!", "Treacle trickles!"}.
+	*: The flashcard track is an animation track. The indexed-text-reel is {"Eat only meats!", "Capitalise on murder!", "Fleece your neighbour!", "Wear plaid!", "Treacle trickles!"}.
 
 	The card is an image-rendered string. The text-string is "". The background tint is g-white.
 
 	When play begins:
-		animate the flashcard track as a parameterized reel animation targeting the text-string of the Card at 900 milliseconds per frame, randomized and cycling.
+		animate the flashcard track as a parameterized reel animation targeting the text-string of the Card at 900 milliseconds per frame, randomised and cycling.
 
 Easing equations normally have no effect on parameterized reel tracks. However, see the section on standard reel tracks above for the use of easing to extend or contract the apparent timing of reel transitions.
 
@@ -2031,11 +2031,11 @@ A parameterized zooming track is, as might be guessed, very similar to the stand
 	y-scaling factor (of a g-element)
 	arbitrary scaling factor (of a window)
 
-For most purposes, we should just use the standard zooming track. The main use for the parameterized zooming preset is to allow us to set the x-scaling and y-scaling factors of a g-element separately; this works only when the "asymmetrical scaling" use option is set (see docs for Glimmr Canvas-Based Drawing).
+For most purposes, we should just use the standard zooming track. The main use for the parametrised zooming preset is to allow us to set the x-scaling and y-scaling factors of a g-element separately; this works only when the "asymmetrical scaling" use option is set (see docs for Glimmr Canvas-Based Drawing).
 
-To invoke a parameterized zooming track:
+To invoke a parametrised zooming track:
 
-	animate <track> as a parameterized zooming animation targeting <chosen parameter/property> of <target> and ending at <final scaling factor> at <interval> with a duration of <length> frames, <cycling>
+	animate <track> as a parametrised zooming animation targeting <chosen parameter/property> of <target> and ending at <final scaling factor> at <interval> with a duration of <length> frames, <cycling>
 
 Usage example:
 
@@ -2047,27 +2047,27 @@ Animating the scaling of only the y-axis to "compress" a sprite visually. Making
 	The Ball is a sprite. It is right-aligned. The image-ID is Figure of Ball.
 
 	To squish the blob:
-		animate the squishy track as a parameterized zooming animation targeting the y-scaling factor of the Blob and ending at 0.1000 at 24 fps with a duration of 4 frames.
+		animate the squishy track as a parametrised zooming animation targeting the y-scaling factor of the Blob and ending at 0.1000 at 24 fps with a duration of 4 frames.
 
 Easing equations can be applied to a parametrised zooming track just as they can a standard zooming track.
 
 Chapter: Custom animations
 
-It is also possible to create entirely custom animations, using the "custom" preset. The built-in phrase for custom presets addresses only the interval, duration, and modality (i.e., cycling or randomized) of the track. It does not allow for the specification of a target object, largely because there is no assumption that the "animation" produced will be graphical in nature. Custom tracks can be used for any effect that can be thought of in terms of recurring frames, and in fact it is assumed that custom tracks will most likely be used for real-time events that don't involve graphical displays.
+It is also possible to create entirely custom animations, using the "custom" preset. The built-in phrase for custom presets addresses only the interval, duration, and modality (i.e., cycling or randomised) of the track. It does not allow for the specification of a target object, largely because there is no assumption that the "animation" produced will be graphical in nature. Custom tracks can be used for any effect that can be thought of in terms of recurring frames, and in fact it is assumed that custom tracks will most likely be used for real-time events that don't involve graphical displays.
 
 To invoke a custom animation, we can use this phrase:
 
-	animate <track> as a custom animation at <interval> with a duration of <length> frames, <randomized><cycling>
+	animate <track> as a custom animation at <interval> with a duration of <length> frames, <randomised><cycling>
 
 Or, without specifying a duration:
 
-	animate <track> as a custom animation at <interval>, <randomized><cycling>
+	animate <track> as a custom animation at <interval>, <randomised><cycling>
 
 Note that the latter will have a duration of 1 frame by default unless we specify it some other way.
 
-On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomised" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
-On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomised" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
 The animation rule belongs to the "animation" rulebook, and is parametrised on the animation track to be animated. In other words, if we have defined a custom animation track called "my anim-track", then we would write our animation rule's preamble like this:
 
@@ -2137,13 +2137,13 @@ For example, to calculate the current position on a scale of 1 to 100 in a cycli
 
 Chapter: Easing (Tweening)
 
-The term “easing” refers to motions in which the acceleration changes over time. The term may seem strange, but think of it in terms of easing into a chair–your body moves more slowly as you approach the cushion. Easing equations can imitate this sort of gradual slowing as the motion reaches the endpoint, and they can also do much more, such as imitate the bouncing of a ball, or overshoot the endpoint and snap back.
+The term "easing" refers to motions in which the acceleration changes over time. The term may seem strange, but think of it in terms of easing into a chair–your body moves more slowly as you approach the cushion. Easing equations can imitate this sort of gradual slowing as the motion reaches the endpoint, and they can also do much more, such as imitate the bouncing of a ball, or overshoot the endpoint and snap back.
 
-Easing is closely related to the concept of "tweening". Briefly, tweening is short for “in-betweening”. In traditional animation, animations were organised around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the “betweens” were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
+Easing is closely related to the concept of "tweening". Briefly, tweening is short for "in-betweening". In traditional animation, animations were organised around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the "betweens" were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
 
-Glimmr Canvas Animation (GCA) is no different, though it doesn’t really use the concept of the keyframe. Where programs like Flash have a master timeline punctuated by user-defined keyframes, each GCA animation track can be thought of as a self-contained timeline separating two keyframes–the starting and ending points of that particular motion or effect. GCA builds sophisticated and customizable tweening into nearly all of the preset animation types via the use of “easing” equations that interpolate movement between the starting and ending points.
+Glimmr Canvas Animation (GCA) is no different, though it doesn’t really use the concept of the keyframe. Where programs like Flash have a master timeline punctuated by user-defined keyframes, each GCA animation track can be thought of as a self-contained timeline separating two keyframes–the starting and ending points of that particular motion or effect. GCA builds sophisticated and customizable tweening into nearly all of the preset animation types via the use of "easing" equations that interpolate movement between the starting and ending points.
 
-The most common use of easing is in moving objects across the screen, but easing equations can be used on any continuous field of values, not just coordinates in space. For example, when used on a zooming track: instead of proceeding from 50% of actual size to 100% by equal intervals, the zoom might be “eased” using a cubic ease-out equation so that the size change starts out rapid, increases slightly in speed for the first 1/2 or so of the duration, and then slows comparatively quickly. (For just such an effect, see the Maps of Murder example included with this extension.)
+The most common use of easing is in moving objects across the screen, but easing equations can be used on any continuous field of values, not just coordinates in space. For example, when used on a zooming track: instead of proceeding from 50% of actual size to 100% by equal intervals, the zoom might be "eased" using a cubic ease-out equation so that the size change starts out rapid, increases slightly in speed for the first 1/2 or so of the duration, and then slows comparatively quickly. (For just such an effect, see the Maps of Murder example included with this extension.)
 
 The best way to start exploring the effects that easing can have on your animations is probably to try out the "Eased Movements" example included with this extension. You might also want to check out these online resources:
 
@@ -2159,7 +2159,7 @@ Section: Types of easing
 
 GCA has 16 easing equations built in, from purely linear to a quadratic curve to a parabolic bounce. If these don't meet your needs, you can also add your own equations (see below for a few notes on rolling your own).
 
-Most of the included equations are available in three flavours each. “Easing out” describes a sequence in which motion starts out moving rapidly and then slows, more or less gradually, to a stop. “Easing in” is the opposite–-slow to fast. “Easing in-out” combines the two effects. Different functions are used to qualify these three basic categories, resulting in the full names of the easing equations: “quadratic easing in” for example, or “circular easing out”.
+Most of the included equations are available in three flavours each. "Easing out" describes a sequence in which motion starts out moving rapidly and then slows, more or less gradually, to a stop. "Easing in" is the opposite–-slow to fast. "Easing in-out" combines the two effects. Different functions are used to qualify these three basic categories, resulting in the full names of the easing equations: "quadratic easing in" for example, or "circular easing out".
 
 Here are the names of the built-in equations:
 
@@ -2195,7 +2195,7 @@ Assigning an easing equation to an animation track is simple. An animation track
 
 If we don't specify an easing, then the default "linear easing" rule will be used. This rule does not involve any speed variations; it provides a simple linear interpolation of values.
 
-Note that motion and parameterized motion tracks (but no others) can also utilize a "secondary easing". If a secondary easing function is applied, then this function will apply only to the y-axis, while the primary easing function will be used for the x-axis:
+Note that motion and parametrised motion tracks (but no others) can also utilize a "secondary easing". If a secondary easing function is applied, then this function will apply only to the y-axis, while the primary easing function will be used for the x-axis:
 
 	The easing of the complex movement track is the cubic easing in rule.
 	The secondary easing of the complex movement track is the circular easing out rule.
@@ -2273,7 +2273,7 @@ By default, the animation log is written to the main window. However, unless we 
 
 Chapter: Performance Tips
 
-	1. Test outside of the IDE. Games played within the Inform IDE will be slower than games played in an external interpreter. The Mac IDE may sometimes show minor scaling artifacts that are not seen with external interpreters. Try pressing the Release button to produce a blorb file, and play that file in the latest version of a fast, modern interpreter.
+	1. Test outside of the IDE. Games played within the Inform IDE will be slower than games played in an external interpreter. The Mac IDE may sometimes show minor scaling artefacts that are not seen with external interpreters. Try pressing the Release button to produce a blorb file, and play that file in the latest version of a fast, modern interpreter.
 
 	2. Bes sure to test in all of the interpreters that you expect your players to use.
 
@@ -2281,7 +2281,7 @@ Chapter: Performance Tips
 
 	4. Interpreters will vary in their ability to scale large images rapidly. Zoom handles this scaling quite well, but most other interpreters are not very good. While Gargoyle is actually faster than Zoom at most graphics operations, its performance at scaling large images is middling; it is the best alternative to Zoom, but is nowhere near as fast.
 
-	5. If you have multiple graphics windows, only some of which have animations, change or preempt the "animation window-updating rule" to be more selective. This rule redraws *all* of the open graphics windows for each frame of an animation; we should rewrite it to update only the windows that we are animating.
+	5. If you have multiple graphics windows, only some of which have animations, change or pre-empt the "animation window-updating rule" to be more selective. This rule redraws *all* of the open graphics windows for each frame of an animation; we should rewrite it to update only the windows that we are animating.
 
 	6. If you have multiple animations running at once, see whether you get better performance by running them at the same rate. If you have animations running at different rates, make one a (preferably low) multiple of the other, e.g. 100 ms per frame and 200 ms per frame. This will mean fewer timer ticks where nothing meaningful takes place.
 
@@ -2398,9 +2398,9 @@ Option 4 actually changes the rate of the animation itself. Once we're about 1/3
 			let rate be (base rate) + ( (current-frame of the movement track - (motion-duration / 3)) * (rate interval) );
 			time the movement track at (rate) ms per frame.
 
-Example: * Maps of Murder - The user interface is an ideal place to experiment with animation effects. Here, we sketch a kind of image browser for an IF game. Four thumbnail versions (the map illustrations from Dell Map-Back murder mysteries) are displayed in a grid. We can click on any one of them to maximize it; we use two animation tracks to animate the maximisation, scaling the image to full size while moving it to the centre of the window. Click on the cover again to return it to the original thumbnail size and location.
+Example: * Maps of Murder - The user interface is an ideal place to experiment with animation effects. Here, we sketch a kind of image browser for an IF game. Four thumbnail versions (the map illustrations from Dell Map-Back murder mysteries) are displayed in a grid. We can click on any one of them to maximise it; we use two animation tracks to animate the maximisation, scaling the image to full size while moving it to the centre of the window. Click on the cover again to return it to the original thumbnail size and location.
 
-This example illustrates the "stacking" of animation tracks to achieve more complex effects; in this case we are stacking motion and scaling animations, with an easing effect lending a subtle arc to things. The example also demonstrates how we can test the animation state of an object so as to modify behaviour appropriately, and more generally it shows how to write generalized code-we could add 20 more covers without changing any of the core code.
+This example illustrates the "stacking" of animation tracks to achieve more complex effects; in this case we are stacking motion and scaling animations, with an easing effect lending a subtle arc to things. The example also demonstrates how we can test the animation state of an object so as to modify behaviour appropriately, and more generally it shows how to write generalised code-we could add 20 more covers without changing any of the core code.
 
 	*: "Maps of Murder"
 
@@ -2450,9 +2450,9 @@ When a cover has been maximised, we place a semi-transparent overlay over the ot
 
 	[----------------]
 
-	A cover-image can be maximized.
+	A cover-image can be maximised.
 
-We define four tracks. Why four? It will be possible to click on another cover to maximize it while we have another cover already enlarged; we have four tracks so that both can move at the same time (using two tracks each). The primary tracks maximize, while the secondary tracks minimize the cover back to the grid.
+We define four tracks. Why four? It will be possible to click on another cover to maximise it while we have another cover already enlarged; we have four tracks so that both can move at the same time (using two tracks each). The primary tracks maximise, while the secondary tracks minimise the cover back to the grid.
 
 Note that the primary zooming track has an easing equation (cubic easing out) applied. Combined with the motion, this creates a rather subtle to the overall motion of maximisation. We don't apply the easing to the secondary track-it's a bit too distracting for the return journey, which is after all about minimisation.
 
@@ -2469,40 +2469,40 @@ Also note the callback on the secondary zooming track. This moves the cover back
 	The display scaling ratio is a real number variable. The display scaling ratio is 1.000.
 	The display position is a list of numbers variable. The display position is {231, 326}.
 
-All of the animation action takes place in the carry out toggling rule. We first check to see whether the secondary zooming track is active; if it is, that means that the sprite that was clicked on was already returning to the original grid position, and we need to deactivate that animation so that we can maximize it again (later on in the same rule).
+All of the animation action takes place in the carry out toggling rule. We first check to see whether the secondary zooming track is active; if it is, that means that the sprite that was clicked on was already returning to the original grid position, and we need to deactivate that animation so that we can maximise it again (later on in the same rule).
 
-Next we check to see whether there is already an image in the central position. If so, we need to start reducing it. We change its display layer so that it is above the semitransparent overlay, but below whichever sprite is actually the target of the player's click (which will be the noun supplied to the toggling action), then we animate it using the secondary tracks to return it to its original position and size. If this happens to be the image that we clicked on, we stop the action-we don't need to do any more, since clicking on an maximized image just toggles it back to the grid.
+Next we check to see whether there is already an image in the central position. If so, we need to start reducing it. We change its display layer so that it is above the semitransparent overlay, but below whichever sprite is actually the target of the player's click (which will be the noun supplied to the toggling action), then we animate it using the secondary tracks to return it to its original position and size. If this happens to be the image that we clicked on, we stop the action-we don't need to do any more, since clicking on an maximised image just toggles it back to the grid.
 
-Finally, we deal with the case in which a small sprite is clicked on. We first move it to the uppermost layer so it overlays everything else, then we activate the semitransparent overlay and animate the primary tracks to maximize the sprite that was clicked.
+Finally, we deal with the case in which a small sprite is clicked on. We first move it to the uppermost layer so it overlays everything else, then we activate the semitransparent overlay and animate the primary tracks to maximise the sprite that was clicked.
 
 All this may seem a bit complex. It does requiring some planning, and it especially helps to work out the layers you need in advance, but you will also undoubtedly also end up tweaking things as you test your original design.
 
-Note that the implementation of this as a standard action, particularly with the superfluous textual reports on what's been maximized and what's been minimized, is probably a poor design choice!
+Note that the implementation of this as a standard action, particularly with the superfluous textual reports on what's been maximised and what's been minimised, is probably a poor design choice!
 
 	*: Toggling something is an action applying to one visible thing. Understand "toggle [any thing]" as toggling something.
 
 	Carry out toggling something:
 		if the animation-flag of the secondary zooming track is g-active:
-			[the sprite we clicked on is already reducing; stop that motion so we can maximize again]
+			[the sprite we clicked on is already reducing; stop that motion so we can maximise again]
 			deactivate the secondary zooming track;
 			deactivate the secondary motion track;
-		if there is a maximized cover-image:
-			[There is already a maximized sprite; we need to minimize it]
-			let item be a random maximized cover-image;
-			now item is not maximized;
+		if there is a maximised cover-image:
+			[There is already a maximised sprite; we need to minimise it]
+			let item be a random maximised cover-image;
+			now item is not maximised;
 			now the display-layer of item is 3;
 			animate the secondary zooming track as a zooming animation targeting the item and ending at the resting scaling ratio at 24 fps with duration of 8 frames;
 			animate the secondary motion track as a motion animation targeting the item and ending at the rightful position of the item at 24 fps with duration of 6 frames;
 			now the display status of the transparent overlay is g-inactive;
-			if item is the noun, stop the action;[We clicked on the already maximized image, so we don't need to enlarge it; the minimizing motion we've triggered is all that is called for.]
+			if item is the noun, stop the action;[We clicked on the already maximised image, so we don't need to enlarge it; the minimising motion we've triggered is all that is called for.]
 		now the display-layer of the noun is 4;
-		now the noun is maximized;
+		now the noun is maximised;
 		now the display status of the transparent overlay is g-active;
 		animate the primary zooming track as a zooming animation targeting the noun and ending at the display scaling ratio at 24 fps with duration of 8 frames;
 		animate the primary motion track as a motion animation targeting the noun and ending at the display position at 24 fps with duration of 6 frames.
 
 	Report toggling something:
-		say "[The noun] has been [if the noun is maximized]maximized[otherwise]minimized[end if]."
+		say "[The noun] has been [if the noun is maximised]maximised[otherwise]minimised[end if]."
 
 	When play begins:
 		say "This example demonstrates the use of multiple 'tracks' to provide complex animation effects. Click on an image to zoom in and move it to the centre. Click again to toggle. You can also click on a second cover while the first is zoomed; both will animate smoothly into the appropriate positions.[paragraph break]The images are the back covers of Dell Map-Back mystery books. The Map-Back was a prototype of and possibly a direct influence on the 'feelies' that accompanied classic Infocom games such as [i]Deadline[/i]. These images are from Marble River's Ephemera; you can see the front covers at http://marbleriver.blogspot.com/2010/01/backs-dell-more-map.html.";
@@ -2511,11 +2511,11 @@ Note that the implementation of this as a standard action, particularly with the
 			now the scaling factor of the item is the resting scaling ratio.
 
 	[Understand "show me source" or "source" or "source code" as a mistake ("
-	Carry out toggling something:[line break]     if the animation-flag of the secondary zooming track is g-active:[line break]          [i][bracket]the sprite we clicked on is already reducing; stop that motion so we can maximize again[close bracket][/i][line break]          deactivate the secondary zooming track;[line break]          deactivate the secondary motion track;[line break]     if there is an maximized cover-image:[line break]          [i][bracket]There is already a maximized sprite; we need to minimize it[close bracket][/i][line break]          let item be a random maximized cover-image;[line break]          now item is not maximized;[line break]          now the display-layer of item is 3;[line break]          animate the secondary zooming track as a zooming animation targeting the item and ending at the resting scaling ratio at 24 fps with duration of 8 frames;[line break]          animate the secondary motion track as a motion animation targeting the item and ending at the rightful position of the item at 24 fps with duration of 6 frames;[line break]          now the display status of the transparent overlay is g-inactive;[line break]          if item is the noun, stop the action;[i][bracket]We clicked on the maximized image, so we don't need to enlarge it; the reduction motion we've already set in motion is sufficient.[close bracket][/i][line break]     now the display-layer of the noun is 4;[line break]     now the noun is maximized;[line break]     now the display status of the transparent overlay is g-active;[line break]     animate the primary zooming track as a zooming animation targeting the noun and ending at the display scaling ratio at 24 fps with duration of 8 frames;[line break]     animate the primary motion track as a motion animation targeting the noun and ending at the display position at 24 fps with duration of 6 frames.").]
+	Carry out toggling something:[line break]	 if the animation-flag of the secondary zooming track is g-active:[line break]		 [i][bracket]the sprite we clicked on is already reducing; stop that motion so we can maximise again[close bracket][/i][line break]		 deactivate the secondary zooming track;[line break]		 deactivate the secondary motion track;[line break]	 if there is an maximised cover-image:[line break]		 [i][bracket]There is already a maximised sprite; we need to minimise it[close bracket][/i][line break]		 let item be a random maximised cover-image;[line break]		 now item is not maximised;[line break]		 now the display-layer of item is 3;[line break]		 animate the secondary zooming track as a zooming animation targeting the item and ending at the resting scaling ratio at 24 fps with duration of 8 frames;[line break]		 animate the secondary motion track as a motion animation targeting the item and ending at the rightful position of the item at 24 fps with duration of 6 frames;[line break]		 now the display status of the transparent overlay is g-inactive;[line break]		 if item is the noun, stop the action;[i][bracket]We clicked on the maximised image, so we don't need to enlarge it; the reduction motion we've already set in motion is sufficient.[close bracket][/i][line break]	 now the display-layer of the noun is 4;[line break]	 now the noun is maximised;[line break]	 now the display status of the transparent overlay is g-active;[line break]	 animate the primary zooming track as a zooming animation targeting the noun and ending at the display scaling ratio at 24 fps with duration of 8 frames;[line break]	 animate the primary motion track as a motion animation targeting the noun and ending at the display position at 24 fps with duration of 6 frames.").]
 
 Example: * Eased Movements - This example is primarily a demo of the available easing equations. The animation itself is handled in only a single line, whereas most of the code is devoted to user input, particularly the selection of primary and secondary easing via hyperlinks. The example does however illustrate the use of a number of features that are rarely demoed and which may be of interest to those interested in animation, including mouse input and hyperlink input.
 
-There is only a single animation track, the movement track. We initialize both its primary and secondary easing to "linear easing" (i.e., default movement, no real easing to speak of).
+There is only a single animation track, the movement track. We initialise both its primary and secondary easing to "linear easing" (i.e., default movement, no real easing to speak of).
 
 	*: "Eased Movements"
 
@@ -2706,7 +2706,7 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 	Figure of WalkW03 is the file "WalkW03.png".
 	Figure of WalkW04 is the file "WalkW04.png".
 
-	Section - Window initialisations
+	Section - Window initializations
 
 	The divider is a g-window spawned by the main-window. The type is g-graphics. The position is g-placeright. The measurement is 360. The back-colour is g-lavender.
 
@@ -2717,9 +2717,9 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 	The graphics-canvas is a g-canvas. The canvas-width is 752. The canvas-height is 352. The associated canvas of the graphics-window is the graphics-canvas. The associated canvas of a g-element is the graphics-canvas.
 
 	Window-drawing rule for the side-window (this is the construct inventory rule):
-		move focus to side-window, clearing the window;
-		try taking inventory;
-		return to main screen.
+		 move focus to side-window, clearing the window;
+		 try taking inventory;
+		 return to main screen.
 
 	Every turn when the side-window is g-present: follow the window-drawing rules for the side-window.
 
@@ -2863,7 +2863,7 @@ Example: ** Scourge of the Vampyr - This example combines a number of different 
 	Instead of switching on the lamp in the Burial Hall:
 		say "You ease the wick out of the base. As the flame flickers to life, the details of the room emerge.";
 		deactivate the opacity mask;
-		animate the default track as a flicker animation targeting the Chamber-sprite at 18 fps with a duration of 20 frames, randomized;
+		animate the default track as a flicker animation targeting the Chamber-sprite at 18 fps with a duration of 20 frames, randomised;
 		animate the lighting track as a fade animation targeting the Chamber-sprite and using the black-fader from 80 % to 0 % at 18 fps with a duration of 20 frames;
 		delay input until all animations are complete;
 		now the lamp is lit.

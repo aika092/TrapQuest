@@ -2,7 +2,7 @@ RoboMatron by Monster begins here.
 
 robomatron is a robot. robomatron is intelligent. Understand "matron", "matronbot", "robomatron", "robot matron" as robomatron. The text-shortcut of robomatron is "mtb".
 
-Definition: A robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
+Definition: a robomatron is hotel dwelling: decide no. [Stops it spawning via spawning trap]
 
 To say ShortDesc of (M - robomatron):
 	say "MatronBot".
@@ -21,7 +21,7 @@ To decide which figure-name is the monster-image of (M - robomatron):
 To set up (M - robomatron):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 18;
+	now the raw difficulty of M is 18;
 	now the health of M is the maxhealth of M;
 	now M is in Hotel36.
 
@@ -41,7 +41,7 @@ Part 1 - Perception
 
 To compute perception of (M - robomatron):
 	now M is interested;
-	now the difficulty of M is 5;
+	now the raw difficulty of M is 5;
 	say "[BigNameDesc of M] notices you![line break][speech style of M]'TEST SUBJECT DETECTED. FINAL BOSS ROUTINE ENGAGED. SCANNING STATUS...[line break]";
 	if the wealth of the player < 20:
 		say "INSUFFICIENT FUNDS DETECTED. PUSHING BUTTON AND ENDING THE SIMULATION WILL RESULT IN 12 MONTHS OF SERVITUDE TO NINTENDOLLS. TERMINATING FINAL BOSS ROUTINE. THE CHOICE IS YOURS.'[roman type][line break]The robot adopts a passive stance, and seems to be willing to allow you to access the STOP button.";
@@ -85,8 +85,7 @@ To compute monstermotion of (M - robomatron):
 To compute (M - robomatron) seeking (D - a direction):
 	do nothing.
 
-To compute fleeing of (M - robomatron):
-	do nothing.
+Definition: robomatron is scarable: decide no.
 
 Part 3 - Combat
 
@@ -108,7 +107,7 @@ Definition: robomatron is willing to deliver enemas: decide yes.
 Definition: robomatron is eager to enhance the spanking: decide yes.
 
 To say SpankingMercyRejectionFlav of (M - robomatron):
-	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type] [big he of M] doesn't look like [NameDesc of M] plans to be nice.".
+	say "[speech style of M]'ERROR: NO MERCIFUL PUNISHMENT ROUTINE IN DATA BANK.'[roman type] It doesn't look like [NameDesc of M] plans to be nice.".
 
 To say SpankingStartFlav of (M - robomatron):
 	say "[BigNameDesc of M] grabs you by the ankles and pulls you into the air, so that you are hanging vertically upside down! [line break][variable custom style][if the player is able to speak]'Eek! Put me down!!!'[otherwise]What?! No way, I can't get punished like this[one of][or] again[stopping]![end if][roman type][line break]".
@@ -117,7 +116,7 @@ To say SpankingDeclarationFlav of (M - robomatron):
 	say "[speech style of M]'ULTIMATE SPANKING ROUTINE INITIATED.'[roman type][line break]".
 
 To say SpankingFlav of (M - robomatron):
-	say "[BigNameDesc of M]'s arm rotates fully at the elbow, delivering [one of]five[or]four[or]six[as decreasingly likely outcomes] powerful blows to your [buttcheeks] with [his of M] hard metal hand. [if there is a worn diaper][DiaperSoftenFlav of M][end if]".
+	say "[BigNameDesc of M][']s arm rotates fully at the elbow, delivering [one of]five[or]four[or]six[as decreasingly likely outcomes] powerful blows to your [buttcheeks] with [his of M] hard metal hand. [if there is a worn diaper][DiaperSoftenFlav of M][end if]".
 
 To say SpankingAftermath of (M - robomatron):
 	say "[one of]This is the most brutal spanking session you've experienced so far this game[or]Once again you've just experienced a spanking session more brutal than any other in this world[stopping]. [if the delicateness of the player > 8]By the end you have been reduced to a puddle of tears and desperate sobs, begging for mercy and feeling like a little baby[otherwise]You can't stop yourself from crying a bit as the punishment feels never ending, and by the end of the session you really do feel like a little baby[end if].".
@@ -132,7 +131,7 @@ To say EnemaDeclarationFlav of (M - robomatron):
 	say "[speech style of M]'ULTIMATE ENEMA ROUTINE INITIATED.'[roman type] ";
 
 To say EnemaStartFlav of (M - robomatron):
-	say "A small tube emerges from [NameDesc of M]'s right palm[one of]. It looks like [his of M] whole right arm is also an enema delivery mechanism![or].[stopping]".
+	say "A small tube emerges from [NameDesc of M][']s right palm[one of]. It looks like [his of M] whole right arm is also an enema delivery mechanism![or].[stopping]".
 
 To say EnemaFlav of (M - robomatron):
 	if the sex-length of M is 4:
@@ -153,25 +152,27 @@ To say EnemaAfterFlav of (M - robomatron):
 To compute enema floor reaction of (M - robomatron):
 	humiliate 200;
 	if voluntarySquatting is 1, humiliate 500;
-	say "[BigNameDesc of M]'s eyes turn red. [line break][speech style of M]BAD GIRL. BAD GIRL.'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
+	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]BAD GIRL. BAD GIRL.'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
 	now M is interested.
 
 Section 2 - Damage
 
-To compute damage of (M - robomatron):
-	if the health of M > 0:
-		if M is unfriendly:
-			if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] doesn't pay any attention to the damage!";
-			otherwise say "[one of][BigNameDesc of M]'s movement seems slightly more erratic now, as if [his of M] joints have suffered some proper damage.[or][BigNameDesc of M] is forced to slightly recoil![stopping]";
-		otherwise:
-			anger M;
-			now M is interested;
-			say "Suddenly, [NameDesc of M]'s eyes turn red, making [him of M] look very angry. [line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]";
+To compute damage reaction of (M - robomatron):
+	if M is unfriendly:
+		if the health of M > the maxhealth of M / 2, say "[BigNameDesc of M] doesn't pay any attention to the damage!";
+		otherwise say "[one of][BigNameDesc of M][']s movement seems slightly more erratic now, as if [his of M] joints have suffered some proper damage.[or][BigNameDesc of M] is forced to slightly recoil![stopping]";
 	otherwise:
-		compute death of M.
+		compute perception of M.
 
-To compute unique death of (M - robomatron):
-	say "[speech style of M]'CRITICAL ERROR...'[roman type][line break][BigNameDesc of M]'s metal arms fall out of their sockets, and the light disappears from [his of M] eyes. A moment later, [his of M] entire body clatters to the ground.".
+Definition: robomatron is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
+
+To compute automatic banishment of (M - robomatron):
+	compute banishment of M.
+
+To compute banishment of (M - robomatron):
+	say "[speech style of M]'CRITICAL ERROR...'[roman type][line break][BigNameDesc of M][']s eyes lose their colour, and [he of M] seems to... shut down?";
+	now the health of M is 1;
+	calm M.
 
 RoboMatron ends here.

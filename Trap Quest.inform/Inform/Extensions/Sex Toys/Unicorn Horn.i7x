@@ -37,7 +37,7 @@ To compute climax effect of (C - a unicorn-horn):
 		if X <= 0, break.
 
 To compute resolution of (M - a monster) taking (T - a unicorn-horn):
-	say "The [printed name of T] briefly lights up before exploding into a shower of glittering motes, which briefly cling to [NameDesc of M]'s body before disappearing. [big he of M] looks completely refreshed.";
+	say "The [printed name of T] briefly lights up before exploding into a shower of glittering motes, which briefly cling to [NameDesc of M][']s body before disappearing. [big he of M] looks completely refreshed.";
 	now the health of M is the maxhealth of M;
 	now the refactory-period of M is 1;[so we trigger any code to run when a monster refreshes fully]
 	if M is unfriendly and M is intelligent:
@@ -54,8 +54,7 @@ To uniquely set up (C - a unicorn-horn):
 	now the size of C is 6;
 	now C is blessed.
 
-Definition: a unicorn-horn is cursable:
-	decide no.
+Definition: a unicorn-horn is cursable: decide no.
 
 To decide which number is the sex-addiction-influence of (C - a unicorn-horn):
 	let X be the magic-modifier of C;

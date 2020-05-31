@@ -54,7 +54,7 @@ To Set Up Store:
 		now L is store;
 		increase shop-clothing by 1;
 	if the number of trousers in Dungeon41 is 0: [We want at least one pair of trousers]
-		let T be a random off-stage fetish appropriate trousers;
+		let T be a random off-stage shop-eligible trousers;
 		unless T is nothing:
 			now T is in Dungeon41;
 			now T is store;
@@ -69,7 +69,7 @@ To Set Up Store:
 		now C is sure;
 		now C is identified.
 
-A time based rule (this is the shop cycling rule):[if the player is in the room, describe the shopkeeper restocking everything]
+A time based rule (this is the shop cycling rule):[TODO: if the player is in the room, describe the shopkeeper restocking everything]
 	if the remainder after dividing time-earnings by 995 < time-seconds:
 		let C be a random store clothing in Dungeon41;
 		if C is clothing, destroy C;

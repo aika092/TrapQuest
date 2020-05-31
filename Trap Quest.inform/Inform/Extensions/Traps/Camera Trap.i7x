@@ -118,7 +118,7 @@ To develop (P - a poster):
 	now the old-trousers of P is a random worn trousers;
 	now the old-bimbo of P is the appearance of the player;
 	now the old-sex-addiction of P is the sex addiction of the player;
-	if the pregnancy of the player > 0, now old-father of P is the father;
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now old-father of P is the father;
 	if asshole is lewdly exposed, now the asshole visible of P is 1;
 	if vagina is lewdly exposed or penis is lewdly exposed, now the genitals visible of P is 1;
 	compute special of P;
@@ -160,7 +160,7 @@ To decide which number is the lewdness of (P - a poster):
 Check examining an unspotted poster:
 	follow the player spots poster rule. [This stops the player somehow examining the poster first.]
 
-A time based rule (this is the player spots poster rule):
+An all time based rule (this is the player spots poster rule):
 	let P be a random unspotted poster in the location of the player;
 	if P is poster:
 		if playerRegion is Hotel:
@@ -174,7 +174,7 @@ A time based rule (this is the player spots poster rule):
 		humiliate the lewdness of P;
 		now P is spotted.
 
-A time based rule (this is the monster spots poster rule):
+An all time based rule (this is the monster spots poster rule):
 	let P be a random spotted poster in the location of the player;
 	if P is poster:
 		repeat with M running through reactive monsters:

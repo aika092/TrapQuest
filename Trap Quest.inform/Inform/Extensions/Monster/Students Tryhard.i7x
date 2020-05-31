@@ -3,7 +3,7 @@ Students Tryhard by Monster begins here.
 A tryhard student is a kind of student. Understand "dedicated" as a tryhard student.
 
 To say MediumDesc of (M - a tryhard student):
-	say "dedicated [rank-colour of item described] student [student-name of item described]".
+	say "dedicated [rank-colour of M] student [student-name of M]".
 
 To decide which number is the dedication of (M - a tryhard student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 5.
@@ -100,7 +100,7 @@ To say RepeatResponse of (M - student-candy):
 	say FirstResponse of M.
 
 To say StoryAnswer of (M - student-candy):
-	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner! I'm good at following instructions. No actually, I'm the BEST at following instructions! My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet [boy of the player] but I'm still learning how to properly [please] men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
+	say "[speech style of M]'[if diaper quest is 1]I'm here to learn how to be an even better kitty for my owner! I'm good at following instructions. No actually, I'm the BEST at following instructions! My owner wants me to learn to pee on the ground like a normal kitty but unlearning toilet training is hard. So I'm seeing if this school can help me out.'[otherwise]My owner wants me to be his 24/7 live-in pet girl but I'm still learning how to properly [please] men. I think I've got the sexy kitty cat perfect already though. Miaow!'[end if][roman type][line break]".
 
 To say DamageReaction (N - a number) of (M - student-candy):
 	if N > (the maxhealth of M / 4) * 3:

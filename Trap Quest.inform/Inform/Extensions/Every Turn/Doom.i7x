@@ -2,19 +2,41 @@ Doom by Every Turn begins here.
 
 [!<doomCounter:Integer>*
 
-REQUIRES COMMENTING
+Ticks up once per mindless cultist per turn, as they perform the ritual. Other things such as the purity of the sacred pool can also influence increase rate.
 
 *!]
 doom counter is a number that varies.
 
 [!<doomed:Integer>*
 
-REQUIRES COMMENTING
+Increases once every time doom counter reaches a multiple of 150. At each stage, certain elements of the game might be affected, new NPCs might be able to spawn, etc.
+At doomed 4, the pink sphere appears
+At doomed 5, the herald appears and mindless cultists become hostile
 
 *!]
 doomed is a number that varies.
 
+[!<new-acolyte-counter:Integer>*
+
+Increases once per turn. At 300 (might change), resets and a new mindless cultist joins the ritual.
+
+*!]
 new-acolyte-counter is initially 0.
+
+Definition: a thing is bell themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
+Definition: a thing is book themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
+Definition: a thing is candle themed: decide no. [The player needs a bell themed, a book themed and a candle themed thing to complete the doom ritual.]
+
+To commence doom:
+	if doom counter is 0:
+		if Mansion00 is unplaced:
+			Set Up The Mansion;
+			follow the setting up mansion monsters rules;
+			repeat with M running through alive nonexistent monsters:
+				set up M;
+		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
+		now doom counter is 1.
 
 [!<ComputeDoom>+
 
@@ -22,28 +44,37 @@ REQUIRES COMMENTING
 
 +!]
 A later time based rule (this is the compute doom rule):
+	if tough-shit is 1 and doom counter is 0:
+		let R be the room south from Stairwell03;
+		if the player is in Stairwell03 or the player is in R, commence doom;
 	if doom counter > 0:
-		if the location of the player is Mansion23 and doom notes is held and there is a held pocketbook and (reception bell is held or there is a held catbell or cowbell is held) and black candle is held:
-			if there is unfriendly monster in the location of the player or there is an acolyte in the location of the player:
-				let L be the list of undefeated monsters in the location of the player;
-				repeat with M running through friendly undefeated monsters in the location of the player:
-					if M is not acolyte and M is not deep one, remove M from L;
-				if the number of entries in L > 0 and the player is not in danger, say "You want to perform the ritual [one of]to send the elder ones back to sleep [or][stopping]but you can't until the room is clear of all threats who would probably interrupt you - [L].";
-			otherwise:
-				say "[bold type]You pull out the paper the witch gave you and try to figure out what exactly you are supposed to do.[roman type] [if the raw intelligence of the player > 12]Fortunately you find it quite straightforward. [otherwise if the raw intelligence of the player > 7]It's a bit complicated but you eventually work it out. [otherwise]You honestly have no idea what any of this means, but it seemed the witch planned for that too because it ends with 'LOOK, JUST LIGHT THE CANDLE, RING THE BELL, PICK UP THE BOOK, AND SAY GO FUCK OFF.'[line break][end if]As you carry out the instructions, there is a huge rush of air, a terrible noise, and a brief whiff of ozone. Afterwards the air feels still, and you believe you may have succeeded.";
-				now doom counter is -1;
-				now doomed is -1;
-				if the pink sphere is in the location of the player:
+		let BLT be a random held bell themed thing;
+		let BT be a random held book themed thing;
+		let CT be a random held candle themed thing;
+		if doomed < 5 and the location of the player is Mansion23 and the player is not in danger:
+			if doom notes is held and BLT is a thing and BT is a thing and CT is a thing:
+				if there is undefeated unfriendly monster in the location of the player or there is an undefeated acolyte in the location of the player:
+					let L be the list of undefeated monsters in the location of the player;
+					repeat with M running through undefeated friendly monsters in the location of the player:
+						if M is not acolyte and M is not deep one, remove M from L;
+					if the number of entries in L > 0, say "[bold type]You want to perform the ritual [one of]to send the elder ones back to sleep [or][stopping]but you can't until the room is clear of all threats who would probably interrupt you - [L].[roman type][line break]";
+				otherwise:
+					say "[bold type]You pull out the paper the witch gave you and try to figure out what exactly you are supposed to do.[roman type] [if the raw intelligence of the player > 12]Fortunately you find it quite straightforward. [otherwise if the raw intelligence of the player > 7]It's a bit complicated but you eventually work it out. [otherwise]You honestly have no idea what any of this means, but it seemed the witch planned for that too because it ends with 'LOOK JUST LIGHT THE CANDLE, RING THE BELL, PICK UP THE BOOK, AND SAY GO FUCK OFF.'[line break][end if]As you carry out the instructions, there is a huge rush of air, a terrible noise, and a brief whiff of ozone. Afterwards the air feels still, and you believe you may have succeeded.";
+					now doom counter is -1;
+					now doomed is -1;
+					if the pink sphere is in the location of the player, say "You hear the sound of a thousand voices groaning angrily, and then the giant pink sphere fizzles from existence.";
 					destroy the pink sphere;
-					say "You hear the sound of a thousand voices groaning angrily, and then the giant pink sphere fizzles from existence.";
-				progress quest of ritual-quest;
-				let X be a random off-stage plentiful necklace;
-				unless X is nothing:
-					now X is in the location of the player;
-					now X is pure diamond;
-					set shortcut of X;
-					say "You watch with glee as a [printed name of X] shimmers into existence at your feet!";
-					compute autotaking X;
+					progress quest of ritual-quest;
+					let X be a random off-stage plentiful necklace;
+					unless X is nothing:
+						now X is in the location of the player;
+						now X is pure diamond;
+						set shortcut of X;
+						say "You watch with glee as a [printed name of X] shimmers into existence at your feet!";
+						compute autotaking X;
+			otherwise:
+				if doom notes is off-stage, say "[one of][bold type]Perhaps there's some way to permanently stop this ritual from happening. Maybe you should ask a witch.[roman type][line break][or][stopping]";
+				otherwise say "[bold type]You want to perform the ritual[one of] to send the elder ones back to sleep[or][stopping].[roman type][line break]You [if doom notes is not held][bold type]do not [roman type][end if]have the instructions from the witch.[line break]You [if BLT is a thing]have a bell ([NameDesc of BLT])[otherwise][bold type]do not [roman type]have a bell[end if].[line break]You [if BT is a thing]have a book ([NameDesc of BT])[otherwise][bold type]do not [roman type]have a book[end if].[line break]You [if CT is a thing]have a candle ([NameDesc of CT])[otherwise][bold type]do not [roman type]have a candle[end if].";
 		otherwise if doomed < 5:
 			if debuginfo > 1, say "[input-style]DOOM: [doom counter] ";
 			let MA be the number of mindless acolytes in Mansion23;
@@ -80,7 +111,7 @@ A later time based rule (this is the compute doom rule):
 			if MC is a monster:
 				increase new-acolyte-counter by 1;
 				if debuginfo > 1, say "[input-style]New cultist counter: [new-acolyte-counter] | 250[roman type][line break]";
-				if new-acolyte-counter >= 250 and the player is not in Mansion23:
+				if new-acolyte-counter >= 350 and the player is not in Mansion23:
 					now new-acolyte-counter is 0;
 					set up MC;
 					summon MC in the mansion;
@@ -105,8 +136,7 @@ A later time based rule (this is the compute doom rule):
 				otherwise:
 					say "[bold type]A horrible noise like a thousand screams of bliss echoes through the world and a soft pink light fills the area. Above the altar a translucent pink bubble swirls and throbs, the ritual is clearly almost complete![roman type][line break]";
 				now doomed is 4;
-				now the Pink Sphere is in Mansion23;
-				[spawn the pink bubble scenery in mansion23]
+				now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
 			otherwise if doom counter > 750 and doomed is 4:
 				if the location of the player is not Mansion23:
 					if the player-class is not cultist:
@@ -187,15 +217,42 @@ To compute chosen birth:[now that the mindless acolytes are no longer needed to 
 		if inhuman pregnancy > 0:
 			let T be a random off-stage tentacle monster;
 			set up T;
-			decrease the difficulty of T by 2;
+			decrease the raw difficulty of T by 2;
 			now T is in the location of A;
 	repeat with M running through tentacle monsters:
 		now the evolved of M is 3;
 	let N be a random alive mindless acolyte in the location of the player;
 	let E be a random tentacle monster in the location of N;
-	if the number of alive mindless acolytes in the location of the player > 1:
-		say "Each of the cultists gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E][otherwise][end if], emitting an insane laugh as [he of N] stumbles to [his of N] feet.";
+	if the number of mindless acolytes in the location of the player > 1:
+		say "Each of the cultists gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E][otherwise]a floating ghost made of semen[end if], emitting an insane laugh as [he of N] stumbles to [his of N] feet.";
 	otherwise:
 		if N is monster, say "[BigNameDesc of N] gives birth to [if inhuman pregnancy is 1]a [MediumDesc of E], emitting an insane laugh as [he of N] stumbles to [his of N] feet[otherwise]a mass of black and purple motes, which separate and disappear as [he of N] stumbles to [his of N] feet and emits an insane laugh[end if].".
+
+A time based rule (this is the creepiness rule):
+	compute creepiness.
+
+[!<creepiness:Integer>*
+
+REQUIRES COMMENTING
+
+*!]
+creepiness is a number that varies. creepiness is usually 0.
+[!<ComputeCreepiness>+
+
+REQUIRES COMMENTING
+
++!]
+To compute creepiness: [first implementation of "creeping" of ghosts in non-garlic rooms.]
+	if the location of the player is garlic or playerRegion is not mansion:
+		if creepiness > 0, decrease creepiness by 10;[The player will have to hide for a couple turns to completely shake off the ghosts, but it shouldn't take too long]
+	otherwise if (creepiness > a random number between 10 and 20) and the number of alive ghosts * 30 < creepiness and there is an off-stage ghost:[player has to be in the mansion for a while before multiple ghosts start messing with them]
+		let M be a random off-stage ghost;[Sometimes this summons the jismbodied ghost, but you have to "kill" it first.]
+		set up M;
+		now M is in the location of the player;
+		say "Something in the air changes, and you look over your shoulder to see a pinprick of light in the doorway, slowly growing into [NameDesc of M].";
+		decrease creepiness by ((6 - game difficulty) * the number of on-stage ghosts) + 30;[it's almost certain you'll see one if something catches you, but it's very unlikely to get more than 2 at a time.]
+	otherwise if the player is not soulless:[The ghosts are attracted to your soul]
+		say "[one of][if creepiness > 9]Tension seems to linger in the air around you, and you can't help but feel something will burst out at you at any moment.[end if][or][or][or][if creepiness > 6]You can't shake the feeling that you are being watched.[end if][or][or][cycling]";
+		increase creepiness by 1.
 
 Doom ends here.

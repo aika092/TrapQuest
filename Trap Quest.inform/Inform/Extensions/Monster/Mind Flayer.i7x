@@ -34,7 +34,7 @@ To say MonsterDesc of (M - mind flayer):
 To set up (M - mind flayer):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 13;
+	now the raw difficulty of M is 13;
 	now the health of M is the maxhealth of M;
 	anger M.
 
@@ -185,7 +185,7 @@ This is the mind flayer sees a target rule:
 				regionally place N;
 				bore N;
 			otherwise if M is in the location of the player:
-				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. [big he of M] rolls [his of M] white eyes in brief annoyance before a broad, beaky grin crosses [his of M] face. [big he of M] glares at you both, and both of you mindlessly drop to your knees. [big he of M] stares at [him of N] for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis]. Then [he of M] turns to you...";
+				say "[BigNameDesc of M] sniffs the air, then [N][']s head, then yours. [big he of M] rolls [his of M] white eyes in brief annoyance before a broad, beaky grin crosses [his of M] face. It glares at you both, and both of you mindlessly drop to your knees. [big he of M] stares at [him of N] for a moment and then smirks, seemingly satisfied, as [N] wanders off rubbing [his of N] [vagina] and muttering about [manly-penis]. Then [he of M] turns to you...";
 				regionally place N;
 				bore N;
 				try kneeling.
@@ -193,36 +193,25 @@ The mind flayer sees a target rule is listed in the mind flayer priority attack 
 
 Section 2 - Damage
 
-To compute damage of (M - mind flayer):
-	if the health of M > 0:
-		if M is uninterested:
-			say "The creature seems to notice you. Uh-oh...";
-			now M is interested;
-			anger M;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - mind flayer):
+	say "The creature seems to notice you. Uh-oh...".
 
 To say DamageReactHealthy of (M - mind flayer):
 	say "The thing doesn't even flinch!".
 
 To say DamageReactDamaged of (M - mind flayer):
-	say "The creature doesn[']t seem to be looking quite at you, only slightly reacting to the hit.".
+	say "The creature doesn't seem to be looking quite at you, only slightly reacting to the hit.".
 
 To say DamageReactTired of (M - mind flayer):
 	say "The creature takes the hit, [his of M] expression remaining as hard to read as ever.".
 
 To say DamageReactWeak of (M - mind flayer):
-	say "The creature's expression grows frantic as [he of M] senses [his of M] life is in jeopardy!".
+	say "The creature's expression grows frantic as [he of M] senses [his of M] life might be in jeopardy!".
 
-To compute unique death of (M - mind flayer):
-	say "[BigNameDesc of M] screams hideously as [he of M] collapses to the ground. ";
+To loot (M - mind flayer):
 	if severed-tentacle is off-stage:
 		now severed-tentacle is in the location of the player;
-		say "[big his of M] body disappears, leaving behind a [ShortDesc of severed-tentacle].";
-		compute autotaking severed-tentacle;
-	otherwise:
-		say "[big his of M] body disappears".
+		say "You spot a [ShortDesc of severed-tentacle] on the ground.";
+		compute autotaking severed-tentacle.
 
 Mind Flayer ends here.

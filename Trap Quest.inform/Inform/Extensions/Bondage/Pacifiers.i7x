@@ -5,30 +5,31 @@ Definition: a pacifier is same-type if theme-share-target is ballgag.
 A pacifier has a number called stolen-intelligence.
 Definition: a pacifier is curse-sticky: decide no.
 Definition: a pacifier is fetish appropriate: decide yes.
+Definition: a pacifier is discovered varied: decide no.
 Definition: a baby pacifier is fetish appropriate if diaper lover > 0.
 
 Definition: a baby pacifier is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
-A cock pacifier is a kind of pacifier. There is 1 unique cock pacifier. The printed name of cock pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]cock pacifier[clothing-title-after]". The text-shortcut of cock pacifier is "cpc".
+A cock pacifier is a kind of pacifier. There is 1 unique cock pacifier. The printed name of cock pacifier is "[clothing-title-before]cock pacifier[clothing-title-after]". The text-shortcut of cock pacifier is "cpc".
 Definition: a cock pacifier is fetish appropriate if diaper quest is 0.
 Definition: a cock pacifier is drink themed: decide yes.
 Definition: a cock pacifier is oral sex themed: decide yes.
 Definition: a cock pacifier is penis themed: decide yes.
 Definition: a cock pacifier is red themed: decide yes.
 A baby pacifier is a kind of pacifier.
-A pink pacifier is a kind of baby pacifier. There is 1 pink pacifier. The printed name of pink pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pink pacifier[clothing-title-after]". The text-shortcut of pink pacifier is "ppa".
+A pink pacifier is a kind of baby pacifier. There is 1 pink pacifier. The printed name of pink pacifier is "[clothing-title-before]pink pacifier[clothing-title-after]". The text-shortcut of pink pacifier is "ppa".
 Definition: a pink pacifier is pink themed: decide yes.
-A tiger pacifier is a kind of baby pacifier. There is 1 tiger pacifier. The printed name of tiger pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]tiger pacifier[clothing-title-after]". The text-shortcut of tiger pacifier is "tpa".
+A tiger pacifier is a kind of baby pacifier. There is 1 tiger pacifier. The printed name of tiger pacifier is "[clothing-title-before]tiger pacifier[clothing-title-after]". The text-shortcut of tiger pacifier is "tpa".
 Definition: tiger pacifier is orange themed: decide yes.
-A yellow pacifier is a kind of baby pacifier. There is 1 yellow pacifier. The printed name of yellow pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]yellow pacifier[clothing-title-after]". The text-shortcut of yellow pacifier is "ypa".
+A yellow pacifier is a kind of baby pacifier. There is 1 yellow pacifier. The printed name of yellow pacifier is "[clothing-title-before]yellow pacifier[clothing-title-after]". The text-shortcut of yellow pacifier is "ypa".
 Definition: a yellow pacifier is yellow themed: decide yes.
-A sparkly princess pacifier is a kind of baby pacifier. There is 1 sparkly princess pacifier. The printed name of sparkly princess pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]sparkly princess pacifier[clothing-title-after]". The text-shortcut of sparkly princess pacifier is "spp".
+A sparkly princess pacifier is a kind of baby pacifier. There is 1 sparkly princess pacifier. The printed name of sparkly princess pacifier is "[clothing-title-before]sparkly princess pacifier[clothing-title-after]". The text-shortcut of sparkly princess pacifier is "spp".
 Definition: a sparkly princess pacifier is royalty themed: decide yes.
 Definition: a sparkly princess pacifier is heart themed: decide yes.
 Definition: a sparkly princess pacifier is gem themed: decide yes.
 Definition: a sparkly princess pacifier is pink themed: decide yes.
-A ghost pacifier is a kind of baby pacifier. There is 1 ghost pacifier. The printed name of ghost pacifier is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]ghost pacifier[clothing-title-after]". The text-shortcut of ghost pacifier is "gpa".
+A ghost pacifier is a kind of baby pacifier. There is 1 ghost pacifier. The printed name of ghost pacifier is "[clothing-title-before]ghost pacifier[clothing-title-after]". The text-shortcut of ghost pacifier is "gpa".
 Definition: a ghost pacifier is orange themed: decide yes.
 Definition: a ghost pacifier is transformation-protected if the class of the player is trick-or-treater.
 
@@ -135,6 +136,9 @@ To decide which number is the strength-influence of (C - a tiger pacifier):
 To decide which number is the intelligence-influence of (C - a pacifier):
 	decide on 0.
 
+Report examining pacifier when diaper quest is 1:
+	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Pacifiers increase your slow arousal reduction over time while worn, and enable decreases in arousal even on turns when you're also gaining arousal (useful if something is slowly stimulating you over time). But of course they're rather embarrassing for an adult to be wearing.[roman type][line break][or][stopping]".
+
 To compute periodic effect of (P - a pacifier):
 	if diaper quest is 0 and the thirst of the player >= 5 and P is not cock pacifier:
 		let C be a random off-stage cock pacifier;
@@ -143,5 +147,9 @@ To compute periodic effect of (P - a pacifier):
 			only destroy P;
 			summon C cursed with quest;
 			StomachSemenUp 1.
+
+A diaper quest fix rule:
+	let P be a random yellow pacifier;
+	now P is plentiful.
 
 Pacifiers ends here.

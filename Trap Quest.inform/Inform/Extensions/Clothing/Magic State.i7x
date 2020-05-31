@@ -14,17 +14,23 @@ Definition: a clothing is alwaysSure: [Should never be considered to possibly be
 	decide yes.
 
 Definition: a thing is cursable: decide no.
+Definition: a bottle is cursable if it is held.
 Definition: a clothing is cursable: decide yes.
+
+Definition: a thing (called T) is actually cursable:
+	if T is not cursable, decide no;
+	if T is cursed, decide no;
+	decide yes.
 
 [avoids errors if the item is not something that can be cursed]
 Definition: a thing (called T) is maybe-cursed:
-	if T is bottle or T is collectible or T is clothing:
+	if T is bottle or T is collectible or T is clothing or T is alchemy product:
 		if T is cursed, decide yes;
 	decide no.
 
 [avoids errors if the item is not something that can be blessed]
 Definition: a thing (called T) is maybe-blessed:
-	if T is bottle or T is collectible or T is clothing:
+	if T is bottle or T is collectible or T is clothing or T is alchemy product:
 		if T is blessed, decide yes;
 	decide no.
 
@@ -49,6 +55,17 @@ Definition: a clothing (called T) is potentially blessable:
 Definition: a bottle is blessable if it is held and it is not blessed.
 
 Definition: an alchemy product is blessable if it is carried and it is not blessed.
+
+To blandify (C - a clothing):
+	only destroy C; [resets it but also sets it up with random magic state, so we need to do the below]
+	now the raw-magic-modifier of C is 0;
+	now C is bland;
+	now C is blandness.
+
+To blandify and reveal (C - a clothing):
+	blandify C;
+	now C is sure;
+	now C is identified.
 
 [Selkie: Would it be a helpful hint add some flavour text here?
 	if B is not blessed:

@@ -3,18 +3,18 @@ DQ Only Stuff by Miscellaneous Backend begins here.
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
-		if the charge of C is 0 and player-urinating is 0:
-			let D be a random worn dirty diaper;
-			if D is diaper:
-				say "[bold type]The shining light of your [ShortDesc of C] goes out. [roman type]As it does, your [D] [if D is not messed or diaper messing < 6]disappears[otherwise]is removed from your body and falls to the ground[end if]! Your loins are magically wiped clean.";
-				let SD be a random off-stage soiled-diaper;
-				now the charge of C is 100;
-				if D is messed and SD is a thing and diaper messing >= 6:
-					DiaperPrint SD from D;
-					now SD is in the location of the player;
-					only destroy D;
-				otherwise:
-					destroy D.
+	if the charge of C is 0 and player-urinating is 0:
+		let D be a random worn diaper;
+		if D is diaper and (D is messed or the total-soak of D >= the soak-limit of D / 2):
+			say "[bold type]The shining light of your [ShortDesc of C] goes out. [roman type]As it does, your [D] [if D is not messed or diaper messing < 6]disappears[otherwise]is removed from your body and falls to the ground[end if]! Your loins are magically wiped clean.";
+			let SD be a random off-stage soiled-diaper;
+			now the charge of C is 50;
+			if D is messed and SD is a thing and diaper messing >= 6:
+				DiaperPrint SD from D;
+				now SD is in the location of the player;
+				only destroy D;
+			otherwise:
+				destroy D.
 
 Chapter - DQ Specific Figures
 
@@ -39,6 +39,7 @@ Chapter - Unused but referenced Figures
 Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 
 To decide which figure-name is YesNoBackground:
+	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	decide on figure of YesNoBackground1.
 
 Include School Stuff by DQ Only Stuff.
@@ -74,6 +75,8 @@ Icarus is a monster.
 A facehugger is a kind of monster.
 An ultimate-lesson-actor is a kind of monster.
 student-katya is a monster.
+centaur is a monster.
+confident aeromancer is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.
@@ -94,7 +97,7 @@ HorsePulling is an action applying to one thing.
 A lake monster is a kind of person. A lake monster has a number called semen-sniffing. There is 1 lake monster.
 To LakeMonsterCheck (S - a number):
 	do nothing.
-A slimegirl is a kind of person. A slimegirl has a number called hunger. A slimegirl has a number called intensity. A slimegirl has a number called timetaken.
+slimegirl is a person. slimegirl has a number called hunger. slimegirl has a number called intensity. slimegirl has a number called timetaken.
 To SlimegirlCheck:
 	do nothing.
 
@@ -107,9 +110,9 @@ a condom rolls bag of holding is a kind of bag of holding.
 
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
 heavy-club is an equippable. The printed name of heavy-club is "heavy club".
+bondage-ribbons is a dress.
 
 Include Chocolates Bag by Objects.
-Include Chocolate Egg by Food.
 Include Bunny Ears DQ by Headgear.
 rugged-headband is a headgear. domination-quest is a headgear-clothing-quest. rugged-summoned is a number that varies. The printed name of rugged-headband is "rugged headband".
 spiked-tiara is a headgear. The printed name of spiked-tiara is "spiked tiara".
@@ -118,6 +121,9 @@ To decide which text is tonguesColour:
 To say tongueStatus of (C - a clothing):
 	say "".
 portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
+
+tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
+Definition: tits-lesson is lesson-appropriate: decide no.
 
 Include Stuffies by Equippables.
 

@@ -20,7 +20,7 @@ To Set Up The Dungeon:
 				display figure of dq dungeon loading;
 		say "Now loading the dungeon region!";
 		render buffered stuff;
-	if debugmode is 1, say "[bold type]SETTING UP DUNGEON NOW[roman type][line break][line break]";
+	if debugmode is 1, say "[bold type]SETTING UP DUNGEON NOW[roman type][paragraph break]";
 	while the number of unplaced rooms in The Dungeon > 5:
 		Scramble Dungeon;
 		if the number of unplaced rooms in The Dungeon > 5 or Stairwell01 is unplaced or Dungeon28 is unplaced or Dungeon41 is unplaced:
@@ -36,7 +36,7 @@ To Set Up The Dungeon:
 			change the east exit of Dungeon32 to Solid Rock;
 			change the south exit of Dungeon32 to Solid Rock;
 			now Terra Incognita is open;
-	if debugmode is 1, say "[bold type]DUNGEON SETTLED NOW[roman type][line break][line break]";
+	if debugmode is 1, say "[bold type]DUNGEON SETTLED NOW[roman type][paragraph break]";
 	now Remembered Location is Dungeon12;
 	repeat with M running through alive monsters:
 		while the location of M is an unplaced room in the Dungeon:
@@ -74,6 +74,13 @@ To Set Up The Dungeon:
 	follow the set up dungeon traps rules;
 	repeat with M running through alive monsters in the dungeon:
 		if the location of M is not placed, now M is in a random placed sandy room;
+	[let N1 be the regionalMonsterCount of the Dungeon;]
+	repeat with N2 running from 1 to startingRegionalMonsterCount:
+		let M be a random off-stage dungeon dwelling regionally missing monster;
+		if M is not monster, now M is a random off-stage dungeon dwelling monster;
+		if M is monster:
+			set up M;
+			now M is in a random placed sandy room;
 	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
 	set up the school;
 	now the destination of dungeon portal is the school;

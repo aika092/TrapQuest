@@ -25,24 +25,24 @@ REQUIRES COMMENTING
 +!]
 Carry out invoking:
 	if the player-class is not cultist:
-		while the charge of the elder altar >= 100 and there is a worn cursable thing:
-			repeat with T running through worn cursable things:
+		while the charge of the elder altar >= 100 and there is a worn actually cursable thing:
+			repeat with T running through worn actually cursable things:
 				decrease the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its curse[otherwise]becomes blessed[end if]!";
 				bless T;
-		while the charge of the elder altar >= 100 and there is a held cursable wearthing:
-			repeat with T running through worn cursable things:
+		while the charge of the elder altar >= 100 and there is a held actually cursable wearthing:
+			repeat with T running through worn actually cursable things:
 				decrease the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its curse[otherwise]becomes blessed[end if]!";
 				bless T;
 	otherwise:
-		while the charge of the elder altar >= 100 and there is a worn cursable thing:
-			repeat with T running through worn cursable things:
+		while the charge of the elder altar >= 100 and there is a worn actually cursable thing:
+			repeat with T running through worn actually cursable things:
 				decrease the charge of the elder altar by 100;
 				say "Your [T] [if T is blessed]loses its hateful blessing[otherwise]becomes cursed[end if]!";
 				curse T;
-		while the charge of the elder altar >= 100 and there is a held cursable wearthing:
-			repeat with T running through worn cursable things:
+		while the charge of the elder altar >= 100 and there is a held actually cursable wearthing:
+			repeat with T running through worn actually cursable things:
 				decrease the charge of the elder altar by 100;
 				say "Your [T] [if T is cursed]loses its hateful blessing[otherwise]becomes cursed[end if]!";
 				curse T.

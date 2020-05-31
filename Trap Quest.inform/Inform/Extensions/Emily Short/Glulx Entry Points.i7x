@@ -1,6 +1,6 @@
 Version 10/160919 of Glulx Entry Points (for Glulx only) by Emily Short begins here.
 
-"Provides hooks to allow the author to write specialized multimedia behaviour that would normally go through HandleGlkEvent. This is a rather dull utility library that will be of most use to authors wanting to write Glulx extensions compatible with other Glulx extensions already in use."
+"Provides hooks to allow the author to write specialised multimedia behaviour that would normally go through HandleGlkEvent. This is a rather dull utility library that will be of most use to authors wanting to write Glulx extensions compatible with other Glulx extensions already in use."
 
 Use authorial modesty.
 
@@ -77,11 +77,11 @@ Include (- Array evGlobal --> 4; -) before "Glulx.i6t".
 
 [Include (-
 
-  [ HandleGlkEvent ev context abortres newcmd cmdlen i ;
-	for (i=0:i<3:i++) evGlobal-->i = ev-->i;
-	(+ library input context +) = context;
-	return (+ value returned by glk event handling +) ;
-  ];
+ [ HandleGlkEvent ev context abortres newcmd cmdlen i ;
+	 for (i=0:i<3:i++) evGlobal-->i = ev-->i;
+	 (+ library input context +) = context;
+	 return (+ value returned by glk event handling +) ;
+ ];
 
 -) before "Glulx.i6t".]
 
@@ -237,14 +237,14 @@ Chapter: Events
 
 Glulx allows the author to set responses to certain events:
 
-	Timer       - event repeated at fixed intervals
-	CharInput   - keystroke input in a window
-	LineInput   - full line of input in a window
-	MouseInput  - mouse input in a window
-	Arrange     - some windows sizes have changed
-	Redraw      - graphic windows need redrawing
+	Timer	  - event repeated at fixed intervals
+	CharInput  - keystroke input in a window
+	LineInput  - full line of input in a window
+	MouseInput - mouse input in a window
+	Arrange	 - some windows sizes have changed
+	Redraw	 - graphic windows need redrawing
 	SoundNotify - sound finished playing
-	Hyperlink   - selection of a hyperlink in a window
+	Hyperlink  - selection of a hyperlink in a window
 
 As of version 10, Glulx Entry Points provides a rulebook, the "glulx input handling rules" so that the author can add responses to the these events without himself having to include any Inform 6 code. The glulx input handling rules is a parametrised rulebook, meaning that the author can specify which event or events a given rule responds to by specifying a kind of value, the "g-event". The g-events corresponding to the events types described above are:
 

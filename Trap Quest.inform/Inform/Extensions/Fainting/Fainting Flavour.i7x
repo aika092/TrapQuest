@@ -71,7 +71,7 @@ To say FaintingFlav (N - 7):
 [8 unused]
 
 To say FaintingFlav (N - 9):
-	say "'[one of]Not going to lie, that was your own fault entirely. Don't provoke that [boy of a random wench] unless you're sure you can take [him of a random wench]. Back in you go, and this time, be less aggressive...'[or]You lost another fight with the wench?! Did you not learn? Come on, try again now. And this time, learn from your mistakes...'[stopping]".
+	say "'[one of]Not going to lie, that was your own fault entirely. Don't provoke that girl unless you're sure you can take her. Back in you go, and this time, be less aggressive...'[or]You lost another fight with the wench?! Did you not learn? Come on, try again now. And this time, learn from your mistakes...'[stopping]".
 
 To say FaintingFlav (N - 10):
 	say "'[one of]Ah, yes, that will happen if your ass gets filled too much. You don't have an unlimited capacity to hold stuff inside of you! Bear that in mind next time...'[or]Oh come on. you've already fainted from your ass getting too full, didn't you learn anything?! We're sending you back into the game. And this time, learn from your mistakes...'[stopping]".
@@ -82,7 +82,7 @@ To say FaintingFlav (N - 11):
 [12 and 13 and 14 and 15 unused]
 
 To say FaintingFlav (N - 16):
-	say "'[one of]The vine boss is a very difficult monster... maybe if he's too tough for you, you should just leave him alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight him again, good luck sweetie!!'[or]Oh dear, you lost to him again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
+	say "'[one of]The vine boss is a very difficult monster... maybe if [he of vine boss]'s too tough for you, you should just leave him alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight him again, good luck sweetie!!'[or]Oh dear you lost to him again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
 
 To say FaintingFlav (N - 17):
 	say "'Uh-oh... looks like you were enjoying that a bit too much. I think it'll be a miracle for you to win the game the proper way at this point. You could always try fucking your way out, though!'".
@@ -91,7 +91,7 @@ To say FaintingFlav (N - 18):
 	say "'[one of]It's important to keep your internal soreness levels down, if you want to survive this game. They do go down slowly by themselves, but there are items you can find and certain things in the statue hall that you can... *ahem* interact with to reduce them further if you're in trouble!'[or]Oh boy, soreness again? If this keeps being an issue for you, maybe you should take a closer look at the statues in the statue hall? You might find something useful.'[stopping]".
 
 To say FaintingFlav (N - 19):
-	say "'[one of]Wee! That looked fun. No? You didn't find getting popped fun? Oh well, I guess you should try to avoid it happening again, eh? Anyway, back into the game you go.'[or]Oopsie! You keep ballooning out of control, don't you? You should probably find a way to stop that. We'll be sending you back into the game now...'[stopping]".
+	say "'[one of]Wee! That looked fun. No? You didn't find getting popped fun? Oh well I guess you should try to avoid it happening again, eh? Anyway, back into the game you go.'[or]Oopsie! You keep ballooning out of control, don't you? You should probably find a way to stop that. We'll be sending you back into the game now...'[stopping]".
 
 To say FaintingFlav (N - 20):
 	say "'[one of]Oof, that wooden horse is mean, isn't it? Hopefully you'll be luckier with getting off quickly next time...'[or]Wow, the wooden horse again? You should stop wandering around the Woods like that if you can't take the heat...'[stopping]".

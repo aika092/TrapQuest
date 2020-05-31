@@ -6,9 +6,11 @@ Definition: djinn is father material: decide yes.
 
 Definition: djinn is dark skinned: decide yes.
 
-[Definition: djinn is woods dwelling: decide yes.] [He shouldn't be able to respawn]
+Definition: djinn is woods dwelling: decide yes.
 
 Definition: djinn is raunchy: decide yes.
+
+Definition: djinn is wenchy if the player is a february 2020 top donator.
 
 The text-shortcut of djinn is "ndj". Understand "nubian", "genie", "jinn" as djinn.
 
@@ -22,12 +24,12 @@ Figure of djinn is the file "NPCs/Forest/Djinn/djinn1.png".
 Figure of censored djinn is the file "NPCs/Forest/Djinn/djinn2.png".
 
 To decide which figure-name is the monster-image of (M - djinn):
-	if lady fetish is 1, decide on figure of missing NPC;
+	[if lady fetish is 1, decide on figure of missing NPC;]
 	if diaper quest is 0, decide on figure of djinn;
 	otherwise decide on figure of censored djinn.
 
 To decide which figure-name is the vaginal-sex-monster-image of (M - djinn):
-	if lady fetish is 1, decide on figure of missing NPC;
+	[if lady fetish is 1, decide on figure of missing NPC;]
 	decide on figure of djinn cutscene 1.
 
 To say MonsterDesc of (M - djinn):
@@ -48,16 +50,16 @@ To say DickDesc of (M - djinn):
 To set up (M - djinn):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 9;
+	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the girth of (M - djinn):
 	decide on 5.
 
-This is the spawn initial djinn rule:
+[This is the spawn initial djinn rule:
 	if djinn is off-stage and the wishes of a random magic lamp <= 0:
 		summon djinn in the woods.
-The spawn initial djinn rule is listed in the setting up woods monsters rules.
+The spawn initial djinn rule is listed in the setting up woods monsters rules.]
 
 Definition: djinn is human: decide yes.
 
@@ -464,7 +466,7 @@ Part 4 - Djinn Messing
 
 To compute djinn messing of (M - djinn):
 	let R be a random number between 1 and 10;
-	let C be a random worn transformable transformation chain clothing;
+	let C be most-transformable-uncovered-clothing;
 	if R > 1 and C is clothing:
 		compute M transforming C;
 	otherwise:
@@ -502,14 +504,14 @@ To compute (M - djinn) protecting against (X - a monster):
 
 To say SexSubmissionFlav of (M - djinn): [this is customised because I rewrote the scene so the player is floating a couple feet off the ground.]
 	if diaper quest is 1:
-		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
+		say "[one of]Recognising how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
 	otherwise if the relevant sex addiction of M < 10:
-		say "[one of]Recognizing how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it[']s not like you can do much about it anyway[or]You submit to the superior being plowing away at your [random body part penetrated by M][in random order].";
+		say "[one of]Recognising how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have his way, it[']s not like you can do much about it anyway[or]You submit to the superior being plowing away at your [random body part penetrated by M][in random order].";
 	otherwise:
-		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You relax and enjoy the feeling of [NameDesc of M]'s [LongDickDesc of M].[at random]".
+		say "[one of]You allow [NameDesc of M] to violate you as much as [he of M] likes. [big he of M]'s in charge![or]You relax and enjoy the feeling of [NameDesc of M][']s [LongDickDesc of M].[at random]".
 
 To say SexResistFlav of (M - djinn):
-	say "[one of]You hopelessly flail against [NameDesc of M]'s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M]'s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that [his of M] [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
+	say "[one of]You hopelessly flail against [NameDesc of M][']s grip, doing everything you can to resist the invasion.[or]You seem to be being held still by some kind of magical force, leaving you with no real way of resisting, but you still try![or]You flail around and make as much noise as you can, but no matter how much you try, you can't do anything about [NameDesc of M][']s powerful pistoning.[or]You fight against the [if interracial fetish is 1 and M is penetrating a fuckhole]pleasure that his [LongDickDesc of M] is sending through your sensitive hole[otherwise][M][end if] but it's no use, you can't do anything to stop the action![in random order]".
 
 To say angry punishment insult of (M - djinn):
 	if M is not friendly-fucking:
@@ -573,7 +575,7 @@ To decide if (M - djinn) is losing wrapper in (F - vagina):
 	decide no.
 
 To compute post climax effect of (M - djinn) in (F - vagina):
-	if M is unwrapped and pregnancy fetish is 1 and the pregnancy of the player is 0:
+	if M is unwrapped and the player is able to get pregnant:
 		say "You immediately feel the [if the bbc addiction of the player > 4]superior virility of [his of M] Nubian sperm[otherwise]magical sperm[end if] barrelling down your tubes and straight to your undefended egg[if inhuman pregnancy > 0]s[end if]. A strange tingle shoots through you from deep inside, kind of in your belly, almost, and you feel certain you're now pregnant with [his of M] child[if inhuman pregnancy > 0]ren[end if]![line break]";
 		compute sudden pregnancy; [Allows a chance even when sudden pregnancy is disabled]
 		if the pregnancy of the player is 0:
@@ -590,15 +592,15 @@ To say SuddenPregFlav of (M - djinn):
 	say "[speech style of M]'Excellent, [one of]it appears that we are compatible. Don't worry, this is completely normal, this instant gestation period often happens with Djinn. You'll give birth soon enough. Make sure you're here when you do[or]another perfect conception. See you soon[stopping].'[line break][variable custom style][if the semen addiction of the player < 5]Fuck fuck FUCK! [one of]I'm really pregnant with this asshole's magical demon spawn[or]How did I let this happen again[stopping]?![otherwise if the semen addiction of the player < 11]Well at least I won't be pregnant for long, I guess...[otherwise]Ooh, feeling so heavily pregnant feels so right...[end if][roman type][line break]".
 
 To say CondomFailFlav of (M - djinn) in (F - vagina):
-	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [line break][speech style of M]Hahaha! Your mortal condom was no match for my divine sperm![roman type][line break][end if]".
+	say "It can't handle the strain! You feel it burst open inside you, and a gush of warmth floods your [vagina][if pregnancy fetish is 1] as your womb explodes with sensation, and [his of M] horde of eager swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find![line break][otherwise]. [line break][speech style of M]'Hahaha! Your mortal condom was no match for my divine sperm!'[roman type][line break][end if]".
 
 To say CreampieFlav of (M - djinn) in (F - vagina):
-	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type] [BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
+	say "[speech style of M]'Yes... yes... [if pregnancy fetish is 1 and the pregnancy of the player is 0]take my seed, and carry my spawn, whore[otherwise]your [cunt] is pleasing to me, mortal[end if]!'[roman type][line break][BigNameDesc of M] ejaculates deep inside your [vagina][if pregnancy fetish is 1]. Your womb explodes with sensation, as you feel [his of M] swimmers rush straight for your fallopian tubes, filling every crevice and tunnel they can find[end if]!".
 
 To compute labour to (M - djinn):
 	if M is regional and M is alive:
 		compute pregnancy clothing displacement;
-		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] uses [his of M] powers to pull you into the air, and turn you upside down. You begin to feel a bit queasy as [if inhuman pregnancy > 0]one by one, eight small black babies push their way head-first out of your painfully gaping vagina. Each one[otherwise]a little black baby emerges upwards from your painfully gaping vagina, and is[end if] left hovering above your suspended body to take breath and begin to cry. [line break][first custom style]'There there my little one[if inhuman pregnancy > 0]s[end if]. You're safe now.'[roman type][line break]With a click of [his of M] fingers, [NameDesc of M] sends [his of M] new charge[if inhuman pregnancy > 0]s[end if] up into the sky, presumably to their new home. [line break][first custom style]'Good job, mortal, I may have to use your womb again in the future to further expand my clan.'[roman type][line break][big he of M] leaves you to recover from your ordeal.";
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] uses [his of M] powers to pull you into the air, and turn you upside down. You begin to feel a bit queasy as [if inhuman pregnancy > 0]one by one, eight small black babies push their way head-first out of your painfully gaping vagina. Each one[otherwise]a little black baby emerges upwards from your painfully gaping vagina, and is[end if] left hovering above your suspended body to take breath and begin to cry. [line break][speech style of M]'There there my little one[if inhuman pregnancy > 0]s[end if]. You're safe now.'[roman type][line break]With a click of [his of M] fingers, [NameDesc of M] sends [his of M] new charge[if inhuman pregnancy > 0]s[end if] up into the sky, presumably to their new home.[line break][speech style of M]'Good job, mortal, I may have to use your womb again in the future to further expand my clan.'[roman type][line break][big he of M] leaves you to recover from your ordeal.";
 		if the father is in the location of the player:
 			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
 			StrengthUp 1;
@@ -615,7 +617,7 @@ To say PullAttempt of (M - djinn) at (K - a clothing):
 	say "[BigNameDesc of M] uses a mystical force to pull at your [K]!".
 
 To compute (M - djinn) destroying (K - a clothing):
-	say "With a flick of two of [NameDesc of M]'s fingers, the [K] comes completely off! It's been entirely destroyed.";
+	say "With a flick of two of [NameDesc of M][']s fingers, the [K] comes completely off! It's been entirely destroyed.";
 	destroy K.
 
 To compute (M - djinn) displacing (C - a clothing):
@@ -644,7 +646,7 @@ This is the djinn monster convinced rule:
 		say "[PresentRejectionFlav of current-monster]".
 
 This is the djinn friendly convinced rule:
-	if presented-orifice is a reasonable target and (the refactory-period of current-monster <= 0 or (presented-orifice is face and the wish history of current-monster is 2)):
+	if presented-orifice is a reasonable target and (the refractory-period of current-monster <= 0 or (presented-orifice is face and the wish history of current-monster is 2)):
 		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say "[PresentFriendlyAcceptanceFlav of current-monster]";
 		rule succeeds;
@@ -752,19 +754,8 @@ To compute (M - djinn) wishing on (J - an accessory):
 
 Section 2 - Damage
 
-To compute damage of (M - djinn):
-	if the health of M > 0:
-		if M is uninterested or M is friendly:
-			say "[BigNameDesc of M] bellows with anger. [line break][speech style of M]'You dare challenge me to a duel? Do you not know who I am?!'[roman type][line break]";
-			anger M;
-			now M is interested;
-		otherwise:
-			anger M;
-			now M is interested;
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		if the health of M <= 0 and M is not dying:
-			compute death of M.
+To say CombatProvokedReaction of (M - djinn):
+	say "[BigNameDesc of M] bellows with anger.[line break][speech style of M]'You dare challenge me to a duel? Do you not know who I am?!'[roman type][line break]".
 
 To say DamageReactHealthy of (M - djinn):
 	say "[BigNameDesc of M] takes the hit without flinching!".
@@ -778,13 +769,22 @@ To say DamageReactTired of (M - djinn):
 To say DamageReactWeak of (M - djinn):
 	say "The djinn grunts [he of M] takes the hit, eyeing the area around you.".
 
-To compute unique death of (M - djinn):
-	say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees. [line break][speech style of M]'I'll be back, mortal! I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";
+[TODO: possibly rework this so the player has the option of doing things with the djinn IF they have the lamp.]
+Definition: djinn is automatically banishable:
+	if there is a held magic lamp, decide yes;
+	if there is a magic lamp in the location of djinn, decide yes;
+	decide no.
+
+Definition: djinn is banishable: decide no.
+Definition: djinn is pitiable: decide no.
+
+To compute automatic banishment of (M - djinn):
+	say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees.[line break][speech style of M]'I'll be back, mortal! I can never be fully defeated. And the next time we meet, I'll be even stronger!'[roman type][line break]";
 	let L be a random held magic lamp;
 	if L is nothing, now L is a random magic lamp in the location of the player;
 	if L is magic lamp:
 		say "But wait! The [L] stirs, shooting out of your [if there is a worn bag of holding]bag[otherwise]hands[end if] and to the ground. The djinn is no longer soaring into the air, but sinking towards the lamp! [line break][speech style of M]'No, what?! Where did you get that? How did you know that a meagre oil lamp is the only device that can contain me?! AAAH!'[roman type][line break][BigNameDesc of M] sinks into the entrance of the lamp, shrinking as [he of M] disappears. ";
-		destroy M;
+		compute banishment of M;
 		now the wishes of L is 3;
 		force inventory-focus redraw;
 		say "You now have a [L]! You pick it back up.";
@@ -819,12 +819,12 @@ Definition: djinn is willing to confiscate: decide yes.
 
 Definition: djinn (called M) is eager to confiscate: [An angry djinn will confiscate even at maximum health]
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 djinn-mess is a diaper punishment. The priority of djinn-mess is 1.
 
 Definition: djinn (called M) is eager to djinn mess:
- 	decide no.
+	decide no.
 
 Definition: djinn-mess (called P) is appropriate:
 	if current-monster is djinn, decide yes;
@@ -849,6 +849,268 @@ To compute forcefeed round (N - a number) of (M - a djinn):
 
 To say DQFeedingResistReactionFlav of (M - a djinn):
 	say "[speech style of M]'[one of]What, don't like it? Should have wished for mother's teat... I favour nutrition over taste.'[or]If you don't like the flavour now you REALLY won't appreciate what it's going to make you do later!'[or]Oh, I'm paralysed at the thought of you breaking free... of an almighty Djinn. You do have the decision making skills of an infant, don't you?'[then at random][roman type][line break]".
+
+Section 4 - Dominant Sex
+
+To decide which number is the dominationtype of (M - djinn) using (F - penis):
+	decide on FUCK-BLOWJOB.
+
+To say DominanceFailure of (M - djinn):
+	say "You lunge for [NameDesc of M], only for [his of M] upper body to dissipate into a cloud of smoke.[line break][speech style of M]'If you desire my power, I will show it to you!'[roman type][line break][big his of M] voice echoes as the smoky cloud envelops you, cutting you off from your surroundings as [he of M] assaults you with [his of M] magic.".
+
+To compute failed dominance punishment of (M - djinn):
+	if player-fucker is penis:
+		failed dominance penis punish of M;
+	otherwise:
+		failed dominance ride punish of M;
+	bore M.
+
+[The djinn steals your dick and then uses it to fuck you]
+To failed dominance penis punish of (M - djinn):
+	let S be a random worn dildo-usage strapon-panties;
+	let F be asshole;
+	if the player is female,now F is vagina;
+	if tg fetish is 1 and F is asshole, now F is vagina;
+	let O be the size of penis - the openness of F;
+	say "You find yourself laying in a huge bed with beautiful canopy curtains and decadently soft silk sheets. You sit up, and see that not only are you completely naked in a stranger's bed, [if the player is female]your [printed name of S] has completely disappeared[otherwise if tg fetish is 1]your penis has completely disappeared, leaving a brand new [vagina] in its place[otherwise]your [SexDesc of penis] has completely disappeared, leaving a strange patch of glittering darkness in its place[end if]. Signs of movement in your peripheral vision leave you with no time to feel shocked, and you look over just as a dark-skinned [man of M] with the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god[otherwise]breasts, hips and musculature of a goddess[end if] parts the bedcurtains. Your breath is temporarily stolen away by [his of M] gorgeous figure, but you are brought back to your senses by a single flaw, right there [if full-lady fetish is 1 or S is worn]hanging from a harness between [his of M] legs[otherwise]between[end if] [his of M] legs.[line break][speech style of M]'I wished for your cock, and it seems my wish was granted.'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] [if F is vagina]spreads your legs.[otherwise]flips you over and spreads your asscheeks.[end if]";
+	if sexual-penis-length > 8:
+		say "[line break][speech style of M]'Hm. Its a little big, but I suppose that isn't my problem.'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up *your problem* [if F is vagina]between your legs[otherwise]between your cheeks[end if]. Now that you're on the business end, you can't help but appreciate how massive your [SexDesc of penis] looks, and [if O < 0]as it slides into[otherwise if O < 4]as it slowly enters[otherwise if O < 8]as it slowly forces its way into[otherwise]as it slowly forces its way into[end if] your [variable F], you get to appreciate how massive it feels as well. It completely swallows up all the space inside you, and the [man of M] takes care to maximise that feeling, [his of M] beautiful muscles rippling as [he of M] fucks you with slow, deep thrusts. You belt out long, heavy moans, your whole body shivering as your nerve endings struggle to parse the incredibly intense, yet gentle fucking. Shame wells up from your core as you realize how painful this might have been if [italic type]you[roman type] were doing the fucking, and as your back arches and your toes curl, you find yourself thinking you deserve to have a much smaller [sexual-player-penis].";
+		if F is vagina, vaginally orgasm shamefully;
+		otherwise anally orgasm shamefully;
+		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] floods [if M is wrapped]the condom[otherwise]your [variable F][end if] with a huge load. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
+	otherwise if sexual-penis-length > 5:
+		say "[line break][speech style of M]'The size is good, but nothing feels better than *your own tool*, wouldn't you agree?'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up [italic type]your tool[roman type] [if F is vagina]between your legs[otherwise]between your cheeks[end if]. [if O < -3]You find yourself wishing you were a little bigger as you are penetrated[otherwise if O < 0]You can't help but sigh as you are slowly penetrated by[otherwise if O < 3]You can't stifle a sigh as you slowly stretch to accomodate[otherwise]You grit your teeth as you slowly stretch to accomodate[end if] your own [SexDesc of penis], and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but its no use. You clench your fists and curl your toes as you go over the edge.";
+		if F is vagina, vaginally orgasm shamefully;
+		otherwise anally orgasm shamefully;
+		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] fills [if M is wrapped]the condom[otherwise]your [variable F][end if] with a big load. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
+	otherwise if sexual-penis-length > 3:
+		say "[line break][speech style of M]'Hm. Its a bit small, but that isn't an issue for me, is it?'[roman type][line break]The [man of M] muses, climbing into bed with you and easily shrugging off your resistance as [he of M] lines up *your issue* [if F is vagina]between your legs[otherwise]between your cheeks[end if]. [if O < -6]You can't help wishing you were a little bigger as you are penetrated[otherwise if O < -3]You find yourself wishing you were a little bigger as you are penetrated[otherwise if O < 0]You can't help but sigh as you are slowly penetrated by[otherwise]You can't stifle a sigh as you slowly stretch to accomodate[end if] your own [SexDesc of penis], and the flawless [man of M] on top of you slowly begins to thrust. Even if the [sexual-player-penis] doesn't belong to [him of M], [his of M] technique is as perfect as [his of M] body, and every single thrust feels as though it were crafted by heaven. You moan desperately as you try to hold on, hoping against hope that [he of M] won't actually force you to cum from your own [sexual-player-penis], but its no use. You clench your fists and curl your toes as you go over the edge.";
+		if F is vagina, vaginally orgasm shamefully;
+		otherwise anally orgasm shamefully;
+		say "The [man of M] slams '[his of M]' [sexual-player-penis] home in the exact moment that you cum, emitting a thoroughly perfect groan as [he of M] shoots several spurts of [semen] into [if M is wrapped]the condom[otherwise]your [variable F][end if]. [big he of M] chuckles as [he of M] pulls out, waving [his of M] hands as smoke closes in around you once again.";
+	otherwise:
+		say "[line break][speech style of M]'I can't remember a time when I've been this excited. Is this how you feel all the time?'[roman type][line break][BigNameDesc of M] emits a shuddering sigh as [he of M] pushes [his of M] [sexual-player-penis] into your [if the player is female or tg fetish is 1][vagina][otherwise][asshole][end if]. Less than a second later, [big he of M] freezes, and you feel a faint surge of warmth inside [if M is wrapped]the condom.[otherwise]you.[end if][line break][second custom style]'...'[roman type][line break][speech style of M]'...lets call this a draw.'[roman type][line break]Since it was your [sexual-player-penis], the embarassment written all over [his of M] face is completely mutual, and you avoid eye contact with each other as the smoke closes in around you once again.";
+	if M is wrapped:
+		say "You find yourself back in [the location of the player], [semen] leaking out of your [if the player is female][vagina][otherwise][asshole][end if] and your [SexDesc of penis] back where it belongs.";
+		if the player is female, PussyFill the semen load of the player;
+		otherwise AssFill the semen load of the player;
+	otherwise:
+		say "You find yourself back in [the location of the player], with your [if the player is female][vagina][otherwise][asshole][end if] gaping and your [SexDesc of penis] back where it belongs.";
+		if the player is female, PussyFill the semen load of the player;
+		otherwise AssFill the semen load of the player;
+	Bore M.[he already fucked you, so he doesn't do it again]
+
+[TODO: Get rid of or heavily modify this scene, because it feels not great.]
+To failed dominance ride punish of (M - djinn):
+	let R be a random number between 1 and 3;
+	let W be a random wench;
+	say "You find yourself in a well decorated room, standing in a lineup of unfamiliar [if lady fetish is 2]sissies[otherwise]women[end if]. All of you are naked aside from a collar around each of your necks. You follow their gazes to the centre of the room, where a dark-skinned [man of M] is resting on an incredibly expensive looking bed. [big his of M] nude body has the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god[otherwise]breasts, hips and musculature of a goddess[end if], and your breath is stolen away by the beauty of [his of M] figure. [big his of M] gaze slowly passes over each [sissy-girl] in the room, and your heart skips a beat as [his of M] eyes linger on you.[line break][speech style of M]'Hm...who should join me in my bed tonight...'[roman type][line break]Silence immediately falls over the room, promptly followed by the deafening sound of shrieking.[line break][second custom style]'Please choose me!'[roman type][line break][line break][second custom style]'Choose me, choose ME!'[roman type][line break][line break][second custom style]'I WANT YOU!'[roman type][line break][if the player is ashamed]Your own voice is among them, and you feel[otherwise]Your own voice is not among them, but you still feel[end if] a spark of excitement when [his of M] gorgeous face breaks into a grin.[line break][speech style of M]'You, be my headrest!'[roman type][line break]";
+	if R is 1:[You have to stay still and not move, and since everything is happening on top of you, you get very turned on]
+		say "You hesistantly join your [literalMistress of M] on the bed and lie down next to [him of M], wincing as [he of M] climbs on top of you and lays [his of M] head [if the largeness of breasts > 5]between your[otherwise]against your[end if] [BreastDesc]. [big his of M] weight shifts as [he of M] calls three more girls to [him of M]. The first two wedge their bodies in tightly on either side of [him of M], completely robbing you of your freedom of movement, and the last, luckiest [sissy-girl] takes [his of M] place on top of your shared [literalMistress of M], compounding the weight on top of you. Its pretty humiliating to become a literal bottom rung, although you're still above the unlucky [sissy-girls] who didn't get to be a part of it at all. On top of that, the sensation of your [literalMistress of M]'s glorious body in full contact with your own is impossibly stimulating, but with no way of moving your arms, you are forced to simply lie there and endure. This is clearly the worst job of them [if the delicateness of the player < 7]all, and it surprises you how easy it was to immediately obey [him of M].[otherwise if the delicateness of the player < 14]all, but you'd do anything to please your beloved [literalMistress of M].[otherwise]all, but even that is too good for a useless whore like yourself.[end if][line break][speech style of M]'I'm cumming, slave!'[roman type][line break]Your [literalMistress of M] emits a powerful groan, bucking [his of M] hips as [he of M] fills the [sissy-girl] on top of [him of M] with [semen].[line break]Smoke closes in once again, and you find yourself back in [the location of the player].";
+		Arouse 1000;
+		moderateHumiliate;
+	otherwise if R is 2:[You get fucked. You become the target of envy for the other girls, and get a dignity boost. Also you get a creampie.]
+		let F be player-fucker;
+		let O be the girth of M - the openness of F;
+		say "The [sissy-girl] next to you joins [him of M] on the bed, [his of W] cheeks reddening as your [literalMistress of M] lays [his of M] head [if lady fetish is 2]on [his of W] chest.[otherwise]between [his of W] breasts.[end if][line break][speech style of M]'You two, keep me warm!'[roman type][line break]Two more [sissy-girls] leave the lineup and lay down on either side of [him of M], shooting competitive glares at each other as they press their nude bodies up against their [literalMistress of M].[line break][speech style of M]'Hmm, now who will be the queen...'[roman type][line break]You hold your breath as [he of M] slowly sweeps [his of M] gaze over the remaining lineup, before finally pointing directly at you. Self satisfaction wells up inside you as you join the others in your [literalMistress of M]'s bed, knowing every other [sissy-girl] in the room wishes [he of W] was you. You can feel the envious glares of the other [sissy-girls] as you slowly lower yourself onto [his of M] [LongDickDesc of M], [if O > 4]You grit your teeth and ignore the pain as you slowly, slowly force [his of M] [LongDickDesc of M] into[otherwise if O > 2]You emit a low moan as you slowly lower yourself onto [his of M] [LongDickDesc of M], not caring that it's too big for[otherwise if O > 0]You sigh as you lower yourself onto [his of M] [LongDickDesc of M], loving the way it perfectly fills up[otherwise if O > -2]You moan loudly as you lower yourself onto [his of M] [LongDickDesc of M], feeling a sense of satisfaction from how easily it slides into[end if] your [variable F]. [run paragraph on]";
+		moderateDignify;
+		now M is penetrating F;
+		ruin F times 3;
+		say "Channelling your enthusiasm into effort, you begin to ride [him of M], working hard so [he of M] won't have to lift a finger. [if the delicateness of the player < 7]It surprises you how easy it is to ignore your own pleasure and focus on your [literalMistress of M], and[otherwise if the delicateness of the player < 14]It feels so good to be of use to your [literalMistress of M], and[otherwise]Even a useless whore like you can still please your [literalMistress of M], and[end if] as [his of M] [DickDesc of M] begins to throb you can't help thinking this much better than a chance to cum. [big he of M] emits a powerful groan, [his of M] gorgeous abdominal muscles clenching as [he of M] fills [if M is wrapped]the condom[otherwise]your [variable F][end if] with potent [semen]. [line break]Smoke closes in once again, and you find yourself back in [the location of the player], [if M is wrapped]your [variable F] still tingling from the inside out[otherwise]a fresh creampie leaking out of your [variable F][end if].";
+		moderateDignify;
+		if the player is female, PussyFill the semen load of M;
+		otherwise AssFill the semen load of M;
+	otherwise:[You get very humiliated since you didn't get to be a part of it at all.]
+		say "The [sissy-girl] next to you joins [him of M] on the bed, [his of W] cheeks reddening as your [literalMistress of M] lays [his of M] head [if lady fetish is 2]on [his of W] chest.[otherwise]between [his of W] breasts.[end if][line break][speech style of M]'You two, keep me warm!'[roman type][line break]Two more [sissy-girls] leave the lineup and lay down on either side of [him of M], shooting competive glares at each other as they press their nude bodies up against their [literalMistress of M].[line break][speech style of M]'Hmm, now who will be the queen...'[roman type][line break]You hold your breath as [he of M] slowly sweeps [his of M] gaze over the remaining lineup, before finally pointing to...someone else. Jealousy and humiliation well up inside you as another [sissy-girl] joins [him of M] in [his of M] bed. Smoke closes in around you once again, and you find yourself back in [the location of the player]. [bold type][BigNameDesc of M][bold type]'s wish has made you permanently more submissive.[roman type]";
+		severeHumiliate;
+		DelicateUp 1;
+	Bore M.
+
+To say DominanceSuccess of (M - djinn):
+	say "You lunge for [NameDesc of M], only for [his of M] upper body to dissipate into a cloud of smoke.[line break][speech style of M]'If you desire my power, I will show it to you!'[roman type][line break][big his of M] voice echoes as the smoky cloud envelops you, cutting you off from your surroundings as [he of M] assaults you with [his of M] magic.";
+	if player-fuckchoice is FUCK-WATERSPORTS:
+		watersports dominate M;
+	otherwise if player-fuckchoice is FUCK-PENETRATION:
+		penetration dominate M;
+	otherwise if player-fuckchoice is FUCK-RIDE:
+		ride dominate M;
+	otherwise:
+		unique dominate M.
+
+[The djinn steals your penis, but he accidentally gives you an even better one!]
+To blowjob dominate (M - djinn):
+	let S be a random worn dildo-usage strapon-panties;
+	say "You find yourself [if the number of worn clothing > 0]completely [end if]naked, standing in front of a huge bed with gorgeous canopy curtains. You hear a groan, and push the curtains aside to reveal a [man of M] with gorgeous dark brown skin, perfectly shaped lips, and an impossibly soft and inviting ass, lying spread eagle across the bed. An adorable crease forms between [his of M] eyebrows as [he of M] helplessly struggles against the chains connected to [his of M] wrists and ankles. [line break][speech style of M]'W-what happened?! Was I actually tempted? By a mere mortal?!'[roman type][line break]The [man of M] makes eye contact with you as you climb onto the bed and straddle [his of M] chest.[line break][speech style of M]'N-now I know what you're thinking, but you should really reconsider. D-don't do anything you'll regret!'[roman type][line break]Do you still want to use [him of M] like you planned?";
+	if the player is consenting:[yes, use him!]
+		say "You pretend to think about it, slowly stroking your borrowed penis as you about how good its going to feel between [his of M] perfect lips. The [man of M] continues looking up at you with a pleading expression on [his of M] face, but the hope in [his of M] eyes is fading by the second. [big he of M] yelps as you slap [him of M] a couple times with your new [DickDesc of M], and [he of M] loudly gulps as you bring the tip to [his of M] lips. A moment passes. [line break][speech style of M]'Please, when you switch organs, there's a feedback, and-'[roman type][line break]You cut [him of M] with a mouthful of [LongDickdesc of M], holding [him of M] by the temples as you begin to fuck [his of M] face with shallow thrusts. [big his of M] mouth produces sensations far beyond mere mortals, and within seconds you find yourself gasping with desperate pleasure. The [man of M] is no different, and [he of M] rolls [his of M] eyes back as [he of M] begins to widly buck [his of M] hips.[line break][variable custom style]'FUUUUCK-'[roman type][line break][line break][speech style of M]' GNNNNNN-!'[roman type][line break]You both cry out simultaneously as explosive waves of pleasure ricochet through your body, your borrowed [DickDesc of M] spasming powerfully as it jizzes straight down the [man of M]'s perfect throat. From the blissful expression on [his of M] face, [big he of M]'s having a similar experience of [his of M] own, and you feel [him of M] swallowing desperately in an attempt to keep up. Finally, you roll off [him of M], leaving a trail of [semen] and spittle across [his of M] cheek.";
+		orgasm;
+		orgasm M;
+		anger M;
+		FavourDown M by 2;
+		say AfterDominationComment 0 of M;
+		BlowGet;
+	otherwise:[spare him]
+		Calm M;
+		say "You release [him of M] and roll off the bed. [big he of M] sighs in relief.";
+		FavourUp M by 2;
+		say AfterDominationComment 1 of M.
+
+[TODO: He shows up in a toilet set up, and you get to pee on him]
+To watersports dominate (M - djinn):
+	say "You shove [NameDesc of M] and douse [him of M] with fresh [urine]. [big he of M] clearly feels humilated.";
+	strongDignify;
+	now the bladder of the player is 0;
+	SportsGet.
+
+To ride dominate (M - djinn):
+	let F be player-fucker;
+	say "You find yourself [if the number of worn clothing > 0]completely [end if]naked in a huge bed with gorgeous canopy curtains and decadently soft silk sheets. You see movement out of the corner of your eye, and your breath is stolen away as a tall, dark-skinned [man of M] parts the bedcurtains. [big he of M] has the perfectly sculpted [if M is presenting as male]chest, abs, and jawline of a god, and[otherwise]breasts, hips and musculature of a goddess, and[end if] and even the sound of [his of M] voice is beautiful in its own way.[line break][speech style of M]'Good morning, slave. I hope you slept well.'[line break][roman type]The word 'slave' jars you back to your senses, and you sit up abruptly as [he of M] climbs into the bed with you.[line break][variable custom style]'Me? A slave? [if the delicateness of the player < 6]Don't think you can handle me just because you're a little hot.'[otherwise if the delicateness of the player < 12]Just for that, I'm NOT making you breakfast in the morning.'[otherwise]Not that I'm opposed to it, but I think I'd remember belonging to a stud like you.'[end if][roman type][line break][speech style of M]'Again you play these games. I thought I had broken you of this.'[roman type][line break]Your '[literalMistress of M]' shoves you over and immediately straddles your chest. Those gorgeous muscles of [his of M] aren't just for show, and [he of M] easily shrugs off your feeble attempts to struggle.[line break][variable custom style]'[if the delicateness of the player < 6]I told you, I'm not-'[otherwise if the delicateness of the player < 12]Can't we discu-'[otherwise]Ok baby, I'm y-'[end if][roman type][line break]";
+	throaty dominate M;[See below]
+	if refractoryperiod > 0 or the player is bimbo consenting:
+		say "[line break][variable custom style]'[if the delicateness of the player < 6]I'm a slave.'[otherwise if the delicateness of the player < 12]I belong to you, [literalMistress of M]. I'm your slave.'[otherwise]You deserve to do whatever you want with me, [literalMistress of M]. I'm your slave.'[end if][roman type][line break]Your [literalMistress of M]'s beautiful features briefly crease with bliss as [his of M] [LongDickDesc of M] lurches, [if M is wrapped]filling the condom with several spurts of [semen][otherwise]painting your face with [his of M] [semen][end if].";
+		if M is wrapped, compute condom filling of M;
+		otherwise CumFaceUp the semen load of M;
+		strongHumiliate;
+		now player-fucking is DOMINANT-SHAMEFUL;
+		say AfterDominationComment 3 of M;
+	otherwise:
+		now M is penetrating F;
+		say "The [man of M] flips you over, grabbing your [ShortDesc of hips] with both hands as [he of M] lines up [his of M] newly lubricated shaft [if F is asshole]between your cheeks[otherwise]between your legs[end if]. You shoot [if the delicateness of the player < 6]a defiant[otherwise if the delicateness of the player < 12]what you hope is a defiant[otherwise]hungry[end if] look over your shoulder as [he of M] guides [his of M] [LongDickDesc of M] into your [variable F] and begins to thrust. [run paragraph on]";
+		Ruin F times 1;
+		doggy dominate M;[See below]
+		if refractoryperiod > 0 or the player is bimbo consenting:
+			say "[line break][variable custom style]'[if the delicateness of the player < 6]I'm a slave.'[otherwise if the delicateness of the player < 12]I belong to you, [literalMistress of M]. I'm your slave.'[otherwise]You deserve to do whatever you want with me, [literalMistress of M]. I'm your slave.'[end if][roman type][line break]Your [literalMistress of M]'s beautiful features briefly crease with bliss as [his of M] [LongDickDesc of M] lurches [if M is wrapped]filling the condom with several spurts of [semen][otherwise]painting your thighs and back with [his of M] load[end if].";
+			if M is wrapped, compute condom filling of M;
+			otherwise CumThighsUp the semen load of M;
+			strongHumiliate;
+			now player-fucking is DOMINANT-SHAMEFUL;
+			say AfterDominationComment 5 of M;
+		otherwise:
+			say "The [man of M] flips you over again, this time using [his of M] big, muscular arms to pull you into a tight embrace. You try to struggle, but [his of M] hold only grows tighter as [he of M] pushes [his of M] [DickDesc of M] back into your [variable F]. [run paragraph on]";
+			Ruin F times 1;
+			huggy dominate M.[See below]
+
+To throaty dominate (M - djinn):
+	let F be player-fucker;
+	let Oa be the oral sex addiction of the player * 2;
+	let Ig be the intelligence of the player;
+	let Rb be a random number between Oa and Ig;
+	let Db be the difficulty of M / 2;
+	if throatskill of the player is 1, increase Rb by 5;
+	now M is penetrating face;
+	if debugmode > 0, say "[input style]Djinn facefuck check:[line break]Blowjob roll, based on [Oa] * 2 (oral addiction) and [Ig] (intelligence)[if the throatskill of the player is 1] + 5 (from deepthroat)[end if] = [Rb].[line break]Is [Rb] >= [Db]?[roman type]";
+	if Rb > Db:
+		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+		say "[big he of M] cuts you off by shoving [his of M] [DickDesc of M] into your mouth, forcing you to [if throatskill of the player is 1]gag lewdly as [he of M] shoves[otherwise]take[end if] [his of M] meat all the way down your throat. [if throatskill is 1]Your deepthroating skill allows you to adapt almost instantly, and you effortlessly relax[otherwise]Some combination of quick thinking and eagerness to suck cock allows you to adapt, and you relax[end if] as [he of M] begins to aggressively fuck your face. [big he of M] only keeps it up for a couple seconds before pulling out, but even that would have been enough to leave you out of breath if you hadn't been able to adapt.";
+		stimulate face from M;
+		slightDignify;
+	otherwise:
+		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+		say "[big he of M] cuts you off by shoving [his of M] [Dickdesc of M] into your mouth, forcing you to [if throatskill of the player is 1]gag lewdly as [he of M] shoves[otherwise]take[end if] [his of M] meat all the way down your throat. [big he of M] doesn't leave you with any time to adapt, [his of M] perfect balls slapping your chin as [he of M] begins to aggressively fuck your face. [big he of M] only keeps it up for a couple second before slowing down and pulling out, but that's more than enough to leave you completely disoriented and out of breath.";
+		stimulate face from M times 2;
+		FatigueUp 20;
+		slightHumiliate;
+	now M is not penetrating face;
+	say "[line break][speech style of M]'Now, slave. Acknowledge me as your master.'[roman type][line break][if refractoryperiod > 0]Your mind may not want to admit it, but your body did when [he of M] forced you to cum. After a moment of hesitation, you say the words.[otherwise]Give up and admit to being a slave?[end if]".
+
+To doggy dominate (M - djinn):
+	let F be player-fucker;
+	let Fa be 0;
+	let Fq be 0;
+	let Ig be the intelligence of the player;
+	if F is asshole:
+		now Fa is the anal sex addiction of the player * 2;
+		if the player is a butt slut, now Fq is 5;
+	if F is vagina:
+		now Fa is the vaginal sex addiction of the player * 2;
+		if the player is a pussy slut, now Fq is 5;
+	let Rd be a random number between Fa and Ig;
+	increase Rd by Fq;
+	let Dd be the difficulty of M / 2;
+	if relaxskill of the player is 1, increase Rd by 5;
+	if debugmode > 0:
+		if refractoryperiod is 0, say "[input style]Djinn doggy check:[line break]Resistance roll, based on [Fa] * 2 (relevant addiction) and [Ig] (intelligence)[if relaxskill of the player is 1] + 5 (from relax skill)[end if][if F is asshole and Fq > 0] + 5 (from butt slut)[otherwise if Fq > 0] + 5 (from pussy slut)[end if] = [Rd].[line break]Is [Rd] >= [Dd]?[roman type]";
+		otherwise say "[input style]Djinn doggy check:[line break]Automatic failure.[roman type]";
+	if Rd > Dd and refractoryperiod is 0:
+		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+		say "[big his of M] technique is just as perfect as [his of M] body, combining speed, depth, and rhythm into a mind-meltingly pleasurable harmony. Its pretty hard to even think, but [if F is vagina and the player is a pussy slut]you know your [vagina] is bomb, and[otherwise if F is asshole and the player is a butt slut]you know your [asshole] is better than any pussy, and[otherwise if relaxskill of the player is 1]you remember to simply relax and let it happen, knowing[otherwise]this isn't the first time you've had some good [DickDesc of M], and you know[end if] [he of M] won't be able to keep this up forever. As expected, [he of M] slows down after a couple seconds and pulls out.";
+		slightDignify;
+		stimulate F from M;
+	otherwise:[TODO: look at this later and decide if it needs improved]
+		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+		say "[big his of M] technique is just as perfect as [his of M] body, combining speed, depth, and rhythm into a mind-meltingly pleasurable harmony. You find it hard to think, let alone resist as [he of M] pistons away, and you can't help but moan as [he of M] gropes your [BreastDesc] and [AssDesc]. Its so humiliating to not be able to muster up the will to resist [him of M], and you can feel more of your dignity crumbling away with every second. Luckily, [he of M] only tortures you for a little while before slowing down and pulling out.";
+		moderateHumiliate;
+		stimulate F from M times 2;
+		FatigueUp 20;
+	say "[line break][speech style of M]'I'll say it again. Acknowledge me, slave.'[roman type][line break][if refractoryperiod > 0]Your mind may not want to admit it, but your body did when [he of M] forced you to cum. After a moment of hesitation, you say the words.[otherwise]Give up and admit to being a slave?[end if]".
+
+To huggy dominate (M - djinn):
+	let F be player-fucker;
+	let Se be the strength of the player;
+	let Ig be the intelligence of the player;
+	let Fe be the fatigue of the player / 5;
+	let Ce be the charisma of the player;
+	let De be (the difficulty of M);
+	let Df be De + 5 + Fe - Ce;
+	let Re be a random number between Se and Ig;
+	if debugmode > 0:
+		if refractoryperiod is 0, say "[input style]Djinn embrace check:[line break]Reversal roll, based on [Se] (strength) and [Ig] (intelligence) vs [De] + [Fe] / 3 (fatigue) - [Ce] (charisma)[line break]Is [Re] >= [Df]?[roman type]";
+		otherwise say "[input style]Djinn embrace check:[line break]Automatic failure.[roman type]";
+	if Se > De and refractoryperiod > 0:
+		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+		say "This time, thinking isn't just hard, it's almost impossible. [big his of M] technique is somehow even more incredible than it was last time, and each thrust follows a perfect arc that always goes right for your [if F is asshole]prostate[otherwise]g-spot[end if]. However, the better it feels, the more [his of M] grip begins to weaken. You lock eyes with [him of M], completely unable to stifle your moans, but still waiting for your chance. [big he of M] returns your stare, and a gorgeous smirk slowly spreads across [his of M] handsome features.[line break][speech style of M]'Its over. Cum, sl-'[roman type][line break][variable custom style]'Shut up!'[roman type][line break]You wrench yourself out of [his of M] grip, immediately grab [him of M] by the shoulders, and roll on top of [him of M]. [big he of M]'s too panicked and confused to start struggling immediately, and you're left with a split second to decide if you want to stop or keep going. [if M is unwrapped]Stop and avoid a creampie?[otherwise]Luckily, you remembered to use protection![end if]";
+		passively stimulate F times 3;
+		if the player consents:
+			say "You decide you'd rather not get creampied and roll off the bed without waiting for your chance to cum. A strong feeling of confidence wells up from your core.";
+			severeDignify;
+			DelicateDown 3;
+			now player-fucking is DOMINANT-DOMINANT;
+		otherwise:
+			say "You hold [him of M] down as you begin to aggressively ride on [his of M] [DickDesc of M], knowing you need to end this quickly. [big he of M] struggles fiercely, and with [his of M] insane strength, it only takes a couple moments for [him of M] to start gaining some ground. But [he of M]'s too late. You slam your hips down as you go over the edge, crying out in blissful victory as [if the size of penis > 0]your load shoots across [his of M] belly[otherwise if F is vagina]you douse the expensive sheets with feminine fluids[otherwise]climax crashes heavily through your body[end if]. [big he of M] follows up with a groan of [his of M] own, the defeat fully audible in [his of M] voice as [if M is wrapped]the condom fills up with fresh [semen].[otherwise][he of M] fills your [variable F] with creamy [semen].[end if]";
+			orgasm;
+			if M is unwrapped:
+				if F is asshole, AssFill the semen load of M;
+				otherwise PussyFill the semen load of M;
+			orgasm M;
+		say AfterDominationComment 2 of M;
+	otherwise:[probably see if this needs improved]
+		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+		say "This time, thinking isn't just hard, its almost impossible. [big his of M] technique is somehow even more incredible than it was last time, and each thrust follows a perfect arc that always goes right for your [if F is asshole]prostate[otherwise]g-spot[end if]. However, the better it feels, the more [his of M] grip begins to weaken. You lock eyes with [him of M], completely unable to stifle your moans, but still waiting for your chance. [big he of M] returns your stare, and a gorgeous smirk slowly spreads across [his of M] handsome features.[line break][speech style of M]'Its over. Cum, slave!'[roman type][line break]You react a moment too slow, and you emit a helpless, humiliated scream of pleasure as your body finally surrenders to its [literalMistress of M].";
+		passively stimulate F times 3;
+		if F is vagina, vaginally orgasm shamefully;
+		otherwise anally orgasm shamefully;
+		severeHumiliate;
+		say "[big his of M] beautiful features briefly crease with bliss as you feel [if M is wrapped]the condom inside you filling up with warmth[otherwise]warmth rushing up inside you[end if]. The pleasure of having received your [literalMistress of M]'s load eclipses the pleasure of your own orgasm, and you experience aftershocks as [he of M] slowly releases you from [his of M] embrace.";
+		if M is wrapped:
+			compute condom filling of M;
+		otherwise:
+			if F is asshole, AssFill the semen load of M;
+			otherwise PussyFill the semen load of M;
+		now player-fucking is DOMINANT-SHAMEFUL;
+		say AfterDominationComment 4 of M.
+
+To say AfterDominationComment (N - a number) of (M - djinn):
+	if N is 0:
+		say "[speech style of M]'*Huff* *Huff*[one of]That was unwise, mortal.'[or]I won't forgive you, mortal. You will pay.'[or]You are a fool. You won't get away with this, mortal.'[in random order][roman type][line break]";
+	otherwise if N is 1:
+		say "[speech style of M]'[one of]Even my wishes will sometimes backfire.'[or]I can't expect everything to go my way all the time. Just most of the time.'[or]You are a good sport, mortal.'[in random order][roman type][line break]";
+	otherwise if N is 2:
+		say "[speech style of M]'[one of]And after all that effort to cheat...Ahem, I swear you'll one day regret this!'[or]I can't believe I actually...Ahem, I promise you will regret this.'[or]I was sure I was going to..Ahem, you will one day regret this. I promise you.'[in random order][roman type][line break]";
+	otherwise if N is 3:
+		say "[speech style of M]'Ahh, [one of]I'm glad we could resolve this so quickly.'[or]that's better.'[or]that's a good slave.'[in random order][roman type][line break]";
+	otherwise if N is 4:
+		say "[speech style of M]'Ahhh. Now then, [one of]you would do well to remember who holds the power, slave.'[or]remember, slave. I could have been even harder on you.'[or]I didn't need to let you cum, slave. Remember that.'[in random order][roman type][line break]";
+	otherwise:
+		say "[speech style of M]'Ahhh, [one of]I'm glad we could resolve this matter.'[or]better late than never.'[or]good. You were beginning to try my patience.'[in random order][roman type][line break]";
+
+To say DominationEscapeFlav of (M - a monster):
+	do nothing.
+
+To replace (M - djinn) after domination:
+	say "[if player-fucking is not DOMINANT-FAILURE]Smoke closes in around you once again, and you find yourself back in [the location of the player]. [BigNameDesc of M] is nowhere to be found.[end if]";
+	if debugmode > 0, say "Regionally placing [M].";
+	distract M;
+	regionally place M.
 
 Part 6 - Conversation
 

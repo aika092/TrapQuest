@@ -14,6 +14,18 @@ REQUIRES COMMENTING
 
 @!]
 a body part is a kind of backdrop.
+a body part can be stuck.
+[!<YourselfIsBodyStuck>+
+
+Is the player unable to move because a body part is stuck?
+
++!]
+Definition: yourself is body stuck if there is a stuck body part.
+
+To say NameDesc of (B - a body part):
+	say "your [ShortDesc of B]".
+To say BigNameDesc of (B - a body part):
+	say "Your [ShortDesc of B]".
 
 [!<Limb>@
 
@@ -56,7 +68,7 @@ a fuckhole is a kind of orifice. [Crotch orifices are called fuckholes, obviousl
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called soreness. The soreness of a fuckhole is usually 0.
+a fuckhole has a number called soreness.
 
 [!<Fuckhole>@<tolerated:Integer>*
 
@@ -118,7 +130,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the semen-volume of (F - a fuckhole):
-	if F is vagina, decide on the total volume of vagina;
+	if F is vagina, decide on the total semen volume of vagina;
 	if F is asshole, decide on the semen volume of belly;
 	decide on 0.
 
@@ -130,7 +142,7 @@ REQUIRES COMMENTING
 Definition: a fuckhole is lewdly exposed if it is exposed.
 
 To decide which number is the lewdly exposed outrage of (F - a fuckhole):
-	let O be 16;
+	let O be 15;
 	if F is asshole and the semen volume of belly > 0, increase O by 2;
 	if F is vagina and the semen volume of vagina > 0, increase O by 2;
 	increase O by the openness of F / 5;
@@ -147,9 +159,9 @@ Definition: a fuckhole (called F) is at least partially lewdly exposed:
 	decide no.
 
 To decide which number is the at least partially lewdly exposed outrage of (F - a fuckhole):
-	let O be 10;
-	if F is asshole and the semen volume of belly > 0, increase O by 1;
-	if F is vagina and the semen volume of vagina > 0, increase O by 1;
+	let O be 9;
+	if F is asshole and the semen volume of belly > 0, increase O by 2;
+	if F is vagina and the semen volume of vagina > 0, increase O by 2;
 	increase O by the openness of F / 9; [only the most gaped orifices show through clothing]
 	decide on O.
 
@@ -186,14 +198,14 @@ To ruin (F - a fuckhole) times (X - a number):
 	unless F is vagina and the player is male, increase the buildup of F by 1;
 	while X > 0:
 		decrease X by 1;
-		if the soreness of F > 8 and there is a worn cum dump's undergarment, now the soreness of F is 8; [undergarment prevents fainting from soreness]
+		if the soreness of F > 8 and cum dump's undergarment is worn, now the soreness of F is 8; [undergarment prevents fainting from soreness]
 		if F is orgasming:
 			do nothing;
 		otherwise if the buildup of F >= 20 and the soreness of F < 10:
 			say "Regardless of how insensitive your [variable F] is, there's no way it can take an infinite fucking. Over time, you feel it getting slowly more and more sore...";
 			now the soreness of F is 10;
 			now the buildup of F is 0;
-		otherwise if the soreness of F is 10 and X is 0 and there is an embodied thing penetrating F and for deposit only tattoo is not worn:
+		otherwise if the soreness of F is 10 and X is 0 and for deposit only tattoo is not worn:
 			check soreness fainting of F;
 		let T be a random thing penetrating F;
 		passively stimulate F from T;
@@ -215,7 +227,8 @@ REQUIRES COMMENTING
 
 +!]
 To check soreness fainting of (F - a fuckhole):
-	if sex fainting is 1 or there is a futanari slutty sister penetrating F:
+	let M be a random monster penetrating F;
+	if (sex fainting is 1 or there is a futanari slutty sister penetrating F) and there is an embodied thing penetrating F:
 		let N be the raw anal sex addiction of the player;
 		if F is vagina, now N is the raw vaginal sex addiction of the player;
 		if the tolerated of F <= N / 2:
@@ -232,12 +245,17 @@ To check soreness fainting of (F - a fuckhole):
 				now delayed fainting is 1;
 				IntDown 1;
 				now the fainting reason of the player is 18;
+	otherwise if the class of the player is magical girl and M is tentacle monster:
+		say "[one of][bold type]Your magical body somehow allows your [variable F] and your [ShortDesc of belly] to comically stretch to accomodate [NameDesc of M] without breaking you.[roman type][line break][or][or][or][or][cycling]";
 	otherwise:
 		increase sex-hurt-balance by 1;
-		if sex-hurt-balance > 1:
+		if sex-hurt-balance >= 5: [Requires two ticks of sex pain (or five if they are all in the same turn - otherwise egg laying could go nuts) to trigger the PainUp function]
 			now sex-hurt-balance is 0;
 			PainUp 1;
 			potentially despair about F sex.
+
+An all later time based rule (this is the sore sex hurts rule):
+	if sex-hurt-balance > 0 and sex-hurt-balance < 5, now sex-hurt-balance is 5.
 
 [!<sexHurtBalance:Integer>*
 
@@ -267,14 +285,22 @@ To trigger shameful orgasm of (F - asshole):
 To trigger shameful orgasm of (F - breasts):
 	breasts orgasm shamefully.
 
+[!<ABodyPartIsOrgasming>+
+
+Determines whether a given body part is currently having an orgasm, and if so, triggers a shameful orgasm
+
+@param <BodyPart>:<F> The body part potentially having an orgasm
+@return <Boolean> If true, the body part has an orgasm. If false, it does not.
+
+!]
 Definition: a body part (called F) is orgasming:
-	if the player is extremely horny or F is pushed over the edge:
+	if F is pushed over the edge:
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
 
 Definition: a fuckhole (called F) is orgasming:
-	if for deposit only tattoo is not worn and (the player is extremely horny or F is pushed over the edge):
+	if (for deposit only tattoo is not worn or F is not vagina) and (the player is extremely horny or F is pushed over the edge):
 		trigger shameful orgasm of F;
 		decide yes;
 	decide no.
@@ -328,6 +354,13 @@ How much do others want to use this body part for sex?
 
 *@!]
 a body part has a number called desirability.
+
+[!<BodyPart>@<gropability:Integer>*
+
+How much do others want to grope this body part after noticing the player?
+
+*@!]
+a body part has a number called gropability.
 
 [!<DecideWhichNumberIsTheWeightOfAThing>+
 
@@ -398,6 +431,8 @@ REQUIRES COMMENTING
 +!]
 Definition: a body part is lewdly exposed: decide no.
 
+Definition: a body part is currently visible if it is exposed.
+
 [!<BodyPartIsAtLeastPartiallyLewdlyExposed>+
 
 REQUIRES COMMENTING
@@ -406,6 +441,7 @@ REQUIRES COMMENTING
 Definition: a body part is at least partially lewdly exposed: decide no.
 
 To decide which object is the at least partial concealer of (C - a body part):
+	if C is listed in the armUses of arms, decide on arms;
 	decide on the concealer of C. [For most items there's no difference.]
 To decide which object is the concealer of (C - a body part):
 	decide on nothing.
@@ -416,9 +452,7 @@ Definition: a body part is at least partially exposed if the concealer of it is 
 To decide which number is the lewdly exposed outrage of (B - a body part):
 	decide on 0. [not humiliating by default]
 To decide which number is the at least partially lewdly exposed outrage of (B - a body part):
-	let C be the lewdly exposed outrage of B - 4;
-	if C < 0, decide on 0;
-	decide on C.
+	decide on (the lewdly exposed outrage of B * 5) / 9.
 To decide which number is the outrage of (B - a body part):
 	let O be 0;
 	if B is glazed and (B is exposed or (B is breasts and breasts is showing cleavage)), increase O by (the semen coating of B * 3); [the more cum, the more noticeable it is. quickly.]
@@ -438,7 +472,7 @@ To decide which number is the cringe of (B - a body part):
 	decide on C / 2. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
 
 Report examining a body part:
-	say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
+	if debuginfo > 0, say "[input-style]Current outrageousness ([if the noun is lewdly exposed and (the noun is breasts or the noun is fuckhole)]lewdly exposed[otherwise if the noun is lewdly exposed]visible[otherwise if the noun is at least partially lewdly exposed]partially exposed[otherwise if the noun is exposed]visible[otherwise if the noun is breasts and breasts is showing cleavage]showing cleavage[otherwise if the noun is at least partially exposed]partially visible[otherwise]covered up[end if]): [outrage of the noun]/20[if diaper quest is 1][line break]Current babyishness: [cringe of the noun]/20[end if][roman type][line break]";
 
 [!<BodyPartIsUnSoakedOrSoaked>+
 
@@ -504,10 +538,7 @@ Definition: yourself is completely exposed:
 Used by some NPCs to decide if they thing that the player is inappropriately dressed. Are nipples showing?
 
 +!]
-Definition: yourself is nipples exposed:
-	repeat with B running through worn nipple covering clothing:
-		unless B is top-displaced, decide no; [This one cares about lactation so we don't include dense here]
-	decide yes.
+Definition: yourself is nipples exposed if the number of worn nipple covering clothing is 0.
 
 [!<YourselfIsCrotchCovered>+
 
@@ -523,7 +554,20 @@ Definition: yourself is crotch covered:
 Section - Image for graphics window
 
 This is the body parts get focused rule:
-	repeat with B running through overglazed body parts:
+	let LB be the list of overglazed body parts;
+	repeat with B running through body parts:
+		if B is not arms:
+			if realisticArms is 1 and B is listed in the armUses of arms:
+				add B to LB, if absent;
+			otherwise if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
+				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
+				if the outrage of B >= A:
+					add B to LB, if absent;
+			otherwise:
+				let C be calculated-cringe-level - (calculated-cringe-level / 2);
+				if the cringe of B >= C:
+					add B to LB, if absent;
+	repeat with B running through LB:
 		focus-consider B.
 The body parts get focused rule is listed in the focus finding rules.
 

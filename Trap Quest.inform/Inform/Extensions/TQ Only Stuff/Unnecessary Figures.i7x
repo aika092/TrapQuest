@@ -57,6 +57,19 @@ To decide which figure-name is Figure of Vines Cutscene 3a:
 To decide which figure-name is Figure of Vines Cutscene 3b:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of cutscene-xavier-nightmare-diaper-clean:
+	decide on figure of small image.
+To decide which figure-name is Figure of cutscene-xavier-nightmare-diaper-messy:
+	decide on figure of small image.
+To decide which figure-name is Figure of cutscene-xavier-nightmare-gag-clean:
+	decide on figure of small image.
+To decide which figure-name is Figure of cutscene-xavier-nightmare-gag-wet:
+	decide on figure of small image.
+To decide which figure-name is Figure of cutscene-xavier-nightmare-belt-clean:
+	decide on figure of small image.
+To decide which figure-name is Figure of cutscene-xavier-nightmare-belt-messy:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of caged pail princess:
 	decide on figure of small image.
 To decide which figure-name is Figure of caged pail princess messy:

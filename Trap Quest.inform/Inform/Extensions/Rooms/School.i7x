@@ -107,7 +107,10 @@ To decide which number is the entry-rank of (R - School32):
 [East Dungeon]
 School33 is an academic room. The printed name of School33 is "Dungeon Hall". "Dungeon cells sit either side of this hidden extension to the hallway.". The shape of School33 is L5/0-0-1-0-1-1. The grid position of School33 is <5,16,6>. [School33 is east of School07.]
 Report going when the player is in School33:
-	change the east exit of School07 to School33. [As soon as the player steps into the hall from either cell we need to make the connection, otherwise the map button won't appear.]
+	change the east exit of School07 to School33; [As soon as the player steps into the hall from either cell we need to make the connection, otherwise the map button won't appear.]
+	update Nviables of School07;
+	update Nviables of School33.
+
 School34 is an academic room. The printed name of School34 is "Dungeon Cell". "A dark cell. The cell has a permanently open doorway, but anyone cuffed to the chains attached to the wall would be unable to leave.". The shape of School34 is L5/0-0-1-0-0-0. The grid position of School34 is <5,16,5>. School34 is south of School33.
 School35 is an academic room. The printed name of School35 is "Dungeon Cell". "A dark cell.". The shape of School35 is L5/0-0-0-0-1-0. The grid position of School35 is <5,16,7>. School35 is north of School33.
 
@@ -122,6 +125,8 @@ The School is a region. School01, School02, School03, School04, School05, School
 
 To reveal the school dungeon:
 	change the east exit of School07 to School33;
+	update Nviables of School07;
+	update Nviables of School33;
 	now School33 is seen;
 	now School33 is discovered;
 	now School34 is seen;
@@ -132,11 +137,12 @@ To reveal the school dungeon:
 Carry out going west when the location of the player is School33:
 	reveal the school dungeon. [if we've exited via the secret doorway then we can return]
 
+previous-dungeon-favour is a number that varies.
 dungeon-favour is a number that varies.
 dungeon-time is a number that varies.
 dungeon-tests is a number that varies. dungeon-tests is usually 0.
 
-A time based rule (this is the dungeon sentence progress rule):
+An all time based rule (this is the dungeon sentence progress rule):
 	if dungeon chains is worn:
 		increase dungeon-time by time-seconds;
 		if dungeon-time > 40 and the player is not immobile:
@@ -148,13 +154,16 @@ A time based rule (this is the dungeon sentence progress rule):
 To compute (M - a monster) dungeon locking:
 	reveal the school dungeon;
 	now dungeon-favour is 0;
-	say "[DungeonLockPrepFlav of M]";
+	say DungeonLockPrepFlav of M;
 	drag to School34 by M;
 	compute dungeon chain binding of M;
-	say "[DungeonLockAfterFlav of M]";
+	say DungeonLockAfterFlav of M;
 	if there is held bottle or there is held TQedible thing, compute dungeon drink confiscating of M;
+	if skeleton key is held:
+		say "[speech style of M]'You're certainly not allowed this!'[roman type][line break][BigNameDesc of M] confiscates [NameDesc of skeleton key]!";
+		now skeleton key is in School33;
 	compute dungeon long term challenge of M;
-	say "[DungeonLockLeaveFlav of M]";
+	say DungeonLockLeaveFlav of M;
 	try M going north;
 	display entire map;
 	repeat with N running through alive students:
@@ -163,7 +172,7 @@ To compute (M - a monster) dungeon locking:
 		distract N.
 
 To compute dungeon chain binding of (M - a monster):
-	say "[DungeonLockFlav of M]";
+	say DungeonLockFlav of M;
 	now dungeon chains is worn by the player;
 	now dungeon chains is stuck;
 	now dungeon chains is locked;
@@ -184,7 +193,7 @@ To say DungeonLockAfterFlav of (M - a monster):
 	say "[speech style of M]'You will be let out when we believe you have learned your lesson. I guess how long that takes is up to you.'[roman type][line break]".
 
 To compute dungeon drink confiscating of (M - a monster):
-	if there is a held bottle or there is a held TQedible thing, say "[DungeonDrinkFlav of M]";
+	if there is a held bottle or there is a held TQedible thing, say DungeonDrinkFlav of M;
 	repeat with B running through held TQedible things:
 		now B is in School33;
 	repeat with B running through held bottles:
@@ -251,6 +260,7 @@ To compute dungeon diaper setup of (M - a monster):
 
 To compute dungeon checkup of (M - a monster):
 	now M is in the location of the player;
+	now previous-dungeon-favour is dungeon-favour;
 	say DungeonCheckupArrivalFlav of M;
 	compute dungeon test of M;
 	increase dungeon-tests by 1;
@@ -279,8 +289,11 @@ To check dungeon release of (M - a monster):
 			if N is receptionist, now N is in School01;
 		now School34 is not smoky;
 		display entire map;
+		if class-time < 0, now class-time is 0; [so we don't go straight into detention for being late]
+	otherwise if dungeon-favour > previous-dungeon-favour and dungeon-tests is not 3:
+		say "[speech style of M]'Good. [if dungeon-favour >= 2]You're getting close to earning your release. Keep going[otherwise]Keep it up and we'll think about letting you go[end if].'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Good. [if dungeon-favour > 2]You're getting close to earning your release. Keep going[otherwise]Keep it up and we'll think about letting you go[end if].'[roman type][line break]";
+		say "[speech style of M]'[if dungeon-tests is 3]You would be out by now if you had complied, by the way[otherwise if dungeon-tests > 3]You continue to test our tolerance. Hmm[otherwise]At this rate, you're going to be in here longer than necessary[end if].'[roman type][line break]";
 
 A dungeon-test is a kind of object.
 dungeon-test-monster is an object that varies.
@@ -297,7 +310,7 @@ To execute (T - dungeon-food-test):
 	say "[speech style of M]'Here's your food, little slave.'[roman type][line break][BigNameDesc of M] drops a dog bowl in front of you! It's filled with mushy peas[if watersports fetish is 1] drowned in [urine][otherwise if diaper quest is 0] drowned in [semen][end if]. Do you [if the player is upright]get down on your knees and [end if]eat it? ";
 	if the player is bimbo consenting:
 		StomachFoodUp 1;
-		say "You [if the player is upright]kneel and [end if] begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [moderateHumiliateReflect]When you are finished [he of M] takes the bowl away.";
+		say "You [if the player is upright]kneel and [end if]begin to eat the degrading meal without the use of your hands. You feel thoroughly humiliated as [NameDesc of M] watches you with a mocking sneer. [moderateHumiliateReflect]When you are finished [he of M] takes the bowl away.";
 		if watersports fetish is 1:
 			UrineTasteAddictUp 1;
 		otherwise if diaper quest is 0:
@@ -377,7 +390,7 @@ To say DungeonPrincessDiaperDeclarationFlav of (M - a monster):
 	say "With a snap of [NameDesc of M][']s fingers, [NameDesc of ex-princess] is now wearing a massive white diaper with a colourful alien pattern, and a sheer pink nightie. Thick deep pink baby mittens and booties complete [his of ex-princess] new outfit. You watch with [horror the bimbo of the player] as [NameDesc of M] then presses [his of M] hands to [NameDesc of ex-princess][']s scalp, and [NameDesc of ex-princess][']s eyes roll into the back of [his of ex-princess] head.[line break][speech style of ex-princess]'What? No... please, don't make me do that... no, anything but that...!'[roman type][line break][BigNameDesc of M] laughs maliciously, as the front of [NameDesc of ex-princess][']s diaper visibly yellows, and [he of ex-princess] flushes red with what you assume is shame. But it quickly becomes clear that it's not just embarrassment - [his of ex-princess] tongue lolls out of [his of ex-princess] mouth and [he of ex-princess] involuntarily moves one mittened hand to the front of [his of ex-princess] diaper and the other to [his of ex-princess] right breast. Both start rubbing fervently, as [he of ex-princess] emits a loud erotic cry.[line break][speech style of M]'Let me explain to [NameBimbo] what just happened. [if M is headmistress]I have[otherwise]The [ShortDesc of headmistress][end if] has decided that the princess just being a diaper pail was too kind. The bitch is now fully incontinent, and from now on, whenever [he of ex-princess] soils [himself of ex-princess], [he of ex-princess] will be overcome with an incredibly powerful state of arousal.'[roman type][line break]";
 	say "[BigNameDesc of M] pauses to chuckle.[line break][speech style of M]'That's not all. Whenever [he of ex-princess] sees someone in a used diaper, [he of ex-princess] will be completely unable to stop [himself of ex-princess] from smushing [his of ex-princess] face into it, until the wearer walks away. Of course... you can't walk away right now, can you?'[line break][roman type][BigNameDesc of M] turns to fully face you, and then presses [his of M] hands to your belly. For a moment, a low humming sound can be heard.[line break][speech style of M]'As for your punishment for this jailbreak attempt, [NameBimbo]... well, we're going to leave you with Fannie Facerub for a while. Oh, and your belly has been enchanted with a cheeky little spell, to make your [if diaper messing < 4]bladder[otherwise]bowels[end if] go into overdrive for a little while. So, enjoy trying to hold on until I return.'".
 
-A time based rule (this is the school dungeon diaper balance rule):
+An all time based rule (this is the school dungeon diaper balance rule):
 	if diaper quest is 1 and the player is in School34 and ex-princess is in the location of the player:
 		if the stomach-food of the player < 2, now the stomach-food of the player is 2;
 		if the stomach-liquid of the player < 5, now the stomach-water of the player is 5.
@@ -395,6 +408,9 @@ Carry out taking clothing when the player is in School15:
 Report dropping clothing when the noun is in School15:
 	if the noun is cursed:
 		say "The magic runes around the ceiling and doorway turn black for a moment before [if the donations of School15 < 5]returning to their previous purple pulse[otherwise]returning to being grey and inactive[end if]. Maybe [if the noun is sure]because [end if]the [ShortDesc of the noun] was cursed?";
+		now the noun is sure;
+	otherwise if the noun is plentiful accessory:
+		say "The magic runes around the ceiling and doorway seem to fail to detect that you've dropped [NameDesc of the noun].";
 	otherwise:
 		increase the donations of School15 by 1;
 		say "The magic runes around the ceiling and doorway pulse and vibrate brilliantly [if the donations of School15 is 1]once[otherwise][donations of School15] times[end if] before [if the donations of School15 < 5]returning to their previous slower rhythm[otherwise if the donations of School15 is 5]becoming grey and inactive[otherwise]returning to being grey and inactive[end if].".

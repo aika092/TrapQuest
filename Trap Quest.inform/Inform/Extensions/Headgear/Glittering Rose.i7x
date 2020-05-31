@@ -1,6 +1,6 @@
 Glittering Rose by Headgear begins here.
 
-glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. The text-shortcut of glittering rose is "gr". Understand "glit", "glitter" as glittering rose.
+glittering rose is a headgear. glittering rose is blondeness-positive. glittering rose is brightness-positive. glittering rose is redness-positive. glittering rose is hair growing. glittering rose is dexterity-influencing. glittering rose is womanly. The text-shortcut of glittering rose is "glr". Understand "glit", "glitter" as glittering rose.
 
 The printed name of glittering rose is "[clothing-title-before]glittering rose[clothing-title-after]".
 
@@ -43,14 +43,13 @@ Definition: glittering rose is removal-blocking if wearing-target is butterfly w
 fairy-summoned is a number that varies.
 
 To compute class outfit of (H - glittering rose):
-	let B be a random off-stage butterfly wings;
 	let W be a random off-stage fairy wand;
-	if B is actually summonable or (B is butterfly wings and fairy-summoned is 0):
+	if butterfly wings is off-stage and (butterfly wings is actually summonable or fairy-summoned is 0):
 		if fairy-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-		summon B uncursed;
+		summon butterfly wings uncursed;
 		say "A giant pair of wings appear on your back. You feel lighter!";
 		now fairy-summoned is 1;
 	otherwise if W is fairy wand:
@@ -64,7 +63,7 @@ babymaking-quest is a headgear-clothing-quest. babymaking-quest has a number cal
 
 To uniquely set up (C - glittering rose):
 	now the quest of C is babymaking-quest;
-	if the pregnancy of the player > 0, now the previously-pregnant of babymaking-quest is 1.
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
 
 To say QuestFlav of (Q - babymaking-quest):
 	say "You sense it wants you to get pregnant.".
@@ -72,13 +71,12 @@ To say QuestFlav of (Q - babymaking-quest):
 To say QuestTitle of (Q - babymaking-quest):
 	say " (baby-making quest)".
 
-This is the check for new pregnancy rule:
+An all later time based rule (this is the check for new pregnancy rule):
 	if previously-pregnant of babymaking-quest is 0:
-		if the pregnancy of the player > 0:
+		if the pregnancy of the player > 0 and the pregnancy of the player < 3:
 			now the previously-pregnant of babymaking-quest is 1;
 			progress quest of babymaking-quest;
 	otherwise if the pregnancy of the player <= 0:
 		now the previously-pregnant of babymaking-quest is 0.
-The check for new pregnancy rule is listed in the advance counters rules.
 
 Glittering Rose ends here.

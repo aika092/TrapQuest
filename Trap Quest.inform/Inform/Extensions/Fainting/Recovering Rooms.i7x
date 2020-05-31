@@ -22,15 +22,20 @@ To Recover Rooms:
 				change the D exit of R to Solid Rock;
 			now R is not discovered;
 			now R is not seen;
+			now R is unvisited;
 		if the player is not in Dungeon10 and the player is not in Dungeon11 and the player is not in Dungeon12 and the player is not in Dungeon32: [If the player is not in the dungeon, we still hide the map location of these locations.]
 			now Dungeon10 is not discovered;
 			now Dungeon10 is not seen;
+			now Dungeon10 is unvisited;
 			now Dungeon11 is not discovered;
 			now Dungeon11 is not seen;
+			now Dungeon11 is unvisited;
 			now Dungeon12 is not discovered;
 			now Dungeon12 is not seen;
+			now Dungeon12 is unvisited;
 			now Dungeon32 is not discovered;
 			now Dungeon32 is not seen;
+			now Dungeon32 is unvisited;
 	repeat with R running through jungle rooms: [Every room in the woods is reset]
 		now Neighbour Finder is R;
 		now R is not discovered;

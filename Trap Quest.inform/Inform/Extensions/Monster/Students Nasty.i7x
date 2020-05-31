@@ -6,7 +6,7 @@ To decide which number is the aggro limit of (M - a nasty student): [The number 
 	decide on 12.
 
 To say MediumDesc of (M - a nasty student):
-	say "mean [rank-colour of item described] student [student-name of item described]".
+	say "mean [rank-colour of M] student [student-name of M]".
 
 To decide which number is the unique vindictiveness of (M - a nasty student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 2 and 4.
@@ -104,6 +104,6 @@ To compute friendly drink of (M - a nasty student):
 	say "[speech style of M]'Do I look like I'm in the mood to help you out?!'[roman type][line break]".
 
 To say detention chair tease of (M - a nasty student):
-	say "[speech style of M]'[one of]Bahahah, you really are the worst, aren't you?'[or]You should just give up, you know. Someone like you is never going to make it in a place like this.'[or]Nyer nyer, look at the loser on her punishment chair. Enjoying yourself, [bitch]?'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Bahahah, you really are the worst, aren't you?'[or]You should just give up, you know. Someone like you is never going to make it in a place like this.'[or]Nyer nyer, look at the loser on [his of the player] punishment chair. Enjoying yourself, [bitch]?'[in random order][roman type][line break]".
 
 Students Nasty ends here.

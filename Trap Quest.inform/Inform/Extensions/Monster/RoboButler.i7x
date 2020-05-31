@@ -25,17 +25,17 @@ To say MonsterDesc of (M - a robobutler):
 To set up (M - a robobutler):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 7;
+	now the raw difficulty of M is 7;
 	now the target-room of M is Hotel18;
 	now the health of M is the maxhealth of M;
 	now M is unconcerned.
 
-This is the spawn initial robobutler rule:
+[This is the spawn initial robobutler rule:
 	if the number of alive robobutlers is 0:
 		let M be a random robobutler;
 		if debugmode > 0, say "Summoning butler in hotel.";
 		summon M in the hotel.
-The spawn initial robobutler rule is listed in the setting up hotel monsters rules.
+The spawn initial robobutler rule is listed in the setting up hotel monsters rules.]
 
 To say speech style of (M - a robobutler):
 	say first custom style.
@@ -54,10 +54,10 @@ To say LeftoverDesc (N - 118):
 Part 2 - Perception
 
 To compute perception of (M - a robobutler):
- 	say "[BigNameDesc of M] notices you!";
+	say "[BigNameDesc of M] notices you!";
 	FavourDown M;
- 	if the class of the player is maid:
- 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
+	if the class of the player is maid:
+		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
 		calm M;
 	otherwise if M is friendly:
 		if alcohol fetish is 1 and (alcohol > 0 or hungover > 0 or there is worn party themed wearthing):
@@ -75,14 +75,14 @@ To compute perception of (M - a robobutler):
 		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
- 		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
- 		anger M;
- 		now the planned-punishment of M is 2;
+		say "[big his of M] eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+		anger M;
+		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
- 		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
- 		anger M;
- 		now the planned-punishment of M is 1;
- 	otherwise:
+		say "[big his of M] eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		anger M;
+		now the planned-punishment of M is 1;
+	otherwise:
 		say "[big he of M] glides towards you, bowing deeply as [he of M] addresses you in a monotone. [line break][first custom style]'IT IS CUSTOMARY TO TIP THE SERVICE STAFF, MA[']AM.'[roman type][line break]One of [his of M] 'hands' is unsubtly placed upturned towards you.";
 		now the planned-punishment of M is 0;
 		calm M.
@@ -110,7 +110,7 @@ To serve urine from (M - a robobutler):
 		say "[big his of M] eyes turn yellow as [he of M] looks at you.[line break][first custom style]'GREETINGS VISITOR. [caps please] HAVE ANOTHER SPECIAL DRINK.'[roman type][line break][BigNameDesc of M] produces a shot glass of [urine]. [big he of M] doesn't seem like [he of M]'s looking for 'no' as an answer. Do you drink the shot? ";
 		if the player is bimbo consenting:
 			StomachUp 1;
-			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck yuck yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
+			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck, yuck, yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
 			satisfy M;
 			UrineTasteAddictUp 1;
 		otherwise:
@@ -159,7 +159,7 @@ To compute (M - a robobutler) cuffing:
 		repeat with C running through worn bondage:
 			if C is unlocked, now C is locked;
 			increase the sentence of prison guard by 1;
-		say "[BigNameDesc of M]'s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
+		say "[BigNameDesc of M][']s eyes flash blue and red for a moment. [line break][speech style of M]TRIAL COMPLETE.[roman type][line break]".
 
 The unique punishment rule of a robobutler is usually the robobutler punishment rule.
 This is the robobutler punishment rule:
@@ -211,8 +211,19 @@ This is the robobutler punishment rule:
 		satisfy M for 500 seconds;
 		rule succeeds;[He doesn't drag you if he increases the size of your lips.]
 	if presented-orifice is not nothing, say "[speech style of M]'REQUEST NOT UNDERSTOOD. IGNORING.'[roman type][line break]";
+	if the currentSlide of security screens > 0 and a random number between 1 and 5 > 2, compute forced screen viewing of M;
 	if M is interested, compute forcefeed of M;
 	rule succeeds.
+
+To compute forced screen viewing of (M - a robobutler):
+	drag to Hotel30 by M;
+	satisfy M.
+
+butler-screen is a kind of diaper punishment. The priority of butler-screen is 2.
+
+Definition: butler-screen (called P) is appropriate:
+	if current-monster is not robobutler or the number of filled rows in the Table of Published Disgraces is 0, decide no;
+	decide yes.
 
 To say DragFlav of (M - a robobutler) to (R - a room):
 	say "[BigNameDesc of M] drags you [if the distance of R > 1]all the way [end if]to the [R]!".
@@ -220,6 +231,9 @@ To say DragFlav of (M - a robobutler) to (R - a room):
 To say DragArrival of (M - a robobutler) to (R - Hotel18):
 	if the planned-punishment of M is not 5, say "[speech style of M]'DINNER IS SERVED. [caps please] HELP YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully pushes your head towards the bowls. Unable to fight back, you sigh and submit to [his of M] demands.";
 	otherwise say DragArrival of M to Stairwell01.
+
+To say DragArrival of (M - a robobutler) to (R - Hotel30):
+	say "[speech style of M]'VIEWING SESSION ENGAGED. [caps please] ENJOY YOURSELF.'[roman type][line break][BigNameDesc of M] slowly but forcefully holds your head back and makes you look at the security screens.".
 
 To say DragArrival of (M - a robobutler) to (R - a room):
 	if the planned-punishment of M is 5:

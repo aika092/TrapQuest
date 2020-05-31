@@ -80,8 +80,16 @@ To decide which object is the coverer of (C - a suspenders):
 To decide which object is the concealer of (C - a suspenders):
 	repeat with R running through worn actually dense knee-length or longer clothing:
 		if R is crotch-in-place, decide on R;
-	repeat with R running through worn leg covering clothing:
+	repeat with R running through worn actually dense leg covering clothing:
 		if (R is trousers or R is overdress) and R is crotch-in-place, decide on R;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - a suspenders):
+	if C is listed in the armUses of arms, decide on arms;
+	repeat with R running through worn knee-length or longer clothing:
+		if R is crotch-in-place and R is not see-through, decide on R;
+	repeat with R running through worn leg covering clothing:
+		if (R is trousers or R is overdress) and R is crotch-in-place and R is not see-through, decide on R;
 	decide on nothing.
 
 Definition: a suspenders is bow themed: decide yes.
@@ -161,6 +169,7 @@ living belt of sturdiness has a number called buildup. The buildup of the living
 
 Definition: a living belt of sturdiness is father material: decide yes.
 Definition: a living belt of sturdiness is grey themed: decide yes.
+Definition: a living belt of sturdiness is fetish appropriate if diaper quest is 0.
 
 To decide which figure-name is clothing-image of (C - the living belt of sturdiness):
 	if C is penetrating a fuckhole, decide on figure of living belt of sturdiness penetrated;
@@ -181,7 +190,7 @@ Definition: a living belt of sturdiness is product: decide yes.
 To decide which number is the alchemy key of (C - living belt of sturdiness):
 	decide on 19.
 
-Definition: A clothing (called C) is thrusting:
+Definition: a clothing (called C) is thrusting:
 	if C is living belt of sturdiness and C is penetrating a fuckhole and the player is upright and the player is horny, decide yes;
 	decide no.
 
@@ -359,7 +368,7 @@ To say ClothingDesc of (C - tongue-belt):
 	say "A belt made completely out of large red demonic tongues. [TongueStatus of C]".
 
 To say ShortDesc of (C - tongue-belt):
-	say "pair of tongued belt".
+	say "demon-tongue belt".
 
 Definition: tongue-belt is demonic: decide yes.
 Definition: tongue-belt is tongued: decide yes.

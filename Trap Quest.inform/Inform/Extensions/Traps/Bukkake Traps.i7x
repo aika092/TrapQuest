@@ -1,7 +1,6 @@
 Bukkake Traps by Traps begins here.
 
 Figure of Hose Cutscene 1 is the file "Special/Cutscene/cutscene-hose1.png".
-Figure of Bukkake Door Cutscene 1 is the file "Special/Cutscene/cutscene-bukkake1.png".
 
 [!<BukkakeTrapDoor>@
 
@@ -149,7 +148,7 @@ To trigger (Y - a bukkake hose):
 		cutshow figure of water bomb cutscene 1 for face;
 		Squirt water on face by X * 10;
 		reset soak flavour;
-		cool down 2000.
+		force cool down 2000.
 
 To say BukkakeDoorTrapReactFlav of (M - a monster):
 	say NastyTrapReactFlav of M.

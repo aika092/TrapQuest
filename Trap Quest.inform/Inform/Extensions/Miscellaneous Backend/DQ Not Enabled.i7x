@@ -31,10 +31,8 @@ To decide which figure-name is YesNoBackground:
 	if the size of penis > 7, decide on figure of YesNoBackground6;
 	decide on figure of YesNoBackground2.
 
-The story description is "Explore a dangerous world of transformation, penetration and bimbofication. 18+ only!".
-The release number is 10.
-
-Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
+The story description is "Explore a dangerous world of transformation, penetration, and bimbofication. 18+ only!".
+The release number is 11.
 
 A DQClothing is a kind of object. NoDQImage is a DQClothing. A knickers has a DQClothing called the DQFigure. The DQFigure of a knickers is usually NoDQImage.
 DQCloth is a DQClothing. DQGiant is a DQClothing. DQHuge is a DQClothing. DQLarge is a DQClothing. DQMedium is a DQClothing. DQMoosive is a DQClothing. DQSmall is a DQClothing. DQVelcro is a DQClothing. DQBunny is a DQClothing. DQWaddle is a DQClothing. DQWhitePants is a DQClothing. DQBlackPants is a DQClothing. DQPinkPants is a DQClothing. DQPullups is a DQClothing. DQTrainingPants is a DQClothing. DQRubber is a DQClothing.
@@ -65,6 +63,7 @@ Include Gargoyle by Monster.
 Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
 Include Icarus by Monster.
+Include Centaur by Monster.
 
 Include Milking Bench by Furniture.
 Include Dildo Rocking Stool by Furniture.
@@ -80,6 +79,7 @@ Include Ultra Slutty Bags of Holding by Bags of Holding.
 A diaper bag of holding is a kind of bag of holding.
 A baby diaper bag of holding is a kind of bag of holding.
 A stuffie is a kind of equippable. A stuffie is unique.
+enema-backpack is a clothing. enema-backpack is unique.
 
 Include School Stuff by TQ Only Stuff.
 Include Serving Table by Bondage.
@@ -128,7 +128,6 @@ Include Stiff Slave by Nintendolls One Year Later Epilogues.
 Include Street Prostitute by Nintendolls One Year Later Epilogues.
 Include Super Gape by Nintendolls One Year Later Epilogues.
 Include Super Genius by Nintendolls One Year Later Epilogues.
-Include Toilet by Nintendolls One Year Later Epilogues.
 Include Super Giant Tits by Nintendolls One Year Later Epilogues.
 Include Super Giant Ass by Nintendolls One Year Later Epilogues.
 

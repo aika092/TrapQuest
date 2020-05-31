@@ -153,7 +153,13 @@ To say PiercingFlav of (P - clitoris lead):
 	cutshow figure of modmachine cutscene 1 for modification machine.
 
 To decide which object is the concealer of (C - clitoris lead):
-	repeat with O running through worn potentially vagina covering clothing:
+	repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
+		unless O is skirted, decide on O;
+	decide on nothing.
+
+To decide which object is the at least partial concealer of (C - clitoris lead):
+	if C is listed in the armUses of arms, decide on arms;
+	repeat with O running through bottom-layer-concealing potentially at least partially vagina covering clothing:
 		unless O is skirted, decide on O;
 	decide on nothing.
 
@@ -225,9 +231,12 @@ To say PiercingFlav of (P - a clitoris piercing):
 		try examining clit-piercing tattoo.
 
 To decide which object is the concealer of (C - a clitoris piercing):
-	repeat with O running through worn potentially vagina covering clothing:
-		decide on O;
-	decide on nothing.
+	if C is listed in the armUses of arms, decide on arms;
+	decide on the concealer of vagina.
+
+To decide which object is the at least partial concealer of (C - a clitoris piercing):
+	if C is listed in the armUses of arms, decide on arms;
+	decide on the at least partial concealer of vagina.
 
 Check taking off clitoris piercing:
 	[###Selkie: it would be nice to add some text here if the piercing is not blessed, saying stuff like "... but your hopeless fumbling with it has aroused you further" and increasing the sensitivity of the vagina]
@@ -243,24 +252,30 @@ Definition: a clitoris piercing (called P) is eligible:
 	decide yes.
 
 This is the cursed clitoris piercing stops you wearing underwear rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is not no protection and wearing-target is not diaper:
-			if summoning is 0 and autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+			if summoning is 0 and autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 			rule fails.
 The cursed clitoris piercing stops you wearing underwear rule is listed in the knickers wearability rules.
 
 This is the cursed clitoris piercing stops you wearing trousers rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is not no protection:
-			if summoning is 0 and autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+			if summoning is 0 and autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 			rule fails.
 The cursed clitoris piercing stops you wearing trousers rule is listed in the trousers wearability rules.
 
 This is the cursed clitoris piercing stops you wearing crotch covering dresses rule:
-	if there is a worn cursed clitoris piercing:
+	let C be a random worn cursed clitoris lead;
+	if C is nothing, now C is a random worn cursed clitoris piercing;
+	if C is a thing:
 		if wearing-target is crotch covering and wearing-target is not no protection:
 			if summoning is 0:
-				if autowear is false, say "The curse of your [random worn clitoris piercing] somehow prevents you from putting this on!";
+				if autowear is false, say "The curse of your [C] somehow prevents you from putting this on!";
 				rule fails. [NB this purposefully doesn't prevent them from being summoned.]
 The cursed clitoris piercing stops you wearing crotch covering dresses rule is listed in the overdress wearability rules.
 
@@ -331,17 +346,17 @@ This is the nipple chain already worn rule:
 The nipple chain already worn rule is listed in the nipple piercing wearability rules.
 
 This is the overdress nipple chain clash rule:
-	if wearing-target is nipple covering or wearing-target is ridiculously low cut or higher:
+	if wearing-target is actually nipple covering:
 		repeat with N running through worn nipple chains:
 			if N is not blessed:
-				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing the [ShortDesc of wearing-target]! Maybe if you blessed it?";
+				if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is somehow preventing you from wearing any clothing that would cover your nipples! Maybe if you blessed it?";
 				rule fails.
 The overdress nipple chain clash rule is listed in the overdress wearability rules.
 
 This is the bra nipple chain clash rule:
-	if wearing-target is nipple covering:
+	if wearing-target is actually nipple covering:
 		repeat with N running through worn nipple chains:
-			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is preventing you from ever wearing any kind of bra!";
+			if summoning is 0 and autowear is false, say "Your [ShortDesc of N] is preventing you from ever wearing any kind of bra that would cover your nipples!";
 			rule fails.
 The bra nipple chain clash rule is listed in the bra wearability rules.
 
@@ -410,23 +425,32 @@ To uniquely set up (C - a pair of earrings):
 	now the variation of C is a random number between 1 and 3.
 
 To say CurseCurseFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!".
+	say "Your [printed name of C] transform in shape, and are now the ultra slutty circular things again!";
+	update appearance level.
 
 To say CurseBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now penis shaped again!".
+	say "Your [printed name of C] transform in shape, and are now penis shaped again!";
+	update appearance level.
 
 To say BlessBlessFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!".
+	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!";
+	update appearance level.
 
 To say BlessBlandFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]".
+	say "Your [printed name of C] transform in shape, and are now shaped like [manly-penis]s![line break][variable custom style][if the bimbo of the player < 12 or 7 is too humiliating]Hmm, well I guess that is a little bit better...?[otherwise if the bimbo of the player < 15]Ooh, these are cute![otherwise]Aww, I preferred having the super trashy ones! I guess these are pretty trashy too...[end if][roman type][line break]";
+	update appearance level.
 
 To decide which number is the initial outrage of (C - a pair of earrings):
-	if C is cursed, decide on 12;
+	if C is cursed, decide on 10;
 	if C is blessed, decide on 0;
 	decide on 6.
 
 To decide which object is the concealer of (C - a pair of earrings):
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	if the largeness of hair > 12, decide on hair;
+	decide on nothing.
+To decide which object is the at least partial concealer of (C - a pair of earrings):
+	if C is listed in the armUses of arms, decide on arms;
 	if there is a worn hood, decide on a random worn hood;
 	if the largeness of hair > 12, decide on hair;
 	decide on nothing.
@@ -563,8 +587,15 @@ To decide which number is the dexterity-influence of (C - a lip piercing):
 To decide which number is the initial outrage of (C - a lip piercing):
 	decide on 3.
 
+To decide which object is the at least partial concealer of (C - a lip piercing):
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn hood, decide on a random worn hood;
+	decide on the at least partial concealer of face.
+
 To decide which object is the concealer of (C - a lip piercing):
-	decide on a random worn hood.
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	decide on the concealer of face.
 
 To set up influence of (C - a lip piercing):
 	set up taste-based influence of C.
@@ -639,7 +670,14 @@ To decide which number is the strength-influence of (C - a nose piercing):
 	decide on 0.
 
 To decide which object is the concealer of (C - a nose piercing):
-	decide on a random worn actually dense hood.
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn actually dense hood, decide on a random worn actually dense hood;
+	decide on the concealer of face.
+
+To decide which object is the at least partial concealer of (C - a nose piercing):
+	if C is listed in the armUses of arms, decide on arms;
+	if there is a worn hood, decide on a random worn hood;
+	decide on the at least partial concealer of face.
 
 To say PiercingFlav of (P - a nose piercing):
 	say "An arm comes down with a searing hot needle! You scream [if the player is gagged]through your gag [end if]as your nose's septum is painfully pierced. The needle is quickly removed and a thick metal ring is pushed into place. There's no way to remove it![line break][variable custom style]It feels harder to think straight...[roman type][line break]".
@@ -697,11 +735,6 @@ A tongue piercing is a kind of piercing. The printed name of tongue piercing is 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
 
-Definition: a tongue piercing (called C) is currently visible: [Is the item worn and currently visible to onlookers?]
-	if C is not worn, decide no;
-	if there is a worn ringagged clothing or the latex-transformation of the player > 6, decide yes; [If there is something holding your mouth open then your piercing is visible]
-	decide no.
-
 This is the tongue piercing inhibits gag reflex rule:
 	if there is a worn tongue piercing:
 		if debuginfo > 0, say "[input-style]Avoid gagging check: tongue piercing | automatic success[roman type][line break]";
@@ -709,8 +742,9 @@ This is the tongue piercing inhibits gag reflex rule:
 The tongue piercing inhibits gag reflex rule is listed in the gag reflex rules.
 
 To decide which object is the concealer of (C - a tongue piercing):
-	if C is currently visible, decide on nothing;
-	decide on face.
+	if C is listed in the armUses of arms, decide on arms;
+	unless there is a worn ringagged clothing or the latex-transformation of the player > 6, decide on face;
+	decide on the at least partial concealer of face.
 
 Check taking off tongue piercing:
 	say "That's permanently welded into your tongue!" instead.

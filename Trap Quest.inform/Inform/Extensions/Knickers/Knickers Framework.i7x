@@ -66,9 +66,9 @@ Report examining knickers:
 		say "[one of][item style]Underwear [if the noun is diaper]in general [end if][if the noun is no protection or (the player is male and the noun is pussy protection)](but not this one!) [end if][if the number of worn knickers is 0]would provide[otherwise]provides[end if] a line of defence against things accessing your [fuckholes].[roman type][line break][or][stopping]".
 
 To decide which number is the core outrage of (C - a knickers): [This is plugged into both outrage and cringe]
-	if C is crotch-exposing, decide on 15;
-	if C is crotch-ripped, decide on 12;
-	if C is actually sheer, decide on 11; [Sheer undies? Very lewd!]
+	if C is crotch-exposing, decide on 11;
+	[if C is crotch-ripped, decide on 12;] [Let's try turning this off. Ripped underwear doesn't make it lewd, but of course what it exposes is probably lewd.]
+	if C is actually sheer, decide on 8; [Sheer undies? Very lewd!]
 	let O be 10 - the armour of C;
 	if O < 3, decide on 3; [It's always a bit tiny bit outrageous to have your bottoms on display, even if it's swimwear]
 	decide on O.
@@ -76,7 +76,7 @@ To decide which number is the core outrage of (C - a knickers): [This is plugged
 To decide which number is the initial outrage of (C - a knickers):
 	decide on the core outrage of C + the unique outrage of C.
 To decide which number is the initial cringe of (C - a knickers):
-	decide on the core outrage of C + the unique cringe of C.
+	decide on 1 + the unique cringe of C.
 
 To decide which number is the unique outrage of (C - a knickers): [Some underwear has additional factors that make it lewd, e.g. a rude phrase]
 	if C is crotch-assless, decide on 4;
@@ -163,8 +163,14 @@ Report wearing knickers:
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
 		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][end if] conform to the contours of your [ShortDesc of hips] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable! [end if]These panties are cursed!"; [Written by Anya Snowdrifter]
-	if the size of penis > the penis-capacity of the noun and the noun is crotch-intact and the noun is pussy covering:
-		unless there is a worn chastity cage, say "Your [ShortDesc of penis] [if penis is exposed]remains visible, peeking[otherwise]peeks[end if] out the side of the fabric.".
+	if the size of penis > 0 and the penis-capacity of the noun > 0:
+		if the noun is crotch-intact and the noun is pussy covering:
+			if the noun is potentially penis covering:
+				say "Your [ShortDesc of penis] fits comfortably inside the fabric!";
+			otherwise if the noun is potentially at least partially penis covering:
+				say "Your [ShortDesc of penis] barely fits inside this tiny piece of fabric!";
+			otherwise:
+				say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
 
 Check taking off worn knickers:
 	if the noun is cursed:

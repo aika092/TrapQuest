@@ -33,6 +33,7 @@ rubber mittens is a mittens. rubber mittens is latex. The printed name of rubber
 blue rubber mittens is a mittens. blue rubber mittens is latex. The printed name of blue rubber mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of blue latex mittens[clothing-title-after]". Figure of blue rubber mittens is the file "Items/Accessories/Equippables/mittens4.png". The text-shortcut of blue rubber mittens is "blmi".
 inflated rubber mittens is a mittens. inflated rubber mittens is latex. The printed name of inflated rubber mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of inflated latex mittens[clothing-title-after]". Figure of inflated rubber mittens is the file "Items/Accessories/Equippables/mittens3.png". The text-shortcut of inflated rubber mittens is "ilmi".
 teddy bear mittens is a mittens. The printed name of teddy bear mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of teddy bear mittens[clothing-title-after]". Figure of teddy bear mittens is the file "Items/Accessories/Equippables/mittens2.png". The text-shortcut of teddy bear mittens is "tmi".
+christmas mittens is a mittens. The printed name of christmas mittens is "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pair of christmas mittens[clothing-title-after]". Figure of christmas mittens is the file "Items/Accessories/Equippables/mittens5.png". The text-shortcut of christmas mittens is "chmi".
 
 To decide which figure-name is clothing-image of (C - rubber mittens):
 	decide on figure of rubber mittens.
@@ -45,6 +46,9 @@ To decide which figure-name is clothing-image of (C - inflated rubber mittens):
 
 To decide which figure-name is clothing-image of (C - teddy bear mittens):
 	decide on figure of teddy bear mittens.
+
+To decide which figure-name is clothing-image of (C - christmas mittens):
+	decide on figure of christmas mittens.
 
 To say ClothingDesc of (W - rubber mittens):
 	say "A pair of large pink latex mittens. You lose some manual dexterity and some slapping power from wearing them.";
@@ -65,6 +69,10 @@ To say ClothingDesc of (W - teddy bear mittens):
 	say "A pair of large pink baby mittens with a teddy bear pattern and small bells. You lose some manual dexterity and some slapping power from wearing them.";
 	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
 
+To say ClothingDesc of (W - christmas mittens):
+	say "A pair of large green baby mittens with a large amount of red frills and ribbon at the wrist. You lose some manual dexterity and some slapping power from wearing them.";
+	if the player is an adult baby and W is worn, say "You feel much, much better at running away from monsters whilst on your knees.".
+
 Definition: rubber mittens is pink themed: decide yes.
 Definition: rubber mittens is blue themed: decide yes.
 
@@ -74,6 +82,10 @@ Definition: teddy bear mittens is pink themed: decide yes.
 
 To decide which number is the initial cringe of (C - teddy bear mittens):
 	decide on 9.
+
+Definition: christmas mittens is green themed: decide yes.
+Definition: christmas mittens is red themed: decide yes.
+Definition: christmas mittens is christmas themed: decide yes.
 
 Definition: a rubber mittens is babywear: decide yes.
 Definition: a rubber mittens is transformation-protected if diaper lover <= 0.

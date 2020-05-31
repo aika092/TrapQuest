@@ -19,7 +19,7 @@ To Start The Machine:
 		follow the setting up woods monsters rules;
 		Set Up The Mansion;
 		follow the setting up mansion monsters rules;
-		repeat with M running through alive nonsetup monsters:
+		repeat with M running through alive nonexistent monsters:
 			set up M;
 		now the player is in Mansion01;
 		now playerRegion is Mansion;
@@ -31,31 +31,41 @@ To Start The Machine:
 	move pink smoke backdrop to all smoky rooms;
 	move water-body backdrop to all water-bodied rooms;
 	if debugmode > 1, say "Now configuring toilets.";
-	move toilet backdrop to all urinals rooms;
 	move toilet backdrop to all toilets rooms;
+	move urinal backdrop to all urinals rooms;
 	if spontaneous tattoos is 1:
-		summon ink-me tattoo;
-		say "You notice that [if latex prisoner is 0 and halloween content is 0]you are naked, and that [end if]you have a tattoo of the words 'INK ME' on the back of your left hand.[line break]";
+		if background-pure is 1, summon virgin void tattoo;
+		otherwise summon ink-me tattoo;
+		say "You notice that [if latex prisoner is 0 and halloween content is 0 and christmas content is 0]you are naked, and that [end if]you have a tattoo of the [if background-pure is 1]word 'VIRGIN' on your belly[otherwise]words 'INK ME' on the back of your left hand[end if].[line break]";
+		focus-consider a random worn tattoo;
 	if background-nurse is 1:
 		let B be a random bandage;
 		now B is held by the player;
 		say "You notice that you seem to have some medical supplies. Handy![line break]";
+	if christmas content is 1:
+		if diaper lover > 0:
+			summon christmas bonnet cursed;
+			summon naughty-or-nice outfit;
+			summon plain-small-diaper uncursed;
+			say "You seem to have been given some kind of... festive baby outfit and diaper to wear?! This must be some weird Christmas-themed event...";
+		otherwise:
+			summon conic santa hat cursed;
+			summon present outfit;
+			increase the transform-resistance of present outfit by 2;
+			say "You seem to have been given some kind of... sexy festive outfit to wear?! This must be some weird Christmas-themed event...";
 	if halloween content is 1:
 		set up vampiress;
 		now vampiress is in Mansion01;
 		now vampiress is interested;
 		calm vampiress;
 		now the pink pill is in pink wardrobe;
-		let C be a random candy corn;
-		now C is in a random placed mandatory haunted room;
-		let C be a random liquorice;
-		now C is in a random placed mandatory haunted room;
-		while the number of candy in the location of C > 1:
-			now C is in a random placed mandatory haunted room;
-		let C be a random strawberry lace;
-		now C is in a random placed mandatory haunted room;
-		while the number of candy in the location of C > 1:
-			now C is in a random placed mandatory haunted room;
+		now candy corn is in a random placed mandatory haunted room;
+		now liquorice is in a random placed mandatory haunted room;
+		while the number of candy in the location of liquorice > 1:
+			now liquorice is in a random placed mandatory haunted room;
+		now strawberry lace is in a random placed mandatory haunted room;
+		while the number of candy in the location of strawberry lace > 1:
+			now strawberry lace is in a random placed mandatory haunted room;
 		let H be a random fetish appropriate halloween headgear;
 		compute full outfit summon of H;
 		say "[second custom style]Ding Dong![roman type][line break]The giant manor house's doorbell sounds surprisingly cheerful and welcoming considering how scary the place looks from the outside. And yet, when the door opens, it opens with a creepy creak like you might expect from such an old and grand door. The [man of vampiress] who greets you has red eyes and very, very pale skin.[line break][variable custom style]'Trick or treat[if diaper lover > 0]! And, erm, could I use your bathroom?'[otherwise]!'[end if][roman type][line break]You say automatically, without thinking. [if diaper lover > 0]It's true - you really really do need the loo. [end if]The [man of vampiress] licks [his of vampiress] lips.[line break][speech style of vampiress]'[if diaper lover > 0]Why of course you can sweetie. Come on in...'[otherwise]Why not both?'[end if][roman type][line break][big he of vampiress] offers seductively, before ushering you inside.[line break][speech style of vampiress]'I did have some candy for you but my house is so big that I've lost it all somewhere around here. Why don't you have a little look around and see if you can find it all? There should be [bold type]three pieces of candy[roman type] [speech style of vampiress]for you to find. Feel free to eat it all when you find it.'[roman type][line break]";
@@ -238,7 +248,7 @@ Used at the start of the game to encase the player in latex items, if that optio
 +!]
 To initialise latex prisoner:
 	let R be a random number between 1 and 2;
-	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. ";
+	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. [if diaper quest is 0 and black hood is actually summonable]Your mouth is opened wide by a ring-gag as a latex hood appears over your face! [end if]";
 	if diaper quest is 0, say "Suddenly you feel your [if the player is female][vagina] and [end if][asshole] invaded by [if the player is male]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is female]rear [end if]plug starts vibrating!";
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
@@ -262,20 +272,21 @@ To initialise latex prisoner:
 		now C is identified;
 		now C is sure;
 		now C is unowned;
+		now C is bland;
 		if C is heels:
 			now C is posture training;
 			now the heel-height of C is 2;
 			compute quest of C;
-		if C is vibrating plug panties:
+		otherwise if C is vibrating plug panties:
 			now the damage of C is 7;
-			now C is cursed;
 		otherwise if C is rubber mittens:
 			do nothing;
-		otherwise:
+		otherwise if diaper quest is 1 or black hood is not actually summonable:
 			now C is glued;
 		if C is overdress:
 			layer C correctly;
 			if C is posture training, now C is blandness;
+	if black hood is actually summonable, summon black hood cursed;
 	if rubber-baby-bonnet is worn:
 		now rubber-baby-bonnet is cursed;
 		now baby-summoned is 1;
@@ -316,8 +327,9 @@ To initialise bondage protection:
 	repeat with C running through off-stage bondage:
 		now C is in holding pen.
 
-Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 3 + the notManlyFactor of it.
-Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and it is fetish appropriate and the unworn outrage of it <= 6 + the notManlyFactor of it.
+Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it.
+Definition: a bra is pinkWardrobeAppropriate if it is fetish appropriate and it is not in pink wardrobe and it is not unique and the min size of it <= the largeness of breasts and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it. [We allow rare bras]
+Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it.
 
 [!<InitialiseWardrobe>+
 
@@ -328,49 +340,34 @@ To initialise wardrobe:
 	let L be a list of clothing;
 	let C be a random pinkWardrobeAppropriate undies;
 	if roleplay fetish is 1, compute starting headgear;
-	if pregnancy fetish is 1 and a random number between 1 and 3 is 1, now C is white-diagram briefs;
-	if diaper focus is 1 or (diaper lover >= 1 and a random number between 1 and 2 is 1), now C is a random training pants;
+	if pregnancy fetish is 1, now C is white-diagram briefs;
+	if diaper lover >= 1, now C is a random training pants;
 	if C is clothing, add C to L;
-	let C be a random pinkWardrobeAppropriate corset;
-	if C is clothing, add C to L;
-	now C is a random basic loot fetish appropriate heels;
-	if C is clothing, add C to L;
-	if C is platform heels or C is wedge heels, now the heel-height of C is 3;
-	otherwise now the heel-height of C is 1;
-	now C is a random pinkWardrobeAppropriate bra;
-	if C is clothing, add C to L;
-	now the size of C is the largeness of breasts;
-	if the size of C > the max size of C, now the size of C is the max size of C;
-	if the size of C < the min size of C, now the size of C is the min size of C;
+	now C is a random pinkWardrobeAppropriate bikini top;
+	if C is bikini top:
+		add C to L;
+		now the size of C is the largeness of breasts;
+		if the size of C > the max size of C, now the size of C is the max size of C;
+		if the size of C < the min size of C, now the size of C is the min size of C;
 	now C is a random pinkWardrobeAppropriate nylon stockings;
 	if C is nothing, now C is a random pinkWardrobeAppropriate stockings;
-	if C is clothing, add C to L;
-	now C is a random pinkWardrobeAppropriate suspenders;
 	if C is clothing, add C to L;
 	let C be a random Boobies T-shirt;
 	if the player is male and a random number between trap fetish and 1 is 1, now C is a random Gender Bender T-shirt;
 	if diaper lover >= 1 and a random number between 1 and 2 is 1, now C is a random I love my wet nappies T-shirt;
-	if a random number between 1 and 2 is 1, now C is a random pinkWardrobeAppropriate underdress;
-	if a random number between 1 and 2 is 1 or C is nothing, now C is a random pinkWardrobeAppropriate overdress;
+	if a random number between 1 and 2 is 1, now C is a random unskirted underdress;
+	if a random number between 1 and 2 is 1 or C is nothing, now C is a random unskirted overdress;
 	if C is clothing, add C to L;
-	if C is unskirted:
-		now C is a random basic loot short or longer not-butt-windowed actually dense fetish appropriate skirt;
-		if C is clothing, add C to L;
+	now C is a random basic loot short or longer not-butt-windowed actually dense fetish appropriate skirt;
+	if C is clothing, add C to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;
 		if easter content is 1, now C is brown-button-diaper;
 		if C is clothing, add C to L;
 	repeat with X running through L:
 		if X is in Standard Item Pen, restock X;
+		blandify and reveal X;
 		now X is in pink wardrobe;
-		if X is blessed, now X is bland;
-		if X is stockings, now the raw-magic-modifier of X is 0;
-		if X is suspenders and the raw-magic-modifier of X > 1, now the raw-magic-modifier of X is 1;
-		if the raw-magic-modifier of X < -2, now the raw-magic-modifier of X is a random number between -2 and 0;
-		if the raw-magic-modifier of X > 2, now the raw-magic-modifier of X is a random number between 0 and 2;
-		if X is cursed, assign quest to X;
-		otherwise now X is blandness;
-		now X is unowned;
 	now champagne-glass is sure;
 	now champagne-glass is bland;
 	now champagne-glass is in pink wardrobe;
@@ -386,11 +383,14 @@ To initialise wardrobe:
 	if combatvisor is 1, now combat visor is worn by the player;
 	if christmas content is 1:
 		initialise christmas gifts;
-		now a random santa hat is in pink wardrobe.
+		[now a random santa hat is in pink wardrobe.]
 
 To compute starting headgear:
 	let H be a random roleplay headgear;
-	if latex prisoner is 1, now H is black hood;
+	let failsafe be 25;
+	while H is not off-stage and failsafe > 0:
+		let H be a random roleplay headgear;
+		decrease failsafe by 1;
 	now H is in pink wardrobe;
 	now H is cursed.
 

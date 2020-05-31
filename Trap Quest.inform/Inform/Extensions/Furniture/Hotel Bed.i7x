@@ -84,7 +84,7 @@ To compute PatronSpawning of (F - a hotel bed):
 		now R is a random number between 1 and H;
 		if R > 6, now R is 6;
 		repeat with N running from 1 to R:
-			let M be a random off-stage patron;
+			let M be a random off-stage generic-appropriate patron;
 			now M is in the location of the player;
 			set up M;
 		if R > 3, say "[first custom style]'Hey everyone, get in here!'[roman type][line break]";

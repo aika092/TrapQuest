@@ -11,7 +11,7 @@ REQUIRES COMMENTING
 @!]
 face is an orifice. Face is everywhere. The printed name of face is "[if item described is occupied]mouth[otherwise]face[end if]". Understand "mouth", "blowjob", "oral", "oral sex", "fellatio", "cunnilingus", "blow job" as face. [This way 'offer/suggest blowjob/etc. is understood by the game] The text-shortcut of face is "face".
 To say FullExamineDesc of (B - face):
-	say "[TotalDesc of face]".
+	say "[ImageDesc of face][TotalDesc of face]".
 
 [!<Face>@<previousMakeUp:Integer>*
 
@@ -72,6 +72,15 @@ REQUIRES COMMENTING
 *!]
 the face presentable rules is a rulebook.
 the presentable rules of face is usually the face presentable rules.
+
+To decide which object is the concealer of (F - face):
+	decide on a random worn actually dense hood.
+
+To decide which object is the at least partial concealer of (F - face):
+	if face is listed in the armUses of arms, decide on arms;
+	if there is a worn not-see-through hood, decide on a random worn not-see-through hood;
+	if cultist veil is worn, decide on cultist veil;
+	decide on nothing.
 
 [!<TheUnableToSpeakToPresentRule>+
 
@@ -158,9 +167,9 @@ Definition: face is lewdly exposed if it is exposed.
 
 To decide which number is the lewdly exposed outrage of (F - face):
 	if diaper quest is 1 and the make-up of face >= 3, decide on 2;
-	let O be the make-up of face * 2;
-	increase O by the lips of face * 2;
-	increase O by alcohol-level * 3;
+	let O be the make-up of face;
+	increase O by the lips of face;
+	increase O by alcohol-level;
 	decide on O.
 
 To decide which number is the cringe of (F - face):
@@ -236,7 +245,7 @@ To say TotalDesc of face:
 	otherwise:
 		say "your face [MakeUpDesc].";
 	let A be alcohol-level;
-	if A > 0, say "[if A > 2]Your expression is one of someone who is pretty much off [his of the player] tits with intoxication, and at risk of going completely off the rails if [he of the player] has any more[otherwise if A > 1]Your vacant expression is one of someone who is rather drunk[otherwise]It's easy to tell that you're a bit tipsy just by looking at your glazed over eyes[end if].";
+	if A > 0, say "[if A > 2]Your expression is one of someone who is pretty much off [his of the player] tits with intoxication, and at risk of going completely off the rails if [he of the player] has any more[otherwise if A > 1]Your vacant expression is one of someone who is rather drunk[otherwise]It's easy to tell you're a bit tipsy just by looking at your glazed-over eyes[end if].";
 	if the number of things penetrating face > 0 or the latex-transformation of the player > 6:
 		let B be a random thing penetrating face;
 		if the latex-transformation of the player > 6:
@@ -267,17 +276,20 @@ REQUIRES COMMENTING
 
 +!]
 To say LipDesc:
-	if the lips of face is 0:[default]
-		say "[if the player is male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
-	if the lips of face is 1:
-		say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
-	if the lips of face is 2:[maximum for vanilla players]
-		say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[at random][end if]";
-	if the latex-transformation of the player > 6:
-		say "[one of]plastic[or]upholstered[or]pillowy[or]padded[at random]";[lips are fixed at 3.]
-	otherwise if the lips of face > 2:
-		say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
-	say " lips".
+	if diaper quest is 1:
+		say "lips";
+	otherwise:
+		if the lips of face is 0:[default]
+			say "[if the player is male][one of]narrow[or]unremarkable[at random][otherwise][one of]slender[or]delicate[at random][end if]";
+		if the lips of face is 1:
+			say "[one of]flared[or]full[or][if artificial enhancements fetish is 1]pouting[otherwise]big[end if][or]well-developed[at random]";
+		if the lips of face is 2:[maximum for vanilla players]
+			say "[if artificial enhancements fetish is 1][one of]beestung[or]plush[or]plump[or]fleshy[at random][otherwise][one of]plush[or]dick sucking[or]pouting[at random][end if]";
+		if the latex-transformation of the player > 6:
+			say "[one of]plastic[or]upholstered[or]pillowy[or]padded[at random]";[lips are fixed at 3.]
+		otherwise if the lips of face > 2:
+			say "[one of]swollen[or]oversized[or]huge[or]corpulent[or]augmented[at random] dick sucking";
+		say " lips".
 
 Part 3 - Modify Face Stats
 
@@ -339,11 +351,8 @@ To display lips cutscene:
 
 Section - Image for graphics window
 
-The text-shortcut of face is "face". Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
-Figure of CumFaceButton is the file "Special/Buttons/cumface.png".
+Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".
 
-To decide which figure-name is the examine-image of (T - face):
-	if T is overglazed, decide on Figure of CumFaceButton;
-	decide on figure of no-image-yet.
+[examine-image is documented in Necessary Figures]
 
 Face ends here.

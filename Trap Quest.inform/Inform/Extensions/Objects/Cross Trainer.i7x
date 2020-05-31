@@ -33,7 +33,7 @@ Check entering cross trainer:
 			increase the fat-burning of hips by 30 + (20 * the number of worn exercise themed wearthings);
 			increase the fat-burning of arms by 50 + (30 * the number of worn exercise themed wearthings);
 			increase the charge of cross trainer by 40;
-			if T is 0, say "You stand on the cross trainer and push forward. The cross trainer kicks into motion and you start striding forward, exercising all your important muscles. [if the bimbo of the player > 14][line break][second custom style]All my important muscles except my butthole, tee-hee! [roman type][line break][end if]You [one of]get into a great rhythm, enjoying the exercise so much that you don't want to stop![or]once again slip into an enjoyable rhythm that makes you feel great![stopping]";
+			if T is 0, say "You stand on the cross trainer and push forward. The cross trainer kicks into motion and you start striding forward, exercising all your important muscles. [if the bimbo of the player > 14][line break][second custom style]All my important muscles except my butthole, teehee! [roman type][line break][end if]You [one of]get into a great rhythm, enjoying the exercise so much that you don't want to stop![or]once again slip into an enjoyable rhythm that makes you feel great![stopping]";
 			otherwise say "[one of]You continue to enthusiastically exercise on the machine.[or][cycling][one of]You're slowly getting tired, but it's worth it to feel so great![or][stopping]";
 			increase T by 1;
 			compute arm fat burning;

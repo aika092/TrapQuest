@@ -62,7 +62,7 @@ choice
 3 [Inline Hyperlinks]
 1 [Inventory Hyperlinks]
 2 [Image Cutscenes]
-0 [April Fools]
+1 [Tattoo Vision]
 2 [Auto Take]
 1 [Game Difficulty]
 1 [Transformation Cutscenes]
@@ -88,6 +88,7 @@ choice
 0 [announcements seen]
 0 [combat-visor-hidden]
 1 [map-figures]
+15 [maximumMenuSize]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -323,12 +324,12 @@ Do images sometimes appear in the main window triggered by certain events?
 To decide which number is image cutscenes:
 	decide on choice in row 29 of the Table of Settings.
 
-[!<DecideWhichNumberIsAprilFools>+
+[!<DecideWhichNumberIsTattooVision>+
 
-Are all the april fools things enabled? NO LONGER USED
+Do we show relevant tattoos in the focus window?
 
 +!]
-To decide which number is april fools:
+To decide which number is tattoo vision:
 	decide on choice in row 30 of the Table of Settings.
 
 [!<DecideWhichNumberIsAutotake>+
@@ -477,6 +478,7 @@ title	subtable	description	toggle
 "Quick RANDOM Start [if halloween content is 1]- disabled because halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Game Difficulty: [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
+"Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
 "IMAGE AND LAYOUT SETTINGS"	Table of Image Settings	--	--
 "OPTIONAL TEXT SETTINGS"	Table of Optional Text Settings	--	--
 "AUTOMATIC ACTIONS SETTINGS"	Table of Automatic Actions Settings	--	--
@@ -718,6 +720,7 @@ title	subtable	description	toggle
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
 "[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in lower display bar[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
+"Visible humiliating tattoos shown in Location Window [if tattoo vision is 1]ON[otherwise]OFF[end if]"	--	--	tattoo vision toggle rule
 "Dark mode ([if the player is the donator]Compatible with WinGit; you just need to go into Git>Options and invert the colours for the main window manually; the exact brown RGB value is 24,13,1[otherwise]Non-patrons can only toggle graphical windows for now[end if]): [if darkMode is 1]ON[otherwise if darkMode is 2]GRAPHICAL WINDOWS ONLY[otherwise]OFF[end if]"	--	--	darkMode toggle rule
 
 To say InterfaceStyleOptions:
@@ -945,6 +948,12 @@ This is the image cutscenes toggle rule:
 	if choice in row 29 of the Table of Settings is 0 or (GUI layout is 0 and choice in row 29 of Table of Settings < 2), increase choice in row 29 of Table of Settings by 1;
 	otherwise now choice in row 29 of Table of Settings is 0.
 
+This is the tattoo vision toggle rule:
+	if tattoo vision is 0:
+		now choice in row 30 of the Table of Settings is 1;
+	otherwise:
+		now choice in row 30 of the Table of Settings is 0.
+
 [!<TheTransformationCutscenesToggleRule>+
 
 REQUIRES COMMENTING
@@ -1028,7 +1037,7 @@ To decide which number is PopupButtons:
 	decide on choice in row 51 of Table of Settings.
 
 This is the focus window height toggle rule:
-	if focusWindowHeight < 40:
+	if focusWindowHeight < 39:
 		increase choice in row 52 of Table of Settings by 2;
 	otherwise:
 		now choice in row 52 of Table of Settings is 20.
@@ -1058,6 +1067,19 @@ This is the map-figures toggle rule:
 		increase choice in row 55 of Table of Settings by 1;
 	otherwise:
 		now choice in row 55 of Table of Settings is 0.
+
+To decide which number is maximumMenuSize:
+	decide on choice in row 56 of Table of Settings.
+
+This is the maximumMenuSize toggle rule:
+	if maximumMenuSize < 40:
+		increase choice in row 56 of Table of Settings by 1;
+	otherwise:
+		now choice in row 56 of Table of Settings is 4;
+		if current menu selection > 3, now current menu scroll is current menu selection - 3;
+	let CM be the number of filled rows in the current menu - current menu scroll; [current number of rows shown]
+	if CM < maximumMenuSize, now current menu scroll is the number of filled rows in the current menu - maximumMenuSize; [autoscroll back up so that we're showing as many rows as possible]
+	if current menu scroll < 1, now current menu scroll is 1.
 
 Part - Settings
 

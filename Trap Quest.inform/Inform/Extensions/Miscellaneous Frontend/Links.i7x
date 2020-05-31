@@ -119,7 +119,7 @@ To say TQlink of (T - a thing):
 
 A thing has a number called the link-disambiguation-ID.
 linkDisambiguationHighest is a number that varies.
-An advance counters rule (this is the reset link disambiguation rule):
+An all later time based rule (this is the reset link disambiguation rule):
 	if linkDisambiguationHighest > 0:
 		now linkDisambiguationHighest is 0;
 		repeat with T running through things:
@@ -235,7 +235,7 @@ To conclude consenting:
 	if bigGameLoop is 0, refresh the map-window;
 	if bigGameLoop < 2, render buffered stuff.
 
-[Some things it'll be fun if the player can't say no after a while.]
+[Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
 Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
@@ -245,7 +245,7 @@ Definition: yourself is bimbo consenting:
 			decide yes;
 		decide no.
 
-[For some things the 'bimbo' answer is no.]
+[works the same as normal consenting, unless bimbo forces the player to say no. For some things the 'bimbo' answer is no.]
 Definition: yourself is reverse bimbo consenting:
 	if the player is consenting:
 		if the bimbo of the player >= a random number between 16 and 20:
@@ -257,7 +257,7 @@ Definition: yourself is reverse bimbo consenting:
 
 To render YesNoButtons:
 	let F be YesNoBackground;
-	if F is Figure of no-image-yet, display entire map; [We still want to show the player the map]
+	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
 	zero map-link-table;
 	zero map-button-table;
 	let H be the height of the map-window;
@@ -346,13 +346,25 @@ To compute multiple choice question:
 				say "[link][N]) [R][as][N][end link][line break]";
 		display focus stuff;
 		if the player is virtual, display stuff;
+		let F be YesNoBackground;
+		if F is not Figure of no-image-yet:
+			zero map-link-table;
+			zero map-button-table;
+			let H be the height of the map-window;
+			let W be the width of the map-window;
+			[Calculate background image size]
+			let XRatio be (W * 1.0) / the pixel-width of F;
+			let FY be the pixel-height of F * XRatio;
+			let FYi be FY to the nearest whole number;
+			display the image F in the map-window at 0 by 0 with dimensions W by FYi;
 		now inputNumber is the chosen letter;
 		decrease inputNumber by 48; [convert key ID to integer]
 		say line break;
 		repeat with R running through numerical-response:
 			if the printed name of R is not "" and inputNumber is the numerical-response-value of R, now validAnswer is 1;
 		if validAnswer is 0, say "Input not understood. Please choose a valid number.";
-	now player-numerical-response is inputNumber.
+	now player-numerical-response is inputNumber;
+	conclude consenting. [refreshes the map window]
 
 To reset multiple choice questions:
 	repeat with R running through numerical-response:
@@ -431,7 +443,7 @@ REQUIRES COMMENTING
 
 +!]
 To say displacelinks of (T - a clothing):
-	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is not not-top-displacable and T is worn top-placed nipple covering clothing] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is zippable and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is zippable] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
+	say "[if T is skirted and T is worn and T is displacable and T is crotch-in-place] [link][bracket]raise skirt[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is worn and T is displacable and T is crotch-in-place] [link][bracket]displace[close bracket][as]displace [text-shortcut of T][end link][otherwise if T is skirted and T is worn and T is displacable] [link][bracket]fix skirt[close bracket][as]replace [text-shortcut of T][end link][otherwise if T is worn and T is displacable] [link][bracket]replace[close bracket][as]replace [text-shortcut of T][end link][end if][if diaper quest is 0 and T is not not-top-displacable and T is worn actually breast covering clothing] [link][bracket]expose chest[close bracket][as]pull open [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is worn top-displaced clothing] [link][bracket]cover chest[close bracket][as]fix [text-shortcut of T][end link][end if][if T is worn and T is zippable and T is crotch-zipped] [link][bracket]unzip[close bracket][as]unzip [text-shortcut of T][end link][otherwise if T is worn and T is zippable] [link][bracket]zip[close bracket][as]zip [text-shortcut of T][end link][end if]".
 
 To say wipelinks of (T - a clothing):
 	if T is not worn and T is appropriate for cleaning and the semen-soak of T + the urine-soak of T + the milk-soak of T < the soak-limit of T:
@@ -496,15 +508,16 @@ To say unique-verb-desc of (T - a monster):
 		if T is friendly and T is intelligent:
 			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
 		otherwise if the player is upright:
-			let TZaps be "";
-			if the player is able to zap:
-				repeat with BM running through held zappable things:
-					if the damage improvement of BM > 0, now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
+			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
+			repeat with BM running through held zappable things:
+				if the damage improvement of BM > 0, say " [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
 			repeat with BM running through carried combat-bomb bombs:
-				now TZaps is "[TZaps] [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
-			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link][TZaps][if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][end if]";
+				say " [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
+			say "[if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is sex-enslaved and the player is the donator] [link][bracket]punish[close bracket][as]dominate [text-shortcut of T][end link][end if]";
 		otherwise if T is uninterested:
-			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]".
+			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]";
+		if T is actually seducable:
+			say " [link][bracket]seduce[close bracket][as]seduce [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfFairy>+
 
@@ -525,7 +538,7 @@ To say unique-verb-desc of (T - a vine boss):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - a slimegirl):
+To say unique-verb-desc of (T - slimegirl):
 	if inline hyperlinks >= 2, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfDildoTrap>+
@@ -653,7 +666,7 @@ To say unique-verb-desc of (T - salve):
 REQUIRES COMMENTING
 
 +!]
-To say unique-verb-desc of (T - salve of concealment):
+To say unique-verb-desc of (T - concealment-salve):
 	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is male][link][bracket]use[close bracket][as]rub [text-shortcut of T] on butthole[end link][otherwise][link][bracket]pussy[close bracket][as]rub [text-shortcut of T] on vagina[end link] [link][bracket]ass[close bracket][as]rub [text-shortcut of T] on butthole[end link][end if]".
 
 [!<SayUniqueVerbDescOfPowder>+
@@ -897,7 +910,7 @@ To compute smart links:
 	say "[line break]";
 	if the player is virtual or the player is in Tutorial04, say "[if the player is prone and the player is not immobile][link]stand[end link] [link]rest[end link] [end if][if the player is upright][link]kneel[end link] [end if][if the player is in School34][link]long wait[end link][otherwise][link]wait[end link][end if] ";
 	unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
-	if the player is prone and there is a worn pink spraybottle and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
+	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
 		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]wash in water[end link] ";
 	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is female or the size of penis > 0)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";

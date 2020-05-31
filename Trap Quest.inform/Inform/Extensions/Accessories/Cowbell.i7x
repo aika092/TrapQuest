@@ -25,6 +25,7 @@ To say ShortDesc of (C - cowbell):
 Definition: a cowbell is cow themed: decide yes.
 Definition: a cowbell is white themed: decide yes.
 Definition: a cowbell is brown themed: decide yes.
+Definition: a cowbell is bell themed: decide yes.
 
 To compute clank:
 	if cowbell is worn:
@@ -53,8 +54,7 @@ Report begging when cowbell is worn:
 Report jumping when cowbell is worn:
 	compute clank.
 
-This is the cowbell stops clanking rule:
+An all later time based rule (this is the cowbell stops clanking rule):
 	now cowbell is not clanking.
-The cowbell stops clanking rule is listed in the advance counters rules.
 
 Cowbell ends here.

@@ -94,21 +94,28 @@ REQUIRES COMMENTING
 *!]
 soon-to-imprint is a room.
 
-A blindroom is a kind of room. The printed name of a blindroom is "Blindfolded".
-Definition: A blindroom is nonstandard: decide yes.
+[!<linkedRoom:Room>*
+
+A linkedRoom is a room that the player can't easily move to and from, and has its own special description.
+
+*!]
+A linkedroom is a kind of room. A linkedroom has a room called source-room.
+Definition: A linkedroom is nonstandard: decide yes.
+
+A blindroom is a kind of linkedroom. The printed name of a blindroom is "Blindfolded".
 Check looking:
 	if the player is in a blindroom:
 		say "You can't see anything." instead.
+
 UrinalBlindfolded is a blindroom. "You are chained to the floor on your knees in between two urinals in the Hotel Bathroom, and your eyes have been covered with a blindfold. You can't see a thing!".
 DiamondLessonBlindfolded is a blindroom. "You are in the diamond classroom, but your eyes have been covered with a blindfold. You can't see a thing!".
-Iron Maiden is a room. "You are trapped inside a claustrophobic metal cage! It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".
-Definition: Iron Maiden is nonstandard: decide yes.
-HoleInWall is a room. "You are trapped with your front half inside a pitch black room! You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
-Definition: HoleInWall is nonstandard: decide yes.
-MimicCrib is a room. "You are trapped inside the living, breathing belly of some kind of shapeshifting creature that has decided to take a twisted form of a crib.". The printed name of MimicCrib is "Inside the 'crib'".
-Definition: MimicCrib is nonstandard: decide yes.
-DiaperPail is a room. "You are stuck upside down inside a diaper pail, with your legs flailing wildly above you! Yuck!". The printed name of DiaperPail is "Inside the diaper pail".
-Definition: DiaperPail is nonstandard: decide yes.
+Iron Maiden is a linkedroom. "You are trapped inside a claustrophobic metal cage! It has closed tightly around you, preventing you from moving a muscle. The walls of the cage seem to be lined with slimy tentacles.".
+HoleInWall is a linkedroom. "You are trapped with your front half inside a pitch black room! You won't be able to get back out without help.". The printed name of HoleInWall is "Hole In Wall".
+MimicCrib is a linkedroom. "You are trapped inside the living, breathing belly of some kind of shapeshifting creature that has decided to take a twisted form of a crib.". The printed name of MimicCrib is "Inside the 'crib'".
+DiaperPail is a linkedroom. "You are stuck upside down inside a diaper pail, with your legs flailing wildly above you! Yuck!". The printed name of DiaperPail is "Inside the diaper pail".
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".
+
+[You can get here by swimming! Eventually...]
+LakeLair is a linkedroom. The printed name of LakeLair is "Lake Monster's Lair". "A small stretch of rock and sand in the centre of the lake, just large enough to lay down on. In the distance, you can make out the shore you swam from.".
 
 Static Rooms ends here.

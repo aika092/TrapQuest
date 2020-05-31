@@ -88,7 +88,7 @@ To reprint (selected menu - a table name):
 	clear only the main screen;
 	repeat through selected menu
 	begin;
-		if __index is current menu selection, say " >"; otherwise say "  ";
+		if __index is current menu selection, say " >"; otherwise say " ";
 		say " [title entry][line break]";
 		increase __index by 1;
 	end repeat;

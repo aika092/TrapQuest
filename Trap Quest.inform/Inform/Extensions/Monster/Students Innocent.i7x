@@ -3,7 +3,7 @@ Students Innocent by Monster begins here.
 An innocent student is a kind of student. Understand "nervous" as an innocent student.
 
 To say MediumDesc of (M - an innocent student):
-	say "nervous [rank-colour of item described] student [student-name of item described]".
+	say "nervous [rank-colour of M] student [student-name of M]".
 
 To decide which number is the dedication of (M - an innocent student): [We can use this for various calculations to check which students do what]
 	decide on a random number between 0 and 3.

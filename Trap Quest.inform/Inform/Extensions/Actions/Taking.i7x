@@ -1,7 +1,10 @@
 Taking by Actions begins here.
 
 Check taking something when the player is not able to use their hands:
-	if not-in-bag > 0, say "You can only carry one item at a time without proper [unless the class of the player is living sex doll]use of your [end if]hands!" instead.
+	if takingStuff is false and not-in-bag > 0, say "You can only carry one item at a time without proper [unless the class of the player is living sex doll]use of your [end if]hands!" instead.
+
+Check taking something when the available arms of the player is 0:
+	if takingStuff is false, say "You can't take [NameDesc of the noun] - your arms are already occupied this round!" instead.
 
 Check dropping something when the player is not able to use their hands:
 	if there is a worn bag of holding and the noun is in-bag, say "You can't even reach into your bag right now..." instead.
@@ -87,10 +90,16 @@ REQUIRES COMMENTING
 Report taking something:
 	allocate 2 seconds.
 
+takingStuff is initially false.
+An all later time based rule (this is the taking stuff reset rule):
+	now takingStuff is false.
+
 Check taking:
 	if debugmode is 2, say "FINAL CHECKING.".
 
 Carry out taking:
+	now takingStuff is true; [The player can take several items in the same turn without penalty with "take all"]
+	allocate arm use to the noun;
 	if debugmode is 2, say "CARRY OUT.".
 
 Report taking:

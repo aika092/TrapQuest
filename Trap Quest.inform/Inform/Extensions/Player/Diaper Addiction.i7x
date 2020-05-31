@@ -82,48 +82,4 @@ Definition: yourself is actually an adult baby:
 	if the number of worn baby themed wearthing > 3, decide yes;
 	decide no.
 
-Definition: yourself is an adult baby: [only computed once each turn]
-	if adult-baby-class is 1, decide yes;
-	decide no.
-
-adult-baby-class is a number that varies.
-adult-baby-dex is a number that varies.
-adult-baby-int is a number that varies.
-[
-An advance counters rule (this is the diapers affect adult babies rule):
-	if the player is actually an adult baby:
-		if adult-baby-class is 0:
-			now adult-baby-class is 1;
-			say "[bold type][one of]Now that you are wearing [if the number of worn baby themed wearthing > 2]so many things that only an actual diaper fetishist would ever wear[otherwise]this headwear[end if], anyone that looks at you will believe that you are[or]You realise that you are once again dressed as[stopping] an adult baby.[roman type][line break]";
-			if victorian-baby-bonnet is off-stage and victorian-baby-bonnet is actually summonable:
-				say "A [ShortDesc of victorian-baby-bonnet] flutters into existence around your head!";
-				summon victorian-baby-bonnet cursed;
-		let D be a random worn diaper;
-		if D is diaper:
-			if adult-baby-dex is 0:
-				now adult-baby-dex is 1;
-				say "[bold type]You feel your [ShortDesc of D] [one of]somehow[or]once again[stopping] rewarding you with improved reflexes![roman type][line break]";
-			if D is not dry and adult-baby-int is 0:
-				now adult-baby-int is 1;
-				say "[bold type]You can feel your mind being forced to focus on the feeling of your warm [if D is messed]squishy and [end if]clammy [ShortDesc of D]. You won't be able to think straight and you'll have weaker attacks until you've gotten a change or this universe stops identifying you as an 'adult baby'.[roman type][line break]";
-		if D is dry diaper or D is nothing:
-			if adult-baby-int is 1:
-				now adult-baby-int is 0;
-				say "[bold type]You feel your lost strength and intelligence return to you![roman type][line break]";
-		if D is nothing and adult-baby-dex is 1:
-			now adult-baby-dex is 0;
-			say "[bold type]Now that you're no longer wearing a diaper, you can feel that your reflexes have returned to normal.[roman type][line break]";
-	otherwise:
-		if adult-baby-class is 1:
-			now adult-baby-class is 0;
-			say "[bold type]You can feel that the game is no longer identifying you as an adult baby.[roman type][line break]";
-		if adult-baby-dex is 1:
-			now adult-baby-dex is 0;
-			say "[bold type]Now that you're no longer being labelled as an 'adult baby', you can feel that your reflexes have returned to normal.[roman type][line break]";
-		if adult-baby-int is 1:
-			now adult-baby-int is 0;
-			say "[bold type]Now that you're no longer being treated as an 'adult baby', you can feel your lost intelligence and strength returning to you.[roman type][line break]".
-
-		]
-
 Diaper Addiction ends here.

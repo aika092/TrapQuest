@@ -31,7 +31,7 @@ Tutorial01 is an introductory room. "A weird room with a stone ground and pink w
 Check going east when the player is in Tutorial01:
 	unless there is a worn grey monokini, say "You should probably make sure that your naughty bits aren't on display before you continue.[unless there is a held grey monokini] What's in that sack, I wonder?[end if]" instead.
 
-Tutorial02 is an introductory room. "An identical room to the one before, but this one has a different container in the middle of it![paragraph break][newbie style]Looks like another thing you can open. This game is easy! Surely nothing can go wrong? Also, you'll notice you can see a guard in the next room, but not yet interact or even examine him. You can only do actions to things in the same location as yourself.[roman type][line break]". Tutorial02 is east of Tutorial01. The printed name of Tutorial02 is "Another pink room". The shape of Tutorial02 is L10/0-0-0-1-0-1. The grid position of Tutorial02 is <10,12,12>.
+Tutorial02 is an introductory room. "An identical room to the one before, but this one has a different container in the middle of it![paragraph break][newbie style]Looks like another thing you can open. This game is easy! Surely nothing can go wrong? Also, you'll notice you can see a guard in the next room, but not yet interact or even examine [him of a random royal guard]. You can only do actions to things in the same location as yourself.[roman type][line break]". Tutorial02 is east of Tutorial01. The printed name of Tutorial02 is "Another pink room". The shape of Tutorial02 is L10/0-0-0-1-0-1. The grid position of Tutorial02 is <10,12,12>.
 
 Check going east when the player is in Tutorial02:
 	unless there is a worn heels and there is a worn grey monokini, say "You should probably make sure you're obtaining and wearing all possible equipment before moving forward." instead.
@@ -43,7 +43,7 @@ Report wearing:
 
 		NB: Most items in the real game that you find in containers like this will come with a 'decurse quest' which gives you an alternate method of getting rid of the item. But usually the task will be something you should probably be trying to avoid...".
 
-Tutorial03 is an introductory room. "An identical room to the one before, but this one has a scary looking man in it![paragraph break][newbie style]Here's a non-player character! But clearly he is currently facing a wall or something because he hasn't noticed you. But never fear, you can force NPCs to notice you by using the 'greet' command. Let's hope he's friendly![roman type][line break]". Tutorial03 is east of Tutorial02. The printed name of Tutorial03 is "And another pink room". The shape of Tutorial03 is L10/0-0-0-1-0-1. The grid position of Tutorial03 is <10,13,12>.
+Tutorial03 is an introductory room. "An identical room to the one before, but this one has a scary looking [man of a random royal guard] in it![paragraph break][newbie style]Here's a non-player character! But clearly [he of a random royal guard] is currently facing a wall or something because [he of a random royal guard] hasn't noticed you. But never fear, you can force NPCs to notice you by using the 'greet' command. Let's hope [he of a random royal guard]'s friendly![roman type][line break]". Tutorial03 is east of Tutorial02. The printed name of Tutorial03 is "And another pink room". The shape of Tutorial03 is L10/0-0-0-1-0-1. The grid position of Tutorial03 is <10,13,12>.
 
 Check going east when the player is in Tutorial03:
 	unless there is an interested royal guard, say "You should probably get the guard's attention first." instead.
@@ -72,6 +72,9 @@ Check going east when the player is in Tutorial05:
 
 Tutorial06 is an introductory room. "This room has no other exit. It must be the final room! [newbie style]This room has a 'candy machine' in it. These are important rooms because they provide you with awesome edibles. These edibles [if diaper quest is 1]usually have great effects, but if you enable messing, it will contribute to how quickly nature calls[otherwise]not only stave off hunger but usually have great effects[end if]. Let's get one now.[roman type][line break]". Tutorial06 is east of Tutorial05. The printed name of Tutorial06 is "Final Room". The shape of Tutorial06 is L10/0-0-0-1-0-0. The grid position of Tutorial06 is <10,15,11>.
 
+Check CandyObtaining when tutorial is 1:
+	if starting-pack-given is 1, say "You have already done this! [if the number of held candy is 3]You just need to eat the toffee now.[otherwise]The tutorial has finished. Please close and open the program again and begin the game properly with 'Normal Start'.[end if]" instead.
+
 Report CandyObtaining when tutorial is 1:
 	say "[newbie style]As this was the first candy machine you used, you just got given your 'starter pack' of candy, which contains three candies. Usually you'll only get one. The candy machines give you a reason to move from region to region in the main game: When you use a candy machine it'll only spit out boring candy with no positive effects until you've used a candy machine in another region. So staying in one region for a long time is going to quickly mean you're not getting the awesome bonuses that candy can give you. Anyway, you may have noticed that you are (almost certainly!) now injured thanks to your fight with the royal guard. To solve this, let's eat a toffee.[roman type][line break]".
 
@@ -86,9 +89,7 @@ The TutorialArea is a region. Tutorial01, Tutorial02, Tutorial03, Tutorial04, Tu
 To compute tutorial treasure to (X - a container):
 	if X is in Tutorial01:
 		let C be a random grey monokini;
-		now the raw-magic-modifier of C is 0;
-		now C is bland;
-		now C is blandness;
+		blandify C;
 		now C is unowned;
 		now C is not-influencing;
 		now C is in X;
@@ -170,7 +171,7 @@ Report resisting when tutorial is 1:
 		now the sleep of M is 0;
 		now M is uninterested;
 		calm M;
-		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button next to the map. But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, he will be happy to leave us alone and we can move south without him coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
+		say "[line break][newbie style]You're now holding an [if diaper quest is 1]enema[otherwise]anal creampie[end if]! This is one example of [if watersports fetish is 1 or diaper lover > 0]several states, including things like a full bladder, [otherwise]a state [end if]where your stats and adventuring capabilities are hampered until you can relieve yourself. The verb for expelling an [if diaper quest is 1]enema[otherwise]anal creampie[end if] is [bold type]expel[newbie style], or you can click on the new button next to the map. But if you try and use it in this room, your character will refuse because your dignity is too high to do this in front of someone. This can be a real pain when there is an NPC following you around from room to room! Luckily, as long as we don't annoy the guard further, [he of M] will be happy to leave us alone and we can move south without [him of M] coming along for the ride. In the main game, you can try to [bold type]dismiss[newbie style] NPCs to get them to leave you alone, but if you don't have a good reason, they might just decide to follow you around for even longer![roman type][line break]".
 
 Report squatting when the player is in Tutorial05:
 	say "[newbie style]Nice one! [if bukkake fetish is 1]Of course there is a slight problem with expelling when you are on your knees, which is that your thighs get covered in cum, lowering your dexterity. Cum can be wiped off in bodies of water or by using unworn clothing as rags. [end if]When you finish expelling, you should[if diaper quest is 0] do two things: fix the crotch of your swimsuit ('replace') and[end if] use the altar to help you escape these heels. [if the clothing-focus-window is g-present]Just click on the symbol of the altar under the image of your heels on the left. Or you could type phrases along the lines of 'place heels on altar'[otherwise if inline hyperlinks >= 2]Open your clothing inventory by typing 'c' or clicking on the appropriate hyperlink in the bottom left window[otherwise]Type phrases along the lines of 'place heels on altar'[end if].[roman type][line break]".
@@ -199,6 +200,7 @@ Every turn when tutorial is 1:
 	check for arousal change.
 
 To start the tutorial:
+	now temporaryYesNoBackground is figure of small image;
 	let var1 be the class of the player; [For some currently unknown reason, if we don't check the class of the player once at the start, the TitleBimbo function fails on turn 1 of the game.]
 	now a random large sack is in Tutorial01;
 	now a random wooden crate is in Tutorial02;

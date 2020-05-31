@@ -36,18 +36,16 @@ Check entering gloryhole:
 	if the player is not a bit horny and the player is upright and the semen taste addiction of the player < 12 and the oral sex addiction of the player < 6, say "You're not aroused enough." instead;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	if the player is male and the size of penis is 0:
+	if the player is upright and the player is male and the size of penis is 0:
 	[Let's also make the milking the default action if they have milky breasts and no dick]
 		if the milk volume of breasts > 0 and bottom level lactation cover is nothing:
 			allocate 6 seconds;
 			now gloryhole is grabbing the player;
 			say "You feel a tongue probe at your sexless mound, and suddenly freeze... [line break][variable custom style]'What the fuck? You're some kind of doll, aren't you!'[roman type][line break]You hear a woman sniffing. [line break][variable custom style]'Hah! This'll teach you to poke your nose where you shouldn't!'[roman type][line break]You hear a lever pulled, nearby, and suddenly two holes open up, just at your breast height!";
-			[if bottom level lactation cover is nothing and random worn nipple covering clothing is nothing:]
+			[if bottom level lactation cover is nothing and random worn actually nipple covering clothing is nothing:]
 			say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
-			[otherwise:
-				say "Two springy rods shoot up from the ground, slamming up into your [BreastDesc] from below and pushing aside everything covering them, an instant before two suction cups leap out of the bottom of the portrait and latch onto your nipples! The rods slam back down into the ground, leaving the suction devices impossibly-tightly latched to your instantly erect and throbbing nipples!";]
- 			trigger lactation;
- 			dislodge gloryhole instead;
+			trigger lactation;
+			dislodge gloryhole instead;
 		otherwise: [This is what it used to always do in this case:]
 			say "You would, but you no longer have a penis." instead;
 	if the player is upright:
@@ -72,28 +70,28 @@ Check entering gloryhole:
 	if the charge of gloryhole > 0, say "Nothing happens. Maybe you should try again later?" instead;
 	now gloryhole is grabbing the player;
 	if the player is upright:
-		let R be a random number between 0 and 5;
 		if there is a worn chastity cage:
 			compute gloryhole genital modification;
-		otherwise if R <= 3 and ex-princess is not unconcerned:
-			if the milk volume of breasts > 0 and (a random number between 1 and 3 is 1) and ex-princess is not unconcerned:
-				if bottom level lactation cover is nothing and random worn nipple covering clothing is nothing:
+		otherwise if ex-princess is not unconcerned and the player is getting unlucky:
+			if the milk volume of breasts > 0 and (a random number between 1 and 3 is 1):
+				if bottom level lactation cover is nothing and random worn actually nipple covering clothing is nothing:
 					say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
 				otherwise:
-					repeat with B running through worn not not-top-displacable nipple covering clothing:
+					repeat with B running through worn not not-top-displacable actually nipple covering clothing:
 						TopDisplace B;
 					say "Two suction cups leap out of the bottom of the portrait and latch onto your nipples!";
-					[say "Two springy rods shoot up from the ground, slamming up into your [BreastDesc] from below and pushing aside everything covering them, an instant before two suction cups leap out of the bottom of the portrait to latch onto your nipples! The rods slam back down into the ground, leaving behind the suction devices, now impossibly-tightly latched to your instantly erect and throbbing nipples!";]
- 				trigger lactation;
- 				dislodge gloryhole instead;
-			otherwise if the player is male:
-				compute gloryhole blowjob receipt;
+				say GotUnluckyFlav;
+				trigger lactation;
+				dislodge gloryhole instead;
+			otherwise if face is not actually occupied and a random number between 1 and 2 is 1:
+				compute gloryhole painting blowjob;
 			otherwise:
-				compute gloryhole cunnilingus receipt;
-		otherwise if R is 4 and face is not actually occupied:
-			compute gloryhole painting blowjob;
-		otherwise if R is 5:
-			compute gloryhole genital modification;
+				compute gloryhole genital modification;
+			say GotUnluckyFlav;
+		otherwise if the player is male:
+			compute gloryhole blowjob receipt;
+		otherwise:
+			compute gloryhole cunnilingus receipt;
 	otherwise:
 		if face is not actually occupied:
 			say "Within moments, a large [if the oral sex addiction of the player > 5]juicy [end if][manly-penis] is pushed through the hole [if gloryhole is glorywrapped]and you use your lips to unroll the condom down its length as it enter your mouth[otherwise]and into your mouth[end if]. It is easily long enough to hit the back of your throat, [if the player is not gag-prone]almost [end if]causing you to gag[if the oral sex addiction of the player > 7] slightly[end if].";
@@ -111,9 +109,10 @@ To say GloryHoleSuction:
 To compute gloryhole blowjob receipt:
 	now busy is 1;
 	say GloryHoleSuction;
-	if a random number between 1 and 3 is 1 and the size of penis > 1 and face is not actually occupied:
+	now gloryhole is penetrating penis;
+	if the size of penis > 1 and face is not actually occupied and the player is getting unlucky:
 		now gloryhole is blowjob portal;
-		say "You gasp in shock as a black hole appears in the portrait next to your face, and [one of]a strangely familiar [ShortDesc of penis] is forced into your mouth! As the [player-penis] pushes past your lips, you feel a pair of lips move around your own. Then, as your tongue touches the base of the [player-penis], you feel a tongue touch the base of your own. [line break][variable custom style]Wait a minute... I'm sucking my own [player-penis]! How [if the bimbo of the player < 9]awful[otherwise if the bimbo of the player < 13]weird[otherwise]cool[end if]![roman type][line break][or]your [player-penis] once again enters your own mouth. [stopping]You [if the bimbo of the player < 10]can't help but [end if]moan as your own mouth starts to stimulate you, and [one of][if the sex addiction of the player < 8]since the magic of the gloryhole clearly isn't going to let you go until you've finished[otherwise]unable to resist the pleasure[end if],[or]once again[stopping] you [if the oral sex addiction of the player < 4]reluctantly [end if]get to work.";
+		say "You gasp in shock as a black hole appears in the portrait next to your face, and [one of]a strangely familiar [ShortDesc of penis] is forced into your mouth! As the [player-penis] pushes past your lips, you feel a pair of lips move around your own. Then, as your tongue touches the base of the [player-penis], you feel a tongue touch the base of your own. [line break][variable custom style]Wait a minute... I'm sucking my own [player-penis]! How [if the bimbo of the player < 9]awful[otherwise if the bimbo of the player < 13]weird[otherwise]cool[end if]![roman type][line break][or]your [player-penis] once again enters your own mouth.[stopping][GotUnluckyFlav]You [if the bimbo of the player < 10]can't help but [end if]moan as your own mouth starts to stimulate you, and [one of][if the sex addiction of the player < 8]since the magic of the gloryhole clearly isn't going to let you go until you've finished[otherwise]unable to resist the pleasure[end if],[or]once again[stopping] you [if the oral sex addiction of the player < 4]reluctantly [end if]get to work.";
 		say "[variable custom style]How weird is this! [roman type][if the oral sex addiction of the player < 4]But although you start off reluctantly sucking your own [player-penis], you're soon telling yourself that it's not so much you're sucking a [manly-penis], as you've just found a new way to wank, right? [line break][variable custom style]I mean, how different is this to those guys who are so flexible they can bend over and suck their own [manly-penis]s? It's not like this is training me to enjoy sucking [manly-penis]s, ha ha![roman type][line break][otherwise]It doesn't take long, though, before you're really getting into this! It's like having the perfect blowjob partner: you can imagine your [player-penis] is being swallowed whole by some hot bitch who can magically read your mind to know exactly what you'd like done at any instant. [line break][variable custom style]Mmm, like that![roman type][line break]You wrap your tongue around the tip, rasping it up against the sensitive underside, and feel your balls throb in reaction. [line break][variable custom style]Yeah, bitch, just like that![roman type][line break]You hum, making your [player-penis] vibrate deliciously. You suck harder, and feel more blood rush into the fleshy rod jabbing into your mouth, stiffening it even further. [line break][variable custom style]Wow, sucking dicks is fun![roman type][line break]You start to really get into the sensation of the silken-smooth, stiff staff thrusting into your mouth.[end if]";
 		if the size of penis < 4:
 			say "Your [player-penis] slips and slides comfortably around inside your mouth. It's like a little swizzle-stick, a small candy that you can push and prod and poke around to your heart's content. It's so small it's easy to manoeuvre, even stiff as it is and at its full but minuscule erection! You certainly don't have to worry about gagging on [italic type]this[roman type] cute little thing! But then it occurs to you that this is [italic type]your[roman type] dick, and you feel yourself blush in shame.";
@@ -156,7 +155,7 @@ To compute gloryhole genital modification:
 		summon slut-tattoo;
 		say "You feel a sharp pain near your crotch and pull your body back. You now have a 'SLUT' tattoo! [line break][variable custom style][if the bimbo of the player < 13]Fuck![otherwise]Heh. It's making me feel even more [one of]girly[or]giddy[at random]![end if][roman type][line break]";
 	otherwise if clitoris piercing is eligible:
-		summon normal clit piercing cursed;
+		summon normal clit piercing cursed with quest;
 		say "You feel a sharp hot pain in your clit! You scream and try to pull away from the wall as hard as you can. The suction stops and you are able to step away and see your new [normal clit piercing]!";
 	otherwise if C is chastity cage:
 		summon C locked;
@@ -225,7 +224,7 @@ To GloryHoleSwallow:
 	StomachSemenUp 3;
 	humiliate 200.
 
-A time based rule (this is the compute gloryhole rule):
+An all time based rule (this is the compute gloryhole rule):
 	let tinyDickGrabbed be 0;
 	if gloryhole is grabbing the player:
 		if player-urinating is 0, increase the turns trapped of gloryhole by 1;
@@ -246,14 +245,14 @@ A time based rule (this is the compute gloryhole rule):
 							say "For several seconds, nothing happens. Then you feel a tongue flick past the end of your [player-penis]. It freezes, then slowly slides down, tracing a line directly below it, probing at the place where your ball-sac [italic type]used[roman type] to be. You hear a woman giggle. [line break][variable custom style]'You poor sod, I really thought some bitch had shoved her vag up here for a lapping, but you're actually a guy, aren't you? Normally I'd have no chance of reaching your tiny nubbin, but the Nintendolls R&D department planned for this unlikely event. Hang on...'[roman type][line break]You feel her tongue withdraw, then something oily and circular presses forwards against your mostly-smooth mound, and suddenly a powerful humming starts and the suction increases ten-fold! You feel your tiny clitoris swell and bulge, almost painfully. It reminds you of what your erections [italic type]used[roman type] to feel like. At least, until the girl snorts in disbelief. [line break][variable custom style]'Wow, that's much bigger now - it must be the size of a cigarette butt! Looks pretty red though, babe - I hope your tender little raspberry isn't going to burst!'[roman type][line break]";
 							humiliate 400;
 						otherwise:
-							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the size of penis > 4]entire [otherwise if the size of the penis < 3]tiny[end if]load, and then swallow it all in one [if the size of penis > 7]large gulp[otherwise if the size of the penis < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole. You feel more dominant!";
+							say "You feel the girl keep her mouth wrapped around your [player-penis] to catch your [if the size of penis > 4]entire [otherwise if the size of the penis < 3]tiny[end if]load, and then swallow it all in one [if the size of penis > 7]large gulp[otherwise if the size of the penis < 3]small sip[otherwise]swallow[end if]. The lips remove themselves from your member and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You slowly pull your [player-penis] out of the hole.";
 							BlowGet;
 							DelicateDown 1;
 						say "You shudder as the sensations [if the size of penis < 3]immediately [end if]bring you to a powerful climax.";
 						if tinyDickGrabbed is 1:
 							say "But even though it felt [italic type]wonderful[roman type], you stare in shock at the tiny amount you squirted out. [line break][variable custom style]I doubt any chick would even FEEL that, if I squirted in her[roman type][line break]Then realise, there's no way you could work your little clit inside [italic type]anyone[roman type]! But the device is still sucking, as if it doesn't realise you're already finished, and you stare in a kind of sick fascination at your groin as your nubbin swells and shrinks with each suck. [line break][variable custom style]It won't really burst, will it?[roman type][line break]Your [player-penis] bulges, flushing a darkening, angry red - but because of the suction, and its tiny length, it's now as wide as it is long! It really [italic type]does[roman type] look like a raspberry. [line break][variable custom style]Or maybe, a strawberry, if I'm being generous?[roman type][line break]It deepens in colour to a dark purple, and it's really starting to hurt... but finally, the suction ends, and the device hisses as air rushes in, and pops free.[line break]";
 						orgasm quietly;
-						now gloryhole is not grabbing the player;
+						dislodge gloryhole;
 						now busy is 0;
 					otherwise:
 						say "[one of]The anonymous girl's tongue gently swirls around your tip, causing you to moan with pleasure.[or][if the size of penis > 3]The anonymous slut forces your [player-penis] deep into her throat, and you hear gagging sounds coming through the wall. You squeal with delight.[otherwise]The girl tries to deepthroat your length, but your [player-penis] can't even reach the back of her throat. You make an embarrassed sound and she giggles.[end if][or]The girl lightly scrapes your [player-penis] with her teeth, causing you to shiver, but in a good way.[or]The girl silently sucks away, taking you to a world of bliss.[in random order]";
@@ -262,19 +261,19 @@ A time based rule (this is the compute gloryhole rule):
 					if (the player is extremely horny and the turns trapped of gloryhole > 1) or (the player is very horny and the turns trapped of gloryhole > 3) or the turns trapped of gloryhole > 5:
 						say "You shudder as the sensations bring you to a powerful climax.";
 						orgasm;
-						say "After lapping up your girlcum, the anonymous tongue removes itself from underneath you and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You feel more dominant!";
+						say "After lapping up your girlcum, the anonymous tongue removes itself from underneath you and then the magical force keeping you pressed to the wall disappears, allowing you to leave.";
 						LickGet;
 						DelicateDown 1;
-						now gloryhole is not grabbing the player;
+						dislodge gloryhole;
 						now busy is 0;
 					otherwise:
 						say "[one of]The anonymous tongue gently swirls around your clit, causing you to moan with pleasure.[or]The anonymous slut forces their tongue as deep as it can go into your [vagina]. You squeal with delight.[or]The tongue carefully explores all the way around your external folds.[or]The tongue silently licks away at your entrance, taking you to a world of bliss.[in random order]";
 						passively stimulate vagina from gloryhole;
 						if vagina is orgasming:
-							say "After lapping up your girlcum, the anonymous tongue removes itself from underneath you and then the magical force keeping you pressed to the wall disappears, allowing you to leave. You feel more dominant!";
+							say "After lapping up your girlcum, the anonymous tongue removes itself from underneath you and then the magical force keeping you pressed to the wall disappears, allowing you to leave.";
 							LickGet;
 							DelicateDown 1;
-							now gloryhole is not grabbing the player;
+							dislodge gloryhole;
 							now busy is 0;
 			otherwise if gloryhole is painting oral:
 				if the turns trapped of gloryhole > a random number between 5 and 8:
@@ -283,8 +282,7 @@ A time based rule (this is the compute gloryhole rule):
 					BlowCount;
 					StomachSemenUp 4;
 					say "Finally, the [manly-penis] slowly pulls itself out of your mouth and recedes back into the painting. The magical force keeping you pressed to the wall disappears, allowing you to leave[if the size of penis > 0]. You slowly pull your [player-penis] out of the hole[end if].";
-					now gloryhole is not grabbing the player;
-					now gloryhole is not penetrating face;
+					dislodge gloryhole;
 					now busy is 0;
 				otherwise:
 					say "The [manly-penis] in the painting keeps thrusting in and out of your mouth and throat[one of], causing you to make lewd gagging sounds[or][or][or][cycling]!";
@@ -297,8 +295,7 @@ A time based rule (this is the compute gloryhole rule):
 					BlowGet;
 					StomachSemenUp the size of penis;
 					if delayed fainting is 0, say "Finally, the magical force keeping you pressed to the wall disappears, allowing you to pull your [player-penis] out of the hole, and therefore out of your mouth.";
-					now gloryhole is not grabbing the player;
-					now gloryhole is not penetrating face;
+					dislodge gloryhole;
 					now busy is 0;
 		otherwise if gloryhole is penetrating face:
 			if the turns trapped of gloryhole > a random number between 2 and 4:
@@ -331,7 +328,7 @@ A time based rule (this is the compute gloryhole rule):
 				say "The rapidly deflating [manly-penis] is withdrawn from the hole.";
 				dislodge gloryhole;
 			otherwise:
-				say "The [manly-penis] in the gloryhole continues to [one of]fuck your mouth![or]gently thrust.[or]move slowly in and out[or]fuck your face![at random]";
+				say "The [manly-penis] in the gloryhole continues to [one of]fuck your mouth![or]gently thrust.[or]move slowly in and out.[or]fuck your face![at random]";
 		if the turns trapped of gloryhole > 12:
 			say "Gloryhole is broken and should have let you go by now! Please report the bug to Aika.";
 			dislodge gloryhole;

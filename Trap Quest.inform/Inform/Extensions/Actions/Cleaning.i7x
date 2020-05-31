@@ -104,7 +104,7 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that!" instead;
 	if the second noun is not clothing and the second noun is not arms, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
-		if the second noun is pink spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
+		if the second noun is pink-spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
 		if the player is flying and the second noun is not held by the player, say "The [printed name of the second noun] is on the ground, and you're not." instead;
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
@@ -112,8 +112,13 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 	otherwise if the player is not craving semen: [i.e. If the second noun is arms]
 		if the semen taste addiction of the player < 8 and the thirst of the player < 4, say "You can't bring yourself to do that[if the semen addiction of the player > 12]. And even if you did like the taste, you love the feeling of it too much to remove it[end if]!" instead;
 	if the second noun is not acceptableCumRag:
-		if the second noun is arms and the semen addiction of the player > 15 and the semen addiction of the player > the semen taste addiction of the player, say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]! I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face? The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun]. Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating. I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup. To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty. I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it. I was naughty and this is my punishment[if the intelligence of the player > 13]. Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink. Ooh, that sounds like great idea for a poem! I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
-		otherwise say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]![or]I'm a dirty slut and I should look like one.[or][if the noun is face]How will guys know I'm an easy fuck if I don't have [semen] on my face?[otherwise]I didn't put it there, so I can't be sure I have permission to remove it.[end if][or]I deserve to have this on my [noun].[or]I like wearing it! No way am I wiping it off![or]I'm a whore, I deserve to be covered in it![or]A dirty whore like me should look the part![or]I'm a filthy slut, I deserve to be covered in [semen].[or]No way! I LIKE being dirty![or]I deserve to be covered in it. I'm a NAUGHTY girl![or]I'm supposed to wear it, I was naughty.[in random order][roman type][line break]" instead.
+		if the second noun is arms and the semen addiction of the player > 15 and the semen addiction of the player > the semen taste addiction of the player:
+			say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]! I only get to drink it if there's extra left over.[or]It's more important for me to look like a slut than get to taste my favourite drink.[or][if the noun is face]How will guys know I want their [manly-penis] in my mouth don't have [semen] on my face? The best way to make sure I get to taste more cum is by keeping the stuff on my face there.[otherwise]I deserve to have this on my [noun]. Removing it would be unfair to the contributors.[end if][or]I like wearing it! No way am I wiping it off!, even if it is to taste it![or]If I want to taste [semen], I could convince a hunk to fuck my throat, not cheat by licking it off my body.[or]That would be cheating. I should find a cock to suck if I want a fix.[or]It would be more fun to let a guy cum in my ass, and then collect it in a cup. To lick cum off my own body would be too cheap and easy for a girl like me.[or]My body is all dirty and sweaty. I want to drink pure cum, straight from the tap.[or]I'm supposed to wear it, not drink it. I was naughty and this is my punishment[if the intelligence of the player > 13]. Semen, semen everywhere, through all my pores did shrink; semen, semen everywhere, nor any drop to drink. Ooh, that sounds like great idea for a poem! I'll call it 'The Rime of the Ancient Cum Guzzler'[end if].[in random order][roman type][line break]" instead;
+		otherwise if the second noun is arms and face is actually occupied or (the player is not craving semen and the semen taste addiction of the player < 8 and the thirst of the player < 4):
+			if face is actually occupied, say "You can't lick it up with something already in your mouth." instead;
+			say "[variable custom style]No way am I wiping it up with my finger and swallowing it, [semen] is gross![roman type][line break]" instead;
+		otherwise:
+			say "You briefly consider wiping some of the [semen] off your [noun], but then you change your mind.[paragraph break][second custom style][one of]Sluts like me deserve to be covered in [semen]![or]I'm a dirty slut and I should look like one.[or][if the noun is face]How will guys know I'm an easy fuck if I don't have [semen] on my face?[otherwise]I didn't put it there, so I can't be sure I have permission to remove it.[end if][or]I deserve to have this on my [noun].[or]I like wearing it! No way am I wiping it off![or]I'm a whore, I deserve to be covered in it![or]A dirty whore like me should look the part![or]I'm a filthy slut, I deserve to be covered in [semen].[or]No way! I LIKE being dirty![or]I deserve to be covered in it. I'm a NAUGHTY girl![or]I'm supposed to wear it, I was naughty.[in random order][roman type][line break]" instead.
 
 Definition: a thing (called T) is acceptableCumRag:
 	if T is fluid immune clothing, decide no;
@@ -135,20 +140,20 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with (C - a clothing):
-	say "You use the [printed name of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
- 	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
- 		decrease the semen coating of P by 1;
- 		let R be a random number between 1 and 2;
- 		decrease the water-soak of C by R;
- 		CumSoak R on C;
- 	if the water-soak of C < 0, now the water-soak of C is 0;
+	say "You use [NameDesc of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
+	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
+		decrease the semen coating of P by 1;
+		let R be a random number between 1 and 2;
+		decrease the water-soak of C by R;
+		CumSoak R on C;
+	if the water-soak of C < 0, now the water-soak of C is 0;
 	if the semen coating of P is 0:
 		say "Your [if P is face]face is[otherwise if P is hair]hair is[otherwise if P is belly]belly is[otherwise][variable P] are[end if] now completely clean.";
 	otherwise if the semen coating of P is 1 and P is hair:
 		say "Your hair is now almost completely clean, but you can't get every last strand of cum out without washing in water.";
 	otherwise:
-		say "The [C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
- 	allocate 6 seconds.
+		say "[BigNameDesc of C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
+	allocate 6 seconds.
 
 [!<2CleanBodyPartWithLimb>+
 

@@ -241,16 +241,16 @@ To check glue tripping:
 		[To prevent them getting infinitely stuck, each time they get glued down, we increment times-stuck so the chance tapers off quickly for this trap]
 		let X be N - (GS + BaseDiff + HairDiff + HeelsDiff);
 		[How negative X is, tells how badly they failed the dexterity check.
-		 Which difficulty modifier tipped them into failure tells us why they tripped.
+		Which difficulty modifier tipped them into failure tells us why they tripped.
 			(NB BaseDiff = 0 implies they were standing, > 0 they were kneeling)
 			HairDiff = 0 if their hair is short OR they were standing.
-		 Example 1:
+		Example 1:
 		  Dex 18. glue-str 12, BaseDiff 0, HairDiff 0, HeelsDiff 3 (Tot 15):
 			N = 18 --> X =  3 - Dex saved
 			N = 15 --> X =  0 - fell due to Heels
 			N = 13 --> X = -1 - fell due to Heels
 			N = 15 --> X = -2 - fell due to dex
-		 Example 2:
+		Example 2:
 		  Dex 25. glue-str 10, BaseDiff 5, HairDiff 6, HeelsDiff 2 (Tot 23):
 			N = 24 --> X =  1 - saved by dex
 			N = 22 --> X = -3 - fell due to Heels
@@ -293,11 +293,11 @@ To check glue tripping:
 					if the times-stuck of G is 1, increase the stickiness of the player by 2; [If they just triggered it, because they were on their knees they get stuck a little worse than they'd crawled up to it or knelt deliberately (the MoreStick, below).]
 					now the smell-duration of G is 4;
 					if debugmode is 1, say "###debug: the stickiness of the player is now [the stickiness of the player].";
-				let MoreStick be a random number between 1 and 3; [###Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
+				let MoreStick be a random number between 1 and 3; [Selkie had S; Aika thought 4 was better. NB: we were previously increasing glue-strength, not stickiness. But now, by a number heavily weighted towards 1, and never more than 3.]
 				if the strength of the player > the stickiness of the player + MoreStick:
 					increase the stickiness of the player by a random number between 1 and MoreStick;
 					[They were already glued: now they're glued more!]
-					 if N > GS + BaseDiff + HeelsDiff:
+					if N > GS + BaseDiff + HeelsDiff:
 						say "[one of]Oh, dear! Your [ShortHairDesc] has dipped into the glue and you feel tears rise as you realise you're now even more stuck to the ground![or]Oh no: your [ShortHairDesc] has fallen forward into the glue, too. This is terrible - you're even more firmly stuck![or]Damn this long hair - it's got stuck in the glue [i]again![/i][at random]";
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you tried to get back to your feet, and slipped deeper into the glue.[or]You can't get your [printed name of H] under you to stand.[or]I think I would've gotten out then, if I was better at wearing high heels![at random]";
@@ -308,7 +308,7 @@ To check glue tripping:
 					say "[one of][at random]";
 				otherwise:
 					[Don't make it even harder if they're already weaker than the glue!]
-					 if N > GS + BaseDiff + HeelsDiff:
+					if N > GS + BaseDiff + HeelsDiff:
 						say "[one of]Your [ShortHairDesc] dips towards the glue, but knowing how awful that would be, you desperately whip it aside at the last moment![or]Oh no: your [ShortHairDesc] falls forward. You almost strain your neck, wrenching your head back. Whew - that was close![or]Damn this long hair - it almost got stuck in the glue again![at random]";
 					otherwise if N > GS + BaseDiff:
 						say "[one of]Bugger! Your [printed name of H] twists underfoot as you try to get to your feet. [line break][variable custom style]No! I can't let that happen! [roman type][line break]You almost dislocate your hip, wrenching your leg back.[or]Your [printed name of H] almost slips further into the glue.[or]Drat! I would've escaped then, if I was better at wearing high heels![at random]";
@@ -329,11 +329,11 @@ To check glue tripping:
 				otherwise:
 					say "Good thing you weren't kneeling down, then!";
 			otherwise:
-				say "You dextrously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
+				say "You dexterously avoid getting [if the player is glue stuck]further [end if]stuck in the glue trap.".
 
 [See if the glue trap gets the player. If so, it knocks them off their feet.
  I believe this function is called while the trap is in effect.]
-A time based rule (this is the glue-stuck-mutation rule):
+An all time based rule (this is the glue-stuck-mutation rule):
 	if the player is glue stuck:
 		[if the player is flying:
 			let M be a random monster in the location of the player;
@@ -361,7 +361,7 @@ To compute raw glue escaping (G - an object) with (consequences - a number):
 			let D be the stickiness of the player / 3;
 			say "You are torn [if D is 1]painfully[otherwise if D is 2]brutally[otherwise]agonisingly[end if] free from the glue!";
 			[Can't use BodyRuin because that tests for monsters and can drop them down to the ground.
-			 This should have worse consequences though if they're latex transformed. Hmm... ###]
+			This should have worse consequences though if they're latex transformed. Hmm... ###]
 			if D is 0:
 				PainUp 1;
 			otherwise if D + the body soreness of the player < 10:
@@ -530,7 +530,7 @@ To compute the mutation effects of (G - a glue):
 		say "You feel the glue burning, [one of]penetrating your[or]working some inner change deep beneath your[or]transforming beneath your[at random] skin like some weird scientist's menthol ointment.";
 		if the active-colour of G is pinkish:
 			if the latex-transformation of the player > 2:
-				say "The burn tingles through your skin, intensifying the strange feeling it's had since the aeromancer cast [his of an aeromancer] weird spell on you.";
+				say "The burn tingles through your skin, intensifying the strange feeling it's had since the aeromancer cast [his of a random aeromancer] weird spell on you.";
 				if a random number between 1 and 2 is 1:
 					compute latex transformation; [But wait, there's more...]
 			if the silicone volume of breasts + the silicone volume of hips > 0:
@@ -565,7 +565,7 @@ To compute the mutation effects of (G - a glue):
 						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [Shortdesc of penis].";
 					otherwise:
 						let C be a random off-stage pink rubber dress;
-						if C is actually wearable:
+						if C is actually summonable:
 							compute GlueMorphingInto of G to C;
 						otherwise:
 							BustUp 1;
@@ -674,7 +674,7 @@ To compute the mutation effects of (G - a glue):
 					BustImplantsUp 1;
 					AssImplantsUp 1;
 					decrease the stickiness of the player by 2;
-		 [This test is mainly here to ensure that if there was some mutation effect, it "costs" the glue by weakening the bond. Some glue effects explicitly decrease the stickiness, like when it morphs into clothing or silicone implants. It's coded as a test of ">=" instead of "is" just in case somehow stickiness got worse!
+		[This test is mainly here to ensure that if there was some mutation effect, it "costs" the glue by weakening the bond. Some glue effects explicitly decrease the stickiness, like when it morphs into clothing or silicone implants. It's coded as a test of ">=" instead of "is" just in case somehow stickiness got worse!
 		This is to help free the player if for some reason they're stuck and can't get out.]
 		if the stickiness of the player >= StartS:
 			decrease the stickiness of the player by 1;
@@ -867,7 +867,7 @@ A time based rule (this is the glue pain threshold rule):
 
 [!<CheckTearingOffWornClothing>+
 
-Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dextrous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
+Used to try to tear off glued worn clothing. If the player is strong enough, they can tear it free - but it will damage the clothing. Tearing it off will also hurt them. They have a chance of doing it without tearing the cloth or hurting themselves if they're dexterous enough. Checks for hands being tied so the clothing is out of reach should have been called before this function, so we don't need to re-test any of that.
 ###Later, we should allow monsters to tear worn clothing off too, if they want.
 
 +!]
@@ -887,7 +887,7 @@ Carry out tearing off worn clothing:
 			now glueTries is 0;
 		otherwise:
 			say "You get more of it free before the pain gets too much. You should keep trying a bit later!";
-			now gluePainThreshold is the delicateness of the player + 1;
+			now gluePainThreshold is the delicateness of the player + 2;
 			increase glueTries by 1;
 	otherwise:
 		say "Ouch! That hurts, and it's tearing the [ShortDesc of C]. Are you sure you want to continue ripping it off by brute strength? ";
@@ -912,6 +912,7 @@ Carry out tearing off worn clothing:
 				now gluePainThreshold is the delicateness of the player + 9;
 				increase glueTries by 1;
 		otherwise:
+			now gluePainThreshold is the delicateness of the player + 2;
 			say "Fearing the pain, you stop.".
 
 Check pulling glue:

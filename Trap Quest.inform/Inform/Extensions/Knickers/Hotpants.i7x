@@ -6,6 +6,7 @@ To decide which number is the penis-capacity of (H - a hotpants):
 	decide on 6.
 
 Definition: a hotpants is displacable: decide yes.
+Definition: a hotpants is rippable: decide yes.
 
 Definition: a hotpants is uncovered themed: decide yes.
 
@@ -51,5 +52,24 @@ To decide which number is the unique outrage of (C - white-hotpants):
 
 Definition: white-hotpants is bird themed: decide yes.
 Definition: white-hotpants is white themed: decide yes.
+
+football-hotpants is a hotpants. football-hotpants is unique. football-hotpants is sheer-when-wet.
+
+The printed name of football-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of football-hotpants is "fhp".
+
+To decide which figure-name is clothing-image of (H - football-hotpants):
+	decide on figure of football-hotpants.
+
+To say selfexamineuniquetitle of (K - football-hotpants):
+	say "pair of skimpy football-themed hotpants".
+
+To say UniqueTitle of (K - football-hotpants):
+	say "tiny cotton hotpants".
+
+Figure of football-hotpants is the file "Items/Clothes/Lower/Underwear/Special/football1.jpg".
+
+Definition: football-hotpants is exercise themed: decide yes.
+Definition: football-hotpants is discovered varied: decide no.
+Definition: football-hotpants is displacable: decide no.
 
 Hotpants ends here.

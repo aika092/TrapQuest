@@ -35,10 +35,10 @@ Check waiting:
 				allocate 6 seconds;
 				compute extra turn;
 				if a random number between 1 and 6 is 1 and the player is not in Dungeon12:
-					say "[BigNameDesc of M]'s [manly-penis] twitches inside of you.";
+					say "[BigNameDesc of M][']s [manly-penis] twitches inside of you.";
 					ruin asshole;
 			if M is awake:
-				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong breaks its airtight seal, and assuming that you are unconscious, and wanders off to search for other victims.";
+				say "[BigNameDesc of M] pulls out of you with the loudest, wettest slurping sound as [his of M] still semi-hard schlong, breaking its airtight seal. [big he of M] seems to assume you are unconscious, and wanders off to search for other victims.";
 				bore M for 50 seconds;
 				regionally place M;
 				display entire map;
@@ -186,10 +186,10 @@ To HookWait:
 	if woman-barbara is regional and the woman-status of woman-barbara is 1:
 		allocate 6 seconds;
 		now woman-barbara is interested;
-		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as she looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
+		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as [he of woman-barbara] looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
 		now woman-barbara is in the location of the player;
 		if the woman-bimbo of woman-barbara < 3:
-			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, [honey of woman-barbara].'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
@@ -203,7 +203,7 @@ To HookWait:
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
-			say "[second custom style]'*giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
+			say "[second custom style]'*Giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
 			ruin asshole;
 			say "[second custom style]'That looks like so much fun!'[roman type][line break][big he of woman-barbara] pulls it out a bit more but then again lets go. You squeal in discomfort.";
 			ruin asshole;

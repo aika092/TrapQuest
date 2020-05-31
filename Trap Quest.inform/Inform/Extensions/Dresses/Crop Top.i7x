@@ -1,6 +1,6 @@
 Crop Top by Dresses begins here.
 
-A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. The soak-limit of a crop top is usually 16. A crop top is usually sheer-when-wet. Understand "crop", "top" as crop top.
+A crop top is a kind of overdress. A crop top is usually unskirted. A crop top is usually belly exposing. The soak-limit of a crop top is usually 16. A crop top is usually sheer-when-wet. A crop top is usually erect-nipple-exposing. Understand "crop", "top" as crop top.
 
 The printed name of crop top is usually "[clothing-title-before]crop top[clothing-title-after]".
 
@@ -123,8 +123,11 @@ To say ClothingDesc of (C - baby doll crop top):
 To say ShortDesc of (C - baby doll crop top):
 	say "baby doll crop top".
 
-To decide which number is the initial cringe of (C - baby doll crop top):
+To decide which number is the initial outrage of (C - baby doll crop top):
+	if diaper quest is 1, decide on 2;
 	decide on 4.
+To decide which number is the initial cringe of (C - baby doll crop top):
+	decide on 3.
 
 Part 4 - Striped Exposing Top
 
@@ -272,7 +275,7 @@ Definition: gross tank top is black themed: decide yes.
 
 Part 9 - Plaid Tank Top
 
-plaid tank top is a crop top. plaid tank top is dense. The printed name of plaid tank top is "[clothing-title-before]plaid tank top[clothing-title-after]". The text-shortcut of plaid tank top is "pltt".
+plaid tank top is a crop top. plaid tank top is dense. plaid tank top is high cut. The printed name of plaid tank top is "[clothing-title-before]plaid tank top[clothing-title-after]". The text-shortcut of plaid tank top is "pltt".
 
 To decide which number is the initial outrage of (C - plaid tank top):
 	decide on 3.
@@ -313,5 +316,24 @@ To say ShortDesc of (C - rugged-crop-top):
 
 To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 	if leopard print tube top is off-stage, decide on leopard print tube top.
+
+nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.jpg". Understand "nipple", "holes" as nipples-crop-top.
+To decide which figure-name is clothing-image of (H - nipples-crop-top):
+	decide on figure of nipples-crop-top.
+
+To say ShortDesc of (C - nipples-crop-top):
+	say "nipple holes crop top".
+To say MediumDesc of (C - nipples-crop-top):
+	say "white crop top with nipple holes".
+To say ClothingDesc of (C - nipples-crop-top):
+	say "This tiny, flimsy white crop top has holes purposefully cut out for your nipples.".
+
+Definition: nipples-crop-top is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - nipples-crop-top):
+	decide on 7.
+
+A gropability rule:
+	if nipples-crop-top is worn and breasts is lewdly exposed, now the gropability of breasts is 9999.
 
 Crop Top ends here.

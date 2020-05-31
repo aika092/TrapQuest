@@ -38,7 +38,7 @@ left	central	right
 
 Table of Minimal Status
 left	central	right
-"[TitleBimbo]    [TQDQ Appearance]"	""	""
+"[TitleBimbo]	[TQDQ Appearance]"	""	""
 "[MinimalBarSecondRow]"	""	""
 
 To say TQDQ Appearance:
@@ -48,7 +48,7 @@ To say MainStatsBar:
 	say "STR: [VagueStrength] DEX: [VagueDex] INT: [VagueInt]".
 
 To say HighResBarSecondRow:
-	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance]  [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
+	say "STATUS: [VagueInternalFeeling]   [TQDQ Appearance] [VagueDignity]   SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
 
 To say MinimalBarSecondRow:
 	say "[MainStatsBar] SLAP: [saved-printed-slap-damage] KNEE: [saved-printed-knee-damage][if knee-fatigue > 0](-[knee-fatigue])[end if] KICK: [saved-printed-kick-damage][if kick-fatigue > 0](-[kick-fatigue])[end if][ZapAttacks][if the magic-power of the player > 0] MAGIC: [magic-power of the player][end if][if the class of the player is succubus] SOULS: [souls of the player][end if]".
@@ -66,10 +66,10 @@ To say LowResBarPotty:
 	say "STOMACH: [VagueStomach] [if there is a worn diaper]DIAPER: [VagueDiaper][otherwise if there is a worn knickers]UNDIES: [VagueDiaper][end if]".
 
 To say LowResBarAppearance:
-	say "[TQDQ Appearance]  [VagueDignity]".
+	say "[TQDQ Appearance] [VagueDignity]".
 
 To say LowResAddictions:
-	say "[if diaper quest is 1]DIAPER ATTITUDE: [VagueDiaperAddiction][otherwise]SEXUALITY: [VagueAddiction][end if]  PERSONALITY: [VagueDelicateness]".
+	say "[if diaper quest is 1]DIAPER ATTITUDE: [VagueDiaperAddiction][otherwise]SEXUALITY: [VagueAddiction][end if] PERSONALITY: [VagueDelicateness]".
 
 To say LowResStatus:
 	say "STATUS: [VagueInternalFeeling]   HEALTH: [VagueExternalFeeling]".
@@ -150,11 +150,11 @@ REQUIRES COMMENTING
 +!]
 To say VagueStrength:
 	if saved-flat-strength < 5:
-		say "Weakling  ";
+		say "Weakling ";
 	otherwise if saved-flat-strength < 10:
 		say "Womanly   ";
 	otherwise if saved-flat-strength < 15:
-		say "Manly     ";
+		say "Manly	 ";
 	otherwise if saved-flat-strength < 20:
 		say "Well Built";
 	otherwise if saved-flat-strength < 25:
@@ -174,13 +174,13 @@ REQUIRES COMMENTING
 +!]
 To say VagueDex:
 	if saved-flat-dexterity < 5:
-		say "Stiff     ";
+		say "Stiff	 ";
 	otherwise if saved-flat-dexterity < 10:
-		say "Sluggish  ";
+		say "Sluggish ";
 	otherwise if saved-flat-dexterity < 15:
-		say "Limber    ";
+		say "Limber	";
 	otherwise if saved-flat-dexterity < 20:
-		say "Flexible  ";
+		say "Flexible ";
 	otherwise if saved-flat-dexterity < 25:
 		say "Acrobat   ";
 	otherwise if saved-flat-dexterity < 30:
@@ -207,13 +207,13 @@ To say VagueInt:
 	otherwise if saved-flat-intelligence < 13:
 		say "Pensive   ";
 	otherwise if saved-flat-intelligence < 16:
-		say "Geeky     ";
+		say "Geeky	 ";
 	otherwise if saved-flat-intelligence < 20:
-		say "Brainy    ";
+		say "Brainy	";
 	otherwise if saved-flat-intelligence < 24:
-		say "Genius    ";
+		say "Genius	";
 	otherwise if saved-flat-intelligence < 29:
-		say "Sage      ";
+		say "Sage	  ";
 	otherwise:
 		say "Deep Thought".
 
@@ -396,7 +396,7 @@ To say VagueAddiction:
 		if the player is feeling dominant, say "Dominant";
 		otherwise say "Reluctant";
 	otherwise if the player is feeling dominant and the player is not a nympho:
-		 say "Dominatrix";
+		say "Dominatrix";
 	otherwise if the sex addiction of the player < 10:
 		say "Curious";
 	otherwise if the sex addiction of the player < 13:
@@ -467,17 +467,17 @@ REQUIRES COMMENTING
 +!]
 To say VagueBreast:
 	if the largeness of breasts < 3:
-		say "Flat     ";
+		say "Flat	 ";
 	otherwise if the largeness of breasts < 5:
-		say "Tiny     ";
+		say "Tiny	 ";
 	otherwise if the largeness of breasts < 7:
-		say "Average  ";
+		say "Average ";
 	otherwise if the largeness of breasts < 9:
-		say "Large    ";
+		say "Large	";
 	otherwise if the largeness of breasts < 12:
-		say "V Large  ";
+		say "V Large ";
 	otherwise if the largeness of breasts < 15:
-		say "Giant    ";
+		say "Giant	";
 	otherwise if the largeness of breasts < 18:
 		say "Monstrous";
 	otherwise:
@@ -490,7 +490,7 @@ REQUIRES COMMENTING
 +!]
 To say VagueBelly:
 	if the largeness of belly < 4:
-		say "Flat    ";
+		say "Flat	";
 	otherwise if the largeness of belly < 6:
 		say "Round   ";
 	otherwise if the largeness of belly < 7:
@@ -498,7 +498,7 @@ To say VagueBelly:
 	otherwise if the largeness of belly < 9:
 		say "Inflated";
 	otherwise:
-		say "Absurd  ".
+		say "Absurd ".
 
 [!<SayVagueHips>+
 
@@ -507,13 +507,13 @@ REQUIRES COMMENTING
 +!]
 To say VagueHips:
 	if the thickness of hips < 4:
-		say "Slim     ";
+		say "Slim	 ";
 	otherwise if the thickness of hips < 7:
-		say "Curvy    ";
+		say "Curvy	";
 	otherwise if the thickness of hips < 11:
-		say "Wide     ";
+		say "Wide	 ";
 	otherwise if the thickness of hips < 15:
-		say "Huge     ";
+		say "Huge	 ";
 	otherwise:
 		say "Unnatural".
 
@@ -679,6 +679,10 @@ To say VagueInternals:
 		if fine is 0, say " & ";
 		say "Grossed Out";
 		now fine is 0;
+	otherwise if the player is perturbed:
+		if fine is 0, say " & ";
+		say "Perturbed";
+		now fine is 0;
 	if the player is overly full and diaper quest is 0:
 		if fine is 0, say " & ";
 		say "Oversatiated";
@@ -731,7 +735,7 @@ To say VagueInternals:
 		if the player is craving milk:
 			say "Cranky";
 			now fine is 0;
-	if player-immobile is 1:
+	if player-immobile is true:
 		if fine is 0, say " & ";
 		say "[if the player is monster fucked]Being Fucked[otherwise]Stuck[end if]";
 		now fine is 0;

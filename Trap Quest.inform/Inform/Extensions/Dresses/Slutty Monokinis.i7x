@@ -272,4 +272,27 @@ To set up influence of (C - a white string cameltoe monokini):
 
 Definition: a white string cameltoe monokini is white themed: decide yes.
 
+Part 13 - Red and White Strap Monokini
+
+christmas strap monokini is a strap monokini. christmas strap monokini is unique. The text-shortcut of christmas strap monokini is "rwmk".
+
+The printed name of christmas strap monokini is "[clothing-title-before]christmas strap swimsuit[clothing-title-after]".
+
+Figure of christmas strap monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/stringmonokini13.png".
+
+To decide which figure-name is clothing-image of (C - christmas strap monokini):
+	decide on figure of christmas strap monokini.
+
+To say ClothingDesc of (C - christmas strap monokini):
+	say "This piece of elasticated red fabric is really thin. It has red bows over the nipples.";
+	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
+
+To say ShortDesc of (C - christmas strap monokini):
+	say "christmas strap swimsuit".
+
+Definition: christmas strap monokini is red themed: decide yes.
+Definition: christmas strap monokini is bow themed: decide yes.
+Definition: christmas strap monokini is christmas themed: decide yes.
+Definition: christmas strap monokini is transformation-protected if the class of the player is santa's little helper.
+
 Slutty Monokinis ends here.

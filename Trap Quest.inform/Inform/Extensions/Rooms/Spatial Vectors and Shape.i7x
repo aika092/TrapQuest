@@ -328,9 +328,31 @@ The neighbour finder is a room that varies.
 REQUIRES COMMENTING
 
 +!]
-Definition: a direction (called thataway) is N-viable:
-	if the room thataway from the neighbour finder is a room and the room thataway from the neighbour finder is not Solid Rock and (thataway is north or thataway is south or thataway is west or thataway is east), decide yes;
-	decide no.
+[Definition: a direction (called thataway) is N-viable:
+	let R be the room thataway from Neighbour Finder;
+	if R is a room and R is not Solid Rock and (thataway is north or thataway is south or thataway is west or thataway is east), decide yes;
+	decide no.]
+
+A room has a list of directions called the Nviables.
+
+To update Nviables of (R - a room):
+	truncate the Nviables of R to 0 entries;
+	let R2 be the room north from R;
+	if R2 is a room and R2 is not solid rock, add north to the Nviables of R;
+	let R2 be the room east from R;
+	if R2 is a room and R2 is not solid rock, add east to the Nviables of R;
+	let R2 be the room south from R;
+	if R2 is a room and R2 is not solid rock, add south to the Nviables of R;
+	let R2 be the room west from R;
+	if R2 is a room and R2 is not solid rock, add west to the Nviables of R.
+
+Definition: a direction (called D) is N-viable:
+	if Terra Incognita is open: [need to do it live]
+		let R be the room D from Neighbour Finder;
+		if R is a room and R is not Solid Rock and (D is north or D is south or D is west or D is east), decide yes;
+		decide no;
+	otherwise: [we can use saved variables]
+		if D is listed in the Nviables of Neighbour Finder, decide yes.
 
 [!<DirectionIsWanted>+
 

@@ -51,7 +51,7 @@ A glulx mouse input rule (this is the default graphlink setting rule):
 	perform glulx graphlink request in current graphlink window.
 
 To perform glulx graphlink request in (g - a graphics g-window):
-	(-  if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) DoGraphLink({g}); -)
+	(- if (glk_gestalt(gestalt_MouseInput, winType_Graphics)) DoGraphLink({g}); -)
 
 Include (-
 

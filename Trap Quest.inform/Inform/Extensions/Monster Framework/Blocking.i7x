@@ -18,14 +18,14 @@ Definition: yourself is monster stuck:
 Is there a monster currently having sex with the player?
 
 +!]
-Definition: yourself is monster fucked:
-	if there is a monster penetrating a body part, decide yes;
-	decide no.
+Definition: yourself is monster fucked if there is a monster penetrating a body part.
 
 Definition: a monster (called M) is successfully blocking: [Do they succeed in a roll to stop the player moving]
 	if M is not blocker, decide no;
-	let R be (a random number from 1 to the difficulty of M * 2) + the movement reduction of the player; [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
-	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[difficulty of M * 2] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
+	let D be the difficulty of M * 2;
+	if M is seduced and the sex-length of M < 6, decrease D by (6 - the sex-length of M);
+	let R be a random number from 1 to (D + the movement reduction of the player); [When we check the movement reduction of the player for the first time in a round, if it is significant, it outputs text explaining why the player is struggling to move away from the monster.]
+	if debuginfo > 0, say "[input-style][ShortDesc of M][']s movement block check: player movement penalty ([movement reduction of the player]) + block skill d[D] ([R - the movement reduction of the player]) = [R] | ([the dexterity of the player].5) dexterity[roman type][line break]";
 	if R > the dexterity of the player, decide yes;
 	decide no.
 

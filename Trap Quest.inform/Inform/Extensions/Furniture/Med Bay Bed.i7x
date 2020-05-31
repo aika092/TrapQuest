@@ -27,6 +27,7 @@ To compute furniture resting on (F - med bay bed):
 		otherwise if the breast-enhancement of nurse > 0:
 			compute med bay breast enhancement;
 			decrease the breast-enhancement of nurse by 1;
+			if the breast-enhancement of nurse is 0, now the breast-enhancement of nurse is -1; [this is how we flag that the player had a breast enhancement]
 			now auto is 1;
 			try standing;
 			now auto is 0;
@@ -41,7 +42,7 @@ To compute furniture resting on (F - med bay bed):
 						anger nurse;
 						compute nurse entering mouth;
 						now another-turn is 1;
-						say "You already feel fully rested and healed, but you're still strapped to the chair and the [nurse] is still sitting on your face, so you can't even begin to try and get up!";
+						if another-turn-flavour is "", now another-turn-flavour is "You already feel fully rested and healed, but you're still strapped to the chair and [FuckerDesc of nurse] is still sitting on your face, so you can't even begin to try and get up!";
 					otherwise:
 						say "[line break][speech style of nurse]'Now darling, while you're resting there, why don't we give you a little something extra?'[roman type][line break][big he of nurse] doesn't bother to wait for you to respond! ";
 						compute med bay breast enhancement;

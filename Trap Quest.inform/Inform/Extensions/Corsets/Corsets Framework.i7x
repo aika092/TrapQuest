@@ -20,21 +20,17 @@ To set up influence of (C - a corset):
 	set up random-based influence of C.
 
 To compute corset strain:
-	repeat with C running through corsets worn by the player:
+	repeat with C running through worn corsets:
 		compute corset strain of C.
 
 To compute corset strain of (C - a corset):
-	let F be 17;
+	let F be a random number between 17 and 100;
 	increase F by the magic-modifier of C;
 	repeat with X running through worn clothing:
 		increase F by the leniency-addition of X;
 	let B be the largeness fill of belly;
 	if B > F:
 		say "Your [printed name of C] rips and bursts under the pressure from your belly! ";
-		repeat with D running through worn dresses:
-			if a random number between 1 and 5 > 2 and the mid-layer of D > the mid-layer of C:
-				say "The [printed name of C] destroys your [printed name of D] with it!";
-				destroy D;
 		destroy C.
 
 Report examining corsets:

@@ -89,13 +89,14 @@ Check someone going:
 	if there is a barrier in the location of the player, stop the action.
 
 To compute fleeing of (M - a monster): [Default Compute Fleeing if not specified for the monster.]
-	now neighbour finder is the location of M;
-	let A be a random N-viable direction;
-	let P be the room A from the location of M;
-	if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-		try M going A;
-	otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-		try M going A;
+	if M is scarable:
+		now neighbour finder is the location of M;
+		let A be a random N-viable direction;
+		let P be the room A from the location of M;
+		if A is a random N-viable direction and the room A from the location of M is unbossed and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			try M going A;
+		otherwise if A is a random N-viable direction and P is not the location of the player and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+			try M going A.
 
 The motion reaction rules is a rulebook.
 
@@ -131,6 +132,7 @@ To compute sleeping of (M - a monster):
 	compute sleep reduction of M;[needs to come after healing and recovery]
 	if M is simulated, compute unique periodic effect of M;
 	compute unique unsimulated periodic effect of M;
+	decrease the teaseTimer of M by 1;
 	if the last-interaction of M > 0, decrease the last-interaction of M by 1.
 
 To compute scared reduction of (M - a monster):
@@ -187,7 +189,7 @@ To compute periodic recovery of (M - a monster):
 			Arouse 10.[The princess will get a little hornier every turn her consort goes unsatisfied]
 
 To say SuddenMessFlav of (M - a monster):
-	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophany of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".
+	say "[speech style of M]'Hnnnng...'[roman type][line break]All of a sudden, [NameDesc of M][']s belly grumbles and then you hear a cacophony of awful sounds as [he of M] fills [his of M] diaper.[line break][variable custom style][one of]Oh come on! So I guess I'm supposed to change [him of M]?[or]Uh-oh. Somebody needs a change...[stopping][roman type][line break]".
 
 To compute unique periodic effect of (M - a monster):
 	do nothing.
@@ -200,7 +202,7 @@ To compute survival reward of (C - a clothing):
 To compute survival rewards:
 	if the remainder after dividing the number of survived monsters by 2 is 0:
 		say "[bold type]You feel like you're getting better at avoiding and escaping monsters![roman type][line break]";
-		if the number of dangerous monsters is 0:
+		if the number of regional dangerous monsters is 0:
 			if the bimbo of the player < 7:
 				say "[variable custom style][one of]Phew, I think I got away![or]I got away again![stopping]";
 			otherwise if the bimbo of the player < 13:

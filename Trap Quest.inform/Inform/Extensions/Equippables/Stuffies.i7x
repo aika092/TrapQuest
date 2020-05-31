@@ -1,6 +1,6 @@
 Stuffies by Equippables begins here.
 
-A stuffie is a kind of equippable. A stuffie is usually slap ready. A stuffie is usually cursed. A stuffie is usually wool. The printed name of stuffie is "[clothing-title-before]stuffie[clothing-title-after]". The text-shortcut of stuffie is "stf".
+A stuffie is a kind of equippable. A stuffie is usually slap ready. A stuffie is usually cursed. A stuffie is usually wool. The printed name of stuffie is "[clothing-title-before]stuffie[clothing-title-after]". The text-shortcut of stuffie is "stf". [####Selkie: What's a stuffie? Is it like a teddy bear, or plushie?]
 
 This is the spawn initial mansion stuffie rule:
 	let R be a random [wire untrapped] trappable placed haunted room;
@@ -42,7 +42,7 @@ Report taking off a stuffie:
 Report examining an unblessed sure stuffie:
 	say "Perhaps if it is [bold type]blessed[roman type] before you put it down, it will stop following you around...".
 
-A later time based rule (this is the stuffies want to be held rule):
+An all later time based rule (this is the stuffies want to be held rule):
 	repeat with C running through regional unblessed stuffies:
 		if C is in the location of the player:
 			if the player is prone and C is actually summonable:

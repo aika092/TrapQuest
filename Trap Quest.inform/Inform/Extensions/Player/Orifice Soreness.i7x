@@ -67,9 +67,9 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the stimulation of (O - an object) on (F - a body part):
-	if the semen volume of vagina > 6 and F is vagina, decide on 4; [Pussy creampie expulsion]
+	if the semen volume of vagina > 6 and F is vagina, decide on 3; [Pussy creampie expulsion]
 	if diaper quest is 1:
-		if F is fuckhole, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+		if F is fuckhole or F is penis, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
 		decide on 1;
 	decide on 0.
 
@@ -81,13 +81,15 @@ REQUIRES COMMENTING
 To decide which number is the stimulation of (M - a monster) on (F - a body part):
 	if diaper quest is 1, decide on 4 + (the difficulty of M / 8);
 	if F is fuckhole:
-		let S be the girth of M;
-		if interracial fetish is 1:
-			if M is dark skinned:
-				increase S by ((the BBC addiction of the player - 1) / 2) - 1;
-			otherwise if M is human:
-				if the player is queen of spades, decrease S by the BBC addiction of the player / 2;
-				if F is vagina and black hole tattoo is worn, decrease S by 2;
+		let S be 2;
+		if M is penetrating F:
+			now S is the girth of M;
+			if interracial fetish is 1:
+				if M is dark skinned:
+					increase S by ((the BBC addiction of the player - 1) / 2) - 1;
+				otherwise if M is human:
+					if the player is queen of spades, decrease S by the BBC addiction of the player / 2;
+					if F is vagina and black hole tattoo is worn, decrease S by 2;
 		if S < 1, decide on 1;
 		decide on S;
 	otherwise:
@@ -100,30 +102,27 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the stimulation of (T - a thing) on (F - a body part):
 	if F is fuckhole:
-		if T is insertable, decide on the girth of T / 2;
+		if the girth of T > 1 or T is insertable, decide on (the girth of T * 2) / 3;
 		if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
-	decide on 0.
-
-[!<DecideWhichNumberIsTheStimulationOfTrap>+
-
-REQUIRES COMMENTING
-
-+!]
-To decide which number is the stimulation of (T - a trap) on (F - a body part):
-	if the girth of T > 0, decide on (the girth of T * 2) / 3;
-	if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+	if diaper quest is 1 and F is penis, decide on 4;
 	decide on 0.
 
 To stimulate (F - a body part):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T.
 
 To stimulate (F - a body part) times (N - a number):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	stimulate F from T times N.
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	let T be a random thing penetrating F;
 	passively stimulate F from T.
 
@@ -136,11 +135,17 @@ To stimulate (F - a body part) from (T - an object):
 	stimulate F from T times 1.
 
 To stimulate (F - a body part) from (T - an object) times (N - a number):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	while N > 0:
 		decrease N by 1;
-		if the player is able to get horny: [need to check this each time]
+		if F is penis, RawUp penis;
+		if the player is able to get horny:
 			passively stimulate F from T;
-			if F is orgasming, do nothing. [This is how we check for an orgasm]
+		otherwise if (F is penis or F is a fuckhole) and the player is able to cum hornilessly and the stimulation of T on F >= 2:
+			now constant-stimulation-latest is time-turns;
+			if constant-stimulation-started is 0, now constant-stimulation-started is time-turns;
+		if F is orgasming, do nothing.[This is how we check for an orgasm]
 
 To passively stimulate (F - a body part) from (T - an object) times (N - a number):
 	while N > 0:
@@ -149,6 +154,8 @@ To passively stimulate (F - a body part) from (T - an object) times (N - a numbe
 
 [This one can't cause an automatic orgasm]
 To passively stimulate (F - a body part) from (T - an object):
+	if F is vagina and the player is male, now F is penis;
+	if F is penis and the player is female, now F is vagina;
 	if the player is able to get horny:
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
@@ -156,17 +163,18 @@ To passively stimulate (F - a body part) from (T - an object):
 			if the player is female, increase A by the square root of the vaginal sex addiction of the player;
 			otherwise increase A by the sex addiction of the player / 2;
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
-		let ST be stimulation of T on F * 6;
+		let ST be the stimulation of T on F * 2;
+		now ST is a random number between ST and (ST * 3);
 		let AR be (ST + A) * 20;
 		if F is fuckhole or F is penis:
 			increase AR by 350;
 		otherwise if F is breasts:
 			increase AR by 200;
-		otherwise if F is face or F is thighs:
-			increase AR by 125;
+		otherwise if F is hips or F is thighs:
+			increase AR by 100;
 		otherwise:
 			increase AR by 50;
-		if debuginfo > 0, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is face or F is thighs]125)[otherwise]25)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
+		if debuginfo > 0, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
 		arouse AR.
 
 [!<latestAssholeInvader:Object>*

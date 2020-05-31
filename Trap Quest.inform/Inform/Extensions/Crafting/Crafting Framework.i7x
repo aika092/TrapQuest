@@ -74,6 +74,15 @@ Definition: a thing (called C) is product-highlighted:
 	if C is product and the alchemy key of C is current-alchemy-key, decide yes;
 	decide no.
 
+Definition: a number (called K) is alchemy appropriate: [Can we use this alchemy product as a random outcome?]
+	now current-alchemy-key is K;
+	let H be a random product-highlighted thing;
+	if H is a thing:
+		if H is fetish appropriate:
+			if H is recipe specific, decide no;
+			decide yes;
+	decide no.
+
 [Lots of spare rows for future ingredients]
 [!<tableOfAlchemy:Table>*
 
@@ -110,6 +119,15 @@ REQUIRES COMMENTING
 To set up alchemy table:
 	let MC be max crafting key;
 	let MA be max alchemy key;
+	let RN be 1;
+	repeat with R running through recipes:
+		if RN <= MA:
+			now the recipe-key of R is RN;
+			now the text-shortcut of R is the substituted form of "re[RN]";
+			now current-alchemy-key is the recipe-key of R;
+			let H be a random product-highlighted thing;
+			if H is a fetish appropriate thing, now the target-product of R is the substituted form of "[MediumDesc of H]";
+			increase RN by 1;
 	[First we set up the table so that all ingredients point to a cursed product.]
 	repeat with N running from 1 to MC:
 		now the Ingredient in row N of the Table of Alchemy is N;
@@ -141,26 +159,9 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 16 and egg laying fetish is 0 or mythical creature fetish is 0, decide no; [wasp wing]
 	if K is 36 and inflation fetish is 0, decide no;
 	if K is 55 and diaper quest is 0, decide no; [Chocolate eggs]
+	if K is 56 and diaper messing < 4, decide no; [Pocketwipes]
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
-
-[!<NumberIsAlchemyAppropriate>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a number (called K) is alchemy appropriate: [Should we use this alchemy product as a random outcome?]
-	now current-alchemy-key is K;
-	let H be a random product-highlighted thing;
-	if H is a thing:
-		if H is fetish appropriate:
-			if H is always alchemy appropriate, decide yes; [First we check if we ignore recipe specific rules - some items e.g. condom pack want to be able to appear randomly too]
-			if H is recipe specific, decide no;
-			decide yes;
-	decide no.
-
-Definition: a thing (called T) is always alchemy appropriate: [Should we OVERRIDE the above function and use this alchemy product as a random outcome?]
-	decide no.
 
 [!<Thing>@<IsProduct>+
 
@@ -168,15 +169,6 @@ REQUIRES COMMENTING
 
 +@!]
 Definition: thing is product: decide no.
-
-[!<AlchemyProduct>@<IsProduct>+
-
-REQUIRES COMMENTING
-
-+@!]
-Definition: an alchemy product is product: decide yes.
-
-Definition: an alchemy product is magic themed: decide yes.
 
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 [!<Thing>@<WhichNumberIsTheAlchemyKey>+
@@ -205,58 +197,12 @@ REQUIRES COMMENTING
 *!]
 current-alchemy-key is a number that varies.
 
-[!<AlchemyProduct>@<IsHighlighted>+
-
-REQUIRES COMMENTING
-
-+@!]
-Definition: an alchemy product (called C) is product-highlighted:
-	if the alchemy key of C is current-alchemy-key, decide yes;
-	decide no.
-
-[!<AlchemyProduct>@<IsFetishAppropriate>+
-
-REQUIRES COMMENTING
-
-+@!]
-Definition: an alchemy product (called A) is fetish appropriate:
-	repeat with R running through recipes:
-		if the recipe key of R is the alchemy key of A:
-			if R is appropriate, decide yes;
-			decide no;
-	decide no.
-
 [!<Thing>@<IsRecipeSpecific>+
 
 REQUIRES COMMENTING
 
 +@!]
-Definition: a thing is recipe specific: decide no.
-
-[We are not going to classify these as 'bottles' a) since they don't obey the colour & effect rules and b) so that they never get mixed up with normal drinks that are found in containers etc.]
-
-[!<AlchemyProduct>@
-
-REQUIRES COMMENTING
-
-@inherits <Thing>
-
-@!]
-An alchemy product is a kind of thing.
-
-[!<AlchemyProduct>@<curseID:CurseIDEnums>*
-
-REQUIRES COMMENTING
-
-*@!]
-An alchemy product has a curse-ID. Understand the curse-ID property as describing an alchemy product. An alchemy product is usually unsure.
-
-[!<AlchemyProduct>@<magicCurse:MagicCurseEnums>*
-
-REQUIRES COMMENTING
-
-*@!]
-An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
+Definition: a thing is recipe specific: decide no. [We flag that the recipe is always the same and never random, to make sure we never try to use this alchemy product as a random cursed outcome (a seasoned player would immediately know it was cursed)]
 
 To display complete alchemy data:
 	[repeat through the Table of Alchemy:

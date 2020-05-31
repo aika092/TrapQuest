@@ -270,13 +270,13 @@ To humiliate (X - a number):
 To trivialHumiliate:
 	humiliate TRIVIAL-HUMILIATION.
 
-To say trivialHumiliateRefect:
+To say trivialHumiliateReflect:
 	say HumiliateReflect TRIVIAL-HUMILIATION.
 
 To slightHumiliate:
 	humiliate SLIGHT-HUMILIATION.
 
-To say slightHumiliateRefect:
+To say slightHumiliateReflect:
 	say HumiliateReflect SLIGHT-HUMILIATION.
 
 To moderateHumiliate:
@@ -414,7 +414,7 @@ To 2Humiliate (X - a number):
 		if newbie tips is 1 and the humiliation of the player > 8000, say "[one of][newbie style]Newbie tip: Your dignity is slowly declining. This isn't the biggest deal - it doesn't actually impact the game that much at first. In fact, right now there are some things that [NameBimbo] will refuse to wear, and by gaining a bit of humiliation you can unlock that restriction. However, if it gets out of hand, you can start to get aroused when you're humiliated further, which can be a quick way for the game to spiral out of control. [if mindbreak protection is 0]If you go even further, you can become 'broken' - this permanent condition is really bad because not only will all humiliation now arouse you, but whenever you end up on your knees, your brain will *click* and you won't be able to do anything to resist enemies until they're done with you.[end if][roman type][line break][or][stopping]";
 	otherwise:
 		if the humiliation of the player > 8000 and the humiliation of the player < 9000, say "[one of]You hear a voice in your head! [line break][first custom style]'Why hello there... It seems you don[']t quite get what you are. Start picking up the slack or eventually I[']ll need to take control...'[roman type] You start to feel a bit light-headed.[line break][or][stopping]";
-		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of]You hear the voice again! [line break][first custom style]'Seriously, what part of this do you not understand? Start acting a proper demon already.'[roman type] For some reason you find her voice very persuasive![line break][or][stopping]";
+		if the humiliation of the player > 16000 and the humiliation of the player < 17000, say "[one of]You hear the voice again! [line break][first custom style]'Seriously, what part of this do you not understand? Start acting a proper demon already.'[roman type] For some reason you find [his of a random demoness] voice very persuasive![line break][or][stopping]";
 		if the humiliation of the player > 24000 and the humiliation of the player < 25000, say "[one of]The voice rings out once more! [line break][first custom style]'Do you need me to spell this out? If you keep up like this I[']m going to erase you. Unless you[']d RATHER me take over your body, I suggest you do better. And fast, I[']m already getting ready to start emptying you out.'[roman type] Come to mention it, you do feel a bit strange![line break][or][stopping]";
 		if the humiliation of the player > 32000 and the humiliation of the player < 33000, say "[one of]You hear the voice again! [line break][first custom style]'Okay, last chance. I[']ve got to build some energy up before I can properly overwrite you, that[']s how long you have to shape up.'[roman type] You feel the stone begin to heat up![line break][or][stopping]".
 
@@ -454,22 +454,24 @@ To Dignify (X - a number):
 		otherwise decrease the humiliation of the player by X.
 
 Table of Published Disgraces
-content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)
+content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)	viewsfuzz (a number)
 with 100 blank rows
 
 To decide which number is DisgracePostViews (N - a number):
 	choose row N in Table of Published Disgraces;
-	decide on popularity entry * (timestamp entry - earnings). [views]
+	let P be popularity entry * (timestamp entry + viewsfuzz entry - earnings); [this how we calculate number of views]
+	if P > 0, decide on P;
+	decide on 0.
 
 To decide which number is DisgracePostImpact (N - a number):
 	choose row N in Table of Published Disgraces;
 	let ET be DisgracePostViews N;
-	if ET < 1, now ET is 1; [sometimes they don't have increasing tracked views, and it's just flat severity]
-	decide on (the square root of ET) * severity entry; [reputation damage]
+	if ET <= 1, decide on severity entry; [sometimes they don't have increasing tracked views, and it's just flat severity]
+	decide on the square root of (ET * severity entry); [reputation damage]
 
 To decide which number is the public disgrace of the player:
 	let PD be 0;
-	repeat with N running from 1 to the number of rows in the Table of Published Disgraces:
+	repeat with N running from 1 to the number of filled rows in the Table of Published Disgraces:
 		if there is a severity in row N of the Table of Published Disgraces, increase PD by DisgracePostImpact N;
 	decide on PD.
 
@@ -480,6 +482,14 @@ To say DisgracePost (N - a number):
 
 To say DisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;
+	say DisgracePostReaction strength S.
+
+To say HumiliatingDisgracePostReaction (N - a number):
+	let S be DisgracePostImpact N;
+	say DisgracePostReaction strength S;
+	humiliate S / 5.
+
+To say DisgracePostReaction strength (S - a number):
 	say variable custom style;
 	if the player is modest:
 		say "[if S < 100][one of]No, no, no, no, NO! This is on the real Internet?![or]No way, my friends will be able to see this![or]I can't believe this is on the real Internet...[then at random][otherwise][one of]Noooo! There's no way I can let anyone in the real world see this![or]No no no no no! I need to get this taken down RIGHT AWAY![or]If this is really on the actual Internet, I'll never ever be able to life this down! I'll be a walking disgrace![or]Oh god no... I'm never going to be able to look my family in the eyes ever again...[in random order][end if]";
@@ -492,6 +502,7 @@ To say DisgracePostReaction (N - a number):
 To compute digital reputation damage (T - a text) strength (S - a number) quality (N - a number):
 	decrease N by a random number between 0 and 1;
 	now T is "[if N < 1]a low resolution photo[otherwise if N < 3]a high resolution photo[otherwise if N < 5]an animated gif[otherwise]a high quality video[end if] showing [T] [ReputationAttire]";
+	if face is listed in the armUses of arms, now S is (S + 1) / 2;
 	let W be "[if S < a random number between 3 and 5][sexyWebsite][otherwise][sluttyWebsite][end if]";
 	choose a blank row in Table of Published Disgraces;
 	now the content entry is the substituted form of T;
@@ -499,18 +510,21 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 	now the severity entry is S;
 	now the popularity entry is N;
 	now the timestamp entry is earnings;
+	now the viewsfuzz entry is a random number between -100 and 100;
 
 To decide which text is ReputationAttire:
 	let C be the at least partial concealer of vagina;
 	if the player is male, now C is the at least partial concealer of penis;
+	let AF be "";
+	if face is listed in the armUses of arms, now AF is " and an arm trying to conceal your face";
 	if breasts is exposed:
 		if (the player is male and penis is exposed) or (the player is female and vagina is exposed):
-			decide on "with your chest and [if the player is male][ShortDesc of penis][otherwise][vagina][end if] on full display";
+			decide on "with your chest and [if the player is male][ShortDesc of penis][otherwise][vagina][end if] on full display[AF]";
 		otherwise:
-			decide on "topless, with a [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if]";
+			decide on "topless, with your [ShortDesc of C][if C is not actually dense] partially covering your [genitals][end if][AF]";
 	otherwise:
 		let B be the at least partial concealer of breasts;
-		decide on "wearing a [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B]and a [ShortDesc of C][end if]";
+		decide on "with your [ShortDesc of B][if C is nothing] and nothing covering your [genitals][otherwise if C is not B] and your [ShortDesc of C][end if][AF]";
 
 To say sexyWebsite:
 	if diaper quest is 1, say "embarrassedbabes.net";

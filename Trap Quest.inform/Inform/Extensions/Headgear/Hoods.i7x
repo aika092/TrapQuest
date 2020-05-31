@@ -56,16 +56,22 @@ Definition: black hood is black themed: decide yes.
 To decide which number is the alchemy key of (C - black hood):
 	decide on 20.
 
-Definition: black hood is recipe specific: decide yes.
+Definition: black hood is fetish appropriate if diaper quest is 0.
 
-This is the hood specific recipe rule:
-	now the Product in row 33 of the Table of Alchemy is 20;
-	now the Recipe in row 33 of the Table of Alchemy is 1.
-The hood specific recipe rule is listed in the specific recipe rules.
-
-To compute recipe specific cursing of (T - a hood):
-	now T is bland;
-	if the noun is not latex clothing, now T is stumbling.
+To compute recipe specific cursing of (T - a headgear):
+	now T is cursed; [As it is headgear, it needs to always be cursed upon creation. So instead the punishment for it being the wrong recipe is that it gets the 'stumbling' attribute]
+	let K be the alchemy key of T;
+	if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0:
+		now T is stumbling;
+	otherwise:
+		let I be the intelligence of the player;
+		increase I by (the number of worn blue scrunchies + alchemyskill of the player) * 8;
+		if the recipe of K is memorised, increase I by 5;
+		let R be a random number between 1 and I;
+		if R > 15:
+			now T is speed;
+		otherwise:
+			now T is blandness.
 
 To decide which number is the strength-influence of (H - black hood):
 	let S be 0;
@@ -88,6 +94,8 @@ Chapter - Quest
 
 just-wait-quest is a headgear-clothing-quest. just-wait-quest has a number called main-reward. just-wait-quest has a number called wait-count.
 
+Definition: just-wait-quest is school-disabled: decide yes.
+
 To compute unique recycling of (C - black hood):
 	now the wait-count of just-wait-quest is 0;
 	now the main-reward of just-wait-quest is 0.
@@ -103,10 +111,11 @@ To say QuestTitle of (Q - just-wait-quest):
 
 To compute unique periodic effect of (H - black hood):
 	if the quest of H is just-wait-quest:
-		increase the wait-count of just-wait-quest by 1;
-		if the wait-count of just-wait-quest > a random number between 30 and 1000:
-			progress quest of just-wait-quest;
-			now the wait-count of just-wait-quest is 0.
+		unless the player is in a bossed room or playerRegion is school:
+			increase the wait-count of just-wait-quest by 1;
+			if the wait-count of just-wait-quest > a random number between (30 + (latex prisoner * 30)) and 1000:
+				progress quest of just-wait-quest;
+				now the wait-count of just-wait-quest is 0.
 
 To compute persistent reward of (Q - just-wait-quest) on (C - a clothing):
 	if the main-reward of Q is 0:

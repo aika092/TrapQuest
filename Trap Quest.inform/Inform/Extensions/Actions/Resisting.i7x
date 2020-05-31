@@ -110,12 +110,13 @@ Check resisting:
 		say "You love sex too much, you can't will yourself to even [i]pretend[/i] to resist right now!";
 		now forced submit is 1;
 		try submitting instead;
-	otherwise if there is a live thing penetrating an orifice and a random number between 10 and 15 + a random number between 0 and 4 < the delicateness of the player + P:
+	otherwise if M is monster and (a random number between 10 and 15) + (a random number between 0 and 4) < the delicateness of the player + P:
 		if P > 1, say PainResRefusalFlav of M;
 		otherwise say DelicateResRefusalFlav of M;
 		now forced submit is 1;
 		try submitting instead;
 	otherwise if there is a live thing penetrating face and diaper quest is 0:
+		now M is ex-princess;
 		if there is a male monster penetrating face and (a random number between 14 and 19 < the semen taste addiction of the player or the player is desperately craving semen):
 			now M is a random monster penetrating face;
 			say OralAddResRefusalFlav of M;
@@ -126,10 +127,11 @@ Check resisting:
 			now forced submit is 2;
 		otherwise if the thirst of the player is 5 or (the thirst of the player is 4 and a random number between 1 and 2 is 2):
 			now M is a random live thing penetrating face;
-			if M is male monster, say ThirstResRefusalFlav of M;
-			now forced submit is 1;
+			if M is male monster:
+				say ThirstResRefusalFlav of M;
+				now forced submit is 1;
 		if forced submit > 0:
-			unless M is monster, say ForcedSubmitFlav;
+			if M is ex-princess, say ForcedSubmitFlav;
 			try submitting instead;
 	otherwise if M is monster and M is vampiress and a random number between 5 and 9 + (the intelligence of the player / 3) <= the bimbo of the player:
 		say VampResistRefusalFlav;
@@ -220,7 +222,7 @@ To say DQSpankResistReactionFlav of (M - a monster):
 	say "". [Can be customised for specific NPCs]
 
 To say DQSpankResistExtensionFlav of (M - a monster):
-	if M is intelligent, say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]That's it. You've earned three more spanks for that.'[or]Okay, I'm going to just keep on going until you stop squirming!'[or]All you're doing is making me decide to take longer!'[or]The more you squirm, the longer I'm going to make it take.'[in random order][roman type][line break]". [Can be customised for specific NPCs]
+	if M is intelligent, say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]That's it. You've earned three more spanks for that.'[or]Okay, I'm going to just continue until you stop squirming!'[or]All you're doing is making me decide to take longer!'[or]The more you squirm, the longer I'm going to make it take.'[in random order][roman type][line break]". [Can be customised for specific NPCs]
 
 To say DQEnemaResistFlav of (M - a monster):
 	say "[if M is penetrating asshole][one of]You try to wrestle free before [NameDesc of M] gets any more inside you but [his of M] grip remains firm[or]You try to pull away from the enema in vain[or]Your belly gurgles as you sway side to side, trying to make it more difficult for [NameDesc of M] to continue filling you up[in random order][otherwise][one of]You try to escape before the enema can begin, but [NameDesc of M][']s grip on you is too strong[or]Realising what's about to happen you pull away with all your strength but it's too little too late[or]You wiggle your butt to try and stop [NameDesc of M] from proceeding but you just can't get away[in random order][end if].";
@@ -305,7 +307,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M]'s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 [!<SayOralSlutResRefusalFlavOfMonster>+
 
@@ -313,7 +315,8 @@ REQUIRES COMMENTING
 
 +!]
 To say OralSlutResRefusalFlav of (M - a monster):
-	say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]".
+	if M is male, say "[one of][if the oral sex addiction of the player < 6]No matter how hard you try, you can't keep yourself from desperately suckling [his of M] [manly-penis].[otherwise]Why would you do something like that? Sucking [manly-penis]s is FUN![end if][or][if the oral sex addiction of the player < 6]You hate yourself for it, but you can't help suckling [his of M] [manly-penis] for all it's worth.[otherwise]You just can't bring yourself to resist. Not when there's such a big, yummy [manly-penis] in your mouth.[end if][in random order]";
+	otherwise say "You just can't bring yourself to resist; you love oral sex so much!".
 
 [!<SayThirstResRefusalFlavOfMonster>+
 
@@ -414,7 +417,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to slap:
 	if M is intelligent and a random number between 1 and 5 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<SlapPunishmentIsAppropriate>+
 
@@ -460,7 +463,7 @@ REQUIRES COMMENTING
 +!]
 Definition: a monster (called M) is eager to get angry:
 	if M is intelligent and a random number between 1 and 3 is 1, decide yes;
- 	decide no.
+	decide no.
 
 [!<AngerPunishmentIsAppropriate>+
 

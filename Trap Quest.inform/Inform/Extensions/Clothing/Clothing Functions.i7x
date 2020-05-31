@@ -25,6 +25,8 @@ To decide which number is the masturbation-bonus of (C - a clothing):
 
 To compute periodic effect of (C - a wearthing):
 	do nothing.
+To compute school periodic effect of (C - a wearthing):
+	do nothing.
 
 To decide which number is the leniency-addition of (C - a clothing): [How much extra size is necessary to burst through a bra or corset?]
 	decide on 0.
@@ -39,7 +41,7 @@ To say clothing-title-before:
 	say "[TQlink of item described][item style][cumdesc][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][if item described is glued]glued [end if][raw-magic-modifier-desc]".
 
 To say clothing-title-after:
-	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][roman type][quest-desc][shortcut-desc][ownership-desc][displacement-desc][TQxlink of item described][verb-desc of item described]".
+	say "[if magic-ID of the item described is identified and magic-type of the item described is not blandness] of [magic-type of the item described][end if][roman type][quest-desc][shortcut-desc][ownership-desc][displacement-desc][if the stolen-strength of item described > 0] (STOLEN STRENGTH)[end if][TQxlink of item described][verb-desc of item described]".
 
 To say shortcut-desc:
 	if shortcuts is 1 and inline hyperlinks is 0 and the text-shortcut of item described is not "", say "[bracket][text-shortcut of item described][close bracket]".
@@ -175,65 +177,221 @@ To delayed imprint destroy (C - a clothing):
 
 To SemenSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the semen-soak of diaper-stack by N;
-		increase the perceived-semen-soak of diaper-stack by N;
-	increase the semen-soak of C by N;
-	now previous-clothing-glazed is -1; [force appearance reassessment]
-	if C is diaper, increase the perceived-semen-soak of C by N.
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [semen leaks downwards]
+			increase the semen-soak of C by dCapacity;
+			increase the perceived-semen-soak of C by dCapacity;
+			increase the semen-soak of diaper-stack by dCapacity;
+			increase the perceived-semen-soak of diaper-stack by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					SemenSoakUp D by dLeftover;
+		otherwise:
+			increase the semen-soak of C by N;
+			increase the perceived-semen-soak of C by N;
+			increase the semen-soak of diaper-stack by N;
+			increase the perceived-semen-soak of diaper-stack by N;
+	otherwise:
+		increase the semen-soak of C by N;
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		if C is diaper, increase the perceived-semen-soak of C by N.
 
 To UrineSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the urine-soak of diaper-stack by N;
-		increase the perceived-urine-soak of diaper-stack by N;
-	increase the urine-soak of C by N;
-	now previous-clothing-glazed is -1; [force appearance reassessment]
-	if C is diaper, increase the perceived-urine-soak of C by N.
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [urine leaks downwards]
+			increase the urine-soak of C by dCapacity;
+			increase the perceived-urine-soak of C by dCapacity;
+			increase the urine-soak of diaper-stack by dCapacity;
+			increase the perceived-urine-soak of diaper-stack by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					UrineSoakUp D by dLeftover;
+		otherwise:
+			increase the urine-soak of diaper-stack by N;
+			increase the perceived-urine-soak of diaper-stack by N;
+			increase the urine-soak of C by N;
+			increase the perceived-urine-soak of C by N;
+	otherwise:
+		increase the urine-soak of C by N;
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		if C is diaper, increase the perceived-urine-soak of C by N.
 
 To MilkSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the milk-soak of diaper-stack by N;
-		increase the perceived-milk-soak of diaper-stack by N;
-	increase the milk-soak of C by N;
-	now previous-clothing-glazed is -1; [force appearance reassessment]
-	if C is diaper, increase the perceived-milk-soak of C by N.
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [milk leaks downwards]
+			increase the milk-soak of C by dCapacity;
+			increase the perceived-milk-soak of C by dCapacity;
+			increase the milk-soak of diaper-stack by dCapacity;
+			increase the perceived-milk-soak of diaper-stack by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					MilkSoakUp D by dLeftover;
+		otherwise:
+			increase the milk-soak of C by N;
+			increase the perceived-milk-soak of C by N;
+			increase the milk-soak of diaper-stack by N;
+			increase the perceived-milk-soak of diaper-stack by N;
+	otherwise:
+		increase the milk-soak of C by N;
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		if C is diaper, increase the perceived-milk-soak of C by N.
 
 To WaterSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the water-soak of diaper-stack by N;
-		increase the perceived-water-soak of diaper-stack by N;
-	increase the water-soak of C by N;
-	now previous-clothing-glazed is -1; [force appearance reassessment]
-	if C is diaper, increase the perceived-water-soak of C by N.
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [water leaks downwards]
+			increase the water-soak of C by dCapacity;
+			increase the perceived-water-soak of C by dCapacity;
+			increase the water-soak of diaper-stack by dCapacity;
+			increase the perceived-water-soak of diaper-stack by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					WaterSoakUp D by dLeftover;
+		otherwise:
+			increase the water-soak of C by N;
+			increase the perceived-water-soak of C by N;
+			increase the water-soak of diaper-stack by N;
+			increase the perceived-water-soak of diaper-stack by N;
+	otherwise:
+		increase the water-soak of C by N;
+		now previous-clothing-glazed is -1; [force appearance reassessment]
+		if C is diaper, increase the perceived-water-soak of C by N.
 
 [We call the stealth functions when it's a way that a 100% babified player might not notice the soaking happening.]
 
 To StealthSemenSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the semen-soak of diaper-stack by N;
-		if the player is diaper aware, increase the perceived-semen-soak of diaper-stack by N;
-	if the player is diaper aware, increase the perceived-semen-soak of C by N;
-	increase the semen-soak of C by N.
+		if the player is diaper aware:
+			increase the perceived-semen-soak of diaper-stack by N;
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [semen leaks downwards]
+			increase the semen-soak of C by dCapacity;
+			increase the semen-soak of diaper-stack by dCapacity;
+			if the player is diaper aware, increase the perceived-semen-soak of C by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					StealthSemenSoakUp D by dLeftover;
+		otherwise:
+			increase the semen-soak of C by N;
+			increase the semen-soak of diaper-stack by N;
+	otherwise:
+		increase the semen-soak of C by N;
+		if the player is diaper aware:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-semen-soak of C by N.
 
 To StealthUrineSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the urine-soak of diaper-stack by N;
-		if the player is diaper aware, increase the perceived-urine-soak of diaper-stack by N;
-	if the player is diaper aware, increase the perceived-urine-soak of C by N;
-	increase the urine-soak of C by N.
+		if the player is diaper aware:
+			increase the perceived-urine-soak of diaper-stack by N;
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [urine leaks downwards]
+			increase the urine-soak of C by dCapacity;
+			increase the urine-soak of diaper-stack by dCapacity;
+			if the player is diaper aware, increase the perceived-urine-soak of C by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					StealthUrineSoakUp D by dLeftover;
+		otherwise:
+			increase the urine-soak of C by N;
+			increase the urine-soak of diaper-stack by N;
+	otherwise:
+		increase the urine-soak of C by N;
+		if the player is diaper aware:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-urine-soak of C by N.
 
 To StealthMilkSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the milk-soak of diaper-stack by N;
-		if the player is diaper aware, increase the perceived-milk-soak of diaper-stack by N;
-	if the player is diaper aware, increase the perceived-milk-soak of C by N;
-	increase the milk-soak of C by N.
+		if the player is diaper aware:
+			increase the perceived-milk-soak of diaper-stack by N;
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [milk leaks downwards]
+			increase the milk-soak of C by dCapacity;
+			increase the milk-soak of diaper-stack by dCapacity;
+			if the player is diaper aware, increase the perceived-milk-soak of C by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					StealthmilkSoakUp D by dLeftover;
+		otherwise:
+			increase the milk-soak of C by N;
+			increase the milk-soak of diaper-stack by N;
+	otherwise:
+		increase the milk-soak of C by N;
+		if the player is diaper aware:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-milk-soak of C by N.
 
 To StealthWaterSoakUp (C - a clothing) by (N - a number):
 	if C is listed in the list of stacked diapers:
-		increase the water-soak of diaper-stack by N;
-		if the player is diaper aware, increase the perceived-water-soak of diaper-stack by N;
-	if the player is diaper aware, increase the perceived-water-soak of C by N;
-	increase the water-soak of C by N.
+		if the player is diaper aware:
+			increase the perceived-water-soak of diaper-stack by N;
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+		let dCapacity be the soak-limit of C - the total-soak of C;
+		let dLeftover be N - dCapacity;
+		if dLeftover > 0: [water leaks downwards]
+			increase the water-soak of C by dCapacity;
+			increase the water-soak of diaper-stack by dCapacity;
+			if the player is diaper aware, increase the perceived-water-soak of C by dCapacity;
+			let E be 0;
+			repeat with D running through the list of stacked diapers:
+				if D is C:
+					now E is 1;
+				otherwise if E is 1: [the next diaper down]
+					now E is 0;
+					StealthWaterSoakUp D by dLeftover;
+		otherwise:
+			increase the water-soak of C by N;
+			increase the water-soak of diaper-stack by N;
+	otherwise:
+		increase the water-soak of C by N;
+		if the player is diaper aware:
+			now previous-clothing-glazed is -1; [force appearance reassessment]
+			if C is diaper, increase the perceived-water-soak of C by N.
 
 [!<DestroyClothing>+
 
@@ -270,6 +428,7 @@ To only destroy (C - clothing):
 	now the bottom-layer of C is 0;
 	now the used condoms of C is 0;
 	now the empty condoms of C is 0;
+	now the stolen-strength of C is 0;
 	clean C;
 	WaterEmpty C;
 	dislodge C;
@@ -286,9 +445,9 @@ To only destroy (C - clothing):
 	now C is unowned;
 	now the damage of C is 0;
 	now C is not-influencing;
-	repeat with M running through monsters retaining C:
+	repeat with M running through monsters:
 		now M is not retaining C;
-	repeat with M running through monsters rejecting C:
+		now M is not withholding C;
 		now M is not rejecting C;
 	remove C from play;
 	if C is listed in the list of stacked diapers, diaperRemove C;

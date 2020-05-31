@@ -66,6 +66,7 @@ To compute HoleInWallEntrance:
 	repeat with P running through hole-in-wall punishments:
 		if P is not hole-punishment-not-found and the priority of P is 1, now the priority of P is 2;
 	now the stance of the player is 1;
+	now the source-room of HoleInWall is the location of the player;
 	now the player is in HoleInWall;
 	check immobility;
 	refresh the map-window.
@@ -131,7 +132,7 @@ To HoleWait:
 		distract M;
 		now the boredom of M is 30;
 		say "A little while later you feel someone gripping you by your hips! [line break][variable custom style]Are they going to help pull me out?[roman type][line break]You are pleased to find that indeed they are![line break][first custom style]'[caps please] REMAIN CALM, YOU ARE BEING RESCUED.'[roman type][line break]You are powerfully yet carefully extracted from your embarrassing prison.";
-		now the player is in the location of hole-in-wall;
+		now the player is in the source-room of the location of the player;
 		say "You look around and see [NameDesc of M], having already lost interest with you after rescuing you, is busying itself with other things.";
 		refresh the map-window;
 		check immobility.
@@ -217,7 +218,7 @@ To compute punishment of (P - hole-wank):
 		say "You hardly feel anything thanks to your rubbery genitals. The hand soon gives up and leaves you alone.";
 	otherwise:
 		let wank-attempts be 0;
-		while refactoryperiod <= 0 and wank-attempts < 3 and delayed fainting is 0 and the player is in HoleInWall:
+		while refractoryperiod <= 0 and wank-attempts < 3 and delayed fainting is 0 and the player is in HoleInWall:
 			if wank-attempts is 0:
 				say "The hand skilfully [if the player is male]strokes your [player-penis][otherwise]rubs your [vagina][end if] through your padding.";
 			otherwise if wank-attempts is 1:
@@ -231,7 +232,7 @@ To compute punishment of (P - hole-wank):
 				DelicateUp 1;
 			increase wank-attempts by 1;
 			compute extra turn;
-		if refactoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";
+		if refractoryperiod > 0, say "The anonymous hand's owner is clearly satisfied with that as you feel it let go, lovingly pat your bottom a couple of times for good measure, and then leave you alone.";
 		otherwise say "The anonymous hand's owner decides to leave you unsatisfied. [line break][variable custom style][if the humiliation of the player >= 40000]Denied release again, just like I always deserve.[otherwise if the player is not a pervert]I don't even know if I'm glad or not that I didn't cum...[otherwise]Nnng... so close... please come back...[end if][roman type][line break]".
 
 hole-strip is hole-in-wall punishment.
@@ -272,10 +273,10 @@ To compute punishment of (P - hole-enema):
 			destroy C;
 		now C is a random worn top level ass protection clothing;
 	let L be semen;
-	if diaper quest is 1:
-		now L is water;
-	otherwise if watersports fetish is 1 and a random number between 1 and 2 is 1:
+	if watersports fetish is 1 and a random number between 1 and 2 is 1:
 		now L is urine;
+	otherwise if diaper quest is 1:
+		now L is water;
 	otherwise if lactation fetish is 1 and a random number between 1 and 2 is 1:
 		now L is milk;
 	say "You feel the tip of some kind of thin hard cold object pushed inside your [asshole]. Moments later a warm liquid starts to fill you up! It must be some kind of enema syringe[if diaper quest is 0]! Somehow, maybe from the texture or consistency, you can tell you are being given a huge [L] enema[end if]!";

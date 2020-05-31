@@ -21,6 +21,11 @@ To decide which number is the unique outrage of (C - a queen of hearts heels):
 To decide which number is the hindrance-modifier of (C - a queen of hearts heels):
 	decide on 0.
 
+To decide which number is the luck-influence of (C - a queen of hearts heels):
+	if C is cursed, decide on -1;
+	if C is blessed, decide on 5;
+	decide on 1.
+
 To say UniqueShortDesc of (C - a queen of hearts heels):
 	say "queen of hearts heels".
 
@@ -34,6 +39,9 @@ To decide which number is the alchemy key of (C - a queen of hearts heels):
 	decide on 17.
 
 Definition: a queen of hearts heels is recipe specific: decide yes.
+
+To decide which text is RecipeDesc of (B - a queen of hearts heels):
+	decide on "This recipe just says 'Queen of Hearts Playing Card'.".
 
 This is the queen specific recipe rule:
 	now the Product in row 31 of the Table of Alchemy is 17;

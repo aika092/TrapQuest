@@ -8,21 +8,21 @@ To teleport to (R - a room):
 		say "The [printed name of T] is ripped free from you. Owww!";
 		BodyRuin 1;
 		dislodge T;
-	repeat with C running through stuck clothing worn by the player:
-		say "Your [printed name of C] is ripped from your body by the force of the [if player-dragger is not monster]portal[otherwise]pull[end if], and destroyed. ";
+	repeat with C running through worn stuck clothing:
+		say "[BigNameDesc of C] is ripped from your body by the force of the [if player-dragger is not monster]portal[otherwise]pull[end if], and destroyed. ";
 		destroy C;
 	repeat with M running through monsters in the location of the player:
-		if R is not Dungeon12 and M is grabbing the player or M is penetrating an orifice:
-			say "[line break]The [printed name of M] is pulled [if player-dragger is not monster]through the portal [end if]with you!";
+		if R is unbossed and (M is grabbing the player or M is penetrating an orifice):
+			say "[line break][BigNameDesc of M] is pulled [if player-dragger is not monster]through the portal [end if]with you!";
 			now M is in R;
-			if M is grabbing the player and M is not ghostly tentacle:
+			if M is grabbing the player and M is not ghostly tentacle and M is not penetrating a body part:
 				say "In the confusion, [he of M] loses [his of M] grip on you!";
-				now M is not grabbing the player;
+				dislodge M;
 		if gladiator-sword is worn and M is dangerous, BurdenUp gladiator-sword by 1;
 	repeat with T running through things penetrating a body part:
 		unless T is worn or T is player-dragger, dislodge T;
 	repeat with T running through things grabbing the player:
-		unless T is ghostly tentacle, dislodge T;
+		unless T is ghostly tentacle or T is player-dragger, dislodge T;
 	repeat with C running through held store clothing:
 		compute stealing of C;
 		if shopkeeper is interested and the shopkeeper is in the location of the player, increase the stolen-aware of shopkeeper by 1;
@@ -41,9 +41,9 @@ To drag to (R - a room) by (M - a monster):[TODO: player can't be dragged when s
 	check shopstealing of M;
 	fix map-drag to R;
 	now player-dragger is M;
+	now M is in R;
 	teleport to R;
 	now player-dragger is yourself;
-	now M is in the location of the player;
 	say DragArrival of M to R.
 
 To fix map-drag to (R - a room):
@@ -68,7 +68,7 @@ To check shopstealing of (M - a monster):
 		repeat with C running through held store clothing:
 			compute stealing of C;
 		if X > 0:
-			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault. [line break][speech style of M]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
+			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault.[line break][speech style of M]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";
 			now shopkeeper is interested;
 			increase the stolen-aware of shopkeeper by 1;
 			anger shopkeeper.

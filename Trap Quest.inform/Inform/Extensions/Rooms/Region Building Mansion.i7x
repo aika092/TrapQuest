@@ -45,6 +45,13 @@ To Set Up The Mansion:
 	follow the set up mansion traps rules;
 	repeat with M running through alive monsters in the mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
+	[let N1 be the regionalMonsterCount of the Mansion;]
+	repeat with N2 running from 1 to startingRegionalMonsterCount:
+		let M be a random off-stage mansion dwelling regionally missing monster;
+		if M is not monster, now M is a random off-stage mansion dwelling monster;
+		if M is monster:
+			set up M;
+			now M is in a random placed haunted room;
 	let N be 0;
 	let Nattempts be 0;
 	while N < 4:

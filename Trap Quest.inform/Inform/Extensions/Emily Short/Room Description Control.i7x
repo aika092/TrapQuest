@@ -108,18 +108,18 @@ To decide whether (X - a thing) nominally matches (Y - a thing):
 [Used to be: "To call (RL - an objects based rule) on everything in scope:", but 6M62 will only have it this way]
 To call (RL - a rule) on everything in scope:
 (-
-   processing_rule = {RL};
-   LoopOverScope(Process_single_item);
+  processing_rule = {RL};
+  LoopOverScope(Process_single_item);
 -)
 
 The scope processing rules are an object-based rulebook.
 
 Include (-
-  Global processing_rule = 0;
+ Global processing_rule = 0;
 
-  [ Process_single_item o;
-	FollowRulebook(processing_rule, o, true);
-  ];
+ [ Process_single_item o;
+	 FollowRulebook(processing_rule, o, true);
+ ];
 -) after "Definitions.i6t".
 
 A scope processing rule for a thing (called n) (this is the swift rule): now n is marked for listing.

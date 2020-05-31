@@ -228,77 +228,13 @@ REQUIRES COMMENTING
 *!]
 The set up mansion traps rules is a rulebook.
 
-[!<RoomIsTrapped>+
+Definition: a room is trapped rather than untrapped if there is a trap in it.
 
-REQUIRES COMMENTING
+Definition: a room is click trapped rather than click untrapped if there is a click trap in it.
 
-+!]
-Definition: a room is trapped:
-	if there is a trap in it, decide yes;
-	decide no.
+Definition: a room is wire trapped rather than wire untrapped if there is a wire trap in it.
 
-[!<RoomIsUntrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is untrapped:
-	if it is trapped, decide no;
-	decide yes.
-
-[!<RoomIsClickTrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is click trapped:
-	if there is a click trap in it, decide yes;
-	decide no.
-
-[!<RoomIsClickUntrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is click untrapped:
-	if it is click trapped, decide no;
-	decide yes.
-
-[!<RoomIsWireTrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is wire trapped:
-	if there is a wire trap in it, decide yes;
-	decide no.
-
-[!<RoomIsWireUntrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is wire untrapped:
-	if it is wire trapped, decide no;
-	decide yes.
-
-[!<RoomIsPressureTrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is pressure trapped:
-	if there is a pressure trap in it, decide yes;
-	decide no.
-
-[!<RoomIsPressureUntrapped>+
-
-REQUIRES COMMENTING
-
-+!]
-Definition: a room is pressure untrapped:
-	if it is pressure trapped, decide no;
-	decide yes.
+Definition: a room is pressure trapped rather than pressure untrapped if there is a pressure trap in it.
 
 To say TriggeredTrapReactFlav of (M - a monster):
 	say "[BigNameDesc of M] [one of]smirks[or]harrumphs[or]chuckles[or]clicks [his of M] tongue[at random].[line break][speech style of M]'[one of]I didn't see that coming[or]Trust you to fall for that[or]Whoopsie[or]Mind yourself[or]That was clumsy of you[or]How unfortunate[or]Watch yourself around here[or]You've got to be more careful than that[or]That sort of thing will keep happening if you're not careful[in random order].'[roman type][line break]".

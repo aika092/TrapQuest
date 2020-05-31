@@ -8,9 +8,6 @@ To say ExamineDesc of (C - a guest bed):
 To decide which figure-name is the examine-image of (C - a guest bed):
 	decide on figure of hotel bed.
 
-To say RestingDesc of (F - a guest bed):
-	say "You [one of]get into the bed and [or]continue to [stopping]relax on the comfortable mattress. [one of]It's pleasant and warm underneath the covers.[or][stopping]".
-
 To compute rest ending of (F - a guest bed):
 	if the holeCount of F > 0:
 		let O be a random orifice penetrated by F;
@@ -71,7 +68,7 @@ To compute unique normal effect of (F - a guest bed):
 To compute song effect of (F - a guest bed):
 	let N be the song of F;
 	if N < 10:
-		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultist's voice.";
+		if N is 4, say "Your field of view seems to darken, and you feel yourself slipping deeper and deeper into the sound of the cultists's voice.";
 		if N is 7, say "You barely notice the sheets tightening as your vision fades completely, and the endless face of the void slowly leaks into your mind. Someone is singing.";
 		if N is 10, say "Nothing. No light. No sound. Only them.".
 
@@ -82,7 +79,7 @@ To say RestingDesc of (F - a guest bed):
 	if N < 4:
 		say "You [one of][or]continue to [stopping]rest on the comfortable mattress[if M is in the location of the player]. [BigNameDesc of M] [one of]twists [his of M] nipples[or]strokes [his of M] clit[or]fondles [himself of M][or]paws at [himself of M][or]fondles you through the covers[or][at random] [one of]as [he of M] whispers incomprehensible lyrics into your ear[or]as [he of M] moans [his of M] song into your ear[or]as [he of M] croons lecherously[at random][end if].";
 	otherwise if N < 7:
-		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M]'s words.[or]watching every movement of [NameDesc of M]'s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M]'s voice.[or], hanging onto [NameDesc of M]'s every word.[at random]";
+		say "You continue to rest on the comfortable mattress, [one of]silently repeating [NameDesc of M][']s words.[or]watching every movement of [NameDesc of M][']s lips.[or], feeling yourself drifting to rhythm of [NameDesc of M][']s voice.[or], hanging onto [NameDesc of M][']s every word.[at random]";
 	otherwise if N < 11 or diaper quest is 1:
 		say "[if N is 10]You continue resting, [one of]treasuring the soothing blankness in your mind.[or]whispering to yourself into a language you do not know.[or]anticipating... them.[at random][end if]";
 		now player-hypno-great is 1;

@@ -16,7 +16,7 @@ To compute trolling:
 
 april fools done is a number that varies.
 To compute april fools:
-	do nothing.
+	now april fools done is 1.
 
 To decide which number is cheater-validation:
 	decide on 0.

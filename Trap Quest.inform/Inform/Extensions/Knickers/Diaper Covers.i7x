@@ -4,17 +4,20 @@ diaper cover is a kind of clothing. The armour of diaper cover is 10. A diaper c
 
 Definition: a diaper cover is baby themed: decide yes.
 Definition: a diaper cover is pink themed: decide yes.
-Definition: a diaper cover is fetish appropriate if diaper lover > 0.
+Definition: a diaper cover is fetish appropriate if diaper quest is 1.
 Definition: a diaper cover is product if it is fetish appropriate.
 Definition: a diaper cover is recipe specific: decide yes.
 
 To decide which number is the alchemy key of (C - a diaper cover):
-	if diaper quest is 0, decide on 0;
-	decide on 18.
+	if C is product, decide on 18;
+	decide on 0.
+
+To decide which text is the RecipeDesc of (B - a diaper cover):
+	decide on "The recipe just says 'Pee-soaked underwear'.".
 
 To compute recipe specific cursing of (T - a diaper cover):
 	if the noun is knickers:
-		if the urine-soak of T > 0 and T is diaper:
+		if the urine-soak of T > 0 and T is not diaper:
 			now T is blessed;
 		otherwise if the urine-soak of T > 0:
 			now T is bland;

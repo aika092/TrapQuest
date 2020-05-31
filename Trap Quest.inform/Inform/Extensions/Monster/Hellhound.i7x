@@ -8,9 +8,9 @@ To decide which figure-name is the monster-image of (M - hellhound):
 
 Understand "hell", "hound", "dog", "puppy", "slave" as hellhound. The text-shortcut of hellhound is "hh".
 
-Definition: hellhound (called M) is mansion dwelling:
-	if mythical creature fetish is 0 and diaper quest is 0, decide no;
-	decide yes.
+Definition: hellhound is mansion dwelling if mythical creature fetish is 1 or diaper quest is 1.
+
+Definition: hellhound is musky: decide yes.
 
 Definition: hellhound is infernal: decide yes.
 
@@ -22,20 +22,20 @@ To say MediumDesc of (M - hellhound):
 
 To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
-		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane[if a random pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
+		say "This huge black canine is as tall as you even when it's on all fours. Its spiked tail, sharp fangs and elongated claws are dead give-aways that it is from another plane[if a random pet collar is off-stage]It holds a collar and leash in its mouth, as if it's looking for someone to take it on a walk, or more likely, a pet of its own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
 		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] is completely visible, adorned with a black cock ring near the base[end if].".
 
 To set up (M - hellhound):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 7;
+	now the raw difficulty of M is 7;
 	if mythical creature fetish is 0, now M is intelligent;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial hellhound rule:
+[This is the spawn initial hellhound rule:
 	if hellhound is off-stage and hellhound is mansion dwelling, summon hellhound in the mansion.
-The spawn initial hellhound rule is listed in the setting up mansion monsters rules.
+The spawn initial hellhound rule is listed in the setting up mansion monsters rules.]
 
 To decide which number is the girth of (M - hellhound):
 	if mythical creature fetish is 0, decide on 2;
@@ -52,7 +52,7 @@ Definition: hellhound is willing to do titfucks: decide no.
 hellhound has a number called peeTimer.
 
 To compute unique periodic effect of (M - hellhound):
-	unless M is dangerous:
+	unless M is dangerous or M is seduced:
 		if diaper quest is 1:
 			increase the peeTimer of M by 1;
 			if a random number between 30 and 1000 <= the peeTimer of M:
@@ -96,7 +96,7 @@ Definition: a hellhound (called M) is father material:
 	decide no.
 
 [For some reason the 'father material' thing was commented out, and I didn't see this, so I've commented it for now.
-###MG of the future: My guess is that this was commented out due to the new U.K. laws? That's the only explanation that comes to mind for me.
+###MG of the future: My guess is that this was commented out due to the new UK. laws? That's the only explanation that comes to mind for me.
 
 To say PregGrowth of (M - hellhound):
 	say "the [ShortDesc of M]";
@@ -249,8 +249,10 @@ To decide if (M - hellhound) is willing to creampie (F - asshole):
 	decide no.
 
 To decide if (M - hellhound) is willing to creampie (F - vagina):
-	if the class of the player is catgirl, decide no;
-	if the class of the player is puppygirl or the class of the player is succubus, decide yes;
+	if there is a worn xavier's cunt tattoo, decide no;
+	if the player is pheromonal, decide yes;
+	if the class of the player is catgirl, decide no;[you can still get creampied if you count as pheromonal]
+	if the class of the player is succubus, decide yes;
 	if the class of the player is priestess:
 		if the virgin bonus of the player < 0 or the player is a sissy, decide yes;[sissy priestesses or deflowered priestesses]
 		decide no;[normally he can't vaginally creampie priestesses at all]
@@ -309,7 +311,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 	if the sex-length of M <= 0:
 		now M is unknotted;
 		dislodge M;
-		say "[BigNameDesc of M]'s [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] finally deflates and [he of M] walks away, [his of M] [DickDesc of M] plopping out of your hole as the gap between you grows. [big he of M] doesn't look back, not even bothering to acknowledge that [he of M][']s no longer dragging you along with [him of M].";
+		say "[BigNameDesc of M][']s [if mythical creature fetish is 0]cock ring[otherwise]knot[end if] finally deflates and [he of M] walks away, [his of M] [DickDesc of M] plopping out of your hole as the gap between you grows. [big he of M] doesn't look back, not even bothering to acknowledge that [he of M][']s no longer dragging you along with [him of M].";
 		bore M;
 		let H be a random off-stage puppy ears;
 		if H is actually summonable:
@@ -323,7 +325,7 @@ To compute knotting of (M - hellhound) in (F - a fuckhole):
 			if delayed stand is 0: [This prevents a glitch with autostanding and the gladiator dragging]
 				drag to Mansion08 by M;
 		ruin F;
-		say "[BigNameDesc of M]'s [semen] continues to slowly flow into you.";
+		say "[BigNameDesc of M][']s [semen] continues to slowly flow into you.";
 		if M is penetrating asshole, Assfill 1;
 		otherwise PussyFill 1;
 		decrease the sex-length of M by 1;
@@ -491,17 +493,9 @@ The hellhound extra continue sex check rule is listed in the hellhound continue 
 
 Section 3 - Damage
 
-To compute damage of (M - hellhound):
-	if the health of M > 0:
-		if M is uninterested:
-			say "[BigNameDesc of M] barks [if mythical creature fetish is 0]playfully and turns to face you[otherwise]angrily, with a terrifying demonic echo[end if]. Uh-oh...";
-			now M is interested;
-			anger M;
-			now the sex-length of M is 4;
-		otherwise:
-			say DamageReaction (the health of M) of M;
-	otherwise:
-		compute death of M.
+To say CombatProvokedReaction of (M - hellhound):
+		say "[BigNameDesc of M] barks [if mythical creature fetish is 0]playfully and turns to face you[otherwise]angrily, with a terrifying demonic echo[end if]. Uh-oh...";
+		now the sex-length of M is 4.
 
 To say DamageReactHealthy of (M - hellhound):
 	say "[BigNameDesc of M] ignores the impact and continues [his of M] assault!".
@@ -515,16 +509,19 @@ To say DamageReactTired of (M - hellhound):
 To say DamageReactWeak of (M - hellhound):
 	say "[BigNameDesc of M] seems too injured to keep going for too much longer!".
 
+To say BanishFleeFlav of (M - hellhound):
+	say "[BigNameDesc of M] limps away, howling in pain! You get the feeling you won't be seeing [him of M] again any time soon!".
+
 Part - Conversation
 
 To compute greeting response of (M - hellhound):
-	if M is not intelligent:
+	if M is unintelligent:
 		say MuteGreetResponse of M;
 	otherwise:
 		say "[speech style of M]'[one of]Arf[or]Woof[or]Ruff[or]Woof woof[in random order]!'[roman type][line break]".
 
 To compute talk option (N - 2) to (M - hellhound):
-	if M is not intelligent:
+	if M is unintelligent:
 		say MuteQuestionResponse of M;
 	otherwise:
 		say WhoQuestion of M;

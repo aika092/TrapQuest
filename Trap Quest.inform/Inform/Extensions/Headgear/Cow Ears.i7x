@@ -36,27 +36,6 @@ To compute unique periodic effect of (H - cow-ears):
 	if the temporary-milked-bonus of H > 0:
 		decrease temporary-milked-bonus of H by 1;
 		if temporary-milked-bonus of H <= 0, say "[bold type]The temporary dexterity boost you had from recently getting milked has ended.[roman type][line break]";
-	compute cowgirl horniness.
-
-cow-horny-charge is a number that varies.
-
-To compute cowgirl horniness:[cowgirls get horny if they're in the dungeon at the same time as the minotaur.]
-	if playerRegion is Dungeon and minotaur is alive and the class of the player is cowgirl:
-		if minotaur is in the location of the player and the arousal of the player < 3000 and the player is able to get horny:
-			say "All it takes is one whiff of the [minotaur]'s virile musk to send a wave of arousal rippling through your body. [line break][second custom style]M-moooo.[roman type][line break]";
-			now the arousal of the player is 3500;[the cowgirl is instantly horny in the same room as the minotaur, no matter what]
-		otherwise if minotaur is in the location of the player and a random number between 1 and 3 is 1:
-			say "Spending time close to the [minotaur] is causing your body to react to [his of minotaur] potent virile hormones. You [if the arousal of the player > 1]get even more aroused![otherwise]can feel arousal building up inside you![end if]";
-			arouse 300;
-		otherwise if the player is in Dungeon36 and minotaur is not in the location of the player and a random number between 1 and 3 is 1:
-			say "Although the [minotaur] isn't around, [his of minotaur] musk still hangs over [his of minotaur] cage, slowly building up your arousal.";
-			arouse 150;
-		otherwise:
-			increase cow-horny-charge by 1;
-			if cow-horny-charge > 15:
-				now cow-horny-charge is 0;
-				say "You catch a whiff of a heavy, masculine scent and start to feel a little [if the arousal of the player > 1]more [end if]turned on.";
-				arouse 150.
 
 Chapter - Class Outfit
 
@@ -106,8 +85,8 @@ To compute class outfit of (H - cow-ears):
 		now P is milk production;
 		if T is actually summonable, summon T;
 		now cow-summoned is 1;
-	otherwise if the class of the player is cowgirl and cowbell is off-stage and cowbell is actually summonable:
-		say "[bold type]You feel a sudden coldness on your chest. You look down to see that a cowbell has appeared![roman type][line break]";
+	otherwise if the class of the player is cowgirl and cowbell is actually summonable:
+		say "[bold type]You feel a sudden coldness on your chest. You look down to see that [if cowbell is held]the cowbell has reappeared[otherwise]a cowbell has appeared[end if]![roman type][line break]";
 		summon cowbell;
 	otherwise if the class of the player is cowgirl and G is actually summonable:
 		say "[bold type]New boots appear around your ankles! They have a cow pattern![roman type][line break]";
@@ -150,5 +129,31 @@ To progress quest of (Q - milking-quest):
 					compute quest completion of Q on C;
 				otherwise:
 					say "Your [ShortDesc of C] pulse happily. [one of]If you keep up this sort of milking routine, you're sure to be rewarded eventually[or]Keep it up[stopping]!".
+
+Chapter - Cow horns
+
+cow-horns is a headgear. cow-horns is biological. Figure of cow horns is the file "Items/Accessories/Head/cowhorns1.png". Understand "pair", "pair of", "cow", "horns" as cow-horns. cow-horns is hair growing. cow-horns is milk-taste-addiction-influencing.
+
+The printed name of cow-horns is "[clothing-title-before]pair of cow horns[clothing-title-after]". The text-shortcut of cow-horns is "ches".
+
+To decide which figure-name is the clothing-image of (C - cow-horns):
+	decide on figure of cow horns.
+
+Definition: cow-horns is destructible: decide no.
+
+Definition: cow-horns is fluid immune: decide yes.
+
+Definition: cow-horns is cow themed: decide yes.
+Definition: cow-horns is white themed: decide yes.
+
+To uniquely set up (C - cow-horns):
+	now the quest of C is babymaking-quest;
+	if the pregnancy of the player > 0 and the pregnancy of the player < 3, now the previously-pregnant of babymaking-quest is 1.
+
+To say ClothingDesc of (H - cow-horns):
+	say "A pair of stubby cow horns poking out of your forehead. [unless H is removable]They seem to be real![otherwise]Luckily they're only attached to a headband.[end if]".
+
+To compute SelfExamineDesc of (H - cow-horns):
+	say "You [unless H is removable]have a pair of horns protruding from your head.[otherwise]are wearing a headband with a pair of horns.".
 
 Cow Ears ends here.

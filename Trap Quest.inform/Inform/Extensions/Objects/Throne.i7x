@@ -8,16 +8,16 @@ To decide which figure-name is the examine-image of (C - throne):
 			if the largeness of belly > 5, decide on figure of throne cutscene 2;
 			otherwise decide on figure of throne cutscene 1;
 		otherwise if the largeness of belly > 7:
-			 decide on figure of throne cutscene 4;
+			decide on figure of throne cutscene 4;
 		otherwise if the largeness of belly > 5:
-			 decide on figure of throne cutscene 3;
+			decide on figure of throne cutscene 3;
 		otherwise:
-			 decide on figure of throne cutscene 1;
+			decide on figure of throne cutscene 1;
 	if C is untransformed, decide on figure of throne;
-	decide on figure of potty throne.
+	decide on figure of transformed throne.
 
 To say ExamineDesc of (C - throne):
-	if the noun is untransformed, say "A pink and gold throne clearly fit for a royal lady. Pink frills at the bottom obscure what could be underneath the throne.";
+	if the noun is untransformed, say "A pink and silver throne clearly fit for a royal lady. Pink frills at the bottom obscure what could be underneath the throne.";
 	otherwise say "A pink plastic chair cheaply fashioned into a princess theme through a crown decal on the backrest. A hole in the middle of the seat contains a training potty.".
 
 To say EnvironmentDesc of (T - throne):
@@ -37,8 +37,6 @@ Definition: yourself is throne stuck:
 
 Does the player mean entering the throne: it is very likely.
 
-Figure of throne is the file "Env/Dungeon/throne1.png".
-Figure of potty throne is the file "Env/Dungeon/throne2.png".
 [
 Definitions for the throne:
 Triggered - Player is interacting with the throne in some way.
@@ -186,7 +184,12 @@ Check entering the throne:
 		otherwise if R is 7:
 			if the largeness of hair > 6:
 				say "You hear a metal slice from behind you. You turn around and see that your hair has been cut back down to shoulder length! You can see the cut strands of your [HairColour] hair on the floor behind the throne.";
-				now the raw largeness of hair is 6;
+				let F be 6 - the raw largeness of hair;
+				if F < the fake largeness of hair: [all extensions are cut off first]
+					now the fake largeness of hair is F;
+					if the fake largeness of hair < 0, now the fake largeness of hair is 0;
+				if the largeness of hair > 6:
+					now the raw largeness of hair is 6;
 			otherwise if the redness of hair > 0:
 				say "Your hair feels pleasant, and you feel somewhat less stiff.";
 				HairRedDown 1;
@@ -313,7 +316,7 @@ A time based rule (this is the compute throne rule):
 				if the TrapNo of the throne is 6:
 					say "Your [BellyDesc] is still expanding...";
 				if the TrapNo of the throne is 7:
-					while the total fill of belly < 20 and the number of worn slimegirls is 0:
+					while the total fill of belly < 20 and slimegirl is not worn:
 						assfill 1;
 					say "You [if pregnancy fetish is 1 and the largeness of belly > 6]now look like you are in the late stages of pregnancy[otherwise if the largeness of belly > 6]feel more full then you realised it was possible to feel[otherwise]feel weird[end if]. [if the largeness of breasts > 10 and extreme proportions fetish is 1]In combination with your [BreastDesc] which have now been squashed above it, you can see nothing but your own swollen flesh. [end if][if the throne is untriggered]The binds holding your [ShortDesc of thighs] are finally released. You should probably try and stand up now before you burst![end if]";
 					AnalCount;
@@ -368,8 +371,9 @@ To ThroneDisconnect:
 		summon P cursed with quest;
 		assign size (the openness of asshole + 2) to P;
 		if the openness of asshole < 9, say "You can feel your [asshole] being kept open more than you can take comfortably!";
-	otherwise if the largeness of belly > 3:
-		 cutshow figure of throne cutscene 6 for the throne;
+	otherwise:
+		if the largeness of belly > 3, cutshow figure of throne cutscene 6 for the throne;
+		otherwise cutshow figure of transformed throne for the throne;
 	if the weight of belly > 18:
 		if seconds is 0, allocate 3 seconds;
 		say "After you stand up, you immediately fall over under the weight of your [BellyDesc][if the weight of breasts > 18] and [BreastDesc][end if]. ";

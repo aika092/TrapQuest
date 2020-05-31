@@ -23,15 +23,15 @@ To say MonsterDesc of (M - a robochef):
 To set up (M - a robochef):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 8;
+	now the raw difficulty of M is 8;
 	now the health of M is the maxhealth of M.
 
-This is the spawn initial robochef rule:
+[This is the spawn initial robochef rule:
 	if the number of alive robochefs is 0:
 		let M be a random robochef;
 		if debugmode > 0, say "Summoning chef in hotel.";
 		summon M in the hotel.
-The spawn initial robochef rule is listed in the setting up hotel monsters rules.
+The spawn initial robochef rule is listed in the setting up hotel monsters rules.]
 
 To decide which number is the girth of (M - a robochef):
 	decide on 4.
@@ -176,7 +176,7 @@ To compute unique climax of (M - a robochef) in (F - asshole):
 	if M is wrapped:
 		compute condom filling of M;
 	otherwise:
-		say "You can feel the filling of [NameDesc of M]'s [manly-penis] being squirted straight into your belly!";
+		say "You can feel the filling of [NameDesc of M][']s [manly-penis] being squirted straight into your belly!";
 		AssFill 6 - ((watersports fetish * 2) + (lactation fetish * 2));
 		if watersports fetish is 1, AssFill 2 Urine;
 		if lactation fetish is 1, AssFill 2 Milk;
@@ -195,7 +195,7 @@ To compute condom filling of (M - a robochef):
 	progress quest of condom-creampie-quest.
 
 To say CondomAcceptFlav of (M - a robochef):
-	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M]'s glass penis retracts into [his of M] body, replacing itself with a black rubber dildo of the same size.".
+	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M][']s glass penis retracts into its body, replacing itself with a black rubber dildo of the same size.".
 
 Chapter 2 - DQ
 
@@ -212,10 +212,10 @@ To say ForcefeedDeclarationFlav of (M - a robochef):
 	say "[speech style of M]'[one of][caps please] OPEN YOUR NUTRITION CONSUMPTION ORIFICE.'[or][caps please] REMAIN IN THE NUTRITION RECEPTION POSITION.'[in random order][roman type][line break]".
 
 To say ForcefeedStartFlav of (M - a robochef):
-	say "[BigNameDesc of M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place. A panel in the front of [NameDesc of M]'s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm. Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in. And then the first one does, depositing its load between your lips, followed immediately by another, and another. You are forced to keep swallowing just to keep up with the speed of the spoons. Fortunately, the food doesn't require chewing!".
+	say "[BigNameDesc of M] wheels around so that [he of M] is standing in front of you, with [his of M] arms holding your shoulders in place. A panel in the front of [NameDesc of M][']s torso opens, revealing rows of open jars of baby food, each with its own spoon on its own mechanical arm. Soon there are a queue of spoons, some with crushed banana, others with mushy peas and carrots, and others with stuff you can't even identify waiting to push their way in. And then the first one does, depositing its load between your lips, followed immediately by another, and another. You are forced to keep swallowing just to keep up with the speed of the spoons. Fortunately, the food doesn't require chewing!".
 
 To compute forcefeed round (N - a number) of (M - a robochef):
-	say "[BigNameDesc of M]'s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";
+	say "[BigNameDesc of M][']s robotic spoons continue to [one of]shovel[or]deposit[or]cram[in random order] baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";
 	[if diaper messing >= 3 and a random number between 1 and diaper lover > 1 and (the player is not thirsty or the player is hungry):
 		say "baby food into your mouth. You gobble the mouthfuls down as quickly as you can!";]
 	StomachFoodUp 2.
@@ -286,7 +286,7 @@ To compute (M - a robochef) considering (T - a thing):
 		compute M cooking T;
 		let D be a random chef food retained by M;
 		if D is chef food:
-			say "A grate opens up on [NameDesc of M]'s face as [he of M] takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as [he of M] processes your food, and after a sharp ding, [his of M] chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
+			say "A grate opens up on [NameDesc of M][']s face as it takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as it processes your food, and after a sharp ding, its chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
 			now D is held by the player;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;

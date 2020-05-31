@@ -2,8 +2,6 @@ RoboBellboy by Monster begins here.
 
 A robobellboy is a kind of robot. Understand "bellboy", "bell", "boy", "robot bellboy" as robobellboy. A robobellboy is usually intelligent. The favour of a robobellboy is usually 11. The leftover-type of a robobellboy is usually 117. A robobellboy has a number called whore-intent.
 
-Definition: A robobellboy is hotel dwelling: decide yes.
-
 Figure of robobellboy is the file "NPCs/Hotel/Robot/robobellboy1.png".
 
 Figure of RoboBellboy Cutscene 1 is the file "Special/Cutscene/cutscene-robobellboy-perception1.png".
@@ -29,13 +27,13 @@ To decide which figure-name is the monster-image of (M - a robobellboy):
 	decide on figure of robobellboy.
 
 To say MonsterDesc of (M - a robobellboy):
-	say "A small, human-shaped robot with a red uniform stylishly painted onto [his of M] clunky body. The words '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto [his of M] metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. [big he of M] has two bulging [']eyes['], which glow faintly as [he of M] hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of [his of M] oversized, accordion-like torso.".
+	say "A small, human-shaped robot with a red uniform stylishly painted onto its clunky body. The words '[if item described is mechanical robobellboy]Bell-Bot 1.3[otherwise if the item described is whirring robobellboy]Bellomatic 4000[otherwise if the item described is wheeled robobellboy]Peon Unit 4.0[otherwise if the item described is speedy robobellboy]BellTron 58[otherwise]BellTron 001[end if]' are printed directly onto its metal chassis, which has a seam running straight down the centre, allowing it to open up like a door. It has two bulging [']eyes['], which glow faintly as it hobbles around noisily on clumsy mechanical legs. You can occasionally hear small bits of radio feedback from the dimpled antennae on top, which seem to correspond with tiny micro-movements of its oversized, accordion-like torso.".
 
 To set up (M - a robobellboy):
 	reset M;
 	now the monstersetup of M is 1;
 	now the target-room of M is the location of a random on-stage hotel bed;
-	now the difficulty of M is 5;
+	now the raw difficulty of M is 5;
 	now the health of M is the maxhealth of M.
 
 To decide which room is the nearest patron:
@@ -48,14 +46,14 @@ To decide which room is the nearest patron:
 			now D is N;
 	decide on H.
 
-This is the spawn initial robobellboy rule:
+[This is the spawn initial robobellboy rule:
 	if the number of alive robobellboys is 0:
 		if debugmode > 0, say "Summoning bellboy in hotel.";
 		let M be a random robobellboy;
 		while M is senior robobellboy:[never the first one to spawn.]
 			now M is a random robobellboy;
 		summon M in the hotel.
-The spawn initial robobellboy rule is listed in the setting up hotel monsters rules.
+The spawn initial robobellboy rule is listed in the setting up hotel monsters rules.]
 
 Part 1 - Misc Flavour
 
@@ -76,7 +74,7 @@ To compute perception of (M - a robobellboy):
 		say "[first custom style]'NEARBY MESSY [if there is a worn diaper]DIAPER[otherwise]UNDERWEAR[end if] DETECTED. [caps please] ASSUME THE NAPPY INSPECTION SUBMISSION POSITION.'[roman type][line break]";
 		anger M;
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
-	otherwise if the class of the player is maid or the class of the player is hotel employment:
+	otherwise if the class of the player is maid or the player is hotel employed:
 		say "[first custom style]'SERVANT, YOUR SERVICES ARE REQUIRED.'[roman type][line break]";
 		anger M;
 	otherwise if M is babifying the player:
@@ -108,9 +106,9 @@ To compute perception of (M - senior robobellboy):
 		bore M;
 	otherwise if the training-progress of M > 2:
 		say "[big his of M] eyes turn red. [line break][speech style of M]'GOOD GOING TRAINEE. [caps please] KNEEL FOR YOUR TRAINING COMPLETION CEREMONY.'[roman type][line break]";
-	otherwise if (the class of the player is trained hooker or the class of the player is succubus) and the refactory-period of mechanic + the refactory-period of demon lord <= 0:
+	otherwise if (the player is a trained hooker or the class of the player is succubus) and the refractory-period of mechanic + the refractory-period of demon lord <= 0:
 		say "[big his of M] eyes turn red. [line break][speech style of M]'HELLO EMPLOYEE. SUBMIT IMMEDIATELY FOR PERFORMANCE REVIEW.'[roman type][line break]";
-	otherwise if the class of the player is maid or the class of the player is hooker in training:
+	otherwise if the class of the player is maid or the player is a hooker in training:
 		say "[big his of M] eyes turn red. [line break][speech style of M]HELLO TRAINEE. [caps please] SUBMIT FOR FURTHER PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is succubus:
 		say "[big his of M] eyes flicker red, then green. [line break][speech style of M]HELLO HONOURED EMPLOYEE. [caps please] DO NOT HURT ME.[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
@@ -120,7 +118,7 @@ To compute perception of (M - senior robobellboy):
 	otherwise if M is objectifying the player:
 		say "[big his of M] eyes turn red. [line break][speech style of M]'HELLO NEW TRAINEE. SEVERAL COMPLAINTS HAVE BEEN MADE OF YOUR LACKLUSTRE DEDICATION. SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.'[roman type][line break]";
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
-		say "[big his of M] eyes turn red. [speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALIZING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
+		say "[big his of M] eyes turn red. [speech style of M]'ERROR LINE 34, PATRON UNSUITABLE. INITIALISING EJECTION PROTOCOL... ERROR... ERROR... HELLO NEW TRAINEE. [caps please] SUBMIT IMMEDIATELY FOR PERFORMANCE OPTIMISATION.";
 	otherwise:
 		say "[speech style of M]HELLO TREASURED CUSTOMER. [caps please] ALLOW THE BUTLER TO ASSIST YOU.[roman type][line break][big he of M] appears to lose interest and continues on [his of M] way.";
 		bore M;
@@ -158,7 +156,7 @@ To compute trainee forcing of (M - a robobellboy):
 	let T be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a [C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a [C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you.";
 		bore M;
 		FavourUp M;
 	otherwise if trainee hood is off-stage and trainee hood is actually summonable:
@@ -167,7 +165,7 @@ To compute trainee forcing of (M - a robobellboy):
 		now D is trainee hood;
 	otherwise if T is clothing and T is actually summonable:
 		summon T;
-		say "[BigNameDesc of M] opens [his of M] chest compartment and pulls out a pair of [printed name of T]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where they emit a short tone and cling to your skin like glue.";
+		say "[BigNameDesc of M] opens its chest compartment and pulls out a pair of [printed name of T]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where they emit a short tone and cling to your skin like glue.";
 		now D is T;
 	if D is worn:
 		say "[first custom style]'[caps please] BE MORE CONSCIOUS OF YOUR PERFORMANCE IN THE FUTURE.'[roman type][line break]";
@@ -229,7 +227,7 @@ To compute bra forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-bra clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, [NameDesc of M] seems to be happy leaving you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -251,7 +249,7 @@ To compute knickers forcing of (M - a robobellboy):
 		now C is a random off-stage super-slutty-knickers clothing;
 		increase N by 1;
 	if C is actually summonable clothing:
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where it sticks to your skin like glue. After this, [he of M] seems to be happy to leave you alone.";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where it sticks to your skin like glue. After this, it seems to be happy to leave you alone.";
 		summon C cursed with quest;
 		bore M;
 		FavourUp M;
@@ -342,21 +340,14 @@ To say MediumDesc of (M - senior robobellboy):
 
 To ProgressUp (M - senior robobellboy):
 	if the training-progress of M >= 0, increase the training-progress of M by 1;
-	if the training-progress of M >= 3, say "You hear a computerised voice speaking in your head. [line break][second custom style][if the class of the player is trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
+	if the training-progress of M >= 3, say "You hear a computerized voice speaking in your head. [line break][second custom style][if the player is a trained hooker]CONGRATULATIONS ON COMPLETING YOUR IMPROVEMENT PROGRAM, EMPLOYEE. ALWAYS KEEP IMPROVING[otherwise]CONGRATULATIONS, TRAINEE. YOU HAVE COMPLETED [training-progress of M] EMPLOYEE IMPROVEMENT PROGRAMS. [caps please] SEE THE SENIOR ROBOBELLBOY FOR CERTIFICATION[end if].'[roman type][line break]";
 
-To compute unique death of (M - senior robobellboy):
-	say "[BigNameDesc of M] falls apart and clatters to the ground.";
-	let D be a random off-stage mechanical joint;
-	if D is mechanical joint:
-		now D is in the location of the player;
-		say "You manage to salvage a working [D].";
-		compute autotaking D;
+To compute unique banishment of (M - senior robobellboy):
 	let L be a random off-stage leftover;
 	now the leftover-type of L is the leftover-type of M;
 	now L is in the location of the player;
 	repeat with H running through worn clothing:
-		if H is trainee hood or H is trainee bra or H is trainee thigh highs, demagnetise H;
-	destroy M.
+		if H is trainee hood or H is trainee bra or H is trainee thigh highs, demagnetise H.
 
 To compute trainee forcing of (M - senior robobellboy):
 	if there is a worn free ride tattoo and the training-progress of M is 3, now the training-progress of M is -1;
@@ -389,7 +380,7 @@ To compute trainee forcing of (M - senior robobellboy):
 To compute headgear forcing of (M - senior robobellboy):
 	if trainee hood is off-stage and trainee hood is actually summonable:
 		summon trainee hood;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
 		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green. [line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
@@ -399,7 +390,7 @@ To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -409,7 +400,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
+		say "[BigNameDesc of M] opens up its chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -418,7 +409,7 @@ To compute knickers forcing of (M - senior robobellboy):
 To compute whore forcing of (M - senior robobellboy):
 	let D be a random alive mechanic;
 	unless D is monster, now D is a random alive demon lord;
-	if D is monster and the refactory-period of D <= 0:
+	if D is monster and the refractory-period of D <= 0:
 		if D is not in the location of the player:
 			drag to (the location of D) by M;
 		otherwise:

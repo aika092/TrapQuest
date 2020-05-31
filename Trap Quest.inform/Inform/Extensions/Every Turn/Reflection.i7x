@@ -6,14 +6,16 @@ Compute stuff to do with humiliation and reflection that happens every turn.
 We reduce the player's humiliation by the number of seconds, and then we check if it's time to output some more random flavour as the player reflects on their situation.
 
 +!]
-A later time based rule (this is the reflection rule):
+An all later time based rule (this is the reflection rule):
 	let N be 239; [The number of seconds between each reflection]
 	if the remainder after dividing time-earnings by N < time-seconds and the player is not a nympho:
 		say HumiliationFlav;
 	otherwise if the number of interested monsters in the location of the player is 0 and the player is not immobile:
 		say StatsChangedFlav;
-	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus, humiliate time-seconds;
-	otherwise dignify time-seconds.
+	if the strut of the player is 1 and the player is upright and the player is not immobile and there is a worn heels and the player-class is not succubus:
+		humiliate time-seconds;
+	otherwise if playerRegion is not school:
+		dignify time-seconds.
 
 [!<HumiliatingSituation>@
 
@@ -44,7 +46,7 @@ Definition: throne-fucked (called A) is applicable:
 	if the player is not shameless and the throne is filling asshole, decide yes;
 	decide no.
 To reflect on (A - throne-fucked):
-	say "[first custom style][one of]This is literally the most embarrassing thing that has ever happened to me.[or]This has got to stop! Why did I sit here...[or]Okay, this is the LAST time I let this happen...[or]Fuck, my belly is ridiculously huge![stopping][roman type][line break]".
+	say "[first custom style][one of]This is literally the most embarrassing thing that has ever happened to me.[or]This has got to stop! Why did I sit here...[or]Okay this is the LAST time I let this happen...[or]Fuck, my belly is ridiculously huge![stopping][roman type][line break]".
 
 huge-tits is a humiliating situation.
 Definition: huge-tits (called A) is applicable:
@@ -163,7 +165,7 @@ To reflect on (A - chubby-slut):
 	if the fat-weight of the player > 30:
 		say "[variable custom style][one of]Oh god, I'm so obese I can hardly move![or]I'm such a waste of space, literally.[or]I'm so disgracefully lazy that my body has ended up like this. Don't look at me![in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 22:
-		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat! Nobody is going to want to have sex with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
+		say "[variable custom style][one of]I'm so fat... I look disgusting![or]I'm so horribly fat! Nobody is going to want to have [if the sex addiction of the player > 5]sex[otherwise]anything to do[end if] with me...[or]If I don't even respect myself enough to keep in shape, then why should other people respect me?[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 14:
 		say "[variable custom style][one of]Uh-oh, I'm really quite a heavy [if the player is female]girl[otherwise]person[end if] now aren't I?[or]Oops, I've really started to let myself go! I should probably be less lazy...[in random order][roman type][line break]";
 	otherwise if the fat-weight of the player > 8:
@@ -199,6 +201,21 @@ Definition: outrageous-messy-undies (called A) is applicable:
 To reflect on (A - outrageous-messy-undies):
 	if the player is upset about sitting in mess, say "[variable custom style][one of]I need to get out of this nasty messy prison before someone checks me! But how do I do that...?![or]Oh this is so gross, I can smell my own mess! I give up, someone please come and give me a change already...[or]Yuck yuck yuck, I need to get out of my own filth before someone smells me! I just need to find a bath, or shower, or even a pond would do![in random order][roman type][line break]";
 	otherwise say "[variable custom style][one of]If someone caught me in this messy situation, my reputation would never recover! I should probably find a way to get clean before that happens.[or]If someone realises I'm messy it'll be so embarrassing... I'd rather just stay messy rather than face the humiliation of getting a change from another person![in random order][roman type][line break]".
+
+glazed-body is a humiliating situation.
+Definition: glazed-body (called A) is applicable:
+	if the player is not shameless and the number of glazed body parts > 0 and the semen addiction of the player < 4, decide yes;
+	decide no.
+To reflect on (A - glazed-body):
+	let F be a random glazed body part;
+	say "[variable custom style]'[one of]I can't believe I'm walking around with [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]! I'm such a disgrace....'[or]There's [semen] actually [if the number of glazed body parts is 1]on my [printed name of F][otherwise]all over my body[end if]...This is so disgusting!'[or]There's no way there's really [semen] all over my [if the number of glazed body parts is 1][printed name of F][otherwise]body[end if]There's no way. There's no fucking way...'[in random order][roman type]".
+
+visible-erection is a humiliating situation.
+Definition: visible-erection is applicable:
+	if the size of penis > 2 and penis is exposed and penis is penis-erect and the player is modest, decide yes;
+	decide no.
+To reflect on (A - visible-erection):
+	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarrassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
 
 [!<SayHumiliationFlav>+
 
@@ -301,7 +318,7 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]I don't think I can jump really high any more.[if the largeness of breasts > 13] Oh well, it still makes my boobs bounce around![end if][roman type][line break][or][stopping]";
 			otherwise:
 				if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]I feel less like a ninja now.[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively! Tee-hee![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively! Tee hee![roman type][line break][or][stopping]";
 			now the old dexterity of the player is saved-flat-dexterity;
 			break;
 		if the old intelligence of the player is 0:

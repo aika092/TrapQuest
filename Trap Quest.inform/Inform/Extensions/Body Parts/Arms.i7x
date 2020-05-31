@@ -12,7 +12,7 @@ REQUIRES COMMENTING
 arms is a limb. arms is everywhere.
 
 To say FullExamineDesc of (B - arms):
-	say "[if weight gain fetish is 1][TotalDesc of arms][otherwise]There's nothing interesting to note about your arms.[end if]".
+	say "[if weight gain fetish is 1][TotalDesc of arms][otherwise if realisticArms is 0 or (entry 1 of the armUses of arms is arms and entry 2 of the armUses of arms is arms)]There's nothing interesting to note about your arms. [end if][if entry 2 of the armUses of arms is not arms]Your left hand is covering [NameDesc of entry 2 of the armUses of arms]. [end if][if entry 1 of the armUses of arms is not arms]Your right hand is covering [NameDesc of entry 1 of the armUses of arms]. [end if][if realisticArms is 1 and the player is not shameless]You can decide what you cover with your arms using the command [bold type][']adjust arms['][roman type]. [end if][if debuginfo > 0 and the number of entries in the armUses of arms > 2]BUG - too many entries in arm positions: [armUses of arms].[otherwise if debugmode > 0](Arm positions list: [armUses of arms])[line break][end if]".
 
 [!<Arms>@<fatBurning:Integer>*
 
@@ -61,13 +61,13 @@ To compute arm fat burning:
 
 Part 2 - Description
 
-[!<SayShortDescOfArms>+
+To say NameDesc of (C - arms):
+	say "your [ShortDesc of arms]".
+To say BigNameDesc of (C - arms):
+	say "Your [ShortDesc of arms]".
 
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of arms:
-	say "arms".
+	say "arm[if entry 1 in the armUses of arms is entry 2 in the armUses of arms]s[end if]".
 
 [!<SayTotalDescOfArms>+
 
@@ -112,5 +112,208 @@ To FatArmsDown (X - a number):
 	while X > 0:
 		if the flesh volume of arms > 0, decrease the flesh volume of arms by 1;
 		decrease X by 1.
+
+Part 4 - Realistic Hands
+
+arms has a list of objects called temporaryArmUses. [Things the arms have already been used for this turn]
+To decide which number is the available arms of the player:
+	let A be 2 - the number of entries in the temporaryArmUses of arms;
+	if A < 0, decide on 0;
+	decide on A.
+[This is the arms already in use rule:
+	if realisticArms is 1 and the available arms of the player < 2:
+		if manual hands attempt is 1, say "Your [if entry 1 in the temporaryArmUses of arms is entry 2 in the temporaryArmUses of arms]arms are[otherwise]arm is[end if] already busy with [NameDesc of entry 1 in the temporaryArmUses of arms]!";
+		rule fails.
+The arms already in use rule is listed in the hands restriction rules.]
+arms has a list of objects called armUses.
+arms has a thing called defaultLeftTarget.
+arms has a thing called defaultRightTarget.
+
+To decide which number is the wornArmsRequired of (C - a thing):
+	decide on 0.
+To decide which number is the wornArmsRequired of (C - a clothing):
+	if C is wrist locked, decide on 2;
+	decide on 0.
+To decide which number is the carriedArmsRequired of (C - a thing):
+	decide on 0.
+
+To allocate arm use:
+	allocate arm use to arms. [The default "we're using our hands but not to interact with anything specific" OR "using our hands on clothing but NOT concealing the clothing"]
+To allocate dual arm use:
+	allocate dual arm use to arms.
+To allocate arm use to (T - a thing):
+	if realisticArms is 1:
+		add T to the temporaryArmUses of arms;
+		update arms.
+To allocate dual arm use to (T - a thing):
+	if realisticArms is 1:
+		add T to the temporaryArmUses of arms;
+		add T to the temporaryArmUses of arms;
+		update arms.
+
+An all later time based rule (this is the update arms rule):
+	if realisticArms is 1:
+		follow the update compulsory arm uses rule; [Rebuild the 'temporaryArmUses' list]
+		update arms;
+	otherwise:
+		truncate the armUses of arms to 0 entries;
+		truncate the temporaryArmUses of arms to 0 entries;
+		while the number of entries in the armUses of arms < 2:
+			add arms to the armUses of arms. [It MUST actually have 2 entries or bad things can happen]
+
+To update arms:
+	let A1 be entry 1 in the armUses of arms;
+	let A2 be entry 2 in the armUses of arms;
+	truncate the armUses of arms to 0 entries; [Rebuild the arm uses list starting here]
+	repeat with TA running through the temporaryArmUses of arms: [Firstly anything compulsory]
+		add TA to the armUses of arms;
+	follow the update optional arm uses rule;
+	truncate armUses of arms to 2 entries; [failsafe]
+	while the number of entries in the armUses of arms < 2:
+		add arms to the armUses of arms; [It MUST actually have 2 entries or bad things can happen]
+	let UAL be 0;
+	let UI be 0;
+	let UC be 0;
+	let A1R be A1;
+	let A2R be A2;
+	if the player is male: [Redirect vagina to penis]
+		if A1R is vagina, now A1R is penis;
+		if A2R is vagina, now A2R is penis;
+	if A1 is A2:
+		if A1 is body part and A1 is not arms and A1 is not entry 1 in the armUses of arms:
+			if the number of reactive people > 0 and the lewdly exposed outrage of A1R > 0:
+				if A1 is not entry 2 in the armUses of arms, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove both of your arms from[otherwise]Both of your arms are no longer[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
+				otherwise say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove one of your arms from[otherwise]Now only one of your arms is[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
+			now UAL is 1;
+	otherwise:
+		if A1 is body part and A1 is not arms and A1 is not listed in the armUses of arms:
+			if the number of reactive people > 0 and the lewdly exposed outrage of A1R > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A1R] in front of the [list of reactive people].";
+			now UAL is 1;
+		if A2 is body part and A2 is not arms and A2 is not listed in the armUses of arms:
+			if the number of reactive people > 0 and the lewdly exposed outrage of A2R > 0, say "[if the number of entries in temporaryArmUses of arms > 0]You have to briefly remove your arm from[otherwise]Your arm is no longer[end if] covering your [ShortDesc of A2R] in front of the [list of reactive people].";
+			now UAL is 1;
+	if A1 is not entry 1 of the armUses of arms:
+		if A1 is worn or entry 1 of the armUses of arms is worn, now UC is 1;
+		if A1 is carried or entry 1 of the armUses of arms is carried, now UI is 1;
+	if A2 is not entry 2 of the armUses of arms:
+		if A2 is worn or entry 2 of the armUses of arms is worn, now UC is 1;
+		if A2 is carried or entry 2 of the armUses of arms is carried, now UI is 1;
+	if UC is 1, force clothing-focus redraw;
+	if UI is 1, force inventory-focus redraw;
+	if UAL is 1:
+		update appearance level;
+		repeat with P running through reactive people:
+			check disapproval of P.
+
+This is the update compulsory arm uses rule:
+	if realisticArms is 1:
+		truncate the temporaryArmUses of arms to 0 entries;
+		repeat with C running through worn things:
+			if the wornArmsRequired of C > 0:
+				if debugmode > 0, say "[BigNameDesc of C] requires the use of [if the wornArmsRequired of C is 1]one arm[otherwise]both arms[end if] next turn.";
+				repeat with N running from 1 to the wornArmsRequired of C:
+					add C to the temporaryArmUses of arms.
+
+This is the update optional arm uses rule:
+	if realisticArms is 1:
+		repeat with C running through carried things:
+			if the carriedArmsRequired of C > 0:
+				repeat with N running from 1 to the carriedArmsRequired of C:
+					add C to the armUses of arms;
+				if the number of entries in the armUses of arms > 2:
+					say "You don't have enough arms to carry [NameDesc of C] and are forced to drop [him of C].";
+					now C is in the location of the player;
+					truncate the armUses of arms to 2 entries;
+		if the player is not shameless: [Arms covering body parts]
+			repeat with XX running from 1 to 2:
+				if the number of entries in armUses of arms < 2:
+					if (XX is 1 and defaultLeftTarget of arms is yourself) or (XX is 2 and defaultRightTarget of arms is yourself):
+						while the number of entries in the armUses of arms < 2:
+							add the throne to the armUses of arms; [There need to be two entries when we check appearance, or we get lots of errors]
+						let somethingAdded be 0;
+						if diaper quest is 1 and the cringe appearance of the player >= the appearance of the player:
+							if appearance-cringe-target is not listed in the armUses of arms:
+								add appearance-cringe-target to the armUses of arms;
+								now somethingAdded is 1;
+							otherwise if second-appearance-cringe-target is not listed in the armUses of arms:
+								add second-appearance-cringe-target to the armUses of arms;
+								now somethingAdded is 1;
+						if somethingAdded is 0:
+							if appearance-outrage-target is not listed in the armUses of arms:
+								add appearance-outrage-target to the armUses of arms;
+							otherwise if second-appearance-outrage-target is not listed in the armUses of arms:
+								add second-appearance-outrage-target to the armUses of arms;
+						[Redirect penis and asshole to vagina]
+						let N be the number of entries in the armUses of arms;
+						if penis is listed in the armUses of arms, remove penis from the armUses of arms;
+						if asshole is listed in the armUses of arms, remove asshole from the armUses of arms;
+						decrease N by the number of entries in the armUses of arms;
+						if N > 0:
+							repeat with XXX running from 1 to N:
+								add vagina to the armUses of arms;
+					otherwise if XX is 1 and defaultLeftTarget of arms is not hips:
+						add the defaultLeftTarget of arms to the armUses of arms, if absent;
+					otherwise if XX is 2 and defaultRightTarget of arms is not hips:
+						add the defaultRightTarget of arms to the armUses of arms;
+					while the number of entries in the armUses of arms < 2:
+						add the throne to the armUses of arms; [There need to be two entries when we check appearance, or we get lots of errors]
+					update appearance level;
+					if the throne is listed in the armUses of arms, remove the throne from the armUses of arms. [Remove the thing(s) we entered temporarily]
+
+To change default arm positions:
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	say "Where would you like the default position of your off-hand to be? (This is the one that is most likely to be free) [line break]";
+	set numerical response 1 to "covering your most embarrassing body part or worn item [bold type](recommended)[roman type]";
+	set numerical response 2 to "covering your crotch";
+	set numerical response 3 to "covering your chest";
+	set numerical response 4 to "covering your face";
+	if enema-backpack is worn, set numerical response 5 to "behind your head";
+	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
+	set numerical response 0 to "by your side";
+	compute multiple choice question;
+	if player-numerical-response is 0:
+		now the defaultLeftTarget of arms is hips;
+	otherwise if player-numerical-response is 1:
+		now the defaultLeftTarget of arms is the player;
+	otherwise if player-numerical-response is 2:
+		now the defaultLeftTarget of arms is vagina;
+	otherwise if player-numerical-response is 3:
+		now the defaultLeftTarget of arms is breasts;
+	otherwise if player-numerical-response is 5:
+		if painted-vibrator-hands is worn, now the defaultLeftTarget of arms is painted-vibrator-hands;
+		otherwise now the defaultLeftTarget of arms is hair;
+	otherwise:
+		now the defaultLeftTarget of arms is face;
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	say "Where would you like the default position of your predominant hand to be? (This is the one that is more likely to be used to perform tasks and so less likely to be free) [line break]";
+	set numerical response 1 to "covering your most embarrassing body part or worn item (after your left hand is in place) [bold type](recommended)[roman type]";
+	if player-numerical-response is not 2, set numerical response 2 to "covering your crotch";
+	if player-numerical-response is not 3, set numerical response 3 to "covering your chest";
+	if player-numerical-response is not 4, set numerical response 4 to "covering your face";
+	if enema-backpack is worn, set numerical response 5 to "behind your head";
+	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
+	set numerical response 0 to "by your side";
+	compute multiple choice question;
+	if player-numerical-response is 0:
+		now the defaultRightTarget of arms is hips;
+	otherwise if player-numerical-response is 1:
+		now the defaultRightTarget of arms is the player;
+	otherwise if player-numerical-response is 2:
+		now the defaultRightTarget of arms is vagina;
+	otherwise if player-numerical-response is 3:
+		now the defaultRightTarget of arms is breasts;
+	otherwise if player-numerical-response is 5:
+		if painted-vibrator-hands is worn, now the defaultrightTarget of arms is painted-vibrator-hands;
+		otherwise now the defaultRightTarget of arms is hair;
+	otherwise:
+		now the defaultRightTarget of arms is face.
+
+ArmDeciding is an action applying to one thing.
+Check ArmDeciding:
+	if the player is shameless, say "You are too much of an exhibitionist to cover up your body parts with your arms!" instead.
+Carry Out ArmDeciding:
+	change default arm positions;
+	say "Your arms will adjust (if possible) when time moves forward.".
+Understand "adjust [arms]" as ArmDeciding.
 
 Arms ends here.

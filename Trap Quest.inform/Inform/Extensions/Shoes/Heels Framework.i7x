@@ -65,13 +65,13 @@ To decide which number is the kick-bonus of (S - a heels):
 To decide which number is the damage modifier of (H - a heels):
 	[Double damage on crit with heels]
 	if attack-type is 3:
-		[Normal heels have a 1 in 6 chance. Queen of Hearts heels have a 1 in 3 chance. Cursed heels have a 1 in 10 chance.]
-		let R be a random number between 1 and 6;
-		if H is queen of hearts heels, now R is a random number between 1 and 3;
-		if H is cursed, now R is a random number between 1 and 10;
-		if R is 1:
+		if the player is getting lucky:
 			now critical is 1;
-			decide on combat bonus.
+			decide on combat bonus;
+		if H is queen of hearts heels and the player is getting lucky: [Queen of Hearts heels get two attempts.]
+			now critical is 1;
+			decide on combat bonus;
+		decide on 0.
 
 To decide which number is the hindrance of (C - a heels):
 	let X be 0;
@@ -140,10 +140,10 @@ To say MonsterOfferRejectFlav of (M - a demoness) to (T - a heels):
 	say "[speech style of M]'Do I look like I have any need for another pair of heels?'[roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a heels):
-	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-panties;
+	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
 	if diaper quest is 1 and the heel-height of C < 2, decide on a random off-stage mary janes;
 	if there is a worn diaper, decide on a random off-stage baby booties;
-	if (there are worn stockings or diaper quest is 0) and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.
+	if there is a currently visible exercise themed wearthing and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.
 
 To potentially transform (C - a heels):
 	if C is upgradable:

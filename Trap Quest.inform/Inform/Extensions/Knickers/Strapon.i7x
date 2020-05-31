@@ -15,12 +15,12 @@ To say selfexamineuniquetitle of (K - a strapon-panties):
 To uniquely set up (C - a strapon-panties):
 	now the strap-length of C is a random number between 4 and 6.
 
-Definition: A strapon-panties (called P) is fetish appropriate:
+Definition: a strapon-panties (called P) is fetish appropriate:
 	if diaper quest is 0 and the player is the donator, decide yes;
 	decide no.
 
 [is it a strapon or a penis]
-Definition: A strapon-panties is dildo-usage: decide yes.
+Definition: a strapon-panties is dildo-usage: decide yes.
 
 To say ShortDesc of (H - a strapon-panties):
 	say "strap-on dildo".
@@ -69,7 +69,7 @@ To say PenisSoften of (K - a strapon-dildo):
 	say "The Nintendolls pouch shifts itself up on your body, completely covering your shaft. A silicon penis materialises out of it in a rush of 1's and 0's, and you feel a slight jolt as it replaces all the sensations from your [player-penis] with its own.".
 
 To say PenisHarden of (K - a strapon-dildo):
-	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.". [###Selkie: At first sight, I wondered if this meant your penis fell off onto the ground! ;-) ]
+	say "The silicon dildo disappears in a rush of 1's and 0's as your [player-penis] pops out of the pouch, and you feel a slight jolt as the sensation returns to normal.".
 
 To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-penis"]
 	if K is dildo-usage:
@@ -80,7 +80,7 @@ To say ShortPenisFlav of (K - a strapon-dildo):[used any time you use "player-pe
 
 To say ShortDesc of (H - a strapon-dildo):
 	if H is dildo-usage, say "strap-on dildo";
-	otherwise say "nintendolls pouch".
+	otherwise say "Nintendolls pouch".
 
 To say UniqueClothingDesc of (K - strapon-dildo):
 	if K is not dildo-usage:
@@ -159,24 +159,28 @@ Definition: a gem-strapon is unlimited horniness: decide yes.
 
 To compute periodic effect of (G - gem-strapon):
 	Arouse 40;
-	if the player is very horny and the strap-length of G < 10:
-		now the strap-length of G is 10;
-		say "The gemstones covering your strap-on begin to glow faintly, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
+	if the player is very horny:
+		if the strap-length of G < 10:
+			now the strap-length of G is 10;
+			say "The gemstones covering your strap-on begin to glow faintly, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 	otherwise if the player is horny:
-		now the strap-length of G is 7;
 		if the strap-length of G > 7:
+			now the strap-length of G is 7;
 			say "The gemstones covering your strap-on lose their glow, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 		otherwise if the strap-length of gem-strapon < 7:
+			now the strap-length of G is 7;
 			say "The gemstones covering your strap-on take on a brighter hue, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 	otherwise if the player is a bit horny:
-		now the strap-length of G is 5;
 		if the strap-length of G > 5:
+			now the strap-length of G is 5;
 			say "The gemstones covering your strap-on lose some of their brightness, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
 		otherwise if the strap-length of G < 5:
+			now the strap-length of G is 5;
 			say "The gemstones covering your strap-on regain some of their colour, and the dildo expands into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
-	otherwise if the strap-length of G > 3:
-		now the strap-length of G is 3;
-		say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].";
+	otherwise:
+		if the strap-length of G > 3:
+			now the strap-length of G is 3;
+			say "The gemstones covering your strap-on lose almost all of their colour, and the dildo shrinks into a [PenisSizeFlav strap-length of G] [PenisShaftFlav strap-length of G].".
 
 To decide which number is the sex-addiction-influence of (C - a gem-strapon):
 	decide on 3.
@@ -203,7 +207,7 @@ To say UniqueClothingDesc of (K - gem-strapon):
 
 Chapter 4 - Ghost Strapon
 
-Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The printed name of ghost-strapon is "[clothing-title-before][PenisSizeFlav sexual-penis-length] [ShortDesc of item described][clothing-title-after]". The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. The soak-limit of ghost-strapon is usually 3. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
+Ghost-strapon is a strapon-panties. The text-shortcut of ghost-strapon is "ghpd". ghost-strapon is totally-exclusive. Ghost-strapon is unique. The printed name of ghost-strapon is "[clothing-title-before][if the item described is worn and the size of penis >= the strap-length of the item described][PenisSizeFlav sexual-penis-length] [end if][ShortDesc of item described][clothing-title-after]". The armour of ghost-strapon is 1. Understand "pair", "pair of", "crotchless", "panties", "goth", "ghost", "ghostly" as ghost-strapon. The soak-limit of ghost-strapon is usually 3. Ghost-strapon is crotch-exposing. Ghost-strapon is satin.
 
 Figure of ghost-strapon is the file "Items/Accessories/Toys/strapon4.jpg".
 To decide which figure-name is the examine-image of (H - ghost-strapon):
@@ -226,6 +230,8 @@ Definition: A ghost-strapon (called P) is dildo-usage:
 	decide no.
 
 To say ShortDesc of (H - ghost-strapon):
+	unless H is worn:
+		say "spectral satin panties";
 	if the player is female and futanari fetish is 0:
 		say "spectral strap-on";
 	otherwise:
@@ -243,12 +249,15 @@ To say PenisFlavour of (K - ghost-strapon):
 
 To say UniqueClothingDesc of (K - ghost-strapon):
 	if K is not worn:
-		say "A gossamer piece of cloth with a soft [PenisFlavour of K] poking out of it. The fabric seems to become invisible when exposed to your touch.";
+		say "A pair of black satin panties. The fabric is glowing very faintly, and it seems to turn slightly invisible when exposed to your touch. It contains the spirit of a very horny ghost.";
 	otherwise if the size of penis is 0:
-		say "An invisible pair of panties with holes for your ass and genitals. A rock hard [PenisFlavour of K] is attached to it, actively sapping your strength.";
+		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric is actively sapping your strength, using it to maintain a rock hard [PenisFlavour of K] and a matching pair of ghostly balls.";
 	otherwise:
-		say "An invisible pair of panties with holes for your ass and genitals. [if the size of penis >= the strap-length of K]Your shaft is glowing faintly, and
-		refuses to go soft even for a moment[otherwise]A [PenisFlavour of K] has completely absorbed your shaft, actively sapping your strength[end if].".
+		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric [if the size of penis >= the strap-length of K]has possessed your [ShortDesc of penis], preventing it from going soft even for a moment.[otherwise]has completely dominated your genitals and begun to actively sap your strength. The spirit's [PenisFlavour of K] has superimposed itself over your shaft.[end if]".
+
+Report wearing ghost-strapon:
+	if the player is male:
+		if the size of penis < the strap-length of ghost-strapon, now penis is penis-erect.
 
 To decide which number is the strength-influence of (C - ghost-strapon):
 	let X be the size of penis - the strap-length of C;

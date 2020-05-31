@@ -2,12 +2,12 @@ Orgasms by Player begins here.
 
 [TODO: orgasm count variables]
 
-[!<refactoryPeriod:Integer>*
+[!<refractoryPeriod:Integer>*
 
 REQUIRES COMMENTING
 
 *!]
-refactoryperiod is a number that varies.
+refractoryperiod is a number that varies.
 orgasm-count is a number that varies. orgasm-count is 0.
 anal-orgasms is a number that varies. anal-orgasms is 0.
 vaginal-orgasms is a number that varies. vaginal-orgasms is 0.
@@ -18,8 +18,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a person is able to orgasm:
-	if player-fucking is not DOMINANT-NONE and refactoryperiod < 1, decide yes;
-	if the player is unable to orgasm so soon, decide no;
+	if player-fucking is not DOMINANT-NONE and refractoryperiod < 1, decide yes;
 	if player-fucking is not DOMINANT-NONE, decide yes;
 	if the class of the player is royal slave:
 		if there is a monster grabbing the player or there is a monster penetrating a body part:[a reason why the player might want to masturbate during a blowjob]
@@ -27,6 +26,61 @@ Definition: a person is able to orgasm:
 			decide yes;
 		decide no;
 	decide yes.
+
+[!<SayProstateOrgasmFlav>+
+Displays text when a male player has a shameful anal orgasm
+
++!]
+To say ProstateOrgasmFlav:
+	let M be a random monster penetrating asshole;
+	if M is monster, compute prostate orgasm hijack of M;
+	otherwise say DefaultProstateOrgasmFlav.
+
+[!<ComputeProstateOrgasmHijackOfMonster>+
+
+Handles any special code to be run, if any, when a monster is penetrating the player during a prostate orgasm
+
+@param <Monster>:<M> The monster penetrating the player's ass
+
++!]
+To compute prostate orgasm hijack of (M - a monster):
+	say DefaultProstateOrgasmFlav.
+
+[!<SayDefaultProstateOrgasmFlav>+
+
+Default text that displays when a male player has a shameful anal orgasm
+
++!]
+To say DefaultProstateOrgasmFlav:
+	say "[one of][if there is a worn asshole-tattoo]You feel your [random asshole-tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] prostate [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! [if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise]muscles tense then relax. [end if][bold type]You've just had your first anal orgasm![or][bold type]Your prostate feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [stopping][roman type][line break]".
+
+[!<SayAnalOrgasmFlav>+
+
+Displays text when the player experiences a shameful anal orgasm
+
++!]
+To say AnalOrgasmFlav:
+	let M be a random monster penetrating asshole;
+	if M is monster, compute anal orgasm hijack of M;
+	otherwise say DefaultAnalOrgasmFlav.
+
+[!<ComputeAnalOrgasmHijackOfMonster>+
+
+Handles any special code to be run, if any, when a monster is penetrating the player during a shameful anal orgasm
+
+@param <Monster>:<M> The monster penetrating the player's ass
+
++!]
+To compute anal orgasm hijack of (M - a monster):
+	say DefaultAnalOrgasmFlav.
+
+[!<SayDefaultAnalOrgasmFlav>+
+
+Default text that displays when a female player has a shameful anal orgasm
+
++!]
+To say DefaultAnalOrgasmFlav:
+	say "[one of][if there is a worn asshole-tattoo]You feel your [random asshole-tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] [asshole] [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! [if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first anal orgasm[if tg fetish >= 1] as a girl[end if]![roman type][line break][or][bold type]Your [asshole] feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [roman type]You feel a wave of pleasure and your muscles tense then relax as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]".
 
 [!<AnallyOrgasmShamefully>+
 
@@ -36,21 +90,22 @@ REQUIRES COMMENTING
 To anally orgasm shamefully:
 	if the player is not able to orgasm:
 		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is male]prostate[otherwise]asshole[end if], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
-		otherwise say "[if refactoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
+		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male:
-		say "[one of][if there is a worn asshole-tattoo]You feel your [random asshole-tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] prostate [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise]muscles tense then relax. [end if][bold type]You've just had your first anal orgasm! [or][bold type]Your prostate feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [stopping][roman type][line break]";
+		say ProstateOrgasmFlav;
 		orgasm;
 		punish shameful male orgasm;
 		increase anal-orgasms by 1;
 	otherwise:
-		say "[one of][if there is a worn asshole-tattoo]You feel your [random asshole-tattoo worn by the player] spark with delight as your extremely sensitive[otherwise]Your[end if] [asshole] [if soreness of asshole > 8]can't take the extreme stimulation any more[otherwise]feels incredible[end if]! You feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first anal orgasm[if tg fetish >= 1] as a girl[end if]![roman type][line break][or][bold type]Your [asshole] feels overly sensitive as that familiar wave of pleasure rushes through you and you have another anal orgasm. [roman type]You feel a wave of pleasure and your muscles tense then relax as your [vagina] [if the openness of vagina < 6]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]";
+		say AnalOrgasmFlav;
 		say "[if the player is not disgraced][line break][first custom style]What a shameful way to orgasm...[otherwise if the player is not shameless][line break][variable custom style]Cumming like that is so humiliating. So why do I find myself just getting turned on even more?[otherwise][line break][second custom style]I came just from my butthole... I'm so dirty![end if][roman type][line break]";
 		orgasm;
 		slowSexAddictUp 1 + the number of live things penetrating vagina;
+		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		increase anal-orgasms by 1;
-	if refactoryperiod > 0:
+	if refractoryperiod > 0:
 		if there is a camera trap in the location of the player and there is an off-stage shameful orgasm poster:
 			let P be a random off-stage shameful orgasm poster;
 			say "[FlashFlav of a random camera trap in the location of the player]";
@@ -62,7 +117,35 @@ To anally orgasm shamefully:
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling;
 	otherwise:
-		now refactoryperiod is 2.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
+		now refractoryperiod is 2.[The player couldn't cum, but we still increase it so the game does not immediately try again.]
+
+[!<SayVaginalOrgasmFlav>+
+
+Displays text when the player experiences a shameful vaginal orgasm
+
++!]
+To say VaginalOrgasmFlav:
+	let M be a random monster penetrating vagina;
+	if M is monster, compute vaginal orgasm hijack of M;
+	otherwise say DefaultVaginalOrgasmFlav.
+
+[!<ComputeVaginalOrgasmHijackOfMonster>+
+
+Handles any special code to be run, if any, when a monster is penetrating the player during a shameful vaginal orgasm
+
+@param <Monster>:<M> The monster penetrating the player's pussy
+
++!]
+To compute vaginal orgasm hijack of (M - a monster):
+	say DefaultVaginalOrgasmFlav.
+
+[!<SayDefaultVaginalOrgasmFlav>+
+
+Default text that displays when the player has a shameful vaginal orgasm
+
++!]
+To say DefaultVaginalOrgasmFlav:
+	say "[one of]Your [vagina] can't take the stimulation any more! You feel a wave of pleasure and your [if the player is upright or the class of the player is living sex doll]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the latex-transformation of the player > 3]sends sparks flying through your mind[otherwise if the openness of vagina < 4]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first vaginal orgasm![roman type][line break][or][bold type]Your [vagina] pulsates as that familiar wave of pleasure rushes through you and you have another orgasm. [roman type]You feel a wave of pleasure[if the latex-transformation of the player <= 3] and your muscles tense then relax[end if] as your [vagina] [if the latex-transformation of the player > 3]sends sparks flying through your mind[otherwise if the openness of vagina < 4]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]".
 
 [!<VaginallyOrgasmShamefully>+
 
@@ -72,20 +155,21 @@ REQUIRES COMMENTING
 To vaginally orgasm shamefully:
 	if the player is not able to orgasm:
 		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping] wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [vagina], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... does it have something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe they want me to act more like a slave first...[stopping][roman type][line break]";
-		otherwise say "[if refactoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
+		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
 	otherwise if the player is male: [normal shameful male orgasm]
-		say "You feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]";
+		say "[if the player is unable to orgasm so soon]Despite your lack of arousal you[otherwise]You[end if] feel a wave of pleasure and your [if the player is upright]knees buckle[otherwise]muscles tense then relax[end if] as you [one of]cum hard[or]climax[or]orgasm[at random].[roman type][line break]";
 		orgasm;
 		punish shameful male orgasm;
 	otherwise:
 		increase vaginal-orgasms by 1;
-		say "[one of]Your [vagina] can't take the stimulation any more! You feel a wave of pleasure and your [if the player is upright or the class of the player is living sex doll]knees buckle[otherwise]muscles tense then relax[end if] as your [vagina] [if the latex-transformation of the player > 3]sends sparks flying through your mind[otherwise if the openness of vagina < 4]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if]. [bold type]You've just had your first vaginal orgasm![roman type][line break][or][bold type]Your [vagina] pulsates as that familiar wave of pleasure rushes through you and you have another orgasm. [roman type]You feel a wave of pleasure[if the latex-transformation of the player <= 3] and your muscles tense then relax[end if] as your [vagina] [if the latex-transformation of the player > 3]sends sparks flying through your mind[otherwise if the openness of vagina < 4]dribbles a small amount of girlcum[otherwise]squirts out girlcum[end if].[stopping]";
+		say VaginalOrgasmFlav;
 		if interracial fetish is 1 and there is a dark skinned male monster penetrating vagina, say "[one of][if the sex addiction of the player < 6][line break][first custom style]I can't believe I just came from a black [manly-penis]...[otherwise if the raw sex addiction of the player < 11][line break][variable custom style]I just came all over a black [manly-penis]... I didn't know it would feel so good.[otherwise][line break][second custom style]Oh my god, black [manly-penis] is the best. I want more![end if][or][if the sex addiction of the player < 6][first custom style]What is it about black [manly-penis] that makes me cum, even when I don't want to?![otherwise if the sex addiction of the player < 9][first custom style]If this keeps happening, I know I won't be able to stop myself from genuinely enjoying getting railed by big black [manly-penis]. [second custom style]I might be enjoying it already...[otherwise if the sex addiction of the player < 12][variable custom style]I only cum this hard when it's a black [manly-penis]![otherwise][second custom style]That felt so FUCKING good! I need even more black [manly-penis]![end if][stopping][roman type][line break]";
 		otherwise say "[one of][if the sex addiction of the player < 8][line break][first custom style]I can't believe I just came...[otherwise if the raw sex addiction of the player < 13][line break][variable custom style]I just came... I didn't know it would feel so good.[otherwise][line break][second custom style]That felt sooooo good... I want more![end if][or][if the sex addiction of the player < 8][first custom style]I have to find a way to stop orgasming like this...[otherwise if the sex addiction of the player < 13][first custom style]If this keeps happening, I know I'll get addicted. [second custom style]I might be already...[otherwise][second custom style]That felt so FUCKING good! More![end if][stopping][roman type][line break]";
-		slowSexAddictUp 1 + the number of live things penetrating asshole;
 		orgasm;
+		slowSexAddictUp 1 + the number of live things penetrating asshole;
+		if diaper quest is 1, progress quest of asshole-presenting-quest;
 		[strongHumiliate;]
 		if newbie tips is 1, say shameful tip;
 		if the player is upright, try kneeling.
@@ -96,7 +180,7 @@ REQUIRES COMMENTING
 
 +!]
 To breasts orgasm shamefully:
-	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from getting tit-fucked! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
+	say "[bold type]You feel a wave of pleasure and your [if the player is upright]knees buckle. [otherwise if the player is male]muscles tense then relax. [otherwise if the openness of vagina < 6]as your [vagina] dribbles a small amount of girlcum. [otherwise]as your [vagina] squirts out girlcum. [end if][one of]You've just had your first orgasm from your breasts! [or]Your orgasm triggered by your sensitive breasts leaves you panting. [stopping][roman type][line break]";
 	orgasm;
 	if the player is male, punish shameful male orgasm;
 	[severeHumiliate;]
@@ -111,12 +195,12 @@ REQUIRES COMMENTING
 To punish shameful male orgasm:
 	if fast tg > 1 and the size of penis <= min penis size:
 		say DefaultSexChangeFlav;
-		say "The fact that this is happening as you shudder through yet another anal orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
+		say "The fact that this is happening as you shudder through yet another shameful orgasm [if the player is not a pervert]merely rubs salt in the wound[otherwise]makes the process feel immensely submissive and pleasurable[end if], as if confirming that you deserve this.";
 		sexchange the player;
 	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
 		if the size of penis > min penis size and the latex-transformation of the player <= 3:
 			PenisDown 1;
-			say "The shameful nature of your orgasm makes your manhood [Shrink] into a [ShortDesc of penis].";
+			say "The shameful nature of your orgasm makes your [player-penis] [Shrink] into a [ShortDesc of penis].";
 		slowSexAddictUp 1 + the number of live things penetrating face;
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
@@ -125,22 +209,13 @@ To punish shameful male orgasm:
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
-[!<PunishShamefulFemaleOrgasm>+
-
-REQUIRES COMMENTING
-
-+!]
-To punish shameful female orgasm:
-	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	slowSexAddictUp 1.
-
 [!<ShamefulTip>+
 
 REQUIRES COMMENTING
 
 +!]
 To say shameful tip:
-	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction and humiliation[if the player is male] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
+	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is male] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
 
 [!<orgasmFatigueEffectsRules:Rulebook>*
 
@@ -182,7 +257,8 @@ REQUIRES COMMENTING
 +!]
 To orgasm:
 	increase orgasm-count by 1;
-	increase refactoryperiod by 3;
+	increase refractoryperiod by 3;
+	if the wanktime of the player < 300, now the wanktime of the player is 300;
 	[if the player is male, now the rawness of penis is 0;]
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
@@ -281,6 +357,21 @@ This is the chastity cage ejaculation rule:
 		rule succeeds.
 The chastity cage ejaculation rule is listed last in the ejaculation rules.
 
+This is the penetration ejaculation rule:
+	if there is a live thing penetrating penis:
+		let M be a random live thing penetrating penis;
+		compute erection orgasm of M;[See the Special Events extension]
+		rule succeeds.
+The penetration ejaculation rule is listed last in the ejaculation rules.
+
+[It would be harsh for the player to get cum soaked pants before the game ends]
+This is the football game ejaculation rule:
+	if remote-controlled-vibrator is worn:
+		let A be the semen load of the player;
+		say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if] into [NameDesc of remote-controlled-vibrator].";
+		rule succeeds.
+The football game ejaculation rule is listed last in the ejaculation rules.
+
 [!<TheEjaculationIntoClothingRule>+
 
 REQUIRES COMMENTING
@@ -292,10 +383,10 @@ This is the ejaculation into clothing rule:
 	if P is clothing:
 		if P is portal-pants:
 			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip[otherwise if A < 6]splurts warm [semen][otherwise if A < 8]drools its thick, creamy load[otherwise if A < 11]shoots several thick, creamy ropes[otherwise]shoots its almost inhuman load[end if][run paragraph on]";
-		otherwise if penis is exposed:
-			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your balls.[otherwise]soaks the inner fabric[end if].[or]Your [Shortdesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P] as it soaks up your [semen].[end if][in random order]";
+		otherwise if P is potentially penis covering:
+			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your balls.[otherwise]darkening the inner fabric[end if].[or]Your [Shortdesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
 		otherwise:
-			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles from the tip, collecting in your[otherwise if A < 6]splurts warm [semen] against your belly, which slowly rolls down into your[otherwise if A < 9]drools its thick, creamy load into[otherwise]shoots several thick, creamy ropes against your belly, which ooze slowly into your[end if] [printed name of a random bottom level pee protection clothing worn by the player][or]Your [ShortDesc of penis] [if A < 3]quivers pitifully[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it drips into the [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if] as it slowly rolls down your belly and [if P is fluid immune]dribbles down your balls.[otherwise]soaks the upper part of the fabric[end if].[or]Your [Shortdesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] against your belly, which slowly rolls down into your [printed name of P], [if P is fluid immune] which doesn't absorb any of the [semen] at all, allowing you to feel your slimy load dribble slowly over your skin.[otherwise], which creates a noticeable dark spot in the [clothing-material of P] as it soaks up your [semen].[end if][in random order]";
+			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a a noticeable dark spot in the fabric[end if].";
 		compute ejaculation;
 		rule succeeds.
 The ejaculation into clothing rule is listed last in the ejaculation rules.
@@ -310,19 +401,15 @@ This is the ejaculation capture rule:
 	let collecting be nothing;
 	if diaper quest is 0 and the player is not immobile and the player is not in danger and the player is able to use manual dexterity:
 		let LV be the list of carried open topped vessels;
-		if the number of entries in LV > 1:
-			say "You have the following open topped vessels:[line break]";
-			repeat with V running through LV:
-				say "[V][line break]";
 		if the number of entries in LV > 0:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			truncate LV to 9 entries;
+			say "Where do you want your [semen] to go?[line break]";
 			repeat with V running through LV:
-				if collecting is nothing:
-					say "Collect the liquid you're about to expel into the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
-					if the player is consenting:
-						if the doses of V > 0:
-							say "You tip the contents of the [ShortDesc of V] onto the floor.";
-							dump V;
-						now collecting is V;
+				set next numerical response to "in the [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+			set numerical response 0 to "on the ground";
+			compute multiple choice question;
+			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is bottle:
 		say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
 		SemenTasteAddictUp 1;
@@ -340,7 +427,7 @@ This is the ejaculation capture rule:
 			otherwise if collecting is not cursed:
 				now collecting is cursed;
 				now the curse-ID of collecting is sure;
-				say "Your [ShortVesselDesc of collecting] is surrounded by a dark glow. It has been cursed!";
+				say "[bold type]Your [ShortVesselDesc of collecting] is surrounded by a dark glow. It has been cursed![roman type][line break]";
 		rule succeeds.
 The ejaculation capture rule is listed last in the ejaculation rules.
 
@@ -376,6 +463,18 @@ To compute ejaculation:
 			cumsoak A on P;
 	otherwise:
 		SemenPuddleUp the size of penis.
+
+This is the penis softens after ejaculation rule:
+	if penis is penis-erect:
+		let P be a random bottom level pee protection clothing worn by the player;
+		if there is a live thing penetrating penis:[we'll let the flavour handle that]
+			do nothing;
+		otherwise if P is clothing and penis is exposed:
+			say "Your [ShortDesc of penis] softens enough to slip back into your [ShortDesc of P].";
+		otherwise:
+			say "Your [ShortDesc of penis] slowly softens.";
+		now penis is not penis-erect.
+The penis softens after ejaculation rule is listed last in the orgasm resolution rules.
 
 [!<TheOrgasmStopsMasturbationResolutionRule>+
 
@@ -524,18 +623,6 @@ This is the ass expulsion from orgasm rule:
 		AssSquirt.
 The ass expulsion from orgasm rule is listed last in the orgasm resolution rules.
 
-[!<TheChastityCageOrgasmRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the chastity cage orgasm resolution rule:
-	if there is a worn chastity cage:
-		if a random worn chastity cage is not cursed:
-			say "You feel your [random worn chastity cage] become cursed[one of][or] again[stopping]!";
-			now a random worn chastity cage is cursed.
-The chastity cage orgasm resolution rule is listed last in the orgasm resolution rules.
-
 [!<TheDrilldoOrgasmResolutionRule>+
 
 REQUIRES COMMENTING
@@ -648,7 +735,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a person is unable to orgasm so soon rather than able to orgasm so soon:
-	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refactoryperiod > 0, decide yes;
+	if the player is not able to get horny or the arousal of the player - 500 <= minimum arousal or refractoryperiod > 0, decide yes;
 	decide no.
 
 Definition: a body part (called B) is pushed over the edge:
@@ -660,8 +747,30 @@ Definition: breasts (called B) is pushed over the edge:
 		if arousal of the player + ((the sensitivity of breasts - 7) * 1000) > a random number between 7000 and 12000, decide yes;
 	decide no.
 
+constant-stimulation-started is a number that varies.
+constant-stimulation-latest is a number that varies.
+An all later time based rule (this is the check for constant stimulation rule):
+	if constant-stimulation-latest is not time-turns, now constant-stimulation-started is 0.
+
+This is the constant stimulation counter reset rule:
+	now constant-stimulation-started is 0.
+The constant stimulation counter reset rule is listed in the orgasm resolution rules.
+
+Definition: yourself is able to cum hornilessly: [Some things just stimulate you so much that you cum even without being aroused]
+	if the latex-transformation of the player > 3, decide no;
+	if refractoryperiod > 0, decide no;
+	decide yes.
+
+Definition: yourself is cumming hornilessly:
+	if the player is able to cum hornilessly:
+		if constant-stimulation-started > 0 and constant-stimulation-latest - constant-stimulation-started > a random number between 5 and 6, decide yes;
+	decide no.
+
 Definition: penis (called P) is pushed over the edge:
-	if the player is unable to orgasm so soon or the player is not a bit horny, decide no;
+	if the player is unable to orgasm so soon:
+		if the player is cumming hornilessly, decide yes;
+		decide no;
+	if the player is not a bit horny, decide no;
 	if the rawness of penis > the max-rawness of penis, decide yes;
 	decide no.
 
@@ -671,7 +780,10 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a fuckhole (called F) is pushed over the edge:
-	if the player is unable to orgasm so soon or the player is not a bit horny, decide no; [No more than one orgasm in a round, and arousal needs to build at least a bit before the next one!]
+	if the player is unable to orgasm so soon:
+		if the player is cumming hornilessly, decide yes;
+		decide no;
+	if the player is not a bit horny, decide no; [No more than one orgasm in a round, and arousal needs to build at least a bit before the next one!]
 	let N be -1;
 	let T be a random thing penetrating F;
 	let ST be the stimulation of T on F / 4;

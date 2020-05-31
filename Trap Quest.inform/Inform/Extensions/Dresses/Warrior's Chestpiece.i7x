@@ -244,10 +244,4 @@ To compute virginity-loss of (H - virgin magical girl outfit):
 	decrease the virgin bonus of the player by 1;
 	only destroy H.
 
-To compute periodic effect of (H - virgin magical girl outfit):
-	let W be a random off-stage heart wand;
-	if W is actually summonable:
-		say "[bold type]You feel a rush of magic as a wand suddenly materialises in your hand![roman type][line break]";
-		summon W.
-
 Warrior's Chestpiece ends here.

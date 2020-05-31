@@ -44,6 +44,10 @@ To compute virginity loss:
 	now the virgin of the player is 0;
 	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah! Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
+	now the tattoo-title of virgin void tattoo is "virgin void";
+	if virgin void tattoo is worn:
+		say "A big red 'VOID' is suddenly magically stamped over the tattoo of the word 'virgin' on your belly!";
+		focus-consider virgin void tattoo;
 	if the virgin bonus of the player > 0:
 		say "[if the player is not a pervert]You feel pure despair and[otherwise if the player is not a nympho]You shudder involuntarily as[otherwise]Perverse arousal mixed with a vague sense of self-disgust consumes you as[end if] you feel some of your strength and speed leave you. As that feeling of purity and promise fully leaves your soul, it feels as if it has left you in an even worse state than when you first began to feel it.";
 		now flav-said is 1;
@@ -177,22 +181,18 @@ REQUIRES COMMENTING
 
 +!]
 To check virginity with (M - a monster):
-	if the virgin of the player is 1:
+	if the virgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:
 		if virgincursed is 1:
-			if (player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER)[ and player-fuckchoice is FUCK-PENETRATION]:[only 'true' dominant sex can reverse your virgin curse]
+			if player-fucking is DOMINANT-NONE or player-fucking is DOMINANT-SHAMEFUL:[only 'true' dominant sex can reverse your virgin curse]
+				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I[']m gonna be a virgin forever...[then at random][roman type][line break]";
+			otherwise:
 				virginremovecurse;
 				now the virgin of the player is 0;
 				now penisvirginity-taker is M;
-			otherwise:
-				if player-fucking is DOMINANT-NEUTRAL, say "[variable custom style][one of]That wasn't really humiliating, but... I think I have to be more dominant than that...[or]That wasn't dominant enough. I have to keep trying...[stopping][roman type][line break]";[player was humiliated or emasculated a little]
-				otherwise say "[variable custom style][one of]I didn[']t feel like I was in charge at all... there[']s no way it counts...[or]No way that counts... I[']m gonna be a virgin forever...[stopping][roman type][line break]";[tables were completely turned, or the player was humiliated]
-		otherwise[ if player-fuckchoice is FUCK-PENETRATION]:
-			if player-fucking > DOMINANT-NONE and player-fucking is not DOMINANT-SHAMEFUL:
-				say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
-				now the virgin of the player is 0;
-				now penisvirginity-taker is M;
-			otherwise:
-				say "[variable custom style]I guess that was sex, but... I can[']t tell anybody that happened. No way I[']m calling this my first...[roman type][line break]".
+		otherwise:
+			say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
+			now the virgin of the player is 0;
+			now penisvirginity-taker is M.
 
 [!<VirginRemoveCurse>+
 
@@ -242,7 +242,9 @@ REQUIRES COMMENTING
 
 +!]
 To compute virginity-loss of (T - a thing):
-	say "Your [printed name of T] drops to the ground.";
-	now T is in the location of the player.
+	if T is worn: [special things like the sinful priestess effect could have already modified the item]
+		say "Your [printed name of T] drops to the ground.";
+		now T is in the location of the player;
+		dislodge T.
 
 Virginity ends here.

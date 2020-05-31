@@ -27,7 +27,7 @@ Definition: a clothing (called C) is too outrageous:
 	if C is not worn:
 		if C is crotch-displaced, replace C;
 		ZipUp C;
-	if C is nipple covering actually dense clothing and the outrage of C < 11, decide no;
+	if C is nipple covering clothing and the outrage of C < 11, decide no;
 	if C is crotch covering clothing:
 		if C is not no protection, decide no;
 	if C is able to cover crotch and the outrage of C < 15, decide no;
@@ -39,7 +39,7 @@ Definition: a clothing (called C) is too cringeworthy:
 	if C is not worn:
 		if C is crotch-displaced, replace C;
 		ZipUp C;
-	if C is nipple covering actually dense clothing and the outrage of C < 11, decide no;
+	if C is nipple covering clothing and the outrage of C < 11, decide no;
 	if C is crotch covering clothing:
 		if C is not no protection, decide no;
 	if C is able to cover crotch and the outrage of C < 15, decide no;
@@ -100,7 +100,7 @@ This is the sex doll can't wear new clothes rule:
 The sex doll can't wear new clothes rule is listed in the global wearability rules.
 
 This is the assfilled players can't wear ass plugging clothes rule:
-	if asshole is actually occupied and wearing-target is ass plugging:
+	if asshole is actually occupied and (wearing-target is ass plugging or wearing-target is sex toy):
 		if summoning is 0 and autowear is false, say "You can't wear this with something already in your [asshole]!";
 		rule fails.
 The assfilled players can't wear ass plugging clothes rule is listed in the global wearability rules.
@@ -108,7 +108,7 @@ The assfilled players can't wear ass plugging clothes rule is listed in the glob
 This is the vaginafilled players can't wear vagina plugging clothes rule:
 	if wearing-target is vagina plugging:
 		if (the player is female and vagina is actually occupied) or (the player is male and asshole is actually occupied):
-			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [vagina]!";
+			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [if the player is male][asshole][otherwise][vagina][end if]!";
 			rule fails.
 The vaginafilled players can't wear vagina plugging clothes rule is listed in the global wearability rules.
 

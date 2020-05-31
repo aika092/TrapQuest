@@ -8,6 +8,8 @@ Definition: an imp is father material if the player is a august 2019 top donator
 
 Definition: an imp is raunchy: decide yes.
 
+Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
 An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp taking leaving after being attacked]
 
 Figure of imp 1 is the file "NPCs/MultiFloor/imp1.png".
@@ -56,10 +58,10 @@ To say MonsterDesc of (M - an imp):
 To set up (M - an imp):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 3;
+	now the raw difficulty of M is 3;
 	now the health of M is the maxhealth of M;
 	now the imp-rudeness of M is 0;
-	compute refactoryReset of M;
+	compute refractoryReset of M;
 	now the favour of M is 99.[always start at max favour]
 
 To compute birth set up of (M - an imp):
@@ -68,7 +70,7 @@ To compute birth set up of (M - an imp):
 
 To compute reward (N - a number) set up of (M - an imp):
 	set up M;
-	increase the difficulty of M by (N - 1);
+	increase the raw difficulty of M by (N - 1);
 	now the health of M is the maxhealth of M;
 	now M is in the location of the player.
 
@@ -80,13 +82,13 @@ Definition: an imp (called M) is objectifying the player:
 Part 1 - Misc Flavour
 
 To compute (M - a monster) stomping (N - an imp):
-	if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground, ignoring [his of N] cursing as [he of M] forces [his of M] [DickDesc of M] into [NameDesc of N]'s [HoleDesc of N]! [BigNameDesc of N]'s abdomen bulges obscenely as [NameDesc of M] fucks [him of N], and [he of N] shrieks as [NameDesc of M]'s [LongDickDesc of M] forces [him of M] to [if full-lady fetish is 1]squirt[otherwise]cum[end if] and immediately disappear.";
+	if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground, ignoring [his of N] cursing as [he of M] forces [his of M] [DickDesc of M] into [NameDesc of N]'s [HoleDesc of N]! [BigNameDesc of N] abdomen bulges obscenely as [NameDesc of M] fucks [him of N], and [he of N] shrieks as [NameDesc of M][']s [LongDickDesc of M] forces [him of M] to [if full-lady fetish is 1]squirt[otherwise]cum[end if] and immediately disappear.";
 	otherwise say "You hear cursing and shrieking coming from somewhere else in the dungeon!";
 	destroy N.
 
 To compute (M - demon lord) stomping (N - an imp):
 	compute N protecting against M.[the imp betrays you]
-	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] facefirst onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of N], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of N] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
+	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] face first onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
 	otherwise say "You hear gagging noises coming from somewhere else in the hotel!";
 	destroy N.]
 
@@ -110,24 +112,23 @@ To decide which number is the seek roll of (M - an imp):
 	if M is friendly, decide on 1; [imps always follow you around perfectly when not bored]
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
 
-A later time based rule: [after compute monsters]
-	if playerRegion is not school: [imps don't go to the school]
-		repeat with M running through on-stage imps:
-			if M is not in the location of the player:
-				now M is in the location of the player;
-				say "A portal appears, and [NameDesc of M] hops out!";
-				if M is not interested, compute perception of M.
+A later time based rule (this is the imps follow the player rule): [after compute monsters]
+	repeat with M running through on-stage imps:
+		if M is not in the location of the player:
+			now M is in the location of the player;
+			say "A portal appears, and [NameDesc of M] hops out!";
+			if M is not interested, compute perception of M.
 
 [rather than becoming bored, they turn on you]
 To compute friendly boredom of (M - an imp):
-	if M is in the location of the player and the refactory-period of M <= 0:
+	if M is in the location of the player and the refractory-period of M <= 0:
 		compute sudden objectification of M;
 		now the boredom of M is 0;
 		anger M.
 
 To check consensual submissive sex of (M - an imp):
 	now current-monster is M;
-	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 500:
+	if presented-orifice is a reasonable target and the refractory-period of current-monster <= 500:
 		now the chosen-orifice of current-monster is presented-orifice;
 		say PresentFriendlyAcceptanceFlav of current-monster;
 		now the chosen-orifice of M is presented-orifice;
@@ -165,29 +166,30 @@ To say PresentFriendlyAcceptanceFlav of (M - an imp):
 	say "[BigNameDesc of M] perks up, and so does [his of M] [DickDesc of M]!".
 
 To say PresentFriendlyRejectionFlav of (M - an imp):
-	if presented-orifice is a reasonable target and the refactory-period of current-monster > 500, say "[BigNameDesc of M] shakes [his of M] head. It seems that [he of M][']s not ready to go again yet.";
+	if presented-orifice is a reasonable target and the refractory-period of current-monster > 500, say "[BigNameDesc of M] shakes [his of M] head. It seems that [he of M][']s not ready to go again yet.";
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To satisfy (M - an imp):
 	if M is interested:
 		dislodge M;
 		now the favour of M is 99;
-		compute refactoryReset of M;
+		compute refractoryReset of M;
 		if M is in the location of the player and M is awake, say SatisfiedFlav of M;
 	otherwise:
 		satisfy M for 200 seconds.
 
-To compute refactoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hardcode it here]
-	now the refactory-period of M is the refactory-time of M.
+To compute refractoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hard code it here]
+	now the blue-balls of M is 0;
+	now the refractory-period of M is the refractory-time of M.
 
 To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
-	decrease the refactory-period of M by R;
-	if the refactory-period of M < 200 and R + the refactory-period of M >= 200:
+	decrease the refractory-period of M by R;
+	if the refractory-period of M < 200 and R + the refractory-period of M >= 200:
 		say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
-	otherwise if the refactory-period of M < 100 and R + the refactory-period of M >= 100:
+	otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
 		say "[BigNameDesc of M] makes an obscene gesture at you.[big he of M] seems like [he of M] really needs a way to entertain [himself of M]...";
-	otherwise if the refactory-period of M < 20 and R + the refactory-period of M >= 20:
+	otherwise if the refractory-period of M < 20 and R + the refractory-period of M >= 20:
 		say "[one of][BigNameDesc of M] stares at you, licking [his of M] lips[or][BigNameDesc of M][']s eyes linger on your body[at random]. It seems like [he of M][']s about to turn on you...".
 
 To say SatisfiedFlav of (M - an imp):
@@ -217,7 +219,7 @@ Section 1 - Attack
 
 To compute (M - an imp) protecting against (X - a monster):
 	if the player is stuck or (the player is prone and the player is in danger):
-		if the refactory-period of M < the refactory-time of M - 30: [After they've just used you, they don't do it again immediately.]
+		if the refractory-period of M < the refractory-time of M - 30: [After they've just used you, they don't do it again immediately.]
 			say "[BigNameDesc of M] grins evilly. Looks like [he of M][']s turned on you!";
 			anger M;
 	otherwise if X is demoness:
@@ -229,7 +231,7 @@ To compute (M - an imp) protecting against (X - a monster):
 		compute X receiving 1 damage from M;
 		if M is damageable:
 			say "[BigNameDesc of X] snarls and attacks [NameDesc of M] in retaliation.";
-			compute damage of M;
+			compute standard damage of M;
 		otherwise:
 			say "[BigNameDesc of X] flails at [NameDesc of M] in self-defence.";
 			increase the imp-rudeness of M by 1.
@@ -237,13 +239,14 @@ To compute (M - an imp) protecting against (X - a monster):
 To say AllyDamageFlav of (M - an imp) on (X - a monster):
 	say "[BigNameDesc of M] [one of]claws [NameDesc of X][or]laughs as [he of M] punches [NameDesc of X][or]punches [NameDesc of X][or]kicks [NameDesc of X][then at random]!".
 
+To decide if (M - an imp) is willing to creampie (F - vagina):
+	if there is a worn xavier's cunt tattoo, decide no;[they respect their master]
+	if the class of the player is priestess and the number of infernal monsters penetrating the player < 3, decide no;
+	decide yes.
+
 Section 2 - Damage
 
 Definition: an imp is damageable if the imp-rudeness of it >= the difficulty of it.
-
-To decide which number is the damage modifier of (M - an imp):
-	if M is damageable, decide on (attack-damage * -1);
-	decide on 0.
 
 To say damage-flavour of (N - a number) on (M - an imp):
 	if N is 0:
@@ -262,14 +265,12 @@ To say damage-flavour of (N - a number) on (M - an imp):
 	otherwise:
 		say "POW! Your attack is accompanied by a loud sound. An almost impossibly strong [if critical is 1][bold type]critical hit[roman type][otherwise]hit[end if]!".
 
-To compute damage of (M - an imp):
-	if the health of M > 0:
-		say "[BigNameDesc of M] leaps away from you, sticking out [his of M] tongue as a portal opens up behind [him of M]. [big he of M] cackles tauntingly as [he of M] jumps through and portal closes after [him of M].";
-		destroy M;
-	otherwise:
-		compute death of M.
+To compute standard damage of (M - an imp):
+	compute automatic banishment of M.
 
-To compute unique death of (M - an imp):
-	say "[BigNameDesc of M] topples over, dead. After a few moments, [his of M] body disappears.";
+To say BanishFleeFlav of (M - an imp):
+	say "[BigNameDesc of M] leaps away from you, sticking out [his of M] tongue as a portal opens up behind [him of M]. [big he of M] cackles tauntingly as [he of M] jumps through and portal closes after [him of M].".
+
+Definition: an imp is auto-banish-loot-dropping: decide no. [Will it automatically drop jewellery when it is banished in this manner?]
 
 Imp ends here.

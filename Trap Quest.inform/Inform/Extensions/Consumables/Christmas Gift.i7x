@@ -11,6 +11,8 @@ To decide which figure-name is the examine-image of (B - a christmas gift):
 Check opening a christmas gift:
 	try unwrapping the noun instead.
 
+Definition: a christmas gift is never-in-bag: decide yes.
+
 When play begins:
 	let giftShortcutCount be 1;
 	repeat with E running through christmas gift:
@@ -48,8 +50,7 @@ To compute christmas event of (C - a christmas-gift-cumshot):
 A christmas-gift-transformation is a kind of christmas-gift-event. There are 8 christmas-gift-transformation in Christmas Item Pen.
 
 To compute christmas event of (T - a christmas-gift-transformation):
-	let C be a random worn transformation chain transformable clothing;
-	if C is nothing, now C is a random worn transformable clothing;
+	let C be most-transformable-clothing;
 	if C is clothing:
 		say "A silvery liquid shoots out of the gift box with purpose, shooting straight for your [ShortDesc of C]! The [clothing-material of C] absorbs the magic fluid and then begins to shimmer!";
 		potentially transform C;
@@ -111,6 +112,9 @@ To initialise christmas gifts:
 			now E is in Christmas Item Pen;
 	[8 transformations]
 	[7 surprise penetrations]
+	if diaper messing > 3 and diaper quest is 1:
+		repeat with W running through pocketwipes:
+			now W is in Christmas Item Pen;
 	repeat with N running from 1 to 6: [6 electric fans]
 		let E be a random off-stage electric fan;
 		now E is in Christmas Item Pen;
@@ -141,16 +145,14 @@ To initialise christmas gifts:
 			if BC is 0, now B is cursed;
 			if BC is 1, now B is blessed;
 			increase BC by 1;
-		let T be a random tincture of strength; [2 tincture buffs]
-		now T is in Christmas Item Pen;
-		now T is blessed;
-	let T be a random tincture of acceleration;
-	now T is in Christmas Item Pen;
-	now T is blessed;
+	now luck-tincture is in Christmas Item Pen; [2 tincture buffs]
+	now luck-tincture is blessed;
+	now acceleration-tincture is in Christmas Item Pen;
+	now acceleration-tincture is blessed;
 	if diaper quest is 0 and Icarus is off-stage, now Icarus is in Christmas Item Pen. [And a brand new festive NPC]
 
 To compute christmas gifting of (M - a monster):
-	if christmas content is 1 and M is intelligent:
+	if christmas content is 1 and M is reactive:
 		let CG be a random off-stage christmas gift;
 		if CG is a thing:
 			now CG is carried by the player;

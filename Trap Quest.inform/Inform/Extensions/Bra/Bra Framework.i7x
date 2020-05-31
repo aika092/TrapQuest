@@ -2,9 +2,16 @@ Bra Framework by Bra begins here.
 
 A bra is a kind of clothing. bras have a number called support. The support of a bra is usually 1. bras have a number called size. bras have a number called min size. The min size of a bra is usually 2. bras have a number called max size. The max size of a bra is usually 15. A bra is usually top-displacable. The soak-limit of a bra is usually 10.
 
+To decide which number is the current support of (B - a bra):
+	let S be 0;
+	if B is top-placed and B is worn:
+		if the largeness of breasts + 2 > the size of B, increase S by the support of B;
+		increase S by the magic-modifier of B;
+	decide on S.
+
 A bra is usually rare.
 
-Definition: a bra is same-type if theme-share-target is bra.
+Definition: a bra is same-type if theme-share-target is bra and theme-share-target is not bikini top.
 
 Definition: a bra is ingredient if it is not product.
 
@@ -43,7 +50,13 @@ To compute SelfExamineDesc of (B - a bra):
 			say " that are overflowing out of the cups of your [selfexaminetitle of B]. ".
 
 Report examining bra:
-	if the largeness of breasts > 2 and newbie tips is 1, say "[if the support of the noun > 0]Bras[otherwise]Most bras (but not this one)[end if] [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts.".
+	let S be the current support of the noun;
+	if the largeness of breasts > 1:
+		if S > 0:
+			say "This [ShortDesc of the noun] is [if S > 2]significantly[otherwise if S is 2]moderately[otherwise]slightly[end if] supporting your breasts.";
+		otherwise if the noun is worn:
+			say "This [ShortDesc of the noun] is not supporting your breasts[if the largeness of breasts + 2 <= the size of the noun and the support of the noun > 0] because the cups are too big[otherwise if the noun is not top-placed and the support of the noun > 0] because it has been displaced[end if].";
+	if the largeness of breasts > 2 and newbie tips is 1, say "[if the current support of the noun > 0]Bras[otherwise if the noun is top-placed]Most bras (but not this one)[otherwise]Most bras (but not when displaced)[end if] [if the number of worn bras is 0]would [end if]reduce the effective weight of your breasts and the amount that your slap damage [if the largeness of breasts >= 6 and the breastskill of the player is 0]is[otherwise]would be[end if] reduced by having large breasts[if the breastskill of the player is 1] if you hadn't learned the skill from the gladiator[end if].".
 
 To say selfexaminetitle of (B - a bra):
 	say ShortDesc of B.
@@ -85,35 +98,12 @@ To uniquely set up (B - a bra):
 		now B is temptation;
 		if diaper quest is 1, now B is respiration;
 	if R is 4 and lactation fetish is 1, now B is milk production;
-	if (R is 5 or R is 6) and B is fully exposing, now B is protection;
+	if R > 6 and B is fully exposing, now B is protection;
 	if R is 3 or R is 4, curse B;
 
 To Assign Size to (B - a bra):
 	if diaper quest is 1, now the size of B is 5;
 	otherwise now the size of B is a random number between min size of B and max size of B.
-
-To compute periodic effect of (B - a bra):
-	BraGrow B.
-
-braGrowCharge is a number that varies.
-
-To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow itself or your breasts.]
-	if B is cursed and the player is not top heavy and diaper quest is 0:
-		increase braGrowCharge by 1;
-		let L be the largeness of breasts;
-		let L2 be L;
-		if L2 < 8, now L2 is 8;
-		if braGrowCharge > L * 5:
-			if B is milk production:
-				MilkUp 2;
-			otherwise if the size of B > L or the support of B is 0:
-				say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of[otherwise]fill[end if] your [ShortDesc of B]!";
-				BustUp 1;
-			otherwise if the size of B < the max size of B and the support of B > 1:
-				if B is milk production, say "You feel your [ShortDesc of B] grow in size to allow your [BreastDesc] to produce [if the milk volume of breasts > 0]even more [end if][milk]!";
-				otherwise say "You feel your [ShortDesc of B] grow in size to allow your [BreastDesc] to fill out even further!";
-				increase the size of B by 1;
-			now braGrowCharge is 0.
 
 To compute found size of (B - a bra):
 	if the max size of B >= 20:
@@ -137,7 +127,7 @@ To compute bra strain:
 			compute bra strain of B.
 
 To compute bra strain of (B - a bra):
-	if the size of B < the max size of B and B is cursed milk production bra or B is cursed maternity bra:
+	if the size of B < the max size of B and B is blessed:
 		say "Your [ShortDesc of B] grows with your [BreastDesc] to continue to contain them.";
 		increase the size of B by 1;
 	otherwise:
@@ -145,10 +135,6 @@ To compute bra strain of (B - a bra):
 
 To BraBurst (B - a bra):
 	say "Your [printed name of B] can't take the strain any more, and the clasp at the back snaps. It pings off your body, ruined!";
-	repeat with D running through worn overdresses:
-		if the top-layer of D > the top-layer of B and a random number between 1 and 10 > 7 and D is not cursed:
-			say "As it flies off, it rips through your [printed name of D]. It falls to the ground, ruined.";
-			destroy D;
 	destroy B.
 
 To decide which number is the leniency of (B - a bra): [the higher F the bigger boobs need to get to burst clothing]
@@ -167,7 +153,7 @@ This is the setup starting bras rule:
 		restock C.
 The setup starting bras rule is listed in the setup starting items rules.
 
-To Say BraSize (X - a number):
+To say BraSize (X - a number):
 	if X is 2, say "AA";
 	if X is 3, say "A";
 	if X is 4, say "B";
@@ -257,6 +243,59 @@ Report wearing a bra:
 		if the size of the noun is the largeness of breasts, say "Your breasts sit perfectly inside the cups.";
 		if the size of the noun < the largeness of breasts, say "Your breasts fit tightly inside the cups.";
 		if the noun is chastity bra, say "[one of][line break][variable custom style]Wow, this is heavy...[roman type][line break][or][stopping]";
-	if the noun is cursed, say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bikini top![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]".
+	if the noun is cursed:
+		say "[if the noun is bikini top]You feel the fabric suddenly tighten, and a quick check confirms you can't even get your fingers underneath them. This must be a cursed bikini top![otherwise]You feel the clasps on the back of the bra lock tightly and a quick check confirms that you can't pull them apart. This must be a cursed bra![end if]";
+		now the noun is identified;
+		now the noun is sure;
+		BraGrow the noun.
+
+To BraGrow (B - a bra): [Checks if the bra is cursed and if so it tries to grow itself or your breasts.]
+	if diaper quest is 0 and the player is not top heavy and the player is not a flatchested trap:
+		let LB be the largeness of breasts;
+		if the size of B < the max size of B and the size of B <= LB:
+			say "The [printed name of B] grows into a ";
+			increase the size of B by 1;
+			say "[printed name of B]!";
+		if the size of B > LB or the support of B is 0:
+			say "You feel your breasts grow to try and [if the support of B is 0]further emphasise the uselessness of[otherwise]fill[end if] your [ShortDesc of B]!";
+			let FB be the flesh volume of breasts;
+			let keep-going be 1;
+			while keep-going is 1:
+				BustUp 1;
+				if the flesh volume of breasts <= FB or the largeness of breasts > LB, now keep-going is 0;
+				otherwise now FB is the flesh volume of breasts.
+
+A bikini top is a kind of bra. A bikini top is usually nylon. A bikini top is usually optional-top-displacable. The soak-limit of a bikini top is 6. A bikini top is usually plentiful. A bikini top is usually low cut. A bikini top is usually erect-nipple-exposing. Understand "bikini", "top" as bikini top.
+
+The text-shortcut of bikini top is "bt".
+
+Definition: a bikini top is same-type if theme-share-target is bikini top or (theme-share-target is bra and there is worn bikini bottoms).
+
+The min size of a bikini top is usually 2. The max size of a bikini top is usually 15. The support of a bikini top is usually 1.
+
+A string bikini top is a kind of bikini top. The soak-limit of a string bikini top is 2. The min size of a string bikini top is usually 20. The max size of a string bikini top is usually 20. A string bikini top is usually ridiculously low cut. A string bikini top is usually transformation-rare. [Essentially a string bikini top comes in one size fits all]
+
+Definition: a string bikini top is uncovered themed: decide yes.
+Definition: a string bikini top is swimming themed: decide yes.
+
+To say CupDesc of (C - a string bikini top):
+	say "".
+
+To compute unique summoning of (C - a bikini top):
+	if the largeness of breasts >= the min size of C and the largeness of breasts <= the max size of C, now the size of C is the largeness of breasts;
+	if C is cursed and lactation fetish is 1, now C is milk production.
+
+Carry out wearing bikini top:
+	if the noun is cursed and lactation fetish is 1, now the noun is milk production.
+
+To decide which number is the initial outrage of (C - a bikini top):
+	decide on 2.
+
+To say ShortDesc of (B - a bikini top):
+	say "bikini top".
+
+To decide which object is the unique-upgrade-target of (C - a bikini top):
+	if the lactation rate of the player > a random number between 0 and 4, decide on a random off-stage cow print bikini top;
+	decide on nothing.
 
 Bra Framework ends here.

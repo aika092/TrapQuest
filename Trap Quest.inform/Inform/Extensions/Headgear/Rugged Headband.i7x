@@ -24,6 +24,11 @@ rugged-summoned is a number that varies.
 To compute unique recycling of (C - rugged-headband):
 	now rugged-summoned is 0.
 
+Definition: rugged-headband (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
+	if wearing-target is not C and wearing-target is leopard themed, decide yes;
+	if wearing-target is heavy-club, decide yes;
+	decide no.
+
 To compute class outfit of (H - rugged-headband):[TODO: eventually add a loincloth]
 	let B be leopard-hotpants;
 	if B is not actually summonable, now B is leopard print bikini bottoms;
@@ -38,7 +43,7 @@ To compute class outfit of (H - rugged-headband):[TODO: eventually add a loinclo
 		say "[bold type]Your headband flexes, and a [printed name of T] materialises on your chest![roman type][line break]";
 		summon T;
 	otherwise if B is clothing and B is actually summonable:
-		now B is dominance;[means you can't wear a strap-on, so you get a bit of a freebie]
+		now B is dominance;[means you can't wear a strapon, so you get a bit of a freebie]
 		say "[bold type]Your headband flexes, and a [printed name of B] materialises on your crotch![roman type][line break]";
 		summon B.
 
@@ -49,6 +54,30 @@ To decide which number is the intelligence-influence of (C - rugged-headband):
 	decide on X.
 
 domination-quest is a headgear-clothing-quest.
+
+domination-quest-tries is a number that varies.
+
+To progress quest of (Q - domination-quest):
+	let C be rugged-headband;
+	if C is worn and the quest of C is Q:
+		if player-fucking is DOMINANT-DOMINANT or player-fucking is DOMINANT-SUPER:
+			compute quest completion of Q on C;
+			now domination-quest-tries is 0;
+		otherwise:
+			if player-fucking is DOMINANT-NEUTRAL, increase domination-quest-tries by 1;
+			otherwise increase domination-quest-tries by 2;
+			if domination-quest-tries < 2:
+				say "Your [ShortDesc of C] quivers, like its laughing at you. You'll need to be [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more dominant if [if C is cursed]you want to remove this curse[otherwise]you want its approval[end if]...";
+			otherwise if domination-quest-tries < 3:
+				say "Your [ShortDesc of C] flexes, squeezing your temples. If [if player-fucking is DOMINANT-NEUTRAL]that's the best you can do[otherwise]you don't start acting dominant[end if], [if C is cursed]you'll never get rid of this curse![otherwise]you get the feeling it's going to get really pissed off![end if]";
+			otherwise if domination-quest-tries < 5:
+				say "Your [ShortDesc of C] flexes, painfully squeezing your temples. It clearly thinks you [if player-fucking is DOMINANT-NEUTRAL]can do better than that[otherwise]aren't acting dominant at all[end if]. If you don't get your act together [if C is cursed]and remove this curse soon, there might be trouble in store for you![otherwise]soon, there might be trouble in store for you![end if]";
+				PainUp 1;
+			otherwise:
+				say "Your [ShortDesc of C] flexes, painfully squeezing your temples. It gradually increases the force, and you can hear the fabric ripping under the strain. Finally, the pain reaches its peak, and the [ShortDesc of C] drops from your falls your forehead in shredded pieces.";
+				PainUp 4;
+				now domination-quest-tries is 0;
+				only destroy C.
 
 To uniquely set up (C - rugged-headband):
 	now the quest of C is domination-quest.

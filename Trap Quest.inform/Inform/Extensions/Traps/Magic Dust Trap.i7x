@@ -32,13 +32,12 @@ To trigger (Y - a magic dust trap):
 	now Y is expired;
 	let X be a random number between 8 and 30;
 	say "A tiny catapult mechanism swings out towards you, throwing [glitter] towards you! ";
-	let C be a random worn currently uncovered transformable clothing;
-	if C is nothing, now C is a random worn currently uncovered clothing;
+	let C be most-transformable-uncovered-clothing;
 	if X > the dexterity of the player:
 		if diaper quest is 1 and diaper messing >= 3 and the player is full and asshole is not actually occupied and there is worn total protection soilable knickers:
 			say "A phrase rapidly repeats in your head over and over and over and over.[line break][second custom style]'I don't need maturity! I don't need maturity! I don't need maturity! Don't need maturity! Don't need maturity! Maturity! Maturity! Maturity...'[roman type][line break]";
 			if hypno-trigger-maturity is 0:
-				say "You feel an almost irresistible compulsion to squat down and mess yourself. You might be able to resist, but if you do, there might be more permanent long-term repercussions when you hear the word 'maturity' in the future. Do you try to resist the urge to mess yourself? ";
+				say "You feel an almost irresistable compulsion to squat down and mess yourself. You might be able to resist, but if you do, there might be more permanent long-term repercussions when you hear the word 'maturity' in the future. Do you try to resist the urge to mess yourself? ";
 				if the player is consenting:
 					now hypno-trigger-maturity is 1;
 					say "You grit your teeth and focus on the word 'maturity'. You manage to hold on... for now.[line break][variable custom style]Maturity...[roman type][line break]";
@@ -53,7 +52,7 @@ To trigger (Y - a magic dust trap):
 			now permanent makeup is 1;
 		otherwise if C is nothing or C is untransformable or a random number between 1 and 6 is 1:
 			if diaper quest is 1:
-				say "It gets all over you[if the player is able to get horny], and you can feel your entire body flush with arousal![otherwise], and you feel a little tingly.[end if]";
+				say "It gets all over you, and you [if the player is able to get horny]can feel your entire body flush with arousal![otherwise]feel a little tingly.[end if]";
 				arouse 3000;
 				repeat with M running through reactive monsters:
 					say TriggeredTrapReactFlav of M;

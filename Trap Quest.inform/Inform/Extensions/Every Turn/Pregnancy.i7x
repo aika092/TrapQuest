@@ -182,7 +182,7 @@ The number of times we cycle through maximum-birth-delay turns, i.e. the longer 
 +!]
 To decide which number is slow birth rate:
 	let S be slow birth + 1;
-	decide on S * S * 4. [can balance this later if needed]
+	decide on S * 2. [can balance this later if needed]
 
 [!<maximumPregnancyDelayTracker:Integer>*
 
@@ -198,7 +198,20 @@ Every turn we call this function to calculate what happens to the player's pregn
 +!]
 To compute pregnancy:
 	increase maximum-pregnancy-delay-tracker by 1;
-	if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
+	if the pregnancy of the player is 3:
+		if maximum-pregnancy-delay-tracker <= 20:
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy ticker: [maximum-pregnancy-delay-tracker] | (20.5) minimum time before eggs laid[roman type][line break]";
+		otherwise:
+			let R be a random number between 20 and 500;
+			if the largeness of belly >= max belly size, now R is -1;
+			if debuginfo > 1, say "[line break][input-style]Egg pregnancy check: [if R is -1]BELLY AT MAXIMUM SIZE - AUTOMATIC EGG BIRTH[otherwise]RNG(20~500) [R] | [maximum-pregnancy-delay-tracker].5 eggs hold on threshold[end if][roman type][line break]";
+			if R < maximum-pregnancy-delay-tracker:
+				let P be a random thing penetrating vagina;
+				if P is a thing:
+					if R > 0, say "You feel the egg[if the total egg count of vagina > 1]s[end if] in your belly try to come out, but fail because of [NameDesc of P].";
+				otherwise:
+					compute forced womb egg laying;
+	otherwise if the womb volume of vagina < 30: [In here we compute the normal growth of a pregnancy.]
 		if debuginfo > 1 and the pregnancy of the player is 1 and (slow pregnancy is not 2 or maximum-pregnancy-delay-tracker <= 1), say "[line break][input-style]Pregnancy ticker: [maximum-pregnancy-delay-tracker] | [maximum-pregnancy-delay].5[roman type][line break]";
 		if maximum-pregnancy-delay-tracker >= maximum-pregnancy-delay or (slow pregnancy is 2 and maximum-pregnancy-delay-tracker > 1): [if slow pregnancy is 2 that means we grow babies super super fast]
 			now maximum-pregnancy-delay-tracker is 0;
@@ -249,7 +262,7 @@ To compute pregnancy:
 						say "You feel like your mega-pregnancy has [one of]finally reached full term. You'll be ready to pop soon[or]once again finally reached full term[stopping].";
 						cutshow figure of giant pregnancy for belly;
 			otherwise:
-				compute pregnancy annoyance;
+				if the remainder after dividing the womb volume of vagina by 5 is 0, compute pregnancy annoyance;
 	otherwise if maximum-pregnancy-delay-tracker >= maximum-birth-delay and the player is not immobile and the player is not flying and the pregnancy of the player is 1 and the number of worn chastity cages is 0:
 		now maximum-pregnancy-delay-tracker is 0;
 		increase slow-pregnancy-tracker by 1;
@@ -268,7 +281,7 @@ To compute pregnancy:
 					repeat with P running through worn temporarily-displaced clothing:
 						replace P;]
 			otherwise: [The father is inanimate]
-				if inhuman pregnancy < 2:
+				if inhuman pregnancy < 2 or (extreme proportions fetish is 1 and the womb volume of vagina is 30): [If the stuff in brackets is true, we checked for an extreme pregnancy and purposefully chose not to give the player one this time.]
 					say DefaultBirthScene;
 				otherwise if the father is elder altar:
 					compute god birth;
@@ -337,27 +350,26 @@ To compute tentacle birth:
 		summon tentacles tattoo;
 		try examining tentacles tattoo;
 	let M be a random off-stage tentacle monster;
-	compute birth set up of M.
+	if M is a monster, compute birth set up of M.
 
 To compute infernal birth:
 	let M be a random imp;
 	let I be the number of off-stage imps;
 	if I is 0:
-		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know its probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creatures growing inside of you. The process is incredibly long and painful, and you almost pass out a few times from the pain. A portal opens up between your legs as the first of your red-skinned devil offspring is born, swallowing [him of M] up before you even have the chance to see what [he of M] looks like. The second, and finally the third birth pass in exactly the same way, and although you know it's probably for the best, you can't help feeling a pang of regret as the portal closes, severing your connection with your children forever.";
 		DelicateUp 1;
 	otherwise:
 		let X be a random number between 1 and I;
 		if X > 3, now X is 3;
 		compute pregnancy clothing displacement;
-		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expression on [his of M][otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
+		say "[PregFlav]You are overcome by a terrible feeling of dread as you begin to give birth to the evil creature[if X > 1]s[end if] growing inside of you. The process of delivering the [if X > 1]first [end if ]baby is incredibly long and painful, and you almost pass out a few times from the pain. [if X is 1]Finally, your red-skinned devil offspring is born, apparently fully aware and fully adult as [he of M] hops to [his of M] feet. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although it's difficult to look past [his of M] nasty, lecherous expression[otherwise]The first red-skinned devil is born fully adult and fully aware, immediately jumping into action to assist in delivering [his of M] siblings. With [his of M] help, giving birth to [his of M] sibling passes much more smoothly, and a few minutes later, [X] infernal children are standing before you. Seeing your offspring all grown up like this fills you with a deep sense of fulfilment, although its difficult to look past the nasty, lecherous expressions on their faces[end if].";
 		StrengthUp 1;
 		DexUp 1;
 		DelicateUp 2;
 		while X > 0:
 			decrease X by 1;
 			let N be a random off-stage imp;
-			if N is a monster:
-				compute birth set up of N.
+			if N is a monster, compute birth set up of N.
 
 [!<ComputeGodBirth>+
 
@@ -409,10 +421,11 @@ REQUIRES COMMENTING
 +!]
 To check for extreme pregnancies:
 	if extreme proportions fetish is 1 and inhuman pregnancy > 0 and the father is not the throne: [Super-pregnancies are go]
-		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger:
+		if the father is a minotaur or the father is vines or the father is lake monster or the father is living belt of sturdiness or the father is hellhound or the father is demon lord or the father is facehugger or the father is elder altar:
 			now the womb volume of vagina is 31;
-		if the father is creampie pole trap and inhuman pregnancy is 2 and a random number between 1 and 5 >= 2:
+		if the father is creampie pole trap and inhuman pregnancy is 2 and (tentacle fetish is 1 or the player is getting unlucky):
 			now the womb volume of vagina is 31;
+			if tentacle fetish is 0, say "[if slow pregnancy > 2][bold type]You have just noticed that your belly is getting even bigger than a normal pregnancy. [end if][one of][line break][variable custom style]What the hell have I got growing inside me?! [or][stopping][roman type][GotUnluckyFlav]";
 		if the father is djinn:
 			now the womb volume of vagina is 31;
 	if the womb volume of vagina is 31 and slow pregnancy > 2:
@@ -438,13 +451,18 @@ To compute pregnancy annoyance:
 			otherwise:
 				say "Unable to get the nutrients it needs from your stomach, your womb draws what it needs directly from your muscles. You feel a bit weaker...";
 				StrengthDown 1;
-		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 2 is 1:
+		otherwise if the womb volume of vagina >= 20 and watersports mechanics is 1 and the player is not incontinent and the player is not bursting and a random number between 1 and 10 is 1:
 			if the bladder of the player < 6, now the bladder of the player is 6;
 			if the player is bursting, say "[bold type]Your unborn baby kicks hard down on your bladder.[line break][variable custom style]Oof![roman type][line break]You're suddenly desperate for the loo!";
-		otherwise if a random number between 1 and 4 is 1 and the player is not very horny:
+		otherwise if the womb volume of vagina >= 25 and a random number between 1 and 8 is 1:
+			say "You feel your pregnancy making your [BreastDesc] become more engorged and [if lactation fetish is 1]their lactation rate increasing[otherwise]sensitive[end if]!";
+			BustUp 1;
+			if lactation fetish is 1, increase the lactation rate of the player by 1;
+			otherwise TitFuckAddictUp 1;
+		otherwise if a random number between 1 and 5 is 1 and the player is not very horny:
 			say "[bold type]Your pregnancy-hormone-addled brain randomly and spontaneously flares up with arousal.[one of][or][line break][variable custom style]This is crazy, it feels like I want sex all the time at the moment...[or][stopping][roman type][line break]";
 			arouse 3000;
-		otherwise if the womb volume of vagina > a random number between 15 and 75 and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
+		otherwise if the womb volume of vagina > a random number between 15 and 180 and the player is upright and the player is not very tired and the fatigue of the player > the buckle threshold of the player / 10:
 			say "The weight of your unborn baby is making your feet and back ache. [bold type]You need to sit down and rest soon.[roman type][line break]";
 			now the fatigue of the player is the very tired threshold of the player;
 		otherwise if the womb volume of vagina > 15:
@@ -455,6 +473,6 @@ To compute pregnancy annoyance:
 	otherwise if the womb volume of vagina > 15:
 		say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb, but your magically protected womb prevents you from suffering any negative effects.";
 	otherwise:
-		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".
+		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".[####Selkie: Just wondering if these various sometimes-empty 'say-expressions' might be the source of the large spands of blank lines that sometimes appear during play?]
 
 Pregnancy ends here.

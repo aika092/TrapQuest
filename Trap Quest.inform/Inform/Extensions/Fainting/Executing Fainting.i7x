@@ -28,16 +28,20 @@ Called when the player faints. We reset a lot of variables.
 
 +!]
 To Execute Fainting:
+	let lossChosen be 0;
 	repeat with M running through monsters in the location of the player:
 		dislodge M;
 	now another-turn is 0;
+	let OL be the location of the player;
 	if the player is in WoodsBoss01, now the player is in Woods16;
-	if the player is in UrinalBlindfolded, now the player is in Hotel31;
+	if the player is in a linkedroom, now the player is in the source-room of the location of the player;
+	[if the player is in UrinalBlindfolded, now the player is in Hotel31;]
 	if the player is in DiamondLessonBlindfolded, now the player is in School12;
-	if the player is in Iron Maiden, now the player is in the location of a random iron-maiden;
+	[if the player is in Iron Maiden, now the player is in the location of a random iron-maiden;
 	if the player is in HoleInWall, now the player is in the location of hole-in-wall;
 	if the player is in DiaperPail, now the player is in the location of most-recent-pail;
-	if the player is in MimicCrib, now the player is in the location of memic;
+	if the player is in MimicCrib, now the player is in the location of memic;]
+	if the player is in a predicament room, now the player is in School01;
 	if playerRegion is Mansion and there is an off-stage mindless acolyte:
 		let A be a random off-stage mindless acolyte;
 		set up A;
@@ -62,71 +66,83 @@ To Execute Fainting:
 	unless the player is consenting:
 		repeat with A running through worn plentiful accessories:
 			now A is carried by the player; [You can't just bail and then win! You lose all your money]
+		now lossChosen is 1;
 		end the story finally saying "You have lost.";
-	decrease the extra lives of the player by 1;
-	unless earnings is starting-earnings:
-		Set Leftovers;
-		increase the faint count of the player by 1;
-		if debugmode is 1, say "[line break][bold type]RECOVERING MONSTERS[roman type][line break]";
-		Recover Monsters;
-		if crashdebug is 1:
-			say "Checkpoint 2.";
-		if debugmode is 1, say "[line break][bold type]RECOVERING CLOTHING[roman type][line break]";
-		Recover Clothing;
-		if debugmode is 1, say "[line break][bold type]RECOVERING TRAPS[roman type][line break]";
-		Recover Traps;
-		if map reset is 1:
+	if lossChosen is 0:
+		decrease the extra lives of the player by 1;
+		unless earnings is starting-earnings:
+			Set Leftovers;
+			increase the faint count of the player by 1;
+			if debugmode is 1, say "[line break][bold type]RECOVERING MONSTERS[roman type][line break]";
+			Recover Monsters;
 			if crashdebug is 1:
-				say "Checkpoint 3.";
-			if debugmode is 1, say "[line break][bold type]RECOVERING DRINKS[roman type][line break]";
-			Recover Drinks;
+				say "Checkpoint 2.";
+			if debugmode is 1, say "[line break][bold type]RECOVERING CLOTHING[roman type][line break]";
+			Recover Clothing;
+			if debugmode is 1, say "[line break][bold type]RECOVERING TRAPS[roman type][line break]";
+			Recover Traps;
+			if map reset is 1:
+				if crashdebug is 1:
+					say "Checkpoint 3.";
+				if debugmode is 1, say "[line break][bold type]RECOVERING DRINKS[roman type][line break]";
+				Recover Drinks;
+				if crashdebug is 1:
+					say "Checkpoint 4.";
+				Recover Collectibles;
+				if crashdebug is 1:
+					say "Checkpoint 5.";
+				if debugmode is 1, say "[line break][bold type]RECOVERING CONTAINERS[roman type][line break]";
+				Recover Containers;
+				if crashdebug is 1:
+					say "Checkpoint 6.";
+				if debugmode is 1, say "[line break][bold type]RECOVERING ROOMS[roman type][line break]";
+				Recover Rooms;
+				if crashdebug is 1:
+					say "Checkpoint 7.";
+			if debugmode is 1, say "[line break][bold type]RECOVERING PLAYER[roman type][line break]";
+			Recover the Player;
 			if crashdebug is 1:
-				say "Checkpoint 4.";
-			Recover Collectibles;
-			if crashdebug is 1:
-				say "Checkpoint 5.";
-			if debugmode is 1, say "[line break][bold type]RECOVERING CONTAINERS[roman type][line break]";
-			Recover Containers;
-			if crashdebug is 1:
-				say "Checkpoint 6.";
-			if debugmode is 1, say "[line break][bold type]RECOVERING ROOMS[roman type][line break]";
-			Recover Rooms;
-			if crashdebug is 1:
-				say "Checkpoint 7.";
-		if debugmode is 1, say "[line break][bold type]RECOVERING PLAYER[roman type][line break]";
-		Recover the Player;
-		if crashdebug is 1:
-			say "Checkpoint 8.";
-		scramble items;
-		set up monsters;
-		if debugmode is 1, say "Finished setting up monsters.";
-		if the location of the player is unplaced or the location of the player is unspawnable: [To stop a gamebreaking bug where the tile of the player was not used]
-			if playerRegion is Woods:
-				now the player is in Woods01;
-			otherwise if playerRegion is Hotel:
-				now the player is in Hotel01;
-			otherwise if playerRegion is Mansion:
-				now the player is in Mansion01;
-			otherwise:
-				now the player is in Dungeon11;
-		now the location of the player is discovered;
-		say "[one of]You wake up, and realise you are lying face down, still in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it! [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
-		say "You are [RealDesc]";
-		if the pink pill is not held by the player:
-			say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
-			now the pink pill is held by the player;
-		if Newly-tattooed is 1:
-			say "Your lower back feels sore, and when you look you realise you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
-			now Newly-tattooed is 0;
-		if inhuman pregnancy is 2 and tentacled is 1:
-			now tentacled is 0;
-			now player-breeder is in the location of the player;
-			now the growth of player-breeder is 0;
-			say "You see a suspiciously familiar body wrapped up by tentacles and stuck to the wall. Oh dear...";
-		check immobility;
-		refresh windows;
-		zero focus stuff;
-		display focus stuff;
+				say "Checkpoint 8.";
+			scramble items;
+			set up monsters;
+			if debugmode is 1, say "Finished setting up monsters.";
+			if the location of the player is unplaced or the location of the player is unspawnable: [To stop a gamebreaking bug where the tile of the player was not used]
+				if playerRegion is Woods:
+					now the player is in Woods01;
+				otherwise if playerRegion is Hotel:
+					now the player is in Hotel01;
+				otherwise if playerRegion is Mansion:
+					now the player is in Mansion01;
+				otherwise:
+					now the player is in Dungeon11;
+			now the location of the player is discovered;
+			say "[one of]You wake up, and realise you are lying face down[if the location of the player is OL], still[end if] in the [printed name of the location of the player][if the urine-puddle of the location of the player > 0], surrounded by a puddle of [urine][end if]. Your body feels like it has significantly recovered and there are no monsters or traps anywhere to be seen. The world around you looks different, suggesting that the entire game world may have been reset, but with you still in it! [if pubic hair images visible is 0][otherwise if the extra lives of the player <= 0]You notice that your pubic hair has completely gone, which reminds you that this is your last life. [otherwise if pubic hair images visible > the extra lives of the player]You notice that your pubic hair has gotten shorter and smaller, a cruel way to track how few tries you have left. [end if][line break][variable custom style]How long was I out for?[roman type][line break]A hologram of yourself in the virtual chamber shimmers into existence above you for a few seconds. It looks like you get to see exactly what they have done to you.[or]You wake up, again lying face down, this time in the [printed name of the location of the player]. Once again a hologram of your real self appears in front of you.[stopping]";
+			say "You are [RealDesc]";
+			if the pink pill is not held by the player:
+				say "You [one of][or]once again [stopping]find a pink pill inside your clenched fist.";
+				now the pink pill is held by the player;
+			if Newly-tattooed is 1:
+				say "Your lower back feels sore, and when you look you realise you[']ve had the word 'PROPERTY' tattooed on your back! Oh no!";
+				now Newly-tattooed is 0;
+			if inhuman pregnancy is 2 and tentacled is 1 and the player is female:
+				now tentacled is 0;
+				now player-breeder is in the location of the player;
+				now the growth of player-breeder is 0;
+				say "You see a suspiciously familiar body wrapped up by tentacles and stuck to the wall. Oh dear...";
+				if magical-maid-outfit is worn:
+					now magical-maid-outfit is in Holding Pen;
+					let MH be a random worn maid headdress;
+					if MH is clothing, now MH is in Holding Pen;
+					now player-breeder is maid-history;
+				otherwise:
+					now player-breeder is not maid-history;
+				try examining player-breeder;
+			check immobility;
+			refresh windows;
+			zero focus stuff;
+			display focus stuff;
+			stop the action;
+	otherwise:
 		stop the action.
 
 [!<SetLeftovers>+

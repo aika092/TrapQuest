@@ -120,12 +120,16 @@ To decide which figure-name is Figure of Futanari Gladiator:
 	decide on figure of small image.
 To decide which figure-name is Figure of Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Insane Gladiator:
+To decide which figure-name is Figure of Unfriendly Wild Gladiator:
 	decide on figure of small image.
-To decide which figure-name is Figure of Wild Futanari Gladiator:
+To decide which figure-name is Figure of Enlightened Gladiator:
+	decide on figure of small image.
+To decide which figure-name is Figure of Unfriendly Enlightened Gladiator:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Interact 8:
+	decide on figure of small image.
+To decide which figure-name is Figure of Gladiator Interact 9:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Cutscene 1:
@@ -186,6 +190,9 @@ To decide which figure-name is Figure of Teacher Hannah Cutscene 2:
 To decide which figure-name is Figure of Quiz Predicament Room:
 	decide on figure of small image.
 
+To decide which figure-name is Figure of Slave Hannah:
+	decide on figure of small image.
+
 To decide which figure-name is Figure of hellhound:
 	decide on figure of small image.
 
@@ -231,6 +238,9 @@ To decide which figure-name is Figure of Body Reaction 13:
 To decide which figure-name is Figure of Body Reaction 14:
 	decide on figure of small image.
 To decide which figure-name is Figure of Body Reaction 15:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Bukkake Door Cutscene 1:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Cumshot Reaction 1:
@@ -283,6 +293,9 @@ To decide which figure-name is Figure of Fat Growth 1:
 To decide which figure-name is Figure of Fat Growth 2:
 	decide on figure of small image.
 To decide which figure-name is Figure of Fat Growth 3:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Football Predicament:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Hook Cutscene 1:
@@ -342,14 +355,17 @@ To decide which figure-name is Figure of Lips Cutscene 2b:
 To decide which figure-name is Figure of Lips Cutscene 3:
 	decide on figure of small image.
 
-To decide which figure-name is Figure of Maths Predicament:
-	decide on figure of small image.
-
 To decide which figure-name is Figure of Modmachine Cutscene 1:
 	decide on figure of small image.
 
 To get oral creampie image for (M - a thing):
 	do nothing.
+
+To decide which figure-name is Figure of Photo Display Predicament:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of Pink Lollipop:
+	decide on figure of small image.
 
 To decide which figure-name is Figure of Pole Cutscene 4:
 	decide on figure of small image.
@@ -371,6 +387,13 @@ To decide which figure-name is Figure of Throne Cutscene 4:
 To decide which figure-name is Figure of Throne Cutscene 5:
 	decide on figure of small image.
 To decide which figure-name is Figure of Throne Cutscene 6:
+	decide on figure of small image.
+
+To decide which figure-name is Figure of human toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of male toilet:
+	decide on figure of small image.
+To decide which figure-name is Figure of female toilet:
 	decide on figure of small image.
 
 To decide which figure-name is Figure of Vines Cutscene 1:

@@ -25,10 +25,10 @@ Check SelfDrinking:
 	if the noun is not breasts, say "This verb can't be used for that!" instead;
 	if the milkskill of the player is 0, say "[variable custom style]I don't really see how that would work.[roman type]" instead;
 	if the milk volume of breasts is 0, say "Your [ShortDesc of breasts] are empty of [milk]." instead;
- 	if the largeness of breasts < 7, say "Your [ShortDesc of breasts] are [if the largeness of breasts < 5]nowhere near[otherwise]not[end if] big enough." instead;
+	if the largeness of breasts < 7, say "Your [ShortDesc of breasts] are [if the largeness of breasts < 5]nowhere near[otherwise]not[end if] big enough." instead;
 	if the player is not able to manually use their hands, do nothing instead;
 	if the player is wrist bound behind, say "You would need the proper use of your arms and hands for that." instead;
-	if the player is not nipples exposed, say "Your nipples are not exposed." instead;
+	if there is worn actually nipple covering clothing, say "Your nipples are not exposed." instead.
 
 [!<CarryOutSelfDrinking>+
 

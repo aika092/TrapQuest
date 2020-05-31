@@ -141,31 +141,32 @@ To compute perception of (M - a supporter):
 		compute appearance assessment of M.
 
 To compute appearance assessment of (M - a supporter):
-	if the saved appearance of the player > the outrage tolerance of M:
+	if the appearance of the player > the outrage tolerance of M:
 		FavourDown M by 2;
-		if M is friendly, say FriendlySluttyPerception of M;
-		otherwise say "[UnfriendlySluttyPerception of M][big he of M] takes an aggressive pose.";
+		if M is unfriendly:
+			say "[UnfriendlySluttyPerception of M][big he of M] takes an aggressive pose.";
+		otherwise if M is a groper and M is groping:
+			compute grope of M;
+		otherwise:
+			say FriendlySluttyPerception of M;
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
 		say "[BigNameDesc of M] promptly loses interest in you.";
 		bore M for 150 seconds.
 
-To compute damage of (M - a supporter):
-	if the health of M > 0:
-		anger M;
-		if the sleep of M is 0:
-			if M is uninterested:
-				say MindingOwnBusinessCombatFlav of M;
-				now M is interested;
-			otherwise:
-				say DamageReaction (the health of M) of M;
+To compute damage reaction of (M - a supporter):
+	if the sleep of M is 0:
+		if M is uninterested:
+			say MindingOwnBusinessCombatFlav of M;
 		otherwise:
-			now M is interested;
-			now the sleep of M is 0;
-			say RudeAwakeningFlav of M;
+			say DamageReaction (the health of M) of M;
 	otherwise:
-		compute death of M.
+		now the sleep of M is 0;
+		say RudeAwakeningFlav of M.
+
+Definition: a supporter is automatically banishable: decide yes. [Will this NPC automatically resolve their disappearance rather than giving the player options on what to do?]
+Definition: a supporter is auto-banish-loot-dropping: decide yes. [Will it automatically drop jewellery when it is banished in this manner?]
 
 To IdentifiablePosterReaction of (M - a supporter):
 	say IdentifiablePosterReactionFlav of M;
@@ -232,12 +233,12 @@ To compute facial strapon climax of (M - a supporter):
 		PainUp 1;
 	say "[big he of M] pulls out, satisfied, and loses interest.";
 	TimesSubmittedUp M by 1;
-	bore M.
+	orgasm bore M.
 
 To compute unique facesit climax effect of (M - a supporter):
 	say "[BigNameDesc of M] gets off of your face and lies down on the ground, where [he of M] promptly falls asleep.";
 	compute M sleeping 200 after sex;
-	Bore M.
+	orgasm bore M.
 
 This is the supporter facesitting prevents breathing rule:
 	repeat with M running through female supporters penetrating face:
@@ -280,7 +281,7 @@ To compute anal sex of (M - a supporter):
 To compute (M - a supporter) sexRuin in (F - a fuckhole):
 	if the class of the player is living sex doll:
 		do nothing;
-	otherwise if M is not intelligent or the reaction of the player < 2:
+	otherwise if M is unintelligent or the reaction of the player < 2:
 		ruin F; [The RuinRoll function handles the chance of avoiding soreness for submitting]
 	otherwise:
 		if a random number between 1 and the charisma of the player is 1, ruin F.
@@ -358,7 +359,7 @@ Definition: a supporter is father material: decide no. [Can be changed to yes]
 To set up (M - a supporter):
 	reset M;
 	now the monstersetup of M is 1;
-	now the difficulty of M is 4; [combat skill can be increased]
+	now the raw difficulty of M is 4; [combat skill can be increased]
 	now the health of M is the maxhealth of M.
 
 To decide which number is the girth of (M - a supporter):
@@ -376,6 +377,8 @@ To set up sex length of (M - a supporter) in (B - a body part):
 
 To decide which number is the outrage tolerance of (M - a supporter):
 	decide on 10.
+
+Definition: a supporter is a groper: decide yes.
 
 To compute post climax effect of (M - a supporter) in (F - a fuckhole):
 	if M is male:
@@ -426,14 +429,6 @@ To say IdentifiablePosterReactionFlav of (M - a supporter):
 
 To say UnidentifiablePosterReactionFlav of (M - a supporter):
 	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
-
-To say BimboSeduced of (M - a supporter): [This is when the player greets the NPC but accidentally says something lewd because of a 'temptation' item of clothing]
-	if M is friendly:
-		say "[BigNameDesc of M] looks pleasantly surprised.[line break][speech style of M]'I didn't realise you were THAT kind of player! Let's get it on!'[roman type][line break][big he of M] gets ready to [if the player is upright]fight[otherwise]fuck[end if].";
-	otherwise:
-		say "[speech style of M]'Yes yes, that's the plan!'[roman type][paragraph break]";
-	anger M;
-	now the boredom of M is 0.
 
 To say PresentFriendlyAcceptanceFlav of (M - a supporter): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
@@ -516,7 +511,7 @@ To say MovementBlock of (M - a supporter):
 To say StandingBlock of (M - a supporter):
 	say "[BigNameDesc of M] grabs onto your [ShortDesc of hair] and stops you from standing up!".
 
-To compute unique death of (M - a supporter):
+To say BanishFleeFlav of (M - a supporter):
 	say "[speech style of M]'You motherfucker, do you know how much it cost me to get to be here?!'[roman type][line break]Those are [NameDesc of M][']s final words before [he of M] drops to the ground, dead. After a couple of seconds, [his of M] body disappears like something out of TRON.".
 
 To say SexResistSlapFlav of (M - a supporter):
@@ -612,9 +607,9 @@ To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strap-o
 [Vaginal & Anal]
 
 To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying [his of M] [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
+	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying her [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
 
-[###SUPPORTERS WITHOUT A PENIS OR STRAP-ON ONLY###]
+[###SUPPORTERS WITHOUT A PENIS OR STRAPON ONLY###]
 
 [Oral]
 

@@ -44,6 +44,9 @@ Carry out TrophySwitching:
 	if the noun is carried, force inventory-focus redraw; [Forces redraw of inventory window]
 	allocate 3 seconds.
 
+Report examining a trophy:
+	say "[bold type]You can tell that thanks to having earned this trophy, you are permanently a bit more lucky.[roman type][line break]".
+
 bbc-trophy is a trophy. The printed name of bbc-trophy is "[TQlink of item described]big black cock trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of bbc-trophy is "bbct". Understand "big", "black", "black cock" as bbc-trophy.
 
 To say ExamineDesc of (T - bbc-trophy):
@@ -175,31 +178,32 @@ magic-trophy is a trophy. The printed name of magic-trophy is "[TQlink of item d
 
 To say ExamineDesc of (T - magic-trophy):
 	say "This trophy is in the shape of a vibrating magic wand. It is surrounded by a mystical ";
-	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if diaper quest is 1]water[otherwise if watersports fetish is 1][urine][otherwise][semen][end if]!";
+	if the trophy-mode of T is 1, say "green glow, and you can feel that casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your [if egg laying fetish is 1]womb[otherwise]belly[end if] will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if]!";
 	otherwise say "red glow, which allows you to sense that its magical powers to make magic spells not cost magic power but summon stuff inside your belly are inactive.".
 A magic consequences rule (this is the trophy magic consequence rule):
 	if the trophy-mode of magic-trophy is 1:
-		let BS be belly limit - the total fill of belly;
-		say "Instead of your magic power decreasing, your belly explodes with [if BS > 0]contents until completely full[otherwise]even more liquid. Your belly can't hold it all[end if]!";
-		if BS > 0:
-			if egg laying fetish is 1:
-				AssFill (BS / 2) medium eggs;
-				if the remainder after dividing BS by 2 is 1, AssFill 1;
-			otherwise if diaper quest is 1:
-				AssFill BS water;
-			otherwise if watersports fetish is 1:
-				AssFill BS urine;
-			otherwise:
-				AssFill BS;
-		otherwise if diaper quest is 1:
-			AssFill 1 water; [should trigger overflow]
+		if egg laying fetish is 1 and (the pregnancy of the player <= 0 or the pregnancy of the player is 3):
+			say "Instead of your magic power decreasing, you feel an egg manifest itself inside your womb!";
+			WombFill 1 medium eggs;
 		otherwise:
-			AssFill 1. [should trigger overflow]
+			say "Instead of your magic power decreasing, you feel ";
+			if egg laying fetish is 1:
+				say "two eggs manifest themselves inside your belly!";
+				AssFill 2 medium eggs;
+			otherwise if a random number between 0 and watersports fetish is 1:
+				say "some [urine] appear inside your belly!";
+				AssFill 4 urine;
+			otherwise if diaper quest is 1:
+				say "some water appear inside your belly!";
+				AssFill 4 water;
+			otherwise:
+				say "some [semen] appear inside your belly!";
+				AssFill 4.
 
 Carry out TrophySwitching magic-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of magic-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if diaper quest is 1]water[otherwise if watersports fetish is 1][urine][otherwise][semen][end if].[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]casting magic spells doesn't deplete your magic power, but also every time you cast a spell, your belly will be filled with [if egg laying fetish is 1]eggs[otherwise if watersports fetish is 1][urine][otherwise if diaper quest is 1]water[otherwise][semen][end if].[roman type][line break]";
 		now the trophy-mode of magic-trophy is 1;
 	otherwise:
 		say "The trophy's glow changes from green to red. You can tell that [bold type]you once again will need to spend magic power to cast spells, but the trophy will not summon things into your belly each time you do.[roman type][line break]";

@@ -31,6 +31,7 @@ REQUIRES COMMENTING
 
 *@!]
 Clothing can be dense, sheer-when-wet, sheer, see-through (this is the clothing-transparency property). Understand the clothing-transparency property as describing a clothing. Clothing is usually dense. [Sheer and see-through clothing does not prevent humiliation from being naked but soaks up liquid. Clothing that is see-through can never be less humiliating than being naked. Clothing that is sheer can.]
+Definition: a clothing is not-see-through if it is not see-through.
 
 [!<Clothing>@<IsActuallySheer>+
 
@@ -141,17 +142,28 @@ Definition: a clothing is crotch-tie-up if it is not no-crotch and it is not cro
 Clothing can be crotch-in-place or crotch-displaced. Clothing is usually crotch-in-place.
 [!<ClothingIsDisplacable>+
 
-Can this be displaced at the crotch?
+Can this (usually) be displaced at the crotch?
 
 +!]
 Definition: a clothing is displacable: decide no.
-
 [!<ClothingIsUndisplacable>+
 
-Is this unable to be displaced at the crotch?
+Is this unable to (usually) be displaced at the crotch?
 
 +!]
 Definition: a clothing is undisplacable if it is not displacable.
+[!<ClothingIsActuallyDisplacable>+
+
+Can this be displaced at the crotch right now?
+
++!]
+Definition: a clothing (called C) is actually displacable rather than actually undisplacable:
+	if C is not worn or C is glued, decide no;
+	if C is crotch-displaced or C is not displacable, decide no;
+	unless C is skirted:
+		repeat with D running through worn top level protection unskirted clothing:
+			if the bottom-layer of D > the bottom-layer of C, decide no;
+	decide yes.
 
 [!<ClothingIsRippable>+
 
@@ -178,13 +190,25 @@ Definition: a clothing (called C) is arm covering:
 Clothing can be chestless, fully exposing, ridiculously low cut, very low cut, low cut, average cut, high cut, fully covering (this is the clothing-cleavage property). Clothing is usually chestless. [Chestless means it doesn't take up the chest slot. Whereas fully exposing means that the breasts are fully exposed but the item still takes up the chest slot. e.g. cupless bra.]
 Clothing can be top-intact or top-ripped. Clothing is usually top-intact.
 Definition: a clothing is breast exposing rather than breast covering if it is chestless.
-Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing and it is top-intact and it is top-placed.
+Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing[ and it is top-intact] and it is top-placed. [Yes it's a chest slot item but does it actually cover any skin?]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
 Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped.
-Clothing can be normally-nipple-covering or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
-Definition: a clothing (called C) is nipple exposing rather than nipple covering:
-	if C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is chestless or C is fully exposing or C is uniquely nipple exposing, decide yes;
+Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
+	if C is not worn or C is glued, decide no;
+	if C is top-displaced or C is not-top-displacable, decide no;
+	repeat with D running through worn top level breasts protection clothing:
+		if the top-layer of D > the top-layer of C, decide no;
+	decide yes.
+Clothing can be normally-nipple-covering, erect-nipple-exposing or normally-nipple-exposing. Clothing is usually normally-nipple-exposing. [This is separate as some clothing has holes specifically for the nipples.]
+Definition: a clothing (called C) is actually nipple exposing rather than actually nipple covering: [Are the nipples literally exposed to the open air]
+	if C is chestless or C is normally-nipple-exposing or C is top-displaced or C is top-ripped or C is fully exposing or C is uniquely nipple exposing, decide yes;
+	decide no.
+Definition: a clothing (called C) is at least partially nipple exposing rather than nipple covering: [Are the nipples at least partially visible]
+	if (C is erect-nipple-exposing and the player is horny) or C is actually nipple exposing or C is actually sheer, decide yes;
+	decide no.
+Definition: a clothing (called C) is nipple exposing rather than at least partially nipple covering: [ripped clothing leaves them only partially visible]
+	if C is normally-nipple-exposing or C is top-displaced or C is chestless or C is fully exposing or C is see-through or C is uniquely nipple exposing, decide yes;
 	decide no.
 Definition: a clothing (called C) is uniquely nipple exposing: [Allows us to create unique rules for when nipples are exposed]
 	decide no.
@@ -208,14 +232,13 @@ Clothing can be stuck. Clothing is usually not stuck.
 Is the player unable to move because some clothing is stuck?
 
 +!]
-Definition: yourself is clothing stuck:
-	if there is worn stuck clothing, decide yes;
-	decide no.
+Definition: yourself is clothing stuck if there is worn stuck clothing.
 Clothing can be glued or unglued. Clothing is usually unglued.
 Clothing can be womanly or manly. Clothing is usually womanly. [Manly clothing is anything that is not specifically something only women should wear. E.g. a T-shirt]
 Clothing can be restart immune. Clothing is usually not restart immune. [This means it won't disappear or change when the map is reset.]
 Clothing can be spikey. A clothing is usually not spikey.
 A clothing has a number called used condoms. A clothing has a number called empty condoms.
+A clothing has a number called stolen-strength. [This strength is returned when the item is worn again]
 A clothing can be unsoaked or soaked. A clothing is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
 Definition: a clothing (called C) is fluid immune:[Is fluid unable to soak into or pass through C?]
 	if C is latex or C is metal or C is glass or C is pvc or C is biological or C is plastic or C is leather, decide yes;
@@ -287,9 +310,8 @@ Definition: a clothing (called C) is desirable:
 	if C is store, decide no;
 	if C is diaper or C is cursed or C is ass plugging or C is vagina plugging, decide no;
 	if C is not worn by the player and C is not held by the player, decide no;
-	if C is worn and C is not currently perceivable, decide no;
-	if C is knickers and C is not total protection, decide no;
-	if C is dirty, decide no;
+	if C is not currently perceivable, decide no;
+	if C is knickers and (C is messed or C is not total protection), decide no;
 	decide yes.
 
 Definition: a clothing is slitted: decide no. [Slitted skirts don't block knee attacks]

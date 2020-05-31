@@ -10,7 +10,7 @@ To decide which figure-name is the clothing-image of (C - gold-tiara):
 	decide on figure of gold-tiara.
 
 To say ClothingDesc of (H - gold-tiara):
-	say "This solid gold [MediumDesc of H] is covered in incredibly valuable looking jewels and gemstones. [if H is worn]It feels like its watching you.[otherwise]You can't shake the feeling that its watching you.[end if]".
+	say "This solid gold [MediumDesc of H] is covered in incredibly valuable looking jewels and gemstones. [if H is worn]It feels like it's watching you.[otherwise]You can't shake the feeling that it's watching you.[end if]".
 
 To say ShortDesc of (H - gold-tiara):
 	say "golden tiara".
@@ -24,6 +24,8 @@ Definition: gold-tiara (called C) is removal-blocking: [Some items (mainly headg
 
 gold-summoned is a number that varies.
 To compute unique recycling of (C - gold-tiara):
+	now gold-summoned is 0.
+To compute predicament resolution of (C - gold-tiara):
 	now gold-summoned is 0.
 
 To compute class outfit of (H - gold-tiara):[TODO: acolyte arm braces]

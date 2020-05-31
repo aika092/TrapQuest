@@ -6,7 +6,8 @@ To decide which figure-name is the examine-image of (C - dungeon altar):
 	decide on figure of dungeon altar.
 
 To say ExamineDesc of (C - dungeon altar):
-	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]".
+	say "A large stone slab in front of a giant statue of a proud naked woman with a huge [if pregnancy fetish > 0]pregnant [end if]belly.[if the class of the player is priestess and the charge of the dungeon altar <= 0][line break]Your holy powers allow you to detect that it is safe to use the altar again.[otherwise if the class of the player is priestess][line break]Your holy powers allow you to detect that it is [bold type]not[roman type] yet safe to use the altar again.[otherwise if the charge of item described < -150][one of]It looks like you could try to [bold type]place[roman type] something on it.[or]It looks fully recharged.[stopping][otherwise if the charge of item described < 100]It might be recharged enough to use it again, but it's difficult to say.[otherwise]It definitely need to be left to recharge its power before you use it again.[end if]";
+	if newbie tips is 1, say "[one of][newbie style]Placing things on here can bless them. Placing yourself here can help you or give you the priestess class. The altar doesn't recharge over time like other objects. Instead, it recharges slowly each time you open a container or interact with an NPC.[roman type][line break][or][stopping]".
 
 Check going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
@@ -16,15 +17,16 @@ Report going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
-The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The indefinite article of the woods altar is "an". The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
+The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
 
 To decide which figure-name is the examine-image of (C - woods altar):
 	decide on figure of woods altar.
 
 To say ExamineDesc of (C - woods altar):
-	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle.[one of][or] It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it.[stopping]".
+	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping].";
+	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
 
-The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al". Figure of elder altar is the file "Env/Mansion/altar1.jpg".
+The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
@@ -34,7 +36,9 @@ Definition: an elder altar is father material: decide yes.
 Definition: An elder altar is live: decide yes.
 
 To say ExamineDesc of (C - elder altar):
-	say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don[']t want to think about what might happen if you got on it yourself.".
+	if diaper quest is 0, say "A rough stone table. Grotesque unholy phallic symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. On the front, naked women are drawn being overpowered by tentacles. You hear faint whispers in the air which get louder with proximity. ";
+	otherwise say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. ";
+	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
 The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al".
 
@@ -187,7 +191,7 @@ Determines how the dungeon altar will handle an item, "T", that has been placed 
 To AltarPray (T - a thing):
 	AltarUniqueReward of T;
 	if the charge of dungeon altar <= 0:[The reward already happened in the previous function if this is false]
-		if (T is not blessed and T is blessable) or T is ritual-beads:
+		if (T is not blessed and T is blessable) or T is ritual-beads or (T is runic headband and T is not purity):
 			AltarReward T;
 		otherwise:
 			say "Nothing seems to happen.".
@@ -251,7 +255,7 @@ To AltarPray (P - a person):
 	MagicPowerUp 1;
 	while 1 is 1:
 		let R be a random number from 1 to 9;
-		if the class of the player is priestess and (the virgin of the player is 0 or the player is male) and the player is the donator:
+		if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
 			let T be ritual-beads;
 			if T is actually summonable and T is off-stage:
 				summon T;
@@ -263,10 +267,13 @@ To AltarPray (P - a person):
 			now permanent makeup is 0;
 			break;
 		if the pregnancy of the player > 0:
-			if the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0:
+			if (the number of held pregnancy related things is 0 and the number of worn pregnancy related clothing is 0) or (the pregnancy of the player is 3 and the class of the player is not broodmother):
 				say "You feel an emptiness inside of you. Suddenly, your belly dramatically shrinks!";
 				now the pregnancy of the player is 0;
 				WombEmpty the womb volume of vagina;
+				now the small egg count of vagina is 0;
+				now the medium egg count of vagina is 0;
+				now the large egg count of vagina is 0;
 				break;
 		if the player is hungry:
 			say "You feel full!";
@@ -320,11 +327,23 @@ To AltarPray (P - a person):
 				summon angel tattoo;
 				say "A tattoo of an angel appears on your right arm. You feel less slutty!";
 				break;
-	if runic headband is actually summonable:
+	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
 		summon runic headband cursed;
-		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
+		if the player is female and the virgin of the player is 0:
+			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
+			compute virginity-loss of runic headband;
 	otherwise if flower hairclip is worn:
 		AltarUniqueReward of flower hairclip;
+	if diaper quest is 0 and (runic headband is worn or the class of the player is priestess):
+		if ritual-beads is not held and ritual-beads is not in the location of the player:
+			only destroy ritual-beads;
+			now ritual-beads is in the location of the player;
+			say "[BigNameDesc of ritual-beads] appears at your feet.";
+			compute autotaking ritual-beads;
+		let C be a random worn cursed sex toy;
+		if C is sex toy:
+			bless C;
 	reset dungeon altar.
 
 To AltarReward (T - wrist bond):
@@ -603,8 +622,7 @@ To ElderSacrifice (T - a thing):
 		increase the charge of the elder altar by 100;
 		if whispered > 0 and whisper-type is 2:
 			now whisper-tracking is 1;
-		if doom counter > 0:
-			increase doom counter by 5;
+		if doom counter > 0, increase doom counter by 5;
 	otherwise if T is bland:
 		increase the charge of the elder altar by 50;
 	otherwise:
@@ -709,20 +727,39 @@ To compute dark reward of (T - ritual-beads):
 		FatigueUp 20;
 		say "You feel a lot cleaner, but incredibly tired.".
 
+To AltarReward (T - runic headband):
+	if T is not purity:
+		let N be the used condoms of T;
+		if N < 3:
+			let D be 3 - N;
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the headband to this altar after you complete [D] more ritual[if D > 1]s[end if].'[roman type][line break]";
+		otherwise:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+			unless T is blessed, now T is blessed;
+			say "Blue light condenses around [NameDesc of T], and the pinned condoms disappear!";
+			progress quest of priestess-vaginal-service-quest;
+			now the used condoms of T is 0;
+		reset dungeon altar.
+
 To AltarReward (T - ritual-beads):
-	let N be the charge of T;
-	if N < 3:
-		let D be 3 - N;
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]!'[roman type][line break]";
+	if T is worn:
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress], you should remove your ritual beads before presenting them to the Goddess!'[roman type][line break]";
 	otherwise:
-		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+		let N be the notches of T;
+		if N < 6:
+			let D be 6 - N;
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] your job is yet to be finished! Return and offer the beads to this altar after you complete [D] more ritual[if D > 1]s[end if]. In the meantime, here is a gift to help you continue this quest!'[roman type][line break]";
+		otherwise:
+			say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] this holy trial is completed! I grant you this gift to help you on your quest!'[roman type][line break]";
+			unless T is blessed, now T is blessed;
+			if the size of T < 10:
+				say "[line break]Blue light condenses around [NameDesc of T], and it transforms into a ";
+				increase the size of T by 1;
+				now the notches of T is 3;
+				say "[T] with three notches again!";
+			progress quest of priestess-service-quest;
 		compute light reward of T;
-		now the charge of T is 0;
-		unless T is blessed, now T is blessed;
-		if the notches of T < 8:
-			increase the notches of T by 1;
-			say "[line break]Blue light condenses at the end of the [printed name of T], adding a [the notches of T]th bead.";
-	reset dungeon altar.
+		reset dungeon altar.
 
 [!<ComputeLightRewardOfRitualBeads>+
 
@@ -732,46 +769,30 @@ Provides a reward to the player based on how much the ritual beads have been cha
 
 +!]
 To compute light reward of (T - ritual-beads):
-	let N be the charge of T;
+	let N be the notches of T;
 	let R be 0;
-	if N is 8:
-		now R is a random number between 4 and 8;
-	otherwise if N > 6:
-		now R is a random number between 3 and 6;
-	otherwise if N > 4:
-		now R is a random number between 2 and 5;
+	if N >= 8:
+		now R is 6;
 	otherwise:
-		now R is a random number between 1 and 3;
-	if R is 8 and there is a worn headgear:
-		let B be a random worn headgear;
-		if the raw-magic-modifier of B < 5 or (B is not blessed and B is blessable):
-			say "Your [printed name of B] glows powerfully!";
-			if the raw-magic-modifier of B < 5, increase the raw-magic-modifier of B by 1;
-			fully bless B;
-		otherwise:
-			say "You feel more intelligent!";
-			IntUp 2;
-	otherwise if R is 7:
-		say "You feel incredible!";
-		StrengthUp N / 4;
-		DexUp N / 4;
-	otherwise if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
-		let B be prayer-beads;
+		now R is a random number between (N / 2) and (N + 2);
+	if R >= 6 and prayer-beads is off-stage and the number of worn hand ready equippables is 0:
 		say "A set of tiny white beads materialises in your hands.";
-		summon B;
-		fully bless B;
-	otherwise if R is 5:
-		say "You feel more resilient!";
-		DelicateDown N / 3;
+		summon prayer-beads;
+		fully bless prayer-beads;
+	otherwise if R >= 5:
+		DelicateDown 2;
 	otherwise if R is 4:
 		say "You feel a wave of new confidence!";
-		Dignify STRONG-HUMILIATION * (N / 2);
+		strongDignify;
 	otherwise if R >= 3 and the raw sex addiction of the player > 0:
 		say "Your mind feels a little clearer.";
-		SilentlySexAddictDown N / 3;
+		SilentlySexAddictDown 1;
 	otherwise if R is 2 and there is a glazed body part:
 		let A be a random glazed body part;
-		say "Your [printed name of A] is cleaned of a little [semen].";
+		say "Your [printed name of A] is cleaned of [semen].";
+		now the semen coating of A is 0;
+	otherwise if the soreness of asshole > 0:
+		heal asshole times 4;
 	otherwise:
 		say "You feel much less tired!";
 		FatigueDown N * 10.
@@ -824,7 +845,8 @@ To DevilPray (P - yourself):
 	let R be a random number between 1 and 4;
 	let LDC be the list of off-stage actually summonable demonic clothing;
 	if gold-summoned is 0:
-		if the player is soulless or (the pregnancy of the player is 1 and the father is an infernal monster) or the times-submitted of demon lord > 0, now R is 0;
+		repeat with M running through infernal monsters:
+			if the times-submitted of M > 0, now R is 0;
 	if R is 0 and gold-tiara is actually summonable: [if the player is soulless, or the player's babydaddy is a demon, or the player has ever had sex with the demon lord, the altar can summon a gold tiara]
 		say "The statue's face seems to grin as a golden tiara materialises on your head.";
 		summon gold-tiara cursed;
@@ -846,7 +868,7 @@ To DevilPray (P - yourself):
 		summon C;
 	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
 		if diaper quest is 0 and the player is not top heavy:
-			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accomdating the extra weight you're carrying around.";
+			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accommodating the extra weight you're carrying around.";
 			BustUp (N / 3) + 1;
 		otherwise:
 			say "The statue seems to snarl as your muscles suddenly grow.";
@@ -862,9 +884,9 @@ To DevilPray (P - yourself):
 		let X be ((N * 2) / 3) + 1;
 		if X > the number of off-stage imps, now X is the number of off-stage imps;
 		if X is 1:
-			say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischeivous chuckling as an imp steps out.";
+			say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as an imp steps out.";
 		otherwise:
-			say "The statue's eyes glint as [X] portals open up around you, accompanied by mischeivous chuckling as an imp steps out of each portal.";
+			say "The statue's eyes glint as [X] portals open up around you, accompanied by mischievous chuckling as an imp steps out of each portal.";
 		while X > 0:
 			let I be a random off-stage imp;
 			compute reward N set up of I;
@@ -873,11 +895,8 @@ To DevilPray (P - yourself):
 	otherwise:[free of charge, since you didn't get anything good]
 		now R is -1;
 		let D be a random alive infernal monster;
-		if D is monster:
-			DifficultyUp D by 1;
-			say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-		otherwise:
-			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+		if D is monster, DifficultyUp D by 1;
+		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
 	increase the charge of hotel altar by 180;
 	progress quest of hotel-altar-quest;
 	if R > 0:
@@ -900,38 +919,41 @@ To DevilPray (T - a thing):
 	increase the charge of hotel altar by 180;
 
 To DevilPray (T - a clothing):
-	let N be (the charge of hotel altar / 150) + 1;
-	if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
-	if N > 6, now N is 6;
-	say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
-	if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
-		increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 3 -> 4]
-		if T is blandness:
-			let R be a random number between 1 and 4;
-			if R is 1, now T is stumbling;
-			if R is 2, now T is temptation;
-			if R is 3, now T is possession;
-			if R is 4, now T is hostility;
-		otherwise:
-			if T is kicking or T is speed, now T is stumbling;
-			if T is endurance, now T is possession;
-			if T is protection, now T is hostility;
-			if T is dominance, now T is temptation;
-	otherwise:[-6 -> -5 -> -4 -> -3]
-		decrease the raw-magic-modifier of T by (N / 2) + 6;
-		if T is stumbling:
-			now T is kicking;
-		otherwise if T is temptation:
-			now T is dominance;
-		otherwise:
-			let R be a random number between 1 and 4;
-			if R is 1, now T is kicking;
-			if R is 2, now T is dominance;
-			if R is 3, now T is endurance;
-			if R is 4, now T is speed;
-	say "as it is changed into a [printed name of T]!";
-	increase the charge of hotel altar by 180;
-	compute DevilPayment N.
+	if T is cursable:
+		let N be (the charge of hotel altar / 150) + 1;
+		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
+		if N > 6, now N is 6;
+		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
+		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
+			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 3 -> 4]
+			if T is blandness:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is stumbling;
+				if R is 2, now T is temptation;
+				if R is 3, now T is possession;
+				if R is 4, now T is hostility;
+			otherwise:
+				if T is kicking or T is speed, now T is stumbling;
+				if T is endurance, now T is possession;
+				if T is protection, now T is hostility;
+				if T is dominance, now T is temptation;
+		otherwise:[-6 -> -5 -> -4 -> -3]
+			decrease the raw-magic-modifier of T by (N / 2) + 6;
+			if T is stumbling:
+				now T is kicking;
+			otherwise if T is temptation:
+				now T is dominance;
+			otherwise:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is kicking;
+				if R is 2, now T is dominance;
+				if R is 3, now T is endurance;
+				if R is 4, now T is speed;
+		say "as it is changed into a [printed name of T]!";
+		increase the charge of hotel altar by 180;
+		compute DevilPayment N;
+	otherwise:
+		say "Nothing seems to happen.".
 
 [!<ResetDungeonAltar>+
 

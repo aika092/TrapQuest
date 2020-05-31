@@ -22,6 +22,7 @@ Check decanting something with:
 		otherwise say "That would be impractical." instead;
 	if the second noun is not a dispenser[ and the second noun is not sacred pool], say "The [second noun] doesn't have any liquid in it..." instead;
 	if the player is immobile, say "You're a bit tied up right now." instead;
+	if there is a triggered cage trap in the location of the player, say "You can't reach from inside the cage!" instead;
 	if the second noun is not drink-machine and (the player is not able to use their hands or the player is wrist bound behind), say "You can't use your hands right now!" instead;
 	if the player is prone, say "You can't reach while on your knees." instead;
 	if [the second noun is not sacred pool and ]the doses of the second noun is 0, say "[if the second noun is tank]The[otherwise if the second noun is bucket]You try, but the[end if] [second noun] is empty." instead;

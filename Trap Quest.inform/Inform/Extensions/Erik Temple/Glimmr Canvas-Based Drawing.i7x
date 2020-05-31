@@ -61,7 +61,7 @@ Part - Element Definition
 
 A g-element is a kind of thing.
 
-The specification of g-element is "A g-element is an extensible class of things that represent particular instructions for drawing something to a graphics window (or, more precisely, to a canvas object that is then drawn to a window). Default classes of element include sprites (displays and image file), primitives (draw simple shapes, such as rectangles, boxes, lines, and points), bitmaps (the author specifies a grid of colored bits to be drawn to the screen), image maps, and rendered strings (arbitrary text 'painted' to the screen). It is also possible to create new classes of g-elements using commands from the Glimmr Drawing Commands extension. See the specifications for specific element types for more information. Elements need to be explicitly associated with a canvas, e.g. 'the associated canvas of Element A is the graphics-canvas.' (Elements are automatically associated with the graphics-canvas when Glimmr Simple Graphics Window is used.) All g-elements have a property called the origin, written as a list of numbers, e.g. {12, 21}, describing the x, y coordinate of (usually) the upper-left corner of the element. Elements are marked active or inactive, which determines whether they are displayed or not; this is done by setting the display status property to either g-active or g-inactive. If the extension Glimmr Graphic Hyperlinks is included, g-elements can also be hyperlinked. Usually a linked replacement-command is provided, which will paste a command to the input prompt on behalf of the player. However, there are other options available as well (see the Glimmr Graphic Hyperlinks extension)."
+The specification of g-element is "A g-element is an extensible class of things that represent particular instructions for drawing something to a graphics window (or, more precisely, to a canvas object that is then drawn to a window). Default classes of element include sprites (displays and image file), primitives (draw simple shapes, such as rectangles, boxes, lines, and points), bitmaps (the author specifies a grid of coloured bits to be drawn to the screen), image maps, and rendered strings (arbitrary text 'painted' to the screen). It is also possible to create new classes of g-elements using commands from the Glimmr Drawing Commands extension. See the specifications for specific element types for more information. Elements need to be explicitly associated with a canvas, e.g. 'the associated canvas of Element A is the graphics-canvas.' (Elements are automatically associated with the graphics-canvas when Glimmr Simple Graphics Window is used.) All g-elements have a property called the origin, written as a list of numbers, e.g. {12, 21}, describing the x, y coordinate of (usually) the upper-left corner of the element. Elements are marked active or inactive, which determines whether they are displayed or not; this is done by setting the display status property to either g-active or g-inactive. If the extension Glimmr Graphic Hyperlinks is included, g-elements can also be hyperlinked. Usually a linked replacement-command is provided, which will paste a command to the input prompt on behalf of the player. However, there are other options available as well (see the Glimmr Graphic Hyperlinks extension)."
 
 Chapter - Display status
 
@@ -1484,7 +1484,7 @@ Carry out dumping imap:
 	let row-count be 1;
 	say "[fixed letter spacing][run paragraph on]";
 	if the noun is a tileset image-map:
-		say "     ";
+		say "	 ";
 		repeat with count running from 1 to the image-map-width:
 			say "[if count < 100] [end if][count][if count < 100] [end if][if count < 10] [end if]";
 		repeat with current-row running through the tile-array of the noun:
@@ -1522,7 +1522,7 @@ Carry out dumping imap:
 
 To say appropriate spacing for (N - a number):
 	if N < 10:
-		say "    ";
+		say "	";
 	otherwise if N < 100:
 		say "   ";
 	otherwise:
@@ -1647,7 +1647,7 @@ In general, however, the best way to organise elements--especially when we have 
 
 Section: Activate elements for display
 
-Each time a graphics window is redrawn, Glimmr iterates through the elements that are associated with that window's current canvas. If the element is marked for display, the element is drawn to the screen according to the parameters we have specified. If it is not marked for display, it is ignored. We set the display status to either g-active (marked for display) or g-inactive to initialize it.
+Each time a graphics window is redrawn, Glimmr iterates through the elements that are associated with that window's current canvas. If the element is marked for display, the element is drawn to the screen according to the parameters we have specified. If it is not marked for display, it is ignored. We set the display status to either g-active (marked for display) or g-inactive to initialise it.
 
 All elements are marked for display by default, so if we say nothing about the display status of an element when we define it, it will display as soon as the appropriate graphics window is opened.
 
@@ -1714,10 +1714,10 @@ A bitmap element draws a rectangular image composed of individual "bits" that ar
 
 	{
 		{ 0, 0, 1, 0, 0 },
-  		{ 0, 0, 1, 0, 0 },
- 		{ 1, 1, 1, 1, 1 },
- 		{ 0, 0, 1, 0, 0 },
- 		{ 0, 0, 1, 0, 0 }
+		{ 0, 0, 1, 0, 0 },
+		{ 1, 1, 1, 1, 1 },
+		{ 0, 0, 1, 0, 0 },
+		{ 0, 0, 1, 0, 0 }
 	}.
 
 The ones represent bits that are turned on, while the zeros represent bits that are off. Each row is given as a list of numbers with its own set of braces.
@@ -1865,7 +1865,7 @@ A rendered string is a graphic element that renders an indexed text string graph
 
 Rendered strings need to have a font specified in their "associated font" property in order to function. A font in this sense is a special kind of object; its major task is to link letterforms (images or bitmaps), via a lookup table, with the characters they are meant to represent. Two fonts are available with Glimmr (Glimmr Image Font and Glimmr Bitmap Font), and authors are of course free to create their own fonts (see the documentation for Glimmr Drawing Commands).
 
-Rendered strings can be left-aligned (the default), centre-aligned, or right-aligned; the alignment determines whether the origin coordinate will represent the upper left, the upper centre point, or the upper right of the rendered text.
+Rendered strings can be left-aligned (the default), center-aligned, or right-aligned; the alignment determines whether the origin coordinate will represent the upper left, the upper center point, or the upper right of the rendered text.
 
 Rendered strings can manage the display of a cursor, which is drawn as a simple vertical line whose colour is determined by the "tint" property of the rendered string (see below). This functionality is not likely to be useful except when paired with something like the Glimmr Canvas Text Input Fields extension, which handles mouse and keyboard input to allow for input to be accepted and understood via a graphics window. To display a cursor, provide a number 0 or greater via a rendered string's "cursor" property. This represents the position after which the cursor will be placed; e.g. with a cursor value of 0, the cursor will appear immediately before the first character in the string. To suppress display of the cursor (the default), provide a negative number for the cursor property.
 
@@ -1877,7 +1877,7 @@ As has been alluded to, there are two types of rendered string:
 
 A bitmap-rendered string does not require any external image files, only that a valid bitmap font (such as that provided by the Glimmr Bitmap Font extension) be specified as the "associated font". As with bitmaps, we can set the "bit-size" property to set the size of each bit, and it has the same coarseness in scaling. And as with bitmaps, the "tint" and "background tint" properties define the colours of a bitmap-rendered string, with "tint" providing the colour of the letterforms. When a background tint is provided, a single rectangle is drawn encompassing the entire text area of the rendered string.
 
-A rendered string, like a sprite, can be provided its own "scaling factor" property to adjust the size of its glyphs relative to the canvas, and it scales with an accuracy comparable to that of sprite elements. If the "background tint" property is supplied (as always, a glulx colour value), a rectangle of that colour will be drawn behind the rendered string. The "tint" property of an image-rendered string controls only the colour of the cursor; the colour of the letterforms is set in the image files.
+A rendered string, like a sprite, can be provided its own "scaling factor" property to adjust the size of its glyphs relative to the canvas, and it scales with an accuracy comparable to that of sprite elements. If the "background tint" property is supplied (as always, a glulx color value), a rectangle of that colour will be drawn behind the rendered string. The "tint" property of an image-rendered string controls only the colour of the cursor; the colour of the letterforms is set in the image files.
 
 Chapter: Settings and options for scaling
 
@@ -1933,7 +1933,7 @@ We now know how to ensure that our element is accepting mouse input, but we have
 
 And now, as long as the Mario sprite appears in the window, clicking on it with our mouse will result in the command "JUMP" being entered at the command prompt. All of the types of graphic element can be hyperlinked in this way. The entire area of the element, including transparent zones, is hyperlinked, and the hyperlink zone for any element is a single rectangle. This is most notable in the case of line primitives, because the hyperlink zone will be the smallest rectangular area that can completely enclose the line; a 45-degree line will therefore have a square hyperlinked area with the line running from one corner to its opposite.
 
-A graphlink-active element that overlaps another in the display layering system will supersede the lower element. That is, if Mario, on display-layer 4, partially overlaps a hyperlinked mushroom sprite on display-layer 3, clicking within the boundaries of the rectangle that defines Mario will cause Mario's, rather than the mushroom's, linked replacement-command to be invoked.
+A graphlink-active element that overlaps another in the display layering system will supercede the lower element. That is, if Mario, on display-layer 4, partially overlaps a hyperlinked mushroom sprite on display-layer 3, clicking within the boundaries of the rectangle that defines Mario will cause Mario's, rather than the mushroom's, linked replacement-command to be invoked.
 
 The background of a canvas cannot be hyperlinked. We can, however, imitate a clickable background by including a fully transparent sprite image of the same dimensions as the background and placing it on the lowest display-layer (usually display-layer 1).
 
@@ -2033,7 +2033,7 @@ We can also set multiple hyperlinks in the same element display rule. If, for ex
 
 Section: Customizing element display
 
-We can also use the element display rules to specialize behaviour for one element, or for a class of elements, by prefacing or replacing the standard element display rule with another. For example, if we want to create a debugging command to print the name and origin coordinates of each g-element to the main window as it is drawn to our graphics window, we could do something like this:
+We can also use the element display rules to specialise behaviour for one element, or for a class of elements, by prefacing or replacing the standard element display rule with another. For example, if we want to create a debugging command to print the name and origin coordinates of each g-element to the main window as it is drawn to our graphics window, we could do something like this:
 
 	First element display rule for a g-element (called the item):
 		say "Element [item] drawn at [origin of the item in brace notation].";
@@ -2053,7 +2053,7 @@ Since elements are objects, like any other entity of Inform's "thing" kind, we c
 				deactivate item;
 		continue the action.
 
-We could also potentially use other aspects of g-elements--particularly their relationships with one another--as means of organising their display. I leave users to think about whether this kind of thing might have advantages for them.
+We could also potentially use other aspects of g-elements--particularly their relationships with one another--as means of organizing their display. I leave users to think about whether this kind of thing might have advantages for them.
 
 If for some reason we actually want players to be able to see, pick up, and refer to some elements as if they were objects in the game world, we can declare those elements to be "publically-named":
 
@@ -2140,13 +2140,13 @@ Performance issues:
 
 	Be sure that your images are not too large. Images should be sized no larger than you want them to appear onscreen.
 
-	Note that games played within the Inform IDE will be slower than games played in an external interpreter. The Mac IDE may sometimes show minor scaling artifacts that are not seen with external interpreters. Try pressing the Release button to produce a blorb file, and play that file in the latest version of a fast, modern interpreter.
+	Note that games played within the Inform IDE will be slower than games played in an external interpreter. The Mac IDE may sometimes show minor scaling artefacts that are not seen with external interpreters. Try pressing the Release button to produce a blorb file, and play that file in the latest version of a fast, modern interpreter.
 
 	If you are using Glimmr debugging, the debugging statements in the routines will slow things down. Turn off Glimmr debugging whenever possible.
 
 Testing:
 
-Test your game in all the interpreters you can get your hands on, and recommend the best interpreter(s) to your players. At the time of this writing, Gargoyle and Zoom are both well optimized for graphics and other multimedia effects. Spatterlight on OS X is not, and also has a poor UI for mouse input. Windows Glulxe and Windows Git have a low-resolution timer, and neither is quite as fast with graphic display as Gargoyle, but they should be adequate for most purposes.
+Test your game in all the interpreters you can get your hands on, and recommend the best interpreter(s) to your players. At the time of this writing, Gargoyle and Zoom are both well optimised for graphics and other multimedia effects. Spatterlight on OS X is not, and also has a poor UI for mouse input. Windows Glulxe and Windows Git have a low-resolution timer, and neither is quite as fast with graphic display as Gargoyle, but they should be adequate for most purposes.
 
 Chapter: Producing images for use with Glimmr
 
@@ -2167,7 +2167,7 @@ Here is a list of properties common to all graphic elements (g-elements). Separa
 
 	display status - indicates whether or not the element is marked for display (i.e., whether or not it will be drawn to the associated canvas of the element when the window displaying that canvas is updated). Can be g-active (marked for display) or g-inactive. Default value: g-active
 
-	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below) . The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
+	origin - the x and y coordinates where the element's drawing will be commenced. These coordinates refer to the coordinate system of the canvas and indicate where the upper-left corner of the element will be drawn (usually; see alignment properties below). The origin coordinates are expressed as a list of exactly two numbers in brace notation. Negative numbers are legal. Default value: {0, 0}
 
 	display-layer - a number that defines the "layer" the element will be drawn to, comparable to the z-index in CSS/HTML. Elements with a display-layer of 1 are drawn first, then those with display-layer 2, etc. Lower numbers are thus lower in the stack order. Default value: 1
 
@@ -2177,7 +2177,7 @@ Here is a list of properties common to all graphic elements (g-elements). Separa
 
 	y-scaling factor - only available when the asymmetrical scaling use option is in force (the scaling factor property is disabled by this same use option). Like the scaling factor property, a decimal quantity with four-digit precision. Scales only the y-axis of an element; most useful for sprites. Default value: 1.0000
 
-	alignment - defines how an element is drawn in relation to its origin property. When left-aligned, the origin will describe the upper left corner of the element. When center-aligned, the origin will describe the center of the x and y axes of the element. When right-aligned, the origin will describe the lower right corner. It is probably best to declare an element left-aligned whenever possible. Default value: left-aligned
+	alignment - defines how an element is drawn in relation to its origin property. When left-aligned, the origin will describe the upper left corner of the element. When center-aligned, the origin will describe the centre of the x and y axes of the element. When right-aligned, the origin will describe the lower right corner. It is probably best to declare an element left-aligned whenever possible. Default value: left-aligned
 
 	graphlink status - indicates whether or not the element is accepting mouse input. Can be g-active (accepting input) or g-inactive. Default value: g-inactive
 
@@ -2203,7 +2203,7 @@ This section presents a list of the properties associated with all primitive ele
 
 	endpoint - the x and y coordinates where the element's drawing will be completed. These coordinates refer to the coordinate system of the canvas and usually indicate where the lower right corner of the element will be drawn. In the case of line primitives, the origin and endpoint are more or less interchangeable, neither has priority. The endpoint coordinates are expressed as a list of exactly two numbers in brace notation. Default value: {0, 0}
 
-	tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the primitive; in the case of the stroked rectangle primitive, this represents the color of the fill fo the rectangle. Default value: g-White
+	tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the primitive; in the case of the stroked rectangle primitive, this represents the colour of the fill fo the rectangle. Default value: g-White
 
 	end-x** - represents the x-coordinate of the primitive's origin AFTER it has been scaled according to the window's scaling factor; i.e., it refers to the position of the endpoint in the window's coordinate system, not the canvas's. Default value: 0
 
@@ -2219,9 +2219,9 @@ This section presents a list of the properties associated with the box, stroked 
 
 Section: Summary of the properties of the stroked rectangle primitive
 
-This section presents a list of the properties associated with the stroked rectangle primitive. Since the stroked rectangle is the only primitive that can incorporate two colors, we use the background tint property to supply the second color (the color of the line). Stroked rectangle primitives also inherit the properties common to the primitive and the g-element kinds (see above for those properties).
+This section presents a list of the properties associated with the stroked rectangle primitive. Since the stroked rectangle is the only primitive that can incorporate two colours, we use the background tint property to supply the second colour (the colour of the line). Stroked rectangle primitives also inherit the properties common to the primitive and the g-element kinds (see above for those properties).
 
-	background tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the outline surrounding the central rectangle of the stroked rectangle primitive; i.e., the color of the "stroke" as opposed to the "fill." Default value: g-White
+	background tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the outline surrounding the central rectangle of the stroked rectangle primitive; i.e., the colour of the "stroke" as opposed to the "fill." Default value: g-White
 
 Section: Summary of the properties of bitmaps
 
@@ -2229,9 +2229,9 @@ This section presents a list of the properties associated with both monochrome a
 
 	bitmap-array - a list of lists of numbers, written in brace notation, that defines the on and off bits of a bitmap element. Monochrome bitmaps can include only 0 ("off") or 1 ("on"). Polychrome bitmaps may include any number from 0 to 16777215, defining a decimally packed 16-bit RGB number; in a polychrome bitmap, the "off" bit can be represented by any negative number. Default value: {}
 
-	tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the "on" bit of a bitmap. (The "on" bit is given by a 1 in the bitmap-array for monochrome bitmaps; it has no effect for polychrome bitmaps.) Default value: g-White
+	tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the "on" bit of a bitmap. (The "on" bit is given by a 1 in the bitmap-array for monochrome bitmaps; it has no effect for polychrome bitmaps.) Default value: g-White
 
-	background tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the background of the bitmap. This color will appear wherever an "off" bit has been specified. (The "off" bit is given by 0 for monochrome bitmaps, and by any negative number for polychrome bitmaps.) Default value: g-PlaceNullCol (the null color value, meaning no background will be drawn)
+	background tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the background of the bitmap. This colour will appear wherever an "off" bit has been specified. (The "off" bit is given by 0 for monochrome bitmaps, and by any negative number for polychrome bitmaps.) Default value: g-PlaceNullCol (the null colour value, meaning no background will be drawn)
 
 	bit-size - the size, relative to the canvas, of each bit in the bitmap. A bit-size of 2 will be two units wide and two units high. The bit-size is subject to scaling both by the scaling factor (or x-scaling factor) of the bitmap element, and by the window scaling factor. Default value: 1
 
@@ -2241,7 +2241,7 @@ Section: Summary of the properties of image-maps
 
 This section presents a list of the properties associated with both tileset and direct image-maps. Properties which the extension uses internally, and should not be referred to by the author, are marked with a double asterisk (**). All bitmap elements also inherit the properties common to the g-element kind (see above for those properties).
 
-	background tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the background of the image-map. This color will appear wherever a tile is absent, and will also "show through" transparent PNG images. Default value: g-PlaceNullCol (the null color value, meaning no background will be drawn)
+	background tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the background of the image-map. This colour will appear wherever a tile is absent, and will also "show through" transparent PNG images. Default value: g-PlaceNullCol (the null colour value, meaning no background will be drawn)
 
 	tiled graphlink status - Whether or not some or all of an image-map's tiles have individual graphic hyperlinks (graphlinks). Can be g-active (accepting input) or g-inactive. Default value: g-inactive
 
@@ -2277,15 +2277,15 @@ Section: Summary of the properties of rendered strings
 
 This section presents a list of the properties associated with rendered strings. Properties which the extension uses internally, and should not be referred to by the author, are marked with a double asterisk (**). All rendered strings also inherit the properties common to the g-element kind (see above for those properties).
 
-Note that the alignment property functions differently for rendered strings than for other g-elements. For center-aligned and right-aligned rendered strings, the origin is always located along the upper edge of the element; not at the center or the bottom edge.
+Note that the alignment property functions differently for rendered strings than for other g-elements. For center-aligned and right-aligned rendered strings, the origin is always located along the upper edge of the element; not at the centre or the bottom edge.
 
 	associated font - a font object, which is the font that should be used to draw the rendered text element. A bitmap-rendered text must use a bitmap font, and an image-rendered font an image font.
 
 	text-string - an indexed text containing the string to be rendered by the element. Default value: "" (empty string, no output)
 
-	tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the letterforms and cursor of a bitmap-rendered string; defines only the cursor color of an image-rendered string. Default value: g-White
+	tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the letterforms and cursor of a bitmap-rendered string; defines only the cursor colour of an image-rendered string. Default value: g-White
 
-	background tint - a glulx color value (see the Glulx Text Effects extension) that defines the color of the background of the rendered string element. Will be drawn as a single block of color behind the letterforms. Default value: g-PlaceNullCol (null, no background will appear)
+	background tint - a glulx colour value (see the Glulx Text Effects extension) that defines the colour of the background of the rendered string element. Will be drawn as a single block of colour behind the letterforms. Default value: g-PlaceNullCol (null, no background will appear)
 
 	text-animation delay - a number defining the number of milliseconds that will be delayed after the drawing of each character of the text-string. Default value: 0
 
@@ -2327,7 +2327,7 @@ A number of examples are included here, showcasing just some of the capabilities
 
 Example: * Simple Buttons - In this example, we show how to create a simple set of buttons that the player can press to issue commands. (We use the most important meta-commands: undo, save, restore, and transcript.) The example requires the Glimmr Image Font extension, and you will need to copy the images associated with that extension to your project's Materials folder before building this example. The example also requires Glimmr Graphic Hyperlinks, which enables the buttons to accept mouse input.
 
-We make each button out of two g-elements: a stroked rectangle primitive creates the button's outline and color, while an image-rendered string provides the text of the button. This is convenient, since it doesn't require us to create our own images for each button. (Though using a single image for each button is in fact the most resource-efficient method.)
+We make each button out of two g-elements: a stroked rectangle primitive creates the button's outline and colour, while an image-rendered string provides the text of the button. This is convenient, since it doesn't require us to create our own images for each button. (Though using a single image for each button is in fact the most resource-efficient method.)
 
 Before we get to the buttons, we need to set up the window and canvas. For an example like this, Glimmr Simple Graphics Window would be an even easier way to set things up, but it's better if we show everything here.
 
@@ -2351,7 +2351,7 @@ Before we get to the buttons, we need to set up the window and canvas. For an ex
 		open up the graphics-window.
 
 	After printing the banner text:
-		say "[line break]This is one of two very similar examples for the Glimmr Canvas-Based Drawing extension. It demonstrates a simple set of UI buttons. The buttons are not sprites. In other words, they are created without the need to make external PNG or JPEG images. Instead, we use Glimmr's functions for easily drawing rectangles and more complex elements. An image-rendered string provides the button's text, and this is superimposed on a stroked rectangle primitive that creates the body of the button. A simple animation allows the button to change color briefly when pressed, to provide visual feedback.[paragraph break]".
+		say "[line break]This is one of two very similar examples for the Glimmr Canvas-Based Drawing extension. It demonstrates a simple set of UI buttons. The buttons are not sprites. In other words, they are created without the need to make external PNG or JPEG images. Instead, we use Glimmr's functions for easily drawing rectangles and more complex elements. An image-rendered string provides the button's text, and this is superimposed on a stroked rectangle primitive that creates the body of the button. A simple animation allows the button to change colour briefly when pressed, to provide visual feedback.[paragraph break]".
 
 	Table of Common Color Values (continued)
 	glulx color value	assigned number
@@ -2360,7 +2360,7 @@ Before we get to the buttons, we need to set up the window and canvas. For an ex
 
 Now we create the buttons. We begin by setting up most of properties using subclasses of the stroked rectangle primitive and image-based string kinds--these are the "button" and "label" kinds. The buttons are primed to accept mouse input by making them graphlink-active. The labels merely float over the button; it is the latter which does all the work.
 
-Note that the image-based font is rather large, and we need to scale it down to a quarter of its actual size. Also note that the labels are center-aligned. This isn't necessary, but it does mean that if we change the text of the label slightly, we may be able to avoid changing the origin coordinate, since it will still attempt to center itself over the button background. Finally, we use display-layers to keep the label text, on layer 2, above the button background, on layer 1 (the default layer).
+Note that the image-based font is rather large, and we need to scale it down to a quarter of its actual size. Also note that the labels are center-aligned. This isn't necessary, but it does mean that if we change the text of the label slightly, we may be able to avoid changing the origin coordinate, since it will still attempt to centre itself over the button background. Finally, we use display-layers to keep the label text, on layer 2, above the button background, on layer 1 (the default layer).
 
 	*: A button is a kind of stroked rectangle primitive. The associated canvas of a button is the graphics-canvas. The tint of a button is g-LightGray. The background tint of a button is g-MidGray. The graphlink status of a button is g-active.
 
@@ -2386,9 +2386,9 @@ Note that the image-based font is rather large, and we need to scale it down to 
 	Button_3	{111, 7}	{165, 28}	Label_3	"RESTORE"
 	Button_4	{173, 7}	{238, 28}	Label_4	"TRANSCRIPT"
 
-We can include a little optional code to change the color of the button momentarily when it is pressed, then reverting back to the original color. We do this using Glulx's real-time capability: when the button is pressed, we change the button's color, and start a short timer (85 milliseconds). When the timer runs out, we stop the timer and change the button back to the original color. Note that the window must be redrawn after each of these to show the state change to the player.
+We can include a little optional code to change the colour of the button momentarily when it is pressed, then reverting back to the original colour. We do this using Glulx's real-time capability: when the button is pressed, we change the button's colour, and start a short timer (85 milliseconds). When the timer runs out, we stop the timer and change the button back to the original colour. Note that the window must be redrawn after each of these to show the state change to the player.
 
-The final line in the block intializes the current graphlink variable to Button_1 (the "undo" button). This is done so that, in the case where the first button pressed by the player is UNDO, the "current graphlink" value will hold a valid g-element (rather than null) after undoing; if the current graphlink doesn't store a button, the timer will go off after the action is undone and try to check the "tint" property of nothing (since the game state will have reverted to before the player pressed the button), resulting in an error.
+The final line in the block initialises the current graphlink variable to Button_1 (the "undo" button). This is done so that, in the case where the first button pressed by the player is UNDO, the "current graphlink" value will hold a valid g-element (rather than null) after undoing; if the current graphlink doesn't store a button, the timer will go off after the action is undone and try to check the "tint" property of nothing (since the game state will have reverted to before the player pressed the button), resulting in an error.
 
 	*: To revert the/-- button/-- after (T - a number) millisecond/milliseconds:
 		(- glk_request_timer_events({T});  -)
@@ -2415,7 +2415,7 @@ This last part is even more optional, but it will ensure that the button acts co
 	After undoing an action:
 		revert the button after 0 milliseconds.
 
-Example: * Simpler Buttons - This example is a simple refinement of the previous example (Simple Buttons). In Simple Buttons, we had to supply what really was redundant information: the text of the label was the same as the linked replacement-command of its button, while the origin coordinate of the label is easily deducible from the placement and size of the button outline (the label is centered on the button). This example lets us define the labels minimally and auto-generate their text-strings and origin coordinates from their associated buttons. (One could go even farther with this approach, really, but this should be enough to suggest possibilities.)
+Example: * Simpler Buttons - This example is a simple refinement of the previous example (Simple Buttons). In Simple Buttons, we had to supply what really was redundant information: the text of the label was the same as the linked replacement-command of its button, while the origin coordinate of the label is easily deducible from the placement and size of the button outline (the label is centred on the button). This example lets us define the labels minimally and auto-generate their text-strings and origin coordinates from their associated buttons. (One could go even farther with this approach, really, but this should be enough to suggest possibilities.)
 
 Simpler Buttons also uses a bitmap font for variety's sake. Note that if you make the window too narrow--unplayably narrow, really--the labels will not fit within the button outlines. This is because bitmaps can't be scaled below 1 pixel per bit, while the canvas itself is scaled to much less than this. This is something to be wary of whenever you are using bitmaps.
 
@@ -2442,7 +2442,7 @@ The example starts out in essentially the same way as the previous:
 	g-LightGray	15066597
 	g-MidGray	12829635
 
-Now we get to the new stuff. The short loop code that occurs before we open the graphics window sets origin coordinates of the labels by finding the center point of each button, then using that coordinate for the label's origin. We manually change the vertical coordinate for better fit (because the origin of the label is the top line rather than the center, we need to move it up, otherwise it will flow in from the center of the button down, filling up only the lower half of the button background).
+Now we get to the new stuff. The short loop code that occurs before we open the graphics window sets origin coordinates of the labels by finding the centre point of each button, then using that coordinate for the label's origin. We manually change the vertical coordinate for better fit (because the origin of the label is the top line rather than the centre, we need to move it up, otherwise it will flow in from the centre of the button down, filling up only the lower half of the button background).
 
 The text-string is replaced with the linked replacement-command of the button. Note that Inform is very picky about the conversion of text (the linked replacement-command of the button) into indexed text (the text-string of the label). We use a replacement routine to handle this task.
 
@@ -2474,7 +2474,7 @@ Compare the Table of Button Labels here with the one for Simple Buttons--we've b
 	Button_4	{173, 7}	{238, 28}	Label_4	"Transcript"
 
 	After printing the banner text:
-		say "[line break]This is one of two very similar examples for the Glimmr Canvas-Based Drawing extension. It demonstrates a simple set of UI buttons. The buttons are not sprites. In other words, they are created without the need to make an external PNG or JPEG image for each one. Instead, we use Glimmr's functions for easily drawing rectangles and more complex elements. A bitmap-rendered string provides the button's text, and this is superimposed on a stroked rectangle primitive that creates the body of the button. No image files at all are used. A simple animation allows the button to change color briefly when pressed, to provide visual feedback.[paragraph break]".
+		say "[line break]This is one of two very similar examples for the Glimmr Canvas-Based Drawing extension. It demonstrates a simple set of UI buttons. The buttons are not sprites. In other words, they are created without the need to make an external PNG or JPEG image for each one. Instead, we use Glimmr's functions for easily drawing rectangles and more complex elements. A bitmap-rendered string provides the button's text, and this is superimposed on a stroked rectangle primitive that creates the body of the button. No image files at all are used. A simple animation allows the button to change colour briefly when pressed, to provide visual feedback.[paragraph break]".
 
 And the (optional) button animations (see the previous example for explanation):
 
@@ -2505,7 +2505,7 @@ Example: *** Basic Floorplan - Given IF's overwhelming focus on movement through
 
 This example shows how to construct a floorplan for a multilevel space, in a dynamic way: The map only shows rooms that the player has visited. In other words, the map reveals itself as the player moves through the game.
 
-Glimmr includes a set of images that can be used freely for constructing maps of this sort, and this example uses that set. The image files are rather generic, by design, so as to be useful in the widest number of situations. The predominant colours are white and dark grey, but because each tile is essentially monochromatic, the colouring is relatively easy to change using programs like Photoshop or GIMP (the latter is free).
+Glimmr includes a set of images that can be used freely for constructing maps of this sort, and this example uses that set. The image files are rather generic, by design, so as to be useful in the widest number of situations. The predominant colours are white and dark gray, but because each tile is essentially monochromatic, the colouring is relatively easy to change using programs like Photoshop or GIMP (the latter is free).
 
 The easiest way to use this set of map images is with the Glimmr Canvas Editor extension, which allows you to create a Glulx game file that contains a graphics editor. Place and scale the images as you like them, and the editor will output I7 source code for you. The source code for this example was generated using Glimmr Canvas Editor. (It's been cleaned up slightly, and the Scenario and Associated Rooms with Images sections were added, but otherwise it is fairly representative of the code produced by that resource. The canvas editor is highly recommended for most complex compositions.)
 
@@ -3007,7 +3007,7 @@ You will notice that this rule doesn't do any collision checking--what happens i
 
 Example: *** Deal Me In - This example illustrates a number of different techniques. We show how to change the contents of a graphics window at a stroke by changing canvases. We also construct a custom graphic element with rather complex behaviour: rather than simply drawing a single entity, the element acts as a manager, interpreting and drawing game information using varied techniques, as needed.
 
-Specifically, the manager renders the cards that the player has drawn in a sort of card game (we borrow the relevant code from the Tilt 3 example in the Inform documentation). The game is poker, so the player can hold up to five cards. The manager centres and spaces the card outlines as needed (based on the width of the graphics window). For each card the player holds, it provides a white background, paints text to the window to represent the card's value (e.g., 6, 7, 10, J, Q, K), and draws a bitmap graphic in the proper color to represent the suit. If the player holds fewer than five cards, the remaining cards will be depicted as empty placeholders.
+Specifically, the manager renders the cards that the player has drawn in a sort of card game (we borrow the relevant code from the Tilt 3 example in the Inform documentation). The game is poker, so the player can hold up to five cards. The manager centres and spaces the card outlines as needed (based on the width of the graphics window). For each card the player holds, it provides a white background, paints text to the window to represent the card's value (e.g., 6, 7, 10, J, Q, K), and draws a bitmap graphic in the proper colour to represent the suit. If the player holds fewer than five cards, the remaining cards will be depicted as empty placeholders.
 
 The manager g-element also implements simple mouse input: clicking on a placeholder draws a card, while clicking on a card discards it.
 
@@ -3084,7 +3084,7 @@ If the player is holding fewer than 5 cards, we repeat through the number of pla
 					set a graphlink in the current window identified as the card-manager from (x) by (y) to (x + card-x) by (y + card-y) as "DRAW", ignoring redundant links;
 				increase x by card-x + (card-x / 3).
 
-When we 	set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
+When we set the graphic hyperlink zone for cards in the element display rule for a card, we identified that graphlink zone using the name of the card (card placeholders were identified as the card-manager rather than any particular card). When we click on a card, then, we can provide a special graphlink processing rule to handle the mouse input (see the Glimmr Graphic Hyperlinks extension for more on the graphlink processing rules).
 
 In this rule, we change the replacement command to refer to the name of the card, e.g. "discard the ten of hearts".
 

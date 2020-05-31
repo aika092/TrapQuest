@@ -8,7 +8,9 @@ Definition: pimp is dark skinned: decide yes.
 
 Definition: pimp is raunchy: decide yes.
 
-pimp-dead is a number that varies.
+Definition: pimp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
+
+pimp-dead is initially false.
 
 Definition: pimp is willing to do oral: decide no.
 
@@ -42,10 +44,12 @@ Definition: pimp (called M) is willing to shag:
 Definition: pimp is willing to let go: decide no.
 
 To set up (M - pimp):
-	if pimp-dead is 1, remove M from play;
-	now the monstersetup of M is 1;
-	now the difficulty of M is 10;
-	now the health of M is the maxhealth of M.
+	if pimp-dead is true:
+		remove M from play;
+	otherwise:
+		now the monstersetup of M is 1;
+		now the raw difficulty of M is 10;
+		now the health of M is the maxhealth of M.
 
 To say PregGrowth of (M - pimp):
 	say "your pimp's [child]".
@@ -72,6 +76,8 @@ Definition: pimp is able to remove cursed plugs: decide yes.
 Definition: pimp is butt slut immune: decide yes.
 
 Part 1 - Perception
+
+Definition: pimp is uniquely unfriendly: decide yes.
 
 To decide which number is the bimbo tolerance of (M - pimp):
 	decide on 20.
@@ -102,7 +108,7 @@ Part 2 - Misc Flavour
 
 To compute kneeling reaction of (M - pimp):
 	say "[BigNameDesc of M] laughs. [line break][first custom style]'[if the health of M >= the maxhealth of M]I guess this one time, you can pay me with your services[otherwise]Surrender means nothing to me. You've crossed me, and now I'm going to make your life a misery[end if].'[roman type][line break]";
-	humiliate 75.
+	strongHumiliate.
 
 To say DiaperReaction of (M - pimp):
 	if there is a currently visible diaper or the player is shameless:
@@ -129,7 +135,7 @@ Section 1 - Protect and Attack
 The latex punishment rule of pimp is usually the no latex punishment rule.
 
 This is the pimp convinced rule:
-	if presented-orifice is not nothing, say "[PresentRejectionFlav of current-monster]".
+	if presented-orifice is not nothing, say PresentRejectionFlav of current-monster.
 The monster convinced rule of pimp is usually the pimp convinced rule.
 
 To say PresentRejectionFlav of (M - pimp):
@@ -194,26 +200,33 @@ Definition: pimp is willing to deliver enemas: decide yes.
 Definition: pimp is willing to confiscate: decide yes.
 
 To say DQSpankResistReactionFlav of (M - pimp):
-	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it off or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin['] tantrums will get you anywhere.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]Oh knock that off. You knew you had this comin['], insubordinate bitch!'[or]You're getting docked big time for this, I hope you know that!'[or]Oh now cut it out or you'll earn 10 more whaps for that!'[or]Stupid little tramps like you thinkin['] tantrums will get you anywhere.'[in random order][roman type][line break]".
 
 Section 3 - Damage
 
-To compute damage of (M - pimp):
-	if the health of M > 0:
-		if M is uninterested or M is friendly: [should never happen]
-			say "[big he of M] shouts angrily!";
-			now M is interested;
-			anger M;
-		otherwise:
-			if the health of M >= the maxhealth of M:
-				say "[BigNameDesc of M] is momentarily dumbstruck with surprise. [line break][speech style of M]'You think you can take me? Bring it on!'[roman type][line break]";
-			otherwise if the health of M > the maxhealth of M / 2:
-				say "[BigNameDesc of M] [one of]sneers menacingly[or]smiles sadistically[or]grins[at random]. [line break][speech style of M]'[one of]Not bad, not bad[or]You're going to have to do better than that[or]Is that all you've got[or]Oh I'm going to make you regret this[or]Don't say I didn't warn you[in random order]!'[roman type][line break]";
-			otherwise:
-				say "[BigNameDesc of M] recoils in pain. [one of][big he of M]'s not teasing you any more. [or][stopping]";
+To compute damage reaction of (M - pimp):
+	if M is uninterested or M is friendly: [should never happen]
+		say "[big he of M] shouts angrily!";
 	otherwise:
-		now pimp-dead is 1;
-		compute death of M.
+		if the health of M >= the maxhealth of M:
+			say "[BigNameDesc of M] is momentarily dumbstruck with surprise.[line break][speech style of M]'You think you can take me? Bring it on!'[roman type][line break]";
+		otherwise if the health of M > the maxhealth of M / 2:
+			say "[BigNameDesc of M] [one of]sneers menacingly[or]smiles sadistically[or]grins[at random].[line break][speech style of M]'[one of]Not bad, not bad[or]You're going to have to do better than that[or]Is that all you've got[or]Oh I'm going to make you regret this[or]Don't say I didn't warn you[in random order]!'[roman type][line break]";
+		otherwise:
+			say "[BigNameDesc of M] recoils in pain. [one of][big he of M][']s not teasing you any more. [or][stopping]".
+
+To say PityOfferFlav of (M - pimp):
+	say "You fold your arms, doing your best to look serious.";
+	if the player is able to speak, say "[variable custom style]'Look, I'm not your whore, okay? So I don't have to pay you anything.'[roman type][line break]".
+
+To say PityOfferResponse of (M - pimp):
+	say "[speech style of M]'Y-you don't just get to decide when your contract is up! I'll be back!'[roman type][line break]".
+
+To say TaxReturnDismay of (M - pimp):
+	say "[speech style of M]'Hmph. Fine, you can hold onto this for me. But don't worry, I'll have you turning tricks for me like an obedient little slut before the week is out.'[roman type][line break]".
+
+To compute unique banishment of (M - pimp):
+	now pimp-dead is true.
 
 To loot (M - pimp):
 	let X be a random off-stage plentiful bracelet;
@@ -221,7 +234,7 @@ To loot (M - pimp):
 		now X is in the location of the player;
 		now X is pink diamond;
 		set shortcut of X;
-		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
+		say "[BigNameDesc of M] [if the loot dropped of M > 0]also [end if]throws a [printed name of X] at your feet.";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
 
@@ -268,7 +281,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - pimp): [Should never happen]
 	if M is interested:
-		say "[BigNameDesc of M]'s smile fades slightly. [line break][first custom style]'Sorry, we're not allowed to give out free drinks, it is pretty much the only way the hotel make money after all!'[roman type][line break]";
+		say "[BigNameDesc of M][']s smile fades slightly. [line break][first custom style]'Sorry, we're not allowed to give out free drinks, it is pretty much the only way the hotel make money after all!'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] acts as if [he of M] didn't even hear you.".
 
@@ -284,6 +297,12 @@ Part 5 - Trading
 To decide which number is the bartering value of (T - a thing) for (M - pimp):
 	if T is plentiful accessory and the health of M >= the maxhealth of M, decide on 99;
 	decide on 0.
+
+To decide which number is the bartering value of (T - id-poster) for (M - pimp):
+	decide on 4.
+
+To say MonsterOfferAcceptFlav of (M - pimp) to (T - id-poster):
+	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'You made this? This is PERFECT! As soon as I get a gloryhole installed, I'll make sure you get the first shift. And the second!'[roman type][line break][severeHumiliateReflect]".
 
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - a thing):
 	say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good [boy of the player][or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]".

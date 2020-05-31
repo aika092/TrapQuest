@@ -55,8 +55,9 @@ REQUIRES COMMENTING
 
 +!]
 Carry out opening a container:
-	decrease the charge of the dungeon altar by a random number between 1 and 30;
-	allocate 2 seconds.
+	allocate arm use to the noun;
+	allocate 2 seconds;
+	decrease the charge of the dungeon altar by a random number between 1 and 30.
 
 [!<ReportOpeningAContainer>+
 

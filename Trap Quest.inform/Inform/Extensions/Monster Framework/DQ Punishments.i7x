@@ -36,19 +36,22 @@ diaper-change is a diaper punishment. The priority of diaper-change is 4.
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
 	if there is a soiled-diaper retained by M or the health of M < the maxhealth of M, decide no;
+	if the class of the player is priestess, decide no;
 	if M is aware that the player needs a change, decide yes;
 	if M is aware that a diapering is possible, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a monster (called M) is aware that the player needs a change:
 	if diaper lover <= 0, decide no;
 	repeat with N running through things grabbing the player:
 		if N is not M, decide no;
 	let D be a random worn knickers;
+	if the class of the player is priestess and D is not diaper, decide yes;
+	if D is diaper-stack and D is not messed, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if D is currently visible knickers or D is messed knickers:
 		if the urine-soak of D + the water-soak of D > the soak tolerance of M or D is messed, decide yes;
- 		if D is crotch-ripped diaper, decide yes;
- 	decide no.
+		if D is crotch-ripped diaper, decide yes;
+	decide no.
 
 Definition: a monster (called M) is scene messing triggering: [CURRENTLY UNUSED. instant messes can already occur from diaper checks but maybe we want to have it happen some other ways too]
 	if M is not willing to change diapers, decide no;
@@ -57,10 +60,11 @@ Definition: a monster (called M) is scene messing triggering: [CURRENTLY UNUSED.
 		if N is not M, decide no;
 	let D be a random worn diaper;
 	if D is crotch-intact crotch-in-place diaper, decide yes;
- 	decide no.
+	decide no.
 
 To decide which number is the soak tolerance of (M - a monster):
 	let D be a random worn knickers;
+	if D is diaper-stack, now D is entry (number of entries in the list of stacked diapers) in the list of stacked diapers;
 	if D is clothing, decide on 2 * the soak-limit of D / 3;
 	decide on 0.
 
@@ -78,13 +82,13 @@ diaper-donate is a diaper punishment. The priority of diaper-donate is 4.
 Definition: a monster (called M) is eager to donate diapers:
 	if M is changing the player, decide yes;
 	if M is aware that a diapering is possible, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a monster (called M) is aware that a diapering is possible:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn diaper and (M is not willing to double diapers or M is not eager to double diapers), decide no;
- 	decide yes.
+	decide yes.
 
 Definition: a monster (called M) is eager to double diapers:
 	let D be a random worn diaper;
@@ -112,7 +116,7 @@ spanking-session is a diaper punishment. The priority of spanking-session is 2.
 Definition: a monster (called M) is eager to spank:
 	if M is spanking the player, decide yes;
 	if M is able to carry out a spanking, decide yes;
- 	decide no.
+	decide no.
 
  Definition: a monster (called M) is able to carry out a spanking:
 	repeat with N running through monsters grabbing the player:
@@ -136,7 +140,7 @@ Definition: a monster (called M) is eager to masturbate:
 	if D is not diaper, decide no;
 	if D is messed or D is not total protection, decide no;
 	if M is able to carry out masturbation, decide yes;
- 	decide no.
+	decide no.
 
  Definition: a monster (called M) is able to carry out masturbation:
 	repeat with N running through monsters grabbing the player:
@@ -164,7 +168,7 @@ deliver-enema is a diaper punishment. The priority of deliver-enema is 2.
 Definition: a monster (called M) is eager to deliver enemas:
 	if M is enema-filling the player, decide yes;
 	if M is able to deliver enemas, decide yes;
- 	decide no.
+	decide no.
 
  Definition: a monster (called M) is able to deliver enemas:
 	repeat with N running through monsters grabbing the player:
@@ -190,9 +194,9 @@ forcefeed is a diaper punishment. The priority of forcefeed is 2.
 Definition: a monster (called M) is eager to forcefeed:
 	if M is feeding the player, decide yes;
 	if M is able to forcefeed, decide yes;
- 	decide no.
+	decide no.
 
- Definition: a monster (called M) is able to forcefeed:
+Definition: a monster (called M) is able to forcefeed:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
 	if there is a worn cursed ballgag and M is not able to remove cursed plugs, decide no;
@@ -207,7 +211,8 @@ Definition: forcefeed (called P) is appropriate:
 	decide no.
 
 To compute punishment of (P - forcefeed):
-	compute forcefeed of current-monster.
+	if watersports fetish is 1 and current-monster is willing to urinate, compute current-monster urinating;
+	otherwise compute forcefeed of current-monster.
 
 Section 6 Confiscation
 
@@ -216,7 +221,7 @@ confiscate is a diaper punishment. The priority of confiscate is 2.
 Definition: a monster (called M) is eager to confiscate:
 	if the health of M >= the maxhealth of M and the diaper-duration of M is 0, decide no; [Most NPCs only confiscate if they've been properly wronged.]
 	if M is able to confiscate, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a monster is able to confiscate if there is confiscatable clothing.
 
@@ -240,7 +245,7 @@ donate babywear is a diaper punishment. The priority of donate babywear is 2.
 Definition: a monster (called M) is eager to donate babywear:
 	if the health of M >= the maxhealth of M and the diaper-duration of M is 0, decide no; [Most NPCs only donate babywear if they've been properly wronged.]
 	if M is able to donate babywear, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a monster is able to donate babywear if there is babywearable clothing.
 
@@ -266,7 +271,7 @@ untidy-session is a diaper punishment. The priority of untidy-session is 5.
 
 Definition: a monster (called M) is eager to punish untidiness:
 	if M is able to punish untidiness, decide yes;
- 	decide no.
+	decide no.
 
 Definition: a monster (called M) is able to punish untidiness:
 	repeat with N running through monsters grabbing the player:

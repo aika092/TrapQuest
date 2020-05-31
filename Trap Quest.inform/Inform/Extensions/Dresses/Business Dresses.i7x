@@ -10,7 +10,7 @@ To set up influence of (C - a business dress):
 
 Part 1 - Polka Dot Business Dress
 
-A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is high cut. A polka dot business dress is usually knee-length. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".
+A polka dot business dress is a kind of business dress. There is 1 polka dot business dress. A polka dot business dress is high cut. The text-shortcut of polka dot business dress is "pol". The printed name of polka dot business dress is usually "[clothing-title-before]polka dot business dress[clothing-title-after]".
 
 Figure of polka dot business dress is the file "Items/Clothes/Upper/Business/businessdress2.png".
 
@@ -89,7 +89,7 @@ To decide which object is the unique-upgrade-target of (C - a fetish business dr
 
 Part 4 - Vest Business Dress
 
-vest-dress is a business dress. vest-dress is average cut. vest-dress is short. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
+vest-dress is a business dress. vest-dress is low cut. vest-dress is short. The text-shortcut of vest-dress is "vstd". The printed name of vest-dress is "[clothing-title-before]vest dress[clothing-title-after]". Understand "vest", "dress" as vest-dress.
 
 Figure of vest-dress is the file "Items/Clothes/Upper/Business/businessdress4.png".
 
@@ -106,6 +106,8 @@ To say MediumDesc of (C - vest-dress):
 
 To decide which number is the initial outrage of (C - vest-dress):
 	decide on 3.
+To decide which number is the skirtLength of (C - vest-dress):
+	decide on 4.
 
 Definition: vest-dress is blue themed: decide yes.
 Definition: vest-dress is tartan themed: decide yes.
