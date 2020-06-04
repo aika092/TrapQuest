@@ -10,11 +10,14 @@ To decide which figure-name is clothing-image of (C - a bib):
 Definition: a bib is baby themed: decide yes.
 Definition: a bib is pink themed: decide yes.
 Definition: a bib is food themed: decide yes.
+Definition: a bib is star themed: decide yes.
 
 To say ClothingDesc (C - a bib):
-	say "A large soft bib with a drawing of a cartoon animal dancing on the front. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
+	say "A soft bib with a drawing of a cartoon giraffe's face on the front, surrounded by pink stars. [if the stomach-food of the player is 0]You feel hungry[otherwise]The bib seems to draw power from the fullness of your stomach[end if].".
 To say ShortDesc (C - a bib):
-	say "large soft bib".
+	say "bib".
+To say MediumDesc (C - a bib):
+	say "soft giraffe bib".
 
 To decide which number is the strength-influence of (C - a bib):
 	if the stomach-food of the player is 0, decide on -1;

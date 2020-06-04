@@ -49,7 +49,7 @@ To compute class outfit of (H - puppy ears):
 		say "[bold type]You feel your mouth suddenly bite down around a foreign object! You are now wearing a bone shaped gag.[roman type][line break]";
 		now puppy-summoned is 2;
 		summon G cursed with quest;
-	otherwise if the class of the player is puppygirl and P is actually summonable and the player is not ass protected and puppy-summoned < 3:
+	otherwise if diaper quest is 0 and the class of the player is puppygirl and P is actually summonable and the player is not ass protected and puppy-summoned < 3:
 		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object! Looking around you see a puppy tail swaying proudly from your [asshole].[roman type][line break]";
 		summon P cursed with quest;
 		now puppy-summoned is 3;

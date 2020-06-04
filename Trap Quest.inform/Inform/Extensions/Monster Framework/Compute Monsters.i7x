@@ -73,7 +73,7 @@ To compute unique final action of (M - a monster):
 To compute action (N - a number) of (M - a monster):
 	[If N is 1, this is a full action
 	if N is 2, this is a passive action (no attacking)]
-	compute unique early action of M;
+	compute unique early action of M;[these actions need to happen even if the player isn't in the room]
 	if the scared of M > 0 and M is not scarable, now the scared of M is 0;
 	if the scared of M > 0 and M is not penetrating a body part:
 		compute fleeing of M;

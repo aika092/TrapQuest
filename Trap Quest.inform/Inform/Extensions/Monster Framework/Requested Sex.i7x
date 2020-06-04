@@ -28,7 +28,7 @@ To decide which number is the sex desire of (M - a monster):
 	decide on 1.[How much favour does the player gain from fucking them?]
 
 This is the default monster friendly convinced rule:
-	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 0:
+	if presented-orifice is a reasonable target and the refractory-period of current-monster <= 0:
 		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say PresentFriendlyAcceptanceFlav of current-monster;
 		rule succeeds;
@@ -40,7 +40,7 @@ To say PresentFriendlyAcceptanceFlav of (M - a monster):
 	otherwise say "[BigNameDesc of M] seems convinced by your request!".
 
 To say PresentFriendlyRejectionFlav of (M - a monster):
-	if M is intelligent, say "[speech style of M]'[if M is male and presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover from my last orgasm!'[otherwise if presented-orifice is a reasonable target and the refactory-period of M > 0]I need some time to recover my energy!'[otherwise if presented-orifice is a potential target]Not today, honey. I don't feel like it.'[otherwise]Not interested.'[end if][roman type][line break]";
+	if M is intelligent, say "[speech style of M]'[if M is male and presented-orifice is a reasonable target and the refractory-period of M > 0]I need some time to recover from my last orgasm!'[otherwise if presented-orifice is a reasonable target and the refractory-period of M > 0]I need some time to recover my energy!'[otherwise if presented-orifice is a potential target]Not today, honey. I don't feel like it.'[otherwise]Not interested.'[end if][roman type][line break]";
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To say FriendlyBreastsPenetrationFlav of (M - a monster):

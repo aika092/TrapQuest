@@ -34,22 +34,32 @@ Check giving:
 		if the second noun is unfriendly, say "[variable custom style]I think it's a bit late for that![roman type][line break]" instead;
 		if the noun is vessel:
 			if the doses of the noun is 0, say "That's empty." instead;
-			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, say "Why would [he of the second noun] want that?" instead;
+			if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky:
+				if the waitress bartering value of the noun for the second noun > 0:
+					allocate 5 seconds;
+					if the waitress-boredom of the second noun > 0:
+						say "[BigNameDesc of the second noun] wrinkles [his of the second noun] nose.[line break][speech style of the second noun]'I'm not in the mood for any more boring drinks like that.'[roman type][line break]";
+					otherwise:
+						say WaitressOfferAcceptFlav of the second noun to the noun;
+						say WaitressTakeFlav of the second noun to the noun;
+						compute waitress resolution of the second noun taking the noun;
+					do nothing instead;
+				say "Why would [he of the second noun] want that?" instead;
 			if the second noun is unbitchy and the second noun is unconcerned, say "[second custom style]'Don't worry about paying me. You can use my altar for free!'[roman type][line break]" instead;
 			if the noun is not held, say "You should probably pick it up first." instead;
+			allocate 6 seconds;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "[BigNameDesc of the second noun] brings the [ShortDesc of noun] to [his of the second noun] mouth and starts drinking! [big he of the second noun] downs the whole drink in one, without stopping for a breath. ";
 			if the noun is monster-origin:
-				say "After [he of the second noun]'s finished, [he of the second noun] falls down on [his of the second noun] shapely butt and sighs happily.[line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if]. You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
+				say "After [he of the second noun][']s finished, [he of the second noun] falls down on [his of the second noun] shapely butt and sighs happily.[line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if]. You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
 				increase the altar-uses of the second noun by the doses of the noun;
 				if diaper quest is 0, cutshow figure of witch cutscene 1 for witch;
 			otherwise:
-				say "After [he of the second noun]'s finished, [he of the second noun] frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
+				say "After [he of the second noun][']s finished, [he of the second noun] frowns.[line break][second custom style]'[one of]This is pretty bland, you know. I bet you just [if the fill-colour of the noun is golden]pissed directly into this cup[otherwise]used your own bodily fluids[end if], didn't you? This only gets you 1 use of the altar. Sorry but really I want something actually interesting, something that took some kinky act for you to collect. Go find someone else's cum or piss and then I'll properly reward you. Or at the very least, at least use a squirt dildo to stew this in your butthole for a bit first, that might add a little flavour.'[or]Boring and bland again. Only worth 1 use of the altar, I'm afraid.'[stopping][roman type][line break]";
 				increase the altar-uses of the second noun by 1;
-			allocate 6 seconds;
-			DoseEmpty the noun instead;
+			if (the class of the player is bunny and bunny waitress ears is worn) or there is worn serving-bondage or the class of the player is "cafe maid" or (the class of the player is royal slave and the noun is monster-origin and the fill-colour of the noun is white), compute waitress resolution of the second noun taking the noun;
+			DoseEmpty the noun;
 			do nothing instead;
-			[say "Minor bug: action should end here! Don't worry, Aika knows about it." instead.]
 		otherwise if the noun is diaper:
 			let T be the total-soak of the noun - the water-soak of the noun;
 			if diaper quest is 1 and the class of the player is priestess and the noun is worn:

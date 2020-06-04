@@ -327,9 +327,9 @@ To initialise bondage protection:
 	repeat with C running through off-stage bondage:
 		now C is in holding pen.
 
-Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it.
-Definition: a bra is pinkWardrobeAppropriate if it is fetish appropriate and it is not in pink wardrobe and it is not unique and the min size of it <= the largeness of breasts and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it. [We allow rare bras]
-Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it.
+Definition: a clothing is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it).
+Definition: a bra is pinkWardrobeAppropriate if it is fetish appropriate and it is not in pink wardrobe and it is not unique and (the player is male or the min size of it <= the largeness of breasts) and the max size of it >= the largeness of breasts + 2 and it is actually dense and it is not product and the support of it > 0 and the unworn outrage of it <= 3 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 4 + the notManlyFactor of it). [We allow rare bras]
+Definition: a knickers is pinkWardrobeAppropriate if it is basic loot and the unworn outrage of it <= 6 + the notManlyFactor of it and (diaper quest is 0 or the unworn cringe of it <= 3 + the notManlyFactor of it).
 
 [!<InitialiseWardrobe>+
 
@@ -355,10 +355,10 @@ To initialise wardrobe:
 	let C be a random Boobies T-shirt;
 	if the player is male and a random number between trap fetish and 1 is 1, now C is a random Gender Bender T-shirt;
 	if diaper lover >= 1 and a random number between 1 and 2 is 1, now C is a random I love my wet nappies T-shirt;
-	if a random number between 1 and 2 is 1, now C is a random unskirted underdress;
-	if a random number between 1 and 2 is 1 or C is nothing, now C is a random unskirted overdress;
+	if a random number between 1 and 2 is 1, now C is a random unskirted pinkWardrobeAppropriate underdress;
+	if a random number between 1 and 2 is 1 or C is nothing, now C is a random unskirted pinkWardrobeAppropriate overdress;
 	if C is clothing, add C to L;
-	now C is a random basic loot short or longer not-butt-windowed actually dense fetish appropriate skirt;
+	now C is a random basic loot short or longer not-butt-windowed actually dense pinkWardrobeAppropriate skirt;
 	if C is clothing, add C to L;
 	if diaper focus >= 1:
 		let C be a random eligible diaper;
@@ -387,10 +387,6 @@ To initialise wardrobe:
 
 To compute starting headgear:
 	let H be a random roleplay headgear;
-	let failsafe be 25;
-	while H is not off-stage and failsafe > 0:
-		let H be a random roleplay headgear;
-		decrease failsafe by 1;
 	now H is in pink wardrobe;
 	now H is cursed.
 

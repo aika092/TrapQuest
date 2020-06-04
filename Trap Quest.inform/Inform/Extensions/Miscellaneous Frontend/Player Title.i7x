@@ -74,9 +74,9 @@ To say TitleBimbo:
 			say " pink haired";
 		otherwise if the largeness of hair > 9:
 			say " long haired";
-		if the virgin of the player is 1 and T is not virgin warrior:
+		if the vaginalvirgin of the player is 1 and T is not virgin warrior:
 			say " virgin";
-		otherwise if the virgin of the player is 1:
+		otherwise if the vaginalvirgin of the player is 1:
 			say " chaste";
 		otherwise if the virgin bonus of the player <= -1:
 			if the children of the player is 0 and pregnancy fetish is 1 and the pregnancy of the player > 0 and the pregnancy of the player < 3, say " unwed";
@@ -160,7 +160,7 @@ To say TitleBimbo:
 				say " adventurer";
 			otherwise if the delicateness of the player > 12 and diaper lover is 0:
 				say " delicate flower";
-			otherwise if the player is female and the virgin of the player is 0 and the analvirgin of the player is 1:
+			otherwise if the player is female and the vaginalvirgin of the player is 0 and the analvirgin of the player is 1:
 				say " anal virgin";
 			otherwise if the size of penis > 7 and transGender is 0:
 				say " [one of]shemale[or]dickgirl[sticky random]";

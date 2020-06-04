@@ -177,7 +177,7 @@ To say SingleWaitingFlavTQ of (M - a real-life patron):
 	otherwise if the sex addiction of the player < 12:
 		say "You stare at [NameDesc of M] nervously. [line break][variable custom style]'[one of]This has to be some kind of mistake. You wouldn't actually do this to me...'[or]This is all a misunderstanding...My reputation is going to be ruined.'[or]You actually paid to have sex with me...'[or]You're actually going to do this. This isn't just a joke....'[in random order][roman type][line break]";
 	otherwise:
-		say "You look up at [NameDesc of M] and smile gently. [line break][variable custom style]'[one of]If its you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, its ok.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
+		say "You look up at [NameDesc of M] and smile gently. [line break][variable custom style]'[one of]If its you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, it's OK.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
 
 [Two important things:
 Favour
@@ -213,7 +213,7 @@ To say FightObserve of (M - platonic-friend) with (N - a monster):
 		say "[speech style of M]'[one of]Stand up and fight back, you pathetic whore!'[or]What do you think you're doing down there? Get up!'[or][name]...you better not be about to do what I think you are...'[at random][roman type][line break][moderateHumiliateReflect]".
 
 To say SexObserve of (M - platonic-friend) with (N - a monster):
-	if M is unfriendly, say "[first custom style]'[one of]What a disgrace.'[or]Is this [man of N] a stranger too?'[or]Even if I've seen it before, its still shocking!'[or]You seem like you're having a great time.'[or]Dragging it out, as always.'[then at random][roman type][line break][strongHumiliateReflect]";
+	if M is unfriendly, say "[first custom style]'[one of]What a disgrace.'[or]Is this [man of N] a stranger too?'[or]Even if I've seen it before, its still shocking!'[or]You seem like you're having a great time.'[or]Dragging it out, as always.'[then at random][roman type][line break][strongHumiliateReflect]"; [Aika: This phrasing makes it seem like it's intended for use once per sex encounter as opposed to once per turn during sex? But in the game it happens once per turn.]
 	otherwise say "[first custom style]'[one of]I hope you're ashamed of yourself.'[or]Do you even know this [man of N][']s name?!'[or]I can't believe what I'm seeing!'[or]You're enjoying this, aren't you?'[or]How long is this going to take?!'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]It's not what it looks like!'[or]Please look away!'[or]I don't normally do this!'[or]This isn't real, I'm telling you!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 To compute HangUpDisgraced of (C - a video-monitor) with (M - platonic-friend):
@@ -235,7 +235,7 @@ To compute HangUpUndisgraced of (C - a video-monitor) with (M - platonic-friend)
 
 To compute appearance assessment of (M - platonic-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Well [NameBimbo], at first I was pretty disappointed when I found out what a whore you turned out to be, but when I thought about it, I realized it suits you. I've paid a lot of money to come here and make sure you don't try to back out of this new lifestyle you've chosen.'[roman type][line break][or][MediumDesc of M], this is-'[roman type][line break][speech style of M]'Enough, [NameBimbo]. You wanted to be a whore, and it doesn't matter what whores have to say.'[roman type][line break][stopping]".
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Well [NameBimbo], at first I was pretty disappointed when I found out what a whore you turned out to be, but when I thought about it, I realised it suits you. I've paid a lot of money to come here and make sure you don't try to back out of this new lifestyle you've chosen.'[roman type][line break][or][MediumDesc of M], this is-'[roman type][line break][speech style of M]'Enough, [NameBimbo]. You wanted to be a whore, and it doesn't matter what whores have to say.'[roman type][line break][stopping]".
 
 Section - Nemesis Friend
 
@@ -337,7 +337,7 @@ To compute HangUpUndisgraced of (C - a video-monitor) with (M - distant-friend):
 
 To compute appearance assessment of (M - distant-friend):
 	say NewNameReact of M;
-	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Watching you have sex with all those strangers really made me lose respect for you, but it also made me realize how much I've always wanted to fuck you. So, I payed a lot of money to come into the game and take my turn!'[roman type][line break][or][MediumDesc of M], you've got it-[roman type][line break][speech style of M]'Shut up, [NameBimbo].'[roman type][line break][stopping]".
+	say "[line break][variable custom style]'[one of][MediumDesc of M]?! What are YOU doing here?'[roman type][line break][speech style of M]'Watching you have sex with all those strangers really made me lose respect for you, but it also made me realise how much I've always wanted to fuck you. So, I payed a lot of money to come into the game and take my turn!'[roman type][line break][or][MediumDesc of M], you've got it-[roman type][line break][speech style of M]'Shut up, [NameBimbo].'[roman type][line break][stopping]".
 
 Section - Fancied Friend
 
@@ -374,7 +374,7 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - fancied-friend):
 	if M is not friend-shocked:
 		say "[speech style of M]'Who knew you were such a tart? I certainly didn't.'[roman type][line break][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 	otherwise:
-		say "[speech style of M]'[one of]Ok, [B], if you're going to act like such a disgrace, I might as well share this with everyone.'[or]I'm going to share this video too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
+		say "[speech style of M]'[one of]OK, [B], if you're going to act like such a disgrace, I might as well share this with everyone.'[or]I'm going to share this video too.'[stopping][roman type][line break][strongHumiliateReflect][MediumDesc of M] hangs up the call, and the [MediumDesc of C] turns off.";
 		choose a blank row in Table of Published Disgraces;
 		now the content entry is the substituted form of "a screenshot of you in a video call, [the video-event of C],";
 		now the published entry is the substituted form of "posted to your wall on facepage.com by [MediumDesc of M], accompanied by the comment 'WTF, [OriginalNameBimbo]!'";

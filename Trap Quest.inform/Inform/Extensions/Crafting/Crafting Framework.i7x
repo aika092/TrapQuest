@@ -163,14 +163,12 @@ Definition: a number (called K) is ingredient appropriate: [Will this ingredient
 	if K is 18 and diaper quest is 1, decide no; [Minotaur horn]
 	decide yes.
 
-
 [!<Thing>@<IsProduct>+
 
 REQUIRES COMMENTING
 
 +@!]
 Definition: thing is product: decide no.
-
 
 [Giving each alchemy product a different number (key) is the only way I can work out how to be able to randomise different types into a table.]
 [!<Thing>@<WhichNumberIsTheAlchemyKey>+
@@ -199,14 +197,12 @@ REQUIRES COMMENTING
 *!]
 current-alchemy-key is a number that varies.
 
-
 [!<Thing>@<IsRecipeSpecific>+
 
 REQUIRES COMMENTING
 
 +@!]
 Definition: a thing is recipe specific: decide no. [We flag that the recipe is always the same and never random, to make sure we never try to use this alchemy product as a random cursed outcome (a seasoned player would immediately know it was cursed)]
-
 
 To display complete alchemy data:
 	[repeat through the Table of Alchemy:

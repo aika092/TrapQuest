@@ -9,10 +9,13 @@ To say ShortDesc of (T - an iron-maiden):
 	say "iron maiden".
 
 To say EnvironmentDesc of (T - an iron-maiden):
-	say "The two halves of the iron maiden trap are lying horizontally on the ground. ".
+	say "[if playerRegion is Mansion]The iron maiden rests against one wall here, the door wide open[otherwise]The two halves of the iron maiden trap are lying horizontally on the ground[end if]. ".
 
 To decide which number is the girth of (D - an iron-maiden):
 	decide on 3.
+
+To compute reset cooldown of (T - an iron-maiden):
+	if diaper quest is 0, compute default reset cooldown of T. [Just sticks around visible in DQ, triggered again by the haunted mirror trap]
 
 To trigger (Y - an iron-maiden):
 	now Y is not untriggered;
@@ -24,6 +27,10 @@ To trigger (Y - an iron-maiden):
 	now the player is in Iron Maiden;
 	refresh the map-window.
 
+To say DQIronMaidenFlav:
+	let D be a random worn diaper;
+	say "[one of]You're trapped inside, your arms pointing vertically upwards above your head, unable to move a muscle! This must be some kind of Iron Maiden! In the pitch black darkness you feel some mysterious soft things pressing into your armpits. They flick left and right to a mechanical rhythm. You're being tickled by feathers! [or]You're inside the Iron Maiden again! Once again the feathers press into your armpits. [stopping][if D is nothing]Thick padding presses into your crotch from all directions, acting as the diaper it clearly feels that you should be wearing. [end if]There's probably nothing you can do but [bold type][TQlink]wait[TQdlink][roman type].".
+
 iron-maiden-turns is a number that varies.
 
 To decide which text is his of (M - iron-maiden):
@@ -33,40 +40,32 @@ This is the iron maiden immobility rule:
 	if the player is in Iron Maiden, rule fails.
 The iron maiden immobility rule is listed in the immobility rules.
 
+Definition: an iron-maiden is throater: decide yes.
+
 A time based rule (this is the iron-maiden-punishment rule):
 	if the player is in Iron Maiden:
 		let M be a random iron-maiden;
 		increase iron-maiden-turns by 1;
 		if iron-maiden-turns > a random number between 4 and 6:
-			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, before falling open, clanging to the ground and allowing you back out in the open. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out metal tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their mechanical invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
+			say "You hear a creak, and then a sliver of daylight appears above you. The two halves of the iron maiden creak apart, [if playerRegion is Mansion]as the door slowly opens, releasing you[otherwise]before falling open, clanging to the ground and allowing you back out in the open[end if]. [if the number of body parts penetrated by M > 1]But you're still being invaded! With effort, you squirm and wriggle, but feel the stretched-out metal tentacles resisting as the walls fall away. Finally, with some force, you manage to pull them out, freeing your orifices from their mechanical invasion. [otherwise if M is penetrating a body part]As the walls fall away, the tentacle is rather violently pulled out of your [random body part penetrated by M]. [end if][line break][variable custom style]Phew, I'm free![roman type][line break]";
 			increase the submission-count of the player by 1;
 			increase the sex-count of the player by 1;
 			repeat with T running through things in Iron Maiden:
 				unless T is the player or T is backdrop, now T is in the location of M;
 			now the player is in the location of M;
-			if M is penetrating face and (the stomach-semen of the player + the semen volume of belly > 0), PukeUp;
 			if M is penetrating a body part, progress quest of tentacle-quest;
 			dislodge M;
 			refresh the map-window;
 			force inventory-focus redraw; [Forces redraw of inventory window, some buttons might be the wrong colour]
 			repeat with R running through reactive monsters:
 				say IronMaidenTrapReactFlav of R;
+			repeat with H running through revealed haunted mirror traps in the location of the player:
+				now H is expired; [Otherwise we could get thrown straight back in]
 		otherwise if diaper quest is 1:
-			if there is a worn diaper, compute automatic state check of a random worn diaper;
-			say "The metal tentacles [one of]begin to push against your body all over, but putting particular pressure on your [BellyDesc][if there is a worn diaper] and diaper[end if]. They [or][stopping][one of]wiggle and squirm[or]continue to writhe around you[or]press into and tickle you[then at random], [if there is a worn diaper]stimulating you and [end if][one of]making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or]making your tummy gurgle[cycling]!";
-			if there is a worn diaper:
-				ruin vagina times 2;
-			if player-urinating is 0 and the bladder of the player > 2 and a random number between (iron-maiden-turns / 2) and the bladder of the player >= 5 - the incontinence of the player:
-				say "You can't hold on! You begin wetting yourself.";
-				now delayed urination is 1;
-				try urinating;
-			otherwise if diaper messing >= 3 and asshole is not actually occupied and a random number between iron-maiden-turns and rectum >= 6 - the incontinence of the player and there is worn soilable total protection knickers:
-				say "You can't hold on! You begin soiling yourself.";
-				compute messing;
-			let K be a random worn perceived messed knickers;
-			if K is clothing:
-				say "Trapped inside the airtight Iron Maiden, the [one of]foul[or]horrible[or]putrid[in random order] smell of your [MediumDesc of K] makes you gag and [if the player is not feeling submissive]feel a little more like a pathetic baby[otherwise][one of]before you know it you are crying your eyes out like a big baby[or]continue to bawl like a baby[stopping][end if].";
-				PainUp 1;
+			let D be a random worn diaper;
+			if D is diaper, compute automatic state check of D;
+			say "The feathers [one of]begin to [or][stopping]twist back and forth, tickling your armpits, making you [one of]shudder[or]wiggle and squirm[or]writhe around[then at random][one of], making it difficult to hold onto your bladder[if diaper messing >= 3] and bowels[end if][or][stopping]!";
+			if diaper messing >= 3, compute soiling;
 		otherwise:
 			if M is penetrating face:
 				say "The tentacle in your mouth continues to [one of]fuck your face[or]use your throat as a fuck sock[or]energetically fuck your mouth[or]turn your mouth into its own personal onahole[in random order]!";
@@ -113,12 +112,6 @@ A time based rule (this is the iron-maiden-punishment rule):
 					AnalCount;
 				otherwise:
 					say "Tentacles [one of][or]continue to [stopping][one of]wriggle[or]writhe[or]squirm[at random] [one of]pointlessly[or]in vain[or]weakly[or]fruitlessly[in random order] against your [asshole]!";
-
-Report urinating when the player is in Iron Maiden:
-	unless there is a worn diaper:
-		say "[if diaper lover > 0]You can't help but wish you were wearing a diaper - at least then you wouldn't be able to smell the stink of your own [urine] so strongly inside this tiny metal box! [end if]You can't help but [if the delicateness of the player < 10]feel a bit more submissive[otherwise]cry a little[end if].";
-		SilentlyDiaperAddictUp 1;
-		SilentlyDelicateUp 1.
 
 To say IronMaidenTrapReactFlav of (M - a monster):
 	say LewdTrapReactFlav of M.

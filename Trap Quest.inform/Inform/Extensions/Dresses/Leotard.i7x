@@ -25,6 +25,7 @@ To say ClothingDesc of (C - a sexy blue leotard):
 	say "A blue leotard which is so sheer that it would reveal everything if it wasn't the for opaque stars over each nipple and the crotch.[if C is crotch-ripped]A rip at the bottom of the leotard means that it unfortunately doesn't protect the crotch region.[end if]".
 
 Definition: a pink leotard is pink themed: decide yes.
+Definition: a pink leotard is potentially erection concealing: decide yes. [frills conceal erections]
 Definition: a sexy blue leotard is star themed: decide yes.
 Definition: a sexy blue leotard is blue themed: decide yes.
 

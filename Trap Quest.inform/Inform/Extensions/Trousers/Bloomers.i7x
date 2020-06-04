@@ -8,6 +8,7 @@ Definition: a baby bloomers is baby themed: decide yes.
 Definition: a baby bloomers is unskirted themed: decide no.
 Definition: a baby bloomers is sissifying: decide yes.
 Definition: a baby bloomers is pink themed: decide yes.
+Definition: a baby bloomers is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
 To decide which number is the initial cringe of (B - a baby bloomers):
 	decide on 7.

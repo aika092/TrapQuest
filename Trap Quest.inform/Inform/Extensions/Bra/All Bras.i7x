@@ -307,12 +307,12 @@ Definition: a spike bra is disintegration-protected: decide yes.
 Definition: a spike bra is uncovered themed: decide yes.
 Definition: a spike bra is product: decide yes.
 
-To decide which number is the alchemy key of (C - a spike bra):
+To decide which number is the alchemy key of (C - a pink spike bra):
 	decide on 14.
 
-Definition: a spike bra is recipe specific: decide yes.
+Definition: a pink spike bra is recipe specific: decide yes.
 
-To decide which text is RecipeDesc of (B - a spike bra):
+To decide which text is RecipeDesc of (B - a pink spike bra):
 	decide on "This recipe says '[if egg laying fetish is 1]Medium Sized Egg or [end if][if diaper quest is 1]Grown Up[otherwise]Super Slutty[end if] Bra'".
 
 This is the spike bra specific recipe rule:
@@ -428,7 +428,6 @@ To decide which number is the bartering value of (T - a pasties) for (M - a robo
 To decide which number is the bartering value of (T - a pasties) for (M - a mechanic):
 	decide on 2.
 
-
 red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
 
 Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".
@@ -458,7 +457,7 @@ To decide which figure-name is clothing-image of (C - tassels):
 	decide on figure of tassels.
 
 To say ClothingDesc of (C - tassels):
-	say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the center, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the center, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and C is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
+	say "A pair of white nipple caps with [if C is worn]nylon tassels hanging from the centre, as if to provide handlebars for your [BreastDesc], which are otherwise completely exposed[otherwise]nylon tassels attached in the centre, as if to provide handles for the wearer's breasts, which would otherwise be completely exposed[end if][if the lactation rate of the player > 0 and C is worn]. It is completely preventing you from lactating at all.[otherwise].[end if]".
 
 Definition: tassels is end of transformation chain: decide yes.
 
@@ -535,7 +534,7 @@ To decide which number is the initial outrage of (C - tongue-bra):
 	if C is tonguing, decide on 17;
 	decide on 7.
 
-A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetized. A trainee bra is usually magnetized. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
+A trainee bra is a kind of bra. There is 1 trainee bra. A trainee bra is usually unique. A trainee bra has a number called training-progress. The training-progress of a trainee bra is usually 0. A trainee bra can be magnetised. A trainee bra is usually magnetised. The text-shortcut of a trainee bra is usually "teb". The printed name of trainee bra is usually "[TQlink of item described][item style]trainee bra[clothing-title-after]". A trainee bra has a number called train-charge.
 
 Figure of trainee bra is the file "Items/Clothes/Upper/Bras/traineebra1.png".
 
@@ -548,7 +547,7 @@ To say ClothingDesc of (C - a trainee bra):
 Definition: a trainee bra is grey themed: decide yes.
 Definition: a trainee bra is transformation-protected: decide yes.
 Definition: a trainee bra is whore themed: decide yes.
-Definition: a trainee bra is removable if it is not magnetized.
+Definition: a trainee bra is removable if it is not magnetised.
 
 A trainee bra is usually latex. The support of a trainee bra is usually -10. The min size of trainee bra is usually 20. The max size of trainee bra is usually 20. A trainee bra is usually top-exclusive.
 
@@ -560,15 +559,15 @@ To decide which number is the perceived-bimbo-influence of (C - a trainee bra):
 
 trainee bra removability rules is a rulebook. The removability rules of trainee bra is usually trainee bra removability rules.
 
-This is the magnetized trainee bra can't be removed rule:
-	if the wearing-target is magnetized:
+This is the magnetised trainee bra can't be removed rule:
+	if the wearing-target is magnetised:
 		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of wearing-target] all but immobile. You[']ll need to find a way to deactivate it if you want to get it off.";
 		rule fails.
-The magnetized trainee bra can't be removed rule is listed in the trainee bra removability rules.
+The magnetised trainee bra can't be removed rule is listed in the trainee bra removability rules.
 
 Report wearing trainee bra:
 	say "The magnetic latches snap closed as you finish putting it on.";
-	now the noun is magnetized.
+	now the noun is magnetised.
 
 To compute periodic effect of (C - a trainee bra):[remember that training-progress will sometimes be negative]
 	increase the train-charge of C by 1;

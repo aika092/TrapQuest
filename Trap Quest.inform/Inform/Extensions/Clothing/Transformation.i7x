@@ -190,6 +190,7 @@ To compute (C - a clothing) inheriting from (D - a clothing):
 	now the used condoms of C is the used condoms of D;
 	now the empty condoms of C is the empty condoms of D;
 	now the quest of C is the quest of D;
+	if C is actually nipple covering or D is actually nipple covering, now latest-top-malfunction is earnings;
 	compute C unique inheriting from D.
 
 To compute (C - a clothing) unique inheriting from (D - a clothing):
@@ -204,7 +205,7 @@ To transform (D - a clothing) into (C - a clothing):
 	otherwise:
 		say ThemeDesc of C;
 		say InfluenceDesc of C;
-	say "[TransformReaction of C]".
+	say TransformReaction of C.
 
 To say TransformReaction of (C - a clothing): [We make the assumption it's worse. We just need to assess how bad the damage is.]
 	if diaper quest is 1 and C is too cringeworthy and the cringe of C >= the outrage of C: [TODO new text that's different from skimpy humiliation]

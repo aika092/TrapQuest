@@ -5,7 +5,7 @@ A warrior chestpiece is a kind of overdress. A warrior chestpiece is usually met
 Definition: a warrior chestpiece is class-transformation-protected if the class of the player is virgin warrior.
 
 Check wearing warrior chestpiece:
-	if the virgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
+	if the vaginalvirgin of the player is 0, say "The latches refuse to close! It's almost as if the chestpiece is refusing to let you wear it..." instead.
 
 To compute virginity-loss of (H - a warrior chestpiece):
 	say "As the [H] falls from your [BreastDesc], you feel [if the virgin bonus of the player < 0]more of [end if]your willpower ripped from you.";
@@ -187,7 +187,7 @@ To say ClothingDesc of (C - a golden warrior priestess outfit):
 	say "This bizarre metal outfit consists of just a few shiny constricting bars. It covers your nipples but not much else.".
 
 To decide which number is the initial outrage of (C - a golden warrior priestess outfit):
-	decide on 7.
+	decide on 5.
 
 Definition: a golden warrior priestess outfit is class-transformation-protected if the class of the player is virgin warrior or the class of the player is priestess.
 

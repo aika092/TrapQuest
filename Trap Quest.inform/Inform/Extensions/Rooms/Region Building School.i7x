@@ -5,6 +5,9 @@ To Set Up The School:
 		now gloryhole is in School19;
 		now male-gloryhole is in Toilet01;
 		now female-gloryhole is in Toilet02;
+	if diaper lover > 0:
+		now public changing station is in Toilet02;
+		now private changing station is in Predicament20;
 	[change the up exit of Hotel29 to School01;]
 	change the west exit of School33 to School07; [one-way so that people don't get trapped but can't access normally]
 	now school portal is in School01;

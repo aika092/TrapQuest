@@ -99,7 +99,7 @@ Chapter - Quest
 priestess-service-quest is a headgear-clothing-quest.
 
 To uniquely set up (C - runic headband):
-	if the virgin of the player is 1, now C is purity;
+	if the vaginalvirgin of the player is 1, now C is purity;
 	now the quest of C is priestess-service-quest.
 
 To say QuestFlav of (Q - priestess-service-quest):
@@ -219,9 +219,13 @@ To compute virginity-loss of (C - runic headband):
 			summon cameltoe-priestess-outfit;
 			now cameltoe-priestess-outfit is crotch-displaced;
 			say "A [cameltoe-priestess-outfit] appears on you!";
-		repeat with M running through male unwrapped monsters penetrating vagina:
-			say "A condom appears around [NameDesc of M][']s [DickDesc of M]!";
-			now M is wrapped;
+		repeat with M running through unwrapped monsters penetrating vagina:
+			if M is male, say "A condom appears around [NameDesc of M][']s [DickDesc of M]!";
+			otherwise say "Condoms appear on [NameDesc of M][']s appendages!";
+			now M is wrapped; [Some NPCs like the tentacle monster need to be condomed even if they're not flagged as male (i.e. having a penis)]
+		repeat with V running through vines penetrating vagina:
+			now the vine-condoms of V is the TrapNo of V;
+			say "[if the vine-condoms of V is 1]A condom appears on the vine[otherwise][vine-condoms of V] condoms appear on the vines[end if] inside of you!";
 		let R be the recipe of 28; [condom pack recipe]
 		if R is recipe:
 			say "A recipe appears at your feet!";

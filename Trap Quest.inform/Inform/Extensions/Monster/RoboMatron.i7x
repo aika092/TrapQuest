@@ -152,7 +152,7 @@ To say EnemaAfterFlav of (M - robomatron):
 To compute enema floor reaction of (M - robomatron):
 	humiliate 200;
 	if voluntarySquatting is 1, humiliate 500;
-	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]BAD GIRL. BAD GIRL.'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
+	say "[BigNameDesc of M][']s eyes turn red. [line break][speech style of M]BAD [caps boy of the player]. BAD [caps boy of the player].'[if M is grabbing the player]'[otherwise]FORBIDDEN ACTIVITY DETECTED. SELECTING PUNISHMENT ROUTINE.'[end if][roman type][line break]";
 	anger M;
 	now M is interested.
 

@@ -99,6 +99,8 @@ To compute appearance assessment of (M - unicorn):
 	otherwise if the player is pheromonal or the number of glazed body parts > 0:
 		say "[BigNameDesc of M][']s nose twitches, and a visible flush spreads over [his of M] face.[line break][speech style of M]'[one of]'U-uhm... G-go take a shower!'[or]I-I hate how you smell! T-take a shower!'[or]Y-your scent is a-awful. Y-yes. Take a shower.'[at random][roman type][line break]";
 		FavourDown M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
 		say "[big his of M] expression remains mostly neutral, except for a small smile as [he of M] nods toward you.".
 
@@ -148,7 +150,7 @@ To compute (M - unicorn) protecting against (X - a monster):[if you are having s
 			FavourUp M;
 			Bore M;
 	otherwise:
-		say "[speech style of M]'A bride to be should not concern herself with things like this.'[roman type][line break][BigNameDesc of M] turns to leave.";
+		say "[speech style of M]'A bride to be should not concern [himself of M] with things like this.'[roman type][line break][BigNameDesc of M] turns to leave.";
 		now the scared of M is 30;
 		Bore M.
 
@@ -364,7 +366,7 @@ To ride dominate (M - unicorn):
 		if the body soreness of the player > 2, now the body soreness of the player is (the body soreness of the player / 2);
 		if the fatigue of the player > 2, FatigueDown (the fatigue of the player / 2);
 	otherwise:
-		now refactoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
+		now refractoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
 		if the player is male and player-fucker is asshole, anal ride dominate M;
 		otherwise vaginal ride dominate M.
 
@@ -382,7 +384,7 @@ To anal ride dominate (M - unicorn):
 			now player-fucking is DOMINANT-SUPER;
 			say AfterDominationComment 5 of M;
 		otherwise:
-			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M][']s wearing the entire time. Its not like you're humiliated or anything, but you certainly don't feel very dominant.";
+			say "You cum within a few seconds, unable to fully enjoy your orgasm thanks to the smug look [he of M][']s wearing the entire time. It's not like you're humiliated or anything, but you certainly don't feel very dominant.";
 			orgasm;
 			passively stimulate vagina from M;
 			now player-fucking is DOMINANT-SHAMEFUL;
@@ -464,7 +466,7 @@ To penetration dominate (M - unicorn):
 				now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 1 of M;
 		otherwise:[The unicorn is actually a huge slut]
-			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. Its a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your balls slap the nape of [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] glueing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
+			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slowly push your [SexShaft] into [his of M] [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherence, reducing [him of M] to frustrated spluttering and grunting as you eagerly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, so you decide to see if you can force another reaction out of [him of M]. You plant both hands on the ground, throwing your full weight against [him of M] as you drive every inch of your [sexual-player-penis] into [his of M] ass. [big his of M] eyes cross, and [he of M] grits [his of M] teeth in the midst of the merciless pounding, still trying to hold out. Unfortunately, you won't allow it. Your balls slap the nape of [his of M] ass as you relentlessly drill [his of M] prostate, forcing [him of M] to moan as [his of M] [asshole] starts clenching up around you. [big his of M] mouth slowly twists into a big, submissive 'O,' and [he of M] cries out in pleasure as [his of M] [DickDesc of M] shoots streamers of [semen] across [his of M] belly, chest, and face. Defeated, [he of M] stares up at you [if bukkake fetish is 1]with [his of M] own [semen] glueing one of [his of M] eyes shut [end if]as [he of M] finally accepts the pounding like the horny submissive [he of M] is. You ease off a little, making sure to enjoy yourself nice and fully before slamming your [sexual-player-penis] home, groaning as you pump [his of M] [asshole] full of fresh [semen].";
 			orgasm;
 			increase the times-seeded of M by 1;
 			now player-fucking is DOMINANT-SUPER;
@@ -484,7 +486,7 @@ To penetration dominate (M - unicorn):
 				now player-fucking is DOMINANT-NEUTRAL;
 			say AfterDominationComment 1 of M;
 		otherwise:
-			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slide your [SexShaft] into [his of M] tight little [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] rigid [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherency, reducing [him of M] to frustrated spluttering and grunting as you mercilessly piston away. Its a little difficult to tell if [he of M]'s actually upset or not, but [he of M]'s tight, and you don't have the stamina to force another reaction out of [him of M]. You groan heavily as you lose control and fill [his of M] [asshole] with your load.";
+			say "You answer by way of spitting on your [sexual-player-penis], smirking at the angry face [he of M] makes as you slide your [SexShaft] into [his of M] tight little [asshole]. [big he of M] flings curses and obscenities at you as you begin to fuck [him of M], stifled moans punctuating every word as [his of M] rigid [DickDesc of M] bobs in time with your thrusts. [big his of M] voice quickly loses all coherency, reducing [him of M] to frustrated spluttering and grunting as you mercilessly piston away. It's a little difficult to tell if [he of M]'s actually upset or not, but [he of M]'s tight, and you don't have the stamina to force another reaction out of [him of M]. You groan heavily as you lose control and fill [his of M] [asshole] with your load.";
 			orgasm;
 			increase the times-seeded of M by 1;
 			say AfterDominationComment 2 of M;

@@ -110,7 +110,7 @@ Check taking off tattoo:
 
 This is the tattoos get focused rule:
 	if tattoo vision is 1 and the focus-window is g-present:
-		repeat with T running through worn tattoos:
+		repeat with T running through currently at least partially visible tattoos:
 			if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
 				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
 				if the outrage of T >= A, focus-consider T;
@@ -185,7 +185,7 @@ To decide which object is the at least partial concealer of (T - a chest tattoo)
 	decide on a random worn not-see-through fully covering actually breast covering clothing.
 
 To decide which number is the initial outrage of (T - a chest tattoo):
-	decide on 7.
+	decide on 5.
 
 Section 5 - Leg Tattoos
 
@@ -221,7 +221,7 @@ To decide which object is the at least partial concealer of (T - a lower back ta
 	decide on a random worn not-see-through belly covering clothing.
 
 To decide which number is the initial outrage of (T - a lower back tattoo):
-	decide on 5.
+	decide on 3.
 
 Section 6b - Upper Back Tattoos
 
@@ -237,7 +237,7 @@ To decide which object is the at least partial concealer of (T - a upper back ta
 	decide on a random worn not-see-through breast covering clothing.
 
 To decide which number is the initial outrage of (T - a upper back tattoo):
-	decide on 3.
+	decide on 2.
 
 Section 7 - Body Tattoos
 
@@ -266,7 +266,7 @@ To decide which object is the at least partial concealer of (T - a face-tattoo):
 	decide on the at least partial concealer of face.
 
 To decide which number is the initial outrage of (T - a face-tattoo):
-	decide on 10.
+	decide on 7.
 
 Section 9 - Belly Tattoos
 

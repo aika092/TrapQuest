@@ -66,8 +66,8 @@ To compute periodic effect of (C - a condom of kings):
 		remove C from play;
 	otherwise if C is creamfilled or C is cursed:
 		if a random number between -1 and 250 < the size of penis and the size of penis > min penis size:
+			say "You feel your [printed name of C] shrink your [ShortDesc of penis]!";
 			PenisDown 1;
-			say "You feel your [printed name of C] [Shrink] your [player-penis] into a [ShortDesc of penis]!";
 	otherwise:
 		if a random number between -250 and 13 > the size of penis and the size of penis < 10:
 			PenisUp 1.

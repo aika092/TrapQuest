@@ -92,8 +92,6 @@ Report going when the player is female and the player is upright and there is wo
 		passively stimulate vagina from C;
 		now the walkCharge of C is 0.
 
-
-
 cum dump's undergarment is a crotchless-panties. cum dump's undergarment is unique. The armour of cum dump's undergarment is 1. The printed name of cum dump's undergarment is usually "[clothing-title-before]unholy cum dump's undergarment[clothing-title-after]". Figure of unholy panties is the file "Items/Clothes/Lower/Underwear/Skimpy/Crotchless/crotchless6.png". Understand "unholy" as cum dump's undergarment. The text-shortcut of cum dump's undergarment is "uu".
 
 Definition: cum dump's undergarment is uncovered themed: decide yes.
@@ -143,6 +141,5 @@ To compute recipe specific cursing of (T - cum dump's undergarment):
 
 To set up influence of (C - cum dump's undergarment):
 	now C is semen-addiction-influencing.
-
 
 Crotchless Panties ends here.

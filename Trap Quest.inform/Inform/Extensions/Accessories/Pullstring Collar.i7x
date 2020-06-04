@@ -33,7 +33,7 @@ Check pulling a pullstring collar:
 		say "[if monster-puller is the player]You pull the ring and then you let go[otherwise]You yelp in surprise[end if], [one of]giving a gasp as you feel it start winding back into the collar, a shudder going through your body as your mouth opens all on its own, [or][stopping]and in a bubbly voice you hear yourself say:[line break][second custom style]";
 		let R be a random number between 1 and 6;
 		if the times pulled of the noun is 0 and R is 1, now R is a random number between 2 and 6;
-		if the times pulled of the noun > a random number between 5 and 7 and R is not 1 and monster-puller is the player, now R is 1;
+		if the times pulled of the noun >= a random number between 4 and 7 and R is not 1 [and monster-puller is the player], now R is 1;
 		if R is 1 and monster-puller is the player:
 			say "'I'm so looking forward to [if diaper quest is 1]wearing nappies for the rest of my life[otherwise]meeting all those big [manly-penis]s out there waiting for me[end if]!'[roman type][line break]You feel funny inside, but also a bit stronger.";
 			SemenAddictUp 1;
@@ -52,7 +52,7 @@ Check pulling a pullstring collar:
 				say "'[if the oral sex addiction of the player < 3]I can't wait to find out what her pussy juices taste like!'[otherwise if the oral sex addiction of the player < 6]I just can't wait to have her cunt on my face!'[otherwise]Please let me tongue your asshole, Mistress!'[end if][roman type][line break]";
 				OralSexAddictUp 1;
 			otherwise:
-				say "'[if the semen taste addiction of the player < 6]Semen is an acquired taste, but I'm determined to get used to it!'[otherwise if the semen taste addiction of the player < 11]I just can't wait for my next yummy serving of [semen]!'[otherwise]I love sucking [manly-penis], the best way to get [semen] is straight from the tap!'[end if][roman type][line break]You feel funny inside.";
+				say "'[if the semen taste addiction of the player < 6]Semen is an acquired taste, but I'm determined to get used to it!'[otherwise if the semen taste addiction of the player < 11]I just can't wait for my next yummy serving of [semen]!'[otherwise]I love sucking [manly-penis], the best way to get [semen] is straight from the tap!'[end if][roman type][line break]";
 				SemenTasteAddictUp 1;
 			now R is 0;
 		otherwise if R is 3 or monster-puller is monster:
@@ -65,8 +65,8 @@ Check pulling a pullstring collar:
 			SexAddictUp 1;
 			now R is 0;
 		otherwise if R is 4:
-			now R is 0;
-			if no-panties permanent fetish is 0:
+			if no-panties permanent fetish is 0 and a random number between -1 and 1 >= diaper quest:
+				now R is 0;
 				say "'[if diaper lover >= 1]Panties are only for big girls who can control their bladder. I'm only allowed to wear diapers!'[otherwise]Panties and tights are for prudes!'[end if][roman type][line break]";
 				let C be a random worn knickers;
 				if C is pussy covering knickers:
@@ -75,8 +75,9 @@ Check pulling a pullstring collar:
 					say "[if diaper lover >= 1]You suddenly feel an extreme aversion against wearing any underwear except big puffy diapers. [otherwise]You suddenly feel an extreme aversion against wearing any underwear at all. [end if][if the bimbo of the player < 9]It's a really weird sensation, you simultaneously are horrified by the idea, but know that trying to fight against your new fetish would feel awful.[otherwise][line break][end if]";
 				now no-panties permanent fetish is 1;
 			otherwise if diaper lover >= 1 and the player is not incontinent:
+				now R is 0;
 				say "'Dumb girls wear diapers because they can't control their pee pee!'[roman type][line break]";
-				increase incontinence by 2;
+				increase incontinence by 1;
 				say "[if the player is incontinent]You realise you are now fully incontinent.[otherwise if the diaper addiction of the player < 9]You desperately hope that this doesn't mean you're becoming incontinent.[otherwise]You are weirdly excited by the idea that this might mean you're becoming incontinent.[end if]";
 			otherwise:
 				increase R by 1;

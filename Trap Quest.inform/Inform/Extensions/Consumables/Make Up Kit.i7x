@@ -45,7 +45,7 @@ Check brushing something with:
 		otherwise say "You can only use a make up kit on a body part." instead;
 	if the second noun is not face, say "You can only use a make up kit on your face." instead;
 	if the make-up of face >= 3, say "You cannot make your face any more slutty than it already is!" instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead;
+	if the player is immobile or there is a thing wrangling the player, say "Aren't you a bit busy?" instead;
 	if there is a worn hood, say "You would need to take your hood off first." instead;
 	if the player is not able to manually use manual dexterity, do nothing instead.
 

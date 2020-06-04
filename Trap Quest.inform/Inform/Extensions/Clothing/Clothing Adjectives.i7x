@@ -225,6 +225,9 @@ A thing can be unowned, store, museum-store, stolen (this is the ownership prope
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
+	if C is skirted:
+		if the player is upright or C is not worn, decide on the skirtLength of C * 2;
+		otherwise decide on the skirtLength of C - 2;
 	decide on 10.
 Clothing can be stuck. Clothing is usually not stuck.
 [!<YourselfIsClothingStuck>+
@@ -252,6 +255,12 @@ Definition: a clothing (called C) is top only fluid immune:[Is the top of C wate
 Definition: a clothing (called C) is somewhat fluid vulnerable:[Can C absorb fluid at least partially?]
 	if C is fluid immune, decide no;
 	decide yes.
+[!<Clothing>@<temporarilyDisplaced:Boolean>*
+
+It's been automatically displaced to allow the player to pee or something. We intend to replace it afterwards.
+
+*!]
+Clothing can be temporarily-displaced.
 Definition: a clothing (called C) is subduing:[Can C be held by monsters to fully control the player?]
 	decide no.
 [!<YourselfIsSubdued>+
@@ -320,5 +329,53 @@ tonguesActive is a number that varies.
 tonguesBlack is initially false.
 Definition: a clothing is tongued: decide no.
 Definition: a clothing is tonguing if it is tongued and tonguesActive > 0 and it is worn.
+
+latest-top-malfunction is a number that varies.
+Definition: yourself is top-wardrobe-malfunctioning:
+	if (the player is male and the largeness of breasts <= 1) or the number of worn actually nipple covering clothing is not 1:
+		now latest-top-malfunction is 0;
+		decide no;
+	let C be a random worn actually nipple covering clothing;
+	if C is not-top-displacable or C is glued or C is fully covering or C is fully exposing:
+		now latest-top-malfunction is 0;
+		decide no;
+	if latest-top-malfunction is not 0:
+		let timePassed be latest-top-malfunction - earnings;
+		let CC be cleavageCover;
+		if CC >= 3 and CC <= 7: [Just to make sure]
+			let CL be 8 - CC;
+			let malfunctionChance be timePassed * CL;
+			let R be a random number between 1 and 1000;
+			if debuginfo > 0, say "[input-style]Wardrobe Malfunction Check: Seconds since last check ([timePassed]) * cleavage ([CL]) = [malfunctionChance] | ([R].5) d1000 malfunction likelihood[roman type][line break]";
+			if malfunctionChance > R:
+				decide yes;
+	decide no.
+Carry out wearing breast covering clothing:
+	now latest-top-malfunction is earnings.
+Carry out taking off breast covering clothing:
+	now latest-top-malfunction is earnings.
+Carry out topReplacing:
+	now latest-top-malfunction is earnings.
+To say NipSlipFlav:
+	let C be a random worn actually nipple covering clothing;
+	if C is clothing, say "[bold type]You look down and notice that your [ShortDesc of C] has fallen open a bit, exposing a nipple. [roman type][moderateHumiliateReflect]You quickly fix the wardrobe malfunction.";
+	otherwise say "[bold type]Minor bug - game calculated that you had experienced a nip slip but couldn't find a relevant item of clothing.[roman type][line break]".
+To compute default nip slip reaction of (M - a monster):
+	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware that your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]";
+	FavourDown M;
+	now groping-person is M;
+	update gropability;
+	if the gropability of breasts > 0, increase the gropability of breasts by 8;
+	if M is groping:
+		now specificBodyPartChosen is true;
+		now targeted-body-part is breasts;
+		compute grope of M;
+	say NipSlipFlav;
+	if M is friendly human monster, progress quest of chest-exposing-quest from M.
+An all time based rule (this is the malfunction checking rule):
+	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
+		if another-turn is 0 and the player is not immobile and the player is not in danger:
+			if the player is top-wardrobe-malfunctioning, say NipSlipFlav.
+
 
 Clothing Adjectives ends here.

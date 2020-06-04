@@ -177,7 +177,7 @@ To compute BimboSeduced of (M - a monster):
 		add the core seduction rule to another-turn-rules;
 		say "Completely out of your own control, you find yourself grinding your [AssDesc] up against [NameDesc of M][']s crotch. Suddenly, your control over your own body returns to you, but it's clear that [NameDesc of M] wants more...";
 	otherwise:
-		say "Something seems to suddenly switch in [NameDesc of M][']s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
+		say "Something seems to suddenly switch in [NameDesc of M][']s head and [his of M] [if M is friendly]friendly[otherwise]idle[end if] smile changes into a devilish grin. Uh-oh... [line break][variable custom style]Was it something I said?![roman type][line break]";
 		anger M;
 		now the boredom of M is 0.
 
@@ -983,7 +983,7 @@ To compute default questioning to (M - a monster):
 		now the conversation-sequence of M is Q;
 	if M is unintelligent:
 		say MuteQuestionResponse of M;
-	otherwise if player is seductive and (diaper quest is 1 or M is actually seducable) and a random number between 1 and 4 is 1:
+	otherwise if the player is seductive and (diaper quest is 1 or M is actually seducable) and a random number between 1 and 4 is 1:
 		now M is interested;
 		say BimboSeduce of M;
 		if M is friendly, compute BimboSeduced of M;
@@ -1139,7 +1139,7 @@ To say AdviceQuestion of (M - a monster):
 [Mute NPCs]
 To say MuteQuestionResponse of (M - a monster):
 	say "[variable custom style]'Are you [if the bimbo of the player < 10]sentient[otherwise]aware of what's going on and stuff[end if]?'[roman type][line break]";
-	say "The response comes telepathically.[line break][speech style of M]'Yes I am sentient. Yes I am of sexual maturity for my species. No more questions.'[roman type][line break]".
+	say "The response comes telepathically.[line break][speech style of M]'Yes I am sentient. Yes I am of sexual [maturity] for my species. No more questions.'[roman type][line break]".
 
 To say WhereAnswer of (M - a monster):
 	say "[speech style of M]'We're here. Obviously.'[roman type][line break]".
@@ -1188,7 +1188,7 @@ To compute talk option (N - 3) to (M - a monster):
 		say BimboSeduce of M;
 		if M is friendly, compute BimboSeduced of M;
 	otherwise:
-		say "[DrinkRequest of M]";
+		say DrinkRequest of M;
 		if M is uninterested:
 			say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
 		otherwise if M is unintelligent:

@@ -24,11 +24,11 @@ To decide which number is the hindrance-modifier of (C - a mary janes):
 To say UniqueShortDesc of (C - a mary janes):
 	say "mary janes".
 To say ClothingDesc of (C - a mary janes):
-	say "A pair of flat mary janes, made out of a high quality leather.".
+	say "A pair of flat blue mary janes, made out of a high quality leather.".
 
 To decide which object is the potential-upgrade-target of (C - a mary janes):
 	decide on a random off-stage plentiful ballet shoes.
 
-Definition: a mary janes is black themed: decide yes.
+Definition: a mary janes is blue themed: decide yes.
 
 Mary Janes ends here.

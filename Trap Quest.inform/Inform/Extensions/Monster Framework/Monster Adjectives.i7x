@@ -9,6 +9,16 @@ A monster has a number called sex-length. The sex-length of a monster is usually
 A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
 To decide which number is the difficulty of (M - a monster):
 	decide on the raw difficulty of M + game difficulty.
+To decide which number is the difficulty-base of (M - a monster):
+	if M is hotel dwelling:
+		decide on 12;
+	if M is mansion dwelling:
+		decide on 12;
+	if M is woods dwelling:
+		decide on 9;
+	if M is dungeon dwelling:
+		decide on 6;
+	decide on 5.
 A monster can be friendly-fucking. [Are they having non-aggressive sex with you?]
 Definition: a monster is damageable: decide yes. [A monster who is not damageable takes no damage from attacks.]
 A monster has a number called health. The health of a monster is usually 10. [Current HP, if this hits 0 they die.]
@@ -56,7 +66,6 @@ Definition: a monster (called M) is regionally missing:
 		let T2 be the substituted form of "[ShortDesc of N]";
 		if T1 is T2, decide no;
 	decide yes.
-
 
 A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
 Definition: a monster is raunchy: decide no.
@@ -111,8 +120,8 @@ A monster has a rule called the pullstring rule. The pullstring rule of a monste
 A monster has a number called blue-balls. [A value increased by initiating friendly sex then stopping early, or by seducing. Resets to 0 on orgasm.]
 To decide which number is the blue-balls-limit of (M - a monster):
 	decide on 10.
-A monster has a number called refactory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
-To decide which number is the refactory-time of (M - a monster):
+A monster has a number called refractory-period. [This will be greater than 0 if an intelligent NPC has orgasmed recently. It is mainly used for preventing friendly sex hundreds of times in a row without pause.]
+To decide which number is the refractory-time of (M - a monster):
 	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
 A monster can be dragging.
 A monster has a number called monstersetup.
@@ -124,15 +133,16 @@ Definition: a monster is dark skinned: decide no.
 Definition: a monster is musky: decide no.
 
 A monster can be doing nothing special, spanking the player, changing the player, feeding the player, whipping the player, masturbating the player, enema-filling the player (this is the punishment-attack-state property).
-A monster has a number called paralyze-status. [paralyze status of -1 makes you immune]
-Definition: A monster is paralyzed rather than not-paralyzed if its paralyze-status > 0.
+A monster has a number called paralyse-status. [paralyse status of -1 makes you immune]
+Definition: A monster is paralysed rather than not-paralysed if its paralyse-status > 0.
 A monster has a number called poison-status. [poison status of -1 makes you immune]
 Definition: A monster is poisoned rather than not-poisoned if its poison-status > 0.
 A monster has a number called blind-status. [blind status of -1 makes you immune]
 Definition: A monster is blinded rather than not-blinded if its blind-status > 0.
 A monster has a number called diaper-duration. [NPCs can put the player in a diaper and this will usually be uncursed, the reason the player is motivated to keep it on is that they will receive further punishments if the NPC finds them without a diaper within this duration.]
 A monster has a number called diaper-duration-ended. [When this gets set to 1, we know that the NPC needs to inform the player that their diaper punishment has ended.]
-Understand "NPC", "enemy" as a monster.
+Definition: a monster is diaper-instructing if the diaper-duration of it > 0.
+
 A monster can be wrapped or unwrapped. A monster is usually unwrapped. [Are they wearing a condom?]
 A monster has a number called selection-frustration. [Have they tried the same body part several times without success?]
 A monster can be mating. [Has the player given birth to their spawn?]
@@ -165,7 +175,7 @@ Definition: A monster (called M) is expectant:
 	decide no.
 
 Definition: a monster is willing to shag: decide no. [A willing monster is one who is currently available for consensual sex.]
-Definition: a monster is willing to shag right now if it is willing to shag and the refactory-period of it < 0. [Currently available for consensual sex and hasn't orgasmed recently.]
+Definition: a monster is willing to shag right now if it is willing to shag and the refractory-period of it < 0. [Currently available for consensual sex and hasn't orgasmed recently.]
 
 Definition: a monster is controlling if it is intelligent. [Will they grab onto subduing clothing e.g. a clitoris lead? This way we can make mostly non-intelligent NPCs like the hellhound grab on.]
 
@@ -202,13 +212,19 @@ Definition: a monster is threatening rather than non-threatening if it is unleas
 Definition: a monster is pacified if it is non-threatening and it is not caged. [Will never be unfriendly in its current state]
 Definition: a monster is defeated rather than undefeated if it is fucked-silly or it is sex-enslaved or it is diaper-enslaved. [It's got knocked down, it's not getting up again, it's always going to let you keep it down.]
 
-Definition: a monster is messy if it is diaper-enslaved and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 6 and it is not in the school.
+Definition: a monster is messy if it is diaper-enslaved and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 6 and playerRegion is not school.
 
 Definition: a monster is scarable: decide yes. [Can this monster be made to flee? Mostly just overridden for bosses.]
 
 A monster can be seduced, unseduced or seduction-refused (this is the monster-seduction property). A monster is usually unseduced. [Is the player currently playing a seduction minigame with it? If it has refused seduction then it won't allow the seduction to happen again.]
 Definition: a monster is seducable if it is male and it is intelligent and it is willing to do anal.
-Definition: a monster is actually seducable if it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part.
+Definition: a monster is actually seducable if diaper quest is 0 and it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part.
 A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
+
+A monster has a number called throating. [Is it currently doing deepthroat oral? If so, for how many turns shall it do this?]
+Definition: a monster is throater if the throating of it > 0.
+To say silentThroat (M - a monster): [Shortcut to flag to the game that the NPC is deepthroating this turn]
+	increase the throating of M by 1.
+
 
 Monster Adjectives ends here.

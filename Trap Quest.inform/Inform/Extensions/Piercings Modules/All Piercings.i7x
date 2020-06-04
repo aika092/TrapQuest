@@ -735,11 +735,6 @@ A tongue piercing is a kind of piercing. The printed name of tongue piercing is 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
 
-This is the tongue piercing inhibits gag reflex rule:
-	if there is a worn tongue piercing:
-		if debuginfo > 0, say "[input-style]Avoid gagging check: tongue piercing | automatic success[roman type][line break]";
-		rule succeeds.
-The tongue piercing inhibits gag reflex rule is listed in the gag reflex rules.
 
 To decide which object is the concealer of (C - a tongue piercing):
 	if C is listed in the armUses of arms, decide on arms;
@@ -764,7 +759,7 @@ To compute periodic effect of (P - a tongue piercing):
 	increase the thirst-charge of P by 1;
 	if the thirst-charge of P > 80:
 		now the thirst-charge of P is 0;
-		if P is not blessed and the stomach-semen of the player is 0 and the thirst of the player < 3 and the latex-transformation of the player < 5:
+		if P is not blessed and the stomach-semen of the player is 0 and the semen volume of face is 0 and the thirst of the player < 3 and the latex-transformation of the player < 5:
 			say "[bold type]Your [printed name of P] is [one of][or]still [stopping]crying out for you to taste and swallow more [semen]. You suddenly feel a lot thirstier...";
 			while the player is not thirsty and the stomach-liquid of the player > 0:
 				StomachDown 1;

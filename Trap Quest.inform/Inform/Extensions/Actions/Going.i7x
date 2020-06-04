@@ -8,6 +8,11 @@ REQUIRES COMMENTING
 To say GoingSubduedFlav of (C - a clothing):
 	say "[StandSubduedFlav of C]".
 
+Check going when the player is at least partially monster stuck:
+	if the player is monster fucked:
+		if minotaur is penetrating a body part and minotaur is asleep, try waiting instead;
+	try resisting instead.
+
 [!<CheckGoingWhileThePlayerIsImmobile>+
 
 REQUIRES COMMENTING
@@ -15,7 +20,7 @@ REQUIRES COMMENTING
 +!]
 Check going while the player is immobile:
 	if the player is subdued:
-		say "[GoingSubduedFlav of a random worn subduing clothing]";
+		say GoingSubduedFlav of a random worn subduing clothing;
 		try waiting instead;
 	if the player is pole stuck, say "You are currently stuck on a dildo[if the player is monster fucked], and also being fucked by the [random monster penetrating a body part][end if]!" instead;
 	if the player is drill stuck, say "You are currently stuck on a spinning drill!" instead;
@@ -23,10 +28,10 @@ Check going while the player is immobile:
 	if the player is throne stuck, say "You are stuck on the throne!" instead;
 	if the player is horse stuck, say "You are stuck on a wooden horse!" instead;
 	if the player is bouncer stuck, say "You are stuck in the baby bouncer!" instead;
-	if the player is monster stuck:
+	[if the player is at least partially monster stuck:
 		if the player is monster fucked:
 			if minotaur is penetrating a body part and minotaur is asleep, try waiting instead;
-		try resisting instead;
+		try resisting instead;]
 	if the player is vine stuck, say "The vines are holding you in place!" instead;
 	if the stickiness of the player > 0:
 		if the player is glue stuck:
@@ -35,6 +40,8 @@ Check going while the player is immobile:
 		otherwise:
 			say "You're stuck to the [one of]floor[or]ground[at random]! You'll need to [bold type]wait[roman type] a bit longer." instead;
 	say "You're immobile right now!" instead.
+
+
 
 [!<CheckGoingWhileTheThroneIsTriggered>+
 
@@ -282,6 +289,13 @@ To decide which number is the movement reduction of the player:
 			now movement-reduction-flav-said is true;
 			now T is the substituted form of "The bondage connecting you to [student-name of the bound-target of quiz-partner] is severely hindering your movement!";
 	if the player is upright:
+		if skirt-tray-vibrator is worn:
+			let C be the max-cakes of skirt-tray-vibrator - the cakes-taken of skirt-tray-vibrator;
+			if C > 0:
+				increase X by 5;
+				if movement-reduction-flav-said is false:
+					now movement-reduction-flav-said is true;
+					now T is the substituted form of "Having to be careful to try and balance the [if C is 1]last remaining cake[otherwise][C] remaining cakes[end if] on your [MediumDesc of skirt-tray-vibrator] is hindering your ability to move quickly!";
 		if there is a worn diaper:
 			let D be the weight of a random worn diaper;
 			increase X by D;
@@ -771,7 +785,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 			now shopkeeper is interested;
 			anger shopkeeper;
 		otherwise:
-			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what she wants. I hope you find it useful!'[roman type][line break]";
+			if flav-said is 0, say "[first custom style]'The mother of my daughter can take what [he of the player] wants. I hope you find it useful!'[roman type][line break]";
 			now C is unowned;
 		now flav-said is 1.
 

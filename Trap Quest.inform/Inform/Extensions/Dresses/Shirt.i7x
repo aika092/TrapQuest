@@ -60,7 +60,7 @@ A pink rubber shirt is a kind of rubber shirt. The printed name of pink rubber s
 
 There is 1 pink rubber shirt.
 
-Figure of pink rubber shirt is the file "Items/Clothes/Upper/Latex/latexshirt1.png".
+Figure of pink rubber shirt is the file "Items/Clothes/Upper/Latex/latexshirt1a.png".
 
 To decide which figure-name is clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt.

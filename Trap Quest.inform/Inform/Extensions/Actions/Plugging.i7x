@@ -38,14 +38,20 @@ Carry out plugging something with:
 	humiliate 50;
 	compute toyInsertion of the second noun into the noun;
 	unless the second noun is worn:
-		if the second noun is penetrating the noun, now the second noun is worn by the player.
+		if the second noun is penetrating the noun, now the second noun is worn by the player;
+	if the second noun is cursed:
+		say "As you finish inserting [NameDesc of the second noun], you feel it become[if the second noun is unsure]... stuck?! Uh-oh, it seems that it has a magic curse...[otherwise]stuck as the magic curse takes effect.[end if]";
+	now the second noun is sure;
+	now the second noun is identified.
 
-[]
 To compute toyInsertion of (S - a thing) into (F - a fuckhole):
 	compute insertionRuin of S into F;
-	now S is penetrating F.
+	now S is penetrating F;
+	compute uniqueToyInsertion of S into F.
 
-[]
+To compute uniqueToyInsertion of (S - a thing) into (F - a fuckhole):
+	do nothing.
+
 To compute insertionRuin of (S - a thing) into (F - a fuckhole):
 	if the girth of S > the openness of F - 4:
 		say "The [MediumDesc of S] [if the girth of S > the openness of F + 1]is so large compared to the openness of your [variable F] that it makes you a bit sore just putting[otherwise]stimulates you as you put[end if] it in.";

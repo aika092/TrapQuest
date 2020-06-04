@@ -116,6 +116,6 @@ DiaperPail is a linkedroom. "You are stuck upside down inside a diaper pail, wit
 Figure of DiaperPailBackground is the file "Map/pail1.jpg".
 
 [You can get here by swimming! Eventually...]
-LakeLair is a linkedroom. The printed name of LakeLair is "Lake Monster's Lair". "A small stretch of rock and sand in the center of the lake, just large enough to lay down on. In the distance, you can make out the shore you swam from.".
+LakeLair is a linkedroom. The printed name of LakeLair is "Lake Monster's Lair". "A small stretch of rock and sand in the centre of the lake, just large enough to lay down on. In the distance, you can make out the shore you swam from.".
 
 Static Rooms ends here.

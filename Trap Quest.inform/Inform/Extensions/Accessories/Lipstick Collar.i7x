@@ -51,15 +51,6 @@ To end tethering:
 		unless the paid of P > 0, now P is closed;
 	say "The chain releases you, glittering as it fades from existence.".
 
-This is the lipstick collar inhibits gag reflex rule:
-	if there is a worn lipstick collar:
-		let R be the make-up of face * 2;
-		increase R by the lips of face + 3;
-		let N be a random number between 1 and R;
-		if debuginfo > 0, say "[input-style]Avoid gagging check: make up factor ([the make-up of face * 2]) + lips factor ([lips of face]) + 3 = [R] ---> d[R] = [N] | (1.5) difficulty check[roman type][line break]";
-		if N > 1, rule succeeds.
-The lipstick collar inhibits gag reflex rule is listed in the gag reflex rules.
-
 Report going down when there is a worn tethering lipstick collar:
 	end tethering.
 

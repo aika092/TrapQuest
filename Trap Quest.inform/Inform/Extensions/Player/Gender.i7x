@@ -23,7 +23,7 @@ To SexChange (P - a person):
 		say "[if transGender is 1][variable custom style]I've dreamed about the day I might get a real vagina. But I didn't expect it to happen like this...[otherwise if the bimbo of the player < 7][first custom style]No, no, no, no! This is so gross. I want my dick! I have to win this game and get back into my real body.[otherwise if the bimbo of the player < 10][first custom style]I never asked for this! Why is this happening to me? I guess my name is definitely [NameBimbo] now.[otherwise if the bimbo of the player < 14 or diaper quest is 1][second custom style][NameBimbo]... I like that name. Well this will be a new experience, but at least it should be fun.[otherwise][second custom style]This is amazing! Now I can fuck studs just like a real girly bimbo. Thanks so much Nintendolls! I can't wait to lose my virginity. *giggle*[end if][roman type][line break]";
 		now the size of penis is 0;
 		now the real size of penis is -1;
-		if virginity-taker is the throne, now the virgin of the player is 1;
+		if vaginalvirginity-taker is the throne, now the vaginalvirgin of the player is 1;
 		now the soreness of vagina is 0;
 		now the openness of vagina is 0;
 		now the real openness of vagina is 0;
@@ -35,7 +35,7 @@ To SexChange (P - a person):
 [say "[if the bimbo of the player < 7][line break][first custom style]No, no, no, NO! I can't believe I let this happen again! I HATE this game![otherwise if the bimbo of the player < 10][first custom style]I should have known this would happen again! Maybe I should just accept it this time...[otherwise if the bimbo of the player < 14 or diaper quest is 1][line break][second custom style]So... Here I go again, huh? Well, I already squandered my second chance, so I might as well go with it.[otherwise][second custom style]Yes! I'm finally back in my real body! Thanks so much Nintendolls! Maybe this time, I'll even lose my virginity! *giggle*[end if][roman type][line break]";]
 
 To ReverseSexChange (P - a person):
-	if the player is female and sex-changed < 2 and the virgin of the player is 1:[Failsafe. If either of the latter two conditions are true, this shouldn't even trigger.]
+	if the player is female and sex-changed < 2 and the vaginalvirgin of the player is 1:[Failsafe. If either of the latter two conditions are true, this shouldn't even trigger.]
 		now the player is male;
 		if there is a worn chastity cage and min penis size > 0:
 			say "Your chastity belt morphs into a tight, snug chastity cage. [run paragraph on]";
@@ -51,7 +51,7 @@ To ReverseSexChange (P - a person):
 			now the real flesh volume of breasts is min breast size + the silicone volume of breasts;
 		now the size of penis is min penis size;
 		now the real size of penis is min penis size;
-		if penisvirginity-taker is the throne, now the virgin of the player is 1;
+		if penisvirginity-taker is the throne, now the penetrativevirgin of the player is 1;
 		now sex-changed is -1.[TODO: ReverseSexChange clothing]
 
 To configure DQ female proportions:

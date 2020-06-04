@@ -84,7 +84,7 @@ REQUIRES COMMENTING
 +!]
 To check goddess eligibility:
 	unless the player is in a predicament room:
-		if the virgin of the player is 1:
+		if the vaginalvirgin of the player is 1:
 			if glittering rose is off-stage and glittering rose is actually summonable:
 				say "[bold type]A glittering rose appears on your head![roman type][line break]A voice appears in your head:[line break][second custom style]'My my, a virgin pregnancy! You are the goddess that was promised! Welcome, join our ranks!'[roman type][line break]";
 				summon glittering rose cursed;
@@ -144,16 +144,18 @@ To compute enema holding:
 				now carrot daggers is in the location of the player;
 				compute autotaking carrot daggers;
 		otherwise:
-			let T be (the square root of TS) * time-seconds;
+			let TSR be the square root of TS;
+			if TSR < 2, now TSR is 2;
+			let T be TSR * time-seconds;
 			increase the holding strain of belly by T;
 			let rem be the remainder after dividing the holding strain of belly by belly strain balance;
-			if rem < T:
-				let strain factor be the holding strain of belly divided by belly strain balance;
+			if rem < T: [that means we increased over the threshold of a multiple of belly strain balance this turn]
+				let strain factor be the holding strain of belly divided by belly strain balance; [how many multiples of belly strain balance are we at?]
 				increase strain factor by (the total squirtable fill of belly * 4) divided by belly limit; [if we have a completely full belly, we increase by 4, if we have a less than a quarter, we'll increase by 0.]
 				if gape-gloves is worn and gape-gloves is wrist-bound-behind and currently-squirting is 0:
 					say "With your [asshole] spread open by your [MediumDesc of gape-gloves], you are forced to immediately begin expelling the contents of your belly.";
 					AssSquirt;
-				otherwise if strain factor < 4 and (strain factor < 2 or the player is not in an unbossed predicament room): [at less than 4 strain factor, we just give flavour]
+				otherwise if strain factor < 4 and (strain factor < 2 or the player is not in an unbossed predicament room): [at less than 4 strain factor, we just give flavour. this is changed to 2 for predicament rooms]
 					if strain factor > 0 and the trophy-mode of expel-trophy is 0 and the number of worn enema-helping clothing is 0:
 						say "[one of]Your belly growls as the [enema] swirls around inside[or][if the player is upright]You stagger slightly[otherwise]Your arms and legs shake slightly[end if] as the [enema] sloshes around inside you[or]Your stomach makes a gurgling sound as your [enema] bubbles away inside[or]Your [enema] puts more and more pressure on your rectum[or]The [enema] eddies and whirls inside your belly[in random order], [one of]making you feel uneasy[or]and you feel quite uncomfortable[or]making you a bit queasy[or]causing your intestines to cramp a bit[in random order].";
 				otherwise:
@@ -342,8 +344,8 @@ REQUIRES COMMENTING
 
 +!]
 Definition: enema-incontinence is viable:
-	if diaper lover is 0, decide no;
-	if the player is incontinent, decide no;
+	if diaper lover is 0 or the player is in a predicament room, decide no;
+	if the player is incontinent or incontinence >= the max-incontinence of the player, decide no;
 	if the incidents of enema-incontinence + 2 < the incidents of enema-cramping, decide yes;
 	decide no.
 

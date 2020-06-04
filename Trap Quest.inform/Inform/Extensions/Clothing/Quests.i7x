@@ -342,7 +342,7 @@ Part - Vaginal Virginity Quest
 
 vaginal-virginity-quest is a clothing-quest.
 
-Definition: vaginal-virginity-quest is appropriate if diaper quest is 0 and the player is female and the virgin of the player is 1.
+Definition: vaginal-virginity-quest is appropriate if diaper quest is 0 and the player is female and the vaginalvirgin of the player is 1.
 
 To decide what number is the quest-weighting of (Q - vaginal-virginity-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -524,14 +524,25 @@ To set up (Q - candy-eating-quest):
 	now the candy-count of Q is 0.
 
 To progress quest of (Q - candy-eating-quest):
+	if debugmode > 0, say "Checking for[QuestTitle of Q].";
 	progress quest of trick-or-treat-quest;
 	increase the candy-count of Q by 1;
-	repeat with C running through worn cursed clothing:
-		if the quest of C is Q:
-			if the candy-count of Q > 3:
-				compute quest completion of Q on C;
-			otherwise:
-				say QuestProgressFlav of Q on C.
+	repeat with C running through worn clothing:
+		if C is diaper-stack:
+			repeat with D running through the list of stacked diapers:
+				if D is cursed or the quest of D is persistent:
+					if the quest of D is Q:
+						if the candy-count of Q > 3:
+							compute quest completion of Q on C;
+						otherwise:
+							say QuestProgressFlav of Q on C;
+		otherwise:
+			if C is cursed or the quest of C is persistent:
+				if the quest of C is Q:
+					if the candy-count of Q > 3:
+						compute quest completion of Q on C;
+					otherwise:
+						say QuestProgressFlav of Q on C.
 
 Report TQEating candy:
 	progress quest of candy-eating-quest.
@@ -558,15 +569,28 @@ To set up (Q - curse-drinking-quest):
 	now the drink-count of Q is 0.
 
 To progress quest of (Q - curse-drinking-quest) from (N - a number):
-	unless N is the latest-drink of Q:
+	if N is the latest-drink of Q:
+		if debugmode > 0, say "Not checking for[QuestTitle of Q] because the same drink type was already recently consumed.";
+	otherwise:
+		if debugmode > 0, say "Checking for[QuestTitle of Q].";
 		increase the drink-count of Q by 1;
 		now the latest-drink of Q is N;
 		repeat with C running through worn cursed clothing:
-			if the quest of C is Q:
-				if the drink-count of Q > 1:
-					compute quest completion of Q on C;
-				otherwise:
-					say QuestProgressFlav of Q on C.
+			if C is diaper-stack:
+				repeat with D running through the list of stacked diapers:
+					if D is cursed or the quest of D is persistent:
+						if the quest of D is Q:
+							if the drink-count of Q > 1:
+								compute quest completion of Q on D;
+							otherwise:
+								say QuestProgressFlav of Q on D;
+			otherwise:
+				if C is cursed or the quest of C is persistent:
+					if the quest of C is Q:
+						if the drink-count of Q > 1:
+							compute quest completion of Q on C;
+						otherwise:
+							say QuestProgressFlav of Q on C.
 
 Part - Condom Creampie Quest
 
@@ -607,13 +631,26 @@ To set up (Q - kicking-quest):
 	now the latest-kick of Q is nothing.
 
 To progress quest of (Q - kicking-quest) from (M - a monster):
-	unless M is the latest-kick of Q:
-		repeat with C running through worn cursed clothing:
-			if the quest of C is Q:
-				if the latest-kick of Q is monster:
-					compute quest completion of Q on C;
-				otherwise:
-					say QuestProgressFlav of Q on C;
+	if M is the latest-kick of Q:
+		if debugmode > 0, say "Not checking for[QuestTitle of Q] because kicked the same enemy multiple times in a row.";
+	otherwise:
+		if debugmode > 0, say "Checking for[QuestTitle of Q].";
+		repeat with C running through worn clothing:
+			if C is diaper-stack:
+				repeat with D running through the list of stacked diapers:
+					if D is cursed or the quest of D is persistent:
+						if the quest of D is Q:
+							if the latest-kick of Q is monster:
+								compute quest completion of Q on C;
+							otherwise:
+								say QuestProgressFlav of Q on C;
+			otherwise:
+				if C is cursed or the quest of C is persistent:
+					if the quest of C is Q:
+						if the latest-kick of Q is monster:
+							compute quest completion of Q on C;
+						otherwise:
+							say QuestProgressFlav of Q on C;
 		if the latest-kick of Q is monster, now the latest-kick of Q is nothing;
 		otherwise now the latest-kick of Q is M.
 
@@ -834,13 +871,13 @@ To decide what number is the quest-weighting of (Q - bursting-quest) for (C - a 
 	decide on 1.
 
 To say QuestFlav of (Q - bursting-quest):
-	say "You sense that it wants you to [if the player is incontinent]just... wait for it to happen automatically[otherwise]practice self-control by holding onto your pee for a while even after it becomes risky[end if].".
+	say "You sense that it wants you to [if the player is incontinent]just... wait for it to happen automatically[otherwise]practise self-control by holding onto your pee for a while even after it becomes risky[end if].".
 
 To say QuestTitle of (Q - bursting-quest):
 	say " (bladder holding quest)".
 
 To say QuestPersistFlav of (Q - a bursting-quest) on (C - a clothing):
-	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose by[otherwise if C is bland and Q is headgear-clothing-quest]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose by[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts by[end if] ".
+	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts[end if] by ".
 
 Part - Next Lesson Quest
 
@@ -880,28 +917,28 @@ To say QuestFlav of (Q - show-and-tell-quest):
 To say QuestTitle of (Q - show-and-tell-quest):
 	say " (carry around quest)".
 
-To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
-	if the player is a bit horny:
-		say "cooling off your arousal.";
-		now the arousal of the player is 0;
-	otherwise:
-		say "filling your mind with pure thoughts.";
-		SexAddictDown 1.
-
 To progress quest of (Q - show-and-tell-quest) for (M - a monster):
-	repeat with C running through worn clothing:
-		if C is clothing and the quest of C is Q:
-			if M is not latest-exposee of Q:
-				now the latest-exposee of Q is M;
-				increase the expose-count of Q by 1;
-				if the remainder after dividing expose-count of Q by 5 is 0:
-					compute quest completion of Q on C;
-				otherwise:
-					say "[BigNameDesc of C] shudders happily at being seen with you. Keep it up.".
+	if playerRegion is not school or Q is not school-disabled:
+		unless the player is in a predicament room:
+			if debugmode > 0, say "Checking for[QuestTitle of Q].";
+			repeat with C running through worn clothing:
+				if C is clothing and the quest of C is Q:
+					if M is not latest-exposee of Q:
+						now the latest-exposee of Q is M;
+						increase the expose-count of Q by 1;
+						if the remainder after dividing expose-count of Q by 3 is 0:
+							compute quest completion of Q on C;
+						otherwise:
+							say "[BigNameDesc of C] shudders happily at being seen with you. Keep it up.".
 
-To compute quest completion of (Q - show-and-tell-quest) on (C - a clothing):
+To compute persistent reward of (Q - show-and-tell-quest) on (C - a clothing):
 	if C is cursed:
-		compute persistent reward of Q on C;
+		if the player is a bit horny:
+			say "cooling off your arousal.";
+			now the arousal of the player is 0;
+		otherwise:
+			say "filling your mind with pure thoughts.";
+			SexAddictDown 1;
 	otherwise:
 		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally decide to stop letting everyone know how pathetic a [if diaper quest is 1]baby[otherwise]whore[end if] you are.[or]even more blessed magic![stopping]".
 
@@ -1022,6 +1059,17 @@ To say QuestFlav of (Q - predicament-quest):
 To say QuestTitle of (Q - predicament-quest):
 	say " (predicament completion quest)".
 
+To progress quest of (Q - predicament-quest):
+	if debugmode > 0, say "Checking for[QuestTitle of Q].";
+	repeat with C running through worn clothing:
+		if C is diaper-stack:
+			repeat with D running through the list of stacked diapers:
+				if D is cursed or the quest of D is persistent:
+					if the quest of D is Q, compute quest completion of Q on D;
+		otherwise:
+			if C is cursed or the quest of C is persistent:
+				if the quest of C is Q, compute quest completion of Q on C.
+
 Part - Make Up Quest
 
 make-up-quest is a clothing-quest.
@@ -1071,5 +1119,25 @@ To progress quest of (Q - bust-up-quest):
 			otherwise:
 				if C is cursed or the quest of C is persistent:
 					if the quest of C is Q, compute quest completion of Q on C.
+
+Part - Doom Quest
+
+doom-quest is a clothing-quest. doom-quest is persistent.
+
+To decide what number is the quest-weighting of (Q - doom-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 1.
+
+Definition: doom-quest is appropriate if doomed > 0 and doomed < 5.
+
+To say QuestFlav of (Q - doom-quest):
+	say "You sense that it wants you to allow the dark ritual in the mansion to continue.".
+
+To say QuestTitle of (Q - doom-quest):
+	say " (dark ritual progress quest)".
+
+To compute persistent reward of (Q - doom-quest) on (C - a clothing):
+	say "empowering you with magic!";
+	MagicPowerUp 1.
 
 Quests ends here.

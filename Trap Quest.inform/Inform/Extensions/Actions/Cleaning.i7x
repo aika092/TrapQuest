@@ -196,4 +196,8 @@ To clean (C - a clothing):
 	now the semen-soak of C is 0;
 	if C is worn, update appearance level.
 
+To fully clean (C - a clothing):
+	WaterEmpty C;
+	clean C.
+
 Cleaning ends here.

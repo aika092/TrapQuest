@@ -225,7 +225,7 @@ To say WhereAnswer of (M - ex-princess):
 		let mb be vampiress;
 		if herald is alive or herald is bossdefeated, now mb is herald;
 		if mb is vampiress, say "[speech style of M]'This is Aurora's mansion, although...[he of mb] never fights seriously, so it wouldn't be surprising if someone else defeated [him of mb] and started squatting while [he of mb] was recovering.'[roman type][line break]";
-		otherwise say "[speech style of M]'This is Aurora's mansion[if mb is alive], but...something else is trying to claim ownership too. Even I don't know what it is.[otherwise], although I fear that the eldritch entitites that have their eyes on this place have something to say about that.'[roman type][line break]".
+		otherwise say "[speech style of M]'This is Aurora's mansion[if mb is alive], but...something else is trying to claim ownership too. Even I don't know what it is.[otherwise], although I fear that the eldritch entities that have their eyes on this place have something to say about that.'[roman type][line break]".
 
 To say WhoAnswer of (M - ex-princess):
 	say "[speech style of M]'I told you before, I'm Princess Annie! I created this dimension.'[roman type][line break]".
@@ -459,12 +459,13 @@ An all later time based rule (this is the school rescue fight rule):
 				now M is unconcerned;
 				now the raw difficulty of M is 99;
 				now M is uninterested;
-				now the refactory-period of M is the messRefactoryLimit of M + 40;
+				now the refractory-period of M is the messRefractoryLimit of M + 40;
 				now the boredom of M is 0.
 
 To compute (M - ex-princess) enslaving (N - a monster):
 	if diaper quest is 1 or a random number between 0 and diaper lover > 0, now N is diaper-enslaved;
 	otherwise now N is sex-enslaved;
+	now the refractory-period of N is a random number between -100 and 150; [doesn't start off messy]
 	if M is in the location of the player:
 		let W be a random vibe-wand retained by M;
 		if glittery-wand is retained by M, now W is glittery-wand;
@@ -548,9 +549,11 @@ An all later time based rule (this is the asscum annie rule):
 An all later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
-			if there is a worn dirty diaper:
+			let D be a random dirty diaper;
+			if D is diaper:
 				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise]Please move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
 				ruin vagina;
+				compute state check of D;
 			if the current-torment of ex-princess <= 0:
 				now the current-torment of ex-princess is a random number between 25 and 35;
 				say "[speech style of ex-princess]'[one of]Uh-oh[or]Oh god, not again, not so soon[stopping]...'[roman type][line break][BigNameDesc of ex-princess] makes a loud [if diaper messing < 4]hissing[otherwise]BLART[end if] sound from within [his of ex-princess] diaper as [he of ex-princess] soils [himself of ex-princess] again, adding more volume to [his of ex-princess] padding and once again flooding [his of ex-princess] brain with uncontrollable arousal. [big his of ex-princess] mittened hands quickly return to [his of ex-princess] erogenous zones and [he of ex-princess] begins masturbating once again.";
@@ -638,7 +641,7 @@ An all time based rule (this is the caged princess tortured rule):
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
 			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
-Definition: ex-princess is messy if it is unconcerned and the refactory-period of it <= (the messRefactoryLimit of it) and diaper messing >= 7.
+Definition: ex-princess is messy if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 7.
 
 To say SuddenMessFlav of (M - ex-princess):
 	say "[speech style of M]'Oh crap, here we go again...'[roman type][line break][BigNameDesc of M] grimaces and quickly adopts a squatting stance. Then you hear the loud sound of [his of M] butthole rasping and squelching as [he of M] fills [his of M] huge diaper.";
@@ -654,8 +657,8 @@ To compute ChangeRequest of (M - ex-princess):
 			if the player is upright:
 				say "[bold type]You get on your knees.[roman type][line break]";
 				now the stance of the player is 1;
-			say "[BigNameDesc of M] smiles with shy appreciation as she mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
-			now the refactory-period of M is a random number between 0 and 200;
+			say "[BigNameDesc of M] smiles with shy appreciation as [he of M] mounts your nose with the front of [his of M] diaper. The strong smell hits your nostrils as [he of M] begins to grind away. It's not a short process for [him of M] to build all the way to climax, and so by the time [he of M] finally does reach [his of M] peak, your nostrils and airways have been fully drenched in [his of M] shameful scent.";
+			now the refractory-period of M is a random number between 0 and 200;
 			DelicateUp 1;
 			SexAddictUp 1;
 		otherwise:

@@ -40,7 +40,6 @@ To compute (M - a robochef) cooking (I - apple):
 		now the fat of D is 1;
 		now D is retained by M.
 
-
 banana is a snack. The text-shortcut of banana is "ban".
 
 Figure of banana is the file "Items/Collectibles/banana1.png".
@@ -58,7 +57,7 @@ Carry out TQeating banana:
 	DexUp 1.
 
 Report TQeating banana:
-	say "You peel the skin off [NameDesc of the noun] and [if the fat-weight of the player > 20]greedily stuff the entire thing into your mouth, immediately swallowing it whole. [otherwise if the oral sex addiction of the player > 7]practice deepthroating the phallic food a few times before finally swallowing it whole. [otherwise]take bites out of the banana, until it has completely gone. [end if]You feel faster!".
+	say "You peel the skin off [NameDesc of the noun] and [if the fat-weight of the player > 20]greedily stuff the entire thing into your mouth, immediately swallowing it whole. [otherwise if the oral sex addiction of the player > 7]practise deepthroating the phallic food a few times before finally swallowing it whole. [otherwise]take bites out of the banana, until it has completely gone. [end if]You feel faster!".
 
 To compute (M - a robochef) cooking (I - banana):
 	let D be a random off-stage gelatin;
@@ -83,7 +82,7 @@ To say ShortDesc of (C - lemon):
 Report TQeating lemon:
 	say "You [if the fat-weight of the player > 20]greedily bite off large chunks of the lemon, swallowing each whole. [otherwise]take bites out of the lemon, until you have eaten nearly all of the juicy fruit. [end if]It's very sour, [if the semen taste addiction of the player < 14]yuck[otherwise]but weirdly, you really like it[end if]! You feel more capable of handling sour and bitter tastes.";
 	DelicateDown 2;
-	SemenTasteAddictUp 1.
+	SilentlySemenTasteAddictUp 1.
 
 To compute (M - a robochef) cooking (I - lemon):
 	let D be a random off-stage gelatin;

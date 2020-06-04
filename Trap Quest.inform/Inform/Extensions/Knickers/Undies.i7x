@@ -28,12 +28,12 @@ Report wearing undies:
 		if the thickness of hips < max hip size and a random number between 1 and 2 is 1:
 			say "You feel [NameDesc of the noun] try to grow your hips to make your buttocks even less concealed!";
 			HipUp 1;
-		otherwise if the noun is not potentially penis covering:
+		otherwise if the noun is not potentially penis covering and the size of penis > min penis size:
+			say "You feel [NameDesc of the noun] try to shrink your [ShortDesc of penis] to make it better able to conceal it!";
 			PenisDown 1;
-			say "You feel [NameDesc of the noun] [Shrink] your [player-penis] to better conceal your [ShortDesc of penis]!".
 
 To decide which object is the unique-upgrade-target of (C - an undies):
-	if there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
+	if diaper quest is 1 and there is a worn demonic wearthing and tongue-panties is off-stage, decide on tongue-panties;
 	decide on nothing.
 
 This is the remove inappropriate undies rule:
@@ -50,7 +50,6 @@ This is the remove inappropriate undies rule:
 	now grey-hi-cut briefs is in Holding Pen;
 	now blue-polka-dot briefs is in Holding Pen;
 	now red-anal-briefs is in Holding Pen;
-	now green-briefs is in Holding Pen;
 	now pink-panties is in Holding Pen;
 	now black-sucking-cocks-panties is in Holding Pen;
 	now pale-panties is in Holding Pen;

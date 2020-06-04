@@ -1,5 +1,23 @@
 DQ Only Stuff by Miscellaneous Backend begins here.
 
+To say QuestFlav of (Q - stealth-diaper-quest):
+	say "You sense it wants you to pee in a diaper in front of someone without them being able to see that you're wearing a diaper OR pee into a diaper while another completely dry diaper is layered on top of it.".
+
+To say QuestTitle of (Q - stealth-diaper-quest):
+	say " (sneaky wetting quest)".
+
+To compute persistent reward of (Q - stealth-diaper-quest) on (C - a clothing):
+	if C is cursed:
+		compute generic first time class reward of Q on C;
+	otherwise if C is bland:
+		compute generic second time class reward of Q on C;
+	otherwise:
+		compute generic class reward of Q on C;
+	if the class of the player is princess and the player is not in a predicament room and royal scepter is actually summonable:
+		summon royal scepter;
+		now the charge of royal scepter is 25;
+		say "[bold type]Suddenly a [MediumDesc of royal scepter] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
+
 To compute periodic effect of (C - royal scepter):
 	if the charge of C > 0:
 		decrease the charge of C by 1;
@@ -20,9 +38,11 @@ Chapter - DQ Specific Figures
 
 Figure of Cutscene Prologue Male is the file "Special/Cutscene/cutscene-prologue1.png".
 Figure of Cutscene Prologue Female is the file "Special/Cutscene/cutscene-prologue2.png".
-Figure of YesNoBackground1 is the file "Special/Buttons/yesno1.png".
+Figure of YesNoBackground1 is the file "Special/Buttons/dqyesno1.jpg".
+Figure of YesNoBackground2 is the file "Special/Buttons/dqyesno2.jpg".
+Figure of YesNoBackground3 is the file "Special/Buttons/dqyesno3.jpg".
+Figure of YesNoBackground4 is the file "Special/Buttons/dqyesno4.jpg".
 Figure of HoleInWallBackground is the file "Map/hole2.png".
-Figure of IronMaidenBackground is the file "Map/maiden2.png".
 Figure of demon lord is the file "NPCs/Bosses/xavier1.png".
 Figure of modification machine is the file "Env/Hotel/modmachine2.png".
 Figure of slavehound is the file "NPCs/Mansion/Hound/hound3.png".
@@ -40,7 +60,10 @@ Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
-	decide on figure of YesNoBackground1.
+	if the bimbo of the player < 10:
+		if the player is male, decide on figure of YesNoBackground1;
+		otherwise decide on figure of YesNoBackground2;
+	decide on figure of YesNoBackground3.
 
 Include School Stuff by DQ Only Stuff.
 
@@ -109,22 +132,13 @@ Include Baby Diaper Bags of Holding by Bags of Holding.
 a condom rolls bag of holding is a kind of bag of holding.
 
 gape-gloves is a gloves. The printed name of gape-gloves is "gape gloves".
-heavy-club is an equippable. The printed name of heavy-club is "heavy club".
 bondage-ribbons is a dress.
 
 Include Chocolates Bag by Objects.
 Include Bunny Ears DQ by Headgear.
-rugged-headband is a headgear. domination-quest is a headgear-clothing-quest. rugged-summoned is a number that varies. The printed name of rugged-headband is "rugged headband".
-spiked-tiara is a headgear. The printed name of spiked-tiara is "spiked tiara".
-To decide which text is tonguesColour:
-	decide on "white".
-To say tongueStatus of (C - a clothing):
-	say "".
-portal-pants is a knickers. portal-pants is unique. The printed name of portal-pants is "portal pants".
 
 tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
 Definition: tits-lesson is lesson-appropriate: decide no.
-
 
 Include Stuffies by Equippables.
 

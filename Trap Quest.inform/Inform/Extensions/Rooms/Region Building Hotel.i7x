@@ -64,7 +64,7 @@ To Set Up The Hotel:
 		if M is not monster, now M is a random off-stage hotel dwelling monster;
 		if M is monster:
 			set up M;
-			now M is in a random placed modern room;
+			if M is not in a placed modern room, now M is in a random placed unbossed modern room;
 	[change the down exit of School01 to Hotel29;]
 	if armband is off-stage and receptionist is undefeated: [Player can engage with the school side quest the first time they find this room]
 		set up receptionist;

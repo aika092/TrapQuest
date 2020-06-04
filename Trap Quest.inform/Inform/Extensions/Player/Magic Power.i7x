@@ -447,18 +447,18 @@ Report Spellcasting magic-poison when there is a reactive monster:
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 
-magic-paralyze is a magic-spell.
-To say MagicSpellEffect of (S - magic-paralyze):
-	say "paralyze every enemy in the room".
-Report Spellcasting magic-paralyze when there is a reactive monster:
+magic-paralyse is a magic-spell.
+To say MagicSpellEffect of (S - magic-paralyse):
+	say "paralyse every enemy in the room".
+Report Spellcasting magic-paralyse when there is a reactive monster:
 	if the magic power of the player > 0:
-		let paralyzeSuccess be 0;
+		let paralyseSuccess be 0;
 		repeat with M running through unfriendly monsters in the location of the player:
-			if the paralyze-status of M is 0:
-				say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralyzed!";
-				now the paralyze-status of M is 5;
-				now paralyzeSuccess is 1;
-		if paralyzeSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
+			if the paralyse-status of M is 0:
+				say "Ropes of golden light wrap around [NameDesc of M][']s body. [big he of M][']s been paralysed!";
+				now the paralyse-status of M is 5;
+				now paralyseSuccess is 1;
+		if paralyseSuccess is 0, say "Unfortunately it didn't work on [if the number of unfriendly monsters in the location of the player is 1][NameDesc of a random unfriendly monster in the location of the player][otherwise]anyone[end if]!";
 	otherwise:
 		say "Nothing happens. Perhaps you need more magical energy first.".
 

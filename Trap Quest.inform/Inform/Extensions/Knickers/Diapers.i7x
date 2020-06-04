@@ -126,8 +126,7 @@ To compute unique periodic effect of (D - demon-diaper):
 		if the dry-timer of D > 10 or (D is messed and diaper messing is 3):
 			if D is perceived wet or D is perceived messed, say "[bold type]You feel the padding of your [ShortDesc of D] [bold type]suddenly becoming dry[one of][or] again[stopping]![roman type][line break]";
 			now the dry-timer of D is 0;
-			clean D;
-			WaterEmpty D.
+			fully clean D.
 
 Definition: demon-diaper is transformation-protected: decide yes.
 Definition: demon-diaper is eligible: decide no. [Never selected randomly]

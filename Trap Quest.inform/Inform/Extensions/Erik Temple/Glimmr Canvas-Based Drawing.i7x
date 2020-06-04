@@ -149,7 +149,7 @@ To remove/deactivate graphlink of/from/for (element - a g-element):
 
 Part - Extensions to g-windows
 
-The specification of a graphics g-window is "Glimmr Canvas-Based Drawing extends graphics g-windows to enable them to work well with canvases. The associated canvas property links a canvas to the window. An origin can be specified for the window, e.g. {100, 100}, and this will place the upper left corner of the window at that canvas coordinate. (Note, however, that this placement will be changed by the centering calculations unless these are altered.) By default, Glimmr Canvas-Based Drawing will automatically scale a canvas to fit into the window dimensions available. However, if we don't want to relinquish scaling control, we can set the arbitrary scaling factor property to a ratio with four decimal places; for example, setting the arbitrary scaling factor to 1.0000 will always result in the canvas being displayed at full size, even if this would result in its not being fully framed within the window."
+The specification of a graphics g-window is "Glimmr Canvas-Based Drawing extends graphics g-windows to enable them to work well with canvases. The associated canvas property links a canvas to the window. An origin can be specified for the window, e.g. {100, 100}, and this will place the upper left corner of the window at that canvas coordinate. (Note, however, that this placement will be changed by the centering calculations unless these are altered.) By default, Glimmr Canvas-Based Drawing will automatically scale a canvas to fit into the window dimensions available. However, if we don't want to relinquish scaling control, we can set the arbitrary scaling factor property to a ratio with four decimal places; for example, setting the arbitrary scaling factor to 1.0000 will always result in the canvas being displayed at full size, even if this would result in it not being fully framed within the window."
 
 A graphics g-window has a list of numbers called the origin. The origin is usually {0, 0}.
 
@@ -539,7 +539,7 @@ An element display rule for a sprite (called the current-sprite) (this is the sp
 
 Section - Centering algorithm for sprites
 
-[When you create a new class of g-element, it is good practice to define a centering phrase that will be able to find the center point, in canvas coordinates, of any object of that class. This should not use the win-x/win-y properties, or any other property that is set by the element scaling rules. For this reason, the algorithm should assume that the origin is the upper-left hand corner (center and right alignment are calculated by the element scaling rules).]
+[When you create a new class of g-element, it is good practise to define a centering phrase that will be able to find the center point, in canvas coordinates, of any object of that class. This should not use the win-x/win-y properties, or any other property that is set by the element scaling rules. For this reason, the algorithm should assume that the origin is the upper-left hand corner (center and right alignment are calculated by the element scaling rules).]
 
 To decide what list of numbers is the center-point of (current-sprite - a sprite):
 	let dx be a number;
@@ -565,7 +565,7 @@ Chapter - The primitive base class
 
 A primitive is a kind of g-element.
 
-The specification of a primitive is "A primitive element is a simple shape that is generally intended to be used in concert with other shapes and images to build up a composition; for example, rectangles and lines. The meaning of a graphics primitive is somewhat stretched here, since the only primitive actually provided by Glulx is a simple rectangle, whereas all of the other 'primitives' provided by Glimmr Canvas-Based Drawing are in fact built up out of rectangles. The most intensive of these, the line primitive, can be made up of many, many rectangles and may be quite slow to draw. Primitives have an origin, as do all g-elements, and they also have a second coordinate pair, the endpoint. For most primitives, the origin describes the upper left corner, while the endpoint describes the lower right corner. The line primitive, however, is freer--the two points can have any relationship. It is also necessary to specify the color of a primitive, using the 'tint' property. This is a glulx color value (see the Glulx Text Effects extension). Some primitives (the stroked rectangle) also have a 'background tint' property that controls a second color value."
+The specification of a primitive is "A primitive element is a simple shape that is generally intended to be used in concert with other shapes and images to build up a composition; for example, rectangles and lines. The meaning of a graphics primitive is somewhat stretched here, since the only primitive actually provided by Glulx is a simple rectangle, whereas all of the other 'primitives' provided by Glimmr Canvas-Based Drawing are in fact built up out of rectangles. The most intensive of these, the line primitive, can be made up of many, many rectangles and may be quite slow to draw. Primitives have an origin, as do all g-elements, and they also have a second coordinate pair, the endpoint. For most primitives, the origin describes the upper left corner, while the endpoint describes the lower right corner. The line primitive, however, is freer--the two points can have any relationship. It is also necessary to specify the colour of a primitive, using the 'tint' property. This is a glulx colour value (see the Glulx Text Effects extension). Some primitives (the stroked rectangle) also have a 'background tint' property that controls a second colour value."
 
 [The endpoint of a primitive are provided in the canvas' coordinate system.]
 A primitive has a list of numbers called the endpoint. The endpoint of a primitive is {0, 0}.
@@ -994,9 +994,9 @@ Chapter - Image-rendered string class
 
 An image-rendered string is a kind of rendered string.
 
-The specification of image-rendered string is "An image-rendered string is a rendered string in which each glyph is drawn using a separate external PNG file; these are assigned and managed via a separate font object, which must be supplied as the 'associated font' of the rendered string. Like sprites, the rendered string can be provided its own 'scaling factor' property to adjust the size of its glyphs relative to the canvas. If the 'background tint' property is supplied (a glulx color value), a rectangle of that color will be drawn behind the rendered string."
+The specification of image-rendered string is "An image-rendered string is a rendered string in which each glyph is drawn using a separate external PNG file; these are assigned and managed via a separate font object, which must be supplied as the 'associated font' of the rendered string. Like sprites, the rendered string can be provided its own 'scaling factor' property to adjust the size of its glyphs relative to the canvas. If the 'background tint' property is supplied (a glulx colour value), a rectangle of that colour will be drawn behind the rendered string."
 
-[The scaling factor is automatically calculated by the extension; authors need not utilize it.]
+[The scaling factor is automatically calculated by the extension; authors need not utilise it.]
 An image-rendered string has a real number called the calculated scaling factor.
 
 Section - Centering algorithm for image-rendered strings
@@ -1610,7 +1610,7 @@ Finally, we need to create some elements (called g-elements in Inform to avoid n
 
 Elements are things, in Inform's sense of the term. The player cannot see or refer to them (they are given the "privately-named" and "scenery" properties by default), and we will generally create them off-stage, but authors can declare and manipulate them just like any other thing.
 
-Each type of element (sprite/image, primitive, bitmap, image-map, or text) needs to be declared with its own set of properties that define its behavior. This is generally a simple process; in fact, the Glimmr Canvas Editor extension allows you to arrange elements visually using a GUI interface and will output appropriate element definitions in I7 source code for you. Here is an example of definitions for a few different types of element:
+Each type of element (sprite/image, primitive, bitmap, image-map, or text) needs to be declared with its own set of properties that define its behaviour. This is generally a simple process; in fact, the Glimmr Canvas Editor extension allows you to arrange elements visually using a GUI interface and will output appropriate element definitions in I7 source code for you. Here is an example of definitions for a few different types of element:
 
 	The Player Avatar is a sprite. The image-ID is Figure of Player. The origin is {10, 10}.
 
@@ -1637,7 +1637,7 @@ If we have more than one canvas, we can assign each element individually:
 
 	The Player Avatar is a sprite. The image-ID is Figure of Player. The origin is {10, 10}. The associated canvas is the graphics-canvas.
 
-In general, however, the best way to organize elements--especially when we have a lot of them--is to organize them using sub-kinds. We can then assign any property, including the associated canvas, using the appropriate sub-kind. For example, if we are making a map where each room has its own sprite (image element), we could do something like this:
+In general, however, the best way to organise elements--especially when we have a lot of them--is to organise them using sub-kinds. We can then assign any property, including the associated canvas, using the appropriate sub-kind. For example, if we are making a map where each room has its own sprite (image element), we could do something like this:
 
 	A room-sprite is a kind of a sprite. The associated canvas of a room-sprite is the map-canvas. The display-layer of a room-sprite is 2.
 
@@ -1975,17 +1975,17 @@ First, we can specify our own scaling factor for the window, the "arbitrary scal
 
 	The arbitrary scaling factor of the graphics-window is 1.0000.
 
-A ratio of 1.0000 will present the canvas without scaling it, so that one pixel onscreen will be equivalent to one coordinate unit of the canvas. The canvas may or may not fit within the window as the player has sized it, but it will still be centered within the window.
+A ratio of 1.0000 will present the canvas without scaling it, so that one pixel onscreen will be equivalent to one coordinate unit of the canvas. The canvas may or may not fit within the window as the player has sized it, but it will still be centred within the window.
 
-Second, a graphics window has an origin coordinate, similar to that of elements. Normally, the origin is {0, 0}, which means that the upper left corner of the canvas will be displayed in the upper left corner of the window. (In practice, this placement is usually modified by an offset that centers the canvas within the window, so that the canvas is actually displayed at the origin of the window plus the x and y, or top and left, offsets.) If we change the origin of the window, then the canvas will be framed differently. Setting the window's origin to {100, 100}, for example, will place the upper left corner of the window at canvas coordinates {100, 100}. Again, this does not account for the offsets, which we may prefer to suppress. Here is one way to suppress the calculation of offsets:
+Second, a graphics window has an origin coordinate, similar to that of elements. Normally, the origin is {0, 0}, which means that the upper left corner of the canvas will be displayed in the upper left corner of the window. (In practise, this placement is usually modified by an offset that centres the canvas within the window, so that the canvas is actually displayed at the origin of the window plus the x and y, or top and left, offsets.) If we change the origin of the window, then the canvas will be framed differently. Setting the window's origin to {100, 100}, for example, will place the upper left corner of the window at canvas coordinates {100, 100}. Again, this does not account for the offsets, which we may prefer to suppress. Here is one way to suppress the calculation of offsets:
 
 	For offset calculation of the graphics-window:
 		change x-offset of the graphics-window to 0;
 		change y-offset of the graphics-window to 0.
 
-This will replace the standard behavior of the window offset calculation activity in the case of the graphics-window (only--other graphics windows would not be affected) and make sure that no offsets are used in the framing of the window. Note that origins (and any coordinates, really) can be set to negative numbers, or to numbers larger than the canvas dimensions, and they will still display. The elements may not appear in the visible part of the window, but they are there "virtually".
+This will replace the standard behaviour of the window offset calculation activity in the case of the graphics-window (only--other graphics windows would not be affected) and make sure that no offsets are used in the framing of the window. Note that origins (and any coordinates, really) can be set to negative numbers, or to numbers larger than the canvas dimensions, and they will still display. The elements may not appear in the visible part of the window, but they are there "virtually".
 
-Third, we can center the window frame on a specific point on the canvas. This must be done after the scaling and offset calculation phases of the canvas-based drawing rule; usually it will occur during the window-framing adjustment activity (step 3 of the default canvas-based drawing rule; see above). Here's how to do it:
+Third, we can centre the window frame on a specific point on the canvas. This must be done after the scaling and offset calculation phases of the canvas-based drawing rule; usually it will occur during the window-framing adjustment activity (step 3 of the default canvas-based drawing rule; see above). Here's how to do it:
 
 	Before window-framing adjustment of the graphics-window:
 		center the frame of the graphics-window on canvas coordinates {100, 100};
@@ -2005,7 +2005,7 @@ Section: Creating new kinds of elements
 
 The types of element defined in Glimmr Canvas-Based Drawing are, in most cases, pretty simple. They draw just one entity. But elements need not be so simple. The bitmap and rendered string elements, for example, actually draw many rectangles or images to the screen each time the element is called upon.
 
-We can write our own custom rules for drawing elements. The Glimmr Automap extension, for example, creates a new g-element called the map-renderer. This works similarly to a tileset grid: the map-renderer iterates through grid-based map data produced by Mark Tilford's Automap extension, and for each space in the grid, it selects an appropriate tile from a tileset (the tileset is basically a table that relates each bit of map data to a given image). We use the element display rules to write behavior for new elements and element-kinds:
+We can write our own custom rules for drawing elements. The Glimmr Automap extension, for example, creates a new g-element called the map-renderer. This works similarly to a tileset grid: the map-renderer iterates through grid-based map data produced by Mark Tilford's Automap extension, and for each space in the grid, it selects an appropriate tile from a tileset (the tileset is basically a table that relates each bit of map data to a given image). We use the element display rules to write behaviour for new elements and element-kinds:
 
 	An element display rule for the map-renderer (this is the map-renderer display rule):
 		...
@@ -2067,7 +2067,7 @@ With the body of this section left blank, the privately-named and scenery proper
 
 Chapter: Debugging
 
-Like all Glimmr extensions, Glimmr Canvas-Based Drawing can utilize the Glimmr debugging log. To use the log, enable this use option:
+Like all Glimmr extensions, Glimmr Canvas-Based Drawing can utilise the Glimmr debugging log. To use the log, enable this use option:
 
 	Use Glimmr debugging.
 
@@ -2128,7 +2128,7 @@ Runtime error "cannot divide by zero" (or similar):
 
 	The canvas dimensions have probably not been defined. Be sure you define the canvas before the window-drawing rules are run.
 
-Inform doesn't recognize the "image-ID" property, or a table in which it is used:
+Inform doesn't recognise the "image-ID" property, or a table in which it is used:
 
 	Inform requires a figure to be defined in the source before it can be referred to. Be sure that your figures are defined in the source *above* the text in which you are attempting to define the associated sprites.
 
@@ -2866,7 +2866,7 @@ Note the linked command entries in the tileset's translation table. These allow 
 	After printing the banner text:
 		say "[line break]This imitation of a roguelike game is an example for the Glimmr Canvas-Based Drawing extension. It features an image-map element that displays the map base for each room, using regular graphic tiles from a tileset known as LoFi Roguelike, by TIGSource user oryx (http://forums.tigsource.com/index.php?topic=8970.0). The character icons are borrowed from the the same tileset, and are implemented in Glimmr as sprite objects.[paragraph break]Click on the floor of the room to move toward the location clicked. Click on the furthest floor tile of a map exit to move to the next room. Click on the player's avatar (the archer) to take inventory, or click on an enemy to attack it.[paragraph break]"
 
-Sprites are displayed using the coordinate system of the canvas, but the characters we are using them to display will need to move according to the internal grid of our image-map. We handle this by giving the sprite a second set of coordinates that we will use for calculating the character's position on the map. We convert this coordinate to canvas coordinates (based on the current position of the image-map on the canvas) before scaling and drawing a sprite. This is the "convert origin coordinate" rule below, and it utilizes one of the phrases that GCBD provides for converting between canvas, screen, and image-map coordinate systems; see the section on image-maps in the documentation above for more.
+Sprites are displayed using the coordinate system of the canvas, but the characters we are using them to display will need to move according to the internal grid of our image-map. We handle this by giving the sprite a second set of coordinates that we will use for calculating the character's position on the map. We convert this coordinate to canvas coordinates (based on the current position of the image-map on the canvas) before scaling and drawing a sprite. This is the "convert origin coordinate" rule below, and it utilises one of the phrases that GCBD provides for converting between canvas, screen, and image-map coordinate systems; see the section on image-maps in the documentation above for more.
 
 We want each room to have its own independent map, but there is no reason to create a different image-map element for each room. Instead, we have just one image-map object, the Dungeon Map. We assign each room a tile-array, and change the tile-array of the Dungeon Map to reflect the tile-array of the location.
 
@@ -2913,7 +2913,7 @@ At the same time, we also ensure that the appropriate characters are visible. Ea
 
 The next section contains the scenario and is fairly simple. We assign the character-sprites to our characters, and we also set the player's sprite to be active from the start.
 
-We then define the rooms and other behavior. Note that each room has an image-map, and that we can use line breaks within the list to make it more or less human-readable.
+We then define the rooms and other behaviour. Note that each room has an image-map, and that we can use line breaks within the list to make it more or less human-readable.
 
 	*: Section - Scenario
 
@@ -3005,9 +3005,9 @@ You will notice that this rule doesn't do any collision checking--what happens i
 		follow the window-drawing rules for the graphics-window;
 		rule succeeds.
 
-Example: *** Deal Me In - This example illustrates a number of different techniques. We show how to change the contents of a graphics window at a stroke by changing canvases. We also construct a custom graphic element with rather complex behavior: rather than simply drawing a single entity, the element acts as a manager, interpreting and drawing game information using varied techniques, as needed.
+Example: *** Deal Me In - This example illustrates a number of different techniques. We show how to change the contents of a graphics window at a stroke by changing canvases. We also construct a custom graphic element with rather complex behaviour: rather than simply drawing a single entity, the element acts as a manager, interpreting and drawing game information using varied techniques, as needed.
 
-Specifically, the manager renders the cards that the player has drawn in a sort of card game (we borrow the relevant code from the Tilt 3 example in the Inform documentation). The game is poker, so the player can hold up to five cards. The manager centers and spaces the card outlines as needed (based on the width of the graphics window). For each card the player holds, it provides a white background, paints text to the window to represent the card's value (e.g., 6, 7, 10, J, Q, K), and draws a bitmap graphic in the proper color to represent the suit. If the player holds fewer than five cards, the remaining cards will be depicted as empty placeholders.
+Specifically, the manager renders the cards that the player has drawn in a sort of card game (we borrow the relevant code from the Tilt 3 example in the Inform documentation). The game is poker, so the player can hold up to five cards. The manager centres and spaces the card outlines as needed (based on the width of the graphics window). For each card the player holds, it provides a white background, paints text to the window to represent the card's value (e.g., 6, 7, 10, J, Q, K), and draws a bitmap graphic in the proper color to represent the suit. If the player holds fewer than five cards, the remaining cards will be depicted as empty placeholders.
 
 The manager g-element also implements simple mouse input: clicking on a placeholder draws a card, while clicking on a card discards it.
 

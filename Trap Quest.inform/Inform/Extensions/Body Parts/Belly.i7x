@@ -90,6 +90,8 @@ REQUIRES COMMENTING
 
 *@!]
 The player has a number called stomach-semen.
+The player has a number called stomach-urine.
+The player has a number called stomach-milk.
 
 [!<Player>@<stomachFood:Integer>*
 
@@ -427,6 +429,8 @@ REQUIRES COMMENTING
 To say StomachContents:
 	say "Your stomach [if the stomach of the player <= 2]is quite empty[otherwise if the stomach-water of the player < 2]is quite empty because you haven't drunk anything recently[otherwise if the stomach-water of the player < 4]is a little bit full[otherwise if the stomach-water of the player < 6]is quite full of things you have recently drunk[otherwise]is very full of things you have recently drunk[end if]. ";
 	if the stomach-semen of the player > 0, say "It is currently [if the stomach-semen of the player > 6]almost completely full of[otherwise if the stomach-semen of the player > 4]quite full of[otherwise if the stomach-semen of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [semen]. ";
+	if the stomach-milk of the player > 0, say "It is currently [if the stomach-milk of the player > 6]almost completely full of[otherwise if the stomach-milk of the player > 4]quite full of[otherwise if the stomach-milk of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [milk]. ";
+	if the stomach-urine of the player > 0, say "It is currently [if the stomach-urine of the player > 6]almost completely full of[otherwise if the stomach-urine of the player > 4]quite full of[otherwise if the stomach-urine of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] [urine]. ";
 	if the stomach-food of the player > 0, say "It is currently [if the stomach-food of the player > 6]almost completely full of[otherwise if the stomach-food of the player > 4]quite full of[otherwise if the stomach-food of the player > 2]digesting a decent amount of[otherwise]digesting a small amount of[end if] food. ".
 
 [!<SayPermanentBelly>+
@@ -506,6 +510,7 @@ REQUIRES COMMENTING
 
 +!]
 To FatBellyDown (X - a number):
+	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
 		if the flesh volume of belly > 0, decrease the flesh volume of belly by 1;
 		decrease X by 1.
@@ -534,98 +539,37 @@ To Overflow:
 		let milk-flav-said be 0;
 		let urine-flav-said be 0;
 		let water-flav-said be 0;
+		let flav-said be 0;
 		let small-egg-flav-said be 0;
 		while total squirtable fill of belly - belly limit > 0 and delayed fainting is 0:
-			if the milk volume of belly > 0:
-				if the stomach of the player < 15 or the player is in a predicament room:
-					if milk-flav-said is 0:
-						say "Your stomach audibly gurgles as [milk] flows upwards through your body.";
-						now milk-flav-said is 1;
-						MilkTasteAddictUp 1;
-					StomachUp 1;
-					if a random number from 1 to 2 is 1, StomachUp 1;
-					decrease the milk volume of belly by 1;
-				otherwise:
-					if milk-flav-said < 2:
-						say "Some [milk] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
-						MilkTasteAddictUp 1;
-					decrease the milk volume of belly by 1;
-					MilkPuddleUp 1;
-					let R be a random number between 1 and the intelligence of the player;
-					if R > 4:
-						if milk-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a bit emptier.";
-						if a random number between 1 and 5 is 1, IntDown 1;
-					otherwise if delayed fainting is 0:
-						if delayed fainting is 0, say "[if milk-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with [milk] instead. [otherwise]But the [milk] keeps coming! You eventually have to gasp for air but your lungs fill with [milk] instead. [end if]You black out.";
-						now delayed fainting is 1;
-						now the fainting reason of the player is 10;
-					now milk-flav-said is 2;
-			otherwise if the semen volume of belly > 0:
-				if the stomach of the player < 15 or the player is in a predicament room:
-					if semen-flav-said is 0:
-						say "Your stomach audibly gurgles as [semen] flows upwards through your body.[one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping]";
-						now semen-flav-said is 1;
-						SemenAddictUp 1; [The semen came in through the backdoor entrance so creampie addiction is increased, not taste addiction.]
-					increase the stomach-semen of the player by 1;
-					decrease the semen volume of belly by 1;
-				otherwise:
-					if semen-flav-said < 2:
-						say "Some [semen] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
-						SemenTasteAddictUp 1; [The semen now hits the tongue.]
-						if the throne is penetrating asshole, cutshow figure of throne cutscene 5 for the throne;
-					SemenPuddleUp 1;
-					decrease the semen volume of belly by 1;
-					let R be a random number between 5 and the intelligence of the player;
-					if R > 5:
-						if semen-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a lot giddier.";
-					otherwise if delayed fainting is 0:
-						if delayed fainting is 0, say "[if semen-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with [semen] instead. [otherwise]But the [semen] keeps coming! You eventually have to gasp for air but your lungs fill with [semen] instead. [end if]You black out.";
-						now delayed fainting is 1;
-						now the fainting reason of the player is 10;
-					now semen-flav-said is 2;
+			if the water volume of belly > 0 and the water volume of belly > the urine volume of belly and the water volume of belly > the semen volume of belly:
+				if water-flav-said is 0:
+					say "Your stomach audibly gurgles as [water] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
+					now water-flav-said is 1;
+					now flav-said is 1;
+				increase the stomach-water of the player by 1;
+				decrease the water volume of belly by 1;
+			otherwise if the milk volume of belly > 0 and the milk volume of belly > the urine volume of belly and the milk volume of belly > the semen volume of belly:
+				if milk-flav-said is 0:
+					say "Your stomach audibly gurgles as [milk] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
+					now milk-flav-said is 1;
+					now flav-said is 1;
+				increase the stomach-milk of the player by 1;
+				decrease the milk volume of belly by 1;
+			otherwise if the semen volume of belly > 0 and the semen volume of belly > the urine volume of belly:
+				if semen-flav-said is 0:
+					say "Your stomach audibly gurgles as [semen] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
+					now semen-flav-said is 1;
+					now flav-said is 1;
+				increase the stomach-semen of the player by 1;
+				decrease the semen volume of belly by 1;
 			otherwise if the urine volume of belly > 0:
-				if the stomach of the player < 15 or the player is in a predicament room:
-					if urine-flav-said is 0:
-						say "Your stomach audibly gurgles as [urine] flows upwards through your body.[one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping]";
-						now urine-flav-said is 1;
-						UrineTasteAddictUp 1;
-					StomachUp 1;
-					decrease the urine volume of belly by 1;
-				otherwise:
-					if urine-flav-said < 2:
-						say "Some [urine] is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
-						UrineTasteAddictUp 1;
-					UrinePuddleUp 1;
-					decrease the urine volume of belly by 1;
-					let R be a random number between 1 and the intelligence of the player;
-					if R > 5:
-						if urine-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a lot emptier.";
-						if a random number between 1 and 3 is 1, IntDown 1;
-					otherwise if delayed fainting is 0:
-						if delayed fainting is 0, say "[if urine-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with [urine] instead. [otherwise]But the [urine] keeps coming! You eventually have to gasp for air but your lungs fill with [urine] instead. [end if]You black out.";
-						now delayed fainting is 1;
-						now the fainting reason of the player is 10;
-					now urine-flav-said is 2;
-			otherwise if the water volume of belly > 0:
-				if the stomach of the player < 15 or the player is in a predicament room:
-					if water-flav-said is 0:
-						say "Your stomach audibly gurgles as water flows upwards through your body.";
-						now water-flav-said is 1;
-					StomachUp 1;
-					decrease the water volume of belly by 1;
-				otherwise:
-					if water-flav-said < 2:
-						say "Some water is forced upwards through your innards and out your mouth! You cough and splutter uncontrollably as it flies out.";
-					decrease the water volume of belly by 1;
-					let R be a random number between 1 and the intelligence of the player;
-					if R > 5:
-						if water-flav-said < 2, say "You find yourself unable to breathe as this is going on, and struggle to stay conscious. Somehow, you manage to pull through, but your head feels a lot emptier.";
-						if a random number between 1 and 3 is 1, IntDown 1;
-					otherwise if delayed fainting is 0:
-						if delayed fainting is 0, say "[if water-flav-said < 2]You find yourself unable to breathe as this is going on, and struggle to stay conscious. You gasp for air but your lungs fill with water instead. [otherwise]But the water keeps coming! You eventually have to gasp for air but your lungs fill with water instead. [end if]You black out.";
-						now delayed fainting is 1;
-						now the fainting reason of the player is 10;
-					now water-flav-said is 2;
+				if urine-flav-said is 0:
+					say "Your stomach audibly gurgles as [urine] flows upwards through your body.[if flav-said is 0][one of][line break][variable custom style]Now that is a pretty unique feeling...[roman type][line break][or][stopping][end if]";
+					now urine-flav-said is 1;
+					now flav-said is 1;
+				increase the stomach-urine of the player by 1;
+				decrease the urine volume of belly by 1;
 			otherwise if the small egg count of belly > 0:
 				if the stomach of the player < 15:
 					say "[if small-egg-flav-said is 0]Your stomach audibly gurgles and you wince in pain as a solid [ShortDesc of a random small egg] is forced upwards through your body into your stomach.[line break][one of][line break][variable custom style]What the fuck is happening to me![or]Not again![stopping][roman type][line break][otherwise]Another egg is forced up from your belly into your stomach.[end if]";
@@ -659,7 +603,8 @@ To Overflow:
 			otherwise:
 				say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 				now delayed fainting is 1;
-				now the fainting reason of the player is 19.
+				now the fainting reason of the player is 19;
+		if the stomach-liquid of the player > 15, follow the player pukes rule.
 
 Chapter 3 - Ass Filling
 
@@ -1083,7 +1028,7 @@ To AssSquirt:
 							set numerical response 0 to "don't collect";
 							compute multiple choice question;
 							if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
-					if collecting is bottle:
+					if collecting is a bottle:
 						if collecting is fishbowl:
 							say "[BigNameDesc of woman-barbara] holds the bowl under your [asshole] as you begin to expel ";
 						otherwise:
@@ -1559,7 +1504,7 @@ REQUIRES COMMENTING
 
 +!]
 To say purposeful shameless enema declaration of (M - a monster) into (C - a clothing):
-	say "[one of]Please watch me soil my clothes!'[or]Don't look away! I want you to watch as I squirt it all into my clothes!'[or]Are you enjoying watching me defile my own clothes? Tee-hee...'[in random order]".
+	say "[one of]Please watch me soil my clothes!'[or]Don't look away! I want you to watch as I squirt it all into my clothes!'[or]Are you enjoying watching me defile my own clothes? Teehee...'[in random order]".
 
 [!<SayShamelessEnemaDeclarationOfMonsterIntoClothing>+
 

@@ -829,7 +829,7 @@ A first after constructing a textual g-window (called win) (this is the clear th
 	if resetting required is true:
 		follow the set generic text styles rule;
 
-Chapter - Window background colors
+Chapter - Window background colours
 
 A g-window has a text called background color.
 
@@ -843,10 +843,10 @@ First after constructing a textual g-window (called win) (this is the reset the 
 	if the background color of win is not empty:
 		clear the background color of wintype 0 for all-styles;
 
-[ Setting the background color of graphics windows is handled by the automatic clearing which occurs after the window is constructed ]
+[ Setting the background colour of graphics windows is handled by the automatic clearing which occurs after the window is constructed ]
 
 [ As explained by Ben Cressey (http://groups.google.com/group/rec.arts.int-fiction/msg/b88316e2dcf1bb6b)
-Gargoyle sets the colour of its window padding based on the last background colour style hint given to the normal style. So after clearing all the background colours and styles, we set it based on the background color of the main window, or just set white if it isn't set. ]
+Gargoyle sets the colour of its window padding based on the last background colour style hint given to the normal style. So after clearing all the background colours and styles, we set it based on the background colour of the main window, or just set white if it isn't set. ]
 
 [ This phrase is made available in case you want to set the colour at some other time (such as when opening a pop-over window) ]
 To set the Gargoyle window padding to (T - a text):
@@ -920,7 +920,7 @@ Once the rough positions of the windows have been decided, the next thing to all
 
 Finally, if we are using proportional windows, we can optionally set a "minimum size", which if the window gets below, it will take, rather than using the proportional scale.
 
-Section: Text Style and Background Color
+Section: Text Style and Background Colour
 
 Flexible Windows adds a "window" column to the Table of User Styles found in the Glulx Text Effects extension. We can specify styles for individual windows by continuing the table. The "window" column is for the name of the window; the rest of the columns are described in the Glulx Text Effects documentation.
 
@@ -929,7 +929,7 @@ Flexible Windows adds a "window" column to the Table of User Styles found in the
 
 Note that the "background color" column is for the background colour of the text only, not the background colour of the entire window.
 
-To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web color code (with or without the # symbol):
+To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web colour code (with or without the # symbol):
 
 	The background color of the side window is "#CCCCFF".
 

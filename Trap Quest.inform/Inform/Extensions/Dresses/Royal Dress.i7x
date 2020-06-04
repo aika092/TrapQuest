@@ -28,10 +28,11 @@ To decide which object is the unique-upgrade-target of (C - a royal dress):
 	decide on a random off-stage ballgown royal dress.
 Definition: a royal dress is royalty themed: decide yes.
 Definition: a royal dress is pink themed: decide yes.
+Definition: a royal dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Part 1 - Ballgown Royal Dress
 
-A ballgown royal dress is a kind of royal dress. There is 1 ballgown royal dress. A ballgown royal dress is fully covering. A ballgown royal dress is optional-top-displacable. The text-shortcut of ballgown royal dress is "rd1".
+A ballgown royal dress is a kind of royal dress. There is 1 ballgown royal dress. A ballgown royal dress is optional-top-displacable. The text-shortcut of ballgown royal dress is "rd1".
 
 To decide which figure-name is clothing-image of (C - a ballgown royal dress):
 	decide on figure of royal dress 1.
@@ -44,7 +45,7 @@ To decide which number is the initial outrage of (C - a ballgown royal dress):
 
 Part 2 - Lolita Royal Dress
 
-A lolita royal dress is a kind of royal dress. There is 1 lolita royal dress. A lolita royal dress is not-top-displacable. The soak-limit of a lolita royal dress is usually 35. The text-shortcut of lolita royal dress is "rd2".
+A lolita royal dress is a kind of royal dress. There is 1 lolita royal dress. A lolita royal dress is fully covering. A lolita royal dress is not-top-displacable. The soak-limit of a lolita royal dress is usually 35. The text-shortcut of lolita royal dress is "rd2".
 
 To decide which figure-name is clothing-image of (C - a lolita royal dress):
 	decide on figure of royal dress 2.

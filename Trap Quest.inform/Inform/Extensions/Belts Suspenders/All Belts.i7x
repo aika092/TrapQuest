@@ -151,7 +151,7 @@ To say ShortDesc of (C - demon belt):
 	say "demon belt".
 
 To say ClothingDesc of (C - demon belt):
-	say "This leather belt has a weird symbol made out of hexagons on the front.".
+	say "This leather belt has a weird symbol made out of hexagons on the front[if diaper quest is 1]. It serves as a reminder that you have had your body altered by demon magic, and now [bold type]anything you consume doubles in volume as it reaches your stomach[end if].[roman type][line break]".
 
 To set up influence of (C - demon belt):
 	now C is strength-influencing.
@@ -205,6 +205,9 @@ To uniquely set up (C - living belt of sturdiness):
 	now the buildup of C is 0.
 
 Definition: living belt of sturdiness is transformation-protected: decide yes.
+
+To compute school periodic effect of (I - living belt of sturdiness):
+	compute periodic effect of I.
 
 To compute periodic effect of (I - living belt of sturdiness):
 	if the player is upright:
@@ -379,7 +382,7 @@ To decide which number is the initial outrage of (C - tongue-belt):
 	decide on 3.
 
 To decide which object is the unique-upgrade-target of (C - a belt):
-	if C is not demonic and there is a worn demonic wearthing and tongue-belt is off-stage, decide on tongue-belt;
+	if diaper quest is 0 and C is not demonic and there is a worn demonic wearthing and tongue-belt is off-stage, decide on tongue-belt;
 	decide on nothing.
 
 a white suspenders is a kind of suspenders. There is 1 white suspenders. A white suspenders is usually nylon. A white suspenders is usually sheer. The printed name of a white suspenders is usually "[clothing-title-before]pair of white sheer suspenders[clothing-title-after]". The printed plural name of a white suspenders is usually "[clothing-title-before]pairs of white sheer suspenders[clothing-title-after]". The text-shortcut of white suspenders is "wss". Figure of white suspenders is the file "Items/Clothes/Lower/Waist/Suspenders/suspenders3.png". Understand "sheer" as white suspenders.

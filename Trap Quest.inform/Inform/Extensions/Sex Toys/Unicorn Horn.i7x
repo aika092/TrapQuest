@@ -39,7 +39,7 @@ To compute climax effect of (C - a unicorn-horn):
 To compute resolution of (M - a monster) taking (T - a unicorn-horn):
 	say "The [printed name of T] briefly lights up before exploding into a shower of glittering motes, which briefly cling to [NameDesc of M][']s body before disappearing. [big he of M] looks completely refreshed.";
 	now the health of M is the maxhealth of M;
-	now the refactory-period of M is 1;[so we trigger any code to run when a monster refreshes fully]
+	now the refractory-period of M is 1;[so we trigger any code to run when a monster refreshes fully]
 	if M is unfriendly and M is intelligent:
 		say "[BigNameDesc of M] seems to lose interest in you for now.";
 		bore M;

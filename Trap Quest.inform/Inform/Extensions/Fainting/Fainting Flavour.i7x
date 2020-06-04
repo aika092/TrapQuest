@@ -82,7 +82,7 @@ To say FaintingFlav (N - 11):
 [12 and 13 and 14 and 15 unused]
 
 To say FaintingFlav (N - 16):
-	say "'[one of]The vine boss is a very difficult monster... maybe if [he of vine boss]'s too tough for you, you should just leave him alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight him again, good luck sweetie!!'[or]Oh dear you lost to him again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
+	say "'[one of]The vine boss is a very difficult monster... maybe if [he of vine boss]'s too tough for you, you should just leave [him of vine boss] alone? It's not worth losing all that progress you've made if you fail! If you do decide to fight [him of vine boss] again, good luck sweetie!!'[or]Oh dear, you lost to [him of vine boss] again? Maybe it really is time to give up with that approach baby. Be less over-confident this time!'[stopping]".
 
 To say FaintingFlav (N - 17):
 	say "'Uh-oh... looks like you were enjoying that a bit too much. I think it'll be a miracle for you to win the game the proper way at this point. You could always try fucking your way out, though!'".
@@ -97,7 +97,7 @@ To say FaintingFlav (N - 20):
 	say "'[one of]Oof, that wooden horse is mean, isn't it? Hopefully you'll be luckier with getting off quickly next time...'[or]Wow, the wooden horse again? You should stop wandering around the Woods like that if you can't take the heat...'[stopping]".
 
 To say FaintingFlav (N - 21):
-	say "'Careful of those cultists, they don[']t appreciate intruders.'".
+	say "'Careful of those cultists; they don[']t appreciate intruders.'".
 
 To say FaintingFlav (N - 22):
 	say "'It was really fun suffocating you with my face. If you don't want to meet the same end next time then I suggest letting your stomach empty a bit first. Oh, and the more you love cum, the easier it'll be to keep it all down.'".

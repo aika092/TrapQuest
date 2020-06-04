@@ -86,7 +86,6 @@ Figure of Gladiator Cutscene 7 is the file "NPCs/MultiFloor/Gladiator/Cutscene/c
 Figure of Gladiator Cutscene 8 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck6.png".
 Figure of Gladiator Cutscene 9 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck7.png".
 Figure of Gladiator Cutscene 10 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck8.png".
-Figure of Gladiator Cutscene 11 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck9.png".
 
 Figure of Gladiator Cutscene 15 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge1.png". [missionary]
 Figure of Gladiator Cutscene 16 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-revenge2.png". [doggy]
@@ -247,7 +246,8 @@ Figure of Oral Creampie Cutscene 1 is the file "Special/Cutscene/cutscene-oral-c
 Figure of Oral Creampie Cutscene 2 is the file "Special/Cutscene/cutscene-oral-creampie2.jpg".
 Figure of Oral Creampie Cutscene 3 is the file "Special/Cutscene/cutscene-oral-creampie3.jpg".
 Figure of Oral Creampie Cutscene 4 is the file "Special/Cutscene/cutscene-oral-creampie4.jpg".
-Figure of Oral Creampie Cutscene 5 is the file "Special/Cutscene/cutscene-oral-creampie5.jpg".
+Figure of Oral Creampie Cutscene 6 is the file "Special/Cutscene/cutscene-oral-creampie6.jpg".
+[Figure of Oral Creampie Cutscene 5 is the file "Special/Cutscene/cutscene-oral-creampie5.jpg".
 
 To get oral creampie image for (M - a thing):
 	if M is not a female monster:
@@ -259,7 +259,7 @@ To get oral creampie image for (M - a thing):
 			cutshow figure of Oral Creampie Cutscene 2;
 		otherwise:
 			if M is monster and M is presenting as female and M is human and M is not dark skinned and (playerRegion is Dungeon or playerRegion is hotel), cutshow figure of Oral Creampie Cutscene 5; [These regions have the most NPCs without weird skin colours]
-			otherwise cutshow figure of Oral Creampie Cutscene 1.
+			otherwise cutshow figure of Oral Creampie Cutscene 1.]
 
 Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
 
@@ -391,6 +391,10 @@ Figure of Atlas tattoo is the file "Items/Tats/tattoo30.jpg".
 To decide which figure-name is the examine-image of (T - Atlas tattoo):
 	decide on figure of Atlas tattoo.
 
+Figure of bbc-fairy tattoo is the file "Items/Tats/tattoo155.jpg".
+To decide which figure-name is the examine-image of (T - bbc-fairy tattoo):
+	decide on figure of bbc-fairy tattoo.
+
 Figure of bird nest tattoo is the file "Items/Tats/tattoo36.jpg".
 To decide which figure-name is the examine-image of (T - bird nest tattoo):
 	decide on figure of bird nest tattoo.
@@ -483,9 +487,9 @@ Figure of fuck-me tattoo is the file "Items/Tats/tattoo116.jpg".
 To decide which figure-name is the examine-image of (T - fuck-me tattoo):
 	decide on figure of fuck-me tattoo.
 
-Figure of funcenter tattoo is the file "Items/Tats/tattoo5.jpg".
-To decide which figure-name is the examine-image of (T - funcenter tattoo):
-	decide on figure of funcenter tattoo.
+Figure of funcentre tattoo is the file "Items/Tats/tattoo5.jpg".
+To decide which figure-name is the examine-image of (T - funcentre tattoo):
+	decide on figure of funcentre tattoo.
 
 Figure of hundred percent cunt tattoo is the file "Items/Tats/tattoo11.jpg".
 To decide which figure-name is the examine-image of (T - hundred percent cunt tattoo):
@@ -628,7 +632,7 @@ To decide which figure-name is the examine-image of (T - VIP pussy tattoo):
 Figure of virgin tattoo is the file "Items/Tats/tattoo40a.jpg".
 Figure of virgin void tattoo is the file "Items/Tats/tattoo40b.jpg".
 To decide which figure-name is the examine-image of (T - virgin void tattoo):
-	if the virgin of the player is 1, decide on figure of virgin tattoo;
+	if the vaginalvirgin of the player is 1, decide on figure of virgin tattoo;
 	decide on figure of virgin void tattoo.
 
 Figure of weakness tattoo is the file "Items/Tats/tattoo128.jpg".
@@ -722,7 +726,19 @@ Figure of FaceCum331 is the file "CharWins/FocusWin/Face/facecum331.jpg".
 Figure of FaceCum335 is the file "CharWins/FocusWin/Face/facecum335.jpg".
 
 To decide which figure-name is the examine-image of (T - face):
-	if T is overglazed:
+	if the total volume of face > 0:
+		if the semen volume of face > 0:
+			if the semen taste addiction of the player >= 15:
+				decide on figure of Oral Creampie Cutscene 4;
+			otherwise if the semen taste addiction of the player >= 11:
+				decide on figure of Oral Creampie Cutscene 3;
+			otherwise if the semen taste addiction of the player >= 5:
+				decide on figure of Oral Creampie Cutscene 2;
+			otherwise:
+				decide on figure of Oral Creampie Cutscene 1;
+		otherwise:
+			decide on figure of Oral Creampie Cutscene 1;
+	otherwise if T is overglazed:
 		if the lips of face <= 0:
 			if the make-up of face <= 0:
 				if alcohol-level <= 0:

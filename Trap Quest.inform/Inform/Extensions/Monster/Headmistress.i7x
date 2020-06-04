@@ -72,13 +72,11 @@ To compute monstermotion of (M - headmistress):
 
 An all later time based rule (this is the school recruiters rule):
 	if armband is worn and class-time < (lessonFrequency * -5):
-		if headmistress is alive and headmistress is undefeated:
+		if headmistress is alive and headmistress is undefeated and (the rank of the player < 6 or playerRegion is school):
 			if headmistress is not regional, regionally place headmistress;
-			now headmistress is unleashed;
-			now the boredom of headmistress is 0;
-		if receptionist is alive and receptionist is undefeated and receptionist is not regional:
+		if receptionist is alive and receptionist is undefeated and receptionist is not regional and (the rank of the player < 6 or playerRegion is school):
 			now receptionist is guarding;
-			now the boredom of receptionist is 0;
+			deinterest receptionist;
 			if playerRegion is Dungeon:
 				now receptionist is in Dungeon10;
 			otherwise if playerRegion is Hotel:
@@ -87,12 +85,15 @@ An all later time based rule (this is the school recruiters rule):
 				now receptionist is in School01.
 
 To regionally place (M - headmistress):
-	remove M from play;
-	bore M for 0 seconds; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
-	now M is unleashed;
-	now the health of M is the maxhealth of M;
-	while M is not regional or M is in the location of the player or M is nearby:
-		now M is in a random placed room.
+	deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+	if playerRegion is school:
+		now M is guarding;
+		now M is in School08;
+	otherwise:
+		now M is unleashed;
+		now the health of M is the maxhealth of M;
+		while M is not regional or M is in the location of the player or M is nearby:
+			now M is in a random placed room.
 
 To say EnslavedDominationFlav of (M - headmistress):
 	say "You grab [NameDesc of M][']s ponytail and force [him of M] to [his of M] knees. ";

@@ -20,6 +20,9 @@ Is the player unable to move?
 
 +!]
 Definition: yourself is immobile if player-immobile is true.
+Definition: yourself is at least partially immobile:
+	if there is a thing wrangling the player or the player is immobile, decide yes;
+	decide no.
 
 This is the trap stuck immobility rule:
 	if the player is trap stuck, rule fails.
@@ -117,6 +120,10 @@ This is the immobility blocks masturbation rule:
 		if auto is 0, say "The [random thing grabbing the player] is preventing you!";
 		rule fails.
 The immobility blocks masturbation rule is listed last in the masturbation restriction rules.
+
+Definition: yourself is at least partially living stuck:
+	if there is a live thing penetrating an orifice or there is a live thing grabbing the player or there is a live thing wrangling the player, decide yes;
+	decide no.
 
 Part - Subduing
 

@@ -74,7 +74,7 @@ To compute action (N - a number) of (M - a facehugger):
 				now M is penetrating O;
 				if O is fuckhole, ruin O;
 				if the player is able to use their hands:
-					say "[one of]You tug at the horrid, slimy creature[or]You frantically try to pull it free[or]Its thick, bony legs are like steel clamps, and its main body is stuck to you as if its sucking at your skin[or]Your fingers scrabble futilely against its tough, slick skin[in random order]. [one of]But it's like it's vacuum-sealed to you. You can't squeeze even a fingertip under the edge of its inhuman grip[or]But rather than pulling it loose, all you do is shift it and your flesh around together, making it look like you're actively participating in its fucking of your[variable O][or]But between its slimy skin and inhuman suction, all you do is jiggle it, thrusting it harder into your [variable O][in random order]!";
+					say "[one of]You tug at the horrid, slimy creature[or]You frantically try to pull it free[or]Its thick, bony legs are like steel clamps, and its main body is stuck to you as if it's sucking at your skin[or]Your fingers scrabble futilely against its tough, slick skin[in random order]. [one of]But it's like it's vacuum-sealed to you. You can't squeeze even a fingertip under the edge of its inhuman grip[or]But rather than pulling it loose, all you do is shift it and your flesh around together, making it look like you're actively participating in its fucking of your[variable O][or]But between its slimy skin and inhuman suction, all you do is jiggle it, thrusting it harder into your [variable O][in random order]!";
 				otherwise:
 					say "Without the use of your hands[one of] you can only squirm helplessly as you feel something [i]thick[/i] force open your [variable O][or] it's like you're welcoming the invasive penetration of your [variable O][or] you try to squeeze your muscles to prevent the muscular penetration... fruitlessly[or] you shiver helplessly as you feel [i]something[/i] gape your [variable O] wide, throbbing as it does[in random order].";
 				if O is asshole:
@@ -95,7 +95,7 @@ To compute action (N - a number) of (M - a facehugger):
 					if egg laying fetish is 1:
 						say "It pumps your stomach full of eggs and inhuman [semen]! Your throat doesn't handle having eggs forced down it very well, and as soon as [NameDesc of M] pulls out, you puke it all up.";
 						increase the stomach-semen of the player by 1;
-						PukeUp 1;
+						follow the player pukes rule;
 						repeat with NN running from 1 to SL:
 							let E be a random available small egg;
 							if E is egg:

@@ -121,7 +121,7 @@ After reading a command when setting-info > 0 (this is the custom flavour choosi
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		now name in row 17 of the Table of Info Options is the printed name of CNR;
-		say "Next, enter a type of person who you wouldn't get along with, for example maybe it's your 'bully' or 'ex-roommate' or 'upstairs neighbor' or 'rival' (the current entry is [NemesisRole]): ";
+		say "Next, enter a type of person who you wouldn't get along with, for example maybe it's your 'bully' or 'ex-roommate' or 'upstairs neighbour' or 'rival' (the current entry is [NemesisRole]): ";
 	otherwise if setting-info is 7:
 		if PCD is 0, now name in row 11 of the Table of Info Options is the player's command in lower case;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]

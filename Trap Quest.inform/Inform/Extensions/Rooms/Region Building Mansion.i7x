@@ -51,7 +51,7 @@ To Set Up The Mansion:
 		if M is not monster, now M is a random off-stage mansion dwelling monster;
 		if M is monster:
 			set up M;
-			now M is in a random placed haunted room;
+			if M is not in a placed haunted room, now M is in a random placed unbossed haunted room;
 	let N be 0;
 	let Nattempts be 0;
 	while N < 4:
