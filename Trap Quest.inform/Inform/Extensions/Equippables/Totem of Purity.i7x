@@ -36,7 +36,7 @@ To compute resolution of (M - a gladiator) taking (T - a pure totem):
 	compute offer reward of M for T.
 
 To say OfferThanksFlav of (M - a gladiator) for (T - a pure totem):
-	say "It immediately begins to glow, [if M is presenting as male]causing [his of M] [DickDesc of M] to immediately soften as a steel cage materializes around it. [otherwise]causing [his of M] [DickDesc of M] to immediately harden and then slowly shrink into nothingness, leaving [his of M] vulva as unblemished as it was before. [end if][line break][speech style of M]I... I must thank you. I can still feel the curse inside of me, but I must respect any warrior who rights [his of the player] own wrongs. At the very least, you deserve a second chance.[roman type][line break]".
+	say "It immediately begins to glow, [if M is presenting as male]causing [his of M] [DickDesc of M] to immediately soften as a steel cage materialises around it. [otherwise]causing [his of M] [DickDesc of M] to immediately harden and then slowly shrink into nothingness, leaving [his of M] vulva as unblemished as it was before. [end if][line break][speech style of M]I... I must thank you. I can still feel the curse inside of me, but I must respect any warrior who rights [his of the player] own wrongs. At the very least, you deserve a second chance.[roman type][line break]".
 
 To compute offer reward of (M - a gladiator) for (T - a pure totem):
 	FavourUp M by (1 + the bartering value of T for M) / 2; [must happen first]

@@ -167,9 +167,10 @@ Carry out zapping it with:
 		compute spell consequences of currentZapper;
 	if the second noun is caged:
 		say "The chain holding the cage off of the ground creaks as the cage swings from side to side[one of]. That seems precarious[or][stopping]...";
-		if a random number between 0 and 15 < A:
+		if the player is getting unlucky:
 			now the second noun is unleashed;
-			say "[bold type]Suddenly, the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. [BigNameDesc of the second noun] steps out, stretching [himself of the second noun] to full height. Uh-oh...".
+			now the second noun is interested;
+			say "[bold type]Suddenly, the chain snaps and the cage falls to the floor with a thud! The cage door's hinges snap, and the door falls away. [BigNameDesc of the second noun] steps out, stretching [himself of the second noun] to full height. [GotUnluckyFlav][line break][variable custom style]Uh-oh...[roman type][line break]".
 Understand "zap [something] with [something]", "zap [something] at [something]", "cast [something] at [something]", "attack [something] with [something]" as zapping it with.
 
 Slapping ends here.

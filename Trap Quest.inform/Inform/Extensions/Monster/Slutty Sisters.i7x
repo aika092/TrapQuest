@@ -369,12 +369,12 @@ To compute fuckhole sex of (M - a futanari slutty sister):[the sister is facing 
 	decrease the sex-length of M by 1.
 
 To compute anal sex of (M - a futanari slutty sister):
-	say "[one of][or][or][line break][second custom style]'Girl, your butthole is FINE!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are an ass bandit, huh?' [roman type][line break][or][stopping]";
+	say "[one of][or][or][line break][second custom style]'[big boy of the player], your butthole is FINE!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are an ass bandit, huh?' [roman type][line break][or][stopping]";
 	compute fuckhole sex of M;
 	ruin asshole.
 
 To compute vaginal sex of (M - a futanari slutty sister):
-	say "[one of][or][or][line break][second custom style]'Girl, your pussay is TOP CLASS SHIT!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are a naughty fuckslut, huh?' [roman type][line break][or][stopping]";
+	say "[one of][or][or][line break][second custom style]'[big boy of the player], your pussay is TOP CLASS SHIT!'[roman type][line break][or][or][line break][second custom style]'Unnngh, you still conscious there? Unf, you really are a naughty fuckslut, huh?' [roman type][line break][or][stopping]";
 	compute fuckhole sex of M;
 	ruin vagina.
 
@@ -420,14 +420,14 @@ To compute damage reaction of (M - a bulging slutty sister):
 		say "[BigNameDesc of M] jumps to [his of M] feet! [big he of M] looks very angry.[line break][variable custom style]Maybe that wasn't such a good idea...[roman type][line break]".
 
 To compute defeat of (M - a bulging slutty sister):
-	say "[second custom style]'Aack! [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show her who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
+	say "[second custom style]'Aack! [if there is a dangerous bulging slutty sister in the location of the player]I'm done for. Show [him of the player] who's boss, sis...'[otherwise]I can't believe this, you actually won...'[end if][roman type][line break][BigNameDesc of M] falls unconscious[if nintendolls-wand is not held and nintendolls-wand is not in the location of the player], [his of M] wand falling out of [his of M] hand[end if].";
 	now the sleep of M is 300;
 	now the health of M is 1;
 	if nintendolls-wand is not held:
 		now nintendolls-wand is in the location of the player.[you might still be in combat, so no autotaking.]
 
 To compute defeat of (M - a futanari slutty sister):
-	say "[second custom style]'Unf! [if there is a dangerous bulging slutty sister in the location of the player]Fuck her up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
+	say "[second custom style]'Unf! [if there is a dangerous bulging slutty sister in the location of the player]Fuck [him of the player] up, sis...'[otherwise]Fine, you win. Well done...'[end if][roman type][line break][BigNameDesc of M] falls unconscious.";
 	now the health of M is 1;
 	now the sleep of M is 300.
 

@@ -135,7 +135,7 @@ To compute mimic teasing (N - 1):[hissing mimic. Will "poison" the player or ful
 To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes or messes with the player's headgear]
 	say "A shadowy mass rises out of the crate, slowly forming itself into a green-skinned [man of a memic] with piercing yellow eyes and huge GG-cup breasts, which are barely restrained by a sparkling magenta bikini. [line break][first custom style]'[one of]You[']re looking for a makeover, aren[']t you? Of course you are, you look terrible honey.'[or]I can[']t blame you for being greedy, you obviously need a complete makeover.'[or]Oh my. You[']re in dire need of my expertise, aren[']t you, honey?[or]You may not think you need a makeover, but trust me honey, you do.'[at random][roman type][line break]";
 	if the number of worn clothing - the number of worn headgear > 0:
-		say "The [item style]stylish mimic[roman type] takes a deep breath, lifting you a full meter off the ground as [he of a memic] forcefully exhales glittering dust over your whole body.";
+		say "The [item style]stylish mimic[roman type] takes a deep breath, lifting you a full metre off the ground as [he of a memic] forcefully exhales glittering dust over your whole body.";
 		repeat with C running through worn upgradable clothing:
 			potentially transform C; [allows for theme protection]
 		Intdown 1;
@@ -157,7 +157,7 @@ To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes
 		now permanent makeup is 1.
 
 To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size, equalises asshole and vagina gape, or gives the player a free lube]
-	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk. [line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Lets see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
+	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk. [line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
 	if the player is male:[Penis scrambling]
 		let P be a random number between 0 and 10;
 		let Ab be a random worn plug;
@@ -170,13 +170,13 @@ To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size,
 			now the size of Ab is 1;
 		otherwise:
 			if Ab is plug and Ab is actually summonable:
-				PenisDown P;
-				say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly [Shrink]s down into a [Shortdesc of penis].";
+				SilentlyPenisDown P;
+				say "You feel something enter your [asshole] as your body begins reacting to the intense stimulation, growing [if P is 1]a full inch[otherwise if P is 2]two full inches[otherwise if P is 3]one, two, three full inches[otherwise]one, two, three full inches, and then rapidly bulging to a full [P][end if] as your penis rapidly shrinks down into a [Shortdesc of penis].";
 				now the size of Ab is P;
 				summon Ab;
 			otherwise:
-				PenisDown P;
-				say "Your penis rapidly [Shrink]s down into a [ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
+				SilentlyPenisDown P;
+				say "Your penis rapidly shrinks down into a [ShortDesc of penis] as the mimic pries open your [asshole], looking you dead in the eye as it fills you with [if P is 1]a nice big shot of warm fluid[otherwise if P is 2]a few shots of warm fluid[otherwise]several shots of warm fluid[end if].";
 				AssFill P;
 	otherwise:
 		let V be the openness of vagina;
@@ -235,8 +235,10 @@ Report waiting when the player is in MimicCrib:
 	otherwise:
 		say "All of a sudden, white objects start to rain from the darkness above you. As the first ones thump against your face and body you realise with [horror the diaper addiction of the player] what they are - used disposable diapers! As more and more start to pile on top of each other on and around you, [if diaper messing >= 3]the disgusting smell of them[otherwise]the stench of piss[end if] soon fills your nostrils[if the diaper addiction of the player < 14], making you gag[end if].";
 		appropriate-cutscene-display figure of mimic cutscene 4;
-		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
+		say "And still they continue to fall, threatening to bury you under their combined bulk and weight. You begin to struggle but it's no use - you feel like you're sinking in a quicksand made out of used nappies. Soon they are covering your entire body and you can't even breathe properly; you begin to cough and splutter as you try to suck a little oxygen through the thick rancid padding. [bold type]You feel yourself growing more accustomed to the smell of [urine]. [roman type]Just as you begin to feel light-headed [one of]and resign yourself to the reality of meeting your end,[or]once again[stopping] you are suddenly spat out of the crib back into the mansion, but now thoroughly exhausted and with tears in your eyes.";
 		PainUp 1;
+		if watersports fetish is 1, UrineTasteAddictUp 1;
+		otherwise DiaperAddictUp 1;
 		now the fatigue of the player is the buckle threshold of the player;
 	now the stance of the player is 1;
 	now the player is in the source-room of the location of the player;

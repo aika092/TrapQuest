@@ -3,6 +3,8 @@ Monster Descriptions by Monster Framework begins here.
 The printed name of a monster is usually "[monster-title-before of item described][MediumDesc of item described][monster-title-after of item described]".
 The printed plural name of a monster is usually "[monster-title-before of item described][MediumDesc of item described]s[monster-title-after of item described]".
 
+Understand "NPC", "enemy" as a monster.
+
 Figure of Missing NPC is the file "NPCs/missing.jpg".
 
 To say ShortDesc of (M - a monster):

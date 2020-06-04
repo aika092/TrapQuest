@@ -3,7 +3,7 @@ Furniture Framework by Furniture begins here.
 Furniture is a kind of thing. Furniture is not portable. Furniture has a magic-curse. The magic-curse of furniture is usually bland. Furniture can be permanent fixture. Furniture is usually permanent fixture.
 
 Report going when there is furniture in the location [of the player ]and newbie tips is 1:
-	say "[one of][newbie style]Newbie tip: There's an item of furniture in this room. Pay close attention to where these are - when you take physical damage from fights[if the body soreness of the player > 0] (for example you are hurt right now)[end if], you'll need to 'rest on' the furniture in order to heal up. However, when you do this, your exercise count will go back down to 0. While your exercise count is high, you'll sometimes [if weight gain fetish is 1]burn fat or [end if]gain strength or dexterity.[roman type][line break][or][stopping]".
+	unless the player is in a predicament room, say "[one of][newbie style]Newbie tip: There's an item of furniture in this room. Pay close attention to where these are - when you take physical damage from fights[if the body soreness of the player > 0] (for example you are hurt right now)[end if], you'll need to 'rest on' the furniture in order to heal up. However, when you do this, your exercise count will go back down to 0. While your exercise count is high, you'll sometimes [if weight gain fetish is 1]burn fat or [end if]gain strength or dexterity.[roman type][line break][or][stopping]".
 
 Section 1 - Furniture Verb
 
@@ -12,10 +12,10 @@ Check entering furniture:
 	if the player is immobile, say "Aren't you a bit busy?" instead;
 	[if the fatigue of the player is 0 and the body soreness of the player is 0 and the noun is not modification machine and (the noun is not milking bench or the milk volume of breasts <= 0) and the noun is not lecture chair and the noun is not med bay bed, say "You feel completely fine." instead;]
 	if the player is in danger, say "You need to deal with the [random dangerous monster in the location of the player] first!" instead;
-	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
+	if the player is urine averse and the urine-puddle of the location of the player > 0 and the noun is not royal bed and the noun is not automated changing station, say "[variable custom style]I'm not resting in this room with the smell of [urine] everywhere![roman type]" instead;
 	if the noun is soggy hotel bed, say "[variable custom style]I'm not getting in those sheets again, they're soaked![roman type][line break]" instead;
 	if the player is clothing stuck, say "You can't because your [a random worn stuck clothing] is stuck in place!" instead;
-	if the player is upset about mess:
+	if the player is upset about mess and the noun is not automated changing station:
 		if diaper quest is 1 and the class of the player is priestess:
 			say "[variable custom style]I guess as a disgusting 'diaper priestess', I have to stay messy even when I lie down to rest. Yuck...[roman type][line break]";
 		otherwise:
@@ -258,5 +258,9 @@ Called whenever the player stops resting, regardless of the reason why. Does not
 +!]
 To compute rest ending of (F - a furniture):
 	dislodge F.
+
+an automated changing station is a kind of furniture. The printed name of an automated changing station is "[TQlink of item described]automated changing station[TQxlink of item described][if inline hyperlinks >= 2][link][bracket]use[close bracket][as]sit on [text-shortcut of item described][end link][end if]". The text-shortcut of an automated changing station is "acs". Understand "automated" as an automated changing station.
+public changing station is an automated changing station.
+private changing station is an automated changing station.
 
 Furniture Framework ends here.

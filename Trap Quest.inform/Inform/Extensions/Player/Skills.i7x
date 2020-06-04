@@ -41,7 +41,7 @@ To teach begging for mercy:
 			otherwise:
 				say "You are much too stubborn to admit defeat! If you were to suffer a few more painful moments, then maybe you'd pay more attention to this tip...";
 		otherwise:
-			if the analvirgin of the player is 0 or (the player is female and the virgin of the player is 0):
+			if the analvirgin of the player is 0 or (the player is female and the vaginalvirgin of the player is 0):
 				say "[bold type]**You have learned how to beg for mercy!**[roman type][line break]";
 				now the mercyskill of the player is 1;
 			otherwise:
@@ -84,17 +84,6 @@ To teach deepthroating:
 			say "You ignore this piece of advice, [if the sex addiction of the player < 13]you don't ever want to be deep-throated, never mind be known as a particularly skilled throater! Maybe if you are ever forced to swallow some semen, then you might decide it's worth knowing how to do this.[otherwise]since you would much rather get fucked properly if the opportunity arises.[end if]";
 	otherwise:
 		say "[bold type]You already know how to deepthroat![roman type][line break]".
-
-[!<TheThroatskillPreventsGagReflexRule>+
-
-REQUIRES COMMENTING
-
-+!]
-This is the throatskill prevents gag reflex rule:
-	if the throatskill of the player is 1:
-		if debuginfo > 0, say "[input-style]Avoid gagging check: learned deepthroat skill | automatic success[roman type][line break]";
-		rule succeeds.
-The throatskill prevents gag reflex rule is listed in the gag reflex rules.
 
 [!<TheThroatskillListRule>+
 
@@ -164,7 +153,7 @@ To teach titjobs:
 			say "[bold type]**You have learned how to slap with large breasts!**[roman type][line break]";
 			now the breastskill of the player is 1;
 		otherwise:
-			say "Your breasts aren't large enough to be able to attempt to put [his of current-monster] advice into practice.";
+			say "Your breasts aren't large enough to be able to attempt to put [his of current-monster] advice into practise.";
 	otherwise:
 		say "[bold type]You already know how to fight with big tits![roman type][line break]".
 
@@ -215,7 +204,7 @@ To teach identifying:
 			say "[bold type]**You have learned how to identify!**[line break]Every now and then when you find a cursed item in a container, you will immediately be able to tell that it is cursed. The higher your intelligence, the higher the chance.[roman type][line break]";
 			now the identifyskill of the player is 1;
 		otherwise:
-			say "You listen to his hints but unfortunately in your [if the player is horny]very aroused[otherwise if the incidents of enema-int-loss > 0]butt-clenching[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
+			say "You listen to [his of current-monster] hints but unfortunately in your [if the player is horny]very aroused[otherwise if the incidents of enema-int-loss > 0]butt-clenching[otherwise if the bimbo of the player < 10]stressed[otherwise]light headed[end if] state you fail to properly commit them to memory. They probably won't be much use.";
 	otherwise:
 		say "[bold type]You have already heard and memorised these hints![roman type][line break]".
 

@@ -85,28 +85,4 @@ To SilentlyMilkTasteAddictDown (X - a number):
 		decrease X by 1;
 		if the raw milk taste addiction of the player > 1, decrease the raw milk taste addiction of the player by 1.
 
-To MilkDrunkUp (X - a number):
-	while X > 0:
-		decrease X by 1;
-		increase milk-drunk by 1;
-		if diaper quest is 1 and diaper messing < 3, StomachUp 2;
-		otherwise StomachUp 1;
-		if X is 0:
-			StomachFoodUp 1;
-			MilkTasteAddictUp 1;
-			now cold milky is 0; [this tracks how long since the player last drank milk]
-			if diaper quest is 1, progress quest of puddle-licking-quest. [catgirl quest is to drink milk]
-
-To MilkDrunkDown (X - a number):
-	while X > 0 and milk-drunk > 0:
-		if the fat-weight of the player < milk-drunk * 2, FatUp 1;
-		decrease X by 1;
-		decrease milk-drunk by 1;
-		increase milk-exercise-bonus by 1.
-
-A time based rule (this is the milk digestion rule):
-	if the remainder after dividing time-earnings by 230 < time-seconds:
-		if cold milky > cold milky limit and the player is not craving milk, MilkTasteAddictDown 1;
-		if milk-drunk > 0, MilkDrunkDown 1.
-
 Milk Taste Addiction ends here.

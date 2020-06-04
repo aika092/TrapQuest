@@ -56,9 +56,11 @@ Carry out crafting:
 			if the recipe of current-alchemy-key is memorised:
 				if Recipe corresponding to an Ingredient of current-crafting-key in the Table of Alchemy is 0, say "Hmm. Since you have memorised the correct recipe for crafting a [ShortDesc of T] you are confident that [bold type]the one you have just crafted is cursed.[line break][variable custom style]I probably shouldn't use this.[roman type][line break]";
 				if T is clothing or T is alchemy product, now T is sure;
+				if T is clothing, now T is identified;
 			otherwise if (T is clothing or T is alchemy product) and T is blessed:
 				say "[BigNameDesc of T] glitters with divine blue energy! It seems that thanks to your genius crafting, you've managed to create a [bold type]blessed[roman type] version!";
 				now T is sure;
+				if T is clothing, now T is identified;
 			increase times-crafted by 1;
 			reset alchemy charge;
 			let H be a random worn blue scrunchie;

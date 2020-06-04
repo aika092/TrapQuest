@@ -155,7 +155,7 @@ To say FirstResponse of (M - herald):
 	if the player-class is cultist:
 		say "[speech style of M]'Ooh, what a cutie! Care for a blessing, little one?'[roman type][line break]";
 	otherwise if the player-class is succubus:
-		say "[speech style of M]'At least Xavier has good taste, gotta give him that.'[roman type][line break]";
+		say "[speech style of M]'At least Xavier has good taste, gotta give [him of demon lord] that.'[roman type][line break]";
 	otherwise if the class of the player is vampire spawn:
 		say "[speech style of M]'A vampire? Bleh, always hated those books. Get lost.'[roman type][line break]";
 	otherwise:
@@ -224,36 +224,36 @@ To compute herald's gift:
 			say "[speech style of herald]'Now that is what I like to hear! Now, what should we make of you...?'[roman type][line break]";
 			let R be a random number between 1 and 4;
 			if R is 1:
+				say "You feel stronger, faster, better!";
 				Strengthup 2;
 				Dexup 2;
 				Intup 2;
-				say "You feel stronger, faster, better!";
 			if R is 2:
+				say "You feel so much quicker!";
 				Strengthup 1;
 				Dexup 3;
 				Intup 1;
-				say "You feel so much quicker!";
 			if R is 3:
+				say "You feel much stronger!";
 				Strengthup 3;
 				Dexup 1;
 				Intup 1;
-				say "You feel much stronger!";
 			if R is 4:
+				say "You feel much smarter!";
 				Strengthup 1;
 				Dexup 1;
 				Intup 3;
-				say "You feel much smarter!";
 			now R is a random number between 1 and 4;
 			if R is 1:
-				SexAddictUp 3;
 				say "You feel a sudden rush of heat!";
+				SexAddictUp 3;
 			if R is 2:
 				if diaper quest is 0:
-					SemenTasteAddictUp 3;
 					say "You feel a sudden deep hunger!";
+					SemenTasteAddictUp 3;
 				otherwise:
-					DiaperAddictUp 3;
 					say "You feel [if there is a worn diaper]even more comfortable in your padding[otherwise]a sudden deep yearning to be padded[end if]!";
+					SilentlyDiaperAddictUp 3;
 			if R is 3:
 				say "You feel terribly fragile!";
 				SilentlyDelicateUp 3;

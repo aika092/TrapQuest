@@ -55,8 +55,7 @@ Check entering podium:
 				repeat with K running through worn knickers:
 					only destroy K;
 				summon D cursed with quest;
-			clean D;
-			WaterEmpty D;
+			fully clean D;
 			UrineSoakUp D by the soak-limit of D;
 			if diaper messing >= 4, MessSet D to 10;
 			say "Opening your eyes, you yelp as you realise it wasn't your imagination at all! Blinking your eyes, you gasp in surprise and stare in shock at your [if M is worn]mitten-clad hands and [end if]drooping [D]! [if P is worn]You try to spit out your new [P] but it is stuck in your mouth! [end if][line break][first custom style]'DISGUSTING!'[roman type][line break]yells a voice. Swallowing, you look up to see [NameDesc of M]! [big he of M] marches towards the stage.";

@@ -119,6 +119,7 @@ REQUIRES COMMENTING
 
 +!]
 To FatThighsDown (X - a number):
+	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
 		if the flesh volume of thighs > 0, decrease the flesh volume of thighs by 1;
 		decrease X by 1.

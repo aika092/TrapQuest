@@ -35,11 +35,11 @@ To Execute Takeoff:
 		dislodge D;
 	let flav-said be 0;
 	if the floatskill of the player is 0:
-		repeat with C running through things held by the player:
-			unless C is worn:
-				if flav-said is 0, say "Your sudden flight makes [if there is a worn bag of holding]all your items fall out of your [ShortDesc of random worn bag of holding] and [end if]you drop all the items you're carrying!";
-				now flav-said is 1;
-				now C is in the location of the player;
+		repeat with C running through currently-not-in-bag things:
+			if flav-said is 0, say "Your sudden flight makes you drop all the items you're carrying!";
+			now flav-said is 1;
+			now C is in the location of the player;
+			if C is open topped vessel, dump C;
 	if there is a worn magic wand:
 		compute takeoff of a random worn magic wand;
 	if the location of the player is no-roof:
@@ -73,7 +73,7 @@ To Execute Landing:
 	if the player is upright:
 		try kneeling;
 	otherwise if the location of the player is glue-puddled:
-		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh oh.[or][line break][variable custom style]Please, no![roman type][line break][or][line break][variable custom style]Dear lord, not again![roman type][line break][at random]";
+		say "You eye the [one of]puddle of glue[or]sticky blob below you[or]strong-smelling pool of adhesive[at random] with [one of]fear in your eyes[or]a tremor of nerves[or]a feeling that it's reaching out toward you[at random]. [one of]Uh-oh.[or][line break][variable custom style]Please, no![roman type][line break][or][line break][variable custom style]Dear lord, not again![roman type][line break][at random]";
 		check glue tripping.
 
 [!<SayLandingTauntOfMonster>+

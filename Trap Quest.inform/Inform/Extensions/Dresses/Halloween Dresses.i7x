@@ -1,5 +1,55 @@
 Halloween Dresses by Dresses begins here.
 
+nun-dress is an overdress. nun-dress is unique. nun-dress is fully covering. nun-dress is hobble-skirted. nun-dress is neck covering. nun-dress is finger covering. The text-shortcut of nun-dress is "nund". The printed name of nun-dress is "[clothing-title-before]nun dress[clothing-title-after]". Understand "nun", "dress" as nun-dress.
+
+Figure of nun-dress is the file "Items/Clothes/Upper/Special/Halloween/nundress1a.png".
+Figure of nun-dress-xray is the file "Items/Clothes/Upper/Special/Halloween/nundress1b.jpg".
+Figure of nun-dress-xray-dong is the file "Items/Clothes/Upper/Special/Halloween/nundress1c.jpg".
+Figure of nun-dress-no-xray is the file "Items/Clothes/Upper/Special/Halloween/nundress1d.jpg".
+
+To decide which figure-name is clothing-image of (C - nun-dress):
+	if C is wrist-bound-behind, decide on figure of nun-dress-no-xray;
+	decide on figure of nun-dress.
+To compute periodic effect of (C - nun-dress): [A hacky way to make sure that when we examine the dress, we see the X-ray version]
+	if C is wrist-bound-behind:
+		if there is a worn sex toy, now the previous-temporary-image of C is Figure of nun-dress-xray-dong;
+		otherwise now the previous-temporary-image of C is Figure of nun-dress-xray;
+		if purple-vibrator is carried:
+			say "[BigNameDesc of purple-vibrator] slips to the ground.";
+			now purple-vibrator is in the location of the player;
+			repeat with M running through reactive people:
+				compute toy expulsion reaction of M;
+	otherwise:
+		now the previous-temporary-image of C is figure of no-image-yet.
+
+To say ClothingDesc of (M - nun-dress):
+	say "This black and white nun dress looks pretty normal. There are some rather high slits at the sides of the skirt, but that could reasonably be suggested to be to make it easier to wear[if M is wrist-bound-behind]. Of course, looks can be deceiving. The arms inside the sleeves are fake. Your real arms are bound strictly behind your back. This wouldn't be much of a problem, but your fake arms are holding a large book open in front of you. The cover makes it look like a religious text, but anyone who notices the actual page it is open to will see that it is in fact a book cataloguing and explaining how to perform exotic sex acts[end if]...".
+
+This is the nun bondage prevents hand use rule:
+	if nun-dress is worn and nun-dress is wrist-bound-behind:
+		if manual hands attempt is 1, say "[variable custom style]I can't do that whilst my hands are bound strictly behind my back under my nun dress![roman type][line break]";
+		rule fails.
+The nun bondage prevents hand use rule is listed in the hands restriction rules.
+
+To decide which number is the initial outrage of (C - nun-dress):
+	if the player is in a predicament room:
+		if there is worn halloween headgear, decide on 1;
+		otherwise decide on 6;
+	decide on 4.
+
+To say ShortDesc of (C - nun-dress):
+	say "nun dress".
+To say MediumDesc of (C - nun-dress):
+	say "slitted nun dress".
+
+Definition: nun-dress is black themed: decide yes.
+Definition: nun-dress is white themed: decide yes.
+Definition: nun-dress is slitted: decide yes.
+To decide which object is the unique-upgrade-target of (C - nun-dress):
+	decide on nun-top.
+To compute (C - nun-top) unique inheriting from (D - a clothing):
+	now C is wristless.
+
 nun-top is an overdress. nun-top is unique. nun-top is fully covering. nun-top is unskirted. nun-top is lycra. nun-top is neck covering. nun-top is only arm covering. The text-shortcut of nun-top is "nunt". nun-top is totally-exclusive. The printed name of nun-top is "[clothing-title-before]nun top[clothing-title-after]". Understand "nun", "top" as nun-top.
 
 Figure of nun-top is the file "Items/Clothes/Upper/Special/Halloween/nuntop1.png".

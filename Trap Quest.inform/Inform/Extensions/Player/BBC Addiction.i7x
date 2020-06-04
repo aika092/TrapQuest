@@ -65,16 +65,25 @@ REQUIRES COMMENTING
 
 +!]
 To BBCAddictUp (X - a number):
+	if interracial fetish is 1:
+		let S be the calculated BBC addiction of the player;
+		SilentlyBBCAddictUp X;
+		now S is the calculated BBC addiction of the player - S;
+		if S > 0:
+			if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]more [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if] [BlackCock].";
+			otherwise say "You feel your racial preference for white people becoming less strong.".
+
+To SilentlyBBCAddictUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw BBC Addiction of the player < 10, increase the raw BBC Addiction of the player by 1.
 
 To BBCAddictDown (X - a number):
-	let S be the raw BBC addiction of the player;
+	let S be the calculated BBC addiction of the player;
 	SilentlyBBCAddictDown X;
-	decrease S by the raw BBC addiction of the player;
+	decrease S by the calculated BBC addiction of the player;
 	if S > 0:
-		if the BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if][if the BBC addiction of the player > 6]less addicted to [BlackCock][otherwise]less interested in [BlackCock][end if].";
+		if the calculated BBC addiction of the player > 3, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated BBC addiction of the player > 6]addicted to[otherwise]interested in[end if][BlackCock].";
 		otherwise say "You feel your racial preference for white people returning.".
 
 To SilentlyBBCAddictDown (X - a number):

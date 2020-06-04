@@ -156,6 +156,7 @@ To layer (C - a clothing) correctly:
 					now the top-layer of C is CL;
 				otherwise:
 					say "[type 2 layering bug]";
+		if C is actually nipple covering, now latest-top-malfunction is earnings;
 	if C is mid layer:
 		repeat with CL running from 1 to max-mid-layer + 1:
 			if the mid-layer of C is 0: [If we haven't found its place yet]

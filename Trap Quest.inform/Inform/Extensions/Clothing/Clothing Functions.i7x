@@ -429,8 +429,7 @@ To only destroy (C - clothing):
 	now the used condoms of C is 0;
 	now the empty condoms of C is 0;
 	now the stolen-strength of C is 0;
-	clean C;
-	WaterEmpty C;
+	fully clean C;
 	dislodge C;
 	repair C;
 	if C is crotch-unzipped, now C is crotch-zipped;

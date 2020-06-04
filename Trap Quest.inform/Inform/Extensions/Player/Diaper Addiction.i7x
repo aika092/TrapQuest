@@ -82,5 +82,4 @@ Definition: yourself is actually an adult baby:
 	if the number of worn baby themed wearthing > 3, decide yes;
 	decide no.
 
-
 Diaper Addiction ends here.

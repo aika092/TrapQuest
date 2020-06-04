@@ -197,4 +197,107 @@ Carry out drinking a carried bottle:
 
 The block drinking rule is not listed in the check drinking rulebook.
 
+
+Swallowing is an action applying to nothing.
+Check Swallowing:
+	let T be a random throater thing penetrating face;
+	if T is a thing, say "[BigNameDesc of T] is inside your throat, making this impossible." instead.
+Carry Out Swallowing:
+	allocate 3 seconds;
+	compute swallowing.
+Understand "swallow" as swallowing.
+
+Spitting is an action applying to nothing.
+Check Spitting:
+	let T be a random thing penetrating face;
+	if T is a thing, say "[BigNameDesc of T] is blocking your mouth, making this impossible." instead.
+Carry Out Spitting:
+	allocate 3 seconds;
+	let collecting be nothing;
+	if the total volume of face > 0 and the player is not flying and the player is not in a nonstandard room and the player is not immobile and the player is not in danger:
+		let LV be a list of things;
+		repeat with V running through carried open topped vessels:
+			add V to LV;
+		if the player is upright:
+			repeat with P running through closed pedestals in the location of the player:
+				if P is fertile or P is chilled or P is parched, add P to LV;
+			if HotelScenery04 is in the location of the player, add HotelScenery04 to LV;
+		if water-body is in the location of the player:
+			let T be a random water-body-scenery in the location of the player;
+			if T is water-body-scenery:
+				add T to LV;
+			otherwise:
+				add water-body to LV;
+		if HotelScenery01 is in the location of the player, add HotelScenery01 to LV;
+		if the number of entries in LV > 0:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			truncate LV to 9 entries;
+			say "Where do you want to collect the liquid you're about to spit out?[line break]";
+			repeat with V running through LV:
+				if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+				otherwise set next numerical response to "[BigNameDesc of V]";
+			set numerical response 0 to "spit onto the ground";
+			compute multiple choice question;
+			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
+	if collecting is a thing:
+		let L be water;
+		if urine volume of face > 0:
+			if semen volume of face > 0 or milk volume of face > 0, now L is murkwater;
+			otherwise now L is urine;
+		otherwise if milk volume of face > 0:
+			if semen volume of face > 0, now L is murkwater;
+			otherwise now L is milk;
+		otherwise:
+			now L is semen;
+		say "You let the [L] run out of your mouth and into [NameDesc of collecting].";
+		if collecting is pedestal:
+			compute PedestalFilling collecting with L by the total volume of face;
+		otherwise if collecting is HotelScenery01:
+			now the noun is a random off-stage can;
+			if the noun is can:
+				if L is semen, now the fill-colour of the noun is creamy;
+				if L is urine, now the fill-colour of the noun is golden;
+				if L is milk, now the fill-colour of the noun is white;
+				if L is murkwater, now the fill-colour of the noun is murky;
+				let T be nothing;
+				let inspiration-understood be 0;
+				if debugmode is 1, say "List of potential inspired tattoos: [list of drawable eligible tattoos].";
+				if debugmode is 2:
+					repeat with A running through tattoos:
+						say "Looking at [A].";
+						say "It is [unless A is eligible]not [end if]eligible.";
+						say "It is [unless A is drawable]not [end if]drawable.";
+				now T is a random drawable eligible tattoo;
+				if T is tattoo:
+					now inspiration-understood is 1;
+				otherwise:
+					now T is a random drawable tattoo;
+				if T is tattoo:
+					say "Metal robotic arms fly out of concealed holes in the ceiling and grab onto your limbs. They pin you to the table, with your head facing the screen. [if T is tattoo and inspiration-understood is 1]The screen now says 'Inspiration understood.' [otherwise]The screen now says 'Inspiration not understood, selecting template at random.' [end if][inking-flav]Another arm descends carrying a mirror, to allow you to see your new ink:[line break]";
+					summon T;
+					try examining T;
+					now focused-thing is T;
+				otherwise:
+					say "The screen says 'ERROR: Canvas already full. No appropriate templates found.' The arms let go of you and recede into the ceiling.";
+		otherwise if collecting is bottle: [TODO NEXT: FLAVOUR]
+			dump collecting;
+			if L is semen, now the fill-colour of collecting is creamy;
+			if L is urine, now the fill-colour of collecting is golden;
+			if L is milk, now the fill-colour of collecting is white;
+			if L is murkwater, now the fill-colour of collecting is murky;
+			SetDose collecting to (the total volume of face + 1) / 2;
+			if face is monster-origin, now collecting is monster-origin;
+			otherwise now collecting is player-origin;
+		repeat with M running through reactive people:
+			if the semen volume of face <= 0 and the urine volume of face <= 0:
+				compute boring spit reaction of M;
+			otherwise:
+				compute disgusting spit reaction of M;
+		MouthEmpty;
+	otherwise:
+		compute spitting.
+Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
+
+
+
 Drinking ends here.

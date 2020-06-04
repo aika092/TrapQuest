@@ -136,7 +136,7 @@ To say SemenEncounterFlav:
 		if the semen addiction of the player is 15, say "[second custom style][if the player is a nympho]I like it better when I'm full of [semen]. It helps remind me what I'm to be used for.[otherwise]This world is great, it's basically making sure I always have [semen] on tap![end if][roman type][line break]";
 		if the semen addiction of the player is 16, say "[second custom style]This is enough to satisfy me for now, I guess...[roman type][line break]";
 		if mindbreak protection is 0:
-			if the semen addiction of the player is 17, say "[second custom style][if the stomach-semen of the player is 0]I need it inside me NOW![otherwise]The more of this I can get inside me, the better.[end if][roman type][line break]";
+			if the semen addiction of the player is 17, say "[second custom style][if the stomach-semen of the player is 0 and the semen volume of face is 0]I need it inside me NOW![otherwise]The more of this I can get inside me, the better.[end if][roman type][line break]";
 			if the semen addiction of the player is 18, say "[second custom style]I need [semen] in me... on me... over me... mmm, give me your [manly-penis]s.[roman type][line break]";
 			if the semen addiction of the player is 19, say "[second custom style][NameBimbo] needs more cum...[roman type][line break]";
 		now highest semen addiction is the semen addiction of the player;

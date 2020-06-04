@@ -129,9 +129,9 @@ To compute (M - a modification machine) babifying:
 		assfill belly limit water;
 	otherwise if the player is bursting and the player is not really bursting:
 		say "A robotic arm injects you in the side with a needle. ";
-		while the player is not really bursting and the player is not incontinent:
+		while the player is not really bursting and the player is not incontinent and incontinence < the max-incontinence of the player:
 			increase incontinence by 1;
-		say "[if the player is really bursting]You feel your bladder weaken to the point where you're really desperate to pee![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to pee. [variable custom style][one of]I don't need to pee any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
+		say "[if the player is really bursting]You feel your bladder weaken to the point where you're really desperate to pee![line break][variable custom style]Uh-oh, I feel permanently weaker down there...[otherwise]You suddenly don't feel like you need to pee.[line break][variable custom style][one of]I don't need to pee any more? How... suspiciously convenient...[or]Uh-oh, I think it's made me incontinent again...[stopping][end if][roman type][line break]";
 	otherwise:
 		let B be 0;
 		if the player is really bursting, now B is 1;

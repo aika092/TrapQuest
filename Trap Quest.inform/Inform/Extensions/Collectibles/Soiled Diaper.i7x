@@ -146,12 +146,12 @@ Check BabChanging it with:
 Carry out BabChanging it with:
 	allocate 6 seconds;
 	say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";
-	now the refactory-period of the noun is a random number between -100 and 300;
+	now the refractory-period of the noun is a random number between -100 and 300;
 	let SD be a random off-stage soiled-diaper;
 	if diaper messing >= 6 and SD is soiled-diaper:
 		now SD is carried by the player;
 		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
-	only destroy the second noun.
+	if the second noun is diaper, only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
 
 Soiled Diaper ends here.

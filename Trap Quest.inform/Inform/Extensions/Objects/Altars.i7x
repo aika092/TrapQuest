@@ -40,7 +40,7 @@ To say ExamineDesc of (C - elder altar):
 	otherwise say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. ";
 	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
-The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al".
+The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
 
 A diaper quest fix rule:
 	destroy the hotel altar.
@@ -104,7 +104,7 @@ Check praying something with:
 		if the noun is worn and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [ShortDesc of the noun].";
 		otherwise say "You place the [ShortDesc of the noun] on the altar.";
 	if the second noun is dungeon altar:
-		if the noun is unicorn-horn:
+		if the noun is a unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
 			destroy the noun;
 			now the charge of the dungeon altar is 0 instead;
@@ -122,15 +122,19 @@ Check praying something with:
 			say "A voice appears in your head:[line break][second custom style]'How dare you place such a thing on my altar!'[roman type][line break]" instead;
 		otherwise if the class of the player is succubus and the souls of the player < 1:
 			say "The altar appears inert. It seems the Goddess who rules it isn[']t inclined to help you." instead;
-	otherwise if the second noun is elder altar and the noun is unicorn-horn:
+	otherwise if the second noun is elder altar and the noun is a unicorn-horn:
 		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar
 		before being consumed completely. Purple light suffuses the altar as the horn disappears in a puff of white smoke.";
 		destroy the noun;
 		now the charge of the elder altar is 0 instead;
-	otherwise if the second noun is hotel altar and the noun is unicorn-horn:
-		say "Smoke rises slowly as the pearly surface of the horn shifts from white to black, and it slowly breaks down into powder.";
-		if the charge of hotel altar < 300, now the charge of hotel altar is 300 instead;
-		otherwise decrease the charge of hotel altar by 150 instead.
+	otherwise if the second noun is hotel altar:
+		if the noun is a unicorn-horn:
+			say "Smoke rises slowly as the pearly surface of the horn shifts from white to black, and it slowly breaks down into powder.";
+			decrease the altar-intensity of hotel altar by 1;
+			now the charge of hotel altar is 0 instead;
+		otherwise if the charge of hotel altar > 0:
+			say "Nothing happens." instead.
+			
 
 To AltarPunish (T - a thing):
 	if a random number between 1 and 2 is 1:
@@ -170,7 +174,9 @@ Carry out praying something with:
 		if the noun is accessory, WoodsOffer the noun;
 		otherwise say "Nothing happens.";
 	otherwise if the second noun is the elder altar:[To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
-		if the noun is the player:
+		if doomed is -1:
+			say "Nothing happens. The altar seems completely inert.";
+		otherwise if the noun is the player:
 			ElderOffer;
 			progress quest of insanity-quest;
 		otherwise:
@@ -215,7 +221,7 @@ To say GoddessAddress:
 	say "[if the class of the player is priestess]Loyal Sister [otherwise if the bimbo of the player < 5]Brave [otherwise if the bimbo of the player < 9]Beloved [otherwise]My favourite minx [end if][TitleBimbo],[if the bimbo of the player > 8 and the bimbo of the player < 13]my pet,[end if]";
 
 [To AltarUniqueReward of (T - a headgear):
-	if the class of the player is adventurer and the virgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
+	if the class of the player is adventurer and the vaginalvirgin of the player is 1 and T is not runic headband and runic headband is off-stage and T is not severed-tentacle and the number of worn headgear is 1 and T is worn:
 		say "A shimmering blue light surrounds you as your [ShortDesc of T] shapeshifts, first turning into pure visible energy and then settling into form as some kind of religious headband. A voice appears in your head: [line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
 		only destroy T;
 		summon runic headband cursed;
@@ -255,7 +261,7 @@ To AltarPray (P - a person):
 	MagicPowerUp 1;
 	while 1 is 1:
 		let R be a random number from 1 to 9;
-		if the class of the player is priestess and (the virgin of the player is 0 or the player is male):
+		if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is male):
 			let T be ritual-beads;
 			if T is actually summonable and T is off-stage:
 				summon T;
@@ -330,7 +336,7 @@ To AltarPray (P - a person):
 	if the pregnancy of the player is 0 and the womb volume of vagina is 0 and runic headband is actually summonable:
 		summon runic headband cursed;
 		say "A shimmering blue light surrounds you as your pure visible energy rushes around your body and then settles into the form of some kind of religious headband. A voice sounds in your head:[line break][second custom style]'Loyal Sister, you have been chosen to follow the holy path of righteousness! Go, with grace, but do not forget your duties.'[roman type][line break]";
-		if the player is female and the virgin of the player is 0:
+		if the player is female and the vaginalvirgin of the player is 0:
 			say "[bold type]The pure aura of your headband clashes with your lost vaginal virginity![roman type][line break]";
 			compute virginity-loss of runic headband;
 	otherwise if flower hairclip is worn:
@@ -523,7 +529,7 @@ To ElderOffer:
 	say "What little light there is in the room extinguishes, and the [if there is an acolyte in the location of the player]cultist forces manacles onto your arms and legs[otherwise]manacles suddenly come to life and secure your arms and legs[end if]. There[']s no escape now![line break]";[there will eventually be multiple possible things that happen to you on the altar]
 	if the number of worn headgear > 0 and diaper quest is 0:
 		ElderEmpower a random worn headgear;
-	if the charge of elder altar < 1:[if nothing happened with your headgear, it's time to breed]
+	if the charge of elder altar < 1 or diaper quest is 1:[if nothing happened with your headgear, it's time to breed]
 		if diaper quest is 0:
 			if the player is female, ElderBreed vagina;
 			otherwise ElderBreed asshole;
@@ -600,12 +606,19 @@ To ElderConnect:
 	now D is demon-diaper;
 	if D is not worn:
 		say "A pink diaper with an image of a pentagram appears around your loins!";
-		summon D cursed with quest;
-	otherwise if D is not dry:
-		clean D;
-		WaterEmpty D;
+		summon D cursed;
+	if D is not dry:
+		fully clean D;
 		say "Your [ShortDesc of D] becomes completely clean!";
-	now altar-diaper-link is 92;
+	if D is not cursed:
+		say "You feel a curse being laid on [NameDesc of D]!";
+	if the quest of D is not doom-quest:
+		now the quest of D is doom-quest;
+		say QuestFlav of D;
+	now altar-diaper-link is 99999;
+	if incontinence < the max-incontinence of the player:
+		say "It feels like you no longer have 'ownership' over your own bladder[if diaper messing >= 3] and bowels[end if]. You feel your control weaken.";
+		increase incontinence by 1;
 	compute periodic effect of D.
 
 []
@@ -838,12 +851,13 @@ To compute DevilPayment (N - a number):
 			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
 			SexAddictUp N.
 
-To DevilPray (P - yourself):
-	let N be (the charge of hotel altar / 180) + 1;
+[TODO: offering a soul gem resets the altar]
+To DevilPray (P - a person):
+	let N be the altar-intensity of hotel altar + 1;
 	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
-	if N > 6, now N is 6;
+	if N > 6, now N is 6;[the effect maxes out at a certain point]
 	let R be a random number between 1 and 4;
-	let LDC be the list of off-stage actually summonable demonic clothing;
+	let LDC be the list of off-stage actually summonable demonic clothing;[big lag]
 	if gold-summoned is 0:
 		repeat with M running through infernal monsters:
 			if the times-submitted of M > 0, now R is 0;
@@ -897,7 +911,8 @@ To DevilPray (P - yourself):
 		let D be a random alive infernal monster;
 		if D is monster, DifficultyUp D by 1;
 		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
-	increase the charge of hotel altar by 180;
+	increase the charge of hotel altar by 300;
+	increase the altar-intensity of hotel altar by 1;
 	progress quest of hotel-altar-quest;
 	if R > 0:
 		compute DevilPayment N.
@@ -916,16 +931,17 @@ To DevilPray (T - a thing):
 		say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
 	otherwise:
 		say "The statue's eyes glint ominously, but nothing else seems to happen.";
-	increase the charge of hotel altar by 180;
+	increase the charge of hotel altar by 300;
+	increase the altar-intensity of hotel altar by 1.
 
 To DevilPray (T - a clothing):
 	if T is cursable:
-		let N be (the charge of hotel altar / 150) + 1;
+		let N be the altar-intensity of hotel altar + 1;
 		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
 		if N > 6, now N is 6;
 		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
 		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
-			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 3 -> 4]
+			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 2 -> 3 -> 4]
 			if T is blandness:
 				let R be a random number between 1 and 4;
 				if R is 1, now T is stumbling;
@@ -950,7 +966,8 @@ To DevilPray (T - a clothing):
 				if R is 3, now T is endurance;
 				if R is 4, now T is speed;
 		say "as it is changed into a [printed name of T]!";
-		increase the charge of hotel altar by 180;
+		increase the charge of hotel altar by 300;
+		increase the altar-intensity of hotel altar by 1;
 		compute DevilPayment N;
 	otherwise:
 		say "Nothing seems to happen.".
@@ -961,7 +978,7 @@ Resets the charge of the dungeon altar and triggers any code that needs to run w
 
 +!]
 To reset dungeon altar:
-	if the class of the player is priestess and the player is female and the virgin of the player is 1, now the charge of the dungeon altar is 220;
+	if the class of the player is priestess and the player is female and the vaginalvirgin of the player is 1, now the charge of the dungeon altar is 220;
 	otherwise now the charge of the dungeon altar is 400;
 	if there is a worn demon tail plug, increase the charge of the dungeon altar by 150;
 	force inventory-focus redraw; [This forces the inventory window to redraw]

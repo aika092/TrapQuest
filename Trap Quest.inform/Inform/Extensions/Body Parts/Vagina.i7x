@@ -58,6 +58,7 @@ To decide which object is the concealer of (V - vagina):
 
 To decide which object is the at least partial concealer of (V - vagina):
 	if water-fountain is penetrating asshole, decide on water-fountain;
+	if the player is upright and gloryhole is grabbing the player, decide on gloryhole;
 	if vagina is listed in the armUses of arms, decide on arms;
 	let C be a random worn potentially at least partially vagina covering clothing;
 	decide on C.
@@ -70,6 +71,7 @@ Definition: a clothing (called C) is potentially vagina covering:
 Definition: a clothing (called C) is potentially at least partially vagina covering:
 	if C is see-through, decide no; [if it protects your pussy, it must be covering it.]
 	if C is skirt-covering-crotch or C is potentially pussy covering, decide yes;
+	if (C is crotch-ripped or C is crotch-unzipped) and C is crotch-in-place, decide yes;
 	decide no.
 
 [!<vaginaPresentableRules:Rulebook>*
@@ -199,7 +201,7 @@ REQUIRES COMMENTING
 
 +!]
 To say PussyGape (N - a number):
-	if N < 2, say "virgin[if the virgin of the player is 0]-like[end if]";
+	if N < 2, say "virgin[if the vaginalvirgin of the player is 0]-like[end if]";
 	if N is 2, say "very tight";
 	if N is 3, say "tight";
 	if N is 4, say "slightly open";
@@ -217,7 +219,7 @@ REQUIRES COMMENTING
 +!]
 To say TotalDesc of vagina:
 	if the player is female:
-		if the openness of vagina < 2, say "Your virgin[if the virgin of the player is 0]-like[end if] [vagina] ";
+		if the openness of vagina < 2, say "Your virgin[if the vaginalvirgin of the player is 0]-like[end if] [vagina] ";
 		if the openness of vagina is 2, say "Your very tight [vagina] ";
 		if the openness of vagina is 3, say "Your tight [vagina] ";
 		if the openness of vagina is 4, say "Your slightly aroused [vagina] ";
@@ -286,11 +288,11 @@ To gape (A - vagina) times (X - a number):
 	now the previous openness of vagina is the openness of vagina;
 	while X > 0:
 		decrease X by 1;
-		if the virgin of the player is 1 and there is a live virginity taking thing penetrating vagina:
+		if the vaginalvirgin of the player is 1 and there is a live virginity taking thing penetrating vagina:
 			compute virginity loss;
 		otherwise if the openness of vagina < 10:
 			if the openness of vagina is 0:
-				say "[variable custom style][line break]Ow ow ow[if the virgin of the player is 0], it feels like I'm losing my virginity again[end if]![roman type][line break]";
+				say "[variable custom style][line break]Ow ow ow[if the vaginalvirgin of the player is 0], it feels like I'm losing my virginity again[end if]![roman type][line break]";
 			if the openness of vagina is 3:
 				say "[variable custom style][line break][one of]Oh no, my [vagina] is starting to get wet...[or]My [vagina] is getting wet again...[stopping][roman type][line break]";
 			if the openness of vagina is 5:
@@ -543,7 +545,7 @@ To compute father material of (T - a thing):
 REQUIRES COMMENTING
 
 +!]
-To compute father material of (F - a fuckhole):
+To compute father material of (F - a body part):
 	repeat with M running through father material things penetrating F:
 		now M is inseminating F.
 
@@ -583,7 +585,7 @@ REQUIRES COMMENTING
 
 +!]
 To cancel father material:
-	repeat with F running through fuckholes:
+	repeat with F running through body parts:
 		cancel father material of F;
 	repeat with F running through off-stage vessels:
 		cancel father material of F.
@@ -698,12 +700,11 @@ Figure of PussyObject1 is the file "CharWins/FocusWin/Vagina/pussy1.jpg".
 Figure of PussyObject1B is the file "CharWins/FocusWin/Vagina/pussy1b.jpg".
 
 To decide which figure-name is the examine-image of (T - vagina):
-	if the virgin of the player is 1:
+	if the vaginalvirgin of the player is 1:
 		decide on Figure of PussyObject0;
 	otherwise if the semen volume of vagina > 0:
 		decide on Figure of PussyObject1B;
 	otherwise:
 		decide on Figure of PussyObject1.
-
 
 Vagina ends here.

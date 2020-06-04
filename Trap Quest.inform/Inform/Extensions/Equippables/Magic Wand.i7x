@@ -20,7 +20,7 @@ To decide which number is the raw-masturbation-bonus of (C - a magic wand):
 To decide which number is the damage improvement of (W - a magic wand):
 	let X be MagicPowerDamage + 3;
 	increase X by the magic-modifier of W;
-	increase X by the flat intelligence of the player / 6;
+	increase X by saved-flat-intelligence / 6;
 	if X < 0, decide on 0;
 	decide on X.
 
@@ -34,19 +34,19 @@ To compute climax effect of (E - a magic wand):[copy of the effect from the gold
 	if the body soreness of the player < B, say "[bold type]Somehow your body feels a bit less bruised![roman type][line break]".
 
 To compute attack effect of (W - a magic wand):
-	if attack-type is 1:
+	if attack-type is 5:
 		let R be a random number between 1 and 3;
 		if R is 1 and the total fill of belly < belly limit:
 			let B be the largeness of belly;
-			AssFill 1 Air;
+			AssFill 2 Air;
 			if the largeness of belly > B, say "You notice that your [BellyDesc] has somehow grown in size. It must be the wand?";
 		if R is 2:
 			let B be the largeness of breasts;
-			BustInflate 1;
+			BustInflate 2;
 			if the largeness of breasts > B, say "You notice that your [BreastDesc] have somehow grown in size. It must be the wand?";
 		if R is 3:
 			let H be the total volume of hips;
-			AssInflate 1;
+			AssInflate 2;
 			if the total volume of hips > H, say "You notice that your [AssDesc] have somehow grown in size. It must be the wand?".
 
 To compute takeoff of (W - a magic wand):

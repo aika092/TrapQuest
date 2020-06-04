@@ -15,7 +15,7 @@ A time based rule (this is the mansion statue charge decay rule):
 	if the charge of MansionScenery01 > 0, decrease the charge of MansionScenery01 by time-seconds.
 
 Check touching MansionScenery01:
-	if the player is immobile, say "Aren't you a bit busy?" instead;
+	if the player is immobile or there is a thing wrangling the player, say "Aren't you a bit busy?" instead;
 	if the charge of the noun > 0:
 		allocate 2 seconds;
 		say "Nothing happens. Maybe the magic needs to recharge." instead;
@@ -51,6 +51,7 @@ Check touching MansionScenery01:
 			if K is not cursed:
 				say "your [K] is surrounded by a dark glow! ";
 				curse K;
+				compute summoned quest of K;
 			otherwise:
 				say "your [K] is surrounded by a dark glow and turn into ";
 				decrease the raw-magic-modifier of K by 2;

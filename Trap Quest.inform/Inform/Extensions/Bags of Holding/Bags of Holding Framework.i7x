@@ -8,6 +8,8 @@ Definition: a bag of holding is magic-enhanceable: decide no.
 Definition: a bag of holding is transformation-theme-blockable: decide no. [It will transform away from a theme it shares with other items.]
 Definition: a bag of holding is same-type if theme-share-target is bag of holding.
 
+Definition: a thing is necessary-in-bag: decide yes. [Things that are not necessary-in-bag don't take up an item slot when the player has no bag.]
+
 Definition: a thing is never-in-bag: decide no.
 Definition: a bottle is never-in-bag: decide yes.
 Definition: squeezy-bottle is never-in-bag: decide yes.
@@ -28,7 +30,7 @@ Definition: a thing is currently-in-bag if it is in-bag and there is a worn bag 
 Definition: a thing is currently-not-in-bag if it is carried and it is not currently-in-bag.
 
 To decide which number is not-in-bag:
-	decide on the number of currently-not-in-bag things.
+	decide on the number of currently-not-in-bag necessary-in-bag things.
 
 Check taking something:
 	if not-in-bag >= 15:
@@ -38,17 +40,17 @@ Check taking something:
 			unless the noun is bag of holding, say "You are at your limit for carrying objects[if the noun is not never-in-bag]. If only you still had that bag of holding[end if]." instead.
 
 Check inserting food into bag of holding:
-	say "A warning on the [second noun] says that this would be a horrible idea." instead.
+	say "A warning on [NameDesc of the second noun] says that this would be a horrible idea." instead.
 
 Check inserting bottle into bag of holding:
-	say "A warning on the [second noun] says that this would be a horrible idea." instead.
+	say "A warning on [NameDesc of the second noun] says that this would be a horrible idea." instead.
 
 Check inserting pink pill into bag of holding:
-	say "A warning on the [second noun] says that this would be a horrible idea." instead.
+	say "A warning on [NameDesc of the second noun] says that this would be a horrible idea." instead.
 
 Check inserting something into bag of holding:
 	if the second noun is worn, say "It's already automatically inside." instead;
-	otherwise say "You can only do this when the [second noun] is equipped." instead.
+	otherwise say "You can only do this when [NameDesc of the second noun] is equipped." instead.
 
 Check inking bag of holding:
 	say "You decide that this is too valuable to put in the chute." instead.
@@ -226,6 +228,8 @@ To execute (E - bag-feeding-semen) on (C - a thing):
 		say "Your bag reacts to the semen theme of the [ShortDesc of C], making you feel very thirsty!";
 		if the stomach-water of the player > 1, now the stomach-water of the player is 1;
 		now the stomach-semen of the player is 0;
+		now the stomach-urine of the player is 0;
+		now the stomach-milk of the player is 0;
 		let S be a random squirt dildo;
 		now the fill-colour of S is creamy;
 		now the doses of S is 1;
@@ -241,6 +245,8 @@ To execute (E - bag-feeding-urine) on (C - a thing):
 		say "Your bag reacts to the toilet theme of the [ShortDesc of C], making you feel very thirsty!";
 		if the stomach-water of the player > 1, now the stomach-water of the player is 1;
 		now the stomach-semen of the player is 0;
+		now the stomach-urine of the player is 0;
+		now the stomach-milk of the player is 0;
 		now the fill-colour of champagne-glass is golden;
 		now the doses of champagne-glass is 1;
 		if champagne-glass is held:
@@ -279,7 +285,6 @@ To execute (E - bag-feeding-sex-themes) on (C - a thing):
 			say "Your [MediumDesc of B][']s [manly-penis] theme synergises with the theme of the [MediumDesc of C]! ";
 			if the size of penis > min penis size:
 				PenisDown 1;
-				say "You feel your penis [shrink] into a [ShortDesc of penis].";
 			otherwise:
 				say "You feel a bit more [if the player is a pervert]perverted[otherwise]willing to consider deviant ideas[end if]...";
 				SexAddictUp 1;
@@ -345,7 +350,7 @@ To execute (E - bag-feeding-pink-theme) on (C - a thing):
 
 bag-feeding-wet-diaper is a bag-feeding-effect.
 To execute (E - bag-feeding-wet-diaper) on (C - a thing):
-	if (C is wet diaper or (C is wet knickers and diaper quest is 1)) and the player is not incontinent:
+	if (C is wet diaper or (C is wet knickers and diaper quest is 1)) and the player is not incontinent and incontinence < the max-incontinence of the player:
 		say "Your bag reacts to the wetness! You feel a twinge behind your bladder as it weakens...";
 		increase incontinence by 1.
 

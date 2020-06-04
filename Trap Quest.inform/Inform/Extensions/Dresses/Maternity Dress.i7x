@@ -17,6 +17,7 @@ Definition: a maternity dress is disintegration-protected: decide yes.
 Definition: a maternity dress is class-transformation-protected if the pregnancy of the player > 0.
 Definition: a maternity dress is grey themed: decide yes.
 Definition: a maternity dress is blue themed: decide yes.
+Definition: a maternity dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To compute SelfExamineDesc of (O - a maternity dress):
 	say "A [ShortDesc of O] clings to your [if the pregnancy of the player > 0]pregnant belly. [otherwise]belly. [end if]".

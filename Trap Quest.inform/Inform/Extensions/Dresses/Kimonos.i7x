@@ -3,6 +3,7 @@ Kimonos by Dresses begins here.
 A kimono is a kind of overdress. A kimono is usually unique. A kimono is usually hobble-skirted. An kimono is usually crotch-skirted. The armour of kimono is usually 6. A kimono is usually leg covering. A kimono is usually belly covering. A kimono is usually only arm covering. A kimono is usually fully covering. A kimono is usually silk.
 
 Definition: a kimono is class-transformation-protected if the class of the player is vixen.
+Definition: a kimono is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Part 1 - Kimono of Illusions
 

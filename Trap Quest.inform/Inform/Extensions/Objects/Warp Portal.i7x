@@ -1,26 +1,26 @@
 Warp Portal by Objects begins here.
 
-A warp portal is a kind of thing. A warp portal is not portable. The printed name of warp portal is "[TQlink of item described]warp portal[TQxlink of item described][verb-desc of item described]". The text-shortcut of warp portal is "wpo". Understand "lever" as a warp portal.
+A warp portal is a kind of thing. A warp portal is not portable. The text-shortcut of warp portal is "wpo". Understand "lever" as a warp portal.
 A warp portal has a region called destination. The destination of a warp portal is the dungeon.
 A warp portal can be next-portal-forbidden. [The player can't use this portal until they use a different one.]
-The printed name of a warp portal is "[TQlink of item described]warp portal to the [destination of item described][TQxlink of item described][verb-desc of item described]".
+The printed name of a warp portal is "[TQlink of item described]warp portal[TQxlink of item described][verb-desc of item described]".
 
 hotel portal is a warp portal. hotel portal is in Hotel40.
 dungeon portal is a warp portal. dungeon portal is in Dungeon10.
 mansion portal is a warp portal. mansion portal is in Mansion32.
 school portal is a warp portal. school portal is in School01.
 
-Figure of flexible warp portal is the file "Env/MultiFloor/portal1.png".
-Figure of warp portal is the file "Env/MultiFloor/portal2.png".
+[Figure of flexible warp portal is the file "Env/MultiFloor/portal1.png".]
+Figure of warp portal is the file "Env/MultiFloor/portal1.jpg".
 
 To decide which figure-name is the examine-image of (C - a warp portal):
-	decide on figure of flexible warp portal.
+	decide on figure of warp portal.
 
 To decide which direction is the covered-direction of (C - a warp portal):
 	decide on north.
 
 To say ExamineDesc of (C - a warp portal):
-	say "This giant swirling green portal in the [covered-direction of C] wall will teleport you to another part of the world. There's a lever next to the portal, which might allow you to change the destination. [DestinationDesc of C]".
+	say "This giant swirling green portal in the [covered-direction of C] wall will teleport you to another part of the world[if C is next-portal-forbidden]. Or rather it usually would, but right now this one won't be able to take you anywhere - it's glitching wildly! [bold type]You'll need to go find and use another portal in another region of the world first.[roman type][line break][otherwise].[end if]".
 
 Definition: a warp portal is immune to change: decide yes.
 
@@ -30,42 +30,19 @@ Check entering a warp portal:
 Check pulling a warp portal:
 	try turning the noun instead.
 
-Check turning a warp portal:
-	if the noun is next-portal-forbidden, say "This portal seems to currently be on the fritz - it's glitching wildly! You can't do anything meaningful to it in this state... you'll have to find your way out by foot." instead;
-	allocate 2 seconds;
-	if Hotel01 is not placed and Mansion01 is not placed and (the noun is not in the school or (the player is not an october 2019 top donator and the player is not an october 2019 diaper donator) or the number of appropriate predicaments is 0), say "Nothing happens. Perhaps this lever won't work until you've explored more of the world on your own first..." instead;
-	rotate the noun attempt 1;
-	say "You hear a mechanism whirring, and the portal shimmers. [DestinationDesc of the noun]";
-	[increase the chance of a team predicament by sending a student down if available from the hallway]
-	if the destination of the noun is school and the noun is in the school and the number of students in School01 is 0 and there is a student in School02:
-		let ST be a random student in School02;
-		try ST going south;
-		now ST is moved; [won't move again this turn]
-	do nothing instead.
+[increase the chance of a team predicament by sending a student down if available from the hallway]
+Report going south when the player is in School01:
+	let ST be a random student in School02;
+	if the number of students in School01 is 0 and ST is student:
+		try ST going south.
 
-To rotate (W - a warp portal) attempt (N - a number):
-	if the destination of W is the Dungeon:
-		now the destination of W is the hotel;
-		if N is 1, now N is 2;
-	if the destination of W is the Hotel and (N is 1 or the location of hotel portal is not discovered or W is in the hotel):
-		if debugmode > 1, say "location of hotel portal is [location of hotel portal]. It is [unless the location of hotel portal is discovered]not [end if]discovered.";
-		now the destination of W is the mansion;
-		if N is 1, now N is 2;
-	if the destination of W is the Mansion and (N is 1 or the location of mansion portal is not discovered or W is in the mansion):
-		now the destination of W is the school;
-		if N is 1, now N is 2;
-	if the destination of W is the school and (N is 1 or (W is in the school and ((the player is not an october 2019 top donator and the player is not an october 2019 diaper donator) or the number of appropriate eligible predicaments is 0 or predicamentJustDone is true or the player is not predicament-ready)) or (armband is not worn and ex-princess is not unconcerned)):
-		if N > 1 and newbie tips is 1 and the player is a top donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator]your unlock file is not up-to-date enough[otherwise if predicamentJustDone is true]you haven't returned to the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
-		now the destination of W is the dungeon;
-		if W is in the Dungeon and N < 3, rotate W attempt (N + 1).
-
-To say DestinationDesc of (T - a warp portal):
+[To say DestinationDesc of (T - a warp portal):
 	if T is regionally in school and the destination of T is school:
 		say "The warp portal will now take you to[one of]... the 'Extra Credit' zone? What's that?! Text underneath reads [bold type]'Removes all cursed clothing and earns participating students a [']trophy['].'[if newbie tips is 1][line break][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[end if][roman type][line break][or] the 'extra credit' zone again, where you can free yourself from cursed clothing and earn a trophy.[stopping]";
 	otherwise if T is next-portal-forbidden:
 		say "The warp portal won't currently be able to take you anywhere - it's glitching wildly!";
 	otherwise if T is not regionally in the destination of T:
-		say "The warp portal will currently take you to the [destination of T].".
+		say "The warp portal will currently take you to the [destination of T].".]
 
 To say unique-verb-desc of (T - a warp portal):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]enter[close bracket][as]enter [text-shortcut of T][end link] [link][bracket]switch[close bracket][as]pull lever[end link]".
@@ -99,11 +76,81 @@ To decide which direction is the covered-direction of (C - school portal):
 	decide on south.
 
 predicamentJustDone is initially false. [We only want one 'extra credit' predicament between each lesson.]
+predicamentSavedMakeUp is a number that varies.
+
+To set up predicament status:
+	repeat with C running through held things:
+		if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
+			fully clean C;
+		if C is worn:
+			if C is clothing and C is removable and C is not headgear and C is not combat visor and C is not armband:
+				dislodge C;
+				if C is cursed and the raw strength of the player > 1:
+					say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
+					increase the stolen-strength of C by 1;
+					decrease the raw strength of the player by 1;
+				now C is in Predicament20;
+			otherwise if tough-shit is 0 and C is not armband and C is not combat visor:
+				now C is in Predicament-Pen;
+		otherwise if C is not worn:
+			now C is in Predicament20;
+	if tough-shit is 0:
+		now predicamentSavedMakeUp is the make-up of face;
+		now the make-up of face is 1;
+		now the arousal of the player is 0;
+		now the soreness of vagina is 0;
+		now the soreness of asshole is 0;
+		if the bladder of the player > 1, now the bladder of the player is 1;
+	now the semen coating of face is 0;
+	now the semen coating of hair is 0;
+	now the urine coating of hair is 0;
+	now the semen coating of breasts is 0;
+	now the semen coating of belly is 0;
+	now the semen coating of thighs is 0;
+	now the semen volume of vagina is 0;
+	now the air volume of breasts is 0;
+	now the air volume of hips is 0;
+	now the air volume of belly is 0;
+	empty belly;
+	MouthEmpty;
+	display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
+	refresh the inventory-focus-window. [just to be sure]
 
 To teleport via (W - a warp portal):
 	let D be nothing;
 	now team-predicament-partner is nothing;
 	let NPF be 0;
+	let NOptions be 0;
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	if W is not in the Dungeon:
+		set next numerical response to "go to the Dungeon";
+		increase NOptions by 1;
+	if W is not in the School and ((armband is worn and class-time < 0) or ex-princess is unconcerned):
+		set next numerical response to "go to the School";
+		increase NOptions by 1;
+	if W is not in the Hotel and location of hotel portal is discovered:
+		set next numerical response to "go to the Hotel";
+		increase NOptions by 1;
+	if W is not in the Mansion and location of mansion portal is discovered:
+		set next numerical response to "go to the Mansion";
+		increase NOptions by 1;
+	if W is school portal and (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and predicamentJustDone is false and the number of appropriate eligible predicaments > 0 and the player is predicament-ready:
+		set next numerical response to "go to the Extra Credit Zone";
+		increase NOptions by 1;
+		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
+	if NOptions is 0, say "BUG! Player was able to enter a warp portal with zero viable exits...";
+	unless the printed name of (the chosen numerical response of NOptions) matches the text "Extra" or the player is not a top donator, say "[line break][newbie style]You are currently unable to access the Extra Credit Zone because [if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator]your unlock file is not up-to-date enough[otherwise if predicamentJustDone is true]you haven't returned to the main game world since your most recent extra credit session[otherwise if the number of appropriate eligible predicaments is 0]there are no more predicaments coded for the combination of your current rank, sex, and fetish selection[otherwise if the latex-transformation of the player > 0 or black hood is worn]it wouldn't interact well with your rubbery state[otherwise if (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher]you need to go to class before you can apply for extra credit[otherwise if there is worn locked clothing]you are wearing locked clothing[otherwise]something you are currently wearing (not including headgear) is flagged as not being appropriate to remove (perhaps something with the curse quest of wearing it until your next lesson)[end if].[roman type][line break]";
+	if NOptions > 1, compute multiple choice question;
+	otherwise now player-numerical-response is 1;
+	let T be the printed name of chosen numerical response;
+	if T matches the text "Dungeon":
+		now the destination of W is the Dungeon;
+	otherwise if T matches the text "School" or T matches the text "Extra":
+		now the destination of W is the School;
+	otherwise if T matches the text "Hotel":
+		now the destination of W is the Hotel;
+	otherwise if T matches the text "Mansion":
+		now the destination of W is the Mansion;
 	if W is in the school:
 		if the destination of W is not school:
 			if predicamentJustDone is false and receptionist is in the location of the player:
@@ -114,7 +161,7 @@ To teleport via (W - a warp portal):
 					now team-predicament-partner is M;
 					if there is an eligible appropriate predicament and the player is predicament-ready:
 						now M is in the location of the player;
-						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on the lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
+						say "[bold type]Just as you begin to step into the warp portal, [NameDesc of M] [bold type]appears and yanks on a nearby lever! [roman type][big he of M] grins a mischievous, vindictive grin and waves goodbye as the destination changes to the 'extra credit zone'!";
 						satisfy M;
 						now the destination of W is school;
 		if the destination of W is dungeon:
@@ -154,34 +201,13 @@ To teleport via (W - a warp portal):
 	if playerRegion is school:
 		if the body soreness of the player < 10 and the fatigue of the player > 0, say "[bold type]As you go through the portal, you find your fatigue leaving you.[roman type][line break]"; [no point telling the player that they have a fatigue refresh at 0% HP]
 		now the fatigue of the player is 0;
+	zero focus stuff;
 	if W is D: [School portal leads to extra credit zone. Anything added here might also need to be added to the detention code in Staff Framework.i7x]
 		now the destination of W is the Dungeon;
 		display entire map;
 		let L be the list of eligible appropriate predicaments;
 		say "As you go through the portal, you feel your clothing stolen away by some invisible forces![one of][line break][variable custom style]This isn't like before?![roman type][line break][or][stopping][if debugmode > 0][line break]List of appropriate predicaments: [L][line break][end if]";
-		repeat with C running through held things:
-			if C is clothing and (C is worn or C is not diaper): [held used diapers don't get refreshed]
-				clean C;
-				WaterEmpty C;
-			if C is worn clothing:
-				if C is removable and C is not headgear and C is not combat visor and C is not armband:
-					dislodge C;
-					if C is cursed and the raw strength of the player > 1:
-						say "[bold type]As your [ShortDesc of C] is removed, you feel the curse steal some [one of]of your strength! You probably can only recover the strength by wearing it again after you get it back...[or]more of your strength.[stopping][roman type][line break]";
-						increase the stolen-strength of C by 1;
-						decrease the raw strength of the player by 1;
-					now C is in Predicament20;
-			otherwise if C is not worn:
-				now C is in Predicament20;
-		now the semen coating of face is 0;
-		now the semen coating of hair is 0;
-		now the urine coating of hair is 0;
-		now the semen coating of breasts is 0;
-		now the semen coating of belly is 0;
-		now the semen coating of thighs is 0;
-		empty belly;
-		display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
-		refresh the inventory-focus-window; [just to be sure]
+		set up predicament status;
 		sort L in random order;
 		let P be entry 1 in L;
 		if debugmode > 0, say "selected [P].";
@@ -246,7 +272,6 @@ To teleport via (W - a warp portal):
 		update player region;
 		now the location of the player is discovered;
 		display entire map;
-		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]";
-	progress quest of predicament-quest. [failsafe in case it has been missed at the end of a predicament somehow]
+		say "As you go through the portal, you appear in the [location of the player][one of]! There is an identical green portal in this room too, to allow you to go back and forth![or]![stopping]".
 
 Warp Portal ends here.

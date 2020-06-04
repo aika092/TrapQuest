@@ -50,6 +50,7 @@ There is 1 my tits would like a drink vest top.
 Definition: a my tits would like a drink vest top is drink themed: decide yes.
 Definition: a my tits would like a drink vest top is boob themed: decide yes.
 Definition: a my tits would like a drink vest top is white themed: decide yes.
+Definition: a my tits would like a drink vest top is fetish appropriate if the player is not a flatchested trap.
 
 To decide which figure-name is clothing-image of (C - an my tits would like a drink vest top):
 	decide on figure of my tits would like a drink vest top.
@@ -63,11 +64,11 @@ To say MediumDesc of (C - a my tits would like a drink vest top):
 	say "rude vest top that indicates you [if the semen addiction of the player > 8]enjoy men ejaculating on[otherwise]are fine with people staring at[end if] your tits".
 
 To decide which number is the initial outrage of (C - a my tits would like a drink vest top):
-	decide on 4 + the largeness of breasts / 3.
+	decide on 4.
 
 Part 3 - Real Cowgirls Ride Their Bulls Bareback Vest Top
 
-A real cowgirls ride their bulls bareback vest top is a kind of vest top. The printed name of real cowgirls ride their bulls bareback vest top is usually "[clothing-title-before]real cowgirls ride their bulls bareback vest top[clothing-title-after]". The text-shortcut of real cowgirls ride their bulls bareback vest top is "rcv".
+A real cowgirls ride their bulls bareback vest top is a kind of vest top. A real cowgirls ride their bulls bareback vest top is plentiful. The printed name of real cowgirls ride their bulls bareback vest top is usually "[clothing-title-before]real cowgirls ride their bulls bareback vest top[clothing-title-after]". The text-shortcut of real cowgirls ride their bulls bareback vest top is "rcv".
 
 Figure of real cowgirls ride their bulls bareback vest top is the file "Items/Clothes/Upper/Vests/vest3.png".
 
@@ -90,6 +91,7 @@ To decide which number is the initial outrage of (C - a real cowgirls ride their
 Definition: A real cowgirls ride their bulls bareback vest top is pregnancy related: decide yes.
 Definition: A real cowgirls ride their bulls bareback vest top is interracial themed: decide yes.
 Definition: A real cowgirls ride their bulls bareback vest top is white themed: decide yes.
+Definition: A real cowgirls ride their bulls bareback vest top is fetish appropriate if pregnancy fetish is 1.
 
 Part 4 - Rubber Vest Top
 
@@ -112,7 +114,7 @@ To say MediumDesc of (C - a rubber vest top):
 	say "low cut latex vest top".
 
 To decide which number is the initial outrage of (C - a rubber vest top):
-	decide on 4.
+	decide on 3.
 
 Definition: a rubber vest top is black themed: decide yes.
 

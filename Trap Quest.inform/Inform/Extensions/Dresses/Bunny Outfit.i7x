@@ -105,6 +105,7 @@ Definition: dq bunny outfit is transformation-protected if the class of the play
 
 Definition: dq bunny outfit is displacable: decide no.
 Definition: dq bunny outfit is brown themed: decide yes.
+Definition: dq bunny outfit is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
 Part 5 - Bunny Dress
 

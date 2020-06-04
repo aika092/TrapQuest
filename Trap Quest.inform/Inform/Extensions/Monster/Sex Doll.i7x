@@ -179,7 +179,7 @@ To compute perception of (M - a sex doll):
 		now the sex-length of M is 1;
 		say "[BigNameDesc of M] seems to notice you! Uh-oh...";
 		now M is interested;
-	otherwise if a random number between 6 and 15 < highest body part sex addiction and the player is not immobile and the player is not flying and the player is not dildo stuck:
+	otherwise if a random number between 6 and 15 < highest body part sex addiction and the player is not at least partially immobile and the player is not flying and the player is not dildo stuck:
 		anger M;
 		say "[BigNameDesc of M][']s fake penis wobbles as it walks around. In a moment of weakness, you find yourself dropping to your knees to take it!";
 		allocate 1 seconds;

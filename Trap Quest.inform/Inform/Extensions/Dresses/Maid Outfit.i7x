@@ -176,6 +176,7 @@ To uniquely set up (C - a slutty maid outfit):
 
 Definition: a slutty maid outfit is black themed: decide yes.
 Definition: a slutty maid outfit is black-and-white themed: decide yes.
+Definition: a slutty maid outfit is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To decide which object is the unique-upgrade-target of (M - a slutty maid outfit):
 	let C be a random V-shape maid outfit;
@@ -296,6 +297,7 @@ To decide which number is the initial outrage of (C - a maid waitress outfit):
 Definition: a maid waitress outfit is sissifying: decide yes.
 Definition: a maid waitress outfit is black themed: decide yes.
 Definition: a maid waitress outfit is white themed: decide yes.
+Definition: a maid waitress outfit is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To decide which object is the unique-upgrade-target of (M - a maid waitress outfit):
 	let C be a random off-stage cafe maid outfit;

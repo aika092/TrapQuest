@@ -46,7 +46,7 @@ To compute class outfit of (H - glittering rose):
 	let W be a random off-stage fairy wand;
 	if butterfly wings is off-stage and (butterfly wings is actually summonable or fairy-summoned is 0):
 		if fairy-summoned is 0:
-			repeat with O running through worn dresses:
+			repeat with O running through worn removable breast covering clothing:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		summon butterfly wings uncursed;

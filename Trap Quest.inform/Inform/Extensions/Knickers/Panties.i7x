@@ -91,15 +91,7 @@ To uniquely set up (T - white-breed-panties):
 	set up magic state of T;
 	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
 Report wearing white-breed-panties:
-	if the pregnancy rate of the player is 1:
-		now the pregnancy rate of the player is 2;
-		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
-		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
-	otherwise if the size of penis > min penis size:
-		say "You watch your [ShortDesc of penis] ";
-		if the size of penis > min penis size + 1, PenisDown 2;
-		otherwise PenisDown 1;
-		say "[Shrink] into a [ShortDesc of penis].".
+	compute early pregnancy eagerness.
 To decide which number is the unique outrage of (C - white-breed-panties):
 	decide on 7.
 
@@ -180,15 +172,13 @@ To uniquely set up (T - black-diagram-panties):
 	set up magic state of T;
 	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
 Report wearing black-diagram-panties:
-	if the pregnancy rate of the player is 1:
-		now the pregnancy rate of the player is 2;
+	compute early pregnancy eagerness.
+To compute early pregnancy eagerness:
+	if the pregnancy rate of the player is 1 or the size of penis > min penis size:
 		if the player is male, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
 		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
-	otherwise if the size of penis > min penis size:
-		say "You watch your [ShortDesc of penis] ";
-		if the size of penis > min penis size + 1, PenisDown 2;
-		otherwise PenisDown 1;
-		say "[Shrink] into a [ShortDesc of penis].".
+		if the pregnancy rate of the player is 1, now the pregnancy rate of the player is 2;
+		if the size of penis > min penis size, PenisDown 1.
 
 blue-panties is a panties. The text-shortcut of blue-panties is "bpa".
 To say selfexamineuniquetitle of (G - blue-panties):

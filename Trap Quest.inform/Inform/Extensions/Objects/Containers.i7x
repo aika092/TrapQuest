@@ -332,15 +332,16 @@ To add treasure to (X - a treasure chest):
 		if C is clothing, add C to L;
 		if C is platform heels or C is wedge heels, now the heel-height of C is 3;
 		otherwise now the heel-height of C is 1;
-		let LB be the list of pinkWardrobeAppropriate bras;
-		sort LB in random order;
-		repeat with B running through LB:
-			if B is not bikini top, now C is B;
-		if C is bra:
-			add C to L;
-			now the size of C is the largeness of breasts;
-			if the size of C > the max size of C, now the size of C is the max size of C;
-			if the size of C < the min size of C, now the size of C is the min size of C;
+		if diaper quest is 0 or the player is female or TG fetish is 1:
+			let LB be the list of pinkWardrobeAppropriate bras;
+			sort LB in random order;
+			repeat with B running through LB:
+				if B is not bikini top, now C is B;
+			if C is bra:
+				add C to L;
+				now the size of C is the largeness of breasts;
+				if the size of C > the max size of C, now the size of C is the max size of C;
+				if the size of C < the min size of C, now the size of C is the min size of C;
 		now C is a random pinkWardrobeAppropriate suspenders;
 		if C is clothing, add C to L;
 		now C is a random pinkWardrobeAppropriate skirted overdress;
@@ -350,6 +351,8 @@ To add treasure to (X - a treasure chest):
 		repeat with Z running through L:
 			if Z is in Standard Item Pen, restock Z;
 			now Z is in X;
+			now Z is unsure;
+			now Z is unidentified;
 			if Z is blessed, now Z is bland;
 			if Z is suspenders and the raw-magic-modifier of Z > 0, now the raw-magic-modifier of Z is 0;
 			if the raw-magic-modifier of Z < -2, now the raw-magic-modifier of Z is a random number between -2 and 0;
@@ -522,9 +525,8 @@ Carry out drinking a pedestal:
 	allocate 6 seconds;
 	if a random number between 0 and watersports fetish is 1:
 		say "You put your lips on the end of the [pedestal-variant of the noun] [if diaper lover > 0]sippy cup[otherwise][manly-penis][end if] and suck. It squirts [urine] straight down your throat, with quite some force. [if the urine taste addiction of the player < 7]You cough and splutter![otherwise if the urine taste addiction of the player <= 13][line break][variable custom style]Ack![roman type][line break][otherwise][line break][second custom style]Yum![roman type][line break][end if]";
-		StomachUp the paid of the noun;
+		StomachUrineUp the paid of the noun;
 		if the stomach-liquid of the player > 5, say "Your belly feels very full of [urine].";
-		UrineTasteAddictUp ((the paid of the noun + 1) / 2);
 	otherwise if diaper lover > 0:
 		say "You put your lips on the end of the [pedestal-variant of the noun] sippy cup and suck. Warm sweet fluid immediately rushes into your mouth and straight down your throat![line break]";
 		StomachUp the paid of the noun;

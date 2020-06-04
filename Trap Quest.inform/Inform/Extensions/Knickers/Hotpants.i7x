@@ -32,6 +32,21 @@ To say selfexamineuniquetitle of (K - leopard-hotpants):
 To say UniqueTitle of (K - leopard-hotpants):
 	say "tiny leopard print hotpants".
 
+silvery-hotpants is a hotpants.
+
+The printed name of silvery-hotpants is "[clothing-title-before]pair of silvery hotpants[clothing-title-after]". Understand "silvery" as silvery-hotpants. The text-shortcut of silvery-hotpants is "shp".
+Definition: silvery-hotpants is grey themed: decide yes.
+
+Figure of silvery-hotpants is the file "Items/Clothes/Lower/Underwear/Skimpy/hotpants3.png".
+To decide which figure-name is clothing-image of (H - silvery-hotpants):
+	decide on figure of silvery-hotpants.
+
+To say selfexamineuniquetitle of (K - silvery-hotpants):
+	say "pair of silvery hotpants".
+
+To say UniqueTitle of (K - silvery-hotpants):
+	say "tiny silvery hotpants".
+
 white-hotpants is a hotpants. white-hotpants is sheer-when-wet.
 
 The printed name of white-hotpants is "[clothing-title-before]pair of hotpants[clothing-title-after]". The text-shortcut of white-hotpants is "hp".

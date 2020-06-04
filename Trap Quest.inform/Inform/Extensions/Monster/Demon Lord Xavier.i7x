@@ -116,8 +116,8 @@ To compute perception of (M - demon lord):
 		if there is worn perceived unmessed knickers, compute state check of a random worn messed knickers;
 	otherwise if the player is soulless and the player-class is not succubus:
 		say "[first custom style]'YOU WILL SERVE AS AN IDEAL VESSEL FOR ONE OF MY SERVANTS! KNEEL AND PREPARE YOURSELF!'[roman type]";
-	otherwise if virgin of the player is 1 and the player is female:
-		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH GIRL!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, GIRL! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
+	otherwise if vaginalvirgin of the player is 1 and the player is female:
+		say "[first custom style]'[one of]YOU CANNOT RESIST ME, FOOLISH [caps boy of the player]!'[or]I WILL BE THE FIRST TO IMPALE YOU ON MY MIGHTY COCK, VIRGIN!'[or]I LOVE CHERRIES!'[or]SUBMIT YOURSELF, [caps boy of the player]! YOU CANNOT PROTECT YOUR VIRGINITY FROM ME!'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
 		say "[first custom style]'[one of]HAHAHA! FOOLISH PRINCESS! YOUR KINGDOM WILL BE MY COCKSLEEVE FOR ETERNITY AND SO WILL YOU!'[or][if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 1]SUBMIT, PRINCESS! YOUR BLOODLINE WILL BE TAINTED WITH MY SEED!'[otherwise]YOU CAN RUN NO LONGER, PRINCESS! I WILL FILL YOU WITH MY TAINTED SEED!'[end if][at random][roman type]";
 	otherwise if the player-class is succubus and M is mating and pentagram tattoo is not worn:
@@ -180,10 +180,18 @@ This is the demon transformation rule:
 		summon pentagram tattoo.
 
 This is the xavier prioritises defeating others rule:
-	if the number of undefeated awake monsters in the location of current-monster > 1: [1 is going to be xavier himself]
+	let A be the number of undefeated awake not infernal monsters in the location of current-monster;[he should ignore demonic monsters like imps]
+	if A > 1:[1 is going to be xavier himself]
 		MonsterStomp current-monster;
 		rule succeeds.
 The xavier prioritises defeating others rule is listed last in the xavier priority attack rules.
+
+To MonsterStomp (M - demon lord):
+	let stomped be 0;
+	repeat with N running through undefeated awake not infernal monsters in the location of M:
+		if stomped is 0 and N is not penetrating a body part and N is not grabbing the player and N is not M:
+			compute M stomping N;
+			now stomped is 1.
 
 The monster fucked taunting rule of demon lord is usually the xavier replaces the monster rule.
 This is the xavier replaces the monster rule:
@@ -237,7 +245,7 @@ To compute fuckhole sex of (M - demon lord):
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
-		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, BOY!'[otherwise]HAHAHA! DO YOU LIKE IT, GIRL?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, [caps boy of the player]!'[otherwise]HAHAHA! DO YOU LIKE IT, [caps boy of the player]?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
 	if the reaction of the player > 0:
 		compute sexSubmit of M in F;
 		if the reaction of the player is 2:
@@ -281,7 +289,7 @@ To compute post climax effect of (M - demon lord) in (F - asshole):
 		dignify 800.
 
 To compute unique climax of (M - demon lord) in (F - a fuckhole):[assumes M is male]
-	appropriate-display figure of xavier cutscene 2 for M;
+	cutshow figure of xavier cutscene 2 for M;
 	if M is wrapped, compute wrapped climax of M in F;
 	otherwise compute unprotected climax of M in F.
 
@@ -497,7 +505,7 @@ To compute punishment of (P - xavier-nightmare-gag):
 	UrineSoakUp K by the soak-limit of K;
 	now xavier-throat-link is 1;
 	say "Your mouth is forced open and a metal ring gag is worked inside. You [if the player is feeling submissive]remain obediently silent and allow it to happen[otherwise]try to complain but your words are now unintelligible.[line break][variable custom style]'[muffled sounds][roman type][line break][end if]";
-	if ring gag is actually summonable, summon ring gag cursed;
+	if ring gag is actually summonable, summon ring gag locked;
 	say "You feel a weird pang in your throat, like the gag is performing some kind of magical redesign of your gullet. You squirm nervously.[line break][second custom style]'Yay, I think it's working! My brother is a genius.'[roman type][line break]That does little to settle your stomach, but it doesn't matter what you think. The muscular girl-demon leads you to a place where a thin stone slab sits on the ground, like there's something missing that is supposed to be on top of it. You realise that's probably supposed to be you. Your new owner confirms your suspicions.[line break][second custom style]'Go on then, get up there, slave!'[roman type][line break]After a moment of hesitation you stand in place, and turn to face her. Nothing happens.[line break][second custom style]'Hold your arms out to the side, obviously!'[roman type][line break]That was hardly obvious, but now that you've been given the instruction, you quickly do as you are told. And as your arms reach horizontal, the ground begins to shake. Two stone pillars begin to emerge from the ground either side of you, underneath your hands. You expect your hands to be knocked out of the way but instead the pillars phase straight through them. Your immediate reaction is to pull your hands back but they're now completely stuck, sealed inside the concrete! As you struggle to move your arms, a thin plank of stone emerges from each pillar at neck height, connecting around your neck and welding themselves together perfectly. You now can't move your arms or your neck!";
 	say "[second custom style]'Oopsie! Looks like you're stuck!'[roman type][line break]Your captor teases you as she turns to adjust something behind her. As she walks away from it you can see what it is - some kind of water jet! And now she appears to be turning a valve...![line break][second custom style]'Ready, aim fire!'[roman type][line break]A powerful blast of water shoots in an arc from the jet, right into your open mouth. You have no choice but to begin drinking, to avoid choking![line break][second custom style]'Congratulations, you are now a water feature! I'll come and change you whenever I remember.'[roman type][line break]And just like that, you are left alone.";
 	appropriate-cutscene-display figure of cutscene-xavier-nightmare-gag-clean;
@@ -535,13 +543,13 @@ To compute punishment of (P - xavier-nightmare-belt):
 		MessSet R to 0;
 		now the foreign-mess of R is 0;
 	if there is a worn diaper:
-		say "[first custom style]'Okay now here, put this on.'[roman type][line break]Just like with his mother, the young demon uses a flick of his finger to summon something - ";
+		say "[first custom style]'Okay now here, put this on.'[roman type][line break][if xavier-diaper-link is 1]Just like with his mother, the[otherwise]The[end if] young demon uses a flick of his finger to summon something - ";
 	otherwise:
 		summon D;
-		say "[first custom style]'Okay now. Here, put these on.'[roman type][line break]Just like with his mother, the young demon uses a flick of his finger to send a big thick disposable diaper rocketing across the room towards your nether regions, wrapping itself around your loins and taping itself shut. But that's not all - ";
+		say "[first custom style]'Okay now. Here, put these on.'[roman type][line break][if xavier-diaper-link is 1]Just like with his mother, the[otherwise]The[end if] young demon uses a flick of his finger to send a big thick disposable diaper rocketing across the room towards your nether regions, wrapping itself around your loins and taping itself shut. But that's not all - ";
 	say "a belt comes whizzing at you from one corner of the room and locks itself around your waist[if BL is belt], destroying your [ShortDesc of BL] as it does[end if]. It has a strange symbol made out of hexagons on the front, and you feel something magic radiate inside of you. You watch in [horror the diaper addiction of the player] as you feel the contents of your bladder [if diaper messing >= 3]and rectum [end if]multiply rapidly in size, making your belly expand and round out. You look like you're six or seven months pregnant.";
 	if BL is belt, destroy BL;
-	summon demon belt cursed;
+	summon demon belt;
 	now xavier-belt-link is 2;
 	if there is a worn tattoo and the number of worn belly tattoos is 0:
 		summon demon belly mark;
@@ -550,6 +558,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	if diaper messing < 3, appropriate-cutscene-display figure of cutscene-xavier-nightmare-belt-clean;
 	say "The matter inside you doubles, triples, quadruples in volume, and keeps going! Your belly bulges and swells and expands, making you look like you're eight months pregnant. The pressure on your bladder[if diaper messing >= 3] and bowels[end if] is now immediately too much - you instantly wet[if diaper messing >= 3] and mess[end if] yourself, beginning to fill your [if D is worn]new [end if]diaper with your shame. By the time your belly has visibly deflated a bit and you are able to regain control of your body, your diaper is already feeling rather soggy and full.";
 	if diaper messing >= 3, appropriate-cutscene-display figure of cutscene-xavier-nightmare-belt-messy;
+	[TODO add some sort of choice to make, so that these images definitely appear]
 	say "The true nature of your predicament dawns on you. Whatever you consume will now multiply in quantity many times as it reaches your stomach - and you somehow know this new enchantment is irreversibly permanent. Your short term problem becomes abundantly clear - you effectively have eight to ten servings in front of you to somehow force down. Each spoonful is essentially a whole meal![paragraph break]";
 	say "The effects of the next spoonful is just as bad as the first. As soon as the soup hits your stomach, you find yourself immediately peeing[if diaper messing >= 3] and pooping[end if], filling the room with more hissing and crinkling and driving you wild with [if the diaper addiction of the player > 13]arousal[otherwise]shame[end if]. This time you find yourself allowing your body to continue excavating itself, emptying your entire [if diaper messing >= 3]belly[otherwise]bladder[end if] load into your now overly full nappy. The demon prince gives a childish snigger before snapping his fingers, causing your diaper to become completely dry once again.";
 	say "[first custom style]'Poor baby can't hold her [if diaper messing >= 3]bottom back[otherwise]tinkles[end if] at all! You're going to go through a LOT of diapers from now on, aren't you?'[roman type][line break]You can't deny it - that seems like an inevitable truth.[line break][first custom style]'Did I tell you to stop? Keep going.'[roman type][line break]You sigh and submissively return to slurping down spoonfuls of soup[if diaper messing >= 3] in between bites of bread[end if]. Each mouthful turns very quickly into another soiling session, meaning you spend the next ten minutes in an almost permanent state of using your diaper, with it getting magically cleaned every time it reaches the brink of overflowing. When you are close to the end of your magic mega meal, the prince interrupts you once more.[line break][first custom style]'Okay, this has been fun. The invention has been a complete success. For our final little test, I want you to hold it all in until the end, now.'[roman type][line break]You groan but comply, feeling your belly strain and grow to sizes impossible from just [if diaper messing >= 3]drink[otherwise]food[end if] in the real world. But finally you are done! And just as well - you're going to burst any second. He laughs vindictively.[line break][first custom style]'I think I'll leave this one for my father to witness.'[roman type][line break]He snaps his fingers one final time and his world quickly disappears.[line break]";

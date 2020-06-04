@@ -70,7 +70,7 @@ Report kicking when there are worn WC thigh high boots:
 		otherwise:
 			decrease the powerup of C by 1.
 
-black-leather-boots is a boots. black-leather-boots is leather. The printed name of black-leather-boots is "[clothing-title-before]pair of black latex [heel-height of the item described] inch knee high boots[clothing-title-after]".The text-shortcut of black-leather-boots is "lkhb".
+black-leather-boots is a boots. black-leather-boots is leather. The printed name of black-leather-boots is "[clothing-title-before]pair of black leather [heel-height of the item described] inch knee-high boots[clothing-title-after]".The text-shortcut of black-leather-boots is "lkhb".
 
 Figure of black leather boots is the file "Items/Clothes/Lower/Feet/Boots/leatherboots1.png".
 
@@ -88,6 +88,31 @@ To say ClothingDesc of (H - black-leather-boots):
 	say SteadinessDesc of H.
 
 To say UniqueShortDesc of (H - black-leather-boots):
+	say "black leather high heeled boots".
+
+black-leather-flat-boots is a shoes. black-leather-flat-boots is leather. The printed name of black-leather-flat-boots is "[clothing-title-before]pair of black leather flat knee-high boots[clothing-title-after]".The text-shortcut of black-leather-flat-boots is "lfb".
+
+Figure of black leather flat boots is the file "Items/Clothes/Lower/Feet/Boots/leatherboots2.png".
+
+Definition: black-leather-flat-boots is fluid immune: decide yes.
+Definition: black-leather-flat-boots is black themed: decide yes.
+
+To decide which number is the initial outrage of (C - black-leather-flat-boots):
+	decide on 1.
+
+To decide which figure-name is the clothing-image of (H - black-leather-flat-boots):
+	decide on figure of black leather flat boots.
+
+To say ClothingDesc of (H - black-leather-flat-boots):
+	say "This pair of knee-high black leather boots laces up at the front. It has a gothic feel.";
+	say SteadinessDesc of H.
+
+To say UniqueShortDesc of (H - black-leather-flat-boots):
 	say "black leather knee high boots".
+
+To decide which object is the unique-upgrade-target of (H - black-leather-flat-boots):
+	if black-leather-boots is off-stage, decide on black-leather-boots;
+	decide on nothing.
+
 
 Thigh High Boots ends here.

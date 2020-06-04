@@ -163,7 +163,6 @@ To StrengthDown (X - a number):
 
 Book - Dexterity
 
-
 Part 1 - Calculate Dexterity
 
 [!<DecideWhatNumberIsTheDexterityInfluenceOfThing>+
@@ -310,7 +309,6 @@ To Dexdown (X - a number):
 		if the raw dexterity of the player > 1, decrease the raw dexterity of the player by 1.
 
 Book - Intelligence
-
 
 Part 1 - Calculate Intelligence
 
@@ -578,9 +576,5 @@ To decide which number is fetish-bonus of the player:
 		decide on player-enhancement / 8;
 	otherwise:
 		decide on 0.
-
-
-
-
 
 Calculating Stats ends here.

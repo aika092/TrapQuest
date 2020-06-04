@@ -37,7 +37,6 @@ To compute default cursed drinking (X - a bottle):
 	if R is 5:
 		if the size of penis > min penis size:
 			PenisDown 1;
-			say "Your [player-penis] [shrink]s into a [ShortDesc of penis].";
 		otherwise if diaper quest is 1:
 			now R is 8;
 		otherwise:
@@ -48,7 +47,6 @@ To compute default cursed drinking (X - a bottle):
 		if diaper quest is 1:
 			if the size of penis > min penis size:
 				PenisDown 1;
-				say "Your [player-penis] [shrink]s into a [ShortDesc of penis].";
 			otherwise:
 				now R is 8;
 		otherwise:
@@ -111,6 +109,10 @@ To compute drinking (X - a bottle):
 			now the curse-ID of X is sure; [We know this potion is good so the vessel must be fine too!]
 		otherwise:
 			compute drinking effect the fill-type of X;
+			if the fill-type of X is 20: [semen]
+				repeat with T running through things inseminating X:
+					now T is inseminating face;
+				if X is monster-origin, now face is monster-origin;
 			if the fill-type of X < lowest-cursed or the fill-type of X > highest-cursed or (X is can or (X is sure and X is not cursed)):
 				now the curse-ID of X is sure;
 				now the Known corresponding to an Magic of the fill-type of X in the Table of Drinks is 1;
@@ -258,58 +260,36 @@ Definition: a clothing (called C) is positive-magic-enhanceable:
 
 Definition: a clothing is magic-enhanceable if it is cursable.
 
-[!<ComputeDrinkingEffect20>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 20):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
-		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck! Your worst fears are confirmed, you just drank someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're drinking someone's [semen]! It's actually quite tasty though.[otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";
+		say "A slimy feel, and a bitter salty taste. [if the semen taste addiction of the player < 6]Yuck! Your worst fears are confirmed, you just tasted someone's [semen]![otherwise if the semen taste addiction of the player < 10]Holy shit, this drink is someone's [semen]![otherwise if the semen taste addiction of the player < 13]Oh, looks like you're tasting someone's [semen]![otherwise]Oh yay, it's your favourite drink, some unknown stud's [semen]![end if]";
 	otherwise:
 		say "A slimy feel, and a bitter salty taste. Yep, that's some more [semen], [if the semen taste addiction of the player < 6]yuck![otherwise if the semen taste addiction of the player < 10]how naughty.[otherwise if the semen taste addiction of the player < 13]not bad.[otherwise]your favourite drink![end if]";
-	StomachSemenUp 1;
-	progress quest of creampie-drinking-quest.
+	FaceFill semen by 1;
+	suggest swallowing.
 
-[!<ComputeDrinkingEffect21>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 21):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
 		if the urine taste addiction of the player < 10, say "A very bitter taste. Yuck, yuck, yuck, it's [urine]![one of] You feel completely humiliated[if the humiliation of the player > 22500], which of course just turns you on even more[end if].[or].[or].[in random order]";
 		otherwise say "A very bitter taste. Ooh yum, it's [urine]!";
 	otherwise:
-		say "You close your eyes and drink the [if the urine taste addiction of the player > 11]tasty [end if][urine]. [if the urine taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the urine taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
-	humiliate 175;
-	UrineTasteAddictUp 1;
-	progress quest of piss-drinking-quest.
+		say "You close your eyes and slurp up the [if the urine taste addiction of the player > 11]tasty [end if][urine]. [if the urine taste addiction of the player < 7]You shudder with shame and disgust.[otherwise if the urine taste addiction of the player < 13]You catch yourself licking your lips afterwards![otherwise]You lick your lips with glee.[end if]";
+	FaceFill urine by 1;
+	suggest swallowing.
 
-[!<ComputeDrinkingEffect22>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 22):
 	if the Known corresponding to an Magic of N in the Table of Drinks is 0:
 		say "A very familiar taste. Oh nice, it's [milk]! That must be healthy.";
 	otherwise:
 		say "[one of]A[or]Another[stopping] healthy gulp of [milk]. Yum!";
-	MilkDrunkUp 1;
+	FaceFill milk by 1;
 	if the noun is blessed, increase the fat-burning of the player by 100;
-	if diaper quest is 1, progress quest of puddle-licking-quest;
-	progress quest of milk-drinking-quest.
+	suggest swallowing.
 
-[!<ComputeDrinkingEffect23>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute drinking effect (N - 23):
 	say "You close your eyes and drink the mix of liquids.[one of] You cringe and shudder in shame[if the humiliation of the player > 29500], which of course just turns you on even more[end if].[or].[or].[in random order]";
-	humiliate 250;
-	StomachSemenUp 1;
-	if lactation fetish is 1, increase the fat-burning of the player by 250.
+	FaceFill murkwater by 1;
+	suggest swallowing.
+
 
 Drink Effects ends here.

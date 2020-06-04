@@ -49,6 +49,8 @@ Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
 	if K is not messed knickers, say "You're not wearing any underwear that needs cleaning." instead;
 	if diaper quest is 1 and the class of the player is priestess, say "Your headband is somehow forbidding you from doing this!" instead;
 	now wipeChecking is true;
+	now autoremove is false;
+	now summoning is 0;
 	if K is actually removable: [if this check fails it'll explain why]
 		now wipeChecking is false;
 		if the player is immobile or the player is in danger, say "Aren't you a bit busy?" instead;

@@ -68,7 +68,7 @@ To compute unique summoning of (C - a bra):
 	if the largeness of breasts >= the min size of C and the largeness of breasts <= the max size of C, now the size of C is the largeness of breasts.
 
 To decide which object is the unique-upgrade-target of (C - a bra):
-	if there is a worn demonic wearthing and tongue-bra is off-stage, decide on tongue-panties;
+	if diaper quest is 0 and there is a worn demonic wearthing and tongue-bra is off-stage, decide on tongue-bra;
 	if diaper quest is 1, decide on a random off-stage training bra;
 	decide on nothing.
 

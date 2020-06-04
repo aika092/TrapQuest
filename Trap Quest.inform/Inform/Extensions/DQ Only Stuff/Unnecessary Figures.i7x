@@ -152,8 +152,6 @@ To decide which figure-name is Figure of Gladiator Cutscene 9:
 	decide on figure of small image.
 To decide which figure-name is Figure of Gladiator Cutscene 10:
 	decide on figure of small image.
-To decide which figure-name is Figure of Gladiator Cutscene 11:
-	decide on figure of small image.
 
 To decide which figure-name is Figure of Gladiator Cutscene 15:
 	decide on figure of small image.
@@ -358,8 +356,16 @@ To decide which figure-name is Figure of Lips Cutscene 3:
 To decide which figure-name is Figure of Modmachine Cutscene 1:
 	decide on figure of small image.
 
-To get oral creampie image for (M - a thing):
-	do nothing.
+To decide which figure-name is Figure of Oral Creampie Cutscene 1:
+	decide on figure of small image.
+To decide which figure-name is Figure of Oral Creampie Cutscene 2:
+	decide on figure of small image.
+To decide which figure-name is Figure of Oral Creampie Cutscene 3:
+	decide on figure of small image.
+To decide which figure-name is Figure of Oral Creampie Cutscene 4:
+	decide on figure of small image.
+To decide which figure-name is Figure of Oral Creampie Cutscene 6:
+	decide on figure of small image.
 
 To decide which figure-name is Figure of Photo Display Predicament:
 	decide on figure of small image.

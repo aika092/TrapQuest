@@ -149,6 +149,8 @@ To compute appearance assessment of (M - a supporter):
 			compute grope of M;
 		otherwise:
 			say FriendlySluttyPerception of M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
@@ -226,11 +228,6 @@ To compute facial climax of (M - a supporter):
 
 To compute facial strapon climax of (M - a supporter):
 	say FacialStraponClimaxFlav of M;
-	if the player is a deepthroater or the player is not gag-prone:
-		say "In a skilful display, you take the whole dildo down your throat without gagging.";
-	otherwise:
-		say "You can't help but gag on the dildo as it pounds against the entrance to your throat, bringing tears to your eyes.";
-		PainUp 1;
 	say "[big he of M] pulls out, satisfied, and loses interest.";
 	TimesSubmittedUp M by 1;
 	orgasm bore M.
@@ -400,7 +397,7 @@ Section - Optional Changes
 [This stuff the supporter can customise if they wish.]
 
 To say DisapprovalFlav of (M - a supporter): [This is when the player is in some way looking suddenly more lewd in front of the NPC, maybe because they pulled out their tits, or maybe because a trap pulled up their skirt, or jizzed on them, or similar.]
-	say "[BigNameDesc of M] [one of]blows a wolf-whistle in your direction.[or]grabs [his of M] crotch as [he of M] sees you.[or]licks [his of M] lips lecherously.[or]looks you in the eyes and sticks his tongue between two fingers, licking wildly, which makes a very crude gesture.[in random order]".
+	say "[BigNameDesc of M] [one of]blows a wolf-whistle in your direction.[or]grabs [his of M] crotch as [he of M] sees you.[or]licks [his of M] lips lecherously.[or]looks you in the eyes and sticks [his of M] tongue between two fingers, licking wildly, which makes a very crude gesture.[in random order]".
 
 To say CurtseyReactionFlav of (M - a supporter):
 	let K be a random worn currently visible knickers;
@@ -428,7 +425,7 @@ To say IdentifiablePosterReactionFlav of (M - a supporter):
 	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
 
 To say UnidentifiablePosterReactionFlav of (M - a supporter):
-	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if the player is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
+	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
 
 To say PresentFriendlyAcceptanceFlav of (M - a supporter): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
 	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
@@ -607,7 +604,7 @@ To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strapon
 [Vaginal & Anal]
 
 To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying her [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
+	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying [his of M] [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
 
 [###SUPPORTERS WITHOUT A PENIS OR STRAPON ONLY###]
 

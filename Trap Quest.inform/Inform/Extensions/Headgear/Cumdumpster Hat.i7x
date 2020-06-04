@@ -105,7 +105,7 @@ To progress quest of (Q - condom-eating-quest):
 				if C is thirsty work condom hat:
 					transform C into cumdumpster condom hat;
 				otherwise:
-					say "[BigNameDesc of C] wiggles happily! But becuase you are still wearing some used condoms, it doesn't want to reward you just yet. You either need to eat them all or collect some more!";
+					say "[BigNameDesc of C] wiggles happily! But because you are still wearing some used condoms, it doesn't want to reward you just yet. You either need to eat them all or collect some more!";
 			otherwise:
 				say "[BigNameDesc of C] wiggles happily! [one of]If you keep this up, surely you'll be rewarded eventually.[or]Keep it up![stopping]".
 

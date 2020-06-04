@@ -201,7 +201,7 @@ To compute class outfit of (H - WC hood):
 			repeat with O running through worn bras:
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
-		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body![line break][variable custom style][if the humiliation of the player < 27500]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
+		say "[bold type]Your hood pulses once, and then a white catsuit materialises over your body![line break][variable custom style][if the player is not disgraced]Holy crap, is this icon on the front what I think it is?![otherwise]Oh, I get what this icon on the front means. I'm a human toilet now![end if][roman type][line break]";
 		summon C uncursed;
 		if toilet-summoned is 0, now toilet-summoned is 1;
 	otherwise if B is actually summonable or (B is boots and toilet-summoned < 2):
@@ -212,7 +212,7 @@ To compute class outfit of (H - WC hood):
 		say "[bold type]Your hood pulses once, and then a pair of white latex thigh high boots appear on your feet![roman type][line break]";
 		summon B uncursed;
 		if toilet-summoned < 2, now toilet-summoned is 2;
-	otherwise if P is actually summonable or (P is knickers and toilet-summoned < 3 and asshole is not actually occupied and vagina is not actually occupied):
+	otherwise if P is actually summonable or (diaper quest is 0 and P is knickers and toilet-summoned < 3 and asshole is not actually occupied and vagina is not actually occupied):
 		if toilet-summoned < 3:
 			repeat with K running through worn knickers:
 				say "Your [K] [wardrobeVanishes of K]!";
@@ -377,7 +377,7 @@ To compute persistent reward of (Q - clown-quest) on (C - a clothing):
 
 Part - Trainee Hood
 
-trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetized. trainee hood is magnetized. trainee hood is not roleplay.
+trainee hood is a hood. trainee hood has a number called training-progress. The training-progress of trainee hood is 0. trainee hood can be magnetised. trainee hood is magnetised. trainee hood is not roleplay.
 
 The printed name of trainee hood is "[TQlink of item described][item style]trainee hood[clothing-title-after]". The text-shortcut of trainee hood is "th".
 
@@ -387,19 +387,19 @@ To say ClothingDesc of (H - trainee hood):
 To decide which number is the perceived-bimbo-influence of (C - trainee hood):
 	decide on 2.
 Definition: a trainee hood is whore themed: decide yes.
-Definition: a trainee hood is removable if it is not magnetized.
+Definition: a trainee hood is removable if it is not magnetised.
 
 trainee hood removability rules is a rulebook. The removability rules of trainee hood is trainee hood removability rules.
 
-This is the magnetized trainee hood can't be removed rule:
-	if the wearing-target is magnetized:
+This is the magnetised trainee hood can't be removed rule:
+	if the wearing-target is magnetised:
 		if summoning is 0 and autoremove is false, say "The magnetic latches keep the [printed name of the wearing-target] all but immobile. You'll need to find a way to deactivate it if you want to get it off.";
 		rule fails.
-The magnetized trainee hood can't be removed rule is listed in the trainee hood removability rules.
+The magnetised trainee hood can't be removed rule is listed in the trainee hood removability rules.
 
 Report wearing trainee hood:
 	say "The magnetic latches snap closed as you finish putting it on.";
-	now the noun is magnetized.
+	now the noun is magnetised.
 
 To compute class outfit of (H - trainee hood):[TODO: improve]
 	if the training-progress of H is 3:
@@ -410,13 +410,13 @@ To compute class outfit of (H - trainee hood):[TODO: improve]
 		only destroy H;
 		ProgressUp senior robobellboy;
 	otherwise if face is not actually occupied:
-		say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breath in happily, knowing that whatever it is, it[']ll do something fun! The silicon lips slowly open after a few seconds, hugging even tighter to the real ones underneath[otherwise if the bimbo of the player > 9]breath in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breath in, coughing reflexively as the silicon lips slowly open again, subtly hugging tighter to the real ones underneath[end if].";
+		say "The [printed name of H] emits a short tone and the metal ring collapses, forcing your lips shut as your mouth fills with thick, sweet smelling smoke. You [if the bimbo of the player > 13]breathe in happily, knowing that whatever it is, it'll do something fun! The silicone lips slowly open after a few seconds, hugging even tighter to the real ones underneath[otherwise if the bimbo of the player > 9]breathe in cautiously, knowing your airway is too restricted to have any choice. A funny feeling lingers at the back of your throat as the silicone lips slowly open again, subtly hugging tighter to the real ones underneath[otherwise]hold your breath desperately, but with your restricted airway you have no choice but to breathe in, coughing reflexively as the silicone lips slowly open again, subtly hugging tighter to the real ones underneath[end if].";
 		FaceUp 1;
-		SemenTasteAddictUp 1;
+		OralSexAddictUp 1;
 		increase the training-progress of H by 1.
 
 To demagnetise (C - a clothing):[Do not call this function unless you know it is a magnetic item.]
 	say "The [C] emits a sharp tone and the magnetic latches snap open!";
-	now C is not magnetized.
+	now C is not magnetised.
 
 Hoods ends here.

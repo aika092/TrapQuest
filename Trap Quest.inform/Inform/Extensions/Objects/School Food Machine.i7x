@@ -34,12 +34,11 @@ Carry out MachineFeeding:
 		say "[if M is intelligent]The[otherwise]Even though you aren't sure how intelligent it is, the[end if] fact that [NameDesc of M] is watching you eat [if diaper quest is 0]something with [semen] in it, and [end if]so messily makes you shiver with shame.";
 		humiliate 100;
 	StomachFoodUp 2;
-	if diaper quest is 0:
-		StomachSemenUp 1;
-		if the humiliation of the player >= 40000 or the player is not able to use their hands or the player is wrist bound behind:
-			let H be a random off-stage puppy ears;
-			if H is actually summonable:
-				summon H cursed;
-				say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
+	if diaper quest is 0, StomachSemenUp 1;
+	if the player is broken or the player is not able to use their hands or the player is wrist bound behind:
+		let H be a random off-stage puppy ears;
+		if H is actually summonable:
+			summon H cursed;
+			say "[bold type]Suddenly, a pair of [ShortDesc of H][bold type] appear on your head[if the bimbo of the player < 9]![line break][variable custom style]I am NOT a dog[end if]![roman type][line break]".
 
 School Food Machine ends here.

@@ -1,8 +1,8 @@
 Scrunchies by Headgear begins here.
 
-A scrunchie is a kind of headgear. A scrunchie is usually hair growing.
+A scrunchie is a kind of headgear. A scrunchie is usually hair growing. Understand "scrunchie" as a scrunchie.
 
-A scrunchie is blondeness-positive. A scrunchie is brightness-positive. A scrunchie is redness-positive. A scrunchie is usually roleplay. A scrunchie is womanly.
+A scrunchie is blondeness-positive. A scrunchie is brightness-positive. A scrunchie is redness-positive. A scrunchie is womanly.
 
 The printed name of scrunchie is usually "[clothing-title-before]blue scrunchie[clothing-title-after]". The printed plural name of scrunchie is usually "[clothing-title-before]blue scrunchies[clothing-title-after]". The text-shortcut of scrunchie is "scr".
 
@@ -35,10 +35,6 @@ The scrunchie must be the same colour rule is listed in the headgear wearability
 
 To set up influence of (C - a scrunchie):
 	set up submissiveness-based influence of C.
-
-To decide which figure-name is the clothing-image of (C - a scrunchie):
-	if C is pink scrunchie, decide on figure of pink scrunchie;
-	decide on figure of blue scrunchie.
 
 [!<YourselfIsPonytailed>+
 
@@ -77,7 +73,15 @@ Chapter 1 - Pink Scrunchie
 
 [Obtained from the mannequin]
 
-A pink scrunchie is a kind of scrunchie. There are 2 cursed pink scrunchies. The text-shortcut of pink scrunchie is "pscr". Figure of pink scrunchie is the file "Items/Accessories/Head/scrunchie1.png".
+A pink scrunchie is a kind of scrunchie. pink-scrunchie-1 is a pink scrunchie. pink-scrunchie-2 is a pink scrunchie. The text-shortcut of pink-scrunchie-1 is "psc1". The text-shortcut of pink-scrunchie-2 is "psc2". pink-scrunchie-1 is roleplay.
+Understand "pink" as a pink scrunchie.
+Figure of left pink scrunchie is the file "Items/Accessories/Head/scrunchie1a.png".
+Figure of right pink scrunchie is the file "Items/Accessories/Head/scrunchie1b.png".
+
+To decide which figure-name is the examine-image of (C - pink-scrunchie-1):
+	decide on figure of left pink scrunchie.
+To decide which figure-name is the examine-image of (C - pink-scrunchie-2):
+	decide on figure of right pink scrunchie.
 
 The printed name of a pink scrunchie is "[clothing-title-before]pink scrunchie[clothing-title-after]".
 The printed plural name of a pink scrunchie is "[clothing-title-before]pink scrunchies[clothing-title-after]".
@@ -172,7 +176,17 @@ Chapter 2 - Blue Scrunchie
 
 [The first is obtained from dungeon apothecary, second is obtained from hotel library.]
 
-A blue scrunchie is a kind of scrunchie. 1 cursed blue scrunchie is in Dungeon27. 1 cursed blue scrunchie is in Hotel24. The text-shortcut of blue scrunchie is "bscr". Figure of blue scrunchie is the file "Items/Accessories/Head/scrunchie2.png".
+A blue scrunchie is a kind of scrunchie. A blue scrunchie is usually cursed. blue-scrunchie-1 is a blue scrunchie. blue-scrunchie-2 is a blue scrunchie. blue-scrunchie-1 is in Dungeon27. blue-scrunchie-2 is in Hotel24. The text-shortcut of blue-scrunchie-1 is "bsc1". The text-shortcut of blue-scrunchie-2 is "bsc2". blue-scrunchie-2 is roleplay. [This is the one that is unobtainable for longer]
+Understand "blue" as a pink scrunchie.
+
+
+Figure of left blue scrunchie is the file "Items/Accessories/Head/scrunchie2a.png".
+Figure of right blue scrunchie is the file "Items/Accessories/Head/scrunchie2b.png".
+
+To decide which figure-name is the examine-image of (C - blue-scrunchie-1):
+	decide on figure of left blue scrunchie.
+To decide which figure-name is the examine-image of (C - blue-scrunchie-2):
+	decide on figure of right blue scrunchie.
 
 Definition: a blue scrunchie is immune to change: decide yes.
 Definition: a blue scrunchie is blue themed: decide yes.
@@ -246,7 +260,7 @@ To compute class outfit of (H - a blue scrunchie):
 				repeat with SK running through worn breast covering clothing:
 					say "Your [ShortDesc of SK] [wardrobeVanishes of SK]!";
 					now SK is in pink wardrobe;
-			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Tee hee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
+			say "[bold type]A very skimpy tartan tube top shimmers into existence around your [BreastDesc]![line break][variable custom style]I guess that makes me a slutty schoolgirl. [if the bimbo of the player < 8]Sigh... there[']s more, isn[']t there.[otherwise if the bimbo of the player > 12]Teehee! I guess I am being pretty naughty. I hope there[']s more to this outfit...[end if][roman type][line break]";
 			summon O uncursed;
 			now O is confidence;
 			if tentacle-quest is appropriate, now the quest of O is tentacle-quest;
@@ -273,12 +287,12 @@ To compute class outfit of (H - a blue scrunchie):
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 			now schoolgirl-summoned is 2;
-			summon R;
+			summon R uncursed;
 			now the raw-magic-modifier of R is 1;
 			if tentacle-quest is appropriate, now the quest of R is tentacle-quest;
 			say "[bold type]A black fleece appears on you, followed by a short skirt and a matching tie![line break][variable custom style]I guess that makes me a [if diaper quest is 1]naughty[otherwise]slutty[end if] schoolgirl. [if the bimbo of the player < 8]Sigh...[end if][roman type][line break]";
 		otherwise if there is a worn schoolgirl outfit and S is actually summonable:
-			summon S;
+			summon S uncursed;
 			now the raw-magic-modifier of S is 1;
 			now S is confidence;
 			say "[bold type]White cotton stockings appear around your [ShortDesc of thighs]![roman type][line break]".
@@ -313,12 +327,18 @@ To compute generic first time class reward of (Q - recipe-quest) on (C - a cloth
 
 Chapter 3 - Monkey Scrunchie
 
-A monkey scrunchie is a kind of scrunchie. There are 2 monkey scrunchies. The text-shortcut of monkey scrunchie is "mscr". A monkey scrunchie is not roleplay. Figure of monkey scrunchie is the file "Items/Accessories/Head/scrunchie3.png".
+A monkey scrunchie is a kind of scrunchie. monkey-scrunchie-1 is a monkey scrunchie. monkey-scrunchie-2 is a monkey scrunchie. The text-shortcut of monkey-scrunchie-1 is "msc1". The text-shortcut of monkey-scrunchie-2 is "msc2".
+
+Figure of left monkey scrunchie is the file "Items/Accessories/Head/scrunchie3a.png".
+Figure of right monkey scrunchie is the file "Items/Accessories/Head/scrunchie3b.png".
+
+To decide which figure-name is the clothing-image of (C - monkey-scrunchie-1):
+	decide on figure of left monkey scrunchie.
+To decide which figure-name is the clothing-image of (C - monkey-scrunchie-2):
+	decide on figure of right monkey scrunchie.
 
 Definition: a monkey scrunchie is brown themed: decide yes.
 
-To decide which figure-name is the clothing-image of (C - a monkey scrunchie):
-	decide on figure of monkey scrunchie.
 
 The printed name of monkey scrunchie is usually "[clothing-title-before]monkey scrunchie[clothing-title-after]".
 The printed plural name of monkey scrunchie is usually "[clothing-title-before]monkey scrunchies[clothing-title-after]".
@@ -372,7 +392,7 @@ To compute class outfit of (C - a pigtail-scrunchie):
 
 Chapter 5 - Helium Balloons
 
-A pair of helium balloons is a kind of pigtail-scrunchie. A pair of helium balloons is usually latex. A pair of helium balloons is not roleplay. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
+A pair of helium balloons is a kind of pigtail-scrunchie. A pair of helium balloons is usually latex. The text-shortcut of a pair of helium balloons is "pohb". There is 1 pair of helium balloons.
 
 To decide which figure-name is the clothing-image of (C - a pair of helium balloons):
 	decide on figure of helium balloons.
@@ -411,7 +431,7 @@ To decide which object is the unique-upgrade-target of (C - a scrunchie):
 
 Chapter 6 - Condom Pigtails
 
-A condom pigtails is a pigtail-scrunchie. A condom pigtails is latex. A condom pigtails is not roleplay. The text-shortcut of a condom pigtails is "cndp".
+A condom pigtails is a pigtail-scrunchie. A condom pigtails is latex. The text-shortcut of a condom pigtails is "cndp".
 
 To decide which figure-name is the clothing-image of (C - a condom pigtails):
 	decide on figure of condom pigtails.

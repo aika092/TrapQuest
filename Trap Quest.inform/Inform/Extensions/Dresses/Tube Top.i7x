@@ -24,7 +24,7 @@ To uniquely set up (C - a tube top):
 
 This is the remove inappropriate tube tops rule:
 	repeat with B running through tube tops:
-		unless B is cyan tube top or B is tartan tube top or B is silver tube top, now B is in Holding Pen.
+		unless B is cyan tube top or B is tartan tube top or B is silver tube top or B is jacket, now B is in Holding Pen.
 The remove inappropriate tube tops rule is listed in the diaper quest fix rules.
 
 To set up influence of (C - a tube top):
@@ -180,7 +180,6 @@ To say MediumDesc of (C - a pink tube top):
 
 Definition: a pink tube top is pink themed: decide yes.
 
-
 Part 7 - Yellow Exposing Tube Top
 
 A yellow exposing tube top is a kind of tube top. A yellow exposing tube top is usually ridiculously low cut. A yellow exposing tube top is normally-nipple-exposing. A yellow exposing tube top is usually transformation-rare.
@@ -227,11 +226,6 @@ To set up influence of (C - a jacket):
 
 To say ShortDesc of (C - a jacket):
 	say "[clothing-material of C] jacket".
-
-This is the remove inappropriate jackets rule:
-	repeat with B running through rubber jackets:
-		now B is in Holding Pen.
-The remove inappropriate jackets rule is listed in the diaper quest fix rules.
 
 A rubber jacket is a kind of jacket.
 The printed name of rubber jacket is usually "[clothing-title-before]latex jacket[clothing-title-after]". The text-shortcut of rubber jacket is "ja".

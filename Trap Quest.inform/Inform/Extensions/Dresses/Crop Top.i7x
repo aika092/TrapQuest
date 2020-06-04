@@ -315,7 +315,7 @@ To say ShortDesc of (C - rugged-crop-top):
 	say "rugged crop top".
 
 To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
-	if leopard print tube top is off-stage, decide on leopard print tube top.
+	if leopard print tube top is off-stage and diaper quest is 0, decide on leopard print tube top.
 
 nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.jpg". Understand "nipple", "holes" as nipples-crop-top.
 To decide which figure-name is clothing-image of (H - nipples-crop-top):

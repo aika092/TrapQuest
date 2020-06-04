@@ -12,7 +12,7 @@ To decide which figure-name is clothing-image of (C - a cultist robe):
 	decide on figure of cultist robe.
 
 To say ClothingDesc of (C - a cultist robe):
-	say "In theory a black robe, but in practice this is just a piece of sheer fabric providing only barely more covering than nothing at all. ".
+	say "In theory a black robe, but in practise this is just a piece of sheer fabric providing only barely more covering than nothing at all. ".
 
 To say ShortDesc of (C - a cultist robe):
 	say "sheer black robe".
@@ -23,5 +23,6 @@ To compute SelfExamineDesc of (C - a cultist robe):
 Definition: a cultist robe is transformation-protected if the class of the player is cultist.
 Definition: a cultist robe is black themed: decide yes.
 Definition: a cultist robe is slitted: decide yes.
+Definition: a cultist robe is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Cultist Robe ends here.

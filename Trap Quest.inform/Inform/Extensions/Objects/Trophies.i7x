@@ -152,10 +152,10 @@ To say ExamineDesc of (T - ejaculate-trophy):
 Carry out TrophySwitching ejaculate-trophy:
 	say "You rub the trophy[if the player is wrist bound behind] with your nose[end if]. ";
 	if the trophy-mode of ejaculate-trophy is 0:
-		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]drinking and digesting [semen] is no longer addictive, but also everyone in this world will now ejaculate huge amounts of [semen].[roman type][line break]";
+		say "The trophy's glow changes from red to green. You can tell that from now on, [bold type]swallowing [semen] is no longer addictive, but also everyone in this world will now ejaculate huge amounts of [semen].[roman type][line break]";
 		now the trophy-mode of ejaculate-trophy is 1;
 	otherwise:
-		say "The trophy's glow changes from green to red. You can tell that [bold type]the volume of everyone's ejaculation has returned to normal and that drinking and digesting [semen] will once again increase your addiction to it.[roman type][line break]";
+		say "The trophy's glow changes from green to red. You can tell that [bold type]the volume of everyone's ejaculation has returned to normal and that swallowing [semen] will once again increase your addiction to it.[roman type][line break]";
 		now the trophy-mode of ejaculate-trophy is 0.
 
 diaper-trophy is a trophy. The printed name of diaper-trophy is "[TQlink of item described]diaper trophy[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of diaper-trophy is "dipt". Understand "diaper" as diaper-trophy.
