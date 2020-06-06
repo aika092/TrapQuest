@@ -220,7 +220,6 @@ Definition: yourself is consenting:
 		if inputNumber is not consent-responsive:
 			say "Input not understood. Please choose Y or N.";
 	conclude consenting;
-	zero focus stuff; [We empty the focus window to make sure it is rebuilt properly]
 	if inputNumber is 89 or inputNumber is 121, decide yes;
 	decide no.
 
@@ -232,7 +231,8 @@ bigGameLoop is a number that varies. [If this is above 0, we are flagging that a
 
 To conclude consenting:
 	now currentlyConsenting is false;
-	if bigGameLoop is 0, refresh the map-window;
+	zero focus stuff; [We empty the focus window to make sure it is rebuilt properly. By being forced to pause and choose an option, the player has seen any cutscenes, NPCs that left, etc.]
+	if bigGameLoop is 0 or temporary-map-figure is not figure of no-image-yet or currentlyConsenting is true, refresh the map-window;
 	if bigGameLoop < 2, render buffered stuff.
 
 [Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
@@ -240,7 +240,7 @@ Definition: yourself is bimbo consenting:
 	if the player is consenting:
 		decide yes;
 	otherwise:
-		if the implant of ultimate-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20:
+		if the player is not in a predicament room and (the implant of ultimate-lesson-yes is 1 or the bimbo of the player >= a random number between 16 and 20):
 			say "[if the implant of ultimate-lesson-yes is 1]The curse activates.[line break][second custom style][otherwise][second custom style]Huh? [end if]Good [boy of the player]s always say yes! I pick yes![roman type][line break]";
 			decide yes;
 		decide no.
@@ -248,8 +248,8 @@ Definition: yourself is bimbo consenting:
 [works the same as normal consenting, unless bimbo forces the player to say no. For some things the 'bimbo' answer is no.]
 Definition: yourself is reverse bimbo consenting:
 	if the player is consenting:
-		if the bimbo of the player >= a random number between 16 and 20:
-			say "[second custom style]No no no, I can't do that, I'm a [if diaper quest is 1]good girl[otherwise]a mega-slut, and I'm going to act like a slut[end if].[roman type][line break]";
+		if the player is not in a predicament room and the bimbo of the player >= a random number between 16 and 20:
+			say "[second custom style]No no no, I can't do that, I'm a [if diaper quest is 1]good [boy of the player][otherwise]mega-slut, and I'm going to act like a slut[end if].[roman type][line break]";
 			decide no;
 		decide yes;
 	otherwise:
@@ -595,7 +595,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a vine):
-	if inline hyperlinks >= 2, say "[if T is penetrating a fuckhole or T is grabbing the player] [link][bracket]pull[close bracket][as]pull vine[end link][end if]".
+	if inline hyperlinks >= 2, say "[if T is penetrating a fuckhole or T is wrangling the player] [link][bracket]pull[close bracket][as]pull vine[end link][end if]".
 
 [!<SayUniqueVerbDescOfthrone>+
 
@@ -913,7 +913,7 @@ To compute smart links:
 	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
 		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]wash in water[end link] ";
-	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is not barbie)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
+	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is female or the size of penis > 0)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
 	if inline hyperlinks >= 3 and the player is not immobile:
 		say "[line break]";
 		if diaper quest is 0:

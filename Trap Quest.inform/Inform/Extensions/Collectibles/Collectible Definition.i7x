@@ -19,7 +19,7 @@ To decide which number is the heaviness of (C - a mass collectible):
 	decide on 0.
 
 Definition: a mass collectible is fetish appropriate: decide yes.
-
+Definition: a mass collectible is necessary-in-bag: decide no.
 Definition: a mass collectible is ingredient: decide no.
 
 Collectible Definition ends here.

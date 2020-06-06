@@ -113,9 +113,9 @@ To compute school periodic effect of (C - predicament-painted-cutoffs):
 		if the player is in a park room, cutshow Figure of painted cutoffs predicament;
 		if C is hand-blocked:
 			let T be a random carried thing;
-			if T is a thing or the player is prone or refactoryperiod > 0:
+			if T is a thing or the player is prone or refractoryperiod > 0:
 				say bold type;
-				if refactoryperiod > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
+				if refractoryperiod > 0, say "You can't bring yourself to cover the hand prints of your [C] while your oversensitive clit is still recovering from your recent orgasm!";
 				otherwise say "You can't cover the hand prints of your [C] while [if T is a thing]carrying [NameDesc of T][otherwise]on your knees[end if][bold type].";
 				say "[roman type][line break]";
 				now the defaultLeftTarget of arms is the player;

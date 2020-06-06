@@ -35,9 +35,4 @@ To set up influence of (C - a chainmail top):
 To decide which object is the unique-upgrade-target of (C - a chainmail top):
 	decide on a random off-stage fishnet top.
 
-This is the remove inappropriate chainmail tops rule:
-	repeat with B running through chainmail tops:
-		now B is in Holding Pen.
-The remove inappropriate chainmail tops rule is listed in the diaper quest fix rules.
-
 Chainmail Top ends here.

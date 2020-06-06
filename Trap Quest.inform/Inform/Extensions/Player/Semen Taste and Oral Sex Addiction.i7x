@@ -94,7 +94,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is craving semen:
-	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 14:
+	if the stomach-semen of the player is 0 and the semen volume of face is 0 and the semen taste addiction of the player > 14:
 		if cold turkey > the semen taste addiction of the player * 20, decide no;
 		decide yes;
 	decide no.
@@ -105,7 +105,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is desperately craving semen:
-	if the stomach-semen of the player is 0 and the semen taste addiction of the player > 17:
+	if the stomach-semen of the player is 0 and the semen volume of face is 0 and the semen taste addiction of the player > 17:
 		if cold turkey > the semen taste addiction of the player * 20, decide no;
 		decide yes;
 	decide no.
@@ -160,19 +160,20 @@ To SilentlyOralSexAddictDown (X - a number):
 To SilentlyOralSexAddictDown:
 	if the raw oral sex addiction of the player > 1, decrease the raw oral sex addiction of the player by 1.
 
-[!<SemenTasteAddictUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To SemenTasteAddictUp (X - a number):
-	if the latex-transformation of the player > 4:
-		now X is 0;
 	if there is a worn pure totem:
 		let S be a random worn pure totem;
 		say "Your [printed name of S] glows brightly and slowly disintegrates.";
 		only destroy S;
 		decrease X by 3;
+	let S be the semen taste addiction of the player;
+	SilentlySemenTasteAddictUp X;
+	let S be the semen taste addiction of the player - S;
+	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the semen taste addiction of the player > 13]addicted to[otherwise if the semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
+
+To SilentlySemenTasteAddictUp (X - a number):
+	if the latex-transformation of the player > 4:
+		now X is 0;
 	while X > 0:
 		decrease X by 1;
 		if the raw semen taste addiction of the player < 20 and (watersports fetish is 1 or a random number between -1 and yellow theme bonus < 1): [When watersports is disabled, yellow items help suppress semen taste addiction gains]

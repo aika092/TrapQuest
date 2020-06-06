@@ -53,6 +53,8 @@ To decide which object is the unique-upgrade-target of (C - a flowing priestess 
 To decide which number is the skirtLength of (C - a flowing priestess outfit):
 	decide on 10.
 
+Definition: a flowing priestess outfit is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
+
 Part 2 - Dainty Priestess Outfit
 
 A dainty priestess outfit is a kind of priestess outfit. There is 1 dainty priestess outfit.
@@ -74,10 +76,13 @@ To decide which object is the unique-upgrade-target of (C - a dainty priestess o
 	decide on a random off-stage revealing priestess outfit.
 
 Definition: a dainty priestess outfit is slitted: decide yes.
+Definition: a dainty priestess outfit is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Part 3 - Revealing Priestess Outfit
 
 A revealing priestess outfit is a kind of priestess outfit. There is 1 revealing priestess outfit.
+
+A revealing priestess outfit is hobble-skirted. A revealing priestess outfit is crotch-skirted.
 
 Figure of revealing priestess outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess3.png".
 
@@ -94,6 +99,8 @@ To decide which number is the initial outrage of (C - a revealing priestess outf
 
 To decide which object is the unique-upgrade-target of (C - a revealing priestess outfit):
 	decide on a random off-stage playdude priestess outfit.
+
+Definition: a revealing priestess outfit is slitted: decide yes.
 
 Part 4 - Playdude Priestess Outfit
 
@@ -117,7 +124,7 @@ To decide which object is the unique-upgrade-target of (C - a playdude priestess
 
 Part 6 - Translucent Priestess Outfit
 
-A translucent priestess outfit is a kind of priestess outfit. There is 1 translucent priestess outfit. A translucent priestess outfit is usually sheer. A translucent priestess outfit is usually high cut.
+A translucent priestess outfit is a kind of priestess outfit. There is 1 translucent priestess outfit. A translucent priestess outfit is usually sheer. A translucent priestess outfit is usually high cut. A translucent priestess outfit is hobble-skirted. A translucent priestess outfit is crotch-skirted.
 
 Figure of translucent priestess outfit is the file "Items/Clothes/Upper/Special/Priestess/priestess6.png".
 

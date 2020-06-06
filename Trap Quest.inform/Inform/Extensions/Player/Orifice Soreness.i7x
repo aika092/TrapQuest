@@ -174,7 +174,7 @@ To passively stimulate (F - a body part) from (T - an object):
 			increase AR by 100;
 		otherwise:
 			increase AR by 50;
-		if debuginfo > 0, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
+		if debuginfo > 1, say "[input-style]Stimulation of [F][if T is a thing] by [T][end if]: Body part base ([if F is fuckhole or F is penis]350) + addiction & sensitivity bonus ([A * 20])[otherwise if F is breasts]200) + sensitivity bonus ([A * 20])[otherwise if F is hips or F is thighs]100)[otherwise]50)[end if] + stimulation ([ST * 20]) = [AR][roman type][line break]";
 		arouse AR.
 
 [!<latestAssholeInvader:Object>*
@@ -207,8 +207,12 @@ To communicate struggling of (F - a fuckhole):
 		if (F is asshole and latest-asshole-invader is not T) or (F is vagina and latest-vagina-invader is not T): [We haven't recently discussed how this is tearing the player apart]
 			if F is asshole, now latest-asshole-invader is T;
 			otherwise now latest-vagina-invader is T;
-			if ungape is 0, say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting [if the soreness of F < 6]sore very quickly[otherwise]more and more sore[end if][or]even further[stopping].";
-			otherwise say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth.".
+			if ungape is 0:
+				say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]! Your [one of]poor hole[or][variable F][stopping] [if the girth of T > the openness of F][one of]stretches[or]is stretched[or]widens[or]is gaped[at random] [one of]painfully and is getting sore very quickly[or]even further[stopping][otherwise]is getting sore very quickly[end if].";
+			otherwise:
+				say "[BigFuckerDesc of T] [if the girth of T > the openness of F]is much too big[otherwise]is destroying your poor [variable F][end if]";
+				if the girth of T > the openness of F, say "! Your [one of]poor hole[or][variable F][stopping] [one of]has to stretch painfully wide[or]is stretched to uncomfortable levels[or]widens unnaturally[at random] to accommodate the [if the girth of T > 8]ridiculously massive[otherwise if the girth of T > 6]massive[otherwise if the girth of T > 4]huge[otherwise]large[end if] girth";
+				say ".".
 
 [!<RuinRollFuckhole>+
 
@@ -226,11 +230,11 @@ To RuinRoll (F - a fuckhole):
 		if debuginfo > 0, say "[input-style]Soreness increase roll: d10 ([R]) | ([X].5) [F] tolerance[roman type][line break]";
 		decrease X by R;
 		if X < 0 and the soreness of F < 10, increase the soreness of F by 1; [Increase soreness if RNG dictates]
-		if the virgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is possessing a vagina and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
+		if the vaginalvirgin of the player is 1 and there is a live virginity taking thing penetrating F and the player is female and F is vagina: [We must always allow the player to lose their virginity this way even if they are gaped & even if they succeeded the avoid soreness roll]
 			gape F times 1;
 		otherwise if the analvirgin of the player is 1 and there is a live virginity taking thing penetrating F and F is asshole:
 			gape F times 1;
-		otherwise if X < -5 and the soreness of F < 10: [Double soreness and gape increasing]
+		otherwise if T is live and X < -5 and the soreness of F < 10: [Double soreness and gape increasing]
 			if debuginfo > 0, say "[input-style]BONUS DOUBLE SORENESS [if the largest girth inside F > the openness of F]& GAPE [end if](difference was greater than 5)[roman type][line break]";
 			communicate struggling of F;
 			increase the soreness of F by 1;

@@ -7,9 +7,9 @@ To check attack of (M - a monster):
 		now the alert of the player is 1;
 		if M is delayed:
 			compute correct delay of M;
-		otherwise if the paralyze-status of M > 0:
+		otherwise if the paralyse-status of M > 0:
 			now the last-interaction of M is 1;
-			decrease the paralyze-status of M by 1;
+			decrease the paralyse-status of M by 1;
 			compute paralysis of M;
 		otherwise:
 			compute attack of M.
@@ -25,7 +25,7 @@ To compute delay of (M - a monster):
 	say "[BigNameDesc of M] doesn't do anything, as if waiting to see what you do next.".
 
 To compute paralysis of (M - a monster):
-	say "[BigNameDesc of M] [if the paralyze-status of M > 0]doesn't seem able to move[otherwise]can move again[end if]!";
+	say "[BigNameDesc of M] [if the paralyse-status of M > 0]doesn't seem able to move[otherwise]can move again[end if]!";
 
 To compute attack of (M - a monster):
 	now current-monster is M;
@@ -138,7 +138,7 @@ To orgasm (M - a monster):
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
 	if ghost-strapon is worn, compute ghostGrowth of M;
 	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, compute betrothal of M;
-	compute refactoryReset of M;
+	compute refractoryReset of M;
 	if M is infernal, progress quest of demon-slut-quest;
 	let vm be a random video-monitor in the location of the player;
 	if vm is video-monitor and the video-caller of vm is not the throne and vm is not recording-disgrace:
@@ -155,14 +155,14 @@ To orgasm (M - a monster):
 		say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
 		ChargeDown S by 60.
 
-To compute refactoryReset of (M - a monster):
+To compute refractoryReset of (M - a monster):
 	if the blue-balls of M > 0, now the blue-balls of M is 0;
 	if M is intelligent:
-		now the refactory-period of M is the refactory-time of M;
-		if royal scepter is worn and the charge of royal scepter > 2, increase the refactory-period of M by (the refactory-time of M + 4);
+		now the refractory-period of M is the refractory-time of M;
+		if royal scepter is worn and the charge of royal scepter > 2, increase the refractory-period of M by (the refractory-time of M + 4);
 		if there is a worn enhancing book of anal and M is penetrating asshole:
 			FavourUp M;
-			increase the refactory-period of M by the intelligence of the player.
+			increase the refractory-period of M by the intelligence of the player.
 
 To compute priestessBlessing of (M - a monster):
 	if the class of the player is priestess:
@@ -170,7 +170,7 @@ To compute priestessBlessing of (M - a monster):
 			say "Your stomach flips over and a voice appears in your head: 'You have shamed yourself laying with [him of M], Sister! Do not insult your goddess!'";
 			increase the charge of the dungeon altar by 30;
 		otherwise:
-			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the virgin of the player is 1 and the player is possessing a vagina]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
+			say "You can feel a surge in your holy aura and a voice appears in your head: '[if the vaginalvirgin of the player is 1 and the player is female]Noble[otherwise]Dutiful[end if] Sister, there is still more work to be done!'";
 			decrease the charge of the dungeon altar by 150;
 			if ritual-beads is worn, heal asshole times (the soreness of asshole / 5);
 			if M is penetrating vagina and runic headband is not purity, heal vagina times (the soreness of vagina / 5);
@@ -261,11 +261,6 @@ To TimesSubmittedUp (M - a monster):
 	increase the sex-count of the player by 1;
 	if there is a worn tethering lipstick collar, end tethering.
 
-Definition: a monster (called M) is coercing a swallow:
-	if the player is desperate to drink semen, decide yes;
-	if a random number between 10 and 20 < the delicateness of the player, decide yes;
-	decide no.
-
 [!<ComputeFacialClimaxOfMonster>+
 
 This function handles the oral "climax" of a monster. By default, this can end in one of four ways. First, a resisting player can escape at the last second, avoiding semen on their face or in their mouth, which should trigger the angry punishment function for this monster. Second, the monster can ejaculate on the player's face. Third, the monster can ejaculate in the player's mouth, prompting them to swallow. If they don't, we should call the angry punishment function. Fourth, the monster can deepthroat the player so they swallow automatically
@@ -288,13 +283,19 @@ To compute default facial climax for (M - a monster):
 			otherwise: [the player submitted]
 				compute facial accepting of M;
 		otherwise:[Internal cumshot]
-			if the reaction of the player is 0:
+			if player-gagging is true:
+				compute deepthroat creampie of M;
+			otherwise if the reaction of the player is 0:
 				compute oral creampie of M;
+			otherwise if M is willing to tongue creampie:
+				compute merciful oral creampie of M;
 			otherwise:[submitted, deepthroat]
 				compute deepthroat creampie of M;
 	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
 		if M is interested, orgasm satisfy M;[dislodges him automatically]
 		otherwise orgasm dislodge M.
+
+Definition: a monster is willing to tongue creampie if the favour of it > a random number between 0 and (the aggro limit of it + 5). [Cums on the player's tongue instead of down their throat]
 
 [!<ComputeClimaxOfMonsterInFuckhole>+
 
@@ -429,9 +430,11 @@ To compute default facial sex of (M - a monster):
 		decrease the sex-length of M by 1;
 	otherwise:
 		if the reaction of the player is 0:
+			if the throating of M is 0 and M is male and M is not patron, now the throating of M is 1; [patrons handled separately]
 			say OralResisting of M;
 			say OralResistingResponse of M;
-			if a random number between 1 and 2 is 1, decrease the sex-length of M by 1;
+			[if a random number between 1 and 2 is 1, decrease the sex-length of M by 1;] [now there's a risk of puking, I don't feel the need to increase the average duration]
+			decrease the sex-length of M by 1;
 		otherwise:
 			say OralSubmissionResponse of M;[The idea here is that the player and "M" are working together, so we don't unnecessarily restrict ourselves with two flavour functions]
 			decrease the sex-length of M by 1.
@@ -519,7 +522,7 @@ To compute erection sex of (M - a monster):
 
 Chapter 2 Priority Attack
 
-[If the monster has any unique actions that it would sometimes rather do than follow normal attack logic, those go here. These should generally not involve the player, so an example would be the giant wasp fertilizing an egg]
+[If the monster has any unique actions that it would sometimes rather do than follow normal attack logic, those go here. These should generally not involve the player, so an example would be the giant wasp fertilising an egg]
 
 This is the priority attack rule:
 	follow the priority attack rules of current-monster;
@@ -821,7 +824,7 @@ To say SelectionFrustrated of (M - a monster):
 	bore M.
 
 This is the selection frustrated rule:
-	if the player is immobile, compute SelectionWaiting of current-monster;
+	if the player is at least partially immobile, compute SelectionWaiting of current-monster;
 	otherwise say SelectionFrustrated of current-monster;
 	rule fails.
 The selection frustrated rule is listed last in the default diaper quest rules.
@@ -1282,7 +1285,8 @@ Determines the strength of a monster for an action.
 
 +!]
 To decide which number is the strength roll of (M - a monster):
-	let D be the difficulty of M + a random number between 1 and (the difficulty of M / 2);
+	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
+	let S be the strength of the player + the weight of the player;
 	if debugmode is 1, say "Player [strength of the player] | [D].5 [ShortDesc of M][line break]";
 	decide on D.
 

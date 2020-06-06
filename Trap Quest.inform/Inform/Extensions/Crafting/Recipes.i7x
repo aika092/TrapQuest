@@ -50,7 +50,7 @@ To say ExamineDesc of (C - a recipe):
 			if current-crafting-key >= 51 and current-crafting-key <= 54:
 				say "The recipe says 'Place any [ShortestDesc of H] in the bowl and the Goddess will do the rest.'";
 			otherwise:
-				say "The recipe just says '[if H is vessel]Pour any liquid from[otherwise]Place[end if] a [ShortDesc of H] into the bowl and the Goddess will do the rest.'";
+				say "The recipe just says '[if H is vessel]Pour any liquid from a [ShortVesselDesc of H][otherwise]Place a [ShortDesc of H][end if] into the bowl and the Goddess will do the rest.'";
 		otherwise:
 			say "This recipe is impossible to craft. I guess someone should probably submit a bug report, with the following information:[line break]CURRENT-CRAFTING-KEY: [current-crafting-key]. CURRENT-ALCHEMY-KEY: [current-alchemy-key]. RECIPE-KEY: [recipe-key of C][line break]";
 			display complete alchemy data;

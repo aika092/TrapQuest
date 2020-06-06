@@ -47,7 +47,7 @@ Figure of ballet shoes is the file "Items/Clothes/Lower/Feet/Ballet/balletshoes1
 There is 1 ballet shoes.
 
 To say ClothingDesc of (C - a ballet shoes):
-	say "A pair of magic pink cotton ballet shoes[if C is worn] that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practice for walking in real heels in the future[end if].".
+	say "A pair of magic pink cotton ballet shoes[if C is worn] that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practise for walking in real heels in the future[end if].".
 
 To decide which object is the unique-upgrade-target of (C - a ballet shoes):
 	if there is a worn diaper, decide on a random off-stage baby booties;
@@ -72,7 +72,7 @@ Figure of sissy ballet boots is the file "Items/Clothes/Lower/Feet/Ballet/ballet
 There is 1 sissy ballet boots.
 
 To say ClothingDesc of (C - a sissy ballet boots):
-	say "A pair of magic pink PVC ballet shoes with frilly bits that go up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practice for walking in real heels in the future[end if].".
+	say "A pair of magic pink PVC ballet shoes with frilly bits that go up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practise for walking in real heels in the future[end if].".
 
 To decide which number is the unique outrage of (C - a sissy ballet boots):
 	if diaper quest is 1, decide on 0;
@@ -95,7 +95,7 @@ There is 1 thigh high ballet boots.
 Definition: a thigh high ballet boots is IcarusScienceAppropriate if it is actually summonable.
 
 To say ClothingDesc of (C - a thigh high ballet boots):
-	say "A pair of magic pink latex ballet shoes with criss-cross lacing that goes up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practice for walking in real heels in the future[end if].".
+	say "A pair of magic pink latex ballet shoes with criss-cross lacing that goes up to the bottom of your knees[if C is worn] and that force your feet onto tiptoes at all times. However you seem to be brilliant at walking in them! This is probably good practise for walking in real heels in the future[end if].".
 
 To decide which number is the unique outrage of (C - a thigh high ballet boots):
 	if diaper quest is 1, decide on 0;

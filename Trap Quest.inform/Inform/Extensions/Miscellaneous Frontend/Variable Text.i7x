@@ -364,6 +364,9 @@ REQUIRES COMMENTING
 To say urinate:
 	say "[one of][if the bimbo of the player < 5]urinate[otherwise]wee[end if][or]pee[or]piss[purely at random]".
 
+To say harden:
+	say "[one of]harden[or]stiffen[or]grow[at random]".
+
 [!<SayMilk>+
 
 REQUIRES COMMENTING
@@ -381,11 +384,23 @@ To decide which text is man of (M - a thing):
 To decide which text is man of (M - a person):
 	decide on "[if M is neuter]being[otherwise if M is presenting as female]woman[otherwise]man[end if]".
 
+To decide which text is big man of (M - a thing):
+	decide on man of M in title case.
+
+To decide which text is caps man of (M - a thing):
+	decide on man of M in upper case.
+
 To decide which text is men of (M - a thing):
 	decide on "[if M is live]beings[otherwise]things[end if]".
 
 To decide which text is men of (M - a person):
 	decide on "[if M is neuter]beings[otherwise if M is presenting as female]women[otherwise]men[end if]".
+
+To decide which text is big men of (M - a thing):
+	decide on men of M in title case.
+
+To decide which text is caps men of (M - a thing):
+	decide on men of M in upper case.
 
 To decide which text is sissy-girl:
 	decide on "[if lady fetish is 2]sissy[otherwise]girl[end if]".
@@ -399,6 +414,12 @@ To decide which text is boy of (M - a thing):
 To decide which text is boy of (M - a person):
 	decide on "[if M is neuter]youngling[otherwise if M is presenting as female]girl[otherwise]boy[end if]".
 
+To decide which text is big boy of (M - a thing):
+	decide on boy of M in title case.
+
+To decide which text is caps boy of (M - a thing):
+	decide on boy of M in upper case.
+
 To decide which text is he of (M - a thing):
 	decide on "[if M is live]they[otherwise]it[end if]".
 
@@ -408,11 +429,23 @@ To decide which text is he of (M - a person):
 To decide which text is big he of (M - a thing):
 	decide on he of M in title case.
 
+To decide which text is caps he of (M - a thing):
+	decide on he of M in upper case.
+
 To decide which text is him of (M - a thing):
 	decide on "[if M is live]them[otherwise]it[end if]".
 
 To decide which text is him of (M - a person):
 	decide on "[if M is neuter]it[otherwise if M is presenting as female]her[otherwise]him[end if]".
+
+To decide which text is big him of (M - a thing):
+	decide on him of M in title case.
+
+To decide which text is caps him of (M - a thing):
+	decide on him of M in upper case.
+
+To decide which text is caps his of (M - a thing):
+	decide on his of M in upper case.
 
 To decide which text is his of (M - a thing):
 	decide on "[if M is live]their[otherwise]its[end if]".
@@ -420,14 +453,20 @@ To decide which text is his of (M - a thing):
 To decide which text is his of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]her[otherwise]his[end if]".
 
+To decide which text is big his of (M - a thing):
+	decide on his of M in title case.
+
+To decide which text is caps his of (M - a thing):
+	decide on his of M in upper case.
+
 To decide which text is hers of (M - a thing):
 	decide on "[if M is live]theirs[otherwise]its[end if]".
 
 To decide which text is hers of (M - a person):
 	decide on "[if M is neuter]its[otherwise if M is presenting as female]hers[otherwise]his[end if]".
 
-To decide which text is big his of (M - a thing):
-	decide on his of M in title case.
+To decide which text is big hers of (M - a thing):
+	decide on hers of M in title case.
 
 To decide which text is himself of (M - a thing):
 	decide on "[if M is live]themselves[otherwise]itself[end if]".
@@ -457,12 +496,15 @@ To say LongDickDesc of (M - a monster):
 	otherwise say "hard [manly-penis]".
 
 To say HoleDesc of (M - a monster):
-	if M is presenting as male, say "[asshole]";
-	otherwise say "[vagina]".
+	if M is presenting as male, say "asshole";
+	otherwise say "pussy".
 
- To say ChestDesc of (M - a monster):
+To say ChestDesc of (M - a monster):
 	if M is presenting as male, say "chest";
 	otherwise say "breasts".
+
+To say cockhead of (M - a monster):
+	say "[one of]cockhead[or]tip[or]bellend[or]dicktip[in random order]".
 
 [!<SayDaddyOfMonster>+
 
@@ -492,6 +534,14 @@ To say big royal-subject of (M - a monster):
 		say "Peasant";
 	otherwise:
 		say "Subject".
+
+To say caps royal-subject of (M - a monster):
+	if M is princess-consort:
+		say "CONSORT";
+	otherwise if M is patron:
+		say "PEASANT";
+	otherwise:
+		say "SUBJECT".
 
 [!<SayHoneyOfMonster>+
 
@@ -702,8 +752,20 @@ To say maturity:
 	say "maturity";
 	now hypno-trigger is "maturity".
 
+To say big maturity:
+	say "Maturity";
+	now hypno-trigger is "maturity".
+
+To say caps maturity:
+	say "MATURITY";
+	now hypno-trigger is "maturity".
+
 To say pussy:
 	say "pussy";
+	now hypno-trigger is "pussy".
+
+To say big pussy:
+	say "Pussy";
 	now hypno-trigger is "pussy".
 
 To say caps pussy:

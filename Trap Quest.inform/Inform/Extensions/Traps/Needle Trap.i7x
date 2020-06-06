@@ -132,6 +132,9 @@ To compute (Y - a needle trap) injecting into (X - hips):
 			if a random number between 0 and the armour of C > 5, now needle-blocker is C;
 	if needle-blocker is clothing and tutorial is 0:
 		say "The needle is blocked by your [ShortDesc of needle-blocker]! Phew!";
+	otherwise if tutorial is 0 and fast TG is 3 and the size of penis <= min penis size and the player is male:
+		say "Owww, that really hurt! Your [AssDesc] and [ShortDesc of penis] glow pink for a moment. ";
+		PenisDown 1;
 	otherwise if diaper quest is 1:
 		if a random number between 1 and 2 is 1 and tutorial is 0:
 			say "Owww, that really hurt! You watch the large balloon at the back end of the needle empty a lot of liquid into your body[one of]. That can't be good...[or].[stopping]";

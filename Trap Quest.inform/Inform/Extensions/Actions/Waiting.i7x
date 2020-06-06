@@ -27,7 +27,7 @@ Check waiting:
 	otherwise if detention chair is grabbing the player:
 		say "Do you want to keep waiting until detention is over? ";
 		if the player is in agreement, detentionchairwait instead;
-	otherwise if the player is live fucked or there is a thing grabbing the player:
+	otherwise if the player is live fucked or there is a thing grabbing the player or there is a thing wrangling the player:
 		let M be a random live thing penetrating a body part;
 		if M is minotaur and M is asleep:
 			say "You lay there and wait, hoping not to faint before [he of M] wakes up.";
@@ -198,7 +198,7 @@ To HookWait:
 			ruin asshole;
 			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses [his of woman-barbara] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
-			say "[second custom style]'Silly girl, try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+			say "[second custom style]'Silly [boy of the player], try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;

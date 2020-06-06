@@ -82,7 +82,6 @@ This is the select rule:
 		end if;
 	end if.
 
-
 To redraw status line:
 	(- DrawStatusLine(); -)
 
@@ -147,7 +146,6 @@ Table of Shallow Menu Status
 left	central	right
 ""	"[current menu title]"	""
 
-
 Table of Deep Menu Status
 left	central	right
 ""	"[current menu title]"	""
@@ -177,7 +175,6 @@ To say known hints from (hint booklet - table name):
 		end if;
 	end repeat;
 	say "Press SPACE to return to the menu or H to reveal another hint."
-
 
 To say hints from (hint booklet - table name):
 	let __index be 0;
@@ -264,7 +261,7 @@ would create an option entitled "Settings", which the player could select to vie
 
 If we do not want a given option to trigger a new submenu, we should leave it as "--".
 
-The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practice, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
+The "toggle" column contains the rule carried out when this option is chosen. In theory, this rule could be absolutely anything. In practise, the feature is mostly useful for giving the player a table of setting options which he can toggle on and off: for instance, we might provide the option "use verbose room descriptions", and then have the toggle rule change the game's internal settings about how room descriptions are displayed. (See the example attached for further guidance.)
 
 It is only useful for a given option to have one of these three features -- a description or a subtable or a toggle element. In the event that more than one column is filled out, the game will obey the toggle rule in preference to creating a submenu, and create a submenu in preference to displaying description text.
 
@@ -303,7 +300,7 @@ For instance our Table of Options might look like this:
 	"How do I reach the mastodon's jawbone?"	Table of Mastodon Hints		""	hint toggle rule
 	"How can I make Leaky leave me alone?"	Table of Leaky Hints	""	hint toggle rule
 
-	[where the toggle is always "hint toggle rule", and the subtable is always a table containing the hints themselves. A table of hints consists of just two columns, and one of those is for internal bookkeepping and should be initialized to contain a number. So:]
+	[where the toggle is always "hint toggle rule", and the subtable is always a table containing the hints themselves. A table of hints consists of just two columns, and one of those is for internal bookkeepping and should be initialised to contain a number. So:]
 
 	Table of Mastodon Hints
 	hint	used

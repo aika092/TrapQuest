@@ -32,6 +32,7 @@ To decide which number is the initial outrage of (C - a white rubber giant bow d
 
 Definition: a white rubber giant bow dress is white themed: decide yes.
 Definition: a white rubber giant bow dress is bow themed: decide yes.
+Definition: a white rubber giant bow dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Part 2 - Metallic Purple Rubber Dress
 

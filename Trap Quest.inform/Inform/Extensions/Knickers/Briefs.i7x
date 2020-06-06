@@ -25,7 +25,7 @@ To decide which figure-name is clothing-image of (C - briefs):
 To decide which figure-name is clothing-image of (C - white-briefs):
 	decide on figure of briefs 1.
 
-To decide which figure-name is clothing-image of (C - white-good girl briefs):
+To decide which figure-name is clothing-image of (C - white-girly briefs):
 	decide on figure of briefs special 1b.
 
 To decide which figure-name is clothing-image of (C - white-diagram briefs):
@@ -46,8 +46,8 @@ To decide which figure-name is clothing-image of (C - black briefs):
 To decide which figure-name is clothing-image of (C - blue-briefs):
 	decide on figure of briefs 6.
 
-To decide which figure-name is clothing-image of (C - silvery briefs):
-	decide on figure of briefs 7.
+[To decide which figure-name is clothing-image of (C - silvery briefs):
+	decide on figure of briefs 7.]
 
 To decide which figure-name is clothing-image of (C - green-briefs):
 	decide on figure of briefs 8.
@@ -70,7 +70,7 @@ To decide which figure-name is clothing-image of (C - grey-hi-cut briefs):
 To decide which figure-name is clothing-image of (C - blue-polka-dot briefs):
 	decide on figure of briefs 14.
 
-To decide which figure-name is clothing-image of (C - white-cameltoe briefs):
+To decide which figure-name is clothing-image of (C - blue-cameltoe briefs):
 	decide on figure of briefs 15.
 
 To decide which figure-name is clothing-image of (C - pink-kitty-briefs):
@@ -86,18 +86,16 @@ To say UniqueClothingDesc of (G - white-briefs):
 	say "This small white pair of briefs is a bit too sheer to give much modesty.".
 Definition: white-briefs is white themed: decide yes.
 
-white-good girl briefs is a briefs. white-good girl briefs is sheer-when-wet. The text-shortcut of white-good girl briefs is "wgg". Understand "white", "good" as white-good girl briefs.
-To say selfexamineuniquetitle of (G - white-good girl briefs):
+white-girly briefs is a briefs. white-girly briefs is sheer-when-wet. The text-shortcut of white-girly briefs is "wgg". Understand "white", "good" as white-girly briefs.
+To say selfexamineuniquetitle of (G - white-girly briefs):
 	say "pair of white 'good girl' briefs".
-To say UniqueClothingDesc of (G - white-good girl briefs):
-	say "This small white pair of briefs has 'good girl' written on the back in pink writing.".
-To decide which number is the delicateness-influence of (C - white-good girl briefs):
+To say UniqueClothingDesc of (G - white-girly briefs):
+	say "This small white pair of briefs has girly frills with pink lining.".
+To decide which number is the unique outrage of (C - white-girly briefs):
 	decide on 1.
-To decide which number is the unique outrage of (C - white-good girl briefs):
-	decide on 1.
-To decide which number is the unique cringe of (C - white-good girl briefs):
+To decide which number is the unique cringe of (C - white-girly briefs):
 	decide on 3.
-Definition: white-good girl briefs is white themed: decide yes.
+Definition: white-girly briefs is white themed: decide yes.
 
 white-diagram briefs is a briefs. white-diagram briefs is sheer-when-wet. The text-shortcut of white-diagram briefs is "wdb".
 To say selfexamineuniquetitle of (G - white-diagram briefs):
@@ -115,15 +113,7 @@ To uniquely set up (T - a white-diagram briefs):
 	set up magic state of T;
 	if pregnancy fetish is 0, now T is unique. [This stops it spawning if it the correct fetish is not enabled.]
 Report wearing a white-diagram briefs:
-	if the pregnancy rate of the player is 1:
-		now the pregnancy rate of the player is 2;
-		if the player is not possessing a vagina, say "Somewhere deep down, something clicks, and you realise you wish you could get pregnant and have babies.";
-		otherwise say "[if the pregnancy of the player is 0]You can almost hear your womb cry out for something to fill it![otherwise]You feel an energetic kick from your stomach. Wow, the baby is growing fast![end if]";
-	otherwise if the size of penis > min penis size:
-		say "You watch your [ShortDesc of penis] ";
-		if the size of penis > min penis size + 1, PenisDown 2;
-		otherwise PenisDown 1;
-		say "[Shrink] into a [ShortDesc of penis].".
+	compute early pregnancy eagerness.
 
 pink briefs is a briefs. The text-shortcut of pink briefs is "pib". pink briefs has a number called charge.
 To say selfexamineuniquetitle of (G - pink briefs):
@@ -184,14 +174,14 @@ To say UniqueClothingDesc of (G - blue-briefs):
 	say "A basic pair of blue briefs.".
 Definition: blue-briefs is blue themed: decide yes.
 
-silvery briefs is a briefs. The text-shortcut of silvery briefs is "sib".
+[silvery briefs is a briefs. The text-shortcut of silvery briefs is "sib".
 To say selfexamineuniquetitle of (G - silvery briefs):
 	say "pair of silvery briefs".
 To say UniqueClothingDesc of (G - silvery briefs):
 	say "A pair of shiny silvery briefs.".
 To decide which number is the penis-capacity of (K - silvery briefs):
 	decide on 2.
-Definition: silvery briefs is grey themed: decide yes.
+Definition: silvery briefs is grey themed: decide yes.]
 
 green-briefs is a briefs. The text-shortcut of green-briefs is "gib".
 To say selfexamineuniquetitle of (G - green-briefs):
@@ -212,9 +202,10 @@ grey-briefs is a briefs. The text-shortcut of grey-briefs is "grb".
 To say selfexamineuniquetitle of (G - grey-briefs):
 	say "pair of grey 'UP ALL NIGHT' briefs".
 To say UniqueClothingDesc of (G - grey-briefs):
-	say "This pair of grey and black briefs says 'UP ALL NIGHT' on the back, to let people know [if G is worn]you like[otherwise]the wearer likes[end if] to party, and fuck.".
+	say "This pair of grey and black briefs says 'UP ALL NIGHT' on the back, to let people know [if G is worn]you like[otherwise]the wearer likes[end if] to [if diaper quest is 0]party, and fuck[otherwise]stay up past bedtime[end if].".
 Understand "up", "up all", "all night", "night", "grey", "briefs" as grey-briefs.
 To decide which number is the sex-addiction-influence of (G - grey-briefs):
+	if diaper quest is 1, decide on 0;
 	if G is blessed, decide on 1;
 	decide on 2.
 To decide which number is the unique outrage of (C - grey-briefs):
@@ -229,14 +220,14 @@ To say UniqueClothingDesc of (G - pale briefs):
 Definition: pale briefs is sissifying: decide yes.
 Definition: pale briefs is pink themed: decide yes.
 
-white-cameltoe briefs is a briefs. The text-shortcut of white-cameltoe briefs is "wcb". Understand "white", "cameltoe" as white-cameltoe briefs.
-To say selfexamineuniquetitle of (G - white-cameltoe briefs):
-	say "pair of white cameltoe briefs".
-To say UniqueClothingDesc of (G - white-cameltoe briefs):
-	say "A pair of low cut white briefs that would give a female wearer a very visible cameltoe.".
-Definition: white-cameltoe briefs is white themed: decide yes.
-Definition: white-cameltoe briefs is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
-To decide which number is the penis-capacity of (H - white-cameltoe briefs):
+blue-cameltoe briefs is a briefs. The text-shortcut of blue-cameltoe briefs is "bcb". Understand "blue", "cameltoe" as blue-cameltoe briefs.
+To say selfexamineuniquetitle of (G - blue-cameltoe briefs):
+	say "pair of blue cameltoe briefs".
+To say UniqueClothingDesc of (G - blue-cameltoe briefs):
+	say "A pair of low cut pale blue briefs that would give a female wearer a very visible cameltoe.".
+Definition: blue-cameltoe briefs is blue themed: decide yes.
+Definition: blue-cameltoe briefs is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+To decide which number is the penis-capacity of (H - blue-cameltoe briefs):
 	decide on 2.
 
 pink-kitty-briefs is a briefs. pink-kitty-briefs is silk. Understand "frilly", "kitty" as pink-kitty-briefs. The text-shortcut of pink-kitty-briefs is "fkb".
@@ -277,7 +268,7 @@ Figure of briefs 3 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs3.png
 Figure of briefs 4 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs4.png".
 Figure of briefs 5 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs5.png".
 Figure of briefs 6 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs6.png".
-Figure of briefs 7 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs7.png".
+[Figure of briefs 7 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs7.png".]
 Figure of briefs 8 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs8.png".
 Figure of briefs 9 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs9.png".
 Figure of briefs 10 is the file "Items/Clothes/Lower/Underwear/Briefs/briefs10.png".

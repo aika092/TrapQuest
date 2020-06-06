@@ -5,6 +5,7 @@ A skirt is a kind of clothing. A skirt is usually knee-length. Understand "skirt
 Definition: a skirt is same-type if theme-share-target is skirt.
 
 A miniskirt is a kind of skirt. A miniskirt is usually short.
+Definition: a miniskirt is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 To decide which number is the initial outrage of (C - a skirt):
 	decide on 2;
@@ -86,7 +87,7 @@ To decide which number is the skirtLength of (C - a clothing):
 Chapter - Wearability
 
 Check wearing gown of purity:
-	if the virgin of the player is 0, say "The latches of the belt refuse to close! It's almost as if the 'gown' is refusing to let you wear it..." instead;
+	if the vaginalvirgin of the player is 0, say "The latches of the belt refuse to close! It's almost as if the 'gown' is refusing to let you wear it..." instead;
 
 skirt wearability rules is a rulebook. The wearability rules of skirt is usually skirt wearability rules.
 
@@ -202,6 +203,7 @@ To decide which number is the adult-influence of (C - flowing skirt):
 
 Definition: flowing skirt is slitted: decide yes.
 Definition: flowing skirt is white themed: decide yes.
+Definition: flowing skirt is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 full zip skirt is a skirt. Figure of full zip skirt is the file "Items/Clothes/Lower/Skirts/skirt3.png". The printed name of full zip skirt is "[clothing-title-before]full zip white skirt[clothing-title-after]". The text-shortcut of full zip skirt is "fzs". Understand "white" as full zip skirt. full zip skirt is zippable. full zip skirt is leather.
 

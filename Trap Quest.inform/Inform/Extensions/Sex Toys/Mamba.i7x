@@ -30,4 +30,7 @@ To decide which number is the raw-masturbation-bonus of (C - a mamba):
 To decide which number is the initial outrage of (S - a mamba):
 	decide on 16.
 
+To compute uniqueToyInsertion of (S - a mamba) into (F - a fuckhole):
+	if the size of S > the openness of F, BBCAddictUp 1.
+
 Mamba ends here.

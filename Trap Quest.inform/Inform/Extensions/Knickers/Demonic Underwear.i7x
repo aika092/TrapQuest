@@ -100,6 +100,7 @@ To decide which number is the alchemy key of (C - demon codpiece):
 
 Definition: demon codpiece is demonic: decide yes.
 Definition: demon codpiece is red themed: decide yes.
+Definition: demon codpiece is potentially erection concealing: decide yes.
 
 To SexChange (J - demon codpiece):
 	now J is temptation;
@@ -132,7 +133,6 @@ This is the demon junk punishment rule:
 	say "Your [printed name of J] tightens painfully and the gem lights up, [one of]as if reacting in disapproval of your actions[or]once again showing its opinion of your actions[stopping]!";
 	if the size of penis > min penis size:
 		PenisDown the charge of J;
-		say "Your penis [Shrink]s into a [ShortDesc of penis]!";
 	otherwise if the raw dexterity of the player + the raw strength of the player > 6:
 		if a random number between 1 and 2 is 1:
 			StrengthDown the charge of J;

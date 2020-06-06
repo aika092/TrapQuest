@@ -21,10 +21,11 @@ To decide which number is the initial cringe of (C - a schoolgirl outfit):
 	decide on 6.
 
 Definition: a schoolgirl outfit is schoolgirl-enabling: decide yes.
+Definition: a schoolgirl outfit is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 Part 1 - Cheeky Schoolgirl Outfit
 
-A cheeky schoolgirl outfit is a kind of schoolgirl outfit.
+A cheeky schoolgirl outfit is a kind of schoolgirl outfit. A cheeky schoolgirl outfit is fully covering.
 
 The printed name of cheeky schoolgirl outfit is usually "[clothing-title-before]cheeky schoolgirl outfit[clothing-title-after]". The text-shortcut of cheeky schoolgirl outfit is "cso". Understand "black", "tie", "fleece", "skirt" as cheeky schoolgirl outfit.
 

@@ -80,7 +80,7 @@ To Set Up The Dungeon:
 		if M is not monster, now M is a random off-stage dungeon dwelling monster;
 		if M is monster:
 			set up M;
-			now M is in a random placed sandy room;
+			if M is not in a placed labyrinth room, now M is in a random placed sandy room;
 	if a random number between 1 and 3 is 1, now gladiatorcurse is 1;
 	set up the school;
 	now the destination of dungeon portal is the school;

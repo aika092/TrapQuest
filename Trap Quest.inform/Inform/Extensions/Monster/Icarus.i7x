@@ -120,6 +120,8 @@ To compute appearance assessment of (M - Icarus):
 		say "[speech style of M]'[one of]Well well well, don't you look delicious? [or]Honey, you've got what I want. [or]You're so beautiful, you look like an angel! [in random order][one of]I really shouldn't, but I can't help myself! [or]It's technically against the rules, but what nobody finds out about won't hurt them... [in random order]Let's have sex.'[roman type][line break][one of]Uh-oh, [he of M] seems unfriendly...[or][stopping]";
 		anger M;
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise if M is groping:
 		compute grope of M;
 	otherwise:
@@ -259,7 +261,7 @@ To say ShortDesc of (C - chain-collar):
 To decide which number is the initial outrage of (C - chain-collar):
 	decide on 4.
 
-leather-jacket is a jacket. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
+leather-jacket is a jacket. leather-jacket is not-exclusive. leather-jacket is leather. leather-jacket is only arm covering. leather-jacket is ridiculously low cut. leather-jacket is belly exposing.
 The printed name of leather-jacket is "[clothing-title-before]leather jacket[clothing-title-after]". The text-shortcut of leather-jacket is "lja". Understand "jacket" as leather-jacket.
 Definition: leather-jacket is IcarusScienceAppropriate if it is actually summonable.
 
@@ -275,7 +277,7 @@ To say ClothingDesc of (C - leather-jacket):
 	say "A thin black leather jacket that doesn't have enough fabric to be able to button up at your front. In fact it's more of a half-jacket, that barely covers your nipples and exposes your middle.[if C is worn and the number of worn breast covering clothing is 1][line break]Your nipples are so close to being visible that parts of your areolae are visible.[end if]".
 
 Definition: a pink rubber shirt is IcarusScienceAppropriate if it is actually summonable.
-Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt2.jpg".
+Figure of pink rubber shirt full is the file "Items/Clothes/Upper/Latex/latexshirt1b.jpg".
 To decide which figure-name is icarus-clothing-image of (C - a pink rubber shirt):
 	decide on figure of pink rubber shirt full.
 

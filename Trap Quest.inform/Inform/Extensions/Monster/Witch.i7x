@@ -256,7 +256,7 @@ This is the witch summons cursed clothing rule:
 		otherwise if A is actually summonable:
 			say "[one of][BigNameDesc of M] points one hand at either of your feet and swipes them inward. Your legs snap together as metal cuffs appear around your ankles![or][BigNameDesc of M] points one hand at either of your feet and swipes them in opposite directions. Metal cuffs appear around your ankles, forcing them together![or][BigNameDesc of M] points at either of your feet and swipes [his of M] hands them in opposite directions. Your legs snap together as metal cuffs appear around your ankles![or][BigNameDesc of M] points at either of your feet and swipes [his of M] hands toward each other. Metal cuffs appear around your ankles, forcing them together![in random order]";
 			summon A locked;
-		otherwise if the player is not immobile and a random number between 1 and 5 > 2:
+		otherwise if the player is not at least partially immobile and a random number between 1 and 5 > 2:
 			say "Using some kind of magical force, [NameDesc of M] grabs hold of your feet and tries to pull them off the ground!";
 			let B be the largeness of breasts + (the largeness of belly * 2) + the total weighty volume of hips;
 			let R be a random number from 6 to B;
@@ -271,7 +271,7 @@ This is the witch summons cursed clothing rule:
 The witch summons cursed clothing rule is listed last in the witch attack rules.
 
 This is the witch tries to trip the player rule:
-	if the player is upright and the player is not immobile:
+	if the player is upright and the player is not at least partially immobile:
 		compute tripping attack of current-monster;
 		rule succeeds.
 The witch tries to trip the player rule is listed last in the witch attack rules.
@@ -488,7 +488,7 @@ To say RepeatResponse of (M - witch):
 	otherwise if M is unbitchy:
 		say "[speech style of M]'[one of]Hey. You know, it's not an easy life being an altar witch...'[or]Hey, feel free to use my altar whenever you want.'[or]Hi there! Feel free to stay around and chat. Not like there's much else to do in this shit-hole.'[or]Hey, if you ever meet a washed up demon lord anywhere, don't believe a word [he of demon lord] says about me.'[at random][roman type][line break]";
 	otherwise if the class of the player is priestess:
-		say "[speech style of M]'[one of]So, how's the altar life treating you?'[or][if the the analvirgin of the player is 0 and the player is male or the player is female and the virgin of the player is 0]Wow, I can actually smell the sex on you from here. You're a dungeon bitch, aren't you.'[otherwise]You know, most dungeon bitches don't keep their cherry for so long.'[end if][or]If not for all the arse fucking, I would sort of envy you dungeon bitches. It's fucking boring up here.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]So, how's the altar life treating you?'[or][if (the analvirgin of the player is 0 and the player is male) or (the player is female and the vaginalvirgin of the player is 0)]Wow, I can actually smell the sex on you from here. You're a dungeon bitch, aren't you.'[otherwise]You know, most dungeon bitches don't keep their cherry for so long.'[end if][or]If not for all the arse fucking, I would sort of envy you dungeon bitches. It's fucking boring up here.'[at random][roman type][line break]";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]You aren't going to convert me so you might as well piss off.'[or]Hey, can you see this? I'm flipping you off.'[or]Keep your shitty scripture to yourself, bitch.'[or]That altar of yours is hiding for a reason, bitch.'[or]Whatever you want me to cure, you can piss off. It's what you get for worshipping false idols.'[at random][roman type][line break]";
 	otherwise if the class of the player is fertility goddess:
@@ -504,7 +504,7 @@ To compute taunt acceptance effect of (M - witch):
 	calm M.
 
 To say TauntAccepted of (M - witch):
-	say "[speech style of M]'L-Look, lets call a truce. I'll let you use my altar for free, JUST THIS ONCE.'[roman type][line break]".
+	say "[speech style of M]'L-Look, let's call a truce. I'll let you use my altar for free, JUST THIS ONCE.'[roman type][line break]".
 
 [monster gets stronger]
 To say TauntRejected of (M - witch):

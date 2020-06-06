@@ -45,7 +45,7 @@ To decide which number is the starting difficulty of (M - receptionist):
 
 To say ArmbandCalming of (M - receptionist):
 	say "[if M is unfriendly][BigNameDesc of M] calms down, and [his of M] sweet smile returns. [speech style of M]'That's better[otherwise][speech style of M]'There's a good kid[end if]. ";
-	if the armband-print of armband is "new recruit", say "Now you need to go see the headmistress for initiation. [his of headmistress] door is the last one on the left, you can't miss it. ";
+	if the armband-print of armband is "new recruit", say "Now you need to go see the headmistress for initiation. [big his of headmistress] door is the last one on the left, you can't miss it. ";
 	say "Now trot along!'[roman type][line break]".
 
 To compute monstermotion of (M - receptionist):
@@ -113,7 +113,7 @@ To compute perception of (M - receptionist):
 			display entire map; [needs to update because the portal is now closed]
 	otherwise if playerRegion is School:
 		if armband is worn:
-			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens and a cool trophy[end if][one of]! All you have to do is pull that lever before you leave[or][stopping]!'[roman type][line break]";
+			if (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and there is an appropriate eligible predicament and predicamentJustDone is false and the player is predicament-ready, say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies! [one of]Have you considered trying the extra credit zone? [or]You should consider the extra credit zone again. [stopping][if the number of worn cursed removable clothing > the number of worn cursed removable headgear]Not only would you get a trophy and potentially some useful tokens, but you could escape from that annoying cursed clothing[otherwise]You can earn some tokens and a cool trophy[end if]!'[roman type][line break]";
 			otherwise say "[line break][speech style of M]'Hello again [NameBimbo], I hope you're enjoying your studies!'[roman type][line break]";
 		otherwise:
 			say "[line break][speech style of M]'Hey, I recognise you! Where is your armband?!'[roman type][line break][big he of M] takes an aggressive stance.";

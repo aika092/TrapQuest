@@ -81,10 +81,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	if the remainder after dividing local-earnings by 1425 < local-seconds:
 		if diaper focus >= 1:
 			if wetting-valued >= 3, diaperreward;
-		otherwise if the player is female and the virgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
+		otherwise if the player is female and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
 			virginreward;
 	[Virgin Curse]
-	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the virgin of the player is 1 and virgincursed > 0 and transGender is 0:
+	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0:
 		virginpunish;
 	[Various periodic decays]
 	if the remainder after dividing local-earnings by 611 < local-seconds:
@@ -188,14 +188,9 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 
 Part 2 - Specific Procedures
 
-[!<ComputeHairColourDecay>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute hair colour decay:
 	let R be 1;
-	if bright-hair tattoo is worn or diaper quest is 1, now R is 0; [This tattoo stops hair from decaying]
+	if bright-hair tattoo is worn or diaper quest is 1 or playerRegion is school, now R is 0; [This tattoo stops hair from decaying]
 	let X be 0;
 	while R > 0:
 		now R is a random number between 1 and 3;
@@ -217,13 +212,9 @@ To compute hair colour decay:
 				now R is 0;
 		if X > 20, now R is 0.
 
-[!<ComputeMakeupDecay>+
 
-REQUIRES COMMENTING
-
-+!]
 To compute makeup decay:
-	if a random number between 0 and diaper quest is 0 and permanent makeup is 0:
+	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not school:
 		if the make-up of face > 1:
 			say "Your make-up partially fades.";
 			FaceDown 1;
@@ -231,11 +222,6 @@ To compute makeup decay:
 			say "Your make-up fades away.";
 			FaceDown 1.
 
-[!<ComputeOrificeSorenessDecay>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute orifice soreness decay:
 	if asshole is not actually occupied:
 		if the player is male:
@@ -246,11 +232,6 @@ To compute orifice soreness decay:
 			otherwise:
 				heal vagina times 1.
 
-[!<ComputeInflationDecay>+
-
-REQUIRES COMMENTING
-
-+!]
 To compute inflation decay:
 	let flav-said be 0;
 	if the air volume of breasts > 0:
@@ -355,6 +336,30 @@ A time based rule (this is the dressup rule):
 			say "Your [ShortDesc of H] lights up as unseen hands grab your [ShortDesc of P], distorting the [clothing-material of H] material unnaturally as they mischievously grope the tender skin underneath. [one of]You're being molested by your own clothing![or]You can't help feeling exposed knowing your own clothes can mess with you any time![at random]";
 			if P is breasts, stimulate breasts.
 
+[If the player doesn't properly fit in their clothes, there is a chance of the clothing becoming displaced without input from the player.]
+[A time based rule (this is the wardrobe malfunction rule):
+	let displaceDone be 0;
+	let K be a random worn actually displacable knickers;
+	if K is clothing:
+		let Kd be the size of penis - the penis-capacity of K;[If this number is above 0, then the player's penis can possibly pop out]
+		if penis is penis-erect, increase Kd by Kd;[Malfunctions are twice as likely when you have a boner]
+		if Kd > 0 and vagina is not listed in the armUses of arms and a random number between 1 and (80 - (Kd * 10)) < 2 + unlucky:
+			now displaceDone is 1;
+			now K is crotch-displaced;
+	if the cleavageCover of arms is 0:[if the player is holding their chest, their boobs can't pop out.]
+		let Cd be 0;
+		repeat with C running through worn ridiculously low cut or higher clothing:[TODO: if needed, add support for cup size]
+			if C is actually top-displacable:
+				now Cd is the largeness of breasts - the cleavageCover of C;
+				if Cd > 0 and a random number between 1 and (100 - (Cd * 5)) < 2 + unlucky:
+					now displaceDone is 1;
+					now C is top-displaced;
+					break;[Happens one layer at a time.]
+	if displaceDone is 1:
+		let R be a random number between the intelligence of the player and 30;
+		if debugmode > 0, say "[input style]Wardrobe malfunction. Player will notice if R > 20. R = [R].[roman type][line break]";
+		if R > 20, say "[line break][one of]You feel a slight draft...[or]You feel a slight breeze...[or]You can feel the air touching your skin...[or]You feel a little freer...[at random][line break]";][You only get an announcement if you win an intelligence roll]
+
 shunk-happened is a number that varies.
 
 A time based rule (this is the trap time rule):
@@ -380,6 +385,9 @@ To compute time decay of (T - a trap):
 	do nothing.
 
 To compute reset cooldown of (T - a trap):
+	compute default reset cooldown of T.
+
+To compute default reset cooldown of (T - a trap):
 	if the reset-timer of T <= time-seconds:
 		now the reset-timer of T is 0;
 		unless T is penetrating a fuckhole:

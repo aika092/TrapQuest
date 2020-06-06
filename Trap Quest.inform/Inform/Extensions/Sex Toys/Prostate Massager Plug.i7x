@@ -20,7 +20,7 @@ Report wearing a prostate massager plug:
 
 An all time based rule (this is the predicament prostate massager rule):
 	if the player is in a predicament room and there is a prostate massager plug penetrating asshole and the bladder of the player > (a random number between 1 and 10) and the location of the player is not bathroom:
-		now delayed urination is 1.
+		now delayed urination is 2.
 
 Definition: a prostate massager plug is vaginally summonable: decide no.
 

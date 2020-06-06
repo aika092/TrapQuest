@@ -90,9 +90,9 @@ To say OptionalDescription:
 	if diaper quest is 1, say "[PerceivedAdultDesc][InternalsDesc][SorenessDesc][DiaperDisciplineDesc]";
 	otherwise say "[PerceivedBimboDesc][InternalsDesc][SorenessDesc][line break][StatusDesc][BimboDesc]";
 	if the raw luck of the player > 5:
-		say "You've been having a decent streak of mostly good luck.";
+		say "You've been having run of mostly bad luck. Surely the tide will turn soon.";
 	otherwise if the raw luck of the player < -5:
-		say "You've been having run of mostly bad luck. Surely the tide turn soon.";
+		say "You've been having a decent streak of mostly good luck. Hopefully that doesn't mean that karma will catch up with you soon...";
 	let NT be the number of in-play trophies;
 	if NT > 0:
 		say "You can sense that [if NT is 1]the trophy you earned from the Extra Credit Zone is slightly[otherwise]the [NT] trophies you have earned from the Extra Credit Zone are each[end if] improving your luck.".

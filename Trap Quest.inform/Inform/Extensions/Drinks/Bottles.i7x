@@ -100,7 +100,7 @@ A bottle has a drink-colour called the fill-colour. Understand the fill-colour p
 
 To say PotionType of (B - a bottle):
 	say "a [fill-colour of B] liquid";
-	if the fill-type of B is remembered, say " ([FillName the fill-type of B])".
+	if the fill-type of B is remembered, say " ([FillName the fill-type of B][if the fill-colour of B is creamy and the number of things inseminating B is 1] from the [MediumDesc of a random thing inseminating B][end if])".
 
 To say ShortDesc of (B - a bottle):
 	if the fill-type of B is remembered, say "[FillName the fill-type of B]";

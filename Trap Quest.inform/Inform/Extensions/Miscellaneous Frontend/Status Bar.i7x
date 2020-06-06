@@ -341,9 +341,9 @@ To say VagueCringeHumiliation:
 		say "[if B > 9]Mortified[otherwise if B > 5]Embarrassed[otherwise if B > 1]Uncomfortable[otherwise]Proud[end if]";
 	otherwise if the player is modest:
 		say "[if B > 12]Mortified[otherwise if B > 8]Embarrassed[otherwise if B > 5]Uncomfortable[otherwise if B > 2]Bold[otherwise]Dignified[end if]";
-	otherwise if player is not disgraced:
+	otherwise if the player is not disgraced:
 		say "[if B > 8]Embarrassed[otherwise if B > 6]Uncomfortable[otherwise if B > 2]Cheeky[otherwise]Bored[end if]";
-	otherwise if player is not shameless:
+	otherwise if the player is not shameless:
 		say "[if B > 8]Disgraced[otherwise if B > 4]Naughty[otherwise]Bored[end if]";
 	otherwise if the player is not broken:
 		say "[if B > 10]Shameless[otherwise]Bored[end if]";
@@ -381,7 +381,7 @@ To say VagueCringeAppearance:
 		say "Booboo";
 	say "[if debuginfo > 0] [bracket][B + 0]/20[close bracket][end if] ";
 	if B > 2 and appearance-cringe-level > 2:
-		say "([caused by B] [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumAppearanceDesc of cringe-target][end if][if debuginfo > 0] [bracket][appearance-cringe-level]/20[close bracket][end if])".
+		say "([caused by B] [if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair]nudity[otherwise][MediumAppearanceDesc of appearance-cringe-target][end if][if appearance-cringe-target is body part and appearance-cringe-target is not face and appearance-cringe-target is not hair and cringe-target is clothing] & [MediumAppearanceDesc of cringe-target][end if][if debuginfo > 0] [bracket][appearance-cringe-level]/20[close bracket][end if])".
 
 [!<SayVagueAddiction>+
 
@@ -765,7 +765,7 @@ Rule for constructing the status line while displaying:
 		fill status bar with Table of Gender Options Status;
 	otherwise if the current menu is the Table of Male Name Options or the current menu is the Table of Female Name Options or the current menu is the Table of Male Name Diaper Quest Options or the current menu is the Table of Female Name Diaper Quest Options:
 		fill status bar with Table of Name Options Status;
-	otherwise if the current menu is the Table of Benefit Options or the current menu is the Table of Diaper Quest Benefit Options or the current menu is the Table of Secret Options or the current menu is the Table of Background Options:
+	otherwise if the current menu is the Table of Benefit Options or the current menu is the Table of Diaper Quest Benefit Options or the current menu is the Table of Secret Options or the current menu is the Table of Background Options or the current menu is the Table of Body Limit Options:
 		fill status bar with Table of Benefit Options Status;
 	otherwise if the current menu is the table of diaper options:
 		fill status bar with table of diaper choice status;

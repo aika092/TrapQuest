@@ -1,6 +1,6 @@
 Trainee Boots by Shoes begins here.
 
-A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[clothing-title-before][heel-height of item described] inch trainee thigh highs[clothing-title-after]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetized. A trainee thigh highs has a number called train-charge.
+A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usually latex. There is 1 trainee thigh highs. The printed name of trainee thigh highs is usually "[clothing-title-before][heel-height of item described] inch trainee thigh highs[clothing-title-after]". A trainee thigh highs is usually totally-exclusive. The heel-height of a trainee thigh highs is usually 2. A trainee thigh highs is unique. A trainee thigh highs has a number called training-progress. The training-progress of a trainee thigh highs is usually 0. A trainee thigh highs can be magnetised. A trainee thigh highs has a number called train-charge.
 
 To set up magic state of (C - trainee thigh highs):
 	do nothing.
@@ -20,14 +20,14 @@ To decide which number is the perceived-bimbo-influence of (C - a trainee thigh 
 	decide on 1.
 Definition: a trainee thigh highs is transformation-protected: decide yes.
 Definition: a trainee thigh highs is whore themed: decide yes.
-Definition: a trainee thigh highs is removable if it is not magnetized.
+Definition: a trainee thigh highs is removable if it is not magnetised.
 
 Check taking off trainee thigh highs:
-	if the noun is magnetized, say "The edges of your [printed name of the noun] are all but immobile. You[']ll need to find some way of loosening them before you can try getting them off." instead.[TODO: first person with intelligence variance.]
+	if the noun is magnetised, say "The edges of your [printed name of the noun] are all but immobile. You[']ll need to find some way of loosening them before you can try getting them off." instead.[TODO: first person with intelligence variance.]
 
 Report wearing trainee thigh highs:
 	say "The rim of the socks snap decisively when you finish pulling it on, and you realise you're going to have a lot of trouble getting it off.";
-	now the noun is magnetized.
+	now the noun is magnetised.
 
 To compute periodic effect of (C - a trainee thigh highs):
 	increase the train-charge of C by 1;

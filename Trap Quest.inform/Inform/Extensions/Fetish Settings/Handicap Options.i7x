@@ -291,7 +291,7 @@ To decide which number is clumsy april fools:
 	decide on 0.
 
 To say aprilFoolsClumsyFlav:
-	if clumsy april fools is 1, say "[one of][variable custom style]Wait a minute, I'm not usually this clumsy! What's going on?![roman type][line break]As if responding to your thoughts, you hear a girly voice from just behind you giggle and say[line break][second custom style]'Tee-hee, April Fools!'[roman type][line break]But when you turn around, there's nobody there...[or]You hear girly snickering from just behind you, but when you turn around, there's nobody there.[or]Once again you hear giggling from somewhere behind you.[stopping]".
+	if clumsy april fools is 1, say "[one of][variable custom style]Wait a minute, I'm not usually this clumsy! What's going on?![roman type][line break]As if responding to your thoughts, you hear a girly voice from just behind you giggle and say[line break][second custom style]'Teehee, April Fools!'[roman type][line break]But when you turn around, there's nobody there...[or]You hear girly snickering from just behind you, but when you turn around, there's nobody there.[or]Once again you hear giggling from somewhere behind you.[stopping]".
 
 To decide which number is strongCurses:
 	if tutorial is 1 or (diaper quest is 0 and the player is not an august 2019 top donator) or (diaper quest is 1 and the player is not an august 2019 diaper donator), decide on 0;

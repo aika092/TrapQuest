@@ -13,6 +13,7 @@ Check jumping:
 	if the player is prone, say "You can't jump while on all fours!" instead;
 	if the throne is triggered, say "You can't jump while sitting on the throne." instead;
 	if the player is vine stuck, say "Vines are pinning your ankles to the ground! Try [bold type]pulling[roman type] them?" instead;
+	if minotaur is wrangling the player, say "You can't without breaking free from [NameDesc of minotaur] first!" instead;
 	repeat with C running through clothing worn by the player:
 		if C is stuck and the player is not dildo stuck, say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	let B be the largeness of breasts;
@@ -43,8 +44,8 @@ Check jumping:
 				if the player is possessing a penis and penis is lewdly exposed, now B is 16;
 			if B >= 16 and M is interested:
 				say "[BigNameDesc of M] [one of]seems actively turned on by your cheer[or]seems to [i]really like[/i] your cheer[at random].";
-				if the refactory-period of M > 4:
-					decrease the refactory-period of M by 4;
+				if the refractory-period of M > 4:
+					decrease the refractory-period of M by 4;
 				otherwise:
 					if a random number between 1 and 3 is 1, FavourDown M by 1;
 	otherwise:

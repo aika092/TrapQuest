@@ -3,7 +3,7 @@ Gelatin by Food begins here.
 A gelatin is a kind of chef food. There is 1 gelatin. Understand "gummy" as gelatin. The printed name of a gelatin is "[TQlink of item described]gelatin[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of a gelatin is usually "jt".
 
 To say ExamineDesc of (C - a gelatin):
-	say "[if the quality of C > 0]A chunk of gourmet gelatin, moulded into the shape of a rose[otherwise if the quality of C > -1]A chunk of gelatin, moulded into a perfect sphere.[otherwise if the quality of C > -2 or diaper quest is 1]A soft chunk of cheap gelatin, haphazardly moulded into a sphere.[otherwise]A soft chunk of cheap gelatin. Something is really off about the color. It almost looks like [semen].[end if]".
+	say "[if the quality of C > 0]A chunk of gourmet gelatin, moulded into the shape of a rose[otherwise if the quality of C > -1]A chunk of gelatin, moulded into a perfect sphere.[otherwise if the quality of C > -2 or diaper quest is 1]A soft chunk of cheap gelatin, haphazardly moulded into a sphere.[otherwise]A soft chunk of cheap gelatin. Something is really off about the colour. It almost looks like [semen].[end if]".
 
 To say ShortDesc of (C - a gelatin):
 	say "gelatin".

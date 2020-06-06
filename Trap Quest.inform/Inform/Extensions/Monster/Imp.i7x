@@ -61,8 +61,8 @@ To set up (M - an imp):
 	now the raw difficulty of M is 3;
 	now the health of M is the maxhealth of M;
 	now the imp-rudeness of M is 0;
-	compute refactoryReset of M;
-	now the favour of M is 99.[always start at max favor]
+	compute refractoryReset of M;
+	now the favour of M is 99.[always start at max favour]
 
 To compute birth set up of (M - an imp):
 	set up M;
@@ -87,10 +87,7 @@ To compute (M - a monster) stomping (N - an imp):
 	destroy N.
 
 To compute (M - demon lord) stomping (N - an imp):
-	compute N protecting against M.[the imp betrays you]
-	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] face first onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
-	otherwise say "You hear gagging noises coming from somewhere else in the hotel!";
-	destroy N.]
+	unless N is unfriendly, compute N protecting against M.[the imp betrays you]
 
 To say MuteGreetResponse of (M - an imp):
 	say "[BigNameDesc of M] replies noncommittally. Looks like [he of M] isn't much for conversation.".
@@ -114,21 +111,21 @@ To decide which number is the seek roll of (M - an imp):
 
 A later time based rule (this is the imps follow the player rule): [after compute monsters]
 	repeat with M running through on-stage imps:
-		if M is not in the location of the player:
+		if M is not in the location of the player and the location of the player is not bossed:[The imps always follow you, no matter where you go. Unless its a boss room.]
 			now M is in the location of the player;
 			say "A portal appears, and [NameDesc of M] hops out!";
 			if M is not interested, compute perception of M.
 
 [rather than becoming bored, they turn on you]
 To compute friendly boredom of (M - an imp):
-	if M is in the location of the player and the refactory-period of M <= 0:
+	if M is in the location of the player and the refractory-period of M <= 0:
 		compute sudden objectification of M;
 		now the boredom of M is 0;
 		anger M.
 
 To check consensual submissive sex of (M - an imp):
 	now current-monster is M;
-	if presented-orifice is a reasonable target and the refactory-period of current-monster <= 500:
+	if presented-orifice is a reasonable target and the refractory-period of current-monster <= 500:
 		now the chosen-orifice of current-monster is presented-orifice;
 		say PresentFriendlyAcceptanceFlav of current-monster;
 		now the chosen-orifice of M is presented-orifice;
@@ -166,30 +163,30 @@ To say PresentFriendlyAcceptanceFlav of (M - an imp):
 	say "[BigNameDesc of M] perks up, and so does [his of M] [DickDesc of M]!".
 
 To say PresentFriendlyRejectionFlav of (M - an imp):
-	if presented-orifice is a reasonable target and the refactory-period of current-monster > 500, say "[BigNameDesc of M] shakes [his of M] head. It seems that [he of M][']s not ready to go again yet.";
+	if presented-orifice is a reasonable target and the refractory-period of current-monster > 500, say "[BigNameDesc of M] shakes [his of M] head. It seems that [he of M][']s not ready to go again yet.";
 	otherwise say "[BigNameDesc of M] seems to ignore your request.".
 
 To satisfy (M - an imp):
 	if M is interested:
 		dislodge M;
 		now the favour of M is 99;
-		compute refactoryReset of M;
+		compute refractoryReset of M;
 		if M is in the location of the player and M is awake, say SatisfiedFlav of M;
 	otherwise:
 		satisfy M for 200 seconds.
 
-To compute refactoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hard code it here]
+To compute refractoryReset of (M - an imp): [Usually this is only used for intelligent NPCs so we need to hard code it here]
 	now the blue-balls of M is 0;
-	now the refactory-period of M is the refactory-time of M.
+	now the refractory-period of M is the refractory-time of M.
 
 To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
-	decrease the refactory-period of M by R;
-	if the refactory-period of M < 200 and R + the refactory-period of M >= 200:
+	decrease the refractory-period of M by R;
+	if the refractory-period of M < 200 and R + the refractory-period of M >= 200:
 		say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
-	otherwise if the refactory-period of M < 100 and R + the refactory-period of M >= 100:
+	otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
 		say "[BigNameDesc of M] makes an obscene gesture at you.[big he of M] seems like [he of M] really needs a way to entertain [himself of M]...";
-	otherwise if the refactory-period of M < 20 and R + the refactory-period of M >= 20:
+	otherwise if the refractory-period of M < 20 and R + the refractory-period of M >= 20:
 		say "[one of][BigNameDesc of M] stares at you, licking [his of M] lips[or][BigNameDesc of M][']s eyes linger on your body[at random]. It seems like [he of M][']s about to turn on you...".
 
 To say SatisfiedFlav of (M - an imp):
@@ -219,7 +216,7 @@ Section 1 - Attack
 
 To compute (M - an imp) protecting against (X - a monster):
 	if the player is stuck or (the player is prone and the player is in danger):
-		if the refactory-period of M < the refactory-time of M - 30: [After they've just used you, they don't do it again immediately.]
+		if the refractory-period of M < the refractory-time of M - 30: [After they've just used you, they don't do it again immediately.]
 			say "[BigNameDesc of M] grins evilly. Looks like [he of M][']s turned on you!";
 			anger M;
 	otherwise if X is demoness:

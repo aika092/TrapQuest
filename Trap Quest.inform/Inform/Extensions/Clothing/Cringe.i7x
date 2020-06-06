@@ -20,7 +20,7 @@ To decide which number is the cringe of (C - a diaper):
 	if C is worn:
 		if C is not currently at least partially visible, decide on 0;
 		if C is not currently visible:
-			if the trophy-mode of diaper-trophy is 1, decide on 0;
+			if the trophy-mode of diaper-trophy is 1 and the at least partial concealer of C is not arms, decide on 0;
 	let O be the unworn cringe of C;
 	if C is worn and C is not currently visible, now O is (O * 8) / 10;
 	decide on O.
@@ -30,7 +30,7 @@ To decide which number is the unworn cringe of (C - a clothing):
 	let O be the initial cringe of C;
 	if C is not worn or C is currently at least partially visible, increase O by the fluid cringe of C;
 	if C is worn currently visible knickers:
-		unless C is hotpants or C is cutoffs, increase O by 3; [Having one's knickers exposed is very childlike.]
+		unless C is hotpants or C is cutoffs or C is diaper, increase O by 2; [Having one's knickers exposed is rather childlike.]
 	if O > 20, now O is 20;
 	decide on O.
 

@@ -1,6 +1,6 @@
 Gargoyle by Monster begins here.
 
-gargoyle is a monster. The poison-status of gargoyle is -1. The paralyze-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guard-level. The guard-level of gargoyle is 0. gargoyle has a number called satiated. The satiated of a gargoyle is usually 0.
+gargoyle is a monster. The poison-status of gargoyle is -1. The paralyse-status of gargoyle is -1. The blind-status of gargoyle is -1. gargoyle has a number called guard-level. The guard-level of gargoyle is 0. gargoyle has a number called satiated. The satiated of a gargoyle is usually 0.
 
 Definition: gargoyle is mansion dwelling: decide yes.
 
@@ -184,7 +184,7 @@ This is the gargoyle flight rule:
 This is the gargoyle dive bomb rule:
 	if the location of current-monster is not the location of the player:
 		now current-monster is not airborne;[the gargoyle will try to chase the player normally instead]
-	if current-monster is airborne and the player is not immobile:
+	if current-monster is airborne and the player is not at least partially immobile:
 		drag to Mansion16 by current-monster;[really just important that you get dropped off near the bedroom.]
 		silently try kneeling;
 		now current-monster is grabbing the player;
@@ -254,7 +254,7 @@ The gargoyle flying punishment rule is listed last in the gargoyle unique punish
 	if M is penetrating penis:
 		compute blowjob sex of M;
 		rule succeeds;
-	otherwise if refactoryperiod > 0:
+	otherwise if refractoryperiod > 0:
 		say "[BigNameDesc of M] seems to get very frustrated and then gives up.";
 		now M is guarding;
 		now the sleep of M is 50;

@@ -79,7 +79,6 @@ To decide which number is the initial cringe of (C - a knickers):
 	decide on 1 + the unique cringe of C.
 
 To decide which number is the unique outrage of (C - a knickers): [Some underwear has additional factors that make it lewd, e.g. a rude phrase]
-	if C is crotch-assless, decide on 4;
 	decide on 0.
 To decide which number is the unique cringe of (C - a knickers): [Some underwear has additional factors that make it babyish, e.g. a silly motif]
 	decide on 0.
@@ -166,9 +165,7 @@ Report wearing knickers:
 	if the size of penis > 0 and the penis-capacity of the noun > 0:
 		if the noun is crotch-intact and the noun is pussy covering:
 			if the noun is potentially penis covering:
-				say "Your [ShortDesc of penis] fits comfortably inside the fabric!";
-			otherwise if the noun is potentially at least partially penis covering:
-				say "Your [ShortDesc of penis] barely fits inside this tiny piece of fabric!";
+				say "Your [ShortDesc of penis] [if the size of penis >= the penis-capacity of the noun]barely fits[otherwise]fits comfortably[end if] inside the fabric!";
 			otherwise:
 				say "Your [ShortDesc of penis] can't even fit inside this tiny piece of fabric!".
 

@@ -2,7 +2,7 @@ Johnson by Sex Toys begins here.
 
 [GENERIC DILDO]
 
-A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColor of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson.
+A johnson is a kind of dong. The printed name of a johnson is usually "[clothing-title-before][DongSize of the item described] [DongColour of the item described] dildo[clothing-title-after]". The text-shortcut of johnson is "dl". Understand "johnson" as johnson.
 
 Definition: a johnson is penis themed: decide yes.
 Definition: a johnson is blue themed if it is refreshment.
@@ -52,10 +52,10 @@ To set up toy enchantments of (C - a red-johnson):
 	if a random number between 1 and 2 is 1, now C is dominance;
 	otherwise now C is temptation.
 
-To say DongColor of (D - a johnson):
+To say DongColour of (D - a johnson):
 	say "[if D is refreshment]blue[otherwise if D is rejuvenation or D is endurance]green[otherwise if D is suppression or D is bed wetting]white[otherwise if D is dominance or D is temptation]red[otherwise]flesh-coloured[end if]".
 
 To say ClothingDesc of (C - a johnson):
-	say "A [DongSize of C] [DongColor of C] dildo.".
+	say "A [DongSize of C] [DongColour of C] dildo.".
 
 Johnson ends here.

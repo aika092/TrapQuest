@@ -21,6 +21,9 @@ To uniquely set up (C - an anal beads):
 To uniquely destroy (T - an anal beads):
 	now the notch-taken of T is 0.
 
+To compute (C - an anal beads) unique inheriting from (D - a clothing):
+	now the notch-taken of C is the notches of C.
+
 Definition: an anal beads is transformation-protected: decide yes.
 Definition: an anal beads is black themed: decide yes.
 

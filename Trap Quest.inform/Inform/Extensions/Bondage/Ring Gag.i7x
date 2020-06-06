@@ -74,12 +74,16 @@ Part - Smoothie Predicament Stuff
 smoothie-apron is an overdress. smoothie-apron is arm exposing. smoothie-apron is fully covering. smoothie-apron is unique.
 The printed name of smoothie-apron is "[clothing-title-before]apron[clothing-title-after]". Understand "apron" as smoothie-apron. The text-shortcut of smoothie-apron is "aprn".
 Definition: smoothie-apron is green themed: decide yes.
-Figure of smoothie-apron is the file "Items/Clothes/Upper/Exposing/apron1.jpg".
+Figure of smoothie-apron is the file "Items/Clothes/Upper/Exposing/apron1.png".
 To decide which figure-name is clothing-image of (C - smoothie-apron):
 	decide on figure of smoothie-apron.
 To say ClothingDesc of (C - smoothie-apron):
 	say "A green apron with a small white shirt underneath. It only covers your front, so it only conceals whether you are standing in a giant thick super-messy nappy when you are standing with your back to a wall, e.g. in the smoothie van.".
 Definition: smoothie-apron is potentially-bottom-layer-concealing if the player is in Predicament03. [While the player is in the smoothie van only]
+Definition: smoothie-apron is skirt-covering-crotch if the player is in Predicament03. [While the player is in the smoothie van only]
+Definition: smoothie-apron is potentially penis covering if the player is in Predicament03 or the number of worn crotch-in-place undies > 0. [While the player is in the smoothie van only]
+Definition: smoothie-apron is potentially at least partially penis concealing if the player is in Predicament03 or the number of worn crotch-in-place undies > 0. [While the player is in the smoothie van only]
+Definition: smoothie-apron is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 To say ShortDesc of (C - smoothie-apron):
 	say "green apron".
 

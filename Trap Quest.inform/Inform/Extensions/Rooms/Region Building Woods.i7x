@@ -44,7 +44,7 @@ To Set Up The Woods:
 		if M is not monster, now M is a random off-stage woods dwelling monster;
 		if M is monster:
 			set up M;
-			now M is in a random placed dodgy room;
+			if M is not in a placed dodgy room, now M is in a random placed unbossed dodgy room;
 	if debugmode is 0 and loading scenes is 1, clear the screen;
 	progress quest of new-region-quest.
 

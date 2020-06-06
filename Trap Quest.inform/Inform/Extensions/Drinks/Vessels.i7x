@@ -148,14 +148,14 @@ To compute cursed drinking (X - baby's bottle):
 	if D is actually summonable and a random number between 1 and 3 - unlucky is 1:
 		say "your [ShortDesc of X] shimmers and a diaper appears around your loins!";
 		summon D cursed with quest;
-	otherwise if diaper lover >= 1 and incontinence < 5:
-		say "you feel a weird twang internally, just behind your [if the player is possessing a penis][ShortDesc of penis][otherwise if the player is possessing a vagina][vagina][end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
+	otherwise if diaper lover >= 1 and incontinence < 5 and incontinence < the max-incontinence of the player:
+		say "you feel a weird twang internally, just behind your [if the player is male][ShortDesc of penis][otherwise][vagina][end if], where your bladder should be.[if the bimbo of the player < 8][one of][line break][variable custom style]That can't be good...[roman type][line break][or][stopping][end if]";
 		increase incontinence by 1;
 	otherwise:
 		say "a fuzzy feeling enters your head, and it's harder to concentrate.";
 		if 25 - the delicateness of the player > the raw intelligence of the player, DelicateUp 1;
 		IntDown 1;
-	MilkDrunkUp 1.
+	StomachMilkUp 2.
 To say VesselDesc of (V - baby's bottle):
 	say "A bottle with a sucker for a lid, traditionally for babies to drink breast milk from[if the doses of V > 0 and the fill-colour of V is white]. The fact that it's full of breast milk makes it even more embarrassing to be holding onto[otherwise if the doses of V > 0]. The fact that you're using it to carry around a drink makes it even more embarrassing to be holding onto[end if].".
 To say ShortVesselDesc of (V - baby's bottle):
@@ -307,7 +307,7 @@ To compute drunken adventure:
 		otherwise:
 			let K be a random worn knickers;
 			if K is knickers:
-				say "Your [ShortDesc of K] are utterly soaked.";
+				say "Your [ShortDesc of K] is utterly soaked.";
 			otherwise:
 				now K is a random eligible diaper;
 				summon K;

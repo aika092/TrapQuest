@@ -60,6 +60,8 @@ To Recover the Player:
 	now the fatigue of the player is 0;
 	now the stomach-water of the player is 3;
 	now the stomach-semen of the player is 0;
+	now the stomach-milk of the player is 0;
+	now the stomach-urine of the player is 0;
 	now the stomach-food of the player is 2;
 	if the bladder of the player + the delayed bladder of the player > 0 and watersports mechanics is 1:
 		let P be a random worn bottom level pee protection clothing;

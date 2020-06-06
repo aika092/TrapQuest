@@ -30,9 +30,9 @@ Report going:
 					now R2 is a random number between 3 and 25;
 				if R1 + R2 < the crawl count of the player:
 					if M is maid headdress:
-						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
+						say "[bold type][if diaper quest is 1]Suddenly your hair turns green and you[otherwise]You[end if] feel a maid's headdress materialise on your head.[roman type] [if the bimbo of the player < 7][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on my knees for a while, like a hard-working maid...[end if][roman type][line break]";
 					otherwise if M is cat-ears:
-						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Tee hee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
+						say "[bold type]You feel a headband with cat ears materialise on your head.[roman type] [if the bimbo of the player < 13][line break][first custom style]I think the game is trying to tell me something about how much I'm crawling around this place...[otherwise][line break][second custom style]Teehee, I guess I have been on all fours for ages, like a naughty pussycat...[end if][roman type][line break]";
 					summon M cursed;
 				otherwise if R1 < the crawl count of the player or R2 < the crawl count of the player:
 					say "With all the time you[']ve been spending crawling along the ground, you're beginning to think this place really needs a good cleaning...[line break]";
@@ -131,7 +131,7 @@ To progress quest of (Q - puddle-cleaning-quest):
 	repeat with C running through worn clothing:
 		if the quest of C is Q:
 			increase the puddles-cleaned of Q by 1;
-			if the puddles-cleaned of Q < (a random number between 3 and 4) - diaper quest:
+			if the puddles-cleaned of Q < a random number between 3 and 5:
 				say "Your [ShortDesc of C] pulses happily. [one of]If you keep this sort of work ethic up, you're sure to be rewarded eventually[or]Keep it up[stopping]!";
 			otherwise if pink-spraybottle is cloth and pink-spraybottle is worn and the work ethic of pink-spraybottle < 150 and diaper quest is 0:
 				say "Your [ShortDesc of C] [if C is cursed]doesn't uncurse - it [end if]seems to think you [one of]need to do more cleaning with the cloth until you have redeemed yourself for breaking the bottle[or]still need to do more cleaning[stopping]!";

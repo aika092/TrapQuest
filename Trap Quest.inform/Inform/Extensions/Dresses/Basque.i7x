@@ -33,7 +33,7 @@ A white milking basque is a kind of milking basque. The printed name of white mi
 
 There is 1 white milking basque.
 
-Figure of white basque is the file "Items/Clothes/Upper/Dresses/Basques/basque1.png".
+Figure of white basque is the file "Items/Clothes/Upper/Special/Basques/basque1.png".
 
 To decide which figure-name is clothing-image of (C - a white milking basque):
 	decide on figure of white basque.
@@ -44,7 +44,7 @@ A cow print milking basque is a kind of milking basque. The printed name of cow 
 
 There is 1 cow print milking basque.
 
-Figure of cow print basque is the file "Items/Clothes/Upper/Dresses/Basques/basque2.png".
+Figure of cow print basque is the file "Items/Clothes/Upper/Special/Basques/basque2.png".
 
 Definition: a cow print milking basque is cow themed: decide yes.
 Definition: a cow print milking basque is white themed: decide yes.

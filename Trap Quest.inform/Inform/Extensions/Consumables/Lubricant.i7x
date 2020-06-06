@@ -48,22 +48,6 @@ Understand "apply [something]", "use [something]" as lubing.
 
 Does the player mean orilubing lubricant with body part: it is very likely.
 
-[!<TheLubePreventsGagReflexRule>+
-
-If the player has recently drank lube, there's a chance that they will auto-succeed at gag reflex checks.
-
-+!]
-This is the lube prevents gag reflex rule:
-	let M be a random thing penetrating face;
-	let G be the stomach-semen of the player;
-	if M is a thing, increase G by the girth of M;
-	if G < 3, now G is 3;
-	let lube-bonus be (7 * the number of lubricants covering face);
-	let I be a random number between 0 and the intelligence of the player;
-	if debuginfo > 0, say "[input-style]Avoid gagging check: intelligence roll (d[intelligence of the player + 1]-1) = [I + 0] [if lube-bonus > 0]+ lubricated throat bonus (7) = [lube-bonus + I] [end if]| ([G].5) gag reflex[roman type][line break]";
-	if lube-bonus + I > G, rule succeeds.
-The lube prevents gag reflex rule is listed last in the gag reflex rules.
-
 Orilubing it with is an action applying to two things.
 Check orilubing something with:
 	if the second noun is a dispenser, try decanting the noun with the second noun instead;
@@ -109,7 +93,7 @@ Check drinking lubricant:
 
 Carry out drinking lubricant:
 	say "[if the bimbo of the player < 10]You hold your nose and squeeze the flavoured lube into your mouth, swallowing tentatively. [otherwise]You happily squeeze the flavoured lube into your mouth. [end if]It coats the inside of your throat![line break][if the oral sex addiction of the player > 6][line break][second custom style]I'm probably better at deepthroating now![roman type][line break][end if]";
-	SemenTasteAddictUp 1;
+	OralSexAddictUp 1;
 	StomachUp 1;
 	lube up face with the noun.
 

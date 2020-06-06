@@ -119,7 +119,7 @@ Definition: a bit gag is fetish appropriate: decide no. [Never appears randomly]
 
 outrageous-gag is a humiliating situation.
 Definition: outrageous-gag (called A) is applicable:
-	if the player is not disgraced and the bimbo of the player < 14 and there is a worn gag, decide yes;
+	if diaper quest is 0 and the player is not disgraced and the bimbo of the player < 14 and there is a worn gag, decide yes;
 	decide no.
 To reflect on (A - outrageous-gag):
 	let G be a random worn gag;

@@ -117,7 +117,6 @@ To say ExamineDesc of (B - water-bomb):
 	if B is sure and B is cursed, say "Since it is cursed, throwing it at an enemy will probably do something bad. Perhaps you could find some other use for it, for example gifting.";
 	otherwise say "Throwing it at an enemy should hopefully blind or otherwise incapacitate them.".
 
-
 To decide which number is the alchemy key of (A - water-bomb):
 	decide on 30.
 
@@ -317,9 +316,9 @@ Check drinking time-bomb:
 			now the womb volume of vagina is 5;
 			now a random creampie pole trap is inseminating vagina;
 			now the soreness of vagina is 10;
-			if the virgin of the player is 1, compute virginity loss;
+			if the vaginalvirgin of the player is 1, compute virginity loss;
 			check sudden pregnancy;
-		PukeUp the stomach-semen of the player;
+		compute puking;
 		AssSquirt;
 		reset the Glulx timer;
 	otherwise:
@@ -480,7 +479,6 @@ To BackgroundRender (T - life-elixir) at (X1 - a number) by (Y1 - a number) with
 To decide which number is the alchemy key of (A - life-elixir):
 	decide on 4.
 
-
 Carry out quaffing life-elixir:
 	say "You pull out the tiny stopper and down the glowing liquid. [if the body soreness of the player > 0 or the soreness of asshole > 0 or the soreness of vagina > 0 and the noun is not cursed]You start to feel... healthier, as if some kind of magic particle is running around your body, healing your wounds. The particle gets to your belly. ";
 	if the player is male:
@@ -591,7 +589,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				decrease siphoning-elixir-charge by 100;
 				let X be siphoning-elixir-charge;
 				if the player is female or the size of penis is 10:
-					if the virgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
+					if the vaginalvirgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
 						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
 						ReverseSexChange the player;
 					otherwise:
@@ -614,8 +612,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				StrengthUp X / 3;
 			otherwise:
 				let X be siphoning-elixir-charge * -1;
-				if the size of penis > 0:
-					say "Your [player-penis] shrinks!";
+				if the size of penis > min penis size:
 					PenisDown (X / 2) + 1;
 				otherwise:
 					say "You feel dumber.";
@@ -885,9 +882,7 @@ Carry out quaffing space mead:
 		say "It feels as though a vast emptiness has eaten away at your sense of self.";
 	increase alcohol level.
 
-
 Section 6 Potion of Luck
-
 
 luck-potion is a potion. The text-shortcut of luck-potion is "plk". Understand "luck" as luck-potion.
 
@@ -961,6 +956,7 @@ Carry Out PowderRubbing identification-powder on a thing:
 		say "Suddenly it is surrounded by a dark glow. ";
 		curse the second noun;
 		say "Oh no! The powder itself must have been cursed, as it is now a [second noun]! You must have created it with the wrong recipe...";
+		if the second noun is clothing, compute quest of the second noun;
 	if the noun is blessed and the second noun is blessable:
 		say "[BigNameDesc of the second noun] is surrounded in a blue glow!";
 		bless the second noun;
@@ -1458,8 +1454,5 @@ An all time based rule (this is the luck tincture decay rule):
 		if luck-timer of luck-tincture <= 0:
 			now luck-timer of luck-tincture is 0;
 			say "[bold type]Your lucky golden haze has faded.[roman type][line break]";
-
-
-
 
 Alchemy Products ends here.

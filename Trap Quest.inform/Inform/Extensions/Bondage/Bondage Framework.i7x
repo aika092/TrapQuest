@@ -46,12 +46,10 @@ To decide which number is the bondage dexterity penalty of the player:
 bondage is a kind of clothing. bondage is usually metal. bondage is usually unique. bondage is usually manly.
 
 Definition: a bondage is discovered varied: decide no.
-
 Definition: a bondage is too boring: decide no.
-
 Definition: a bondage is stealable: decide no.
-
 Definition: a bondage is disintegration-protected: decide yes.
+Definition: a bondage is magic-enhanceable: decide no.
 
 To decide which number is the bartering value of (T - a bondage) for (M - a dominatrix):
 	decide on 2.

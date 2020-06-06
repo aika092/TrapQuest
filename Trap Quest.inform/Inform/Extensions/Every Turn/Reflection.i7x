@@ -215,7 +215,7 @@ Definition: visible-erection is applicable:
 	if the size of penis > 2 and penis is exposed and penis is penis-erect and the player is modest, decide yes;
 	decide no.
 To reflect on (A - visible-erection):
-	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
+	say "[variable custom style]'[one of]Everyone can see my boner...This is so embarrassing.'[or]I can't believe I have a boner. Someone's going to think I'm actually enjoying this...'[in random order][roman type]".
 
 [!<SayHumiliationFlav>+
 
@@ -296,7 +296,7 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]I feel bouncy. I think I can jump higher than before![roman type][line break][or][stopping]";
 			otherwise:
 				if the bimbo of the player < 11, say "[one of][line break][first custom style][line break]I feel extremely fast![roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]I'm so flexible I can [if diaper quest is 0]touch my elbows together behind my back! Oops, that just makes me push my chest out even more provocatively[otherwise]do the splits all the way to the ground. I bet being able to get your thighs so far apart is useful when wearing huge nappies all the time[end if]. Tee hee![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]I'm so flexible I can [if diaper quest is 0]touch my elbows together behind my back! Oops, that just makes me push my chest out even more provocatively[otherwise]do the splits all the way to the ground. I bet being able to get your thighs so far apart is useful when wearing huge nappies all the time[end if]. Teehee![roman type][line break][or][stopping]";
 			now the old dexterity of the player is saved-flat-dexterity;
 			break;
 		otherwise if the old dexterity of the player > saved-flat-dexterity + 2:
@@ -318,7 +318,7 @@ To say StatsChangedFlav:
 				otherwise say "[one of][line break][second custom style][line break]I don't think I can jump really high any more.[if the largeness of breasts > 13] Oh well, it still makes my boobs bounce around![end if][roman type][line break][or][stopping]";
 			otherwise:
 				if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]I feel less like a ninja now.[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively! Tee hee![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]Aww, I'm not flexible enough to touch my elbows together in front of me any more. Oops, that just makes me push my cleavage together even more provocatively! Teehee![roman type][line break][or][stopping]";
 			now the old dexterity of the player is saved-flat-dexterity;
 			break;
 		if the old intelligence of the player is 0:
@@ -347,7 +347,7 @@ To say StatsChangedFlav:
 		otherwise if saved-flat-intelligence < the old intelligence of the player - 2:
 			if saved-flat-intelligence < 3:
 				if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Can't... think... straight...[roman type][line break][or][stopping]";
-				otherwise say "[one of][line break][second custom style][line break]Keep trying to think about stuff, but, like, I just keep thinking about [if diaper quest is 0][manly-penis]s[otherwise]my no-no[end if]... tee-hee![roman type][line break][or][stopping]";
+				otherwise say "[one of][line break][second custom style][line break]Keep trying to think about stuff, but, like, I just keep thinking about [if diaper quest is 0][manly-penis]s[otherwise]my no-no[end if]... teehee![roman type][line break][or][stopping]";
 			otherwise if saved-flat-intelligence < 6:
 				if the bimbo of the player < 6, say "[one of][line break][first custom style][line break]Ugh, I've got a bit of a headache.[roman type][line break][or][stopping]";
 				otherwise say "[one of][line break][second custom style][line break]What's Wal-Mart? Do they like make walls there?[roman type][line break][or][stopping]";

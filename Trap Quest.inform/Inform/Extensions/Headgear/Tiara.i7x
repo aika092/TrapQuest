@@ -68,10 +68,4 @@ To say QuestFlav of (Q - betrothal-quest):
 To say QuestTitle of (Q - betrothal-quest):
 	say " (betrothal quest)".
 
-To say QuestFlav of (Q - stealth-diaper-quest):
-	say "You sense it wants you to pee in a diaper in front of someone without them being able to see that you're wearing a diaper OR pee into a diaper while another completely dry diaper is layered on top of it.".
-
-To say QuestTitle of (Q - stealth-diaper-quest):
-	say " (sneaky wetting quest)".
-
 Tiara ends here.

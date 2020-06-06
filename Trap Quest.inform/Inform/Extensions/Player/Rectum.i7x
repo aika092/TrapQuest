@@ -56,6 +56,7 @@ Definition: yourself is feeling full:
 	decide no.
 
 To decide which number is expelColour:
+	if failed potty training tattoo is worn, decide on 16777215; [white]
 	unless the player is feeling full or the total squirtable fill of belly > 0, decide on TQcolour of grey; [white]
 	if the squirt timer of belly > 0:
 		decide on lightModeFullRed; [red]
@@ -180,10 +181,25 @@ To check real messing:
 			say "[bold type]Your body is trying to go number two![roman type] Do you want to try and hold it in? ";
 			if the player is reverse bimbo consenting:
 				if willMessNow is 1:
-					if the incontinence of the player + suppository < 5, say "You try to hold it in but you start to cramp, and the pain is too much! [if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
-					otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! [if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
-					now hasMessedNow is 1;
-					compute messing;
+					if the incontinence of the player + suppository < 5, say "You try to hold it in but you start to cramp, and the pain is too much! ";
+					otherwise say "You try to hold it in but the pressure is too much and your control over your rectal muscles is too weak! ";
+					if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
+						say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
+						let F be temporaryYesNoBackground;
+						if diaper quest is 1, now temporaryYesNoBackground is figure of YesNoBackground4;
+						if the player is reverse bimbo consenting:
+							now shouldMessNow is 0;
+							say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";
+							PainUp 1;
+							if the player is getting unlucky:
+								increase incontinence by 1;
+								say "Your control over your anal sphincter feels permanently weakened. [GotUnluckyFlav]";
+						now temporaryYesNoBackground is F;
+					if shouldMessNow is 1:
+						if the incontinence of the player + suppository < 5, say "[if the player is a nympho]You give up and let go, crossing your eyes and sticking your tongue out as you wait for the intense feelings to wash over you[otherwise if the player is a pervert]You just don't have the willpower. You gasp with feigned surprise as you allow your sphincter to lose control[otherwise]You clench your fists and strain with all your might but it's all in vain - the cramps win over and you feel yourself begin to push, even though you don't really want to[end if].";
+						otherwise say "[if the player is a nympho]You hear yourself moaning lewdly as that weirdly delicious feeling of the shamefulness of your lack of control washes over you[otherwise if the player is a pervert or the diaper addiction of the player > 7]You gasp with genuine surprise as your sphincter loses control[otherwise]You shriek with horror as you feel yourself begin to go completely against your will[end if].";
+						now hasMessedNow is 1;
+						compute messing;
 				otherwise:
 					say "You manage to hold it in for now.";
 					if the implant of ultimate-lesson-mess is 1:
@@ -204,7 +220,7 @@ To check real messing:
 				otherwise:
 					StealthMessUp D by rectum;
 					now rectum is 1;
-			otherwise if messAware is 1:
+			otherwise if messAware is 1 and shouldMessNow is 1:
 				let D be a random eligible diaper;
 				if the number of worn soilable knickers is 0 and diaper focus is 1 and D is diaper and asshole is not actually occupied and the location of the player is not toilets and the location of the player is not urinals and the player is not in a predicament room:
 					say "As if reacting to your tummy, ";
@@ -233,7 +249,6 @@ To compute messing:
 		let A be a random thing penetrating asshole;
 		say "Your messing episode is prevented thanks to [NameDesc of A] blocking the way.";
 	otherwise if quiz-partner is worn:
-		now rectum is 30;
 		compute quiz partner messing;
 	otherwise:
 		if rectum < 2, now rectum is 2;
@@ -269,7 +284,7 @@ To compute messing:
 				otherwise if the mess of D <= 17:
 					say "[if the diaper addiction of the player < 3]completely disgusts you and makes you grow concerned about the limits of what it can hold[otherwise if the diaper addiction of the player < 6]almost makes you grow concerned about the limits of what it can hold[otherwise if the diaper addiction of the player < 9]shocks you as you struggle to get used to its new heavy weight[otherwise if the diaper addiction of the player < 11]is going past the limit of what you can find comfortable[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]makes you feel weirdly fuzzy inside, in an almost good way[otherwise if the diaper addiction of the player < 15]is so thick, slimy and warm that you can't help but shiver with arousal[otherwise if the diaper addiction of the player < 17]is turning you on so much to feel it all right there, outside of your body but very must still a part of your person[otherwise]makes your [genitals] feel so [italic type]amazing[roman type] that you instantly want to find a Mommy or Daddy to give you [italic type]cummies[roman type][end if].";
 				otherwise:
-					say "[if the diaper addiction of the player < 9]feels like moving is almost out of the question - every time you try you can feel the gross sludge sliding against your skin.[otherwise if the diaper addiction of the player < 11]smushes and squelches with every tiny movement you make, which feels too gross even for someone who has begun to like the feeling of using diapers as much as you have[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]is so thick and sticky and [italic type]everywhere[roman type] that is on the brink of being too extreme for you to even tolerate[otherwise if the diaper addiction of the player < 15]is so impossibly thick, voluminous and gross that it simultaneously turns you on and disgusts you[otherwise if the diaper addiction of the player < 17]still very much turns you on, although you're really not sure it should[otherwise if refactoryPeriod > 0]is so disgustingly glorious that almost makes you cum a second time[otherwise]is so disgustingly glorious that almost makes you cum on the spot[end if].";
+					say "[if the diaper addiction of the player < 9]feels like moving is almost out of the question - every time you try you can feel the gross sludge sliding against your skin.[otherwise if the diaper addiction of the player < 11]smushes and squelches with every tiny movement you make, which feels too gross even for someone who has begun to like the feeling of using diapers as much as you have[otherwise if the diaper addiction of the player < 13 or the player is not able to get horny]is so thick and sticky and [italic type]everywhere[roman type] that is on the brink of being too extreme for you to even tolerate[otherwise if the diaper addiction of the player < 15]is so impossibly thick, voluminous and gross that it simultaneously turns you on and disgusts you[otherwise if the diaper addiction of the player < 17]still very much turns you on, although you're really not sure it should[otherwise if refractoryPeriod > 0]is so disgustingly glorious that almost makes you cum a second time[otherwise]is so disgustingly glorious that almost makes you cum on the spot[end if].";
 			otherwise:
 				say "A [if rectum < 3]a small amount of mush[otherwise if rectum < 5]reasonable amount of squishy mush forces its way[otherwise if rectum < 8]large amount of lumpy mush[otherwise if rectum < 10]huge bulky log forces its way[otherwise]seemingly unending series of large mushy lumps become one giant ball which stretches you on its journey[end if] out of your butt and fills your [ShortDesc of D]. You feel it bulge out behind you, and you're almost afraid to move at all. A diaper would at least shield and properly contain your shame but the [ShortDesc of D] threatens to buckle at any moment. You need a change, and you need one now!";
 				MessUp D by rectum - 1;
@@ -281,7 +296,7 @@ To compute messing:
 			say "[variable custom style][if the diaper addiction of the player < 10][one of]I feel weirdly... comfortable. It must be this baby outfit I'm wearing affecting my mind![or]I can't believe how comfortable I feel in a messy diaper.[stopping][otherwise if the diaper addiction of the player < 15][one of]I wanna make it go ever bigger![or]I bet I can fit even more in here![at random][otherwise]Feels... soo... good![end if][roman type][line break]";
 		if the player is desperate to pee and wetting-valued <= 0:
 			now diaper-reaction-said is false; [prevents NPCs from reacting to the urination as well as the mess, which would be excessive]
-			now delayed urination is 1;
+			now delayed urination is 2;
 			say "The act of messing your diaper also makes you wet yourself.";
 			try urinating;
 		if reactions-suppressed is 0: [If it's set to 1 then we already computed enema reactions and we don't want the NPCs to have two separate reactions to the same event.]

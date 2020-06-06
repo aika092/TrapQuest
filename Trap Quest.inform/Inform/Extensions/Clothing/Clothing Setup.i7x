@@ -19,6 +19,7 @@ Is this something that can appear in the shop?
 Definition: a clothing (called C) is shop-eligible:
 	if C is not basic loot, decide no;
 	if C is not fetish appropriate, decide no;
+	if C is not off-stage, decide no;
 	if C is accessory or C is wrist bond or C is ankle bond or C is diaper, decide no;
 	let X be 0;
 	repeat with P running through store clothing in Dungeon41:
@@ -48,7 +49,9 @@ To Set Up Store:
 			now D is in Dungeon41;
 			now D is store;
 			if a random number between 1 and 3 is 1, now D is cursed;
-	while shop-clothing < 6:
+	let failsafe be 40;
+	while shop-clothing < 6 and failsafe > 0:
+		decrease failsafe by 1;
 		let L be a random shop-eligible clothing;
 		now L is in Dungeon41;
 		now L is store;

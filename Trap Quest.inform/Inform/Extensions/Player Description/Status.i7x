@@ -101,23 +101,23 @@ To BlowCount:
 To say SexStatsDesc:
 	if the blow-count of the player > 0:
 		let B be the blow-count of the player;
-		if B * 2 > the intelligence of the player, say "You have given more blowjobs than you can count.";
+		if B * 2 > saved-flat-intelligence, say "You have given more blowjobs than you can count.";
 		otherwise say "You have given [the blow-count of the player] blowjob[if B > 1]s[end if]. ";
 	if the fuck-count of the player > 0:
 		let F be the fuck-count of the player;
-		if F * 2 > the intelligence of the player, say "Your pussy has been fucked more times than you can count.";
+		if F * 2 > saved-flat-intelligence, say "Your pussy has been fucked more times than you can count.";
 		otherwise say "You've had your pussy fucked [F] time[if F > 1]s[end if].";
 	if the anal-count of the player > 0:
 		let A be the anal-count of the player;
-		if A * 2 > the intelligence of the player, say "Your ass has been fucked more times than you can count.";
+		if A * 2 > saved-flat-intelligence, say "Your ass has been fucked more times than you can count.";
 		otherwise say "You've had your ass fucked [A] time[if A > 1]s[end if].";
 	if the dominated-count of the player > 0:
 		let D be the dominated-count of the player;
-		if D > the intelligence of the player, say "You've had dominant sex more times than you can count.";
+		if D > saved-flat-intelligence, say "You've had dominant sex more times than you can count.";
 		otherwise say "You've had dominant sex [D] time[if D > 1]s[end if].";
 	if the submission-count of the player > 0:
 		let S be the submission-count of the player;
-		if S > the intelligence of the player, say "You've had submissive sex more times than you can count.";
+		if S > saved-flat-intelligence, say "You've had submissive sex more times than you can count.";
 		otherwise say "You've had submissive sex [S] time[if S > 1]s[end if].".
 
 [!<SayDiaperDisciplineDesc>+

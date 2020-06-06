@@ -569,7 +569,7 @@ To decide which number is the initial outrage of (C - tongue-stockings):
 	decide on 4.
 
 To decide which object is the unique-upgrade-target of (C - a stockings):
-	if there is a worn demonic wearthing and tongue-stockings is off-stage, decide on tongue-stockings;
+	if diaper quest is 0 and there is a worn demonic wearthing and tongue-stockings is off-stage, decide on tongue-stockings;
 	decide on nothing.
 
 All Stockings ends here.

@@ -40,6 +40,7 @@ To say ClothingDesc of (O - a lolita magical dress):
 	say "A frilly hime lolita dress that [if the thickness of hips > 5 and O is worn]would be just below knee height on a normal sized ass, but yours prevents it from sitting properly and so it only covers just beneath your rear[otherwise]is just below knee height[end if]. It is layered with bows and lace, making it incredibly innocent looking. It sparkles with an almost magical air.".
 
 Definition: a lolita magical dress is white themed: decide yes.
+Definition: a lolita magical dress is potentially erection concealing: decide yes. [non-tight skirts conceal erections]
 
 An exposing magical dress is a kind of magical dress. An exposing magical dress is usually arm exposing. An exposing magical dress is optional-top-displacable. An exposing magical dress is chestless. An exposing magical dress is belly exposing. An exposing magical dress is unskirted.
 

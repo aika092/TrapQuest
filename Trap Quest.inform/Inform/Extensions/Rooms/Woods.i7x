@@ -288,7 +288,6 @@ WoodsScenery05 is a scenery. WoodsScenery05 is in Woods31. Understand "statue", 
 To say ExamineDesc of (C - WoodsScenery05):
 	say "A pair of [if diaper quest is 1]diapered [otherwise if pregnancy fetish is 1]pregnant [end if] women carved out of stone, with [if vine boss is alive]green vines wrapping up their bodies like ropes.[otherwise]with their arms positioned to cover up their bodies.[end if]".
 
-
 [!<woods:Region>*
 
 REQUIRES COMMENTING

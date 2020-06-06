@@ -77,17 +77,17 @@ REQUIRES COMMENTING
 +!]
 Check resisting:
 	now forced submit is 0;
-	if the number of live things penetrating a body part is 0 and the number of things grabbing the player is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
+	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling the player is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
-	if vampiress is penetrating an orifice, now M is vampiress;
+	if vampiress is penetrating an orifice, now M is vampiress;[she always gets resisted first, since she has mind control stuff to talk about]
 	if there is a fucking daddy's hole monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'That's not your hole!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if there is a wrong race fucking monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
-		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
-		now forced submit is 1;
+		say "Your gaping [if the player is male][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
+		now forced submit is 1;[This tells the submission function not to display any flavor text.]
 		try submitting instead;
 	otherwise if the player is subdued:
 		say "[ResistSubduedFlav of a random worn subduing clothing] You have no choice but to lie there and accept the invasion.";
@@ -163,26 +163,33 @@ resist-target is an object that varies.
 
 [!<ReportResisting>+
 
-REQUIRES COMMENTING
+At this point, resisting will actually take an effect. Flavour prioritizes anything holding the player down, then anything fucking the player, and finally anything that's holding onto the player. If the player is resisting a monster, then the monster can potentially punish them.
 
 +!]
 Report resisting:
-	if weight gain fetish is 1 and (there is a live thing penetrating a fuckhole or there is a live thing grabbing the player):
+	if weight gain fetish is 1 and the player is at least partially living stuck:[resisting is a form of exercise]
 		increase the fat-burning of hips by 20;
 		compute hip fat burning;
-	let M be a random thing grabbing the player;
-	if M is nothing, now M is a random live thing penetrating a body part;
+	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
+	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
+	if M is nothing, now M is a random thing wrangling the player;[Lastly, we take a look at any holders on.]
 	unless M is nothing:
 		if the player is friendly fucked:
 			say FriendlySexResistFlav of M;
 			if M is monster, compute FriendlySexRelease of M;
 		otherwise:
-			say SexResistFlav of M;
-			if M is monster, compute sex resist punishment of M;
+			if M is penetrating the player or M is grabbing the player:
+				say SexResistFlav of M;
+				if M is monster, compute sex resist punishment of M;
+			otherwise if M is wrangling the player:
+				compute wrangled resisting of M;
 			if the delicateness of the player > 10 and M is male intelligent human monster and there is a worn tattoo and daddy's wild child tattoo is not worn and a random number between 1 and 10 is 1:
 				summon daddy's wild child tattoo;
 				say "[line break][bold type]A new tattoo appears on your arm![roman type][line break]";
 				try examining daddy's wild child tattoo.
+
+To compute wrangled resisting of (T - a thing):
+	say SexResistFlav of T.
 
 To say SexResistFlav of (T - a thing):
 	if diaper quest is 1, say DQResistFlav of T;
@@ -226,7 +233,7 @@ To say DQSpankResistExtensionFlav of (M - a monster):
 
 To say DQEnemaResistFlav of (M - a monster):
 	say "[if M is penetrating asshole][one of]You try to wrestle free before [NameDesc of M] gets any more inside you but [his of M] grip remains firm[or]You try to pull away from the enema in vain[or]Your belly gurgles as you sway side to side, trying to make it more difficult for [NameDesc of M] to continue filling you up[in random order][otherwise][one of]You try to escape before the enema can begin, but [NameDesc of M][']s grip on you is too strong[or]Realising what's about to happen you pull away with all your strength but it's too little too late[or]You wiggle your butt to try and stop [NameDesc of M] from proceeding but you just can't get away[in random order][end if].";
-	if the player is able to speak, say "[variable custom style]'[if the water volume of belly >= 15][one of]Too much! That's too much now[or]I'm so full it hurts, please no more[or]I'm too full, I can't take any more[or]Uuugh, please no more[in random order][otherwise if M is not penetrating asshole][one of]Is this really necessary?[or]Can't we settle this some other way[or]No, I don't need to be cleaned out[or]I don't need help doing something like this[in random order][otherwise if the bimbo of the player >= 13][one of]What are you doing [daddy of M]? It feels weird[or]Please let me push it out now [daddy of M][or]I'm sorry I'll be a good girl from now on, please let me go potty now[or]It feels weird [daddy of M][in random order][otherwise][one of]Stop this immediately[or]Leave my bowels alone[or]You are not a medical professional[or]This can't be happening[or]I DON'T NEED THIS! STOP IT AT ONCE[or]Let me go right now, I need to get to the toilet[or]This feels so wrong[or][in random order][end if]!'[roman type][line break]";
+	if the player is able to speak, say "[variable custom style]'[if the water volume of belly >= 15][one of]Too much! That's too much now[or]I'm so full it hurts, please no more[or]I'm too full, I can't take any more[or]Uuugh, please no more[in random order][otherwise if M is not penetrating asshole][one of]Is this really necessary?[or]Can't we settle this some other way[or]No, I don't need to be cleaned out[or]I don't need help doing something like this[in random order][otherwise if the bimbo of the player >= 13][one of]What are you doing [daddy of M]? It feels weird[or]Please let me push it out now [daddy of M][or]I'm sorry I'll be a good [boy of the player] from now on, please let me go potty now[or]It feels weird [daddy of M][in random order][otherwise][one of]Stop this immediately[or]Leave my bowels alone[or]You are not a medical professional[or]This can't be happening[or]I DON'T NEED THIS! STOP IT AT ONCE[or]Let me go right now, I need to get to the toilet[or]This feels so wrong[or][in random order][end if]!'[roman type][line break]";
 	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
 
 To say DQEnemaResistReactionFlav of (M - a monster):
@@ -500,7 +507,7 @@ To say DQResistChastise of (M - a monster):
 	otherwise if M is changing the player:
 		say DQResistChangeChastise of M;
 	otherwise:
-		say "[BigNameDesc of M] [one of]laughs[or]growls[or]frowns[or]harrumphs[at random].[line break][speech style of M]'[one of]See now, this is why you need to be treated like a baby.'[or]Such childish behaviour.'[or]Aww, is the little baby having a tantrum?'[or]Good girls don't fight back.'[or]If you don't take this like a grown-up then that just shows that you still don't deserve to be treated as one.'[or]Hold still you little brat!'[or]You're just going to make [daddy of M] more mad!'[or]The more you struggle the longer this will take!'[in random order][roman type][line break]".
+		say "[BigNameDesc of M] [one of]laughs[or]growls[or]frowns[or]harrumphs[at random].[line break][speech style of M]'[one of]See now, this is why you need to be treated like a baby.'[or]Such childish behaviour.'[or]Aww, is the little baby having a tantrum?'[or]Good [boy of the player]s don't fight back.'[or]If you don't take this like a grown-up then that just shows that you still don't deserve to be treated as one.'[or]Hold still you little brat!'[or]You're just going to make [daddy of M] more mad!'[or]The more you struggle the longer this will take!'[in random order][roman type][line break]".
 
 To say DQResistMasturbationChastise of (M - a monster):
 	say "[BigNameDesc of M] [one of]laughs[or]smirks[or]chuckles[at random].[line break][speech style of M]'[one of]Uh-oh, is my little baby getting a bit flustered down there?'[or]You're getting a bit worked up, aren't you?'[or]Are you trying to tell me you don't like it? I don't believe you!'[or]Your body is telling me the truth of how good this feels!'[or]You should be thanking me!'[or]Haha, stop pretending you don't want more.'[in random order][roman type][line break]".

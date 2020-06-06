@@ -202,7 +202,7 @@ To fill in custom flavour blanks:
 		now name in row 12 of the Table of Info Options is "Ashley";
 		now name in row 13 of the Table of Info Options is "roommate";
 		now name in row 14 of the Table of Info Options is "John";
-		now name in row 15 of the Table of Info Options is "neighbor";
+		now name in row 15 of the Table of Info Options is "neighbour";
 		now name in row 16 of the Table of Info Options is "feminine gender";
 		now name in row 17 of the Table of Info Options is "strapon";
 		now name in row 18 of the Table of Info Options is "masculine gender";

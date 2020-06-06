@@ -1,15 +1,25 @@
 Virginity by Player begins here.
 
-[!<Player>@<virgin:Integer>*
+Definition: yourself is totalvirgin if the analvirgin of the player is 1 and the oralvirgin of the player is 1 and (the penetrativevirgin of the player is 1 or the player is female) and (the vaginalvirgin of the player is 1 or the player is male).
 
-For females, has something alive fucked their vagina? For males, have they had dominant penetrative sex?
+[!<Player>@<penetrativeVirgin:Integer>*
+
+Have they had dominant penetrative sex?
 
 *@!]
-The player has a number called virgin. The virgin of the player is usually 1.
+The player has a number called penetrativevirgin. The penetrativevirgin of the player is usually 1.
 
-virginity-taker is a thing that varies. virginity-taker is the throne.
+[!<Player>@<vaginalVirgin:Integer>*
+
+Has something alive fucked their vagina?
+
+*@!]
+The player has a number called vaginalvirgin. The vaginalvirgin of the player is usually 1.
+
+vaginalvirginity-taker is a thing that varies. vaginalvirginity-taker is the throne.
 penisvirginity-taker is a thing that varies. penisvirginity-taker is the throne.
 analvirginity-taker is a thing that varies. analvirginity-taker is the throne.
+oralvirginity-taker is a thing that varies. oralvirginity-taker is the throne.
 
 [!<Player>@<analVirgin:Integer>*
 
@@ -17,6 +27,13 @@ Has something alive fucked their asshole?
 
 *@!]
 The player has a number called analvirgin. The analvirgin of the player is usually 1.
+
+[!<Player>@<oralVirgin:Integer>*
+
+Has something alive fucked their mouth?
+
+*@!]
+The player has a number called oralvirgin. The oralvirgin of the player is usually 1.
 
 [!<Player>@<virginBonus:Integer>*
 
@@ -40,8 +57,8 @@ Triggered when the player loses vaginal virginity.
 
 +!]
 To compute virginity loss:
-	now virginity-taker is a random live virginity taking thing penetrating vagina;
-	now the virgin of the player is 0;
+	now vaginalvirginity-taker is a random live virginity taking thing penetrating vagina;
+	now the vaginalvirgin of the player is 0;
 	say "[variable custom style][if the class of the player is virgin warrior and the class of the player is priestess]Aaah! Sorry sisters, I have failed you...[otherwise if the player is not a pervert]Oh god... so this is how I will forever remember losing my virginity...[otherwise if the player is not a nympho]I guess it was about time someone broke me in...[otherwise]I've given my virginity to a stranger. There's no going back from that! *giggle*[end if][roman type][line break]";
 	let flav-said be 0;
 	now the tattoo-title of virgin void tattoo is "virgin void";
@@ -144,27 +161,26 @@ To virginpunish:
 	if virgincursed > 0 and transGender is 0:
 		let S be a random off-stage sissifying transformation-eligible actually summonable clothing;
 		if S is clothing:
-			say "[VirginFlav]";
+			say VirginFlav;
 			say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of S] appear on you![line break][variable custom style][one of]Uh-oh...[or]This is making me feel like a pathetic [sissy slut]...[or]Even more [sissy] clothing?![stopping][roman type][line break]";
 			summon S cursed with quest;
 			now the raw-magic-modifier of S is the number of worn sissifying clothing - 2;
 			announce sissification;
 		otherwise if the size of penis > min penis size:
-			say "[VirginFlav]";
+			say VirginFlav;
 			PenisDown 1;
-			say "Your penis [Shrink]s into a [ShortDesc of penis].";
-		otherwise if the player is possessing a penis:
-			say "[VirginFlav]";
+		otherwise if the size of penis > 0:
+			say VirginFlav;
 			let C be a random off-stage chastity cage;
 			if C is actually summonable:
 				say "[bold type]As if reacting to your feelings, you suddenly feel a [ShortDesc of C] [bold type]appear on you![line break][variable custom style]How am I ever supposed to lose my virginity now? I'm stuck like this forever...[roman type][line break]";
 				summon C locked;
 		otherwise if the raw sex addiction of the player < 15 and the raw sex addiction of the player < the raw delicateness of the player:
-			say "[VirginFlav]";
+			say VirginFlav;
 			if the raw anal sex addiction of the player <= the raw sex addiction of the player / 2, AnalSexAddictUp 1;
 			otherwise SexAddictUp 1;
 		otherwise if the raw delicateness of the player < 15:
-			say "[VirginFlav]";
+			say VirginFlav;
 			DelicateUp 1.
 
 [!<AnnounceSissification>+
@@ -181,17 +197,17 @@ REQUIRES COMMENTING
 
 +!]
 To check virginity with (M - a monster):
-	if the virgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:
+	if the penetrativevirgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:
 		if virgincursed is 1:
 			if player-fucking is DOMINANT-NONE or player-fucking is DOMINANT-SHAMEFUL:[only 'true' dominant sex can reverse your virgin curse]
 				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I[']m gonna be a virgin forever...[then at random][roman type][line break]";
 			otherwise:
 				virginremovecurse;
-				now the virgin of the player is 0;
+				now the penetrativevirgin of the player is 0;
 				now penisvirginity-taker is M;
 		otherwise:
 			say "[variable custom style]After that, nobody can call me a virgin. Pretty sure.[roman type][line break]";
-			now the virgin of the player is 0;
+			now the penetrativevirgin of the player is 0;
 			now penisvirginity-taker is M.
 
 [!<VirginRemoveCurse>+

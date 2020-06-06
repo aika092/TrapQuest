@@ -3,7 +3,7 @@ Catsuit by Dresses begins here.
 catsuit is a kind of overdress. A catsuit is usually latex. A catsuit is usually transformation-rare. A catsuit is usually manly. A catsuit is usually unskirted. A catsuit is usually leg covering. A catsuit is usually only arm covering. A catsuit is usually crotch-exposing. The printed name of catsuit is usually "[clothing-title-before]latex catsuit[clothing-title-after]". The text-shortcut of catsuit is "cst". Understand "cat", "suit" as catsuit.
 
 To decide which object is the unique-upgrade-target of (C - a catsuit):
-	if there is a worn demonic wearthing, decide on tongue-suit;
+	if diaper quest is 0 and there is a worn demonic wearthing, decide on tongue-suit;
 	decide on nothing.
 
 Report wearing catsuit:

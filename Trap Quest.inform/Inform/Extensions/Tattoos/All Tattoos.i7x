@@ -192,7 +192,7 @@ Atlas tattoo is a chest tattoo. The tattoo-title of atlas tattoo is "atlas".
 Definition: Atlas tattoo is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if player is a flatchested trap, decide no;
+	if the player is a flatchested trap, decide no;
 	decide yes.
 Definition: Atlas tattoo is eligible:
 	if the noun is bra or the noun is exercise themed or the noun is boob themed, decide yes;
@@ -246,6 +246,26 @@ To decide which number is the dexterity-influence of (T - bat tattoo):
 	decide on 1.
 To decide which number is the strength-influence of (T - bat tattoo):
 	decide on 1.
+To decide which number is the initial outrage of (T - bat tattoo):
+	decide on 3.
+
+bbc-fairy tattoo is an upper back tattoo. The tattoo-title of bbc-fairy tattoo is "big black cock fairy cum".
+Understand "big black", "black cock", "fairy cum" as tattoo.
+Definition: bbc-fairy tattoo is drawable if interracial fetish is 1 and the number of worn upper back tattoo is 0.
+Definition: bbc-fairy tattoo is eligible:
+	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink hair or the noun is fae mushroom or the noun is butterfly-wings or the noun is fairy wand, decide yes;
+	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
+	decide no.
+To say tattoo-desc of (T - bbc-fairy tattoo):
+	say "A drawing of a bimbo fairy staring lovingly at a huge black cock dripping hueg amounts of [semen], with love-hearts rising from her head, is tattooed onto your upper back.".
+To decide which number is the semen-taste-addiction-influence of (T - bbc-fairy tattoo):
+	decide on 2.
+To decide which number is the BBC-sex-addiction-influence of (T - bbc-fairy tattoo):
+	decide on 2.
+To decide which number is the sex-addiction-influence of (T - bbc-fairy tattoo):
+	decide on 1.
+To decide which number is the initial outrage of (T - bbc-fairy tattoo):
+	decide on 15.
 
 bed-wetter tattoo is a body tattoo. The tattoo-title of bed-wetter tattoo is "bed wetter". Understand "wetter" as bed-wetter tattoo.
 Figure of bed wetter tattoo is the file "Items/Tats/tattoo101.jpg".
@@ -347,7 +367,7 @@ Definition: bitch tattoo is eligible:
 To say tattoo-desc of (T - bitch tattoo):
 	say "The word [i]Bitch[if the player is a flatchested trap]boy[end if][/i] has been tattooed on your lower back in thick cursive letters, followed by a pink heart. [if the player is a flatchested trap]It definitely doesn't make you feel very manly...[otherwise]It makes you feel trashy.[end if]".
 To decide which number is the initial outrage of (T - bitch tattoo):
-	decide on 13.
+	decide on 7.
 To decide which number is the delicateness-influence of (C - bitch tattoo):
 	if the player is a flatchested trap, decide on 2;
 	decide on -1.
@@ -558,7 +578,7 @@ To say tattoo-desc of (T - cheating whore tattoo):
 To decide which number is the bimbo-influence of (T - cheating whore tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - cheating whore tattoo):
-	decide on 11.
+	decide on 7.
 
 clit-piercing tattoo is a body tattoo. The tattoo-title of clit-piercing tattoo is "clit piercing". Understand "clit", "piercing" as clit-piercing tattoo.
 Definition: clit-piercing tattoo is drawable: decide no.
@@ -571,7 +591,7 @@ To decide which object is the at least partial concealer of (T - clit-piercing t
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through arm covering clothing.
 To decide which number is the initial outrage of (T - clit-piercing tattoo):
-	decide on 15.
+	decide on 12.
 This is the clit-piercing tattoo pussy slut rule:
 	if clit-piercing tattoo is worn, increase the desirability of vagina by 5.
 The clit-piercing tattoo pussy slut rule is listed in the pussy slut eligibility rules.
@@ -639,9 +659,9 @@ Definition: cum-dump tattoo is eligible:
 	decide no.
 To say tattoo-desc of (T - cum-dump tattoo):
 	say "The words 'Cum Dump' are inked in cursive script in the middle of a heart made of flowers, on your right thigh.".
-To decide which number is the semen addiction influence of (C - cum-dump tattoo):
+To decide which number is the semen-addiction-influence of (C - cum-dump tattoo):
 	decide on 2.
-To decide which number is the semen taste addiction influence of (C - cum-dump tattoo):
+To decide which number is the semen-taste-addiction-influence of (C - cum-dump tattoo):
 	decide on 2.
 To decide which object is the concealer of (T - cum-dump tattoo):
 	decide on a random worn actually dense leg covering clothing.
@@ -649,7 +669,7 @@ To decide which object is the at least partial concealer of (T - cum-dump tattoo
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through leg covering clothing.
 To decide which number is the initial outrage of (T - cum-dump tattoo):
-	decide on 11.
+	decide on 12.
 Definition: cum-dump tattoo is semen themed: decide yes.
 
 cum dumpster lip tattoo is a body tattoo. The tattoo-title of cum dumpster lip tattoo is "cum dumpster lip".
@@ -673,11 +693,6 @@ To say CurrentlyVisibleFlav of (C - cum dumpster lip tattoo):
 	do nothing.
 To say visibility-desc of (T - cum dumpster lip tattoo):
 	do nothing.
-This is the cum dumpster tattoo prevents gag reflex rule:
-	if cum dumpster lip tattoo is worn:
-		if debuginfo > 0, say "[input-style]Avoid gagging check: cum dumpster lip tattoo | automatic success[roman type][line break]";
-		rule succeeds.
-The cum dumpster tattoo prevents gag reflex rule is listed in the gag reflex rules.
 Definition: cum dumpster lip tattoo is semen themed: decide yes.
 Definition: cum dumpster lip tattoo is oral sex themed: decide yes.
 
@@ -791,12 +806,12 @@ Definition: daddy's wild child tattoo is eligible: decide no.
 To decide which figure-name is the examine-image of (T - daddy's wild child tattoo):
 	decide on figure of daddy's wild child tattoo.
 To say tattoo-desc of (T - daddy's wild child tattoo):
-	say "The words 'daddy's wild child' are tattooed in large looping letters on the outside of your right arm.".
+	say "The words 'daddy's wild child' are tattooed in large looping letters on the back of your left thigh.".
 To decide which object is the concealer of (T - daddy's wild child tattoo):
-	decide on a random worn actually dense arm covering clothing.
+	decide on a random worn actually dense leg covering clothing.
 To decide which object is the at least partial concealer of (T - daddy's wild child tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through arm covering clothing.
+	decide on a random worn not-see-through leg covering clothing.
 To decide which number is the sex-addiction-influence of (T - daddy's wild child tattoo):
 	decide on 2.
 To decide which number is the delicateness-influence of (T - daddy's wild child tattoo):
@@ -848,7 +863,7 @@ Definition: diapered dinosaur tattoo is eligible:
 	if the noun is dinosaur themed or the noun is soiled-diaper, decide yes;
 	decide no.
 To say tattoo-desc of (T - diapered dinosaur tattoo):
-	say "A tattoo of a dinosaur diapered with a cloth diaper and large safety pin along with baby play-blocks is tattooed on the back of your your right calf.".
+	say "A drawing of a dinosaur wearing a cloth diaper and large safety pin along with baby play-blocks is tattooed on the back of your your right tight.".
 To decide which object is the concealer of (T - diapered dinosaur tattoo):
 	decide on a random worn actually dense leg covering clothing.
 To decide which object is the at least partial concealer of (T - diapered dinosaur tattoo):
@@ -859,7 +874,7 @@ To decide which number is the strength-influence of (T - diapered dinosaur tatto
 To decide which number is the diaper-addiction-influence of (T - diapered dinosaur tattoo):
 	decide on 4.
 To decide which number is the initial cringe of (T - diapered dinosaur tattoo):
-	decide on 8.
+	decide on 6.
 Definition: diapered dinosaur tattoo is baby themed: [Is it something that only an adult baby fetishist would have?]
 	decide yes.
 
@@ -980,12 +995,12 @@ Definition: elephant tattoo is eligible:
 	if the noun is heart themed or the noun is tail plug or the noun is grey themed or the noun is elephant themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - elephant tattoo):
-	say "A tattoo of [if diaper quest is 0]an[otherwise]a baby[end if] elephant blowing love hearts from its trunk is tattooed just below your right inner elbow.".
+	say "A tattoo of [if diaper quest is 0]an[otherwise]a baby[end if] elephant blowing love hearts from its trunk is tattooed on the front of your left thigh.".
 To decide which object is the concealer of (T - elephant tattoo):
-	decide on a random worn actually dense arm covering clothing.
+	decide on a random worn actually dense leg covering clothing.
 To decide which object is the at least partial concealer of (T - elephant tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through arm covering clothing.
+	decide on a random worn not-see-through leg covering clothing.
 To decide which number is the delicateness-influence of (T - elephant tattoo):
 	decide on -1.
 To decide which number is the initial cringe of (T - elephant tattoo):
@@ -1021,14 +1036,14 @@ To decide which figure-name is the examine-image of (T - failed potty training t
 	if diaper lover >= 3, decide on figure of failed messy potty training tattoo;
 	decide on figure of failed potty training tattoo.
 To say tattoo-desc of (T - failed potty training tattoo):
-	say "The words 'I FAILED POTTY TRAINING' are tattooed on your belly. You can no longer feel how full your bladder [if diaper messing >= 3]or bowels are[otherwise]is[end if].".
+	say "The words 'I FAILED POTTY TRAINING' are tattooed on your belly. You can no longer feel how full your bladder [if diaper messing >= 3]or bowels are[otherwise]is[end if] and you don't notice when you use your diapers.".
 To decide which object is the concealer of (T - failed potty training tattoo):
 	decide on a random worn actually dense belly covering clothing.
 To decide which object is the at least partial concealer of (T - failed potty training tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through belly covering clothing.
 To decide which number is the initial cringe of (T - failed potty training tattoo):
-	decide on 15.
+	decide on 8.
 Definition: failed potty training tattoo is baby themed: decide yes. [Is it something that only an adult baby fetishist would have?]
 Definition: failed potty training tattoo is toilet themed: decide yes.
 
@@ -1139,7 +1154,7 @@ To say tattoo-desc of (T - free ride tattoo):
 To decide which number is the perceived-bimbo-influence of (C - free ride tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - free ride tattoo):
-	decide on 12.
+	decide on 5.
 
 freedom tattoo is a body tattoo. The tattoo-title of freedom tattoo is "freedom".
 Figure of freedom tattoo is the file "Items/Tats/tattoo2.jpg".
@@ -1196,13 +1211,13 @@ To decide which number is the bimbo-influence of (T - fuckin classy tattoo):
 	decide on -1.
 Definition: fuckin classy tattoo is heart themed: decide yes.
 
-funcenter tattoo is an asshole-tattoo. The tattoo-title of funcenter tattoo is "funcenter".
-Definition: funcenter tattoo is eligible:
+funcentre tattoo is an asshole-tattoo. The tattoo-title of funcentre tattoo is "funcentre".
+Definition: funcentre tattoo is eligible:
 	if the noun is plug or the noun is ass plugging clothing or the noun is mechanical joint or the noun is lubricant or the noun is pin themed, decide yes;
 	decide no.
-To say tattoo-desc of (T - funcenter tattoo):
-	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTER' inked in giant letters above it.".
-To decide which number is the anal sensitivity influence of (C - funcenter tattoo):
+To say tattoo-desc of (T - funcentre tattoo):
+	say "Barbed wire is tattooed around your [asshole], which might discourage its use if it wasn't for the word 'FUNCENTRE' inked in giant letters above it.".
+To decide which number is the anal sensitivity influence of (C - funcentre tattoo):
 	decide on 2.
 
 Book - G Tattoos
@@ -1233,8 +1248,9 @@ Definition: heavyweight tattoo is eligible:
 To decide which figure-name is the examine-image of (T - heavyweight tattoo):
 	decide on figure of heavyweight tattoo.
 To say tattoo-desc of (T - heavyweight tattoo):
-	say "The word 'Heavy' is inked on the back your left leg and the word 'Weight' on the back of your right leg. You feel as if it is somehow weighing you down.".
+	say "The word 'Heavy' is inked on the back your left leg and the word 'Weight' on the back of your right leg. You feel as if it is [if weight gain fetish is 1]making it more difficult for you to lose weight[otherwise]somehow weighing you down[end if].".
 To decide which number is the heaviness of (T - heavyweight tattoo):
+	if weight gain fetish is 1, decide on 0;
 	decide on 10.
 To decide which number is the strength-influence of (T - heavyweight tattoo):
 	decide on 1.
@@ -1324,12 +1340,7 @@ To decide which figure-name is the examine-image of (T - ink-me tattoo):
 	decide on figure of ink-me tattoo.
 Definition: ink-me tattoo is eligible: decide no.
 To say tattoo-desc of (T - ink-me tattoo):
-	say "The words 'INK ME' are tattooed in block capitals on the back of one hand.".
-[To decide which object is the concealer of (T - ink-me tattoo):
-	decide on a random worn actually dense finger covering clothing.
-To decide which object is the at least partial concealer of (T - ink-me tattoo):
-	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through finger covering clothing.][Redundant, since this tattoo is a hand-tattoo]
+	say "The words 'INK ME' are tattooed in block capitals on the inside of one wrist, along with a drawing of a mechanical tattoo needle.".
 To decide which number is the initial outrage of (T - ink-me tattoo):
 	decide on 1.
 
@@ -1803,12 +1814,12 @@ Definition: princess castle tattoo is eligible:
 	if the noun is royalty themed or the noun is magic lamp or the noun is pink pill, decide yes;
 	decide no.
 To say tattoo-desc of (T - princess castle tattoo):
-	say "A drawing of a large pink castle on your left shin near the ankle. You feel like [if playerRegion is Dungeon]you are[otherwise]you'll be[end if] more powerful while in the dungeon.".
+	say "A drawing of a large pink castle on your left side by your tummy. You feel like [if playerRegion is Dungeon]you are[otherwise]you'll be[end if] more powerful while in the dungeon.".
 To decide which object is the concealer of (T - princess castle tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense belly covering clothing.
 To decide which object is the at least partial concealer of (T - princess castle tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through belly covering clothing.
 To decide which number is the strength-influence of (T - princess castle tattoo):
 	if playerRegion is Dungeon, decide on 2.
 To decide which number is the initial cringe of (T - princess castle tattoo):
@@ -2084,7 +2095,7 @@ Definition: sissy black cock whore tattoo is eligible:
 To say tattoo-desc of (T - sissy black cock whore tattoo):
 	say "The words 'Sissy Black Cock Whore' are tattooed in large letters on your [BreastDesc]. It's helping you realise how much [if the sex addiction of the player < 12]dark skinned people are your natural superiors[otherwise][BlackCock] is just... better[end if].".
 To decide which number is the initial outrage of (T - sissy black cock whore tattoo):
-	decide on 18.
+	decide on 15.
 
 slimecock tattoo is a body tattoo. The tattoo-title of slimecock tattoo is "slimy cock". Understand "slimy" as slimecock tattoo.
 Definition: slimecock tattoo is drawable:
@@ -2153,7 +2164,7 @@ Definition: spank-me-heart tattoo is drawable:
 To decide which figure-name is the examine-image of (T - spank-me-heart tattoo):
 	decide on figure of spank-me-heart tattoo.
 To say tattoo-desc of (T - spank-me-heart tattoo):
-	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a handprint on the butt. The words 'spank me' can be read above and underneath ".
+	say "Your right ankle has a small heart tattooed on it, with a butt inside, with a handprint on the butt. The words 'spank me' can be read above and underneath.".
 To decide which number is the delicateness-influence of (T - spank-me-heart tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - spank-me-heart tattoo):
@@ -2215,7 +2226,7 @@ To decide which object is the at least partial concealer of (T - stinker tattoo)
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through arm covering clothing.
 To decide which number is the initial cringe of (T - stinker tattoo):
-	if there is worn messed knickers, decide on 18;
+	if there is worn messed knickers, decide on 9;
 	decide on 4.
 
 stupid whore tattoo is a lower back tattoo. The tattoo-title of stupid whore tattoo is "stupid whore".
@@ -2332,14 +2343,12 @@ Definition: teapot tattoo is eligible:
 	if the noun is drink themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - teapot tattoo):
-	say "Your ankle sports the tattoo of a strangely familiar teapot and chipped teacup with smiling faces. You feel like your body is digesting faster and so you will need to eat and drink more frequently.".
+	say "Your left shoulder sports the tattoo of a strangely familiar teapot and chipped teacup with smiling faces. You feel like your body is digesting faster and so you will need to eat and drink more frequently.".
 To decide which object is the concealer of (T - teapot tattoo):
-	if there is worn actually dense shoes, decide on a random worn actually dense shoes;
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense arm covering clothing.
 To decide which object is the at least partial concealer of (T - teapot tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	if there is worn not-see-through shoes, decide on a random worn not-see-through shoes;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through arm covering clothing.
 To decide which number is the initial cringe of (T - teapot tattoo):
 	decide on 4.
 Definition: teapot tattoo is respiration-enhancing: decide yes.
@@ -2420,7 +2429,7 @@ topless tattoo is a chest tattoo. The tattoo-title of topless tattoo is "topless
 Definition: topless tattoo is drawable:
 	if there is a worn chest tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if player is a flatchested trap, decide no;
+	if the player is a flatchested trap, decide no;
 	decide yes.
 Definition: topless tattoo is eligible:
 	if the noun is boob themed, decide yes;
@@ -2563,21 +2572,21 @@ Definition: VIP pussy tattoo is whore themed: decide yes.
 virgin void tattoo is a body tattoo. The tattoo-title of virgin void tattoo is "virgin".
 Definition: virgin void tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible and black hole tattoo is not worn.
 Definition: virgin void tattoo is eligible:
-	if the player is male or the virgin of the player is 1, decide no;
+	if the player is male or the vaginalvirgin of the player is 1, decide no;
 	if the noun is clothing:
 		if the noun is crotch covering and the noun is no protection, decide yes;
 	if the noun is condom of kings or the noun is pregnancy related or the noun is purity clothing or the noun is chastity cage or the noun is vagina themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - virgin void tattoo):
-	say "The black word 'VIRGIN' is tattooed to the right of your belly button, [if the virgin of the player is 1]reminding you of your purity[otherwise]and a large red 'VOID' has been tattooed over the top as if it had been stamped there[end if].".
+	say "The black word 'VIRGIN' is tattooed to the right of your belly button, [if the vaginalvirgin of the player is 1]reminding you of your purity[otherwise]and a large red 'VOID' has been tattooed over the top as if it had been stamped there[end if].".
 To decide which number is the vaginal sensitivity influence of (C - virgin void tattoo):
-	if the virgin of the player is 1, decide on 0;
+	if the vaginalvirgin of the player is 1, decide on 0;
 	decide on 2.
 To decide which number is the vaginal-sex-addiciton-influence of (C - virgin void tattoo):
-	if the virgin of the player is 1, decide on -1;
+	if the vaginalvirgin of the player is 1, decide on -1;
 	decide on 0.
-To decide which number is the outrage of (T - virgin void tattoo):
-	if the virgin of the player is 1, decide on 1;
+To decide which number is the initial outrage of (T - virgin void tattoo):
+	if the vaginalvirgin of the player is 1, decide on 1;
 	decide on 5.
 To decide which object is the concealer of (T - virgin void tattoo):
 	decide on a random worn actually dense belly covering clothing.

@@ -50,9 +50,7 @@ This is the setup starting candy rule:
 To decide which number is default-candy-duration:
 	decide on 650.
 
-
 Book - Low Tier Candy
-
 
 candy corn is a candy. The printed name of candy corn is "[TQlink of item described]pack of candy corn[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of candy corn is "crn". Understand "pack", "pack of" as candy corn.
 
@@ -103,7 +101,7 @@ To compute CandyCornEat:
 								if bukkake fetish is 1:
 									say "[line break]A [if the semen addiction of the player < 6]heavy[otherwise]heavenly[end if] smell hits your nose as your [printed name of C] suddenly dampens with [semen]!";
 									CumSoak S on C;
-								otherwise:[if bukkake fetish is 0, it means that watersports fetish must be 1, otherwise we would have gone for hair color.]
+								otherwise:[if bukkake fetish is 0, it means that watersports fetish must be 1, otherwise we would have gone for hair colour.]
 									say "[line break]A sharp smell hits your nose as your [printed name of C] suddenly dampens with [urine]!";
 									PissSoak S on C;
 						otherwise if S < 0:[Above 13? Clean it completely!]
@@ -155,9 +153,6 @@ To compute (M - a robochef) cooking (I - candy corn):
 		now the fat of D is 1;
 		now D is retained by M.
 
-
-
-
 digestive biscuit is a candy. The text-shortcut of digestive biscuit is "dbc".
 
 To say ExamineDesc of (C - digestive biscuit):
@@ -208,7 +203,6 @@ To compute offer reward of (M - prison guard) for (T - digestive biscuit):
 		compute autotaking skeleton key;
 	FavourUp M by 2.
 
-
 A liquorice is a candy. The text-shortcut of liquorice is "lq".
 
 To say ExamineDesc of (C - liquorice):
@@ -240,7 +234,6 @@ Carry out TQeating liquorice:
 	otherwise:
 		say "You manage to tolerate the bittersweet taste without suffering any [if liquorice-timer > 0]further [end if]negative effects.".
 
-
 a time based rule (this is the liquorice decay rule):
 	if liquorice-timer > default-candy-duration:
 		decrease liquorice-timer by time-seconds;
@@ -259,10 +252,9 @@ To compute (M - a robochef) cooking (I - liquorice):
 		now the fat of D is 1;
 		now D is retained by M.
 
-
 Book - High Tier Candy
 
-bubblegum is a candy.  The text-shortcut of bubblegum is "bbg".
+bubblegum is a candy. The text-shortcut of bubblegum is "bbg".
 To say ExamineDesc of (B - bubblegum):
 	say "A pack containing a single stick of gum, labelled 'MAGIC EDIBLE BUBBLEGUM!'".
 
@@ -419,7 +411,6 @@ To compute (M - a robochef) cooking (I - a creme egg):
 		if D is golden-creme-egg, increase the fat of D by 1;
 		now D is retained by M.
 
-
 fudge is a candy. The text-shortcut of fudge is "fud".
 
 To say ExamineDesc of (C - fudge):
@@ -530,7 +521,7 @@ Carry out TQeating pink nougat:
 	say "[DevourFlav of the noun] As the candy reaches your stomach you suddenly feel ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		say "an overpowering arousal flood your entire body. You can actually feel your pupils dilate as your heartbeat thumps loud and fast.";
-		now refactoryperiod is 0;
+		now refractoryperiod is 0;
 		arouse 7000;
 		check for arousal change;
 		say "[variable custom style][one of]Uh-oh, it seems like some of these nougats increase a different kind of blood flow...[or][if the bimbo of the player < 7]Oh god, I wanted strength, not this again![otherwise if the bimbo of the player < 14 and the player is able to automatically masturbate]Oh no, not again! I should find somewhere private to sort myself out.[otherwise]Ooh, I need to cum so bad... I'm sure someone here can help me...[end if][stopping][roman type][line break]";
@@ -644,6 +635,5 @@ To compute (M - a robochef) cooking (I - toffee):
 		now the quality of D is a random number between 2 and 0;
 		now the fat of D is 3;
 		now D is retained by M.
-
 
 Candy ends here.

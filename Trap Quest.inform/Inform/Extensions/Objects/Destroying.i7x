@@ -14,6 +14,8 @@ To dislodge (C - a thing):
 		now C is not penetrating B;
 	repeat with B running through things grabbed by C:
 		now C is not grabbing B;
+	repeat with B running through things wrangled by C:
+		now C is not wrangling B;
 	repeat with B running through things covered by C:
 		now C is not covering B.
 
