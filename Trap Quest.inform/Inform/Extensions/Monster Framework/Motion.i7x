@@ -3,7 +3,7 @@ Motion by Monster Framework begins here.
 To check motion of (M - a monster):
 	if M is penetrating a body part:
 		dislodge M;
-	if M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
+	if M is undefeated and M is willing to punish untidiness and the player is not in the location of M: [While the NPC idly wanders, it can pick up leftover soiled diapers]
 		repeat with D running through soiled-diaper in the location of M:
 			now D is in Holding Pen;
 			now D is retained by M;

@@ -22,6 +22,7 @@ To compute mass collectible reward of (T - a fabric token):
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	set numerical response 1 to "wish for a bra";
 	set numerical response 2 to "wish for undies";
+	compute multiple choice question;
 	if player-numerical-response is 1:
 		now C is a random off-stage fetish appropriate transformation-eligible almost too much bra;
 		if N > a random number between 4 and 7:

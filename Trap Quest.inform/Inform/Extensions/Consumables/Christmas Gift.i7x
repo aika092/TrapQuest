@@ -71,14 +71,15 @@ To compute christmas event of (C - a christmas-gift-penetration):
 	if diaper quest is 0:
 		let viable-holes be a list of body parts;
 		repeat with F running through orifices:
-			if F is not actually occupied and (F is not vagina or (the virgin of the player is 0 and the player is female)) and (F is not asshole or the analvirgin of the player is 0 or the player is female), add F to viable-holes;
+			if F is not actually occupied and (F is not vagina or (the vaginalvirgin of the player is 0 and the player is female)) and (F is not asshole or the analvirgin of the player is 0 or the player is female), add F to viable-holes;
 		if the number of entries in viable-holes > 0:
 			sort viable-holes in random order;
 			let F be entry 1 of viable-holes;
 			now C is penetrating F;
 			if F is face:
-				say "You gasp with a [variable custom style]'GLARK!'[roman type] as your lips, jaw and then throat are [one of][or]once again [stopping]forced open by an invisible but very real [manly-penis]! It pushes deeper and deeper down your gullet, [if the player is not a deepthroater]making you gag on its length, [end if]before exploding, depositing a load of warm [semen] directly into your stomach.";
+				say "You gasp with a [variable custom style]'GLARK!'[roman type] as your lips, jaw and then throat are [one of][or]once again [stopping]forced open by an invisible but very real [manly-penis]! It pushes deeper and deeper down your gullet, making you gag on its length before exploding, depositing a load of warm [semen] directly into your stomach.";
 				StomachSemenUp the girth of C;
+				check puking the girth of C;
 			otherwise:
 				say "You yelp with surprise as your [variable F] is forced open by an invisible but very real [manly-penis]! [if the girth of C > the openness of F + 2]Its fearsome size brutally stretches you out as it forces more and more of its length inside your hole[otherwise if the girth of C > the openness of F]Its large size stretches your hole near to its limit as it pushes its way further and further into its new home[otherwise if the girth of C >= the openness of F - 2]You manage to accommodate its reasonable size as it progresses up into your hole[otherwise]Its size is no match for your experienced hole, which accommodates its entire girth with relative ease[end if]. Once it has bottomed out inside of you, you can feel it begin to ejaculate, filling you with warm sticky [semen].";
 				ruin F times 1;

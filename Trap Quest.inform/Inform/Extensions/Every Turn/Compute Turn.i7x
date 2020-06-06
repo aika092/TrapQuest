@@ -83,7 +83,17 @@ To run the engine:
 					follow R; [This way, if the stored rule demands another turn, and adds another stored rule in, we don't truncate away that rule too early.]
 			otherwise: [no compulsory rules so we can do the stored automatic action]
 				follow A;
+			if the player is live fucked and wanking is 0:
+				let M be a random live thing penetrating a body part;
+				if the player is broken:
+					try submitting;
+				otherwise if (M is not minotaur or M is awake monster) and M is not ghostly tentacle: [If it's an asleep minotaur we don't ask this]
+					say "[if the player-reaction of the player is resisting]Keep resisting[otherwise]Do you want to resist[end if]? ";
+					if the player is consenting, try resisting;
+					otherwise try submitting;
 	display entire map.
+
+map-turn-stall is initially 0. [How many extra turns do we replace the map image with the temporary map image? For when we want to push a cutscene image to the map window but time is moving forward.]
 
 To run the engine once:
 	if seconds is 0, allocate 1 seconds; [We are having another turn even if seconds wasn't set!]
@@ -106,18 +116,12 @@ To run the engine once:
 			unless another-turn is 1, allocate 0 seconds;
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
-	if another-turn is 1 and the player is live fucked and wanking is 0:
-		let M be a random live thing penetrating a body part;
-		if the humiliation of the player >= 40000:
-			try submitting;
-		otherwise if (M is not minotaur or M is awake monster) and M is not ghostly tentacle and wanking is 0: [If it's an asleep minotaur we don't ask this]
-			say "[if the player-reaction of the player is resisting]Keep resisting?[otherwise]Do you want to resist?[end if] ";
-			if the player is consenting, try resisting;
-			otherwise try submitting;
 	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
 		unless the player is in a predicament room, check unhandled diaper scene; [if scene messing is chosen, we need to always handle used diapers before handing control back to the player]
 		[Sometimes when time moves forward we need to refresh the map back to normal from unique situations. We can't do this in a time based rulebook because 'display entire map' breaks the rulebook.]
-		if temporary-map-figure is not figure of no-image-yet:
+		if map-turn-stall > 0:
+			decrease map-turn-stall by 1;
+		otherwise if temporary-map-figure is not figure of no-image-yet:
 			now temporary-map-figure is the figure of no-image-yet;
 			unless there is g-animated g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
 		otherwise if there is g-animated g-looping cutscene animation track:
@@ -521,9 +525,7 @@ To compute pink smoke:
 		if the player is in School34 and a random number between 1 and 8 > 1, now R is 1; [arousal]
 		if (the player is a flatchested trap or (diaper quest is 1 and the player is male)) and R > 6:
 			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room.";
-			unless the size of penis <= min penis size:
-				PenisDown 1;
-				say "Your penis [Shrink]s into a [ShortDesc of penis].";
+			PenisDown 1;
 		otherwise if R > 6 and diaper quest is 0:
 			say "You lightly cough as your position on your knees forces you to breathe in the [if playerRegion is Mansion]blackish-green[otherwise]pink[end if] smoke in this room. [unless the player is top heavy][one of][or]It feels a little more difficult to breathe.[or]Your boobs visibly grow.[or]Your chest expands outwards![as decreasingly likely outcomes][end if]";
 			Bustup 1;
@@ -641,7 +643,7 @@ This is the broken automatic submission rule:
 			if M is reactive and M is not penetrating a body part and M is friendly: [Proposition failed. NPC needs to leave to protect against infinite loops.]
 				bore M;
 				compute mandatory room leaving of M;
-		otherwise if M is dangerous:
+		otherwise if M is combative:
 			say "[one of][bold type]Now that you are on your knees, you remember your role as an object to be used and[or]You[or]You[or]You[or]You[or]You[or]You[cycling] can't bring yourself to fight back.[roman type][line break]";
 		otherwise: [To protect against edge case infinite loops]
 			bore M;
@@ -659,6 +661,7 @@ This is the broken drink beg rule:
 	repeat with M running through reactive friendly monsters:
 		if M is not last-begged, now P is M;
 	if P is not the player:
+		allocate 4 seconds;
 		compute desperate drinking to P;
 		now last-begged is P;
 		now last-begged-time is earnings.
@@ -731,7 +734,7 @@ The eat-all-food hypno rule is listed in the hypno triggers rules.
 
 This is the autopush hypno rule:
 	if hypno-trigger is "maturity" and hypno-trigger-maturity is 1 and asshole is not actually occupied and there are worn soilable knickers:
-		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, [end if]grunting and pushing.[roman type][line break]";
+		say "[bold type]Having heard the word 'maturity', you find you automatically start [if the player is upright]squatting, grunting,[otherwise]grunting[end if] and pushing.[roman type][line break]";
 		now voluntarySquatting is 1;
 		compute messing;
 		now another-turn is 1.
@@ -791,6 +794,9 @@ The autopiss hypno rule is listed in the hypno triggers rules.
 A later time based rule (this is the throne charge decay rule):
 	if the charge of the throne > 0, decrease the charge of the throne by time-seconds.
 
+A later time based rule (this is the hotel altar charge decay rule):
+	if the charge of hotel altar > 0, decrease the charge of hotel altar by time-seconds.
+
 A later time based rule (this is the modification machine charge decay rule):
 	if the charge of modification machine > 0, decrease the charge of modification machine by time-seconds.
 
@@ -819,7 +825,8 @@ An all later time based rule (this is the digestion timer charge decay rule):
 A later time based rule (this is the alchemy charge decay rule):
 	if the charge of alchemist's table > 0:
 		decrease the charge of alchemist's table by time-seconds;
-		if the charge of alchemist's table <= 0 and alchemist's table is in the location of the player, say "[bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform!".
+		if the charge of alchemist's table <= 0:
+			say "[if alchemist's table is in the location of the player][bold type]The wooden bowl on the alchemist's table starts glowing again.[roman type] It must be ready for another ingredient to transform![otherwise if the class of the player is schoolgirl][bold type]You have a sudden thought that the wooden bowl on the alchemist's table is probably ready for use again.[roman type][line break][end if]".
 
 A later time based rule (this is the science charge decay rule):
 	if the charge of science table > 0, decrease the charge of science table by time-seconds;
@@ -917,6 +924,7 @@ To Reset Flags:
 	now voluntarySquatting is 0;
 	if presented-orifice is nothing and the player is not live fucked, now the player-reaction of the player is unprepared; [This is how we tell the game that the player is no longer submitting or resisting.]
 	now presented-orifice is nothing;
+	now player-gagging is false;
 	now groping-person is yourself; [reset groping person flag so that if we come back to this NPC in 10 turns with different appearance, we know to recalculate gropability]
 	finally humiliate the delayed humiliation of the player;
 	decrease blush factor by 100;
@@ -939,8 +947,8 @@ To Reset Flags:
 		repeat with R running through things penetrating F:
 			if R is embodied, now being-fucked is 1;
 		if being-fucked is 0, now the buildup of F is 0;
-	if the rawness of penis > 0 and wanking is 0 and the number of monsters penetrating penis is 0:
-		if a random number between 1 and 10 is 1, RawDown penis.
+	if the rawness of penis > 0 and wanking is 0 and the number of things penetrating penis is 0 and the number of things penetrating vagina is 0:
+		RawDown penis.
 
 [!<SayOtherTips>+
 

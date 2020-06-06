@@ -29,7 +29,7 @@ Check climbing something:
 	if the noun is not WoodsScenery03, say "How would that work?" instead;
 	if the player is prone, say "You need to be standing up to climb a ladder." instead;
 	if the player is ankle bound, say "You can't climb the ladder with your ankles bound." instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead;
+	if the player is immobile or there is a thing wrangling the player, say "Aren't you a bit busy?" instead;
 	if the uses of WoodsScenery03 is 0, say "You've already seen what's through there, no need to look again." instead.
 
 [!<CarryOutClimbingWoodsScenery03>+

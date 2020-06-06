@@ -131,6 +131,7 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 					now pain-balance is 0;
 				otherwise:
 					increase pain-balance by 1;
+		if X is 0, check accidental spitting;
 	if highest delicateness < the delicateness of the player, now highest delicateness is the delicateness of the player.
 
 To DelicateUp (X - a number):

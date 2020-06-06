@@ -266,7 +266,7 @@ To gape (A - asshole) times (X - a number):
 			now the analvirgin of the player is 0;
 			now analvirginity-taker is a random live virginity taking thing penetrating asshole;
 			say "[bold type]You just lost your anal virginity![roman type][line break]";
-			if the player is male and the virgin of the player is 1:
+			if the player is male and the penetrativevirgin of the player is 1:
 				if the sex addiction of the player < 10 and the bimbo of the player < 10 and the humiliation of the player < HUMILIATION-SHAMELESS, now virgincursed is 2;
 				otherwise now virgincursed is 3;
 			progress quest of anal-virginity-quest;
@@ -289,18 +289,12 @@ To gape (A - asshole) times (X - a number):
 	if transGender is 1, now virgincursed is 0;
 	if virgincursed > 1:
 		if virgincursed is 2:
-			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings and you feel ";
-			if the size of penis > min penis size:
-				PenisDown 1;
-				say "your penis [Shrink] into a [ShortDesc of penis]. ";
-			otherwise:
-				say "cursed! "; [###Selkie: but this is a lie, right? There's actually no consequence?]
-			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...[roman type][line break]";
+			say "[bold type]You realise that losing your anal virginity is made even more shameful by the fact that you have yet to lose your REAL virginity. You've been fucked before you fucked anyone else! [roman type]The realisation crushes your spirit and your body shivers involuntarily. The game seems to detect these feelings.";
+			PenisDown 1;
+			say "Something tells you that until you have real, dominant sex, you are going to keep being punished by the game, spiralling towards a fucktoy plaything for the monsters of this world...";
 		otherwise:[i thought it was weird you would sometimes not a message like this on losing your anal virginity first, so I wrote this to clarify things.]
 			say "[bold type]You realise you've been fucked before you fucked anyone else, and [if the bimbo of the player < 10]surprisingly[otherwise]unsurprisingly[end if], you already feel yourself accepting it. [line break][variable custom style]'Anal is probably way better anyway. Who cares?'[roman type][line break]";
-			if the size of penis > min penis size:
-				PenisDown 1;
-				say "The game seems to detect these feelings, and you feel your penis [Shrink] into a [ShortDesc of penis].";
+			PenisDown 1;
 		now virgincursed is 1.
 
 [!<AssClose>+

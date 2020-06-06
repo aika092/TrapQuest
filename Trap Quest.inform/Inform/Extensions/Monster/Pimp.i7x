@@ -114,7 +114,7 @@ To say DiaperReaction of (M - pimp):
 	if there is a currently visible diaper or the player is shameless:
 		say "[BigNameDesc of M] laughs.[line break][speech style of M]'That's right, little one. Prove to me what a good little baby-slave you are.'[roman type][line break]";
 		if the player is modest, say "[variable custom style][if the player is able to speak]'I'm not a baby! I just really needed to go...'[otherwise][big he of M] thinks I'm enjoying being seen like this![end if][roman type][line break]";
-		otherwise say "You [if player is not disgraced]look down at the ground[otherwise]nod[end if] in shame.";
+		otherwise say "You [if the player is not disgraced]look down at the ground[otherwise]nod[end if] in shame.";
 	otherwise:
 		say "It seems that [NameDesc of M] is unaware of what you've just done.".
 
@@ -146,7 +146,7 @@ To say SelectionFrustrated of (M - pimp):
 	satisfy M.
 
 To say StrikingSuccessFlav of (M - pimp) on (B - a body part):
-	say "[BigNameDesc of M] strikes you [TargetName of B] with his cane! Wham!".
+	say "[BigNameDesc of M] strikes you [TargetName of B] with [his of M] cane! Wham!".
 
 To say StrikingFailureFlav of (M - pimp) on (B - a body part):
 	say "[BigNameDesc of M] tries to whack you [TargetName of B] with [his of M] cane but you manage to get out of the way just in time!".

@@ -225,7 +225,7 @@ To say WhereAnswer of (M - ex-princess):
 		let mb be vampiress;
 		if herald is alive or herald is bossdefeated, now mb is herald;
 		if mb is vampiress, say "[speech style of M]'This is Aurora's mansion, although...[he of mb] never fights seriously, so it wouldn't be surprising if someone else defeated [him of mb] and started squatting while [he of mb] was recovering.'[roman type][line break]";
-		otherwise say "[speech style of M]'This is Aurora's mansion[if mb is alive], but...something else is trying to claim ownership too. Even I don't know what it is.[otherwise], although I fear that the eldritch entitites that have their eyes on this place have something to say about that.'[roman type][line break]".
+		otherwise say "[speech style of M]'This is Aurora's mansion[if mb is alive], but...something else is trying to claim ownership too. Even I don't know what it is.[otherwise], although I fear that the eldritch entities that have their eyes on this place have something to say about that.'[roman type][line break]".
 
 To say WhoAnswer of (M - ex-princess):
 	say "[speech style of M]'I told you before, I'm Princess Annie! I created this dimension.'[roman type][line break]".
@@ -465,6 +465,7 @@ An all later time based rule (this is the school rescue fight rule):
 To compute (M - ex-princess) enslaving (N - a monster):
 	if diaper quest is 1 or a random number between 0 and diaper lover > 0, now N is diaper-enslaved;
 	otherwise now N is sex-enslaved;
+	now the refractory-period of N is a random number between -100 and 150; [doesn't start off messy]
 	if M is in the location of the player:
 		let W be a random vibe-wand retained by M;
 		if glittery-wand is retained by M, now W is glittery-wand;
@@ -548,9 +549,11 @@ An all later time based rule (this is the asscum annie rule):
 An all later time based rule (this is the fannie facerub rule):
 	if ex-princess is diaper-enslaved and playerRegion is School:
 		if ex-princess is in the location of the player:
-			if there is a worn dirty diaper:
-				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise][big please] move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
+			let D be a random dirty diaper;
+			if D is diaper:
+				say "[BigNameDesc of ex-princess] groans as [he of ex-princess] can't help but rub [his of ex-princess] face into the seat of your diaper.[line break][speech style of ex-princess]'[one of]I can't stop myself... Noooo!'[or]I'm sorry, I'm so sorry!'[or]Eurgh, this is so disgusting!'[or][if the player is in School34]This is your fault, how could you let them defeat us?! I'm gong to be stuck doing this for centuries...'[otherwise]Please move away from me, don't make me do this!'[end if][or]I can't believe I'm doing this...'[or]Why me? Why me???'[or]Why did I even create this place? Did I secretly... Eurgh... Want this all along?'[or]No. No. It's too disgusting! Make it stop!'[or]Euuuuurgh, yuck yuck yuck...'[or]Ugh, the smell!'[then at random][roman type][line break]";
 				ruin vagina;
+				compute state check of D;
 			if the current-torment of ex-princess <= 0:
 				now the current-torment of ex-princess is a random number between 25 and 35;
 				say "[speech style of ex-princess]'[one of]Uh-oh[or]Oh god, not again, not so soon[stopping]...'[roman type][line break][BigNameDesc of ex-princess] makes a loud [if diaper messing < 4]hissing[otherwise]BLART[end if] sound from within [his of ex-princess] diaper as [he of ex-princess] soils [himself of ex-princess] again, adding more volume to [his of ex-princess] padding and once again flooding [his of ex-princess] brain with uncontrollable arousal. [big his of ex-princess] mittened hands quickly return to [his of ex-princess] erogenous zones and [he of ex-princess] begins masturbating once again.";

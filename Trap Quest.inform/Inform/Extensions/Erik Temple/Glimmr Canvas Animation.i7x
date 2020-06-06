@@ -1532,7 +1532,7 @@ We can change the speed of an animation once it is already underway:
 
 	time <track> at <interval> milliseconds
 
-This should *only* be done when the animation is already running. It will adjust the global timer to utilize the newly selected speed.
+This should *only* be done when the animation is already running. It will adjust the global timer to utilise the newly selected speed.
 
 Another useful phrase is "cease animating <track>", which like "deactivate <track>", will immediately stop the indicated track. However, the latter merely stops the track, while the former also fires the callback of the track that was stopped. For example, if Track A moves an object to a given point while Track B cycles through a short sequence, we could use either phrase to as a callback on Track A to stop Track B. However, only the "cease animating" phrase will also fire Track B's callback:
 
@@ -2065,7 +2065,7 @@ Or, without specifying a duration:
 
 Note that the latter will have a duration of 1 frame by default unless we specify it some other way.
 
-On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomised" option to have any effect (in the vast majority of cases, we will just ignore that option).
+On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomized" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
 On its own, our "animate..." phrase will do nothing. We also need to write an animation rule to implement the animation itself. Note that while cycling behaviour will be implemented automatically, we would need to write our own randomisation logic into our animation rule for the "randomised" option to have any effect (in the vast majority of cases, we will just ignore that option).
 
@@ -2139,7 +2139,7 @@ Chapter: Easing (Tweening)
 
 The term "easing" refers to motions in which the acceleration changes over time. The term may seem strange, but think of it in terms of easing into a chair–your body moves more slowly as you approach the cushion. Easing equations can imitate this sort of gradual slowing as the motion reaches the endpoint, and they can also do much more, such as imitate the bouncing of a ball, or overshoot the endpoint and snap back.
 
-Easing is closely related to the concept of "tweening". Briefly, tweening is short for "in-betweening". In traditional animation, animations were organised around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the "betweens" were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
+Easing is closely related to the concept of "tweening". Briefly, tweening is short for “in-betweening”. In traditional animation, animations were organised around key frames–-the critical points in any sequence. These keyframes were drawn first, and then the “betweens” were filled in to connect those key moments smoothly; because they were less critical, they were often filled in by the lower ranks of the animation team. In computer animation, keyframes are defined by the user, and the tweening is done automatically by the software.
 
 Glimmr Canvas Animation (GCA) is no different, though it doesn’t really use the concept of the keyframe. Where programs like Flash have a master timeline punctuated by user-defined keyframes, each GCA animation track can be thought of as a self-contained timeline separating two keyframes–the starting and ending points of that particular motion or effect. GCA builds sophisticated and customizable tweening into nearly all of the preset animation types via the use of "easing" equations that interpolate movement between the starting and ending points.
 
@@ -2195,7 +2195,7 @@ Assigning an easing equation to an animation track is simple. An animation track
 
 If we don't specify an easing, then the default "linear easing" rule will be used. This rule does not involve any speed variations; it provides a simple linear interpolation of values.
 
-Note that motion and parametrised motion tracks (but no others) can also utilize a "secondary easing". If a secondary easing function is applied, then this function will apply only to the y-axis, while the primary easing function will be used for the x-axis:
+Note that motion and parametrised motion tracks (but no others) can also utilise a "secondary easing". If a secondary easing function is applied, then this function will apply only to the y-axis, while the primary easing function will be used for the x-axis:
 
 	The easing of the complex movement track is the cubic easing in rule.
 	The secondary easing of the complex movement track is the circular easing out rule.
@@ -2214,7 +2214,7 @@ Every easing equation utilises four parameters, conventionally known as "t", "d"
 	b - initial value of the property being animated; that is, the value at a "t" of 0.
 	c - change, the difference between the ending value of the property being animated and the initial value (i.e., "b").
 
-The values for "t" and "d" are calculated as needed (generally equivalent to the current-frame and the animation-length properties of the track), but the "b" and "c" are are initialized when the "animate..." phrase is invoked, and are stored in the following properties of the animation track itself:
+The values for "t" and "d" are calculated as needed (generally equivalent to the current-frame and the animation-length properties of the track), but the "b" and "c" are are initialised when the "animate..." phrase is invoked, and are stored in the following properties of the animation track itself:
 
 	start-x ("b") - The initial value or x-coordinate of the object being animated. In the case of a zooming animation, this number is an integer representation of the scaling factor (the latter multiplied by 10,000).
 	start-y ("b") - In the case of a motion animation or a zooming animation when we are scaling on both axes independently, we may also store the initial value or y-coordinate of the object being animated, for use in the secondary easing equation.
@@ -2223,7 +2223,7 @@ The values for "t" and "d" are calculated as needed (generally equivalent to the
 
 Section: Adding custom easing equations
 
-Adding new easing equations is both easy and difficult. It is easy in that there's not much to the mechanics of the process. We simply define a "to decide" phrase using a certain rigid form for the preamble. Here is the preamble for one of the phrases included with GCA. We would copy this preamble exactly, replacing the capitalized phrase with the name of our equation:
+Adding new easing equations is both easy and difficult. It is easy in that there's not much to the mechanics of the process. We simply define a "to decide" phrase using a certain rigid form for the preamble. Here is the preamble for one of the phrases included with GCA. We would copy this preamble exactly, replacing the capitalised phrase with the name of our equation:
 
 	*: To decide what number is QUADRATIC EASING IN for time (t - a number) duration (d - a number) beginning (b - a number) change (c - a number ) (this is the QUADRATIC EASING IN rule):
 

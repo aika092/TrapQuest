@@ -44,18 +44,20 @@ REQUIRES COMMENTING
 *@!]
 The player has a number called raw urine taste addiction. The raw urine taste addiction of the player is usually 1. [Min 1 Max 20]
 
-[!<UrineTasteAddictUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To UrineTasteAddictUp (X - a number):
-	if there is a worn pure totem:
-		let S be a random worn pure totem;
-		say "Your [printed name of S] glows brightly and slowly disintegrates.[line break]";
-		only destroy S;
-		decrease X by 3;
-	if the latex-transformation of the player > 4:
+	if watersports fetish is 1:
+		if there is a worn pure totem:
+			let S be a random worn pure totem;
+			say "Your [printed name of S] glows brightly and slowly disintegrates.";
+			only destroy S;
+			decrease X by 3;
+		let U be the urine taste addiction of the player;
+		SilenentlyUrineTasteAddictUp X;
+		let U be the urine taste addiction of the player - U;
+		if U > 0, say "You feel [if U > 1]significantly [end if]more [if the urine taste addiction of the player > 13]addicted to[otherwise if the urine taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [urine].".
+
+To SilenentlyUrineTasteAddictUp (X - a number):
+	if watersports fetish is 0 or the latex-transformation of the player > 4:
 		now X is 0;
 	let YTB be yellow theme bonus;
 	while X > 0:
@@ -63,11 +65,6 @@ To UrineTasteAddictUp (X - a number):
 		if the raw urine taste addiction of the player < 20 and a random number between -1 and yellow theme bonus < 1:
 			increase the raw urine taste addiction of the player by 1.
 
-[!<UrineTasteAddictDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To UrineTasteAddictDown (X - a number):
 	while X > 0:
 		decrease X by 1;

@@ -307,7 +307,7 @@ To say OralResistingResponse of (M - a ghost):
 
 To say OralSubmissionResponse of (M - a ghost):
 	let D be the delicateness of the player + the oral sex addiction of the player;
-	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if][or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist.[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do.[otherwise]obediently stroking the underside with your tongue.[end if][or][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
+	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if][or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist.[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do.[otherwise]obediently stroking the underside with your tongue.[end if][or][silentThroat M][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][silentThroat M][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
 
 To say NearingClimaxOral of (M - a ghost):
 	say "[one of][BigNameDesc of M] seems to be speeding up![or][BigNameDesc of M] thrusts faster and faster with no regard for your reaction.[or]The space between [NameDesc of M][']s thrusts gets smaller with every passing moment![in random order] It must be close!".
@@ -613,7 +613,7 @@ To compute punishment of (P - ghost-using):
 	let D be a random worn diaper;
 	if D is diaper:
 		say "[BigNameDesc of M] floats down to you until [his of M] is occupying the same space as you. All you can feel is a freezing coldness. Moments later you hear an ethereal [second custom style]sigh[roman type] and then what sounds like a [if diaper messing >= 3]distant farting[otherwise]faint tinkling[end if]. [one of]Suddenly,[or]Once again[stopping] from the warmth below you, you can tell that [NameDesc of M] is using your diaper![line break][variable custom style][if the diaper addiction of the player < 8]That's fucking gross![otherwise if the diaper addiction of the player < 13]That's kind of rude...[otherwise]Haha, that feels funny![end if][roman type][line break]";
-		Squirt urine On D by 9;
+		UrineSoakUp D by 9;
 		if diaper messing >= 3:
 			say "You squirm as the foreign mush squishes itself against your butt.";
 			MessUp D by 7;
@@ -674,6 +674,7 @@ To compute damage reaction of (M - a ghost):
 		if M is ghostly tentacle:
 			say "[BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack!";
 			now the wind-up of M is 0;
+			now M is not wrangling the player;
 			now M is phased;
 		otherwise if a random number between 1 and 2 is 1:
 			say "[BigNameDesc of M] flickers after being sent back several feet. Looks like you interrupted it!";
@@ -710,9 +711,6 @@ To loot (M - jismbodied ghost):
 
 To compute unique automatic banishment of (M - a ghost):
 	now creepiness is 0. [Having defeated a ghost shouldn't cause a new one to appear immediately]
-
-[To compute desperate drinking to (M - a ghost):
-	compute M entering mouth.]
 
 Part 4 - Ghostly Tentacle
 
@@ -777,9 +775,10 @@ To compute ectoplasm to (M - ghostly tentacle):
 		set up deep one;
 		now deep one is in mansion23;
 		drag to mansion23 by M;
-		now M is grabbing the player;
+		now M is not wrangling the player;[Once it drops you off, the tentacle lets go.]
 		now the wind-up of M is 0;
 		anger deep one;
+		now deep one is interested;
 		now the stance of the player is 1.
 
 To say DragFlav of (M - a ghost) to (R - a room):
@@ -794,16 +793,17 @@ This is the deep one express rule:
 		now the wind-up of M is 1;
 		now the bank of M is 0;
 		say "The air seems to rumble as [NameDesc of M] shifts fully into the corporeal world. It seizes you by the wrist!";
+		now M is wrangling the player;
 		now M is unphased;
 		rule succeeds.
 The deep one express rule is listed first in the ghost priority attack rules.
 
 Check slapping ghostly tentacle:
-	if the wind-up of the noun is 1 and there is a worn wrist bond and the number of worn slap ready equippables is 0, say "Your range of motion with your wrists bound together is too small for you to be able to hurt it!" instead.
+	if the noun is wrangling the player and there is a worn wrist bond and the number of worn slap ready equippables is 0, say "Your range of motion with your wrists bound together is too small for you to be able to hurt it!" instead.
 Check kneeing ghostly tentacle:
-	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
+	if the noun is wrangling the player, say "It has you by the wrist! You can't reach it with your leg!" instead.
 Check kicking ghostly tentacle:
-	if the wind-up of the noun is 1, say "It has you by the wrist! You can't reach it with your leg!" instead.
+	if the noun is wrangling the player, say "It has you by the wrist! You can't reach it with your leg!" instead.
 
 Section - DQ
 

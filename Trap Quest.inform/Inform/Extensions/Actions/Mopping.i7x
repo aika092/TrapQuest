@@ -48,25 +48,26 @@ Carry out mopping face:
 	let B be the milk-puddle of the location of the player;
 	let C be the semen-puddle of the location of the player;
 	let D be 0;
+	let E be 0;
+	let F be 0;
 	say "You begin [one of]to lick up[or]slurping up[or]licking up[at random] the [if C > 0 and C > B + A][semen] clinging to the floor[otherwise if A > 0 and A > C + B][urine] on the floor[otherwise if B > 0 and B > C + A]milk on the floor[otherwise]fluids on the floor[end if], [if the player is not shameless][one of]shuddering at the new low this game has forced you to.[or]once again finding yourself scraping the bottom of the barrel for humiliating acts.[stopping][otherwise][one of]shivering with excitement at your brand new low.[or]once again finding yourself at the peak of degrading acts.[stopping][end if]";
-	if C > 0:
-		StomachSemenUp 1;
-		decrease the semen-puddle of the location of the player by 1;
-	if B > 0:
-		StomachUp 1;
-		decrease the milk-puddle of the location of the player by 1;
-	if A > 0:
-		StomachUp 1;
-		decrease the urine-puddle of the location of the player by 1;
+	now F is C;
+	if F > 4, now F is 4;
+	now E is B;
+	if E > 4 - F, now E is 4 - F;
+	now D is A;
+	if D > 4 - (E + F), now D is 4 - (E + F);
+	FaceFill semen by F;
+	decrease the semen-puddle of the location of the player by F;
+	FaceFill urine by E;
+	decrease the urine-puddle of the location of the player by E;
+	FaceFill milk by D;
+	decrease the milk-puddle of the location of the player by D;
 	if class of the player is catgirl:
-		StomachUp 1;
 		if the player is not broken, humiliate SEVERE-HUMILIATION - (MODERATE-HUMILIATION * (the thirst of the player - 1));
 	otherwise:
 		humiliate (SEVERE-HUMILIATION * 2) - (MODERATE-HUMILIATION * (the thirst of the player + 2));[This is probably one of the least dignified things you could do, but it's less humiliating the thirstier you are]
-	if B > the milk-puddle of the location of the player, MilkTasteAddictUp 1;
-	if A > the urine-puddle of the location of the player:
-		UrineTasteAddictUp 1;
-		progress quest of piss-drinking-quest.
+	suggest swallowing.
 
 To decide which number is total puddle:
 	let X be 0;

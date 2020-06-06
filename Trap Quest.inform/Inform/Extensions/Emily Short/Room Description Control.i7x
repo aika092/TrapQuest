@@ -213,7 +213,7 @@ This is where the burden falls on us to provide a set of writing a paragraph abo
 
 Several possible collections of writing-a-paragraph rules are provided as sister extensions as of this writing:
 
-The minimalist "Single Paragraph Description" combines all description of all items into a single paragraph. This is likely to be unattractive and unruly in all but the most spartan games, but it is provided in response to a specific author request.
+The minimalist "Single Paragraph Description" combines all description of all items into a single paragraph. This is likely to be unattractive and unruly in all but the most Spartan games, but it is provided in response to a specific author request.
 
 "Ordinary Room Description" emulates as closely as possible the Inform default behaviour while still relying on Room Description Control; this means that concealment and priority rules can be applied while otherwise retaining the look and feel of a game. Ordinary Room Description also makes use of the listing nondescript items activity.
 

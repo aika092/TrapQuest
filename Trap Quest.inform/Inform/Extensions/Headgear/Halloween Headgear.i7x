@@ -8,7 +8,7 @@ To set up influence of (C - a halloween headgear):
 	set up sex-based influence of C.
 
 Check going down when there is a worn halloween headgear:
-	say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
+	unless the player is in a predicament room, say "Your [random worn headgear] is somehow preventing you from leaving while you're a [']trick or treater[']!" instead.
 
 Chapter - Quest
 
@@ -38,6 +38,34 @@ To progress quest of (Q - trick-or-treat-quest):
 			otherwise:
 				compute quest completion of Q on C.
 
+nun cowl is a halloween headgear. The text-shortcut of nun cowl is "nnc".
+Figure of nun cowl is the file "Items/Accessories/Head/nuncowl2.png".
+
+The printed name of nun cowl is "[clothing-title-before]nun cowl[clothing-title-after]".
+
+To decide which figure-name is the clothing-image of (C - nun cowl):
+	decide on figure of nun cowl.
+
+To say ClothingDesc of (H - nun cowl):
+	say "This black and white cowl look rather normal and modest.".
+
+To say ShortDesc of (H - nun cowl):
+	say "nun cowl".
+To say MediumDesc of (H - nun cowl):
+	say "black nun cowl".
+
+To compute SelfExamineDesc of (H - nun cowl):
+	say "You are wearing a black nun cowl over your [ShortDesc of hair]. ".
+
+Definition: nun cowl is black themed: decide yes.
+Definition: nun cowl is white themed: decide yes.
+Definition: nun cowl is fetish appropriate: decide no.
+Definition: nun cowl is transformation-protected: decide no.
+To decide which object is the unique-upgrade-target of (C - nun cowl):
+	decide on rubber nun cowl.
+To decide which number is the initial outrage of (C - nun cowl):
+	decide on 0.
+
 rubber nun cowl is a halloween headgear. rubber nun cowl is womanly. Figure of rubber nun cowl is the file "Items/Accessories/Head/nuncowl1.png". rubber nun cowl is blondeness-negative. rubber nun cowl is brightness-negative. rubber nun cowl is redness-negative. The text-shortcut of rubber nun cowl is "lnc".
 
 The printed name of rubber nun cowl is "[clothing-title-before]latex nun cowl[clothing-title-after]".
@@ -54,7 +82,7 @@ To say MediumDesc of (H - rubber nun cowl):
 	say "black rubber nun cowl".
 
 To compute SelfExamineDesc of (H - rubber nun cowl):
-	say "You are wearing a black latex nun cowl in your [ShortDesc of hair]. ".
+	say "You are wearing a black latex nun cowl over your [ShortDesc of hair]. ".
 
 Definition: rubber nun cowl is black themed: decide yes.
 Definition: rubber nun cowl is white themed: decide yes.

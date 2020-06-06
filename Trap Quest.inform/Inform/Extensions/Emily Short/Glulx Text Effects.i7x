@@ -265,7 +265,7 @@ This definition table above will make everything red and italics, except for the
 
 Your table continuation does not need to include every column in the Table of User Styles, nor does it need to define every style. You can also continue the table multiple times, and even define a style in multiple places; if you do then the definitions will be combined together. If you do not want to set a feature for a style you can leave it blank with "--".
 
-Coors are defined by specifying a web (CSS) colour in a text. Web colours specify the red/green/blue components of a colour in hexadecimal, and a correctly specified colour will be 6 characters long (with an optional # at the beginning.) Note that short (#000) web colours are not supported.
+Colours are defined by specifying a web (CSS) colour in a text. Web colours specify the red/green/blue components of a colour in hexadecimal, and a correctly specified colour will be 6 characters long (with an optional # at the beginning.) Note that short (#000) web colours are not supported.
 
 If you use a colour many times you can define it as a text constant, and then use that in the table:
 

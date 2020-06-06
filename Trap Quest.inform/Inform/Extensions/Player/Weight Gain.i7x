@@ -219,6 +219,7 @@ REQUIRES COMMENTING
 
 +!]
 To FatDown (X - a number):
+	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
 		FatThighsDown 1;
 		FatArmsDown 1;

@@ -252,19 +252,19 @@ To compute periodic effect of (D - a diaper):
 			curse D;
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
-		if xavier-diaper-link is 17 or xavier-diaper-link is 39:
+		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
 			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
 			PissSoak 12 on D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
-		if xavier-diaper-link >= 57 and asshole is not actually occupied:
+		if xavier-diaper-link >= 163 and asshole is not actually occupied:
 			now xavier-diaper-link is 1;
 			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
 			compute messing;
-	if altar-diaper-link > 0 and D is total protection:
+	if (doomed >= 5 or D is demon-diaper) and altar-diaper-link > 0 and D is total protection:
 		increase altar-diaper-link by 1;
-		if altar-diaper-link >= 93 and (diaper messing < 3 or asshole is not actually occupied):
+		if ((D is demon-diaper and altar-diaper-link >= 53) or altar-diaper-link >= 117) and (diaper messing < 3 or asshole is not actually occupied):
 			now altar-diaper-link is 1;
 			say "You hear a rumbling, like thunder in the distance, but much closer by. [one of]It takes you a few moments to[or]This time you quickly[stopping] realise that it's coming from your own belly! Your belly begins to expand as you feel some pressure building inside. It grows and grows and grows, until you look 9 months pregnant, and then continues to grow even further, ballooning to an impossibly unrealistic size, as if you were a cartoon person who'd just swallowed a wrecking ball whole. The rumbling grows worse. And then as soon as it stops growing, the pressure immediately becomes impossible to hold. ";
 			if diaper messing >= 3:
@@ -274,7 +274,7 @@ To compute periodic effect of (D - a diaper):
 			otherwise:
 				say "";
 				now the bladder of the player is 70;
-				now delayed urination is 1;
+				now delayed urination is 2;
 				try urinating.
 
 To compute unique periodic effect of (D - a diaper):

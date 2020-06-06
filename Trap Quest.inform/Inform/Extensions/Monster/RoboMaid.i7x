@@ -37,7 +37,7 @@ To say speech style of (M - a robomaid):
 	say second custom style.
 
 To say robogreeting of (M - a robomaid):
-	say "[if the class of the player is maid]GIRLFRIEND[otherwise if the player is presenting as female or the bimbo of the player > 9]SEXY[otherwise]BIG BOY[end if]".
+	say "[if the class of the player is maid][caps boy of the player]FRIEND[otherwise if the player is presenting as female or the bimbo of the player > 9]SEXY[otherwise]BIG [caps boy of the player][end if]".
 
 [This is the spawn initial robomaid rule:
 	if the number of alive robomaids is 0:
@@ -68,7 +68,7 @@ To say DragArrival of (M - a robomaid) to (R - a room):
 To say DragArrival of (M - a milkmaid) to (R - a room):
 	let P be the number of patrons in R;
 	if P > 0:
-		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE. HEY THERE, [if P > 0]PLURAL [end if]BIG BOY. EXECUTING PERFORMANCE SEQUENCE.'[roman type][line break]You make [if the player is disgraced]excruciating[otherwise]smouldering[end if] eye contact with [if P is 1][NameDesc of a random patron in R][otherwise]a few of the patrons[end if] as [NameDesc of M] lays you down on the ground and climbs on top of you.";
+		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE. HEY THERE, [if P > 0]PLURAL [end if]BIG [caps boy of a random patron]. EXECUTING PERFORMANCE SEQUENCE.'[roman type][line break]You make [if the player is disgraced]excruciating[otherwise]smouldering[end if] eye contact with [if P is 1][NameDesc of a random patron in R][otherwise]a few of the patrons[end if] as [NameDesc of M] lays you down on the ground and climbs on top of you.";
 	otherwise:
 		say "[speech style of M]'TRANSPORT PROTOCOL COMPLETE.'[roman type]".
 
@@ -94,7 +94,7 @@ To compute unique periodic effect of (M - a milkmaid):
 			if M is in the location of the player, say "[BigNameDesc of M] reaches up and squeezes [his of M] rubber nipples, forcing several droplets of milk out onto the floor.";
 			PuddleUp milk by (a random number between 2 and 3) in (the location of M);
 		otherwise:
-			if M is in the location of the player, say "[BigNameDesc of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows its load on the floor.";
+			if M is in the location of the player, say "[BigNameDesc of M] starts jacking off, moaning in a grating monotone as [his of M] [LongDickDesc of M] blows [his of M] load on the floor.";
 			PuddleUp semen by (a random number between 2 and 3) in (the location of M).
 
 To compute perception of (M - a robomaid):
@@ -103,33 +103,33 @@ To compute perception of (M - a robomaid):
 		if M is unfriendly:
 			say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. EMERGENCY LAUNDERING PROGRAM INITIATED.'[roman type][line break]";
 		otherwise:
-			say "Its eyes turn yellow as it glides up to you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labelled [']PAYMENT['].";[if you don't pay her she takes matters into her own hands]
+			say "[big his of M] eyes turn yellow as [he of M] glides up to you. [line break][speech style of M]'CLEANLINESS VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";[if you don't pay her she takes matters into her own hands]
 		FavourDown M by 3;
 	otherwise if the number of worn clothing is 0:
 		if the number of glazed body parts is 0 or M is unfriendly:
 			say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. CLOTHING ASSISTANCE PROGRAM INITIATED.'[roman type][line break]";
 			anger M;
 		otherwise:
-			say "Its eyes flash yellow and it glides up next to you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break]It points to [one of]a[or]the[stopping] slot between its breasts, labelled [']PAYMENT['].";
+			say "[big his of M] eyes flash yellow and [he of M] glides up next to you. [line break][speech style of M]'DECENCY VIOLATION DETECTED. [caps please] INSERT FUNDS TO INITIATE MEMORY WIPE.'[roman type][line break][big he of M] points to [one of]a[or]the[stopping] slot between [his of M] breasts, labelled [']PAYMENT['].";
 		FavourDown M by 3;
 	otherwise if the class of the player is vixen:
 		say "[big his of M] eyes turn red and [he of M] spins toward you. [line break][speech style of M]'BURGLAR DETECTED! PUBLICITY STUNT PROGRAM INITIATED!'[roman type][line break]";
 		anger M;
 	otherwise if M is friendly:
-		say "[big he of M] glides towards you, striking a provocative pose as [he of M] addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
+		say "It glides towards you, striking a provocative pose as [he of M] addresses you in a monotone. [line break][speech style of M]'FLIRTATION PROGRAM CLASS ['][robogreeting of M]['] initiated. HEY, [robogreeting of M]. DOES THIS [one of]MAKE MY BOSOM UNIT LOOK BIG[or]SKIRT REVEAL SUFFICIENT CUSHIONING UNIT[or]POSE ACCENTUATE MY MONEY-SHOT APPARATUS[at random]?[roman type][line break][if the player is able to speak]Say yes?[end if]";
 		if the player is consenting and the player is able to speak and the refractory-period of M < 0:
 			if the player is not hotel employed:
-				say "[big his of M] eyes turn green, and it points unsubtly toward a slot between [his of M] breasts, labelled [']PAYMENT['].";
+				say "[big his of M] eyes turn green, and [he of M] points unsubtly toward a slot between [his of M] breasts, labelled [']PAYMENT['].";
 				FavourDown M;
 			otherwise:
 				say "[big his of M] eyes turn green. [line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
 			now the refractory-period of M is the refractory-time of M;
 		otherwise:
 			if the player is not hotel employed:
-				say "[if the player is not able to speak or the refractory-period of M >= 0][big he of M] seems to [']think['] for a moment, and [his of M][otherwise][big his of M][end if] eyes turn yellow. [line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M]'[roman type][line break]";
+				say "[if the player is not able to speak or the refractory-period of M >= 0][big he of M] seems to [']think['] for a moment, and i[otherwise]I[end if]ts eyes turn yellow. [line break][speech style of M]'THANK YOU FOR YOUR FEEDBACK, VALUED [robogreeting of M]'[roman type][line break]";
 				increase the raw difficulty of M by 1;
 			otherwise:
-				say "[big his of M] eyes turn yellow. [line break][speech style of M]'THANKS. GIRLFRIEND.'[roman type][line break]";
+				say "[big his of M] eyes turn yellow. [line break][speech style of M]'THANKS. [caps boy of the player]FRIEND.'[roman type][line break]";
 				FavourDown M;
 				decrease the employee-record of senior robobellboy by 1;[she spreads bad rumours about you!]
 	otherwise:
@@ -138,7 +138,7 @@ To compute perception of (M - a robomaid):
 To compute perception of (M - a milkmaid):
 	if the player is hotel employed:
 		if breasts is lewdly exposed or there is a worn trainee bra:
-			say "[big he of M] glides towards you, addressing you in a monotone. [line break][speech style of M]HEY GIRLFRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEE-HEE. TEE-HEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
+			say "[big he of M] glides towards you, addressing you in a monotone. [line break][speech style of M]HEY [caps boy of the player]FRIEND. YOU HAVE SOMETHING ON YOUR CHEST. TITS. TEEHEE. TEEHEE.[roman type][line break][big he of M] seems to abruptly lose interest.";
 			calm M;
 		otherwise if the largeness of breasts < 2:[exposed but not lewdly exposed? You must have small breasts!]
 			say "[big his of M] eyes turn red and [he of M] spins toward you. [line break][speech style of M]DECENCY VIOLATION DETECTED. [if lactation fetish is 1]MAMMARY STIMULATION PROGRAM INITIATED[otherwise]EMERGENCY MAMMARY DEVELOPMENT PROGRAM INITIATED[end if].'[roman type][line break]";
@@ -182,7 +182,7 @@ This is the robomaid punishment rule:
 			unless N is monster, now N is a random robobellboy;
 			now N is in R;
 			drag to R by M;
-		say "[speech style of current-monster]'PROGRAM REQUEST: ['][robogreeting of M]['] DOT CLOTHING UNDERSCORE ASSIST.'[roman type][line break] [BigNameDesc of M] drops you on the ground in front of [NameDesc of N] as [he of N] suddenly wheels around, eyes glowing red. Uh-oh.";
+		say "[speech style of current-monster]'PROGRAM REQUEST: ['][robogreeting of M]['] DOT CLOTHING UNDERSCORE ASSIST.'[roman type][line break] [BigNameDesc of M] drops you on the ground in front of [NameDesc of N] as [he of M] suddenly wheels around, eyes glowing red. Uh-oh.";
 		unless N is dangerous, anger N;
 		now N is interested;
 		now the boredom of N is 0;
@@ -346,13 +346,13 @@ To compute basic greeting to (M - a robomaid):
 
 To say FirstResponse of (M - a robomaid):
 	if the class of the player is maid:
-		say "[first custom style]'GREETINGS, GIRLFRIEND. YOU SEEM BUSY. GOODBYE.'[roman type][line break]";
+		say "[first custom style]'GREETINGS, [caps boy of the player]FRIEND. YOU SEEM BUSY. GOODBYE.'[roman type][line break]";
 	otherwise:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 
 To say RepeatResponse of (M - a robomaid):
 	if the class of the player is maid:
-		say "[first custom style]'HEY GIRLFRIEND. GOODBYE.'[roman type][line break]";
+		say "[first custom style]'HEY [caps boy of the player]FRIEND. GOODBYE.'[roman type][line break]";
 	otherwise if M is unconcerned:
 		say "[first custom style]'GREETINGS [robogreeting of M].'[roman type][line break]";
 	otherwise:

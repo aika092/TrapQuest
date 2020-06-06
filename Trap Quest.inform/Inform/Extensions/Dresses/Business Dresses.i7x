@@ -37,7 +37,7 @@ To decide which object is the unique-upgrade-target of (C - a polka dot business
 
 Part 2 - Pinstripe Business Dress
 
-A pinstripe business dress is a kind of business dress. There is 1 transformation-rare pinstripe business dress. A pinstripe business dress is low cut. A pinstripe business dress is only arm covering. A pinstripe business dress is usually short. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is usually "[clothing-title-before]pinstripe business dress[clothing-title-after]".
+A pinstripe business dress is a kind of business dress. There is 1 transformation-rare pinstripe business dress. A pinstripe business dress is low cut. A pinstripe business dress is only arm covering. A pinstripe business dress is usually short. A pinstripe business dress is usually erect-nipple-exposing. The text-shortcut of pinstripe business dress is "pin". The printed name of pinstripe business dress is usually "[clothing-title-before]pinstripe business dress[clothing-title-after]".
 
 Figure of pinstripe business dress is the file "Items/Clothes/Upper/Business/businessdress1.png".
 

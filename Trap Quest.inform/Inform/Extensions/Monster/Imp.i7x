@@ -87,10 +87,7 @@ To compute (M - a monster) stomping (N - an imp):
 	destroy N.
 
 To compute (M - demon lord) stomping (N - an imp):
-	compute N protecting against M.[the imp betrays you]
-	[if M is in the location of the player, say "[BigNameDesc of M] lifts [NameDesc of N] off the ground and jams [him of N] face first onto [his of M] [DickDesc of M]. [BigNameDesc of N]'s throat bulges obscenely as [NameDesc of M] facefucks [him of M], and [he of N] emits a strangled gagging noise as [his of N] master forces [him of M] to spontaneously [if full-lady fetish is 1]squirt[otherwise]cum[end if] and disappear.";
-	otherwise say "You hear gagging noises coming from somewhere else in the hotel!";
-	destroy N.]
+	unless N is unfriendly, compute N protecting against M.[the imp betrays you]
 
 To say MuteGreetResponse of (M - an imp):
 	say "[BigNameDesc of M] replies non-committally. Looks like [he of M] isn't much for conversation.".
@@ -114,7 +111,7 @@ To decide which number is the seek roll of (M - an imp):
 
 A later time based rule (this is the imps follow the player rule): [after compute monsters]
 	repeat with M running through on-stage imps:
-		if M is not in the location of the player:
+		if M is not in the location of the player and the location of the player is not bossed:[The imps always follow you, no matter where you go. Unless its a boss room.]
 			now M is in the location of the player;
 			say "A portal appears, and [NameDesc of M] hops out!";
 			if M is not interested, compute perception of M.

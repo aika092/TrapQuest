@@ -111,7 +111,7 @@ To decide which figure-name is clothing-image of (C - a ghost pacifier):
 	decide on figure of ghost pacifier.
 
 To say ClothingDesc of (C - a cock pacifier):
-	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practice sucking [manly-penis] all the time.[end if]".
+	say "This pacifier has a penis shaped sucker, [if the oral sex addiction of the player < 7]to further humiliate the wearer[otherwise]to keep you happy by letting you practise sucking [manly-penis] all the time.[end if]".
 
 To say ClothingDesc of (C - a pink pacifier):
 	say "This pink pacifier's vibrant colour makes it stand out even more than it would otherwise.".

@@ -11,6 +11,7 @@ To set up influence of (C - a romper):
 
 Definition: a romper is displacable: decide no.
 Definition: a romper is baby themed: decide yes.
+Definition: a romper is potentially erection concealing if it is baby themed. [non-tight loins conceal erections]
 
 Part 1 - Busy Patterned Romper
 

@@ -166,7 +166,7 @@ To delete the save file, we can use this phrase:
 
 	delete (save file);
 
-Saving and deleting a save file won't display a message except if an error occurs. The behaviour after restoring is determined by the restoring from a saved game activity. If no for rule is provided, the game will display the text of the restore the game rule response (B), which by default is "OK". If we want the player to look after restoring, we could for instance write:
+Saving and deleting a save file won't display a message except if an error occurs. The behaviour after restoring is determined by the restoring from a saved game activity. If no for rule is provided, the game will display the text of the restore the game rule response (B), which by default is "OK.". If we want the player to look after restoring, we could for instance write:
 
 	After restoring from a saved game:
 		try looking.

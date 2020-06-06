@@ -32,8 +32,9 @@ To FacePiss from (M - an object):
 			DrinkPiss from M;
 		otherwise:
 			let V be nothing;[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
-			if the player is not flying and the player is not monster stuck, now V is the juice-collector;
-			if V is held:
+			if the player is not flying and the player is not at least partially monster stuck, now V is the juice-collector of urine;
+			if V is bottle:
+				dump V;
 				say "You position the [printed name of V] below your chin just in time, as your hair, face and mouth are blasted by a stream of [urine]. [one of]As your [printed name of V] quickly fills up you realise that the only thing more humiliating than being used as a toilet is being witnessed saving some for later! [or][stopping]";[But no extra humiliation hit?]
 				now the doses of V is max-doses of V;
 				now the fill-colour of V is golden;
@@ -84,18 +85,25 @@ To say PissDrinkThreat of (M - an object):
 
 Determines which of the player's containers, if any, will be used to capture urine or semen after a shower or a facial, respectively
 
-@return <Bottle> The bottle the player will use to catch the liquid
+@return <Object> The bottle the player will use to catch the liquid, or nothing.
 +!]
-To decide which bottle is the juice-collector:
-	if debugmode is 1, say "there are [open-topped-vessel-count] open topped vessels held by the player.";
-	repeat with V running through open topped vessels held by the player:
-		say "Collect some into the [printed name of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]? ";
-		if the player is bimbo consenting:
-			if the doses of V > 0:
-				say "You tip the contents of the [ShortDesc of V] onto the floor.";
-				dump V;
-			decide on V;
-	decide on a random off-stage bottle.[if there are no open topped vessels, or the player doesn't want to use any of them, decide on something we know the player isn't holding]
+To decide which object is the juice-collector of (L - a liquid-object):
+	let collecting be nothing;
+	unless the player is not able to use their hands:
+		let LV be a list of things;
+		repeat with V running through carried open topped vessels:
+			unless the doses of V >= the max-doses of V and (diaper quest is 1 or V is monster-origin) and ((L is urine and the fill-colour of V is golden) or (L is milk and the fill-colour of V is white) or (L is murkwater and the fill-colour of V is murky)), add V to LV; [vessels that satisfy these conditions, there would be no point in refilling with new stuff]
+		if the number of entries in LV > 0:
+			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+			truncate LV to 9 entries;
+			say "Where do you want to collect the [variable L]?[line break]";
+			repeat with V running through LV:
+				if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+				otherwise set next numerical response to "[BigNameDesc of V]";
+			set numerical response 0 to "don't collect";
+			compute multiple choice question;
+			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
+	decide on collecting.
 
 [!<APersonIsDesperateToDrink>+
 
@@ -172,15 +180,14 @@ Handles the player receiving a golden shower and choosing to drink it
 +!]
 To DrinkPiss from (M - an object):
 	Humiliate 1050 - (the urine taste addiction of the player * 50);
-	StomachUp 3;
 	say "[one of]You have never experienced anything close to the humiliation of voluntarily drinking another person's [urine]. A small voice inside you is warning you that you can never go back to a time before you were literally used as a human toilet.[or]You once again [if there is a worn ringagged clothing]have no choice but to[otherwise]voluntarily[end if] gulp down the [urine], taking your place as a human toilet.[stopping][if the urine taste addiction of the player > 15][line break][second custom style][one of]Mmm, this tastes amazing![or]Delicious![or]Yummy![or]Scrumptious.[or]Tasty![then at random][roman type][line break][otherwise if the urine taste addiction of the player > 12][one of]You are really starting to enjoy the taste![or][stopping][otherwise if the urine taste addiction of the player > 6][one of]You are starting to get used to the taste, and don't find it as awful as you used to.[or][stopping][end if]";
+	StomachUrineUp 3;
 	compute unique piss drink effect of M;
 	if WC hood is worn:
 		progress quest of human-toilet-quest;
 	otherwise if WC hood is off-stage and the urine taste addiction of the player > 4 and WC hood is actually summonable:
 		summon WC hood cursed;
 		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![roman type][line break]";
-	UrineTasteAddictUp 1;
 	let P be a random worn WC plug panties;
 	if P is clothing:
 		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed! Wow!";
@@ -265,7 +272,7 @@ Displays some text when a condom successfully catches a monster's load during or
 
 +!]
 To say OralCondomPieFlav of (M - a monster):
-	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as the condom swells to contain [his of M] big load.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
+	say "[one of][BigFuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [his of M] condom fills with warmth.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] into the condom.[or][BigFuckerDesc of M] forces you all the way down, groaning as [he of M] fills the condom with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] pulls you down as [he of M] begins to ejaculate, [his of M] balls slapping your chin as the condom swells to contain [his of M] big load.[or][silentThroat M][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] rushing into the increasingly bloated condom[or][silentThroat M][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as the condom fills with [his of M] load.[or][silentThroat M][BigFuckerDesc of M] forces you to take [his of M] [DickDesc of M] all the way to the hilt. You can do nothing but wait helplessly as [he of M] thoroughly empties [his of M] load into the condom.[or][BigFuckerDesc of M] forces you down as [his of M] [DickDesc of M] spasms, slightly stretching the condom with [his of M] load.[in random order]".
 
 [!<ComputeFacialDodgingOfMonster>+
 
@@ -351,22 +358,54 @@ This function can display a relevant image when the player receives a facial. Do
 To get facial accepting image for (M - a monster):
 	do nothing.
 
-[!<ComputeOralCreampieOfMonster>+
+
+Definition: a monster (called M) is coercing a swallow:
+	let R be a random number between 10 and 20;
+	let D be the delicateness of the player;
+	if debuginfo > 0, say "[input-style]Automatic swallow resistance check: [if the player is desperate to drink semen]automatic failure (desperate to drink)[otherwise]d9+10 ([R]) | ([D - 1].5) submissiveness[end if][roman type][line break]";
+	if the player is desperate to drink semen, decide yes;
+	if R < D, decide yes;
+	decide no.
+
+
+[!<ComputeDefaultOralCreampieOfMonster>+
 
 This function is called whenever a monster is not willing to bukkake the player, and they ejaculate in the player's mouth rather than down their throat. By default, this means the player was resisting in the last turn of sex. Depending on the player's delicateness score(checked by the coercing a swallow function), the player will either swallow automatically or have a choice of spitting.
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
 +!]
-To compute oral creampie of (M - a monster):
+To compute default oral creampie of (M - a monster):
 	get oral creampie image for M;
-	say ResistedOralCreampie of M;
+	FaceFill semen by (the semen load of M);
 	say SwallowDemand of M;
-	now M is not penetrating face;[This prevents the player from puking]
-	if M is coercing a swallow:[Automatic swallow]
+	if M is coercing a swallow:
 		compute auto swallow of M;
 	otherwise:
 		compute swallow choice of M.
+
+[!<ComputeOralCreampieOfMonster>+
+
+An oral creampie where the player was resisting on the final turn
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To compute oral creampie of (M - a monster):
+	say ResistedOralCreampie of M;
+	compute default oral creampie of M.
+
+[!<ComputeOralCreampieOfMonster>+
+
+An oral creampie where the player was resisting on the final turn
+
+@param <Monster>:<M> A monster the player just had oral sex with
+
++!]
+To compute merciful oral creampie of (M - a monster):
+	say SubmittedOralCreampie of M;
+	compute default oral creampie of M.
+
 
 [!<GetOralCreampieImageOfMonster>+
 
@@ -375,7 +414,8 @@ This function can display a relevant image when the player receives an oral crea
 @param <Monster>:<M> A monster the player just had oral sex with
 
 +!]
-[This is moved to TQ Only Stuff]
+To get oral creampie image for (M - a thing):
+	do nothing.
 
 [!<ComputeDeepthroatCreampieOfMonster>+
 
@@ -387,9 +427,8 @@ This function is called whenever a monster is not willing to bukkake the player,
 To compute deepthroat creampie of (M - a monster):
 	get deepthroat creampie image for M;
 	say DeepthroatCreampie of M;
+	increase the throating of M by 1;
 	StomachSemenUp the semen load of M;
-	[progress quest of cum-swallowing-quest;]
-	[PukeUp;]
 	compute happy reward of M.
 
 [!<GetDeepthroatCreampieImageOfMonster>+
@@ -410,11 +449,27 @@ This function is called whenever a monster ejaculates in the player's mouth, and
 
 +!]
 To compute swallow choice of (M - a monster):
-	say "Do you swallow? ";
-	if the player is bimbo consenting:
+	say "What do you do with the [MouthfulDesc]?";
+	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+	set numerical response 1 to "swallow it[if newbie tips is 1] (guaranteed addiction increase)[end if]";
+	set numerical response 2 to "hold it for now[if newbie tips is 1] (chance of addiction increase each turn you hold it; likely to slightly upset the [ShortDesc of M])[end if]";
+	set numerical response 3 to "spit it out immediately[if newbie tips is 1] (a bit humiliating if people get to see what's been in your mouth; likely to significantly upset the [ShortDesc of M])[end if]";
+	compute multiple choice question;
+	if player-numerical-response is 1:
 		compute voluntary swallow of M;
+	otherwise if player-numerical-response is 3:
+		compute spit choice of M;
 	otherwise:
-		compute spit choice of M.
+		compute oral creampie hold reaction of M.
+
+To compute oral creampie hold reaction of (M - a monster):
+	say "[speech style of M]'I said swallow it, not hold it!'[roman type][line break]";
+	if M is friendly:
+		FavourDown M by 1;
+	otherwise:
+		say "[BigNameDesc of M] strikes you across the face.";
+		PainUp 1.
+
 
 [!<ComputeSpitChoiceOfMonster>+
 
@@ -426,8 +481,9 @@ This function is called whenever the player chooses to spit rather than swallow 
 To compute spit choice of (M - a monster):
 	[We check if the player wants to collect some in a vessel, and output some unique flavour text.]
 	let V be nothing;
-	if the player is not flying and the number of worn wrist bonds is 0, now V is the juice-collector;
-	if V is held:[if the juice-collector isn't nothing, catch it!]
+	if the player is not flying and the number of worn wrist bonds is 0, now V is the juice-collector of semen;
+	if V is a bottle:[if the juice-collector isn't nothing, catch it!]
+		dump V;
 		compute semen catching from M in V;
 		check forgiveness of M;
 	otherwise:[TODO: depending on player semen addiction, and breast size they catch it on their boobs instead]
@@ -442,76 +498,53 @@ This function is called whenever the player chooses to spit semen into a vessel/
 
 +!]
 To compute semen catching from (M - a monster) in (V - a bottle):
-	say "You position the [printed name of V] below your chin[if the semen taste addiction of the player < 9], looking away from [him of M][otherwise if the semen taste addiction of the player < 13], trying not to look at [him of M][otherwise], winking up at [him of M][end if] as it catches the [one of]load[or][tasted-semen][at random] [one of]dribbling slowly out of your mouth[or]in thick gooey clumps[or]slides out of your open mouth[at random].[one of] As your [printed name of V] quickly fills up you realise the only thing more humiliating than swallowing [semen] is being witnessed saving some for later![or][stopping]";
-	humiliate 200;
-	DoseFill V;
-	now the fill-colour of V is creamy;
-	now V is monster-origin.
+	say "You position the [printed name of V] below your chin[if the semen taste addiction of the player < 9], looking away from [him of M][otherwise if the semen taste addiction of the player < 13], trying not to look at [him of M][otherwise], winking up at [him of M][end if] as it catches the [one of]load[or][tasted-semen][at random] [one of]dribbling slowly out of your mouth[or]in thick gooey clumps[or]slides out of your open mouth[at random][run paragraph on]";
+	if the urine volume of face <= 0 and the milk volume of face <= 0:
+		say ".[one of] As your [printed name of V] quickly fills up you realise the only thing more humiliating than swallowing [semen] is being witnessed saving some for later![or][stopping]";
+		now the fill-colour of V is creamy;
+	otherwise:
+		say ", along with the [if the urine volume of face > 0 and the milk volume of face > 0][urine] and [milk][otherwise if the urine volume of face > 0][urine][otherwise][milk][end if] already in your mouth.";
+		now the fill-colour of V is murky;
+	say strongHumiliateReflect;
+	SetDose V to (the total volume of face + 1) / 2;
+	now V is monster-origin;
+	MouthEmpty.
 
 [!<ComputeAutoSwallowOfMonster>+
 
-This function is called whenever a monster ejaculates in the player's mouth and the player swallows automatically. Humiliating.
+This function is called whenever a monster ejaculates in the player's mouth and the player swallows automatically.
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
 +!]
 To compute auto swallow of (M - a monster):
 	say AutomaticSwallow of M;
-	StomachSemenUp the semen load of M;
-	[progress quest of cum-swallowing-quest;]
-	humiliate 100;
+	compute silent swallowing;
 	compute happy reward of M.
 
 [!<ComputeVoluntarySwallowOfMonster>+
 
-This function is called whenever a monster ejaculates in the player's mouth and the player chooses to swallow rather than spit. Twice as humiliating as swallowing automatically.
+This function is called whenever a monster ejaculates in the player's mouth and the player chooses to swallow rather than spit.
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
 +!]
 To compute voluntary swallow of (M - a monster):
 	say VoluntarySwallow of M;
-	StomachSemenUp the semen load of M;
-	[progress quest of cum-swallowing-quest;]
-	humiliate 200;
+	compute silent swallowing;
 	compute happy reward of M.
 
 [!<ComputeVoluntarySpittingOfMonster>+
 
-This function is called whenever a monster ejaculates in the player's mouth, the player chooses to spit, and the player either has nothing available to spit in, or chooses not to spit into anything. Depending on fetish options, semen addiction, and breast size, the player has a chance to spit on their body rather than on the floor.
+This function is called whenever a monster ejaculates in the player's mouth, the player chooses to spit, and the player either has nothing available to spit in, or chooses not to spit into anything.
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
 +!]
 To compute voluntary spitting of (M - a monster):
-	if the largeness of breasts >= 5 and bukkake fetish is 1 and the semen addiction of the player > a random number between 15 and (10 - the bimbo of the player):
-		compute chest spitting of M;
-	otherwise:
-		compute floor spitting of M.
-
-[!<ComputeFloorSpittingOfMonster>+
-
-This function is called whenever a monster ejaculates in the player's mouth and the player chooses to spit the semen on the floor. Since the player is being disobedient, we invoke the angry punishment for this monster.
-
-@param <Monster>:<M> A monster the player just had oral sex with
-
-+!]
-To compute floor spitting of (M - a monster):
 	say VoluntarySpit of M;
-	SemenPuddleUp the semen load of M;
+	compute silent spitting;
 	compute angry punishment of M.
-
-[!<ComputeChestSpittingOfMonster>+
-
-This function is called whenever a monster ejaculates in the player's mouth and the player chooses to spit the semen on the floor. The player has high semen addiction, so they decide to play with the semen instead. The player is being disobedient, but some monsters might like what the player decided to do instead of swallowing, so we invoke the check forgiveness function for M.
-
-@param <Monster>:<M> A monster the player just had oral sex with
-
-+!]
-To compute chest spitting of (M - a monster):
-	say ChestSpit of M;
-	CumTitsUp the semen load of M;
-	check forgiveness of M.
 
 [!<CheckForgivenessOfMonster>+
 
@@ -578,13 +611,23 @@ To say UnavoidedFacial of (M - a monster):
 
 [!<SayResistedOralCreampieOfMonster>+
 
-Displays some flavour describing the player receiving a mouthful of semen after a blowjob
+Displays some flavour describing the player receiving a mouthful of semen after a blowjob when they tried to pull away
 
 @param <Monster>:<M> The monster having oral sex with the player
 
 +!]
 To say ResistedOralCreampie of (M - a monster):
 	say "[one of][BigFuckerDesc of M] holds you down just long enough to flood your mouth with a nice big load of [tasted-semen].[or][BigFuckerDesc of M] forces you to stay down, continuing to fuck your mouth even as [he of M] reaches orgasm and you begin to taste [his of M] salty [semen].[or][BigFuckerDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigFuckerDesc of M] groans, tightening [his of M] grip as [he of M] begins to ejaculate, holding you down until your mouth has been thoroughly and completely filled with [tasted-semen].[or][BigFuckerDesc of M] barely manages to hold you down, [his of M] [DickDesc of M] only halfway in your mouth by the time [he of M] reaches orgasm. [if the semen taste addiction of the player < 8]You yelp indignantly as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
+
+[!<SaySubmittedOralCreampieOfMonster>+
+
+Displays some flavour describing the player receiving a mouthful of semen after a blowjob when they didn't try to pull away
+
+@param <Monster>:<M> The monster having oral sex with the player
+
++!]
+To say SubmittedOralCreampie of (M - a monster):
+	say "[one of][BigFuckerDesc of M] holds you in place just long enough to flood your mouth with a nice big load of [tasted-semen].[or][BigFuckerDesc of M] forces you to stay down, continuing to fuck your mouth even as [he of M] reaches orgasm and you begin to taste [his of M] salty [semen].[or][BigFuckerDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigFuckerDesc of M] groans, tightening [his of M] grip as [he of M] begins to ejaculate, holding you down until your mouth has been thoroughly and completely filled with [tasted-semen].[or][BigFuckerDesc of M] pulls back a bit, so that [his of M] [DickDesc of M] is only halfway in your mouth when [he of M] reaches orgasm. [if the semen taste addiction of the player < 7]You squirm uncomfortably as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
 
 [!<SayAutomaticSwallowOfMonster>+
 
@@ -708,7 +751,7 @@ Displays some text describing the player giving a blowjob to a friendly monster
 
 +!]
 To say FriendlySubOralResponse of (M - a monster):
-	say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the player is feeling dominant]avoiding eye contact[otherwise]looking up at [FuckerDesc of M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if].[or][BigFuckerDesc of M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] cock, [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or][BigFuckerDesc of M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or][BigFuckerDesc of M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]".
+	say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the humiliation of the player < 18000 or the player is feeling dominant]avoiding eye contact[otherwise]looking up at [FuckerDesc of M][end if] as you submissively polish [his of M] shaft.[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s [DickDesc of M], [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if].[or][BigFuckerDesc of M] guides the movement of your head as you [if the oral sex addiction of the player < 4]quietly [otherwise if the oral sex addiction of the player > 5]noisily [end if]suck [his of M] [DickDesc of M], [if the sex addiction of the player < 7]making you feel even more like a dirty slut. If that was even possible.[otherwise if the sex addiction of the player < 12]silently assuring you that you[']re doing a good job.[otherwise]allowing you to do all the work like the dirty slut you are.[end if][or][BigFuckerDesc of M] rolls [his of M] hips to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head.[or][BigFuckerDesc of M] allows you to do most of the work, [if the sex addiction of the player < 7]picking up the slack whenever the shame gets to be too much.[otherwise if the oral sex addiction of the player < 6]picking up the slack whenever you get tired.[otherwise]grunting with pleasure as you drag your tongue up [his of M] shaft.[end if][in random order]".
 
 [!<SayNormalSubOralResponseOfMonster>+
 
@@ -910,7 +953,12 @@ Displays some text when the player is penetrated orally by a male monster
 @param <Monster>:<M> The monster entering face
 +!]
 To say NormalMouthPenetrationFlav of (M - a monster):
-	say "[one of][if the relevant sex addiction of M < 8][BigFuckerDesc of M] pinches your nose, shoving [his of M] [DickDesc of M] in your mouth as soon as you try to breathe. You glare up at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You obediently open it, emitting a slow sigh through your nose as it slides through your lips.[otherwise][BigFuckerDesc of M] positions [his of M] [DickDesc of M] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[end if][or][if the relevant sex addiction of M < 8][BigFuckerDesc of M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but [he of M] immediately inserts [his of M] [DickDesc of M] and begins to thrust.[otherwise if the relevant sex addiction of M < 12][BigFuckerDesc of M] puts one hand on the back of your head. Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[otherwise][BigFuckerDesc of M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [DickDesc of M] slides through your lips.[end if][or][if the relevant sex addiction of M < 7][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You snarl. [line break][first custom style]'Not on your life bud-'[roman type][line break][he of M] cuts you off by immediately shoving [himself of M] into your mouth. You stare at [him of M] lividly as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 13][BigFuckerDesc of M] points to your mouth, grinning. You open and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [DickDesc of M] slides through your lips.[otherwise][BigFuckerDesc of M] places one hand on your shoulder. You greedily lean forward and take [his of M] [DickDesc of M] into your mouth.[end if][or][if the relevant sex addiction of M < 3][BigFuckerDesc of M] points to your mouth, grinning. You spit at [his of M] feet. [line break][first custom style]'Go fuck yourself assh-'[roman type][line break][he of M] cuts you off by immediately shoving [his of M] [DickDesc of M] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise if the relevant sex addiction of M < 7][BigFuckerDesc of M] points to your mouth, grinning. You slowly and fearfully open it, shuddering as [his of M] [DickDesc of M] slides past your lips.[otherwise if the relevant sex addiction of M < 11][BigFuckerDesc of M] places [his of M] hand on your shoulder, guiding [his of M] [DickDesc of M] to your lips with the other. You obediently open your mouth to allow [him of M] inside.[otherwise][BigFuckerDesc of M] puts [his of M] hand on the back of your head. You submissively part your lips and accept [his of M] [DickDesc of M] into your mouth.[end if][in random order]".
+	if the oral sex addiction of the player < 8:
+		say "[one of][BigFuckerDesc of M] pinches your nose, shoving [his of M] [DickDesc of M] in your mouth as soon as you try to breathe. You glare up at [him of M] as [he of M] begins to thrust.[or][BigFuckerDesc of M] puts one hand on the back of your head, grinning. You open your mouth to insult [him of M], but [he of M] immediately inserts [his of M] [DickDesc of M] and begins to thrust.[or][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You snarl. [line break][first custom style]'Not on your life bud-'[roman type][line break][he of M] cuts you off by immediately shoving [himself of M] into your mouth. You stare at [him of M] lividly as [he of M] begins to thrust.[or][if the delicateness of the player < 7][BigFuckerDesc of M] points to your mouth, grinning. You spit at [his of M] feet. [line break][first custom style]'Go fuck yourself assh-'[roman type][line break][he of M] cuts you off by immediately shoving [his of M] [DickDesc of M] in your mouth. You glare at [him of M] as [he of M] begins to thrust.[otherwise][BigFuckerDesc of M] points to your mouth, grinning. You slowly and fearfully open it, shuddering as [his of M] [DickDesc of M] slides past your lips.[end if][in random order]";
+	otherwise if the oral sex addiction of the player < 12:
+		say "[one of][BigFuckerDesc of M] points to your mouth, slowly stroking [his of M] [DickDesc of M]. You obediently open it, emitting a slow sigh through your nose as it slides through your lips.[or][BigFuckerDesc of M] puts one hand on the back of your head. Knowing what's to come, you slowly open your mouth and accept [his of M] invading shaft.[or][BigFuckerDesc of M] points to your mouth, grinning. You open and loll out your tongue, avoiding eye contact with [him of M] as [his of M] [DickDesc of M] slides through your lips.[or][BigFuckerDesc of M] places [his of M] hand on your shoulder, guiding [his of M] [DickDesc of M] to your lips with the other. You obediently open your mouth to allow [him of M] inside.[in random order]";
+	otherwise:
+		say "[one of][BigFuckerDesc of M] positions [his of M] [DickDesc of M] between your lips. You immediately open them, sighing contentedly as [he of M] enters your mouth.[or][BigFuckerDesc of M] points to your mouth, grinning. You obediently loll out your tongue, gazing at [him of M] reverently as [his of M] [DickDesc of M] slides through your lips.[or][BigFuckerDesc of M] places one hand on your shoulder. You greedily lean forward and take [his of M] [DickDesc of M] into your mouth.[or][BigFuckerDesc of M] puts [his of M] hand on the back of your head. You submissively part your lips and accept [his of M] [DickDesc of M] into your mouth.[in random order]".
 
 [!<SayRingMouthPenetrationFlavOfMonster>+
 
@@ -938,9 +986,9 @@ Displays some text when the player is penetrated orally by a friendly male monst
 +!]
 To say FriendlyMouthPenetrationFlav of (M - a monster):
 	if the sex addiction of the player < 5 or the oral sex addiction of the player < 3:
-		say "[one of][if the player is not wrist bound]You gingerly grab [FuckerDesc of M]'s cock, trying not to wretch as you slide it between your lips.[otherwise]You force yourself not to jerk back as [FuckerDesc of M] places [his of M] hands on your shoulders, shuddering with disgust as [his of M] firm, hard cock slides between your lips.[end if][or]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M], forcing yourself not to pull back as [he of M] places [his of M] hands on either side of your head.[or]You force yourself to lean forward, screwing your eyes shut as [FuckerDesc of M]'s throbbing penis slides into your mouth.[or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. It's everything you can do not to angrily smack [his of M] hands away as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you force yourself not to jerk out of [his of M] grip.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your cheeks burn with shame as you slowly begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You lower your eyes, ashamed.[in random order]";
+		say "[one of][if the player is not wrist bound]You gingerly grab [FuckerDesc of M]'s [Dickdesc of M], trying not to wretch as you slide it between your lips.[otherwise]You force yourself not to jerk back as [FuckerDesc of M] places [his of M] hands on your shoulders, shuddering with disgust as [his of M] [LongDickDesc of M] slides between your lips.[end if][or]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M], forcing yourself not to pull back as [he of M] places [his of M] hands on either side of your head.[or]You force yourself to lean forward, screwing your eyes shut as [FuckerDesc of M]'s throbbing penis slides into your mouth.[or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. It's everything you can do not to angrily smack [his of M] hands away as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you force yourself not to jerk out of [his of M] grip.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your cheeks burn with shame as you slowly begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You lower your eyes, ashamed.[in random order]";
 	otherwise if the oral sex addiction of the player < 7:
-		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth and begins to guide your head back and forth. You hesitantly take your place as [his of M] obedient little cocksucker.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You push aside your misgivings and eagerly begin to suck.[or]You give [FuckerDesc of M]'s [DickDesc of M] an experimental lick, furtively glancing up at [him of M] as you allow it to slide into your mouth.[or][if the player is not wrist bound]You give the [DickDesc of M] in front of you a few hesitant tugs, embarrassment colouring your cheeks as [FuckerDesc of M] pushes [his of M] member into your open mouth.[otherwise]You shiver with what you pretend is disgust as [FuckerDesc of M] places [his of M] hands on your shoulders, pushing every inch of [his of M] firm, hard cock into your open mouth.[end if][or]You lean forward, gingerly wrapping your lips around [FuckerDesc of M]'s cock before you start getting second thoughts. [if M is unfriendly]Just as they set in, a firm hand grabs the back of your head, assuring you that you're in this until [he of M] decides you're finished.[end if][or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. You look up at [him of M], and obediently lean forward as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, ruffling your [ShortDesc of hair] as you hesitantly, but obediently begin to suck.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Without too much of a second thought, you slowly begin to suck.[in random order]";
+		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth and begins to guide your head back and forth. You hesitantly take your place as [his of M] obedient little cocksucker.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You push aside your misgivings and eagerly begin to suck.[or]You give [FuckerDesc of M]'s [DickDesc of M] an experimental lick, furtively glancing up at [him of M] as you allow it to slide into your mouth.[or][if the player is not wrist bound]You give the [DickDesc of M] in front of you a few hesitant tugs, embarrassment colouring your cheeks as [FuckerDesc of M] pushes [his of M] member into your open mouth.[otherwise]You shiver with what you pretend is disgust as [FuckerDesc of M] places [his of M] hands on your shoulders, pushing every inch of [his of M] firm, [DickDesc of M] into your open mouth.[end if][or]You lean forward, gingerly wrapping your lips around [FuckerDesc of M]'s [DickDesc of M] before you start getting second thoughts. [if M is unfriendly]Just as they set in, a firm hand grabs the back of your head, assuring you that you're in this until [he of M] decides you're finished.[end if][or][if the largeness of breasts > 5][BigFuckerDesc of M] fondles your [BreastDesc], leaving [his of M] [DickDesc of M] to stare you in the face. You look up at [him of M], and obediently lean forward as [his of M] hardness slides between your lips.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, ruffling your [ShortDesc of hair] as you hesitantly, but obediently begin to suck.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Without too much of a second thought, you slowly begin to suck.[in random order]";
 	otherwise:
 		say "[one of][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. You hum happily as you begin to suck.[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth. You gaze up at [him of M] as you eagerly bob your head back and forth.[or][if the player is not wrist bound]You wrap your fingers around [FuckerDesc of M]'s [DickDesc of M], moaning like the dirty whore you are as [he of M] slides it into your mouth.[otherwise]You drag your tongue up and down [FuckerDesc of M]'s shaft, moaning lecherously as [his of M] [line break][second custom style]delicious[roman type][line break]meat slides into your mouth.[end if][or][if the largeness of breasts > 5]You wrap your lips around [FuckerDesc of M]'s [DickDesc of M] as [he of M] manhandles your [BreastDesc], locking eyes with [him of M] as you eagerly begin to suck.[otherwise][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your open mouth, grinning down at you as you desperately worship [his of M] length with your tongue and throat.[end if][or][BigFuckerDesc of M] shoves [his of M] [DickDesc of M] into your open mouth. Your lips close around the invader at their first opportunity, all too eager [if the semen taste addiction of the player > 8]for that spermy goodness[otherwise]to get to work[end if].[or][BigFuckerDesc of M] pushes [his of M] [DickDesc of M] into your mouth and begins to guide your head back and forth. You give [him of M] a smouldering look, eagerly leaning into [his of M] movements as you rub [his of M] shaft with your tongue.[in random order]".
 
@@ -1166,9 +1214,13 @@ To compute phero submission to (M - a monster):
 
 To compute (M - a monster) buttplugging with (P - a sex toy):
 	say ButtplugFlav of M with P;
+	now P is not penetrating vagina; [Just in case]
 	now P is worn by the player;
+	now P is sure;
+	now P is identified;
 	now P is penetrating asshole;
-	ruin asshole.
+	ruin asshole;
+	if P is cursed and the quest of P is no-clothing-quest, compute summoned quest of P.
 
 To say ButtplugFlav of (M - a monster) with (P - a sex toy):
 	say "[BigFuckerDesc of M] [if P is off-stage]produces a[otherwise]takes the[end if] [P] and pushes it into your [asshole]!".

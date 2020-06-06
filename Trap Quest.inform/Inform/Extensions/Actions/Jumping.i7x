@@ -13,6 +13,7 @@ Check jumping:
 	if the player is prone, say "You can't jump while on all fours!" instead;
 	if the throne is triggered, say "You can't jump while sitting on the throne." instead;
 	if the player is vine stuck, say "Vines are pinning your ankles to the ground! Try [bold type]pulling[roman type] them?" instead;
+	if minotaur is wrangling the player, say "You can't without breaking free from [NameDesc of minotaur] first!" instead;
 	repeat with C running through clothing worn by the player:
 		if C is stuck and the player is not dildo stuck, say "Your [printed name of C] is stuck, and it's stopping you from moving!" instead;
 	let B be the largeness of breasts;

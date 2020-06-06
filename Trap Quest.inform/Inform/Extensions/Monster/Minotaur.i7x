@@ -118,6 +118,15 @@ To compute labour to (M - minotaur):
 To say LeftoverDesc (N - 107):
 	say "The corpse of a [if mythical creature fetish is 1]minotaur[otherwise]hulk[end if] lies on the ground. The back of [his of minotaur] skull is missing, and a huge bloody hole is all that remains of [his of minotaur] brain.[line break]".
 
+[
+0 - normal
+1 - one leg
+2 - two legs
+3 - in the air
+]
+minotaur has a number called critical-windup.
+
+
 Part 1 - Perception
 
 To compute perception of (M - minotaur):
@@ -140,7 +149,8 @@ To say BecomesBoredFlav of (M - minotaur):
 	say "[BigNameDesc of M] seems to lose interest in you for now.".
 
 To compute delay of (M - minotaur):
-	say "[BigNameDesc of M] stands over you, [his of M] [LongDickDesc of M] quickly raising to full mast in front of your face.";
+	if the player is prone, say "[BigNameDesc of M] stands over you, [his of M] [LongDickDesc of M] quickly raising to full mast in front of your face.";
+	otherwise say "[BigNameDesc of M] closes in on you, [his of M] [LongDickDesc of M] quickly raising to full mast.";
 	if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M.
 
 Part 2 - Motion, Seeking and Sleeping
@@ -219,7 +229,7 @@ To say CagedMinotaurMessFlav:
 		SemenPuddleUp L.
 
 This is the minotaur prioritises defeating others rule:
-	if the number of undefeated awake monsters in the location of current-monster > 1: [1 is going to be the minotaur itself]
+	if the critical-windup of current-monster is 0 and the number of undefeated awake monsters in the location of current-monster > 1: [1 is going to be the minotaur itself]
 		MonsterStomp current-monster;
 		rule succeeds.
 The minotaur prioritises defeating others rule is listed last in the minotaur priority attack rules.
@@ -342,13 +352,97 @@ To compute fuckhole sex of (M - minotaur):
 		decrease the health of M by 5;
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
 
+
+
+To compute damaging attack of (M - a minotaur):
+	if the player is the donator and a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]
+		compute grab attack of M;
+	otherwise:
+		compute striking attack of M;
+		BodyRuin 1.[The minotaur always does at least one damage]
+
+To compute grab attack of (M - a minotaur):
+	if the accuracy roll of M >= the dexterity of the player:
+		say "[BigNameDesc of M] grabs your leg and slowly drags you toward [him of M].";
+		now M is wrangling the player;
+		increase the critical-windup of M by 1;
+	otherwise:
+		say "[BigNameDesc of M] tries to grab your leg, but you avoid it!";
+
+This is the minotaur grabs both legs rule:
+	let M be current-monster;
+	if the critical-windup of M is 1 and M is wrangling the player:
+		if the accuracy roll of M >= the dexterity of the player:
+			say "[BigNameDesc of M] grabs your other leg, [his of M] [DickDesc of M] growing harder and harder as [he of M] pulls you in close.";
+			increase the critical-windup of M by 1;
+		otherwise:
+			say "[BigNameDesc of M] tries to grab your other leg, but you manage to avoid it!";
+		rule succeeds;
+	otherwise if the critical-windup of M is 1:
+		now the critical-windup of M is 0.
+The minotaur grabs both legs rule is listed last in the minotaur priority attack rules.
+
+To compute wrangled resisting of (T - minotaur):
+	if the strength roll of T >= the strength of the player:
+		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s powerful muscles![or]you can't break [FuckerDesc of T][']s powerful grip.[or][FuckerDesc of T] is just too strong![in random order]";	
+	otherwise:
+		say "You force [FuckerDesc of T] to let you go!";
+		now the critical-windup of T is 0;
+		now T is not wrangling the player.
+
+This is the minotaur lifts before crits rule:
+	let M be current-monster;
+	if M is wrangling the player and the critical-windup of M is 2:
+		say "[BigNameDesc of M] slowly lifts you up and off the ground, positioning your [asshole] right above [his of M] [LongDickDesc of M].";
+		increase the critical-windup of M by 1;
+		now M is not wrangling the player;
+		now M is grabbing the player;[Your last struggle will actually be pointless, but its more fun if we pretend its not. Use your safeword, sweetie!]
+		if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M;
+		rule succeeds;
+	otherwise if the critical-windup of M is 2:
+		now the critical-windup of M is 0.
+The minotaur lifts before crits rule is listed last in the minotaur priority attack rules.
+
+This is the minotaur crits the player rule:
+	let M be current-monster;
+	if M is grabbing the player and the critical-windup of M > 2:
+		say AssholePenetrationFlav of M;
+		now the stance of the player is 1;
+		now M is not grabbing the player;
+		now M is penetrating asshole;
+		ruin asshole;
+		set up sex length of M in asshole;
+		now the critical-windup of M is 0;
+		rule succeeds;
+	otherwise if the critical-windup of M > 2:
+		now the critical-windup of M is 0.
+The minotaur crits the player rule is listed last in the minotaur priority attack rules.
+
+To compute unique periodic effect of (M - a minotaur):
+	if M is not in the location of the player or the player is prone:
+		now the critical-windup of M is 0;
+	if the critical-windup of M is 0:
+		now M is not grabbing the player;
+		now M is not wrangling the player.
+
+This is the player can't attack when minotaur rule:
+	let M be minotaur;
+	if M is in the location of the player and M is wrangling the player:
+		if autoattack is 0, say "You can't do that while [FuckerDesc of M] is holding your legs!";
+		rule fails.
+The player can't attack when minotaur rule is listed in the ability to knee rules.
+The player can't attack when minotaur rule is listed in the ability to kick rules.
+
+To decide which number is the strength roll of (M - minotaur):
+	let D be a random number between 1 and the health of M / 2;
+	if debugmode is 1, say "Player [strength of the player] | [D].5 [ShortDesc of M][line break]";
+	decide on D.
+
 To say StrikingSuccessFlav of (M - minotaur) on (B - a body part):
-	say "[BigNameDesc of M] pummels you [TargetName of B] with [his of M] fists!";
-	BodyRuin 1. [The minotaur automatically does 1 damage, and 2 if he hits.]
+	say "[BigNameDesc of M] pummels you [TargetName of B] with [his of M] fists!".
 
 To say StrikingFailureFlav of (M - minotaur) on (B - a body part):
-	say "You try to dodge [NameDesc of M][']s fist, but [he of M] still manages to land a glancing blow! Ouch!";
-	BodyRuin 1.
+	say "You try to dodge [NameDesc of M][']s fist, but [he of M] still manages to land a glancing blow! Ouch!".
 
 To decide which body part is the painful-part of (M - minotaur):
 	let B be a random body part;

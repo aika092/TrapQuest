@@ -2,8 +2,10 @@ Hole In Wall Trap by Traps begins here.
 
 hole-in-wall is a trap. The printed name of hole-in-wall is "[TQlink of item described]hole[TQxlink of item described][verb-desc of item described]". hole-in-wall is sticky. Understand "hole", "hole in", "wall" as hole-in-wall. The text-shortcut of hole-in-wall is "hiw". hole-in-wall has a number called times-stuck.
 
-To decide which figure-name is the examine-image of (C - hole-in-wall):
-	decide on figure of gloryhole.
+Figure of hole is the file "Env/MultiFloor/hole1.jpg".
+
+To decide which figure-name is the examine-image of (G - hole-in-wall):
+	decide on figure of hole.
 
 To say ExamineDesc of (C - hole-in-wall):
 	say "There is a medium sized hole in one wall a couple feet above the ground. [if the times-stuck of C is 0]You can see a shiny golden ring sparkling in the darkness through the hole. [end if]You would struggle to crawl through but it might be possible.".
@@ -78,7 +80,7 @@ HoleEntering is an action applying to one thing.
 Check HoleEntering:
 	if the noun is warp portal, try entering the noun instead;
 	if the noun is not hole-in-wall, say "This verb is for entering holes in walls." instead;
-	if the player is immobile, say "You're currently immobile!" instead;
+	if the player is immobile or there is a thing wrangling the player, say "You're currently immobile!" instead;
 	if the player is upright or the player is flying, say "You'd need to be on your knees." instead;
 	allocate 3 seconds;
 	if the largeness of breasts > 15, say "You try but your [MediumDesc of breasts] are just too big, you won't be able to fit through!" instead.

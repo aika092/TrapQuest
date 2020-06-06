@@ -39,6 +39,7 @@ Figure of Gladiator Interact 6 is the file "NPCs/MultiFloor/Gladiator/Cutscene/c
 Figure of Gladiator Interact 7 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact7.jpg".
 Figure of Gladiator Interact 10 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-interact10.jpg".
 
+Figure of Gladiator Cutscene 11 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck9.png".
 Figure of Gladiator Cutscene 12 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event1.png".
 Figure of Gladiator Cutscene 13 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event2.png".
 Figure of Gladiator Cutscene 14 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event3.png".
@@ -125,13 +126,14 @@ To say MonsterDesc of (M - enlightened gladiator):[she's gotten some guidance fr
 	say "This [man of M] is completely naked with pearly strands of [semen] connecting [his of M] thighs together as [he of M] walks. The caramel skin of [his of M] chiselled chest and abs, as well as [his of M] [if lady fetish is 2]buttocks[otherwise]breasts[end if] are covered in a fine sheen of sweat. [big he of M] isn't armed, and there's a bit of an odd look in [his of M] eye, but somehow, [he of M] still seems confident.".
 
 To say SwordDesc of (M - a gladiator):
-	say "[if the difficulty of M < 10]wooden training sword[otherwise if the difficulty of M < 15]iron shortsword[otherwise]steel longsword[end if]";
+	let D be the difficulty of M - the difficulty-base of M;
+	say "[if D < 1]wooden training sword[otherwise if D < 3]iron shortsword[otherwise]steel longsword[end if]";
 
 To say LeftoverDesc (N - 106):
 	if diaper quest is 1:
-		say "An unconscious gladiator is lying here, with a very full diaper and mittens over [if lady fetish is 2]his[otherwise]her[end if] hands.";
+		say "An unconscious gladiator is lying here, with a very full diaper and mittens over [his of a random gladiator] hands.";
 	otherwise:
-		say "An unconscious gladiator on the ground has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [if lady fetish is 2]his asshole. His[otherwise]her asshole. Her[end if] shortsword is completely stuck in the stone ground.[line break]".
+		say "An unconscious gladiator on the ground has a [if pregnancy fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of a random gladiator] asshole. [big his of a random gladiator] shortsword is completely stuck in the stone ground.[line break]".
 
 To say MonsterDesc of (M - a gladiator):
 	if M is diaper-enslaved:
@@ -139,11 +141,11 @@ To say MonsterDesc of (M - a gladiator):
 	otherwise if diaper quest is 1:
 		say "This tall dark-skinned [man of M] looks very proud of [his of M] [SwordDesc of M] and adult, curvy body shape. [big his of M] [ChestDesc of M] are completely bare.";
 	otherwise if M is fucked-silly:
-		say "This tall dark-skinned [man of M] has a [if pregnancy fetish is 1 and lady fetish is 1 or full-lady fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of M] gaping [HoleDesc of M]. [big he of M] seems like [he of M]'d carry a sword, but [he of M] clearly doesn't have one.";
+		say "This tall dark-skinned [man of M] has a [if pregnancy fetish is 1 and lady fetish is 1 or full-lady fetish is 1]pregnant looking[otherwise]fully stretched[end if] belly and [semen] slowly flowing out of [his of M] gaping [HoleDesc of M]. [big he of M] seems like [he of M][']d carry a sword, but [he of M] clearly doesn't have one.";
 	otherwise if lady fetish is 2:
 		say "[one of]This [man of M] has big, kissable lips and a taut, muscular butt. However, the [SwordDesc of M] in [his of M] hands makes him look rather intimidating and dangerous. [big he of M] is wearing a leather belt[unless M is male], from which hangs a loincloth that comes halfway down [his of M] thighs[end if] and a scarlet cape that reaches all the way down to [his of M] knees. [big he of M] wears a perpetual sneer as [he of M] prowls through the dungeon like a hungry puma.[or]This [man of M] is practically naked, wearing only [unless M is male]a loincloth that comes about halfway down [his of M] thighs and [end if]a long, scarlet cape. [big he of M] has big, kissable lips and a taut, muscular butt, although [his of M] sex appeal is curbed by [his of M] perpetual sneer and the [SwordDesc of M] in [his of M] hand.[in random order][if doomed is 5][big his of M] irises seem to glow with a strange pink light.[end if][if M is male]Oh, and [he of M] has a [LongDickDesc of M] proudly erect and bobbing with every step [he of M] takes[otherwise]You can see the glint of steel under [his of M] loincloth with every step [he of M] takes.[end if]";
 	otherwise:[at this point, we know the gladiator is definitely female, so we don't need to do gender substitutions here]
-		say "[one of]This woman is scantily clad, but the [SwordDesc of M] she's carrying in her hands makes her look quite intimidating and dangerous. She is wearing a leather belt, from which hangs a loincloth that only comes halfway down her thighs. Thick plates are held to her ankles, forearms, and shoulders by black straps, all of which are made of solid gold. A scarlet cape is draped over her shoulders, which are covered by loose black hair. Her [if (lactation fetish is 1 and M is milky-gladiator) or diaper quest is 1]milk-dripping breasts[otherwise]huge breasts[end if] are completely exposed, as well as the bronze skin of her taut stomach and muscular legs. She wears a perpetual sneer as she prowls through the dungeon like a hungry puma.[or]This woman is wearing a leather belt, a loincloth that comes about halfway down her thighs, ankle and forearm protectors, and a long, scarlet cape. She is otherwise completely naked, nearly every inch of her flawless dark brown skin exposed, including her [if (lactation fetish is 1 and M is milky-gladiator) or diaper quest is 1]milk-dripping breasts[otherwise]huge breasts[end if], taut stomach, and muscular thighs. Her perpetual sneer and [SwordDesc of M] make her look intimidating and very dangerous.[in random order][if doomed is 5]Her irises seem to glow with a strange pink light.[end if][if M is male]Oh, and she has a [LongDickDesc of M] pushing up through her belt.[end if]".
+		say "[one of]This [man of M] is scantily clad, but the [SwordDesc of M] [he of M]'s carrying in [his of M] hands makes [him of M] look quite intimidating and dangerous. [big he of M] is wearing a leather belt, from which hangs a loincloth that only comes halfway down [his of M] thighs. Thick plates are held to [his of M] ankles, forearms, and shoulders by black straps, all of which are made of solid gold. A scarlet cape is draped over [his of M] shoulders, which are covered by loose black hair. [big his of M] [if (lactation fetish is 1 and M is milky-gladiator) or diaper quest is 1]milk-dripping breasts[otherwise]huge breasts[end if] are completely exposed, as well as the bronze skin of [his of M] taut stomach and muscular legs. [big he of M] wears a perpetual sneer as [he of M] prowls through the dungeon like a hungry puma.[or]This [man of M] is wearing a leather belt, a loincloth that comes about halfway down [his of M] thighs, ankle and forearm protectors, and a long, scarlet cape. [big he of M] is otherwise completely naked, nearly every inch of [his of M] flawless dark brown skin exposed, including [his of M] [if (lactation fetish is 1 and M is milky-gladiator) or diaper quest is 1]milk-dripping breasts[otherwise]huge breasts[end if], taut stomach, and muscular thighs. [big his of M] perpetual sneer and [SwordDesc of M] make [him of M] look intimidating and very dangerous.[in random order][if doomed is 5][big his of M] irises seem to glow with a strange pink light.[end if][if M is male]Oh, and [he of M] has a [LongDickDesc of M] pushing up through [his of M] belt.[end if]".
 
 To say MonsterComment of (M - a wild gladiator):
 	say "[variable custom style][big he of M] looks pretty tough...[roman type][line break]".
@@ -198,7 +200,7 @@ To compute unique periodic effect of (M - a gladiator):
 To set up (M - a gladiator):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 6;
+	now the raw difficulty of M is the difficulty-base of M;
 	now M is female;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M.
@@ -438,6 +440,8 @@ To compute appearance assessment of (M - a gladiator):
 				say "[speech style of M]'If you are going to bare your breasts to the world, you should at least make sure that they are a respectable size! Disgraceful.'[roman type][line break]";
 			distract M;
 			FavourDown M;
+		otherwise if the player is top-wardrobe-malfunctioning:
+			compute default nip slip reaction of M;
 		otherwise if the times-met of M is 0:
 			say "[speech style of M]'Are you new to these parts, traveller? [one of]Well let me warn you now, you should learn to carry yourself with dignity and self-respect wherever you go, lest you wish to feel my wrath.'[or]I hope you are not another boring, weak sex addict like most of the new people I seem to meet down here as of late.'[in random order][roman type][line break]";
 		if M is unfriendly and M is interested: [It is possible that the above loss in favour has taken the player down to unfriendly levels.]
@@ -531,7 +535,7 @@ To compute DQ perception of (M - a gladiator):
 		if there is a worn diaper:
 			compute diaper check of M;
 		otherwise:
-			say "[speech style of M]'Child! I can't believe you have disobeyed my order to remain in diapers. I will make sure you sorely regret this!'[roman type][line break]";
+			say "[big he of M] swiftly walks up to you and holds [if diaper messing < 3]a hand to the front[otherwise]hands to the front and back[end if] of your crotch, pushing firmly to get a good feel.[line break][speech style of M]'Child! I can't believe you have disobeyed my order to remain in diapers. I will make sure you sorely regret this!'[roman type][line break]";
 			FavourDown M by 4;
 			anger M;
 	otherwise if M is unfriendly:
@@ -592,7 +596,7 @@ To compute (M - a gladiator) protecting against (X - monster):
 			say "[speech style of M]'Women should not be caught doing such things... as you are a friend I will turn a blind eye this once.'[roman type][line break][BigNameDesc of M] turns to leave.";
 		FavourDown M;
 		bore M;
-	otherwise if M is guardian and the difficulty of X < the difficulty of M + 2:
+	otherwise if M is guardian and the difficulty of X > the difficulty of M:
 		compute X receiving 2 damage from M;
 	otherwise if X is intelligent:
 		say "[speech style of M]'[one of]Learn from this battle.'[or]How will you handle uneven battle?'[or]Now you face us together!'[or]A real woman continues to fight even when outnumbered!'[at random][roman type][line break][BigNameDesc of M] grins and follows [NameDesc of X][']s lead.";
@@ -618,8 +622,8 @@ To compute the default taunting of (M - a gladiator):
 	say "[if M is enlightened gladiator and M is male][BigNameDesc of M] furiously strokes [his of M] [DickDesc of M] as [he of M] watches you. [otherwise][BigNameDesc of M] stands still, patiently watching you. [end if]".
 
 To compute the dildo stuck taunting of (M - a gladiator):
-	repeat with B running through uncursed bras worn by the player:
-		if the difficulty of M >= 10:
+	if M is not swordless and the difficulty of M - the difficulty-base of M >= 1:
+		repeat with B running through uncursed bras worn by the player:
 			say "[speech style of M]'You don't need this!'[roman type][line break][BigNameDesc of M] takes advantage of your compromised position on the dildo and uses [his of M] shortsword to slice off your [printed name of B]![line break][speech style of M]'Display your chest proudly!'[roman type][line break]";
 			destroy B.
 
@@ -766,7 +770,7 @@ The gladiator smoke rule is listed last in the gladiator unique punishment rules
 To say DragArrival of (M - a gladiator) to (R - a room):
 	cutshow figure of gladiator cutscene 12 for M;
 	if M is enlightened gladiator:
-		say "[speech style of M]'[if the player is not a flatchested trap]Lets make those tits a little bigger. You will thank me...'[otherwise]Lets shrink down that cock a little. You will thank me one day...'[end if][roman type][line break]";
+		say "[speech style of M]'[if the player is not a flatchested trap]Let's make those tits a little bigger. You will thank me...'[otherwise]Let's shrink down that cock a little. You will thank me one day...'[end if][roman type][line break]";
 	otherwise if M is wild gladiator:
 		say "[speech style of M]'[if the player is not a flatchested trap]Your breasts need to be bigger. I will not suffer a trophy with such bee-stings...'[otherwise]Your penis must be inferior to mine, obviously.'[end if][roman type][line break]";
 	otherwise:
@@ -810,22 +814,27 @@ To decide which body part is the painful-part of (M - an enlightened gladiator):
 	decide on B.
 
 To compute (M - a gladiator) hurting (B - a body part):[as her weapon increases in quality, so does her damage]
-	if the difficulty of M < 10 or M is swordless:
+	let D be the difficulty of M - the difficulty-base of M;
+	if D < 1 or M is swordless:
 		BodyRuin 1;
-	otherwise if the difficulty of M < 15:
+	otherwise if D < 3:
 		BodyRuin a random number between 1 and 2;
 	otherwise:
 		BodyRuin 2.
 
 To compute (M - a gladiator) hurting (B - breasts):
+	let D be the difficulty of M - the difficulty-base of M;
 	if M is swordless:
 		BodyRuin 1;
-	otherwise if the difficulty of M < 10:
+	otherwise if D < 1:
 		BodyRuin a random number between 1 and 2;
-	otherwise if the difficulty of M < 15:
+	otherwise if D < 3:
 		BodyRuin a random number between 2 and 3;
 	otherwise:
 		BodyRuin 3.
+
+To compute (M - a gladiator) hurting (F - face):
+	compute M hurting breasts.
 
 [To compute damaging attack of (M - a gladiator):
 	if M is swordless:
@@ -938,7 +947,7 @@ To say angry punishment insult of (M - a gladiator):
 		say "[speech style of M]'You still wish to test my wrath?!'[roman type][line break]".
 
 To say angry punishment clothing destruction of (M - a gladiator) on (C - a clothing):
-	if player-fucking > DOMINANT-FAILURE:
+	if player-fucking is not DOMINANT-FAILURE:
 		say "[first custom style]'[if C is actually breast covering and the largeness of breasts > 3]Maybe now you will act with more honour, whore!'[otherwise if C is ass covering]Display your [fuckholes] to everyone, like the true whore you are.'[otherwise]Clothes are merely a crutch for honorless women like you!'[end if][roman type][line break]".
 
 To say angry punishment accessory confiscation of (M - a gladiator):
@@ -1048,7 +1057,7 @@ To say ErectionDemand of (M - a gladiator):
 
 To say ErectionPenetrationFlav of (M - a gladiator):
 	if the size of penis > 8:
-		say "[BigNameDesc of M][']s eyes remain glued to your [ShortDesc of M] as it slowly grows to its full size, and you can see [his of M] nipples hardening as [he of M] unclips [his of M] loincloth and leaps ontop of you. [big he of M] eagerly strokes your shaft with one hand and [if M is male]pumping [his of M] [LongDickDesc of M] with the other[otherwise if lady fetish is 2]fingering [his of M] [asshole] with the other[otherwise]spreading [his of M] enticingly wet labia lips with the other[end if]. [big he of M] locks eyes with you as [he of M] guides your [player-penis] into [his of M] [HoleDesc of M].";
+		say "[BigNameDesc of M][']s eyes remain glued to your [ShortDesc of M] as it slowly grows to its full size, and you can see [his of M] nipples hardening as [he of M] unclips [his of M] loincloth and leaps on top of you. [big he of M] eagerly strokes your shaft with one hand and [if M is male]pumping [his of M] [LongDickDesc of M] with the other[otherwise if lady fetish is 2]fingering [his of M] [asshole] with the other[otherwise]spreading [his of M] enticingly wet labia lips with the other[end if]. [big he of M] locks eyes with you as [he of M] guides your [player-penis] into [his of M] [HoleDesc of M].";
 	otherwise:
 		say "[if penis is penis-erect]Seeing your erection, [NameDesc of M] unclips [his of M] loincloth, straddling you with a haughty expression on [his of M] face[otherwise][BigNameDesc of M] watches haughtily as your [ShortDesc of penis] slowly grows to hardness, unclipping [his of M] straddles you[end if]. [big he of M] grasps your [ShortDesc of penis] from the base, [if M is male]lifting [his of M] [DickDesc of M] out of the way as [he of M] eases your shaft into [his of M] [asshole][otherwise if lady fetish is 2]holding [his of M] metal cage out of the way as [he of M] eases your shaft into [his of M] [asshole][otherwise]delicately spreading [his of M] labia with [his of M] middle and ring fingers as [he of M] eases your shaft into [his of M] unexpectedly tight [vagina][end if].".
 
@@ -1170,7 +1179,7 @@ To say ForcefeedStartFlav of (M - a gladiator):
 
 To compute forcefeed round (N - a number) of (M - a gladiator):
 	say "[BigNameDesc of M] strokes your hair and [if M is milky-gladiator]allows you to suck the [milk] from [his of M] breast[otherwise]squeezes [his of M] breast, filling your mouth with milk[end if]. You [one of]relent and [or][stopping]swallow it all down.";
-	MilkDrunkUp 1.
+	StomachMilkUp 1.
 
 To say ForcefeedAftermath of (M - a gladiator):
 	say "[BigNameDesc of M] pulls away, [his of M] nipple popping from your mouth mid-flow[if the bimbo of the player <= 14][one of]. You realise that at some point during the feeding you had begun sucking voluntarily[or][stopping][end if]!".
@@ -1211,7 +1220,7 @@ To compute damage reaction of (M - a gladiator):
 				increase the curse-charge of M by 3;
 			if the curse-charge of M > 2:
 				say DamageReaction (the health of M) of M;
-			otherwise:
+			otherwise if S is clothing and S is not penis themed and S is not magic themed:
 				say "[big he of M] [one of]stumbles, panting[or]briefly loses [his of M] balance, gritting [his of M] teeth[or]stumbles, apparently oblivious to the pain[at random] as [if M is swordless][he of M][otherwise][his of M] free hand[end if] clutches [his of M] crotch.";
 		if C < the curse-charge of M:[if she gained charge, she'll comment on it.]
 			if the curse-charge of M < 2:
@@ -1222,7 +1231,7 @@ To compute damage reaction of (M - a gladiator):
 			otherwise if the curse-charge of M < 6:
 				say "[line break][speech style of M]'[one of]Stop! I'm on the verge of... losing control...'[or]Nng... the [if lady fetish is 2]cage[otherwise]curse[end if]... I'm at my limit...'[or]This is my last warning! I'm about to... lose control!'[then at random][roman type][line break]";
 			otherwise:
-				say "[line break][speech style of M]'[one of]No... its no USE!'[or]Fool... I was holding BACK...'[or]No... its... too LATE!'[then at random][roman type][line break]";
+				say "[line break][speech style of M]'[one of]No... it's no USE!'[or]Fool... I was holding BACK...'[or]No... its... too LATE!'[then at random][roman type][line break]";
 		otherwise:
 			decrease the curse-charge of M by 1;
 
@@ -1266,7 +1275,7 @@ To say DamageReactSubmissive of (M - a gladiator):
 
 To say BanishForceFlav of (M - a gladiator):
 	let E be a random worn slap ready equippable;
-	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]''[roman type][line break]".
+	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'[roman type][line break]".
 
 To compute tax return of (M - a gladiator):
 	let D be a random off-stage metal disc;
@@ -1490,7 +1499,7 @@ To blowjob dominate (M - a gladiator):
 			say AfterDominationComment 5 of M;
 		otherwise:
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-			say "You force [NameDesc of M] to [his of M] knees and pull [his of M] head toward your crotch.[line break][speech style of M]'Very well, you have bested me, I accept my punishment.'[roman type][line break][big he of M] [if C is not strapon-panties and C is clothing]pulls your [sexual-player-penis] out of your [printed name of random worn bottom level protection clothing][otherwise if penis is penis-erect]takes hold of your [SexDesc of penis] with one hand[otherwise]takes hold of your hardening [sexual-player-penis] with one hand[end if] and forces your [SexShaft] in between [his of M] breasts as [he of M] wraps [his of M] lips around your tip. You realize a moment too late that [he of M]s taken control, helplessly trying to push [him of M] off as [he of M] expertly pumps and polishes your shaft at the same time. [big his of M] expert movements force you up to the edge, [his of M] eyes twinkling ass [he of M] suddenly pulls [his of M] head back and allows your massive load to spray liberally across [his of M] face and chest.";
+			say "You force [NameDesc of M] to [his of M] knees and pull [his of M] head toward your crotch.[line break][speech style of M]'Very well, you have bested me, I accept my punishment.'[roman type][line break][big he of M] [if C is not strapon-panties and C is clothing]pulls your [sexual-player-penis] out of your [printed name of random worn bottom level protection clothing][otherwise if penis is penis-erect]takes hold of your [SexDesc of penis] with one hand[otherwise]takes hold of your hardening [sexual-player-penis] with one hand[end if] and forces your [SexShaft] in between [his of M] breasts as [he of M] wraps [his of M] lips around your tip. You realise a moment too late that [he of M]s taken control, helplessly trying to push [him of M] off as [he of M] expertly pumps and polishes your shaft at the same time. [big his of M] expert movements force you up to the edge, [his of M] eyes twinkling ass [he of M] suddenly pulls [his of M] head back and allows your massive load to spray liberally across [his of M] face and chest.";
 			cutshow figure of gladiator cutscene 20 for M;
 			moderateDignify;
 			say AfterDominationComment 2 of M;
@@ -1592,18 +1601,19 @@ To anal penetration dominate (M - a gladiator):
 				say "[big he of M] can't do much more than tremble and pant as you pull out and flip [him of M] over. [line break][first custom style]'Want more, bitch?'[roman type][line break][big he of M] looks away from you and shakes [his of M] head, but the twitching erection between [his of M] legs tells a different story. [line break][first custom style]'Oh well, suit yourself'[roman type][line break]You grab [him of M] by the hair, jamming [his of M] face onto your slimy [sexual-player-penis]. [big he of M] gags lewdly, tears welling up in [his of M] eyes as you mercilessly force your [SexShaft] down [his of M] throat, but never letting [his of M] gaze wander away from your face. You savour it a little more this time, making sure [he of M] thoroughly cleans your [sexual-player-penis] before [if bukkake fetish is 1]pulling out and unloading all over [his of M] face. [big he of M] glares up at you defiantly, rock hard and with one eye glued shut[otherwise]emptying your balls down [his of M] throat. [big he of M] glares up at you defiantly as [he of M] pulls off, rock hard and hair matted to [his of M] face[end if].";
 				obsceneDignify;
 				DifficultyUp M by 1;
+				BlowGet;
 				say AfterDominationComment 3 of M;
 			otherwise:
 				severeDignify;
 				say AfterDominationComment 5 of M;
 			orgasm;
 			AnalGet;
-			BlowGet;
 		otherwise:
 			say "You force [NameDesc of M] onto [his of M] hands and knees. [line break][speech style of M]'I would be honoured to bear the seed of such a fine warrior.'[roman type][line break][big he of M] unclips [his of M] loincloth, pulling apart [his of M] labia to expose a soaking wet pussy. Unimpressed, you spit in [his of M] ass, giving [him of M] a firm spank as you line up your tip with [his of M] hole. [big he of M] looks over [his of M] shoulder, wide eyed. [line break][speech style of M]'Wait! Don't put it in my-!'[roman type][line break]You cram your [SexDesc of penis] inside [him of M] without waiting for the rest, making sure to groan your satisfaction right into [his of M] ear. [if the times-dominated of M < 4][big he of M]'s tight, but you're probably the biggest guy [he of M]'s taken anyway[otherwise][big he of M]'s tight, but thanks to you, not as tight as [he of M] used to be[end if]. You enjoy yourself as much as you can, answering every squeal with a hard smack of [his of M] ass, and punishing every gasp with a merciless squeezing of [his of M] tits. Eventually you lose control and slam it in as deep as it will go, grinding [his of M] face into the ground as you pump your load straight up [his of M] ass.[line break]";
 			cutshow figure of gladiator cutscene 16 for M;
 			if the player is a bit horny and the times-dominated of M > 4:
 				say "[big he of M] can't do much more than tremble and pant as you pull out and flip [him of M] over. [line break][first custom style]'Want more, bitch?'[roman type][line break][big he of M] looks away from you and shakes [his of M] head, but you can see how wet [he of M] is. [line break][first custom style]'Oh well, suit yourself'[roman type][line break]You grab [him of M] by the hair, jamming your slimy [sexual-player-penis] into [his of M] mouth. [big he of M] gags lewdly, tears welling up in [his of M] eyes as you mercilessly force your [SexShaft] down [his of M] throat, but never letting [his of M] gaze wander away from your face. You hold [his of M] hands above [his of M] head as you use [his of M], making sure [he of M] has no way to satisfy [himself of M] at all. You savour it a little more this time, making sure [he of M] thoroughly cleans your [sexual-player-penis] before [if bukkake fetish is 1]pulling out and unloading all over [his of M] face. [big he of M] glares up at you defiantly, chest heaving and one eye glued shut[otherwise]emptying your balls down [his of M] throat. [big he of M] glares up at you defiantly as [he of M] pulls off, chest heaving and hair matted to [his of M] face[end if]";
+				BlowGet;
 				obsceneDignify;
 				DifficultyUp M by 1;
 				say AfterDominationComment 3 of M;
@@ -1612,10 +1622,9 @@ To anal penetration dominate (M - a gladiator):
 				say AfterDominationComment 5 of M;
 			orgasm;
 			AnalGet;
-			BlowGet;
 	otherwise if the sexual-penis-length > 6:
 		if M is male or lady fetish is 2:
-			say "You force [NameDesc of M] onto [his of M] hands and knees. [line break][speech style of M]'Very well, you have bested me. It is my duty to service you.'[roman type][line break][big he of M] pushes [his of M] [ChestDesc of M] up with [his of M] arms, allowing [his of M] mouth to fall open with as much dignity as [he of M] can. You turn [him of M] around and tear off [his of M] loincloth, giving the gladiator a firm spank as you spit in [his of M] ass. [big he of M] looks over [his of M] shoulder, wide eyed. [line break][speech style of M]'Wait! I'm still sore from-!'[roman type][line break]You cram your [SexDesc of penis] into [him of M], and without waiting for a response, immediately begin to thrust. [if the times-dominated of M < 4][big he of M]'s tight, but that's not a big deal if you take it slow.[otherwise][big he of M]'s tight, but thanks to you, not as tight as [he of M] used to be.[end if] It doesn't take long for [him of M] to start pushing back against you, panting quietly as [if M is male][he of M] strokes [his of M] neglected cock[otherwise][his of M] chastity cage bobs uselessly underneath [him of M][end if]. You thoroughly savour the experience, and when you're satisfied, you slam it all the way in [if the player is male]making sure your balls touch as you[otherwise]and[end if] fill [his of M] naughty little [asshole] with your load.";
+			say "You force [NameDesc of M] onto [his of M] hands and knees. [line break][speech style of M]'Very well, you have bested me. It is my duty to service you.'[roman type][line break][big he of M] pushes [his of M] [ChestDesc of M] up with [his of M] arms, allowing [his of M] mouth to fall open with as much dignity as [he of M] can. You turn [him of M] around and tear off [his of M] loincloth, giving the gladiator a firm spank as you spit in [his of M] ass. [big he of M] looks over [his of M] shoulder, wide eyed. [line break][speech style of M]'Wait! I'm still sore from-!'[roman type][line break]You cram your [SexDesc of penis] into [him of M], and without waiting for a response, immediately begin to thrust. [if the times-dominated of M < 4][big he of M]'s tight, but that's not a big deal if you take it slow.[otherwise][big he of M]'s tight, but thanks to you, not as tight as [he of M] used to be[end if]. It doesn't take long for [him of M] to start pushing back against you, panting quietly as [if M is male][he of M] strokes [his of M] neglected cock[otherwise][his of M] chastity cage bobs uselessly underneath him[end if]. You thoroughly savour the experience, and when you're satisfied, you slam it all the way in [if the player is male]making sure your balls touch as you[otherwise]and[end if] fill [his of M] naughty little [asshole] with your load.";
 		otherwise:
 			say "You force [NameDesc of M] onto [his of M] hands and knees. [line break][speech style of M]'Very well, you have bested me. You are free to use my body as you see fit.'[roman type][line break][big he of M] unclips [his of M] loincloth, pulling apart [his of M] labia to expose a soaking wet pussy. It's enticing, but you decide you go for the hole above it, spitting in [his of M] ass and giving [him of M] a firm spank as you line up your tip with [his of M] hole. [big he of M] looks over [his of M] shoulder, wide eyed. [line break][speech style of M]'Wait! Don't put it in my-!'[roman type][line break]You cram your [SexDesc of penis] into [him of M], and without waiting for a response, immediately begin to thrust. [if the times-dominated of M < 4][big he of M]'s tight, but that's not a big deal if you take it slow.[otherwise][big he of M]'s tight, but thanks to you, not as tight as [he of M] used to be[end if]. It doesn't take long for [him of M] to start pushing back against you, panting quietly as [he of M] paws at [his of M] neglected pussy. You thoroughly savour the experience, and when you're satisfied, you slam it all the way in and fill [his of M] dirty little [asshole] with your load.";
 		AnalGet;
@@ -1684,13 +1693,13 @@ Section 1 - Greeting
 [I couldn't think of much else for the gladiator's unfriendly response, which is unfortunate since it will be the only one seen for most players. Submissiveresponse is fairly robust, but once again, it is less depthy when the gladiator is unfriendly.]
 To say FirstResponse of (M - a gladiator):
 	if the largeness of breasts > 6 and the breast-happy of M is 1:
-		say "[speech style of M]'[one of]What impressive breasts...-ahem, hello sister! Welcome!'[or]Hello. It is rare I meet such a well endowed woman out of the blue.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]What impressive breasts...-ahem, hello [brother of the player]! Welcome!'[or]Hello. It is rare I meet such a well endowed woman out of the blue.'[at random][roman type][line break]";
 	otherwise if the class of the player is virgin warrior:
-		say "[speech style of M]'[one of]'Welcome......I see you follow the path of purity. Watch yourself, sister.'[or]Welcome, warrior of purity. Not many can walk such a difficult path.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]'Welcome......I see you follow the path of purity. Watch yourself, [brother of the player].'[or]Welcome, warrior of purity. Not many can walk such a difficult path.'[at random][roman type][line break]";
 	otherwise if the class of the player is barbarian:
-		say "[speech style of M]'[one of]Welcome, sister! I see you follow the barbarian's path!'[or]Welcome, barbarian!'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Welcome, [brother of the player]! I see you follow the barbarian's path!'[or]Welcome, barbarian!'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Welcome, new sister!'[roman type][line break]".
+		say "[speech style of M]'Welcome, new [brother of the player]!'[roman type][line break]".
 
 To say RepeatResponse of (M - a gladiator):
 	if M is unfriendly:
@@ -1710,11 +1719,11 @@ To say RepeatResponse of (M - a gladiator):
 			say "[speech style of M]'[one of]I only associate with real women!'[or]Talk to me when you have become a real woman![or]We will talk when you have become a real woman!'[at random][roman type][line break]";
 	otherwise:
 		if the breast-happy of M is 1:
-			say "[speech style of M]'[one of]There should be more women in the world like you and I.'[or]The size of your breasts is proof of your status as a woman.'[or]Ah, [NameBimbo], my new sister!'[or]Greetings, sister.'[at random][roman type][line break]";
+			say "[speech style of M]'[one of]There should be more women in the world like you and I.'[or]The size of your breasts is proof of your status as a woman.'[or]Ah, [NameBimbo], my new [brother of the player]!'[or]Greetings, [brother of the player].'[at random][roman type][line break]";
 		otherwise if the class of the player is virgin warrior:
 			say "[speech style of M]'[one of]Hello, warrior. Impressive that you have remained on the path of purity.'[or]Hello, warrior of purity!'[or]Hello! Your path is one of strength, martial virgin.'[at random][roman type][line break]";
 		otherwise:
-			say "[speech style of M]'[one of]Your breasts are starting to look a bit on the small side again, you should fix that.'[or]Your breasts [if the largeness of breasts > 6]are big enough to be worthy of respect, but they could[otherwise]can[end if] always be bigger.'[or]Don't let your breasts get too small, sister. They are the only thing that can make you a real woman.'[at random][roman type][line break]".
+			say "[speech style of M]'[one of]Your breasts are starting to look a bit on the small side again, you should fix that.'[or]Your breasts [if the largeness of breasts > 6]are big enough to be worthy of respect, but they could[otherwise]can[end if] always be bigger.'[or]Don't let your breasts get too small, [brother of the player]. They are the only thing that can make you a real woman.'[at random][roman type][line break]".
 
 To say UnAnnoyedResponse of (M - a gladiator):
 	say "[speech style of M]'[one of]Take it, whore!'[or]How does it feel when I punish you, whore!'[or][if the player is male]How does it feel to get fucked by a [man of M]?'[otherwise]I said you would pay!'[end if][at random][roman type][line break]";
@@ -1729,7 +1738,7 @@ To say InvitationAccepted of (M - a gladiator) with (N - a monster):
 	if M is male:
 		say "[speech style of M]'[one of]Getting my attention was a mistake, whore.'[or]Fool. Did you think I wouldn't take you up on that?'[or]Fine, whore. I will play your game.'[at random][roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]";
 	otherwise:
-		say "[speech style of M]'How dare you speak that way. You shame yourself, sister!'[roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]".[this should lead nicely into the watersports scene]
+		say "[speech style of M]'How dare you speak that way. You shame yourself, [brother of the player]!'[roman type][line break][BigNameDesc of M] gives you a cold stare.[line break]".[this should lead nicely into the watersports scene]
 
 To say InvitationRejected of (M - a gladiator) with (N - a monster):
 	if M is male:
@@ -1797,7 +1806,7 @@ To compute teaching of (M - a gladiator):
 		if the player is male and transGender is 0:
 			say "[speech style of M]'I only share my secrets with other women.'[roman type][line break]";
 		otherwise:
-			say "[speech style of M]'If you carry your chest in a certain manner, walking around topless can make you look like a sexually mature adult rather than a child who can't dress herself. Here, let me show you.'[roman type][line break]";
+			say "[speech style of M]'If you carry your chest in a certain manner, walking around topless can make you look like a sexually mature adult rather than a child who can't dress [himself of the player]. Here, let me show you.'[roman type][line break]";
 			teach titshow;
 	otherwise:
 		say "[speech style of M]'[if the largeness of breasts < 5]When you have impressive breasts like mine, you[otherwise]Let me show you how to make sure your breasts don't hinder your combat. You[end if] want to strike from the elbow, like this...'[roman type][line break]";
@@ -1816,9 +1825,9 @@ To say WhoAnswer of (M - a gladiator):
 
 To say StoryAnswer of (M - a gladiator):
 	if lady fetish is 2:
-		say "[speech style of M]'[one of]I was trained as a gladiator in the arena here. Now I am freed and live a noble life, trying to encourage my sisters to better themselves in any way I can!'[or]I was once an adventurer like you, but in a moment of arrogance, I allowed myself to be bested by a royal guard. After he was done with me, I realized my time is best spent helping young warriors to become the best they can be!'[or]Originally, I pursued womanhood for myself, and myself alone. However, I have now realized that all young warriors should cast off their masculinity, and so I must guide them!'[or]I entered this dungeon much like you, alone and helpless before the desires of those around me. However, with the help of my sisters, I have grown beyond masculinity, and now search for true womanhood'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]I was trained as a gladiator in the arena here. Now I am freed and live a noble life, trying to encourage my sisters to better themselves in any way I can!'[or]I was once an adventurer like you, but in a moment of arrogance, I allowed myself to be bested by a royal guard. After he was done with me, I realised my time is best spent helping young warriors to become the best they can be!'[or]Originally, I pursued womanhood for myself, and myself alone. However, I have now realised that all young warriors should cast off their masculinity, and so I must guide them!'[or]I entered this dungeon much like you, alone and helpless before the desires of those around me. However, with the help of my sisters, I have grown beyond masculinity, and now search for true womanhood'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]I was trained as a gladiator in the arena here. Now I am freed and live a noble life, trying to encourage my sisters to better themselves in any way I can!'[or]I was once an adventurer like you, but in a moment of arrogance, I allowed myself to be bested by a royal guard. After he was done with me, I realized my time was best spent helping young warriors to become the best they can be!'[or]Originally, I was a simple wench, but after praying at the sacred altar, my body was transformed and I became a true woman.'[or]I entered this dungeon much like you, helpless and alone, but with the help of my sisters, I defeated every man to ever walk this dungeon, and thus became a true woman.'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]I was trained as a gladiator in the arena here. Now I am freed and live a noble life, trying to encourage my sisters to better themselves in any way I can!'[or]I was once an adventurer like you, but in a moment of arrogance, I allowed myself to be bested by a royal guard. After he was done with me, I realised my time was best spent helping young warriors to become the best they can be!'[or]Originally, I was a simple wench, but after praying at the sacred altar, my body was transformed and I became a true woman.'[or]I entered this dungeon much like you, helpless and alone, but with the help of my sisters, I defeated every man to ever walk this dungeon, and thus became a true woman.'[at random][roman type][line break]".
 
 To say EscapeAnswer of (M - a gladiator):
 	say "[speech style of M]'[one of]Going upwards is the key to victory. However if you go forward before you are ready, you will find yourself unable to deal with the beasts you may find above.'[or]There is no safety in progress. Only when you have the will to rise beyond your girlish fears, will you truly find your way forward.'[or]You must rise above the stony walls of this dungeon to explore the free world beyond. But make no mistake, even a powerful warrior like me could not venture there without being prepared to fight.'[at random][roman type][line break]".
@@ -1877,16 +1886,16 @@ To compute desperate drinking to (M - a gladiator):
 		compute unfriendly drink of M;
 	otherwise:
 		if the player is a flatchested trap:
-			say "[if M is uninterested]You spot a [M]! You beg[him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] grins and pulls out a small flask. You snatch it from [him of M] and down it in one. You feel much less thirsty, and are about to thank [him of M], but suddenly you feel your crotch rumble. [if the size of penis <= min penis size]You watch as your penis visibly shrinks in front of you. [end if]The gladiator laughs heartily then seems to lose interest.";
+			say "[if M is uninterested]You spot a [M]! You beg[him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] grins and pulls out a small flask. You snatch it from [him of M] and down it in one. You feel much less thirsty, and are about to thank [him of M], but suddenly you feel your crotch rumble. ";
 			PenisDown 1;
+			say "The gladiator laughs heartily then seems to lose interest.";
 		otherwise:
 			say "[if M is uninterested]You spot a [M]! You beg [him of M][otherwise]You can't control yourself - you beg [NameDesc of M][end if] to give you something to drink. [big he of M] grins and pulls out a small flask. You snatch it from [him of M] and down it in one. You feel much less thirsty, and are about to thank [him of M], but suddenly you feel your chest rumble. You watch [if the bimbo of the player < 7]in horror [end if]as your breasts visibly grow in front of you. The gladiator laughs heartily then seems to lose interest.";
 			bustup 2;
 			if lactation fetish is 1, milkup 2;
 		StomachUp 2;
-		now the boredom of M is 400;
-		now the stance of the player is 1;
-		allocate 6 seconds.
+		bore M for 400 seconds;
+		now the stance of the player is 1.
 
 Definition: a gladiator is willing to give snacks: decide yes.
 
@@ -1944,7 +1953,7 @@ To set up (M - enlightened gladiator):
 	reset M;
 	now the monstersetup of M is 1;
 	now the health of M is the maxhealth of M;
-	now the raw difficulty of M is 9;
+	now the raw difficulty of M is the difficulty-base of M;
 	if doomed is 5, DifficultyUp M by 4;
 	now M is male.
 
@@ -2064,7 +2073,7 @@ To say StoryAnswer of (M - enlightened gladiator):
 	if lady fetish is 2:
 		say "[speech style of M]'I was kidnapped by the cultists who dwell in this place. Furiously I resisted, but there were too many. I experienced their ritual, and again, I resisted. But when I felt the touch of mighty [Azathot], I relented, and through the insight of the [great ones], and I beheld the TRUTH! The moment I began my search for true womanhood--is the moment I became a true woman!'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Hoh? Doesn't my body say it all?  Indeed, I have a male part, but I am no male. If a male part resides on a true woman, it becomes a true woman's part. Indeed, I was once a mere warrior of superior strength and bust, but a mere WARRIOR I am not. I am a true woman. INDEED, I have read the teachings of the [great ones], and I have known the touch of [Azathot]! Through [his of herald] seed, I was enlightened, and realized the TRUTH! I AM A TRUE WOMAN!'[roman type][line break]".
+		say "[speech style of M]'Hoh? Doesn't my body say it all? Indeed, I have a male part, but I am no male. If a male part resides on a true woman, it becomes a true woman's part. Indeed, I was once a mere warrior of superior strength and bust, but a mere WARRIOR I am not. I am a true woman. INDEED, I have read the teachings of the [great ones], and I have known the touch of [Azathot]! Through [his of herald] seed, I was enlightened, and realised the TRUTH! I AM A TRUE WOMAN!'[roman type][line break]".
 
 To say EscapeAnswer of (M - enlightened gladiator):
 	say "[speech style of M]'Find and penetrate the rear entrance. Then, you must find and pound the sensitive button until everything goes white.'[roman type][line break]".
@@ -2100,7 +2109,7 @@ Definition: wild gladiator is woods dwelling if diaper quest is 0 and doomed > 0
 To set up (M - wild gladiator):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 13;
+	now the raw difficulty of M is the difficulty-base of M;
 	now M is male;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M.
@@ -2139,8 +2148,11 @@ To compute appearance assessment of (M - wild gladiator):
 		otherwise:
 			say "[speech style of M]'[one of]How dare you display such a pitiful chest so proudly! Face me, whelp.'[or]Still you have no shame? I will not allow you to flaunt such a Spartan chest!'[at random]";
 	otherwise if the breast-happy of M is 1:
-		say "[speech style of M]'With breasts like those, you are a worthy trophy. Wander freely, show the jungle the standard of my leadership.'[roman type][line break]";
-		calm M;
+		if the player is top-wardrobe-malfunctioning:
+			compute default nip slip reaction of M;
+		otherwise:
+			say "[speech style of M]'With breasts like those, you are a worthy trophy. Wander freely, show the jungle the standard of my leadership.'[roman type][line break]";
+			calm M;
 	otherwise:
 		say "[speech style of M]'You have been pleasant to me, but a trophy should look the part. Wander freely... for now.'[roman type][line break]";
 		FavourDown M.
@@ -2232,11 +2244,11 @@ To say WhoAnswer of (M - wild gladiator):
 	say "[speech style of M]'Ira the gladiator!'[roman type][line break]".
 
 To say StoryAnswer of (M - wild gladiator):
-	if lady fetish is 2, say "[speech style of M]'I realized I cared nothing for the teachings of my sisters and their 'path to the true warrior'. After casting them aside at last, I have found what I am looking for.'[roman type][line break]";
-	otherwise say "[speech style of M]'I realized my sisters were blocking my path to true womanhood and after leaving them behind, at last I found true womanhood.'[roman type][line break]".
+	if lady fetish is 2, say "[speech style of M]'I realised I cared nothing for the teachings of my sisters and their 'path to the true warrior'. After casting them aside at last, I have found what I am looking for.'[roman type][line break]";
+	otherwise say "[speech style of M]'I realised my sisters were blocking my path to true womanhood and after leaving them behind, at last I found true womanhood.'[roman type][line break]".
 
 To say EscapeAnswer of (M - wild gladiator):
-	say "[speech style of M]'[one of]Why are you asking me when you could be finding out yourself?''[or]There can be no safety in progress. Only when you have the will to rise beyond your girlish fears, will you truly find your way forward.'[or]If there is any question as to what you hope to achieve, you do not deserve to achieve it.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Why are you asking me when you could be finding out yourself?'[or]There can be no safety in progress. Only when you have the will to rise beyond your girlish fears, will you truly find your way forward.'[or]If there is any question as to what you hope to achieve, you do not deserve to achieve it.'[at random][roman type][line break]".
 
 To say DominanceFailure of (M - wild gladiator):
 	say "You grab [NameDesc of M] by the wrist and try to wrench the sword out of [his of M] hand. [big he of M] reacts instantly, sweeping your legs from under you.".

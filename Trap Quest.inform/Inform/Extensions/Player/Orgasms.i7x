@@ -199,13 +199,13 @@ To punish shameful male orgasm:
 		sexchange the player;
 	otherwise if the number of worn chastity cages is 0 or a random number between 1 and 5 > 3:
 		if the size of penis > min penis size and the latex-transformation of the player <= 3:
-			PenisDown 1;
-			say "The shameful nature of your orgasm makes your [player-penis] [Shrink] into a [ShortDesc of penis].";
+			SilentlyPenisDown 1;
+			say "The shameful nature of your orgasm makes [one of]your feel less masculine. You look down and see that you now have[or]your [player-penis] shrink into[stopping] a [ShortDesc of penis].";
 		slowSexAddictUp 1 + the number of live things penetrating face;
 	otherwise:
 		say "[one of]You expected to feel a bit light-headed after, but you don't. [or][stopping]Your [random worn chastity cage] pulses softly.";
 	if diaper quest is 1, progress quest of asshole-presenting-quest;
-	if the player is male and transGender is 0 and the virgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
+	if the player is male and transGender is 0 and the penetrativevirgin of the player is 1 and pink sissy bow is off-stage and pink sissy bow is actually summonable and (asshole is actually occupied or there is worn sissifying clothing):
 		summon pink sissy bow cursed;
 		say "Suddenly, a [MediumDesc of pink sissy bow] appears in your hair! Clearly you've been acting too much like a sissy...".
 
@@ -295,7 +295,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the ejaculation handled separately for fucking NPCs rule:
-	if player-fucking is not DOMINANT-NONE, rule fails.
+	if player-fucking is not DOMINANT-NONE and player-fucker is not thighs, rule fails.
 The ejaculation handled separately for fucking NPCs rule is listed first in the ejaculation rules.
 
 [!<TheLatexDollsdoNotEjaculateRule>+
@@ -412,7 +412,7 @@ This is the ejaculation capture rule:
 			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 	if collecting is bottle:
 		say "[one of]Your [ShortDesc of penis] [if A < 3]dribbles its small amount of [semen][otherwise if A < 5]ejaculates[otherwise]shoots string after string of potent [semen][end if] into the [ShortDesc of collecting][or]Your [ShortDesc of penis] [if A < 3]quivers as it dribbles a tiny amount of [semen][otherwise if A < 6]throbs gently as it shoots a couple small strings of [semen][otherwise if A < 9]throbs powerfully as it shoots several stings of potent [semen][otherwise if A < 11]pulses with primal power as it fires several long ropes of [semen][otherwise]pulses with primal power as it jets huge, almost inhuman levels of [semen][end if] into the [ShortDesc of collecting][at random]. The strong smell hits your nostrils as you hold it in your hand, and you feel a [if the semen taste addiction of the player < 7]a weird temptation to taste just a tiny bit, which you quickly push to the back of your mind[otherwise if the semen taste addiction of the player > 13]a strong urge to drink it, which you push to the back of your mind for now[otherwise]bit more comfortable around [semen][end if].";
-		SemenTasteAddictUp 1;
+		SilentlySemenTasteAddictUp 1;
 		now the fill-colour of collecting is creamy;
 		DoseUp collecting by A / 3;
 		now collecting is player-origin;
@@ -587,10 +587,15 @@ REQUIRES COMMENTING
 This is the girls pee when they orgasm rule:
 	if the player is female and (the bladder of the player > bladder-risky-level or the player is in WoodsBoss01) and player-urinating is 0:
 		if the bladder of the player is 0, now the bladder of the player is 2;
-		now delayed urination is 1;
+		now delayed urination is 2;
+		if the player is bursting, now delayed urination is 1;
 		say "As you cum, you [if the player is bursting]can't help but let go of your bladder too[otherwise]find yourself peeing at the same time[end if]!";
 		try urinating.
 The girls pee when they orgasm rule is listed last in the orgasm resolution rules.
+
+This is the players spit when they orgasm rule:
+	check accidental spitting.
+The players spit when they orgasm rule is listed last in the orgasm resolution rules.
 
 [!<TheHentaiOrgasmResolutionRule>+
 
@@ -827,5 +832,34 @@ To decide which number is the enjoyment of (F - a fuckhole):
 	if the reaction of the player is 0 and the player is not friendly-fucking, decrease A by 2;
 	if A < 0, decide on 0;
 	decide on A.
+
+To trigger shameful orgasm of (F - a body part):
+	vaginally orgasm shamefully.
+
+To trigger shameful orgasm of (F - asshole):
+	anally orgasm shamefully.
+
+To trigger shameful orgasm of (F - breasts):
+	breasts orgasm shamefully.
+
+[!<ABodyPartIsOrgasming>+
+
+Determines whether a given body part is currently having an orgasm, and if so, triggers a shameful orgasm
+
+@param <BodyPart>:<F> The body part potentially having an orgasm
+@return <Boolean> If true, the body part has an orgasm. If false, it does not.
+
+!]
+Definition: a body part (called F) is orgasming:
+	if F is pushed over the edge:
+		trigger shameful orgasm of F;
+		decide yes;
+	decide no.
+
+Definition: a fuckhole (called F) is orgasming:
+	if (for deposit only tattoo is not worn or F is not vagina) and (the player is extremely horny or F is pushed over the edge):
+		trigger shameful orgasm of F;
+		decide yes;
+	decide no.
 
 Orgasms ends here.

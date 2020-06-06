@@ -16,6 +16,8 @@ Definition: a tentacle monster is virginity taking: decide yes.
 
 Definition: a tentacle monster is father material: decide yes.
 
+Definition: a tentacle monster is throater: decide yes.
+
 Definition: a tentacle monster is summoningRelevant if tentacle fetish is 0 and it is undefeated and it is regional. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
 Report examining tentacle monster:
@@ -295,7 +297,7 @@ Part 2 - Combat
 Section 1 - Protect and Attack
 
 To compute (M - a tentacle monster) protecting against (X - a monster):
-	if the player is monster stuck and X is not tentacle monster:
+	if the player is at least partially monster stuck and X is not tentacle monster:
 		do nothing;
 	otherwise if X is tentacle monster and M is not durable-tentacle-monster:
 		say "[BigNameDesc of M] seems to lose its friendly demeanour and becomes aggressive!";
@@ -419,7 +421,7 @@ This is the tentacle monster climaxes rule:
 	if M is penetrating vagina:
 		compute vaginal climax of M;
 		FuckCount;
-	if the magic-power of the player > 0:
+	if the class of the player is magical girl and the magic-power of the player > 0:
 		say "You feel some magic draining from your body...[line break]";
 		compute MagicDrain of M;
 		if the class of the player is "magical schoolgirl":

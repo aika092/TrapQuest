@@ -81,7 +81,7 @@ sword-of-purity is a sword. sword-of-purity is purity.
 The printed name of sword-of-purity is "[clothing-title-before]sword of purity[clothing-title-after]". Understand "of purity", "purity" as sword-of-purity.
 
 To say ClothingDesc of (S - sword-of-purity):
-	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more of your body is exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
+	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more your body is exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
 To say ShortDesc of (S - sword-of-purity):
 	say "gleaming silver sword".
 
@@ -94,8 +94,8 @@ To decide which number is the initial outrage of (C - sword-of-purity):
 Definition: sword-of-purity is grey themed: decide yes.
 Definition: sword-of-purity is fetish appropriate if diaper quest is 0.
 
-Definition: sword-of-purity is destiny-appropriate if the class of the player is not succubus and ((the player is female and the virgin of the player is 1) or (the player is male and fast tg >= 3)).
-Definition: sword-of-purity is destiny-prioritised if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the virgin of the player is 1 and the class of the player is not succubus.
+Definition: sword-of-purity is destiny-appropriate if the class of the player is not succubus and ((the player is female and the vaginalvirgin of the player is 1) or (the player is male and fast tg >= 3)).
+Definition: sword-of-purity is destiny-prioritised if the player is female and (background-pure is 1 or flower hairclip is worn or the class of the player is virgin warrior) and the vaginalvirgin of the player is 1 and the class of the player is not succubus.
 
 [!<TheSwordOfPurityPussySlutRule>+
 
@@ -138,7 +138,7 @@ To compute sword destiny of (S - sword-of-purity):
 		say "As you pull the sword free, it turns into a [ShortDesc of R], stuck to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, this actually feels like it could so some real damage![otherwise]Ooh, this is much more appropriate for a diapered baby like me![end if][roman type][line break]";
 		only destroy the noun instead;
 		do nothing instead;
-	otherwise if the virgin of the player is 0 and the player is female:
+	otherwise if the vaginalvirgin of the player is 0 and the player is female:
 		let R be a random dildo sword;
 		summon R cursed;
 		say "As your hands close around the hilt, it turns into a [ShortDesc of R], which sticks to your hand! [line break][variable custom style][if the bimbo of the player < 7]You can't be serious...[otherwise if the bimbo of the player < 14]Hmm, there must be a way to give this some power...[otherwise]Ooh, I can't wait to shove this massive thing inside my greedy cunt![end if][roman type][line break]";
@@ -163,6 +163,7 @@ Report wearing sword-of-purity:
 To compute virginity-loss of (H - sword-of-purity):
 	now the raw-magic-modifier of H is 0;
 	now H is cursed;
+	now the quest of H is show-and-tell-quest;
 	transform H into dildo sword.
 
 To curse (B - sword-of-purity):
@@ -185,7 +186,7 @@ To decide which figure-name is clothing-image of (C - dildo sword):
 	decide on figure of dildo sword.
 
 To say ClothingDesc of (S - dildo sword):
-	say "[if S is worn]You are wielding[otherwise]This is[end if] [if the girth of S < 7]a large[otherwise if the girth of S < 9]a giant[otherwise]an absolutely massive[end if] floppy dildo[if the raw-magic-modifier of S is 0], which is currently absolutely useless for real combat! But you wonder what would happen if you put it inside of you...[otherwise], which has some slight power in combat thanks to its magic glow.[end if][line break][variable custom style][if the virgin of the player is 0 and the player is female]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of S <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
+	say "[if S is worn]You are wielding[otherwise]This is[end if] [if the girth of S < 7]a large[otherwise if the girth of S < 9]a giant[otherwise]an absolutely massive[end if] floppy dildo[if the raw-magic-modifier of S is 0], which is currently absolutely useless for real combat! But you wonder what would happen if you put it inside of you...[otherwise], which has some slight power in combat thanks to its magic glow.[end if][line break][variable custom style][if the vaginalvirgin of the player is 0 and the player is female]It serves as a permanent reminder of the shameful way I lost my cherry.[otherwise if the raw-magic-modifier of S <= 0]I could barely win a cat-fight using a weapon like this![otherwise]A weapon that gains its power from fucking me. How appropriate.[end if][roman type][line break]".
 
 To decide which number is the initial outrage of (C - dildo sword):
 	decide on 13.
@@ -225,7 +226,7 @@ Report plugging something with dildo sword:
 			if the dildo girth of the second noun > 10, now the dildo girth of the second noun is 10;
 			ruin F;
 		otherwise if R is 2:
-			say "you feel a strange pressure inside of you, which you quickly realise is the dildo sword filling you with [if inflation fetish is 1]air[otherwise]some kind of magic serum[end if]![roman type] Before you know it, your [if inflation fetish is 1]belly is[otherwise]hips are[end if] rumbling and growing...";
+			say "you feel a strange pressure inside of you, which you quickly realise is the dildo sword filling you with [if inflation fetish is 1 and F is asshole]air[otherwise]some kind of magic serum[end if]![roman type] Before you know it, your [if inflation fetish is 1]belly is[otherwise]hips are[end if] rumbling and growing...";
 			if inflation fetish is 1, Assfill N * 2 air;
 			otherwise HipUp (N + 1) / 2;
 		otherwise if F is fuckhole:
@@ -244,13 +245,6 @@ To compute attack effect of (H - dildo sword):
 
 Carry out taking dildo sword:
 	now the noun is identified.
-
-Report taking dildo sword:
-	try wearing the noun.
-
-Report wearing dildo sword:
-	say "You equip the dildo sword. You wince as your fingers involuntarily tighten around the handle. It must be cursed!";
-	curse the noun.
 
 To compute sword destiny of (S - dildo sword):
 	say "As it does, it transforms into a [printed name of S]!";
@@ -392,7 +386,7 @@ To compute attack effect of (W - demon broadsword):
 			if the bimbo of the player < 13 and the relevant sex addiction of the player < 15:
 				if a random number between 1 and 2 is 1, say "[first custom style][one of]Ugh. That's disgusting.[or]Ohh... this feels disturbingly like holding an actual, stiffening penis.[or]Stop that, you disgusting sword! I'm not doing this for your pleasure! What sort of pervert makes a hilt that looks like a penis?[or]Dammit! The more I use this, the more it feels like an actual penis.[or]Good grief! I hope my friends can't see this penis-hilt, and think I'm enjoying groping it![then at random][roman type]";
 			otherwise:
-				if a random number between 1 and 2 is 1, say "[second custom style][one of]Ohh, actually, that's kind of nice to squeeze![or]I wish this was a real [penis] I was holding[or]Yeah, baby, get thicker, maybe I'll find another use for you.[or]I love the way it feels, swelling up while I grip it![or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, tee-hee![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or]I [if tg fetish >= 1]wonder if my penis[otherwise]hope every penis[end if] might one day be used like this.[or]I wouldn't mind using the handle for something else if I win this fight![then at random][roman type]";
+				if a random number between 1 and 2 is 1, say "[second custom style][one of]Ohh, actually, that's kind of nice to squeeze![or]I wish this was a real [penis] I was holding[or]Yeah, baby, get thicker, maybe I'll find another use for you.[or]I love the way it feels, swelling up while I grip it![or][if tg fetish >= 1]I wonder if this is what they do with the left-over penises? This might be some former player's penis, teehee![otherwise]I wonder if this penis actually belongs to somebody. Maybe if I return it, the owner will fuck me as a reward![end if][or]I [if tg fetish >= 1]wonder if my penis[otherwise]hope every penis[end if] might one day be used like this.[or]I wouldn't mind using the handle for something else if I win this fight![then at random][roman type]";
 		otherwise if W is not dildoed:
 			compute demon punishment of W;
 		otherwise:
@@ -536,7 +530,7 @@ Report taking rattle:
 	try wearing the noun;
 	if the noun is cursed and the noun is worn, say "Your grip tightens involuntarily as your fingers close around the handle. [line break][variable custom style]I guess the decision's been made for me then, it's my weapon of choice for now...[roman type][line break]".
 
-Section  6 - Sissy Slut's Longsword
+Section 6 - Sissy Slut's Longsword
 
 [gets stronger whenever you have a prostate orgasm]
 
@@ -621,5 +615,6 @@ To decide which number is the damage improvement of (W - voidblade):
 
 Definition: voidblade is cult garb: decide yes.
 Definition: voidblade is magic themed: decide yes.
+Definition: voidblade is black themed: decide yes.
 
 Swords ends here.

@@ -16,8 +16,8 @@ To decide which figure-name is the monster-image of (M - a robochef):
 	decide on figure of robochef.
 
 To say MonsterDesc of (M - a robochef):
-	say "A human sized robot with a chef's hat and a painted on moustache. [big he of M] has old fashioned joints and a large compartment in [his of M] [if lady fetish is 1]vase[otherwise]barrel[end if]-shaped torso, perfect for storing large quantities of food. [big his of M] 'eyes' glow brightly as [he of M] glides around silently on [his of M] wheels-for-feet. ";
-	if diaper quest is 0, say "At [his of M] groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk], and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
+	say "A human sized robot with a chef's hat and a painted on moustache. [big he of M] has old fashioned joints and a large compartment in [his of M] [if lady fetish is 1]vase[otherwise]barrel[end if]-shaped torso, perfect for storing large quantities of food. [big his of M] 'eyes' glow brightly as he glides around silently on [his of M] wheels-for-feet. ";
+	if diaper quest is 0, say "At [his of M] groin, a normal sized rock solid transparent solid penis is filled with [if lactation fetish is 1 and watersports fetish is 1]some horrid grey liquid that looks a lot like it might be a mixture of [semen], [milk] and [urine][otherwise if watersports fetish is 1]some horrid yellowish liquid that looks a lot like it might be a mixture of [urine] and [semen][otherwise if lactation fetish is 1]some horrid white liquid that looks a lot like it might be a mixture of [milk] and [semen][otherwise]thick white [semen][end if].";
 	otherwise say line break.
 
 To set up (M - a robochef):
@@ -195,7 +195,7 @@ To compute condom filling of (M - a robochef):
 	progress quest of condom-creampie-quest.
 
 To say CondomAcceptFlav of (M - a robochef):
-	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M][']s glass penis retracts into its body, replacing itself with a black rubber dildo of the same size.".
+	say "[line break][first custom style]'PROCESSING REQUEST FOR BAGGED LUNCH... SUCCESSFUL.'[roman type] [BigNameDesc of M][']s glass penis retracts into [his of M] body, replacing itself with a black rubber dildo of the same size.".
 
 Chapter 2 - DQ
 
@@ -286,7 +286,7 @@ To compute (M - a robochef) considering (T - a thing):
 		compute M cooking T;
 		let D be a random chef food retained by M;
 		if D is chef food:
-			say "A grate opens up on [NameDesc of M][']s face as it takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as it processes your food, and after a sharp ding, its chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
+			say "A grate opens up on [NameDesc of M][']s face as [he of M] takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as [he of M] processes your food, and after a sharp ding, [his of M] chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
 			now D is held by the player;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;

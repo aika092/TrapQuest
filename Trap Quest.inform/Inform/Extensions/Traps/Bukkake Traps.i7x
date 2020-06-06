@@ -102,7 +102,7 @@ To trigger (Y - a bukkake trap door):
 		reset soak flavour;
 	otherwise:
 		if the semen coating of face + the semen coating of breasts + the semen coating of belly + the semen coating of thighs < 30:
-			say "A trap door opens above your head, and a deluge of a sticky translucent substance completely covers you. You squeak as you realise that this is a LOT of [semen] - and you're now covered in it from head to toe! [if player is male and the raw semen addiction of the player < 8]You've seen bukkakes like this before, but it's way less fun on the receiving end.[otherwise if the raw semen addiction of the player < 8]You've seen bukkakes before but this is ridiculous![otherwise]You've seen bukkakes like this before, but you never realised it would be so much fun![end if]";
+			say "A trap door opens above your head, and a deluge of a sticky translucent substance completely covers you. You squeak as you realise that this is a LOT of [semen] - and you're now covered in it from head to toe! [if the player is male and the raw semen addiction of the player < 8]You've seen bukkakes like this before, but it's way less fun on the receiving end.[otherwise if the raw semen addiction of the player < 8]You've seen bukkakes before but this is ridiculous![otherwise]You've seen bukkakes like this before, but you never realised it would be so much fun![end if]";
 		otherwise:
 			say "A trap door opens above your head, and more [semen] falls down all over you. Of course since you're basically completely drenched already, it all just drips off you slowly. Think of it as a fresh coat of paint.";
 		CumFaceUp 50;

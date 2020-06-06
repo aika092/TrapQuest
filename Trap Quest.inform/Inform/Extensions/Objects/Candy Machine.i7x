@@ -128,7 +128,7 @@ REQUIRES COMMENTING
 +!]
 Check CandyObtaining:
 	if the noun is not candy machine, say "This verb is used for operating vending machines." instead;
-	if the player is immobile, say "Aren't you a bit busy?" instead.
+	if the player is immobile or there is a thing wrangling the player, say "Aren't you a bit busy?" instead.
 
 [!<CheckDrinkingCandyMachine>+
 

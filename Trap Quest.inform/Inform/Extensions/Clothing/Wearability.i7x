@@ -50,8 +50,8 @@ Definition: a clothing (called C) is able to cover crotch: [Either C is the only
 	let X be 0;
 	if C is worn, increase X by 1;
 	if the player is male:
-		if C is actually at least partially penis covering and C is potentially asshole covering:
-			if the number of worn actually at least partially penis covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
+		if C is potentially at least partially penis concealing and C is potentially asshole covering:
+			if the number of worn potentially at least partially penis concealing clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
 	otherwise:
 		if C is potentially vagina covering and C is potentially asshole covering:
 			if the number of worn potentially vagina covering clothing is X or the number of worn potentially asshole covering clothing is X, decide yes;
@@ -63,6 +63,7 @@ Definition: a clothing (called C) is reasonable when outrageous:
 
 Definition: a clothing (called C) is reasonable when cringeworthy:
 	if C is crotch-intact knickers, decide yes;
+	if the stolen-strength of C > 0, decide yes;
 	if ((C is short or C is super-short) and short skirts permanent fetish > 0) or (C is knickers and no-panties permanent fetish > 0), decide yes;
 	if C is short or longer and (penis is lewdly exposed or there is a lewdly exposed fuckhole or there is a worn almost too cringeworthy knickers), decide yes;
 	if C is uniquely reasonable, decide yes;
@@ -213,14 +214,14 @@ This is the bracelets arm clash rule:
 		rule fails.
 The bracelets arm clash rule is listed in the global wearability rules.
 
-This is the rings fingers clash rule:
+[This is the rings fingers clash rule:
 	if there is worn bracelet and wearing-target is finger covering and summoning is 0:
 		if autowear is false, say "You need to remove your bracelet[if the number of worn bracelets > 1]s[end if][if the number of worn rings > 1] and rings[otherwise if the number of worn rings is 1] and ring[end if] first.";
 		rule fails;
 	if there is worn ring and wearing-target is finger covering and summoning is 0:
 		if autowear is false, say "You need to remove your ring[if the number of worn rings > 1]s[end if] first.";
 		rule fails.
-The rings fingers clash rule is listed in the global wearability rules.
+The rings fingers clash rule is listed in the global wearability rules.]
 
 This is the nails fingers clash rule:
 	if fake-nails is worn and wearing-target is finger covering:

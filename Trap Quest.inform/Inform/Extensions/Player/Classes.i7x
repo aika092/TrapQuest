@@ -326,7 +326,7 @@ REQUIRES COMMENTING
 +!]
 This is the symbiote class rule:
 	if spiked-tiara is worn:
-		if the virgin of the player is 1 and the quest of spiked-tiara is virginity-retention-quest, now player-class is "virgin symbiote warrior";
+		if the vaginalvirgin of the player is 1 and the quest of spiked-tiara is virginity-retention-quest, now player-class is "virgin symbiote warrior";
 		otherwise now player-class is "symbiote";
 		rule succeeds.
 The symbiote class rule is listed in the player class rules.
@@ -432,7 +432,7 @@ A time based rule (this is the compute brood rule):
 		let old-wasps be total-wasps;
 		if E is laid medium egg:
 			MagicPowerUp 2;
-			if the number of alive giant wasps < 0 and there is an off-stage giant wasp:
+			if the number of alive giant wasps < 1 and there is an off-stage giant wasp:
 				say "You watch in amazement as a white egg changes colour to light brown, doubles in size, and then just as quickly, starts to crack. Within seconds, a familiarly looking larva has emerged from the egg. The giant maggot, right in front of your eyes, goes through the entire metamorphosis which a normal wasp goes through in its youth, in a few seconds.";
 				let M be a random off-stage giant wasp;
 				now M is in the location of the player;
@@ -615,7 +615,7 @@ REQUIRES COMMENTING
 +!]
 This is the faerie class rule:
 	if glittering rose is worn:
-		if the virgin of the player is 1:
+		if the vaginalvirgin of the player is 1:
 			now the player-class is "fairy godmother";
 			rule succeeds;
 		otherwise if butterfly wings is worn:

@@ -43,16 +43,17 @@ To say ImageDesc of (C - a thing):
 
 To maybe-map-display (C - a thing):
 	if images visible is 1:
+		let F be the examine-image of C;
+		if previous-temporary-image of C is not figure of no-image-yet, now F is previous-temporary-image of C;
 		if the focus-window is g-present: [We're not going to display in the main window. So instead let's display a zoomed in version in the map window.]
-			let F be the examine-image of C;
-			if previous-temporary-image of C is not figure of no-image-yet, now F is previous-temporary-image of C;
 			if the map-window is g-present:
 				now temporary-map-figure is F;
-				display entire map;
+				if seconds is 0, display entire map; [This isn't going to happen automatically because time hasn't moved forward. So we prompt it ourselves.]
+				otherwise now map-turn-stall is 1; [If we didn't do this, the temporary-map-figure would be reset before it has a chance to be shown properly, when the time progression is calculated (towards the buttom of "to run the engine once" in Compute Turn.i7x.]
 			otherwise:
-				display F;
+				cutshow F for C;
 		otherwise:
-			display examine-image of C;
+			display F.
 
 The examine undescribed things rule is not listed in the carry out examining rulebook.
 

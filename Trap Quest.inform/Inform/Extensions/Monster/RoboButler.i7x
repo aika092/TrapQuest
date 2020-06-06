@@ -75,11 +75,11 @@ To compute perception of (M - a robobutler):
 		now the planned-punishment of M is 4;
 		anger M;
 	otherwise if the lips of face * 5 <= the bimbo of the player and artificial enhancements fetish is 1 and the lips of face < 3:[this in particular is artificial enhancements only]
-		say "[big his of M] eyes turn red and it spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][speech style of M]'COLLAGEN DEFICIENCY DETECTED. TISSUE STIMULATION PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 2;
 	otherwise if the player is hungry and the player is able to eat:
-		say "[big his of M] eyes turn red and it spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
+		say "[big his of M] eyes turn red and [he of M] spins towards you. [line break][first custom style]'EMPTY STOMACH DETECTED. COMPULSORY FEEDING PROGRAM INITIATED.'[roman type][line break]";
 		anger M;
 		now the planned-punishment of M is 1;
 	otherwise:
@@ -111,8 +111,8 @@ To serve urine from (M - a robobutler):
 		if the player is bimbo consenting:
 			StomachUp 1;
 			say "You [unless the player is feeling dominant]obediently [end if]down the shot of [urine] in one, [if the urine taste addiction of the player < 8]trying to avoid the taste.[line break][variable custom style]Yuck, yuck, yuck![roman type][line break][otherwise if the urine taste addiction of the player < 13]wincing a little at the bitter taste.[otherwise]enjoying the special taste.[end if]";
+			StomachUrineUp 1;
 			satisfy M;
-			UrineTasteAddictUp 1;
 		otherwise:
 			say "[big his of M] eyes flash red for a brief moment.[line break][first custom style]'RELUCTANCE DETECTED. SUBJECT MAY NEED MORE [']HANDS-ON['] ASSISTANCE IN THE FUTURE.'[roman type][line break][big he of M] turns to leave you alone, for now.";
 			FavourDown M;

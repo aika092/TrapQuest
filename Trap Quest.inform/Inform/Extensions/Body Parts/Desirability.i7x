@@ -279,19 +279,23 @@ Definition: a person (called M) is groping:
 	if total gropability >= the groping threshold of M, decide yes;
 	decide no.
 
+
+specificBodyPartChosen is initially false.
 To choose a grope target:
-	now targeted-body-part is nothing;
-	let targeting-RNG be a random number between 1 and total gropability;
-	if debugmode > 1, say "Targeting RNG (d[total gropability]) = [targeting-RNG].";
-	repeat with B running through body parts:
-		let G be the gropability of B;
-		if G > 0:
-			if debugmode > 1, say "Checking if [B] (gropability [G]) is our randomly chosen target...";
-			decrease targeting-RNG by G;
-			if targeting-RNG <= 0 or G >= 100:
-				if debugmode > 1, say "Chose [B]!";
-				now targeted-body-part is B;
-				break.
+	if specificBodyPartChosen is false:
+		now targeted-body-part is nothing;
+		let targeting-RNG be a random number between 1 and total gropability;
+		if debugmode > 1, say "Targeting RNG (d[total gropability]) = [targeting-RNG].";
+		repeat with B running through body parts:
+			let G be the gropability of B;
+			if G > 0:
+				if debugmode > 1, say "Checking if [B] (gropability [G]) is our randomly chosen target...";
+				decrease targeting-RNG by G;
+				if targeting-RNG <= 0 or G >= 100:
+					if debugmode > 1, say "Chose [B]!";
+					now targeted-body-part is B;
+					break;
+	now specificBodyPartChosen is false.
 
 To compute grope of (M - a person):
 	let RF be refractoryperiod; [this is how we check if the player orgasmed from the grope]
@@ -445,7 +449,7 @@ To say BellyGropeFlav of (M - a person):
 
 To compute face grope of (M - a person):
 	if there is worn ringagged clothing or (the player is a nympho and the player is not feeling dominant):
-		say "[BigNameDesc of M] [one of]pushes[or]worms[in random order] two fingers into your [if the player is a nympho and the player is not feeling dominant]willing and [end if]open mouth, [one of]prodding[or]inspecting[or]pushing down on[in random order] your [if the player is a nympho and the player is not feeling dominant]obedient[otherwise]defenseless[end if] tongue.";
+		say "[BigNameDesc of M] [one of]pushes[or]worms[in random order] two fingers into your [if the player is a nympho and the player is not feeling dominant]willing and [end if]open mouth, [one of]prodding[or]inspecting[or]pushing down on[in random order] your [if the player is a nympho and the player is not feeling dominant]obedient[otherwise]defenceless[end if] tongue.";
 		if M is not unintelligent monster and M is not seduced monster, say "[speech style of M]'[one of]Well isn't this just begging to be filled?'[or]Thirsty, [slut]?'[or][if M is willing to do oral monster]I know a good quality fuckhole when I see one.'[otherwise]Well don't you just look positively scrumptious...'[end if][or][if M is willing to urinate monster]Some day soon I'm going to use this cute little mouth as my personal toilet.'[otherwise]I bet you're a slobberer.'[end if][in random order][roman type][line break]";
 	otherwise if the lips of face > a random number between 0 and 3:
 		say "[BigNameDesc of M] runs a finger along your [LipDesc].";
@@ -576,7 +580,7 @@ To compute seduction choice of (M - a monster):
 		if the player is not immobile and the seductions-performed of thighs < 2, set next numerical response to "dance for [him of M]";
 		if face is not actually occupied and the seductions-performed of face is 0, set next numerical response to "kiss [him of M]";
 		set next numerical response to "get on your knees";
-	let C be a random top level breasts protection clothing;
+	let C be a random top level titfuck protection clothing;
 	if C is top-displacable unglued clothing and the player is able to use their hands, set next numerical response to "pull away your [ShortDesc of C]";
 	let K be a random top level protection clothing;
 	if K is displacable unglued clothing and the player is able to use their hands, set next numerical response to "displace your [ShortDesc of K]";
@@ -695,7 +699,7 @@ To compute seduction choice of (M - a monster):
 			now the selection-frustration of M is 0;
 			now the chosen-orifice of M is face;
 	otherwise if MCQ matches the text "suggest":
-		now auto is 1;
+		now auto is 2; [no flavour output for being told you're not able, but yes flavour output when actually doing it]
 		let PB be the list of actually presentable body parts;
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		repeat with B running through PB:

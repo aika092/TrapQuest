@@ -149,6 +149,8 @@ To compute appearance assessment of (M - a supporter):
 			compute grope of M;
 		otherwise:
 			say FriendlySluttyPerception of M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
@@ -226,11 +228,6 @@ To compute facial climax of (M - a supporter):
 
 To compute facial strapon climax of (M - a supporter):
 	say FacialStraponClimaxFlav of M;
-	if the player is a deepthroater or the player is not gag-prone:
-		say "In a skilful display, you take the whole dildo down your throat without gagging.";
-	otherwise:
-		say "You can't help but gag on the dildo as it pounds against the entrance to your throat, bringing tears to your eyes.";
-		PainUp 1;
 	say "[big he of M] pulls out, satisfied, and loses interest.";
 	TimesSubmittedUp M by 1;
 	orgasm bore M.
@@ -607,7 +604,7 @@ To say FacialStraponClimaxFlav of (M - a supporter): [The final round of strap-o
 [Vaginal & Anal]
 
 To say StraponClimaxFlav of (M - a supporter) in (F - a fuckhole):
-	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying her [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
+	say "[BigNameDesc of M] moves [his of M] hips as hard as [he of M] can, burying [his of M] [DickDesc of M] as deep as it will go into your [variable F] and giving you five extremely rough thrusts to finish [his of M] session, before quickly pulling all the way out with a loud 'POP'.[line break][speech style of M]'Yeah slut, I hope you liked that!'[roman type][line break]".
 
 [###SUPPORTERS WITHOUT A PENIS OR STRAPON ONLY###]
 

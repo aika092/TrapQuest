@@ -15,6 +15,11 @@ Figure of ghost 5 is the file "NPCs/Mansion/Ghost/ghost5.png".
 Figure of ghost 6 is the file "NPCs/Mansion/Ghost/ghost6.png".
 Figure of ghost 7 is the file "NPCs/Mansion/Ghost/ghost7.png".
 
+Figure of Iron Maiden is the file "Env/Mansion/ironmaiden1.jpg".
+Figure of IronMaidenBackground is the file "Map/maiden2.png".
+To decide which figure-name is the examine-image of (C - an iron-maiden):
+	decide on figure of Iron Maiden.
+
 Figure of Maths Predicament Xray 1 is the file "Special/Cutscene/cutscene-maths-dq-xray1.jpg".
 Figure of Maths Predicament 1 is the file "Special/Cutscene/cutscene-maths-dq1.jpg".
 Figure of Maths Predicament 2 is the file "Special/Cutscene/cutscene-maths-dq2.jpg".

@@ -137,6 +137,7 @@ To Execute Fainting:
 				otherwise:
 					now player-breeder is not maid-history;
 				try examining player-breeder;
+			progress quest of predicament-quest;
 			check immobility;
 			refresh windows;
 			zero focus stuff;

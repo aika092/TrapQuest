@@ -33,10 +33,12 @@ To bore (M - a monster) for (N - a number) seconds:
 	dislodge M;
 	compute common boredom of M for N seconds;
 	now M is uninterested;
-	now the boredom of M is N.
+	now the boredom of M is N;
+	if M is diaper-instructing, now the boredom of M is the boredom of M / 2. [Diaper checks happen more frequently]
 
 To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is unseduced;
+	now the throating of M is 0;
 	now the objectification of M is 0;
 	now the babification of M is 0;
 	now the friendly boredom of M is 0;

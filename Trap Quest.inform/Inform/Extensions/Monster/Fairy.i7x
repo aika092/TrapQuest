@@ -65,11 +65,14 @@ To say MonsterDesc of (M - a fairy):
 To set up (M - a fairy):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 2;
+	now the raw difficulty of M is the difficulty-base of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - a fairy):
-	decide on 1 + (the difficulty of M * (1 + game difficulty)).
+	decide on 1 + the difficulty of M + (game difficulty * 2).
+
+To decide which number is the difficulty-base of (M - a fairy):
+	decide on 2.
 
 [This is the spawn initial fairy rule:
 	while the number of alive fairy < 2:
@@ -152,7 +155,7 @@ To say MonsterOfferAcceptFlav of (M - a fairy) to (T - a thing):
 		say "[BigNameDesc of M] seems elated. [line break][speech style of M]'Wow, thank you so much! It's like Christmas!'[roman type][line break]".
 
 To say GroundPeeReaction of (M - a fairy):
-	say "[speech style of M]'Tee-hee, you're such a naughty minx!'[roman type][line break]".
+	say "[speech style of M]'Teehee, you're such a naughty minx!'[roman type][line break]".
 
 To compute enema floor reaction of (M - a fairy):
 	humiliate 200;
@@ -191,7 +194,7 @@ To compute protection of (M - a fairy):
 			compute M protecting against X.
 
 To compute (M - a fairy) protecting against (X - a monster):
-	if the player is monster stuck:
+	if the player is at least partially monster stuck:
 		say "[one of][or][or][BigNameDesc of M] giggles, seemingly very entertained.[or][or][cycling]";
 	otherwise if X is not fairy and the pregnancy of the player > 0 and the pregnancy of the player < 3:
 		compute X receiving 2 damage from M;
@@ -254,7 +257,7 @@ This is the fairy plays diaper quest rule:
 The fairy plays diaper quest rule is listed in the fairy attack rules.
 
 This is the fairy tries to impregnate the player rule:
-	if pregnancy fetish is 1 and there is a vine grabbing the player and the class of the player is faerie:
+	if pregnancy fetish is 1 and there is a vine wrangling the player and the class of the player is faerie:
 		say "[BigNameDesc of current-monster] continues to [one of]whiz about underneath you[or]hover beneath your legs[at random], throwing glittering dust over the horny vines twisting through the soil.";
 		cutshow figure of fairy cutscene 18 for current-monster;
 		rule succeeds;
@@ -266,9 +269,9 @@ This is the fairy tries to impregnate the player rule:
 			now V is in the location of the player;
 			now V is revealed;
 			now the TrapNo of V is 0;
-		now V is grabbing the player;
+		now V is wrangling the player;
 		rule succeeds;
-	if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0 and the semen volume of vagina < 15 and the largeness of belly < 10 and a random number between 1 and 2 is 1 and the virgin of the player is 0:
+	if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0 and the semen volume of vagina < 15 and the largeness of belly < 10 and a random number between 1 and 2 is 1 and the vaginalvirgin of the player is 0:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as [he of current-monster] does. [big he of current-monster] turns and smirks as your belly rumbles, and visibly glows pink as it swells in front of your eyes.";
 		if the largeness of belly > 5, cutshow figure of fairy cutscene 7 for current-monster;
 		otherwise cutshow figure of fairy cutscene 3 for current-monster;
@@ -300,9 +303,9 @@ This is the fairy anal rule:
 The fairy anal rule is listed in the butt slut eligibility rules.
 
 This is the fairy tries to shrink the penis of the player rule:
-	if pregnancy fetish is 1 and the player is male and the size of penis > min penis size and a random number between 1 and 2 is 1:
+	if the player is male and the size of penis > min penis size and a random number between 1 and 2 is 1:
+		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your crotch as [he of current-monster] does. [big he of current-monster] turns and smirks.";
 		PenisDown 1;
-		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your crotch as [he of current-monster] does. [big he of current-monster] turns and smirks as your [player-penis] [Shrink]s into a [ShortDesc of penis].";
 		rule succeeds.
 The fairy tries to shrink the penis of the player rule is listed last in the fairy attack rules.
 
@@ -439,11 +442,11 @@ To compute fairySuckling of (M - a fairy):
 		Though come to think of it, the 2nd fairy could target your other nipple; you could be ravaged by three fairies at the same time!]
 		if slashedSomething is 1: [This is better than "NipsWereNkd is 0", since that can be true when she had merely displaced clothing]
 			say "[if FairySuckleSlashes is 1][big he of M]'s just[otherwise][big he of M]'s done it again: [end if] ruined your clothing - and exposed your nipples! [italic type]Ooh - yum, I can't wait![roman type][line break]";
-		say "[if the player is able to speak] [line break][variable custom style][one of]'What, you think I'm just some helpless milk dispenser? What gives you the right to-'[or]'Stop treating me like my boobs are drinking fount-'[or]''Look, would you just stop for a min-'[or]'Oh, god, do you have to do this ag-'[or]'Okay, go ahead, drink up! It's not like I could st-'[stopping][roman type][line break][otherwise]You make some squeaking moans, as if you're trying to say [line break][variable custom style]'No, please, don't!'[roman type][line break], but really, you can hardly wait![end if][line break]";
+		say "[if the player is able to speak] [line break][variable custom style][one of]'What, you think I'm just some helpless milk dispenser? What gives you the right to-'[or]'Stop treating me like my boobs are drinking fount-'[or]'Look, would you just stop for a min-'[or]'Oh, god, do you have to do this ag-'[or]'Okay, go ahead, drink up! It's not like I could st-'[stopping][roman type][line break][otherwise]You make some squeaking moans, as if you're trying to say [line break][variable custom style]'No, please, don't!'[roman type][line break], but really, you can hardly wait![end if][line break]";
 		if delicateness of the player > 10:
 			say "These fairies are really scary when they've been driven mad by milk-lust! You don't even [italic type]consider[roman type] trying to resist: the thought of what those [one of]frightening[or]awful[or]razor-sharp[at random] claws could do to your [BreastDesc], let alone to your tender and swollen nipples, doesn't even bear thinking about! You meekly cup and hold your boobies up to make it easier for your fairy milking-master to use you however [he of M] sees fit. [line break][variable custom style][big he of M] knows what's best for me![roman type][line break]";
 			if FairySuckled > 3 and the intelligence of the player > 6: [they're not stupid]
-				say "You're starting to think all this forced lactation and suckling is stimulating your breasts, making them produce even more [milk] than they would have. [line break][variable custom style]But that's fair enough - at least I'm being a *productive* member of this game. Tee-hee![roman type][line break]";
+				say "You're starting to think all this forced lactation and suckling is stimulating your breasts, making them produce even more [milk] than they would have. [line break][variable custom style]But that's fair enough - at least I'm being a *productive* member of this game. Teehee![roman type][line break]";
 		otherwise if the bimbo of the player > 10:
 			say "With a tremor of excited anticipation, you hold your [BreastDesc] up so the sexy little fairy knows you're ready for any attention [he of M] cares to give your swollen and eager nipples!";
 	if there is a worn cow piercing:
@@ -798,7 +801,7 @@ To say PregnancyAssessment of (M - fairy-witch):
 		say "[big he of M] recoils and starts, rubbing [his of M] cheek.[line break][speech style of M]'Whoever the daddy is, [he of mechanic]'s really really mean!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 6 for M;
 	otherwise if the father is fairy:
-		say "[line break][speech style of M]'Tee hee. It's obviously a fairy!'[roman type][line break]";
+		say "[line break][speech style of M]'Teehee. It's obviously a fairy!'[roman type][line break]";
 		alwayscutshow figure of fairy interact 7 for M;
 	otherwise:
 		say "[speech style of M]'Well, it was definitely a human. Does that help?'[roman type]";
@@ -961,7 +964,7 @@ To say StoryAnswer of (M - blue-fairy):
 To set up (M - blue-fairy):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 4;
+	now the raw difficulty of M is the difficulty-base of M + 2;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - blue-fairy):
@@ -997,7 +1000,7 @@ To say AdviceAnswer of (M - fairy-witch):
 To set up (M - fairy-witch):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 6;
+	now the raw difficulty of M is the difficulty-base of M + 4;
 	now the health of M is the maxhealth of M.
 
 Definition: fairy-witch is blocker if it is not airborne.

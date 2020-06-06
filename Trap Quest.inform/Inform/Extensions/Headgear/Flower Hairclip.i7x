@@ -107,7 +107,7 @@ To compute persistent reward of (Q - virginity-retention-quest) on (C - a clothi
 		say "infusing itself with [one of]powerful magic! You feel that something good will happen when you finally remove the hairclip.[or]even more blessed magic![stopping]".
 
 To uniquely destroy (C - a flower hairclip):
-	if the virginity-count of virginity-retention-quest > 2 and the quest of C is virginity-retention-quest and the virgin of the player is 1:
+	if the virginity-count of virginity-retention-quest > 2 and the quest of C is virginity-retention-quest and the vaginalvirgin of the player is 1:
 		say "You can feel the blessed magic your [ShortDesc of C] had stored within itself shoot straight into your muscles, rewarding you with [if virginity-count of virginity-retention-quest > 3]huge amounts of [end if]both strength and speed!";
 		StrengthUp the virginity-count of virginity-retention-quest - 1;
 		DexUp the virginity-count of virginity-retention-quest - 1.

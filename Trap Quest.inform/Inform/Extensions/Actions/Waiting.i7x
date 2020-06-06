@@ -27,7 +27,7 @@ Check waiting:
 	otherwise if detention chair is grabbing the player:
 		say "Do you want to keep waiting until detention is over? ";
 		if the player is in agreement, detentionchairwait instead;
-	otherwise if the player is live fucked or there is a thing grabbing the player:
+	otherwise if the player is live fucked or there is a thing grabbing the player or there is a thing wrangling the player:
 		let M be a random live thing penetrating a body part;
 		if M is minotaur and M is asleep:
 			say "You lay there and wait, hoping not to faint before [he of M] wakes up.";

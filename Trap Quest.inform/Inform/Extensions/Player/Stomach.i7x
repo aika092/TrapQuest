@@ -6,7 +6,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the stomach-liquid of the player:
-	decide on the stomach-water of the player + the stomach-semen of the player.
+	decide on the stomach-water of the player + the stomach-semen of the player + the stomach-milk of the player + the stomach-urine of the player.
 
 [!<DecideWhichNumberIsTheStomachOfThePlayer>+
 
@@ -87,14 +87,25 @@ REQUIRES COMMENTING
 +!]
 To StomachDown (X - a number):
 	let S be 0;
+	let U be 0;
+	let M be 0;
 	while X > 0:
-		if the stomach-water of the player > the stomach-semen of the player:
-			decrease the stomach-water of the player by 1;
-			if watersports mechanics is 1, increase the delayed bladder of the player by 1;
+		if the stomach-water of the player > the stomach-milk of the player:
+			if the stomach-water of the player > the stomach-urine of the player:
+				if the stomach-water of the player > the stomach-semen of the player:
+					decrease the stomach-water of the player by 1;
+					if watersports mechanics is 1, increase the delayed bladder of the player by 1;
+				otherwise:
+					increase S by 1;
+			otherwise:
+				increase U by 1;
 		otherwise:
-			increase S by 1;
+			increase M by 1;
 		decrease X by 1;
-	if S > 0, StomachSemenDown S. [We do this all at once to avoid repeated messages about semen addiction increases.]
+	if S > 0, StomachSemenDown S;
+	if U > 0, StomachUrineDown U;
+	if M > 0, StomachMilkDown M;
+	if cold milky > cold milky limit and the player is not craving milk, MilkTasteAddictDown 1.
 
 [!<StomachFoodUpX>+
 
@@ -125,12 +136,8 @@ Definition: a thing is facefucker: decide no. [Can it make the player gag]
 Definition: gloryhole is facefucker: decide yes.
 Definition: a monster is facefucker if it is male or it is neuter.
 
-[!<StomachSemenUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachSemenUp (X - a number):
+	let SU be a random number between 0 and 1;
 	let M be a random wrapped monster penetrating face;
 	if M is monster:
 		compute condom filling of M;
@@ -147,31 +154,15 @@ To StomachSemenUp (X - a number):
 		while X > 0:
 			increase the stomach-semen of the player by 1;
 			decrease X by 1;
-		if there is a facefucker thing penetrating face:
-			OralSexAddictUp 1;
-			if the latex-transformation of the player < 5, PukeUp;
-			otherwise progress quest of cum-swallowing-quest;
+			if X is SU and the trophy-mode of ejaculate-trophy is 0, SemenTasteAddictUp 1; [so half the time, 2 units of semen are required for semen taste addiction to increase]
+	if there is a facefucker thing penetrating face:
+		OralSexAddictUp 1;
+		progress quest of cum-swallowing-quest;
 	if there is a worn tethering lipstick collar, end tethering.
 
-[!<PersonIsBecomingMoreAddictedToCum>+
-
-It's as your stomach empties of semen that you're more likely to begin to crave it more. This is to ensure that a huge load of cum doesn't increase semen taste addiction by stupidly large amounts.
-
-+!]
-Definition: yourself is becoming more addicted to cum if a random number between 1 and the stomach-semen of the player <= 2 and the trophy-mode of ejaculate-trophy is 0.
-
-[!<StomachSemenDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StomachSemenDown (X - a number):
 	if the stomach-semen of the player > 0:
 		while X > 0:
-			if the stomach-semen of the player is 0 or (X is 1 and the player is becoming more addicted to cum):
-				say SemenConsumptionFlav;
-				SemenTasteAddictUp 1;
-				now X is 1;
 			if the stomach-semen of the player > 0:
 				decrease the stomach-semen of the player by 1;
 				if watersports mechanics is 1, increase the delayed bladder of the player by 1;
@@ -180,41 +171,48 @@ To StomachSemenDown (X - a number):
 			if the player is desperately craving semen, say "[bold type]Your stomach is completely empty of [semen]! You can't stand it, you are desperate for your next fix! Your reflexes are significantly dulled until the next time you satisfy your addiction.[roman type][line break]";
 			otherwise say "[bold type]You find yourself eager to try tasting some more [semen]. Your reflexes are slightly dulled until the next time you get a fix.[roman type][line break]".
 
-To say SemenConsumptionFlav:
-	say "You feel your stomach absorb some [semen] inside it and [one of][or]once again [stopping]it somehow goes straight to your head, making you feel [if the semen taste addiction of the player < 6]uneasy[otherwise if the semen taste addiction of the player < 11]giddy[otherwise if the semen taste addiction of the player < 13]good[otherwise if the semen taste addiction of the player < 15]great[otherwise]amazing[end if].".
+To StomachUrineUp (X - a number):
+	while X > 0:
+		decrease X by 1;
+		increase the stomach-urine of the player by 1;
+		if X is 0:
+			UrineTasteAddictUp 1;
+			progress quest of piss-drinking-quest.
 
-[!<YourselfIsGagProne>+
+To StomachUrineDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the stomach-urine of the player > 0:
+			if watersports mechanics is 1, increase the delayed bladder of the player by 1;
+			decrease the stomach-urine of the player by 1.
 
-Is there a change the player will puke up stomach contents?
+To StomachMilkUp (X - a number):
+	while X > 0:
+		decrease X by 1;
+		increase the stomach-milk of the player by 1;
+		if X is 0:
+			StomachFoodUp 1;
+			MilkTasteAddictUp 1;
+			now cold milky is 0; [this tracks how long since the player last drank milk]
+			if diaper quest is 1, progress quest of puddle-licking-quest; [catgirl quest is to drink milk]
+			progress quest of milk-drinking-quest.
 
-+!]
-Definition: yourself is gag-prone:
-	if the stomach-liquid of the player > 0 or the semen volume of belly > 5, decide yes;
-	decide no.
+To StomachMilkDown (X - a number):
+	while X > 0:
+		decrease X by 1;
+		if the stomach-milk of the player > 0:
+			if watersports mechanics is 1, increase the delayed bladder of the player by 1;
+			decrease the stomach-milk of the player by 1;
+			if the fat-weight of the player < milk-drunk * 2, FatUp 1;
+			increase milk-exercise-bonus by 1.
 
-[!<gagReflexRules:Rulebook>*
-
-If any rules succeed, then the player is good at fighting against their gag reflex.
-
-*!]
-The gag reflex rules is a rulebook.
-
-[!<YourselfIsADeepthroater>+
-
-Let's check if the player is good at fighting against their gag reflex.
-
-+!]
-Definition: yourself is a deepthroater:
-	follow the gag reflex rules;
-	if the rule succeeded, decide yes;
-	decide no.
 
 [!<PukeUp>+
 
 Let's see whether the player pukes up anything from their gag reflex being triggered.
 
 +!]
-To PukeUp:
+[To PukeUp:
 	let M be a random thing penetrating face;
 	if the player is a deepthroater or the player is not gag-prone:
 		if debugmode > 1, say "[if the player is gag-prone]The player is a deepthroater[otherwise]The player is not gag prone[end if].";
@@ -237,37 +235,8 @@ To PukeUp:
 			bless C;
 	otherwise:
 		say "[BigFuckerDesc of M] being down your throat makes you gag, and as it pulls out you puke up the [if the stomach-semen of the player > 0][semen][otherwise]liquid[end if] from your belly.";
-		PukeUp a random number between 1 and (the stomach-semen of the player + the semen volume of belly);
-	progress quest of cum-swallowing-quest.
+		PukeUp a random number between 1 and (the semen volume of face + the stomach-semen of the player + the semen volume of belly);
+	progress quest of cum-swallowing-quest.]
 
-[!<PukeUpX>+
-
-REQUIRES COMMENTING
-
-+!]
-To PukeUp (X - a number):
-	if there is an awake intelligent monster in the location of the player, humiliate (X * 75);
-	let S be 0; [track how much semen is expelled]
-	while X > 0:
-		if the stomach-semen of the player > 0:
-			decrease the stomach-semen of the player by 1;
-			increase S by 1;
-		otherwise if the semen volume of belly > 0:
-			decrease the semen volume of belly by 1;
-			increase S by 1;
-		otherwise if the stomach-water of the player > 0:
-			decrease the stomach-water of the player by 1;
-		decrease X by 1;
-	if S > 0:
-		say "A [if S < 3]small amount of[otherwise if S < 6]decently voluminous quantity of[otherwise]veritable cascade of[end if] [semen] flows out of your mouth and onto ";
-		if the player is upright or the player is in Predicament01:
-			say "[if there is a worn overdress]your [printed name of random worn overdress][otherwise if there is a worn bra]your [printed name of random worn bra][otherwise]your [BreastDesc][end if].";
-			if the bimbo of the player < 8 and the largeness of breasts > 6, say "[first custom style]These tits get in the way of everything![roman type][line break]";
-			CumTitsUp S;
-		otherwise:
-			say "the ground.";
-			SemenPuddleUp S;
-	otherwise:
-		say "The liquid from your stomach flows out of your mouth and onto the ground.".
 
 Stomach ends here.

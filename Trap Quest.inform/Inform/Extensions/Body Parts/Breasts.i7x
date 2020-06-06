@@ -109,7 +109,13 @@ Definition: breasts is lewdly exposed if breasts is exposed and (the player is f
 
 Definition: breasts is at least partially lewdly exposed if breasts is at least partially exposed and (the player is female or the largeness of breasts > 1).
 
-[Here we mainly care about NIPPLES but if there's several options we'll chose the one with the highest cleavage 'cos that'll make sense to the player when we're talking about what's the main thing covering their boobs]
+[!<DecideWhichObjectIsTheAtLeastPartialConcealerOfBreasts>+
+
+Determines which object is currently doing the most to conceal the player's NIPPLES, but if there are several options we will pick the one with the higest cleavage. Clothing picked by this function don't have to be dense, but can't be see-through. Here we mainly care about NIPPLES but if there's several options we'll chose the one with the highest cleavage 'cos that'll make sense to the player when we're talking about what's the main thing covering their boobs 
+
+@param <Breasts>:<B> The player's breasts
+@return <Object> Either the player's arms, a piece of clothing, or nothing
++!]
 To decide which object is the at least partial concealer of (B - breasts):
 	let N be 0;
 	let chosenThing be the throne;
@@ -122,7 +128,13 @@ To decide which object is the at least partial concealer of (B - breasts):
 	if chosenThing is not the throne, decide on chosenThing;
 	decide on nothing.
 
-[Here we mainly care about NIPPLES but if there's several options we'll chose the one with the highest cleavage]
+[!<DecideWhichObjectIsTheConcealerOfBreasts>+
+
+Determines which object is currently doing the most to conceal the player's NIPPLES, but if there are several options, we will pick the one with the highest cleavage. Any clothing picked by this function must be dense.
+
+@param <Breasts>:<B> The player's breasts
+@return <Object> Either the player's arms, a piece of clothing, or nothing
++!]
 To decide which object is the concealer of (B - breasts):
 	let N be 0;
 	let chosenThing be the throne;
@@ -135,9 +147,16 @@ To decide which object is the concealer of (B - breasts):
 	if chosenThing is not the throne, decide on chosenThing;
 	decide on nothing.
 
+[!<DecideWhichNumberIsTheCleavageCoverOfClothing>+
+
+Outputs a number describing the amount of breast coverage the player gets from a piece of clothing
+
+@param <Clothing>:<C> The clothing
+@return <Number> Integer representing breast coverage
++!]
 To decide which number is the cleavageCover of (C - a clothing):
 	if C is breast covering:
-		if C is fully covering, decide on 100;
+		if C is fully covering, decide on 100;[this means the player's breasts are completely covered]
 		if C is high cut, decide on 7;
 		if C is average cut, decide on 6;
 		if C is low cut, decide on 5;
@@ -146,13 +165,27 @@ To decide which number is the cleavageCover of (C - a clothing):
 		if C is fully exposing, decide on 0;
 	decide on 0.
 
+[!<DecideWhichNumberIsTheCleavageCoverOfArms>+
+
+Outputs a number describing the amount of breast coverage the player gets from their arms.
+
+@param <Arms>:<C> The player's arms
+@return <Number> Integer representing breast coverage
++!]
 To decide which number is the cleavageCover of (C - arms):
 	if breasts is listed in the armUses of arms:
 		if entry 1 in the armUses of arms is breasts and entry 2 in the armUses of arms is breasts, decide on 5;
-		decide on 3;
+		decide on 3;[one arm]
 	decide on 0.
 
-To decide which number is cleavageCover: [The higher this number, the less humiliating giant breasts are]
+[!<DecideWhichNumberIsCleavageCovers>+
+
+Outputs a number describing the player's overall amount of breast coverage.
+
+@param <Arms>:<C> The player's arms
+@return <Number> Integer representing breast coverage. The higher this number, the less humiliating giant breasts are.
++!]
+To decide which number is cleavageCover:
 	let C be the at least partial concealer of breasts;
 	if C is clothing or C is arms:
 		let CC be the cleavageCover of C;
@@ -184,11 +217,12 @@ To decide which number is cleavage outrage:
 	decide on (2 + (the largeness of breasts * 3)) / cleavageCover.
 
 To decide which number is the cringe of (B - breasts):
-	let C be the outrage of B;
-	if C < 4:
-		if B is exposed, decide on 2;
-		decide on 0;
-	decide on C - 3. [if we haven't redefined it, then a bit less than the outrage should be a good estimate. Being naked is childish but it's not as childish as it is slutty.]
+	let O be -2; [It's always a bit more slutty than childish to have exposed breasts]
+	if the breastskill of the player is 0 and B is lewdly exposed, increase O by lewdly exposed outrage of B;
+	now O is O / (the trophy-mode of bust-trophy + 1); [Bust trophy halves outrage]
+	if O > 20, decide on 20;
+	if O < 0, decide on 0;
+	decide on O.
 
 Definition: breasts is showing cleavage:
 	if the largeness of breasts < 3 or cleavageCover is 7, decide no;
@@ -919,7 +953,7 @@ To Bustup (X - a number):
 			otherwise say "[one of][line break][second custom style][line break]My boobs keep growing...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 10:
 			if the bimbo of the player < 12, say "[one of][line break][first custom style][line break]Surely my boobs can't get any bigger?![roman type][line break][or][stopping]";
-			otherwise say "[one of][line break][second custom style][line break]Tee-hee, my tits are MASSIVE...[roman type][line break][or][stopping]";
+			otherwise say "[one of][line break][second custom style][line break]Teehee, my tits are MASSIVE...[roman type][line break][or][stopping]";
 		if the largeness of breasts is 15:
 			if the bimbo of the player < 15:
 				say "[one of][line break][first custom style][line break]My back is going to break if these ridiculous boobs get any bigger![roman type][line break][or][stopping]";

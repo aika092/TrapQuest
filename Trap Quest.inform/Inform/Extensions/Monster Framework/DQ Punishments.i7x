@@ -251,12 +251,12 @@ Definition: a monster is able to donate babywear if there is babywearable clothi
 
 Definition: a clothing (called C) is babywearable:
 	if C is on-stage or C is not babywear, decide no;
+	if C is unskirted themed and there is worn skirted clothing, decide no;
+	if C is skirted and there is worn unskirted themed clothing, decide no;
 	if C is actually summonable, decide yes;
 	decide no.
 
-Definition: a monster (called M) is willing to donate babywear:
-	if M is willing to confiscate, decide yes;
-	decide no.
+Definition: a monster is willing to donate babywear if it is willing to confiscate.
 
 Definition: donate babywear (called P) is appropriate:
 	if current-monster is willing to donate babywear and current-monster is eager to donate babywear, decide yes;

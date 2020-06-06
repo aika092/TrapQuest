@@ -43,7 +43,7 @@ To MonsterStomp (M - golem):
 			now stomped is 1.
 
 To compute (M - a monster) stomping (N - golem):
-	say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1]Its body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise]Its body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. It grunts as its muscles suddenly bulge out with even more definition and power![end if]";
+	say "[BigNameDesc of M] grabs [NameDesc of N], but the golem seems happier for it! [if artificial enhancements fetish is 1][big his of N] body engulfs [NameDesc of M], and [NameDesc of M][']s muscles bulge out with new definition and power![otherwise][big his of N] body dissolves into a mass of ones and zeroes, which are absorbed into [NameDesc of M][']s skin. [big he of M] grunts as [his of M] muscles suddenly bulge out with even more definition and power![end if]";
 	DifficultyUp M by 6;
 	destroy N.
 

@@ -136,7 +136,7 @@ Definition: yourself is able to knee:
 	now autoattack is 0;
 	decide yes.
 
-[!<YourselfIsAbleToKnee>+
+[!<YourselfIsAbleToKick>+
 
 This definition performs two checks:
 The first check only runs if the player is trying to kick automatically, and returns a value based on the value of "autokick". This is so that we only calculate whether the player can automatically kick a maximum of once per turn.
@@ -211,18 +211,7 @@ This is the player can't attack when immobile rule:
 
 The player can't attack when immobile rule is listed in the ability to knee rules.
 The player can't attack when immobile rule is listed in the ability to kick rules.
-
-[!<ThePlayerCanNotSlapWhenImmobileRule>+
-
-The rule causes a slap to fail when the player is immobile, except when restrained by vines. If the player is attacking manually, outputs a brief message explaining why.
-
-+!]
-
-This is the player can't attack when immobile except vines rule:
-	if the player is immobile and the number of vines grabbing the player is 0:
-		if autoattack is 0, say "You're a bit immobile right now to be trying to attack anything!";
-		rule fails.
-The player can't attack when immobile except vines rule is listed in the ability to slap rules.
+The player can't attack when immobile rule is listed in the ability to slap rules.
 
 [!<ThePlayerCanNotAttackWhenGaggingForCockRule>+
 

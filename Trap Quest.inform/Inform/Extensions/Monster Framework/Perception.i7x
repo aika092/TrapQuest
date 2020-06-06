@@ -21,7 +21,9 @@ whore-exposing-quest is a headgear-clothing-quest.
 
 To decide which number is the stealth of the player:
 	let P be 2 + (the number of worn kimono * 2);
+	if water-fountain is penetrating asshole, increase P by 6;
 	if the player is prone, increase P by 2;
+	if skirt-tray-vibrator is worn, decrease P by 1;
 	decide on P.
 
 To check perception of (M - a monster):
@@ -45,6 +47,7 @@ To check perception of (M - a monster):
 				distract M;
 			otherwise:
 				compute correct perception of M;
+				if latest-top-malfunction is not 0 and M is intelligent and M is friendly, now latest-top-malfunction is earnings; [If an intelligent NPC has noticed the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 				progress quest of whore-exposing-quest for M;
 				if M is intelligent:
 					progress quest of show-and-tell-quest for M;
@@ -436,7 +439,9 @@ Definition: a monster (called M) is guardian:
 To compute appearance assessment of (M - a monster):
 	say "[big he of M] ";
 	if M is intelligent, say "looks you up and down.";
-	otherwise say "pauses, taking notice of you.".
+	otherwise say "pauses, taking notice of you.";
+	if M is intelligent:
+		if the player is top-wardrobe-malfunctioning, compute default nip slip reaction of M;
 
 Chapter 3 - Modifying Aggro
 
@@ -475,6 +480,7 @@ To FavourDown (M - a monster) by (N - a number) with consequences:
 			say BecomesAggressive of M.
 
 To FavourDown (M - a monster) by (N - a number):
+	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0, decrease the favour of M by N.
 

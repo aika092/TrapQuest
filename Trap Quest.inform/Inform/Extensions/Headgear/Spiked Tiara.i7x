@@ -49,7 +49,7 @@ To compute SelfExamineDesc of (H - spiked-tiara):
 
 An all time based rule (this is the tongued clothing licking rule):
 	let N be the number of worn tongued clothing;
-	if tonguesBlack is false and the player is female and the virgin of the player is 0:
+	if tonguesBlack is false and the player is female and the vaginalvirgin of the player is 0:
 		let C be a random worn tongued clothing;
 		if N > 0, say "Your [if N is 1][ShortDesc of C][otherwise]tongued clothing all[end if] turns from pure white to an intense black. You can tell [if N is 1]it is[otherwise]they are[end if] now making you feel more perverse...";
 		now tonguesBlack is true;
@@ -63,7 +63,7 @@ An all time based rule (this is the tongued clothing licking rule):
 		otherwise if playerRegion is not school:
 			increase the rounds-horny of no-orgasm-quest by 1;
 		if tonguesActive <= -30 and refractoryperiod <= 0: [It's been 30 rounds since they were licking, so they start again]
-			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and begin to salivate and lick you wherever they can reach![roman type][line break]";
+			say "[bold type]The tongues under your [if N is 1][ShortDesc of C][otherwise]clothing[end if] [if the player is not a bit horny]seem disappointed that you're [one of]not[or]no longer[stopping] aroused, and [end if]begin to salivate and lick you wherever they can reach![roman type][line break]";
 			now tonguesActive is a random number between 15 and 40;
 			update appearance level;
 			force clothing-focus redraw; [This forces the clothing window to redraw]

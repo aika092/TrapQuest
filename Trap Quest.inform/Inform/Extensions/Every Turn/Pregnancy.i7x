@@ -473,6 +473,6 @@ To compute pregnancy annoyance:
 	otherwise if the womb volume of vagina > 15:
 		say "Your unborn baby [one of]kicks vigorously[or]punches, kicks and wriggles[or]knees and elbows you from[at random] inside your womb, but your magically protected womb prevents you from suffering any negative effects.";
 	otherwise:
-		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".[####Selkie: Just wondering if these various sometimes-empty 'say-expressions' might be the source of the large spands of blank lines that sometimes appear during play?]
+		say "[one of]You feel a flutter in your belly. Was that your baby moving?[or][or][or][in random order]".[####Selkie: Just wondering if these various sometimes-empty 'say-expressions' might be the source of the large spans of blank lines that sometimes appear during play?]
 
 Pregnancy ends here.

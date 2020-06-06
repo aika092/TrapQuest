@@ -7,14 +7,14 @@ Displacing is an action applying to one thing.
 The displacing rules is a rulebook.
 
 This is the can't displace glued clothing rule:
-	if the noun is glued:
+	if the noun is glued clothing:
 		if auto is 0, say "It's glued in place!";
 		rule fails.
 The can't displace glued clothing rule is listed in the displacing rules.
 
 This is the can't displace without hands rule:
 	if the player is not able to use their hands or the player is wrist bound behind:
-		if auto is 0, say "You don't have the manual dexterity to do that!";
+		if auto is 0, say "You don't have the manual dexterity to displace your clothing!";
 		rule fails.
 The can't displace without hands rule is listed in the displacing rules.
 
@@ -25,27 +25,29 @@ This is the can't displace while stuck in a wall rule:
 The can't displace while stuck in a wall rule is listed in the displacing rules.
 
 This is the can't displace what isn't displacable rule:
-	if the noun is not displacable:
-		if auto is 0:
-			if the noun is overdress:
-				say "That's not the sort of item of clothing that can be displaced.";
-			otherwise if the noun is crotch-exposing and the noun is unskirted:
-				say "What would be the point?";
-			otherwise if the noun is knickers:
-				say "The leg holes are much too tight for you to be able to pull this to the side.";
-			otherwise if the noun is skirted:
-				say "That's too [if the noun is short or shorter]short[otherwise]tight[end if] to pull up.";
-			otherwise:
-				say "I'm not sure how you would displace that item of clothing.";
-		rule fails.
+	if the noun is clothing:
+		if the noun is not displacable:
+			if auto is 0:
+				if the noun is overdress:
+					say "That's not the sort of item of clothing that can be displaced.";
+				otherwise if the noun is crotch-exposing and the noun is unskirted:
+					say "What would be the point?";
+				otherwise if the noun is knickers:
+					say "The leg holes are much too tight for you to be able to pull this to the side.";
+				otherwise if the noun is skirted:
+					say "That's too [if the noun is short or shorter]short[otherwise]tight[end if] to pull up.";
+				otherwise:
+					say "I'm not sure how you would displace that item of clothing.";
+			rule fails.
 The can't displace what isn't displacable rule is listed first in the displacing rules.
 
 This is the can't displace what's covered up rule:
-	unless the noun is skirted:
-		repeat with C running through worn top level protection unskirted clothing:
-			if the bottom-layer of C > the bottom-layer of the noun:
-				if auto is 0, say "You would need to displace or remove your [C] first.";
-				rule fails.
+	if the noun is clothing:
+		unless the noun is skirted:
+			repeat with C running through worn top level protection unskirted clothing:
+				if the bottom-layer of C > the bottom-layer of the noun:
+					if auto is 0, say "You would need to displace or remove your [C] first.";
+					rule fails.
 The can't displace what's covered up rule is listed last in the displacing rules.
 
 Definition: yourself is able to displace:
@@ -115,7 +117,7 @@ Check replacing:
 			if the noun is not C and C is crotch covering and (C is top-exclusive or C is totally-exclusive) and the bottom-layer of C < the bottom-layer of the noun, say "You can't put that back in place while you are wearing the [C]!" instead; [For example, trying to replace jeans over a waddle diaper]
 			if the noun is unskirted and (C is cursed clitoris piercing or C is cursed clitoris lead), say "The curse of your [C] is somehow preventing you from doing this!" instead;
 	repeat with M running through combative monsters:
-		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of your [noun]." instead.
+		say "[BigNameDesc of M] gets in the way and stops you from fixing the position of [NameDesc of the noun]." instead.
 
 Carry out replacing:
 	allocate arm use;

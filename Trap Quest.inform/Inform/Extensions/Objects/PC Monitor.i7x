@@ -14,7 +14,7 @@ A later time based rule:
 		if the video-caller of V is the throne:[if video-caller is not the throne, it means a call is already happening.]
 			if V is video-callable and there is a dangerous monster in the location of the player and V is in the location of the player:
 				let M be a random real-life patron;[Friend from outside the game]
-				if a random number between 1 and 5 is 1:
+				if diaper quest is 0 and a random number between 1 and 5 is 1:
 					now M is a random slutty sister;
 				otherwise:
 					let B be the friend-old-name of M;
@@ -27,12 +27,14 @@ A later time based rule:
 						say "[bold type]A modesty shutter clatters down over each of the doors, trapping you in![roman type]";
 						now a random modesty shutter is in the location of the player;
 					otherwise if V is in the Dungeon:
-						say "[bold type]A heavy wooden doors swing shut over each of the entrances, trapping you in the room![roman type]";
+						say "[bold type]A heavy wooden door swings shut over each of the entrances, trapping you in the room![roman type]";
 						now a random reinforced-door is in the location of the player;
 					otherwise if V is in the Woods:
-						say "[bold type]A vines rapidly grow up in the spaces between the trees, trapping you in the room![roman type]";
+						say "[bold type]Vines rapidly grow up in the spaces between the trees, trapping you in the room![roman type]";
 						now a random vine-wall is in the location of the player;
-					now a random modesty shutter is in the location of the player;
+					otherwise: [failsafe]
+						say "[bold type]A wall of fire appears at each exit, trapping you in![roman type]";
+						now a random flaming-wall is in the location of the player;
 			otherwise:
 				if the call-cooldown of V > 0, decrease the call-cooldown of V by seconds;
 				CheckActivation of V;
@@ -96,7 +98,7 @@ To say NewCircumstanceReaction of (M - a slutty sister):
 	let N be a random dangerous monster in the location of the player;
 	say "'[roman type][line break][big he of M] turns [his of M] attention back to the suited [if lady fetish is 1]women[otherwise]men[end if] behind [him of M].[line break][speech style of M]'";
 	if N is patron:
-		say "Anyway, we've heard your complaints that our high class [']representatives['] are too expensive, and our players have been testing out a solution for us. The [man of N] next to [NameBimbo] here is actually a customer who has paid to spend time with one of our [']Virtual associates.['] Its true they aren't as well behaved or skilled as the real thing, but the price isn't nearly as prohibitive. All you need to do is sign a few release forms and you can give one a try!'[roman type][line break]";
+		say "Anyway, we've heard your complaints that our high class [']representatives['] are too expensive, and our players have been testing out a solution for us. The [man of N] next to [NameBimbo] here is actually a customer who has paid to spend time with one of our [']Virtual associates.['] It's true they aren't as well behaved or skilled as the real thing, but the price isn't nearly as prohibitive. All you need to do is sign a few release forms and you can give one a try!'[roman type][line break]";
 	otherwise:
 		say "As I was saying, we've been worried that the game is too winnable, -ahem...[']easy['], so we have been taking measures to increase the raw difficulty. I think all of you will be excited to see what we have planned for the final boss.'[roman type][line break]";
 
@@ -134,11 +136,11 @@ To say BaseObservationFlav of (M - a slutty sister):
 	say "The slutty sister and the executives continue to watch [one of]you[or]the action[at random].".
 
 To say FightObserve of (M - a slutty sister) with (N - a monster):
-	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, its a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safeword [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
+	if the player is prone, say "[speech style of M]'[one of]Once the player is on their knees, that's when the fun REALLY begins. Teehee.'[or]After the subject's fuck or flight response kicks in, all we need to do is restrict their options a little bit, and voila, it's a porno!'[or]See, gentlemen? I told you!'[or]Of course, the pain the subject feels is real, but as you're about to see, so is the pleasure.'[or]Remember, stakeholders: The subject has a safeword [he of the player] can use to stop the stimulation at any time. Keep that in mind as you watch what happens next.'[at random][roman type][line break][moderateHumiliateReflect]";
 	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or]We care about our investors, so we dull any pain that you might experience within the situation.'[or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
-	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]Its important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]Its true [he of the player]'s resisting, but remember that safeword we told you about?[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.[end if]'[or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price...Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the center of attention right now!'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! Its like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safeword we told you about?[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.[end if]'[or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 [Determines the "video" content that is produced by the monitor when the player gets beaten in combat]
 To compute disgraceful event of (C - a video-monitor):

@@ -14,10 +14,10 @@ To say big royal-subject of (M - a robot):
 	say "Automaton".
 
 To compute (S - a spike bra) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute (S - a striped top) damaging (M - a robot):
-	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! It must be immune.".
+	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute kneeling reaction of (M - a robot):
 	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
@@ -79,7 +79,7 @@ To say ClothesPeeReaction of (M - a robot):
 	say GroundPeeReaction of M.
 
 To say DiaperReaction of (M - a robot):
-	say "[BigNameDesc of M][']s blank metal expression does not change, so it's hard to gauge whether it saw or understood what you just did in front of it.".
+	say "[BigNameDesc of M][']s blank metal expression does not change, so it's hard to gauge whether [he of M] saw or understood what you just did in front of [him of M].".
 
 To say BecomesAggressive of (M - a robot):
 	say "[BigNameDesc of M][']s eyes turn red![line break][speech style of M]'[one of]CHOOSING PUNISHMENT ROUTINE.'[or]EXECUTING [if the player is upright]COMBAT.EXE[otherwise]PUNISHMENT.BAT[end if].'[in random order][roman type][line break]".
@@ -193,7 +193,7 @@ To say DiaperChangeStart of (M - a robot):
 	say "[BigNameDesc of M] holds you still in mid-air with one strong arm.".
 
 To say DiaperSpace of (M - a robot):
-	say "its chest compartment".
+	say "[his of M] chest compartment".
 
 To say DiaperDonateComment of (M - a robot):
 	say "[speech style of M]'DIAPER TRAINING ROUTINE INITIATED. SUBJECT MUST WEAR DIAPERS UNTIL TRAINING ROUTINE ENDS OR FACE CONSEQUENCES.'[roman type][line break]".
@@ -226,7 +226,7 @@ To compute unfriendly dismissal of (M - a robot):
 Section 1 Damage
 
 To say CombatProvokedReaction of (M - a robot):
-	say "Its eyes turn red! Uh-oh...";
+	say "[big his of M] eyes turn red! Uh-oh...";
 	now M is unleashed;
 	anger M;
 	if M is robobellboy, now the target-room of M is nearest patron.

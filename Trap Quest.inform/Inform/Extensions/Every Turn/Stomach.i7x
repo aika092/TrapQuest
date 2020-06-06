@@ -66,31 +66,37 @@ digestion-timer is a number that varies.
 
 [!<DecideWhichNumberIsStomachPeriod>+
 
-Time in between stomach digesting things and the checks for whether the player needs to expel an enema.
+Time in between stomach digesting things and the checks for whether the player needs to go number two.
 
 +!]
 To decide which number is stomach-period:
 	if the player is in a predicament room, decide on 30; [Happens much more frequently in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
-	let T be 25;
-	if the player is not overly full, now T is T * 2;
+	let T be 12;
+	if the player is not overly full, now T is T * 2; [24]
 	let R be the number of worn respiration-enhancing wearthings;
-	if R is 0, now T is T * 2;
-	if R < 2, now T is T * 2;
-	if digestion-timer <= 0, now T is T * 2;
+	if R is 0, now T is T * 2; [48]
+	if R < 2, now T is T * 2; [96]
+	if digestion-timer <= 0, now T is T * 2; [192]
 	decide on T.
 
 [!<DecideWhichNumberIsBladderPeriod>+
 
-Time in between bladder increases and checks for whether the player wets themselves
+Time in between bladder increases
 
 +!]
 To decide which number is bladder-period:
-	decide on 35.
+	if the player is in a predicament room, decide on 23; [Happens much more frequently in the predicament world]
+	if the player is in School34 and ex-princess is in the location of the player, decide on 23;
+	let T be 8;
+	if the delayed bladder of the player < 5, now T is T * 2; [16]
+	let R be the number of worn respiration-enhancing wearthings;
+	if R is 0, now T is T * 2; [32]
+	if R < 2, now T is T * 2; [64]
+	if digestion-timer <= 0, now T is T * 2; [128]
+	decide on T.
 
-Definition: a wearthing (called C) is respiration-enhancing: [Done so that we can include tattoos]
-	if C is respiration clothing, decide yes;
-	decide no.
+Definition: a wearthing is respiration-enhancing if it is respiration clothing. [Done so that we can include tattoos]
 
 [!<DecideWhichNumberIsFoodPeriod>+
 
@@ -122,8 +128,7 @@ An all time based rule (this is the compute stomach rule):
 				otherwise if cold milky > the milk taste addiction of the player * cold milky addiction limit and cold milky - time-seconds <= the milk taste addiction of the player * cold milky addiction limit:
 					say "[bold type]Your mind and body is now slowly getting used to not receiving regular helpings of [milk]. [roman type]Keep it up and your body's addiction will continue to lower.";
 		[say "Stomach time check: remainder after dividing [time-earnings] by [period] is [remainder after dividing time-earnings by Period]. Comparing it to round time of [time-seconds].";]
-		if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5:
-			compute hunger and thirst;
+		if the remainder after dividing time-earnings by stomach-period < time-seconds and the latex-transformation of the player < 5 and the player is not in Iron Maiden, compute hunger and thirst; [Iron Maiden triggers compute soiling every turn]
 		unless current-predicament is team-quiz-predicament and the questionFails of team-quiz-predicament < 2, compute bladder growth.
 
 To compute hunger and thirst:
@@ -167,19 +172,22 @@ To compute hunger and thirst:
 				say "Cool water squirts into your mouth, which you have no choice but to swallow. [if the semen taste addiction of the player > 13][line break][variable custom style]Aww, it was just water. I was hoping for [semen]![otherwise if the semen taste addiction of the player > 7][variable custom style]It's hard not to imagine that it just came in my mouth.[otherwise][line break][first custom style]Phew, just water. That feels much better![end if][roman type][line break]";
 				StomachUp 1.
 
+To decide which number is bladder-difficulty: [The higher this number (i.e. the closer to zero), the more likely it is that the player will have an accident at any point in the game.]
+	decide on -20.
+
 To compute bladder growth:
 	let I be bladder-risky-level;
 	let B be bladder-bursting-level; [difference between bladder and risky level]
 	let resting-wetter be 0;
-	if resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 1;
-	if B >= 0 or resting-wetter is 1:
-		if resting-wetter is 1 and B < 3, now B is 3; [bed wetters always have a high chance of wetting while resting]
-		[let R be (a random number between -9 and B) + (a random number between -9 and B); [If B is 0 then 1% chance of wetting each turn; If B is 1 then 5% chance; If B is 2 then 10.4% chance; if B is 3 then 16.6% chance; if B is 4 then 23% chance; if B is 5 then 29.3% chance; if B is 6 then 35.5% chance]]
-		let R be (a random number between -14 and B) + (a random number between -14 and B); [If B is 0 then 0.4% chance of wetting each turn; If B is 1 then 2% chance; If B is 2.3 then 5.2% chance; if B is 3 then 8.6% chance; if B is 4 then 12.5% chance; if B is 5 then 16.5% chance; if B is 6 then 20.6% chance]
-		if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter is 1 and B is 3]magic bed wetting effect ([B])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG(-14 ~ [B]) + RNG(-14 ~ [B]) = [R] | positive number[roman type][line break]";
-		if R >= 0:
+	if resting is 1 and (there is a worn bed wetting clothing or bed-wetter tattoo is worn) and the bladder of the player > 2, now resting-wetter is 3;
+	if the player is in Iron Maiden, now resting-wetter is 5;
+	if B >= 0 or resting-wetter > 0:
+		if resting-wetter > 0 and B < resting-wetter, now B is resting-wetter; [bed wetters always have a high chance of wetting while resting]
+		let R be (a random number between bladder-difficulty and B) + (a random number between bladder-difficulty and B);
+		if debuginfo > 1, say "[input-style]Automatic wetting check: [if resting-wetter > 0 and B is resting-wetter]magic bed wetting effect ([resting-wetter])[otherwise]bladder ([bladder of the player]) - continence rating ([I]) = [B][end if] ---> RNG([bladder-difficulty] ~ [B]) + RNG([bladder-difficulty] ~ [B]) = [R] | positive number[roman type][line break]";
+		if R > 0:
 			now delayed urination is 1;
-		otherwise if the player is bursting and (R is -1 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
+		otherwise if the player is bursting and (R is 0 or the remainder after dividing time-earnings by 120 < time-seconds): [Once every now and then we reward the player for holding it while it's risky]
 			progress quest of bursting-quest;
 	if xavier-throat-link is 1 and the delayed bladder of the player > 0:
 		bladderup (1 + xavier-belt-link) * the delayed bladder of the player;
@@ -240,8 +248,11 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is urine averse:
-	if the player is an adult baby, decide no;
-	if diaper lover >= 1 and the diaper addiction of the player < 10 and the player is not broken, decide yes;
+	if the player is an adult baby or the player is broken, decide no;
+	if watersports fetish is 1:
+		if the urine taste addiction of the player < 4, decide yes;
+	otherwise if diaper lover >= 1 and the diaper addiction of the player < 10:
+		decide yes;
 	decide no.
 
 [!<ClothingIsUrineSoaked>+

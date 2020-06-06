@@ -109,6 +109,7 @@ REQUIRES COMMENTING
 
 +!]
 To FatArmsDown (X - a number):
+	if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 	while X > 0:
 		if the flesh volume of arms > 0, decrease the flesh volume of arms by 1;
 		decrease X by 1.
@@ -216,6 +217,12 @@ This is the update compulsory arm uses rule:
 
 This is the update optional arm uses rule:
 	if realisticArms is 1:
+		if the player is prone:
+			let N be 2 - the number of entries in armUses of arms;
+			if N > 0:
+				say "[one of][bold type]You [if the player is not shameless]can't shield your appearance with your arms because you [end if]have to use [if N is 1]your arm[otherwise]both of your arms[end if] to keep yourself on your hands and knees.[roman type][line break][or][stopping]";
+				while the number of entries in the armUses of arms < 2:
+					add arms to the armUses of arms;
 		repeat with C running through carried things:
 			if the carriedArmsRequired of C > 0:
 				repeat with N running from 1 to the carriedArmsRequired of C:

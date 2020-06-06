@@ -92,8 +92,11 @@ To say MonsterComment of (M - a wrestler):
 To set up (M - a wrestler):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 8;
+	now the raw difficulty of M is the difficulty-base of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the difficulty-base of (M - a wrestler):
+	decide on 8.
 
 To decide which number is the girth of (M - a wrestler):
 	let F be a random fuckhole penetrated by M;
@@ -198,6 +201,8 @@ To compute appearance assessment of (M - a wrestler):
 		otherwise:
 			say "[speech style of M]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel? [or]Hey there hot stuff. Having a good time? [stopping]I wonder if I should make it even more fun...'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 1 for M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'[if the times-met of M > 0]Hi again [honey of M], I hope you're not lost?'[otherwise]Oh my, you look new. Be careful around here... people in this fetish hotel will tend to assume you're on the same page as them, and want to do lots of kinky stuff with anyone that moves. And that includes the robots...'[end if][roman type][line break]";
 		alwayscutshow figure of wrestler interact 1 for M.
@@ -337,7 +342,7 @@ This is the wrestler feeds you to master rule:
 			say "[one of][line break][speech style of M]'I'm going to take you to meet my owner!'[roman type][line break][or][stopping]";
 			drag to Q by M;
 		if N is in Q:
-			say "[speech style of M]'[if N is matron][daddytitle of M], look I've brought a friend! She needs your special care.'[otherwise]Mistress, I've made a friend! She wants to learn how to be like me.'[end if][line break]";
+			say "[speech style of M]'[if N is matron][daddytitle of M], look I've brought a friend! [big he of the player] needs your special care.'[otherwise]Mistress, I've made a friend! [big he of the player] wants to learn how to be like me.'[end if][line break]";
 			if the player is able to speak, say "[variable custom style]'[if the bimbo of the player < 8]No I don[']t!'[otherwise]Who are you?'[end if]";
 			otherwise say "[variable custom style][if the bimbo of the player < 8]If I could speak I could tell [him of N] it's all a big mistake!![otherwise]Who is [he of N]?[end if]";
 			say "[roman type][line break]";
@@ -794,7 +799,7 @@ To compute punishment of (P - wrestler-facesit):
 	if D is messed, increase DAU by 1;
 	DiaperAddictUp DAU;
 	ruin vagina;
-	say "And now [he of M][']s picking up the pace, pushing harder on top of your head to get your face even deeper into the spherical prison of [his of M] [if D is messed]messy[otherwise]soaking[end if] diaper. [he of M] continues to speed up until [he of M] climaxes with a few sharp violent thrusts. [he of M] falls forward, [his of M] own face planted firmly into the front of your own [ShortDesc of D], [his of M] own diapered butt lifting off of your face enough for you to now be able to gasp for air. Your mind is reeling in [horror the diaper addiction of the player] over what just happened[if the player is a bit horny] and [his of M] work on your own [genitals] has left you notably more aroused then you were when this started[end if]. [BigNameDesc of M] lovingly rubs [his of M] face in your loins for a few more seconds before getting up and beginning to stagger away.[line break][speech style of M]'That was fucking amazing... but I think I need to go find a change now. Until next time, [honey of M]...'[roman type][line break]";
+	say "And now [he of M][']s picking up the pace, pushing harder on top of your head to get your face even deeper into the spherical prison of [his of M] [if D is messed]messy[otherwise]soaking[end if] diaper. [big he of M] continues to speed up until [he of M] climaxes with a few sharp violent thrusts. [big he of M] falls forward, [his of M] own face planted firmly into the front of your own [ShortDesc of D], [his of M] own diapered butt lifting off of your face enough for you to now be able to gasp for air. Your mind is reeling in [horror the diaper addiction of the player] over what just happened[if the player is a bit horny] and [his of M] work on your own [genitals] has left you notably more aroused then you were when this started[end if]. [BigNameDesc of M] lovingly rubs [his of M] face in your loins for a few more seconds before getting up and beginning to stagger away.[line break][speech style of M]'That was fucking amazing... but I think I need to go find a change now. Until next time, [honey of M]...'[roman type][line break]";
 	bore M.
 
 wrestler-romper is a diaper punishment. The priority of wrestler-romper is 3.
@@ -913,13 +918,13 @@ To watersports dominate (M - a wrestler):
 		say "[line break][speech style of M]'[one of]Yes! YES! [big please], make me your toilet![or]Fuuuck yeeesss!'[or]Toilet time!'[at random][roman type][line break] [big he of M] opens wide for the incoming stream of [urine], gargling happily as [his of M] mouth slowly fills with the frothy liquid. You let out a long sigh of relief as the flow peters out, and [he of M] swallows it all in one gulp.";
 		strongDignify;
 	otherwise if the size of penis > 8:
-		say "[speech style of M]'So... BIG...'[roman type][line break]A little bit of drool rolls out of [NameDesc of M][']s mouth as [he of M] stares at your [sexual-player-penis]. [line break][speech style of M]'[big please] make me your toilet. [big please] let me drink it...'[roman type][line break]A good samaritan as always, you tilt [his of M] head up, allowing relief to wash over your body as you empty your bladder directly into [his of M] mouth. [big he of M] holds all of it in [his of M] mouth, gargling happily before swallowing it all in a single gulp.";
+		say "[speech style of M]'So... BIG...'[roman type][line break]A little bit of drool rolls out of [NameDesc of M][']s mouth as [he of M] stares at your [sexual-player-penis]. [line break][speech style of M]'[big please] make me your toilet. [big please] let me drink it...'[roman type][line break]A good Samaritan as always, you tilt [his of M] head up, allowing relief to wash over your body as you empty your bladder directly into [his of M] mouth. [big he of M] holds all of it in [his of M] mouth, gargling happily before swallowing it all in a single gulp.";
 		strongDignify;
 	otherwise if the size of penis > 3:
 		say "[line break][speech style of M]'Looks like it's my turn to be the toilet! Don't worry, I'll swallow every drop of your [one of]urine[or]piss[or]pee[at random].'[roman type][line break] [big he of M] opens wide, playfully wiggling [his of M] eyebrows as [he of M] cups [his of M] hands under [his of M] chin. It's just not in you to deny [him of M] what [he of M] wants, and you emit a heavy sigh as you allow all your stress to flow out directly into [his of M] mouth. True to [his of M] word [he of M] swallows every drop.";
 		moderateDignify;
 	otherwise:
-		say "[line break][speech style of M]'[one of]Oh wow! I didn't even know dicks could get that small! [big please], I have to know what your piss tastes like!'[or]I never get tired of your tiny cock! Let me have another taste of that yummy piss!'[stopping][roman type][line break] [big he of M] opens [his of M] mouth wide, gesturing to [his of M] outstretched tongue with a latex-clad finger. This is too good to be true! You immediately release your hold on your bladder, allowing a shudder of relief to pass through your body as you douse [NameDesc of M] in a stream of golden [urine].  [big he of M] pushes [his of M] breasts together enticingly as [he of M] captures it in [his of M] mouth, making a show of swallowing it in one huge gulp. After [he of M]'s done, [he of M] suddenly gets up and kisses you square on the lips. Wow!";
+		say "[line break][speech style of M]'[one of]Oh wow! I didn't even know dicks could get that small! [big please], I have to know what your piss tastes like!'[or]I never get tired of your tiny cock! Let me have another taste of that yummy piss!'[stopping][roman type][line break] [big he of M] opens [his of M] mouth wide, gesturing to [his of M] outstretched tongue with a latex-clad finger. This is too good to be true! You immediately release your hold on your bladder, allowing a shudder of relief to pass through your body as you douse [NameDesc of M] in a stream of golden [urine]. [big he of M] pushes [his of M] breasts together enticingly as [he of M] captures it in [his of M] mouth, making a show of swallowing it in one huge gulp. After [he of M]'s done, [he of M] suddenly gets up and kisses you square on the lips. Wow!";
 		slightDignify;
 		UrineTasteAddictUp 1;
 	now the bladder of the player is 0;
@@ -1022,7 +1027,7 @@ To compute FriendlySexRelease of (M - a wrestler):
 		repeat with P running through patrons in the location of the player:
 			destroy P.
 
-To say FriendlySexReleaseFlav of (M - a monster):
+To say FriendlySexReleaseFlav of (M - a wrestler):
 	if M is intelligent, say FriendlySexReleaseSpeech of M;
 	say "[BigNameDesc of M] [if M is penetrating asshole]pulls out.[otherwise]crawls out from underneath you.[end if].".
 

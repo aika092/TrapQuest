@@ -75,21 +75,21 @@ a fuckhole has a number called soreness.
 This value is a running counter of how much punishment a fuckhole has recently taken. If the hole is left alone long enough to recover some soreness, this value resets to 0, but if it is allowed to exceed one half the sex addiction value for this orifice, the player will have to roll to avoid losing some mental stats. See the Orifice Soreness extension by "Player".
 
 *@!]
-a fuckhole has a number called tolerated. The tolerated of a fuckhole is usually 0.
+a fuckhole has a number called tolerated.
 
 [!<Fuckhole>@<openness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called openness. The openness of a fuckhole is usually 0.
+a fuckhole has a number called openness.
 
 [!<Fuckhole>@<realOpenness:Integer>*
 
 REQUIRES COMMENTING
 
 *@!]
-a fuckhole has a number called real openness. The real openness of a fuckhole is usually 0.
+a fuckhole has a number called real openness.
 
 [!<Fuckhole>@<previousSoreness:Integer>*
 
@@ -246,7 +246,7 @@ To check soreness fainting of (F - a fuckhole):
 				IntDown 1;
 				now the fainting reason of the player is 18;
 	otherwise if the class of the player is magical girl and M is tentacle monster:
-		say "[one of][bold type]Your magical body somehow allows your [variable F] and your [ShortDesc of belly] to comically stretch to accomodate [NameDesc of M] without breaking you.[roman type][line break][or][or][or][or][cycling]";
+		say "[one of][bold type]Your magical body somehow allows your [variable F] and your [ShortDesc of belly] to comically stretch to accommodate [NameDesc of M] without breaking you.[roman type][line break][or][or][or][or][cycling]";
 	otherwise:
 		increase sex-hurt-balance by 1;
 		if sex-hurt-balance >= 5: [Requires two ticks of sex pain (or five if they are all in the same turn - otherwise egg laying could go nuts) to trigger the PainUp function]
@@ -275,35 +275,6 @@ To potentially despair about (F - a fuckhole) sex:
 		SilentlySexAddictDown 1;
 		if F is asshole and the raw anal sex addiction of the player * 2 > the raw delicateness of the player, AnalSexAddictDown 1;
 		if F is vagina and the raw vaginal sex addiction of the player * 2 > the raw delicateness of the player, VaginalSexAddictDown 1.
-
-To trigger shameful orgasm of (F - a body part):
-	vaginally orgasm shamefully.
-
-To trigger shameful orgasm of (F - asshole):
-	anally orgasm shamefully.
-
-To trigger shameful orgasm of (F - breasts):
-	breasts orgasm shamefully.
-
-[!<ABodyPartIsOrgasming>+
-
-Determines whether a given body part is currently having an orgasm, and if so, triggers a shameful orgasm
-
-@param <BodyPart>:<F> The body part potentially having an orgasm
-@return <Boolean> If true, the body part has an orgasm. If false, it does not.
-
-!]
-Definition: a body part (called F) is orgasming:
-	if F is pushed over the edge:
-		trigger shameful orgasm of F;
-		decide yes;
-	decide no.
-
-Definition: a fuckhole (called F) is orgasming:
-	if (for deposit only tattoo is not worn or F is not vagina) and (the player is extremely horny or F is pushed over the edge):
-		trigger shameful orgasm of F;
-		decide yes;
-	decide no.
 
 [!<HealFuckholeX>+
 
@@ -554,19 +525,28 @@ Definition: yourself is crotch covered:
 Section - Image for graphics window
 
 This is the body parts get focused rule:
+	if debugmode > 1, say "list of body parts to be focused...";
 	let LB be the list of overglazed body parts;
+	if debugmode > 1, say "Semen covered parts: [LB].";
 	repeat with B running through body parts:
 		if B is not arms:
 			if realisticArms is 1 and B is listed in the armUses of arms:
+				if debugmode > 1, say "[printed name of B] is covered by an arm.";
 				add B to LB, if absent;
 			otherwise if diaper quest is 0 or the appearance of the player > the cringe appearance of the player:
 				let A be calculated-appearance-outrage-level - (calculated-appearance-outrage-level / 2);
-				if the outrage of B >= A:
+				if A > 1 and the outrage of B >= A:
+					if debugmode > 1, say "[printed name of B] has high appearance.";
 					add B to LB, if absent;
 			otherwise:
 				let C be calculated-cringe-level - (calculated-cringe-level / 2);
-				if the cringe of B >= C:
+				if C > 1 and the cringe of B >= C:
+					if debugmode > 1, say "[printed name of B] has high cringe.";
 					add B to LB, if absent;
+	if the total volume of face > 0:
+		if debugmode > 1, say "mouth has [MouthfulDesc].";
+		add face to LB, if absent;
+	if debugmode > 1, say "List of body parts to focus is [LB].";
 	repeat with B running through LB:
 		focus-consider B.
 The body parts get focused rule is listed in the focus finding rules.
@@ -586,5 +566,19 @@ To construct normal buttons for (T - a body part):
 				now the ButtonImage entry is examine-image of C;
 				now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of C]";
 				now the ButtonColour entry is lightModeFullGreen.
+
+To construct unique buttons for (T - face):
+	if the total volume of face > 0 and ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of SpitButton;
+		now the ButtonCommand entry is "spit";
+		now the ButtonColour entry is lightModeFullGreen;
+		if there is a thing penetrating face, now the ButtonColour entry is lightModeFullRed; [turn red - player can't spit]
+		if ButtonTableFull is 0:
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is Figure of DrinkButton;
+			now the ButtonCommand entry is "swallow";
+			now the ButtonColour entry is lightModeFullGreen;
+			if there is a throater thing penetrating face, now the ButtonColour entry is lightModeFullRed. [turn red - player can't swallow]
 
 Body Parts Definitions ends here.

@@ -140,7 +140,7 @@ To say MonsterOfferRejectFlav of (M - a demoness) to (T - a heels):
 	say "[speech style of M]'Do I look like I have any need for another pair of heels?'[roman type][line break]".
 
 To decide which object is the unique-upgrade-target of (C - a heels):
-	if there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
+	if diaper quest is 0 and there is a worn demonic wearthing and tongue-heels is off-stage, decide on tongue-heels;
 	if diaper quest is 1 and the heel-height of C < 2, decide on a random off-stage mary janes;
 	if there is a worn diaper, decide on a random off-stage baby booties;
 	if there is a currently visible exercise themed wearthing and the heel-height of C < (2 + diaper quest), decide on a random off-stage white rollerskates.
@@ -159,10 +159,13 @@ To potentially transform (C - a heels):
 	otherwise:
 		compute failed transform of C.
 
-To compute (C - a heels) unique inheriting from (D - a heels):
-	if the heel-height of D > the heel-height of C, now the heel-height of C is the heel-height of D.
-
-To compute (C - a shoes) unique inheriting from (D - a heels):
+To compute (C - a shoes) unique inheriting from (D - a clothing):
 	if the quest of D is heel-walking-quest, now the quest of C is kicking-quest. [We can't have the heel walking quest if they are no longer heels]
+
+To compute (C - a heels) unique inheriting from (D - a clothing):
+	if the heel-height of C < 2, now the heel-height of C is 2;
+	if D is heels:
+		if the heel-height of D > the heel-height of C, now the heel-height of C is the heel-height of D;
+
 
 Heels Framework ends here.

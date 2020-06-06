@@ -86,7 +86,7 @@ Carry out going when pink-spraybottle is worn:
 
 To compute (S - pink-spraybottle) breaking:
 	if a random number between 1 and the dexterity of the player < 5 or (a random number between 1 and the dexterity of the player < 8 and unlucky is 1):[There is a chance it doesn't break as long as it isn't cursed.]
-		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Tee hee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
+		say "You can't hold onto your spraybottle and it falls out of your hands, shattering the instant it touches the floor![line break][if the bimbo of the player < 10][line break][variable custom style][one of]Shit, something tells me I'm going to be in trouble with someone for this...[or]No, no, not again![stopping][otherwise][line break][second custom style][one of]Oopsie! I'm such a klutz sometimes![or]Teehee, it happened again! I guess I should go back to the mechanic for my [']punishment[']![stopping][end if][roman type][line break]";
 		now S is cloth;
 		now the charge of S is 0;
 		unless there is a worn cursed maid headdress, now S is cursed;
@@ -165,8 +165,7 @@ To compute spraybottle punishment:
 			otherwise:
 				say "[if the urine taste addiction of the player < 8]You shriek[otherwise]You smile and open your mouth wide[end if] as it cascades over you!";
 				if the urine taste addiction of the player >= 8:
-					StomachUp 2;
-					UrineTasteAddictUp 1;
+					FaceFill urine by 2;
 				squirt urine on face by 40;
 		say "[variable custom style][if the player is not a pervert]Fuck! This so unfair![otherwise if the player is not disgraced]Is it really my fault I'm such a terrible maid?[otherwise]I'm a stupid ditz, I deserve to be punished like this...[end if][roman type][line break]".
 

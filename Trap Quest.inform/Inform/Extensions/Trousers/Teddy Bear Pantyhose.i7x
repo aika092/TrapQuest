@@ -21,5 +21,6 @@ Definition: a teddy bear pantyhose is end of transformation chain: decide yes.
 Definition: a teddy bear pantyhose is babywear: decide yes.
 Definition: a teddy bear pantyhose is bear themed: decide yes.
 Definition: a teddy bear pantyhose is red themed: decide yes.
+Definition: a teddy bear pantyhose is potentially erection concealing: decide yes. [non-tight loins conceal erections]
 
 Teddy Bear Pantyhose ends here.

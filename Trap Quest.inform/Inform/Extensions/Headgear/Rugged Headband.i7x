@@ -83,7 +83,7 @@ To uniquely set up (C - rugged-headband):
 	now the quest of C is domination-quest.
 
 To say QuestFlav of (Q - domination-quest):
-	say "You sense that it wants you to take the lead role during sex.".
+	say "You sense that it wants you to dominate defeated enemies.".
 
 To say QuestTitle of (Q - domination-quest):
 	say " (domination quest)".

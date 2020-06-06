@@ -1,8 +1,13 @@
 Eggs by Collectibles begins here.
 
 An egg is a kind of collectible. An egg can be laid. An egg is usually not laid.
+An egg can be shuddering. [Has the player seen it shudder?]
 
 Definition: an egg is insertable: decide yes.
+
+To construct normal icons for (T - an egg):
+	now IconTarget is T;
+	if T is shuddering, add Figure of HatchingIcon to the list of Icons.
 
 To compute toyInsertion of (S - an egg) into (F - a fuckhole):
 	let N be 1;
@@ -77,7 +82,7 @@ To compute toyInsertion of (S - an egg) into (F - a fuckhole):
 An egg has a number called hatching.
 
 Check attacking egg:
-	if the player is immobile, say "You're a bit busy!" instead;
+	if the player is immobile or there is a thing wrangling the player, say "You're a bit busy!" instead;
 	allocate 1 seconds;
 	say "The shell is too strong! You can't damage it at all. If you want to get rid of it, perhaps you could [bold type]flush it down a toilet[roman type][line break]" instead.
 Check slapping egg:
@@ -99,7 +104,7 @@ Check dropping egg:
 			compute flushing of the noun instead.
 
 Report examining egg when egg laying fetish is 1:
-	say "The strong shell can't be destroy by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
+	say "[if the noun is shuddering][bold type]You have seen it move and shudder, suggesting it has been successfully fertilised and incubated. [roman type][end if]The strong shell can't be destroy by brute force, but perhaps you could [bold type]drop[roman type] it down the toilet.".
 
 To compute flushing of (E - a thing):
 	allocate 2 seconds;
@@ -108,6 +113,7 @@ To compute flushing of (E - a thing):
 
 To uniquely destroy (E - an egg):
 	now the hatching of E is 0;
+	now E is not shuddering;
 	now E is not laid.
 
 A later time based rule (this is the hatchtime rule):
@@ -118,7 +124,9 @@ A later time based rule (this is the hatchtime rule):
 To compute hatchtime of (E - an egg):
 	increase the hatching of E by a random number between 1 and 2;
 	if E is held or E is in the location of the player:
-		if the remainder after dividing the hatching of E by 30 is 0, say "[BigNameDesc of E] shudders[one of]. Is there something alive inside?![or].[stopping]";
+		if the remainder after dividing the hatching of E by 30 is 0:
+			now E is shuddering;
+			say "[BigNameDesc of E] shudders[one of]. Is there something alive inside?![or].[stopping]";
 	if the hatching of E > 130 and E is regional:
 		compute hatch of E.
 
@@ -276,7 +284,7 @@ To larvaShortcutAssign (C - a larva):
 		increase larvaShortcutCount by 1.
 
 Check attacking larva:
-	if the player is immobile, say "You're a bit busy!" instead;
+	if the player is immobile or there is a thing wrangling the player, say "You're a bit busy!" instead;
 	allocate 2 seconds;
 	destroy the noun;
 	say "You squish [NameDesc of the noun]. [big his of the noun] body disappears." instead.

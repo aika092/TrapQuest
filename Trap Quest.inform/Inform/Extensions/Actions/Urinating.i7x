@@ -20,7 +20,7 @@ Has the player been noticed to be urinating into their diaper? Should be set to 
 
 Set to false when the player automatically wets from messing - no need to have the NPC react to both the mess and the urination separately.
 
-Set back to true if the player is far-gone enough to declare that they're wetting themselves out loud - this does provoke an extra reaction from the NPC.
+Set to true if the player is far-gone enough to declare that they're wetting themselves out loud - this does provoke an extra reaction from the NPC.
 
 *!]
 diaper-reaction-said is initially true.
@@ -42,12 +42,6 @@ overflowed is a number that varies.
 [Is the player peeing into a body of water?]
 water-peeing is initially false.
 
-[!<Clothing>@<temporarilyDisplaced:Boolean>*
-
-REQUIRES COMMENTING
-
-*!]
-Clothing can be temporarily-displaced.
 
 [!<toilet:Backdrop>*
 
@@ -154,7 +148,7 @@ Definition: yourself is potentially able to use a urinal:
 REQUIRES COMMENTING
 
 +!]
-Definition: yourself is able to use the toilet past their diaper if toilet allowance is 0 and diaper lover > 0 and (the player is able to use a toilet or the player is able to use a urinal).
+Definition: yourself is able to use the toilet past their diaper if toilet allowance is 0 and diaper lover > 0 and the player is not in a predicament room and (the player is able to use a toilet or the player is able to use a urinal).
 
 [!<ReportWhenThePlayerIsAbleToUseTheToiletPastTheirDiaper>+
 
@@ -226,12 +220,15 @@ Check drinking diaper:
 
 [!<CheckUrinating>+
 
-REQUIRES COMMENTING
+Delayed urination:
+0 - Purposeful
+1 - Accidental
+2 - Automatic, DOESN'T count as failing to hold it in. e.g. wetting oneself when expelling belly or orgasming
 
 +!]
 Check urinating:
 	if the bladder of the player is 0 and the number of worn prostate massager plugs is 0:
-		if delayed urination is not 1, say "You don't feel the need." instead;
+		if delayed urination is 0, say "You don't feel the need." instead;
 		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0; [We've accidentally forced the player to pee when they can't, oops! Oh well, let's not break the game.]
 		say "[one of]Player was forced to urinate when they had nothing in their bladder, please report the bug to Aika![or][stopping]";
@@ -239,7 +236,7 @@ Check urinating:
 	[if diaper lover is 0 and (the player is not bursting or the bladder of the player is 0):
 		if delayed urination is 0, say "You don't feel the need." instead;
 		do nothing instead;]
-	if the player is incontinent and delayed urination is not 1, say "You are fully incontinent; you can't control this at all any more! Pushing just does nothing." instead;
+	if the player is incontinent and delayed urination is 0, say "You are fully incontinent; you can't control this at all any more! Pushing just does nothing." instead;
 	if the latex-transformation of the player > 4, say "[if delayed urination is 0]You can't pee, you're a sex doll![end if]" instead;
 	[if the player is not bursting and delayed urination is 0, say "You don't feel the need." instead;]
 	if delayed urination is 0 and (the player is able to use a toilet or the player is able to use a urinal):
@@ -258,6 +255,7 @@ Check urinating:
 					if the player is bimbo consenting, say "";
 					otherwise say "Then you should probably get it out of the way first." instead;
 			otherwise if P is clothing:
+				now the noun is P;
 				if the player is able to displace:
 					say "Do you want to get your clothes out of the way first? ";
 					if the player is bimbo consenting:
@@ -357,7 +355,7 @@ To compute toilet use:
 		say "You squeeze your bladder but nothing comes out!";
 	if the bladder of the player > 0 and a random number between (1 - the incontinence of the player) and 6 < the bladder of the player: [This happens if the player uses the toilet with undisplacable pee covering clothing, in order to empty their belly]
 		say "As you push the contents of your belly out, you can't help but also release hold on your bladder!";
-		now delayed urination is 1;
+		now delayed urination is 2;
 		try urinating;
 	otherwise if toiletJustUsed is true:
 		if there is intelligent monster in the location of the player:
@@ -365,9 +363,9 @@ To compute toilet use:
 				compute toilet reaction of M;
 		otherwise:
 			dignify 350;
-		if incontinence > 0:
+		[if incontinence > 0:
 			decrease incontinence by 1;
-			say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";
+			say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";]
 		progress quest of careful-peeing-quest;
 	if the player is in Dungeon11:
 		let R be a random number from 1 to 5;
@@ -433,9 +431,9 @@ To compute urinal use:
 		now the bladder of the player is 0;
 		repeat with M running through reactive monsters:
 			compute toilet reaction of M;
-		if incontinence > 0:
+		[if incontinence > 0:
 			decrease incontinence by 1;
-			say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";
+			say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";]
 		progress quest of careful-peeing-quest;
 	otherwise:
 		say "Nothing comes out!".
@@ -503,9 +501,9 @@ To start urination:
 			say "Get into the water (people won't be able to see you peeing but you'll get wet)? ";
 			if the player is consenting:
 				say "You walk past the edge, wading into the water until you can discreetly [urinate]. ";
-				if incontinence > 0:
+				[if incontinence > 0:
 					decrease incontinence by 1;
-					say "You feel as if you've regained some control over your bladder!";
+					say "You feel as if you've regained some control over your bladder!";]
 				progress quest of careful-peeing-quest;
 				[say PeeReaction 0;] [Removed because the idea is that the player is being stealthy]
 				now water-peeing is true;
@@ -517,11 +515,16 @@ To start urination:
 			now a random hotel bed in the location of the player is soggy;
 			say PeeReaction 1;
 		otherwise if gloryhole is grabbing the player and gloryhole is blowjob portal:
-			say "[if the urine taste addiction of the player > 11 and delayed urination is not 1]With an eager grin you[otherwise]You[end if] [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] goes straight into your own mouth at full force!";
-			UrineTasteAddictUp 1;
-			StomachUp 3;
+			say "[if the urine taste addiction of the player > 11 and delayed urination is 0]With an eager grin you[otherwise]You[end if] [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] goes straight into your own mouth at full force!";
+			FaceFill urine by 3;
 		otherwise if gloryhole is grabbing the player and gloryhole is normal glory hole:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. You are [one of][or]UN[stopping]surprised to find that your new anonymous oral servant doesn't pull away!";
+		otherwise if diaper quest is 1 and the player is in Iron Maiden:
+			say "Your [urine] soaks into the thick Iron Maiden padding pressed against your crotch.";
+			DiaperAddictUp 1;
+			say "The spell of your [urine] in the cramped room floods your nostrils.";
+			if watersports fetish is 1, UrineTasteAddictUp 2;
+			otherwise SexAddictUp 1;
 		otherwise:
 			say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. Your [urine] [if the player is female and the player is dildo stuck]trickles around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flows to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			say PeeReaction 1;
@@ -529,7 +532,7 @@ To start urination:
 				UrinePuddleUp 6;
 			otherwise:
 				UrinePuddleUp the bladder of the player;
-				check piss maidification;
+				check urine maidification;
 	otherwise:
 		say "You [if delayed urination is 1]involuntarily [end if]release your hold on your bladder. ";
 		compute pee protected urination;
@@ -552,18 +555,20 @@ To start urination:
 		if K is diaper and K is total protection and overflowed is 0, say PeeReaction 2;
 		otherwise say PeeReaction 3;
 	[Process punishments for involuntary wetting]
-	if diaper lover >= 1 and delayed urination is 1, increase incontinence by 1;
+	if diaper lover >= 1 and delayed urination is 1 and incontinence < the max-incontinence of the player and the diaper addiction of the player > incontinence + 10 and there is a worn total protection diaper:
+		increase incontinence by 1;
+		say "[one of]You can't help but notice that losing control and wetting your diaper feels weirdly nice and comforting. [or][stopping][bold type]You feel your bladder weakening[one of][or] further[stopping], in support of your growing addiction to and dependence for diapers.[roman type][line break]";
 	if delayed urination is 1:
 		now wetting-valued is -1;
 		if diaper bonus > 0, compute wetting failure;
 		progress quest of adult-baby-quest;
 		progress quest of bursting-quest;
-	otherwise if wetting-valued >= 0 and wetting-valued <= 2 and diaper lover >= 1:
+	otherwise if delayed urination is 0 and wetting-valued >= 0 and wetting-valued <= 2 and diaper lover >= 1:
 		increase wetting-valued by 1;
 		if wetting-valued is 3, diaperreward;
-	if delayed urination is 0 and diaper lover >= 1:
+	if delayed urination is 0 and diaper lover >= 1 and diaper quest is 0:
 		if there is a worn total protection diaper and a random number between 7 and 12 >= the diaper addiction of the player:
-			if diaper quest is 0, DiaperAddictUp 1;
+			DiaperAddictUp 1;
 		otherwise if the number of worn diapers is 0 and a random number between 7 and 12 <= the diaper addiction of the player:
 			DiaperAddictDown 1;
 	[Check if we need to continue urination]
@@ -620,21 +625,16 @@ To compute pee protected urination:
 						say urinationoverflow of K;
 						now overflowed is 1;
 						if diaper quest is 1, progress quest of priestess-service-quest;
-						if diaper lover >= 1:
+						if diaper lover >= 1 and delayed urination is 0:
 							let H be a random off-stage victorian-baby-bonnet;
 							if H is actually summonable:
-								say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet!";
+								say "[bold type]As your [ShortDesc of K] overflows, you feel your head suddenly surrounded by soft silky fabric. You're now wearing a large pink baby's bonnet![roman type][line break]";
 								summon H cursed;
 						now K is sK;
 					otherwise if K is diaper-stack and diaper quest is 1 and X is N:
 						let dK be entry 1 in the list of stacked diapers;
 						if the total-soak of dK >= the soak-limit of dK, progress quest of priestess-service-quest; [only the innermost diaper needs to be full]
-				now flav-said is 1;
-		if oldSoak is 0 and K is worn diaper and the urine-soak of K > 0:
-			if the class of the player is princess and the player is not in a predicament room and royal scepter is actually summonable:
-				summon royal scepter;
-				now the charge of royal scepter is 25;
-				say "[bold type]Suddenly a [MediumDesc of royal scepter] appears in your hand! The sphere at the top shines brightly! It feels like it has some magic power that will decay over time.[roman type][line break]".
+				now flav-said is 1.
 
 [!<ComputeUrination>+
 
@@ -660,17 +660,18 @@ To compute urination:
 		otherwise if the player is able to use a body of water:
 			say "You continue to pee into the water. ";
 		otherwise if gloryhole is grabbing the player and gloryhole is blowjob portal:
-			UrineTasteAddictUp 1;
-			StomachUp 3;
+			FaceFill urine by 3;
 		otherwise if gloryhole is grabbing the player and gloryhole is normal glory hole:
 			do nothing;
+		otherwise if diaper quest is 1 and the player is in Iron Maiden:
+			say "Your [urine] continues to soak into the thick Iron Maiden padding.";
 		otherwise:
 			say "Your [urine] continues to [if the player is female and the player is dildo stuck]trickle around the dildo and down your thighs.[otherwise if playerRegion is Dungeon]flow to the ground, creating a puddle on the floor.[otherwise]flows to the ground.[end if]";
 			if the bladder of the player > 6:
 				UrinePuddleUp 6;
 			otherwise:
 				UrinePuddleUp the bladder of the player;
-				check piss maidification;
+				check urine maidification;
 	otherwise:
 		let old-overflow be overflowed;
 		compute pee protected urination;
@@ -742,13 +743,13 @@ To end urination:
 	if TP is training pants and there is a worn T-shirt:
 		let D be a random plentiful eligible diaper;
 		if D is diaper, transform TP into D;
-	if there is worn temporarily-displaced clothing:
-		say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
-	repeat with C running through temporarily-displaced clothing:
-		if C is worn:
-			if C is crotch-unzipped, ZipUp C;
-			otherwise Replace C;
-		now C is not temporarily-displaced.
+	unless gloryhole is grabbing the player:
+		if there is worn temporarily-displaced clothing, say "You replace your [ShortDesc of list of worn temporarily-displaced clothing].";
+		repeat with C running through temporarily-displaced clothing:
+			if C is worn:
+				if C is crotch-unzipped, ZipUp C;
+				otherwise Replace C;
+			now C is not temporarily-displaced.
 
 Understand "pee", "piss", "urinate", "wee" as urinating.
 
@@ -768,20 +769,23 @@ REQUIRES COMMENTING
 To say urinationoverflow of (K - a diaper):
 	say "But your poor diaper is so completely full for your [urine] that it can't hold any more! You feel the diaper overflow through the leg holes.".
 
-To check piss maidification:
+To check (L - a liquid-object) maidification:
 	unless the player is in a predicament room:
 		if the class of the player is maid:
-			say "[bold type]Your [ShortDesc of a random worn maid headdress] causes you to feel deep shame at causing messes rather than cleaning them![roman type][line break]";
-			if watersports fetish is 1 and bukkake fetish is 1 and a random number between 1 and 2 is 1:
-				say "A bucket full of [urine] appears above your head, and tips over, dousing you in the warm golden stuff.";
-				Squirt urine on face by 40;
-			otherwise if watersports fetish is 1:
+			say "[bold type]Your [ShortDesc of a random worn headgear] causes you to feel deep shame at causing messes rather than cleaning them![roman type][line break]";
+			if (L is not urine or watersports fetish is 1) and bukkake fetish is 1 and a random number between 1 and 2 is 1:
+				say "A bucket full of [L] appears above your head, and tips over, dousing you in the warm stuff.";
+				Squirt L on face by 40;
+			otherwise if L is not urine or watersports fetish is 1:
 				let N be the number of carried vessels;
 				if N > 0:
-					say "Your [if N is 1][ShortDesc of a random carried vessel] is[otherwise]drinking vessels are all[end if] filled to the brim with [urine]!";
+					say "Your [if N is 1][ShortDesc of a random carried vessel] is[otherwise]drinking vessels are all[end if] filled to the brim with [L]!";
 					repeat with V running through carried vessels:
-						now the fill-colour of V is golden;
-						now the doses of V is the max-doses of V;
+						if L is semen, now the fill-colour of V is creamy;
+						if L is urine, now the fill-colour of V is golden;
+						if L is milk, now the fill-colour of V is white;
+						if L is murkwater, now the fill-colour of V is murky;
+						DoseFill V;
 				compute service spill punishment;
 			otherwise if the player is not incontinent:
 				say "You feel a twinge from behind your bladder, as if it is punishing you by making you gradually more incontinent...";
@@ -812,14 +816,16 @@ Definition: yourself is incontinent:
 	if the incontinence of the player >= 8, decide yes;
 	decide no.
 
+[The level of bladder at which the player has a chance to just spontaneously wet themselves]
 To decide which number is bladder-risky-level:
 	let N be 10;
 	decrease N by the incontinence of the player;
-	decrease N by the womb volume of vagina / 10;
+	decrease N by the womb volume of vagina / 10; [pregnancy makes you need to go more]
 	increase N by yellow theme bonus;
 	if N < 4, decide on 4;
 	decide on N.
 
+[As bladder rises further above bladder-risky-level, the player is more likely to wet themselves each turn]
 To decide which number is bladder-bursting-level:
 	decide on the bladder of the player - bladder-risky-level.
 
@@ -840,9 +846,9 @@ Can the player tell they need to pee?
 
 +!]
 Definition: yourself is bursting:
-	if the player is fake bursting, decide yes;
 	if the player is incontinent or failed potty training tattoo is worn, decide no;
-	if the player is desperate to pee and the bladder of the player > 5, decide yes;
+	if the player is fake bursting, decide yes;
+	if the player is desperate to pee and the bladder of the player >= 6, decide yes;
 	decide no.
 
 [!<YourselfIsFakeBursting>+
@@ -860,13 +866,13 @@ Is the player at risk of wetting themselves (and aware)?
 
 +!]
 Definition: yourself is really bursting:
-	if the player is bursting and bladder-bursting-level >= 0, decide yes;
+	if the player is bursting and bladder-bursting-level > 0, decide yes;
 	decide no.
 
 To decide which number is burstingColour:
 	[unless the player is bursting, decide on 16777215;] [white] [unnecessary because the only time this is used we have already checked that the player is bursting]
-	if the player is fake bursting, decide on lightModeFullRed; [red]
 	if failed potty training tattoo is worn, decide on 16777215; [white]
+	if the player is fake bursting, decide on lightModeFullRed; [red]
 	let R-component be 255;
 	let G-component be 0;
 	let B-component be 0;
@@ -901,7 +907,7 @@ Pee Reaction Numbers:
 
 [!<SayPeeReaction0>+
 
-REQUIRES COMMENTING
+Non-humiliating urination into toilet or body of water
 
 +!]
 To say PeeReaction (N - 0):
@@ -929,7 +935,7 @@ To say ToiletPeeReaction of (M - a monster):
 
 [!<SayPeeReaction1>+
 
-REQUIRES COMMENTING
+Urination onto ground
 
 +!]
 To say PeeReaction (N - 1):
@@ -1019,7 +1025,7 @@ To say GroundPeeSexReaction of (M - a monster):
 
 [!<SayPeeRection2>+
 
-REQUIRES COMMENTING
+Urination into diaper
 
 +!]
 To say PeeReaction (N - 2):
@@ -1031,67 +1037,69 @@ To say PeeReaction (N - 2):
 			repeat with Z running through reactive monsters:
 				say DiaperReaction of Z;
 	otherwise if delayed urination is 0:
-		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]I guess if I'm wearing it, I might as well use it.[or]This isn't sexy, but I guess it's practical.[or]I will not be telling my friends this part of the story when I get home.[in random order][otherwise if the diaper addiction of the player < 12]You put your hands on the front of the diaper so that you can feel the warmth spread outwards. [line break][variable custom style][one of]Why does it feel so good?[or]The warmth is really nice against my skin...[or]Diapers are pretty cool, I guess.[or]That was so much easier than having to find a loo![in random order][otherwise]As you pee, your eyes roll to the back of your head in pleasure. [line break][second custom style][one of]I love my diaper so much![or]It feels so good![or]I'm such a good girl![or]Mmmmm, yes!!![in random order][end if][roman type][line break]";
+		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]I guess if I'm wearing it, I might as well use it.[or]This isn't sexy, but I guess it's practical.[or]I will not be telling my friends this part of the story when I get home.[in random order][otherwise if the diaper addiction of the player < 12]You put your hands on the front of the diaper so that you can feel the warmth spread outwards. [line break][variable custom style][one of]Why does it feel so good?[or]The warmth is really nice against my skin...[or]Diapers are pretty cool, I guess.[or]That was so much easier than having to find a loo![in random order][otherwise]As you pee, your eyes roll to the back of your head in pleasure. [line break][second custom style][one of]I love my diaper so much![or]It feels so good![or]I'm such a good [boy of the player]![or]Mmmmm, yes!!![in random order][end if][roman type][line break]";
 	otherwise:
-		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]Oh shit! Well I guess I'm glad I was wearing this thing.[or]This isn't sexy! But, I guess it is necessary, evidently...[or]Crap! I guess I really do need diapers right now.[in random order][otherwise if the diaper addiction of the player < 12][line break][variable custom style][one of]This diaper is coming in really useful![or]I could get used to this feeling.[or]I don't even need to pay attention to my bladder![or]That was so much easier than having to find a loo![in random order][otherwise][line break][second custom style][one of]*giggle*, that was fun![or]Again again![or]I hardly felt that one. Maybe soon I won't feel myself going at all![or]Ooh I just LOVE that feeling![in random order][end if][roman type][line break]";
+		say "[if the diaper addiction of the player < 7][line break][first custom style][one of]Oh shit! Well I guess I'm glad I was wearing this thing.[or]This isn't sexy! But, I guess it is necessary, evidently...[or]Crap! I guess I really do need diapers right now.[in random order][otherwise if the diaper addiction of the player < 12][line break][variable custom style][one of]This diaper is coming in really useful![or]I could get used to this feeling.[or]I don't even need to pay attention to my bladder![or]That was so much easier than having to find a loo![in random order][otherwise if the incontinence of the player > 5][line break][second custom style][one of]*giggle*, that was easy![or]So calming...[or]I hardly felt that one. Maybe soon I won't feel myself going at all![in random order][otherwise][line break][second custom style][one of]*giggle*, that was fun![or]Again again![or]Ooh I just LOVE that feeling![in random order][end if][roman type][line break]";
 	if target-poster is a poster:
 		now old-monster of target-poster is M;
 		now old-peereaction of target-poster is N.
 
 To say DiaperDeclaration of (M - a monster):
-	let D be a random worn diaper;
-	if D is not currently visible or (D is diaper-stack and entry (number of entries in the list of stacked diapers) in the list of stacked diapers is dry diaper): [Player managed to stealth-pee]
-		now diaper-reaction-said is false;
-		if the player is not disgraced:
-			say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone! It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
-		otherwise if the player is not shameless:
-			say "You [if delayed urination is 1]freeze in place and [end if]try to act casual, but you can't help but stare at [NameDesc of M] coyly, tempting fate to get you caught.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why can't I stop myself?![or]Oh my god, I need to get myself under control![in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]Come on, say something![or]Next time, I'm going to make it even more obvious![in random order][end if][roman type][line break]";
-		otherwise if the player is able to speak:
-			say "You stare directly at [NameDesc of M].[line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Can you guess what I'm doing right now?'[end if][or]Please watch me as I pee in my diaper!'[or]I'm peeing right now, and it feels so good!'[in random order][roman type][line break]";
-			now diaper-reaction-said is true; [The player ruined their own game. The NPC knows to react because they were told to.]
-		if D is not currently at least partially visible, progress quest of stealth-diaper-quest;
-	otherwise: [Diaper is fully visible, NPCs can see it]
-		now diaper-reaction-said is true;
-		if the player is not disgraced:
-			say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing. But you feel extremely paranoid that [he of M] knows anyway.[line break][variable custom style][one of]The front of my diaper is turning yellow![or][big he of M][']ll be able to see it turning yellow![or]It's no good, [he of M] can see it getting soggy at the front![in random order][roman type][line break]";
+	if diaper-reaction-said is true:
+		let D be a random worn diaper;
+		if D is not currently visible or (D is diaper-stack and entry (number of entries in the list of stacked diapers) in the list of stacked diapers is dry diaper): [Player managed to stealth-pee]
 			now diaper-reaction-said is false;
-		otherwise if the player is not shameless:
-			say "You [if delayed urination is 1]freeze in place and [end if]stare at [NameDesc of M] coyly, drawing [his of M] attention down to your rapidly dampening diaper.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why do I want [him of M] to notice?![in random order][otherwise][line break][variable custom style][one of]I'm so naughty![or]Come on, say something![or]That's right, down here! Now watch me wet myself![in random order][end if][roman type][line break]";
-		otherwise if the player is able to speak:
-			say "You stare directly at [NameDesc of M].[line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Watch me wet myself!'[end if][or]Please watch me as I pee in my diaper!'[or]Are you watching me wet myself?'[in random order][roman type][line break]".
+			if the player is not disgraced:
+				say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing.[if the diaper addiction of the player < 7][line break][first custom style][one of]Next time, I'm NOT going this in front of anyone! It's way too scary.[or]Am I making any noise? Eek![or]Am I standing weirdly?[in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]This is intense, but fun.[or]I wonder what I'd say if I got caught?[in random order][end if][roman type][line break]";
+			otherwise if the player is not shameless:
+				say "You [if delayed urination is 1]freeze in place and [end if]try to act casual, but you can't help but stare at [NameDesc of M] coyly, tempting fate to get you caught.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why can't I stop myself?![or]Oh my god, I need to get myself under control![in random order][otherwise][line break][variable custom style][one of]I'm a diaper ninja![or]Come on, say something![or]Next time, I'm going to make it even more obvious![in random order][end if][roman type][line break]";
+			otherwise if the player is able to speak:
+				say "You stare directly at [NameDesc of M].[line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Can you guess what I'm doing right now?'[end if][or]Please watch me as I pee in my diaper!'[or]I'm peeing right now, and it feels so good!'[in random order][roman type][line break]";
+				now diaper-reaction-said is true; [The player ruined their own game. The NPC knows to react because they were told to.]
+			if D is not currently at least partially visible, progress quest of stealth-diaper-quest;
+		otherwise: [Diaper is fully visible, NPCs can see it]
+			now diaper-reaction-said is true;
+			if the player is not disgraced:
+				say "You [if delayed urination is 1]freeze in place and [end if]try as hard as possible to act casual, to prevent [NameDesc of M] from knowing what you are doing. But you feel extremely paranoid that [he of M] knows anyway.[line break][variable custom style][one of]The front of my diaper is turning yellow![or][big he of M][']ll be able to see it turning yellow![or]It's no good, [he of M] can see it getting soggy at the front![in random order][roman type][line break]";
+				now diaper-reaction-said is false;
+			otherwise if the player is not shameless:
+				say "You [if delayed urination is 1]freeze in place and [end if]stare at [NameDesc of M] coyly, drawing [his of M] attention down to your rapidly dampening diaper.[if the diaper addiction of the player < 9][line break][first custom style][one of]What am I doing?![or]Why do I want [him of M] to notice?![in random order][otherwise][line break][variable custom style][one of]I'm so naughty![or]Come on, say something![or]That's right, down here! Now watch me wet myself![in random order][end if][roman type][line break]";
+			otherwise if the player is able to speak:
+				say "You stare directly at [NameDesc of M].[line break][variable custom style]'[one of][if the intelligence of the player < 6][NameBimbo] is going tinkles!'[otherwise]Watch me wet myself!'[end if][or]Please watch me as I pee in my diaper!'[or]Are you watching me wet myself?'[in random order][roman type][line break]".
 
 [!<SayPeeReaction3>+
 
-REQUIRES COMMENTING
+Urination into non-diaper clothing
 
 +!]
 To say PeeReaction (N - 3):
 	let M be a random awake monster penetrating a body part;
 	let K be a random worn bottom level pee protection clothing;
-	if M is monster:
-		if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of [NameDesc of M].";
-		otherwise say "[BrokenPeeFlav during sex with M]";
-		humiliate 300;
-	otherwise:
-		now M is a random reactive monster;
-		if delayed urination is 0: [Purposeful urination]
-			if M is monster:
-				say ClothesPeeDeclaration of M;
-				repeat with Z running through reactive monsters:
-					humiliate 200;
-					say ClothesPeeReaction of Z;
-			otherwise:
-				unless K is WC plug panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
-		otherwise: [Accidental urination]
-			if M is monster:
-				say ClothesPeeDeclaration of M;
-				repeat with Z running through reactive monsters:
-					humiliate 300;
-					say ClothesPeeReaction of Z;
-			otherwise:
-				unless K is WC plug panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
-				humiliate 150;
-	humiliate 275;
+	if diaper-reaction-said is true: [Some situations e.g. messing don't require extra NPC reaction flavour]
+		if M is monster:
+			if the humiliation of the player < HUMILIATION-DISGRACED + 3500, say "[if the player is able to speak][line break][variable custom style]'Oh god, not now!'[roman type][line break][end if]You are brought to tears in shame as you are forced to let go into your [K] right in front of [NameDesc of M].";
+			otherwise say "[BrokenPeeFlav during sex with M]";
+			humiliate 300;
+		otherwise:
+			now M is a random reactive monster;
+			if delayed urination is 0: [Purposeful urination]
+				if M is monster:
+					say ClothesPeeDeclaration of M;
+					repeat with Z running through reactive monsters:
+						humiliate 200;
+						say ClothesPeeReaction of Z;
+				otherwise:
+					unless K is WC plug panties, say "[one of][line break][variable custom style]Yuck.[or][variable custom style]Eww![or][if the bimbo of the player > 9][line break][second custom style]Uh-oh, I'm a bad girl![otherwise][line break][first custom style]Err, whoops.[end if][purely at random][roman type][line break]";
+			otherwise: [Accidental urination]
+				if M is monster:
+					say ClothesPeeDeclaration of M;
+					repeat with Z running through reactive monsters:
+						humiliate 300;
+						say ClothesPeeReaction of Z;
+				otherwise:
+					unless K is WC plug panties, say "[one of][line break][variable custom style]Err, whoops![or][if saved-flat-intelligence < 6][line break][second custom style]Uh-oh, I had a little accident![otherwise][line break][first custom style]I can't believe I just let that happen...[end if][or][variable custom style]I guess I should try and find a toilet next time...[purely at random][roman type][line break]";
+					humiliate 150;
+		humiliate 275;
 	if target-poster is a poster:
 		now old-monster of target-poster is M;
 		now old-peereaction of target-poster is N.
@@ -1139,7 +1147,7 @@ To say DiaperReaction of (M - a monster):
 	if D is not diaper and the player is not shameless and M is not concealment immune:
 		say "You're confident that [NameDesc of M] has no idea [one of]what's happening underneath your clothes[or]that you're currently wetting yourself[or]that you're going to the toilet in your pants right in front of [him of M][at random].";
 	otherwise if M is interested:
-		say "[BigNameDesc of M] seems to give you an odd look, but doesn't say anything. [if the player is not shameless]Maybe [he of M] didn't notice?[otherwise][line break][variable custom style]I'm such a good girl![roman type][line break][end if]";
+		say "[BigNameDesc of M] seems to give you an odd look, but doesn't say anything. [if the player is not shameless]Maybe [he of M] didn't notice?[otherwise][line break][variable custom style]I'm such a good [boy of the player]![roman type][line break][end if]";
 	otherwise:
 		say "[BigNameDesc of M] doesn't look at you directly or say anything, so it's hard to gauge [if the player is not shameless]if [he of M] could tell[otherwise][his of M] reaction[end if].".
 

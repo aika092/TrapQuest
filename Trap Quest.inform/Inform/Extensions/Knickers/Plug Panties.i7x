@@ -117,7 +117,7 @@ Definition: a WC plug panties is toilet themed: decide yes.
 Definition: a WC plug panties is white themed: decide yes.
 
 To say WCPantiesVibeFlav:
-	say "[variable custom style][one of][if the anal sex addiction of the player < 4]Holy crap, I can't believe how good this feels...[otherwise]Mmm, so good...[end if][or][if the player is a pervert]I've been a good girl, and this is my reward![otherwise]It's making wetting myself feel amazing...![end if][or][if the player is horny]I'm going to cum soon![otherwise]Mmmm. More...[end if][then at random][roman type][line break]".
+	say "[variable custom style][one of][if the anal sex addiction of the player < 4]Holy crap, I can't believe how good this feels...[otherwise]Mmm, so good...[end if][or][if the player is a pervert]I've been a good [boy of the player], and this is my reward![otherwise]It's making wetting myself feel amazing...![end if][or][if the player is horny]I'm going to cum soon![otherwise]Mmmm. More...[end if][then at random][roman type][line break]".
 
 Figure of female WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant.png".
 Figure of male WC plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/WcLatexPant2.png".

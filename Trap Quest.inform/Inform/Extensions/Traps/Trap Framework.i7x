@@ -132,7 +132,8 @@ REQUIRES COMMENTING
 To reset (I - a trap):
 	dislodge I;
 	now I is not grabbing the player;
-	now I is not inseminating the player;
+	now I is not wrangling the player;
+	now I is not inseminating vagina;
 	if I is vines, now the TrapNo of I is 0.
 
 [!<DestroyTrap>+

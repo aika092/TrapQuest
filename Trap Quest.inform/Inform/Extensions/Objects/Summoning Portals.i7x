@@ -37,18 +37,18 @@ Increases the charge of a summoning portal by a given amount. If the portal alre
 +!]
 To ChargeUp (S - a summoning portal) by (X - a number):
 	decrease X by the reset-count of S * 10;
-	if the charge of S > 500:
+	if the charge of S > 900:
 		decrease X by X / 2;
-	otherwise if the charge of S > 400:
+	otherwise if the charge of S > 700:
 		decrease X by X / 3;
-	otherwise if the charge of S > 300:
+	otherwise if the charge of S > 500:
 		decrease X by X / 4;
 	if X > 0:
 		increase the charge of S by X;
 		increase the reset-count of S by 1;
 		say "The energy surrounding [NameDesc of S][if X < 60] slightly[otherwise if X >= 200] significantly[end if] weakens.";
 		let R be the currentRegion of S;
-		if the charge of S >= 300 and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of R:
+		if the charge of S >= 500 and doomed < 5 and the number of regionalRelevant monsters >= the regionalMonsterCount of R:
 			now S is not active;
 			if S is in the location of the player:
 				if S is mysterious-mummy, say "You feel a wave of relief, and the strange pressure around [NameDesc of S] dissipates as glowing motes of energy leak through the spaces in the linen. It opens its arms wide as the candles at its feet light once more.";
@@ -175,7 +175,7 @@ Should be defined uniquely for each portal. Chooses what level the monster is su
 To compute (S - summoning portal) regionally summoning (M - a monster):
 	summon M in (the currentRegion of S);
 	now the next-summon of S is the summonChoice of S;
-	now the charge of S is 300.
+	now the charge of S is 500.
 
 [!<ComputePortalResetOfPortal>+
 
@@ -368,8 +368,8 @@ Check entering giant-statue:
 		if diaper quest is 0 and the player is female:
 			say "You feel a tingling sensation in your core as a wave of energy washes over you.";
 			increase the pregnancy rate of the player by 1 + V;
-		otherwise if diaper quest is 0 and the size of penis > 0:
-			PenisDown 1 + V;
+		otherwise if diaper quest is 0 and the size of penis > min penis size:
+			SilentlyPenisDown 1 + V;
 			say "A wave of energy washes over you as your penis shrinks into a [ShortDesc of penis].";
 		otherwise:
 			now R is 5;
@@ -634,7 +634,7 @@ To say ActiveWarning of (S - mysterious-mummy):
 		let M be wild gladiator;
 		say "You hear glass shattering as a gladiator flies through a nearby window, completely nude, [if futanari fetish is 1]and with an all-too visible erection[otherwise]and with [semen] slowly dripping out of [his of M] [HoleDesc of M][end if]. Mannequins surround [him of M] as [he of M] struggles to get to [his of M] feet, and [he of M] fights them fiercely as they drag [him of M] toward the mummy. The gladiator screams as long strips of linen seize [him of M] all at once and in an instant [he of M] is completely bound from head to toe in white linen. A golden glow surrounds the mummy as its captive struggles against [his of M] bindings.";
 	otherwise if M is acolyte: [cultist]
-		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, quickly working their way through the crowd of mannequins. They play a quick round of rock paper scissors, and the winner shoves the loser into the mummy, dashing away as it reaches out with several strips of frayed fabric. A deep purple glow begins to surround the mummy as its covers up its captive completely.";
+		say "There's some scuffling outside as a hidden doorway near the back of the room opens, and two cultists come through, quickly working their way through the crowd of mannequins. They play a quick round of rock paper scissors, and the winner shoves the loser into the mummy, dashing away as it reaches out with several strips of frayed fabric. A deep purple glow begins to surround the mummy as it covers up its captive completely.";
 	otherwise if M is mannequin: [mannequin]
 		say "A particularly voluptuous mannequin shuffles out of the crowd, holding a live bat in its outstretched hands. A pink glow surrounds the mummy as the bat flaps over and lands on her shoulder.";
 	otherwise if M is demoness: [demoness]

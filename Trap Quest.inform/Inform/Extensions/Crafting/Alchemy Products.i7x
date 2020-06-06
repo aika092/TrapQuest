@@ -316,9 +316,9 @@ Check drinking time-bomb:
 			now the womb volume of vagina is 5;
 			now a random creampie pole trap is inseminating vagina;
 			now the soreness of vagina is 10;
-			if the virgin of the player is 1, compute virginity loss;
+			if the vaginalvirgin of the player is 1, compute virginity loss;
 			check sudden pregnancy;
-		PukeUp the stomach-semen of the player;
+		compute puking;
 		AssSquirt;
 		reset the Glulx timer;
 	otherwise:
@@ -589,7 +589,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				decrease siphoning-elixir-charge by 100;
 				let X be siphoning-elixir-charge;
 				if the player is female or the size of penis is 10:
-					if the virgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
+					if the vaginalvirgin of the player is 1 and the player is not originally female and sex-changed < 2 and the player is female:[if you haven't seen your real body since changing into a woman, AND you're a virgin, then you can change back]
 						say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves, and you yelp in surprise as you realise your [vagina] has been replaced by your original [player-penis]!";
 						ReverseSexChange the player;
 					otherwise:
@@ -612,8 +612,7 @@ A time based rule (this is the siphoning elixir decay rule):
 				StrengthUp X / 3;
 			otherwise:
 				let X be siphoning-elixir-charge * -1;
-				if the size of penis > 0:
-					say "Your [player-penis] shrinks!";
+				if the size of penis > min penis size:
 					PenisDown (X / 2) + 1;
 				otherwise:
 					say "You feel dumber.";
@@ -957,6 +956,7 @@ Carry Out PowderRubbing identification-powder on a thing:
 		say "Suddenly it is surrounded by a dark glow. ";
 		curse the second noun;
 		say "Oh no! The powder itself must have been cursed, as it is now a [second noun]! You must have created it with the wrong recipe...";
+		if the second noun is clothing, compute quest of the second noun;
 	if the noun is blessed and the second noun is blessable:
 		say "[BigNameDesc of the second noun] is surrounded in a blue glow!";
 		bless the second noun;

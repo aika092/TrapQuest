@@ -141,7 +141,7 @@ To compute waitress resolution of (M - a monster) taking (T - a bottle):
 		destroy T.
 
 To compute service spill punishment:
-	if bondage protection is 0 and the player is not immobile and there is a held waitress vessel:
+	if bondage protection is 0 and the player is not immobile and the number of things wrangling the player is 0 and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
 		if STV is 0 and serving tray is off-stage:

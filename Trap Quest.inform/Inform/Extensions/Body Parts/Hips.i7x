@@ -150,36 +150,41 @@ REQUIRES COMMENTING
 
 +!]
 To say MaxAssSizeDesc:
-	if extreme proportions fetish is 1:
-		if max ass size <= 11:
+	let MAS be max ass size;
+	if MAS <= 1:
+		say "completely flat";
+	otherwise if MAS is 2:
+		say "flat";
+	otherwise if MAS is 3:
+		say "tight";
+	otherwise if MAS is 4:
+		say "toned";
+	otherwise if MAS <= 6:
+		say "curvy";
+	otherwise if MAS <= 8:
+		say "cushioned";
+	otherwise if MAS <= 10:
+		say "oversized";
+	if MAS <= 10 and extreme proportions fetish is 1 and the player is a flatchested trap:
+		increase MAS by 10;
+		say " (";
+	if MAS > 10:
+		if MAS <= 11:
 			say "humongous";
-		otherwise if max ass size is 12:
+		otherwise if MAS is 12:
 			say "Kardashian sized";
-		otherwise if max ass size is 13:
+		otherwise if MAS is 13:
 			say "giant wobbling";
-		otherwise if max ass size is 14:
+		otherwise if MAS is 14:
 			say "watermelon sized";
-		otherwise if max ass size <= 16:
+		otherwise if MAS <= 16:
 			say "beachball sized";
-		otherwise if max ass size <= 18:
+		otherwise if MAS <= 18:
 			say "comically inflated";
 		otherwise:
 			say "impossibly giant";
-	otherwise:
-		if max ass size <= 1:
-			say "completely flat";
-		otherwise if max ass size is 2:
-			say "flat";
-		otherwise if max ass size is 3:
-			say "tight";
-		otherwise if max ass size is 4:
-			say "toned";
-		otherwise if max ass size <= 6:
-			say "curvy";
-		otherwise if max ass size <= 8:
-			say "cushioned";
-		otherwise:
-			say "oversized".
+		if extreme proportions fetish is 1 and the player is a flatchested trap, say " after TG)".
+
 
 [!<YourselfIsBottomHeavy>+
 
@@ -624,6 +629,7 @@ To FatAssDown (X - a number):
 	otherwise if there is a restricting salve covering hips:
 		say "[one of]You feel your [AssDesc] try to shrink, but the salve of restriction prevents it![or]Once again your [AssDesc] fail to shrink any further.[stopping]";
 	otherwise:
+		if heavyweight tattoo is worn and a random number between 0 and X > 0, decrease X by 1;
 		while X > 0:
 			if the flesh volume of hips > min ass size, decrease the flesh volume of hips by 1;
 			decrease X by 1.

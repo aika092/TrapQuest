@@ -50,7 +50,7 @@ To decide which number is the max-rawness of (P - penis):
 	if the player is horny, decrease X by 1;
 	if the player is very horny, decrease X by 2;
 	if the player is extremely horny, decrease X by 2;
-	decide on X.
+	decide on X * 10.
 
 [!<RawUpPenis>+
 
@@ -60,7 +60,7 @@ Increases the rawness value of penis. Should be called whenever the player's pen
 +!]
 
 To RawUp (P - penis):
-	if the rawness of penis < the max-rawness of penis, increase the rawness of penis by 1.
+	if the rawness of penis < the max-rawness of penis, increase the rawness of penis by 10.
 
 To RawDown (P - penis):
 	if the rawness of penis > 0, decrease the rawness of penis by 1.
@@ -146,59 +146,21 @@ Determines whether a piece of clothing can cover the player's penis. Does NOT ch
 
 +!]
 Definition: a clothing (called C) is potentially penis covering:
-	if C is potentially pussy covering clothing:
-		if penis is penis-erect:[erections change how clothing fits.]
-			if the size of penis <= the penis-capacity of C + 1, decide yes;
-		otherwise:
-			if the size of penis <= the penis-capacity of C + 2, decide yes;
-	if C is skirted clothing:
-		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
-		if C is not super-short and C is not short, decide yes;[long skirts protect against exposure]
-		if the player is upright and C is not super-short and the size of penis < 4, decide yes; [short skirts protect against exposure as long as you're standing and have a small penis]
+	if C is skirted crotch-in-place clothing:
+		if there is pussy covering unskirted clothing, decide yes; [your penis is propped up, so it's concealed by all skirts.]
+		if the size of penis <= the penis-capacity of C, decide yes; [if the skirt is long enough, it protects you]
+	otherwise if C is potentially pussy covering clothing:
+		if the size of penis <= the penis-capacity of C, decide yes;
 	decide no.
 
-[!<ClothingIsPotentiallyAtLeastPartiallyPenisCovering>+
-
-Determines whether a piece of clothing can cover the player's penis at least a little. Does not check if penis is visible, only if it is covered.
-
-@param <Clothing>:<C> The clothing that potentially covers the player's penis
-
-+!]
-Definition: a clothing (called C) is potentially at least partially penis covering:
-	if C is potentially pussy covering clothing:
-		if penis is penis-erect:
-			if the size of penis <= the penis-capacity of C + 2, decide yes;
-		otherwise:
-			if the size of penis <= the penis-capacity of C + 4, decide yes;[beyond capacity + 2, at least 2 inches can be partially covered.]
-	if C is skirted clothing:
-		if the number of worn crotch-in-place undies > 0, decide yes;[your penis is propped up, so it's concealed by all skirts.]
-		if C is not super-short and C is not short, decide yes; [long skirts protect against exposure]
-		if the player is upright and C is not super-short, decide yes; [short skirts partially protect against exposure as long as you're standing]
+Definition: a clothing (called C) is potentially erection concealing:
+	if C is skirted crotch-in-place clothing and there is pussy covering unskirted clothing, decide yes; [your penis is propped up, so it's concealed by all skirts.]
 	decide no.
+Definition: a diaper is potentially erection concealing: decide yes.
 
-[!<ClothingIsActuallyPenisCovering>+
+Definition: a clothing is potentially penis concealing if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing).
+Definition: a clothing is potentially at least partially penis concealing if it is not see-through and it is potentially penis covering.
 
-Determines whether a piece of clothing conceals the player's penis
-
-@param <Clothing>:<C> The clothing that potentially covers the player's penis
-
-+!]
-Definition: a clothing (called C) is actually penis covering:
-	unless C is potentially penis covering, decide no;
-	if C is actually dense, decide yes;
-	decide no.
-
-[!<ClothingIsActuallyAtLeastPartiallyPenisCovering>+
-
-Determines whether a piece of clothing conceals the player's penis at least a little
-
-@param <Clothing>:<C> The clothing that potentially covers the player's penis
-
-+!]
-Definition: a clothing (called C) is actually at least partially penis covering:
-	unless C is potentially at least partially penis covering, decide no;
-	if C is not see-through, decide yes;
-	decide no.
 
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
 
@@ -209,9 +171,9 @@ Determines which object is concealing the player's penis at the highest level.
 +!]
 To decide which object is the concealer of (P - penis):
 	if water-fountain is penetrating asshole, decide on water-fountain;
-	repeat with C running through worn actually penis covering clothing:
+	repeat with C running through worn potentially penis concealing clothing:
 		let this-one be 1;
-		repeat with D running through worn actually penis covering clothing:
+		repeat with D running through worn potentially penis concealing clothing:
 			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
 		if this-one is 1, decide on C;
 	decide on nothing.
@@ -225,10 +187,11 @@ Determines which object is partially concealing the player's penis at the highes
 +!]
 To decide which object is the at least partial concealer of (P - penis):
 	if water-fountain is penetrating asshole, decide on water-fountain;
+	if the player is upright and gloryhole is grabbing the player, decide on gloryhole;
 	if vagina is listed in the armUses of arms, decide on arms;
-	repeat with C running through worn actually at least partially penis covering clothing:
+	repeat with C running through worn potentially at least partially penis concealing clothing:
 		let this-one be 1;
-		repeat with D running through worn actually at least partially penis covering clothing:
+		repeat with D running through worn potentially at least partially penis concealing clothing:
 			if the bottom-layer of D > the bottom-layer of C, now this-one is 0;
 		if this-one is 1, decide on C;
 	decide on nothing.
@@ -255,14 +218,14 @@ To PenisObedienceUp (X - a number):
 		otherwise:
 			increase the penis-obedience of penis by 1;
 			if X is 1:[i.e. this is the final change]
-				if the penis-obedience of penis < 4:[player questions what its like to be on top]
-					say "[first custom style][one of]I guess sex can still feel good if you're not in control. Its not like its required or anything.[or]Normally, I like to do the fucking, so just laying back for a change is pretty refreshing.[or]I don't really need to be on top ALL the time. Its fine to let someone else have a turn.[in random order][roman type][line break]";
+				if the penis-obedience of penis < 4:[player questions what it's like to be on top]
+					say "[first custom style][one of]I guess sex can still feel good if you're not in control. It's not like it's required or anything.[or]Normally, I like to do the fucking, so just laying back for a change is pretty refreshing.[or]I don't really need to be on top ALL the time. It's fine to let someone else have a turn.[in random order][roman type][line break]";
 				otherwise if the penis-obedience of penis < 7:[player decides they prefer not to be doing the fucking]
 					say "[variable custom style][one of]If you think about it, my penis isn't really for my pleasure anyway.[or]Honestly, being on top is kind of overrated.[or]I don't mind not being on top. After all, I'm lucky I get to have sex at all.[in random order][roman type][line break]";
 				otherwise if the penis-obedience of penis < 10:[orgasms are overrated.]
-					say "[variable custom style][one of]I go soft after just one orgasm, so why even have one? After all, my only job is to stay hard for my partner.[or]Ejaculating is just a bonus. The important thing is if your penis can make someone *else* cum.[or]I've always thought [semen] made a huge mess. Its so much more convenient if I don't cum at all.[in random order][roman type][line break]";
+					say "[variable custom style][one of]I go soft after just one orgasm, so why even have one? After all, my only job is to stay hard for my partner.[or]Ejaculating is just a bonus. The important thing is if your penis can make someone *else* cum.[or]I've always thought [semen] made a huge mess. It's so much more convenient if I don't cum at all.[in random order][roman type][line break]";
 				otherwise:[10(max)]
-					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. Its just a toy to be used.[or]My penis was always a toy to be used. All I realised was that it's meant to be used by someone else.[in random order][roman type][line break]";
+					say "[variable custom style][one of]My penis is for pleasure, but not my pleasure. It's just a toy to be used.[or]My penis was always a toy to be used. All I realised was that it's meant to be used by someone else.[in random order][roman type][line break]";
 		decrease X by 1.
 
 [Whenever an npc abuses your penises, it has a chance of increasing your 'obedience' value.
@@ -320,6 +283,7 @@ Definition: penis is erect-on-request:
 	if R < -1, decide no;
 	decide yes.
 
+
 [Whenever the player gains arousal for the turn, they have a chance of getting an erection]
 To compute sudden erection chance (X - a number):
 	if penis is penis-erect or penis is not able to get erect or the penis-obedience of penis is 10:
@@ -332,40 +296,50 @@ To compute sudden erection chance (X - a number):
 		decrease M by the anal sex addiction of the player / 3;
 		decrease M by (the penis-obedience of penis - 1) / 3;
 		if the wanktime of the player > 0, decrease M by the wanktime of the player / 5;
-		let A be (X / 100) * M;
-		if a random number between 1 and A > 150 or the player is extremely horny or X > 1000:
-			let K be a random worn potentially penis covering knickers;
-			let S be a random worn potentially penis covering skirted clothing;
+		now X is X / 100;
+		let A be X * M;
+		let R be a random number between 1 and A;
+		if debuginfo > 1, say "[input-style]Erection chance: [if the player is extremely horny]Automatic; extremely horny[otherwise if X > 10]Automatic; arousal gain over 1000[otherwise]([M]) * arousal factor ([X]) = [A]; d[A] = ([R]) | (150.5) erection threshold[end if][roman type][line break]";
+		if X > 10 or the player is extremely horny or R > 150:
+			let K1 be a random worn potentially penis covering unskirted clothing;
+			let K2 be a random worn potentially penis concealing unskirted clothing;
+			let S1 be a random worn potentially penis covering skirted clothing;
+			let S2 be a random worn potentially penis concealing skirted clothing;
 			now penis is penis-erect;
 			say "[line break]";
-			if K is clothing and K is not potentially penis covering:[meaning, something changed when the player got hard]
-				say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, pushing up and out of the waist of your [ShortDesc of K].[line break]";
-			otherwise if S is clothing and S is potentially penis covering:
-				if S is not potentially penis covering:
-					say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very obvious erection, poking out from underneath your skirt.";
-				otherwise if K is clothing:
-					say "Your feel your [ShortDesc of penis] [one of]hardening[or]stiffening[or]growing[at random] into an erection, but thanks to your [ShortDesc of K], it remains concealed under your skirt.";
+			if penis is exposed:
+				if the size of penis > 3:
+					say "[line break]Your [ShortDesc of penis] [harden]s into a very obvious erection.";
 				otherwise:
-					if the size of penis > 3:
-						say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which forms a very obvious tent under your skirt.";
+					say "[line break]Your [ShortDesc of penis] [harden]s into a very embarrassing, albeit subtle, erection.";
+			otherwise if penis is at least partially exposed:
+				if S2 is clothing:
+					if S2 is potentially erection concealing:
+						say "Your [ShortDesc of penis] [harden]s into an erection, which is thankfully not very obvious thanks to your [ShortDesc of S2].";
 					otherwise:
-						say "Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which is thankfully not very obvious thanks to your skirt.";
+						say "Your [ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent under your [ShortDesc of S2].";
+				otherwise if K2 is clothing:
+					if K2 is potentially erection concealing:
+						say "[line break]You feel your [ShortDesc of penis] [harden]ing into an erection, which is thankfully not obvious thanks to your [ShortDesc of K2].";
+					otherwise:
+						say "[line break]Your [ShortDesc of penis] [harden]s into an erection, which forms a very obvious tent in your [ShortDesc of K2].";
+				otherwise if S1 is clothing:
+					say "Your [ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of S1][if K1 is clothing] and [ShortDesc of K1][end if].";
+				otherwise if K1 is clothing:
+					say "Your [ShortDesc of penis] [harden]s into an erection, still visible through your [ShortDesc of K1].";
 			otherwise:
-				if K is clothing:
-					if the size of penis > 3:
-						say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into an erection, which forms a very obvious tent in your [ShortDesc of K].";
-					otherwise:
-						say "[line break]You feel your [ShortDesc of penis] [one of]hardening[or]stiffening[or]growing[at random] into an erection, which is thankfully not obvious thanks to your [ShortDesc of K].";
-				otherwise if the size of penis > 3:
-					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very obvious erection.";
+				if S2 is clothing:
+					let K3 be a random pussy covering unskirted clothing;
+					say "Your feel your [ShortDesc of penis] [harden]ing into an erection, but [if K3 is knickers]thanks to your [ShortDesc of K3], [end if]it remains concealed under your [ShortDesc of S2].";
 				otherwise:
-					say "[line break]Your [ShortDesc of penis] [one of]hardens[or]stiffens[or]grows[at random] into a very embarassing, albeit subtle, erection.".
+					let K3 be a random worn potentially penis concealing clothing;
+					say "Your feel your [ShortDesc of penis] [harden]ing into an erection[if K3 is clothing], still concealed under your [ShortDesc of K3][end if].".
 
 [Whenever the player cools off from arousal, they will lose their erection]
 To compute erection decay:
 	if condom of kings is worn and condom of kings is uncursed, do nothing;
 	if ghost-strapon is worn and the size of penis < the strap-length of ghost-strapon, do nothing;
-	say "[line break]Your [ShortDesc of penis] softens.[line break]";
+	say "[line break][bold type]Your [ShortDesc of penis] softens.[roman type][line break]";
 	now penis is not penis-erect.
 
 Part 2 - Description
@@ -545,39 +519,43 @@ To PenisUp (X - a number):
 		otherwise:
 			dignify 50;
 			if X is 0, say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
-	let C be a random worn strapon-panties;
+	let C be a random worn strapon-panties;[TODO: flavour for the player's dick popping out of too-small underwear]
 	if C is clothing and previous penis length < the strap-length of C and the size of penis >= the strap-length of C:
 		say PenisHarden of C.
 
-Shrink is a text that varies. Shrink is "shrink".
+penis-flav is initially true.
+
+To SilentlyPenisDown (X - a number):
+	now penis-flav is false;
+	PenisDown X;
+	now penis-flav is true.
 
 [X is not how much the penis shrinks, but how many times it does so]
 To PenisDown (X - a number):
 	now previous penis length is the size of penis;
 	let flav-said be 0;
-	while X > 0:
-		decrease X by 1;
-		if the size of penis > min penis size:
+	if X > 0:
+		if the player is male and the size of penis <= min penis size:
+			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but [if the size of penis is 0]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
+			now X is 0;
+		while X > 0:
+			decrease X by 1;
 			let R be a random number from 1 to (the pregnancy rate of the player + TG fetish);
 			decrease the size of penis by a random number from 1 to R;
-			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4, cutshow figure of body reaction 4 for penis;
-		otherwise if the player is male and the size of penis is 0 and previous penis length is 0:
-			say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but since you have nothing left, it can't!";
-			now X is 0;
-	if the size of penis < min penis size, now the size of penis is min penis size;
-	if the size of penis <= 0 and previous penis length > 0:
-		let C be a random worn chastity cage;
-		cutshow figure of body reaction 4 for penis;
-		if C is a thing:
-			say "Your [C] drops off and falls to the floor.";
-			now C is in the location of the player;
-	let C be a random worn strapon-panties;
-	if C is clothing and previous penis length >= the strap-length of C and the size of penis < the strap-length of C:
-		say PenisSoften of C;
-	if previous penis length > the size of penis + 2:
-		now Shrink is "shrivel";
-	otherwise:
-		now Shrink is "shrink".
+		if the size of penis < min penis size, now the size of penis is min penis size;
+		if penis-flav is true or image cutscenes > 1:
+			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4:
+				cutshow figure of body reaction 5 for penis;
+			otherwise if the size of penis <= 0 and previous penis length > 0:
+				cutshow figure of body reaction 4 for penis;
+		if penis-flav is true:
+			if the player is male and previous penis length <= min penis size and fast tg is 3:
+				say DefaultSexChangeFlav;
+				sexchange the player;
+			otherwise if the size of penis < previous penis length:
+				if penis-flav is true, say "Your [one of]penis[or]dick[cycling] [if previous penis length > the size of penis + 2]shrivels[otherwise]shrinks[end if] into a [ShortDesc of penis].";
+			let C be a random worn strapon-panties;
+			if C is clothing and previous penis length >= the strap-length of C and the size of penis < the strap-length of C, say PenisSoften of C.
 
 Section - Image for graphics window
 

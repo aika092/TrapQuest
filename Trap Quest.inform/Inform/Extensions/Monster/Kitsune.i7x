@@ -90,6 +90,7 @@ To compute unique unsimulated periodic effect of (M - kitsune):
 			if M is in the location of the player, say "[BigNameDesc of M] vanishes in a puff of pink smoke!";
 			regionally place M;
 			set up disguise of M;
+			now the vanish timer of M is 0;
 		decrease the vanish timer of M by 1.
 
 To compute (M - a monster) stomping (N - kitsune):

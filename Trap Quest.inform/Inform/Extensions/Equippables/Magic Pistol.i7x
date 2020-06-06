@@ -31,7 +31,6 @@ To compute attack of (W - magic pistol) at (M - a monster):
 	if the stomach-semen of the player > 0:
 		if the blind-status of M is not -1, increase the blind-status of M by the stomach-semen of the player;
 		if M is blinded, say "[BigNameDesc of M] is blinded!";
-		now the stomach-semen of the player is 0;
-		SemenTasteAddictUp 1.
+		StomachSemenDown the stomach-semen of the player.
 
 Magic Pistol ends here.

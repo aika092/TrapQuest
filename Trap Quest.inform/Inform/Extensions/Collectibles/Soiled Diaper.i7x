@@ -151,7 +151,7 @@ Carry out BabChanging it with:
 	if diaper messing >= 6 and SD is soiled-diaper:
 		now SD is carried by the player;
 		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
-	only destroy the second noun.
+	if the second noun is diaper, only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]", "change [a person] using [something]" as BabChanging it with.
 
 Soiled Diaper ends here.

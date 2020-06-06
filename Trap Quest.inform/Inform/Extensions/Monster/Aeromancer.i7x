@@ -13,15 +13,22 @@ To say ShortDesc of (M - an aeromancer):
 
 smirking aeromancer is an aeromancer. The text-shortcut of smirking aeromancer is "sae".
 To say MediumDesc of (M - smirking aeromancer):
-	say "smirking [if M is ballooned]massive-breasted [end if]aeromancer".
+	say "smirking [BalloonDesc of M]aeromancer".
 
 grinning aeromancer is an aeromancer. The text-shortcut of grinning aeromancer is "gae".
 To say MediumDesc of (M - grinning aeromancer):
-	say "grinning [if M is ballooned]massive-breasted [end if]aeromancer".
+	say "grinning [BalloonDesc of M]aeromancer".
 
 chuckling aeromancer is an aeromancer. The text-shortcut of chuckling aeromancer is "cae".
 To say MediumDesc of (M - chuckling aeromancer):
-	say "chuckling [if M is ballooned]massive-breasted [end if]aeromancer".
+	say "chuckling [BalloonDesc of M]aeromancer".
+
+To say BalloonDesc of (M - an aeromancer):
+	let D be the difficulty of M - the difficulty-base of M;
+	if M is ballooned:
+		if D < 1, say "big-chested ";
+		if D >= 1 and D < 3, say "huge-chested ";
+		if D >= 3, say "massive-chested ".
 
 Understand "massive", "massive-breasted" as aeromancer when the item described is ballooned.
 
@@ -76,9 +83,33 @@ To decide which figure-name is the vaginal-sex-monster-image of (M - an aeromanc
 
 To say MonsterDesc of (M - an aeromancer):
 	if lady fetish is 2:
-		say "[if M is confident aeromancer or the previously-ballooned of M > 0]The [man of M] is wearing a pair of stylish sorcerer's pants and an inflatable harness in place of a shirt. You can see a solid gold wand resting in [his of M] hand, glowing faintly as [his of M] clothes subtly flow with the direction of the wind. [big he of M] seems very confident and focused on [his of M] goals, whatever they are.[otherwise]This [man of M] is dressed in a sexy but not slutty sorcerer's outfit, complete with what looks like a solid gold wand. [big he of M] seems very upbeat and focused on [his of M] goals, whatever they are.[end if][if M is ballooned]Right now, the harness is inflated, and [he of M] is hovering a foot off the ground.[end if]";
+		say "[if M is confident aeromancer or the previously-ballooned of M > 0]The [man of M] is wearing a pair of stylish sorcerer's pants and an inflatable harness in place of a shirt. You can see a solid gold wand resting in [his of M] hand, glowing faintly as [his of M] clothes subtly flow with the direction of the wind. [big he of M] seems very confident and focused on [his of M] goals, whatever they are.[otherwise]This [man of M] is dressed in a sexy but not slutty sorcerer's outfit, complete with what looks like a solid gold wand. [big he of M] seems very upbeat and focused on [his of M] goals, whatever they are.[end if]";
 	otherwise:
-		say "[if M is confident aeromancer or the previously-ballooned of M > 0]This [man of M] is wearing a pair of stylish sorcerer's pants and a birthday suit for a shirt. You can see a solid gold wand resting in [his of M] hand, glowing faintly as [his of M] clothes subtly flow with the direction of the wind. [big he of M] seems very confident and focused on [his of M] goals, whatever they are.[otherwise]This [man of M] is dressed in a sexy but not slutty sorceress['] outfit, complete with what looks like a solid gold wand. [big he of M] seems very upbeat and focused on [his of M] goals, whatever they are.[end if][if M is ballooned]Right now [he of M] has inhumanly huge air-inflated breasts and is hovering a foot above the ground. [line break][variable custom style]Something tells me [he of M]'s a bit more powerful while [he of M]'s got those boobs...[roman type][line break]".
+		say "[if M is confident aeromancer or the previously-ballooned of M > 0]This [man of M] is wearing a pair of stylish sorcerer's pants and a birthday suit for a shirt. You can see a solid gold wand resting in [his of M] hand, glowing faintly as [his of M] clothes subtly flow with the direction of the wind. [big he of M] seems very confident and focused on [his of M] goals, whatever they are.[otherwise]This [man of M] is dressed in a sexy but not slutty sorceress['] outfit, complete with what looks like a solid gold wand. [big he of M] seems very upbeat and focused on [his of M] goals, whatever they are.[end if]";
+	if M is ballooned:
+		let D be the difficulty of M - the difficulty-base of M;
+		say "Right now, [if lady fetish is 2]the harness is[otherwise]her boobs are[end if] inflated[if D < 1], and [he of M] is hovering a few inches off the ground. Air is whistling around [him of M], increasing the strength of [his of M] magic![otherwise if D < 3], and [he of M] is hovering a foot off the ground. Air is whistling around [him of M], increasing the strength of [his of M] magic![otherwise], and [he of M] is hovering a foot off the ground. The air around [him of M] is howling, drastically increasing the strength of [his of M] magic![end if]".
+
+To say ChestDesc of (M - an aeromancer):
+	let D be the difficulty of M;
+	if lady fetish is 2:
+		if M is not ballooned:
+			say "deflated breast forms";
+		otherwise if D <= the difficulty-base of M:
+			say "slightly inflated breast forms";
+		otherwise if D <= the difficulty-base of M + 2:
+			say "heavily inflated breast forms";
+		otherwise:
+			say "massively inflated breast forms";
+	otherwise:
+		if M is not ballooned:
+			say "perky breasts";
+		otherwise if D <= the difficulty-base of M:
+			say "slightly inflated breasts";
+		otherwise if D <= the difficulty-base of M + 2:
+			say "heavily inflated breasts";
+		otherwise:
+			say "massively inflated breasts".
 
 To say MonsterComment of (M - aeromancer):
 	if M is ballooned:
@@ -90,8 +121,8 @@ To set up (M - an aeromancer):
 	reset M;
 	now the monstersetup of M is 1;
 	if inflation fetish is 1 or artificial enhancements fetish is 1:
-		now the raw difficulty of M is 6;
-		if M is in the Woods, DifficultyUp M by 2;
+		now the raw difficulty of M is the difficulty-base of M;
+		if M is in the Woods, DifficultyUp M by 3;
 		now the health of M is the maxhealth of M;
 	otherwise:
 		remove M from play;
@@ -190,6 +221,8 @@ To compute appearance assessment of (M - an aeromancer):
 			say "[speech style of M]'[one of]You do realise you look pretty slutty right now, right? [or]My motto is: ['][if vagina is lewdly exposed][cunt][otherwise if penis is lewdly exposed and penis is tiny][sissy] clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, it must be okay!['] [then at random]So if you don't want me to fuck you senseless, I'd suggest putting some proper clothes on[if M is not acquaintance] before the next time we meet[end if].'[roman type][line break][big he of M] turns away, clearly not currently interested in talking to you.";
 			distract M;
 			alwayscutshow figure of aeromancer interact 11 for M;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
 		FavourDown M by the science requests of M;
 		if M is unfriendly:
@@ -343,11 +376,23 @@ To say SexResistFlav of (M - a aeromancer):
 
 Section 0 - Ballooning
 
-[Aeromancers power up and then get higher strength for a while]
+[!<Aeromancer>@<balloon:Integer>*
 
+The higher this value, the higher the chance this aeromancer will power up.
+
+*@!]
 An aeromancer has a number called balloon.
 An aeromancer has a number called current-balloon.
+
+[!<Aeromancer>@<previouslyBallooned:Integer>*
+
+Running counter for the number of times this aeromancer has activated her powerup
+
+*@!]
 An aeromancer has a number called previously-ballooned.
+
+[An aeromancer can be ballooned or not ballooned. An aeromancer is usually not ballooned.]
+
 An aeromancer can be wand-empowered. An aeromancer is usually not wand-empowered.
 
 Definition: an aeromancer is ballooned if the current-balloon of it > 0.
@@ -355,38 +400,76 @@ Definition: an aeromancer is ballooned if the current-balloon of it > 0.
 To compute unique early action of (M - an aeromancer):
 	unless the player is prone or the player is immobile, compute ballooning of M.
 
+To decide which number is the maxhealth of (M - a monster):
+	if tutorial is 1, decide on 99999;
+	let X be 3;
+	increase X by (the difficulty of M * 10) / 3;
+	if M is ballooned, increase X by the difficulty of M;
+	decide on X.
+
 To compute ballooning of (M - an aeromancer):
 	if M is combative and M is not ballooned:
 		increase the balloon of M by 1;
 		let R be a random number between 2 and 5;
 		if debuginfo > 0, say "[input-style]Aeromancer power-up check: air stored ([balloon of M]) | ([R].5) d4+1.5 power-up threshold[roman type][line break]";
 		if the balloon of M > R:
-			say "[speech style of M]'[one of]I've been waiting for an excuse to use this...' [or]Ultimate Airbag Transformation - Engage!' [stopping][roman type][line break][BigNameDesc of M] pushes [his of M] wand between [his of M] breasts and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as [his of M] breasts balloon, quadrupling in size[if M is not confident aeromancer], bursting through [his of M] tight top and destroying it permanently[end if]! They begin to lift [him of M] off of the ground until [he of M] is hovering gracefully a foot in the air. [if M is wand-empowered][he of M][']s definitely going to be a lot more powerful now.[otherwise]You feel [he of M][']s probably a lot more powerful until [he of M] lands.[end if]";
-			now M is airborne;
-			let DAM be the maxhealth of M - the health of M;
-			if M is in the Woods, DifficultyUp M by 6;
-			otherwise DifficultyUp M by 4;
-			increase the previously-ballooned of M by 1;
+			let D be the difficulty of M - the difficulty-base of M;
+			say "[speech style of M]'[one of]I've been waiting for an excuse to use this...' [or]Ultimate Airbag Transformation - Engage!' [stopping][roman type][line break][BigNameDesc of M] pushes [his of M] wand between [his of M] [ChestDesc of M] and massages it like a [manly-penis]. You watch [if the bimbo of the player < 6]in horror [end if]as [his of M] chest [if D < 1]grows, [otherwise if D < 3]doubles in size, [otherwise]quadruples in size, [end if][if the previously-ballooned of M > 0]jiggling[otherwise]bursting through [his of M] tight top[end if] as [if D < 1]air begins to whistle and swirl around [him of M]. [otherwise if D < 3]they begin to lift [him of M] off the ground, air whistling and swirling around [him of M] as [he of M] begins to hover gracefully about a foot in the air. [otherwise]they begin to lift [him of M] off the ground, air whistling, swirling and howling around [him of M] as [he of M] begins to hover gracefully about a foot in the air. [end if][big he of M]'s definitely going to be more powerful until [he of M] lands.";
+			if D >= 1, now M is airborne;
+			if M is wand-empowered, increase the balloon of M by the balloon of M;[She gets the power-up for twice the duration.]
 			now the current-balloon of M is 1;
-			now the health of M is the maxhealth of M - DAM;
+			increase the health of M by the difficulty of M;
 			cutshow figure of aeromancer cutscene 1 for M.
 
 To compute unique unsimulated periodic effect of (M - an aeromancer):
 	if M is ballooned:
-		if M is not wand-empowered:
-			decrease the balloon of M by 1;
-			if debuginfo > 0, say "[input-style][M] air loss: [balloon of M + 1] -> [balloon of M][roman type][line break]";
+		decrease the balloon of M by 1;
+		if debuginfo > 0, say "[input-style][M] air loss: [balloon of M + 1] -> [balloon of M][roman type][line break]";
 		if the balloon of M <= 1:
-			if M is in the location of the player, say "[BigNameDesc of M][']s breasts deflate and [he of M] returns to the ground.";
-			let DAM be the maxhealth of M - the health of M;
-			if M is in the Woods, DifficultyDown M by 6;
-			otherwise DifficultyDown M by 4;
+			decrease the balloon of M by 4;[You have at least 7 to 9 turns before she can do it again]
+			if M is in the location of the player, say "[BigNameDesc of M][']s [ChestDesc of M] slowly [one of]deflate[or]shrink down to a deflated state[or]emit a whistling sound as they shrink down to normal[at random].[if M is airborne][big he of M] returns to the ground.[end if]";
 			now the current-balloon of M is 0;
-			now the health of M is the maxhealth of M - DAM;
+			decrease the health of M by the difficulty of M;
 			if the health of M < 1:
 				now the health of M is 1;
 				if M is in the location of the player, say "It seems that move took a lot out of [him of M] - [he of M][']s pretty much gasping to recover [his of M] breath.";
-			now M is flightless.
+			if M is airborne, now M is flightless.
+
+[Essentially, the aeromancer's "transformation" gets better and better as she gains levels.
+
+< 5: She just gains more health
+< 10: She gains health and sometimes more damage
+< 15: She gains health and flight
+15+: She gains health, flight and always more damage
+
+Either way, the best way of dealing with her when she's like this is to run away.
+
+]
+To compute (M - an aeromancer) hurting (B - a body part):[The aeromancer does extra damage when ballooned]
+	unless M is ballooned:
+		BodyRuin 1;
+	otherwise:
+		if the difficulty of M - the difficulty-base of M < 3, BodyRuin a random number between 1 and 2;
+		otherwise BodyRuin 2.
+
+To compute (M - an aeromancer) hurting (B - breasts):
+	unless M is ballooned:
+		BodyRuin 2;
+	otherwise:
+		if the difficulty of M - the difficulty-base of M < 3, BodyRuin a random number between 2 and 3;
+		otherwise BodyRuin 3.
+
+To compute (M - an aeromancer) hurting (F - face):
+	compute M hurting breasts.
+
+Definition: an aeromancer(called M) is damageable:
+	if M is airborne and attack-type is 3:[At level 10, she can fly, and becomes immune to kicks]
+		decide no;
+	decide yes.
+
+To compute failed damage of (M - an aeromancer):
+	if M is ballooned:
+		say "[line break][speech style of M]'Haha, nothing but air!'[roman type][line break][big he of M] laughs tauntingly as [he of M] floats out of the way of your attack!".
 
 To compute unique dislodging of (M - an aeromancer):
 	now the balloon of M is 1.
@@ -416,7 +499,7 @@ To compute fuckhole sex of (M - an aeromancer): [separated these out so it's les
 			say "[BigNameDesc of M] jeers at you as the magical sex organs fuck you.";
 		otherwise:
 			say "[one of][BigNameDesc of M][']s magic sex organs continue to fuck you.[or][BigNameDesc of M] struggles to come up with more puns as the magic tentacles piston away.[or][BigNameDesc of M] continues to violate you with [his of M] magical sex organs.[or]The invisible tentacles continue pistoning away in between [his of M] awful puns.[or]The magical tentacles fuck you extra hard when [NameDesc of M] is having extra trouble coming up with a pun. They might be a relief if they weren't so terrible.[at random]";
-	say "[speech style of M]'[one of]I think your [if F is asshole]ass[otherwise][cunt][end if] needs some airing out!'[or]After this ravaging, I think you'll be SOREing! Haha, get it?'[or]Aww, I'm sorry to burst your bubble, but I think I might have punctured your body! Don't worry, I'll be sure to fill you back up!'[or]I hope you don't feel under pressure to perform!'[or]It may be painful now, but if you get any wounds, you can always HELIUM.'[or]It looks like you[']re really full of hot air!'[or]It's a bird! It's a plane! It's a dick in your [if F is asshole]ass[otherwise][cunt][end if]! Hahaha!'[or]The amount of time you spend getting fucked[if the player is not female] in the ass[end if] must be pretty *high up*!'[or]I'd love to talk about a vortex, but sluts like you only care about more sex!'[in random order][roman type][line break][if the sex-length of M is 3 and the reaction of the player is 0]Despite [his of M] awful puns, you still feel humiliated, and you are continuously getting more sore.[line break][end if]"; [There will be puns.]
+	say "[speech style of M]'[one of]I think your [if F is asshole]ass[otherwise][cunt][end if] needs some airing out!'[or]After this ravaging, I think you'll be SOREing! Haha, get it?'[or]Aww, I'm sorry to burst your bubble, but I think I might have punctured your body! Don't worry, I'll be sure to fill you back up!'[or]I hope you don't feel under pressure to perform!'[or]It may be painful now, but if you get any wounds, you can always HELIUM.'[or]It looks like you[']re really full of hot air!'[or]It's a bird! It's a plane! It's a dick in your [if F is asshole]ass[otherwise][cunt][end if]! Hahaha!'[or]The amount of time you spend getting fucked[if the player is not female] in the ass[end if] must be pretty *high up*!'[or]I'd love to talk about a vortex, but sluts like you only care about more sex!'[in random order][roman type][line break][if the sex-length of M is 3 and the reaction of the player is 0]Despite [his of M] awful puns, you still feel humiliated, and you are continuously getting more sore.[line break][end if]";[There will be puns.]
 	if M is penetrating asshole, ruin asshole;
 	otherwise ruin vagina;
 	decrease the sex-length of M by 1.
@@ -718,12 +801,17 @@ To say NastyTrapReactFlav of (M - an aeromancer):
 Part 5 - Dominant Sex
 
 To decide which number is the mental dominance roll for (M - an aeromancer):
-	let R be the intelligence of the player - the difficulty of M;
-	if debugmode > 0, say "[input style]Aeromancer wand check = [R].[line break]";
-	if R < 0 and the intelligence of the player < 8, decide on -99;[You can only have sex with the aeromancer if her wand is willing to accept you. Unless you're smarter than she is, you need an intelligence of 8 to dominate her]
-	if debugmode > 0, say "[input style]Aeromancer chastity check...[line break]";
-	if there is a worn research airhancer and player-fucker is penis, decide on -99;[Likewise, if she has you in her special chastity, you can't have sex with her either]
-	decide on a random number between (the intelligence of the player / 2) and the dominance of the player.
+	let chaste be 0;
+	if there is a worn research airhancer and player-fucker is penis, now chaste is 1;
+	if debugmode > 0, say "[input style]Aeromancer chastity check...[if chaste is 1]AUTOMATIC FAILURE[end if][line break]";[If she has you in her special chastity, you can't use your penis on her]
+	if chaste is 1, decide on -99;
+	let N be a random number between the intelligence of the player and the difficulty of M;[You can only have sex with the aeromancer if her wand is willing to accept you.]
+	if debugmode > 0, say "[input style]Aeromancer wand check = [N]. [if N < 0]FAILED[otherwise]PASSED[end if][line break]";
+	if N < 0, decide on -99;
+	let D be the dominance of the player;
+	let DD be a random number between (D / 2) and (D * 2);
+	if debuginfo > 0, say "[input style]Calculating player's dominance. Raw value based on remaining energy [if fuckskill is 0]and submissiveness [end if]= [D][line break]RNG([D]/2[bracket][D / 2][close bracket] ~ [D]*2[bracket][D * 2][close bracket]) = [DD][roman type][line break]";
+	decide on DD.
 
 To decide if (M - an aeromancer) is dominantSexReady:
 	let G be the intelligence of the player - the difficulty of M;
@@ -1027,7 +1115,7 @@ To compute annoyance of (M - an aeromancer):
 	if M is unfriendly:
 		say "The aeromancer ignores your question. [line break][speech style of M]'Too much talking, not enough science.'[roman type][line break]";
 	otherwise:
-		say "[speech style of M]'Okay that's enough questions now. I'm a busy [man of M], you know.'[roman type][line break]";
+		say "[speech style of M]'Okay, that's enough questions now. I'm a busy [man of M], you know.'[roman type][line break]";
 	alwayscutshow figure of aeromancer interact 17 for M.
 
 To compute teaching of (M - an aeromancer):
@@ -1080,7 +1168,7 @@ Section 1 - Confident Aeromancer
 
 confident aeromancer is an aeromancer. The text-shortcut of confident aeromancer is "mae".
 To say MediumDesc of (M - confident aeromancer):
-	say "smirking [if M is ballooned]massive-breasted [end if]aeromancer".
+	say "confident [BalloonDesc of M]aeromancer".
 
 Definition: confident aeromancer is dungeon dwelling: decide no.
 Definition: confident aeromancer is woods dwelling if inflation fetish is 1.
@@ -1094,37 +1182,40 @@ The previously-ballooned of confident aeromancer is usually 1.
 The spawn initial woods aeromancer rule is listed in the setting up woods monsters rules.]
 
 To compute appearance assessment of (M - confident aeromancer):
-	FavourDown M by the science requests of M * 2;
-	let A be the air volume of belly + the air volume of breasts + the air volume of belly;
-	if A >= 15:
-		say "[speech style of M]'[one of]WOW, what wind elemental fucked YOUR brains out? I probably shouldn[']t bother asking, since you[']re obviously a slut for getting blown up like a balloon, but how would you like to help me with an experiment?'[or]You look kind of bloated. Did you wake up on the wrong side of a djinn[']s cloud buster? Hahaha! Help me out with an experiment... if you want. *snrt*'[or]Hey, you probably get this a lot, but you look JUST like this balloon I fucked in college. Hahaha! Want to help me out with an experiment?'[at random][roman type][line break]";
-	otherwise if the class of the player is schoolgirl:
-		say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? OK, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type] [line break]";
-	otherwise if the player is exposed:
-		say "[speech style of M]'[one of]Wow, a wench outside the dungeon! You don't see that every day! [or]My motto is: ['][if vagina is lewdly exposed][cunt][otherwise if penis is lewdly exposed and penis is tiny][sissy] clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, fucked by guards all day!['] [then at random]FYI I'm pretty powerful, so I'm going to experiment on you either way, but I'll go easier on you if you accept willingly. Sound good?[roman type][line break]";
+	if the player is top-wardrobe-malfunctioning:
+		compute default nip slip reaction of M;
 	otherwise:
-		say "[speech style of M]'[one of]Hey, I've been looking for a new research subject, sooo... you're hired[or]I can tell by your heavy breathing, you're perfect for this next experiment[or]Hey if it isn't my favourite research subject[stopping]! I'm pretty strong, so you don't have much of a choice, but I'll go easier on you if you cooperate. Sound good?'[roman type][line break]";
-	if M is interested:
-		if the player is bimbo consenting:
-			FavourUp M;
-			compute aeromancer science of M;
-			now the science requests of M is 0;
-			if M is unfriendly, satisfy M;
-		otherwise if A < 15 or the science requests of M > 2:
-			say "[speech style of M]'[one of]OK! Hope this doesn[']t blow up in your face!'[or]An airhead like you should really go back to the dungeon, but since you're here...'[or]Open air isn't good for stupid people. Trust me, inside air will work way better on you.'[at random][roman type][line break]";
-			now the science requests of M is 0;
-			anger M;
+		FavourDown M by the science requests of M * 2;
+		let A be the air volume of belly + the air volume of breasts + the air volume of belly;
+		if A >= 15:
+			say "[speech style of M]'[one of]WOW, what wind elemental fucked YOUR brains out? I probably shouldn[']t bother asking, since you[']re obviously a slut for getting blown up like a balloon, but how would you like to help me with an experiment?'[or]You look kind of bloated. Did you wake up on the wrong side of a djinn[']s cloud buster? Hahaha! Help me out with an experiment... if you want. *snrt*'[or]Hey, you probably get this a lot, but you look JUST like this balloon I fucked in college. Hahaha! Want to help me out with an experiment?'[at random][roman type][line break]";
+		otherwise if the class of the player is schoolgirl:
+			say "[speech style of M]'[one of]So, freshman. Want to help out with one of my experiments, or am I going to have to fog you.'[or]Hey, you like tentacles right? OK, so I have this experiment I want to try out, but if you say no, I'm going to use my magic to make you my bitch. Win win for both of us, right?'[or]You obviously have no magical talent, so you'd really have no chance of taking me on in a fight. So, agree to help me out with an experiment, or I'm going to use my magic to torture you until I get bored! Sound good?'[at random][roman type] [line break]";
+		otherwise if the player is exposed:
+			say "[speech style of M]'[one of]Wow, a wench outside the dungeon! You don't see that every day! [or]My motto is: ['][if vagina is lewdly exposed][cunt][otherwise if penis is lewdly exposed and penis is tiny][sissy] clitty[otherwise if asshole is lewdly exposed]butthole[otherwise if penis is lewdly exposed]willy[otherwise]nipples[end if] on display, fucked by guards all day!['] [then at random]FYI I'm pretty powerful, so I'm going to experiment on you either way, but I'll go easier on you if you accept willingly. Sound good?[roman type][line break]";
 		otherwise:
-			say "[speech style of M]'[one of]Oh. That's pretty cheeky of you, considering I've been so friendly. You probably don't get how powerful I am, but I'll really blow up if you breeze me like this again.'[or]Hahaha! That's SO funny. It's like your head is full of hot air, you fucking bitch! HAHAHA! Don't refuse me again.'[or]WOW, do you have any idea how powerful I am? I can do anything I want! Nobody fucking says no to me. Don't this I'll let a mistake like this slide again...'[at random][roman type][line break]";
-			increase the science requests of M by 1;
-			bore M.
+			say "[speech style of M]'[one of]Hey, I've been looking for a new research subject, sooo... you're hired[or]I can tell by your heavy breathing, you're perfect for this next experiment[or]Hey if it isn't my favourite research subject[stopping]! I'm pretty strong, so you don't have much of a choice, but I'll go easier on you if you cooperate. Sound good?'[roman type][line break]";
+		if M is interested:
+			if the player is bimbo consenting:
+				FavourUp M;
+				compute aeromancer science of M;
+				now the science requests of M is 0;
+				if M is unfriendly, satisfy M;
+			otherwise if A < 15 or the science requests of M > 2:
+				say "[speech style of M]'[one of]OK! Hope this doesn't blow up in your face!'[or]An airhead like you should really go back to the dungeon, but since you're here...'[or]Open air isn't good for stupid people. Trust me, inside air will work way better on you.'[at random][roman type][line break]";
+				now the science requests of M is 0;
+				anger M;
+			otherwise:
+				say "[speech style of M]'[one of]Oh. That's pretty cheeky of you, considering I've been so friendly. You probably don't get how powerful I am, but I'll really blow up if you breeze me like this again.'[or]Hahaha! That's SO funny. It's like your head is full of hot air, you fucking bitch! HAHAHA! Don't refuse me again.'[or]WOW, do you have any idea how powerful I am? I can do anything I want! Nobody fucking says no to me. Don't this I'll let a mistake like this slide again...'[at random][roman type][line break]";
+				increase the science requests of M by 1;
+				bore M.
 
 To compute aeromancer science of (M - confident aeromancer):
 	increase the science history of M by 1;
 	let N be the science history of M;
 	if N > 5, now N is 5;
 	let R be a random number between 0 and N;[TODO: summons wasp]
-	say "[speech style of M]'[one of]Smart! OK, let's see...' [or]Good choice! Here we go...' [or]That was the right move. Now, stay still...' [at random][roman type]Pointing [his of M] wand towards you, [NameDesc of M] concentrates. ";
+	say "[speech style of M]'[one of]Smart! OK, let's see...' [or]Good choice! Here we go...' [or]That was the right move. Now, stay still...' [at random][roman type][line break]Pointing [his of M] wand towards you, [NameDesc of M] concentrates. ";
 	if R is 0:
 		say "You feel your whole body exploding outwards!";
 		if the largeness of breasts < max breast size, BustInflate 12;

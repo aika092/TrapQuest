@@ -561,15 +561,16 @@ To compute the mutation effects of (G - a glue):
 				otherwise:
 					if the size of penis > min penis size:
 						say "The penetrating fumes burn at your crotch, sending a tingle through your groin. You feel your [Shortdesc of penis] tingling... ";
-						PenisDown 1;
+						SilentlyPenisDown 1;
 						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [Shortdesc of penis].";
 					otherwise:
 						let C be a random off-stage pink rubber dress;
 						if C is actually summonable:
 							compute GlueMorphingInto of G to C;
 						otherwise:
+							let BL be the largeness of breasts;
 							BustUp 1;
-							say "The fumes make your chest tingle and burn. You feel it swell up into a [BreastDesc].";
+							say "The fumes make your chest tingle and burn. You feel it swell [if the largeness of breasts is BL]a bit[otherwise]up into [BreastDesc][end if].";
 		otherwise if the active-colour of G is yellowish:
 			now X is a random number between 1 and 3;
 			if X is 1:
@@ -586,23 +587,20 @@ To compute the mutation effects of (G - a glue):
 			otherwise if X is 2:
 				if watersports fetish is 1 and a random number between 0 and diaper focus is 0:
 					say "You feel... unsettled... thirsty. You picture yourself drinking from an arching stream, and lick your lips.";
-					if the stomach-water of the player > 0:
-						decrease the stomach-water of the player by 1;
+					if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 					UrineTasteAddictUp 1;
 				otherwise if diaper lover > 0:
-					if the raw diaper addiction of the player < 20:
-						DiaperAddictUp 1;
-					otherwise:
+					if incontinence < the max-incontinence of the player and a random number between 1 and 2 is 1:
+						say "You shiver, feeling... smaller...? scareder, less sure of yourself. You feel your ability to hold onto your bladder [if diaper messing >= 3]and bowels [end if]weakening.";
 						increase incontinence by 1;
-						say "You shiver, feeling... smaller...? scareder, less sure of yourself.";
+					otherwise if the raw diaper addiction of the player < 20:
+						DiaperAddictUp 1;
 				otherwise:
 					let M be a random monster in the location of the player;
 					say "A weird shiver runs through you, a sense of [i]needing[/i] something... [if M is nothing]You feel desperately lonely here[otherwise]Your heart beats a little faster as you stare hopefully up at the [printed name of M][end if].";
 					RandomAddictUp 1;
 			otherwise if X is 3:
-				unless the size of penis <= min penis size:
-					PenisDown 1;
-					say "Your penis [Shrink]s into a [ShortDesc of penis].";
+				PenisDown 1;
 		otherwise if the active-colour of G is blackish: [###TODO: Use X to add further blackish-plausible options here.]
 			now X is a random number between 1 and 3;
 			if the class of the player is latex fetish model:
@@ -647,9 +645,8 @@ To compute the mutation effects of (G - a glue):
 				increase the lactation rate of the player by 1;
 			otherwise if X is 2:
 				if the semen taste addiction of the player < 20:
-					SemenTasteAddictUp 1;
 					say "[one of]You suddenly realise what this glue's interesting smell reminds you of: semen![or]It really does smell like [semen]![stopping] The aroma seems to send tingles from your nose up into your brain. [if the semen taste addiction of the player < 4]Yuk![otherwise if the semen taste addiction of the player < 7]Hmm.[otherwise][one of]You[or]Once again, you[stopping] find yourself licking your lips...[end if]";
-					[Incorporated MG's suggestion about taking advantage of the changes in the player's mental state]
+					SilentlySemenTasteAddictUp 1;
 			otherwise if X is 3:
 				let C be white-diagram briefs;
 				if pregnancy fetish is 1 and C is actually summonable:
@@ -660,15 +657,13 @@ To compute the mutation effects of (G - a glue):
 						compute GlueMorphingInto of G to C;
 					otherwise:
 						say "You feel... unsettled... thirsty. You picture yourself drinking from an arching stream, and lick your lips.";
-						if the stomach-water of the player > 0:
-							decrease the stomach-water of the player by 1;
+						if the stomach-water of the player > 0, decrease the stomach-water of the player by 1;
 						UrineTasteAddictUp 1;
 				otherwise if lactation fetish is 1 or extreme proportions fetish is 1:
 					increase the lactation rate of the player by 2;
 					say "You feel the fumes penetrate your [BreastDesc], which flush with an inner warmth.";
 				otherwise if TG fetish >= 1 and the size of penis > min penis size:
 					PenisDown 1;
-					say "Your penis [Shrink]s into a [ShortDesc of penis].";
 				otherwise if artificial enhancements fetish is 1 and extreme proportions fetish is 1:
 					say "You feel a burn as tiny tendrils of the glue penetrate your flesh, oozing [i]inside[/i] you! You see the glue shrink... and yourself swell!";
 					BustImplantsUp 1;
@@ -879,7 +874,9 @@ Carry out tearing off worn clothing:
 	let C be the noun;
 	allocate 3 seconds;
 	say "You start tugging at the [C]...";
-	if the dexterity of the player > a random number between 1 and 30:
+	let R be a random number between 1 and 20;
+	if debuginfo > 0, say "[input-style]Glue tugging check: Dexterity ([dexterity of the player].5) | ([R]) d20 Difficulty[roman type][line break]";
+	if the dexterity of the player >= R:
 		[Simulate pulling it free a bit by probability]
 		if a random number between 1 and 4 is 1:
 			say "Finally! You managed to carefully tear the [ShortDesc of C] free.";
@@ -890,8 +887,13 @@ Carry out tearing off worn clothing:
 			now gluePainThreshold is the delicateness of the player + 2;
 			increase glueTries by 1;
 	otherwise:
-		say "Ouch! That hurts, and it's tearing the [ShortDesc of C]. Are you sure you want to continue ripping it off by brute strength? ";
-		if the player is consenting:
+		say "You are unable to peel it gently enough to get the item off without it tugging at your skin this time. Ouch! That hurts, and it's tearing the [ShortDesc of C].";
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		set numerical response 1 to "decide to try to remove it gently again a bit later[if newbie tips is 1] (dexterity based chance each time)[end if]";
+		if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain [if C is crotch-intact or C is crotch-zipped or C is crotch-skirted]and a chance of ripping each time, but guaranteed to unstick the glue within a few tries)[end if]";
+		otherwise set numerical response 2 to "try to remove it with brute strength";
+		compute multiple choice question;
+		if player-numerical-response is 2:
 			say "Ouch! That really hurt!";
 			PainUp 1;
 			if C is not rigid:
@@ -913,7 +915,7 @@ Carry out tearing off worn clothing:
 				increase glueTries by 1;
 		otherwise:
 			now gluePainThreshold is the delicateness of the player + 2;
-			say "Fearing the pain, you stop.".
+			say "[if the delicateness of the player > 10]Fearing the pain, you stop.[end if]".
 
 Check pulling glue:
 	if the player is glue stuck, try standing instead.

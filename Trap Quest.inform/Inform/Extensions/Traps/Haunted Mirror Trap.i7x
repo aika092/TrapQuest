@@ -52,7 +52,7 @@ To trigger (Y - a haunted mirror trap):
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a haunted mirror trap):
-	if resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile:
+	if resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling the player is 0:
 		say "[bold type]The mirror in this room tries to grab your focus[one of] with some kind of demonic power[or][stopping]![roman type][line break]";
 		compute mirror.
 
@@ -87,7 +87,7 @@ Definition: mirror forced masturbation is one-turn: decide no.
 To compute resolution of (X - mirror forced masturbation):
 	now auto is 2;
 	let K be a random worn top level protection clothing;
-	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][ShortDesc of K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering herself gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
+	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][ShortDesc of K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering [himself of the player] gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
 	if the player is not a bit horny:
 		say "[if the player is male]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
 		now the arousal of the player is 5000;
@@ -163,7 +163,7 @@ To compute resolution of (X - mirror soiling):
 		compute messing;
 	otherwise if the bladder of the player > 4:
 		cutshow figure of mirror cutscene 2 for MR;
-		now delayed urination is 1;
+		now delayed urination is 2;
 		try urinating;
 	otherwise:
 		cutshow figure of mirror cutscene 1 for MR;
@@ -187,5 +187,23 @@ To compute resolution of (M - mirror-stuffie):
 	let C be a random stuffie in the location of the player;
 	say "Your reflection reaches down and picks up [NameDesc of C], cuddling [him of C] close to your chest. You realise you are doing the same thing! Your hand is now stuck to [NameDesc of C] - it looks like you'll be carrying [him of C] around for a while!";
 	summon C cursed with quest.
+
+mirror-maiden is a mirror attack.
+Definition: mirror-maiden is acceptable if (there is an iron-maiden in the location of the player or there is an off-stage iron-maiden) and (the number of worn messed knickers is 0 or tough-shit is 1).
+To compute resolution of (M - mirror-maiden):
+	let Y be a random iron-maiden in the location of the player;
+	if Y is nothing, now Y is a random iron-maiden;
+	if Y is not in the location of the player:
+		say "Your reflection looks behind [himself of the player], at a large metal upright humanoid box that you could swear wasn't there a moment ago![line break][variable custom style]What?![roman type][line break]";
+		now Y is in the location of the player;
+	say "You watch your reflection with [horror the sex addiction of the player] as you take several steps backwards, and then open the door of the metal box, and step inside. The door closes in front of you, and a lock clicks shut!";
+	now Y is not untriggered;
+	now Y is revealed;
+	now Y is expired;
+	now iron-maiden-turns is 0;
+	say DQIronMaidenFlav;
+	now the source-room of Iron Maiden is the location of the player;[In case the player faints]
+	now the player is in Iron Maiden;
+	refresh the map-window.
 
 Haunted Mirror Trap ends here.

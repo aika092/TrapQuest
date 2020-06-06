@@ -73,7 +73,7 @@ REQUIRES COMMENTING
 +!]
 To deploy bucket in (G - a room):
 	if debugmode is 1, say "Deploying a bucket in [printed name of G][paragraph break]";
-	if the number of on-stage iron-maidens is 0:
+	if diaper quest is 0 and the number of on-stage iron-maidens is 0:
 		now a random off-stage iron-maiden is in G;
 	otherwise if the number of on-stage cage traps is 0:
 		now a random off-stage cage trap is in G;

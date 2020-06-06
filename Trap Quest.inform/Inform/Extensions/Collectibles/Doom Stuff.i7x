@@ -7,7 +7,6 @@ Figure of reception bell is the file "Items/Collectibles/bell1.png".
 To decide which figure-name is the examine-image of (B - reception bell):
 	decide on figure of reception bell.
 
-
 To say ExamineDesc of (C - reception bell):
 	say "The bell from the reception desk.".
 
@@ -43,7 +42,6 @@ To decide which figure-name is the examine-image of (B - black candle):
 
 To say ExamineDesc of (C - black candle):
 	say "A black candle.".
-
 
 Report taking black candle:
 	if doom counter is 0:

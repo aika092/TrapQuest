@@ -10,7 +10,7 @@ To decide which figure-name is the clothing-image of (C - a pocketbook):
 Browsing is an action applying to one thing. Understand "skim [something]", "browse [something]" as browsing.
 
 Check browsing:
-	if player is in danger or the player is immobile, say "You're a bit busy!" instead;
+	if the player is in danger or the player is immobile, say "You're a bit busy!" instead;
 	if the noun is recipe, say ExamineDesc of the noun instead;
 	if the noun is not pocketbook, say "This verb is for reading pocketbooks." instead;
 	if the intelligence of the player < 5, say "You try to, but you just can't focus long enough to read it!" instead;
@@ -136,7 +136,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		otherwise SemenPuddleUp 1;]
 		StrengthDown X / 10;
 		DexDown X / 10;
-	otherwise if R is 1 and the virgin of the player is 0 and the player is female and the openness of vagina > 5:
+	otherwise if R is 1 and the vaginalvirgin of the player is 0 and the player is female and the openness of vagina > 5:
 		say "'[one of]I just can't stop thinking about the way I lost my cherry. My tight little cumdump got ruined by that big, hard [manly-penis]! Now, it's like everybody wants to pin me down and [if pregnancy fetish is 1]breed my hot box[otherwise]come inside me[end if]! Life is so unfair[or]I can't believe I let anybody put their [manly-penis] in my fuckhole! Now whenever I get fucked, I have to think about my first time, and how huge that yummy [manly-penis] was[or]I can barely look at myself in the mirror ever since I lost my virginity! All I can think about is getting pounded into the floor by that heavenly [manly-penis]. Umm, hellooo, if I wanted to be treated like the worthless cumdumpster I am, I would ask[at random]! I want a do-over.' You cringe at what's written on the page, partly because of the [if the bimbo of the player > 14]prudish[end if]wording, but also because it captures how you've always felt on the inside ever since you lost your purity. The words light up as the book emits a wave of energy, erasing themselves from the page as your [vagina] suddenly and very painfully begins tightening up.";
 		PussyClose 5;
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
@@ -147,7 +147,7 @@ Carry out browsing book of regrets:[TODO: player says something like "I didn't w
 		if the noun is blessed and a random number between 1 and 3 is 1, decrease P by 2;
 		ruin asshole times (the previous openness of asshole - the openness of asshole + P + 5);
 	otherwise if the diaper addiction of the player > 6 and diaper lover >= 1 and R < 4:
-		say "'[one of]I've reached the point where all I can think about when I'm horny is diapers! Panties, and even nudity, do nothing for me any more, all I care about is wearing my precious pottypants. I find myself longing for people to rub my diaper so I can make my cummies in them more than I long to have real sex with them[or]I just came from soiling myself in front of Mommy and her friends. While they all laughed at me all I cared about was rubbing my diaper as hard as possible, how could I not after something like that happened? Situations like this are the only thing that arouse me any more[or]It's a good thing I'm able to get off from using my diapers, seeing as that's all I'm good for now. I doubt anyone would be interested in me now after seeing me cum in a soiled diaper while playing in a baby bouncer without a hint of shame. No matter how much I enjoy it though, deep down I just want another chance at having real sex[at random]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the delicateness of the player > 14]adult[end if]wording, but also because it captures how you feel about your growing addiction to diapers. The words light up as you move to turn the page, erasing themselves as it suddenly feels less attractive to soil your diapers, even as you start to feel more like the adult baby you fantasise about being.";
+		say "'[one of]I've reached the point where all I can think about when I'm horny is diapers! Panties, and even nudity, do nothing for me anymore, all I care about is wearing my precious pottypants. I find myself longing for people to rub my diaper so I can make my cummies in them more than I long to have real sex with them[or]I just came from soiling myself in front of Mommy and her friends. While they all laughed at me all I cared about was rubbing my diaper as hard as possible, how could I not after something like that happened? Situations like this are the only thing that arouse me anymore[or]It's a good thing I'm able to get off from using my diapers, seeing as that's all I'm good for now. I doubt anyone would be interested in me now after seeing me cum in a soiled diaper while playing in a baby bouncer without a hint of shame. No matter how much I enjoy it though, deep down I just want another chance at having real sex[at random]. I want a do-over.' You cringe at what's written on the page, partly because of the [if the delicateness of the player > 14]adult[end if]wording, but also because it captures how you feel about your growing addiction to diapers. The words light up as you move to turn the page, erasing themselves as it suddenly feels less attractive to soil your diapers, even as you start to feel more like the adult baby you fantasise about being.";
 		SilentlyDiaperAddictDown 4;
 		if the noun is not blessed or a random number between 1 and 3 < 2, increase P by 1;
 		IntDown P + 1;
@@ -188,7 +188,7 @@ To say MediumDesc of (C - a book of anal):
 	say "Brandi's Big Book of Anal".
 
 To decide which number is the soreness-influence of (C - a book of anal):
-	if C is tolerance, decide on 3 + (the flat intelligence of the player / 7);[more powerful the better your reading comprehension!]
+	if C is tolerance, decide on 3 + (saved-flat-intelligence / 7);[more powerful the better your reading comprehension!]
 	decide on 0.
 
 Definition: a book of anal is anal sex themed: decide yes.
