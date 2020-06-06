@@ -71,7 +71,7 @@ To say MonsterDesc of (M - an acolyte):
 	otherwise say "This [man of M] wears a black hooded robe that covers [his of M] eyes and therefore conceals [his of M] identity. [if lady fetish is 2][big his of M] fully exposed nipples[otherwise][big his of M] fully exposed breasts[end if] are pierced and chained together by a light gold chain. The open robe also leaves [his of M] massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. [big he of M] has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on [his of M] pink pacifier read '777'. [big he of M] wields a bizarre looking gold and blue sacrificial dagger in [his of M] left hand, with several pointed stars and other basic shapes etched into the design.".
 
 To say MonsterComment of (M - an acolyte):
-	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another sister in service of the [great ones]! Wait, what?[or]I hope my sister's not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
+	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another [brother of the player] in service of the [great ones]! Wait, what?[or]I hope my [brother of the player]'s not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
 
 To say MonsterDesc of (M - a mindless acolyte):
 	if diaper quest is 1:
@@ -207,10 +207,10 @@ To compute perception of (M - an acolyte):
 	now M is interested;
 	say "[BigNameDesc of M] notices you![line break]";
 	if the class of the player is cultist and (the pregnancy of the player > 0 or xavier-diaper-link > 0):
-		say "[first custom style]'Well met sister, though why do you not wait with the other blessed downstairs?'[roman type][line break]";
+		say "[first custom style]'Well met [brother of the player], though why do you not wait with the other blessed downstairs?'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is cultist:
-		say "[first custom style]'Well met sister! I see you too are between blessings.'[roman type][line break]";
+		say "[first custom style]'Well met [brother of the player]! I see you too are between blessings.'[roman type][line break]";
 		calm M;
 	otherwise if the player-class is succubus:
 		say "[first custom style]'If you are willing to abase yourself before the Masters, you may pass, servant of Xavier.'[roman type][line break]";
@@ -471,7 +471,7 @@ Section 1 - Greeting
 [FirstResponse only fires if they're friendly, right? So it only needs cases for handling such.]
 To say FirstResponse of (M - an acolyte):
 	if the class of the player is cultist:
-		say "[first custom style]'A fine day to you, sister.'[roman type][line break]";
+		say "[first custom style]'A fine day to you, [brother of the player].'[roman type][line break]";
 	otherwise if the player-class is succubus:
 		say "[first custom style]'Do not speak to me as though we are allies, we merely tolerate your presence demon.'[roman type][line break]";
 	otherwise if M is unfriendly:
@@ -481,7 +481,7 @@ To say FirstResponse of (M - an acolyte):
 
 To say RepeatResponse of (M - an acolyte):
 	if the class of the player is cultist:
-		say "[speech style of M]'[one of]Yes sister, I am aware.'[or]Could we make this quick? I was trying to meditate on the void at the heart of all reality.'[or]As always a pleasure to see you, sister.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Yes [brother of the player], I am aware.'[or]Could we make this quick? I was trying to meditate on the void at the heart of all reality.'[or]As always a pleasure to see you, [brother of the player].'[at random][roman type][line break]";
 	otherwise if the player-class is succubus:
 		say "[speech style of M]'[one of]Isn't there some demon you could be sucking off instead of bothering me?'[or]Come back to me when you've joined the winning side.[or]Seriously, go away. I'm kinda busy.[at random][roman type][line break]";
 	otherwise:
@@ -562,7 +562,7 @@ Section 3 - Drink Requesting
 
 To compute friendly drink of (M - an acolyte):
 	if the player-class is cultist:
-		say "[first custom style]'It would not do for you to weaken, sister. Here, drink this.'[roman type][line break][big he of M] hands you a small cup of amber liquid with an odd, sweet smell. As you drink it, you feel quite refreshed but also somehow empty inside.";
+		say "[first custom style]'It would not do for you to weaken, [brother of the player]. Here, drink this.'[roman type][line break][big he of M] hands you a small cup of amber liquid with an odd, sweet smell. As you drink it, you feel quite refreshed but also somehow empty inside.";
 		StomachUp 2;
 		humiliate MODERATE-HUMILIATION;
 	otherwise:
@@ -775,7 +775,7 @@ To say AfterDominationComment (N - a number) of (M - an acolyte):
 	if N is 1, say "[speech style of M]'[one of]Your seed empowers us, non-believer...'[or]All virility is an extension of the [great ones]...'[or]You lack the conviction to stand against the [great ones], non-believer...'[at random][roman type][line break]";
 	if N is 2, say "[speech style of M]'You will yet become a worthy servant of the [great ones].'[roman type][line break]";
 	if N is 3, say "[speech style of M]You are ready now to carry the future of the [great ones].'[roman type][line break]";
-	if N is 4, say "[speech style of M]'[one of]Your seed is empowered by the [great ones]...'[or]We are truly blessed by the [great ones], sister.'[or]Did you feel it, sister? Their blessing?'[at random][roman type][line break]".
+	if N is 4, say "[speech style of M]'[one of]Your seed is empowered by the [great ones]...'[or]We are truly blessed by the [great ones], [brother of the player].'[or]Did you feel it, [brother of the player]? Their blessing?'[at random][roman type][line break]".
 
 Part 5 - Variants
 
@@ -941,6 +941,6 @@ To compute (M - clairvoyant acolyte) entering mouth:
 				bore M for 600 seconds.
 
 To say MouthPenetrationFlav of (M - clairvoyant acolyte):
-	say "[big he of M] buries your nose into [his of M] cum-dripping asshole and covers your mouth with [his of M] cum-filled [vagina]. You can't breathe![line break][speech style of M]'[one of]Drink, sister. Drink it all...'[or]Feast on the blessed nectar of the [great ones]...'[or]The taste will be beyond your comprehension at first. Have no fear...'[or]Lick me clean. Prove your devotion to the old gods...[purely at random][roman type][line break]";
+	say "[big he of M] buries your nose into [his of M] cum-dripping asshole and covers your mouth with [his of M] cum-filled [vagina]. You can't breathe![line break][speech style of M]'[one of]Drink, [brother of the player]. Drink it all...'[or]Feast on the blessed nectar of the [great ones]...'[or]The taste will be beyond your comprehension at first. Have no fear...'[or]Lick me clean. Prove your devotion to the old gods...[purely at random][roman type][line break]";
 
 Acolyte Cultist ends here.

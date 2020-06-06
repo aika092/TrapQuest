@@ -126,7 +126,6 @@ To say LeftoverDesc (N - 107):
 ]
 minotaur has a number called critical-windup.
 
-
 Part 1 - Perception
 
 To compute perception of (M - minotaur):
@@ -351,8 +350,6 @@ To compute fuckhole sex of (M - minotaur):
 			otherwise say "[one of]Relaxing your [variable F], you accept the virtually endless torrent of [semen] into your [BellyDesc].[or]You do your best to stay relaxed as [his of M] [semen] spurts into your belly.[or]You can feel [his of M] [DickDesc of M] twitching as it continues to spurt [semen] into your [BellyDesc].[or]Relaxing your inner muscles, you accept the unending torrent of [semen] into your [BellyDesc].[at random]";
 		decrease the health of M by 5;
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
-
-
 
 To compute damaging attack of (M - a minotaur):
 	if the player is the donator and a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]

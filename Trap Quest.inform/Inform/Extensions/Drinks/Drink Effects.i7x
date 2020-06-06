@@ -291,5 +291,4 @@ To compute drinking effect (N - 23):
 	FaceFill murkwater by 1;
 	suggest swallowing.
 
-
 Drink Effects ends here.

@@ -735,7 +735,6 @@ A tongue piercing is a kind of piercing. The printed name of tongue piercing is 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
 
-
 To decide which object is the concealer of (C - a tongue piercing):
 	if C is listed in the armUses of arms, decide on arms;
 	unless there is a worn ringagged clothing or the latex-transformation of the player > 6, decide on face;

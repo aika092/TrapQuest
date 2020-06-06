@@ -206,7 +206,6 @@ To StomachMilkDown (X - a number):
 			if the fat-weight of the player < milk-drunk * 2, FatUp 1;
 			increase milk-exercise-bonus by 1.
 
-
 [!<PukeUp>+
 
 Let's see whether the player pukes up anything from their gag reflex being triggered.
@@ -237,6 +236,5 @@ Let's see whether the player pukes up anything from their gag reflex being trigg
 		say "[BigFuckerDesc of M] being down your throat makes you gag, and as it pulls out you puke up the [if the stomach-semen of the player > 0][semen][otherwise]liquid[end if] from your belly.";
 		PukeUp a random number between 1 and (the semen volume of face + the stomach-semen of the player + the semen volume of belly);
 	progress quest of cum-swallowing-quest.]
-
 
 Stomach ends here.

@@ -358,7 +358,6 @@ This function can display a relevant image when the player receives a facial. Do
 To get facial accepting image for (M - a monster):
 	do nothing.
 
-
 Definition: a monster (called M) is coercing a swallow:
 	let R be a random number between 10 and 20;
 	let D be the delicateness of the player;
@@ -366,7 +365,6 @@ Definition: a monster (called M) is coercing a swallow:
 	if the player is desperate to drink semen, decide yes;
 	if R < D, decide yes;
 	decide no.
-
 
 [!<ComputeDefaultOralCreampieOfMonster>+
 
@@ -405,7 +403,6 @@ An oral creampie where the player was resisting on the final turn
 To compute merciful oral creampie of (M - a monster):
 	say SubmittedOralCreampie of M;
 	compute default oral creampie of M.
-
 
 [!<GetOralCreampieImageOfMonster>+
 
@@ -469,7 +466,6 @@ To compute oral creampie hold reaction of (M - a monster):
 	otherwise:
 		say "[BigNameDesc of M] strikes you across the face.";
 		PainUp 1.
-
 
 [!<ComputeSpitChoiceOfMonster>+
 

@@ -197,7 +197,6 @@ Carry out drinking a carried bottle:
 
 The block drinking rule is not listed in the check drinking rulebook.
 
-
 Swallowing is an action applying to nothing.
 Check Swallowing:
 	let T be a random throater thing penetrating face;
@@ -297,7 +296,5 @@ Carry Out Spitting:
 	otherwise:
 		compute spitting.
 Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
-
-
 
 Drinking ends here.

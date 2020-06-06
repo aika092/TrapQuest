@@ -161,7 +161,6 @@ Definition: a diaper is potentially erection concealing: decide yes.
 Definition: a clothing is potentially penis concealing if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing).
 Definition: a clothing is potentially at least partially penis concealing if it is not see-through and it is potentially penis covering.
 
-
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
 
 Determines which object is concealing the player's penis at the highest level.
@@ -282,7 +281,6 @@ Definition: penis is erect-on-request:
 	let R be a random number between A and D;
 	if R < -1, decide no;
 	decide yes.
-
 
 [Whenever the player gains arousal for the turn, they have a chance of getting an erection]
 To compute sudden erection chance (X - a number):

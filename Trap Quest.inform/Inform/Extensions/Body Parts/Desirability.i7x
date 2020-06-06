@@ -279,7 +279,6 @@ Definition: a person (called M) is groping:
 	if total gropability >= the groping threshold of M, decide yes;
 	decide no.
 
-
 specificBodyPartChosen is initially false.
 To choose a grope target:
 	if specificBodyPartChosen is false:

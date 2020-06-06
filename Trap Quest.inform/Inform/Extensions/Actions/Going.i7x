@@ -41,8 +41,6 @@ Check going while the player is immobile:
 			say "You're stuck to the [one of]floor[or]ground[at random]! You'll need to [bold type]wait[roman type] a bit longer." instead;
 	say "You're immobile right now!" instead.
 
-
-
 [!<CheckGoingWhileTheThroneIsTriggered>+
 
 REQUIRES COMMENTING

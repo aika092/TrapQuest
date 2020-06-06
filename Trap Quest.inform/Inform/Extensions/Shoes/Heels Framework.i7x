@@ -167,5 +167,4 @@ To compute (C - a heels) unique inheriting from (D - a clothing):
 	if D is heels:
 		if the heel-height of D > the heel-height of C, now the heel-height of C is the heel-height of D;
 
-
 Heels Framework ends here.

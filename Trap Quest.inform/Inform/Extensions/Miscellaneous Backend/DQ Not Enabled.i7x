@@ -91,7 +91,6 @@ Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.
 
-
 Include Break Room Girl by Nintendolls Job Epilogues.
 Include Clear Tank by Nintendolls Job Epilogues.
 Include Elevator Wench by Nintendolls Job Epilogues.

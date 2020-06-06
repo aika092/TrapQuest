@@ -377,5 +377,4 @@ An all time based rule (this is the malfunction checking rule):
 		if another-turn is 0 and the player is not immobile and the player is not in danger:
 			if the player is top-wardrobe-malfunctioning, say NipSlipFlav.
 
-
 Clothing Adjectives ends here.

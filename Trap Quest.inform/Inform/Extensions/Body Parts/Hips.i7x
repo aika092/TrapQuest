@@ -185,7 +185,6 @@ To say MaxAssSizeDesc:
 			say "impossibly giant";
 		if extreme proportions fetish is 1 and the player is a flatchested trap, say " after TG)".
 
-
 [!<YourselfIsBottomHeavy>+
 
 Are hips at their maximum size?

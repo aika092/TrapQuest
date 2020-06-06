@@ -676,8 +676,6 @@ An all time based rule (this is the player gets used to the taste rule):
 		if the remainder after dividing time-earnings by A < time-seconds:
 			MilkTasteAddictUp 1.
 
-
-
 Section - Image for graphics window
 
 Understand "my face", "visage", "mouth", "lips" as face. Figure of cum eating is the file "Special/Buttons/mouth.jpg".

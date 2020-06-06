@@ -114,5 +114,4 @@ To decide which object is the unique-upgrade-target of (H - black-leather-flat-b
 	if black-leather-boots is off-stage, decide on black-leather-boots;
 	decide on nothing.
 
-
 Thigh High Boots ends here.
