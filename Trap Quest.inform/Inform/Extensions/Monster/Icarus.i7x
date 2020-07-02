@@ -19,6 +19,8 @@ To say FuckerDesc of (M - Icarus):
 To say BigFuckerDesc of (M - Icarus):
 	say "Icarus".
 
+Definition: Icarus is dungeon dwelling if diaper quest is 0.
+
 Figure of Icarus 1 is the file "NPCs/MultiFloor/Icarus1.png".
 Figure of Icarus 2 is the file "NPCs/MultiFloor/Icarus2.jpg".
 Figure of Lady Icarus 1 is the file "NPCs/MultiFloor/IcarusFem1.jpg".
@@ -49,7 +51,7 @@ To set up (M - Icarus):
 	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M;
 
-To decide which number is the girth of (M - a Icarus):
+To decide which number is the girth of (M - Icarus):
 	decide on 3.
 
 [This is the spawn initial Icarus rule:
@@ -65,7 +67,7 @@ To say LeftoverDesc (N - 128):
 
 Part 1 - Misc Flavour
 
-To say DiaperReaction of (M - a Icarus):
+To say DiaperReaction of (M - Icarus):
 	if there is a currently visible diaper or the player is shameless:
 		say "[BigNameDesc of M] frowns and looks directly at your dampening crotch.[line break][speech style of M]'[one of]I've never understood you perverts who get off on wearing those things. If that wasn't bad enough, you have the audacity to use it in front of me? Disgusting.'[or][big please] stop doing such disgusting things in front of me.'[stopping][roman type][line break]";
 		if the player is modest, say "[one of]You are so ashamed you wish the ground would just open up and swallow you. [or][stopping]You turn bright red and refuse to look at [NameDesc of M] in the eye.";
@@ -326,7 +328,7 @@ To compute IcarusSummon of (C - icarus-hair):
 	say TotalDesc of hair.
 
 icarus-belly is a wearthing.
-Definition: icarus-belly is IcarusScienceAppropriate if pregnancy fetish + inflation fetish > 0 and the pregnancy of the player is 0.
+Definition: icarus-belly is IcarusScienceAppropriate if the pregnancy of the player is 0 and (inflation fetish is 1 or (pregnancy fetish is 1 and the player is female)).
 Figure of icarus-belly is the file "Special/Cutscene/cutscene-icarus-belly1.jpg".
 To compute IcarusSummon of (C - icarus-belly):
 	say "[BigNameDesc of Icarus] forms [his of Icarus] hands into a ball and slowly pulls them apart. Your belly expands at the same time as [his of Icarus] hands!";
@@ -520,21 +522,10 @@ To say MildAnnoyedResponse of (M - Icarus):
 
 Section 2 - Questioning
 
-To compute annoyance of (M - Icarus):
-	if M is unfriendly:
-		say "[BigNameDesc of M] ignores you.[line break][speech style of M]'It's much too late for questions!'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'Okay that's enough questions now. I'm a busy [man of M], you know.'[roman type][line break]";
-	if lady fetish is 0, alwayscutshow figure of Icarus interact 1 for M.
-
 To compute teaching of (M - Icarus):
 	say "[speech style of M]'I know a lot about how science works down here. Would you like to hear a secret about alchemy?'[roman type][line break]";
 	cutshow figure of Icarus interact 6 for M;
-	teach betteralchemy;
-	if the questioned of M <= 290:
-		increase the questioned of M by 100;
-	otherwise:
-		increase the questioned of M by 50.
+	teach betteralchemy.
 
 To say WhereAnswer of (M - Icarus):
 	say "[speech style of M]'Where are we? WHERE ARE WE? [if christmas content is 1]Oh never mind, I'll let you off. It's Christmas after all[otherwise]I DREW this place. You are in MY domain, you idiot[end if].'[roman type][line break]";

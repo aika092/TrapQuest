@@ -9,11 +9,11 @@ A monster has a number called sex-length. The sex-length of a monster is usually
 A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
 To decide which number is the difficulty of (M - a monster):
 	decide on the raw difficulty of M + game difficulty.
-To decide which number is the difficulty-base of (M - a monster):
+To decide which number is the starting difficulty of (M - a monster):
 	if M is hotel dwelling:
 		decide on 12;
 	if M is mansion dwelling:
-		decide on 12;
+		decide on 10;
 	if M is woods dwelling:
 		decide on 9;
 	if M is dungeon dwelling:
@@ -33,7 +33,6 @@ A monster has a number called friendly boredom. The friendly boredom of a monste
 A monster has a room called target-room. [Any monster that can change locations at unusual times might want to use this to hold a room in memory.]
 [A monster can be captive or released. A monster is usually released.] [Captive monsters are completely docile unless attacked, and they usually have a trigger to become 'released'.] [Replaced with the monster-restriction property]
 A monster can be dying. A monster is usually not dying. [A flag used by the game to remind itself that the monster should be removed from play.]
-A monster has a number called questioned. The questioned of a monster is usually 0. [How many questions has this monster been asked? Most monsters will only tolerate one.]
  Definition: A monster (called M) is wenchy: decide no.
 A monster has a number called times-dominated. The times-dominated of a monster is usually 0.[Like times-submitted, but for dominant sex.]
 A monster has a number called scared. The scared of a monster is usually 0. [How many seconds left until the monster is no longer scared. Scared monsters will attempt to flee from the player upon sight.]
@@ -68,6 +67,9 @@ Definition: a monster (called M) is regionally missing:
 	decide yes.
 
 A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
+To say speech style of (M - a monster):
+	if M is male, say first custom style; [has a penis = red]
+	otherwise say second custom style.
 Definition: a monster is raunchy: decide no.
 A monster can be airborne or flightless. A monster is usually flightless. [Does the monster fly or does it walk around? (Currently used to decide if the monster can stop the player standing back up by standing on their hair)]
 A monster can be strangers, survived or triumphant (this is the monster-history property). A monster is usually strangers. [A monster who is strangers has never voluntarily gotten aggressive at the player. A survived monster has attacked the player, and then failed to catch them, and then gotten bored. A triumphant monster has defeated the player. We use this to reward the player for surviving several encounters with DIFFERENT enemies.]
@@ -125,7 +127,7 @@ To decide which number is the refractory-time of (M - a monster):
 	decide on 300. [This can be tweaked for balancing purposes. Goes down by 4 per round.]
 A monster can be dragging.
 A monster has a number called monstersetup.
-Definition: a monster is nonexistant if the monstersetup of it is 0.
+Definition: a monster is nonexistent if the monstersetup of it is 0.
 A monster has a number called loot dropped.
 A monster has a number called leftover-type. The leftover-type of a monster is usually 100.
 
@@ -199,7 +201,6 @@ To decide which number is the amount of available directions of (M - a monster):
 		increase X by 1;
 	decide on X.
 
-A monster has a number called conversation-sequence.
 [
 Unleashed: Normal NPC state
 Caged: Can be unfriendly but can't physically interact with the player, or move.
@@ -225,6 +226,5 @@ A monster has a number called throating. [Is it currently doing deepthroat oral?
 Definition: a monster is throater if the throating of it > 0.
 To say silentThroat (M - a monster): [Shortcut to flag to the game that the NPC is deepthroating this turn]
 	increase the throating of M by 1.
-
 
 Monster Adjectives ends here.

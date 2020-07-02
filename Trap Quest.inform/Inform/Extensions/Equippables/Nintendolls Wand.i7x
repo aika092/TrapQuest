@@ -35,7 +35,7 @@ To say ShortDesc of (W - glittery-wand):
 To say ClothingDesc of (W - glittery-wand):
 	say "A gem encrusted wand vibrator. Something tells you that this is even more powerful than your average wand vibrator.".
 To decide which number is the raw-masturbation-bonus of (W - glittery-wand):
-	decide on 2.
+	decide on 1.
 To compute climax effect of (E - a glittery-wand):
 	if the raw sex addiction of the player < 20:
 		say "Your orgasm was so powerful that you feel [if the player is a pervert]even more [end if]perverted as a result.";

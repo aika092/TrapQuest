@@ -178,7 +178,7 @@ Definition: a supertiny navy clubbing dress is blue themed: decide yes.
 
 Part 7 - Sexy White Clubbing Dress
 
-A sexy white clubbing dress is a kind of clubbing dress. There is 1 sexy white clubbing dress. A sexy white clubbing dress is usually cotton. A sexy white clubbing dress is usually low cut. A sexy white clubbing dress is usually knee-length. Figure of sexy white clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of sexy white clubbing dress is "wcd".
+A sexy white clubbing dress is a kind of clubbing dress. There is 1 sexy white clubbing dress. A sexy white clubbing dress is usually cotton. A sexy white clubbing dress is usually low cut. A sexy white clubbing dress is usually hobble-skirted. A sexy white clubbing dress is usually crotch-skirted. Figure of sexy white clubbing dress is the file "Items/Clothes/Upper/Dresses/Clubbing/clubbingdress7.png". The text-shortcut of sexy white clubbing dress is "wcd".
 
 The printed name of sexy white clubbing dress is usually "[clothing-title-before]sexy white clubbing dress[clothing-title-after]".
 

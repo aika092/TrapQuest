@@ -49,7 +49,9 @@ To compute common boredom of (M - a monster) for (N - a number) seconds:
 	now M is not diaper-committed;
 	now M is not double-diaper-committed;
 	now the dismissRefused of M is 0;
-	if N >= 50 and the player is not in Dungeon12 and playerRegion is not School, decrease the charge of the dungeon altar by a random number between 1 and 50.
+	if N >= 50 and playerRegion is not School and the player is not in Dungeon12:[Dungeon12 is the Throne Room. We don't want to let the player farm by going in and out of the Royal Chambers.]
+		decrease the charge of the dungeon altar by a random number between 1 and 50;
+		if the charge of hotel altar > 0, decrease the charge of hotel altar by a random number between 1 and 50;
 
 [!<SatisfyMonster>+
 
@@ -94,6 +96,7 @@ REQUIRES COMMENTING
 +!]
 To destroy (M - a monster):
 	if the player is in the location of M, decrease the charge of the dungeon altar by the difficulty of M * 10;
+	if the player is in the location of M and the charge of hotel altar > 0, decrease the charge of hotel altar by the difficulty of M * 10;
 	now M is dying.
 
 [!<FinallyDestroyMonster>+
@@ -120,7 +123,6 @@ REQUIRES COMMENTING
 To reset (M - a monster): [We do this when the player faints to all monsters, even if they are remaining in play.]
 	now M is not dying;
 	deinterest M; [this includes dislodging]
-	now the questioned of M is 0;
 	now the sleep of M is 0;
 	now the scared of M is 0;
 	now the last-interaction of M is 0;

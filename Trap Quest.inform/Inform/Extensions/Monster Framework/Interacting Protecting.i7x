@@ -21,6 +21,8 @@ To compute protection of (M - a monster): [You can define this for your monster 
 			distract M; [Selkie: not distract U? Or is your ally getting distracted? MG: The player is flying so there is nothing a friendly monster can do for you unless they happen to be an aeromancer]
 		otherwise if X is M:
 			do nothing;
+		otherwise if X is seduced: [monsters don't get involved or keep attacking enemies while you're seducing]
+			do nothing;
 		otherwise:
 			compute M protecting against X.
 

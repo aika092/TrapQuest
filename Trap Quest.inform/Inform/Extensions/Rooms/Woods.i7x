@@ -42,7 +42,7 @@ Woods04 is a dodgy jungle room. The printed name of Woods04 is "Twisting Pathway
 REQUIRES COMMENTING
 
 *!]
-Woods05 is a mandatory important water-bodied jungle room. The printed name of Woods05 is "Waterfall Clearing". "A beautiful clearing with a cliff above a pool of water. A steady stream of water is falling down into the plunge pool from the top of the cliff.". The shape of Woods05 is L2/0-0-0-1-0-0. The first forbidden direction of Woods05 is west.
+Woods05 is a mandatory important water-bodied jungle room. The printed name of Woods05 is "Waterfall Clearing". "A beautiful clearing with a cliff above a fast-moving river. A steady stream of water is falling down from the top of the cliff, creating a steady crashing sound as it splashes down on the rocks.". The shape of Woods05 is L2/0-0-0-1-0-0. The first forbidden direction of Woods05 is west.
 
 [!<woods06:JungleRoom>*
 
@@ -265,9 +265,9 @@ Definition: Sky01 is nonstandard: decide yes.
 REQUIRES COMMENTING
 
 *!]
-WoodsScenery01 is a water-body-scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "Waterfall". Understand "waterfall", "pool", "fall" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01. The text-shortcut of WoodsScenery01 is "wtfl".
+WoodsScenery01 is a water-body-scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "River". Understand "waterfall", "pool", "fall", "stream" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01. The text-shortcut of WoodsScenery01 is "wtfl".
 To say ExamineDesc of (C - WoodsScenery01):
-	say "A clear waterfall[one of].[or] that you could use as a shower.[stopping]".
+	say "A fast-moving river connected to a clear waterfall. You could probably [bold type]swim[roman type] in it.".
 To decide which figure-name is the examine-image of (C - WoodsScenery01):
 	decide on figure of DungeonScenery03.
 

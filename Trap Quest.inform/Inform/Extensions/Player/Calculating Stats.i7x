@@ -420,9 +420,6 @@ To Intup (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw intelligence of the player < 30:
-			repeat with M running through alive monsters:
-				if a random number between 1 and 2 is 1 and the questioned of M > 100:
-					decrease the questioned of M by 100;
 			increase the raw intelligence of the player by 1;
 			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1;[Dumb schoolgirls can double dip on intelligence gains.]
 		if throbbing-tentacle is worn, compute intDrain of severed-tentacle.[once the tentacle wins, you can no longer gain intelligence]

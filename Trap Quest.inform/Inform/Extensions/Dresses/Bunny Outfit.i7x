@@ -109,7 +109,7 @@ Definition: dq bunny outfit is potentially erection concealing: decide yes. [non
 
 Part 5 - Bunny Dress
 
-bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is super-short. bunny dress is high cut.
+bunny dress is a bunny outfit. bunny dress is no-crotch. bunny dress is short. bunny dress is high cut. bunny dress is rare.
 
 The printed name of bunny dress is "[clothing-title-before]bunny dress[clothing-title-after]". The text-shortcut of bunny dress is "bnyd".
 
@@ -119,7 +119,7 @@ To decide which figure-name is clothing-image of (C - bunny dress):
 	decide on figure of bunny dress.
 
 To decide which number is the initial outrage of (C - bunny dress):
-	decide on 0.
+	decide on 1 - diaper quest.
 
 To decide which number is the initial cringe of (C - bunny dress):
 	decide on 4.
@@ -135,11 +135,8 @@ To say ClothingDesc of (O - bunny dress):
 
 Definition: bunny dress is bow themed: decide yes.
 Definition: bunny dress is white themed: decide yes.
+Definition: bunny dress is pinkWardrobeAppropriate if diaper quest is 0.
 
 Definition: bunny dress is transformation-protected if the class of the player is bunny.
-
-[To uniquely set up (C - bunny dress):
-	repair C;
-	set up magic state of C. redundant]
 
 Bunny Outfit ends here.

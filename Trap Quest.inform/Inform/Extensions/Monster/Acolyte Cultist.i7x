@@ -68,7 +68,7 @@ To decide which figure-name is the monster-image of (M - a mindless acolyte):
 
 To say MonsterDesc of (M - an acolyte):
 	if diaper quest is 0, say "A veiled [man of M] in a sheer black robe. What you can see of [his of M] expression suggests [he of M][']s not exactly all there. Still, despite looking like [he of M] hasn't seen the sun in a few years [he of M] does seem to be in quite good shape and could be unexpectedly dangerous.";
-	otherwise say "This [man of M] wears a black hooded robe that covers [his of M] eyes and therefore conceals [his of M] identity. [if lady fetish is 2][big his of M] fully exposed nipples[otherwise][big his of M] fully exposed breasts[end if] are pierced and chained together by a light gold chain. The open robe also leaves [his of M] massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the demon queen[end if]. [big he of M] has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on [his of M] pink pacifier read '777'. [big he of M] wields a bizarre looking gold and blue sacrificial dagger in [his of M] left hand, with several pointed stars and other basic shapes etched into the design.".
+	otherwise say "This [man of M] wears a black hooded robe that covers [his of M] eyes and therefore conceals [his of M] identity. [if lady fetish is 2][big his of M] fully exposed nipples[otherwise][big his of M] fully exposed breasts[end if] are pierced and chained together by a light gold chain. The open robe also leaves [his of M] massive pink diaper completely visible. A black marked pentagram is marked on the front[if demon-diaper is worn], just like your own demonic diaper[otherwise if xavier-diaper-link > 0], which you recognise means that this is a demonic diaper, much like the one you had to wear for the Demon Queen[end if]. [big he of M] has a large dangling necklace with what appears to be purposeful geometric shape and another pentagram on it, and numbers printed on [his of M] pink pacifier read '777'. [big he of M] wields a bizarre looking gold and blue sacrificial dagger in [his of M] left hand, with several pointed stars and other basic shapes etched into the design.".
 
 To say MonsterComment of (M - an acolyte):
 	say "[if the class of the player is cultist and the bimbo of the player <= 8][line break][first custom style][one of]I'm just glad this outfit fools the cultists.[or]I need to blend in, it makes this place much safer.[in random order][otherwise if the class of the player is cultist][line break][second custom style][one of]Yay, another sister in service of the [great ones]! Wait, what?[or]I hope my sister's not sad that the [great ones] haven't blessed [him of M] yet.[in random order][otherwise if the bimbo of the player <= 8][first custom style]This could be a problem[otherwise][second custom style][big he of M][']s sexy but seems kind of dangerous...[end if][roman type][line break]".
@@ -96,16 +96,16 @@ To say MonsterComment of (M - clairvoyant acolyte):
 To set up (M - an acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the difficulty-base of (M - an acolyte):
-	decide on 6.
+To decide which number is the starting difficulty of (M - an acolyte):
+	decide on 7.
 
 To set up (M - a mindless acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M - 2;
+	now the raw difficulty of M is the starting difficulty of M - 2;
 	if doomed is 5:
 		DifficultyUp M by 4;
 		now M is unleashed;
@@ -456,14 +456,13 @@ To say MummyChant of (M - an acolyte):
 
 Part 4 - Conversation
 
-To say MuteGreeting to (M - an acolyte):
-	say "[speech style of M]'Hello. What's up with your ritual?'[roman type][line break]";
+To say MuteGreeting of (M - an acolyte):
+	say "'Hello. What's up with your ritual?'";
 
 To say MuteGreetResponse of (M - an acolyte):
 	say "[big he of M] seems to be intentionally ignoring you.".
 
-To say MuteQuestionResponse of (M - an acolyte):
-	say "[variable custom style]'Are you [if the bimbo of the player < 10]sentient[otherwise]aware what's going on and stuff[end if]?'[roman type][line break]";
+To say MuteResponse of (M - an acolyte):
 	say "The response comes telepathically.[line break][speech style of M]'Silence heathen, of course I am; I am merely in the middle of an extremely complex ritual. No more questions.'[roman type][line break]".
 
 Section 1 - Greeting
@@ -541,22 +540,9 @@ To say EscapeAnswer of (M - an acolyte):
 To say AdviceAnswer of (M - an acolyte):
 	say "[first custom style]'[one of]We left a copy of one of our holy scriptures with the curator of this mansion. [big he of vampiress] won't give it back...'[or]I think this place is haunted. And if it wasn[']t before we got here, it probably is now.'[or]The Deep One won't appreciate it if you bother the blessed sisters. We're still cleaning the walls after the last intruder.'[or]The altar downstairs will gladly consume any corruption you bring to it.'[or]Normally we don't name the [great ones] out of respect, but there is one that we avoid out of fear. No, I won't tell you his name, I don't fancy having my brains sucked out.'[or]I heard one of the other sisters grabbed a mannequin from the woods and tried to modify it. It, uh, didn't go that well.'[or]There are some demons that have seen the truth of the [great ones] and come over to our side. They are far more valuable than you, so make sure you show respect and do whatever they tell you.'[or]The people who used to own this house had strange taste, there are cursed mirrors all over the place.'[or]If you feel the need to loot this place, take care. Some of the boxes are... wrong.'[at random][roman type][line break]".
 
-To decide which number is the mild-annoyance threshold of (M - an acolyte):
-	decide on 150.
-
-To compute annoyance of (M - an acolyte):
-	if M is unfriendly:
-		say "[BigNameDesc of M] ignores your question.[line break][first custom style]'Quiet, infidel!'[roman type][line break]";
-	otherwise:
-		say "[first custom style]'You clearly have already surrendered your mind to the void. Admirable, but kind of annoying to deal with.'[roman type][line break]";
-
 To compute teaching of (M - an acolyte):
 	say "[first custom style]'For the weak and infirm of faith, the curses their clothing bear weigh them down. But we see that while blessing is limited, the power of curses is truly bottomless. If you open your mind to the [great ones], they will answer your call and their curses will flow to you as well.'[roman type][line break]";
-	teach invoking;
-	if the questioned of M <= the mild-annoyance threshold of M:
-		ModerateConvoFatigue M;
-	otherwise:
-		HeavyConvoFatigue M.
+	teach invoking.
 
 Section 3 - Drink Requesting
 
@@ -621,7 +607,7 @@ To compute failed dominance punishment of (M - an acolyte):
 			severeHumiliate;
 			Bore M;
 		otherwise if the player is male and the size of penis is min penis size and TG fetish > 0:[you get turned into a girl]
-			say "[speech style of herald]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of [Azathot] and stuff[otherwise]powerless before the will of [Azathot][end if]!'[roman type][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, insistently rubbing its bulbous, shiny head against your [if the size of penis > 0 and interracial fetish is 1]inferior white [sissy-penis], forcing it to recede into your[otherwise if the size of penis > 0]against your [ShortDesc of penis], forcing it to recede into your[otherwise]blank[end if] taint. The tentacle pushes harder, further, and deeper , simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Your mind goes blank in anticipation of what's to come. A lifetime of service to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your [ShortDesc of penis] and your purity gone without a trace.";
+			say "[speech style of herald]'Your body is totally like, [if pregnancy fetish is 1]ready to be moulded into a vessel for the spawn of [Azathot] and stuff[otherwise]powerless before the will of [Azathot][end if]!'[roman type][line break]You look down (or was it up) to see a [if interracial fetish is 1]big black tentacle[otherwise]huge white tentacle[end if] wrapping around your thigh, insistently rubbing its bulbous, shiny head against your [if the player is possessing a penis and interracial fetish is 1]inferior white [sissy-penis], forcing it to recede into your[otherwise if the player is possessing a penis]against your [ShortDesc of penis], forcing it to recede into your[otherwise]blank[end if] taint. The tentacle pushes harder, further, and deeper, simultaneously moulding your genitals into a brand new [vagina] and roughly deflowering it at the same time. Your mind goes blank in anticipation of what's to come. A lifetime of service to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your [ShortDesc of penis] and your purity gone without a trace.";
 			severeHumiliate;
 			SexChange the player;
 			now elder altar is penetrating vagina;
@@ -716,14 +702,14 @@ To penetration dominate (M - an acolyte):
 		strongHumiliate;
 		now player-fucking is DOMINANT-NEUTRAL;
 	otherwise:
-		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is male]against your prostate[otherwise]inside[end if] as [NameDesc of M][']s legs wrap around your waist, and you feel your [if the player is male]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as your [SexDesc of penis] explodes, filling [NameDesc of M]'s [HoleDesc of M] with your [load]. You feel the tentacles pulsating wildly as your mouth is flooded with the unmistakable taste of [semen], but strangely, there isn't actually anything there.";
+		say "Your mouth is forced into a submissive O-shape as an invisible tentacle forces its way in, and a strong push from the tentacle near your asshole plugs you up from the other side too, totally flipping the power hierarchy upside down. You feel an insistent pressure [if the player is sexed male]against your prostate[otherwise]inside[end if] as [NameDesc of M][']s legs wrap around your waist, and you feel your [if the player is male]balls[otherwise]muscles[end if] tightening as a half-involuntary orgasm boils up from your loins. Waves of pleasure roll through your body as your [SexDesc of penis] explodes, filling [NameDesc of M][']s [HoleDesc of M] with your [load]. You feel the tentacles pulsating wildly as your mouth is flooded with the unmistakable taste of [semen], but strangely, there isn't actually anything there.";
 		severeHumiliate;
 		now player-fucking is DOMINANT-SHAMEFUL;
 	FuckGet;
 	now the body soreness of the player is 10;
 	say "The tentacles['] grip slowly fades, and you quickly return to your feet, trying to shake off what just happened.";
 	if doom counter > 0, increase doom counter by 50 + the size of penis;
-	if the size of penis < 10 and the player is male:
+	if the size of penis < 10 and the player is possessing a penis:
 		if the size of penis > 7, PenisUp (10 - the size of penis);
 		otherwise PenisUp 3;
 	otherwise:
@@ -784,7 +770,7 @@ Section 1 - Clairvoyant Acolyte
 To set up (M - clairvoyant acolyte):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M * 2;
+	now the raw difficulty of M is the starting difficulty of M * 2;
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
 

@@ -47,7 +47,7 @@ To say AttractionWorry of (N - a monster):
 	otherwise:
 		let M be a random monster in the location of the player;
 		if M is a monster:
-			[If there's a monster right here, the player probably isn't going to worry about a nearby monster? Or would they.? Hmm.]
+			[If there's a monster right here, the player probably isn't going to worry about a nearby monster? Or would they? Hmm.]
 			do nothing;[We do nothing instead of explicitly "compute correct kneeling reaction of M" because that's automatically done by the "Report kneeling when the player is in danger and seconds > 1" rule. If we did it here too, we'd get two messages in a row.]
 		otherwise:
 			if the player is glue stuck:
@@ -76,7 +76,7 @@ To check seeking (N - a number) of (M - a monster):
 			if N is 2, now M is moved;
 		otherwise:
 			if M is in Stairwell01 or M is in Stairwell02 or M is in Stairwell03 or M is in Hotel29 or M is in Woods01 or M is in Hotel01 or M is in Mansion01 or there is a warp portal in the location of M, compute mandatory room leaving of M; [Move them away from the entrance]
-			bore M for 0 seconds.
+			deinterest M.
 
 To decide which number is the seek roll of (M - a monster):
 	decide on a random number between 0 and 3. [Most monsters have a 75% chance of successfully moving.]
@@ -125,7 +125,6 @@ To compute monster sleeping:
 
 To compute sleeping of (M - a monster):
 	compute scared reduction of M;
-	compute questioned reduction of M;
 	compute boredom reduction of M;
 	compute periodic healing of M;
 	compute periodic recovery of M;
@@ -139,14 +138,6 @@ To compute scared reduction of (M - a monster):
 	if the scared of M > 0:
 		decrease the scared of M by seconds;
 		if the scared of M < 0, now the scared of M is 0.
-
-To compute questioned reduction of (M - a monster):
-	if the greet-window of M > 0:
-		decrease the greet-window of M by 1;
-	if the questioned of M > 0:
-		decrease the questioned of M by seconds;
-		if the questioned of M <= 0:
-			now the questioned of M is 0.
 
 To compute boredom reduction of (M - a monster):
 	if the boredom of M > 0:

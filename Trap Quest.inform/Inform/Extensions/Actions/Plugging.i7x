@@ -25,6 +25,12 @@ Check plugging something with:
 	if the noun is asshole and the player is ass protected, say "Your [random top level ass protection clothing] is in the way." instead;
 	if the noun is vagina and the player is pussy protected, say "Your [random top level protection clothing] is in the way." instead;
 	if the player is in danger, say "You can't put that in right now, you have to defend yourself against the [random unfriendly interested monster in the location of the player]!" instead;
+	if the second noun is egg:
+		now stat-to-set is the substituted form of "small egg [noun]";
+		if the second noun is medium egg, now stat-to-set is the substituted form of "medium egg [noun]";
+		if the second noun is large egg, now stat-to-set is the substituted form of "large egg [noun]";
+		say "How many? ";
+		do nothing instead;
 	if the girth of the second noun > the insertableGirthAcceptance of the noun:
 		if debugmode is 0 and (the second noun is not anal beads or the soreness of the noun is 10):
 			if the second noun is anal beads and the second noun is worn, say "There's just no way [if the girth of the second noun > the openness of the noun + 5]more of them would fit[otherwise]you could bring yourself to try and push any more of them into your poor [variable noun][end if] while your [variable noun] is this sore!" instead;
@@ -42,7 +48,7 @@ Carry out plugging something with:
 	if the second noun is cursed:
 		say "As you finish inserting [NameDesc of the second noun], you feel it become[if the second noun is unsure]... stuck?! Uh-oh, it seems that it has a magic curse...[otherwise]stuck as the magic curse takes effect.[end if]";
 	now the second noun is sure;
-	now the second noun is identified.
+	if the second noun is clothing, now the second noun is identified.
 
 To compute toyInsertion of (S - a thing) into (F - a fuckhole):
 	compute insertionRuin of S into F;

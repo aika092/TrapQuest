@@ -36,7 +36,7 @@ Check entering gloryhole:
 	if the player is not a bit horny and the player is upright and the semen taste addiction of the player < 12 and the oral sex addiction of the player < 6, say "You're not aroused enough." instead;
 	if the player is immobile, say "Aren't you a bit tied up at the moment?" instead;
 	if the player is in danger, say "You would, but you are currently in a fight." instead;
-	if the player is upright and the player is male and the size of penis is 0:
+	if the player is upright and the player is barbie:
 	[Let's also make the milking the default action if they have milky breasts and no dick]
 		if the milk volume of breasts > 0 and bottom level lactation cover is nothing:
 			allocate 6 seconds;
@@ -195,7 +195,7 @@ To compute gloryhole genital modification:
 		summon C locked;
 		say "[if the player is male]Before you can react, someone on the other end of the hole has forced something hard and plastic around your [ShortDesc of penis]! The suction stops and you pull back to find that you are now wearing a [C]![otherwise][GloryHoleSuction]While you are stuck, you can feel somebody reach through the hole and start pushing sections of metal against your hips. Within moments, a full female chastity belt has been locked on to your body. The suction stops and you are able to step backwards and properly inspect your new attire[end if]! [line break][variable custom style][if the anal sex addiction of the player < 3]What the fuck?![otherwise if the anal sex addiction of the player < 5]Nooooo![otherwise if the anal sex addiction of the player < 7]I don't deserve this, do I?![otherwise if diaper lover is 1]Uh-oh, it looks like I'm going to have to get my cummies with my [asshole] now![otherwise]Looks like I'm going to have to get my orgasms with my [asshole] now! Sounds like fun![end if][roman type][line break]";
 	otherwise:
-		if the player is male:
+		if the player is possessing a penis:
 			say "Somebody slaps your [ShortDesc of penis] painfully!";
 			PainUp 1;
 			PenisDown 1;
@@ -252,7 +252,7 @@ An all time based rule (this is the compute gloryhole rule):
 						say "[one of]The anonymous mouth obediently gulps down your [urine] as you try to slow down the flow enough for her have time to swallow it all[or]The girl on the other side continues to hoover the [urine] out of your [player-penis] and drink every single drop[stopping].";
 					otherwise if (the player is extremely horny and the turns trapped of gloryhole > 1) or (the player is very horny and the turns trapped of gloryhole > 3) or the turns trapped of gloryhole > 5 or the size of penis < 3:
 						[Some mods for small penis sizes:]
-						if the size of the penis is 0:
+						if the player is not possessing a penis:
 							say "You feel a tongue probe at your sexless mound, and it suddenly freezes... [line break][variable custom style]'Stupid fucking sex dolls,'[roman type][line break]you hear a woman mutter. [line break][variable custom style]'Well, maybe this'll teach it to poke its nose where it shouldn't!'[roman type][line break]";
 							[Selkie: I don't know a suitable punishment - ideas?
 							Aika observes, though: it should never happen anyway; unless the player gets breast-milked the game will refuse to let a penis-less male character use the gloryhole whilst standing.]
@@ -358,7 +358,6 @@ To say CondomPinFlav of (M - a fairy) on (C - a clothing):
 Check drinking gloryhole:
 	try entering the noun instead.
 
-
 To construct normal buttons for (D - gloryhole):
 	if ButtonTableFull is 0:
 		if D is grabbing the player:
@@ -391,6 +390,5 @@ To construct normal buttons for (D - gloryhole):
 					now auto is 0;
 			now the ButtonCommand entry is "use [text-shortcut of D]";
 			if the player is immobile or the player is in danger, now the ButtonColour entry is lightModeFullRed. [turn red - player immobile]
-
 
 Gloryhole ends here.

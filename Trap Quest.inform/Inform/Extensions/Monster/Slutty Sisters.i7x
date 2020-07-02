@@ -49,7 +49,8 @@ To say MonsterDesc of (M - a slutty sister):
 	if M is futanari slutty sister:
 		say "However, [if futanari fetish is 0]you're pretty sure the foot long, mega thick strapon dildo dangling between [his of M] legs wasn't there before.[otherwise]you're pretty sure that in real life [he of M] didn't have a foot long, mega thick [DickDesc of M] dangling between [his of M] legs.[end if]";
 	otherwise if M is bulging slutty sister:
-		say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging belly[otherwise if the belly contents of M > 7]large, bloated belly[otherwise if the belly contents of M > 0]visibly distended belly[otherwise]flat, empty belly[end if].".
+		if a2m fetish < 2 and lady fetish is 2, say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging ballsack[otherwise if the belly contents of M > 7]large, bloated ballsack[otherwise if the belly contents of M > 0]visibly swollen ballsack[otherwise]small, normal-sized ballsack[end if].";
+		otherwise say "[big he of M] currently has a wand vibrator with the word 'Nintendolls' printed down the side, and a [if the belly contents of M > 14]giant bulging belly[otherwise if the belly contents of M > 7]large, bloated belly[otherwise if the belly contents of M > 0]visibly distended belly[otherwise]flat, empty belly[end if].".
 
 To say MonsterComment of (M - a futanari slutty sister):
 	say "[line break][variable custom style][if item described is penetrating an fuckhole]Uuuuugh! So big![otherwise if the anal sex addiction of the player < 5 and the vaginal sex addiction of the player < 5]Keep that monster of a thing away from me![otherwise if the anal sex addiction of the player < 8 and the vaginal sex addiction of the player < 8]I don't know if I'll survive a round with that...[otherwise]I wonder if I can take that without fainting. Sounds like a challenge![end if][roman type][line break]".
@@ -60,10 +61,13 @@ To say MonsterComment of (M - a bulging slutty sister):
 To set up (M - a slutty sister):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 12;
+	now the raw difficulty of M is the starting difficulty of M;
 	if M is bulging slutty sister, now the belly contents of M is 20;
 	now the health of M is the maxhealth of M;
 	now M is in Hotel36.
+
+To decide which number is the starting difficulty of (M - a slutty sister):
+	decide on 12.
 
 To compute unique periodic effect of (M - a bulging slutty sister):
 	if the belly contents of M < 20:
@@ -210,7 +214,7 @@ This is the futanari lets bulging go first rule:
 The futanari lets bulging go first rule is listed first in the futanari unique punish rules.
 
 To say PresentAcceptanceFlav of (M - a futanari slutty sister):
-	say "[second custom style]'Oh, the little slut thinks [if the player is presenting as female]she[otherwise]he[end if] can choose where I stuff my giant [DickDesc of M]? Well, go on, just this once, I guess, I'll let you have it your way. Aren't I so kind?'[roman type][line break]".
+	say "[second custom style]'Oh, the little slut thinks [he of the player] can choose where I stuff my giant [DickDesc of M]? Well, go on, just this once, I guess, I'll let you have it your way. Aren't I so kind?'[roman type][line break]".
 
 To say PresentRejectionFlav of (M - a futanari slutty sister):
 	say "[second custom style]'I'll put this where I want, not where you want, bitch.'[roman type][line break]".
@@ -263,8 +267,9 @@ To compute (M - a bulging slutty sister) entering mouth:
 	otherwise say "[BigNameDesc of M] rolls you over onto your back!";
 	if presented-orifice is face, say "You let [him of M], and [he of M] immediately sits on your face. ";
 	otherwise say "[big he of M] succeeds, and immediately sits on your face. ";
-	say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] vagina, and your mouth with [his of M] taint, giving you access to both [his of M] creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
-	if bukkake fetish is 1:
+	if a2m fetish >= 2, say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and covers your mouth with [his of M] cum-filled [asshole], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] vagina, and your mouth with [his of M] taint, giving you access to both [his of M] creampied pussy and cum-filled asshole, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	otherwise say "[if lady fetish is 2]Facing your forehead, he pinches your nose shut with two fingers and fills your mouth with the tip of [his of M] cum-leaking [manly-penis], cutting off your ability to breathe.[otherwise]Facing your forehead, [he of M] covers your nose with the top of [his of M] creampied pussy, and cutting off your ability to breathe.[end if][line break][second custom style]'[one of][if the belly contents of M > 10]You've got two options slut, try to swallow it all out of me, or faint trying.'[otherwise]You've got two options slut, bring me to orgasm, or faint trying.'[end if][or]Deja vu, bitch. You know the drill by now. Best of luck this time!'[stopping][roman type][line break]";
+	if bukkake fetish is 1 and (lady fetish < 2 or a2m fetish >= 2):
 		say "[big his of M] [semen] starts to seep out of [if lady fetish is 2][his of M] hole[otherwise]both [his of M] holes[end if] and [if the semen coating of face is 0]mess up[otherwise]add to the mess on[end if] your face.[if the semen addiction of the player < 7][line break][first custom style]Fucking hell! Yuck.[roman type][line break][end if][line break]";
 		if the semen coating of face < 10, CumFaceUp 1;
 	now the sex-length of M is 4;
@@ -280,20 +285,6 @@ To decide which number is the suffocation limit of the player:
 	decide on 7.
 
 To compute facial sex of (M - a bulging slutty sister):
-	increase the suffocation of M by 1;
-	if the suffocation of M >= the suffocation limit of the player:
-		say "After giving a final frantic wiggle to try and escape, your brain gives up. You [if watersports fetish is 1]wet yourself and then [end if]pass out.";
-		if watersports fetish is 1, UrinePuddleUp 3;
-		now delayed fainting is 1;
-		now the fainting reason of the player is 99;
-	otherwise:
-		if bukkake fetish is 1:
-			say "[one of]A large glob of [semen] leaks out of [his of M] ass and onto your face.[or]Warm [semen] seeps out of [his of M] asshole and onto your face.[or]Thick [semen] slowly trickles out of [his of M] asshole, rolling down the side of your nose and over your cheeks.[or]A fat wad of [semen] leaks out of [his of M] butt and plops wetly onto your face.[or][semen] oozes out of [his of M] gaping butthole, pooling on your face.[or]Thick [semen] dribbles out of [his of M]butt, rolling down your cheeks.[in random order][if the semen addiction of the player < 7][line break][first custom style]How disgusting![roman type][line break][end if][line break]";
-			CumFaceUp 1;
-		compute facesit sex of M;
-		say "[if the body soreness of the player + the suffocation of M < 8]You are still holding your breath.[otherwise if the suffocation of M < 12]You are running out of breath![otherwise]You still can't breathe. You're going to faint any second now![end if]".
-
-To compute facial sex of (M - a bulging slutty sister):
 	if the oral sex addiction of the player > 6, passively stimulate face from M;
 	increase the suffocation of M by 1;
 	if the suffocation of M >= the suffocation limit of the player:
@@ -302,17 +293,17 @@ To compute facial sex of (M - a bulging slutty sister):
 		now delayed fainting is 1;
 		now the fainting reason of the player is 99;
 	otherwise:
-		if bukkake fetish is 1:
+		if bukkake fetish is 1 and (lady fetish < 2 or a2m fetish >= 2):
 			CumFaceUp 1;
 		compute facesit sex of M;
 		if delayed fainting is 0:
 			if the sex-length of M is 0 and the reaction of the player > 0:
-				if lady fetish is 2, say "[BigNameDesc of M] climaxes on top of you, and shooting several strings of [semen] across your forehead. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
+				if lady fetish is 2, say "[BigNameDesc of M] climaxes on top of you, shooting several extra strings of [semen] [if a2m fetish >= 2]across your forehead[otherwise]inside your mouth[end if]. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
 				otherwise say "[BigNameDesc of M] climaxes on top of you, and [his of M] vaginal secretions sweeten the taste of the [semen] in your mouth. [if the belly contents of M > 0]But [he of M] doesn't get off on top of you - it looks like [he of M]'s still determined to make you drink every last drop of the [semen] inside of [him of M]![otherwise][big he of M] droops forward, steadying [himself of M] with [his of M] hands.[end if]";
 			say "[if the suffocation of M < the suffocation limit of the player - 5]You are still holding your breath.[otherwise if the suffocation of M < the suffocation limit of the player - 1]You are running out of oxygen![otherwise]You still can't breathe. You're going to faint any second now![end if]".
 
 To say FacesitResisting of (M - a bulging slutty sister):
-	say "[one of]You keep your mouth closed, winning the battle but fighting a losing war. There's no way to escape the inevitability of fainting except to lick [him of M] out. [or]You keep your mouth shut, deciding you'd rather faint than submit. [or]You continue to keep your mouth shut, and await the inevitable. [stopping]";
+	say "[one of]You keep your mouth closed, winning the battle but fighting a losing war. There's no way to escape the inevitability of fainting except to [if lady fetish is 2 and a2m fetish < 2]suck [him of M] off[otherwise]lick [him of M] out[end if]. [or]You keep your mouth shut, deciding you'd rather faint than submit. [or]You continue to keep your mouth shut, and await the inevitable. [stopping]";
 
 To say FacesitResistingResponse of (M - a bulging slutty sister):
 	say "[BigNameDesc of M] mercilessly holds [himself of M] in place.".
@@ -320,7 +311,12 @@ To say FacesitResistingResponse of (M - a bulging slutty sister):
 To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 	if the belly contents of M > 0:
 		if the stomach of the player < 10:
-			say "[one of]You lick the [boy of M]'s [HoleDesc of M] with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You move your tongue downwards and dig it into the slutty sister's asshole, which immediately rewards you with a thick glob of salty [semen].[or]Digging further into [his of M] asshole, you let your tongue explore its texture and taste, felching all the [semen] you can into your mouth.[or]You keep up rhythmic pumping motions with your tongue, allowing a steady supply of [semen] to ooze its way down your throat.[or]You use your neck muscles to pump your tongue even faster and deeper into [his of M]butthole. You are rewarded with another several gulps full of [semen].[cycling]";
+			if a2m fetish >= 2:
+				say "[one of]You lick the [boy of M][']s [HoleDesc of M] with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You move your tongue downwards and dig it into the slutty sister's asshole, which immediately rewards you with a thick glob of salty [semen].[or]Digging further into [his of M] asshole, you let your tongue explore its texture and taste, felching all the [semen] you can into your mouth.[or]You keep up rhythmic pumping motions with your tongue, allowing a steady supply of [semen] to ooze its way down your throat.[or]You use your neck muscles to pump your tongue even faster and deeper into [his of M] butthole. You are rewarded with another several gulps full of [semen].[cycling]";
+			otherwise if M is presenting as female:
+				say "[one of]You lick the [boy of M][']s cunt with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You keep up rhythmic pumping motions with your tongue, allowing a steady supply of [semen] to ooze its way down your throat.[or]You use your neck muscles to pump your tongue even faster and deeper into [his of M] pussy. You are rewarded with another several gulps full of [semen].[cycling]";
+			otherwise:
+				say "[one of]You pleasure the [boy of M][']s [manly-penis] with your tongue, swallowing the [semen] as it slowly flows into your mouth.[or]You keep up rhythmic pumping motions with your mouth, allowing a steady supply of [semen] to ooze its way down your throat.[or]You use your neck muscles to pump your mouth even faster and deeper around [his of M] [manly-penis]. You are rewarded with another several gulps full of [semen].[cycling]";
 			StomachSemenUp 2;
 		otherwise if the stomach of the player - 10 <= the semen taste addiction of the player:
 			say "[if the stomach of the player + 10 <= the semen taste addiction of the player]Your stomach is so full of [semen] that you have to put extra effort in to keep swallowing. But you love [semen] so much, you know you can find room![otherwise if the stomach of the player + 6 <= the semen taste addiction of the player]You are so full of [semen] you feel like you could explode! But you keep on obediently swallowing all the same.[otherwise if the stomach of the player + 2 <= the semen taste addiction of the player]Your bloated stomach screams at you - there's no more room for more [semen]! But it keeps coming, so you have to keep swallowing.[otherwise if the stomach of the player - 2 <= the semen taste addiction of the player]There's so much [semen] inside if you that you are really struggling to gulp any more down at all. Your bloated belly hurts badly. You feel like you could pass out any second.[otherwise]Thick streams of [semen] run out your nose as you begin to choke on your [semen] filled airpipe. Your eyes roll into the back of your head.[end if]";
@@ -333,7 +329,8 @@ To say FacesitSubmissionResponse of (M - a bulging slutty sister):
 		decrease the belly contents of M by 2;
 		if the belly contents of M <= 0 and delayed fainting is 0, say "The flow of [semen] seems to slow down and then dry up. [if the semen taste addiction of the player < 8]Hopefully[otherwise if the semen taste addiction of the player < 14 or the stomach of the player >= 10]Maybe[otherwise]Oh no,[end if] that's the last of it?[if the sex-length of M > 0][line break][BigNameDesc of M] continues to ride your face. It looks like you're not going to be allowed to breathe until you've made [him of M] cum![end if]";
 	otherwise:
-		say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]".
+		if a2m fetish >= 1, say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give the outside of [NameDesc of M][']s asshole a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go into [NameDesc of M][']s asshole, and [he of M] responds by shuddering in pleasure.[or]You explore the depths of [NameDesc of M][']s [HoleDesc of M] with your tongue, pushing it in as deep as you can. [big he of M] groans with pleasure.[in random order]";
+		otherwise say "You [one of]flick your tongue along [NameDesc of M][']s [if lady fetish is 2][sissy-penis][otherwise]clit[end if], causing a squeak of satisfaction from the [boy of M] above.[or]give [if lady fetish is 2][NameDesc of M][']s [manly-penis][otherwise]the outside of [NameDesc of M][']s pussy[end if] a passionate French kiss, which makes [him of M] writhe around on top of you with pleasure.[or]force your tongue as far as it can go [if lady fetish is 2]along [NameDesc of M][']s shaft[otherwise]into [NameDesc of M][']s pussy[end if], and [he of M] responds by shuddering in pleasure.[in random order]".
 
 To say NearingClimaxFacesit of (M - a bulging slutty sister):
 	say FacesitSubmissionResponse of M;
@@ -404,7 +401,7 @@ To compute damage reaction of (M - a futanari slutty sister):
 To compute damage reaction of (M - a bulging slutty sister):
 	if M is awake:
 		if attack-type is 2 and the belly contents of M > 0:
-			say "Your knee right in [his of M] stomach causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [asshole]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller belly has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
+			say "Your knee right in [his of M] [if a2m fetish < 2 and lady fetish is 2]swollen scrotum[otherwise]stomach[end if] causes [him of M] to double over in pain as a huge gush of [semen] flows out [his of M] [if a2m fetish >= 2][asshole][otherwise if lady fetish is 2][manly-penis][otherwise][vagina][end if]! [big he of M] [one of]looks at you with shock, pain and anger in [his of M] eyes. However if anything the smaller [if a2m fetish < 2 and lady fetish is 2]ballsack[otherwise]belly[end if] has just improved [his of M] ability to move and fight[or]moans loudly[stopping].";
 			if the belly contents of M >= 4:
 				SemenPuddleUp 4;
 				decrease the belly contents of M by 4;
@@ -436,10 +433,10 @@ Part 4 - Conversation
 Section 1 - Greeting
 
 To compute basic greeting to (M - a slutty sister):
-	If the greet-window of M < 1 or M is not interested:
+	[If the greet-window of M < 1 or M is not interested:
 		compute vanity greeting of M;
 	otherwise:
-		compute conventional greeting of M;
+		compute conventional greeting of M;]
 	if M is not interested:
 		check perception of M.
 

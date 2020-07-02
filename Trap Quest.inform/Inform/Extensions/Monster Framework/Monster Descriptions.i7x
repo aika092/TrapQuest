@@ -162,8 +162,5 @@ To say FavourDesc of (M - a monster):
 		otherwise if M is annoyed:
 			say "You do not have a very good relationship with [NameDesc of M]; in fact [he of M] probably considers you somewhat of an annoyance.".
 
-To say SexDollExplanation of (M - a monster):
-	say "[variable custom style]'So, should I be worried about the morality of engaging in sex with this thing?'[roman type][line break]";
-	say "The response comes telepathically from the Nintendolls, directly into your head.[line break][second custom style]'It's simply an animated object, controlled via magic. Just consider it like you would a very high-tech sex doll.'[roman type][line break]".
 
 Monster Descriptions ends here.

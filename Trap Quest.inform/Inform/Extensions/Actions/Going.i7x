@@ -41,8 +41,6 @@ Check going while the player is immobile:
 			say "You're stuck to the [one of]floor[or]ground[at random]! You'll need to [bold type]wait[roman type] a bit longer." instead;
 	say "You're immobile right now!" instead.
 
-
-
 [!<CheckGoingWhileTheThroneIsTriggered>+
 
 REQUIRES COMMENTING
@@ -126,7 +124,7 @@ Carry out going up (this is the hotel-setup rule):
 		if Hotel01 is unplaced:
 			set up the hotel;
 			follow the setting up hotel monsters rules;
-			repeat with M running through alive nonexistant monsters:
+			repeat with M running through alive nonexistent monsters:
 				set up M.
 			[deploy a random off-stage camera trap in the location of HotelBedPatrons;]
 
@@ -139,7 +137,7 @@ Carry out going up (this is the woods-setup rule):
 	if the player is in Stairwell01 and Woods01 is unplaced:
 		Set Up The Woods;
 		follow the setting up woods monsters rules;
-		repeat with M running through alive nonexistant monsters:
+		repeat with M running through alive nonexistent monsters:
 			set up M.
 
 [!<TheMansionSetUpRule>+
@@ -151,7 +149,7 @@ Carry out going up (this is the mansion-setup rule):
 	if the player is in Stairwell03 and Mansion00 is unplaced:
 		Set Up The Mansion;
 		follow the setting up mansion monsters rules;
-		repeat with M running through alive nonexistant monsters:
+		repeat with M running through alive nonexistent monsters:
 			set up M.
 
 [!<CheckGoingEastWhileThePlayerIsInHotel01>+
@@ -512,11 +510,12 @@ Check going:
 				unless ST is expired:
 					say "There is currently an uncovered haunted mirror in that room. Are you sure you want to try and go that way? ";
 					unless the player is in agreement, say "You change your mind." instead;
-		repeat with ST running through futanari slutty sisters in L:
-			unless ST is asleep or ST is off-stage or the wealth of the player < 20:
-				say "You can see [if the number of alive slutty sisters > 1]the two girls[otherwise]one of the girls[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
-				unless the player is bimbo consenting, say "You change your mind." instead;
-		if robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
+		if areYouSure is 1:
+			repeat with ST running through futanari slutty sisters in L:
+				unless ST is asleep or ST is off-stage or the wealth of the player < 20:
+					say "You can see [if the number of alive slutty sisters > 1]the two [boy of ST]s[otherwise]one of the [boy of ST]s[end if] who put you into the virtual reality capsule in that room. You'll probably have to fight them. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
+					unless the player is bimbo consenting, say "You change your mind." instead;
+		if areYouSure is 1 and robomatron is alive and robomatron is in L and robomatron is awake and the wealth of the player >= 20:
 			say "You can see a large scary robot dressed like a nanny. You'll probably have to fight it. [if the player is prone][bold type]You are currently on your knees, which usually seems to result in fights not going your way.[roman type] [end if]Are you sure you want to try and go that way? ";
 			unless the player is bimbo consenting, say "You change your mind." instead;
 	if seconds is 0:
@@ -631,7 +630,7 @@ Check going:
 	[Finally we handle portals.]
 	let W be a random warp portal in the location of the player;
 	if W is warp portal and the noun is the covered-direction of W:
-		if the destination of W is the school and playerRegion is not school and class-time < 1000 and class-time > 0 and armband is in-play and armband is not solid gold, say "[if armband is worn]Your armband pulls you away, not wanting to let you in! Perhaps you need to wait until it's time for the next class[otherwise]The warp portal turns momentarily red, and you can't seem to push any part of your body through it, as if it was a metal wall! Perhaps you'd need to be wearing that armband[end if]?" instead;
+		if playerRegion is dungeon and location of hotel portal is not discovered and location of mansion portal is not discovered and class-time < 1000 and class-time > 0 and armband is in-play and armband is not solid gold, say "[if armband is worn]Your armband pulls you away, not wanting to let you in! Perhaps you need to wait until it's time for the next class[otherwise]The warp portal turns momentarily red, and you can't seem to push any part of your body through it, as if it was a metal wall! Perhaps you'd need to be wearing that armband[end if]?" instead;
 		if W is school portal and (class-time is 1000 or class-time < 0) and armband is worn and armband is not solid gold and there is an alive undefeated correctly-ranked teacher, say "Your armband pulls you away, not wanting to let you leave! Perhaps you need to attend class first?" instead;
 		if the player is glue stuck:
 			say "You stretch and strain towards the portal, and finally feel it take a grip on you!";
@@ -777,7 +776,7 @@ Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
 		compute stealing of C;
 		if shopkeeper is not mating:
 			increase the stolen-aware of shopkeeper by 1;
-			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
+			if flav-said is 0, say "[BigNameDesc of shopkeeper] sees you trying to leave.[line break][first custom style]'[one of]Stop, thief!'[or]Guards! Guards! Arrest this thieving whore!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. Looks like you're in trouble with the law!";
 			repeat with M running through alive royal guards:
 				deinterest M;
 				if M is asleep and M is in the location of the player, say "[BigNameDesc of M] hears the alarm and wakes up!";

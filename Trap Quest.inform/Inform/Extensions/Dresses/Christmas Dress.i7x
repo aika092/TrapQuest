@@ -31,7 +31,7 @@ To decide which figure-name is clothing-image of (C - a snowman dress):
 	decide on figure of snowman dress.
 
 To say ClothingDesc of (C - a snowman dress):
-	say "An extremely short red dress with green bows and a repeating snowman and christmas present pattern at the hem, above some green frills.".
+	say "An extremely short red dress with green bows and a repeating snowman and Christmas present pattern at the hem, above some green frills.".
 
 To say ShortDesc of (C - a snowman dress):
 	say "snowman baby dress".
@@ -78,7 +78,7 @@ Definition: a gingerbread dress is red themed: decide yes.
 
 Part 4 - Christmas Tree Dress
 
-A christmas tree dress is a kind of christmas dress. There is 1 christmas tree dress. The printed name of christmas tree dress is "[clothing-title-before]christmas tree dress[clothing-title-after]". The text-shortcut of christmas tree dress is "ctd".
+A christmas tree dress is a kind of christmas dress. There is 1 christmas tree dress. The printed name of christmas tree dress is "[clothing-title-before]Christmas tree dress[clothing-title-after]". The text-shortcut of christmas tree dress is "ctd".
 
 Figure of christmas tree dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress4.png".
 
@@ -89,7 +89,7 @@ To say ClothingDesc of (C - a christmas tree dress):
 	say "An extremely short green dress adorned with tree decorations, designed to make [if C is worn]you[otherwise]the wearer[end if] look like a Christmas tree. Red ribbons with little bells allow it to hang from [if C is worn]your[otherwise]the wearer's[end if] shoulders.".
 
 To say ShortDesc of (C - a christmas tree dress):
-	say "christmas tree [if diaper lover > 0]baby [end if]dress".
+	say "Christmas tree [if diaper lover > 0]baby [end if]dress".
 
 To decide which number is the initial outrage of (C - a christmas tree dress):
 	if diaper quest is 1, decide on 0;
@@ -104,7 +104,7 @@ Definition: a christmas tree dress is green themed: decide yes.
 
 Part 5 - Santa Dress
 
-A santa dress is a kind of standard christmas dress. There is 1 santa dress. A santa dress is only arm covering. The printed name of santa dress is "[clothing-title-before]santa dress[clothing-title-after]". The text-shortcut of santa dress is "sntd".
+A santa dress is a kind of standard christmas dress. There is 1 santa dress. A santa dress is only arm covering. The printed name of santa dress is "[clothing-title-before]Santa dress[clothing-title-after]". The text-shortcut of santa dress is "sntd".
 
 Figure of santa dress is the file "Items/Clothes/Upper/Dresses/Christmas/christmasdress5.png".
 
@@ -115,7 +115,7 @@ To say ClothingDesc of (C - a santa dress):
 	say "An extremely short green and white dress with long sleeves, with Santa's jolly face on the front.".
 
 To say ShortDesc of (C - a santa dress):
-	say "santa [if diaper lover > 0]baby [end if]dress".
+	say "Santa [if diaper lover > 0]baby [end if]dress".
 
 To decide which number is the initial outrage of (C - a santa dress):
 	if diaper quest is 1, decide on 0;
@@ -168,7 +168,7 @@ To say ClothingDesc of (C - naughty-or-nice outfit):
 	say "A green and red onesie with an upper half fashioned like an apron, with a motif of a baby's face on the front. The baby is [if C is naughtified]pacified and frowning. It has the word 'naughty' above it[otherwise]happy and smiling. It has the word 'nice' above it[end if].".
 
 To say ShortDesc of (C - naughty-or-nice outfit):
-	say "[if C is naughtified]naughty[otherwise]nice[end if] christmas outfit".
+	say "[if C is naughtified]naughty[otherwise]nice[end if] Christmas outfit".
 
 To decide which number is the initial outrage of (C - naughty-or-nice outfit):
 	decide on 5.
@@ -201,7 +201,7 @@ To say ShortDesc of (C - present outfit):
 	say "present outfit".
 
 To say ShortDesc of (C - present outfit):
-	say "golden christmas present outfit".
+	say "golden Christmas present outfit".
 
 To decide which number is the initial outrage of (C - present outfit):
 	decide on 3.

@@ -118,8 +118,11 @@ To say MonsterComment of (M - a mannequin):[TODO: fix this]
 To set up (M - a mannequin):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 5;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - mannequin):
+	decide on 5.
 
 [This is the spawn initial mannequin rule:
 	if the number of alive mannequins is 0:
@@ -153,18 +156,18 @@ Definition: a mannequin is willing to do oral: decide yes.
 Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a mannequin):
-	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whir rapidly as the pieces begin to put themselves together, forming a [printed name of M].";[TODO: goth mannequin eventually]
+	if M is in the location of the player, say "A quiet moan can be heard as several gears, pieces of clothing, and what looks like ceramic fall through the stone opening between the statue's legs. The gears whir rapidly as the pieces begin to put themselves together, forming a [printed name of M].";
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say SummoningFlav of (M - a goth mannequin):
-	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes its first few steps into the room, and the mummy's wrappings slowly reform behind it.";[TODO: goth mannequin eventually]
+	if M is in the location of the player, say "A deafening whir passes through the room as every mannequin turns toward the mummy at once, and the fabric slowly begins to unravel. A porcelain face comes into view as the linens fall away, followed by jointed arms, legs and stylish black clothing. The whir peters out as the [printed name of M] takes [his of M] first few steps into the room, and the mummy's wrappings slowly reform behind it.";
 	otherwise say "You hear the sound of mechanical joints whirring.".
 
 To say MuteGreetResponse of (M - a mannequin):
 	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
 
-To say MuteQuestionResponse of (M - a mannequin):
-	say "[SexDollExplanation of M]".
+To say MuteQuestion of (M - a mannequin):
+	say SexDollQuestion of M.
 
 Part 2 - Perception
 
@@ -240,15 +243,15 @@ To compute anal sex of (M - a mannequin):
 		if P is anal beads:
 			say "[BigNameDesc of M] [one of]pushes the beads in and out of your [asshole] one at a time, stretching you over and over[or]pushes each bead into your [asshole] and slowly pulls them out one by one, forcing you to experience the stretching of your sphincter over and over[or]holds one bead just inside your [asshole], keeping you as stretched and full as possible[at random][run paragraph on]";
 		otherwise:
-			say "[one of][BigNameDesc of M] keeps fucking you with the [printed name of P][or][BigNameDesc of M] continues pumping the [printed name of P] in and out of your [asshole][or][BigNameDesc of M] fucks you with the [printed name of P][or][BigNameDesc of M] keeps pushing the [printed name of P] in and out of your hole[at random][if the player is male], [one of]angling it against your prostate[or]keeping the tip firmly in contact with your prostate[or]repeatedly prodding your 'g-spot'[or]relentlessly pounding your prostate[at random][end if][run paragraph on]";
+			say "[one of][BigNameDesc of M] keeps fucking you with the [printed name of P][or][BigNameDesc of M] continues pumping the [printed name of P] in and out of your [asshole][or][BigNameDesc of M] fucks you with the [printed name of P][or][BigNameDesc of M] keeps pushing the [printed name of P] in and out of your hole[at random][if the player is sexed male], [one of]angling it against your prostate[or]keeping the tip firmly in contact with your prostate[or]repeatedly prodding your 'G-spot'[or]relentlessly pounding your prostate[at random][end if][run paragraph on]";
 	otherwise:
-		say "[if the player is male][BigNameDesc of M] [one of]keeps expertly stroking your prostate[or]keeps skilfully prodding your prostate[or]firmly rubs your prostate[or]relentlessly prodding your prostate with expert movements of [his of M] fingers[at random][otherwise][BigNameDesc of M] keeps [one of]expertly pressing on your g-spot through your [asshole][or]pressing that same spot inside your hole, always with that perfectly maddening amount of force[or]rubbing your g-spot through your [asshole], endlessly repeating [his of M] perfect movements[at random][end if][run paragraph on]";
+		say "[if the player is male][BigNameDesc of M] [one of]keeps expertly stroking your prostate[or]keeps skilfully prodding your prostate[or]firmly rubs your prostate[or]relentlessly prodding your prostate with expert movements of [his of M] fingers[at random][otherwise][BigNameDesc of M] keeps [one of]expertly pressing on your G-spot through your [asshole][or]pressing that same spot inside your hole, always with that perfectly maddening amount of force[or]rubbing your G-spot through your [asshole], endlessly repeating [his of M] perfect movements[at random][end if][run paragraph on]";
 	[How she's interacting with your crotch.]
 	if there is a worn chastity cage:
 		say ", as if milking an orgasm out of you!";
 	otherwise if the player is female:
 		say " as [he of M] [if there is pussy covering clothing]rubs your clit[otherwise][one of]strokes[or]teases[at random] your clit[end if], as if milking an orgasm out of you!";
-	otherwise if the size of penis > 0:
+	otherwise if the player is possessing a penis:
 		say " as [he of M] [unless there is pussy covering clothing and the size of penis > 2][one of]pumps[or]strokes[or]jerks off[at random] your [ShortDesc of penis][otherwise]massages your [ShortDesc of penis][end if], [if the size of penis < 3]as if it was a clitoris![otherwise]as if milking you![end if]";
 	otherwise:
 		say ", as if milking an orgasm out of you!";
@@ -305,8 +308,8 @@ To compute (M - a mannequin) entering mouth:
 		now permanent makeup is 1;
 		satisfy M;
 	otherwise if the make-up of face > a random number between 0 and 2 and S is actually summonable and the largeness of hair > 4:
-		if the player is ponytailed, say "[BigNameDesc of M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
-		otherwise say "[BigNameDesc of M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
+		if the player is ponytailed, say "[BigNameDesc of M] pulls out an identical pink scrunchie and fashions your hair into a [if the bimbo of the player > 8][line break][second custom style]sexy [roman type][line break][end if]pair of pigtails.[if the player is gendered male][one of][line break][variable custom style]There's no mistaking it now, no men wear pigtails.[roman type][line break][or][stopping][end if]";
+		otherwise say "[BigNameDesc of M] pulls out a pink scrunchie and fashions your hair into a [if the bimbo of the player < 7]tidy[otherwise][line break][second custom style]cute[roman type][line break][end if] ponytail.[if the player is gendered male][one of][line break][variable custom style]This is definitely girly hair now.[roman type][line break][or][stopping][end if]";
 		summon S;
 		satisfy M;
 	otherwise if the make-up of face > 1 and the largeness of hair > 4 and a random number between 1 and 5 > 2 and artificial enhancements fetish is 1 and the fake largeness of hair < 10:
@@ -334,12 +337,12 @@ To set up sex length of (M - a mannequin) in (F - asshole):
 To compute (M - a mannequin) entering anally:
 	let P be a random sex toy retained by M;
 	if P is sex toy:
-		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if size of penis is 0]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
+		say "[BigNameDesc of M] pushes a [printed name of P] into your [asshole], [if the player is not possessing a penis]angling it toward [himself of M] as [he of M] begins pumping it in and out of your hole[otherwise]angling it against your prostate with pinpoint accuracy as [he of M] begins pumping it in and out of your hole[end if].";
 	otherwise:
 		say "[BigNameDesc of M] inserts two fingers into your [asshole], and starts stroking in a come hither motion.";
 	if the player is female:
 		say "[unless there is a worn chastity cage or the player is pussy protected]With [his of M] other hand [he of M] starts expertly pinching and rubbing your clitoris. [end if][big he of M]'s trying to force an orgasm out of you!";
-	otherwise if the size of penis > 0:
+	otherwise if the player is possessing a penis:
 		say "[big he of M] [if there is a worn chastity cage]grasps your testicles with [his of M] other hand, delicately massaging them as [his of M] faux-knuckles bump against your cage. [otherwise if the size of penis > 3]grabs your [ShortDesc of penis] with [his of M] other hand and skilfully begins stroking away. [otherwise]delicately teasing your [ShortDesc of penis] with [his of M] fingertips. [end if][big he of M]'s trying to force an orgasm out of you!";
 	otherwise:
 		say "[big he of M] holds you still with [his of M] other hand. It's like [he of M]'s trying to force an anal orgasm out of you!";

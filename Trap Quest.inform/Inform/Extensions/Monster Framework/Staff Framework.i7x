@@ -89,6 +89,10 @@ To compute perception of (M - a staff member):
 	otherwise:
 		compute nonstudent perception of M.
 
+To FavourDown (M - a staff member) by (N - a number):
+	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
+	if N > 0 and armband is not worn, decrease the favour of M by N.
+
 To compute student perception of (M - a staff member):
 	if M is male and M is groping:
 		compute grope of M.
@@ -230,9 +234,6 @@ To compute teaching of (M - a staff member):
 
 To compute friendly drink of (M - a staff member):
 	say "[speech style of M]'There is a drinks machine in the Food Hall.'[roman type][line break]".
-
-To decide which number is the annoyance threshold of (M - a staff member):
-	decide on 999999.
 
 Part - Teachers
 
@@ -575,13 +576,14 @@ To execute (A - student-furious-assembly):
 
 Part - Detention
 
+[Now part of the compute swimming in swimming pool function.
 Report Showering:
 	if the player is in School20 and armband is worn:
 		let M be a random staff member in the location of the player;
 		if M is nothing and a random number between 1 and 2 is 1, now M is a random alive undefeated teacher;
 		if M is monster:
 			say "[speech style of M]'Um, NO! No going in the swimming pool without permission!'[roman type][line break]";
-			compute detention of M.
+			compute detention of M.]
 
 detention-turns is a number that varies.
 
@@ -773,7 +775,7 @@ This is the detention orgasm announcement rule:
 			otherwise:
 				say "You [if the delicateness of the player < 2]look right at the camera, refusing to say anything[otherwise]look away from the camera and say nothing[end if][if the number of monsters in the location of the player > 0], hoping your silence will prevent anyone around you from catching on[end if], with the knowledge that if the staff watching you through the camera can tell that you came, you've probably just failed to earn any bonus time towards your release.";
 				repeat with M running through reactive monsters:
-					if (the player is male and penis is exposed and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:[it's a lot harder to hide an orgasm when you just jizzed everywhere]
+					if (the player is possessing a penis and penis is exposed and a random number between 1 and 2 is 1) or a random number between 1 and 4 is 1:[it's a lot harder to hide an orgasm when you just jizzed everywhere]
 						say detention orgasm reaction of M;
 						humiliate 40;
 		rule succeeds.

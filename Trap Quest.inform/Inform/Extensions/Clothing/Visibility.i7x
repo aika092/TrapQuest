@@ -1,29 +1,46 @@
 Visibility by Clothing begins here.
 
-Clothing can be layer-exposing or layer-concealing. Clothing is usually layer-concealing. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
+Definition: a clothing is layer-concealing: decide yes.  [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
+Definition: a clothing is partially-layer-concealing if it is layer-concealing. [If you want to set this to 'YES' to make something partially layer concealing, you should also set the layer-concealing definition above to 'NO'.]
+Definition: a clothing is layer-exposing if it is not partially-layer-concealing.
 
 Definition: a clothing (called C) is potentially-top-layer-concealing:
-	if C is layer-concealing and the top-layer of C > 0 and C is nipple covering, decide yes;
+	if C is potentially-partially-top-layer-concealing and C is layer-concealing, decide yes;
 	decide no.
-
 Definition: a clothing (called C) is top-layer-concealing:
 	if C is worn and C is potentially-top-layer-concealing, decide yes;
 	decide no.
-
-Definition: a clothing (called C) is potentially-mid-layer-concealing:
-	if C is layer-concealing and the mid-layer of C > 0, decide yes;
+Definition: a clothing (called C) is potentially-partially-top-layer-concealing:
+	if C is partially-layer-concealing and the top-layer of C > 0 and C is actually nipple covering, decide yes;
+	decide no.
+Definition: a clothing (called C) is partially-top-layer-concealing:
+	if C is worn and C is potentially-partially-top-layer-concealing, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is potentially-mid-layer-concealing:
+	if C is potentially-partially-mid-layer-concealing and C is layer-concealing, decide yes;
+	decide no.
 Definition: a clothing (called C) is mid-layer-concealing:
 	if C is worn and C is potentially-mid-layer-concealing, decide yes;
 	decide no.
-
-Definition: a clothing (called C) is potentially-bottom-layer-concealing:
-	if C is layer-concealing and C is not-butt-windowed and ((C is total protection and the bottom-layer of C > 0) or C is skirt-covering-crotch) and C is crotch-normal, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+Definition: a clothing (called C) is potentially-partially-mid-layer-concealing:
+	if C is partially-layer-concealing and the mid-layer of C > 0, decide yes;
+	decide no.
+Definition: a clothing (called C) is partially-mid-layer-concealing:
+	if C is worn and C is potentially-partially-mid-layer-concealing, decide yes;
 	decide no.
 
+Definition: a clothing (called C) is potentially-bottom-layer-concealing:
+	if C is potentially-partially-bottom-layer-concealing and C is layer-concealing, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+	decide no.
 Definition: a clothing (called C) is bottom-layer-concealing:
 	if C is worn and C is potentially-bottom-layer-concealing, decide yes;
+	decide no.
+Definition: a clothing (called C) is potentially-partially-bottom-layer-concealing:
+	if C is partially-layer-concealing and C is not-butt-windowed and ((C is total protection and the bottom-layer of C > 0) or C is skirt-covering-crotch) and C is crotch-normal, decide yes; [crotch-assless clothing doesn't hide what's underneath]
+	decide no.
+Definition: a clothing (called C) is partially-bottom-layer-concealing:
+	if C is worn and C is potentially-partially-bottom-layer-concealing, decide yes;
 	decide no.
 
 current-clothing is a thing that varies.
@@ -52,11 +69,6 @@ Definition: a wearthing (called C) is currently covered: [Is the item worn and c
 	if C is not worn, decide no;
 	if the coverer of C is clothing, decide yes;
 	decide no.
-
-[Definition: a wearthing (called C) is currently at least partially covered: [Is the item worn and at least part of it covered by another item]
-	if C is not worn, decide no;
-	if the top-coverer of C is clothing or the mid-coverer of C is clothing or the bottom-coverer of C is clothing, decide yes;
-	decide no.]
 
 Definition: a wearthing (called C) is currently uncovered:
 	if C is not worn, decide no;
@@ -99,59 +111,67 @@ To decide which object is the coverer of (C - a clothing):
 [Layers + visibility]
 [We will prioritise a top layer thing over a bottom layer thing. We prioritise a bottom layer thing over a middle layer thing.]
 To decide which object is the concealer of (C - a clothing):
+	if appearance-explained is 1 and debugmode > 1, say "Checking concealer of [C].";
 	if entry 1 in the armUses of arms is C and entry 2 in the armUses of arms is C, decide on arms;
 	let B be nothing;
 	let M be nothing;
 	if the bottom-layer of C > 0 or C is condom of kings:
 		if C is pussy protection:
-			repeat with O running through worn potentially vagina covering bottom-layer-concealing clothing:
-				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
+			repeat with O running through bottom-layer-concealing potentially vagina covering clothing:
+				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is skirted):
 					now B is O;
 		otherwise:
-			repeat with O running through worn potentially asshole covering bottom-layer-concealing clothing:
-				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
+			repeat with O running through bottom-layer-concealing potentially asshole covering clothing:
+				if O is not C and (the bottom-layer of O > the bottom-layer of C or O is skirted):
 					now B is O;
+		if appearance-explained is 1 and debugmode > 1, say "So far we've found [if B is nothing]that there's no[otherwise]that [printed name of B] is the[end if] bottom layer cover.";
 		if B is nothing, decide on nothing; [Bottom is uncovered. We can stop here.]
 	if the mid-layer of C > 0:
 		repeat with O running through actually dense mid-layer-concealing clothing:
 			if the mid-layer of O > the mid-layer of C:
 				now M is O;
+		if appearance-explained is 1 and debugmode > 1, say "So far we've found [if M is nothing]that there's no[otherwise]that [printed name of M] is the[end if] mid layer cover.";
 		if M is nothing, decide on nothing; [Mid is uncovered. We can stop here.]
 	if the top-layer of C > 0:
 		let T be nothing;
 		repeat with O running through actually dense top-layer-concealing clothing:
 			if the top-layer of O > the top-layer of C and the cleavageCover of O >= the cleavageCover of C:
 				now T is O;
+		if appearance-explained is 1 and debugmode > 1, say "So far we've found [if T is nothing]that there's no[otherwise]that [printed name of T] is the[end if] top layer cover.";
 		decide on T; [We point at the top coverer over others, because it's the most visible.]
 	[Top is irrelevant. Review the outcomes of bottom and middle.]
 	if B is a thing, decide on B; [We point at the bottom coverer over the middle coverer, as it's more likely to be important information for how the player is concealing a private part.]
 	decide on M; [We point at the middle coverer (if there is no coverer at all because it's an item without a layer, this will resolve to 'nothing').]
 
 To decide which object is the at least partial concealer of (C - a wearthing):
+	if appearance-explained is 1 and debugmode > 1, say "Checking at least partial concealer of [C].";
 	if C is listed in the armUses of arms, decide on arms;
-	if C is clothing and (the top-layer of C > 0 or the mid-layer of C > 0 or the bottom-layer of C > 0): [The main difference between this and the one above, is whether the item is layer concealing]
+	if C is clothing and (the top-layer of C > 0 or the mid-layer of C > 0 or the bottom-layer of C > 0): [The main difference between this and the one above, is whether the item is layer concealing or just partially layer concealing]
 		let B be nothing;
 		let M be nothing;
 		if the bottom-layer of C > 0:
 			if C is pussy protection:
-				repeat with O running through worn potentially at least partially vagina covering clothing:
-					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
+				repeat with O running through partially-bottom-layer-concealing potentially at least partially vagina covering clothing:
+					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is not-see-through skirted clothing):
 						now B is O;
 			otherwise:
-				repeat with O running through worn potentially at least partially asshole covering clothing:
-					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is actually dense skirted clothing):
+				repeat with O running through partially-bottom-layer-concealing potentially at least partially asshole covering clothing:
+					if O is not C and (the bottom-layer of O > the bottom-layer of C or O is not-see-through skirted clothing):
 						now B is O;
+			if appearance-explained is 1 and debugmode > 1, say "So far we've found [if B is nothing]that there's no[otherwise]that [printed name of B] is the[end if] at least partial bottom layer cover.";
 			if B is nothing, decide on nothing; [Bottom is uncovered. We can stop here.]
 		if the mid-layer of C > 0:
-			repeat with O running through worn clothing:
+			repeat with O running through partially-mid-layer-concealing clothing:
 				if the mid-layer of O > the mid-layer of C and O is not see-through:
 					now M is O;
+			if appearance-explained is 1 and debugmode > 1, say "So far we've found [if M is nothing]that there's no[otherwise]that [printed name of M] is the[end if] at least partial mid layer cover.";
 			if M is nothing, decide on nothing; [Mid is uncovered. We can stop here.]
 		if the top-layer of C > 0:
 			let T be nothing;
-			repeat with O running through worn clothing:
+			repeat with O running through partially-top-layer-concealing clothing:
 				if the top-layer of O > the top-layer of C and O is not fully exposing and O is not see-through:
 					now T is O;
+			if appearance-explained is 1 and debugmode > 1, say "So far we've found [if T is nothing]that there's no[otherwise]that [printed name of T] is the[end if] at least partial top layer cover.";
 			decide on T; [We point at the top coverer over others, because it's the most visible.]
 		[Top is irrelevant. Review the outcomes of bottom and middle.]
 		if B is a thing, decide on B; [We point at the bottom coverer over the middle coverer, as it's more likely to be important information for how the player is concealing a private part.]

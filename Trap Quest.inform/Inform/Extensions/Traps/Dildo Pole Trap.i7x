@@ -115,7 +115,7 @@ To trigger pole trap (Y - a dildo trap):
 		now Y is revealed;
 		say "[bold type]A dildo on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
 		let target-BP be asshole;
-		if the player is female and a random number between 1 and 2 is 1, now target-BP is vagina;
+		if the player is possessing a vagina and a random number between 1 and 2 is 1, now target-BP is vagina;
 		let O be a random top level protection clothing;
 		if target-BP is asshole, now O is a random top level ass protection clothing;
 		[Having an the orifice already occupied overrides all other checks]
@@ -602,7 +602,7 @@ To trigger (Y - a ghostly dildo pole trap):
 		let target-check be 0;
 		say "[bold type]A ghostly dildo on a pole shoots out of a trap door underneath you and towards your crotch![roman type][line break]";
 		let target-BP be asshole;
-		if the player is female and a random number between 1 and 2 is 1, now target-BP is vagina;
+		if the player is possessing a vagina and a random number between 1 and 2 is 1, now target-BP is vagina;
 		let O be a random top level protection clothing;
 		if target-BP is asshole, now O is a random top level ass protection clothing;
 		[Having an the orifice already occupied overrides all other checks]

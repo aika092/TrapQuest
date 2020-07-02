@@ -54,7 +54,7 @@ To decide which object is the potential-upgrade-target of (C - a clothing):
 		now Z is entry 1 of L1; [If every item is transformation-theme-blocked, we still spit out an item so that the 'is upgradable' function works as intended.]
 		repeat with D running through L1:
 			now the upgrade-target of C is D;
-			if C is not transformation-theme-blocked:
+			if C is not transformation-theme-blocked and C is not transformation-clash-blocked:
 				add D to L2; [Disregard ones that the item will refuse to transform into.]
 		if debugmode > 1:
 			say "Final list is ";
@@ -114,6 +114,18 @@ Definition: a clothing (called C) is transformation-theme-blocked:
 	truncate interesting-themes-shared-list to 0 entries;
 	follow the theme blocking rules;
 	if colour-themes-shared + interesting-themes-shared > 0, decide yes;
+	decide no.
+
+[We don't want to transform a clothing into a clothing that gives the player a uniform penalty for wearing clashing clothing, e.g. trousers worn at the same time as a skirt]
+Definition: a clothing (called C) is transformation-clash-blocked:
+	if C is not transformation-theme-blockable, decide no;
+	let D be the upgrade-target of C;
+	if C is unskirted and D is skirted:
+		repeat with U running through worn unskirted themed clothing:
+			if U is not C and U is not usually autoremovable and C is not usually autoremovable, decide yes;
+	if C is not unskirted themed and D is unskirted themed:
+		repeat with U running through worn skirted clothing:
+			if U is not C and U is not usually autoremovable and C is not usually autoremovable, decide yes;
 	decide no.
 
 Definition: a clothing (called C) is untransformable:
@@ -278,7 +290,10 @@ To silently transform (C - a clothing):
 To potentially transform (C - a clothing):
 	if C is upgradable:
 		if debugmode > 1, say "The [ShortDesc of C] is upgradable.";
-		if C is transformation-theme-blocked and the transform-attempts of C <= 1 + the disintegrate-resistance of C + the used condoms of C + the empty condoms of C + the transform-resistance of C:
+		if C is transformation-clash-blocked and the transform-attempts of C <= 1 + the disintegrate-resistance of C + the used condoms of C + the empty condoms of C + the transform-resistance of C:
+			increase the transform-attempts of C by 1;
+			say "[bold type]The [C] [bold type]manages to resist being transformed this time, because the transformation spell placed upon it would have left you wearing a skirt and bottoms combination that would have looked weird and that you couldn't remove![roman type][line break]";
+		otherwise if C is transformation-theme-blocked and the transform-attempts of C <= 1 + the disintegrate-resistance of C + the used condoms of C + the empty condoms of C + the transform-resistance of C:
 			increase the transform-attempts of C by 1;
 			say "[bold type]The [C] [bold type]manages to resist being transformed this time, thanks to it wanting you to keep wearing multiple ";
 			let LN1 be the number of entries in interesting-themes-shared-list;

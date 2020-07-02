@@ -150,7 +150,7 @@ knickers removability rules is a rulebook. The removability rules of knickers is
 
 Report wearing knickers:
 	if the noun is plug panties:
-		if the player is male or the noun is pump plug panties:
+		if the player is not possessing a vagina or the noun is pump plug panties:
 			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plug into your [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
 		otherwise:
 			say "[if the bimbo of the player < 7][line break][first custom style]I can't believe I'm doing this... [roman type][line break][end if]As you finish pulling the panties up to your body, you [if the raw sex addiction of the player < 3]gingerly [end if]push the rubber plugs into your [if the soreness of vagina > 4]open [otherwise]tight [end if][vagina] and [if the openness of asshole > 4]open [otherwise]tight [end if][asshole].";
@@ -162,7 +162,7 @@ Report wearing knickers:
 	otherwise if the noun is unsure and the noun is cursed:
 		if the noun is diaper, say "You pull the [ShortDesc of the noun] up around your hips, [if the bimbo of the player > 12]grinning timidly[otherwise]wincing[end if] as it crinkles loudly. As you finish pulling it into place, you feel a pulse of warmth along the seams! The waistband and leg holes tighten magically, ensuring you can't take it off. This diaper is cursed!";
 		otherwise say "You pull the [ShortDesc of the noun] up around your hips. As you finish adjusting them you feel a pulse of warmth along the seams! They [if the bimbo of the player < 11]firmly[otherwise][second custom style][one of]tightly[or]deliciously[or]enticingly[in random order][roman type][end if] conform to the contours of your [ShortDesc of hips] and [if the player is male][ShortDesc of penis][otherwise][vagina][end if]. [if the bimbo of the player > 8]They make you look so fuckable! [end if]These panties are cursed!"; [Written by Anya Snowdrifter]
-	if the size of penis > 0 and the penis-capacity of the noun > 0:
+	if the player is possessing a penis and the penis-capacity of the noun > 0:
 		if the noun is crotch-intact and the noun is pussy covering:
 			if the noun is potentially penis covering:
 				say "Your [ShortDesc of penis] [if the size of penis >= the penis-capacity of the noun]barely fits[otherwise]fits comfortably[end if] inside the fabric!";

@@ -178,12 +178,30 @@ To say MediumDesc of (M - a tentacle monster):
 
 To say MonsterDesc of (M - a tentacle monster):
 	if M is newborn:
-		say NewTentacleDesc;
+		say "[one of]A mass of [TentacleColour of the M] tentacles, about the size of a [if extreme proportions fetish is 1]beachball[otherwise]basketball[end if]. Each 'arm' is about as thick around as a normal human penis, and looks just like one too. [or]A [if extreme proportions fetish is 1]beach[otherwise]basket[end if]ball-sized heap of [TentacleColour of the M] tentacles. Each one is looks almost identical to a normal human penis in shape and thickness, although alien in colour. [in random order]";
+		say "[if the evolved of the M is 3]A single eye is visible inside the main mass, no larger than a plum and as black as the void itself.[otherwise if M is asleep]A single eye no larger than a plum rests on the ground before it, attached to the main body by a fleshy stalk. It's closed, and the tentacles surrounding it are completely motionless.[otherwise]A single eye no larger than a plum is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with a keen, lucid curiosity.[end if]";
 	otherwise if M is large:
-		say LargeTentacleDesc;
+		say "[one of]A large mass of [TentacleColour of the M] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, [cockhead of M]. [or]A person-sized mass of [TentacleColour of the M] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, [cockhead of M]. [in random order]";
+		say "[if the evolved of the M is 3]At least a dozen eyes are visible inside the main mass, each about the size of a grapefruit and as black as the void itself.[otherwise if M is asleep]A single eye the size of a grapefruit is resting on the ground before it, connected to the main body by a fleshy stalk. It is closed, and the surrounding tentacles are completely motionless.[otherwise]A single eye the size of a grapefruit is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with visible intelligence.[end if]";
 	otherwise:
-		say MassiveTentacleDesc.
+		say "[one of]A massive heap of [TentacleColour of the M] tentacles, big enough to dwarf most humans and even some cars. Each arm is as about as thick around as *your* forearm and ends in a soft, [cockhead of M]. [or]A car-sized mass of [TentacleColour of the M] tentacles. Each one, about as thick around as your forearm, has a natural sheen and a lightly coloured [cockhead of M]. [in random order]";
+		say "[if the evolved of the M is 3]Dozens of eyes are visible inside the main mass, each about the size of a softball and as black as the void itself.[otherwise if M is asleep]It is completely motionless, and its single, softball sized eye is closed and resting on the ground before it.[otherwise]A single eye about the size of a softball is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with an unnervingly human measure of intelligence.[end if]";
+	say "[if the free-tentacles of M is 0]All [the max-tentacles of M] its longer tentacles are holding onto your body[otherwise if the free-tentacles of M is 1]All but one of its longer tentacles are holding onto your body[otherwise if the free-tentacles of M is the max-tentacles of M]It has [the max-tentacles of M] longer tentacles, which seem well suited for grabbing.[otherwise]It is holding you with [the max-tentacles of M - the free-tentacles of M] of its longer tentacles, with [the free-tentacles of M] still undulating about above it.[end if]".
 
+To say cockhead of (M - a tentacle monster):
+	say "[one of]mushroom-like[or]penis-like[or]bell-shaped[or]mushroom-shaped[or]phallic[in random order] [one of]head[or]tip[at random]".
+
+To say MonsterComment of (M - a tentacle monster):
+	unless M is player-brood:
+		do nothing;
+	otherwise if M is newborn:
+		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or]It's a fucking demon-spawn. I'm killing it.[or]I have to kill this thing before it decides it wants to breed with me.[or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of the M]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of the M] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of the M] looks like [he of the M] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]";
+	otherwise if M is large:
+		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of the M] had sex with me even though I'm [his of the M] mother.[or][big he of the M]'s getting big. Could [he of the M] grow like that again?[or]I probably could have fought more, but... [he of the M] was just so cute.[or][big his of the M] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of the M] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of the M]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of the M] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of the M]'s going to grow up big and horny, just like [his of the M] daddy.[then at random][end if][roman type][line break]";
+	otherwise:
+		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the M] were more obedient, but still...[or][big his of the M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the M] knows just how to please [his of the M] mommy.[or]Those [manly-penis]s are so big! [big he of the M] gets it from [his of the M] daddy.[or]I wonder when [he of the M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
+
+	
 To say TentacleColour of (M - a tentacle monster):
 	say "[if the evolved of M is 3]pure white[otherwise if M is not player-brood]grey[otherwise]dark red[end if]".
 
@@ -201,31 +219,40 @@ To decide which number is the base semen load of (M - a tentacle monster):
 
 A wet-tentacle-monster has a number called dripTimer. The dripTimer of a wet-tentacle-monster is usually 0.
 
+To compute unique periodic effect of (M - a tentacle monster):
+	if M is not in the location of the player, dislodge M.
+
 To compute unique periodic effect of (M - a wet-tentacle-monster):
 	if the class of the player is maid or a random number between 1 and 5 > 3, increase the dripTimer of M by 1;
 	if a random number between 30 and 100 <= the dripTimer of M:
 		now the dripTimer of M is 0;
 		if M is in the location of the player:
 			say "[BigNameDesc of M] leaves a trail of [semen] behind [his of M] body.";
-		SemenPuddleUp 1 in (the location of M).
+		SemenPuddleUp 1 in (the location of M);
+	if M is not in the location of the player, dislodge M.
 
 To set up (M - a tentacle monster):
 	reset M;
 	now the monstersetup of M is 1;
-	let D be 5;
+	let D be the starting difficulty of M;
 	if M is large:
 		increase D by 3;
 	otherwise if M is massive:
 		increase D by 3;
+	now the free-tentacles of M is the max-tentacles of M;
 	now the raw difficulty of M is D;
 	TentacleShortcutAssign M;
 	now M is not player-brood;
 	now the health of M is the maxhealth of M.
 
+To decide which number is the starting difficulty of (M - a tentacle monster):
+	decide on 5.
+
 Definition: a tentacle monster is blocker if it is not newborn or the player is prone.
 
 To compute birth set up of (M - a tentacle monster):
 	now M is newborn;
+	now the free-tentacles of M is the max-tentacles of M;
 	set up M;
 	now the evolved of M is 0;
 	regionally place M;
@@ -269,7 +296,7 @@ To compute monstermotion of (M - a tentacle monster): [Tentacle monsters shouldn
 
 Part 1 - Perception
 
-Definition: a tentacle monster is uniquely unfriendly if playerRegion is School. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However the tentacle monster in the school dungeon must always be an enemy.]
+Definition: a tentacle monster is uniquely unfriendly if playerRegion is School. [The player looking ultra-slutty doesn't override the fact that the tentacle monster defends them when pregnant. However, the tentacle monster in the school dungeon must always be an enemy.]
 
 To compute perception of (M - a tentacle monster):
 	say "[BigNameDesc of M] notices you! [big he of M] stares at your belly with [his of M] single large eye.";
@@ -295,6 +322,167 @@ To compute (M - a monster) stomping (N - a tentacle monster):
 Part 2 - Combat
 
 Section 1 - Protect and Attack
+
+a tentacle monster has a number called free-tentacles.
+a tentacle monster has a number called leg-count. 
+a tentacle monster has a number called arm-count.
+
+To decide which number is the max-tentacles of (M - a tentacle monster):
+	if M is newborn, decide on 3;
+	if M is large, decide on 5;
+	if M is massive, decide on 8;
+	decide on 2.
+
+The tentacle priority attack rules is a rulebook. The priority attack rules of a tentacle monster is the tentacle priority attack rules.
+
+[Tentacle monsters have a certain number of free tentacles. With a free tentacle, they can wrangle the player.]
+This is the tentacle monster grabbiness rule:
+	let M be current-monster;
+	let C be 5;
+	if M is smart-tentacle-monster, now C is 4;[smart monsters are more likely to use a special attack]
+	if M is not penetrating a body part and the free-tentacles of M > 0 and a random number between 1 and C is 1:
+		let R be a random number between 1 and 2;
+		if the arm-count of M >= 3, now R is 2;
+		if the leg-count of M >= 3, now R is 1;
+		if R is 1:[grab your arm]
+			if the accuracy roll of M >= the dexterity of the player:
+				say "[BigNameDesc of M] [if the arm-count of M > 1]uses another tentacle to pin your arms together and bind them securely. Escaping will be a lot harder now...[otherwise if the arm-count of M > 0]uses a tentacle to seize your other wrist![otherwise]uses a tentacle to grab and curl around one of your wrists![end if]";
+				decrease the free-tentacles of M by 1;
+				increase the arm-count of M by 1;
+				now M is wrangling arms;
+			otherwise:
+				say "[BigNameDesc of M] [if the arm-count of M > 1]forces your arms together and tries to bind you with another tentacle, but you're just quick enough to avoid it.[otherwise if the arm-count of M > 0]tries to grab your free wrist with another tentacle, but you don't let it grab you![otherwise]tries to grab your wrist with one of its tentacles, but you avoid it just in time![end if]";
+		otherwise:[grab your leg; We know there's a free arm, since the arm and leg counts are less than the number of free tentacles.]
+			if the accuracy roll of M >= the dexterity of the player:
+				say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and bind them securely. Escaping will be a lot harder now...[otherwise if the leg-count of M > 0]uses a tentacle to seize your other ankle![otherwise]uses a tentacle to grab and curl around one of your ankles![end if]";
+				decrease the free-tentacles of M by 1;
+				increase the leg-count of M by 1;
+				now M is wrangling thighs;
+			otherwise:
+				say "[BigNameDesc of M] [if the leg-count of M > 1]uses another tentacle to force your legs together and tries binding you with another tentacle, but you're quick enough to avoid it.[otherwise if the leg-count of M > 0]tries grabbing your other ankle, but you dodge the tentacle![otherwise]tries to grab one of your ankles with its tentacles, but you avoid it![end if]";
+		rule succeeds.
+The tentacle monster grabbiness rule is listed in the tentacle priority attack rules.
+
+To compute wrangled resisting of (T - tentacle monster):
+	let S be the strength of the player;
+	if the arm-count of T > 2, now S is S / 2;[once it grabs you with three tentacles, escaping becomes much harder]
+	if the leg-count of T > 2, now S is S / 2;
+	if the strength roll of T >= S:
+		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s tentacles[or]you can't break [FuckerDesc of T][']s grip.[or][FuckerDesc of T] is just too strong![in random order]";
+	otherwise:
+		say "You force [FuckerDesc of T] to let you go!";
+		now the arm-count of T is 0;
+		now the leg-count of T is 0;
+		now the free-tentacles of T is the max-tentacles of T;
+		now T is not wrangling arms;[for now, the monster lets go all at once.]
+		now T is not wrangling thighs.
+
+To decide which number is the strength roll of (T - a tentacle monster):
+	let X be the difficulty of T / 2;
+	let Y be the weight of the player / -2;
+	let D be the difficulty of T + (a random number between Y and X) + (a random number between Y and X);
+	let S be the strength of the player;
+	if the arm-count of T > 2, now S is S / 2;[once it grabs you with three tentacles, escaping becomes much harder]
+	if the leg-count of T > 2, now S is S / 2;
+	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of T][line break]";
+	decide on D.
+
+[When tentacle monsters have free tentacles, they will sometimes bash the player with all of them]
+This is the tentacle monster bashiness rule:
+	let M be current-monster;
+	let C be 5;
+	if M is smart-tentacle-monster, now C is 4;
+	if M is not penetrating a body part and the free-tentacles of M > 2 and a random number between 1 and C is 1:
+		let B be the painful-part of M;
+		if the accuracy roll of M >= the dexterity of the player:
+			say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
+			let T be the free-tentacles of M / 3;
+			if T > 0, BodyRuin T;
+			compute M striking B;[applies bonus damage for bust and face]
+		otherwise:
+			say "You manage to narrowly dodge [NameDesc of M][']s bundled up tentacles as they come flying towards your [printed name of B].";
+		rule succeeds.
+The tentacle monster bashiness rule is listed in the tentacle priority attack rules.	
+
+This is the tentacle monster gets fresh rule:
+	let M be current-monster;
+	let C be 5;
+	if M is smart-tentacle-monster, now C is 4;
+	if M is not penetrating a body part and the free-tentacles of M < the max-tentacles of M and the health of M > the maxhealth of M / 2 and a random number between 1 and C is 1:[When tentacle monsters are feeling healthy, they get kind of handsy/tentaclesy.]
+		if the accuracy roll of M >= the dexterity of the player:
+			compute seduction grope of M;
+		otherwise:
+			say "[BigNameDesc of M] tries to grope you with one of its tentacles, but you avoid it!";
+		rule succeeds.
+The tentacle monster gets fresh rule is listed in the tentacle priority attack rules.	
+
+To compute breasts grope of (M - a tentacle monster):
+	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]curls around[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with a [if M is wet-tentacle-monster][semen]-drooling [end if]tentacle!";
+	if M is wet-tentacle-monster, CumTitsUp 1.
+
+To compute asshole grope of (M - a tentacle monster):
+	let C be a random top level ass protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	let A be a random uncursed anal beads penetrating asshole;
+	if A is nothing and M is able to remove cursed plugs monster, now A is a random anal beads penetrating asshole;
+	say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle [if S is clothing and S is not C]up under your [ShortDesc of S][otherwise]between your cheeks[end if] and [if C is clothing][one of]prods at[or]pokes[or]tickles[or]pushes against[in random order] your [asshole] through your [ShortDesc of C][otherwise if A is a thing]hooks its tentacle around the end of your anal beads[otherwise][one of]prods[or]pokes[or]presses against[or]taps[in random order] your [asshole] with its [cockhead of M][end if]!";
+	if A is a thing:[if the original asshole grope function is updated, this will also need to be updated.]
+		let N be the notch-taken of A;
+		let R be a random number between 1 and N;
+		if R > 3, now R is 3;
+		say "[if R is 1]One [PlugSize the size of A] bead is[otherwise][R] [PlugSize the size of A] beads are[end if] roughly pulled out of your [asshole]!";
+		decrease the notch-taken of A by R;
+		ruin asshole times (R + 1) / 2;
+		if the notch-taken of A <= 0:
+			now A is in the location of the player;
+			dislodge A;
+			say "The [A] falls to the ground.";
+		force immediate inventory-focus redraw.
+
+To compute vagina grope of (M - a tentacle monster):
+	let C be a random top level protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle [if S is clothing and S is not C]up under your [ShortDesc of S][otherwise]between your legs[end if] and [if C is clothing][one of]prods at[or]pokes[or]tickles[or]pushes against[in random order] your [vagina] through your [ShortDesc of C][otherwise][one of]grinds between your labia[or]slides between your nether lips[or]circles the [cockhead of M] around your entrance[or]circles the [cockhead of M] around your clit[in random order][end if]!".
+
+To compute penis grope of (M - a tentacle monster):
+	let C be a random top level protection clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle [if S is clothing and S is not C]up under your [ShortDesc of S][otherwise]toward your crotch[end if] and [one of]strokes[or]rubs[or]tickles[or]flicks[in random order] your [player-penis][if C is clothing] through your [ShortDesc of C][end if]!".
+
+To compute belly grope of (M - a tentacle monster):
+	say "[BigNameDesc of M] uses a tentacle to [one of]tenderly[or]almost lovingly[or]patronisingly[in random order] [one of]caress[or]stroke[in random order] your [ShortDesc of belly][if there is worn belly covering clothing] through your [ShortDesc of random worn belly covering clothing][end if].[if M is wet-tentacle-monster and bukkake fetish is 1] [big his of M] [cockhead of M] leaves a trail of stick [semen] in its wake.[end if]";
+	if M is wet-tentacle-monster and bukkake fetish is 1:
+		CumBellyUp 1.
+
+To compute face grope of (M - a tentacle monster):
+	if there is worn ringagged clothing:
+		if M is wet-tentacle-monster:
+			say "[BigNameDesc of M] [one of]pushes[or]worms[in random order] a [semen]-drooling tentacle into your open mouth, wiping it off on your [if the player is a nympho and the player is not feeling dominant]hungry[otherwise]your defenceless[end if] tongue.";
+			StomachSemenUp 1;
+		otherwise:
+			say "[BigNameDesc of M] [one of]pushes[or]worms[in random order] a tentacle into your open mouth, [one of]prodding[or]inspecting[or]pushing down on[in random order] your [if the player is a nympho and the player is not feeling dominant]hungry[otherwise]defenceless[end if] tongue.";
+	otherwise if the player is a nympho and the player is not feeling dominant:
+		say "[BigNameDesc of M] presents you with a [if M is wet-tentacle-monster][semen]-drooling [end if]tentacle, allowing you to suckle the [cockhead of M][if M is wet-tentacle-monster] until its clean[end if]!";
+		if M is wet-tentacle-monster, StomachSemenUp 1;
+	otherwise:
+		say "[BigNameDesc of M] raises a tentacle to your face, using [his of M] [if M is wet-tentacle-monster][semen]-drooling [end if][cockhead of M] to [one of]prod[or]poke[or]trace the outline of[in random order] your [LipDesc].";
+		if M is wet-tentacle-monster, CumFaceUp 1.
+
+To compute thighs grope of (M - a tentacle monster):
+	let C be a random worn crotch-in-place leg covering clothing;
+	let S be a random worn skirted crotch-in-place clothing;
+	if M is wet-tentacle-monster:
+		say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a slimy tentacle up [if S is clothing and S is not C]under your [ShortDesc of S][otherwise]your leg[end if], leaving a sticky [semen] trail as it [one of]strokes[or]rubs[or]grips[or]squeezes[in random order] your thigh[if C is clothing] through your [ShortDesc of C][end if]!";
+		CumThighsUp 1;
+	otherwise:
+		say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle up [if S is clothing and S is not C]under your [ShortDesc of S][otherwise]your leg[end if] and [one of]strokes[or]rubs[or]grips[or]squeezes[in random order] your thigh[if C is clothing] through your [ShortDesc of C][end if]!".
+
+To compute ass grope of (M - a tentacle monster):
+	let C be the concealer of hips;
+	if C is nothing, now C is the at least partial concealer of hips;
+	let S be a random worn skirted crotch-in-place clothing;
+	if C is clothing or a random number between 1 and 3 is 1, say "[BigNameDesc of M] uses a tentacle to swat you [one of]roughly[or]playfully[or]lightly[in random order] on your [AssDesc][if C is clothing] through your [ShortDesc of C][end if]!";
+	otherwise say "[BigNameDesc of M] [one of]deftly[or]quickly[in random order] [one of]snakes[or]shoots[or]sneaks[in random order] a tentacle up [if S is clothing and S is not C]under your [ShortDesc of S][otherwise]your leg[end if] and [one of]grinds it between[or]rubs it between[or]slithers between[or]allows it to rub between[in random order] your [AssDesc]!".
 
 To compute (M - a tentacle monster) protecting against (X - a monster):
 	if the player is at least partially monster stuck and X is not tentacle monster:
@@ -348,7 +536,7 @@ This is the tentacle monster continues sex rule:[TODO: update for evolved tentac
 			now M is penetrating face;
 		otherwise if targeted-body-part is asshole:
 			if the player is not ass protected:
-				say "You feel the tip of another tentacle push against your anal sphincter, and before you can [if the bimbo of the player > 13]express your enthusiasm[otherwise if M is penetrating face]scream [line break][variable custom style]'MMMMFF'[roman type][line break][otherwise]yell in shock[end if] [NameDesc of M] has buried its appendage deep inside your [asshole]. It joins the fucking pace of the other[if the number of orifices penetrated by M is 2]s[end if].";
+				say "You feel the [cockhead of M] of another tentacle push against your anal sphincter, and before you can [if the bimbo of the player > 13]express your enthusiasm[otherwise if M is penetrating face]scream [line break][variable custom style]'MMMMFF'[roman type][line break][otherwise]yell in shock[end if] [NameDesc of M] has buried its appendage deep inside your [asshole]. It joins the fucking pace of the other[if the number of orifices penetrated by M is 2]s[end if].";
 				if M is player-brood:
 					say "[if M is massive]The tentacle is so large that you can feel your [asshole] being permanently gaped.[otherwise if M is penetrating face and M is penetrating vagina]You're being triple penetrated by your own tentacle offspring![otherwise if M is penetrating vagina]You're being double penetrated by your own tentacle offspring![otherwise]You're being spit-roasted by your own tentacled offspring![end if]";
 				now M is penetrating asshole;
@@ -395,6 +583,11 @@ To set up sex length of (M - a tentacle monster):
 
 The tentacle monster end of sex rules is a rulebook. The end-of-sex-rules of tentacle monster is usually the tentacle monster end of sex rules.
 
+To SizeRankUp (M - a tentacle monster):
+	if M is newborn, now M is large;
+	otherwise now M is massive;
+	now the free-tentacles of M is the max-tentacles of M.
+
 This is the tentacle monster climaxes rule:
 	let M be current-monster;
 	TimesSubmittedUp M by 1;
@@ -438,8 +631,7 @@ This is the tentacle monster climaxes rule:
 		DifficultyUp M by 3;
 	say "[BigNameDesc of M] [one of]seems to stop[or]once again stops[stopping] moving as its tentacles rest peacefully on the ground and its single eye closes.[unless M is massive][line break][one of]It appears to have entered some kind of dormant state. You watch with silent awe as it[or]The monster[stopping] smoothly but rapidly grows in size until its main body is [end if][if M is newborn]as big as yours, and its many tentacles have thickened to the width of a small bottle.[otherwise if M is large]as big as a car, and its multitude of tentacles have thickened to the width of your forearm.[otherwise][one of]Much to your relief it doesn't seem to grow any larger.[or][stopping][end if]";
 	if magical-maid-outfit is worn and (M is not massive or (inhuman pregnancy is 2 and the player is female)):
-		if M is large, now M is massive;
-		if M is newborn, now M is large;
+		SizeRankUp M;
 		say "[bold type]Just as you are about to begin to crawl away, you feel some magic drain from your [magical-maid-outfit], and it wakes up again![line break][variable custom style][one of]What?![or]I can't... I'll break...[stopping][roman type][line break]";
 		MagicPowerDown 1;
 		if inhuman pregnancy is 2 and the player is female:
@@ -449,13 +641,13 @@ This is the tentacle monster climaxes rule:
 			bore M;
 			if M is not massive:
 				DifficultyUp M by 3;
-				now M is massive;
+				SizeRankUp M;
 		otherwise:
 			dislodge M;
 	otherwise:
 		say "[if the bimbo of the player < 11 and M is large and the openness of asshole < 9 and the openness of vagina < 9][line break][first custom style]'Holy shit. I am getting the fuck out of here while this thing is sleeping. I could never take that...'[roman type][line break][end if]";
 		if M is large:
-			now M is massive;
+			SizeRankUp M;
 			if heart hairpin is off-stage:
 				if the class of the player is schoolgirl and the player is ponytailed:
 					let S be a random worn scrunchie;
@@ -465,10 +657,10 @@ This is the tentacle monster climaxes rule:
 					say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a wave of shame come over you... You doubt you'll be very good at this job, judging by how things have been going so far.[roman type][line break]";
 					summon heart hairpin cursed;
 					if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-						say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
+						say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 						SexChange the player;
 		if M is newborn:
-			now M is large;
+			SizeRankUp M;
 		now the sleep of M is 250;
 		if the class of the player is schoolgirl, decrease the sleep of M by 100;
 		if the evolved of M is 3 or M is in School34, decrease the sleep of M by 100;
@@ -488,6 +680,7 @@ To say CondomPinReactionFlav of (M - a tentacle monster) on (C - a clothing):
 
 To decide if (M - a tentacle monster) is losing wrapper in (F - a fuckhole):
 	if M is penetrating vagina and F is asshole, decide no; [Otherwise the vaginal condom automatically fails afterwards because the asshole one failed which doesn't make much sense]
+	if F is vagina and the class of the player is priestess, decide no;
 	if M is massive and a random number between 1 and 4 > 1, decide yes;
 	if M is large and a random number between 1 and 4 > 2, decide yes;
 	if M is newborn and a random number between 1 and 3 is 1, decide yes;
@@ -501,7 +694,7 @@ To decide if (M - a tentacle monster) is willing to creampie (F - a fuckhole):
 	decide yes.
 
 To compute vaginal climax of (M - a tentacle monster):
-	if egg laying fetish is 1:
+	if egg laying fetish is 1 and the class of the player is not priestess:
 		say "A warm, hard lumpy feeling lets you know you're feeling the tentacle in your [vagina] filling you up with several alien eggs[if M is wrapped], carrying the tattered remnants of the condom with it as it pulls out[otherwise] before pulling out[end if].";
 		if M is wrapped, now M is unwrapped;
 		if M is newborn:
@@ -604,12 +797,13 @@ Definition: A tentacle monster (called M) is willing to bukkake:
 	decide no.
 
 To say StrikingSuccessFlav of (M - a tentacle monster) on (B - a body part):
-	say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
-	if the class of the player is maid and the magic-power of the player > 0, BodyRuin 1;
-	if M is massive, BodyRuin 1.
+	if the free-tentacles of M is 0, say "[BigNameDesc of M] constricts you with its tentacles!";
+	otherwise say "[BigNameDesc of M] smacks you [TargetName of B] with one of its tentacles!";
+	if the class of the player is maid and the magic-power of the player > 0, BodyRuin 1.
 
 To say StrikingFailureFlav of (M - a tentacle monster) on (B - a body part):
-	say "You manage to narrowly dodge [NameDesc of M][']s tentacle as it comes flying towards your [printed name of B].".
+	if the free-tentacles of M is 0, say "[BigNameDesc of M] tries to contrict you with its tentacles, but you squirm enough to prevent it getting a better grip.";
+	otherwise say "You manage to narrowly dodge [NameDesc of M][']s tentacle as it comes flying towards your [printed name of B].".
 
 This is the tentacle monster convinced rule:
 	if presented-orifice is a potential target:
@@ -631,8 +825,11 @@ To compute (M - a tentacle monster) ripping (C - a clothing):
 	now C is crotch-ripped.
 
 To compute (M - a tentacle monster) destroying (C - a clothing):
-	say "It pushes straight through your [printed name of C], destroying it!";
-	destroy C.
+	if C is magical-maid-outfit:
+		compute M ripping C;
+	otherwise:
+		say "It pushes straight through your [printed name of C], destroying it!";
+		destroy C.
 
 To compute (M - a tentacle monster) entering mouth:
 	say "[BigNameDesc of M] [if presented-orifice is face]gently but firmly sends a single tentacle into your waiting mouth.[otherwise]grips your wrists with two of its tentacles to hold you in place, then forces a third into your mouth.[end if]";
@@ -731,7 +928,7 @@ To compute unique banishment of (M - a tentacle monster):
 				say "[bold type]Suddenly, you feel a small weight in your hair. A hair clip in the shape of a heart has appeared! You feel a sudden rush, which almost takes you to your knees.[roman type][line break]";
 				summon heart hairpin cursed;
 				if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-					say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
+					say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that hair clip appear has decided you'd be better off as a girl...";
 					SexChange the player;
 	if the evolved of M is 3 and there is an off-stage ghostly tentacle and playerRegion is Mansion:
 		let T be a random off-stage ghostly tentacle;
@@ -756,32 +953,5 @@ To loot (M - a tentacle monster):
 		say "The defeated [M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X.
-
-Part 3 - Variants
-
-To say NewTentacleDesc:
-	say "[one of]A mass of [TentacleColour of the item described] tentacles, about the size of a [if extreme proportions fetish is 1]beachball[otherwise]basketball[end if]. Each 'arm' is about as thick around as a normal human penis, and looks just like one too. [or]A [if extreme proportions fetish is 1]beach[otherwise]basket[end if]ball-sized heap of [TentacleColour of the item described] tentacles. Each one is looks almost identical to a normal human penis in shape and thickness, although alien in colour. [in random order]";
-	say "[if the evolved of the item described is 3]A single eye is visible inside the main mass, no larger than a plum and as black as the void itself.[otherwise if item described is asleep]A single eye no larger than a plum rests on the ground before it, attached to the main body by a fleshy stalk. It's closed, and the tentacles surrounding it are completely motionless.[otherwise]A single eye no larger than a plum is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with a keen, lucid curiosity.[end if]";
-	unless the item described is player-brood:
-		do nothing;
-	otherwise:
-		say "[if the bimbo of the player < 7][line break][first custom style][one of]That thing, it... it really came out of me?[or]It's a fucking demon-spawn. I'm killing it.[or]I have to kill this thing before it decides it wants to breed with me.[or]That thing is disgusting. I can't believe it came out of me.[or]Just as disgusting as its father was. I should kill it.[in random order][otherwise if the bimbo of the player < 12][line break][variable custom style][one of]That really came out of me. Wow.[or]Is it weird that I feel kind of... proud of it?[or]It's kind of cute.[or]It's disgusting, but in an endearing way.[or]If I don't kill it, it might want to breed with me. But it just looks so helpless...[in random order][otherwise][line break][second custom style][one of][big he of the item described]'s adorable![or]How cute![or]I love my baby![or]Mmm, [he of the item described] looks hor~ny![or]I want to take *good care* of my baby boy.[or][big he of the item described] looks like [he of the item described] wants to breed with me. Anything for my baby boy![in random order][end if][roman type][line break]".
-
-To say LargeTentacleDesc:
-	say "[one of]A large mass of [TentacleColour of the item described] tentacles, about the size of a person. Each of its arms is as thick around as a soda bottle and ends in a soft, penis-like tip. [or]A person-sized mass of [TentacleColour of the item described] tentacles. Each one is about as thick around as a soda bottle and ends in a shiny, phallic tip.[in random order]";
-	say "[if the evolved of the item described is 3]At least a dozen eyes are visible inside the main mass, each about the size of a grapefruit and as black as the void itself.[otherwise if item described is asleep]A single eye the size of a grapefruit is resting on the ground before it, connected to the main body by a fleshy stalk. It is closed, and the surrounding tentacles are completely motionless.[otherwise]A single eye the size of a grapefruit is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with visible intelligence.[end if]";
-	unless the item described is player-brood:
-		do nothing;
-	otherwise:
-		say "[if the bimbo of the player < 8][line break][first custom style][one of]It's growing! I have to deal with it now or I may never get another chance![or]I can't believe what this thing did to me. I have to destroy it.[or]It fucked me... even though I'm its mother.[or]I can't be responsible for something this evil.[in random order][otherwise if the bimbo of the player < 13][line break][variable custom style][one of]Seeing him grow like that was actually a little fulfilling.[or][big he of the item described] had sex with me even though I'm [his of the item described] mother.[or][big he of the item described]'s getting big. Could [he of the item described] grow like that again?[or]I probably could have fought more, but... [he of the item described] was just so cute.[or][big his of the item described] tentacles are getting big. Thick. Juicy. Oh no...[in random order][otherwise][line break][second custom style][one of][big he of the item described] had a growth spurt![or]I let him breed me like any good mommy would![or][big he of the item described]'s growing up so fast. Especially where it counts...[or]I want to let him breed me again. [big he of the item described] might grow even bigger![or]Who wants to fuck mommy? You do! You do![or][big he of the item described]'s going to grow up big and horny, just like [his of the item described] daddy.[then at random][end if][roman type][line break]".
-
-To say MassiveTentacleDesc:
-	let V be the evolved of the item described;
-	say "[one of]A massive heap of [TentacleColour of the item described] tentacles, big enough to dwarf most humans and even some cars. Each arm is as about as thick around as *your* forearm and ends in a soft, penis-like tip. [or]A car-sized mass of [TentacleColour of the item described] tentacles. Each one, about as thick around as your forearm, has a natural sheen and a lightly coloured penis-like head. [in random order]";
-	say "[if the evolved of the item described is 3]Dozens of eyes are visible inside the main mass, each about the size of a softball and as black as the void itself.[otherwise if item described is asleep]It is completely motionless, and its single, softball sized eye is closed and resting on the ground before it.[otherwise]A single eye about the size of a softball is raised above the main body on a fleshy stalk, scanning the surrounding objects and area with an unnervingly human measure of intelligence.[end if]";
-	unless the item described is player-brood:
-		do nothing;
-	otherwise:
-		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the item described]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the item described]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the item described] were more obedient, but still...[or][big his of the item described] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the item described] knows just how to please [his of the item described] mommy.[or]Those [manly-penis]s are so big! [big he of the item described] gets it from [his of the item described] daddy.[or]I wonder when [he of the item described]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
 Tentacle Monster ends here.

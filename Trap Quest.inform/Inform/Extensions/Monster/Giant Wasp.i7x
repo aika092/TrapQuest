@@ -85,11 +85,14 @@ To set up (M - a giant wasp):
 			otherwise:
 				now the monster-adjective of M is entry 1 in list of wasp-types;
 				scramble monster adjectives;]
-		now the raw difficulty of M is 6;
+		now the raw difficulty of M is the starting difficulty of M;
 		now the fertilisation-cooldown of M is 100;
 		now the health of M is the maxhealth of M;
 	otherwise:
 		remove M from play;
+
+To decide which number is the starting difficulty of (M - a giant wasp):
+	decide on 6.
 
 To decide which number is the girth of (M - a giant wasp):
 	decide on 6.
@@ -192,7 +195,7 @@ To compute (M - a giant wasp) fathering (W - a giant wasp):
 	now daddy-wasp is M.
 
 To newbornSetUp (W - a giant wasp):
-	now the raw difficulty of W is 6;
+	now the raw difficulty of W is the starting difficulty of W;
 	now the fertilisation-cooldown of W is 500;
 	anger W;
 	bore W for 1 seconds;
@@ -426,7 +429,7 @@ To set up (M - domesticated wasp):
 	reset M;
 	now the monstersetup of M is 1;
 	if egg laying fetish is 1 and mythical creature fetish is 1:
-		now the raw difficulty of M is 8;
+		now the raw difficulty of M is the starting difficulty of M + 4;
 		now the fertilisation-cooldown of M is 200;
 		now the health of M is the maxhealth of M;
 	otherwise:
@@ -478,7 +481,7 @@ To compute (M - a giant wasp) fathering (W - a domesticated wasp):
 	distract M.
 
 To newbornSetUp (W - domesticated wasp):
-	now the raw difficulty of W is 10;
+	now the raw difficulty of W is the starting difficulty of W + 4;
 	now the fertilisation-cooldown of W is 500;
 	now W is unleashed;
 	now the health of W is the maxhealth of W;
@@ -524,14 +527,6 @@ To say AssistanceRejected of (M - domesticated wasp) with (N - a monster):
 		say "[speech style of fairy-witch]'[big he of M] wants to join in too!'[roman type][line break]";
 	otherwise:
 		say InvitationRejected of M with N.
-
-To compute annoyance of (M - domesticated wasp):
-	if M is uninterested:
-		say "The wasp rider doesn't seem to realise you are talking to [him of fairy-witch].";
-	otherwise if M is unfriendly:
-		say "[speech style of fairy-witch]'Heheh, talking is useless now!'[roman type][line break]";
-	otherwise:
-		say "[speech style of fairy-witch]'I'm bored of talking!'[roman type][line break]".
 
 To say WhereAnswer of (M - domesticated wasp):
 	say "[speech style of fairy-witch]'[if the class of the player is faerie][one of]They didn't even tell you that much?!'[or]WOW, way to be a stereotype. Guess size really isn't everything.'[or]Do you even listen to yourself when you talk? You[']re so dumb!'[at random][otherwise]We're in my domain, the enchanted woods of Bimbacia. Some huge pink human used to rule here, I think.'[end if][roman type][line break]";

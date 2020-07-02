@@ -131,7 +131,7 @@ To compute periodic effect of (C - an expansion clothing):
 		let F be a random fuckhole penetrated by C;
 		if the size of C > the openness of F, Ruin F;
 		say "Your [ShortDesc of C] drastically increases in size![if the size of C > the openness of F] You feel your [variable F] stretching painfully to accommodate the enlarged intruder[otherwise] You feel the [clothing-material of C] pressing much tighter against the inside of your [variable F][end if].";
-		if the player is male and the size of penis < the size of C, PenisUp 1.[expansion clothing will slowly increase penis size for male players]
+		if the player is possessing a penis and the size of penis < the size of C, PenisUp 1.[expansion clothing will slowly increase penis size for male players]
 
 To compute periodic effect of (C - a rejuvenation clothing):
 	increase the toy-charge of C by 1;
@@ -203,7 +203,7 @@ An all time based rule (this is the sex toys slipping out rule):
 vaginalGripCount is a number that varies.
 analGripCount is a number that varies.
 
-To compute gripping of (I - an insertable thing):
+To compute gripping of (I - a thing):
 	let G be the grip of I;
 	let R be a random number between 0 and G * G * 3;
 	if the player is upright and (nun-dress is not worn or nun-dress is not wrist-bound-behind):
@@ -265,23 +265,25 @@ To compute gripping of (I - an insertable thing):
 				compute toy expulsion reaction of M;
 	if I is penetrating asshole:
 		increase analGripCount by 1;
+		if the player is in an unbossed predicament room, increase analGripCount by 5;
 		if analGripCount > 33 - ((the girth of I - the openness of asshole) * 3):
 			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [asshole][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate asshole from I;
 			if the girth of I > the openness of asshole and diaper quest is 0:
 				let open be the openness of asshole;
-				say "It's so big that you feel yourself getting slowly stretched and ruined.";
+				say "[if the girth of I < 3]Your [asshole] is so tight[otherwise]It's so big[end if] that you feel yourself getting slowly stretched and ruined.";
 				ruin asshole;
 				if the openness of asshole > open, say "You feel permanently more loose.";
 			now analGripCount is 0;
 	if I is penetrating vagina:
 		increase vaginalGripCount by 1;
+		if the player is in an unbossed predicament room, increase vaginalGripCount by 5;
 		if vaginalGripCount > 23 - ((the girth of I - the openness of vagina) * 2):
 			say "The [ShortDesc of I] [one of]rubs against the inside of[or]puts pressure on[in random order] your [vagina][if the player is a bit horny], making you even more aroused[end if]!";
 			passively stimulate vagina from I;
 			if the girth of I > the openness of vagina and diaper quest is 0:
 				let open be the openness of vagina;
-				say "It's so big that you feel yourself getting slowly stretched and ruined.";
+				say "[if the girth of I < 3]Your [vagina] is so tight[otherwise]It's so big[end if] that you feel yourself getting slowly stretched and ruined.";
 				ruin vagina;
 				if the openness of vagina > open, say "You feel permanently more loose.";
 			now vaginalGripCount is 0.
@@ -317,7 +319,7 @@ To say ShortDesc of (C - a dong):
 A wood-dong is a kind of sex toy. There is 1 rare wood-dong. Understand "wooden", "wood" as wood-dong. Wood-dong is biological. The text-shortcut of wood-dong is "wdd".
 
 To decide which number is the raw-masturbation-bonus of (C - wood-dong):
-	decide on -2.[don't use this dildo if you want to cum fast]
+	decide on -2. [don't use this dildo if you want to cum fast]
 
 To say MediumDesc of (C - wood-dong):
 	say "wooden dong".

@@ -125,7 +125,7 @@ To alwayscutshow (F - a figure-name) for (M - a thing):
 		if the focus-window is g-present:
 			if the temporary-image of M is figure of no-image-yet and M is not yourself:
 				now the temporary-image of M is F;
-			otherwise:
+			otherwise if the temporary-image of M is not F: [We don't do this if the image is just a duplicate of what we've set up as the temporary image]
 				appropriate-cutscene-display F; [We already had something to show we haven't shown yet! So let's put this new image straight into the main window.]
 		otherwise if image cutscenes > 0: [The player has requested cutscenes and has the focus window disabled.]
 			display F.

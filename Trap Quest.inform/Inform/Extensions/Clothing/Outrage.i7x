@@ -4,13 +4,7 @@ To decide which number is the outrage of (C - an object):
 	decide on 0.
 
 To decide which number is the outrage of (C - a wearthing):
-	if C is worn:
-		if C is not currently at least partially visible, decide on 0;
-		if C is clothing and (C is crotch-displaced or C is crotch-unzipped or C is crotch-ripped):
-			let O be the unworn outrage of C;
-			if C is crotch-displaced and C is skirted and the player is upright and the number of lewdly exposed fuckholes is 0, increase O by 1; [A little less outrageous than below because there are a few reasons you might pull up a skirt, e.g. combat]
-			otherwise increase O by 3; [This item should be blocking the crotch but it isn't. How outrageous!]
-			decide on O;
+	if C is currently concealed, decide on 0;
 	let O be the unworn outrage of C;
 	if C is worn and C is not currently visible, now O is (O * 7) / 10; [this means it is partially visible]
 	decide on O.
@@ -62,7 +56,7 @@ To decide which number is the fluid outrage of (C - a knickers):
 
 To decide which number is the fluid cringe of (C - a clothing):
 	if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
-	if C is swimming themed and the urine-soak of C < the soak-limit of C: [Unless it's literally drenched in piss, we only care about semen soak for swimwear]
+	if C is swimming themed and the urine-soak of C < the soak-limit of C: [Unless it's literally drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;
 	otherwise if diaper quest is 0:
 		decide on (1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2;

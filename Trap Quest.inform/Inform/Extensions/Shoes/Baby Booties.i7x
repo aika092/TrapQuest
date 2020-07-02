@@ -120,7 +120,7 @@ christmas booties is a baby booties. christmas booties is unique.
 
 Definition: a christmas booties is transformation-protected if the class of the player is santa's little helper.
 
-The printed name of christmas booties is "[clothing-title-before]pair of christmas baby booties[clothing-title-after]". The text-shortcut of christmas booties is "cbbo".
+The printed name of christmas booties is "[clothing-title-before]pair of Christmas baby booties[clothing-title-after]". The text-shortcut of christmas booties is "cbbo".
 
 Figure of christmas booties is the file "Items/Clothes/Lower/Feet/Booties/booties5.png".
 
@@ -134,5 +134,36 @@ Definition: christmas booties is babywear if christmas content is 1. [Is it some
 
 To say ClothingDesc of (C - christmas booties):
 	say "A pair of green booties with big red bows.".
+
+bunny booties is a shoes. bunny booties is cotton. bunny booties is unique.
+
+The printed name of bunny booties is "[clothing-title-before]pair of bunny booties[clothing-title-after]". The text-shortcut of bunny booties is "bub".
+
+To decide which figure-name is the clothing-image of (H - bunny booties):
+	decide on the figure of bunny booties.
+
+Figure of bunny booties is the file "Items/Clothes/Lower/Feet/Booties/booties3.png".
+
+To decide which number is the unique cringe of (C - bunny booties):
+	decide on 12.
+
+To decide which number is the hindrance-modifier of (C - bunny booties):
+	decide on 0.
+
+To say UniqueShortDesc of (C - bunny booties):
+	say "bunny booties".
+
+To say ClothingDesc of (C - bunny booties):
+	say "A pair of brown baby booties, made out of a soft cotton. They have bunny faces with pink bows and pacifiers making them look excruciatingly babyish.".
+
+To decide which number is the dexterity-influence of (C - bunny booties):
+	decide on 1.
+
+To set up influence of (C - bunny booties):
+	now C is diaper-addiction-influencing.
+
+Definition: bunny booties is transformation-protected: decide yes.
+Definition: bunny booties is brown themed: decide yes.
+Definition: bunny booties is baby themed: decide yes.
 
 Baby Booties ends here.

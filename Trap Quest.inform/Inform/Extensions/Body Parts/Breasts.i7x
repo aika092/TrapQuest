@@ -111,7 +111,7 @@ Definition: breasts is at least partially lewdly exposed if breasts is at least 
 
 [!<DecideWhichObjectIsTheAtLeastPartialConcealerOfBreasts>+
 
-Determines which object is currently doing the most to conceal the player's NIPPLES, but if there are several options we will pick the one with the higest cleavage. Clothing picked by this function don't have to be dense, but can't be see-through. Here we mainly care about NIPPLES but if there's several options we'll chose the one with the highest cleavage 'cos that'll make sense to the player when we're talking about what's the main thing covering their boobs 
+Determines which object is currently doing the most to conceal the player's NIPPLES, but if there are several options we will pick the one with the highest cleavage. Clothing picked by this function don't have to be dense, but can't be see-through. Here we mainly care about NIPPLES but if there's several options we'll chose the one with the highest cleavage 'cos that'll make sense to the player when we're talking about what's the main thing covering their boobs
 
 @param <Breasts>:<B> The player's breasts
 @return <Object> Either the player's arms, a piece of clothing, or nothing
@@ -441,7 +441,7 @@ This is the too horny to present breasts rule:
 	if the player is horny:
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny and the sensitivity of breasts < 8:
-				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
+				if auto is 0, say "You are too aroused and your [if the player is not possessing a vagina][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
 				rule fails;
 			if the semen addiction of the player < 6 and bukkake fetish is 1:
 				if auto is 0, say "The thought of getting [semen] over your [BreastDesc] is just too gross, you can't bring yourself to offer that!";
@@ -523,7 +523,7 @@ To say CleavageDesc:
 			otherwise if O > 2:
 				say "with a lot of cleavage showing";
 			otherwise if O > 1:
-				say "with a normal cleavage line";
+				say "with an acceptable cleavage line";
 			otherwise if O > 0:
 				say "with only a small amount of cleavage".
 
@@ -580,7 +580,7 @@ REQUIRES COMMENTING
 +!]
 To say BreastDesc:
 	let X be the largeness of breasts;
-	if X is 1, say "[if the player is female]almost [end if]flat chest";
+	if X is 1, say "[if the player is sexed female]almost [end if]flat chest";
 	if X is 2, say "minuscule AA bee stings";
 	if X is 3, say "tiny A cup bullets";
 	if X is 4, say "small B cup bosoms";
@@ -800,7 +800,7 @@ To say BreastWeight:
 	let W be the weight of breasts;
 	if the largeness of breasts > 2:
 		if the sensitivity of breasts >= 10:
-			say "They are extremely sensitive to the touch, similar to [if the player is male]the underside of the tip of a penis[otherwise]your clitoris[end if], and you can feel them almost craving to feel a [manly-penis] rubbing in between them.";
+			say "They are extremely sensitive to the touch, similar to [if the player is not possessing a vagina]the underside of the tip of a penis[otherwise]your clitoris[end if], and you can feel them almost craving to feel a [manly-penis] rubbing in between them.";
 		otherwise if the sensitivity of breasts > 6:
 			say "They are sensitive to the touch, with any contact stimulating you just like an ordinary sex organ.";
 		otherwise if the sensitivity of breasts > 2:
@@ -818,11 +818,11 @@ To say BreastWeight:
 		otherwise if W < 21:
 			say "They are weighing you down to the point where it's a constantly noticeable burden. ";
 		otherwise if W < 27:
-			say "They are weighing you down a lot, your back is not happy! ";
+			say "They are weighing you down a lot; your back is not happy! ";
 		otherwise if W < 33:
 			say "They are ridiculously heavy, and you can't help but lean forward as they pull your upper body towards the ground. ";
 		otherwise:
-			say "They are much heavier than any real world breasts ever would be. [if the player is upright]Normal walking is out of the question, you are going to have to kneel down and rest every few minutes. [end if]".
+			say "They are much heavier than any real world breasts ever would be. [if the player is upright]Normal walking is out of the question; you are going to have to kneel down and rest every few minutes. [end if]".
 
 [!<SayBreastModesty>+
 
@@ -945,7 +945,7 @@ To Bustup (X - a number):
 			otherwise say "[one of][line break][second custom style][line break]Oooh, I'm growing tits![roman type][line break][or][stopping]";
 			if the player is male, cutshow figure of body reaction 1 for breasts;
 		if the largeness of breasts is 3:
-			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
+			if the bimbo of the player < 8, say "[one of][line break][first custom style][line break][if the player is sexed male]Yep, I'm definitely[otherwise]Wow, I'm[end if] growing boobs...[roman type][line break][or][stopping]";
 			otherwise say "[one of][line break][second custom style][line break]I can't wait to see what I look like with huge tits![roman type][line break][or][stopping]";
 			if the player is male, cutshow figure of body reaction 2 for breasts;
 		if the largeness of breasts is 5:
@@ -1182,9 +1182,9 @@ To stimulate (X - breasts):
 		arouse (the square root of (the sensitivity of breasts * 1000)) * 10;
 		if breastStimulationFlavAllowed is true:
 			if the sensitivity of breasts >= 10:
-				say "[one of]The nerves in your breasts explode with sensation! [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the size of penis > 0]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
+				say "[one of]The nerves in your breasts explode with sensation! [if the player is female]Your [vagina] gushes with pleasure.[otherwise if the player is possessing a penis]Your [player-penis] twitches rapidly.[end if][or]Your entire body shudders with pleasure.[or]Sparks of pure euphoria fly through your brain.[or]Your super sensitive tits cause you to moan with pleasure.[at random]";
 			otherwise if the sensitivity of breasts >= 6:
-				say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the size of penis > 0]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or (the player is male and the size of penis is 0)]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
+				say "[one of]Your breasts feel amazing. [if the player is female]Your [vagina] gets wetter.[otherwise if the player is possessing a penis]Your [player-penis] stirs gently.[end if][or][or][or]You close your eyes and shiver. it feels so good![or][or][or]Your super sensitive tits cause you to moan with pleasure.[or][or][or]You [if there is a worn chastity cage or (the player is male and the player is not possessing a penis)]wish you could masturbate![otherwise]can't help but gently play with yourself, eyes rolling to the back of your head with pleasure.[end if][or][stopping]";
 			otherwise:
 				say "[one of]It actually feels quite pleasurable for you.[or][or][or]You realise you are breathing heavily. Are your breasts somehow getting more sensitive?[or][or][or]You let out an involuntary whimper. It actually feels good![or][or][or]You shiver as a wave of sexual pleasure flows through you.[or][stopping]".
 

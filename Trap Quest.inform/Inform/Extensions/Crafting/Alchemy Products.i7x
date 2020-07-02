@@ -270,14 +270,14 @@ Check drinking time-bomb:
 		anally orgasm shamefully;
 		if the location of the player is bossed: [We're not willing to displace the NPCs from this room.]
 			repeat with M running through awake monsters in the location of the player:
-				bore M for 0 seconds;
+				deinterest M;
 		otherwise:
 			let here-monsters be the list of monsters in the location of the player;
 			let E be the number of entries in here-monsters;
 			if E > 0:
 				repeat with M running through here-monsters:
 					regionally place M;
-					bore M for 0 seconds;
+					deinterest M;
 				repeat with M running through monsters in the location of the player: [Sometimes the NPC is still there, e.g. shopkeeper in the shop]
 					remove M from here-monsters;
 					decrease E by 1;
@@ -311,7 +311,7 @@ Check drinking time-bomb:
 		increase the stomach-semen of the player by 20;
 		now the soreness of asshole is 10;
 		now the semen volume of belly is 30;
-		if the player is female:
+		if the player is possessing a vagina:
 			now the semen volume of vagina is 30;
 			now the womb volume of vagina is 5;
 			now a random creampie pole trap is inseminating vagina;
@@ -561,12 +561,12 @@ An all time based rule (this is the invigoration elixir decay rule):
 
 [Section 4 Elixir of Siphoning
 
-A elixir of siphoning is a kind of elixir. The printed name of elixir of siphoning is "[alchemy-title-before]elixir of siphoning[alchemy-title-after]". The printed plural name of elixir of siphoning is "[alchemy-title-before]elixirs of siphoning[alchemy-title-after]". The text-shortcut of elixir of siphoning is "esp". There are 2 elixir of siphoning.
+An elixir of siphoning is a kind of elixir. The printed name of elixir of siphoning is "[alchemy-title-before]elixir of siphoning[alchemy-title-after]". The printed plural name of elixir of siphoning is "[alchemy-title-before]elixirs of siphoning[alchemy-title-after]". The text-shortcut of elixir of siphoning is "esp". There are 2 elixir of siphoning.
 
-To say ExamineDesc of (B - a elixir of siphoning):
+To say ExamineDesc of (B - an elixir of siphoning):
 	say "A round clear hip flask filled with a dose of shimmering red liquid. It looks like it could do something useful if you drank it, but who knows when it would be appropriate to drink, and if there are any side effects...".
 
-To BackgroundRender (T - a elixir of siphoning) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+To BackgroundRender (T - an elixir of siphoning) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	draw a rectangle TQcolour of red in the current focus window at X1 by Y1 with size DX by DY.
 
 siphoning-elixir-timer is a number that varies. siphoning-elixir-timer is usually 0.
@@ -711,7 +711,7 @@ To decide which number is the alchemy key of (A - womb-potion):
 
 Carry out quaffing womb-potion:
 	say "You pull out the stopper and down the smoky liquid.";
-	if the player is female:
+	if the player is possessing a vagina:
 		if the pregnancy of the player is 0:
 			[The player becomes pregnant]
 			say ConceptionFlav;
@@ -997,7 +997,7 @@ Carry Out PowderRubbing enhancement-powder on a thing:
 			say "It's now a [second noun]. [if the noun is cursed]Uh-oh, the powder itself must have been cursed! You must have created it with the wrong recipe...[otherwise]Nice![end if]";
 		otherwise:
 			say "That's probably a good thing, right?";
-		if the second noun is worn,	force clothing-focus redraw; [This forces the clothing window to redraw]
+		if the second noun is worn, force clothing-focus redraw; [This forces the clothing window to redraw]
 		otherwise force inventory-focus redraw; [This forces the inventory window to redraw]
 	otherwise:
 		say "Nothing happens, and the powder is wasted. Darn, that must mean it is [if the second noun is identified]too powerful[otherwise]a powerful item[end if] already!".
@@ -1257,7 +1257,7 @@ Check SalveRubbing:
 		if the second noun is not breasts and the second noun is not hips and the second noun is not belly, say "You can only apply a salve to your [bold type]breasts[roman type], your [bold type]belly[roman type] or your [bold type]ass[roman type] at the moment." instead;
 	if the noun is concealment-salve:
 		if the second noun is hips, now the second noun is asshole;
-		if the player is male and second noun is not asshole, say "You can only apply this salve to your [bold type][asshole][roman type]!" instead;
+		if the player is not possessing a vagina and second noun is not asshole, say "You can only apply this salve to your [bold type][asshole][roman type]!" instead;
 		if the second noun is not asshole and the second noun is not vagina, say "You can only apply this salve to your [bold type][asshole] or [vagina][roman type]!" instead;
 	if the second noun is breasts:
 		if there is a worn true salve covering breasts:

@@ -16,7 +16,7 @@ REQUIRES COMMENTING
 
 +!]
 Check attacking:
-	if the noun is vine boss and the player is vine stuck, try pulling a random vines wrangling the player instead;
+	if the noun is vine boss and the player is vine stuck, try pulling a random vines wrangling a body part instead;
 	if the noun is pedestal:
 		if there is a worn lipstick collar, say "Your hand passes freely through the barrier.";
 		otherwise say "You try, but the glass won't break no matter what you try. It must be enchanted...";

@@ -40,7 +40,7 @@ Every turn:
 			now bubble-needs-overwriting is 0;
 		render map buttons;
 	now focused-thing is nothing;
-	now seconds is 0;
+	if seconds > 0, allocate 0 seconds; [Reset the tracker of how many seconds should pass the next time we accept user input]
 	if global timer interval > 50:
 		say "[bold type]BUG: The interpreter's timer just got stuck at [global timer interval]ms, when it is supposed to be at 50ms. Please report this to Aika along with as much detail as possible on what the last thing you did was.[roman type][line break]";
 		reset the Glulx timer.
@@ -113,7 +113,7 @@ To run the engine once:
 			unless another-turn is 1, compute instinctive actions;
 			unless another-turn is 1, compute automatic actions; [Automatic actions essentially cause the game to choose what the player enters and then compute turn to happen again. So this must go right at the end, and only happen if another-turn is currently 0!]
 			unless another-turn is 1, compute optional actions; [Optional actions are where the player is given a choice about whether it happens or not. So this must go right at the end, and only happen if another-turn is currently 0!]
-			unless another-turn is 1, allocate 0 seconds;
+			[unless another-turn is 1, allocate 0 seconds;] [TEST: I don't believe this is needed because it is done in "every turn"]
 	if delayed fainting is 1 and resting is 0:
 		execute fainting;
 	if another-turn is 0: [We only look at this stuff on the last turn before the player has control returned to them]
@@ -231,7 +231,7 @@ To compute turn:
 	if earnings > seconds: [we subtract seconds from earnings first so that any mechanics that check earnings for regularity are not calculated several times in quick succession, when "compute extra turn" is called early in the list.]
 		if debugmode > 0, say "Time: [earnings] > ";
 		decrease earnings by seconds;
-		if debugmode > 0, say "[earnings].";
+		if debugmode > 0, say "[earnings].[PredicamentPenCheck]";
 		if the player is a cheater and unlucky < 2 and earnings < starting-earnings - 500, compute trolling; [When the player is cheating and has played for a little while, we'll trigger this.]
 		if april fools done is 0: [This stops us checking immobility and danger every single turn forever]
 			if the player is not immobile and the player is not in danger and earnings < starting-earnings - 480, compute april fools;
@@ -241,22 +241,22 @@ To compute turn:
 	compute flight; [Flight stuff must go first and last - the concept is it's checking if anything that happened caused the player to start flying.]
 	if the player is upright, compute player standing;
 	otherwise compute player kneeling;
-	if debugmode > 1, say "BEFORE PERIODIC.";
+	if debugmode > 1, say "BEFORE PERIODIC.[PredicamentPenCheck]";
 	compute periodic effects with earnings local-earnings and seconds local-seconds;
-	if debugmode > 1, say "AFTER PERIODIC.";
+	if debugmode > 1, say "AFTER PERIODIC.[PredicamentPenCheck]";
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
-	if debugmode > 1, say "BEFORE TIME BASED.";
+	if debugmode > 1, say "BEFORE TIME BASED.[PredicamentPenCheck]";
 	if timeBombTime > 0:
 		progress stopped time;
 	otherwise:
 		if playerRegion is not school, follow the time based rulebook;
 		follow the all time based rulebook;
-	if debugmode > 1, say "AFTER TIME BASED.";
+	if debugmode > 1, say "AFTER TIME BASED.[PredicamentPenCheck]";
 	if the player is flying or last-turn-flight is 0: [This means, the turn that the player lands monsters don't get to act.]
-		if debugmode > 1, say "BEFORE MONSTERS.";
+		if debugmode > 1, say "BEFORE MONSTERS.[PredicamentPenCheck]";
 		if delayed fainting is 0 and timeBombTime <= 0, compute monsters;
-		if debugmode > 1, say "AFTER MONSTERS.";
+		if debugmode > 1, say "AFTER MONSTERS.[PredicamentPenCheck]";
 	compute monster sleeping;
 	now time-seconds is local-seconds;
 	now time-earnings is local-earnings;
@@ -266,9 +266,9 @@ To compute turn:
 		if playerRegion is not school, follow the later time based rulebook;
 		follow the all later time based rulebook;
 	Reset Flags;
-	if debugmode > 1, say "AFTER FLAGS.";
+	if debugmode > 1, say "AFTER FLAGS.[PredicamentPenCheck]";
 	compute flight; [Flight stuff must go last in the compute time order - the concept is it's checking if anything that happened caused the player to start flying.]
-	allocate 0 seconds;
+	[allocate 0 seconds;]
 	if newbie tips is 1, say other tips.
 
 To compute automatic actions:
@@ -393,7 +393,7 @@ To compute player standing:
 						transform MO into magical-maid-outfit;
 						now the charge of magical-maid-outfit is a random number between 10 and 40;
 						if the player is male and (fast tg is 3 or (the size of penis <= min penis size and tg fetish > 0)):
-							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the size of penis > 0]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off as a girl...";
+							say "Your whole body suddenly goes numb, then is filled with an almost electric tingle. You feel terrible wrenching from your insides that you're sure should hurt, but you just don't seem to be able to feel much of anything right now. The tingling comes to a focus in your crotch, filling you with a sense of terrible foreboding. [if the player is possessing a penis]As feeling comes back to you, you reach down and can immediately tell you're missing something kind of notable: your [player-penis]![otherwise]As feeling comes back to you, you reach down with a sense of foreboding.[end if] It seems whatever magic made that outfit appear has decided you'd be better off as a girl...";
 							SexChange the player;
 						update appearance level;
 						if asshole is lewdly exposed:
@@ -584,21 +584,21 @@ To Compute Compulsions:
 		now another-turn is 1;
 	otherwise if there is a carried throbbing-tentacle:
 		let P be a random carried throbbing-tentacle;
-		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
+		say "You feel the Master gently throbbing in your hands, so much smarter and more worthy than you. You reverently place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:
 			if D is penetrating a fuckhole:
 				destroy D;
 		now P is worn by the player;
-		if the player is male:
+		if the player is not possessing a vagina:
 			now P is penetrating asshole;
 		otherwise:
 			now P is penetrating vagina;
 		now another-turn is 1;
 	otherwise if there is a throbbing-tentacle in the location of the player and the number of interested unfriendly monsters in the location of the player is 0:
 		let P be a random throbbing-tentacle in the location of the player;
-		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is male][asshole][otherwise][vagina][end if]!";
+		say "You see the Master sitting, forlorn, on the ground. You find it so hard to think without him inside you, and you gently and reverently pick him up and place him once again in front of your hole. [line break][first custom style]'It is good that you understand your place, slave. I will return now to my place of honour.'[roman type][line break]The Master once again worms its way into your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 		repeat with C running through worn top level protection clothing:
 			destroy C;
 		repeat with D running through worn clothing:
@@ -691,7 +691,7 @@ To Compute Broken Actions:
 					if M is not last-begged:
 						now another-turn is 1;
 						now another-turn-action is the broken drink beg rule;
-		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate:
+		otherwise if the arousal of the player >= maximum arousal and the player is not in a predicament room and the player is able to automatically masturbate and the wanktime of the player <= 0:
 			now another-turn is 1;
 			now another-turn-action is the too horny masturbation rule.
 
@@ -741,7 +741,7 @@ This is the autopush hypno rule:
 The autopush hypno rule is listed in the hypno triggers rules.
 
 This is the autospread hypno rule:
-	if (hypno-trigger is "pussy" or hypno-trigger is "cunt") and hypno-trigger-pussy is 1 and the player is female and vagina is not lewdly exposed:
+	if (hypno-trigger is "pussy" or hypno-trigger is "cunt") and hypno-trigger-pussy is 1 and the player is possessing a vagina and vagina is not lewdly exposed:
 		say "[bold type]Having heard the word '[hypno-trigger]', you find yourself automatically trying to get your [vagina] on display.[roman type][line break]";
 		repeat with C running through worn potentially at least partially vagina covering skirted clothing: [We do skirted first to try and make sure that the order makes sense]
 			if C is displacable:
@@ -794,9 +794,6 @@ The autopiss hypno rule is listed in the hypno triggers rules.
 A later time based rule (this is the throne charge decay rule):
 	if the charge of the throne > 0, decrease the charge of the throne by time-seconds.
 
-A later time based rule (this is the hotel altar charge decay rule):
-	if the charge of hotel altar > 0, decrease the charge of hotel altar by time-seconds.
-
 A later time based rule (this is the modification machine charge decay rule):
 	if the charge of modification machine > 0, decrease the charge of modification machine by time-seconds.
 
@@ -834,9 +831,6 @@ A later time based rule (this is the science charge decay rule):
 
 A later time based rule (this is the laundry charge decay rule):
 	if the charge of laundry robots > 0, decrease the charge of laundry robots by time-seconds.
-
-A later time based rule (this is the sacred pool decay rule):
-	if the charge of the sacred pool > 0, decrease the charge of the sacred pool by time-seconds.
 
 A later time based rule (this is the discount decay rule):
 	if discount < -2:

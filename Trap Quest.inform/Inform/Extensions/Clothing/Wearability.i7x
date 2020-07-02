@@ -62,6 +62,7 @@ Definition: a clothing (called C) is reasonable when outrageous:
 	decide no.
 
 Definition: a clothing (called C) is reasonable when cringeworthy:
+	if the player is in a predicament room, decide yes;
 	if C is crotch-intact knickers, decide yes;
 	if the stolen-strength of C > 0, decide yes;
 	if ((C is short or C is super-short) and short skirts permanent fetish > 0) or (C is knickers and no-panties permanent fetish > 0), decide yes;
@@ -108,8 +109,8 @@ The assfilled players can't wear ass plugging clothes rule is listed in the glob
 
 This is the vaginafilled players can't wear vagina plugging clothes rule:
 	if wearing-target is vagina plugging:
-		if (the player is female and vagina is actually occupied) or (the player is male and asshole is actually occupied):
-			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [if the player is male][asshole][otherwise][vagina][end if]!";
+		if (the player is possessing a vagina and vagina is actually occupied) or (the player is not possessing a vagina and asshole is actually occupied):
+			if summoning is 0 and autowear is false, say "You can't wear this with something already in your [if the player is not possessing a vagina][asshole][otherwise][vagina][end if]!";
 			rule fails.
 The vaginafilled players can't wear vagina plugging clothes rule is listed in the global wearability rules.
 
@@ -161,13 +162,13 @@ This is the crotch covering clothing can't have an exclusive clash rule:
 						if summoning is 0 and autowear is false, say "You can't wear this because you are already wearing the [C]!";
 						rule fails;
 					if C is top-exclusive or wearing-target is bottom-exclusive:
-						if wearing-target is trousers or (wearing-target is overdress and C is not trousers) or (wearing-target is underdress and C is not overdress and C is not trousers) or (wearing-target is diaper cover and C is not overdress and C is not underdress and C is not trousers) or (wearing-target is knickers and C is knickers):
-							if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
-							rule fails;
+						[if wearing-target is trousers or (wearing-target is overdress and C is not trousers) or (wearing-target is underdress and C is not overdress and C is not trousers) or (wearing-target is diaper cover and C is not overdress and C is not underdress and C is not trousers) or (wearing-target is knickers and C is knickers):]
+						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
+						rule fails;
 					if wearing-target is top-exclusive or C is bottom-exclusive:
-						if wearing-target is knickers or (wearing-target is diaper cover and C is not knickers) or (wearing-target is underdress and C is not knickers and C is not diaper cover) or (wearing-target is overdress and C is not knickers and C is not diaper cover and C is not underdress) or (wearing-target is trousers and C is trousers):
-							if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
-							rule fails.
+						[if wearing-target is knickers or (wearing-target is diaper cover and C is not knickers) or (wearing-target is underdress and C is not knickers and C is not diaper cover) or (wearing-target is overdress and C is not knickers and C is not diaper cover and C is not underdress) or (wearing-target is trousers and C is trousers):]
+						if summoning is 0 and autowear is false, say "You can't wear this at the same time as the [C]!";
+						rule fails.
 The crotch covering clothing can't have an exclusive clash rule is listed in the global wearability rules.
 
 This is the ass protected players can't wear ass plugging clothes rule:
@@ -181,7 +182,7 @@ This is the ass protected players can't wear ass plugging clothes rule:
 The ass protected players can't wear ass plugging clothes rule is listed in the global wearability rules.
 
 This is the pussy protected players can't wear vagina plugging clothes rule:
-	if the player is pussy protected and wearing-target is vagina plugging and the player is female:
+	if the player is pussy protected and wearing-target is vagina plugging and the player is possessing a vagina:
 		if wearing-target is embodied:
 			if summoning is 0 and autowear is false, say "You can't wear this with something covering your [vagina]!";
 			rule fails;
@@ -213,15 +214,6 @@ This is the bracelets arm clash rule:
 		if autowear is false, say "You won't be able to get those on whilst your wrists are bound.";
 		rule fails.
 The bracelets arm clash rule is listed in the global wearability rules.
-
-[This is the rings fingers clash rule:
-	if there is worn bracelet and wearing-target is finger covering and summoning is 0:
-		if autowear is false, say "You need to remove your bracelet[if the number of worn bracelets > 1]s[end if][if the number of worn rings > 1] and rings[otherwise if the number of worn rings is 1] and ring[end if] first.";
-		rule fails;
-	if there is worn ring and wearing-target is finger covering and summoning is 0:
-		if autowear is false, say "You need to remove your ring[if the number of worn rings > 1]s[end if] first.";
-		rule fails.
-The rings fingers clash rule is listed in the global wearability rules.]
 
 This is the nails fingers clash rule:
 	if fake-nails is worn and wearing-target is finger covering:

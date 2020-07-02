@@ -92,7 +92,7 @@ To say UniqueClothingDesc of (K - strapon-dildo):
 
 Chapter 2 - Equine Strapon
 
-An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of a equine-strapon is "eqsd". There are 2 equine-strapons. The armour of an equine-strapon is 10. Understand "equine", "horse", "harness" as equine-strapon.
+An equine-strapon is a kind of strapon-panties. An equine-strapon is usually unique. The text-shortcut of an equine-strapon is "eqsd". There are 2 equine-strapons. The armour of an equine-strapon is 10. Understand "equine", "horse", "harness" as equine-strapon.
 Figure of equine-strapon is the file "Items/Accessories/Toys/strapon3.jpg".
 To decide which figure-name is the examine-image of (H - an equine-strapon):
 	decide on figure of equine-strapon.
@@ -117,7 +117,7 @@ Definition: An equine-strapon (called P) is fetish appropriate:
 		decide yes;
 	decide no.
 
-To say PenisFlavour of (K - a equine-strapon):
+To say PenisFlavour of (K - an equine-strapon):
 	let N be the strap-length of K;
 	if the size of penis >= N, say ShortDesc of penis;
 	otherwise say "[PenisSizeFlav N] [if mythical creature fetish is 1]industrial[otherwise]equine[end if] strapon [PenisShaftFlav N]".
@@ -126,7 +126,7 @@ To say ShortDesc of (H - equine-strapon):
 	say "[if mythical creature fetish is 1]equine[otherwise]industrial[end if] strap-on".
 
 To say UniqueClothingDesc of (K - equine-strapon):
-	say "A [PenisFlavour of K] mounted onto a sturdy leather harness. [if K is worn and the size of penis > 0]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the size of penis > 0]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
+	say "A [PenisFlavour of K] mounted onto a sturdy leather harness. [if K is worn and the player is possessing a penis]Your [ShortDesc of penis] rests in a small hole in the base of the dildo, receiving every sensation the dildo feels, as if it were a part of your own body[otherwise if K is worn]A small nub at the base of the dildo rests against your crotch, transmitting every sensation the dildo feels, as if it were a part of your own body[otherwise if the player is possessing a penis]The base of the dildo is hollow, and covered in tiny metal sensors[otherwise]There is a small nub at the base of the dildo, covered in tiny metal sensors[end if]. [if K is worn and the player is prone]It drags heavily along the floor[otherwise]It hangs heavily toward the floor[end if].".
 
 [
 Only needed if the player's penis can ever go beyond 10
@@ -250,7 +250,7 @@ To say PenisFlavour of (K - ghost-strapon):
 To say UniqueClothingDesc of (K - ghost-strapon):
 	if K is not worn:
 		say "A pair of black satin panties. The fabric is glowing very faintly, and it seems to turn slightly invisible when exposed to your touch. It contains the spirit of a very horny ghost.";
-	otherwise if the size of penis is 0:
+	otherwise if the player is not possessing a penis:
 		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric is actively sapping your strength, using it to maintain a rock hard [PenisFlavour of K] and a matching pair of ghostly balls.";
 	otherwise:
 		say "A pair of black satin panties, with perfectly sized holes that keep your ass and genitals fully accessible and on display. The spirit inhabiting the fabric [if the size of penis >= the strap-length of K]has possessed your [ShortDesc of penis], preventing it from going soft even for a moment.[otherwise]has completely dominated your genitals and begun to actively sap your strength. The spirit's [PenisFlavour of K] has superimposed itself over your shaft.[end if]".

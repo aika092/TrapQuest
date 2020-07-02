@@ -58,7 +58,7 @@ Check going south when the player is in Tutorial04:
 	let M be a random royal guard in Tutorial04;
 	if M is interested, say "[if M is unfriendly]Because this is a tutorial, you can't leave until you've dealt with [NameDesc of M]![otherwise]Let's open that container first![end if]" instead.
 
-Check greeting when the player is in Tutorial04:
+Check talking when the player is in Tutorial04:
 	if the noun is uninterested monster, say "That would be a bad idea for this tutorial!" instead.
 
 Check standing when tutorial is 1:
@@ -166,7 +166,7 @@ Report resisting when tutorial is 1:
 	if M is monster, compute attack of M;
 	if the sex-length of M is 0 and diaper quest is 0 and refractoryperiod <= 0:
 		anally orgasm shamefully;
-	if refractoryperiod > 2, say "[line break][newbie style]Sometimes during sex you can end up orgasming. Any orgasm you didn't cause yourself (i.e. any situation which isn't you masturbating or having sex where you're on top) is considered 'shameful' which means it increases your addiction to submissive sex[if the player is male] and shrinks your penis size[end if]. It also adds to your fatigue meaning you'll probably need a rest soon afterwards. The higher your arousal the higher your chance of orgasming from stimulation, but for this tutorial we made you orgasm anyway just so you can see how it works.[roman type][line break]";
+	if refractoryperiod > 2, say "[line break][newbie style]Sometimes during sex you can end up orgasming. Any orgasm you didn't cause yourself (i.e. any situation which isn't you masturbating or having sex where you're on top) is considered 'shameful' which means it increases your addiction to submissive sex[if the player is possessing a penis] and shrinks your penis size[end if]. It also adds to your fatigue meaning you'll probably need a rest soon afterwards. The higher your arousal the higher your chance of orgasming from stimulation, but for this tutorial we made you orgasm anyway just so you can see how it works.[roman type][line break]";
 	if M is asleep or (diaper quest is 1 and the sex-length of M is 0):
 		now the sleep of M is 0;
 		now M is uninterested;

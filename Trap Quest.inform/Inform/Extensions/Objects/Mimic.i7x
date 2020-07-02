@@ -41,7 +41,7 @@ To say ExamineDesc of (M - a memic):
 		if the class of the player is santa's little helper, say "[one of]A giant stocking, which probably contains a lovely present[or]A giant silk stocking, which probably contains a lovely present[or]A giant bedazzled stocking, which probably contains a trashy present[cycling].";
 		otherwise say "[one of]A large brown cotton sack lying against one wall[or]A large brown silk sack lying against one wall[or]A large bedazzled sack lying against one wall[cycling].";
 	otherwise if D is wooden crate:
-		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a Christmas present[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top. It has a sign on it that reads [if the player is male and the bimbo of the player < 6]STUDS, PLEASE OPEN ME[otherwise if the player is female and the bimbo of the player < 6]INTELLIGENT FEMINISTS, PLEASE OPEN ME[otherwise]HOT SLUTS, PLEASE OPEN ME[end if][cycling].";
+		if the class of the player is santa's little helper, say "[one of]A large box that has been fashioned in the style of a Christmas present[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top[or]A large box fashioned in the style of a Christmas present, complete with a giant magenta bow on top. It has a sign on it that reads [if the player is gendered male and the bimbo of the player < 6]STUDS, PLEASE OPEN ME[otherwise if the player is female and the bimbo of the player < 6]INTELLIGENT FEMINISTS, PLEASE OPEN ME[otherwise]HOT SLUTS, PLEASE OPEN ME[end if][cycling].";
 		otherwise say "[one of]A large wooden crate that looks like it has been there for a long time[or]A large wooden crate that looks like it was moved recently.[or]A large wooden crate that looks like it might contain beauty supplies[cycling].";
 	otherwise:
 		say "A treasure chest covered in pink and purple glitter, with a pair of red lips in place of a latch.";
@@ -158,7 +158,7 @@ To compute mimic teasing (N - 3):[stylish mimic. Transforms the player's clothes
 
 To compute mimic teasing (N - 4):[friendly mimic; messes with player penis size, equalises asshole and vagina gape, or gives the player a free lube]
 	say "A shadowy mass rises out of the trunk, slowly forming itself into a [if futanari fetish is 0]flatchested green [man of a memic] with piercing yellow eyes and a giant green dildo attached to a harness around [his of a memic] waist, [otherwise]frail green [man of a memic] with piercing yellow eyes and a giant green dick which is [end if]so huge it hangs halfway out of the trunk. [line break][second custom style]'[one of]Finally somebody opens me... I should probably give you a reward, right?[or]Phew, it's been so long since anyone opened me. Guess I should thank you.'[or]Thanks so much, it's been weeks since anybody opened me! I've gotta thank you somehow...'[or]So, I guess you opened me because you were looking for something useful. Let's see if I can help!'[at random][roman type][line break]The [item style]friendly mimic[roman type] makes a wicked grin as [he of a memic] yanks your body forward[run paragraph on]";
-	if the player is male:[Penis scrambling]
+	if the player is possessing a penis:[Penis scrambling]
 		let P be a random number between 0 and 10;
 		let Ab be a random worn plug;
 		unless Ab is plug, now Ab is a random off-stage plug;

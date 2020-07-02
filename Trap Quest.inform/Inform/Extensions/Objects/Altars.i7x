@@ -1,5 +1,10 @@
 Altars by Objects begins here.
 
+[!<DungeonAltar>@
+
+The dungeon altar allows the player to remove curses from their clothes and obtain the priestess class. It becomes inactive after being used, and it recharges when the player kills monsters, when monsters grow bored, and when the player has sex with an enemy as the priestess. trying to use the altar while it is inactive will result in some sort of punishment.
+
+@!]
 The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
 
 To decide which figure-name is the examine-image of (C - dungeon altar):
@@ -17,6 +22,10 @@ Report going when the player is in Dungeon28:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
+[!<WoodsAltar>@
+The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewelery. This altar is unique because it does not have a charge, and only jewelery can be placed on it.
+
+@!]
 The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
 
 To decide which figure-name is the examine-image of (C - woods altar):
@@ -26,6 +35,10 @@ To say ExamineDesc of (C - woods altar):
 	say "On top of a stone pillar rests a metal bowl shaped into several penises in a circle[one of]. It looks like you could try to [bold type]place[roman type] small objects, like jewellery, on it[or][stopping].";
 	if newbie tips is 1, say "[one of][newbie style]Placing jewellery on here will uncurse worn clothing. If you have no cursed clothing, it'll instead raise your lowest stat. Just make sure you've paid the witch's toll first.[roman type][line break][or][stopping]".
 
+[!<ElderAltar>@
+The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
+
+@!]
 The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
 
 To decide which figure-name is the examine-image of (C - elder altar):
@@ -40,6 +53,10 @@ To say ExamineDesc of (C - elder altar):
 	otherwise say "A rough stone table. Grotesque symbols are carved into it, which glow from within with [if the charge of the elder altar < 100]faint[otherwise]bright[end if] unnatural violet light. You hear faint whispers in the air which get louder with proximity. ";
 	say "You also notice a set of chains attached with manacles, clearly for securing people to the altar. You suppose you could try putting an item on it, or praying at it. You really don't want to think about what might happen if you got on it yourself.".
 
+[!<HotelAltar>@
+The hotel altar allows the player to gain unique demon-themed benefits in exchange for punishments. The more the altar is used, the better the benefit and the worse the punishment. The hotel altar gains charge when used and loses charge when the player kills a monster or when a monster grows bored. It also loses charge when the player has sex with an infernal monster as a worshipper.
+
+@!]
 The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
 
 A diaper quest fix rule:
@@ -79,7 +96,7 @@ Check praying something with:
 	if the second noun is a container, try inserting the noun into the second noun instead;
 	if the second noun is HotelScenery01, try inking the noun instead;
 	if the second noun is not the dungeon altar and the second noun is not the woods altar and the second noun is not elder altar and the second noun is not hotel altar, say "What would that do?" instead;
-	if the second noun is hotel altar and the player is not a august 2019 top donator, say "What would that do? (This is currently alpha content).[line break]" instead;
+	if the second noun is hotel altar and the player is not the donator, say "What would that do? (This is currently beta content).[line break]" instead;
 	if the second noun is woods altar:
 		if the noun is clothing:
 			if the noun is not accessory or the price of the noun < 1, say "That won't do anything." instead;
@@ -104,6 +121,8 @@ Check praying something with:
 		if the noun is worn and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [ShortDesc of the noun].";
 		otherwise say "You place the [ShortDesc of the noun] on the altar.";
 	if the second noun is dungeon altar:
+		if the noun is soulless:
+			say "Nothing happens. [line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
 		if the noun is a unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
 			destroy the noun;
@@ -120,7 +139,7 @@ Check praying something with:
 		otherwise if the noun is demonic:
 			AltarPunish the player;
 			say "A voice appears in your head:[line break][second custom style]'How dare you place such a thing on my altar!'[roman type][line break]" instead;
-		otherwise if the class of the player is succubus and the souls of the player < 1:
+		otherwise if the class of the player is succubus:
 			say "The altar appears inert. It seems the Goddess who rules it isn[']t inclined to help you." instead;
 	otherwise if the second noun is elder altar and the noun is a unicorn-horn:
 		say "The horn trembles as it is enveloped by black flames, shooting several long ropes of creamy white fluid across the surface of the altar
@@ -134,12 +153,11 @@ Check praying something with:
 			now the charge of hotel altar is 0 instead;
 		otherwise if the charge of hotel altar > 0:
 			say "Nothing happens." instead.
-			
 
 To AltarPunish (T - a thing):
 	if a random number between 1 and 2 is 1:
 		SemenAddictUp 1;
-		say "You feel funny inside. ";
+		say "You feel funny inside.";
 	otherwise:
 		say "Nothing seems to happen.".
 
@@ -165,12 +183,12 @@ To AltarPunish (C - a bottle):
 		say "Nothing seems to happen.".
 
 Carry out praying something with:
-	if the second noun is dungeon altar:
+	[if the second noun is dungeon altar:
 		if the class of the player is succubus and the souls of the player > 0:
 			say "You feed one of the souls stored in your body into yourself for a moment, fooling the altar into accepting your prayer.";
 			decrease the souls of the player by 1;
-		AltarPray the noun;
-	otherwise if the second noun is woods altar:
+		AltarPray the noun;]
+	if the second noun is woods altar:
 		if the noun is accessory, WoodsOffer the noun;
 		otherwise say "Nothing happens.";
 	otherwise if the second noun is the elder altar:[To actually benefit from the elder altar's ability to bless things you need to learn a skill from a monster, the cultist otherwise all you can do is sacrifice things (which does at least let you destroy cursed clothing)]
@@ -323,7 +341,7 @@ To AltarPray (P - a person):
 			say "About half the length of your hair is magically chopped off!";
 			now the raw largeness of hair is the raw largeness of hair / 2;
 			break;
-		if R is 8 and the size of penis < 10 and the player is male:
+		if R is 8 and the size of penis < 10 and the player is possessing a penis:
 			say "You feel more virile!";
 			PenisUp 1;
 			if the size of penis is previous penis length, SexAddictDown 2;
@@ -810,6 +828,149 @@ To compute light reward of (T - ritual-beads):
 		say "You feel much less tired!";
 		FatigueDown N * 10.
 
+To DevilPray (P - a person):
+	let N be the altar-intensity of hotel altar + 1;
+	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
+	if N > 6, now N is 6;[the effect maxes out at a certain point]
+	let R be a random number between 1 and 4;
+	if gold-summoned is 0:
+		repeat with M running through infernal monsters:
+			if the times-submitted of M > 0, now R is 0;
+	if R is 0 and gold-tiara is actually summonable:[having sex with a demon at least once will give the player the worshipper headgear]
+		say "The statue's face seems to grin as a golden tiara materialises on your head.";
+		summon gold-tiara cursed;
+	otherwise if R is 1:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
+		let C be a random off-stage demonic clothing;
+		if C is actually summonable:
+			let X be -3;
+			if N > 1, increase X by a random number between N / 2 and N;
+			if C is dominance:
+				now C is temptation;
+			if C is kicking:
+				now C is stumbling;
+			otherwise:
+				if a random number between 1 and 2 is 1, now C is possession;
+				otherwise now C is hostility;
+			summon C cursed;
+			say "The statue's face seems to wink as an orange glow surrounds your body. s a [MediumDesc of C] appears on your person.";
+		otherwise:
+			if the submission-count of the player > the dominated-count of the player:
+				say "The statue's face seems to wink as an orange glow surrounds your head. You feel smarter, but also more submissive.";
+				SexAddictUp (N / 3) + 1;
+			otherwise:
+				say "The statue appears to frown as an orange glow surrounds your head. You feel smarter!";
+			IntUp (N / 3) + 1;
+	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
+		let C be a random worn blessed breast covering top-placed clothing;
+		if diaper quest is 0 and the player is not top heavy and C is not clothing:
+			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accommodating the extra weight you're carrying around.";
+			BustUp (N / 3) + 1;
+		otherwise:
+			say "The statue seems to snarl as your muscles suddenly grow.";
+		StrengthUp (N / 3) + 1;
+	otherwise if R is 3:[dexterity + hip size;1 -> 2 -> 3]
+		let C be a random worn blessed crotch-in-place skirted clothing;
+		unless C is clothing, now C is a random worn blessed pussy protection crotch-in-place clothing;
+		if diaper quest is 0 and the player is not bottom heavy and C is not clothing:
+			say "The statue seems to drool as your [ShortDesc of hips] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. Your feel your dexterity increasing to keep up with the changes in your gait.";
+			HipUp (N / 3) + 1;
+		otherwise:
+			say "The statue seems to scowl as stiffness fades from your joints.";
+		DexUp (N / 3) + 1;
+	otherwise if the number of off-stage imps > 0: [summon imps; 1 -> 2 -> 3 -> 4]
+		let X be ((N * 2) / 3) + 1;
+		if X > the number of off-stage imps, now X is the number of off-stage imps;
+		say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as [if X is 1]an imp steps[otherwise][X] imps step[end if] out.";
+		while X > 0:
+			let I be a random off-stage imp;
+			compute reward N set up of I;
+			decrease X by 1;
+			now I is interested;
+	otherwise: [free of charge, since you didn't get anything good]
+		now R is -1;
+		let D be a random alive monster;
+		let R be 0;[prevents an infinite loop if the player literally sweeps the entire map except for the school.]
+		unless D is monster:
+			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+		otherwise:
+			while D is in the school and R < 25:
+				now D is a random alive monster;
+				increase R by 1;
+			if D is in the school:
+				say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+			otherwise:
+				say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
+				DifficultyUp D by 1;
+	increase the charge of hotel altar by 300;
+	increase the altar-intensity of hotel altar by 1;
+	progress quest of hotel-altar-quest;
+	if R > 0:
+		compute DevilPayment N.
+
+To compute hostileDamage:
+	let H be a random hostility clothing;
+	if H is clothing:
+		say "Your [printed name of H] heats up, stinging you with pain in response to your attack.";
+		if a random number between 1 and 2 is 1, BodyRuin 1;
+		otherwise PainUp 1.
+
+To DevilPray (T - a thing):
+	let R be -1;
+	let D be a random alive monster;
+	let R be 0;[prevents an infinite loop if the player literally sweeps the entire map except for the school.]
+	unless D is monster:
+		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+	otherwise:
+		while D is in the school and R < 25:
+			now D is a random alive monster;
+			increase R by 1;
+		if D is in the school:
+			say "The statue's eyes glint ominously, but nothing else seems to happen. ";
+		otherwise:
+			say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
+			DifficultyUp D by 1;
+	increase the charge of hotel altar by 300;
+	increase the altar-intensity of hotel altar by 1.
+
+To DevilPray (T - a clothing):
+	if T is cursable and T is not cursed:
+		let N be the altar-intensity of hotel altar + 1;
+		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
+		if N > 6, now N is 6;
+		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
+		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
+			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 2 -> 3 -> 4]
+			if T is blandness:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is stumbling;
+				if R is 2, now T is temptation;
+				if R is 3, now T is possession;
+				if R is 4, now T is hostility;
+			otherwise:
+				if T is kicking or T is speed, now T is stumbling;
+				if T is endurance, now T is possession;
+				if T is protection, now T is hostility;
+				if T is dominance, now T is temptation;
+		otherwise:[-6 -> -5 -> -4 -> -3]
+			decrease the raw-magic-modifier of T by (N / -2) + 6;
+			if T is stumbling:
+				now T is kicking;
+			otherwise if T is temptation:
+				now T is dominance;
+			otherwise:
+				let R be a random number between 1 and 4;
+				if R is 1, now T is kicking;
+				if R is 2, now T is dominance;
+				if R is 3, now T is endurance;
+				if R is 4, now T is speed;
+		say "as it is changed into a [printed name of T]!";
+		fully curse T;
+		increase the charge of hotel altar by 300;
+		increase the altar-intensity of hotel altar by 1;
+		compute DevilPayment N;
+	otherwise:
+		say "Nothing seems to happen.".
+
 To compute DevilPayment (N - a number):
 	say "[line break]But the altar isn't finished. You feel a terrible sinking feeling as a pentagram etches itself [run paragraph on]";
 	if the class of the player is priestess, now N is 6;[a priestess always pays the maximum]
@@ -818,12 +979,9 @@ To compute DevilPayment (N - a number):
 		say "into the skin of your chest. A[if N < 3] dull[otherwise if N < 5] deep, heavy[otherwise]n incredibly deep, penetrating[end if] ache settles into your joints as the symbol slowly fades.";
 		bodyruin N;
 	otherwise if R is 2 and diaper quest is 0:
-		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is female]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
-		if the player is female:
-			ruin asshole times N;
-			ruin vagina times N;
-		otherwise:
-			ruin asshole times N;
+		say "into the skin of your buttocks. A[if N < 3] faint[otherwise if N < 5] deep, throbbing[otherwise]n incredibly deep, terrible[end if] ache settles into your [if the player is possessing a vagina]fuckholes[otherwise][asshole][end if] as the symbol slowly fades.";
+		if the player is possessing a vagina, ruin vagina times N;
+		ruin asshole times N;
 	otherwise if R is 3 and the player is female and diaper quest is 0:
 		say "into the skin of your abdomen. A [if N < 3]barely noticeable[otherwise if N < 5]noticeable[otherwise]heavily noticeable[end if] feeling of fullness settles into your belly as the symbol slowly fades.";
 		let M be a random imp;
@@ -850,127 +1008,6 @@ To compute DevilPayment (N - a number):
 		otherwise:
 			say "a [if N > 1]pronounced[otherwise]slight[end if] feeling of dirtiness settling over your thoughts.";
 			SexAddictUp N.
-
-[TODO: offering a soul gem resets the altar]
-To DevilPray (P - a person):
-	let N be the altar-intensity of hotel altar + 1;
-	if the class of the player is priestess or N < 1, now N is 1; [a priestess always gets the minimum effect]
-	if N > 6, now N is 6;[the effect maxes out at a certain point]
-	let R be a random number between 1 and 4;
-	let LDC be the list of off-stage actually summonable demonic clothing;[big lag]
-	if gold-summoned is 0:
-		repeat with M running through infernal monsters:
-			if the times-submitted of M > 0, now R is 0;
-	if R is 0 and gold-tiara is actually summonable: [if the player is soulless, or the player's babydaddy is a demon, or the player has ever had sex with the demon lord, the altar can summon a gold tiara]
-		say "The statue's face seems to grin as a golden tiara materialises on your head.";
-		summon gold-tiara cursed;
-	otherwise if R is 1 and the number of entries in LDC > 0:[summon a demonic item. The item has a better modifier and less chance of a bad enchantment if the modifier is low]
-		sort LDC in random order;
-		let C be entry 1 of LDC;
-		let X be -3;
-		increase X by N;
-		now the raw-magic-modifier of C is X;
-		if a random number between 1 and N is 1 and N is not 6:
-			if C is dominance:
-				now C is temptation;
-			otherwise if C is kicking:
-				now C is stumbling;
-			otherwise:
-				if a random number between 1 and 2 is 1, now C is possession;
-				otherwise now C is hostility;
-		say "The statue's face seems to frown as a [MediumDesc of C] appears on your person.";
-		summon C;
-	otherwise if R is 2:[strength + bust size; 1 -> 2 -> 3]
-		if diaper quest is 0 and the player is not top heavy:
-			say "The statue's genitals seem to twitch as your [ShortDesc of breasts] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. You feel your muscles growing as well, accommodating the extra weight you're carrying around.";
-			BustUp (N / 3) + 1;
-		otherwise:
-			say "The statue seems to snarl as your muscles suddenly grow.";
-		StrengthUp (N / 3) + 1;
-	otherwise if R is 3:[dexterity + hip size;1 -> 2 -> 3]
-		if diaper quest is 0 and the player is not bottom heavy:
-			say "The statue seems to drool as your [ShortDesc of hips] [if N < 1]grow slightly[otherwise if N < 2]visibly grow[otherwise]grow explosively[end if]. Your feel your dexterity increasing to keep up with the changes in your gait.";
-			HipUp (N / 3) + 1;
-		otherwise:
-			say "The statue seems to scowl as stiffness fades from your joints.";
-		DexUp (N / 3) + 1;
-	otherwise if the number of off-stage imps > 0:[summon imps; 1 -> 2 -> 3 -> 4]
-		let X be ((N * 2) / 3) + 1;
-		if X > the number of off-stage imps, now X is the number of off-stage imps;
-		if X is 1:
-			say "The statue's eyes glint as a portal opens up in front of you, accompanied by mischievous chuckling as an imp steps out.";
-		otherwise:
-			say "The statue's eyes glint as [X] portals open up around you, accompanied by mischievous chuckling as an imp steps out of each portal.";
-		while X > 0:
-			let I be a random off-stage imp;
-			compute reward N set up of I;
-			decrease X by 1;
-			now I is interested;
-	otherwise:[free of charge, since you didn't get anything good]
-		now R is -1;
-		let D be a random alive infernal monster;
-		if D is monster, DifficultyUp D by 1;
-		say "The statue's eyes glint ominously, but nothing else seems to happen. ";
-	increase the charge of hotel altar by 300;
-	increase the altar-intensity of hotel altar by 1;
-	progress quest of hotel-altar-quest;
-	if R > 0:
-		compute DevilPayment N.
-
-To compute hostileDamage:
-	let H be a random hostility clothing;
-	if H is clothing:
-		say "Your [printed name of H] heats up, stinging you with pain in response to your attack.";
-		if a random number between 1 and 2 is 1, BodyRuin 1;
-		otherwise PainUp 1.
-
-To DevilPray (T - a thing):
-	let D be a random alive infernal monster;
-	if D is monster:
-		DifficultyUp D by 1;
-		say "The statue's eyes emit a brilliant red glow, and a thrill of fear runs up your spine. However, nothing else seems to happen.";
-	otherwise:
-		say "The statue's eyes glint ominously, but nothing else seems to happen.";
-	increase the charge of hotel altar by 300;
-	increase the altar-intensity of hotel altar by 1.
-
-To DevilPray (T - a clothing):
-	if T is cursable:
-		let N be the altar-intensity of hotel altar + 1;
-		if the class of the player is priestess or N < 1, now N is 1;[a priestess always gets the minimum effect]
-		if N > 6, now N is 6;
-		say "The statue's eyes glint, and a red glow surrounds your [printed name of T] [run paragraph on]";
-		if T is kicking or T is endurance or T is speed or T is dominance or T is protection or T is blandness:
-			increase the raw-magic-modifier of T by (N / 2) + 1;[1 -> 2 -> 2 -> 3 -> 4]
-			if T is blandness:
-				let R be a random number between 1 and 4;
-				if R is 1, now T is stumbling;
-				if R is 2, now T is temptation;
-				if R is 3, now T is possession;
-				if R is 4, now T is hostility;
-			otherwise:
-				if T is kicking or T is speed, now T is stumbling;
-				if T is endurance, now T is possession;
-				if T is protection, now T is hostility;
-				if T is dominance, now T is temptation;
-		otherwise:[-6 -> -5 -> -4 -> -3]
-			decrease the raw-magic-modifier of T by (N / 2) + 6;
-			if T is stumbling:
-				now T is kicking;
-			otherwise if T is temptation:
-				now T is dominance;
-			otherwise:
-				let R be a random number between 1 and 4;
-				if R is 1, now T is kicking;
-				if R is 2, now T is dominance;
-				if R is 3, now T is endurance;
-				if R is 4, now T is speed;
-		say "as it is changed into a [printed name of T]!";
-		increase the charge of hotel altar by 300;
-		increase the altar-intensity of hotel altar by 1;
-		compute DevilPayment N;
-	otherwise:
-		say "Nothing seems to happen.".
 
 [!<ResetDungeonAltar>+
 

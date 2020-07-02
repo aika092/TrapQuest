@@ -77,7 +77,7 @@ To decide which figure-name is clothing-image of (C - a leaf pattern warrior che
 To say ClothingDesc of (O - a leaf pattern warrior chestpiece):
 	say "This metal piece of 'armour' hangs from your neck, providing protection to your chest and belly. The leafy pattern around the belly makes it look quite provocative. It is very heavy.".
 
-To decide which number is the initial outrage of (C - an leaf pattern warrior chestpiece):
+To decide which number is the initial outrage of (C - a leaf pattern warrior chestpiece):
 	decide on 5.
 
 To decide which number is the heaviness of (C - a leaf pattern warrior chestpiece):

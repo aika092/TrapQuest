@@ -322,7 +322,7 @@ To say TransformReaction of (C - a sissy-suspenders):
 		if C is cursed, say "[variable custom style]Am I really stuck wearing this? Look at these stupid hyper-feminine frills![roman type][line break]";
 		otherwise say "[variable custom style]Maybe it's time to take these off. They've just got way too ridiculous...[roman type][line break]";
 	otherwise if C is almost too much:
-		say "[variable custom style]I guess this is what I have become. [if the player is male and transGender is 0]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
+		say "[variable custom style]I guess this is what I have become. [if the player is gendered male]A super feminine sissy...[otherwise]A parody of my own gender...[end if][roman type][line break]";
 	otherwise if the humiliation of the player < HUMILIATION-BROKEN:
 		say "[variable custom style]These are so [if the humiliation of the player > HUMILIATION-SHAMELESS - 2000]perfect[otherwise]cute[end if]. I love the silky frills![roman type][line break]".
 

@@ -185,7 +185,6 @@ To say MaxAssSizeDesc:
 			say "impossibly giant";
 		if extreme proportions fetish is 1 and the player is a flatchested trap, say " after TG)".
 
-
 [!<YourselfIsBottomHeavy>+
 
 Are hips at their maximum size?
@@ -331,8 +330,8 @@ To say AssDesc:
 	if A is 7, say "eye-turning bubble cheeks";
 	if A is 8, say "well cushioned cheeks";
 	if A is 9, say "[if weight gain fetish is 1]chunky[otherwise]thick[end if], wobbly ass cheeks";
-	if A is 10, say "oversized [if weight gain fetish is 1]fat girl [end if]ass cheeks";
-	if A is 11, say "humongous [if weight gain fetish is 1]fat girl [end if]butt cheeks";
+	if A is 10, say "oversized [if weight gain fetish is 1]fat [boy of the player] [end if]ass cheeks";
+	if A is 11, say "humongous [if weight gain fetish is 1]fat [boy of the player] [end if]butt cheeks";
 	if A is 12, say "Kardashian sized protruding butt cheeks";
 	if A is 13, say "giant wobbling butt cheeks";
 	if A is 14, say "giant bouncing ass cheeks";

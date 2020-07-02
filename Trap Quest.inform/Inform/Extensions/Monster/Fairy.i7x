@@ -65,13 +65,13 @@ To say MonsterDesc of (M - a fairy):
 To set up (M - a fairy):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - a fairy):
 	decide on 1 + the difficulty of M + (game difficulty * 2).
 
-To decide which number is the difficulty-base of (M - a fairy):
+To decide which number is the starting difficulty of (M - a fairy):
 	decide on 2.
 
 [This is the spawn initial fairy rule:
@@ -257,7 +257,7 @@ This is the fairy plays diaper quest rule:
 The fairy plays diaper quest rule is listed in the fairy attack rules.
 
 This is the fairy tries to impregnate the player rule:
-	if pregnancy fetish is 1 and there is a vine wrangling the player and the class of the player is faerie:
+	if pregnancy fetish is 1 and there is a vine wrangling a body part and the class of the player is faerie:
 		say "[BigNameDesc of current-monster] continues to [one of]whiz about underneath you[or]hover beneath your legs[at random], throwing glittering dust over the horny vines twisting through the soil.";
 		cutshow figure of fairy cutscene 18 for current-monster;
 		rule succeeds;
@@ -269,7 +269,8 @@ This is the fairy tries to impregnate the player rule:
 			now V is in the location of the player;
 			now V is revealed;
 			now the TrapNo of V is 0;
-		now V is wrangling the player;
+		now V is wrangling thighs;
+		now V is wrangling arms;
 		rule succeeds;
 	if pregnancy fetish is 1 and the player is female and the pregnancy of the player is 0 and the semen volume of vagina < 15 and the largeness of belly < 10 and a random number between 1 and 2 is 1 and the vaginalvirgin of the player is 0:
 		say "[BigNameDesc of current-monster] whizzes past you, briefly brushing against your belly as [he of current-monster] does. [big he of current-monster] turns and smirks as your belly rumbles, and visibly glows pink as it swells in front of your eyes.";
@@ -577,12 +578,13 @@ To compute fairy meddling on (XXX - vagina):
 
 [Selkie: a thought: this code looks (to my meagre understanding) like the fairies are pretty unstoppable. Unless you can kill them in one hit? But you could instead allow something like the maid's spray bottle to be especially effective, and able to prevent their attack that around, if you squirt them with it, and if you succeed twice in a row, perhaps have that drive them off? And you might do a similar thing with a slap attack: "You swat at the fairy, and make contact, which seems to upset her!" - and maybe a couple of those could have them buzz off? Just an idea.]
 [Aika: Maybe we do need a more reliable way to deal with fairies. Something like the spraybottle idea but accessible to any class (or at least most)]
+[MG: One easy fix to make could be that the player has a chance of dodging attacks from fairies.]
 This is the fairy tries meddling rule:
 	let B be a random fairy targetable body part;
 	if B is body part:
 		let M be current-monster;
 		unless current-monster is fairyDistracted, compute fairy meddling on B;
-		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of M] doesn't immediately mess with you.[or]briefly forgets to mess with you.[at random]";
+		otherwise say "[BigNameDesc of current-monster] [one of]is so busy talking to you that [he of current-monster] doesn't immediately mess with you.[or]briefly forgets to mess with you.[at random]";
 		rule succeeds.
 The fairy tries meddling rule is listed last in the fairy attack rules.
 
@@ -646,13 +648,13 @@ Part 4 - Conversation
 Section 1 - Greeting
 
 [Fairies use a custom to greet function, since their perception works differently than it does for most monsters, but while we're here, we can use the default functions for special pregnancy related stuff]
-To compute basic greeting to (M - a fairy):
+[To compute basic greeting to (M - a fairy):
 	if the greet-window of M < 1 or M is uninterested:
 		compute vanity greeting of M;
 	otherwise:
 		compute conventional greeting of M;
 	if M is uninterested:
-		now M is interested.
+		now M is interested.]
 
 To say FirstResponse of (M - a fairy):
 	say "[speech style of M]'[one of]Hi there!'[or]Hello!'[or]Hi hi!'[or]Hello hello hello!'[or]Hiya!'[or]Nice to meet you!'[or]Hello!'[at random][roman type][line break]";
@@ -724,18 +726,9 @@ To say TauntRejected of (M - a fairy):
 
 Section 2 - Questioning
 
-To compute annoyance of (M - a fairy):
-	if M is unfriendly:
-		say "[speech style of M]'Hush now, it's playtime!'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'I'm bored of talking!'[roman type][line break]".
-
 To say TeachQuestion of (M - a fairy):
 	if bellyskill is 1 and the pregnancy of the player is 1, say "[variable custom style]'Can you teach me anything useful?'[roman type][line break]";
 	otherwise say "[variable custom style]'[one of]Do you have any idea who the father is?'[or]Hey, can you tell me who the father is, by any chance?'[or]Can you tell me what's growing inside me?'[at random][roman type] You gesture at your [BellyDesc].".
-
-To decide which number is the mild-annoyance threshold of (M - a fairy):
-	decide on 440.
 
 To compute teaching of (M - a fairy):
 	if bellyskill is 1 and the pregnancy of the player is 1:
@@ -743,11 +736,7 @@ To compute teaching of (M - a fairy):
 	otherwise:
 		say "[speech style of M]'You should learn how to carry [if diaper quest is 1]a full belly[otherwise if pregnancy fetish is 1]a baby[otherwise]your weight[end if] around better. You don't want to get tired every few minutes now, do you? Here, let me show you...'[roman type][line break]";
 		alwayscutshow figure of fairy interact 9 for M;
-		teach belly management;
-	if the questioned of M <= the mild-annoyance threshold of M:
-		ModerateConvoFatigue M;
-	otherwise:
-		HeavyConvoFatigue M.
+		teach belly management.
 
 To say PregnancyAssessment of (M - a fairy):
 	say "[BigNameDesc of M] puts [his of M] face up against your belly, listening intently.";
@@ -877,7 +866,7 @@ To compute friendly drink of (M - a fairy):
 		distract M;
 		say "[BigNameDesc of M] seems satisfied and looks to leave you alone.";
 	otherwise:
-		say "[BigNameDesc of M] looks at your [BellyDesc]. [line break][speech style of M]'Looks like you're pretty full already! *Giggle*'[roman type][line break]".
+		say "[BigNameDesc of M] looks at your [BellyDesc]. [line break][speech style of M]'Looks like you're pretty full already! *giggle*'[roman type][line break]".
 
 To compute unfriendly drink of (M - a fairy):
 	compute friendly drink of M.
@@ -964,7 +953,7 @@ To say StoryAnswer of (M - blue-fairy):
 To set up (M - blue-fairy):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M + 2;
+	now the raw difficulty of M is the starting difficulty of M + 2;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - blue-fairy):
@@ -1000,7 +989,7 @@ To say AdviceAnswer of (M - fairy-witch):
 To set up (M - fairy-witch):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M + 4;
+	now the raw difficulty of M is the starting difficulty of M + 4;
 	now the health of M is the maxhealth of M.
 
 Definition: fairy-witch is blocker if it is not airborne.

@@ -23,8 +23,11 @@ To say MonsterDesc of (M - a robochef):
 To set up (M - a robochef):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 8;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - robochef):
+	decide on 8.
 
 [This is the spawn initial robochef rule:
 	if the number of alive robochefs is 0:
@@ -233,7 +236,7 @@ Part 5 - Conversation
 
 Section 1 - Greeting
 
-To compute basic greeting to (M - robochef):
+[To compute basic greeting to (M - robochef):
 	if M is interested:
 		say VanityGreeting to M;
 	otherwise:
@@ -241,7 +244,7 @@ To compute basic greeting to (M - robochef):
 		otherwise say RepeatGreeting to M;
 		unless the class of the player is maid:
 			now the boredom of M is 0;
-			compute correct perception of M.
+			compute correct perception of M.]
 
 To say FirstResponse of (M - robochef):
 	if the class of the player is maid:
@@ -257,8 +260,6 @@ To say RepeatResponse of (M - robochef):
 	otherwise:
 		say "[BigNameDesc of M] ignores you.";
 
-To say VanityResponse of (M - robochef):
-	say "[BigNameDesc of M] ignores you.".
 
 Section 2 - Questioning
 
@@ -328,7 +329,7 @@ To compute (M - a robochef) cooking (I - a fae mushroom):
 	now the fat of D is 2;
 	now D is retained by M.
 
-To compute (M - a robochef) cooking (I - a egg):
+To compute (M - a robochef) cooking (I - an egg):
 	let S be 0;
 	if I is large egg, now S is 3;
 	if I is medium egg, now S is 2;

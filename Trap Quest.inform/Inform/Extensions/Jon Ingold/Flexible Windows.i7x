@@ -162,7 +162,7 @@ Include (-
 To call glk_window_clear for (win - a g-window):
 	(- glk_window_clear( {win}.(+ ref number +) ); -).
 
-To set the background color of (win - a g-window) to (T - a text):
+To set the background colour of (win - a g-window) to (T - a text):
 	(- glk_window_set_background_color( {win}.(+ ref number +), GTE_ConvertColour( {-by-reference:T} ) ); -).
 
 [ Fix spurious line breaks from being printed in the main window after running the refreshing activity ]
@@ -321,8 +321,8 @@ Chapter - Clearing and refreshing windows
 
 To clear (win - a g-window):
 	if win is g-present:
-		if the type of win is g-graphics and the background color of win is not empty:
-			set the background color of win to the background color of win;
+		if the type of win is g-graphics and the background colour of win is not empty:
+			set the background colour of win to the background colour of win;
 		call glk_window_clear for win;
 
 To refresh (win - a g-window):
@@ -571,7 +571,7 @@ Chapter - Extending Glulx Text Effects
 Section - The Extended Table of User Styles definition (in place of Section - The Table of User Styles definition in Glulx Text Effects by Emily Short)
 
 Table of User Styles
-window (a g-window)	style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
+window (a g-window)	style name (a glulx text style)	background colour (a text)	colour (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 --
 
 Section - Sorting the Table of User Styles
@@ -596,10 +596,10 @@ Before starting the virtual machine (this is the Flexible Windows sort the Table
 		choose row row2 in the Table of User Styles;
 		if there is a style name entry:
 			if (the window in row row1 of the Table of User Styles) is the window entry and (the style name in row row1 of the Table of User Styles) is the style name entry:
-				if there is a background color entry:
-					now the background color in row row1 of the Table of User Styles is the background color entry;
-				if there is a color entry:
-					now the color in row row1 of the Table of User Styles is the color entry;
+				if there is a background colour entry:
+					now the background colour in row row1 of the Table of User Styles is the background colour entry;
+				if there is a colour entry:
+					now the colour in row row1 of the Table of User Styles is the colour entry;
 				if there is a first line indentation entry:
 					now the first line indentation in row row1 of the Table of User Styles is the first line indentation entry;
 				if there is a fixed width entry:
@@ -625,10 +625,10 @@ Before starting the virtual machine (this is the Flexible Windows sort the Table
 
 Section - Enhanced phrases for applying styles to specific window types - unindexed
 
-To set the background color of wintype (W - a number) for (style - a glulx text style) to (N - a text):
+To set the background colour of wintype (W - a number) for (style - a glulx text style) to (N - a text):
 	(- GTE_SetStylehint( {W}, {style}, stylehint_BackColor, GTE_ConvertColour( {-by-reference:N} ) ); -).
 
-To set the color of wintype (W - a number) for (style - a glulx text style) to (N - a text):
+To set the colour of wintype (W - a number) for (style - a glulx text style) to (N - a text):
 	(- GTE_SetStylehint( {W}, {style}, stylehint_TextColor, GTE_ConvertColour( {-by-reference:N} ) ); -).
 
 To set the first line indentation of wintype (W - a number) for (style - a glulx text style) to (N - a number):
@@ -657,10 +657,10 @@ To set reversed of wintype (W - a number) for (style - a glulx text style) to (N
 
 [ And some phrases to clear them again. ]
 
-To clear the background color of wintype (W - a number) for (style - a glulx text style):
+To clear the background colour of wintype (W - a number) for (style - a glulx text style):
 	(- FW_ClearStylehint( {W}, {style}, stylehint_BackColor, ); -).
 
-To clear the color of wintype (W - a number) for (style - a glulx text style):
+To clear the colour of wintype (W - a number) for (style - a glulx text style):
 	(- FW_ClearStylehint( {W}, {style}, stylehint_TextColor ); -).
 
 To clear the first line indentation of wintype (W - a number) for (style - a glulx text style):
@@ -720,10 +720,10 @@ A glulx zeroing-reference rule (this is the set generic text styles rule):
 				now W is 4;
 			-- otherwise:
 				break;
-		if there is a background color entry:
-			set the background color of wintype W for the style name entry to the background color entry;
-		if there is a color entry:
-			set the color of wintype W for the style name entry to the color entry;
+		if there is a background colour entry:
+			set the background colour of wintype W for the style name entry to the background colour entry;
+		if there is a colour entry:
+			set the colour of wintype W for the style name entry to the colour entry;
 		if there is a first line indentation entry:
 			set the first line indentation of wintype W for the style name entry to the first line indentation entry;
 		if there is a fixed width entry:
@@ -741,12 +741,12 @@ A glulx zeroing-reference rule (this is the set generic text styles rule):
 		if there is a reversed entry:
 			set reversed of wintype W for the style name entry to the reversed entry;
 
-[ Gargoyle sets the cursor color to whatever the last text-buffer color hint was. We will reset it using a variable the story author can change.
+[ Gargoyle sets the cursor colour to whatever the last text-buffer colour hint was. We will reset it using a variable the story author can change.
 This is apparently by design, but seems unuseful and buggy to me. I raised the issue at https://groups.google.com/forum/#!topic/garglk-dev/DdqG0Ppt2lY ]
 
-The Gargoyle cursor color is initially "#000000".
-After constructing a textual g-window (this is the Gargoyle cursor color rule):
-	set the color of wintype 3 for normal-style to the Gargoyle cursor color;
+The Gargoyle cursor colour is initially "#000000".
+After constructing a textual g-window (this is the Gargoyle cursor colour rule):
+	set the colour of wintype 3 for normal-style to the Gargoyle cursor colour;
 
 Section - Applying window specific styles
 
@@ -768,10 +768,10 @@ Before constructing a textual g-window (called win) (this is the set the window 
 				continue the activity;
 			next;
 		now found the window is true;
-		if there is a background color entry:
-			set the background color of wintype W for the style name entry to the background color entry;
-		if there is a color entry:
-			set the color of wintype W for the style name entry to the color entry;
+		if there is a background colour entry:
+			set the background colour of wintype W for the style name entry to the background colour entry;
+		if there is a colour entry:
+			set the colour of wintype W for the style name entry to the colour entry;
 		if there is a first line indentation entry:
 			set the first line indentation of wintype W for the style name entry to the first line indentation entry;
 		if there is a fixed width entry:
@@ -805,10 +805,10 @@ A first after constructing a textual g-window (called win) (this is the clear th
 				break;
 			next;
 		now resetting required is true;
-		if there is a background color entry:
-			clear the background color of wintype W for the style name entry;
-		if there is a color entry:
-			clear the color of wintype W for the style name entry;
+		if there is a background colour entry:
+			clear the background colour of wintype W for the style name entry;
+		if there is a colour entry:
+			clear the colour of wintype W for the style name entry;
 		if there is a first line indentation entry:
 			clear the first line indentation of wintype W for the style name entry;
 		if there is a fixed width entry:
@@ -831,17 +831,17 @@ A first after constructing a textual g-window (called win) (this is the clear th
 
 Chapter - Window background colours
 
-A g-window has a text called background color.
+A g-window has a text called background colour.
 
 [ This needs to run before the set the window specific styles rule so that it won't overwrite any window specific backgrounds. ]
-First before constructing a textual g-window (called win) (this is the set the background color of textual windows rule):
-	if the background color of win is not empty:
-		set the background color of wintype 0 for all-styles to the background color of win;
+First before constructing a textual g-window (called win) (this is the set the background colour of textual windows rule):
+	if the background colour of win is not empty:
+		set the background colour of wintype 0 for all-styles to the background colour of win;
 
 [ This needs to be run before the clear the window's styles rule so that it doesn't erase the styles reset by the set generic text styles rule ]
-First after constructing a textual g-window (called win) (this is the reset the background color of textual windows rule):
-	if the background color of win is not empty:
-		clear the background color of wintype 0 for all-styles;
+First after constructing a textual g-window (called win) (this is the reset the background colour of textual windows rule):
+	if the background colour of win is not empty:
+		clear the background colour of wintype 0 for all-styles;
 
 [ Setting the background colour of graphics windows is handled by the automatic clearing which occurs after the window is constructed ]
 
@@ -850,13 +850,13 @@ Gargoyle sets the colour of its window padding based on the last background colo
 
 [ This phrase is made available in case you want to set the colour at some other time (such as when opening a pop-over window) ]
 To set the Gargoyle window padding to (T - a text):
-	set the background color of wintype 3 for normal-style to T;
+	set the background colour of wintype 3 for normal-style to T;
 
-To set the Gargoyle background color to the color (T - a text) (deprecated):
-	set the background color of wintype 3 for normal-style to T;
+To set the Gargoyle background colour to the colour (T - a text) (deprecated):
+	set the background colour of wintype 3 for normal-style to T;
 
 After constructing a textual g-window (this is the Gargoyle window padding rule):
-	let T be the background color of the acting main window;
+	let T be the background colour of the acting main window;
 	if T is empty:
 		let T be "#FFFFFF";
 	set the Gargoyle window padding to T;
@@ -925,13 +925,13 @@ Section: Text Style and Background Colour
 Flexible Windows adds a "window" column to the Table of User Styles found in the Glulx Text Effects extension. We can specify styles for individual windows by continuing the table. The "window" column is for the name of the window; the rest of the columns are described in the Glulx Text Effects documentation.
 
 	Table of User Styles (continued)
-	window (a g-window)	style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
+	window (a g-window)	style name (a glulx text style)	background colour (a text)	colour (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 
-Note that the "background color" column is for the background colour of the text only, not the background colour of the entire window.
+Note that the "background colour" column is for the background colour of the text only, not the background colour of the entire window.
 
-To colour the background of the entire window, we instead set the g-window property "background color" to a six-digit web colour code (with or without the # symbol):
+To colour the background of the entire window, we instead set the g-window property "background colour" to a six-digit web colour code (with or without the # symbol):
 
-	The background color of the side window is "#CCCCFF".
+	The background colour of the side window is "#CCCCFF".
 
 If the story will be running in a browser, we'll need to use CSS to set custom colours or styles. See the "Rock Number" section for how to refer to a particular window in CSS.
 
@@ -941,7 +941,7 @@ Internally, Glulx windows are dynamic objects, created as they are opened. Our g
 
 Normally, Flexible Windows will set the rock numbers for all g-windows automatically, and the whole process occurs behind the scenes. There may be times, however, when we want to set a g-window's rock number to a particular value. For example, Quixe, the javascript Glulx interpreter, uses rock numbers to identify windows for styling with CSS. In that system, the CSS for a window with rock number 1010 might look like this:
 
-	.WindowRock_1010 { background-color: blue; }
+	.WindowRock_1010 { background-colour: blue; }
 
 Rocks should be numbered 200 and above. This extension starts numbering them from 1000. It is customary, though not necessary, to skip 10 when adding a new window; that is, for three windows, we'd have 1000, 1010, and 1020. In fact, this is how Flexible Windows will assign them if we don't intervene. To ensure that a g-window gets a particular rock number, we can set it like so:
 

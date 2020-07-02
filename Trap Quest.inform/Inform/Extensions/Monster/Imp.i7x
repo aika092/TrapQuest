@@ -4,13 +4,13 @@ An imp is a kind of monster. An imp is male.
 
 Definition: an imp is willing to urinate if it is unfriendly.
 
-Definition: an imp is father material if the player is a august 2019 top donator.
+Definition: an imp is father material if the player is the donator.
 
 Definition: an imp is raunchy: decide yes.
 
 Definition: an imp is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 
-An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp taking leaving after being attacked]
+An imp has a number called imp-rudeness. The imp-rudeness of an imp is usually 0. [determines the chances of imp leaving after being attacked]
 
 Figure of imp 1 is the file "NPCs/MultiFloor/imp1.png".
 
@@ -58,11 +58,14 @@ To say MonsterDesc of (M - an imp):
 To set up (M - an imp):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 3;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now the imp-rudeness of M is 0;
 	compute refractoryReset of M;
 	now the favour of M is 99.[always start at max favour]
+
+To decide which number is the starting difficulty of (M - an imp):
+	decide on 3.
 
 To compute birth set up of (M - an imp):
 	set up M;
@@ -90,11 +93,12 @@ To compute (M - demon lord) stomping (N - an imp):
 	unless N is unfriendly, compute N protecting against M.[the imp betrays you]
 
 To say MuteGreetResponse of (M - an imp):
-	say "[BigNameDesc of M] replies noncommittally. Looks like [he of M] isn't much for conversation.".
+	say "[BigNameDesc of M] replies non-committally. Looks like [he of M] isn't much for conversation.".
 
-To say MuteQuestionResponse of (M - an imp):
-	say "[variable custom style]'Hey, do you understand me?'[roman type][line break]";
-	say "[speech style of M]'Yeah, but I try not to.'[roman type][line break]";
+To say MuteQuestion of (M - an imp):
+	say "[variable custom style]'Hey, do you understand me?'[roman type][line break]".
+To say MuteResponse of (M - an imp):
+	say "[speech style of M]'Yeah, but I try not to.'[roman type][line break]".
 
 To say PregGrowth of (M - an imp):
 	say "the demon spawn".
@@ -147,10 +151,13 @@ To check consensual submissive sex of (M - an imp):
 					otherwise:
 						say "[BigNameDesc of N] begins masturbating in your direction!";
 						if bukkake fetish is 1:
-							say "[big he of N] quickly climaxes, spraying you with [his of N] [semen]!";
 							let B be face;
 							if a random number between 1 and 2 is 1, now B is hips;
+							say "[big he of N] quickly climaxes, spraying [his of N] hot [semen] [one of]across[or]all over[or]liberally across[in random order] your [B].";
 							squirt semen on B by (the semen load of N);
+						otherwise:
+							say "[big he of N] quickly climaxes, spraying [his of M] semen on the ground!";
+							SemenPuddleUp the semen load of N;
 						orgasm N;
 				if N is not penetrating a body part, now N is not friendly-fucking; [Make sure this flag doesn't linger when it's not supposed to]
 	otherwise:
@@ -182,12 +189,13 @@ To compute refractoryReset of (M - an imp): [Usually this is only used for intel
 To compute periodic recovery of (M - an imp):
 	let R be a random number between 1 and the imp-rudeness of M;
 	decrease the refractory-period of M by R;
-	if the refractory-period of M < 200 and R + the refractory-period of M >= 200:
-		say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
-	otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
-		say "[BigNameDesc of M] makes an obscene gesture at you.[big he of M] seems like [he of M] really needs a way to entertain [himself of M]...";
-	otherwise if the refractory-period of M < 20 and R + the refractory-period of M >= 20:
-		say "[one of][BigNameDesc of M] stares at you, licking [his of M] lips[or][BigNameDesc of M][']s eyes linger on your body[at random]. It seems like [he of M][']s about to turn on you...".
+	if M is in the location of the player:[really only matters in the school and in the extra credit zone]
+		if the refractory-period of M < 200 and R + the refractory-period of M >= 200:
+			say "[BigNameDesc of M] glances at you, snickering. Looks like [he of M][']s getting bored...";
+		otherwise if the refractory-period of M < 100 and R + the refractory-period of M >= 100:
+			say "[BigNameDesc of M] makes an obscene gesture at you.[big he of M] seems like [he of M] really needs a way to entertain [himself of M]...";
+		otherwise if the refractory-period of M < 20 and R + the refractory-period of M >= 20:
+			say "[one of][BigNameDesc of M] stares at you, licking [his of M] lips[or][BigNameDesc of M][']s eyes linger on your body[at random]. It seems like [he of M][']s about to turn on you...".
 
 To say SatisfiedFlav of (M - an imp):
 	if M is in the location of the player and M is not dying:

@@ -268,21 +268,21 @@ To decide which object is the at least partial concealer of (T - a face-tattoo):
 To decide which number is the initial outrage of (T - a face-tattoo):
 	decide on 7.
 
-Section 9 - Belly Tattoos
+Section 9 - belly-tattoos
 
-A belly tattoo is a kind of tattoo.
+A belly-tattoo is a kind of tattoo.
 
-Definition: a belly tattoo (called A) is drawable:
-	if there is a worn belly tattoo, decide no;
+Definition: a belly-tattoo (called A) is drawable:
+	if there is a worn belly-tattoo, decide no;
 	decide yes.
 
-To decide which object is the concealer of (T - a belly tattoo):
+To decide which object is the concealer of (T - a belly-tattoo):
 	decide on a random worn actually dense belly covering clothing.
-To decide which object is the at least partial concealer of (T - a belly tattoo):
+To decide which object is the at least partial concealer of (T - a belly-tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through belly covering clothing.
 
-To decide which number is the initial outrage of (T - a belly tattoo):
+To decide which number is the initial outrage of (T - a belly-tattoo):
 	decide on 2.
 
 Section 10 - DQ Tattoos

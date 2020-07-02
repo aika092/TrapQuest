@@ -22,6 +22,7 @@ Definition: an elixir is never-in-bag: decide yes.
 Definition: a tincture is never-in-bag: decide yes.
 Definition: water-bomb is never-in-bag: decide yes.
 Definition: a trophy is never-in-bag: decide yes.
+Definition: ectoplasm is never-in-bag: decide yes.
 
 Definition: a thing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried.
 Definition: a clothing is in-bag rather than not-in-bag if it is not never-in-bag and it is carried and it is not wet and the used condoms of it is 0.
@@ -266,7 +267,7 @@ bag-feeding-toy is a bag-feeding-effect.
 To execute (E - bag-feeding-toy) on (C - a thing):
 	if C is a sex toy:
 		let F be asshole;
-		if the player is female and C is not plug, now F is vagina;
+		if the player is possessing a vagina and C is not plug, now F is vagina;
 		say "Your bag reacts to the toy by making your [variable F] tingle with delight!";
 		ruin F times 1.
 
@@ -366,5 +367,25 @@ To execute (E - bag-feeding-diaper-bag) on (C - a thing):
 To compute BagFeedingEffect of (C - a thing):
 	repeat with E running through bag-feeding-effects:
 		execute E on C.
+
+enema-backpack is a clothing. enema-backpack is unique. The printed name of enema-backpack is "[clothing-title-before]enema backpack[clothing-title-after]". The text-shortcut of enema-backpack is "eb". Figure of enema-backpack is the file "Items/Clothes/Upper/Special/enemabackpack1.png". enema-backpack can be enema-released.
+To decide which figure-name is clothing-image of (H - enema-backpack):
+	decide on figure of enema-backpack.
+
+To say ShortDesc of (B - enema-backpack):
+	say "backpack".
+To say ClothingDesc of (B - enema-backpack):
+	say "This backpack is filled with water and has a subtle tube that goes down to your [asshole]. [if B is enema-released]It has pumped its water inside you![otherwise if B is worn]If you move your hands from behind your head, an invisible cord will be pulled and the backpack will give you a huge enema!".
+
+To decide which number is the initial cringe of (B - enema-backpack):
+	decide on 2.
+
+To compute school periodic effect of (B - enema-backpack):
+	if B is not enema-released and (entry 1 in the armUses of arms is not hair or entry 2 in the armUses of arms is not hair):
+		now B is enema-released;
+		say "A quiet 'click' sound heralds the backpack releasing its enema! Before you can do anything your [asshole] has been filled with a huge amount of water!!![line break][variable custom style]Ugh... so much...[roman type][line break]";
+		AssFill 20 with water;
+	otherwise if B is not enema-released and the player is not in a park room:
+		appropriate-cutscene-display figure of diaper grope predicament cutscene.
 
 Bags of Holding Framework ends here.

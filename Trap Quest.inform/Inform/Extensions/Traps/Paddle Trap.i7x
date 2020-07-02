@@ -46,12 +46,12 @@ To trigger (Y - a paddle trap):
 		say "You hardly feel anything thanks to your rubbery butt cheeks.";
 	otherwise if A > the defence of the player:
 		if K is clothing:
-			say "It spanks you directly on your [if the player is male][asshole][otherwise]crotch[end if], and your [ShortDesc of K] does nothing to soften the blow!";
+			say "It spanks you directly on your [if the player is not possessing a vagina][asshole][otherwise]crotch[end if], and your [ShortDesc of K] does nothing to soften the blow!";
 			PainUp 2;
 			if K is ass plugging and K is not jelldo:
-				say "Not only that, the plug[if the player is female]s[end if] inside of you send[if the player is male]s[end if] the vibrations of the spank deep inside your [if the player is female]holes[otherwise][asshole][end if]. Ouch!";
+				say "Not only that, the plug[if the player is possessing a vagina]s[end if] inside of you send[if the player is not possessing a vagina]s[end if] the vibrations of the spank deep inside your [if the player is possessing a vagina]holes[otherwise][asshole][end if]. Ouch!";
 				ruin asshole times 2;
-				if the player is female, ruin vagina times 2;
+				if the player is possessing a vagina, ruin vagina times 2;
 			otherwise:
 				say "Owww!";
 			Damage K;
@@ -66,9 +66,9 @@ To trigger (Y - a paddle trap):
 			say "It spanks you on your [AssDesc]! ";
 			Damage K;
 			if K is ass plugging:
-				say "Not only that, the plug[if the player is female]s[end if] inside of you send[if the player is male]s[end if] the vibrations of the spank deep inside your [if the player is female]holes[otherwise][asshole][end if]. Ouch!";
+				say "Not only that, the plug[if the player is possessing a vagina]s[end if] inside of you send[if the player is not possessing a vagina]s[end if] the vibrations of the spank deep inside your [if the player is possessing a vagina]holes[otherwise][asshole][end if]. Ouch!";
 				ruin asshole times 2;
-				if the player is female, ruin vagina times 2;
+				if the player is possessing a vagina, ruin vagina times 2;
 			otherwise:
 				say "At least your [ShortDesc of K] softened the blow.";
 		otherwise:

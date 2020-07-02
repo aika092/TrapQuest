@@ -87,12 +87,18 @@ To compute class outfit of (H - runic headband):
 		if cleavage-window-priestess-outfit is off-stage and cleavage-window-priestess-outfit is actually summonable:
 			say "[bold type]Your runic headband gently hums as a [cleavage-window-priestess-outfit] [bold type]appears on you![roman type][line break]";
 			summon cleavage-window-priestess-outfit;
-		otherwise if heart-pussy-skirt is off-stage and heart-pussy-skirt is actually summonable:
+		otherwise if heart-pussy-skirt is off-stage and heart-pussy-hobble-skirt is not worn and (cleavage-window-priestess-outfit is worn or heart-pussy-skirt is actually summonable):
+			repeat with O running through worn skirted clothing:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 			say "[bold type]Your runic headband gently hums as a [heart-pussy-skirt] [bold type]appears on you![roman type][line break]";
 			summon heart-pussy-skirt;
-		otherwise if pearl crotchless-panties is off-stage and pearl crotchless-panties is actually summonable:
-			say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you![roman type][line break]";
-			summon pearl crotchless-panties uncursed.
+			if pearl crotchless-panties is off-stage:
+				repeat with O running through worn crotch covering clothing:
+					say "Your [O] [wardrobeVanishes of O]!";
+					now O is in pink wardrobe;
+				say "[bold type]Your runic headband gently hums as crotchless panties with a string of pearls down the middle appear on you![roman type][line break]";
+				summon pearl crotchless-panties uncursed.
 
 Chapter - Quest
 
@@ -224,7 +230,7 @@ To compute virginity-loss of (C - runic headband):
 			otherwise say "Condoms appear on [NameDesc of M][']s appendages!";
 			now M is wrapped; [Some NPCs like the tentacle monster need to be condomed even if they're not flagged as male (i.e. having a penis)]
 		repeat with V running through vines penetrating vagina:
-			now the vine-condoms of V is the TrapNo of V;
+			now the vine-condoms of V is the TrapNo of V + 1;
 			say "[if the vine-condoms of V is 1]A condom appears on the vine[otherwise][vine-condoms of V] condoms appear on the vines[end if] inside of you!";
 		let R be the recipe of 28; [condom pack recipe]
 		if R is recipe:

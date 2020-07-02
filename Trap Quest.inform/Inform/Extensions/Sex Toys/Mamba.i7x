@@ -24,7 +24,7 @@ To decide which number is the original price of (C - a mamba):
 	decide on 4.
 
 To decide which number is the raw-masturbation-bonus of (C - a mamba):
-	if interracial fetish is 1, decide on 3;
+	if interracial fetish is 1, decide on 2;
 	decide on 1.
 
 To decide which number is the initial outrage of (S - a mamba):

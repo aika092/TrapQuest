@@ -179,7 +179,6 @@ Chapter 2 - Blue Scrunchie
 A blue scrunchie is a kind of scrunchie. A blue scrunchie is usually cursed. blue-scrunchie-1 is a blue scrunchie. blue-scrunchie-2 is a blue scrunchie. blue-scrunchie-1 is in Dungeon27. blue-scrunchie-2 is in Hotel24. The text-shortcut of blue-scrunchie-1 is "bsc1". The text-shortcut of blue-scrunchie-2 is "bsc2". blue-scrunchie-2 is roleplay. [This is the one that is unobtainable for longer]
 Understand "blue" as a pink scrunchie.
 
-
 Figure of left blue scrunchie is the file "Items/Accessories/Head/scrunchie2a.png".
 Figure of right blue scrunchie is the file "Items/Accessories/Head/scrunchie2b.png".
 
@@ -338,7 +337,6 @@ To decide which figure-name is the clothing-image of (C - monkey-scrunchie-2):
 	decide on figure of right monkey scrunchie.
 
 Definition: a monkey scrunchie is brown themed: decide yes.
-
 
 The printed name of monkey scrunchie is usually "[clothing-title-before]monkey scrunchie[clothing-title-after]".
 The printed plural name of monkey scrunchie is usually "[clothing-title-before]monkey scrunchies[clothing-title-after]".

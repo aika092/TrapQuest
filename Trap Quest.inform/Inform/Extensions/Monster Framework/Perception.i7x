@@ -18,6 +18,7 @@ Chapter 1 - Check Perception
 
 hypno-curtsey-trigger is a number that varies.
 whore-exposing-quest is a headgear-clothing-quest.
+stealthActive is initially true.
 
 To decide which number is the stealth of the player:
 	let P be 2 + (the number of worn kimono * 2);
@@ -25,6 +26,11 @@ To decide which number is the stealth of the player:
 	if the player is prone, increase P by 2;
 	if skirt-tray-vibrator is worn, decrease P by 1;
 	decide on P.
+
+To check guaranteed perception of (M - a monster):
+	now stealthActive is false;
+	check perception of M;
+	now stealthActive is true.
 
 To check perception of (M - a monster):
 	if M is aware:
@@ -41,7 +47,7 @@ To check perception of (M - a monster):
 				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0 and M is scarable:
 				compute scared perception of M;
-			otherwise if (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
+			otherwise if stealthActive is true and (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
 				say PerceptionFail of M;
 				if the blind-status of M > 0, decrease the blind-status of M by 1;
 				distract M;
@@ -351,7 +357,7 @@ Handles a monster's reaction when they are disapproving of the player's appearan
 To compute disapproval of (M - a monster):
 	say DisapprovalFlav of M;
 	FavourDown M;
-	if M is unfriendly and M is interested:
+	if M is interested and M is unfriendly:
 		say BecomesAggressive of M.
 
 [!<ComputeCringeDisapprovalOfMonster>+
@@ -474,7 +480,7 @@ To FavourDown (M - a monster) by (N - a number) with consequences:
 	if M is alive:
 		let P be 0;
 		if M is unfriendly, now P is 1;
-		decrease the favour of M by N;
+		FavourDown M by N;
 		if P is 0 and M is unfriendly: [monster was friendly but now is unfriendly]
 			now M is interested;
 			say BecomesAggressive of M.

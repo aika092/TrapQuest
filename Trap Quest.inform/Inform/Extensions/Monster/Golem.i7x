@@ -16,14 +16,17 @@ To say MediumDesc of (M - golem):
 	say "[if artificial enhancements fetish is 1]silicone[otherwise]flesh[end if] golem".
 
 To say MonsterDesc of (M - golem):
-	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created it was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, it exudes a sense of malice.".
+	say "This blue creature superficially resembles a female form, but seems to be made out of a translucent, moist gel. You can immediately tell what whoever created [him of M] was most concerned with, as the face has only crude detail while the breasts and ass are rendered with as much perfection as can be managed in the medium. In spite of the lack of expression on the thing's face, [he of M] exudes a sense of malice.".
 
 To set up (M - golem):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 7;
+	now the raw difficulty of M is the starting difficulty of M;
 	now M is guarding;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - golem):
+	decide on 6.
 
 To compute monstermotion of (M - golem):
 	if M is unleashed:
@@ -54,7 +57,7 @@ To compute perception of (M - golem):
 	now M is interested;
 	anger M;
 	now M is unleashed;
-	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. It seems to be blocking the path forward, you'll need to deal with it to move on[or][stopping].".
+	say "The golem turns to face you almost mechanically and yet with unsettling grace[one of]. [big he of M] seems to be blocking the path forward, you'll need to deal with [him of M] to move on[or][stopping].".
 
 To compute (M - a monster) stomping (N - golem):
 	if M is in the location of the player, say "[BigNameDesc of M] holds the [N] with two powerful fists and pulls apart with impossible strength. The [N] splits into two! The pieces fall to the ground and then disappear.";
@@ -63,7 +66,7 @@ To compute (M - a monster) stomping (N - golem):
 
 The unique punishment rule of golem is usually the golem merging rule.
 This is the golem merging rule:
-	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise it isn't stopping as it moves towards you, and finally presses up against you! Its cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what it might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
+	say "You cringe on the ground as the creature approaches you. [if artificial enhancements fetish is 1]You realise [he of golem] isn't stopping as [he of golem] moves towards you, and finally presses up against you! [big his of golem] cold fluid body engulfs you for a terrible instant before suddenly vanishing! Your relief quickly turns to dread at wondering what [he of golem] might have done to you...[otherwise]The creature embraces you in its mismatched arms, and your body suddenly feels warm! A feeling of horrible dread comes over you all of a sudden and your vision blacks out for a moment. When you come too, you are alone.[end if][line break]";
 	if artificial enhancements fetish is 1:
 		if rubber top hat is off-stage and rubber top hat is actually summonable:
 			say "You're now wearing a small pink latex top hat!";
@@ -110,7 +113,7 @@ To say BanishFleeFlav of (M - golem):
 To say MuteGreetResponse of (M - golem):
 	say "The mannequin doesn't reply. It would appear to be magically animated rather than sentient.".
 
-To say MuteQuestionResponse of (M - golem):
-	say SexDollExplanation of M.
+To say MuteQuestion of (M - golem):
+	say SexDollQuestion of M.
 
 Golem ends here.

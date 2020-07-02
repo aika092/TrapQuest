@@ -55,7 +55,7 @@ To compute teaching of (L - kissing-lesson):
 		say "[if tonguedPerson is the player][teacher-name of M][']s tongue is currently in your mouth - [he of M] has control[otherwise]Your tongue is currently in [his of M] mouth - you have control[end if]. [if player-groped-level >= 0 and tonguedPerson is the player][big he of M][otherwise if player-groped-level >= 0]But [he of M] already[end if] [if player-groped-level is 0]has [his of M] hands on your [AssDesc].[otherwise if player-groped-level is 1]has one hand on your [AssDesc] and one hand on your [BreastDesc].[otherwise if player-groped-level > 1]has one hand on your [BreastDesc] and the other on your [genitals]![end if][line break]";
 		set numerical response 1 to "pull away and end the kiss[if newbie tips is 1] (have you entertained [teacher-name of teacher-angela] enough to avoid punishment?)[end if]";
 		set numerical response 2 to "keep kissing[if newbie tips is 1 and tonguedPerson is the player] ([teacher-name of teacher-angela] gets more handsy, increasing stimulation in future rounds)[end if]";
-		if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tonuge into [his of M] mouth[if newbie tips is 1 and tonguedPerson is the player] (extra stimulation and humiliation this turn to try and prevent [teacher-name of teacher-angela] from getting more handsy)[end if]";
+		if tonguedPerson is the player, set numerical response 3 to "try to regain control by pushing your tongue into [his of M] mouth[if newbie tips is 1 and tonguedPerson is the player] (extra stimulation and humiliation this turn to try and prevent [teacher-name of teacher-angela] from getting more handsy)[end if]";
 		compute multiple choice question;
 		if player-numerical-response is 1:
 			now N is 10;
@@ -64,7 +64,7 @@ To compute teaching of (L - kissing-lesson):
 			if tonguedPerson is M:
 				let RD be a random number between 1 and the dexterity of the player;
 				let RM be a random number between 1 and the difficulty of M;
-				if debuginfo > 0, say "[input-style]Tongue defence check: Dexterity (d[dexterity of the player]) = [RD] | [RM].5 [teacher-name of M] difficulty rating[roman type][line break]";
+				if debuginfo > 0, say "[input-style]Tongue defence check: Dexterity (d[dexterity of the player]) = [RD] | [RM].5 = (d[difficulty of M]) [teacher-name of M] difficulty rating[roman type][line break]";
 				say "[teacher-name of M] [one of]uses [his of M] tongue to play with yours in [his of M] mouth[or]massages your tongue with [his of M] lips[or]lets you lick [his of M] lips[or]sucks your saliva off of your tongue[at random], ";
 				if RM >= RD:
 					say "but then when [he of M] senses an opening, [he of M] manages to shove your tongue back into your mouth and take control!";
@@ -422,7 +422,7 @@ practical-lesson is a lesson. The lesson-teacher of practical-lesson is teacher-
 
 To compute teaching of (L - practical-lesson):
 	allocate 6 seconds;
-	say "[BigNameDesc of lesson-teacher of L] gently strokes [his of lesson-teacher of L] [DickDesc of lesson-teacher of L], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of lesson-teacher of L]'[one of]I think that today we should have our very first practical session together[or]It's time for another practical session, I think[stopping]. With, of course, a chance for some of you to get promoted! The rules are simple: each of you need to get in line and one by one you need to pleasure me. The person that makes me cum will get promoted, as will the slut who I think acted the filthiest. But remember, no ass-to-vag, okay? That's unhealthy.'[roman type][line break]And with that [he of lesson-teacher of L] assorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
+	say "[BigNameDesc of lesson-teacher of L] gently strokes [his of lesson-teacher of L] [DickDesc of lesson-teacher of L], and you all watch as it slowly hardens, growing even larger in size.[line break][speech style of lesson-teacher of L]'[one of]I think that today we should have our very first practical session together[or]It's time for another practical session, I think[stopping]. With, of course, a chance for some of you to get promoted! The rules are simple: each of you need to get in line and one by one you need to pleasure me. The person that makes me cum will get promoted, as will the slut who I think acted the filthiest. [if a2m fetish is 0]The special rule for today is that no anal sex is allowed[otherwise]But remember, no ass-to-vag, okay? That's unhealthy[end if].'[roman type][line break]And with that [he of lesson-teacher of L] sorts you into a random order, which ends up having you at the front. You're going to have to go first, it would seem...";
 	repeat with W running through worn wrist locking clothing:
 		say "With a click of [his of lesson-teacher of L] fingers, your [ShortDesc of W] falls to the ground.";
 		now W is in the location of the player;
@@ -448,10 +448,10 @@ To compute teaching of (L - practical-lesson):
 			if face is not actually occupied:
 				if pussy-count is 0 and ass-count is 0 and slobber-owner is the player, set numerical response 1 to "use your mouth";
 				otherwise set numerical response 1 to "use your mouth (you'll have to slurp up[if pussy-count > 1] [pussy-count] lots of vaginal juices[otherwise if pussy-count > 0] the taste of someone's pussy juice[end if][if pussy-count > 0 and ass-count > 0] and[end if][if ass-count > 1] [ass-count] lots of ass juices[otherwise if ass-count > 0] the taste of someone's butt[end if][if ass-count is 0 and pussy-count is 0] [NameDesc of slobber-owner][']s slobber[end if])";
-			if the player is female and vagina is not actually occupied and the number of worn chastity cage is 0:
+			if the player is possessing a vagina and vagina is not actually occupied and the number of worn chastity cage is 0:
 				if ass-count is 0, set numerical response 2 to "use your pussy";
 				otherwise say "You aren't allowed to use your [vagina] while there's someone else's ass juices on [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L], as that would be unhealthy.";
-			if asshole is not actually occupied, set numerical response 3 to "use your asshole";
+			if asshole is not actually occupied and a2m fetish > 0, set numerical response 3 to "use your asshole";
 			if the largeness of breasts > 5, set numerical response 4 to "use your breasts";
 			set numerical response 0 to "just use your hand";
 			compute multiple choice question;
@@ -564,8 +564,10 @@ To compute teaching of (L - practical-lesson):
 		repeat with M running through students in the location of the player:
 			if cum-countdown > 0:
 				now stimulation-level is 0;
-				if a random number between 1 and (10 + ((ass-count + ass-count + pussy-count) * 2) - the practical dirtiness of M) is 1 and M is promotable:
-					say "[BigNameDesc of M] [one of]moves [his of M] face up to[or]approaches[in random order] [NameDesc of lesson-teacher of L][']s crotch and takes [his of lesson-teacher of L] [LongDickDesc of lesson-teacher of L] into [his of M] mouth. [big he of M] [one of]audibly gags[or]chokes on the length[or]makes rather lewd glugging sounds[in random order] as [he of M] tries to get as much as possible of it into [his of M] [one of]tiny mouth[or]delicate throat[or]gullet[in random order], and [one of]slurp up[or]suck away[in random order] all the [if ass-count + pussy-count > 0]disgusting [end if]juices. After a short while of moving [his of M] head up an down, you hear [him of M] gulp as [he of M] swallows whatever is sloshing around in [his of M] mouth. [if ass-count + pussy-count > 0]After [he of M] pulls away, you see [him of M] wipe [his of M] tongue with disgust. [end if][big his of M] saliva still coats [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L].";
+				let VagChance be 9;
+				if a2m fetish is 0, now VagChance is 14;
+				if a random number between 1 and (7 + ((ass-count + ass-count + pussy-count) * 2) - the practical dirtiness of M) is 1 and M is promotable:
+					say "[BigNameDesc of M] [one of]moves [his of M] face up to[or]approaches[in random order] [NameDesc of lesson-teacher of L][']s crotch and takes [his of lesson-teacher of L] [LongDickDesc of lesson-teacher of L] into [his of M] mouth. [big he of M] [one of]audibly gags[or]chokes on the length[or]makes rather lewd glugging sounds[in random order] as [he of M] tries to get as much as possible of it into [his of M] [one of]tiny mouth[or]delicate throat[or]gullet[in random order], and [one of]slurp up[or]suck away[in random order] all the [if ass-count > 0]disgusting [end if]juices. After a short while of moving [his of M] head up an down, you hear [him of M] gulp[if a2m fetish >= 2] as [he of M] swallows whatever is sloshing around in [his of M] mouth[end if]. [if ass-count > 0]After [he of M] pulls away, you see [him of M] wipe [his of M] tongue with disgust. [end if][big his of M] saliva still coats [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L].";
 					if ass-count + pussy-count > student-filthiness:
 						now filthiest-student is M;
 						now student-filthiness is ass-count + ass-count + pussy-count;
@@ -573,11 +575,11 @@ To compute teaching of (L - practical-lesson):
 					now pussy-count is 0;
 					now slobber-owner is M;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
-				otherwise if ass-count is 0 and M is female and lady fetish < 2 and a random number between 1 and (20 - the practical dirtiness of M) <= 10:
+				otherwise if ass-count is 0 and M is female and lady fetish < 2 and a random number between 1 and (20 - the practical dirtiness of M) <= VagChance:
 					say "[BigNameDesc of M] crouches above [NameDesc of lesson-teacher of L] before carefully lowering [his of M] spread pussy onto [NameDesc of lesson-teacher of L][']s [one of]waiting shaft[or]rock hard rod[or]thick [LongDickDesc of lesson-teacher of L][in random order]. [big he of M] [one of]audibly moans as [he of M] rocks back and forth[or]goes a bit red in the face as [he of M] repeatedly rides up and down the whole length[or]hardly moves at all before [he of M] mewls in a high pitched voice and loses control of [his of M] shuddering body as [he of M] cums hard. This leaves [him of M] panting and collapsed on top of [NameDesc of lesson-teacher of L], that [LongDickDesc of lesson-teacher of L] still fully embedded inside of [him of M][or]tries to clench [his of M] vaginal muscles as [he of M] rides up and down, to make it tighter for [NameDesc of lesson-teacher of L][or]silently thrusts [his of M] hips back and forth, taking on the role of the obedient cowgirl[or]grinds down onto the [DickDesc of lesson-teacher of L] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] teacher[or]quickly gets to bouncing up and down with a steady, smooth rhythm[in random order].";
 					increase pussy-count by 1;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
-				otherwise if a random number between 1 and (20 - the practical dirtiness of M) <= 10:
+				otherwise if a2m fetish > 0 and a random number between 1 and (20 - the practical dirtiness of M) <= 10:
 					say "[BigNameDesc of M] crouches above [NameDesc of lesson-teacher of L] before [one of]carefully lowering[or]roughly impaling[or]slowly pushing[in random order] [his of M] [one of]tight little asshole[or]slightly open asshole[or]butthole[in random order] onto [NameDesc of lesson-teacher of L][']s [one of]massive beast[or]long hard shaft[or]waiting dong[in random order]. [big he of M] [one of]audibly whimpers as [he of M] moves [his of M] hips back and forth[or]holds [his of M] breath as [he of M] uses [his of M] thigh muscles to ride up and down the whole length[or]grinds up and down, forward and back for several seconds before suddenly wailing as a sudden anal orgasm wracks [his of M] entire body, causing [him of M] to collapse onto of [NameDesc of lesson-teacher of L], the still fully-hard [DickDesc of lesson-teacher of L] managing to slither its way out of [his of M] butthole with a loud slurp[or]tries to use [his of M] butt muscles to massage [NameDesc of lesson-teacher of L][']s [DickDesc of lesson-teacher of L] in an almost sensual display[or]somehow makes very loud and wet slapping noises as [his of M] butt rapidly rises and falls on top of [NameDesc of lesson-teacher of L][or]grinds down onto the [DickDesc of lesson-teacher of L] as hard as [he of M] can, clearly trying as hard as possible to pleasure [his of M] teacher with [his of M] tight butthole[or]fucks it at a good steady pace, using [his of M] arms and hands to help balance [himself of M] as [he of M] moves up and down[in random order].";
 					increase ass-count by 1;
 					increase stimulation-level by a random number between 1 and ((the practical dirtiness of M + a random number between 0 and 1) / 2);
@@ -630,6 +632,7 @@ Definition: swimming-lesson is lesson-appropriate if diaper quest is 0 and the n
 To decide which number is the swimming-strength of (M - a student):
 	decide on the dedication of M.
 
+[TODO: make this readable]
 To compute teaching of (L - swimming-lesson):
 	allocate 40 seconds;
 	now bigGameLoop is 2; [tells the game not to refresh any windows]
@@ -1075,7 +1078,7 @@ To compute lesson veto:
 		let STN be the number of students in the location of the lesson-teacher of ultimate-lesson;
 		decrease the lesson-vetos of ultimate-lesson by 1;
 		if the lesson-vetos of ultimate-lesson > 0, say "[BigNameDesc of M] growls.[line break][speech style of M]'Fine. But you only have [if the lesson-vetos of ultimate-lesson > 1][lesson-vetos of ultimate-lesson] vetos[otherwise]one veto left[end if].'[roman type][line break]";
-		otherwise say "[BigNameDesc of M] snarls.[line break][speech style of M]'That's your last one, cunt. The next time you disobey us, you [if STN > 1]and all your little slut friends [otherwise if STN is 1]and your slut friend [end if]will have failed your initiation.";
+		otherwise say "[BigNameDesc of M] snarls.[line break][speech style of M]'That's your last one, [cunt]. The next time you disobey us, you [if STN > 1]and all your little slut friends [otherwise if STN is 1]and your slut friend [end if]will have failed your initiation.";
 	otherwise:
 		now the lesson-completed of ultimate-lesson is -1.
 
@@ -1083,7 +1086,7 @@ An ultimate-lesson-actor is a kind of monster. An ultimate-lesson-actor is male.
 To say ShortDesc of (M - an ultimate-lesson-actor):
 	say "voice".
 To say MediumDesc of (M - an ultimate-lesson-actor):
-	say "[if lady fetish is 1]wo[end if]manly voice".
+	say "[man of M]ly voice".
 To say FuckerDesc of (M - an ultimate-lesson-actor):
 	say "the [FuckingDesc of M]".
 To say BigFuckerDesc of (M - an ultimate-lesson-actor):
@@ -1096,7 +1099,7 @@ To say MonsterDesc of (M - an ultimate-lesson-actor):
 To compute action (N - a number) of (M - an ultimate-lesson-actor):
 	if M is in a predicament room and M is penetrating face:
 		if a random number between 1 and 3 > 1:
-			say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holding [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
+			say "[one of]You bob your head up and down, [if the humiliation of the player < 10000]eyes screwed shut in shame[otherwise if the sex addiction of the player < 10]eyes closed[otherwise]looking up at the art of the fireman's hunky body[end if] as you submissively polish [his of M] shaft[or]You make [if the oral sex addiction of the player < 4]quiet[otherwise if the oral sex addiction of the player < 6]distinct[otherwise]exaggerated[end if] slurping noises as you suck [FuckerDesc of M][']s cock, [if the oral sex addiction of the player < 3]determined to get this over and done with as soon as possible[otherwise if the oral sex addiction of the player < 5]determined to get [him of M] off as soon as possible[otherwise]determined to get [him of M] shooting off in your mouth as soon as possible[end if][or][BigFuckerDesc of M] thrusts back and forth through the gloryhole to complement the [if the oral sex addiction of the player > 5]enthusiastic [otherwise if the oral sex addiction of the player < 4]slow [end if]bobbing of your head[or][BigFuckerDesc of M] holds [himself of M] completely still, [if the sex addiction of the player < 7]forcing[otherwise if the oral sex addiction of the player < 6]encouraging[otherwise]allowing[end if] you to do all the work[or][BigFuckerDesc of M] grunts in pleasure as your tongue runs over the head of [his of M] [manly-penis][or][BigFuckerDesc of M] chuckles to [himself of M] as you submissively pleasure [his of M] [manly-penis] with your mouth[in random order][if current-predicament is gloryhole-predicament]. [one of]You can't stop thinking about how everything is being recorded, and your cheeks burn.[or][stopping][otherwise].[end if]";
 		otherwise:
 			BlowCount;
 			if M is wrapped:
@@ -1106,9 +1109,10 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 					increase the used condoms of lycra-bodysuit by 1;
 				dislodge M;
 				now M is not wrapped;
-			otherwise if current-predicament is nun-walk-predicament and player-gagging is false:
+			otherwise if [current-predicament is nun-walk-predicament and ]player-gagging is false:
 				say "[BigFuckerDesc of M] grunts as [he of M] fills your mouth with [his of M] salty load.";
 				FaceFill semen by the semen load of M;
+				if current-predicament is gloryhole-predicament, suggest swallowing;
 			otherwise: [Deepthroat cumshot]
 				compute deepthroat creampie of M;
 			if current-predicament is gloryhole-predicament:
@@ -1116,7 +1120,7 @@ To compute action (N - a number) of (M - an ultimate-lesson-actor):
 				if id-poster is in Toilet01 and the remainder after dividing the cocks-sucked of gloryhole-predicament by 2 is 0, say "[speech style of M]'[one of]Thanks a lot[or]Good job[in random order], [NameBimbo].'[line break][variable custom style][one of]'Wait what?! How do you know my name?!'[or]How does [he of M] know my name?! What can [he of M] see on [his of M] side of the wall?![stopping][roman type][line break]";
 				say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[line break][variable custom style]That's [cocks-sucked of gloryhole-predicament] down[if the cocks-sucked of gloryhole-predicament is 1]. I could go retrieve my key now, but unless I suck four more [manly-penis]s, the CCTV footage of what I just did will be uploaded to the internet and sent to my friends...[otherwise if the cocks-sucked of gloryhole-predicament < 5]...[otherwise]. I'm done![end if][roman type][line break]";
 			otherwise:
-				say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].";
+				say "With [one of]an ashamed[or]a satisfied[or]a giddy[purely at random] noise, [NameDesc of M] pulls [his of M] [manly-penis] back through the hole and quickly [one of]leaves[or]makes [himself of M] scarce[or]flees the scene[in random order].[if current-predicament is nun-walk-predicament and the semen volume of face < 4 and the semen volume of face > 0][line break][variable custom style]I've got some cum now... but is it enough to make sure I still have some left if I accidentally lose some on the way home?[roman type][line break][end if]";
 			destroy M.
 To say FriendlySexResistFlav of (M - an ultimate-lesson-actor):
 	say "[if the player is able to make sounds][variable custom style][muffled sounds][roman type][line break][end if]";
@@ -1170,6 +1174,18 @@ To say DeepthroatCreampie of (M - an ultimate-lesson-actor):
 		say "Without warning, [one of][FuckerDesc of M] tightens [his of M] grip, hissing through [his of M] teeth as [he of M] cums straight down your throat.[or][FuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[in random order]";
 	otherwise:
 		say DefaultDeepthroatCreampie of M.
+To compute (M - an ultimate-lesson-actor) attacking (C - a clothing):
+	if C is crotch-zipped:
+		say UnzipFlav of M at C;
+		ZipDown C;
+	otherwise if the chosen-orifice of M is breasts and C is actually top-displacable:
+		compute M topdisplacing C;
+	otherwise if C is displacable:
+		compute M displacing C;
+	otherwise if C is rippable:
+		compute M ripping C;
+	otherwise:
+		compute M destroying C.
 To compute sudden objectification of (M - an ultimate-lesson-actor):
 	do nothing.
 To compute condom request choice of (M - an ultimate-lesson-actor):
@@ -1180,7 +1196,7 @@ To say CondomPinFlav of (M - an ultimate-lesson-actor) on (C - a clothing):
 	if M is awake, say "[BigNameDesc of M] ties the used condom to your [ShortDesc of C].";
 	otherwise say "Completely of its own accord, the used condom suddenly zips from [NameDesc of M] and flies through the air until it hits your [ShortDesc of C].".
 To compute labour to (M - an ultimate-lesson-actor):
-	say DefaultBirthScene.
+	if M is alive, say DefaultBirthScene. [Dead fathers are automatically handled in fatherhood of M, so if we allowed this while the monster was off-stage the pregnancy flavour would be output twice.]
 
 To compute tongue demand of (M - an ultimate-lesson-actor):
 	say "[BigNameDesc of M] in front of you gives you an order.[line break][speech style of M]'Hold out your tongue.'[roman type][line break]Do you obey?";
@@ -1204,15 +1220,16 @@ To compute tongue demand of (M - an ultimate-lesson-actor):
 			FacePiss from M;
 		otherwise if a random number between 1 and 2 is 1:
 			let ST be a random student in the location of the lesson-teacher of ultimate-lesson;
-			if ST is monster and a random number between 1 and 2 is 1:
+			if ST is monster and a2m fetish >= 2 and a random number between 1 and 2 is 1:
 				say "You hear [NameDesc of ST] yelp as [he of ST] is dragged towards you, and then [his of ST] asshole is pushed against your tongue. [NameDesc of M] barks an order at [him of ST].[line break][speech style of M]'Go on [student-name of ST], give [NameBimbo] what [he of the player] is asking for.'[roman type][line break][BigNameDesc of ST] mutters a muted apology as [he of ST] pushes out a fresh anal creampie onto your tongue. [BigNameDesc of M] laughs with a vindictive tone and then says just one word to you.";
 			otherwise:
 				say "You hear a satisfied grunt, and then ropes of salty [semen] splash onto your [if bukkake fetish is 1]face and [end if]tongue.";
 				if bukkake fetish is 1, CumFaceUp 3;
+			FaceFill semen by 2;
 			say "[speech style of M]'Swallow.'[roman type][line break]Do you obey?";
 			if the player is bimbo consenting:
 				say "You obediently swallow the load on your tongue.";
-				StomachSemenUp 2;
+				compute silent swallowing;
 			otherwise:
 				say "You make a disgusted sound and spit it out onto the floor.";
 				compute lesson veto;
@@ -1228,7 +1245,7 @@ To compute tongue demand of (M - an ultimate-lesson-actor):
 
 To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 	let ST be a random student in the location of the lesson-teacher of ultimate-lesson;
-	if ST is student and a random number between 1 and 2 is 1 and face is actually occupied:
+	if ST is student and a2m fetish >= 2 and a random number between 1 and 2 is 1 and face is actually occupied:
 		say "You hear a squeak from [NameDesc of ST] and then you feel [his of ST] lips pressed against your [asshole]. [BigNameDesc of M] that recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Feed [him of ST] my creampie.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
 			say "You screw your eyes shut even tighter and let it rip, filling [NameDesc of ST][']s mouth with your anal load. You hear [him of M] [one of]moan submissively[or]mewl in complaint[at random] and then gulp it all down.";
@@ -1239,16 +1256,17 @@ To compute anal creampie expel demand of (M - an ultimate-lesson-actor):
 		say "You feel something cold and hard pushed against your buttcheeks. [BigNameDesc of M] who recently pulled out of your [asshole] gives you an order.[line break][speech style of M]'Push it out now, slut.'[roman type][line break]Do you obey?";
 		if the player is bimbo consenting:
 			say "You let it rip, filling whatever's behind you with your [if belly liquid types > 1]ass juices[otherwise]ass-cum[end if].";
-			if face is not actually occupied:
-				say "Moments later you find the vessel pressed against your lips.[line break][speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]Do you obey?";
-				if the player is bimbo consenting:
-					FaceFill semen by the semen volume of belly;
-					FaceFill urine by the urine volume of belly;
-					progress quest of creampie-drinking-quest;
-				otherwise:
-					compute lesson veto;
-			otherwise if ST is student:
-				say "[speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]You hear [NameDesc of ST] whimper as [he of ST] is made to gulp down your anal excretion.";
+			if a2m fetish >= 2:
+				if face is not actually occupied:
+					say "Moments later you find the vessel pressed against your lips.[line break][speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]Do you obey?";
+					if the player is bimbo consenting:
+						FaceFill semen by the semen volume of belly;
+						FaceFill urine by the urine volume of belly;
+						progress quest of creampie-drinking-quest;
+					otherwise:
+						compute lesson veto;
+				otherwise if ST is student:
+					say "[speech style of M]'Drink up now, you little cum-whore.'[roman type][line break]You hear [NameDesc of ST] whimper as [he of ST] is made to gulp down your anal excretion.";
 			empty belly liquids;
 		otherwise:
 			compute lesson veto.
@@ -1262,15 +1280,16 @@ To compute anal torture of (M - an ultimate-lesson-actor):
 		say "[one of]You expect it to begin fucking you, but instead[or]Once again instead of a thrusting motion[stopping] you feel your belly begin to fill from the inside. [big he of M][']s using your asshole as [his of M] urinal! By the time [he of M] finishes and pulls out, you are feeling very full of [urine].";
 		AssFill 12 with urine;
 		dislodge M;
-	otherwise if the number of entries in LST > 1 and face is not actually occupied:
+	otherwise if the number of entries in LST > 1 and face is not actually occupied and a2m fetish > 0:
 		sort LST in random order;
 		let ST1 be entry 1 of LST;
 		let ST2 be entry 2 of LST;
 		say "[speech style of M]'Human centipede time, bitches!'[roman type][line break]You squeak with surprise as [NameDesc of ST1][']s asshole is pressed against your [LipDesc], while at the same time you hear [NameDesc of ST2] mewl with hesitation as [his of ST2] mouth gets forced against your [asshole]. [if the number of entries in LST > 3]The others make similar noises as you are all arranged in a line, mouth-to-asshole.[otherwise if the number of entries in LST is 3][BigNameDesc of entry 3 of LST] makes a similar noise as [he of entry 3 of LST] is face-planted between [NameDesc of ST2][']s buttcheeks.[end if][line break][speech style of M]'Well don't just sit there, start licking!'[roman type][line break]You shiver with arousal as [NameDesc of ST2] begins to probe your [asshole] with [his of ST2] tongue. Do you do the same?";
 		if the player is bimbo consenting:
-			say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed. [severeHumiliateReflect]";
-			if the semen volume of belly + the urine volume of belly > 0:
-				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing and gagging.";
+			if a2m fetish >= 2, say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare, and the strong tangy flavours of [semen][if the urine volume of belly > 0], [urine][end if] and ass begin to make you feel a bit light headed. [severeHumiliateReflect]";
+			otherwise say "You push your tongue as deep into [NameDesc of ST1][']s chute as you dare. [strongHumiliateReflect]";
+			if a2m fetish >= 2 and the semen volume of belly + the urine volume of belly > 0:
+				say "Then, all of a sudden, you and the other students all begin squeaking in panic at the same time. Your tormentors have begun to tickle each of you at the ribs, and push on your bellies! There's nothing you can do in time to stop what happens next - each of you explodes, filling the mouth of the [boy of ST2] behind you with [semen][if the urine volume of belly > 0] and [urine][end if]. The room fills with the sound of squirting, swallowing, and gagging.";
 				FaceFill semen by the semen volume of belly;
 				FaceFill urine by the urine volume of belly;
 				empty belly liquids;
@@ -1344,7 +1363,7 @@ An all time based rule (this is the ultimate diamond lesson rule):
 			decrease the lesson-completed of ultimate-lesson by 1;
 			let E be a random eligible ultimate-fetish-object;
 			repeat with M running through ultimate-lesson-actors:
-				if delayed fainting is 0 and the lesson-completed of ultimate-lesson >= 0:
+				if delayed fainting is 0 and the lesson-completed of ultimate-lesson >= 0 and the player is in DiamondLessonBlindfolded: [i think some weird stuff with 'compute extra turn' could cause half of this to happen after the lesson is supposed to be concluded unless we check the location]
 					if M is penetrating a body part or a random number between 1 and 6 < the lesson-completed of ultimate-lesson: [Earlier turns are more likely to just be sex]
 						compute attack of M;
 					otherwise if E is ultimate-fetish-object and a random number between 1 and 8 is 1:
@@ -1416,7 +1435,7 @@ Part - AMICABLE STUDENTS
 
 Book - Rosie
 
-student-rosie is a amicable student.
+student-rosie is an amicable student.
 
 The text-shortcut of student-rosie is "stro".
 
@@ -1442,7 +1461,7 @@ To decide which number is the starting difficulty of (M - student-rosie):
 	decide on 8 + the current-rank of M.[She's farm tough!]
 
 To say StoryAnswer of (M - student-rosie):
-	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's [if lady fetish is 2]son[otherwise]daughter[end if]. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too! All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best slut school in all of Bimbacia won't let me down!'[roman type][line break]".
+	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's [if lady fetish is 2]son[otherwise]daughter[end if]. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] flirts with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em horny too! All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best [slut school] in all of Bimbacia won't let me down!'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-rosie):
 	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said an['] it never hurt me none!'[roman type][line break]".
@@ -1452,7 +1471,7 @@ To compute teaching of (M - student-rosie):
 
 Book - Tiana
 
-student-tiana is a amicable student.
+student-tiana is an amicable student.
 
 The text-shortcut of student-tiana is "stti".
 
@@ -1481,14 +1500,14 @@ To update name of (M - student-tiana):
 		now the student-print of M is "titanic titted tart".
 
 To say StoryAnswer of (M - student-tiana):
-	say "[speech style of M]'I first came here because my boobs were tiny and while I wanted a boob-job, I knew I would feel self-conscious once I got my new puppies. Slut School is helping me to feel braver and braver each day, meaning I feel daring enough to show off more and more of these massive puppies!'[roman type][line break]".
+	say "[speech style of M]'I first came here because my boobs were tiny and while I wanted a boob-job, I knew I would feel self-conscious once I got my new puppies. [slut school] is helping me to feel braver and braver each day, meaning I feel daring enough to show off more and more of these massive puppies!'[roman type][line break]".
 
 To say AdviceAnswer of (M - student-tiana):
 	say "[speech style of M]'[one of]It's really hard to get around on your knees when you have tits as big as these puppies. Try to stay on your feet!'[or]You don't always have to wear a bra that fits. Sometimes it only matters that you're close enough.'[at random][roman type][line break]".
 
 Book - Minnie
 
-student-minnie is a amicable student.
+student-minnie is an amicable student.
 
 The text-shortcut of student-minnie is "stmn".
 
@@ -1525,7 +1544,7 @@ To compute teaching of (M - student-minnie):
 
 Book - Christi Lynn
 
-student-christi is a amicable student.
+student-christi is an amicable student.
 
 The text-shortcut of student-christi is "stch".
 
@@ -1721,7 +1740,7 @@ To say StoryAnswer of (M - student-winnie):
 	say "[speech style of M]'My husband and I have always role played situations where he's my pimp and I'm his dirty hooker. But now we thought, why not try it for real? But if I'm going to do this, I want to do it in a safe controlled environment first. So that's why I'm here.'[roman type][line break]".
 
 To say WhereAnswer of (M - student-winnie):
-	say "[speech style of M]'[if the rank of the player <= 1]We're in Slut School, obviously! Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
+	say "[speech style of M]'[if the rank of the player <= 1]We're in [slut school], obviously! Not for the faint-hearted, that's for sure. I hope I'm daring enough to go through with this...'[otherwise]I imagine the sluttier we act, the more brownie points we'll earn with the professors.'[end if][roman type][line break]".
 
 To decide which number is the heel-skill of (M - student-winnie):
 	decide on -2.
@@ -1949,7 +1968,7 @@ To say WhoAnswer of (M - student-katya):
 	say "[speech style of M]'[if the current-rank of M < 4]You are to address me as ['][student-name of M]['], should I allow you to talk to me,[otherwise][student-name of M]['] because the only important thing about me is my[end if] [if lady fetish is 2]asshole[otherwise][cunt][end if].'[roman type][line break]".
 
 To say WhereAnswer of (M - student-katya):
-	if the rank of the player is 1, say "[speech style of M]'[if the current-rank of M < 4]We're in a pathetic excuse for an institution that tries to turn people from dominant divas into worthless whimpering worms. But only if you're so weak that you can't resist their techniques[otherwise]It would take a very weird set of events for me to be a domesticated fuckdoll but for you to be rank one. How very unusual. Aika would be very interested to know how that happened. I, err, I mean, welcome to my favourite place, Slut School[end if].'[roman type][line break]";
+	if the rank of the player is 1, say "[speech style of M]'[if the current-rank of M < 4]We're in a pathetic excuse for an institution that tries to turn people from dominant divas into worthless whimpering worms. But only if you're so weak that you can't resist their techniques[otherwise]It would take a very weird set of events for me to be a domesticated fuckdoll but for you to be rank one. How very unusual. Aika would be very interested to know how that happened. I, err, I mean, welcome to my favourite place, [slut school][end if].'[roman type][line break]";
 	otherwise say "[speech style of M]'[if the current-rank of M < 4]You've got to make it seem like you're falling for their tricks. But if you're not an idiot, you'll only be pretending[otherwise]Submit to the cock. Worship the cock. Serve the cock. And then if you're lucky, the school will reward you with more cock[end if].'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-katya):
@@ -2152,10 +2171,10 @@ To say WhereAnswer of (M - student-rain):
 	say "[speech style of M]'You've got to be proud of [if the current-rank of M > 3]how much you love[otherwise]your skill with a[end if] [manly-penis]! And then others will be proud of you!'[roman type][line break]".
 
 To say EscapeAnswer of (M - student-rain):
-	say "[speech style of M]'More people who you can [if lady fetish is 2]bend over for[otherwise if the current-rank of M > 3]spread your cunt for[otherwise]show off your cunt to[end if], of course!'[roman type][line break]".
+	say "[speech style of M]'More people who you can [if lady fetish is 2]bend over for[otherwise if the current-rank of M > 3]spread your [cunt] for[otherwise]show off your [cunt] to[end if], of course!'[roman type][line break]".
 
 To compute teaching of (M - student-rain):
-	say "[speech style of M]'[if lady fetish < 2]This is a cunt. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
+	say "[speech style of M]'[if lady fetish < 2]This is a [cunt]. [end if]This is a butthole. This is a mouth. [if the current-rank of M > 4]They're the only important things about people like me and you[otherwise]It's important that people like you and me get very used to using them for their intended purposes[end if].'[roman type][line break]".
 
 Book - Ferrari
 

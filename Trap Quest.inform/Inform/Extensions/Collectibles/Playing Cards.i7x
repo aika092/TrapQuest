@@ -25,7 +25,7 @@ Report taking pack of playing cards when the player is in Dungeon07:
 	compute poker table hypno.
 
 To compute poker table hypno:
-	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is female or tg fetish > 0):
+	if diaper quest is 0 and hypno-trigger-pussy is 0 and (the player is possessing a vagina or tg fetish > 0):
 		now hypno-trigger-pussy is 1;
 		say "Your eyes continuously drawn to the drawings of the lewdly exposed vaginas that circle the table. As your gaze shifts around the table, the pussies flick in and out of your peripheral vision. You feel almost entranced by the way they're so... daringly on display, open and inviting! The words 'pussy' and 'cunt' consume your inner thoughts...".
 

@@ -38,16 +38,16 @@ To decide which number is the total felchable volume of (F - vagina): [man I lov
 
 [Can it be accessed right now with nothing blocking it?]
 Definition: vagina is undefended:
-	if vagina is actually occupied or the player is pussy protected or the player is male, decide no;
+	if vagina is actually occupied or the player is pussy protected or the player is not possessing a vagina, decide no;
 	decide yes.
 
 Definition: vagina is exposed:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the at least partial concealer of vagina is a thing, decide no;
 	decide yes.
 
 Definition: vagina is at least partially exposed:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the concealer of vagina is a thing, decide no;
 	decide yes.
 
@@ -111,7 +111,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the vagina doesn't exist rule:
-	if the player is male:
+	if the player is not possessing a vagina:
 		if auto is 0, say "You don't have a vagina.";
 		rule fails.
 The vagina doesn't exist rule is listed in the vagina presentable rules.
@@ -164,6 +164,15 @@ How much does the player want this body part to be used?
 +!]
 To decide which number is the desire of (B - vagina):
 	decide on the vaginal sex addiction of the player.
+
+[!<PlayerIsPossessingVagina>+
+
+REQUIRES COMMENTING
+
++!]
+Definition: yourself is possessing a vagina:
+	if the openness of vagina > -1, decide yes;
+	decide no.
 
 Part 2 - Description
 
@@ -487,7 +496,7 @@ To PussyEmpty (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the semen volume of vagina > 0, decrease the semen volume of vagina by 1;
-	cancel father material of vagina.
+	[cancel father material of vagina.][Should really only happen if we use the WombEmpty function]
 
 [!<PussySquirtX>+
 
@@ -507,7 +516,7 @@ To WombEmpty (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the womb volume of vagina > 0, decrease the womb volume of vagina by 1;
-	cancel father material of vagina. [If the womb is empty, we forget the list of things that have jizzed inside it]
+	if the womb volume of vagina is 0, cancel father material of vagina. [If the womb is empty, we forget the list of things that have jizzed inside it]
 
 [!<WombSquirtX>+
 
@@ -659,8 +668,9 @@ To compute womb egg laying:
 			let E be a random available small egg;
 			if E is egg:
 				now E is in the location of the player;
-				if the pregnancy of the player is 3 or a random number between 1 and 5 is 1, now E is laid;
-				if the pregnancy of the player is 3, now the hatching of E is a random number between 100 and 130;
+				now E is laid;
+				if a random number between 1 and 5 is 1, now the hatching of E is 1;
+				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				if the remainder after dividing small egg count of vagina by 3 is 0: [1 ruin for 3 eggs]
 					now E is penetrating vagina;
 					ruin vagina;
@@ -670,8 +680,9 @@ To compute womb egg laying:
 			let E be a random available medium egg;
 			if E is egg:
 				now E is in the location of the player;
-				if the pregnancy of the player is 3 or a random number between 1 and 5 is 1, now E is laid;
-				if the pregnancy of the player is 3, now the hatching of E is a random number between 100 and 130;
+				now E is laid;
+				if a random number between 1 and 5 is 1, now the hatching of E is 1;
+				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				if the remainder after dividing medium egg count of vagina by 2 is 0: [1 ruin for 2 eggs]
 					now E is penetrating vagina;
 					ruin vagina;
@@ -681,8 +692,9 @@ To compute womb egg laying:
 			let E be a random available large egg;
 			if E is egg:
 				now E is in the location of the player;
-				if the pregnancy of the player is 3 or a random number between 1 and 5 is 1, now E is laid;
-				if the pregnancy of the player is 3, now the hatching of E is a random number between 100 and 130;
+				now E is laid;
+				if a random number between 1 and 5 is 1, now the hatching of E is 1;
+				if the pregnancy of the player is 3 and a random number between 1 and 4 is 1, now the hatching of E is a random number between 100 and 130;
 				now E is penetrating vagina;
 				ruin vagina;
 				dislodge E;

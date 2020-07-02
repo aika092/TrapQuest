@@ -92,7 +92,7 @@ To compute action (N - a number) of (M - a facehugger):
 						say "It pumps your [vagina] full of inhuman [semen]!";
 						pussyfill SL;
 				otherwise:
-					if egg laying fetish is 1:
+					if egg laying fetish is 1 and super gag reflex < 2:
 						say "It pumps your stomach full of eggs and inhuman [semen]! Your throat doesn't handle having eggs forced down it very well, and as soon as [NameDesc of M] pulls out, you puke it all up.";
 						increase the stomach-semen of the player by 1;
 						follow the player pukes rule;

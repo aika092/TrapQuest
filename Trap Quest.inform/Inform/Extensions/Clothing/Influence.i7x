@@ -27,7 +27,7 @@ To set up sex-based influence of (C - a clothing):
 	if diaper quest is 0:
 		let R be a random number between 1 and 6;
 		if R is 1, now C is anal-sex-addiction-influencing;
-		if R is 2 and the player is female, now C is vaginal-sex-addiction-influencing;
+		if R is 2 and the player is possessing a vagina, now C is vaginal-sex-addiction-influencing;
 		if R is 3, now C is oral-sex-addiction-influencing;
 		if R is 4 and max breast size > 7, now C is titfuck-addiction-influencing;
 		if R is 5, now C is semen-addiction-influencing.

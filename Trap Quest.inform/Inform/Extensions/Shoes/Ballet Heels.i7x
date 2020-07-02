@@ -7,6 +7,7 @@ The printed name of ballet heels is usually "[clothing-title-before]pair of [clo
 There is 1 ballet heels.
 
 Definition: a ballet heels is black themed: decide yes.
+Definition: a ballet heels is calf covering: decide yes.
 
 To decide which figure-name is the clothing-image of (H - a ballet heels):
 	decide on the figure of ballet heels.

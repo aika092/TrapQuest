@@ -32,7 +32,7 @@ To uniquely set up (C - a demon tail plug):
 To compute periodic effect of (C - a demon tail plug):
 	if demon horns is actually summonable and a random number between 1 and (50 - unlucky * 10 ) is 1:
 		summon demon horns;
-		say "[bold type]You feel your hair parting as a pair of felt horns materialise on your head![line break][variable custom style]This feels like a halloween costume.[roman type][line break]".
+		say "[bold type]You feel your hair parting as a pair of felt horns materialise on your head![line break][variable custom style]This feels like a Halloween costume.[roman type][line break]".
 
 Definition: a demon tail plug is demonic: decide yes.
 Definition: a demon tail plug is red themed: decide yes.

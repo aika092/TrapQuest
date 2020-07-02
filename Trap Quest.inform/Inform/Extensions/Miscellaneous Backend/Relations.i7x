@@ -5,13 +5,11 @@ The verb to cover (he covers, they cover, he covered, it is covered, he is cover
 
 [Monsters and sometimes objects can "grab" the player. This is generally a defeat state for the player, as their actions are restricted due to them being immobile.]
 Grabbing relates various things to one person.
-The verb to grab (he grabs, they grab, he grabbed, it is grabbed, he is grabbing) implies the grabbing relation.[TODO: alternate grabbing relation that doesn't necessarily prevent the player from attacking]
+The verb to grab (he grabs, they grab, he grabbed, it is grabbed, he is grabbing) implies the grabbing relation.
 
-
-[Monsters can sometimes "grab" the player but not completely immobilize them. This is an incomplete form of the grabbing relation.]
-Wrangling relates various things to one person.
+[Monsters can sometimes "grab" the player's body parts, but not completely immobilize them. This is an incomplete form of the grabbing relation.]
+Wrangling relates various things to various body parts.
 The verb to wrangle (he wrangles, they wrangle, he wrangled, it is wrangled, he is wrangling) implies the wrangling relation.
-
 
 [Monsters and sometimes objects can penetrate the player's body parts. Once a monster is penetrating a body part, the player is generally in a defeat state and must wait for the monster to finish. Body parts can usually only be penetrated by one thing at a time.]
 Filling relates various things to various body parts.
@@ -37,5 +35,10 @@ The verb to disapprove (he disapproves, they disapprove, he disapproved, it is d
 [Indicates that something has "active sperm" inside the player, and is almost always a requirement for making the player pregnant. The second part of this relation should really only be a vagina.]
 Inseminating relates various things to various things.
 The verb to inseminate (he inseminates, they inseminate, he inseminated, it is inseminated, he is inseminating) implies the inseminating relation.
+
+[Built in relation: Holding. Indicates that something is in the player's inventory. Stacks with wearing.
+Holding relates one person to various things.
+The verb to carry (he carries, they carry, he carried, it is carried, he is carrying) implies the holdingrelation.
+]
 
 Relations ends here.

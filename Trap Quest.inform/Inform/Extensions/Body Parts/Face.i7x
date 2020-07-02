@@ -120,7 +120,7 @@ REQUIRES COMMENTING
 +!]
 [This is the too much dignity to present face rule:
 	if the humiliation of the player < HUMILIATION-PROUD + 2000 and debugmode < 1:
-		if (the vaginalvirgin of the player is 0 and the player is female) or (the analvirgin of the player is 0 and the player is male): [virgins can always attempt to preserve their virginity]
+		if (the vaginalvirgin of the player is 0 and the player is possessing a vagina) or (the analvirgin of the player is 0 and the player is not possessing a vagina): [virgins can always attempt to preserve their virginity]
 			if auto is 0, say "You have too much self respect to do that!";
 			rule fails.
 The too much dignity to present face rule is listed in the face presentable rules.]
@@ -131,10 +131,10 @@ REQUIRES COMMENTING
 
 +!]
 This is the too horny to present face rule:
-	if the orifice soreness of the player < 7 and the analvirgin of the player is 0 and the player is horny and (the vaginalvirgin of the player is 0 or the player is male): [This way females can always present mouth to avoid virginity loss, and all players can present mouth to avoid anal virginity loss]
+	if the orifice soreness of the player < 7 and the analvirgin of the player is 0 and the player is horny and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina): [This way females can always present mouth to avoid virginity loss, and all players can present mouth to avoid anal virginity loss]
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
 			if the player is very horny:
-				if auto is 0, say "You are too aroused and your [if the player is male][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
+				if auto is 0, say "You are too aroused and your [if the player is not possessing a vagina][asshole] is[otherwise][vagina] and [asshole] are[end if] begging to be fucked; you can't bring yourself to do that!";
 				rule fails.
 The too horny to present face rule is listed in the face presentable rules.
 
@@ -287,7 +287,7 @@ To say MakeUpDesc:
 	if the make-up of face is 2, say "is covered in a large amount of make-up,[one of] giving you a face that demands attention[or] drawing attention to your face[purely at random]";
 	if the make-up of face is 3:
 		if diaper quest is 1:
-			if permanent makeup is 1, say "is covered in heavy kawai make-up with white hearts on the cheeks and is fixed in a vacant expression";
+			if permanent makeup is 1, say "is covered in heavy kawaii make-up with white hearts on the cheeks and is fixed in a vacant expression";
 			otherwise say "is smothered in overdone make-up, which looks like it was done by a three-year-old";
 		otherwise:
 			say "is smothered in overdone make-up, which [one of]gives you an almost doll-like face[or]encourages men to treat you like a slut[or]most men would take as a signal that you're an easy lay[or]is begging for all the [if the bimbo of the player < 12]wrong[otherwise][line break][second custom style]right[roman type][line break][end if] sorts of attention[or]makes you look like a total [whore][purely at random]".
@@ -325,6 +325,7 @@ To FaceUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the make-up of face < 3, increase the make-up of face by 1;
+	if the make-up of face > the previous make-up of face, progress quest of make-up-quest;
 	update appearance level.
 
 [!<FaceDownX>+
@@ -556,7 +557,7 @@ An all later time based rule (this is the do we puke rule):
 			if T is monster, decrease the throating of T by 1.
 
 To check puking (N - a number):
-	if player-gagging is false and the latex-transformation of the player < 5: [if player-gagging is true then we're already guaranteed to try and puke]
+	if player-gagging is false and the latex-transformation of the player < 5 and super gag reflex is 0: [if player-gagging is true then we're already guaranteed to try and puke]
 		let X be the raw intelligence of the player / 2; [If we used other calculated intelligence ratings, arousal and soreness would have too much of an impact]
 		if debuginfo > 0, say "[input-style]Puke resist check: base (5) + raw intelligence rating ([X]) ";
 		increase X by 10;
@@ -583,13 +584,13 @@ To check puking (N - a number):
 player-gagging is initially false.
 
 To compute puking:
-	if the latex-transformation of the player < 5:
+	if the latex-transformation of the player < 5 and super gag reflex is 0:
 		now another-turn is 1;
 		now player-gagging is true;
 		add the player pukes rule to another-turn-rules, if absent.
 
 [A throater tends to be down the player's throat when penetrating face, blocking puking entirely.]
-Definition: a thing is throater: decide no
+Definition: a thing is throater: decide no.
 
 This is the player pukes rule:
 	if the latex-transformation of the player >= 5:
@@ -646,7 +647,7 @@ This is the player pukes rule:
 						Squirt milk On Breasts By S;
 						reset soak flavour;
 			otherwise:
-				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable cascade of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][L][end if] flows out of your mouth and onto the floor.";
+				say "Your stomach retches. A [if N < 3]small amount of[otherwise if N < 6]decently voluminous quantity of[otherwise]veritable [cascade] of[end if] [if L is murkwater]a mixture of bodily fluids[otherwise][L][end if] flows out of your mouth and onto the floor.";
 				cutshow Figure of Oral Creampie Cutscene 6 for face;
 				PuddleUp semen by S;
 				PuddleUp urine by U;
@@ -671,12 +672,11 @@ An all time based rule (this is the player gets used to the taste rule):
 		let A be tasteAddictionFlatInterval + (the semen taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
 			SemenTasteAddictUp 1;
+			progress quest of mouthful-quest;
 	if the milk volume of face > 0:
 		let A be tasteAddictionFlatInterval + (the milk taste addiction of the player * tasteAddictionInterval);
 		if the remainder after dividing time-earnings by A < time-seconds:
 			MilkTasteAddictUp 1.
-
-
 
 Section - Image for graphics window
 

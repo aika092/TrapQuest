@@ -35,7 +35,7 @@ REQUIRES COMMENTING
 +!]
 To decide which number is the flat bimbo of the player:
 	let S be 0;
-	if the player is male, now S is (the anal sex addiction of the player + the oral sex addiction of the player) / 2;
+	if the player is not possessing a vagina, now S is (the anal sex addiction of the player + the oral sex addiction of the player) / 2;
 	otherwise now S is (the anal sex addiction of the player + the vaginal sex addiction of the player + the oral sex addiction of the player) / 3;
 	let B be (the semen addiction of the player + (the sex addiction of the player * 2) + S + the raw heel skill of the player + the delicateness of the player) / 5;
 	repeat with C running through worn wearthings:

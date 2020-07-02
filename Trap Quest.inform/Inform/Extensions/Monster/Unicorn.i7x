@@ -60,7 +60,7 @@ To compute labour to (M - unicorn):
 To set up (M - unicorn):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 10;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 [This is the spawn potential unicorn rule:
@@ -356,7 +356,7 @@ To ride dominate (M - unicorn):
 	say "[BigNameDesc of M] yelps as you shove [him of M] to the ground and straddle [him of M]. [PowerBottomComment of M] [big his of M] cheeks redden as you pull [his of M] [LongDickDesc of M] out of [his of M] panties.";
 	let B be 0;
 	if breasts is lewdly exposed or the player is pheromonal or the number of glazed body parts > 0, now B is 1;
-	say "[line break][speech style of M]'No matter how[if the size of penis > 7]...hung[otherwise if B is 1]...eye-catching[otherwise]...powerful[end if] you are, I am spoken for. Please, if you spare me, I promise I can heal you.'[roman type][line break][if the times-submitted of M > 0][line break][variable custom style][big he of M] sure didn't seem spoken for when [he of M] was fucking me...[roman type][line break][end if]Do you let [him of M] go?";
+	say "[line break][speech style of M]'No matter how[if the size of penis > 7]...hung[otherwise if B is 1]...eye-catching[otherwise]...powerful[end if] you are, I am spoken for. [big please], if you spare me, I promise I can heal you.'[roman type][line break][if the times-submitted of M > 0][line break][variable custom style][big he of M] sure didn't seem spoken for when [he of M] was fucking me...[roman type][line break][end if]Do you let [him of M] go?";
 	if the player is consenting:
 		say "[BigNameDesc of M][']s horn glows bright blue, and a wave of relief passes through your body.";
 		if fudge-poison-timer > 0, now fudge-poison-timer is 1;
@@ -376,7 +376,7 @@ To anal ride dominate (M - unicorn):
 	if the class of the player is princess or the class of the player is succubus or demon lord is mating:[If the unicorn hates you]
 		say "[line break][speech style of M]'I knew it! You want to ruin me for [him of demon lord]! I-I'll never cum for the likes of you!'[roman type][line break][BigNameDesc of M] shrieks, [his of M] shaft twitching excitedly as you slide it into your [asshole]. [if the girth of M < the openness of asshole - 2][big his of M] girth leaves a lot to be desired, which of course makes [his of M] little 'declaration' even more annoying[otherwise][big his of M] girth perfectly fills you up without stretching you out too much, which makes [his of M] little declaration that much more annoying[end if]. You decide to take it as a challenge, [if the player is able to speak]kissing [him of M] roughly as you begin to ride [him of M]. [big his of M] [DickDesc of M] responds with a very appreciative throb as you force your tongue into [his of M] mouth, and you can feel [his of M] heart racing as [he of M] struggles not to moan[otherwise]roughly tearing open [his of M] dress as you begin to ride [him of M]. [big his of M] [DickDesc of M] responds with an appreciative throb as you tweak [his of M] exposed nipples, and the flush on [his of M] cheeks deepens as [he of M] struggles not to moan[end if]. However, [he of M] refuses to break, and as you pour ever more effort into making [him of M] cum, you're the one who starts to feel the strain. You find yourself moaning every few breaths, your hard [ShortDesc of penis] tapping audibly against [his of M] belly as you vigorously fuck yourself with [his of M] shaft, but still--[he of M] refuses to break. A smug look creeps across [his of M] features as [he of M] realises you've hit your limit, and your [if the intelligence of the player < 8]dim [end if]mind goes into overdrive trying to think of a way to wipe that look off [his of M] face. [line break][variable custom style][if R <= 0]Um...I can't think of anything!'[roman type][line break]You simply can't focus when you're this close to orgasm, and you feel your internal muscles tightening up as they embrace the inevitable.[otherwise]I bet [he of M]'d cum if I put my finger in [his of M] ass. Although, it would definitely mean [he of M]'s going to creampie me.'[roman type][line break]Do you go for [his of M] ass?[end if]";
 		if R > 0 and the player is bimbo consenting:
-			say "[if M is wrapped]Knowing the condom will protect you anyway[otherwise]Deciding a creampie is worth it[end if], you reach between [his of M] legs and immediately jam your finger up [his of M] ass.[line break][speech style of M]'W- What are you d-doing? T-that's my-AH! AAAH! UUUUAAAAAH!'[roman type][line break][BigNameDesc of M] wildly bucks [his of M] hips, no longer able to contain [his of M] moans as [his of M] [LongDickDesc of M] begins to spasm. You feel an incredible wave of satisfaction as [if M is wrapped]the condom finally fills with [his of M] load[otherwise][his of M] load finally shoots into your [asshole][end if], your last moan coming out as a laugh as [if the size of penis is 0]you reach a climax of your own[otherwise if the size of penis < 3 or there is a worn chastity cage]your own load dribbles out on [his of M] belly[otherwise]your load spurts out on [his of M] belly[end if] a few seconds later.";
+			say "[if M is wrapped]Knowing the condom will protect you anyway[otherwise]Deciding a creampie is worth it[end if], you reach between [his of M] legs and immediately jam your finger up [his of M] ass.[line break][speech style of M]'W- What are you d-doing? T-that's my-AH! AAAH! UUUUAAAAAH!'[roman type][line break][BigNameDesc of M] wildly bucks [his of M] hips, no longer able to contain [his of M] moans as [his of M] [LongDickDesc of M] begins to spasm. You feel an incredible wave of satisfaction as [if M is wrapped]the condom finally fills with [his of M] load[otherwise][his of M] load finally shoots into your [asshole][end if], your last moan coming out as a laugh as [if the player is not possessing a penis]you reach a climax of your own[otherwise if the size of penis < 3 or there is a worn chastity cage]your own load dribbles out on [his of M] belly[otherwise]your load spurts out on [his of M] belly[end if] a few seconds later.";
 			orgasm;
 			if M is unwrapped:
 				AssFill the semen load of M;
@@ -390,7 +390,7 @@ To anal ride dominate (M - unicorn):
 			now player-fucking is DOMINANT-SHAMEFUL;
 			say AfterDominationComment 4 of M;
 	otherwise:
-		say "[line break][speech style of M]'W-well, I'm not even turned on anyway!'[roman type][line break][BigNameDesc of M] blurts, [his of M] shaft twitching excitedly as you line it up with your [asshole]. [if the intelligence of the player > 10]You smirk at [his of M] terrible lie as you lower yourself onto [his of M] shaft, gently fucking yourself as you theatrically fondle your tits[otherwise]You have no reason to disbelieve [him of M], so you don't bother being dramatic, gently tweaking your nipples as you begin to fuck yourself with [his of M] shaft[end if]. [big he of M] bites [his of M] lip, and [his of M] eyes glue themselves to your [if the largeness of breasts >= 6]ample[otherwise]petite[end if] chest as stifled moans leak out of [his of M] mouth. You can feel [his of M] [DickDesc of M] throb inside of you as you continue to play with your breasts, and [if the intelligence of the player <= 10]you start thinking of a a way to somehow turn [him of M] on. Unfortunately, it's too difficult, so you decide to simply relax and enjoy yourself. You sigh as you lay down on top of [him of M], allowing [his of M] head to rest[otherwise]you come up with the perfect idea to turn [him of M] on even more. With a dramatic sigh, you lay down on top of [him of M], grinning at [him of M] as you press [his of M] head[end if] [if the largeness of breasts < 6]against your chest[otherwise]between your tits[end if].[line break][speech style of M]'Huh!? Wh-...What are you-...I...I-I'm...I- I'M GONNA CUM!'[roman type][line break][BigNameDesc of M] bucks hips as [his of M] shaft begins to rapidly spasm, and you're left with only a few seconds to react. [if R > 0 and M is unwrapped]If you stop now, you might be able to avoid a creampie, but you'd probably lose out on your chance to cum. Do you want to stop?[end if]";
+		say "[line break][speech style of M]'W-well, I'm not even turned on anyway!'[roman type][line break][BigNameDesc of M] blurts, [his of M] shaft twitching excitedly as you line it up with your [asshole]. [if the intelligence of the player > 10]You smirk at [his of M] terrible lie as you lower yourself onto [his of M] shaft, gently fucking yourself as you theatrically fondle your tits[otherwise]You have no reason to disbelieve [him of M], so you don't bother being dramatic, gently tweaking your nipples as you begin to fuck yourself with [his of M] shaft[end if]. [big he of M] bites [his of M] lip, and [his of M] eyes glue themselves to your [if the largeness of breasts >= 6]ample[otherwise]petite[end if] chest as stifled moans leak out of [his of M] mouth. You can feel [his of M] [DickDesc of M] throb inside of you as you continue to play with your breasts, and [if the intelligence of the player <= 10]you start thinking of a way to somehow turn [him of M] on. Unfortunately, it's too difficult, so you decide to simply relax and enjoy yourself. You sigh as you lay down on top of [him of M], allowing [his of M] head to rest[otherwise]you come up with the perfect idea to turn [him of M] on even more. With a dramatic sigh, you lay down on top of [him of M], grinning at [him of M] as you press [his of M] head[end if] [if the largeness of breasts < 6]against your chest[otherwise]between your tits[end if].[line break][speech style of M]'Huh!? Wh-...What are you-...I...I-I'm...I- I'M GONNA CUM!'[roman type][line break][BigNameDesc of M] bucks hips as [his of M] shaft begins to rapidly spasm, and you're left with only a few seconds to react. [if R > 0 and M is unwrapped]If you stop now, you might be able to avoid a creampie, but you'd probably lose out on your chance to cum. Do you want to stop?[end if]";
 		if R > 0 and M is unwrapped and the player is reverse bimbo consenting:
 			say "You immediately stand up off [him of M], very narrowly missing the first salvo of [semen] as it spurts out of [his of M] [DickDesc of M] and falls in an arc across [his of M] belly.";
 			now player-fucking is DOMINANT-NEUTRAL;
@@ -401,7 +401,7 @@ To anal ride dominate (M - unicorn):
 			say AfterDominationComment 6 of M;
 		otherwise:
 			let C be a random worn chastity cage;
-			say "[if R <= 5]You don't have enough time to think about stopping, and before you can make your decision[otherwise if M is unwrapped]You decide you'd rather keep going, and in the moment you make your decision[otherwise]You don't bother thinking about it, and a moment later[end if], you feel several spurts of [semen] [if M is wrapped]shooting into the condom[otherwise]shooting out inside you[end if]. Satisfaction fills your chest as you milk [him of M] down to [his of M] last drop, finally standing up when [his of M] softening [DickDesc of M] slips out of your [asshole]. [line break][speech style of M]'T-this is all your fault! I told you I- Mmnf!'[roman type][line break]You cut [him of M] off by immediately sitting on [his of M] face, grinding [if there is a worn chastity cage]your cage[otherwise if the size of penis is 0]yourself[otherwise]your [ShortDesc of penis][end if] against [his of M] horn as [his of M] load seeps out of you. The slight stimulation is just enough to push you over the edge, and you groan happily as [if the size of penis is 0]climax finally wracks your body[otherwise if C is clothing or the size of penis < 3]your [semen] dribbles out on [his of M] face[otherwise]your [semen] arcs paints [his of M] forehead[end if].";
+			say "[if R <= 5]You don't have enough time to think about stopping, and before you can make your decision[otherwise if M is unwrapped]You decide you'd rather keep going, and in the moment you make your decision[otherwise]You don't bother thinking about it, and a moment later[end if], you feel several spurts of [semen] [if M is wrapped]shooting into the condom[otherwise]shooting out inside you[end if]. Satisfaction fills your chest as you milk [him of M] down to [his of M] last drop, finally standing up when [his of M] softening [DickDesc of M] slips out of your [asshole]. [line break][speech style of M]'T-this is all your fault! I told you I- Mmnf!'[roman type][line break]You cut [him of M] off by immediately sitting on [his of M] face, grinding [if there is a worn chastity cage]your cage[otherwise if the player is not possessing a penis]yourself[otherwise]your [ShortDesc of penis][end if] against [his of M] horn as [his of M] load seeps out of you. The slight stimulation is just enough to push you over the edge, and you groan happily as [if the player is not possessing a penis]climax finally wracks your body[otherwise if C is clothing or the size of penis < 3]your [semen] dribbles out on [his of M] face[otherwise]your [semen] arcs paints [his of M] forehead[end if].";
 			orgasm M;
 			FavourDown M by 1;
 			orgasm;
@@ -452,7 +452,7 @@ To penetration dominate (M - unicorn):
 	let C be a random bottom level protection clothing;
 	say "[BigNameDesc of M] squirms as you grab [him of M] by the wrists and wrestle [him of M] to the ground. The horn on [his of M] forehead somehow catches your eye, and you realise you're slipping into some sort of trance. However, [his of M] wriggling jars you out of your daze, and you avoid any further distractions by immediately tearing off [his of M] panties and forcing [his of M] knees up over [his of M] head.[line break][speech style of M]'[one of]H-How dare you hold me in such a position. Release me. R-right now. I swear I'll...'[or]W-what are you planning on doing to me? This is...'[or]W-what are you doing? Don't you know I'm betrothed? Release...'[at random][roman type][line break][big he of M] trails off as you [if C is not strapon-panties and C is clothing]pull your [SexDesc of penis] out of your pants[otherwise if sexual-penis-length > 3]grind your [SexDesc of penis] between [his of M] cheeks[otherwise]line up your [SexDesc of penis] with [his of M] entrance[end if]";
 	if sexual-penis-length > 8:
-		if the times-seeded of M < 1, say "[line break][speech style of M]'Wait. Even if you are...v-very hung, I am already betrothed. Please, I'll even strengthen some of your items if you spare me!'[roman type][line break][big he of M] says that, but [his of M] [DickDesc of M] looks pretty hard already. Do you really want to spare [him of M] instead?";
+		if the times-seeded of M < 1, say "[line break][speech style of M]'Wait. Even if you are...v-very hung, I am already betrothed. [big please], I'll even strengthen some of your items if you spare me!'[roman type][line break][big he of M] says that, but [his of M] [DickDesc of M] looks pretty hard already. Do you really want to spare [him of M] instead?";
 		otherwise say "[line break][speech style of M]'W-wait! S-surely you wouldn't fuck a bride...never mind. A strong, hung person like you will obviously claim me without remorse. B-but if you don't claim me, I'll strengthen some of your items in return.'[roman type][line break][big he of M] says that, but [his of M] [DickDesc of M] looks pretty hard already. Do you really want to spare [him of M] instead?";
 		if the player is consenting:
 			Calm M;
@@ -472,7 +472,7 @@ To penetration dominate (M - unicorn):
 			now player-fucking is DOMINANT-SUPER;
 			say AfterDominationComment 2 of M;
 	otherwise if sexual-penis-length > 3:
-		if the times-seeded of M < 1, say "[line break][speech style of M]'W-wait. My arse is the property of the demon lord. I c-cannot disrespect [him of M] by allowing you to claim me. Please...I'll even strengthen some of your items!'[roman type][line break][big he of M] says that, but anticipation is clearly written all over [his of M] face. Do you really want to spare [him of M] instead?";
+		if the times-seeded of M < 1, say "[line break][speech style of M]'W-wait. My arse is the property of the demon lord. I c-cannot disrespect [him of demon lord] by allowing you to claim me. [big please]...I'll even strengthen some of your items!'[roman type][line break][big he of M] says that, but anticipation is clearly written all over [his of M] face. Do you really want to spare [him of M] instead?";
 		otherwise say "[line break][speech style of M]'W-wait! If you claim my arse again...s-surely it could incur the wrath of the demon lord. I promise I'll strengthen some of your items if you reconsider!'[roman type][line break][big he of M] says that, but anticipation is clearly written all over [his of M] face. Do you really want to spare [him of M] instead?";
 		if the player is consenting:
 			Calm M;
@@ -491,7 +491,7 @@ To penetration dominate (M - unicorn):
 			increase the times-seeded of M by 1;
 			say AfterDominationComment 2 of M;
 	otherwise:
-		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is male and lady fetish is not 1 and transGender is 0]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
+		say "[line break][speech style of M]'Stop, you can't do that. My arse belongs to the demon lord. Surely [if the player is gendered male and lady fetish is not 1]a fellow sissy[otherwise]someone[end if] like you can understand that.'[roman type][line break]Do you want to fuck [him of M] anyway?";
 		if the player is consenting:
 			Calm M;
 			let H be a random held clothing;
@@ -536,8 +536,7 @@ To say AnnoyedResponse of (M - unicorn):
 
 To compute annoyed punishment of (M - unicorn):
 	say "[line break][speech style of M]'SHUT UUUUUP!'[roman type][line break][BigNameDesc of M][']s horn spews hot sparks as [he of M] shrieks with rage. The sparks pop like firecrackers on contact with your skin!";
-	DelicateUp 1;
-	ApplyFullConvoFatigue to M.
+	DelicateUp 1.
 
 To say InvitationAccepted of (M - unicorn) with (N - a monster):
 	say "[speech style of M]'[one of]A-as long as you're willing.'[or]W-well, since you put it like that...'[or]O-oh, it's really OK?'[at random][roman type][line break]".
@@ -575,16 +574,9 @@ To say FirstResponse of (M - unicorn):
 To say RepeatResponse of (M - unicorn):
 	say FirstResponse of M.
 
-To compute annoyance of (M - unicorn):
-	if M is unfriendly:
-		say "[speech style of M]'Sh-sh-shhh! There are other matters you need to attend to right now.'[roman type][line break]";
-	otherwise:
-		say "[BigNameDesc of M] ignores you.".
-
 To compute teaching of (M - unicorn):
 	say "[speech style of M]'I would never do this, of course, but have you ever considered simply admitting your own inferiority and begging for mercy? Who knows, it might even turn them on!'[roman type][line break]";
-	teach begging for mercy;
-	HeavyConvoFatigue M.
+	teach begging for mercy.
 
 To say WhereAnswer of (M - unicorn):
 	say "[speech style of M]'Does it matter? This place is nothing without a master to rule over it.'[roman type][line break]".

@@ -24,12 +24,12 @@ To say MonsterDesc of (M - hellhound):
 	if mythical creature fetish is 1:
 		say "This huge black canine is as tall as you even when [he of M]'s on all fours. [big his of M] spiked tail, sharp fangs and elongated claws are dead give-aways that [he of M] is from another plane[if a random pet collar is off-stage][big he of M] holds a collar and leash in [his of M] mouth, as if [he of M]'s looking for someone to take [him of M] on a walk, or more likely, a pet of [his of M] own to lead around! [end if][big he of M] stares at you with glowing red eyes, letting you know that a keen intelligence lies hidden behind the bestial mask.";
 	otherwise:
-		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] average sized [DickDesc of M] is completely visible, adorned with a black cock ring near the base[end if].".
+		say "This [man of M] has black bondage items keeping [his of M] arms and legs fully bent, forcing [him of M] to crawl along on [his of M] elbows and knees. [big he of M] seems pretty happy though, and you can make out a joyous and playful expression behind [his of M] fetish hood. [if diaper quest is 1]A thick black diaper covers [his of M] rear[otherwise]Naked just like a real animal, [he of M][']s completely naked and [his of M] faintly red skin and average sized [DickDesc of M] are completely visible. A black cock ring is situated near the base of [his of M] shaft.[end if].".
 
 To set up (M - hellhound):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 7;
+	now the raw difficulty of M is the starting difficulty of M;
 	if mythical creature fetish is 0, now M is intelligent;
 	now the health of M is the maxhealth of M.
 
@@ -42,8 +42,9 @@ To decide which number is the girth of (M - hellhound):
 	if M is knotted, decide on 10;
 	decide on 4.
 
-Definition: hellhound (called M) is controlling: [Will it grab onto subduing clothing e.g. a clitoris lead?]
-	decide yes.
+Definition: hellhound is controlling: decide yes. [Will it grab onto subduing clothing e.g. a clitoris lead?]
+
+Definition: hellhound is reactive: decide no. [Will it react to things it sees the player do?]
 
 Definition: hellhound is willing to do oral: decide no.
 
@@ -91,34 +92,23 @@ To say SummoningFlav of (M - hellhound):
 	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with [his of M] teeth as the portal closes, and the mummy slowly returns to its feet.";
 	say "You hear a chilling howl in the distance.".
 
-Definition: a hellhound (called M) is father material:
-	if the player is a august 2019 top donator, decide yes;
-	decide no.
-
-[For some reason the 'father material' thing was commented out, and I didn't see this, so I've commented it for now.
-###MG of the future: My guess is that this was commented out due to the new UK. laws? That's the only explanation that comes to mind for me.
+Definition: a hellhound is father material if the player is the donator and mythical creature fetish is 1.
 
 To say PregGrowth of (M - hellhound):
-	say "the [ShortDesc of M]";
+	if mythical creature fetish is 1, say "the hellhound's brood";
+	otherwise say "the demon spawn".
 
+[Cut down on a lot of "puppy" and "doggy" usage and replaced it with "mutant" or "demon". If this isn't acceptable, then the minotaur isn't acceptable either.]
 To compute labour to (M - hellhound):
-	if M is not alive or M is regional:
-		compute pregnancy clothing displacement;
-		if mythical creature fetish is 1, say "[PregFlav][one of]You are [if the bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a wet black nose poke its way out of your [vagina], followed by a canine head and body. The tiny puppy that has just emerged from your womb is clearly infernal even in its infant state, with its jet black fur and blood red eyes. [if the bimbo of the player < 15][line break][variable custom style]How is this even possible?![otherwise][line break][second custom style]I'm a breeding bitch for a demon dog... what an honour![end if][roman type][line break]Your cervix continues to painfully dilate and spasm as another pup begins its journey into the [if the intelligence of the player < 7]real[otherwise]virtual[end if] world, beginning to yap with a high pitched voice as soon as it has taken its first breath of air[or][stopping]. Your giant belly slowly shrinks as puppy after puppy emerge. All in all, you give birth to [one of][or]another [stopping][one of]twelve demonic canine babies[or]litter of eleven infernal pups[or]ten small but loud demon puppies[or]nine little demon doggies[at random]. [one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'children', [if the bimbo of the player < 15]unable to believe that what just happened really happened[otherwise]unsure how you're expected to care for so many at once. You only have two teats[end if]![or]You catch your breath as a weird sense of a job well done washes over you.[stopping][line break][if the father is in the location of the player]The [father][otherwise if M is alive]The [father] appears almost as if on cue! It[otherwise]A ghostly apparition of the hellhound appears from thin air! It[end if] howls loudly, almost like a wolf, and all the puppies copy their father. A rift appears in the air, and [one of]what looks like a portal to another plane[or]the inter-planar portal once again[stopping] opens in front of you. Your canine spawn jump through the shimmering portal, one by one, until they have all disappeared into the murky abyss. After the last one has departed from this dimension, the portal closes. [BigNameDesc of M] takes one final incomprehensible look at you, before [if M is alive]beginning to wander away[otherwise]fading away[end if].";
-		otherwise say DefaultBirthScene;
-		if the father is in the location of the player:
-			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
-			StrengthUp 1;
-			DexUp 1;
-			IntUp 1;
+	if mythical creature fetish is 1:
+		if M is not alive or M is regional:
+			let birthsex be a random number between 1 and 2;
+			say "[PregFlav][one of]You are [if bimbo of the player < 13]horrified[otherwise]enthralled[end if] as you see a wet, black nose poke its way out of your [vagina], followed by a canine head and a tiny human body. The mutant [if birthsex is 1]son[otherwise]daughter[end if] that has just emerged from your womb is clearly infernal even in [if birthsex is 1]his[otherwise]her[end if] infant state, with blood red eyes and jet black fur covering [if birthsex is 1]his[otherwise]her[end if] little head, hands and feet.[if the bimbo of the player < 15][line break][variable custom style]How is this even possible?![otherwise][line break][second custom style]I'm a breeding bitch for a demon... what an honour![end if][roman type][line break]Your cervix continues to painfully dilate and spasm as another 'pup' begins its journey into the [if the intelligence of the player < 7]real[otherwise]virtual[end if] world, beginning to yap with a high pitched voice as soon as it has taken its first breath of air[or][stopping]. Your giant belly slowly shrinks as you give birth to [one of][or]another [stopping][one of]twelve demonic babies[or]litter of eleven infernal babies[or]ten small but loud demon babies[or]nine little demon babies[at random].[one of]You gaze with [if the bimbo of the player < 13]terror[otherwise]wonder[end if] at your 'children', [if the bimbo of the player < 15]unable to believe that what just happened really happened[otherwise]unsure how you're expected to care for so many at once[end if]![or]You catch your breath as a weird sense of a job well done washes over you.[stopping][line break][if the father is in the location of the player]The [father][otherwise if M is alive]The [father] appears almost as if on cue! It[otherwise]A ghostly apparition of the hellhound appears from thin air! It[end if] howls loudly, almost like a wolf, and all the children copy their father. A rift appears in the air, and [one of]what looks like a portal to another plane[or]the inter-planar portal once again[stopping] opens in front of you. Your mutated spawn jump through the shimmering portal, one by one, until they have all disappeared into the murky abyss. After the last one has departed from this dimension, the portal closes. [BigNameDesc of M] takes one final incomprehensible look at you, and you could swear [he of M] muttered something like 'thank you' before [if M is alive]beginning to wander away[otherwise]fading away[end if].";
+		otherwise:
+			Delay Labour;
 	otherwise:
-		Delay Labour.]
+		compute infernal birth.
 
-To say PregGrowth of (M - hellhound):
-	say "the demon spawn".
-
-To compute labour to (M - hellhound):
-	compute infernal birth.
 
 To compute fatherhood to (M - hellhound):
 	distract M.
@@ -477,7 +467,7 @@ To compute punishment of (P - hellhound-facesit):
 				cutshow figure of puppy cutscene 4 for M;
 			ruin vagina.
 
-The hellhound continue sex rules is a rulebook. The continue sex rules of an hellhound is usually the hellhound continue sex rules.
+The hellhound continue sex rules is a rulebook. The continue sex rules of a hellhound is usually the hellhound continue sex rules.
 
 This is the hellhound extra continue sex check rule:
 	follow the check normal continue sex stuff rule;
@@ -514,25 +504,43 @@ To say BanishFleeFlav of (M - hellhound):
 
 Part - Conversation
 
-To compute greeting response of (M - hellhound):
-	if M is unintelligent:
-		say MuteGreetResponse of M;
-	otherwise:
-		say "[speech style of M]'[one of]Arf[or]Woof[or]Ruff[or]Woof woof[in random order]!'[roman type][line break]".
+Definition: hellhound is fluff-question-appropriate: decide no.
 
-To compute talk option (N - 2) to (M - hellhound):
-	if M is unintelligent:
-		say MuteQuestionResponse of M;
-	otherwise:
-		say WhoQuestion of M;
-		compute greeting response of M.
+To compute conventional response of (M - hellhound):
+	say "[speech style of M]'[one of]Arf[or]Woof[or]Ruff[or]Woof woof[in random order]!'[roman type][line break]".
+To compute vanity response of (M - hellhound):
+	compute conventional response of M.
 
-To compute talk option (N - 3) to (M - hellhound):
-	say DrinkRequest of M;
-	compute greeting response of M.
+To compute teaching of (M - hellhound):
+	compute conventional response of M.
 
-To compute talk option (N - 4) to (M - hellhound):
-	say FoodRequest of M;
-	compute greeting response of M.
+To compute friendly drink of (M - hellhound):
+	compute conventional response of M.
+To compute unfriendly drink of (M - hellhound):
+	compute conventional response of M.
+
+To compute friendly food of (M - hellhound):
+	compute conventional response of M.
+To compute unfriendly food of (M - hellhound):
+	compute conventional response of M.
+
+To compute unfriendly dismissal of (M - hellhound):
+	compute conventional response of M.
+
+To consider (T - talk-mute-question) for (M - hellhound): [Player can always ask this question]
+	now the printed name of T is the substituted form of "[MuteQuestion of M]";
+	set next numerical response to the substituted form of "[printed name of T]".
+
+To say MuteResponse of (M - hellhound):
+	if M is intelligent, say "[speech style of M]'[DogPetName] is an adult [man of M], but [DogPetName] only talks and acts like a dog because [DogPetName] is a good puppy slave for [literalMistress of vampiress]!'[roman type][line break]";
+	otherwise say "The response comes telepathically.[line break][speech style of M]'Yes I am sentient. Yes I am of sexual [maturity]. No I am not an actual canine from your world, this is simply the form I take in your realm. No more questions.'[roman type][line break]".
+
+To consider (T - talk-who-question) for (M - hellhound):
+	if M is interested and M is intelligent:
+		now the printed name of T is the substituted form of "[WhoQuestion of M]";
+		set next numerical response to the substituted form of "[printed name of T]".
+
+To say WhoAnswer of (M - hellhound):
+	say "[speech style of M]'[DogPetName]! Woof!'[roman type][line break]".
 
 Hellhound ends here.

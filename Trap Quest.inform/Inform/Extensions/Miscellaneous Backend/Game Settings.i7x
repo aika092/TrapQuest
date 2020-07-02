@@ -89,6 +89,7 @@ choice
 0 [combat-visor-hidden]
 1 [map-figures]
 15 [maximumMenuSize]
+1 [areYouSure]
 
 [!<DecideWhichNumberIsTextDelay>+
 
@@ -474,8 +475,8 @@ Table of Game Settings
 title	subtable	description	toggle
 "Restore a Save File (to guarantee windows are the right size or if this crashes, try Quick Start followed by 'restore')"	--	--	load game rule
 "[if earnings is starting-earnings and the player is in Start]Normal Start (choose all your options, read prologue)[otherwise]Confirm Settings[end if] (shortcut: Q)"	--	--	quit rule
-"Quick Start [if halloween content is 1]- disabled because halloween content is enabled (disable this in Normal Start > Seasonal Content)[otherwise](use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
-"Quick RANDOM Start [if halloween content is 1]- disabled because halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
+"Quick Start [if halloween content is 1]- disabled because Halloween content is enabled (disable this in Normal Start > Seasonal Content)[otherwise](use same player choices as last time, skip prologue)[end if]"	--	--	quick start rule
+"Quick RANDOM Start [if halloween content is 1]- disabled because Halloween content is enabled[otherwise](randomise everything that isn't set to [']never['] or [']always['], skip prologue)[end if]"	--	--	random start rule
 "Tutorial (learn how to play the game)"	--	--	tutorial start rule
 "Game Difficulty: [if game difficulty is 0]EASIEST[otherwise if game difficulty is 1]EASY[otherwise if game difficulty is 2]NORMAL[otherwise if game difficulty is 3]HARD[otherwise if game difficulty is 4]HARDER[otherwise]GET FUCKED[end if] (+[game difficulty * 10] points to your score at the end of the game)"	--	--	game difficulty rule
 "Maximum menu rows: [maximumMenuSize + 1]"	--	--	maximumMenuSize toggle rule
@@ -671,6 +672,7 @@ title	subtable	description	toggle
 "Automatically attempt standing after tripping (not including combat): [if autostand is 1]ON[otherwise]OFF[end if]"	--	--	autostand toggle rule
 "Automatically pick up items: [if autotake is 2]ON[otherwise if autotake is 1]ONLY NON-EDIBLES[otherwise]OFF[end if]"	--	--	autotake toggle rule
 "Warn if entering trapped room: [if trap warning is 1]ON[otherwise]OFF[end if]"	--	--	trap warning toggle rule
+"Ask 'are you sure' for common mistakes: [if areYouSure is 1]ON[otherwise]OFF[end if]"	--	--	areYouSure toggle rule
 
 [!<TheAutosearchToggleRule>+
 
@@ -716,7 +718,7 @@ title	subtable	description	toggle
 "[InventoryFocusLimitOptions]"	--	--	inventoryFocusLimit toggle rule
 "Character Window: [if side images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if side images is 1]SMALLEST[otherwise if side images is 2]SMALL[otherwise if side images is 3]MEDIUM[otherwise if side images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	side images toggle rule
 "Map Window: [if map images is 0]OFF[otherwise if GUI layout is 0]ON[otherwise if map images is 1]SMALLEST[otherwise if map images is 2]SMALL[otherwise if map images is 3]MEDIUM[otherwise if map images is 4]LARGE[otherwise]LARGEST[end if]"	--	--	map images toggle rule
-"Icons for nearby NPCs on Map Window (causes a bit of lag): [if map-figures is 1]ENABLED[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
+"Icons for nearby NPCs on Map Window (causes a bit of lag): [if map-figures is 1]ENABLED[otherwise if the player is not the donator]BETA TESTERS ONLY FOR NOW[otherwise]DISABLED[end if]"	--	--	map-figures toggle rule
 "Save and Restore buttons[if SaveLoadPreference is 1] (these still won't show if you've chosen roguelike saving): ON[otherwise]: OFF[end if]"	--	--	SaveLoadPreference toggle rule
 "[if GUI layout is 1]Inline Image Cutscenes[otherwise]Keep all cutscene images in lower display bar[end if]: [if image cutscenes is 0]NO CUTSCENES[otherwise if GUI layout is 0 and image cutscenes is 1]NO[otherwise]YES[end if]"	--	--	image cutscenes toggle rule
 "Animated graphical elements: [if animationsEnabled is 1]ON[otherwise]OFF[end if]"	--	--	animationsEnabled toggle rule
@@ -1059,7 +1061,7 @@ This is the combat visor hidden toggle rule:
 		now choice in row 54 of Table of Settings is 0.
 
 To decide which number is map-figures:
-	if the player is not an october 2019 top donator and the player is not an october 2019 diaper donator, decide on 0;
+	if the player is not the donator, decide on 0;
 	decide on choice in row 55 of Table of Settings.
 
 This is the map-figures toggle rule:
@@ -1081,9 +1083,20 @@ This is the maximumMenuSize toggle rule:
 	if CM < maximumMenuSize, now current menu scroll is the number of filled rows in the current menu - maximumMenuSize; [autoscroll back up so that we're showing as many rows as possible]
 	if current menu scroll < 1, now current menu scroll is 1.
 
+To decide which number is areYouSure:
+	decide on choice in row 57 of Table of Settings.
+
+This is the areYouSure toggle rule:
+	if areYouSure is 0:
+		increase choice in row 57 of Table of Settings by 1;
+	otherwise:
+		now choice in row 57 of Table of Settings is 0.
+
 Part - Settings
 
 SettingsSetting is an action applying to nothing.
+Check SettingsSetting:
+	if the player is not virtual, say "You need to start the virtual reality machine before you can access its settings!" instead.
 Carry Out SettingsSetting:
 	kill all animations;
 	repeat with W running through g-window:

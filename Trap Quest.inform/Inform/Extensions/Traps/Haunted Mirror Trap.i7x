@@ -52,7 +52,7 @@ To trigger (Y - a haunted mirror trap):
 	now the reset-timer of Y is 250.
 
 To compute turn trap effect of (T - a haunted mirror trap):
-	if resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling the player is 0:
+	if resting is 0 and mirror-triggered is 0 and wanking is 0 and player-urinating is 0 and mirror-delayed is 0 and the player is not immobile and the number of things wrangling a body part is 0:
 		say "[bold type]The mirror in this room tries to grab your focus[one of] with some kind of demonic power[or][stopping]![roman type][line break]";
 		compute mirror.
 
@@ -89,7 +89,7 @@ To compute resolution of (X - mirror forced masturbation):
 	let K be a random worn top level protection clothing;
 	say "Your reflection moves [if the largeness of breasts < 4 and the size of penis < 7 and the player is male]his[otherwise]her[end if] hand down to your [if K is clothing][ShortDesc of K] and begins rubbing enthusiastically[otherwise if the player is male][player-penis] and begins stroking gleefully[otherwise][vagina] fingering [himself of the player] gleefully[end if]. [one of]It's a very weird feeling, being mind controlled and being forced to watch it. [or][stopping]";
 	if the player is not a bit horny:
-		say "[if the player is male]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
+		say "[if the player is possessing a penis]Your [player-penis] soon reaches full mast as your arousal quickly builds[otherwise]Your arousal quickly builds as your arm breaks into a steady rhythm[end if]. ";
 		now the arousal of the player is 5000;
 		update arousal;
 	say "Your own face [one of][or]once again [stopping]turns into a lewd grin in front of you, seemingly controlling not only your actions but your thoughts.";

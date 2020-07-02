@@ -101,7 +101,9 @@ choice
 0 [strongCurses]
 0 [transGender]
 0 [halloween content]
-0 [realisticHands]
+0 [realisticArms]
+0 [super gag reflex]
+0 [a2m fetish]
 
 [!<DecideWhichNumberIsOriginalPlayerGender>+
 
@@ -406,6 +408,27 @@ Definition: a person is a flatchested trap:
 	if the player is male and max breast size <= 1, decide yes;
 	decide no.
 
+To decide which number is super gag reflex:
+	if diaper quest is 1, decide on 0;
+	if choice in row 82 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on choice in row 82 of the Table of Player Options.
+
+To decide which number is a2m fetish:
+	if diaper quest is 1, decide on 0;
+	if choice in row 83 of the Table of Player Options <= 0, decide on 0;
+	otherwise decide on choice in row 83 of the Table of Player Options / 2.
+This is the a2m fetish toggle rule:
+	if choice in row 83 of the Table of Player Options < 5, increase choice in row 83 of the Table of Player Options by 1;
+	otherwise now choice in row 83 of the Table of Player Options is 0.
+This is the a2m fetish nightmare rule:
+	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is 5.
+The a2m fetish nightmare rule is listed in the nightmare mode rules.
+This is the a2m fetish random rule:
+	if the remainder after dividing choice in row 83 of the Table of Player Options by 2 is 1, now choice in row 83 of the Table of Player Options is ((a random number between 0 and 2) * 2) + 1.
+The a2m fetish random rule is listed in the random mode rules.
+To decide which number is a2m fetish points:
+	decide on choice in row 83 of the Table of Player Options.
+
 Part - Options Menus
 
 [!<tableOfKinkOptions:Table>*
@@ -466,6 +489,7 @@ To decide which number is positive points count:
 	increase X by natural blondeness;
 	increase X by natural brightness;
 	increase X by starting body shape * 2;
+	increase X by a2m fetish * 2;
 	decide on X.
 
 [!<DecideWhichNumberIsDiaperPoints>+
@@ -515,7 +539,10 @@ To decide which number is points count:
 	decrease X by roleplay fetish;
 	decrease X by (bonus liquid * (1 + bonus liquid)) / 2;
 	decrease X by combatvisor;
-	if supportersEnabled is 0 and diaper quest is 0, decrease X by 1;
+	if diaper quest is 0:
+		if supportersEnabled is 0, decrease X by 1;
+		if super gag reflex is 1, decrease X by 3;
+		if super gag reflex is 2, decrease X by 4;
 	decide on X.
 
 [!<TheRandomiseBonusesRule>+

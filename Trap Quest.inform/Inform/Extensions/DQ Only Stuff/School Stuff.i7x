@@ -42,7 +42,7 @@ To say AdviceAnswer of (M - teacher-brooke):
 
 Part - Amicable Student Jennifer
 
-student-jennifer is a amicable student.
+student-jennifer is an amicable student.
 
 The text-shortcut of student-jennifer is "stje".
 
@@ -160,7 +160,7 @@ To say MonsterDesc of (M - student-rachel):
 	otherwise if the current-rank of M is 3:
 		say "This [man of M] is in [his of M] late twenties or early thirties. [big he of M] was wearing a smart white blouse but that has been replaced by a pink tighter-fitting one that exposes the curvature of [his of M] chest. [big his of M] smart red skirt has been replaced by a very short purple miniskirt that can't do anything to hide the massive double-diaper that [he of M]'s got on underneath, which if anything is even thicker than before. [big his of M] short brunette hair has been put in little pigtails. [big he of M] still constantly blushes wherever [he of M] goes.";
 	otherwise:
-		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABY[caps boy of M]' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this woman was a respected young professional.".
+		say "This [man of M] is in [his of M] late twenties or early thirties. [big his of M] tight pink blouse have been replaced by a tight pink crop top that doesn't cover [his of M] belly button and reads 'BABY[caps boy of M]' on the front in large white letters. [big his of M] short purple miniskirt has been replaced by an even shorter pink microskirt which means that over two thirds of [his of M] thick double diaper are on show, even as [he of M] tries to pull down on the tiny microskirt to get it to stretch as far as it can. [big he of M] seems so embarrassed that [he of M]'s moments away from tears at all times. It's crazy to think that just a short while ago this [man of M] was a respected young professional.".
 
 The current-rank of student-rachel is 2.
 The max-rank of student-rachel is 4.
@@ -385,7 +385,7 @@ To compute teaching of (L - chess-lesson):
 	if ST is nothing, now ST is a random student in the location of the player;
 	say "After a couple of moments [NameDesc of ST] stands to [his of ST] feet, audibly gulping but with a serious and determined expression on [his of ST] face. But nobody else seems willing to join [him of ST]. It looks like this 'high-stakes speed chess' game is only going to happen if you volunteer to be [NameDesc of ST][']s opponent. Do you take up the challenge? ";
 	if the player is bimbo consenting:
-		say "You stand up. [BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so pleased. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
+		say "You stand up. [BigNameDesc of M] smiles warmly.[line break][speech style of M]'Oh, well volunteered! The headmistress will be so [please]d. You'll both need one of these, and I'm afraid you're not allowed any other clothing.'[roman type][line break]";
 		repeat with C running through worn stealable clothing:
 			unless C is plentiful accessory:
 				say "[BigNameDesc of M] confiscates your [ShortDesc of C]!";
@@ -1116,7 +1116,7 @@ To compute teaching of (L - enema-race-lesson):
 					now silentMess is 0;
 					say "You can now see for the first time that [he of S2] is sporting some very bulky brown and heavy padding - [he of S2][']s already messed [himself of S2]!";
 				if M1 >= 0 and M2 is -1 and the diaper addiction of the player < 8:
-					say "The sight of [him of S2] [if diaper messing < 3]soggy[otherwise]nasty messy[end if] diaper grosses you out, which affects your morale and speed.";
+					say "The sight of [his of S2] [if diaper messing < 3]soggy[otherwise]nasty messy[end if] diaper grosses you out, which affects your morale and speed.";
 					decrease D1 by 1;
 				otherwise if the player is feeling dominant:
 					say "The sight of [him of S2] in front of you fills you with a powerful desire to defeat [him of S2]! It helps you pick up the pace.";

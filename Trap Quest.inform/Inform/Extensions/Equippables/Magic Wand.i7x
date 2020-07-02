@@ -14,9 +14,6 @@ To say ShortDesc of (W - a magic wand):
 To decide which number is the initial outrage of (C - a magic wand):
 	decide on 0.
 
-To decide which number is the raw-masturbation-bonus of (C - a magic wand):
-	decide on -1.[offsets the default]
-
 To decide which number is the damage improvement of (W - a magic wand):
 	let X be MagicPowerDamage + 3;
 	increase X by the magic-modifier of W;

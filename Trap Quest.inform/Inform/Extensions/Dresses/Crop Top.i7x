@@ -101,7 +101,7 @@ To compute periodic effect of (C - size does matter crop top):
 		if the largeness of breasts <= the size of penis and the player is not top heavy:
 			say "You sense some magic flow through your [ShortDesc of C] into your chest. Your [BreastDesc] noticeably grow!";
 			BustUp 3;
-		otherwise if the largeness of breasts >= the size of penis and the size of penis < 10 and the player is male:
+		otherwise if the largeness of breasts >= the size of penis and the size of penis < 10 and the player is possessing a penis:
 			say "You sense some magic flow through your [ShortDesc of C] into your body. ";
 			PenisUp 1.
 
@@ -253,6 +253,10 @@ To say ShortDesc of (C - red crop top):
 
 Definition: red crop top is red themed: decide yes.
 
+To decide which object is the unique-upgrade-target of (C - red crop top):
+	if the number of worn exercise themed wearthing > 0, decide on football-crop-top;
+	decide on nothing.
+
 Part 9 - Gross Tank Top
 
 gross tank top is a crop top. gross tank top is dense. The printed name of gross tank top is "[clothing-title-before]that's gross tank top[clothing-title-after]". The text-shortcut of gross tank top is "tgtt". Understand "that's" as gross tank top.
@@ -335,5 +339,23 @@ To decide which number is the initial outrage of (C - nipples-crop-top):
 
 A gropability rule:
 	if nipples-crop-top is worn and breasts is lewdly exposed, now the gropability of breasts is 9999.
+
+football-crop-top is a crop top. football-crop-top is unique. football-crop-top is dense. football-crop-top is fully exposing. football-crop-top is only arm covering. The printed name of football-crop-top is "[clothing-title-before]football crop top[clothing-title-after]". The text-shortcut of football-crop-top is "fct". Figure of football-crop-top is the file "Items/Clothes/Upper/CropTops/croptop13.png". Understand "football" as football-crop-top.
+To decide which figure-name is clothing-image of (H - football-crop-top):
+	decide on figure of football-crop-top.
+
+To say ShortDesc of (C - football-crop-top):
+	say "football crop top".
+To say MediumDesc of (C - football-crop-top):
+	say "exposing football crop top".
+To say ClothingDesc of (C - football-crop-top):
+	say "This tiny black and white crop top is so short there's no way it can cover your nipples.".
+
+Definition: football-crop-top is exercise themed: decide yes.
+Definition: football-crop-top is black themed: decide yes.
+Definition: football-crop-top is white themed: decide yes.
+
+To decide which number is the initial outrage of (C - football-crop-top):
+	decide on 4.
 
 Crop Top ends here.

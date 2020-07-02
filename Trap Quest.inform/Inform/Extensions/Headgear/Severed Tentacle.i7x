@@ -38,7 +38,7 @@ Carry out TQeating severed-tentacle:
 
 To compute throbbing of (H - severed-tentacle) into (T - throbbing-tentacle):
 	let M be mind flayer;
-	say "You feel the tentacle slightly release, and you reverently reach up remove [him of M] from your head. Holding the undulating shaft in both hands, you lower [him of M] down to your [if the player is female]vaginal[otherwise]anal[end if] entrance. [if the player is not lewdly exposed]With awesome strength, [italic type]your Master[roman type] rips aside all obstructions, then[otherwise][italic type]Your Master[roman type] gives you an experimental prod, then[end if] slowly yet forcefully enters you. As [he of M] pushes [himself of M] in, you feel compelled to rub [his of M] length in your hands and are rewarded by [him of M] swelling inside you. After an excruciating moment that feels like an eternity, [he of M] bottoms out inside you, pulsing and rubbing until [he of M] fills you completely. [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
+	say "You feel the tentacle slightly release, and you reverently reach up remove [him of M] from your head. Holding the undulating shaft in both hands, you lower [him of M] down to your [if the player is possessing a vagina]vaginal[otherwise]anal[end if] entrance. [if the player is not lewdly exposed]With awesome strength, [italic type]your Master[roman type] rips aside all obstructions, then[otherwise][italic type]Your Master[roman type] gives you an experimental prod, then[end if] slowly yet forcefully enters you. As [he of M] pushes [himself of M] in, you feel compelled to rub [his of M] length in your hands and are rewarded by [him of M] swelling inside you. After an excruciating moment that feels like an eternity, [he of M] bottoms out inside you, pulsing and rubbing until [he of M] fills you completely. [line break][first custom style]'Come, [slut]. Now.'[roman type][line break]You find yourself gleefully obeying!";
 	repeat with C running through worn top level protection clothing:
 		now C is in pink wardrobe;
 	repeat with D running through worn clothing:
@@ -68,12 +68,12 @@ To compute periodic effect of (H - severed-tentacle):
 			otherwise:
 				Dexup 1;
 				say " You feel more flexible!";
-		otherwise if (the player is female and T is vaginally summonable) or (the player is male and T is actually summonable):
+		otherwise if (the player is possessing a vagina and T is vaginally summonable) or (the player is not possessing a vagina and T is actually summonable):
 			say "The tentacle on your head throbs with increasing frequency and you feel an increasing sense of suction on your head. [line break][first custom style]'It appears my meal is complete. Now for your final reward. Remove me and place me before your entrance, [whore].'[roman type][line break]";
 			compute throbbing of H into T;
 		otherwise if the player is able to get horny:
 			say "The tentacle on your head throbs with what feels like amusement. [line break][first custom style]'I was going to reward you, [whore], but it seems you are busy so I suppose it can wait. Hmm, still, I think you deserve this...'[roman type][line break]A rush of euphoria envelops you!";
-			if the player is male:
+			if the player is not possessing a vagina:
 				anally orgasm shamefully;
 			otherwise:
 				vaginally orgasm shamefully.
@@ -83,7 +83,7 @@ Check taking off severed-tentacle:
 	let T be a random off-stage throbbing-tentacle;
 	say "You reach up to try and remove [the printed name of S] from your head.";
 	if the intelligence of the player is 1:
-		if (the player is female and T is vaginally summonable) or (the player is male and T is actually summonable):
+		if (the player is possessing a vagina and T is vaginally summonable) or (the player is not possessing a vagina and T is actually summonable):
 			say "The tentacle on your head throbs with greater frequency and you feel an increasing sense of suction on your head. [line break][first custom style]'You want to move me? Hm, then I suppose it's unavoidable. Remove me and place me before your entrance, [whore].'[roman type][line break]";
 			compute throbbing of S into T instead;
 		otherwise:
@@ -91,7 +91,7 @@ Check taking off severed-tentacle:
 	otherwise if the tentInt of severed-tentacle > the intelligence of the player + a random number between -4 and 5:
 		increase the domination of the player by 2;
 		say "Your will wavers, and your hand trembles as the tentacle's voice rings out in your head. [first custom style]'You will not be rid of me, thrall. I think you should be punished for this insolence. Now obey me. ";
-		if the asshole is not lewdly exposed or breasts is not lewdly exposed or (vagina is not lewdly exposed and the player is female):
+		if the asshole is not lewdly exposed or breasts is not lewdly exposed or (vagina is not lewdly exposed and the player is possessing a vagina):
 			say "You need no clothing. Tear it off.'[roman type]";
 			let C be a random worn nipple covering clothing;
 			unless C is clothing, now C is a random worn top level protection clothing;
@@ -103,7 +103,7 @@ Check taking off severed-tentacle:
 			let M be a random interested intelligent monster in the location of the player;
 			say "Show [NameDesc of M] what a [whore] you really are.'[roman type]";
 			try kneeling;
-			if the player is female, try presenting vagina instead;
+			if the player is possessing a vagina, try presenting vagina instead;
 			otherwise try presenting asshole instead;
 		otherwise:
 			say "Feel your hunger grow. Sate it with [manly-penis].'[roman type]";

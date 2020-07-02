@@ -183,7 +183,7 @@ Report examining clothing:
 		[if the noun is sheer-when-wet, say "The [noun] is currently see-through because it is wet. ";]
 		if the noun is knickers or the noun is trousers or the noun is overdress or the noun is skirt or the noun is at least partially nipple covering, say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn][']ll still be exposing your naughty bits even when wearing it[otherwise]r naughty bits are still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
 		otherwise say "The [if the noun is actually sheer]sheer [end if]nature of the item means that you[unless the noun is worn]r skin will still be visible even when wearing it[otherwise]r skin is still visible[end if].[if the humiliation of the player > HUMILIATION-DISGRACED + 3500 and the outrage of the noun is not too humiliating and diaper quest is 0][line break][second custom style]Which is exactly what I want![roman type][line break]";
-	otherwise if the noun is potentially pussy covering and the size of penis > 0 and the noun is not potentially penis covering:
+	otherwise if the noun is potentially pussy covering and the player is possessing a penis and the noun is not potentially penis covering:
 		say "Your [ShortDesc of penis] is too large and [if the noun is worn and penis is at least partially exposed]pokes out beyond the fabric[otherwise]can't be concealed by it[end if].";
 	otherwise if the noun is skirted and there is worn knickers and the noun is not-butt-windowed:
 		let K be a random worn knickers;
@@ -196,9 +196,9 @@ Report examining clothing:
 		otherwise if the noun is no protection:
 			say "The item [if the noun is crotch-ripped]has been [bold type]ripped[roman type], which means it [end if][if the noun is worn]does[otherwise]will do[end if] nothing to protect your [player-crotch].";
 		otherwise if the noun is pussy protection and the noun is worn:
-			say "[if the player is female]The item is currently protecting your [vagina] but[otherwise if the size of penis > 0]The item is currently protecting your [ShortDesc of penis] but[otherwise]The item[end if] is not protecting your [asshole].";
+			say "[if the player is herm]This item is currently protecting your [ShortDesc of penis] and [vagina] but[otherwise if the player is possessing a vagina]The item is currently protecting your [vagina] but[otherwise if the player is possessing a penis]The item is currently protecting your [ShortDesc of penis] but[otherwise]The item[end if] is not protecting your [asshole].";
 		otherwise if the noun is pussy protection:
-			say "[if the player is female]The item will protect your [vagina] but not[otherwise if the size of penis > 0]The item will protect your [ShortDesc of penis] but not[otherwise]The item will not protect[end if] your [asshole].";
+			say "[if the player is herm]The item will protect your [ShortDesc of penis] and [vagina] but not[otherwise if the player is possessing a vagina]The item will protect your [vagina] but not[otherwise if the player is possessing a penis]The item will protect your [ShortDesc of penis] but not[otherwise]The item will not protect[end if] your [asshole].";
 	if the noun is top-ripped:
 		say "The [if the noun is bra]cups have[otherwise]bust has[end if] been permanently ripped open.";
 	if the stolen-strength of the noun > 0:
@@ -230,7 +230,6 @@ To say CurrentlyPartiallyConcealedFlav of (C - a clothing):
 
 To say CurrentlyVisibleFlav of (C - a clothing):
 	say "It is currently visible to anyone who looks at you.".
-	[say "It is currently visible to anyone who looks at you[if the top-coverer of C is a thing]. The upper part is covered by [NameDesc of top-coverer of C][end if][if the mid-coverer of C is a thing]. The belly part is covered by [NameDesc of mid-coverer of C][end if][if the bottom-coverer of C is a thing]. The lower part is covered by [NameDesc of bottom-coverer of C][end if].".]
 
 To say CurrentlyVisibleFlav of (K - a knickers):
 	let C be a random worn skirted clothing;

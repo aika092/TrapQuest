@@ -283,10 +283,15 @@ This function is called when the player resists in the last turn of oral sex and
 +!]
 To compute facial dodging of (M - a monster):
 	say FacialBrokenFree of M;
-	if a random number between the semen addiction of the player * -1 and the dexterity of the player > the difficulty of M - 2:[facials are harder to dodge the more you like the feeling of semen]
+	if M is aiming a bukkake:
 		compute successful facial dodging of M;
 	otherwise:
 		compute failed facial dodging of M.
+
+[facials are harder to dodge the more you like the feeling of semen]
+Definition: a monster (called M) is aiming a bukkake:
+	if a random number between (the semen addiction of the player * -1) and the dexterity of the player <= the difficulty of M - 2, decide yes;
+	decide no.
 
 [!<ComputeSuccessFacialDodgingOfMonster>+
 
@@ -358,7 +363,6 @@ This function can display a relevant image when the player receives a facial. Do
 To get facial accepting image for (M - a monster):
 	do nothing.
 
-
 Definition: a monster (called M) is coercing a swallow:
 	let R be a random number between 10 and 20;
 	let D be the delicateness of the player;
@@ -366,7 +370,6 @@ Definition: a monster (called M) is coercing a swallow:
 	if the player is desperate to drink semen, decide yes;
 	if R < D, decide yes;
 	decide no.
-
 
 [!<ComputeDefaultOralCreampieOfMonster>+
 
@@ -386,7 +389,7 @@ To compute default oral creampie of (M - a monster):
 
 [!<ComputeOralCreampieOfMonster>+
 
-An oral creampie where the player was resisting on the final turn
+An oral creampie where the player's resistance forced a monster to jizz in their mouth.
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
@@ -395,9 +398,9 @@ To compute oral creampie of (M - a monster):
 	say ResistedOralCreampie of M;
 	compute default oral creampie of M.
 
-[!<ComputeOralCreampieOfMonster>+
+[!<ComputeMercifulOralCreampieOfMonster>+
 
-An oral creampie where the player was resisting on the final turn
+An oral creampie where a monster decided to cum inside the player's mouth, not down their throat
 
 @param <Monster>:<M> A monster the player just had oral sex with
 
@@ -405,7 +408,6 @@ An oral creampie where the player was resisting on the final turn
 To compute merciful oral creampie of (M - a monster):
 	say SubmittedOralCreampie of M;
 	compute default oral creampie of M.
-
 
 [!<GetOralCreampieImageOfMonster>+
 
@@ -469,7 +471,6 @@ To compute oral creampie hold reaction of (M - a monster):
 	otherwise:
 		say "[BigNameDesc of M] strikes you across the face.";
 		PainUp 1.
-
 
 [!<ComputeSpitChoiceOfMonster>+
 
@@ -627,7 +628,7 @@ Displays some flavour describing the player receiving a mouthful of semen after 
 
 +!]
 To say SubmittedOralCreampie of (M - a monster):
-	say "[one of][BigFuckerDesc of M] holds you in place just long enough to flood your mouth with a nice big load of [tasted-semen].[or][BigFuckerDesc of M] forces you to stay down, continuing to fuck your mouth even as [he of M] reaches orgasm and you begin to taste [his of M] salty [semen].[or][BigFuckerDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigFuckerDesc of M] groans, tightening [his of M] grip as [he of M] begins to ejaculate, holding you down until your mouth has been thoroughly and completely filled with [tasted-semen].[or][BigFuckerDesc of M] pulls back a bit, so that [his of M] [DickDesc of M] is only halfway in your mouth when [he of M] reaches orgasm. [if the semen taste addiction of the player < 7]You squirm uncomfortably as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
+	say "[one of][BigFuckerDesc of M] slows down, thrusting gently as [he of M] floods your mouth with a nice big load of [tasted-semen].[or][BigFuckerDesc of M] continues to fuck your mouth even as [he of M] reaches orgasm and you begin to taste [his of M] salty [semen].[or][BigFuckerDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigFuckerDesc of M] groans, tightening [his of M] grip as [he of M] begins to ejaculate. The [semen-adjective] taste of [semen] hits your tongue as [he of M] completely fills your mouth with [his of M] load.[or][BigFuckerDesc of M] pulls back a bit, so that [his of M] [DickDesc of M] is only halfway in your mouth when [he of M] reaches orgasm. [if the semen taste addiction of the player < 7]You squirm uncomfortably as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
 
 [!<SayAutomaticSwallowOfMonster>+
 

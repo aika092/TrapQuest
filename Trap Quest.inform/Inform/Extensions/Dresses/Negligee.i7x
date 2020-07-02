@@ -40,7 +40,7 @@ To say MediumDesc of (C - backless negligee):
 To say ClothingDesc of (C - backless negligee):
 	say "This sheer naughty lingerie dress covers the front of the wearer but just has minimalist straps at the back.".
 
-Definition: backless negligee is potentially-bottom-layer-concealing: decide no.
+Definition: backless negligee is layer-concealing: decide no.
 
 Part 2 - Lacy Negligee
 

@@ -431,7 +431,7 @@ To compute periodic effect of (H - demon broadsword):
 					say "The [printed name of H] stiffens, blasting your face with several hot ropes of [semen]. Your head swims as you breathe in its masculine musk.";
 					CumFaceUp 4;
 				otherwise:
-					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is male]emasculating[otherwise]dehumanizing[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
+					say "The [printed name of H] bends back and strikes you in the face, disorienting you and [if the player is gendered male]emasculating[otherwise]dehumanising[end if] you with its display of male power. You shiver as the pulsating length hovers above your head, causing your head to swim with its incredibly potent masculine musk.";
 					if a random number between 1 and 3 is 1, PainUp 1;
 					otherwise SemenTasteAddictUp 1;
 					Arouse 200 + (the semen taste addiction of the player * 10) + (the arousal of H * 10);
@@ -439,6 +439,7 @@ To compute periodic effect of (H - demon broadsword):
 		if H is dildoed and the arousal of H < 4 and demon lord is not alive:
 			now H is not dildoed;
 			now H is metal;
+			if H is cursed, now H is bland;
 			say "It has calmed down enough that it transforms back into a real sword!".
 
 Check taking demon broadsword:
@@ -544,7 +545,7 @@ To decide which figure-name is clothing-image of (C - sissy-sword):
 
 Definition: sissy-sword is sissifying: decide yes.
 Definition: sissy-sword is destiny-prioritised if the player is a sissy.
-Definition: sissy-sword is destiny-appropriate if the player is male and fast tg < 3 and transGender is 0.
+Definition: sissy-sword is destiny-appropriate if the player is gendered male and fast tg < 3.
 
 To compute sword destiny of (S - sissy-sword):
 	say "You excitedly pull up on your new longsword, only to find that it's not quite as [']long['] as you were hoping for.";

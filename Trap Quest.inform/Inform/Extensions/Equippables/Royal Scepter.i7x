@@ -49,10 +49,10 @@ To compute climax effect of (E - royal scepter):
 
 To decide which number is the raw-masturbation-bonus of (E - royal scepter):
 	if princess-consort is penetrating a body part:
-		decide on 3;
+		decide on 2;
 	otherwise if princess-consort is the throne:
 		decide on 1;
-	decide on -2.
+	decide on 0.
 
 princess-consort is a thing that varies. princess-consort is the throne.
 

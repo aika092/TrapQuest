@@ -34,11 +34,14 @@ To say MonsterDesc of (M - herald):
 
 To set up (M - herald):
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 15;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
+To decide which number is the starting difficulty of (M - centaur):
+	decide on 15.
+
 To say speech style of (M - herald):
-	say speech style of M.
+	say second custom style.
 
 Part 1 - Perception
 
@@ -71,7 +74,7 @@ The herald priority attack rules is a rulebook. The priority attack rules of her
 This is the herald's power attack rule:
 	let M be current-monster;
 	if the player is upright:
-		say "Pink lightning arcs from Valleyhotep! You feel terribly tired and yet also horny at the same time!";
+		say "Pink lightning arcs from [NameDesc of M]! You feel terribly tired and yet also horny at the same time!";
 		FatigueUp a random number between the difficulty of M and the buckle threshold of the player / 5;
 		stimulate vagina from M.
 The herald's power attack rule is listed in the herald attack rules.
@@ -101,7 +104,7 @@ To compute punishment of (P - herald-blessing):
 	say "[speech style of M]'So what will we make of you...'[roman type][line break]Arcs of pink lightning race across your body!";
 	if the player is incontinent:
 		if altar-diaper-link is 0:
-			say "[speech style of M]'All mortals will serve as vessels for Nannythoth's infinite waste.'[roman type][line break]The next thing you know, you are hovering above the elder altar, completely unable to resist as you are slowly lowered onto the stone slab.";
+			say "[speech style of M]'All mortals will serve as vessels for [Azathot]'s infinite waste.'[roman type][line break]The next thing you know, you are hovering above the elder altar, completely unable to resist as you are slowly lowered onto the stone slab.";
 			if the player is not in Mansion23, teleport to Mansion23;
 			try praying yourself with the elder altar;
 		otherwise:
@@ -193,16 +196,11 @@ To say AdviceAnswer of (M - herald):
 	say "[speech style of M]'[one of]Giving useful advice sounds kinda like effort.'[or]I think this game is a lot easier if you just accept emptiness into your heart.'[or]You might want to try succumbing to the joys of this world, thinking is kinda overrated.'[in random order][roman type][line break]";
 	compute herald's gift.
 
-To compute annoyance of (M - herald):
-	if M is unfriendly:
-		say "[BigNameDesc of M] ignores your question.[line break][speech style of M]'La la! I can[']t hear it when weaklings talk!'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'Okay let me be clear here... [first custom style]SHUT UP.'[roman type][line break]";
-
 To compute teaching of (M - herald):
 	say "[speech style of M]'Teach you something? What a strange request... Like, fine. Gaze into me, if you dare...'[roman type][line break]For a terrible moment [his of M] skin shifts into an infinite field of swirling patterns that assaults your mind and self! You feel smarter, but also like your sanity has slipped away!";
 	IntUp 1;
-	humiliate 500.
+	humiliate 500;
+	reset skill cooldown.
 
 The herald has a number called gifted. The gifted of herald is usually 0.
 

@@ -57,7 +57,7 @@ To say mistress:
 	otherwise if the player is not feeling submissive:
 		say "[one of]Ma'am[or]Missus[or]Madame[as decreasingly likely outcomes]";
 	otherwise:
-		say "[if diaper lover >= 1 and the bimbo of the player > 12]mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
+		say "[if diaper lover >= 1 and the bimbo of the player > 12]Mommy[otherwise][one of]Mistress[or]my goddess[or]your worship[as decreasingly likely outcomes][end if]".
 
 [!<SayStud>+
 
@@ -120,11 +120,11 @@ To say slut:
 	say "[one of]slut[or]skank[or]slag[as decreasingly likely outcomes]".
 
 To say sissy:
-	if transGender is 0 and the player is male, say "sissy";
+	if the player is gendered male, say "sissy";
 	otherwise say "[if diaper quest is 0]slutty[otherwise]girly[end if]".
 
 To say sissy slut:
-	if transGender is 0 and the player is male:
+	if the player is gendered male:
 		say "sissy[one of][if diaper quest is 0] slut[end if][or][as decreasingly likely outcomes]";
 	otherwise if diaper quest is 1:
 		say "babygirl";
@@ -165,7 +165,7 @@ Whatever is the player's current sex organ (i.e. no including asshole)
 To say genitals:
 	if the player is female, say vagina;
 	if the player is male:
-		if the size of penis is 0:
+		if the player is not possessing a penis:
 			say ShortDesc of penis;
 		otherwise if the size of penis > 5:
 			say manly-penis;
@@ -186,7 +186,7 @@ REQUIRES COMMENTING
 
 +!]
 To say player-crotch:
-	if the player is male and the size of penis is 0, say "[asshole]";
+	if the player is barbie, say "[asshole]";
 	otherwise say "[if the player is female][vagina][otherwise if the size of penis > 5][manly-penis][otherwise][sissy-penis][end if] and [asshole]".
 
 [!<SayFuckholes>+
@@ -274,7 +274,7 @@ REQUIRES COMMENTING
 
 +!]
 To say asshole:
-	if the player is male and transGender is 0:
+	if the player is gendered male:
 		if the raw intelligence of the player < 5 and diaper lover >= 1:
 			say "[one of]bum[or]butt[or]no-no[or]muffin[as decreasingly likely outcomes]";
 		otherwise if the bimbo of the player < 8 or diaper quest is 1:
@@ -354,7 +354,7 @@ To say urine:
 	otherwise if the urine taste addiction of the player < 14:
 		say "[one of]pee[or]piss[or]piss[or]wee[or]urine[as decreasingly likely outcomes]";
 	otherwise:
-		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink [as decreasingly likely outcomes]piss".
+		say "[one of][or]yummy [or]tasty [or][or]delicious [or][or]my favourite drink, [as decreasingly likely outcomes]piss".
 
 [!<SayUrinate>+
 
@@ -444,9 +444,6 @@ To decide which text is big him of (M - a thing):
 To decide which text is caps him of (M - a thing):
 	decide on him of M in upper case.
 
-To decide which text is caps his of (M - a thing):
-	decide on his of M in upper case.
-
 To decide which text is his of (M - a thing):
 	decide on "[if M is live]their[otherwise]its[end if]".
 
@@ -468,6 +465,9 @@ To decide which text is hers of (M - a person):
 To decide which text is big hers of (M - a thing):
 	decide on hers of M in title case.
 
+To decide which text is caps hers of (M - a thing):
+	decide on hers of M in upper case.
+
 To decide which text is himself of (M - a thing):
 	decide on "[if M is live]themselves[otherwise]itself[end if]".
 
@@ -476,6 +476,12 @@ To decide which text is himself of (M - yourself):
 
 To decide which text is himself of (M - a person):
 	decide on "[if M is neuter]itself[otherwise if M is presenting as female]herself[otherwise]himself[end if]".
+
+To decide which text is big himself of (M - a thing):
+	decide on himself of M in title case.
+
+To decide which text is caps himself of (M - a thing):
+	decide on himself of M in upper case.
 
 [!<SayDickDescOfMonster>+
 
@@ -741,6 +747,14 @@ Aika's first hypnosis test
 +!]
 To say tasty:
 	say "tasty";
+	now hypno-trigger is "tasty".
+
+To say big tasty:
+	say "Tasty";
+	now hypno-trigger is "tasty".
+
+To say caps tasty:
+	say "TASTY";
 	now hypno-trigger is "tasty".
 
 [!<SayMaturity>+

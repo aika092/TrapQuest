@@ -37,9 +37,8 @@ To compute climax effect of (E - a fairy wand):
 
 To decide which number is the raw-masturbation-bonus of (E - a fairy wand):
 	let M be a random live thing penetrating vagina;
-	If M is not nothing or the pregnancy of the player is 1:
-		decide on 3;
-	decide on -2.[You will take longer to cum if you use the fairy wand ]
+	if M is a thing or diaper quest is 1 or the pregnancy of the player is 1, decide on 1;
+	decide on -1.
 
 To compute attack of (W - a fairy wand) at (M - a monster):
 	say "You flick the wand, zapping [NameDesc of M] with pink bolts of magic.".

@@ -20,11 +20,11 @@ To compute (S - a striped top) damaging (M - a robot):
 	say "[BigNameDesc of M] completely ignores the spikes on your [printed name of S]! [big he of M] must be immune.".
 
 To compute kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
+	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
 	humiliate 75.
 
 To compute DQ kneeling reaction of (M - a robot):
-	say "[BigNameDesc of M] watches you, with its fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
+	say "[BigNameDesc of M] watches you, with [his of M] fixed emotionless expression and red eyes.[if the bimbo of the player < 12]You shudder with shame.[end if]";
 	humiliate MODERATE-HUMILIATION + SLIGHT-HUMILIATION.
 
 To compute lead holding of (M - a robot):
@@ -206,11 +206,9 @@ To say DQSpankResistExtensionFlav of (M - a robot):
 
 Part - Conversation
 
-To compute talk option (N - 2) to (M - a robot):
-	say "[variable custom style]'Can you help me out?'[roman type][line break]";
-	compute answer of M.
+Definition: a robot is fluff-question-appropriate: decide no.
 
-To compute answer of (M - a robot):
+To execute (T - talk-robot-question) for (M - a monster):
 	say "[speech style of M]'......................ERROR.'[roman type][line break]".
 
 To say DismissalRequest of (M - a robot):
@@ -222,6 +220,16 @@ To say DismissalRequest of (M - a robot):
 To compute unfriendly dismissal of (M - a robot):
 	if the player is able to speak, say "[speech style of M]'USER IS NOT IN THE SUDOERS FILE. THIS INCIDENT WILL BE REPORTED.'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] makes no indication that [he of M] has understood you.".
+
+To compute vanity response of (M - a robot):
+	say "[BigNameDesc of M] ignores you.".
+
+talk-robot-question is a talk-object.
+
+To consider (T - talk-robot-question) for (M - a monster):
+	if M is robot:
+		now the printed name of T is the substituted form of "[variable custom style]'Can you help me out?'[roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]".
 
 Section 1 Damage
 

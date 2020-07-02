@@ -121,6 +121,9 @@ Definition: cum dump's undergarment is recipe specific: decide yes.
 To decide which text is the RecipeDesc of (B - cum dump's undergarment):
 	decide on "The recipe just says 'Cumsoaked or crotchless underwear'.".
 
+To say selfexamineuniquetitle of (K - cum dump's undergarment):
+	say "pair of unholy crotchless panties".
+
 This is the cum dump's undergarment specific recipe rule: [We don't check for fetish appropriateness because in DQ this sets up the diaper cover specific recipe]
 	now the Product in row 32 of the Table of Alchemy is 18;
 	now the Recipe in row 32 of the Table of Alchemy is 1.

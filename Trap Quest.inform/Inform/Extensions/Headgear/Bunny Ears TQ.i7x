@@ -102,11 +102,11 @@ To compute (M - a monster) considering (T - a bottle):
 				say WaitressTakeFlav of M to T;
 				compute waitress resolution of M taking T;
 			now autodrink is 0;
-	otherwise if convincing power > 0 and (M is friendly or convincing power >= the square root of (a random number between 1 and 10)):
+	otherwise if convincing power > 0 and (M is friendly or convincing power >= the square root of (a random number between 1 and 15)):
 		say MonsterOfferAcceptFlav of M to T;
-		say MonsterTakeFlav of M to T;
 		now T is in Holding Pen;
 		now M is retaining T;
+		now M is withholding T;
 		compute resolution of M taking T;
 	otherwise:
 		if M is not rejecting T, make M expectant; [The player can keep offering things they haven't offered yet without the NPC immediately moving to punishment.]
@@ -141,7 +141,7 @@ To compute waitress resolution of (M - a monster) taking (T - a bottle):
 		destroy T.
 
 To compute service spill punishment:
-	if bondage protection is 0 and the player is not immobile and the number of things wrangling the player is 0 and there is a held waitress vessel:
+	if bondage protection is 0 and the player is not immobile and the number of things wrangling a body part is 0 and there is a held waitress vessel:
 		let STV be 0;
 		if there is worn serving-bondage, now STV is 1;
 		if STV is 0 and serving tray is off-stage:

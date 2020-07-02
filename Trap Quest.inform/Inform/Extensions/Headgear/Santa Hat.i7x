@@ -60,19 +60,19 @@ To compute persistent reward of (Q - christmas-quest) on (C - a clothing):
 
 A santa hat is a kind of christmas headgear. A santa hat is usually wool. Figure of santa hat is the file "Items/Accessories/Head/santahat1.png". There is 1 santa hat.
 
-The printed name of santa hat is usually "[clothing-title-before]santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
+The printed name of santa hat is usually "[clothing-title-before]Santa hat[clothing-title-after]". The text-shortcut of santa hat is "sah".
 
 To decide which figure-name is the clothing-image of (C - a santa hat):
 	decide on figure of santa hat.
 
 To say ClothingDesc of (H - a santa hat):
-	say "A smallish red and white santa hat.".
+	say "A smallish red and white Santa hat.".
 
 To say ShortDesc of (H - a santa hat):
-	say "santa hat".
+	say "Santa hat".
 
 To compute SelfExamineDesc of (H - a santa hat):
-	say "You are wearing a santa hat on top of your [ShortDesc of hair]. ".
+	say "You are wearing a Santa hat on top of your [ShortDesc of hair]. ".
 
 Definition: a santa hat is condom pinnable: decide yes.
 Definition: a santa hat is red themed: decide yes.
@@ -180,7 +180,7 @@ Definition: a star headband is star themed: decide yes.
 
 christmas bonnet is a christmas headgear.
 
-The printed name of christmas bonnet is "[clothing-title-before]christmas bonnet[clothing-title-after]". Figure of christmas bonnet is the file "Items/Accessories/Head/christmasbonnet1.png". The text-shortcut of christmas bonnet is "chmb".
+The printed name of christmas bonnet is "[clothing-title-before]Christmas bonnet[clothing-title-after]". Figure of christmas bonnet is the file "Items/Accessories/Head/christmasbonnet1.png". The text-shortcut of christmas bonnet is "chmb".
 
 Definition: christmas bonnet is bow themed: decide yes.
 Definition: christmas bonnet is green themed: decide yes.
@@ -192,10 +192,10 @@ To say ClothingDesc of (H - christmas bonnet):
 	say "A giant frilly green bonnet with a red ribbon that ties up underneath with a bow.".
 
 To say ShortDesc of (H - christmas bonnet):
-	say "christmas bonnet".
+	say "Christmas bonnet".
 
 To say MediumDesc of (H - christmas bonnet):
-	say "christmas bonnet".
+	say "Christmas bonnet".
 
 To compute SelfExamineDesc of (H - christmas bonnet):
 	say "You are wearing a giant frilly green bonnet with a red bow on top of your [ShortDesc of hair]. ".
@@ -207,7 +207,7 @@ To decide which number is the initial cringe of (H - christmas bonnet):
 
 conic santa hat is a christmas headgear. conic santa hat is latex.
 
-The printed name of conic santa hat is "[clothing-title-before]conic santa hat[clothing-title-after]". Figure of conic santa hat is the file "Items/Accessories/Head/santahat2.png". The text-shortcut of conic santa hat is "csh".
+The printed name of conic santa hat is "[clothing-title-before]conic Santa hat[clothing-title-after]". Figure of conic santa hat is the file "Items/Accessories/Head/santahat2.png". The text-shortcut of conic santa hat is "csh".
 
 To decide which figure-name is the clothing-image of (C - conic santa hat):
 	decide on figure of conic santa hat.
@@ -216,10 +216,10 @@ To say ClothingDesc of (H - conic santa hat):
 	say "A latex red and white hat shaped like a cone.".
 
 To say ShortDesc of (H - conic santa hat):
-	say "conic santa hat".
+	say "conic Santa hat".
 
 To say MediumDesc of (H - conic santa hat):
-	say "conic latex santa hat".
+	say "conic latex Santa hat".
 
 To compute SelfExamineDesc of (H - conic santa hat):
 	say "You are wearing a latex red and white hat shaped like a cone on top of your [ShortDesc of hair]. ".
@@ -270,7 +270,7 @@ To compute generic first time class reward of (Q - nice-quest) on (C - a clothin
 	now S is in the location of the player;
 	now S is cursed;
 	now the quest of S is christmas-quest;
-	say "A santa hat appears in front of you on the ground!";
+	say "A Santa hat appears in front of you on the ground!";
 	compute autotaking S;
 	say "[BigNameDesc of C] fizzles into nothingness. ";
 	only destroy C.

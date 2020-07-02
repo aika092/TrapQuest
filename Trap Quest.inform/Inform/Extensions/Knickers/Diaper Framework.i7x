@@ -253,13 +253,13 @@ To compute periodic effect of (D - a diaper):
 	if xavier-diaper-link > 0 and D is total protection:
 		increase xavier-diaper-link by 1;
 		if xavier-diaper-link is 57 or xavier-diaper-link is 113:
-			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds and appears as if you are wetting yourself. ";
+			say "All of a sudden you get a wet feeling from your [genitals]... but it's not you. The Demon Queen must be urinating [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if you are wetting yourself. ";
 			PissSoak 12 on D;
 			say "[PeeReaction 2]";
 			if diaper messing < 3, now xavier-diaper-link is 1;
 		if xavier-diaper-link >= 163 and asshole is not actually occupied:
 			now xavier-diaper-link is 1;
-			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds and appears as if it's you, which is all that really matters. ";
+			say "All of a sudden you feel your butthole open wide to start letting out a massive ooze of poop... but it's not you. The Demon Queen must be messing herself [one of][or]once [stopping]again! In any case it feels, sounds, and appears as if it's you, which is all that really matters. ";
 			now rectum is 35;
 			compute messing;
 	if (doomed >= 5 or D is demon-diaper) and altar-diaper-link > 0 and D is total protection:

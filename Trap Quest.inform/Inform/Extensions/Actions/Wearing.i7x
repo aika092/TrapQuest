@@ -145,7 +145,7 @@ The standard report wearing rule is not listed in the report wearing rulebook.
 Carry out wearing clothing:
 	if the noun is ass plugging, now the noun is penetrating asshole;
 	if the noun is vagina plugging:
-		if the player is female, now the noun is penetrating vagina;
+		if the player is possessing a vagina, now the noun is penetrating vagina;
 		otherwise now the noun is penetrating asshole;
 	if the noun is ballgag, now the noun is penetrating face; [as opposed to ring gags, which take up the face slot but do not necessarily penetrate face]
 	allocate dual arm use;

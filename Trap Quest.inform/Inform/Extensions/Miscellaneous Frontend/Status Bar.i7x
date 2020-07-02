@@ -556,7 +556,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the orifice soreness of the player:
-	if the player is male or the soreness of asshole >= the soreness of vagina, decide on the soreness of asshole;
+	if the player is not possessing a vagina or the soreness of asshole >= the soreness of vagina, decide on the soreness of asshole;
 	otherwise decide on the soreness of vagina.
 
 [!<SayVagueSoreness>+

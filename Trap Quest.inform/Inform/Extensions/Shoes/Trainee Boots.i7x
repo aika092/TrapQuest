@@ -4,6 +4,7 @@ A trainee thigh highs is a kind of stiletto heels. A trainee thigh highs is usua
 
 To set up magic state of (C - trainee thigh highs):
 	do nothing.
+Definition: trainee thigh highs is calf covering: decide yes.
 
 Figure of trainee thigh highs is the file "Items/Clothes/Lower/Feet/Boots/thighhighs1.png".
 

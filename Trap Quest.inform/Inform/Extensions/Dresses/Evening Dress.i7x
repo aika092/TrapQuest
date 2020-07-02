@@ -98,6 +98,8 @@ To decide which number is the initial outrage of (C - a pink evening dress):
 	decide on 6.
 
 Definition: a pink evening dress is pink themed: decide yes.
+Definition: a pink evening dress is potentially-bottom-layer-concealing: decide no. [Partially conceals bottom layer]
+Definition: a pink evening dress is potentially-partially-mid-layer-concealing: decide no. [Fully exposes mid layer]
 
 Part 3 - Black Lace Evening Dress
 

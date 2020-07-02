@@ -165,9 +165,6 @@ To say StoryAnswer of (M - a nurse):
 To say AdviceAnswer of (M - a nurse):
 	say "[speech style of M]'Remember where this place is so you can come back and let me patch you up when you get hurt, alright honey?'[roman type][line break]".
 
-To compute teaching of (M - a nurse):
-	say "[speech style of M]'You feeling alright, honey? All you need to do to learn is go to class!'[roman type][line break]".
-
 Chapter - Motion
 
 [Nurse is never supposed to leave her little area]
@@ -233,7 +230,7 @@ To say ForcefeedAftermath of (M - nurse):
 	say "After it's all gone, [he of M] unbuckles the straps holding you down and allows you to leave.".
 
 To say ForcefeedAfterFlav of (M - nurse):
-	say "[speech style of M]'There we go, that should give a growing girl like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
+	say "[speech style of M]'There we go, that should give a growing [boy of the player] like you the nutrients you need. I bet you feel full of energy now, hmm?'[roman type][line break]You have to admit [he of M]'s right - you do feel fully rested!".
 
 To say ForcefeedPillDeclarationFlav of (M - nurse):
 	say "[speech style of M]'[one of]Hmm, and we'd better add this to your prescription!'[or]And now time for your prescription pill!'[stopping][roman type][line break]".

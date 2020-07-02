@@ -10,7 +10,7 @@ Figure of nun-dress-no-xray is the file "Items/Clothes/Upper/Special/Halloween/n
 To decide which figure-name is clothing-image of (C - nun-dress):
 	if C is wrist-bound-behind, decide on figure of nun-dress-no-xray;
 	decide on figure of nun-dress.
-To compute periodic effect of (C - nun-dress): [A hacky way to make sure that when we examine the dress, we see the X-ray version]
+To compute school periodic effect of (C - nun-dress): [A hacky way to make sure that when we examine the dress, we see the X-ray version]
 	if C is wrist-bound-behind:
 		if there is a worn sex toy, now the previous-temporary-image of C is Figure of nun-dress-xray-dong;
 		otherwise now the previous-temporary-image of C is Figure of nun-dress-xray;
@@ -32,7 +32,7 @@ This is the nun bondage prevents hand use rule:
 The nun bondage prevents hand use rule is listed in the hands restriction rules.
 
 To decide which number is the initial outrage of (C - nun-dress):
-	if the player is in a predicament room:
+	if the player is in an unbossed predicament room:
 		if there is worn halloween headgear, decide on 1;
 		otherwise decide on 6;
 	decide on 4.

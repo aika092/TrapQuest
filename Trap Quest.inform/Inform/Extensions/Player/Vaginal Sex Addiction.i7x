@@ -8,7 +8,7 @@ REQUIRES COMMENTING
 
 +!]
 To decide which number is the vaginal sex addiction of the player:
-	if diaper quest is 1 or the player is male, decide on 0;
+	if diaper quest is 1 or the player is not possessing a vagina, decide on 0;
 	decide on previous-vaginal-sex-addiction.
 
 [!<DecideWhichNumberIsTheCalculatedVaginalSexAddictionOfThePlayer>+

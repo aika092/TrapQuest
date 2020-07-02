@@ -19,7 +19,7 @@ To compute SelfExamineDesc of (H - glittering rose):
 	let X be the largeness of hair;
 	say "A cream coloured rose rests in your [ShortDesc of hair]. ".
 
-Definition: glittering rose is roleplay if the player is female and pregnancy fetish is 1.
+Definition: glittering rose is roleplay if the player is possessing a vagina and pregnancy fetish is 1.
 
 Definition: glittering rose is flower themed: decide yes.
 Definition: glittering rose is white themed: decide yes.
@@ -51,6 +51,12 @@ To compute class outfit of (H - glittering rose):
 				now O is in pink wardrobe;
 		summon butterfly wings uncursed;
 		say "A giant pair of wings appear on your back. You feel lighter!";
+		summon red-pasties cursed;
+		say "A pair of red pasties appears on your nipples!";
+		now the quest of red-pasties is vaginal-creampie-quest;
+		now vaginal-creampie-quest is persistent;
+		now red-pasties is vaginal-sex-addiction-influencing;
+		say QuestFlav of red-pasties;
 		now fairy-summoned is 1;
 	otherwise if W is fairy wand:
 		summon W uncursed;

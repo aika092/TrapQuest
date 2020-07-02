@@ -33,8 +33,11 @@ To set up (M - a robobellboy):
 	reset M;
 	now the monstersetup of M is 1;
 	now the target-room of M is the location of a random on-stage hotel bed;
-	now the raw difficulty of M is 5;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - robobellboy):
+	decide on 5.
 
 To decide which room is the nearest patron:
 	let D be 100;
@@ -87,7 +90,7 @@ To compute perception of (M - a robobellboy):
 			say "[big his of M] eyes turn red. [line break][speech style of M][unless the class of the player is succubus]'FREELANCE WHORE. [caps please] ALLOW ME TO MAKE USE OF YOUR SERVICES.'[otherwise]'THE CREATOR REQUESTS YOUR ASSISTANCE IN FUNDING THIS HOTEL.'[end if][roman type][line break]";
 		anger M;
 	otherwise if the class of the player is not catgirl and the class of the player is not puppygirl and (the number of worn crotch covering clothing is 0 or the number of worn breast covering clothing is 0):
-		say "[big his of M] eyes turn red. [line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR HIS SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
+		say "[big his of M] eyes turn red. [line break][first custom style][unless the class of the player is succubus]'YOU REQUIRE CLOTHING. ALLOW ME TO ASSIST YOU.'[otherwise]'THE CREATOR CONSIDERS IT IMPROPER FOR [caps his of demon lord] SERVANTS TO BE NUDE. ALLOW ME TO ASSIST YOU.'[end if][roman type][line break]";
 		cutshow Figure of RoboBellboy Cutscene 1 for M;
 		anger M;
 	otherwise:
@@ -138,7 +141,7 @@ This is the robobellboy punishment rule:
 		say "[one of][BigNameDesc of current-monster] waits beside you patiently.[or][cycling]";
 	otherwise if there is a worn messed knickers:
 		compute change forcing of current-monster;
-	if current-monster is senior robobellboy and the employee-record of senior robobellboy < 0:
+	if current-monster is senior robobellboy:
 		compute trainee forcing of current-monster;
 	otherwise if the class of the player is maid:
 		compute maid forcing of current-monster;
@@ -297,14 +300,14 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-To compute basic greeting to (M - a robobellboy):
+[To compute basic greeting to (M - a robobellboy):
 	if M is interested:
 		say VanityGreeting to M;
 	otherwise:
 		if the times-met of M < 2, say FirstGreeting to M;
 		otherwise say RepeatGreeting to M;
 		now the boredom of M is 0;
-		compute correct perception of M.
+		compute correct perception of M.]
 
 To say FirstResponse of (M - a robobellboy):
 	say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
@@ -314,9 +317,6 @@ To say RepeatResponse of (M - a robobellboy):
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] ignores you.";
-
-To say VanityResponse of (M - a robobellboy):
-	say "[BigNameDesc of M] ignores you.".
 
 Section 2 - Questioning
 
@@ -380,7 +380,7 @@ To compute trainee forcing of (M - senior robobellboy):
 To compute headgear forcing of (M - senior robobellboy):
 	if trainee hood is off-stage and trainee hood is actually summonable:
 		summon trainee hood;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of trainee hood]. You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces it over your head, where a metal latch snaps closed and emits a short and somehow ominous tone. [line break][first custom style]'APPEARANCE REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		FavourUp M;
 	otherwise:
 		say "[BigNameDesc of M] pauses and [his of M] eyes shift from red to green. [line break][first custom style]'CANNOT EXCEED MAXIMUM NUMBER OF ONGOING [']CLASS['] PROGRAMS. GOOD JOB TRAINEE. KEEP UP THE GOOD WORK.'[roman type][line break]";
@@ -390,7 +390,7 @@ To compute bra forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee bra;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces the item onto your body, where the straps snap together and emit a small tone that worries you. [line break][first custom style]MAMMARY IMPROVEMENT REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -400,7 +400,7 @@ To compute knickers forcing of (M - senior robobellboy):
 	let C be a random off-stage trainee thigh highs;
 	if C is clothing and C is actually summonable:
 		summon C;
-		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as it forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
+		say "[BigNameDesc of M] opens up [his of M] chest compartment and pulls out a pair of [ShortDesc of C]! You [if the body soreness of the player > 7]are powerless to resist[otherwise]are too slow to react[end if] as [he of M] forces them onto your body, where it clings to your skin like glue. [line break][first custom style]'FULL MENTAL REGIMEN INITIATED. [caps please] WAIT PATIENTLY FOR FURTHER OPTIMISATION.'[roman type][line break]";
 		bore M;
 		FavourUp M;
 	otherwise:
@@ -426,7 +426,7 @@ To compute whore forcing of (M - senior robobellboy):
 			compute mandatory room leaving of N;
 		let H be a random hotel bed in the location of the player;
 		compute PatronSpawning of H;
-		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has it got me into?![roman type][line break][or][stopping]";
+		if the sex addiction of the player < 9, say "[one of][line break][variable custom style]That fucking robot! What has [he of M] got me into?![roman type][line break][or][stopping]";
 	otherwise:
 		drag to nearest patron by M.
 

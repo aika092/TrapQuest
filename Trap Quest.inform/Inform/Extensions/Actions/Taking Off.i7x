@@ -7,9 +7,6 @@ Understand "rm [something]" as taking off.
 Check taking off insertable:
 	unless the noun is clothing, try unplugging the noun instead.
 
-Check taking off worn finger covering clothing:
-	if there is a worn ring, say "You need to remove your ring[if the number of worn rings > 1]s[end if] first." instead.
-
 Check taking off worn arm covering clothing:
 	if the player is wrist bound, say "You won't be able to successfully get this off whilst your wrists are bound..." instead.
 

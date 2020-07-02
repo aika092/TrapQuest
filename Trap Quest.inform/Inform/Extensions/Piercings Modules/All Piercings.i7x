@@ -60,7 +60,7 @@ To decide which number is the dexterity-influence of (C - ass-module):
 	decide on D.
 
 To say ModuleFlav of (M - ass-module):
-	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your ass, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Reflex Support module trial! Please listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your buttocks. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your ass, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Reflex Support module trial! [big please] listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your buttocks. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 To say ClothingDesc of (C - ass-module):
 	say "A triangle of silvery metal is pressed into your skin just above your ass. You recall the dire warning you were given - [if the dex-transfer of C > 0]removing with it would cause irreparable damage to your agility[otherwise]once it has started to store more power inside your buttocks, removing the module would cause you to lose all that power permanently[end if].".
@@ -98,7 +98,7 @@ To decide which number is the strength-influence of (C - breast-module):
 	decide on D.
 
 To say ModuleFlav of (M - breast-module):
-	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your cleavage, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Strength Support module trial! Please listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your breasts. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on your skin just above your cleavage, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Silicone Strength Support module trial! [big please] listen carefully to the following instructions. You will find that your agility has improved and will continue to grow in-line with the silicone implants in your breasts. Nanobots will draw power from your body and store it safely inside the silicone gel. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored power. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 [!<TheBreastModuleSlutRule>+
 
@@ -182,7 +182,7 @@ Check taking off clitoris lead:
 Section 1 Wearability
 
 Definition: clitoris lead (called P) is eligible:
-	if the player is male or clitoris lead is worn or the player is pussy protected, decide no;
+	if the player is not possessing a vagina or clitoris lead is worn or the player is pussy protected, decide no;
 	if clitoris piercing is worn, decide yes;
 	decide no.
 
@@ -248,7 +248,7 @@ To decide which object is the potential-upgrade-target of (C - normal clit pierc
 Section - Wearability
 
 Definition: a clitoris piercing (called P) is eligible:
-	if the player is male or P is worn or the player is pussy protected or there is a worn clitoris piercing, decide no;
+	if the player is not possessing a vagina or P is worn or the player is pussy protected or there is a worn clitoris piercing, decide no;
 	decide yes.
 
 This is the cursed clitoris piercing stops you wearing underwear rule:
@@ -481,7 +481,7 @@ To say ClothingDesc of (C - a pair of earrings):
 		otherwise if interracial fetish is 1:
 			say "A pair of large circular plastic earrings with a white female gender symbol surrounded by four black male gender symbols pointing towards it. ";
 		otherwise if the player is originally female and the variation of C is 1:
-			say "A pair of large circular plastic earrings with graphic depictions of a mouth, vagina and asshole on each one. ";
+			say "A pair of large circular plastic earrings with graphic depictions of a mouth, vagina, and asshole on each one. ";
 		otherwise if the variation of C is 2:
 			say "A pair of large circular plastic earrings with the words 'I <3 Sucking Cock' on each one. ";
 		otherwise:
@@ -549,7 +549,7 @@ To say ShortDesc of (C - heel-module):
 	say "heel module".
 
 To say ModuleFlav of (M - heel-module):
-	say " An arm snakes out and painfully injects something into your ankles, which are soon covered in a pliable but tough silvery substance.[line break][second custom style]'Thank you for participating in the Allure Improvement System module trial! Please listen carefully to the following instructions. This module will improve the ability of your body to balance in an appropriately feminine posture. Please listen carefully to the following instructions. Module nanobots will ensure that the height of any worn high heels is kept at an appropriate height to allow for further high heel training and perfection, and enable the [bold type][']strut['][second custom style] protocol. Over time heel muscle memory will be migrated to the module database for enhancement and safekeeping. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored talent. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+	say " An arm snakes out and painfully injects something into your ankles, which are soon covered in a pliable but tough silvery substance.[line break][second custom style]'Thank you for participating in the Allure Improvement System module trial! Please listen carefully to the following instructions. This module will improve the ability of your body to balance in an appropriately feminine posture. [big please] listen carefully to the following instructions. Module nanobots will ensure that the height of any worn high heels is kept at an appropriate height to allow for further high heel training and perfection, and enable the [bold type][']strut['][second custom style] protocol. Over time heel muscle memory will be migrated to the module database for enhancement and safekeeping. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored talent. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 Definition: heel-module is strut enabling: decide yes.
 
@@ -626,7 +626,7 @@ To decide which number is the intelligence-influence of (C - head-module):
 	decide on D.
 
 To say ModuleFlav of (M - head-module):
-	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on the middle of your your forehead, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Central Processor Support module trial! Please listen carefully to the following instructions. You will find that your brainpower has improved and will continue to grow in-line with the enhancements to your hair and lips. Nanobots will draw power from your body and store it safely inside the artificial materials. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored mental function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
+	say "An arm snakes out with a strange silvery triangle on one end. It carefully places it on the middle of your your forehead, and you feel a brief twinge of pain as wires push their way into your skin. When the arm pulls away the triangle is left behind.[line break][second custom style]'Thank you for participating in the Central Processor Support module trial! [big please] listen carefully to the following instructions. You will find that your brainpower has improved and will continue to grow in-line with the enhancements to your hair and lips. Nanobots will draw power from your body and store it safely inside the artificial materials. The Health and Safety Department reminds all testers that removal of installed modules will result in severe nerve disruption and therefore the permanent loss of all stored mental function. Installation confirmed complete. Have a nice day and a pleasant remainder of your test experience, TESTER [NameBimbo]!'[roman type][line break]".
 
 [!<TheLipsModuleBlowjobSlutRule>+
 
@@ -734,7 +734,6 @@ A tongue piercing is a kind of piercing. The printed name of tongue piercing is 
 
 To decide which number is the initial outrage of (C - a tongue piercing):
 	decide on 7.
-
 
 To decide which object is the concealer of (C - a tongue piercing):
 	if C is listed in the armUses of arms, decide on arms;

@@ -31,7 +31,7 @@ A wonder bra is a kind of bra. Understand "wonderbra" as wonder bra. Figure of w
 
 There is 1 wonder bra. The text-shortcut of wonder bra is "wbr".
 
-The min size of a wonder bra is usually 3. The max size of a wonder bra is usually 6. The support of a wonder bra is usually 3. A wonder bra is low cut.
+The min size of a wonder bra is usually 3. The max size of a wonder bra is usually 6. The support of a wonder bra is usually 3.
 
 Definition: a wonder bra is black themed: decide yes.
 
@@ -72,7 +72,7 @@ Definition: an exercise bra is exercise themed: decide yes.
 Definition: a greyish exercise bra is grey themed: decide yes.
 Definition: a sexy exercise bra is black themed: decide yes.
 
-To decide which figure-name is clothing-image of (C - a exercise bra):
+To decide which figure-name is clothing-image of (C - an exercise bra):
 	decide on figure of exercise bra.
 To decide which figure-name is clothing-image of (C - a greyish exercise bra):
 	decide on figure of greyish exercise bra.
@@ -130,7 +130,7 @@ To decide which object is the unique-upgrade-target of (C - a greyish exercise b
 
 Definition: a greyish exercise bra is IcarusScienceAppropriate if it is actually summonable.
 
-A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually normally-nipple-exposing. A fetish bra is usually sheer. A fetish bra is fully covering. A fetish bra is usually latex. A fetish bra is usually transformation-rare.
+A fetish bra is a kind of bra. Figure of fetish bra is the file "Items/Clothes/Upper/Bras/latexbra1.png". A fetish bra is usually normally-nipple-exposing. A fetish bra is usually sheer. A fetish bra is high cut. A fetish bra is usually latex. A fetish bra is usually transformation-rare.
 
 There is 1 fetish bra. The text-shortcut of fetish bra is "fbr".
 
@@ -271,7 +271,7 @@ To decide which object is the unique-upgrade-target of (C - a ribbon bra):
 Definition: a ribbon bra is bow themed: decide yes.
 Definition: a ribbon bra is red themed: decide yes.
 
-A spike bra is a kind of bra. Figure of spike bra 1 is the file "Items/Clothes/Upper/Bras/spikebra1.png". Figure of spike bra 2 is the file "Items/Clothes/Upper/Bras/spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is low cut. A spike bra is usually pvc.
+A spike bra is a kind of bra. Figure of spike bra 1 is the file "Items/Clothes/Upper/Bras/spikebra1.png". Figure of spike bra 2 is the file "Items/Clothes/Upper/Bras/spikebra2.png". A spike bra is usually spikey. The min size of a spike bra is usually 2. The max size of a spike bra is usually 15. The support of a spike bra is usually 3. A spike bra is very low cut. A spike bra is usually pvc.
 
 A pink spike bra is a kind of spike bra. A pink spike bra is usually cotton. The soak-limit of a pink spike bra is usually 18.
 
@@ -405,7 +405,7 @@ To decide which object is the unique-upgrade-target of (C - a flimsy bra):
 	if (a random number between 1 and 2 is 1 and there is an off-stage fetish bra) or the number of off-stage ribbon bra is 0, decide on a random off-stage fetish bra;
 	decide on a random off-stage ribbon bra.
 
-A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually fully exposing. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts".
+A pasties is a kind of bra. The support of a pasties is usually 0. A pasties is usually latex. A pasties is usually ridiculously low cut. The min size of a pasties is 20. The max size of a pasties is 20. A pasties is usually transformation-rare. Understand "stickers", "caps", "nipple" as pasties. The text-shortcut of a pasties is "psts".
 
 To say ShortDesc of (B - a pasties):
 	say "nipple pasties".
@@ -430,7 +430,7 @@ To decide which number is the bartering value of (T - a pasties) for (M - a mech
 
 red-pasties is a pasties. Understand "red", "pasties" as red-pasties.
 
-Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.jpg".
+Figure of pasties is the file "Items/Clothes/Upper/Bras/pasties1.png".
 
 To decide which figure-name is clothing-image of (C - a pasties):
 	decide on figure of pasties.
@@ -614,7 +614,7 @@ To decide which object is the unique-upgrade-target of (C - acolyte-chestpiece):
 To say ShortDesc of (B - acolyte-chestpiece):
 	say "acolyte's chestpiece".
 
-To compute SelfExamineDesc of (B - a acolyte-chestpiece):
+To compute SelfExamineDesc of (B - an acolyte-chestpiece):
 	say " that hang freely out of your pointless gold cupless bra. ".
 
 To say ClothingDesc of (C - acolyte-chestpiece):

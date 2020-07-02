@@ -45,7 +45,7 @@ To say ExamineDesc of (C - a recipe):
 			say "The recipe just says 'Pour in a [Appearance corresponding to a Magic of current-crafting-key in the Table of Drinks] liquid and wait.'";
 		otherwise if current-crafting-key >= 20 and current-crafting-key <= 23:
 			say "The recipe just says 'Only a full flask of [FillName current-crafting-key] can create this item properly.'";
-		otherwise if there is a ingredient-highlighted thing and current-crafting-key is not 0:
+		otherwise if there is an ingredient-highlighted thing and current-crafting-key is not 0:
 			let H be a random ingredient-highlighted thing;
 			if current-crafting-key >= 51 and current-crafting-key <= 54:
 				say "The recipe says 'Place any [ShortestDesc of H] in the bowl and the Goddess will do the rest.'";

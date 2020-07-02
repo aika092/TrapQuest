@@ -52,7 +52,7 @@ To say ClothingDesc of (C - a ballet shoes):
 To decide which object is the unique-upgrade-target of (C - a ballet shoes):
 	if there is a worn diaper, decide on a random off-stage baby booties;
 	if diaper quest is 0 and the number of worn ballet related wearthings > 1, decide on a random off-stage thigh high ballet boots;
-	if the player is male, decide on a random off-stage sissy ballet boots;
+	if the player is gendered male, decide on a random off-stage sissy ballet boots;
 	decide on a random off-stage ballet heels.
 
 This is the ballet shoes fix rule:

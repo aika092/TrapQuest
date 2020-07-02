@@ -240,7 +240,7 @@ This is the royal slaves can't masturbate rule:
 	if the class of the player is royal slave:
 		if auto is 0, say "You try, but it's like your [printed name of a random worn headgear] is somehow preventing you!";
 		rule fails.
-The royal slaves can't masturbate rule is listed last in the masturbation restriction rules.
+The royal slaves can't masturbate rule is listed last in the global masturbation restriction rules.
 
 [!<TheSiliconeQueenClassRule>+
 
@@ -446,7 +446,7 @@ A time based rule (this is the compute brood rule):
 				destroy E;
 			otherwise if there is a worn wasp-cloud:
 				let W be a random worn wasp-cloud;
-				say "You watch as once again one of your eggs hatches into a a buzzing swarm of wasps, which join the rest of your brood in buzzing around you.";
+				say "You watch as once again one of your eggs hatches into a buzzing swarm of wasps, which join the rest of your brood in buzzing around you.";
 				let S be a random number between 2 and 4;
 				increase the swarm of W by S;
 				increase total-wasps by S;

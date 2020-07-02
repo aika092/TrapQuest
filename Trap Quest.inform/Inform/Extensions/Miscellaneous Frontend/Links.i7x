@@ -506,14 +506,13 @@ REQUIRES COMMENTING
 To say unique-verb-desc of (T - a monster):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "" and hyperlink extras is 1:
 		if T is friendly and T is intelligent:
-			say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if T is interested and the player is thirsty] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry and the number of held food is 0] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
+			say "[run paragraph on] [link][bracket]talk[close bracket][as]talk to [text-shortcut of T][end link]";
 		otherwise if the player is upright:
 			say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]";
 			repeat with BM running through held zappable things:
 				if the damage improvement of BM > 0, say " [link][bracket][ShortDesc of BM][close bracket][as]zap [the text-shortcut of T] with [the text-shortcut of BM][end link]";
 			repeat with BM running through carried combat-bomb bombs:
 				say " [link][bracket][ShortDesc of BM][close bracket][as]throw [the text-shortcut of BM] at [the text-shortcut of T][end link]";
-			say "[if diaper quest is 0 and T is wenchy and the health of T < the maxhealth of T / 2 and (the player is not feeling submissive or the player is a nympho)] [link][bracket]fuck[close bracket][as]dominate [text-shortcut of T][end link][otherwise if diaper quest is 0 and T is sex-enslaved and the player is the donator] [link][bracket]punish[close bracket][as]dominate [text-shortcut of T][end link][end if]";
 		otherwise if T is uninterested:
 			say " [link][bracket]poke[close bracket][as]poke [text-shortcut of T][end link]";
 		if T is actually seducable:
@@ -526,7 +525,7 @@ REQUIRES COMMENTING
 +!]
 To say unique-verb-desc of (T - a fairy):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "" and hyperlink extras is 1:
-		say "[run paragraph on] [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link][if T is interested] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link][end if][if the player is thirsty and T is interested] [link][bracket]request drink[close bracket][as]ask [text-shortcut of T] for drink[end link][end if][if T is interested and the player is hungry] [link][bracket]request food[close bracket][as]ask [text-shortcut of T] for food[end link][end if]";
+		say "[run paragraph on] [link][bracket]talk[close bracket][as]talk to [text-shortcut of T][end link]";
 		if the player is upright, say " [link][bracket]sl[close bracket][as]sl [text-shortcut of T][end link] [link][bracket]kn[close bracket][as]kn [text-shortcut of T][end link] [link][bracket]ki[close bracket][as]ki [text-shortcut of T][end link]".
 
 To say unique-verb-desc of (T - a vine boss):
@@ -539,7 +538,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - slimegirl):
-	if inline hyperlinks >= 2, say " [link][bracket]greet[close bracket][as]greet [text-shortcut of T][end link] [link][bracket]ask[close bracket][as]ask [text-shortcut of T][end link]".
+	if inline hyperlinks >= 2, say "[run paragraph on] [link][bracket]talk[close bracket][as]talk to [text-shortcut of T][end link]".
 
 [!<SayUniqueVerbDescOfDildoTrap>+
 
@@ -595,7 +594,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - a vine):
-	if inline hyperlinks >= 2, say "[if T is penetrating a fuckhole or T is wrangling the player] [link][bracket]pull[close bracket][as]pull vine[end link][end if]".
+	if inline hyperlinks >= 2, say "[if T is penetrating a fuckhole or T is wrangling a body part] [link][bracket]pull[close bracket][as]pull vine[end link][end if]".
 
 [!<SayUniqueVerbDescOfthrone>+
 
@@ -651,7 +650,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - lubricant):
-	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is male][link][bracket]use[close bracket][as]use lube[end link][otherwise][link][bracket]pussy[close bracket][as]use lube on vagina[end link] [link][bracket]ass[close bracket][as]use lube on butthole[end link][end if]".
+	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is not possessing a vagina][link][bracket]use[close bracket][as]use lube[end link][otherwise][link][bracket]pussy[close bracket][as]use lube on vagina[end link] [link][bracket]ass[close bracket][as]use lube on butthole[end link][end if]".
 
 [!<SayUniqueVerbDescOfSalve>+
 
@@ -667,7 +666,7 @@ REQUIRES COMMENTING
 
 +!]
 To say unique-verb-desc of (T - concealment-salve):
-	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is male][link][bracket]use[close bracket][as]rub [text-shortcut of T] on butthole[end link][otherwise][link][bracket]pussy[close bracket][as]rub [text-shortcut of T] on vagina[end link] [link][bracket]ass[close bracket][as]rub [text-shortcut of T] on butthole[end link][end if]".
+	if inline hyperlinks >= 2, say "[if T is held] [link][bracket]dr[close bracket][as]drop [text-shortcut of T][end link][otherwise] [link][bracket]ta[close bracket][as]ta [text-shortcut of T][end link][end if] [if the player is not possessing a vagina][link][bracket]use[close bracket][as]rub [text-shortcut of T] on butthole[end link][otherwise][link][bracket]pussy[close bracket][as]rub [text-shortcut of T] on vagina[end link] [link][bracket]ass[close bracket][as]rub [text-shortcut of T] on butthole[end link][end if]".
 
 [!<SayUniqueVerbDescOfPowder>+
 
@@ -912,8 +911,8 @@ To compute smart links:
 	unless the player is immobile, say "[if west is N-viable][link]west[end link] [end if][if north is N-viable][link]north[end link] [end if][if south is N-viable][link]south[end link] [end if][if east is N-viable][link]east[end link] [end if][if the room up of the location is a room][link]up[end link] [end if][if the room down of the location is a room][link]down[end link] [end if]";
 	if the player is prone and pink-spraybottle is worn and the milk-puddle of the location of the player + the semen-puddle of the location of the player + the urine-puddle of the location of the player >= 1, say "[link]clean mess[end link] ";
 	if the player is in Dungeon35 or the player is in Woods05 or the player is in Mansion25 or the player is in School21:
-		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]wash in water[end link] ";
-	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and (the player is female or the size of penis > 0)][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling the player) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling the player][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";
+		if there is worn dirty clothing or the semen coating of hair > 0 or the semen coating of face > 0 or the semen coating of breasts > 0 or the semen coating of belly > 0 or the semen coating of thighs > 0 or (diaper quest is 1 and the make-up of face > 0) or the player is in School21, say "[link]enter water[end link] ";
+	say "[if the total squirtable fill of belly > 0 and the player is able to expel][link]expel[end link] [end if][if the player is bursting][link]pee[end link] [end if][if the player is horny and the number of worn chastity cages is 0 and the player is not barbie][link]wank[end link] [end if][if (the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling a body part) and the player is broken][link]submit[end link] [otherwise if the player is monster fucked or there is a live thing grabbing the player or there is a live thing wrangling a body part][link]submit[end link] [link]resist[end link] [end if][link]look[end link]";[TODO: put an "able to masturbate' here.]
 	if inline hyperlinks >= 3 and the player is not immobile:
 		say "[line break]";
 		if diaper quest is 0:

@@ -22,8 +22,11 @@ To say MonsterDesc of (M - vine boss):
 To set up (M - vine boss):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 10;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - vine boss):
+	decide on 10.
 
 To decide which number is the maxhealth of (M - vine boss): [More HP than your average difficult 10 enemy]
 	decide on 3 + (the difficulty of M * (30 + game difficulty)) / 3.
@@ -130,7 +133,7 @@ This is the vine boss ultimate victory attack rule:
 				otherwise:
 					say "[BigNameDesc of ex-princess] leaps into the air and disappears out the top of the pit, leaving you alone with [NameDesc of vine boss] once again.";
 				rule succeeds;
-			otherwise if the player is female and the womb volume of vagina >= 3:
+			otherwise if the player is possessing a vagina and the womb volume of vagina >= 3:
 				say "As the vines near their climax, the monster grabs you with its 'hands' and pulls you up to its flowery mouth. Using the vines in your [variable F] it pushes you into its huge chasm of a mouth and swallows you whole. ";
 				appropriate-cutscene-display figure of vine boss cutscene 1;
 				say "Your body falls into its belly of vines and soon you are being completely filled in your [fuckholes] and mouth. The vines pump and pump [semen] into your body, and you can feel your body straining with the pressure of being filled so much. You feel like you are about to explode!";

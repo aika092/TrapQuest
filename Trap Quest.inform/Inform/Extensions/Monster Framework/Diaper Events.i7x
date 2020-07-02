@@ -591,7 +591,7 @@ To say MasturbationDeclarationFlav of (M - a monster):
 		if there is a worn diaper, say "[speech style of M]'[one of]You're looking a little flustered there, baby. Let's see what I can do about that...'[or]Are you feeling good inside your nappy? Let [daddy of M] help with that...'[at random][roman type][line break]".
 
 To say MasturbationStartFlav of (M - a monster):
-	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is female]your [vagina][otherwise]your [ShortDesc of penis][end if]!".
+	say "[BigNameDesc of M] pushes down on your back with one powerful hand to keep you still, and places [his of M] other hand over [if there is a worn diaper]the crotch of your diaper[otherwise if the player is herm]your [genitals][otherwise if the player is possessing a vagina]your [vagina][otherwise if the player is possessing a penis]your [ShortDesc of penis][otherwise]your crotch[end if]!".
 
 To progress masturbation of (M - a monster):
 	say MasturbationFlav of M;

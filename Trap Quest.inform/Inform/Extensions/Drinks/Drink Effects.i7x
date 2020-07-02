@@ -218,7 +218,7 @@ REQUIRES COMMENTING
 To compute drinking effect (N - 5):
 	say "[if the Known corresponding to an Magic of N in the Table of Drinks is 0]Mmm, a very heavy drink. You hold your head a bit higher as this drink gives you a boost of confidence![otherwise]Another heavy drink. You feel less submissive![end if]";
 	DelicateDown 1;
-	if the noun is blessed or a random number between 1 and 3 is 1:
+	if the player is possessing a penis and (the noun is blessed or a random number between 1 and 3 is 1):
 		PenisUp 1.
 
 [!<ComputeDrinkingEffect6>+
@@ -290,6 +290,5 @@ To compute drinking effect (N - 23):
 	say "You close your eyes and drink the mix of liquids.[one of] You cringe and shudder in shame[if the humiliation of the player > 29500], which of course just turns you on even more[end if].[or].[or].[in random order]";
 	FaceFill murkwater by 1;
 	suggest swallowing.
-
 
 Drink Effects ends here.

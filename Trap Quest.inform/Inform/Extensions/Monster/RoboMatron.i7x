@@ -21,9 +21,12 @@ To decide which figure-name is the monster-image of (M - robomatron):
 To set up (M - robomatron):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 18;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now M is in Hotel36.
+
+To decide which number is the starting difficulty of (M - robomatron):
+	decide on 18.
 
 This is the spawn initial robomatron rule:
 	if robomatron is off-stage and diaper quest is 1:

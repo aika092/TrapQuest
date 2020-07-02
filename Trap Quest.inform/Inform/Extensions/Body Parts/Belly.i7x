@@ -604,7 +604,7 @@ To Overflow:
 				say "Your belly maxes out and just can't physically inflate any further. Suddenly there is a loud [bold type]POP[roman type], and then everything goes black.";
 				now delayed fainting is 1;
 				now the fainting reason of the player is 19;
-		if the stomach-liquid of the player > 15, follow the player pukes rule.
+		if the stomach-liquid of the player > 15 and super gag reflex < 2, follow the player pukes rule.
 
 Chapter 3 - Ass Filling
 
@@ -1023,8 +1023,12 @@ To AssSquirt:
 							truncate LV to 9 entries;
 							say "Where do you want to collect the liquid you're about to expel?[line break]";
 							repeat with V running through LV:
-								if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
-								otherwise set next numerical response to "[BigNameDesc of V]";
+								if V is bottle:
+									set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+								otherwise if V is pedestal:
+									set next numerical response to "The [V]";
+								otherwise:
+									set next numerical response to "[BigNameDesc of V]";
 							set numerical response 0 to "don't collect";
 							compute multiple choice question;
 							if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
@@ -1219,7 +1223,7 @@ To AssSquirt:
 			now element-count is 5;
 	now the squirt timer of belly is 0;
 	if asshole is actually occupied:
-		say "The cascade stops since your [asshole] is now occupied.";
+		say "The [cascade] stops since your [asshole] is now occupied.";
 	otherwise:
 		if voluntarySquatting is 0:
 			do nothing;
@@ -1272,6 +1276,7 @@ To lay (X - a number) small eggs:
 			let S be a random available small egg;
 			now S is in the location of the player;
 			now S is laid;
+			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if egg laying fetish is 0:
 			appropriate-cutscene-display figure of egg laying 8;
 		otherwise if the semen volume of belly > 6:
@@ -1309,6 +1314,7 @@ To lay (X - a number) medium eggs:
 			let S be a random available medium egg;
 			now S is in the location of the player;
 			now S is laid;
+			if a random number between 1 and 4 is 1, now the hatching of S is 1;
 		if the semen volume of belly > 6:
 			appropriate-cutscene-display figure of egg laying 5;
 		otherwise if the soreness of asshole > 7:
@@ -1351,7 +1357,8 @@ To lay (X - a number) large eggs:
 			decrease X by 1;
 			let S be a random available large egg;
 			now S is in the location of the player;
-			now S is laid.
+			now S is laid;
+			if a random number between 1 and 4 is 1, now the hatching of S is 1.
 
 [!<EggRipClothing>+
 
