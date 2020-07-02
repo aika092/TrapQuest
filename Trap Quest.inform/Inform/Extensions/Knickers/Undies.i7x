@@ -17,7 +17,7 @@ To say selfexaminetitle of (U - an undies):
 
 To decide which number is the core outrage of (C - an undies): [This is plugged into both outrage and cringe]
 	if C is crotch-exposing, decide on 15;
-	if C is crotch-ripped, decide on 12;
+	[if C is crotch-ripped, decide on 12;] [The lewdness is what can be seen, not the fact that it's ripped]
 	let O be 13 - the armour of C;
 	if O < 11 and C is actually sheer, decide on 11; [Sheer undies? Very lewd!]
 	if O < 6, decide on 6; [It's always a bit outrageous to have your underwear on display]

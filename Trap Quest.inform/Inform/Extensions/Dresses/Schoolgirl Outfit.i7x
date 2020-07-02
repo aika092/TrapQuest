@@ -87,7 +87,7 @@ The printed name of halloween schoolgirl outfit is usually "[clothing-title-befo
 There is 1 halloween schoolgirl outfit.
 
 To say MediumDesc of (C - a halloween schoolgirl outfit):
-	say "halloween-style slutty schoolgirl outfit".
+	say "Halloween-style slutty schoolgirl outfit".
 
 Figure of halloween schoolgirl outfit is the file "Items/Clothes/Upper/Special/Schoolgirl/schoolgirl1.png".
 

@@ -340,8 +340,8 @@ Definition: yourself is able to get horny:
 	[if the player is grossed out, decide no;]
 	if the class of the player is princess and princess-consort is monster and the refractory-period of princess-consort > 0, decide no;
 	if the latex-transformation of the player > 3, decide no;
-	if refractoryperiod > 2 and (the player is male or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
-	[if the player is male and the size of penis is 0, decide no;]
+	if refractoryperiod > 2 and (the player is not possessing a vagina or the number of live things penetrating a fuckhole is 0), decide no; [Player can't gain arousal on the turn that they cum. Except women, during sex, who can have continued orgasms.]
+	[if the player is barbie, decide no;]
 	decide yes.
 
 [!<ThingIsUnlimitedHorniness>+
@@ -430,6 +430,6 @@ This is the not horny enough to wank rule:
 	if the player is grossed out and the player is not magically horny: [won't even masturbate automatically]
 		if auto is 0, say "You can't masturbate while grossed out.";
 		rule fails.
-The not horny enough to wank rule is listed last in the masturbation restriction rules.
+The not horny enough to wank rule is listed last in the global masturbation restriction rules.
 
 Arousal ends here.

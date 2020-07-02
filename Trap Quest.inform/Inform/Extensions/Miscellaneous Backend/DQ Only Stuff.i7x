@@ -61,7 +61,7 @@ Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	if the bimbo of the player < 10:
-		if the player is male, decide on figure of YesNoBackground1;
+		if the player is gendered male, decide on figure of YesNoBackground1;
 		otherwise decide on figure of YesNoBackground2;
 	decide on figure of YesNoBackground3.
 

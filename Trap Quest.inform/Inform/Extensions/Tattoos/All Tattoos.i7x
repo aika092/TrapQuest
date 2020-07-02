@@ -437,12 +437,12 @@ To decide which number is the initial outrage of (T - black owned tattoo):
 To decide which object is the concealer of (T - black owned tattoo):
 	let S be a random worn actually dense knee-length or longer crotch-in-place clothing;
 	if S is clothing, decide on S;
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - black owned tattoo):
 	if T is listed in the armUses of arms, decide on arms;
 	let S be a random worn not-see-through knee-length or longer crotch-in-place clothing;
 	if S is clothing, decide on S;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 
 born to lose tattoo is a crotch tattoo. The tattoo-title of born to lose tattoo is "born to lose".
 Figure of born to lose tattoo is the file "Items/Tats/tattoo14.jpg".
@@ -664,10 +664,10 @@ To decide which number is the semen-addiction-influence of (C - cum-dump tattoo)
 To decide which number is the semen-taste-addiction-influence of (C - cum-dump tattoo):
 	decide on 2.
 To decide which object is the concealer of (T - cum-dump tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - cum-dump tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 To decide which number is the initial outrage of (T - cum-dump tattoo):
 	decide on 12.
 Definition: cum-dump tattoo is semen themed: decide yes.
@@ -703,10 +703,10 @@ Understand "messing", "makes", "makes me", "cum" as cum-when-messing tattoo.
 To say tattoo-desc of (T - a cum-when-messing tattoo):
 	say "The words 'Messing Makes Me Cum' are tattooed on your right outer thigh. Its effect is pretty self-explanatory.".
 To decide which object is the concealer of (T - cum-when-messing tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - cum-when-messing tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 Definition: cum-when-messing tattoo is toilet themed:
 	decide yes.
 
@@ -819,7 +819,7 @@ To decide which number is the delicateness-influence of (T - daddy's wild child 
 To decide which number is the initial cringe of (T - daddy's wild child tattoo):
 	decide on 6.
 
-demon belly mark is a belly tattoo. The tattoo-title of demon belly mark is "demon belly pentagram". Understand "pentagram" as demon belly mark.
+demon belly mark is a belly-tattoo. The tattoo-title of demon belly mark is "demon belly pentagram". Understand "pentagram" as demon belly mark.
 Definition: demon belly mark is drawable: decide no.
 To say tattoo-desc of (T - demon belly mark):
 	say "The mark of a pentagram around your belly button. You feel that a permanent magic effect makes anything you consume increase many times in size when it reaches your stomach.".
@@ -863,12 +863,12 @@ Definition: diapered dinosaur tattoo is eligible:
 	if the noun is dinosaur themed or the noun is soiled-diaper, decide yes;
 	decide no.
 To say tattoo-desc of (T - diapered dinosaur tattoo):
-	say "A drawing of a dinosaur wearing a cloth diaper and large safety pin along with baby play-blocks is tattooed on the back of your your right tight.".
+	say "A drawing of a dinosaur wearing a cloth diaper and large safety pin along with baby play-blocks is tattooed on the back of your your right thigh.".
 To decide which object is the concealer of (T - diapered dinosaur tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense calf covering clothing.
 To decide which object is the at least partial concealer of (T - diapered dinosaur tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through calf covering clothing.
 To decide which number is the strength-influence of (T - diapered dinosaur tattoo):
 	decide on 1.
 To decide which number is the diaper-addiction-influence of (T - diapered dinosaur tattoo):
@@ -946,10 +946,10 @@ The tattoo-title of drinkme tattoo is "drink me".
 To say tattoo-desc of (T - drinkme tattoo):
 	say "This colourful potion is tattooed on your leg. It has a label that says 'drink me'. You feel it fuelling a bold obsession to drink whatever you can find!".
 To decide which object is the concealer of (T - drinkme tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - drinkme tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 To decide which number is the initial cringe of (T - drinkme tattoo):
 	decide on 3.
 Definition: drinkme tattoo is drink themed: decide yes.
@@ -959,10 +959,10 @@ dumb baby tattoo is a body tattoo. The tattoo-title of dumb baby tattoo is "dumb
 To say tattoo-desc of (T - dumb baby tattoo):
 	say "The words 'dumb baby' are written onto your leg with red sharpie.".
 To decide which object is the concealer of (T - dumb baby tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - dumb baby tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 To decide which number is the intelligence-influence of (T - dumb baby tattoo):
 	decide on -1.
 To decide which number is the initial cringe of (T - dumb baby tattoo):
@@ -1123,9 +1123,9 @@ To say tattoo-desc of (T - for deposit only tattoo):
 	say "The words 'For Deposit Only' and a red Adulterer 'A' are tattooed in large gothic letters above your [vagina]. You can feel it suppressing your ability to have vaginal orgasms or faint from vaginal soreness.".
 This is the deposit only tattoo blocks masturbation rule:
 	if for deposit only tattoo is worn:
-		if auto is 0, say "Your [ShortDesc of for deposit only tattoo] is somehow preventing you!";
+		now failed-masturbation-reason is the substituted form of "Your [ShortDesc of for deposit only tattoo] is somehow preventing you!";
 		rule fails.
-The deposit only tattoo blocks masturbation rule is listed last in the masturbation restriction rules.
+The deposit only tattoo blocks masturbation rule is listed last in the vaginal masturbation restriction rules.
 Definition: for deposit only tattoo is vagina themed: decide yes.
 
 forever tattoo is a crotch tattoo. The tattoo-title of forever tattoo is "nothing is forever". Understand "nothing is" as forever tattoo.
@@ -1266,7 +1266,7 @@ Definition: hundred percent cunt tattoo is eligible:
 	if the noun is not manly clothing and (the noun is knickers or the noun is trousers), decide yes;
 	decide no.
 To say tattoo-desc of (T - hundred percent cunt tattoo):
-	say "The words '100% CUNT' are tattooed in block capitals above your crotch. [if the player is male]At the moment, this is clearly a lie![otherwise]Now that this is true, it seems to be helping your mind stay focused, but you can also feel it making your [vagina] somehow... desirable.[end if]".
+	say "The words '100% CUNT' are tattooed in block capitals above your crotch. [if the player is not possessing a vagina]At the moment, this is clearly a lie![otherwise]Now that this is true, it seems to be helping your mind stay focused, but you can also feel it making your [vagina] somehow... desirable.[end if]".
 To decide which number is the bimbo-influence of (T - hundred percent cunt tattoo):
 	if the player is female, decide on -2;
 	decide on 0.
@@ -1301,10 +1301,10 @@ incontinent-when-speaking tattoo is a body tattoo. The tattoo-title of incontine
 To say tattoo-desc of (T - incontinent-when-speaking tattoo):
 	say "The words 'Incontinent when speaking' are written on your inner thigh with black sharpie. [if the player is incontinent]But the effect no longer does anything, since you're incontinent all the time anyway![otherwise]It makes you lose control of your bodily functions whenever you say anything out loud.[end if]".
 To decide which object is the concealer of (T - incontinent-when-speaking tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense thigh covering clothing.
 To decide which object is the at least partial concealer of (T - incontinent-when-speaking tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through thigh covering clothing.
 To decide which number is the initial cringe of (T - incontinent-when-speaking tattoo):
 	decide on 4.
 This is the incontinent-when-speaking tattoo inconveniences speech rule:
@@ -1315,13 +1315,7 @@ This is the incontinent-when-speaking tattoo inconveniences speech rule:
 			say "Do you really want to speak out loud? If you do, you might soil yourself. ";
 			if the player is not bimbo consenting, rule fails.
 The incontinent-when-speaking tattoo inconveniences speech rule is listed last in the player speech rules.
-Carry out greeting when incontinent-when-speaking tattoo is worn:
-	follow the speech penalties rules.
-Carry out questioning when incontinent-when-speaking tattoo is worn:
-	follow the speech penalties rules.
-Carry out drink requesting when incontinent-when-speaking tattoo is worn:
-	follow the speech penalties rules.
-Carry out food requesting when incontinent-when-speaking tattoo is worn:
+Carry out talking when incontinent-when-speaking tattoo is worn:
 	follow the speech penalties rules.
 The speech penalties rules is a rulebook.
 A speech penalties rule (this is the spontaneous incontinence rule):
@@ -1389,7 +1383,7 @@ To decide which number is the initial cringe of (T - kitty cat tattoo):
 	decide on 7.
 Definition: kitty cat tattoo is cat themed: decide yes.
 
-knock-me-up tattoo is a belly tattoo. The tattoo-title of knock-me-up tattoo is "knock me up daddy". Understand "knock", "knock me", "knock me up", "daddy" as knock-me-up tattoo.
+knock-me-up tattoo is a belly-tattoo. The tattoo-title of knock-me-up tattoo is "knock me up daddy". Understand "knock", "knock me", "knock me up", "daddy" as knock-me-up tattoo.
 To say tattoo-desc of (T - knock-me-up tattoo):
 	say "The words 'Knock Me Up Daddy' are tattooed in a black cursive font in an arch above your belly button[if the player is female]. You can feel it increasing your fertility[end if].".
 Definition: knock-me-up tattoo is drawable: decide no.
@@ -1398,7 +1392,7 @@ To summon (T - knock-me-up tattoo):
 	progress quest of inking-quest;
 	increase the pregnancy rate of the player by 1;
 	now T is worn by the player.
-Definition: knock-me-up tattoo is IcarusScienceAppropriate if pregnancy fetish > 0 and there is a worn tattoo and the number of worn belly tattoo is 0.
+Definition: knock-me-up tattoo is IcarusScienceAppropriate if pregnancy fetish > 0 and there is a worn tattoo and the number of worn belly-tattoo is 0.
 
 Book - L Tattoos
 
@@ -1561,7 +1555,7 @@ To summon (T - my-vagina tattoo):
 	now T is worn by the player;
 	progress quest of inking-quest;
 	increase the pregnancy rate of the player by 1.
-To decide which number is the vaginal-sex-addiciton-influence of (T - my-vagina tattoo):
+To decide which number is the vaginal-sex-addiction-influence of (T - my-vagina tattoo):
 	decide on 1.
 To decide which number is the initial outrage of (T - my-vagina tattoo):
 	decide on 7.
@@ -1921,7 +1915,7 @@ Definition: respect the pussy tattoo is eligible:
 		if the noun is crotch-exposing or (the noun is vagina themed and the initial outrage of the noun <= 5), decide yes;
 	decide no.
 To say tattoo-desc of (T - respect the pussy tattoo):
-	say "The words 'respect the pussy' are inked above your [genitals][if the player is male]. It doesn't seem to do much right now[otherwise if T is not currently visible]. It feels like it wants to be kept on display[end if].".
+	say "The words 'respect the pussy' are inked above your [genitals][if the player is not possessing a vagina]. It doesn't seem to do much right now[otherwise if T is not currently visible]. It feels like it wants to be kept on display[end if].".
 To decide which number is the initial outrage of (T - respect the pussy tattoo):
 	decide on 7.
 To decide which number is the delicateness-influence of (T - respect the pussy tattoo):
@@ -1992,11 +1986,11 @@ Definition: royal hearts tattoo is eligible:
 To say tattoo-desc of (T - royal hearts tattoo):
 	say "The two vibrant pink hearts with crowns and ornate golden swirls are inked on the front of your thighs.".
 To decide which object is the concealer of (T - royal hearts tattoo):
-	let C be a random worn leg covering actually dense clothing;
+	let C be a random worn thigh covering actually dense clothing;
 	decide on C.
 To decide which object is the at least partial concealer of (T - royal hearts tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	let C be a random worn leg covering not-see-through clothing;
+	let C be a random worn thigh covering not-see-through clothing;
 	decide on C.
 To decide which number is the bimbo-influence of (T - royal hearts tattoo):
 	decide on 1.
@@ -2560,7 +2554,7 @@ Definition: VIP pussy tattoo is eligible:
 	if the noun is concealment-salve or the noun is vagina themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - VIP pussy tattoo):
-	say "The letters 'V', 'I' and 'P' are written in stylish blue and black above your [genitals]. [if the player is male]It doesn't seem to do much right now[otherwise]It might discourage weak enemies from choosing vaginal sex[end if].".
+	say "The letters 'V', 'I' and 'P' are written in stylish blue and black above your [genitals]. [if the player is not possessing a vagina]It doesn't seem to do much right now[otherwise]It might discourage weak enemies from choosing vaginal sex[end if].".
 To decide which number is the initial outrage of (T - VIP pussy tattoo):
 	decide on 9.
 This is the VIP pussy tattoo pussy slut rule:
@@ -2582,7 +2576,7 @@ To say tattoo-desc of (T - virgin void tattoo):
 To decide which number is the vaginal sensitivity influence of (C - virgin void tattoo):
 	if the vaginalvirgin of the player is 1, decide on 0;
 	decide on 2.
-To decide which number is the vaginal-sex-addiciton-influence of (C - virgin void tattoo):
+To decide which number is the vaginal-sex-addiction-influence of (C - virgin void tattoo):
 	if the vaginalvirgin of the player is 1, decide on -1;
 	decide on 0.
 To decide which number is the initial outrage of (T - virgin void tattoo):
@@ -2632,10 +2626,10 @@ Definition: weakness tattoo is eligible: decide no.
 To say tattoo-desc of (T - weakness tattoo):
 	say "A black star is tattooed on your ankle.".
 To decide which object is the concealer of (T - weakness tattoo):
-	decide on a random worn actually dense leg covering clothing.
+	decide on a random worn actually dense ankle covering clothing.
 To decide which object is the at least partial concealer of (T - weakness tattoo):
 	if T is listed in the armUses of arms, decide on arms;
-	decide on a random worn not-see-through leg covering clothing.
+	decide on a random worn not-see-through ankle covering clothing.
 To decide which number is the strength-influence of (T - weakness tattoo):
 	decide on -5.
 
@@ -2733,7 +2727,7 @@ womb diagram tattoo is a crotch tattoo. The tattoo-title of womb diagram tattoo 
 Definition: womb diagram tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if the player is female and pregnancy fetish is 1, decide yes;
+	if the player is possessing a vagina and pregnancy fetish is 1, decide yes;
 	decide no.
 Definition: womb diagram tattoo is eligible:
 	if the noun is pregnancy related or the noun is vagina themed, decide yes;

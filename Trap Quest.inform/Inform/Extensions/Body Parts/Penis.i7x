@@ -94,11 +94,11 @@ To say sexual-player-penis:
 REQUIRES COMMENTING
 
 +!]
-Definition: penis is tiny if the size of penis > 0 and the size of penis < 4.
+Definition: penis is tiny if the player is possessing a penis and the size of penis < 4.
 
 [!<PenisIsLewdlyExposed>+
 
-Determines whether the player's penis is exposed in a provacative way.
+Determines whether the player's penis is exposed in a provocative way.
 
 +!]
 Definition: penis is lewdly exposed if penis is exposed.
@@ -108,7 +108,7 @@ To decide which number is the lewdly exposed outrage of (P - penis):
 
 [!<PenisIsAtLeastPartiallyLewdlyExposed>+
 
-Determines whether the player's penis is partially exposed in a provacative way.
+Determines whether the player's penis is partially exposed in a provocative way.
 
 +!]
 Definition: penis is at least partially lewdly exposed if penis is at least partially exposed.
@@ -122,7 +122,7 @@ Determines whether penis is concealed, not if it is covered by something.
 
 +!]
 Definition: penis is exposed:
-	if the size of penis <= 0, decide no;
+	if the player is not possessing a penis, decide no;
 	if the at least partial concealer of penis is a thing, decide no;
 	decide yes.
 
@@ -132,7 +132,7 @@ Determines whether penis is partially concealed.
 
 +!]
 Definition: penis is at least partially exposed:
-	if the size of penis <= 0, decide no;
+	if the player is not possessing a penis, decide no;
 	if the concealer of penis is a thing, decide no;
 	decide yes.
 
@@ -160,7 +160,6 @@ Definition: a diaper is potentially erection concealing: decide yes.
 
 Definition: a clothing is potentially penis concealing if it is actually dense and it is potentially penis covering and (penis is not penis-erect or the size of penis < 3 or it is potentially erection concealing).
 Definition: a clothing is potentially at least partially penis concealing if it is not see-through and it is potentially penis covering.
-
 
 [!<DecideWhichObjectIsTheConcealerOfPenis>+
 
@@ -207,6 +206,24 @@ To decide which number is min penis size:
 	if min penis size points is 0, decide on diaper quest;
 	decide on min penis size points + diaper quest + micro-choice.
 
+[!<PlayerIsPossessingPenis>
+
+REQUIRES COMMENTING
+
++!]
+Definition: yourself is possessing a penis:
+	if the size of penis > 0, decide yes;
+	decide no.
+
+[!<PlayerIsReallyPossessingPenis>
+
+REQUIRES COMMENTING
+
++!]
+Definition: yourself is really possessing a penis:
+	if the real size of penis > 0, decide yes;
+	decide no.
+
 Section 2 - Erections
 
 penis has a number called penis-obedience. The penis-obedience of penis is 1.
@@ -241,8 +258,7 @@ penis can be penis-erect or not penis-erect. penis is not penis-erect.
 
 [Some things prevent the player from getting erections]
 Definition: penis is able to get erect:
-	if the size of penis is 0, decide no;
-	if the player is female, decide no;
+	if the player is not possessing a penis, decide no;
 	if penis is penis-erect, decide yes;
 	if there is a worn chastity cage, decide no;
 	if there is a worn restricting research airhancer, decide no;
@@ -259,7 +275,7 @@ Definition: penis is erect-at-will:
 	if the player is very horny, increase A by 1;
 	increase A by the size of penis;[if you're bigger, its easier to get erect]
 	let D be 0;
-	if the wanktime of the player > 0, decrease D by the wanktime of the player / 5;[if you came recently, its harder to get an erection]
+	if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;[if you came recently, its harder to get an erection]
 	decrease D by the penis-obedience of penis;[if you haven't been told to get an erection, it may be harder]
 	decrease D by the anal sex addiction of the player / 2;[your addiction to anal sex also interferes with your erections]
 	let R be a random number between A and D;
@@ -277,12 +293,11 @@ Definition: penis is erect-on-request:
 	increase A by the size of penis;
 	increase A by the penis-obedience of penis - 1;[now that the player is being asked to get hard, obedience contributes rather than hinders]
 	let D be 0;
-	if the wanktime of the player > 0, decrease D by the wanktime of the player / 5;
+	if the wanktime of the player > 100, decrease D by the wanktime of the player / 5;
 	decrease D by the anal sex addiction of the player / 2;
 	let R be a random number between A and D;
 	if R < -1, decide no;
 	decide yes.
-
 
 [Whenever the player gains arousal for the turn, they have a chance of getting an erection]
 To compute sudden erection chance (X - a number):
@@ -295,7 +310,7 @@ To compute sudden erection chance (X - a number):
 		if the player is very horny, increase M by 1;
 		decrease M by the anal sex addiction of the player / 3;
 		decrease M by (the penis-obedience of penis - 1) / 3;
-		if the wanktime of the player > 0, decrease M by the wanktime of the player / 5;
+		if the wanktime of the player > 100, decrease M by the wanktime of the player / 5;
 		now X is X / 100;
 		let A be X * M;
 		let R be a random number between 1 and A;
@@ -393,7 +408,7 @@ REQUIRES COMMENTING
 +!]
 To say PenisFlavour (N - a number):
 	if N is 0:
-		say "barbie doll style lack of genitalia";
+		say "Barbie doll style lack of genitalia";
 	otherwise:
 		if N is 1, say "[PenisSizeFlav N], [PenisShaftFlav N]";
 		otherwise say "[PenisSizeFlav N] [PenisShaftFlav N]".
@@ -452,7 +467,7 @@ REQUIRES COMMENTING
 
 +!]
 To say TotalDesc of penis:
-	if the size of penis > 0:
+	if the player is possessing a penis:
 		if there is worn chastity cage:
 			say "Your [ShortDesc of penis] and [ShortBallsDesc] are kept soft and locked away inside a chastity cage. ";
 		otherwise if there is pussy covering clothing:
@@ -490,7 +505,7 @@ To say PenisModesty:
 			say "It is [if penis is exposed]clearly[otherwise]partially[end if] visible [if W is actually dense]poking out of[otherwise]through[end if] your [ShortDesc of W]. ";
 		otherwise:
 			say "You have no clothing covering it. ";
-	otherwise if the size of penis > 0:
+	otherwise if the player is possessing a penis:
 		let W be the concealer of penis;
 		say "It can't be seen thanks to the [ShortDesc of W]. ".
 
@@ -499,26 +514,27 @@ Part 3 - Modify Penis Stats
 previous penis length is a number that varies.
 
 To PenisUp (X - a number):
-	if the player is female, now X is 0;
 	now previous penis length is the size of penis;
+	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a june 2020 top donator), now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
 		now X is 0;
-	if fast tg is 3, now X is -1; [no text flavour]
 	if bitch tattoo is worn, now X is X / 2;
-	if X is 0:
-		say "[if the player is male]Your [manly-penis] can't seem to grow any larger![end if]";
-	while X > 0:
-		decrease X by 1;
-		if the size of penis < 10:
-			increase the size of penis by 1;
+	if fast tg is 3, now X is 0;
+	if X > 0:
+		if the size of penis >= 10:
+			say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
+			dignify 50;
+		otherwise:
+			if the player is possessing a penis, say "You feel your penis grow into a ";
+			otherwise say "Suddenly, you feel something growing just above your [vagina]. It's ";
+			while X > 0:
+				decrease X by 1;
+				if the size of penis < 10, increase the size of penis by 1;
+			say "a [ShortDesc of penis]!";
 			if the size of penis is 8, cutshow figure of body reaction 3 for penis;
 			if the size of penis is 9, cutshow figure of body reaction 8 for penis;
 			if the size of penis is 10, cutshow figure of body reaction 9 for penis;
-			say "You feel your penis grow into a [ShortDesc of penis]!";
-		otherwise:
-			dignify 50;
-			if X is 0, say "Your monster of a [manly-penis] can't seem to grow any larger! You feel like a stud!";
 	let C be a random worn strapon-panties;[TODO: flavour for the player's dick popping out of too-small underwear]
 	if C is clothing and previous penis length < the strap-length of C and the size of penis >= the strap-length of C:
 		say PenisHarden of C.
@@ -536,7 +552,7 @@ To PenisDown (X - a number):
 	let flav-said be 0;
 	if X > 0:
 		if the player is male and the size of penis <= min penis size:
-			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but [if the size of penis is 0]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
+			if penis-flav is true, say "You feel a strange pang in your crotch... you feel that your penis tried to shrink even further, but [if the player is not possessing a penis]since you have nothing left, it can't[otherwise if the size of penis < 4]it's so tiny that it can't get any smaller[otherwise]something prevents it[end if]!";
 			now X is 0;
 		while X > 0:
 			decrease X by 1;
@@ -546,7 +562,7 @@ To PenisDown (X - a number):
 		if penis-flav is true or image cutscenes > 1:
 			if the size of penis <= 4 and the size of penis > 1 and previous penis length > 4:
 				cutshow figure of body reaction 5 for penis;
-			otherwise if the size of penis <= 0 and previous penis length > 0:
+			otherwise if the player is not possessing a penis and previous penis length > 0:
 				cutshow figure of body reaction 4 for penis;
 		if penis-flav is true:
 			if the player is male and previous penis length <= min penis size and fast tg is 3:

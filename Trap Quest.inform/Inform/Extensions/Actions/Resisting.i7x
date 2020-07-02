@@ -77,7 +77,7 @@ REQUIRES COMMENTING
 +!]
 Check resisting:
 	now forced submit is 0;
-	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling the player is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
+	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling a body part is 0, say "You are not being held in place, so there is nothing to resist against!" instead;
 	let P be fuckhole pain;
 	let M be a random monster penetrating an orifice;
 	if vampiress is penetrating an orifice, now M is vampiress;[she always gets resisted first, since she has mind control stuff to talk about]
@@ -86,8 +86,8 @@ Check resisting:
 	otherwise if there is a wrong race fucking monster:
 		say "[one of][if the player is able to speak]You find yourself resisting the act. [line break][variable custom style]'I only serve black [manly-penis]!'[roman type][line break][otherwise]You have a deep down, uncontrollable feeling that the person doesn't deserve to enjoy your body.[end if][or][stopping]";
 	otherwise if the latex-transformation of the player > 2 and there is a live thing penetrating a fuckhole:
-		say "Your gaping [if the player is male][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
-		now forced submit is 1;[This tells the submission function not to display any flavor text.]
+		say "Your gaping [if the player is not possessing a vagina][asshole] makes[otherwise]orifices make[end if] it impossible to resist!";
+		now forced submit is 1;[This tells the submission function not to display any flavour text.]
 		try submitting instead;
 	otherwise if the player is subdued:
 		say "[ResistSubduedFlav of a random worn subduing clothing] You have no choice but to lie there and accept the invasion.";
@@ -172,16 +172,16 @@ Report resisting:
 		compute hip fat burning;
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
-	if M is nothing, now M is a random thing wrangling the player;[Lastly, we take a look at any holders on.]
+	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	unless M is nothing:
 		if the player is friendly fucked:
 			say FriendlySexResistFlav of M;
 			if M is monster, compute FriendlySexRelease of M;
 		otherwise:
-			if M is penetrating the player or M is grabbing the player:
+			if M is penetrating a body part or M is grabbing the player:
 				say SexResistFlav of M;
 				if M is monster, compute sex resist punishment of M;
-			otherwise if M is wrangling the player:
+			otherwise if M is wrangling a body part:
 				compute wrangled resisting of M;
 			if the delicateness of the player > 10 and M is male intelligent human monster and there is a worn tattoo and daddy's wild child tattoo is not worn and a random number between 1 and 10 is 1:
 				summon daddy's wild child tattoo;
@@ -306,7 +306,7 @@ REQUIRES COMMENTING
 
 +!]
 To say DelicateResRefusalFlav of (M - a monster):
-	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is male and transGender is 0]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
+	say "[one of]You lie there and take it anyway--you're too afraid of what [he of M] might do if you don't play along.[or]You decide you're safer if you just do whatever [he of M] has in mind, no matter how degrading.[or]You[']re too afraid of what could happen if you put up a fight! There[']s no way you're doing anything but taking everything [he of M] wants to give you![or]You wouldn't dare resist now, not when [he of M] has you right where [he of M] wants you! You sit there and take it like the [if the player is gendered male]sissy bitch[otherwise]scaredy-cat[end if] you are![at random]".
 
 [!<SayOralAddResRefusalFlavOfMonster>+
 
@@ -314,7 +314,7 @@ REQUIRES COMMENTING
 
 +!]
 To say OralAddResRefusalFlav of (M - a monster):
-	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
+	say "[one of]You try to resist, but in the end you can't stop yourself from polishing [his of M] [manly-penis] like the cum-hungry slut you are.[or]Your brain wants to resist, but your body doesn't. You submissively pleasure [NameDesc of M], desperate for your next semen fix.[or][if the player is feeling dominant]It's incredibly degrading, but you can't bring yourself to resist. Not when there's a [manly-penis] in your mouth just waiting to feed you a helping of delicious [semen].[otherwise]You can't bring yourself to resist knowing there could be a mouthful of tasty [semen] in this for you.[end if][or][if the player is not a pervert and the player is gendered female]You know it's something only a complete harlot would do, but you just can't pass up a mouthful of tasty [semen].[otherwise if the player is not a pervert]You know it's a little gay, but you just can't pass up a mouthful of tasty [semen].[otherwise]You can't help suckling [NameDesc of M][']s [manly-penis] for all it's worth. You might get to drink [semen] afterwards![end if][in random order]".
 
 [!<SayOralSlutResRefusalFlavOfMonster>+
 

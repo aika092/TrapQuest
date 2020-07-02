@@ -25,7 +25,7 @@ To decide which figure-name is the examine-image of (C - a vine):
 		if C is penetrating vagina:
 			if the TrapNo of C > 0, cutshow figure of vines cutscene 7;
 			decide on figure of vines cutscene 1;
-	if C is wrangling the player:
+	if C is wrangling a body part:
 		if the player is upright, decide on figure of vines cutscene 2;
 		otherwise decide on figure of vines cutscene 6;
 	decide on figure of vines.
@@ -49,7 +49,7 @@ Returns yes if the player is grabbed by a vine.
 
 +!]
 Definition: yourself is vine stuck:
-	if there is a vine wrangling the player, decide yes;
+	if there is a vine wrangling a body part, decide yes;
 	if fairy-witch is grabbing the player, decide yes;
 	decide no.
 
@@ -66,7 +66,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: a vine (called V) is aggressive:
-	if V is penetrating a body part or V is wrangling the player, decide yes;
+	if V is penetrating a body part or V is wrangling a body part, decide yes;
 	if the TrapNo of V < 0 or V is not in the location of the player, decide no;
 	if vine boss is off-stage, decide no;
 	if busy is 1, decide no;
@@ -78,7 +78,7 @@ Definition: a vine (called V) is aggressive:
 		if there is a worn wet diaper or there is a worn messed diaper, decide yes;
 		if there is a worn diaper and (the player is prone or (diaper messing >= 3 and face is not actually occupied)), decide yes;
 		decide no;
-	if asshole is actually occupied and (the player is male or vagina is actually occupied), decide no;
+	if asshole is actually occupied and (the player is not possessing a vagina or vagina is actually occupied), decide no;
 	decide yes.
 
 [!<ComputeVinesStanding>+
@@ -104,7 +104,7 @@ To compute vines standing:
 			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl and the player is vine-cursed]4[otherwise]2[end if].5) vine difficulty[roman type][line break]";
 			if R <= 2 or (R <= 4 and the class of the player is schoolgirl and the player is vine-cursed):
 				say "[one of]Vines slither up your legs, locking them in place. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Living vines grab your ankles and feet, locking them in place. There's no way you'll be able to get away if you don't [bold type]pull[roman type] them off.[or]A single vine slowly rises out of the soil, swaying [if the raw sex addiction of the player > 6]hypnotically[otherwise]menacingly[end if], sticky white fluids oozing from its shiny, bulbous tip. Before you can react, several more burst out of the ground and wrap around your ankles.[or]Vines shoot out of the ground and wrap around your ankles![or]A pair of vines shoot out of the soil. You try to move out of the way, but it's too late! They wrap around your ankles and pin them to the ground.[then at random]";
-				now V is wrangling the player;
+				now V is wrangling thighs;
 			otherwise if the living belt of sturdiness is not worn and R is 6:
 				say "[one of]A living vine tries to grab your [if there are worn heels]heels[otherwise]feet[end if]. You manage to avoid it grabbing you but it makes you trip and fall![or]Living vines burst out of the soil, grasping at your legs. You manage to keep them from grabbing you, but you lose your balance and fall.[or]A living vine tries to grab your heels. You successfully kick it away, but you lose your balance and fall.[or]Vines shoot out of the soil beneath you. In your scramble to get out of the way, you trip and fall.[or]A single vine bursts out of the soil, headed straight for your ankle. Your reflexes kick in too late, sending you toppling to the ground.[in random order]";
 				try kneeling;
@@ -139,7 +139,8 @@ To compute vines kneeling:
 			if debuginfo > 0, say "[input-style]Vine evasion check: dexterity d[D] ([R]) | ([if the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1]6[otherwise]3[end if].5) vine difficulty[roman type][line break]";
 			if R <= 3 or (R <= 6 and (the class of the player is schoolgirl or the class of the player is magical girl or diaper quest is 1)):
 				say "[one of]The soil beneath you shifts as living vines burst out and instantly pin your wrists and ankles to the ground. Maybe you'll be able to get away if you [bold type]pull[roman type] them.[or]Several vines rise out of the soil, closing in on you slowly. Watching the movement of their [if diaper quest is 1]undulating bodies is strangely hypnotic, and before[otherwise if the raw sex addiction of the player > 6]oozing, bulbous tips is strangely hypnotic, and before[otherwise]oozing, bulbous tips is unsettling enough to distract you from the feeling of the shifting soil underneath you. Before[end if] you realise it they've pinned your wrists and ankles to the ground.[or]Vines burst out of the soil and grab your wrists with whip-like quickness. They do the same with your ankles.[or]Before you can react, vines have grabbed your wrists and ankles. You try to move, but it's no use. You're pinned.[or]Vines shoot out of the soil and wrap around your wrists and ankles![then at random]";
-				now V is wrangling the player;
+				now V is wrangling thighs;
+				now V is wrangling arms;
 			otherwise:
 				say "[one of]Vines shoot out of the ground and attempt to wrap around your wrists and ankles. You manage to avoid being grappled for now![or]Several vines rise out of the soil, closing in on you slowly. You bat away each one. Looks like you've avoided a grapple for now.[or]Vines shoot out of the soil with whip-like quickness! But thanks to your good reflexes you jump out of the way just in time. You're safe for now.[or]Living vines burst out of the soil, fumbling to grab your wrists. You're much too fast for them to catch you. For now.[in random order]";
 				if the player is female, cutshow figure of vines cutscene 1 for V;
@@ -149,7 +150,7 @@ To compute vines kneeling:
 REQUIRES COMMENTING
 
 +!]
-Report kneeling when there is a vine wrangling the player:
+Report kneeling when there is a vine wrangling a body part:
 	say "[one of]Vines wrap around your wrists as soon as they hit the ground.[or]Your wrists are immediately pinned to the ground.[or]Vines immediately pin your hands to the ground.[or]Vines wrap around your wrists and pin them to the ground.[or]Unsurprisingly, vines immediately grab your wrists and pin them to the ground.[in random order]".
 
 [!<ComputeVinePenetrating>+
@@ -165,7 +166,7 @@ To compute (V - a vine) penetrating:
 		let R be a random number between 1 and 2;
 		let F be asshole;
 		if the player is a pussy slut, now R is 2;
-		if R is 2 and the player is female and the player is not a butt slut, now F is vagina;
+		if R is 2 and the player is possessing a vagina and the player is not a butt slut, now F is vagina;
 		let H be a random number from 1 to 14;
 		if the player is prone, now H is 14;
 		if H < the total volume of hips and H < 10, say "A vine shoots straight out of the ground in between your legs, but misses and bounces off your [AssDesc]. It recoils back into the ground.";
@@ -192,10 +193,10 @@ To compute (V - a vine) penetrating (F - asshole):
 		compute V attacking K;
 	if the player is not ass protected and K is crotch-ripped or K is crotch-unzipped:
 		say "It continues straight into your [asshole] and immediately begins fucking you at full force!";
-		if V is wrangling the player:
+		if V is wrangling a body part:
 			now V is penetrating asshole;
 		otherwise:
-			repeat with X running through vines wrangling the player:
+			repeat with X running through vines wrangling a body part:
 				now X is penetrating asshole;
 			ruin asshole;
 	otherwise if asshole is actually occupied:
@@ -205,7 +206,7 @@ To compute (V - a vine) penetrating (F - asshole):
 			dislodge T;
 			now T is in the location of the player;
 	otherwise:
-		let N be a random vine wrangling the player;
+		let N be a random vine wrangling a body part;
 		if N is V:
 			now V is penetrating asshole;
 		otherwise if N is vine:
@@ -224,7 +225,7 @@ To compute (V - a vine) penetrating (F - vagina):
 		compute V attacking K;
 	if the player is not pussy protected and K is crotch-ripped or K is crotch-unzipped:
 		say "It continues straight into your [vagina] and immediately begins fucking you at full force!";
-		let N be a random vine wrangling the player;
+		let N be a random vine wrangling a body part;
 		if N is V:
 			now V is penetrating vagina;
 		otherwise if N is vine:
@@ -239,10 +240,10 @@ To compute (V - a vine) penetrating (F - vagina):
 			dislodge T;
 			now T is in the location of the player;
 	otherwise:
-		if V is wrangling the player:
+		if V is wrangling a body part:
 			now V is penetrating vagina;
 		otherwise:
-			repeat with X running through vines wrangling the player:
+			repeat with X running through vines wrangling a body part:
 				now X is penetrating vagina;
 		let NV be a random vine penetrating vagina;
 		if the player is upright and there is a held condom-providing thing, compute condomCatch of NV in vagina;
@@ -404,7 +405,8 @@ To compute vine laxative torture of (V - a vine):
 		summon butterfly wings cursed with quest;
 	appropriate-cutscene-display figure of vines cutscene 4;
 	say "After this the vines release you, retreating back into the trees and disappearing into the ground.";
-	now V is not wrangling the player;
+	now V is not wrangling thighs;
+	now V is not wrangling arms;
 	now V is unrevealed;
 	TimesSubmittedUp vine boss by 1;
 	now the TrapNo of V is -750;
@@ -433,7 +435,8 @@ To compute vine diaper torture of (V - a vine):
 		ruin vagina;
 	if the TrapNo of V > a random number between 4 and 5:
 		say "After this the vines seem to grow bored, and after removing your upper half from the portal it disappears. The vines release you, retreating back into the trees and disappearing into the ground.";
-		now V is not wrangling the player;
+		now V is not wrangling thighs;
+		now V is not wrangling arms;
 		now V is unrevealed;
 		TimesSubmittedUp vine boss by 1;
 		now the TrapNo of V is -750;
@@ -444,7 +447,7 @@ To compute vine diaper torture of (V - a vine):
 
 This is the vine diaper orgasm resolution rule:
 	if diaper quest is 1:
-		repeat with V running through vines wrangling the player:
+		repeat with V running through vines wrangling a body part:
 			now the TrapNo of V is 6. [Forces scene to finish]
 The diaper orgasm resolution rule is listed last in the orgasm resolution rules.
 
@@ -459,7 +462,7 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling vine boss:
-	if the player is vine stuck, try pulling a random vines wrangling the player instead;
+	if the player is vine stuck, try pulling a random vines wrangling a body part instead;
 
 [!<CheckPullingVines>+
 
@@ -467,9 +470,9 @@ REQUIRES COMMENTING
 
 +!]
 Check pulling vines:
-	if there is a fairy-witch grabbing the player, say "They're too strong. It's like the fairy is empowering them!" instead;
-	if the noun is not wrangling the player:
-		repeat with V running through vines wrangling the player:
+	if there is a fairy-witch grabbing the player, say "They're too strong. It's like the fairy is empowering them!" instead;[This a grab situation, not a wrangled situation, so you can't resist.]
+	if the noun is not wrangling a body part:
+		repeat with V running through vines wrangling a body part:
 			try pulling V instead;
 		if woman-barbara is in the location of the player and the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 5:
 			if the player is not able to manually use their hands, do nothing instead;
@@ -506,7 +509,8 @@ To VinePull:
 			say "[one of][if the TrapNo of the noun < 3]You pull at the vines but they are holding your ankles tightly. Maybe try again?[otherwise]You pull at the vines but they are holding your ankles tightly. Uh-oh, they're slowing down...[end if][or][if the TrapNo of the noun < 3]You pull at the vines with all your might, but their grip is just too tight. Maybe you should try again?[otherwise]You pull at the vines with all your might, but their grip is just too tight. It seems like they're slowing down...[end if][or][if the TrapNo of the noun < 3]You try to free yourself as best you can without falling over. It doesn't work, but you can always try again.[otherwise]You try to free yourself as best you can without falling over. It doesn't work, but it does seem like they're slowing down.[end if][or][if the TrapNo of the noun < 3]You manage to get a few to let go, but several more immediately take their place. Maybe try again?[otherwise]You manage to get a few to let go, but several more immediately take their place. They seem to tighten their grip. What now?[end if][in random order]";
 	otherwise:
 		say "You manage to loosen the vines and free your [if the player is prone]wrists and [end if]ankles! ";
-		now the noun is not wrangling the player;
+		now the noun is not wrangling thighs;
+		now the noun is not wrangling arms;
 		if the noun is penetrating a fuckhole:
 			say "The vine[if the TrapNo of the noun > 0]s[end if] in your [if the noun is penetrating asshole][asshole][otherwise][vagina][end if] pull[if the TrapNo of the noun is 0]s[end if] out and go[if the TrapNo of the noun is 0]es[end if] back into the ground, ready to strike again. ";
 			now the noun is not penetrating asshole;

@@ -19,7 +19,7 @@ To Start The Machine:
 		follow the setting up woods monsters rules;
 		Set Up The Mansion;
 		follow the setting up mansion monsters rules;
-		repeat with M running through alive nonexistant monsters:
+		repeat with M running through alive nonexistent monsters:
 			set up M;
 		now the player is in Mansion01;
 		now playerRegion is Mansion;
@@ -96,13 +96,13 @@ previousGUILayout is a number that varies. previousGUILayout is -1.
 
 To resolve graphics windows mayhem:
 	repeat through the Table of User Styles:
-		[now background color entry is lightModeWhiteHex;]
-		if style name entry is normal-style[ or style name entry is bold-style or style name entry is italic-style], now color entry is lightModeTextHex;
-		if style name entry is special-style-1, now color entry is lightModeSpecial1Hex;
+		[now background colour entry is lightModeWhiteHex;]
+		if style name entry is normal-style[ or style name entry is bold-style or style name entry is italic-style], now colour entry is lightModeTextHex;
+		if style name entry is special-style-1, now colour entry is lightModeSpecial1Hex;
 	follow the set generic text styles rule;
 	repeat with W running through g-window:
-		if W is graphics g-window, now the background color of W is lightModeWhiteGraphicsHex;
-		otherwise now the background color of W is lightModeWhiteTextHex;
+		if W is graphics g-window, now the background colour of W is lightModeWhiteGraphicsHex;
+		otherwise now the background colour of W is lightModeWhiteTextHex;
 	if GUI layout is 0: [NEWEST NYMPHO layout, i.e. the new shiny one]
 		if previousGUILayout is not 0:
 			repeat with W running through g-window:
@@ -249,7 +249,7 @@ Used at the start of the game to encase the player in latex items, if that optio
 To initialise latex prisoner:
 	let R be a random number between 1 and 2;
 	say "You suddenly feel your body encased in a skin-tight suit. You look down and see you are encased in latex! You feel your feet forced onto tip toes as a pair of latex [if diaper quest is 1]ballet[otherwise]fetish[end if] heels are magically secured to them. [if diaper quest is 0 and black hood is actually summonable]Your mouth is opened wide by a ring-gag as a latex hood appears over your face! [end if]";
-	if diaper quest is 0, say "Suddenly you feel your [if the player is female][vagina] and [end if][asshole] invaded by [if the player is male]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is female]rear [end if]plug starts vibrating!";
+	if diaper quest is 0, say "Suddenly you feel your [if the player is possessing a vagina][vagina] and [end if][asshole] invaded by [if the player is not possessing a vagina]a plug[otherwise]plugs[end if].[line break][first custom style]Oh no...[roman type][line break]The [if the player is possessing a vagina]rear [end if]plug starts vibrating!";
 	let L be a random latex transformation-eligible heels;
 	if diaper quest is 1, now L is a random sissy ballet boots;
 	if L is actually summonable clothing, summon L;
@@ -293,7 +293,7 @@ To initialise latex prisoner:
 		now the outfit-charge of rubber-baby-bonnet is -500;
 	if there is worn vibrating plug panties:
 		ruin asshole;
-		if the player is female, ruin vagina.
+		if the player is possessing a vagina, ruin vagina.
 
 [!<InitialiseBondagePrisoner>+
 

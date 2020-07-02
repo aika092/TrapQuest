@@ -19,6 +19,6 @@ To decide which number is the original price of (C - a jelldo):
 	decide on 6.
 
 To decide which number is the raw-masturbation-bonus of (C - a jelldo):
-	decide on 2.
+	decide on 1.
 
 Jelly Dildo ends here.

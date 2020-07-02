@@ -110,7 +110,7 @@ To compute class outfit of (H - a maid headdress):
 	otherwise if there is a worn maid outfit and C is actually summonable and the player is extremely horny:
 		say "[bold type]You suddenly feel a tightness around your loins. You [if there are worn knickers]can feel[otherwise]look down and see[end if] that a chastity cage has appeared around your [if the player is male][ShortDesc of penis][otherwise][vagina][end if]![roman type] [if the bimbo of the player < 10]Even worse, the[otherwise]The[end if] cage only stops anything from touching your crotch, your [asshole] remains completely unprotected!";
 		summon C locked;
-		say "[variable custom style]I'm a hornymaid locked in chastity! But I need to cum so badly...[roman type][line break]".
+		say "[variable custom style]I'm a horny maid locked in chastity! But I need to cum so badly...[roman type][line break]".
 
 Chapter - Quest
 

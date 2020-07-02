@@ -36,12 +36,12 @@ To say MonsterDesc of (M - an adult baby slave):
 		say "This [man of M] adorns a thick, cloth diaper encased within a pair of babyish plastic panties and a short, ruffled dress emblazoned with images of a cartoon cat. [big he of M] wears a look that tells you that the slightest provocation could easily set [him of M] off, triggering what could be the biggest tantrum of all time.".
 
 To say MonsterComment of (M - an adult baby slave):
-	say "[variable custom style][if the bimbo of the player < 5 and the player is male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
+	say "[variable custom style][if the bimbo of the player < 5 and the player is gendered male][big he of M]'d be really hot if [he of M] wasn't dressed like a baby... [otherwise if the bimbo of the player > 12][line break][second custom style][big he of M]'s so cute! I wish I was that cute! [end if][if the diaper addiction of the player < 3]I wonder what it would take to get [him of M] to take [his of M] diaper off.[otherwise if the diaper addiction of the player > 14]I want to feel [his of M] diaper on my face.[otherwise if the diaper addiction of the player > 10]I bet we could have tons of fun playing together.[otherwise if the diaper addiction of the player > 6]I wonder if [he of M] wants to play.[otherwise]Diapers are so gross.[end if][roman type][line break]".
 
 To set up (M - an adult baby slave):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 [This is the spawn initial dungeon adult baby slave rule:
@@ -123,7 +123,7 @@ To say DiaperCheckResultsDryForNowFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Baby Waby foo foo, diapered up so thick! Dry and clean, so it seems, it has to be a trick!'[or]Haha, good joke, you must have literally just got a change, huh? There's no way you're tricking me, I know a pottypants when I see one!'[or]Why is this dry, [sissy slut]? Why would you waste a perfectly good diaper by not using it, huh?'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDrynessProvedFlav of (M - an adult baby slave):
-	say "[speech style of M]'[one of]Hmph fine, I guess you really don't need diapers after all. It's your own loss really, but I don't mind if you want to take it off now.'[or]I guess diapers really aren't for you. That's sad, but I guess it's only fair that I allow you to wear big girl panties again... if that's what you really want.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Hmph fine, I guess you really don't need diapers after all. It's your own loss really, but I don't mind if you want to take it off now.'[or]I guess diapers really aren't for you. That's sad, but I guess it's only fair that I allow you to wear big [boy of the player] panties again... if that's what you really want.'[in random order][roman type][line break]".
 
 To say DiaperCheckResultsDryWellDoneFlav of (M - an adult baby slave):
 	say "[speech style of M]'[one of]Oh how boring, you haven't used it at all! Come on, surely you've got something in there that you can let out? For me?'[or]This can't be right, you feel completely dry! Are you sure you need diapers?'[or]Boo! You know the whole point of diapers it to make them nice and big and [if diaper messing >= 3]smelly[otherwise]soggy[end if], right?'[in random order][roman type][line break]".
@@ -455,7 +455,7 @@ Definition: an adult baby slave is willing to deliver enemas: decide yes.
 
 [Currently the enema flavour won't happen as it's overridden by the suppository code.]
 
-To say EnemaDeclarationFlav of (M - a adult baby slave):
+To say EnemaDeclarationFlav of (M - an adult baby slave):
 	if M is intelligent, say "[speech style of M]'Guess what I found lying around? I think we can have some fun with these...' [roman type]".
 
 To decide which number is the enema quarts of (M - an adult baby slave):
@@ -495,7 +495,7 @@ Definition: an adult baby slave (called M) is eager to deliver enemas:
 To say DiaperChangeStart of (M - an adult baby slave):
 	say "[speech style of M]'[if there is a worn diaper]Don't you know it's bad for your health to spend too long in a used diaper?'[otherwise]I think it's quite important that you wear a diaper.'[end if][roman type][line break][BigNameDesc of M] pushes you onto your back, and pulls your legs up into the air in a classic diaper changing position.".
 
-To say DiaperChangeComment of (M - a adult baby slave):
+To say DiaperChangeComment of (M - an adult baby slave):
 	say "[speech style of M]'Doesn't that feel soooo comfy?'[roman type][line break]".
 
 To say MercyReaction of (M - an adult baby slave):
@@ -679,14 +679,6 @@ To say AssistanceResponse of (M - an adult baby slave) with (N - a monster):
 
 Section 2 - Questioning
 
-To compute annoyance of (M - an adult baby slave):
-	if M is uninterested:
-		say "The adult baby slave doesn't seem to realise you are talking to [him of M].[line break]";
-	otherwise if M is unfriendly:
-		say "The adult baby slave ignores your question. [line break][speech style of M]'No!'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'You're getting kind of boring... Could you stop?'[roman type][line break]";
-
 To say WhereAnswer of (M - an adult baby slave):
 	if M is in the hotel, say "[speech style of M]'[one of]We're in a hotel with a bunch of big toys that feed you or change you... And, of course, mommy's here.'[or]I already told you! We're in a hotel. It's like a vacation!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]";
 	otherwise say "[speech style of M]'[one of]We're in a big world full of Mommies and Daddies that want to keep us in diapers. It's the best!'[or]I already told you! We're in a magical diaper world. It's like the best place ever!'[or]I said I already told you 'bout where we are!'[stopping][roman type][line break]".
@@ -708,8 +700,7 @@ To say AdviceAnswer of (M - an adult baby slave):
 
 To compute teaching of (M - an adult baby slave):
 	say "[speech style of M]'If someone is mean to you, try crying and asking them not to hurt you really nicely. People will leave you alone most of the time.'[roman type][line break]";
-	teach begging for mercy;
-	HeavyConvoFatigue M.
+	teach begging for mercy.
 
 Section 3 - Drink Requesting
 

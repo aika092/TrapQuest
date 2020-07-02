@@ -49,7 +49,7 @@ To compute SelfExamineDesc of (H - spiked-tiara):
 
 An all time based rule (this is the tongued clothing licking rule):
 	let N be the number of worn tongued clothing;
-	if tonguesBlack is false and the player is female and the vaginalvirgin of the player is 0:
+	if tonguesBlack is false and the player is possessing a vagina and the vaginalvirgin of the player is 0:
 		let C be a random worn tongued clothing;
 		if N > 0, say "Your [if N is 1][ShortDesc of C][otherwise]tongued clothing all[end if] turns from pure white to an intense black. You can tell [if N is 1]it is[otherwise]they are[end if] now making you feel more perverse...";
 		now tonguesBlack is true;

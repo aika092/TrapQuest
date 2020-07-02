@@ -2,7 +2,15 @@ Layering by Clothing begins here.
 
 current-layer is a number that varies.
 
+[!<ClothingIsLayerBlocking>+
+
+Does this item prevent clothing that goes underneath being worn and taken off? And does it get blocked?
+
++!]
+Definition: a clothing is layer-blocking: decide yes.
+
 Definition: a clothing is top layer if it is breast covering.
+Definition: a clothing is top-layer-blocking if it is layer-blocking and it is top layer.
 
 To decide which number is max-top-layer:
 	let X be 0;
@@ -18,6 +26,7 @@ Definition: a clothing (called C) is top-layer-highlighted:
 	decide no.
 
 Definition: a clothing is mid layer if it is belly covering.
+Definition: a clothing is mid-layer-blocking if it is layer-blocking and it is mid layer.
 
 To decide which number is max-mid-layer:
 	let X be 0;
@@ -32,8 +41,8 @@ Definition: a clothing (called C) is mid-layer-highlighted:
 	decide no.
 
 Definition: a clothing is bottom layer if it is crotch covering.
-
 Definition: a chastity cage is bottom layer: decide yes.
+Definition: a clothing is bottom-layer-blocking if it is layer-blocking and it is bottom layer.
 
 To decide which number is max-bottom-layer:
 	let X be 0;

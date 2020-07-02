@@ -331,7 +331,7 @@ For instance our Table of Options might look like this:
 
 	[...etc. (Hints 19-135 omitted for brevity.)]
 
-	[Because the toggle rule is always consulted when the player selects an option and before any other default behavior occurs, we can use this rule to override normal menu behavior more or less however we like. The hint toggle rule is just one example.]
+	[Because the toggle rule is always consulted when the player selects an option and before any other default behaviour occurs, we can use this rule to override normal menu behaviour more or less however we like. The hint toggle rule is just one example.]
 
 	[Finally, if we wanted to create a HELP command that would summon our menu, we would then add this:]
 

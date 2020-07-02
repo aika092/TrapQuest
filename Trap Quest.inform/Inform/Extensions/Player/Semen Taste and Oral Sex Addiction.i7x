@@ -166,10 +166,10 @@ To SemenTasteAddictUp (X - a number):
 		say "Your [printed name of S] glows brightly and slowly disintegrates.";
 		only destroy S;
 		decrease X by 3;
-	let S be the semen taste addiction of the player;
+	let S be the calculated semen taste addiction of the player;
 	SilentlySemenTasteAddictUp X;
-	let S be the semen taste addiction of the player - S;
-	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the semen taste addiction of the player > 13]addicted to[otherwise if the semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
+	let S be the calculated semen taste addiction of the player - S;
+	if S > 0, say "You feel [if S > 1]significantly [end if]more [if the calculated semen taste addiction of the player > 13]addicted to[otherwise if the calculated semen taste addiction of the player > 6]accustomed to[otherwise]tolerant of[end if] the taste of [semen].".
 
 To SilentlySemenTasteAddictUp (X - a number):
 	if the latex-transformation of the player > 4:
@@ -180,10 +180,10 @@ To SilentlySemenTasteAddictUp (X - a number):
 			increase the raw semen taste addiction of the player by 1.
 
 To SemenTasteAddictDown (X - a number):
-	let S be the raw semen taste addiction of the player;
+	let S be the calculated semen taste addiction of the player;
 	SilentlySemenTasteAddictDown X;
-	decrease S by the raw semen taste addiction of the player;
-	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the semen taste addiction of the player > 14]addicted to the taste of [semen][otherwise if the semen taste addiction of the player > 6]interested in drinking [semen][otherwise]tolerant of the taste of [semen][end if].".
+	decrease S by the calculated semen taste addiction of the player;
+	if S > 0, say "You feel [if S > 2]much [otherwise if S is 2]significantly [end if]less [if the calculated semen taste addiction of the player > 14]addicted to the taste of [semen][otherwise if the calculated semen taste addiction of the player > 6]interested in drinking [semen][otherwise]tolerant of the taste of [semen][end if].".
 
 To SilentlySemenTasteAddictDown (X - a number):
 	while X > 0:

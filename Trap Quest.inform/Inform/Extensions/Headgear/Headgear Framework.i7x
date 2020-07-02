@@ -64,15 +64,15 @@ Report dropping headgear: [Otherwise the player could remove the headgear, remov
 To compute AutoRemoveFizzling of (H - a headgear):
 	if H is in-play:
 		say "As you remove the [ShortDesc of H], it fizzles into nothingness. ";
-		only destroy H;
-		commence recycling of H. [Headgear only comes once in a while]
+		only destroy H. [Headgear only comes once in a while]
 
 The list of headgear recycling is a list of headgear that varies.
 
 To commence recycling of (C - a headgear):
 	now C is in Holding Pen;
 	compute recycling of C;
-	release recycled headgear.
+	release recycled headgear;
+	if debugmode is 1, say "Adding [C] to recent headgear list. List now looks like this: [list of headgear recycling].";
 
 To compute recycling of (C - a headgear):
 	add C to the list of headgear recycling.

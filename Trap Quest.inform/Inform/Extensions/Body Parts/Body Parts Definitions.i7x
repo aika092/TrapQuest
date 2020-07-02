@@ -209,7 +209,7 @@ To ruin (F - a fuckhole) times (X - a number):
 			check soreness fainting of F;
 		let T be a random thing penetrating F;
 		passively stimulate F from T;
-		unless F is vagina and the player is male, RuinRoll F;
+		unless F is vagina and the player is not possessing a vagina, RuinRoll F;
 		if the previous soreness of F < 10 and the soreness of F is 10 and delayed fainting is 0, say RuinedFlav of F;
 		now the previous soreness of F is the soreness of F.
 
@@ -552,20 +552,31 @@ This is the body parts get focused rule:
 The body parts get focused rule is listed in the focus finding rules.
 
 To construct normal buttons for (T - a body part):
-	if T is overglazed:
-		if ButtonTableFull is 0:
+	if ButtonTableFull is 0:
+		let P be a random held pocketwipes;
+		if T is overglazed:
 			choose a blank row in the Table of Buttons;
 			now the ButtonImage entry is Figure of cum eating;
 			now the ButtonCommand entry is "wipe [text-shortcut of T] with finger";
 			now the ButtonColour entry is lightModeFullGreen;
 			if face is actually occupied, now the ButtonColour entry is lightModeFullYellow;
 			if face is not acceptableCumRag, now the ButtonColour entry is lightModeFullRed;
-		repeat with C running through held clothing:
-			if ButtonTableFull is 0 and (C is gloves or C is not worn) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C and C is acceptableCumRag:
+			if ButtonTableFull is 0 and P is pocketwipes:
 				choose a blank row in the Table of Buttons;
-				now the ButtonImage entry is examine-image of C;
-				now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of C]";
-				now the ButtonColour entry is lightModeFullGreen.
+				now the ButtonImage entry is examine-image of P;
+				now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of P]";
+				now the ButtonColour entry is lightModeFullGreen;
+			repeat with C running through held clothing:
+				if ButtonTableFull is 0 and (C is gloves or C is not worn) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C and C is acceptableCumRag:
+					choose a blank row in the Table of Buttons;
+					now the ButtonImage entry is examine-image of C;
+					now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of C]";
+					now the ButtonColour entry is lightModeFullGreen;
+		otherwise if P is a thing and ((T is hair and (the semen coating of hair > 0 or the urine coating of hair > 0)) or (T is face and the make-up of face > 0 and permanent makeup is 0)):
+			choose a blank row in the Table of Buttons;
+			now the ButtonImage entry is examine-image of P;
+			now the ButtonCommand entry is "wipe [text-shortcut of T] with [text-shortcut of P]";
+			now the ButtonColour entry is lightModeFullGreen.
 
 To construct unique buttons for (T - face):
 	if the total volume of face > 0 and ButtonTableFull is 0:

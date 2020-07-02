@@ -13,7 +13,7 @@ Understand "giant" as can when the max-doses of the item described > 5.
 Understand "extra" as can when the max-doses of the item described > 3 and the max-doses of the item described <= 5.
 Understand "large" as can when the max-doses of the item described > 1 and the max-doses of the item described <= 5.
 To say ExamineDesc of (C - a can):
-	say "A [if the max-doses of C > 5]giant [otherwise if the max-doses of C > 3]extra large [otherwise if the max-doses of C > 1]large [otherwise]tiny airplane-sized [end if]tin can with a [fill-colour of C] label.[if the fill-type of C is remembered] You remember that this colour represents a [FillName the fill-type of C].[end if][if the max-doses of C > 1][line break]It has about [doses of C] gulps left.[end if]".
+	say "A [if the max-doses of C > 5]giant [otherwise if the max-doses of C > 3]extra large [otherwise if the max-doses of C > 1]large [otherwise]tiny aeroplane-sized [end if]tin can with a [fill-colour of C] label.[if the fill-type of C is remembered] You remember that this colour represents a [FillName the fill-type of C].[end if][if the max-doses of C > 1][line break]It has about [doses of C] gulps left.[end if]".
 
 Figure of can is the file "Items/Accessories/Vessels/can1.png".
 To decide which figure-name is the examine-image of (V - a can):

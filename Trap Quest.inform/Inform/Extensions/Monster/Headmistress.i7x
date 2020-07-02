@@ -102,7 +102,7 @@ To say EnslavedDominationFlav of (M - headmistress):
 			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
 			orgasm quietly;
 			check virginity with M;
-		otherwise if the size of penis > 0:
+		otherwise if the player is possessing a penis:
 			say "Unable to get an erection right now, you settle for using the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You wipe your flaccid [player-penis] up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. It feels good but you soon grow bored and let go of [his of M] hair.";
 		otherwise:
 			say "You use the fact that [NameDesc of M] isn't allowed to keep[his of M] tongue in [his of M] mouth to your advantage. You rup your wet pussy up and down [his of M] lolling tongue, cleaning it up with [his of M] saliva, and making [him of M] whine and retch. ";

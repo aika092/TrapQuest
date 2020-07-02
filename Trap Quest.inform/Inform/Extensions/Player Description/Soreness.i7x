@@ -22,7 +22,7 @@ REQUIRES COMMENTING
 
 +!]
 To say InternalsDesc:
-	unless the latex-transformation of the player >= 6 or the player is male and the size of penis is 0:
+	unless the latex-transformation of the player >= 6 or the player is barbie:
 		if the player is extremely horny:
 			say "You are so extremely aroused that you are struggling to think about anything else. You permanently feel right on the edge of orgasm. ";
 		otherwise if the player is very horny:

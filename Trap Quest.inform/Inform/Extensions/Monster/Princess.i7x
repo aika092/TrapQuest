@@ -81,7 +81,7 @@ Definition: ex-princess is butt slut immune: decide yes.
 Definition: ex-princess is uniquely unfriendly:
 	decide no.
 
-To decide which number is the aggro limit of (M - a ex-princess): [The number at which they turn unfriendly]
+To decide which number is the aggro limit of (M - an ex-princess): [The number at which they turn unfriendly]
 	decide on -999999.
 
 Definition: ex-princess is motionless-when-defeated: decide yes.
@@ -157,70 +157,64 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-To compute talk option (N - 1) to (M - ex-princess):
-	if the times-met of M is 0, now the times-met of M is 1;[this is a failsafe to make sure the first time greeting never displays twice.]
+To consider (T - talk-greet) for (M - ex-princess):
+	now the printed name of T is the substituted form of "[FirstGreeting to M]";
+	set next numerical response to the substituted form of "[printed name of T]".
+
+To compute basic greeting to (M - ex-princess):
 	if M is caged and the current-torment of M > 0:
-		if diaper quest is 0:
-			say "You try to talk to [NameDesc of M], but [he of M]'s busy sucking up the [urine] and transferring it to [his of M] toilet.";
-			say SubmissiveResponse of M;
+		say SubmissiveResponse of M;
 	otherwise:
-		if M is interested and breasts is exposed, progress quest of chest-exposing-quest from M;
 		if the times-met of M < 2:
-			say FirstGreeting to M;
 			say FirstResponse of M;
 		otherwise:
-			say RepeatGreeting to M;
 			say RepeatResponse of M;
 		now the boredom of M is 0;
-		now M is interested;
-		check perception of M.
+		check guaranteed perception of M.
 
 To say FirstResponse of (M - ex-princess):
-	say "[speech style of M]'Who are you?'[roman type][line break]".
+	say "[speech style of M]'Who are you?'[roman type][line break]";
+	if the times-met of M < 2, now the times-met of M is 2.
 
 To say RepeatResponse of (M - ex-princess):
-	say "[speech style of M]'[if M is caged][big please], you've got to help me get out of here!'[otherwise]Oh?'[roman type][line break]".
+	say "[speech style of M]'[if M is caged][big please], you've got to help me get out of here!'[otherwise]Oh?'[end if][roman type][line break]".
 
 To say SubmissiveResponse of (M - ex-princess):
-	say "[speech style of M]'[one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][roman type][line break]".
+	say "You try to talk to [NameDesc of M], but [he of M][']s busy [if diaper quest is 0]sucking up the [urine] and transferring it to [his of M] toilet[otherwise]occupied by having [his of M] face smushed into used diapers[end if].[line break][speech style of M]'[if diaper quest is 0][one of]*Glug glug glug*...'[or]*Hck hck hck*...'[or]Mmmmmmmph...'[in random order][otherwise]Mmmmgggg!'[end if][roman type][line break]".
 
 Section 2 - Questioning
 
-To compute talk option (N - 2) to (M - ex-princess):
-	if M is defeated:
-		compute talk option 1 to M;
-	otherwise if M is caged:
-		if the number of monsters in the location of the player is 1:
-			say "[variable custom style]'[one of]Who are you?'[line break][speech style of M]'I'm Princess Annie! [big please] help me!'[or]Why are you in there?'[line break][speech style of M]'I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[or]What are you going to do if you get out?'[line break][speech style of M]'I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[or]How can I help?'[line break][speech style of M]'I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to [if diaper quest is 1]pee in a dry diaper. Don't ask me why[otherwise]choose someone to get rather... familiar with[end if].'[or]Did I already ask how I could help you out?'[line break][speech style of M]'[Azathot] above... is this really the best chance I have? I need you to help me escape!'[stopping][roman type][line break]";
-		otherwise: [She's not alone so you can't talk sincerely]
-			say "You put on a vindictive act in front of your peers.[line break][variable custom style]'Having fun, slut?'[roman type][line break]You see [him of M] notice you're not alone, and [he of M] twitches [his of M] eyebrows at you.[line break][speech style of M]'Fuck you!'[roman type][line break]";
-	otherwise:
-		compute default questioning to M.
+Definition: ex-princess is fluff-question-appropriate if it is not caged and it is undefeated.
 
-To compute annoyance of (M - ex-princess):
-	if the questioned of M > the high-annoyance threshold of M:
-		say "[speech style of M]'Uh...Unfortunately, I have something to do. We'll take more later...'[roman type][line break]";
-		Bore M;
-		now the scared of M is 30;
-	otherwise:
-		if questioned of M < the mild-annoyance threshold of M, ApplyFullConvoFatigue to M;
-		say AnnoyedWarn of M;
+talk-princess-question is a talk-object. ex-princess has a number called question-sequence.
+
+To consider (T - talk-princess-question) for (M - a monster):
+	if M is ex-princess and M is caged:
+		now the printed name of T is the substituted form of "[variable custom style]'[if the question-sequence of M is 0]Who are you[otherwise if the question-sequence of M is 1]Why are you in there[otherwise if the question-sequence of M is 2]What are you going to do if you get out[otherwise if the question-sequence of M is 3]How can I help[otherwise]Did I already ask how I could help you out[end if]?'[roman type][line break]";
+		set next numerical response to the substituted form of "[printed name of T]";
+
+To execute (T - talk-princess-question) for (M - a monster):
+	if the number of monsters in the location of the player is 1:
+		say "[speech style of M]'[if the question-sequence of M is 0]I'm Princess Annie! [big please] help me!'[otherwise if the question-sequence of M is 1]I conjured up this entire pocket dimension and the people inside it... but I was sloppy and got overpowered by my own creation! Now hurry up and get me out of here!'[otherwise if the question-sequence of M is 2]I'm going to get my revenge on that fucking [ShortDesc of headmistress] and [his of headmistress] pawns. [big he of headmistress][']ll wish [he of headmistress][']d never been created...'[otherwise if the question-sequence of M is 3 and diaper quest is 0]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to choose someone to get rather... familiar with.'[otherwise if the question-sequence of M is 3]I'm going to need you to unlock this cell. For that, you'll need a magical skeleton key. My prison guard has one, but [he of prison guard] might need... [']persuading['] to part with it. I happen to know that [he of prison guard] loves digestive biscuits. I'm also going to need something to fight with. Any magical wand will do, but my royal scepter would be our best chance. For that you'll need to first find my tiara. It should present itself to anyone worthy who sits on my throne. And then... you'll need to pee in a dry diaper. Don't ask me why.'[otherwise][Azathot] above... is this really the best chance I have? I need you to help me escape!'[end if][roman type][line break]";
+		increase the question-sequence of M by 1;
+	otherwise: [She's not alone so she can't talk sincerely]
+		say "You see [him of M] notice you're not alone, and then [he of M] just squeaks and keeps [his of M] mouth shut.".
 
 To say WhereAnswer of (M - ex-princess):
-	if the player is in the dungeon:
+	if playerRegion is dungeon:
 		say "[speech style of M]'This is my royal dungeon. It feels so nostalgic...'[roman type][line break]";
-	otherwise if the player is in the hotel:
+	otherwise if playerRegion is hotel:
 		let hb be mechanic;
 		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
 		if hb is mechanic:
 			say "[speech style of M]'This is Xavier's pleasure hotel. [if hb is alive]If [he of hb] asks you for an amulet, you must never bring it to [him of hb]. There is no telling how powerful [he of hb] would become...'[otherwise]It was unfortunate that [he of hb] had to die, but it is what [he of hb] deserved.'[end if][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'This is the demon Xavier's pleasure hotel. [if hb is alive]Was [he of hb] this powerful before I sealed [him of hb]? Maybe I've grown weaker...'[otherwise]I'm not sure how you managed to defeat [him of hb]...'[end if][roman type][line break]";
-	otherwise if the player is in the woods:
+	otherwise if playerRegion is woods:
 		let vb be vine boss;
-		say "[speech style of M]'This is the forest of Bimbacia, which the vine lord calls its domain. [if the times-submitted of vb > 0]Naturally, that extends to all orifices in the forest as well...'[otherwise if vb is alive]I don't know why I created something so annoying...'[otherwise]Or- it used to. Defeating such a creature is quite a feat!'[end if][roman type][line break]";
-	otherwise if the player is in the school:
-		say "[speech style of M]'This is the Slut School. I can't wait to leave this place.'[roman type][line break]";
+		say "[speech style of M]'This is the forest of Bimbacia, which the vine lord calls [his of vb] domain. [if the times-submitted of vb > 0]Naturally, that extends to all orifices in the forest as well...'[otherwise if vb is alive]I don't know why I created something so annoying...'[otherwise]Or- it used to. Defeating such a creature is quite a feat!'[end if][roman type][line break]";
+	otherwise if playerRegion is school:
+		say "[speech style of M]'This is the [slut school]. I can't wait to leave this place.'[roman type][line break]";
 	otherwise:
 		let mb be vampiress;
 		if herald is alive or herald is bossdefeated, now mb is herald;
@@ -231,23 +225,23 @@ To say WhoAnswer of (M - ex-princess):
 	say "[speech style of M]'I told you before, I'm Princess Annie! I created this dimension.'[roman type][line break]".
 
 To say StoryAnswer of (M - ex-princess):
-	if the player is in the dungeon:
+	if playerRegion is dungeon:
 		let db be minotaur;
 		if diaper quest is 1, now db is boogeymonster;
 		if db is minotaur:
 			say "[speech style of M]'I created [NameDesc of db] as a perfect guard for my dungeon. For personal reasons, I gave [him of db] a larger [DickDesc of db] and inhuman stamina, and it made [him of db] impossible to control. Still, if I didn't have my responsibilities as a ruler...'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'I created [NameDesc of db] to guard my dungeon, but [he of db] was too scary...I had no choice but to put [him of db] under lock and key.'[roman type][line break]";
-	otherwise if the player is in the hotel:
+	otherwise if playerRegion is hotel:
 		let hb be mechanic;
 		if demon lord is alive or demon lord is bossdefeated, now hb is demon lord;
 		if hb is mechanic:
 			say "[speech style of M]'Xavier is a criminal, I bound here as part of [his of hb] punishment.'[roman type][line break]";
 		otherwise:
 			say "[speech style of M]'Xavier is an invader from another dimension, who I defeated and sealed away. [if hb is alive][big he of hb] is even more powerful than [he of hb] was back then...I'll need your help[otherwise]Many of [his of hb] vassals remain in this world[end if].'[roman type][line break]";
-	otherwise if the player is in the woods:
+	otherwise if playerRegion is woods:
 		say "[speech style of M]'When I created this forest, I was going through this phase where I was really into tentacles. Sorry.'[roman type][line break]";
-	otherwise if the player is in the school:
+	otherwise if playerRegion is school:
 		say "[speech style of M]'I never thought that headmistress would be able to overpower me like that. That bitch...'[roman type][line break]";
 	otherwise:
 		let mb be vampiress;
@@ -262,37 +256,37 @@ To say EscapeAnswer of (M - ex-princess):
 
 To say AdviceQuestion of (M - ex-princess):
 	let B be a random slutty sister;
-	if the player is in the dungeon:
+	if playerRegion is dungeon:
 		if minotaur is alive, now B is minotaur;
 		if boogeymonster is alive, now B is boogeymonster;
-	if the player is in the hotel:
+	if playerRegion is hotel:
 		if mechanic is alive, now B is mechanic;
 		if demon lord is alive, now B is demon lord;
-	if the player is in the woods:
+	if playerRegion is woods:
 		if vine boss is alive, now B is vine boss;
-	if the player is in the mansion:
+	if playerRegion is mansion:
 		if vampiress is alive, now B is vampiress;
 		if herald is alive, now B is herald;
 	if B is a slutty sister, say "[variable custom style]'How do I defeat the slutty sisters?'[roman type][line break]";
 	otherwise say "[variable custom style]'How do I defeat [NameDesc of B]?'[roman type][line break]".
 
 To say AdviceAnswer of (M - ex-princess):
-	if the player is in the dungeon:
+	if playerRegion is dungeon:
 		if minotaur is alive:
 			let db be minotaur;
 			say "[speech style of M]'[big he of db] may be strong, but [he of db] tires easily. If you exhaust [him of db] first, [he of db] will die quickly.'[roman type][line break]";
 		otherwise if boogeymonster is alive:
 			say "[speech style of M]'You must ignore its evil visions and fight it head on.'[roman type][line break]";
-	otherwise if the player is in the hotel:
+	otherwise if playerRegion is hotel:
 		if demon lord is alive:
 			let dl be demon lord;
 			say "[speech style of M]'It will be difficult. [big he of dl] is immune to physical weapons, so if you don't have a magic weapon, you will need a blessing from the gods. [big he of M] has a weakness, but it isn't worth the risk.'[roman type][line break]";[he's also weak to demonic items]
 		otherwise if mechanic is alive:
 			let mec be mechanic;
 			say "[speech style of M]'If you can separate [him of mec] from [his of mec] wrench, [he of mec] will be greatly weakened. After that, [he of mec] will be just like anyone else.'[roman type][line break]";
-	otherwise if the player is in the woods:
+	otherwise if playerRegion is woods:
 		if vine boss is alive, say "[speech style of M]'You must enter its lair and face it in single combat. If you allow yourself to be violated, you may doom yourself to a horrible fate.'[roman type][line break]";
-	otherwise if the player is in the mansion:
+	otherwise if playerRegion is mansion:
 		if herald is alive:
 			say "[speech style of M]'I...don't know. I have never seen that thing before.'[roman type][line break]";
 		otherwise if vampiress is alive:
@@ -590,7 +584,7 @@ Check pushing ex-princess when ex-princess is caged:
 	if the current-torment of ex-princess <= 0:
 		now the current-torment of ex-princess is 60;
 		increase the torment-count of ex-princess by 1;
-		say "[BigNameDesc of ex-princess] wails in despair as mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies.[line break][speech style of ex-princess]'Nooooo! You fucking cunt!'[roman type][line break]That's all [he of ex-princess] has time to say before a loud vibrating sound can be heard through the intercom. A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
+		say "[BigNameDesc of ex-princess] wails in despair as mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies.[line break][speech style of ex-princess]'Nooooo! You fucking [cunt]!'[roman type][line break]That's all [he of ex-princess] has time to say before a loud vibrating sound can be heard through the intercom. A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
 		DelicateDown 1;
 		obsceneDignify;
 	otherwise:
@@ -599,7 +593,7 @@ Check pushing ex-princess when ex-princess is caged:
 
 To compute toilet reaction of (M - ex-princess):
 	if M is caged:
-		say "[BigNameDesc of M] wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking cunt!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
+		say "[BigNameDesc of M] wails in despair as your [urine] flows towards [his of M] food.[speech style of M]'You fucking [cunt]!'[roman type][line break]That's all [he of M] has time to say before [he of M] has to begin sucking up your [urine] and transferring it, mouthful by mouthful, into [his of M] toilet[unless the player is broken]. You feel more dominant, and less ashamed of yourself[end if]!";
 		DelicateDown 1;
 		obsceneDignify;
 		increase the torment-count of M by 1;
@@ -639,7 +633,7 @@ An all time based rule (this is the caged princess tortured rule):
 			increase the current-torment of M by 60;
 			say "[BigNameDesc of N] pushes the button and you watch with [horror the sex addiction of the player] as ";
 			if diaper quest is 1, say "mechanical winches clunk into motion, forcing [his of ex-princess] arms up and [his of ex-princess] neck and head down, and down, and down until [his of ex-princess] face is pressed into the soiled diapers on the ground. The diapers queued up in the tube roll out, falling down on top of [his of ex-princess] head, half-burying [his of ex-princess] face in gross used nappies. A loud vibrating sound can be heard through the intercom.[line break][speech style of N]'[one of]Oooh, are you enjoying smelling our nasty used diapers?'[or]That's right bitch, get a good sniff of our diapers while you cum!'[in random order][roman type][line break]A frustrated groan escapes [NameDesc of ex-princess][']s lips, which soon turns into a sexual moan.";
-			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, cunt[or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
+			otherwise say "the [if watersports fetish is 1][urine][otherwise][semen][end if] begins to flow down the tube.[line break][speech style of N]'[one of]Get to work, [if watersports fetish is 1]toilet [boy of M][otherwise]cum-bucket[end if][or]Time's ticking, [cunt][or]Grub's up, bitch[then at random]!'[roman type][line break][BigNameDesc of M] [one of]sobs quietly to [himself of M][or]mutters expletives under [his of M] breath[or]groans weakly[in random order] as [he of M] gets to work.".
 
 Definition: ex-princess is messy if it is unconcerned and the refractory-period of it <= (the messRefractoryLimit of it) and diaper messing >= 7.
 

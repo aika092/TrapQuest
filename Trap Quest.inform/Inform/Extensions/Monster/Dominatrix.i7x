@@ -87,24 +87,24 @@ To say MonsterComment of (M - dominatrix):
 		otherwise if the player is female and the bimbo of the player < 14:
 			say "[variable custom style][one of]That must be the new toy [he of M] was talking about. It's so big...[or]I can't believe I let [him of M] violate me. Well, maybe violate isn't the right word. It wasn't awful.[or]I just know [he of M]'s going to try to put that dildo in me too. But, I won't let [him of M].[or][big he of M]'s so domineering. Where does [he of M] get off telling me I can't cum. Not that I want to.[in random order]";
 		otherwise if the player is female:
-			say "[second custom style][one of]Wow! Look at that cock![or][big his of M] new dildo looks so yummy! If I'm good, maybe I'll get fucked with it![or]Sometimes, I wish guys would grow bigger cocks if you do your best to make them feel good. I guess Mistress is better than a guy![or][big his of M] rules about orgasms are so unfair! It feels so good when Mistress fucks me, how can I not cum?[in random order]";
+			say "[second custom style][one of]Wow! Look at that cock![or][big his of M] new dildo looks so yummy! If I'm good, maybe I'll get fucked with it![or]Sometimes, I wish guys would grow bigger cocks if you do your best to make them feel good. I guess [literalMistress of M] is better than a guy![or][big his of M] rules about orgasms are so unfair! It feels so good when [literalMistress of M] fucks me, how can I not cum?[in random order]";
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]OK, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]OK, so what if [he of M] decides I'm a chick or something. My dick is still massive, and I'll always have that on [him of M]. Next time we meet, things will change, and I'll be the one fucking [him of M].[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
 			say "[variable custom style][one of]I can't believe I actually let [him of M] fuck me. I'm supposed to be a man, men shouldn't get fucked...[or]I know I don't want [him of M] to fuck me with that again, but, I don't want to punish me either. How did I get into this mess?[or]I'm actually looking forward to letting [him of M] fuck me again. I guess I'm a total [if transGender is 0]fag[otherwise]slut[end if] now.[or]I'm [his of M] slave now, so I can't exactly say no if [he of M] wants to but that in me, but it's not like I wanted to be [his of M] slave in the first place. I think.[or][if the size of penis < 1]I'm stuck with no penis, and [his of M] is even bigger. If I let people fuck me, and I don't have a penis, how can I call myself a man?[otherwise if the size of penis < 5]The first dildo made me feel inadequate. This is just cruel. It's not my fault if my penis keeps shrinking! Everybody wants to fuck me![otherwise if the size of penis < 9][big his of M] dildo is actually bigger than my penis. I deserve to be smaller, though. After letting [him of M] fuck me, there's no way for me to pretend I make a better man than [he of M] does.[otherwise]My dick is still bigger than [hers of M], but only by a few inches. And if I keep letting [him of M] fuck me, it's only a matter of time until that's not true.[end if][or]I know by now it's not a good idea to play by [his of M] rules, but how am I supposed to hold my orgasm when that thing is going to be ramming my prostate?[in random order]";
 		otherwise:
-			say "[second custom style][one of]That is going to feel so good inside me! I'm glad one of us knows how to use a dick![or]I love big cocks, even if they're plastic and attached to a [man of M] instead of a sexy man.[or]Before I started this game, I wanted to fuck girls, now I want to give blowjobs and get fucked. With [him of M] around, I can do both! Teehee![or]Mistress knows I've been good, so I deserve to get fucked HARD![or][if the size of penis < 1]Mistress is my lesbian lover![otherwise if the size of penis < 5]My penis is useless, but Mistress has more than enough for the both of us![otherwise if the size of penis < 9][big his of M] dildo is bigger than my penis! Just the way things should be.[otherwise][big his of M] strapon is still smaller than my cock. Oh well, that just means I'll cum more when [he of M][']s done pounding my prostate![end if][or]If Mistress says not to cum, I shouldn't. But [he of M] must have no idea what it's like to have a big hard cock ram your prostate![or]If I want a bigger toy to play with, I need to control my orgasms. But since I'm such a dirty slut, it will not be easy![in random order]";
+			say "[second custom style][one of]That is going to feel so good inside me! I'm glad one of us knows how to use a dick![or]I love big cocks, even if they're plastic and attached to a [man of M] instead of a sexy man.[or]Before I started this game, I wanted to fuck girls, now I want to give blowjobs and get fucked. With [him of M] around, I can do both! Teehee![or][literalMistress of M] knows I've been good, so I deserve to get fucked HARD![or][if the size of penis < 1][literalMistress of M] is my lesbian lover![otherwise if the size of penis < 5]My penis is useless, but [literalMistress of M] has more than enough for the both of us![otherwise if the size of penis < 9][big his of M] dildo is bigger than my penis! Just the way things should be.[otherwise][big his of M] strapon is still smaller than my cock. Oh well, that just means I'll cum more when [he of M][']s done pounding my prostate![end if][or]If [literalMistress of M] says not to cum, I shouldn't. But [he of M] must have no idea what it's like to have a big hard cock ram your prostate![or]If I want a bigger toy to play with, I need to control my orgasms. But since I'm such a dirty slut, it will not be easy![in random order]";
 	otherwise:
 		if the player is female and the bimbo of the player < 7:
 			say "[first custom style][one of]That thing must be a fucking joke. [big he of M] can't honestly expect me to let [him of M] put that in me.[or]Is that a HORSE penis?[or]I know I've been acting like a tart, but [he of M][']s obviously trying to insinuate I'm some sort of animal![or]That evil [man of M]... [he of M] probably plans on putting that monster inside me.[or]So this is how [he of M] rewards [his of M] slaves? I'm not looking forward to dealing with the Nintendolls when I get out...[in random order]";
 		otherwise if the player is female and the bimbo of the player < 14:
-			say "[variable custom style][one of]That dildo is massive. I guess I should prepare myself.[or]So far I've taken everything else [he of M]'s done to me. I know it's wrong, but I'm looking forward to taking that too.[or]This must have been [his of M] game from the start. [big he of M][']s been training me this whole time, and now I don't think there's any way I can avoid having that monster stuffed inside me. I might as well try to enjoy it.[or]I feel like I owe it to [him of M] to let [him of M] fuck me with that strapon. But... [he of M][']s done nothing but bully and fuck me since we met.[or][first custom style]If [he of M] tells me [he of M] wants to put that thing inside me... I know I'll try to say no, but...[second custom style]submitting just feels too good.[or]I'm addicted to getting fucked by [his of M] huge strapon. This game has changed me into such a pervert...[or][first custom style]I am certain I can't handle a dildo that size. [second custom style]But I'll try anything for my Mistress.[in random order]";
+			say "[variable custom style][one of]That dildo is massive. I guess I should prepare myself.[or]So far I've taken everything else [he of M]'s done to me. I know it's wrong, but I'm looking forward to taking that too.[or]This must have been [his of M] game from the start. [big he of M][']s been training me this whole time, and now I don't think there's any way I can avoid having that monster stuffed inside me. I might as well try to enjoy it.[or]I feel like I owe it to [him of M] to let [him of M] fuck me with that strapon. But... [he of M][']s done nothing but bully and fuck me since we met.[or][first custom style]If [he of M] tells me [he of M] wants to put that thing inside me... I know I'll try to say no, but...[second custom style]submitting just feels too good.[or]I'm addicted to getting fucked by [his of M] huge strapon. This game has changed me into such a pervert...[or][first custom style]I am certain I can't handle a dildo that size. [second custom style]But I'll try anything for my [literalMistress of M].[in random order]";
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]I can't exactly let [him of M] offer me up to the patrons, but I don't want that monster anywhere near me.[or]Again?! Why is it bigger again?[or][if lady fetish is 2]H-he[otherwise]S-she[end if] can't honestly expect me to take that thing? I'm a guy, I'm built to fuck things, not the other way around![or]WHAT THE FUCK, THAT'S HUGE![or][if the size of penis < 1]The size of that thing is fucking insane. Why don't I get one of those?[otherwise if the size of penis < 5]This sucks. Everybody gets to be bigger than me. I couldn't even top that if I tried...[otherwise if the size of penis < 9]I have a normal dick size, but I'm not even half as big as that thing. Everything in this game is out to make me feel like a chick.[otherwise]My dick is supposed to be huge, but now this shit? Ugh whatever, I might as well take the patron bullshit, I'm not letting this chick fuck me any more.[end if][in random order]";
 		otherwise if the bimbo of the player < 14:
 			say "[variable custom style][one of]Hopefully that's as big as it gets. It was enough trouble dealing with [his of M] second strapon, I have no idea how I'd deal with a fourth one. It might feel good though...[or]I want to try it. Just to say I tried it, not because I like getting fucked, I just want to say I tried it.[or]When I'm around [him of M], I feel like a possession. It's like [he of M] doesn't even care I'm supposed to be a man.[or][big he of M]'s going to fuck me with that thing, isn't [he of M].[or][if the size of penis < 1][big he of M] does the fucking, I follow all of [him of M] orders, and I don't have a dick. I'm a girl, there's no denying it.[otherwise if the size of penis < 4][big he of M]'s fucked me so many times. And I keep letting it happen. Honestly, where do I get off calling myself a man? It's not like my penis is big enough to please anyone.[otherwise if the size of penis < 9]I'm still average sized, but after letting [him of M] fuck me so many times, I guess it's natural [he of M] would be twice my size...[otherwise]I thought I had a huge dick, but I guess I just didn't know what huge really was. Why don't I feel jealous?[end if][or]My prostate can't survive a beating from that monster. If I get fucked by that thing, I'm going to cum whether I want to or not.[or][first custom style][if the size of penis > 1]I'm getting hard just looking at that thing[otherwise]I'm getting horny just looking at that thing[end if]. I can't help it, it's just so [second custom style]BIG![or][big he of M][']s trained me into the perfect fuckhole. Why am I proud of that?[or]I hope I get to cum soon...[in random order]";
 		otherwise:
-			say "[second custom style][one of]I'm looking forward to getting POUNDED by that![or]Mistress is going to be so happy. I'm determined to last longer this time![or]I hope Mistress feels like fucking me today. I hate boot for dinner...[or]Teehee! It's SO big![or]Mistress is going to rut me like an animal!~[or]I think Mistress is going to give me permission to cum soon! OOooh I can't wait![or]Mistress did such a good job training me, I'm sure I can take [his of M] strapon no problem![or]I love getting pounded by my Mistress![or]I hope Mistress is rough today...[in random order]";[highest bimbo functions are combined]
+			say "[second custom style][one of]I'm looking forward to getting POUNDED by that![or][literalMistress of M] is going to be so happy. I'm determined to last longer this time![or]I hope [literalMistress of M] feels like fucking me today. I hate boot for dinner...[or]Teehee! It's SO big![or][literalMistress of M] is going to rut me like an animal!~[or]I think [literalMistress of M] is going to give me permission to cum soon! OOooh I can't wait![or][literalMistress of M] did such a good job training me, I'm sure I can take [his of M] strapon no problem![or]I love getting pounded by my [literalMistress of M]![or]I hope [literalMistress of M] is rough today...[in random order]";[highest bimbo functions are combined]
 	say "[roman type][line break]";
 
 Definition: dominatrix is able to remove cursed plugs: decide yes.
@@ -114,7 +114,7 @@ Definition: dominatrix is wenchy: decide yes.
 To set up (M - dominatrix):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	calm M.
 
@@ -148,8 +148,8 @@ To say SexResistFlav of (M - dominatrix):
 	otherwise if M is spanking the player and there is a patron in the location of the player:
 		let P be a random patron in the location of the player;
 		if bukkake fetish is 1:
-			if the player is able to speak, say "[variable custom style]'[if the semen taste addiction of the player > 12 and the semen taste addiction of the player > the semen addiction of the player][one of]Guys you're being mean! At least cum in my mouth so I get to taste it properly...'[or]This is so unfair, at least let me taste it properly!'[or]Stop teasing me with your cum and let me suck your cocks properly!'[in random order][otherwise if the semen addiction of the player > 10][one of]I don't mind you jizzing on my face, but can you get this crazy [man of M] to stop first? Ow ow ow!'[or]If you wanted me to be your bukkake queen you just had to ask... you didn't have to gang up on me while I'm being abused already!'[in random order][otherwise if the bimbo of the player > 9][one of]Ooh, why do there have to be so many of you watching?'[or]Mistress, you're being mean! Tell them to stop!'[or]Please at least wait until [he of M] stops paddling me! Oof!'[then at random][otherwise if the semen coating of face is 0][one of]Piss off guys, this isn't funny!'[or]You're not seriously going to mess up my face while I'm bound like this, are you?!'[or]Come on, [he of M] was joking, right? Right???'[or]Seriously, I'm not enjoying this! I didn't even get a safe word! You have to believe me!'[or]Don't listen to that [man of M]! [big he of M]'s insane!'[at random][otherwise][one of]Don't you think this has gone far enough already?!'[or]Why would you obey this psycho??'[or]Fucking hell, I'm not your plaything! Stop this now!'[or]Do you really think this is consensual?'[or]Oh my god, how gross!'[or]Yuck yuck yuck! Get away from me!'[or]No more, please!'[at random][end if][roman type][line break]";
-			otherwise say "[if the oral sex addiction of the player > 7 and the semen taste addiction of the player > the semen addiction of the player]You look longingly at the [DickDesc of P]s but the pain in your backside keeps bringing you back down to earth, struggling against the stocks.[otherwise if the semen addiction of the player > 13]You look lovingly at the [DickDesc of P]s, excited to get coated in more [semen], but the pain in your backside keeps bringing you back down to earth, struggling against the stocks.[otherwise if the bimbo of the player > 9]You yelp in pain with each swat of the paddle, your intolerance to the pain winning out against your desire to please your Mistress.[otherwise if the semen coating of face is 0]You stare in fear at the several [DickDesc of P]s pointed directly at your face.[otherwise]You shake your limbs in their bonds, silently shooting daggers at the patrons with your eyes.[end if]";
+			if the player is able to speak, say "[variable custom style]'[if the semen taste addiction of the player > 12 and the semen taste addiction of the player > the semen addiction of the player][one of]Guys you're being mean! At least cum in my mouth so I get to taste it properly...'[or]This is so unfair, at least let me taste it properly!'[or]Stop teasing me with your cum and let me suck your cocks properly!'[in random order][otherwise if the semen addiction of the player > 10][one of]I don't mind you jizzing on my face, but can you get this crazy [man of M] to stop first? Ow ow ow!'[or]If you wanted me to be your bukkake queen you just had to ask... you didn't have to gang up on me while I'm being abused already!'[in random order][otherwise if the bimbo of the player > 9][one of]Ooh, why do there have to be so many of you watching?'[or][literalMistress of M], you're being mean! Tell them to stop!'[or]Please at least wait until [he of M] stops paddling me! Oof!'[then at random][otherwise if the semen coating of face is 0][one of]Piss off guys, this isn't funny!'[or]You're not seriously going to mess up my face while I'm bound like this, are you?!'[or]Come on, [he of M] was joking, right? Right???'[or]Seriously, I'm not enjoying this! I didn't even get a safe word! You have to believe me!'[or]Don't listen to that [man of M]! [big he of M]'s insane!'[at random][otherwise][one of]Don't you think this has gone far enough already?!'[or]Why would you obey this psycho??'[or]Fucking hell, I'm not your plaything! Stop this now!'[or]Do you really think this is consensual?'[or]Oh my god, how gross!'[or]Yuck yuck yuck! Get away from me!'[or]No more, please!'[at random][end if][roman type][line break]";
+			otherwise say "[if the oral sex addiction of the player > 7 and the semen taste addiction of the player > the semen addiction of the player]You look longingly at the [DickDesc of P]s but the pain in your backside keeps bringing you back down to earth, struggling against the stocks.[otherwise if the semen addiction of the player > 13]You look lovingly at the [DickDesc of P]s, excited to get coated in more [semen], but the pain in your backside keeps bringing you back down to earth, struggling against the stocks.[otherwise if the bimbo of the player > 9]You yelp in pain with each swat of the paddle, your intolerance to the pain winning out against your desire to please your [literalMistress of M].[otherwise if the semen coating of face is 0]You stare in fear at the several [DickDesc of P]s pointed directly at your face.[otherwise]You shake your limbs in their bonds, silently shooting daggers at the patrons with your eyes.[end if]";
 		otherwise:
 			if the player is able to speak, say "[variable custom style]'[if the oral sex addiction of the player > 6]Look, I'd love to suck your [DickDesc of P] but can you get Miss Psycho back there to let me out first??'[otherwise if the oral sex addiction of the player > 3]This is not how I usually give blowjobs! Owww!'[otherwise][one of]Don't listen to [him of M]! I don't want to suck your [DickDesc of P]!'[or]You're kidding, right??'[at random][end if][roman type][line break]";
 			otherwise say "[if there is a patron filling face][muffled sounds][otherwise if the oral sex addiction of the player > 6]You look longingly at the [DickDesc of P] but the pain in your backside keeps bringing you back down to earth, struggling against the stocks.[otherwise if the delicateness of the player > a random number between 8 and 12]You yelp in pain with each swat of the paddle, your intolerance to the pain winning out against your desire to please your Mistress.[otherwise]You shake your limbs in their bonds, silently shooting daggers at the patron with your eyes.[end if]";
@@ -472,7 +472,7 @@ To set up sex length of (M - dominatrix) in (B - a body part):
 To compute unique penetration effect of (M - dominatrix) in (B - a body part):
 	if refractoryperiod is 3 and M is not friendly-fucking:
 		say "[BigNameDesc of M] tuts and shakes [his of M] head in disapproval.[line break][speech style of M]'Did I say you could cum? I didn't think so. Well, I guess this just shows you aren't ready to be treated any differently.'[roman type][line break]";
-		if the size of penis > 0, cutshow figure of dominatrix cutscene 7 for M;
+		if the player is possessing a penis, cutshow figure of dominatrix cutscene 7 for M;
 		now the disappointment of M is 1;
 	otherwise:
 		now the disappointment of M is 0.
@@ -524,7 +524,8 @@ To compute MasturbationReaction of (M - dominatrix):
 		otherwise:
 			say "[line break][speech style of M]'Sorry, did I give you permission to touch yourself?'[roman type] [BigNameDesc of M] grabs your wrist and yanks it away from your crotch.";
 			FavourDown M;
-		now wanking is 0;
+		say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
+		follow the masturbation ended rule;
 	otherwise:
 		say "[BigNameDesc of M] chuckles as [he of M] watches you.".
 
@@ -714,7 +715,7 @@ To decide which number is the dominationtype of (M - dominatrix) using (F - peni
 
 To watersports dominate (M - dominatrix):
 	say "You successfully force [NameDesc of M] to [his of M] knees, holding [him of M] down as you rip off [his of M] strapon, leaving [his of M] crotch bare. [big he of M] [if the slave-status of M > -3]stares at you silently for a moment before cocking an eyebrow and spreading [his of M] legs. [line break][speech style of M]'Alright. Here's your chance.'[otherwise]waits a moment before submissively spreading [his of M] legs. [line break][speech style of M]'Alright.'[end if][roman type][line break]";
-	say "You toss [his of M] kinky underwear over your shoulder as you [if the size of penis > 0]push your [player-penis] ever so slightly into[otherwise][vagina] right up to[end if] [his of M] mouth and release your hold on your bladder. [if the slave-status of M < -3][big his of M] nose crinkles as soon as the taste hits [his of M] tongue, spilling [urine] everywhere as you turn [him of M] into your personal toilet. The thorough degradation seems to take its toll on [him of M], and [he of M] looks up you with a less defiant edge in [his of M] eyes when your done.[otherwise][big his of M] nose crinkles as soon as the taste hits [his of M] tongue, but [he of M] immediately accepts [his of M] place as your personal toilet, gulping audibly as [he of M] swallows your [urine] down to the last drop.[end if]";
+	say "You toss [his of M] kinky underwear over your shoulder as you [if the player is possessing a penis]push your [player-penis] ever so slightly into[otherwise][vagina] right up to[end if] [his of M] mouth and release your hold on your bladder. [if the slave-status of M < -3][big his of M] nose crinkles as soon as the taste hits [his of M] tongue, spilling [urine] everywhere as you turn [him of M] into your personal toilet. The thorough degradation seems to take its toll on [him of M], and [he of M] looks up you with a less defiant edge in [his of M] eyes when your done.[otherwise][big his of M] nose crinkles as soon as the taste hits [his of M] tongue, but [he of M] immediately accepts [his of M] place as your personal toilet, gulping audibly as [he of M] swallows your [urine] down to the last drop.[end if]";
 	now player-fucking is DOMINANT-DOMINANT;
 	SportsGet;
 	severeDignify;
@@ -834,15 +835,15 @@ To say DominanceFailure of (M - dominatrix):
 To compute failed dominance punishment of (M - dominatrix):
 	increase the slave-status of M by 1;[she sees you as more of a slave]
 	let H be a random off-stage chastity cage;
-	if the player is getting very unlucky and (player-fucker is penis or (the player is female and vagina is not actually occupied)) and H is clothing:
+	if the player is getting very unlucky and (player-fucker is penis or (the player is possessing a vagina and vagina is not actually occupied)) and H is clothing:
 		let C be a random worn bottom level protection clothing;
 		if the size of penis > 3:
-			say "[big he of M] [if C is clothing]fishes your [player-penis] out of your [printed name of C], frowning as it rapidly stiffens in [his of M] grip.[otherwise if penis is penis-erect]frowns as [he of M] wraps [his of M] hand around your rock-hard [player-penis].[otherwise]wraps [his of M] hand around your [player-penis], frowning as it rapidly stiffens in [his of M] grip.[end if] [line break][speech style of M]'Well, I suppose it wouldn't hurt to remind you of what you'll be missing.'[roman type][line break][BigNameDesc of M] kneels between your legs, slowly stroking your [ShortDesc of penis] as [he of M] removes a small pink object from [his of M] belt. [big he of M] holds eye contact with you as [he of M] wraps [his of M] lips around your shaft, [his of M] hand continuing to pump your shaft from the base as [he of M] places the object, a chastity cage, down on your stomach. Your eyes widen as you realise what [he of M] has in store for you, but its too late. You arch your back and buck your hips, emitting a dejected groan as your [literalMistress of M] forces you to fill [his of M] mouth with your [semen]. [big he of M] pulls off with a smirk, swallowing your [load] as [he of M] applies the cage to your already softening [player-penis]. [line break][speech style of M]'There we-*click*-go! You're free to go, slave!'[roman type][line break]";
+			say "[big he of M] [if C is clothing]fishes your [player-penis] out of your [printed name of C], frowning as it rapidly stiffens in [his of M] grip.[otherwise if penis is penis-erect]frowns as [he of M] wraps [his of M] hand around your rock-hard [player-penis].[otherwise]wraps [his of M] hand around your [player-penis], frowning as it rapidly stiffens in [his of M] grip.[end if] [line break][speech style of M]'Well, I suppose it wouldn't hurt to remind you of what you'll be missing.'[roman type][line break][BigNameDesc of M] kneels between your legs, slowly stroking your [ShortDesc of penis] as [he of M] removes a small pink object from [his of M] belt. [big he of M] holds eye contact with you as [he of M] wraps [his of M] lips around your shaft, [his of M] hand continuing to pump your shaft from the base as [he of M] places the object, a chastity cage, down on your stomach. Your eyes widen as you realise what [he of M] has in store for you, but it's too late. You arch your back and buck your hips, emitting a dejected groan as your [literalMistress of M] forces you to fill [his of M] mouth with your [semen]. [big he of M] pulls off with a smirk, swallowing your [load] as [he of M] applies the cage to your already softening [player-penis]. [line break][speech style of M]'There we-*click*-go! You're free to go, slave!'[roman type][line break]";
 			BlowGet;
-		otherwise if the size of penis > 0:
+		otherwise if the player is possessing a penis:
 			say "[big he of M] [if C is clothing]pulls aside your [printed name of C] and begins using [his of M] fingertip to play with your [player-penis][otherwise if penis is penis-erect]teases your rock-hard [player-penis] with [his of M] fingertip[otherwise]teases your [player-penis] with [his of M] fingertip[end if] as [he of M] removes a small pink object from [his of M] belt.[line break][speech style of M]'So cute.'[roman type][line break][big he of M] kneels between your legs as places the object, a chastity cage, on your belly. It only takes a moment for [his of M] skilful teasing to bring you to the edge, and you arch your back and emit a shameful moan as you fill [his of M] hand with your [load]. [big he of M] licks your [semen] off [his of M] fingers as [he of M] applies the object, a chastity cage, to your newly softened [sissy-penis], locking it into place with an audible *click*.[line break][speech style of M]'That's better. See you later, slave!'[roman type][line break]";
 		otherwise:
-			say "[big he of M] [if C is clothing]shifts aside your [printed name of C], slipping [his of M] fingers into your [vagina][otherwise]slips [his of M] fingers into your [vagina][end if] as [he of M] removes several curved metal parts from [his of M] belt.[line break][speech style of M]'You're feeling pent up, aren't you. Let me take care of that.'[roman type][line break][big he of M] kneels down next to you, using [his of M] the tip of [his of M] tongue to tenderly tease your clit as [he of M] assembles the parts around your waist. Your eyes widen as you realise [he of M]'s putting together a chastity cage, but its too late. You arch your back and buck your hips, as your skilled [literalMistress of M] forces you right over the edge, forcing you to squirt as a powerful orgasm wracks your body. [big he of M] pauses to slurp your juices off [his of M] fingers before screwing the last piece into place. [line break][speech style of M]'Alright, now all I need to do is-*click*-lock it and we're done. You're free to go, slave!'[roman type][line break]";
+			say "[big he of M] [if C is clothing]shifts aside your [printed name of C], slipping [his of M] fingers into your [vagina][otherwise]slips [his of M] fingers into your [vagina][end if] as [he of M] removes several curved metal parts from [his of M] belt.[line break][speech style of M]'You're feeling pent up, aren't you. Let me take care of that.'[roman type][line break][big he of M] kneels down next to you, using [his of M] the tip of [his of M] tongue to tenderly tease your clit as [he of M] assembles the parts around your waist. Your eyes widen as you realise [he of M]'s putting together a chastity cage, but it's too late. You arch your back and buck your hips, as your skilled [literalMistress of M] forces you right over the edge, forcing you to squirt as a powerful orgasm wracks your body. [big he of M] pauses to slurp your juices off [his of M] fingers before screwing the last piece into place. [line break][speech style of M]'Alright, now all I need to do is-*click*-lock it and we're done. You're free to go, slave!'[roman type][line break]";
 			LickGet;
 			orgasm;
 		orgasm;
@@ -1009,27 +1010,15 @@ To say PleadRejected of (M - dominatrix):
 
 Section 2 - Questioning
 
-To compute answer of (M - dominatrix) to (Q - a number):
-	if M is not actually interested:
-		say UnGreeted of M;
-	otherwise:
-		compute raw answer of M to Q;
-	if the questioned of M <= the mild-annoyance threshold of M:
-		HeavyConvoFatigue M;
-	otherwise:
-		SlightConvoFatigue M;
-		if the questioned of M > the mild-annoyance threshold of M:
-			say AnnoyedWarn of M;
-
 To say WhereAnswer of (M - dominatrix):
 	if M is unfriendly:
-		say "[speech style of M]'You're in my person dungeon, bitch!'[roman type]";
+		say "[speech style of M]'You're in my person dungeon, bitch!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'You're in my personal dungeon, and if you know what's good for you, you'll leave before I get pissed off!'[roman type][line break]".
 
 To say WhoAnswer of (M - dominatrix):
 	if M is unfriendly:
-		say "[speech style of M]'[one of]I'm your new mistress, bitch, now shut your fucking mouth.'[or]Pretty simple. I'm your Mistress, and you're my new bitch.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]I'm your new [literalMistress of M], bitch, now shut your fucking mouth.'[or]Pretty simple. I'm your [literalMistress of M], and you're my new bitch.'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'I'm a professional dominatrix. But sometimes when business is slow I get bored, and need to find someone to take out my aggression on!'[roman type][line break]".
 
@@ -1048,43 +1037,14 @@ To say AdviceAnswer of (M - dominatrix):
 	otherwise:
 		say "[speech style of M]'If you drink from a tank and find out that the liquid is cursed, you could drop the vessel you used in front of it to remind yourself for later. Just an idea, take it or leave it.'[roman type][line break]".[figured the butler advice could be a little better, added some more]
 
-To say UnGreeted of (M - dominatrix):
-	say "[speech style of M]'Stop wasting my time, [please].'[roman type][line break]".
-
-[I think it makes sense to have her be a little more standoffish than everyone else.]
-To compute annoyance of (M - dominatrix):
-	if M is actually interested:
-		say "[speech style of M]'Stop wasting my time, [please].'[roman type][line break]";
-	otherwise if M is unfriendly:
-		say "[speech style of M]'Silence, slave. Submit to me!'[roman type][line break]";
-	otherwise:
-		say "[BigNameDesc of M] ignores your question.";
-
 To compute teaching of (M - dominatrix):
 	say "[speech style of M]'When someone's topping you, it's up to them how hard you get fucked, and for how long. But, if you aren't gagged, it's never a bad idea to admit your own inferiority and plead for mercy. Sometimes it will help, sometimes it won't, but it definitely turns me on when a sub knows their place!'[roman type][line break]";
-	teach begging for mercy;
-	HeavyConvoFatigue M.
+	teach begging for mercy.
 
 Section 3 - Drink Requesting
 
-To compute talk option (N - 3) to (M - dominatrix):
-	let B be a random number from 1 to 4;
-	say DrinkRequest of M;
-	if M is unintelligent:
-		say "It doesn't look like [NameDesc of M] speaks English.";
-	otherwise if M is not actually interested:
-		say "[BigNameDesc of M] doesn't seem to realise you're talking to [him of M].";
-	otherwise if M is friendly:
-		compute friendly drink of M;
-	otherwise if M is unfriendly:
-		compute unfriendly drink of M.
-
 To compute unfriendly drink of (M - dominatrix):
-	if M is uninterested:
-		say "[speech style of M]'You'll get no hospitality from me, [bitch]!'[roman type][line break]";
-		now the boredom of M is 0;
-	otherwise:
-		say "[speech style of M]'You'll get no hospitality from me, [bitch]!'[roman type][line break]".
+	say "[speech style of M]'You'll get no hospitality from me, [bitch]!'[roman type][line break]".
 
 To compute friendly drink of (M - dominatrix):
 	say "[speech style of M]'You'll get no hospitality from me.'[roman type][line break]".

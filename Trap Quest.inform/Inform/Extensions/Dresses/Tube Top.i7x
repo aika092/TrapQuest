@@ -13,7 +13,8 @@ To say ShortDesc of (C - a tube top):
 
 To decide which number is the initial outrage of (C - a tube top):
 	if C is see-through or C is normally-nipple-exposing, decide on 6;
-	if C is sheer, decide on 4;
+	if C is sheer, decide on 5;
+	if C is very low cut or lower, decide on 4;
 	decide on 3.
 
 To decide which number is the original price of (C - a tube top):
@@ -260,9 +261,29 @@ To say MediumDesc of (C - leopard print tube top):
 	say "leopard print tube top".
 
 To say ClothingDesc of (C - leopard print tube top):
-	say "A small leopard print tube that clings tightly to your chest in order to stay in place[one of]. The bumps of your nipples are clearly visible.[or]. You [if the player is disgraced]wonder what it would look if your nipples were, uh, 'cold'?[otherwise]grimace at the idea of jokes about 'flash-lights'.[end if][or].[in random order]".
+	say "A small leopard print tube that clings tightly to your chest in order to stay in place.".
 
 To decide which object is the unique-upgrade-target of (C - leopard print tube top):
 	decide on a random off-stage leopard print bikini.
+
+Part 10 - White Tube Top
+
+white tube top is a tube top. white tube top is very low cut. white tube top is transformation-rare. white tube top is sheer-when-wet.
+The printed name of white tube top is "[clothing-title-before]white tube top[clothing-title-after]". The text-shortcut of white tube top is "wtt".
+
+Definition: white tube top is white themed: decide yes.
+
+Figure of white tube top is the file "Items/Clothes/Upper/TubeTops/tubetop9.png".
+
+To decide which figure-name is clothing-image of (C - white tube top):
+	decide on figure of white tube top.
+
+To say ShortDesc of (C - white tube top):
+	say "white tube top".
+To say MediumDesc of (C - white tube top):
+	say "tiny white tube top".
+
+To say ClothingDesc of (C - white tube top):
+	say "A supertiny white tube that clings tightly to your chest in order to stay in place.".
 
 Tube Top ends here.

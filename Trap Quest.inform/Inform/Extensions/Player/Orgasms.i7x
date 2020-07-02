@@ -89,7 +89,7 @@ REQUIRES COMMENTING
 +!]
 To anally orgasm shamefully:
 	if the player is not able to orgasm:
-		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is male]prostate[otherwise]asshole[end if], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
+		if the class of the player is royal slave, say "You feel the beginnings of a [one of][or]familiar [stopping]wave of pleasure [one of]rippling[or]surging[as decreasingly likely outcomes] through your [if the player is sexed male]prostate[otherwise]asshole[end if], only to have it just... stop. [line break][variable custom style][one of]I was pretty sure I was about to cum... maybe it has something to do with this [ShortDesc of a random worn headgear]?[or]Again? Am I not allowed to cum or something? Maybe it's because I'm not acting like a slave...[stopping][roman type][line break]";
 		otherwise say "[if refractoryperiod > 0]You would cum again but your body is so exhausted from its most recent climax that the wave of pleasure[otherwise]You feel a wave of pleasure that[end if] is weaker and less fulfilling than a full orgasm.";
 		arouse the sex addiction of the player * 10;
 		follow the drilldo orgasm resolution rule;
@@ -215,7 +215,7 @@ REQUIRES COMMENTING
 
 +!]
 To say shameful tip:
-	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is male] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
+	say "[one of][newbie style]Newbie tip: You had a shameful orgasm! These will increase sex addiction[if the player is possessing a penis] and reduce the size of your penis[end if]. In other words, avoid them! You can masturbate to reduce your arousal, which makes it less likely you'll orgasm from something else.[roman type][line break][or][stopping]".
 
 [!<orgasmFatigueEffectsRules:Rulebook>*
 
@@ -258,8 +258,7 @@ REQUIRES COMMENTING
 To orgasm:
 	increase orgasm-count by 1;
 	increase refractoryperiod by 3;
-	if the wanktime of the player < 300, now the wanktime of the player is 300;
-	[if the player is male, now the rawness of penis is 0;]
+	[if the player is possessing a penis, now the rawness of penis is 0;]
 	follow the ejaculation rules;
 	follow the orgasm fatigue effects rules;
 	follow the orgasm resolution rules;
@@ -322,7 +321,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the lack of penis for ejaculation rule:
-	if the size of penis <= 0:
+	if the player is not possessing a penis:
 		if the player is male, say "You would have ejaculated, but you no longer have a penis.";
 		rule fails.
 The lack of penis for ejaculation rule is listed last in the ejaculation rules.
@@ -386,7 +385,7 @@ This is the ejaculation into clothing rule:
 		otherwise if P is potentially penis covering:
 			say "[one of]Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as it [if A < 3]dribbles its small amount of [semen] into[otherwise if A < 6]splurts warm [semen] into[otherwise if A < 9]drools its thick, creamy load into[otherwise]floods your [printed name of a random bottom level pee protection clothing worn by the player] with its massive, creamy load.[end if][if A < 8] your [printed name of P].[end if][or]Your [ShortDesc of penis] [if A < 3]quivers from within your[otherwise]strains against your[end if] [printed name of a random bottom level pee protection clothing worn by the player], wiping your mind with pleasure [if P is fluid immune]as it coats the tough inner [clothing-material of P][otherwise]as it darkens the [clothing-material of P][end if] with a [if A < 3]pitifully tiny load[otherwise if A < 5]warm, gooey load[otherwise if A < 8]thick, creamy load[otherwise]massive load[end if], which [if P is fluid immune]slowly rolls down your balls.[otherwise]darkening the inner fabric[end if].[or]Your [Shortdesc of penis] spurts a [if A < 3]feeble load[otherwise if A < 5]warm load[otherwise if A < 9]thick load[otherwise]massive, creamy load[end if] into your [printed name of P], [if P is fluid immune] which hits the inner [clothing-material of P] and splashes back against your skin. You tremble as the slimy [semen] rolls down your shaft.[otherwise]which creates a noticeable dark spot in the [clothing-material of P].[end if][in random order]";
 		otherwise:
-			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a a noticeable dark spot in the fabric[end if].";
+			say "Your [ShortDesc of penis] [if A < 3]quivers excitedly[otherwise]flexes powerfully[end if] as [if A < 3]a small amount of [semen] slowly dribbles[otherwise if A < 6]it drools warm [semen][otherwise if A < 9]it splurts out thick, creamy [semen], which oozes down your belly and [otherwise]shoots out several thick, creamy ropes, which ooze slowly down your belly and[end if] down your shaft, collecting in the waist band of your [printed name of a random bottom level pee protection clothing worn by the player], [if P is fluid immune]which doesn't absorb anything at all, allowing you to feel your slimy load dribble slowly over your skin[otherwise]which creates a noticeable dark spot in the fabric[end if].";
 		compute ejaculation;
 		rule succeeds.
 The ejaculation into clothing rule is listed last in the ejaculation rules.
@@ -493,9 +492,9 @@ REQUIRES COMMENTING
 This is the living belt of sturdiness orgasm resolution rule:
 	if the living belt of sturdiness is thrusting and the buildup of the living belt of sturdiness > 0:
 		if the living belt of sturdiness is not penetrating vagina: [must be penetrating something if it's thrusting, so it must be in the butt!]
-			say "The metallic tentacle in your [asshole] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it [if the player is male]kneading your prostate, milking you for every last drop of cum[otherwise]twisting around inside you, eking out every last bit of pleasure[end if] as the tendril begins to bulge, and the loop around your waist grows progressively tighter and hotter against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a big fat load right up my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna cum insi-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [asshole] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [asshole][otherwise]torrents an obscene amount of alien [semen] directly into your [asshole][end if]!";
+			say "The metallic tentacle in your [asshole] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it [if the player is sexed male]kneading your prostate, milking you for every last drop of cum[otherwise]twisting around inside you, eking out every last bit of pleasure[end if] as the tendril begins to bulge, and the loop around your waist grows progressively tighter and hotter against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a big fat load right up my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna cum insi-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [asshole] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [asshole][otherwise]torrents an obscene amount of alien [semen] directly into your [asshole][end if]!";
 		otherwise if the living belt of sturdiness is not penetrating asshole:
-			say "The metallic tentacle in your [vagina] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it twisting around inside you, massaging your g-spot and jostling your clit as the tentacle begins to bulge, and the loop around your waist grows progressively tighter, and hotter, against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a fat wad in my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna creampie-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [vagina] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [vagina][otherwise]torrents an obscene amount of alien [semen] directly into your [vagina][end if]!";[could probably be differentiated a bit more.]
+			say "The metallic tentacle in your [vagina] [one of]seems to react[or]reacts[stopping] to your orgasm, pulsing rhythmically as it thrusts with ever increasing intensity. You can feel it twisting around inside you, massaging your G-spot and jostling your clit as the tentacle begins to bulge, and the loop around your waist grows progressively tighter, and hotter, against your skin. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like it's going to-[otherwise][line break][second custom style]Mmm, the only thing missing is a fat wad in my-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! It's going to-[otherwise if the raw sex addiction of the player < 14][variable custom style]It's going to cum insi-[otherwise][second custom style]I can feel it! It's gonna creampie-[end if][stopping][roman type][line break]The tentacle jams itself in as far as it can go, throbbing violently as it [if the buildup of the living belt of sturdiness < 3]fills your [vagina] with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]unleashes several powerful spurts of alien [semen] directly into your [vagina][otherwise]torrents an obscene amount of alien [semen] directly into your [vagina][end if]!";[could probably be differentiated a bit more.]
 		otherwise:
 			say "The metallic tentacles in your holes [one of]seem to react[or]react[stopping] to your orgasm, pulsing rhythmically as begin picking up speed. You can feel them twisting around inside you, elongating and intensifying your orgasm as a fast moving wave of warmth spreads from the loop around your waist and travels toward the tentacles buried in your [vagina] and [asshole]. [one of][if the raw sex addiction of the player < 7][line break][first custom style]Wait, what[']s happen-[otherwise if the raw sex addiction of the player < 14][line break][variable custom style]Why does it feel like they[']re about to-[otherwise][line break][second custom style]Mmm, the only thing missing is a double-[end if][or][if the raw sex addiction of the player < 7][first custom style]Oh no! They[']re about to-[otherwise if the raw sex addiction of the player < 14][variable custom style]They[']re going to cum insi-[otherwise][second custom style]I can feel it! They[']re gonna cum insi-[end if][stopping][roman type][line break]Your eyes go wide as they jam themselves in as far as they can go, throbbing violently as [if the buildup of the living belt of sturdiness < 3]they take turns filling your holes with several spurts of alien [semen][otherwise if the buildup of the living belt of sturdiness < 6]take turns filling your [vagina] and [asshole] with torrents of creamy alien [semen][otherwise]take turns flooding your holes with obscene amounts of alien [semen][end if]!";[On women, the first half of the semen prioritises assholes and the second half priorities vagina. But if the belt is only penetrating one hole (the other was occupied at the moment of penetration) then it gets the full amount. Could probably be coded simpler than this.]
 		let S be the buildup of the living belt of sturdiness / 2;
@@ -572,7 +571,7 @@ REQUIRES COMMENTING
 +!]
 This is the BBC orgasm resolution rule:
 	if interracial fetish is 1:
-		repeat with M running through monsters penetrating a fuckhole:
+		repeat with M running through monsters penetrating a body part:
 			if M is dark skinned:
 				if a random number between 3 and 12 > the raw bbc addiction of the player, BBCAddictUp 1;
 			otherwise if M is human:
@@ -607,7 +606,7 @@ This is the hentai orgasm resolution rule:
 		let N be bottom level lactation cover;
 		let M be the milk volume of breasts / 5;
 		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor.[end if][line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
-		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed. [line break][variable custom style]Huh! I thought that only happened in Hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come![roman type][line break]Surely, not? Please?[or]Oh, no! [line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
+		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed. [line break][variable custom style]Huh! I thought that only happened in hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come![roman type][line break]Surely, not? Please?[or]Oh, no! [line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
 		[moderateHumiliate;]
 		if N is clothing:
 			milksoak M on N;
@@ -791,22 +790,25 @@ Definition: a fuckhole (called F) is pushed over the edge:
 	if the player is not a bit horny, decide no; [No more than one orgasm in a round, and arousal needs to build at least a bit before the next one!]
 	let N be -1;
 	let T be a random thing penetrating F;
-	let ST be the stimulation of T on F / 4;
+	let ST be the stimulation of T on F / 2;
 	let SEN be the sensitivity of F;
 	let ENJ be the enjoyment of F;
 	increase N by ST + SEN + ENJ;
 	if N < 0, now N is 0;
-	if debuginfo > 0, say "[input-style][F] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) + orgasm vulnerability from things like submitting ([ENJ]) = [N]; square rooted = ";
+	if debuginfo > 1, say "[input-style][F] orgasm threshold check: stimulation ([ST]) + sensitivity ([SEN]) + orgasm vulnerability ([ENJ]) = [N]; square rooted = ";
 	now N is the square root of N; [some logarithmic scaling; 0>0, 1-3>1, 4-8>2, 9-15>3]
 	let A be 4 - fuckhole arousal; [A decreases as arousal increases. NB at 9000 arousal (extremely horny) A becomes -1, allowing for orgasms at any value of N.]
-	if debuginfo > 0, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
+	if debuginfo > 1, say "[N] | ([A].5) orgasm threshold based on arousal[if N <= A]... player is currently too unaroused to orgasm.[roman type][end if][line break]";
 	if N <= A, decide no; [enjoyment is too low to trigger an orgasm from this level of arousal]
 	[Now we know that N is greater than A]
 	let O1 be a random number between N and A;
 	let O2 be a random number between N and A;
-	let O3 be a random number between N and A;
-	if debuginfo > 0, say "Player might actually be able to orgasm! Final orgasm check: stimulation ([N]) & [one of]arousal-based [or][stopping]orgasm resistance ([A]); RNG([A]~[N]) = [O1] and RNG([A]~[N]) = [O2] must both be above minimum value of [A].[roman type][line break]";
-	if O1 > A and O2 > A[ and O3 > A], decide yes; [With O2: If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%; With O3: If N = A+1 then orgasm chance is 1 in 8; if N = A+2 then orgasm chance is 8 in 27 (just under 1 in 3); if N = A+3 then orgasm chance is 27 in 64 which is over 40%]
+	[let O3 be a random number between N and A;]
+	[let OL be A + 1;
+	if OL >= N, now N is OL + 1;]
+	let OL be A;
+	if debuginfo > 0, say "[input-style]Orgasm check: [one of]arousal-based [or][stopping]orgasm resistance ([A]) & stimulation ([N]); RNG([A]~[N]) = [O1] and RNG([A]~[N]) = [O2] must both be above [OL].[roman type][line break]";
+	if O1 > OL and O2 > OL, decide yes; [If N = A+1 then orgasm chance is 1 in 4; if N = A+2 then orgasm chance is 4 in 9; if N = A+3 then orgasm chance is 9 in 16 which is over 55%;]
 	decide no.
 
 [!<DecideWhichNumberIsFuckholeArousal>+
@@ -827,9 +829,9 @@ To decide which number is the enjoyment of (F - a fuckhole):
 		check immobility;
 		if the player is immobile, decide on 4;
 		decide on 2;
-	let A be 0;
+	let A be 2;
 	if there is a worn focus band, decrease A by (a random number between 0 and 3) + a random number between 0 and 3;
-	if the reaction of the player is 0 and the player is not friendly-fucking, decrease A by 2;
+	if the reaction of the player is 1 or the player is friendly-fucking, increase A by 2;
 	if A < 0, decide on 0;
 	decide on A.
 

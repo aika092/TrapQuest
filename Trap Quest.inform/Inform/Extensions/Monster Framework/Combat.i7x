@@ -134,8 +134,11 @@ This function runs any code that needs to be executed whenever the player finish
 
 +!]
 To orgasm (M - a monster):
+	if M is dark skinned and M is penetrating a fuckhole, BBCAddictUp 1;
 	if ritual-beads is worn or runic headband is worn:
 		if runic headband is purity or M is penetrating vagina, compute priestessBlessing of M;
+	if the class of the player is worshipper:
+		if M is infernal, compute demonBoon of M;
 	if ghost-strapon is worn, compute ghostGrowth of M;
 	if the class of the player is princess and M is male and M is intelligent and M is in-play and M is not dying, compute betrothal of M;
 	compute refractoryReset of M;
@@ -146,10 +149,6 @@ To orgasm (M - a monster):
 		let T be the substituted form of "making [NameDesc of M] cum";
 		now the video-event of vm is T;[note that the video-event always needs to be a present participle]
 	if there is a worn notebook or (the class of the player is schoolgirl and there is a notebook in the location of the player), compute studying 0 of M; [magical schoolgirls can have the notebook temporarily disarmed by tentacle monsters. the intention is that they should still get to study it]
-	[if siphoning-elixir-charge is not 0:
-		say "You feel yourself absorbing some of [NameDesc of M][']s excess energy!";
-		if siphoning-elixir-charge > 0, increase siphoning-elixir-charge by 1;
-		otherwise decrease siphoning-elixir-charge by 1;]
 	if there is a summoning portal in the location of the player:
 		let S be a random summoning portal in the location of the player;
 		say "You feel a tingle near the back of your neck as [NameDesc of S][']s pressure intensifies.";
@@ -164,6 +163,16 @@ To compute refractoryReset of (M - a monster):
 			FavourUp M;
 			increase the refractory-period of M by the intelligence of the player.
 
+To compute demonBoon of (M - a monster):
+	if M is imp:[We don't want to mess with the difficulty of imps]
+		say "You feel a surge of unholy energy!";
+	otherwise:
+		say "You feel a surge in [NameDesc of M]'s unholy aura!";
+		DifficultyUp M by 1;
+		FavourUp M by 1;
+	decrease the charge of hotel altar by 150;
+	RitualUp 2.
+
 To compute priestessBlessing of (M - a monster):
 	if the class of the player is priestess:
 		if M is infernal:[if M is a demon]
@@ -174,7 +183,7 @@ To compute priestessBlessing of (M - a monster):
 			decrease the charge of the dungeon altar by 150;
 			if ritual-beads is worn, heal asshole times (the soreness of asshole / 5);
 			if M is penetrating vagina and runic headband is not purity, heal vagina times (the soreness of vagina / 5);
-	if M is infernal, RitualUp 2;
+	if M is infernal, RitualUp 2;[demons are bad for altar charge, but good for rituals]
 	otherwise RitualUp 1.
 
 To RitualUp (X - a number):
@@ -231,7 +240,7 @@ To compute replacement of (D - a clothing):
 			now D is identified;
 			now D is sure;
 			compute unique summoning of D;
-			if D is ass plugging or (D is vagina plugging and the player is male), now D is penetrating asshole;
+			if D is ass plugging or (D is vagina plugging and the player is not possessing a vagina), now D is penetrating asshole;
 			if D is vagina plugging and the player is female, now D is penetrating vagina;
 			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 		otherwise:
@@ -317,7 +326,7 @@ To compute climax of (M - a monster) in (F - a fuckhole):
 
 [!<ComputePostClimaxEffectOfMonsterInBodypart>+
 
-Handles anything that needs to happen after a monster "M" climaxes in a bodypart"F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of one of the respective wrapper functions like compute climax of M in F. No functionality in this function by default
+Handles anything that needs to happen after a monster "M" climaxes in a bodypart "F". This function is meant to help specific monsters control what happens after a climax, anything that affects all or most monsters needs to be part of one of the respective wrapper functions like compute climax of M in F. No functionality in this function by default
 
 @param <Monster>:<M> The monster that had the climax
 @param <Bodypart>:<F> The bodypart the monster had the climax with
@@ -709,7 +718,7 @@ Definition: breasts (called B) is a potential target:
 	decide no.
 
 Definition: penis (called B) is a potential target:
-	if B is penis and the size of penis > 0 and current-monster is willing to charm snakes, decide yes;
+	if B is penis and the player is possessing a penis and current-monster is willing to charm snakes, decide yes;
 	decide no.
 
 Definition: an object is an actual target: decide no.
@@ -840,10 +849,10 @@ To say ClothingAttackDebug of (M - a monster) on (C - a clothing) with (R - a nu
 
 To compute (M - a monster) attacking (C - a clothing): [This should change for any special flavour or varied mechanics on how the clothing is removed.]
 	if C is crotch-zipped and M is intelligent:
-		say "[UnzipFlav of M at C]";
+		say UnzipFlav of M at C;
 		ZipDown C;
 	otherwise:
-		say "[PullAttempt of M at C]";
+		say PullAttempt of M at C;
 		let R be a random number between the difficulty of M and 6 + a random number between the difficulty of M and 6;
 		if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 		if the chosen-orifice of M is breasts and C is actually top-displacable:
@@ -855,13 +864,13 @@ To compute (M - a monster) attacking (C - a clothing): [This should change for a
 		otherwise if R > the defence of the player - 6 and C is displacable and a random number between -1 and unlucky <= 0: [NPCs rarely displace clothing when unlucky is enabled]
 			compute M displacing C;
 		otherwise:
-			say "[WeakenFlav of M on C]";
+			say WeakenFlav of M on C;
 			damage C.
 
 To compute (M - a monster) attacking (C - a diaper):
-	say "[PullAttempt of M at C]";
+	say PullAttempt of M at C;
 	if C is crotch-zipped and M is intelligent:
-		say "[UnzipFlav of M at C]";
+		say UnzipFlav of M at C;
 		ZipDown C;
 	otherwise if C is actually strippable:
 		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
@@ -1287,7 +1296,7 @@ Determines the strength of a monster for an action.
 To decide which number is the strength roll of (M - a monster):
 	let D be the difficulty of M + (a random number between 1 and 6) + (a random number between 1 and 6);
 	let S be the strength of the player + the weight of the player;
-	if debugmode is 1, say "Player [strength of the player] | [D].5 [ShortDesc of M][line break]";
+	if debugmode is 1, say "Player [S] | [D].5 [ShortDesc of M][line break]";
 	decide on D.
 
 A monster has a number called last-tripped.
@@ -1424,7 +1433,7 @@ To compute striking attack of (M - a monster):
 
 [!<ToComputeStrikingSuccessEffectOfMonsterOnBodyPart>
 
-Handles any code to be run every time a monster successfuly attacks a particular body part
+Handles any code to be run every time a monster successfully attacks a particular body part
 
 @param <Monster>:<M> The monster attacking the player
 @param <BodyPart>:<B> The body part that was attacked
@@ -1489,7 +1498,7 @@ To compute (M - a monster) hurting (B - face):
 
 [!<ToComputeMonsterStrikingBodyPart>
 
-Handles a monster hitting a particular body part. Meant to be overriden with unique functionality. Generally should leave actual damge to the ComputeMonsterHurtingBodyPart function
+Handles a monster hitting a particular body part. Meant to be overridden with unique functionality. Generally should leave actual damage to the ComputeMonsterHurtingBodyPart function
 
 @param <Monster>:<M> The monster attacking the player
 @param <BodyPart>:<B> The body part being attacked
@@ -1556,9 +1565,9 @@ To compute (P - a clothing) protecting (B - a body part) from (M - a monster):[d
 	if P is protection and a random number between the magic-modifier of P and 8 > 4:
 		say "The [P] protects you from being properly injured by the attack!";
 	otherwise if (B is breasts or B is hips or B is thighs) and P is possession:
-		if M is ghost and a random number between the magic-modifier of P and 8 < 4:[for ghosts, the posession enchantment is a negative]
+		if M is ghost and a random number between the magic-modifier of P and 8 < 4:[for ghosts, the possession enchantment is a negative]
 			compute M hurting B;
-			say "The [P] contricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+			say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
 			PainUp 1;
 		otherwise if a random number between the magic-modifier of P and 10 > 6:[not as good as protection]
 			say "The [P] causes the attack to phase through you completely!";
@@ -1590,7 +1599,7 @@ To compute (P - a clothing) protecting (B - belly) from (M - a monster):
 		say "The [P] protects you from being properly injured by the attack!";
 	otherwise if P is possession and M is ghost and a random number between the magic-modifier of P and 8 < 4:
 		compute M hurting B;
-		say "The [P] contricts in response to [NameDesc of M]'s attack, intensifying the pain!";
+		say "The [P] constricts in response to [NameDesc of M]'s attack, intensifying the pain!";
 		PainUp 1;
 	otherwise if P is possession and M is not ghost and a random number between the magic-modifier of P and 10 > 6:
 		say "The [P] causes the attack to phase through you completely!";

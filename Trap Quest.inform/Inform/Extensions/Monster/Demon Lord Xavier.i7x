@@ -245,7 +245,7 @@ To compute fuckhole sex of (M - demon lord):
 	otherwise if the reaction of the player is 2:
 		say "[speech style of M][one of]HAHAHA! I WILL HURT YOU ANYWAY![or]HAHAHA! SCREAM FOR ME![or]In that case... I WILL FUCK YOU HARDER![or]NO! HAHAHA![or]YES! BEG FOR MERCY![or]YOU SCREAM LIKE MY FIRST WIFE! HAHAHA![at random][roman type]";
 	otherwise:
-		say "[speech style of M]'[one of]YES! YES!'[or][if the player is male]HAHAHA! SAY YOU LIKE IT, [caps boy of the player]!'[otherwise]HAHAHA! DO YOU LIKE IT, [caps boy of the player]?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
+		say "[speech style of M]'[one of]YES! YES!'[or][if the player is gendered male]HAHAHA! SAY YOU LIKE IT, [caps boy of the player]!'[otherwise]HAHAHA! DO YOU LIKE IT, [caps boy of the player]?'[end if][or][if pregnancy fetish is 1 and F is asshole]ANY HOLE CAN BE BRED MY ME!'[otherwise if pregnancy fetish is 1]HOW DOES IT FEEL TO BE BRED IN MY FAVOURITE HOLE?'[otherwise]HOW DOES IT FEEL TO FUCK A KING, MORTAL!'[end if][or]HAHAHA!'[or]EXPERIENCE FIRE, COCKSLEEVE!'[or]EVEN THE TIGHTEST HOLES WILL SUBMIT TO ME!'[or]POWER! POOWEEER!'[or][if the reaction of the player is 0]SQUIRMING MAKES YOU TIGHTER!'[otherwise]YES! SUBMIT TO ME!'[end if][or]HAHAHA! I SHOULD MAKE YOU A [if the player is gendered male]DUKE[otherwise]DUCHESS[end if]!'[or]FEEL MY POWER!'[or]EXPERIENCE MY POWER!'[or]HAHAHA! POWEEEERRRR!'[or]MY COCK HAS LEVELLED MOUNTAINS!'[or]YES, COCKSLEEVE! [if the reaction of the player is 0]SQUIRM!'[otherwise]SUBMIT TO ME!'[end if][at random][roman type][line break]";
 	if the reaction of the player > 0:
 		compute sexSubmit of M in F;
 		if the reaction of the player is 2:
@@ -551,7 +551,7 @@ To compute punishment of (P - xavier-nightmare-belt):
 	if BL is belt, destroy BL;
 	summon demon belt;
 	now xavier-belt-link is 2;
-	if there is a worn tattoo and the number of worn belly tattoos is 0:
+	if there is a worn tattoo and the number of worn belly-tattoos is 0:
 		summon demon belly mark;
 		say "A tingling feeling over your belly lets you know you also have a new tattoo! You can't see it but you can sense you have a pentagram permanently marked around your belly button.";
 	say "[first custom style]'Okay, now your job is to try and finish this. And you'd better try your hardest - if you can't get through it all in twenty minutes, you'll spend the rest of your time here strapped to an automatic spanking machine.'[roman type][line break]You frown, still confused. In front of you is a bowl of runny green soup[if diaper messing >= 3] and a small loaf of crusty bread[end if]. Even though you're feeling very full, surely it won't take you longer than a few minutes to finish the [if diaper messing >= 3]meal[otherwise]liquid snack[end if]. You sit down, wincing as your belly [if diaper messing >= 3]growls angrily[otherwise]sloshes loudly[end if] as you move. You pick up your first spoonful of the soup and bring it to your lips, pleasantly surprised by the healthy taste of peas and mint. You swallow it without a problem[if diaper messing >= 3], quickly following it up with a bite of the bread[end if].[line break][bold type]GRUMBLE[roman type][line break]As soon as it makes its way to your stomach, you feel the magic of your new belt at work. ";
@@ -663,16 +663,14 @@ To say NonEnthusiasmResponse of (M - demon lord):
 		say "[first custom style]'[one of]HAHA, YES, MORTAL! SQUIRM!'[or]HAHAHA! LOUDER! LOUDER!'[or]LOUDER, MORTAL! LOUDER!'[at random][roman type][line break]";
 	if the sex-length of M > 2 and a random number between 1 and 2 is 1, decrease the sex-length of M by 1.
 
-To say EnthusiasmResponse of (M - a monster):
+To say EnthusiasmResponse of (M - demon lord):
 	if a random number between 1 and 2 is 1, increase the sex-length of M by 1;
 	if the class of the player is succubus:
 		say "[first custom style]'[one of]HAHAHAHAHA!'[or]HAHAHA!'[or]HAHAHAHAHAHAHAHAHAHA!'[at random][roman type][line break]";
-	otherwise if the questioned of M < the mild-annoyance threshold of M:
+	otherwise if M is buddy:
 		say UnAnnoyedResponse of M;
-		SlightConvoFatigue M;
-	otherwise if the questioned of M < the high-annoyance threshold of M:
+	otherwise if M is friendly:
 		say AnnoyedResponse of M;
-		SlightConvoFatigue M;
 	otherwise:
 		compute annoyed punishment of M.
 
@@ -693,8 +691,7 @@ To compute annoyed punishment of (M - demon lord):
 		summon B locked;
 	otherwise:
 		say "[speech style of M]'ENOUGH!'[roman type][line break]Lightning explodes from the tip of [NameDesc of M][']s finger, wracking your body with horrible pain.";
-	PainUp 3;
-	now the questioned of M is the mild-annoyance threshold of M.
+	PainUp 3.
 
 To say InvitationAccepted of (M - demon lord) with (N - a monster):
 	say "[speech style of M]'[one of]OF COURSE!'[or]THAT'S WHY YOU ARE HERE.'[at random][roman type][line break]".

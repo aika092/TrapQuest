@@ -138,24 +138,24 @@ To say RemovalBlocked of (C - a wearthing):
 	say "Your [ShortDesc of C] is somehow preventing you from taking this off!".
 
 This is the top layer removal rule:
-	if wearing-target is top layer:
-		repeat with O running through worn top layer clothing:
+	if wearing-target is top-layer-blocking:
+		repeat with O running through worn top-layer-blocking clothing:
 			if the top-layer of O > the top-layer of wearing-target:
 				if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";
 				if autolayerremove is false, rule fails.
 The top layer removal rule is listed in the global removability rules.
 
 This is the mid layer removal rule:
-	if wearing-target is mid layer:
-		repeat with O running through worn mid layer clothing:
+	if wearing-target is mid-layer-blocking:
+		repeat with O running through worn mid-layer-blocking clothing:
 			if the mid-layer of O > the mid-layer of wearing-target:
 				if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";
 				if autolayerremove is false, rule fails.
 The mid layer removal rule is listed in the global removability rules.
 
 This is the bottom layer removal rule:
-	if wearing-target is bottom layer:
-		repeat with O running through worn bottom layer unskirted clothing:
+	if wearing-target is bottom-layer-blocking:
+		repeat with O running through worn bottom-layer-blocking unskirted clothing:
 			if the bottom-layer of O > the bottom-layer of wearing-target:
 				unless O is no protection and wearing-target is not crotch-pullup:
 					if summoning is 0 and autoremove is false, say "You can't remove that without first removing your [printed name of O]!";

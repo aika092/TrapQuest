@@ -14,7 +14,7 @@ A glulx text style is a kind of value.
 The glulx text styles are all-styles, normal-style, italic-style, fixed-letter-spacing-style, header-style, bold-style, alert-style, note-style, blockquote-style, input-style, special-style-1 and special-style-2.
 
 A text justification is a kind of value.
-The text justifications are left-justified, left-right-justified, center-justified, and right-justified.
+The text justifications are left-justified, left-right-justified, centre-justified, and right-justified.
 
 A font weight is a kind of value.
 The font weights are light-weight, regular-weight, and bold-weight.
@@ -24,7 +24,7 @@ Section - The Table of User Styles definition
 [ This table is given its own section so that it can be replaced to add extra columns needed by other extensions (such as Flexible Windows) ]
 
 Table of User Styles
-style name (a glulx text style)	background color (a text)	color (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
+style name (a glulx text style)	background colour (a text)	colour (a text)	first line indentation (a number)	fixed width (a truth state)	font weight (a font weight)	indentation (a number)	italic (a truth state)	justification (a text justification)	relative size (a number)	reversed (a truth state)
 with 1 blank row
 
 Chapter - Sorting the Table of User Styles
@@ -44,17 +44,17 @@ Before starting the virtual machine (this is the sort the Table of User Styles r
 		choose row row2 in the Table of User Styles;
 		if there is a style name entry:
 			if (the style name in row row1 of the Table of User Styles) is the style name entry:
-				if there is a background color entry:
-					now the background color in row row1 of the Table of User Styles is the background color entry;
-				if there is a color entry:
-					now the color in row row1 of the Table of User Styles is the color entry;
+				if there is a background colour entry:
+					now the background colour in row row1 of the Table of User Styles is the background colour entry;
+				if there is a colour entry:
+					now the colour in row row1 of the Table of User Styles is the colour entry;
 				if there is a first line indentation entry:
 					now the first line indentation in row row1 of the Table of User Styles is the first line indentation entry;
 				if there is a fixed width entry:
 					now the fixed width in row row1 of the Table of User Styles is the fixed width entry;
 				if there is a font weight entry:
 					now the font weight in row row1 of the Table of User Styles is the font weight entry;
-				if there is a indentation entry:
+				if there is an indentation entry:
 					now the indentation in row row1 of the Table of User Styles is the indentation entry;
 				if there is a italic entry:
 					now the italic in row row1 of the Table of User Styles is the italic entry;
@@ -73,19 +73,19 @@ Chapter - Setting the styles - unindexed
 
 Last before starting the virtual machine (this is the set text styles rule):
 	repeat through the Table of User Styles:
-		if there is a background color entry:
-			set the background color for the style name entry to the background color entry;
-		if there is a color entry:
-			set the color for the style name entry to the color entry;
+		if there is a background colour entry:
+			set the background colour for the style name entry to the background colour entry;
+		if there is a colour entry:
+			set the colour for the style name entry to the colour entry;
 		if there is a first line indentation entry:
 			set the first line indentation for the style name entry to the first line indentation entry;
 		if there is a fixed width entry:
 			set fixed width for the style name entry to the fixed width entry;
 		if there is a font weight entry:
 			set the font weight for the style name entry to the font weight entry;
-		if there is a indentation entry:
+		if there is an indentation entry:
 			set the indentation for the style name entry to the indentation entry;
-		if there is a italic entry:
+		if there is an italic entry:
 			set italic for the style name entry to the italic entry;
 		if there is a justification entry:
 			set the justification for the style name entry to the justification entry;
@@ -94,10 +94,10 @@ Last before starting the virtual machine (this is the set text styles rule):
 		if there is a reversed entry:
 			set reversed for the style name entry to the reversed entry;
 
-To set the background color for (style - a glulx text style) to (N - a text):
+To set the background colour for (style - a glulx text style) to (N - a text):
 	(- GTE_SetStylehint( wintype_TextBuffer, {style}, stylehint_BackColor, GTE_ConvertColour( {-by-reference:N} ) ); -).
 
-To set the color for (style - a glulx text style) to (N - a text):
+To set the colour for (style - a glulx text style) to (N - a text):
 	(- GTE_SetStylehint( wintype_TextBuffer, {style}, stylehint_TextColor, GTE_ConvertColour( {-by-reference:N} ) ); -).
 
 To set the first line indentation for (style - a glulx text style) to (N - a number):
@@ -214,7 +214,7 @@ Glulx Text Effects provides an easy way to set up special text effects for Glulx
 
 Chapter: Styles in Glulx
 
-Unlike the Z-Machine, which allows arbitrary combinations of features (such as color and boldness) to be applied to text, Glulx requires the author to define and then use text styles.
+Unlike the Z-Machine, which allows arbitrary combinations of features (such as colour and boldness) to be applied to text, Glulx requires the author to define and then use text styles.
 
 There are eleven of these styles:
 
@@ -238,16 +238,16 @@ Chapter: Style features
 Each text style has the following features:
 
 	Table of style features
-	background color	specifies the background colour of the text
-	color	specifies the colour of the text itself
+	background colour	specifies the background colour of the text
+	colour	specifies the colour of the text itself
 	fixed width	a truth state (default: false). If true then the text will be displayed with a fixed width (monospace) font
 	font weight	specifies the weight of the font. Can be set to "light-weight", "regular-weight" (the default), or "bold-weight"
 	indentation	a number (default: 0) specifying the number of units of indentation for the whole block of text. Units are defined by interpreter, but are often equivalent to spaces
 	first line indentation	a number (default: 0) specifying additional indentation for the first line of the text block
 	italic	a truth state (default: false). If true then the text will be displayed in italics
-	justification	can be set to "left-justified", "center-justified", "right-justified", or "left-right-justified" for justified on the left and right (often called full justification)
+	justification	can be set to "left-justified", "centre-justified", "right-justified", or "left-right-justified" for justified on the left and right (often called full justification)
 	relative size	a number (default: 0) specifying how many font sizes above or below the browser's default a style should be set to
-	reversed	a truth state (default: false). If true then the foreground and background colors of the text will be reversed. This is most commonly used for the status line
+	reversed	a truth state (default: false). If true then the foreground and background colours of the text will be reversed. This is most commonly used for the status line
 
 Not all interpreters support all of these features. Notably, Gargoyle does not support justification or font sizes. If the interpreter does not support one of the features it will just be quietly ignored.
 
@@ -256,7 +256,7 @@ Chapter: Defining styles
 To define the features each style should have, add a table continuation to the Table of User Styles in your code. For example:
 
 	Table of User Styles (continued)
-	style name	color	italic	relative size
+	style name	colour	italic	relative size
 	all-styles	"#FF0000"	true	--
 	header-style	"#0000FF"	false	1
 	special-style-1	"#00FF00"
@@ -272,7 +272,7 @@ If you use a colour many times you can define it as a text constant, and then us
 	Red is always "#FF0000".
 
 	Table of User Styles (continued)
-	style name	color
+	style name	colour
 	special-style-1	red
 
 Chapter: Using the styles
@@ -309,7 +309,7 @@ Example: * Gaudy - A visually overpowering exercise in modifying all the built-i
 	Texty Room is a room. "This is a room of [bold type]bold[roman type] and [italic type]italic[roman type] texts as well as messages in [fixed letter spacing]fixed width[variable letter spacing] text."
 
 	Table of User Styles (continued)
-	style name	relative size	color	background color
+	style name	relative size	colour	background colour
 	italic-style	-1	"#0000FF" [ blue ]	--
 	fixed-letter-spacing-style	--	"#444444" [ dark-grey ]	--
 	header-style	10	--	--
@@ -342,7 +342,7 @@ Example: ** The Gallic War - An excuse to print a large, fancily-formatted bit o
 	Include Basic Screen Effects by Emily Short.
 
 	Table of User Styles (continued)
-	style name	justification	italic	indentation	first line indentation	font weight	color
+	style name	justification	italic	indentation	first line indentation	font weight	colour
 	special-style-2	left-right-justified	true	15	-4	light-weight	"#888888" [ medium-grey ]
 
 	When play begins:

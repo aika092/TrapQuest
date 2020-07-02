@@ -145,9 +145,6 @@ Check drinking:
 Check drinking a dispenser:
 	say "You can't reach!" instead.
 
-Check drinking a monster:
-	try drink requesting the noun instead.
-
 Check drinking an alchemy product:
 	try quaffing the noun instead.
 
@@ -157,7 +154,7 @@ Check drinking water-body-scenery:
 Check drinking water-body:
 	if a random lake monster is in the location of the player, say "You don't dare go near the tentacle monster." instead;
 	allocate 2 seconds;
-	say "You try tasting it. Ugh, it tastes horrible! That is definitely not good for you. You [if the thirst of the player < 5]would rather faint.[otherwise]stop.[end if]" instead.
+	say "You try tasting it. Ugh, it tastes horrible! That is definitely not good for you. You [if the thirst of the player < 5]would rather faint[otherwise]stop[end if]." instead.
 
 Carry out drinking water-body:
 	say "You place your lips in the water and sip. It tastes healthy enough[if the thirst of the player > 2] and quenches your thirst[end if].";
@@ -174,9 +171,10 @@ Carry out drinking a vessel:
 		say "You put the bottle in your mouth and suck. You gulp down the liquid as it comes out.";
 		humiliate 40;
 	compute drinking the noun;
+	if the fill-colour of the noun is not creamy and the fill-colour of the noun is not golden and the fill-colour of the noun is not white and the fill-colour of the noun is not murky, StomachUp 2;
 	DoseDown the noun;
-	if the doses of the noun is 0, say "[line break]The [noun] is now empty.";
-	StomachUp 2.
+	if the doses of the noun is 0, say "[line break]The [noun] is now empty.".
+
 
 Check drinking a living tentacles:
 	if the noun is not worn, say "You can't do that." instead;
@@ -196,7 +194,6 @@ Carry out drinking a carried bottle:
 	force inventory-focus redraw. [Forces redraw of inventory window]
 
 The block drinking rule is not listed in the check drinking rulebook.
-
 
 Swallowing is an action applying to nothing.
 Check Swallowing:
@@ -234,8 +231,12 @@ Carry Out Spitting:
 			truncate LV to 9 entries;
 			say "Where do you want to collect the liquid you're about to spit out?[line break]";
 			repeat with V running through LV:
-				if V is bottle, set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
-				otherwise set next numerical response to "[BigNameDesc of V]";
+				if V is bottle:
+					set next numerical response to "The [ShortDesc of V][if the doses of V > 0] (You'll lose its current contents of [PotionType of V])[end if]";
+				otherwise if V is pedestal:
+					set next numerical response to "The [V]";
+				otherwise:
+					set next numerical response to "[BigNameDesc of V]";
 			set numerical response 0 to "spit onto the ground";
 			compute multiple choice question;
 			if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
@@ -293,11 +294,18 @@ Carry Out Spitting:
 				compute boring spit reaction of M;
 			otherwise:
 				compute disgusting spit reaction of M;
+		if the player is in Toilet02:
+			let N be a random number between 1 and 4;
+			choose a blank row in Table of Published Disgraces;
+			now the content entry is the substituted form of "a low resolution video showing you spitting out [semen] after giving a blowjob at a gloryhole";
+			now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] www.caughtonCCTV.com";
+			now the severity entry is 3;
+			now the popularity entry is N;
+			now the timestamp entry is earnings;
+			now the viewsfuzz entry is a random number between -100 and 100;
 		MouthEmpty;
 	otherwise:
 		compute spitting.
 Understand "spit", "spit on ground", "spit on the ground", "spit on floor", "spit on the floor" as spitting.
-
-
 
 Drinking ends here.

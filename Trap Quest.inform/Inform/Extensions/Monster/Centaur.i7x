@@ -17,7 +17,7 @@ Definition: a centaur is raunchy: decide yes.
 
 Definition: centaur is presenting as male if lady fetish is 2.
 
-Definition: A centaur is woods dwelling: decide yes.
+Definition: a centaur is woods dwelling if the player is the donator and diaper quest is 0.
 
 [This is the spawn potential centaur rule:
 	if a random number between 1 and 2 is 1 and unicorn is not alive:
@@ -29,6 +29,7 @@ Definition: centaur is controlling: decide no.[She can't exactly reach]
 Definition: centaur is musky: decide yes.
 Definition: centaur is a tripper: decide no.
 Definition: centaur is father material: decide no.[soon....]
+Definition: centaur is throater: decide yes.
 
 To say LongDickDesc of (M - centaur):
 	say "massive 2-foot equine [DickDesc of M]".
@@ -44,13 +45,16 @@ To set up (M - centaur):
 	if mythical creature fetish is 0 or diaper quest is 1 or the player is not the donator, destroy M;
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 16;
+	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M.
 
+To decide which number is the starting difficulty of (M - centaur):
+	decide on 12.
+
 To decide which number is the maxhealth of (M - centaur):
 	if tutorial is 1, decide on 99999;
-	decide on 3 + ((the difficulty of M * (10 + game difficulty)) / 2).
+	decide on 3 + ((the difficulty of M * 10) / 2).
 
 To decide which number is the girth of (M - centaur):
 	decide on 6;
@@ -58,6 +62,22 @@ To decide which number is the girth of (M - centaur):
 To say SummoningFlav of (M - centaur):
 	if M is in the location of the player, say "You hear a very sexual sounding sigh, followed by a short prayer. Several seconds later, a heavily armoured [man of M] with the lower body of a horse leaps out out of the statue, landing on the ground with a resounding *clop*.";
 	otherwise say "You hear the clopping of hooves nearby.".
+
+
+To say PregGrowth of (M - centaur):
+	say "the centaur foal".
+
+To compute labour to (M - centaur):
+	if M is regional and M is alive:
+		compute pregnancy clothing displacement;
+		say "[PregFlav][if the father is in the location of the player]The [father][otherwise]The [father] appears almost as if on cue! [big he of M][end if] drops to [his of M] knees, supporting your back as you push out an adorable centaur foal. You watch quietly as your newborn child wobbles to [one of]her[or]his[cycling] feet.[line break][speech style of M]'[one of]How do you feel, [']Mommy[']?'[or]Moments like this make it all worth it.'[stopping][roman type][line break]The [father] stands up, ruffling your [one of]daughter's[or]son's[cycling] hair as [he of M] gently grabs [one of]her[or]his[cycling] wrist.[line break][speech style of M]'[one of]Don't worry, I'll take care of everything. Come with me, little one!'[or]Come with Daddy. Your mommy needs her rest.'[stopping][roman type][line break]The two of them walk off together, leaving you to recover from your ordeal.";
+		if the father is in the location of the player:
+			say "For some reason, you are filled with a sense of deep fulfilment. You feel great!";
+			StrengthUp 1;
+			DexUp 1;
+			IntUp 1;
+	otherwise if M is alive:
+		Delay Labour.
 
 Part 1 - Misc Flavour
 
@@ -91,27 +111,33 @@ To compute appearance assessment of (M - centaur):
 	if the class of the player is worshipper:
 		FavourDown M by 4;
 		if M is unfriendly:
-			say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]You dirty imp fucker! I'll make you change your disgusting ways!'[or]Devil lover! I'll force you to repent!'[or]I'll fuck that evil religion right out of you!'[at random][roman type][line break]";
+			if M is mating, say "[BigNameDesc of M] snarls.[line break][speech style of M]'[if the pregnancy of the player is 1 and the father is infernal]Damn it! They've already desecrated you! I have no choice but to heal you with the power of love!'[otherwise][one of]Those filthy devils can't desecrate your womb if I fill it with something first!'[or]The mother of my children, fraternizing with devils...I can't stand it anymore! I'll change your ways with the power of love!'[in random order][end if][roman type][line break]";
+			otherwise say "[BigNameDesc of M] snarls.[line break][speech style of M]'[one of]You dirty imp fucker! I'll make you change your disgusting ways!'[or]Devil lover! I'll force you to repent!'[or]I'll fuck that evil religion right out of you!'[in random order][roman type][line break]";
 		otherwise:
-			say "[BigNameDesc of M] curls [his of M] lip.[line break][speech style of M]'[one of]A devil worshipper...You know, there's still time for you to change your ways.'[or]I have ways to make you repent, devil worshipper. There's still time, you know.'[or]Ugh. You'll have to repent sooner or later, devil worshipper.'[at random][roman type][line break]";
+			if M is mating, say "[BigNameDesc of M] curls [his of M] lip.[line break][speech style of M]'[one of]Even if you're the mother of my children, worshipping devils is...'[or]It's hard to tolerate, you know...[if the pregnancy of the player is 1 and the father is infernal]knowing the mother of my children has been desecrated in such a manner.'[otherwise]knowing those devils might defile the mother of my children.'[end if][or]A fine woman like you should have no business with devils. Please, you must change your ways.'[in random order][roman type][line break]";
+			otherwise say "[BigNameDesc of M] curls [his of M] lip.[line break][speech style of M]'[one of]A devil worshipper...You know, there's still time for you to change your ways.'[or]I have ways to make you repent, devil worshipper. There's still time, you know.'[or]Ugh. You'll have to repent sooner or later, devil worshipper.'[in random order][roman type][line break]";
 	otherwise if the appearance of the player > the outrage tolerance of M:
 		FavourDown M by 2;
 		if M is unfriendly:
-			say "[BigNameDesc of M][']s eyes [if asshole is lewdly exposed]immediately settle on your exposed [asshole][otherwise]hungrily rove your body[end if] as [he of M] licks [his of M] lips.[line break][speech style of M]'[one of]I challenge you to a duel!'[or]I challenge you! Face me!'[or]Let's duel! Right now, before I go soft!'[at random][roman type][line break]";
+			say "[BigNameDesc of M][']s eyes [if asshole is lewdly exposed]immediately settle on your exposed [asshole][otherwise]hungrily rove your body[end if] as [he of M] licks [his of M] lips.[line break][speech style of M]'[if M is mating and the pregnancy of the player is 0]Time to put another bun in your oven![otherwise][one of]I challenge you to a duel!'[or]I challenge you! Face me!'[or]Let's duel! Right now, before I go soft!'[at random][end if][roman type][line break]";
 		otherwise if M is groping:
 			compute grope of M;
 		otherwise: [Duel totally isn't a euphemism for anything. Nope. Definitely not.]
-			if the class of the player is cowgirl or the class of the player is puppygirl or the class of the player is catgirl or the class of the player is bunny:
-				say "[BigNameDesc of M][']s eyes rove your body.[line break][speech style of M]'[one of]What a good looking...stance. Wanna duel, [player-class]?'[or]Wow, a [player-class]. And a...*tough* looking one too. Wanna duel?'[or]You look...*strong* for a [player-class]. We should duel each other sometime.'[at random][roman type][line break]";
+			if M is mating and the pregnancy of the player is 0:
+				say "[BigNameDesc of M][']s eyes rove your body.[line break][speech style of M]'[one of]You're just begging to get knocked up again, aren't you?'[or]Mmm, I can't wait to put another bun in that oven.'[or]You look perfect. The only thing you're missing now is a baby bump.'[in random order]";
+			otherwise if the class of the player is cowgirl or the class of the player is puppygirl or the class of the player is catgirl or the class of the player is bunny:
+				say "[BigNameDesc of M][']s eyes rove your body.[line break][speech style of M]'[one of]What a good looking...stance. Wanna duel, [player-class]?'[or]Wow, a [player-class]. And a...*tough* looking one too. Wanna duel?'[or]You look...*strong* for a [player-class]. We should duel each other sometime.'[in random order][roman type][line break]";
 			otherwise:
-				say "[BigNameDesc of M][']s eyes widen as [his of M] gaze [if asshole is lewdly exposed]settles on your exposed [asshole][otherwise]roves your body[end if].[line break][speech style of M]'[one of]You look...strong. Wanna duel?'[or]You look like a...warrior. I really want to fight you.'[or]Up for a duel? You look like you are...'[or]Feel like duelling me? You duel all the time, don't you...'[at random][roman type][line break]";
+				say "[BigNameDesc of M][']s eyes widen as [his of M] gaze [if asshole is lewdly exposed]settles on your exposed [asshole][otherwise]roves your body[end if].[line break][speech style of M]'[one of]You look...strong. Wanna duel?'[or]You look like a...warrior. I really want to fight you.'[or]Up for a duel? You look like you are...'[or]Feel like duelling me? You duel all the time, don't you...'[in random order][roman type][line break]";
 	otherwise if the player is top-wardrobe-malfunctioning:
 		compute default nip slip reaction of M;
 	otherwise if the class of the player is priestess or the class of the player is cultist:
 		let H be a random worn headgear;
 		say "[BigNameDesc of M][']s eyes fixate on your [ShortDesc of H], and then briefly move down your body.[line break][speech style of M]'[one of]A real altar [boy of the player]...wow...'[or]It's the altar [boy of the player]...'[stopping][roman type][line break]";
+	otherwise if M is mating:
+		say "[BigNameDesc of M] cocks an eyebrow as [his of M] gaze moves up and down your body.[line break][speech style of M]'[one of]Hey there, baby momma.'[or]Hey [']mommy.['] You're looking sexy.'[or][if the pregnancy of the player is 0]Let me know when you want to try for another baby.'[otherwise]That's a beatiful baby bump you have there.'[end if][in random order][roman type][line break]";
 	otherwise if the class of the player is cowgirl or the class of the player is puppygirl or the class of the player is catgirl or the class of the player is bunny:
-		say "[BigNameDesc of M] cocks an eyebrow as [his of M] gaze moves up and down your body.[line break][speech style of M]'[one of]What a sexy [player-class]...'[or]Wow, a [player-class]. [if the player is female and pregnancy fetish is 1]And a pretty fertile looking one too[otherwise]And a pretty hot one too[end if].'[or]Pretty sexy for a [player-class]...'[at random][roman type][line break]";
+		say "[BigNameDesc of M] cocks an eyebrow as [his of M] gaze moves up and down your body.[line break][speech style of M]'[one of]What a sexy [player-class]...'[or]Wow, a [player-class]. [if the player is able to get pregnant]And a pretty fertile looking one too[otherwise]And a pretty hot one too[end if].'[or]Pretty sexy for a [player-class]...'[at random][roman type][line break]";
 	otherwise if the class of the player is princess:
 		let H be a random worn headgear;
 		say "[BigNameDesc of M][']s eyes fixate on your [ShortDesc of H], and then briefly move down your body. [big he of M] straightens up in salute.[line break][speech style of M]'Your highness!'[roman type][line break]";
@@ -202,7 +228,7 @@ To say UrinationFlav of (M - centaur):
 
 To say NormalMouthPenetrationFlav of (M - centaur):
 	if the oral sex addiction of the player < 8:
-		say "[one of][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] planting musky 'kisses' all over your face as it clumsily searches around for your mouth. [line break][first custom style]'Give up, already! You aren't go-'[roman type][line break][big he of M] finds [his of M] target at the worst possible time, and your sentence is interrupted by a [cockhead of M] plugging up your open mouth. Its too wide to actually get past your lips at first, but [he of M]'s pressing forward with so much force that you can't close your mouth, and after several seconds, [his of M] [DickDesc of M] pops in and begins to thrust.[or][BigFuckerDesc of M][']s [LongDickDesc of M] stiffens as [he of M] steps over you, drooling precum as it waves closer and closer to your face. [line break][first custom style]'No way. Take your freaky genitalia and go-'[roman type][line break][big he of M] throws [his of M] hips forward at the perfect moment, cutting you off as [his of M] [cockhead of M] wedges itself in your open mouth. You unsuccessfully try to close it, your jaws being forced wider and wider until finally, [his of M] shaft pops in and begins to thrust.[or][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] smearing precum across your lips as [he of M] tries to push it into your mouth. You involuntarily open your mouth to wretch, only for [his of M] [cockhead of M] to form a seal against your lips. After that, [he of M] slowly brings up the pressure, forcing you to taste [his of M] precum directly as [he of M] forces your jaws to open little by little. Your own drool helps [him of M] reach the breaking point, and you groan helplessly as [his of M] [LongDickDesc of M] slides in and begins to thust.[in random order]";
+		say "[one of][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] planting musky 'kisses' all over your face as it clumsily searches around for your mouth. [line break][first custom style]'Give up, already! You aren't go-'[roman type][line break][big he of M] finds [his of M] target at the worst possible time, and your sentence is interrupted by a [cockhead of M] plugging up your open mouth. It's too wide to actually get past your lips at first, but [he of M]'s pressing forward with so much force that you can't close your mouth, and after several seconds, [his of M] [DickDesc of M] pops in and begins to thrust.[or][BigFuckerDesc of M][']s [LongDickDesc of M] stiffens as [he of M] steps over you, drooling precum as it waves closer and closer to your face. [line break][first custom style]'No way. Take your freaky genitalia and go-'[roman type][line break][big he of M] throws [his of M] hips forward at the perfect moment, cutting you off as [his of M] [cockhead of M] wedges itself in your open mouth. You unsuccessfully try to close it, your jaws being forced wider and wider until finally, [his of M] shaft pops in and begins to thrust.[or][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] smearing precum across your lips as [he of M] tries to push it into your mouth. You involuntarily open your mouth to wretch, only for [his of M] [cockhead of M] to form a seal against your lips. After that, [he of M] slowly brings up the pressure, forcing you to taste [his of M] precum directly as [he of M] forces your jaws to open little by little. Your own drool helps [him of M] reach the breaking point, and you groan helplessly as [his of M] [LongDickDesc of M] slides in and begins to thust.[in random order]";
 	otherwise if the oral sex addiction of the player < 12:
 		say "[one of][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] planting musky 'kisses' all over your face as it clumsily searches around for your mouth. You obediently open your mouth, and wait quietly for for [his of M] 'kiss' to finally land on your lips. It happens on the twelth attempt, immediately followed by your partner pressing forward with such force that you couldn't close your mouth even if you wanted to. [big his of M] [cockhead of M] is too wide to get into your mouth at first, but after forcing your jaws open wider, [his of M] [DickDesc of M] pops in and begins to thrust.[or][BigFuckerDesc of M][']s [LongDickDesc of M] stiffens as [he of M] steps over you, drooling precum as it waves closer and closer to your face. You hesitate, but after a moment, you open wide, and [his of M] [cockhead of M] wedges itself in your open mouth. Having given up on resisting, you force your jaws to open wider and wider, until finally, [his of M] shaft pops in and begins to thrust.[or][BigFuckerDesc of M] steps over you, [his of M] [DickDesc of M] smearing precum across your lips as [he of M] tries to push it into your mouth. You open your mouth, and before you can have second thoughts, [his of M] [cockhead of M] forms a seal against your lips. After that, [he of M] slowly brings up the pressure, allowing you to taste [his of M] precum directly as [he of M] forces your jaws to open little by little. You don't have the willpower to keep resisting, and force your mouth open just wide enough for [his of M] [LongDickDesc of M] to slide in and begin to thust.[in random order]";
 	otherwise:
@@ -241,26 +267,8 @@ Definition: centaur is willing to bukkake:
 		if a random number between 1 and C > 1, decide yes;
 	decide no.
 
-To compute facial climax of (M - centaur):
-	TimesSubmittedUp M by 1;
-	BlowCount;
-	if M is male:[should always be true, but better safe than sorry]
-		if M is wrapped:
-			compute wrapped climax of M in face;
-		otherwise if bukkake fetish is 1 and M is willing to bukkake:[cumshot outside]
-			compute facial dodging of M;
-		otherwise:[Internal cumshot]
-			if the reaction of the player is 0:
-				compute oral creampie of M;
-			otherwise:[submitted, deepthroat]
-				compute deepthroat creampie of M;
-	if the rounds of sex left of M <= 0:[if rounds of sex left > 0, it means the monster wants an extra round]
-		if M is interested, orgasm satisfy M;[dislodges him automatically]
-		otherwise orgasm dislodge M.
-
-To compute facial dodging of (M - centaur):
-	say FacialBrokenFree of M;
-	compute failed facial dodging of M.
+Definition: centaur is willing to tongue creampie: decide no.[Just because I don't want to write it.]
+Definition: centaur is aiming a bukkake: decide yes.[Because I don't want to write the player dodging it.]
 
 To compute failed facial dodging of (M - centaur):
 	get failed facial dodge image for M;
@@ -272,19 +280,16 @@ To compute failed facial dodging of (M - centaur):
 	check forgiveness of M.
 
 To say FacialBrokenFree of (M - centaur):
-	say "[one of]You struggle valiantly, finally managing to pull off at the last moment. You're free![or]After several moments of struggling, you finally force [him of M] out of your mouth! You're free![or]After a brief struggle, you manage to break free![in random order]".
+	say "[one of]You carefully work [his of M] shaft out of your throat, all too aware of [his of M] [cockhead of M] expanding bit by bit. Luckily, you pop [him of M] free just before its too late and force your jaws open wide enough to let [him of M] slide out of your mouth.[or]You struggle as [his of M] [cockhead of M] begins to expand little by little, cutting off more and more of your already limited airway as you try to coax it out of your throat. Somehow, you manage to succeed before its too late, practically unhinging your jaw as you extract [him of M] from your mouth.[or]Every throb of [his of M] shaft makes [him of M] that much stiffer and harder, and you struggle to get [him of M] out of your mouth before it reaches the point of no return. You make it in time, and although you practically dislocate your jaw in the process, you manage to free [him of M] from your mouth.[in random order]".
 
-[TODO: improve]
 To say FailedFacialDodge of (M - centaur):
-	say "[one of][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, spraying [semen] all over the front of your body.[or]Your reflexes kick in late and your face, chest and stomach are already covered in a thick load of [semen] before you even think about getting out of the way.[or][BigFuckerDesc of M] groans, having already gone over the edge. You're much too slow to get out of the way, so you take a full ejaculation all over your face, chest and stomach.[or]However, you're too slow to get out of the way before [FuckerDesc of M] jizzes all over you.[or]Knowing what's coming, you try to get out of the way. [if the semen addiction of the player < 9]Unfortunately, you're too slow, [otherwise if the semen addiction of the player < 13]Unfortunately, you don't have the will to move quickly, [otherwise]Much to your delight, you're too slow, [end if]so there's nothing you can do to stop [FuckerDesc of M] from completely covering you in [semen].[or][if the semen addiction of the player < 11]Knowing what's coming, you try to get out of the way. However, you're too slow, so there's nothing you can do to stop [FuckerDesc of M] from ejaculating all over your body.[otherwise]Finding yourself distracted by how yummy [his of M] [DickDesc of M] looks, there's nothing you can do to stop [FuckerDesc of M] from ejaculating all over your body.[end if][in random order]".
+	say "[one of]Unfortunately, the effort leaves you too lightheaded to consider what happens next, and you are caught off guard as a shotgun blast of centaur [semen] catches you right in the chest. The wind is instantly knocked out of you, and you collapse backward as the rest of [his of M] load splatters across your face and stomach.[or][BigNameDesc of M]'s [DickDesc of M] throbs, and half a second later, a shotgun blast of [semen] hits you directly in the chest. You're so lightheaded that the next blast, which hits you in the face, causes you to lose your balance. The third blast hits you in the stomach, knocking you into the perfect position to receive the rest of [his of M] load across the entire front half of your body.[or]A moment later, a shotgun blast of [semen] hits you right in the chest, knocking you flat on your back as the rest of your partner's load splatters across your face and belly.[or]You're so winded that you immediately collapse, leaving you defenseless as [NameDesc of M] covers your face, chest and stomach with several shotgun blasts of fresh [semen].[in random order]".
 
-[TODO: improve]
 To say ResistedOralCreampie of (M - centaur):
-	say "[one of][BigFuckerDesc of M][']s [DickDesc of M] begins to rhythmically throb, groaning[he of M] completely floods your mouth with a nice big load of [tasted-semen].[or][BigFuckerDesc of M] explodes into your mouth, filling it with the [semen-adjective] taste of [semen]. Thin strands of drool still connect [his of M] [DickDesc of M] to your lips as [he of M] pulls out.[or][BigFuckerDesc of M] groans, [his of M] [DickDesc of M] throbbing powerfully as it begins to ejaculate, filling your mouth with blast after blast of [tasted-semen].[or][BigFuckerDesc of M] groans with pleasure, [his of M] [DickDesc of M] remaining lodged in your mouth as [he of M] begins to ejaculate. [if the semen taste addiction of the player < 8]You yelp indignantly as [he of M] paints your tongue with rope after rope of [tasted-semen].[otherwise if the semen taste addiction of the player < 12]You taste every single rope of [tasted-semen] [he of M] fires off into your mouth.[otherwise]You flatten your tongue against [his of M] opening, thoroughly tasting every last drip of [tasted-semen] shot into your mouth.[end if][in random order]".
+	say "[one of]You carefully work [his of M] shaft out of your throat, all too aware of [his of M] [cockhead of M] expanding bit by bit. You successfully pop [him of M] free, but no matter how hard you try, your jaws just won't open wide enough to let [him of M] out of your mouth.[or]You struggle as [his of M] [cockhead of M] begins to expand bit by bit, cutting off more and more of your already limited airway as you try to coax it out of your throat. You somehow manage to succeed before its too late, but by then you're too lightheaded to go any further.[or]Every throb of [his of M] shaft makes [him of M] that much stiffer and harder, and you struggle to get [him of M] out of your mouth before it reaches the point of no return. Unfortunately, your jaws simply refuse to open any wider.[in random order] Your heart [if the semen taste addiction of the player < 8]sinks[otherwise if the semen taste addiction of the player < 12]skips a beat[otherwise]flutters[end if] as [NameDesc of M]'s [DickDesc of M] spasms powerfully, and [one of][he of M] groans with pleasure as [he of M] fills your mouth with the first of several shotgun blasts of [semen][or]the first of several shotgun blasts of [tasted-semen] explode into your mouth[or]half a second later, your mouth is filled with the first of several shotgun blasts of [tasted-semen].[or]half a second later, explosions of [semen] fill your mouth in rapid succession.[in random order]".
 
-[TODO: improve]
 To say DefaultDeepthroatCreampie of (M - centaur):
-	say "[one of][BigFuckerDesc of M] hisses through [his of M] teeth as [he of M] cums straight down your throat.[or][BigFuckerDesc of M][']s [DickDesc of M] throbs powerfully, firing off load after load of warm [semen] down your throat.[or][BigFuckerDesc of M] forces throws [his of M] weight forward, groaning as [he of M] ejaculates straight down your throat.[or][BigFuckerDesc of M] buries [his of M] [DickDesc of M] as far into your mouth as it will go, jet after jet of [semen] squirting straight down your throat.[or][BigFuckerDesc of M] forces [his of M] length down your throat, groaning as [he of M] fills your belly with a decent load.[or][BigFuckerDesc of M]'s balls flex as [he of M] begins to ejaculate, forcing emptying quantities of [semen] straight down your throat.[in random order]".
+	say "[one of][BigNameDesc of M]'s [DickDesc of M] thickens just enough to completely fill your esophagus, [his of M] [cockhead of M] forming an airtight seal as [his of M] shaft begins to powerfully spasm.[or][BigNameDesc of M]'s [cockhead of M] thickens only slightly, but that's just enough to form an airtight seal as [his of M] shaft begins to powerfully spasm.[or][BigNameDesc of M]'s [DickDesc of M] thickens only slightly, but that's more than enough for [his of M] [cockhead of M] to form a completely airtight seal as [his of M] shaft begins to powerfully spasm.[in random order] [one of]An instant later, [semen] shoots directly into your stomach, [his of M] balls visibly flexing as the first blast is followed by several more.[or][big he of M] practically screams with pleasure as [he of M] jizzes straight down your throat, thoroughly emptying the contents of [his of M] balls into your stomach[or][big he of M] groans with pleasure as [he of M] erupts, filling your stomach with blast after blast after thick, creamy blast of hot [semen][or]Half a second later, you feel [his of M] [semen] exploding into your stomach, [his of M] balls flexing as they thoroughly empty themselves into your [if the semen addiction of the player < 8]unwilling[otherwise if semen addiction of the player < 12]not so unwilling[otherwise]oh so willing[end if] receptacle.[in random order] You take little solace in the fact that you didn't have to taste any of it, your belly stretching painfully as it struggles to contain your partner's huge load.".
 
 To say SwallowDemand of (M - centaur):
 	if the class of the player is succubus:
@@ -464,11 +469,11 @@ To say sexSubmitPushFlav of (M - centaur) in (O - an orifice):
 
 [No choice but to change the last part.]
 To say sexSubmitBiteFlav of (M - centaur) in (O - an orifice):
-	say "[if the relevant sex addiction of M < 6][BigFuckerDesc of M] fucks your [variable O] with fast, hard thrusts. You screw your eyes shut and grit your teeth, focusing as hard as possible on when it will be over.[otherwise if the relevant sex addiction of M < 10][BigFuckerDesc of M] slams in and out of your [variable O], grunting heavily. You unsuccesfuly try to bite back your moans of pleasure.[otherwise][BigFuckerDesc of M] slams in and out of your [variable O], grunting heavily. You moan as loudly as possible, hoping [he of M] can tell how much you're enjoying yourself.[end if]".
+	say "[if the relevant sex addiction of M < 6][BigFuckerDesc of M] fucks your [variable O] with fast, hard thrusts. You screw your eyes shut and grit your teeth, focusing as hard as possible on when it will be over.[otherwise if the relevant sex addiction of M < 10][BigFuckerDesc of M] slams in and out of your [variable O], grunting heavily. You unsuccessfully try to bite back your moans of pleasure.[otherwise][BigFuckerDesc of M] slams in and out of your [variable O], grunting heavily. You moan as loudly as possible, hoping [he of M] can tell how much you're enjoying yourself.[end if]".
 
 [The centaur is way too huge for her balls to slap your taint]
 To say sexSubmitSplitFlav of (M - centaur) in (O - an orifice):
-	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigFuckerDesc of M] fucks you like the girl you really are![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigFuckerDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the size of penis < 4 and the size of penis > 0][BigFuckerDesc of M] pounds your [asshole] hard and fast. You feel proud of how minuscule your [ShortDesc of penis] is compared to [his of M].[otherwise if the bimbo of the player < 3][BigFuckerDesc of M]'s balls swing as [he of M] pistons in and out of your [asshole], as if to remind you of the creampie that you'd never be able to give, and have no choice but to look forward to.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [DickDesc of M] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigFuckerDesc of M]'s [cockhead of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked by such a huge [DickDesc of M].[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good![otherwise if the bimbo of the player < 10 and transGender is 0][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a dirty faggot for enjoying this.[otherwise if the bimbo of the player < 12][BigFuckerDesc of M]'s balls swing as [he of M] pistons in and out of your [asshole], a firm reminder of the creampie you can't give, and secretly look forward to.[otherwise if the bimbo of the player < 14][BigFuckerDesc of M]'s swing as [he of M] pistons in and out of your [asshole], a firm reminder that of the creampie you'd never be able to give, and look so much forward to.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
+	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigFuckerDesc of M] fucks you like the girl you really are![otherwise if the size of penis < 4 and the player is possessing a penis and the bimbo of the player < 14][BigFuckerDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed of how minuscule your [ShortDesc of penis] is compared to [hers of M].[otherwise if the size of penis < 4 and the player is possessing a penis][BigFuckerDesc of M] pounds your [asshole] hard and fast. You feel proud of how minuscule your [ShortDesc of penis] is compared to [hers of M].[otherwise if the bimbo of the player < 3][BigFuckerDesc of M]'s balls swing as [he of M] pistons in and out of your [asshole], as if to remind you of the creampie that you'd never be able to give, and have no choice but to look forward to.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [DickDesc of M] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigFuckerDesc of M]'s [cockhead of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to get fucked by such a huge [DickDesc of M].[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. It's difficult to resist when it feels this good![otherwise if the bimbo of the player < 10 and transGender is 0][BigFuckerDesc of M]'s [DickDesc of M] relentlessly pounds your sensitive prostate, reminding you that you're a dirty faggot for enjoying this.[otherwise if the bimbo of the player < 12][BigFuckerDesc of M]'s balls swing as [he of M] pistons in and out of your [asshole], a firm reminder of the creampie you can't give, and secretly look forward to.[otherwise if the bimbo of the player < 14][BigFuckerDesc of M]'s swing as [he of M] pistons in and out of your [asshole], a firm reminder that of the creampie you'd never be able to give, and look so much forward to.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. Phew, [he of M] sure knows how to show a girl a good time![end if]";
 	otherwise say "[one of][BigFuckerDesc of M] fucks your [variable O] hard and fast, stimulating every part of you with [his of M] [his of M] [LongDickDesc of M].[or][BigFuckerDesc of M]'s balls swing as [he of M] pistons in and out of your [vagina], a firm reminder of the creampie [if the semen addiction of the player < 6]you have no choice but to[otherwise if the semen addiction of the player < 12]you secretly look[otherwise]you look[end if] forward to.[in random order]".
 
 To say sexSubmitSqueezeFlav of (M - centaur) in (O - an orifice):
@@ -557,6 +562,8 @@ To say RepeatResponse of (M - centaur):
 		say "[speech style of M]'[one of]I am honoured to be in the presence of your holy self.'[or]It's always a pleasure to meet a holy [man of the player].'[or]Well met! I'm always glad to meet a [man of the player] of the cloth.'[at random][roman type]";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I don't exactly know what altar you tend to, but any altar [boy of the player] is good enough for me!'[or]Even pagan gods are fine by me!'[or]Well met! It's always a pleasure to meet a fellow devout.'[at random][roman type]";
+	otherwise if the class of the player is worshipper:
+		say "[speech style of M]'Hm.'[roman type][line break]";
 	otherwise:
 		if the refractory-period of M > 0:
 			say "[speech style of M]'[one of]Hey there. I don't really feel like duelling right now, but I might later.'[or]Hi. I'm not up for anything at the moment, but don't forget to check back later.'[or]Hey! I'm feeling pretty satisfied at the moment, but I'll be ready for more soon.'[at random][roman type][line break]";
@@ -585,13 +592,13 @@ To say WhoAnswer of (M - centaur):
 	say "[speech style of M]'I[']m Filia, the knight!'[roman type][line break]".
 
 To say StoryAnswer of (M - centaur):
-	say "[speech style of M]'[one of]I'm here to meet the altar girl that resides here. Wish me luck!'[or]When I became a knight, I made a solemn pledge to always follow my heart. My heart tells me to have lots of sex.'[or]I'm visiting the domain of the princess so I can face a gladiator in combat. They like fighting, and they love huge [DickDesc of M]s, so its win-win!'[or]I'm a mission to clear out the demon lord's remaining minions...I keep getting kind of sidetracked...'[stopping][roman type][line break]".
+	say "[speech style of M]'[one of]I'm here to meet the altar girl that resides here. Wish me luck!'[or]When I became a knight, I made a solemn pledge to always follow my heart. My heart tells me to have lots of sex.'[or]I'm visiting the domain of the princess so I can face a gladiator in combat. They like fighting, and they love huge [DickDesc of M]s, so its win-win!'[or]I'm a mission to clear out the demon lord's remaining minions, but...I keep getting kind of sidetracked.'[stopping][roman type][line break]".
 
 To say EscapeAnswer of (M - centaur):
 	say "[speech style of M]'You need to go through the back door. Heheheheh.'[roman type][line break]".
 
 To say AdviceAnswer of (M - centaur):
-	say "[speech style of M]'[one of]Lube doesn't just make things slippery. It can also soothe a hole that's recently taken a lot of punishment, and in a pinch, you can even drink it.'[or]There is a slimegirl in this forest that knows of a technique once known only to gladiators. If you can earn [his of slimegirl] trust, [he of slimegirl] might be willing to teach you.'[or]Creampies are great, but if you don't want them, try begging. Of course, I can't pull out even if I want to, but in cases like mine you're better off struggling.'[at random][roman type][line break]".
+	say "[speech style of M]'[one of]Lube doesn't just make things slippery. It can also soothe a hole that's recently taken a lot of punishment, and in a pinch, you can even drink it.'[or]There is a slimegirl in this forest that knows of a technique once known only to gladiators. If you can earn [his of slimegirl] trust, [he of slimegirl] might be willing to teach you.'[or]Creampies are great, but if you don't want them, try begging. Of course, I can't pull out even if I want to, but in cases like mine you're better off struggling.'[or]Struggling will make deepthroating that much more difficult. Keep calm, relax, and you might find you have cock swallowing skills you never knew you had.'[at random][roman type][line break]".
 
 Section 3 - Drink Requesting
 

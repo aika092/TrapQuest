@@ -14,7 +14,7 @@ Definition: yourself is monster stuck:
 	decide no.
 
 Definition: yourself is at least partially monster stuck:
-	if there is a monster grabbing the player or there is a monster wrangling the player or the player is monster fucked, decide yes;
+	if there is a monster grabbing the player or there is a monster wrangling a body part or the player is monster fucked, decide yes;
 	decide no.
 
 [!<YourselfIsMonsterFucked>+

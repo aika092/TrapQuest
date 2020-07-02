@@ -40,7 +40,7 @@ To decide which figure-name is the friendly-monster-image of (M - gargoyle):
 
 To decide which figure-name is the sex-profile of (M - gargoyle):
 	if diaper quest is 0 and M is penetrating penis:
-		if the size of penis > 0, decide on figure of gargoyle BJ 2;
+		if the player is possessing a penis, decide on figure of gargoyle BJ 2;
 		[decide on figure of gargoyle cunnilingus 1;]
 	decide on figure of Missing NPC. [Defaults back to the non-sex stuff.]
 
@@ -53,13 +53,16 @@ To say MonsterDesc of (M - gargoyle):
 To set up (M - gargoyle):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 8;
+	now the raw difficulty of M is the starting difficulty of M;[12]
 	now the blue-balls of M is 30;
 	let R be a random no-roof haunted room;
 	unless R is room, now R is Mansion25;
 	now M is in R;
 	now the health of M is the maxhealth of M;
 	now M is guarding.
+
+To decide which number is the starting difficulty of (M - gargoyle):
+	decide on 11.
 
 This is the spawn initial gargoyle rule:
 	if gargoyle is off-stage:
@@ -157,7 +160,7 @@ To compute MasturbationReaction of (M - gargoyle):
 			now M is unleashed.
 
 To compute delay of (M - gargoyle):
-	if the size of penis is 0 and M is not airborne:
+	if the player is not possessing a penis and M is not airborne:
 		follow the gargoyle flight rule;
 	otherwise:
 		say "[BigNameDesc of M] simply stares at you silently, as if waiting to see what you do next.".

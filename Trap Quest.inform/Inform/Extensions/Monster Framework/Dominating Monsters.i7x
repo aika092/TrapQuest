@@ -110,7 +110,7 @@ To say PenisFuckDesc of (M - a monster):
 Definition: a monster is vagina-rideable if it is wenchy. [Can this NPC have the player use their pussy to dominate them?]
 Definition: yourself is vagina-rideable: [Can the player use their pussy to dominate them?]
 	if diaper quest is 1, decide no;
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if there is undisplacable pussy covering clothing, decide no;
 	if there is a worn chastity cage, decide no;
 	if vagina is actually occupied, decide no;
@@ -245,13 +245,13 @@ Determines whether or not the player can successfully fuck a monster or not.
 [Definition: a person is domlicious:
 	if there is a cursed ass covering clothing, decide no;
 	if there is a cursed pussy covering clothing, decide no;
-	if size of penis is 0 and the player is male and asshole is actually occupied, decide no;
-	if the player is female and vagina is actually occupied, decide no;
+	if the player is barbie and asshole is actually occupied, decide no;
+	if the player is possessing a vagina and vagina is actually occupied, decide no;
 	if the player is feeling submissive, decide no;
 	if let it die tattoo is worn and a random number between 1 and 2 is 1, decide no;
 	if the latex-transformation of the player >= 6, decide no;
 	if there is a dangerous monster in the location of the player, decide no;
-	if the size of penis > 0 and penis is not sex available, decide no;
+	if the player is possessing a penis and penis is not sex available, decide no;
 	decide yes.]
 
 [!<Player>@<dominatedCount:Integer>*
@@ -260,7 +260,7 @@ The number of times the player has had dominant sex.
 
 *@!]
 The player has a number called dominated-count. The dominated-count of the player is usually 0.
-The player has a number called lick-get.[number of times player got cunnilingus/analingus]
+The player has a number called lick-get.[number of times player got cunnilingus/anilingus]
 The player has a number called diaper-get.[number of times player diaper facesat on someone]
 The player has a number called blow-get.[number of blowjobs from npcs]
 The player has a number called anal-get.[number of times player had anal sex]
@@ -339,7 +339,7 @@ The health of the monster should be set to above zero so the game doesn't immedi
 
 +!]
 To dom (M - a monster):
-	say "[if the size of penis > 0]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]".
+	say "[if the player is possessing a penis]You use [NameDesc of M] as your own personal cocksleeve! Then [he of M] runs away, humiliated and angry.[otherwise]You finger-bang [NameDesc of M] into submission. [big he of M] runs away, humiliated and angry.[end if]".
 
 [DOMINANT SEX FRAMEWORK]
 
@@ -742,7 +742,7 @@ To compute default successful dominance of (M - a monster):
 	if player-fucking is not DOMINANT-SHAMEFUL:
 		DominateUp M;
 		DifficultyUp M by 2;
-		say "[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is male and transGender is 0]manly[otherwise]dominant[end if]![line break]";
+		say "[line break]You feel [if player-fucking is DOMINANT-NEUTRAL]a bit [end if]more [if the player is gendered male]manly[otherwise]dominant[end if]![line break]";
 	otherwise:
 		TimesSubmittedUp M by 1;
 		say "[line break]You feel so humiliated...[line break]".
@@ -939,7 +939,7 @@ To diapersit dominate (M - a monster):
 	if player-numerical-response is 3:
 		let N be the bladder of the player;
 		if (a random number between 0 and N) + (the humiliation of the player / 4000) < 7:
-			say "You try to go, but you aren't desperate enough, and the humiliation of doing it in front of [NameDesc of M] gets the better of you. You get strage fright, and nothing comes out![line break][variable custom style]I don't know what's more embarrassing, using a diaper in front of [him of M], or [him of M] knowing that was I was too scared to make myself go...[roman type][line break]";
+			say "You try to go, but you aren't desperate enough, and the humiliation of doing it in front of [NameDesc of M] gets the better of you. You get stage fright, and nothing comes out![line break][variable custom style]I don't know what's more embarrassing, using a diaper in front of [him of M], or [him of M] knowing that was I was too scared to make myself go...[roman type][line break]";
 			decrease player-fucking by 1;
 		otherwise if N > 0:
 			say "You are able to release a [if N < 4]small amount[otherwise if N < 10]decent amount[otherwise]torrent[end if] of [urine] into the seat of [NameDesc of D], right on top of [NameDesc of M][']s nose and mouth.";
@@ -952,7 +952,7 @@ To diapersit dominate (M - a monster):
 	if player-numerical-response is 4:
 		let N be rectum;
 		if (a random number between 1 and N) + (the humiliation of the player / 4000) < 10:
-			say "You try to push, but you aren't desperate enough, and the humiliation of doing it in front of [NameDesc of M] gets the better of you. You get strage fright, and nothing comes out![line break][variable custom style]I don't know what's more embarrassing, messing my diaper in front of [him of M], or [him of M] knowing that was I was too scared to make myself go...[roman type][line break]";
+			say "You try to push, but you aren't desperate enough, and the humiliation of doing it in front of [NameDesc of M] gets the better of you. You get stage fright, and nothing comes out![line break][variable custom style]I don't know what's more embarrassing, messing my diaper in front of [him of M], or [him of M] knowing that was I was too scared to make myself go...[roman type][line break]";
 			decrease player-fucking by 1;
 		otherwise if N > 1:
 			say "You are able to release a [if N < 3]small amount[otherwise if N < 6]decent amount[otherwise]huge avalanche[end if] of stinky mess into the seat of [NameDesc of D], right on top of [NameDesc of M][']s nose and mouth.";
@@ -1047,7 +1047,7 @@ computeSissification is called whenever the monster doesn't have another punishm
 +!]
 To compute sissification:
 	let S be a random off-stage sissifying actually summonable fetish appropriate clothing;
-	if the player is male and transGender is 0 and pink sissy bow is off-stage and pink sissy bow is actually summonable:
+	if the player is gendered male and pink sissy bow is off-stage and pink sissy bow is actually summonable:
 		say "[bold type]A silky pink bow appears in your hair![line break][variable custom style][if the bimbo of the player < 5]Is this bullshit game trying to tell me I'd make more sense as a girl?[otherwise]I get it... only a girl would have trouble doing something like that...[end if][roman type][line break]";
 		summon pink sissy bow cursed;
 	otherwise if pink sissy bow is worn and S is clothing:
@@ -1055,7 +1055,7 @@ To compute sissification:
 		summon S cursed;
 		announce sissification;
 	otherwise:
-		say "The [if the player is male and transGender is 0]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
+		say "The [if the player is gendered male]emasculating[otherwise]humiliating[end if] memory locks itself into place, [bold type]sure to make you more submissive from now on.[roman type][line break][variable custom style][one of]I should stop pretending to be dominant...[or]It's obvious to everyone how pathetic I am...[or]How can I be dominant when I'm already so pathetic?[stopping][roman type][line break]";
 		SilentlyDelicateUp 1.
 
 To compute enslaved domination of (M - a monster):

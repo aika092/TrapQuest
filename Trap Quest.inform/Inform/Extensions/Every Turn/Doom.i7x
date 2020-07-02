@@ -2,7 +2,7 @@ Doom by Every Turn begins here.
 
 [!<doomCounter:Integer>*
 
-Ticks up once per mindless cultist per turn, as they perform the ritual. Other things such as the purity of the sacred pool can also influence increase rate.
+Ticks up once per mindless cultist per turn, as they perform the ritual. Other things such as the purity of the sacred-pool can also influence increase rate.
 
 *!]
 doom counter is a number that varies.
@@ -32,7 +32,7 @@ To commence doom:
 		if Mansion00 is unplaced:
 			Set Up The Mansion;
 			follow the setting up mansion monsters rules;
-			repeat with M running through alive nonexistant monsters:
+			repeat with M running through alive nonexistent monsters:
 				set up M;
 		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
@@ -75,88 +75,80 @@ A later time based rule (this is the compute doom rule):
 			otherwise:
 				if doom notes is off-stage, say "[one of][bold type]Perhaps there's some way to permanently stop this ritual from happening. Maybe you should ask a witch.[roman type][line break][or][stopping]";
 				otherwise say "[bold type]You want to perform the ritual[one of] to send the elder ones back to sleep[or][stopping].[roman type][line break]You [if doom notes is not held][bold type]do not [roman type][end if]have the instructions from the witch.[line break]You [if BLT is a thing]have a bell ([NameDesc of BLT])[otherwise][bold type]do not [roman type]have a bell[end if].[line break]You [if BT is a thing]have a book ([NameDesc of BT])[otherwise][bold type]do not [roman type]have a book[end if].[line break]You [if CT is a thing]have a candle ([NameDesc of CT])[otherwise][bold type]do not [roman type]have a candle[end if].";
-		otherwise if doomed < 5:
-			if debuginfo > 1, say "[input-style]DOOM: [doom counter] ";
-			let MA be the number of mindless acolytes in Mansion23;
-			let oldDC be doom counter;
-			increase doom counter by MA;
-			if debuginfo > 1, say "+ cultists currently performing ritual ([MA]) ";
-			if doom counter < 150 and doomed > 0:
-				increase doom counter by 1;
-				if debuginfo > 1, say "+ level 1 doom bonus catch-up rate (1) ";
-			if doom counter < 300 and doomed > 1:
-				increase doom counter by 1;
-				if debuginfo > 1, say "+ level 2 doom bonus catch-up rate (1) ";
-			if doom counter < 450 and doomed > 2:
-				increase doom counter by 1;
-				if debuginfo > 1, say "+ level 3 doom bonus catch-up rate (1) ";
-			if doom counter < 600 and doomed > 3:
-				increase doom counter by 4;
-				if debuginfo > 1, say "+ level 4 doom bonus catch-up rate (4) ";
-			if vampiric fangs is worn:
-				increase doom counter by 2;
-				if debuginfo > 1, say "+ vampiric fangs rate (2) ";
-			if the corruption of the sacred pool >= 200:
-				increase doom counter by 1;
-				if debuginfo > 1, say "+ corrupted sacred pool (1) ";
-			if the corruption of the sacred pool <= 90 and doomed > 3:
-				decrease doom counter by 1;
-				if debuginfo > 1, say "- pure sacred pool (1) ";
-			if the corruption of the sacred pool <= 140:
-				decrease doom counter by 1;[keeping the pool "healthy" extends the timer, polluting it speeds it up.]
-				if debuginfo > 1, say "- non-corrupted sacred pool (1) ";
-			if doom counter <= 0, now doom counter is 1; [Otherwise the quest can accidentally end itself]
-			if debuginfo > 1, say "=> [doom counter] | [(doomed + 1) * 150][roman type][line break]";
-			let MC be a random off-stage mindless acolyte;
-			if MC is a monster:
-				increase new-acolyte-counter by 1;
-				if debuginfo > 1, say "[input-style]New cultist counter: [new-acolyte-counter] | 250[roman type][line break]";
-				if new-acolyte-counter >= 350 and the player is not in Mansion23:
-					now new-acolyte-counter is 0;
-					set up MC;
-					summon MC in the mansion;
-					now MC is in Mansion23;
-					if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";
-			otherwise if doom counter > 150 and doomed is 0:
-				say "[bold type]You feel a sense of impending doom, as though something terrible is in motion. Perhaps you should consult with an expert in magic?[roman type][line break]";
-				now doomed is 1;
-			otherwise if doom counter > 300 and doomed is 1:
-				say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
-				now doomed is 2;
-				if diaper quest is 1 and ghostly tentacle is off-stage:
-					set up ghostly tentacle;
-					summon ghostly tentacle in the mansion;
-			otherwise if doom counter > 450 and doomed is 2:
-				say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
-				now doomed is 3;
-				if flower hairclip is worn, transform flower hairclip into spiked-tiara;
-			otherwise if doom counter > 600 and doomed is 3:
-				if the location of the player is not Mansion23:
-					say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
-				otherwise:
-					say "[bold type]A horrible noise like a thousand screams of bliss echoes through the world and a soft pink light fills the area. Above the altar a translucent pink bubble swirls and throbs, the ritual is clearly almost complete![roman type][line break]";
-				now doomed is 4;
-				now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
-			otherwise if doom counter > 750 and doomed is 4:
-				if the location of the player is not Mansion23:
-					if the player-class is not cultist:
-						say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
-					otherwise:
-						say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
-					SexAddictUp 2;
-					SemenAddictUp 2;
-					DelicateUp 2;
-				otherwise:
-					if the player-class is not cultist:
-						say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
-					otherwise:
-						say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
-					SexAddictUp 2;
-					SemenAddictUp 2;
-					DelicateUp 2;
-				Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+	if doom counter > 0 and doomed < 5:
+		if debuginfo > 1, say "[input-style]DOOM: [doom counter] ";
+		let MA be the number of mindless acolytes in Mansion23;
+		let oldDC be doom counter;
+		increase doom counter by MA;
+		if debuginfo > 1, say "+ cultists currently performing ritual ([MA]) ";
+		if doom counter < 150 and doomed > 0:
+			increase doom counter by 1;
+			if debuginfo > 1, say "+ level 1 doom bonus catch-up rate (1) ";
+		if doom counter < 300 and doomed > 1:
+			increase doom counter by 1;
+			if debuginfo > 1, say "+ level 2 doom bonus catch-up rate (1) ";
+		if doom counter < 450 and doomed > 2:
+			increase doom counter by 1;
+			if debuginfo > 1, say "+ level 3 doom bonus catch-up rate (1) ";
+		if doom counter < 600 and doomed > 3:
+			increase doom counter by 4;
+			if debuginfo > 1, say "+ level 4 doom bonus catch-up rate (4) ";
+		if vampiric fangs is worn:
+			increase doom counter by 2;
+			if debuginfo > 1, say "+ vampiric fangs rate (2) ";
+		if the corruption of the sacred-pool >= 200:
+			increase doom counter by 1;
+			if debuginfo > 1, say "+ corrupted sacred pool (1) ";
+		if the corruption of the sacred-pool <= 90 and doomed > 3:
+			decrease doom counter by 1;
+			if debuginfo > 1, say "- pure sacred pool (1) ";
+		if the corruption of the sacred-pool <= 140:
+			decrease doom counter by 1;[keeping the pool "healthy" extends the timer, polluting it speeds it up.]
+			if debuginfo > 1, say "- non-corrupted sacred pool (1) ";
+		if doom counter <= 0, now doom counter is 1; [Otherwise the quest can accidentally end itself]
+		if debuginfo > 1, say "=> [doom counter] | [(doomed + 1) * 150][roman type][line break]";
+		let MC be a random off-stage mindless acolyte;
+		if MC is a monster:
+			increase new-acolyte-counter by 1;
+			if debuginfo > 1, say "[input-style]New cultist counter: [new-acolyte-counter] | 250[roman type][line break]";
+			if new-acolyte-counter >= 350 and the player is not in Mansion23:
+				now new-acolyte-counter is 0;
+				set up MC;
+				summon MC in the mansion;
+				now MC is in Mansion23;
+				if debuginfo > 1, say "[input-style]NEW RITUAL CULTIST SPAWNED.[roman type][line break]";
+		otherwise if doom counter > 150 and doomed is 0:
+			say "[bold type]You feel a sense of impending doom, as though something terrible is in motion. Perhaps you should consult with an expert in magic?[roman type][line break]";
+			now doomed is 1;
+		otherwise if doom counter > 300 and doomed is 1:
+			say "[bold type]You feel a strange sense of being watched, and the atmosphere begins to feel oddly humid. It is almost like something horrible is breathing down your neck.[roman type][line break]";
+			now doomed is 2;
+			if diaper quest is 1 and ghostly tentacle is off-stage:
+				set up ghostly tentacle;
+				summon ghostly tentacle in the mansion;
+		otherwise if doom counter > 450 and doomed is 2:
+			say "[bold type]The air feels positively moist and somehow everything seems more unwholesome, an impressive feat given the content of the game normally.[roman type][line break]";
+			now doomed is 3;
+			if flower hairclip is worn, transform flower hairclip into spiked-tiara;
+		otherwise if doom counter > 600 and doomed is 3:
+			if the location of the player is not Mansion23:
+				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
+			otherwise:
+				say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
+			SexAddictUp 2;
+			SemenAddictUp 2;
+			DelicateUp 2;
 		otherwise:
-			if the gifted of herald > 0, decrease the gifted of herald by 1.
+			if the player-class is not cultist:
+				say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
+			otherwise:
+				say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
+			SexAddictUp 2;
+			SemenAddictUp 2;
+			DelicateUp 2;
+		Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+	otherwise if doom counter > 0:
+		if the gifted of herald > 0, decrease the gifted of herald by 1.
 
 Definition: a room (called R) is raining:
 	if doomed < 4 and R is no-roof and (playerRegion is Mansion or doomed > 1), decide yes;

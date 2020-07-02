@@ -19,8 +19,8 @@ To decide which number is the initial outrage of (C - a heart wand):
 	decide on 2.
 
 To decide which number is the raw-masturbation-bonus of (C - a heart wand):
-	let X be -1;
-	increase X by the magic power of the player;
+	let X be 0;
+	increase X by the square root of the magic power of the player;
 	decide on X.
 
 An all later time based rule (this is the heart wand disappear rule):

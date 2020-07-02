@@ -159,7 +159,7 @@ Calls the regionally summoning function for summoning portal "S", which calls a 
 +!]
 To compute (S - a summoning portal) summoning (M - a monster):
 	compute S regionally summoning M;
-	if M is nonexistant and M is on-stage, set up M;
+	if M is nonexistent and M is on-stage, set up M;
 	now M is in the location of S;
 	if S is regional, say SummoningFlav of M;[should describe portal closing up if the player is in the room]
 	if M is not interested, now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
@@ -247,7 +247,7 @@ Check entering summoning-circle:
 	if R is 1:
 		say "Submissive fantasies assault your mind!";
 		if a random number between 1 and 2 is 1 and diaper quest is 1:
-			if a random number between 1 and 2 is 1 and the player is female, VaginalSexAddictUp 1;
+			if a random number between 1 and 2 is 1 and the player is possessing a vagina, VaginalSexAddictUp 1;
 			otherwise AnalSexAddictUp 1;
 		otherwise:
 			SexAddictUp 1;

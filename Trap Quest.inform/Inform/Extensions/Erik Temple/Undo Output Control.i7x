@@ -516,7 +516,7 @@ Section - Patched ParserInput (in place of Section - ParserInput in Unified Glul
 
 Include (-
 ! ParserInput: block and await acceptable input. Returns an event in a_event; tokenized line data will be in a_buffer and a_table.
-! This is a wrapper around AwaitInput which adds "OOPS" and "UNDO" support -- features appropriate for the main parser input loop. It also permits the game to customize what kinds of input are accepted for that loop.
+! This is a wrapper around AwaitInput which adds "OOPS" and "UNDO" support -- features appropriate for the main parser input loop. It also permits the game to customise what kinds of input are accepted for that loop.
 ! This is called from Parser Letter A (primary command input) and NounDomain (disambig inputs).
 ! (Context-specific questions, such as YesOrNo and the end-game question, do not use this wrapper. They call AwaitInput directly.)
 ! In this function, unlike in AwaitInput, a_buffer and a_table are both mandatory. They may be either buffer/table (primary context) or buffer2/table2 (disambiguation context).
@@ -526,7 +526,7 @@ Include (-
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customize this.)
+		! Set up the input requests. (Normally just line input, but the game can customise this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -651,7 +651,7 @@ Section - Patched ParserInput (in place of Section - ParserInput in Unified Glul
 
 Include (-
 ! ParserInput: block and await acceptable input. Returns an event in a_event; tokenized line data will be in a_buffer and a_table.
-! This is a wrapper around AwaitInput which adds "OOPS" and "UNDO" support -- features appropriate for the main parser input loop. It also permits the game to customize what kinds of input are accepted for that loop.
+! This is a wrapper around AwaitInput which adds "OOPS" and "UNDO" support -- features appropriate for the main parser input loop. It also permits the game to customise what kinds of input are accepted for that loop.
 ! This is called from Parser Letter A (primary command input) and NounDomain (disambig inputs).
 ! (Context-specific questions, such as YesOrNo and the end-game question, do not use this wrapper. They call AwaitInput directly.)
 ! In this function, unlike in AwaitInput, a_buffer and a_table are both mandatory. They may be either buffer/table (primary context) or buffer2/table2 (disambiguation context).
@@ -661,7 +661,7 @@ Include (-
 		! Save the start of the buffer, in case "oops" needs to restore it
 		Memcpy(oops_workspace, a_buffer, 64);
 
-		! Set up the input requests. (Normally just line input, but the game can customize this.)
+		! Set up the input requests. (Normally just line input, but the game can customise this.)
 		FollowRulebook((+ setting up input rules +), incontext, true);
 
 		undoable = (+ setting-up-input-undoability-flag +);
@@ -820,7 +820,7 @@ A number of rules are provided as "before" and "after" counterparts of these rul
 
 The before, after, and report prevented undo rules apply only when Inform's built-in use undo prevention option is enabled.
 
-It should be emphasized that, though these rules look like standard action rulebooks, they are not. UNDO is not an action, and these rules are limited to imitating the appearance of action rules. This is why "check undoing" and "instead of undoing" rulebooks are not provided. We have hooks into the output, but little else.
+It should be emphasised that, though these rules look like standard action rulebooks, they are not. UNDO is not an action, and these rules are limited to imitating the appearance of action rules. This is why "check undoing" and "instead of undoing" rulebooks are not provided. We have hooks into the output, but little else.
 
 However, it should be noted that when the before undoing an action rulebook ends in explicit failure, undo will be prevented from occurring; this is one way (perhaps the simplest) of disabling UNDO. An example:
 
@@ -847,7 +847,7 @@ Finally, a rulebook is provided that allows us to control the reporting of a fai
 
 By default, these rules print the message "That action cannot be undone."
 
-Be warned that if the player types UNDO immediately after you have reinstated it, there may be unexpected behavior, as the game can revert to the suspended state, but in such a way that the report attempt to undo-while-disabled rules do not fire.
+Be warned that if the player types UNDO immediately after you have reinstated it, there may be unexpected behaviour, as the game can revert to the suspended state, but in such a way that the report attempt to undo-while-disabled rules do not fire.
 
 Section - Removing the option to UNDO at the end of the game
 
@@ -1029,9 +1029,9 @@ Note that Inform saves the game state even for out-of-world actions, so if the p
 
 	A glasswork is a kind of thing. A beaker, a pipette, a test tube, and a graduated cylinder are glassworks in the Laboratory.
 
-	Attacking a glasswork is reckless behavior. Dropping a glasswork is reckless behavior. Inserting a glasswork into is reckless behavior. Throwing a glasswork at is reckless behavior. Squeezing a glasswork is reckless behavior. Pushing a glasswork is reckless behavior. Pulling a glasswork is reckless behavior. Turning a glasswork is reckless behavior. Swinging a glasswork is reckless behavior. Rubbing a glasswork is reckless behavior. Cutting a glasswork is reckless behavior. Examining a glasswork is reckless behavior.
+	Attacking a glasswork is reckless behaviour. Dropping a glasswork is reckless behaviour. Inserting a glasswork into is reckless behaviour. Throwing a glasswork at is reckless behaviour. Squeezing a glasswork is reckless behaviour. Pushing a glasswork is reckless behaviour. Pulling a glasswork is reckless behaviour. Turning a glasswork is reckless behaviour. Swinging a glasswork is reckless behaviour. Rubbing a glasswork is reckless behaviour. Cutting a glasswork is reckless behaviour. Examining a glasswork is reckless behaviour.
 
-	Instead of reckless behavior:
+	Instead of reckless behaviour:
 		say "The [noun] shatters into thousands of pieces.";
 		remove the noun from play;
 		if the pile of broken glass is in the Laboratory:

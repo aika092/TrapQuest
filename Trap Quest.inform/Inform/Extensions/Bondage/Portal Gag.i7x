@@ -20,6 +20,9 @@ Definition: portal gag is transformation-protected: decide yes.
 To Squirt (L - a liquid-object) on (C - portal gag) by (N - a number):
 	say ", disappearing through the portal.".
 
+To compute school periodic effect of (C - portal gag):
+	compute periodic effect of C.
+
 To compute periodic effect of (C - portal gag):
 	increase the charge of C by 1;
 	if portal-pants is worn:
@@ -51,6 +54,7 @@ To compute periodic effect of (C - portal gag):
 							if a random number between 0 and alcohol fetish is 1:
 								say "It's some kind of strong [one of]fruity wine[or]alcoholic spirit[or]beer[in random order], which is going straight to your head!";
 								increase alcohol level;
+						if the player is hungry, now the charge of C is 25; [next turn you get fed]
 					otherwise if diaper messing >= 3 or the player is hungry:
 						say "[bold type]All of a sudden, you feel [NameDesc of M][bold type] push something into your mouth![roman type] It seems [he of M][']s forcefeeding you candy! [one of]It's[or]This time it's[stopping] a ";
 						if a random number between 1 and 2 is 1:

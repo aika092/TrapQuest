@@ -24,7 +24,7 @@ REQUIRES COMMENTING
 
 +!]
 Check submitting:
-	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling the player is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
+	if the number of live things penetrating a body part + the number of things grabbing the player + the number of things wrangling a body part is 0, say "You are not being held in place, so there is nothing to submit to!" instead;
 	if there is a fucking daddy's hole monster or there is a wrong race fucking monster:
 		try resisting instead; [See resisting for more info on these mechanics]
 
@@ -60,7 +60,7 @@ REQUIRES COMMENTING
 Report submitting:
 	let M be a random thing grabbing the player;[prioritize anyone holding the player down]
 	if M is nothing, now M is a random live thing penetrating a body part;[next, prioritize anyone inside the player]
-	if M is nothing, now M is a random thing wrangling the player;[Lastly, we take a look at any holders on.]
+	if M is nothing, now M is a random thing wrangling a body part;[Lastly, we take a look at any holders on.]
 	unless M is nothing or (diaper quest is 1 and M is live):
 		if forced submit > 0:
 			if forced submit > 1, do nothing instead;[handled by the resisting function, since we don't know the reason why the player can't resist unless we do it there]
@@ -68,7 +68,7 @@ Report submitting:
 		if the player is friendly fucked:
 			say FriendlySexSubmissionFlav of M;
 		otherwise:
-			if M is penetrating the player or M is grabbing the player:
+			if M is penetrating a body part or M is grabbing the player:
 				say SexSubmissionFlav of M;
 			otherwise:
 				compute wrangled submitting of M.

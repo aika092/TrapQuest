@@ -66,24 +66,24 @@ To compute raising of (B - a modesty shutter):
 					say "[one of]A tall black [man of pimp] dressed as a pimp arrive from[or][BigNameDesc of pimp] arrives from[stopping] the [D]!";
 					compute perception of pimp.
 
-A vine-wall is a kind of barrier. The printed name of a vine-wall is "vine wall".
+vine-wall is a barrier. The printed name of a vine-wall is "vine wall".
 
-To say OpeningFlav of (B - a vine-wall):
+To say OpeningFlav of (B - vine-wall):
 	say "[bold type]The vines disperse, allowing you to leave the room.[roman type][line break]".
 
-A flaming-wall is a kind of barrier. There is 1 flaming-wall. The printed name of a flaming-wall is "flaming wall".
+flaming-wall is a barrier. The printed name of a flaming-wall is "flaming wall".
 
-To say OpeningFlav of (B - a flaming-wall):
+To say OpeningFlav of (B - flaming-wall):
 	say "[bold type]The fiery barrier dissipates, allowing you to leave the room.[roman type][line break]".
 
-A wind-wall is a kind of barrier. There is 1 wind-wall. [HASAGIIIIIIIIIIII Aika: FUCK THAT MOVE] The printed name of a wind-wall is "wind wall".
+wind-wall is a barrier. [HASAGIIIIIIIIIIII Aika: FUCK THAT MOVE] The printed name of a wind-wall is "wind wall".
 
-To say OpeningFlav of (B - a wind-wall):
+To say OpeningFlav of (B - wind-wall):
 	say "[bold type]The windy barrier dissipates, allowing you to leave the room.[roman type][line break]".
 
-A reinforced-door is a kind of barrier. There is 1 reinforced-door. The printed name of a reinforced-door is "reinforced door".
+reinforced-door is a barrier. The printed name of a reinforced-door is "reinforced door".
 
-To say OpeningFlav of (B - a reinforced-door):
+To say OpeningFlav of (B - reinforced-door):
 	say "[bold type]The doors swing open, allowing you to leave the room.[roman type][line break]".
 
 prison-bars is a barrier. The printed name of prison-bars is "prison bars".

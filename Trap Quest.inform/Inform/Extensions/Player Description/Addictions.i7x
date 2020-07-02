@@ -83,7 +83,7 @@ We explain how much the player is a pervert and how much they crave sex and orga
 This is the sex addiction description rule:
 	if the humiliation of the player < 40000:
 		if the sex addiction of the player < 4:
-			say "You have a relatively [if the player is male]normal[otherwise]low[end if] sex drive for someone of your age. You masturbate [if the player is male]semi-frequently to keep the pipes clean but[otherwise]rather infrequently and always[end if] in the privacy of your own room, and usually to bog-standard vanilla porn. ";
+			say "You have a relatively [if the player is gendered male]normal[otherwise]low[end if] sex drive for someone of your age. You masturbate [if the player is gendered male]semi-frequently to keep the pipes clean but[otherwise]rather infrequently and always[end if] in the privacy of your own room, and usually to bog-standard vanilla porn. ";
 			if the player is feeling dominant:
 				if diaper quest is 0, say "You plan to fight anything that would try to have sex with you, and when the only option (except using your safe word) is to get it on, you don't plan to make it easy for your dominator.";
 				otherwise say "You plan to fight anything that would try to dominate you, and when the only option (except using your safe word) is to allow it to happen, you don't plan to make it easy for your dominator.";
@@ -195,7 +195,7 @@ This is the semen feel addiction description rule:
 			if the player is a pervert, say "You are so addicted to getting creampied [if bukkake fetish is 1]and covered in [semen] [end if]that an average human load often isn't enough to satisfy your needs. You find yourself more attracted to giant men[if mythical creature fetish is 1], inhuman monsters[end if] and group sessions.";
 			otherwise say "You are so desperate to experience that awesome feeling of getting creampied [if bukkake fetish is 1]and covered in [semen] [end if]that you find yourself willing to offer your body for degrading sex just to experience it, even though the sex itself isn't your thing.";
 		otherwise:
-			say "You are so addicted to [semen] that you refuse to let it leave your [if the player is male][asshole][otherwise]holes[end if] for as long as you can hold it in[if bukkake fetish is 1]. You don't even consider ever wiping it off your face or body - that would be like throwing hard-earned medals and trophies in the bin[end if].";
+			say "You are so addicted to [semen] that you refuse to let it leave your [if the player is not possessing a vagina][asshole][otherwise]holes[end if] for as long as you can hold it in[if bukkake fetish is 1]. You don't even consider ever wiping it off your face or body - that would be like throwing hard-earned medals and trophies in the bin[end if].";
 		if debuginfo > 0, say "[input-style](Creampie [if bukkake fetish is 1]and bukkake [end if]addiction [semen addiction of the player] / 20)[roman type][line break]".
 The semen feel addiction description rule is listed in the addiction listing rules.
 

@@ -183,6 +183,17 @@ Definition: a clothing is non-unique if it is not unique.
 Clothing can be belly exposing or belly covering. Clothing is usually belly exposing. [Does it take up the belly slot?]
 Clothing can be neck exposing or neck covering. Clothing is usually neck exposing. [Does it take up the neck slot?]
 Clothing can be leg exposing or leg covering. Clothing is usually leg exposing.
+Definition: a clothing (called C) is thigh covering:
+	if C is crotch-in-place:
+		if C is leg covering, decide yes;
+		if C is knee-length or longer, decide yes;
+	decide no.
+Definition: a clothing (called C) is calf covering:
+	if C is crotch-in-place and C is leg covering, decide yes;
+	decide no.
+Definition: a clothing (called C) is ankle covering:
+	if C is leg covering, decide yes;
+	decide no.
 Clothing can be arm exposing, only arm covering, or finger covering (this is the arm slot property). Clothing is usually arm exposing.
 Definition: a clothing (called C) is arm covering:
 	if C is arm exposing, decide no;
@@ -193,7 +204,7 @@ Definition: a clothing is breast exposing rather than breast covering if it is c
 Definition: a clothing is actually breast covering if it is breast covering and it is not fully exposing[ and it is top-intact] and it is top-placed. [Yes it's a chest slot item but does it actually cover any skin?]
 Clothing can be top-placed or top-displaced. Clothing is usually top-placed.[Displaced but for the chest.]
 Clothing can be top-displacable, optional-top-displacable, or not-top-displacable (this is the top-displacability property). Clothing is usually not-top-displacable.[optional-top-displacable means it can be displaced, but it's not necessary.]
-Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped.
+Definition: a clothing is not-top-displacable if it is fully exposing or it is chestless or it is rigid or it is top-ripped or it is corset.
 Definition: a clothing (called C) is actually top-displacable rather than actually not-top-displacable:
 	if C is not worn or C is glued, decide no;
 	if C is top-displaced or C is not-top-displacable, decide no;
@@ -361,7 +372,7 @@ To say NipSlipFlav:
 	if C is clothing, say "[bold type]You look down and notice that your [ShortDesc of C] has fallen open a bit, exposing a nipple. [roman type][moderateHumiliateReflect]You quickly fix the wardrobe malfunction.";
 	otherwise say "[bold type]Minor bug - game calculated that you had experienced a nip slip but couldn't find a relevant item of clothing.[roman type][line break]".
 To compute default nip slip reaction of (M - a monster):
-	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware that your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]";
+	say NipSlipSeenFlav of M;
 	FavourDown M;
 	now groping-person is M;
 	update gropability;
@@ -372,10 +383,11 @@ To compute default nip slip reaction of (M - a monster):
 		compute grope of M;
 	say NipSlipFlav;
 	if M is friendly human monster, progress quest of chest-exposing-quest from M.
+To say NipSlipSeenFlav of (M - a monster):
+	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware that your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
 An all time based rule (this is the malfunction checking rule):
 	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
 		if another-turn is 0 and the player is not immobile and the player is not in danger:
 			if the player is top-wardrobe-malfunctioning, say NipSlipFlav.
-
 
 Clothing Adjectives ends here.

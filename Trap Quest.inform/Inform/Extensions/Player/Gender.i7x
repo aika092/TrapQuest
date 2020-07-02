@@ -1,14 +1,23 @@
 Gender by Player begins here.
 
-Definition: Yourself is originally female rather than originally male if original-player-gender is 1.
+Definition: yourself is originally female rather than originally male if original-player-gender is 1.
 
 Definition: a person is presenting as male:
 	if lady fetish is 2, decide yes;
 	if it is male and lady fetish is 0, decide yes;
 	decide no.
 
-Definition: yourself is presenting as male if transGender is 0 and the player is male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3.
+Definition: yourself is presenting as male if the player is gendered male and the largeness of breasts < 3 and the number of worn womanly currently visible clothing < 3.
 Definition: a person is presenting as female if it is not presenting as male.
+
+Definition: yourself is gendered female:
+	if the player is originally female and transGender is 0, decide yes;
+	if the player is originally male and transGender is 1, decide yes;
+	decide no.
+Definition: yourself is gendered male if the player is not gendered female.
+
+Definition: yourself is sexed male if the player is male.
+Definition: yourself is sexed female if the player is female.
 
 [!<SexChangePerson>+
 
@@ -68,7 +77,7 @@ This is what we say if there's no custom sex change flavour provided by the even
 
 +!]
 To say DefaultSexchangeFlav:
-	say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves[if the size of penis > 0], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! [if the player is able to use manual dexterity]You reach down to feel yourself[otherwise]You look down[end if] and discover that a brand new woman's [vagina] has taken its place. ";
+	say "Suddenly you feel your insides behind your crotch twisting and turning and rearranging themselves[if the player is possessing a penis], and then you shriek in surprise and horror as you realise you can't feel your [player-penis][end if]! [if the player is able to use manual dexterity]You reach down to feel yourself[otherwise]You look down[end if] and discover that a brand new woman's [vagina] has taken its place. ";
 	cutshow figure of body reaction 6 for vagina.
 
 [!<SexChangeClothing>+

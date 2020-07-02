@@ -2,17 +2,6 @@ RoboMaid by Monster begins here.
 
 A robomaid is a kind of robot. A robomaid is usually intelligent. Understand "maid", "robomaid" as robomaid. The leftover-type of a robomaid is usually 127.
 
-[The robomaid does the following things:
-	punishment:
-		If you're dirty, she drags you to the laundry room
-		If you're naked, she drags you to the nearest robobellboy
-		otherwise, it's time for a "publicity stunt"
-			she has a sloppy kissing session w/ you
-
-	Patrons will periodically pass through the room the player is in and make a mess.
-	If the robomaid is in the room with a patron at any time, she services them in some way and it makes a mess
-]
-
 dainty robomaid is a robomaid. The text-shortcut of dainty robomaid is "drm".
 prissy robomaid is a robomaid. The text-shortcut of prissy robomaid is "psrm".
 milkmaid is a robomaid. The text-shortcut of milkmaid is "cmm". Understand "mal", "malfunc", "malfunctioning", "milk", "malfunction" as milkmaid.
@@ -45,6 +34,16 @@ To say robogreeting of (M - a robomaid):
 		if debugmode > 0, say "Summoning maid in hotel.";
 		summon M in the hotel.
 The spawn initial robomaid rule is listed in the setting up hotel monsters rules.]
+
+To set up (M - a robomaid):
+	reset M;
+	now the monstersetup of M is 1;
+	now the raw difficulty of M is the starting difficulty of M;
+	now the health of M is the maxhealth of M;
+	now M is unconcerned.
+
+To decide which number is the starting difficulty of (M - robomaid):
+	decide on 7.
 
 To say SummoningFlav of (M - a robomaid):
 	if M is in the location of the player:
@@ -171,7 +170,7 @@ This is the robomaid punishment rule:
 		bore M for 500 seconds;
 		compute LaundryRobots;
 		rule succeeds;
-	otherwise if the number of worn clothing is 0 and there is a alive robobellboy:[the maid drags you to the nearest robobellboy for clothing.]
+	otherwise if the number of worn clothing is 0 and there is an alive robobellboy:[the maid drags you to the nearest robobellboy for clothing.]
 		say "[BigNameDesc of M][']s eyes turn purple as [he of M] sweeps you off the ground. [line break][speech style of M]'SEARCHING... SEARCHING... PATRON FOUND. EXECUTING TRANSPORT PROTOCOL.'[roman type][line break]";
 		let N be a random robobellboy in the location of the player;
 		unless N is monster:
@@ -227,7 +226,7 @@ To compute publicity stunt of (M - a robomaid):
 			PainUp 1;
 			decrease the employee-record of senior robobellboy by 1;
 	otherwise:[grope]
-		say "[BigNameDesc of M] begins to grope you, turning to put the act on full display for [if X > 1]the patrons[otherwise][NameDesc of P][end if] as [he of M] fondles your [ShortDesc of breasts].[line break][speech style of current-monster]'I AM SO HORNY.'[roman type][line break]Do you smack [his of M] hand away? ";
+		say "[BigNameDesc of M] begins to grope you, turning to put the act on full display for [if X > 1]the patrons[otherwise][NameDesc of P][end if] as [he of M] fondles your [ShortDesc of breasts].[line break][speech style of current-monster]'I AM. SO HORNY.'[roman type][line break]Do you smack [his of M] hand away? ";
 		if the player is reverse bimbo consenting:
 			say "[if X > 1]The patrons grumble[otherwise][BigNameDesc of P] grumbles[end if] in disappointment as you smack [NameDesc of M][']s hand away and squirm in [his of M] grip. [big his of M] lips deliver a sharp jolt of electricity to your skin, leaving a stinging welt on your face as [if X > 1]the patrons leave[otherwise][NameDesc of P] leaves[end if] and [NameDesc of P] abruptly drops you.";
 			PainUp 1;
@@ -286,7 +285,7 @@ To compute publicity stunt of (M - a milkmaid):
 	let P be a random patron in the location of the player;
 	say "[if the number of patrons in the location of the player > 1]The patrons watch[otherwise][BigNameDesc of P] watches[end if] [run paragraph on]";
 	if face is not actually occupied and lactation fetish is 1 and R is 1:[breast feeding]
-		say "as [NameDesc of M] forces a rubber teat into your mouth. [line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE SO TENDER.'[roman type][line break]Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before [he of M] releases you.";
+		say "as [NameDesc of M] forces a rubber teat into your mouth. [line break][speech style of current-monster]'OOH. OOH. MY NIPPLES ARE. SO TENDER.'[roman type][line break]Suction kicks in, and you have no choice but to swallow several gulps of ice cold milk before [he of M] releases you.";
 		increase the fat-burning of the player by 250;
 		StomachUp 3;
 		MilkTasteAddictUp 1;
@@ -334,7 +333,7 @@ To compute publicity stunt of (M - a milkmaid):
 	repeat with N running through patrons in the location of the player:
 		destroy N.
 
-To compute basic greeting to (M - a robomaid):
+[To compute basic greeting to (M - a robomaid):
 	if M is interested:
 		say VanityGreeting to M;
 	otherwise:
@@ -342,7 +341,7 @@ To compute basic greeting to (M - a robomaid):
 		otherwise say RepeatGreeting to M;
 		unless the class of the player is maid:
 			now the boredom of M is 0;
-			compute correct perception of M.
+			compute correct perception of M.]
 
 To say FirstResponse of (M - a robomaid):
 	if the class of the player is maid:

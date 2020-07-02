@@ -42,7 +42,6 @@ overflowed is a number that varies.
 [Is the player peeing into a body of water?]
 water-peeing is initially false.
 
-
 [!<toilet:Backdrop>*
 
 REQUIRES COMMENTING
@@ -59,7 +58,7 @@ To say ExamineDesc of (T - urinal):
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
 	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
-	if the player is in Hotel38 and watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
+	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
@@ -425,7 +424,7 @@ To compute urinal use:
 	if seconds is 0, allocate 6 seconds;
 	if there is displacable pee covering clothing, say "Pulling the crotch fabric of your [ShortDesc of random displacable pee covering clothing] to one side, you ";
 	otherwise say "You ";
-	if the location of the player is urinals, say "[if the size of penis > 0]walk up to[otherwise]squat in front of[end if] the urinal and ";
+	if the location of the player is urinals, say "[if the player is possessing a penis]walk up to[otherwise]squat in front of[end if] the urinal and ";
 	say "release your hold on your bladder.";
 	if the bladder of the player > 0:
 		now the bladder of the player is 0;
@@ -588,7 +587,7 @@ To compute pee protected urination:
 	if there is a worn WC plug panties:
 		say "Your plug panties [one of]seem to somehow absorb the [urine], and also vibrate powerfully in response! [or]absorb the [urine], vibrating powerfully as they do. [stopping]";
 		say "[one of][WCPantiesVibeFlav][or][or][cycling]";
-		if the player is female, stimulate vagina;
+		if the player is possessing a vagina, stimulate vagina;
 		otherwise stimulate asshole;
 	otherwise if quiz-partner is worn:
 		compute quiz partner messing;
@@ -739,6 +738,7 @@ To end urination:
 		if the player is horny and wanking is 0, say "You overcome your urge and behave yourself.";
 	if the player is able to use a body of water and water-peeing is true:
 		try showering water-body;
+		now water-peeing is false;
 	let TP be a random worn training pants;
 	if TP is training pants and there is a worn T-shirt:
 		let D be a random plentiful eligible diaper;

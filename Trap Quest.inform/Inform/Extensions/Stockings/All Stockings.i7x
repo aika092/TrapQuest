@@ -3,6 +3,8 @@ All Stockings by Stockings begins here.
 A stockings is a kind of clothing. Understand "pair", "pair of" as stockings. The printed name of stockings is usually "[clothing-title-before]pair of [clothing-material of the item described] stockings[clothing-title-after]". A stockings is usually sheer. The soak-limit of stockings is usually 10.
 
 Definition: a stockings is same-type if theme-share-target is stockings.
+Definition: a stockings is calf covering: decide yes.
+Definition: a stockings is ankle covering: decide yes.
 
 Report examining stockings:
 	if the number of worn stockings is 0 and newbie tips is 1, say "Stockings and socks make wearing heels more comfortable, and therefore slightly improve your ability to walk in them[unless the noun is socks]. Stockings also improve your knee damage[end if].".

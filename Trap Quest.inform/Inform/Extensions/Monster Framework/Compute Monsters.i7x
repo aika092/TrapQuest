@@ -113,9 +113,9 @@ To check chase boredom of (M - a monster):
 	let D be 15;
 	if there is a worn catbell, increase D by 30;
 	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]
-	if M is not in the location of the player and a random number from 1 to D is 1:
-		bore M for 0 seconds; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
-		if playerRegion is not school and M is threatening and M is regional:
+	if M is not in the location of the player and (M is guarding or M is caged or a random number from 1 to D is 1):
+		deinterest M; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]
+		if M is not caged and playerRegion is not school and M is threatening and M is regional:
 			say "You sense that [NameDesc of M] has [if M is survived]once again [end if]lost interest in chasing you.";
 			progress quest of nice-quest;
 			compute survival check of M.

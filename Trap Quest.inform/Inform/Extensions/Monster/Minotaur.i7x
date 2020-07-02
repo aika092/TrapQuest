@@ -74,10 +74,13 @@ To set up (M - minotaur):
 	if M is alive: [We don't want to reset the minotaur if he's dead]
 		reset M;
 		now the monstersetup of M is 1;
-		now the raw difficulty of M is 12;
+		now the raw difficulty of M is the starting difficulty of M;
 		now the sex-length of M is 3;
 		now the health of M is the maxhealth of M;
 		if mythical creature fetish is 0, now the text-shortcut of M is "hu".
+
+To decide which number is the starting difficulty of (M - minotaur):
+	decide on 12.
 
 To decide which number is the girth of (M - minotaur):
 	decide on 8.
@@ -125,7 +128,6 @@ To say LeftoverDesc (N - 107):
 3 - in the air
 ]
 minotaur has a number called critical-windup.
-
 
 Part 1 - Perception
 
@@ -262,7 +264,7 @@ To compute anal sex of (M - minotaur):
 		let R be 20 + a random number between 1 and 10;
 		if debuginfo > 0, say "[input-style][ShortDesc of M] sleep pin check: d10+20.5 ([R].5) | [strength of the player + dexterity of the player] = ([strength of the player]) strength + ([dexterity of the player]) dexterity[roman type][line break]";
 		if the dexterity of the player + the strength of the player > 20 + R:
-			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, half-crushing your body.[or][BigNameDesc of M], completely spent, collapses on top of you, half crushing your body.[or][BigNameDesc of M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath [him of M], [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as [his of M][one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as his[one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] slides out of your [asshole][end if].";
+			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, half-crushing your body.[or][BigNameDesc of M], completely spent, collapses on top of you, half crushing your body.[or][BigNameDesc of M] collapses on top of you, spent.[at random] You barely manage to crawl out from underneath [him of M], [if the soreness of asshole > 4 or the openness of asshole < 8]wincing as [his of M][one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] [one of]slides out[or]pops out[at random] of your [asshole][otherwise]sighing as [his of M][one of] shrinking[or] cummy[or][or][at random] [DickDesc of M] slides out of your [asshole][end if].";
 			now M is not penetrating asshole;
 		otherwise:
 			say "[one of][BigNameDesc of M] is completely spent, and collapses on top of you, crushing your body. You can't manage to crawl out from underneath [his of M] weight![or][BigNameDesc of M], spent, collapses on top of you, crushing you under [his of M] full weight. You try, but you don't manage to crawl out from underneath [him of M]![or][BigNameDesc of M] lets go of you as the torrent finally stops, collapsing on top of you just before you manage to crawl out from underneath [him of M].[or][BigNameDesc of M], completely spent, collapses on top of you, pinning you down with [his of M] full weight. No matter what you do, you can't manage to crawl out from underneath [him of M]![at random] You're going to have to wait [one of]like this with [his of M] [DickDesc of M] in your [asshole] until [he of M] wakes up...[or]with [his of M] [DickDesc of M] buried in your asshole until [he of M] wakes up...[at random]";
@@ -352,8 +354,6 @@ To compute fuckhole sex of (M - minotaur):
 		decrease the health of M by 5;
 		if lady fetish is 0 and mythical creature fetish is 1, cutshow figure of minotaur cutscene 5 for M.
 
-
-
 To compute damaging attack of (M - a minotaur):
 	if the player is the donator and a random number between 1 and 7 is 1 and asshole is undefended:[He lifts you into the air.]
 		compute grab attack of M;
@@ -364,14 +364,14 @@ To compute damaging attack of (M - a minotaur):
 To compute grab attack of (M - a minotaur):
 	if the accuracy roll of M >= the dexterity of the player:
 		say "[BigNameDesc of M] grabs your leg and slowly drags you toward [him of M].";
-		now M is wrangling the player;
+		now M is wrangling thighs;
 		increase the critical-windup of M by 1;
 	otherwise:
 		say "[BigNameDesc of M] tries to grab your leg, but you avoid it!";
 
 This is the minotaur grabs both legs rule:
 	let M be current-monster;
-	if the critical-windup of M is 1 and M is wrangling the player:
+	if the critical-windup of M is 1 and M is wrangling a body part:
 		if the accuracy roll of M >= the dexterity of the player:
 			say "[BigNameDesc of M] grabs your other leg, [his of M] [DickDesc of M] growing harder and harder as [he of M] pulls you in close.";
 			increase the critical-windup of M by 1;
@@ -384,22 +384,22 @@ The minotaur grabs both legs rule is listed last in the minotaur priority attack
 
 To compute wrangled resisting of (T - minotaur):
 	if the strength roll of T >= the strength of the player:
-		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s powerful muscles![or]you can't break [FuckerDesc of T][']s powerful grip.[or][FuckerDesc of T] is just too strong![in random order]";	
+		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s powerful muscles![or]you can't break [FuckerDesc of T][']s powerful grip.[or][FuckerDesc of T] is just too strong![in random order]";
 	otherwise:
 		say "You force [FuckerDesc of T] to let you go!";
 		now the critical-windup of T is 0;
-		now T is not wrangling the player.
+		now T is not wrangling thighs.
 
 This is the minotaur lifts before crits rule:
 	let M be current-monster;
-	if M is wrangling the player and the critical-windup of M is 2:
+	if M is wrangling a body part and the critical-windup of M is 2:
 		say "[BigNameDesc of M] slowly lifts you up and off the ground, positioning your [asshole] right above [his of M] [LongDickDesc of M].";
 		increase the critical-windup of M by 1;
-		now M is not wrangling the player;
+		now M is not wrangling thighs;
 		now M is grabbing the player;[Your last struggle will actually be pointless, but its more fun if we pretend its not. Use your safeword, sweetie!]
 		if lady fetish is 0 and mythical creature fetish is 1, alwayscutshow figure of minotaur cutscene 7 for M;
 		rule succeeds;
-	otherwise if the critical-windup of M is 2:
+	otherwise if the critical-windup of M is 2:[failsafe]
 		now the critical-windup of M is 0.
 The minotaur lifts before crits rule is listed last in the minotaur priority attack rules.
 
@@ -423,15 +423,7 @@ To compute unique periodic effect of (M - a minotaur):
 		now the critical-windup of M is 0;
 	if the critical-windup of M is 0:
 		now M is not grabbing the player;
-		now M is not wrangling the player.
-
-This is the player can't attack when minotaur rule:
-	let M be minotaur;
-	if M is in the location of the player and M is wrangling the player:
-		if autoattack is 0, say "You can't do that while [FuckerDesc of M] is holding your legs!";
-		rule fails.
-The player can't attack when minotaur rule is listed in the ability to knee rules.
-The player can't attack when minotaur rule is listed in the ability to kick rules.
+		now M is not wrangling thighs.
 
 To decide which number is the strength roll of (M - minotaur):
 	let D be a random number between 1 and the health of M / 2;

@@ -326,7 +326,7 @@ Report Spellcasting magic-blinking:
 		say "Your body shimmers and then disappears! A split second later, you have reappeared to the [D] in the [R].";
 		repeat with M running through interested monsters in the location of the player:
 			let F be the favour of M;
-			bore M for 0 seconds;
+			deinterest M;
 			now the favour of M is F; [no favour change]
 			now M is moved; [won't move again this turn]
 		teleport to R;

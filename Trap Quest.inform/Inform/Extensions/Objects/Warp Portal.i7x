@@ -92,6 +92,7 @@ To set up predicament status:
 				now C is in Predicament20;
 			otherwise if tough-shit is 0 and C is not armband and C is not combat visor:
 				now C is in Predicament-Pen;
+				add C to predicamentPenList;
 		otherwise if C is not worn:
 			now C is in Predicament20;
 	if tough-shit is 0:
@@ -113,6 +114,7 @@ To set up predicament status:
 	now the air volume of belly is 0;
 	empty belly;
 	MouthEmpty;
+	now the stance of the player is 0;
 	display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
 	refresh the inventory-focus-window. [just to be sure]
 
@@ -125,7 +127,7 @@ To teleport via (W - a warp portal):
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
 		increase NOptions by 1;
-	if W is not in the School and ((armband is worn and class-time < 0) or ex-princess is unconcerned):
+	if W is not in the School and ((armband is worn and (class-time < 0 or armband is solid gold)) or ex-princess is unconcerned):
 		set next numerical response to "go to the School";
 		increase NOptions by 1;
 	if W is not in the Hotel and location of hotel portal is discovered:
@@ -170,12 +172,12 @@ To teleport via (W - a warp portal):
 					if Woods01 is unplaced:
 						Set Up The Woods;
 						follow the setting up woods monsters rules;
-						repeat with M running through alive nonexistant monsters:
+						repeat with M running through alive nonexistent monsters:
 							set up M;
 					if Hotel01 is unplaced:
 						Set Up The Hotel;
 						follow the setting up hotel monsters rules;
-						repeat with M running through alive nonexistant monsters:
+						repeat with M running through alive nonexistent monsters:
 							set up M;
 					now the destination of W is hotel;
 					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";
@@ -184,12 +186,12 @@ To teleport via (W - a warp portal):
 					if Woods01 is unplaced:
 						Set Up The Woods;
 						follow the setting up woods monsters rules;
-						repeat with M running through alive nonexistant monsters:
+						repeat with M running through alive nonexistent monsters:
 							set up M;
 					if Mansion01 is unplaced:
 						Set Up The Mansion;
 						follow the setting up mansion monsters rules;
-						repeat with M running through alive nonexistant monsters:
+						repeat with M running through alive nonexistent monsters:
 							set up M;
 					now the destination of W is mansion;
 					say "[bold type]The warp portal appears to shudder and glitch as you step into it. It's sending you to somewhere you didn't ask to go! Uh-oh...[roman type][line break]";

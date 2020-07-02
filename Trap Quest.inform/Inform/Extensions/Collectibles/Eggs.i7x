@@ -9,80 +9,91 @@ To construct normal icons for (T - an egg):
 	now IconTarget is T;
 	if T is shuddering, add Figure of HatchingIcon to the list of Icons.
 
-To compute toyInsertion of (S - an egg) into (F - a fuckhole):
-	let N be 1;
-	let continueEgging be 1;
-	destroy S;
-	while continueEgging is 1:
+This is the egg stuffing rule:
+	if stat-to-set matches the text "egg":
+		let BL be belly limit - the total squirtable fill of belly;
+		let S be a random small egg;
+		if stat-to-set matches the text "small":
+			let S be a random carried small egg;
+			if S is nothing, let S be a random small egg in the location of the player;
+		otherwise if stat-to-set matches the text "medium":
+			let S be a random carried medium egg;
+			if S is nothing, let S be a random medium egg in the location of the player;
+		otherwise if stat-to-set matches the text "large":
+			let S be a random carried large egg;
+			if S is nothing, let S be a random large egg in the location of the player;
 		let remainingN be the number of small eggs in the location of the player;
 		let remainingV be remainingN;
-		let V be N;
+		let V be 1;
 		if S is small egg:
 			increase remainingN by the number of carried small eggs;
 		if S is medium egg:
 			now remainingN is the number of medium eggs in the location of the player;
 			increase remainingN by the number of carried medium eggs;
 			now remainingV is remainingN * 2;
-			now V is N * 2;
+			now V is 2;
 		if S is large egg:
 			now remainingN is the number of large eggs in the location of the player;
 			increase remainingN by the number of carried large eggs;
 			now remainingV is remainingN * 4;
-			now V is N * 4;
-		now continueEgging is 0;
-		if remainingN > 0:
-			say "There [if remainingN is 1]is one [ShortDesc of S][otherwise]are [remainingN] [ShortDesc of S]s[end if] left. ";
-			if N is 1 and (F is asshole or the sex addiction of the player + remainingV + N <= the total egg volume of vagina):
-				say "Do you want to push them all in? ";
-				if the player is consenting:
-					increase N by remainingN;
-					now remainingN is 0;
-					if S is small egg:
-						repeat with E running through carried small eggs:
-							destroy E;
-						repeat with E running through small eggs in the location of the player:
-							destroy E;
-					if S is medium egg:
-						repeat with E running through carried medium eggs:
-							destroy E;
-						repeat with E running through medium eggs in the location of the player:
-							destroy E;
-					if S is large egg:
-						repeat with E running through carried large eggs:
-							destroy E;
-						repeat with E running through large eggs in the location of the player:
-							destroy E;
-			if remainingN > 0 and (F is asshole or the sex addiction of the player + V <= the total egg volume of vagina):
-				say "Do you want to push another in? ";
-				if the player is consenting:
-					increase N by 1;
-					now continueEgging is 1;
-					let E be a random carried small egg;
-					if S is small egg:
-						if E is not a thing, let E be a random small egg in the location of the player;
-					if S is medium egg:
-						now E is a random carried medium egg;
-						if E is not a thing, now E is a random medium egg in the location of the player;
-					if S is large egg:
-						now E is a random carried large egg;
-						if E is not a thing, now E is a random large egg in the location of the player;
-					if E is a thing, destroy E;
-					otherwise now continueEgging is 0; [failsafe, should never happen]
-	if F is vagina, say "Thanks to your cervix already being painfully stretched by its contents, you manage to push [if N > 1][N] more [ShortDesc of S]s[otherwise]another [ShortDesc of S][end if] through it and into your womb.";
-	compute insertionRuin of S into F;
-	if F is asshole:
-		if S is small egg, assfill N small eggs;
-		if S is medium egg, assfill N medium eggs;
-		if S is large egg, assfill N large eggs;
-	otherwise:
-		if S is small egg, wombfill N small eggs;
-		if S is medium egg, wombfill N medium eggs;
-		if S is large egg, wombfill N large eggs.
+			now V is 4;
+		let T be an indexed text;
+		let T be the player's command;
+		let N be the numerical value of T;
+		if N > 0 and V * N <= BL:
+			let N2 be N;
+			if S is small egg:
+				repeat with E running through carried small eggs:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+				repeat with E running through small eggs in the location of the player:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+			if S is medium egg:
+				repeat with E running through carried medium eggs:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+				repeat with E running through medium eggs in the location of the player:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+			if S is large egg:
+				repeat with E running through carried large eggs:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+				repeat with E running through large eggs in the location of the player:
+					if N2 > 0:
+						destroy E;
+						decrease N2 by 1;
+			let F be asshole;
+			if stat-to-set matches the text "vagina", now F is vagina;
+			allocate 6 seconds;
+			if F is vagina, say "Thanks to your cervix already being painfully stretched by its contents, you manage to push [if N > 1][N] more [ShortDesc of S]s[otherwise]another [ShortDesc of S][end if] through it and into your womb.";
+			compute insertionRuin of S into F;
+			if F is asshole:
+				if S is small egg, assfill N small eggs;
+				if S is medium egg, assfill N medium eggs;
+				if S is large egg, assfill N large eggs;
+			otherwise:
+				if S is small egg, wombfill N small eggs;
+				if S is medium egg, wombfill N medium eggs;
+				if S is large egg, wombfill N large eggs;
+		otherwise:
+			say "[if N is 0]Action cancelled[otherwise if N <= remainingN]You won't be able to fit that many inside you[otherwise]You don't have that many nearby[end if].";
+			reject the player's command;
+		now stat-to-set is "";
+		change the text of the player's command to "finish setting".
+The egg stuffing rule is listed in the statsetting rules.
+
 
 An egg has a number called hatching.
 
 Check attacking egg:
-	if the player is immobile or there is a thing wrangling the player, say "You're a bit busy!" instead;
+	if the player is immobile or there is a thing wrangling a body part, say "You're a bit busy!" instead;
 	allocate 1 seconds;
 	say "The shell is too strong! You can't damage it at all. If you want to get rid of it, perhaps you could [bold type]flush it down a toilet[roman type][line break]" instead.
 Check slapping egg:
@@ -118,7 +129,7 @@ To uniquely destroy (E - an egg):
 
 A later time based rule (this is the hatchtime rule):
 	repeat with E running through on-stage eggs:
-		if E is laid or the hatching of E > 0:
+		if the hatching of E > 0:
 			compute hatchtime of E.
 
 To compute hatchtime of (E - an egg):
@@ -170,15 +181,15 @@ Definition: a large egg (called D) is available:
 To decide which number is the crafting key of (E - a large egg):
 	decide on 25.
 
-A small egg is a kind of egg. The printed name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small easter egg[otherwise if egg laying fetish is 0]ping pong ball[otherwise]small egg[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small easter eggs[otherwise if egg laying fetish is 0]ping pong balls[otherwise]small eggs[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of small egg is "se". There are 35 small eggs. Figure of small egg is the file "Items/Collectibles/egg1.jpg".
+A small egg is a kind of egg. The printed name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]ping pong ball[otherwise]small egg[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of small egg is "[TQlink of item described][if the class of the player is santa's little helper]small Easter eggs[otherwise if egg laying fetish is 0]ping pong balls[otherwise]small eggs[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of small egg is "se". There are 35 small eggs. Figure of small egg is the file "Items/Collectibles/egg1.jpg".
 To decide which figure-name is the examine-image of (C - a small egg):
 	decide on figure of small egg.
 To say ExamineDesc of (B - a small egg):
-	say "A small spherical [if the class of the player is santa's little helper]chocolate egg[otherwise if egg laying fetish is 0]white ping pong ball[otherwise]white egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if].".
+	say "A small spherical [if the class of the player is santa's little helper]chocolate egg[otherwise if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise]white egg[end if], about half the size of a normal chicken egg[if B is laid]. You laid it out of your own body[end if].".
 To decide which number is the outrage of (C - a small egg):
 	decide on 4.
 
-A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs. Figure of medium egg is the file "Items/Collectibles/egg2.jpg".
+A medium egg is a kind of egg. The printed name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of medium egg is "[TQlink of item described]medium sized [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". understand "sized" as medium egg. The text-shortcut of medium egg is "mde". There are 30 medium eggs. Figure of medium egg is the file "Items/Collectibles/egg2.jpg".
 To decide which figure-name is the examine-image of (C - a medium egg):
 	decide on figure of medium egg.
 To say ExamineDesc of (B - a medium egg):
@@ -187,7 +198,7 @@ To compute hatch of (E - a medium egg):
 	let M be a random off-stage facehugger;
 	if M is monster:
 		summon M in playerRegion;
-		if M is nonexistant and M is on-stage, set up M;
+		if M is nonexistent and M is on-stage, set up M;
 		if E is held or E is in the location of the player:
 			now M is in the location of E;
 			say "[BigNameDesc of E] cracks open! [BigNameDesc of M] unfurls its spindly legs and heaves itself out of its shell.";
@@ -197,7 +208,7 @@ To compute hatch of (E - a medium egg):
 To decide which number is the outrage of (C - a medium egg):
 	decide on 6.
 
-A large egg is a kind of egg. The printed name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large egg is "le". There are 15 large eggs. Figure of large egg is the file "Items/Collectibles/egg3.jpg".
+A large egg is a kind of egg. The printed name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]egg[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of large egg is "[TQlink of item described]large [if the class of the player is santa's little helper]Easter [end if]eggs[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of large egg is "le". There are 15 large eggs. Figure of large egg is the file "Items/Collectibles/egg3.jpg".
 To decide which figure-name is the examine-image of (C - a large egg):
 	decide on figure of large egg.
 To say ExamineDesc of (B - a large egg):
@@ -206,7 +217,7 @@ To compute hatch of (E - a large egg):
 	let M be a random off-stage tentacle monster;
 	if M is monster:
 		summon M in playerRegion;
-		if M is nonexistant and M is on-stage, set up M;
+		if M is nonexistent and M is on-stage, set up M;
 		now M is in the location of E;
 		if E is held or E is in the location of the player, say "[BigNameDesc of E] cracks open! [BigNameDesc of M] unfurls its tentacles and heaves itself out of its shell.";
 	otherwise:
@@ -271,7 +282,7 @@ A later time based rule (this is the larvae growth rule):
 				let TM be a random off-stage tentacle monster;
 				if TM is monster:
 					summon TM in playerRegion;
-					if TM is nonexistant and TM is on-stage, set up TM;
+					if TM is nonexistent and TM is on-stage, set up TM;
 					now TM is in the location of M;
 					if M is in the location of the player, say "[bold type][BigNameDesc of M][bold type] squirms [if the larva-growth of M >= 100]violently[otherwise]towards the puddle, where it coats itself in the [semen][end if]. You watch with [horror] as it rapidly grows in size, until [NameDesc of TM][bold type] is standing in front of you.";
 					if the larva-growth of M < 100, decrease the semen-puddle of the location of M by 1;
@@ -284,7 +295,7 @@ To larvaShortcutAssign (C - a larva):
 		increase larvaShortcutCount by 1.
 
 Check attacking larva:
-	if the player is immobile or there is a thing wrangling the player, say "You're a bit busy!" instead;
+	if the player is immobile or there is a thing wrangling a body part, say "You're a bit busy!" instead;
 	allocate 2 seconds;
 	destroy the noun;
 	say "You squish [NameDesc of the noun]. [big his of the noun] body disappears." instead.

@@ -61,7 +61,7 @@ Part 1 - Velcro Onesie
 
 A velcro onesie is a kind of onesie. There is 1 velcro onesie. A velcro onesie is usually crotch-exposing. The text-shortcut of velcro onesie is "von".
 
-The printed name of velcro onesie is usually "[clothing-title-before]velcro onesie[clothing-title-after]".
+The printed name of velcro onesie is usually "[clothing-title-before]Velcro onesie[clothing-title-after]".
 
 Figure of velcro onesie is the file "Items/Clothes/Upper/Special/Onesies/onesie2.png".
 
@@ -69,7 +69,7 @@ To decide which figure-name is clothing-image of (C - a velcro onesie):
 	decide on figure of velcro onesie.
 
 To say ClothingDesc of (C - a velcro onesie):
-	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a velcro strip which looks like it should be able to close, but in fact the velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
+	say "A pink onesie which fully covers your arms and legs. A large open flap at the back [if C is worn]exposes[otherwise]would expose[end if] your [if there is worn top level protection clothing][random worn top level protection clothing][otherwise][fuckholes][end if] to the world. It has a Velcro strip which looks like it should be able to close, but in fact the Velcro doesn't stick at all. This means it [if C is worn]looks[otherwise]would look[end if] like you've purposefully left it open so everyone can see inside. [if C is worn and the player is a blowjob slut]You can feel the onesie somehow magically encouraging the monsters in this game to use your face for sex.[otherwise][line break][end if]".
 
 To uniquely set up (C - a velcro onesie):
 	now C is absorption.

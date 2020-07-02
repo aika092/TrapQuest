@@ -410,7 +410,7 @@ To say BecomesAggressive of (M - a supporter):
 	say "[speech style of M]'[one of]I think it's about time we fucked, isn't it.'[or]That's it, I've had enough of just watching. It's time for me to get my nut.'[in random order][roman type][line break][big he of M] takes an offensive stance!".
 
 To say AlreadyUnfriendlyPerception of (M - a supporter): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]
-	say "[speech style of M]'[one of]Swigger swooty, I'm comin['] for that booty!'[or]You've got a date with my [if the player is male]dick[otherwise]delicate parts[end if], sunshine!'[or]I'm glad to see you're still around, friend! Because I'm still in the mood for you-know-what!'[or]We must stop meeting like this! People will talk! Especially because I'm going to fuck you now.'[in random order][roman type][line break]".
+	say "[speech style of M]'[one of]Swiggity swooty, I'm comin['] for that booty!'[or]You've got a date with my [if M is male]dick[otherwise]delicate parts[end if], sunshine!'[or]I'm glad to see you're still around, friend! Because I'm still in the mood for you-know-what!'[or]We must stop meeting like this! People will talk! Especially because I'm going to fuck you now.'[in random order][roman type][line break]".
 
 To say FriendlySluttyPerception of (M - a supporter): [The NPC has just spotted the player while the player looks slutty, but hasn't witnessed enough to decide to fuck them.]
 	say "[speech style of M]'[one of]Hey chica, looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream 'fuck me' with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
@@ -530,7 +530,7 @@ To say MonsterOfferRejectFlav of (M - a supporter) to (T - a thing):
 	say "[BigNameDesc of M] refuses.[line break][speech style of M]'I don't do trades.'[roman type][line break]".
 
 To compute sudden objectification of (M - a supporter): [The player's appearance just jumped to completely unacceptable standards right in front of your NPC, and your NPC has noticed, and now wants to bang.]
-	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
+	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right, I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
 
 To compute MasturbationReaction of (M - a supporter):
 	if M is awake:
@@ -540,7 +540,8 @@ To compute MasturbationReaction of (M - a supporter):
 			otherwise:
 				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily. [line break][first custom style]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
 				PainUp 1;
-				now wanking is 0;
+				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
+				follow the masturbation ended rule;
 		otherwise:
 			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]Wow, I guess that means you want to fuck, huh?'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] neck muscles in anticipation.";
 			now M is interested;
@@ -637,7 +638,7 @@ To say AssholeSpecialPenetrationFlav of (M - a supporter): [This can be whatever
 	say "[one of][BigNameDesc of M] looks directly into your eyes as [he of M] pushes two fingers into your [asshole].[or][BigNameDesc of M] rubs gently on your anal sphincter with two fingertips before slowly pushing them inside.[at random]".
 
 To say SexSubmitFlav of (M - a supporter) in (F - a fuckhole): [The player has submitted to your acts. How does that make your NPC act?]
-	say "[one of][BigNameDesc of M] continues to thrum away with two fingers deep inside your [variable F], while you lie there and take it.[or][BigNameDesc of M] pushes a third and then a fourth finger inside your [variable F]! [big he of M] lets you feel that girth for a bit before pulling all the fingers out, kissing the entrance to your hole, and then returning with the two original fingers from before.[or][BigNameDesc of M] bends [his of M] fingers while they're inside of you, to put pressure on your [if the player is male]prostate[otherwise]G-spot[end if]![or][BigNameDesc of M] switches from an in-out motion to a fast up-down option, stretching and closing the entrance to your [variable F] rapidly. You can't believe how good it feels![in random order]".
+	say "[one of][BigNameDesc of M] continues to thrum away with two fingers deep inside your [variable F], while you lie there and take it.[or][BigNameDesc of M] pushes a third and then a fourth finger inside your [variable F]! [big he of M] lets you feel that girth for a bit before pulling all the fingers out, kissing the entrance to your hole, and then returning with the two original fingers from before.[or][BigNameDesc of M] bends [his of M] fingers while they're inside of you, to put pressure on your [if the player is sexed male]prostate[otherwise]G-spot[end if]![or][BigNameDesc of M] switches from an in-out motion to a fast up-down option, stretching and closing the entrance to your [variable F] rapidly. You can't believe how good it feels![in random order]".
 
 To say SexResistFlav of (M - a supporter) in (F - a fuckhole): [The player is resisting against your acts. How does that make your NPC act?]
 	say "[one of][BigNameDesc of M] holds you still with [his of M] other arm as [he of M] continues to thrum away with two fingers deep inside your [variable F].[or][BigNameDesc of M] pushes a third and then a fourth finger inside your [variable F], as if to warn you against struggling! [big he of M] waits until you have stopped moving before pulling the two new intruders back out.[line break][speech style of M]'That's what I thought.'[roman type][line break][or][BigNameDesc of M] bends [his of M] fingers into a hook inside of you! The intense feelings make you rethink your rebellion.[or][BigNameDesc of M] increases the speed and pressure of [his of M] fingers, perhaps in response to your attempted resistance![in random order]".

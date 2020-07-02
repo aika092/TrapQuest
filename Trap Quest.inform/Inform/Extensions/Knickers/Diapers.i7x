@@ -218,17 +218,17 @@ velcro diaper is a kind of disposable diaper. Understand "velcro" as velcro diap
 The DQFigure of velcro diaper is DQvelcro.
 The soak-limit of velcro diaper is 25.
 To say ShortDesc of (K - a velcro diaper):
-	say "velcro diaper".
+	say "Velcro diaper".
 
 blue-velcro-diaper is a velcro diaper. The text-shortcut of blue-velcro-diaper is "bvd". Understand "blue" as blue-velcro-diaper.
 Figure of blue velcro diaper is the file "Items/Clothes/Lower/Underwear/Diapers/diaper4a.png".
 To decide which figure-name is clothing-image of (C - blue-velcro-diaper):
 	decide on figure of blue velcro diaper.
 To say selfexamineuniquetitle of (K - blue-velcro-diaper):
-	say "blue velcro diaper".
+	say "blue Velcro diaper".
 Definition: blue-velcro-diaper is blue themed: decide yes.
 To say ClothingDesc of (C - blue-velcro-diaper):
-	say "A velcro diaper with a layer of noisy blue plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has velcro straps to keep it in place. There's no special pattern.".
+	say "A Velcro diaper with a layer of noisy blue plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has Velcro straps to keep it in place. There's no special pattern.".
 To decide which number is the unique outrage of (C - blue-velcro-diaper):
 	decide on -1.
 
@@ -237,11 +237,11 @@ Figure of white velcro diaper is the file "Items/Clothes/Lower/Underwear/Diapers
 To decide which figure-name is clothing-image of (C - white-velcro-diaper):
 	decide on figure of white velcro diaper.
 To say selfexamineuniquetitle of (K - white-velcro-diaper):
-	say "white kitty patterned velcro diaper".
+	say "white kitty patterned Velcro diaper".
 Definition: white-velcro-diaper is white themed: decide yes.
 Definition: white-velcro-diaper is cat themed: decide yes.
 To say ClothingDesc of (C - white-velcro-diaper):
-	say "A velcro diaper with a layer of noisy white plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has velcro straps to keep it in place. It has a pink kitty cat pattern.".
+	say "A Velcro diaper with a layer of noisy white plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has Velcro straps to keep it in place. It has a pink kitty cat pattern.".
 To decide which number is the unique outrage of (C - white-velcro-diaper):
 	decide on 1.
 
@@ -250,11 +250,11 @@ Figure of purple velcro diaper is the file "Items/Clothes/Lower/Underwear/Diaper
 To decide which figure-name is clothing-image of (C - purple-velcro-diaper):
 	decide on figure of purple velcro diaper.
 To say selfexamineuniquetitle of (K - purple-velcro-diaper):
-	say "purple sky patterned velcro diaper".
+	say "purple sky patterned Velcro diaper".
 Definition: purple-velcro-diaper is purple themed: decide yes.
 Definition: purple-velcro-diaper is star themed: decide yes.
 To say ClothingDesc of (C - purple-velcro-diaper):
-	say "A velcro diaper with a layer of noisy purple plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has velcro straps to keep it in place. It has a blue pattern of suns, moons, stars and clouds.".
+	say "A Velcro diaper with a layer of noisy purple plastic over the absorbent fabric. It's a reusable diaper meant for heavy wetters, and is bigger than your average disposable diaper, and so has Velcro straps to keep it in place. It has a blue pattern of suns, moons, stars and clouds.".
 
 Chapter 5 Button Diaper
 

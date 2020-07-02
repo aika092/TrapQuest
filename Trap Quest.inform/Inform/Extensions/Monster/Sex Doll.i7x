@@ -110,8 +110,11 @@ To say MonsterComment of (M - a sex doll):
 To set up (M - a sex doll):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 3;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - a sex doll):
+	decide on 3.
 
 [This is the spawn initial sex doll rule:
 	if debugmode > 1, say "Now summoning doll.";
@@ -155,8 +158,8 @@ To compute (M - a monster) stomping (N - a sex doll):
 To say MuteGreetResponse of (M - a sex doll):
 	say "The doll doesn't reply. It would appear to be magically animated rather than sentient.".
 
-To say MuteQuestionResponse of (M - a sex doll):
-	say "[SexDollExplanation of M]".
+To say MuteQuestion of (M - a sex doll):
+	say SexDollQuestion of M.
 
 Part 2 - Perception
 
@@ -192,6 +195,51 @@ To compute perception of (M - a sex doll):
 Part 3 - Combat
 
 Section 1 - Attack
+
+The sex doll priority attack rules is a rulebook. The priority attack rules of a sex doll is the sex doll priority attack rules.
+[The priority attack rules of a sex doll is usually the sex doll compression rule.]
+
+[The sex doll has a special effect if it dies while charged. This effect also happens if you kill it with a heel spike or a sword.]
+A sex doll can be doll-charged or not doll-charged.
+
+This is the sex doll compression rule:
+	let M be current-monster;
+	if M is doll-charged:
+		if the difficulty of M >= the starting difficulty of M + 3:[At max power, it gains an additional attack.]
+			if the health of M < the maxhealth of M / 8 and a random number between 1 and 2 is 1:
+				say "[BigNameDesc of M] remains motionless.";
+			otherwise:
+				compute missile attack of M;
+		otherwise:
+			say "[BigNameDesc of M] deflates slightly as it releases the extra air.";
+			now M is not doll-charged;
+		rule succeeds;
+	otherwise if the difficulty of M > the starting difficulty of M and a random number between 1 and 5 is 1:
+		say "[BigNameDesc of M] body becomes motionless, emitting a hissing noise as it takes in extra air.";
+		now M is doll-charged;
+		rule succeeds.
+The sex doll compression rule is listed in the sex doll priority attack rules.
+
+To compute missile attack of (M - an airfilled-sex-doll):
+	if the accuracy roll of M >= the dexterity of the player:
+		let B be the painful-part of M;
+		say "[BigNameDesc of M] violently ejects its [DickDesc of M] from its body, hitting you [TargetName of B]! The dildo floats off the ground and returns to its place as the doll slightly deflates.";
+		compute M striking B;
+		compute M hurting B;[always does extra damage]
+		now M is not doll-charged;
+	otherwise:
+		say "[BigNameDesc of M] violently ejects its [DickDesc of M] from its body, and you narrowly avoid being hit by it. The dildo floats off the ground and returns to its place as the doll slightly deflates.";
+
+To compute missile attack of (M - a creamfilled-sex-doll):
+	if the accuracy roll of M >= the dexterity of the player:
+		let B be the painful-part of M;
+		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], hitting you [TargetName of B]! A faint feeling of warmth sprads out from the point of 'impact' as the doll slightly deflates.";
+		stimulate B from M;
+		if bukkake fetish is 1, squirt semen on B by 1;
+		now M is not doll-charged;
+	otherwise:
+		say "[BigNameDesc of M] shoots [semen] out of its [DickDesc of M], and you narrowly avoid being hit by it. The doll slightly deflates.";
+		SemenPuddleUp 1.
 
 To compute the flying player taunting of (M - a sex doll):
 	if a random number from 1 to 6 is 1:
@@ -392,10 +440,19 @@ To say DamageReactWeak of (M - a sex doll):
 	say "[BigNameDesc of M] looks unstable, like it's about to burst!".
 
 To say BanishFleeFlav of (M - a sex doll):
-	if M is creamfilled-sex-doll and bukkake fetish is 1:
-		say "The doll rips and punctures, and explodes! You yelp as [semen] flies everywhere, including all over you![if the semen addiction of the player < 6][line break][first custom style]Yuck yuck yuck![roman type][line break][end if]";
-		cutshow figure of sexdoll cutscene 3 for M;
-		CumTitsUp a random number between 12 and 15;
+	if M is doll-charged or (attack-type is 1 and there is a worn sword) or (attack-type is 3 and there are worn stiletto heels):
+		if M is creamfilled-sex-doll:
+			say "The doll rips, punctures, and explodes! You yelp as [semen] flies everywhere, [if bukkake fetish is 1]including all over you![otherwise]completely covering the floor![end if][if the semen addiction of the player < 6][line break][first custom style]Yuck yuck yuck![roman type][line break][end if]";
+			if bukkake fetish is 1, cutshow figure of sexdoll cutscene 3 for M;
+			CumTitsUp a random number between 12 and 15;
+		otherwise:
+			let R be a random number between the difficulty of M * 3 and 27;
+			let B be the weight of the player + (the strength of the player / 3);
+			if R <= B or living belt of sturdiness is worn:
+				say "The doll rips, punctures, and explodes! A huge burst of air hits your body, but luckily you manage to resist being knocked over.";
+			otherwise:
+				say "The doll rips, punctures, and explodes! You yelp as a huge burst of air knocks you over!";
+				silently try kneeling;
 	otherwise:
 		say "The doll deflates and disappears.".
 

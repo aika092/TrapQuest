@@ -31,7 +31,7 @@ The teacher-name of teacher-serenity is "Serenity".
 
 To say EnslavedDominationFlav of (M - teacher-serenity):
 	say "You grab hold of [NameDesc of M][']s nipple chain and yank it downwards, forcing [him of M] into a bent over position. ";
-	if the size of penis > 0 and the number of worn cursed undisplacable clothing is 0:
+	if the player is possessing a penis and the number of worn cursed undisplacable clothing is 0:
 		if penis is penis-erect or penis is erect-at-will:
 			say "Holding your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] in one hand, you guide it into [his of M] well-lubricated snatch, and thrust away until you bring yourself to a well-earned climax.";
 			orgasm quietly;
@@ -260,7 +260,7 @@ To say MonsterDesc of (M - teacher-angela):
 			say "[BigNameDesc of M][']s face looks a lot less special with no make up except for some cheap pink lipstick to match [his of M] slutty pink stockings. All the rest of [his of M] clothes have gone. Each stocking has the controls to a wired vibrator clipped to the top, one going to the [if lady fetish is 2]vibrating chastity cage around [his of M] [manly-penis][otherwise]vibe in [his of M] pussy[end if], and the other to the vibe in [his of M] ass. Given the orgasm-addled, vacant expression on [his of M] face, it's difficult to tell if [he of M] is somehow unable or just unwilling to remove the vibrators or turn them off.";
 		otherwise if M is diaper-enslaved:
 			say "[BigNameDesc of M][']s make up has gone from [']refined goddess['] to [']naughty kid who found [his of M] mother's make up set[']. And yet, even though [his of M] dignified dress and underwear has been replaced with nothing but baby mittens, a bib and a rather giant diaper, [his of M] face is one of empty-headed bliss. [big his of M] bright pink bib reads 'Mittens, Sins and Diaper Pins'.";
-		say "It would also appear that it's now impossible for [his of M] to stand up straight - [he of M][']s stuck in that same 90 degrees bent over position that [he of M] used to love so much - but it feels like it has very different implications now[if M is diaper-enslaved and diaper messing >= 3]. It looks like [he of M][']s constantly trying to mess [himself of M][end if].";
+		say "It would also appear that it's now impossible for [him of M] to stand up straight - [he of M][']s stuck in that same 90 degrees bent over position that [he of M] used to love so much - but it feels like it has very different implications now[if M is diaper-enslaved and diaper messing >= 3]. It looks like [he of M][']s constantly trying to mess [himself of M][end if].";
 	otherwise:
 		say "Clad in [his of M] tight purple latex dress, this [man of M] looks very elegant, provocative and proud. [big his of M] face is immaculately made up with deep red lips and very striking eyes. [big his of M] medium length brown hair sits stiffly on [his of M] shoulders and [he of M] tends to lean forward over [his of M] students,to give them an eyeful of both [his of M] expertly made up face[if lady fetish < 2] and impressive cleavage, left visible thanks to the low cut of [his of M] dress[end if].".
 

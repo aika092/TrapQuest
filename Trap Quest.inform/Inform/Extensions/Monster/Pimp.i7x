@@ -48,8 +48,11 @@ To set up (M - pimp):
 		remove M from play;
 	otherwise:
 		now the monstersetup of M is 1;
-		now the raw difficulty of M is 10;
+		now the raw difficulty of M is the starting difficulty of M;
 		now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - pimp):
+	decide on 10.
 
 To say PregGrowth of (M - pimp):
 	say "your pimp's [child]".
@@ -161,10 +164,7 @@ To bore (M - pimp) for (N - a number) seconds:
 	if M is in the location of the player and M is awake, say SatisfiedFlav of M;
 	remove M from play. [We don't want to reset him]
 
-Report greeting pimp:
-	make the noun expectant.
-
-Report questioning pimp:
+Report talking pimp:
 	make the noun expectant.
 
 Report waiting when pimp is in the location of the player:
@@ -269,14 +269,6 @@ To say TauntRejected of (M - pimp):
 To say PleadRejected of (M - pimp):
 	say "[speech style of M]'Don't try and act all friendly now. It's too late for that!'[roman type][line break]".
 
-Section 2 - Questioning
-
-To compute annoyance of (M - pimp):
-	if M is uninterested:
-		say "[BigNameDesc of M] doesn't seem to realise you are talking to [him of M].[line break]";
-	otherwise:
-		say UnfriendlyResponse of M.
-
 Section 3 - Drink Requesting
 
 To compute friendly drink of (M - pimp): [Should never happen]
@@ -305,7 +297,7 @@ To say MonsterOfferAcceptFlav of (M - pimp) to (T - id-poster):
 	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'You made this? This is PERFECT! As soon as I get a gloryhole installed, I'll make sure you get the first shift. And the second!'[roman type][line break][severeHumiliateReflect]".
 
 To say MonsterOfferAcceptFlav of (M - pimp) to (T - a thing):
-	say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good girl[or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]".
+	say "[BigNameDesc of M] smiles.[line break][speech style of M]'[one of]Good [boy of the player][or]That's my good little [if diaper quest is 1]baby[otherwise]whore[end if][or]Keep it up[in random order].'[roman type][line break]".
 
 To compute resolution of (M - pimp) taking (T - a thing):
 	if M is unfriendly and M is intelligent:

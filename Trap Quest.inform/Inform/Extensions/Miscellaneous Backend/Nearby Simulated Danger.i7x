@@ -89,7 +89,7 @@ This is the danger blocks masturbation rule:
 	if the player is in danger and the raw sex addiction of the player < 12 and the player is not extremely horny and the number of monsters penetrating a body part is 0:
 		if auto is 0, say "You're not [if the raw sex addiction of the player > 9]quite [end if]addicted to sex enough to masturbate in front of an unfriendly enemy!";
 		rule fails.
-The danger blocks masturbation rule is listed last in the masturbation restriction rules.
+The danger blocks masturbation rule is listed last in the global masturbation restriction rules.
 
 [!<AThingIsRegional>+
 

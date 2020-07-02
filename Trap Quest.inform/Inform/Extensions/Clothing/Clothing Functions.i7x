@@ -19,9 +19,8 @@ To say ShortDesc of (C - a clothing):
 To say ShortestDesc of (C - a clothing):
 	say "item of clothing".
 
-To decide which number is the masturbation-bonus of (C - a clothing):
-	let X be 0;
-	decrease X by the total-soak of C / 3.
+To decide which number is the masturbation-bonus of (C - a thing):
+	decide on 0.
 
 To compute periodic effect of (C - a wearthing):
 	do nothing.
@@ -450,6 +449,7 @@ To only destroy (C - clothing):
 		now M is not rejecting C;
 	remove C from play;
 	if C is listed in the list of stacked diapers, diaperRemove C;
-	set up C.
+	set up C;
+	if C is headgear, commence recycling of C.
 
 Clothing Functions ends here.

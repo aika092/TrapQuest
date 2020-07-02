@@ -122,7 +122,7 @@ REQUIRES COMMENTING
 To say ShortDesc of hair:
 	let X be the largeness of hair;
 	if X is 1, say "incredibly short [HairSoak][HairColour] hair";
-	if X is 2, say "[if the player is male]standard short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
+	if X is 2, say "[if the player is gendered male]standard short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 	if X is 3, say "[HairSoak][HairColour] ear length hair";
 	if X is 4, say "[HairSoak][HairColour] ear length hair";
 	if X is 5, say "chin length [HairSoak][HairColour] hair";
@@ -246,7 +246,7 @@ To say 2HairDesc (X - a number):
 		say "[HairColour] hair";
 	otherwise if the player is upright:
 		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
-		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
+		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
 		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
@@ -263,7 +263,7 @@ To say 2HairDesc (X - a number):
 		if X > 15, say "straight [HairSoak][HairColour] [HairStyle] that is so long it collects and drags along the ground as you walk";
 	otherwise:
 		if X is 1, say "incredibly short, [HairSoak][HairColour] army style hair";
-		if X is 2, say "[if the player is male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
+		if X is 2, say "[if the player is gendered male]standard, short [HairSoak][HairColour] hair[otherwise]tomboyish [HairSoak][HairColour] hair[end if]";
 		if X is 3, say "straight [HairSoak][HairColour] [HairStyle] that reaches the tops of your ears";
 		if X is 4, say "straight [HairSoak][HairColour] [HairStyle] that reaches the bottoms of your ears";
 		if X is 5, say "straight [HairSoak][HairColour] [HairStyle] that reaches your chin";
@@ -298,7 +298,7 @@ REQUIRES COMMENTING
 +!]
 To say RealHairDesc (X - a number):
 	if X is 1, say "incredibly short hair";
-	if X is 2, say "[if the player is male]standard short hair[otherwise]tomboyish hair[end if]";
+	if X is 2, say "[if the player is gendered male]standard short hair[otherwise]tomboyish hair[end if]";
 	if X is 3, say "ear length hair";
 	if X is 4, say "ear length hair";
 	if X is 5, say "chin length hair";
@@ -347,12 +347,12 @@ To HairUp (X - a number):
 			if the largeness of hair is 2, say "You feel your hair grow!";
 			if the largeness of hair is 3, say "You feel your hair significantly grow! [one of][line break][first custom style]This can't be a good sign...[or][if the bimbo of the player < 12][first custom style]Here we go again...[otherwise]That felt goood...[end if][stopping][roman type][line break]";
 			if the largeness of hair is 4, say "You feel your hair significantly grow! [one of][line break][first custom style]So this game is going to make my hair grow really long?[or][if the bimbo of the player < 12][first custom style]A bearable size for now...[otherwise]Yay, my hair does need to be longer![end if][stopping][roman type][line break]";
-			if the largeness of hair is 5 and the player is male, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 7][line break][first custom style]This hair is starting to feel very girly...[otherwise][line break][second custom style]I guess this hair length isn't too bad.[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 5 and the player is female, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 5][line break][first custom style]I always cut my hair before it gets this long...[otherwise][line break][second custom style]I know I usually cut my hair before it gets this long, but I guess this length isn't too bad.[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 6 and the player is male, say "You feel your hair grow until it reaches your shoulders. [one of][if the bimbo of the player < 8][line break][first custom style]Ugh, this is definitely girl's hair now.[otherwise][line break][second custom style]It could be worse, I don't mind having this length hair I guess...[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 6 and the player is female, say "You feel your hair grow until it reaches your shoulders. [one of][if the bimbo of the player < 6][line break][first custom style]Ugh, this hair is definitely too 'pretty girl' for me now.[otherwise][line break][second custom style]This hair length is totally fine, I am a girl after all.[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 7 and the player is male, say "You watch your hair grow until it reaches nipple level. [one of][if the bimbo of the player < 8][line break][first custom style]They're just trying to make me feel like a girl. I've got to fight it![otherwise][line break][second custom style]There's something nice about having long flowing locks of hair...[end if][or][stopping][roman type][line break]";
-			if the largeness of hair is 7 and the player is female, say "You watch your hair grow until it reaches nipple level. [one of][if the bimbo of the player < 6][line break][first custom style]They're just trying to make me feel more comfortable accepting all the girly stereotypes. I've got to fight it![otherwise][line break][second custom style]There's something nice about having long flowing locks of hair...[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 5 and the player is gendered male, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 7][line break][first custom style]This hair is starting to feel very girly...[otherwise][line break][second custom style]I guess this hair length isn't too bad.[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 5 and the player is gendered female, say "You feel your hair grow until it reaches your chin. [one of][if the bimbo of the player < 5][line break][first custom style]I always cut my hair before it gets this long...[otherwise][line break][second custom style]I know I usually cut my hair before it gets this long, but I guess this length isn't too bad.[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 6 and the player is gendered male, say "You feel your hair grow until it reaches your shoulders. [one of][if the bimbo of the player < 8][line break][first custom style]Ugh, this is definitely girl's hair now.[otherwise][line break][second custom style]It could be worse, I don't mind having this length hair I guess...[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 6 and the player is gendered female, say "You feel your hair grow until it reaches your shoulders. [one of][if the bimbo of the player < 6][line break][first custom style]Ugh, this hair is definitely too 'pretty girl' for me now.[otherwise][line break][second custom style]This hair length is totally fine, I am a girl after all.[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 7 and the player is gendered male, say "You watch your hair grow until it reaches nipple level. [one of][if the bimbo of the player < 8][line break][first custom style]They're just trying to make me feel like a girl. I've got to fight it![otherwise][line break][second custom style]There's something nice about having long flowing locks of hair...[end if][or][stopping][roman type][line break]";
+			if the largeness of hair is 7 and the player is gendered female, say "You watch your hair grow until it reaches nipple level. [one of][if the bimbo of the player < 6][line break][first custom style]They're just trying to make me feel more comfortable accepting all the girly stereotypes. I've got to fight it![otherwise][line break][second custom style]There's something nice about having long flowing locks of hair...[end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 8, say "You watch your hair grow until it reaches elbow level. [one of][if the bimbo of the player < 8][line break][first custom style]How much more can it grow?![otherwise][line break][second custom style]How much more can it grow, I wonder?[end if][or][second custom style][if the bimbo of the player > 12]I think I just love long hair...[end if][stopping][roman type][line break]";
 			if the largeness of hair is 9, say "You watch your hair grow until it reaches your belly button. [if the player is upright]You can feel it behind you tickling the small of your back. [end if][one of][if the bimbo of the player < 9][line break][first custom style]This is getting silly now.[otherwise][line break][second custom style]Ooh, it just keeps going, doesn't it?[end if][or][stopping][roman type][line break]";
 			if the largeness of hair is 10, say "You watch your hair grow until it reaches your crotch. [if the thickness of hips > 6 and the player is upright]You feel the hair start to bunch up and settle on top of your [AssDesc]. [end if][one of][if the bimbo of the player < 10][line break][first custom style]Not only do I now look like some kind of sheltered maiden, but if it grows much further I'll end up tripping over it![otherwise][line break][second custom style]I feel like some kind of glamorous model![end if][or][stopping][roman type][line break]";

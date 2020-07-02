@@ -72,12 +72,12 @@ Time in between stomach digesting things and the checks for whether the player n
 To decide which number is stomach-period:
 	if the player is in a predicament room, decide on 30; [Happens much more frequently in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 20;
-	let T be 12;
-	if the player is not overly full, now T is T * 2; [24]
+	let T be 24;
+	if the player is not overly full, now T is T * 2; [48]
 	let R be the number of worn respiration-enhancing wearthings;
-	if R is 0, now T is T * 2; [48]
-	if R < 2, now T is T * 2; [96]
-	if digestion-timer <= 0, now T is T * 2; [192]
+	if R is 0, now T is T * 2; [96]
+	if R < 2, now T is T * 2; [192]
+	if digestion-timer <= 0, now T is T * 2; [384]
 	decide on T.
 
 [!<DecideWhichNumberIsBladderPeriod>+
@@ -88,12 +88,12 @@ Time in between bladder increases
 To decide which number is bladder-period:
 	if the player is in a predicament room, decide on 23; [Happens much more frequently in the predicament world]
 	if the player is in School34 and ex-princess is in the location of the player, decide on 23;
-	let T be 8;
-	if the delayed bladder of the player < 5, now T is T * 2; [16]
+	let T be 16;
+	if the delayed bladder of the player < 5, now T is T * 2; [32]
 	let R be the number of worn respiration-enhancing wearthings;
-	if R is 0, now T is T * 2; [32]
-	if R < 2, now T is T * 2; [64]
-	if digestion-timer <= 0, now T is T * 2; [128]
+	if R is 0, now T is T * 2; [64]
+	if R < 2, now T is T * 2; [128]
+	if digestion-timer <= 0, now T is T * 2; [256]
 	decide on T.
 
 Definition: a wearthing is respiration-enhancing if it is respiration clothing. [Done so that we can include tattoos]

@@ -34,10 +34,13 @@ To say MonsterDesc of (M - kitsune):
 
 To set up (M - kitsune):
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 12;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now the vanish timer of M is -1;
 	set up disguise of M.
+
+To decide which number is the starting difficulty of (M - kitsune):
+	decide on 12.
 
 To set up disguise of (M - kitsune):
 	let R be a random number between 1 and 2;
@@ -81,7 +84,7 @@ This is the spawn initial kitsune rule:
 	if kitsune is off-stage:
 		set up kitsune;
 		summon kitsune in the mansion;
-		now the vanish timer of kitsune is 0. [We do this to make sure that the kitsune refrshes her disguise immediately, to make sure that it's one appropriate for the mansion.]
+		now the vanish timer of kitsune is 0. [We do this to make sure that the kitsune refreshes her disguise immediately, to make sure that it's one appropriate for the mansion.]
 The spawn initial kitsune rule is listed in the setting up mansion monsters rules.
 
 To compute unique unsimulated periodic effect of (M - kitsune):
@@ -210,6 +213,9 @@ To say OfferThanksFlav of (M - kitsune) for (T - a thing):
 	say "[speech style of M]'Now, what do I have for you this time, hmm?'[roman type][line break]";
 	alwayscutshow figure of kitsune interact 3 for M.
 
+To say OfferFriendshipFlav of (M - kitsune):
+	say "".
+
 To compute offer reward of (M - kitsune) for (T - a thing):
 	if M is intelligent, FavourUp M by the bartering value of T for M;
 	if the favour of M > 8 and the special-gifted of M is 0:
@@ -218,21 +224,21 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		say "A headband with a pair of fox ears on it appears on the ground!";
 		now the special-gifted of M is 1;
 		compute autotaking fox ears;
-	else if the favour of M > 13 and the special-gifted of M is 1:
+	otherwise if the favour of M > 13 and the special-gifted of M is 1:
 		say "[speech style of M]'Hmm, something else interesting. How about these sandals, only slightly used?'[roman type][line break]";
 		let D be a random sandals;
 		now D is in the location of M;
 		say "A pair of wooden sandals appears on the ground!";
 		now the special-gifted of M is 2;
 		compute autotaking D;
-	else if the favour of M > 18 and the special-gifted of M is 2:
+	otherwise if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
 		let D be a random illusory kimono;
 		now D is in the location of M;
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
 		compute autotaking D;
-	else if the favour of M > 23 and the special-gifted of M is 3:
+	otherwise if the favour of M > 23 and the special-gifted of M is 3:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
 		let D be a random midnight tanto;
 		now D is in the location of M;

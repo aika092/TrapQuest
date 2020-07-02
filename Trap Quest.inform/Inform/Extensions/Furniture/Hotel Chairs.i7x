@@ -11,7 +11,7 @@ To decide which figure-name is the examine-image of (C - hotel chairs):
 
 To say ExamineDesc of (C - hotel chairs):
 	say "Four small chairs lining one wall of the room. ";
-	if diaper focus is 0, say "Each chair has a much larger than average sized dildo fixed to the seat of the chair, very near the back. The positions of the dildos have clearly been well designed to force anyone who wants to sit down on a chair to have to put the dildo in their [asshole]. [if the player is female]The dildo is too far back to be able to slip into the [vagina] comfortably, and[otherwise]The[end if] seat of the chair is too small to just sit in front of the dildo comfortably.[if the times-sat of C > 0]The chairs seem to have special effects, but since the chairs switch positions after each use, it's impossible to know which is which.[otherwise if the intelligence of the player > 5]Upon closer inspection, you notice that each dildo has a hole at the tip.[end if]";
+	if diaper focus is 0, say "Each chair has a much larger than average sized dildo fixed to the seat of the chair, very near the back. The positions of the dildos have clearly been well designed to force anyone who wants to sit down on a chair to have to put the dildo in their [asshole]. [if the player is possessing a vagina]The dildo is too far back to be able to slip into the [vagina] comfortably, and[otherwise]The[end if] seat of the chair is too small to just sit in front of the dildo comfortably.[if the times-sat of C > 0]The chairs seem to have special effects, but since the chairs switch positions after each use, it's impossible to know which is which.[otherwise if the intelligence of the player > 5]Upon closer inspection, you notice that each dildo has a hole at the tip.[end if]";
 	otherwise say "Each chair is an identical pink baby chair, with a dolphin pattern, but in an adult size.[if the times-sat of C > 0]The chairs seem to have special effects, but since the chairs switch positions after each use, it's impossible to know which is which.[otherwise if the intelligence of the player > 5]Upon closer inspection, you notice that each chair has a strap that could be used to secure the sitter to the chair.[end if]".
 
 To decide which number is the girth of (F - hotel chairs):
@@ -88,7 +88,7 @@ To compute baby hotel chair sitting:
 		if K is total protection and K is soilable and the player is full and asshole is not actually occupied and diaper messing >= 3:
 			say "As you sit there, something clicks inside of you, and you feel yourself losing control of your bowels! ";
 			compute messing;
-		otherwise if K is total protection clothing and the player is female and vagina is not actually occupied and diaper quest is 0:
+		otherwise if K is total protection clothing and the player is possessing a vagina and vagina is not actually occupied and diaper quest is 0:
 			say "You feel something very thin poke its way through the [if K is diaper]padding[otherwise if K is metal or K is plastic]leg hole[otherwise]fabric[end if] of your [ShortDesc of K] and then find its way to the entrance of your [vagina]. Suddenly you feel it start to powerfully pump out something warm and viscous - it's pumping you full of [semen]! What the fuck!";
 			PussyFill 6;
 			now a random creampie pole trap is inseminating vagina;
@@ -128,7 +128,7 @@ To compute baby hotel chair sitting:
 					compute extra turn;
 			otherwise:
 				say "The vibration is way too powerful for you to put up any resistance, and soon you are being forced into a shaking orgasm!";
-				if the player is male:
+				if the player is not possessing a vagina:
 					orgasm;
 					punish shameful male orgasm;
 				otherwise:

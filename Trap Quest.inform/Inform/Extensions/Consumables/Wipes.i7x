@@ -7,14 +7,12 @@ To decide which figure-name is the examine-image of (C - a pocketwipes):
 	decide on figure of pocketwipes.
 
 To say ExamineDesc of (B - a pocketwipes):
-	say "A small blue packet containing a few wet wipes. It looks like there's enough for one change.".
+	say "A small blue packet containing a few wet wipes. [if diaper messing > 3]It looks like there's enough for one diaper change, or you[otherwise]You[end if] could use them to wipe make up away[if diaper quest is 0], or wipe cum off of your body[end if].".
 
 To decide which number is the outrage of (C - a pocketwipes):
 	decide on 1.
 To decide which number is the cringe of (C - a pocketwipes):
 	decide on 3.
-
-Definition: a pocketwipes is fetish appropriate if diaper messing > 3.
 
 To decide which number is the crafting key of (C - a pocketwipes):
 	decide on 56.
@@ -35,16 +33,16 @@ To restock (C - a pocketwipes):
 	if B is pocketwipes, now B is in Standard Item Pen.
 
 A game universe initialisation rule:
-	if diaper messing > 3:
-		let K be 1;
-		repeat with W running through pocketwipes:
-			if K is 1, now W is in Standard Item Pen;
-			now the text-shortcut of W is the substituted form of "pkw[K]";
-			increase K by 1.
+	let K be 1;
+	repeat with W running through pocketwipes:
+		if K is 1, now W is in Standard Item Pen;
+		now the text-shortcut of W is the substituted form of "pkw[K]";
+		increase K by 1.
 
 wipeChecking is initially false. [We need a way to flag to the remove checking function that we are checking whether we'd be allowed to remove the underwear if it wasn't messy.]
 
 Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
+	if diaper messing < 4, say "You need to type 'wipe [bracket]body part[close bracket] with pocketwipes'." instead;
 	let K be a random worn knickers;
 	if K is not messed knickers, say "You're not wearing any underwear that needs cleaning." instead;
 	if diaper quest is 1 and the class of the player is priestess, say "Your headband is somehow forbidding you from doing this!" instead;

@@ -250,6 +250,13 @@ This is the player can't attack when bound behind rule:
 		rule fails.
 The player can't attack when bound behind rule is listed in the ability to slap rules.
 
+This is the player can't attack without range of motion rule:
+	let M be a random live thing wrangling arms;
+	if M is a live thing and there is a worn wrist bond:
+		say "Your range of motion is too small to be able to attack while [FuckerDesc of M] is holding you by the wrists!";
+		rule fails.
+The player can't attack without range of motion rule is listed in the ability to slap rules.
+
 [!<ThePlayerCanNotAttackWithMessRule>+
 
 This rule causes a knee or a kick to fail if the player is wearing a messy diaper. If the player is attacking manually, outputs a message explaining why the attack failed.
@@ -262,6 +269,14 @@ This is the player can't attack with mess rule:
 
 The player can't attack with mess rule is listed in the ability to knee rules.
 The player can't attack with mess rule is listed in the ability to kick rules.
+
+This is the player can't attack when thigh restricted rule:
+	let M be a random live thing wrangling thighs;
+	if M is a live thing:
+		if autoattack is 0, say "You can't do that while [FuckerDesc of M] is holding your legs!";
+		rule fails.
+The player can't attack when thigh restricted rule is listed in the ability to knee rules.
+The player can't attack when thigh restricted rule is listed in the ability to kick rules.
 
 [!<ThePlayerCanNotAttackWithAnkleBondageRule>+
 

@@ -64,7 +64,7 @@ white-panties is a panties. white-panties is sheer-when-wet. The text-shortcut o
 To say selfexamineuniquetitle of (G - white-panties):
 	say "pair of white 'SPANK ME' panties".
 To say UniqueClothingDesc of (G - white-panties):
-	say "This white pair of panties says 'SPANK ME I've been a very bad girl.' on the [if wonderfuller clothing is 1]front[otherwise]back[end if], which tells people who can see it that [if G is worn]you enjoy having your[otherwise]the wearer enjoys having their[end if] ass [if diaper quest is 1]disciplined[otherwise]groped and abused[end if].".
+	say "This white pair of panties says 'SPANK ME!' on the front and back, which tells people who can see it that [if G is worn]you enjoy having your[otherwise]the wearer enjoys having their[end if] ass [if diaper quest is 1]disciplined[otherwise]groped and abused[end if].".
 Understand "spank", "spank me", "white" as white-panties.
 To decide which number is the delicateness-influence of (C - white-panties):
 	if C is blessed, decide on 1;

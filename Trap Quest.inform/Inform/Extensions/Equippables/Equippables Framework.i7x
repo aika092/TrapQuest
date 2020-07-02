@@ -89,9 +89,6 @@ To compute climax effect of (E - a vibe-wand):
 
 To decide which number is the masturbation-bonus of (E - a vibe-wand):
 	let X be 1;
-	if E is cursed, now X is -1;[You could potentially want a cursed vibrator if you like to spend a lot of time masturbating]
-	if E is blessed, now X is 2;
-	increase X by the magic-modifier of E;
 	increase X by the raw-masturbation-bonus of E;
 	decide on X.
 
@@ -160,9 +157,6 @@ To decide which number is the stimulation of (D - painted-vibrator-hands) on (B 
 	decide on a random number between 5 and 10.
 To decide which figure-name is clothing-image of (H - painted-vibrator-hands):
 	decide on figure of painted-vibrator-hands.
-To decide which number is the wornArmsRequired of (C - painted-vibrator-hands):
-	if predicament-painted-cutoffs is hand-blocked, decide on 2;
-	decide on 0.
 To say ClothingDesc of (Y - painted-vibrator-hands):
 	say "Blue and white paint has been applied to the backs of your hands in the correct pattern to complete the missing pattern around your crotch. Two silently but powerfully buzzing blue egg vibrators are somehow stuck to the inner tips of your two thumbs. That's right... in order to make your painted-on cutoffs look convincing, you would need to push the two egg vibrators into your sensitive clit! To decide where to put your arms, you need to use the command [bold type]adjust arms[roman type].".
 To say ShortDesc of (Y - painted-vibrator-hands):

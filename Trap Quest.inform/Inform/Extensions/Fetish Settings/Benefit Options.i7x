@@ -20,6 +20,7 @@ title	subtable	description	toggle
 "Spontaneous tattoos (If this is disabled, tattoos won't spawn on their own until you get one voluntarily) ([if spontaneous tattoos is 0]Not enabled - free to enable[otherwise][bold type]Enabled[roman type] - free to disable[end if])"	--	--	spontaneous tattoos toggle rule
 "Starting headgear rule (If this is enabled, a class headgear will appear in the pink wardrobe and you can choose to start that class journey straight away. You won't get that headgear the normal way until you've worn it.) - ([if roleplay fetish is 0]Not enabled - costs 1 point to enable[otherwise][bold type]Enabled[roman type] - 1 point used[end if])"	--	--	roleplay fetish toggle rule
 "Minimum tank liquid: [if bonus liquid is 0]nearly empty[end if][if bonus liquid is 1]mostly empty[end if][if bonus liquid is 2]half full[end if][if bonus liquid is 3]over halfway full[end if][if bonus liquid is 4]mostly full[end if][if bonus liquid is 5]nearly full[end if][if bonus liquid is 6]completely full[end if] ([(bonus liquid * (1 + bonus liquid)) / 2] points used. [bonus liquid cost].)"	--	--	bonus liquid toggle rule
+"No Gag Reflex - ([if super gag reflex is 0]Not enabled - costs 3 points to enable[otherwise if super gag reflex is 1][bold type]Partially enabled[roman type] (player never has problems deepthroating, never pukes the cum back up afterwards, but some rare situations can still cause puking) - 3 points used; costs 1 more point to fully enable[otherwise][bold type]Fully enabled[roman type] (player never has problems deepthroating, never pukes ever) - 4 points used[end if])"	--	--	super gag reflex toggle rule
 "Remove Guest NPC (lets you get rid of the random patron-designed NPC that spawns each game): [if the player is not the donator]Beta testers only, sorry![otherwise if supportersEnabled is 0][bold type]Removed[roman type] (1 point used)[otherwise]Not removed (costs 1 point to enable)[end if]"	--	--	supporters enabled toggle rule
 "Combat visor (lets you see some of the behind-the-scenes numbers being calculated. Can be removed but then can't be worn again): [if combatvisor is 1][bold type]Enabled[roman type] - 1 point used[otherwise]Disabled - costs 1 point to enable[end if]"	--	--	combat visor toggle rule
 [ALL NON-DONATOR BENEFIT OPTIONS MUST GO ABOVE THE COMBAT VISOR LINE, WHICH IS REMOVED WHEN THE PLAYER IS THE DONATOR]
@@ -31,7 +32,7 @@ To compute random bonuses:
 		increase N by 1;
 		choose a random row in the Table of Benefit Options;
 		if diaper quest is 1, choose a random row in the Table of Diaper Quest Benefit Options;
-		if there is toggle entry and toggle entry is not quit rule and toggle entry is not reset rule and toggle entry is not spontaneous tattoos toggle rule and toggle entry is not combat visor toggle rule and toggle entry is not supporters enabled toggle rule and (a random number between 1 and 3 is 1 or toggle entry is not bonus liquid toggle rule):
+		if there is toggle entry and toggle entry is not quit rule and toggle entry is not reset rule and toggle entry is not spontaneous tattoos toggle rule and toggle entry is not combat visor toggle rule and toggle entry is not supporters enabled toggle rule and toggle entry is not super gag reflex toggle rule and (a random number between 1 and 3 is 1 or toggle entry is not bonus liquid toggle rule):
 			follow toggle entry;
 		otherwise if there is subtable entry:
 			if subtable entry is Table of Secret Options or subtable entry is Table of Background Options:
@@ -288,5 +289,13 @@ This is the combat visor toggle rule:
 This is the supporters enabled toggle rule:
 	if supportersEnabled is 1 and points count >= 1, now choice in row 77 of the Table of Player Options is 0;
 	otherwise now choice in row 77 of the Table of Player Options is 1.
+
+This is the super gag reflex toggle rule:
+	if super gag reflex is 0 and points count >= 3:
+		now choice in row 82 of the Table of Player Options is 1;
+	otherwise if super gag reflex is 1 and points count >= 1:
+		now choice in row 82 of the Table of Player Options is 2;
+	otherwise:
+		now choice in row 82 of the Table of Player Options is 0.
 
 Benefit Options ends here.

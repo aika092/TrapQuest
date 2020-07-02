@@ -126,13 +126,13 @@ Current graphlink is a text variable. [The current graphlink is either text or g
 
 A clicking graphlink rule (this is the default command replacement by graphlinks rule):
 	if the click hit a hot link:
-		#if utilizing Glimmr debugging;
+		#if utilising Glimmr debugging;
 		say "[>console][GGH]Mouse input received on graphlink '[current graphlink]' in window [italic type][current graphlink window][roman type]: ([current graphlink x], [current graphlink y]).[<]";
 		#end if;
 		follow the graphlink processing rules;
 		rule succeeds;
 	otherwise:
-		#if utilizing Glimmr debugging;
+		#if utilising Glimmr debugging;
 		say "[>console][GGH]Mouse input received in window [italic type][current graphlink window][roman type] (no link triggered): ([current graphlink x], [current graphlink y]).[<]";
 		#end if;
 		now glulx replacement command is "".
@@ -141,7 +141,7 @@ The default command replacement by graphlinks rule is listed last in the clickin
 
 Chapter - Debugging niceties (for use without Glimmr Drawing Commands by Erik Temple)
 
-To #if utilizing Glimmr debugging:
+To #if utilising Glimmr debugging:
 	(- #ifdef Glimmr_DEBUG; -)
 
 To #end if:
@@ -159,7 +159,7 @@ Current graphlink is an object that varies. [The current graphlink is either tex
 
 A clicking graphlink rule (this is the default command replacement by graphlinks rule):
 	if the click hit a hot link:
-		#if utilizing Glimmr debugging;
+		#if utilising Glimmr debugging;
 		let graph-x be current graphlink x plus 0.0;
 		let graph-y be current graphlink y plus 0.0;
 		say "[>console][GGH]Mouse input received on element [i][current graphlink][/i] in window [i][current graphlink window][/i]: ([current graphlink x], [current graphlink y]), approximately equivalent to canvas ([(graph-x minus the x-offset of the current graphlink window) divided by the scaling factor of the current graphlink window to the nearest whole number], [(graph-y minus the y-offset of the current graphlink window) divided by the scaling factor of the current graphlink window to the nearest whole number]).[<]";
@@ -167,7 +167,7 @@ A clicking graphlink rule (this is the default command replacement by graphlinks
 		follow the graphlink processing rules for the current graphlink;
 		rule succeeds;
 	otherwise:
-		#if utilizing Glimmr debugging;
+		#if utilising Glimmr debugging;
 		let graph-x be current graphlink x plus 0.0;
 		let graph-y be current graphlink y plus 0.0;
 		say "[>console][GGH]Mouse input received in window [i][current graphlink window][/i] (no link triggered): ([current graphlink x], [current graphlink y]), approximately equivalent to canvas ([(graph-x minus the x-offset of the current graphlink window) divided by the scaling factor of the current graphlink window to the nearest whole number], [(graph-y minus the y-offset of the current graphlink window) divided by the scaling factor of the current graphlink window to the nearest whole number]).[<]";

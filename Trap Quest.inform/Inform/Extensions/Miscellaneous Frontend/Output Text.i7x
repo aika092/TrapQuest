@@ -113,15 +113,15 @@ REQUIRES COMMENTING
 
 *!]
 Table of User Styles (continued)
-style name	background color	justification	italic	indentation	first line indentation	fixed width	color
+style name	background colour	justification	italic	indentation	first line indentation	fixed width	colour
 special-style-2	--	left-right-justified	true	15	-4	false	"#ff00ff" [magenta]
 special-style-1	--	left-right-justified	true	15	-4	false	"#aa0000" [dark red]
 blockquote-style	--	left-right-justified	false	0	0	false	"#006400" [dark green]
 input-style	--	left-right-justified	false	0	0	false	"#ff0000" [pure red]
-italic-style	--	center-justified	false	0	0	false	--
+italic-style	--	centre-justified	false	0	0	false	--
 
-[Table of Common Color Values (continued)
-glulx color value	assigned number
+[Table of Common Colour Values (continued)
+glulx colour value	assigned number
 g-pure-blue	255
 g-pure-green	65280
 g-pure-cyan	65535

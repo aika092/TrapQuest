@@ -92,14 +92,14 @@ To say rank-colour of (M - a student):
 Definition: a student (called M) is demotable:
 	if the min-rank of M < the current-rank of M:
 		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M,	decide yes; [There must be at least 1 student of each rank. So we can't demote this person unless they're not the only one left.]
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't demote this person unless they're not the only one left.]
 	decide no.
 
 Definition: a student (called M) is promotable:
 	if the current-rank of M is 5, decide yes; [everyone can become solid gold from pure diamond]
 	if the max-rank of M > the current-rank of M:
 		repeat with ST running through alive students:
-			if ST is not M and the current-rank of ST is the current-rank of M,	decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
+			if ST is not M and the current-rank of ST is the current-rank of M, decide yes; [There must be at least 1 student of each rank. So we can't promote this person unless they're not the only one left.]
 	decide no.
 
 To update name of (M - a student):
@@ -316,7 +316,7 @@ To say FarGoneAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how nasty you look right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say LewdAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? I wouldn't want to be seen dead like that.'[in random order][roman type][line break]".
 
 To say MessyBabAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks at the state of your soiled undergarments.[line break][speech style of M]'[one of]Oh my god, YUCK!'[or]Oh my god, I need mental preparation before breathing anywhere near you! My poor nose!'[or]Did you really shit yourself?! Stay the fuck away from me!'[in random order][roman type][line break]".
@@ -325,7 +325,7 @@ To say FarGoneBabAppearanceAssessment of (M - a student):
 	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Is that seriously what you think you should look like when you come to class?'[or]Oh my god, I need mental preparation before looking at a getup as outrageous as that! My poor eyes!'[or]Holy cow, do you know how extreme your outfit is right now?! Stay the fuck away from me!'[in random order][roman type][line break]".
 
 To say BabAppearanceAssessment of (M - a student):
-	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. Please don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? None of the rest of us'd wanna be seen dead like that!'[in random order][roman type][line break]".
+	say "[BigNameDesc of M] looks you up and down.[line break][speech style of M]'[one of]Someone's trying a bit too hard to impress the teachers.'[or]Ugh. [big please] don't tell me you're proud of the way you look.'[or]Isn't that a bit too far? None of the rest of us'd wanna be seen dead like that!'[in random order][roman type][line break]".
 
 To say BreastsGropeFlav of (M - a nasty student):
 	say "[speech style of M]'[one of]You've only just arrived and you're already exposing yourself like a cheap whore.'[or]Whoops, my hands must have slipped...'[or]You're nothing but a piece of meat. Remember that.'[stopping][roman type][line break]".
@@ -381,12 +381,13 @@ To say SatisfiedFlav of (M - a student):
 	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[if M is friendly][line break][speech style of M]'Okay, we're cool now. Just don't you dare piss me off again.'[roman type][line break]".
 
 To say SatisfiedFlav of (M - a nasty student):
-	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is male and transGender is 0]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
+	if M is in the location of the player and M is not dying, say "[BigNameDesc of M] seems satisfied, and loses interest.[line break][speech style of M]'What a [one of]wimp[or]loser[or][if the player is gendered male]faggot[otherwise]pathetic little girl[end if][in random order].'[roman type][line break]".
 
 To FavourDown (M - a student) by (N - a number):
 	RespectDown M by N.
 
 To RespectDown (M - a student) by (N - a number): [This is the same mechanically as favour but with different flavour]
+	if latest-top-malfunction is not 0 and M is reactive, now latest-top-malfunction is earnings; [If an intelligent interested NPC has lost favour with the player for whatever reason that probably means they would have seen a nip slip if one existed. So we'll say one didn't exist.]
 	if the class of the player is cheerleader and a random number between 1 and 2 is 1, decrease N by 1;
 	if N > 0 and M is alive:
 		decrease the favour of M by N;
@@ -570,13 +571,15 @@ To compute punishment of (P - student-bully-swimming-pool):
 	say "[speech style of current-monster]'[one of]Watch your step, [bitch][or]You stink - you could use a wash[in random order]!'[roman type][line break][BigNameDesc of current-monster] shoves you into the pool!";
 	compute crowd jeering of current-monster;
 	if diaper quest is 0:
-		compute showering swimming-pool;
+		compute TQ swimmingpool swimming at 4 with 1;
+		[compute showering swimming-pool;]
 	otherwise:
-		now tracked-semen is 0;
+		compute DQ swimmingpool swimming at 4 with 1;
+		[now tracked-semen is 0;
 		Wash Salves;
 		compute showering;
 		now another-turn-flavour is the substituted form of "You slowly clamber out of the pool.";
-		now another-turn is 1;
+		now another-turn is 1;]
 	compute crowd boredom of current-monster;
 	satisfy current-monster.
 
@@ -831,11 +834,8 @@ To say AdviceAnswer of (M - a student):
 To compute teaching of (M - a student):
 	say "[speech style of M]'Err, that's what the teachers are here for...'[roman type][line break]".
 
-To decide which number is the annoyance threshold of (M - a student):
-	decide on 999999.
-
 To say DismissalRequestVixen of (M - a student):
-	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of M] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
+	say "'[if the player is a nympho and diaper quest is 0]Look! Over there! Those students are having unauthorised sex[otherwise if the player is a nympho]Look! Over there! That student is going in [his of a random student] nappy[otherwise if the intelligence of the player < 6]Look, over there! A distraction[otherwise]Didn't you hear? There's a fight going on over there[end if]!'".
 
 To say DismissalResponseVixen of (M - a student):
 	say "[speech style of M]'[if M is interested]Haha, pull the other one.'[otherwise]OMG! I'll be right there!'[end if][roman type][line break]".
@@ -867,8 +867,9 @@ To say DismissalResponseBursting of (M - a student):
 
 [This is the object used for the team predicament where the student is bound behind the player]
 
-quiz-partner is a clothing. quiz-partner is unique. quiz-partner has a person called the bound-target. quiz-partner is layer-exposing.
+quiz-partner is a clothing. quiz-partner is unique. quiz-partner has a person called the bound-target.
 quiz-partner is crotch-intact. [This flags that it covers the pussy and ass]
+Definition: quiz-partner is layer-concealing: decide no. [It doesn't prevent things layered underneath it from being seen]
 Definition: quiz-partner is removable: decide no.
 Definition: quiz-partner is fluid vulnerable: decide no.
 Definition: quiz-partner is live: decide yes.

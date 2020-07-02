@@ -1,8 +1,8 @@
 Christmas Gift by Consumables begins here.
 
-A christmas gift is a kind of thing. There are 25 christmas gifts. Understand "present", "wrapping" as christmas gift. The printed name of christmas gift is "[TQlink of item described]christmas gift[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of christmas gift is "chg".
+A christmas gift is a kind of thing. There are 25 christmas gifts. Understand "present", "wrapping" as christmas gift. The printed name of christmas gift is "[TQlink of item described]Christmas gift[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of christmas gift is "chg".
 To say ExamineDesc of (B - a christmas gift):
-	say "A beautifully wrapped christmas present. Open it and find what's inside!".
+	say "A beautifully wrapped Christmas present. Open it and find what's inside!".
 
 Figure of christmas gift is the file "Items/Collectibles/gift1.png".
 To decide which figure-name is the examine-image of (B - a christmas gift):
@@ -71,7 +71,7 @@ To compute christmas event of (C - a christmas-gift-penetration):
 	if diaper quest is 0:
 		let viable-holes be a list of body parts;
 		repeat with F running through orifices:
-			if F is not actually occupied and (F is not vagina or (the vaginalvirgin of the player is 0 and the player is female)) and (F is not asshole or the analvirgin of the player is 0 or the player is female), add F to viable-holes;
+			if F is not actually occupied and (F is not vagina or (the vaginalvirgin of the player is 0 and the player is possessing a vagina)) and (F is not asshole or the analvirgin of the player is 0 or the player is possessing a vagina), add F to viable-holes;
 		if the number of entries in viable-holes > 0:
 			sort viable-holes in random order;
 			let F be entry 1 of viable-holes;

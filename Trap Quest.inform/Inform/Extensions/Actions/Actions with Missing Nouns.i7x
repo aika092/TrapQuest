@@ -138,56 +138,17 @@ Check AutoOpening:
 	say "Open what?" instead.
 Understand "open", "op" as AutoOpening.
 
-AutoGreeting is an action applying to nothing.
+AutoTalking is an action applying to nothing.
 
-[!<CheckAutoGreeting>+
-
-REQUIRES COMMENTING
-
-+!]
-Check AutoGreeting:
+Check AutoTalking:
 	repeat with C running through intelligent monsters in the location of the player:
-		say "(the [printed name of C])";
-		try greeting C instead;
+		say "([BigNameDesc of C])";
+		try talking C instead;
 	repeat with C running through monsters in the location of the player:
-		say "(the [printed name of C])";
-		try greeting C instead;
+		say "([BigNameDesc of C])";
+		try talking C instead;
 	say "Greet who?" instead.
-Understand "greet", "say hello", "say hi", "talk", "speak", "say", "converse" as AutoGreeting.
-
-AutoQuestioning is an action applying to nothing.
-
-[!<CheckAutoQuestioning>+
-
-REQUIRES COMMENTING
-
-+!]
-Check AutoQuestioning:
-	repeat with C running through intelligent monsters in the location of the player:
-		say "(the [printed name of C])";
-		try questioning C instead;
-	repeat with C running through monsters in the location of the player:
-		say "(the [printed name of C])";
-		try questioning C instead;
-	say "Question who?" instead.
-Understand "question", "ask" as AutoQuestioning.
-
-AutoRequesting is an action applying to nothing.
-
-[!<CheckAutoRequesting>+
-
-REQUIRES COMMENTING
-
-+!]
-Check AutoRequesting:
-	repeat with C running through intelligent monsters in the location of the player:
-		say "(the [printed name of C])";
-		try drink requesting C instead;
-	repeat with C running through monsters in the location of the player:
-		say "(the [printed name of C])";
-		try drink requesting C instead;
-	say "Question who?" instead.
-Understand "request", "request drink", "ask for drink", "ask for a drink", "request for a drink" as AutoRequesting.
+Understand "greet", "say hello", "say hi", "talk", "speak", "say", "converse" as AutoTalking.
 
 AutoDipping is an action applying to one thing.
 

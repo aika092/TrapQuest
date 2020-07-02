@@ -64,7 +64,7 @@ Definition: remote-controlled-vibrator is discovered varied: decide no.
 Definition: remote-controlled-vibrator is fetish appropriate: decide no. [Stops it spawning randomly]
 To say ClothingDesc of (C - remote-controlled-vibrator):
 	if the game-state of team-football-predicament is 0:
-		say "This hi-tech remote controlled [if the player is male]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is male]pants[otherwise][vagina][end if] filled to the brim with cum.";
+		say "This hi-tech remote controlled [if the player is male]onahole vibrator wrapped around your [player-penis][otherwise]vibrator[end if] vibrates more strongly the closer it is to the football. Apparently it also has a hollow section, and the loser of the game will find their [if the player is not possessing a vagina]pants[otherwise][vagina][end if] filled to the brim with cum.";
 	otherwise if the game-state of team-football-predicament is 1:
 		say "This hi-tech remote controlled vibrator has turned itself off.";
 	otherwise if the toy-charge of C >= 10:

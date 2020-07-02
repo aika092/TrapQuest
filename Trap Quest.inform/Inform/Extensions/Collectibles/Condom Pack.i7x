@@ -322,10 +322,12 @@ Understand "eat condom from [something]", "drink condom from [something]", "bite
 
 To compute condom biting of (C - a clothing):
 	allocate 5 seconds;
-	say "Stretching the cumfilled end of [if the used condoms of C is 1]the condom[otherwise]one of the condoms[end if] to your mouth, you gnaw on the middle with your teeth until it suddenly bursts, coating the inside of your mouth with salty goo[one of] like a water balloon exploding[or][stopping]. [if the semen addiction of the player < 8]The shock of the sudden blast makes you swallow the load on reflex[otherwise if the semen addiction of the player < 15]You gulp down the [semen] without thinking[otherwise]You savour the taste in your mouth for a few moments before beginning to swallow it down bit by bit, enjoying the feeling of the slimy stuff as it travels down your throat[end if].";
+	say "Stretching the cumfilled end of [if the used condoms of C is 1]the condom[otherwise]one of the condoms[end if] to your mouth, you gnaw on the middle with your teeth until it suddenly bursts, coating the inside of your mouth with salty goo[one of] like a water balloon exploding[or][stopping].";
 	decrease the used condoms of C by 1;
 	increase the empty condoms of C by 1;
-	StomachSemenUp 2;
+	FaceFill semen by 1;
+	suggest swallowing;
+	if the semen volume of face > 0, SemenTasteAddictUp 1;
 	get oral creampie image for the player;
 	progress quest of condom-eating-quest;
 	update appearance level;

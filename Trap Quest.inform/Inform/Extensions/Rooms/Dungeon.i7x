@@ -325,7 +325,7 @@ To decide which figure-name is the examine-image of (C - DungeonScenery03):
 
 [!<SayLakeDesc>+
 
-REQUIRES COMMENTING
+The lake where the lake monster lives. The player can swim in it.
 
 +!]
 To say ExamineDesc of (T - DungeonScenery03):
@@ -336,7 +336,7 @@ To say ExamineDesc of (T - DungeonScenery03):
 
 [!<dungeonScenery04:Scenery>*
 
-REQUIRES COMMENTING
+The minotaur's cage.
 
 *!]
 DungeonScenery04 is scenery. DungeonScenery04 is in Dungeon36. The printed name of DungeonScenery04 is "Cage". Understand "cage", "prison" as DungeonScenery04.

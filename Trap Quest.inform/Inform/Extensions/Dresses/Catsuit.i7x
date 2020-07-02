@@ -154,7 +154,7 @@ To decide which figure-name is clothing-image of (C - plugsuit):
 	decide on figure of plugsuit.
 
 To say ClothingDesc of (C - plugsuit):
-	say "A black, skin-tight one-piece leotard. The suit clings to the body to make sure it hides none of its curves. A plug is inbuilt into the crotch of the garment, to ensure that anyone who wears the item has their [if the player is female][vagina][otherwise][asshole][end if] kept [if the vaginal sex addiction of the player > 3]nice and [end if]full.".
+	say "A black, skin-tight one-piece leotard. The suit clings to the body to make sure it hides none of its curves. A plug is inbuilt into the crotch of the garment, to ensure that anyone who wears the item has their [if the player is possessing a vagina][vagina][otherwise][asshole][end if] kept [if the vaginal sex addiction of the player > 3]nice and [end if]full.".
 
 To compute SelfExamineDesc of (C - plugsuit):
 	let F be a random fuckhole penetrated by C;

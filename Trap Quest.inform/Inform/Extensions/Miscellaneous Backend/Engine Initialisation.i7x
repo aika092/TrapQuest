@@ -142,7 +142,8 @@ To fill in fake table blanks:
 		unless there is a choice in row 53 of the Table of Settings, now choice in row 53 of Table of Settings is 0;
 		unless there is a choice in row 54 of the Table of Settings, now choice in row 54 of Table of Settings is 0;
 		unless there is a choice in row 55 of the Table of Settings, now choice in row 55 of Table of Settings is 1;
-		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15.
+		unless there is a choice in row 56 of the Table of Settings, now choice in row 56 of Table of Settings is 15;
+		unless there is a choice in row 57 of the Table of Settings, now choice in row 57 of Table of Settings is 1.
 
 To fill in legacy table blanks:
 	unless there is a choice in row 32 of the Table of Player Options, now choice in row 32 of Table of Player Options is 0;
@@ -193,7 +194,10 @@ To fill in legacy table blanks:
 	unless there is a choice in row 77 of the Table of Player Options, now choice in row 77 of Table of Player Options is 1;
 	unless there is a choice in row 78 of the Table of Player Options, now choice in row 78 of Table of Player Options is 0;
 	unless there is a choice in row 79 of the Table of Player Options, now choice in row 79 of Table of Player Options is 0;
-	unless there is a choice in row 80 of the Table of Player Options, now choice in row 80 of Table of Player Options is 1. [TODO change to 0]
+	unless there is a choice in row 80 of the Table of Player Options, now choice in row 80 of Table of Player Options is 0;
+	unless there is a choice in row 81 of the Table of Player Options, now choice in row 81 of Table of Player Options is 0;
+	unless there is a choice in row 82 of the Table of Player Options, now choice in row 82 of Table of Player Options is 0;
+	unless there is a choice in row 83 of the Table of Player Options, now choice in row 83 of Table of Player Options is 0.
 
 To fill in custom flavour blanks:
 	unless there is a name in row 10 of the Table of Info Options:
@@ -265,10 +269,10 @@ To retrieve gender:
 		now the player is male.
 
 To retrieve name:
-	if the player is male and transGender is 0, now the current menu is the Table of Male Name Options;
+	if the player is gendered male, now the current menu is the Table of Male Name Options;
 	otherwise now the current menu is the Table of Female Name Options;
 	if diaper quest is 1:
-		if the player is male and transGender is 0, now the current menu is the Table of Male Name Diaper Quest Options;
+		if the player is gendered male, now the current menu is the Table of Male Name Diaper Quest Options;
 		otherwise now the current menu is the Table of Female Name Diaper Quest Options;
 	if the player is male:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
@@ -291,6 +295,7 @@ To retrieve name:
 To configure gender:
 	if the player is male:
 		now the soreness of vagina is 0;
+		now the openness of vagina is -1;
 		now the size of penis is 7;
 		now the real size of penis is 7;
 	otherwise:

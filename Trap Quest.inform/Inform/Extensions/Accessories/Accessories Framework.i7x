@@ -2,7 +2,7 @@ Accessories Framework by Accessories begins here.
 
 An accessory is a kind of clothing. Understand "accessories" as the plural of accessory. An accessory is usually metal. An accessory is usually manly. The soak-limit of an accessory is usually 3.
 
-An accessory can be sapphire, emerald, ruby, pink diamond, pure diamond, solid gold (this is the accessory-colour property). Understand the accessory-colour property as describing a accessory when the item described is plentiful. Understand "solid", "gold" as the accessory when the item described is solid gold. Understand "pure", "diamond" as the accessory when the item described is pure diamond. Understand "pink", "diamond" as the accessory when the item described is pink diamond.
+An accessory can be sapphire, emerald, ruby, pink diamond, pure diamond, solid gold (this is the accessory-colour property). Understand the accessory-colour property as describing an accessory when the item described is plentiful. Understand "solid", "gold" as the accessory when the item described is solid gold. Understand "pure", "diamond" as the accessory when the item described is pure diamond. Understand "pink", "diamond" as the accessory when the item described is pink diamond.
 
 Definition: an accessory is too boring: decide no.
 Definition: an accessory is magic-enhanceable: decide no.

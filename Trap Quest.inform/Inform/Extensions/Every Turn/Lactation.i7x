@@ -164,7 +164,7 @@ To trigger lactation:
 			now the lactation-count of the player is 0;
 			now the plug size of O is the openness of asshole;
 			say "[one of]You look down to try and work out exactly what this thing does...[line break][ExamineDesc of O][or][stopping]";
-		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and royal circlet is off-stage and royal circlet is actually summonable and the number of worn yellow pacifiers is 0:
+		otherwise if a random number from 4 to 50 - (30 * unlucky) < the lactation-count of the player and a2m fetish >= 2 and royal circlet is off-stage and royal circlet is actually summonable and the number of worn yellow pacifiers is 0:
 			say "[bold type]As you finish lactating, a silver circlet appears on your head.[line break][variable custom style]Why do I get the feeling that people are going to want my milk soon...[roman type][line break]";
 			summon royal circlet cursed;
 			now the lactation-count of the player is 0;

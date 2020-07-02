@@ -31,10 +31,13 @@ To say MonsterComment of (M - a witch):
 To set up (M - witch):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 9;
+	now the raw difficulty of M is the starting difficulty of M;
 	[now the sex-length of M is 2;]
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - centaur):
+	decide on 9.
 
 This is the spawn initial witch rule:
 	if witch is alive, now witch is in Woods20.
@@ -488,7 +491,7 @@ To say RepeatResponse of (M - witch):
 	otherwise if M is unbitchy:
 		say "[speech style of M]'[one of]Hey. You know, it's not an easy life being an altar witch...'[or]Hey, feel free to use my altar whenever you want.'[or]Hi there! Feel free to stay around and chat. Not like there's much else to do in this shit-hole.'[or]Hey, if you ever meet a washed up demon lord anywhere, don't believe a word [he of demon lord] says about me.'[at random][roman type][line break]";
 	otherwise if the class of the player is priestess:
-		say "[speech style of M]'[one of]So, how's the altar life treating you?'[or][if (the analvirgin of the player is 0 and the player is male) or (the player is female and the vaginalvirgin of the player is 0)]Wow, I can actually smell the sex on you from here. You're a dungeon bitch, aren't you.'[otherwise]You know, most dungeon bitches don't keep their cherry for so long.'[end if][or]If not for all the arse fucking, I would sort of envy you dungeon bitches. It's fucking boring up here.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]So, how's the altar life treating you?'[or][if (the analvirgin of the player is 0 and the player is not possessing a vagina) or (the player is possessing a vagina and the vaginalvirgin of the player is 0)]Wow, I can actually smell the sex on you from here. You're a dungeon bitch, aren't you.'[otherwise]You know, most dungeon bitches don't keep their cherry for so long.'[end if][or]If not for all the arse fucking, I would sort of envy you dungeon bitches. It's fucking boring up here.'[at random][roman type][line break]";
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]You aren't going to convert me so you might as well piss off.'[or]Hey, can you see this? I'm flipping you off.'[or]Keep your shitty scripture to yourself, bitch.'[or]That altar of yours is hiding for a reason, bitch.'[or]Whatever you want me to cure, you can piss off. It's what you get for worshipping false idols.'[at random][roman type][line break]";
 	otherwise if the class of the player is fertility goddess:
@@ -520,8 +523,7 @@ To say InvitationRejected of (M - witch) with (N - a monster):
 		say "[speech style of M]'[one of]I'd rather watch.'[or]I'd rather sit back and enjoy the show.'[at random][roman type][line break]".
 
 To say AssistanceResponse of (M - witch) with (N - a monster):[TODO: monsters can "join" sex on your side or give you something to make it easier]
-	say AssistanceRejected of M with N;
-	increase the questioned of M by 10.
+	say AssistanceRejected of M with N.
 
 To say AssistanceRejected of (M - witch) with (N - a monster):
 	if the class of the player is priestess:
@@ -530,12 +532,6 @@ To say AssistanceRejected of (M - witch) with (N - a monster):
 		say "[speech style of M]'[one of]Most interesting thing I've seen all night.'[or]Why would I want to ruin the show?'[or]This is hilarious.'[or]Ha! Help yourself!'[at random][roman type][line break]".
 
 Section 2 - Questioning
-
-To compute annoyance of (M - witch):
-	if M is unfriendly:
-		say "[BigNameDesc of M] seems to be purposefully ignoring you.";
-	otherwise:
-		say "[speech style of M]'It's boring enough standing around here without you badgering me all day.'[roman type][line break]".
 
 To say WhoQuestion of (M - witch):
 	say "[variable custom style]'[one of]How many altar uses do I have left?'[or]Can you remind me how many altar uses I have left?'[or]Hey, do I have any more uses of the altar?[or]Hey, can I still use the altar?'[at random][roman type][line break]".
@@ -591,11 +587,7 @@ To compute teaching of (M - witch):
 				say "[BigNameDesc of M] chuckles, muttering a short incantation under [his of M] breath.[speech style of M]'Alright then. Find [NameDesc of witch-target][speech style of M] and kill [him of witch-target]. I'll know when you've succeeded.'[roman type][line break]";
 				DifficultyUp witch-target by 5;
 			otherwise:
-				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]";
-	if the questioned of M <= the mild-annoyance threshold of M:
-		ModerateConvoFatigue M;
-	otherwise:
-		HeavyConvoFatigue M.
+				say "[speech style of M]'Then fuck off. [big please] and thank you!'[roman type][line break]".
 
 [using the default advice question]
 To say AdviceAnswer of (M - witch):
@@ -610,7 +602,7 @@ To compute friendly drink of (M - witch):
 		say "[speech style of M]'No.'[roman type][line break]".
 
 To compute unfriendly drink of (M - witch):
-	compute annoyance of M.
+	say "[BigNameDesc of M] seems to be purposefully ignoring you.".
 
 Part 7 - Trading
 

@@ -95,10 +95,10 @@ To say ExamineDesc of (C - a glue trap):
 		if the C is organic:
 			say "There is a swollen, mossy-looking rock on the [one of]wall[or]low ceiling[or]floor[stopping] here with a fold or seam running down its middle. It looks... squishy. Sniffing it, you find it has an interesting smell.";
 		otherwise:
-			say "Mounted on the [one of]wall[or]low ceiling[or]the floor[stopping] here is an electronic panel with some kind of... sensor, maybe...? with a gnurled knob that looks like the overhead air-vent you get in the cabin of a commercial airliner.".
+			say "Mounted on the [one of]wall[or]low ceiling[or]the floor[stopping] here is an electronic panel with some kind of... sensor, maybe...? with a gnarled knob that looks like the overhead air-vent you get in the cabin of a commercial airliner.".
 
 To say ShortDesc of (Y - a glue trap):
-	say "There's a [if the Y is organic]mossy kind of... rock...? with a faint seam[otherwise]rounded knob poking from a gnurled, circular nut[end if] here.";
+	say "There's a [if the Y is organic]mossy kind of... rock...? with a faint seam[otherwise]rounded knob poking from a gnarled, circular nut[end if] here.";
 
 Definition: a glue is too boring: decide no.
 
@@ -403,7 +403,7 @@ To compute glue escaping:
 		[I think max strength is 30]
 		if the strength of the player < bond-grip:
 			if the strength of the player < 6:
-				say "Your [if the player is male and transGender is 0]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
+				say "Your [if the player is gendered male]puny, sissy[otherwise]childlike, puny[end if] muscles simply aren't strong enough to even [i]stretch[/i] this tough, rubbery glue, let alone pull free of it, at present!";
 			otherwise:
 				say "Your [if the strength of the player < 10]weak little [end if]muscles simply aren't strong enough to pull free of this glue as things stand!";
 			say "Unless you have clothes to [bold type]rub[roman type] in the glue and scrape it away or soak it up, looks like you might have to wait for the glue to weaken, or for someone to rescue you!";
@@ -890,7 +890,7 @@ Carry out tearing off worn clothing:
 		say "You are unable to peel it gently enough to get the item off without it tugging at your skin this time. Ouch! That hurts, and it's tearing the [ShortDesc of C].";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 1 to "decide to try to remove it gently again a bit later[if newbie tips is 1] (dexterity based chance each time)[end if]";
-		if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain [if C is crotch-intact or C is crotch-zipped or C is crotch-skirted]and a chance of ripping each time, but guaranteed to unstick the glue within a few tries)[end if]";
+		if newbie tips is 1, set numerical response 2 to "try to remove it with brute strength (causes pain[if C is crotch-intact or C is crotch-zipped or C is crotch-skirted] and a chance of ripping each time, but guaranteed to unstick the glue within a few tries[end if])";
 		otherwise set numerical response 2 to "try to remove it with brute strength";
 		compute multiple choice question;
 		if player-numerical-response is 2:

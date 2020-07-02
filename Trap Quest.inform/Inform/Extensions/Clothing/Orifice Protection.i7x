@@ -248,7 +248,7 @@ REQUIRES COMMENTING
 
 +!]
 Definition: yourself is fully occupied:
-	if the player is male:
+	if the player is not possessing a vagina:
 		if asshole is actually occupied, decide yes;
 	otherwise:
 		if asshole is actually occupied and vagina is actually occupied, decide yes;

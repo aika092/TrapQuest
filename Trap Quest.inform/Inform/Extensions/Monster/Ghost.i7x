@@ -72,11 +72,16 @@ Definition: a ghost is blocker: decide no.
 To set up (M - a ghost):
 	reset M;
 	now the monstersetup of M is 1;
-	if M is jismbodied ghost, now the raw difficulty of M is 8;
-	otherwise now the raw difficulty of M is 6;
+	if M is jismbodied ghost:
+		now the raw difficulty of M is the starting difficulty of M + 2;
+	otherwise:
+		now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	if diaper quest is 1, now M is neuter;
 	now M is phased.
+
+To decide which number is the starting difficulty of (M - a ghost):
+	decide on 6.
 
 To decide which number is the maxhealth of (M - a ghost):
 	decide on 1 + (the difficulty of M * game difficulty).
@@ -119,7 +124,6 @@ To satisfy (M - jismbodied ghost) for (N - a number) seconds:
 To satisfy (M - a ghost) for (N - a number) seconds:
 	say "[BigNameDesc of M] slowly fades out of existence. You have a feeling you'll be seeing it again...";
 	now creepiness is 0; [Having dealt with a ghost shouldn't cause a new one to appear immediately]
-	if N >= 50 and the player is not in Dungeon12, decrease the charge of the dungeon altar by a random number between 1 and 50;
 	destroy M;
 	bore M for N seconds.[Is dislodging handled with the destroy M function?.]
 
@@ -275,7 +279,7 @@ To say sexSubmitEmbarrassFlav of (M - a ghost) in (O - an orifice):
 		say "[if the relevant sex addiction of M < 7][BigNameDesc of M] gives your [variable O] the hard fucking it deserves. You clench your fists and try to ignore your growing fear and embarrassment.[otherwise if the humiliation of the player < 15000][BigNameDesc of M] fucks your [variable O] with, rough, brutal thrusts. You can almost feel your dignity crumbling, every thrust humiliating you more and more.[otherwise if the relevant sex addiction of M < 10][BigNameDesc of M] plows in and out of your [variable O]. There's something so invigorating about letting it happen![otherwise][BigNameDesc of M] plows in and out of your [variable O]. It's so satisfying to let it happen![end if]".
 
 To say sexSubmitSplitFlav of (M - a ghost) in (O - an orifice):
-	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the size of penis > 0 and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the size of penis > 0][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
+	if the player is male, say "[if the size of penis < 4 and tg fetish >= 1][BigNameDesc of M] ruts you like an animal. Even disembodied dicks are more manly than you![otherwise if the size of penis < 4 and the player is possessing a penis and the bimbo of the player < 14][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling a little embarrassed by how minuscule your [ShortDesc of penis] is, considering it's actually attached to someone.[otherwise if the size of penis < 4 and the player is possessing a penis][BigNameDesc of M] pounds your [asshole] hard and fast. You can't help feeling proud of how minuscule your [sissy-penis] is by comparison.[otherwise if the bimbo of the player < 3]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how powerless you are against a real dick in action.[otherwise if the bimbo of the player < 5]Shocks of pleasure ripple through your [ShortDesc of penis] as [he of M] pounds your [asshole]. And you thought it was humiliating before...[otherwise if the bimbo of the player < 7][BigNameDesc of M] relentlessly pounds your sensitive prostate, reminding you how humiliating it is to have a [manly-penis] slamming in and out of your ass.[otherwise if the bimbo of the player < 9]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] relentlessly pounds your [asshole]. It's difficult to resist when it feels this good.[otherwise if the bimbo of the player < 10][BigNameDesc of M] relentlessly pounds your sensitive prostate, continuing to remind you who the 'man' is between the two of you.[otherwise if the bimbo of the player < 12]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole]. You find yourself biting your lower lip, secretly savouring the feeling of helplessness.[otherwise if the bimbo of the player < 14]Your [ShortBallsDesc] jiggle as [NameDesc of M] pistons in and out of your [asshole], as if to remind you how much you LOVE getting fucked.[otherwise]Shocks of pleasure ripple through your [ShortDesc of penis] as [NameDesc of M] pounds your [asshole]. Phew, it sure knows how to show a girl a good time![end if]";
 	otherwise say "[if the relevant sex addiction of M < 8][BigNameDesc of M] fucks your [variable O] with all the callousness and vigour of an actual man![otherwise if relevant sex addiction of M < 13][BigNameDesc of M] fucks your [variable O] hard and fast! You pretend you only like it because it's not attached to any man you can see.[otherwise][BigNameDesc of M] fucks your [variable O] with all the roughness and power of an actual man! You're half disappointed you don't have one to thank for all this hard fucking.[end if]".
 
 The ghost vagina insertion rules is a rulebook. The blessings block ghosts rule is listed last in the ghost vagina insertion rules. The monster penetrating vagina rule is listed last in the ghost vagina insertion rules.
@@ -674,7 +678,7 @@ To compute damage reaction of (M - a ghost):
 		if M is ghostly tentacle:
 			say "[BigNameDesc of M] releases you instantly, shifting back out of the physical world as it recoils from your attack!";
 			now the wind-up of M is 0;
-			now M is not wrangling the player;
+			now M is not wrangling arms;
 			now M is phased;
 		otherwise if a random number between 1 and 2 is 1:
 			say "[BigNameDesc of M] flickers after being sent back several feet. Looks like you interrupted it!";
@@ -727,7 +731,7 @@ Definition: ghostly tentacle is father material: decide no.
 To set up (M - ghostly tentacle):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 9;
+	now the raw difficulty of M is the starting difficulty of M + 3;
 	now the health of M is the maxhealth of M;
 	if diaper quest is 1:
 		now M is not neuter;
@@ -775,7 +779,7 @@ To compute ectoplasm to (M - ghostly tentacle):
 		set up deep one;
 		now deep one is in mansion23;
 		drag to mansion23 by M;
-		now M is not wrangling the player;[Once it drops you off, the tentacle lets go.]
+		now M is not wrangling arms;[Once it drops you off, the tentacle lets go.]
 		now the wind-up of M is 0;
 		anger deep one;
 		now deep one is interested;
@@ -793,17 +797,15 @@ This is the deep one express rule:
 		now the wind-up of M is 1;
 		now the bank of M is 0;
 		say "The air seems to rumble as [NameDesc of M] shifts fully into the corporeal world. It seizes you by the wrist!";
-		now M is wrangling the player;
+		now M is wrangling arms;
 		now M is unphased;
 		rule succeeds.
 The deep one express rule is listed first in the ghost priority attack rules.
 
-Check slapping ghostly tentacle:
-	if the noun is wrangling the player and there is a worn wrist bond and the number of worn slap ready equippables is 0, say "Your range of motion with your wrists bound together is too small for you to be able to hurt it!" instead.
 Check kneeing ghostly tentacle:
-	if the noun is wrangling the player, say "It has you by the wrist! You can't reach it with your leg!" instead.
+	if the noun is wrangling a body part, say "It has you by the wrist! You can't reach it with your leg!" instead.
 Check kicking ghostly tentacle:
-	if the noun is wrangling the player, say "It has you by the wrist! You can't reach it with your leg!" instead.
+	if the noun is wrangling a body part, say "It has you by the wrist! You can't reach it with your leg!" instead.
 
 Section - DQ
 

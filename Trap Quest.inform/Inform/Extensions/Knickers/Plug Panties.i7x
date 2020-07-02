@@ -31,15 +31,15 @@ There are 2 unique ass plugging vagina plugging latex vibrating plug panties. Th
 Definition: a vibrating plug panties is black themed: decide yes.
 
 To decide which figure-name is clothing-image of (C - a vibrating plug panties):
-	if the player is male, decide on figure of male latex plug panties;
+	if the player is not possessing a vagina, decide on figure of male latex plug panties;
 	otherwise decide on figure of female latex plug panties.
 
 To say ClothingDesc of (P - a vibrating plug panties):
-	say "[if the player is female]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if]. [if P is cursed and P is sure and P is worn]The ass plug is vibrating! [end if]The latex material looks very tough.".
+	say "[if the player is possessing a vagina]These panties have inbuilt anal and vaginal plugs that would prevent anything escaping[otherwise]These panties have an in-built anal plug that would prevent anything escaping[end if]. [if P is cursed and P is sure and P is worn]The ass plug is vibrating! [end if]The latex material looks very tough.".
 
 To compute SelfExamineDesc of (K - a vibrating plug panties):
 	say "A pair of latex plug panties covers your [ShortDesc of hips]. ";
-	say "The in-built plugs keep your [if the player is female][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
+	say "The in-built plugs keep your [if the player is possessing a vagina][vagina] and [end if][asshole] open and [if the soreness of asshole > 6 or the soreness of vagina > 6]sore[otherwise]stimulated[end if][if the largeness of belly > 2], and prevent any [semen] from escaping your body[end if]. [if K is cursed and the bimbo of the player < 12][line break][first custom style]Oh god, I can't stop the vibrating! This is bad... [roman type][line break][otherwise if K is cursed and the bimbo of the player > 11][line break][second custom style]It just keeps vibrating in my [asshole]... I'm going insane... [roman type][line break][end if]";
 
 Figure of female latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties1.png".
 Figure of male latex plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/latexplugpanties2.png".
@@ -72,7 +72,7 @@ To compute periodic effect of (P - a vibrating plug panties):
 
 Chapter 2 Pump Plug Panties
 
-pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [clothing-material of item described] pump plug panties[clothing-title-after]". The printed plural name of pump plug panties is usually "[TQlink of item described][item style][unless magic-curse of the item described is bland or curse-ID of the item described is unsure][magic-curse] [end if][raw-magic-modifier-desc]pairs of [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There are 2 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
+pump plug panties is a kind of plug panties. The printed name of pump plug panties is "[clothing-title-before]pair of [DongSize the plug size of item described] [clothing-material of item described] pump plug panties[clothing-title-after]". The text-shortcut of pump plug panties is "ppp". There is 1 unique ass plugging latex pump plug panties. The armour of pump plug panties is 11.
 
 Definition: a pump plug panties is black themed: decide yes.
 Definition: a pump plug panties is inflation themed: decide yes.
@@ -81,18 +81,20 @@ To decide which figure-name is clothing-image of (C - a pump plug panties):
 	decide on figure of pump plug panties.
 
 To say ClothingDesc of (P - a pump plug panties):
-	say "These panties have an in-built anal plug that would prevent anything escaping. There is a hollow tube through the centre of the plug with a hole at the base and the tip. The latex material looks very tough.".
+	say "These panties have an in-built anal [if P is vagina plugging and the player is possessing a vagina]and vaginal [end if]plug that would prevent anything escaping. [if the player is not in a predicament room]There is a hollow tube through the centre of the ass plug with a hole at the base and the tip. [end if]The plug[if P is vagina plugging and the player is possessing a vagina]s are[otherwise] is[end if] [DongSize the plug size of P]. The latex material looks very tough.".
 Figure of pump plug panties is the file "Items/Clothes/Lower/Underwear/Special/Plug/pumpplugpanties1.png".
 
 Carry out kneeling when there is a worn pump plug panties:
-	let P be a random worn pump plug panties;
-	if inflation fetish is 1:
-		say "The plug of your [printed name of P] blows some [one of][or]more [stopping]air straight up your [asshole]!";
-		let B be the largeness of belly;
-		AssFill 4 Air;
-		if the largeness of belly > B and the largeness of belly > 2, say "You now have a [BellyDesc].";
-	otherwise if the plug size of P < 10:
-		say "".
+	if the player is not in a predicament room:
+		let P be a random worn pump plug panties;
+		if inflation fetish is 1:
+			say "The plug of your [printed name of P] blows some [one of][or]more [stopping]air straight up your [asshole]!";
+			let B be the largeness of belly;
+			AssFill 4 Air;
+			if the largeness of belly > B and the largeness of belly > 2, say "You now have a [BellyDesc].";
+		otherwise if the plug size of P < 10:
+			say "Your [printed name of P] inflates a bit! The plug[if P is vagina plugging and the player is possessing a vagina]s are[otherwise] is[end if] now [DongSize the plug size of P].";
+			increase the plug size of P by 1.
 
 Chapter 3 WC Plug Panties
 

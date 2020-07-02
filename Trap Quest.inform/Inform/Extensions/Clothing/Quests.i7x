@@ -213,6 +213,9 @@ To compute persistent reward of (Q - a clothing-quest) on (C - a clothing):
 	if C is pussy covering:
 		say "gently vibrating, stimulating your [genitals]!";
 		stimulate vagina from C;
+	otherwise if C is bottom level lactation cover:
+		say "gently vibrating, stimulating your nipples!";
+		stimulate breasts from C;
 	otherwise:
 		say "flooding you with arousal!";
 		arouse 2500.
@@ -342,7 +345,7 @@ Part - Vaginal Virginity Quest
 
 vaginal-virginity-quest is a clothing-quest.
 
-Definition: vaginal-virginity-quest is appropriate if diaper quest is 0 and the player is female and the vaginalvirgin of the player is 1.
+Definition: vaginal-virginity-quest is appropriate if diaper quest is 0 and the player is possessing a vagina and the vaginalvirgin of the player is 1.
 
 To decide what number is the quest-weighting of (Q - vaginal-virginity-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -478,7 +481,7 @@ Part - Creampie Quest
 
 vaginal-creampie-quest is a clothing-quest. vaginal-creampie-quest has a number called creampie-count.
 
-Definition: vaginal-creampie-quest is appropriate if the player is female and diaper quest is 0.
+Definition: vaginal-creampie-quest is appropriate if the player is possessing a vagina and diaper quest is 0.
 
 To decide what number is the quest-weighting of (Q - vaginal-creampie-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -983,7 +986,7 @@ Part - Hotel Altar Quest
 
 hotel-altar-quest is a clothing-quest.
 
-Definition: hotel-altar-quest is appropriate if diaper quest is 0 and Hotel35 is placed and the player is a august 2019 top donator.
+Definition: hotel-altar-quest is appropriate if diaper quest is 0 and Hotel35 is placed and the player is the donator.
 
 To decide what number is the quest-weighting of (Q - hotel-altar-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -1139,5 +1142,28 @@ To say QuestTitle of (Q - doom-quest):
 To compute persistent reward of (Q - doom-quest) on (C - a clothing):
 	say "empowering you with magic!";
 	MagicPowerUp 1.
+
+Part - Mouthful Quest
+
+mouthful-quest is a clothing-quest. mouthful-quest is persistent.
+
+Definition: mouthful-quest is school-disabled: decide yes.
+
+To decide what number is the quest-weighting of (Q - mouthful-quest) for (C - a clothing):
+	if Q is not appropriate, decide on 0;
+	decide on 1.
+
+Definition: mouthful-quest is appropriate if diaper quest is 0.
+
+To say QuestFlav of (Q - mouthful-quest):
+	say "You sense that it wants you to hold onto a mouthful of [semen] until you become more accustomed to the taste.".
+
+To say QuestTitle of (Q - mouthful-quest):
+	say " (mouthful of cum quest)".
+
+To compute persistent reward of (Q - mouthful-quest) on (C - a clothing):
+	say "[if the body soreness of the player > 0 and the raw semen taste addiction of the player < 20]healing some of your wounds and [end if]restoring your energy!";
+	if the raw semen taste addiction of the player < 20, BodyHeal 3;
+	now the fatigue of the player is 0.
 
 Quests ends here.

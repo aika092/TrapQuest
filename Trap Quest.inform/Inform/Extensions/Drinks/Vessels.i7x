@@ -287,11 +287,11 @@ To compute drunken adventure:
 				progress quest of condom-creampie-quest;
 			otherwise:
 				SemenPuddleUp 10;
-				if the player is female:
+				if the player is possessing a vagina:
 					now the semen volume of vagina is 5;
 					now the womb volume of vagina is 3;
 				if the raw semen taste addiction of the player < 20, increase the raw semen taste addiction of the player by 1;
-				say "As if to answer your question, you puke up a thick wad of sticky [semen], just as your [fuckholes] begins to leak [if the player is female]their[otherwise]its[end if] own helpings of [semen] onto the stone ground around you. You also realise that your body and clothes are covered in [semen].";
+				say "As if to answer your question, you puke up a thick wad of sticky [semen], just as your [fuckholes] begins to leak [if the player is possessing a vagina]their[otherwise]its[end if] own helpings of [semen] onto the stone ground around you. You also realise that your body and clothes are covered in [semen].";
 				repeat with C running through worn fluid vulnerable clothing:
 					SemenSoakUp C by the soak-limit of C - the total-soak of C;
 				repeat with C running through worn clothing:
@@ -313,7 +313,7 @@ To compute drunken adventure:
 				summon K;
 				say "You are wearing a [ShortDesc of K] which is already utterly soaked.";
 			UrineSoakUp K by the soak-limit of K - the total-soak of K;
-		if the player is female and pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
+		if the player is possessing a vagina and pregnancy fetish is 1 and the pregnancy of the player is 0 and condoms-used is 0:
 			let M be a random alive father material monster;
 			if M is monster:
 				now M is inseminating vagina;

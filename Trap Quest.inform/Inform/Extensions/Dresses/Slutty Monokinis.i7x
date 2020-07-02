@@ -288,7 +288,7 @@ To say ClothingDesc of (C - christmas strap monokini):
 	if C is worn, say "It only just covers your nipples and [if the player is female]hardly manages to cover your [vagina][otherwise][genitals][end if]. It rides up your back in a single strap with is sandwiched very tightly between your butt cheeks.".
 
 To say ShortDesc of (C - christmas strap monokini):
-	say "christmas strap swimsuit".
+	say "Christmas strap swimsuit".
 
 Definition: christmas strap monokini is red themed: decide yes.
 Definition: christmas strap monokini is bow themed: decide yes.

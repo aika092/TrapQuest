@@ -86,12 +86,14 @@ To decide which number is appearance-outrage-level:
 	now appearance-outrage-target is arms;
 	now second-appearance-outrage-target is arms;
 	repeat with C running through worn wearthings:
+		if appearance-explained is 1 and debugmode > 1, say "Looking at [C].";
 		let OC be the outrage of C; [to make sure we only spend the CPU cycles to calculate it once]
+		if appearance-explained is 1 and debugmode > 1, say "Outrage is [OC].";
 		if OC > O:
 			now O is OC;
 			now second-appearance-outrage-target is appearance-outrage-target;
 			now appearance-outrage-target is C;
-	repeat with C running through carried currently-not-in-bag things:
+	repeat with C running through currently-not-in-bag things:
 		let OC be the outrage of C / 2; [to make sure we only spend the CPU cycles to calculate it once]
 		if OC > O:
 			now O is OC;

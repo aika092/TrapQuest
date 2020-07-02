@@ -114,6 +114,6 @@ This is the hand use required for masturbation rule:
 	if the player is not able to use their hands:
 		if auto is 0, say "You can't use your hands at the moment!";
 		rule fails.
-The hand use required for masturbation rule is listed last in the masturbation restriction rules.
+The hand use required for masturbation rule is listed last in the global masturbation restriction rules.
 
 Manual Dexterity ends here.

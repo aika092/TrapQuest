@@ -48,8 +48,11 @@ To say DickDesc of (M - djinn):
 To set up (M - djinn):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 9;
+	now the raw difficulty of M is the starting difficulty of M;[9]
 	now the health of M is the maxhealth of M.
+
+To decide which number is the starting difficulty of (M - djinn):
+	decide on 9.
 
 To decide which number is the girth of (M - djinn):
 	decide on 5.
@@ -326,7 +329,7 @@ Definition: djinn (called M) is waiting for a wish:
 This is the wishing for strength rule:
 	if wish-asked is "wish for strength" or wish-asked is "strength":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds his folded arms and waves them at your body. You feel your muscles grow!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your body. You feel your muscles grow!";
 			StrengthUp 2;
 			compute DjinnDisappointedAfter of djinn;
 		compute djinn wishing conclusion;
@@ -336,7 +339,7 @@ The wishing for strength rule is listed in the djinn wish rules.
 This is the wishing for wisdom rule:
 	if wish-asked is "wish for wisdom" or wish-asked is "wisdom":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your head. You feel stimulated!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your head. You feel stimulated!";
 			IntUp 2;
 			compute DjinnDisappointedAfter of djinn;
 		compute djinn wishing conclusion;
@@ -346,7 +349,7 @@ The wishing for wisdom rule is listed in the djinn wish rules.
 This is the wishing for blessings rule:
 	if wish-asked is "wish for blessings" or wish-asked is "blessings" or wish-asked is "wish for blessing" or wish-asked is "blessing":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your body.";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your body.";
 			let N be 3;
 			while N > 0:
 				let C be a random worn blessable clothing;
@@ -365,7 +368,7 @@ The wishing for blessings rule is listed in the djinn wish rules.
 This is the wishing for sanity rule:
 	if wish-asked is "wish for sanity" or wish-asked is "sanity":
 		if djinn is waiting for a wish or the wishes of a random magic lamp > 0:
-			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your head. You feel calmed!";
+			say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your head. You feel calmed!";
 			SexAddictDown 1;
 			SemenAddictDown 1;
 			DelicateDown 1;
@@ -434,14 +437,14 @@ This is the wishing for a change rule:
 		if djinn is waiting for a wish:
 			if the wish history of djinn is 0 and (there is a worn diaper or there is a worn messed knickers):
 				let D be a random worn knickers;
-				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
+				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your [printed name of D].";[Maybe have Djinn punish by adding locking plastic panties, with key given to matron?]
 				if D is wet or D is messed:
 					say "A cloud of baby powder releases from the seams of your [MediumDesc of D]. It feels[if D is perceived messed], and smells,[end if] as if it were brand new!";
 					fully clean D;
 				otherwise:
 					say "[first custom style]'Hmm, looks like your diaper was already clean. Not my problem though.'[roman type][line break]";
 			otherwise if the wish history of djinn is 0:
-				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of M] folded arms and waves them at your crotch.[line break][first custom style]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
+				say "[DjinnDisappointedBefore of djinn][BigNameDesc of djinn] unfolds [his of djinn] folded arms and waves them at your crotch.[line break][first custom style]'Wait a minute, you're not even wearing a diaper! Let me fix that.'[roman type][line break]";
 				if there are worn knickers:
 					let K be a random worn knickers;
 					say "You suddenly feel your [ShortDesc of K] vanish with a gust of air around your crotch!";
@@ -501,7 +504,7 @@ To compute (M - djinn) protecting against (X - a monster):
 	otherwise:
 		compute default protecting of M.
 
-To say SexSubmissionFlav of (M - djinn): [this is customized because I rewrote the scene so the player is floating a couple feet off the ground.]
+To say SexSubmissionFlav of (M - djinn): [this is customised because I rewrote the scene so the player is floating a couple feet off the ground.]
 	if diaper quest is 1:
 		say "[one of]Recognising how much more powerful [NameDesc of M] is than you, you decide not to fight back[or]As humiliating as it is to let [him of M] have [his of M] way, it's not like you can do much about it anyway[or]You submit to the superior being[in random order].";
 	otherwise if the relevant sex addiction of M < 10:
@@ -818,7 +821,7 @@ To say TaxReturnDismay of (M - djinn):
 	if L is held or L is in the location of M:
 		say "You put your hand over the open spout of the lamp, smirking up at [NameDesc of M] as [he of M] once again takes flight.[line break][speech style of M]'[one of]Satisfied with such a trinket...I will be back, mortal. Mark my words!'[or]All for something so trivial...you will see me again, mortal! That is a promise!'[in random order][roman type][line break]";
 	otherwise:
-		say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight.  [big he of M] shouts at you as [he of M] flees.[speech style of M]'[one of]Congratulations on your victory! But I always come back, mortal! Always!'[or]Enjoy your small victory, mortal. I can never be fully defeated!'[in random order][roman type][line break]".
+		say "[BigNameDesc of M] seems to be weakening rapidly, and [he of M] begins to take flight. [big he of M] shouts at you as [he of M] flees.[speech style of M]'[one of]Congratulations on your victory! But I always come back, mortal! Always!'[or]Enjoy your small victory, mortal. I can never be fully defeated!'[in random order][roman type][line break]".
 To say TaxReturnFail of (M - djinn):
 	let L be a random magic lamp;
 	if L is held or L is in the location of M:
@@ -922,7 +925,7 @@ To say DominanceFailure of (M - djinn):
 	otherwise if player-fucker is belly:
 		say "[line break][variable custom style]'I want to see what you look like with urine on your face.'[roman type][line break]";
 	otherwise:
-		say "[line break][variable custom style]'I wish for a ride of your [DickDesc of M], no wait, give me THREE wishes.'[roman type][line break]";[player gets him in bed, but is forced to use wishes to actually make things work. Stuff like "oh he can't get hard, or oh he prematurely ejaculated., etc.]
+		say "[line break][variable custom style]'I wish for a ride of your [DickDesc of M], no wait, give me THREE wishes.'[roman type][line break]"; [player gets him in bed, but is forced to use wishes to actually make things work. Stuff like "oh he can't get hard", or oh he prematurely ejaculated., etc.]
 
 To decide which number is the mental dominance roll for (M - djinn):
 	let S be 1;
@@ -1076,7 +1079,7 @@ To ride dominate (M - djinn):
 			slightDignify;
 			say AfterDominationComment 3 of M;
 		otherwise:[No, keep going!]
-			say "You speed up, determined to see things through to the end. [BigNameDesc of M] groans as [his of M] [DickDesc of M] explodes, throbbing powerfully as it fills your [variable F] with wave after wave of warmth. [if the semen addiction of the player < 6]The feeling of [his of M] [semen] moving around inside you is more than enough to make you regret your decision, but it's too late to stop now. You force yourself to power through, emitting a moan as you go[otherwise if the semen addiction of the player < 14]The feeling of [his of M] [semen] moving around inside you is more arousing than it has any right to be, and you let out a breathless moan as you go[otherwise]The feeling of [his of M] [semen] moving around inside you is just what you need to get there, and you emit a shuddering moan as you go right[end if] over the edge. An intense orgasm washes over your body as you [if the size of penis > 0]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices, [otherwise]arch your back, [end if] and [NameDesc of M]'s softening [DickDesc of M] slowly slips out of you.";
+			say "You speed up, determined to see things through to the end. [BigNameDesc of M] groans as [his of M] [DickDesc of M] explodes, throbbing powerfully as it fills your [variable F] with wave after wave of warmth. [if the semen addiction of the player < 6]The feeling of [his of M] [semen] moving around inside you is more than enough to make you regret your decision, but it's too late to stop now. You force yourself to power through, emitting a moan as you go[otherwise if the semen addiction of the player < 14]The feeling of [his of M] [semen] moving around inside you is more arousing than it has any right to be, and you let out a breathless moan as you go[otherwise]The feeling of [his of M] [semen] moving around inside you is just what you need to get there, and you emit a shuddering moan as you go right[end if] over the edge. An intense orgasm washes over your body as you [if the player is possessing a penis]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices, [otherwise]arch your back, [end if] and [NameDesc of M]'s softening [DickDesc of M] slowly slips out of you.";
 			orgasm M;
 			orgasm;
 			moderateDignify;
@@ -1091,14 +1094,14 @@ To ride dominate (M - djinn):
 		let R be the semi-dominance roll for M;
 		if R < 0:[You give up]
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-			say "[line break][variable custom style]'...You win. I wish you were wearing a condom.'[line break][line break][speech style of M]'Granted!'[roman type][line break]A layer of latex materializes around [NameDesc of M]'s shaft in the nick of time, immediately filling with several bursts of warmth. [if the semen addiction of the player < 6]The feeling of the slimy bulge moving around inside of you is more than enough to make you regret your wish, but its better than the alternative. You force yourself to speed up, knowing you have to finish before [he of M] starts to go soft. Its tough, but you just barely manage, emitting a frustrated moan as you go[otherwise if the semen addiction of the player < 14]The feeling of that slimy bulge moving around inside of you is more arousing than it has any right to be, and for a moment it makes you regret your wish. You speed up so you can cum before [he of M] starts going soft, moaning breathlessly as you go[otherwise]Knowing you were so close to taking [his of M] load inside of you is too much for you to bear, and you emit a shuddering moan as you go right[end if] over the edge. An intense, but unsatisfying orgasm washes over your body as you [if the size of penis > 0]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices, [otherwise]arch your back, [end if] and [NameDesc of M]'s [DickDesc of M] slips out of you as you roll off [him of M].";
+			say "[line break][variable custom style]'...You win. I wish you were wearing a condom.'[line break][line break][speech style of M]'Granted!'[roman type][line break]A layer of latex materialises around [NameDesc of M]'s shaft in the nick of time, immediately filling with several bursts of warmth. [if the semen addiction of the player < 6]The feeling of the slimy bulge moving around inside of you is more than enough to make you regret your wish, but its better than the alternative. You force yourself to speed up, knowing you have to finish before [he of M] starts to go soft. Its tough, but you just barely manage, emitting a frustrated moan as you go[otherwise if the semen addiction of the player < 14]The feeling of that slimy bulge moving around inside of you is more arousing than it has any right to be, and for a moment it makes you regret your wish. You speed up so you can cum before [he of M] starts going soft, moaning breathlessly as you go[otherwise]Knowing you were so close to taking [his of M] load inside of you is too much for you to bear, and you emit a shuddering moan as you go right[end if] over the edge. An intense, but unsatisfying orgasm washes over your body as you [if the player is possessing a penis]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices, [otherwise]arch your back, [end if] and [NameDesc of M]'s [DickDesc of M] slips out of you as you roll off [him of M].";
 			moderateHumiliate;
 			now player-fucking is DOMINANT-SHAMEFUL;
 			stimulate F from M;
 			say AfterDominationComment 4 of M;
 		otherwise:
 			if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
-			say "[line break][variable custom style]I don't care if I get creampied! [big he of M] isn't getting [his of M] way![roman type][line break]You look [him of M] in the eye, not even bothering to fight [his of M] grip as you speed up. [BigNameDesc of M] rolls [his of M] eyes as [his of M] [DickDesc of M] explodes, throbbing powerfully as it fills your [variable F] with warmth. [if the semen addiction of the player < 6]The feeling of [his of M] [semen] moving around inside you is more than enough to make you have second thoughts about your wish, but you don't stop. A triumphant moan escapes your lips as your[otherwise if the semen addiction of the player < 14]The feeling of [his of M] [semen] moving around inside you is more arousing than it has any right to be, and you let out a breathless moan as your[otherwise]The feeling of [his of M] [semen] moving around inside you is just what you need to get there, and you emit a shuddering moan as your[end if] [if F is asshole and the player is male]prostate tightens up. [otherwise]muscles clamp down around [his of M] shaft. [end if]An intense orgasm crashes over your body as you [if the size of penis > 0]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices [otherwise]arch your back, [end if] and falling forward onto your partner's perfect chest as you contemplate the best way to use your wish.";
+			say "[line break][variable custom style]I don't care if I get creampied! [big he of M] isn't getting [his of M] way![roman type][line break]You look [him of M] in the eye, not even bothering to fight [his of M] grip as you speed up. [BigNameDesc of M] rolls [his of M] eyes as [his of M] [DickDesc of M] explodes, throbbing powerfully as it fills your [variable F] with warmth. [if the semen addiction of the player < 6]The feeling of [his of M] [semen] moving around inside you is more than enough to make you have second thoughts about your wish, but you don't stop. A triumphant moan escapes your lips as your[otherwise if the semen addiction of the player < 14]The feeling of [his of M] [semen] moving around inside you is more arousing than it has any right to be, and you let out a breathless moan as your[otherwise]The feeling of [his of M] [semen] moving around inside you is just what you need to get there, and you emit a shuddering moan as your[end if] [if F is asshole and the player is male]prostate tightens up. [otherwise]muscles clamp down around [his of M] shaft. [end if]An intense orgasm crashes over your body as you [if the player is possessing a penis]douse the bed with your [load], [otherwise if the player is female]douse the bed with your juices [otherwise]arch your back, [end if] and falling forward onto your partner's perfect chest as you contemplate the best way to use your wish.";
 			orgasm M;
 			orgasm;
 			strongDignify;
@@ -1129,7 +1132,7 @@ To say AfterDominationComment (N - a number) of (M - djinn):
 		set next numerical response to "wish for cleanup";
 		set next numerical response to "wish for friendship";
 		set next numerical response to "wish for tightness";
-		if the player is male, set next numerical response to "wish for a bigger dick";
+		if the player is possessing a penis, set next numerical response to "wish for a bigger dick";
 		compute multiple choice question;
 		let CNR be the chosen numerical response;
 		if the printed name of CNR is "wish for relief":
@@ -1193,23 +1196,13 @@ To say TauntRejected of (M - djinn):
 	say "[speech style of M]'Haha. Very interesting!'[roman type][line break][BigNameDesc of M] seems to be putting even more effort into fighting you.".
 
 To say PleadRejected of (M - djinn):
-	say "[speech style of M]'Quiet, please.'[roman type][line break]".
+	say "[speech style of M]'Quiet, [please].'[roman type][line break]".
 
 Section 2 - Questioning
 
-To compute annoyance of (M - djinn):
-	if M is unfriendly:
-		say "The djinn ignores your question. [line break][speech style of M]'Now is not the time for idle chatter.'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'Begone, young one. You begin to bore me.'[roman type][line break]";
-
 To compute teaching of (M - djinn):
 	say "[speech style of M]'There's another entity lurking around here that grants wishes... If you think of me whilst dropping your jewellery into the well, I think she will look upon you fondly.'[roman type][line break]";
-	teach wishenhancing;
-	if the questioned of M <= the mild-annoyance threshold of M:
-		ModerateConvoFatigue M;
-	otherwise:
-		HeavyConvoFatigue M.
+	teach wishenhancing.
 
 To say WhereAnswer of (M - djinn):
 	say "[speech style of M]'The cosmos.'[roman type][line break]".

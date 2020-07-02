@@ -24,22 +24,24 @@ A later time based rule:
 				beginCall of V;
 				if the number of barriers in the location of the player < 1:
 					if V is in the Hotel:
-						say "[bold type]A modesty shutter clatters down over each of the doors, trapping you in![roman type]";
+						say "[bold type]A modesty shutter clatters down over each of the doors, trapping you in!";
 						now a random modesty shutter is in the location of the player;
 					otherwise if V is in the Dungeon:
-						say "[bold type]A heavy wooden door swings shut over each of the entrances, trapping you in the room![roman type]";
-						now a random reinforced-door is in the location of the player;
+						say "[bold type]A heavy wooden door swings shut over each of the entrances, trapping you in the room!";
+						now reinforced-door is in the location of the player;
 					otherwise if V is in the Woods:
-						say "[bold type]Vines rapidly grow up in the spaces between the trees, trapping you in the room![roman type]";
-						now a random vine-wall is in the location of the player;
+						say "[bold type]Vines rapidly grow up in the spaces between the trees, trapping you in the room!";
+						now vine-wall is in the location of the player;
 					otherwise: [failsafe]
-						say "[bold type]A wall of fire appears at each exit, trapping you in![roman type]";
-						now a random flaming-wall is in the location of the player;
+						say "[bold type]A wall of fire appears at each exit, trapping you in!";
+						now flaming-wall is in the location of the player;
+					say "[roman type][line break]";
 			otherwise:
 				if the call-cooldown of V > 0, decrease the call-cooldown of V by seconds;
 				CheckActivation of V;
 		otherwise:
-			compute ongoingCall of V;
+			if V is in the location of the player, compute ongoingCall of V;
+			otherwise compute reset of V; [For example if the player is dragged or teleported away]
 	otherwise:
 		repeat with AM running through video-monitors:
 			if the video-caller of AM is not the throne:
@@ -67,13 +69,30 @@ To beginCall of (C - a video-monitor):
 To say FriendStatus of (M - a monster):[The status of your friend could potentially change]
 	say "the face of your [RelationDesc of M] [MediumDesc of M] is staring back at you. ";
 
+[Two important things:
+Favour
+	- If your friend's favour is too high when they see you doing something disgraceful, they will share the video, which is super damaging to your reputation
+	- Once your friend's favour passes into the unfriendly area, they can show up as a patron
+Remembered appearance
+	- After they see you looking really shocking, seeing a lower appearance level will increase favour
+	- Seeing an appearance level that's too much higher than the old one will decrease favour
+]
 To say NewAppearanceReaction of (M - a monster):
 	if a random number between 0 and the number of applicable humiliating situations is 0:
 		say GenericSituationReaction of M;
 	otherwise:
 		say FriendReaction of M to a random applicable humiliating situation;
-	if M is real-life patron and the appearance of the player > the friend-max-appearance of M, now the friend-max-appearance of M is the appearance of the player;
-	if the player is naked and M is not real-seenNaked, now M is real-seenNaked.
+	if M is real-life patron:
+		let X be the appearance of the player - the friend-max-appearance of M;
+		if X > 0:
+			if X >= 6:[if you exceed the current max by nine, your friend is too shocked, and they're much more likely to share around your video]
+				now M is friend-shocked;
+			otherwise:
+				FavourDown M by 2;
+			now the friend-max-appearance of M is the appearance of the player;
+		otherwise if X < 0:
+			FavourUp M by 1;
+		if the player is naked and M is not real-seenNaked, now M is real-seenNaked.
 
 To say GenericSituationReaction of (M - a monster):
 	let P be the appearance of the player;
@@ -140,7 +159,7 @@ To say FightObserve of (M - a slutty sister) with (N - a monster):
 	otherwise say "[speech style of M]'[one of]Once combat begins, it generally doesn't take long for the subject's fuck or flight response to kick in.'[or]Although some subjects do choose to engage in combat, they usually lose, so we see it as more of a formality.'[or]Early on, we have to begin most encounters by making the subject docile, but later on, the subject will learn to be docile naturally.'[or]We care about our investors, so we dull any pain that you might experience within the situation.'[or]Repressed submissives like [NameBimbo] here will often take a while to break, but sometimes we get lucky.'[at random][roman type][line break][moderateHumiliateReflect]";
 
 To say SexObserve of (M - a slutty sister) with (N - a monster):
-	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safeword we told you about?[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.[end if]'[or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
+	say "[first custom style]'[one of]As you can see, even if [he of the player] pretends not to enjoy it, [his of the player] vital signs definitely won't lie.'[or]As always, tap the button on the upper right of your screens to change your viewing angle.'[or]It's important to introduce the subject to sex early and often, so they get addicted. We're very confident it works, teehee!'[or][if the reaction of the player is 0]It's true [he of the player]'s resisting, but remember that safeword we told you about?'[otherwise]See? Even if we give the subject a safeword, they'd think twice about escaping something that feels so good.'[end if][or]Ooh, so your hands ARE as strong as they look...no no, that's included in the price... Teehee, I'll think about it, but I'm contractually obligated to remind you that [NameBimbo] is meant to be the centre of attention right now!'[or]If you look here, you'll see a diagram of [NameBimbo]'s most sensitive internal areas.'[or]Sir, if you keep doing that, I'm going to have to...really, double?...-ahem, we'll have to discuss how I can earn that after we finish the conference.'[then at random][if the player is not disgraced and the player is able to speak][line break][variable custom style]'[one of]Stop watching me!'[or]This isn't a show!'[or]This is so humiliating! It's like I'm a lab rat!'[in random order][end if][roman type][line break][strongHumiliateReflect]".
 
 [Determines the "video" content that is produced by the monitor when the player gets beaten in combat]
 To compute disgraceful event of (C - a video-monitor):
@@ -180,6 +199,9 @@ To compute endCall of (C - a video-monitor):
 	otherwise:
 		compute HangUpUndisgraced of C with M;
 		FavourUp M by 1;
+	compute reset of C.
+
+To compute reset of (C - a video-monitor):
 	now the video-caller of C is the throne;
 	now the call-cooldown of C is 300.
 

@@ -70,10 +70,15 @@ To compute RagFinding:
 	now ragFound is nothing;
 	if the semen taste addiction of the player >= 8 and the player is not overly full, now ragFound is arms;
 	unless the player is disgraced and the semen taste addiction of the player > 11 and ragFound is arms:
-		repeat with C running through carried clothing:
-			if the total-soak of C < the soak-limit of C and C is appropriate for cleaning and ragFound is not clothing:
-				say "(with the [printed name of C])[line break]";
-				now RagFound is C;
+		let P be a random held pocketwipes;
+		if P is pocketwipes:
+			say "(with [NameDesc of P])[line break]";
+			now RagFound is P;
+		otherwise:
+			repeat with C running through carried clothing:
+				if the total-soak of C < the soak-limit of C and C is appropriate for cleaning and ragFound is not clothing:
+					say "(with [NameDesc of C])[line break]";
+					now RagFound is C;
 	if RagFound is nothing and the semen taste addiction of the player >= 8, now the second noun is arms;
 	if the noun is not body part:
 		say "You can't clean that.";
@@ -95,21 +100,25 @@ Check cleaning it with:[TODO: wiping into an open vessel]
 			say "You're a bit busy at the moment." instead;
 	if the noun is clothing, try rinsing the noun in the second noun instead;
 	if the noun is not body part, say "You can only clean a body part." instead;
-	if diaper quest is 1, say "[if the make-up of face > 0 and the noun is face]That won't work, you'll need to wash in water[otherwise]That won't do anything[end if]." instead;
+	if the second noun is pocketwipes and the noun is face:
+		if the make-up of face <= 0 and the semen coating of face <= 0, say "That won't do anything." instead;
+	otherwise if diaper quest is 1:
+		say "[if the make-up of face > 0 and the noun is face]That won't work, you'll need to wash in water[otherwise]That won't do anything[end if]." instead;
+	otherwise:
+		if the semen coating of the noun <= 0 and (the noun is not hair or the second noun is not pocketwipes or the urine coating of hair <= 0), say "Your [noun] [if noun is thighs or noun is breasts]are[otherwise]is[end if] already [semen] free." instead;
 	if the noun is not face and the noun is not breasts and the noun is not belly and the noun is not thighs and the noun is not hair, say "You can only clean your face, hair, chest, belly or thighs at the moment." instead;
-	if the noun is hair:
-		if the semen coating of the noun is 1, say "You can't get that last bit of [semen] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
-		if the semen coating of the noun is 0 and the urine coating of the noun > 0, say "You can't get the [urine] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
-	if the semen coating of the noun < 1, say "Your [noun] [if noun is thighs or noun is breasts]are[otherwise]is[end if] already [semen] free." instead;
+	if the noun is hair and the second noun is not pocketwipes:
+		if the semen coating of hair is 1, say "You can't get that last bit of [semen] out of your hair just by rubbing, you'll need to wash yourself with water." instead;
+		if the semen coating of hair is 0 and the urine coating of hair > 0, say "You can't get the [urine] out of your hair just by rubbing, you'll need to wash yourself in water." instead;
 	if the class of the player is living sex doll, say "You don't have the manual dexterity to do that!" instead;
-	if the second noun is not clothing and the second noun is not arms, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
+	if the second noun is not clothing and the second noun is not arms and the second noun is not pocketwipes, say "That's not something you can clean with. Maybe try a piece of clothing?" instead;
 	if the second noun is clothing:
 		if the second noun is pink-spraybottle, say "That can only be used for cleaning puddles and clothing." instead;
-		if the player is flying and the second noun is not held by the player, say "The [printed name of the second noun] is on the ground, and you're not." instead;
+		if the player is flying and the second noun is not held by the player, say "[BigNameDesc of the second noun] is on the ground, and you're not." instead;
 		if the second noun is not appropriate for cleaning, say "That's not something you can clean with. Maybe try a piece of clothing actually made out of soft fabric?" instead;
 		if the semen-soak of the second noun + the urine-soak of the second noun + the milk-soak of the second noun >= the soak-limit of the second noun, say "The [printed name of second noun] is too covered in bodily fluids to effectively remove any more from your body." instead;
 		if the second noun is worn and the second noun is not gloves, say "You are currently wearing the [printed name of second noun], so it would be difficult to clean yourself with it." instead;
-	otherwise if the player is not craving semen: [i.e. If the second noun is arms]
+	otherwise if the second noun is arms and the player is not craving semen:
 		if the semen taste addiction of the player < 8 and the thirst of the player < 4, say "You can't bring yourself to do that[if the semen addiction of the player > 12]. And even if you did like the taste, you love the feeling of it too much to remove it[end if]!" instead;
 	if the second noun is not acceptableCumRag:
 		if the second noun is arms and the semen addiction of the player > 15 and the semen addiction of the player > the semen taste addiction of the player:
@@ -140,6 +149,7 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with (C - a clothing):
+	allocate 6 seconds;
 	say "You use [NameDesc of C] to clean as much [semen] from your [P] as possible.[if the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
 	while ((the semen coating of P > 0 and P is not hair) or the semen coating of P > 1) and the semen-soak of C + the urine-soak of C + the milk-soak of C < the soak-limit of C:
 		decrease the semen coating of P by 1;
@@ -152,8 +162,23 @@ To 2Clean (P - a body part) with (C - a clothing):
 	otherwise if the semen coating of P is 1 and P is hair:
 		say "Your hair is now almost completely clean, but you can't get every last strand of cum out without washing in water.";
 	otherwise:
-		say "[BigNameDesc of C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].";
-	allocate 6 seconds.
+		say "[BigNameDesc of C] has become completely saturated and there is still [if the semen coating of P > 3]lots of[otherwise]some[end if] [semen] on your [if P is face]face[otherwise][variable P][end if].".
+
+[!<2CleanBodyPartWithPocketwipes>+
+
+REQUIRES COMMENTING
+
++!]
+To 2Clean (P - a body part) with (C - a pocketwipes):
+	allocate 6 seconds;
+	say "You use [NameDesc of C] to wipe your [P] clean.[if the semen coating of P > 0 and the semen addiction of the player < 6][line break][first custom style][one of]Gross.[or]Yuck.[or]Disgusting.[or]Well, that's a little bit better at least.[then at random][roman type][line break][end if]";
+	if the semen coating of P > 0 or (P is hair and the urine coating of hair > 0), say "Your [if P is face]face is[otherwise if P is hair]hair is[otherwise if P is belly]belly is[otherwise][variable P] are[end if] now completely clean.";
+	if P is face and the make-up of face > 0, say "Your make up [if permanent makeup is 1]is magically permanent, and therefore unaffected[otherwise]has all been washed away[end if].";
+	say "You discard the empty packet of wipes.";
+	now the semen coating of P is 0;
+	if P is face and permanent makeup is 0, FaceDown the make-up of face;
+	if P is hair, now the urine coating of hair is 0;
+	destroy C.
 
 [!<2CleanBodyPartWithLimb>+
 
@@ -161,15 +186,16 @@ REQUIRES COMMENTING
 
 +!]
 To 2Clean (P - a body part) with (C - a limb):
+	allocate 6 seconds;
 	say "You use your fingers to scrape a bit of [semen] from your [P] and eat it.[if the semen taste addiction of the player > 11][line break][second custom style][one of]Mmm, tasty![or]Yummy![or]Yum yum![or]So good![then at random][roman type][line break][end if] ";
 	let R be a random number between 2 and 4;
 	if the semen coating of P < R, now R is the semen coating of P;
 	decrease the semen coating of P by R;
 	if semen taste addiction of the player > 14 and the semen coating of P < 1, say "[paragraph break][second custom style]Aww, too bad it's all gone now.[roman type][line break]";
 	now semen-encountered is 1;
-	StomachSemenUp (R + 1) / 2;
-	allocate 6 seconds;
-	humiliate 20 * R.
+	FaceFill semen by (R + 1) / 2;
+	suggest swallowing;
+	if the semen volume of face > 0, SemenTasteAddictUp 1.
 
 [!<ReportCleaningItWithWhenTheSecondNounIsClothing>+
 

@@ -87,15 +87,15 @@ To say MonsterDesc of (M - a wrestler):
 			say "This [man of M] is covered head to toe in a shiny black latex catsuit. It conceals every inch of [his of M] skin except the lower half of [his of M] face and [his of M] eyes. Other than that it completely seals [him of M] in, although a zip at the crotch suggests that may be under [his of M] control. [if lady fetish < 2]The figure-hugging rubber outfit does nothing to conceal [his of M] generous curves. The word 'Voluptuous' perfectly describes [his of M] body, from [his of M] two perfectly round G-cup breasts down to [his of M] alluringly wide hips and shapely thighs.[otherwise]The figure-hugging rubber outfit perfectly accentuates [his of M] muscular body. The word 'Powerful' perfectly describes [him of M], from [his of M] rippling pecs down to [his of M] chiselled abs and huge, bulging biceps[end if]. [big his of M] well-muscled legs are surely balanced on two high black platform fetish heels. The outfit sports a pair of cat ears on top of [his of M] head and has purple accents on the inner thighs, armpits and the back of [his of M] head, all of it working together to give the impression of some kind of wrestling outfit.".
 
 To say MonsterComment of (M - a wrestler):
-	if diaper quest is 0, say "[variable custom style][if the bimbo of the player < 5 and the player is male][one of]Man, that's a pretty hot outfit. I wouldn't mind a poster of [him of M] on my wall.[or][big he of M][']s definitely my type.[stopping][otherwise if the bimbo of the player < 5]How can [he of M] look so happy when [he of M]'s wearing something so constricting?[otherwise if the bimbo of the player < 8][one of]I wonder if [he of M] actually knows how to wrestle.[or][big he of M] looks pretty darn strong. I should be careful.[stopping][otherwise if the bimbo of the player < 11][one of][big he of M] looks like [he of M] could teach me a thing or two...[or]I wonder what it feels like in there.[or]I wish I was as happy as [he of M] looks.[in random order][otherwise if watersports fetish is 1][big he of M] seems kinky. I wonder if I'll be able to keep up?[otherwise if the bimbo of the player < 14]Fuck, [he of M] is hot. I wish I was that hot.[otherwise]Pff, I bet I can fuck better than [him of M], no matter how flexible [he of M] looks.[end if][roman type][line break]".
+	if diaper quest is 0, say "[variable custom style][if the bimbo of the player < 5 and the player is gendered male][one of]Man, that's a pretty hot outfit. I wouldn't mind a poster of [him of M] on my wall.[or][big he of M][']s definitely my type.[stopping][otherwise if the bimbo of the player < 5]How can [he of M] look so happy when [he of M]'s wearing something so constricting?[otherwise if the bimbo of the player < 8][one of]I wonder if [he of M] actually knows how to wrestle.[or][big he of M] looks pretty darn strong. I should be careful.[stopping][otherwise if the bimbo of the player < 11][one of][big he of M] looks like [he of M] could teach me a thing or two...[or]I wonder what it feels like in there.[or]I wish I was as happy as [he of M] looks.[in random order][otherwise if watersports fetish is 1][big he of M] seems kinky. I wonder if I'll be able to keep up?[otherwise if the bimbo of the player < 14]Fuck, [he of M] is hot. I wish I was that hot.[otherwise]Pff, I bet I can fuck better than [him of M], no matter how flexible [he of M] looks.[end if][roman type][line break]".
 
 To set up (M - a wrestler):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is the difficulty-base of M;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
-To decide which number is the difficulty-base of (M - a wrestler):
+To decide which number is the starting difficulty of (M - a wrestler):
 	decide on 8.
 
 To decide which number is the girth of (M - a wrestler):
@@ -120,7 +120,7 @@ Part 1 - Misc Flavour
 
 To say SummoningFlav of (M - a wrestler):
 	if M is in the location of the player:
-		say "The teleporter emits a definitive sounding hum, and light fills the room as a [man of M] covered head to toe in shiny latex materialises on the pad.[line break][speech style of M]'I hope my mistress is ready for me.'[roman type][line break]";
+		say "The teleporter emits a definitive sounding hum, and light fills the room as a [man of M] covered head to toe in shiny latex materialises on the pad.[line break][speech style of M]'I hope my [literalMistress of dominatrix] is ready for me.'[roman type][line break]";
 	otherwise:
 		say "You hear the sound of squeaky rubber clothing coming from another part of the hotel.".
 
@@ -171,16 +171,16 @@ To compute perception of (M - a wrestler):
 			say "[speech style of M]'What are you doing up there, you crazy bitch?!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 8 for M;
 		otherwise if the class of the player is royal slave:
-			say "[speech style of M]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
+			say "[speech style of M]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my [literalMistress of dominatrix]?'[end if][roman type][line break]";
 			alwayscutshow figure of wrestler interact 7 for M;
 		otherwise if the class of the player is latex fetish model:
-			say "[speech style of M]'Hey, sister! I didn't know mistress had another rubber slave. Let's fight to see who gets to be on top!'[roman type][line break]";
+			say "[speech style of M]'Hey, sister! I didn't know [literalMistress of dominatrix] had another rubber slave. Let's fight to see who gets to be on top!'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 11 for M;
 		otherwise if the class of the player is maid:
 			say "[speech style of M]'[if watersports fetish is 1 and the urinal-boredom of M is 0]Oooh, a slutty maid! If you're staff, I guess that kind of makes me your boss? I know a job that's perfect for you. Come with me!'[otherwise]Hey, you're staff, aren't you? That means you have to let me do whatever I want to you, right?'[end if][roman type][line break]";
 			alwayscutshow figure of wrestler interact 5 for M;
 		otherwise if the player is a sissy:
-			say "[speech style of M]'Oooh! A real life sissy! My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
+			say "[speech style of M]'Oooh! A real life sissy! My [literalMistress of dominatrix] has been looking for a good sissy slave for ages.'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 5 for M;
 		otherwise:
 			say "[speech style of M]'Hey, wanna wrestle? Winner gets to be on top!'[roman type][line break]";
@@ -218,11 +218,11 @@ To compute DQ perception of (M - a wrestler):
 		alwayscutshow figure of wrestler interact 5 for M;
 		anger M;
 	otherwise if the player is a sissy:
-		say "[speech style of M]'Oooh! A real life sissy! My Mistress has been looking for a good sissy slave for ages.'[roman type][line break]";
+		say "[speech style of M]'Oooh! A real life sissy! My [literalMistress of dominatrix] has been looking for a good sissy slave for ages.'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 5 for M;
 		anger M;
 	otherwise if there is worn bondage:
-		say "[speech style of M]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my mistress?'[end if][roman type][line break]";
+		say "[speech style of M]'Ooh, another slave! Can I be your friend? [if watersports fetish is 1]Winner chooses the game we play!'[otherwise]Do you want to meet my [literalMistress of dominatrix]?'[end if][roman type][line break]";
 		alwayscutshow figure of wrestler interact 7 for M;
 		anger M;
 	otherwise if M is unfriendly:
@@ -511,7 +511,7 @@ To say StrikingFailureFlav of (M - a wrestler) on (B - a body part):
 This is the wrestler friendly convinced rule:
 	let M be current-monster;
 	if presented-orifice is face:[she rejects you if you're gagged.]
-		if there is a worn chastity cage or the player is gagged or (the player is male and the size of penis is 0) or (the player is female and vagina is actually occupied):
+		if there is a worn chastity cage or the player is gagged or (the player is male and the player is not possessing a penis) or (the player is possessing a vagina and vagina is actually occupied):
 			if watersports fetish is 1, compute friendly drink of M;
 			otherwise say PresentFriendlyRejectionFlav of M;
 		otherwise:
@@ -752,7 +752,7 @@ To say MasturbationStartFlav of (M - a wrestler):
 
 To say DiaperMasturbationFlav of (M - a wrestler):
 	let D be a random worn diaper;
-	say "[BigNameDesc of M] [one of]holds the powerful vibrating wand over your [MediumDesc of D] at the most sensitive spot![or]moves the head of the vibrating wand around in small circles over the front of your [MediumDesc of D].[or][if the size of penis > 0]grips the tip your [ShortDesc of penis] through your padding and presses the vibrating wand against your shaft[otherwise]pushes the vibrating wand into your padding as hard as [he of M] can[end if]![in random order]".
+	say "[BigNameDesc of M] [one of]holds the powerful vibrating wand over your [MediumDesc of D] at the most sensitive spot![or]moves the head of the vibrating wand around in small circles over the front of your [MediumDesc of D].[or][if the player is possessing a penis]grips the tip your [ShortDesc of penis] through your padding and presses the vibrating wand against your shaft[otherwise]pushes the vibrating wand into your padding as hard as [he of M] can[end if]![in random order]".
 
 To say VanillaMasturbationFlav of (M - a wrestler):
 	say "[if the player is female][BigNameDesc of M] keeps holding the vibrating wand against your clit and [vagina]![otherwise][BigNameDesc of M] keeps holding the vibrating wand against the head of your [ShortDesc of penis]![end if]".
@@ -955,7 +955,7 @@ To compute unique dominance reward of (M - a wrestler):[She doesn't increase her
 
 To say AfterDominationComment (N - a number) of (M - a wrestler):
 	if N is 1, say "[speech style of M]'[one of]Thanks for the yummy piss!'[or]Thanks for making me your toilet!'[or]I love toilet time...'[at random][roman type]";
-	if N is 2, say "[speech style of M]'[one of]You should come see my mistress sometime![or]There's no way I'm gonna let myself lose to you again! Get ready, hot stuff!'[or]Let's see if you can beat me like that next time, sexy!'[at random][roman type]".
+	if N is 2, say "[speech style of M]'[one of]You should come see my [literalMistress of dominatrix] sometime![or]There's no way I'm gonna let myself lose to you again! Get ready, hot stuff!'[or]Let's see if you can beat me like that next time, sexy!'[at random][roman type]".
 
 To say DominanceFailure of (M - a wrestler):
 	say "You grapple with [NameDesc of M] until [he of M] overpowers you and pins you on the ground underneath [him of M].";
@@ -963,7 +963,7 @@ To say DominanceFailure of (M - a wrestler):
 To compute failed dominance punishment of (M - a wrestler):
 	let P be a random worn bottom level protection clothing;
 	if the excitement of M > 0 and the player is getting very unlucky:
-		if the size of penis < 4 and the size of penis > 0 and asshole is not actually occupied:
+		if the size of penis < 4 and the player is possessing a penis and asshole is not actually occupied:
 			say "[big he of M] giggles as [he of M] [if P is clothing]pulls aside your [ShortDesc of P][otherwise]pinches your [sissy-penis] between [his of M] thumb and forefinger[end if].[line break][speech style of M]'I KNEW it'd be cute! I wonder if I can make the little guy cum?'[roman type][line break]";
 			let R be a random number between 1 and 3;
 			say "You watch as [he of M] puckers [his of M] lips, making an exaggerated smooching sound as [he of M] plants them on your [if the player is horny]painfully hard[otherwise if the player is a bit horny]hard[otherwise]semi-soft[end if] [ShortDesc of penis].";
@@ -979,7 +979,7 @@ To compute failed dominance punishment of (M - a wrestler):
 					Satisfy M;
 			if M is interested:
 				Bore M;
-		otherwise if the size of penis > 0:
+		otherwise if the player is possessing a penis:
 			say "[big he of M] unzips [his of M] catsuit, revealing [his of M] wet, rosy vagina.[line break][speech style of M]'I really wanted to fuck, but losers don't get sex, so I came up with a fun punishment!'[roman type][line break][big he of M] straddles your [if P is clothing][ShortDesc of P][otherwise][Shortdesc of penis][end if] with [his of M] bare sex and begins to grind back and forth. It feels good, but [if P is clothing]you can barely feel it through the [clothing-material of P][otherwise][big he of M] moves too slowly for you to get very much of anything out of it[end if]. [big he of M] puts you through several minutes of slow torture, somehow bringing [himself of M] to orgasm after orgasm. You have no choice but to lie there and endure it until [he of M] finally gets up, leaving you achingly hard and completely soaked in [his of M] feminine juices.";[she has a bunch of vibrators in there, the cheater]
 			passively stimulate penis times 3;
 			Satisfy M;
@@ -1050,7 +1050,7 @@ To say RepeatResponse of (M - a wrestler):
 		say "[one of][BigNameDesc of M] ignores you.[or][BigNameDesc of M] smiles, silently retaining [his of M] aggressive stance[at random]";
 		alwayscutshow figure of wrestler cutscene 3 for M;
 	otherwise:
-		say "[speech style of M]'[one of]Hey sexy. How have things been going for you?'[or]Hey babe! Remind me to wrestle you sometime.'[or]Hi! [if largeness of breasts > 3]You know, I[']d really like a chance to play with those tits if you'd let me[otherwise]You know, I think you'd look really hot with big tits[end if].'[or]Hey! Have you met my mistress yet?'[or]Hey there. Maybe you and I should go put on a show for my mistress.'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]Hey sexy. How have things been going for you?'[or]Hey babe! Remind me to wrestle you sometime.'[or]Hi! [if largeness of breasts > 3]You know, I[']d really like a chance to play with those tits if you'd let me[otherwise]You know, I think you'd look really hot with big tits[end if].'[or]Hey! Have you met my [literalMistress of dominatrix] yet?'[or]Hey there. Maybe you and I should go put on a show for my [literalMistress of dominatrix].'[at random][roman type][line break]";
 		alwayscutshow figure of wrestler interact 6 for M.
 
 [taunting doesn't work on the wrestler]
@@ -1087,8 +1087,7 @@ To say AnnoyedResponse of (M - a wrestler):
 
 To compute annoyed punishment of (M - a wrestler):
 	say "[speech style of M]'[one of]Ooh, you are SO going to regret this.'[or]Haha, I'm so going to get you later.'[at random][roman type]";
-	DifficultyUp M by 2;
-	ApplyFullConvoFatigue to M.
+	DifficultyUp M by 2.
 
 Section 2 - Questioning
 
@@ -1112,23 +1111,11 @@ To say AdviceAnswer of (M - a wrestler):
 	say "[speech style of M]'[one of]Sometimes, it[']s better to crawl around than walk. And I[']m not saying that just because I love to serve!'[or]Latex isn[']t absorbent like other materials, so it's easy clean up if you end up making a mess. It's not just fun to wear, it's practical too!'[or]Acting like a slut gets easier and easier as time goes on, but it never gets any harder. You can fight it, if you hate fun or something, but if you let a guy cum in your mouth once, you remember that feeling forever.'[or]Don[']t just eat candy as soon as you find it. Save it for when you need some energy!'[or]If you don't want the butler to force you to do stuff, always carry around a little bit of jewellery.'[or]Latex isn[']t very flexible. If you[']ve got rubber blocking your crotch, it's easier to tear it off than to move it out of the way. Sure, latex is durable, but it won't hold up forever. If you care about your clothes, take them off before a fuck, or you can just use a zipper like me!'[at random][roman type][line break]";
 	alwayscutshow figure of wrestler interact 14 for M.
 
-To compute annoyance of (M - a wrestler):
-	if M is unfriendly:
-		say "[BigNameDesc of M] ignores your question. [line break][speech style of M]'You should stop talking and start moving if you want any chance of beating me in a fight!'[roman type][line break]";
-		alwayscutshow figure of wrestler cutscene 3 for M;
-	otherwise:
-		say "[speech style of M]'I'm bored of your questions. I just want to follow you and watch your adventure unfold...'[roman type][line break]";
-		alwayscutshow figure of wrestler interact 9 for M.
-
 To compute teaching of (M - a wrestler):
 	if diaper quest is 0:
 		say "[speech style of M]'When someone's shoving their massive cock up your you-know-where, it's important to be able to stay loose and let it happen, otherwise you won't enjoy it properly! Here, let me show you how...'[roman type][line break]";
 		if mythical creature fetish is 1, cutshow figure of wrestler cutscene 1 for M;
 		teach relaxing;
-		if the questioned of M <= the mild-annoyance threshold of M:
-			ModerateConvoFatigue M;
-		otherwise:
-			HeavyConvoFatigue M;
 	otherwise:
 		say "[speech style of M]'Hmm, maybe in a future version I'll have thought of something to teach you.'[roman type][line break]".
 
@@ -1159,7 +1146,7 @@ Definition: a wrestler is willing to give snacks: decide yes.
 Section 5 - Trading
 
 To say MonsterOfferAcceptFlav of (M - a wrestler) to (T - a thing):
-	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my mistress[end if]! Sure, I'll take that off your hands.'[roman type][line break]";
+	say "[speech style of M]'Oh wow, [if T is clothing]that'll look amazing on me[otherwise]that's perfect for my [literalMistress of dominatrix][end if]! Sure, I'll take that off your hands.'[roman type][line break]";
 	alwayscutshow figure of wrestler interact 15 for M.
 
 To say MonsterOfferRejectFlav of (M - a wrestler) to (T - a thing):

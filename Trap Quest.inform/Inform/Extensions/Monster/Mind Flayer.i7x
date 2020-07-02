@@ -34,9 +34,12 @@ To say MonsterDesc of (M - mind flayer):
 To set up (M - mind flayer):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 13;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	anger M.
+
+To decide which number is the starting difficulty of (M - mind flayer):
+	decide on 13.
 
 hastur is an action applying to nothing.
 Carry out hastur:
@@ -56,7 +59,7 @@ Carry out hastur:
 			now mind flayer is in a random placed haunted room;
 			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
 				now mind flayer is in a random placed haunted room;
-		otherwise:
+		otherwise if playerRegion is Dungeon:
 			now mind flayer is in a random placed sandy room;
 			while mind flayer is nearby or mind flayer is in the location of the player or the location of mind flayer is an unplaced room:
 				now mind flayer is in a random placed sandy room;
@@ -70,14 +73,14 @@ To compute perception of (M - mind flayer):
 	now M is interested;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";
 	if the class of the player is living sex doll:
-		say "It doesn't look like it's interested in you.";
+		say "It doesn't look like [he of M]'s interested in you.";
 		bore M for 500 seconds;
 	otherwise:
 		alwayscutshow figure of mindflayer cutscene 1 for M;
 		anger M.
 
 To compute (M - a minotaur) stomping (N - mind flayer):
-	if M is in the location of the player, say "[BigNameDesc of M] angrily glares and stamps at the [N], which looks shockingly nonplussed and crosses its spindly arms. As [NameDesc of M] begins to charge, suddenly the [N] glares harshly and the mighty creature confusedly slams into a wall, head first. As it lays stunned on the ground, the [N] almost casually wraps its tentacles around the beast's head. It lets out a blood-curdling moo as the [N][']s tentacles push their way through its skull and gruesomely extract its brain!";
+	if M is in the location of the player, say "[BigNameDesc of M] angrily glares and stamps at the [N], which looks shockingly nonplussed and crosses [his of N] spindly arms. As [NameDesc of M] begins to charge, suddenly the [N] glares harshly and the mighty creature confusedly slams into a wall, head first. As [he of M] lays stunned on the ground, the [N] almost casually wraps [his of N] tentacles around the beast's head. [big he of M] lets out a blood-curdling moo as the [N][']s tentacles push their way through [his of M] skull and gruesomely extract [his of M] brain!";
 	otherwise say "You hear a blood-curdling moo from [if N is nearby]nearby![otherwise]somewhere in the dungeon![end if]";
 	destroy M;
 	let L be a random off-stage leftover;
@@ -85,7 +88,7 @@ To compute (M - a minotaur) stomping (N - mind flayer):
 	now the leftover-type of L is the leftover-type of M.
 
 To compute (M - a demon lord) stomping (N - mind flayer):
-	if M is in the location of the player, say "[M] growls at the [N], which seems to briefly consider its options before hurriedly backing away.";
+	if M is in the location of the player, say "[M] growls at the [N], which seems to briefly consider [his of N] options before hurriedly backing away.";
 	regionally place N;
 	bore N.
 
@@ -93,9 +96,9 @@ Part 2 - Combat
 
 To say MouthPenetrationFlav of (M - mind flayer):
 	if the raw intelligence of the player > 3:
-		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as it wraps its tentacles around your skull!";
+		say "The creature tentatively sniffs at your forehead, then lets out an exultant shriek as [he of M] wraps [his of M] tentacles around your skull!";
 	otherwise:
-		say "The creature tentatively sniffs at your head, but its expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as it fixes a piercing gaze on you...".
+		say "The creature tentatively sniffs at your head, but [his of M] expression quickly shifts into one of disappointment. This in turn becomes a cruel smirk as [he of M] fixes a piercing gaze on you...".
 
 To compute facial sex of (M - mind flayer):
 	if the raw intelligence of the player > 4:
@@ -128,11 +131,11 @@ To set up sex length of (M - mind flayer) in (B - face):
 
 To compute facial climax of (M - mind flayer):
 	if the raw intelligence of the player > 3 and the feeding of M is 1:
-		say "The creature pulls away its tentacles from your head, seemingly satisfied for the moment.";
+		say "The creature pulls away [his of M] tentacles from your head, seemingly satisfied for the moment.";
 		bore M;
 		cutshow figure of mindflayer cutscene 5 for M;
 	otherwise if the feeding of M is 1:
-		say "The creature pulls its tentacles away, seemingly satisfied for the moment.";
+		say "The creature pulls [his of M] tentacles away, seemingly satisfied for the moment.";
 		bore M;
 		cutshow figure of mindflayer cutscene 6 for M;
 		if there is a worn tattoo and empty-mind tattoo is not worn:
@@ -161,7 +164,7 @@ This is the mind flayer psychic attack rule:
 		otherwise:
 			say "You are able to shake the attack off!";
 	otherwise:
-		say "You feel the creature bear all its will down on you!";
+		say "You feel the creature bear all [his of M] will down on you!";
 		if (10 - a random number between 1 and the raw intelligence of the player) > 0:
 			say "You feel compelled to drop to your knees!";
 			try kneeling;

@@ -1,6 +1,6 @@
 Demoness by Monster begins here.
 
-A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness is usually not soul-seeking. A demoness has a number called channelling. A demoness has a number called soul-timer. The soul-timer of a demoness is usually 300. A demoness can be penis-mode or heel-mode. A demoness is usually heel-mode.
+A demoness is a kind of monster. A demoness is intelligent. The favour of a demoness is usually 8. The leftover-type of a demoness is usually 105. A demoness can be soul-seeking. A demoness is usually not soul-seeking. A demoness has a number called channelling. A demoness can be penis-mode or heel-mode. A demoness is usually heel-mode.
 
 Definition: A demoness is woods dwelling: decide yes.
 
@@ -8,9 +8,7 @@ Definition: a demoness is raunchy: decide yes.
 Definition: a demoness is infernal: decide yes.
 Definition: a demoness is wenchy: decide yes.
 Definition: a demoness is human: decide yes.
-Definition: a demoness is father material:
-	if the player is a august 2019 top donator, decide yes;
-	decide no.
+Definition: a demoness is father material if the player is the donator.
 
 A demoness has a number called excitement. The excitement of a demoness is usually 0.
 
@@ -30,10 +28,11 @@ Definition: a demoness is willing to urinate: decide yes.
 Understand "demon" as demoness.
 
 To say ShortDesc of (M - a demoness):
-	say "demoness".
+	if lady fetish is 2, say "demon";
+	otherwise say "demoness".
 
 To say SoulDesc of (M - a demoness):
-	if the soul-timer of M is -99, say "greater ";
+	if M is power-peaked, say "greater ";
 
 Figure of demoness interact 1 is the file "Special/Cutscene/cutscene-demoness-interact1.png".
 Figure of demoness interact 2 is the file "Special/Cutscene/cutscene-demoness-interact2.png".
@@ -88,18 +87,23 @@ To say MonsterDesc of (M - an abyssal demoness):
 	otherwise:
 		say "An aura of terrifying evil surrounds this [man of M]. [big he of M] [if pregnancy fetish is not 1]has the body of an Olympian swimmer[otherwise]has a statuesque and clearly pregnant figure[end if], but coupled with blue skin and curved horns that give [him of M] a decidedly otherworldly appearance. [if pregnancy fetish is 1][big he of M] is completely naked except for a pair of tall black high heels with glass dildos for stilettos[otherwise][big he of M] is wearing a pair of tall black high heels with glass dildos for stilettos, a provocative black bikini top, and a matching nylon miniskirt, which only barely covers [his of M] crotch[end if]. The air around [him of M] seems to shift and morph as if [he of M] were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering [his of M] face.".
 
+Definition: a demoness (called M) is power-peaked:
+	if M is retaining a soul gem, decide yes;
+	decide no.
+
+
 To say DemonSkin of (M - a demoness):
-	if the soul-timer of M < -99, say "fiery-orange";
+	if M is power-peaked, say "fiery-orange";
 	otherwise say "candy-red".
 
 To say DemonSkin of (M - an abyssal demoness):
-	if the soul-timer of M is -99, say "ebony";
+	if M is power-peaked, say "ebony";
 	otherwise say "midnight-blue";
 
 To say MonsterComment of (M - a demoness):
 	if diaper quest is 0:
 		if the bimbo of the player < 7:
-			if the player is male and transGender is 0, say "[first custom style][one of][big he of M]'s smoking hot. I think it's a bad idea to ask if [he of M] wants to fuck, though.[or]This slut looks like [he of M]'s DTF.[or]I normally think eating [HoleDesc of M] is only for Beta faggots, but... I'd do a lot if I could fuck that [if lady fetish is 2]hunk[otherwise]chick[end if].[or]Man, what is up with those heels? I'd hate to get hit with one of those.[or]Whoa, are those dildos on [his of M] heels? Maybe [he of M]'d let me stick one up [his of M] butt.[in random order]";
+			if the player is gendered male, say "[first custom style][one of][big he of M]'s smoking hot. I think it's a bad idea to ask if [he of M] wants to fuck, though.[or]This slut looks like [he of M]'s DTF.[or]I normally think eating [HoleDesc of M] is only for Beta faggots, but... I'd do a lot if I could fuck that [if lady fetish is 2]hunk[otherwise]chick[end if].[or]Man, what is up with those heels? I'd hate to get hit with one of those.[or]Whoa, are those dildos on [his of M] heels? Maybe [he of M]'d let me stick one up [his of M] butt.[in random order]";
 			otherwise say "[first custom style][one of]Wow, I can't believe how [he of M]'s dressed. Slut.[or]Even someone that beautiful has to play to the male fantasies of this game. Ugh.[or]There is something supernatural about this [man of M].[or]Why not wear a T-shirt that says 'Hey men, come and get me!' Disgusting.[or]Those heels look like they pack a punch, even if they look ridiculous.[or]There's something foreboding about this [man of M].[in random order]";
 		otherwise if the bimbo of the player < 12:
 			say "[variable custom style][one of][big he of M]'s stunning. I'm jealous.[or]Where did [he of M] get [his of M] outfit? It looks... comfy.[or]I don't think I'd win a fight against [him of M], but for some reason... I want to try anyway?[or]Something about [him of M] makes me want to get on my knees.[or][big he of M]'s so tall! If I want [him of M] to see me as an equal I'll have to find a way to get myself to [his of M] level.[or][big he of M] towers over me. I know it's only those heels, but it's strangely intimidating.[or]Something tells me I could be in a lot of pain if I don't submit to [his of M] wishes.[in random order]";
@@ -110,17 +114,20 @@ To say MonsterComment of (M - a demoness):
 To set up (M - a demoness):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 7;
+	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M;
 	now the channelling of M is 0.
+
+To decide which number is the starting difficulty of (M - a demoness):
+	decide on 7.
 
 [Because demoness difficulty frequently varies massively up and down as the game progresses, and she needs to get appropriately harder when the player dominates her.]
 To decide which number is the maxhealth of (M - a demoness):
 	let X be 1;
 	increase X by 7 * (3 + game difficulty);
 	increase X by (the times-dominated of M * 10);
-	if the soul-timer of M is -99, increase X by 50;
+	if M is power-peaked, increase X by 50;
 	decide on X.
 
 To decide which number is the default favour of (M - a demoness):
@@ -139,7 +146,7 @@ To decide which number is the base semen load of (M - a demoness):
 	let X be 2;
 	increase X by (the excitement of M / 2);[if you don't resist, you have to deal with a much smaller load]
 	if X < 0, now X is 1;
-	if the soul-timer of M is -99, increase X by X;
+	if M is power-peaked, increase X by X;
 	decide on X.
 
 Definition: a demoness (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
@@ -152,18 +159,18 @@ Definition: A demoness (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening and the difficulty of M > 4, decide yes;
 	decide no.
 
-To compute unique unsimulated periodic effect of (M - a demoness):
+[To compute unique unsimulated periodic effect of (M - a demoness):
 	if the soul-timer of M > 0 and M is retaining a soul gem:
 		decrease the soul-timer of M by seconds;
 		if M is not in the location of the player and the soul-timer of M < 0:
 			repeat with G running through soul gems retained by M:
 				now G is not retained by M;
 				now G is off-stage;
-				now the soul-timer of M is -99.
+				now the soul-timer of M is -99.]
 
 To DifficultyUp (M - a demoness) by (X - a number):
 	while X > 0:
-		if the soul-timer of M is -99 and a random number between 1 and 2 is 1, increase the raw difficulty of M by 1;
+		if M is power-peaked and a random number between 1 and 2 is 1, increase the raw difficulty of M by 1;
 		increase the raw difficulty of M by 1;
 		decrease X by 1.
 
@@ -287,7 +294,7 @@ To compute perception of (M - a demoness):
 		if there is soiled-diaper retained by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
-			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
+			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
 			alwayscutshow figure of demoness interact 7 for M;
 			say "Your holy aura does seem to have some effect against [him of M], as you are easily able to resist [his of M] dominating aura which tries to make you kneel on command.";
 		otherwise:
@@ -364,7 +371,7 @@ To compute DQ perception of (M - a demoness):
 		if there is soiled-diaper retained by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
-			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
+			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
 			say "Your holy aura does seem to have some effect against [him of M], as you are easily able to resist [his of M] dominating aura which tries to make you kneel on command.";
 		otherwise:
 			say "[speech style of M]'[if M is uninterested]You, child! [otherwise]You know what? [end if][if the player is upright]Kneel down, I feel like punishing someone.'[otherwise]Stay down there, I'm going to punish you.'[end if][roman type][line break]Uh-oh...";
@@ -442,7 +449,6 @@ Carry out kneeling in the presence of a demoness:
 		otherwise if the channelling of M is 1:
 			now the channelling of M is 0;
 			say "[BigNameDesc of M] stops channelling [his of M] energy into the floor, and it returns to its normal cold temperature.";
-			HairRedUp 1;[###MG Is this meant to happen?]
 	repeat with H running through worn clothing:
 		now H is not stuck;
 	repeat with H running through clothing in the location of the player:
@@ -461,18 +467,19 @@ To say WaitingFlav of (M - a demoness):
 	otherwise if the soreness of asshole > 7 and the times-submitted of M > 0:
 		say "You [if the anal sex addiction of the player < 4]shiver with dread[otherwise]hesitate[end if] - you are worried that your [asshole] is much too sore right now for another round with [NameDesc of M]!";
 	otherwise if the anal sex addiction of the player < 4:
-		say "[one of]You stare up at the demoness, still in shock.[or]You pause and wonder if staying downstairs would be the better option.[or]You turn away with a sway of your hips. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Please don't do that thing you clearly want to do.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'[if the player is male]Look, I'm not really into weird otherworldly creatures.'[otherwise]I'd rather be on top.'[end if][roman type][line break][or][line break][first custom style]'[if the player is male]I like women and stuff, but this is just too freaky for me.'[otherwise]I'm not some sort of slut that'll just do as [he of M]'s told.'[end if][roman type][line break][or][line break][first custom style]'[if the player is male]Look, just don't let those heels anywhere near me.'[otherwise]I'd never fuck some freak like you.'[end if][roman type][line break][or][line break][first custom style]'I'm sorry, all right? Please let me go, just this once.'[roman type][line break][in random order]";
+		say "[one of]You stare up at the demoness, still in shock.[or]You pause and wonder if staying downstairs would be the better option.[or]You turn away with a sway of your hips. [line break][first custom style]'Hmmph.'[roman type][line break][or][line break][first custom style]'Please don't do that thing you clearly want to do.'[roman type][line break][or]You look away, knowing full well you have no chance of escape.[or][line break][first custom style]'[if the player is gendered male]Look, I'm not really into weird otherworldly creatures.'[otherwise]I'd rather be on top.'[end if][roman type][line break][or][line break][first custom style]'[if the player is gendered male]I like women and stuff, but this is just too freaky for me.'[otherwise]I'm not some sort of slut that'll just do as [he of M]'s told.'[end if][roman type][line break][or][line break][first custom style]'[if the player is gendered male]Look, just don't let those heels anywhere near me.'[otherwise]I'd never fuck some freak like you.'[end if][roman type][line break][or][line break][first custom style]'I'm sorry, all right? Please let me go, just this once.'[roman type][line break][in random order]";
 	otherwise if the anal sex addiction of the player < 7:
-		say "[one of]You bite your lip, embarrassed by your own excitement.[or]You wait obediently, but only because [NameDesc of M] is really threatening you.[or]A small part of you seems to get a rush out of following [his of M] orders.[line break][first custom style]'Just don't get me too dirty, all right?'[roman type][line break][or][line break][first custom style]'It's just sex. Don't get too into it.'[roman type][line break][or][if the player is male]You try to stifle some decidedly 'submissive' thoughts.[otherwise]You focus on keeping your hands away from your [vagina].[end if][or][line break][second custom style]'[if the size of penis < 5]Does my [sissy-penis] not bother you?[otherwise if the player is male]Does my [manly-penis] not bother you?'[otherwise]Am I a slut for letting [him of M] do what [he of M] wants?'[end if][roman type][line break][or][if the player is male]You can't help but feel excited at the thought of [NameDesc of M] treating you like [he of M] is.[otherwise][line break][variable custom style]'You'll be gentle, right?'[end if][roman type][line break][in random order]";
+		say "[one of]You bite your lip, embarrassed by your own excitement.[or]You wait obediently, but only because [NameDesc of M] is really threatening you.[or]A small part of you seems to get a rush out of following [his of M] orders.[line break][first custom style]'Just don't get me too dirty, all right?'[roman type][line break][or][line break][first custom style]'It's just sex. Don't get too into it.'[roman type][line break][or][if the player is male]You try to stifle some decidedly 'submissive' thoughts.[otherwise]You focus on keeping your hands away from your [vagina].[end if][or][line break][second custom style]'[if the size of penis < 5]Does my [sissy-penis] not bother you?[otherwise if the player is male]Does my [manly-penis] not bother you?'[otherwise]Am I a slut for letting [him of M] do what [he of M] wants?'[end if][roman type][line break][or][if the player is gendered male]You can't help but feel excited at the thought of [NameDesc of M] treating you like [he of M] is.[otherwise][line break][variable custom style]'You'll be gentle, right?'[end if][roman type][line break][in random order]";
 	otherwise:
-		say "[one of]You feel thoroughly ready to get fucked any way the demoness pleases.[or][line break][second custom style]'I'll do anything for you, sexy.'[roman type][line break][or][line break][second custom style]'We're both horny, so do whatever you want to me. I'm sure I'll like it.'[roman type][line break][or][line break][second custom style]'It feels good anywhere!'[roman type][line break][or][line break][second custom style]'Don't be afraid to be rough, baby. I love a rough fuck!'[roman type][line break][or][line break][second custom style]'[if the size of penis > 3]I hope [he of M] doesn't mind my small [manly-penis]!'[otherwise]I'm a [man of the player], so my opinion doesn't matter, Hee hee!'[end if][roman type][line break][or][if the player is male]Hee hee, [he of M]'s going to make me sore![otherwise]You jill yourself vigorously, eager to be used like the slutty tart you are.[end if][roman type][line break][or][line break][second custom style][if the player is male]I'm the submissive [sissy slut], so I should wait to find out what [he of M] wants most.[otherwise]I really feel like getting fucked in my pussy, but [he of M]'s the dominant so [he of M] should choose.[end if][roman type][line break][or][line break][second custom style]'I don't know what I want, teehee!'[roman type][line break][or][line break][second custom style][big he of M]'s the dominant, [he of M] should choose.[roman type][line break][or][line break][second custom style]'I'm always up for a good fuck, doesn't matter what type it is!'[roman type][line break][in random order]".
+		say "[one of]You feel thoroughly ready to get fucked any way the demoness pleases.[or][line break][second custom style]'I'll do anything for you, sexy.'[roman type][line break][or][line break][second custom style]'We're both horny, so do whatever you want to me. I'm sure I'll like it.'[roman type][line break][or][line break][second custom style]'It feels good anywhere!'[roman type][line break][or][line break][second custom style]'Don't be afraid to be rough, baby. I love a rough fuck!'[roman type][line break][or][line break][second custom style]'[if the size of penis > 3]I hope [he of M] doesn't mind my small [manly-penis]!'[otherwise]I'm a [man of the player], so my opinion doesn't matter, hee hee!'[end if][roman type][line break][or][if the player is gendered male]Hee hee, [he of M]'s going to make me sore![otherwise]You jill yourself vigorously, eager to be used like the slutty tart you are.[end if][roman type][line break][or][line break][second custom style][if the player is gendered male]I'm the submissive [sissy slut], so I should wait to find out what [he of M] wants most.[otherwise]I really feel like getting fucked in my pussy, but [he of M]'s the dominant so [he of M] should choose.[end if][roman type][line break][or][line break][second custom style]'I don't know what I want, teehee!'[roman type][line break][or][line break][second custom style][big he of M]'s the dominant, [he of M] should choose.[roman type][line break][or][line break][second custom style]'I'm always up for a good fuck, doesn't matter what type it is!'[roman type][line break][in random order]".
 
 To say SexSubmissionFlav of (M - a demoness):
-	if diaper quest is 0:
+	if diaper quest is 0:[TODO: fix this for futa sex]
 		say "[if the bimbo of the player < a random number between 8 and 13][one of]You lie still and accept the invasion.[or]You submit to being used as a plaything.[or]You don't resist being used.[in random order][otherwise][one of]You purposefully loosen up and accept the demoness's thrusts to easily slide fully in and out.[or]You push back at the dildo footwear enthusiastically in the same rhythm that [he of M] is fucking you.[in random order][end if]";
 		say "[variable custom style][one of][if the relevant sex addiction of M > 11]'Fuck me, baby!'[otherwise if the vaginalvirgin of the player is 1 and the player is female]At least I still have my virginity.[otherwise]Maybe if I relax, this will hurt less?[end if][or][if the relevant sex addiction of M > 12]This feels sooooo good![otherwise if the bimbo of the player > 5]Why am I letting [him of M] do this? Am I a whore?[otherwise]Owwww, it still hurts![end if][or][if the relevant sex addiction of M > 13]'That feels good! Go faster! Nnnf, fuck!'[otherwise if the bimbo of the player > 7]Maybe I really am a slut?[otherwise]Please, just let [him of M] finish quickly...[end if][or][if the relevant sex addiction of M > 14]'Fuck me harder!'[otherwise if the relevant sex addiction of M > 8]Am I actually enjoying this?[otherwise if there is a demoness penetrating asshole and the player is female]At least [he of M]'s not abusing my pussy...[otherwise]'Oh just please finish fast! I can't take much more.'[end if][purely at random][roman type][line break]";
 	otherwise:
 		say "[one of]You lie still, submitting to the superior being[or]You obediently allow [him of M] to continue[stopping].";
+	increase the excitement of M by 1.
 
 To say MercyReaction of (M - a demoness):
 	say "[BigNameDesc of M] just laughs, almost like [he of M] is getting off on your pain!".
@@ -496,7 +503,7 @@ To compute (M - a demoness) protecting against (X - a monster):
 To compute the orifice choosing of (M - a demoness):
 	if M is unfriendly:
 		now the chosen-orifice of M is asshole;
-		if the excitement of M > 5 or doomed is 5 or demon lord is alive or the soul-timer of M is -99:[she has to be in the mood for vaginal sex]
+		if the excitement of M > 5 or doomed is 5 or demon lord is alive or M is power-peaked:[she has to be in the mood for vaginal sex]
 			if the player is female and a random number between 1 and 2 is 1, now the chosen-orifice of M is vagina;
 
 This is the demoness punishes diaper rule:
@@ -598,7 +605,7 @@ To compute unique climax of (M - a demoness) in (F - asshole):
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof! It's so big![roman type][line break]";
 				ruin asshole; [we don't want this to cause fainting]
-		if the raw difficulty of M < 5, now the raw difficulty of M is 5;
+		if the raw difficulty of M < the starting difficulty of M, now the raw difficulty of M is the starting difficulty of M;
 		FavourUp M;
 	now M is penis-mode.
 
@@ -630,21 +637,36 @@ To compute (M - a demoness) taking soul:
 	now M is retaining G;
 	humiliate 1000.
 
+The demoness unique punishment rules is a rulebook. The unique punishment rule of demoness is usually the demoness unique punishment rules.
+
+This is the demoness steals soul rule:
+	let M be current-monster;
+	if the player is souled and presented-orifice is nothing and ((the class of the player is priestess or the class of the player is virgin warrior or the virgin bonus of the player > 0) or vagina is exposed or penis is exposed) and the number of worn chastity cages is 0:
+		now refractoryperiod is 0;
+		if the class of the player is priestess or the class of the player is virgin warrior or the virgin bonus of the player > 0, say "[speech style of M]'Your soul shines so brightly... Perhaps it can sate my hunger!'[roman type][line break]";
+		otherwise say "[speech style of M]'[one of]Your soul is just begging to be stolen! Become my nourishment!'[or]Oooh, just look at what your soul is wearing... Its BEGGING to be stolen!'[then at random][roman type][line break]";
+		cutshow figure of demoness cutscene 1 for M;
+		say "[BigNameDesc of M] places one hand on your chest and [if penis is exposed]seizes your [ShortDesc of penis][otherwise]touches [his of M] fingertips to your clit[end if] with the other. Otherwordly waves of pleasure surge through your body as [he of M] begins [if penis is exposed]expertly jerking you off[otherwise]expertly diddling your delicate little buzzer[end if], and your jaw goes slack as you desperately try to muster the will to resist.";
+		if penis is exposed, stimulate penis times 3;
+		otherwise stimulate vagina times 3;
+		if refractoryperiod > 0:
+			say "[BigFuckerDesc of M][']s hand somehow passes through your chest in the middle of your orgasm, and [he of M] cackles as [he of M] yanks out a beautiful bright blue gemstone. A pronounced empty feeling settles in your chest as [he of M] releases you.";
+			satisfy M;
+			compute M taking soul;
+		otherwise:
+			say "Somehow, you manage to resist the urge to cum, and [FuckerDesc of M] releases you, looking spurned.";
+			bore M;
+		rule succeeds.
+The demoness steals soul rule is listed last in the demoness unique punishment rules.
+
 This is the demoness doesn't care for skinny bitches rule:
 	let M be current-monster;
-	if the player is souled and (the class of the player is priestess or the class of the player is virgin warrior or the virgin bonus of the player > 0):
-		say "[speech style of M]'Your soul shines so brightly... Perhaps it can sate my hunger!'[roman type][line break]";
-		cutshow figure of demoness cutscene 1 for M;
-		say "[BigNameDesc of M] places [his of M] hand on your chest and begins to chant, and a pronounced empty feeling settles in your core as a bright blue gem materialises in [his of M] hand! [big he of M] then walks off, laughing.";
-		bore M;
-		compute M taking soul;
-		rule succeeds;
-	otherwise if the thickness of hips < 5 and the bimbo of the player < 9 and a random number between 1 and 3 is 1 and presented-orifice is nothing:
+	if the thickness of hips < 5 and the bimbo of the player < 9 and a random number between 1 and 3 is 1 and presented-orifice is nothing:
 		say "[speech style of M]'You're not even worth my trouble.'[roman type][line break][BigNameDesc of M] loses interest.";
 		alwayscutshow figure of demoness interact 5 for M;
 		bore M;
 		rule succeeds.
-The unique punishment rule of demoness is usually the demoness doesn't care for skinny bitches rule.
+The demoness doesn't care for skinny bitches rule is listed last in the demoness unique punishment rules.
 
 This is the demoness monster convinced rule:
 	let M be current-monster;
@@ -735,7 +757,7 @@ The demoness attacking ass covering clothing rule is listed last in the demoness
 To compute (M - a demoness) attacking (C - a clothing):
 	say "[BigNameDesc of M] touches a finger to the crotch of your [ShortDesc of C] and you can feel the heat... [he of M]'s trying to burn them off!";
 	let R be a random number between the difficulty of M and 6 + (a random number between the difficulty of M and 6);
-	if the soul-timer of M is -99, now R is 99;
+	if M is power-peaked, now R is 99;
 	if debuginfo > 0, say ClothingAttackDebug of M on C with R;
 	if R > the defence of the player:
 		say "[big he of M] burns them completely off!";
@@ -777,15 +799,14 @@ This is the demoness penetrating asshole rule:
 The demoness penetrating asshole rule is listed last in the demoness asshole insertion rules.
 
 To compute (M - a demoness) entering anally:
+	now M is heel-mode;
 	if the excitement of M < the difficulty of M, now the excitement of M is the difficulty of M;
 	if the player is male:
 		if there is a worn chastity cage:
-			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole] and squeezes your balls as you squirm beneath [his of M].[line break]";
-			say "[speech style of M]'[one of] Your sissy balls are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or] I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
+			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole] and squeezes your balls as you squirm beneath [him of M].[line break][speech style of M]'[one of]Your sissy balls are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or]I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
 		otherwise:
-			say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break]";
-			say "[speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
-	say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to rustle the trees. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
+			say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
+	say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to [if M is abyssal demoness]echo off the walls[otherwise]rustle the trees[end if]. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
 	cutshow figure of demoness cutscene 2 for M;
 	now M is penetrating asshole;
 	if the soreness of asshole < 10, ruin asshole.
@@ -834,15 +855,15 @@ To decide which number is the melting point of (H - a clothing):
 
 This is the greater demoness lockdown rule:
 	let M be current-monster;
-	if (the soul-timer of M is -99 or M is abyssal demoness) and the number of barriers in the location of the player is 0:
+	if (M is power-peaked or M is abyssal demoness) and the number of barriers in the location of the player is 0:
 		say "[BigNamedesc of M] places [his of M] hands on the ground and concentrates. A ring of bright [if M is abyssal demoness]blue[otherwise]red[end if] flames springs into existence around the edges of the room! [bold type]You're trapped![roman type]";
-		now a random flaming-wall is in the location of the player;
+		now flaming-wall is in the location of the player;
 		rule succeeds.
 The greater demoness lockdown rule is listed in the demoness attack rules.
 
-This is the demoness floor heating rule:
+This is the demoness floor heating rule:[This may seem unfair when paired with the "lockdown," but the demoness literally has no other way of attacking you]
 	let M be current-monster;
-	if M is not abyssal demoness or there is a barrier in the location of the player:[it would be a bit unfair if you couldn't even run away]
+	if M is not abyssal demoness:
 		let H be a random worn heels;
 		if the channelling of M is 0, say "[BigNameDesc of M] places [his of M] hands on the ground and concentrates. The floor suddenly turns bright red! [big he of M]'s making the ground uncomfortably hot!";
 		otherwise say "[BigNameDesc of M] is still concentrating on making the floor hot!";
@@ -882,8 +903,7 @@ To say FriendlySexReleaseRefusalSpeech of (M - a demoness):
 			say "[speech style of M]'[one of]Shhh...'[or]That's right, get all that fight out of your system...'[or]Sh-sh-shhh...'[or]That's right sweetie, keep fighting. [big he of a random tentacle monster] loves that.'[or]No running away now sweetheart...'[in random order][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]I'm not stopping until you're in tears!'[or]Stop? No! I want to make you suffer!'[or]Yes! Suffer for me! Tell me how much you hate it!'[or]Oooh! Yes! Hate me! Tell me you hate me!'[or]Struggle harder! I want it to HURT!'[or]Why stop when I have so much pain to give?'[or]Never! HAHAHAHA!'[in random order][roman type][line break]";
-		cutshow figure of demoness cutscene 6 for M;
-	increase the excitement of M by 1.
+		cutshow figure of demoness cutscene 6 for M.
 
 Definition: a demoness is willing to let go: decide no.
 
@@ -899,7 +919,7 @@ To compute (M - a demoness) entering mouth:
 			[cutshow figure of demoness cutscene 8 for M;]
 		get facial penetration image for M;
 		now the sex-length of M is 3;
-		if the soul-timer of M is -99, increase the sex-length of M by 1;
+		if M is power-peaked, increase the sex-length of M by 1;
 		now M is penetrating face;
 	otherwise:
 		say "[BigNameDesc of M] sees that you are already occupied and loses interest.";
@@ -907,7 +927,7 @@ To compute (M - a demoness) entering mouth:
 
 To say FriendlyOralRequest of (M - a demoness):
 	if the oral sex addiction of the player < 4:
-		say "[first custom style]'[one of]I'm taking the deal. That's all I'm doing. [if the player is male and transGender is 0]This isn't a gay thing.'[otherwise]Don't get any sick ideas.'[end if][or]I'll take the deal. [if bukkake fetish is 1]But don't you fucking dare cum on my face.'[otherwise]But I'm not going to pretend I enjoy sucking dick. Got it?'[end if][or]I'm hoping this deal isn't what I think it is...'[at random][roman type][line break]";
+		say "[first custom style]'[one of]I'm taking the deal. That's all I'm doing. [if the player is gendered male]This isn't a gay thing.'[otherwise]Don't get any sick ideas.'[end if][or]I'll take the deal. [if bukkake fetish is 1]But don't you fucking dare cum on my face.'[otherwise]But I'm not going to pretend I enjoy sucking dick. Got it?'[end if][or]I'm hoping this deal isn't what I think it is...'[at random][roman type][line break]";
 		cutshow figure of demoness cutscene 9 for M;
 	otherwise if the player is craving semen:
 		say "[second custom style]'[one of]Cum is part of my reward right? I'm desperate for a taste...'[or]I really need to wet my throat, give me whatever you want...'[or]Let me have a taste of your cum. I promise I'll take whatever reward you want...'[at random][roman type][line break]";
@@ -990,7 +1010,7 @@ To compute facial climax of (M - a demoness):
 	orgasm satisfy M.
 
 Definition: A demoness (called M) is willing to bukkake:
-	if the player is not a blowjob slut or the soul-timer of M is -99, decide no;
+	if the player is not a blowjob slut or M is power-peaked, decide no;
 	if bukkake fetish is 1 and a random number between 1 and 2 is 1, decide yes;
 	decide no.
 
@@ -1108,7 +1128,7 @@ This is the demoness friendly convinced rule:
 		if the player is soulless:
 			say "[speech style of M]'[one of]I already have your soul. I can't take it again.'[or]Yes, your heart is an empty, soulless void. You're welcome.'[or]I have your soul already, fool.'[at random][roman type][line break]";
 		otherwise if the vaginalvirgin of the player is 1 and the player is female:
-			say "[speech style of M]'[one of]You want me to take your soul? Let's make an event of it, then. Offer me your pussy.'[or]No, offer me your pussy. I want to make sure you are rewarded properly when I take your soul.'[stopping][roman type][line break]";
+			say "[speech style of M]'[one of]You want me to take your soul? Let's make an event of it, then. Offer me your [pussy].'[or]No, offer me your [pussy]. I want to make sure you are rewarded properly when I take your soul.'[stopping][roman type][line break]";
 		otherwise:
 			say "[speech style of M]'[one of]You want me to take your soul?'[or]You're really just going to offer it up to me? Your soul?'[or]You want me to take your soul? Are you sure? I won't return it.'[or]Really? You're offering up your soul?'[at random]";
 			if the player is consenting:
@@ -1119,7 +1139,7 @@ This is the demoness friendly convinced rule:
 				say "[BigNameDesc of M] scoffs, immediately losing interest in you.";
 				FavourDown M;
 			Bore M;
-	if presented-orifice is vagina, now M is soul-seeking;
+	if presented-orifice is vagina and the vaginalvirgin of the player is 1, now M is soul-seeking;
 	if presented-orifice is a reasonable target and the refractory-period of current-monster <= 0:
 		now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
 		say PresentFriendlyAcceptanceFlav of M;
@@ -1221,7 +1241,7 @@ To decide if (M - a demoness) is willing to creampie (F - vagina):
 	decide yes.
 
 To compute unprotected climax of (M - a demoness) in (F - fuckhole):
-	if M is willing to creampie F or M is soul-seeking and the player is not soulless:
+	if M is willing to creampie F or (M is soul-seeking and the player is not soulless):
 		cutshow figure of demoness cutscene 12 for M;[we don't override the creampie image function so we don't have to rewrite the default creampie of M code]
 		if M is soul-seeking and the player is not soulless:
 			compute soul creampie of M in F;
@@ -1235,9 +1255,9 @@ To compute unprotected climax of (M - a demoness) in (F - fuckhole):
 
 To compute soul creampie of (M - a demoness) in (F - vagina):
 	if futanari fetish is 1 or lady fetish is 2:
-		say "[BigNameDesc of M] hilts [himself of M] deep inside your [vagina], cackling madly as [he of M] floods you with [his of M] load. An instant chill, like a candle being blown out, falls over your body as [his of M] [semen] flows into your [vagina], and a bright blue gemstone materialises in the palm of [his of M] outstretched hand.[line break][speech style of M]'Could you feel, that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pinches your clit between two ominously glowing fingertips, continuing to laugh as powerful waves of pleasure explode through your body. You feel incredible, but you can't help but feel [if the virgin bonus of the player < 0]a second, stronger feeling of shame[otherwise]a second, stronger feeling of emptiness[end if] settling heavily in your chest.";
+		say "[BigNameDesc of M] speeds up, attacking your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.[line break][speech style of M]'Could you feel, that, baby? I just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pulls out, holding up a bright blue gemstone as the waves of pleasure slowly begin to fade, followed by [if the virgin bonus of the player < 0]an even stronger feeling of shame[otherwise]an even stronger feeling of emptiness[end if] settling heavily in your chest.";
 	otherwise:
-		say "[BigNameDesc of M] cackles madly as the tentacle slams itself in as deep as it can go, huge bulges passing along its length as it floods your [vagina] with its load. An instant chill, like a candle being blown out, falls over your body as demonic [semen] flows into you, and a bright blue gemstone materialises in the palm of [NameDesc of M][']s outstretched hand.[line break][speech style of M]'Could you feel, that, baby? [big he of a random tentacle monster] just fucked that juicy soul right out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] pinches your clit between two ominously glowing fingertips, continuing to laugh as powerful waves of pleasure explode through your body. You feel incredible, but you can't help but feel [if the virgin bonus of the player < 0]a second, stronger feeling of shame[otherwise]second, stronger feeling of emptiness[end if] settling heavily in your chest.";
+		say "The tentacle slams itself in as far as it can go, huge bulges passing along its length as [NameDesc of M] attacks your clit with two ominously glowing fingertips. Impossibly strong waves of pleasure overwhelm your senses, and a climax hits you like a wall of bricks as [semen] floods your [vagina] for the first time in your life.[line break][speech style of M]'Could you feel, that, baby? [big he of a random tentacle monster] just fucked that juicy soul straight out of your body, and you just let it happen! HAHAHA! I HOPE IT WAS WORTH IT!'[roman type][line break][big he of M] holds up a bright blue gemstone as the tentacle pulls out, and as the waves of pleasure slowly begin to fade, [if the virgin bonus of the player < 0]an even stronger feeling of shame[otherwise]an even stronger feeling of emptiness[end if] settles heavily in your chest.";
 	vaginally orgasm shamefully;
 	compute M taking soul;
 	IntUp 3;
@@ -1313,7 +1333,7 @@ To compute damage reaction of (M - a demoness):
 		say "[big he of M] hisses and [his of M] eyes turn red!";
 	otherwise:
 		say DamageReaction (the health of M) of M;
-		if the soul-timer of M is -99, increase the excitement of M by 1;
+		if M is power-peaked, increase the excitement of M by 1;
 		increase the excitement of M by 1.
 
 To say DamageReactHealthy of (M - a demoness):
@@ -1557,7 +1577,7 @@ To say RepeatResponse of (M - a demoness):
 		otherwise:
 			say "[speech style of M]'[one of]All mortals are beneath me, but especially vermin like you.'[or]If you are not intimidated by me already, I'll fix that.'[or]Addressing me directly... you'll suffer for that.'[or]I will cook your soul at a slow burn, mortal.'[or]The power of speech is wasted on creatures like you.'[at random][roman type][line break]";
 	otherwise:
-		say "[speech style of M]'[one of]Hi. Know any weaklings I can crush? I'm getting a bit bored.'[or]Hey. Do me a favour and don't give that witch anything.'[or]Hey there. Tell Xavier I said hi. You'll know [him of demon lord] when you see [him of demon lord].'[at random][roman type][line break]".
+		say "[speech style of M]'[one of]Hi. Know any weaklings I can crush? I'm getting a bit bored.'[or]Hey. Do me a favour and don't give that witch anything.'[or]Hey there. Tell Xavier I said 'Hi'. You'll know [him of demon lord] when you see [him of demon lord].'[at random][roman type][line break]".
 
 To say SubmissiveResponse of (M - a demoness):
 	if M is unfriendly, say "[speech style of M]'[one of]Hmm, strange decision to show your face here again.'[or]Ready to get tortured again, are we?'[or]Hahaha... your eagerness for punishment [please]s me!'[or]I won't make you bleed... but you'll wish I did.'[at random][roman type][line break]";
@@ -1619,20 +1639,10 @@ To say VanityAnnoyed of (M - a demoness):
 
 Section 2 - Questioning
 
-To decide which number is the mild-annoyance threshold of (M - a demoness):
-	decide on 150.[The demoness is not very tolerant of mortals]
-
-To compute annoyance of (M - a demoness):
-	if M is unfriendly:
-		say "[speech style of M]Silence, worm. Submit to me!'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'What am I, your carer? Cease disturbing me, mortal.'[roman type][line break]".
-
 To compute teaching of (M - a demoness):
 	say "[speech style of M]'Why not try strutting around in those heels like a proper whore? You might think that sluts just wave their ass around with fully stretched legs to attract the guys, but actually it's just the easiest way to walk. Sure you might look like a bimbo, but you'll find that your body is more free to move around.'[roman type][line break]";
 	cutshow figure of demoness cutscene 14 for M;
-	teach strutting;
-	SlightConvoFatigue M.[She is always happy to talk about her heels]
+	teach strutting.
 
 To say WhereAnswer of (M - a demoness):
 	say "[speech style of M]'The mortal realm. Is that not obvious?'[roman type][line break]".
@@ -1740,7 +1750,7 @@ To compute failed dominance punishment of (M - a demoness):
 
 To compute unique dominance reward of (M - a demoness):
 	let R be a random number between 1 and 2;
-	if the player is male:
+	if the player is possessing a penis:
 		if R is 1, PenisUp 1;
 		otherwise StrengthUp 1;
 	otherwise:
@@ -1883,7 +1893,7 @@ To compute perception of (M - abyssal demoness):
 	otherwise if M is uniquely unfriendly:
 		anger M;
 		if the class of the player is priestess:
-			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new Mistress, or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
+			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
 			say "Your holy aura does seem to have some effect against [him of M], as you are easily able to resist [his of M] dominating aura which tries to make you kneel on command.";
 		otherwise:
 			say "[speech style of M]'[if M is uninterested]You, whore! [otherwise]You know what? [end if][if the player is upright]Kneel down, I feel like ruining someone.'[otherwise]Stay down there, I'm going to punish you.'[end if][roman type][line break]Uh-oh...";
@@ -1921,6 +1931,7 @@ This is the demoness ghost summoning rule:
 		repeat with G running through on-stage ghosts:
 			now G is interested;
 		increase creepiness by 10;
+		FatigueUp 10;
 		now the channelling of M is 1.
 The demoness ghost summoning rule is listed in the demoness attack rules.
 
@@ -1929,21 +1940,20 @@ To compute the busy waiting of (M - abyssal demoness):
 	DifficultyUp M by 1;
 	increase creepiness by 3.
 
+[Redundant. Will be deleted soon.
 To compute (M - abyssal demoness) entering anally:
 	now M is heel-mode;
 	if the player is male:
 		if there is a worn chastity cage:
-			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole] and squeezes your balls as you squirm beneath [his of M].[line break]";
-			say "[speech style of M]'[one of] Your sissy balls are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or] I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
+			say "[big he of M] taps your chastity cage with [his of M] foot, laughing as your [sissy-penis] strains in its tight prison. [big he of M] then traces a finger around your [asshole] and squeezes your balls as you squirm beneath [him of M].[line break][speech style of M]'[one of]Your sissy balls are so fun to crush...'[or]Awww is your [sissy-penis] all locked away? I hope you like anal, because that's all the sex you're getting from now on...'[or]I'm going to spread you out slut, try not to lose your mind.'[stopping][roman type][line break]";
 		otherwise:
-			say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break]";
-			say "[speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
+			say "[big he of M][if the size of penis >= 8] gives your [ShortDesc of penis] a few generous pumps and runs [his of M] fingernails down your lower back.[otherwise] slaps your [AssDesc] and presses one of [his of M] heels into your dangling [sissy-penis] and balls, the long 8 inch heel reminding you of your sexual inadequacy.[end if][roman type][line break][speech style of M]'Get ready to be stretched out by your [literalMistress of M].'[roman type][line break]";
 	say "[BigNameDesc of M] lifts up one of [his of M] feet, on which are [his of M] unique black shoes with [one of]dulled[or]shiny[sticky random] glass dildos for heels. [big he of M] continues cackling and pushes the heel into your [asshole]! As the demoness sinks in, [he of M] curls [his of M] lips into a wicked grin, gritting [his of M] teeth and going wide-eyed. Clearly [he of M] enjoys [himself of M] behind you as a cackle rings out to echo off the walls. Either [he of M] is really pent up or just enjoys ruining the players. Some kind of magic grasp is preventing you from moving.";
 	now M is penetrating asshole;
-	if the soreness of asshole < 10, ruin asshole.
+	if the soreness of asshole < 10, ruin asshole.]
 
 To say SummoningFlav of (M - a demoness):
-	if M is in the location of the player, say "The air around you grows unbearably cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind [his of M].";
+	if M is in the location of the player, say "The air around you grows unbearably cold and hot at the same time, as the mummy's wrappings darken, as if rapidly soaking up water. An [M] comes into view as the old fabric slowly unravels, laughing cruelly as the soggy cloth struggles to reform behind [him of M].";
 	otherwise say "You hear the sound of inhuman laughter.".
 
 Demoness ends here.

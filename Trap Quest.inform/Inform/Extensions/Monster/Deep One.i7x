@@ -149,7 +149,7 @@ To say DamageReactHealthy of (M - deep one):
 	say "The creature seems uninjured!".
 
 To say DamageReactDamaged of (M - deep one):
-	say "The creature doesn't seem to be affected by its injuries!".
+	say "The creature doesn't seem to be affected by [his of M] injuries!".
 
 To say DamageReactTired of (M - deep one):
 	say "The creature seems to be having second thoughts!".

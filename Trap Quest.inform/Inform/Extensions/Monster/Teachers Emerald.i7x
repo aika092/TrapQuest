@@ -53,7 +53,7 @@ pain-lesson is a lesson. The lesson-teacher of pain-lesson is teacher-hannah.
 To compute teaching of (L - pain-lesson):
 	allocate 1 seconds;
 	let M be the lesson-teacher of L;
-	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as [he of M] paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to [his of M]. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
+	say "[speech style of M]'Brats. That's what you all are - rebellious, mischievous minxes, every last one of you.'[roman type][line break][BigNameDesc of M] doesn't even look at the assembled class as [he of M] paces back and forth at the front, already ranting.[line break][speech style of M]'You think you're all so clever, so [if diaper quest is 1]grown up[otherwise]elegant[end if] and independent, but I know that deep inside each of you is a whimpering, submissive [if diaper quest is 1]little babygirl[otherwise]sex addict[end if] who is more than willing to obey any and all orders given to her. It's my job to force those inner submissive tendencies out into the open.'[roman type][line break][big he of M] pauses for dramatic effect.[line break][speech style of M]'So, what is the best way to turn a bold bitch into a wimpy wench? ";
 	if the player is wrist bound or the player is ankle bound or portal gag is worn:
 		if wrist collar bar is worn or portal gag is worn:
 			let W be wrist collar bar;
@@ -421,7 +421,7 @@ To say AdviceAnswer of (M - teacher-bianca):
 	say "[speech style of M]'There should never be a reason you need to bend your knees.'[roman type][line break]".
 
 To say EnslavedDominationFlav of (M - teacher-bianca):
-	if the size of penis > 0 and the number of worn cursed undisplacable clothing is 0:
+	if the player is possessing a penis and the number of worn cursed undisplacable clothing is 0:
 		say "Stepping right up to [NameDesc of M], you ";
 		if penis is penis-erect or penis is erect-at-will:
 			say "push your [if penis is penis-erect]erect[otherwise]rapidly hardening[end if] [ShortDesc of penis] into [his of M] fully exposed cunt in a single thrust, it gliding all the way in like a knife through butter. [BigNameDesc of M] turns more and more red in the face but remains standing perfectly still as you use [his of M] hole like a sex toy before finally painting [his of M] insides with your load.";

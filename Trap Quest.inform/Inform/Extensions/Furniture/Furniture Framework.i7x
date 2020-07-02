@@ -34,12 +34,12 @@ Check entering furniture:
 		unless the player is in agreement, say "You change your mind." instead;
 	if the noun is dildo rocking stool:
 		let F be asshole;
-		if the player is female, now F is vagina;
+		if the player is possessing a vagina, now F is vagina;
 		if the insertableGirthAcceptance of F < the girth of the noun:
 			if debugmode is 1, say "If debugmode was disabled, the player would be unable to fit it inside.";
 			otherwise say "[variable custom style]There's no way I'm going to be able to fit that thing inside of me![roman type][line break]" instead;
-		if the player is female and the player is pussy protected, say "You'd need to get your [ShortDesc of random top level protection clothing] out of the way first." instead;
-		if the player is male and the player is ass protected, say "You'd need to get your [ShortDesc of random top level ass protection clothing] out of the way first." instead;
+		if the player is possessing a vagina and the player is pussy protected, say "You'd need to get your [ShortDesc of random top level protection clothing] out of the way first." instead;
+		if the player is not possessing a vagina and the player is ass protected, say "You'd need to get your [ShortDesc of random top level ass protection clothing] out of the way first." instead;
 		if F is actually occupied, say "You'd need to get the [ShortDesc of random thing filling F] out of your [variable F] first." instead;
 		say "Lower your [variable F] onto the large dildo and kneel on the stool until you feel completely better?[if the location of the player is smoky][bold type]Remember, there is pink smoke in this room, which you will inevitably have to breathe for several rounds.[roman type][end if] ";
 		unless the player is in agreement, say "You change your mind." instead;

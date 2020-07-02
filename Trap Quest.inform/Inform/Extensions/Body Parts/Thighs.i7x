@@ -33,19 +33,14 @@ To decide which number is the weight of (XXX - thighs):
 	decide on S.
 
 To decide which object is the concealer of (T - thighs):
-	if entry 1 of the armUses of arms is thighs and entry 2 of the armUses of arms is thighs, decide on arms;
-	repeat with C running through worn leg covering crotch-in-place actually dense clothing:
-		decide on C;
-	repeat with C running through worn knee-length or longer crotch-in-place actually dense clothing:
+	repeat with C running through worn actually dense thigh covering clothing:
 		decide on C;
 	decide on nothing.
 
 To decide which object is the at least partial concealer of (T - thighs):
 	if thighs is listed in the armUses of arms, decide on arms;
-	repeat with C running through worn leg covering crotch-in-place clothing:
-		if C is not see-through, decide on C;
-	repeat with C running through worn knee-length or longer crotch-in-place actually dense clothing:
-		if C is not see-through, decide on C;
+	repeat with C running through worn not-see-through thigh covering clothing:
+		decide on C;
 	decide on nothing.
 
 Definition: thighs (called B) is spread:

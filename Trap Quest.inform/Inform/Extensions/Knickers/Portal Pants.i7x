@@ -53,4 +53,11 @@ This is the portal pants pussy slut rule:
 	if portal-pants is worn, decrease the desirability of vagina by 10.
 The portal pants pussy slut rule is listed in the pussy slut eligibility rules.
 
+This is the portal pants blocks masturbation rule:
+	if portal-pants is worn:
+		now failed-masturbation-reason is the substituted form of "You can't masturbate with the portal covering your [genitals]!";
+		rule fails.
+The portal pants blocks masturbation rule is listed last in the penis masturbation restriction rules.
+The portal pants blocks masturbation rule is listed last in the vaginal masturbation restriction rules.
+
 Portal Pants ends here.

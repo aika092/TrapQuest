@@ -1,17 +1,19 @@
 Talking by Actions begins here.
 
-[!<playerSpeechRules:Rulebook>*
+[!<YourselfIsSeductive>+
 
-REQUIRES COMMENTING
-
-*!]
-The player speech rules is a rulebook.
-
-[!<TheThingsInMouthPreventSpeechRule>+
-
-REQUIRES COMMENTING
+Are you at risk of saying something lewd instead of what you intended?
 
 +!]
+Definition: yourself is seductive:
+	if diaper quest is 1 and there is a worn baby pacifier, decide yes;
+	if the class of the player is cheerleader, decide yes;
+	if there is worn temptation clothing, decide yes;
+	if spank my kitty tattoo is currently visible, decide yes;
+	decide no.
+
+The player speech rules is a rulebook.
+
 This is the things in mouth prevent speech rule:
 	unless there is a worn pacifier: [you can speak past a paci]
 		if there is a thing penetrating face or the player is gagged, rule fails.
@@ -54,18 +56,8 @@ Definition: yourself is able to trigger manual speech:
 	now triggeredspeech is false;
 	decide no.
 
-[!<playerVoiceRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 The player voice rules is a rulebook.
 
-[!<APersonIsAbleToMakeSounds>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a person is able to make sounds:
 	follow the player voice rules;
 	if the rule failed, decide no;
@@ -76,167 +68,19 @@ To say SleepTalkFail of (M - a monster):
 
 Talking is an action applying to one thing.
 
-[!<CheckTalking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check talking:
 	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
+	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
 	if the noun is a monster:
 		if the player is flying and playerRegion is Woods, say "You are too high up, they can't hear you." instead;
 		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to speak, say "You are currently not able to speak! You could try [bold type]poking[roman type] [him of the noun] instead?" instead;
 	otherwise:
 		unless the noun is slimegirl, say "How would you talk to that?" instead.
 
-[!<CarryOutTalking>+
+Carry out talking a monster:
+	compute multiple choice conversation of the noun.
 
-REQUIRES COMMENTING
-
-+!]
-Carry out talking:
-	say "[one of]NB there are five talking phrases, [bold type]talk to[roman type] (or [bold type]greet[roman type]), [bold type]question[roman type], [bold type]ask (somebody) for a drink[roman type], [bold type]ask (somebody) for food[roman type], [bold type]ask (somebody) to leave[roman type].[or][stopping]";
-	try greeting the noun.
 Understand "talk [something]", "talk to [something]", "talk with [something]", "speak [something]", "speak to [something]", "speak with [something]", "chat [something]", "chat to [something]", "chat with [something]" as talking.
 
-conversation-target is a person that varies.
-
-Greeting is an action applying to one thing.
-
-[!<CheckGreeting>+
-
-REQUIRES COMMENTING
-
-+!]
-Check greeting:
-	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should focus on the task at hand!" instead;
-	if the noun is a monster:
-		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to trigger manual speech, try poking the noun instead;
-	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
-
-[!<CarryOutGreeting>+
-
-REQUIRES COMMENTING
-
-+!]
-Carry out greeting:
-	allocate 6 seconds;
-	now conversation-target is the noun;
-	if the noun is ultimate-lesson-actor and the player is in a predicament room, say "You should knock on the wall first." instead;
-	if the latex-transformation of the player > 6:
-		say "The only sound you manage to make is a plaintive moaning noise that ends up sounding like an open invitation for sex.";
-		if the noun is monster, compute correct perception of the noun;
-	otherwise:
-		compute talk option 1 to the noun.
-Understand "greet [something]", "gr [something]" as greeting.
-
-Questioning is an action applying to one thing.
-
-[!<CheckQuestioning>+
-
-REQUIRES COMMENTING
-
-+!]
-Check questioning:
-	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
-	if the noun is a monster:
-		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to trigger manual speech, say "You are currently not able to speak!" instead;
-	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
-
-[!<CarryOutQuestioning>+
-
-REQUIRES COMMENTING
-
-+!]
-Carry out questioning:
-	allocate 6 seconds;
-	now conversation-target is the noun;
-	compute talk option 2 to the noun.
-Understand "question [something]", "ask [something]", "qu [something]" as questioning.
-
-Drink Requesting is an action applying to one thing.
-
-[!<CheckDrinkRequesting>+
-
-REQUIRES COMMENTING
-
-+!]
-Check drink requesting:
-	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
-	if the noun is a monster:
-		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		unless the player is thirsty, say "You aren't thirsty, so don't see the point." instead;
-		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to trigger manual speech, say "You are currently not able to speak!" instead;
-	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
-
-[!<CarryOutDrinkRequesting>+
-
-REQUIRES COMMENTING
-
-+!]
-Carry out drink requesting:
-	allocate 6 seconds;
-	now conversation-target is the noun;
-	compute talk option 3 to the noun.
-Understand "ask [something] for drink", "ask [something] for dr", "ask [something] for a drink", "ask [something] for something to drink" as drink requesting.
-
-Food Requesting is an action applying to one thing.
-
-[!<CheckFoodRequesting>+
-
-REQUIRES COMMENTING
-
-+!]
-Check food requesting:
-	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
-	if the noun is a monster:
-		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		unless the player is hungry, say "You aren't hungry, so don't see the point." instead;
-		if the noun is asleep, say SleepTalkFail of the noun instead;
-		if the player is not able to trigger manual speech, say "You are currently not able to speak!" instead;
-	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
-
-[!<CarryOutFoodRequesting>+
-
-REQUIRES COMMENTING
-
-+!]
-Carry out food requesting:
-	allocate 6 seconds;
-	now conversation-target is the noun;
-	compute talk option 4 to the noun.
-Understand "ask [something] for food", "ask [something] for some food", "ask [something] for something to eat" as food requesting.
-
-Dismissal is an action applying to one thing.
-
-Check dismissal:
-	if the noun is the player, say "Talking to oneself is the first sign of madness." instead;
-	if the player is in a predicament room, say "You should [if the noun is ultimate-lesson-actor]knock on the wall first.[otherwise]focus on the task at hand![end if]" instead;
-	if the noun is a monster:
-		if the noun is grabbing the player or the noun is penetrating a body part, try resisting instead;
-		if the player is flying and playerRegion is Woods, say "You are too high up, [he of the noun] can't hear you." instead;
-		if the noun is asleep, say SleepTalkFail of the noun instead;
-	otherwise:
-		unless the noun is slimegirl, say "How would you talk to that?" instead.
-
-Carry out dismissal:
-	allocate 6 seconds;
-	now conversation-target is the noun;
-	compute talk option 5 to the noun.
-Understand "dismiss [something]", "ask [something] to leave", "say goodbye to [something]" as dismissal.
 
 Talking ends here.

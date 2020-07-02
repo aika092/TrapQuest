@@ -378,7 +378,7 @@ REQUIRES COMMENTING
 +!]
 To compute god birth:
 	compute pregnancy clothing displacement;
-	say "[PregFlav]As you feel yourself start to give birth, suddenly a group of veiled women appear from nowhere to surround you! Suddenly, a cascade of milky slime begins to issue forth from you, pooling at your knees. The women begin to chant ominously as the slime continues to pour out of you, and you already see it swirling and flowing as if alive. As the flow finally stops, one of the women approaches with a large bowl, which the slime flows up into. They then vanish back into the shadows.";
+	say "[PregFlav]As you feel yourself start to give birth, suddenly a group of veiled women appear from nowhere to surround you! Suddenly, a [cascade] of milky slime begins to issue forth from you, pooling at your knees. The women begin to chant ominously as the slime continues to pour out of you, and you already see it swirling and flowing as if alive. As the flow finally stops, one of the women approaches with a large bowl, which the slime flows up into. They then vanish back into the shadows.";
 	if doom counter > 0, increase doom counter by 150;
 	if the humiliation of the player >= 40000 and cultist veil is off-stage and cultist veil is actually summonable:
 		summon cultist veil;

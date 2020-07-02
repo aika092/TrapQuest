@@ -15,6 +15,8 @@ Understand the heel-height property as describing a heels when disambiguation-ID
 stiletto heels is a kind of heels. boots is a kind of heels. platform heels is a kind of heels.
 Understand "boot", "boots" as boots.
 
+Definition: a boots is calf covering: decide yes.
+
 To decide which number is the initial cringe of (C - a shoes):
 	let X be 0;
 	if C is latex, decrease X by 2;
@@ -166,6 +168,5 @@ To compute (C - a heels) unique inheriting from (D - a clothing):
 	if the heel-height of C < 2, now the heel-height of C is 2;
 	if D is heels:
 		if the heel-height of D > the heel-height of C, now the heel-height of C is the heel-height of D;
-
 
 Heels Framework ends here.

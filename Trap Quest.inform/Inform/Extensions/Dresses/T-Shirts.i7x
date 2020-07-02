@@ -113,7 +113,7 @@ To say MediumDesc of (C - a Gender Bender T-shirt):
 Definition: a Gender Bender T-shirt is white themed: decide yes.
 
 Report wearing gender bender T-shirt:
-	if the player is male and the bimbo of the player < 5:
+	if the player is gendered male and the bimbo of the player < 5:
 		say "You feel slightly calmer about the feminine nature of the game. Something feels a bit different but you're not sure what...";
 		if the flesh volume of breasts is 0, now the flesh volume of breasts is 1;
 		if the raw heel skill of the player < 2, now the raw heel skill of the player is 2;
@@ -137,7 +137,7 @@ Figure of I love my wet nappies T-shirt is the file "Items/Clothes/Upper/Shirts/
 
 There is 1 I love my wet nappies T-shirt.
 
-To decide which figure-name is clothing-image of (C - a I love my wet nappies T-shirt):
+To decide which figure-name is clothing-image of (C - an I love my wet nappies T-shirt):
 	decide on figure of I love my wet nappies T-shirt.
 
 To say ClothingDesc of (C - an I love my wet nappies T-shirt):
@@ -211,7 +211,7 @@ Definition: a birth control for sissies T-shirt is pregnancy related: decide yes
 Definition: a birth control for sissies T-shirt is black themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - a birth control for sissies T-shirt):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
@@ -241,7 +241,7 @@ To decide which number is the delicateness-influence of (C - sissy-T-shirt):
 
 Definition: sissy-T-shirt is sissifying: decide yes.
 Definition: sissy-T-shirt is white themed: decide yes.
-Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is male and transGender is 0.
+Definition: sissy-T-shirt is fetish appropriate if diaper lover > 0 and the player is gendered male.
 
 To decide which object is the unique-upgrade-target of (C - sissy-T-shirt):
 	decide on a random off-stage sissy faggot T-shirt.
@@ -272,7 +272,7 @@ Definition: an I'm knocked up T-shirt is pregnancy related: decide yes.
 Definition: an I'm knocked up T-shirt is pink themed: decide yes.
 
 To decide which number is the vaginal-sex-addiction-influence of (C - an I'm knocked up T-shirt):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	let S be 1;
 	decrease S by the magic-modifier of C; [Positive magic = subtracted delicateness]
 	decide on S.
@@ -356,10 +356,10 @@ There is 1 unique dear santa T-shirt.
 Definition: a dear santa T-shirt is white themed: decide yes.
 
 To say ClothingDesc of (C - a dear santa T-shirt):
-	say "This white T-shirt has the words 'Dear santa... I can explain' on the front in red letters.".
+	say "This white T-shirt has the words 'Dear Santa... I can explain' on the front in red letters.".
 
 To say MediumDesc of (C - a dear santa T-shirt):
-	say "white 'dear santa' T-shirt".
+	say "white 'dear Santa' T-shirt".
 
 To decide which number is the delicateness-influence of (C - a dear santa T-shirt):
 	let S be 2;
@@ -431,7 +431,7 @@ To decide which number is the delicateness-influence of (C - a sissy faggot T-sh
 
 Definition: a sissy faggot T-shirt is sissifying: decide yes.
 Definition: a sissy faggot T-shirt is white themed: decide yes.
-Definition: a sissy faggot T-shirt is fetish appropriate if the player is male and diaper quest is 0 and transGender is 0.
+Definition: a sissy faggot T-shirt is fetish appropriate if the player is gendered male and diaper quest is 0.
 
 To decide which number is the initial outrage of (C - a sissy faggot T-shirt):
 	decide on 11.

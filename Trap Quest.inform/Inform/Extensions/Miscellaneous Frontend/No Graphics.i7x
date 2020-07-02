@@ -76,7 +76,7 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "olive";
 			if the redness of hair is 2, decide on "purple";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "olive";
@@ -97,7 +97,7 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
 			if the redness of hair is 2, decide on "purple";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
@@ -113,12 +113,12 @@ To decide which text is HairColourText:
 			if the redness of hair is 0, decide on "grey";
 			if the redness of hair is 1, decide on "olive";
 			if the redness of hair is 2, decide on "red";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 2:
 			if the redness of hair is 0, decide on "olive";
 			if the redness of hair is 1, decide on "pale purple";
 			if the redness of hair is 2, decide on "red";
-			if the redness of hair is 3, decide on "aramanth pink";
+			if the redness of hair is 3, decide on "amaranth pink";
 		if the blondeness of hair is 3:
 			if the redness of hair is 0, decide on "dirty blonde";
 			if the redness of hair is 1, decide on "light brown";
@@ -154,10 +154,6 @@ title	subtable	description	toggle
 "Loading Screens: On / Off: [if loading scenes is 1]ON[otherwise]OFF[end if]"	--	--	loading scenes toggle rule
 
 Figure of Demoness is the file "NPCs/Forest/Demoness/demoness2.png".
-Figure of wench1 is the file "NPCs/Dungeon/Wench/wench1.png".
-Figure of wench2 is the file "NPCs/Dungeon/Wench/wench2.png".
-Figure of wench3 is the file "NPCs/Dungeon/Wench/wench3.png".
-Figure of wench4 is the file "NPCs/Dungeon/Wench/wench4.png".
 Figure of Shopkeeper 1 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png". Figure of Shopkeeper 2 is the file "NPCs/Dungeon/Shopkeeper/shopkeeper3.png".
 Figure of Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator1.png".
 

@@ -79,7 +79,7 @@ To decide which figure-name is clothing-image of (C - smoothie-apron):
 	decide on figure of smoothie-apron.
 To say ClothingDesc of (C - smoothie-apron):
 	say "A green apron with a small white shirt underneath. It only covers your front, so it only conceals whether you are standing in a giant thick super-messy nappy when you are standing with your back to a wall, e.g. in the smoothie van.".
-Definition: smoothie-apron is potentially-bottom-layer-concealing if the player is in Predicament03. [While the player is in the smoothie van only]
+Definition: smoothie-apron is layer-concealing if the player is in Predicament03. [While the player is in the smoothie van only]
 Definition: smoothie-apron is skirt-covering-crotch if the player is in Predicament03. [While the player is in the smoothie van only]
 Definition: smoothie-apron is potentially penis covering if the player is in Predicament03 or the number of worn crotch-in-place undies > 0. [While the player is in the smoothie van only]
 Definition: smoothie-apron is potentially at least partially penis concealing if the player is in Predicament03 or the number of worn crotch-in-place undies > 0. [While the player is in the smoothie van only]

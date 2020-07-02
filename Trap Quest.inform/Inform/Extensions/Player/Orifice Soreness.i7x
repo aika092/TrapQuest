@@ -61,11 +61,6 @@ To decide which number is the tolerance of (F - a fuckhole):
 	if the latex-transformation of the player > 3, increase T by 100;
 	decide on T.
 
-[!<DecideWhichNumberIsTheStimulationOfObject>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the stimulation of (O - an object) on (F - a body part):
 	if the semen volume of vagina > 6 and F is vagina, decide on 3; [Pussy creampie expulsion]
 	if diaper quest is 1:
@@ -73,11 +68,6 @@ To decide which number is the stimulation of (O - an object) on (F - a body part
 		decide on 1;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheStimulationOfMonster>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the stimulation of (M - a monster) on (F - a body part):
 	if diaper quest is 1, decide on 4 + (the difficulty of M / 8);
 	if F is fuckhole:
@@ -95,16 +85,13 @@ To decide which number is the stimulation of (M - a monster) on (F - a body part
 	otherwise:
 		decide on 1 + (the difficulty of M / 8).
 
-[!<DecideWhichNumberIsTheStimulationOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the stimulation of (T - a thing) on (F - a body part):
+	let X be 0;
+	if wanking is 1, increase X by the masturbation-bonus of T;
 	if F is fuckhole:
-		if the girth of T > 1 or T is insertable, decide on (the girth of T * 2) / 3;
-		if diaper quest is 1, decide on 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
-	if diaper quest is 1 and F is penis, decide on 4;
+		if the girth of T > 1 or T is insertable, decide on X + (the girth of T * 2) / 3;
+		if diaper quest is 1, decide on X + 4; [Vibrations, masturbation etc. give extra arousal in diaper quest.]
+	if diaper quest is 1 and F is penis, decide on X + 4;
 	decide on 0.
 
 To stimulate (F - a body part):

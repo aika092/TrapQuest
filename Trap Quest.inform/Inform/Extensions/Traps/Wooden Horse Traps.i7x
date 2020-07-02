@@ -184,10 +184,10 @@ To trigger (Y - a wild horse):
 	now the reset-timer of Y is 500;
 	now Y is not untriggered;
 	now Y is revealed;
-	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
+	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren[']t touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is possessing a vagina][vagina] and [end if][asshole]. You hear a pre-recorded whinny as the horse begins to 'gallop' through the clearing, each movement rubbing small grooves in the wood up against your crotch. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You look at the plastic cord around its neck. Looks like you're going to have to tame this wild horse!";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
-	if the player is female, now Y is penetrating vagina;
+	if the player is possessing a vagina, now Y is penetrating vagina;
 	repeat with M running through reactive monsters:
 		say WoodenHorseTrapReactFlav of M.
 
@@ -196,7 +196,7 @@ To compute horse effect of (T - a wild horse):
 	if the player is diapered, decrease W by 5;
 	if W < 3, now W is 3;
 	let R be a random number between -1 and W;
-	say "The ridges of the horse continue to put immense pressure on your [asshole][if the player is female] and [vagina][end if].";
+	say "The ridges of the horse continue to put immense pressure on your [asshole][if the player is possessing a vagina] and [vagina][end if].";
 	if the TrapNo of T < 1:
 		now T is not penetrating vagina;
 		now T is not penetrating asshole;
@@ -209,7 +209,7 @@ To compute horse effect of (T - a wild horse):
 			SemenPuddleUp 3;
 			AssFill a random number between 3 and 5;
 		otherwise:
-			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cowgirl on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
+			say "The horse comes to a sudden halt, tipping forward with incredible speed and power. You are flung off the horse like a cow[boy of the player] on a bucking bronco and are sent rolling into a tree. [line break][variable custom style]Aaaah! Ouch.[roman type][line break]";
 			FatigueUp W;
 			bodyruin W / 2;[TODO: light players go flying]
 		try kneeling;

@@ -71,7 +71,7 @@ Check taking off pink-spraybottle:
 	if the work ethic of the noun < 0 and M is clothing, say "You try, but it's like the [ShortDesc of M] won't let you put it down.[line break][variable custom style]'Maybe I have to clean something with it first?'[roman type][line break]" instead.
 
 Check going when pink-spraybottle is worn:
-	if total puddle > 0:
+	if areYouSure is 1 and total puddle > 0:
 		say "There's a puddle in here. You sense that if you leave here without cleaning the puddle, [NameDesc of pink-spraybottle] will be unimpressed. Are you sure you want to try and leave the [location of the player]? ";
 		if the player is not consenting, say "You change your mind." instead.
 
@@ -109,7 +109,7 @@ To compute spraybottle punishment:
 		if V is vaginally summonable and the player is female:
 			say "You feel a stiff, hard object burrowing into your [vagina]. It starts vibrating. ";
 			summon V cursed vaginally with quest;
-		otherwise if V is actually summonable and the player is male:
+		otherwise if V is actually summonable and the player is sexed male:
 			say "You feel a stiff, hard object pushing itself into your [asshole]. It settles right up against your prostate and immediately begins to vibrate! ";
 			summon V cursed with quest;
 		otherwise if P is penetrating asshole and the size of P < 10 and the size of P < the openness of asshole + 3:

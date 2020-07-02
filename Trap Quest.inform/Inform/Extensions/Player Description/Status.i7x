@@ -77,7 +77,7 @@ To say ChildrenDesc:
 	if the children of the player > 0:
 		say "You have given birth to [the children of the player] [if the children of the player is 1]child[otherwise]children[end if].".
 
-The player has a number called lick-count.[total cunnilingus/analingus count from player]
+The player has a number called lick-count.[total cunnilingus/anilingus count from player]
 The player has a number called blow-count.[total blowjobs from player]
 The player has a number called anal-count.[total player did butt stuff]
 The player has a number called fuck-count.[number of times the player got fucked vaginally]

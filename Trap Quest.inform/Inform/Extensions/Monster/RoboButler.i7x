@@ -25,10 +25,13 @@ To say MonsterDesc of (M - a robobutler):
 To set up (M - a robobutler):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 7;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the target-room of M is Hotel18;
 	now the health of M is the maxhealth of M;
 	now M is unconcerned.
+
+To decide which number is the starting difficulty of (M - robobutler):
+	decide on 7.
 
 [This is the spawn initial robobutler rule:
 	if the number of alive robobutlers is 0:
@@ -254,7 +257,7 @@ Part 4 - Conversation
 
 Section 1 - Greeting
 
-To compute basic greeting to (M - a robobutler):
+[To compute basic greeting to (M - a robobutler):
 	if M is interested:
 		say VanityGreeting to M;
 	otherwise:
@@ -262,7 +265,7 @@ To compute basic greeting to (M - a robobutler):
 		otherwise say RepeatGreeting to M;
 		unless the class of the player is maid:
 			now the boredom of M is 0;
-			compute correct perception of M.
+			compute correct perception of M.]
 
 To say FirstResponse of (M - a robobutler):
 	if the class of the player is maid:
@@ -278,8 +281,6 @@ To say RepeatResponse of (M - a robobutler):
 	otherwise:
 		say "[BigNameDesc of M] ignores you.";
 
-To say VanityResponse of (M - a robobutler):
-	say "[BigNameDesc of M] ignores you.".
 
 To say robogreeting:
 	say "[if the class of the player is maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".
@@ -291,7 +292,10 @@ To compute answer of (M - a robobutler):
 	if the class of the player is maid:
 		say "[speech style of M]'GET BACK TO WORK.'[roman type][line break]";
 	otherwise if M is not buddy:
-		compute annoyance of M;
+		if M is unfriendly and M is interested:
+			say "[first custom style]'STOMACH FILLING IN PROGRESS.'[roman type][line break]";
+		otherwise:
+			say "[first custom style]'I HELP WELL-TIPPING CUSTOMERS, [robogreeting].'[roman type][line break]";
 	otherwise if C is clothing:
 		say "[BigNameDesc of M] points at your [printed name of C]. [line break][first custom style]'THIS ITEM IS [if C is cursed]CURSED[otherwise if C is blessed]BLESSED[otherwise]UNCURSED[end if].'[roman type][line break]";
 		now C is sure;
@@ -300,12 +304,6 @@ To compute answer of (M - a robobutler):
 			say "[BigNameDesc of M] turns around, facing away. One of [his of M] 'hands' is politely placed upturned towards you, as if [he of M] is subtly asking for a tip.";
 	otherwise:
 		say "[first custom style]'NOT CURRENTLY, [robogreeting]. APOLOGIES.'[roman type][line break]".
-
-To compute annoyance of (M - a robobutler):
-	if M is unfriendly and M is interested:
-		say "[first custom style]'STOMACH FILLING IN PROGRESS.'[roman type][line break]";
-	otherwise:
-		say "[first custom style]'I HELP WELL-TIPPING CUSTOMERS, [robogreeting].'[roman type][line break]".
 
 Section 3 - Drink Requesting
 

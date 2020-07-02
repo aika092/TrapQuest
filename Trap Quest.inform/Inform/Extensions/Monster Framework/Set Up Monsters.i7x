@@ -9,7 +9,7 @@ The setting up school monsters rules is a rulebook.
 To regionally place (M - a monster):
 	if debugmode > 0, say "Regionally placing [M].";
 	remove M from play;
-	bore M for 0 seconds; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
+	deinterest M; [generally when we regionally place some we want them to be able to notice the player immediately the next time they walk past each other]
 	[now M is unleashed;]
 	now the health of M is the maxhealth of M;
 	while M is not regional or M is in the location of the player or M is nearby:
@@ -22,7 +22,7 @@ To Set Up Monsters:
 	if Hotel01 is placed, follow the setting up hotel monsters rules;
 	if debugmode > 1, say "Now setting up mansion monsters...";
 	if Mansion01 is placed, follow the setting up mansion monsters rules;
-	repeat with M running through alive nonexistant monsters:
+	repeat with M running through alive nonexistent monsters:
 		if debugmode > 1, say "Setting up initial state of [M]...";
 		set up M.
 
@@ -37,7 +37,7 @@ Every turn we quickly check if there are any NPCs in a weird state in the locati
 
 +!]
 To compute MonsterSetUpFix:
-	repeat with M running through nonexistant monsters in the location of the player:
+	repeat with M running through nonexistent monsters in the location of the player:
 		Set Up M.
 
 Set Up Monsters ends here.

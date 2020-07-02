@@ -3,6 +3,7 @@ Shoes Framework by Shoes begins here.
 shoes is a kind of clothing. The soak-limit of a shoes is usually 7.
 
 Definition: a shoes is hindrance-enabling: decide no. [Is it more likely to fall over when wearing these shoes compared to barefoot?]
+Definition: a shoes is ankle covering: decide yes.
 
 Definition: a heels is hindrance-enabling: decide yes.
 

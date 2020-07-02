@@ -81,10 +81,10 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	if the remainder after dividing local-earnings by 1425 < local-seconds:
 		if diaper focus >= 1:
 			if wetting-valued >= 3, diaperreward;
-		otherwise if the player is female and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
+		otherwise if the player is possessing a vagina and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):
 			virginreward;
 	[Virgin Curse]
-	if the remainder after dividing local-earnings by 297 < local-seconds and the player is male and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0:
+	if the remainder after dividing local-earnings by 297 < local-seconds and the player is possessing a penis and the penetrativevirgin of the player is 1 and virgincursed > 0 and transGender is 0:
 		virginpunish;
 	[Various periodic decays]
 	if the remainder after dividing local-earnings by 611 < local-seconds:
@@ -103,7 +103,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 	if the remainder after dividing local-earnings by latex transformation rate < local-seconds:
 		compute latex transformation;
 	[Spawning and buffing of weak enemies]
-	if the remainder after dividing local-earnings by 413 < local-seconds:
+	if the remainder after dividing local-earnings by 313 < local-seconds:
 		let P be a random alive prison guard;
 		if (ex-princess is caged and skeleton key is not in-play) or there is worn locked clothing:
 			if P is prison guard and there is worn locked clothing:
@@ -113,7 +113,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				if M is monster:
 					set up M;
 					summon M in the dungeon;
-		if the number of alive golem is 0 and diaper quest is 0:
+		if the number of alive golem is 0 and diaper quest is 0 and playerRegion is not school:
 			let M be a random off-stage golem;
 			let X be max ass size + max breast size + 1;
 			let S be X - (the thickness of hips + the largeness of breasts);
@@ -122,7 +122,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 				decrease time-tracking by 1;
 				if debuginfo > 0, say "[input-style]Golem spawn prevention check: body shape ([S]); time ticker ([time-tracking])[if time-tracking >= 285]; time ticker not yet below 293 so automatic success[otherwise] ==> RNG([S]~[time-tracking]) = [SR] | ([X].5) max possible body shape[end if][roman type][line break]";
 			if time-tracking < 293:
-				if SR < X:[more likely the larger the larger the player's body has gotten.][Aika thinks this is going to take forever to be true because it looks like time-tracking is only decremented from 400 once every 413 seconds]
+				if SR < X:[more likely the larger the larger the player's body has gotten.]
 					set up M;
 					if playerRegion is Woods:
 						now M is in Stairwell02;
@@ -135,7 +135,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 					now M is guarding;
 					say "Some speakers come to life, and you hear an announcement! [line break][second custom style]'Hey there, [NameBimbo]! Are you having fun? See, we're looking at the data here and it seems like you're taking this game very seriously. In that case, it shouldn't be a problem if we spawn in a new threat. Don't worry, I'm sure you'll figure things out...'[roman type][line break]";
 					now time-tracking is 1000;
-				otherwise: [Aika has added this is a good way to fix the issue]
+				otherwise:
 					decrease time-tracking by X;
 	[succubus souls]
 	if the remainder after dividing local-earnings by 250 < local-seconds and the player-class is succubus:
@@ -211,7 +211,6 @@ To compute hair colour decay:
 				say "Your hair colour darkens.";
 				now R is 0;
 		if X > 20, now R is 0.
-
 
 To compute makeup decay:
 	if a random number between 0 and diaper quest is 0 and permanent makeup is 0 and playerRegion is not school:
@@ -508,7 +507,7 @@ To compute latex transformation:
 			say "Your skin becomes more and more smooth and featureless by the minute. You suddenly realise your [if the player is male][asshole] feels[otherwise][vagina] and [asshole] feel[end if] more... relaxed. Putting a hand back there, you realise [if the player is male]it is[otherwise]they are both[end if] extremely gaped and hanging open, almost like a sex doll. Even weirder, it doesn't feel uncomfortable at all. It's almost as if your [if the player is male]entrance is[otherwise]entrances are[end if] now completely numb...";
 			appropriate-cutscene-display figure of latex curse 7;
 			now the openness of asshole is 10;
-			if the player is female, now the openness of vagina is 10;
+			if the player is possessing a vagina, now the openness of vagina is 10;
 		if the latex-transformation of the player is 4:
 			say "Your skin is now completely smooth and featureless - it doesn't look real but more like something made out of plastic or in a cartoon. ";
 			appropriate-cutscene-display figure of latex curse 1;

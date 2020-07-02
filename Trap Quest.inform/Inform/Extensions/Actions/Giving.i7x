@@ -50,7 +50,7 @@ Check giving:
 			allocate 6 seconds;
 			if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 			say "[BigNameDesc of the second noun] brings the [ShortDesc of noun] to [his of the second noun] mouth and starts drinking! [big he of the second noun] downs the whole drink in one, without stopping for a breath. ";
-			if the noun is monster-origin:
+			if the noun is monster-origin or a2m fetish < 2:
 				say "After [he of the second noun][']s finished, [he of the second noun] falls down on [his of the second noun] shapely butt and sighs happily.[line break][second custom style]'[if the fill-colour of the noun is murky]Good enough[otherwise]Yep, that's the stuff[end if]. You've earned [if the doses of the noun is 1]one use[otherwise][doses of the noun] uses[end if] of the altar.'[roman type][line break]";
 				increase the altar-uses of the second noun by the doses of the noun;
 				if diaper quest is 0, cutshow figure of witch cutscene 1 for witch;

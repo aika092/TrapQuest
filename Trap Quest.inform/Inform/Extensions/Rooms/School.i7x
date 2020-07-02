@@ -1,6 +1,6 @@
 School by Rooms begins here.
 
-An academic room is a kind of room. A academic room has a labyrinth shape called shape. The shape of an academic room is usually L5/0-0-1-1-1-1. The grid position of an academic room is usually <0,0,0>.
+An academic room is a kind of room. An academic room has a labyrinth shape called shape. The shape of an academic room is usually L5/0-0-1-1-1-1. The grid position of an academic room is usually <0,0,0>.
 A academic room is usually pinned.[These rooms are always in the same place.]
 A room can be lecture. [It's a classroom]
 To decide which number is the entry-rank of (R - a room):

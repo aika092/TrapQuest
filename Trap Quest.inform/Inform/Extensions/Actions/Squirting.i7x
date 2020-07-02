@@ -84,7 +84,7 @@ Carry out squirting:
 			otherwise if the fill-type of the noun is 5:
 				say "You start to feel proud of yourself but then the feeling fades. It's difficult to gain self esteem whilst you have a dildo stuck up your [asshole].";
 			otherwise if the fill-type of the noun is 6:
-				say "Your [asshole][if the player is female], [vagina][end if] and body are fully healed!";
+				say "Your [asshole][if the player is possessing a vagina], [vagina],[end if] and body are fully healed!";
 				now the soreness of asshole is 0;
 				now the soreness of vagina is 0;
 				now the body soreness of the player is 0;

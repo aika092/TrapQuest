@@ -6,8 +6,16 @@ Definition: a trousers is same-type if theme-share-target is trousers.
 
 Definition: a trousers is displacable: decide yes.
 
+To decide which number is the trouserLength of (C - a trousers):
+	decide on 10.
+
+To decide which object is the concealer of (C - a trousers):
+	repeat with S running through worn actually dense skirt-covering-crotch clothing:
+		if the skirtLength of S >= the trouserLength of C, decide on S;
+	decide on nothing.
+
 To decide which number is the initial outrage of (C - a trousers):
-	if C is no protection, decide on 8;
+	if C is crotch-exposing, decide on 8;
 	if C is yoga pants, decide on 0;
 	if C is zippable, decide on 2;
 	decide on 1.

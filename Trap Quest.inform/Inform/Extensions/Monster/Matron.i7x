@@ -21,14 +21,14 @@ To say MonsterDesc of (M - a matron):
 	say "Standing proudly in [his of M] pink latex dress the matron of the Adult Nursery is casting a vigilant eye across the room. [big he of M] has the look of a determined mother that will do anything to attend to those under [his of M] special care. [big his of M] aura of dominance is only slightly muted by the sluttiness of [his of M] dress."
 
 To say MonsterComment of (M - a matron):
-	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is male]What a MILF! This must be the [man of M] in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*giggle* [one of]Maybe [he of M] can be my mommy[or]It's my mommy[stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe [he of M]'ll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games [he of M]'d play with someone that's not [his of M] baby?[otherwise if the delicateness of the player < 16]I bet [he of M] could take real good care of me.[otherwise]I hope [he of M] can be my mommy and show me how to be a slut like [him of M].[end if][roman type][line break]".
+	if diaper quest is 0 and lady fetish < 2, say "[variable custom style][if the diaper addiction of the player < 6 and the player is gendered male]What a MILF! This must be the [man of M] in charge of the princess. [otherwise if the diaper addiction of the player > 14][line break][second custom style]*giggle* [one of]Maybe [he of M] can be my mommy[or]It's my mommy[stopping]! [end if][if the delicateness of the player < 7]If I can play it cool, maybe [he of M]'ll be nice to me.[otherwise if the delicateness of the player < 12]I wonder what sorts of games [he of M]'d play with someone that's not [his of M] baby?[otherwise if the delicateness of the player < 16]I bet [he of M] could take real good care of me.[otherwise]I hope [he of M] can be my mommy and show me how to be a slut like [him of M].[end if][roman type][line break]".
 
 Definition: matron is able to remove cursed plugs: decide yes.
 
 To set up (M - matron):
 	reset M;
 	now the monstersetup of M is 1;
-	now the raw difficulty of M is 10;
+	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	now M is unmotherly; [At the start she doesn't consider you her charge.]
 	calm M.
@@ -74,7 +74,7 @@ To compute MasturbationReaction of (M - matron):
 			humiliate 50;
 			now the boredom of M is 50; [This stops an unfriendly matron suddenly running out of boredom and interrupting the player to perform some maintenance feeding]
 		otherwise:
-			say "[speech style of M]'No no no! This is a nursery, young [if the player is male]sissies[otherwise]girls[end if] like you do NOT get to have cummies like grown ups! I can't believe you would be so naughty! If you have to rub yourself, you'll do it through a diaper like a real adult baby.'[roman type][line break]";
+			say "[speech style of M]'No no no! This is a nursery, young [if the player is gendered male]sissies[otherwise]girls[end if] like you do NOT get to have cummies like grown ups! I can't believe you would be so naughty! If you have to rub yourself, you'll do it through a diaper like a real adult baby.'[roman type][line break]";
 			FavourDown M by 5;
 			anger M;
 			now M is interested;
@@ -118,7 +118,7 @@ To compute perception of (M - matron):
 		now M is diaper-committed;
 		anger M;
 	otherwise if there is an interested unfriendly wrestler in the location of M:
-		say "[speech style of M]'Ooh, this one is really cute isn't [unless the player is male and the bimbo of the player < 7]s[end if]he! I know exactly what to do with you, darling. From now on you should call me [']Mommy['], okay sweetie pie[if M is not eager to change diapers]? Now let's get you into something more appropriate...'[otherwise]?'[end if][roman type][line break]";
+		say "[speech style of M]'Ooh, this one is really cute isn't [unless the player is gendered male and the bimbo of the player < 7]s[end if]he! I know exactly what to do with you, darling. From now on you should call me [']Mommy['], okay sweetie pie[if M is not eager to change diapers]? Now let's get you into something more appropriate...'[otherwise]?'[end if][roman type][line break]";
 		now M is diaper-committed;
 	otherwise if the class of the player is schoolgirl and there is no worn diaper:
 		say "[speech style of M]'Oh my, you look so adorable in that uniform. But there[']s something we need to take care of before you can go off to school, now isn[']t there! Don[']t fight me sweety, I need to make sure you don[']t have any accidents in class.'[roman type][line break]";
@@ -177,7 +177,7 @@ To compute diaper check of (M - matron):
 			FavourUp M by 1;
 			if M is unfriendly:
 				say "[BigNameDesc of M] considers [his of M] options, [his of M] jutting [ChestDesc of M] inches away from your face. [big his of M] [if lactation fetish is 1]full, engorged [end if]nipples [if the oral sex addiction of the player > 7]protruding from [his of M] shiny latex dress causes your mind to think of the feeling of your tongue running along a sweet delicious cock. [otherwise]protrude from [his of M] shiny latex dress. [end if][line break][speech style of M]'Hmm, you don't need a change yet, but I think a naughty minx like you needs [if diaper quest is 0]feeding again, to make sure you're getting your nutrients[otherwise]some sort of discipline to keep you in line[end if]. [if the player is upright]Get on your knees, baby!'[otherwise]Come here...'[end if][roman type][line break]";
-				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This [man of M] is trying to force me to use my diaper![otherwise][line break][second custom style]*Giggle* If [he of M] feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let [him of M] do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope [he of M] feeds me with a delicious cream pie from [his of M] [HoleDesc of M].[otherwise if the delicateness of the player > 10]At least if [he of M] feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is male]Maybe [he of M]'ll have me eat some food off [his of M] hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope [he of M] feeds me by letting me suckle [his of M] nipples.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting [him of M] treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
+				if diaper quest is 0, say "[variable custom style][one of][if the diaper addiction of the player < 6]Oh my god! This [man of M] is trying to force me to use my diaper![otherwise][line break][second custom style]*giggle* If [he of M] feeds me I'll get to use my diaper! Yay![end if][or][if the humiliation of the player < 25000]I can't let [him of M] do this to me! I can feed myself.[otherwise if the semen taste addiction of the player > 15]I hope [he of M] feeds me with a delicious cream pie from [his of M] [HoleDesc of M].[otherwise if the delicateness of the player > 10]At least if [he of M] feeds me I won't be hungry. [otherwise if the sex addiction of the player < 4 and the player is gendered male]Maybe [he of M]'ll have me eat some food off [his of M] hot body. [otherwise if lactation fetish is 1 and the milk taste addiction of the player > 6]I hope [he of M] feeds me by letting me suckle [his of M] nipples.[otherwise if the sex addiction of the player < 11]This is just outrageous, I'm being treated like some kind of powerless baby![otherwise]I'm letting [him of M] treat me like a baby, how deliciously degrading![end if][in random order][roman type][line break]";
 	otherwise if M is unfriendly or M is motherly:
 		say "[speech style of M]'[one of][if M is motherly]Didn't I tell you it's important for you to stay in diapers? [otherwise]It's important for babies like you to stay in diapers. [end if][if the player is prone]Stay on your knees[otherwise]Get on your knees[end if] and I'll fix that for you...'[or]How many times am I going to catch you out of nappies? You're getting put in my naughty book for sure this time.'[or]Come on you naughty girl! Time for your diaper.'[stopping][roman type][line break]";
 		now M is diaper-committed;
@@ -434,7 +434,7 @@ To compute forcefeed round (N - 3) of (M - matron):
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 2) of (M - matron):
-	say "Without even responding, [NameDesc of M] has moved onto another bowl, this one full of oatmeal! [line break][speech style of M]'Here comes the airplane!'[roman type][line break]You [line break][variable custom style]'MMPH'[roman type][line break]in protest but it's too late, there's already a full spoon in your mouth! [big he of M] doesn't relent until half the bowl is in your stomach, and the other half is down your bib.";
+	say "Without even responding, [NameDesc of M] has moved onto another bowl, this one full of oatmeal! [line break][speech style of M]'Here comes the aeroplane!'[roman type][line break]You [line break][variable custom style]'MMPH'[roman type][line break]in protest but it's too late, there's already a full spoon in your mouth! [big he of M] doesn't relent until half the bowl is in your stomach, and the other half is down your bib.";
 	StomachFoodUp 1.
 
 To compute forcefeed round (N - 1) of (M - matron):
@@ -573,7 +573,7 @@ To say FriendlyPartnerGreeting to (M - matron):
 		say EnthusiasmResponse of M;
 	otherwise:
 		if the player is feeling dominant:
-			if the player is male, say "[first custom style]'Don[']t tell anybody about this!'[roman type]";
+			if the player is gendered male, say "[first custom style]'Don[']t tell anybody about this!'[roman type]";
 			otherwise say "[first custom style]'Just so you know, this is a one time thing.'[roman type]";
 		otherwise:
 			say "[variable custom style]'[one of]This is just a one-time thing... unless I get really hungry, or something.'[or]And remember, you can't tell ANYONE about this...'[at random][roman type]";
@@ -614,22 +614,9 @@ To say EscapeAnswer of (M - matron):
 To say AdviceAnswer of (M - matron):
 	say "[speech style of M]'[one of]That butler is here to serve you, but [he of a random robobutler] can be a little forceful. If you don[']t think you can handle [him of a random robobutler], make sure your tummy stays full!'[or]If you[']re wearing a diaper, be careful about leaving it on when it gets dirty, sweetie. Take too long and you might forget how you got it on in the first place! I'm always happy to help if that happens, but in case you can[']t find me, you can only remove it with magic.'[at random][roman type][line break]".[figured the butler advice could be a little better, added some more]
 
-To say UnGreeted of (M - a monster):
-	say "[BigNameDesc of M] ignores your question.".
-
-[I think it makes sense to have [his of M] be a little more standoffish than everyone else.]
-To compute annoyance of (M - matron):
-	if M is uninterested:
-		say "[BigNameDesc of M] ignores your question.";
-	otherwise if M is unfriendly:
-		say "[speech style of M]'Quiet now, darling! I'm trying to take care of you here.'[roman type][line break]";
-	otherwise:
-		say "[speech style of M]'I don't have time to just sit around all day answering your questions. Run along now!'[roman type][line break]".
-
 To compute teaching of (M - matron):
 	say "[speech style of M]'If you ever do get assaulted, never underestimate the power of admitting you're just a widdle baby and pleading for mercy. You never know, it might just soften their heart.'[roman type][line break]";
-	teach begging for mercy;
-	increase the questioned of M by 100. [She gains the same amount of "annoyance" regardless of whether or not she's annoyed already]
+	teach begging for mercy.
 
 Section 3 Drink Requesting
 
