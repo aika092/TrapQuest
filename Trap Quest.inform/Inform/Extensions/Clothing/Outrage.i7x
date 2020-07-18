@@ -56,7 +56,7 @@ To decide which number is the fluid outrage of (C - a knickers):
 
 To decide which number is the fluid cringe of (C - a clothing):
 	if C is worn and (C is not currently at least partially visible or (the at least partial concealer of C is not arms and C is not currently visible)), decide on 0; [In general, clothing doesn't reveal its wet status when partially concealed, but arms is the exception]
-	if C is swimming themed and the urine-soak of C < the soak-limit of C: [Unless it's literally drenched in piss, we only care about semen-soak for swimwear]
+	if C is swimming themed and the urine-soak of C < the soak-limit of C / 2: [Unless it's drenched in piss, we only care about semen-soak for swimwear]
 		decide on (1 + the semen-soak of C) / 2;
 	otherwise if diaper quest is 0:
 		decide on (1 + the semen-soak of C + the urine-soak of C + the milk-soak of C) / 2;

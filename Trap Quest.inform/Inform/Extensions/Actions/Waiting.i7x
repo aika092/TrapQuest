@@ -183,42 +183,42 @@ REQUIRES COMMENTING
 
 +!]
 To HookWait:
-	if woman-barbara is regional and the woman-status of woman-barbara is 1:
+	if woman-player is regional and the woman-status of woman-player is 1:
 		allocate 6 seconds;
-		now woman-barbara is interested;
-		say "[if woman-barbara is in the location of the player][BigNameDesc of woman-barbara] chuckles as [he of woman-barbara] looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-barbara] comes walking round the corner! Salvation![end if]";
-		now woman-barbara is in the location of the player;
-		if the woman-bimbo of woman-barbara < 3:
-			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-barbara] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
+		now woman-player is interested;
+		say "[if woman-player is in the location of the player][BigNameDesc of woman-player] chuckles as [he of woman-player] looks at you.[otherwise]You are only waiting a few seconds when [NameDesc of woman-player] comes walking round the corner! Salvation![end if]";
+		now woman-player is in the location of the player;
+		if the woman-bimbo of woman-player < 3:
+			say "[second custom style]'Oh no, how have you managed to get stuck like that? That looks like it hurts. Don't worry, I'll save you, honey.'[roman type][line break]With impressive dexterity and strength, [he of woman-player] pulls the hook clean from your [asshole]! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
-		otherwise if the woman-bimbo of woman-barbara < 5:
-			say "[big he of woman-barbara] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-barbara] pulls at the hook, but slips when [he of woman-barbara] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
+		otherwise if the woman-bimbo of woman-player < 5:
+			say "[big he of woman-player] grins at you. [line break][second custom style]'Uh-oh, you look like you're having a lot of fun there! Do you need some help?'[roman type][line break][big he of woman-player] pulls at the hook, but slips when [he of woman-player] gets it halfway out. It shoots back into your [asshole], causing you to yelp in pain!";
 			ruin asshole;
-			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-barbara] gets it all the way out, but just before you can react and step to the side, [he of woman-barbara] loses [his of woman-barbara] grip again! It shoots back in with twice the force of last time!";
+			say "[second custom style]'Oopsie! Let me try that again.'[roman type][line break]This time [he of woman-player] gets it all the way out, but just before you can react and step to the side, [he of woman-player] loses [his of woman-player] grip again! It shoots back in with twice the force of last time!";
 			ruin asshole;
 			say "[second custom style]'Silly [boy of the player], try to move out the way this time.'[roman type][line break]This time as soon as it's all the way out, you leap away, finally free! The contraption shoots up into the hole in the ceiling that the rope was connected to.";
 			let X be a random ass hook penetrating asshole;
 			now X is not penetrating asshole;
 			now X is unrevealed;
 		otherwise:
-			say "[second custom style]'*giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-barbara] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
+			say "[second custom style]'*giggle*. Look who it is! You look like you're having fun there. I'm jealous! Want me to help you out?'[roman type][line break][big he of woman-player] pulls the hook out a small amount then lets go. The tension of the rope forces it back inside! You scream in surprise.";
 			ruin asshole;
-			say "[second custom style]'That looks like so much fun!'[roman type][line break][big he of woman-barbara] pulls it out a bit more but then again lets go. You squeal in discomfort.";
+			say "[second custom style]'That looks like so much fun!'[roman type][line break][big he of woman-player] pulls it out a bit more but then again lets go. You squeal in discomfort.";
 			ruin asshole;
 			let N be 4;
 			while delayed fainting is 0 and the player is not unable to orgasm so soon and N > 0:
 				decrease N by 1;
-				say "[BigNameDesc of woman-barbara] keeps fucking you with the ass hook! [line break][second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming? Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
+				say "[BigNameDesc of woman-player] keeps fucking you with the ass hook! [line break][second custom style]'[one of]Are you going to cum from your naughty butthole?'[or]Wee! Isn't this fun?'[or]Why are you screaming? Am I not doing it hard enough for you?'[or]This is what you meant by [']Get me off['], right?'[or]You look so sexy right now![or]I'm getting horny just watching you squirm![in random order][roman type][line break]";
 				ruin asshole;
 				allocate 6 seconds;
 				compute extra turn;
 			if delayed fainting is 0 and N > 0:
-				say "[second custom style]'Now wasn't that a lovely treat! I hope you can do the same for me soon.'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
+				say "[second custom style]'Now wasn't that a lovely treat! I hope you can do the same for me soon.'[roman type][line break][big he of woman-player] wanders off, ignoring your pleas to help you down.";
 			otherwise if delayed fainting is 0:
-				say "[second custom style]'I'm getting bored, I'm going to see if I can find something to fuck. See you later babe!'[roman type][line break][big he of woman-barbara] wanders off, ignoring your pleas to help you down.";
-			vanish woman-barbara;
+				say "[second custom style]'I'm getting bored, I'm going to see if I can find something to fuck. See you later babe!'[roman type][line break][big he of woman-player] wanders off, ignoring your pleas to help you down.";
+			vanish woman-player;
 	otherwise:
 		let prev-dex be the dexterity of the player;
 		while the player is hook stuck and the player is not monster fucked and the dexterity of the player <= prev-dex and delayed fainting is 0 and sex fainting is 1:

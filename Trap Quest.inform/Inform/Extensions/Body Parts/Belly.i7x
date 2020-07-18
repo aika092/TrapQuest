@@ -845,7 +845,7 @@ To AssSquirt:
 	let doses-count be 0;
 	[collecting is used to keep track of what vessel if any the player is using to capture some liquid.]
 	let collecting be nothing;
-	if woman-barbara is in the location of the player and fishbowl is in the location of the player and there is a patron in the location of the player, now collecting is fishbowl;
+	if woman-player is in the location of the player and fishbowl is in the location of the player and there is a patron in the location of the player, now collecting is fishbowl;
 	[element-count lets us count how many different things we've expelled (or at least tried to). The idea is that we can now use a while loop in between expulsions, which in turn allows us to break the while loop if the player ever becomes ass plugged during expulsion.]
 	let element-count be 0;
 	[turn-count keeps track of how many turns we've been squirting liquid for, mainly so we know if it's the first turn or not for text flavour purposes.]
@@ -1034,7 +1034,7 @@ To AssSquirt:
 							if player-numerical-response > 0, now collecting is entry player-numerical-response in LV;
 					if collecting is a bottle:
 						if collecting is fishbowl:
-							say "[BigNameDesc of woman-barbara] holds the bowl under your [asshole] as you begin to expel ";
+							say "[BigNameDesc of woman-player] holds the bowl under your [asshole] as you begin to expel ";
 						otherwise:
 							if the doses of collecting > 0:
 								say "You tip the contents of the [ShortDesc of collecting] onto the floor.";

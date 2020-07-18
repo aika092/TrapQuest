@@ -40,7 +40,7 @@ To Set Up The Woods:
 		if the location of M is not placed, now M is in a random placed dodgy room;
 	[let N1 be the regionalMonsterCount of the Woods;]
 	repeat with N2 running from 1 to startingRegionalMonsterCount:
-		let M be a random off-stage woods dwelling regionally missing monster;
+		let M be a random woods prioritised monster;
 		if M is not monster, now M is a random off-stage woods dwelling monster;
 		if M is monster:
 			set up M;

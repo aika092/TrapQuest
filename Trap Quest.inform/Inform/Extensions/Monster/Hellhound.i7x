@@ -92,7 +92,7 @@ To say SummoningFlav of (M - hellhound):
 	if M is in the location of the player, say "The glow surrounding the mummy intensifies as a flaming rift tears open above it, and a dark shape charges through. The [printed name of M] emits a chilling howl, seizing the leash end of the collar with [his of M] teeth as the portal closes, and the mummy slowly returns to its feet.";
 	say "You hear a chilling howl in the distance.".
 
-Definition: a hellhound is father material if the player is the donator and mythical creature fetish is 1.
+Definition: a hellhound is father material if mythical creature fetish is 1.
 
 To say PregGrowth of (M - hellhound):
 	if mythical creature fetish is 1, say "the hellhound's brood";
@@ -437,16 +437,22 @@ To compute punishment of (P - hellhound-facesit):
 			if C is clothing:
 				compute current-monster attacking C;
 				unless there is worn top level protection clothing:
-					say "[big he of M] immediately dives in, [if the player is male]taking your [player-penis] into [his of M] mouth and whining happy as [he of M] begins to suck[otherwise]tongue at the ready, and begins to happily and messily lick at your [vagina][end if]!";
+					say "[big he of M] immediately dives in, [if the player is possessing a penis]taking your [player-penis] into [his of M] mouth and whining happy as [he of M] begins to suck[otherwise]tongue at the ready, and begins to happily and messily lick at your [vagina][end if]!";
 					ruin vagina;
 			otherwise:
-				if the player is male, say "";
+				if the player is possessing a penis, say "";
 				otherwise say "[BigNameDesc of M] [one of]licks away at your [vagina] but never stops grinding on your face![or]messily tongues your inner folds whilst pleasuring [himself of M] on the tip of your nose![or]gently nibbles on your clit as [he of M] drives [his of M] diapered crotch across your face.[in random order]";
+				ruin vagina;
 			decrease the sex-length of M by 1;
+			cutshow figure of puppy cutscene 4 for M;
 		otherwise if the sex-length of M is 1:
 			say "[BigNameDesc of M] [if there is worn top level protection clothing]suddenly sits up, and with a particularly dominant growl begins to use [his of M] diaper[otherwise]speeds up [his of M] oral pleasuring as [he of M] also pushes [his of M] diapered butt hard onto your face and begins to go to the toilet[end if]. ";
-			if diaper messing >= 3, say "You can feel the pitter-patter of [his of M] [urine] and the squishiness of [his of M] bulk on your face through the material as [he of M] empties a full bladder and bowels into [his of M] nappy. ";
-			otherwise say "You can feel the pitter-patter of [his of M] [urine] on your face through the material as [he of M] empties a full bladder into [his of M] nappy. ";
+			if diaper messing >= 7:
+				say "You can feel the pitter-patter of [his of M] [urine] and the squishiness of [his of M] bulk on your face through the material as [he of M] empties a full bladder and bowels into [his of M] nappy. ";
+				cutshow figure of puppy cutscene 6 for M;
+			otherwise:
+				say "You can feel the pitter-patter of [his of M] [urine] on your face through the material as [he of M] empties a full bladder into [his of M] nappy. ";
+				cutshow figure of puppy cutscene 5 for M;
 			say "[big he of M] makes sure to give your [genitals] the time of its life as [he of M] does, making strong rhythmic motions with [his of M] tongue that you didn't even realise were possible!";
 			DiaperAddictUp 1;
 			unless there is worn top level protection clothing, ruin vagina times 3;
@@ -457,28 +463,24 @@ To compute punishment of (P - hellhound-facesit):
 	otherwise:
 		say "[BigNameDesc of M] rolls you onto your back before turning 180 degrees and promptly sitting on your face. Your eyes, mouth and nose are all completely blocked under [his of M] thick padding. That is, until [he of M] begins to grind back and forth, giving you very brief chances to breathe in between each thrust of [his of M] hips!";
 		now M is penetrating face;
+		now the sex-length of M is 5;
+		cutshow figure of puppy cutscene 4 for M;
 		unless there is worn top level protection clothing:
-			say "[big he of M] also moves [his of M] face down to your crotch and [if the player is male]takes your [player-penis] into [his of M] mouth[otherwise]begins to explore your [vagina] with [his of M] tongue[end if]!";
-			if there is a worn perceived messed diaper:
-				cutshow figure of puppy cutscene 6 for M;
-			otherwise if there is a worn perceived wet diaper:
-				cutshow figure of puppy cutscene 5 for M;
-			otherwise:
-				cutshow figure of puppy cutscene 4 for M;
+			say "[big he of M] also moves [his of M] face down to your crotch and [if the player is possessing a penis]takes your [player-penis] into [his of M] mouth[otherwise]begins to explore your [vagina] with [his of M] tongue[end if]!";
 			ruin vagina.
 
 The hellhound continue sex rules is a rulebook. The continue sex rules of a hellhound is usually the hellhound continue sex rules.
 
 This is the hellhound extra continue sex check rule:
-	follow the check normal continue sex stuff rule;
-	if the rule succeeded, rule succeeds;
 	if diaper quest is 1:
 		if current-monster is penetrating face:
 			compute punishment of hellhound-facesit;
 			rule succeeds;
 		if current-monster is penetrating vagina:
 			compute punishment of hellhound-hump;
-			rule succeeds.
+			rule succeeds;
+	follow the default continue sex rules;
+	if the rule succeeded, rule succeeds.
 The hellhound extra continue sex check rule is listed in the hellhound continue sex rules.
 
 Section 3 - Damage

@@ -597,16 +597,16 @@ To compute damage reaction of (M - mechanic):
 				if the player-class is succubus, say "[speech style of M]'A betrayal eh? I will show you your place, slave'[roman type]";
 			otherwise:
 				let FLAV be 0;
-				if the woman-status of woman-barbara is 91 and the mechanic-scene of woman-barbara <= 4 and woman-barbara is in the location of the player:
-					say "[BigNameDesc of M] roars with frustration.[line break][speech style of M]'Fine, have it your way!'[roman type][line break][big he of M] pulls [his of M] [manly-penis] out of [NameDesc of woman-barbara][']s throat and turns to face you.";
-					if the woman-bimbo of woman-barbara > 4:
-						say "[BigNameDesc of woman-barbara] coos softly.[line break][speech style of woman-barbara]Aww, [please] put it back in, Master!'[roman type][line break]";
+				if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 4 and woman-player is in the location of the player:
+					say "[BigNameDesc of M] roars with frustration.[line break][speech style of M]'Fine, have it your way!'[roman type][line break][big he of M] pulls [his of M] [if diaper quest is 1]wand vibrator away[otherwise][manly-penis] out of [NameDesc of woman-player][']s throat[end if] and turns to face you.";
+					if the woman-bimbo of woman-player > 4 + diaper quest:
+						say "[BigNameDesc of woman-player] coos softly.[line break][speech style of woman-player]Aww, [please] put it back, Master!'[roman type][line break]";
 					otherwise:
-						say "[BigNameDesc of woman-barbara] coughs a couple of times and then passes out. ";
-						bore woman-barbara;
-						now the sleep of woman-barbara is 300;
-					say "It doesn't look like [he of woman-barbara][']s going to be much help...";
-					now the mechanic-scene of woman-barbara is 6;
+						say "[BigNameDesc of woman-player] hyperventilates a couple of times and then passes out. ";
+						bore woman-player;
+						now the sleep of woman-player is 300;
+					say "It doesn't look like [he of woman-player][']s going to be much help...";
+					now the mechanic-scene of woman-player is 6;
 				otherwise if the health of M < the maxhealth of M / 3:
 					if the health of M <= 0 and (the xavier-power of M >= 4 or M is retaining mystical amulet):[gives the player a chance to steal the amulet]
 						say "[BigNameDesc of M] [if M is retaining mystical amulet]grips the amulet[otherwise]clenches [his of M] fists[end if]. [line break][speech style of M]'Fine, have it your way!'[roman type][line break]";

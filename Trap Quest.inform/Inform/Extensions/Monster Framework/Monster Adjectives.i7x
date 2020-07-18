@@ -59,12 +59,6 @@ Definition: a monster is dungeon dwelling: decide no.
 Definition: a monster is woods dwelling: decide no.
 Definition: a monster is hotel dwelling: decide no.
 Definition: a monster is mansion dwelling: decide no.
-Definition: a monster (called M) is regionally missing:
-	let T1 be the substituted form of "[ShortDesc of M]";
-	repeat with N running through in-play monsters:
-		let T2 be the substituted form of "[ShortDesc of N]";
-		if T1 is T2, decide no;
-	decide yes.
 
 A monster can be intelligent. A monster is usually unintelligent. [Essentially, can they speak English?]
 To say speech style of (M - a monster):

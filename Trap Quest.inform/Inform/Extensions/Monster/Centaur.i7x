@@ -130,7 +130,7 @@ To compute appearance assessment of (M - centaur):
 			otherwise:
 				say "[BigNameDesc of M][']s eyes widen as [his of M] gaze [if asshole is lewdly exposed]settles on your exposed [asshole][otherwise]roves your body[end if].[line break][speech style of M]'[one of]You look...strong. Wanna duel?'[or]You look like a...warrior. I really want to fight you.'[or]Up for a duel? You look like you are...'[or]Feel like duelling me? You duel all the time, don't you...'[in random order][roman type][line break]";
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise if the class of the player is priestess or the class of the player is cultist:
 		let H be a random worn headgear;
 		say "[BigNameDesc of M][']s eyes fixate on your [ShortDesc of H], and then briefly move down your body.[line break][speech style of M]'[one of]A real altar [boy of the player]...wow...'[or]It's the altar [boy of the player]...'[stopping][roman type][line break]";

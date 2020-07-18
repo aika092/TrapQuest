@@ -16,10 +16,6 @@ To dislodge (C - a thing):
 		now C is not grabbing B;
 	repeat with B running through body parts wrangled by C:
 		now C is not wrangling B;
-		if C is tentacle monster:
-			now the free-tentacles of C is the max-tentacles of C;
-			now the arm-count of C is 0;
-			now the leg-count of C is 0;
 	repeat with B running through things covered by C:
 		now C is not covering B.
 

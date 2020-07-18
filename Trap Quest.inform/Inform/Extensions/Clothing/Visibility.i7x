@@ -230,6 +230,7 @@ To decide which object is the at least partial concealer of (S - a sex toy):
 		decide on the at least partial concealer of asshole.
 
 To decide which object is the concealer of (S - a sex toy):
+	if current-predicament is team-girlfriends-predicament and the player is in a predicament room, decide on nothing;
 	if S is penetrating vagina:
 		decide on the concealer of vagina;
 	otherwise:

@@ -76,9 +76,9 @@ To uniquely set up (C - cat-ears):
 	now the quest of C is puddle-licking-quest.
 
 To say QuestFlav of (Q - puddle-licking-quest):
-	say "You sense that it wants you to [if diaper quest is 1]drink lots of milk[otherwise]lick up puddles from the floor[end if].".
+	say "You sense that it wants you to lick up puddles from the floor.".
 
 To say QuestTitle of (Q - puddle-licking-quest):
-	say " ([if diaper quest is 1]milk drinking[otherwise]puddle licking[end if] quest)".
+	say " (puddle licking quest)".
 
 Cat Ears ends here.

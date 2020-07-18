@@ -53,18 +53,17 @@ urinal is a backdrop. Understand "potty", "urinals", "bathroom" as urinal. The t
 To say ExamineDesc of (T - toilet):
 	say "A toilet[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 To say ExamineDesc of (T - urinal):
-	say "A urinal[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
+	if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31, say "[if there is a wrestler in Holding Pen][BigNameDesc of random wrestler in Holding Pen] and [NameDesc of woman-player] are here, bound in latex bodysuits as diapered human urinals[otherwise][BigNameDesc of woman-player] is here, bound in a latex bodysuit as a diapered human urinal[end if].";
+	otherwise say "A urinal[if watersports mechanics is 1]. You can [bold type]use[roman type] this to relieve yourself[end if].".
 
 To decide which figure-name is the examine-image of (T - toilet):
 	if the player is in the location of ex-princess and ex-princess is caged, decide on examine-image of ex-princess;
 	if playerRegion is school and the player is not in a predicament room, decide on figure of school toilets;
-	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, decide on figure of human toilet;
+	if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1, decide on figure of human toilet;
 	if diaper quest is 0 and the player is in Toilet01, decide on figure of male toilet;
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
 
-To decide which figure-name is the examine-image of (T - urinal):
-	decide on figure of urinal.
 
 This is the toilet gets focused rule:
 	if watersports mechanics is 1 and the location of the player is toilets and the the player is not in Dungeon11, focus-consider toilet.
@@ -80,7 +79,7 @@ To construct normal buttons for (T - toilet):
 		now the ButtonCommand entry is "use toilet";
 		now the ButtonColour entry is lightModeFullGreen;
 		if the player is prone, now the ButtonColour entry is lightModeFullYellow; [turn yellow - player needs to stand]
-	if ButtonTableFull is 0 and the human-toilet-scene of woman-barbara > 1 and there is a held unlock-key and the player is in Hotel38:
+	if ButtonTableFull is 0 and the human-toilet-scene of woman-player > 1 and there is a held unlock-key and the player is in Hotel38:
 		choose a blank row in the Table of Buttons;
 		now the ButtonImage entry is the examine-image of a random held unlock-key;
 		now the ButtonCommand entry is "unlock toilet";
@@ -316,13 +315,13 @@ To compute toilet use:
 			let C be a random pee covering clothing;
 			if C is clothing, say "Pulling the crotch fabric of your [ShortDesc of C] to one side, you ";
 			otherwise say "You ";
-			say "sit on the [if the player is in Dungeon11]training potty throne[otherwise]nearby toilet[end if] [if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2]above [NameDesc of woman-barbara][']s ring-gagged face [end if]and release your hold on your bladder.";
+			say "sit on the [if the player is in Dungeon11]training potty throne[otherwise]nearby toilet[end if] [if the player is in Hotel38 and the human-toilet-scene of woman-player is 2]above [NameDesc of woman-player][']s ring-gagged face [end if]and release your hold on your bladder.";
 			now too is " too";
 			now the bladder of the player is 0;
 			now toiletJustUsed is true;
 	if (rectum > 3 or the total squirtable fill of belly > 0 or suppository > 0) and asshole is not actually occupied and (the number of ass covering undisplacable clothing is 0 or the player is able to use the toilet past their diaper):
-		if the player is in Hotel38 and the human-toilet-scene of woman-barbara is 2:
-			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing [him of woman-barbara]. [if the bimbo of the player < 10][one of]You blush at the thought [he of woman-barbara]'ll know how you've been used back there.[or]Once again you've sort of creampied [him of woman-barbara].[or][variable custom style]I hope [he of woman-barbara] doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style][big he of woman-barbara] must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if [he of woman-barbara] appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
+		if the player is in Hotel38 and the human-toilet-scene of woman-player is 2:
+			say "With an embarrassing sound, you evacuate your bowels[too], kind of cream-pie-ing [him of woman-player]. [if the bimbo of the player < 10][one of]You blush at the thought [he of woman-player]'ll know how you've been used back there.[or]Once again you've sort of creampied [him of woman-player].[or][variable custom style]I hope [he of woman-player] doesn't think my ass is always filled with [BellyContentsAlone]![roman type][line break][or][variable custom style]Why does this keep happening?[roman type][line break][or][variable custom style][big he of woman-player] must think I'm such an anal slut![roman type][line break][or]Again.[stopping][otherwise if the humiliation of the player > 20]You have a vague feeling this might have once embarrassed you, but, really, it's kinda hot.[otherwise]You bite your lip, wondering if [he of woman-player] appreciates how hard you worked to get that![end if]"; [Mainly added so we can feel Barbara's not eating poo. Eww.]
 		otherwise:
 			say "With an embarrassing sound, you evacuate your bowels[too]. ";
 		if the large egg count of belly > 0:
@@ -413,7 +412,7 @@ To compute toilet use:
 				say "Suddenly a bright light flashes from the potty throne. When your vision is restored, you see a [ShortDesc of C] on the floor in front of you.[line break][variable custom style]Maybe this is [if the player is diapered]my reward for being properly diapered[otherwise]what the throne thinks I should be wearing?[end if][roman type][line break]";
 				now C is in the location of the player;
 				compute autotaking C;
-	if toiletJustUsed is true, check barbara toilet.
+	if toiletJustUsed is true, check woman toilet.
 
 [!<ComputeUrinalUse>+
 
@@ -427,12 +426,48 @@ To compute urinal use:
 	if the location of the player is urinals, say "[if the player is possessing a penis]walk up to[otherwise]squat in front of[end if] the urinal and ";
 	say "release your hold on your bladder.";
 	if the bladder of the player > 0:
+		if the hotel-urinal-scene of woman-player > 0 and the player is in Hotel31:
+			let M be a random wrestler in Holding Pen;
+			if M is monster:
+				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+				set numerical response 1 to "urinate on [WomanName], letting [him of woman-player] drink it";
+				set numerical response 2 to "urinate on [WomanName], NOT letting [him of woman-player] drink it";
+				set numerical response 3 to "urinate on [NameDesc of M], letting [him of M] drink it";
+				set numerical response 4 to "urinate on [NameDesc of M], NOT letting [him of M] drink it";
+				compute multiple choice question;
+				if player-numerical-response is 1 or player-numerical-response is 3:
+					if player-numerical-response is 1, now M is woman-player;
+					say "Your [urine] fills [NameDesc of M][']s mouth, and [he of M] obediently gulps as much down as [he of M] can. Shortly afterwards you hear a hissing sound as [NameDesc of M] fills [his of M] diaper. At the same time, [he of M] squeals with a high pitched note as [his of M] vibrating wand brings [him of M] to another powerful orgasm.";
+					if M is wrestler:
+						compute WrestlerUrinalCompletion;
+						say "Poor [NameDesc of woman-player] is still stuck there, now all on [his of woman-player] own!";
+					otherwise:
+						say "The bar on the screen at the front of [his of M] diaper increases, but doesn't reach 100%. [big he of M][']s still stuck!";
+						if M is woman-player, now the hotel-urinal-scene of M is 9;
+					FavourUp M by 5;
+					now M is a random wrestler in Holding Pen;
+				if player-numerical-response > 2, now M is woman-player;
+				say "[if player-numerical-response is 2 or player-numerical-response is 4]Both human urinals groan as[otherwise]Some of[end if] the [urine] trickles down the latex bodysuit into the drain. And then, [one of]much to your surprise, [or][stopping]it's [NameDesc of M][']s wand vibrator that suddenly kicks into turbo mode, now vibrating even more loudly and powerfully. [one of][bold type]This must mean that each urinal's drain is somehow hooked up to the other human urinal's vibrator! [roman type][or][stopping][big he of M] screams in a mixture of panic and pleasure as [his of M] mind begins to melt from the excessive overstimuation.";
+				if M is woman-player:
+					WomanSluttify;
+					FavourDown woman-player;
+			otherwise:
+				let M be woman-player;
+				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+				set numerical response 1 to "urinate on [WomanName], letting [him of M] drink it";
+				set numerical response 2 to "urinate on [WomanName], NOT letting [him of M] drink it";
+				compute multiple choice question;
+				if player-numerical-response is 1:
+					say "Your [urine] fills [NameDesc of M][']s mouth, and [he of M] obediently gulps as much down as [he of M] can. Shortly afterwards you hear a hissing sound as [NameDesc of M] fills [his of M] diaper. At the same time, [he of M] squeals with a high pitched note as [his of M] vibrating wand brings [him of M] to another powerful orgasm.";
+					say "The bar on the screen at the front of [his of M] diaper increases, but doesn't reach 100%. [big he of M][']s still stuck for now!";
+					now the hotel-urinal-scene of M is 9;
+					FavourUp M by 5;
+				otherwise:
+					say "[BigNameDesc of M] groans in frustration as the [urine] trickles down [his of M] latex bodysuit into the drain.";
+					FavourDown woman-player;
 		now the bladder of the player is 0;
 		repeat with M running through reactive monsters:
 			compute toilet reaction of M;
-		[if incontinence > 0:
-			decrease incontinence by 1;
-			say "You feel as if you've regained some control over your bladder[if diaper messing >= 3] and bowels[end if]!";]
 		progress quest of careful-peeing-quest;
 	otherwise:
 		say "Nothing comes out!".
@@ -554,9 +589,12 @@ To start urination:
 		if K is diaper and K is total protection and overflowed is 0, say PeeReaction 2;
 		otherwise say PeeReaction 3;
 	[Process punishments for involuntary wetting]
-	if diaper lover >= 1 and delayed urination is 1 and incontinence < the max-incontinence of the player and the diaper addiction of the player > incontinence + 10 and there is a worn total protection diaper:
-		increase incontinence by 1;
-		say "[one of]You can't help but notice that losing control and wetting your diaper feels weirdly nice and comforting. [or][stopping][bold type]You feel your bladder weakening[one of][or] further[stopping], in support of your growing addiction to and dependence for diapers.[roman type][line break]";
+	if diaper lover >= 1:
+		if temporary-incontinence > 0:
+			progress temporary incontinence;
+		otherwise if delayed urination is 1 and incontinence < the max-incontinence of the player and the diaper addiction of the player > incontinence + 10 and there is a worn total protection diaper:
+			increase incontinence by 1;
+			say "[one of]You can't help but notice that losing control and wetting your diaper feels weirdly nice and comforting. [or][stopping][bold type]You feel your bladder weakening[one of][or] further[stopping], in support of your growing addiction to and dependence for diapers.[roman type][line break]";
 	if delayed urination is 1:
 		now wetting-valued is -1;
 		if diaper bonus > 0, compute wetting failure;
@@ -798,7 +836,20 @@ To check (L - a liquid-object) maidification:
 To decide which number is the max-incontinence of the player:
 	decide on 10 - (incontinence protection * 2).
 
+temporary-incontinence is a number that varies.
+To progress temporary incontinence:
+	if temporary-incontinence > 0:
+		let DA be 0;
+		if the player is diaper aware, now DA is 1;
+		decrease temporary-incontinence by 1;
+		if temporary-incontinence is 0 and the incontinence of the player < the max-incontinence of the player:
+			say "[bold type]You feel that the magic curse that was making you completely incontinent has finally lifted![line break][variable custom style]I can feel my bladder again![roman type][line break]";
+			if DA is 0 and the player is diaper aware: [Player has regained the ability to detect when they urinate into a diaper]
+				let C be a random worn diaper;
+				if C is diaper, compute awakened state check of C.
+
 To decide which number is the incontinence of the player:
+	if temporary-incontinence > 0, decide on the max-incontinence of the player;
 	let I be incontinence;
 	increase I by the number of worn bed wetting clothing;
 	if diaper lover > 0:
@@ -1193,6 +1244,8 @@ This is the compulsory urination rule:
 			let old-bladder be the bladder of the player;
 			try urinating;
 			if the bladder of the player < old-bladder, now another-turn is 1; [Urination successful. We can force a delayed turn without risking a loop.]
+		otherwise:
+			progress temporary incontinence;
 		if debugmode is 1, say "resetting accidental urination flag.";
 		now delayed urination is 0.
 The compulsory urination rule is listed in the compulsory action rules.

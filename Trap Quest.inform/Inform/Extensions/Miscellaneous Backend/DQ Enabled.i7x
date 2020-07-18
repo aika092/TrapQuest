@@ -1,4 +1,4 @@
-DQ Only Stuff by Miscellaneous Backend begins here.
+DQ Enabled by Miscellaneous Backend begins here.
 
 To say QuestFlav of (Q - stealth-diaper-quest):
 	say "You sense it wants you to pee in a diaper in front of someone without them being able to see that you're wearing a diaper OR pee into a diaper while another completely dry diaper is layered on top of it.".
@@ -38,10 +38,14 @@ Chapter - DQ Specific Figures
 
 Figure of Cutscene Prologue Male is the file "Special/Cutscene/cutscene-prologue1.png".
 Figure of Cutscene Prologue Female is the file "Special/Cutscene/cutscene-prologue2.png".
-Figure of YesNoBackground1 is the file "Special/Buttons/dqyesno1.jpg".
-Figure of YesNoBackground2 is the file "Special/Buttons/dqyesno2.jpg".
-Figure of YesNoBackground3 is the file "Special/Buttons/dqyesno3.jpg".
-Figure of YesNoBackground4 is the file "Special/Buttons/dqyesno4.jpg".
+Figure of YesNoBackground1A is the file "Special/Buttons/YesNo/DQ1A.png".
+Figure of YesNoBackground1B is the file "Special/Buttons/YesNo/DQ1B.png".
+Figure of YesNoBackground2A is the file "Special/Buttons/YesNo/DQ2A.png".
+Figure of YesNoBackground2B is the file "Special/Buttons/YesNo/DQ2B.png".
+Figure of YesNoBackground3A is the file "Special/Buttons/YesNo/DQ3A.png".
+Figure of YesNoBackground3B is the file "Special/Buttons/YesNo/DQ3B.png".
+Figure of YesNoBackground4A is the file "Special/Buttons/YesNo/DQ4A.png".
+Figure of YesNoBackground4B is the file "Special/Buttons/YesNo/DQ4B.png".
 Figure of HoleInWallBackground is the file "Map/hole2.png".
 Figure of demon lord is the file "NPCs/Bosses/xavier1.png".
 Figure of modification machine is the file "Env/Hotel/modmachine2.png".
@@ -61,14 +65,21 @@ Figure of Minotaur Cutscene 2 is the file "Special/smallimage.jpg".
 To decide which figure-name is YesNoBackground:
 	if temporaryYesNoBackground is not figure of small image, decide on temporaryYesNoBackground;
 	if the bimbo of the player < 10:
-		if the player is gendered male, decide on figure of YesNoBackground1;
-		otherwise decide on figure of YesNoBackground2;
-	decide on figure of YesNoBackground3.
+		if the player is female:
+			if the player is diapered, decide on figure of YesNoBackground1B;
+			otherwise decide on figure of YesNoBackground1A;
+		otherwise:
+			if the player is diapered, decide on figure of YesNoBackground2B;
+			otherwise decide on figure of YesNoBackground2A;
+	otherwise:
+		if the player is female:
+			if the player is diapered, decide on figure of YesNoBackground3B;
+			otherwise decide on figure of YesNoBackground3A;
+		otherwise:
+			if the player is diapered, decide on figure of YesNoBackground3B;
+			otherwise decide on figure of YesNoBackground3A;
 
 Include School Stuff by DQ Only Stuff.
-
-Include Nursery by Nintendolls Job Epilogues.
-Include Just Married by Nintendolls One Year Later Epilogues.
 
 a wench is a kind of monster. a horny-wench is a kind of wench. a wench has a number called creampieTimer.
 To compute (M - a monster) WenchReceiving (C - a clothing):
@@ -103,6 +114,7 @@ confident aeromancer is a monster.
 
 Include RoboMatron by Monster.
 Include Boogeymonster by Monster.
+Include Woman Berri by Monster.
 
 A bukkake trap door is a kind of trap. A bukkake hose is a kind of trap.
 A dildo trap is a kind of trap. A dildo pole trap is a kind of dildo trap. A drill pole trap is a kind of dildo trap. A creampie pole trap is a kind of dildo trap. A ghostly dildo pole trap is a kind of dildo trap.
@@ -136,11 +148,18 @@ bondage-ribbons is a dress.
 
 Include Chocolates Bag by Objects.
 Include Bunny Ears DQ by Headgear.
+To say WaitressOfferAcceptFlav of (M - a monster) to (T - a thing):
+	say "".
+To say WaitressTakeFlav of (M - a monster) to (T - a thing):
+	say "".
 
 tits-lesson is a lesson. the lesson-teacher of tits-lesson is teacher-hannah.
 Definition: tits-lesson is lesson-appropriate: decide no.
 
 Include Stuffies by Equippables.
+
+To progress quest of (Q - whore-exposing-quest) for (M - a monster):
+	do nothing.
 
 Figure of Jammy Messy Loading Animation Frame 1 is the file "Special/Animations/JammyLoading/frame_000001.jpeg".
 Figure of Jammy Messy Loading Animation Frame 4 is the file "Special/Animations/JammyLoading/frame_000004.jpeg".
@@ -732,4 +751,4 @@ To decide which figure-name is the bannerImage of (T - MirrorAnimation):
 To compute unique setup of (T - MirrorAnimation):
 	if diaper messing >= 3, now the image-reel of T is {Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 2, Figure of Mirror Animation Frame 4, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 3, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5, Figure of Mirror Animation Frame 5 }.]
 
-DQ Only Stuff ends here.
+DQ Enabled ends here.

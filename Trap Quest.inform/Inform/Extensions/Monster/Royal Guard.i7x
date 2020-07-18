@@ -326,7 +326,7 @@ To compute appearance assessment of (M - a royal guard):
 			otherwise:
 				say "[speech style of M]'[one of]You there, you look like a common harlot! You are lucky I am not arresting you on the spot.'[or]Wench! I am a steward of the crown, it is improper for you to present yourself in front of me in such attire.'[in random order]";
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging? ";
 		if there is a worn currently at least partially visible diaper, say "[if M is unfriendly and a random worn diaper is currently visible]Ugh, are you aware that your childish undergarments are showing?! What a disgrace. [otherwise if M is unfriendly]I can see the shape of your undergarments through your clothing, you know. [otherwise]Err, interesting undergarment choice. Do you have some kind of condition? [end if]".
@@ -470,6 +470,8 @@ To compute DQ appearance assessment of (M - a royal guard):
 		if M is buddy, say "[speech style of M]'I understand that you're trying to look like an adult, but your appearance is a disgrace. [big please] try and find something more sensible to wear before we meet again. ";
 		otherwise say "[speech style of M]'I am rather disgusted by your appearance. You look like a common whore. Find something more dignified to wear before crossing paths with me again, or I will be forced to treat you with the lack of respect that you deserve. ";
 		FavourDown M by 2;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute dq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'Greetings, traveller. I hope your visit to these regions has been engaging? ".
 
@@ -1132,6 +1134,19 @@ Definition: a royal guard is willing to forcefeed pills: decide yes.
 Definition: a royal guard is willing to confiscate: decide yes.
 
 Definition: a royal guard is willing to punish untidiness: decide yes.
+
+Definition: a royal guard is eager to donate babywear:
+	if there is a worn diaper and purple-baby-reins is off-stage and purple-baby-reins is actually summonable, decide yes;
+	decide no.
+
+To compute babywear donation of (M - a royal guard):
+	say "[speech style of M]'This will keep you under control until your sentence is over.'[roman type][line break]";
+	say "[BigNameDesc of M] straps a [MediumDesc of purple-baby-reins] over your body and diaper!";
+	summon purple-baby-reins locked;
+	say FullExamineDesc of purple-baby-reins;
+	say BabywearDonationReaction of M on purple-baby-reins;
+	say "[speech style of M]'Be a well-behaved convict for us, and we'll let you out soon enough.'[roman type][line break]";
+	satisfy M.
 
 guard-spanking-session is a diaper punishment. The priority of guard-spanking-session is 5.
 

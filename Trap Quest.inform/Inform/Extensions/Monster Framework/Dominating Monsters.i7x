@@ -399,7 +399,7 @@ Check dominating:
 	if the noun is not monster, say "What would be the point of that?" instead;
 	let vm be a random video-monitor in the location of the player;[too annoying to deal with, so its not allowed.]
 	if vm is a video-monitor and the video-caller of vm is not the throne, say "You decide against it. You don't want to give your audience the wrong idea." instead;
-	if the noun is woman-barbara and the woman-status of woman-barbara is 80, compute PlayerBarbaraStoolFuck instead;
+	if the noun is woman-player and the woman-status of woman-player is 80, compute PlayerWomanStoolFuck instead;
 	if the latex-transformation of the player >= 6, say "You wouldn't feel anything from it, so you don't see the point." instead;
 	if the player is prone, say "That would be a little hard to do from your knees." instead;
 	if the noun is sex-enslaved and the player is the donator, compute enslaved domination of the noun instead;
@@ -927,7 +927,7 @@ To diapersit dominate (M - a monster):
 	set numerical response 2 to "try to use [his of M] face to get off";
 	if the player is not incontinent:
 		if the latex-transformation of the player <= 4, set numerical response 3 to "try to piss in your diaper while sitting there";
-		if diaper lover >= 7 and asshole is not actually occupied, set numerical response 4 to "try to mess your diaper while sitting there";
+		if diaper messing >= 7 and asshole is not actually occupied, set numerical response 4 to "try to mess your diaper while sitting there";
 	compute multiple choice question;
 	if player-numerical-response is 2:
 		say "You grind your [genitals] against [NameDesc of M][']s face through your [if D is messed]soiled[otherwise if D is wet]wet[otherwise]soft[end if] padding.";
@@ -969,17 +969,27 @@ To diapersit dominate (M - a monster):
 			say "Nothing comes out!";
 	if D is messed:
 		increase player-fucking by 2;
-		say "[BigNameDesc of M] whimpers and flails as [he of M] is forced to breathe in the disgusting scent of your soiled [ShortDesc of D].";
+		say DiaperMessDominated of M;
 		FavourDown M by 2;
-	otherwise if the total-soak of D >= the soak-limit of D / 2:
+	otherwise if the total-soak of D >= the soak-limit of D / 3:
 		increase player-fucking by 1;
-		say "[BigNameDesc of M] continues to weakly struggle as [he of M] is forced to breathe in and out through your soggy padding.";
+		say DiaperSoggyDominated of M;
 		FavourDown M;
 	otherwise:
-		say "You feel [NameDesc of M][']s heavy breathing going in and out through your padding.";
+		say DiaperDryDominated of M;
 	if player-fucking < DOMINANT-SHAMEFUL, now player-fucking is DOMINANT-SHAMEFUL;
 	if player-fucking > DOMINANT-SUPER, now player-fucking is DOMINANT-SUPER;
 	DiaperGet.
+
+To say DiaperMessDominated of (M - a monster):
+	let D be a random worn diaper;
+	say "[BigNameDesc of M] whimpers and flails as [he of M] is forced to breathe in the disgusting scent of your soiled [ShortDesc of D].".
+
+To say DiaperSoggyDominated of (M - a monster):
+	say "[BigNameDesc of M] continues to weakly struggle as [he of M] is forced to breathe in and out through your soggy padding.".
+
+To say DiaperDryDominated of (M - a monster):
+	say "You feel [NameDesc of M][']s heavy breathing going in and out through your padding.".
 
 [Use this for scenes that don't rely on the player's penis or fuckholes. This generally shouldn't show up, since a monster with a unique domination scene will have their own version of this function]
 To unique dominate (M - a monster):

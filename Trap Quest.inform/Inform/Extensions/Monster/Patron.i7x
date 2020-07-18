@@ -196,18 +196,18 @@ A time based rule (this is the patron encountering rule):
 			if debuginfo > 1, say "[input-style]Patron wandering check: ([patronTime] turns) --> d[patronTime] ([R]) | 15.5[roman type][line break]";
 			now patronTime is 0;
 			let H be a random hotel bed in the location of the player;
-			if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-barbara is in the hotel and the patron-scene-done of woman-barbara is 0 and woman-barbara is friendly and the woman-status of woman-barbara < 10:
-				now woman-barbara is in the location of the player;
-				say "[BigNameDesc of woman-barbara] wanders into the room. [if woman-barbara is uninterested][big he of woman-barbara] seems happy to see you![line break][speech style of woman-barbara]'Oh [NameBimbo], fancy bumping into you here! I was just checking out the... wait, what's that sound?'[roman type][end if][line break]";
+			if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 0 and woman-player is in the hotel and the patron-scene-done of woman-player is 0 and woman-player is friendly and the woman-status of woman-player < 10:
+				now woman-player is in the location of the player;
+				say "[BigNameDesc of woman-player] wanders into the room. [if woman-player is uninterested][big he of woman-player] seems happy to see you![line break][speech style of woman-player]'Oh [NameBimbo], fancy bumping into you here! I was just checking out the... wait, what's that sound?'[roman type][end if][line break]";
 			if H is a thing and the number of monsters in the location of the player is 0:
 				compute PatronSpawning of H;[sometimes beds will just activate]
 				now the alert of the player is 1;
-			otherwise if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 1 and woman-barbara is in the location of the player and the patron-scene-done of woman-barbara is 0 and woman-barbara is friendly:
-				compute patron scene of woman-barbara;
+			otherwise if the player is the donator and a2m fetish >= 2 and H is a thing and the number of monsters in the location of the player is 1 and woman-player is in the location of the player and the patron-scene-done of woman-player is 0 and woman-player is friendly:
+				compute patron scene of woman-player;
 			otherwise if diaper quest is 0 and resting is 0 and the number of on-stage patrons is 0:
 				let P be a random off-stage generic-appropriate patron;
 				let M be a random monster in the location of the player;
-				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-barbara is not 1, now M is toilet;
+				if the player is in Hotel38 and watersports fetish is 1 and a2m fetish >= 2 and the human-toilet-scene of woman-player is not 1, now M is toilet;
 				let PSRB be a random carried probably-serve-ready bottle;
 				if PSRB is a bottle:
 					now P is in the location of the player;
@@ -238,7 +238,7 @@ A time based rule (this is the patron encountering rule):
 To compute patronMeeting of (M - toilet) with (P - a patron):
 	if debuginfo > 1, say "[input-style]Patron is meeting [NameDesc of M].[roman type][line break]";
 	let patronBarter be 0;
-	if toilet-key is in Holding Pen and the human-toilet-scene of woman-barbara > 1 and the player is able to speak:[###Selkie: what about if I(we?) modify this to use some humiliating begging charade text on Barbara's behalf, for the case where the player can't speak?]
+	if toilet-key is in Holding Pen and the human-toilet-scene of woman-player > 1 and the player is able to speak:[###Selkie: what about if I(we?) modify this to use some humiliating begging charade text on Barbara's behalf, for the case where the player can't speak?]
 		say "[BigNameDesc of P] wanders into the room! You see [him of P] toying with the key for the toilet bondage in one of [his of P] hands. Do you beg [him of P] for the key? ";
 		if the player is consenting:
 			now patronBarter is 1;
@@ -248,15 +248,15 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 				try kneeling;
 				now auto is 0;
 			if the player is able to speak:[Modified to use some humiliating begging charade text on Barbara's behalf, for the case where the player can't speak.]
-				say "[variable custom style]'Please, let my friend out now, [he of woman-barbara][']s gonna go insane!'[roman type][line break]";
+				say "[variable custom style]'Please, let my friend out now, [he of woman-player][']s gonna go insane!'[roman type][line break]";
 			otherwise:
-				say "Even though you can't talk, you make enough sound to attract [his of P] attention. You swallow as [he of P] stares at you with a hard-to-read expression and feel yourself flush red. Gesturing at [NameDesc of woman-barbara] you shake your head, making sure to put on an exaggerated pleading expression. [if the player is wrist bound behind]You'd hold your hands up to beg, but with them behind you, the best you can do is twist your shoulders to try to point toward your hapless friend. It makes your [BreastDesc] [BreastBounceDesc].[otherwise if the player is wrist bound]You look especially abject and humiliating thanks to your wrists being cuffed together as if you were some kind of slave or something![otherwise]You put your hands up to make your abject begging even clearer.[end if] You lift your chin up, kind of nodding, kind of offering your own face, suddenly wondering whether [he of P] will even be able to jam [his of P] cock into your mouth, or whether [he of P][']ll just pee all over your face!";
+				say "Even though you can't talk, you make enough sound to attract [his of P] attention. You swallow as [he of P] stares at you with a hard-to-read expression and feel yourself flush red. Gesturing at [NameDesc of woman-player] you shake your head, making sure to put on an exaggerated pleading expression. [if the player is wrist bound behind]You'd hold your hands up to beg, but with them behind you, the best you can do is twist your shoulders to try to point toward your hapless friend. It makes your [BreastDesc] [BreastBounceDesc].[otherwise if the player is wrist bound]You look especially abject and humiliating thanks to your wrists being cuffed together as if you were some kind of slave or something![otherwise]You put your hands up to make your abject begging even clearer.[end if] You lift your chin up, kind of nodding, kind of offering your own face, suddenly wondering whether [he of P] will even be able to jam [his of P] cock into your mouth, or whether [he of P][']ll just pee all over your face!";
 			say "[BigNameDesc of P] looks at you and thinks for a moment, rubbing [his of P] chin with amusement.[line break][speech style of P]'Okay, if you drink this in your friend's place, I'll give you the key.'[roman type][line break]Before you can react, [he of P] has whipped out [his of P] [DickDesc of P] and it's pointing right at your face!";
 			FacePiss from P;
 			if P is pissed off:
 				say "[BigNameDesc of P] just laughs.[line break][speech style of P]'Pathetic. That shows how much you actually care about your friend.'[roman type][line break]";
 			otherwise:
-				say "[BigNameDesc of P] smiles widely.[line break][speech style of P]'Wow, calm down slut, you didn't have to gobble it down quite so greedily, you know! Drinking piss is nothing to be proud of. What a perfect pair of pathetic toilet sluts you two make. Anyway, as promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-barbara]... nobody except me and the toilet over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]";
+				say "[BigNameDesc of P] smiles widely.[line break][speech style of P]'Wow, calm down slut, you didn't have to gobble it down quite so greedily, you know! Drinking piss is nothing to be proud of. What a perfect pair of pathetic toilet sluts you two make. Anyway, as promised, here's the key[if freedom tattoo is drawable]... but here's a little secret. If you put this in the chute in the inspiration room, it'll give you a magic tattoo that will make you much faster. And if you choose to do that, instead of rescuing [him of woman-player]... nobody except me and the toilet over there will ever know. I'll leave the decision up to you[end if].'[roman type][line break]";
 				now toilet-key is in the location of the player;
 				compute autotaking toilet-key;
 		otherwise:
@@ -264,8 +264,8 @@ To compute patronMeeting of (M - toilet) with (P - a patron):
 	otherwise:
 		say "[BigNameDesc of P] wanders into the room! Completely ignoring you, ";
 	if patronBarter is 0:
-		say "[he of P] whips out [his of P] [DickDesc of P] and [one of]takes an impressively long[or]takes a quick[or]sighs as he takes a[purely at random] piss into [if the human-toilet-scene of woman-barbara > 1][NameDesc of woman-barbara][']s[otherwise]the poor human toilet's[end if] mouth. [big he of woman-barbara] gargles weakly as [he of woman-barbara] is forced to swallow gulp after gulp after gulp of the hot [urine]. [big his of woman-barbara] belly audibly groans as it is forced to stretch even further.";
-		if the human-toilet-scene of woman-barbara > 1, ImmediateWomanSluttify;
+		say "[he of P] whips out [his of P] [DickDesc of P] and [one of]takes an impressively long[or]takes a quick[or]sighs as he takes a[purely at random] piss into [if the human-toilet-scene of woman-player > 1][NameDesc of woman-player][']s[otherwise]the poor human toilet's[end if] mouth. [big he of woman-player] gargles weakly as [he of woman-player] is forced to swallow gulp after gulp after gulp of the hot [urine]. [big his of woman-player] belly audibly groans as it is forced to stretch even further.";
+		if the human-toilet-scene of woman-player > 1, ImmediateWomanSluttify;
 	say "[BigNameDesc of P] leaves the way [he of P] came in.";
 
 To compute player urinal use of (M - a monster):
@@ -438,7 +438,7 @@ To check perception of (M - a patron):
 		now M is interested;
 		now the last-tripped of M is 0;
 		now the last-interaction of M is 0;
-		if woman-barbara is in the location of the player:
+		if woman-player is in the location of the player:
 			anger M;
 		otherwise if M is the father:
 			calm M;
@@ -567,7 +567,7 @@ To compute (M - a patron) protecting against (X - a monster):
 	do nothing.
 
 To decide which number is the condom resistance of (M - a patron):
-	if fishbowl is in the location of the player or woman-barbara is in the location of the player, decide on 20;
+	if fishbowl is in the location of the player or woman-player is in the location of the player, decide on 20;
 	if M is dickhead patron, decide on 1;
 	decide on 0.
 
@@ -585,9 +585,9 @@ To decide which body part is the painful-part of (M - a monster):
 	decide on B.
 
 To compute damaging attack of (M - a patron):
-	if woman-barbara is in the location of the player and a random number between 1 and 2 is 1 and patron-scene-fighting of woman-barbara >= 2 and the woman-bimbo of woman-barbara <= 4:
+	if woman-player is in the location of the player and a random number between 1 and 2 is 1 and patron-scene-fighting of woman-player >= 2 and the woman-bimbo of woman-player <= 4:
 		let B be the painful-part of M;
-		say "[BigNameDesc of M] [one of]smacks [NameDesc of woman-barbara] [TargetName of B]![or]tries to hit [NameDesc of woman-barbara], but misses.[purely at random]";
+		say "[BigNameDesc of M] [one of]smacks [NameDesc of woman-player] [TargetName of B]![or]tries to hit [NameDesc of woman-player], but misses.[purely at random]";
 	otherwise:
 		compute striking attack of M.
 
@@ -1102,7 +1102,7 @@ To say PatronPaymentFlav of (M - dickhead patron):
 	say "[speech style of M]'[one of]Keep the change, you filthy animal.'[or]To be honest I'm impressed that you've survived.'[or]You don't even deserve this much.'[or]Until next time, whore.'[or]Try harder next time.'[in random order][roman type][line break]";
 
 To compute payment of (M - a patron):
-	if woman-barbara is in the location of the player:[The scene finishes in a different way.]
+	if woman-player is in the location of the player:[The scene finishes in a different way.]
 		store M after tricks;
 		now M is not interested;
 	otherwise:
@@ -1143,7 +1143,7 @@ Definition: a body part (called B) is available for rubbing:
 	decide yes.
 
 To compute SelectionWaiting of (M - a patron):
-	if woman-barbara is in the location of the player:
+	if woman-player is in the location of the player:
 		do nothing; [She handles all the ones you can't fit]
 	otherwise if the wanking-target of M is nothing:
 		now the wanking-target of M is a random available for rubbing body part;
@@ -1209,7 +1209,7 @@ To say UnavoidableFacial of (M - a patron):
 	say "[one of][BigNameDesc of M] holds you still as [he of M] ejaculates all over your face.[or]Your face is covered in a thick load of [semen] before you can even think about turning your face away.[or][BigNameDesc of M] groans, having already gone over the edge. You take a full ejaculation all over your face.[or]You're completely unable to get out of the way as [NameDesc of M] jizzes all over your face.[or][if the semen addiction of the player < 9]You struggle in vain as [he of M] unloads all over your face.[otherwise if the semen addiction of the player < 12]You half-heartedly struggle as [he of M] unloads all over your face.[otherwise]You giggle happily as [he of M] unloads all over your face.[end if][or][if the semen addiction of the player < 8]Knowing what's coming, you try to get out of the way. Unfortunately, there's nothing you can do to stop [NameDesc of M] from ejaculating all over your face.[otherwise if the semen addiction of the player < 12]Unfortunately, you find yourself without the will to struggle as [NameDesc of M] grabs you and force you to take a hot, sticky facial.[otherwise]Much to your delight, [NameDesc of M] grabs you and holds you in place for a hot, sticky facial.[end if][or][if the semen addiction of the player < 11]Knowing what's coming, you try to get out of the way. However, there's nothing you can do to stop [NameDesc of M] from ejaculating all over your face.[otherwise]Finding yourself distracted by how yummy [his of M] [DickDesc of M] looks, there's nothing you can do to stop [NameDesc of M] from ejaculating all over your face.[end if][in random order]".
 
 To compute facial climax of (M - a patron):
-	if M is unwrapped and woman-barbara is in the location of the player:
+	if M is unwrapped and woman-player is in the location of the player:
 		say ResistedOralCreampie of M;
 		BlowCount;
 		compute post blowjob effect of M;
@@ -1225,7 +1225,7 @@ To compute facial climax of (M - a patron):
 			summon T.
 
 To compute post blowjob effect of (M - a patron):
-	if M is unwrapped and woman-barbara is in the location of the player:
+	if M is unwrapped and woman-player is in the location of the player:
 		say "[speech style of M][one of]'Good. Now add that to the bowl.'[or]'Spit it into the bowl like a good whore now.'[in random order][roman type][line break][BigNameDesc of M] grabs you by your [ShortDesc of hair] and forces your face over to the bowl, where [he of M] makes sure that [his of M] entire load makes it into the bowl.";
 		DoseUp fishbowl by the semen load of M;
 		if the fill-colour of fishbowl is golden, now the fill-colour of fishbowl is murky;
@@ -1262,9 +1262,9 @@ To compute sexBegging of (M - a patron) in (F - a fuckhole):
 		ruin F.
 
 To compute post climax effect of (M - a patron) in (F - vagina):
-	if woman-barbara is in the location of the player:
+	if woman-player is in the location of the player:
 		if the semen volume of vagina > 0:
-			say "[speech style of M][one of]'That felt great. Now, squat over the bowl, bitch.'[or]'There's a good whore. Now let it all out into the bowl.'[in random order][roman type][line break][BigNameDesc of woman-barbara] is ready with the fishbowl, which is placed underneath your [vagina]. [BigNameDesc of M] spreads your pussy lips with [his of M] fingers, encouraging [his of M] creampie to seep down into the bowl.";
+			say "[speech style of M][one of]'That felt great. Now, squat over the bowl, bitch.'[or]'There's a good whore. Now let it all out into the bowl.'[in random order][roman type][line break][BigNameDesc of woman-player] is ready with the fishbowl, which is placed underneath your [vagina]. [BigNameDesc of M] spreads your pussy lips with [his of M] fingers, encouraging [his of M] creampie to seep down into the bowl.";
 			DoseUp fishbowl by the semen volume of vagina;
 			now the semen volume of vagina is 0;
 			if the fill-colour of fishbowl is golden, now the fill-colour of fishbowl is murky;
@@ -1279,10 +1279,10 @@ To compute post climax effect of (M - a patron) in (F - vagina):
 			summon T.
 
 To compute post climax effect of (M - a patron) in (F - asshole):
-	if woman-barbara is in the location of the player:
+	if woman-player is in the location of the player:
 		if (the total squirtable fill of belly - the total egg fill of belly) > 0:
 			compute payment of M; [make him not unleashed before the squirt so he doesn't start fucking again]
-			say "[speech style of M][one of]'Do you feel nice and full, [honey of M]? Well, time to let it all out into your trophy bowl.'[or]'Time to show us all just how a disgusting whore like you keeps [his of the player] favourite drink for later.'[in random order][roman type][line break][BigNameDesc of woman-barbara] is ready with the fishbowl, which is placed underneath your [asshole]. [BigNameDesc of M] spreads your [AssDesc], forcing you to expel the contents of your belly into the bowl.";
+			say "[speech style of M][one of]'Do you feel nice and full, [honey of M]? Well, time to let it all out into your trophy bowl.'[or]'Time to show us all just how a disgusting whore like you keeps [his of the player] favourite drink for later.'[in random order][roman type][line break][BigNameDesc of woman-player] is ready with the fishbowl, which is placed underneath your [asshole]. [BigNameDesc of M] spreads your [AssDesc], forcing you to expel the contents of your belly into the bowl.";
 			AssSquirt;
 	otherwise:
 		let T be asshole-tally tattoo;
@@ -1305,7 +1305,7 @@ To say CondomPieFlav of (M - a patron) in (F - a fuckhole):
 	say "[one of][BigNameDesc of M] growls, tightening [his of M] grip as the condom fills with warmth. [big he of M] continues fucking you, making sure that [his of M] balls have been well and truly emptied of every last drop of [semen]. Finally, you feel [his of M] hands leave your hips and [he of M] pulls out.[or][BigNameDesc of M] grunts, [his of M] [DickDesc of M] throbbing as [he of M] unloads [his of M] balls into [his of M] condom. [big he of M] sighs in satisfaction, roughly shoving you off [his of M] [DickDesc of M].[or][if the semen addiction of the player < 7][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You shudder and look over your shoulder as you feel a flash of warmth near [his of M] tip, spreading quickly into the rest of the condom as [he of M] releases your hips and pulls out.[otherwise if the semen addiction of the player < 11][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You gasp and look over your shoulder as you feel a flash of warmth near [his of M] tip, spreading quickly into the rest of the condom as [his of M] thrusting comes to a close. [big his of M] hands reluctantly leave your hips as [he of M] pulls out.[otherwise][BigNameDesc of M] tightens [his of M] grip and begins grunting in pleasure. You look over your shoulder and grin as you feel a surge of warmth near [his of M] tip, spreading quickly into the rest of the condom as you milk [his of M] [DickDesc of M] down to the last drop. [big his of M] hands reluctantly leave your hips as [he of M] pulls out.[end if][or][BigNameDesc of M] grunts and tightens [his of M] grip. You [if the semen addiction of the player < 8]whimper[otherwise if the semen addiction of the player < 13]sigh quietly[otherwise]coo[end if] as the condom fills with [his of M] [semen], thin enough that you can still feel it flowing slowly inside it as [he of M] pulls out.[at random]".
 
 To decide if (M - a patron) is willing to creampie (F - a fuckhole):
-	if woman-barbara is in the location of the player, decide yes;[so we can force the player to squirt it out into the bowl]
+	if woman-player is in the location of the player, decide yes;[so we can force the player to squirt it out into the bowl]
 	if F is vagina and M is mating, decide no;
 	if (M is not pissed off and M is not dickhead patron):
 		if the reaction of the player is 2, decide no;
@@ -1754,13 +1754,13 @@ To compute successful dominance of (M - a patron):
 		if the number of unleashed patrons in the location of the player is 0:
 			repeat with P running through patrons in the location of the player:
 				destroy P;
-			unless woman-barbara is in the location of the player, say "[if X is 1][BigNameDesc of M] takes a moment to recover before [he of M] leaves[otherwise][BigNameDesc of M] and the rest of the patrons take a minute to recover before leaving[end if].";
+			unless woman-player is in the location of the player, say "[if X is 1][BigNameDesc of M] takes a moment to recover before [he of M] leaves[otherwise][BigNameDesc of M] and the rest of the patrons take a minute to recover before leaving[end if].";
 		otherwise:
 			let N be the number of unleashed patrons in the location of the player;[at least 1]
 			let T be 3;
 			if the player is female, increase T by 1;[how many patrons needed for the super humiliating scene]
 			let WB be 0;
-			if woman-barbara is in the location of the player, now WB is 1;[If barbara is around, we need the patrons to do the bowl scene]
+			if woman-player is in the location of the player, now WB is 1;[If barbara is around, we need the patrons to do the bowl scene]
 			if WB is 0, say "[if X is 1][BigNameDesc of M] waves goodbye as [he of M] leaves[otherwise if X is 2][NameDesc of M] high fives [his of M] friend as [he of M] leaves[otherwise if X > 2]The patrons high five and pat each other on the back as they leave[end if]. ";
 			say "[if X is 1]That went badly[otherwise if X > 2 and N is 1]Things were going so well[otherwise if X - N > 2]At least you got to be in charge for a little while[otherwise if N < T]That went well. Until you got shown your place[otherwise]They definitely showed you your place[end if]...";
 			repeat with P running through patrons in the location of the player:
@@ -2158,6 +2158,11 @@ To say AfterDominationComment (N - a number) of (M - a patron):
 		say "[line break][speech style of M]'I lost...'[roman type][line break][big he of M] [if X > 1]glances around the room as you pull out[otherwise]looks over [his of M] shoulder as you pull out[end if], completely red in the face.";
 		now M is not pissed off.
 
+To compute (M - a patron) slinking away:
+	if diaper quest is 1, say "[speech style of M]'YUCK YUCK YUCK! FUCK YOU!!! THIS IS NOT WHAT I CAME HERE FOR!'[roman type][line break]";
+	say SlinkAwayFlav of M;
+	destroy M.
+
 Part 5 - Conversation
 
 [It felt like making patrons interested via greetings would cause some bugs, so I decided to avoid it]
@@ -2250,7 +2255,7 @@ To say MediumDesc of (M - subby patron):
 To decide which number is the girth of (M - subby patron):
 	decide on 1.
 Definition:  subby patron is generic-appropriate:
-	unless the player is the donator, decide no;
+	unless the player is the donator and diaper quest is 0, decide no;
 	decide yes.
 
 To say LongDickDesc of (M - subby patron):
@@ -2266,12 +2271,12 @@ To say MediumDesc of (M - eldritch patron):
 
 Definition: eldritch patron is dark skinned: decide no.
 Definition: eldritch patron is generic-appropriate:
-	unless the player is the donator, decide no;
+	unless the player is the donator and diaper quest is 0, decide no;
 	if the charge of elder altar is not 0 or doomed > 4, decide yes;
 	decide no.
 
 To say PregGrowth of (M - eldritch patron):
-	say "a strange [man of M]'s [child].".
+	say "a strange [man of M][']s [child].".
 
 To say PregFlav of (M - eldritch patron):
 	say "[speech style of M]'Interesting. So this one's seed is effective on humans...'[roman type][line break]".
@@ -2298,7 +2303,7 @@ To say MediumDesc of (M - furry patron):
 To decide which number is the girth of (M - furry patron):
 	decide on 5.
 Definition: furry patron is generic-appropriate:
-	if the player is the donator, decide yes;
+	if the player is the donator and diaper quest is 0, decide yes;
 	decide no.
 
 To say LongDickDesc of (M - furry patron):
@@ -2311,7 +2316,7 @@ Definition: furry patron is musky: decide yes.
 
 
 To decide if (M - furry patron) is willing to creampie (F - a fuckhole):
-	if woman-barbara is in the location of the player, decide yes;[so we can force the player to squirt it out into the bowl]
+	if woman-player is in the location of the player, decide yes;[so we can force the player to squirt it out into the bowl]
 	if F is vagina and the player is pheromonal, decide yes;
 	if M is not pissed off:
 		if the reaction of the player is 2, decide no;

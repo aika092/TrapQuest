@@ -64,6 +64,7 @@ Include Unicorn by Monster.
 Include Slutty Sisters by Monster.
 Include Icarus by Monster.
 Include Centaur by Monster.
+Include Woman Barbara by Monster.
 
 Include Milking Bench by Furniture.
 Include Dildo Rocking Stool by Furniture.
@@ -90,40 +91,8 @@ Include Wooden Horse Traps by Traps.
 
 Include Gape Gloves by Equippables.
 
-Include Break Room Girl by Nintendolls Job Epilogues.
-Include Clear Tank by Nintendolls Job Epilogues.
-Include Elevator Wench by Nintendolls Job Epilogues.
-Include Filth Box by Nintendolls Job Epilogues.
-Include Gloryhole by Nintendolls Job Epilogues.
-Include Hotel Hooker by Nintendolls Job Epilogues.
-Include Human Toilet by Nintendolls Job Epilogues.
-Include Maid by Nintendolls Job Epilogues.
-Include Policewoman by Nintendolls Job Epilogues.
-Include Race Girl by Nintendolls Job Epilogues.
-Include Remote Controlled by Nintendolls Job Epilogues.
-Include Shipmate by Nintendolls Job Epilogues.
-Include Slutty Sister by Nintendolls Job Epilogues.
-
-Include Anal Only Lifestyle by Nintendolls One Year Later Epilogues.
-Include Best Selling Author by Nintendolls One Year Later Epilogues.
-Include Cum Addict by Nintendolls One Year Later Epilogues.
-Include Cumwalk by Nintendolls One Year Later Epilogues.
-Include Hotel Prostitute by Nintendolls One Year Later Epilogues.
-Include Kinky In Secret by Nintendolls One Year Later Epilogues.
-Include Office Bicycle by Nintendolls One Year Later Epilogues.
-Include Pregnant Breeder by Nintendolls One Year Later Epilogues.
-Include Remote Controlled by Nintendolls One Year Later Epilogues.
-Include Secretary by Nintendolls One Year Later Epilogues.
-Include Sex Slave by Nintendolls One Year Later Epilogues.
-Include Shoe Saleswoman by Nintendolls One Year Later Epilogues.
-Include Slutty Clubber by Nintendolls One Year Later Epilogues.
-Include Slutty Sister by Nintendolls One Year Later Epilogues.
-Include Stiff Slave by Nintendolls One Year Later Epilogues.
-Include Street Prostitute by Nintendolls One Year Later Epilogues.
-Include Super Gape by Nintendolls One Year Later Epilogues.
-Include Super Genius by Nintendolls One Year Later Epilogues.
-Include Super Giant Tits by Nintendolls One Year Later Epilogues.
-Include Super Giant Ass by Nintendolls One Year Later Epilogues.
+Include TQ Nintendolls Job Epilogues by Ending the Game.
+Include TQ One Year Later Epilogues by Ending the Game.
 
 Figure of Gargoyle Titwank Loading Banner is the file "Special/Animations/GargoyleTitwank/loading banner.png".
 Figure of Gargoyle Titwank Animation Frame 1 is the file "Special/Animations/GargoyleTitwank/G001.jpg".

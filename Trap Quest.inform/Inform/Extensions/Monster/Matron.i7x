@@ -322,6 +322,12 @@ To say DiaperChangeStart of (M - matron):
 To say DiaperDropFlav of (M - matron):
 	say "[big he of M] leaves the used diaper on the ground next to you.[line break][speech style of M]'Here you go, you can keep this as a lovely souvenir if you like!'[roman type][line break]";
 
+To say DQChangeResistFlav of (M - matron):
+	if there are worn perceived messed knickers, say "You struggle in your binds, not ready to deal with the reality of [NameDesc of M] exposing your messy bottom.";
+	otherwise say "You strain against the binds, doing your best to make it as difficult as possible for [NameDesc of M].";
+	if the player is able to speak, say "[variable custom style]'[if there are worn perceived messed knickers]Please just let me go[otherwise]Nooo, let me out! I don't need diapers[end if]!'[roman type][line break]";
+	otherwise say "[variable custom style][muffled sounds][roman type][line break]".
+
 To say DQChangeResistReactionFlav of (M - matron):
 	say "[BigNameDesc of M] tuts.[line break][speech style of M]'[one of]You can kick and fuss if you must but it won't do you a bit of good. You are getting a diaper change, like it or not!'[or]Now young [if the player is presenting as female]lady[otherwise]man[end if] I don't take kindly to little ones who throw fits! Hold still for mommy or I'll make you wish I stopped at one diaper!'[or]OH, we've got some energy now do we? Well I can correct that AFTER, okay sweetie?'[in random order][roman type][line break]".
 
@@ -363,7 +369,6 @@ This is the matron confiscates grown up items rule:
 The matron confiscates grown up items rule is listed last in the matron nanny rules.
 
 To compute confiscate of (M - matron):
-	let H be a random off-stage victorian-baby-bonnet;
 	let N be the number of held vessels;
 	if baby's bottle is held, decrease N by 1;
 	let C be a random worn necklace;
@@ -392,9 +397,9 @@ To compute confiscate of (M - matron):
 		say "[variable custom style][if the player is able to speak]'Sorry I didn't know it was yours! You have to believe me!'[otherwise]How was I to know it was [his of M]?! I can't even explain the mix-up...[end if][roman type][line break]";
 		FavourDown M;
 		satisfy M;
-	otherwise if H is actually summonable:
-		summon H cursed;
-		say "[BigNameDesc of M] strokes your [ShortHairDesc]. [line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break][big he of M] puts a [H] on your head! [if the diaper addiction of the player < 10][line break][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
+	otherwise if victorian-baby-bonnet is off-stage and victorian-baby-bonnet is actually summonable:
+		summon victorian-baby-bonnet cursed;
+		say "[BigNameDesc of M] strokes your [ShortHairDesc].[line break][speech style of M]'I've decided to make you my personal baby! We're going to have such fun together!'[roman type][line break][big he of M] puts a [ShortDesc of victorian-baby-bonnet] on your head![line break][if the diaper addiction of the player < 10][variable custom style]Do I not get a say in this?[otherwise if the diaper addiction of the player < 15][variable custom style]Well this might take some getting used to![otherwise][second custom style]Yay! I want to stay with Nanny forever![end if][roman type][line break]";
 		satisfy M;
 	otherwise:
 		compute enema of M.

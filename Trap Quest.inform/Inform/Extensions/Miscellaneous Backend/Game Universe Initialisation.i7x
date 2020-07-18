@@ -368,9 +368,13 @@ To initialise wardrobe:
 		if X is in Standard Item Pen, restock X;
 		blandify and reveal X;
 		now X is in pink wardrobe;
-	now champagne-glass is sure;
-	now champagne-glass is bland;
-	now champagne-glass is in pink wardrobe;
+	let CG be champagne-glass;
+	if diaper quest is 1:
+		if alcohol fetish is 0, now CG is novelty mug;
+		otherwise now CG is cocktail-glass;
+	now CG is sure;
+	now CG is bland;
+	now CG is in pink wardrobe;
 	let D be a random off-stage ring;
 	now D is sapphire;
 	set shortcut of D;

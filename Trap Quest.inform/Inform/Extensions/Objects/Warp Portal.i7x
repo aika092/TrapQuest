@@ -10,6 +10,13 @@ dungeon portal is a warp portal. dungeon portal is in Dungeon10.
 mansion portal is a warp portal. mansion portal is in Mansion32.
 school portal is a warp portal. school portal is in School01.
 
+A time based rule (this is the flag dungeon portal as accessible rule):
+	if the destination of dungeon portal is dungeon:
+		if the location of hotel portal is discovered:
+			now the destination of dungeon portal is hotel;
+		otherwise if the location of mansion portal is discovered:
+			now the destination of dungeon portal is mansion.
+
 [Figure of flexible warp portal is the file "Env/MultiFloor/portal1.png".]
 Figure of warp portal is the file "Env/MultiFloor/portal1.jpg".
 
@@ -93,8 +100,12 @@ To set up predicament status:
 			otherwise if tough-shit is 0 and C is not armband and C is not combat visor:
 				now C is in Predicament-Pen;
 				add C to predicamentPenList;
+			otherwise:
+				now C is predicament-fixed;
 		otherwise if C is not worn:
 			now C is in Predicament20;
+		otherwise:
+			now C is predicament-fixed;
 	if tough-shit is 0:
 		now predicamentSavedMakeUp is the make-up of face;
 		now the make-up of face is 1;
@@ -118,11 +129,22 @@ To set up predicament status:
 	display inventory-focus stuff; [can't force immediate inventory-focus redraw because the empty list would actually be correct and then it wouldn't redraw]
 	refresh the inventory-focus-window. [just to be sure]
 
+To set up predicament clothing for (P - a predicament):
+	repeat with C running through on-stage wearthings:
+		if C is not in Predicament20 and (C is held or C is in a predicament room) and C is not predicament-fixed, now C is predicament-temporary.
+
 To teleport via (W - a warp portal):
 	let D be nothing;
 	now team-predicament-partner is nothing;
 	let NPF be 0;
 	let NOptions be 0;
+	let predicamentsAvailable be 0;
+	if W is school portal:
+		if receptionist is in the location of the player:
+			let ST be a random student in the location of the player;
+			if ST is student, now team-predicament-partner is ST;
+		now predicamentsAvailable is the number of appropriate eligible predicaments;
+		now team-predicament-partner is nothing;
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 	if W is not in the Dungeon:
 		set next numerical response to "go to the Dungeon";
@@ -136,7 +158,7 @@ To teleport via (W - a warp portal):
 	if W is not in the Mansion and location of mansion portal is discovered:
 		set next numerical response to "go to the Mansion";
 		increase NOptions by 1;
-	if W is school portal and (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and predicamentJustDone is false and the number of appropriate eligible predicaments > 0 and the player is predicament-ready:
+	if W is school portal and (the player is an october 2019 top donator or the player is an october 2019 diaper donator) and predicamentJustDone is false and predicamentsAvailable > 0 and the player is predicament-ready:
 		set next numerical response to "go to the Extra Credit Zone";
 		increase NOptions by 1;
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: The Extra Credit zone puts you in a predicament where you could lose a lot of dignity and 'real world reputation' (the latter of which is only relevant for epilogues). Cursed clothing (except headgear) will be removed but will cost you 1 strength if you don't put it back on after you complete the task. [if tough-shit is 0]Other things like tattoos and make up will disappear for the duration of the predicament and reappear at the end. [end if]You will earn one 'trophy' which gives you the option to tweak a rule of the game universe and also gives you a permanent +1 to luck rolls. Finally, each time you go into the predicament zone, one of each type of crafting token will be lying on the floor somewhere in the region. So if you happen to stumble across any, you can often nab yourself that extra bonus. Or if you're brave, you could even go searching for them...[roman type][line break][or][stopping]";
@@ -238,6 +260,7 @@ To teleport via (W - a warp portal):
 		repeat with R running through predicament rooms:
 			totally clean R;
 		execute P;
+		set up predicament clothing for P;
 		increase the times-completed of P by 1;
 		now temporaryYesNoBackground is Figure of small image;
 		now predicamentJustDone is true;

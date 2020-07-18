@@ -12,7 +12,7 @@ Figure of dental gag is the file "Items/Accessories/Head/dentalgag1.png".
 Definition: an opengag is ringagged: decide yes.
 
 To decide which number is the initial outrage of (C - an opengag):
-	decide on 9.
+	decide on 8.
 
 This is the ring exclusivity rule:
 	if there is a worn ringagged clothing and wearing-target is opengag:
@@ -65,7 +65,12 @@ To decide which number is the intelligence-influence of (C - dental gag):
 To decide which number is the perceived-bimbo-influence of (C - lip gag):
 	decide on 1.
 
-Definition: a ring gag is fetish appropriate: decide no. [Never appears randomly]
+Definition: an opengag is fetish appropriate: decide no. [Never appears randomly]
+To decide which object is the at least partial concealer of (C - ring gag):
+	if current-predicament is team-girlfriends-predicament and the player is in a predicament room, decide on hair;
+	decide on the concealer of C.
+To decide which object is the concealer of (C - ring gag):
+	if girlfriend-partner is snogged, decide on girlfriend-partner.
 
 Part - Smoothie Predicament Stuff
 

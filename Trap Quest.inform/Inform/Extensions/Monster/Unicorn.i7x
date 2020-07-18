@@ -100,7 +100,7 @@ To compute appearance assessment of (M - unicorn):
 		say "[BigNameDesc of M][']s nose twitches, and a visible flush spreads over [his of M] face.[line break][speech style of M]'[one of]'U-uhm... G-go take a shower!'[or]I-I hate how you smell! T-take a shower!'[or]Y-your scent is a-awful. Y-yes. Take a shower.'[at random][roman type][line break]";
 		FavourDown M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		say "[big his of M] expression remains mostly neutral, except for a small smile as [he of M] nods toward you.".
 

@@ -622,6 +622,7 @@ To compute detention of (M - a staff member):
 			totally clean R;
 		if the body soreness of the player > 4, now the body soreness of the player is 4;
 		execute P;
+		set up predicament clothing for P;
 		increase the times-completed of P by 1;
 		now temporaryYesNoBackground is Figure of small image;
 		[now predicamentJustDone is true;] [We should probably still let the player jump back in for a trophy if they want to]

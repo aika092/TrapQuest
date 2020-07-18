@@ -103,7 +103,8 @@ To compute appearance assessment of (M - djinn):
 		say "[big he of M] watches you [if M2 is monster]and the [M2] [end if]momentarily with a look of mild amusement on [his of M] face, before moving on.";
 		distract M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		if diaper quest is 1, compute dq nip slip reaction of M;
+		otherwise compute tq nip slip reaction of M;
 	otherwise:
 		if the wish history of M is 2:
 			if the appearance of the player <= the outrage tolerance of M:

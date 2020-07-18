@@ -85,30 +85,38 @@ To say NewAppearanceReaction of (M - a real-life patron):
 [generic reaction to seeing the player.]
 To say GenericSituationReaction of (M - a real-life patron):
 	let P be the appearance of the player;
+	let CA be -1;
+	if diaper quest is 1, now CA is the cringe appearance of the player;
 	let S be the friend-max-appearance of M;
 	let B be the friend-old-name of M;
 	say "[speech style of M]'[if P < 6 and S < 6]Wow, [B], it really is you. [otherwise if S > P or the times-called of M > 0]Hello, [B]. [otherwise][B]?! Is that really you?! [end if][run paragraph on]";
-	if P < 3:
+	if P > CA and P < 3:
 		if S >= 3, say "...You're definitely looking more presentable than you did earlier. ";
 		otherwise say "[one of]So this is the cutting edge VR game you were bragging about? [or]I still can't believe you're calling me from inside a game. [stopping] ";
-	otherwise if the player is naked and P < 10:
+	otherwise if the player is naked and P < 10 and CA < 10:
 		if M is real-seenNaked, say "Why are you naked?! ";
 		otherwise say "...You're naked again. ";
-	otherwise if P < 6 and the player is male and the largeness of breasts < 4:
+	otherwise if P > CA and P < 6 and the player is male and the largeness of breasts < 4:
 		if S < 3, say "...are you trying to tell me something with that outfit? ";
 		otherwise say "...is this how you're going to dress from now on? ";
-	otherwise if P < 6:
+	otherwise if CA >= P and CA < 6:
+		if S < 3, say "Is that what you wear when I'm not around? (What a weirdo...) ";
+		otherwise say "So that really is what you like to wear. (Weirdo...) ";
+	otherwise if P > CA and P < 6:
 		if S < 3, say "Is that what you wear when I'm not around? (What a slut...) ";
 		otherwise say "So that really is what you like to wear. (Slut...) ";
-	otherwise if P < 9:[possible update for DQ?]
+	otherwise if CA >= P and CA < 9:
+		if S < 9, say "You look like a baby?! ";
+		otherwise say "So you're still dressing like a baby. ";
+	otherwise if P > CA and P < 9:
 		if S < 9, say "You look like a whore. ";
 		otherwise say "So you're still dressing like a whore. ";
-	otherwise if P < 12:
+	otherwise if CA >= P and CA < 12:
+		if S < 9, say "...Is there a reason you look like so DISGUSTING?";
+		otherwise say "This isn't a game at all to you, is it? It's just your fantasy. ";
+	otherwise if P > CA and P < 12:
 		if S < 9, say "...Is there a reason you look like a PORN STAR? [if the player is naked]I mean, you're naked. [otherwise]You might as well be naked. [end if]";
 		otherwise say "This isn't a game at all, is it? You're probably just calling me from an adult film set right now. ";
-	otherwise if P < 16:
-		if S < 12, say "This has to be a trick. There's no way you would actually walk around like that.";
-		otherwise say "...I hope you know I've lost respect for you.";
 	otherwise:
 		if S < 16, say "This can't be real! There's no way that's actually you! ";
 		otherwise say "...No matter what kind of game this is, no self-respecting person would ever let anyone see them in such a state. I hope you know that. ".

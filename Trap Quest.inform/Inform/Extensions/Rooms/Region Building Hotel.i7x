@@ -60,7 +60,7 @@ To Set Up The Hotel:
 		if the location of M is not placed, now M is in a random placed modern room;
 	[let N1 be the regionalMonsterCount of the Hotel;]
 	repeat with N2 running from 1 to startingRegionalMonsterCount:
-		let M be a random off-stage hotel dwelling regionally missing monster;
+		let M be a random hotel prioritised monster;
 		if M is not monster, now M is a random off-stage hotel dwelling monster;
 		if M is monster:
 			set up M;

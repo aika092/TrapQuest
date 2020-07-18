@@ -204,6 +204,8 @@ To compute RockingReaction of (M - a demoness):
 	if there is a worn diaper and rectum < 20 and diaper messing >= 3:
 		say "[BigNameDesc of M] snickers and walks up to you. [big he of M] places one hand on your [ShortDesc of belly] and rubs is gently. You feel some infernal magic manifesting in [his of M] palm as [he of M] does.[line break][speech style of M]'Aww, silly baby, did you think this was your potty?'[roman type][line break]You watch with [horror the diaper addiction of the player] as your intestines bulk out with crazy amounts of poop!";
 		now rectum is 20;
+		say "Some of the magic seems to persist in your body, making you feel a little more... well, magical.";
+		MagicPowerUp 1;
 	otherwise:
 		say "[BigNameDesc of M] cackles as [he of M] watches you. [one of][line break][speech style of M]'Oh dear, you just look so pathetic!'[roman type][line break][or][line break][speech style of M]'Uh-oh, it would be awkward if you needed to go potty right now, wouldn't it?'[roman type][line break][or][or][or][cycling][moderateHumiliateReflect]".
 
@@ -340,7 +342,7 @@ To decide which number is the asshole grope preference of (M - a demoness):
 To compute appearance assessment of (M - a demoness):
 	say "[line break][big he of M] looks you up and down[run paragraph on]";
 	if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise if M is groping:
 		compute grope of M;
 	otherwise if M is dealing:
@@ -407,12 +409,12 @@ To compute DQ perception of (M - a demoness):
 			if M is friendly and permanent makeup is 1:
 				say "You know, there's a powerful well somewhere in these woods that I bet could help you with the magic charm on your face, if you donate generously enough.'[roman type][line break]";
 			otherwise if M is acquaintance:
-				say "For now, I give you permission to remain and bask in my [if the cringe appearance of the player > 6][maturity] and [end if]glory.'[roman type][line break]";
+				say "For now, I give you permission to remain and bask in my [if the cringe appearance of the player > 3][maturity] and [end if]glory.'[roman type][line break]";
 			otherwise if M is friendly:
-				say "You're not worth my trouble.'[roman type] [big he of M] turns to leave you alone.";
+				say "You're not worth my trouble.'[roman type][line break][big he of M] turns to leave you alone.";
 				distract M;
 			otherwise:
-				say "I believe it is my responsibility to teach you a lesson...'[roman type] [big he of M] turns aggressive!".
+				say "I believe it is my responsibility to teach you a lesson...'[roman type][line break][big he of M] turns aggressive!".
 
 To compute DQ appearance assessment of (M - a demoness):
 	if there is a worn currently visible messed knickers: [probably impossible to happen for now]
@@ -427,6 +429,10 @@ To compute DQ appearance assessment of (M - a demoness):
 	otherwise if the appearance of the player > the outrage tolerance of M:
 		say "[speech style of M]'Your slutty appearance betrays you, mortal. You do know how we punish whores in this region, right? I doubt you'd enjoy it. ";
 		FavourDown M by 2;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute dq nip slip reaction of M;
+		say "[speech style of M]'You're not worth my trouble.'[roman type][line break][big he of M] turns to leave you alone.";
+		distract M;
 	otherwise:
 		say "[speech style of M]'Oh look, a puny mortal, exhibiting barely enough [maturity] to be called an adult. ".
 

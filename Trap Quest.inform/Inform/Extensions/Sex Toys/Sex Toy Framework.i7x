@@ -206,7 +206,7 @@ analGripCount is a number that varies.
 To compute gripping of (I - a thing):
 	let G be the grip of I;
 	let R be a random number between 0 and G * G * 3;
-	if the player is upright and (nun-dress is not worn or nun-dress is not wrist-bound-behind):
+	if the player is upright and (nun-dress is not worn or nun-dress is not wrist-bound-behind) and (current-predicament is not team-girlfriends-predicament or the player is not in a predicament room):
 		if debuginfo > 1 and ((I is penetrating asshole and the player is not ass protected) or (I is penetrating vagina and the player is not pussy protected)), say "[input-style][ShortDesc of I] gripping check: Grip value ([G]) squared * 3 = [G * G * 3]; RNG (0~[G * G * 3]) = [R] | 9.5 Required grip strength[roman type][line break]";
 		if I is penetrating asshole and the player is not ass protected and G < 10 and R <= 0:
 			if G <= 0:

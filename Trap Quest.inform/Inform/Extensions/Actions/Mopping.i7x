@@ -59,10 +59,10 @@ Carry out mopping face:
 	if D > 4 - (E + F), now D is 4 - (E + F);
 	FaceFill semen by F;
 	decrease the semen-puddle of the location of the player by F;
-	FaceFill urine by E;
-	decrease the urine-puddle of the location of the player by E;
-	FaceFill milk by D;
-	decrease the milk-puddle of the location of the player by D;
+	FaceFill milk by E;
+	decrease the milk-puddle of the location of the player by E;
+	FaceFill urine by D;
+	decrease the urine-puddle of the location of the player by D;
 	if class of the player is catgirl:
 		if the player is not broken, humiliate SEVERE-HUMILIATION - (MODERATE-HUMILIATION * (the thirst of the player - 1));
 	otherwise:
@@ -143,7 +143,7 @@ was-mopping is initially false.
 
 Report Mopping:
 	if the noun is face:
-		progress quest of puddle-licking-quest;
+		if total puddle <= 0, progress quest of puddle-licking-quest;
 		if cat-ears is off-stage and cat-ears is actually summonable and a random number between 1 and 3 is 1:
 			say "[bold type]You feel a headband with cat ears materialise on your head.[line break][if the bimbo of the player > 12][second custom style]Teehee, I get it! Only a naughty pussycat would ever drink anything off the floor![otherwise][first custom style]I guess that's what I get for drinking off the floor like some kind of animal...[end if][roman type][line break]";
 			summon cat-ears;

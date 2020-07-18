@@ -123,7 +123,7 @@ To compute appearance assessment of (M - Icarus):
 		anger M;
 		if lady fetish is 0, alwayscutshow figure of Icarus interact 5 for M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise if M is groping:
 		compute grope of M;
 	otherwise:

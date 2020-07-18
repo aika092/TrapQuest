@@ -30,7 +30,7 @@ Section - Restart the timer after undoing
 
 [The state of the timer is not automatically saved with the game state, so we must start a timer after undoing at the same speed it was running when the game state was saved.]
 
-The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket]".
+The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the map-window is spawned by the main window and the position of the map-window is g-placeabove][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
 
 To decide what number is glk event handled in (ev - a g-event) context:
 	(- HandleGlkEvent(gg_event, {ev}, gg_arguments) -)
@@ -125,6 +125,7 @@ An animation track has a thing called backgroundThing.
 An animation track can be frameOverriding. [It draws a flat colour underneath before it draws itself each time]
 An animation track can be imageRedrawing. [It redraws the stuff underneath before it draws itself each time]
 An animation track can be g-animated.
+An animation track can be g-unpaused or g-paused. An animation track is g-unpaused.
 An animation track can be g-looping.
 An animation track can be g-boomerang.
 An animation track can be g-reversing.
@@ -139,7 +140,7 @@ Glulx input handling rule for a timer-event:
 	if animationsEnabled is 1 or there is a g-animated initial animation track, compute animations.
 
 To compute animations:
-	repeat with T running through g-animated animation tracks:
+	repeat with T running through g-animated g-unpaused animation tracks:
 		if buttonsLatest is not the target-window of T and (PopupButtons > 0 or the target-window of T is map-window or the target-window of T is graphics-window): [Don't want animations to draw over buttons, which they would do without these checks]
 			if the target-window of T is main window, say "BUG - animation track targeted at main window.";
 			[if debugmode > 1, say "Target window of this track is [target-window of T].";]
@@ -153,6 +154,8 @@ To wait until animations are over:
 	wait before continuing;
 	if animationsEnabled is 1 or there is a g-animated initial animation track:
 		while there is g-animated animation track:
+			repeat with G running through g-animated animation tracks:
+				now G is g-unpaused;
 			wait before continuing.
 
 To compute TQanimation of (F - a figure-name) in (W - a g-window) at (X1 - a number) by (Y1 - a number) with dimensions (BX - a number) by (BY - a number):
@@ -210,6 +213,7 @@ To compute TQanimationprep of (F - a figure-name): [Used when animating an icon 
 To commence animation of (T - an animation track):
 	now the current-frame of T is 1;
 	now the frame-tick of T is 1;
+	now T is g-unpaused;
 	uniquely set up T;
 	now T is g-animated.
 To uniquely set up (T - an animation track):
@@ -217,6 +221,7 @@ To uniquely set up (T - an animation track):
 To cease animation of (T - an animation track):
 	now T is not frameOverriding;
 	now T is not imageRedrawing;
+	now T is g-unpaused;
 	now T is not g-animated.
 
 To decide which number is the frameSlowness of (T - an animation track):
@@ -426,6 +431,7 @@ To compute unique setup of (T - a solo animation track):
 
 To cease animation of (T - a solo animation track):
 	now T is not g-animated;
+	now T is g-unpaused;
 	close the map-window.
 
 An initial animation track is a kind of solo animation track.
@@ -463,6 +469,7 @@ To commence animation of (T - an initial animation track):
 		let BIX be animX of T - ((BIW - animW of T) / 2);
 		let BIY be animY of T - ((BIH - animH of T) / 2);
 		draw the image bannerImage of T in the map-window at BIX by BIY with dimensions BIW by BIH;
+	now T is g-unpaused;
 	now T is g-animated.
 
 To decide which figure-name is the bannerImage of (T - an initial animation track):
@@ -488,6 +495,7 @@ To commence animation of (T - an epilogue animation track):
 	now the animY of T is (mapH - the animH of T) / 2;
 	draw a rectangle animationColour of T in the map-window at 0 by 0 with size (mapW + 1) by (mapH + 1);
 	set a graphlink in the map-window identified as hyperobject from 0 by 0 to mapW by mapH as "skip", ignoring redundant links;
+	now T is g-unpaused;
 	now T is g-animated.
 
 To decide which number is the frameSlowness of (T - an epilogue animation track):

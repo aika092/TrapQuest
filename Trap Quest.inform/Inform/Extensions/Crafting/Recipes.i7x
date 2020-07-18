@@ -22,11 +22,14 @@ Figure of recipe is the file "Env/MultiFloor/recipe1.png".
 To decide which figure-name is the examine-image of (C - a recipe):
 	decide on figure of recipe.
 
+To decide which figure-name is the recipe-image of (C - a thing):
+	decide on the examine-image of C.
+
 To ForegroundRender (T - a recipe) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
 	now current-alchemy-key is the recipe-key of T;
 	let P be a random product-highlighted thing;
 	if P is a thing:
-		let F be the examine-image of P;
+		let F be the recipe-image of P;
 		display the image F in the current focus window at (X1 + (DX / 4)) by (Y1 + (DY / 4)) with dimensions (DX / 2) by (DY / 2).
 
 To decide which text is the RecipeDesc of (C - an object):

@@ -163,6 +163,8 @@ An all later time based rule (this is the update arms rule):
 			add arms to the armUses of arms. [It MUST actually have 2 entries or bad things can happen]
 
 To update arms:
+	let gSnogged be 0;
+	if girlfriend-partner is snogged, now gSnogged is 1;
 	let A1 be entry 1 in the armUses of arms;
 	let A2 be entry 2 in the armUses of arms;
 	truncate the armUses of arms to 0 entries; [Rebuild the arm uses list starting here]
@@ -201,6 +203,11 @@ To update arms:
 		if A2 is carried or entry 2 of the armUses of arms is carried, now UI is 1;
 	if UC is 1, force clothing-focus redraw;
 	if UI is 1, force inventory-focus redraw;
+	if current-predicament is team-girlfriends-predicament and the player is in a predicament room:
+		if gSnogged is 0 and girlfriend-partner is snogged:
+			say "You push your body up against [NameDesc of team-predicament-partner][']s, pushing your ring gags together and connecting tongues. You move your free hand to the vibrator between [his of team-predicament-partner] legs, and [he of team-predicament-partner] does the same to you. Your crotch vibrators turn off, and your nipple vibrators turn on. It now looks to any on-lookers like two women are engaged in a deep kiss with some light fingering.";
+		otherwise if gSnogged is 1 and girlfriend-partner is not snogged:
+			say "You pull away from [NameDesc of team-predicament-partner]. Your crotch vibrators turn off, and your nipple vibrators turn on. [bold type]Anyone who looks will now be able to clearly see what's under your skirts.[roman type][line break]";
 	if UAL is 1:
 		update appearance level;
 		repeat with P running through reactive people:
@@ -260,6 +267,7 @@ This is the update optional arm uses rule:
 								add vagina to the armUses of arms;
 					otherwise if XX is 1 and defaultLeftTarget of arms is not hips:
 						add the defaultLeftTarget of arms to the armUses of arms, if absent;
+						if the number of entries in the armUses of arms < 2 and the defaultLeftTarget of arms is girlfriend-partner, add girlfriend-partner to the armUses of arms; [we want to add this even if not absent because the player is choosing to have both hands on their partner]
 					otherwise if XX is 2 and defaultRightTarget of arms is not hips:
 						add the defaultRightTarget of arms to the armUses of arms;
 					while the number of entries in the armUses of arms < 2:
@@ -269,51 +277,64 @@ This is the update optional arm uses rule:
 
 To change default arm positions:
 	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-	say "Where would you like the default position of your off-hand to be? (This is the one that is most likely to be free) [line break]";
-	set numerical response 1 to "covering your most embarrassing body part or worn item [bold type](recommended)[roman type]";
-	set numerical response 2 to "covering your crotch";
-	set numerical response 3 to "covering your chest";
-	set numerical response 4 to "covering your face";
-	if enema-backpack is worn, set numerical response 5 to "behind your head";
-	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
-	set numerical response 0 to "by your side";
-	compute multiple choice question;
-	if player-numerical-response is 0:
-		now the defaultLeftTarget of arms is hips;
-	otherwise if player-numerical-response is 1:
-		now the defaultLeftTarget of arms is the player;
-	otherwise if player-numerical-response is 2:
-		now the defaultLeftTarget of arms is vagina;
-	otherwise if player-numerical-response is 3:
-		now the defaultLeftTarget of arms is breasts;
-	otherwise if player-numerical-response is 5:
-		if painted-vibrator-hands is worn, now the defaultLeftTarget of arms is painted-vibrator-hands;
-		otherwise now the defaultLeftTarget of arms is hair;
+	if girlfriend-partner is in the location of the player:
+		say "How would you like to pose? [line break]";
+		set numerical response 1 to "With your free hand covering your most embarrassing body part or worn item";
+		set numerical response 2 to "Pressed into [student-name of team-predicament-partner], with your free hand touching [his of team-predicament-partner] crotch";
+		set numerical response 0 to "by your side";
+		compute multiple choice question;
+		if player-numerical-response is 0:
+			now the defaultLeftTarget of arms is hips;
+		otherwise if player-numerical-response is 1:
+			now the defaultLeftTarget of arms is the player;
+		otherwise:
+			now the defaultLeftTarget of arms is girlfriend-partner;
 	otherwise:
-		now the defaultLeftTarget of arms is face;
-	reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-	say "Where would you like the default position of your predominant hand to be? (This is the one that is more likely to be used to perform tasks and so less likely to be free) [line break]";
-	set numerical response 1 to "covering your most embarrassing body part or worn item (after your left hand is in place) [bold type](recommended)[roman type]";
-	if player-numerical-response is not 2, set numerical response 2 to "covering your crotch";
-	if player-numerical-response is not 3, set numerical response 3 to "covering your chest";
-	if player-numerical-response is not 4, set numerical response 4 to "covering your face";
-	if enema-backpack is worn, set numerical response 5 to "behind your head";
-	if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
-	set numerical response 0 to "by your side";
-	compute multiple choice question;
-	if player-numerical-response is 0:
-		now the defaultRightTarget of arms is hips;
-	otherwise if player-numerical-response is 1:
-		now the defaultRightTarget of arms is the player;
-	otherwise if player-numerical-response is 2:
-		now the defaultRightTarget of arms is vagina;
-	otherwise if player-numerical-response is 3:
-		now the defaultRightTarget of arms is breasts;
-	otherwise if player-numerical-response is 5:
-		if painted-vibrator-hands is worn, now the defaultrightTarget of arms is painted-vibrator-hands;
-		otherwise now the defaultRightTarget of arms is hair;
-	otherwise:
-		now the defaultRightTarget of arms is face.
+		say "Where would you like the default position of your off-hand to be? (This is the one that is most likely to be free) [line break]";
+		set numerical response 1 to "covering your most embarrassing body part or worn item [bold type](recommended)[roman type]";
+		set numerical response 2 to "covering your crotch";
+		set numerical response 3 to "covering your chest";
+		set numerical response 4 to "covering your face";
+		if enema-backpack is worn, set numerical response 5 to "behind your head";
+		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the left of your clit";
+		set numerical response 0 to "by your side";
+		compute multiple choice question;
+		if player-numerical-response is 0:
+			now the defaultLeftTarget of arms is hips;
+		otherwise if player-numerical-response is 1:
+			now the defaultLeftTarget of arms is the player;
+		otherwise if player-numerical-response is 2:
+			now the defaultLeftTarget of arms is vagina;
+		otherwise if player-numerical-response is 3:
+			now the defaultLeftTarget of arms is breasts;
+		otherwise if player-numerical-response is 5:
+			if painted-vibrator-hands is worn, now the defaultLeftTarget of arms is painted-vibrator-hands;
+			otherwise now the defaultLeftTarget of arms is hair;
+		otherwise:
+			now the defaultLeftTarget of arms is face;
+		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+		say "Where would you like the default position of your predominant hand to be? (This is the one that is more likely to be used to perform tasks and so less likely to be free) [line break]";
+		set numerical response 1 to "covering your most embarrassing body part or worn item (after your left hand is in place) [bold type](recommended)[roman type]";
+		if player-numerical-response is not 2, set numerical response 2 to "covering your crotch";
+		if player-numerical-response is not 3, set numerical response 3 to "covering your chest";
+		if player-numerical-response is not 4, set numerical response 4 to "covering your face";
+		if enema-backpack is worn, set numerical response 5 to "behind your head";
+		if painted-vibrator-hands is worn, set numerical response 5 to "over the missing hand print to the right of your clit";
+		set numerical response 0 to "by your side";
+		compute multiple choice question;
+		if player-numerical-response is 0:
+			now the defaultRightTarget of arms is hips;
+		otherwise if player-numerical-response is 1:
+			now the defaultRightTarget of arms is the player;
+		otherwise if player-numerical-response is 2:
+			now the defaultRightTarget of arms is vagina;
+		otherwise if player-numerical-response is 3:
+			now the defaultRightTarget of arms is breasts;
+		otherwise if player-numerical-response is 5:
+			if painted-vibrator-hands is worn, now the defaultrightTarget of arms is painted-vibrator-hands;
+			otherwise now the defaultRightTarget of arms is hair;
+		otherwise:
+			now the defaultRightTarget of arms is face.
 
 ArmDeciding is an action applying to one thing.
 Check ArmDeciding:

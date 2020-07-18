@@ -15,7 +15,6 @@ A predicament room has a labyrinth shape called shape. The shape of a predicamen
 A predicament room is usually pinned.[These rooms are always in the same place.]
 
 Predicament01 is a predicament room. Predicament01 is discovered. The printed name of Predicament01 is "Abandoned Warehouse". The shape of Predicament01 is L8/0-0-1-0-0-0. The grid position of Predicament01 is <8,12,5>. Predicament01 is bossed.
-Definition: Predicament01 is unwalled: decide no.
 Predicament02 is a predicament room. The printed name of Predicament02 is "Alleyway". "Around the corner of this small alleyway you can hear the sounds of a road. Cars are irregular but rather frequent.". The shape of Predicament02 is L8/0-0-0-1-1-0. The grid position of Predicament02 is <8,12,6>. Predicament02 is north of Predicament01. Predicament02 is bossed.
 
 [Ring Road Part 1]
@@ -32,14 +31,14 @@ Predicament11 is a road room. The shape of Predicament11 is L8/0-0-0-0-1-1. The 
 Predicament12 is a road room. The grid position of Predicament12 is <8,18,8>. Predicament12 is south of Predicament11.
 Predicament13 is a road room. The shape of Predicament13 is L8/0-0-0-0-1-1. The grid position of Predicament13 is <8,19,8>. Predicament13 is east of Predicament12.
 Predicament14 is a road room. The grid position of Predicament14 is <8,19,7>. Predicament14 is south of Predicament13.
-Predicament15 is a road room. The shape of Predicament15 is L8/0-0-0-0-1-1. The grid position of Predicament15 is <8,20,7>. Predicament15 is east of Predicament14.
-Predicament16 is a road room. The shape of Predicament16 is L8/0-0-1-0-1-1. The grid position of Predicament16 is <8,20,6>. Predicament16 is south of Predicament15.
+Predicament15 is a road room. The shape of Predicament15 is L8/0-0-0-1-1-1. The grid position of Predicament15 is <8,20,7>. Predicament15 is east of Predicament14.
+Predicament16 is a road room. The shape of Predicament16 is L8/0-0-1-1-1-1. The grid position of Predicament16 is <8,20,6>. Predicament16 is south of Predicament15.
 Predicament17 is a road room. The grid position of Predicament17 is <8,20,5>. Predicament17 is south of Predicament16.
-Predicament18 is a road room. The shape of Predicament18 is L8/0-0-1-0-1-1. The grid position of Predicament18 is <8,20,4>. Predicament18 is south of Predicament17.
+Predicament18 is a road room. The shape of Predicament18 is L8/0-0-1-1-0-1. The grid position of Predicament18 is <8,20,4>. Predicament18 is south of Predicament17.
 
 [Home]
 
-Predicament19 is a predicament room. The printed name of Predicament19 is "Driveway". "The entrance to your house is right in front of you. Thank goodness!". The shape of Predicament19 is L8/0-0-0-1-0-1. The grid position of Predicament19 is <8,21,5>. Predicament19 is east of Predicament17. Predicament19 is bossed.
+Predicament19 is a predicament room. The printed name of Predicament19 is "Driveway". "The entrance to your house is right in front of you. Thank goodness!". The shape of Predicament19 is L8/0-0-1-1-1-1. The grid position of Predicament19 is <8,21,5>. Predicament19 is east of Predicament17.
 Predicament20 is a predicament room. The printed name of Predicament20 is "Portal Room". "Instead of your house, there's just a room with a portal...". The shape of Predicament20 is L8/0-0-0-0-0-1. The grid position of Predicament20 is <8,22,5>. Predicament20 is east of Predicament19. Predicament20 is bossed.
 Definition: Predicament20 is unwalled: decide no.
 Check going north when the player is in Predicament20:
@@ -90,6 +89,12 @@ Predicament29 is a road room. The shape of Predicament29 is L8/0-0-1-0-0-1. The 
 Predicament30 is a road room. The grid position of Predicament30 is <8,14,4>. Predicament30 is north of Predicament29.
 Predicament31 is a road room. The shape of Predicament31 is L8/0-0-1-0-0-1. The grid position of Predicament31 is <8,13,4>. Predicament31 is west of Predicament30.
 Predicament32 is a road room. The shape of Predicament32 is L8/0-0-1-1-1-0. The grid position of Predicament32 is <8,13,5>. Predicament32 is north of Predicament31. Predicament32 is south of Predicament03.
+
+[Driveways]
+
+Predicament33 is a predicament room. The printed name of Predicament33 is "Path". The shape of Predicament33 is L8/0-0-0-0-1-1. The grid position of Predicament33 is <8,21,7>. Predicament33 is east of Predicament15.
+Predicament34 is a predicament room. The printed name of Predicament34 is "Path". The shape of Predicament34 is L8/0-0-1-0-1-1. The grid position of Predicament34 is <8,21,6>. Predicament34 is east of Predicament16. Predicament34 is south of Predicament33. Predicament34 is north of Predicament19.
+Predicament35 is a predicament room. The printed name of Predicament35 is "Path". The shape of Predicament35 is L8/0-0-1-0-0-1. The grid position of Predicament35 is <8,21,4>. Predicament35 is east of Predicament18. Predicament35 is south of Predicament19.
 
 [Central Park]
 
@@ -209,6 +214,7 @@ To compute furniture resting on (G - an automated changing station):
 			if D is not K, silently transform K into D;
 		otherwise:
 			summon D uncursed;
+		now D is predicament-temporary;
 		say "The robotic arms immediately get to work [if K is knickers]removing your [ShortDesc of K] [end if][if K is dirty knickers]and wiping you down [end if]and before you know it you are wearing a dry [MediumDesc of D]!";
 		if K is diaper, DiaperAddictUp 1;
 	if the player is prone:
@@ -216,7 +222,7 @@ To compute furniture resting on (G - an automated changing station):
 		try standing;
 		now auto is 0.
 
-Predicament01, Predicament02, Predicament03, Predicament04, Predicament05, Predicament06, Predicament07, Predicament08, Predicament09, Predicament10, Predicament11, Predicament12, Predicament13, Predicament14, Predicament15, Predicament16, Predicament17, Predicament18, Predicament19, Predicament20, Predicament21, Predicament22, Predicament23, Predicament24, Predicament25, Predicament26, Predicament27, Predicament28, Predicament29, Predicament30, Predicament31, Predicament32, Park01, Park02, Park03, Park04, Park05, Park06, Park07, Park08, Park09, Park10, Park11, Park12, Park13, Park14, Park15, Park16, Park17, Park18, Park19, Park20, Park21, Park22, Park23, Park24, Toilet01, Toilet02 are in the School.
+Predicament01, Predicament02, Predicament03, Predicament04, Predicament05, Predicament06, Predicament07, Predicament08, Predicament09, Predicament10, Predicament11, Predicament12, Predicament13, Predicament14, Predicament15, Predicament16, Predicament17, Predicament18, Predicament19, Predicament20, Predicament21, Predicament22, Predicament23, Predicament24, Predicament25, Predicament26, Predicament27, Predicament28, Predicament29, Predicament30, Predicament31, Predicament32, Predicament33, Predicament34, Predicament35, Park01, Park02, Park03, Park04, Park05, Park06, Park07, Park08, Park09, Park10, Park11, Park12, Park13, Park14, Park15, Park16, Park17, Park18, Park19, Park20, Park21, Park22, Park23, Park24, Toilet01, Toilet02 are in the School.
 
 saved-map-zoom is a number that varies.
 
@@ -266,6 +272,19 @@ To say PredicamentPenCheck:
 			now C is in Predicament-Pen.
 
 Report going when the player is in Predicament20:
+	repeat with C running through predicament-temporary wearthings:
+		now C is predicament-normal;
+		if C is clothing and (the raw-magic-modifier of C > 0 or C is not blandness):
+			if C is held or C is in the location of the player:
+				say "[BigNameDesc of C] fades away! [bold type]You can tell that it has been sent to the 'Junk Room'.[roman type][line break]";
+			now C is in School15;
+			now C is predicament-fixed;
+		otherwise:
+			if C is held or C is in the location of the player:
+				say "[BigNameDesc of C] fades into nothingness!";
+			only destroy C;
+	repeat with C running through predicament-fixed wearthings:
+		unless C is in School15, now C is predicament-normal;
 	repeat with C running through predicamentPenList:
 		say "[BigNameDesc of C] reappears on you!";
 		now C is worn by the player;
@@ -275,7 +294,6 @@ Report going when the player is in Predicament20:
 		if the make-up of face is not predicamentSavedMakeUp:
 			now the make-up of face is predicamentSavedMakeUp;
 			say "Your face returns to the state it was before you entered the Extra Credit Zone. It [MakeUpDesc].";
-	progress quest of predicament-quest;
 	let T be a random trophy in Predicament20;
 	if T is trophy, say "[bold type]There is a [T][bold type] in this room![roman type] [one of]You feel [bold type]permanently more lucky[roman type][or]Once again you feel more lucky[stopping] for having completed this Extra Credit Assignment.[one of][line break][variable custom style]Why do I get the feeling that if I rub the trophy, something interesting might happen?[roman type][line break][or][stopping]".
 
@@ -295,9 +313,10 @@ A bystander has a number called bystanderInt2.
 Definition: a bystander is reactive if it is in the location of the player and it is interested. [Can it react to things it sees the player do?]
 
 To decide which number is the default park pull resistance of (M - a bystander):
-	decide on a random number between 1 and 10. [90% of the time they ignore their drive to go to the centre]
+	decide on a random number between 1 and 8. [% of the time they ignore their drive to go to the centre]
 
 To decide which number is the park pull resistance of (M - a bystander):
+	if smoothie van is in the location of the player and M is not interested, decide on a random number between 1 and 3;
 	decide on the default park pull resistance of M.
 
 Definition: a bystander is strolling if a random number between 1 and 5 > 3.
@@ -311,29 +330,33 @@ bystander-room-target is a room that varies.
 
 To compute movement of (M - a bystander):
 	now M is moved;
-	now neighbour finder is the location of M;
-	let A be the best route from the location of M to the predicament-pull-room of M; [People love going to the centre]
-	let R be the park pull resistance of M;
-	if water-fountain is penetrating asshole and M is in the location of water-fountain and M is not fountain-unquenched, now R is 1; [They'll always move away after drinking]
-	if (M is not in the location of water-fountain or M is not fountain-unquenched) and (M is strolling or R <= 1):
-		if A is not a direction or R > 1:
-			now R is 3; [We use this to flag that the NPC is no longer choosing to walk towards the central park]
-			let LA be the list of N-viable directions; [This is how we randomise an APPROPRIATE direction for M to walk in]
-			sort LA in random order;
-			if debugmode > 1, say "List of N-viable directions: [LA].";
-			repeat with D running through LA:
-				now bystander-room-target is the room D from neighbour finder;
-				if debugmode > 1, say "Considering [D] ([bystander-room-target]): ";
-				if M is target-room-happy:
-					now A is D;
-					if debugmode > 1, say "Chosen!";
-					break;
-				otherwise:
-					if debugmode > 1, say "Not allowed.";
+	if the travel-direction of the player is up or M is not in the location of the player: [bystander doesn't move if the player entered its location this turn]
+		now neighbour finder is the location of M;
+		let A be the best route from the location of M to the predicament-pull-room of M; [People love going to the centre]
 		if A is a direction:
-			let P be the room A from (the location of M);
-			if A is a direction and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
-				try M going A.
+			now bystander-room-target is the room A from neighbour finder;
+			if M is not target-room-happy, now A is up; [lets us know that we need to randomise direction instead]
+		let R be the park pull resistance of M;
+		if water-fountain is penetrating asshole and M is in the location of water-fountain and M is not fountain-unquenched, now R is 1; [They'll always move away after drinking]
+		if (M is not in the location of water-fountain or M is not fountain-unquenched) and (M is strolling or R <= 1):
+			if A is up or A is not a direction or R > 1:
+				now R is 3; [We use this to flag that the NPC is no longer choosing to walk towards the central park]
+				let LA be the list of N-viable directions; [This is how we randomise an APPROPRIATE direction for M to walk in]
+				sort LA in random order;
+				if debugmode > 1, say "List of N-viable directions: [LA].";
+				repeat with D running through LA:
+					now bystander-room-target is the room D from neighbour finder;
+					if debugmode > 1, say "Considering [D] ([bystander-room-target]): ";
+					if M is target-room-happy:
+						now A is D;
+						if debugmode > 1, say "Chosen!";
+						break;
+					otherwise:
+						if debugmode > 1, say "Not allowed.";
+			if A is a direction:
+				let P be the room A from (the location of M);
+				if A is a direction and the number of barriers in P is 0 and the number of barriers in the location of M is 0:
+					try M going A.
 
 Definition: a bystander (called M) is target-room-happy:
 	if bystander-room-target is bossed, decide no;
@@ -379,6 +402,7 @@ To compute perception of (M - a bystander):
 	otherwise:
 		compute non-lewd perception reaction of M;
 		if the appearance of the player >= the humiliation of the player / 2000, say moderateHumiliateReflect;
+	if current-predicament is team-girlfriends-predicament and girlfriend-partner is not snogged, HappinessDown team-predicament-partner;
 	if skirt-tray-vibrator is worn and the cakes-taken of skirt-tray-vibrator < the max-cakes of skirt-tray-vibrator:
 		compute cupcake perception of M; [This always happens even if they look lewd]
 	if the worst-appearance of M < the appearance of the player, now the worst-appearance of M is the appearance of the player;
@@ -613,7 +637,7 @@ Definition: postman-bystander is strolling: decide yes.
 To decide which number is the outrage tolerance of (M - postman-bystander):
 	decide on 9.
 Definition: postman-bystander is target-room-happy:
-	if bystander-room-target is bossed or bystander-room-target is not road room, decide no;
+	if bystander-room-target is bossed or bystander-room-target is park room, decide no;
 	decide yes.
 
 postwoman-bystander is a bystander. postwoman-bystander is female. The printed name of postwoman-bystander is "[TQlink of item described]postwoman[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "postwoman" as postwoman-bystander.
@@ -623,7 +647,7 @@ To say ExamineDesc of (M - postwoman-bystander):
 	say "This [man of M] is wearing a postie's uniform and has a satchel full of mail slung over one shoulder. [big he of M]'s busy heading from postbox to postbox.".
 Definition: postwoman-bystander is strolling: decide yes.
 Definition: postwoman-bystander is target-room-happy:
-	if bystander-room-target is bossed or bystander-room-target is not road room, decide no;
+	if bystander-room-target is bossed or bystander-room-target is park room, decide no;
 	decide yes.
 
 male-frisbeer-bystander is a bystander. The printed name of male-frisbeer-bystander is "[TQlink of item described]frisbeer[TQxlink of item described][shortcut-desc][verb-desc of item described]". Understand "frisbeer" as male-frisbeer-bystander.
@@ -652,7 +676,7 @@ male-bookworm-bystander is a bystander. The printed name of male-bookworm-bystan
 To decide which figure-name is the examine-image of (M - male-bookworm-bystander):
 	decide on figure of male bookworm bystander.
 To decide which number is the awareness of (M - male-bookworm-bystander):
-	decide on 2.
+	decide on 3.
 To say ExamineDesc of (M - male-bookworm-bystander):
 	say "This [man of M] has [his of M] nose in [his of M] book[if M is not interested]. Hopefully [he of M] won't look up[end if].".
 To compute lewd perception reaction of (M - male-bookworm-bystander):
@@ -662,7 +686,7 @@ female-bookworm-bystander is a bystander. female-bookworm-bystander is female. T
 To decide which figure-name is the examine-image of (M - female-bookworm-bystander):
 	decide on figure of female bookworm bystander.
 To decide which number is the awareness of (M - female-bookworm-bystander):
-	decide on 2.
+	decide on 3.
 To say ExamineDesc of (M - female-bookworm-bystander):
 	say "This [man of M] has [his of M] nose in [his of M] book[if M is not interested]. Hopefully [he of M] won't look up[end if].".
 To compute lewd perception reaction of (M - female-bookworm-bystander):
@@ -963,7 +987,15 @@ A game universe initialisation rule:
 		increase N by 1;
 	change the north exit of Predicament20 to School01. [It's a one-way journey]
 
-An all time based rule (this is the bystanders move rule):
+This is the bystanders move rule:
+	if girlfriend-partner is on-stage:
+		if the player is in a predicament room and the player is not in Predicament20:
+			now girlfriend-partner is in the location of the player;
+			allocate arm use to girlfriend-partner;
+		otherwise:
+			destroy girlfriend-partner;
+			if the player is in Predicament20, say "[student-name of team-predicament-partner] goes through the portal, leaving you behind.";
+			distract team-predicament-partner;
 	if the player is in an unbossed predicament room or the player is in Predicament02:
 		update appearance level; [We really want to make sure we've got this accurate]
 		repeat with M running through alive bystanders:
@@ -972,6 +1004,8 @@ An all time based rule (this is the bystanders move rule):
 			now M is not moved;
 			check perception of M;
 		[display entire map.]
+
+The bystanders move rule is listed first in the all time based rules. [list it first so the move happens before all other time based stuff]
 
 To set up bystanders for (P - a predicament):
 	set up 20 bystanders.
@@ -1023,7 +1057,7 @@ To set up (N - a number) bystanders:
 
 An all time based rule (this is the cars come past rule):
 	if the player is in an unbossed predicament room:
-		if the player is not in a park room and (current-predicament is not smoothie-predicament or the player is not in Predicament03) and a random number between 1 and 4 is 1:
+		if the player is in a road room and (current-predicament is not smoothie-predicament or the player is not in Predicament03) and a random number between 1 and 4 is 1:
 			say "[bold type]Suddenly, a car [one of]comes driving[or]zooms[or]drives[or]sails[at random] past! [roman type]";
 			if the appearance of the player > 2 or the cringe appearance of the player > 4:
 				say "The driver honks [his of shopkeeper] horn as [he of shopkeeper] spots you!";
@@ -1103,7 +1137,7 @@ To execute (SSP - simple-sneak-predicament):
 		now D is locked;
 		now the raw-magic-modifier of D is 2;
 		now D is diaper-addiction-influencing;
-		now skeleton key is in a random unbossed park room;
+		[now skeleton key is in a random unbossed park room;]
 	otherwise:
 		let T be a random sexy exercise bra;
 		now the size of T is the largeness of breasts;
@@ -1126,7 +1160,7 @@ To execute (SSP - simple-sneak-predicament):
 		now C is in Predicament01;
 	now the printed name of Predicament01 is "Small Room";
 	now the player is in Predicament01;
-	say "You find yourself in a small room, empty except for a wardrobe, a small table and a front door that leads outside. You are completely naked[if diaper quest is 1] except for a [MediumDesc of plain-largish-diaper][end if]. The table has a piece of card on it with the word 'INSTRUCTIONS' on it. You read the instructions:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY... RETURN HOME[if diaper quest is 1]. A KEY FOR YOUR PADLOCK HAS BEEN LEFT SOMEWHERE IN THE PARK. IT IS UP TO YOU IF YOU SPEND EXTRA TIME SEARCHING FOR IT[end if].'[PredicamentRewardExplanationReaction][roman type][line break]It looks like your outfit has been decided for you...";
+	say "You find yourself in a small room, empty except for a wardrobe, a small table and a front door that leads outside. You are completely naked[if diaper quest is 1] except for a [MediumDesc of plain-largish-diaper][end if]. The table has a piece of card on it with the word 'INSTRUCTIONS' on it. You read the instructions:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY... RETURN HOME.'[PredicamentRewardExplanationReaction][roman type][line break]It looks like your outfit has been decided for you...";
 	if diaper quest is 1, cutshow figure of simple sneak predicament.
 
 vibe-photo-predicament is a predicament. The printed name of vibe-photo-predicament is "[TQlink of item described]wand vibrator[TQxlink of item described][shortcut-desc]". Understand "vibrator" as vibe-photo-predicament. The text-shortcut of vibe-photo-predicament is "wand".
@@ -1364,9 +1398,9 @@ To execute (P - painted-cutoffs-predicament):
 	summon C uncursed;
 	let C be a random satin court heels;
 	summon C uncursed;
-	now C is cursed;
-	now the quest of C is predicament-quest;
+	now C is speed;
 	now the heel-height of C is 2;
+	now the raw-magic-modifier of C is 2;
 	let C be a random frilly stockings;
 	summon C uncursed;
 	now refractoryperiod is 0;
@@ -1404,8 +1438,8 @@ To execute (P - serving-tray-predicament):
 	summon C uncursed;
 	let C be a random satin court heels;
 	summon C uncursed;
-	now C is cursed;
-	now the quest of C is predicament-quest;
+	now C is speed;
+	now the raw-magic-modifier of C is 2;
 	now the heel-height of C is 2;
 	let C be a random frilly stockings;
 	summon C uncursed;
@@ -1413,6 +1447,7 @@ To execute (P - serving-tray-predicament):
 	if diaper quest is 1:
 		let C be plain-largish-diaper;
 		summon C uncursed;
+		blandify and reveal skirt-tray-vibrator;
 		now skirt-tray-vibrator is worn by the player;
 		now skirt-tray-vibrator is unskirted;
 	otherwise:
@@ -1644,8 +1679,7 @@ To execute (MSP - maths-sex-predicament):
 	say "You find yourself on your hands and knees, stuck in a hole-in-a-wall! The only item of clothing on your entire body is a [if diaper quest is 1]big thick white diaper[otherwise]string belt on your waist[end if]. In front of you sits a control panel with five buttons, labelled from 1 to 5.[line break][first custom style]'WELCOME TO THIS MATHEMATICS-THEMED [']EXTRA CREDIT['] CLASS. SIX INSTRUCTIONS WILL BE PRESENTED IN FRONT OF YOU. THE OPTION YOU CHOOSE WILL BE DISPLAYED ON THE MONITOR ABOVE YOUR LOWER HALF, AND [if diaper quest is 1]EXECUTED BY THE AUTOMATED ROBOTIC ARMS[otherwise]READ BY THE OBEDIENT INSTRUCTION UNDERTAKER WAITING[end if] IN THE ROOM BEHIND YOU, FILMED, AND UPLOADED TO THE INTERNET. THIS WILL OCCUR FIVE TIMES. APOLOGIES, THE INSTRUCTION NUMBER GENERATOR APPEARS TO BE SLIGHTLY MALFUNCTIONING; NUMBERS ARE DISPLAYED IN THE FORM OF MATHEMATICAL SUMS. THERE IS A STRICT TIME LIMIT FOR EACH INSTRUCTION. [if diaper quest is 0][paragraph break]'THERE IS ALSO A FURTHER BONUS AVAILABLE: ARRIVE HOME WITH FIVE CONDOMS PINNED TO YOUR BELT TO EARN A SECOND TROPHY![end if][paragraph break]'GO.'[paragraph break][variable custom style]Holy crap...[roman type][line break]";
 	now the stance of the player is 1;
 	if diaper quest is 0:
-		if string-belt is not worn, summon string-belt cursed;
-		now the quest of string-belt is predicament-quest;
+		if string-belt is not worn, summon string-belt locked;
 	otherwise:
 		summon plain-largish-diaper uncursed;
 	let D be game difficulty - 1;
@@ -1744,7 +1778,7 @@ To execute (TEP - team-enema-predicament):
 	say "Your stomach gurgles horribly. You look around... you're in a very small room, with... what the hell?! [BigNameDesc of M] is bound on [his of M] back on top of a bench, completely unable to move thanks to wrist and thigh binds. You're both naked. Underneath the grated floor below your feet is what appears to be two sets of clothes. A ring gag in [NameDesc of M][']s mouth keeps it wide and open, pointing towards the ceiling. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE PINK DIAMOND [']EXTRA CREDIT['] CLASS. [if diaper quest is 0]BOTH YOUR BELLIES HAVE BEEN FILLED WITH A VOLUMOUS SEMEN ENEMA. [end if]IN FIVE MINUTES THE DOOR and YOUR BONDAGE WILL UNLOCK, AND THE CLOTHES BENEATH THE GROUND WILL BE RELEASED. YOUR [if diaper quest is 0]BELLIES [end if][if watersports fetish is 1 and diaper quest is 1]AND [end if][if watersports fetish is 1]BLADDERS [end if]WILL NEED TO BE HELD, OR... OTHERWISE INGESTED... TO PREVENT YOUR CLOTHES FROM BECOMING SOILED.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Uh-oh...[roman type][line break]";
 	let T be 300;
 	if diaper quest is 0, now the semen volume of belly is 30;
-	if watersports fetish is 1 and the bladder of the player < 6, now the bladder of the player is 6;
+	if watersports fetish is 1 and the bladder of the player < bladder-risky-level, now the bladder of the player is bladder-risky-level;
 	let SB be 10; [partner's enema]
 	if diaper quest is 1, now SB is 0;
 	let BL be 0; [partner's bladder]
@@ -1795,6 +1829,7 @@ To execute (TEP - team-enema-predicament):
 						PuddleUp urine by the bladder of the player;
 					now delayed urination is 0;
 					now the bladder of the player is 0;
+					progress temporary incontinence;
 			increase BL by 1;
 		if diaper quest is 0, increase SB by 1;
 		repeat with LX running from 1 to 2:
@@ -1880,6 +1915,7 @@ To execute (L - team-quiz-predicament):
 	now the questionExpelled of L is 0;
 	let ST be team-predicament-partner;
 	summon quiz-partner;
+	now quiz-partner is predicament-fixed;
 	now the bound-target of quiz-partner is ST;
 	now the player is in Predicament01;
 	say "Your stomach gurgles horribly. You look around... you're in a very small room, screens on all sides, and with... what the hell?! ";
@@ -1887,8 +1923,7 @@ To execute (L - team-quiz-predicament):
 		if diaper messing >= 7 and asshole is not actually occupied, now rectum is 30;
 		let D be a random off-stage diaper;
 		if there is an off-stage massive diaper, now D is a random off-stage massive diaper;
-		summon D cursed;
-		now the quest of D is predicament-quest;
+		summon D locked;
 		now the bottom-layer of D is 1;
 		now the bottom-layer of quiz-partner is 2;
 		say "You are kneeling in front of [NameDesc of ST], wristcuffs connected tightly to thigh binds by short red rope. More red rope connects [NameDesc of ST][']s collar with your anklecuffs via D-rings in your thigh binds, which means that the seat your new large white diaper is pushed into [his of ST] entire face. To complete the predicament, [NameDesc of ST][']s own ankles and thighs are tightly bound together. So, every time you try to crawl around, [he of ST][']ll be forced to follow you and [his of ST] face will be repeatedly smushed into your diaper.[paragraph break]Your [if rectum >= 30 and asshole is not actually occupied]bowels are[otherwise]bladder has[end if] somehow filled to the point where it's actually painful![line break][variable custom style]'Ow ow ow[one of]! What the hell is going on?!'[or]!'[stopping][roman type][line break]";
@@ -2235,18 +2270,19 @@ To execute (L - smoothie-predicament):
 	now the stance of the player is 0;
 	now the fatigue of the player is 0;
 	now the bananas-left of smoothie-predicament is 4;
-	now skeleton key is in Predicament20;
 	summon smoothie gag locked;
 	now smoothie gag is stuck;
 	summon smoothie-apron;
-	summon pink-huge-diaper locked;
+	now smoothie-apron is predicament-fixed;
+	summon pink-huge-diaper uncursed;
+	now pink-huge-diaper is locked;
 	now the player is in Predicament03;
 	if tough-shit is 0, now rectum is 1;
 	now the stomach-food of the player is 1;
 	now the stomach-water of the player is 3;
 	now the bladder of the player is 1;
 	now the delayed bladder of the player is 0;
-	say "Your mouth is forced open by the appearance of a new tube gag. What the hell?! You look around. You are standing inside a mobile van, in front of a serving window, and lots of equipment with which to make smoothies. Your ankles are chained to the ground beneath you, preventing you from leaving - not that your customers will be able to see this. A tube leads upwards from your tube gag to a funnel attached to the top of the window. Anyone could pour liquids down that, and force you to drink them! For clothing, you can see that you are wearing a white top and a green apron that can barely hide the massive pink diaper sitting behind it. You are parked on a road opposite a park. A mechanical voice begins to explain your predicament.[line break][first custom style]'THE RULES ARE AS FOLLOWS: [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME - YOUR HOUSE IS ON THE OTHER SIDE OF THIS PARK. SERVE SIX CUSTOMERS TO BE RELEASED. A SIGN ON THE FRONT OF YOUR VAN ENCOURAGES CUSTOMERS WHO ARE NOT ENJOYING THEIR DRINK TO FORCEFEED YOU THE REST. GOOD LUCK.'[PredicamentRewardExplanationReaction][roman type][line break]";
+	say "Your mouth is forced open by the appearance of a new tube gag. What the hell?! You look around. You are standing inside a mobile van, in front of a serving window, and lots of equipment with which to make smoothies. Your ankles are chained to the ground beneath you, preventing you from leaving - not that your customers will be able to see this. A tube leads upwards from your tube gag to a funnel attached to the top of the window. Anyone could pour liquids down that, and force you to drink them! For clothing, you can see that you are wearing a white top and a green apron that can barely hide the massive pink diaper sitting behind it. You are parked on a road opposite a park. A mechanical voice begins to explain your predicament.[line break][first custom style]'THE RULES ARE AS FOLLOWS: [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME - YOUR HOUSE IS ON THE OTHER SIDE OF THIS PARK. SERVE SIX CUSTOMERS TO BE RELEASED. SERVE NINE CUSTOMERS TO EARN A BONUS EXTRA TROPHY. A SIGN ON THE FRONT OF YOUR VAN ENCOURAGES CUSTOMERS WHO ARE NOT ENJOYING THEIR DRINK TO FORCEFEED YOU THE REST. GOOD LUCK.'[PredicamentRewardExplanationReaction][roman type][line break]";
 	set up predicament universe;
 	compute predicament map reveal;
 	now smoothie van is in Predicament03; [has to come after the map reveal]
@@ -2311,6 +2347,12 @@ To compute smoothie perception of (M - a bystander):
 		if the smoothies-served of smoothie-predicament is 6:
 			say "You hear a loud 'BEEP' as your restraints are released. You can now [bold type]remove the gag[roman type] and then leave the van.";
 			now smoothie gag is unlocked;
+			say "Remove the gag immediately? ";
+			if the player is consenting, try taking off smoothie gag;
+		if the smoothies-served of smoothie-predicament is 9:
+			let TP be a random off-stage fetish appropriate trophy;
+			if TP is trophy, now TP is in Predicament20;
+			say "[bold type]You hear a loud triumphant 'BEEP' letting you know that you have served 9 smoothies and therefore earned yourself an extra trophy!";
 			say "Remove the gag immediately? ";
 			if the player is consenting, try taking off smoothie gag.
 
@@ -2527,7 +2569,7 @@ To execute (L - team-face-crotch-predicament):
 	now the player is in Predicament01;
 	now the stance of the player is 1;
 	now the fatigue of the player is 0;
-	now the bladder of the player is 10;
+	now the bladder of the player is bladder-risky-level + 4;
 	zero focus stuff;
 	display focus stuff;
 	now bigGameLoop is 1; [tells the game not to refresh the map window]
@@ -2575,15 +2617,15 @@ To execute (L - team-face-crotch-predicament):
 	let STBladder be 10;
 	while PredicamentMinutes > 0:
 		say "[line break]There [if PredicamentMinutes > 1]are [PredicamentMinutes] minutes remaining[otherwise]is one minute remaining[end if].";
-		if the bladder of the player >= 10:
+		if the bladder of the player >= bladder-risky-level:
 			say "Your bladder [if the bladder of the player < 12]twinges with significant discomfort. [bold type]Holding on will have a small chance of hurting[otherwise if the bladder of the player < 14]strains with its fullness, begging you to release. [bold type]Holding on has a decent chance of hurting[otherwise]is on fire, desperate to release! [bold type]Holding on will definitely hurt, and negatively affect your long-term continence[end if].[roman type][line break]Do you hold on? ";
 			if the player is consenting:
 				say "You hold on tight!";
-				let R be a random number between 10 and 14;
+				let R be a random number between bladder-risky-level and (bladder-risky-level + 4);
 				if R <= the bladder of the player:
 					say "It hurts! ";
 					PainUp 1;
-					if the bladder of the player >= 14:
+					if the bladder of the player >= bladder-risky-level + 4:
 						say "Your overall control over your bladder feels permanently weakened.";
 						increase incontinence by 1;
 			otherwise:
@@ -2606,7 +2648,7 @@ To execute (L - team-face-crotch-predicament):
 		if STBladder < 10 and playerAbove is 0:
 			say "The smell of [urine] goes to your head and makes you feel rather light-headed[if watersports fetish is 1 and K is diaper][otherwise if K is diaper or the remainder after dividing STBladder by 2 is 1], and perhaps a bit more perverse[end if].";
 			if K is diaper or the remainder after dividing STBladder by 2 is 1:
-				if watersports fetish is 1 and K is diaper, UrineTasteAddictUp 1;
+				if watersports fetish is 1 and K is diaper and the urine taste addiction of the player <= the sex addiction of the player, UrineTasteAddictUp 1;
 				otherwise SexAddictUp 1;
 		decrease PredicamentMinutes by 1;
 		increase the bladder of the player by 1;
@@ -2627,6 +2669,7 @@ To say PredicamentDescription of (P - diaper-grope-predicament):
 Figure of diaper grope predicament cutscene is the file "Special/Cutscene/cutscene-predicament-diaper-grope1.jpg".
 
 To execute (L - diaper-grope-predicament):
+	now the stance of the player is 0; [otherwise they immediately fail]
 	now the defaultLeftTarget of arms is hair;
 	now the defaultRightTarget of arms is hair;
 	now entry 1 in the armUses of arms is hair;
@@ -2634,11 +2677,16 @@ To execute (L - diaper-grope-predicament):
 	summon enema-backpack locked;
 	summon grope-me-skirt;
 	summon plain-medium-diaper uncursed;
+	now the raw-magic-modifier of plain-medium-diaper is -3;
 	summon nipples-crop-top uncursed;
 	let S be a random frilly stockings;
 	summon S uncursed;
+	now the raw-magic-modifier of S is 1;
+	now S is intelligence-influencing;
 	let MJ be a random mary janes;
 	summon MJ uncursed;
+	now the raw-magic-modifier of MJ is 1;
+	now MJ is dexterity-influencing;
 	now the printed name of Predicament01 is "Small Room";
 	now the player is in Predicament02;
 	say "You find yourself in an alleyway, for some reason holding your hands behind your head in a chilled-out fashion. You look down at yourself: You are wearing frilly white stockings, a short purple skirt that fails to hide your plain white diaper, and also has a sign on the front that says 'PLEASE GROPE MY TITS!'. Your tits are protected by nothing but a flimsy crop top that has a pair of circular holes cut out where your nipples are! The pink backpack on your back is very heavy, and you can feel some sort of intrusion in your [asshole]. Just before you move your hands, you hear a robotic voice coming from a nearby speaker...[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY REACH HOME. HOWEVER, IF YOU MOVE YOUR HANDS FROM BEHIND YOUR BACK, THE INVISIBLE WIRES ATTACHED TO YOUR WRISTS WILL BE PULLED, WHICH WILL CAUSE THE BACKPACK TO RELEASE ITS LARGE TANK OF WATER, WHICH WILL BE DELIVERED INTO YOUR BELLY VIA THE ENEMA NOZZLE. THE CHOICE IS YOURS...'[PredicamentRewardExplanationReaction][roman type][line break]It looks like you are going to look a bit eye-catching no matter where your arms are, but at least you have been given a choice. You can adjust where your arms are at any time with [bold type]adjust arms[roman type] and also if you pick anything up or try to remove anything, that will automatically require you to move your arms...";
@@ -2689,6 +2737,7 @@ To execute (L - team-football-predicament):
 		now remote-controlled-vibrator is penetrating penis;
 	otherwise:
 		now the size of remote-controlled-vibrator is the openness of vagina;
+	now the toy-charge of remote-controlled-vibrator is 0;
 	summon red crop top uncursed;
 	summon grey-sneakers uncursed;
 	now football is in Park02;
@@ -2934,7 +2983,7 @@ To say BigNameDesc of (S - water-fountain):
 	say "The enema bench".
 
 To say ExamineDesc of (S - water-fountain):
-	say "This water-fountain's drain is subtly connected to a pipe that runs down to the nearby park bench, where an enema nozzle is fixed in an upright position[if S is penetrating asshole]. You are currently sitting on that enema nozzle...[otherwise].[end if]".
+	say "This water fountain's drain is subtly connected to a pipe that runs down to the nearby park bench, where an enema nozzle is fixed in an upright position[if S is penetrating asshole]. You are currently sitting on that enema nozzle...[otherwise].[end if]".
 
 Check going when water-fountain is penetrating asshole:
 	say "You need to stand up first!" instead.
@@ -3243,12 +3292,14 @@ To execute (NWP - nun-walk-predicament):
 	summon nun-dress uncursed;
 	now nun-dress is locked;
 	now nun-dress is wrist-bound-behind;
+	now nun-dress is predicament-fixed;
 	summon nun cowl uncursed;
 	if the player is female, summon purple-vibrator vaginally;
 	otherwise summon purple-vibrator;
 	now the raw-magic-modifier of purple-vibrator is 0;
 	now purple-vibrator is bland;
 	now purple-vibrator is blandness;
+	now purple-vibrator is predicament-fixed;
 	let F be a random fuckhole penetrated by purple-vibrator;
 	if the size of purple-vibrator > the openness of F, now the size of purple-vibrator is the openness of F;
 	otherwise now the size of purple-vibrator is 3;
@@ -3258,6 +3309,7 @@ To execute (NWP - nun-walk-predicament):
 	now the quest of black-leather-flat-boots is mouthful-quest;
 	now the raw-magic-modifier of black-leather-flat-boots is -2;
 	now black-leather-flat-boots is oral-sex-addiction-influencing;
+	now black-leather-flat-boots is predicament-fixed;
 	now the player is in Predicament02;
 	say "You find yourself in an alleyway somewhere outside. You are wearing a nun's cowl and underneath it, a nun's dress. [ClothingDesc of nun-dress][line break]To make things worse, there is a vibrator buzzing powerfully in your [variable random fuckhole penetrated by purple-vibrator], currently held in place by your hands. A robotic voice speaks from a hidden speaker.[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME. HOWEVER, YOUR OUTFIT WILL ONLY UNLOCK ONCE YOU REACH YOUR HOUSE IF THE VIBRATOR MAKES IT THERE WITH YOU, AND A MOUTHFUL OF SEMEN IS DEPOSITED INTO THE BOWL ON THE TABLE IN YOUR HOUSE. IF YOU WONDER WHERE YOU MIGHT FIND A MOUTHFUL OF SEMEN, CONSIDER THE GLORYHOLE IN THE WOMEN'S TOILETS...'[PredicamentRewardExplanationReaction][roman type][line break]";
 	now the previous-temporary-image of nun-dress is Figure of nun-dress-xray-dong;
@@ -3295,10 +3347,7 @@ Report going when the player is in Predicament20:
 			now nun-dress is wristless;
 			now nun-dress is in the location of the player;
 		otherwise:
-			say "Unfortunately nothing seems to happen. You recall the instructions saying that you needed to still have [NameDesc of purple-vibrator] with you as well.[line break][variable custom style]Oh crap... so I'm stuck wearing this?![roman type][line break]";
-	if nun cowl is worn:
-		say "[BigNameDesc of nun cowl] fades from existence.";
-		only destroy nun cowl.
+			say "Unfortunately nothing seems to happen. You recall the instructions saying that you needed to still have [NameDesc of purple-vibrator] with you as well.[line break][variable custom style]Oh crap... so I'm stuck wearing this?![roman type][line break]".
 
 To compute nun perception of (M - a bystander):
 	say "[big he of M] looks at you.[line break][speech style of M]'[one of]Seven blessings [or]Good morning [or]Blessings be upon you, [or]Pleasant greetings [or]A lovely day isn't it, [in random order]sister[run paragraph on]";
@@ -3351,6 +3400,7 @@ Figure of team snowball predicament female is the file "Special/Cutscene/cutscen
 Figure of team snowball predicament male is the file "Special/Cutscene/cutscene-predicament-snowball2.jpg".
 
 To execute (TEP - team-snowball-predicament):
+	now the player is in Predicament01;
 	now the stance of the player is 0;
 	let IHC be a random I heart cum shirt;
 	summon IHC uncursed;
@@ -3460,5 +3510,80 @@ To SemenPuddleUp (X - a number) in (R - Predicament01):
 			if the plug size of P + X > 10, now X is 10 - the plug size of P;
 			say "The [if the player is possessing a vagina]plugs in your [vagina] and [asshole] inflate[otherwise]plug in your [asshole] inflates[end if] [if X is 1]a bit[otherwise if X is 2]significantly[otherwise]several sizes[end if]!";
 			increase the plug size of P by X.
+
+
+team-girlfriends-predicament is a team-predicament.
+Definition: team-girlfriends-predicament is appropriate:
+	if diaper quest is 0 and the player is not a june 2020 top donator, decide no;
+	if diaper quest is 1 and the player is not a june 2020 diaper donator, decide no;
+	decide yes.
+
+girlfriend-partner is a person. The printed name of girlfriend-partner is "[TQlink of item described][student-name of team-predicament-partner][TQxlink of item described][shortcut-desc]".
+Definition: girlfriend-partner is snogged:
+	if current-predicament is team-girlfriends-predicament and the player is in a predicament room and the player is not in Predicament01 and the player is not in Predicament20 and the number of entries in the armUses of arms is 2:
+		if entry 1 in the armUses of arms is girlfriend-partner and entry 2 in the armUses of arms is girlfriend-partner, decide yes;
+	decide no.
+Figure of both girlfriends is the file "NPCs/School/Student/girlfriend1a.png".
+Figure of solo girlfriends is the file "NPCs/School/Student/girlfriend1b.png".
+Figure of both boyfriends is the file "NPCs/School/Student/girlfriend2a.png".
+Figure of both diaperfriends is the file "NPCs/School/Student/girlfriend3a.png".
+Figure of solo diaperfriends is the file "NPCs/School/Student/girlfriend3b.png".
+To decide which figure-name is the examine-image of (G - girlfriend-partner):
+	if girlfriend-partner is snogged:
+		if there is a worn diaper, decide on figure of solo diaperfriends;
+		decide on figure of solo girlfriends;
+	if there is a worn diaper, decide on figure of both diaperfriends;
+	if the player is possessing a penis, decide on figure of both boyfriends;
+	decide on figure of both girlfriends.
+To construct normal buttons for (T - girlfriend-partner):
+	if ButtonTableFull is 0:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is clothing-image of open-front-skirt;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonColour entry is lightModeFullGreen.
+To decide which number is the outrage of (G - girlfriend-partner):
+	decide on 8.
+To decide which figure-name is the NPC-icon of (M - girlfriend-partner):
+	decide on Figure of Green NPC. [helps distinguish them from bystanders]
+To say ExamineDesc of (G - girlfriend-partner):
+	say "[student-name of team-predicament-partner] has a similar outfit to you, except [his of team-predicament-partner] nipples are exposed through holes in [his of team-predicament-partner] top.".
+
+To say PredicamentDescription of (P - team-girlfriends-predicament):
+	say "I'm currently in an Extra Credit lesson where I need to get back to my home with [girlfriend-partner] while avoiding as many bystanders from noticing me as possible.".
+
+To execute (L - team-girlfriends-predicament):
+	now the stance of the player is 0;
+	now the player is in Predicament02;
+	now the text-shortcut of girlfriend-partner is the student-name of team-predicament-partner;
+	now girlfriend-partner is in Predicament02;
+	summon remote-controlled-vibrator vaginally;
+	if the player is male:
+		dislodge remote-controlled-vibrator;
+		now remote-controlled-vibrator is penetrating penis;
+	otherwise:
+		now the size of remote-controlled-vibrator is the openness of vagina;
+	now the toy-charge of remote-controlled-vibrator is 0;
+	if diaper focus > 0:
+		summon plain-medium-diaper uncursed;
+		now plain-medium-diaper is locked;
+		now the bladder of the player is bladder-risky-level + 4;
+	summon open-front-skirt locked;
+	let V be a random rubber vest top;
+	summon V uncursed;
+	now V is locked;
+	now V is cotton;
+	now V is normally-nipple-covering;
+	summon ring gag locked;
+	summon grey-sneakers uncursed;
+	now grey-sneakers is speed;
+	say "You find yourself standing in an alleyway with [team-predicament-partner], your left hand subtley attached to [his of team-predicament-partner] right by a pair of wristcuffs that look like bracelets. You are wearing a denim skirt with a large section missing from the front, exposing what's underneath: some sort of vibrator [if the player is possessing a penis]wrapped around the shaft of your penis[otherwise]lodged tightly inside your [vagina][end if][if there is a worn diaper], clearly visible bulging against the padding of your [plain-largish-diaper][end if]. [BigNameDesc of team-predicament-partner] is wearing the same. Your vest tops slightly differ, however: while yours has two bullet vibes secured to your nipples underneath the fabric, [NameDesc of team-predicament-partner][']s has two holes exposing [his of team-predicament-partner] nipples, held open in small circles by metal rings sewn into the fabric. You also both have ring gags locked into your mouths, the straps mostly hidden by your hair[if the bladder of the player >= 12]. You feel desperate to pee[end if].[paragraph break]A robotic voice sounds out from a nearby loudspeaker.[line break][first custom style]'WELCOME TO THE EXTRA CREDIT ZONE. [PredicamentRewardExplanation]YOUR APPEARANCES CAN BE MADE LESS... [']EXPOSING['] BY PRESSING YOUR BODIES INTO EACH OTHER. IF YOUR RING GAGS TOUCH, AND YOUR NIPPLE RINGS TOUCH THE NIPPLE BULLET VIBRATORS, AND THE RINGS ON YOUR OPPOSING HANDS TOUCH THE VIBRATORS AT YOUR GENITALS, THEN THE VIBRATORS AT YOUR GENITALS WILL TURN OFF, BUT MEANWHILE THE BULLET VIBRATORS WILL TURN ON. HOW YOU PROGRESS THROUGH THE ZONE IS UP TO YOU.'[roman type][paragraph break][BigNameDesc of team-predicament-partner] squeaks with fear. It seems like [he of team-predicament-partner] is really nervous about being spotted with [his of team-predicament-partner] [if there is a worn diaper]diaper[otherwise if team-predicament-partner is female]pussy[otherwise]crotch[end if] on display.[line break]You can decide when to move forward pressed together, and when to move forward just holding hands, by using the command [bold type]adjust arms[roman type].".
+
+To compute school periodic effect of (C - rubber vest top):
+	if girlfriend-partner is snogged:
+		say "The bullet vibes on your nipples buzz away gently.";
+		passively stimulate breasts from C.
+
+Check going when current-predicament is team-girlfriends-predicament:
+	if the player is prone and girlfriend-partner is in the location of the player, say "It's not practical to crawl while connected to [NameDesc of team-predicament-partner] at the wrist!" instead.
 
 Predicament World ends here.

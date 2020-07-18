@@ -444,7 +444,7 @@ To compute appearance assessment of (M - a gladiator):
 			distract M;
 			FavourDown M;
 		otherwise if the player is top-wardrobe-malfunctioning:
-			compute default nip slip reaction of M;
+			compute tq nip slip reaction of M;
 		otherwise if the times-met of M is 0:
 			say "[speech style of M]'Are you new to these parts, traveller? [one of]Well let me warn you now, you should learn to carry yourself with dignity and self-respect wherever you go, lest you wish to feel my wrath.'[or]I hope you are not another boring, weak sex addict like most of the new people I seem to meet down here as of late.'[in random order][roman type][line break]";
 		if M is unfriendly and M is interested: [It is possible that the above loss in favour has taken the player down to unfriendly levels.]
@@ -520,6 +520,8 @@ To compute DQ appearance assessment of (M - a gladiator):
 		say "[speech style of M]'Truly adult women don't need to look like sluts in order prove their [maturity], you know. I'm going to leave you to hopefully improve your appearance before we next meet.'[roman type][line break]";
 		distract M;
 		FavourDown M by 2;
+	otherwise if the player is top-wardrobe-malfunctioning:
+		compute dq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'[big please]d to meet you[if the times-met of M > 0] again[end if]. ".
 
@@ -2139,7 +2141,7 @@ To compute appearance assessment of (M - wild gladiator):
 			say "[speech style of M]'[one of]How dare you display such a pitiful chest so proudly! Face me, whelp.'[or]Still you have no shame? I will not allow you to flaunt such a Spartan chest!'[at random]";
 	otherwise if the breast-happy of M is 1:
 		if the player is top-wardrobe-malfunctioning:
-			compute default nip slip reaction of M;
+			compute tq nip slip reaction of M;
 		otherwise:
 			say "[speech style of M]'With breasts like those, you are a worthy trophy. Wander freely, show the jungle the standard of my leadership.'[roman type][line break]";
 			calm M;

@@ -22,6 +22,43 @@ Definition: a monster is summoningRelevant if it is undefeated. [Does it count t
 
 Definition: a monster is regionalRelevant if it is summoningRelevant and it is regional. [Does it count towards the number of monsters in the region, and is it currently alive and undefeated in that region?]
 
+[This is how we find a monster that has no similar copies alive and kicking in the dungeon]
+Definition: a monster (called M) is dungeon prioritised:
+	if M is alive or M is not summon appropriate or M is not dungeon dwelling, decide no;
+	let T1 be the substituted form of "[ShortDesc of M]";
+	repeat with N running through alive dungeon dwelling summoningRelevant monsters:
+		let T2 be the substituted form of "[ShortDesc of N]";
+		if T1 matches the text T2, decide no;
+	decide yes.
+
+[This is how we find a monster that has no similar copies alive and kicking in the woods]
+Definition: a monster (called M) is woods prioritised:
+	if M is alive or M is not summon appropriate or M is not woods dwelling, decide no;
+	let T1 be the substituted form of "[ShortDesc of M]";
+	repeat with N running through alive woods dwelling summoningRelevant monsters:
+		let T2 be the substituted form of "[ShortDesc of N]";
+		if T1 matches the text T2, decide no;
+	decide yes.
+
+[This is how we find a monster that has no similar copies alive and kicking in the hotel]
+Definition: a monster (called M) is hotel prioritised:
+	if M is alive or M is not summon appropriate or M is not hotel dwelling, decide no;
+	let T1 be the substituted form of "[ShortDesc of M]";
+	repeat with N running through alive hotel dwelling summoningRelevant monsters:
+		let T2 be the substituted form of "[ShortDesc of N]";
+		if T1 matches the text T2, decide no;
+	decide yes.
+
+[This is how we find a monster that has no similar copies alive and kicking in the mansion]
+Definition: a monster (called M) is mansion prioritised:
+	if M is alive or M is not summon appropriate or M is not mansion dwelling, decide no;
+	let T1 be the substituted form of "[ShortDesc of M]";
+	repeat with N running through alive mansion dwelling summoningRelevant monsters:
+		let T2 be the substituted form of "[ShortDesc of N]";
+		if T1 matches the text T2, decide no;
+	decide yes.
+
+
 A game universe initialisation rule:
 	repeat with S running through summoning portals:
 		now the next-summon of S is the summonChoice of S;
@@ -159,7 +196,7 @@ Calls the regionally summoning function for summoning portal "S", which calls a 
 +!]
 To compute (S - a summoning portal) summoning (M - a monster):
 	compute S regionally summoning M;
-	if M is nonexistent and M is on-stage, set up M;
+	if M is nonexistent and M is alive, set up M;
 	now M is in the location of S;
 	if S is regional, say SummoningFlav of M;[should describe portal closing up if the player is in the room]
 	if M is not interested, now the boredom of M is 1.[should fix issues where the player is in the room and the monster's perception function runs twice in a row]
@@ -186,7 +223,7 @@ Sets the summoning portal "S"'s active flag to false and increases its counter f
 +!]
 To compute portal reset of (S - a summoning portal):
 	let R be the currentRegion of S;
-	if doomed < 5 and the regionalMonsterCount of R <= the number of regionalRelevant monsters, now S is not active;
+	if doomed < 5 and (playerRegion is not R or the regionalMonsterCount of R <= the number of regionalRelevant monsters), now S is not active;
 	increase the spawn-count of S by 1;
 	now the reset-count of S is 0.
 
@@ -223,7 +260,9 @@ To say PortalHint of (S - summoning-circle):
 
 To decide which object is the summonChoice of (S - summoning-circle):
 	let M be a random off-stage dungeon dwelling summon appropriate royal guard; [if no alive guards, prioritise a new guard]
-	if M is nothing or the number of alive royal guards > 0, now M is a random off-stage dungeon dwelling summon appropriate monster;
+	if M is nothing or the number of alive royal guards > 0:
+		now M is a random dungeon prioritised monster;
+		if M is nothing or a random number between 1 and 4 is 1, now M is a random off-stage dungeon dwelling summon appropriate monster;
 	if debugmode > 0, say "Next summon choice of [S] selected to be [M].";
 	decide on M.
 
@@ -341,7 +380,8 @@ To say PortalHint of (S - giant-statue):
 		say "You can make out an outline of something [if M is human]vaguely human[otherwise]inhuman[end if].".
 
 To decide which object is the summonChoice of (G - giant-statue):
-	let M be a random off-stage summon appropriate woods dwelling monster;
+	let M be a random woods prioritised monster;
+	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage summon appropriate woods dwelling monster;
 	if debugmode > 0, say "Next summon choice of [G] selected to be [M].";
 	decide on M.
 
@@ -459,7 +499,8 @@ To say PortalHint of (S - teleportation-pad):
 		say "red".
 
 To decide which object is the summonChoice of (G - teleportation-pad):
-	let M be a random off-stage hotel dwelling summon appropriate monster;
+	let M be a random hotel prioritised monster;
+	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage hotel dwelling summon appropriate monster;
 	if debugmode > 0, say "Next summon choice of [G] selected to be [M].";
 	decide on M.
 
@@ -579,7 +620,8 @@ To say MummyType of (S - mysterious-mummy):
 Understand "winged", "crawling", "unsettling", "glowing", "decorated", "busty", "horned", "sly" as mysterious-mummy when the item described is active.
 
 To decide which object is the summonChoice of (S - mysterious-mummy):
-	let M be a random off-stage summon appropriate mansion dwelling monster;
+	let M be a random mansion prioritised monster;
+	if M is nothing or a random number between 1 and 4 is 1, let M be a random off-stage summon appropriate mansion dwelling monster;
 	if debugmode > 0, say "Next summon choice of [S] selected to be [M].";
 	decide on M.
 
@@ -610,7 +652,7 @@ To say PortalHint of (S - mysterious-mummy):
 			say "A squirming [man of a random acolyte] wrapped from head to toe in white linen, with a purple aura highlighting [his of a random acolyte] features. [big his of a random acolyte] arms are crossed in front of [his of a random acolyte] chest, but it looks like [his of a random acolyte] wrists are being held together by an invisible rope. There's nothing lewd about the way [he of a random acolyte]'s standing, but whenever you look at [him of a random acolyte], you can't help but feel like you're watching someone having sex.";
 		otherwise if M is gladiator: [gladiator]
 			say "A tall [man of a random gladiator] wrapped from head to toe in white linen, with a golden aura highlighting [his of a random gladiator] busty features. [if futanari fetish is 1 or lady fetish is 2]The cloth is distorted by a banana-like shape near [his of a random gladiator] crotch, which twitches slightly[otherwise]There is a dark spot near [his of a random gladiator] crotch, which grows slowly[end if] as [his of a random gladiator] visibly muscular arms struggle against their wrappings.";
-		otherwise if M is gargoyle or M is vampiress: [vampiress(8); 3 used to be gargoyle, but she no longer re-spawns.]
+		otherwise if M is gargoyle or M is vampiress:
 			say "A feminine figure wrapped in white linen, [his of vampiress] features highlighted by a faint pink aura. There is a bat resting on one of [his of vampiress] shoulders.";
 		otherwise if M is mannequin: [mannequin]
 			say "A feminine figure wrapped from head to toe in white linen, with a black aura surrounding [his of a random mannequin] features. Dusky makeup is peppered over [his of a random mannequin] face, and [his of a random mannequin] arms are splayed at disturbing angles to [his of a random mannequin] sides. It seems to change poses whenever you look away for more than a second, and you can't help but notice a strange clicking noise whenever you get too close.";
@@ -619,7 +661,7 @@ To say PortalHint of (S - mysterious-mummy):
 		otherwise if M is kitsune: [kitsune; shouldn't happen]
 			say "A feminine figure wrapped in white linen from head to toe, which a silvery aura highlighting [his of kitsune] features. [big he of kitsune] has just about your build and height, and [his of kitsune] arms are crossed in front of [his of kitsune] chest. The wrappings don't actually look that secure, and [his of kitsune] head always seems to face away from you no matter where you try to stand. It's almost like it's trying to trick you.";
 		otherwise if M is hellhound: [hellhound]
-			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight [his of hellhound] features. [big he of hellhound]'s on all fours, and there is a leather collar and leash gripped in one of [his of hellhound] hands. [one of]For some reason [he of hellhound]'s holding it from the wrong end[or][big he of hellhound]'s holding it from the collar end instead of the leash[at random].";
+			say "A feminine figure wrapped in linen from head to toe, with a red aura highlight [his of hellhound] features. [big he of hellhound][']s on all fours, and there is a leather collar and leash gripped in one of [his of hellhound] hands. [one of]For some reason [he of hellhound]'s holding it from the wrong end[or][big he of hellhound]'s holding it from the collar end instead of the leash[at random].";
 		otherwise: [ghost?]
 			say "A [man of a random ghost]ly figure wrapped in white linen, with a green aura highlighting [his of a random ghost] features in the relative darkness. The fabric is pulled taut near all of [his of a random ghost] sensitive parts, and the air around you is positively dripping with [italic type]intent[roman type]. You're feel a little violated just standing in the same room too long.";
 	otherwise:

@@ -193,9 +193,9 @@ To compute attack of (S - pink-spraybottle) at (M - a monster):
 To compute MagicDrain of (Z - pink-spraybottle): [counts as a wand for the purposes of tracking spending magic power]
 	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0:
 		increase wandAttacks by 1;
-		if wandAttacks > 2:
+		if wandAttacks > 1:
 			now wandAttacks is 0;
-			say "You can feel that all your attacks with wands have spent some of your magic.";
+			say "You can feel that your attacks with magic weapons have spent some of your magic.";
 			MagicPowerDown 1.
 
 Pink Spraybottle ends here.

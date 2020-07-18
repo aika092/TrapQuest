@@ -137,7 +137,6 @@ To Execute Fainting:
 				otherwise:
 					now player-breeder is not maid-history;
 				try examining player-breeder;
-			progress quest of predicament-quest;
 			check immobility;
 			refresh windows;
 			zero focus stuff;
@@ -166,7 +165,7 @@ Some things don't get reset when the player faints.
 Definition: A thing (called I) is immune to change:
 	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store clothing or I is in a pedestal, decide yes;
 	if I is in School15:
-		if I is rare clothing or I is evening dress or I is fetish dress, decide yes;
+		if I is predicament-fixed clothing, decide yes;
 	decide no.
 
 [!<RecideWhichObjectIsTheBiggestJewel>+

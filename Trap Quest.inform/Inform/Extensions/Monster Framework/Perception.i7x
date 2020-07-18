@@ -47,7 +47,7 @@ To check perception of (M - a monster):
 				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0 and M is scarable:
 				compute scared perception of M;
-			otherwise if stealthActive is true and (the class of the player is vixen or the blind-status of M > 0 or (M is woman-barbara and the woman-status of woman-barbara is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
+			otherwise if stealthActive is true and (the class of the player is vixen or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
 				say PerceptionFail of M;
 				if the blind-status of M > 0, decrease the blind-status of M by 1;
 				distract M;
@@ -74,7 +74,7 @@ To check perception of (M - a monster):
 				if M is interested:
 					now the greet-window of M is 3;
 					if newbie tips is 1 and tutorial is 0:
-						if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using 'greet' and 'question' verbs to find out more from them. If thirsty, you could even 'ask [ShortDesc of M] for drink'.[roman type][line break][or][stopping]";
+						if M is friendly, say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is friendly, which means you could try using the 'talk' verb to find out more from them. If thirsty, you'll even be able to ask [him of M] for a drink.[roman type][line break][or][stopping]";
 						otherwise say "[one of][newbie style]Newbie tip: You have been noticed by an NPC! Looks like this one is unfriendly, which usually always means [he of M] wants to [if diaper quest is 1]babify[otherwise]fuck[end if] you, or at the very least make your life more miserable in some way. You can either fight back with 'slap', 'knee' or 'kick' (you'll need to be standing), or you can run away! If your delicateness is high enough, there's also a third option, just get on your knees and let it happen... Anyway, if you want to fight back, experiment with the different attacks. At the start of the game, kicking is usually the worst option as you risk falling over and do less damage.[roman type][line break][or][stopping]";
 					reset orifice selection of M; [Otherwise they would be biased towards doing the same thing again, which is lame.]
 					if hypno-curtsey-trigger > 0 and the player is upright and M is intelligent friendly monster and the player is not wrist bound and the player is able to use manual dexterity and there is a worn knee-length or longer crotch-in-place clothing:
@@ -153,6 +153,7 @@ To compute scared perception of (M - a monster):
 Chapter 2 - Aggro Framework
 
 Definition: a monster (called M) is aware: [Can it notice the player on its own?]
+	if M is woman-player and M is stranger, decide no;
 	if M is asleep or the boredom of M > 0, decide no;
 	if the player is too high to see, decide no;
 	if M is in the location of the player, decide yes;
@@ -447,7 +448,7 @@ To compute appearance assessment of (M - a monster):
 	if M is intelligent, say "looks you up and down.";
 	otherwise say "pauses, taking notice of you.";
 	if M is intelligent:
-		if the player is top-wardrobe-malfunctioning, compute default nip slip reaction of M;
+		if the player is top-wardrobe-malfunctioning, compute tq nip slip reaction of M;
 
 Chapter 3 - Modifying Aggro
 
@@ -522,7 +523,9 @@ Is the player wearing something too embarrassing for their tolerance level?
 +!]
 Definition: a person is outraged:
 	if calculated-appearance-outrage-level is too humiliating, decide yes;
+	if diaper quest is 1 and calculated-cringe-level is too humiliating, decide yes;
 	decide no.
+
 
 [!<PersonIsNearlyOutraged>+
 
@@ -532,11 +535,11 @@ Is the player wearing something almost too embarrassing for their tolerance leve
 Definition: a person is nearly outraged:
 	if the humiliation of the player < 20000, decide no;
 	if calculated-appearance-outrage-level + 5 is too humiliating, decide yes;
+	if diaper quest is 1 and calculated-cringe-level + 5 is too humiliating, decide yes;
 	decide no.
 
-To say mortifiedOutfit:
-	say ", which makes you very self-conscious about your [MediumDesc of appearance-outrage-target], and [one of]sends shivers of mortifying humiliation down your spine[or]feel even more nervous about who might be watching you in this awkward situation[or]feel so uneasy that blood rushes to your head[if the player is upright] and you almost lose your balance[otherwise] and you shudder uncontrollably[end if][or]consumes you with an overwhelming sense of shame[or]find yourself in disbelief that you've allowed yourself to be demeaned like this[or]for a moment feel so bashful and vulnerable that you lose your composure[or]for a moment feel so incredibly shy that you almost want to just hide in a dark corner until the time runs out[or]causes you to cringe with humiliation[in random order]";
-	humiliate 10 * calculated-appearance-outrage-level.
+To say mortifiedOutfit on (C - a thing):
+	say ", which makes you very self-conscious about your [MediumDesc of C], and [one of]sends shivers of mortifying humiliation down your spine[or]feel even more nervous about who might be watching you in this awkward situation[or]feel so uneasy that blood rushes to your head[if the player is upright] and you almost lose your balance[otherwise] and you shudder uncontrollably[end if][or]consumes you with an overwhelming sense of shame[or]find yourself in disbelief that you've allowed yourself to be demeaned like this[or]for a moment feel so bashful and vulnerable that you lose your composure[or]for a moment feel so incredibly shy that you almost want to just hide in a dark corner until the time runs out[or]causes you to cringe with humiliation[in random order]".
 
 [!<PersonIsSluttilyDressed>+
 
@@ -545,16 +548,21 @@ We use this at the appropriate point during a 'say' command during the perceptio
 +!]
 Definition: a person is sluttily dressed:
 	increase shocked-monsters by 1;
+	let AL be calculated-appearance-outrage-level;
+	let AT be appearance-outrage-target;
+	if diaper quest is 1 and calculated-cringe-level >= AL:
+		now AL is calculated-cringe-level;
+		now AT is appearance-cringe-target;
 	if shocked-monsters > 1:
 		say " at the same time, [one of]worsening the situation[or]making the humiliation even worse[or]making you feel even more self-conscious[or]turning you an even brighter shade of red[purely at random]";
-		humiliate (10 * calculated-appearance-outrage-level) / shocked-monsters; [Each extra monster adds less than the one before]
+		humiliate (10 * AL) / shocked-monsters; [Each extra monster adds less than the one before]
 		decide yes;
 	otherwise if 17 is too humiliating and the player is outraged: [We consider the player no longer embarrassed about appearance after outrage 16]
-		if calculated-appearance-outrage-level - 4 is too humiliating:
-			say "[one of][mortifiedOutfit][or] and [if appearance-outrage-target is asshole]catches a glimpse of[otherwise if appearance-outrage-target is body part]can see[otherwise]can easily see[end if] your [MediumDesc of appearance-outrage-target], making you [blush 10 * calculated-appearance-outrage-level][purely at random]";
+		if AL - 4 is too humiliating:
+			say "[one of][mortifiedOutfit on AT][or] and [if AT is asshole]catches a glimpse of[otherwise if AT is body part]can see[otherwise]can easily see[end if] your [MediumDesc of AT], making you [blush 10 * AL][purely at random]";
 		otherwise:
-			say ", which [one of]makes you feel a little uneasy [if appearance-outrage-target is worn clothing and appearance-outrage-target is not equippable]in[otherwise]with[end if] your [MediumDesc of appearance-outrage-target][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if appearance-outrage-target is headgear]think about the impression your [ShortDesc of appearance-outrage-target] must be giving[otherwise]look down towards your [ShortDesc of appearance-outrage-target] bashfully[end if][in random order]";
-			humiliate 10 * calculated-appearance-outrage-level;
+			say ", which [one of]makes you feel a little uneasy [if AT is worn clothing and AT is not equippable]in[otherwise]with[end if] your [MediumDesc of AT][or]causes you to wince with shyness[or]makes your cheeks flush[or]makes you blush shyly[or]makes you [if AT is headgear]think about the impression your [ShortDesc of AT] must be giving[otherwise]look down towards your [ShortDesc of AT] bashfully[end if][in random order]";
+			humiliate 10 * AL;
 		decide yes;
 	decrease shocked-monsters by 1; [if we're deciding no, then we remove the shocked monster count]
 	increase aroused-monsters by 1;
@@ -563,8 +571,8 @@ Definition: a person is sluttily dressed:
 		arouse 100;
 		decide yes;
 	otherwise if the player is nearly outraged: [The player no longer feels embarrassed about clothing, only aroused at being seen! But if their clothing is too boring, they won't even be aroused.]
-		say ", and you find yourself feeling [one of]thrillingly nervous[or]getting a little [if the player is a bit horny]more [end if]turned on[or]blushing with shyness and pride[or]shivering with nervous excitement[at random] because [he of current-monster] can see your [if the number of worn rings > 1 and appearance-outrage-target is ring][number of worn rings] rings[otherwise][MediumDesc of appearance-outrage-target][end if]";
-		arouse 25 * calculated-appearance-outrage-level;
+		say ", and you find yourself feeling [one of]thrillingly nervous[or]getting a little [if the player is a bit horny]more [end if]turned on[or]blushing with shyness and pride[or]shivering with nervous excitement[at random] because [he of current-monster] can see your [if the number of worn rings > 1 and AT is ring][number of worn rings] rings[otherwise][MediumDesc of AT][end if]";
+		arouse 25 * AL;
 		decide yes;
 	decrease aroused-monsters by 1;
 	decide no.

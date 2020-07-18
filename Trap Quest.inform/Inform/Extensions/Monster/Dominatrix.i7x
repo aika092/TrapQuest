@@ -51,7 +51,7 @@ To say MonsterDesc of (M - dominatrix):
 		say "This brunette [man of M] is standing aggressively and it doesn't look like [he of M] messes around. Your eyes can't help but look down past [his of M] black latex outfit to [his of M] crotch, where [he of M] is sporting [StrapOnDesc of M].[line break]".
 
 To decide which number is the girth of (M - dominatrix):
-	if woman-barbara is in the location of the player and the woman-status of woman-barbara is 93 and woman-barbara is awake, decide on 8;
+	if woman-player is in the location of the player and the woman-status of woman-player is 93 and woman-player is awake, decide on 8;
 	decide on the strap-on girth of M.[This is strap-on girth.]
 
 To say DickDesc of (M - a dominatrix):
@@ -171,7 +171,7 @@ Part 2 - Perception
 
 Definition: dominatrix (called M) is objectifying the player:
 	if the class of the player is cheerleader, decide no;
-	if the woman-status of woman-barbara is 93 and the anal-contraption-scene of woman-barbara <= 5 and woman-barbara is in the location of the player, decide no;
+	if the woman-status of woman-player is 93 and the anal-contraption-scene of woman-player <= 5 and woman-player is in the location of the player, decide no;
 	if the slave-status of M < -3, decide no;
 	if the times-submitted of M > 3 and the frustration of M < 1, decide yes;
 	if (the bimbo of the player >= 20 or the appearance of the player >= 20), decide yes;
@@ -188,7 +188,7 @@ To compute perception of (M - dominatrix):
 	now M is interested;
 	if the disappointment of M > 1, now the strap-on girth of M is the disappointment of M;
 	say "[BigNameDesc of M] notices you[if the player is sluttily dressed].[otherwise]![end if]";[We shouldn't need a linebreak here because punctuation inside text-based if-clauses cause an automatic line break]
-	if the woman-status of woman-barbara is 93 and the anal-contraption-scene of woman-barbara <= 5 and woman-barbara is in the location of the player:
+	if the woman-status of woman-player is 93 and the anal-contraption-scene of woman-player <= 5 and woman-player is in the location of the player:
 		say "[BigNameDesc of M] grins.[line break][speech style of M]'Enjoying the show?'[roman type][line break]";
 		calm M;
 	otherwise if the class of the player is living sex doll:
@@ -225,7 +225,7 @@ To say BecomesBoredFlav of (M - dominatrix):
 Part 3 - Motion
 
 To compute monstermotion of (M - dominatrix):
-	if the woman-status of woman-barbara is 93 and woman-barbara is in the location of the player and the anal-contraption-scene of woman-barbara < 6:
+	if the woman-status of woman-player is 93 and woman-player is in the location of the player and the anal-contraption-scene of woman-player < 6:
 		check seeking 1 of M;
 	otherwise if M is unfriendly and the boredom of M <= 0: [The dominatrix goes looking for the player after a while, if she is unfriendly.]
 		now neighbour finder is the location of M;
@@ -484,7 +484,7 @@ To say PenetrationFlav of (M - dominatrix) in (F - asshole):
 	say "[big he of M] pushes in with measured strength and your [ShortDesc of asshole] [if the openness of asshole < the strap-on girth of M]is forced apart[otherwise]parts to accept the fake [manly-penis] inside[end if].";
 
 To compute anal sex of (M - dominatrix):
-	if woman-barbara is in the location of the player and the woman-status of woman-barbara is 93 and woman-barbara is awake:
+	if woman-player is in the location of the player and the woman-status of woman-player is 93 and woman-player is awake:
 		compute contraption sex of M;
 	otherwise:
 		if the reaction of the player is 0:
@@ -530,7 +530,7 @@ To compute MasturbationReaction of (M - dominatrix):
 		say "[BigNameDesc of M] chuckles as [he of M] watches you.".
 
 To decide which number is the rounds of sex left of (M - dominatrix):
-	if woman-barbara is in the location of the player and the woman-status of woman-barbara is 93 and woman-barbara is awake, decide on 2;
+	if woman-player is in the location of the player and the woman-status of woman-player is 93 and woman-player is awake, decide on 2;
 	decide on the sex-length of M. [Default function allows us to rewrite where this isn't true, e.g. witch and demoness]
 
 To compute unique climax of (M - dominatrix) in (F - asshole):

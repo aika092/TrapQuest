@@ -353,7 +353,7 @@ To replace any diapers:
 		unless current-monster is withholding D, compute replacement of D.
 
 To replace any clothes:
-	unless the woman-status of woman-barbara is 96 and woman-barbara is in the location of the player: [patron orgy scene]
+	unless the woman-status of woman-player is 96 and woman-player is in the location of the player: [patron orgy scene]
 		repeat with C running through worn clothing:
 			compute replacement of C; [this only does something if it's displaced or unzipped]
 		repeat with C running through clothing retained by current-monster:

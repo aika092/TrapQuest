@@ -2538,7 +2538,7 @@ To decide which number is the semen-addiction-influence of (T - unicorn-horn-fin
 To decide which number is the humiliation-influence of (T - unicorn-horn-finger tattoo):
 	decide on 2.
 To decide which number is the initial cringe of (T - unicorn-horn-finger tattoo):
-	decide on 6.
+	decide on 4.
 Definition: unicorn-horn-finger tattoo is magic themed: decide yes.
 Definition: unicorn-horn-finger tattoo is bow themed: decide yes.
 

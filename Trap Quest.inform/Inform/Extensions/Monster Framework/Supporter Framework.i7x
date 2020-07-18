@@ -150,7 +150,7 @@ To compute appearance assessment of (M - a supporter):
 		otherwise:
 			say FriendlySluttyPerception of M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:

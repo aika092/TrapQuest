@@ -29,7 +29,7 @@ Check LongWaiting:
 	if the player is in danger, say "You can't use this verb when there are monsters nearby!" instead;
 	if the player is in a predicament room, say "Sorry, you can't use this in the Extra Credit Zone." instead;
 	if the player is upright:
-		say "Are you aware that you are standing and will therefore might gain fatigue over time? ";
+		say "Are you aware that you are standing and therefore might gain fatigue over time? ";
 		unless the player is consenting, say "You decide against it." instead;
 
 [!<longWaitRules:Rulebook>*
@@ -415,9 +415,12 @@ This is the longwait setting rule:
 		now stat-to-set is "";
 		change the text of the player's command to "finish setting";
 		if longWaitTurns > 0:
-			say "Stop as soon as a friendly NPC is in your location?";
-			if the player is consenting, now friendlyMonsterWait is true;
-			otherwise now friendlyMonsterWait is false;
+			if there is a friendly monster in the location of the player:
+				now friendlyMonsterWait is false;
+			otherwise:
+				say "Stop as soon as a friendly NPC is in your location?";
+				if the player is consenting, now friendlyMonsterWait is true;
+				otherwise now friendlyMonsterWait is false;
 			follow the long wait setup rules;
 			while longWaitTurns > 0:
 				allocate 6 seconds;

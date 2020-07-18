@@ -134,20 +134,25 @@ A later time based rule (this is the compute doom rule):
 			if the location of the player is not Mansion23:
 				say "[bold type]A horrible noise like a thousand screams of pure bliss echoes through the world itself, and the world itself takes on a soft pink cast for a moment. Something is drawing close to this world![roman type][line break]";
 			otherwise:
-				say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
-			SexAddictUp 2;
-			SemenAddictUp 2;
-			DelicateUp 2;
-		otherwise:
-			if the player-class is not cultist:
-				say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
+				say "[bold type]A horrible noise like a thousand screams of bliss echoes through the world and a soft pink light fills the area. Above the altar a translucent pink bubble swirls and throbs, the ritual is clearly almost complete![roman type][line break]";
+			now doomed is 4;
+			now the Pink Sphere is in Mansion23; [spawn the pink bubble scenery in mansion23]
+		otherwise if doom counter > 750 and doomed is 4:
+			if the location of the player is not Mansion23:
+				if the player-class is not cultist:
+					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You desperately try to avoid them, but you feel the energy wash over you before the effect settles down. Even still, there is a strange pink energy hanging in the air. One thing is certain: You have failed.[roman type][line break]";
+				otherwise:
+					say "[bold type]The world begins to shake and pink lightning crackles over every surface! You can feel it, the Great One has come! You revel as the energy flows into you, through you. Even after it settles down, a pink glow remains in the air.[roman type][line break]";
 			otherwise:
-				say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
+				if the player-class is not cultist:
+					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'Like, cower in fear and junk because Valleyhotep, herald of [Azathot], is totally here.'[roman type][line break]This is probably bad.";
+				otherwise:
+					say "[bold type]The world begins to shake and pink lightning begins to arc off the floating pink bubble and into the world! The bubble twists and resolves into an increasingly humanoid shape, finally becoming an extremely feminine figure composed of shocking pink light. In spite of being faceless, you can somehow tell it is looking at you.[line break][second custom style]'You have totally done well, minions! Now go and, like, spread the word of Valleyhotep, herald of [Azathot]!'[roman type][line break]";
 			SexAddictUp 2;
 			SemenAddictUp 2;
 			DelicateUp 2;
-		Resolve Doom;[spawn valleyhotep and remove the pink bubble]
-	otherwise if doom counter > 0:
+			Resolve Doom;[spawn valleyhotep and remove the pink bubble]
+	otherwise:
 		if the gifted of herald > 0, decrease the gifted of herald by 1.
 
 Definition: a room (called R) is raining:

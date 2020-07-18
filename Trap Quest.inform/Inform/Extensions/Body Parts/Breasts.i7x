@@ -214,7 +214,7 @@ To decide which number is the outrage of (B - breasts):
 
 To decide which number is cleavage outrage:
 	if breasts is not showing cleavage, decide on 0;
-	decide on (2 + (the largeness of breasts * 3)) / cleavageCover.
+	decide on (2 + (the largeness of breasts * (3 + (diaper quest * 3)))) / cleavageCover.
 
 To decide which number is the cringe of (B - breasts):
 	let O be -2; [It's always a bit more slutty than childish to have exposed breasts]
