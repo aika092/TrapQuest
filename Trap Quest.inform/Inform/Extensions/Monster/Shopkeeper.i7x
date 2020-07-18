@@ -326,7 +326,8 @@ To compute appearance assessment of (M - shopkeeper):
 		otherwise:
 			say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop! If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]";
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		if diaper quest is 1, compute dq nip slip reaction of M;
+		otherwise compute tq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'Welcome to the [if M is in the Dungeon]Dungeon [end if]clothes shop! If you have any jewellery to pay with, feel free to look around. Don't you dare leave the shop without [bold type]pay[speech style of M]ing for something, though.'[roman type][line break]".
 

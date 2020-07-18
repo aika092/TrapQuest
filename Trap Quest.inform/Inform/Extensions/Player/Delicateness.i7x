@@ -94,6 +94,7 @@ To PainUp (X - a number): [This function is anticipated to output some kind of f
 		if the trophy-mode of pain-trophy > 0:
 			say "[one of]Thanks to the magic of [NameDesc of pain-trophy], the pain feels so good![or]Thanks to the magic of [NameDesc of pain-trophy], the painful sensation feels incredible![or][BigNameDesc of pain-trophy][']s magic turns the sensation of pain into sexual pleasure![then at random]";
 			stimulate vagina;
+			check for arousal change; [might have happened in the middle of a big loop]
 			unless vagina is orgasming, SlowSexAddictUp X; [This can trigger a shameful orgasm. If it does, we don't increase sex addiction any further]
 			now X is 0;
 			if the raw sex addiction of the player >= 20:

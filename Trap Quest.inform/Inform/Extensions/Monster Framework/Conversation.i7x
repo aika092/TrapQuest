@@ -17,7 +17,7 @@ To compute multiple choice conversation of (M - a monster):
 			allocate 3 seconds;
 			say "[variable custom style][numerical-response-1][roman type][line break]";
 			compute gagged response of M;
-	otherwise if M is uninterested or M is stranger woman:
+	otherwise if M is uninterested or (M is woman-player and M is stranger):
 		consider talk-greet for M;
 		set numerical response 0 to "cancel";
 		compute multiple choice question;
@@ -45,12 +45,16 @@ To compute chosen conversation of (M - a monster):
 		if M is friendly, compute BimboSeduced of M;
 	otherwise:
 		let TXT be the printed name of the chosen numerical response;
+		if debugmode > 1, say "TXT is: [TXT][line break]";
 		repeat with T running through talk-objects:
+			if debugmode > 1, say "Checking against: [printed name of T][line break]";
 			if TXT is not "" and the printed name of T matches the text TXT:
 				allocate 4 seconds;
 				say "[variable custom style][TXT][roman type][line break]";
 				now TXT is "";
 				execute T for M;
+			otherwise:
+				if debugmode > 1, say "No match found.";
 			now the printed name of T is "".
 
 Chapter 1 Greeting

@@ -84,7 +84,7 @@ Part 4 - TitJobs
 
 To teach titshow:
 	if the breastskill of the player is 0:
-		if diaper quest is 1, say "[bold type]**You know how to display your chest with dignity! A bare chest will no longer affect your appearance rating.**[roman type][line break]";
+		if diaper quest is 1, say "[bold type]**You know how to display your chest with dignity! A bare chest (or low cut top) will no longer affect your appearance rating. Nip-slips are unplanned however, and therefore still considered outrageous.**[roman type][line break]";
 		otherwise say "[bold type]**You have learned how to slap with large breasts! There is no longer a damage penalty for using hand-based attacks with large breasts.**[roman type][line break]";
 		now the breastskill of the player is 1;
 		reset skill cooldown;

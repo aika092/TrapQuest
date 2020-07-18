@@ -104,9 +104,9 @@ To compute attack of (W - a vibe-wand) at (M - a monster):
 To compute MagicDrain of (Z - a vibe-wand):
 	if the magic-power of the player > 0 and the trophy-mode of magic-trophy is 0:
 		increase wandAttacks by 1;
-		if wandAttacks > 2:
+		if wandAttacks > 1:
 			now wandAttacks is 0;
-			say "You can feel that all your attacks with wands have spent some of your magic.";
+			say "You can feel that your attacks with wands have spent some of your magic.";
 			MagicPowerDown 1.
 
 To decide which number is the raw-masturbation-bonus of (E - a vibe-wand):

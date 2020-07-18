@@ -35,10 +35,16 @@ A game universe initialisation rule:
 			increase DSC by 1.
 
 turnsWithSoiledDiaper is a number that varies.
+messySmellSource is an object that varies.
 This is the soiled diapers smell gross rule:
-	if there is a carried soiled-diaper or there is a soiled-diaper in the location of the player or there is a messed knickers in the location of the player or there is a carried messed knickers or there is a messy monster in the location of the player:
+	now messySmellSource is a random carried messed knickers;
+	if messySmellSource is nothing, now messySmellSource is a random carried soiled-diaper;
+	if messySmellSource is nothing, now messySmellSource is a random messy monster in the location of the player;
+	if messySmellSource is nothing, now messySmellSource is a random messed knickers in the location of the player;
+	if messySmellSource is nothing, now messySmellSource is a random soiled-diaper in the location of the player;
+	if messySmellSource is a thing:
 		if turnsWithSoiledDiaper < 100, increase turnsWithSoiledDiaper by 1;
-		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of the soiled diaper is gradually filling your nostrils.";
+		if turnsWithSoiledDiaper is 1 and the player is perturbed and the player is not grossed out, say "The gross smell of [NameDesc of messySmellSource] is gradually filling your nostrils.";
 	otherwise if turnsWithSoiledDiaper > 0 and the number of worn messed knickers is 0:
 		now turnsWithSoiledDiaper is (turnsWithSoiledDiaper * 3) / 4;
 		if turnsWithSoiledDiaper > 0, say "The gross smell is gradually leaving your nostrils[one of]. It will be gone soon[or][stopping].";
@@ -55,7 +61,6 @@ Carry out examining:
 			say "[big he of the noun] is carrying [if N is 1]a soiled diaper[otherwise][N] soiled diapers[end if] in [his of the noun] hand[if N > 1]s[end if][if the noun is intelligent]. [big he of the noun] doesn't look happy about it[end if].".
 
 A diaper pail is a kind of thing. A diaper pail is not portable. The printed name of diaper pail is "[TQlink of item described]diaper pail[shortcut-desc][TQxlink of item described][verb-desc of item described]". Figure of diaper pail is the file "Env/MultiFloor/pail1.png". Understand "diaper pail", "pail" as a diaper pail.
-Figure of diaper pail dunk is the file "Special/Cutscene/cutscene-diaper-pail1.jpg".
 
 A game universe initialisation rule:
 	if diaper messing < 6:
@@ -127,7 +132,6 @@ Check jumping when the player is in DiaperPail:
 
 An all later time based rule (this is the diaper pail stuck rule):
 	if the player is in DiaperPail:
-		cutshow figure of diaper pail dunk;
 		let N be the number of soiled-diaper in DiaperPail;
 		if a random number between 0 and N is not 0:
 			say "The horrid aroma of the [if N > 1][N] used diapers[otherwise]messy diaper[end if] pressed against your face overwhelms your senses, [one of]and leaves you feeling smaller than before[or]almost making you cry[or]making you feel [if the player is feeling dominant]less dominant[otherwise]more submissive[end if] by the second[in random order].";
@@ -138,20 +142,21 @@ Check BabChanging it with:
 	if the noun is not a monster, say "This command only works on NPCs." instead;
 	if the second noun is not a clean diaper and the second noun is not a diaper bag of holding and the second noun is not a baby diaper bag of holding, say "You would need a clean diaper or diaper bag to do that, not the [NameDesc of the second noun]." instead;
 	if the second noun is worn diaper, say "You would need to take that off first." instead;
-	if the noun is not messy, say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
+	if the noun is not messy and (the noun is not woman-player or diaper quest is 0), say "[big he of the noun] isn't [if the noun is defeated]in need of[otherwise]likely to let you do[end if] that." instead;
 	if playerRegion is School, say "That would be a waste of time. [big he of the noun] would just mess [himself of the noun] again almost instantly." instead;
 	if the player is immobile or the player is in danger, say "You're a bit busy." instead;
 	if the player is not able to use manual dexterity, say "Your limited manual dexterity makes this impractical." instead.
 
 Carry out BabChanging it with:
-	allocate 6 seconds;
-	say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";
-	now the refractory-period of the noun is a random number between -100 and 300;
-	let SD be a random off-stage soiled-diaper;
-	if diaper messing >= 6 and SD is soiled-diaper:
-		now SD is carried by the player;
-		say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
-	if the second noun is diaper, only destroy the second noun.
+	if the noun is not woman-player or diaper quest is 0:
+		allocate 6 seconds;
+		say "Settling [NameDesc of the noun] onto [his of the noun] back, you get to work cleaning up [his of the noun] messy nappy and replacing it with [if the second noun is a diaper][NameDesc of the second noun][otherwise]a diaper from your [MediumDesc of the second noun][end if]. Eventually [he of the noun][']s all clean and safely padded again.";
+		now the refractory-period of the noun is a random number between -100 and 300;
+		let SD be a random off-stage soiled-diaper;
+		if diaper messing >= 6 and SD is soiled-diaper:
+			now SD is carried by the player;
+			say "You are now carrying the yucky [SD] that [he of the noun] was wearing before.";
+		if the second noun is diaper, only destroy the second noun.
 Understand "change [a person] with [something]", "change [a person] into [something]" as BabChanging it with.
 
 Soiled Diaper ends here.

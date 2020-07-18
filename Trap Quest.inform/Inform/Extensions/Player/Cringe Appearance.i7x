@@ -11,27 +11,12 @@ To decide which number is the saved cringe appearance of the player:
 	if B > 20, decide on 20;
 	decide on B.
 
-[!<DecideWhichNumberIsTheAdultInfluenceOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the adult-influence of (C - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheAdultInfluenceOfMaturityClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the adult-influence of (C - a maturity clothing):
 	decide on 1.
 
-[!<DecideWhichNumberIsTheAdultAppearanceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the adult appearance of the player:
 	let B be 0;
 	increase B by the make-up of face;

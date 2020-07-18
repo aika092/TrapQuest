@@ -60,6 +60,13 @@ Figure of throne is the file "Env/Dungeon/throne1b.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2b.jpg".
 
 Figure of urinal is the file "Env/MultiFloor/urinal2.png".
+Figure of Berri Wrestler Urinal is the file "Env/MultiFloor/urinal3a.jpg".
+Figure of Berri Urinal is the file "Env/MultiFloor/urinal3b.jpg".
+To decide which figure-name is the examine-image of (T - urinal):
+	if the hotel-urinal-scene of woman-player > 0 and the woman-status of woman-player is 93 and the player is in Hotel31:
+		if there is a wrestler in Holding Pen, decide on Figure of Berri Wrestler Urinal;
+		decide on Figure of Berri Urinal;
+	decide on figure of urinal.
 
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose3.jpg".
 Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-pose4.jpg".

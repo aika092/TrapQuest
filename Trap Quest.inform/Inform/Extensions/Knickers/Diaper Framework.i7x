@@ -62,7 +62,10 @@ To process state perception of (D - diaper-stack):
 	update diaper stack.
 
 To compute state check of (C - a clothing):
-	if C is diaper and the player is not diaper aware:
+	if the player is not diaper aware, compute awakened state check of C.
+
+To compute awakened state check of (C - a clothing): [If the player goes DOWN from full incontinence, they become diaper aware and we need to call this.]
+	if C is diaper:
 		say "[bold type]For the first time in a while you actually check the state of your [ShortDesc of C][roman type]. ";
 		if C is messed and C is perceived unmessed:
 			say "Oh gosh! It turns out you've [if the known-total-soak of C < the total-soak of C]wet and [end if]messed yourself without even realising it!";
@@ -422,6 +425,7 @@ To diaperStackStart with (C - a clothing):
 		let K be a random worn knickers;
 		if K is knickers:
 			now diaper-stack is worn by the player;
+			now the bottom-layer of diaper-stack is the bottom-layer of K;
 			now K is in Holding Pen;
 			now the list of stacked diapers is { };
 			add K to the list of stacked diapers;
@@ -485,12 +489,13 @@ To diaperRemove (C - a clothing):
 		diaperUnstack;
 	otherwise:
 		remove C from the list of stacked diapers;
-		now C is entry N - 1 in the list of stacked diapers;
 		update diaper stack.
 
 To diaperUnstack:
 	if the number of entries in the list of stacked diapers is 1:
-		now entry 1 of the list of stacked diapers is worn by the player;
+		let C be entry 1 of the list of stacked diapers;
+		now C is worn by the player;
+		now the bottom-layer of C is the bottom-layer of diaper-stack;
 		now diaper-stack is in Holding Pen;
 		now the list of stacked diapers is { };
 	otherwise:
@@ -509,6 +514,16 @@ Check taking off diaper-stack: [Got to take them off one at a time, so we only c
 	otherwise: [It was successfully removed.]
 		diaperRemove C;
 	do nothing instead.
+
+To uniquely destroy (C - diaper-stack):
+	repeat with D running through the list of stacked diapers:
+		remove D from play;
+	truncate the list of stacked diapers to 0 entries;
+	now the perceived-mess of C is 0;
+	now the perceived-urine-soak of C is 0;
+	now the perceived-water-soak of C is 0;
+	now the perceived-semen-soak of C is 0;
+	now the perceived-milk-soak of C is 0.
 
 Definition: diaper-stack is crotch-pullup:
 	repeat with D running through the list of stacked diapers:

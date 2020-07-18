@@ -177,7 +177,7 @@ The mind flayer priority attack rules is a rulebook. The priority attack rules o
 This is the mind flayer sees a target rule:
 	let M be current-monster;
 	repeat with N running through monsters in the location of M:
-		if N is woman and the woman-bimbo of woman-barbara < 6:
+		if N is woman and the woman-bimbo of woman-player < 6:
 			if M is in the location of the player, say "[BigNameDesc of M] sniffs at [N][']s head then stares heavily at [him of N]. [big his of N] eyes roll slightly back into [his of N] head and [his of N] mouth hangs open as [he of N] drops to [his of N] knees and presents [his of N] head to the creature, which wraps [his of M] tentacles around it. [big he of N] moans euphorically as a horrible sucking sound fills the area, and after the creature withdraws [his of M] tentacles [he of N] wanders away, drooling, with unfocused eyes.";
 			otherwise say "You hear a strange sucking sound from somewhere else.";
 			WomanSluttify;

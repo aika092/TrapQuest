@@ -294,6 +294,11 @@ To decide which number is the movement reduction of the player:
 				if movement-reduction-flav-said is false:
 					now movement-reduction-flav-said is true;
 					now T is the substituted form of "Having to be careful to try and balance the [if C is 1]last remaining cake[otherwise][C] remaining cakes[end if] on your [MediumDesc of skirt-tray-vibrator] is hindering your ability to move quickly!";
+		if current-predicament is team-girlfriends-predicament and the player is in a predicament room and the player is not in Predicament01 and the player is not in Predicament20 and the defaultLeftTarget of arms is girlfriend-partner:
+			increase X by 17;
+			if movement-reduction-flav-said is false:
+				now movement-reduction-flav-said is true;
+				now T is the substituted form of "Having your body carefully pressed against [NameDesc of team-predicament-partner] makes you move significantly less quickly!";
 		if there is a worn diaper:
 			let D be the weight of a random worn diaper;
 			increase X by D;

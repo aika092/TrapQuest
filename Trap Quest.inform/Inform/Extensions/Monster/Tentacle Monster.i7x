@@ -201,7 +201,7 @@ To say MonsterComment of (M - a tentacle monster):
 	otherwise:
 		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the M] were more obedient, but still...[or][big his of the M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the M] knows just how to please [his of the M] mommy.[or]Those [manly-penis]s are so big! [big he of the M] gets it from [his of the M] daddy.[or]I wonder when [he of the M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
-	
+
 To say TentacleColour of (M - a tentacle monster):
 	say "[if the evolved of M is 3]pure white[otherwise if M is not player-brood]grey[otherwise]dark red[end if]".
 
@@ -324,7 +324,7 @@ Part 2 - Combat
 Section 1 - Protect and Attack
 
 a tentacle monster has a number called free-tentacles.
-a tentacle monster has a number called leg-count. 
+a tentacle monster has a number called leg-count.
 a tentacle monster has a number called arm-count.
 
 To decide which number is the max-tentacles of (M - a tentacle monster):
@@ -402,7 +402,7 @@ This is the tentacle monster bashiness rule:
 		otherwise:
 			say "You manage to narrowly dodge [NameDesc of M][']s bundled up tentacles as they come flying towards your [printed name of B].";
 		rule succeeds.
-The tentacle monster bashiness rule is listed in the tentacle priority attack rules.	
+The tentacle monster bashiness rule is listed in the tentacle priority attack rules.
 
 This is the tentacle monster gets fresh rule:
 	let M be current-monster;
@@ -414,7 +414,7 @@ This is the tentacle monster gets fresh rule:
 		otherwise:
 			say "[BigNameDesc of M] tries to grope you with one of its tentacles, but you avoid it!";
 		rule succeeds.
-The tentacle monster gets fresh rule is listed in the tentacle priority attack rules.	
+The tentacle monster gets fresh rule is listed in the tentacle priority attack rules.
 
 To compute breasts grope of (M - a tentacle monster):
 	say "[BigNameDesc of M] [one of]roughly[or]lewdly[or]eagerly[in random order] [one of]curls around[or]molests[or]gropes[or]squeezes[in random order] your [ShortDesc of breasts] with a [if M is wet-tentacle-monster][semen]-drooling [end if]tentacle!";
@@ -879,6 +879,11 @@ To say DickDesc of (M - a tentacle monster):
 	say "[if M is large]thick [otherwise if M is massive]huge [end if]tentacle".
 
 Section 2 - Damage
+
+To compute unique dislodging of (M - a tentacle monster):
+	now the free-tentacles of M is the max-tentacles of M;
+	now the arm-count of M is 0;
+	now the leg-count of M is 0.
 
 To compute damage reaction of (M - a tentacle monster):
 	if M is awake:

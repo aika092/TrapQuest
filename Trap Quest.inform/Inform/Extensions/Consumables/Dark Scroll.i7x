@@ -7,18 +7,18 @@ To say ExamineDesc of (B - a dark scroll):
 casting is an action applying to one thing. Understand "cast [something]" as casting.
 
 Check examining dark scroll:
-	if there is a woman in the location of the player, try casting the noun instead.
+	if woman-player is in the location of the player, try casting the noun instead.
 
 Check casting:
-	if a random woman is not in the location of the player, say "Your target is not here." instead;
+	if woman-player is not in the location of the player, say "Your target is not here." instead;
 	if the noun is not dark scroll, say "You can't do that with that." instead.
 
 Carry out casting:
-	let M be a random woman in the location of the player;
+	let M be woman-player;
 	allocate 6 seconds;
 	say "You read out the scroll the Herald gave you. Pink light suddenly begins to glow around [the printed name of M], and [he of M] suddenly vanishes in a flash!";
 	vanish M;
-	now the woman-bimbo of woman-barbara is 6;
+	now the woman-bimbo of woman-player is 6;
 	now the quest-status of herald is 2;
 	destroy the noun.
 

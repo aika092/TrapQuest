@@ -399,11 +399,12 @@ Part - Junk Room Stuff
 
 School15 has a number called donations.
 Check taking clothing when the player is in School15:
-	if the noun is not held and the donations of School15 < 5, say "The magic in the room somehow keeps the [ShortDesc of the noun] stuck to the ground! Maybe the magic will weaken if you leave a few of your own possessions here?" instead.
+	if the noun is not held and the donations of School15 < 5 and headmistress is alive and headmistress is undefeated, say "The magic in the room somehow keeps the [ShortDesc of the noun] stuck to the ground! Maybe the magic will weaken if you leave a few of your own possessions here?" instead.
 
 Carry out taking clothing when the player is in School15:
-	decrease the donations of School15 by 5;
-	say "The magic runes around the ceiling and doorway [if the donations of School15 < 5]come back to life, glowing their powerful purple once again[otherwise]quickly pulse five times before returning to being inactive[end if].".
+	if headmistress is alive and headmistress is undefeated:
+		decrease the donations of School15 by 5;
+		say "The magic runes around the ceiling and doorway [if the donations of School15 < 5]come back to life, glowing their powerful purple once again[otherwise]quickly pulse five times before returning to being inactive[end if].".
 
 Report dropping clothing when the noun is in School15:
 	if the noun is cursed:

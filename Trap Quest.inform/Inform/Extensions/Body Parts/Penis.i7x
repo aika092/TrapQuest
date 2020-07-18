@@ -515,7 +515,7 @@ previous penis length is a number that varies.
 
 To PenisUp (X - a number):
 	now previous penis length is the size of penis;
-	if the player is not possessing a penis and (choice in row 68 of the Table of Player Options is 0 or the player is not a june 2020 top donator), now X is 0;
+	if the player is not possessing a penis and (diaper quest is 0 and (choice in row 68 of the Table of Player Options is 0 or the player is not a june 2020 top donator)) or (diaper quest is 1 and the player is not a june 2020 diaper donator), now X is 0;
 	if cumlust tattoo is worn:
 		SemenTasteAddictUp X;
 		now X is 0;

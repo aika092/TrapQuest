@@ -47,7 +47,7 @@ To Set Up The Mansion:
 		if the location of M is not placed, now M is in a random placed haunted room;
 	[let N1 be the regionalMonsterCount of the Mansion;]
 	repeat with N2 running from 1 to startingRegionalMonsterCount:
-		let M be a random off-stage mansion dwelling regionally missing monster;
+		let M be a random mansion prioritised monster;
 		if M is not monster, now M is a random off-stage mansion dwelling monster;
 		if M is monster:
 			set up M;

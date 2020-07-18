@@ -209,11 +209,11 @@ The herald has a number called quest-status. The quest-status of herald is usual
 To compute herald's gift:
 	if the quest-status of herald + diaper quest is 0:
 		let S be a random dark scroll;
-		say "[speech style of herald]'Say, you seem like a capable type! So there is, like, totally another player in this game, right? Maybe you've met [him of woman-barbara]? I could really use a snack, could you be a dear and read this scroll around [him of woman-barbara]? I'll, like, totally reward you or some junk.[roman type][line break]";
+		say "[speech style of herald]'Say, you seem like a capable type! So there is, like, totally another player in this game, right? Maybe you've met [him of woman-player]? I could really use a snack, could you be a dear and read this scroll around [him of woman-player]? I'll, like, totally reward you or some junk.[roman type][line break]";
 		now the quest-status of herald is 1;
 		now S is in the location of the player;
 	otherwise if the quest-status of herald is 2:
-		say "[speech style of herald]Well if it isn't my favourite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! [big he of woman-barbara] had, like, a lot of silly smarts left in [his of herald] brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
+		say "[speech style of herald]Well if it isn't my favourite minion! You did, like, super good sending me that lady, and I want to thank you for it! I know! [big he of woman-player] had, like, a lot of silly smarts left in [his of herald] brains! Since you work for me it's okay for now if you have some of the leftovers.[roman type][line break]";
 		Intup 2;
 		now the quest-status of herald is 3;
 	otherwise if the gifted of herald is 0:

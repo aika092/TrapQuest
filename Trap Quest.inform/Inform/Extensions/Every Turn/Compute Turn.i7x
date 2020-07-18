@@ -123,7 +123,7 @@ To run the engine once:
 			decrease map-turn-stall by 1;
 		otherwise if temporary-map-figure is not figure of no-image-yet:
 			now temporary-map-figure is the figure of no-image-yet;
-			unless there is g-animated g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
+			unless there is g-animated g-unpaused g-looping cutscene animation track, display entire map; [If there is an animation and we allow the map to redraw underneath, we lose the 'skip' hyperlink.]
 		otherwise if there is g-animated g-looping cutscene animation track:
 			repeat with G running through g-animated g-looping cutscene animation tracks:
 				cease animation of G;
@@ -934,6 +934,8 @@ To Reset Flags:
 	now feeding bowls is in Hotel18; [The inbuilt shit within I6 means all edible items must be portable to work. This way, even if the player picks it up, it goes back down on the floor immediately.]
 	now food machine is in School17; [same for the school food machine]
 	if surrendered is 1 and the player is not in danger, now surrendered is 0;
+	now the travel-direction of the player is up;
+	now the travel-opposite of the player is down;
 	repeat with C running through worn clothing:
 		now the upgrade-target of C is nothing;
 	repeat with F running through fuckholes:

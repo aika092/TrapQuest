@@ -1,6 +1,6 @@
 Slimegirl by Objects begins here.
 
-slimegirl is a person. The printed name of slimegirl is "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. slimegirl is wearable.
+slimegirl is a person. slimegirl is female. The printed name of slimegirl is "[TQlink of item described]slimegirl[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of slimegirl is "slgl". Understand "slime", "girl" as slimegirl. slimegirl is wearable.
 
 Figure of slimegirl is the file "NPCs/Forest/slimegirl1.png".
 Figure of Slimegirl Cutscene 1 is the file "Special/Cutscene/cutscene-slimegirl1.png".
@@ -265,7 +265,7 @@ To compute slimegirl noticing in (WB - WoodsScenery01):
 			say "[bold type][BigNameDesc of M] [bold type]telepathically communicates with you. [line break][second custom style]'[one of]So, you're barging into my old home like you own the place? ....Just kidding! I was a squatter!'[or]Hey, its my old digs! Feel free to hang out!'[or]I live inside you now, so if you want to move in, feel free!'[or]Ooh, yeah, I used to live here once. Don't worry, you're better.'[in random order][roman type][line break]";
 	otherwise:
 		compute slimegirl meeting in WB;
-		
+
 
 [You reach the waterfall, and the slimegirl says hey can I clean you]
 To compute slimegirl meeting in (WB - WoodsScenery01):
@@ -307,7 +307,7 @@ To compute slimegirl meeting in (WB - WoodsScenery01):
 				otherwise:
 					compute slimegirl frustration in WB;
 			otherwise:
-				reset multiple choice questions; 
+				reset multiple choice questions;
 				set numerical response 0 to "let [him of witch] engulf you";
 				set numerical response 1 to "don't feed.";
 				compute multiple choice question;
@@ -438,7 +438,7 @@ To compute treasure diving in (WB - WoodsScenery01) at (L - a number):
 				say "You find a sanity token among the rocks. You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
-				say "You find a rusted coin. You leave it behind as you swim back to the surface.";	
+				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 9:[defiance token]
 			let T be a random off-stage defiance token;
 			if T is defiance token:

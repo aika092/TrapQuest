@@ -340,6 +340,13 @@ To decide which number is the initial outrage of (C - nipples-crop-top):
 A gropability rule:
 	if nipples-crop-top is worn and breasts is lewdly exposed, now the gropability of breasts is 9999.
 
+To construct unique buttons for (T - nipples-crop-top):
+	if ButtonTableFull is 0 and the player is in a predicament room:
+		choose a blank row in the Table of Buttons;
+		now the ButtonImage entry is Figure of ArmBlockIcon;
+		now the ButtonCommand entry is "adjust arms";
+		now the ButtonColour entry is lightModeFullGreen.
+
 football-crop-top is a crop top. football-crop-top is unique. football-crop-top is dense. football-crop-top is fully exposing. football-crop-top is only arm covering. The printed name of football-crop-top is "[clothing-title-before]football crop top[clothing-title-after]". The text-shortcut of football-crop-top is "fct". Figure of football-crop-top is the file "Items/Clothes/Upper/CropTops/croptop13.png". Understand "football" as football-crop-top.
 To decide which figure-name is clothing-image of (H - football-crop-top):
 	decide on figure of football-crop-top.

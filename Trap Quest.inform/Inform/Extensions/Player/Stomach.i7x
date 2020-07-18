@@ -194,7 +194,6 @@ To StomachMilkUp (X - a number):
 			StomachFoodUp 1;
 			MilkTasteAddictUp 1;
 			now cold milky is 0; [this tracks how long since the player last drank milk]
-			if diaper quest is 1, progress quest of puddle-licking-quest; [catgirl quest is to drink milk]
 			progress quest of milk-drinking-quest.
 
 To StomachMilkDown (X - a number):

@@ -74,18 +74,19 @@ To say TitleBimbo:
 			say " pink haired";
 		otherwise if the largeness of hair > 9:
 			say " long haired";
-		if the vaginalvirgin of the player is 1 and T is not virgin warrior:
-			say " virgin";
-		otherwise if the vaginalvirgin of the player is 1:
-			say " chaste";
-		otherwise if the virgin bonus of the player <= -1:
-			if the children of the player is 0 and pregnancy fetish is 1 and the pregnancy of the player > 0 and the pregnancy of the player < 3, say " unwed";
-			if the bimbo of the player < 9:
-				say " shamefully deflowered";
-			otherwise if the bimbo of the player < 14:
-				say " broken in";
-			otherwise:
-				say " soulless";
+		if the player is possessing a vagina:
+			if the vaginalvirgin of the player is 1 and T is not virgin warrior:
+				say " virgin";
+			otherwise if the vaginalvirgin of the player is 1:
+				say " chaste";
+			otherwise if the virgin bonus of the player <= -1:
+				if the children of the player is 0 and pregnancy fetish is 1 and the pregnancy of the player > 0 and the pregnancy of the player < 3, say " unwed";
+				if the bimbo of the player < 9:
+					say " shamefully deflowered";
+				otherwise if the bimbo of the player < 14:
+					say " broken in";
+				otherwise:
+					say " soulless";
 		if the intelligence of the player < 3 and the raw intelligence of the player < 5:
 			say " brainless[if the bimbo of the player > 13] bimbo[end if]";
 		if the player is a butt slut and the analvirgin of the player is 0:

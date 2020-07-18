@@ -224,7 +224,7 @@ Hotel30 is a modern room. The printed name of Hotel30 is "Security Room". "This 
 REQUIRES COMMENTING
 
 *!]
-Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if the player is female], which would be impractical for you to use[end if][if watersports fetish is 1]. In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
+Hotel31 is an untrappable mandatory modern room. The printed name of Hotel31 is "Hotel Bathroom". "The hotel's bathroom has two urinals[if watersports fetish is 1]. In between the urinals, there are two manacles attached to strong short metal chains, hooking them to the wall. You can guess what they are for[end if].". The shape of Hotel31 is L3/0-0-0-1-1-1. Hotel31 is urinals.
 
 [!<hotel32:ModernRoom>*
 
@@ -273,10 +273,10 @@ Hotel37 is a mandatory important untrappable modern room. The printed name of Ho
 REQUIRES COMMENTING
 
 *!]
-Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara > 1 and a2m fetish >= 2][NameDesc of woman-barbara] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1 and a2m fetish >= 2]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
+Hotel38 is an untrappable mandatory modern room. The printed name of Hotel38 is "[if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player > 1 and a2m fetish >= 2][NameDesc of woman-player] the Permanent[otherwise if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1 and a2m fetish >= 2]Human[otherwise]Hotel[end if] Toilet". "[HotelToiletDesc]". The shape of Hotel38 is L3/0-0-1-1-0-1. Hotel38 is toilets.
 
 To say HotelToiletDesc:
-	if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-barbara is not 1, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-barbara > 1][BigNameDesc of woman-barbara] is stuck[otherwise]A slave is lying[end if] here with [his of woman-barbara] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-barbara] lower holes, oversized piercings on [his of woman-barbara] nipples, and the phrases 'TOILET SLUT' and 'URINAL [caps boy of woman-barbara]' permanently inked onto [his of woman-barbara] skin[if the human-toilet-scene of woman-barbara <= 1]. Using the toilet would inevitably involve the slave being forced to drink every last drop[end if].";
+	if watersports fetish is 1 and diaper quest is 0 and the human-toilet-scene of woman-player is not 1, say "A single toilet box sits in the middle of the room. [if the human-toilet-scene of woman-player > 1][BigNameDesc of woman-player] is stuck[otherwise]A slave is lying[end if] here with [his of woman-player] head inside the box, with a giant bulging belly, vibrators in both of [his of woman-player] lower holes, oversized piercings on [his of woman-player] nipples, and the phrases 'TOILET SLUT' and 'URINAL [caps boy of woman-player]' permanently inked onto [his of woman-player] skin[if the human-toilet-scene of woman-player <= 1]. Using the toilet would inevitably involve the slave being forced to drink every last drop[end if].";
 	otherwise say "A single toilet sits at the south end of the room.".
 
 [!<hotel39:ModernRoom>*

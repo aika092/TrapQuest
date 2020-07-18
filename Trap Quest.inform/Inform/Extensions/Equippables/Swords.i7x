@@ -81,7 +81,7 @@ sword-of-purity is a sword. sword-of-purity is purity.
 The printed name of sword-of-purity is "[clothing-title-before]sword of purity[clothing-title-after]". Understand "of purity", "purity" as sword-of-purity.
 
 To say ClothingDesc of (S - sword-of-purity):
-	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more your body is exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind monsters where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
+	say "A gleaming silver sword, instilled with the power of purity. Holy energy emanates from the blade, as if the sword itself were comprised of pure, holy power. [bold type]The power seems to become stronger the more your body is exposed. [roman type][if S is worn]Just holding it in your hand makes you feel incredibly powerful, but no matter the angle, the light reflecting off the blade seems to cast a spotlight on your [vagina], as if to remind enemies where the power comes from... and how to defeat it.[otherwise]It's clearly quite powerful, but something tells you that if you ever lose while wielding this sword...[end if]".
 To say ShortDesc of (S - sword-of-purity):
 	say "gleaming silver sword".
 

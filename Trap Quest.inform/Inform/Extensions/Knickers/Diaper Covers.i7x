@@ -67,6 +67,8 @@ Figure of frilly white diaper cover is the file "Items/Clothes/Lower/Underwear/D
 
 To decide which figure-name is clothing-image of (C - a frilly white diaper cover):
 	decide on figure of frilly white diaper cover.
+To decide which figure-name is the recipe-image of (C - a diaper cover):
+	decide on figure of frilly white diaper cover.
 
 To say ClothingDesc of (C - a frilly white diaper cover):
 	say "A large frilly white diaper cover, that [if C is worn]completely covers[otherwise]could completely cover[end if] your [if there is a worn diaper][random worn diaper][otherwise][ShortDesc of hips][end if].".

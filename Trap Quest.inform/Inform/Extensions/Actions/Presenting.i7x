@@ -149,6 +149,7 @@ REQUIRES COMMENTING
 
 +!]
 Check presenting:
+	say "I think you're playing the wrong game." instead;
 	if the noun is hips, try presenting asshole instead;
 	if the noun is not body part:
 		if the number of intelligent interested monsters in the location of the player is 1:

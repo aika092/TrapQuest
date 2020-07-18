@@ -235,7 +235,7 @@ To compute appearance assessment of (M - clairvoyant acolyte):
 	otherwise if the class of the player is cultist:
 		say "[speech style of M]'[one of]I knew you were coming, sister.'[or]Sister, do you come for a prophecy?'[or]The Herald will arrive soon, sister. Why do you waste time?'[at random]";
 	otherwise if the times-met of M > 0 and the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'[one of]A non-believer? Here? Now? The [great ones] test us...'[or]I knew you were coming, non-believer. You cannot stop what has already been set in motion.'[or]Do not try to oppose us, non-believer. We serve a greater will...'[stopping]";
 	say "[roman type][line break]";
@@ -787,8 +787,9 @@ To compute (M - clairvoyant acolyte) protecting against (X - a monster):
 
 To compute unique periodic effect of (M - a clairvoyant acolyte):
 	if a random number between 1 and 45 is 1:
-		if M is in the location of the player, say "[BigNameDesc of M] sighs as [semen] dribbles out of [his of M] [HoleDesc of M]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
-		PuddleUp semen by 1 in (the location of M);
+		if M is in the location of the player, say "[BigNameDesc of M] sighs as [if diaper quest is 1][milk]squirts out of [his of M] nipples[otherwise][semen] dribbles out of [his of M] [HoleDesc of M][end if]. [big he of M] recites a slow chant as it forms a puddle on the floor.";
+		if diaper quest is 0, PuddleUp semen by 1 in (the location of M);
+		otherwise PuddleUp milk by 1 in (the location of M);
 		if doomed > 0 and doomed < 5 and doom counter > 0, increase doom counter by 5.
 
 To say MercyReaction of (M - clairvoyant acolyte):

@@ -474,7 +474,7 @@ Check pulling vines:
 	if the noun is not wrangling a body part:
 		repeat with V running through vines wrangling a body part:
 			try pulling V instead;
-		if woman-barbara is in the location of the player and the woman-status of woman-barbara is 90 and the vine-scene of woman-barbara <= 5:
+		if woman-player is in the location of the player and the woman-status of woman-player is 90 and the vine-scene of woman-player <= 5:
 			if the player is not able to manually use their hands, do nothing instead;
 			if the player is wrist bound behind, say "Unfortunately you can't really do that with your wrists bound behind you!" instead;
 			WomanVinePull instead;

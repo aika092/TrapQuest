@@ -202,7 +202,7 @@ To compute appearance assessment of (M - a wrestler):
 			say "[speech style of M]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel? [or]Hey there hot stuff. Having a good time? [stopping]I wonder if I should make it even more fun...'[roman type][line break]";
 			alwayscutshow figure of wrestler interact 1 for M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		say "[speech style of M]'[if the times-met of M > 0]Hi again [honey of M], I hope you're not lost?'[otherwise]Oh my, you look new. Be careful around here... people in this fetish hotel will tend to assume you're on the same page as them, and want to do lots of kinky stuff with anyone that moves. And that includes the robots...'[end if][roman type][line break]";
 		alwayscutshow figure of wrestler interact 1 for M.
@@ -229,8 +229,11 @@ To compute DQ perception of (M - a wrestler):
 		say "[speech style of M]'Hey, wanna wrestle? Winner gets to be on top!'[roman type][line break]";
 		alwayscutshow figure of wrestler interact 11 for M;
 	if M is interested and M is friendly:
-		say "[speech style of M]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel?'[or]Hey there hot stuff. Having a good time?'[stopping][roman type]";
-		alwayscutshow figure of wrestler interact 1 for M.
+		if the player is top-wardrobe-malfunctioning:
+			compute dq nip slip reaction of M;
+		otherwise:
+			say "[speech style of M]'[one of]Hi there, sexy. Are you enjoying your stay in this fetish hotel?'[or]Hey there hot stuff. Having a good time?'[stopping][roman type][line break]";
+			alwayscutshow figure of wrestler interact 1 for M.
 
 Part 3 - Combat
 

@@ -661,9 +661,9 @@ To compute cupcake perception of (M - a bystander):
 
 To say CupcakeExplanation of (M - a bystander):
 	if diaper quest is 1:
-		say "[one of][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
+		say "[one of][line break][speech style of M]'Oh, dressed like that, you must be advertising for Cozy Cribs and Cupcakes, right? That new combined nursery-and-cafe that's opening? Still, you're very brave to come out here like that. Some people might get the wrong idea...'[roman type][line break][or][or][line break][speech style of M]'Funny costume. Must be pretty embarrassing for you, though?'[roman type][line break][or][stopping]";
 	otherwise if the appearance of the player > the outrage tolerance of M:
-		say "[one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
+		say "[line break][one of][speech style of M]'Outrageous costume. But they look so tasty, I can't resist.'[roman type][line break][or][speech style of M]'I'm still taking one.'[roman type][line break][stopping]".
 
 To say skirtTrayBuzzFlav:
 	say "The vibrator [if the player is female]in your [vagina] and pushed against your clit[otherwise]pushed against your [ShortDesc of penis][end if] [if the charge of skirt-tray-vibrator <= 0]kicks into action, [otherwise]becomes even [end if]stronger than before! It buzzes away[skirtTrayVibratorPower].".
@@ -687,12 +687,30 @@ grope-me-skirt is a skirt. grope-me-skirt is unique. grope-me-skirt is short. Th
 To decide which figure-name is clothing-image of (H - grope-me-skirt):
 	decide on figure of grope-me-skirt.
 
-To say ShortDesc of (C - grope-me-skirt):
-	say "skirt".
 To say ClothingDesc of (C - grope-me-skirt):
 	say "This short purple tartan skirt has a sign pinned to the front that reads 'Please Grope My Tits'...".
 
 To decide which number is the initial outrage of (C - grope-me-skirt):
 	decide on 6.
+
+open-front-skirt is a skirt. open-front-skirt is unique. The printed name of open-front-skirt is "[clothing-title-before]open front skirt[clothing-title-after]". The text-shortcut of open-front-skirt is "ofs". Understand "open", "front", "skirt" as open-front-skirt.
+Figure of open-front-skirt female is the file "Items/Clothes/Lower/Skirts/openfrontskirt1.jpg".
+Figure of open-front-skirt male is the file "Items/Clothes/Lower/Skirts/openfrontskirt2.jpg".
+Figure of open-front-skirt diaper is the file "Items/Clothes/Lower/Skirts/openfrontskirt3.jpg".
+To decide which figure-name is clothing-image of (H - open-front-skirt):
+	if there is a worn diaper, decide on figure of open-front-skirt diaper;
+	if the player is possessing a penis, decide on figure of open-front-skirt male;
+	decide on figure of open-front-skirt female.
+
+To say MediumDesc of (C - open-front-skirt):
+	say "front-exposing skirt".
+To say ClothingDesc of (C - open-front-skirt):
+	say "This denim skirt has a large chunk missing from the front. The only way to cover it up would be to push the front of your body into another person's...".
+
+Definition: open-front-skirt is layer-concealing if girlfriend-partner is snogged.
+Definition: open-front-skirt is skirt-covering-crotch if girlfriend-partner is snogged.
+Definition: open-front-skirt is potentially penis covering if girlfriend-partner is snogged.
+Definition: open-front-skirt is potentially at least partially penis concealing if girlfriend-partner is snogged.
+Definition: open-front-skirt is potentially erection concealing if girlfriend-partner is snogged.
 
 All Skirts ends here.

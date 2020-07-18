@@ -376,8 +376,11 @@ Carry out TQeating creme egg:
 	say "[DevourFlav of the noun] As your tongue hits the centre, you ";
 	if (diaper quest is 0 or diaper messing < 3) and the player is getting unlucky:
 		if diaper quest is 1 or (diaper lover > 0 and a random number between 1 and 2 is 1):
-			if diaper messing >= 4 and a random number between 1 and 3 > 1:
-				say "taste something extremely sour. [line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
+			if the incontinence of the player < the max-incontinence of the player and a random number between 1 and 2 is 1:
+				say "taste something bubbling with cursed magic.[line break][variable custom style]What was that?! And why can I suddenly I feel my bladder?![roman type][line break]A cursed effect seems to be making you temporarily incontinent!";
+				increase temporary-incontinence by 3;
+			otherwise if diaper messing >= 4 and a random number between 1 and 2 is 1:
+				say "taste something extremely sour.[line break][variable custom style]Castor oil[one of][or] again[stopping]?![roman type][line break]Almost immediately you feel a growing pressure in your bowels...";
 				increase suppository by 1;
 			otherwise:
 				say "taste something bitter. Moments later, you feel a slight twinge in your bladder as your control over it weakens.";

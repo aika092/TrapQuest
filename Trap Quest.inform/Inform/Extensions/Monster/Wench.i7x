@@ -226,7 +226,7 @@ To compute appearance assessment of (M - a wench):
 		otherwise:
 			say "[speech style of M]'[one of]Oh gosh, you look so... lewd. You're making me feel funny... down there...'[or]Wow. If even a brave adventurer like you looks like that, maybe we should all just give up and screw each other until we're mindless bimbos...'[in random order][roman type][line break]";
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		if M is ally, say "[speech style of M]'[one of]Hey again. Let's stick together.'[or]Oh hey! I'm glad to see you're still around.'[in random order][roman type][line break]";
 		otherwise say "[speech style of M]'[one of]Who... who are you? You're friendly, right? [big please] don't say you're going to try and fuck me too?'[or]Hi there... *whimper*'[stopping][roman type][line break]".

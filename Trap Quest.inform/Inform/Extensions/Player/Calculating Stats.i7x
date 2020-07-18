@@ -2,7 +2,9 @@ Calculating Stats by Player begins here.
 
 [!<DecideWhichNumberIsNScaled>+
 
-REQUIRES COMMENTING
+1 to 5 are normal
+6 - 20 is scaled by two thirds; so 7 is actually 6 and 20 is actually 15
+21 to 30 is scaled by half, so 22 is actually 16 and 30 is actually 20.
 
 +!]
 To decide which number is (N - a number) scaled:

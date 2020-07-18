@@ -105,6 +105,10 @@ To decide which number is appearance-outrage-level:
 			now O is OC;
 			now second-appearance-outrage-target is appearance-outrage-target;
 			now appearance-outrage-target is C;
+	if girlfriend-partner is snogged and the outrage of girlfriend-partner > O:
+		now O is the outrage of girlfriend-partner;
+		now second-appearance-outrage-target is appearance-outrage-target;
+		now appearance-outrage-target is girlfriend-partner;
 	if appearance-explained is 1, say "(highest outrage thing is [appearance-outrage-target] with outrage [O]) ";
 	decide on O.
 

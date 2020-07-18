@@ -55,9 +55,10 @@ To MagicPowerDown (X - a number):
 the magic consequences rules is a rulebook.
 
 To decide which number is MagicPowerDamage:
-	let X be the magic power of the player;
+	let X be (the magic power of the player + 1) / 2;
 	increase X by magic theme bonus;
-	if X > 6, decide on 6;
+	if X > 6, now X is 6;
+	increase X by the intelligence of the player / 4;
 	decide on X.
 
 To compute spell consequences of (Z - a thing):

@@ -1049,30 +1049,6 @@ To say QuestFlav of (Q - attack-quest):
 To say QuestTitle of (Q - attack-quest):
 	say " (alliance breaking quest)".
 
-Part - Predicament Quest
-
-predicament-quest is a clothing-quest.
-
-To decide what number is the quest-weighting of (Q - predicament-quest) for (C - a clothing):
-	decide on 0. [Only occurs when the code specifies (e.g. when you start a predicament)]
-
-To say QuestFlav of (Q - predicament-quest):
-	say "You sense that it wants you to reach the end of this predicament scenario.".
-
-To say QuestTitle of (Q - predicament-quest):
-	say " (predicament completion quest)".
-
-To progress quest of (Q - predicament-quest):
-	if debugmode > 0, say "Checking for[QuestTitle of Q].";
-	repeat with C running through worn clothing:
-		if C is diaper-stack:
-			repeat with D running through the list of stacked diapers:
-				if D is cursed or the quest of D is persistent:
-					if the quest of D is Q, compute quest completion of Q on D;
-		otherwise:
-			if C is cursed or the quest of C is persistent:
-				if the quest of C is Q, compute quest completion of Q on C.
-
 Part - Make Up Quest
 
 make-up-quest is a clothing-quest.

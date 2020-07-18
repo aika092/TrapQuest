@@ -36,7 +36,7 @@ To compute LaundryRobots:
 			clean F;
 			Drench F;
 			if F is knickers, WaterEmpty F;
-		say "[one of]You think it's over, but before[or]Before[stopping] letting you go, the robotic arms silently force a new dry [ShortDesc of C] onto your crotch. [line break][variable custom style][if the bimbo of the player < 6]Why did they have to put me into another one?! Ugh.[otherwise if the bimbo of the player < 12]Well I'm glad that's over and done with.[otherwise]Thank you for changing me, nice robots![end if][roman type][line break]";
+		say "[one of]You think it's over, but before[or]Before[stopping] letting you go, the robotic arms silently force a new dry [ShortDesc of C] onto your crotch. [line break][variable custom style][if the bimbo of the player < 6 and C is a diaper]Why did they have to put me into another one?! Ugh.[otherwise if the bimbo of the player < 12]Well I'm glad that's over and done with.[otherwise]Thank you for changing me, nice robots![end if][roman type][line break]";
 		now the charge of laundry robots is 200;
 	otherwise if C is clothing and the charge of laundry robots <= 0:
 		say "You watch [if the bimbo of the player < 10][one of]in surprise[or]in frustration[stopping][otherwise]in awe[end if] as your [C] is deftly pulled off you and speedily dunked into a large vat of hot soapy water. ";

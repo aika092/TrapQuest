@@ -402,7 +402,7 @@ To compute teaching of (L - chess-lesson):
 			if there is a worn diaper:
 				diaperAdd plain-massive-diaper;
 			otherwise:
-				summon plain-massive-diaper;
+				summon plain-massive-diaper uncursed;
 		say "[speech style of M]'This diaper is made of a special material that will expand almost endlessly as you keep filling it up. Trust me, that's going to be important later.'[roman type][line break]And then you are all marched to the assembly hall, where it feels like every single other person in the school seems to already be waiting!";
 		repeat with X running through undefeated staff members in the school:
 			now X is in School16;
@@ -775,6 +775,7 @@ To compute chess urination:
 				now temporaryYesNoBackground is figure of chess cutscene 1;
 		otherwise:
 			compute chess loss;
+	progress temporary incontinence;
 	now delayed urination is 0;
 	let M be a random monster in the location of the player;
 	unless M is the chess-opponent of chess-lesson or M is nothing, compute chess diaper reaction of M.
@@ -1260,15 +1261,19 @@ To compute teaching of (L - dodgeball-lesson):
 	let M be the lesson-teacher of L;
 	set up diaper gym lesson of M;
 	let D be a random worn diaper;
-	if D is nothing, now D is plain-massive-diaper;
+	if D is nothing or D is diaper-stack, now D is plain-massive-diaper;
 	now bigGameLoop is 1; [tells the game not to refresh map window]
 	say "You all obediently follow [NameDesc of M] to the gym. Inside the outer racetrack, a large square box has been drawn on the ground in chalk. A straight line goes straight through the middle dividing the square into two evenly sized rectangles. A large sign has been put up at the side that reads 'DIAPER BALL TRYOUTS'. [one of]Uhm, this sounds... unique[or]Here we go again[stopping].[line break][speech style of M]'Ah yes, I love diaperball season. Instead of having to limit myself to working with one or two of you at once, I can just have you all play for your bowels at the same time.[line break][one of]The game works as follows: These dodge-balls have been imbued by our genius headmistress with magical properties. Whenever they connect with any part of you except your hands, your rectum and bowels will be filled to the absolute brim with, well, you-know-what. It goes without saying that you won't be able to hold it in for long. Luckily, you'll all be wearing diapers to catch any and all messes you might make while playing. After your first 'stinky' you'll be allowed to keep playing, but the second time you'll be eliminated and you will get a punishment at the end of the lesson. If[or]Alright babies, let's get to it. Remember, if[stopping] you're still in the game when your team wins, you get promoted. Got it? Okay, now lets get those of you without sufficient padding into something a little more appropriate...'[roman type][line break]";
 	say "[BigNameDesc of M] takes [if D is not worn]those of you that aren't in diapers and forces you all into some very thick disposable nappies[otherwise if D is soiled]you aside and swiftly changes your [ShortDesc of D] so that you have a fresh dry one for the game[otherwise]those of the students that aren't already in appropriate diapers and gives them each a big thick disposable nappy to wear[end if].";
 	if D is not worn:
 		let K be a random worn knickers;
-		if K is knickers, now K is in the location of the player;
+		if K is diaper-stack:
+			only destroy K;
+		otherwise:
+			now K is in the location of the player;
 		summon D;
 	fully clean D;
+	force immediate clothing-focus redraw;
 	display stuff; [update graphics window]
 	let LS1 be a list of people;
 	let LS2 be a list of people;
@@ -1288,7 +1293,6 @@ To compute teaching of (L - dodgeball-lesson):
 	say "You are split into two teams, with [LS1] on one side and [LS2] on the other side. [BigNameDesc of M] flips a coin and then gives the ball to [YouDesc of currentBallHolder].";
 	let NELS1 be the number of entries in LS1;
 	let NELS2 be the number of entries in LS2;
-	let cutShown be 0;
 	while NELS1 > 0 and NELS2 > 0:
 		[Select ball throw target]
 		let ballTarget be yourself;
@@ -1318,12 +1322,12 @@ To compute teaching of (L - dodgeball-lesson):
 					repeat with TST running through LS1:
 						if TST is yourself, say "Yourself ([if D is messed]messy[otherwise]dry[end if][if rectum >= 50] and bulging[end if])[run paragraph on]";
 						otherwise say "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if])[run paragraph on]";
-						say "[if NLS is NELS2].[otherwise if NLS is NELS2 - 1] or [otherwise], [end if]";
+						say "[if NLS is NELS1].[otherwise if NLS is NELS1 - 1] and [otherwise], [end if]";
 						increase NLS by 1;
 					say "The opposing team looks like this: ";
 					now NLS is 1;
 					repeat with TST running through LS2:
-						say "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if])[if NLS is NELS2].[otherwise if NLS is NELS2 - 1] or [otherwise], [end if]";
+						say "[NameDesc of TST] ([if the lessonInt1 of TST < 3]dry[otherwise]messy[end if][if the lessonInt1 of TST is 1 or the lessonInt1 of TST is 4] and bulging[end if])[if NLS is NELS2].[otherwise if NLS is NELS2 - 1] and [otherwise], [end if]";
 						increase NLS by 1;
 					if (bodyTarget is face and a random number between 0 and NELS1 < NELS1) or a random number between 0 and 8 < the vindictiveness of currentBallHolder:
 						now ballTarget is yourself;
@@ -1367,9 +1371,7 @@ To compute teaching of (L - dodgeball-lesson):
 		if ballHit > 0:[hit]
 			if ballTarget is student:
 				say "[BigNameDesc of ballTarget] [one of]is way too slow[or]deflects the ball with [his of ballTarget] hands but it isn't good enough[or][if bodyTarget is thighs]tries to duck[otherwise]tries to jump[end if] in vain[at random] and the ball hits [him of ballTarget] [if bodyTarget is thighs]on the legs[otherwise]right in the [one of]face[or]chin[purely at random][end if]! [big his of ballTarget] [one of]belly[or]stomach[or]tummy[at random] rapidly expands to the size of a [if the lessonInt1 of ballTarget is not 1 and the lessonInt1 of ballTarget is not 4]large basketball[otherwise]beach ball[end if] as [his of ballTarget] [one of]bowels are[or]rectum is[or]intestines are[at random] magically filled with an [one of]inhuman load[or]insane amount of mess[or]gigantic helping of poop[at random].";
-				if cutShown is 0 and the lessonInt1 of ballTarget > 2:
-					now cutShown is 1;
-					now temporaryYesNoBackground is figure of teacher brooke cutscene 2;
+				if the lessonInt1 of ballTarget > 2, now temporaryYesNoBackground is figure of teacher brooke cutscene 2;
 				if bodyTarget is face, HappinessDown ballTarget;
 				if dodgeChoice > 0, say BadDodgeChoice dodgeChoice;
 				say "[BigNameDesc of ballTarget] [one of]groans[or]winces[at random] with discomfort as [he of ballTarget] picks up the ball.";
@@ -1380,7 +1382,6 @@ To compute teaching of (L - dodgeball-lesson):
 				say "As the ball hits you, your [one of]belly[or]stomach[or]tummy[at random] explodes outwards to the size of a [if rectum < 50]large basketball[otherwise]beach ball[end if] as your [one of]bowels are[or]rectum is[or]intestines are[at random] magically filled with a[if rectum is 50]nother[end if] week's worth of poop.";
 				if rectum is 50, now rectum is 100;
 				otherwise now rectum is 50;
-				display stuff; [update graphics window]
 		otherwise:[missed]
 			if ballTarget is student:
 				say "[big he of ballTarget] [one of]steps to the side and the ball goes flying past![or]manages to [if bodyTarget is thighs]hop over[otherwise]get under[end if] the ball at the last moment![or]predicts the move, [if bodyTarget is thighs]leaping high into the air[otherwise]ducking low[end if] and missing the ball by a fair number of inches! [if the lessonInt1 of ballTarget > 2 and bodyTarget is thighs][big his of ballTarget] diaper squelches loudly as [he of ballTarget] lands.[otherwise if the lessonInt1 of ballTarget > 2][big his of ballTarget] diaper makes noisy squelching noises when [he of ballTarget] bends and unbends [his of ballTarget] knees, and you can see [him of ballTarget] cringing at the unusual feeling.[end if][or]blocks the ball with [his of ballTarget] hands, and it drops to the ground in front of [him of ballTarget].[purely at random]";
@@ -1413,6 +1414,7 @@ To compute teaching of (L - dodgeball-lesson):
 					otherwise now currentBallHolder is entry EN in LS2;
 					say "[NameDesc of ST] gives the ball to [YouDesc of currentBallHolder] before [he of ST] [one of]shuffles awkwardly[or]slowly waddles[purely at random] off the court[one of], blushing furiously[or] in shame[purely at random].";
 					now bodyTarget is thighs; [Player won't retaliate if it's a different player]
+				if yourself is not listed in LS1, say "Watching [NameDesc of ST] leave the court and join you[one of], [his of ST] face filled with shame, just makes you realise that you couldn't even manage to stay in the game as long as [him of ST], and have had to stand on the sidelines in a hypermessed diaper for even longer than [him of ST][or] once again makes you reflect on how [he of ST] lasted longer than you[stopping]. [moderateHumiliateReflect]";
 				remove ST from LST;
 		let playerMessNow be 0;
 		if rectum is 50:
@@ -1446,11 +1448,12 @@ To compute teaching of (L - dodgeball-lesson):
 				say "very slowly waddle from the court, squelching loudly[if the player is not disgraced] and blushing furiously[end if] as you do.";
 			now rectum is 1;
 			now the incidents of enema-stat-loss is 0;
+			force immediate clothing-focus redraw;
 			display stuff; [update graphics window]
 		otherwise if rectum >= 50:
 			say "[if the incidents of enema-stat-loss is 0][bold type]Your bowels gurgle angrily and begin to cramp. You'll be slower until you mess yourself.[roman type][line break][otherwise]More cramps echo through your [one of]innards[or]bowels[or]rectum[at random], further reducing your dexterity.[end if]";
 			increase the incidents of enema-stat-loss by 1;
-		[update dexterity]
+		[update dexterity and stats]
 		now saved-flat-dexterity is the flat dexterity of the player;
 		now saved-dexterity is saved-flat-dexterity scaled;
 		follow the mess gross out resolution rule;
@@ -1493,7 +1496,7 @@ To compute teaching of (L - dodgeball-lesson):
 	say "[speech style of M]'Alright I'm bored of you all now. Get out of my sight. Class dismissed!'[roman type][line break]";
 	DexUp 2;
 	now bigGameLoop is 0;
-	now temporaryYesNoBackground is figure of teacher brooke cutscene 2;
+	now temporaryYesNoBackground is figure of small image;
 	conclude consenting.
 
 To say BadDodgeChoice (dodgeChoice - a number):

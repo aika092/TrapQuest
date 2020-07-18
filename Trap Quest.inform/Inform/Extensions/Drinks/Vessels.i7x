@@ -12,13 +12,13 @@ A vessel is a kind of bottle.
 To decide which number is the outrage of (V - a vessel):
 	let O be the initial outrage of V;
 	if V is open topped and the doses of V > 0:
-		if the fill-colour of V is golden or the fill-colour of V is creamy, increase O by 8;
-		if the fill-colour of V is murky, increase O by 12;
+		if the fill-colour of V is golden or the fill-colour of V is creamy, increase O by 15;
+		if the fill-colour of V is murky, increase O by 20;
 	decide on O.
 
 To decide which number is the cringe of (V - a vessel):
-	let O be the initial outrage of V;
-	if V is open topped and the doses of V > 0 and diaper quest is 1 and the fill-colour of V is white, increase O by 8;
+	let O be the initial cringe of V;
+	if V is open topped and the doses of V > 0 and diaper quest is 1 and the fill-colour of V is white, increase O by 10;
 	decide on O.
 
 To decide which number is the initial outrage of (V - a vessel):
@@ -164,8 +164,6 @@ To decide which number is the initial outrage of (V - baby's bottle):
 	if diaper quest is 0, decide on 10;
 	decide on 0.
 To decide which number is the initial cringe of (V - baby's bottle):
-	if the doses of V is 0, decide on 8;
-	if the fill-colour of V is white, decide on 14;
 	decide on 10.
 
 alcohol is a number that varies.
@@ -352,20 +350,24 @@ Figure of boob mug is the file "Items/Accessories/Vessels/mug1.png".
 Figure of cow mug is the file "Items/Accessories/Vessels/mug2.png".
 Figure of coffee mug is the file "Items/Accessories/Vessels/mug3.png".
 To decide which figure-name is the examine-image of (V - novelty mug):
-	if diaper quest is 1, decide on the figure of coffee mug;
-	if lactation fetish is 1, decide on the figure of cow mug;
+	if diaper quest is 1 and diaper messing >= 3, decide on the figure of coffee mug;
+	if lactation fetish is 1 or diaper quest is 1, decide on the figure of cow mug;
 	decide on the figure of boob mug.
 Definition: novelty mug is boob themed if lactation fetish is 0 and diaper quest is 0.
-Definition: novelty mug is toilet themed if diaper quest is 1.
-Definition: novelty mug is cow themed if diaper quest is 0 and lactation fetish is 1.
+Definition: novelty mug is toilet themed if diaper quest is 1 and diaper messing >= 3.
+Definition: novelty mug is cow themed if lactation fetish is 1 or (diaper quest is 1 and diaper messing < 3).
 To say VesselDesc of (V - novelty mug):
-	say "[if diaper quest is 1]This brown mug is shaped like a comical brown poop. It has the words 'Coffee makes me poop' in white on the side.[otherwise if lactation fetish is 1]This mug has a cow print. The base is shaped like a cow's udder, so when the drinker is imbibing from it, it looks like they have an udder for a mouth.[otherwise]This mug is flesh coloured and has a set of large naked breasts protruding out the front.[end if]".
+	say "[if diaper quest is 1 and diaper messing >= 3]This brown mug is shaped like a comical brown poop. It has the words 'Coffee makes me poop' in white on the side.[otherwise if lactation fetish is 1 or diaper quest is 1]This mug has a cow print. The base is shaped like a cow's udder, so when the drinker is imbibing from it, it looks like they have an udder for a mouth.[otherwise]This mug is flesh coloured and has a set of large naked breasts protruding out the front.[end if]".
 To say ShortVesselDesc of (V - novelty mug):
 	say "novelty mug".
 To compute cursed drinking (X - novelty mug):
 	if diaper quest is 1:
-		say "Yuck, it tastes like cold coffee! Your stomach growls horribly. ";
-		increase rectum by 3;
+		if diaper messing >= 3:
+			say "Yuck, it tastes like cold coffee! Your stomach growls horribly. ";
+			increase suppository by 1;
+		otherwise:
+			say "It tastes like [one of]milk, but somehow you know something isn't right. It's too tangy and... sweet? This must be human[or]tangy[stopping] breast milk...";
+			MilkTasteAddictUp 1;
 	otherwise:
 		say "It tastes like milk, but somehow you know something isn't right. ";
 		if lactation fetish is 1:
@@ -384,9 +386,9 @@ To compute cursed drinking (X - novelty mug):
 			say "You feel your [BreastDesc] slightly swell.".
 To decide which number is the initial outrage of (V - a novelty mug):
 	if diaper quest is 1, decide on 0;
-	decide on 10.
+	decide on 6.
 To decide which number is the initial cringe of (V - a novelty mug):
-	decide on 10.
+	decide on 6.
 
 teapot is a vessel. The max-doses of teapot is 2. The printed name of teapot is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]teapot[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of teapot is "tp".
 Figure of penis teapot is the file "Items/Accessories/Vessels/teapot1.png".
@@ -415,7 +417,7 @@ To compute cursed drinking (X - teapot):
 		StomachSemenUp 1.
 To decide which number is the initial outrage of (V - teapot):
 	if diaper quest is 1, decide on 0;
-	decide on 10.
+	decide on 8.
 To decide which number is the initial cringe of (V - teapot):
 	decide on 6.
 

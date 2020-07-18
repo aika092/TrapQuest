@@ -222,7 +222,7 @@ To compute appearance assessment of (M - an aeromancer):
 			distract M;
 			alwayscutshow figure of aeromancer interact 11 for M;
 	otherwise if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		FavourDown M by the science requests of M;
 		if M is unfriendly:
@@ -1172,7 +1172,7 @@ The spawn initial woods aeromancer rule is listed in the setting up woods monste
 
 To compute appearance assessment of (M - confident aeromancer):
 	if the player is top-wardrobe-malfunctioning:
-		compute default nip slip reaction of M;
+		compute tq nip slip reaction of M;
 	otherwise:
 		FavourDown M by the science requests of M * 2;
 		let A be the air volume of belly + the air volume of breasts + the air volume of belly;

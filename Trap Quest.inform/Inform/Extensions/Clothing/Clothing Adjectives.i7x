@@ -9,6 +9,8 @@ REQUIRES COMMENTING
 @!]
 A wearthing is a kind of thing.
 
+A wearthing can be predicament-normal, predicament-temporary or predicament-fixed (this is the predicament-persistence property). A wearthing is usually predicament-normal. [Anything predicament-temporary is removed at the end of a predicament.]
+
 [!<Clothing>@
 
 REQUIRES COMMENTING
@@ -371,7 +373,7 @@ To say NipSlipFlav:
 	let C be a random worn actually nipple covering clothing;
 	if C is clothing, say "[bold type]You look down and notice that your [ShortDesc of C] has fallen open a bit, exposing a nipple. [roman type][moderateHumiliateReflect]You quickly fix the wardrobe malfunction.";
 	otherwise say "[bold type]Minor bug - game calculated that you had experienced a nip slip but couldn't find a relevant item of clothing.[roman type][line break]".
-To compute default nip slip reaction of (M - a monster):
+To compute tq nip slip reaction of (M - a monster):
 	say NipSlipSeenFlav of M;
 	FavourDown M;
 	now groping-person is M;
@@ -383,8 +385,15 @@ To compute default nip slip reaction of (M - a monster):
 		compute grope of M;
 	say NipSlipFlav;
 	if M is friendly human monster, progress quest of chest-exposing-quest from M.
+To compute dq nip slip reaction of (M - a monster):
+	say DQNipSlipSeenFlav of M;
+	FavourDown M;
+	say NipSlipFlav;
+	if M is friendly human monster, progress quest of chest-exposing-quest from M.
 To say NipSlipSeenFlav of (M - a monster):
 	say "[speech style of M]'[one of]Err, I can see your nipple.'[or]Are you aware that your nipple is on show?'[or]Nip-slip alert.'[in random order][roman type][line break]".
+To say DQNipSlipSeenFlav of (M - a monster):
+	say "[speech style of M]'[one of]Err, I can see your nipple. [or]Are you aware that your nipple is on show? [purely at random][one of]Adults should not allow themselves to be exposed like this in public.'[or]Would you please put it away!'[or]Being unable to dress yourself properly is not a good sign of [maturity].'[at random][roman type][line break]".
 An all time based rule (this is the malfunction checking rule):
 	if saved-flat-intelligence > a random number between 1 and 350: [Do this check first as it is less computationally expensive]
 		if another-turn is 0 and the player is not immobile and the player is not in danger:

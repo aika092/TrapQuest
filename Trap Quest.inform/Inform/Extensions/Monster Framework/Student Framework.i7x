@@ -296,7 +296,7 @@ To compute appearance assessment of (M - a student):
 			FavourDown M;
 			if M is unfriendly, distract M;
 		otherwise if the player is top-wardrobe-malfunctioning:
-			compute default nip slip reaction of M;
+			compute dq nip slip reaction of M;
 	otherwise:
 		if the saved appearance of the player - 4 > the outrage tolerance of M:
 			say FarGoneAppearanceAssessment of M;
@@ -308,7 +308,7 @@ To compute appearance assessment of (M - a student):
 			FavourDown M;
 			if M is unfriendly, distract M;
 		otherwise if the player is top-wardrobe-malfunctioning:
-			compute default nip slip reaction of M;
+			compute tq nip slip reaction of M;
 		otherwise if M is tryhard student and M is groping:
 			compute grope of M.
 

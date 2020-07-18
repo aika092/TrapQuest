@@ -553,10 +553,6 @@ To decide which body part is the painful-part of (M - a ghost):[Only attacks pla
 To say StrikingFlav of (M - a ghost) on (B - a body part):
 	say "[BigNameDesc of M] slams [if B is hips]your ass[otherwise if B is face]you in the face[otherwise]itself into your [variable B][end if]!";
 
-[TODO: more of a "cockslap"
-To compute striking success effect of (M - a monster) on (B - a body part):
-	do nothing.]
-
 To say StrikingSuccessFlav of (M - a ghost) on (B - a body part):
 	say StrikingFlav of M on B;
 	say "Ouch! That one hurt.".

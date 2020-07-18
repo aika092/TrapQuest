@@ -121,8 +121,8 @@ Check praying something with:
 		if the noun is worn and the second noun is dungeon altar, say "You lie on the altar, focusing your thoughts on the [ShortDesc of the noun].";
 		otherwise say "You place the [ShortDesc of the noun] on the altar.";
 	if the second noun is dungeon altar:
-		if the noun is soulless:
-			say "Nothing happens. [line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
+		if the player is soulless:
+			say "Nothing happens.[line break][variable custom style]'This couldn't be because my soul is gone, could it?'[roman type][line break]" instead;
 		if the noun is a unicorn-horn:
 			say "The smell of spring rain fills the room as the horn slowly disappears, completely replenishing the altar's strong blue glow.";
 			destroy the noun;
@@ -183,11 +183,11 @@ To AltarPunish (C - a bottle):
 		say "Nothing seems to happen.".
 
 Carry out praying something with:
-	[if the second noun is dungeon altar:
-		if the class of the player is succubus and the souls of the player > 0:
+	if the second noun is dungeon altar:
+		[if the class of the player is succubus and the souls of the player > 0:
 			say "You feed one of the souls stored in your body into yourself for a moment, fooling the altar into accepting your prayer.";
-			decrease the souls of the player by 1;
-		AltarPray the noun;]
+			decrease the souls of the player by 1;]
+		AltarPray the noun;
 	if the second noun is woods altar:
 		if the noun is accessory, WoodsOffer the noun;
 		otherwise say "Nothing happens.";

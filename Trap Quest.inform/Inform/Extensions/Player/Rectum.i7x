@@ -186,7 +186,6 @@ To check real messing:
 					if the raw delicateness of the player < 20 and incontinence < the max-incontinence of the player:
 						say "You could push forward with sheer force of will, but it will hurt and might even affect your long term continence. Would you like to dig deep and really hold on? ";
 						let F be temporaryYesNoBackground;
-						if diaper quest is 1, now temporaryYesNoBackground is figure of YesNoBackground4;
 						if the player is reverse bimbo consenting:
 							now shouldMessNow is 0;
 							say "You grit your teeth and clench your eyes and manage to hold on through the excruciating cramps.";

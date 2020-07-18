@@ -76,7 +76,7 @@ To Set Up The Dungeon:
 		if the location of M is not placed, now M is in a random placed sandy room;
 	[let N1 be the regionalMonsterCount of the Dungeon;]
 	repeat with N2 running from 1 to startingRegionalMonsterCount:
-		let M be a random off-stage dungeon dwelling regionally missing monster;
+		let M be a random dungeon prioritised monster;
 		if M is not monster, now M is a random off-stage dungeon dwelling monster;
 		if M is monster:
 			set up M;

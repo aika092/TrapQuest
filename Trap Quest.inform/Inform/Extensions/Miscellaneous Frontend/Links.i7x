@@ -231,9 +231,15 @@ bigGameLoop is a number that varies. [If this is above 0, we are flagging that a
 
 To conclude consenting:
 	now currentlyConsenting is false;
-	zero focus stuff; [We empty the focus window to make sure it is rebuilt properly. By being forced to pause and choose an option, the player has seen any cutscenes, NPCs that left, etc.]
-	if bigGameLoop is 0 or temporary-map-figure is not figure of no-image-yet or currentlyConsenting is true, refresh the map-window;
-	if bigGameLoop < 2, render buffered stuff.
+	if gameover-flag is 0:
+		zero focus stuff; [We empty the focus window to make sure it is rebuilt properly. By being forced to pause and choose an option, the player has seen any cutscenes, NPCs that left, etc.]
+		repeat with G running through g-paused animation tracks:
+			now G is g-unpaused;
+		if bigGameLoop is 0 or temporary-map-figure is not figure of no-image-yet or currentlyConsenting is true: [TODO work out why I put "currentlyConsenting is true" here]
+			refresh the map-window;
+		otherwise:
+			clear the map-window; [if we don't do this, and we use both Yes/No questions and multiple choice questions in the same big game loop, we get some ugly overlaps in the map window]
+		if bigGameLoop < 2, render buffered stuff.
 
 [Works the same as normal consenting, but the player can be forced to say yes. Some things it'll be fun if the player can't say no after a while.]
 Definition: yourself is bimbo consenting:
@@ -255,6 +261,29 @@ Definition: yourself is reverse bimbo consenting:
 	otherwise:
 		decide no.
 
+To render YesNoBackground:
+	let F be YesNoBackground;
+	let H be the height of the map-window;
+	let W be the width of the map-window;
+	if F is not Figure of no-image-yet:
+		repeat with G running through g-animated animation tracks:
+			now G is g-paused; [stops things like the need-to-use-toilet animations from animating on top]
+		let XRatio be (W * 1.0) / the pixel-width of F;
+		let FY be the pixel-height of F * XRatio;
+		let FYi be FY to the nearest whole number;
+		let FXi be W;
+		let X1 be 0;
+		let Y1 be 0;
+		if FYi > H:
+			let YRatio be (H * 1.0) / the pixel-height of F;
+			let FX be the pixel-width of F * YRatio;
+			now FXi is FX to the nearest whole number;
+			now FYi is H;
+			now X1 is (W - FXi) / 2; [centred horizontally]
+		otherwise:
+			now Y1 is (H - FYi) / 2; [centred vertically]
+		display the image F in the map-window at X1 by Y1 with dimensions FXi by FYi.
+
 To render YesNoButtons:
 	let F be YesNoBackground;
 	if F is Figure of no-image-yet, display entire map; [We have flagged that we still want to show the player the map in the background]
@@ -262,12 +291,7 @@ To render YesNoButtons:
 	zero map-button-table;
 	let H be the height of the map-window;
 	let W be the width of the map-window;
-	[Calculate background image size]
-	if F is not Figure of no-image-yet:
-		let XRatio be (W * 1.0) / the pixel-width of F;
-		let FY be the pixel-height of F * XRatio;
-		let FYi be FY to the nearest whole number;
-		display the image F in the map-window at 0 by 0 with dimensions W by FYi;
+	render YesNoBackground;
 	[Calculate button image sizes and locations]
 	let buttonSize be H / 3;
 	if W < H, now buttonSize is W / 3;
@@ -344,19 +368,10 @@ To compute multiple choice question:
 			if the printed name of R is not "":
 				let N be the numerical-response-value of R;
 				say "[link][N]) [R][as][N][end link][line break]";
-		display focus stuff;
-		if the player is virtual, display stuff;
-		let F be YesNoBackground;
-		if F is not Figure of no-image-yet:
-			zero map-link-table;
-			zero map-button-table;
-			let H be the height of the map-window;
-			let W be the width of the map-window;
-			[Calculate background image size]
-			let XRatio be (W * 1.0) / the pixel-width of F;
-			let FY be the pixel-height of F * XRatio;
-			let FYi be FY to the nearest whole number;
-			display the image F in the map-window at 0 by 0 with dimensions W by FYi;
+		if gameover-flag is 0:
+			display focus stuff;
+			if the player is virtual, display stuff;
+			render YesNoBackground;
 		now inputNumber is the chosen letter;
 		decrease inputNumber by 48; [convert key ID to integer]
 		say line break;

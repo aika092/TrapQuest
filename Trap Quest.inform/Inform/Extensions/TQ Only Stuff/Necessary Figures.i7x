@@ -275,6 +275,8 @@ Figure of Throne Cutscene 5 is the file "Special/Cutscene/cutscene-throne5.png".
 Figure of Throne Cutscene 6 is the file "Special/Cutscene/cutscene-throne6.png".
 
 Figure of urinal is the file "Env/MultiFloor/urinal1.png".
+To decide which figure-name is the examine-image of (T - urinal):
+	decide on figure of urinal.
 
 Figure of Vibe Pose Predicament 1 is the file "Special/Cutscene/cutscene-vibe-pose1.jpg".
 Figure of Vibe Pose Predicament 2 is the file "Special/Cutscene/cutscene-vibe-pose2.jpg".
