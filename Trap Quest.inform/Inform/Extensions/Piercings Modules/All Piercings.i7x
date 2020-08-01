@@ -410,7 +410,7 @@ The overdress cow rings clash rule is listed in the overdress wearability rules.
 				rule fails.
 The bra cow rings clash rule is listed in the bra wearability rules.]
 
-A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]valuable[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "valuable" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
+A pair of earrings is a kind of piercing. The printed name of pair of earrings is "[TQlink of item described][item style]pair of [if item described is cursed]ultra slutty[otherwise if item described is blessed]heart shaped[otherwise]penis shaped[end if] earrings[clothing-title-after]". The text-shortcut of pair of earrings is "ea". Understand "penis shaped" as pair of earrings when item described is bland. Understand "heart", "shaped" as pair of earrings when item described is blessed. Understand "ultra", "slutty" as pair of earrings when item described is cursed. There is 1 pair of earrings. A pair of earrings has a number called variation. A pair of earrings is womanly.
 The transform-resistance of a pair of earrings is usually 0.
 
 Definition: a pair of earrings is toilet themed if it is cursed and watersports fetish is 1.
@@ -420,6 +420,8 @@ Definition: a pair of earrings is anal sex themed if it is cursed and watersport
 Definition: a pair of earrings is penis themed if it is bland or (it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is not 1).
 Definition: a pair of earrings is vagina themed if it is cursed and watersports fetish is 0 and interracial fetish is 0 and the variation of it is 1.
 Definition: a pair of earrings is white themed if it is cursed.
+Definition: a pair of earrings is heart themed if it is blessed.
+Definition: a pair of earrings is gem themed if it is blessed.
 
 To uniquely set up (C - a pair of earrings):
 	now the variation of C is a random number between 1 and 3.
@@ -433,7 +435,7 @@ To say CurseBlandFlav of (C - a pair of earrings):
 	update appearance level.
 
 To say BlessBlessFlav of (C - a pair of earrings):
-	say "Your [printed name of C] transform in shape to large jewelled hoops, and now look much less trashy and more valuable!";
+	say "Your [printed name of C] transform in shape to large jewelled hearts, and now look much less trashy and more valuable!";
 	update appearance level.
 
 To say BlessBlandFlav of (C - a pair of earrings):
@@ -442,7 +444,7 @@ To say BlessBlandFlav of (C - a pair of earrings):
 
 To decide which number is the initial outrage of (C - a pair of earrings):
 	if C is cursed, decide on 10;
-	if C is blessed, decide on 0;
+	if C is blessed, decide on 2;
 	decide on 6.
 
 To decide which object is the concealer of (C - a pair of earrings):
@@ -488,7 +490,7 @@ To say ClothingDesc of (C - a pair of earrings):
 			say "A pair of large circular plastic earrings with the words 'I <3 Cock In My Ass' on each one. ";
 		say "These would only be worn by a drunk girl at a hen party, or maybe an exhibitionist nymphomaniac[if the sex addiction of the player > 12 and the humiliation of the player > 30000][line break][second custom style] like me![roman type][line break][otherwise].[end if]";
 	otherwise if C is blessed:
-		say "Two large hooped earrings with several diamonds embedded in the hoops. They indicate [if the bimbo of the player < 14]wealth, but also sluttiness[otherwise]that your Daddy must be quite wealthy[end if].";
+		say "Two large dangling earrings shaped like hearts, with several diamonds embedded in the hoops. They could be interpreted as wealthy and refined, or slutty, probably depending on what the rest of the wearer looks like.";
 	otherwise if bukkake fetish is 1:
 		say "A pair of metal earrings shaped as penises, pointing towards your face. A jewel at the tip of the [manly-penis] represents a cumshot.";
 	otherwise:

@@ -47,10 +47,10 @@ To say hypno content of (Y - a hypno trap):
 	say "a swirling hypnotic pattern".
 
 To say hypno content of (Y - a cocksucker hypno trap):
-	say "a swirling hypnotic pattern, with short clips flashing constantly of [if the player is male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
+	say "a swirling hypnotic pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars gleefully giving blowjobs to huge [manly-penis]s [if bukkake fetish is 1]and receiving massive facials[otherwise]and swallowing massive loads[end if]".
 
 To say hypno content of (Y - a fucktoy hypno trap):
-	say "a swirling hypnotic pattern, with short clips flashing constantly of [if the player is male]transsexual [end if]porn stars getting [if the player is male]anally destroyed[otherwise if pregnancy fetish is 1]vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
+	say "a swirling hypnotic pattern, with short clips flashing constantly of [if the player is sexed male]transsexual [end if]porn stars getting [if the player is not possessing a vagina]anally destroyed[otherwise if pregnancy fetish is 1]vaginally bred[otherwise]double penetrated[end if] by huge [manly-penis]s".
 
 To say hypno content of (Y - a BBC hypno trap):
 	say "a swirling hypnotic pattern, with short clips flashing constantly of porn stars worshipping and pleasuring incredibly sized black [manly-penis]s with every part of their body".

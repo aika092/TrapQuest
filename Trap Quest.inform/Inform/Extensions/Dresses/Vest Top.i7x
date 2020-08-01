@@ -118,5 +118,4 @@ To decide which number is the initial outrage of (C - a rubber vest top):
 
 Definition: a rubber vest top is purple themed: decide yes.
 
-
 Vest Top ends here.

@@ -177,7 +177,7 @@ Definition: a clothing is rippable: decide no.
 Clothing can be not-enema-helping or enema-helping. Clothing is usually not-enema-helping.
 Clothing can be crotch-normal or crotch-assless. Clothing is usually crotch-normal.
 Clothing can be not-butt-windowed or butt-windowed. Clothing is usually not-butt-windowed. [A butt window exposes underwear but not the asshole itself.]
-Clothing have a number called armour. The armour of clothing is usually 0. Clothing have a number called damage. The damage of clothing is usually 0.
+Clothing have a number called armour. Clothing have a number called damage.
 Clothing can be zippable or unzippable. Clothing is usually unzippable.
 Clothing can be plentiful, rare, transformation-rare, unique (this is the clothing-rarity property). Clothing is usually plentiful. [Plentiful shows up in containers. Rare shows up much less often in special containers and in the junk room. Transformation rare are (mostly) slutty items that mainly appear from transformations. Unique are items with their own spawning mechanics that shouldn't be spawned in other ways.]
 Definition: a clothing is transformation-eligible if (it is plentiful or it is transformation-rare) and it is fetish appropriate.
@@ -234,7 +234,6 @@ Clothing has a number called plug size. The plug size of clothing is usually 0.
 Clothing can be purity. Clothing is usually not purity. [Means they care about your virginity.]
 A Magic-type is a kind of value. The magic-types are blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, stumbling, and hostility. Clothing has a magic-type. The magic-type of clothing is usually blandness.
 [Clothing can be blandness, dressup, milk production, absorption, temptation, suppression, bed wetting, confidence, endurance, dominance, constriction, speed, kicking, protection, posture training, expansion, refreshment, rejuvenation, possession, maturity, respiration, durability, or stumbling (this is the magic-type property). Clothing is usually blandness.]
-A thing can be unowned, store, museum-store, stolen (this is the ownership property). A thing is usually unowned.
 Magic-ID is a kind of value. The magic-IDs are unidentified and identified. Clothing has a Magic-ID. The Magic-ID of clothing is usually unidentified.
 Clothing has a number called raw-magic-modifier. The raw-magic-modifier of clothing is usually 0.
 To decide which number is the penis-capacity of (C - a clothing):[what's the largest size of penis it can cover?]
@@ -274,6 +273,12 @@ It's been automatically displaced to allow the player to pee or something. We in
 
 *!]
 Clothing can be temporarily-displaced.
+[!<Clothing>@<temporarilyRemoved:Boolean>*
+
+It's been removed by something or someone that has the intent to replace it after punishing the player.
+
+*!]
+Clothing can be temporarily-removed.
 Definition: a clothing (called C) is subduing:[Can C be held by monsters to fully control the player?]
 	decide no.
 [!<YourselfIsSubdued>+
@@ -337,6 +342,14 @@ Definition: a clothing (called C) is desirable:
 	decide yes.
 
 Definition: a clothing is slitted: decide no. [Slitted skirts don't block knee attacks]
+
+To decide which number is the stealth-influence of (C - a wearthing):
+	decide on 0.
+To decide which number is the stealth-influence of (C - a clothing):
+	if C is actually dense and C is nudism-disabling, decide on -1;
+	decide on 0.
+Definition: a clothing is stealthy if the stealth-influence of it > 0.
+Definition: yourself is stealthy if there is worn stealthy clothing.
 
 tonguesActive is a number that varies.
 tonguesBlack is initially false.

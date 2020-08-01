@@ -14,6 +14,7 @@ Definition: an equippable is stealable if diaper quest is 1.
 Definition: a thing is zappable: decide no. [Can it be used to cast a magic combat spell?]
 
 Definition: an equippable is zappable if it is zap ready and it is worn.
+Definition: a clothing is hand ready: decide no.
 Definition: an equippable is hand ready if it is slap ready or it is zap ready.
 
 To decide which object is the at least partial concealer of (C - an equippable):
@@ -121,10 +122,9 @@ equippable wearability rules is a rulebook. The wearability rules of equippable 
 
 This is the hand ready equippable already worn rule:
 	if wearing-target is hand ready:
-		repeat with O running through worn equippables:
-			if O is hand ready:
-				if summoning is 0 and autowear is false, say "You can't because [if O is wearing-target]you're already wielding it[otherwise]you're already wielding the [ShortDesc of O][end if]!";
-				rule fails.
+		repeat with O running through worn hand ready clothing:
+			if summoning is 0 and autowear is false, say "You can't because [if O is wearing-target]you're already wielding it[otherwise if O is equippable]you're already wielding the [ShortDesc of O][otherwise]it needs to occupy the same hand as your [ShortDesc of O][end if]!";
+			rule fails.
 The hand ready equippable already worn rule is listed in the equippable wearability rules.
 
 [This is the rings gloves clash rule:
@@ -188,7 +188,7 @@ To decide which number is the initial outrage of (C - candy-cane-gloves):
 	decide on 3.
 
 football-gloves is a gloves.
-The printed name of football-gloves is "[clothing-title-before]football goalkeeper gloves[clothing-title-after]". The text-shortcut of football-gloves is "fbg". Figure of football-gloves is the file "Items/Accessories/Equippables/gloves3.jpg". Understand "football goalkeeper", "goalkeeper", "gloves" as football-gloves.
+The printed name of football-gloves is "[clothing-title-before]football goalkeeper gloves[clothing-title-after]". The text-shortcut of football-gloves is "fbg". Figure of football-gloves is the file "Items/Accessories/Equippables/gloves3.png". Understand "football goalkeeper", "goalkeeper", "gloves" as football-gloves.
 Definition: football-gloves is transformation-protected: decide yes.
 Definition: football-gloves is removable: decide no.
 Definition: football-gloves is discovered varied: decide no.

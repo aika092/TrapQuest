@@ -195,7 +195,7 @@ REQUIRES COMMENTING
 
 +!]
 To say fuckholes:
-	say "[if the player is female][vagina] and [end if][asshole]".
+	say "[if the player is possessing a vagina][vagina] and [end if][asshole]".
 
 [!<SayLoad>+
 
@@ -714,6 +714,7 @@ A humiliation reaction: expands to something grammatically equivalent to "blush"
 +!]
 To say blush (N - a number):
 	now N is N / (1 + (the humiliation of the player / 8000));
+	if debugmode > 0, say "[input-style](scaled humiliation [N]) [roman type]";
 	say "[if the player is proud and N < 25][one of]growl angrily[or]grind your teeth[or]growl under your breath[at random][otherwise if the player is not disgraced and N < 25][one of]fight off a feeling of shame[or]feel your cheeks warm[or]purse your lips[or]blink rapidly and look away[or]swallow in shame[or]cringe at how you must look[at random][otherwise if N < 25 and the player is shameless][one of]smile wickedly[or]cheekily bite your lip[or]shiver with excitement[or]shyly lick your lips[at random][otherwise if N < 25][one of]smile shyly[or]lower your eyes[or]mewl bashfully[or]feel your cheeks flush[or]feel yourself getting warmer[at random][otherwise if N < 50 and the player is shameless][one of]smile nervously[or]shyly bite your lip[or]shiver with arousal[at random][otherwise if N < 50][one of]turn a deep shade of red[or]blush deeply[or]whimper with shame[or]shiver with embarrassment[at random][otherwise][one of]hang your head in shame[or]grimace with self-disgust[or]clench your fists with self-loathing[or]shake your head in self-judgement[at random][end if]";
 	humiliate N.
 

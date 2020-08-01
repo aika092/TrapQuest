@@ -74,7 +74,7 @@ Report going when condom-pack is carried:
 
 Definition: a clothing (called C) is condom pinnable:
 	if C is totally-exclusive or C is top-exclusive:
-		unless C is biological or C is metal or C is bondage, decide yes;
+		unless C is biological or C is metal or C is glass or C is bondage, decide yes;
 	decide no.
 
 Definition: a shoes is condom pinnable: decide no.
@@ -114,7 +114,8 @@ To decide which number is total pinned condoms:
 	decide on N.
 
 Report examining a condom pinned clothing:
-	say "The item has [if the used condoms of the noun > 1][used condoms of the noun] large cum-filled condoms pinned to it[otherwise if the used condoms of the noun is 1]a large cum-filled condom pinned to it[end if][if the used condoms of the noun > 0 and the empty condoms of the noun > 0], and [end if][if the empty condoms of the noun > 1][empty condoms of the noun] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of the noun is 1]one used condom that has been torn and sucked dry pinned to it[end if].".
+	if the used condoms of the noun >= 20, say "[BigNameDesc of the noun] has an almost countless number of used condoms covering it.";
+	otherwise say "[BigNameDesc of the noun] has [if the used condoms of the noun > 1][used condoms of the noun] large cum-filled condoms pinned to it[otherwise if the used condoms of the noun is 1]a large cum-filled condom pinned to it[end if][if the used condoms of the noun > 0 and the empty condoms of the noun > 0], and [end if][if the empty condoms of the noun > 1][empty condoms of the noun] used condoms pinned to it that have been torn and sucked dry[otherwise if the empty condoms of the noun is 1]one used condom that has been torn and sucked dry pinned to it[end if].".
 
 Definition: a monster is condom-preferring if the class of the player is cumdumpster.
 
@@ -149,6 +150,7 @@ Definition: a monster (called M) is convinced to wear a condom:
 	let BB be the blue-balls-limit of M - the blue-balls of M;
 	let ORG be the virility of M - the sex-length of M;
 	if M is seduced:
+		if M is not intelligent, decide yes;
 		increase CR by BB; [The more patient they are, the less happy they will be to put a condom on already]
 		decrease CR by ORG; [The closer they are to orgasm, the more willing they are to put on a condom]
 	let R be a random number between 0 and C;
@@ -171,7 +173,7 @@ To compute condom filling of (M - a monster):
 
 To compute default condom filling of (M - a monster):
 	let C be a random worn drinkable condom pinned clothing;
-	if C is nothing or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
+	if C is nothing or C is not condom pinnable or a random number between 1 and 2 is 1, now C is a random worn condom pinnable clothing; [50% chance of condoms going on the same item as there are already condoms]
 	if runic headband is worn and runic headband is not purity and M is penetrating vagina, now C is runic headband;
 	let S be nothing;
 	if C is nothing:
@@ -190,8 +192,8 @@ To compute default condom filling of (M - a monster):
 		say "You feel [one of]a little[or]a bit[or]slightly[at random] [if the semen addiction of the player >= 14]less addicted to[otherwise if the semen addiction of the player > 7]less interested in[otherwise]more resilient against the idea of[end if] creampies[if bukkake fetish is 1] and facials[end if].";
 		SemenAddictDown 1;
 	if C is cheerleader outfit and there is a worn pigtail-scrunchie and artificial enhancements fetish is 1:
-		let P be a random pink rubber dress;
-		transform C into P;
+		if the class of the player is schoolgirl, transform C into daddy issues dress;
+		otherwise transform C into plastic-is-fantastic dress;
 	otherwise if the player is in a predicament room:
 		do nothing; [no new classes in the predicament world!]
 	otherwise if total used condoms > 2:
@@ -261,7 +263,7 @@ To say CondomPinFlav of (M - a monster) on (C - a clothing):
 To say CondomPinReactionFlav of (M - a person) on (C - a clothing):
 	say "[variable custom style][one of][if the player is shameless and M is monster]What a great idea! Now everyone knows exactly what a whore I've been.[otherwise if the player is shameless]What a great idea! Now everyone will think that I'm a disgusting [semen]-addicted whore.[otherwise]What on earth?! Am I supposed to walk around with this thing just dangling there[end if][if the player is not shameless and M is monster]?! Everyone will know what I've been doing... how shameful...[otherwise if the player is not shameless]?! Everyone will think I put it there on purpose, as some kind of trophy...[end if][or][if the semen taste addiction of the player > 16 and (the player is not shameless or a random number between 1 and 2 is 1)]Sweet, I've got myself another tasty snack for later![otherwise if the player is shameless]Great! It looks much more sexy now![otherwise if the total condoms of C is 0]Oh great, now this has condoms on it too![otherwise][end if][stopping][roman type][line break]".
 
-condom is a backdrop. condom is everywhere. Understand "condoms", "used condoms", "full condoms", "used condom", "full condom", "empty condom", "empty condoms" as condom. The text-shortcut of condom is "condom". Figure of used condom is the file "Env/MultiFloor/condom1.png".
+condom is a backdrop. condom is everywhere. Understand "condoms", "used condoms", "full condoms", "used condom", "full condom", "empty condom", "empty condoms" as condom. The text-shortcut of condom is "condom". Figure of used condom is the file "Items/Collectibles/baglunch1.png".
 
 To decide which figure-name is the examine-image of (C - condom):
 	decide on figure of used condom.

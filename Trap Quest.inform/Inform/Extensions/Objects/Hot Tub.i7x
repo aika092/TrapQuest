@@ -14,9 +14,9 @@ The hot tub is just deep enough to swim in, but the player can't dive (and reall
 
 There are no swimming checks in the hot tub as a result, but the player will gain arousal over time just from the heat. Staying in the bathtub will heal the player's body soreness and fatigue.
 
-Staying in the tub too long may give a teacher a chance to show up. 
+Staying in the tub too long may give a teacher a chance to show up.
 
-possibly: maybe go the japanese bathing route and have sections.
+possibly: maybe go the Japanese bathing route and have sections.
 ]
 To compute swimming in (H - hot-tub):
 	let swimming be 1;

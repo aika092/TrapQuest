@@ -195,7 +195,7 @@ Increases the soreness of a fuckhole "F" by a given number and handles all effec
 +!]
 To ruin (F - a fuckhole) times (X - a number):
 	now the previous soreness of F is the soreness of F;
-	unless F is vagina and the player is male, increase the buildup of F by 1;
+	unless F is vagina and the player is not possessing a vagina, increase the buildup of F by 1;
 	while X > 0:
 		decrease X by 1;
 		if the soreness of F > 8 and cum dump's undergarment is worn, now the soreness of F is 8; [undergarment prevents fainting from soreness]
@@ -395,11 +395,6 @@ To say HeavyThings:
 	otherwise:
 		say "heavy body parts".
 
-[!<BodyPartIsLewdlyExposed>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a body part is lewdly exposed: decide no.
 
 Definition: a body part is currently visible if it is exposed.
@@ -447,10 +442,10 @@ Report examining a body part:
 
 [!<BodyPartIsUnSoakedOrSoaked>+
 
-REQUIRES COMMENTING
+Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.
 
 +!]
-A body part can be unsoaked or soaked. A body part is usually unsoaked. [Used to track where we've already spread liquid movements to, so that recursive functions don't become infinite.]
+A body part can be unsoaked or soaked. A body part is usually unsoaked.
 
 [!<BodyPartIsOccupied>+
 
@@ -474,7 +469,7 @@ Definition: a body part (called B) is fake occupied:
 	repeat with C running through concealment salve covering B:
 		unless C is cursed, decide yes;
 	if pentagram tattoo is worn and B is vagina, decide yes;
-	if there is an illusory kimono covering B, decide yes;
+	if the concealer of B is illusory kimono, decide yes;
 	decide no.
 
 [!<BodyPartIsActuallyOccupied>+
@@ -482,9 +477,7 @@ Definition: a body part (called B) is fake occupied:
 Actually has something in it.
 
 +!]
-Definition: a body part is actually occupied:
-	if there is a thing penetrating it, decide yes;
-	decide no.
+Definition: a body part is actually occupied if there is a thing penetrating it.
 
 [!<YourselfIsExposed>+
 
@@ -546,6 +539,9 @@ This is the body parts get focused rule:
 	if the total volume of face > 0:
 		if debugmode > 1, say "mouth has [MouthfulDesc].";
 		add face to LB, if absent;
+	if the largeness of belly > 5:
+		if debugmode > 1, say "belly size is [largeness of belly].";
+		add belly to LB, if absent;
 	if debugmode > 1, say "List of body parts to focus is [LB].";
 	repeat with B running through LB:
 		focus-consider B.

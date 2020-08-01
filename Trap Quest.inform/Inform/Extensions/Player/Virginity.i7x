@@ -85,11 +85,6 @@ To compute virginity loss:
 
 Part 2 - Virgin Reward
 
-[!<VirginReward>+
-
-REQUIRES COMMENTING
-
-+!]
 To virginreward:
 	let H be a random worn headgear;
 	if there is a worn plate warrior chestpiece and flower hairclip is blessed: [No more increases after you get this.]
@@ -197,7 +192,7 @@ REQUIRES COMMENTING
 
 +!]
 To check virginity with (M - a monster):
-	if the penetrativevirgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:
+	if the penetrativevirgin of the player is 1 and player-fuckchoice is FUCK-PENETRATION and the fuck-get of the player + the anal-get of the player > 0:[anal AND vaginal count]
 		if virgincursed is 1:
 			if player-fucking is DOMINANT-NONE or player-fucking is DOMINANT-SHAMEFUL:[only 'true' dominant sex can reverse your virgin curse]
 				say "[variable custom style][one of]Wait...does that count?[or]No way that counts...[or]I[']m gonna be a virgin forever...[then at random][roman type][line break]";

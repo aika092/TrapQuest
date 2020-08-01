@@ -133,6 +133,7 @@ To layer (C - a clothing) correctly:
 	now C is in Holding Pen; [Make sure it's not worn for validation]
 	validate layers;
 	now C is worn by the player; [Make sure it is now worn]
+	now C is not temporarily-removed; [It's been put back on the player so it should never have this flag at this moment]
 	now the top-layer of C is 0;
 	now the mid-layer of C is 0;
 	now the bottom-layer of C is 0;

@@ -47,7 +47,7 @@ To say MonsterOfferAcceptFlav of (M - a demoness) to (T - a wrench):
 To say OfferThanksFlav of (M - a demoness) for (T - a wrench):
 	say "[if the class of the player is succubus]Our[otherwise]My[end if] master grows stronger.".
 
-To compute resolution of (M - a demoness) taking (T - an infernal gem):
+To compute resolution of (M - a demoness) taking (T - infernal gem):
 	if M is unfriendly, FavourUp M by the bartering value of T for M;
 	otherwise FavourUp M by (the bartering value of T for M) / 2;
 	if the wrench-timer of mechanic > 0:
@@ -56,7 +56,7 @@ To compute resolution of (M - a demoness) taking (T - an infernal gem):
 	compute offer reward of M for T;
 	bore M.
 
-To say OfferThanksFlav of (M - mechanic) for (T - an infernal gem):
+To say OfferThanksFlav of (M - mechanic) for (T - infernal gem):
 	if M is unfriendly, say "[line break][speech style of M]'This doesn't change anything though.'[roman type][line break]";
 
 Wrench ends here.

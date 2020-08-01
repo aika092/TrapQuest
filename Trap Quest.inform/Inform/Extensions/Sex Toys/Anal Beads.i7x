@@ -172,8 +172,7 @@ To compute (M - a monster) removing (C - an anal beads):
 		say "[BigNameDesc of M] pulls hard on the cord connected to your [printed name of C], [if R > 1]forcing [R] beads out of your [variable F] in rapid succession.[otherwise]yanking the remaining bead from your [variable F] with little effort.[end if]";
 		decrease the notch-taken of C by R;
 		if the notch-taken of C <= 0:
-			now C is in holding pen;
-			now M is retaining C;
+			now M is carrying C;
 			dislodge C;
 		if F is asshole, ruin asshole times R;
 		otherwise ruin vagina times R;
@@ -200,13 +199,11 @@ To compute replacement of (T - an anal beads) in (O - an orifice):
 		now T is worn by the player;
 		now T is penetrating O;
 		now the notch-taken of T is the notches of T;
-		ruin O times (the notches of T + 1) / 2;
-		now current-monster is not retaining T.
+		ruin O times (the notches of T + 1) / 2.
 
 To compute (M - a ghost) removing (C - an anal beads):
 	say "[BigNameDesc of M] floats behind you, dripping precum as it nears your [printed name of C]. Undeterred, it phases into your [chosen-orifice of M], causing the toy to wiggle and throb as it changes shape. [if the relevant sex addiction of C < 4]You whimper as the newly formed dildo slowly begins to fuck you.[otherwise if the relevant sex addiction of C < 6]Shivers run up your spine as the newly formed dildo slowly begins to fuck you.[otherwise]A shiver of anticipation runs up your spine as the newly formed dildo beings to fuck you.[end if]";
-	now C is in the holding pen;
-	now M is retaining C;
+	now M is carrying C;
 	dislodge C;
 	now M is penetrating chosen-orifice of M.
 
@@ -222,7 +219,6 @@ To finish possession of (T - an anal beads) in (O - an orifice):
 	now T is cursed;
 	now T is penetrating O;
 	now the notch-taken of T is the notches of T;
-	now current-monster is not retaining T;
 	now T is worn by the player.
 
 To decide which number is the original price of (C - an anal beads):

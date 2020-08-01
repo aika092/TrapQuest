@@ -1,6 +1,6 @@
 Headmistress by Monster begins here.
 
-headmistress is a staff member. headmistress is guarding. headmistress is female. The leftover-type of headmistress is 130.
+headmistress is a diamond-teacher. headmistress is guarding. headmistress is female. The leftover-type of headmistress is 130.
 
 headmistress is in School08. The text-shortcut of headmistress is "hdm".
 
@@ -20,6 +20,15 @@ To say ShortDesc of (M - headmistress):
 
 To say MediumDesc of (M - headmistress):
 	say "[if lady fetish is 2]mister [end if]headmistress".
+
+To say NameDesc of (C - headmistress):
+	say "the [input-style][MediumDesc of C][roman type]".
+To say BigNameDesc of (C - headmistress):
+	say "The [input-style][MediumDesc of C][roman type]".
+To say FuckerDesc of (C - headmistress):
+	say "the [MediumDesc of C]".
+To say BigFuckerDesc of (C - headmistress):
+	say "The [MediumDesc of C]".
 
 To say MonsterDesc of (M - headmistress):
 	if M is sex-enslaved:

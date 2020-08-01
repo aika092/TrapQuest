@@ -6,6 +6,9 @@ To summon (C - a wearthing):
 
 To summon (C - a clothing):
 	only destroy C; [This cleans up all potentially incorrect flags except ripped and various effects]
+	only summon C.
+
+To only summon (C - a clothing):
 	layer C correctly;
 	now C is worn by the player;
 	now C is identified;
@@ -18,8 +21,7 @@ To summon (C - a clothing):
 To compute unique summoning of (C - a thing):
 	do nothing.
 
-To summon (S - a sex toy): [We can only use summon for asshole at the moment]
-	only destroy S; [This cleans up all potentially incorrect flags]
+To only summon (S - a sex toy): [We can only use summon for asshole at the moment]
 	now S is not penetrating vagina; [Just in case]
 	now S is worn by the player;
 	now S is penetrating asshole;
@@ -29,6 +31,9 @@ To summon (S - a sex toy): [We can only use summon for asshole at the moment]
 
 To summon (P - a sex toy) vaginally:
 	only destroy P; [This cleans up all potentially incorrect flags]
+	only summon P vaginally.
+
+To only summon (P - a sex toy) vaginally:
 	now P is not penetrating asshole;
 	now P is worn by the player;
 	now P is penetrating vagina;

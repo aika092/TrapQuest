@@ -7,6 +7,7 @@ To decide which number is the aggro limit of (M - a student): [The number at whi
 
 A student has a number called lessonInt1. [Can be used to track various things in a lesson]
 A student has a number called lessonInt2. [Can be used to track various things in a lesson]
+A student can be kissPunished. [Used in kissing lesson to track punishments]
 
 Definition: a student is summoningRelevant: decide no. [Doesn't count towards the number of monsters in the region for the purposes of summoning portals.]
 Definition: a student is controlling: decide no. [Will they grab onto subduing clothing e.g. a clitoris lead?]
@@ -134,6 +135,15 @@ Definition: a student (called M) is lesson-appropriate:
 	if the current-rank of M is 4 and armband is pink diamond, decide yes;
 	if the current-rank of M is 5 and armband is pure diamond, decide yes;
 	decide no.
+
+To BackgroundRender (M - a student) at (X1 - a number) by (Y1 - a number) with dimensions (DX - a number) by (DY - a number):
+	let N be 1004218; [sapphire]
+	if the current-rank of M is 2, now N is 5294200; [emerald]
+	if the current-rank of M is 3, now N is 14684511; [ruby]
+	if the current-rank of M is 4, now N is 16440029; [pale pink]
+	if the current-rank of M is 5, now N is 16447741; [pale silver]
+	if the current-rank of M is 6, now N is 16766720; [gold]
+	draw a rectangle N in the current focus window at X1 by Y1 with size DX by DY.
 
 Part - Updating Students
 

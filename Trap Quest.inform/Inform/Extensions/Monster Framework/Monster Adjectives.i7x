@@ -8,14 +8,14 @@ Definition: A monster is awake rather than asleep if its sleep <= 0 and timeBomb
 A monster has a number called sex-length. The sex-length of a monster is usually 0. [Used in sex to determine how many turns until ejaculation. Also can be used to track something else outside of sex.]
 A monster has a number called raw difficulty. The raw difficulty of a monster is usually 1. [Used in combat calculations, higher number means they take less damage and it's harder to run away]
 To decide which number is the difficulty of (M - a monster):
-	decide on the raw difficulty of M + game difficulty.
+	decide on the raw difficulty of M[ + game difficulty].
 To decide which number is the starting difficulty of (M - a monster):
 	if M is hotel dwelling:
 		decide on 12;
 	if M is mansion dwelling:
 		decide on 10;
 	if M is woods dwelling:
-		decide on 9;
+		decide on 8;
 	if M is dungeon dwelling:
 		decide on 6;
 	decide on 5.
@@ -212,7 +212,8 @@ Definition: a monster is messy if it is diaper-enslaved and the refractory-perio
 Definition: a monster is scarable: decide yes. [Can this monster be made to flee? Mostly just overridden for bosses.]
 
 A monster can be seduced, unseduced or seduction-refused (this is the monster-seduction property). A monster is usually unseduced. [Is the player currently playing a seduction minigame with it? If it has refused seduction then it won't allow the seduction to happen again.]
-Definition: a monster is seducable if it is male and it is intelligent and it is willing to do anal.
+Definition: a monster is seduce-satisfiable if it is intelligent and it is not robot. [Can the player bring it closer to orgasm? If not, seduction will mainly be about condoms]
+Definition: a monster is seducable if it is male and it is willing to do anal.
 Definition: a monster is actually seducable if diaper quest is 0 and it is seducable and it is reactive and it is interested and it is unseduced and it is not penetrating a body part.
 A monster has a number called teaseTimer. [This number goes up when a defeated monster is dominated then down each turn. It stops the player from being able to continuously gain stats by dominating an NPC over and over again.]
 
@@ -220,5 +221,18 @@ A monster has a number called throating. [Is it currently doing deepthroat oral?
 Definition: a monster is throater if the throating of it > 0.
 To say silentThroat (M - a monster): [Shortcut to flag to the game that the NPC is deepthroating this turn]
 	increase the throating of M by 1.
+
+A monster has a list of things called banishItems.
+A monster has a list of things called taxableItems.
+A monster has a list of things called tradableItems.
+
+A game universe initialisation rule:
+	let L be the list of off-stage mass collectibles;
+	sort L in random order;
+	repeat with M running through intelligent monsters:
+		let X be entry 1 in L;
+		add X to the tradableItems of M;
+		remove X from L.
+
 
 Monster Adjectives ends here.

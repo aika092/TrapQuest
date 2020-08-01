@@ -9,10 +9,14 @@ To decide which figure-name is the examine-image of (C - a pocketwipes):
 To say ExamineDesc of (B - a pocketwipes):
 	say "A small blue packet containing a few wet wipes. [if diaper messing > 3]It looks like there's enough for one diaper change, or you[otherwise]You[end if] could use them to wipe make up away[if diaper quest is 0], or wipe cum off of your body[end if].".
 
+Definition: a pocketwipes is shop-eligible: decide yes.
+
 To decide which number is the outrage of (C - a pocketwipes):
 	decide on 1.
 To decide which number is the cringe of (C - a pocketwipes):
 	decide on 3.
+To decide which number is the original price of (C - a pocketwipes):
+	decide on 2.
 
 To decide which number is the crafting key of (C - a pocketwipes):
 	decide on 56.
@@ -69,5 +73,7 @@ Check drinking pocketwipes: ["use" pocketwipes directs to drinking]
 
 To say unique-verb-desc of (T - a pocketwipes):
 	if inline hyperlinks >= 2 and there is worn messed knickers, say " [link][bracket]clean me[close bracket][as]use [text-shortcut of T][end link]".
+
+
 
 Wipes ends here.

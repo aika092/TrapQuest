@@ -172,9 +172,7 @@ To compute spraybottle punishment:
 To compute (M - a mechanic) considering (T - pink-spraybottle):
 	if T is cloth:
 		say "[speech style of M]'Ugh. Here I was thinking you might [if diaper quest is 1]be able to hold some adult responsibilities[otherwise]be useful as more than a pair of walking tits[end if], but you actually managed to break your only tool. Fucking incredible.'[roman type][line break][big he of M] takes the destroyed pieces of your [ShortDesc of T] and puts them into a small pocket on [his of M] utility belt.[line break][speech style of M]'Honestly, I should fire you, but I'm willing to hold onto it for you until you a figure out a way to make this up to me. Understand? [if diaper quest is 0]There's two things I like - blowjobs and[otherwise]Here's a hint - I like[end if] *ahem* amulets...'[roman type][line break]";
-		now T is in Holding Pen;
-		now M is retaining T;
-		now M is withholding T;
+		now M is carrying T;
 	otherwise:
 		say "[speech style of M]'I can see that it's not broken. Congratulations, you aren't the most useless maid ever. Incredible...'[roman type][line break][big he of M] doesn't seem very interested in the [ShortDesc of the noun].".
 

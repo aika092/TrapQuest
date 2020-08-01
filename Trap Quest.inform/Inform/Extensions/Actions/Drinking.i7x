@@ -175,7 +175,6 @@ Carry out drinking a vessel:
 	DoseDown the noun;
 	if the doses of the noun is 0, say "[line break]The [noun] is now empty.".
 
-
 Check drinking a living tentacles:
 	if the noun is not worn, say "You can't do that." instead;
 	if the charge of the noun > 0, say "It's still a bit tired." instead.
@@ -294,15 +293,9 @@ Carry Out Spitting:
 				compute boring spit reaction of M;
 			otherwise:
 				compute disgusting spit reaction of M;
-		if the player is in Toilet02:
-			let N be a random number between 1 and 4;
-			choose a blank row in Table of Published Disgraces;
-			now the content entry is the substituted form of "a low resolution video showing you spitting out [semen] after giving a blowjob at a gloryhole";
-			now the published entry is the substituted form of "has been [one of]uploaded to[or]posted on[purely at random] www.caughtonCCTV.com";
-			now the severity entry is 3;
-			now the popularity entry is N;
-			now the timestamp entry is earnings;
-			now the viewsfuzz entry is a random number between -100 and 100;
+		if the player is in a predicament room and current-predicament is gloryhole-predicament:
+			increase the semen-spat of gloryhole-predicament by 1;
+			if the semen-spat of gloryhole-predicament is 1, say "[variable custom style]I'm going to have earned a penalty point from doing that.[roman type][line break]";
 		MouthEmpty;
 	otherwise:
 		compute spitting.

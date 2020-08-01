@@ -56,7 +56,7 @@ To say unique-verb-desc of (T - a soiled-diaper):
 
 Carry out examining:
 	if the noun is a monster:
-		let N be the number of soiled-diaper retained by the noun;
+		let N be the number of soiled-diaper carried by the noun;
 		if N > 0:
 			say "[big he of the noun] is carrying [if N is 1]a soiled diaper[otherwise][N] soiled diapers[end if] in [his of the noun] hand[if N > 1]s[end if][if the noun is intelligent]. [big he of the noun] doesn't look happy about it[end if].".
 

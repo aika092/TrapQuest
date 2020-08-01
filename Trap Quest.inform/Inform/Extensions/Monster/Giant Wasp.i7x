@@ -77,6 +77,7 @@ To say DickDesc of (M - a giant wasp):
 To set up (M - a giant wasp):
 	reset M;
 	now the monstersetup of M is 1;
+	add wasp wing to the banishItems of M, if absent;
 	if egg laying fetish is 1 and mythical creature fetish is 1:
 		[repeat with L running through the list of wasp-types:
 			if L is unused:
@@ -405,13 +406,6 @@ To say DamageReactWeak of (M - a giant wasp):
 
 To say BanishFleeFlav of (M - a giant wasp):
 	say "[BigNameDesc of M] falls to the ground, exhausted. Then suddenly [he of M] attempts to take flight once more, keeping low to the ground as [he of M] buzzes away as quickly as [his of M] injured wings can carry [him of M]!".
-
-To loot (M - a giant wasp):
-	let W be a random off-stage wasp wing;
-	if W is wasp wing:
-		say "[one of]On closer inspection, you notice that[or]Once again,[stopping] a [W] has been left behind.";
-		now W is in the location of the player;
-		compute autotaking W.
 
 Part 6 - Variants
 

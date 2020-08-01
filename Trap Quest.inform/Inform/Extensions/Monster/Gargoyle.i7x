@@ -85,7 +85,7 @@ Definition: gargoyle (called M) is vigilant:
 	if doomed > 2, decide yes;
 	if the size of penis >= 5, decide yes;
 	if the number of glazed body parts > 2, decide yes;
-	if there is held stolen clothing, decide yes;
+	if there is stolen currently perceivable thing, decide yes;
 	if there is worn magic themed clothing, decide yes;
 	decide no.
 
@@ -116,7 +116,7 @@ To compute perception of (M - gargoyle):
 Essentially, the goal here is to tell the player why the gargoyle woke up, and/or why she is becoming aggressive.
 ]
 To compute appearance assessment of (M - gargoyle):
-	let H be a random worn stolen clothing;
+	let H be a random stolen currently perceivable thing;
 	say "[big his of M] [if mythical creature fetish is 1]slitted [end if]pupils focus [run paragraph on]";
 	if the size of penis > the satiated of M:
 		say "on your crotch as [he of M] hungrily licks [his of M] lips.";
@@ -130,7 +130,7 @@ To compute appearance assessment of (M - gargoyle):
 	otherwise if the number of glazed body parts > 2:
 		let B be a random glazed body part;
 		say "on your [ShortDesc of B].";
-	otherwise if H is clothing:
+	otherwise if H is a thing:
 		say "on your [ShortDesc of H].";
 	otherwise:[If she woke up because the player was horny, due to magic item, or the doom counter, she just stares at you]
 		say "on you, and [big he of M] stares at you in silence for several seconds.";

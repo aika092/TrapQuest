@@ -34,7 +34,6 @@ Definition: cat-ears (called C) is removal-blocking: [Some items (mainly headgea
 
 To compute class outfit of (H - cat-ears):
 	let K be a random off-stage kitty claws;
-	let C be a random catbell;
 	let P be a random cat tail plug;
 	let M be a random off-stage exposing magical dress;
 	if diaper quest is 0 and the magic-power of the player > 2 and (M is actually summonable or (M is magical dress and kitty-summoned < 2)):
@@ -59,9 +58,9 @@ To compute class outfit of (H - cat-ears):
 		summon K;
 		now the raw-magic-modifier of K is the stance of the player;
 		if kitty-summoned < 1, now kitty-summoned is 1;
-	otherwise if C is actually summonable:
-		say "[bold type]You feel a sudden tightness around your neck. You look down to see that [if C is held]the cat collar has reappeared[otherwise]a cat collar has appeared[end if]![roman type][line break]";
-		summon C;
+	otherwise if catbell is actually summonable:
+		say "[bold type]You feel a sudden tightness around your neck. You look down to see that [if catbell is held]the cat collar has reappeared[otherwise]a cat collar has appeared[end if]![roman type][line break]";
+		summon catbell;
 	otherwise if (P is off-stage or P is cursed) and diaper quest is 0 and the class of the player is catgirl and P is actually summonable and the player is not ass protected:
 		say "[bold type]You feel your [asshole] suddenly invaded by a foreign object! Looking around you see [if P is in-play]the cat tail has reappeared and is[otherwise]a cat tail[end if] swaying proudly from your [asshole].[roman type][line break]";
 		summon P cursed;

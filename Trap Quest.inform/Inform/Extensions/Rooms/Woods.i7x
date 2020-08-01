@@ -265,7 +265,7 @@ Definition: Sky01 is nonstandard: decide yes.
 REQUIRES COMMENTING
 
 *!]
-WoodsScenery01 is a water-body-scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "River". Understand "waterfall", "pool", "fall", "stream" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01. The text-shortcut of WoodsScenery01 is "wtfl".
+WoodsScenery01 is a water-body-scenery. WoodsScenery01 is in Woods05. The printed name of WoodsScenery01 is "River". Understand "waterfall", "pool", "fall", "stream", "river" as WoodsScenery01. Instead of entering WoodsScenery01, try showering WoodsScenery01. The text-shortcut of WoodsScenery01 is "wtfl".
 To say ExamineDesc of (C - WoodsScenery01):
 	say "A fast-moving river connected to a clear waterfall. You could probably [bold type]swim[roman type] in it.".
 To decide which figure-name is the examine-image of (C - WoodsScenery01):

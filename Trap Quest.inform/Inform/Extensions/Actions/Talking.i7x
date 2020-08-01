@@ -82,5 +82,4 @@ Carry out talking a monster:
 
 Understand "talk [something]", "talk to [something]", "talk with [something]", "speak [something]", "speak to [something]", "speak with [something]", "chat [something]", "chat to [something]", "chat with [something]" as talking.
 
-
 Talking ends here.

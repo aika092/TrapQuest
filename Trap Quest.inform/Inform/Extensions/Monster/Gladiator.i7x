@@ -42,7 +42,11 @@ Figure of Gladiator Interact 10 is the file "NPCs/MultiFloor/Gladiator/Cutscene/
 Figure of Gladiator Cutscene 11 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-fuck9.png".
 Figure of Gladiator Cutscene 12 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event1.png".
 Figure of Gladiator Cutscene 13 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event2.png".
-Figure of Gladiator Cutscene 14 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event3.png".
+[Figure of Gladiator Cutscene 14 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-event3.png".]
+
+Figure of Gladiator Cutscene 21 is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-punish1.jpg".
+Figure of Gladiator Cutscene 22 Female is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-punish2a.jpg".
+Figure of Gladiator Cutscene 22 Male is the file "NPCs/MultiFloor/Gladiator/Cutscene/cutscene-gladiator-punish2b.jpg".
 
 Figure of Babified Gladiator is the file "NPCs/MultiFloor/Gladiator/gladiator6.jpg".
 
@@ -200,6 +204,10 @@ To compute unique periodic effect of (M - a gladiator):
 To set up (M - a gladiator):
 	reset M;
 	now the monstersetup of M is 1;
+	add gladiator-sword to the banishItems of M, if absent;
+	add metal-disc to the taxableItems of M, if absent;
+	add red-pasties to the tradableItems of M, if absent;
+	add nail-bomb to the tradableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now M is female;
 	if doomed is 5, DifficultyUp M by 1;
@@ -757,15 +765,19 @@ This is the gladiator smoke rule:
 			say "[BigNameDesc of M] holds you down as you breathe in the last of the smoke.";
 			compute satisfaction of M;
 		otherwise if nearest-room is nothing or delayed stand is 1:
-			say "[BigNameDesc of M] reaches into [his of M] [HoleDesc of M] and pulls out a pink smoke bomb! ";
-			cutshow figure of gladiator cutscene 14 for M;
-			say "[big he of M] throws it on the [if M is wild gladiator]ground, and the clearing starts to fill with thick pink smoke[otherwise]floor, and the room starts to fill with pink smoke[end if]!";
+			say "[BigNameDesc of M] takes the pink vial from [his of M] belt! ";
+			[cutshow figure of gladiator cutscene 14 for M;]
+			say "[big he of M] throws it on the [if playerRegion is woods]ground, and the clearing starts to fill with thick pink smoke[otherwise]floor, and the room starts to fill with pink smoke[end if]!";
+			cutshow Figure of Gladiator Cutscene 21 for M;
 			now the location of M is smoky;
 			if M is wild gladiator, now the smoke of M is the difficulty of M - 2;
 		otherwise if nearest-room is the location of the player:
 			say "[BigNameDesc of M] holds your face in the pink smoke.";
 			now the target-room of M is nearest-room;
 			compute satisfaction of M;
+			if M is interested:
+				if the player is male, cutshow Figure of Gladiator Cutscene 22 male for M;
+				otherwise cutshow Figure of Gladiator Cutscene 22 female for M;
 		otherwise:
 			now the target-room of M is nearest-room;
 			drag to the target-room of M by M;
@@ -863,7 +875,7 @@ To decide which number is (M - a gladiator) pierce success: [0 means failure, 2 
 			PainUp 1;
 			repeat with P running through worn cow piercings:
 				destroy P;
-			summon N cursed;
+			summon N cursed with persistent quest;
 			bore M;
 			FavourUp M;
 			decide on 2;
@@ -1282,13 +1294,7 @@ To say BanishForceFlav of (M - a gladiator):
 	let E be a random worn slap ready equippable;
 	say "You [if the player is able to use their hands]roughly grab [NameDesc of M] by the breasts[otherwise]stand over the defeated [MediumDesc of M], staring down menacingly[end if].[line break][if the player is able to speak][variable custom style]'I have proven my strength. Now leave this place, and never return, while you still have the chance.'[roman type][line break][end if][BigNameDesc of M] snarls, but looks more angry at [himself of M] than at you.[line break][speech style of M]'[roman type][line break]".
 
-To compute tax return of (M - a gladiator):
-	let D be a random off-stage metal disc;
-	if D is metal disc and the number of in-play metal discs is 0:
-		now D is in the location of the player;
-		compute autotaking D;
-	otherwise:
-		loot M;
+To compute loot dropping of (D - metal-disc) by (M - a gladiator):
 	say "[BigNameDesc of M] plucks a [D] from [his of M] belt and tosses it towards you. It rolls towards you and comes to a halt at your feet.[line break][speech style of M]'There. A trophy for your victory. I wonder what I will take for my trophy the next time we fight...'[roman type][line break]".
 
 Section 4 - Dominant Sex
@@ -1679,6 +1685,9 @@ To compute offer reward of (M - a gladiator) for (T - a thing):
 	otherwise:
 		FavourUp M by (1 + the bartering value of T for M) / 2.
 
+To say RewardFlav of (M - a gladiator) for (T - nail-bomb):
+	say "[BigNameDesc of M] removes the pink bomb from [his of M] belt.[line break][speech style of M]'If you find yourself in an unfair fight, this might prove invaluable.'[roman type][line break]";
+
 To IdentifiablePosterReaction of (M - a gladiator):
 	if M is male, say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'You are a complete and total disgrace to this world.'[roman type][line break]";
 	otherwise say "[BigNameDesc of M] looks at you, blinks, then looks back to the poster. [line break][speech style of M]'This is you in the image? [if M is friendly]I'm sorry, I cannot be seen to associate with such an unwomanly harlot[otherwise]You are even more of a disgrace than I realised[end if].'[roman type][line break]";
@@ -2063,7 +2072,7 @@ To say WhoAnswer of (M - enlightened gladiator):
 
 To say StoryAnswer of (M - enlightened gladiator):
 	if lady fetish is 2:
-		say "[speech style of M]'I was kidnapped by the cultists who dwell in this place. Furiously I resisted, but there were too many. I experienced their ritual, and again, I resisted. But when I felt the touch of mighty [Azathot], I relented, and through the insight of the [great ones], and I beheld the TRUTH! The moment I began my search for true womanhood--is the moment I became a true woman!'[roman type][line break]";
+		say "[speech style of M]'I was kidnapped by the cultists who dwell in this place. Furiously I resisted, but there were too many. I experienced their ritual, and again, I resisted. But when I felt the touch of mighty [Azathot], I relented, and through the insight of the [great ones], and I beheld the TRUTH! The moment I began my search for true womanhood - is the moment I became a true woman!'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Hoh? Doesn't my body say it all? Indeed, I have a male part, but I am no male. If a male part resides on a true woman, it becomes a true woman's part. Indeed, I was once a mere warrior of superior strength and bust, but a mere WARRIOR I am not. I am a true woman. INDEED, I have read the teachings of the [great ones], and I have known the touch of [Azathot]! Through [his of herald] seed, I was enlightened, and realised the TRUTH! I AM A TRUE WOMAN!'[roman type][line break]".
 
@@ -2227,7 +2236,7 @@ To say CondomPieFlav of (M - wild gladiator) in (F - vagina):
 	say "[BigNameDesc of M] grunts, tightening [his of M] grip as the condom begins to fill up with warm [semen]. [big he of M] continues fucking you until [his of M] supply of [semen] has been completely and thoroughly emptied inside of it. [line break][speech style of M]'Hmph. You will still be marked.'[roman type][line break]You feel [his of M] hands squeeze your hips as [he of M] pulls out and carefully peels the condom off.".
 
 To say angry punishment clothing destruction of (M - wild gladiator) on (C - a clothing):
-	say "[first custom style]'[if C is actually breast covering and the largeness of breasts > 3]Challenge me now, whore, and see what happens. Perhaps then you will not be so disrespectful.'[otherwise if C is ass covering and the player is male]You belong to me. Perhaps if your [asshole] is on display, the jungle will reveal to you the slut you really are?[otherwise if C is ass covering]You belong to me. Perhaps if your [fuckholes] are on display, the jungle will reveal to you the slut you really are.'[otherwise]I own you, slut. You will no longer delude yourself by concealing your body from me!'[end if][roman type][line break]".
+	say "[first custom style]'[if C is actually breast covering and the largeness of breasts > 3]Challenge me now, whore, and see what happens. Perhaps then you will not be so disrespectful.'[otherwise if C is ass covering and the player is not possessing a vagina]You belong to me. Perhaps if your [asshole] is on display, the jungle will reveal to you the slut you really are?[otherwise if C is ass covering]You belong to me. Perhaps if your [fuckholes] are on display, the jungle will reveal to you the slut you really are.'[otherwise]I own you, slut. You will no longer delude yourself by concealing your body from me!'[end if][roman type][line break]".
 
 To say angry punishment accessory confiscation of (M - wild gladiator):
 	say "[first custom style]'This trinket belongs to me. When you are ready to respect me, perhaps I will allow you to wear it again.'[roman type][line break]".

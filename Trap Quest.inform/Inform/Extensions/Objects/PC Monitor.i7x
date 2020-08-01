@@ -287,6 +287,8 @@ A later time based rule:
 				now the severity entry is 100;
 				now the popularity entry is 0;
 				now the viewsfuzz entry is 0;
+				now the lastwitnessed entry is 0;
+				now the deletedtime entry is 0;
 				now the timestamp entry is 0;
 			otherwise:
 				say "[first custom style]'I don't really understand what's going on here but I also know I don't like it. You'd better have a pretty good fucking explanation the next time I see you, [OriginalNameBimbo].'[roman type][line break][FriendName] hangs up the call, and then the PC Monitor goes blank.";
@@ -357,9 +359,19 @@ A later time based rule:
 	if the player is in Hotel30:
 		let N be the number of filled rows in the Table of Published Disgraces;
 		if N > 0:
-			decrease the currentSlide of security screens by 1;
-			if the currentSlide of security screens <= 0:
-				now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
-			say "[bold type]Your eyes are drawn to a TV screen![roman type] It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
+			let notThisOne be 100;
+			while notThisOne > 0:
+				decrease notThisOne by 1;
+				decrease the currentSlide of security screens by 1;
+				if the currentSlide of security screens <= 0:
+					now the currentSlide of security screens is the number of filled rows in the Table of Published Disgraces;
+				choose row (the currentSlide of security screens) in Table of Published Disgraces;
+				if the deletedtime entry <= 0: [Only media that hasn't been deleted is shown]
+					now notThisOne is 0;
+					say "[bold type]Your eyes are drawn to a TV screen![roman type] It shows that [HumiliatingSlideDesc (the currentSlide of security screens)]";
+					if the deletedtime entry is -1:
+						say "The console is not logged in as the user who uploaded the video, so there is no delete button.";
+					otherwise if the deletedtime entry is 0:
+						say "There is a big red delete button available to press underneath the video, but a banner underneath the screens says 'PLEASE AUTHENTICATE TO ENABLE TOUCHSCREEN FUNCTIONALITY.'";
 
 PC Monitor ends here.

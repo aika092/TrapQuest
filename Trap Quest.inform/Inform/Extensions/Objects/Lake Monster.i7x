@@ -409,7 +409,7 @@ To compute swimming in (WB - DungeonScenery03):
 				say "You dive below the surface.";
 				compute difficult swimming check in WB;
 				if M is lake-stalking and the swim-location of M is S:
-					say "[line break]Something catches your eye, and you quickly swim toward it... Its long, red and one side of its surface is covered in octopus-like suckers. Below it is the shadow of some huge aquatic creature, with greets you by sending three more of its thick tentacles up from the depths. You change course and quickly swim back toward the surface, but just before your head breaks the water, a slimy tentacle wraps around you under with incredible strength. It keeps its grip on your ankle as it slowly slides up and around your leg.";
+					say "[line break]Something catches your eye, and you quickly swim toward it... Its long, red and one side of its surface is covered in octopus-like suckers. Below it is the shadow of some huge aquatic creature, which greets you by sending three more of its thick tentacles up from the depths. You change course and quickly swim back toward the surface, but just before your head breaks the water, a slimy tentacle wraps around your ankle and drags you under with incredible strength. It keeps its grip on your ankle as it slowly slides up and around your leg.";
 					compute lake tentacle gangbang of M;
 					now swimming is 0;
 				otherwise:
@@ -439,8 +439,8 @@ To compute swimming in (WB - DungeonScenery03):
 		if swimming is 1:
 			compute bathing;[Happens every turn]
 			increase swim-turns by 1;
-			if (the fatigue of the player >= the strength of the player * 7) and (M is lake-stalking or M is in the location of the player):
-				say "You're too tired, and strength leaves your limbs as you begin to pass out.[line break] A sudden tug on your ankle snaps you back to alertness, and you look down to see a thick, octopus-like tentacle dragging you deeper with incredibly strength. Your slimy [']savior['] keeps its grip on your ankle as it slowly slides around and up your leg.";
+			if (the fatigue of the player >= the buckle threshold of the player) and (M is lake-stalking or M is in the location of the player):
+				say "You're too tired, and strength leaves your limbs as you begin to pass out.[line break]A sudden tug on your ankle snaps you back to alertness, and you look down to see a thick, octopus-like tentacle dragging you deeper with incredibly strength. Your slimy [']saviour['] keeps its grip on your ankle as it slowly slides around and up your leg.";
 				compute lake tentacle gangbang of M;
 				now swimming is 0;
 			otherwise:
@@ -451,9 +451,9 @@ To compute swimming in (WB - DungeonScenery03):
 
 [
 	What can the player find:
-	sapphire jewelery - uncommon
-	emerald jewelery - rare
-	ruby jewelrey - very rare
+	sapphire jewellery - uncommon
+	emerald jewellery - rare
+	ruby jewellery - very rare
 	eggs - common
 	tokens - common
 	small clothing - uncommon
@@ -465,17 +465,18 @@ To compute treasure diving in (WB - DungeonScenery03) at (L - a number):
 	say "[line break]Something catches your eye, and you quickly swim toward it... [run paragraph on]";
 	if N > 20:[jewels]
 		let J be a random off-stage plentiful accessory;
-		if J is accessory and L > 1:[You won't find jewels until you go further out]
+		if J is accessory and L > 1 and J is actually summonable:[You won't find jewels until you go further out]
 			if N is 30:[Ruby]
-				 now J is ruby;
+				now J is ruby;
 			otherwise if N >= 27:[emerald]
 				now J is emerald;
 			otherwise:[sapphire]
 				now J is sapphire;
-			say "[bold type]You find a [ClothingDesc of J]![roman type] You take it with you as you swim back to the surface.";
-			now J is carried by the player;
+			set shortcut of J;
+			say "[bold type]You find a [ClothingDesc of J]![roman type] It's too heavy to carry, even underwater, but as you swim back to the surface, it magically teleports onto your body.";
+			summon J;
 		otherwise:
-			say "You find a rusted out piece of jewelery. You leave it behind as you swim back to the surface.";
+			say "You find a rusted out piece of jewellery. You leave it behind as you swim back to the surface.";
 	otherwise if N is 20:[bra]
 		let B be a random off-stage plentiful bra;
 		if B is clothing:
@@ -579,13 +580,14 @@ To compute LakeChase at (swim-location - a number):
 		if debugmode > 0, say "[input style]Checking if monster visibly grabs...[line break]";
 		let S be the swimming challenge of the player;
 		decrease S by a random number between dexterity of the player / 3 and the dexterity of the player;
-		let D be a random number between 10 and 75;
-		if L is swim-location, increase D by 10;
+		let D be a random number between -10 and 75;
+		if L is swim-location, decrease D by 10;
 		if D < S:[You get grabbed]
-			say "[line break]You try to evade, but you aren't fast enough to evade this creature in its own domain! One of its, octopus-like tentacle curls around your ankle and drags you underwater with incredible strength! The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
+			say "[line break]You try to evade, but you aren't fast enough to evade this creature in its own domain! One of its octopus-like tentacle curls around your ankle and drags you underwater with incredible strength! The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 			compute lake tentacle gangbang of M;
 		otherwise:
 			say "[line break]You evade the monster's tentacles for a couple more seconds, but its only a matter of time before it catches you. You have to get out of the water!";
+			compute difficult swimming check in DungeonScenery03.
 
 [If you, the player, haven't noticed the monster, but its watching you, what does it do?]
 To compute LakeStalk at (swim-location - a number):
@@ -594,8 +596,8 @@ To compute LakeStalk at (swim-location - a number):
 	if L is swim-location or (a random number between 1 and -1) + L is swim-location or (L is 1 and swim-location is 0):[under you? Tries to grab you. Otherwise, 1 in 3.]
 		if debugmode > 0, say "[input style]Checking if monster secretly grabs...[roman type][line break]";
 		let S be the swimming challenge of the player;
-		let D be a random number between 5 and 70;[Slightly easier for the player to dodge, since the monster is being sneaky, but still harder since the monster is being sneaky and doesn't let you use dexterity]
-		if L is swim-location, increase D by 10;
+		let D be a random number between -15 and 70;[Slightly easier for the player to dodge, since the monster is being sneaky, but still harder since the monster is being sneaky and doesn't let you use dexterity]
+		if L is swim-location, decrease D by 10;
 		if D < S:[You get grabbed]
 			say "[line break]You feel something slimy brush against your leg, and look down just in time to see a thick, octopus-like tentacle curl around your ankle. Its incredibly strong, and it drags you underwater without giving you a chance to escape! The slimy tentacle keeps its grip on your ankle as it slowly slides around and up your leg.";
 			compute lake tentacle gangbang of M;
@@ -621,20 +623,6 @@ To say LakeShadowFlav of (W - DungeonScenery03):
 		now a random lake monster is in the location of the player;
 	otherwise:
 		say "You notice something deep beneath the water.".
-
-To compute swimming fatigue check in (WB - DungeonScenery03):
-	let X be the strength of the player * 7;
-	if the fatigue of the player >= X:[You're too tired. If the tentacle monster is around, it will catch you, but otherwise you faint.]
-		let M be a random lake monster;
-		if M is lake-stalking:
-			say "You're too tired, and strength leaves your limbs as you begin to pass out. A sudden tug on your ankle snaps you back to alertness, and you look down to see a thick, octopus-like tentacle dragging you deeper with incredibly strength. Your slimy [']savior['] keeps its grip on your ankle as it slowly slides around and up your leg.";
-			compute lake tentacle gangbang of M;
-		otherwise:
-			say "You're too tired, and strength leaves your limbs as you slowly sink beneath the water. You pass out.";
-			now delayed fainting is 1;
-			now the fainting reason of the player is 19;
-	otherwise:
-		describe swimming fatigue for X.
 
 To compute lake tentacle gangbang of (L - lake monster):
 	cutshow figure of lake monster cutscene 1 for L;

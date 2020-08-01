@@ -120,6 +120,7 @@ slowSexAddiction is a number that varies.
 To SlowSexAddictUp (X - a number):
 	let slowSexAddictionLimit be 0[ - diaper quest];
 	if the player is a pervert, increase slowSexAddictionLimit by 1;
+	if the class of the player is cheerleader, increase slowSexAddictionLimit by 2;
 	if the player is a nympho, increase slowSexAddictionLimit by (the sex addiction of the player - 13) / 2; [nymphos love orgasms so much that it takes a long time for their nymphomania to get even worse]
 	if debugmode > 0, say "Sex addiction threshold is [slowSexAddictionLimit] ticks.";
 	while X > 0:
@@ -206,7 +207,7 @@ REQUIRES COMMENTING
 To RandomAddictUp (X - a number):
 	while X > 0:
 		let N be a random number between 0 and 4;
-		if N is 3 and the player is male, now N is 1;
+		if N is 3 and the player is not possessing a vagina, now N is 1;
 		if N is 4 and the largeness of breasts < 5, now N is 2;
 		if diaper quest is 1, now N is 0;
 		if N is 0, SexAddictUp 1;
@@ -224,7 +225,7 @@ REQUIRES COMMENTING
 To FuckholeAddictDown (X - a number):
 	while X > 0:
 		let N be a random number between 1 and 2;
-		if N is 1 and the player is female, VaginalSexAddictDown 1;
+		if N is 1 and the player is possessing a vagina, VaginalSexAddictDown 1;
 		otherwise AnalSexAddictDown 1;
 		decrease X by 1.
 

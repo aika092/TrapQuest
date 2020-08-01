@@ -110,6 +110,8 @@ To say MonsterComment of (M - a sex doll):
 To set up (M - a sex doll):
 	reset M;
 	now the monstersetup of M is 1;
+	add squirt dildo to the banishItems of M, if absent;
+	add piece-of-rubber to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -455,20 +457,5 @@ To say BanishFleeFlav of (M - a sex doll):
 				silently try kneeling;
 	otherwise:
 		say "The doll deflates and disappears.".
-
-To loot (M - a sex doll):
-	let S be a random off-stage squirt dildo;
-	let R be a random off-stage piece of rubber;
-	if R is a thing:
-		say "All that remains of its latex body is a single piece of rubber.";
-		now R is in the location of the player;
-		compute autotaking R;
-		increase the loot dropped of M by 1;
-	if S is a thing:
-		say "A [S] is [if R is a thing]also [end if]left behind.";
-		now S is in the location of the player;
-		compute autotaking S;
-	otherwise:
-		standard loot M.
 
 Sex Doll ends here.

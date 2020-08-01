@@ -701,8 +701,8 @@ The shopkeeper jab rule is listed in the shopkeeper jab rules.
 
 To compute happy reward of (M - shopkeeper):
 	if M is friendly:
-		let C be a random held store clothing;
-		if C is clothing:
+		let C be a random held store thing;
+		if C is a thing:
 			if the favour of M - the aggro limit of M > a random number between 1 and the price of C:
 				now C is unowned;
 				say "[speech style of M]'That was incredible! Go on, take the [ShortDesc of C], it's yours. And [please] do come again!'[roman type][line break]";
@@ -805,10 +805,6 @@ To say DQSpankResistReactionFlav of (M - shopkeeper):
 To say DQSpankResistExtensionFlav of (M - shopkeeper):
 	say "[BigNameDesc of M] looks frustrated.[line break][speech style of M]'[one of][NameBimbo], we got a sale going on today, 3 struggles gets you 10 free lashes!'[or]Oh, I guess that means you want even more?'[cycling][roman type][line break]".
 
-To compute stealing of (C - a clothing):
-	if C is not stolen:
-		now C is stolen;
-		progress quest of stealing-quest.
 
 Section 3 - Damage
 
@@ -994,8 +990,9 @@ talk-shopkeeper-discount is a talk-object.
 
 To consider (T - talk-shopkeeper-discount) for (M - a monster):
 	if M is shopkeeper and discount is 0 and M is interested and diaper quest is 0 and M is friendly:
-		now the printed name of T is the substituted form of "[shopkeeperDiscountQuestion]";
-		set next numerical response to the substituted form of "[printed name of T]";
+		let Q be the substituted form of "[shopkeeperDiscountQuestion]";
+		now the printed name of T is Q;
+		set next numerical response to Q;
 
 To say shopkeeperDiscountQuestion:
 	if the bimbo of the player < 6:
@@ -1003,7 +1000,7 @@ To say shopkeeperDiscountQuestion:
 	otherwise:
 		say "'[one of]Is there anything a [boy of the player] can do to get a discount around here?[or]So, what would I have to do for a discount?'[or]I'm dying to get into some of these clothes, but I just don't have the money for it right now. Oh well...'[or]Is there something I can do to lower some of these prices?[if the bimbo of the player > 12] With my body, maybe?'[otherwise]'[end if][at random]";
 
-To execute (T - talk-shopkeeper-discount):
+To execute (T - talk-shopkeeper-discount) for (M - a monster):
 	say "[speech style of shopkeeper]'[one of]Heh, you are a slutty one aren't you. Tell you what, if you can take this whole length in your mouth, I'll give you a small discount for a while.'[or]How can I refuse to let you try again after last time! I'm definitely ready for another round.'[stopping][roman type][paragraph break]Give it a go? ";
 	if the player is bimbo consenting:
 		now keriaxshopblow is 1;
@@ -1083,7 +1080,7 @@ To compute friendly drink of (M - shopkeeper):
 			if a random number between 1 and 5 > 3, now L is cursed;
 			allocate 6 seconds;
 			now L is sure;
-			say "[speech style of M]'Haha, excellent, well here's your drink, and let me just slip these on you...'[roman type][line break]You feel refreshed! But then the shopkeeper gets busy with your end of the deal. The latex is pulled up your legs and the [if the player is male]plug goes[otherwise]plugs go[end if] in. [if L is cursed]As soon as it's fully in, it immediately starts vibrating! You can tell by the shopkeeper's face [he of M] has no idea what's going on.[line break][speech style of M]'Hmm, I've never seen that happen before. How weird. Oh well, all the more to enjoy, right?'[roman type][line break]It would appear that these panties are cursed![otherwise]Luckily [he of M] never made a deal for how long you had to wear them, so you guess you can just take them off whenever you want?[end if]";
+			say "[speech style of M]'Haha, excellent, well here's your drink, and let me just slip these on you...'[roman type][line break]You feel refreshed! But then the shopkeeper gets busy with your end of the deal. The latex is pulled up your legs and the [if the player is not possessing a vagina]plug goes[otherwise]plugs go[end if] in. [if L is cursed]As soon as it's fully in, it immediately starts vibrating! You can tell by the shopkeeper's face [he of M] has no idea what's going on.[line break][speech style of M]'Hmm, I've never seen that happen before. How weird. Oh well, all the more to enjoy, right?'[roman type][line break]It would appear that these panties are cursed![otherwise]Luckily [he of M] never made a deal for how long you had to wear them, so you guess you can just take them off whenever you want?[end if]";
 			while the player is thirsty:
 				StomachUp 1;
 			StomachUp 2;
@@ -1128,130 +1125,92 @@ To blowjob dominate (M - shopkeeper):[TODO: incorporate a bj here]
 		moderateDignify;
 		passively stimulate penis from M times 2.
 
-To ride dominate (M - a shopkeeper):
-	say "You force [NameDesc of M] to the ground, straddling [him of M] as you stroke [his of M] [LongDickDesc of M]. [PowerBottomComment of M] The shopkeeper raises an eyebrow. [line break][speech style of M][if the class of the player is cheerleader]'This is actually one of my biggest fantasies. I feel like it would be more fun for both of us if I were on top, though.'[otherwise if the class of the player is vixen]'There[']s no way you[']re going to tire me out enough to steal everything. I won[']t fall for that again!'[otherwise]'I had a feeling that's what this was about, but if you wanted to fuck you could have just asked.'[end if][roman type][line break]";
-	now refractoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
-	if the player is not possessing a vagina and player-fucker is asshole, anal ride dominate M;
-	otherwise vaginal ride dominate M.
-
 [IMPORTANT: The shopkeeper needs to be full health, friendly, and a lot more difficult immediately after sex ends.]
-To vaginal ride dominate (M - shopkeeper):[The shopkeeper dominant sex is more about him seducing you. You always get a discount, but it's smaller the less of [his of M] cum you dealt with. The more you get seduced, the more you get a discount]
-	let V be the vaginal sex addiction of the player * 2;
-	let Ofit be the openness of vagina - the girth of M;
-	now M is penetrating vagina;
-	say "You hold [his of M] shaft firmly, [if Ofit < -1]grunting quietly under your breath[otherwise if Ofit < 2]sighing[otherwise]humming happily[end if] as you guide the first few inches into your [vagina]. It's huge. [if Ofit < -1]It's not that you're tight (You [i]are[/i] tight), it's that [he of M]'s hung like an elephant, and[otherwise if Ofit < 2]You're not that tight, but [he of M]'s still hung like an elephant, and pretty[otherwise]You're pretty loose, but you know a big piece of meat when you feel one and this one is not just [i]big[/i], it's[end if] excited too.";
+To ride dominate (M - shopkeeper):
+	let F be player-fucker;
+	let Ofit be the openness of F - the girth of M;
+	say "You force [NameDesc of M] to the ground, straddling [him of M] as you stroke [his of M] [LongDickDesc of M]. [PowerBottomComment of M] The shopkeeper raises an eyebrow. [line break][speech style of M][if the class of the player is cheerleader]'This is actually one of my biggest fantasies. I feel like it would be more fun for both of us if I were on top, though.'[otherwise if the class of the player is vixen]'There[']s no way you[']re going to tire me out enough to steal everything. I won[']t fall for that again!'[otherwise]'I had a feeling that's what this was about, but if you wanted to fuck you could have just asked.'[end if][roman type][line break]You hold [his of M] [manly-penis] firmly, [if Ofit < -1]grunting quietly under your breath[otherwise if Ofit < 2]sighing[otherwise]humming happily[end if] as you guide the first few inches into your [variable F]. [if Ofit < -1]It already feels like its going to split you in half, and if being huge wasn't enough[otherwise if Ofit < 2]It fills you up completely, but it doesn't stop at being big[otherwise]It doesn't quite fill you up completely, but you know a big piece of meat when you feel one and this one isn't just [i]big[/i][end if], it's excited too.";
+	now M is penetrating F;
 	calm M;[This is done first so favour increases have a chance to stick]
-	if V <= 3:[total dominance]
-		ruin vagina times 1;
-		say "It would be so easy to give in and worship that monster, but [if Ofit < 2]you're in control[otherwise]you've still had bigger[end if]. You lower your hips, driving inch by inch of big, [if interracial fetish is 1]black[otherwise]throbbing[end if] shaft even deeper inside you. Giving in would be so easy, but you don't. You notice [him of M] starting to get one of [his of M] hands free, and immediately grab it and slam it to the ground. [line break][variable custom style]'[one of]No.'[or]Forgetting who is in charge?'[or]Naughty.'[at random][roman type][line break] You lick your lips, yanking [his of M] other hand out from underneath [him of M] and pinning that too. [big he of M] looks up at you with hints of defiance in [his of M] features, but far more arousal. You resume the movement of your hips, never losing eye contact as you fuck yourself with [his of M] towering [DickDesc of M]. You relish every moment of control, pleasure, and big ass [manly-penis], moaning shamelessly as you ride your fucktoy right to the edge. [big he of M]'s getting close when you cum, bucking powerfully as you spray [his of M] chiselled belly with feminine juices, but still just far enough from the edge that you're able to satisfy yourself and pull off before [he of M] has a chance to finish. You don't release your grip. [line break][variable custom style]'[one of]Discount. Now, or I leave you like this.'[or]Oh, are you frustrated? I could help you, if you'd drop your prices some.'[or]If you want to cum, you're going to give me a price cut. Now.'[at random][roman type][line break] [big he of M] considers [his of M] options for a moment, then nods. You grin, [if M is wrapped]peeling off the condom[otherwise]releasing [him of M][end if] and wrapping both hands around [his of M] [DickDesc of M], giving it a tiny kiss on the tip as you pump [him of M] to an explosive orgasm, which splatters liberally over your surroundings.";
-		say AfterDominationComment 1 of M;
-		orgasm;
-		SemenPuddleUp the semen load of M;
-		orgasm M;
-		now discount is 50;
-		severeDignify;
-	otherwise if V <= 7 or face is not actually occupied:[partial dominance]
-		ruin vagina times 2;
-		say "It's hard not to give in and start worshipping that monster immediately, but [if Ofit < 2]you're still in control[otherwise]you've had bigger[end if]. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] slips one hand out from underneath [him of M], [if the largeness of breasts < 3]sensually tweaking your nipples[otherwise]tenderly palming your [ShortDesc of breasts][end if] as [he of M] begins to thrust. You yank [his of M] hand away and pin it on the ground next to [him of M], but the tingle of [his of M] strong fingers on your skin remains. [line break][variable custom style]'[one of]H-hey, I'm in charge.'[or]S-stop that.'[or]D-don't do that.'[at random][roman type][line break] You notice yourself beginning to match [his of M] pace as [he of M] speeds up, and you can't bring yourself to stop [him of M] as [his of M] other hand slips free and starts [if asshole is not actually occupied]fingering[otherwise]squeezing[end if] your ass. Your chests rise and fall together, tingles radiating up your spine as [he of M] fucks you harder and harder [line break][variable custom style]'[one of]Yes! Fuck me[or]Yes! Omigosh yes[or]Yes! Yes! Just like that[at random]![roman type][line break][big his of M] [Dickdesc of M] stiffens inside you, and as [his of M] breathing runs ragged, yours does too. You realise you're going to cum. You're going to cum all over [his of M] [LongDickdesc of M].[line break][variable custom style]'[one of]Oh fuck! Shit! Fuck! Shit! Fuck! OH FuuUUuuUck[or]Oh fuck! Fuck! FUUUCK! FuuUUuuUck-[or]Oh shit! Fuck! YES! YeeeEEEeeesss-[at random]!'[roman type][line break]Your nails dig into [his of M] shoulders as [he of M] slams [himself of M] home, groaning with pleasure as [he of M] [if M is wrapped]floods the condom[otherwise]paints your inner walls[end if] with wave after wave of fresh, warm [semen]. [big he of M] continues thrusting slowly as girlcum trickles down your thighs, sighing as you slow down and pull off.";
-		say AfterDominationComment 2 of M;
-		orgasm;
-		if M is unwrapped, PussyFill the semen load of M;
-		orgasm M;
-		now discount is 100;
-		slightDignify;
-		now player-fucking is DOMINANT-NEUTRAL;
-	otherwise:[blacked;my hips are moving on their own!!!1!]
-		ruin vagina times 3;
-		say "It's hard not to want to be on the bottom, but you[']re still in control. Definitely. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] seems to notice that you're distracted, slipping one hand out from under [his of M] body, and casually moving it up your outer thigh, giving your [AssDesc] a firm swat as [he of M] begins to thrust. You want to stop [him of M], but it's like [his of M] fingertips are made of electricity; Every movement of [his of M] hands sends a shiver of excitement up your spine, and it doesn't really help that your hips have already begun to match [his of M] pace. Tingles ripple through your body as [his of M] hands sensually [if the largeness of breasts < 5]palm your [ShortDesc of Breasts][otherwise]rove your [ShortDesc of Breasts][end if], driving you mad with sensation as you shamelessly impale yourself on [his of M] shaft. You feel [him of M] stiffening slightly inside you, and as [his of M] breathing runs ragged, yours does too. You realise [he of M]'s going to cum. [big his of M] [LongDickDesc of M] is about to explode! [line break][variable custom style]'[one of]Yes! Cum inside me! Please cum inside me[or]Yes! Omigosh yes[or]Yes! Yes! Cum inside me[at random]![roman type][line break]";
-		now player-fucking is DOMINANT-SHAMEFUL;
-		if face is actually occupied:[TODO: check that incorporates BBC addiction]
-			say "[big he of M] groans, grabbing your hips as [he of M] cums with all the force of an avalanche. All movement stops, aside from the twitching of [his of M] shaft as [if M is wrapped]the condom captures wave after wave of warm [semen][otherwise][he of M] plants wave after wave of [semen] deep inside your [vagina][end if]. You savour the feeling of [if M is wrapped]the warm, stretchy bulge slipping[otherwise]warmth running[end if] out of you as you slowly pull off [him of M]. Every nerve in your body feels like it's on fire.";
-			Arouse 4000;
-			orgasm M;
-			FavourUp M by 1;
+	now refractoryperiod is 1; [Ensures the player does not orgasm too early during the scene]
+	let R be the semi-dominance roll for M;
+	if R > 10:[total dominance]
+		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+		ruin F times 1;
+		say "It would be so easy to give up and just worship this monster, but [if Ofit < 2]you're in control[otherwise]you've still had bigger[end if]. You lower your hips, driving inch by inch of big, [if interracial fetish is 1]black[otherwise]throbbing[end if] shaft even deeper inside you. Noticing [him of M] starting to get one of [his of M] hands free, and you immediately grab it and slam it to the ground. [if the player is able to speak][line break][variable custom style]'Did you forget I was in charge?'[roman type][line break]You smirk[otherwise]You throw [him of M] a silent look of disapproval[end if] as you yank [his of M] other hand out from underneath [him of M] and pin it down too. [big he of M] looks up at you with hints of defiance in [his of M] features, but far more arousal. You resume the movement of your hips, never losing eye contact as you fuck yourself with [his of M] towering shaft. [run paragraph on]";
+		unless the player is possessing a penis:
+			say "You relish every moment of control, pleasure, and [LongDickDesc of M], moaning shamelessly as you ride your fucktoy to a supremely satisfying climax. [big his of M] shaft begins to twitch ominously as [if the player is possessing a vagina]you spray [his of M] chiseled abdomen with feminine juices[otherwise]your arousal clears[end if], and you quickly pull off before [he of M] has a chance to finish. You don't release your grip. ";
+			now refractoryperiod is 0;
+			orgasm;
+			say "[line break][variable custom style]'Discount. Now, or I leave you like this.'[roman type][line break] [big he of M] considers [his of M] options for a moment, then nods. You grin, wrapping both hands around [his of M] [DickDesc of M] as you pump [him of M] to an explosive orgasm, which [if M is wrapped]is collected neatly in a creamy bulge at the end of the condom[otherwise]splatters liberally over your surroundings.[end if]";
 		otherwise:
-			if M is wrapped:
-				say "[big he of M] groans, grabbing your hips as [he of M] cums with all the force of an avalanche. All movement stops, aside from the twitching of [his of M] shaft as the condom captures wave after wave of warm [semen].[line break][second custom style]I have to taste it.[roman type][line break]You pull off [him of M] slowly, savouring the feeling of the warm, stretchy bulge slipping out of you as you kneel down in front of [him of M], one hand buried in your [vagina] as you peel the latex sheath from [his of M] softening [manly-penis] and eagerly dump its contents into your mouth. The feeling of fresh [semen] hitting your tongue is just enough to put you over the edge, and girlcum trickles down your thighs as you swallow it all in one gulp.";
-				orgasm;
-				orgasm M;
-				StomachSemenUp the semen load of M;
-			otherwise:
-				say "[big he of M] groans, grabbing your hips as [he of M] cums with all the force of an avalanche. All movement stops, aside from the twitching of [his of M] shaft as [he of M] plants wave after wave of [semen] deep inside your [vagina].[line break][second custom style]I have to taste it.[roman type][line break]You pull off [him of M] slowly, savouring the feeling of warmth running out of you as you kneel down in front of [him of M], one hand buried in your thoroughly creampied [vagina] as you wrap your lips around [his of M] glistening shaft. It's a little hard to get your mouth around it, but it's softening, and you're motivated. You go over the edge almost immediately, moaning through a mouthful of cockmeat as a mixture of [semen] and girlcum trickle down your thighs.";
-				BlowCount;
-				orgasm;
-				PussyFill (the semen load of M - 2);
-				orgasm M;
-				StomachSemenUp 2;
-			FavourUp M by 2;
-		say AfterDominationComment 3 of M;
-		slightDignify;
-		now discount is 1000;
-	FuckCount.
-
-To anal ride dominate (M - shopkeeper):
-	let V be the anal sex addiction of the player * 2;
-	let Ofit be the openness of asshole - the girth of M;
-	now M is penetrating asshole;
-	say "You hold [his of M] [manly-penis] firmly, [if Ofit < -1]grunting quietly under your breath[otherwise if Ofit < 2]sighing[otherwise]humming happily[end if] as you guide the first few inches into your [asshole]. It's huge. [if Ofit < -1]It's not that you're tight (You [i]are[/i] tight), it's that [he of M]'s hung like an elephant, and[otherwise if Ofit < 2]You're not that tight, but [he of M]'s still hung like an elephant, and pretty[otherwise]You're pretty loose, but you know a big piece of meat when you feel one and this one isn't just [i]big[/i], it's [end if] excited too.";
-	calm M;[This is done first so favour increases have a chance to stick]
-	if V <= 3:[total dominance]
-		say "It would be so easy to give in and worship that monster, but you're not interested in feeling guilty. You lower your hips, driving inch by inch of big, [if interracial fetish is 1]black[otherwise]throbbing[end if] shaft even deeper inside you. Giving in would be so easy, but as much as you're looking forward to this, you're doing this your way. You notice [him of M] starting to get one of [his of M] hands free, and immediately grab it and slam it to the ground. [line break][variable custom style]'[one of]No, you're going to fuck me MY way.'[or]Not so fast.'[or]Nice try, but I[']m running this show.'[at random][roman type][line break] You yank [his of M] other hand out from underneath [him of M] and pin that as [he of M] looks up at you with a mix of defiance and arousal written across [his of M] features. You resume the movement of your hips, never losing eye contact as you fuck yourself with [his of M] towering [manly-penis]. [if there is a worn chastity cage]Your tiny cage bobs with as much enthusiasm as it can, leaking a steady stream of precum[otherwise if the size of penis > 4]Your rock hard [ShortDesc of penis] periodically taps [his of M] belly, leaving a splotch of precum on [his of M] skin[otherwise if the player is possessing a penis]Your rock hard [ShortDesc of penis] bobs gently, drooling precum[otherwise]Arousal swirls and bubbles around inside of you[end if] as you slowly pick up speed, panting faster and faster as your anal muscles begin to rapidly tense and relax. [big his of M] cockhead keeps right on punching your prostate, as [if there is a worn chastity cage or the size of penis <= 4]you dribble [semen] in an erratic zig zag on [his of M] crotch and abs[otherwise if the player is possessing a penis]spray [semen] liberally across [his of M] belly and chest[otherwise]you moan uncontrollably[end if], coming down off your orgasm as [he of M] gets ready to have one of [his of M] own.";
-		orgasm;
-		ruin asshole times 1;
-		say "You quickly pull off before [he of M] has a chance to finish, maintaining the grip you have on [his of M] wrists. [line break][variable custom style]'[one of]I'm going to help you finish, but first I want a discount.'[or]I know these prices are fucked anyway, so I'll help you cum if you give me a discount.'[or]I just came on you so it's only fair if I help you finish, but I want a discount first.'[at random][roman type][line break] [big he of M] seems to consider [his of M] options for a moment, then nods. You grin, [if M is wrapped]peeling off the condom[otherwise]releasing [him of M][end if] and wrapping both hands around [his of M] [DickDesc of M], facing it toward [him of M] as you bring [him of M] to an explosive orgasm, which splatters liberally over everything in the vicinity.";
+			say "[if there is a worn chastity cage]Your tiny cage bobs with as much enthusiasm as it can, leaking a steady stream of precum[otherwise if the size of penis > 4]Your rock hard [ShortDesc of penis] periodically taps [his of M] belly, leaving a splotch of precum[otherwise]Your rock hard [ShortDesc of penis] bobs gently, drooling precum[end if] as you slowly pick up speed, panting faster and faster as your anal muscles begin to rapidly tense and relax. [big his of M] [cockhead of M] keeps right on [if F is asshole]punching your prostate[otherwise]stroking your g-spot[end if] as [if there is a worn chastity cage or the size of penis <= 4]your precum slowly turns white, dribbling out in an erratic zig-zag on [his of M] crotch and abs[otherwise]your [semen] sprays liberally across [his of M] belly and chest[end if], [his of M] shaft twitching ominously as [he of M] closes in on an orgasm of [his of M] own.";
+			now refractoryperiod is 0;
+			orgasm;
+			say "[line break][variable custom style]'I'm going to help you finish, but first I want a discount.'[roman type][line break] [big he of M] considers [his of M] options for a moment, then nods. You grin, wrapping both hands around [his of M] [DickDesc of M] as you pump [him of M] to an explosive orgasm, which [if M is wrapped]is collected neatly in a creamy bulge at the end of the condom[otherwise]splatters liberally over your surroundings.[end if]";
 		say AfterDominationComment 1 of M;
 		SemenPuddleUp the semen load of M;
 		orgasm M;
-		now discount is 75;[male player was nicer so they get it longer]
+		now discount is 75;
 		severeDignify;
-	otherwise if V <= 7:[partial dominance]
-		say "It's hard not to give in and start worshipping that monster immediately, but you're still supposed to be a guy. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] slips one hand out from underneath [him of M], [if the largeness of breasts < 3]sensually tweaking your nipples[otherwise]tenderly palming your [ShortDesc of breasts][end if] before moving down your body, squeezing your ass as [he of M] begins to thrust. You yank [his of M] hand away and pin it on the ground next to [him of M], but you know your haemorrhaging control of the situation. [line break][variable custom style]'[one of]D-don't do that again.'[or]I w-won't let you get away with that again.'[or]I don't care how b-big your dick is, you do this my way'[at random][roman type][line break] Nonetheless, you realise your own hips are already matching [his of M] pace, and you can't bring yourself to stop [him of M] as [his of M] other hand slips free and starts groping your ass. [if there is a worn chastity cage]Your tiny cage bobs almost tauntingly[otherwise if the size of penis > 4]Your rock hard [ShortDesc of penis] thumps [his of M] unhelpfully[otherwise if the player is possessing a penis]Your rock hard [ShortDesc of penis] bobs pitifully[otherwise]You pant, trying not to ogle [his of M] sexy muscles[end if] as [he of M] speeds up, fighting off your own desire to let [him of M] flip you over and take you how [he of M] pleases. [line break][variable custom style]'[one of]Faster[or]Fuck me harder[or]Fuck me faster[at random]![roman type][line break][big he of M] obeys, and so do you, but [he of M] doesn't just fuck you harder, you feel [him of M] getting harder too. You feel your prostate tightening up. [big he of M] slips [his of M] hand from your grip, grabbing your waist with both hands as [he of M] fucks you harder and harder, hitting your delicate little sissy button with relentless abandon. It's too much for you, and you feel your anal muscles rapidly tensing and relaxing as [he of M] slams [himself of M] home, groaning with pleasure as [he of M] [if M is wrapped]floods the condom[otherwise]paints your insides[end if] with wave after wave of fresh, warm [semen].";
-		if M is unwrapped, AssFill the semen load of M;
-		orgasm M;
+	otherwise if R >= -10:[partial dominance; R is between 10 and -10 (inclusive)]
+		if debugmode > 0, say "[bold type]PARTIALLY PASSED[roman type][line break]";
+		ruin F times 2;
+		say "It's hard not to immediately give up and start worshipping this monster, but you know you can't waste this chance. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] takes advantage of your distraction to slip one hand out from underneath [him of M], [if the largeness of breasts < 3]sensually tweaking your nipples[otherwise]tenderly palming your [ShortDesc of breasts][end if] as [he of M] begins to thrust. You quickly smack [his of M] hand away, but the tingle of [his of M] strong fingers on your skin remains.[line break][variable custom style]'D-don't... Don't do that.'[roman type][line break][BigNameDesc of M] begins to thrust faster, and your hips naturally move to match [his of M] pace. Although you just told [him of M] not to, you can't bring yourself to stop [him of M] as [his of M] other hand slips free and starts [if asshole is not actually occupied and F is not asshole]fingering[otherwise]squeezing[end if] your ass. [run paragraph on]";
+		if the player is not possessing a penis:
+			say "You pant, trying not to ogle [his of M] sexy muscles as you fuck each other harder and harder, fighting off your own desire to let [him of M] flip you over and take you how [he of M] pleases. You feel [him of M] stiffening slightly inside you, and as [his of M] breathing runs ragged, yours does too. You realize [he of M]'s about to cum, and so are you. [line break][variable custom style]'OOOOH-!'[roman type][line break]You scream with pleasure as [he of M] slams [himself of M] home, [if the player is possessing a vagina]squirting out femcum[otherwise]tingles radiating up and down your spine[end if] as [he of M] [if M is wrapped]floods the condom[otherwise]stuffs your [variable F][end if] with wave after wave of fresh, warm [semen]. [big he of M] continues thrusting slowly as [if the player is possessing a vagina]girlcum trickles down your thighs[otherwise]the pleasure slowly subsides[end if], sighing as you slow down and pull off.";
+		otherwise:
+			say "[if there is a worn chastity cage]Your tiny cage bobs almost tauntingly[otherwise if the size of penis > 4]Your rock hard [ShortDesc of penis] taps [him of M] unhelpfully[otherwise if the player is possessing a penis]Your rock hard [ShortDesc of penis] bobs pitifully[end if] as you fuck each other harder and harder, fighting off your own desire to let [him of M] flip you over and take you how [he of M] pleases. You feel [him of M] stiffening slightly inside you, and as [his of M] breathing runs ragged, yours does too. You realize [he of M]'s about to cum, and so are you. [line break][variable custom style]'OOOOH-!'[roman type][line break]You scream with pleasure as [he of M] slams [himself of M] home, [if there is a worn chastity cage or the size of penis < 4]squirting out a tiny load on [his of M] belly[otherwise]painting [his of M] belly with your load[end if] as [he of M] [if M is wrapped]floods the condom[otherwise]stuffs your [variable F][end if] with wave after wave of fresh, warm [semen]. [big he of M] continues thrusting slowly as the pleasure slowly subsides, sighing as you slow down and pull off.";
+		now refractoryperiod is 0;
 		orgasm;
-		ruin asshole times 2;
-		say "It's hard not to give in and start worshipping that monster immediately, but you're still supposed to be a guy. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] slips one hand out from underneath [him of M], [if the largeness of breasts < 3]sensually tweaking your nipples[otherwise]tenderly palming your [ShortDesc of breasts][end if] before moving down your body, squeezing your ass as [he of M] begins to thrust. You yank [his of M] hand away and pin it on the ground next to [him of M], but you know your haemorrhaging control of the situation. [line break][variable custom style]'[one of]D-don't do that again.'[or]I w-won't let you get away with that again.'[or]I don't care how b-big your dick is, you do this my way'[at random][roman type][line break] Nonetheless, you realise your own hips are already matching [his of M] pace, and you can't bring yourself to stop [him of M] as [his of M] other hand slips free and starts groping your ass. [if there is a worn chastity cage]Your tiny cage bobs almost tauntingly[otherwise if the size of penis > 4]Your rock hard [ShortDesc of penis] thumps [his of M] unhelpfully[otherwise if the player is possessing a penis]Your rock hard [ShortDesc of penis] bobs pitifully[otherwise]You pant, trying not to ogle [his of M] sexy muscles[end if] as [he of M] speeds up, fighting off your own desire to let [him of M] flip you over and take you how [he of M] pleases. [line break][variable custom style]'[one of]Faster[or]Fuck me harder[or]Fuck me faster[at random]![roman type][line break][big he of M] obeys, and so do you, but [he of M] doesn't just fuck you harder, you feel [him of M] getting harder too. You feel your prostate tightening up. [big he of M] slips [his of M] hand from your grip, grabbing your waist with both hands as [he of M] fucks you harder and harder, hitting your delicate little [sissy] button with relentless abandon. It's too much for you, and you feel your anal muscles rapidly tensing and relaxing as [he of M] slams [himself of M] home, groaning with pleasure as [he of M] [if M is wrapped]floods the condom[otherwise]paints your insides[end if] with wave after wave of fresh, warm [semen]. [big he of M] continues thrusting slowly as you [if the semen load of the player > 4]paint [his of M] tummy with a load of your own[otherwise if the semen load of the player > 0]drool a tiny load of your own onto [his of M] abs[otherwise]ride through the last of your orgasm[end if], sighing as you slow down and pull off.";
+		if M is unwrapped:
+			if F is asshole, AssFill the semen load of M;
+			otherwise PussyFill the semen load of M;
+		orgasm M;
 		now player-fucking is DOMINANT-NEUTRAL;
 		say AfterDominationComment 2 of M;
 		now discount is 100;
 		slightDignify;
 	otherwise:[blacked]
-		say "It's hard not to want to be on the bottom, but you[']re still in control. Definitely. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] seems to notice that you're distracted, slipping one hand out from under [his of M] body, and casually moving it up your outer thigh, giving your [AssDesc] a firm swat as [he of M] begins to thrust. You want to stop [him of M], but it's like [his of M] fingertips are made of electricity; Every movement of [his of M] hands sends a shiver of excitement up your spine, and it doesn't really help that your hips have already begun to match [his of M] pace. You [if there is a worn chastity cage or the player is not possessing a penis]want desperately to touch yourself, pushing out your chest[otherwise if the size of penis < 4 and the player is possessing a penis]find yourself rubbing your [ShortDesc of penis] with one hand and pushing out your chest[otherwise]find yourself rapidly stroking your [ShortDesc of penis] with both hands[end if] as [he of M] sensually [if the largeness of breasts < 5]palms your [ShortDesc of Breasts][otherwise]plays with your [ShortDesc of Breasts][end if]. You feel [him of M] stiffening slightly inside you, and as [his of M] breathing runs ragged, yours does too. You realise [he of M]'s going to cum. [big his of M] [LongDickDesc of M] is about to explode! [line break][variable custom style]'[one of]Yes! Cum inside me! Please cum inside me[or]Yes! Omigosh yes[or]Yes! Yes! Cum inside me[at random]![roman type][line break]";
+		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+		ruin F times 3;
+		say "It's hard not to want to be on the bottom, but you[']re still in control. Definitely. You lower yourself slowly, [if Ofit < -1]hissing[otherwise if Ofit < 2]groaning[otherwise]moaning[end if] as you cram inch upon inch of big, [if interracial fetish is 1]black[otherwise]hard[end if], shaft deeper and deeper into your hole. [big he of M] seems to notice that you're distracted, slipping one hand out from under [his of M] body, and casually moving it up your outer thigh, giving your [AssDesc] a firm swat as [he of M] begins to thrust. You want to stop [him of M], but it's like [his of M] fingertips are made of electricity; Every movement of [his of M] hands sends a shiver of excitement up your spine, and it doesn't really help that your hips have already begun to match [his of M] pace. Tingles ripple through your body as [his of M] hands sensually [if the largeness of breasts < 5]palm your [ShortDesc of Breasts][otherwise]rove your [ShortDesc of Breasts][end if], driving you mad with sensation as [his of M] [cockhead of M] relentlessly [if F is asshole and the player is possessing a penis]punches your prostate[otherwise if F is vagina]strokes your g-spot[otherwise]strokes your most sensitive spots[end if]. You [if there is a worn chastity cage]want desperately to touch yourself,[otherwise if the player is not possessing a penis]find yourself rubbing your clit and[otherwise if the size of penis < 4]find yourself rubbing your [ShortDesc of penis] with one hand and[otherwise]find yourself rapidly stroking your [ShortDesc of penis] with both hands,[end if] pushing out your chest as [he of M] fucks you harder and harder. At some point you realize [he of M]'s rolled ontop of you, and as [his of M] breathing runs ragged, you feel [him of M] stiffen slightly inside you. You realise [he of M]'s going to cum.";
 		now player-fucking is DOMINANT-SHAMEFUL;
-		ruin asshole times 3;
-		say "[big he of M] groans, grabbing your hips as [he of M] cums with all the force of an avalanche. Your [if there is a worn chastity cage]cage hangs uselessly[otherwise if the player is not possessing a penis]heart thumps in your chest[otherwise if the size of penis < 4][sissy-penis] hangs uselessly over [his of M] belly[otherwise][player-penis] rests uselessly on [his of M] belly[end if] as [if M is wrapped]the condom captures wave after wave of warm [semen][otherwise][he of M] plants wave after wave of [semen] deep inside your [asshole][end if]. [run paragraph on]";
-		if face is actually occupied:[TODO: check that incorporates BBC addiction]
-			say "You savour the feeling of [if M is wrapped]the warm, stretchy bulge slipping[otherwise]warmth running[end if] out of you as you slowly pull off [him of M]. Every nerve in your body feels like its on fire.";
+		let R be the semi-dominance roll for M;
+		if the player is not able to orgasm, now R is 0;
+		if R >= 0:
+			if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
+			say "[line break][variable custom style]Wait! I'm supposed to be in control here! I-I have to stop this before-[roman type][line break][BigNameDesc of M] grabs your hips with both hands, groaning as [he of M] drives every inch into your [variable F] and explodes. And for a moment, all movement stops aside from the twitching of [his of M] shaft, [if M is wrapped]the reservoir at the end of the condom bulging as it captures wave after wave of fresh, warm[otherwise]warmth spreading out inside you as [he of M] fills you with wave after wave of fresh, creamy[end if] [semen]. [line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh, its probably fine.'[roman type][line break]You avert your eyes in shame as [he of M] pulls out.";
+			Arouse 4000;
 			orgasm M;
-			passively stimulate asshole from M times 3;
+			if M is unwrapped:
+				if F is vagina, PussyFill the semen load of M - 1;
+				otherwise AssFill the semen load of M - 1;
 			FavourUp M by 1;
-			if M is unwrapped, AssFill the semen load of M;
 		otherwise:
-			let C be 0;
-			if there is a worn chastity cage or the player is not possessing a penis, now C is 1;
-			if M is wrapped:
-				say "[line break][second custom style]I have to taste it.[roman type][line break] You pull off [him of M] slowly, savouring the feeling of the warm, stretchy bulge inside you as you kneel down in front of [him of M], [if C is 1]half-realising you didn't get to cum[otherwise if the size of penis < 4]rubbing your [sissy-penis] with two fingers[otherwise]pumping away with one hand[end if] as you peel the latex sheath from [his of M] softening [manly-penis] and eagerly dump its contents into your mouth. [if C is 1]You can feel every nerve in your body tingling as you swallow it all in one gulp[otherwise]The feeling of fresh [semen] hitting your tongue is just enough to put you over the edge, and girlcum trickles down your thighs as you swallow it all in one gulp[end if].";
-				if C is 0, orgasm;
-				otherwise passively stimulate asshole from M;[if you're in chastity or you don't have a cock, you don't get to cum]
-				dislodge M;
-				now M is penetrating face;
-				orgasm M;
-				StomachSemenUp the semen load of M;
+			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
+			say "[line break][variable custom style]'Yes! Cum inside me! Please cum inside me!'[roman type][line break][BigNameDesc of M] grabs your hips with both hands, groaning as [he of M] drives every inch into your [variable F] and explodes. And for a moment, all movement stops aside from the twitching of [his of M] shaft, [if M is wrapped]the reservoir at the end of the condom bulging as it captures wave after wave of fresh, warm[otherwise]warmth spreading out inside you as [he of M] fills you with wave after wave of fresh, creamy[end if] [semen].";
+			if M is unwrapped:
+				if F is vagina, PussyFill the semen load of M;
+				otherwise AssFill the semen load of M;
+			orgasm M;
+			if a2m fetish is 0 or face is actually occupied:
+				say "[line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh, I guess it doesn't matter. Lets finish up.'[roman type][line break][big he of M] goes right back to fucking you, groping you even more insistently now that you've stopped pretending to be dominant. You have no time to avert your eyes in shame as [he of M] pounds you straight to a climax!";
+				now refractoryperiod is 0;
+				if F is vagina, vaginally orgasm shamefully;
+				otherwise anally orgasm shamefully;
 			otherwise:
-				say "[line break][second custom style]I have to taste it. I have to taste my ass![roman type][line break] You pull off [him of M] slowly, savouring the feeling of the warmth running out of you as you kneel down in front of [him of M], [if C is 1]half-realising you didn't get to cum[otherwise if the size of penis < 4]rubbing your [sissy-penis] with two fingers[otherwise]pumping away with one hand[end if] as you wrap your lips around [his of M] glistening [manly-penis]. It's a little hard to get your mouth around it, but it's softening, and you're motivated. [if C is 1]You slurp up every last drop of [semen], every nerve in your body tingling as you release [his of M] shaft with a *POP*[otherwise]You go over the edge almost immediately, moaning through a mouthful of cockmeat as your [load] drips onto the floor[end if].";
+				if M is wrapped, say "[line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh, I guess it doesn't matter. Why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, peeling off the condom as [he of M] kneels over your face. You're done pretending to be dominant, and obey without a second thought, one hand [if there is a worn chastity cage or the player is not possessing a penis]buried in your newly empty [variable F][otherwise]wrapped around your [ShortDesc of penis][end if] as you wrap your lips around [his of M] glistening shaft. It's a little hard to get your mouth around it, but it's softening, and you're motivated. You go over the edge almost immediately, moaning through a mouthful of cockmeat as you cover your hands with sexual juices.";
+				otherwise say "[line break][speech style of M]'Oh wait, wasn't I supposed to be the sub? Eh. I guess it doesn't matter. Why don't you get me cleaned up?'[roman type][line break][big he of M] pulls out, [his of M] [LongDickDesc of M] swaying [if interracial fetish is 1]majestically [end if]as [he of M] kneels over your face. You're done pretending to be dominant, and obey without a second thought, one hand [if there is a worn chastity cage or the player is not possessing a penis]buried in your thoroughly creampied [variable F][otherwise]wrapped around your [ShortDesc of penis][end if] as you wrap your lips around [his of M] glistening shaft. It's a little hard to get your mouth around it, but it's softening, and you're motivated. You go over the edge almost immediately, moaning through a mouthful of cockmeat as you cover your hands with [if there is a worn chastity cage or the player is possessing a penis]your and [his of M][otherwise]your[end if] juices.";
 				BlowCount;
-				if C is 0, orgasm;
-				otherwise passively stimulate asshole from M;[if you're in chastity or you don't have a cock, you don't get to cum]
-				AssFill (the semen load of M - 2);
-				dislodge M;
-				now M is penetrating face;
-				orgasm M;
-				StomachSemenUp 2;
-			FavourUp M by 2;[if you didn't get to cum, you did a better job sucking [his of M] dick after]
-		say AfterDominationComment 3 of M;
-		slightDignify;
+				now refractoryperiod is 0;
+				orgasm;
+				if the player is possessing a penis, StomachSemenUp 1;
+			FavourUp M by 2;
+		say AfterDominationComment 3 of M; [In either case, he gives this comment.]
 		now discount is 1000;
-	AnalCount.
+	if F is asshole, AnalCount;
+	otherwise FuckCount.
 
 To replace (M - shopkeeper) after domination:
 	Bore M;
@@ -1293,10 +1252,10 @@ To compute failed dominance punishment of (M - shopkeeper):
 		say "[speech style of M]'First things first.'[roman type][line break]";
 		repeat with T running through worn stolen clothing:
 			say "The shopkeeper yanks off the [T]!";
-			now M is retaining T;
+			now M is carrying T;
 		repeat with S running through held stolen clothing:
 			say "The shopkeeper takes the [S]!";
-			now M is retaining S;
+			now M is carrying S;
 	if Dungeon05 is placed and (the class of the player is cheerleader or the player is getting unlucky):
 		drag to Dungeon05 by M;
 		now another-turn-flavour is the substituted form of "[BigFuckerDesc of M] holds you in place.";
@@ -1367,13 +1326,12 @@ Section 6 - Trading
 
 To compute (M - shopkeeper) considering (T - chess piece):
 	if M is not interested:
-		say "[BigNameDesc of M] isn[']t even looking at you.";
+		say "[BigNameDesc of M] isn't even looking at you.";
 	otherwise:
 		say MonsterOfferAcceptFlav of M to T;
 		say MonsterTakeFlav of M to T;
-		now T is in Holding Pen;
-		now M is retaining T;
-		compute resolution of M taking T.
+		compute resolution of M taking T;
+		destroy T.
 
 To say MonsterOfferAcceptFlav of (M - shopkeeper) to (T - chess piece):
 	if M is unfriendly:
@@ -1391,5 +1349,95 @@ To compute offer reward of (M - a shopkeeper) for (T - chess piece):
 		set shortcut of D;
 		now D is in the location of the player;
 		say "[BigNameDesc of M] pulls a [D] out of [his of M] pouch, and hands it to you.".
+
+Section 7 - Shop Maintenance
+
+
+[!<ThingIsShopEligible>+
+
+Is this something that can appear in the shop?
+
++!]
+Definition: a thing is shop-eligible: decide no.
+
+Definition: a thing (called T) is shop-unique:
+	repeat with C running through store things:
+		if the substituted form of "[ShortDesc of C]" is the substituted form of "[ShortDesc of T]", decide no;
+	decide yes.
+
+[!<ClothingIsShopEligible>+
+
+Is this something that can appear in the shop?
+
++!]
+Definition: a clothing (called C) is shop-eligible:
+	if C is not basic loot, decide no;
+	if C is accessory or C is wrist bond or C is ankle bond or C is diaper, decide no;
+	let X be 0;
+	repeat with P running through store things in Dungeon41:
+		if the price of C is the price of P, increase X by 1;
+	if X < 2, decide yes;
+	decide no.
+
+To Set Up Store:
+	let shop-things be 0;
+	let diaper-stored be 0;
+	repeat with C running through store things in Dungeon41:
+		if C is diaper, increase diaper-stored by 1;
+		otherwise increase shop-things by 1;
+	while diaper lover >= 1 and diaper-stored < 3:
+		let D be a random eligible diaper;
+		if D is diaper:
+			if D is not in Standard Item Pen:
+				clean D;
+				repair D;
+				now D is in Dungeon41;
+				now D is store;
+		increase diaper-stored by 1;
+	if pregnancy fetish is 1 and the number of maternity dress in Dungeon41 is 0:
+		let D be a random off-stage maternity dress;
+		if D is clothing:
+			clean D;
+			now D is in Dungeon41;
+			now D is store;
+			if a random number between 1 and 3 is 1, now D is cursed;
+	let failsafe be 40;
+	while shop-things < 8 and failsafe > 0:
+		decrease failsafe by 1;
+		let L be a random shop-eligible shop-unique thing;
+		now L is in Dungeon41;
+		now L is store;
+		increase shop-things by 1;
+	if the number of trousers in Dungeon41 is 0: [We want at least one pair of trousers]
+		let T be a random off-stage shop-eligible trousers;
+		unless T is nothing:
+			now T is in Dungeon41;
+			now T is store;
+	if designer handbag of holding is off-stage:
+		now designer handbag of holding is in Dungeon41;
+		now designer handbag of holding is store;
+	if catbell is off-stage and doom counter > 0 and doomed < 5:
+		now catbell is in Dungeon41;
+		now catbell is store;
+	repeat with C running through store clothing:
+		decurse C;
+		if the raw-magic-modifier of C < 0, now the raw-magic-modifier of C is 0;
+		now C is sure;
+		now C is identified;
+	repeat with C running through store alchemy product:
+		now C is bland;
+		now C is sure.
+
+A time based rule (this is the shop cycling rule):[TODO: if the player is in the room, describe the shopkeeper restocking everything]
+	if the remainder after dividing time-earnings by 995 < time-seconds:
+		repeat with N running from 1 to 4:
+			let C be a random store thing in Dungeon41;
+			if C is a thing, destroy C;
+		set up store.
+
+To compute stealing of (C - a thing):
+	if C is not stolen:
+		now C is stolen;
+		progress quest of stealing-quest.
 
 Shopkeeper ends here.

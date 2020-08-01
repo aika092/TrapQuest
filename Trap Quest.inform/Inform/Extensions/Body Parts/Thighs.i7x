@@ -2,46 +2,25 @@ Thighs by Body Parts begins here.
 
 Part 1 - Definitions
 
-[!<Thighs>@
-
-REQUIRES COMMENTING
-
-@inherits <Limb>
-
-@!]
 thighs is a limb. thighs is everywhere.
 To say FullExamineDesc of (B - thighs):
 	say "[if weight gain fetish is 1 or the semen coating of thighs > 0][TotalDesc of thighs][otherwise]There's nothing interesting to note about your thighs.[end if]".
 
-[!<Thighs>@<fleshVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 thighs has a number called flesh volume. the flesh volume of thighs is 0.
 
 Understand "thigh", "leg", "legs" as thighs.
 
-[!<DecideWhichNumberIsTheWeightOfThighs>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of (XXX - thighs):
 	let S be the flesh volume of thighs;
 	if the latex-transformation of the player > 1 and S > 0, now S is 0;
 	decide on S.
 
 To decide which object is the concealer of (T - thighs):
-	repeat with C running through worn actually dense thigh covering clothing:
-		decide on C;
-	decide on nothing.
+	decide on a random worn leg covering actually dense clothing.
 
 To decide which object is the at least partial concealer of (T - thighs):
 	if thighs is listed in the armUses of arms, decide on arms;
-	repeat with C running through worn not-see-through thigh covering clothing:
-		decide on C;
-	decide on nothing.
+	decide on a random worn leg covering not-see-through clothing.
 
 Definition: thighs (called B) is spread:
 	if diaper lover <= 0, decide no;
@@ -50,19 +29,9 @@ Definition: thighs (called B) is spread:
 
 Part 2 - Description
 
-[!<SayShortDescOfThighs>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of (T - thighs):
 	say "[if the semen coating of thighs > 6]cum-coated [otherwise if the semen coating of thighs > 0]cum-splashed [end if]thighs".
 
-[!<SayLongDescOfThighs>+
-
-REQUIRES COMMENTING
-
-+!]
 To say LongDesc of (T - thighs):
 	if weight gain fetish is 1:
 		if the flesh volume of thighs > 9:

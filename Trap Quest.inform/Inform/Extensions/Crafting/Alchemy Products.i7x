@@ -5,6 +5,8 @@ An alchemy product is a kind of thing. [We are not going to classify these as 'b
 Definition: an alchemy product is product: decide yes.
 Definition: an alchemy product is magic themed: decide yes.
 
+Definition: an alchemy product is shop-eligible if it is off-stage and it is product and it is fetish appropriate.
+
 An alchemy product has a curse-ID. Understand the curse-ID property as describing an alchemy product. An alchemy product is usually unsure.
 An alchemy product has a magic-curse. Understand the magic-curse property as describing an alchemy product when item described is sure.
 
@@ -26,6 +28,9 @@ To decide which number is the bartering value of (T - an alchemy product) for (M
 	if T is cursed, decide on 1;
 	if T is blessed, decide on 5;
 	decide on 3.
+
+To decide what number is the original price of (C - an alchemy product):
+	decide on 4.
 
 To say MonsterOfferAcceptFlav of (M - witch) to (T - an alchemy product):
 	say "[BigNameDesc of M] gingerly takes it from you.[line break][speech style of M]'[if T is unsure]You couldn't even be bothered to identify it? Well, I guess I can pawn this off to some unexpecting adventurer in the future. I'll take it[otherwise if T is cursed]Don't you think I have enough cursed [ShortDesc of T]s? No, no, I'll take it, just don't expect me to be over the moon or anything[otherwise if T is blessed]Wow, I haven't seen a blessed one of these in decades! I mean... not that I'm that old! Forget I said anything! Anyway, yes, thank you, I'll definitely take this off of your hands[otherwise]Nice, looks like it's in good condition too. Thanks[end if].'[roman type][line break]";
@@ -100,6 +105,9 @@ Carry out SmokeBombing a smoke bomb to a direction:
 					now the favour of M is F; [no favour change]
 				now M is moved; [won't move again this turn]
 		try going the second noun.
+
+To decide what number is the original price of (C - a smoke bomb):
+	decide on 2.
 
 Section 2 - Water Bomb
 
@@ -798,6 +806,9 @@ To BackgroundRender (T - bull-strength-potion) at (X1 - a number) by (Y1 - a num
 To decide which number is the alchemy key of (A - bull-strength-potion):
 	decide on 12.
 
+To decide what number is the original price of (A - bull-strength-potion):
+	decide on 6.
+
 This is the potion of bull strength specific recipe rule:
 	if bull-strength-potion is fetish appropriate:
 		now the Product in row 18 of the Table of Alchemy is 12;
@@ -1082,6 +1093,7 @@ Carry Out PowderRubbing escape-powder on a thing:
 A salve is a kind of alchemy product. Understand "salve", "salve of" as a salve.
 A true salve is a kind of alchemy product. Understand "salve", "salve of" as a true salve.
 A true salve is wearable. A true salve is sure.
+Definition: a true salve is product: decide no.
 
 Definition: a salve is fetish appropriate if diaper quest is 0.
 
@@ -1319,6 +1331,9 @@ To say ShortDesc of (T - a tincture):
 	say "tincture".
 
 Definition: a tincture is drink themed: decide yes.
+
+To decide what number is the original price of (A - a tincture):
+	decide on 7.
 
 Figure of tincture is the file "Items/Collectibles/tincture1.png".
 To decide which figure-name is the examine-image of (V - a tincture):

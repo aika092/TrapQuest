@@ -17,7 +17,7 @@ Section - Greasing the wheels for callbacks
 
 [From John Clemens: http://www.math.psu.edu/clemens/IF/I7tricks.html#command]
 
- To say perform/@ (ph - phrase): (- if (0==0) {ph} -).
+To say perform/@ (ph - phrase): (- if (0==0) {ph} -).
 
 Section - Restart the timer after restoring
 [The state of the timer is not automatically restored, so we must start a timer on restore at the same speed it was running when the game was saved.]
@@ -30,7 +30,10 @@ Section - Restart the timer after undoing
 
 [The state of the timer is not automatically saved with the game state, so we must start a timer after undoing at the same speed it was running when the game state was saved.]
 
-The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the map-window is spawned by the main window and the position of the map-window is g-placeabove][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
+The immediately undo rule response (E) is "[@ reset the Glulx timer][bracket]Previous turn undone.[close bracket][if the map-window is spawned by the main window and the position of the map-window is g-placeabove][@ reset window setting][@ resolve graphics windows mayhem][@ fix window overhang][end if]".
+
+To reset window setting:
+	now previousGUILayout is -1.
 
 To decide what number is glk event handled in (ev - a g-event) context:
 	(- HandleGlkEvent(gg_event, {ev}, gg_arguments) -)

@@ -51,7 +51,7 @@ serving tray is a serving-bondage. serving tray is leather. The printed name of 
 To decide which figure-name is clothing-image of (C - serving tray):
 	decide on figure of serving tray.
 
-Figure of serving tray is the file "Items/Accessories/Other/servingtray1.jpg".
+Figure of serving tray is the file "Items/Accessories/Other/servingtray1.png".
 
 To say ShortDesc of (C - serving tray):
 	say "serving tray".

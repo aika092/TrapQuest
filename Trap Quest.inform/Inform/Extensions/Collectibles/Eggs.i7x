@@ -89,7 +89,6 @@ This is the egg stuffing rule:
 		change the text of the player's command to "finish setting".
 The egg stuffing rule is listed in the statsetting rules.
 
-
 An egg has a number called hatching.
 
 Check attacking egg:
@@ -227,9 +226,9 @@ To decide which number is the outrage of (C - a large egg):
 	decide on 8.
 
 To say ShortDesc of (E - a small egg):
-	say "[if egg laying fetish is 0]ping pong ball[otherwise]small egg[end if]".
+	say "[if egg laying fetish is 0 or the player is in a predicament room]ping pong ball[otherwise]small egg[end if]".
 To say MediumDesc of (E - a small egg):
-	say "[if egg laying fetish is 0]white ping pong ball[otherwise]small spherical egg[end if]".
+	say "[if egg laying fetish is 0 or the player is in a predicament room]white ping pong ball[otherwise]small spherical egg[end if]".
 To say ShortDesc of (E - a medium egg):
 	say "medium egg".
 To say ShortDesc of (E - a large egg):

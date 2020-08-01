@@ -39,7 +39,7 @@ The top hat titfuck rule is listed in the tit slut eligibility rules.
 Chapter - Class Outfit
 
 Definition: rubber top hat (called C) is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is pink rubber dress or wearing-target is platform heels, decide yes;
+	if wearing-target is silicone dress or wearing-target is platform heels, decide yes;
 	decide no.
 
 plastic-summoned is a number that varies.
@@ -47,9 +47,8 @@ To compute unique recycling of (C - rubber top hat):
 	now plastic-summoned is 0.
 
 To compute class outfit of (H - rubber top hat):
-	let R be a random off-stage pink rubber dress;
 	let P be a random off-stage plentiful platform heels; [there are some rare ones we don't want]
-	if R is actually summonable or (R is pink rubber dress and plastic-summoned is 0):
+	if plastic-is-fantastic dress is actually summonable or (plastic-summoned is 0 and the number of worn silicone dress is 0):
 		if plastic-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -61,8 +60,8 @@ To compute class outfit of (H - rubber top hat):
 				say "Your [O] [wardrobeVanishes of O]!";
 				now O is in pink wardrobe;
 		say "[bold type]Your [printed name of H] wobbles violently, and a tight rubber pink dress materialises around you.[roman type][line break]";
-		summon R uncursed;
-		now the raw-magic-modifier of R is the largeness of breasts / 4;
+		summon plastic-is-fantastic dress uncursed;
+		now the raw-magic-modifier of plastic-is-fantastic dress is the largeness of breasts / 5;
 		if the silicone volume of breasts is 0 and the player is not top heavy:
 			let B be the largeness of breasts;
 			while B is the largeness of breasts:

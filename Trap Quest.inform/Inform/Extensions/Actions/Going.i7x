@@ -775,9 +775,9 @@ REQUIRES COMMENTING
 
 +!]
 Carry out going while the player is in Dungeon41 and Dungeon41 is guarded:
-	let X be the number of held stolen clothing;
+	let X be the number of held stolen thing;
 	let flav-said be 0;
-	repeat with C running through store clothing held by the player:
+	repeat with C running through store things held by the player:
 		compute stealing of C;
 		if shopkeeper is not mating:
 			increase the stolen-aware of shopkeeper by 1;

@@ -69,24 +69,24 @@ To say MonsterComment of (M - dominatrix):
 	if the strap-on girth of M < 4:
 		if lady fetish is 2:
 			say "[variable custom style][one of]Why would a guy wear something like that?[or]I guess it's better than a real dick hanging out.[or]I feel safe when I[']m near [him of M], but scared at the same time.[in random order]";
-		otherwise if the player is female and the bimbo of the player < 7:
+		otherwise if the player is gendered female and the bimbo of the player < 7:
 			say "[first custom style][one of]Ugh, how perverted. Even the [men of M] have penises around here.[or]I suppose that[']s one way to keep the men off you. Gross.[or]I have a feeling I don[']t want to mess with this [man of M].[or][big he of M] seems rather taken with that strap-on of [hers of M]. I doubt [he of M][']ll try to violate me with it unless I[']ve done something to please [him of M].[or][big he of M] has the look of someone who is answered to.[in random order]";
-		otherwise if the player is female and the bimbo of the player < 14:
+		otherwise if the player is gendered female and the bimbo of the player < 14:
 			say "[variable custom style][one of]Why does that strapon look so appetising?[or]Why do I feel like I should do anything [he of M] says?[or]I feel safe when I[']m near [him of M], but scared at the same time.[in random order]";
-		otherwise if the player is female:
+		otherwise if the player is gendered female:
 			say "[second custom style][one of]I want to give [his of M] strapon a big sloppy blowjob![or]I[']ll do anything [he of M] says! I hope [he of M] wants something naughty![or]I can tell [he of M] knows all the best ways of having a good time![in random order]";
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]Is that a dildo? Haha, it's pointing the wrong way. Right?[or][big he of M][']s bad news. I[']m not sure I want to risk messing with [him of M].[or]Why do I feel like [he of M] expects something from me?[or][if the size of penis < 1]It's not fair [he of M] gets to have a dick that big and I don[']t even get one![otherwise if the size of penis < 8]That dildo is actually bigger than my dick. Heh...[otherwise]That strapon is actually the size of a real dick... on [him of M] it seems a little bit excessive.[end if][or]That strapon probably isn[']t for [him of M].[in random order]";
-		otherwise if the player is male and the bimbo of the player < 14:
+		otherwise if the player is gendered male and the bimbo of the player < 14:
 			say "[variable custom style][one of][if the size of penis < 1]Maybe if I get on [his of M] good side I can use [his of M] strapon as a replacement penis.[otherwise if the size of penis < 8]That dildo isn't even that big, but it's still bigger than me. Can I really call myself a man if [he of M] can out-compete me with a hunk of plastic?[otherwise]It takes more than a hunk of plastic to out-compete me! Even if I don[']t really deserve a penis this big...[end if][or]All I can think about when I look at [him of M] is how much more of a man [he of M] is than me.[or]I really want to know what [his of M] strapon would feel like inside me. It wouldn[']t be gay, [he of M]'s a [man of M].[in random order]";
 		otherwise:
 			say "[second custom style][one of]I[']ll give anyone a blowjob, even a girl![or]I prefer guys, but that strapon looks almost as good as the real thing![or]All [manly-penis]s make me [if the size of penis < 1]horny[otherwise]hard[end if], even fake ones![if the size of penis < 1]Between us, there[']s only one penis, but [he of M] probably deserves it way more![otherwise if the size of penis < 8]So that[']s what a real penis looks like. Well, it's plastic, but it's certainly realer than mine. I[']m the girl and [he of M][']s the man! Teehee![otherwise]My penis is bigger than [his of M] strapon, but [hers of M] matters more, since it feels better when I cum with my asshole.[end if][in random order]";
 	otherwise if the strap-on girth of M < 6:
-		if the player is female and the bimbo of the player < 7:
+		if the player is gendered female and the bimbo of the player < 7:
 			say "[first custom style][one of]Ugh, is that supposed to be my reward for humiliating myself? Disgusting.[or]I debase myself like that, and [he of M] comes back with a bigger dildo?[or]So this is my punishment. A bigger dildo for [him of M] to violate me with. I'm not sure I like the alternative, but how am I supposed to deal with that thing?[in random order]";
-		otherwise if the player is female and the bimbo of the player < 14:
+		otherwise if the player is gendered female and the bimbo of the player < 14:
 			say "[variable custom style][one of]That must be the new toy [he of M] was talking about. It's so big...[or]I can't believe I let [him of M] violate me. Well, maybe violate isn't the right word. It wasn't awful.[or]I just know [he of M]'s going to try to put that dildo in me too. But, I won't let [him of M].[or][big he of M]'s so domineering. Where does [he of M] get off telling me I can't cum. Not that I want to.[in random order]";
-		otherwise if the player is female:
+		otherwise if the player is gendered female:
 			say "[second custom style][one of]Wow! Look at that cock![or][big his of M] new dildo looks so yummy! If I'm good, maybe I'll get fucked with it![or]Sometimes, I wish guys would grow bigger cocks if you do your best to make them feel good. I guess [literalMistress of M] is better than a guy![or][big his of M] rules about orgasms are so unfair! It feels so good when [literalMistress of M] fucks me, how can I not cum?[in random order]";
 		otherwise if the bimbo of the player < 7:
 			say "[first custom style][one of]Did [he of M] actually change that dildo as a fucking reward for me? What if word gets around that I let people fuck me?[or]OK, so my choices are, let [him of M] fuck me with that thing, or let a bunch of dudes jizz on my face? Why is this game so gay![or][if the size of penis < 1][big he of M] must be rubbing it in that I don't have a dick anymore. This is so uncool...[otherwise if the size of penis < 5]It was bad enough letting [him of M] fuck me with the first dildo. I look like a baby compared to [him of M] now...[otherwise if the size of penis < 9]Wait, what happened to the other dildo? This one is bigger than I am. This is fucking bullshit...[otherwise]OK, so what if [he of M] decides I'm a chick or something. My dick is still massive, and I'll always have that on [him of M]. Next time we meet, things will change, and I'll be the one fucking [him of M].[end if][in random order]";
@@ -563,7 +563,7 @@ Definition: dominatrix (called M) is willing to let go:
 	decide yes.
 
 Definition: dominatrix (called M) is actually interested:[custom bit to allow the player to give jewellery to the dominatrix, but not modify her existing "friendly" functionality.]
-	if M is retaining a plentiful accessory and M is interested, decide yes;
+	if M is carrying a plentiful accessory and M is interested, decide yes;
 	if M is unfriendly, decide yes;
 	decide no.
 
@@ -590,10 +590,8 @@ To compute (M - dominatrix) considering (T - a plentiful accessory):
 		if the times-submitted of M > 0 and the frustration of M <= 0:
 			say "[speech style of M]'That gets you [R] rounds, but you know what, you've been a good sub so far, so let's make this a little interesting. If you can handle me for all [R] rounds, I'll give you a little treat.[roman type][line break]";[Blue balls will reset when she finishes sex with you, so she considers you a good sub.]
 		otherwise:
-			say "[speech style of M]'Alright, this will buy you [R] rounds. Anal or Oral only, don't try to talk to me, just get on your knees and show me you're ready.'[roman type][line break]";
-		now T is in Holding Pen;
-		now M is retaining T;
-		now M is withholding T.
+			say "[speech style of M]'All right, this will buy you [R] rounds. Anal or Oral only, don't try to talk to me, just get on your knees and show me you're ready.'[roman type][line break]";
+		only destroy T.
 
 To distract (M - dominatrix):
 	if the sex-length of M < 1 or M is not in the location of the player:
@@ -613,7 +611,7 @@ To compute (M - dominatrix) entering mouth:
 This is the dominatrix friendly convinced rule:
 	if debugmode > 0, say "Checking to see if the player is a valid customer...[line break]";
 	if presented-orifice is a reasonable target:
-		if current-monster is not retaining a plentiful accessory or the sex-length of current-monster < 1[ or the number of cots in the location of the player is 0]:[Has the player paid yet? If they have had a session already, did they pay for that one?]
+		if current-monster is not carrying a plentiful accessory or the sex-length of current-monster < 1[ or the number of cots in the location of the player is 0]:[Has the player paid yet? If they have had a session already, did they pay for that one?]
 			say "[PresentFriendlyRejectionFlav of current-monster]";
 		otherwise:
 			now the chosen-orifice of current-monster is presented-orifice;[This is on top so flavour can refer to chosen orifice.]
@@ -782,7 +780,7 @@ To penetration dominate (M - dominatrix):
 	otherwise:[you fuck him, but you don't get to cum]
 		say "You try your best to keep your hand from shaking as you [if C is not strapon-panties and C is clothing]pull out your [SexDesc of penis] and push it[otherwise if penis is penis-erect]push your desperately hard [SexDesc of penis][otherwise]push your rapidly hardening [sexual-player-penis][end if] into [his of M] [HoleDesc of M].[line break][speech style of M]'Ground rules.'[roman type][line break][big his of M] cold voice instantly freezes you in your tracks.[line break][speech style of M]'I have *decided* to let you fuck me, but you may not cum. You know why.'[roman type][line break]You nod sheepishly, taking a moment to compose yourself before slowly beginning to thrust. Your tiny [sexual-player-penis] is incredibly sensitive, so you only get to enjoy your [literalMistress of M][']s warm confines for a couple seconds, but its better than nothing.";
 		if the slave-status of M < 1, now the slave-status of M is 1;[resets]
-		if the player is male, passively stimulate penis;
+		if the player is possessing a penis, passively stimulate penis;
 		otherwise passively stimulate vagina;
 		now player-fucking is DOMINANT-SHAMEFUL;
 		slightHumiliate;
@@ -872,10 +870,10 @@ To say angry punishment clothing destruction of (M - dominatrix) on (C - a cloth
 
 To say AfterDominationComment (N - a number) of (M - dominatrix):
 	if N is 1:[she sees herself as your submissive]
-		say "[speech style of M]'[one of]I hope you're satisfied...[if the player is male]sir[otherwise]ma'am[end if].'[or]T-thank you for that, [if the player is male]sir[otherwise]ma'am[end if]...'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]I hope you're satisfied...[if the player is gendered male]sir[otherwise]ma'am[end if].'[or]T-thank you for that, [if the player is gendered male]sir[otherwise]ma'am[end if]...'[at random][roman type][line break]";
 		Calm M;
 	otherwise if N is 2:[she no longer sees you as her submissive]
-		say "[speech style of M]'[one of]I admit, you-... you're not... you aren't submissive. Sorry. [if the player is male]Sir[otherwise]Ma'am[end if].[or]I won't try to make you my slave anymore. [if the player is male]S-sir[otherwise]Ma'am[end if].'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]I admit, you-... you're not... you aren't submissive. Sorry. [if the player is gendered male]Sir[otherwise]Ma'am[end if].[or]I won't try to make you my slave anymore. [if the player is gendered male]S-sir[otherwise]Ma'am[end if].'[at random][roman type][line break]";
 	otherwise if N is 3:[she got dominated, but still sees you as her submissive]
 		say "[speech style of M]'[one of]This... This, doesn't prove anything, slave! Get out of here!'[or]It won't b-be that easy, slave. You're the only submissive here!'[at random][roman type][line break]";
 	otherwise if N is 4:[she isn't impressed]

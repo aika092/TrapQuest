@@ -109,7 +109,6 @@ To compute labour to (M - hellhound):
 	otherwise:
 		compute infernal birth.
 
-
 To compute fatherhood to (M - hellhound):
 	distract M.
 

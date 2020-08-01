@@ -24,6 +24,9 @@ To decide which number is the dexterity-influence of (C - fox ears):
 	let X be 2;
 	decide on X + the magic-modifier of C.
 
+To decide which number is the stealth-influence of (C - fox ears):
+	decide on 1.
+
 To decide which number is the intelligence-influence of (C - fox ears):[vixens get an intelligence bonus from wearing stolen things]
 	let X be the number of worn stolen clothing;
 	if C is blessed, increase X by X;

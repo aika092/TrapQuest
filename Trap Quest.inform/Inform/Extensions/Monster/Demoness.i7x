@@ -87,10 +87,7 @@ To say MonsterDesc of (M - an abyssal demoness):
 	otherwise:
 		say "An aura of terrifying evil surrounds this [man of M]. [big he of M] [if pregnancy fetish is not 1]has the body of an Olympian swimmer[otherwise]has a statuesque and clearly pregnant figure[end if], but coupled with blue skin and curved horns that give [him of M] a decidedly otherworldly appearance. [if pregnancy fetish is 1][big he of M] is completely naked except for a pair of tall black high heels with glass dildos for stilettos[otherwise][big he of M] is wearing a pair of tall black high heels with glass dildos for stilettos, a provocative black bikini top, and a matching nylon miniskirt, which only barely covers [his of M] crotch[end if]. The air around [him of M] seems to shift and morph as if [he of M] were surrounded by a bubble of moving water. Pinpricks of [if doomed is 5]magenta[otherwise]yellow[end if] light are visible behind the veil covering [his of M] face.".
 
-Definition: a demoness (called M) is power-peaked:
-	if M is retaining a soul gem, decide yes;
-	decide no.
-
+Definition: a demoness is power-peaked if soul gem is carried by it.
 
 To say DemonSkin of (M - a demoness):
 	if M is power-peaked, say "fiery-orange";
@@ -114,6 +111,9 @@ To say MonsterComment of (M - a demoness):
 To set up (M - a demoness):
 	reset M;
 	now the monstersetup of M is 1;
+	add infernal gem to the banishItems of M, if absent;
+	let D be a random dildo heels;
+	add D to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	if doomed is 5, DifficultyUp M by 1;
 	now the health of M is the maxhealth of M;
@@ -124,10 +124,9 @@ To decide which number is the starting difficulty of (M - a demoness):
 
 [Because demoness difficulty frequently varies massively up and down as the game progresses, and she needs to get appropriately harder when the player dominates her.]
 To decide which number is the maxhealth of (M - a demoness):
-	let X be 1;
-	increase X by 7 * (3 + game difficulty);
+	let X be 3;
+	increase X by (the difficulty of M * 10) / 3;
 	increase X by (the times-dominated of M * 10);
-	if M is power-peaked, increase X by 50;
 	decide on X.
 
 To decide which number is the default favour of (M - a demoness):
@@ -149,24 +148,13 @@ To decide which number is the base semen load of (M - a demoness):
 	if M is power-peaked, increase X by X;
 	decide on X.
 
-Definition: a demoness (called M) is concealment immune: [Can the monster ignore salves of concealment, butt slut, etc.]
-	decide yes.
+Definition: a demoness is concealment immune: decide yes. [Can the monster ignore salves of concealment, butt slut, etc.]
 
-Definition: a demoness (called M) is able to remove cursed plugs: [Can the monster remove all butt plugs?]
-	decide yes.
+Definition: a demoness is able to remove cursed plugs: decide yes.[Can the monster remove all butt plugs?]
 
-Definition: A demoness (called M) is willing to shag:
+Definition: a demoness (called M) is willing to shag:
 	if M is awake and the scared of M is 0 and the boredom of M < 120 and M is threatening and the difficulty of M > 4, decide yes;
 	decide no.
-
-[To compute unique unsimulated periodic effect of (M - a demoness):
-	if the soul-timer of M > 0 and M is retaining a soul gem:
-		decrease the soul-timer of M by seconds;
-		if M is not in the location of the player and the soul-timer of M < 0:
-			repeat with G running through soul gems retained by M:
-				now G is not retained by M;
-				now G is off-stage;
-				now the soul-timer of M is -99.]
 
 To DifficultyUp (M - a demoness) by (X - a number):
 	while X > 0:
@@ -293,7 +281,7 @@ To compute perception of (M - a demoness):
 		bore M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if there is soiled-diaper retained by M:
+		if there is soiled-diaper carried by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
 			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
@@ -370,7 +358,7 @@ To compute DQ perception of (M - a demoness):
 		anger M;
 	otherwise if M is uniquely unfriendly:
 		anger M;
-		if there is soiled-diaper retained by M:
+		if there is soiled-diaper carried by M:
 			say "[speech style of M]'[one of]You there, you disgusting mortal! I'm sure it's you who left this for me to find! How vile[or]Vile mortal, stop leaving your horrendous used garments around for me to find[stopping]!'[roman type][line break]";
 		otherwise if the class of the player is priestess:
 			say "Immediately upon seeing you, [he of M] shrieks: [line break][speech style of M]Your holy aura has no power out here, mortal! Get on your knees and submit to me as your new [literalMistress of M], or I will make you!'[roman type][line break][if M is friendly]Apparently [he of M] doesn't like priestesses...[end if]";
@@ -591,23 +579,21 @@ To compute unique climax of (M - a demoness) in (F - asshole):
 	otherwise if the excitement of M < 2 or the difficulty of M < 2:
 		say "[if the excitement of M < the difficulty of M][BigNameDesc of M] slows down, and you[otherwise][BigNameDesc of M] looks exhausted! You[end if] feel the magic grip on your body fade all at once as [he of M] removes [his of M] heel from your [asshole].";
 		cutshow figure of demoness cutscene 3 for M;
-		let P be a random sex toy retained by M;
+		let P be a random sex toy carried by M;
 		if P is a thing and asshole is not actually occupied:
 			say " [BigNameDesc of M] uses the last of [his of M] energy to magically force the [P] back into your [asshole], smugly bearing a grin at the resulting [if the anal sex addiction of the player <= 3]gasp[otherwise if the anal sex addiction of the player <= 5]moan[otherwise]squeal[end if].";
 			now P is worn by the player;
 			now P is penetrating asshole;
-			now M is not retaining P;
-			now M is not withholding P;
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof! It's so big![roman type][line break]";
 				ruin asshole;
 		if the excitement of M > the difficulty of M, bore M;[otherwise we leave it to the default function to run Satisfy M]
 	otherwise:
 		say "Only once you have been reduced to a puddle of tears does [NameDesc of M] stop fucking your [asshole]. [big he of M] cackles again and starts to wander off.";
-		if there is an insertable object held by M:
-			let P be a random insertable object held by M;
+		if there is an insertable object carried by M:
+			let P be a random insertable object carried by M;
 			say "Before [he of M] does, [he of M] makes sure to magically force the [P] back into your [asshole].";
-			summon P;
+			only summon P;
 			if the girth of P > the openness of asshole + 2:
 				say "[variable custom style]Oof! It's so big![roman type][line break]";
 				ruin asshole; [we don't want this to cause fainting]
@@ -639,8 +625,8 @@ To compute the busy waiting of (M - a demoness):
 
 To compute (M - a demoness) taking soul:
 	now the player is soulless;
-	let G be a random off-stage soul gem;
-	now M is retaining G;
+	now M is carrying soul gem;
+	DifficultyUp M by 2;
 	humiliate 1000.
 
 The demoness unique punishment rules is a rulebook. The unique punishment rule of demoness is usually the demoness unique punishment rules.
@@ -684,7 +670,7 @@ This is the demoness monster convinced rule:
 			say "[BigNameDesc of M] laughs. [line break][speech style of M]'That's right, accept it like a good slut. Let's see if you can last as long as I can...'[roman type][line break]";
 			now the chosen-orifice of M is asshole;
 		rule succeeds;
-	otherwise if presented-orifice is not nothing:
+	otherwise if presented-orifice is not nothing:[TODO: worshipper gets special treatment here]
 		if presented-orifice is vagina and the vaginalvirgin of the player is 1:
 			say "[BigNameDesc of M] laughs.[line break][speech style of M]'Really, you'll let me have your virginity? Hahaha...No takebacks!'[roman type][line break]";
 			now the chosen-orifice of M is vagina;
@@ -793,8 +779,7 @@ To compute (M - a demoness) removing (P - an anal beads):
 	let O be chosen-orifice of M;
 	say "[BigNameDesc of M] catches the hooked end of your [printed name of P] with the spike of [his of M] heel, cackling cruelly as [he of M] yanks them out one by one. [if the grip of P > 5 and O is asshole]The last of them makes a lewd 'PLOP' sound as your [asshole][']s sphincter collapses in on the newly emptied space.[end if]";
 	if P is cursed:
-		now P is in Holding Pen;
-		now M is retaining P;
+		now M is carrying P;
 	otherwise:
 		now P is in the location of the player;
 	dislodge P.
@@ -862,7 +847,7 @@ To decide which number is the melting point of (H - a clothing):
 This is the greater demoness lockdown rule:
 	let M be current-monster;
 	if (M is power-peaked or M is abyssal demoness) and the number of barriers in the location of the player is 0:
-		say "[BigNamedesc of M] places [his of M] hands on the ground and concentrates. A ring of bright [if M is abyssal demoness]blue[otherwise]red[end if] flames springs into existence around the edges of the room! [bold type]You're trapped![roman type]";
+		say "[BigNamedesc of M] places [his of M] hands on the ground and concentrates. A ring of bright [if M is abyssal demoness]blue[otherwise]red[end if] flames springs into existence around the edges of the room! [bold type]You're trapped![roman type][line break]";
 		now flaming-wall is in the location of the player;
 		rule succeeds.
 The greater demoness lockdown rule is listed in the demoness attack rules.
@@ -1015,7 +1000,7 @@ To compute facial climax of (M - a demoness):
 			compute deepthroat creampie of M;
 	orgasm satisfy M.
 
-Definition: A demoness (called M) is willing to bukkake:
+Definition: a demoness (called M) is willing to bukkake:
 	if the player is not a blowjob slut or M is power-peaked, decide no;
 	if bukkake fetish is 1 and a random number between 1 and 2 is 1, decide yes;
 	decide no.
@@ -1380,21 +1365,15 @@ To compute forced banishment of (M - a demoness):
 To say BanishFleeFlav of (M - a demoness):
 	say "[BigNameDesc of M] screams as [he of M] falls to the floor, and then you watch as [his of M] essence is sucked back into [his of M] home dimension.";
 
-To compute unique banishment of (M - a demoness):
-	let H be a random off-stage dildo heels;
-	let G be a random off-stage infernal gem;
-	let R be a random number between 1 and 5;
-	if R < 3 and H is heels:
-		now H is in the location of the player;
-		now the raw-magic-modifier of H is a random number between 0 and 2;
-		now H is kicking;
-		now H is cursed;
-		say "All that remains are [his of M] dildo heels.";
-		compute autotaking H;
-	otherwise if G is infernal gem:
-		say "All that remains is [his of M] [G].";
-		now G is in the location of the player;
-		compute autotaking G.
+To compute banish drop of (C - a dildo heels) from (M - a demoness):
+	if C is off-stage:
+		now C is in the location of the player;
+		now the raw-magic-modifier of C is a random number between 0 and 2;
+		now C is kicking;
+		now the heel-height of C is 4;
+		say "[big his of M] dildo heels remain behind.";
+		increase the loot dropped of M by 1;
+		compute autotaking C.
 
 To uniquely destroy (M - a demoness):
 	repeat with S running through stuck clothing:
@@ -1443,7 +1422,7 @@ To compute punishment of (P - demoness-plug):
 demoness-facesit is a diaper punishment. The priority of demoness-facesit is 5.
 Definition: demoness-facesit is appropriate:
 	if current-monster is not demoness, decide no;
-	if there is soiled-diaper retained by current-monster, decide no; [She should punish that instead.]
+	if there is soiled-diaper carried by current-monster, decide no; [She should punish that instead.]
 	if the player is pee protected or there is worn knickers, decide no;
 	if the player is bursting or (the player is feeling full and the player is desperate to pee), decide yes;
 	decide no.
@@ -1632,7 +1611,7 @@ To compute taunt rejection effect of (M - a demoness):
 	increase the excitement of M by 3.
 
 To say TauntRejected of (M - a demoness):
-	say "[speech style of M]'Oh? Are you sure that's what you wanted to say?'[roman type][line break][BigNameDesc of M] seems positively delighted!".
+	say "[speech style of M]'Oh? Are you *sure* that's what you wanted to say?'[roman type][line break][BigNameDesc of M] seems positively delighted!".
 
 To say PleadRejected of (M - a demoness):
 	say "[speech style of M]'The time for apologies is OVER!'[roman type][line break]".
@@ -1658,13 +1637,13 @@ To say WhoAnswer of (M - a demoness):
 	alwayscutshow figure of demoness interact 10 for M.
 
 To say StoryAnswer of (M - a demoness):
-	say "[speech style of M][if the player-class is not succubus]'I have come to show unbearable pleasure and pain to all mortals!'[otherwise]'Oh, need someone to explain the ropes to you? It's simple, just strut around devouring the souls of the weak, giving your service only to the mighty demon lord.'[end if][roman type][line break]".
+	say "[speech style of M]'I have come to show unbearable pleasure and pain to all mortals!'[roman type][line break]".
 
 To say EscapeAnswer of (M - a demoness):
 	say "[speech style of M]'For me, if I lose too much energy I will be banished back to my home dimension[if the player-class is succubus]. It works a bit differently for you though.'[roman type][line break][big he of M] points to the stone in your chest.[line break][speech style of M]'The demon soul within that stone will devour your identity slowly if it thinks you are acting unbecoming one of us. If you make it mad enough, it'll completely erase whatever was left of you[end if]!'[roman type][line break]".
 
 To say AdviceAnswer of (M - a demoness):
-	say "[speech style of M]'Anything in your location when you are banished back to your home realm, will remain there and not disappear. Except creatures of course.'[roman type][line break]".
+	say "[speech style of M][if the class of the player is worshipper]'Stay on your knees, and when one of your masters is ready to use you, make it fun by resisting as much as you can. I plan to test you on that in a little while, so don't forget.'[otherwise if the class of the player is not succubus]'Anything in your location when you are banished back to your home realm, will remain there and not disappear. Except creatures of course.'[otherwise]'It's very simple, just strut around devouring the souls of the weak, giving your service only to the mighty demon lord.'[end if][roman type][line break]".
 
 Section 3 - Drink Requesting
 
@@ -1677,7 +1656,7 @@ To compute unfriendly drink of (M - a demoness):
 
 To compute friendly drink of (M - a demoness):
 	let H be a random worn heels;
-	if (the class of the player is succubus or H is clothing and the heel-height of H > 3) and M is dealing:[only a dummy would ask anything from a demoness!]
+	if (the class of the player is succubus or the class of the player is worshipper or H is clothing and the heel-height of H > 3) and M is dealing:[only a dummy would ask anything from a demoness!]
 		say "[one of][BigNameDesc of M] seems surprised for a second and smirks. [line break][speech style of M]'I can do more than quench your thirst, you know. Get on your knees and open wide. I'll do the rest.'[roman type][line break][or][line break][speech style of M]'You're dumber than you look. Accept my deal and you get something to drink.'[roman type][line break][stopping]";
 	otherwise if M is dealing:
 		say "[speech style of M]'[one of]I don't give handouts. But I promise a drink and more if you lend me your mouth for a while.'[or]I told you about the deal already, don't waste my time if you aren't interested.'[stopping][roman type]";
@@ -1719,11 +1698,11 @@ To compute failed dominance punishment of (M - a demoness):
 		let C be the number of undefended orifices;
 		say "[speech style of M]'You have a big heart for a mortal. I have to repay you somehow, but hmmmm, I can't think of anything. This won't do.'[roman type][line break][BigNameDesc of M] whistles sharply and at least a dozen tiny red [if lady fetish is 1]women[otherwise]men[end if] stampede [if playerRegion is Woods]out of the under brush[otherwise]through the door[end if] and form a loose circle around you. [line break][speech style of M]'While I think about it, would you mind entertaining my associates for a little while?'[roman type][line break]The imps don't waste any time crowding in around you, [unless there is a worn wrist bond]tying your hands behind your back[otherwise]holding you down[end if] and [if C is 1]moving your clothing out of the way[otherwise]snickering mischievously[end if] as they grope and fondle your body.";
 		if lady fetish is 1:
-			say "It's [if the player is male]exciting[otherwise]almost comforting[end if] to be surrounded by so many women, but as the first imp presents her wet, needy [vagina], it becomes totally clear that in any hierarchy among them you're the definitive bottom. The taste of the first cunt is quickly replaced by a second, and a third after that. Your [if the delicateness of the player + the oral sex addiction of the player < 5]reluctance certainly[otherwise]eager obedience[end if] doesn't seem to affect anything, mischievous giggling filling your ears as the imps treat you as nothing but a simple plaything. Exploratory fingers enter your holes, followed by dildos, tongues, even vines they've pulled out of the ground!";
+			say "It's [if the player is gendered male]exciting[otherwise]almost comforting[end if] to be surrounded by so many women, but as the first imp presents her wet, needy pussy, it becomes totally clear that in any hierarchy among them you're the definitive bottom. The taste of the first cunt is quickly replaced by a second, and a third after that. Your [if the delicateness of the player + the oral sex addiction of the player < 5]reluctance certainly[otherwise]eager obedience[end if] doesn't seem to affect anything, mischievous giggling filling your ears as the imps treat you as nothing but a simple plaything. Exploratory fingers enter your holes, followed by dildos, tongues, even vines they've pulled out of the ground!";
 		otherwise:
 			say "Being surrounded by so many naked men almost makes you feel special, but as the first imp slides his [LongDickDesc of N] into your mouth, it becomes totally clear that they see you as nothing more than a cheap cocksleeve. There's little time to breathe or even swallow after the first imp is finished, another one immediately takes [his of N] place. [if the player is male]Your [asshole] isn't[otherwise]Your holes aren't[end if] exempt from the treatment, and the imps take turns racing each other to see which end they can fill faster.";
 		let X be 5;
-		if the player is female, increase the fuck-count of the player by X;
+		if the player is possessing a vagina, increase the fuck-count of the player by X;
 		increase the anal-count of the player by X;
 		if lady fetish is 1, increase the lick-count of the player by X;
 		otherwise increase the blow-count of the player by X;
@@ -1731,7 +1710,7 @@ To compute failed dominance punishment of (M - a demoness):
 		if lady fetish is 1, now N is a random vine;
 		now N is penetrating vagina;
 		now N is penetrating asshole;
-		if the player is female, PussyFill X;
+		if the player is possessing a vagina, PussyFill X;
 		AssFill X;
 		now N is not penetrating vagina;
 		now N is not penetrating asshole;
@@ -1765,7 +1744,7 @@ To compute unique dominance reward of (M - a demoness):
 	DifficultyUp M by the times-dominated of M + 1;[the demoness doesn't have permanent difficulty, so her increases get larger and larger]
 	FuckholeAddictDown 1.
 
-To penetrate dominate (M - a demoness):
+To penetration dominate (M - a demoness):
 	let C be a random bottom level protection clothing;
 	say "You grab [NameDesc of M] by the wrists, forcing your magic power into [him of M] as you pin [him of M] to the ground. [big he of M] doesn't resist, seductively pushing out [his of M] chest as you [if C is not strapon-panties and C is clothing]pull out your[otherwise if penis is penis-erect]stroke your[otherwise]stroke your hardening[end if] [SexShaft].";
 	if the sexual-penis-length > 8:

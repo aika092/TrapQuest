@@ -8,11 +8,12 @@ To decide which number is the initial outrage of (C - a pink sack of holding):
 
 To decide which object is the potential-upgrade-target of (C - a pink sack of holding):
 	if the transform-attempts of C < a random number between 0 and unlucky, decide on nothing;
-	decide on a random off-stage slutty clutch of holding.
+	if the number of worn hand ready clothing is 0, decide on a random off-stage slutty-clutch;
+	decide on dirty whore handbag of holding.
 
 Part 1 - I Heart Cock Pink Sack of Holding
 
-An I heart cock pink sack of holding is a kind of pink sack of holding. There is 1 I heart cock pink sack of holding. The printed name of I heart cock pink sack of holding is usually "[clothing-title-before]I heart cock pink bag of holding[clothing-title-after]".
+I heart cock pink sack of holding is a pink sack of holding. The printed name of I heart cock pink sack of holding is "[clothing-title-before]I heart cock pink bag of holding[clothing-title-after]".
 
 Figure of I heart cock pink sack of holding is the file "Items/Accessories/Bags/bag5.png".
 
@@ -35,19 +36,17 @@ Definition: an I heart cock pink sack of holding is heart themed: decide yes.
 
 Part 2 - Bimbo Pink Sack of Holding
 
-A bimbo pink sack of holding is a kind of pink sack of holding. There is 1 bimbo pink sack of holding. The printed name of bimbo pink sack of holding is usually "[clothing-title-before]bimbo pink bag of holding[clothing-title-after]".
+bimbo sack of holding is a pink sack of holding. The printed name of bimbo sack of holding is "[clothing-title-before]bimbo pink bag of holding[clothing-title-after]". Understand "bimbo pink", "pink sack" as bimbo sack of holding.
 
 Figure of bimbo pink sack of holding is the file "Items/Accessories/Bags/bag6.png".
 
-To decide which figure-name is clothing-image of (C - a bimbo pink sack of holding):
+To decide which figure-name is clothing-image of (C - bimbo sack of holding):
 	decide on figure of bimbo pink sack of holding.
 
-To say ClothingDesc of (C - a bimbo pink sack of holding):
-	say "A magic pink shopping bag that holds all your spare items and negates their weight. The side has the word 'bimbo' printed in large letters, with a pink heart above it for good measure. A warning on the label says '[BagHoldingWarning] bag'.".
+To say ClothingDesc of (C - bimbo sack of holding):
+	say "A magic pink shopping bag that holds all your spare items and negates their weight. The side has the word 'bimbo' printed in large letters. A warning on the label says '[BagHoldingWarning] bag'.".
 
-To say ShortDesc of (C - a bimbo pink sack of holding):
+To say ShortDesc of (C - bimbo sack of holding):
 	say "'bimbo' shopping bag".
-
-Definition: a bimbo pink sack of holding is heart themed: decide yes.
 
 Pink Sacks of Holding ends here.

@@ -55,10 +55,9 @@ To compute class outfit of (H - vampiric fangs):
 	let P be a random off-stage vampiric cape;
 	if C is actually summonable or (C is vampiric claws and vampire-summoned is 0) and the number of worn wood-dongs is 0:
 		if vampire-summoned is 0:
-			repeat with O running through worn equippables:
-				if O is hand ready:
-					say "Your [O] [wardrobeVanishes of O]!";
-					now O is in pink wardrobe;
+			repeat with O running through worn hand ready equippables:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
 		say "[bold type]You feel your hands shift and warp painfully as your fingernails elongate and sharpen, turning into claws. Your slaps will certainly be more powerful! And, that vampiress told you you'd be able to drain an enemy's energy with these.[roman type][line break]";
 		summon C uncursed;
 		now vampire-summoned is 1;

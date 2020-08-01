@@ -65,11 +65,12 @@ To say MonsterDesc of (M - a fairy):
 To set up (M - a fairy):
 	reset M;
 	now the monstersetup of M is 1;
+	add pink-hair to the taxableItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - a fairy):
-	decide on 1 + the difficulty of M + (game difficulty * 2).
+	decide on 1 + the difficulty of M.
 
 To decide which number is the starting difficulty of (M - a fairy):
 	decide on 2.
@@ -614,15 +615,11 @@ To compute failed damage of (M - a fairy):
 	say "[BigNameDesc of M] giggles.[line break][speech style of M]'[if M is friendly]Oh, you want to play? Okay[otherwise][one of]Missed me[or]Whoopsie[or]Missed[or]Nyer nyer[in random order][end if]!'[roman type][line break]";
 	anger M.
 
-To compute tax return of (M - a fairy):
-	let P be a random off-stage pink hair;
-	say "[speech style of M]'You want some [one of][or]more [stopping]of my special hair, don't you?'[roman type][line break]";
-	if P is pink hair:
-		say "[BigNameDesc of M] winces as [he of M] pulls out a small clump of [his of M] [P].[line break][speech style of M]'That hurt!'[roman type][line break]";
-		now P is in the location of the player;
-		compute autotaking P;
-	otherwise:
-		say "[BigNameDesc of M] winces as [he of M] pulls at [his of M] hair, but nothing will come out.[line break][speech style of M]'Ow ow ow!!! Sorry, I've lost so much hair already that no more will come out...'[roman type][line break]".
+To compute loot dropping of (P - pink-hair) by (M - a fairy):
+	say "[speech style of M]'You want some of my special hair, don't you?'[roman type][line break]";
+	say "[BigNameDesc of M] winces as [he of M] pulls out a small clump of [his of M] [P].[line break][speech style of M]'That hurt!'[roman type][line break]";
+	now P is in the location of the player;
+	compute autotaking P.
 
 To say BanishForceFlav of (M - a fairy):
 	say "You grab [NameDesc of M] by the hair.[line break][if the player is able to speak][variable custom style]'Begone, little minx.'[roman type][line break][end if]You give [him of M] a painful flick on the rear at the same time as you release [his of M] hair, which sends [him of M] squealing and spiralling into the sky.";
@@ -957,7 +954,7 @@ To set up (M - blue-fairy):
 	now the health of M is the maxhealth of M.
 
 To decide which number is the maxhealth of (M - blue-fairy):
-	decide on 5 + (the difficulty of M * (2 + game difficulty)).
+	decide on 5 + (the difficulty of M * 3).
 
 [Of course, 'current-monster' here is the blue-fairy]
 This is the blue-fairy powerup rule:

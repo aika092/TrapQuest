@@ -147,7 +147,6 @@ To compute swimming in (S - sacred-pool):
 			if delayed fainting is 1, now swimming is 0;
 	allocate 12 + (3 * swim-turns) seconds;[after everything]
 	display entire map.
-	
 
 To pollute (N - a number):
 	increase the corruption of the sacred-pool by N;
@@ -162,13 +161,12 @@ To poolpurify (N - a number):
 	if the corruption of sacred-pool < 200:[beyond 200 the corruption becomes permanent.]
 		decrease the corruption of sacred-pool by N;
 		if the corruption of sacred-pool < 0, now the corruption of sacred-pool is 0.
-	
 
 [
 
 Deep end:
 	Token (uncommon)
-	Jewelery (rare)
+	Jewellery (rare)
 
 	ectoplasm(depends on corruption level)
 
@@ -184,45 +182,46 @@ To compute treasure diving in (WB - sacred-pool) at (L - a number):
 		say "In the resulting quiet, you notice something at the bottom of the pool and quickly swim toward it... [run paragraph on]";
 		if N >= 25:
 			let J be a random off-stage plentiful accessory;
-			if J is accessory:
+			if J is accessory and J is actually summonable:
 				if N is 35:
 					now J is ruby;
 				otherwise if N > 27:
 					now J is emerald;
 				otherwise:
 					now J is sapphire;
-				say "You find a [ClothingDesc of J]! You take it with you as you swim back to the surface.";
-				now J is carried by the player;
+				set shortcut of J;
+				say "[bold type]You find a [ClothingDesc of J]![roman type] It sticks stubbornly to the bottom of the pool, but when you give up and head back to the surface, it magically teleports onto your body.";
+				summon J;
 			otherwise:
-				say "You find a rusted piece of jewelery at the bottom. You leave it behind as you swim back to the surface.";
+				say "You find a rusted piece of jewellery at the bottom. You leave it behind as you swim back to the surface.";
 		otherwise if N > 21:[defiance token]
 			let T be a random off-stage defiance token;
 			if T is defiance token:
-				say "You find a defiance token at the bottom..  You take it with you as you swim back to the surface.";
+				say "[bold type]You find a defiance token at the bottom![roman type]  You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 18:[sanity token]
 			let T be a random off-stage sanity token;
 			if T is sanity token:
-				say "You find a sanity token at the bottom. You take it with you as you swim back to the surface.";
+				say "[bold type]You find a sanity token at the bottom![roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 15:[fabric token]
 			let T be a random off-stage fabric token;
 			if T is fabric token:
-				say "You find a fabric token at the bottom.  You take it with you as you swim back to the surface.";
+				say "[bold type]You find a fabric token at the bottom![roman type]  You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise:
 			let E be a random off-stage ectoplasm;
 			if E is ectoplasm and ((C < 60 and N < 2) or (C >= 60 and C < 120 and N <= 5) or (C >= 120 and N < 10)):
-				say "You find a floatnig wad of ectoplasm. You grab it and take it with you as you go back to the surface.";
+				say "[bold type]You find a floating wad of ectoplasm![roman type] You grab it and take it with you as you go back to the surface.";
 				now E is carried by the player;
 			otherwise:
-				say "It turns out to be a chunk of crushed stone. You return to the surface before you run out of air.";	
+				say "It turns out to be a chunk of crushed stone. You return to the surface before you run out of air.";
 	otherwise:[TODO: replace with a swim challenge]
 		if the player is getting unlucky:
 			say "But a moment later, you feel invisible hands begin to move across your body. [if C < 60]They pinch and slap you as you hurry back to the surface.[otherwise if C < 120]They alternate between pinching you and teasing you as you hurry back to the surface.[otherwise]They grope and massage you as you hurry back to the surface.[end if]";

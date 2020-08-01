@@ -122,8 +122,8 @@ To decide which number is the bartering value of (T - a unicorn-horn) for (M - a
 To decide which number is the bartering value of (T - a christmas gift) for (M - a supporter):
 	decide on 0.
 
-To FavourUp (M - a supporter):
-	do nothing.
+[To FavourUp (M - a supporter):
+	do nothing.]
 
 To compute perception of (M - a supporter):
 	now M is interested;
@@ -154,8 +154,9 @@ To compute appearance assessment of (M - a supporter):
 	otherwise:
 		say BoringPerception of M;
 	if M is friendly:
-		say "[BigNameDesc of M] promptly loses interest in you.";
-		bore M for 150 seconds.
+		say "[BigNameDesc of M] [one of]seems to intend to follow you around for a while[or]begins to follow you around again[stopping].".
+		[say "[BigNameDesc of M] promptly loses interest in you.";
+		bore M for 150 seconds.]
 
 To compute damage reaction of (M - a supporter):
 	if the sleep of M is 0:
@@ -185,7 +186,7 @@ To UnidentifiablePosterReaction of (M - a supporter):
 	say "You turn bright red but don't say a word.";
 	humiliate the lewdness of a random poster in the location of the player.
 
-Definition: a supporter is eager to get angry: decide no.
+Definition: a supporter is eager to get angry: decide no. [Does the NPC punish resistance?]
 
 To say SuddenTransformTrapReactFlav of (M - a supporter):
 	say "[BigNameDesc of M] smiles widely.[line break][speech style of M]'Ooh, you look much more [beautiful] now!'[roman type][line break]".

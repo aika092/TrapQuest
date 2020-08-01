@@ -56,7 +56,7 @@ Definition: a strapon-panties is displacable: decide no.
 
 Chapter 1 - Strapon Dildo
 
-A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There are 5 strapon-dildos. A strapon-dildo is crotch-assless. The armour of a strapon-dildo is 2. The printed name of strapon-dildo is "[clothing-title-before][if the size of penis < the strap-length of the item described][PenisSizeFlav strap-length of the item described] [end if][ShortDesc of item described][clothing-title-after]". Understand "pouch", "nintendolls" as strapon-dildo.
+A strapon-dildo is a kind of strapon-panties. The text-shortcut of a strapon-dildo is "stpd". There is 1 strapon-dildo. A strapon-dildo is crotch-assless. The armour of a strapon-dildo is 2. The printed name of strapon-dildo is "[clothing-title-before][if the size of penis < the strap-length of the item described][PenisSizeFlav strap-length of the item described] [end if][ShortDesc of item described][clothing-title-after]". Understand "pouch", "nintendolls" as strapon-dildo.
 
 To decide which number is the penis-capacity of (K - a strapon-dildo):
 	decide on the strap-length of K - 1.
@@ -232,7 +232,7 @@ Definition: A ghost-strapon (called P) is dildo-usage:
 To say ShortDesc of (H - ghost-strapon):
 	unless H is worn:
 		say "spectral satin panties";
-	if the player is female and futanari fetish is 0:
+	otherwise if the player is female and futanari fetish is 0:
 		say "spectral strap-on";
 	otherwise:
 		if the size of penis < the strap-length of H, say "spectral [player-penis]";

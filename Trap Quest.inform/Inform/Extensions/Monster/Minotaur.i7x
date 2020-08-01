@@ -383,7 +383,9 @@ This is the minotaur grabs both legs rule:
 The minotaur grabs both legs rule is listed last in the minotaur priority attack rules.
 
 To compute wrangled resisting of (T - minotaur):
-	if the strength roll of T >= the strength of the player:
+	let SR be the strength roll of T;
+	if debuginfo > 0, say "[input-style]Minotaur escape check: Player strength ([the strength of the player]) | ([SR].5) Minotaur strength roll[roman type][line break]";
+	if SR >= the strength of the player:
 		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s powerful muscles![or]you can't break [FuckerDesc of T][']s powerful grip.[or][FuckerDesc of T] is just too strong![in random order]";
 	otherwise:
 		say "You force [FuckerDesc of T] to let you go!";
@@ -476,7 +478,7 @@ To compute (M - minotaur) removing (X - a thing):
 	dislodge X.
 
 To decide if (M - minotaur) is willing to creampie (F - a vagina):
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if pregnancy fetish is 0 or the pregnancy of the player is not 0, decide no;
 	if the player is pheromonal, decide yes;
 	if the thickness of hips > 6 - a random number between 1 and the pregnancy rate of the player, decide yes;

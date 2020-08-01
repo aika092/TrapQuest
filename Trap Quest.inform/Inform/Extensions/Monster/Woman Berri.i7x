@@ -36,7 +36,6 @@ To decide which figure-name is the monster-image of (M - woman-player):
 			decide on figure of woman 5d;
 		decide on figure of woman 5a.
 
-
 [
 Condition for Berri being male
 if (tg fetish is 1 and the woman-bimbo of M < 2 and lady fetish is not 1) or lady fetish is 2:
@@ -54,7 +53,7 @@ To say MonsterDesc of (M - woman-player):
 	otherwise:]
 	say "A cute brunette with a tuft of purple hair at the front. [big he of M] is wearing ";
 	if the woman-bimbo of M is 2, say "a cute blue and white dress with frills, and carrying what looks like a small blue water pistol.";
-	if the woman-bimbo of M is 3, say "blue dungarees with a pink heart at the front, over a pink crop top. A thick bulge around [his of M] loins lets you know that [he of M][']s diapered under [his of M] dunagrees. [big he of M] looks rather embarrassed about how obvious that is.";
+	if the woman-bimbo of M is 3, say "blue dungarees with a pink heart at the front, over a pink crop top. A thick bulge around [his of M] loins lets you know that [he of M][']s diapered under [his of M] dungarees. [big he of M] looks rather embarrassed about how obvious that is.";
 	if the woman-bimbo of M is 4, say "a bold pink latex bodysuit from neck to toe, with the thickest diaper you've ever seen bulging at the crotch. [big he of M] looks very embarrassed to be seen like this.";
 	if the woman-bimbo of M is 5, say "a super short pink babydoll dress that does nothing to hide [his of M] animal patterned superthick diaper.";
 	if the woman-bimbo of M >= 6, say "one of the largest, most ridiculous diapers you've ever seen with a pink and orange balloon pattern. [big he of M] is wearing patching pink baby mittens and baby booties and seems to only crawl around on these now. [big he of M] has a large pacifier in [his of M] mouth and a soft pink leash connected to [his of M] collar, which appears to be locked on.";
@@ -86,7 +85,6 @@ To compute friendly boredom of (M - woman-player):
 		if the player is not in danger and a random number from 10 to 30 < the friendly boredom of M:
 			distract M;
 			if M is in the location of the player, say BecomesBoredFlav of M.
-
 
 woman-player has a number called woman-diaper-state.
 woman-player has a number called woman-latest-diaper-state.
@@ -282,8 +280,7 @@ To VineSceneTransition:
 	now V is in the location of the player;
 	now V is revealed;
 	now the TrapNo of V is -7500;
-	say "Moments later, a pair of portals appear from thin air, and Berri falls out of one to the ground. [big he of woman-player] is now wearing blue dungarees with a pink heart at the front, over a pink crop top. A thick bulge around [his of woman-player] loins lets you know that [he of woman-player][']s diapered under [his of woman-player] dunagrees. Strong green vines shoot out of the ground and wrap around [his of woman-player] wrists and ankles, holding them in place. [big his of woman-player] body is then suspended in mid-air halfway through the portals, forcing [his of woman-player] face to be held right against [his of woman-player] diaper bulge.".
-
+	say "Moments later, a pair of portals appear from thin air, and Berri falls out of one to the ground. [big he of woman-player] is now wearing blue dungarees with a pink heart at the front, over a pink crop top. A thick bulge around [his of woman-player] loins lets you know that [he of woman-player][']s diapered under [his of woman-player] dungarees. Strong green vines shoot out of the ground and wrap around [his of woman-player] wrists and ankles, holding them in place. [big his of woman-player] body is then suspended in mid-air halfway through the portals, forcing [his of woman-player] face to be held right against [his of woman-player] diaper bulge.".
 
 Chapter - Vines Scene
 
@@ -380,7 +377,7 @@ To WomanVinePull:
 Chapter - Hotel Urinal Scene
 
 Report going when the player is in Hotel31 and watersports fetish is 1 and the woman-bimbo of woman-player is 4 and the hotel-urinal-scene of woman-player is 0:
-	if debugmode is 1, say "Checking if berri can appear.";
+	if debugmode is 1, say "Checking if Berri can appear.";
 	if the number of monsters in the location of the player is 0 and woman-player is redeploy appropriate:
 		deploy woman-player with woman-status 93;
 		now woman-player is in Holding Pen;
@@ -396,7 +393,7 @@ Report going when the player is in Hotel31 and watersports fetish is 1 and the w
 To compute WrestlerUrinalCompletion:
 	let M be a random wrestler in Holding Pen;
 	if M is monster:
-		say "DING! It's not long before [NameDesc of M][']s loading bar reaches 100% and [his of M] bondage falls away. [big he of M] pulls [himself of M] out of [his of M] urinal prison and begins to crawl away, moaning softly to [himself of M] as [he of M] does, [his of M] overfull diaper squeleching loudly with every movement.";
+		say "DING! It's not long before [NameDesc of M][']s loading bar reaches 100% and [his of M] bondage falls away. [big he of M] pulls [himself of M] out of [his of M] urinal prison and begins to crawl away, moaning softly to [himself of M] as [he of M] does, [his of M] overfull diaper squelching loudly with every movement.";
 		now M is in Hotel01;
 
 An all time based rule (this is the berri urinal rule):
@@ -483,7 +480,6 @@ This is the mechanic tortures berri rule:
 		rule succeeds.
 The mechanic tortures berri rule is listed first in the mechanic priority attack rules.
 
-
 Part 5 - Protection
 
 To compute protection of (M - woman-player):
@@ -523,8 +519,6 @@ To compute (M - woman-player) protecting against (X - a monster):
 		otherwise:
 			say "[BigNameDesc of M] tries to kick [NameDesc of X], but [his of M] soiled diaper prevents [him of M] from being able to maintain enough balance to get any power behind [his of M] foot!".
 
-
-
 Part 6 - Combat
 
 Section 0 - Punishment
@@ -555,8 +549,7 @@ This is the woman unique punishment rule:
 		now the smell-duration of G is 4;
 	otherwise if the woman-bimbo of M < 5 and J is plentiful accessory:
 		say "[BigNameDesc of M] yanks the [J] from your [if J is carried and there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise if J is carried]hands[otherwise if J is necklace]neck[otherwise if J is bracelet]wrist[otherwise]finger[end if]![line break][speech style of M]'This is mine now.'[roman type][line break]";
-		now J is in holding pen;
-		now M is retaining J;
+		now M is carrying J;
 	otherwise:
 		say "[BigNameDesc of M] lowers [his of M] bottom onto your face. [if the woman-bimbo of M < 3]Yep, turns out that [he of M] is diapered under there. [end if][big his of M] thick padding gently touches the tip of your nose.";
 		if face is not actually occupied, say "[line break][speech style of M]'[if the woman-bimbo of M < 5]Rub your face into my diaper, [cunt]. Show me you admit defeat.'[otherwise]Wanna smell?'[end if][roman type][line break]Do you rub your face in [NameDesc of M][']s diaper? ";
@@ -614,7 +607,6 @@ To say conventional greeting of (M - woman-player):
 			say "'Ooh [womanName], you're turning me on, looking like that!'";
 		otherwise:
 			say "'Hey [womanName], want to play?'".
-
 
 To compute basic greeting to (M - woman-player):
 	if M is uninterested, check guaranteed perception of M; [This should make sure all flags and variable trackings are as normal for an NPC]

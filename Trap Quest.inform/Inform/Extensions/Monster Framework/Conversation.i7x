@@ -1,6 +1,5 @@
 Conversation by Monster Framework begins here.
 
-
 A talk-object is a kind of thing.
 To consider (T - a talk-object) for (M - a monster):
 	do nothing.
@@ -279,7 +278,7 @@ To say PartnerGreeting to (M - a monster):
 	otherwise:
 		let F be a random fuckhole penetrated by M;
 		if the player is feeling dominant and the player is not a pervert:
-			if the player is female, say "'[one of]You'll hear from my lawyer[or]Stop it! This is SO unacceptable[or]Stop fucking me, you jerk[in random order]!'";
+			if the player is gendered female, say "'[one of]You'll hear from my lawyer[or]Stop it! This is SO unacceptable[or]Stop fucking me, you jerk[in random order]!'";
 			otherwise say "'[one of]Get off me!'[or]This isn't cool at all[or]Stop! This is way uncool[or]Dude[as decreasingly likely outcomes]!'";
 		otherwise if the player is not a pervert:
 			say "'[one of][or]My [F] can't take much more[or]Please! There must be someone else you can do this to[or]Not my [F][in random order]!'";
@@ -382,7 +381,7 @@ To say FriendlyPartnerGreeting to (M - a monster):
 		say EnthusiasmResponse of M;
 	otherwise:
 		if the player is feeling dominant:
-			if the player is male, say "'Don't tell anybody about this!'";
+			if the player is gendered male, say "'Don't tell anybody about this!'";
 			otherwise say "'Just so you know, this is a one time thing.'";
 		otherwise:
 			say "'[one of]This is just a one-time thing... unless you really need to go again.'[or]And remember, you can't tell ANYONE about this...'[in random order]";
@@ -1012,7 +1011,7 @@ To execute (T - talk-teach) for (M - a monster):
 	compute teaching of M.
 
 To reset skill cooldown:
-	if the skillCooldown of the player <= 0, say "That took a lot of concentration! You feel like you're going to need to wait a while before you can learn another skill from soneone you meet.";
+	if the skillCooldown of the player <= 0, say "That took a lot of concentration! You feel like you're going to need to wait a while before you can learn another skill from someone you meet.";
 	now the skillCooldown of the player is 1000.
 
 A time based rule (this is the skill cooldown rule):
@@ -1033,7 +1032,6 @@ To compute default teaching of (M - a monster):
 [Skill question. This is in case there's an npc that wants this to be modular]
 To say TeachQuestion of (M - a monster):
 	say "'Can you teach me anything useful?'";
-
 
 Chapter 3 Drink Requesting
 
@@ -1518,7 +1516,6 @@ To say SexDollQuestion of (M - a monster):
 To say SexDollExplanation of (M - a monster):
 	say "The response comes telepathically from the Nintendolls, directly into your head.[line break][second custom style]'It's simply an animated object, controlled via magic. Just consider it like you would a very high-tech sex doll.'[roman type][line break]".
 
-
 talk-where-question is a talk-object.
 
 To consider (T - talk-where-question) for (M - a monster):
@@ -1533,7 +1530,6 @@ To say WhereQuestion of (M - a monster):
 	say "'[if the class of the player is santa's little helper]Hmm, this isn't Lapland. [end if]Where [one of]are we?'[or]am I?'[at random]".
 To say WhereAnswer of (M - a monster):
 	say "[speech style of M]'We're here. Obviously.'[roman type][line break]".
-
 
 talk-who-question is a talk-object.
 
@@ -1554,7 +1550,6 @@ To say WhoQuestion of (M - a monster):
 To say WhoAnswer of (M - a monster):
 	say "[speech style of M]'Why, I'm Generic the npc!'[roman type][line break]".
 
-
 talk-story-question is a talk-object.
 
 To consider (T - talk-story-question) for (M - a monster):
@@ -1574,7 +1569,6 @@ To say StoryQuestion of (M - a monster):
 To say StoryAnswer of (M - a monster):
 	say "[speech style of M]'Trapquest.'[roman type][line break]".
 
-
 talk-escape-question is a talk-object.
 
 To consider (T - talk-escape-question) for (M - a monster):
@@ -1593,7 +1587,6 @@ To say EscapeQuestion of (M - a monster):
 
 To say EscapeAnswer of (M - a monster):
 	say "[speech style of M]'Close the window.'[roman type][line break]".
-
 
 talk-advice-question is a talk-object.
 
@@ -1625,6 +1618,5 @@ To say AdviceAnswer of (M - a monster):
 		say "[speech style of M]'Don't eat yellow snow. Unless you get off on it or something.'[roman type][line break]";
 	otherwise:
 		say "[speech style of M]'Don't eat yellow snow.'[roman type][line break]".
-
 
 Conversation ends here.

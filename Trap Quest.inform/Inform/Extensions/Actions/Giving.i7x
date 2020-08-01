@@ -22,13 +22,12 @@ Check giving:
 		say "The [second noun] accepts the [printed name of noun] and seems happy.";
 		calm the second noun;
 		now the second noun is unconcerned;
-		bore the second noun for 500 seconds;
-		now the noun is in holding pen;
-		now the second noun is retaining the noun instead;
+		only destroy the noun;
+		bore the second noun for 500 seconds instead;
 	otherwise if the second noun is mechanic and the noun is mystical amulet:
 		now the noun is worn by the player; [this is because the rule only works if the amulet is worn]
 		follow the mechanic claims amulet rule;
-		if the noun is worn, now the noun is held by the player; [just to prevent potential glitches if the rule fails to activate properly!]
+		if the noun is worn, now the noun is carried by the player; [just to prevent potential glitches if the rule fails to activate properly!]
 		do nothing instead;
 	otherwise if the second noun is witch:[TODO: compute WitchGiving (T - a thing) to (M- a witch)]
 		if the second noun is unfriendly, say "[variable custom style]I think it's a bit late for that![roman type][line break]" instead;
@@ -70,17 +69,15 @@ Check giving:
 				say "[second custom style]'[if the total-soak of the noun is 0]Why would I want that? It's bone dry!'[otherwise if the total-soak of the noun >= the soak-limit of the noun / 3]I'm sorry, but there's too much water in that diaper. I need the good shit.'[otherwise]Nah, that's not used enough for me. Use it some more and then come back to me.'[end if][roman type][line break]";
 			otherwise:
 				allocate 6 seconds;
-				let D be a random diaper retained by the second noun;
+				let D be a random diaper carried by the second noun;
 				say "[BigNameDesc of the second noun] [if D is diaper]clicks [his of the second noun] fingers, and [his of the second noun] [D] disappears into thin air. [big he of the second noun] [end if][if the noun is worn and the noun is messed]waves [his of the second noun] hands and the nappy falls from your body, and then flies into [his of the second noun] hands. [big his of the second noun] magic ripples across your messy bottom, somehow cleaning away all the gross leftover mess and leaving you completely clean. [big he of the second noun] [otherwise if the noun is worn]waves [his of the second noun] hands and the nappy falls from your body, and then flies into [his of the second noun] hands. [big he of the second noun] [end if]steps through the leg-holes of the [noun], pulling it up to [his of the second noun] bare crotch with a loud squelch. [big he of the second noun] wiggles [his of the second noun] hips a bit, clearly enjoying the feeling of the [if the noun is messed]yucky goop[otherwise]soggy padding[end if] rubbing against [his of the second noun] loins. ";
-				repeat with C running through diapers retained by the second noun:
-					now the second noun is not retaining C;
-					only destroy C;
+				repeat with C running through diapers carried by the second noun:
+					only destroy C; [she only holds onto the most recent one]
 				let N be 1;
 				if T >= the soak-limit of the noun, now N is 2;
 				if the noun is messed, now N is 1; [Getting the player out of a messy situation is rewarding enough on its own]
 				if the noun is worn and the noun is cursed, now N is 0;
-				now the second noun is retaining the noun;
-				now the noun is in Holding Pen;
+				now the second noun is carrying the noun;
 				if the altar-uses of the second noun < 0, now the altar-uses of the second noun is 0;
 				if N > 0, say "[second custom style]'Ooh, that feels [if N > 1]incredible[otherwise]goood[end if]! You've earned [if N is 1]one use[otherwise][N] uses[end if] of the altar[one of]. Hey, don't judge me! I'm not the one who NEEDS to wear nappies[or][stopping].'[roman type][line break]";
 				otherwise say "[second custom style]'Ooh, that feels pretty fucking good! You've not earned any uses of the altar though, since I had to use my magic to remove that curse[one of]. What, you thought I wouldn't notice that you were stuck in it?'[or].'[stopping][roman type][line break]";

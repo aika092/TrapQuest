@@ -38,7 +38,7 @@ To compute (M - a robochef) cooking (I - apple):
 	if D is food:
 		now the quality of D is a random number between 1 and -1;
 		now the fat of D is 1;
-		now D is retained by M.
+		now D is carried by M.
 
 banana is a snack. The text-shortcut of banana is "ban".
 
@@ -64,7 +64,7 @@ To compute (M - a robochef) cooking (I - banana):
 	if D is food:
 		now the quality of D is a random number between 2 and -2;
 		now the fat of D is 2;
-		now D is retained by M.
+		now D is carried by M.
 
 lemon is a snack. The text-shortcut of lemon is "lem".
 
@@ -89,7 +89,7 @@ To compute (M - a robochef) cooking (I - lemon):
 	if D is food:
 		now the quality of D is a random number between 1 and -2;
 		now the fat of D is 1;
-		now D is retained by M.
+		now D is carried by M.
 
 pack of crisps is a snack. The text-shortcut of pack of crisps is "cri".
 
@@ -115,7 +115,7 @@ To compute (M - a robochef) cooking (I - pack of crisps):
 	if D is food:
 		now the quality of D is a random number between 0 and -2;
 		now the fat of D is 3;
-		now D is retained by M.
+		now D is carried by M.
 
 pack of nuts is a snack. The text-shortcut of pack of nuts is "nu".
 
@@ -139,6 +139,6 @@ To compute (M - a robochef) cooking (I - pack of nuts):
 	if D is food:
 		now the quality of D is a random number between 2 and -1;
 		now the fat of D is 1;
-		now D is retained by M.
+		now D is carried by M.
 
 Snacks ends here.

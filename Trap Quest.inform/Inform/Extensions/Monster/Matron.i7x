@@ -379,8 +379,7 @@ To compute confiscate of (M - matron):
 				now V is a random held vessel;
 			say "[BigNameDesc of M] takes away your [ShortDesc of V]!";
 			decrease N by 1;
-			now V is in Holding Pen;
-			now V is retained by M;
+			now V is carried by M;
 			FavourDown M;
 		if baby's bottle is not held:
 			now baby's bottle is held by the player;
@@ -392,8 +391,7 @@ To compute confiscate of (M - matron):
 		satisfy M;
 	otherwise if M is motherly and C is necklace and a random number between 1 and 3 is 1 and the favour of M < 13:
 		say "[BigNameDesc of M] notices your [ShortDesc of C]![line break][speech style of M]'Where did you get this, baby?! This is my jewellery! Bad [if the player is presenting as male]sissy[otherwise]girl[end if], this isn't yours to play with! It's precious and delicate. I'll be taking it back now.'[roman type][line break][big he of M] pulls it off from your neck!";
-		now C is in Holding Pen;
-		now C is retained by M;
+		now C is carried by M;
 		say "[variable custom style][if the player is able to speak]'Sorry I didn't know it was yours! You have to believe me!'[otherwise]How was I to know it was [his of M]?! I can't even explain the mix-up...[end if][roman type][line break]";
 		FavourDown M;
 		satisfy M;

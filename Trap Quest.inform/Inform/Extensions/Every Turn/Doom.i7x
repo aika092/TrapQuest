@@ -36,6 +36,18 @@ To commence doom:
 				set up M;
 		say "[bold type]You feel a sudden sense of impending doom...[roman type][line break]";
 		if newbie tips is 1, say "[one of][newbie style]Newbie tip: You've triggered a side quest! Unless you stop the ritual, spooky things will start happening and some enemies will get more powerful and aggressive. To slow the cultists down, kill the mindless ones near the hidden altar, and also don't dirty up the sacred pool. To find out how to re-close the weakening seal on the Elder One, talk to the witch in the woods.[roman type][line break][or][stopping]";
+		repeat with M running through robobellboys:
+			add reception bell to the banishItems of M;
+		if the number of alive undefeated robobellboys is 0, now the next-summon of teleportation-pad is a random off-stage robobellboy;
+		if catbell is off-stage:
+			now catbell is in Dungeon41;
+			now catbell is store;
+		add black candle to the taxableItems of dominatrix;
+		add black candle to the tradableItems of dominatrix;
+		repeat with M running through dungeon dwelling gladiators:
+			add black candle to the taxableItems of M;
+			add black candle to the tradableItems of M;
+		if the number of alive undefeated dungeon dwelling gladiators is 0, now the next-summon of summoning-circle is a random off-stage dungeon dwelling gladiator;
 		now doom counter is 1.
 
 [!<ComputeDoom>+

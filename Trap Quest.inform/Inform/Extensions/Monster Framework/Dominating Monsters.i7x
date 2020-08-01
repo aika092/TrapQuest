@@ -3,18 +3,29 @@ Dominating Monsters by Monster Framework begins here.
 Definition: a monster is permanently banishable if it is intelligent. [Can't be summoned again once banished]
 To compute banishment of (M - a monster):
 	compute unique banishment of M;
-	if there are things retained by M:
-		say "Your [list of things retained by M] [if the number of things retained by M > 1]are[otherwise]is[end if] also left behind.";
-		repeat with K running through things retained by M:
+	if there are things carried by M:
+		say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
+		repeat with K running through things carried by M:
 			now K is in the location of the player;
-			now M is not retaining K;
-			now M is not withholding K;
 			compute autotaking K;
 	if there is a worn notebook, compute studying 1 of M;
 	destroy M;
 	if M is permanently banishable, now M is permanently banished.
 To compute unique banishment of (M - a monster):
 	do nothing.
+To compute auto banished loot of (M - a monster):
+	compute banished loot of M;
+	if the loot dropped of M is 0, loot M.
+To compute banished loot of (M - a monster):
+	repeat with C running through the banishItems of M:
+		compute banish drop of C from M.
+To compute banish drop of (C - a thing) from (M - a monster):
+	if C is off-stage:
+		now C is in the location of the player;
+		if C is plentiful accessory, compute appraisal of C from M;
+		say "[BigNameDesc of M] left [NameDesc of C] behind.";
+		increase the loot dropped of M by 1;
+		compute autotaking C.
 
 To compute (M - a monster) slinking away:
 	say SlinkAwayFlav of M;
@@ -29,7 +40,7 @@ To compute automatic banishment of (M - a monster):
 	compute unique automatic banishment of M;
 	if M is in the location of the player and M is not dying: [This way we can override the rest of this function by destroying the NPC in the 'unique banishment' function.]
 		say BanishFleeFlav of M;
-		if M is auto-banish-loot-dropping, loot M;
+		if M is auto-banish-loot-dropping, compute auto banished loot of M;
 		compute banishment of M.
 To say BanishFleeFlav of (M - a monster):
 	say "[BigNameDesc of M] turns tail and flees! You get the feeling you won't be seeing [him of M] again any time soon!".
@@ -42,6 +53,7 @@ To say BanishDesc of (M - a monster):
 To compute forced banishment of (M - a monster):
 	if M is intelligent and the player is able to speak, say BanishDemandFlav of M;
 	say BanishForceFlav of M;
+	compute banished loot of M;
 	compute banishment of M.
 To say BanishDemandFlav of (M - a monster):
 	say "[variable custom style]'[if the player is feeling dominant][one of]I will spare you this once. Next time you may not remain in one piece.'[or]Only pain at my hand remains for you here. Begone.'[or]I'd better never see you again. Understand?'[at random][otherwise][one of]Leave now, and never come back.'[or]This will keep happening unless you leave this place.'[or]While I'm here, you should leave this place alone.'[at random][end if][roman type][line break]".
@@ -188,12 +200,16 @@ To compute defeat of (M - a monster):
 			let T be entry 1 in LT;
 			if the number of entries in LT is 1 and T is not BT and T is not TT and T is not PT, add PT to LT; [If we're giving the player only one option, to fuck the NPC, there should also be an option to leave it alone...]
 			if the number of entries in LT > 1:
-				say DefeatBrink of M;
-				reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
-				repeat with X running through LT:
-					set next numerical response to X;
-				compute multiple choice question;
-				now T is the printed name of chosen numerical response;
+				if let it die tattoo is worn and the player is getting unlucky:
+					say "You feel your 'let it die' tattoo stiffening your resolve.";
+					now T is BT;
+				otherwise:
+					say DefeatBrink of M;
+					reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
+					repeat with X running through LT:
+						set next numerical response to X;
+					compute multiple choice question;
+					now T is the printed name of chosen numerical response;
 			if T is BT:
 				compute forced banishment of M;
 				let J be a random worn demon codpiece;
@@ -233,26 +249,6 @@ To compute defeat of (M - a monster):
 				destroy M;
 			otherwise:
 				say "BUG: Unable to understand defeat choice.".
-
-[!<YourselfIsDomLicious>+
-
-Determines whether or not the player can successfully fuck a monster or not.
-
-@deprecated This function determined whether or not the player would actually be presented with the chance to fuck a defeated female npc. Since it's now determined through rng, this function is unneeded.
-@return This function returns true if the player is able to fuck the monster. Otherwise, it returns false.
-
-+!]
-[Definition: a person is domlicious:
-	if there is a cursed ass covering clothing, decide no;
-	if there is a cursed pussy covering clothing, decide no;
-	if the player is barbie and asshole is actually occupied, decide no;
-	if the player is possessing a vagina and vagina is actually occupied, decide no;
-	if the player is feeling submissive, decide no;
-	if let it die tattoo is worn and a random number between 1 and 2 is 1, decide no;
-	if the latex-transformation of the player >= 6, decide no;
-	if there is a dangerous monster in the location of the player, decide no;
-	if the player is possessing a penis and penis is not sex available, decide no;
-	decide yes.]
 
 [!<Player>@<dominatedCount:Integer>*
 
@@ -522,7 +518,6 @@ To compute dominating (M - a monster):
 	if player-fucker is penis and demon codpiece is worn, say CodTightenFlav of demon codpiece;
 	now player-fucking is DOMINANT-NONE;[we set this to 1 after we're finished determining success]
 	let R be (the number of worn dominance clothing * 2) + (the maxhealth of M / 2);
-	if let it die tattoo is worn, decrease R by 10;
 	if the delicateness of the player is 20:
 		now player-fucking is DOMINANT-FAILURE;
 		if debugmode > 0, say "[input style]Player is too submissive.[line break]";

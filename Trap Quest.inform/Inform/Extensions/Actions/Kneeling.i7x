@@ -155,7 +155,7 @@ Report kneeling when the player is in danger and seconds > 1: [This is where we 
 	if newbie tips is 1 and the soreness of asshole > 5 or the soreness of vagina > 5, say "[one of][newbie style]Newbie tip: You could always try 'offer mouth' to avoid your sore holes getting any sorer! Of course, it'll increase humiliation, and there's a chance it won't work.[roman type][line break][or][stopping]";
 	repeat with M running through combative monsters:
 		if M is human and the health of M >= the maxhealth of M, progress quest of obedience-quest;
-		make M expectant. [Here we note that the monster is expectantly waiting to see if the player offers up a particular orifice.]
+		unless the class of the player is puppy, make M expectant. [Here we note that the monster is expectantly waiting to see if the player offers up a particular orifice.]
 
 To compute correct kneeling reaction of (M - a monster):
 	if diaper quest is 1, compute DQ kneeling reaction of M;

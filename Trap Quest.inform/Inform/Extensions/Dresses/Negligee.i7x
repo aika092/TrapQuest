@@ -56,4 +56,24 @@ To decide which figure-name is clothing-image of (C - lacy negligee):
 To say ClothingDesc of (C - lacy negligee):
 	say "This sheer naughty lingerie dress is made up of sheer lacy straps that don't even go down far enough to properly cover your crotch, and even if they did, they have huge gaps between them. Your nipples are covered by straps but only just.".
 
+Part 3 - Floral Negligee
+
+floral negligee is an underdress. floral negligee is crotch-intact. floral negligee is bottom-exclusive. floral negligee is unskirted. floral negligee is silk. floral negligee is optional-top-displacable. floral negligee is low cut. The armour of floral negligee is 3. The text-shortcut of floral negligee is "fng".
+
+To decide which number is the original price of (C - floral negligee):
+	decide on 3.
+To decide which number is the initial outrage of (C - floral negligee):
+	decide on 3.
+Definition: floral negligee is fetish appropriate if diaper quest is 0.
+
+The printed name of floral negligee is "[clothing-title-before]floral negligee[clothing-title-after]".
+
+Figure of floral negligee is the file "Items/Clothes/Upper/Exposing/Negligees/negligee3.png".
+
+To decide which figure-name is clothing-image of (C - floral negligee):
+	decide on figure of floral negligee.
+
+To say ClothingDesc of (C - floral negligee):
+	say "This sexy item of high-waisted lingerie has a floral pattern. It feels rather delicate.".
+
 Negligee ends here.

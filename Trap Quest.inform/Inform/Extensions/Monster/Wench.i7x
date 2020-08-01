@@ -72,7 +72,7 @@ To say MediumDesc of (M - desperate wench):
 	say "desperate wench".
 
 To say MonsterDesc of (M - a wench):
-	let K be a random knickers retained by M;
+	let K be a random knickers carried by M;
 	if M is horny-wench:
 		if bukkake fetish is 1:
 			if lady fetish is 2, say "This [man of M] has a glazed look in [his of M] eye, and from [his of M] tiny penis and jizz-coated figure, [he of M]'s definitely the type you'd expect to be passed around down here. [big he of M] is wearing a white blouse, which is unbuttoned and completely soaked in the same pearly white stuff running out of [his of M] asshole. [big he of M] has one hand constantly between [his of M] legs, vigorously working [his of M] [semen] loaded ass as [he of M] wanders around with a bow-legged stride.";
@@ -103,11 +103,13 @@ To say MonsterDesc of (M - a wench):
 			otherwise say "This [man of M] is wearing a white blouse, which looks like it was pulled open rather roughly to expose [his of M] breasts. [big he of M] is [if K is clothing]also wearing a [ShortDesc of K], pulled aside[otherwise]otherwise completely naked,[end if] with [semen] dribbling freely from [his of M] exposed [vagina] and [asshole]. [big his of M] hair has been drawn back into a beach blonde ponytail, and the look on [his of M] heavily decorated face is somewhere between arousal and total exhaustion.".
 
 To say MonsterComment of (M - a wench):
-	say " [line break][variable custom style][if the bimbo of the player < 5 and the player is male][one of]Man, I'd fuck the shit out of that chick! Looks like somebody already beat me to it though...[or][big he of M]'s hot, but I don't like sloppy seconds.[stopping][otherwise if the bimbo of the player < 5][one of]Oh god, what happened to this [man of M]? Is that going to happen to me?[or]So that's how [men of M] are treated here. Disgusting.[stopping][otherwise if the bimbo of the player < 8][one of][big he of M] looks kind of weak. I'd probably win any fight with [him of M].[or]I don't think it would be hard to beat [him of M] in a fight.[in random order][otherwise if the bimbo of the player < 11][one of]Thinking of what must have happened to [him of M] so far is exciting! I should probably stop...[or]Am I going to end up like that? Doesn't seem that bad, really.[or][big he of M] looks like [he of M] could really use some clothes.[in random order][otherwise if pregnancy fetish is 1]Hee hee, I bet [he of M]'ll get pregnant from having all that cum in [his of M] pussy.[otherwise if the bimbo of the player < 14][one of][big he of M] looks like [he of M]'s had a lot of fun here.[or][big he of M] looks like [he of M] knows how to party![in random order][otherwise][one of]Maybe [he of M]'s another player. If I help [him of M] get out, maybe [he of M]'ll fuck me as a reward![or][big he of M] looks like [he of M] knows how to PARTY![stopping][end if][roman type][line break]".
+	say " [line break][variable custom style][if the bimbo of the player < 5 and the player is gendered male][one of]Man, I'd fuck the shit out of that chick! Looks like somebody already beat me to it though...[or][big he of M]'s hot, but I don't like sloppy seconds.[stopping][otherwise if the bimbo of the player < 5][one of]Oh god, what happened to this [man of M]? Is that going to happen to me?[or]So that's how [men of M] are treated here. Disgusting.[stopping][otherwise if the bimbo of the player < 8][one of][big he of M] looks kind of weak. I'd probably win any fight with [him of M].[or]I don't think it would be hard to beat [him of M] in a fight.[in random order][otherwise if the bimbo of the player < 11][one of]Thinking of what must have happened to [him of M] so far is exciting! I should probably stop...[or]Am I going to end up like that? Doesn't seem that bad, really.[or][big he of M] looks like [he of M] could really use some clothes.[in random order][otherwise if pregnancy fetish is 1]Hee hee, I bet [he of M]'ll get pregnant from having all that cum in [his of M] pussy.[otherwise if the bimbo of the player < 14][one of][big he of M] looks like [he of M]'s had a lot of fun here.[or][big he of M] looks like [he of M] knows how to party![in random order][otherwise][one of]Maybe [he of M]'s another player. If I help [him of M] get out, maybe [he of M]'ll fuck me as a reward![or][big he of M] looks like [he of M] knows how to PARTY![stopping][end if][roman type][line break]".
 
 To set up (M - a wench):
 	reset M;
 	now the monstersetup of M is 1;
+	add white-bodice to the banishItems of M, if absent;
+	add a random bag lunch to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the creampieTimer of M is 300;
 	now the health of M is the maxhealth of M.
@@ -263,7 +265,7 @@ To compute perception of (M - a wench):
 	otherwise if PSRB is bottle and the waitress-boredom of M <= 0 and M is not uniquely unfriendly:
 		say "[big he of M] spots your [PSRB].[line break][speech style of M]'What's on the menu today, [honey of M]?'[roman type][line break]";
 		calm M;
-	otherwise if there are held desirable knickers and the number of knickers retained by M is 0:
+	otherwise if there are held desirable knickers and the number of knickers carried by M is 0:
 		let K be a random held desirable knickers;
 		if M is buddy:
 			say "[speech style of M]'I'm very jealous of your [ShortDesc of K]. [if M is ally]Where did you get it?'[otherwise]You should hide that when I'm around otherwise I might just have to fight you for it! Ha ha...'[end if][roman type][line break]";
@@ -323,7 +325,7 @@ To say MercyReaction of (M - a wench):
 
 Report dropping clothing in the presence of a wench:
 	let M be a random wench in the location of the player;
-	if M is not objectifying the player and the noun is desirable and the number of knickers retained by M is 0:
+	if M is not objectifying the player and the noun is desirable and the number of knickers carried by M is 0:
 		compute M WenchReceiving the noun.
 
 To compute (M - a wench) WenchReceiving (K - a knickers):
@@ -331,8 +333,7 @@ To compute (M - a wench) WenchReceiving (K - a knickers):
 	now M is interested;
 	calm M;
 	FavourUp M by 4;
-	now M is retaining K;
-	now K is in Holding Pen.
+	now M is carrying K.
 
 Section 1 - Attack
 
@@ -443,7 +444,7 @@ To reset submissive wenches:
 
 This is the wench steals clothing rule:
 	let M be current-monster;
-	if there is a desirable knickers and M is not objectifying the player and the number of clothing retained by M is 0 and the player is prone:
+	if there is a desirable knickers and M is not objectifying the player and the number of clothing carried by M is 0 and the player is prone:
 		ClothingSteal M;
 		rule succeeds.
 The wench steals clothing rule is listed in the wench priority attack rules.
@@ -462,8 +463,7 @@ To (M - a wench) steals (K - a knickers):
 		if R > the defence of the player:
 			cutshow figure of wench cutscene 3 for M;
 			say "[big he of M] pulls them off and flees, [one of]happily[or]lewdly[or]pervertedly[or]blissfully[or]wildly[at random] [one of] sniffing[or]smelling[or]tasting[or]licking[at random] the crotch!";
-			now K is in holding pen;
-			now M is retaining K;
+			now M is carrying K;
 			distract M;
 			calm M;
 			now the scared of M is 75;
@@ -473,7 +473,7 @@ To (M - a wench) steals (K - a knickers):
 	otherwise:
 		say "[big he of M] pulls the [printed name of K] from your hands, and runs off with them!";
 		now K is in holding pen;
-		now M is retaining K;
+		now M is carrying K;
 		distract M;
 		calm M;
 		now the scared of M is 75.
@@ -572,7 +572,7 @@ To say NearingClimaxFacesit of (M - a wench):
 To say DiaperHumiliation of (M - a wench):
 	let D be a random worn diaper;
 	if D is messed, say "[one of]Come on you messy baby, eat up!'[or]What does is feel like to be sitting in your own filth?'[or]After we're done, you should probably find someone to change you, before you get a rash.'[or]You know, I thought I was quite pathetic until I saw you wallowing in your own messy diaper.'[or]At least I can control my own body and avoid messing myself!'[or]I wonder why you decided to poop your pants rather than using the toilet like a grown up?'[or]Are you some kind of sick perv who ENJOYS going number two in their diaper?'[in random order]";
-	otherwise say "[one of]Don't worry, I used to be a nanny, you know. I'll make sure you get all the din-dins you can swallow!'[or]You must be pretty fucking shameless to be waddling around the place in this padded monstrosity, eh?'[or]And to think that I thought that I was the biggest disgrace down here! At least I can control my own bladder!'[or]Tell me, what's more humiliating, having everyone see you in this [if the urine-soak of D > 0]soggy [end if]nappy, or having a slut like me dump all the cum from [his of M] insides [if the reaction of the player is 0]onto your face[otherwise]into your stomach[end if]?[or]Don't worry, baby, Mommy's here for you, and [he of M] loves you[if the reaction of the player > 0]. Keep licking Mommy's butthole now, that's a good baby[end if].'[or][if there is a pacifier retained by M]I'll make sure to put your suck suck back in your mouth[otherwise]I'll make sure to find you a nice girly pacifier to suck on[end if] after I'm done, okay hun?'[or]I'm glad I'm not the one who's stuck in Pampers for the rest of my life.'[or]Aww, look at you squirm down there! You're just the most perfect [if the player is male]Prissy [end if]Pampered Pottypants Princess a Mommy could ask for, aren't you?'[in random order]".
+	otherwise say "[one of]Don't worry, I used to be a nanny, you know. I'll make sure you get all the din-dins you can swallow!'[or]You must be pretty fucking shameless to be waddling around the place in this padded monstrosity, eh?'[or]And to think that I thought that I was the biggest disgrace down here! At least I can control my own bladder!'[or]Tell me, what's more humiliating, having everyone see you in this [if the urine-soak of D > 0]soggy [end if]nappy, or having a slut like me dump all the cum from [his of M] insides [if the reaction of the player is 0]onto your face[otherwise]into your stomach[end if]?[or]Don't worry, baby, Mommy's here for you, and [he of M] loves you[if the reaction of the player > 0]. Keep licking Mommy's butthole now, that's a good baby[end if].'[or][if there is a pacifier carried by M]I'll make sure to put your suck suck back in your mouth[otherwise]I'll make sure to find you a nice girly pacifier to suck on[end if] after I'm done, okay hun?'[or]I'm glad I'm not the one who's stuck in Pampers for the rest of my life.'[or]Aww, look at you squirm down there! You're just the most perfect [if the player is gendered male]Prissy [end if]Pampered Pottypants Princess a Mommy could ask for, aren't you?'[in random order]".
 
 To compute facial climax of (M - a wench):
 	compute facesit climax of M.
@@ -608,7 +608,7 @@ This is the wench monster fucked taunting rule:
 	if there are desirable knickers and M is not objectifying the player:
 		ClothingSteal M;
 	if P is wench and the difficulty of M - the starting difficulty of M >= 3 or the difficulty of P - the starting difficulty of P >= 3:
-		say "[BigNameDesc of M] laughs at your situation with the other wench.[line break]'You enjoying that down there, bitch?'[line break]The [if lady fetish is 2]twink[otherwise]girl[end if] walks over to your bottom half and [if the player is possessing a penis]starts expertly jacking you off. [otherwise if the player is male]starts licking your nipples and stroking your inner thighs. [otherwise]starts expertly fingering your pussy. [end if]The added arousal is making you need to breathe even more desperately! You can't hold back, and you have a strong orgasm and black out.";
+		say "[BigNameDesc of M] laughs at your situation with the other wench.[line break]'You enjoying that down there, bitch?'[line break]The [if lady fetish is 2]twink[otherwise]girl[end if] walks over to your bottom half and [if the player is possessing a penis]starts expertly jacking you off. [otherwise if the player is not possessing a vagina]starts licking your nipples and stroking your inner thighs. [otherwise]starts expertly fingering your pussy. [end if]The added arousal is making you need to breathe even more desperately! You can't hold back, and you have a strong orgasm and black out.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 9;
 		rule succeeds;
@@ -754,16 +754,7 @@ To say BanishDemandFlav of (M - a wench):
 	say "[variable custom style]'This is my turf now. Your place is [if Woods01 is discovered]up in the Woods[otherwise if Stairwell01 is discovered]whatever is up those stairs[otherwise]um, wherever the exit leads[end if]. Best of luck, bitch.[roman type][line break]".
 
 To say BanishForceFlav of (M - a wench):
-	say "You point towards [if Stairwell01 is discovered]the stairs[otherwise]the door[end if]. [big he of M] looks dismayed.[line break][speech style of M]'[if M is horny-wench]Yes... the woods... I-I guess there are things up there that could... help me... *sniff*'[otherwise if white-bodice is off-stage]You're going to make me go into the woods? You know what's going to happen to me up there, don't you?! Fuck it, I won't be needing this any more then. And fuck you.'[otherwise]The... the woods... I... Okay... I can make it through there... I think... Maybe...'[end if][roman type][line break][BigNameDesc of M] begins to tread hesitantly towards the exit[one of]. It seems unlikely you'll ever see [him of M] again[or][stopping].";
-
-To compute unique banishment of (M - a wench):
-	if M is not horny-wench and white-bodice is off-stage:
-		say "[BigNameDesc of M] removes and drops the [white-bodice] [he of M] was wearing.";
-		now white-bodice is in the location of the player;
-		let N be a random number between 6 and 9;
-		if bukkake fetish is 1, now the semen-soak of white-bodice is N;
-		otherwise now the water-soak of white-bodice is N;
-		compute autotaking white-bodice.
+	say "You point towards [if Stairwell01 is discovered and playerRegion is Dungeon]the stairs[otherwise]the door[end if]. [big he of M] looks dismayed.[line break][speech style of M]'[if M is horny-wench]Yes... the woods... I-I guess there are things up there that could... help me... *sniff*'[otherwise if white-bodice is off-stage]You're going to make me go into the woods? You know what's going to happen to me in there, don't you?! Fuck it, I won't be needing this any more then. And fuck you.'[otherwise]The... the woods... I... Okay... I can make it through there... I think... Maybe...'[end if][roman type][line break][BigNameDesc of M] begins to tread hesitantly towards the exit[one of]. It seems unlikely you'll ever see [him of M] again[or][stopping].";
 
 Definition: a horny-wench is taxable: decide no. [Can this NPC have items demanded of them upon defeat?]
 
@@ -1118,12 +1109,12 @@ To say OfferFlav of (T - a vessel):
 		say "You hold the item up to the [second noun].";
 
 To decide which number is the bartering value of (T - a sex toy) for (M - a wench):
-	if M is retaining a sex toy, decide on 0;
+	if M is carrying a sex toy, decide on 0;
 	if the size of T < 6 or M is workaholic wench, decide on 1 + (the size of T + 4) / 5;
 	decide on 0.
 
 To say MonsterOfferRejectFlav of (M - a wench) to (T - a sex toy):
-	say "[BigNameDesc of M] winces.[line break][speech style of M]'[if M is retaining a sex toy]You already gave me a toy, remember? I don't need two.'[otherwise if M is unfriendly]Nuh-uh. Right now, I need the real thing...'[otherwise]That's... um... that's a bit big for me. Thanks anyway.'[end if][roman type][line break]".
+	say "[BigNameDesc of M] winces.[line break][speech style of M]'[if M is carrying a sex toy]You already gave me a toy, remember? I don't need two.'[otherwise if M is unfriendly]Nuh-uh. Right now, I need the real thing...'[otherwise]That's... um... that's a bit big for me. Thanks anyway.'[end if][roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - a wench) to (T - a sex toy):
 	say "[BigNameDesc of M][']s eyes light up.[line break][speech style of M]'Oh my god yes please! With this I could potentially satisfy myself, and that might stop me from going crazy...'[roman type][line break]".
@@ -1156,7 +1147,7 @@ To say RepeatResponse of (M - a wench):
 		if M is unfriendly, say "[speech style of M]'[one of]Did you say something? I couldn't hear you over the sound of how tiny your dick is!'[or]Shut up, baby dick, I'm horny.'[or]I'm looking forward to shutting you up, baby dick.'[at random][roman type][line break]";
 		say "[speech style of M]'[one of]Hey, it's baby dick!'[or]So, has your dick always been that small?'[or]How are you holding up, baby dick? Do you need me to protect you?'[or]Oh my god, I just can't get over how tiny your cock is.'[at random][roman type][line break]";
 		alwayscutshow figure of wench interact 13 for M;
-	otherwise if there is knickers retained by M:
+	otherwise if there is knickers carried by M:
 		say "[speech style of M]'[one of]Thanks for the panties!'[or]Thanks for letting me have your panties!'[at random][roman type][line break]";
 		alwayscutshow figure of wench interact 14 for M;
 	otherwise:
@@ -1294,6 +1285,8 @@ To say SummoningFlav of (M - workaholic wench):
 To set up (M - workaholic wench):
 	reset M;
 	now the monstersetup of M is 1;
+	add white-bodice to the banishItems of M, if absent;
+	add condom-pack to the tradableItems of M;
 	now the raw difficulty of M is the starting difficulty of M + 6;
 	now the creampieTimer of M is 300;
 	now the health of M is the maxhealth of M;
@@ -1303,7 +1296,7 @@ Definition: workaholic wench is dungeon dwelling: decide no.
 Definition: workaholic wench is hotel dwelling if diaper quest is 0 and a2m fetish >= 2.
 
 To say MonsterDesc of (M - workaholic wench):
-	let K be a random knickers retained by M;
+	let K be a random knickers carried by M;
 	if bukkake fetish is 1:
 		say "This [man of M] has dozens of hatch marks next to [his of M] mouth, [if lady fetish is 2]and [asshole][otherwise][asshole], and [vagina][end if], and from [his of M] [if lady fetish is 2]effeminate[otherwise]voluptuous[end if], jizz-coated figure, it's not hard to guess how [he of M] might have earned them. [big he of M]'s wearing a cum-soaked white blouse[if K is clothing] with a [printed name of K][end if], and you can see the words 'Free Ride' tattooed across [his of M] right cheek. [big he of M] looks a little exhausted.";
 	otherwise:
@@ -1329,7 +1322,7 @@ To say AdviceAnswer of (M - workaholic wench):
 	let P be pimp;
 	let W be a random wrestler;
 	let B be mechanic;
-	say "[speech style of M]'[one of]Depending on what you're wearing, you can earn more when you're servicing customers.'[or]You know that pimp that shows up after your first couple tricks? Well, [he of P] doesn't actually work here. Don't be afraid to kick [his of P] ass.'[or]Condoms are unreliable sometimes, but they're usually better than going without.'[or]That wrestler doesn't really care too much about winning or losing. [big he of W] just wants to have fun.'[or]Even if you feel like you're not in the mood for a gangbang, it's a good way to make a lot of cash. I think it's a lot smarter to just play again. I mean, we're just whores anyway.'[or][if the player is a trained hooker]You completed the training too? Well, take it from me, there will still be consequences if you let your performance drop.'[otherwise]You'll make more money if you finish the employee training first.'[end if][or][if demon lord is alive]Some [DickDesc of B]s need to be avoided [otherwise]You know [NameDesc of B]? I think [he of mechanic]'s hiding something[end if].'[at random][roman type][line break]";
+	say "[speech style of M]'[one of]Depending on what you're wearing, you can earn more when you're servicing customers.'[or]You know that pimp that shows up after your first couple tricks? Well, [he of P] doesn't actually work here. Don't be afraid to kick [his of P] ass.'[or]Condoms are unreliable sometimes, but they're usually better than going without.'[or]That wrestler doesn't really care too much about winning or losing. [big he of W] just wants to have fun.'[or]Even if you feel like you're not in the mood for a gangbang, it's a good way to make a lot of cash. I think it's a lot smarter to just play again. I mean, we're just whores anyway.'[or][if the player is a trained hooker]You completed the training too? Well, take it from me, there will still be consequences if you let your performance drop.'[otherwise]You'll make more money if you finish the employee training first.'[end if][or][if demon lord is alive]Some [DickDesc of B]s need to be avoided. You know who I'm talking about[otherwise]You know [NameDesc of B][speech style of M]? I think [he of mechanic]'s hiding something[end if].'[at random][roman type][line break]";
 	alwayscutshow figure of wench interact 2 for M.
 
 To compute patronMeeting of (M - workaholic wench) with (P - a patron):

@@ -129,7 +129,7 @@ To update students:
 			destroy M;][We no longer do this because these teachers form part of the gang that fights the player when they try to rescue the princess]
 	if the rank of the player is 4:
 		set up rank five students;
-		repeat with M running through fetish appropriate diamond-teacher:
+		repeat with M running through off-stage fetish appropriate diamond-teacher:
 			set up M;
 		[repeat with M running through alive emerald-teacher:
 			destroy M.]

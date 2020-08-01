@@ -32,6 +32,7 @@ To say MonsterDesc of (M - a robobellboy):
 To set up (M - a robobellboy):
 	reset M;
 	now the monstersetup of M is 1;
+	add mechanical joint to the banishItems of M, if absent;
 	now the target-room of M is the location of a random on-stage hotel bed;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.

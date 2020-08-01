@@ -454,12 +454,14 @@ To Dignify (X - a number):
 		otherwise decrease the humiliation of the player by X.
 
 Table of Published Disgraces
-content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)	viewsfuzz (a number)
+content (a text)	published (a text)	popularity (a number)	severity (a number)	timestamp (a number)	viewsfuzz (a number)	lastwitnessed (a number)	deletedtime (a number)
 with 100 blank rows
 
 To decide which number is DisgracePostViews (N - a number):
 	choose row N in Table of Published Disgraces;
-	let P be popularity entry * (timestamp entry + viewsfuzz entry - earnings); [this how we calculate number of views]
+	let E be timestamp entry - earnings;
+	if deletedtime entry > 0, now E is timestamp entry - deletedtime entry;
+	let P be popularity entry * (E + viewsfuzz entry); [this how we calculate number of views]
 	if P > 0, decide on P;
 	decide on 0.
 
@@ -482,12 +484,22 @@ To say DisgracePost (N - a number):
 
 To say DisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;
-	say DisgracePostReaction strength S.
+	choose row N in Table of Published Disgraces;
+	if lastwitnessed entry > 0 and lastwitnessed entry <= time-earnings + 100:
+		say "[variable custom style]I saw this already just a few moments ago.[roman type][line break]";
+	otherwise:
+		say DisgracePostReaction strength S;
+	now lastwitnessed entry is time-earnings.
 
 To say HumiliatingDisgracePostReaction (N - a number):
 	let S be DisgracePostImpact N;
-	say DisgracePostReaction strength S;
-	humiliate S / 5.
+	choose row N in Table of Published Disgraces;
+	if lastwitnessed entry > 0 and lastwitnessed entry <= time-earnings + 100:
+		say "[variable custom style]I saw this already just a few moments ago.[roman type][line break]";
+	otherwise:
+		say DisgracePostReaction strength S;
+		humiliate S / 5;
+	now lastwitnessed entry is time-earnings.
 
 To say DisgracePostReaction strength (S - a number):
 	say variable custom style;
@@ -510,6 +522,8 @@ To compute digital reputation damage (T - a text) strength (S - a number) qualit
 	now the severity entry is S;
 	now the popularity entry is N;
 	now the timestamp entry is earnings;
+	now the lastwitnessed entry is 0;
+	now the deletedtime entry is -1;
 	now the viewsfuzz entry is a random number between -100 and 100;
 
 To decide which text is ReputationAttire:

@@ -57,6 +57,7 @@ To decide which number is the base semen load of (M - demon lord):
 To set up (M - demon lord):
 	reset M;
 	now the monstersetup of M is 1;
+	add infernal gem to the banishItems of M, if absent;
 	now the raw difficulty of M is 12 + (the charge of demon codpiece * 2);
 	now the health of M is the maxhealth of M.
 
@@ -630,9 +631,6 @@ To compute unique banishment of (M - demon lord):
 		say "The defeated [ShortDesc of M] [if the loot dropped of M > 0]also [end if]dropped a [printed name of X]!";
 		increase the loot dropped of M by 1;
 		compute autotaking X;
-	let G be a random off-stage infernal gem;
-	if G is infernal gem, now G is in the location of the player;
-	compute autotaking G;
 	now M is bossdefeated.
 
 Part 4 - Conversation

@@ -65,7 +65,6 @@ To decide which number is the initial outrage of (B - a yellow buttockless pants
 To decide which object is the unique-upgrade-target of (C - a yellow buttockless pants):
 	if the number of worn knickers is 0, decide on a random off-stage microshorts.
 
-
 exercise shorts is a kind of trousers. An exercise shorts is manly. An exercise shorts is usually leg exposing. The armour of an exercise shorts is 8. Understand "exercise", "shorts" as exercise shorts.
 To say ShortDesc of (Y - an exercise shorts):
 	say "pair of exercise shorts".

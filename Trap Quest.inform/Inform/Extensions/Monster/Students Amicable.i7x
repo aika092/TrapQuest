@@ -80,4 +80,51 @@ To compute (M - an amicable student) protecting against (X - a monster):
 		now the scared of M is 100;
 		FavourDown M.
 
+Book - Rosie
+
+student-rosie is an amicable student.
+
+The text-shortcut of student-rosie is "stro".
+
+To decide which figure-name is the monster-image of (M - student-rosie):
+	if the current-rank of M > 1, decide on figure of rank 2 rosie;
+	decide on figure of rank 1 rosie.
+
+To say MonsterDesc of (M - student-rosie):
+	say "This skinny brunette [if lady fetish is 2]is wearing[otherwise]has pert C-cup breasts pushed seductively together by[end if] a red front-tie crop top that is so skimpy it looks more like a handkerchief than a piece of clothing. [big his of M] matching red microshorts are similarly tiny[if the current-rank of M is 1], meaning that overall a lot of [his of M] skin is showing[otherwise if diaper quest is 1], and are in fact so short that they leave the waistband of [his of M] baby pink diaper exposed. There's no way for [him of M] to hide that fact that [he of M] has been diapered[otherwise]and are both unbuttoned and unzipped, making [his of M] overall appearance rather overtly sexual[end if][if M is kissPunished]. [big his of M] lips have been swollen into large red pillows that look like they were made for sucking [manly-penis][end if].".
+
+The max-rank of student-rosie is 2.
+
+To update name of (M - student-rosie):
+	if the current-rank of M is 1:
+		now the student-name of M is "Rose";
+		now the student-print of M is "friendly farmgirl";
+	otherwise:
+		now the student-name of M is "Rosie";
+		now the student-print of M is "farmyard fox".
+
+To decide which number is the starting difficulty of (M - student-rosie):
+	decide on 8 + the current-rank of M.[She's farm tough!]
+
+To say StoryAnswer of (M - student-rosie):
+	say "[speech style of M]'I'm nothin['] but an honest, hard-workin['] farmer's [if lady fetish is 2]son[otherwise]daughter[end if]. Daddy's been strugglin['] to sell crops cuz everyone is goin['] to the shop that opened up down the road last spring. He's trying hard, but the lady that runs the shop wears skimpy clothes n['] [if diaper quest is 1]acts all perfect and innocent-like[otherwise]flirts[end if] with all the customers, and I know the only way to save our farm is lettin['] the customers know I can make [']em fall in love with me too! All I need to do is overcome my shyness n['] learn everythin['] I can, then all them customers are gonna come runnin['] back. I know the best [slut school] in all of Bimbacia won't let me down!'[roman type][line break]".
+
+To say AdviceAnswer of (M - student-rosie):
+	say "[speech style of M]'Just do as you're told! I ain't never disobeyed a word a teacher said an['] it never hurt me none!'[roman type][line break]".
+
+To compute teaching of (M - student-rosie):
+	say "[speech style of M]'I'm here to learn, not sell my daddy's hard won farmin['] secrets!'[roman type][line break]".
+
+To say kissPunishmentDesc of (ST - student-rosie):
+	say "Hmm, I zink you vill be encouraged to do better next time, if your lipz are twice ze size".
+
+To compute kissPromotion of (ST - student-rosie):
+	let M be the lesson-teacher of kissing-lesson;
+	if ST is kissPunished:
+		say "[BigNameDesc of M] enjoys one final lick of [NameDesc of ST][']s swollen red lips.[line break][speech style of M]'MUCH better, darling. You clearly learned your lesson vell.'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] pouts.[line break][speech style of M]'Zis waz good, and you dezerve promotion... az long az you let me give you a helping hand...'[roman type][line break]You watch as [teacher-name of M] returns for a final kiss. When [his of M] lips meet [student-name of ST][']s, [student-name of ST][']s lips swell and double in size, turning bright red. They look like they've been stung by bees. [big he of ST] lets out a shy squeak but doesn't complain, backing off to explore [his of ST] new sensitive [if the player is a pervert]dick-sucking [end if]lips with [his of ST] hands.";
+		now ST is kissPunished;
+	promote ST.
+
 Students Amicable ends here.

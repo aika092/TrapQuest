@@ -42,7 +42,7 @@ To decide which number is the difficulty of (M - a facehugger):
 	decide on the raw difficulty of M.
 
 To decide which number is the maxhealth of (M - a facehugger):
-	decide on 6 + game difficulty.
+	decide on 7.
 
 To compute labour to (M - a facehugger):
 	compute tentacle birth. [Possibly this can be changed so tentacle monster daddy is different from lake monster, vine, and belt daddy.]

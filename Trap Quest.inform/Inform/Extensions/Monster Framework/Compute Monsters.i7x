@@ -111,7 +111,7 @@ Definition: a monster is motionless-when-defeated if it is fucked-silly.[Most NP
 
 To check chase boredom of (M - a monster):
 	let D be 15;
-	if there is a worn catbell, increase D by 30;
+	if catbell is worn, increase D by 30;
 	if the player is pheromonal and M is musky, increase D by 15;[beast monsters follow you longer]
 	if M is not in the location of the player and (M is guarding or M is caged or a random number from 1 to D is 1):
 		deinterest M; [Every turn the monster (after seeking) is not in the location of the player, there's a 1 in 15 chance of them getting bored.]

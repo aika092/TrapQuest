@@ -8,6 +8,8 @@ The printed name of cowbell is "[clothing-title-before]cowbell[clothing-title-af
 
 To decide which number is the initial outrage of (C - cowbell):
 	decide on 6.
+To decide which number is the stealth-influence of (C - cowbell):
+	decide on -12.
 
 To set up influence of (C - cowbell):
 	set up taste-based influence of C.

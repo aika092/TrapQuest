@@ -136,4 +136,32 @@ To decide which object is the unique-upgrade-target of (C - turtle-swimsuit):
 	if there is a worn diaper and sailor-fleece-dress is off-stage, decide on sailor-fleece-dress;
 	decide on nothing.
 
+Part 6 - Queen of Hearts Monokini
+
+queen of hearts monokini is a monokini. queen of hearts monokini is top-displacable. queen of hearts monokini is fully covering. The text-shortcut of white monokini is "qhmk".
+
+The printed name of queen of hearts monokini is usually "[clothing-title-before]white onepiece swimsuit[clothing-title-after]".
+
+Figure of queen of hearts monokini is the file "Items/Clothes/Upper/Swimming/Monokinis/monokini6.png".
+
+To decide which number is the initial outrage of (C - queen of hearts monokini):
+	decide on 1.
+
+To set up influence of (C - queen of hearts monokini):
+	now C is luck-influencing.
+
+To decide which figure-name is clothing-image of (C - queen of hearts monokini):
+	decide on figure of queen of hearts monokini.
+
+To say ClothingDesc of (C - queen of hearts monokini):
+	say "This tight fitting white onepiece swimsuit is decently modest except for a rather high cut at the legholes. A well-recognisable image of the queen of hearts is printed on the front.".
+
+To say ShortDesc of (C - queen of hearts monokini):
+	say "white swimsuit".
+To say MediumDesc of (C - queen of hearts monokini):
+	say "queen of hearts swimsuit".
+
+Definition: queen of hearts monokini is white themed: decide yes.
+Definition: queen of hearts monokini is party themed: decide yes.
+
 Monokinis ends here.

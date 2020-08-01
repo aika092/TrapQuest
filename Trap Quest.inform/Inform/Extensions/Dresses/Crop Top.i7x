@@ -321,6 +321,8 @@ To say ShortDesc of (C - rugged-crop-top):
 To decide which object is the unique-upgrade-target of (C - rugged-crop-top):
 	if leopard print tube top is off-stage and diaper quest is 0, decide on leopard print tube top.
 
+Part 11 - Nipple Holes Crop Top
+
 nipples-crop-top is a crop top. nipples-crop-top is transformation-rare. nipples-crop-top is dense. nipples-crop-top is normally-nipple-exposing. The printed name of nipples-crop-top is "[clothing-title-before]nipple holes crop top[clothing-title-after]". The text-shortcut of nipples-crop-top is "nct". Figure of nipples-crop-top is the file "Items/Clothes/Upper/CropTops/croptop12.jpg". Understand "nipple", "holes" as nipples-crop-top.
 To decide which figure-name is clothing-image of (H - nipples-crop-top):
 	decide on figure of nipples-crop-top.
@@ -347,6 +349,8 @@ To construct unique buttons for (T - nipples-crop-top):
 		now the ButtonCommand entry is "adjust arms";
 		now the ButtonColour entry is lightModeFullGreen.
 
+Part 12 - Football Crop Top
+
 football-crop-top is a crop top. football-crop-top is unique. football-crop-top is dense. football-crop-top is fully exposing. football-crop-top is only arm covering. The printed name of football-crop-top is "[clothing-title-before]football crop top[clothing-title-after]". The text-shortcut of football-crop-top is "fct". Figure of football-crop-top is the file "Items/Clothes/Upper/CropTops/croptop13.png". Understand "football" as football-crop-top.
 To decide which figure-name is clothing-image of (H - football-crop-top):
 	decide on figure of football-crop-top.
@@ -364,5 +368,30 @@ Definition: football-crop-top is white themed: decide yes.
 
 To decide which number is the initial outrage of (C - football-crop-top):
 	decide on 4.
+
+Part 13 - Underboob Sweater
+
+underboob sweater is a crop top. underboob sweater is very low cut. underboob sweater is only arm covering. underboob sweater is wool. underboob sweater is dense. underboob sweater is normally-nipple-covering. The printed name of underboob sweater is "[clothing-title-before]underboob sweater[clothing-title-after]". The text-shortcut of underboob sweater is "ubs".
+
+Figure of underboob sweater is the file "Items/Clothes/Upper/CropTops/croptop14.png".
+
+To decide which figure-name is clothing-image of (C - underboob sweater):
+	decide on figure of underboob sweater.
+
+To say ClothingDesc of (C - underboob sweater):
+	say "This longsleeved white sweater would be very modest if it wasn't for the fact that it stops just below your nipples.".
+
+To say ShortDesc of (C - underboob sweater):
+	say "underboob sweater".
+To say MediumDesc of (C - underboob sweater):
+	say "provocative underboob sweater".
+
+To decide which number is the initial outrage of (C - underboob sweater):
+	decide on 4.
+
+To decide which number is the adult-influence of (C - underboob sweater):
+	decide on 1.
+
+Definition: underboob sweater is white themed: decide yes.
 
 Crop Top ends here.

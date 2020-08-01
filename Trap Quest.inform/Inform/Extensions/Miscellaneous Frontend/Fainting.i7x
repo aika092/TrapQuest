@@ -162,8 +162,8 @@ To Set Leftovers:
 Some things don't get reset when the player faints.
 
 +!]
-Definition: A thing (called I) is immune to change:
-	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store clothing or I is in a pedestal, decide yes;
+Definition: a thing (called I) is immune to change:
+	if I is worn by the player or I is carried by the player or I is in the location of the player or I is in pink wardrobe or I is in HoleInWall or I is penetrating a body part or I is store thing or I is in a pedestal, decide yes;
 	if I is in School15:
 		if I is predicament-fixed clothing, decide yes;
 	decide no.
@@ -196,11 +196,6 @@ To decide which object is the biggest held jewel:
 			now bigJ is J;
 	decide on bigJ.
 
-[!<RecoverClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Clothing:
 	repeat with I running through clothing:
 		now I is not stuck;
@@ -214,13 +209,8 @@ To Recover Clothing:
 					say "[bold type]As you are being warped back into the game, you feel your mouth filled with a [ShortDesc of G][bold type]![roman type] Somehow you know this is the doing of your [ShortDesc of I]...";
 			otherwise:
 				now I is cursed;
-		if I is worn store clothing, compute stealing of I.
+		if I is worn store thing, compute stealing of I.
 
-[!<RecoverContainers>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Containers:
 	repeat with I running through containers:
 		unless I is immune to change:
@@ -228,11 +218,6 @@ To Recover Containers:
 			now the prevsearch of I is 0;
 			now I is in holding pen.
 
-[!<RecoverCollectibles>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Collectibles:
 	repeat with C running through on-stage collectibles:
 		unless C is immune to change, destroy C;
@@ -242,11 +227,6 @@ To Recover Collectibles:
 		unless C is immune to change, destroy C.
 	now the pink pill is held by the player.
 
-[!<RecoverDrinks>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Drinks:
 	repeat with I running through bottles:
 		unless I is immune to change:
@@ -254,11 +234,6 @@ To Recover Drinks:
 	repeat with D running through on-stage dispensers:
 		now D is in Holding Pen.
 
-[!<RecoverMonsters>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Monsters:
 	unless the player is in Dungeon35, destroy a random lake monster;
 	repeat with M running through threatening monsters:
@@ -267,18 +242,12 @@ To Recover Monsters:
 			if (M is in the location of the player or M is nearby) and M is not slutty sister and M is not vine boss and M is not caged, summon M; [Move NPCs away from the player]
 	WomanSluttify.
 
-
 To totally clean (R - a room):
 	now the semen-puddle of R is 0;
 	now the urine-puddle of R is 0;
 	now the milk-puddle of R is 0;
 	now the sprinkle-puddle of R is 0;
 
-[!<RecoverRooms>+
-
-REQUIRES COMMENTING
-
-+!]
 To Recover Rooms:
 	repeat with R running through labyrinth rooms:
 		now Neighbour Finder is R;

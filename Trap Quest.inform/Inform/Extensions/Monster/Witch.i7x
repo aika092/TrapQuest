@@ -21,9 +21,9 @@ To decide which figure-name is the monster-image of (M - witch):
 
 To say MonsterDesc of (M - witch):
 	if lady fetish is 2:
-		say "A tall black [man of M] dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]";
+		say "A tall black [man of M] dressed in purple silk pants, black leather gloves, and black boots covered in straps. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]";
 	otherwise:
-		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper retained by M][big he of M] is wearing your [ShortDesc of random diaper retained by M] proudly and visibly. [end if]".
+		say "A tall black [man of M] dressed in a short sheer purple dress, black leather gloves, and black thigh high boots. A magic wand in [his of M] hand and a witch's hat on [his of M] head makes [his of M] speciality quite clear. [big his of M] [if diaper quest is 1]presumably milk filled[otherwise]proud F cup[end if] breasts are very visible through the extremely flimsy material of [his of M] dress. [if there is a diaper carried by M][big he of M] is wearing your [ShortDesc of random diaper carried by M] proudly and visibly. [end if]".
 
 To say MonsterComment of (M - a witch):
 	if lady fetish is not 2, say "[if the bimbo of the player <= 7 and the player is female][line break][first custom style][one of]How typical for this game...[or]Seriously?[purely at random][otherwise if the bimbo of the player <= 7][one of]I bet [he of M] loves motor-boating![or]Nice![at random][otherwise if the bimbo of the player <= 12][line break][variable custom style][one of][big he of M] looks good in that outfit.[or]What a naughty look![purely at random][otherwise][line break][second custom style][one of]Wow! [big he of M]'s probably like, magic and stuff![or]I know [his of M] boobs are casting a spell on me! Teehee![purely at random][end if][roman type][line break]".
@@ -101,8 +101,6 @@ To compute perception of (M - witch):
 	otherwise if doom counter > 0 and the doom-warned of M is 0 and the player-class is not cultist:
 		say "[BigNameDesc of M] notices you and seems actually concerned for once. [line break][speech style of M]'I can't believe I'm saying this but thank Goddess you're here, something terrible is happening in that old mansion nearby! The cult there is trying to summon one of their dread gods. I know how to stop them, but I'm not allowed to leave this altar so it's going to have to fall to you. Now, what you'll need is very simple. You need to get together a bell, book, and candle, and then say a simple incantation. I'll teach you... scratch that, I've no confidence in your ability to remember this. Take these notes. They might help with the other items as well.'[roman type][line break]";
 		now the doom-warned of M is 1;
-		now black candle is in Dungeon33;
-		now reception bell is in Hotel01;
 		now doom notes is in the location of the player;
 		compute autotaking doom notes;
 		calm M;
@@ -357,14 +355,6 @@ To compute (M - witch) slinking away:
 	now M is unconcerned;
 	now the health of M is the maxhealth of M.
 
-Definition: witch is uniquely-fuckable if gladiatorcurse is 0.
-To say UniqueFuckDesc of (M - witch):
-	say "Demand [he of M] undoes the curse [he of M] laid upon the gladiators.".
-To unique dominate (M - witch):
-	say "[BigNameDesc of M] frowns but concedes.[line break][speech style of M]'Fine. I guess they've suffered enough.'[roman type][line break][big he of M] waves [his of M] hands.[line break][speech style of M]'It is done.'[roman type][line break]";
-	uncurse gladiators;
-	compute M slinking away.
-
 To say BanishDesc of (M - witch):
 	say "Demand free use of the altar!".
 
@@ -391,38 +381,83 @@ To say PityOfferResponse of (M - witch):
 
 Part 5 - Dominant Sex
 
-Definition: witch is penis-fuckable:
-	if sexual-penis-length < 4, decide no;
-	decide yes. [TODO: write a scene that supports lower penis size]
+Definition: witch is uniquely-fuckable if gladiatorcurse is 0.
+To say UniqueFuckDesc of (M - witch):
+	say "Demand [he of M] undoes the curse [he of M] laid upon the gladiators.".
+To unique dominate (M - witch):
+	say "[BigNameDesc of M] frowns but concedes.[line break][speech style of M]'Fine. I guess they've suffered enough.'[roman type][line break][big he of M] waves [his of M] hands.[line break][speech style of M]'It is done.'[roman type][line break]";
+	uncurse gladiators;
+	compute M slinking away.
 
 [To say UniqueFuckDesc of (M - witch):
 	say "Fist [him of M].".]
 
+To compute domination blessing of (M - witch) at (bless-count - a number):
+	let R be a random number between 1 and bless-count;
+	let bless-times be 1;
+	if the size of penis > 4, increase bless-times by 1;
+	if the size of penis > 7, increase bless-times by 1;
+	while bless-times > 0:
+		repeat with X running through held blessable things:
+			if R is 1:
+				say "Your [printed name of X] shines brightly!";
+				bless X;
+			otherwise:
+				decrease R by 1;
+		decrease bless-times by 1.
+
 To penetration dominate (M - witch):
-	say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [one of][if there is a worn tattoo]A red star tattooed around [his of M] [asshole] catches your eye, and you go straight for it[otherwise]Feeling particularly sadistic, you go straight for [his of M] [asshole][end if][or]Once again, you go straight for [his of M] [asshole][stopping], pushing [if sexual-penis-length > 5]your entire length [end if]in with no lubrication. You enjoy the intense feelings around your [SexDesc of penis] as [NameDesc of M] screams in despair. [if sexual-penis-length < 6]Soon [he of M] is[otherwise]Immediately [he of M] starts[end if] pleading with you to stop.[line break][speech style of M]'[big please], [please], it's too much! I'll do anything! Here, I'll bless your items!'[roman type][line break]";
-	orgasm;
-	[say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [if the player is male][big he of M] seems to expect you to fuck [him of M] in some way so screams with shock and pain when you [otherwise]When you are sure [he of M] isn't looking, you suddenly [end if]force your entire fist into [his of M] asshole. [BigNameDesc of M] immediately screams in shock and surprise. [big he of M] then starts pleading with you to stop.[line break][speech style of M]'[big please], [please], it's too much! I'll do anything! Here, I'll bless your items!'[roman type][line break]";][TODO: describe her tattoo]
+	let T be a random worn tattoo;
+	say "You force [NameDesc of M] onto [his of M] hands and knees and get behind [him of M]. [if T is worn][one of]Your eyes are drawn to a red star tattooed around [his of M][or]Your eyes are once again drawn to her tattooed[stopping] asshole, and you go straight for it, [otherwise][one of]Feeling particularly sadistic, [or]Once again, [stopping]you go straight for [his of M] asshole, [end if][run paragraph on]";
+	cutshow figure of witch cutscene 2 for M;
 	let bless-count be 0;
 	repeat with X running through held blessable things:
 		increase bless-count by 1;
-	if bless-count > 0:
-		let R be a random number between 1 and bless-count;
-		let bless-times be 1;
-		if the size of penis > 4, increase bless-times by 1;
-		if the size of penis > 7, increase bless-times by 1;
-		while bless-times > 0:
-			repeat with X running through held blessable things:
-				if R is 1:
-					say "Your [printed name of X] shines brightly!";
-					bless X;
-				otherwise:
-					decrease R by 1;
-			decrease bless-times by 1;
+	if sexual-penis-length > 8:
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] screeches in pain, and you enjoy the intense feelings around your shaft as [he of M] desperately pleads for you to stop.[line break][speech style of M]'[big please], [caps please], it's too much! I'll do anything! I'll even bless your items!'[roman type][line break]Do you stop?";
+		if bless-count > 0 and the player is consenting:
+			now player-fucking is DOMINANT-NEUTRAL;
+			compute domination blessing of M at bless-count;
+			say "[line break][speech style of M]'Thank the goddess...'[roman type][line break][big he of M] shivers as you stop and slowly pull out.[line break][speech style of M]'I'm thankful to you as well, but... if you think its ok to put that *thing* inside other people, you're clearly an evil person. If I see you again, I'll do everything I can to stop you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			FavourDown M by 1;
+		otherwise:
+			say "[line break][speech style of M]'NOOOOO!'[roman type][line break][big he of M] screams, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You savour [him of M] as much as you can before finally losing control, spanking [him of M] roughly as your [sexual-player-penis] fills [him of M] with your [load]. [big he of M] can't take the stimulation, and [his of M] eyes roll back in the bed as [if lady fetish is 2][his of M] [sissy-penis] covers the ground with several strings of [semen]. [otherwise][his of M] pussy squirts out girlcum. [end if][line break][speech style of M]'Why do they always go for my ass... '[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
+			orgasm;
+			AnalGet;
+	otherwise if sexual-penis-length > 6:
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] groans in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! I'm begging you! I'll even bless your items!'[roman type][line break]Do you stop?";
+		if bless-count > 0 and the player is consenting:
+			now player-fucking is DOMINANT-NEUTRAL;
+			compute domination blessing of M at bless-count;
+			say "[line break][speech style of M]'Thank you so much.'[roman type][line break][big he of M] winces as you stop and slowly pull out.[line break][speech style of M]'I'm still upset at what you did earlier, but it isn't something I can't overlook. Don't do it again, though.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			calm M;
+		otherwise:
+			say "[line break][speech style of M]'UGH! EVERY TIME!'[roman type][line break][big he of M] howls, tears welling up in [his of M] eyes as you mercilessly destroy [his of M] ass. Luckily for [him of M], you are near finishing anyway because [he of M] is TIGHT! You lose control a couple seconds later, emitting a heavy groan as your [sexual-player-penis] fills [him of M] with your [load].[line break][speech style of M]'Just you wait. It'll be YOUR ass next!'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
+			orgasm;
+			FavourDown M by 2;
+			AnalGet;
+	otherwise if sexual-penis-length > 3:
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] gasps in pain, and you enjoy the intense feelings around your shaft as [he of M] pleads for you to stop.[line break][speech style of M]'[big please], it's too much! Come on, I'll even bless your items!'[roman type][line break]Do you stop?";
+		if bless-count > 0 and the player is consenting:
+			now player-fucking is DOMINANT-NEUTRAL;
+			compute domination blessing of M at bless-count;
+			say "[line break][speech style of M]'Thank you...'[roman type][line break][big he of M] sighs in relief as you stop and slowly pull out.[line break][speech style of M]'I'll forgive you for what you did earlier. And... I'll even let you have a free use of my altar. Just one though.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			calm M;
+			increase the altar-uses of M by 1;
+		otherwise:
+			say "[line break][speech style of M]'Every time...'[roman type][line break][big he of M] grits [his of M] teeth, eyes watering as you mercilessly pound [his of M] ass. Luckily for [him of M], you are near finishing anyway because [his of M] ass is TIGHT! You lose control no less than a second later, emitting a throaty moan as your [sexual-player-penis] fills [him of M] with your [load].[line break][speech style of M]'You'll pay for this. My BUTT isn't your playground.'[roman type][line break][big he of M] makes a few intricate hand gestures as you pull out, and immediately vanishes.";
+			orgasm;
+			FavourDown M by 1;
+			AnalGet;
 	otherwise:
-		say "[speech style of M]'Oh you have nothing to bless...'[roman type][line break]";
-	cutshow figure of witch cutscene 2 for M;
-	say "Luckily for [him of M], you are near finishing anyway, as the effects of this game have made you super sensitive and this witch's ass is TIGHT! You release your [if sexual-penis-length < 5]small[otherwise if sexual-penis-length < 8]average[otherwise]huge[end if] load inside of [him of M], moaning with pleasure. [big he of M] seems grateful that you finished so quickly.[line break][speech style of M]'Thank you for being merciful. But if you ever come back here, I will crush you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
-	[otherwise say "You give [him of M] one final fist pump, and then slowly remove your arm from [his of M] butt. [big he of M] seems grateful that you stopped torturing [him of M] so soon.[line break][speech style of M]'Thank you for finishing so quickly. But if you ever come back here, I will crush you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";]
+		say "pushing your [SexDesc of penis] in with no lubrication. [if T is worn]The tattoo emits a faint glow as [NameDesc of M][otherwise][BigNameDesc of M][end if] winces in pain, and you enjoy intense feelings around your shaft for a couple seconds before [he of M] turns around and tells you to pull out.[line break][speech style of M]'Look, I know how hard it can be when your [sexual-player-penis] is that small, but this is as far as you go. Still, I'm willing to help you if you apologize for earlier.'[roman type][line break]Do you apologize?";
+		if the player is bimbo consenting:
+			now player-fucking is DOMINANT-SHAMEFUL;
+			say "[line break][speech style of M]'Good [boy of the player].'[roman type][line break][big he of M] spits in [his of M] hand and begins to gently tease your [sexual-player-penis]. It isn't skillful by any means, but its more than enough for a super sensitive clitty like yours. You come almost immediately, emitting a wavering moan as you fill [his of M] hand with your [load].[line break][speech style of M]'Don't do anything like that again, got it?'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
+			calm M;
+		otherwise:
+			now player-fucking is DOMINANT-NEUTRAL;
+			say "[line break][speech style of M]'Ok, then be prepared for me to crush you the next time I see you.'[roman type][line break]With that [he of M] stands up, makes a few intricate hand gestures, and vanishes.";
 	strongDignify.
 
 To say DominanceFailure of (M - witch):
@@ -527,7 +562,7 @@ To say AssistanceResponse of (M - witch) with (N - a monster):[TODO: monsters ca
 
 To say AssistanceRejected of (M - witch) with (N - a monster):
 	if the class of the player is priestess:
-		say "[speech style of M]'[one of]And miss a chance to see a dungeon bitch in action?'[or]No way, it's been so long since I got to see a dungeon bitch in action.'[or]For a dungeon bitch? No way, I want to see the show!'[or]No way! I want to see [if the player is male]if you can out-whore the last dungeon bitch with only one hole![otherwise]if you whore it up better than the last dungeon bitch![end if]'[at random][roman type][line break]";
+		say "[speech style of M]'[one of]And miss a chance to see a dungeon bitch in action?'[or]No way, it's been so long since I got to see a dungeon bitch in action.'[or]For a dungeon bitch? No way, I want to see the show!'[or]No way! I want to see [if the player is not possessing a vagina]if you can out-whore the last dungeon bitch with only one hole![otherwise]if you whore it up better than the last dungeon bitch![end if]'[at random][roman type][line break]";
 	otherwise:
 		say "[speech style of M]'[one of]Most interesting thing I've seen all night.'[or]Why would I want to ruin the show?'[or]This is hilarious.'[or]Ha! Help yourself!'[at random][roman type][line break]".
 

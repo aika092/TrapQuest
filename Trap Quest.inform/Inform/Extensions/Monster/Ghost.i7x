@@ -83,12 +83,6 @@ To set up (M - a ghost):
 To decide which number is the starting difficulty of (M - a ghost):
 	decide on 6.
 
-To decide which number is the maxhealth of (M - a ghost):
-	decide on 1 + (the difficulty of M * game difficulty).
-
-To decide which number is the maxhealth of (M - jismbodied ghost):
-	decide on 1 + (the difficulty of M * (2 + game difficulty)).
-
 To decide which number is the girth of (M - jismbodied ghost):
 	if the location of the player is garlic, decide on 5;[weakened, but not beaten]
 	decide on 7.
@@ -99,7 +93,7 @@ To compute unique periodic effect of (M - jismbodied ghost):
 		PuddleUp semen by 1 in (the location of M).
 
 To decide which number is the girth of (M - a ghost):
-	[decide on the size of a random sex toy retained by M;]
+	[decide on the size of a random sex toy carried by M;]
 	decide on 3.
 
 [This is the spawn initial ghosts rule:
@@ -311,7 +305,7 @@ To say OralResistingResponse of (M - a ghost):
 
 To say OralSubmissionResponse of (M - a ghost):
 	let D be the delicateness of the player + the oral sex addiction of the player;
-	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if][or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist.[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do.[otherwise]obediently stroking the underside with your tongue.[end if][or][silentThroat M][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][silentThroat M][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
+	say "[one of]You stay still as [NameDesc of M] thrusts in and out of your mouth [if D < 8]terrified to resist[otherwise]shivering with excitement[end if].[or]You [if D < 9]fearfully[otherwise if D < 12]hesitantly[otherwise]eagerly[end if] bob your head back and forth, obediently polishing the disembodied cock in your mouth.[or]You make quiet slurping noises as [NameDesc of M] fucks your mouth, [if D < 7]fearful of what it might do if you try to resist[otherwise if the oral sex addiction of the player < 5]disgusted at what you're allowing it to do[otherwise]obediently stroking the underside with your tongue[end if].[or][silentThroat M][BigNameDesc of M] eagerly thrusts in and out of your mouth, more than tangible enough to gag you every time it rams into the back of your throat.[or][silentThroat M][BigNameDesc of M] thrusts vigorously, taking full advantage of your submissive attitude to repeatedly slam into the back of your throat.[at random]";
 
 To say NearingClimaxOral of (M - a ghost):
 	say "[one of][BigNameDesc of M] seems to be speeding up![or][BigNameDesc of M] thrusts faster and faster with no regard for your reaction.[or]The space between [NameDesc of M][']s thrusts gets smaller with every passing moment![in random order] It must be close!".
@@ -333,7 +327,7 @@ To compute (M - a ghost) removing (C - a throbbing-tentacle):
 To compute (M - a ghost) removing (C - a sex toy):
 	say "[BigNameDesc of M] floats behind you, prodding your [printed name of C]. [one of]Undeterred, it phases into your [chosen-orifice of M], causing the toy to wiggle and throb with new-found life.[or]Once again, [NameDesc of M] phases into your [chosen-orifice of M], causing the toy to bulge and throb with unnatural life.[stopping] [if the relevant sex addiction of M < 8]You whimper as it slowly begins to fuck you.[otherwise if the relevant sex addiction of M < 12]Shivers run up your spine as it slowly begins to fuck you.[otherwise]A shiver of anticipation runs up your spine as it begins to fuck you.[end if]";
 	now C is in the holding pen;
-	now M is retaining C;
+	now M is carrying C;
 	dislodge C;
 	now M is penetrating chosen-orifice of M.
 
@@ -344,7 +338,7 @@ To compute (M - a ghost) removing (C - a golden phallus):
 	otherwise:
 		say "[BigNameDesc of M] floats behind you, prodding your [printed name of C]. [one of]Undeterred, it phases into your [chosen-orifice of M], causing the toy to wiggle and throb with new-found life.[or]Once again, [NameDesc of M] phases into your [chosen-orifice of M], causing the toy to bulge and throb with unnatural life.[stopping] [if the relevant sex addiction of M < 8]You whimper as it slowly begins to fuck you.[otherwise if the relevant sex addiction of M < 12]Shivers run up your spine as it slowly begins to fuck you.[otherwise]A shiver of anticipation runs up your spine as it begins to fuck you.[end if]";
 		now C is in the holding pen;
-		now M is retaining C;
+		now M is carrying C;
 		dislodge C;
 		now M is penetrating chosen-orifice of M.
 
@@ -359,8 +353,7 @@ To compute (M - a ghost) removing (B - a ballgag):
 		satisfy M;
 	otherwise:
 		say "[BigNameDesc of M] floats closer to your face, throbbing visibly as it nears your mouth. Your [printed name of B] shimmers briefly before it slowly disappears, leaving behind only a faint outline of its shape. Somehow, your mouth remains wide open, and you [if the oral sex addiction of the player < 4][one of]shudder as [NameDesc of M] slowly pushes in[or]screw your eyes shut as [NameDesc of M] slowly slides in[or]shiver as [NameDesc of M] slides in completely unimpeded[at random][otherwise][one of]lean forward as [NameDesc of M] slowly slides in[or]obediently wait as [NameDesc of M] slides in completely unimpeded[at random][end if] and begins to thrust.";
-		now B is in the holding pen;
-		now M is retaining B;
+		now M is carrying B;
 		dislodge B;
 		now M is penetrating chosen-orifice of M.
 
@@ -377,12 +370,11 @@ To finish possession of (T - a thing) in (O - an orifice):
 	unless O is actually occupied or current-monster is unintelligent:
 		say "The [T] reappears in your [variable O].";
 		now T is worn by the player;
-		now T is penetrating O;
-		now current-monster is not retaining T.
+		now T is penetrating O.
 
 This is the ghost facial climax rule:
 	if current-monster is penetrating face, compute facial climax of current-monster;
-	repeat with G running through ballgags retained by current-monster:
+	repeat with G running through ballgags carried by current-monster:
 		finish possession of G in face.
 The ghost facial climax rule is listed in the ghost end of sex rules.
 
@@ -420,7 +412,7 @@ To say DeepthroatCreampie of (M - a ghost):
 
 This is the ghost anal climax rule:
 	if current-monster is penetrating asshole, compute anal climax of current-monster;
-	repeat with G running through sex toys retained by current-monster:
+	repeat with G running through sex toys carried by current-monster:
 		finish possession of G in asshole.
 The ghost anal climax rule is listed in the ghost end of sex rules.
 
@@ -429,12 +421,11 @@ To finish possession of (T - a sex toy) in (O - an orifice):
 		say "[BigNameDesc of current-monster] leaves the [T] behind in your [variable O], plugging all the [semen] inside of you.";
 		now T is worn by the player;
 		now T is cursed;
-		now T is penetrating O;
-		now current-monster is not retaining T.
+		now T is penetrating O.
 
 This is the ghost vaginal climax rule:
 	if current-monster is penetrating vagina, compute vaginal climax of current-monster;
-	repeat with G running through sex toys retained by current-monster:
+	repeat with G running through sex toys carried by current-monster:
 		finish possession of G in vagina.
 The ghost vaginal climax rule is listed in the ghost end of sex rules.
 
@@ -733,9 +724,6 @@ To set up (M - ghostly tentacle):
 		now M is not neuter;
 		now M is female;
 	now M is phased.
-
-To decide which number is the maxhealth of (M - ghostly tentacle):
-	decide on 1 + (the difficulty of M * (1 + game difficulty)).
 
 Definition: ghostly tentacle is blocker: decide yes.
 

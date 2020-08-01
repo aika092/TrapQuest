@@ -5,7 +5,10 @@ Altars by Objects begins here.
 The dungeon altar allows the player to remove curses from their clothes and obtain the priestess class. It becomes inactive after being used, and it recharges when the player kills monsters, when monsters grow bored, and when the player has sex with an enemy as the priestess. trying to use the altar while it is inactive will result in some sort of punishment.
 
 @!]
-The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc][if the class of the player is priestess and the charge of item described > 0] (unsafe)[otherwise if the class of the player is priestess] (safe)[otherwise if the charge of item described < -150] (glowing strongly)[otherwise if the charge of item described < 100] (glowing softly)[otherwise] (not glowing)[end if][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
+The dungeon altar is in Dungeon28. The dungeon altar is not portable. The dungeon altar has a number called charge. The charge of the dungeon altar is usually -200. The printed name of dungeon altar is "[TQlink of item described]altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". The indefinite article of the dungeon altar is "an". The text-shortcut of dungeon altar is "al". Figure of dungeon altar is the file "Env/Dungeon/altar1.jpg". Figure of dungeon altar cutscene is the file "Special/Cutscene/cutscene-altar-pray1.jpg".
+
+To say GlowDesc of (A - dungeon altar):
+	say "([if the class of the player is priestess and the charge of A > 0]unsafe[otherwise if the class of the player is priestess]safe[otherwise if the charge of A < -150]glowing strongly[otherwise if the charge of A < 100]glowing softly[otherwise]not glowing[end if])";
 
 To decide which figure-name is the examine-image of (C - dungeon altar):
 	decide on figure of dungeon altar.
@@ -23,7 +26,7 @@ Report going when the player is in Dungeon28:
 	force clothing-focus redraw. [This forces the clothing window to redraw]
 
 [!<WoodsAltar>@
-The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewelery. This altar is unique because it does not have a charge, and only jewelery can be placed on it.
+The woods altar allows the player to randomly bless or uncurse items in exchange for a piece of jewellery. This altar is unique because it does not have a charge, and only jewellery can be placed on it.
 
 @!]
 The woods altar is in Woods20. The woods altar is not portable. The printed name of woods altar is "[TQlink of item described]small altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "small" as the woods altar. The text-shortcut of woods altar is "al". Figure of woods altar is the file "Env/Forest/altar2.png".
@@ -39,10 +42,13 @@ To say ExamineDesc of (C - woods altar):
 The elder altar gains charge when items are placed on the altar, and loses charge when the player uses the special invoking verb learned from the necronomicon.
 
 @!]
-The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
+The elder altar is in Mansion23. The elder altar is not portable. The printed name of elder altar is "[TQlink of item described]dark altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "dark" as the elder altar. The indefinite article of the elder altar is "an". The elder altar has a number called charge. The charge of the elder altar is usually 0. The text-shortcut of elder altar is "al".
 
 To decide which figure-name is the examine-image of (C - elder altar):
 	decide on figure of elder altar.
+
+To say GlowDesc of (A - elder altar):
+	say "([if the charge of elder altar < 100]glowing faintly[otherwise]glowing brightly[end if])";
 
 Definition: an elder altar is father material: decide yes.
 
@@ -57,7 +63,11 @@ To say ExamineDesc of (C - elder altar):
 The hotel altar allows the player to gain unique demon-themed benefits in exchange for punishments. The more the altar is used, the better the benefit and the worse the punishment. The hotel altar gains charge when used and loses charge when the player kills a monster or when a monster grows bored. It also loses charge when the player has sex with an infernal monster as a worshipper.
 
 @!]
-The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
+The hotel altar is in Hotel35. The hotel altar is not portable. The printed name of hotel altar is "[TQlink of item described]golden altar[shortcut-desc] [GlowDesc of the item described][TQxlink of item described][verb-desc of item described]". Understand "golden", "gold" as the hotel altar. The hotel altar has a number called charge. The charge of the hotel altar is usually 0. The text-shortcut of hotel altar is "al". The hotel altar has a number called altar-intensity.
+
+To say GlowDesc of (A - hotel altar):
+	let N be the altar-intensity of A;
+	say "([if the charge of A > 0]dormant[otherwise if N < 2]glowing faintly[otherwise if N < 4]glowing strongly[otherwise]shining ominously[end if])";
 
 A diaper quest fix rule:
 	destroy the hotel altar.
@@ -68,7 +78,8 @@ To decide which figure-name is the examine-image of (C - hotel altar):
 	decide on figure of hotel altar.
 
 To say ExamineDesc of (C - hotel altar):
-	say "A stone slab in front of a golden statue of a muscular man with a huge [manly-penis], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones.";
+	let N be the altar-intensity of C;
+	say "A stone slab in front of a golden statue of a muscular man with a huge [manly-penis], with a water feature spewing from its tip which makes it look like he's constantly [if diaper quest is 1]urinating[otherwise]ejaculating[end if]. The statue's eyes are inset with huge red gemstones. [if charge of C > 0]It seems dormant. [otherwise if N < 2]The gemstones are glowing with a faint red light. [otherwise if N < 4]The gemstones are glowing with a strong red light. [otherwise]The gemstones are shining with ominous red light. [end if][if N is 1]You have used the altar 1 time.[otherwise if N > 0]You have used the altar [N] times.[end if]";
 	if newbie tips is 1, say "[one of][newbie style]Newbie tip: Each time you use this altar, the positive effect is improved but so is the negative effect. After multiple uses, then part of the payment will likely be a permanent decrease in intelligence or increase in semen taste addiction or sex addiction.[roman type][line break][or][stopping]".
 
 Check entering the dungeon altar:
@@ -279,7 +290,7 @@ To AltarPray (P - a person):
 	MagicPowerUp 1;
 	while 1 is 1:
 		let R be a random number from 1 to 9;
-		if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is male):
+		if the class of the player is priestess and (the vaginalvirgin of the player is 0 or the player is not possessing a vagina):
 			let T be ritual-beads;
 			if T is actually summonable and T is off-stage:
 				summon T;
@@ -770,6 +781,39 @@ To AltarReward (T - runic headband):
 			say "Blue light condenses around [NameDesc of T], and the pinned condoms disappear!";
 			progress quest of priestess-vaginal-service-quest;
 			now the used condoms of T is 0;
+		reset dungeon altar.
+
+To AltarReward (T - a condom hat):
+	if the player is possessing a vagina and the vaginalvirgin of the player is 0:
+		transform T into runic headband;
+		say "A voice appears in your head:[line break][second custom style]'[GoddessAddress] you are not pure enough to be a proper priestess! But we still have uses for sluts like you who are smart enough to protect their womb with condoms. From now on, you must use that sinful [cunt] of yours to service the [men of shopkeeper] of this world. But beware, if you [if pregnancy fetish > 0]fall pregnant[otherwise]fill your sacred womb with too much seed[end if], you will not be forgiven, and the price will be dear. Present your headband with [']evidence['] of your service to my altar when your deeds are complete.'[roman type][line break]";
+		let C be runic headband;
+		now C is cursed;
+		now the quest of C is priestess-vaginal-service-quest;
+		now C is not purity;
+		increase the empty condoms of C by the used condoms of C;
+		now the used condoms of C is 0;
+		repeat with O running through worn trousers:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn knickers:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		repeat with O running through worn bras:
+			say "Your [O] [wardrobeVanishes of O]!";
+			now O is in pink wardrobe;
+		let PO be a random worn dress;
+		if PO is clothing and the number of worn dress is 1:
+			transform PO into cameltoe-priestess-outfit;
+		otherwise:
+			repeat with O running through worn skirted clothing:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			repeat with O running through worn dresses:
+				say "Your [O] [wardrobeVanishes of O]!";
+				now O is in pink wardrobe;
+			summon cameltoe-priestess-outfit;
+			say "A [cameltoe-priestess-outfit] appears on you!";
 		reset dungeon altar.
 
 To AltarReward (T - ritual-beads):

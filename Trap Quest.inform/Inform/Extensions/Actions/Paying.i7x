@@ -15,7 +15,7 @@ REQUIRES COMMENTING
 Check paying:
 	if the player is not in Dungeon41, say "You can only pay in the shop.";
 	let X be 0;
-	repeat with H running through store clothing held by the player:
+	repeat with H running through held store things:
 		increase X by the price of H;
 	if X is 0, say "You have nothing to pay for!" instead;
 	let jewellery be list of held plentiful currently perceivable accessories;
@@ -24,7 +24,7 @@ Check paying:
 	if the number of entries in chosen jewellery is 0, say "You don't have enough valuable gems to pay for that!" instead;
 	if shopkeeper is not in Dungeon41, say "You need a shopkeeper here to pay for something." instead;
 	if shopkeeper is mating:
-		repeat with C running through store clothing held by the player:
+		repeat with C running through held store things:
 			now C is unowned;
 		allocate 2 seconds;
 		say "[speech style of shopkeeper]'What's mine is yours!'[roman type][line break]" instead.
@@ -36,13 +36,13 @@ REQUIRES COMMENTING
 +!]
 Carry out paying:
 	let Z be a random off-stage clothing;
-	repeat with C running through store clothing held by the player:
+	repeat with C running through held store things:
 		say "Pay for [ShortDesc of C]? ";
 		if the player is bimbo consenting:
 			now Z is C;
 			break;
 	if Z is off-stage:
-		repeat with C running through stolen clothing held by the player:
+		repeat with C running through held stolen things:
 			say "Pay for [ShortDesc of C]? ";
 			if the player is bimbo consenting:
 				now Z is C;
@@ -68,7 +68,7 @@ Understand "pay", "buy", "sell", "exchange", "purchase", "transact", "pay shopke
 REQUIRES COMMENTING
 
 +!]
-Report taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating and shopkeeper is interested and shopkeeper is friendly:
+Report taking store thing while the player is in Dungeon41 and Dungeon41 is guarded and shopkeeper is not mating and shopkeeper is interested and shopkeeper is friendly:
 	let P be the price of the noun;
 	if the total wealth of the player < P:
 		if debuginfo > 1, say "[input-style]Total wealth: [Total wealth of the player]; Item cost: [P][roman type][line break]";

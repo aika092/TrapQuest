@@ -278,6 +278,6 @@ An all later time based rule (this is the sinful priestess punishment rule):
 					say "Your [O] [wardrobeVanishes of O]!";
 					now O is in pink wardrobe;
 				summon heart-pussy-skirt;
-				say "[bold type][BigNameDesc of heart-pussy-skirt] [bold type]appears on you![roman type][line break]".
+				say "[bold type]A [MediumDesc of heart-pussy-skirt] [bold type]appears on you![roman type][line break]".
 
 Runic Headband ends here.

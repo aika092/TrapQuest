@@ -58,35 +58,33 @@ Definition: a metallic purple rubber dress is purple themed: decide yes.
 
 Part 3 - Superheroine Fetish Dress
 
-A superheroine fetish dress is a kind of rubber dress. A superheroine fetish dress is rare. A superheroine fetish dress is very low cut. The text-shortcut of superheroine fetish dress is "ggd".
+superheroine fetish dress is a rubber dress. superheroine fetish dress is rare. superheroine fetish dress is very low cut. The text-shortcut of superheroine fetish dress is "ggd".
 
-There is 1 superheroine fetish dress.
-
-The printed name of superheroine fetish dress is usually "[clothing-title-before]green and gold latex dress[clothing-title-after]". Understand "green", "and gold", "gold" as superheroine fetish dress.
+The printed name of superheroine fetish dress is "[clothing-title-before]green and gold latex dress[clothing-title-after]". Understand "green", "and gold", "gold" as superheroine fetish dress.
 
 Figure of superheroine fetish dress is the file "Items/Clothes/Upper/Latex/rubberdress4.png".
 
-To decide which figure-name is clothing-image of (C - a superheroine fetish dress):
+To decide which figure-name is clothing-image of (C - superheroine fetish dress):
 	decide on figure of superheroine fetish dress.
 
-To say ClothingDesc of (O - a superheroine fetish dress):
+To say ClothingDesc of (O - superheroine fetish dress):
 	say "A green and gold and extremely tight fitting latex dress. A relatively deep neckline allows a lot of cleavage to be shown.".
 
-To say ShortDesc of (C - a superheroine fetish dress):
+To say ShortDesc of (C - superheroine fetish dress):
 	say "superheroine dress".
-To say MediumDesc of (C - a superheroine fetish dress):
+To say MediumDesc of (C - superheroine fetish dress):
 	say "green and gold superheroine latex dress".
 
-To decide which number is the strength-influence of (O - a superheroine fetish dress):
+To decide which number is the strength-influence of (O - superheroine fetish dress):
 	let S be the magic-modifier of O;
 	if the largeness of breasts > 2, increase S by 1;
 	decide on S.
 
-To decide which number is the initial outrage of (C - a superheroine fetish dress):
+To decide which number is the initial outrage of (C - superheroine fetish dress):
 	decide on 4.
 
-Definition: a superheroine fetish dress is green themed: decide yes.
-Definition: a superheroine fetish dress is yellow themed: decide yes.
-Definition: a superheroine fetish dress is boob themed: decide yes.
+Definition: superheroine fetish dress is green themed: decide yes.
+Definition: superheroine fetish dress is yellow themed: decide yes.
+Definition: superheroine fetish dress is boob themed: decide yes.
 
 Rubber Dress ends here.

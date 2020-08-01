@@ -4,7 +4,7 @@ Plugging it with is an action applying to two things.
 Understand "plug [something] with [something]" as plugging it with.
 Check plugging something with:
 	if the noun is not a fuckhole, say "[if the noun is an orifice]That orifice cannot be plugged in this way.[otherwise]How would you plug that?[end if]" instead;
-	if the noun is vagina and the player is male, say "You don't have a vagina." instead;
+	if the noun is vagina and the player is not possessing a vagina, say "You don't have a vagina." instead;
 	if the second noun is not an insertable thing, say "The [printed name of second noun] cannot be inserted into your [noun]." instead;
 	if the second noun is clothing:
 		if the second noun is not sex toy and the second noun is not dildo sword, try wearing the second noun instead;

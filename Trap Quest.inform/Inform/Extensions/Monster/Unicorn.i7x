@@ -80,8 +80,8 @@ To compute perception of (M - unicorn):
 		anger M;
 	otherwise if penis is lewdly exposed or vagina is lewdly exposed:
 		let B be breasts;
-		if penis is lewdly exposed and the player is male, now B is penis;
-		if vagina is lewdly exposed and the player is female, now B is vagina;
+		if penis is lewdly exposed and the player is possessing a penis, now B is penis;
+		if vagina is lewdly exposed and the player is possessing a vagina, now B is vagina;
 		say "[big he of M] glances at your exposed [B] and turns the other way.[line break][speech style of M]'[one of]I won't associate with someone like you.'[or]I am not interested in people like you.'[or]Don't worry, I'll leave first.'[at random][roman type][line break]";
 		distract M;
 		increase the scared of M by 10;
@@ -367,7 +367,7 @@ To ride dominate (M - unicorn):
 		if the fatigue of the player > 2, FatigueDown (the fatigue of the player / 2);
 	otherwise:
 		now refractoryperiod is 1;[Ensures the player does not orgasm too early during the scene]
-		if the player is male and player-fucker is asshole, anal ride dominate M;
+		if the player is not possessing a vagina and player-fucker is asshole, anal ride dominate M;
 		otherwise vaginal ride dominate M.
 
 [TODO: combine anal ride and vaginal ride, because they're the same.]

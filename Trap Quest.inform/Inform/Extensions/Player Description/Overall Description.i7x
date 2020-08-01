@@ -95,7 +95,10 @@ To say OptionalDescription:
 		say "You've been having a decent streak of mostly good luck. Hopefully that doesn't mean that karma will catch up with you soon...";
 	let NT be the number of in-play trophies;
 	if NT > 0:
-		say "You can sense that [if NT is 1]the trophy you earned from the Extra Credit Zone is slightly[otherwise]the [NT] trophies you have earned from the Extra Credit Zone are each[end if] improving your luck.".
+		say "You can sense that [if NT is 1]the trophy you earned from the Extra Credit Zone is slightly[otherwise]the [NT] trophies you have earned from the Extra Credit Zone are each[end if] improving your luck.";
+	if the player is stealthy:
+		let S be the stealth of the player;
+		say "[bold type]You are currently able to act stealthy[roman type] [if S < 2]but you are currently wearing things that make you very visible, so everyone will probably notice you anyway[otherwise if S < 4]so there is a reasonable chance that you can slip past unnoticed[otherwise]and you are very well concealed, so there is a high chance that you can slip past wherever you like unnoticed[end if].";
 
 To say GrabStatus of (M - a monster):
 	say "is restraining you".

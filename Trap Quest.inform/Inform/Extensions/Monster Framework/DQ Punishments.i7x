@@ -35,7 +35,7 @@ diaper-change is a diaper punishment. The priority of diaper-change is 4.
 
 Definition: a monster (called M) is eager to change diapers:
 	if M is changing the player, decide yes;
-	if there is a soiled-diaper retained by M or the health of M < the maxhealth of M, decide no;
+	if there is a soiled-diaper carried by M or the health of M < the maxhealth of M, decide no;
 	if the class of the player is priestess, decide no;
 	if M is aware that the player needs a change, decide yes;
 	if M is aware that a diapering is possible, decide yes;
@@ -276,7 +276,7 @@ Definition: a monster (called M) is eager to punish untidiness:
 Definition: a monster (called M) is able to punish untidiness:
 	repeat with N running through monsters grabbing the player:
 		if N is not M, decide no;
-	if there is a soiled-diaper retained by M, decide yes;
+	if there is a soiled-diaper carried by M, decide yes;
 	decide no.
 
 [When setting this to 'decide yes', make sure that the NPC doesn't have a custom "uniquely unfriendly" function that needs to have related stuff added. And probably make sure that their perception functions have been updated to make it clear why they're unfriendly.]

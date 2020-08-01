@@ -2,38 +2,16 @@ Penis by Body Parts begins here.
 
 Part 1 - Definitions
 
-[!<Penis>@
-
-The player's penis.
-
-@inherits <BodyPart>
-
-@!]
 penis is a body part. penis is everywhere. The text-shortcut of penis is "penis".
 To say FullExamineDesc of (B - penis):
 	say "[if the player is male][ImageDesc of penis][TotalDesc of penis][PenisModesty][otherwise]You don't have a penis.[end if]".
 
 Understand "prick", "willy", "pecker", "clitty", "noodle", "dickie", "winky", "weeny", "cock", "dick", "bellend", "dong", "johnson", "wang", "weiner" as penis.
 
-[!<Penis>@<size:Integer>*
-
-Describes the player's penis size inside the game. Usually, but not always corresponds to penis length. Affects success rate during dominant sex.
-
-*@!]
 penis has a number called size. the size of penis is usually 0.
 
-[!<Penis>@<realSize:Integer>*
-
-Describes the player's penis size in real life. Unlike other real-life values, this one doesn't prevent the player's penis from getting bigger
-
-*@!]
 penis has a number called real size. The real size of penis is usually 0.
 
-[!<Penis>@<rawness:Integer>*
-
-Describes how close to orgasm the player's penis is.
-
-*@!]
 penis has a number called rawness. The rawness of penis is usually 0.
 penis has a number called previous rawness.
 
@@ -89,11 +67,6 @@ To say sexual-player-penis:
 	otherwise:
 		say player-penis.
 
-[!<PenisIsTiny>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: penis is tiny if the player is possessing a penis and the size of penis < 4.
 
 [!<PenisIsLewdlyExposed>+
@@ -374,7 +347,7 @@ To say SexDesc of (P - penis):
 	if there is a worn strapon-panties:
 		say PenisFlavour of a random worn strapon-panties;
 	otherwise:
-		if the player is female, say "[vagina]";[shouldn't happen]
+		if the player is not possessing a penis, say "[vagina]";[shouldn't happen]
 		otherwise say PenisFlavour (the size of penis).
 
 [!<SayMediumDescOfPenis>+

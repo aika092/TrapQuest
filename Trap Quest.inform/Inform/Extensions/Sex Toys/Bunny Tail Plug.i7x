@@ -5,7 +5,7 @@ bunny tail plug is a tail plug. bunny tail plug is unique. The printed name of b
 To decide which figure-name is clothing-image of (C - bunny tail plug):
 	decide on figure of bunny tail plug.
 
-To say UniquePlugDesc of (P - a bunny tail plug):
+To say UniquePlugDesc of (P - bunny tail plug):
 	say "This [PlugSize size of P] butt plug has a fluffy white bunny cottontail coming out of the base[if P is worn]. It makes you look like a bunny[end if].".
 
 To say ShortDesc of (P - bunny tail plug):

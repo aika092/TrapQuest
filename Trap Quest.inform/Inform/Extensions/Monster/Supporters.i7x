@@ -1206,12 +1206,10 @@ To compute automatic banishment of (M - supporter-misako):
 	say "[DamageVibeConversion of M][BigNameDesc of M] drops to [his of M] knees as [he of M] screams[line break][speech style of M]'Oh god, oh god, oh god, I'm cumming, I'm coming from my ass...!'[roman type][line break]And at the instant [he of M] stars to cum the vibrations suddenly shut off, leaving [him of M] flopping on the ground wildly with a frustrating, shameful and unsatisfying ruined orgasm. And then, as soon as it's over, the vibrations start again, this time non-stop instead of in three-second bursts and in [his of M] vagina instead of [his of M] asshole.[line break][speech style of M]'No, no, please, I didn't mean to cum! I'm sorry! Please don't say the curse has activated! Hah... hah... haaaaaah...'[roman type][line break]The cursed belt's vaginal vibrator quickly manages to bring [him of M] close to the edge again, before shutting off. Then the anal vibrator turns on again, bringing [him of M] to [his of M] second anal orgasm.[line break][speech style of M]'Cumming!'[roman type][line break]It shuts off just before [his of M] peak, to ensure that the anal orgasm is closer to denial torture than true pleasurable release. By this point, [NameDesc of M] is just a writhing mess on the floor.[line break][speech style of M]'Noooo, I'm going to go insane, I'm going to go insane!'[roman type][line break][BigNameDesc of M] keeps mumbling that to [himself of M] as the team of vibrators begins to bring [him of M] to [his of M] third ruined anal orgasm in less than a minute, again making sure to bring [him of M] most of the way vaginally, before switching to anal only when [he of M] gets close. There's nothing you can do for [him of M] - it's probably best just to leave [him of M] to it.";
 	now M is fucked-silly;
 	now the health of M is 1;
-	if there are things retained by M:
-		say "Your [list of things retained by M] [if the number of things retained by M > 1]are[otherwise]is[end if] also left behind.";
-		repeat with K running through things retained by M:
+	if there are things carried by M:
+		say "Your [list of things carried by M] [if the number of things carried by M > 1]are[otherwise]is[end if] also left behind.";
+		repeat with K running through things carried by M:
 			now K is in the location of the player;
-			now M is not retaining K;
-			now M is not withholding K;
 			compute autotaking K.
 
 To say SexResistSlapFlav of (M - supporter-misako):
@@ -1276,5 +1274,285 @@ To say SexResistFlav of (M - supporter-misako) in (F - a fuckhole): [The player 
 
 To say ClimaxFlav of (M - supporter-misako) in (F - a fuckhole):
 	say FacesitClimaxFlav of M.
+
+Part - Serena
+
+supporter-serena is a supporter. The leftover-type of supporter-serena is 208. The supporter-name of supporter-serena is "Serena".
+
+Definition: supporter-serena is presenting as male: decide no. [Futa]
+
+Figure of serena is the file "NPCs/MultiFloor/Supporter/serena1.jpg".
+
+To decide which figure-name is the monster-image of (M - supporter-serena):
+	decide on figure of serena.
+
+Definition: supporter-serena is fetish appropriate if lady fetish is not 2. [Can't appear with Male NPCs only]
+
+To say LeftoverDesc (N - 208):
+	say "The bloated, cumfilled and unconscious body of [supporter-name of supporter-serena] is on the ground here.[line break]".
+
+To say MonsterDesc of (M - supporter-serena):
+	say "This tall warrior woman seems cut from the same cloth as the gladiators, however, there's certainly something different about her. Unlike the dark-skinned amazons, she is of a much fairer complexion, with pure white hair flowing from her head. Much of her upper body is uncovered, exposing lithe, yet rippling musculature that looks like it could break stone, from her rock hard abs to her well trained arms. That which is hidden lays behind dark brown leather armour that covers her breasts and shoulders, modest, yet protective. Sturdy adventuring boots protect her carefully positioned feet and a strong belt holds her long bladed weapons by her off-hand. The belt seems to purposefully expose the crotch of her tight blue pants, holding a tell-tale bulge in place between her thighs. Tall canine ears and two sharp fangs hint that she's probably not 100% human[if M is interested]. She looks at you with what could be a friendly smile or a mocking smirk or a predatory sneer. It's difficult to tell[end if].".
+
+Section - Incremental Changes
+
+Definition: supporter-serena is father material: decide no. [Can be changed to yes]
+
+To set up (M - supporter-serena):
+	reset M;
+	now the monstersetup of M is 1;
+	now the raw difficulty of M is 4; [combat skill can be increased]
+	now the health of M is the maxhealth of M.
+
+To decide which number is the girth of (M - supporter-serena):
+	if M is female and M is not strapped, decide on 0;
+	decide on 2.
+
+To set up sex length of (M - supporter-serena) in (B - face):
+	set up sex length 2 of M in B.
+
+To set up sex length of (M - supporter-serena) in (B - breasts):
+	set up sex length 2 of M in B.
+
+To set up sex length of (M - supporter-serena) in (B - a body part):
+	set up sex length 2 of M in B.
+
+To decide which number is the outrage tolerance of (M - supporter-serena):
+	decide on 10.
+
+To compute post climax effect of (M - supporter-serena) in (F - a fuckhole):
+	if M is male:
+		compute M sleeping 200 after sex;
+		bore M;
+	otherwise:
+		satisfy M.
+
+The blind-status of supporter-serena is usually 0. [Can be changed to -1 to make them immune]
+
+To decide which number is the condom resistance of (M - supporter-serena):
+	if the class of the player is cheerleader, decide on -2;
+	decide on 0.
+
+Section - Optional Changes
+
+To say DisapprovalFlav of (M - supporter-serena): [This is when the player is in some way looking suddenly more lewd in front of the NPC, maybe because they pulled out their tits, or maybe because a trap pulled up their skirt, or jizzed on them, or similar.]
+	say "[BigNameDesc of M] [one of]blows a wolf-whistle in your direction.[or]grabs [his of M] crotch as [he of M] sees you.[or]licks [his of M] lips lecherously.[or]looks you in the eyes and sticks [his of M] tongue between two fingers, licking wildly, which makes a very crude gesture.[in random order]".
+
+To say CurtseyReactionFlav of (M - supporter-serena):
+	let K be a random worn currently visible knickers;
+	unless K is nothing:
+		say "[BigNameDesc of M] cackles.[line break][speech style of M]'I can see your [ShortDesc of K]!'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] smirks.[line break][speech style of M]'Now there's a slut who knows how to behave properly.'[roman type][line break]".
+
+To say BecomesAggressive of (M - supporter-serena):
+	say "[speech style of M]'[one of]I think it's about time we fucked, isn't it.'[or]That's it, I've had enough of just watching. It's time for me to get my nut.'[in random order][roman type][line break][big he of M] takes an offensive stance!".
+
+To say AlreadyUnfriendlyPerception of (M - supporter-serena): [The NPC has just spotted the player, and has already decided they're best used as a cumdump]
+	say "[speech style of M]'[one of]Swigger swooty, I'm comin['] for that booty!'[or]You've got a date with my [if the player is male]dick[otherwise]delicate parts[end if], sunshine!'[or]I'm glad to see you're still around, friend! Because I'm still in the mood for you-know-what!'[or]We must stop meeting like this! People will talk! Especially because I'm going to fuck you now.'[in random order][roman type][line break]".
+
+To say FriendlySluttyPerception of (M - supporter-serena): [The NPC has just spotted the player while the player looks slutty, but hasn't witnessed enough to decide to fuck them.]
+	say "[speech style of M]'[one of]Hey chica, looking good! Keep it up and I might even decide to fuck you.'[or]You know if you're trying to scream 'fuck me' with that appearance, you're doing a good job.'[or]Wow, there are some real sluts down here! I'll probably come back for you later.'[in random order][roman type][line break]".
+
+To say UnfriendlySluttyPerception of (M - supporter-serena): [The NPC has just spotted the player while the player looks slutty, but hasn't had much of a chance to start disapproving of them yet.]
+	say "[speech style of M]'[one of]Okay that's it, you clearly need a good hard seeing to. Let's do this.'[or]I think it's time for me to join in with your [']training['].'[or]Well geez, when you look like that, how can I say no?'[in random order][roman type][line break]".
+
+To say BoringPerception of (M - supporter-serena): [The NPC has spotted the player who doesn't look slutty enough to decrease their friendliness]
+	say "[speech style of M]'[one of]Another player, huh? Stay out of my way, I'm just here to fuck sluts[or]You again. Sorry, you're still not slutty enough for me to be bothered to try and fuck you[stopping].'[roman type][line break]".
+
+To say IdentifiablePosterReactionFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] stares at the poster with [his of M] mouth open wide.[line break][speech style of M]'You really let them photograph you as you did that?! You're way more of a slut than I ever dreamed.'[roman type][line break]".
+
+To say UnidentifiablePosterReactionFlav of (M - supporter-serena):
+	say "[speech style of M]'Jeepers creepers! Wow, if I got a few minutes alone with that broad, I'd bury my [if M is male]meat[otherwise]fist[end if] so deep in that ass she wouldn't be able to walk for days!'[roman type][line break]".
+
+To say PresentFriendlyAcceptanceFlav of (M - supporter-serena): [This is when the player offers a body part up to them and the NPC is still friendly, and accepts]
+	say "[speech style of M]'Sure, why not? There's nobody hotter around right now so I'll give you a run-over.'[roman type][line break]".
+
+To say PresentFriendlyRejectionFlav of (M - supporter-serena): [This is when the player offers a body part up to them and the NPC is still friendly, and refuses because a) they orgasmed recently or b) Can't fuck that particular body part]
+	say "[speech style of M]'[if presented-orifice is a potential target]Geez, give me some time to recover before asking that!'[otherwise]Not interested.'[end if][roman type][line break]".
+
+To say FriendlySexReleaseRefusalSpeech of (M - supporter-serena): [The player has changed their mind and wants to end the friendly sex early. The NPC has decided to dominate the player and not let go so easily.]
+	if the player is not able to speak, say "[speech style of M]'[one of]Quiet down! I'm enjoying this![or]Stop squirming, you will hurt yourself.'[or]I couldn't understand that, but we can talk about it when I am finished.'[in random order][roman type][line break]";
+	otherwise say "[speech style of M]'[one of]Fat chance! I'm not someone you can just tease like that and get away with it.'[or]You're joking right? I'm not stopping now!'[at random][roman type][line break]".
+
+To compute kneeling reaction of (M - supporter-serena): [The player has got on their knees voluntarily while the NPC is aggressive.]
+	say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Good slut.'[or]What a good girl.'[or]What a good little fucktoy.'[in random order][roman type][line break]";
+	humiliate 75.
+
+To say SubmissionFlav of (M - supporter-serena): [The player has done something submissive like remove an item of clothing while the NPC is aggressive.]
+	say "[BigNameDesc of M] touches [himself of M] as [he of M] watches.[line break][speech style of M]'That's it, keep going.'[roman type][line break]".
+
+To compute delay of (M - supporter-serena): [NPCs, when they're confident that the player can't escape, will sometimes get the player a chance to request a certain type of sex.]
+	say "[BigNameDesc of M] folds [his of M] arms.[line break][speech style of M]'So, what do you think I should do to you?'[roman type][line break]".
+
+To say PresentAcceptanceFlav of (M - supporter-serena): [Your (aggressive) NPC has decided to do what the player suggested.]
+	say "[BigNameDesc of M] grins.[line break][speech style of M]'An excellent suggestion!'[roman type][line break]".
+
+To say PresentRejectionFlav of (M - supporter-serena): [Your (aggressive) NPC has decided to ignore the player's suggestion. NB that they may independently make the decision to do that thing anyway themselves, so it would be inaccurate to say that your NPC 'decides against doing that' or something.]
+	say "[BigNameDesc of M] seems deep in thought.[line break][speech style of M]'Your opinion doesn't matter. The real question is, what do *I* want to do?'[roman type][line break]".
+
+To compute the busy waiting of (M - supporter-serena): [The NPC isn't able to do their thing right now because the player is busy with something boring, like resting in a hammock.]
+	if a random number between 1 and 6 is 1, say "[BigNameDesc of M] continues to wait.".
+
+To compute the default taunting of (M - supporter-serena): [The NPC isn't able to do their thing right now because the player is busy with a trap or another NPC, but they expect the player will be free soon.]
+	say "[BigNameDesc of M] watches, making no attempt to hide [his of M] glee.".
+
+To say SelectionFrustrated of (M - supporter-serena): [The NPC has got tired of waiting!]
+	say "[BigNameDesc of M] seems to look very frustrated, and then gives up.";
+	bore M.
+
+To compute the dildo stuck taunting of (M - supporter-serena):
+	if a random number between 1 and 3 is 1, say "[BigNameDesc of M] puts [his of M] hand to [his of M] chin as if admiring an art exhibit.[line break][speech style of M]'[one of]Hmm, yes, you're clearly going to do REALLY well in this game. Haha[or]Have you considered NOT getting caught by traps? Someone might be led to think that you're enjoying this[or]Perhaps you should leave the adventuring to the people with brains[or]I can't believe you got caught by such a basic trap[in random order]!'[roman type][line break]".
+
+To say angry punishment insult of (M - supporter-serena): [The NPC is angry because the player wronged them (e.g. didn't swallow). They will now get their revenge, probably by stealing an item of clothing / jewellery.]
+	say "[speech style of M]'Oh my god, you're not even good at being a slut! I can't let you get away with that.'[roman type][line break]".
+
+To say MonsterTripAnnounceFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] tries to trip you up!".
+
+To say MonsterFailedTripFlav of (M - supporter-serena):
+	say "You manage to keep your balance.".
+
+To say StrikingSuccessFlav of (M - supporter-serena) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
+	say "[BigNameDesc of M] smacks you [TargetName of B]! Ouch!!".
+
+To say StrikingFailureFlav of (M - supporter-serena) on (B - a body part): [TargetName of B outputs something beginning with "on the", e.g. "on the ass"]
+	say "[BigNameDesc of M] tries to smack you [TargetName of B] but you manage to swiftly dodge the blow!".
+
+To say MindingOwnBusinessCombatFlav of (M - supporter-serena): [Your NPC was minding their own business and not even looking at the player when they attacked]
+	say "[big he of M] looks at you blankly with shock.[line break][speech style of M]'Wait what? You think you can take me?! Prepare yourself, [bitch]!'[roman type][line break]".
+
+To say RudeAwakeningFlav of (M - supporter-serena): [Your NPC was sleeping when the player attacked]
+	say "[big he of M] wakes up, and angrily looks around for the cause of this rude awakening! ".
+
+To say DamageReactHealthy of (M - supporter-serena):
+	say "[BigNameDesc of M] [one of]laughs condescendingly[or]smirks at you mockingly[at random].".
+
+To say DamageReactDamaged of (M - supporter-serena):
+	say "[BigNameDesc of M] [one of]shrugs off the hit[or]takes the blow without staggering[at random].".
+
+To say DamageReactTired of (M - supporter-serena):
+	say "[BigNameDesc of M] [one of]growls in anger[or]snarls with frustration[at random].".
+
+To say DamageReactWeak of (M - supporter-serena):
+	say "[BigNameDesc of M] [one of]is struggling for breath[or]puts [his of M] hand on [his of M] belly as if [he of M] has a stitch[at random].".
+
+To say DamageReactSubmissive of (M - supporter-serena): [Hinting that the player might be able to turn the tables and fuck your NPC]
+	say "[BigNameDesc of M] [one of]whimpers with pain[or]looks at you meekly as [he of M] catches [his of M] breath[at random].".
+
+To say MovementBlock of (M - supporter-serena):
+	say "[BigNameDesc of M] manages to get in front of you and block your path, slowing down your movement!".
+
+To say StandingBlock of (M - supporter-serena):
+	say "[BigNameDesc of M] grabs onto your [ShortDesc of hair] and stops you from standing up!".
+
+To say BanishFleeFlav of (M - supporter-serena):
+	say "[speech style of M]'You motherfucker, do you know how much it cost me to get to be here?!'[roman type][line break]Those are [NameDesc of M][']s final words before [he of M] drops to the ground, dead. After a couple of seconds, [his of M] body disappears like something out of TRON.".
+
+To say SexResistSlapFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] [one of]cackles[or]laughs deeply[or]chuckles[or]snorts[at random] at your [one of]fruitless display[or]vain efforts[or]pointless attempts[or]futile resistance[at random] before [if M is male and M is penetrating face]slapping you harshly on the cheek[otherwise if M is male and M is penetrating breasts]painfully slapping your [BreastDesc][otherwise]roughly spanking your [buttcheeks][end if] [one of]to get you to behave[or]in order to keep you under control[or]as punishment[or]to discourage further disobedience[at random].".
+
+To compute (M - a monster) stomping (N - supporter-serena): [For when the minotaur, xavier etc. encounters our NPC]
+	if N is in the location of the player, say "[BigNameDesc of M] picks [NameDesc of N] off of the ground with two mighty hands and before you can say [']I'm not sure that's going to fit['] [he of M] has impaled [NameDesc of N] on [his of M] giant [DickDesc of M]. [BigNameDesc of N] shrieks in surprise and pain but there's absolutely nothing either of you can do before [NameDesc of M] is already climaxing, pumping gallons of [semen] into [NameDesc of N][']s rapidly swelling belly. As [NameDesc of N] inevitably passes out from the experience, [NameDesc of M] peels [NameDesc of N][']s body off of [his of M] [LongDickDesc of M] like a used condom and discards it on the ground, before turning to you, with a still-burning sexual hunger in [his of M] eyes.";
+	otherwise say "You hear the sort of shriek you'd hear from a [man of N] if [he of N] was suddenly impaled on a giant [ShortDesc of M] penis, coming from [if N is nearby]nearby![otherwise]somewhere in the region![end if]";
+	destroy N;
+	let L be a random off-stage leftover;
+	now L is in the location of M;
+	now the leftover-type of L is the leftover-type of N.
+
+To say MonsterOfferRejectFlav of (M - supporter-serena) to (T - a thing):
+	say "[BigNameDesc of M] refuses.[line break][speech style of M]'I don't do trades.'[roman type][line break]".
+
+To compute sudden objectification of (M - supporter-serena): [The player's appearance just jumped to completely unacceptable standards right in front of your NPC, and your NPC has noticed, and now wants to bang.]
+	say "Something seems to change in the way [NameDesc of M] is looking at you. [line break][speech style of M]'[if M is penetrating a body part]Yes, that's right I'm the boss, and you're my little [whore]...'[otherwise if the player is monster fucked]That does look like a lot of fun! Maybe it's time I joined in...'[otherwise]You know what? I think you've swirled far enough down the drain of slutdom that it's finally worth giving you a once-over.'[end if][roman type][line break]".
+
+To compute MasturbationReaction of (M - supporter-serena):
+	if M is awake:
+		if M is penetrating a body part:
+			if M is friendly-fucking:
+				say "[BigNameDesc of M] grins, and starts thrusting even faster.";
+			otherwise:
+				say "[BigNameDesc of M] [if M is penetrating a fuckhole]spanks[otherwise]slaps[end if] you angrily. [line break][first custom style]'Did I give you permission to do that? This is supposed to be a punishment!'[roman type][line break]";
+				PainUp 1;
+				say "[bold type]Your masturbation session has been interrupted![roman type][line break]";
+				follow the masturbation ended rule;
+		otherwise:
+			say "[BigNameDesc of M] stares, wide-eyed.[line break][speech style of M]'[if M is friendly]Wow, I guess that means you want to fuck, huh?'[otherwise]Haha, I didn't know you wanted me that much!'[end if][roman type][line break][big he of M] flexes [his of M] neck muscles in anticipation.";
+			now M is interested;
+			anger M.
+
+To say EnemaFloorReactionFlav of (M - supporter-serena): [When the player squirts an anal creampie / enema onto the ground in front of the NPC]
+	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Why would you do that in front of me?! You trashy skank!'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+
+To say EnemaReactionFlav of (M - supporter-serena) into (C - a clothing): [When the player squirts an anal creampie / enema into worn clothing in front of the NPC]
+	say "[BigNameDesc of M] [if M is interested]looks disgusted[otherwise]turns to look at you with an expression of disgust[end if].[line break][speech style of M]'Into your own briefs?! Have you absolutely no shame or class?!'[roman type][line break][if the humiliation of the player < HUMILIATION-DISGRACED + 1000][one of]You turn a bright shade of red[or]You blush brightly with shame[or]You shiver with self-consciousness[or]You turn red-faced with shame[in random order].[end if]".
+
+To say SexDollPerception of (M - supporter-serena): [The NPC has just spotted the player, and the player is currently a sex doll. The NPC is going to turn immediately unfriendly and demand sex.]
+	say "[speech style of M]'[one of]Oh look, a sex doll. I guess I'm supposed to fuck it!'[or]Oh, there's that sex doll I ordered! I wondered where you had gotten to.'[or]You look a lot more fuckable than the other sex dolls I've seen around here. Let's do it.'[in random order][roman type][line break]".
+
+[Oral]
+
+To say SwallowDemand of (M - supporter-serena):
+	say "[speech style of M][one of]'If you don't swallow, it'll piss me off.'[or]'Swallow it all, slut!'[in random order][roman type][line break]".
+
+[Titfucks]
+
+To say BreastsPenetrationFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] takes [his of M] [DickDesc of M] and moves it towards your chest. You watch in silence as [he of M] pushes forward, using the tight gap in between your boobs as a makeshift fuckhole. [if the titfuck addiction of the player < 5]You hold your body still and try to ignore the brutish grunts as [he of M] begins to thrust in and out of your [BreastDesc][otherwise]You instinctively bring your hands to your [BreastDesc], and begin to massage [his of M] [DickDesc of M] by moving them up and down with your hands as fast and powerfully as you can[end if].".
+
+To say CleavageClimaxFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] moans lewdly as [he of M] ejaculates, covering your [ShortDesc of breasts] in [his of M] [semen]!".
+
+[Vaginal & Anal]
+
+To say CondomAcceptFlav of (M - supporter-serena):
+	if the condom resistance of M > 0, say "[BigNameDesc of M] frowns, but then takes the condom and sheathes [his of M] [manly-penis].";
+	otherwise say "[BigNameDesc of M] [one of]smiles[or]grins wordlessly[or]smirks[at random] and takes a condom. Discarding the wrapper, [he of M] rolls it down the length of [his of M] [manly-penis]. You stare, [one of][if the semen taste addiction of the player > 13]hypnotised, eagerly licking your lips[otherwise if the semen taste addiction of the player > 6]hypnotised, unconsciously licking your lips[otherwise]disgustedly curling your upper lip[end if][or]unable to [if the player is a pervert and the player is not a nympho]bring yourself to [end if]look away[or]your mouth opening unconsciously[or][if the player is not a pervert]without a shred of enthusiasm[otherwise]with envy[end if], as the rubber makes intimate contact with every inch of the massive tool[or]as the gleaming latex makes every bump and vein glisten [if the player is not a pervert]unappealingly[otherwise]temptingly[end if][at random].".
+
+To say CondomRejectFlav of (M - supporter-serena): ['mating' is a flag that indicated that the NPC has already had a baby with the player.]
+	say "[BigNameDesc of M] strokes [his of M] chin.[line break][speech style of M]'[if M is mating]How are we going to keep making babies if I wear this?'[otherwise]I guess there is a risk, but it feels so much better without!'[end if][roman type][line break]Looks like [he of M][']s going in bare...".
+
+To say CondomPieFlav of (M - supporter-serena) in (F - a fuckhole):
+	say "[BigNameDesc of M] ejaculates [his of M] entire load into the condom! You can feel the tip bulging and ballooning inside of you. ".
+
+To say CondomPinFlav of (M - supporter-serena) on (C - a clothing):
+	say "Before you can stop [him of M], [NameDesc of M] presses the [one of]newly created and now used [or]strongly-smelling [or]wobbling, semen-swollen [or][or][cycling]condom to your [C]. After giving you a final mischievous grin, [he of M] yawns, lies back, and falls asleep.".
+
+To say CreampieFlav of (M - supporter-serena) in (F - a fuckhole):
+	say "[BigNameDesc of M] moans with pleasure as [he of M] ejaculates [his of M] [if the girth of M < 5]smallish [otherwise if the girth of M > 8]gargantuan [otherwise if the girth of M > 6]huge [end if]load into your [variable F]! [big he of M] grips your hips tightly as [he of M] keeps his [DickDesc of M] firmly lodged as deep as it can go inside you and you can feel it constantly twitching as [he of M] cums. Having thoroughly drained [his of M] balls inside of you, [his of M] [DickDesc of M] pops out as [he of M] lies backwards and quickly falls into a well-earned sleep.".
+
+[###INFLATION STUFF###]
+
+To compute the flying player taunting of (M - supporter-serena):
+	if a random number from 1 to 6 is 1:
+		say "[BigNameDesc of M] grins.[line break][speech style of M]'[one of]Haha, what a loser! How did you manage to get stuck up there?'[or]Gosh, you sure are brave, I sure wouldn't be caught dead stuck on the ceiling like an oversized balloon!'[or]Get down here already you dumb bimbo! Are you really stuck?! Haha!'[in random order][roman type][line break][if the humiliation of the player < 17500]You [one of]wince[or]shudder[or]cringe[purely at random] with shame.";
+		humiliate 20.
+
+To say LandingTaunt of (M - supporter-serena):
+	say "[BigNameDesc of M] smirks.[line break][speech style of M]'[one of]Like a lead balloon[or]Oof, that looked like it hurt[in random order]!'[roman type][line break]";
+	humiliate 50.
+
+[###WATERSPORTS STUFF###]
+
+To say ClothesPeeReaction of (M - supporter-serena):
+	if M is friendly:
+		say "[BigNameDesc of M] looks shocked.[line break][speech style of M]'So you're into watersports, huh?! I'll have to remember that.'[roman type][line break]";
+		FavourDown M by 2;
+		if M is unfriendly, say "[big he of M] thinks for a moment before taking an aggressive stance.[line break][speech style of M]'I guess you doing that in front of me means that you're up for anything, right? In that case, let's do it!'[roman type][line break]";
+	otherwise:
+		say "[BigNameDesc of M] laughs.[line break][speech style of M]'[if M is interested]You are an utter disgrace!'[otherwise]Is that your way of getting my attention? Well it worked!'[end if][roman type][line break][if M is uninterested]Uh-oh...[end if]";
+		now M is interested.
+
+To say GroundPeeReaction of (M - supporter-serena):
+	say "[ClothesPeeReaction of M]".
+
+To say UrinationFlav of (M - supporter-serena):
+	say "[BigNameDesc of M] points [his of M] genitals towards your face. A golden stream of [urine] shoots out, headed straight for you!".
+
+To say PissDrinkThreat of (M - supporter-serena):
+	say "[speech style of M]'[one of]You'd better drink this like a good toilet, or you won't like what comes next.'[or]You'd better make sure every last drop goes down your throat, [bitch].'[in random order][roman type][line break]".
+
+
 
 Supporters ends here.

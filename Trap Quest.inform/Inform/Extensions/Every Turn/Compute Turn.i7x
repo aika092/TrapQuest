@@ -295,7 +295,7 @@ To compute optional actions:
 
 [!<DecideWhichNumberIsTheBuckleThresholdOfThePlayer>+
 
-REQUIRES COMMENTING
+Calculates the buckle threshold of the player based on strength and body soreness. The threshold is increased for every stack of the food theme bonus.
 
 +!]
 To decide which number is the buckle threshold of (Y - yourself):
@@ -303,7 +303,7 @@ To decide which number is the buckle threshold of (Y - yourself):
 
 [!<DecideWhichNumberIsTheTiredThresholdOfThePlayer>+
 
-REQUIRES COMMENTING
+Calculates the tired threshold of the player based on strength and body soreness.
 
 +!]
 To decide which number is the tired threshold of (Y - yourself):
@@ -311,7 +311,7 @@ To decide which number is the tired threshold of (Y - yourself):
 
 [!<DecideWhichNumberIsTheVeryTiredThresholdOfThePlayer>+
 
-REQUIRES COMMENTING
+Calculates the very tired threshold of the player based on strength and body soreness.
 
 +!]
 To decide which number is the very tired threshold of (Y - yourself):

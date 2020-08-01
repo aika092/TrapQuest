@@ -1,9 +1,7 @@
 Fishbowl by Headgear begins here.
 
-fishbowl is a vessel. fishbowl is open topped. The max-doses of a fishbowl is 35. fishbowl is in Holding Pen. The printed name of fishbowl is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]fishbowl[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fishbowl is "fshb". Figure of fishbowl is the file "Items/Accessories/Vessels/bowl1.jpg". Figure of cummy fishbowl is the file "Items/Accessories/Vessels/bowl2.jpg". Figure of cumfilled fishbowl is the file "Items/Accessories/Vessels/bowl3.jpg". Understand "fish", "bowl", "fishbowl" as fishbowl.
+fishbowl is a vessel. fishbowl is open topped. The max-doses of a fishbowl is 35. fishbowl is in Holding Pen. The printed name of fishbowl is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]fishbowl[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of fishbowl is "fshb". Figure of fishbowl is the file "Items/Accessories/Vessels/bowl1.jpg". Understand "fish", "bowl", "fishbowl" as fishbowl.
 To decide which figure-name is the examine-image of (V - fishbowl):
-	if the doses of V > 6, decide on the figure of cumfilled fishbowl;
-	if the doses of V > 3, decide on the figure of cummy fishbowl;
 	decide on the figure of fishbowl.
 To say VesselDesc of (V - fishbowl):
 	say "A glass bowl which is so large a goldfish could easily live in it.".
@@ -23,7 +21,6 @@ To set up influence of (C - fishbowl-hat):
 To say ShortDesc of (H - fishbowl-hat):
 	say "fishbowl".
 
-Definition: fishbowl-hat is condom pinnable: decide no.
 Definition: fishbowl-hat is semen themed: decide yes.
 Definition: fishbowl-hat is whore themed if it is not betrayal.
 

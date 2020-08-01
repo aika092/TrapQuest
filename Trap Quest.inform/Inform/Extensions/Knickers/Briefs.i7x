@@ -226,7 +226,7 @@ To say selfexamineuniquetitle of (G - blue-cameltoe briefs):
 To say UniqueClothingDesc of (G - blue-cameltoe briefs):
 	say "A pair of low cut pale blue briefs that would give a female wearer a very visible cameltoe.".
 Definition: blue-cameltoe briefs is blue themed: decide yes.
-Definition: blue-cameltoe briefs is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+Definition: blue-cameltoe briefs is potentially vagina covering if the player is not possessing a vagina and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - blue-cameltoe briefs):
 	decide on 2.
 
@@ -292,14 +292,14 @@ To decide which number is the anal-sex-addiction-influence of (G - pale blue-bri
 	if G is blessed, decide on 1;
 	decide on 2.
 To decide which number is the vaginal-sex-addiction-influence of (G - pale blue-briefs):
-	if the player is male, decide on 0;
+	if the player is not possessing a vagina, decide on 0;
 	if G is blessed, decide on 1;
 	decide on 2.
 To compute periodic effect of (G - pale blue-briefs):
 	increase the charge of G by 1;
 	if the charge of G > 53:
 		now the charge of G is 0;
-		if the player is male:
+		if the player is not possessing a vagina:
 			if the openness of asshole < 8:
 				say "[bold type]You feel your [G] magically make your [asshole] stretch [if the openness of asshole > 4]even [end if]wider![roman type][line break]";
 				gape asshole times 1;

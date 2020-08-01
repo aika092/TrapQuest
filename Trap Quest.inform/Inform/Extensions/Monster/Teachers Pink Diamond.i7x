@@ -9,13 +9,24 @@ teacher-hyacinthe is a pink-diamond-teacher.
 
 The text-shortcut of teacher-hyacinthe is "tehy".
 
-Figure of hyacinthe is the file "NPCs/School/Teacher/teacher9.png".
+Figure of hyacinthe is the file "NPCs/School/Teacher/teacher9a.png".
+Figure of sex enslaved hyacinthe is the file "NPCs/School/Teacher/teacher9b.png".
+Figure of diaper enslaved hyacinthe is the file "NPCs/School/Teacher/teacher9c.png".
+
+To decide which figure-name is the pacified-image of (M - teacher-hyacinthe):
+	if M is diaper-enslaved, decide on figure of diaper enslaved hyacinthe;
+	decide on figure of sex enslaved hyacinthe.
 
 To decide which figure-name is the monster-image of (M - teacher-hyacinthe):
 	decide on figure of hyacinthe.
 
 To say MonsterDesc of (M - teacher-hyacinthe):
-	say "This tall thin Asian [man of M] is wearing a lilac coloured corset connected to a lilac coloured frilly skirt with two distinct layers. The frills then descent to ground all around [his of M] rear half, giving [him of M] a trail of lilac fabric wherever [he of M] goes. [big his of M] short white court heels, perfect posture, elegant gait and welcoming smile give [him of M] an aura of dignity and grace.".
+	if M is diaper-enslaved:
+		say "[teacher-name of M][']s dark red bodycon dress has been swapped out for a bright red onesie patterned with love-hearts, complete with a thick diaper. Matching baby booties adorn [his of M] feet. A red collar around [his of M] neck, a red pacifier in [his of M] mouth, and a pair of cuffs keeping [his of M] arms bound behind [his of M] back completely remove any sense of threat or power. [big he of M] looks absolutely furious at [his of M] new assignment as baby slave and would no doubt go on a muderous rampage if [he of M] ever managed to escape.";
+	otherwise if M is sex-enslaved:
+		say "[teacher-name of M][']s dark red bodycon dress has been entirely removed - all that remains is the fur sections at the collar and wrists which have been connected by short chains, turning them into strict wrist-collar bondage which keeps [his of M] hands by [his of M] shoulders at all times. Matching furry cuffs keep [his of M] ankles close together, locked into baby pink platform boots - definitely not [his of M] style. The red marks on [his of M] bare backside are evidence of frequent and recent spankings. A spider gag keeps [his of M] mouth permanently open. [big his of M] breasts, pussy and ass are all completely exposed. [big he of M] looks absolutely furious at [his of M] new assignment as a slave and would no doubt go on a muderous rampage if [he of M] ever managed to escape.";
+	otherwise:
+		say "This tall hourglass-shaped [man of M] is wearing a dark red short bodycon dress with white fur lining at the collar. [big he of M] also has matching red elbow-length gloves, with more matching fur at the wrists. [big his of M] short red chunky heels, perfect posture, elegant gait and welcoming smile give [him of M] an aura of dignity, grace and power. If the headmistress is the captain of this vessel, you get the sense that this [man of M] is [his of headmistress] First Mate.".
 
 The teacher-name of teacher-hyacinthe is "Hyacinthe".
 

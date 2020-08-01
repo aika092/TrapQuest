@@ -124,8 +124,9 @@ To compute class outfit of (H - a pink scrunchie):
 	if C is nothing or there is a worn pigtail-scrunchie:
 		if blue-rubber-cheerleader-outfit is off-stage, now C is blue-rubber-cheerleader-outfit;
 		if C is nothing, now C is a random off-stage rubber cheerleader outfit;
-	let P be a random off-stage pom-pom;
-	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn pink rubber dress is 0):
+	let P be purple-pom-pom;
+	if the class of the player is cumdumpster, now P is condom-pom-pom;
+	if C is actually summonable or (C is cheerleader outfit and cheerleader-summoned is 0 and the number of worn cheerleader outfit is 0 and the number of worn silicone dress is 0):
 		if cheerleader-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -141,7 +142,7 @@ To compute class outfit of (H - a pink scrunchie):
 		now cheerleader-summoned is 1;
 		increase the raw-magic-modifier of C by the flesh volume of hips / 5;
 	otherwise if P is actually summonable and cheerleader-summoned < 2:
-		say "[bold type]A pair of purple pom-poms appear to cover your hands![line break][variable custom style]I guess I shouldn't be surprised.[roman type][line break]";
+		say "[bold type]A pair of [MediumDesc of P] appear to cover your hands![line break][variable custom style][if P is purple-pom-pom]I guess I shouldn't be surprised.[otherwise]ARE YOU SERIOUS?![end if][roman type][line break]";
 		summon P cursed with persistent quest;
 		now the raw-magic-modifier of P is 0;
 		now cheerleader-summoned is 2;

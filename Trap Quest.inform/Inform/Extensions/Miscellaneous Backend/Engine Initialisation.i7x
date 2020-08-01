@@ -278,12 +278,12 @@ To retrieve name:
 		choose the row with a toggle of pure background toggle rule in the Table of Background Options;
 		blank out the whole row;
 	if tutorial is 1:
-		if the player is male, follow the terrence name rule;
+		if the player is gendered male, follow the terrence name rule;
 		otherwise follow the kimberly name rule;
 	otherwise if quick start > 1:
 		if diaper quest is 0:
 			if choice in row 3 of the Table of Player Options is not 0 or choice in row 2 of the Table of Player Options is 100: [We skip the randomisation below if the player manually selected a name last time and wants to use it again]
-				if the player is male, follow the male name rule;
+				if the player is gendered male, follow the male name rule;
 				otherwise follow the female name rule;
 	otherwise:
 		now choice in row 2 of the Table of Player Options is 100;

@@ -116,6 +116,17 @@ Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz3.jpg".
 
 Figure of hellhound is the file "NPCs/Mansion/Hound/hound1.png".
 
+Figure of rank 1 small lips rosie is the file "NPCs/School/Student/student1a.png".
+Figure of rank 1 big lips rosie is the file "NPCs/School/Student/student1aL.png".
+To decide which figure-name is Figure of rank 1 rosie:
+	if student-rosie is kissPunished, decide on figure of rank 1 big lips rosie;
+	otherwise decide on figure of rank 1 small lips rosie.
+Figure of rank 2 small lips rosie is the file "NPCs/School/Student/student1b.png".
+Figure of rank 2 big lips rosie is the file "NPCs/School/Student/student1bL.png".
+To decide which figure-name is Figure of rank 2 rosie:
+	if student-rosie is kissPunished, decide on figure of rank 2 big lips rosie;
+	otherwise decide on figure of rank 2 small lips rosie.
+
 Figure of throne is the file "Env/Dungeon/throne1a.jpg".
 Figure of transformed throne is the file "Env/Dungeon/throne2a.jpg".
 
@@ -262,6 +273,24 @@ To get oral creampie image for (M - a thing):
 			otherwise cutshow figure of Oral Creampie Cutscene 1.]
 
 Figure of pink lollipop is the file "Items/Collectibles/lollipop2.png".
+
+Figure of pink smoke 0 is the file "Env/MultiFloor/smoke0.jpg".
+Figure of pink smoke 1 is the file "Env/MultiFloor/smoke1.jpg".
+Figure of pink smoke 2 is the file "Env/MultiFloor/smoke2.jpg".
+Figure of pink smoke 3 is the file "Env/MultiFloor/smoke3.jpg".
+Figure of pink smoke 4 is the file "Env/MultiFloor/smoke4.jpg".
+Figure of pink smoke 5 is the file "Env/MultiFloor/smoke5.jpg".
+Figure of pink smoke 6 is the file "Env/MultiFloor/smoke6.jpg".
+
+To decide which figure-name is the examine-image of (T - pink smoke):
+	if the player is upright, decide on figure of pink smoke 0;
+	let L be the largeness of breasts;
+	if L > 15, decide on figure of pink smoke 6;
+	if L > 12, decide on figure of pink smoke 5;
+	if L > 9, decide on figure of pink smoke 4;
+	if L > 6, decide on figure of pink smoke 3;
+	if L > 2, decide on figure of pink smoke 2;
+	decide on figure of pink smoke 1.
 
 Figure of photo display predicament is the file "Special/Cutscene/cutscene-photo-display-predicament1.jpg".
 

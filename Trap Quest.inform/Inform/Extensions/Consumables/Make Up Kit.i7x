@@ -1,6 +1,6 @@
 Make Up Kit by Consumables begins here.
 
-A make up kit is a kind of collectible. There are 7 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
+A make up kit is a kind of collectible. There are 3 make up kits. The printed name of make up kit is "[TQlink of item described]make up kit[shortcut-desc][TQxlink of item described][verb-desc of item described]". The printed plural name of make up kit is "[TQlink of item described]make up kits[shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of make up kit is "mk". Understand "makeup", "makeup kit" as make up kit.
 Figure of make up kit is the file "Items/Collectibles/makeup1.png".
 
 To decide which figure-name is the examine-image of (C - a make up kit):
@@ -58,5 +58,14 @@ Carry out brushing something with:
 Definition: a make up kit is oral sex themed: decide yes.
 
 Understand "brush [something] on [something]", "makeup [something] on [something]" as brushing it with.
+
+To compute banish drop of (C - a make up kit) from (M - a mannequin):
+	if C is off-stage:
+		now C is in the location of the player;
+		say "You notice that [his of M] [ShortDesc of C] appears to have remained intact.";
+		increase the loot dropped of M by 1;
+		compute autotaking C.
+
+Definition: a make up kit is shop-eligible: decide yes.
 
 Make Up Kit ends here.

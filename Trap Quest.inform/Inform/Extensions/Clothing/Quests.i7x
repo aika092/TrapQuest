@@ -481,7 +481,7 @@ Part - Creampie Quest
 
 vaginal-creampie-quest is a clothing-quest. vaginal-creampie-quest has a number called creampie-count.
 
-Definition: vaginal-creampie-quest is appropriate if the player is possessing a vagina and diaper quest is 0.
+Definition: vaginal-creampie-quest is appropriate if the player is possessing a vagina and diaper quest is 0 and the vaginalvirgin of the player is 0.
 
 To decide what number is the quest-weighting of (Q - vaginal-creampie-quest) for (C - a clothing):
 	if Q is not appropriate, decide on 0;
@@ -879,8 +879,12 @@ To say QuestFlav of (Q - bursting-quest):
 To say QuestTitle of (Q - bursting-quest):
 	say " (bladder holding quest)".
 
-To say QuestPersistFlav of (Q - a bursting-quest) on (C - a clothing):
+To say QuestPersistFlav of (Q - bursting-quest) on (C - a clothing):
 	say "[if C is cursed]The magic sealing your [MediumDesc of C] is lifted! It rewards you refusing to pee on purpose[otherwise if C is bland and (delayed urination is 1 or Q is headgear-clothing-quest)]You sense a blessing being laid upon your [MediumDesc of C]! It rewards your continued refusal to pee on purpose[otherwise]Your [MediumDesc of C] rewards your continued bladder holding efforts[end if] by ".
+
+To compute persistent reward of (Q - bursting-quest) on (C - a clothing):
+	say "Filling your bladder even further!";
+	increase the bladder of the player by 1.
 
 Part - Next Lesson Quest
 

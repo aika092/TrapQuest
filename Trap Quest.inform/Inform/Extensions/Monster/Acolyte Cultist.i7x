@@ -614,10 +614,10 @@ To compute failed dominance punishment of (M - an acolyte):
 			ruin vagina times 1;
 			now elder altar is not penetrating vagina;
 		otherwise:[you get gaped and humiliated]
-			say "[speech style of H]'[one of]Your mind is fucking forfeit to the will of [Azathot], or something!'[or]All mortal minds, like, crumble before will of [Azathot]!'[at random][roman type][line break]Your [if the player is female]orifices are forced wide open[otherwise][asshole] is forced wide open[end if] as the void's [italic type]essence[roman type] invades your body, and for a moment, you become a part of it. The myriad of blissful souls around you welcome you as one of your own, and you finally realise the reason for your existence. It's obvious. You were born to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your entire body tingling as it acclimates to a new, much lesser sense of self.";
+			say "[speech style of H]'[one of]Your mind is fucking forfeit to the will of [Azathot], or something!'[or]All mortal minds, like, crumble before will of [Azathot]!'[at random][roman type][line break]Your [if the player is possessing a vagina]orifices are forced wide open[otherwise][asshole] is forced wide open[end if] as the void's [italic type]essence[roman type] invades your body, and for a moment, you become a part of it. The myriad of blissful souls around you welcome you as one of your own, and you finally realise the reason for your existence. It's obvious. You were born to-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar[otherwise]on the ground[end if], your entire body tingling as it acclimates to a new, much lesser sense of self.";
 			severeHumiliate;
 			gape asshole times 1;
-			if the player is female, gape vagina times 1;
+			if the player is possessing a vagina, gape vagina times 1;
 			Bore M;
 	otherwise:
 		say "[speech style of H]'[one of]Wow, your spirit tits are like, fucking ridonk!'[or]Babe, your spirit tits are like, rocking as fuck!'[or]OMG, are those spirit boobs real?'[at random][roman type][line break]Your whole body tingles as you hear applause all around you, and [if interracial fetish is 1]big black[otherwise]white[end if] tentacles fill your vision as-[line break]You suddenly find yourself laying face up [if the location of the player is Woods23]on the altar, [otherwise]on the ground, [end if]feeling slightly less like your own person.";
@@ -645,8 +645,7 @@ To compute failed dominance punishment of (M - an acolyte):
 	let B be a random worn clothing penetrating face;
 	if B is clothing:
 		say "[BigNameDesc of M] pulls out your [ShortDesc of B].";
-		now B is in holding pen;
-		now M is retaining B;
+		now M is carrying B;
 		dislodge B;
 	now another-turn-flavour is "[BigNameDesc of M] chants under [his of M] breath, colour creeping back into [his of M] cheeks as [his of M] creampied [vagina] looms over you.";
 	now another-turn is 1.]

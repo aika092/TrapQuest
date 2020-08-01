@@ -602,10 +602,10 @@ REQUIRES COMMENTING
 
 +!]
 This is the hentai orgasm resolution rule:
-	if the milk volume of breasts > 4 and the class of the player is not cowgirl and the class of the player is not royal slave:[###maybe have this influenced by breast sensitivity]
+	if the milk volume of breasts > 4 and the player is not in a predicament room and the class of the player is not cowgirl and the class of the player is not royal slave:[###maybe have this influenced by breast sensitivity]
 		let N be bottom level lactation cover;
 		let M be the milk volume of breasts / 5;
-		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor.[end if][line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
+		say "Your nipples start to spontaneously squirt milk into [if N is clothing]your [printed name of N][otherwise]a puddle on the floor[end if].[line break][variable custom style][if the bimbo of the player < 8]Gross![otherwise]Uh-oh![end if][roman type]";
 		say "[one of][line break][variable custom style]Good grief! That was a most peculiar feeling![roman type][line break][or][line break][variable custom style]Wow, that was a strange coincidence! I hope.[roman type][line break][or]Once again, you seem to squirt milk [i]as[/i] you climaxed. [line break][variable custom style]Huh! I thought that only happened in hentai fiction![roman type][line break]I hope that's not going to happen [i]every[/i] time![or]Oh, man... again? You feel your face turn red.[line break][variable custom style] I think my boobs have been turned into helplessly-squirting milk dispensers when I come![roman type][line break]Surely, not? Please?[or]Oh, no! [line break][variable custom style]It's true: each time I come, my boobies squirt milky goodness![roman type][line break]Worse, you can't help but privately thrill at the feel of the thin fluid squirting from your so-sensitive and swollen nips![or][line break][variable custom style]Oooh, yesss! Squirt, squirt! So good! [roman type][line break]Uh... you feel your face flush pink in shame at just how much you enjoyed that sensation![or][line break][variable custom style]Here we go again - yum![roman type][line break]So I ejaculate milk from my boobies now? So what? Is it really such a big deal?[roman type] You feel the warm milk running wetly down your swollen boobs.[or][line break][variable custom style]I love my milky boobs.[roman type][line break][stopping][roman type][line break]";
 		[moderateHumiliate;]
 		if N is clothing:
@@ -663,7 +663,7 @@ This is the game ending orgasm rule:
 			say "Fine, keep playing to your heart's content.";
 			now infinite mode is 1;
 		otherwise:
-			say "That final orgasm did it - you are now almost completely mindless. You cannot think about anything except sex; in fact you can barely think of any words with more than one syllable. [line break][second custom style]'Fuck... Me...'[roman type][line break]You are perfectly content with your new state of mind, as if it's the only thing you've ever wanted.[line break][second custom style]'We'd better pull her out of the game, looks like she's completely lost it. Any more and we might risk damaging her basic speech and memory functions.'[roman type][line break]";
+			say "That final orgasm did it - you are now almost completely mindless. You cannot think about anything except sex; in fact you can barely think of any words with more than one syllable. [line break][second custom style]'Fuck... Me...'[roman type][line break]You are perfectly content with your new state of mind, as if it's the only thing you've ever wanted.[line break][second custom style]'We'd better pull [him of the player] out of the game, looks like [he of the player]'s completely lost it. Any more and we might risk damaging [his of the player] basic speech and memory functions.'[roman type][line break]";
 			now earnings is 99999;
 			end the story finally saying "You have lost - you are now a brainless bimbo.".
 The game ending orgasm rule is listed last in the orgasm resolution rules.

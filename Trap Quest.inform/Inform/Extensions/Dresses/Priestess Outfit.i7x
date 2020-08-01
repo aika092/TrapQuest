@@ -100,6 +100,8 @@ To decide which number is the initial outrage of (C - a revealing priestess outf
 To decide which object is the unique-upgrade-target of (C - a revealing priestess outfit):
 	decide on a random off-stage playdude priestess outfit.
 
+Definition: a revealing priestess outfit is potentially-mid-layer-concealing: decide no. [Only partially conceals mid layer]
+
 Definition: a revealing priestess outfit is slitted: decide yes.
 
 Part 4 - Playdude Priestess Outfit
@@ -156,7 +158,7 @@ To say ClothingDesc of (C - cameltoe-priestess-outfit):
 To decide which number is the initial outrage of (C - cameltoe-priestess-outfit):
 	decide on 3.
 
-Definition: cameltoe-priestess-outfit is potentially vagina covering if the player is male and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
+Definition: cameltoe-priestess-outfit is potentially vagina covering if the player is not possessing a vagina and it is potentially pussy covering. [On women, this item doesn't fully conceal the vagina]
 To decide which number is the penis-capacity of (H - cameltoe-priestess-outfit):
 	decide on 2.
 To decide which object is the unique-upgrade-target of (C - cameltoe-priestess-outfit):
@@ -177,7 +179,7 @@ To say ClothingDesc of (C - exposing-priestess-outfit):
 To decide which number is the initial outrage of (C - exposing-priestess-outfit):
 	decide on 3.
 
-cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
+cleavage-window-priestess-outfit is a priestess outfit. cleavage-window-priestess-outfit is erect-nipple-exposing. cleavage-window-priestess-outfit is only arm covering. The printed name of cleavage-window-priestess-outfit is "[clothing-title-before]cleavage window priestess outfit[clothing-title-after]". The text-shortcut of cleavage-window-priestess-outfit is "cwpo". Understand "cleavage", "window", "priestess", "outfit" as cleavage-window-priestess-outfit.
 
 cleavage-window-priestess-outfit is bottom-exclusive. cleavage-window-priestess-outfit is unskirted. cleavage-window-priestess-outfit is belly exposing. cleavage-window-priestess-outfit is very low cut. cleavage-window-priestess-outfit is optional-top-displacable. cleavage-window-priestess-outfit is only arm covering.
 
@@ -195,7 +197,7 @@ To decide which number is the initial outrage of (C - cleavage-window-priestess-
 To decide which object is the unique-upgrade-target of (C - cleavage-window-priestess-outfit):
 	decide on nipple-exposing-priestess-outfit.
 
-nipple-exposing-priestess-outfit is a priestess outfit. The printed name of nipple-exposing-priestess-outfit is "[clothing-title-before]nipple exposing priestess outfit[clothing-title-after]". The text-shortcut of nipple-exposing-priestess-outfit is "nepo". Understand "nipple", "exposing", "priestess", "outfit" as nipple-exposing-priestess-outfit.
+nipple-exposing-priestess-outfit is a priestess outfit. nipple-exposing-priestess-outfit is only arm covering. The printed name of nipple-exposing-priestess-outfit is "[clothing-title-before]nipple exposing priestess outfit[clothing-title-after]". The text-shortcut of nipple-exposing-priestess-outfit is "nepo". Understand "nipple", "exposing", "priestess", "outfit" as nipple-exposing-priestess-outfit.
 
 nipple-exposing-priestess-outfit is bottom-exclusive. nipple-exposing-priestess-outfit is unskirted. nipple-exposing-priestess-outfit is belly exposing. nipple-exposing-priestess-outfit is neck covering. nipple-exposing-priestess-outfit is normally-nipple-exposing. nipple-exposing-priestess-outfit is optional-top-displacable. nipple-exposing-priestess-outfit is only arm covering.
 

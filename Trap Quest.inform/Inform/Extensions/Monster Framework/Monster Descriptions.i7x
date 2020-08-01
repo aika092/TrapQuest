@@ -162,5 +162,4 @@ To say FavourDesc of (M - a monster):
 		otherwise if M is annoyed:
 			say "You do not have a very good relationship with [NameDesc of M]; in fact [he of M] probably considers you somewhat of an annoyance.".
 
-
 Monster Descriptions ends here.

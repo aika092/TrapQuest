@@ -76,7 +76,7 @@ The skirt underdress clash rule is listed in the skirt wearability rules.
 
 Part 2 - Overdresses
 
-An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 4. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
+An overdress is usually knee-length. An overdress is usually average cut. An overdress is usually normally-nipple-covering. An overdress is usually belly covering. The armour of an overdress is usually 5. An overdress is usually top-displacable. The soak-limit of an overdress is usually 26.
 
 To uniquely set up (C - an overdress):
 	repair C.

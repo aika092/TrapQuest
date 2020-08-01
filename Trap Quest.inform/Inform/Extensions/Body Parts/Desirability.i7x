@@ -581,27 +581,28 @@ To compute seduction choice of (M - a monster):
 	otherwise:
 		set numerical response 0 to "stop seducing [him of M]";
 	if the player is upright:
-		if the player is not immobile and the seductions-performed of thighs < 2, set next numerical response to "dance for [him of M]";
-		if face is not actually occupied and the seductions-performed of face is 0, set next numerical response to "kiss [him of M]";
+		if the player is not immobile and the seductions-performed of thighs < 2 and M is seduce-satisfiable, set next numerical response to "dance for [him of M]";
+		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable, set next numerical response to "kiss [him of M]";
 		set next numerical response to "get on your knees";
 	let C be a random top level titfuck protection clothing;
-	if C is top-displacable unglued clothing and the player is able to use their hands, set next numerical response to "pull away your [ShortDesc of C]";
+	if C is top-displacable unglued clothing and the player is able to use their hands and the player is not wrist bound behind, set next numerical response to "pull away your [ShortDesc of C]";
 	let K be a random top level protection clothing;
-	if K is displacable unglued clothing and the player is able to use their hands, set next numerical response to "displace your [ShortDesc of K]";
+	if K is displacable unglued clothing and the player is able to use their hands and the player is not wrist bound behind, set next numerical response to "displace your [ShortDesc of K]";
 	if the seductions-performed of arms < 2:
-		set next numerical response to "pleasure [him of M] with your hands";
+		if M is seduce-satisfiable, set next numerical response to "pleasure [him of M] with your hands";
 		if M is unwrapped male monster and there is a held condom-providing thing:
 			if the player is able to use manual dexterity:
 				set next numerical response to "put a condom on [his of M] [DickDesc of M]";
 			otherwise if M is intelligent:
 				set next numerical response to "ask [him of M] to wear a condom";
 	if the player is prone:
-		if the seductions-performed of hips is 0, set next numerical response to "grind against [his of M] crotch";
-		if M is male and the largeness of breasts >= 5 and the seductions-performed of breasts is 0 and the number of things penetrating breasts is 0:
+		if the seductions-performed of hips is 0 and M is seduce-satisfiable, set next numerical response to "grind against [his of M] crotch";
+		if M is male and the largeness of breasts >= 5 and the seductions-performed of breasts is 0 and the number of things penetrating breasts is 0 and M is seduce-satisfiable:
 			let T be a random top level titfuck protection clothing;
 			unless T is clothing, set next numerical response to "massage [his of M] [DickDesc of M] with your [ShortDesc of breasts]";
-		if face is not actually occupied and the seductions-performed of face is 0, set next numerical response to "[if M is male]suck [his of M] [manly-penis][otherwise]pleasure [him of M] with your mouth[end if]";
+		if face is not actually occupied and the seductions-performed of face is 0 and M is seduce-satisfiable, set next numerical response to "[if M is male]suck [his of M] [manly-penis][otherwise]pleasure [him of M] with your mouth[end if]";
 		now auto is 1;
+		now presenting-receiver is M;
 		let PB be the list of actually presentable body parts;
 		now auto is 0;
 		let E be the number of entries in PB;
@@ -741,7 +742,8 @@ To compute seduction choice of (M - a monster):
 			now M is stalled;
 			let BB be (a random number between -1 and 1) + the blue-balls-limit of M - the blue-balls of M;
 			let SL be the sex-length of M;
-			say "[BigNameDesc of M] seems [if BB < 1]to have lost [his of M] patience[otherwise if BB < 2]on the brink of losing [his of M] patience[otherwise if BB < 3]close to getting frustrated[otherwise if BB < 4]like [he of M] is getting impatient[otherwise if BB < 5]like [he of M] wants to take control[otherwise if BB < 7]to be enjoying your performance[otherwise][one of]relaxed[or]entertained[or]amused[purely at random][end if] and like [he of M][']s [if SL < 1]ready to explode! Maybe try something a bit more stimulating?[otherwise if SL < 2]very close to cumming![otherwise if SL < 3]very worked up![otherwise if SL < 4]feeling great.[otherwise][one of]aroused[or]turned on[or]hot under the collar[at random].[end if]";
+			if M is seduce-satisfiable, say "[BigNameDesc of M] seems [if BB < 1]to have lost [his of M] patience[otherwise if BB < 2]on the brink of losing [his of M] patience[otherwise if BB < 3]close to getting frustrated[otherwise if BB < 4]like [he of M] is getting impatient[otherwise if BB < 5]like [he of M] wants to take control[otherwise if BB < 7]to be enjoying your performance[otherwise][one of]relaxed[or]entertained[or]amused[purely at random][end if] and like [he of M][']s [if SL < 1]ready to explode! Maybe try something a bit more stimulating?[otherwise if SL < 2]very close to cumming![otherwise if SL < 3]very worked up![otherwise if SL < 4]feeling great.[otherwise][one of]aroused[or]turned on[or]hot under the collar[at random].[end if]";
+			otherwise say "[BigNameDesc of M] continues to wait.";
 			if debuginfo > 0, say "[input-style]Stimulation ticks until orgasm: [SL]; Impatience: [the blue-balls of M] | [the blue-balls-limit of M][roman type][line break]";
 			if (a random number between 1 and the sex-length of M) is 1 and M is groping:
 				compute seduction grope of M;

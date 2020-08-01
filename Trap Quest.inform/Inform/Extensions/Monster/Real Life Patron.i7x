@@ -195,8 +195,6 @@ To say SingleWaitingFlavTQ of (M - a real-life patron):
 	otherwise:
 		say "You look up at [NameDesc of M] and smile gently. [line break][variable custom style]'[one of]If its you, I'd like to do it for free, but you know how it is.'[or]Go ahead and just treat me like a cheap whore. We're friends, it's OK.'[or]Since we're friends, I'll do whatever you want.'[or]Don't worry, I'll make sure you enjoy this. That's what friends are for.'[in random order][roman type][line break]".
 
-
-
 Section - Platonic Friend
 
 [This is a person who "would be weird to have sex with"; the original]
@@ -238,6 +236,8 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - platonic-friend):
 		now the severity entry is 500;
 		now the popularity entry is 0;
 		now the viewsfuzz entry is 0;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
 		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - platonic-friend):
@@ -300,6 +300,8 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - nemesis-friend):
 		now the severity entry is 500;
 		now the popularity entry is 0;
 		now the viewsfuzz entry is 0;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
 		now the timestamp entry is 0;[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - nemesis-friend):
@@ -363,6 +365,8 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - distant-friend):
 		now the severity entry is 500;
 		now the popularity entry is 0;
 		now the viewsfuzz entry is 0;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
 		now the timestamp entry is 0.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - distant-friend):
@@ -427,6 +431,8 @@ To compute HangUpDisgraced of (C - a video-monitor) with (M - fancied-friend):
 		now the severity entry is 500;
 		now the popularity entry is 0;
 		now the viewsfuzz entry is 0;
+		now the lastwitnessed entry is 0;
+		now the deletedtime entry is 0;
 		now the timestamp entry is 0.
 
 To compute HangUpUndisgraced of (C - a video-monitor) with (M - fancied-friend):

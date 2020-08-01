@@ -149,11 +149,11 @@ To teach relaxing:
 		say "[bold type]You already know how to relax![roman type][line break]".
 
 This is the relaxskill list rule:
-	if the relaxskill of the player is 1, say "You know how to relax your [if the player is female]vaginal muscles and [end if]sphincter during sex.".
+	if the relaxskill of the player is 1, say "You know how to relax your [if the player is possessing a vagina]vaginal muscles and [end if]sphincter during sex.".
 The relaxskill list rule is listed in the skill listing rules.
 
 This is the relaxskill learn rule:
-	if the relaxskill of the player is 0, say "You now know how to relax your [if the player is female]vaginal muscles and [end if]sphincter during sex.";
+	if the relaxskill of the player is 0, say "You now know how to relax your [if the player is possessing a vagina]vaginal muscles and [end if]sphincter during sex.";
 	now the relaxskill of the player is 1.
 The relaxskill learn rule is listed in the skill cheating rules.
 
@@ -334,7 +334,7 @@ Part 16 - Butt Skill
 
 To teach buttskill:
 	if the buttskill of the player is 0:
-		say "[bold type]**You have learned how to masturbate anally!**[roman type]";
+		say "[bold type]**You have learned how to masturbate anally!**[roman type][line break]";
 		now the buttskill of the player is 1;
 		reset skill cooldown;
 	otherwise:

@@ -75,7 +75,7 @@ To commence recycling of (C - a headgear):
 	if debugmode is 1, say "Adding [C] to recent headgear list. List now looks like this: [list of headgear recycling].";
 
 To compute recycling of (C - a headgear):
-	add C to the list of headgear recycling.
+	add C to the list of headgear recycling, if absent.
 
 [We might need to reset some variables or something, I dunno]
 To compute unique recycling of (C - a headgear):

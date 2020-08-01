@@ -134,6 +134,7 @@ End of a hyperlink for a thing that's been properly coded, where clicking examin
 
 +!]
 To say TQxlink of (T - a thing):
+	say ownership-desc of T;
 	if the link-disambiguation-ID of T > 0:
 		say " ([link-disambiguation-ID of T])[as][link-disambiguation-ID of T][end link]";
 	otherwise if disambiguation-busy is true:

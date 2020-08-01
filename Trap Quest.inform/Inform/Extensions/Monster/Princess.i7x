@@ -2,6 +2,8 @@ Princess by Monster begins here.
 
 ex-princess is a monster. ex-princess is intelligent. ex-princess is caged. ex-princess is in School35. ex-princess has a number called torment-count. ex-princess has a number called current-torment. Understand "princess" as ex-princess. Understand "imprisoned" as ex-princess when the item described is caged. Understand "original" as ex-princess when the item described is unconcerned. Understand "enslaved" as ex-princess when the item described is defeated. Understand "button" as ex-princess when diaper quest is 1 and item described is caged.
 
+ex-princess has a number called princess-power.
+
 The text-shortcut of ex-princess is "pri".
 Figure of original princess is the file "NPCs/MultiFloor/Princess/princess1.jpg".
 Figure of original diapered princess is the file "NPCs/MultiFloor/Princess/princess2.jpg".
@@ -123,21 +125,27 @@ To UnidentifiablePosterReaction of (M - ex-princess):
 
 Part 3 - Combat
 
+To compute interaction of (M - ex-princess):
+	if the player is in danger:
+		compute protection of M;
+	otherwise if M is unconcerned:
+		if there is a tentacle-breeder in the location of the player:
+			let T be a random tentacle-breeder in the location of the player;
+			say "[speech style of M]'[if inhuman pregnancy is 2]Poor girl. Let me put you out of your misery.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], and suddenly the tentacles and slime begin to thrash around and turn brown. The tentacles restraining the woman quickly rot away, and as she falls to the floor she manages a look of gratitude before vanishing into motes of light[otherwise]This place really needs a spring clean.'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of T], which shrinks away inside of itself until it has all completely gone[end if].";
+			destroy T;
+			repeat with C running through worn clothing:
+				if the quest of C is tentacle-research-quest:
+					compute quest completion of tentacle-research-quest on C;
+
 To compute (M - ex-princess) protecting against (X - a monster):
 	if M is in the school:
-		if glittery-wand is not retained by M or glittery-wand is not cursed, say "[BigNameDesc of M] [one of]seems to have used the last of [his of M] energy for now, and can't help you with the rest of the fight.[or]is panting heavily.[or]is still too out-of-breath to help.[or]continues panting heavily, trying to recover [his of M] breath.[or]seems to be trying to gather enough magical energy for one last spell![or][PrincessHeal][or]coughs out a hoarse apology.[line break][speech style of M]'I'm sorry, there was no other way...'[roman type][line break][or]continues panting heavily.[stopping]";
+		if glittery-wand is not carried by M or glittery-wand is not cursed, say "[BigNameDesc of M] [one of]seems to have used the last of [his of M] energy for now, and can't help you fight.[or]is panting heavily.[or]is still too out-of-breath to help.[or]continues panting heavily, trying to recover [his of M] breath.[or]continues panting heavily.[or]seems to be trying to gather enough magical energy for more spells![or]continues panting heavily.[stopping]";
 		otherwise say "[BigNameDesc of M] [one of]is being forced to masturbate [himself of M] with the cursed wand![or]continues to fervently press the vibrating wand into [his of M] clit, no matter how much [he of M] tries to stop it with [his of M] other arm.[or]pushes the head of the cursed vibrating wand into [his of M] clit and makes small circles.[or]moans with a mixture of passion and despair as [he of M] brings [himself of M] closer to the bring with the powerful wand.[or]screams out as [he of M] has a powerful orgasm from the vibrating wand on [his of M] clit.[or]can't stop stimulating [his of M] clit, even after coming down from [his of M] orgasmic high![or]shudders as [his of M] oversensitive clit receives further vibrating punishment.[cycling]";
+	otherwise if X is facehugger:
+		say "[speech style of M]'Ugh[one of], please don't tell me this place is infested with these things[or][stopping].'[roman type][line break][BigNameDesc of M] points [his of M] wand at [NameDesc of X], and zaps it with some kind of laser. And a moment later, [NameDesc of X] is no more.";
+		destroy X;
 	otherwise:
 		compute default protecting of M.
-
-To say PrincessHeal:
-	let M be ex-princess;
-	say "weakly raises [his of M] wand and points it at you. You hear [him of M] cast a spell with the quietest whisper.[line break][speech style of M]'Final Spark...'[roman type][line break]You yelp in surprise as you feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
-	BodyHeal 10;
-	now the stance of the player is 0;
-	now the fatigue of the player is 0;
-	StrengthDown 4; [Deliberately harsh.]
-	DexDown 4.
 
 To compute failed damage of (M - ex-princess):
 	say "[BigNameDesc of M] completely ignores your attack, as if [he of M] didn't even feel it!".
@@ -321,14 +329,17 @@ Definition: ex-princess is willing to give snacks if it is not caged and it is n
 
 Part 5 - Trading
 
+To compute final resolution of (M - ex-princess) taking (T - a thing):
+	now M is carrying T.
+
 To decide which number is the bartering value of (T - a thing) for (M - ex-princess):
 	if M is caged and the number of monsters in the location of M is 1:
 		if T is vibe-wand, decide on 99;
-		if T is skeleton key and there is a vibe-wand retained by M, decide on 99;
+		if T is skeleton key and there is a vibe-wand carried by M, decide on 99;
 	decide on 0.
 
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - a vibe-wand):
-	say "[BigNameDesc of M][']s eyes go wide.[line break][speech style of M]'[if T is royal scepter]Yes... Yes! You found it! Huzzah! With this, the fight will be easy[otherwise if there is a vibe-wand retained by T]This is an unnecessary extra, but it might help. I'll take it[otherwise]Hmm, yes, I can use this, I think. With your help, this should serve[end if]. Now [if diaper quest is 1]go drop that in the diaper pail and then [end if]get me out of here. You did bring a key, didn't you?'[roman type][line break]".
+	say "[BigNameDesc of M][']s eyes go wide.[line break][speech style of M]'[if T is royal scepter]Yes... Yes! You found it! Huzzah! With this, the fight will be easy[otherwise if there is a vibe-wand carried by T]This is an unnecessary extra, but it might help. I'll take it[otherwise]Hmm, yes, I can use this, I think. With your help, this should serve[end if]. Now [if diaper quest is 1]go drop that in the diaper pail and then [end if]get me out of here. You did bring a key, didn't you?'[roman type][line break]".
 
 To say MonsterOfferAcceptFlav of (M - ex-princess) to (T - skeleton key):
 	now the friendly boredom of M is 0;
@@ -351,6 +362,8 @@ To compute resolution of (M - ex-princess) taking (T - a thing):
 To compute resolution of (M - ex-princess) taking (T - skeleton key):
 	destroy T;
 	now M is guarding;
+	now the princess-power of M is 10;
+	if M is carrying royal scepter, now the princess-power of M is 14;
 	now School35 is use-the-floor;
 	let LN be the list of alive undefeated staff members;
 	sort LN in random order;
@@ -378,7 +391,7 @@ To compute resolution of (M - ex-princess) taking (T - skeleton key):
 		now N is a random unleashed staff member in the location of M;
 		compute M enslaving N;
 		if STN > 1:
-			if royal scepter is retained by M:
+			if royal scepter is carried by M:
 				repeat with STU running through staff members:
 					if STU is unleashed and (STU is sapphire-teacher or STU is not teacher), compute M enslaving STU;
 			otherwise:
@@ -398,20 +411,51 @@ An all later time based rule (this is the school rescue fight rule):
 			if the number of undefeated staff members in the location of M > 0 and (M is not in the location of the player or the player is prone):
 				let N be a random unleashed staff member in the location of M;
 				if M is in the location of the player:
-					say "As soon as you are on the ground, you find a heel pressed into your back.[line break][speech style of N]'That's enough. This rebellion is over.'[roman type][line break]With a few arcane gestures, [NameDesc of N] rips the wand from [NameDesc of M][']s hand and binds you both to the ground with ropes of light. ";
-					let PSM be the number of pacified staff members in the location of the player;
-					if PSM > 0, say "[big he of N] releases [his of N] bound comrade[if PSM > 1]s[end if].";
-				repeat with SM running through monsters in the school:
-					now SM is unleashed;
-				if diaper focus > 0, now M is diaper-enslaved;
-				otherwise now M is sex-enslaved;
-				now M is in School34;
-				compute N dungeon locking;
+					say "[speech style of N]'[one of]That's enough. This rebellion is over[or]This is the end[or]Stay down[stopping].'[roman type][line break][BigNameDesc of N] makes a few arcane gestures and ropes of light begin to fly at you and [NameDesc of M].";
+					if a random number between 1 and 8 < the princess-power of M:
+						let T be the substituted form of "I [one of][if interracial fetish is 1]am a [WhiteSub] whose life is dedicated to serving [BlackCock][otherwise]I am a filthy whore whose life is dedicated to serving [manly-penis][end if][or]am a worthless object, my only purpose is to keep my [cunt] warm and ready[or]am a disgusting fraud of a Princess who fucks [GrossMates][or]need more cum in my [pussy][if pregnancy fetish is 1]! Fuck a baby into me[end if][in random order]";
+						if diaper quest is 1, now T is the substituted form of "I [one of]am dedicated to [if diaper messing >= 3]pooping in Pampers[otherwise]only using diapers[end if] for the rest of my life[or]am a worthless baby who can't even make it to the potty in time[or]am a disgusting fraud of a Princess who gets turned on by being treated like a baby[or]need my Mommy[in random order]";
+						say "[speech style of M]'[one of]No[or]I can't go back[or]Not yet[stopping]!'[roman type][line break][BigNameDesc of M] raises [his of M] wand and points it at you. You hear [him of M] reciting the incantation to cast a spell.[line break][speech style of M]'[T]!'[roman type][line break]";
+						if T matches the text "dedicated":
+							say "You feel your body fully heal[if the player is prone], and are raised back to your feet[end if]! But at what cost? You feel significant physical power leaving your body, and you doubt it will return after the fight is done.";
+							BodyHeal 10;
+							StrengthDown 4; [Deliberately harsh.]
+							DexDown 4;
+						otherwise if T matches the text "worthless":
+							say "You feel your body mostly heal[if the player is prone], and are raised back to your feet[end if]! But the magic riccochets off of all of your clothing!";
+							BodyHeal 7;
+							repeat with C running through worn transformable clothing:
+								potentially transform C;
+						otherwise if T matches the text "fraud":
+							say "You feel your body significantly heal[if the player is prone], and are raised back to your feet[end if]! But it also feels like there's a dark cloud hanging over you now, like you're going to find yourself getting very unlucky for a while!";
+							BodyHeal 5;
+							decrease the raw luck of the player by 15;
+						otherwise:
+							say "You feel your body slightly heal[if the player is prone], and are raised back to your feet[end if]!";
+							BodyHeal 3;
+						now the stance of the player is 0;
+						now the fatigue of the player is 0;
+						decrease the princess-power of M by 2;
+						if M is carrying royal scepter and the number of undefeated staff members in the location of M > 1 and the princess-power of M >= 10: [should be the first two times]
+							say "[speech style of M]'And fuck you.'[roman type][line break]";
+							compute M enslaving N;
+					otherwise:
+						say "Moments later you are both bound in magical rope, and [NameDesc of M][']s wand has been ripped from [his of M] grip. ";
+						let PSM be the number of pacified staff members in the location of the player;
+						if PSM > 0, say "[BigNameDesc of N] releases [his of N] bound comrade[if PSM > 1]s[end if].";
+				if M is not in the location of the player or the player is prone:
+					repeat with SM running through monsters in the school:
+						now SM is unleashed;
+						unless SM is N or SM is M, regionally place SM;
+					if diaper focus > 0, now M is diaper-enslaved;
+					otherwise now M is sex-enslaved;
+					now M is in School34;
+					compute N dungeon locking;
 		if M is guarding:
 			now the health of M is 1;
 			repeat with SM running through fucked-silly staff members in the location of M:
 				compute M enslaving SM;
-			if headmistress is in the location of M and headmistress is unleashed and (glittery-wand is not retained by M or glittery-wand is not cursed): [Princess fights headmistress herself]
+			if headmistress is in the location of M and headmistress is unleashed and (glittery-wand is not carried by M or glittery-wand is not cursed): [Princess fights headmistress herself]
 				compute M enslaving headmistress;
 				if headmistress is in the location of the player and headmistress is not unleashed, say MonsterDesc of headmistress;
 			let NUSM be the number of undefeated staff members in the location of M;
@@ -461,24 +505,34 @@ To compute (M - ex-princess) enslaving (N - a monster):
 	otherwise now N is sex-enslaved;
 	now the refractory-period of N is a random number between -100 and 150; [doesn't start off messy]
 	if M is in the location of the player:
-		let W be a random vibe-wand retained by M;
-		if glittery-wand is retained by M, now W is glittery-wand;
-		if royal scepter is retained by M, now W is royal scepter;
+		let W be a random vibe-wand carried by M;
+		if glittery-wand is carried by M, now W is glittery-wand;
+		if royal scepter is carried by M, now W is royal scepter;
 		say "[if W is not glittery-wand or W is not cursed][one of][BigNameDesc of M] spins [his of M] [ShortDesc of W] and then[or]Once again [NameDesc of M][stopping] blasts[otherwise][BigNameDesc of M] manages to pull the black vibrating wand away from [his of M] crotch for just long enough to hit[end if] [NameDesc of N] with a powerful wave of magical energy. [BigNameDesc of N] screeches in shock as [he of N] has [his of N] outfit transformed, [his of N] clothes becoming [if N is diaper-enslaved]babified[otherwise]ripped[end if] and items of bondage appearing on [his of N] person.";
 
 To compute (M - ex-princess) enslaving (N - headmistress):
 	let enslave-success be 1;
 	if M is in the location of the player:
-		let W be a random vibe-wand retained by M;
-		if glittery-wand is retained by M, now W is glittery-wand;
-		if royal scepter is retained by M, now W is royal scepter;
+		let W be a random vibe-wand carried by M;
+		if glittery-wand is carried by M, now W is glittery-wand;
+		if royal scepter is carried by M, now W is royal scepter;
 		if M is in the location of the player:
 			if the health of N > 0:
-				say "[BigNameDesc of N] notices you and [NameDesc of M] and a look of horror and disbelief crosses [his of N] face.[line break][speech style of N]'No, it can't be! I won't let you!'[roman type][line break]";
+				say "[one of][BigNameDesc of N] notices you and [NameDesc of M] and a look of horror and disbelief crosses [his of N] face.[line break][speech style of N]'No, it can't be! I won't let you!'[roman type][line break][or][stopping]";
 				if W is not glittery-wand or (a random number between 1 and 2 is 1 and W is not cursed):
-					say "[BigNameDesc of N] tries to throw a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and defects it with [his of M] [ShortDesc of W], sending it hurtling back to its caster. [BigNameDesc of N] screams as [he of N] is engulfed in the darkness, and when it clears, [he of N] looks rather different.";
+					say "[BigNameDesc of N] tries to throw [one of]a[or]another[stopping] magic cloud of shadow towards [NameDesc of M], but [he of M] [one of]sees it coming in time and defects[or]manages to continue to find the strength to[stopping] it with [his of M] [ShortDesc of W], sending it hurtling ";
+					if W is royal scepter:
+						say "back to its caster. [BigNameDesc of N] screams as [he of N] is engulfed in the darkness, and when it clears, [he of N] looks rather different.";
+					otherwise:
+						if the princess-power of M > 9:
+							say "harmlessly into a wall.";
+							decrease the princess-power of M by 1;
+						otherwise:
+							say "[one of]narrowly over one shoulder[or]down to the ground between [his of M] knees. Close[or]in a wild random direction that almost hits you in the back[in random order].";
+						now enslave-success is 0;
 				otherwise:
 					now enslave-success is 0;
+					now the princess-power of M is -1;
 					now glittery-wand is cursed;
 					say "[BigNameDesc of N] throws a magic cloud of shadow towards [NameDesc of M], but [he of M] sees it coming in time and deflects it with [his of M] [ShortDesc of W].[line break][speech style of M]'Too easy!'[roman type][line break][BigNameDesc of M] smiles proudly as [he of M] strikes the shadow with the wand. Time seems to slow as [NameDesc of N] grins and says with a glint in [his of N] eye:[line break][speech style of N]'Oh, where did you get that wand from, I wonder?'[line break][speech style of M]'What? NOOOO!'[roman type][line break]That's all [NameDesc of M] has time to say before the shadow wraps itself around the [ShortDesc of W] turning its gems to a jet black. [BigNameDesc of M] shakes [his of M] hand, trying to drop the black wand, but is unable to. You watch with [horror the sex addiction of the player] as clearly against [his of M] will, [his of M] hand pushes the head of the vibrator towards [his of M] clitoris. There's nothing either of you can do to stop it as [he of M] begins to use the wand to masturbate rather than fight. It looks like you'll have to finish this fight all on your own...";
 			otherwise:
@@ -574,7 +628,7 @@ To construct unique buttons for (T - ex-princess):
 			otherwise if watersports fetish is 1 and the player is not incontinent:
 				choose a blank row in the Table of Buttons;
 				now the ButtonImage entry is Figure of ToiletButton;
-				now the ButtonCommand entry is "use toilet";
+				now the ButtonCommand entry is "use urinal";
 				now the ButtonColour entry is lightModeFullGreen;
 				if the player is prone, now the ButtonColour entry is lightModeFullYellow. [turn yellow - player needs to stand]
 

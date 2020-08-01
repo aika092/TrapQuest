@@ -231,14 +231,13 @@ To execute (E - bag-feeding-semen) on (C - a thing):
 		now the stomach-semen of the player is 0;
 		now the stomach-urine of the player is 0;
 		now the stomach-milk of the player is 0;
-		let S be a random squirt dildo;
-		now the fill-colour of S is creamy;
-		now the doses of S is 1;
-		if S is held:
-			say "What's more, your [printed name of S] fills up to the brim with [semen]!";
+		now the fill-colour of squirt dildo is creamy;
+		now the doses of squirt dildo is 1;
+		if squirt dildo is held:
+			say "What's more, your [printed name of squirt dildo] fills up to the brim with [semen]!";
 		otherwise:
-			say "What's more, a [printed name of S] appears on the ground in front of you! Something tells you that you can guess what's inside...";
-			now S is in the location of the player.
+			say "What's more, a [printed name of squirt dildo] appears on the ground in front of you! Something tells you that you can guess what's inside...";
+			now squirt dildo is in the location of the player.
 
 bag-feeding-urine is a bag-feeding-effect.
 To execute (E - bag-feeding-urine) on (C - a thing):

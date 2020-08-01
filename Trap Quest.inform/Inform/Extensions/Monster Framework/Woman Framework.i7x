@@ -40,7 +40,6 @@ To say womanTitle:
 To say womanName:
 	say "[if the woman-old-bimbo of woman-player is the woman-bimbo of woman-player][current-name of woman-player][otherwise][old-name of woman-player][end if]".
 
-
 To set up (M - woman-player):
 	now the monstersetup of M is 1;
 	[if lady fetish is 2, now M is truly-male;]
@@ -96,7 +95,6 @@ The printed name of magic pistol is "[clothing-title-before]magic pistol[clothin
 
 To decide which figure-name is the clothing-image of (W - magic pistol):
 	decide on figure of magic pistol.
-
 
 Part 2 - Motion
 
@@ -179,7 +177,6 @@ To deploy (M - woman-player) with woman-status (V - a number):
 
 The womanspawning rules is a rulebook.
 
-
 A time based rule (this is the woman spawning rule):
 	if woman-player is angry deploy appropriate:
 		follow the womanspawning rules;
@@ -222,7 +219,6 @@ This is the woman spawning in the region of the player rule:
 			rule succeeds.
 The woman spawning in the region of the player rule is listed last in the womanspawning rules.
 
-
 woman-player has a number called hypno-scene.
 woman-player has a number called human-toilet-scene.
 woman-player has a number called hotel-urinal-scene.
@@ -235,7 +231,6 @@ woman-player has a number called shopkeeper-scene.
 woman-player has a number called stool-scene.
 woman-player has a number called throne-scene.
 woman-player has a number called crafting-scene.
-
 
 woman-player has a number called patron-scene-done.
 [
@@ -252,7 +247,6 @@ woman-player has a number called patron-scene-fighting.
 
 Chapter - Mechanic Scene
 
-
 To compute traitor surrender to (M - a monster):
 	decrease the traitor-hypno of hypno-lesson by 1;
 	say "You consider attacking [NameDesc of M], but then something inside you urges you to [speech style of M]help your friend[roman type] instead. You find yourself dropping to your knees.";
@@ -266,7 +260,6 @@ Check kneeing mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
 Check kicking mechanic when the traitor-hypno of hypno-lesson > 0 and the woman-status of woman-player is 91:
 	if the mechanic-scene of woman-player <= 3 and woman-player is in the location of the player and mechanic is unfriendly, compute traitor surrender to mechanic instead.
-
 
 An all later time based rule (this is the mechanic finishes with woman rule):
 	if the woman-status of woman-player is 91 and the mechanic-scene of woman-player <= 3 and mechanic is not in the location of the player:
@@ -420,7 +413,7 @@ To compute defeat of (M - woman-player):
 			loot M;
 		now the sleep of M is 300.
 
-To say LootFlav of (X - a thing) by (M - woman-player):
+To compute loot dropping of (X - a thing) by (M - woman-player):
 	say "You notice that [he of M][']s wearing a [printed name of X]!".
 
 Part - Conversation

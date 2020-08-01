@@ -41,6 +41,15 @@ Figure of Mirror Cutscene 1 is the file "Special/Cutscene/cutscene-mirror1.jpg".
 Figure of Mirror Cutscene 2 is the file "Special/Cutscene/cutscene-mirror2.jpg".
 Figure of Mirror Cutscene 3 is the file "Special/Cutscene/cutscene-mirror3.jpg".
 
+Figure of pink smoke 0 is the file "Env/MultiFloor/smoke0.jpg".
+Figure of pink smoke 1 is the file "Env/MultiFloor/smoke1.jpg".
+Figure of pink smoke 2 is the file "Env/MultiFloor/smoke2.jpg".
+
+To decide which figure-name is the examine-image of (T - pink smoke):
+	if the player is upright, decide on figure of pink smoke 0;
+	if the player is female, decide on figure of pink smoke 2;
+	decide on figure of pink smoke 1.
+
 Figure of babhound is the file "NPCs/Mansion/Hound/hound3.png".
 Figure of Puppy Cutscene 1 is the file "Special/Cutscene/cutscene-puppy1.png".
 Figure of Puppy Cutscene 2 is the file "Special/Cutscene/cutscene-puppy2.png".
@@ -53,6 +62,9 @@ Figure of Podium Cutscene 1 is the file "Special/Cutscene/cutscene-podium1.png".
 Figure of Podium Cutscene 2 is the file "Special/Cutscene/cutscene-podium2.png".
 
 Figure of quiz predicament is the file "Special/Cutscene/cutscene-quiz2.jpg".
+
+Figure of rank 1 rosie is the file "NPCs/School/Student/student1a.png".
+Figure of rank 2 rosie is the file "NPCs/School/Student/student1c.png".
 
 Figure of Teacher Hannah is the file "NPCs/School/Teacher/teacher5a.png".
 

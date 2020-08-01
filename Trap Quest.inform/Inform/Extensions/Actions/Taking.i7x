@@ -43,50 +43,21 @@ Check taking an accessory:
 		repeat with A running through accessories in the location of the player:
 			if the price of the noun is the price of A and the accessory-colour of A is the accessory-colour of the noun, try taking A instead.
 
-[!<CheckTakingStoreClothingWhileThePlayerIsInDungeon41AndDungeon41IsGuarded>+
-
-REQUIRES COMMENTING
-
-+!]
-Check taking store clothing while the player is in Dungeon41 and Dungeon41 is guarded:
+Check taking store thing while the player is in Dungeon41 and Dungeon41 is guarded:
 	unless shopkeeper is mating:
-		if there is held store clothing, say "[one of][line break][first custom style]'[big please] only consider one item of clothing at a time, or we'll all get confused. And we don't offer change here.'[roman type][line break]What a cheeky way of running a business! [big he of shopkeeper] seems serious though, so you decide to leave it alone.[or]You remember the strict rules about only considering one item at a time and decide to leave it alone.[stopping]" instead.
+		if there is held store thing, say "[one of][line break][first custom style]'[big please] only consider one item of clothing at a time, or we'll all get confused. And we don't offer change here.'[roman type][line break]What a cheeky way of running a business! [big he of shopkeeper] seems serious though, so you decide to leave it alone.[or]You remember the strict rules about only considering one item at a time and decide to leave it alone.[stopping]" instead.
 
-[!<ReportTakingStoreClothing>+
-
-REQUIRES COMMENTING
-
-+!]
-Report taking store clothing:
+Report taking store thing:
 	unless the location of the player is guarded:
 		compute stealing of the noun;
 		if shopkeeper is in the location of the player and shopkeeper is not interested:
 			now the boredom of shopkeeper is 0; [Just in case]
 			check perception of shopkeeper.
 
-[!<ReportDroppingStolenClothingWhileThePlayerIsInDungeon41>+
-
-REQUIRES COMMENTING
-
-+!]
-Report dropping stolen clothing while the player is in Dungeon41:
+Report dropping stolen thing while the player is in Dungeon41:
 	if shopkeeper is alive and shopkeeper is undefeated, now the noun is store.
 Understand "t [something]", "ta [something]" as taking.
 
-[!<CheckTakingVessel>+
-
-REQUIRES COMMENTING
-
-+!]
-[Check taking vessel:
-	repeat with V running through carried vessels:
-		if the text-shortcut of V is the text-shortcut of the noun, say "Carrying two of the same vessel might get confusing. You decide against it." instead.]
-
-[!<ReportTakingSomething>+
-
-REQUIRES COMMENTING
-
-+!]
 Report taking something:
 	allocate 2 seconds.
 

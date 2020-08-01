@@ -286,6 +286,7 @@ To destroy (T - a bottle):
 	now the magic-curse of T is bland;
 	now the curse-ID of T is unsure;
 	DoseEmpty T;
+	now T is unowned;
 	dislodge T.
 
 Bottles ends here.

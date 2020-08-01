@@ -1,16 +1,7 @@
 Pom Poms by Equippables begins here.
 
-A pom-pom is a kind of gloves. A pom-pom is unique. A pom-pom is womanly. The printed name of pom-pom is "[clothing-title-before]pom-poms[clothing-title-after]". A pom-pom is usually pvc. There is 1 pom-pom. Understand "pom", "poms" as pom-pom. The text-shortcut of pom-pom is "pom". A pom-pom has a number called charge. The charge of a pom-pom is usually 0.
+A pom-pom is a kind of gloves. A pom-pom is unique. A pom-pom is womanly. A pom-pom is usually pvc. Understand "pom", "poms" as pom-pom. A pom-pom has a number called charge.
 
-Definition: a pom-pom is purple themed: decide yes.
-
-Figure of pom poms is the file "Items/Accessories/Equippables/pompoms1.png".
-
-To decide which figure-name is the clothing-image of (F - a pom-pom):
-	decide on figure of pom poms.
-
-To say ClothingDesc of (C - a pom-pom):
-	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours!".
 To say ShortDesc of (C - a pom-pom):
 	say "pom-poms".
 
@@ -48,5 +39,55 @@ To compute attack effect of (E - a pom-pom):
 	if attack-type is 3:
 		if a random number between 1 and 4 is 1, FatigueDown 5;
 		FatigueDown 2.
+
+purple-pom-pom is a pom-pom. The printed name of purple-pom-pom is "[clothing-title-before]purple pom-poms[clothing-title-after]". Understand "purple" as purple-pom-pom. The text-shortcut of purple-pom-pom is "pom".
+
+Definition: purple-pom-pom is purple themed: decide yes.
+
+Figure of pom poms is the file "Items/Accessories/Equippables/pompoms1.png".
+
+To decide which figure-name is the clothing-image of (F - purple-pom-pom):
+	decide on figure of pom poms.
+
+To say ClothingDesc of (C - purple-pom-pom):
+	say "A pair of purple pom-poms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours!".
+
+To say MediumDesc of (C - purple-pom-pom):
+	say "purple pom-poms".
+
+To decide which object is the unique-upgrade-target of (C - purple-pom-pom):
+	if the class of the player is cumdumpster, decide on condom-pom-pom;
+	decide on nothing.
+
+Definition: purple-pom-pom is transformation-protected if the unique-upgrade-target of it is nothing.
+Definition: purple-pom-pom is condom pinnable: decide yes.
+
+To compute periodic effect of (C - purple-pom-pom):
+	if the used condoms of C > 0:
+		say "[bold type]Your [MediumDesc of C] reacts to having a used condom pinned to it![roman type] ";
+		now the used condoms of C is 0;
+		now the empty condoms of C is 0;
+		transform C into condom-pom-pom.
+
+condom-pom-pom is a pom-pom. The printed name of condom-pom-pom is "[clothing-title-before]used condom pom-poms[clothing-title-after]". Understand "used", "condom" as condom-pom-pom. The text-shortcut of condom-pom-pom is "cpom".
+
+Definition: condom-pom-pom is semen themed: decide yes.
+
+Figure of condom pom poms is the file "Items/Accessories/Equippables/pompoms2.png".
+
+To decide which figure-name is the clothing-image of (F - condom-pom-pom):
+	decide on figure of condom pom poms.
+
+To say ClothingDesc of (C - condom-pom-pom):
+	say "A pair of pom-poms made entirely out of used condoms. You lose some manual dexterity from wearing them, and your slaps don't do anything. But you feel like you could [bold type]jump[roman type] and [bold type]kick[roman type] for hours!".
+
+To say MediumDesc of (C - condom-pom-pom):
+	say "condom pom-poms".
+
+To compute periodic effect of (C - condom-pom-pom):
+	now the used condoms of C is 20;
+	now the empty condoms of C is 0.
+To compute school periodic effect of (C - condom-pom-pom):
+	compute periodic effect of C.
 
 Pom Poms ends here.

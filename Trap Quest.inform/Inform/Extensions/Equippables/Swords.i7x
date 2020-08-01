@@ -10,13 +10,13 @@ To say ClothingDesc of (S - a sword):
 
 Definition: a sword is fetish appropriate if diaper quest is 0.
 
-Definition: A sword is immune to change: decide yes.
+Definition: a sword is immune to change: decide yes.
 
 Check pulling a sword:
 	try taking the noun instead.
 
 Check taking a sword:
-	if there is a worn hand ready equippable, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
+	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
 
 To decide which number is the bartering value of (S - a sword) for (M - a gladiator):
 	if S is dildo sword, decide on 0;
@@ -53,7 +53,7 @@ To say ExamineDesc of (S - which-sword):
 Definition: which-sword is immune to change: decide yes.
 
 Check taking which-sword:
-	if there is a worn hand ready equippable, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
+	if there is a worn hand ready clothing, say "You try, but the hilt resists your touch. Maybe you need an open hand?" instead.
 
 Definition: an equippable is destiny-appropriate: decide no.
 Definition: an equippable is destiny-prioritised: decide no.
@@ -86,6 +86,8 @@ To say ShortDesc of (S - sword-of-purity):
 	say "gleaming silver sword".
 
 Figure of purity sword is the file "Items/Accessories/Equippables/sword3.png".
+Figure of purity sword cutscene is the file "Special/Cutscene/cutscene-sword1.jpg".
+
 To decide which figure-name is clothing-image of (C - sword-of-purity):
 	decide on figure of purity sword.
 
@@ -107,7 +109,7 @@ This is the sword-of-purity pussy slut rule:
 The sword-of-purity pussy slut rule is listed in the pussy slut eligibility rules.
 
 To decide which number is the damage improvement of (W - sword-of-purity):
-	let X be 1 + (the appearance of the player / 5);
+	let X be the number of at least partially exposed body parts - 5; [for a maximum of +4 (or +5 for a futa)]
 	increase X by the magic-modifier of W;
 	decide on X.
 
@@ -127,7 +129,17 @@ To compute sword destiny of (S - sword-of-purity):
 		say DefaultSexchangeFlav;
 		SexChange the player;
 	now virginity-valued is 1;
-	virginreward.
+	virginreward;
+	if the class of the player is virgin warrior:
+		let K be a random worn knickers;
+		if K is not unremovable knickers:
+			if K is a thing:
+				say "Your [K] [wardrobeVanishes of K]!";
+				now K is in pink wardrobe;
+			summon white-g-string cursed;
+			now the quest of white-g-string is vaginal-virginity-quest;
+			say "A tiny tight and sheer white g-string appears over your [vagina]! You sense that it wants you to lose your vaginal virginity.";
+		appropriate-cutscene-display figure of purity sword cutscene with priority 3.
 
 [Check taking sword-of-purity:
 	if the player is male and tg fetish is 0:

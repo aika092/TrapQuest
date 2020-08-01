@@ -79,7 +79,7 @@ Definition: wand-summoning is reactive-only: decide no.
 To say MagicSpellEffect of (S - wand-summoning):
 	say "summon a magic wand".
 Report Spellcasting wand-summoning:
-	let E be a random worn hand ready equippable;
+	let E be a random worn hand ready clothing;
 	if E is clothing, now wearing-target is E;
 	let H be a random worn headgear;
 	if E is clothing and ((E is vibe-wand or E is cursed or E is unremovable) or (H is clothing and H is removal-blocking)): [class wands can't be replaced by this spell]

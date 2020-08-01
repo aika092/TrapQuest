@@ -286,4 +286,24 @@ To say MediumDesc of (C - white tube top):
 To say ClothingDesc of (C - white tube top):
 	say "A supertiny white tube that clings tightly to your chest in order to stay in place.".
 
+Part 11 - Burgundy Tube Top
+
+burgundy tube top is a tube top. burgundy tube top is very low cut. burgundy tube top is transformation-rare. burgundy tube top is only arm covering.
+The printed name of burgundy tube top is "[clothing-title-before]burgundy tube top[clothing-title-after]". The text-shortcut of burgundy tube top is "btt".
+
+Definition: burgundy tube top is brown themed: decide yes.
+
+Figure of burgundy tube top is the file "Items/Clothes/Upper/TubeTops/tubetop10.png".
+
+To decide which figure-name is clothing-image of (C - burgundy tube top):
+	decide on figure of burgundy tube top.
+
+To say ShortDesc of (C - burgundy tube top):
+	say "burgundy tube top".
+To say MediumDesc of (C - burgundy tube top):
+	say "tiny sleeved burgundy tube top".
+
+To say ClothingDesc of (C - burgundy tube top):
+	say "A supertiny burgundy tube that clings tightly to your chest and has long sleeves attached to help it stay in place.".
+
 Tube Top ends here.

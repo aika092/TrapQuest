@@ -147,7 +147,7 @@ To passively stimulate (F - a body part) from (T - an object):
 		let A be the sensitivity of F + 5;
 		if F is asshole, increase A by the square root of the anal sex addiction of the player;
 		if F is vagina or F is penis: [We use vagina as a shortcut to mean penis sometimes]
-			if the player is female, increase A by the square root of the vaginal sex addiction of the player;
+			if the player is possessing a vagina, increase A by the square root of the vaginal sex addiction of the player;
 			otherwise increase A by the sex addiction of the player / 2;
 		if (F is fuckhole or F is penis) and there is a worn total protection diaper, increase A by the square root of the diaper addiction of the player;
 		let ST be the stimulation of T on F * 2;

@@ -64,7 +64,6 @@ To decide which figure-name is the examine-image of (T - toilet):
 	if diaper quest is 0 and playerRegion is not Dungeon, decide on figure of female toilet;
 	decide on figure of toilet.
 
-
 This is the toilet gets focused rule:
 	if watersports mechanics is 1 and the location of the player is toilets and the the player is not in Dungeon11, focus-consider toilet.
 The toilet gets focused rule is listed in the focus finding rules.

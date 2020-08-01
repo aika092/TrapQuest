@@ -2,80 +2,23 @@ Hair by Body Parts begins here.
 
 Part 1 - Definitions
 
-[!<Hair>@
-
-REQUIRES COMMENTING
-
-@inherits <BodyPart>
-
-@!]
 hair is a body part. hair is everywhere. Understand "my hair" as hair. The text-shortcut of hair is "hair".
 To say FullExamineDesc of (B - hair):
 	say "[ImageDesc of hair][TotalDesc of hair]".
 
-[!<DecideWhichNumberIsTheLargenessOfHair>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the largeness of hair:
 	decide on the raw largeness of hair + the fake largeness of hair.
 
-[!<Hair>@<blondeness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Hair has a number called blondeness. The blondeness of hair is usually 0. [Min 0 Max 3 - A low number means not at all blonde.]
-
-[!<Hair>@<brightness:Integer>*
-
-REQUIRES COMMENTING
-
-@!]
-Hair has a number called brightness. The brightness of hair is usually 0. [Min 0 Max 3 - A low number means very dark.]
-
-[!<Hair>@<redness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Hair has a number called redness. The redness of hair is usually 0. [Min 0 Max 3 - A high number means very red.]
-
-[!<Hair>@<rawLargeness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
+hair has a number called blondeness. The blondeness of hair is usually 0. [Min 0 Max 3 - A low number means not at all blonde.]
+hair has a number called brightness. The brightness of hair is usually 0. [Min 0 Max 3 - A low number means very dark.]
+hair has a number called redness. The redness of hair is usually 0. [Min 0 Max 3 - A high number means very red.]
 hair has a number called raw largeness. The raw largeness of hair is usually 1. [Min 1 Max 20]
-
-[!<Hair>@<fakeLargeness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 hair has a number called fake largeness. The fake largeness of hair is usually 0. [Min 0 Max 10]
-
-[!<Hair>@<realLargeness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 hair has a number called real largeness. The real largeness of hair is usually 1. [Min 1 Max 20]
 
-[!<PlayerMeanDoingSomethingToHair>+
-
-REQUIRES COMMENTING
-
-+!]
 Does the player mean doing something to hair:
 	it is likely.
 
-[!<DecideWhichNumberIsFavouriteHairLength>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is favourite hair length:
 	let L be the bimbo of the player / 2;
 	if extreme proportions fetish is 1, increase L by the bimbo of the player / 4;
@@ -97,13 +40,15 @@ To decide which number is the lewdly exposed outrage of (B - hair):
 	increase O by the largeness of hair / 5;
 	decide on O.
 
-Definition: hair (called B) is lewdly exposed:
-	if hair is exposed, decide yes;
-	decide no.
+[necessary for determining outrage when cumsoaked]
+Definition: hair is lewdly exposed if it is exposed.
 
-Definition: hair (called B) is exposed:
-	if there is a worn hood, decide no;
-	decide yes.
+To decide which object is the concealer of (T - hair):
+	decide on a random worn actually dense hood.
+
+To decide which object is the at least partial concealer of (T - hair):
+	if thighs is listed in the armUses of arms, decide on arms;
+	decide on a random worn not-see-through hood.
 
 [!<frozenHair:Integer>*
 
@@ -114,11 +59,6 @@ frozen hair is a number that varies.
 
 Part 2 - Description
 
-[!<SayShortDescOfHair>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of hair:
 	let X be the largeness of hair;
 	if X is 1, say "incredibly short [HairSoak][HairColour] hair";
@@ -137,11 +77,6 @@ To say ShortDesc of hair:
 	if X is 14, say "[HairSoak][HairColour] ankle length hair";
 	if X > 14, say "ground reaching [HairSoak][HairColour] hair".
 
-[!<SayShortHairDesc>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortHairDesc:
 	say ShortDesc of hair.
 

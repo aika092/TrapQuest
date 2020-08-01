@@ -213,7 +213,7 @@ To compute replacement of (T - a thing) in (O - an orifice):
 		say "[BigNameDesc of current-monster] pushes the [T] back into place in your [variable O].";
 		now T is worn by the player;
 		now T is penetrating O;
-		now current-monster is not retaining T;
+		now T is not temporarily-removed;
 		if O is fuckhole, ruin O.
 
 [!<DominateUpMonster>+
@@ -235,18 +235,14 @@ To compute replacement of (D - a clothing):
 					ZipUp D;
 		otherwise if D is actually summonable:
 			say "[BigNameDesc of current-monster] puts you back into your [ShortDesc of D] before letting you go.";
-			layer D correctly;
-			now D is worn by the player; [If we summon it, it will have all its stats reset.]
-			now D is identified;
-			now D is sure;
-			compute unique summoning of D;
+			only summon D;
 			if D is ass plugging or (D is vagina plugging and the player is not possessing a vagina), now D is penetrating asshole;
-			if D is vagina plugging and the player is female, now D is penetrating vagina;
+			if D is vagina plugging and the player is possessing a vagina, now D is penetrating vagina;
 			if D is ballgag, now D is penetrating face; [a ballgag is any gag that occupies the player's face. I.e. most gags]
 		otherwise:
 			say "[BigNameDesc of current-monster], unable to replace your [D], just drops it onto the ground.";
-			now D is in the location of the player;
-		now current-monster is not retaining D.
+			now D is not temporarily-removed;
+			now D is in the location of the player.
 
 This is the default facial climax rule:
 	if current-monster is penetrating face, compute facial climax of current-monster;
@@ -254,7 +250,7 @@ This is the default facial climax rule:
 The default facial climax rule is listed in the default end-of-sex rules.
 
 To replace any gags:
-	repeat with G running through gags retained by current-monster:
+	repeat with G running through gags carried by current-monster:
 		compute replacement of G in face.
 
 To TimesSubmittedUp (M - a monster) by (N - a number):
@@ -345,19 +341,19 @@ This is the default anal climax rule:
 The default anal climax rule is listed in the default end-of-sex rules.
 
 To replace any buttplugs:
-	repeat with G running through sex toys retained by current-monster:
-		unless current-monster is withholding G, compute replacement of G in asshole.
+	repeat with G running through temporarily-removed sex toys carried by current-monster:
+		compute replacement of G in asshole.
 
 To replace any diapers:
-	repeat with D running through diapers retained by current-monster:
-		unless current-monster is withholding D, compute replacement of D.
+	repeat with D running through temporarily-removed diapers carried by current-monster:
+		compute replacement of D.
 
 To replace any clothes:
 	unless the woman-status of woman-player is 96 and woman-player is in the location of the player: [patron orgy scene]
 		repeat with C running through worn clothing:
 			compute replacement of C; [this only does something if it's displaced or unzipped]
-		repeat with C running through clothing retained by current-monster:
-			unless current-monster is withholding C, compute replacement of C.
+		repeat with C running through temporarily-removed clothing carried by current-monster:
+			compute replacement of C.
 
 To compute anal climax of (M - a monster):
 	compute climax of M in asshole.
@@ -372,8 +368,8 @@ This is the default vaginal climax rule:
 The default vaginal climax rule is listed in the default end-of-sex rules.
 
 To replace any cuntplugs:
-	repeat with G running through sex toys retained by current-monster:
-		if the player is female, compute replacement of G in vagina;
+	repeat with G running through temporarily-removed sex toys carried by current-monster:
+		if the player is possessing a vagina, compute replacement of G in vagina;
 		otherwise compute replacement of G in asshole.
 
 To compute vaginal climax of (M - a monster):
@@ -685,7 +681,7 @@ This is the selecting an orifice rule:
 	follow the selecting an orifice rules;
 	if the rule failed:
 		compute SelectionFailure of current-monster;
-		rule succeeds. [If we couldn't choose an orifice, the monster gives up for this turn and loses interest.]
+		rule succeeds. [If we couldn't choose an orifice, the monster usually gives up for this turn and loses interest.]
 The selecting an orifice rule is listed last in the sex attempt rules.
 
 The selecting an orifice rules is a rulebook.
@@ -702,7 +698,7 @@ Definition: face (called B) is a potential target:
 	decide no.
 
 Definition: vagina (called B) is a potential target:
-	if current-monster is willing to do vaginal and the player is female, decide yes;
+	if current-monster is willing to do vaginal and the player is possessing a vagina, decide yes;
 	decide no.
 
 Definition: asshole (called B) is a potential target:
@@ -727,8 +723,7 @@ Definition: an object is an actual target: decide no.
 Definition: a body part (called B) is a reasonable target:
 	[If you want the monster to ignore buttslut and/or be able to take out plugs, you'll need to define the correct functions for your monster.]
 	if B is not a potential target, decide no; [First we check, is it a potential target? (see above)]
-	[if debugmode > 0, say "[Shortdesc of B] is a potential target...[line break]";]
-	[if B is breasts and there is top level titfuck protection clothing, decide no;] [NPCs won't titfuck the player if they'd have to remove or displace clothing (no longer true as of Jan 2020)]
+	if debugmode > 1, say "[Shortdesc of B] is a potential target...[line break]";
 	if B is occupied and B is not usable without penetration: [If it's usable without penetration e.g. the mannequin applying makeup, then we will always decide yes even if the player is gagged!]
 		if B is fake occupied and current-monster is not concealment immune, decide no; [The NPC has been tricked by magic, it cannot perceive this orifice!]
 		if B is actually occupied:
@@ -748,11 +743,11 @@ Definition: belly (called B) is a reasonable target:
 [ACTUAL TARGET means that the orifice can be accessed by the NPC, even after taking into account magical distractions, e.g. butt slut]
 Definition: a body part (called B) is an actual target:
 	if B is not a reasonable target, decide no; [First we check, is it a reasonable target? (see above)]
-	[if debugmode > 0, say "[ShortDesc of B] is a reasonable target...[line break]";]
+	if debugmode > 1, say "[ShortDesc of B] is a reasonable target...";
 	if current-monster is butt slut immune, decide yes; [The NPC is not tricked by basic concealment magic!!]
-	[if debugmode > 0, say "The desirability of B is [the desirability of B][line break]";]
+	if debugmode > 1, say "The desirability of B is [the desirability of B][line break]";
 	if the desirability of B <= 0, decide no;
-	[if debugmode > 0, say "[ShortDesc of B] is an actual target...[line break]";]
+	if debugmode > 1, say "[ShortDesc of B] is an actual target...";
 	decide yes.
 
 Definition: a belly (called B) is an actual target: [We can always piss on a face unless it's being fucked.]
@@ -875,10 +870,11 @@ To compute (M - a monster) attacking (C - a diaper):
 	otherwise if C is actually strippable:
 		say "[BigNameDesc of M] effortlessly pulls off your [ShortDesc of C]!";
 		if M is intelligent:
-			now C is in Holding Pen;
-			now M is retaining C;
+			now M is carrying C;
+			now C is temporarily-removed;
 		otherwise:
 			now C is in the location of the player;
+		dislodge C;
 	otherwise if C is rippable:
 		compute M ripping C;
 	otherwise:
@@ -887,8 +883,8 @@ To compute (M - a monster) attacking (C - a diaper):
 To compute (M - a monster) removing (C - a thing): [This is used for removing insertables]
 	if M is intelligent:
 		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C].";
-		now C is in holding pen;
-		now M is retaining C;
+		now M is carrying C;
+		now C is temporarily-removed;
 	otherwise:
 		say "[BigNameDesc of M] effortlessly pulls out your [ShortDesc of C] and discards it onto the floor.";
 		now C is in the location of the player;

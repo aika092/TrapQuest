@@ -109,7 +109,7 @@ To trigger (Y - a painted horse):
 	say "A giant triangular block of wood with a horse head at the front shoots out from the ground beneath you, [if the player is prone]forcing you upright and [end if]pulling you up until your feet aren't touching the floor. All of your weight is forced onto the top corner of this wooden 'horse' and more specifically onto your [if the player is female][vagina] and [end if][asshole]. [if the latex-transformation of the player > 3]Your rubbery crotch is unaffected by the weight on it. [otherwise if the player is diapered]The padding of your diaper is helping a bit but the pain is still unmanageable. [otherwise if the weight of the player < 5]Your light weight is helping at bit but the pain is still unmanageable. [otherwise if the weight of the player > 15]Your weight is making it even worse! [end if]You're going to quickly get more sore and if you stay on here for too long, you'll definitely faint! [one of]Looking forward, you notice that[or]Once again you can see that[stopping] there are five buttons embedded into the top of the head of the horse. [one of]Maybe one of them will let you down?[or]One of them should let you down.[stopping]";
 	now the stance of the player is 0;
 	now Y is penetrating asshole;
-	if the player is female, now Y is penetrating vagina;
+	if the player is possessing a vagina, now Y is penetrating vagina;
 	repeat with M running through reactive monsters:
 		say WoodenHorseTrapReactFlav of M;
 	truncate the list of possible horse effects to 0 entries;
@@ -131,8 +131,8 @@ To compute horse effect of (T - a painted horse):
 	if horse-alarm is listed in the list of current horse effects:
 		now magnetism-timer is 1;
 	if horse-vibrations is listed in the list of current horse effects and W > 2:
-		say "The vibrations of the wooden horse continue to overstimulate your [asshole][if the player is female] and [vagina][end if].";
-		if the player is female:
+		say "The vibrations of the wooden horse continue to overstimulate your [asshole][if the player is possessing a vagina] and [vagina][end if].";
+		if the player is possessing a vagina:
 			if the soreness of vagina < 10 or the delicateness of the player > 15, ruin vagina;
 		if the soreness of asshole < 10 or the delicateness of the player > 15, ruin asshole;
 		otherwise PainUp 1;
@@ -155,7 +155,7 @@ To compute horse pain:
 	otherwise:
 		say "You can't help but cry as the pressure on your [asshole][if the soreness of vagina is 10] and [vagina][end if] continues to cause you huge amounts of pain!";
 		PainUp 1;
-	if the player is female:
+	if the player is possessing a vagina:
 		if the soreness of vagina is 10 and the soreness of asshole is 10 and a random number between 1 and 2 is 1 and the delicateness of the player > 15:
 			say "You can't take the pressure on your crotch any more! You pass out.";
 			now the delayed fainting is 1;

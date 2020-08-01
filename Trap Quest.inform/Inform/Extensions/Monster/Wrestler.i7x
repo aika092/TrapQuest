@@ -547,7 +547,7 @@ To compute (M - a wrestler) entering mouth:
 	if the sex-length of M > 7, now the sex-length of M is 7;
 	say FriendlyMouthPenetrationFlav of M;
 	now M is penetrating face;
-	if the player is female, now M is penetrating vagina;
+	if the player is possessing a vagina, now M is penetrating vagina;
 	otherwise now M is penetrating penis;
 
 To say FriendlyMouthPenetrationFlav of (M - a wrestler):

@@ -81,8 +81,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the remove inappropriate vessels rule:
-	repeat with B running through squirt dildo:
-		now B is in Holding Pen;
+	now squirt dildo is in Holding Pen;
 	if diaper messing < 3, now novelty mug is in Holding Pen.
 The remove inappropriate vessels rule is listed in the diaper quest fix rules.
 
@@ -116,25 +115,25 @@ To say ShortDesc of (B - a vessel):
 To say ShortVesselDesc of (V - a vessel):
 	say "drinking vessel".
 
-A squirt dildo is a kind of vessel. The max-doses of a squirt dildo is usually 1. There is 1 squirt dildo. The printed name of squirt dildo is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]squirt dildo[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of squirt dildo is "sqd". Figure of squirt dildo is the file "Items/Accessories/Vessels/squirtdildo1.png".
-Definition: a squirt dildo (called T) is disembodied rather than embodied: [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
+squirt dildo is a vessel. The max-doses of squirt dildo is usually 1. The printed name of squirt dildo is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]squirt dildo[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of squirt dildo is "sqd". Figure of squirt dildo is the file "Items/Accessories/Vessels/squirtdildo1.png".
+Definition: squirt dildo (called T) is disembodied rather than embodied: [When penetrating an orifice, can it fit underneath other clothing like a sex toy? Or will clothing get in the way, e.g. a dildo pole?]
 	decide yes.
-To decide which figure-name is the examine-image of (V - a squirt dildo):
+To decide which figure-name is the examine-image of (V - squirt dildo):
 	decide on the figure of squirt dildo.
-Report plugging something with a squirt dildo:
+Report plugging something with squirt dildo:
 	now the second noun is sure.
-Definition: a squirt dildo is basic loot: decide no.
-To compute cursed drinking (X - a squirt dildo):
+Definition: squirt dildo is basic loot: decide no.
+To compute cursed drinking (X - squirt dildo):
 	say "An extremely bitter taste and slimy consistency immediately lets you know it's not what you put in. The squirt dildo changed everything inside it into [semen]! [line break][variable custom style][if the curse-ID of X is sure and X is cursed]This vessel is cursed... it's going to turn anything that's inside it into [semen][otherwise if the curse-ID of X is sure]This potion colour must be cursed... and that's causing it to turn into [semen] when I try to drink it from here[otherwise]One of these is cursed, but I don't know which[end if]...[roman type][line break]";
 	StomachSemenUp 1.
-To say VesselDesc of (V - a squirt dildo):
+To say VesselDesc of (V - squirt dildo):
 	say "This dildo has a hollow inside, hollow balls at the base and a hole at the top. By squeezing the base you can squirt the contents out of the dildo, and by releasing you can capture a bit of whatever liquid the dildo is in.".
-To say ShortVesselDesc of (V - a squirt dildo):
+To say ShortVesselDesc of (V - squirt dildo):
 	say "squirt dildo".
-Definition: a squirt dildo is inflation themed: decide yes.
-Definition: a squirt dildo is oral sex themed: decide yes.
-Definition: a squirt dildo is penis themed: decide yes.
-To decide which number is the initial outrage of (V - a squirt dildo):
+Definition: squirt dildo is inflation themed: decide yes.
+Definition: squirt dildo is oral sex themed: decide yes.
+Definition: squirt dildo is penis themed: decide yes.
+To decide which number is the initial outrage of (V - squirt dildo):
 	decide on 14.
 
 baby's bottle is a vessel. The max-doses of baby's bottle is 3. The printed name of baby's bottle is "[TQlink of item described][unless curse-ID of the item described is unsure][magic curse of item described] [end if]baby's bottle[if the doses of item described > 0 and the fill-type of item described is remembered] ([FillName the fill-type of item described])[otherwise if the doses of item described > 0] ([fill-colour of item described] liquid)[end if][shortcut-desc][TQxlink of item described][verb-desc of item described]". The text-shortcut of baby's bottle is "bab". Figure of baby's bottle is the file "Items/Accessories/Vessels/babybottle1.png".

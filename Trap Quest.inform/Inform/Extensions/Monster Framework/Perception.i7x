@@ -2,7 +2,7 @@ Perception by Monster Framework begins here.
 
 Part 1 - Perception
 
-A monster has a number called favour. The favour of a monster is usually 15. [The favour of an NPC determines when it turns unfriendly.]
+A monster has a number called favour. The favour of a monster is 15. [The favour of an NPC determines when it turns unfriendly.]
 A monster has a number called latest-appearance. [The last time the NPC saw the player, what did they look like? We only update this when the player looked worse than before, or the NPC gets bored then rediscovers the player. So flashing an NPC 5 times in quick succession is not any worse than flashing them once.]
 A monster has a number called latest-cringe. [The last time the NPC saw the player, how childish did they look?]
 
@@ -12,7 +12,7 @@ To FavourReset (M - a monster):
 	now the favour of M is the default favour of M.
 
 To decide which number is the default favour of (M - a monster):
-	decide on 15.
+	decide on 16 - game difficulty.
 
 Chapter 1 - Check Perception
 
@@ -21,7 +21,9 @@ whore-exposing-quest is a headgear-clothing-quest.
 stealthActive is initially true.
 
 To decide which number is the stealth of the player:
-	let P be 2 + (the number of worn kimono * 2);
+	let P be 2;
+	repeat with C running through currently visible wearthing:
+		increase P by the stealth-influence of C;
 	if water-fountain is penetrating asshole, increase P by 6;
 	if the player is prone, increase P by 2;
 	if skirt-tray-vibrator is worn, decrease P by 1;
@@ -47,7 +49,7 @@ To check perception of (M - a monster):
 				say "[BigNameDesc of M] notices you![line break][big he of M] seems to be waiting for something...";[Waiting for you to give birth to their baby]
 			otherwise if the scared of M > 0 and M is scarable:
 				compute scared perception of M;
-			otherwise if stealthActive is true and (the class of the player is vixen or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
+			otherwise if stealthActive is true and (the player is stealthy or the blind-status of M > 0 or (M is woman-player and the woman-status of woman-player is 80)) and the player is not in a bossed room and a random number between 1 and the stealth of the player > 1:
 				say PerceptionFail of M;
 				if the blind-status of M > 0, decrease the blind-status of M by 1;
 				distract M;
@@ -161,7 +163,7 @@ Definition: a monster (called M) is aware: [Can it notice the player on its own?
 
 Definition: a person is reactive if it is in the location of the player. [Can it react to things it sees the player do?]
 Definition: yourself is reactive: decide no.
-Definition: a monster is reactive if it is awake and it is intelligent and it is undefeated and it is in the location of the player. [Can it react to things it sees the player do?]
+Definition: a monster is reactive if it is awake and it is intelligent and it is undefeated and it is in the location of the player and (it is interested or the player is not stealthy). [Can it react to things it sees the player do?]
 
 To decide which number is the aggro limit of (M - a monster): [The number at which they turn unfriendly]
 	decide on 10.
@@ -202,7 +204,7 @@ Definition: a monster (called M) is uniquely unfriendly: [We can use this to eas
 Definition: a monster (called M) is default uniquely unfriendly:
 	if M is objectifying the player, decide yes;
 	if M is babifying the player, decide yes;
-	if there is a soiled-diaper retained by M, decide yes;
+	if there is a soiled-diaper carried by M, decide yes;
 	decide no.
 
 A monster has a number called objectification. [If an NPC is objectifying the player, and that's the only reason they're unfriendly, we want to make this unfriendliness stick for the duration of their interaction. Otherwise, the NPC could start to have sex with the player but then the player's make up fades causing the NPC to suddenly become friendly mid-fuck.]
@@ -525,7 +527,6 @@ Definition: a person is outraged:
 	if calculated-appearance-outrage-level is too humiliating, decide yes;
 	if diaper quest is 1 and calculated-cringe-level is too humiliating, decide yes;
 	decide no.
-
 
 [!<PersonIsNearlyOutraged>+
 

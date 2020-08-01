@@ -2,48 +2,21 @@ Arms by Body Parts begins here.
 
 Part 1 - Definitions
 
-[!<Arms>@
-
-REQUIRES COMMENTING
-
-@inherits <Limb>
-
-@!]
 arms is a limb. arms is everywhere.
 
 To say FullExamineDesc of (B - arms):
 	say "[if weight gain fetish is 1][TotalDesc of arms][otherwise if realisticArms is 0 or (entry 1 of the armUses of arms is arms and entry 2 of the armUses of arms is arms)]There's nothing interesting to note about your arms. [end if][if entry 2 of the armUses of arms is not arms]Your left hand is covering [NameDesc of entry 2 of the armUses of arms]. [end if][if entry 1 of the armUses of arms is not arms]Your right hand is covering [NameDesc of entry 1 of the armUses of arms]. [end if][if realisticArms is 1 and the player is not shameless]You can decide what you cover with your arms using the command [bold type][']adjust arms['][roman type]. [end if][if debuginfo > 0 and the number of entries in the armUses of arms > 2]BUG - too many entries in arm positions: [armUses of arms].[otherwise if debugmode > 0](Arm positions list: [armUses of arms])[line break][end if]".
 
-[!<Arms>@<fatBurning:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 arms has a number called fat-burning.
 
-[!<Arms>@<fleshVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 arms has a number called flesh volume. the flesh volume of arms is 0.
 Understand "finger", "fingers", "hand", "hands", "arm" as arms.
 
-[!<DecideWhichNumberIsTheWeightOfArms>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of (XXX - arms):
 	let S be the flesh volume of arms;
 	if the latex-transformation of the player > 1 and S > 0, now S is 0;
 	decide on S.
 
-[!<ReportSlapping>+
-
-REQUIRES COMMENTING
-
-+!]
 Report slapping:
 	compute arm fat burning.
 
@@ -58,6 +31,12 @@ To compute arm fat burning:
 			FatArmsDown 1;
 			if debuginfo > 0, say "[flesh volume of arms][roman type][line break]";
 			now the fat-burning of arms is 0.
+
+To decide which object is the at least partial concealer of (A - arms):
+	decide on a random worn arm covering not-see-through clothing.
+To decide which object is the concealer of (A - arms):
+	decide on a random worn arm covering actually dense clothing.
+
 
 Part 2 - Description
 
@@ -179,7 +158,7 @@ To update arms:
 	let UC be 0;
 	let A1R be A1;
 	let A2R be A2;
-	if the player is male: [Redirect vagina to penis]
+	if the player is not possessing a vagina: [Redirect vagina to penis]
 		if A1R is vagina, now A1R is penis;
 		if A2R is vagina, now A2R is penis;
 	if A1 is A2:

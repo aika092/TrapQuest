@@ -46,6 +46,7 @@ Carry out crafting:
 			if the recipe of current-alchemy-key is memorised, progress quest of recipe-quest;
 			compute recipe specific cursing of T;
 			if T is clothing or T is alchemy product, now T is unsure;
+			now T is unowned;
 			now T is carried by the player;
 			if the noun is bottle:
 				say "The liquid swirls around, and then in a puff of smoke, it turns into a [T]! Magic! ";

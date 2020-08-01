@@ -54,5 +54,6 @@ To compute recipe specific cursing of (T - a queen of hearts heels):
 	now T is bland.
 
 Definition: a queen of hearts heels is strut enabling: decide yes.
+Definition: a queen of hearts heels is party themed: decide yes.
 
 Queen of Hearts Heels ends here.

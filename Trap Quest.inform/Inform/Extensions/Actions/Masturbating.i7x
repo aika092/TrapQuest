@@ -158,7 +158,6 @@ This is the lack of vagina blocks masturbation rule:
 		rule fails.
 The lack of vagina blocks masturbation rule is listed first in the vaginal masturbation restriction rules.
 
-
 [!<TheChastityCageBlocksMasturbationRule>+
 
 Prevents masturbation.

@@ -208,7 +208,7 @@ To compute rest ending of (F - a cot):
 		let M be a random alive dominatrix in the location of the player;
 		say "[BigNameDesc of M] grins. Looks like you[']ll have to handle [him of M] before you can leave this room.";
 		now the sex-length of M is 5;
-		if number of plentiful accessories retained by M < 1, now a random off-stage ring is retained by M;
+		if number of plentiful accessories carried by M < 1, now a random off-stage ring is carried by M;
 		now M is interested.
 
 Basic Beds ends here.

@@ -25,6 +25,7 @@ To say MonsterDesc of (M - a robobutler):
 To set up (M - a robobutler):
 	reset M;
 	now the monstersetup of M is 1;
+	add mechanical joint to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the target-room of M is Hotel18;
 	now the health of M is the maxhealth of M;
@@ -280,7 +281,6 @@ To say RepeatResponse of (M - a robobutler):
 		say "[first custom style]'GREETINGS [robogreeting].'[roman type][line break]";
 	otherwise:
 		say "[BigNameDesc of M] ignores you.";
-
 
 To say robogreeting:
 	say "[if the class of the player is maid]SERVANT[otherwise if the player is female or the bimbo of the player > 9]MISS[otherwise]SIR[end if]".

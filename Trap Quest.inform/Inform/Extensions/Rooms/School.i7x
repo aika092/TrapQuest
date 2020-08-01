@@ -58,7 +58,7 @@ To decide which number is the entry-rank of (R - School20):
 	decide on 2.
 School21 is a water-bodied academic room. The printed name of School21 is "Hot Tub". "A large jacuzzi sits bubbling away at the centre of this otherwise small and empty room.". The shape of School21 is L5/0-0-0-1-0-0. The grid position of School21 is <5,8,7>. School21 is west of School20.
 To decide which number is the entry-rank of (R - School21):
-	decide on 4.
+	decide on 3.
 School22 is an academic room. The printed name of School22 is "Spectator Stands". "Tiered viewing benches face the [if diaper quest is 0][semen]-filled [end if]swimming pool.". The shape of School22 is L5/0-0-0-0-1-0. The grid position of School22 is <5,9,8>. School22 is north of School20.
 To decide which number is the entry-rank of (R - School22):
 	decide on 2.
@@ -281,7 +281,7 @@ To check dungeon release of (M - a monster):
 		repeat with C running through worn locked clothing:
 			say "[big he of M] unlocks your [ShortDesc of C]!";
 			now C is unlocked;
-		now armband is worn by the player;
+		only summon armband;
 		say "Your [ShortDesc of armband] reappears on your arm!";
 		repeat with N running through fucked-silly staff members:
 			now N is unleashed;

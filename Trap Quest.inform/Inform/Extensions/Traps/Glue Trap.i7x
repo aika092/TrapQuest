@@ -564,9 +564,8 @@ To compute the mutation effects of (G - a glue):
 						SilentlyPenisDown 1;
 						say "You [if the size of penis < 2]stare in [one of]dismay[or]shock[or]stunned disbelief[or]horror[at random][otherwise]grimace[end if] at your now [Shortdesc of penis].";
 					otherwise:
-						let C be a random off-stage pink rubber dress;
-						if C is actually summonable:
-							compute GlueMorphingInto of G to C;
+						if plastic-is-fantastic dress is actually summonable:
+							compute GlueMorphingInto of G to plastic-is-fantastic dress;
 						otherwise:
 							let BL be the largeness of breasts;
 							BustUp 1;

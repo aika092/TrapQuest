@@ -215,9 +215,11 @@ A game universe initialisation rule:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "fuck [GrossMates]";
 		now the naughtiness entry is 11;
+	if a2m fetish > 0:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "let guys clean their cocks off in my mouth after they've finished in my asshole";
 		now the naughtiness entry is 12;
+	if a2m fetish > 1:
 		choose a blank row in the Table of Possible Incantations;
 		now the phrase entry is "love drinking anal creampies";
 		now the naughtiness entry is 13;

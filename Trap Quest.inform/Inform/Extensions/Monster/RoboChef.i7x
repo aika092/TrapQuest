@@ -23,6 +23,7 @@ To say MonsterDesc of (M - a robochef):
 To set up (M - a robochef):
 	reset M;
 	now the monstersetup of M is 1;
+	add mechanical joint to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M.
 
@@ -103,7 +104,7 @@ To compute disapproval of (M - a robochef):
 
 To compute perception of (M - a robochef):
 	say "[BigNameDesc of M] notices you!";
-	if the number of plentiful accessories retained by M > 0:
+	if the number of plentiful accessories carried by M > 0:
 		say "[big his of M] eyes flash yellow. [line break][first custom style]HELLO, CUSTOMER. YOU STILL HAVE FUNDS REMAINING IN YOUR ACCOUNT.[roman type][line break]";
 	otherwise if the class of the player is maid:
 		say "[big he of M] seems to recognise you as a member of staff and leaves you alone.";
@@ -260,7 +261,6 @@ To say RepeatResponse of (M - robochef):
 	otherwise:
 		say "[BigNameDesc of M] ignores you.";
 
-
 Section 2 - Questioning
 
 To compute answer of (M - a robochef):
@@ -278,32 +278,31 @@ Part 6 - Trading
 [The player can offer food to the robochef for a chance of upgrading it.]
 To compute (M - a robochef) considering (T - a thing):
 	say "[speech style of M]'ASSESSING SUITABILITY OF OFFERED INGREDIENT. STAND BY...'[roman type][line break]";
-	let A be a random plentiful accessory retained by M;
+	let A be a random plentiful accessory carried by M;
 	if T is chef food:
 		say "[speech style of M]'ERROR. FOODSTUFF IS ALREADY FULLY UPGRADED.'[roman type][line break]";
 		now M is rejecting T;
 	if T is snack and A is accessory and M is not rejecting T:
 		say MonsterOfferAcceptFlav of M to T;
 		compute M cooking T;
-		let D be a random chef food retained by M;
+		let D be a random chef food carried by M;
 		if D is chef food:
 			say "A grate opens up on [NameDesc of M][']s face as [he of M] takes the [printed name of T], allowing the chef to consume it whole. You hear a deep rumbling noise as [he of M] processes your food, and after a sharp ding, [his of M] chest compartment opens up and [NameDesc of M] hands you a fresh [printed name of D].[line break]";[TODO: improve]
-			now D is held by the player;
+			now D is carried by the player;
 			say "[speech style of M]UPGRADE COMPLETE. PAYMENT HAS BEEN DEDUCTED FROM YOUR ACCOUNT.[roman type][line break]";
 			compute resolution of M taking T;
 			destroy T;
-			now D is not retained by M;
+			destroy A;
 		otherwise:
 			say "[speech style of M]ERROR. INSTANCE OF UPGRADED FOODSTUFF ALREADY EXISTS. [caps please] FINISH YOUR FOOD.[roman type][line break]";
-			say "Looks like you[']ll need to finish the last thing [he of M] gave you before [he of M] upgrades your [printed name of T]";
+			say "Looks like you'll need to finish the last thing [he of M] gave you before [he of M] upgrades your [printed name of T]";
 	otherwise if T is snack:
 		say "[speech style of M]'ERROR. UNABLE TO DEDUCT THE NECESSARY PAYMENT FROM YOUR ACCOUNT. TRY AGAIN LATER.'[roman type][line break]";
 		say "Looks like [he of M]'s not interested in it right now.";
 	otherwise if T is plentiful accessory:
 		say "[speech style of M]'PROCESSING DEPOSIT. THANK YOU, CUSTOMER. PAYMENT HAS BEEN ADDED TO YOUR ACCOUNT. [caps please] PROVIDE SUITABLE INGREDIENT FOR COOKING.'[roman type][line break]";
 		say "[BigNameDesc of M] takes the [printed name of T].";
-		now T is retained by M;
-		now T is in Holding Pen;
+		now T is carried by M;
 		compute resolution of M taking T;
 	otherwise:
 		now M is rejecting T;
@@ -311,9 +310,6 @@ To compute (M - a robochef) considering (T - a thing):
 
 To compute resolution of (M - a robochef) taking (T - a thing):
 	if T is snack:
-		let I be a random plentiful accessory retained by M;
-		if I is accessory:
-			now I is not retained by M;
 		bore M;
 	otherwise if M is unfriendly:
 		calm M;
@@ -327,7 +323,7 @@ To compute (M - a robochef) cooking (I - a fae mushroom):
 	let D be a random off-stage stuffed mushroom;
 	now the quality of D is a random number between 2 and -2;
 	now the fat of D is 2;
-	now D is retained by M.
+	now D is carried by M.
 
 To compute (M - a robochef) cooking (I - an egg):
 	let S be 0;
@@ -338,12 +334,12 @@ To compute (M - a robochef) cooking (I - an egg):
 		let D be a random off-stage cookie;
 		now the quality of D is (a random number between S and 0) - 2;
 		now the fat of D is S;
-		now D is retained by M;
+		now D is carried by M;
 	otherwise:
 		let D be a random off-stage stuffed mushroom;
 		now the quality of D is (a random number between S and 0) - a random number between 1 and 2;
 		now the fat of D is S;
-		now D is retained by M.
+		now D is carried by M.
 
 To say MonsterOfferAcceptFlav of (M - a robochef) to (T - a thing):
 	say "[speech style of M]'SUITABILITY RATING: ACCEPTABLE. ADMINISTERING FLAVOUR UPGRADE'[roman type][line break]".

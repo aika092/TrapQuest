@@ -51,9 +51,8 @@ An all time based rule (this is the vampiress hunts untidy players rule):
 		if playerRegion is not Mansion:
 			repeat with SD running through on-stage soiled-diaper:
 				if SD is in the Mansion:
-					now SD is retained by vampiress;
 					now vampiress is in the location of SD;
-					now SD is in Holding Pen;
+					now SD is carried by vampiress;
 					set up vampiress.
 
 To decide which number is the girth of (M - vampiress):
@@ -78,7 +77,9 @@ To decide which number is the base semen load of (M - vampiress):
 Definition: vampiress is human: decide yes.
 
 To check chase boredom of (M - vampiress):
-	if M is not in the location of the player and a random number from 1 to (15 + (30 * the number of worn catbells)) is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck and gargoyle is not grabbing the player:
+	let D be 15;
+	if catbell is worn, increase D by 30;
+	if M is not in the location of the player and a random number from 1 to D is 1 and the number of worn tethering lipstick collars is 0 and the player is not bed-stuck and gargoyle is not grabbing the player:
 		deinterest M;
 		if M is threatening and M is regional:
 			progress quest of nice-quest;
@@ -254,7 +255,7 @@ To compute DQ appearance assessment of (M - a vampiress):
 		say "[speech style of M]'Dracula's fangs! [if the times-met of M > 1]And to think I expected to finally see someone displaying a sensible amount of [maturity] around here. You look like an overgrown child! [otherwise]Is that really a fully grown human under all that? I cannot tolerate such disrespectful attire in my presence from someone who isn't yet my full-time slave. [end if]";
 		FavourDown M by 2;
 	otherwise if the saved appearance of the player > the outrage tolerance of M:
-		say "[speech style of M]'Sweet Bella! I've never seen such an overly provocative [if the player is male]male[otherwise]female[end if] in my life. You're really asking for it, you know that? ";
+		say "[speech style of M]'Sweet Bella! I've never seen such an overly provocative [if the player is gendered male]male[otherwise]female[end if] in my life. You're really asking for it, you know that? ";
 		FavourDown M by 2;
 	otherwise:
 		say "[speech style of M]'Well well, adventurer, [one of]aren't you far from home? [or]I see you're still around, and coping well. [stopping]".
@@ -628,7 +629,7 @@ Definition: vampiress is willing to confiscate: decide yes.
 vampiress-maiden is a diaper punishment. The priority of vampiress-maiden is 5.
 Definition: vampiress-maiden is appropriate:
 	if current-monster is not vampiress, decide no;
-	if there is soiled-diaper retained by current-monster, decide no; [She should punish that instead.]
+	if there is soiled-diaper carried by current-monster, decide no; [She should punish that instead.]
 	if there is worn messed knickers and tough-shit is 0, decide no;
 	if the player is incontinent, decide no;
 	if there is a regional iron-maiden and (the player is bursting or (the player is feeling full and the player is desperate to pee)), decide yes;
@@ -827,7 +828,7 @@ To decide which number is the dominationtype of (M - vampiress) using (F - penis
 	decide on FUCK-BLOWJOB.
 
 Definition: vampiress (called M) is uniquely-fuckable:
-	if the stake of M is a sex toy and M is retaining the stake of M, decide no;
+	if the stake of M is a sex toy and M is carrying the stake of M, decide no;
 	if the number of held sex toys is 0, decide no;
 	decide yes.
 
@@ -858,7 +859,7 @@ To say DominanceFailure of (M - vampiress):
 	otherwise if player-fucker is face:
 		let S be the stake of M;
 		say "You try to get behind [NameDesc of M], but [he of M] turns on you with a supernatural quickness, wrenching the [MediumDesc of S] out of your hand as [he of M] roughly grabs you by the chin. Your head tingles as [he of M] forces you to look [him of M] in the eye, and you stop resisting as you lose yourself in [his of M] gaze.";
-		now M is retaining S;
+		now M is carrying S;
 		now the stake of M is the throne;
 	otherwise:
 		say "You grab [NameDesc of M] by the wrists and force [him of M] [if guest bed is in the location of the player or master bed is in the location of the player]onto the bed. [otherwise]to the ground. [end if][big he of M] catches your eye as you [if lady fetish is 2]pull [his of M] loincloth aside[otherwise]lift up [his of M] skirt[end if], and your head begins to tingle as you get lose yourself in [his of M] gaze. [run paragraph on]".
@@ -892,7 +893,7 @@ To compute failed dominance punishment of (M - vampiress):
 
 To unique dominate (M - vampiress):
 	let S be the stake of M;
-	now M is retaining S;
+	now M is carrying S;
 	say "You get behind [NameDesc of M] before [he of M] realises what's happening and immediately jam the [MediumDesc of S] right up [his of M] ass. [line break][speech style of M]'[one of]My weakness...[or]A s-stake? Oh SHIT![or]H-how did you find out m-my...[at random] A-aah...AAAAAH!'[roman type][line break][BigNameDesc of M] screams with pleasure as [his of M] [LongDickDesc of M] immediately jumps to erection, twitching and spasming as it shoots long ropes of [semen] across the floor.";
 	orgasm M;
 	FavourDown M by 5;
@@ -901,12 +902,13 @@ To unique dominate (M - vampiress):
 To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 	let C be a random bottom level protection clothing;
 	let R be mental semi-dominance roll for M;
+	if debugmode > 0, say "[bold type][if R < 0]FAILED[otherwise]PASSED[end if][roman type][line break]";
 	if the stake of M is wood-dong, now R is 1;
 	if sexual-penis-length > 8:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] meets your gaze as you [if C is clothing and C is not strapon-panties]pull out your [SexDesc of penis], [otherwise if penis is penis-erect]stroke your [SexDesc of penis], [otherwise]bring your [SexDesc of penis] to hardness, [end if]opening [his of M] mouth so you can slide it right in. You were planning to be rough with [him of M] at first, but you end up letting [him of M] do most of the work instead, staring deeply into [his of M] eyes as [he of M] takes your [SexShaft] down [his of M] throat. [big his of M] eye contact never wavers, and as tiny bursts of pleasure creep up your length, you realise how difficult it is to look away.[if R <= 0]Your head tingles as you suddenly lose control, groaning with pleasure as you fill [his of M] belly with [semen].[otherwise][big he of M]'s clearly a little too eager for a mouthful, so you shove [him of M] away and finish yourself off all over the floor.[end if]";
+		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] meets your gaze as you [if C is clothing and C is not strapon-panties]pull out your [SexDesc of penis], [otherwise if penis is penis-erect]stroke your [SexDesc of penis], [otherwise]bring your [SexDesc of penis] to hardness, [end if]opening [his of M] mouth so you can slide it right in. You were planning to be rough with [him of M] at first, but you end up letting [him of M] do most of the work instead, staring deeply into [his of M] eyes as [he of M] takes your [SexShaft] down [his of M] throat. [big his of M] eye contact never wavers, and as tiny bursts of pleasure creep up your length, you realise how difficult it is to look away.[if R < 0]Your head tingles as you suddenly lose control, groaning with pleasure as you fill [his of M] belly with [semen].[otherwise][big he of M]'s clearly a little too eager for a mouthful, so you shove [him of M] away and finish yourself off all over the floor.[end if]";
 		BlowGet;
 		obsceneDignify;
-		if R <= 0:
+		if R < 0:
 			reset vampire hunger;
 			say AfterDominationComment 1 of M;
 		otherwise:
@@ -914,9 +916,9 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 			say AfterDominationComment 0 of M;
 		orgasm;
 	otherwise if sexual-penis-length > 3:
-		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], fondling your balls as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realise how difficult it is to look away. [if R <= 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R <= 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R <= 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
+		say "You grab [NameDesc of M] by the wrists and push [him of M] to [his of M] knees. [big he of M] catches your eye as [he of M] [if C is clothing and C is not strapon-panties]pulls your [sexual-player-penis] out of your [printed name of C] and eagerly wraps [his of M] lips around your shaft. [otherwise if penis is penis-erect]eagerly wraps [his of M] lips around your rock-hard [SexShaft], fondling your balls as [his of M] tongue swirls around your tip. [otherwise]eagerly wraps [his of M] lips around your hardening [SexShaft], fondling your balls as [his of M] tongue swirls around the tip. [end if][big his of M] eye contact never wavers, and as tiny explosions of pleasure pass up and down your length, you realise how difficult it is to look away. [if R < 0]You lose yourself in [his of M] gaze as you fill [his of M] mouth with [semen], and lost you remain as [he of M] finishes [himself of M] off in [his of M] hands and gets to [his of M] feet. [otherwise]You snap out of it, too horny to wonder what just happened as you fill [his of M] mouth with your [semen].[end if][if R < 0 and face is not actually occupied][BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to get them in your mouth, humming in satisfaction as you slurp off every last drop of [his of M] fluids[otherwise if R < 0 and bukkake fetish is 1]. [BigNameDesc of M] presents you with [his of M] sticky fingers, and you are immediately overcome with the urge to let [him of M] wipe them off on your face[end if].";
 		BlowGet;
-		if R <= 0:
+		if R < 0:
 			if face is not actually occupied:
 				if futanari fetish is 1 or lady fetish is 2, StomachSemenUp 1;
 				otherwise SemenAddictUp 1;
@@ -933,7 +935,7 @@ To blowjob dominate (M - vampiress):[You 'feed' the vampiress]
 		reset vampire hunger;
 		orgasm;
 	otherwise:
-		if R <= 0:
+		if R < 0:
 			now player-fucking is DOMINANT-NEUTRAL;
 			if futanari fetish is 1 or lady fetish is 2:
 				say "You [NameDesc of M] push [him of M] to [his of M] knees, looking down at [him of M] hopefully as [he of M] delicately runs [his of M] fingertip along your [SexDesc of penis]. [big he of M] gazes back up at you, never breaking eye contact as [his of M] tongue flutters against your tiny [SexShaft]. It becomes increasingly hard to look away as your [sexual-player-penis] begins to spasm, and you lose yourself in [his of M] gaze as you cover [his of M] tongue with fresh [semen]. [BigNameDesc of M] swallows your [load] as [he of M] returns to [his of M] feet, and you are suddenly overcome with an urge to get on your knees [if face is not actually occupied]and wrap your lips around [his of M] [LongDickDesc of M]. You're not nearly as good as [he of M] is, but you try your best to please your mistress, and eventually [he of M] rewards you with a big load straight down your throat.[otherwise]wrap your hands around [his of M] [LongDickDesc of M]. You don't really see what's dominant about it, but it's exhilarating to pleasure your mistress, and eventually [he of M] rewards you with a big load all over your face.[end if]";
@@ -980,7 +982,7 @@ To ride dominate (M - vampiress):
 		say "[BigNameDesc of M] smiles.[line break][speech style of M]'I'm glad, darling. Here, using these might make you feel better.'[roman type][line break][big he of M] gives you an apologetic look as [he of M] pulls out a pair of fuzzy pink handcuffs, and your whole head begins to tingle as [he of M] stares deeply into your eyes. [run paragraph on]";
 		let R be mental semi-dominance roll for M;
 		if the stake of M is wood-dong, now R is 1;
-		if R <= 0:[She convinces you to wear the cuffs yourself.]
+		if R < 0:[She convinces you to wear the cuffs yourself.]
 			if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 			say "You suddenly realise how much easier it would be for [him of M] to *obey* you if [he of M] could control your movements, and *dominantly* hold out your hands as [he of M] snaps your new restraints into place. [BigNameDesc of M] pulls you into [his of M] arms, *submissively* rolling ontop of you as you *dominantly* spread your legs.[line break][speech style of M]'Are you ready, darling? To dominate me?'[roman type][line break][big he of M] purrs, [his of M] rock hard [DickDesc of M] prodding your [if P > 0 and M is unwrapped]cumdrooling [end if][if F is asshole]sphincter[otherwise]entrance[end if] as you answer with an incredibly dominant moan. You give yourself completely over to your submissive, staring deeply into [his of M] eyes as you get railed up the ass like the dominant little fucktoy you are. Minutes go by without you realising anything odd is going on, and when you finally come back to your senses, your legs are wrapped around [NameDesc of M]'s waist, remnants of your [if the player is possessing a penis]load[otherwise]juices[end if] on your belly and [his of M] [LongDickDesc of M] throbbing powerfully as it pumps [if M is wrapped]a second condom [otherwise]your [variable F][end if] full of [semen].";
 			now player-fucking is DOMINANT-SHAMEFUL;
@@ -1009,7 +1011,7 @@ To compute ride dominate checkpoint of (M - vampiress):
 	let G be the openness of F - the girth of M;
 	let R be mental semi-dominance roll for M;
 	if the stake of M is wood-dong, now R is 1;
-	if R <= 0:[She makes you ride her really hard]
+	if R < 0:[She makes you ride her really hard]
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
 		now player-fucking is DOMINANT-SHAMEFUL;
 		say "You're unable to look away from [him of M] as [he of M] begins to thrust into you, and you find yourself perfectly matching [him of M] in both pace and intensity as you pick up speed. [if G > 2]It's nothing you can't handle, but your body refuses to slow down[otherwise if G > -2]It's a little more than you can handle, but your body refuses to slow down[otherwise]It's far more than you can handle, but your body refuses to slow down[end if], leaving you helpless as the soreness slowly begins to build. [BigNameDesc of M], on the other hand, enjoys [himself of M] thoroughly, [if U is furniture]gripping the sheets[otherwise]digging [his of M] claws into the ground[end if] as you breathlessly bounce on [his of M] [DickDesc of M]. [big he of M] grabs your waist as [his of M] voice grows ragged, and your body once again refuses to listen to your commands as [he of M] begins to fuck you for real. You are unable to resist as [his of M] [DickDesc of M] spasms, [if M is wrapped]filling the condom with several spurts of [semen][otherwise]shooting several spurts of [semen] directly into your [variable F][end if].";

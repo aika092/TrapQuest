@@ -48,6 +48,12 @@ To say MonsterDesc of (M - Icarus):
 To set up (M - Icarus):
 	reset M;
 	now the monstersetup of M is 1;
+	let S be a random smoke bomb;
+	add S to the taxableItems of M, if absent;
+	let S be a random electric fan;
+	add S to the taxableItems of M, if absent;
+	add wing leotard to the taxableItems of M, if absent;
+	add wing leotard to the tradableItems of M, if absent;
 	now the raw difficulty of M is 9;
 	now the health of M is the maxhealth of M;
 

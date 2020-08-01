@@ -51,10 +51,6 @@ To say soak-types of (C - a clothing):
 		if the known-urine-soak of C > 0, say "[urine][if the known-milk-soak of C > 0] and [milk][end if]";
 		otherwise say "[if the known-milk-soak of C > 0][milk][otherwise]water[end if]".
 
-To say ownership-desc:
-	if the item described is stolen, say "[roman type] (stolen)";
-	if the item described is store and the location of the player is not Mansion28, say "[roman type] ([if the player is in Dungeon41]for sale - [price of item described][otherwise]cleverly stolen - please report bug[end if])".
-
 To say displacement-desc:
 	if the item described is crotch-displaced and the item described is worn:
 		say " (pulled [if item described is trousers]down[otherwise if item described is hobble-skirted]up[otherwise]aside[end if])";

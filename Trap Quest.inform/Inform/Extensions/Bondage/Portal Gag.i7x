@@ -35,7 +35,7 @@ To compute periodic effect of (C - portal gag):
 			otherwise:
 				if vagina is pushed over the edge, vaginally orgasm shamefully;
 	otherwise:
-		let M be a random monster retaining portal-pants;
+		let M be a random monster carrying portal-pants;
 		if M is monster:
 			if the charge of C is 26:
 				if M is regionally in playerRegion:

@@ -59,6 +59,7 @@ Check going west when the player is in Predicament20:
 	say "The door seems to have locked itself behind you. The only way out is [bold type]north[roman type] through the portal." instead.
 
 Report going north when the player is in School01:
+	if armband is worn and armband is solid gold, now predicamentJustDone is false;
 	now map-zoom is saved-map-zoom;
 	clean up predicament universe;
 	repeat with T running through on-stage trophies:
@@ -69,6 +70,7 @@ Report going north when the player is in School01:
 			unless T is backdrop or T is male-gloryhole or T is female-gloryhole or T is automated changing station, destroy T;
 	if the stomach-liquid of the player < 3, now the stomach-water of the player is 3 - the stomach-liquid of the player;
 	if the player is hungry, now the stomach-food of the player is 2;
+	if the predicament-completed of painted-cutoffs-predicament is 3, now the predicament-completed of painted-cutoffs-predicament is 4; [otherwise in future predicaments the door will still be locked!]
 	repeat with C running through worn wearthings:
 		compute predicament resolution of C.
 
@@ -1070,6 +1072,8 @@ An all time based rule (this is the cars come past rule):
 					now the popularity entry is 2;
 					now the timestamp entry is time-earnings;
 					now the viewsfuzz entry is a random number between -100 and 100;
+					now the lastwitnessed entry is 0;
+					now the deletedtime entry is -1;
 					say "[variable custom style][one of]Wait, did [he of shopkeeper] have a dashcam?! Does that count as a recording???[or]Shit, I think I've been caught on a dashcam again![stopping][roman type][line break]";
 					strongHumiliate;
 				otherwise:
@@ -1155,7 +1159,7 @@ To execute (SSP - simple-sneak-predicament):
 		now M is speed;
 		now the raw-magic-modifier of M is a random number between 0 and 2;
 		let C be blue-cameltoe briefs;
-		if the player is male, now C is pink-kitty-panties;
+		if the player is not possessing a vagina, now C is pink-kitty-panties;
 		blandify and reveal C;
 		now C is in Predicament01;
 	now the printed name of Predicament01 is "Small Room";
@@ -1220,6 +1224,8 @@ An all time based rule:
 					now the popularity entry is 0;
 					now the viewsfuzz entry is 0;
 					now the timestamp entry is 0;
+					now the lastwitnessed entry is 0;
+					now the deletedtime entry is 0;
 					[by setting these to 0, the 'views' will be set to 1, which means there's no tracked views and the reputation damage is flat severity]
 				otherwise:
 					say "You hear a series of low electronic tones, declaring that the camera failed to detect the pattern it was looking for.[line break][variable custom style]Well, there goes my only chance to get some proper clothes...[roman type][line break]".
@@ -1372,6 +1378,8 @@ An all time based rule (this is the triple dildo punishment pill rule):
 					now the popularity entry is 8;
 					now the timestamp entry is earnings;
 					now the viewsfuzz entry is a random number between -100 and 100;
+					now the lastwitnessed entry is 0;
+					now the deletedtime entry is 0;
 			now the pill-timer of triple-dildo-predicament is 0;
 		otherwise if the player is not in a predicament room:
 			now the pill-timer of triple-dildo-predicament is 0. [failsafe]
@@ -2481,6 +2489,8 @@ To execute (L - photo-display-predicament):
 			now the popularity entry is N;
 			now the timestamp entry is earnings;
 			now the viewsfuzz entry is a random number between -100 and 100;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is -1;
 		decrease timeRemaining by 1;
 		if timeRemaining > 0, say "The [semen] keeps coming! [if the player is overly full][bold type][one of]Since your stomach is overly full, if[or]If[stopping] you drink any more [semen] it's going to be painful.[roman type][line break][end if]";
 	say "Finally a buzzer sounds and the [semen] stops flowing. The men, all very aroused and very pleased with themselves, begin to disperse and leave the way they came. Soon enough you are left on your own with your shame. Finally, your bondage is released and a pneumatic system hisses as the glass cage opens in front of you, freeing you.";
@@ -2523,7 +2533,7 @@ To execute (L - sex-toy-predicament):
 	now ST is blandness;
 	now the raw-magic-modifier of ST is 0;
 	now the size of ST is the insertableGirthAcceptance of asshole - 3;
-	if the player is female, now the size of ST is the insertableGirthAcceptance of vagina - 3;
+	if the player is possessing a vagina, now the size of ST is the insertableGirthAcceptance of vagina - 3;
 	if the size of ST < 1, now the size of ST is 1;
 	now ST is in Park24;
 	now ST is flesh-johnson;
@@ -2713,7 +2723,7 @@ Check taking football:
 	say "Thanks to your gloves, that would make you lose the game!" instead.
 To say unique-verb-desc of (T - football):
 	if inline hyperlinks >= 2 and the text-shortcut of T is not "", say " [link][bracket]kick[close bracket][as]kick [text-shortcut of T][end link]".
-A game universe initialisation rule:
+When play begins:
 	now the football-possessor of football is headmistress.
 
 To execute (L - team-football-predicament):
@@ -3055,7 +3065,7 @@ An all time based rule:
 					if the total fill of belly >= 20, say "[one of][bold type]Your belly is just too full. It's going to hurt a lot if you don't stand up now!!![roman type][line break][or][stopping]";
 			now M is not fountain-unquenched.
 
-gloryhole-predicament is a predicament. gloryhole-predicament has a number called internet-outrage. gloryhole-predicament has a number called cocks-sucked. gloryhole-predicament has a number called cocks-missed. gloryhole-predicament has a number called mens-room-entered. gloryhole-predicament has a number called clothing-not-worn. Understand "gholepd" as gloryhole-predicament.
+gloryhole-predicament is a predicament. gloryhole-predicament has a number called internet-outrage. gloryhole-predicament has a number called cocks-sucked. gloryhole-predicament has a number called cocks-missed. gloryhole-predicament has a number called mens-room-entered. gloryhole-predicament has a number called semen-spat. gloryhole-predicament has a number called clothing-not-worn. Understand "gholepd" as gloryhole-predicament.
 
 Definition: gloryhole-predicament is appropriate if diaper quest is 0 and the player is an april 2020 top donator and the rank of the player > 3.
 
@@ -3079,7 +3089,7 @@ To execute (P - gloryhole-predicament):
 	now lycra-bodysuit is in Toilet01;
 	summon skimpy-pink-bikini-top uncursed;
 	summon pink bikini bottoms uncursed;
-	say "You find yourself in a small room, empty except a small table, and a front door that leads outside. You are wearing an extremely skimpy metallic pink bikini set. The table has a piece of card on it with the word 'INSTRUCTIONS' on the front. You read the instructions on the back:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME AFTER EARNING THE KEY TO YOUR FRONT DOOR. THE KEY WILL BE OBTAINABLE FROM THE MEN'S TOILETS AFTER YOU HAVE SUCKED AT LAST ONE COCK TO COMPLETION AT THE GLORYHOLE IN THE PARK'S WOMEN'S TOILETS. YOUR PERFORMANCE WILL BE FILMED. EACH OF THE FOLLOWING WILL EARN YOU ONE PENALTY POINT:[line break]* EACH TIME YOU LET SOMEONE LEAVE THE MEN'S TOILETS WITHOUT YOU HAVING SUCKED THEIR COCK TO COMPLETION (WHILE YOU ARE IN THE LADIES['] TOILETS)- YOU ARE ALLOWED TO MISS ONE COCK, BUT EACH ONE AFTER THAT EARNS YOU A PENALTY POINT.[line break]* ENTERING THE MEN'S TOILETS BEFORE YOU HAVE FINISHED SUCKING COCKS[line break]* FAILING TO WEAR THE CLOTHING YOU WILL FIND IN THE MEN'S TOILETS HOME (AND ONLY THAT CLOTHING)[paragraph break]THE FOLLOWING ARE THE PUNISHMENTS FOR EACH PENALTY POINT EARNED:[line break]1) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [DistantRole in upper case] [DistantName in upper case][line break]2) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [PlatonicRole in upper case] [PlatonicName in upper case][line break]3) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [NemesisRole in upper case] [NemesisName in upper case][line break]4) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [FanciedRole in upper case] [FanciedName in upper case][line break]5) THE FOOTAGE OF YOUR PERFORMANCE WILL BE PUBLISHED ON WWW.SLUTHUB.COM.[paragraph break]FINALLY, [caps please] NOTE THAT SUCKING LESS THAN FIVE COCKS TO COMPLETION WILL AUTOMATICALLY TRIGGER ALL FIVE PUNISHMENTS.'[PredicamentRewardExplanationReaction][roman type][line break]It looks like your outfit has been decided for you...".
+	say "You find yourself in a small room, empty except a small table, and a front door that leads outside. You are wearing an extremely skimpy metallic pink bikini set. The table has a piece of card on it with the word 'INSTRUCTIONS' on the front. You read the instructions on the back:[paragraph break][first custom style]'WELCOME TO EXTRA CREDIT CLASS. [PredicamentRewardExplanation]TO EARN THIS TROPHY, YOU MUST SIMPLY RETURN HOME AFTER EARNING THE KEY TO YOUR FRONT DOOR. THE KEY WILL BE OBTAINABLE FROM THE MEN'S TOILETS AFTER YOU HAVE SUCKED AT LAST ONE COCK TO COMPLETION AT THE GLORYHOLE IN THE PARK'S WOMEN'S TOILETS. YOUR PERFORMANCE WILL BE FILMED. EACH OF THE FOLLOWING WILL EARN YOU ONE PENALTY POINT:[line break]* EACH TIME YOU LET SOMEONE LEAVE THE MEN'S TOILETS WITHOUT YOU HAVING SUCKED THEIR COCK TO COMPLETION (WHILE YOU ARE IN THE LADIES['] TOILETS)- YOU ARE ALLOWED TO MISS ONE COCK, BUT EACH ONE AFTER THAT EARNS YOU A PENALTY POINT.[line break]* ENTERING THE MEN'S TOILETS BEFORE YOU HAVE FINISHED SUCKING COCKS[line break]* SPITTING ANY SEMEN OUT OF YOUR MOUTH[line break]* FAILING TO WEAR THE CLOTHING YOU WILL FIND IN THE MEN'S TOILETS HOME (AND ONLY THAT CLOTHING)[paragraph break]THE FOLLOWING ARE THE PUNISHMENTS FOR EACH PENALTY POINT EARNED:[line break]1) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [DistantRole in upper case] [DistantName in upper case][line break]2) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [PlatonicRole in upper case] [PlatonicName in upper case][line break]3) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [NemesisRole in upper case] [NemesisName in upper case][line break]4) THE FOOTAGE OF YOUR PERFORMANCE WILL BE SENT TO YOUR [FanciedRole in upper case] [FanciedName in upper case][line break]5) THE FOOTAGE OF YOUR PERFORMANCE WILL BE PUBLISHED ON WWW.SLUTHUB.COM.[paragraph break]FINALLY, [caps please] NOTE THAT SUCKING LESS THAN FIVE COCKS TO COMPLETION WILL AUTOMATICALLY TRIGGER ALL FIVE PUNISHMENTS.'[PredicamentRewardExplanationReaction][roman type][line break]It looks like your outfit has been decided for you...".
 
 Check taking house-key:
 	if current-predicament is gloryhole-predicament and the cocks-sucked of gloryhole-predicament < 1, say "The key is currently sealed inside a transparent case that hasn't yet unlocked. It looks like you'll need to go next door and suck a dick before it will open." instead.
@@ -3131,6 +3141,11 @@ Report going when the player is in Predicament20:
 				increase PP by 1;
 			otherwise:
 				say "YOU WORE YOUR ALLOCATED BODYSUIT ALL THE WAY HOME. PENALTY POINTS INCREASED BY 0.";
+			if the semen-spat of gloryhole-predicament > 0:
+				say "YOU SPAT OUT [if the semen-spat of gloryhole-predicament > 1][semen-spat of gloryhole-predicament] LOADS[otherwise]ONE LOAD[end if] OF SEMEN. PENALTY POINTS INCREASED BY 1.";
+				increase PP by 1;
+			otherwise:
+				say "YOU SWALLOWED ALL SEMEN EJACULATED INTO YOUR MOUTH. PENALTY POINTS INCREASED BY 0.";
 			if PP is 0:
 				say "CONGRATULATIONS. NO PUNISHMENTS ENABLED.[roman type][line break]";
 			otherwise:
@@ -3144,6 +3159,8 @@ Report going when the player is in Predicament20:
 				now the severity entry is 2 + the internet-outrage of gloryhole-predicament;
 				now the popularity entry is 1;
 				now the timestamp entry is time-earnings;
+				now the lastwitnessed entry is time-earnings;
+				now the deletedtime entry is -1;
 				now the viewsfuzz entry is a random number between -10 and 10;
 				if PP > 1:
 					say "Then the screen shows the same file being sent to your [PlatonicRole] [PlatonicName].";
@@ -3154,6 +3171,8 @@ Report going when the player is in Predicament20:
 					now the severity entry is 500;
 					now the popularity entry is 0;
 					now the timestamp entry is 0;
+					now the lastwitnessed entry is time-earnings;
+					now the deletedtime entry is -1;
 					now the viewsfuzz entry is 0;
 				if PP > 2:
 					say "Next, the screen shows the same file being sent to [NemesisName], your [NemesisRole].";
@@ -3164,6 +3183,8 @@ Report going when the player is in Predicament20:
 					now the severity entry is 750;
 					now the popularity entry is 0;
 					now the timestamp entry is 0;
+					now the lastwitnessed entry is time-earnings;
+					now the deletedtime entry is -1;
 					now the viewsfuzz entry is 0;
 				if PP > 3:
 					say "Next, the screen shows the same file being sent to [FanciedName], your [FanciedRole].";
@@ -3174,6 +3195,8 @@ Report going when the player is in Predicament20:
 					now the severity entry is 1400;
 					now the popularity entry is 0;
 					now the timestamp entry is 0;
+					now the lastwitnessed entry is time-earnings;
+					now the deletedtime entry is -1;
 					now the viewsfuzz entry is 0;
 				if PP > 4:
 					say "Next, the screen shows the file is now live on www.pronhub.com, and gaining views in real time as you watch.";
@@ -3183,6 +3206,8 @@ Report going when the player is in Predicament20:
 					now the severity entry is 12 + the internet-outrage of gloryhole-predicament;
 					now the popularity entry is 5;
 					now the timestamp entry is time-earnings;
+					now the lastwitnessed entry is time-earnings;
+					now the deletedtime entry is -1;
 					now the viewsfuzz entry is a random number between 1 and 9;
 				say obsceneHumiliateReflect.
 
@@ -3264,6 +3289,8 @@ Check attacking female-gloryhole:
 					now the severity entry is 6;
 					now the popularity entry is 7;
 					now the timestamp entry is time-earnings;
+					now the lastwitnessed entry is 0;
+					now the deletedtime entry is -1;
 					now the viewsfuzz entry is a random number between -100 and 100;
 				calm M;
 				now M is interested;
@@ -3278,7 +3305,7 @@ Check attacking female-gloryhole:
 			destroy M;
 			zero focus stuff;
 	otherwise:
-		 say "Nobody responds.";
+		say "Nobody responds.";
 	do nothing instead.
 
 To say MissedGloryholeCock:
@@ -3294,7 +3321,7 @@ To execute (NWP - nun-walk-predicament):
 	now nun-dress is wrist-bound-behind;
 	now nun-dress is predicament-fixed;
 	summon nun cowl uncursed;
-	if the player is female, summon purple-vibrator vaginally;
+	if the player is possessing a vagina, summon purple-vibrator vaginally;
 	otherwise summon purple-vibrator;
 	now the raw-magic-modifier of purple-vibrator is 0;
 	now purple-vibrator is bland;
@@ -3385,6 +3412,8 @@ To compute nun perception of (M - a bystander):
 			now the severity entry is the worst-appearance of M;
 			now the popularity entry is 5;
 			now the timestamp entry is time-earnings;
+			now the lastwitnessed entry is 0;
+			now the deletedtime entry is -1;
 			now the viewsfuzz entry is a random number between -100 and 100;
 	otherwise:
 		say ".'[roman type][line break]".
@@ -3418,12 +3447,12 @@ To execute (TEP - team-snowball-predicament):
 	clear the map-window;
 	let M be team-predicament-partner;
 	say "You look around... you're standing with your back to one wall of a rather large room, with [NameDesc of M] standing at the other end. You're both wearing the same outfit - a black cotton shirt that reads 'I <3 CUM', a pair of black latex stockings and a pair of black latex plug panties with inflatable plugs, the pumps for the plugs dangling between your legs. You're attached to the wall (and [student-name of M] is attached to the opposing wall) by some kind of elastic bungee harness that keeps your arms bound behind you. By you is a fishbowl, half-full of [semen]. By [student-name of M] is another identical fishbowl, completely empty. On the ground right in the middle of the room is some kind of flat electronic sensor. A robotic voice speaks over some kind of tannoy.[line break][first custom style]'WELCOME TO THE SEMEN SNOWBALL [']EXTRA CREDIT['] CLASS. TO BE RELEASED FROM YOUR BONDAGE, YOU MUST TRANSFER ALL THE SEMEN FROM FISHBOWL A TO FISHBOWL B. YOU WILL FIND THAT THE ONLY WAY TO DO THIS IS BY PASSING THE SEMEN BETWEEN YOUR MOUTHS. ANY SEMEN THAT DROPS ON THE SENSOR IN THE MIDDLE OF THE ROOM WILL CAUSE YOUR PLUGS TO INFLATE A BIT.[paragraph break]'IF NO SEMEN IS TRANSFERRED FOR APPROXIMATELY TEN SECONDS, THEN THE PLUGS WILL AUTOMATICALLY INFLATE A BIT. IN TWO MINUTES, THE GAME WILL END AND YOU WILL BE ABLE TO LEAVE. IF YOU HAVE TRANSFERRED THE VAST MAJORITY OF THE SEMEN, YOU WILL BE ABLE TO DEFLATE THE PLUGS. IF NOT, VALVES WILL SHUT AND YOU WILL NOT BE ABLE TO DEFLATE THEM AT ALL.[paragraph break]'GOOD LUCK. YOUR TIME STARTS NOW.'[paragraph break][variable custom style]Oh god. Well, refusing to co-operate is clearly not an option...[roman type][line break]";
-	let S be 30; [units of semen to transfer]
-	let T be 120;
+	let S be 20; [units of semen to transfer]
+	let T be 100;
 	let F be (the buckle threshold of the player + 4) / 5;
 	while T > 0 and S > 0:
-		let SP be ((S * 100) / (30 * 5)) * 5; [round down to nearest 5%]
-		say "The are approximately [T] seconds left. About [SP]% of the [semen] remains. How much semen do you want to put in your mouth? [one of][bold type][or][stopping]The more semen you try to transfer at once, the exponentially higher chance you have of growing more [if the semen taste addiction of the player < 8]accustomed[otherwise]addicted[end if] to the taste.[roman type][line break]";
+		let SP be ((S * 100) / (20 * 5)) * 5; [round down to nearest 5%]
+		say "The are approximately [T] seconds left. The inflatable [if the player is possessing a vagina]plugs inside you are[otherwise]plug inside you is[end if] [DongSize the plug size of PPP]. About [SP]% of the [semen] remains. How much semen do you want to put in your mouth? [one of][bold type][or][stopping]The more semen you try to transfer at once, the exponentially higher chance you have of growing more [if the semen taste addiction of the player < 8]accustomed[otherwise]addicted[end if] to the taste[one of], ranging from 3% to 50%[or][stopping].[roman type][line break]";
 		reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 		set numerical response 0 to "none (rest)";
 		set numerical response 1 to "a small amount";
@@ -3435,7 +3464,10 @@ To execute (TEP - team-snowball-predicament):
 			decrease S by player-numerical-response;
 			now the semen volume of face is player-numerical-response;
 			say "You reach down and slurp from the bowl. You now have a [MouthfulDesc]. ";
-			if a random number between 0 and 20 < the semen volume of face * the semen volume of face, SemenTasteAddictUp 1;
+			if a random number between 0 and 32 < the semen volume of face * the semen volume of face:
+				say bold type;
+				SemenTasteAddictUp 1;
+				say roman type;
 			say "You and [student-name of M] stretch your bungee harnesses as far as they will go, meeting in the middle of the room over the sensor[if the player is very tired]. [bold type]You are very tired[otherwise if the player is tired]. [bold type]You are tired[end if].[roman type][line break]";
 			reset multiple choice questions; [ALWAYS REMEMBER THIS WHEN MAKING A MULTIPLE CHOICE QUESTION]
 			set numerical response 1 to "transfer the cum slowly (increases fatigue faster; small chance of a major spillage, increasing with fatigue and mouthful volume)";
@@ -3477,14 +3509,18 @@ To execute (TEP - team-snowball-predicament):
 			say "You both return to your walls[if the semen volume of face > 0], and [student-name of M] spits the [MouthfulDesc] into [his of M] fishbowl[end if].";
 			now the semen volume of face is 0;
 		otherwise:
-			say "Time moves forward[if the fatigue of the player > 0]. You recover some energy[end if]. In response to your inaction, the [if the player is possessing a vagina]plugs in your [vagina] and [asshole] inflate[otherwise]plug in your [asshole] inflates[end if] a bit.";
-			increase the plug size of PPP by 1;
-			let FD be the fatigue of the player / 2;
-			if FD < F, now FD is F;
-			decrease the fatigue of the player by FD;
-			if the fatigue of the player < 0, now the fatigue of the player is 0;
-			increase analGripCount by 100; [Forces gripping to trigger again this turn]
-			if PPP is vagina plugging, increase vaginalGripCount by 100;
+			say "Time moves forward[if the fatigue of the player > 0]. You recover some energy[end if]. ";
+			if the plug size of PPP < 10:
+				say "In response to your inaction, [bold type]the [if the player is possessing a vagina]plugs in your [vagina] and [asshole] inflate[otherwise]plug in your [asshole] inflates[end if] a bit.[roman type][line break]";
+				increase the plug size of PPP by 1;
+				let FD be the fatigue of the player / 2;
+				if FD < F, now FD is F;
+				decrease the fatigue of the player by FD;
+				if the fatigue of the player < 0, now the fatigue of the player is 0;
+				increase analGripCount by 100; [Forces gripping to trigger again this turn]
+				if PPP is vagina plugging, increase vaginalGripCount by 100;
+			otherwise:
+				say "The [if the player is possessing a vagina]plugs in your [vagina] and [asshole][otherwise]plug in your [asshole][end if] can't grow any larger!";
 		decrease T by 10;
 		increase analGripCount by 10;
 		if PPP is vagina plugging, increase vaginalGripCount by 10;
@@ -3510,7 +3546,6 @@ To SemenPuddleUp (X - a number) in (R - Predicament01):
 			if the plug size of P + X > 10, now X is 10 - the plug size of P;
 			say "The [if the player is possessing a vagina]plugs in your [vagina] and [asshole] inflate[otherwise]plug in your [asshole] inflates[end if] [if X is 1]a bit[otherwise if X is 2]significantly[otherwise]several sizes[end if]!";
 			increase the plug size of P by X.
-
 
 team-girlfriends-predicament is a team-predicament.
 Definition: team-girlfriends-predicament is appropriate:

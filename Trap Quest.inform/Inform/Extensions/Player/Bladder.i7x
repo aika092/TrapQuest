@@ -19,7 +19,7 @@ To BladderUp (X - a number):
 	let old-bursting be 0;
 	if the player is bursting, now old-bursting is 1;
 	if the player is not able to pee, now X is 0;
-	if the player is female or the player is possessing a penis:
+	if the player is not barbie:
 		if watersports mechanics is 1:
 			increase the bladder of the player by 2 * X;
 			if the player is pheromonal:

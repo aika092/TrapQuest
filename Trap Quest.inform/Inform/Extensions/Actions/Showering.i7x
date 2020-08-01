@@ -55,8 +55,7 @@ Carry out showering:
 	otherwise:
 		compute swimming in the noun.
 
-
-Understand "shower [something]", "shower under [something]", "clean myself with [something]", "clean me with [something]", "shower in [something]", "shower with [something]", "wash with [something]", "bathe in [something]", "bathe with [something]", "bathe in [something]", "swim in [something]" as showering.
+Understand "shower [something]", "shower under [something]", "clean myself with [something]", "clean me with [something]", "shower in [something]", "shower with [something]", "wash in [something]", "wash with [something]", "bathe in [something]", "bathe with [something]", "bathe in [something]", "swim in [something]" as showering.
 
 Report Showering:
 	force inventory-focus redraw; [This forces the inventory window to redraw]
@@ -191,8 +190,6 @@ To soak clothing in water body:
 		clean C;
 		if C is fluid vulnerable, Drench C.]
 
-
-
 [!<WashSalves>+
 
 Gets rid of all salves
@@ -213,7 +210,7 @@ To decide which number is the swimming challenge of the player:
 			increase W by the magic-modifier of C;
 		otherwise if C is not fluid immune:
 			increase W by the total-soak of C / 3; [Wearing soaked clothing will make your swimming worse.]
-	increase W by the weight of the player / 3;
+	increase W by the weight of the player / 2;
 	if the player is wrist bound, increase W by 5;
 	if the player is wrist bound behind, increase W by 10;
 	if the player is ankle bound, increase W by 10;
@@ -227,7 +224,7 @@ To compute treasure diving in (WB - a thing) at (L - a number):
 [for swimming in place]
 To compute easy swimming check in (WB - a thing):
 	let C be the swimming challenge of the player;
-	FatigueUp C / 4;
+	FatigueUp C;
 	increase the fat-burning of the player by 10;
 	increase the fat-burning of hips by 5;
 	increase the fat-burning of arms by 7;
@@ -237,7 +234,7 @@ To compute easy swimming check in (WB - a thing):
 [For moving around]
 To compute normal swimming check in (WB - a thing):
 	let C be the swimming challenge of the player;
-	FatigueUp C / 2;
+	FatigueUp C * 2;
 	increase the fat-burning of the player by 30;
 	increase the fat-burning of hips by 20;
 	increase the fat-burning of arms by 10;
@@ -247,7 +244,7 @@ To compute normal swimming check in (WB - a thing):
 [Mainly for diving]
 To compute difficult swimming check in (WB - a thing):
 	let C be the swimming challenge of the player;
-	FatigueUp C;
+	FatigueUp C * 4;
 	increase the fat-burning of the player by 50;
 	increase the fat-burning of hips by 30;
 	increase the fat-burning of arms by 30;
@@ -255,22 +252,24 @@ To compute difficult swimming check in (WB - a thing):
 	compute hip fat burning.
 
 To compute swimming fatigue check in (WB - a thing):
-	let X be the strength of the player * 12;
-	if the fatigue of the player >= X:[You're too tired, and you faint.]
+	if the fatigue of the player >= the buckle threshold of the player:[You're too tired, and you faint.]
 		say "You're too tired, and strength leaves your limbs as you slowly sink beneath the water. You pass out.";
 		now delayed fainting is 1;
 		now the fainting reason of the player is 23;
 	otherwise:
-		describe swimming fatigue for X.
+		describe swimming fatigue.
 
-To describe swimming fatigue for (X - a number):
-	if the fatigue of the player >= (X * 7) / 8:
+To describe swimming fatigue:
+	let B be the buckle threshold of the player;
+	let V be the very tired threshold of the player;
+	let T be the tired threshold of the player;
+	if the fatigue of the player >= B:
 		say "You have no more energy to swim, and it's starting to take a lot of effort to keep your head above water. You have to get out soon!";
-	otherwise if the fatigue of the player >= (X * 3) / 4:
+	otherwise if the fatigue of the player >= V:
 		say "You're almost out of energy, and keeping afloat is starting to take a lot of work. You should get out soon.";
-	otherwise if the fatigue of the player >= (X / 2):
+	otherwise if the fatigue of the player >= T:
 		say "You start to feel more and more tired as you continue to swim. You're running out of energy!";
-	otherwise if the fatigue of the player >= (X / 4):
+	otherwise if the fatigue of the player >= T / 2:
 		say "You have plenty of energy left for swimming.";
 	otherwise:
 		say "You feel totally energetic, and ready to keep swimming.";

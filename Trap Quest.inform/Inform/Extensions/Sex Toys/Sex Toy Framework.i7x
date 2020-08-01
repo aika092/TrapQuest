@@ -295,8 +295,8 @@ To compute toy expulsion reaction of (M - a monster):
 	FavourDown M by 1 with consequences.
 
 To decide which number is the bartering value of (T - a sex toy) for (M - a mannequin):
-	unless M is retaining a sex toy, decide on 3;
-	decide on 1 + (the size of T - the size of a random sex toy retained by M).
+	unless M is carrying a sex toy, decide on 3;
+	decide on 1 + (the size of T - the size of a random sex toy carried by M).
 
 Check taking off sex toy:
 	try unplugging the noun instead.

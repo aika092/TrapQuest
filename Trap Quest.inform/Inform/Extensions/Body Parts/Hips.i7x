@@ -453,7 +453,7 @@ To say RealHipDesc:
 	if X is 7, say "[if pregnancy fetish is 1]childbearing[otherwise]very pronounced[end if] hips";
 	if X is 8, say "wide, [if pregnancy fetish is 1]childbearing[otherwise]almost cartoonishly pronounced[end if] hips";
 	if X > 8, say "extraordinarily wide[if pregnancy fetish is 1], twin childbearing[end if] hips";
-	if the player is male and the player is virtual:
+	if the player is possessing a penis and the player is virtual:
 		say " and [ShortDesc of penis]".
 
 Part 3 - Modify Hips Stats

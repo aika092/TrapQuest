@@ -78,7 +78,7 @@ To compute periodic effects with earnings (local-earnings - a number) and second
 			if gape-gloves is worn, say "[one of]Your [asshole] can't regain its tightness like normal because you're permanently pulling it open with your fingers![or][stopping]";
 			otherwise decrease the openness of asshole by 1;
 	[Regular bonuses for maintaining pride in virginity / continence]
-	if the remainder after dividing local-earnings by 1425 < local-seconds:
+	if the remainder after dividing local-earnings by 1425 < local-seconds and the player is not in a predicament room:
 		if diaper focus >= 1:
 			if wetting-valued >= 3, diaperreward;
 		otherwise if the player is possessing a vagina and the vaginalvirgin of the player is 1 and (virginity-valued is 1 or flower hairclip is worn):

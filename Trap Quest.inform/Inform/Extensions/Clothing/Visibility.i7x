@@ -1,6 +1,6 @@
 Visibility by Clothing begins here.
 
-Definition: a clothing is layer-concealing: decide yes.  [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
+Definition: a clothing is layer-concealing: decide yes. [Clothing that is layer-exposing is cut in such a way that a viewer can always see glimpses of the layer underneath. Clothing that is layer-concealing never does this. Clothing that has a special rule should redefine the definition block below. This is about the CUT and SHAPE of the item, and not transparency. Transparency is checked for separately. A see through raincoat would still be layer-concealing.]
 Definition: a clothing is partially-layer-concealing if it is layer-concealing. [If you want to set this to 'YES' to make something partially layer concealing, you should also set the layer-concealing definition above to 'NO'.]
 Definition: a clothing is layer-exposing if it is not partially-layer-concealing.
 

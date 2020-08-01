@@ -53,11 +53,11 @@ To decide which figure-name is clothing-image of (C - pink-sequin-g-string):
 To decide which figure-name is clothing-image of (C - orange-g-string):
 	decide on figure of g-string 11.
 
-white-g-string is a g-string. white-g-string is sheer-when-wet. The text-shortcut of white-g-string is "wgs". Understand "white" as white-g-string.
+white-g-string is a g-string. white-g-string is sheer. The text-shortcut of white-g-string is "wgs". Understand "white" as white-g-string.
 To say selfexamineuniquetitle of (G - white-g-string):
 	say "white g-string".
 To say UniqueClothingDesc of (G - white-g-string):
-	say "A micro sized white g-string, that would be used for minimising tan lines when sunbathing.".
+	say "A micro sized white g-string, that would be used for minimising tan lines when sunbathing. The tight sheer fabric gives you a cameltoe and leaves your [genitals] partially visible.".
 Definition: white-g-string is white themed: decide yes.
 
 pink-g-string is a g-string. The text-shortcut of pink-g-string is "pgs". Understand "pink" as pink-g-string.

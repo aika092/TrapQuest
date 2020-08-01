@@ -34,6 +34,12 @@ To say MonsterDesc of (M - mind flayer):
 To set up (M - mind flayer):
 	reset M;
 	now the monstersetup of M is 1;
+	add severed-tentacle to the banishItems of M, if absent;
+	repeat with N running from 1 to 3:
+		let T be a random off-stage sanity token;
+		if T is a thing, add T to the banishItems of M, if absent;
+	let T be a random off-stage plentiful accessory;
+	add T to the banishItems of M, if absent;
 	now the raw difficulty of M is the starting difficulty of M;
 	now the health of M is the maxhealth of M;
 	anger M.
@@ -211,10 +217,5 @@ To say DamageReactTired of (M - mind flayer):
 To say DamageReactWeak of (M - mind flayer):
 	say "The creature's expression grows frantic as [he of M] senses [his of M] life might be in jeopardy!".
 
-To loot (M - mind flayer):
-	if severed-tentacle is off-stage:
-		now severed-tentacle is in the location of the player;
-		say "You spot a [ShortDesc of severed-tentacle] on the ground.";
-		compute autotaking severed-tentacle.
 
 Mind Flayer ends here.

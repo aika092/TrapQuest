@@ -233,11 +233,10 @@ To compute offer reward of (M - kitsune) for (T - a thing):
 		compute autotaking D;
 	otherwise if the favour of M > 18 and the special-gifted of M is 2:
 		say "[speech style of M]'You could use some class. Have this!'[roman type][line break]";
-		let D be a random illusory kimono;
-		now D is in the location of M;
+		now illusory kimono is in the location of M;
 		say "A strange, shimmering kimono appears on the ground!";
 		now the special-gifted of M is 3;
-		compute autotaking D;
+		compute autotaking illusory kimono;
 	otherwise if the favour of M > 23 and the special-gifted of M is 3:
 		say "[speech style of M]'Okay, now this is my best little present. Enjoy!'[roman type][line break]";
 		let D be a random midnight tanto;

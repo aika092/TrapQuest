@@ -104,10 +104,13 @@ To decide which number is the knee-modifier of (S - a socks):
 	decide on 0.
 
 To say ShortDesc of (C - a socks):
+	say "knee high socks".
+
+To say MediumDesc of (C - a socks):
 	say "pair of knee high socks".
 
-To say ShortestDesc of (C - a stockings):
-	say "pair of socks".
+To say ShortestDesc of (C - a socks):
+	say "socks".
 
 Definition: a socks is baby themed if the initial cringe of it > 0.
 
@@ -175,6 +178,9 @@ To say ClothingDesc of (C - bunny socks):
 	say "These pink knee-high socks are opaque and snug. They have bunny faces at the top, making them look extremely adorable.".
 
 To say ShortDesc of (C - bunny socks):
+	say "pair of bunny socks".
+
+To say MediumDesc of (C - bunny socks):
 	say "pair of adorable bunny socks".
 
 Definition: bunny socks is pink themed: decide yes.
@@ -184,7 +190,26 @@ To decide which number is the initial cringe of (C - bunny socks):
 
 Definition: bunny socks is transformation-protected if the class of the player is bunny.
 
-cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid stockings is sheer-when-wet. The text-shortcut of cafe maid stockings is "cms".
+bunny stockings is a stockings. bunny stockings is leather. The text-shortcut of bunny stockings is "bnns".
+
+Figure of bunny stockings is the file "Items/Clothes/Lower/Legs/bunnystockings1.png".
+
+To decide which figure-name is clothing-image of (C - bunny stockings):
+	decide on figure of bunny stockings.
+
+To say ClothingDesc of (C - bunny stockings):
+	say "These black leather stockings go right up to the top of your thighs and are shaped to be the perfect parody of a traditional bunny outfit, ending where the bunny outfit should begin.".
+
+To say MediumDesc of (C - bunny stockings):
+	say "pair of reverse bunny outfit stockings".
+
+Definition: bunny stockings is black themed: decide yes.
+
+Definition: bunny stockings is fetish appropriate if diaper quest is 0.
+
+Definition: bunny stockings is transformation-protected if the class of the player is bunny.
+
+cafe maid stockings is a stockings. cafe maid stockings is cotton. cafe maid stockings is unique. cafe maid stockings is sheer-when-wet. The text-shortcut of cafe maid stockings is "cms".
 
 The printed name of cafe maid stockings is "[clothing-title-before]cafe maid stockings[clothing-title-after]".
 
@@ -196,7 +221,7 @@ To decide which figure-name is clothing-image of (C - a cafe maid stockings):
 To say ClothingDesc of (C - a cafe maid stockings):
 	say "These pink cotton thigh high stockings have little ribbons tied into bows at the top. They undoubtedly are designed to go with a cafe maid cosplay outfit.".
 
-To say ShortDesc of (C - a cafe maid stockings):
+To say MediumDesc of (C - a cafe maid stockings):
 	say "pair of cafe maid stockings".
 
 To decide which number is the initial outrage of (C - a cafe maid stockings):

@@ -39,86 +39,30 @@ REQUIRES COMMENTING
 *!]
 auto is a number that varies.
 
-[!<presentingTarget:Object>*
-
-REQUIRES COMMENTING
-
-*!]
 presenting-target is an object that varies.
+presenting-receiver is an object that varies.
 
-[!<BodyPartIsActuallyPresentable>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a body part (called B) is actually presentable:
 	now presenting-target is B;
+	if presenting-receiver is a monster:
+		if presenting-receiver is not in the location of the player or presenting-receiver is penetrating a body part, now presenting-receiver is nothing;
 	follow the global presentable rules;
 	if the rule failed, decide no;
 	follow the presentable rules of B;
 	if the rule failed, decide no;
 	decide yes.
 
-[!<globalPresentableRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 the global presentable rules is a rulebook.
 
-[!<defaultPresentableRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 the default presentable rules is a rulebook.
 
-[!<BodyPart>@<presentableRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*@!]
 A body part has a rulebook called presentable rules. The presentable rules of a body part is usually the default presentable rules.
 
-[!<TheUnpresentableBodyPartRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the unpresentable body part rule:
 	if auto is 0, say "You can only present an orifice on your body that can be fucked[if the largeness of breasts >= 5] or your breasts[end if].";
 	rule fails.
 The unpresentable body part rule is listed in the default presentable rules.
 
-[!<TheLackOfInterestedMonstersRule>+
-
-REQUIRES COMMENTING
-
-+!]
-[This is the lack of interested monsters rule:
-	if the number of interested monsters in the location of the player + the number of friendly raunchy monsters in the location of the player is 0 and (the number of giant wasps in the location of the player is 0 and the player-class is broodmother):
-		if auto is 0:
-			if there is an interested monster in the location of the player, say "There's nobody about to fuck you.";
-			otherwise say "But there's nobody even looking at you.";
-		rule fails.
-The lack of interested monsters rule is listed in the global presentable rules.]
-
-[!<ThePlayerCanOnlyPresentWhileKneelingRule>+
-
-REQUIRES COMMENTING
-
-+!]
-[This is the player can only present when kneeling rule:
-	if the player is upright:
-		if auto is 0, say "You need to get on your knees first.";
-		rule fails.
-The player can only present when kneeling rule is listed in the global presentable rules.]
-
-[!<ThePlayerCannotPresentIfAlreadyStuckRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the player can't present if already stuck rule:
 	if the player is immobile:
 		if the number of dangerous monsters in the location of the player is the number of dangerous monsters penetrating a body part:
@@ -126,11 +70,6 @@ This is the player can't present if already stuck rule:
 			rule fails.
 The player can't present if already stuck rule is listed in the global presentable rules.
 
-[!<TheInvisibleHolesCannotBeFuckedRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the invisible holes cannot be fucked rule:
 	if presenting-target is fake occupied:
 		if auto is 0, say "You can't present something that can't be seen.";
@@ -143,11 +82,6 @@ This is the gape gloves present rule:
 		rule fails.
 The gape gloves present rule is listed in the global presentable rules.
 
-[!<CheckPresenting>+
-
-REQUIRES COMMENTING
-
-+!]
 Check presenting:
 	say "I think you're playing the wrong game." instead;
 	if the noun is hips, try presenting asshole instead;
@@ -206,11 +140,6 @@ Check presenting:
 		otherwise say "But the [ShortDesc of M] is already inside you!" instead;
 	say "ERROR: couldn't find a monster to present to." instead. [Should never happen.]
 
-[!<CheckDirectPresentingTo>+
-
-REQUIRES COMMENTING
-
-+!]
 Check direct-presenting something to:
 	if tutorial is 1, say "You haven't been told to do that! Please follow the tutorial instructions." instead;
 	if the noun is hips, try direct-presenting asshole to the second noun instead;
@@ -229,14 +158,10 @@ Check direct-presenting something to:
 		say "You can only present either your mouth or [genitals] to the hole." instead;
 	if the second noun is not monster, say "You're going to present your [noun] to that how exactly?" instead;
 	if the second noun is uninterested and (the boredom of the second noun is 0 or the second noun is unfriendly), say "You should probably get [his of the second noun] attention first. Maybe try [bold type]greet[roman type]ing [him of the second noun]." instead; [We are happy for the player to present to uninterested NPCs only if the NPC is friendly and not just about to notice the player]
+	now presenting-receiver is the second noun;
 	unless the noun is actually presentable, do nothing instead;
-	if the player is upright and the second noun is unfriendly, say "You should kneel first." instead;
+	if the player is upright and the second noun is unfriendly, say "You should kneel first." instead.
 
-[!<CarryOutDirectPresentingSomethingTo>+
-
-REQUIRES COMMENTING
-
-+!]
 Carry out direct-presenting something to:[TODO: make this less humiliating for a princess]
 	if the player is upright, try kneeling;
 	if the player is prone:
@@ -380,18 +305,8 @@ Understand "present [something]", "offer [something]", "spread [something]", "su
 
 Understand "spread [something] for [something]", "suggest [something] to [something]" as direct-presenting it to.
 
-[!<cockSucking:Action>*
-
-REQUIRES COMMENTING
-
-*!]
 Cocksucking is an action applying to one thing.
 
-[!<CheckCockSucking>+
-
-REQUIRES COMMENTING
-
-+!]
 Check cocksucking:
 	if the noun is monster, try direct-presenting face to the noun instead;
 	otherwise try drinking the noun instead.

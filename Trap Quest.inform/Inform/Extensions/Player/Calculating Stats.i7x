@@ -16,19 +16,9 @@ Book - Strength
 
 Part 1 - Calculate Strength
 
-[!<DecideWhichNumberIsTheStrengthInfluenceOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the strength-influence of (C - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheStrengthInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the strength-influence of (C - a clothing):
 	if C is strength-influencing:
 		let S be 0;
@@ -36,39 +26,19 @@ To decide which number is the strength-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheStrengthInfluenceOfKickingClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the strength-influence of (C - a kicking clothing):
 	let S be 1;
 	increase S by the magic-modifier of C;
 	decide on S.
 
-[!<DecideWhichNumberIsTheStrengthInfluenceOfConstrictionClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the strength-influence of (C - a constriction clothing):
 	let S be -1;
 	increase S by the magic-modifier of C;
 	decide on S.
 
-[!<DecideWhichNumberIsTheStrengthOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the strength of the player:
 	decide on saved-strength.
 
-[!<DecideWhichNumberIsTheFlatStrengthOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the flat strength of the player:
 	let S be the raw strength of the player;
 	increase S by the virgin bonus of the player;
@@ -76,9 +46,7 @@ To decide which number is the flat strength of the player:
 	increase S by fetish-bonus of the player;
 	repeat with C running through worn wearthings:
 		increase S by the strength-influence of C;
-	if the class of the player is priestess:
-		decrease S by 1;
-	[decrease S by the brightness of hair - natural brightness;]
+	if the class of the player is priestess, decrease S by 2;
 	if the player is thirsty, decrease S by the thirst of the player - 2;
 	if the player is hungry, decrease S by 2;
 	decrease S by the incidents of enema-stat-loss;
@@ -112,28 +80,13 @@ To decide which number is the flat strength of the player:
 	if S > 30, decide on 30;
 	decide on S.
 
-[!<DecideWhichNumberIsTheStartingStrengthOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the starting strength of the player:
 	decide on 7 + bonus strength + background-sporty.
 
 Part 2 - Modify Strength
 
-[!<Player>@<rawStrength:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw strength. The raw strength of the player is usually 7. [Min 1 Max 30]
 
-[!<Player>@<oldStrength:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called old strength. The old strength of the player is usually 0.
 
 Definition: yourself is deserving of more strength:
@@ -143,21 +96,11 @@ Definition: yourself is deserving of more strength:
 	if R > S, decide yes;
 	decide no.
 
-[!<StrengthUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StrengthUp (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw strength of the player < 30, increase the raw strength of the player by 1.
 
-[!<StrengthDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To StrengthDown (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -167,19 +110,9 @@ Book - Dexterity
 
 Part 1 - Calculate Dexterity
 
-[!<DecideWhatNumberIsTheDexterityInfluenceOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide what number is the dexterity-influence of (C - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheDexterityInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the dexterity-influence of (C - a clothing):
 	if C is dexterity-influencing:
 		let S be 0;
@@ -187,29 +120,14 @@ To decide which number is the dexterity-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhatNumberIsTheDexterityInfluenceOfPostureTrainingClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide what number is the dexterity-influence of (C - a posture training clothing):
 	let D be -1;
 	increase D by the magic-modifier of C;
 	decide on D.
 
-[!<DecideWhichNumberIsTheDexterityOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the dexterity of the player:
 	decide on saved-dexterity.
 
-[!<DecideWhichNumberIsTheFlatDexterityOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the flat dexterity of the player:
 	let D be the raw dexterity of the player;
 	increase D by the virgin bonus of the player;
@@ -219,11 +137,7 @@ To decide which number is the flat dexterity of the player:
 	increase D by the theme bonus of the dexterity theme rules;
 	repeat with C running through worn wearthings:
 		increase D by the dexterity-influence of C;
-	if the class of the player is cheerleader:
-		increase D by the blondeness of hair;
-	if the class of the player is priestess:
-		increase D by 1;
-	[decrease D by the redness of hair - natural redness;]
+	if the class of the player is cheerleader, increase D by the blondeness of hair;
 	if the player is blinded, decrease D by 2;
 	decrease D by the bondage dexterity penalty of the player;
 	if the player is bursting and the bladder of the player > 6, decrease D by (the bladder of the player - 6);
@@ -259,28 +173,13 @@ To decide which number is the flat dexterity of the player:
 	if D > 30, decide on 30;
 	decide on D.
 
-[!<DecideWhichNumberIsTheStartingDexterityOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the starting dexterity of the player:
 	decide on 7 + bonus dexterity + background-waitress.
 
 Part 2 - Modify Dexterity
 
-[!<Player>@<rawDexterity:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw dexterity. The raw dexterity of the player is usually 7. [Min 1 Max 30]
 
-[!<Player>@<oldDexterity:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called old dexterity. The old dexterity of the player is usually 0.
 
 Definition: yourself is deserving of more dexterity:
@@ -290,21 +189,11 @@ Definition: yourself is deserving of more dexterity:
 	if R > D, decide yes;
 	decide no.
 
-[!<DexUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To Dexup (X - a number):
 	while X > 0:
 		decrease X by 1;
 		if the raw dexterity of the player < 30, increase the raw dexterity of the player by 1.
 
-[!<DexDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To Dexdown (X - a number):
 	while X > 0:
 		decrease X by 1;
@@ -314,22 +203,9 @@ Book - Intelligence
 
 Part 1 - Calculate Intelligence
 
-[Phaos notes:
-There are actually two intelligence stats that exist simultaneously. One is the base, objective intelligence, which is called "raw intelligence", and the other takes items and such into account.]
-
-[!<DecideWhichNumberIsTheIntelligenceInfluenceOfThing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the intelligence-influence of (C - a thing):
 	decide on 0.
 
-[!<DecideWhichNumberIsTheIntelligenceInfluenceOfClothing>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the intelligence-influence of (C - a clothing):
 	if C is intelligence-influencing:
 		let S be 0;
@@ -337,26 +213,16 @@ To decide which number is the intelligence-influence of (C - a clothing):
 		decide on S;
 	decide on 0.
 
-[!<DecideWhichNumberIsTheIntelligenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the intelligence of the player:
 	if gameover-flag is 1, decide on saved-flat-intelligence;
 	decide on saved-intelligence.
 
-[!<DecideWhichNumberIsTheFlatIntelligenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the flat intelligence of the player:
 	let I be the raw intelligence of the player;
-	[decrease I by the blondeness of hair - natural blondeness;]
 	if the player is fighting against no-panties, decrease I by 2;
-	if the class of the player is cowgirl:
-		decrease I by the raw sensitivity of breasts / 2;
+	if the class of the player is cowgirl, decrease I by the raw sensitivity of breasts / 2;
+	if the class of the player is cumdumpster, increase I by the square root of total pinned condoms;
+	if the class of the player is priestess, increase I by 2;
 	repeat with T running through worn wearthings:
 		increase I by the intelligence-influence of T;
 	decrease I by the incidents of enema-int-loss;
@@ -379,28 +245,13 @@ To decide which number is the flat intelligence of the player:
 	if I > 30, decide on 30;
 	decide on I.
 
-[!<DecideWhichNumberIsTheStartingIntelligenceOfThePlayer>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the starting intelligence of the player:
 	decide on 7 + bonus intelligence + background-nurse - background-sporty.
 
 Part 2 - Modify Intelligence
 
-[!<Player>@<rawDexterity:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called raw intelligence. The raw intelligence of the player is usually 7. [Min 1 Max 30]
 
-[!<Player>@<oldIntelligence:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called old intelligence. The old intelligence of the player is usually 0.
 
 Definition: yourself is deserving of more intelligence:
@@ -410,11 +261,6 @@ Definition: yourself is deserving of more intelligence:
 	if R > S, decide yes;
 	decide no.
 
-[!<IntUpX>+
-
-REQUIRES COMMENTING
-
-+!]
 To Intup (X - a number):
 	now the old intelligence of the player is saved-flat-intelligence;
 	if the latex-transformation of the player > 6:
@@ -426,11 +272,6 @@ To Intup (X - a number):
 			if the class of the player is schoolgirl and the raw intelligence of the player < 15, increase the raw intelligence of the player by 1;[Dumb schoolgirls can double dip on intelligence gains.]
 		if throbbing-tentacle is worn, compute intDrain of severed-tentacle.[once the tentacle wins, you can no longer gain intelligence]
 
-[!<IntDownX>+
-
-REQUIRES COMMENTING
-
-+!]
 To Intdown (X - a number):
 	now the old intelligence of the player is saved-flat-intelligence;
 	if X > 0, increase drain-duration by X;

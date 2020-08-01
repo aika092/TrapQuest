@@ -28,7 +28,7 @@ Definition: centaur is controlling: decide no.[She can't exactly reach]
 
 Definition: centaur is musky: decide yes.
 Definition: centaur is a tripper: decide no.
-Definition: centaur is father material: decide no.[soon....]
+Definition: centaur is father material: decide yes.
 Definition: centaur is throater: decide yes.
 
 To say LongDickDesc of (M - centaur):
@@ -62,7 +62,6 @@ To decide which number is the girth of (M - centaur):
 To say SummoningFlav of (M - centaur):
 	if M is in the location of the player, say "You hear a very sexual sounding sigh, followed by a short prayer. Several seconds later, a heavily armoured [man of M] with the lower body of a horse leaps out out of the statue, landing on the ground with a resounding *clop*.";
 	otherwise say "You hear the clopping of hooves nearby.".
-
 
 To say PregGrowth of (M - centaur):
 	say "the centaur foal".
@@ -349,9 +348,9 @@ To say FriendlyPenetrationFlav of (M - centaur) in (F - asshole):
 
 To say AnalDefloweringFlav of (M - centaur):
 	if the sex addiction of the player < 7:
-		say "[BigFuckerDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. You desperately struggle, causing most of your buttcrack to get covered in 'lube' as [he of M] slowly increases the pressure. Trapped underneath [his of M] huge lower body, you have no choice but to lie there and experience the strange, alien sensation of [his of M] wide shaft forcing its way into your [asshole]. Since it's your first time, [he of M] leaves you a moment to get used to [him of M] before [he of M] begins to thrust.";
+		say "[BigFuckerDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. You [if presented-orifice is not asshole]get second thoughts and start to struggle[otherwise]desperately struggle[end if], causing most of your buttcrack to get covered in 'lube' as [he of M] slowly increases the pressure. Trapped underneath [his of M] huge lower body, you have no choice but to lie there and experience the strange, alien sensation of [his of M] wide shaft forcing its way into your [asshole]. Since it's your first time, [he of M] leaves you a moment to get used to [him of M] before [he of M] begins to thrust.";
 	otherwise if the sex addiction of the player < 12:
-		say "[BigFuckerDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. Your half-hearted struggling causes most of your buttcrack to get covered in [his of M] 'lube', and since you're trapped underneath [his of M] huge lower body, there's nothing you can do but lie there and experience the strange, alien sensation of [his of M] [DickDesc of M] forces its way into your [asshole]. Since it's your first time, [he of M] leaves you a moment to get used to [him of M] before [he of M] begins to thrust.";
+		say "[BigFuckerDesc of M][']s flat tip presses insistently against your sphincter, smearing it with copious precum. [if presented-orifice is not asshole]You keep changing your mind on whether to struggle, which[otherwise]Your half-hearted struggling[end if] causes most of your buttcrack to get covered in [his of M] 'lube', and since you're trapped underneath [his of M] huge lower body, there's nothing you can do but lie there and experience the strange, alien sensation of [his of M] [DickDesc of M] forces its way into your [asshole]. Since it's your first time, [he of M] leaves you a moment to get used to [him of M] before [he of M] begins to thrust.";
 	otherwise:
 		say "[BigFuckerDesc of M] drives [his of M] weight forward, causing [his of M] shaft to press insistently against your sphincter. [big he of M] repeats the process several times, gradually ramping up the pressure. Finally, your [asshole] starts to give, and [FuckerDesc of M] grunts as [he of M] slowly, so slowly, forces [his of M] [DickDesc of M] into your virgin anal ring. Since it's your first time, [he of M] leaves you a moment to get used to new, exotic sensation [him of M] before [he of M] begins to thrust.".
 

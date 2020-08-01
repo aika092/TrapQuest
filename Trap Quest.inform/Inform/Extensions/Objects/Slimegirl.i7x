@@ -266,7 +266,6 @@ To compute slimegirl noticing in (WB - WoodsScenery01):
 	otherwise:
 		compute slimegirl meeting in WB;
 
-
 [You reach the waterfall, and the slimegirl says hey can I clean you]
 To compute slimegirl meeting in (WB - WoodsScenery01):
 	let F be the number of held food;
@@ -316,7 +315,7 @@ To compute slimegirl meeting in (WB - WoodsScenery01):
 
 [When you feed the slimegirl with food. For now, lets say there's no risk of her hitching a ride here]
 To compute slimegirl feeding on (F - a food) in (WB - WoodsScenery01):
-	say "[line break][second custom style]'[one of]Dinner time!'[or]Breakfast time!'[or]Lunch lunch luuuuunch~'[or]Dinner~'[or]Supper time!'[in random order][roman type][line break][BigNameDesc of slimegirl] snatches the [printed name of F] from your hand and stuffs it in her mouth.";
+	say "[line break][second custom style]'[one of]Dinner time!'[or]Breakfast time!'[or]Lunch lunch luuuuunch~'[or]Dinner~'[or]Supper time!'[in random order][roman type][line break][BigNameDesc of slimegirl] snatches the [printed name of F] from your hand and stuffs it in [his of slimegirl] mouth.";
 	destroy F;
 	increase the slime-favour of slimegirl by 3;
 	now the waterfall-timer of WB is -1.
@@ -328,7 +327,7 @@ To compute slimegirl engulfing in (WB - WoodsScenery01):
 		if the semen-soak of C > 0, increase S by the semen-soak of C;
 		clean C;
 		Drench C;
-	say "[line break][second custom style]'[one of]Dinner time!'[or]Breakfast time!'[or]Lunch lunch luuuuunch~'[or]Dinner~'[or]Supper time!'[in random order][roman type][line break][BigNameDesc of M] pounces on you and quickly begins lapping up all the [semen] on your body[if S > 0] and clothes[end if]";
+	say "[line break][second custom style]'[one of]Dinner time!'[or]Breakfast time!'[or]Lunch lunch luuuuunch~'[or]Dinner~'[or]Supper time!'[in random order][roman type][line break][BigNameDesc of M] pounces on you and quickly begins lapping up all the [semen] on your body[if S > 0] and clothes[end if]. ";
 	cutshow figure of slimegirl cutscene 1 for M;
 	if the total felchable volume of vagina > 0 and vagina is not actually occupied and the player is not pussy protected:
 		say "[BigNameDesc of M] moves down to your [vagina], and laps away with great enthusiasm. ";
@@ -361,7 +360,7 @@ slimegirl has a number called slime-quest.
 
 [We care about two outcomes here:
 1 - Did the player try to escape?
-2 - ok, then did the player make a deal with the slime?]
+2 - OK, then did the player make a deal with the slime?]
 To compute slimegirl hitching a ride from (WB - WoodsScenery01):
 	let R be 0;
 	let M be slimegirl;
@@ -407,50 +406,49 @@ To compute treasure diving in (WB - WoodsScenery01) at (L - a number):
 		if L is 3 and N > 0, increase N by 2;[higher chance of something good]
 		if N > 20:[jewels]
 			let J be a random off-stage plentiful accessory;
-			if J is accessory and L > 1:[You won't find jewels until you go further out]
+			if J is accessory and L > 1 and J is actually summonable:[You won't find jewels until you go further out]
 				if N > 29:[Ruby]
-					 now J is ruby;
+					now J is ruby;
 				otherwise if N >= 27:[emerald]
 					now J is emerald;
 				otherwise:[sapphire]
 					now J is sapphire;
-				say "You find a [ClothingDesc of J]! You take it with you as you swim back to the surface.";
-				now J is carried by the player;
+				set shortcut of J;
+				say "[bold type]You find a [ClothingDesc of J]! It's too heavy to carry, but as you head back to the surface, it magically teleports onto your body.";
+				summon J;
 			otherwise:
-				say "You find a rusted out piece of jewelery. You leave it behind as you swim back to the surface.";
+				say "You find a rusted out piece of jewellery. You leave it behind as you swim back to the surface.";
 		otherwise if N > 18:
-			let G be a random off-stage infernal gem;
-			if G is infernal gem:
-				say "You find an infernal gem among the rocks and carry it with you back to the surface.";
-				now G is carried by the player;
+			if infernal gem is off-stage:
+				say "[bold type]You find an infernal gem among the rocks![roman type] You carry it with you back to the surface.";
+				now infernal gem is carried by the player;
 			otherwise:
 				say "You find a pretty gem, but it crumbles as soon as you touch it. You return to the surface empty handed.";
 		otherwise if N > 15:[magic token]
 			let T be a random off-stage magic token;
 			if T is magic token:
-				say "You find a magic token among the rocks. You take it with you as you swim back to the surface.";
+				say "[bold type]You find a magic token among the rocks.[roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 12:[sanity token]
 			let T be a random off-stage sanity token;
 			if T is sanity token:
-				say "You find a sanity token among the rocks. You take it with you as you swim back to the surface.";
+				say "[bold type]You find a sanity token among the rocks.[roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 9:[defiance token]
 			let T be a random off-stage defiance token;
 			if T is defiance token:
-				say "You find a defiance token among the rocks. You take it with you as you swim back to the surface.";
+				say "[bold type]You find a defiance token among the rocks.[roman type] You take it with you as you swim back to the surface.";
 				now T is carried by the player;
 			otherwise:
 				say "You find a rusted coin. You leave it behind as you swim back to the surface.";
 		otherwise if N > 5:[wasp wing, if possible]
-			let W be a random off-stage wasp wing;
-			if W is wasp wing and mythical creatures fetish is 1 and egg laying fetish is 1:
-				say "You find a wasp wing among the rocks and carry it with you on your journey back to the surface.";
-				now W is carried by the player;
+			if wasp wing is off-stage and mythical creatures fetish is 1 and egg laying fetish is 1:
+				say "[bold type]You find a wasp wing among the rocks.[roman type] You carry it with you on your journey back to the surface.";
+				now wasp wing is carried by the player;
 			otherwise:
 				say "You find a shard of glass among the rocks, and leave it where you found it as you head back to the surface.";
 		otherwise:

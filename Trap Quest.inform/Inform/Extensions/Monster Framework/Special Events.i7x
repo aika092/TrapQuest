@@ -190,7 +190,7 @@ To DrinkPiss from (M - an object):
 		say "[bold type]Suddenly your mouth is forced wide open as a [ShortDesc of WC hood] [bold type]appears around your head. You can't close it![roman type][line break]";
 	let P be a random worn WC plug panties;
 	if P is clothing:
-		say "[bold type]Your [if the player is female][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is female]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed! Wow!";
+		say "[bold type]Your [if the player is possessing a vagina][fuckholes] feel[otherwise][asshole] feels[end if] amazing![roman type] Suddenly [if the player is possessing a vagina]you feel rushes of energy from your [P], and now they are[otherwise]you feel a rush of energy from your [P], and now it is[end if] completely healed! Wow!";
 		now the soreness of asshole is 0;
 		now the tolerated of asshole is 0;
 		now the soreness of vagina is 0;

@@ -390,7 +390,7 @@ REQUIRES COMMENTING
 +!]
 To say VagueAddiction:
 	if the sex addiction of the player < 4:
-		if the player is male, say "Straight";
+		if the player is gendered male, say "Straight";
 		otherwise say "Prude";
 	otherwise if the sex addiction of the player < 7:
 		if the player is feeling dominant, say "Dominant";
@@ -420,7 +420,7 @@ To say VagueDiaperAddiction:
 		if the delicateness of the player > 6, say "Reluctant";
 		otherwise say "Frustrated";
 	otherwise if the diaper addiction of the player < 9:
-		if the delicateness of the player > 6 or the player is male, say "Curious";
+		if the delicateness of the player > 6 or the player is gendered male, say "Curious";
 		otherwise say "Irritated";
 	otherwise if the diaper addiction of the player < 11:
 		say "Comfortable";

@@ -253,7 +253,7 @@ bbc-fairy tattoo is an upper back tattoo. The tattoo-title of bbc-fairy tattoo i
 Understand "big black", "black cock", "fairy cum" as tattoo.
 Definition: bbc-fairy tattoo is drawable if interracial fetish is 1 and the number of worn upper back tattoo is 0.
 Definition: bbc-fairy tattoo is eligible:
-	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink hair or the noun is fae mushroom or the noun is butterfly-wings or the noun is fairy wand, decide yes;
+	if the noun is interracial themed or the noun is heart themed or the noun is semen themed or the noun is penis themed or the noun is pink-hair or the noun is fae mushroom or the noun is butterfly-wings or the noun is fairy wand, decide yes;
 	if the noun is non-empty bottle and the fill-colour of the noun is creamy, decide yes;
 	decide no.
 To say tattoo-desc of (T - bbc-fairy tattoo):
@@ -450,7 +450,7 @@ To decide which figure-name is the examine-image of (T - born to lose tattoo):
 	decide on figure of born to lose tattoo.
 Definition: born to lose tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
-	if the noun is pack of playing cards, decide yes;
+	if the noun is pack of playing cards or the noun is queen of hearts monokini or the noun is queen of hearts heels, decide yes;
 	decide no.
 To say tattoo-desc of (T - born to lose tattoo):
 	say "The words 'BORN TO LOSE' and symbols for each of the four playing cards suits are tattooed above your crotch. You can feel it making you unlucky. It's like... the 'game hates you' now.".
@@ -496,7 +496,7 @@ Definition: bright-hair tattoo is drawable:
 	if diaper quest is 0, decide yes;
 	decide no.
 Definition: bright-hair tattoo is eligible:
-	if the noun is pink hair, decide yes;
+	if the noun is pink-hair, decide yes;
 	decide no.
 To say tattoo-desc of (T - bright-hair tattoo):
 	say "The words '[if the redness of hair < 3 or the blondeness of hair < 3 or the brightness of hair < 3]bright[otherwise]ultra pink[end if] hair is best' are tattooed on your left arm. You can feel that your hair is happy the way it is.".
@@ -530,7 +530,7 @@ The butt-slut tattoo butt slut rule is listed in the butt slut eligibility rules
 butterfly-wings tattoo is an asshole-tattoo. The tattoo-title of butterfly-wings tattoo is "butterfly wings bumhole".
 Understand "butterfly", "wings", "asshole-tattoo" as butterfly-wings tattoo.
 Definition: butterfly-wings tattoo is eligible:
-	if the noun is butterfly themed or the noun is glittering rose or the noun is fairy wand or the noun is pink hair or the noun is fae mushroom, decide yes;
+	if the noun is butterfly themed or the noun is glittering rose or the noun is fairy wand or the noun is pink-hair or the noun is fae mushroom, decide yes;
 	decide no.
 To say tattoo-desc of (T - butterfly-wings tattoo):
 	say "A blue butterfly wing is inked either side of your heart. It is making you less heavy.".
@@ -883,8 +883,7 @@ To say ShortDesc of (T - dolly tattoo):
 	say "[if the class of the player is living sex doll]bar-code[otherwise]dolly[end if] tattoo".
 Understand "bar", "code", "bar-code", "doll" as dolly tattoo.
 Definition: a dolly tattoo is eligible:
-	if the noun is piece of rubber, decide yes;
-	if the noun is condom of kings, decide yes;
+	if the noun is piece-of-rubber or the noun is condom of kings, decide yes;
 	decide no.
 To say tattoo-desc of (T - a dolly tattoo):
 	say "[if the class of the player is living sex doll]A serial number is printed on the back of your hand[otherwise]The word [i]Dolly[/i] is printed on the back of one hand in neon blue letters[end if].".
@@ -909,7 +908,7 @@ double penetration tattoo is a body tattoo.
 The tattoo-title of double penetration tattoo is "double penetration".
 Definition: a double penetration tattoo is drawable if it is not worn and diaper quest is 0 and it is eligible.
 Definition: a double penetration tattoo is eligible:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the noun is heart themed or (the noun is anal sex themed and the noun is vagina themed), decide yes;
 	if the noun is clothing:
 		if the noun is crotch covering and the noun is no protection, decide yes;
@@ -1049,7 +1048,7 @@ Definition: failed potty training tattoo is toilet themed: decide yes.
 
 fairy-cheek tattoo is a face-tattoo. The tattoo-title of fairy-cheek tattoo is "fairy cheek".
 Definition: fairy-cheek tattoo is eligible:
-	if the noun is pink hair or the noun is fae mushroom or the noun is butterfly wings or the noun is zap ready equippable, decide yes;
+	if the noun is pink-hair or the noun is fae mushroom or the noun is butterfly wings or the noun is zap ready equippable, decide yes;
 	decide no.
 Figure of fairy-cheek tattoo is the file "Items/Tats/tattoo138.jpg".
 To decide which figure-name is the examine-image of (T - fairy-cheek tattoo):
@@ -1114,10 +1113,10 @@ for deposit only tattoo is a crotch tattoo. The tattoo-title of for deposit only
 Definition: for deposit only tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	decide yes.
 Definition: for deposit only tattoo is eligible:
-	if the noun is squirt dildo or the noun is pink hair or the noun is royal circlet, decide yes;
+	if the noun is squirt dildo or the noun is pink-hair or the noun is royal circlet, decide yes;
 	decide no.
 To say tattoo-desc of (T - for deposit only tattoo):
 	say "The words 'For Deposit Only' and a red Adulterer 'A' are tattooed in large gothic letters above your [vagina]. You can feel it suppressing your ability to have vaginal orgasms or faint from vaginal soreness.".
@@ -1243,7 +1242,7 @@ Book - H Tattoos
 heavyweight tattoo is a leg tattoo. The tattoo-title of heavyweight tattoo is "heavyweight".
 Figure of heavyweight tattoo is the file "Items/Tats/tattoo26.jpg".
 Definition: heavyweight tattoo is eligible:
-	if the noun is egg or the noun is metal disc or the noun is food or the noun is metal clothing, decide yes;
+	if the noun is egg or the noun is metal-disc or the noun is food or the noun is metal clothing, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - heavyweight tattoo):
 	decide on figure of heavyweight tattoo.
@@ -1417,11 +1416,11 @@ Definition: lesbian anilingus tattoo is vagina themed: decide yes.
 
 let it die tattoo is a crotch tattoo. The tattoo-title of let it die tattoo is "let it die".
 Figure of let it die tattoo is the file "Items/Tats/tattoo43.jpg".
-Definition: let it die tattoo is eligible if the noun is monster-drop.
+Definition: let it die tattoo is eligible if the noun is biological clothing.
 To decide which figure-name is the examine-image of (T - let it die tattoo):
 	decide on figure of let it die tattoo.
 To say tattoo-desc of (T - let it die tattoo):
-	say "The words 'let it die' are permanently inked above your crotch. You feel more reluctant to have dominant sex with defeated opponents.".
+	say "The words 'let it die' are permanently inked above your crotch. You feel more reluctant to spare defeated opponents.".
 To decide which number is the initial outrage of (T - let it die tattoo):
 	decide on 2.
 To decide which number is the strength-influence of (T - let it die tattoo):
@@ -1488,7 +1487,7 @@ Definition: lucky you tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if it is eligible, decide yes;
 	decide no.
-Definition: lucky you tattoo is eligible if the noun is pack of playing cards or the noun is chess piece or the noun is green-briefs or the noun is luck-potion.
+Definition: lucky you tattoo is eligible if the noun is pack of playing cards or the noun is queen of hearts monokini or the noun is queen of hearts heels or the noun is chess piece or the noun is green-briefs or the noun is luck-potion.
 To say tattoo-desc of (T - lucky you tattoo):
 	say "The words 'Lucky You' and drawings of playdude bunnies are tattooed above your crotch.".
 To decide which number is the cringe of (T - lucky you tattoo):
@@ -1519,7 +1518,7 @@ Definition: measurement tattoo is drawable:
 	if the player is male or there is a worn crotch tattoo or diaper quest is 1, decide no;
 	decide yes.
 Definition: measurement tattoo is eligible:
-	if the noun is lubricant or the noun is piece of rubber or the noun is sex toy or the noun is zippable clothing, decide yes;
+	if the noun is lubricant or the noun is piece-of-rubber or the noun is sex toy or the noun is zippable clothing, decide yes;
 	decide no.
 To say tattoo-desc of (T - measurement tattoo):
 	say "A measurement scale rises from your [vagina], showing how deep things of certain lengths could get inside you. You feel it making your [fuckholes] better at taking larger objects, and also encouraging people to choose to fuck your [vagina].".
@@ -1540,7 +1539,7 @@ To decide which object is the at least partial concealer of (T - mushbutt tattoo
 	if T is listed in the armUses of arms, decide on arms;
 	decide on a random worn not-see-through actually breast covering clothing.
 
-my-vagina tattoo is an upper back tattoo. The tattoo-title of my-vagina tattoo is "my vagina".
+my-vagina tattoo is an upper back tattoo. The tattoo-title of my-vagina tattoo is "my vagina fertility". Understand "fertility" as my-vagina tattoo.
 Definition: my-vagina tattoo is drawable:
 	if diaper quest is 1, decide no;
 	if pregnancy fetish is 0, decide no;
@@ -1873,7 +1872,7 @@ pussy deluxe tattoo is a crotch tattoo. The tattoo-title of pussy deluxe tattoo 
 Definition: pussy deluxe tattoo is drawable:
 	if there is a worn crotch tattoo, decide no;
 	if diaper quest is 1, decide no;
-	if the player is female, decide yes;
+	if the player is possessing a vagina, decide yes;
 	decide no.
 Definition: pussy deluxe tattoo is eligible:
 	if the noun is plentiful accessory or the noun is gem themed or the noun is whore themed, decide yes;
@@ -2096,12 +2095,12 @@ Definition: slimecock tattoo is drawable:
 	if diaper quest is 0 and slimecock tattoo is not worn and slimecock tattoo is eligible, decide yes;
 	decide no.
 Definition: slimecock tattoo is eligible:
-	if the noun is ectoplasm or the noun is dong, decide yes;
+	if the noun is ectoplasm or the noun is dong or the noun is green themed, decide yes;
 	decide no.
 To say tattoo-desc of (T - slimecock tattoo):
 	say "You have a drawing of a green slimy cock inked on the inside of one forearm.".
 To decide which number is the initial outrage of (T - slimecock tattoo):
-	decide on 10.
+	decide on 7.
 To decide which number is the semen-taste-addiction-influence of (T - slimecock tattoo):
 	decide on -2.
 
@@ -2181,10 +2180,10 @@ spank my kitty tattoo is an ass tattoo. The tattoo-title of spank my kitty tatto
 Figure of spank my kitty tattoo is the file "Items/Tats/tattoo4.jpg".
 Definition: spank my kitty tattoo is drawable:
 	if there is a worn ass tattoo, decide no;
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	decide yes.
 Definition: spank my kitty tattoo is eligible:
-	if the player is male, decide no;
+	if the player is not possessing a vagina, decide no;
 	if the noun is butt-windowed clothing or the noun is super-short clothing or the noun is short clothing or the noun is focus band or the noun is cat themed or the noun is impact play themed, decide yes;
 	decide no.
 To decide which figure-name is the examine-image of (T - spank my kitty tattoo):

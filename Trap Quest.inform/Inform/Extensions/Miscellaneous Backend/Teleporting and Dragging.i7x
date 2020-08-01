@@ -23,7 +23,7 @@ To teleport to (R - a room):
 		unless T is worn or T is player-dragger, dislodge T;
 	repeat with T running through things grabbing the player:
 		unless T is ghostly tentacle or T is player-dragger, dislodge T;
-	repeat with C running through held store clothing:
+	repeat with C running through held store things:
 		compute stealing of C;
 		if shopkeeper is interested and the shopkeeper is in the location of the player, increase the stolen-aware of shopkeeper by 1;
 		if there is a worn tethering lipstick collar, end tethering;
@@ -64,8 +64,8 @@ To say DragArrival of (M - a monster) to (R - a room):
 
 To check shopstealing of (M - a monster):
 	if the location of the player is guarded:
-		let X be the number of held store clothing;
-		repeat with C running through held store clothing:
+		let X be the number of held store things;
+		repeat with C running through held store things:
 			compute stealing of C;
 		if X > 0:
 			say "[BigNameDesc of shopkeeper] sees [NameDesc of M] [']helping['] you to leave. [big he of shopkeeper] seems to think it's your fault.[line break][speech style of M]'[one of]Stop Thief!'[or]Guards! Guards! Arrest this thieving imbecile!'[or]Where do you think you're going with that, bitch?'[or]Oi, you haven't paid for that!'[purely at random][roman type][line break]An alarm bell rings throughout the whole dungeon. [bold type]Looks like you're in trouble with the law![roman type][line break]";

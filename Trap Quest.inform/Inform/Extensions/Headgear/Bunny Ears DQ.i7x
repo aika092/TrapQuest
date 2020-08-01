@@ -255,6 +255,6 @@ To compute (M - a robochef) cooking (I - a chocolate egg):
 	if D is food:
 		now the quality of D is a random number between 2 and 0;
 		now the fat of D is 1;
-		now D is retained by M.
+		now D is carried by M.
 
 Bunny Ears DQ ends here.

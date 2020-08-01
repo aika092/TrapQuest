@@ -13,7 +13,7 @@ To decide which number is startingRegionalMonsterCount:
 
 [Number of non-mandatory NPCs that the summoning portals will increase each region to over time.]
 To decide which number is baseRegionalMonsterCount:
-	decide on 3 + game difficulty.
+	decide on 4 + (game difficulty / 2).
 
 To decide which number is the regionalMonsterCount of (R - a region):
 	decide on baseRegionalMonsterCount.
@@ -57,7 +57,6 @@ Definition: a monster (called M) is mansion prioritised:
 		let T2 be the substituted form of "[ShortDesc of N]";
 		if T1 matches the text T2, decide no;
 	decide yes.
-
 
 A game universe initialisation rule:
 	repeat with S running through summoning portals:
@@ -570,7 +569,7 @@ Carry out appeasing something with teleportation-pad:
 		say "[BigNameDesc of the noun] lights up as you throw it onto the pad, disintegrating as it absorbs the building energy. A wave of relief passes through your surroundings as the last remnants of [NameDesc of the noun] disappear completely.";
 		ChargeUp the second noun by 700;
 		only destroy the noun;
-	otherwise if the noun is metal clothing or the noun is mechanical joint or the noun is electric fan or the noun is unlock-key or the noun is metal disc:
+	otherwise if the noun is metal clothing or the noun is mechanical joint or the noun is electric fan or the noun is unlock-key or the noun is metal-disc:
 		say "[BigNameDesc of the noun] lights up as you throw it onto the pad, emitting bright sparks. You can feel that lots of [NameDesc of the second noun][']s energy is absorbed as [NameDesc of the noun] bursts in a hail of yellow embers.";
 		ChargeUp the second noun by 150;
 		only destroy the noun;

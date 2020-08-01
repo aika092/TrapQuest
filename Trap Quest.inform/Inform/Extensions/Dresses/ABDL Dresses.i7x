@@ -27,7 +27,6 @@ To say MediumDesc of (C - purple-baby-reins):
 
 Definition: purple-baby-reins is purple themed: decide yes.
 
-
 Part - Baby Dresses
 
 A baby-dress is a kind of overdress. A baby-dress is usually transformation-rare. A baby-dress is usually high cut. A baby-dress is usually no-crotch. A baby-dress is usually short. A baby-dress is usually top-exclusive.

@@ -94,7 +94,7 @@ To compute TQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 				if delayed fainting is 1, now swimming is 0;
 	allocate 12 + (swim-turns * 3) seconds;
 	display entire map.
-				
+
 [There's basically nothing interesting happening here, so its a good template.]
 To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-turns - a number):
 	let swimming be 1;
@@ -138,7 +138,7 @@ To compute DQ swimmingpool swimming at (swim-location - a number) with (swim-tur
 		otherwise:
 			say "You dive below the surface.";
 			compute difficult swimming check in swimming-pool;
-			 compute treasure diving in swimming-pool at swim-location;
+			compute treasure diving in swimming-pool at swim-location;
 		say "[line break]";
 		if swimming is 1:
 			if armband is worn:
@@ -191,7 +191,7 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 	otherwise:
 		if L < 2: [You shouldn't be able to dive at this depth]
 			say "[line break]You touch the bottom and return to the surface.";
-		otherwise if (L is 2 and the player is getting very lucky) or (L is 3 and the player is getting very lucky) or (L is 4 and the player is getting lucky): [Ok, the player found something! What did they find?]
+		otherwise if (L is 2 and the player is getting very lucky) or (L is 3 and the player is getting very lucky) or (L is 4 and the player is getting lucky): [OK, the player found something! What did they find?]
 			say "[line break]You feel something odd as your hand touches the pool bottom, and you fumble around to look for it... [run paragraph on]";
 			let N be a random number between 1 and 20;
 			if N < 9:
@@ -199,7 +199,7 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 			otherwise if N < 13:[token]
 				let F be a random off-stage fabric token;
 				if F is fabric token:
-					say "Your fingers find a hard object around the size of a quarter, and you manage to pry it off the bottom and take it with you as you head back to the surface. You found a fabric token! Nice!";
+					say "Your fingers find a hard object around the size of a quarter, and you manage to pry it off the bottom and take it with you as you head back to the surface. [bold type]You found a fabric token![roman type]";
 					now F is carried by the player;
 				otherwise:
 					say "Your fingers find a hard object around the size of a quarter, and you unsuccessfully try to pry it off the bottom before running out of air and returning to the surface empty-handed.";
@@ -207,26 +207,25 @@ To compute treasure diving in (WB - swimming-pool) at (L - a number):
 				let S be a random worn condom pinnable clothing;
 				if string-belt is worn, now S is string-belt;
 				if S is clothing and the player is getting unlucky:[Its a condom "leech"]
-					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. You picked up a used condom... and its moving?! It flies from your hand and seals itself to your [ShortDesc of S]!";
+					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. [bold type]You picked up a used condom... and its moving?![roman type] It flies from your hand and seals itself to your [ShortDesc of S]!";
 					increase the used condoms of S by 1;
 				otherwise:
 					say "Your fingers find something mushy as your fingers hit the bottom, and you take it with you as you swim back to the surface. You picked up a used condom! Yuck! You throw it back.";
 			otherwise if N < 20:[lube]
 				let U be a random off-stage lubricant;
 				if U is lubricant:
-					say "You feel something hard as your fingers hit the bottom, and you take it with you as you head back to the surface. You picked up a bottle of lubricant! Neat!";
+					say "You feel something hard as your fingers hit the bottom, and you take it with you as you head back to the surface. [bold type]You picked up a bottle of lubricant![roman type]";
 					now U is carried by the player;
 				otherwise:
 					say "You feel something hard as your fingers hit the bottom, but you accidentally brush it out of the way when you go to grab it. You search around for a little while, but eventually you run out of air and return to the surface empty-handed.";
 			otherwise:[key]
 				let K be skeleton key;
 				if K is off-stage:
-					say "Your fingers come into contact with something key-shaped as they touch the bottom, and you grab it and take it with you as you head back to the surface. You found a skeleton key!";
+					say "Your fingers come into contact with something key-shaped as they touch the bottom, and you grab it and take it with you as you head back to the surface. [bold type]You found a skeleton key![roman type]";
 					now K is carried by the player;
 				otherwise:
 					say "Your fingers come into contact with something key-shaped as they touch the bottom, and you grab it and take it with you as you head back to the surface. Unfortunately, the [semen] you're swimming through is just too thick, and you accidentally drop it just as you come up for air.";
 		otherwise:
 			say "[line break]You touch the bottom and return to the surface.".
-			
 
 Swimming Pool ends here.

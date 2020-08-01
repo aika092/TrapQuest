@@ -139,6 +139,8 @@ To say ClothingDesc of (C - a torn shirt):
 	say "This longsleeved dark shirt would be very modest if it wasn't for the torn strips over the breasts, leaving a lot of cleavage to be shown.".
 
 To say ShortDesc of (C - a torn shirt):
+	say "torn shirt".
+To say MediumDesc of (C - a torn shirt):
 	say "provocative torn shirt".
 
 To decide which number is the initial outrage of (C - a torn shirt):

@@ -201,7 +201,6 @@ To say MonsterComment of (M - a tentacle monster):
 	otherwise:
 		say "[if the bimbo of the player < 9][line break][variable custom style][one of]It keeps overpowering me like it's nothing. I have to get out of here.[or]Those tentacles are enormous! I'm not giving it another chance to put them in me![or]How could I let it get so big? Now I'll never get rid of it.[or]It keeps trying to breed with me. I'm your mother you disgusting beast![in random order][otherwise if the bimbo of the player < 14][variable custom style][one of][big he of the M]'s so strong now. There's no way I can fight him, let alone keep him from fucking me.[or][big he of the M]'s all grown-up now. What's this wistful feeling?[or]I'm so proud. I wish [he of the M] were more obedient, but still...[or][big his of the M] tentacles are so big. I don't think he'll grow much more than that.[in random order][otherwise][line break][second custom style][one of]Look who grew up all big and hung![or]I want to make another.[or]They grow up so fast. And big too, teehee![or][big he of the M] knows just how to please [his of the M] mommy.[or]Those [manly-penis]s are so big! [big he of the M] gets it from [his of the M] daddy.[or]I wonder when [he of the M]'ll be ready to breed me again?[in random order][end if][roman type][line break]".
 
-
 To say TentacleColour of (M - a tentacle monster):
 	say "[if the evolved of M is 3]pure white[otherwise if M is not player-brood]grey[otherwise]dark red[end if]".
 
@@ -340,7 +339,7 @@ This is the tentacle monster grabbiness rule:
 	let M be current-monster;
 	let C be 5;
 	if M is smart-tentacle-monster, now C is 4;[smart monsters are more likely to use a special attack]
-	if M is not penetrating a body part and the free-tentacles of M > 0 and a random number between 1 and C is 1:
+	if the player is upright and M is not penetrating a body part and the free-tentacles of M > 0 and a random number between 1 and C is 1:
 		let R be a random number between 1 and 2;
 		if the arm-count of M >= 3, now R is 2;
 		if the leg-count of M >= 3, now R is 1;
@@ -363,12 +362,23 @@ This is the tentacle monster grabbiness rule:
 		rule succeeds.
 The tentacle monster grabbiness rule is listed in the tentacle priority attack rules.
 
+
+This is the player can't attack in wrist tentacles rule:
+	let M be a random live thing wrangling arms;
+	if M is tentacle monster and the arm-count of M > 1:
+		if the arm-count of M > 2, say "[BigFuckerDesc of M] has your arms immobilized with [his of M] tentacles. You'll have to free yourself first!";
+		otherwise say "[BigFuckerDesc of M] has both of your wrists gripped by [his of M] tentacles. You'll have to free yourself first!";
+		rule fails.
+The player can't attack in wrist tentacles rule is listed in the ability to slap rules.
+
 To compute wrangled resisting of (T - tentacle monster):
 	let S be the strength of the player;
 	if the arm-count of T > 2, now S is S / 2;[once it grabs you with three tentacles, escaping becomes much harder]
 	if the leg-count of T > 2, now S is S / 2;
-	if the strength roll of T >= S:
-		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s tentacles[or]you can't break [FuckerDesc of T][']s grip.[or][FuckerDesc of T] is just too strong![in random order]";
+	let SR be the strength roll of T;
+	if debuginfo > 0, say "[input-style]Tentacle escape check: Player strength [if the arm-count of T > 2](reduced by fully immobilized arms) [end if][if the leg-count of T > 2](reduced by fully immobilized legs) [end if]([S]) | ([SR].5) Tentacle monster strength roll[roman type][line break]";
+	if SR >= S:
+		say "You struggle, but [one of]you're no match for [FuckerDesc of T][']s tentacles.[or]you can't break [FuckerDesc of T][']s grip.[or][FuckerDesc of T] is just too strong![in random order]";
 	otherwise:
 		say "You force [FuckerDesc of T] to let you go!";
 		now the arm-count of T is 0;
@@ -392,7 +402,7 @@ This is the tentacle monster bashiness rule:
 	let M be current-monster;
 	let C be 5;
 	if M is smart-tentacle-monster, now C is 4;
-	if M is not penetrating a body part and the free-tentacles of M > 2 and a random number between 1 and C is 1:
+	if the player is upright and M is not penetrating a body part and the free-tentacles of M > 2 and a random number between 1 and C is 1:
 		let B be the painful-part of M;
 		if the accuracy roll of M >= the dexterity of the player:
 			say "[BigNameDesc of M] bashes you [TargetName of B] with its tentacles, causing you huge amounts of pain!";
@@ -408,7 +418,7 @@ This is the tentacle monster gets fresh rule:
 	let M be current-monster;
 	let C be 5;
 	if M is smart-tentacle-monster, now C is 4;
-	if M is not penetrating a body part and the free-tentacles of M < the max-tentacles of M and the health of M > the maxhealth of M / 2 and a random number between 1 and C is 1:[When tentacle monsters are feeling healthy, they get kind of handsy/tentaclesy.]
+	if the player is upright and M is not penetrating a body part and the free-tentacles of M < the max-tentacles of M and the health of M > the maxhealth of M / 2 and a random number between 1 and C is 1:[When tentacle monsters are feeling healthy, they get kind of handsy/tentaclesy.]
 		if the accuracy roll of M >= the dexterity of the player:
 			compute seduction grope of M;
 		otherwise:
@@ -942,7 +952,7 @@ To compute unique banishment of (M - a tentacle monster):
 		say "A translucent tentacle floats up from its lifeless body, unfurling to reveal an underside full of giant, octopus-like suckers.";
 		anger T.
 
-To loot (M - a tentacle monster):
+To standard loot (M - a tentacle monster):
 	let X be a random off-stage plentiful ring;
 	if the class of the player is santa's little helper, now X is a random off-stage christmas gift;
 	unless X is nothing:

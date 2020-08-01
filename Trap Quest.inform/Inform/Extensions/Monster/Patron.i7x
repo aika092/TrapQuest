@@ -1138,8 +1138,8 @@ To say LandingTaunt of (M - a patron):
 Definition: a body part (called B) is available for rubbing:
 	repeat with M running through alive patrons:
 		if M is penetrating B or the wanking-target of M is B, decide no;
-	if B is vagina and the player is male, decide no;
-	if B is penis and the player is female, decide no;
+	if B is vagina and the player is not possessing a vagina, decide no;
+	if B is penis and the player is not possessing a penis, decide no;
 	decide yes.
 
 To compute SelectionWaiting of (M - a patron):
@@ -1829,7 +1829,7 @@ To penetration dominate (M - an inexperienced patron):
 		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
 		let C be a random bottom level protection clothing;
 		if sexual-penis-length >= 4:
-			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]prod your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed. [line break][speech style of M]'[one of]This is going to be by first time. Be gentle, OK?'[or]Be gentle, I'm still not very experienced!'[stopping][roman type][line break]You nod, [if lady fetish is 1]spread[otherwise]lift[end if]ing [his of M] legs as you [if sexual-penis-length > 8]slowly, slowly slide the first few inches of your[otherwise if sexual-penis-length < 6]ease[otherwise]push[end if] your [SexDesc of penis] into [his of M] [HoleDesc of M]. [one of][big he of M] wasn't kidding about being a virgin,[or][big he of M]'s still vice tight, and[at random] the feeling of [his of M] inner walls gripping your [SexShaft] is too intense for you to endure very long. No matter how much you try to pace yourself, it's too much, and within moments you lose control[if sexual-penis-length > 7] and flood [his of M] [HoleDesc of M] with a massive load[otherwise if sexual-penis-length > 5] and fill [his of M] [HoleDesc of M] with your load[otherwise], pulling out and shooting a few short ropes of [semen] across [his of M] belly[end if].";
+			say "You [if C is clothing]pull out your [sexual-player-penis][otherwise]prod your [sexual-player-penis] to hardness[end if] as you push [NameDesc of M] onto the bed. [line break][speech style of M]'[one of]This is going to be by first time. Be gentle, OK?'[or]Be gentle, I'm still not very experienced!'[stopping][roman type][line break]You nod, [if lady fetish is 1]spread[otherwise]lift[end if]ing [his of M] legs as you [if sexual-penis-length > 8]slowly, slowly slide the first few inches of[otherwise if sexual-penis-length < 6]ease[otherwise]push[end if] your [SexDesc of penis] into [his of M] [HoleDesc of M]. [one of][big he of M] wasn't kidding about being a virgin,[or][big he of M]'s still vice tight, and[at random] the feeling of [his of M] inner walls gripping your [SexShaft] is too intense for you to endure very long. No matter how much you try to pace yourself, it's too much, and within moments you lose control[if sexual-penis-length > 7] and flood [his of M] [HoleDesc of M] with a massive load[otherwise if sexual-penis-length > 5] and fill [his of M] [HoleDesc of M] with your load[otherwise], pulling out and shooting a few short ropes of [semen] across [his of M] belly[end if].";
 			strongDignify;
 			orgasm;
 			say AfterDominationComment 10 of M;
@@ -1965,7 +1965,7 @@ To bottom dominate (M - an experienced patron):
 	now M is penetrating F;
 	if R >= 0:
 		if debugmode > 0, say "[bold type]PASSED[roman type][line break]";
-		say "[big he of M] shoves you down when you try to sit up, but you immediately answer with a shove of your own. [if the player is able to speak][line break][variable custom style]'Don't speed up unless I fucking tell you to.'[roman type][line break][otherwise]It's not possible to tell [him of M] off directly, since you can't speak, but you get the message across with a humourless look. [end if]Although [he of M] looks annoyed, [he of M] doesn't resist, [his of M] cockhead gently [if F is asshole and the player is male]bumping up against your prostate[otherwise]rubbing your G-spot[end if] as [he of M] fucks you with much slower, deeper strokes. You go back to relaxing, and find yourself moaning as [his of M] technique causes your pleasure to slowly build. It doesn't escape your notice when [his of M] [DickDesc of M] begins to throb a little, but since [he of M]'s a good little fucktoy, [he of M] doesn't try to speed up again. For you, the deep stimulation takes its toll, and you [if the player is possessing a penis]shoot your load across your belly[otherwise]experience a satisfying climax[end if] without ever giving [him of M] the chance to cum.";
+		say "[big he of M] shoves you down when you try to sit up, but you immediately answer with a shove of your own. [if the player is able to speak][line break][variable custom style]'Don't speed up unless I fucking tell you to.'[roman type][line break][otherwise]It's not possible to tell [him of M] off directly, since you can't speak, but you get the message across with a humourless look. [end if]Although [he of M] looks annoyed, [he of M] doesn't resist, [his of M] cockhead gently [if F is asshole and the player is sexed male]bumping up against your prostate[otherwise]rubbing your G-spot[end if] as [he of M] fucks you with much slower, deeper strokes. You go back to relaxing, and find yourself moaning as [his of M] technique causes your pleasure to slowly build. It doesn't escape your notice when [his of M] [DickDesc of M] begins to throb a little, but since [he of M]'s a good little fucktoy, [he of M] doesn't try to speed up again. For you, the deep stimulation takes its toll, and you [if the player is possessing a penis]shoot your load across your belly[otherwise]experience a satisfying climax[end if] without ever giving [him of M] the chance to cum.";
 		ruin F;
 		orgasm;
 		store M after tricks;
@@ -1973,7 +1973,7 @@ To bottom dominate (M - an experienced patron):
 		say AfterDominationComment 8 of M;
 	otherwise:
 		if debugmode > 0, say "[bold type]FAILED[roman type][line break]";
-		say "[big he of M] shoves you down when you try to sit up, and you let out a [if the player is able to speak]confused yelp[otherwise]muffled yelp[end if] as [he of M] immediately pins your wrists against the headboard. You struggle, but it's no use against an experienced [man of M] like [him of M], and you have no choice but to lie there as [his of M] cockhead relentlessly [if F is asshole and the player is male]punches your prostate[otherwise]strokes your G-spot[end if]. Maybe you'd be able to cum from that if you were still in charge, but now its all about [him of M], and [he of M]'s clearly planning to finish it as soon as possible. Sure enough, [his of M] [DickDesc of M] begins to throb a few moments later, and [he of M] emits a low groan as [if M is wrapped]the condom floods with [his of M] load[otherwise][he of M] shoots several spurts of [semen] into your [variable F][end if]";
+		say "[big he of M] shoves you down when you try to sit up, and you let out a [if the player is able to speak]confused yelp[otherwise]muffled yelp[end if] as [he of M] immediately pins your wrists against the headboard. You struggle, but it's no use against an experienced [man of M] like [him of M], and you have no choice but to lie there as [his of M] cockhead relentlessly [if F is asshole and the player is sexed male]punches your prostate[otherwise]strokes your G-spot[end if]. Maybe you'd be able to cum from that if you were still in charge, but now its all about [him of M], and [he of M]'s clearly planning to finish it as soon as possible. Sure enough, [his of M] [DickDesc of M] begins to throb a few moments later, and [he of M] emits a low groan as [if M is wrapped]the condom floods with [his of M] load[otherwise][he of M] shoots several spurts of [semen] into your [variable F][end if]";
 		ruin F;
 		stimulate F times 1;
 		orgasm M;
@@ -2254,14 +2254,12 @@ To say MediumDesc of (M - subby patron):
 
 To decide which number is the girth of (M - subby patron):
 	decide on 1.
-Definition:  subby patron is generic-appropriate:
+Definition: subby patron is generic-appropriate:
 	unless the player is the donator and diaper quest is 0, decide no;
 	decide yes.
 
 To say LongDickDesc of (M - subby patron):
 	say "tiny [DickDesc of M]".
-
-
 
 eldritch patron is an experienced patron. The text-shortcut of eldritch patron is "dpa".
 To say PatronDesc of (M - eldritch patron):
@@ -2313,7 +2311,6 @@ To decide which number is the base semen load of (M - furry patron):
 	decide on 4.
 
 Definition: furry patron is musky: decide yes.
-
 
 To decide if (M - furry patron) is willing to creampie (F - a fuckhole):
 	if woman-player is in the location of the player, decide yes;[so we can force the player to squirt it out into the bowl]

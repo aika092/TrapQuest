@@ -132,7 +132,7 @@ REQUIRES COMMENTING
 
 +!]
 This is the monster doesn't do anal rule:
-	if auto is 1 and the number of willing to do anal monsters in the location of the player is 0, rule fails.
+	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do anal) or the number of willing to do anal monsters in the location of the player is 0), rule fails.
 The monster doesn't do anal rule is listed in the asshole presentable rules.
 
 [!<DecideWhichNumberIsTheDesireOfAsshole>+

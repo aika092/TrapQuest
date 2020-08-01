@@ -2,153 +2,37 @@ Belly by Body Parts begins here.
 
 Part 1 - Definitions
 
-[!<Belly>@
-
-REQUIRES COMMENTING
-
-@inherits <Flesh>
-
-@!]
 belly is a flesh. Belly is everywhere. The text-shortcut of belly is "belly".
 To say FullExamineDesc of (B - belly):
 	say "[ImageDesc of belly][TotalDesc of belly]".
 Understand "torso", "waist", "tummy", "stomach" as belly.
 
-[!<Belly>@<fleshVolume:Integer>*
+belly has a number called flesh volume.
+belly has a number called water volume.
+belly has a number called semen volume.
+belly has a number called urine volume.
+belly has a number called milk volume.
+belly has a number called air volume.
+belly has a number called small egg count.
+belly has a number called medium egg count.
+belly has a number called large egg count.
 
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called flesh volume.
-
-[!<Belly>@<waterVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called water volume.
-
-[!<Belly>@<semenVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called semen volume.
-
-[!<Belly>@<urineVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called urine volume.
-
-[!<Belly>@<milkVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called milk volume.
-
-[!<Belly>@<airVolume:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called air volume.
-
-[!<Belly>@<smallEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called small egg count.
-
-[!<Belly>@<mediumEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called medium egg count.
-
-[!<Belly>@<largeEggCount:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called large egg count.
-
-[!<Player>@<stomachWater:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called stomach-water. The stomach-water of the player is 5.
-
-[!<Player>@<stomachSemen:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called stomach-semen.
 The player has a number called stomach-urine.
 The player has a number called stomach-milk.
-
-[!<Player>@<stomachFood:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
 The player has a number called stomach-food. The stomach-food of the player is 2.
 
-[!<Player>@<stance:Integer>*
+belly has a number called previous largeness.
+belly has a number called holding strain.
+belly has a number called squirt timer.
 
-REQUIRES COMMENTING
-
-*@!]
-
-[!<Belly>@<previousLargeness:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called previous largeness.
-
-[!<Belly>@<holdingStrain:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called holding strain.
-
-[!<Belly>@<squirtTimer:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-Belly has a number called squirt timer.
-
-[!<Player>@<bellyChanged:Integer>*
-
-REQUIRES COMMENTING
-
-*@!]
-
-[!<DecideWhichNumberIsTheTotalFillOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the total fill of belly:
 	let B be the total squirtable fill of belly;
 	increase B by the air volume of belly;
 	if slimegirl is worn, increase B by 10;
 	decide on B.
 
-[!<DecideWhichNumberIsTheTotalEggFillOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the total egg fill of belly:
 	let E be 0;
 	increase E by the small egg count of belly;
@@ -156,11 +40,6 @@ To decide which number is the total egg fill of belly:
 	increase E by 5 * the large egg count of belly;
 	decide on E.
 
-[!<DecideWhichNumberIsTheTotalSquirtableFillOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the total squirtable fill of belly:
 	let B be the total fluid fill of belly;
 	increase B by the total egg fill of belly;
@@ -173,11 +52,6 @@ To decide which number is the total fluid fill of belly:
 	increase B by the water volume of belly;
 	decide on B.
 
-[!<DecideWhichNumberIsTheLargenessOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the largeness of belly:
 	if the pregnancy of the player > 0 and womb volume of vagina > 30: [Monster pregnancy = we only care about womb fill]
 		let B be womb volume of vagina;
@@ -207,11 +81,6 @@ To decide which number is the largeness fill of belly:
 	increase B by the flesh volume of belly;
 	decide on B.
 
-[!<DecideWhichNumberIsBellyMagnitudeOfNumber>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is belly magnitude of (B - a number):
 	let S be 0;
 	if B < 4:
@@ -242,11 +111,6 @@ To decide which number is belly magnitude of (B - a number):
 	if S > 10, decide on 10;
 	otherwise decide on S.
 
-[!<DecideWhichNumberIsTheWeightOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To decide which number is the weight of (XXX - belly):
 	let B be the total fill of belly;
 	decrease B by the air volume of belly; [this one is to counteract the total belly fill count]
@@ -279,32 +143,24 @@ To decide which number is the weight of (XXX - belly):
 	if the latex-transformation of the player > 5 and B > 0, now B is 0;
 	decide on B.
 
-[!<BellyIsHeavy>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: belly is heavy if the weight of belly >= 18.
 
 Definition: belly is exposed:
 	if there is a worn actually dense belly covering clothing, decide no;
 	decide yes.
 
+To decide which object is the concealer of (T - belly):
+	decide on a random mid-layer-concealing belly covering actually dense clothing.
+
+To decide which object is the at least partial concealer of (T - belly):
+	if thighs is listed in the armUses of arms, decide on arms;
+	decide on a random partially-mid-layer-concealing belly covering not-see-through clothing.
+
 Part 2 - Description
 
-[!<SayShortDescOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To say ShortDesc of belly:
 	say BellyDesc.
 
-[!<SayTotalDescOfBelly>+
-
-REQUIRES COMMENTING
-
-+!]
 To say TotalDesc of belly:
 	say "you have a [BellyDesc][if the semen coating of belly > 7] which is plastered in [semen]. [otherwise if the semen coating of belly > 4] which is covered in [semen]. [otherwise if the semen coating of belly > 0] which has a splattering of [semen] on it. [otherwise]. [end if][BellyContents][BellyWeight][StomachContents]";
 	if there is a worn corset, compute SelfExamineDesc of a random worn corset.
@@ -1632,7 +1488,7 @@ Figure of BellyObject12 is the file "CharWins/FocusWin/Belly/belly12.jpg".
 Figure of BellyObject13 is the file "CharWins/FocusWin/Belly/belly13.jpg".
 
 To decide which figure-name is the examine-image of (T - belly):
-	if T is overglazed, decide on Figure of CumBellyButton;
+	if T is overglazed and the largeness of belly <= 5, decide on Figure of CumBellyButton;
 	if the largeness of belly < 2, decide on figure of BellyObject1;
 	if the largeness of belly is 2, decide on figure of BellyObject2;
 	if the largeness of belly is 3, decide on figure of BellyObject3;

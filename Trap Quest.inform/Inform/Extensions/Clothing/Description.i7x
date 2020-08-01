@@ -78,7 +78,7 @@ Report examining a wearthing:
 		let U be the unworn outrage of the noun;
 		if the noun is worn, now U is the outrage of the noun;
 		let O be the initial outrage of the noun;
-		say "[input-style]Outrageousness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U]Raw value: [O]/20; After context & bonus modifiers[one of] (e.g. fluids, degrading attachments, or being displaced)[or][stopping]: [end if][U]/20[roman type][line break]";
+		say "[input-style]Outrageousness[if the noun is not worn] when worn[otherwise if the noun is not currently at least partially visible] (when visible)[end if]: [if O is not U and the noun is not tattoo]Raw value: [O]/20; After context & bonus modifiers[one of] (e.g. fluids, degrading attachments, or being displaced)[or][stopping]: [end if][U]/20[roman type][line break]";
 		if diaper quest is 1:
 			let U be the unworn cringe of the noun;
 			if the noun is worn, now U is the cringe of the noun;
@@ -207,11 +207,13 @@ Report examining clothing:
 Report examining wet clothing:
 	unless it is diaper and the player is not diaper aware, say "It is currently [cumdesc of the noun][if the noun is sheer-when-wet]which is making it more see-through than it would otherwise be[otherwise if the noun is actually dense]but it's not the type of item to turn see-through when wet[otherwise]but it's just as see-through as normal[end if].".
 
-Report examining clothing:
-	[if the noun is worn and (the noun is knickers or the noun is bra or the noun is sex toy or the noun is chastity cage or the noun is condom of kings or the noun is corset):]
+Report examining wearthing:
 	if the noun is worn:
 		if the noun is currently visible:
 			say CurrentlyVisibleFlav of the noun;
+			if the player is in a predicament room or the player is stealthy:
+				let S be the stealth-influence of the noun;
+				say "It is [if S < -1]making it MUCH more difficult for you to remain hidden[otherwise if S is -1]is a bit eye-catching, making it a bit more difficult for you to remain hidden[otherwise if S is 0]not making it easier or more difficult for you to remain hidden[otherwise if S is 1]is making it slightly easier for you to remain hidden[otherwise if S is 2]it making it significantly more possible for you to remain hidden[otherwise]is doing a lot of work to help keep you hidden[end if].";
 		otherwise if the noun is currently at least partially visible:
 			say CurrentlyPartiallyConcealedFlav of the noun;
 		otherwise:
@@ -220,15 +222,15 @@ Report examining clothing:
 Report examining protection clothing:
 	if the noun is identified, say "An aura of magic protection surrounds this item, helping protect [if the noun is worn]you[otherwise]the wearer[end if] from harm in combat.".
 
-To say CurrentlyConcealedFlav of (C - a clothing):
+To say CurrentlyConcealedFlav of (C - a wearthing):
 	let X be the concealer of C;
 	say "It can't be seen thanks to your [ShortDesc of X].".
 
-To say CurrentlyPartiallyConcealedFlav of (C - a clothing):
+To say CurrentlyPartiallyConcealedFlav of (C - a wearthing):
 	let X be the at least partial concealer of C;
 	say "Your [if X is arms]arm[otherwise][ShortDesc of X][end if] fails to completely hide the fact that you're wearing it.".
 
-To say CurrentlyVisibleFlav of (C - a clothing):
+To say CurrentlyVisibleFlav of (C - a wearthing):
 	say "It is currently visible to anyone who looks at you.".
 
 To say CurrentlyVisibleFlav of (K - a knickers):

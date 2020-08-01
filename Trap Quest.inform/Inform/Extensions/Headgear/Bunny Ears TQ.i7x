@@ -102,12 +102,10 @@ To compute (M - a monster) considering (T - a bottle):
 				say WaitressTakeFlav of M to T;
 				compute waitress resolution of M taking T;
 			now autodrink is 0;
-	otherwise if convincing power > 0 and (M is friendly or convincing power >= the square root of (a random number between 1 and 15)):
+	otherwise if convincing power > 0 and (M is friendly or (convincing power + the convincability of M) >= the square root of (a random number between 1 and 15)):
 		say MonsterOfferAcceptFlav of M to T;
-		now T is in Holding Pen;
-		now M is retaining T;
-		now M is withholding T;
 		compute resolution of M taking T;
+		compute final resolution of M taking T;
 	otherwise:
 		if M is not rejecting T, make M expectant; [The player can keep offering things they haven't offered yet without the NPC immediately moving to punishment.]
 		now M is rejecting T;
@@ -186,13 +184,13 @@ To compute service spill punishment:
 Chapter - Class Outfit
 
 Definition: a bunny ears is removal-blocking: [Some items (mainly headgear) can prevent other clothing from being removed until it is removed, e.g. tiara blocks royal dress from being removed]
-	if wearing-target is bunny outfit or wearing-target is serving table, decide yes;
+	if wearing-target is bunny outfit or wearing-target is serving table or wearing-target is bunny stockings, decide yes;
 	decide no.
 
 To compute class outfit of (H - bunny waitress ears):
 	let B be a random off-stage bunny waitress outfit;
 	let W be a random off-stage waitress vessel;
-	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny waitress outfit is 0):
+	if B is actually summonable or (B is bunny outfit and bunny-summoned is 0 and the number of worn bunny outfit is 0):
 		if bunny-summoned is 0:
 			repeat with O running through worn dresses:
 				say "Your [O] [wardrobeVanishes of O]!";
@@ -210,6 +208,9 @@ To compute class outfit of (H - bunny waitress ears):
 		summon B;
 		if artificial enhancements fetish is 1, now the raw-magic-modifier of B is ((4 - the silicone volume of breasts) / 5) - 1;
 		if bunny-summoned < 1, now bunny-summoned is 1;
+	otherwise if asshole is not actually occupied and reverse bunny outfit is worn:
+		say "[bold type]Suddenly, you feel a bunny tail plug invading your [asshole]![roman type][line break]";
+		summon bunny tail plug cursed with quest;
 	otherwise if W is a thing:
 		now W is carried by the player;
 		now the fill-colour of W is white;

@@ -558,7 +558,7 @@ To say SuppositoryFlav of (M - an adult baby slave):
 	say "[BigNameDesc of M] sticks [his of M] finger inside of your rectum, though it doesn't seem to be alone! Once the finger is all the way up there [he of M] twists it around several times before pulling it back out, causing you to gasp[if the sex addiction of the player <= 7] with shock[end if][if the sex addiction of the player >= 5], and moan with arousal[end if].[line break][speech style of M]'I thought you could use a messy diaper, so I just gave you a suppository. These things are pretty fast acting, so it shouldn't be long now...'[roman type][line break]".
 
 To say SuppositoryAftermath of (M - an adult baby slave):
-	if there is a worn diaper or there is a diaper retained by M: [If there's a retained diaper, she's about to replace it.]
+	if there is a worn diaper or there is a diaper carried by M: [If there's a retained diaper, she's about to replace it.]
 		say "[big he of M] wasn't kidding! You double over in agony as the first cramp overcomes you.";
 	otherwise:
 		compute diaper change of M;

@@ -195,11 +195,16 @@ To decide which number is cleavageCover:
 	otherwise:
 		decide on 3.
 
-To decide which number is the outrage of (B - breasts):
-	let O be 0;
+To decide which number is the semen outrage of (B - breasts):
 	let S be the semen coating of B * the semen coating of B;
 	if S > 0:
 		if there is worn not-see-through fully covering actually breast covering clothing, now S is 0; [can be fully concealed which prevents us from seeing that they're glazed with cum]
+	decide on S.
+
+
+To decide which number is the outrage of (B - breasts):
+	let O be 0;
+	let S be the semen outrage of breasts;
 	unless diaper quest is 1 and the breastskill of the player is 1:
 		let P be 0; [This will be the value of how lewd it is that the player's nipples are visible]
 		[if there is a worn currently at least partially visible top-displaced clothing, increase O by 2;] [experimental - displaced clothing is not more lewd]
@@ -387,30 +392,15 @@ To decide which number is min breast size:
 	if the player is male, decide on 1;
 	decide on 1 + (starting body shape * 2).
 
-[!<breastsPresentableRules:Rulebook>*
-
-REQUIRES COMMENTING
-
-*!]
 the breasts presentable rules is a rulebook.
 the presentable rules of breasts is usually the breasts presentable rules.
 
-[!<TheBreastsTooTinyForTitfuck>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the breasts too tiny for titfuck rule:
 	if the largeness of breasts < 5:
 		if auto is 0, say "Your [BreastDesc] are too small to provide a good titfuck.";
 		rule fails.
 The breasts too tiny for titfuck rule is listed in the breasts presentable rules.
 
-[!<TheBreastsCoveredByClothingRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the breasts covered by clothing rule:
 	let allDisplacable be 1;
 	repeat with B running through worn breast covering top-placed clothing:
@@ -423,20 +413,10 @@ This is the breasts covered by clothing rule:
 				rule fails.
 The breasts covered by clothing rule is listed in the breasts presentable rules.
 
-[!<TheMonsterDoesNotDoTitfucksRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the monster doesn't do titfucks rule:
-	if auto is 1 and the number of willing to do titfucks monsters in the location of the player is 0, rule fails.
+	if auto > 0 and ((presenting-receiver is monster and presenting-receiver is not willing to do titfucks) or the number of willing to do titfucks monsters in the location of the player is 0), rule fails.
 The monster doesn't do titfucks rule is listed in the breasts presentable rules.
 
-[!<TheTooHornyToPresentBreastsRule>+
-
-REQUIRES COMMENTING
-
-+!]
 This is the too horny to present breasts rule:
 	if the player is horny:
 		if auto is 0 or there is an actually presentable fuckhole: [The automatic action rule does not care if you are horny, unless a fuckhole is actually presentable as well.]
@@ -448,18 +428,8 @@ This is the too horny to present breasts rule:
 				rule fails.
 The too horny to present breasts rule is listed in the breasts presentable rules.
 
-[!<breastsBlinded:Integer>*
-
-REQUIRES COMMENTING
-
-*!]
 breasts-blinded is a number that varies.
 
-[!<PersonIsBreastsBlinded>+
-
-REQUIRES COMMENTING
-
-+!]
 Definition: a person is breasts blinded:
 	if the largeness of breasts > 10 and the weight of breasts < 0:
 		if breasts-blinded is 0:
@@ -496,7 +466,7 @@ Less brief details (size, exposure, semen)
 
 +!]
 To say MediumDesc of (B - breasts):
-	say "[if breasts is lewdly exposed]fully exposed [CumBreastDesc][otherwise if breasts is at least partially lewdly exposed and the outrage of breasts > (the at least partially lewdly exposed outrage of breasts + (the semen coating of B * the semen coating of B)) / (the trophy-mode of bust-trophy + 1)]somewhat visible [CumBreastDesc][otherwise if breasts is at least partially lewdly exposed]noticeable nipples[otherwise if breasts is showing cleavage][CumBreastDesc] [CleavageDesc][otherwise if breasts is not exposed]concealed [CumBreastDesc][end if]".
+	say "[if breasts is lewdly exposed]fully exposed [CumBreastDesc][otherwise if breasts is at least partially lewdly exposed and (the semen outrage of breasts > 0 or the outrage of breasts > (the at least partially lewdly exposed outrage of breasts + the semen outrage of breasts) / (the trophy-mode of bust-trophy + 1))]somewhat visible [CumBreastDesc][otherwise if breasts is at least partially lewdly exposed]noticeable nipples[otherwise if breasts is showing cleavage][CumBreastDesc] [CleavageDesc][otherwise if breasts is not exposed]concealed [CumBreastDesc][end if]".
 
 To say CumBreastDesc:
 	say "[if the semen coating of breasts > 6]cum-coated [otherwise if the semen coating of breasts > 0]cum-splattered [end if][BreastDesc]".
@@ -1154,10 +1124,16 @@ To BustImplantsUp (X - a number):
 			say "Your [BreastDesc] are just too big, the skin won't stretch any further! Your new [if the silicone volume of breasts > 0]and improved [end if]implants shrink under the pressure.";
 			now attempt-done is 2;
 		if X is 0:
-			let C be a random worn cheerleader outfit;
-			let L be a random off-stage rubber cheerleader outfit;
-			if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
-			if C is a thing and L is a thing, transform C into L;
+			let C be a random worn overdress;
+			if the class of the player is schoolgirl and the silicone volume of breasts > 3 and C is clothing and C is not daddy issues dress:
+				repeat with S running through worn skirts:
+					say "Your [S] [wardrobeVanishes of S]!";
+					now S is in pink wardrobe;
+				transform C into daddy issues dress;
+			otherwise if C is cheerleader outfit:
+				let L be a random off-stage rubber cheerleader outfit;
+				if blue-rubber-cheerleader-outfit is off-stage, now L is blue-rubber-cheerleader-outfit;
+				if C is a thing and L is a thing, transform C into L;
 	compute bra strain;
 	update appearance level;
 	progress quest of bust-up-quest;

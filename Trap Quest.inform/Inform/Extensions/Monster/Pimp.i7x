@@ -228,7 +228,7 @@ To say TaxReturnDismay of (M - pimp):
 To compute unique banishment of (M - pimp):
 	now pimp-dead is true.
 
-To loot (M - pimp):
+To standard loot (M - pimp):
 	let X be a random off-stage plentiful bracelet;
 	unless X is nothing:
 		now X is in the location of the player;

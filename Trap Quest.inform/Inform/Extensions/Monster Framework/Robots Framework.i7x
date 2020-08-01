@@ -251,16 +251,8 @@ To say DamageReaction (N - a number) of (M - a robot):
 
 Definition: a robot is automatically banishable: decide yes.
 Definition: a robot is auto-banish-loot-dropping: decide yes. [Will it automatically drop jewellery when it is banished in this manner?]
-To compute automatic banishment of (M - a robot):
+To say BanishFleeFlav of (M - a robot):
 	say "[speech style of M]'CRITICAL... ERROR.'[roman type][line break][BigNameDesc of M] falls apart and clatters to the ground.".
-To loot (M - a robot):
-	let D be a random off-stage mechanical joint;
-	if D is mechanical joint:
-		now D is in the location of the player;
-		say "You manage to salvage a working [D].";
-		compute autotaking D;
-	otherwise:
-		standard loot M.
 To compute unique banishment of (M - a robot):
 	let L be a random off-stage leftover;
 	now the leftover-type of L is the leftover-type of M; [robots leave a corpse behind that the mechanic can fix.]

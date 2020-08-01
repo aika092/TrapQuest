@@ -171,10 +171,11 @@ To say TransformReaction of (C - a hide warrior chestpiece):
 
 Part 6 - Golden Warrior Priestess Outfit
 
-A golden warrior priestess outfit is a kind of immodest warrior chestpiece. There is 1 golden warrior priestess outfit. A golden warrior priestess outfit is usually metal. A golden warrior priestess outfit is usually super-short. A golden warrior priestess outfit is usually belly exposing. A golden warrior priestess outfit is usually ridiculously low cut. A golden warrior priestess outfit is usually totally-exclusive.
+A golden warrior priestess outfit is a kind of immodest warrior chestpiece. There is 1 golden warrior priestess outfit. A golden warrior priestess outfit is metal. A golden warrior priestess outfit is super-short. A golden warrior priestess outfit is ridiculously low cut. A golden warrior priestess outfit is totally-exclusive.
 
 Definition: a golden warrior priestess outfit is yellow themed: [Is it significantly yellow?]
 	decide yes.
+Definition: a golden warrior priestess outfit is layer-concealing: decide no.
 
 Figure of golden warrior priestess outfit is the file "Items/Clothes/Upper/Special/Warrior/priestess5.png".
 

@@ -116,10 +116,8 @@ To vanish (M - a monster):
 		womanSluttify;
 		if pregnancy fetish is 1 and inhuman pregnancy > 1 and lady fetish < 2, now M is tentacle-pregnant.
 
-
 To say LeftoverDesc (N - 131):
 	say "[if playerRegion is Dungeon][woman-player] lies unconscious on the floor here but you can hardly tell that it's [him of woman-player]. [big he of woman-player][']s on [his of woman-player] back but [his of woman-player] belly is so large that it covers [his of woman-player] body from [his of woman-player] knees to [his of woman-player] neck. Minotaur [semen] is gradually spilling out of both [his of woman-player] mouth and from down below, you can see that [his of woman-player] belly is very slowly deflating.[otherwise][woman-player] lies unconscious on the floor here, with demon [semen] still slowly seeping out of [his of woman-player] gaping vagina.[end if]".
-
 
 Part - Magic Pistol
 
@@ -128,7 +126,6 @@ Figure of magic pistol is the file "Items/Accessories/Equippables/pistol1.png".
 magic pistol is metal.
 
 Definition: magic pistol is grey themed: decide yes.
-
 
 To say ClothingDesc of (W - magic pistol):
 	say "A small metal gun. There's no ammo, so how does it work?".
@@ -196,8 +193,6 @@ STATES:
 99: Dead
 ]
 
-
-
 This is the woman spawning as a stool rule:
 	if the player is the donator and the stool-scene of woman-player is 0:
 		let R be a random number between 2 and 100; [This will be faster than checking her region so we prioritise it]
@@ -207,7 +202,6 @@ This is the woman spawning as a stool rule:
 				if debuginfo > 1, say "[input-style]Barbara summoned in [location of woman-player].[roman type][line break]";
 				rule succeeds.
 The woman spawning as a stool rule is listed last in the womanspawning rules.
-
 
 Chapter - Hotel Chair Scene
 
@@ -530,8 +524,8 @@ To compute DominatrixInterruption:
 		say "[bold type][if clumsy april fools is 1]You accidentally knock two pulleys into each other, which make a loud metal CLANG! [roman type][aprilFoolsClumsyFlav][bold type]Moments later[otherwise]All of a sudden,[end if] [NameDesc of M][bold type] [if dominatrix is in the location of the player]bursts into a fit of rage[otherwise]arrives from the east[end if]![line break][speech style of M]'WHAT HAVE WE HERE? Did I give you permission to interfere in my affairs?! I saw what you were trying to do. Oh [honey of M], you're going to regret that.'[roman type][line break][big he of M] crosses [his of M] arms at the wrists, making an intricate sign with [his of M] fingers.[line break][speech style of M]'Mutanretla Menimoh.'[roman type][line break]Your head feels funny... And then your body feels funny. You try to move your hands but they are glued to your buttcheeks, holding your [asshole] open wide. Your ankles are dangling high in the air above your face, attached to ropes and pulleys. Your legs feel completely exhausted. [NameDesc of woman-player] is looking down at you with [horror (the woman-bimbo of woman-player * 4)] from a kneeling position next to you. You've somehow swapped positions with [him of woman-player]!";
 		repeat with C running through worn total protection clothing:
 			now C is in the location of the player;
-		repeat with C running through worn equippables:
-			if C is hand ready, now C is in the location of the player;
+		repeat with C running through worn hand ready equippables:
+			now C is in the location of the player;
 		repeat with C running through worn wrist locking clothing:
 			now C is in the location of the player;
 		repeat with C running through things penetrating asshole:
@@ -1035,7 +1029,6 @@ To compute (M - woman-player) protecting against (X - a monster):
 			compute X receiving a random number from 1 to 2 damage from M;
 			if prev-health is the maxhealth of X and the health of X < the maxhealth of X, say AllyInstigated of X.
 
-
 Part 6 - Combat
 
 Section 0 - Punishment
@@ -1065,8 +1058,7 @@ This is the woman unique punishment rule:
 		now the smell-duration of G is 4;
 	otherwise if the woman-bimbo of woman-player < 5 and J is plentiful accessory:
 		say "[BigNameDesc of woman-player] yanks the [J] from your [if J is carried and there is a worn bag of holding][ShortDesc of a random worn bag of holding][otherwise if J is carried]hands[otherwise if J is necklace]neck[otherwise if J is bracelet]wrist[otherwise]finger[end if]![line break][speech style of woman-player]'This is mine now.'[roman type][line break]";
-		now J is in holding pen;
-		now woman-player is retaining J;
+		now woman-player is carrying J;
 	otherwise:
 		say "[BigNameDesc of woman-player] spreads [his of woman-player] cheeks and moves [his of woman-player] crack towards your face.";
 		if face is not actually occupied, say "[line break][speech style of woman-player]'[if the woman-bimbo of woman-player < 5]Lick my asshole, [cunt]. Show me you admit defeat.'[otherwise]Wanna taste?'[end if][roman type][line break]Do you lick [NameDesc of woman-player][']s butthole? ";
@@ -1086,7 +1078,6 @@ This is the woman unique punishment rule:
 				say "[speech style of woman-player]'[if face is not actually occupied and the woman-bimbo of woman-player >= 5]Fine, I guess you'll just have to sit there and watch!'[otherwise if the woman-bimbo of woman-player >= 5]Look how stretchy it is!'[otherwise if face is actually occupied]Take a close look, bitch. This is what you're gonna be tasting one of these days soon.'[otherwise]How rebellious. Are you sure you don't want a taste?'[end if][roman type][line break][big he of woman-player] pushes two fingers from each hand into [his of woman-player] butt, before pulling [his of woman-player] hands apart to make [his of woman-player] hole gape right in front of your eyes. [if the player is not a nympho]You find yourself becoming desensitised to such lewd displays - it's pretty normal for this kind of game[otherwise]You find yourself staring deep inside with glee and wonder in your eyes[end if]. [big he of woman-player] lowers [his of woman-player] gaping wide asshole over you until it's pretty much touching your face, before letting go and allowing it to snap shut on the tip of your nose, making you yelp with surprise. [big he of woman-player] laughs and then stands back up.";
 				SexAddictUp 1;
 	satisfy woman-player.
-
 
 Section 1 - Fighting
 
@@ -1110,7 +1101,6 @@ To say StrikingSuccessFlav of (M - woman-player) on (B - a body part):
 		say "[BigNameDesc of M] [one of]winds up a big punch and smacks you[or]lands a karate chop[or]kicks you[at random] [TargetName of B]! Ouch!!";
 	otherwise:
 		say "[BigNameDesc of M] [one of]giggles as [he of M] [or]grins and [or][at random]spanks you [one of]hard [or][or][purely at random][TargetName of B]!";
-
 
 Part 7 - Conversation
 
@@ -1226,7 +1216,6 @@ To compute basic greeting to (M - woman-player):
 	now the woman-old-bimbo of M is the woman-bimbo of M;
 	now the old-name of M is the current-name of M;
 	now the old-title of M is the current-title of M.
-
 
 talk-barbara-question is a talk-object.
 

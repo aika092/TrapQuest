@@ -2,6 +2,7 @@ All Belts by Belts Suspenders begins here.
 
 A belt is a kind of clothing. A belt is unskirted. A belt is manly.
 Definition: a belt is same-type if theme-share-target is belt.
+The soak-limit of a belt is usually 2.
 
 Chapter - Wearability
 
